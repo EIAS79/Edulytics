@@ -1,106 +1,101 @@
-# G1 Unit 01 Lesson 01 — Evidence-Based Single-Lesson Pilot (V2)
+# G1 / Unit 01 / Lesson 01 — Count and Add — Internal Evidence Report
 
-**Scope:** ONE lesson only — `PED:US-CCSS-MATH:G1:U01:L01` / **Count and Add**.
-**Execution policy:** `EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2`.
-**Date:** 2026-10-12.
-**Baseline `main` commit:** `2b1a1252814f584b81d57e9e6b6d02a0c949d764`. Subsequent `main` plan-doc deletion: `891bc308cca7470e700ac451c589dd7b2892a5f7` (not part of this lesson repair).
-**PR:** [#488](https://github.com/EIAS79/Edulytics/pull/488) — resumed from existing commits; no new PR.
-**Final decision:** `REWORK_REQUIRED / NOT_CERTIFIED / GRADE_NO-GO` pending verified learner-specific L1–L6 evidence; no human signature or L7 is a requirement.
-**Scope protection:** No other lesson was intentionally changed. This pilot report is **not** the required final consolidated 146-lesson G1 report.
+**Scope:** `PED:US-CCSS-MATH:G1:U01:L01` only. No lesson 2 or G1 grade certification.  
+**Policy:** `EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2` — **L1–L6 only, eight review dimensions, no L7/human signature**.  
+**Repository:** `EIAS79/Edulytics`, [PR #488](https://github.com/EIAS79/Edulytics/pull/488).  
+**Report revised:** 2026-10-13.  
+**Current decision:** `NOT_CERTIFIED` pending the final candidate's two-activity HTTPS and content-fingerprint CI results. **Do not mistake earlier green runs or this report for certification.**  
+**Publication:** No Render deploy and no merge into `main` recorded.
 
-## 1. Verified source identity and version
+## 1. Authoritative sources
 
-| Field | Evidence |
+| Evidence | Reference |
 |---|---|
-| Publisher/edition | Illustrative Mathematics / Kendall Hunt, IM K–5 Math Grade 1, First Edition (2021) |
-| Teacher preparation | [First-edition preparation](https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/preparation.html) |
-| Full published lesson | [First-edition lesson](https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/lesson.html) |
-| Official standard | [CCSS Grade 1 Operations and Algebraic Thinking](https://www.thecorestandards.org/Math/Content/1/OA/) |
-| Assigned outcomes | `CCSS:1.OA.C.5`, `CCSS:1.OA.C.6`; both listed as addressing in publisher lesson |
-| Publisher-derived embedded pack | `src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json` |
-| Source pack Git blob SHA | `25cc1603a15fb5ceb862100c44ed1368f957b235` |
-| Original lesson `canonicalBodySha256` | `89f1b716ffccfec4511ce19d3a1fb433ea06db8577f3357f00769a030e4a6bb0` |
-| Original pack `sourceSha256` | `2ffdf5bbf28f5f823f7ae841d47d9100e6a99213555a1d963e2cdd20658c1642` |
-| Actual materialized content SHA | **PENDING** — do not substitute the source-pack canonical hash for the effective body SHA |
-| Licensing | First-edition page carries CC BY 4.0 with branding/trademark and third-party image exclusions. Asset-by-asset rights and attribution in Edulytics are NOT YET verified. The `Student_Public_Mirror` v.360 evidence is **not** an approved first-edition source or a blanket commercial license. |
+| First edition, teacher lesson | [IM/Kendall Hunt G1 U1 L1](https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/lesson.html) |
+| First edition, teacher preparation | [IM preparation](https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/preparation.html) |
+| Official CCSS standards | [CCSS 1.OA.C.5 and 1.OA.C.6](https://www.thecorestandards.org/Math/Content/1/OA/) |
+| Publisher-derived original | `src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json` |
+| Original source pack Git blob | `25cc1603a15fb5ceb862100c44ed1368f957b235` |
+| Original lesson canonical-body SHA-256 | `89f1b716ffccfec4511ce19d3a1fb433ea06db8577f3357f00769a030e4a6bb0` |
+| Corrected effective-content version | `us-ccss-g1-u01-l01-count-collections-dots-v1` |
+| Independently computed effective learner-body SHA-256 | `2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680` (**must agree with C# hash assertion on tested candidate**) |
 
-The first-edition lesson purpose is **count and represent objects and relate counting to addition**. Activity 1 counts collections **up to 20** and depicts those quantities. Activity 2 rolls two dot cubes, finds the total **up to 10** and writes an addition expression. The original lesson teaches strategies through actual objects, drawings, and dot cubes, not just text describing a generic sum.
+Publisher goal: count and represent collections up to 20, then relate counting dots on two cubes to an addition expression. The lesson **addresses** `1.OA.C.5` and `1.OA.C.6`, while building on K.CC.B for the counting collection. These labels must not be confused with full mastery of all of 1.OA.C.6 in one lesson.
 
-## 2. Specific defect and guarded correction
+The official page licenses its first-edition text under **CC BY 4.0**, excluding the Illustrative Mathematics name/logo and separately licensed images. This repair copies **no publisher images/logos**; its counter and cube representations are code-authored. The student lesson page links the exact source, attribution and license. No rights are assumed for other editions or `CC BY-NC` mirrors.
 
-**Observed raw source-pack deficiency (before correction):** The embedded learner explanation gives the broad objective, but its only worked example shows `5 + 3 = 8`. The pack has **no worked example of counting and representing a collection up to 20**, despite this being a substantive component of Activity 1. Its steps also start immediately with two addends and omit 1:1 object-counting. This is a **demonstrable gap in embedded lesson prose**; it is **not yet proof of what every student sees after rendering**.
+## 2. Completed correction carried forward from PR #488
 
-**Pilot repair:** Add a narrowly scoped `CommonCoreG1CountAndAddPilotCorrection` for just `G1:U01:L01`. Keep the publisher-derived pack unchanged. Require source URL, exact canonical SHA, official outcomes, exact original prose or already-reviewed repaired prose, and a distinct effective content version `us-ccss-g1-u01-l01-count-collections-dots-v1`. Refuse unexpected persisted changes.
+Original learner material lacked a worked counting-and-representing collection up to 20, although the original lesson teaches this in Activity 1. A SHA/source/outcome-guarded, idempotent override fixes this **one** lesson, without rewriting the publisher pack, old lesson IDs or other lessons.
 
-Revised English learner content explicitly:
-1. Counts and represents **16 counters**, showing ten on a ten-frame plus six more; checks `10 + 6 = 16`.
-2. Counts cubes showing **5** and **3** dots, then demonstrates `5 + 3 = 8` via counting-on `6, 7, 8`.
-3. Adds cubes with **4** and **2** dots, `4 + 2 = 6`, and explains the Add to 10 reroll condition.
-4. Fixes step-by-step explanations and one-to-one counting misconceptions.
+Learner explanation now covers counting 16 counters with a ten-frame `10+6=16`, dot cubes `5+3=8`, another example `4+2=6`, steps for counting each object once, and corrections for double-counting and wrong counting-on. Rich V2 displays a code-authored 16-dot arrangement and a 5-dot/3-dot cube display.
 
-This is an **instructional content repair**, not a claim that a diagram is present in the browser, that every Practice family is semantically correct, or that the lesson is internally certified.
+Two exact lesson-scoped Practice families replace the earlier overly broad family route:
+- `usccss.g1.u01.l01.count_collection_to20` — cardinality 1–20 and visible counter dots.
+- `usccss.g1.u01.l01.add_dot_cubes_to10` — two 1–6 dot faces summing at most 10. No unrelated subtraction.
 
-## 3. Eight-dimension lesson inspection
+The answer verifier recomputes numerical results independently from parameters and rejects out-of-range/tampered parameters and incorrect answers. Unit tests exercise both families at Standard/Stretch/Challenge, and check dot counts and exact answers.
 
-| Dimension | Review finding | Pilot status |
+## 3. Eight required review dimensions
+
+| Dimension | Evidence | Review decision |
 |---|---|---|
-| 1. Title, grade, topic | `Count and Add`, G1/U01/L01 correspond to the publisher lesson | `SOURCE_VERIFIED` |
-| 2. CCSS outcomes and source | Publisher **addresses** 1.OA.C.5 and 1.OA.C.6; same in pack. Per-asset licenses unresolved | `SOURCE_VERIFIED / RIGHTS_PENDING` |
-| 3. Mathematical correctness | `10 + 6 = 16`, `5 + 3 = 8`, `4 + 2 = 6` independently checked; actual deployed content not checked | `STATIC_EXAMPLES_VERIFIED` |
-| 4. Explanation / progression | Original embedded text lacks a worked counting collection; proposed guarded repair restores 1:1 counting → representation → dot-cube addition | `REWORK_IN_PR` |
-| 5. Worked examples / solution steps | New count-to-16 and 5+3/4+2 worked examples; guard/unit test submitted, CI verdict pending | `REWORK_IN_PR` |
-| 6. Diagrams / representations | Text refers to 10-frame/dot cubes; **no authenticated Rich V2 screen/interactive diagram proof** | `BLOCKED_MISSING_EVIDENCE` |
-| 7. Misconceptions | Addresses skipped/double-counted objects, starting addend counted twice, mismatched totals | `REWORK_IN_PR` |
-| 8. Questions, generation, answer keys, grading | Engine has general tests, but **exact lesson's generator routes, edge cases, free-form answers and actual grading not certified here** | `BLOCKED_MISSING_EVIDENCE` |
+| 1. Title/grade/topic | Source and unique `LessonCode`, grade logical level 2 | `SOURCE_REVIEWED` |
+| 2. Official standard/provenance | IM 2021 teacher lesson/preparation, CCSS links, SHA and attribution | `SOURCE_REVIEWED` |
+| 3. Mathematical correctness | Independent verification of 16=10+6, 5+3=8, 4+2=6; randomized exact family tests | `TESTED` |
+| 4. Pedagogy/sequence | Count each object once → represent up to 20 → combine cube dots up to 10 | `SOURCE_REVIEWED` |
+| 5. Worked examples | Explicit examples and step-by-step explanations; fingerprint guard | `TESTED` |
+| 6. Visuals/representations | Source-aligned first-party counter/ten-frame and dot cubes, Rich V2 model/unit tests | `TESTED` |
+| 7. Misconceptions | Skip/recount an object; count initial addend as new; invalid `5+3=7` | `SOURCE_REVIEWED` |
+| 8. Questions/answers/grading | Two exact families; positive and negative answer verifier tests; HTTPS grading | `TESTED` (both-family HTTPS pending final CI) |
 
-## 4. Gates — V2 internal acceptance
+Review-decision labels above describe **specific observations**, not canonical ledger PASS values; final ledger updates require successful candidate SHA checks, time and evidence IDs.
 
-| Gate | Status | Why |
+## 4. L1–L6 gates and outstanding actions
+
+| Gate | State as of this revision | Evidence or exact blocker |
 |---|---|---|
-| L1: Standards & Provenance | `IN_PROGRESS` | Lesson and official standard mapped; third-party visual rights, actual use/attribution unresolved |
-| L2: Mathematical Truth | `IN_PROGRESS` | Static examples arithmetically reviewed; source-bound CI and effective runtime proof pending |
-| L3: Instructional Quality | `IN_PROGRESS` | Identified and repaired embedded content gap; final runtime comparison pending |
-| L4: Examples & Representations | `IN_PROGRESS` | First-party ten-frame/dot-table render model added and unit tested; browser evidence remains to be collected |
-| L5: Practice & Assessment | `IN_PROGRESS` | Exact-family engine tests generated graded answers at three levels; full pedagogical counting/representation coverage remains unproved |
-| L6: Learner Delivery | `BLOCKED` | Disposable HTTPS school acceptance is green but not an authenticated rendered G1:U01:L01 learner screen on candidate SHA |
+| L1 — Source & standards | `EVIDENCE_COLLECTED` | Original first-edition URLs, standards, license/attribution verified |
+| L2 — Mathematics | `PENDING_SHA_CI` | Source-based mathematical and answer verifiers; exact fingerprint assertion added |
+| L3 — Instructional quality | `EVIDENCE_COLLECTED` | The two source activities and revised examples/misconceptions match |
+| L4 — Visual examples | `EVIDENCE_COLLECTED` | First-party Rich V2 diagram model and HTML test |
+| L5 — Practice and grading | `PENDING_TWO_FAMILY_HTTPS` | Unit positive/negative checks pass on prior candidate; final two-family student attempt added |
+| L6 — Learner delivery | `PENDING_FINAL_CANDIDATE_CI` | Prior authenticated disposable HTTPS confirms lesson page, visual markup, protected student access, private practice persistence and grading; final candidate not yet confirmed |
 
-**Policy and schema limitation:** `artifacts/academic-us-ccss/04-lesson-certification-records.json` still has historical V1 human-signature validation. The V2 policy document directs migration before any lesson receives official `INTERNALLY_CERTIFIED`; this pilot does not edit 1,560 historical records or fabricate a certification status.
+No seventh gate exists; **internal certification follows L1–L6 plus all eight documented dimensions, exact SHA and zero unresolved blockers**. CI acceptance here is a **disposable HTTPS staging rehearsal**, not proof that this unpublished PR exists on Render production or that mobile/desktop browser screenshots were inspected.
 
-## 5. Regression plan and delivery boundary
+## 5. Concrete GitHub Actions evidence
 
-- C# regression file: `tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1CountAndAddPilotCorrectionTests.cs`.
-- Covers exact lesson identity/outcomes, corrected text, arithmetic, idempotent materialization, rejection of SHA/source and partial-content drift, versioned existing-body upgrade guard, and conditional Rich V2 composer smoke.
-- Implementation files: `src/Edulytics.Data/Seeding/CommonCoreG1CountAndAddPilotCorrection.cs`, `src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs`, `src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs`.
-- Actual GitHub Actions outcomes and candidate commit SHA **must be attached/verified separately**. A test source file does not by itself prove test execution.
-- No live Render deployment, live Neon changes, school data writes, license inference, or full G1 closure are authorized by this one-lesson test.
+Previous full passing candidate `20094c4f4907b991d82f19ce5327c892d37221a1`:
 
-## 6. Resumable checkpoint for this pilot
+- [US CCSS Authenticated Academic Acceptance — run 38316222097](https://github.com/EIAS79/Edulytics/actions/runs/38316222097): exact G1 authenticated HTML, proper logical level (2), Rich V2 text/visuals and private answer grading.
+- [Mathematics Intelligence Foundation — run 38316222038](https://github.com/EIAS79/Edulytics/actions/runs/38316222038): `math-foundation-tests` and `catalogue-skill-audit` both passed.
+- [V2 full product regression — run 38316222158](https://github.com/EIAS79/Edulytics/actions/runs/38316222158): passed.
+- [Evaluation Production Gate — run 38316222042](https://github.com/EIAS79/Edulytics/actions/runs/38316222042): passed.
+- [Clean PostgreSQL 18 — run 38316222019](https://github.com/EIAS79/Edulytics/actions/runs/38316222019): passed.
+- [US CCSS Academic Evidence Safety — run 38316222178](https://github.com/EIAS79/Edulytics/actions/runs/38316222178): passed.
+- [Common Core Official Closure — run 38316222080](https://github.com/EIAS79/Edulytics/actions/runs/38316222080): passed.
+- [Neon Offline Content Inventory — run 38316222002](https://github.com/EIAS79/Edulytics/actions/runs/38316222002): passed.
+
+**Latest candidate pending:** `029e84ecfda59c15075b3086c8d65410ab330273`, after adding an independent C# fingerprint assertion and a real two-family HTTPS student attempt. The exact latest green runs and SHA must be captured before declaring all L1–L6 `PASS`.
+
+## 6. Durable execution checkpoint
 
 ```yaml
-policyId: EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2
 currentGrade: G1
+currentCourse: null
 currentLesson: PED:US-CCSS-MATH:G1:U01:L01
 uniqueGradeLessons: 146
 pilotLessonsAttempted: 1
 pilotLessonsInternallyCertified: 0
-existingG1GuardedCorrectionsOnBaseline: 25
-pilotCorrectionOnPR: 1
-gradeDecision: GRADE_NO-GO
-lastCompletedOperation: >
-  Compared exact first-edition publisher lesson to the raw embedded G1 L01 body;
-  authored SHA-guarded targeted repair and C# regression tests in PR #488.
-nextExactOperation: >
-  Fix identified GitHub whitespace gate and verify candidate SHA CI; inspect actual materialized
-  English SHA, lesson SkillContract family behavior, answer grading,
-  publisher visual rights, and authenticated Rich V2 staging before L1–L6 PASS.
+status: NOT_CERTIFIED
+policyId: EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2
+contentVersion: us-ccss-g1-u01-l01-count-collections-dots-v1
+contentSha256: 2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680
+lastVerifiedGreenCandidate: 20094c4f4907b991d82f19ce5327c892d37221a1
+pendingEnhancedCandidate: 029e84ecfda59c15075b3086c8d65410ab330273
+lastCompletedOperation: All 8 CI workflows green for previous pilot; added fingerprint and both-family HTTPS evidence checks
+nextExactOperation: Inspect latest fingerprint and two-family HTTPS CI; if green, update the single canonical lesson ledger with justified L1-L6, eight review dimensions and version-bound evidence. Do not alter other lesson records or claim a production Render deployment.
 ```
 
-**This pilot ends at this lesson only, by explicit user instruction.** It does not start `G1:U01:L02` or `G2`.
-
-## 7. Continuation evidence (2026-10-12)
-
-- Existing candidate SHA `67afe83a957d7521023c901e16254ae7792be705`: seven workflow suites passed, including full .NET regression, clean PostgreSQL 18, and disposable two-school authenticated HTTPS; **Evaluation Production Gate** failed only at its `git diff --check` whitespace step (this report had six trailing-spaces lines). This is a formatting regression, **not** permission to bypass the gate.
-- Content changes already present in PR #488: G1 L01 conditional Rich V2 visual model with 16 counter dots in 10+6 and 5+3 cube dots, SHA-guarded source correction, focused Math Intelligence tests, source metadata reconciliation (54 incl. this pilot). They are reused, not rewritten.
-- Direct source is a first-edition publisher page; visual models are newly authored within Edulytics. The actual candidate-backed learner page, rights attribution, and complete L5 evidence remain independently required.
-- **Explicit owner policy:** Internal approval has exactly **L1–L6** mandatory gates plus the eight lesson dimensions and no unresolved blockers. **No L7 and no reviewer signature.** The attached old V2 plan was removed from GitHub along with the other plan documents; it is historical context, not current operative approval logic.
-- A successful test of any other US CCSS lesson does not count as exact G1 U01 L01 evidence.
+**Only one lesson reviewed in this pilot. No G1 grade certification, PR merge, or Render production deployment is implied.**
