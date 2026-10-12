@@ -7,13 +7,32 @@ const root=path.resolve(__dirname,'..'),read=p=>JSON.parse(fs.readFileSync(p,'ut
 const official=read(path.join(root,'docs/curriculum/reference/us-ccss-official-codes.snapshot.json'));
 const pack=read(path.join(root,'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.curriculum-pack.json'));
 const normCode=s=>s.replace(/^(HS[NAFGS])-([A-Z]{1,3})\./,'$1.$2.');
-const clean=s=>s.replace(/<sup\b[^>]*>[\s\S]*?<\/sup>/gi,'').replace(/<[^>]*>/g,' ')
+// The official HTML uses <sup> for powers. Dropping its contents can turn
+// x^2 into x, and a negative exponent into an apparently positive one.
+// Preserve all visible superscripts/subscripts, including footnote markers;
+// deciding whether a marker is a footnote is a separate human source review.
+const clean=s=>String(s??'')
+  .replace(/<(sup|sub)\b[^>]*>([\s\S]*?)<\/\1>/gi,(_,kind,body)=>{
+    const value=body.replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim();
+    return (kind.toLowerCase()==='sup'?'^{':'_{')+value+'}';
+  })
+  .replace(/<[^>]*>/g,' ')
   .replace(/&#x([a-f0-9]+);/gi,(_,x)=>String.fromCodePoint(parseInt(x,16)))
   .replace(/&#([0-9]+);/g,(_,x)=>String.fromCodePoint(Number(x)))
-  .replace(/&(amp|lt|gt|quot|apos|nbsp|ndash|mdash);/gi,(_,x)=>({amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',ndash:'-',mdash:'-'}[x.toLowerCase()]))
+  .replace(/&(amp|lt|gt|quot|apos|nbsp|ndash|mdash|times|divide|ne|le|ge|theta|pi|minus);/gi,
+    (_,x)=>({amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',ndash:'-',mdash:'-',
+      times:'×',divide:'÷',ne:'≠',le:'≤',ge:'≥',theta:'θ',pi:'π',minus:'−'}[x.toLowerCase()]))
   .replace(/\s+/g,' ').trim();
 const tokens=s=>clean(s).normalize('NFKC').toLowerCase().replace(/[\u2018\u2019]/g,"'")
   .replace(/[\u2013\u2014\u2212]/g,'-').replace(/[^a-z0-9]+/g,' ').trim().split(' ').filter(Boolean);
+// Token similarity is only a triage aid: it deliberately ignores punctuation.
+// Never count a comparison as *exact* if its mathematical operators, signs,
+// powers or subscripts differ. This is intentionally conservative.
+const notationTokens=s=>clean(s).replace(/[\u2013\u2014\u2212]/g,'-')
+  .match(/\^\{[^}]*\}|_\{[^}]*\}|[=<>+\-×÷≠≤≥±]/g)||[];
+const sameExtractedMathText=(a,b)=>
+  tokens(a).join(' ')===tokens(b).join(' ')&&
+  notationTokens(a).join('|')===notationTokens(b).join('|');
 const similarity=(a,b)=>{
   const aa=tokens(a),bb=tokens(b),freq=new Map();
   for(const t of aa)freq.set(t,(freq.get(t)||0)+1);
@@ -46,7 +65,7 @@ async function main(){
    const fromPage=lookup.has(code)?[lookup.get(code),...children.map(([k,v])=>k.slice(-1)+'. '+v)].join(' '):null;
    if(!fromPage){missingPage.push(code);continue;}
    const source=row.OfficialText||'',sim=similarity(source,fromPage);
-   if(tokens(source).join(' ')===tokens(fromPage).join(' ')){exact.push(code);continue;}
+   if(sameExtractedMathText(source,fromPage)){exact.push(code);continue;}
    const sample={code,similarity:sim,sourceLength:source.length,officialLength:fromPage.length,
     sourceTail:source.slice(-110),officialTail:fromPage.slice(-110)};
    notIdentical.push(sample);
@@ -66,4 +85,5 @@ async function main(){
   firstLow:lowSimilarity.slice(0,12),missingInOfficialPage:missingPage.slice(0,15),officialChildSubstandards:children.length,
   fetchErrors:fetchErrors.length},null,2));
 }
-main().catch(e=>{console.error(e);process.exitCode=1});
+if(require.main===module)main().catch(e=>{console.error(e);process.exitCode=1});
+module.exports={clean,tokens,notationTokens,sameExtractedMathText,similarity};
