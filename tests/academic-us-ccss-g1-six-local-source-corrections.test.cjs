@@ -29,8 +29,10 @@ test('all six Grade 1 fixes exactly source/English-SHA bound and unapproved',()=
   assert.ok(example.length>230&&steps.length>190&&concepts.length>100,e.lessonCode);
   assert.equal((examples=>examples.match(/Step \d:/g)||[])(steps).length,5);
   assert.ok(!/<(?:svg|path)\b/i.test(example));
-  for(const x of (example+'\n'+steps).matchAll(/(\d+)\s*([+-])\s*(\d+)\s*=\s*(\d+)(?!\d)/g)){
-   assert.equal(x[2]==='+'?+x[1]+ +x[3]:+x[1]- +x[3],+x[4],e.lessonCode+': '+x[0]);
+  for(const x of (example+'\n'+steps).matchAll(/(\d+)\s*([+-])\s*(\d+)(?:\s*([+-])\s*(\d+))?\s*=\s*(\d+)(?!\d)/g)){
+   const first=x[2]==='+'?Number(x[1])+Number(x[3]):Number(x[1])-Number(x[3]);
+   const result=x[4]?(x[4]==='+'?first+Number(x[5]):first-Number(x[5])):first;
+   assert.equal(result,Number(x[6]),e.lessonCode+': '+x[0]);
   }
  }
 });
