@@ -220,6 +220,40 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
     }
 
     [Fact]
+    public async Task LegacyCourseLookup_RejectsCrossSchoolIdsBeforeAnyWrite()
+    {
+        await using var db = Db($"phase29-legacy-cross-school-{Guid.NewGuid():N}");
+        var owner = Guid.NewGuid();
+        var stranger = Guid.NewGuid();
+        var record = new SchoolCurriculumAdoption
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = owner,
+            AcademicProgramId = Guid.NewGuid(),
+            GradeLevelId = Guid.NewGuid(),
+            SubjectId = Guid.NewGuid(),
+            FrameworkVersionId = Guid.NewGuid(),
+            CurriculumLogicalLevel = 11,
+            CurriculumLevelKey = CurriculumLevelIdentityRegistry.BuildKey(
+                MathematicsCurriculumPackRegistry.CommonCoreCode, 11,
+                "Course/pathway mapping"),
+            CurriculumPathway = "Course/pathway mapping",
+            IsActive = true,
+            RowVersion = [1, 2, 3, 4]
+        };
+        db.SchoolCurriculumAdoptions.Add(record);
+        await db.SaveChangesAsync();
+
+        var repository = new AcademicStructureRepository(db);
+        Assert.Null(await repository.GetCurriculumAdoptionAsync(stranger, record.Id));
+        var owned = await repository.GetCurriculumAdoptionAsync(owner, record.Id);
+        Assert.Same(record, owned);
+        Assert.Equal("Course/pathway mapping", owned!.CurriculumPathway);
+        Assert.False(await db.SchoolCurriculumAdoptions.AnyAsync(x =>
+            x.SchoolId == stranger && x.Id == record.Id));
+    }
+
+    [Fact]
     public void NormalAcademicUi_UsesExplicitCurriculumLevelFlow()
     {
         var root = FindRepositoryRoot();

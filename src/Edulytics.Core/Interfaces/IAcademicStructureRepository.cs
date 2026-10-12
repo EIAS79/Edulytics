@@ -66,7 +66,8 @@ public interface IAcademicStructureRepository
     Task<SchoolCurriculumAdoption?> GetCurriculumAdoptionAsync(
         Guid schoolId,
         Guid id,
-        CancellationToken cancellationToken = default);
+        CancellationToken cancellationToken = default) =>
+        Task.FromResult<SchoolCurriculumAdoption?>(null);
 
     Task<Subject?> GetSubjectAsync(
         Guid schoolId,

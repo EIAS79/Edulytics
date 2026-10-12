@@ -436,6 +436,10 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
             return Fail(nameof(request.CurriculumAdoptionId),
                 ExplicitCurriculumLevelErrorCode.CurriculumAdoptionNotFound);
 
+        if (!adoption.RowVersion.SequenceEqual(request.ExpectedRowVersion))
+            return Fail(nameof(request.CurriculumAdoptionId),
+                ExplicitCurriculumLevelErrorCode.StaleCourseSelection);
+
         // Refuse already-selected, unrelated, or ambiguously imported courses.
         var old = CurriculumLevelIdentityRegistry.Find(adoption.CurriculumLevelKey);
         if (old is null ||
