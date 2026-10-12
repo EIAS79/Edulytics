@@ -35,6 +35,20 @@ public static class LessonPracticeContractRegistry
 
     private static readonly LessonPracticeContract[] Entries =
     [
+        // Source-bound 2021 IM G1 U01 L01: Add to 10 with two dot cubes.
+        // Across-ten and subtraction are not this first lesson's target.
+        // Counting/representing collections up to 20 is taught in Rich V2.
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L01",
+            "number.whole.add_subtract",
+            "ADD_TO_10_DOT_CUBES",
+            [
+                "number.whole.add_subtract.within_10.build",
+                "number.whole.add_subtract.within_10.apply"
+            ],
+            "IM2021_G1_U01_L01_SOURCE_REVIEWED",
+            "READY_VERIFIED",
+            Version),
         new(
             "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY",
             "algebra.relationships.two_unknowns",
