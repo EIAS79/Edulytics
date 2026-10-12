@@ -293,8 +293,8 @@ for key, schoolname in SCHOOLS:
                 "G1 Count and Add is not offered to the actual Grade 1 student", target)
             chosen_lesson_id, chosen_lesson_code = target[0]
             expected_families = [
-                "number.whole.add_subtract.within_10.build",
-                "number.whole.add_subtract.within_10.apply",
+                "usccss.g1.u01.l01.count_collection_to20",
+                "usccss.g1.u01.l01.add_dot_cubes_to10",
             ]
         else:
             assert candidates, (key, "no learner-visible READY_VERIFIED US CCSS lesson")
