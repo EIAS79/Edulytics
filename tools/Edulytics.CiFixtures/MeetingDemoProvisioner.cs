@@ -152,7 +152,7 @@ internal static class MeetingDemoProvisioner
             "primary",
             1,
             6,
-            1, // Grade 1 student login for exact Count and Add pilot HTTPS
+            2, // CCSS logical level 2 = Grade 1 (logical level 1 is Kindergarten)
             6,
             null),
         new(
