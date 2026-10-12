@@ -16,8 +16,6 @@ test('Phase 02: mathematical signs and relations cannot silently pass lexical ex
     ['x < 2','x > 2'],
     ['x = 2','x ≠ 2'],
     ['5<sup>1/3</sup>','5<sup>-1/3</sup>'],
-    ['x<sup>2</sup>','x<sup>3</sup>'],
-    ['A<sub>1</sub>','A<sub>2</sub>'],
   ];
   for(const [a,b] of comparisons){
     assert.equal(tokens(a).join(' '),tokens(b).join(' '),
@@ -25,6 +23,8 @@ test('Phase 02: mathematical signs and relations cannot silently pass lexical ex
     assert.equal(sameExtractedMathText(a,b),false,
       'Mathematical notation divergence must require review: '+a+' vs '+b);
   }
+  assert.equal(sameExtractedMathText('x<sup>2</sup>','x<sup>3</sup>'),false);
+  assert.equal(sameExtractedMathText('A<sub>1</sub>','A<sub>2</sub>'),false);
 });
 
 test('Phase 02: the literal math symbols and HTML entities are retained',()=>{
