@@ -201,6 +201,30 @@ public sealed class AcademicStructureController : Controller
     }
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [HttpPost("curriculum-levels/legacy-course")]
+    [ValidateAntiForgeryToken]
+    public Task<IActionResult> ReconcileLegacyUsHighSchoolCourse(
+        Guid curriculumAdoptionId,
+        string curriculumLevelKey,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryDecodeRowVersion(rowVersion, out var expected))
+            return Task.FromResult(RedirectWithError("ErrorConcurrencyConflict"));
+
+        var levels = ExplicitLevels;
+        if (levels is null)
+            return Task.FromResult<IActionResult>(StatusCode(500));
+
+        return ExecuteExplicitAsync(
+            id => levels.ReconcileLegacyUsHighSchoolCourseAsync(
+                id, new ReconcileLegacyUsHighSchoolCourseRequest(
+                    curriculumAdoptionId, curriculumLevelKey, expected),
+                cancellationToken),
+            "SuccessCurriculumLevelAdded");
+    }
+
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("curriculum-classes")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateCurriculumClass(

@@ -184,6 +184,11 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
         _db.ClassGroups.SingleOrDefaultAsync(
             x => x.SchoolId == schoolId && x.Id == id, cancellationToken);
 
+    public Task<SchoolCurriculumAdoption?> GetCurriculumAdoptionAsync(
+        Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
+        _db.SchoolCurriculumAdoptions.SingleOrDefaultAsync(
+            x => x.SchoolId == schoolId && x.Id == id, cancellationToken);
+
     public Task<Subject?> GetSubjectAsync(
         Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
         _db.Subjects.SingleOrDefaultAsync(

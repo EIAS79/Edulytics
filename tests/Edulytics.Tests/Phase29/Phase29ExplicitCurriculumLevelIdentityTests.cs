@@ -236,6 +236,10 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
         Assert.DoesNotContain("asp-action=\"CreateSubject\"", academic);
         Assert.Contains("asp-action=\"AdoptCurriculumLevel\"", academic);
         Assert.Contains("asp-action=\"CreateCurriculumClass\"", academic);
+        Assert.Contains("asp-action=\"ReconcileLegacyUsHighSchoolCourse\"", academic);
+        Assert.Contains("name=\"rowVersion\"", academic);
+        Assert.Contains("Choose course (no default)", academic);
+        Assert.Contains("name=\"curriculumLevelKey\"", academic);
         Assert.Contains("asp-action=\"CreateCurriculumTeacherAssignment\"", academic);
         Assert.Contains("name=\"curriculumAdoptionId\"", academic);
 

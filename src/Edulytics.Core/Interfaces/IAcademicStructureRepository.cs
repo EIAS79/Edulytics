@@ -63,6 +63,11 @@ public interface IAcademicStructureRepository
         Guid id,
         CancellationToken cancellationToken = default);
 
+    Task<SchoolCurriculumAdoption?> GetCurriculumAdoptionAsync(
+        Guid schoolId,
+        Guid id,
+        CancellationToken cancellationToken = default);
+
     Task<Subject?> GetSubjectAsync(
         Guid schoolId,
         Guid id,
