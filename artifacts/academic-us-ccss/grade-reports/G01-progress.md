@@ -57,6 +57,14 @@ The authorized local Grade 1 Illustrative Mathematics/Kendall Hunt teacher prepa
 
 These authored repairs are guarded by exact lesson codes, canonical SHA, original English body SHA, outcome codes and source URLs. **No local files were modified.** The linked HTML pages are teacher-preparation goals rather than complete independent proof of student visual delivery, question correctness, licensing rights or L7 signoff. All six remain **not academically certified** until the L1–L7 grade plan is fulfilled.
 
+## Local publisher goal/provenance check across **all 146 Grade 1 lessons**
+
+**Confirmed in this execution:** every G1 lesson code (146/146) has a corresponding locally archived Illustrative Mathematics/Kendall Hunt teacher-preparation HTML file, with an exact SHA-256 fingerprint and a short source-derived teacher-facing learning goal. Identity matching used the full lesson `G1:Uxx:Lyy` mapping; no Grade 1 lesson lacks the named local preparation source.
+
+The full 146-row machine-readable evidence register is [G01-146-local-teacher-source-evidence.json](G01-146-local-teacher-source-evidence.json), and the fail-closed inventory regression is `tests/academic-us-ccss-g1-all-publisher-sources.test.cjs`.
+
+**Limits:** finding a preparation file and checking its goal does **not** validate the entire student lesson, actual rendered Rich V2 content, questions and rubrics, all individual math solutions, publisher rights or independent L7 academic approval. The original grade-wide source screen remains a screen only. **Grade 1 academic status is still NO-GO; no individual L7 signoffs recorded.** Work continues within G1; no G2 review or production deployment.
+
 ## Required next actions, still **within Grade 1**
 
 1. Compare original raw source with the actual content materialized into Rich V2, especially prior repairs U01:L13, U01:L15 and U04:L03; never label the old raw defect as a live defect without verification.
