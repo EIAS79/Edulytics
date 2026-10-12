@@ -1,3 +1,6 @@
+using System.Globalization;
+using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Services.Mathematics;
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Lessons;
@@ -95,6 +98,53 @@ public sealed class CommonCoreG1CountAndAddPilotCorrectionTests
                 {
                     CultureCode = "en", Title = "A user edited the existing title"
                 }]));
+    }
+
+    [Fact]
+    public void ActualLessonPracticeFamiliesGenerateAndGradeCorrectAndWrongNumericAnswers()
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(Code, out var contract));
+        Assert.NotNull(contract);
+        Assert.NotEmpty(contract!.AllowedQuestionFamilies);
+
+        var engine = new ExactSkillContractQuestionEngine();
+        var generated = 0;
+        var wrongAnswersRejected = 0;
+        var seed = 8100101;
+        foreach (var family in contract.AllowedQuestionFamilies.Distinct(StringComparer.Ordinal))
+        {
+            foreach (var difficulty in new[]
+                     {
+                         ExactSkillQuestionDifficulty.Standard,
+                         ExactSkillQuestionDifficulty.Stretch,
+                         ExactSkillQuestionDifficulty.Challenge
+                     })
+            {
+                var question = Assert.Single(engine.Generate(
+                    "g1-count-add-pilot", Code, [family], difficulty,
+                    1, seed++, []));
+                Assert.Equal(family, question.Family);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    family, question.Parameters, question.CorrectAnswer),
+                    "Correct response must be accepted for " + family + "/" + difficulty);
+                generated++;
+
+                if (int.TryParse(question.CorrectAnswer, NumberStyles.Integer,
+                    CultureInfo.InvariantCulture, out var actual))
+                {
+                    Assert.False(ExactSkillContractQuestionEngine.Verify(
+                        family, question.Parameters,
+                        (actual + 999).ToString(CultureInfo.InvariantCulture)),
+                        "An invalid numeric response was accepted for " + family);
+                    wrongAnswersRejected++;
+                }
+            }
+        }
+        Assert.True(generated >= contract.AllowedQuestionFamilies.Count * 3);
+        Assert.True(wrongAnswersRejected > 0,
+            "No numeric wrong-answer grading cases covered for Count and Add.");
+        // Representation (drawings/dot cubes), UI feedback and persistence
+        // remain separate L5/L6 evidence; this is an engine-level pilot only.
     }
 
     [Fact]
