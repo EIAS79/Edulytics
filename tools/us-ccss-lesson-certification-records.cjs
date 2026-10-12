@@ -47,15 +47,15 @@ const emptyDimension = () => ({
   verifiedAtUtc: null, contentSha256: null, notApplicableReason: null
 });
 function createInitialLedger(source) {
+  // Source metadata lives in the immutable authoritative audit file; do not
+  // duplicate it in 1,560 pending records. Per-dimension evidence is allocated
+  // only when work on a lesson actually starts (null means not reviewed).
   const records = source.records.map(x => ({
-    lessonCode: x.lessonCode, title: x.title, gradeOrCourse: x.gradeOrCourse,
-    blueprintCode: x.blueprintCode, pathway: x.pathway ?? null, courseCode: x.courseCode ?? null,
-    publisherSourceUrl: x.sourceUrl, sourceSemanticSha256: x.sourceSemanticSha256,
-    contentVersion: null, contentSha256: null, officialOutcomeCodes: x.officialOutcomeCodes,
-    formalTargetCodes: x.formalTargetCodes, lessonSkillProfileId: null,
+    lessonCode: x.lessonCode,
+    contentVersion: null, contentSha256: null,
     gates: Object.fromEntries(gateNames.map(g => [g, emptyGate()])),
-    reviewDimensions: Object.fromEntries(dimensionNames.map(g => [g, emptyDimension()])),
-    unresolvedDefects: [], status: 'QUEUED', academicDecision: 'NOT_CERTIFIED'
+    reviewDimensions: null, unresolvedDefects: [],
+    status: 'QUEUED', academicDecision: 'NOT_CERTIFIED'
   }));
   return {
     schemaVersion: 2, kind: 'LESSON_LEVEL_INTERNAL_CERTIFICATION_LEDGER', policyId,
@@ -84,22 +84,19 @@ function validateLedger(source, ledger) {
     const origin = canonical.get(row.lessonCode);
     assert(origin && !seen.has(row.lessonCode), 'Unknown or duplicate lesson: ' + row.lessonCode);
     seen.add(row.lessonCode);
-    for (const key of ['title', 'gradeOrCourse', 'blueprintCode'])
-      assert(row[key] === origin[key], 'Immutable source identity drift: ' + row.lessonCode + '/' + key);
-    assert(row.pathway === (origin.pathway ?? null) &&
-      row.courseCode === (origin.courseCode ?? null) &&
-      row.publisherSourceUrl === origin.sourceUrl &&
-      row.sourceSemanticSha256 === origin.sourceSemanticSha256 &&
-      JSON.stringify(row.officialOutcomeCodes) === JSON.stringify(origin.officialOutcomeCodes) &&
-      JSON.stringify(row.formalTargetCodes) === JSON.stringify(origin.formalTargetCodes),
-      'Publisher/official outcome drift: ' + row.lessonCode);
+    // Source title, publisher SHA, outcomes, grade and course identity are
+    // rehydrated from the authoritative audit; never copied into this ledger.
+    if (Object.hasOwn(row, 'sourceSemanticSha256'))
+      assert(row.sourceSemanticSha256 === origin.sourceSemanticSha256,
+        'Publisher source drift: ' + row.lessonCode);
 
     assert(row.gates && Object.keys(row.gates).length === 6 &&
       gateNames.every(g => Object.hasOwn(row.gates, g)),
       'Expected exactly six L1-L6 gates: ' + row.lessonCode);
-    assert(row.reviewDimensions && Object.keys(row.reviewDimensions).length === 8 &&
-      dimensionNames.every(g => Object.hasOwn(row.reviewDimensions, g)),
-      'Expected eight lesson dimensions: ' + row.lessonCode);
+    if (row.reviewDimensions !== null)
+      assert(row.reviewDimensions && Object.keys(row.reviewDimensions).length === 8 &&
+        dimensionNames.every(g => Object.hasOwn(row.reviewDimensions, g)),
+        'Expected eight lesson dimensions when review starts: ' + row.lessonCode);
     assert(row.contentSha256 === null || isSha(row.contentSha256),
       'Invalid effective content SHA: ' + row.lessonCode);
     assert(states.has(row.status) && Array.isArray(row.unresolvedDefects),
@@ -115,7 +112,7 @@ function validateLedger(source, ledger) {
           isCommitSha(item.sourceSha) && isSha(row.contentSha256),
           'PASS without evidence/time/SHA: ' + row.lessonCode + '/' + g);
     }
-    for (const d of dimensionNames) {
+    for (const d of row.reviewDimensions === null ? [] : dimensionNames) {
       const item = row.reviewDimensions[d];
       assert(item && ['NOT_STARTED','IN_PROGRESS','PASS','FAIL','BLOCKED','NOT_APPLICABLE'].includes(item.status) &&
         Array.isArray(item.evidenceIds) && item.evidenceIds.every(nonempty) &&
@@ -134,7 +131,12 @@ function validateLedger(source, ledger) {
 
     const l1to4 = gateNames.slice(0, 4).every(x => row.gates[x].status === 'PASS');
     const l1to6 = gateNames.every(x => row.gates[x].status === 'PASS');
-    const eight = dimensionNames.every(d => ['PASS','NOT_APPLICABLE'].includes(row.reviewDimensions[d].status));
+    const eight = row.reviewDimensions !== null && dimensionNames.every(d =>
+      ['PASS','NOT_APPLICABLE'].includes(row.reviewDimensions[d].status));
+    if (row.reviewDimensions === null)
+      assert(row.status === 'QUEUED' || row.status === 'AUTOMATED_SCREENED' ||
+        row.status === 'REWORK_REQUIRED' || row.status === 'BLOCKED',
+        'Missing review dimensions for reviewed lesson: ' + row.lessonCode);
     if (row.status === 'CONTENT_REVIEWED')
       assert(l1to4 && eight, 'CONTENT_REVIEWED lacks L1-L4 or eight dimensions: ' + row.lessonCode);
     if (row.status === 'EVIDENCE_READY') {
