@@ -106,6 +106,13 @@ public sealed class CommonCoreG1CountAndAddPilotCorrectionTests
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(Code, out var contract));
         Assert.NotNull(contract);
         Assert.NotEmpty(contract!.AllowedQuestionFamilies);
+        Assert.Equal(
+            new[] {
+                "number.whole.add_subtract.within_10.build",
+                "number.whole.add_subtract.within_10.apply"
+            },
+            contract.AllowedQuestionFamilies);
+        Assert.Equal("ADD_TO_10_DOT_CUBES", contract.Mechanic);
 
         var engine = new ExactSkillContractQuestionEngine();
         var generated = 0;
