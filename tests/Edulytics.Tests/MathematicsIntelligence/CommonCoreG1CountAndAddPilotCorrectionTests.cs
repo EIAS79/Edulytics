@@ -108,11 +108,11 @@ public sealed class CommonCoreG1CountAndAddPilotCorrectionTests
         Assert.NotEmpty(contract!.AllowedQuestionFamilies);
         Assert.Equal(
             new[] {
-                "number.whole.add_subtract.within_10.build",
-                "number.whole.add_subtract.within_10.apply"
+                "usccss.g1.u01.l01.count_collection_to20",
+                "usccss.g1.u01.l01.add_dot_cubes_to10"
             },
             contract.AllowedQuestionFamilies);
-        Assert.Equal("ADD_TO_10_DOT_CUBES", contract.Mechanic);
+        Assert.Equal("COUNT_COLLECTIONS_AND_DOT_CUBES", contract.Mechanic);
 
         var engine = new ExactSkillContractQuestionEngine();
         var generated = 0;
@@ -131,6 +131,22 @@ public sealed class CommonCoreG1CountAndAddPilotCorrectionTests
                     "g1-count-add-pilot", Code, [family], difficulty,
                     1, seed++, []));
                 Assert.Equal(family, question.Family);
+                if (family == "usccss.g1.u01.l01.count_collection_to20")
+                {
+                    Assert.InRange(question.Parameters["count"], 1, 20);
+                    Assert.Equal(question.Parameters["count"],
+                        question.Prompt.Count(ch => ch == '●'));
+                }
+                else
+                {
+                    Assert.InRange(question.Parameters["left"], 1, 6);
+                    Assert.InRange(question.Parameters["right"], 1, 6);
+                    Assert.InRange(question.Parameters["left"] +
+                        question.Parameters["right"], 2, 10);
+                    Assert.Equal(question.Parameters["left"] +
+                        question.Parameters["right"],
+                        question.Prompt.Count(ch => ch == '●'));
+                }
                 Assert.True(ExactSkillContractQuestionEngine.Verify(
                     family, question.Parameters, question.CorrectAnswer),
                     "Correct response must be accepted for " + family + "/" + difficulty);
