@@ -78,12 +78,39 @@ async function main(){
   officialChildSubstandards:children,missingInOfficialPage:missingPage,
   fetchErrors,lowSimilarity,nonIdenticalResults:notIdentical,
   warning:'Differences are flagged for manual review; mathematical symbols and footnote markup may cause false positives. Do not blindly overwrite official text.'};
- const output=path.join(root,'docs/curriculum/us-ccss-official-text-diff.json');
+ // Side-by-side baseline comparison is deliberately NOT an academic disposition.
+ // Keep the checked-in 107/98 historical queues immutable during fresh source
+ // verification; the candidate report is stored separately for reviewer triage.
+ const trackedOutput=path.join(root,'docs/curriculum/us-ccss-official-text-diff.json');
+ if(process.argv.includes('--compare-baseline')){
+  const previous=read(trackedOutput);
+  const oldCodes=new Set(previous.nonIdenticalResults.map(x=>x.code));
+  const newCodes=new Set(notIdentical.map(x=>x.code));
+  report.baselineComparison={
+   priorCapturedAtUtc:previous.retrievedUtc,
+   previouslyNonIdentical:oldCodes.size,
+   freshlyNonIdentical:newCodes.size,
+   stillNonIdentical:[...newCodes].filter(x=>oldCodes.has(x)).sort(),
+   newlyFlagged:[...newCodes].filter(x=>!oldCodes.has(x)).sort(),
+   noLongerFlagged:[...oldCodes].filter(x=>!newCodes.has(x)).sort(),
+   warning:'Mathematical HTML normalization changed. Differences are source-review candidates only; historical 98 pending human dispositions and nine guarded repairs are not automatically altered.'
+  };
+ }
+ const outputArg=process.argv.find(x=>x.startsWith('--output='));
+ const output=outputArg?path.resolve(outputArg.slice('--output='.length)):trackedOutput;
+ if(!output)throw Error('Missing output path');
  fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
+ if(fetchErrors.length||missingPage.length)
+  process.exitCode=2; // report remains available, but an incomplete source capture cannot pass
+
  console.log(JSON.stringify({sourceNodes:report.sourceNodes,officialExtractedCodes:report.officialExtractedCodes,
   matchedExact:exact.length,nonIdentical:notIdentical.length,lowSimilarity:lowSimilarity.length,
   firstLow:lowSimilarity.slice(0,12),missingInOfficialPage:missingPage.slice(0,15),officialChildSubstandards:children.length,
-  fetchErrors:fetchErrors.length},null,2));
+  fetchErrors:fetchErrors.length,baselineComparison:report.baselineComparison&&{
+   previous:report.baselineComparison.previouslyNonIdentical,
+   fresh:report.baselineComparison.freshlyNonIdentical,
+   newlyFlagged:report.baselineComparison.newlyFlagged,
+   noLongerFlagged:report.baselineComparison.noLongerFlagged}},null,2));
 }
 if(require.main===module)main().catch(e=>{console.error(e);process.exitCode=1});
 module.exports={clean,tokens,notationTokens,sameExtractedMathText,similarity};
