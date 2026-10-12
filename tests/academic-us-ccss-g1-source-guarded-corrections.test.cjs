@@ -12,6 +12,8 @@ const materializerPath = 'src/Edulytics.Data/Seeding/CanonicalLessonContentMater
 const pack = JSON.parse(fs.readFileSync(path.join(root, sourcePath), 'utf8'));
 const source = fs.readFileSync(path.join(root, classPath), 'utf8');
 const materializer = fs.readFileSync(path.join(root, materializerPath), 'utf8');
+const sourceBoundSeeder = fs.readFileSync(path.join(root,
+  'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'), 'utf8');
 const defs = [
   ['G1:U01:L04', 'CountBackOneOrTwo', 'us-ccss-g1-u01-l04-count-back-one-two-v1',
    '5041bfe615b64551b0fc59735b02065bcc4a6036ebea865faaf769e608f17eec'],
@@ -31,6 +33,8 @@ const oldBody = en => createHash('sha256').update([
 ].join('\n') + '\n').digest('hex');
 
 test('exact three Grade 1 original bodies, source locations, standard arrays and persistent hashes are pinned', () => {
+  assert.ok(sourceBoundSeeder.includes('const int expectedSourceBoundCorrectionCount = 12 + 19 + 3;'));
+  assert.ok(sourceBoundSeeder.includes('codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount'));
   assert.ok(materializer.includes('CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document)'));
   assert.match(materializer, /CommonCoreG1SourceGroundedInstructionalCorrections\s*\.GetExpectedContentVersion/);
   assert.match(materializer, /CommonCoreG1SourceGroundedInstructionalCorrections\s*\.CanUpgradeExisting/);
