@@ -133,7 +133,23 @@ for key, schoolname in SCHOOLS:
             WHERE "Code"='PED:US-CCSS-MATH:G1:U01:L01';""").splitlines()
         assert len(pilot_ids) == 1, ("Count and Add source identity", pilot_ids)
         pilot_lesson_id = pilot_ids[0]
-        pilot_page = get_page(student, "/student/learning/lesson/" + pilot_lesson_id)
+        pilot_meta = sql("""
+            SELECT l."Code", l."LogicalLevelFrom"::text,
+                   l."LogicalLevelTo"::text,
+                   COALESCE(c."Status"::text, 'NO_CANONICAL_CONTENT'),
+                   COALESCE(c."ContentVersion", 'NO_CONTENT_VERSION')
+            FROM "CurriculumPedagogicalLessons" l
+            LEFT JOIN "CurriculumLessonContents" c
+              ON c."PedagogicalLessonId"=l."Id"
+            WHERE l."Id"='""" + pilot_lesson_id + """';""")
+        print("DISPOSABLE_G1_U01_L01_CONTENT_METADATA", pilot_meta, flush=True)
+        try:
+            pilot_page = get_page(student, "/student/learning/lesson/" + pilot_lesson_id)
+        except urllib.error.HTTPError:
+            # Access remains fail-closed. Do not fake a student page to pass L6.
+            print("DISPOSABLE_G1_U01_L01_NOT_VISIBLE_TO_STUDENT",
+                  pilot_meta, flush=True)
+            raise
         for required in (
             "Count and Add",
             "Count and show 16 counters",
