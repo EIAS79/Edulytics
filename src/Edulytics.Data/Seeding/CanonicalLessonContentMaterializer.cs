@@ -29,6 +29,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2StoryProblemsSourceCorrection.Apply(document);
         CommonCoreG2TapeDiagramAndStoryResolutionCorrection.Apply(document);
         CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document);
+        CommonCoreG1CountAndAddPilotCorrection.Apply(document);
         CommonCoreG2SourceGroundedFoundationsCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
 
@@ -186,8 +187,11 @@ public static class CanonicalLessonContentMaterializer
         var g1 = CommonCoreG1SourceGroundedInstructionalCorrections
             .GetExpectedContentVersion(document, lesson, g2Tape);
 
-        var g2 = CommonCoreG2SourceGroundedFoundationsCorrections
+        var g1Pilot = CommonCoreG1CountAndAddPilotCorrection
             .GetExpectedContentVersion(document, lesson, g1);
+
+        var g2 = CommonCoreG2SourceGroundedFoundationsCorrections
+            .GetExpectedContentVersion(document, lesson, g1Pilot);
 
         return CommonCoreSourceBoundHtmlEntityCorrections
             .GetExpectedContentVersion(document, lesson, g2);
@@ -217,6 +221,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2TapeDiagramAndStoryResolutionCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG1SourceGroundedInstructionalCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreG1CountAndAddPilotCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2SourceGroundedFoundationsCorrections
             .IsTarget(document, lesson) ||
@@ -279,6 +285,8 @@ public static class CanonicalLessonContentMaterializer
                 document,
                 lesson,
                 existingContentVersion) ||
+        CommonCoreG1CountAndAddPilotCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2SourceGroundedFoundationsCorrections
             .CanUpgradeExisting(
                 document,
