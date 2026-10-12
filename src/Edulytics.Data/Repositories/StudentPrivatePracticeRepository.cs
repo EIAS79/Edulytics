@@ -38,12 +38,28 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
             if (classGroup?.CurriculumAdoptionId is not Guid adoptionId) continue;
             var adoption = adoptions.FirstOrDefault(x => x.Id == adoptionId);
             if (adoption is null || string.IsNullOrWhiteSpace(adoption.CurriculumLevelKey)) continue;
+
+            // Keep historic US high-school enrollments visible to their students,
+            // but explain that a school-admin course decision is still required.
+            // A placeholder/pathway-only identity must never offer broad mixed-course Practice.
+            var isUsHighSchool = adoption.CurriculumLevelKey.StartsWith(
+                "US-CCSS-MATH:", StringComparison.Ordinal) &&
+                adoption.CurriculumLogicalLevel is >= 10 and <= 13;
+            var identity = isUsHighSchool
+                ? CurriculumLevelIdentityRegistry.Find(adoption.CurriculumLevelKey)
+                : null;
+            var needsCourse = isUsHighSchool &&
+                (string.IsNullOrWhiteSpace(identity?.CourseCode) ||
+                 identity.LogicalLevel != adoption.CurriculumLogicalLevel ||
+                 !string.Equals(identity.Pathway, adoption.CurriculumPathway,
+                     StringComparison.Ordinal));
             result.Add(new PrivatePracticeCurriculumOption(
                 adoption.Id,
                 classGroup.Id,
                 enrollment.AcademicYearId,
                 adoption.CurriculumLevelLabel ?? adoption.CurriculumLevelKey!,
-                classGroup.Name));
+                classGroup.Name,
+                needsCourse));
         }
 
         return result
