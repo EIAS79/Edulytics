@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH/CCSSM-2010/G1-G12",
+  "baselineCommitSha": "367a24ecc4385878c95f58f510f498bc1d13a222",
+  "purpose": "Phase 04 bounded learner-facing mathematical content repairs; not academic certification",
+  "gate": "NO-GO",
+  "repairs": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:COMPLEX:U01:L01",
+      "contentPackFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-complex-phase29-v1.lesson-content-pack.json",
+      "expectedOldCanonicalBodySha256": "414882cc1224f02d23d355318af600c2becddfcfc950ad429d4ab2a8a5cac58d",
+      "correctedCanonicalBodySha256": "ae23672bda4e80100fc695406822546f81b70141fe491b2c84842c346cd1dce7",
+      "unchangedPublisherSourceSha256": "27dac39569fca34f2199b780b425d62ec96e8b30357007fe10da00580eae802d",
+      "officialOutcomeCodes": [
+        "CCSS:HSN-CN.A.3",
+        "CCSS:HSN-CN.B.4",
+        "CCSS:HSN-CN.B.5",
+        "CCSS:HSN-CN.B.6"
+      ],
+      "repairCategory": "SOURCE_EXCERPT_REPLACED_WITH_TOPIC_SPECIFIC_MATHEMATICAL_EXPLANATION",
+      "humanAcademicSignoff": "PENDING"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "contentPackFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
+      "expectedOldCanonicalBodySha256": "a7e75836a2258b9c42b8ea8acc2894c2e9872ef1e45a1c3019c1c0cc52ee8b0e",
+      "correctedCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+      "unchangedPublisherSourceSha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+      "officialOutcomeCodes": [
+        "CCSS:HSA-REI.C.8",
+        "CCSS:HSA-REI.C.9"
+      ],
+      "repairCategory": "SOURCE_EXCERPT_REPLACED_WITH_TOPIC_SPECIFIC_MATHEMATICAL_EXPLANATION",
+      "humanAcademicSignoff": "PENDING"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "contentPackFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
+      "expectedOldCanonicalBodySha256": "4955b26a30b684bad5928e4dcb5800c6e32f4cffcde336fd7bd33b46739e84b7",
+      "correctedCanonicalBodySha256": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
+      "unchangedPublisherSourceSha256": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
+      "officialOutcomeCodes": [
+        "CCSS:HSF-BF.B.5"
+      ],
+      "repairCategory": "SOURCE_EXCERPT_REPLACED_WITH_TOPIC_SPECIFIC_MATHEMATICAL_EXPLANATION",
+      "humanAcademicSignoff": "PENDING"
+    }
+  ]
+}
