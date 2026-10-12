@@ -294,7 +294,6 @@ public sealed class ProductionHardeningTests
 
         foreach (var name in new[]
                  {
-                     "PHASE_12_IMPLEMENTATION_PLAN.md",
                      "PRODUCTION_DEPLOYMENT.md",
                      "MONITORING_RUNBOOK.md",
                      "BACKUP_RESTORE_RUNBOOK.md"

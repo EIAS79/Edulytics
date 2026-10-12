@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Real HTTPS two-tenant smoke test. Run only against disposable CI PostgreSQL."""
+import html
 import http.cookiejar
 import json
 import os
@@ -124,6 +125,104 @@ for key, schoolname in SCHOOLS:
     get_page(teacher, "/school/assessments")
     get_page(student, "/student/dashboard")
     get_page(student, "/student/learning")
+    if PROGRAMME == "US-CCSS" and key == "commoncore-primary":
+        # EXACT one-lesson student-facing authenticated HTTPS regression.
+        # No claim about deployed Render staging; CI runs a disposable school.
+        pilot_code = "PED:US-CCSS-MATH:G1:U01:L01"
+        pilot_ids = sql("""
+            SELECT "Id"::text FROM "CurriculumPedagogicalLessons"
+            WHERE "Code"='PED:US-CCSS-MATH:G1:U01:L01';""").splitlines()
+        assert len(pilot_ids) == 1, ("Count and Add source identity", pilot_ids)
+        pilot_lesson_id = pilot_ids[0]
+        pilot_meta = sql("""
+            SELECT l."Code", l."LogicalLevelFrom"::text,
+                   l."LogicalLevelTo"::text,
+                   COALESCE(c."Status"::text, 'NO_CANONICAL_CONTENT'),
+                   COALESCE(c."ContentVersion", 'NO_CONTENT_VERSION')
+            FROM "CurriculumPedagogicalLessons" l
+            LEFT JOIN "CurriculumLessonContents" c
+              ON c."LessonNodeId"=l."Id"
+            WHERE l."Id"='""" + pilot_lesson_id + """';""")
+        print("DISPOSABLE_G1_U01_L01_CONTENT_METADATA", pilot_meta, flush=True)
+        try:
+            pilot_page = html.unescape(
+                get_page(student, "/student/learning/lesson/" + pilot_lesson_id))
+        except urllib.error.HTTPError:
+            # Access remains fail-closed. Do not fake a student page to pass L6.
+            print("DISPOSABLE_G1_U01_L01_NOT_VISIBLE_TO_STUDENT",
+                  pilot_meta, flush=True)
+            raise
+        for required in (
+            "Count and Add",
+            "Count and show 16 counters",
+            "Add dots on two cubes",
+            "5 + 3 = 8",
+            "16 counters",
+            "rich-lesson-visual",
+            "rich-lesson-section",
+            "CC BY 4.0",
+            "im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/lesson.html",
+        ):
+            assert required in pilot_page, (
+                "G1 U01 L01 authenticated Rich V2 content missing", required)
+        assert "rich-lesson-visual--placevaluechart" in pilot_page, (
+            "G1 U01 L01 ten-frame and dot-cube representation is not rendered")
+        # Real Chromium rendering at desktop + mobile viewport. The validated
+        # student login cookie is transferred only into the disposable CI browser.
+        # This does not interact with Render or a real user's school account.
+        from playwright.sync_api import sync_playwright
+        jar = next(
+            handler.cookiejar for handler in student.handlers
+            if isinstance(handler, urllib.request.HTTPCookieProcessor))
+        cookies = [{"name": cookie.name, "value": cookie.value, "url": BASE}
+                   for cookie in jar if cookie.secure]
+        assert cookies, "Authenticated Grade 1 browser session lacks secure cookies"
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(headless=True, args=["--no-sandbox"])
+            try:
+                for screen, width, height in (
+                    ("desktop", 1440, 900),
+                    ("mobile", 390, 844),
+                ):
+                    context = browser.new_context(
+                        ignore_https_errors=True,
+                        viewport={"width": width, "height": height})
+                    try:
+                        context.add_cookies(cookies)
+                        page = context.new_page()
+                        response = page.goto(
+                            BASE + "/student/learning/lesson/" + pilot_lesson_id,
+                            wait_until="domcontentloaded", timeout=40000)
+                        assert response is not None and response.status == 200, (
+                            screen, "Grade 1 browser lesson was not accessible")
+                        figures = page.locator(
+                            "figure.rich-lesson-visual--placevaluechart")
+                        assert figures.count() == 2, (
+                            screen, "expected both Count and Add representations")
+                        assert figures.nth(0).locator(
+                            ".rich-lesson-table td").all_text_contents().count("●") == 16, (
+                            screen, "10+6 model lost counters")
+                        assert figures.nth(1).locator(
+                            ".rich-lesson-table td").all_text_contents().count("●") == 8, (
+                            screen, "5+3 cube model lost dots")
+                        assert figures.nth(0).get_by_text(
+                            "Count and show 16 counters").is_visible(), (
+                            screen, "counting representation not visible")
+                        assert figures.nth(1).get_by_text(
+                            "Add dots on two cubes").is_visible(), (
+                            screen, "cube representation not visible")
+                        assert page.get_by_text("CC BY 4.0").first.is_visible(), (
+                            screen, "publisher source attribution hidden")
+                        page.screenshot(
+                            path=f"/tmp/g1-u01-l01-{screen}.png", full_page=True)
+                        print("DISPOSABLE_G1_L01_CHROMIUM_VIEWPORT_PASS",
+                              screen, width, height, flush=True)
+                    finally:
+                        context.close()
+            finally:
+                browser.close()
+        print("DISPOSABLE_US_CCSS_G1_U01_L01_STUDENT_RICH_V2_RENDER_PASS",
+              pilot_code, pilot_lesson_id)
     get_page(student, "/student/practice")
     deny(student, "/school/assessments")
     deny(teacher, "/student/dashboard")
@@ -241,9 +340,23 @@ for key, schoolname in SCHOOLS:
             parts = row.split("|", 1)
             if len(parts) == 2 and parts[1] in verified:
                 candidates.append((parts[0], parts[1]))
-        assert candidates, (key, "no learner-visible READY_VERIFIED US CCSS lesson")
-        chosen_lesson_id, chosen_lesson_code = candidates[0]
-        expected_families = verified[chosen_lesson_code]
+        if key == "commoncore-primary":
+            # Source-grounded lesson-specific contract: this must prove the
+            # actual first Grade 1 lesson, not any unrelated mapped lesson.
+            target = [row.split("|", 1) for row in offered if
+                      row.endswith("|PED:US-CCSS-MATH:G1:U01:L01")]
+            assert len(target) == 1, (
+                "G1 Count and Add is not offered to the actual Grade 1 student", target)
+            chosen_lesson_id, chosen_lesson_code = target[0]
+            practice_fields["questionCount"] = "2"  # cover BOTH publisher lesson activities
+            expected_families = [
+                "usccss.g1.u01.l01.count_collection_to20",
+                "usccss.g1.u01.l01.add_dot_cubes_to10",
+            ]
+        else:
+            assert candidates, (key, "no learner-visible READY_VERIFIED US CCSS lesson")
+            chosen_lesson_id, chosen_lesson_code = candidates[0]
+            expected_families = verified[chosen_lesson_code]
         practice_fields["scope"] = "Lesson"
         practice_fields["lessonId"] = chosen_lesson_id
         print("DISPOSABLE_US_CCSS_LESSON_ROUTE_READY", key, chosen_lesson_code)
@@ -273,31 +386,40 @@ for key, schoolname in SCHOOLS:
             JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
             WHERE a."Id"='""" + match_attempt.group(1) + """'
             ORDER BY pi."Order";""").splitlines()
-        assert len(item_rows) == 1, (key, "missing generated exact item")
-        actual_lesson, generated_family, item_id, expected_answer = item_rows[0].split("|", 3)
-        assert actual_lesson == chosen_lesson_id, (key, "practice lesson identity mismatch")
-        assert generated_family in expected_families, (key, "wrong lesson question family", generated_family)
-        assert expected_answer.strip(), (key, "empty exact answer")
+        expected_count = 2 if key == "commoncore-primary" else 1
+        assert len(item_rows) == expected_count, (key, "missing generated exact items", item_rows)
+        generated_items = [row.split("|", 3) for row in item_rows]
+        assert all(row[0] == chosen_lesson_id for row in generated_items), (
+            key, "practice lesson identity mismatch")
+        assert all(row[1] in expected_families and row[3].strip()
+                   for row in generated_items), (
+            key, "unexpected family or missing exact answer", generated_items)
+        if key == "commoncore-primary":
+            assert {row[1] for row in generated_items} == set(expected_families), (
+                "G1 counting and dot-cube activities both must be assessed", generated_items)
 
-        # Exercise actual student answer grading and private-attempt persistence
-        # on disposable CI, never relying solely on generation success.
+        # Exercise authenticated student grading for BOTH lesson activity goals,
+        # not a random successful item from some other American lesson.
         csrf = re.search(
             r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
             generated_body)
-        html_id = re.search(
-            r'name="attemptItemIds\[0\]"[^>]*value="([0-9a-fA-F-]{36})"',
-            generated_body)
-        assert csrf and html_id and html_id.group(1) == item_id, (
-            key, "personal test answer form mismatch")
-        answer_body = urllib.parse.urlencode({
-            "__RequestVerificationToken": csrf.group(1),
-            "attemptItemIds[0]": item_id,
-            "answers[0]": expected_answer,
-        }).encode()
+        assert csrf, (key, "missing personal test CSRF token")
+        answer_fields = [("__RequestVerificationToken", csrf.group(1))]
+        for index, (_, family, item_id, expected_answer) in enumerate(generated_items):
+            html_id = re.search(
+                r'name="attemptItemIds\[' + str(index) +
+                r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                generated_body)
+            assert html_id and html_id.group(1) == item_id, (
+                key, "personal test item identity mismatch", family, index)
+            answer_fields.extend([
+                ("attemptItemIds[" + str(index) + "]", item_id),
+                ("answers[" + str(index) + "]", expected_answer),
+            ])
         with student.open(urllib.request.Request(
             BASE + "/student/practice/attempt/" + match_attempt.group(1)
             + "/personal-test-submit",
-            data=answer_body, method="POST",
+            data=urllib.parse.urlencode(answer_fields).encode(), method="POST",
         ), timeout=60) as submitted_practice:
             assert submitted_practice.status == 200, (key, "Practice submission HTTP failure")
         evidence = sql("""
@@ -310,9 +432,10 @@ for key, schoolname in SCHOOLS:
             WHERE p."Id"='""" + match_attempt.group(1) + """'
             GROUP BY p."Id", p."SubmittedAtUtc", p."Score";""")
         complete, score, correct_responses = evidence.split("|")
-        assert complete == "1" and float(score) == 1.0 and correct_responses == "1", (
-            key, "exact Practice answer not scored and persisted", evidence)
-        print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key, generated_family)
+        assert complete == "1" and float(score) == float(expected_count) and int(correct_responses) == expected_count, (
+            key, "exact Practice answers not correctly scored/persisted", evidence)
+        print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key,
+              ",".join(row[1] for row in generated_items), flush=True)
 
     practice_attempts[key] = match_attempt.group(1)
     students[key] = student

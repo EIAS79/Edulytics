@@ -49,6 +49,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static readonly IReadOnlySet<string> SupportedFamilies =
         new HashSet<string>(StringComparer.Ordinal)
         {
+            "usccss.g1.u01.l01.count_collection_to20",
+            "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
             "number.whole.subtract.direct",
             "number.lcm.two_numbers",
@@ -283,6 +285,20 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        // Grade 1 first-edition source: cardinality up to 20 and
+        // addition of two dot cubes up to 10. Fail closed for tampered tasks.
+        if (family == "usccss.g1.u01.l01.count_collection_to20")
+            return parameters.TryGetValue("count", out var count) &&
+                count is >= 1 and <= 20 &&
+                int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var counted) &&
+                counted == count;
+        if (family == "usccss.g1.u01.l01.add_dot_cubes_to10")
+            return parameters.TryGetValue("left", out var left) &&
+                parameters.TryGetValue("right", out var right) &&
+                left is >= 1 and <= 6 && right is >= 1 and <= 6 &&
+                left + right <= 10 &&
+                int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var total) &&
+                total == left + right;
         if (SupportingPracticeCompletionEngine.Supports(family))
             return SupportingPracticeCompletionEngine.Verify(family, parameters, answer);
 
@@ -864,6 +880,10 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
+            "usccss.g1.u01.l01.count_collection_to20" =>
+                BuildG1L01Counting(random, scale),
+            "usccss.g1.u01.l01.add_dot_cubes_to10" =>
+                BuildG1L01CubeAddition(random, scale),
             "number.whole.add.direct" =>
                 BuildWholeAdd(random, scale),
             "number.whole.subtract.direct" =>
@@ -1568,6 +1588,34 @@ public sealed class ExactSkillContractQuestionEngine
             "List HH, HT, TH, TT. Exactly one head occurs in HT and TH, so 2 of 4 equally likely outcomes are favourable.",
             AssessmentItemType.ShortAnswer,
             ("variant", variant));
+    }
+
+    private static ExactProblem BuildG1L01Counting(Random random, int scale)
+    {
+        var count = random.Next(scale == 1 ? 1 : scale == 2 ? 7 : 13, 21);
+        var dots = string.Join(" ", Enumerable.Repeat("●", count));
+        return Problem(
+            "usccss.g1.u01.l01.count_collection_to20",
+            $"Count each counter once: {dots}  How many counters are there?",
+            "Touch or mark each counter exactly once, then write the total.",
+            AssessmentItemType.Numeric,
+            ("count", count));
+    }
+
+    private static ExactProblem BuildG1L01CubeAddition(Random random, int scale)
+    {
+        // Real 1–6 face values; re-roll pairs whose sum is above 10.
+        var left = random.Next(1, 7);
+        var right = random.Next(1, Math.Min(6, 10 - left) + 1);
+        return Problem(
+            "usccss.g1.u01.l01.add_dot_cubes_to10",
+            $"One cube shows {string.Join(" ", Enumerable.Repeat("●", left))} " +
+            $"and the other shows {string.Join(" ", Enumerable.Repeat("●", right))}. " +
+            "How many dots altogether?",
+            "Count all the dots or start with the first cube and count on.",
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right));
     }
 
     private static ExactProblem BuildWholeAddSubtract(
@@ -2611,6 +2659,10 @@ public sealed class ExactSkillContractQuestionEngine
 
         return problem.Family switch
         {
+            "usccss.g1.u01.l01.count_collection_to20" =>
+                p["count"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g1.u01.l01.add_dot_cubes_to10" =>
+                (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
             "number.whole.add.direct" =>
                 (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
 

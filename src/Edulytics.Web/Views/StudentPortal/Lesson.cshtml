@@ -123,6 +123,18 @@
                      Model.RichContent,
                      Url.Action("LessonYouTube", "StudentPortal", new { id = Model.Id }) ?? string.Empty))" />
         <partial name="_LessonReviewedResources" model="Model" />
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:G1:U01:L01")
+        {
+            <p class="lesson-source-attribution">
+                Source inspiration: <a href="https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/lesson.html"
+                                       target="_blank" rel="noopener noreferrer">Illustrative Mathematics, Grade 1, Unit 1, Lesson 1</a>
+                (© 2021 Illustrative Mathematics, CC BY 4.0).
+                Instructional examples and dot-counter visuals have been adapted or newly created for Edulytics;
+                the publisher's name and logo are not used as an endorsement.
+                <a href="https://creativecommons.org/licenses/by/4.0/"
+                   target="_blank" rel="noopener noreferrer">License terms</a>.
+            </p>
+        }
     </main>@if (Model.Outcomes.Count > 0) { <aside class="lesson-reader-sidebar" aria-label="@L["LessonReference"]"><section class="lesson-reader-sidecard"><h2>@L["StandardsReference"]</h2><div class="lesson-reader-outcomes">@foreach (var outcome in Model.Outcomes) { <article class="lesson-reader-outcome"><strong>@outcome.Code</strong></article> }</div></section></aside> }</div>
 </div>
 

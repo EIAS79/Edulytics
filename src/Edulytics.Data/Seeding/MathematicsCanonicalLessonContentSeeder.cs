@@ -106,7 +106,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6;
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1; // G1 U01 L01 pilot
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -208,6 +208,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2StoryProblemsSourceCorrection.IsTarget(document, lesson) ||
          CommonCoreG2TapeDiagramAndStoryResolutionCorrection.IsTarget(document, lesson) ||
          CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(document, lesson) ||
+         CommonCoreG1CountAndAddPilotCorrection.IsTarget(document, lesson) ||
          CommonCoreG2SourceGroundedFoundationsCorrections.IsTarget(document, lesson) ||
          CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson));
 
@@ -872,6 +873,20 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 translationsByContentId.TryGetValue(
                                     content.Id, out var g1ExistingRows)
                                     ? g1ExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG1CountAndAddPilotCorrection
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG1CountAndAddPilotCorrection
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var countAndAddRows)
+                                    ? countAndAddRows
                                     : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 

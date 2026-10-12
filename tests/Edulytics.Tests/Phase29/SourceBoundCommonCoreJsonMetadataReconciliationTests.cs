@@ -12,7 +12,7 @@ namespace Edulytics.Tests.Phase29;
 public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
 {
     [Fact]
-    public void MetadataOnlyStartupSelector_ExposesExactlyFiftyThreeSourceBoundLessons()
+    public void MetadataOnlyStartupSelector_ExposesExactlyFiftyFourSourceBoundLessons()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var chosen = documents.SelectMany(d => d.Lessons
@@ -21,8 +21,8 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
                 .Select(l => (Doc: d, Lesson: l)))
             .ToArray();
 
-        // Previous 31 source-bound lessons plus 3 previous and 7 newly verified G1 repairs.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6;
+        // Previous 53 source-bound lessons plus the one source-guarded G1 U01 L01 pilot.
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
@@ -58,6 +58,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
         Assert.Contains("PED:US-CCSS-MATH:G1:U07:L13", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U07:L04", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U07:L07", selected);
+        Assert.Contains(CommonCoreG1CountAndAddPilotCorrection.LessonCode, selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L04", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L10", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L17", selected);

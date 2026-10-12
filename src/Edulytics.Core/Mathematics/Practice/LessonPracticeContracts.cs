@@ -35,6 +35,18 @@ public static class LessonPracticeContractRegistry
 
     private static readonly LessonPracticeContract[] Entries =
     [
+        // IM 2021 G1 U01 L01: two original activity goals, no subtraction.
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L01",
+            "number.whole.add_subtract",
+            "COUNT_COLLECTIONS_AND_DOT_CUBES",
+            [
+                "usccss.g1.u01.l01.count_collection_to20",
+                "usccss.g1.u01.l01.add_dot_cubes_to10"
+            ],
+            "IM2021_G1_U01_L01_SOURCE_REVIEWED",
+            "READY_VERIFIED",
+            Version),
         new(
             "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY",
             "algebra.relationships.two_unknowns",

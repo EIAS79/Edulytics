@@ -63,6 +63,10 @@ jobs:
           dotnet build Edulytics.sln --no-restore
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Install isolated Chromium visual test dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check playwright==1.55.0
+          python3 -m playwright install --with-deps chromium
       - name: Create American primary and secondary school fixtures, then exercise real HTTPS student/teacher flows
         env:
           RENDER_SERVICE_ID: ci-disposable
@@ -133,6 +137,13 @@ jobs:
           done
           test "$ready" = true
           python3 tools/phase29/acceptance_two_school_https.py
+      - name: Preserve G1 lesson desktop/mobile visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-u01-l01-rich-v2-chromium-screenshots
+          path: /tmp/g1-u01-l01-*.png
+          if-no-files-found: warn
       - name: Verify only two synthetic schools were created
         run: |
           set -euo pipefail
