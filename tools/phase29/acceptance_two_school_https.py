@@ -353,8 +353,8 @@ for key, schoolname in SCHOOLS:
         answer_fields = [("__RequestVerificationToken", csrf.group(1))]
         for index, (_, family, item_id, expected_answer) in enumerate(generated_items):
             html_id = re.search(
-                r'name="attemptItemIds\\[' + str(index) +
-                r'\\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                r'name="attemptItemIds\[' + str(index) +
+                r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
                 generated_body)
             assert html_id and html_id.group(1) == item_id, (
                 key, "personal test item identity mismatch", family, index)
