@@ -15,7 +15,10 @@ test('six source-verified G1 repairs preserve all pinned before-state guarantees
  assert.equal(new Set(proofs.lessons.map(x=>x.lessonCode)).size,6);
  assert.equal(proofs.academicApproval,'PENDING');
  assert.equal(proofs.originalPacksUnchanged,true);
- assert.ok(selector.includes('expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6;'));
+ assert.ok(selector.includes(
+  'expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1; // G1 U01 L01 pilot'));
+ assert.ok(selector.includes('CommonCoreG1CountAndAddPilotCorrection.IsTarget(document, lesson) ||'),
+  'Only the separately documented G1 U01 L01 pilot may extend the prior source-bound set');
  for(const p of proposals.lessons){
   const l=pack.lessons.find(x=>x.lessonCode==='PED:US-CCSS-MATH:'+p.short);
   const r=proofs.lessons.find(x=>x.lessonCode===l?.lessonCode);
