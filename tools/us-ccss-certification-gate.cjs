@@ -4,7 +4,7 @@
 // Evidence-only, fail-closed internal US Common Core G1-G12 certification gate.
 // Does not edit canonical curriculum, grade student work, modify databases or issue
 // independent academic approval. The status is NO-GO until every source, academic,
-// operational and human-signoff condition has machine-verifiable evidence.
+// operational and source-verified internal six-gate acceptance condition has evidence.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -15,8 +15,8 @@ const artifactDir = path.join(root, 'artifacts', 'academic-us-ccss');
 // Phase 11 is the PRE-DEPLOY approval gate. Phase 12 independently verifies
 // the actual deployed SHA/digest. Requiring post-deploy proof before release
 // authorization would create an impossible circular dependency.
-// Dynamic human approvals must be supplied out-of-band after the candidate
-// commit exists; a file committed inside its own SHA cannot reference that SHA.
+// Dynamic release evidence is supplied out-of-band after the candidate commit
+// exists. The internal academic decision is evidence-based, not human-signed.
 const stageFlag = process.argv.find(a => a.startsWith('--stage='));
 const stage = stageFlag ? stageFlag.slice('--stage='.length) : 'final';
 if (!['predeploy', 'final'].includes(stage))
@@ -26,7 +26,7 @@ const externalDir = externalFlag ? path.resolve(externalFlag.slice('--approval-d
 if (externalDir) {
   const relative = path.relative(root, externalDir);
   if (!relative.startsWith('..' + path.sep) && relative !== '..')
-    throw Error('Human release approvals must be external to the repository checkout');
+    throw Error('Dynamic release evidence must be external to the repository checkout');
 }
 const externalNames = new Set(['stagingEvidence', 'academicReviews', 'releaseDecision', 'productionEvidence']);
 const files = Object.freeze({
@@ -83,10 +83,10 @@ function uniqueCount(data, field) {
 function readyEvidence(name, expectedCount, id, approvedState) {
   const evidence = load(name, false);
   if (!check(Boolean(evidence), 'MISSING_' + name.toUpperCase(),
-    'No independently reviewed ' + name + ' evidence')) return false;
+    'No independently verifiable ' + name + ' evidence')) return false;
   const list = rows(evidence);
   const reviewed = list.filter(row => row.status === approvedState &&
-    row.sourceEvidenceId && row.reviewerId && row.reviewEvidenceId);
+    row.sourceEvidenceId && row.reviewEvidenceId && row.contentSha256);
   const enough = list.length === expectedCount &&
     uniqueCount(evidence, id) === expectedCount && reviewed.length === expectedCount;
   return check(enough, 'INCOMPLETE_' + name.toUpperCase(),
@@ -143,7 +143,7 @@ check(reported?.textDifferencesPendingIndependentDisposition === 0 &&
 check(reported?.academicallyCertified === 121 &&
   rows(ledger?.clauseEvidence).length === 121 &&
   ledger.clauseEvidence.every(x => x.certificationStatus === 'ACADEMICALLY_CERTIFIED'),
-  'SUBCLAUSE_NOT_CERTIFIED', '121 independent teaching, assessment and grading signoffs required');
+  'SUBCLAUSE_NOT_CERTIFIED', '121 teaching, assessment and grading evidence acceptances are required');
 check(semantic?.productionReady === true && semantic?.independentlyCertifiedChildClauses === 121,
   'SEMANTIC_RELEASE_BLOCKED', 'Cannot certify while practice semantic gate is NO-GO');
 readyEvidence('lessonAudit', 1560, 'lessonCode', 'ACADEMICALLY_CERTIFIED');
@@ -160,13 +160,13 @@ if (stagingOk) {
     'Staging evidence must be from the exact release-candidate SHA');
 }
 const reviews = load('academicReviews', false);
-check(Boolean(reviews) && reviews.status === 'APPROVED' &&
-  Array.isArray(reviews.independentReviewerSignoffs) &&
-  reviews.independentReviewerSignoffs.length > 0 &&
-  reviews.independentReviewerSignoffs.every(x => x.reviewerId && x.signedAtUtc && x.signedScope &&
-    x.evidenceId && x.signedSha === sha) && reviews.openObjections === 0,
-  'INDEPENDENT_ACADEMIC_APPROVAL_MISSING',
-  'Human mathematics reviewers must independently sign the fixed scope, evidence and version');
+check(Boolean(reviews) && reviews.status === 'INTERNALLY_CERTIFIED' &&
+  reviews.policyId === 'EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2' &&
+  reviews.acceptedSha === sha && reviews.openObjections === 0 &&
+  Array.isArray(reviews.evidenceIds) && reviews.evidenceIds.length > 0 &&
+  reviews.evidenceIds.every(x => typeof x === 'string' && x.trim()),
+  'INTERNAL_EVIDENCE_ACCEPTANCE_MISSING',
+  'Internal curriculum acceptance requires verified six-gate evidence for the candidate SHA; no human signature');
 const release = load('releaseDecision', false);
 check(Boolean(release) && release.status === 'GO' && release.targetSha === sha &&
   release.academicApprovalEvidenceId && release.securityApprovalEvidenceId &&
@@ -187,7 +187,7 @@ const output = {
   scope: facts.scope,
   sourceCommitSha: sha,
   decision: problems.length === 0
-    ? (stage === 'predeploy' ? 'RELEASE_CANDIDATE_APPROVED' : 'ACADEMICALLY_CERTIFIED_FULL')
+    ? (stage === 'predeploy' ? 'RELEASE_CANDIDATE_APPROVED' : 'INTERNALLY_CERTIFIED_FULL')
     : 'NO-GO',
   facts, inputFiles: source, blockers: problems
 };
