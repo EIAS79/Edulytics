@@ -82,6 +82,12 @@ Evidence: [G01-six-source-goal-content-repairs.json](G01-six-source-goal-content
 
 **Grade 1 scope has not changed: one 146-lesson continuous academic review, one whole-grade report and no Grade 2 work.**
 
+## Student-facing source archive matched across the same 146 lessons
+
+In addition to the 146 teacher preparation source files, the connected computer contains **146 corresponding Grade 1 student `lesson.html` files**, with lesson-level SHA256 fingerprints and source file sizes. The register [G01-146-local-student-html-sources.json](G01-146-local-student-html-sources.json) cross-links these pages to the exact 146 unique `LessonCode` values already in the teacher-source inventory. All eight source units are represented.
+
+This independently establishes the **presence and identity of local student lesson files**; it does **not** prove the diagrams load, copyrighted assets are usable, source questions are answered correctly, or the Edulytics Rich V2 runtime displays/grades them accurately. Those are still required L4–L6 review and QA tasks, and independent L7 signoff remains absent.
+
 ## Required next actions, still **within Grade 1**
 
 1. Compare original raw source with the actual content materialized into Rich V2, especially prior repairs U01:L13, U01:L15 and U04:L03; never label the old raw defect as a live defect without verification.
