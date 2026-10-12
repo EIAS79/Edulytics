@@ -1,5 +1,25 @@
 # Grade 1 (G1) — whole-grade review: work-in-progress evidence
 
+## Authentic full-length Kendall Hunt teacher lesson HTML — 146/146 available
+
+After isolating the invalid student mirror, the local original `unit-N/lesson-M/lesson.html` files were checked. **Every one of the 146 G1 lessons** has a readable, non-404 full teacher lesson activity page with its own SHA-256 fingerprint, at least 4,356 visible characters and activity content. The pages collectively contain **2,377 raw `<img>` elements and 32 `<table>` elements**; these tag counts do not guarantee correctly rendered, accessible, mathematically accurate visuals. Detailed per-lesson source proof: [G01-146-full-kendallhunt-teacher-lesson-pages.json](G01-146-full-kendallhunt-teacher-lesson-pages.json).
+
+The **Student Public Mirror** is separately documented as 146 invalid 404 pages; it must not be used to verify student tasks or answer keys. Original teacher pages are valid *source material* for reviewing activity objectives and content, **not sufficient evidence of Edulytics runtime parity, learner questions/marking, publisher rights or L7 approval**. Their SHA links are included in the durable 146-row checkpoint for ongoing lesson-by-lesson L1–L6 work.
+
+## Original student HTML archive integrity — critical 146/146 evidence block
+
+Read-only extraction of the entire locally mirrored **Student Public Mirror** Grade 1 `lesson.html` set found **146/146 files to be 404 site-shell HTML rather than authentic student lessons**. Each archive file displays `404 | Section | lesson-N`, has no `<main>` lesson element and zero visible task markers after script/style removal. Filenames and SHA-256 hashes still match the 146 expected lesson identities, but **presence of the file is not evidence of rendered math tasks, solutions, pictures or rubrics**.
+
+Per-lesson source disposition: [G01-146-student-mirror-404-disposition.json](G01-146-student-mirror-404-disposition.json). The 146-row checkpoint records each affected lesson as `BLOCKED_MISSING_EVIDENCE` for visual/assessment/delivery evidence (L4/L5/L6). Genuine publisher or properly authenticated Edulytics learner content plus independent mathematical and grading oracles are required; the invalid local mirror must not be used to pass those gates. This discovery has **not** invalidated the independently checked teacher preparation goals, but it prevents falsely equating publisher-goal matching with student-source verification.
+
+## Active whole-grade review continuation: mixed-center fixes and durable L1–L7 ledger
+
+On the source-verified `main` baseline `cd6a01e20b4b60874a51b7dfba6b7abce1a788f6`, the **same G1 whole-grade review** resumed with four exact learner-body corrections: `G1:U06:L10` (estimate/measure **and** addition), `G1:U06:L16` (collections to 120 **and** unit length), `G1:U07:L12` (shape composition/drawing **and** number work), and `G1:U07:L17` (flat/solid shapes, clock and arithmetic). All four preserve lesson identity, source URL, official outcome order and previous English body SHA. Their new content and independent regression checks remain pending full PR acceptance.
+
+The machine-readable [G01-execution-checkpoint.json](G01-execution-checkpoint.json) now lists **all 146 unique lessons**, their original and local source hashes, each of the eight assessment dimensions, L1–L7 statuses, blockers, previous 25 merged technical corrections and four new PR-only repairs. It records the first unresolved lesson `G1:U01:L01` and the exact next operation, making resumption independent of conversation history. It intentionally records **0/146 complete eight-dimension verifications and 0 human L7 signatures**; technical repairs and static source matches cannot be counted as certifications.
+
+**Release decision: G1 CONTENT_REVIEW_INCOMPLETE / academic NO-GO; do not report CONTENT_REVIEW_COMPLETE or unlock G2 until all 146 lessons satisfy L1–L6.** Once content review is complete, G2 may proceed with G1's L7 pending under the latest execution instruction, without calling G1 academically certified. No production deploy is authorized.
+
 ## Current verified Grade 1 execution checkpoint — 2026-10-12
 
 | Evidence or state | Verified count | Meaning |

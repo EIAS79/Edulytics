@@ -15,7 +15,7 @@ test('six source-verified G1 repairs preserve all pinned before-state guarantees
  assert.equal(new Set(proofs.lessons.map(x=>x.lessonCode)).size,6);
  assert.equal(proofs.academicApproval,'PENDING');
  assert.equal(proofs.originalPacksUnchanged,true);
- assert.ok(selector.includes('expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6;'));
+ assert.match(selector,/expectedSourceBoundCorrectionCount = 12 \+ 19 \+ 3 \+ 7 \+ 6 \+ 6(?: \+ \d+)*;/);
  for(const p of proposals.lessons){
   const l=pack.lessons.find(x=>x.lessonCode==='PED:US-CCSS-MATH:'+p.short);
   const r=proofs.lessons.find(x=>x.lessonCode===l?.lessonCode);

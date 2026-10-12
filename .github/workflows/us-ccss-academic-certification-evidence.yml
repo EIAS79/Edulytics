@@ -21,6 +21,14 @@ on:
       - 'tests/academic-us-ccss-g1-student-source-146.test.cjs'
       - 'artifacts/academic-us-ccss/grade-reports/G01-146-local-student-html-sources.json'
       - 'tests/academic-us-ccss-g1-six-source-goal-teaching-repairs.test.cjs'
+      - 'tests/academic-us-ccss-g1-mixed-center-repairs.test.cjs'
+      - 'tests/academic-us-ccss-g1-resume-checkpoint.test.cjs'
+      - 'tests/academic-us-ccss-g1-student-mirror-404-evidence.test.cjs'
+      - 'tests/academic-us-ccss-g1-full-teacher-lesson-sources.test.cjs'
+      - 'artifacts/academic-us-ccss/grade-reports/G01-146-full-kendallhunt-teacher-lesson-pages.json'
+      - 'artifacts/academic-us-ccss/grade-reports/G01-146-student-mirror-404-disposition.json'
+      - 'artifacts/academic-us-ccss/grade-reports/G01-execution-checkpoint.json'
+      - 'artifacts/academic-us-ccss/grade-reports/G01-mixed-center-source-guarded-repairs.json'
       - 'artifacts/academic-us-ccss/grade-reports/G01-six-source-goal-content-repairs.json'
       - 'artifacts/academic-us-ccss/grade-reports/G01-146-local-teacher-source-evidence.json'
       - 'artifacts/academic-us-ccss/grade-reports/G01-six-local-source-verified-corrections.json'
@@ -89,6 +97,14 @@ jobs:
         run: node --test tests/academic-us-ccss-g1-student-source-146.test.cjs
       - name: Verify six G1 teacher-goal-aligned learner-body corrections
         run: node --test tests/academic-us-ccss-g1-six-source-goal-teaching-repairs.test.cjs
+      - name: Verify four G1 mixed-center exact-SHA repairs
+        run: node --test tests/academic-us-ccss-g1-mixed-center-repairs.test.cjs
+      - name: Verify complete G1 durable source/academic checkpoint
+        run: node --test tests/academic-us-ccss-g1-resume-checkpoint.test.cjs
+      - name: Enforce 146 local student 404 site shells as blocked Grade 1 evidence
+        run: node --test tests/academic-us-ccss-g1-student-mirror-404-evidence.test.cjs
+      - name: Verify all authentic full G1 teacher lesson activity sources
+        run: node --test tests/academic-us-ccss-g1-full-teacher-lesson-sources.test.cjs
       - name: Check all 146 G1 source review rows without granting signoff
         run: node --test tests/academic-us-ccss-g1-whole-grade-review.test.cjs
       - name: Validate all 1560 lesson certification ledger records (no signoff granted)
