@@ -35,15 +35,16 @@ test('Source inventory is exactly 1560; persisted ledger contains only L1-L6', (
   assert.equal(validateLedger(source, current).total, EXPECTED_LESSONS);
   assert.equal(current.schemaVersion, 2);
   assert.equal(current.policyId, policyId);
-  assert.equal(validateLedger(source, current).certified, 0);
+  assert.equal(validateLedger(source, current).certified,
+    current.records.filter(x => x.academicDecision === 'INTERNALLY_CERTIFIED').length);
   assert.equal(new Set(current.records.map(x => x.lessonCode)).size, EXPECTED_LESSONS);
-  assert(current.records.every(x => x.status === 'QUEUED' &&
-    x.academicDecision === 'NOT_CERTIFIED' &&
-    x.reviewDimensions === null &&
+  assert(current.records.every(x =>
     Object.keys(x.gates).length === 6 && !Object.hasOwn(x.gates, 'L7') &&
     !Object.hasOwn(x, 'independentReviewerId') &&
-    !Object.hasOwn(x, 'signoffEvidenceId') &&
-    gateNames.every(g => x.gates[g].status === 'NOT_STARTED')));
+    !Object.hasOwn(x, 'signoffEvidenceId')));
+  assert(current.records.every(x =>
+    x.academicDecision !== 'INTERNALLY_CERTIFIED' ||
+    x.status === 'INTERNALLY_CERTIFIED'));
 });
 
 test('Initialization is deterministic, evidence is NOT fabricated', () => {

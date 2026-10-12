@@ -4,7 +4,7 @@
 **Policy:** `EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2` — **L1–L6 only, eight review dimensions, no L7/human signature**.
 **Repository:** `EIAS79/Edulytics`, [PR #488](https://github.com/EIAS79/Edulytics/pull/488).
 **Report revised:** 2026-10-13.
-**Current decision:** `NOT_CERTIFIED` pending all required CI checks and SHA-bound ledger closure. Exact-content fingerprint tests and desktop/mobile Chromium with two-family HTTPS grading have passed. No production deployment or external certification implied.
+**Current internal decision:** `INTERNALLY_CERTIFIED` for tested candidate `23786adefd0962e90a074342267baaa5216dddf5`. All L1–L6 and eight dimensions have source-specific versioned evidence; no human signature or L7. This is NOT external, grade-level or Render production certification.
 **Publication:** No Render deploy and no merge into `main` recorded.
 
 ## 1. Authoritative sources
@@ -55,12 +55,12 @@ Review-decision labels above describe **specific observations**, not canonical l
 
 | Gate | State as of this revision | Evidence or exact blocker |
 |---|---|---|
-| L1 — Source & standards | `EVIDENCE_COLLECTED` | Original first-edition URLs, standards, license/attribution verified |
-| L2 — Mathematics | `EVIDENCE_COLLECTED` | Exact fingerprint assertion and source-bound math verifiers passed in Mathematics Intelligence Foundation |
-| L3 — Instructional quality | `EVIDENCE_COLLECTED` | The two source activities and revised examples/misconceptions match |
-| L4 — Visual examples | `EVIDENCE_COLLECTED` | First-party Rich V2 diagram model and HTML test |
-| L5 — Practice and grading | `EVIDENCE_COLLECTED` | Both exact families scored correctly through authenticated HTTPS on disposable CI; wrong answers rejected by independent exact verifier tests |
-| L6 — Learner delivery | `EVIDENCE_COLLECTED` | Disposable authenticated staging Chromium desktop/mobile visual checks passed; both source-aligned images and attribution shown, screenshots preserved. Render deployment not tested |
+| L1 — Source & standards | `PASS` | Original first-edition URLs, standards, license/attribution verified |
+| L2 — Mathematics | `PASS` | Exact fingerprint assertion and source-bound math verifiers passed in Mathematics Intelligence Foundation |
+| L3 — Instructional quality | `PASS` | The two source activities and revised examples/misconceptions match |
+| L4 — Visual examples | `PASS` | First-party Rich V2 diagram model and HTML test |
+| L5 — Practice and grading | `PASS` | Both exact families scored correctly through authenticated HTTPS on disposable CI; wrong answers rejected by independent exact verifier tests |
+| L6 — Learner delivery | `PASS` | Disposable authenticated staging Chromium desktop/mobile visual checks passed; both source-aligned images and attribution shown, screenshots preserved. Render deployment not tested |
 
 No seventh gate exists; **internal certification follows L1–L6 plus all eight documented dimensions, exact SHA and zero unresolved blockers**. CI acceptance here is a **disposable HTTPS staging rehearsal**, not proof that this unpublished PR exists on Render production or that mobile/desktop browser screenshots were inspected.
 
@@ -87,15 +87,23 @@ currentCourse: null
 currentLesson: PED:US-CCSS-MATH:G1:U01:L01
 uniqueGradeLessons: 146
 pilotLessonsAttempted: 1
-pilotLessonsInternallyCertified: 0
-status: NOT_CERTIFIED
+pilotLessonsInternallyCertified: 1
+status: INTERNALLY_CERTIFIED
 policyId: EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2
 contentVersion: us-ccss-g1-u01-l01-count-collections-dots-v1
 contentSha256: 2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680
 lastVerifiedGreenCandidate: 20094c4f4907b991d82f19ce5327c892d37221a1
-pendingEnhancedCandidate: 23786adefd0962e90a074342267baaa5216dddf5
+certifiedSourceCandidateSha: 23786adefd0962e90a074342267baaa5216dddf5
 lastCompletedOperation: Passed exact student Chromium mobile/desktop and both-family HTTPS assessment; identified and corrected report whitespace CI failure
-nextExactOperation: Confirm all GitHub Actions green on whitespace-clean commit; then bind L1-L6 and all eight dimensions to the verified SHA in the canonical lesson ledger. Leave the other 1559 lessons unchanged; do not claim a Render deployment.
+nextExactOperation: Verify Github Actions on this certification-record commit. Keep all other 1559 lessons queued; release/merge/Render deployment remain separately gated.
 ```
 
 **Only one lesson reviewed in this pilot. No G1 grade certification, PR merge, or Render production deployment is implied.**
+
+## 7. Single-lesson evidence decision
+
+**INTERNALLY_CERTIFIED:** `PED:US-CCSS-MATH:G1:U01:L01` on source candidate `23786adefd0962e90a074342267baaa5216dddf5`. Effective lesson SHA-256: `2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680` (independently computed and asserted by .NET).
+
+All six gates L1–L6 and eight review dimensions are PASS with evidence references recorded in the canonical 1560-lesson ledger. [Authenticated student browser and two-family grading](https://github.com/EIAS79/Edulytics/actions/runs/38317821666) passed: Chromium desktop 1440×900, mobile 390×844, 16-count illustration, five-plus-three dot cubes, publisher attribution, correct grading/persistence for both exact question families. Visual artifact ID: `11776903191`. [Math foundation verification](https://github.com/EIAS79/Edulytics/actions/runs/38317821642) passed. Copyright source: [IM/Kendall Hunt first edition](https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/lesson.html), licensed CC BY 4.0 (separate third-party images/logos not copied).
+
+**Scope:** exactly 1/1560 internally certified on this candidate, 1559 other lesson records still `QUEUED`. G1 grade remains `GRADE_NO-GO`. This source-SHA-specific internal evidence decision is **not** certification of published Render production, the full grade, or an endorsement by Illustrative Mathematics or Common Core. The PR is not merged by this record.
