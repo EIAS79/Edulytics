@@ -146,8 +146,13 @@ def run():
             errors.append(f"Phase04 wrong source file path: {key}")
         tr = next((x for x in a.get("translations",[]) if x.get("cultureCode")=="en"),None)
         before_tr = next((x for x in b.get("translations",[]) if x.get("cultureCode")=="en"),None)
-        if tr is None or before_tr is None or tr == before_tr:
-            errors.append(f"Phase04 English lesson text not corrected: {key}")
+        if tr is None or before_tr is None:
+            errors.append(f"Phase04 English translation absent: {key}")
+            continue
+        # Before initial merge the original must actually differ; after merge,
+        # an already-reviewed candidate SHA may legitimately match main.
+        if tr == before_tr and b.get("canonicalBodySha256") != entry["expectedCorrectedCanonicalBodySha256"]:
+            errors.append(f"Phase04 content changed without its expected baseline: {key}")
             continue
         if any(x.get("cultureCode")!="en" and x != y for x,y in
                zip(a.get("translations",[]),b.get("translations",[]))):
