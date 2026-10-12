@@ -284,9 +284,22 @@ for key, schoolname in SCHOOLS:
             parts = row.split("|", 1)
             if len(parts) == 2 and parts[1] in verified:
                 candidates.append((parts[0], parts[1]))
-        assert candidates, (key, "no learner-visible READY_VERIFIED US CCSS lesson")
-        chosen_lesson_id, chosen_lesson_code = candidates[0]
-        expected_families = verified[chosen_lesson_code]
+        if key == "commoncore-primary":
+            # Source-grounded lesson-specific contract: this must prove the
+            # actual first Grade 1 lesson, not any unrelated mapped lesson.
+            target = [row.split("|", 1) for row in offered if
+                      row.endswith("|PED:US-CCSS-MATH:G1:U01:L01")]
+            assert len(target) == 1, (
+                "G1 Count and Add is not offered to the actual Grade 1 student", target)
+            chosen_lesson_id, chosen_lesson_code = target[0]
+            expected_families = [
+                "number.whole.add_subtract.within_10.build",
+                "number.whole.add_subtract.within_10.apply",
+            ]
+        else:
+            assert candidates, (key, "no learner-visible READY_VERIFIED US CCSS lesson")
+            chosen_lesson_id, chosen_lesson_code = candidates[0]
+            expected_families = verified[chosen_lesson_code]
         practice_fields["scope"] = "Lesson"
         practice_fields["lessonId"] = chosen_lesson_id
         print("DISPOSABLE_US_CCSS_LESSON_ROUTE_READY", key, chosen_lesson_code)
