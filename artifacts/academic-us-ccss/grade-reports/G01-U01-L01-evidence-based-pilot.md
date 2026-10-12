@@ -1,10 +1,10 @@
 # G1 / Unit 01 / Lesson 01 — Count and Add — Internal Evidence Report
 
-**Scope:** `PED:US-CCSS-MATH:G1:U01:L01` only. No lesson 2 or G1 grade certification.  
-**Policy:** `EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2` — **L1–L6 only, eight review dimensions, no L7/human signature**.  
-**Repository:** `EIAS79/Edulytics`, [PR #488](https://github.com/EIAS79/Edulytics/pull/488).  
-**Report revised:** 2026-10-13.  
-**Current decision:** `NOT_CERTIFIED` pending the final candidate's two-activity HTTPS and content-fingerprint CI results. **Do not mistake earlier green runs or this report for certification.**  
+**Scope:** `PED:US-CCSS-MATH:G1:U01:L01` only. No lesson 2 or G1 grade certification.
+**Policy:** `EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2` — **L1–L6 only, eight review dimensions, no L7/human signature**.
+**Repository:** `EIAS79/Edulytics`, [PR #488](https://github.com/EIAS79/Edulytics/pull/488).
+**Report revised:** 2026-10-13.
+**Current decision:** `NOT_CERTIFIED` pending all required CI checks and SHA-bound ledger closure. Exact-content fingerprint tests and desktop/mobile Chromium with two-family HTTPS grading have passed. No production deployment or external certification implied.
 **Publication:** No Render deploy and no merge into `main` recorded.
 
 ## 1. Authoritative sources
@@ -56,11 +56,11 @@ Review-decision labels above describe **specific observations**, not canonical l
 | Gate | State as of this revision | Evidence or exact blocker |
 |---|---|---|
 | L1 — Source & standards | `EVIDENCE_COLLECTED` | Original first-edition URLs, standards, license/attribution verified |
-| L2 — Mathematics | `PENDING_SHA_CI` | Source-based mathematical and answer verifiers; exact fingerprint assertion added |
+| L2 — Mathematics | `EVIDENCE_COLLECTED` | Exact fingerprint assertion and source-bound math verifiers passed in Mathematics Intelligence Foundation |
 | L3 — Instructional quality | `EVIDENCE_COLLECTED` | The two source activities and revised examples/misconceptions match |
 | L4 — Visual examples | `EVIDENCE_COLLECTED` | First-party Rich V2 diagram model and HTML test |
-| L5 — Practice and grading | `PENDING_TWO_FAMILY_HTTPS` | Unit positive/negative checks pass on prior candidate; final two-family student attempt added |
-| L6 — Learner delivery | `PENDING_FINAL_CANDIDATE_CI` | Prior authenticated disposable HTTPS confirms lesson page, visual markup, protected student access, private practice persistence and grading; final candidate not yet confirmed |
+| L5 — Practice and grading | `EVIDENCE_COLLECTED` | Both exact families scored correctly through authenticated HTTPS on disposable CI; wrong answers rejected by independent exact verifier tests |
+| L6 — Learner delivery | `EVIDENCE_COLLECTED` | Disposable authenticated staging Chromium desktop/mobile visual checks passed; both source-aligned images and attribution shown, screenshots preserved. Render deployment not tested |
 
 No seventh gate exists; **internal certification follows L1–L6 plus all eight documented dimensions, exact SHA and zero unresolved blockers**. CI acceptance here is a **disposable HTTPS staging rehearsal**, not proof that this unpublished PR exists on Render production or that mobile/desktop browser screenshots were inspected.
 
@@ -77,7 +77,7 @@ Previous full passing candidate `20094c4f4907b991d82f19ce5327c892d37221a1`:
 - [Common Core Official Closure — run 38316222080](https://github.com/EIAS79/Edulytics/actions/runs/38316222080): passed.
 - [Neon Offline Content Inventory — run 38316222002](https://github.com/EIAS79/Edulytics/actions/runs/38316222002): passed.
 
-**Latest candidate pending:** `029e84ecfda59c15075b3086c8d65410ab330273`, after adding an independent C# fingerprint assertion and a real two-family HTTPS student attempt. The exact latest green runs and SHA must be captured before declaring all L1–L6 `PASS`.
+**Latest fully rendered candidate:** `23786adefd0962e90a074342267baaa5216dddf5` — [G1 authenticated Chromium and two-family HTTPS run 38317821666](https://github.com/EIAS79/Edulytics/actions/runs/38317821666) PASSED, including desktop (1440×900), mobile (390×844), two correct answers and source attribution. Screenshots: artifact `11776903191`, `g1-u01-l01-rich-v2-chromium-screenshots`. `Evaluation Production Gate` failed because this report had five trailing-whitespace lines; those are fixed in the current edit. The completed final CI state must be verified before recording `INTERNALLY_CERTIFIED`.
 
 ## 6. Durable execution checkpoint
 
@@ -93,9 +93,9 @@ policyId: EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2
 contentVersion: us-ccss-g1-u01-l01-count-collections-dots-v1
 contentSha256: 2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680
 lastVerifiedGreenCandidate: 20094c4f4907b991d82f19ce5327c892d37221a1
-pendingEnhancedCandidate: 029e84ecfda59c15075b3086c8d65410ab330273
-lastCompletedOperation: All 8 CI workflows green for previous pilot; added fingerprint and both-family HTTPS evidence checks
-nextExactOperation: Inspect latest fingerprint and two-family HTTPS CI; if green, update the single canonical lesson ledger with justified L1-L6, eight review dimensions and version-bound evidence. Do not alter other lesson records or claim a production Render deployment.
+pendingEnhancedCandidate: 23786adefd0962e90a074342267baaa5216dddf5
+lastCompletedOperation: Passed exact student Chromium mobile/desktop and both-family HTTPS assessment; identified and corrected report whitespace CI failure
+nextExactOperation: Confirm all GitHub Actions green on whitespace-clean commit; then bind L1-L6 and all eight dimensions to the verified SHA in the canonical lesson ledger. Leave the other 1559 lessons unchanged; do not claim a Render deployment.
 ```
 
 **Only one lesson reviewed in this pilot. No G1 grade certification, PR merge, or Render production deployment is implied.**
