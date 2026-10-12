@@ -1,5 +1,21 @@
 # Grade 1 (G1) — whole-grade review: work-in-progress evidence
 
+## Current verified Grade 1 execution checkpoint — 2026-10-12
+
+| Evidence or state | Verified count | Meaning |
+|---|---:|---|
+| Exact unique Grade 1 lesson codes | **146 / 146** | One whole-grade scope, no groups of 40 |
+| Local IM/Kendall Hunt teacher source identities and SHA256 | **146 / 146** | Preparation pages only; not full academic signoff |
+| Local student `lesson.html` identities and SHA256 | **146 / 146** | Archived original HTML, not verified Rich V2 display |
+| Unique Grade 1 lessons with exact source-bound learner-body repairs | **25** | 3 legacy + PR #479 (3) + #480 (7) + #481 (6) + #483 (6); **not certifications** |
+| Lessons without a recorded guarded repair | **121** | Their academic correctness is **not inferred** |
+| Full eight-dimension academic reviews independently proven | **0** | Missing independent complete evidence |
+| Independent L1–L7 human-signed certifications | **0 / 146** | **Grade 1 NO-GO; do not begin G2** |
+
+**Source of truth:** the 25 distinct lesson codes are in `CommonCoreG1SourceGroundedInstructionalCorrections.cs` and their PR evidence; source manifests are `G01-146-local-teacher-source-evidence.json` and `G01-146-local-student-html-sources.json`. All 25 repairs are engineering corrections, with classroom visual, assessment and independent signoff requirements still outstanding. Do not reopen completed guarded repairs without source/body SHA drift or a new confirmed issue.
+
+**Next remaining G1 review priorities (not yet certified findings):** teacher-goal alignment for mixed center lessons such as `G1:U06:L10`, `G1:U06:L16`, `G1:U07:L12` and `G1:U07:L17`; exact questions, graphical representations, solution grading and student/teacher Staging delivery for **all 146 lessons**. Document each review at `LessonCode` granularity. Confirm copyright/usage and publisher edition. Independent L7 signoff must be provided by a real qualified mathematics reviewer and refer to the exact content SHA. Maintain a single Grade 1 final report only when all 146 pass.
+
 > **NOT A FINAL ACADEMIC CERTIFICATION REPORT.** This is the first execution output for the standalone whole-grade plan. All 146 source lesson codes are enumerated **without subdividing Grade 1 into batches**. Original embedded source is not necessarily the effective learner-rendered body.
 
 - Baseline Git SHA: `2f28a83d9f747030c219cb38ecdc3076dca286e6`. Source pack blob: `25cc1603a15fb5ceb862100c44ed1368f957b235`.
