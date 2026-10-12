@@ -378,7 +378,7 @@ for key, schoolname in SCHOOLS:
             WHERE p."Id"='""" + match_attempt.group(1) + """'
             GROUP BY p."Id", p."SubmittedAtUtc", p."Score";""")
         complete, score, correct_responses = evidence.split("|")
-        assert complete == "1" and float(score) == 1.0 and int(correct_responses) == expected_count, (
+        assert complete == "1" and float(score) == float(expected_count) and int(correct_responses) == expected_count, (
             key, "exact Practice answers not correctly scored/persisted", evidence)
         print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key,
               ",".join(row[1] for row in generated_items), flush=True)
