@@ -86,7 +86,16 @@ async function main(){
   const previous=read(trackedOutput);
   const oldCodes=new Set(previous.nonIdenticalResults.map(x=>x.code));
   const newCodes=new Set(notIdentical.map(x=>x.code));
+  const historical=read(path.join(root,'artifacts/academic-us-ccss/02-official-text-diff-dispositions.json'));
+  const correctionCodes=new Set(historical.recordedCorrections.map(x=>x.standardCode.replace(/^CCSS:/,'')));
+  if(correctionCodes.size!==9||historical.unreviewedStandards.length!==98)
+   throw Error('Historical nine-repair/98-review partition drifted; reconcile manually');
+  const candidateOpen=[...newCodes].filter(x=>!correctionCodes.has(x)).sort();
   report.baselineComparison={
+   previousHumanDispositionsPending:historical.unreviewedStandards.length,
+   freshHumanReviewCandidates: candidateOpen.length,
+   recordedCorrectionsStillInRawDiff:[...newCodes].filter(x=>correctionCodes.has(x)).sort(),
+   freshPendingCandidateCodes:candidateOpen,
    priorCapturedAtUtc:previous.retrievedUtc,
    previouslyNonIdentical:oldCodes.size,
    freshlyNonIdentical:newCodes.size,
@@ -109,6 +118,8 @@ async function main(){
   fetchErrors:fetchErrors.length,baselineComparison:report.baselineComparison&&{
    previous:report.baselineComparison.previouslyNonIdentical,
    fresh:report.baselineComparison.freshlyNonIdentical,
+   freshHumanReviewCandidates:report.baselineComparison.freshHumanReviewCandidates,
+   recordedCorrectionsStillInRawDiff:report.baselineComparison.recordedCorrectionsStillInRawDiff.length,
    newlyFlagged:report.baselineComparison.newlyFlagged,
    noLongerFlagged:report.baselineComparison.noLongerFlagged}},null,2));
 }
