@@ -294,6 +294,7 @@ for key, schoolname in SCHOOLS:
             assert len(target) == 1, (
                 "G1 Count and Add is not offered to the actual Grade 1 student", target)
             chosen_lesson_id, chosen_lesson_code = target[0]
+            practice_fields["questionCount"] = "2"  # cover BOTH publisher lesson activities
             expected_families = [
                 "usccss.g1.u01.l01.count_collection_to20",
                 "usccss.g1.u01.l01.add_dot_cubes_to10",
@@ -331,31 +332,40 @@ for key, schoolname in SCHOOLS:
             JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
             WHERE a."Id"='""" + match_attempt.group(1) + """'
             ORDER BY pi."Order";""").splitlines()
-        assert len(item_rows) == 1, (key, "missing generated exact item")
-        actual_lesson, generated_family, item_id, expected_answer = item_rows[0].split("|", 3)
-        assert actual_lesson == chosen_lesson_id, (key, "practice lesson identity mismatch")
-        assert generated_family in expected_families, (key, "wrong lesson question family", generated_family)
-        assert expected_answer.strip(), (key, "empty exact answer")
+        expected_count = 2 if key == "commoncore-primary" else 1
+        assert len(item_rows) == expected_count, (key, "missing generated exact items", item_rows)
+        generated_items = [row.split("|", 3) for row in item_rows]
+        assert all(row[0] == chosen_lesson_id for row in generated_items), (
+            key, "practice lesson identity mismatch")
+        assert all(row[1] in expected_families and row[3].strip()
+                   for row in generated_items), (
+            key, "unexpected family or missing exact answer", generated_items)
+        if key == "commoncore-primary":
+            assert {row[1] for row in generated_items} == set(expected_families), (
+                "G1 counting and dot-cube activities both must be assessed", generated_items)
 
-        # Exercise actual student answer grading and private-attempt persistence
-        # on disposable CI, never relying solely on generation success.
+        # Exercise authenticated student grading for BOTH lesson activity goals,
+        # not a random successful item from some other American lesson.
         csrf = re.search(
             r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
             generated_body)
-        html_id = re.search(
-            r'name="attemptItemIds\[0\]"[^>]*value="([0-9a-fA-F-]{36})"',
-            generated_body)
-        assert csrf and html_id and html_id.group(1) == item_id, (
-            key, "personal test answer form mismatch")
-        answer_body = urllib.parse.urlencode({
-            "__RequestVerificationToken": csrf.group(1),
-            "attemptItemIds[0]": item_id,
-            "answers[0]": expected_answer,
-        }).encode()
+        assert csrf, (key, "missing personal test CSRF token")
+        answer_fields = [("__RequestVerificationToken", csrf.group(1))]
+        for index, (_, family, item_id, expected_answer) in enumerate(generated_items):
+            html_id = re.search(
+                r'name="attemptItemIds\\[' + str(index) +
+                r'\\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                generated_body)
+            assert html_id and html_id.group(1) == item_id, (
+                key, "personal test item identity mismatch", family, index)
+            answer_fields.extend([
+                ("attemptItemIds[" + str(index) + "]", item_id),
+                ("answers[" + str(index) + "]", expected_answer),
+            ])
         with student.open(urllib.request.Request(
             BASE + "/student/practice/attempt/" + match_attempt.group(1)
             + "/personal-test-submit",
-            data=answer_body, method="POST",
+            data=urllib.parse.urlencode(answer_fields).encode(), method="POST",
         ), timeout=60) as submitted_practice:
             assert submitted_practice.status == 200, (key, "Practice submission HTTP failure")
         evidence = sql("""
@@ -368,9 +378,10 @@ for key, schoolname in SCHOOLS:
             WHERE p."Id"='""" + match_attempt.group(1) + """'
             GROUP BY p."Id", p."SubmittedAtUtc", p."Score";""")
         complete, score, correct_responses = evidence.split("|")
-        assert complete == "1" and float(score) == 1.0 and correct_responses == "1", (
-            key, "exact Practice answer not scored and persisted", evidence)
-        print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key, generated_family)
+        assert complete == "1" and float(score) == 1.0 and int(correct_responses) == expected_count, (
+            key, "exact Practice answers not correctly scored/persisted", evidence)
+        print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key,
+              ",".join(row[1] for row in generated_items), flush=True)
 
     practice_attempts[key] = match_attempt.group(1)
     students[key] = student
