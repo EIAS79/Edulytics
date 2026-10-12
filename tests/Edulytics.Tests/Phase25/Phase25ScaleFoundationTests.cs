@@ -27,44 +27,23 @@ public sealed class Phase25ScaleFoundationTests
     }
 
     [Fact]
-    public void Phase25Plan_RequiresProcessIndependentBehavior()
+    public void Phase25Discovery_DocumentsScaleLimitationsWithoutAnObsoletePlan()
     {
-        var plan =
-            ReadSource(
-                "docs/PHASE_25_IMPLEMENTATION_PLAN.md");
-
-        Assert.Contains(
-            "2 web instances",
-            plan,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "2 workers",
-            plan,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "distributed sensitive-rate-limit",
-            plan,
-            StringComparison.OrdinalIgnoreCase);
-
-        Assert.Contains(
-            "No behavior depends incorrectly on process-local memory",
-            plan,
-            StringComparison.Ordinal);
+        var evidence = ReadSource("docs/PHASE_25_SCALE_DISCOVERY.md");
+        Assert.Contains("process-independent", evidence, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("distributed sensitive quotas", evidence, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("2-web / 2-worker staging topology", evidence, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("not automatically global security quotas", evidence, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
     public void Discovery_DoesNotClaimPhase26PerformanceAcceptance()
     {
-        var plan =
-            ReadSource(
-                "docs/PHASE_25_IMPLEMENTATION_PLAN.md");
-
-        Assert.Contains(
-            "does not perform Phase 26",
-            plan,
-            StringComparison.Ordinal);
+        var evidence = ReadSource("docs/PHASE_25_SCALE_DISCOVERY.md");
+        Assert.Contains("still needs explicit qualification", evidence, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Known Phase 25 boundaries", evidence, StringComparison.OrdinalIgnoreCase);
+        // Historical discovery is evidence, never a live performance sign-off.
+        Assert.DoesNotContain("Phase 26 accepted", evidence, StringComparison.OrdinalIgnoreCase);
     }
 
     private static string ReadSource(
