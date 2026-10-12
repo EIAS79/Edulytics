@@ -5707,6 +5707,42 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.g1.u01.l01.count_collection_to20",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-cardinality-count-from-original-collection",
+      "representations": [
+        "dots",
+        "cardinality"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g1.u01.l01.add_dot_cubes_to10",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-two-dot-cubes-sum-at-most-10",
+      "representations": [
+        "dot_cubes",
+        "counting_on"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
