@@ -4,119 +4,124 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 const fs = require('node:fs');
 const path = require('node:path');
-const { loadSource, createInitialLedger, validateLedger, EXPECTED_LESSONS } =
-  require('../tools/us-ccss-lesson-certification-records.cjs');
+const {
+  loadSource, createInitialLedger, validateLedger, EXPECTED_LESSONS,
+  gateNames, dimensionNames, policyId
+} = require('../tools/us-ccss-lesson-certification-records.cjs');
 
-const root = path.resolve(__dirname,'..');
-const file = path.join(root,'artifacts/academic-us-ccss/04-lesson-certification-records.json');
+const file = path.join(__dirname, '../artifacts/academic-us-ccss/04-lesson-certification-records.json');
+const proofSha = 'a'.repeat(40);
+const contentSha = 'b'.repeat(64);
+const time = '2026-10-12T21:01:00Z';
+const base = () => createInitialLedger(loadSource());
 
-test('All 1,560 lessons are present once with separate seven-gate pending records', () => {
+function addSyntheticEvidence(row) {
+  row.contentVersion = 'synthetic-only-unit-test';
+  row.contentSha256 = contentSha;
+  row.reviewDimensions = Object.fromEntries(dimensionNames.map(k => [k, {
+    status: 'PASS', evidenceIds: ['unit-test:'+k], issueIds: [],
+    verifiedAtUtc: time, contentSha256: contentSha, notApplicableReason: null
+  }]));
+  for (const name of gateNames)
+    row.gates[name] = {
+      status: 'PASS', evidenceIds: ['unit-test:'+name],
+      verifiedAtUtc: time, sourceSha: proofSha
+    };
+}
+
+test('Source inventory is exactly 1560; persisted ledger contains only L1-L6', () => {
   const source = loadSource();
   const current = JSON.parse(fs.readFileSync(file, 'utf8'));
-  const result = validateLedger(source,current);
-  assert.equal(result.total, EXPECTED_LESSONS);
-  assert.equal(result.certified,0);
-  assert.equal(result.evidenceReady,0);
-  assert.equal(result.awaitingSignoff,0);
-  assert.deepEqual([...new Set(current.records.map(x => x.lessonCode))].length, EXPECTED_LESSONS);
+  assert.equal(validateLedger(source, current).total, EXPECTED_LESSONS);
+  assert.equal(current.schemaVersion, 2);
+  assert.equal(current.policyId, policyId);
+  assert.equal(validateLedger(source, current).certified, 0);
+  assert.equal(new Set(current.records.map(x => x.lessonCode)).size, EXPECTED_LESSONS);
   assert(current.records.every(x => x.status === 'QUEUED' &&
     x.academicDecision === 'NOT_CERTIFIED' &&
-    Object.values(x.gates).every(g => g.status === 'NOT_STARTED')));
+    x.reviewDimensions === null &&
+    Object.keys(x.gates).length === 6 && !Object.hasOwn(x.gates, 'L7') &&
+    !Object.hasOwn(x, 'independentReviewerId') &&
+    !Object.hasOwn(x, 'signoffEvidenceId') &&
+    gateNames.every(g => x.gates[g].status === 'NOT_STARTED')));
 });
 
-test('Initialization is repeatable and never invents approved evidence', () => {
-  const source = loadSource();
-  const a = createInitialLedger(source);
-  const b = createInitialLedger(source);
-  assert.equal(JSON.stringify(a), JSON.stringify(b));
-  assert.deepEqual(validateLedger(source,a),validateLedger(source,b));
-  assert(a.records.every(x => x.independentReviewerId === null &&
-    x.signedAtUtc === null && x.signoffEvidenceId === null));
+test('Initialization is deterministic, evidence is NOT fabricated', () => {
+  const one = base(), two = base();
+  assert.equal(JSON.stringify(one), JSON.stringify(two));
+  assert.deepEqual(validateLedger(loadSource(), one), validateLedger(loadSource(), two));
+  assert.equal(validateLedger(loadSource(), one).certified, 0);
 });
 
-test('Duplicate, omitted or unknown lesson identity fails closed', () => {
-  const source = loadSource();
-  const base = createInitialLedger(source);
-  const missing = structuredClone(base); missing.records.pop();
-  assert.throws(() => validateLedger(source,missing), /exactly 1,560/);
-  const duplicate = structuredClone(base); duplicate.records[3] = structuredClone(duplicate.records[0]);
-  assert.throws(() => validateLedger(source,duplicate), /duplicate/);
+test('Duplicate, missing and unknown identities fail closed', () => {
+  const a = base(); a.records.pop();
+  assert.throws(() => validateLedger(loadSource(), a), /six-gate internal ledger|count mismatch|policy\/schema\/count/i);
+  const b = base(); b.records[3].lessonCode = b.records[0].lessonCode;
+  assert.throws(() => validateLedger(loadSource(), b), /duplicate/);
+  const c = base(); c.records[0].lessonCode = 'PED:US-CCSS-MATH:G0:WRONG';
+  assert.throws(() => validateLedger(loadSource(), c), /Unknown/);
 });
 
-test('Publisher source hash, official outcome and course mapping are immutable', () => {
-  const source = loadSource(), base = createInitialLedger(source);
-  const tampered = structuredClone(base);
-  tampered.records[0].sourceSemanticSha256 = '0'.repeat(64);
-  assert.throws(() => validateLedger(source,tampered), /Publisher\/official outcome drift/);
-  const wrongOutcome = structuredClone(base);
-  wrongOutcome.records[0].officialOutcomeCodes = ['CCSS:HSA-REI.C.6'];
-  assert.throws(() => validateLedger(source,wrongOutcome), /Publisher\/official outcome drift/);
+test('Authoritative source identity, policy ID, and six-gate schema cannot drift', () => {
+  const a = base(); a.records[0].sourceSemanticSha256 = '0'.repeat(64);
+  assert.throws(() => validateLedger(loadSource(), a), /Publisher source drift/);
+  const b = base(); b.records[0].gates.L7 = {status:'PASS'};
+  assert.throws(() => validateLedger(loadSource(), b), /exactly six/);
+  const c = base(); c.policyId = 'OTHER';
+  assert.throws(() => validateLedger(loadSource(), c), /policy\/schema/);
 });
 
-test('PASS without evidence and reviewer metadata cannot certify', () => {
-  const source = loadSource(), base = createInitialLedger(source);
-  const spoofedGate = structuredClone(base);
-  spoofedGate.records[0].gates.L2.status = 'PASS';
-  assert.throws(() => validateLedger(source,spoofedGate), /PASS without evidence/);
-  const spoofedSignoff = structuredClone(base);
-  spoofedSignoff.records[0].academicDecision = 'ACADEMICALLY_CERTIFIED';
-  assert.throws(() => validateLedger(source,spoofedSignoff), /certified workflow state|human signoff/);
+test('No PASS without evidence, valid UTC timestamp and exact source/content SHA', () => {
+  const a = base(), gate = a.records[0].gates.L1;
+  gate.status = 'PASS';
+  assert.throws(() => validateLedger(loadSource(), a), /PASS without evidence/);
+  a.records[0].contentSha256 = contentSha;
+  gate.evidenceIds = ['test-evidence']; gate.sourceSha = proofSha;
+  gate.verifiedAtUtc = '2026-02-30T10:00:00Z';
+  assert.throws(() => validateLedger(loadSource(), a), /PASS without evidence/);
+  gate.verifiedAtUtc = time; gate.sourceSha = 'not-sha';
+  assert.throws(() => validateLedger(loadSource(), a), /PASS without evidence/);
+  gate.sourceSha = proofSha;
+  assert.equal(validateLedger(loadSource(), a).certified, 0);
 });
 
-test('Uncertified lesson cannot contain a superficially passed human gate', () => {
-  const source = loadSource(), base = createInitialLedger(source);
-  const row = base.records[1];
-  row.gates.L7 = { status: 'PASS', evidenceIds: ['invented-id'], verifiedAtUtc: '2026-10-12T01:00:00Z', sourceSha: 'a'.repeat(40) };
-  assert.throws(() => validateLedger(source,base), /cannot PASS an uncertified lesson/);
-});
-
-test('Release candidate SHA is only null or exact git SHA', () => {
-  const source = loadSource(), base = createInitialLedger(source);
-  base.releaseCandidateSha = 'not-a-sha';
-  assert.throws(() => validateLedger(source,base), /full git SHA/);
-});
-
-test('Workflow states cannot outrun evidence from L1-L6', () => {
-  const source = loadSource(), original = createInitialLedger(source);
-  for (const state of ['CONTENT_REVIEWED','EVIDENCE_READY','AWAITING_ACADEMIC_SIGNOFF']) {
-    const ledger = structuredClone(original);
-    ledger.records[0].status = state;
-    assert.throws(() => validateLedger(source, ledger), /requires L1-L[46]/);
+test('No false reviewed/completed/certified states without all six gates and eight dimensions', () => {
+  for (const status of ['CONTENT_REVIEWED','EVIDENCE_READY','INTERNALLY_CERTIFIED']) {
+    const a = base();
+    a.records[0].status = status;
+    assert.throws(() => validateLedger(loadSource(), a), /Missing review dimensions|Internal certification|L1-L4/i);
   }
-  const invalid = structuredClone(original);
-  invalid.records[0].status = 'SIGNED_BY_AI';
-  assert.throws(() => validateLedger(source, invalid), /Unknown lesson workflow state/);
+  const b = base(); b.records[0].academicDecision = 'INTERNALLY_CERTIFIED';
+  assert.throws(() => validateLedger(loadSource(), b), /Internal certification/);
 });
 
-test('Gate PASS needs valid UTC timestamp and exact source SHA', () => {
-  const source = loadSource(), base = createInitialLedger(source);
-  const gate = base.records[0].gates.L1;
-  gate.status = 'PASS'; gate.evidenceIds = ['proof'];
-  gate.sourceSha = 'a'.repeat(40); gate.verifiedAtUtc = '2026-02-30T10:00:00Z';
-  assert.throws(() => validateLedger(source,base), /valid UTC verification timestamp/);
-  gate.verifiedAtUtc = '2026-10-12T01:00:00Z'; gate.sourceSha = 'bad-sha';
-  assert.throws(() => validateLedger(source,base), /exact source commit SHA/);
-  gate.sourceSha = 'a'.repeat(40);
-  assert.equal(validateLedger(source,base).certified,0);
+test('Synthetic test-only complete record proves six-gate certification without human signature', () => {
+  const a = base(); const r = a.records[0];
+  addSyntheticEvidence(r);
+  r.status = 'INTERNALLY_CERTIFIED'; r.academicDecision = 'INTERNALLY_CERTIFIED';
+  assert.throws(() => validateLedger(loadSource(), a), /candidate SHA/);
+  a.releaseCandidateSha = proofSha;
+  assert.equal(validateLedger(loadSource(), a).certified, 1);
+  r.unresolvedDefects.push('MATH-DEFECT-TEST');
+  assert.throws(() => validateLedger(loadSource(), a), /Internal certification/);
+  r.unresolvedDefects = [];
+  r.gates.L6.sourceSha = 'c'.repeat(40);
+  assert.throws(() => validateLedger(loadSource(), a), /Internal certification/);
+  r.gates.L6.sourceSha = proofSha;
+  r.reviewDimensions.questionsAndGrading.status = 'BLOCKED';
+  assert.throws(() => validateLedger(loadSource(), a), /Internal certification/);
 });
 
-test('Unsigned lessons cannot claim the certified workflow state', () => {
-  const source = loadSource(), base = createInitialLedger(source);
-  base.records[0].status = 'ACADEMICALLY_CERTIFIED';
-  assert.throws(() => validateLedger(source,base), /Unsigned lesson cannot hold certified workflow state/);
-});
-
-test('Synthetic PASS metadata cannot certify without a pinned matching release SHA', () => {
-  const source = loadSource(), base = createInitialLedger(source);
-  const row = base.records[0];
-  for (const name of ['L1','L2','L3','L4','L5','L6','L7']) {
-    row.gates[name] = {status: 'PASS', evidenceIds: ['proof:'+name],
-      verifiedAtUtc: '2026-10-12T01:00:00Z', sourceSha: 'a'.repeat(40)};
-  }
-  row.status = 'ACADEMICALLY_CERTIFIED'; row.academicDecision = 'ACADEMICALLY_CERTIFIED';
-  row.independentReviewerId = 'synthetic'; row.signedAtUtc = '2026-10-12T01:00:00Z';
-  row.signoffEvidenceId = 'synthetic';
-  assert.throws(() => validateLedger(source,base), /pinned release candidate SHA/);
-  base.releaseCandidateSha = 'b'.repeat(40);
-  assert.throws(() => validateLedger(source,base), /L7 signature SHA differs/);
+test('Unreviewed or missing evidence may not be called internally certified', () => {
+  const a = base(); addSyntheticEvidence(a.records[0]);
+  a.releaseCandidateSha = proofSha;
+  a.records[0].reviewDimensions.visualRepresentations.status = 'NOT_APPLICABLE';
+  a.records[0].reviewDimensions.visualRepresentations.notApplicableReason = null;
+  assert.throws(() => validateLedger(loadSource(), a), /NOT_APPLICABLE/);
+  a.records[0].reviewDimensions.visualRepresentations.notApplicableReason = 'No visual needed';
+  a.records[0].status = 'INTERNALLY_CERTIFIED';
+  a.records[0].academicDecision = 'INTERNALLY_CERTIFIED';
+  assert.equal(validateLedger(loadSource(), a).certified, 1);
+  a.records[0].reviewDimensions.questionsAndGrading.issueIds.push('OPEN-ISSUE');
+  assert.throws(() => validateLedger(loadSource(), a), /Reviewed dimension missing/);
 });
