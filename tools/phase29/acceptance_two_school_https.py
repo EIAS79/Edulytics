@@ -124,6 +124,31 @@ for key, schoolname in SCHOOLS:
     get_page(teacher, "/school/assessments")
     get_page(student, "/student/dashboard")
     get_page(student, "/student/learning")
+    if PROGRAMME == "US-CCSS" and key == "commoncore-primary":
+        # EXACT one-lesson student-facing authenticated HTTPS regression.
+        # No claim about deployed Render staging; CI runs a disposable school.
+        pilot_code = "PED:US-CCSS-MATH:G1:U01:L01"
+        pilot_ids = sql("""
+            SELECT "Id"::text FROM "CurriculumPedagogicalLessons"
+            WHERE "Code"='PED:US-CCSS-MATH:G1:U01:L01';""").splitlines()
+        assert len(pilot_ids) == 1, ("Count and Add source identity", pilot_ids)
+        pilot_lesson_id = pilot_ids[0]
+        pilot_page = get_page(student, "/student/learning/lesson/" + pilot_lesson_id)
+        for required in (
+            "Count and Add",
+            "Count and show 16 counters",
+            "Add dots on two cubes",
+            "5 + 3 = 8",
+            "16 counters",
+            "rich-lesson-visual",
+            "rich-lesson-section",
+        ):
+            assert required in pilot_page, (
+                "G1 U01 L01 authenticated Rich V2 content missing", required)
+        assert "rich-lesson-visual--placevaluechart" in pilot_page, (
+            "G1 U01 L01 ten-frame and dot-cube representation is not rendered")
+        print("DISPOSABLE_US_CCSS_G1_U01_L01_STUDENT_RICH_V2_RENDER_PASS",
+              pilot_code, pilot_lesson_id)
     get_page(student, "/student/practice")
     deny(student, "/school/assessments")
     deny(teacher, "/student/dashboard")
