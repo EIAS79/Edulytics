@@ -136,46 +136,47 @@
 
 **الحالة المبدئية المثبتة:** درس واحد من G1 داخليًا معتمد ومنشور قبل اعتماد هذه الآلية؛ احتفظ به داخل B01 بعد مطابقة الـSHA. لا يعني ذلك أن B01 منشورة أو معتمدة؛ **الدفعة الأولى باقية BATCH_REVIEW_IN_PROGRESS حتى اعتماد ونشر الـ500 بالكامل**.
 
-## 8. نقطة استئناف دائمة لا تضيع بين الجلسات
+## 8. نقطة استئناف دائمة لكل دفعة
 
-حافظ على ملف checkpoint داخل `artifacts/academic-us-ccss/` متوافق مع السجلات القائمة، ويشمل:
+احفظ checkpoint واحدًا داخل `artifacts/academic-us-ccss/` مربوطًا بجرد ثابت للدفعات الأربع وبالسجل الأصلي `04-lesson-certification-records.json`. **لا تُنشئ 500 حالة PASS دفعة واحدة**؛ اجمع الحالة الحقيقية لكل `LessonCode` على أساس البصمات والأدلة. مثال لهيكل checkpoint للدفعة الأولى (يُستبدل بالقيَم المقروءة فعلًا عند التنفيذ):
 
 ```json
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "policyId": "EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2",
-  "currentGrade": "G1",
-  "currentCourse": null,
-  "expectedLessons": 146,
-  "uniqueLessons": 146,
-  "reviewed": 0,
-  "repaired": 25,
-  "tested": null,
-  "blocked": null,
-  "internallyCertified": 0,
-  "baseMainSha": "cd6a01e20b4b60874a51b7dfba6b7abce1a788f6",
-  "contentSha": null,
-  "lastCompletedOperation": "Existing G1 source manifests and 25 prior guarded repairs identified",
-  "nextExactOperation": "Reconcile G1 lesson-level source evidence and review first unresolved lesson",
-  "lessonStatuses": "Use the 1,560-record canonical ledger; do not duplicate or invent PASS entries",
-  "evidenceReferences": []
+  "executionMode": "FIXED_500_LESSON_BATCHES",
+  "totalUniqueLessons": 1560,
+  "batchId": "B01",
+  "batchOrdinalStart": 1,
+  "batchOrdinalEnd": 500,
+  "batchExpectedLessons": 500,
+  "internallyCertifiedInBatch": 1,
+  "previouslyCertifiedAndPublishedInBatch": 1,
+  "remainingCertificationTarget": 499,
+  "batchStatus": "BATCH_REVIEW_IN_PROGRESS",
+  "batchManifestSha256": null,
+  "baseMainSha": null,
+  "batchReleaseCommitSha": null,
+  "batchRenderDeployId": null,
+  "nextExactOperation": "Resume first uncertified B01 LessonCode after G1 U01 L01",
+  "evidenceReferences": ["PR #488: G1 U01 L01"],
+  "lessonStatuses": "Derive from canonical 1560-record ledger, not this illustrative checkpoint"
 }
 ```
 
-**هذا مثال هيكل ونقطة بداية معروفة، وليس checkpoint تنفيذ مُثبتًا الآن.** عند الإنشاء الفعلي يجب حساب `reviewed/tested/blocked` من السجلات بدل نسخ المثال، وتسجيل `lastCompletedOperation` و`nextExactOperation` الفعليين وبصمات دقيقة. حدّثه بعد كل وحدة عمل جوهرية، واستخدمه للاستئناف في الجلسة التالية.
+**هذا مثال توضيحي وليس تقريرًا آنيًا لقاعدة البيانات.** يجب تثبيت `batchManifestSha256` مع قائمة `LessonCode` الفعلية وبصمات المحتوى وسجلات الأدلة قبل التنفيذ؛ لا تستخدم `null` كدليل قبول. راجع عدم التكرار والفجوات بين `B01–B04` وأن مجموع أحجامها `500+500+500+60=1560`. حدّث `lastCompletedOperation` و`nextExactOperation` وعدادات `reviewed/tested/blocked/internallyCertified` بعد كل خطوة جوهرية، وسجل SHA الإصدار ورقم Render Deploy بعد النشر. **لا تفتح الدفعة التالية قبل `BATCH_PASS_AND_LIVE` للسابقة.**
 
-**حالة بدء معروفة من سجلات G1 حتى 2026-10-12:** الجرد `146/146`، مصادر تحضير المعلم ومرايا/ملفات الدروس مسجلة `146/146` لكن **وجودها لا يثبت مراجعة الثمانية عناصر أو `Rich V2`**، و**25** درسًا بها إصلاحات engineering مرتبطة بمصادرها، و**0** اعتماد داخلي مثبت. لا تفترض أن الـ25 مراجعات نهائية أو أن بقية 121 صحيحة آليًا. **ممنوع العودة إلى Our-CS للتحقق من أي مصدر**؛ إذا لم تتوافر مادة موثوقة عبر مصدر مصرح به، سجّل الفجوة.
+**لا تضيع أدلة الإصلاحات السابقة:** جرد G1=146 ومراجعاته التاريخية والـ25 إصلاحًا هندسيًا لا تتحول تلقائيًا لاعتمادات؛ الدرس الوحيد المعتمد المثبت في PR #488 يظل محسوبًا بشرط ثبات محتواه. امنع الاعتماد غير الموثّق واحتفظ بالمصادر على GitHub لا على جهاز Our-CS.
 
-## 9. تقرير كامل واحد لكل صف ولكل مقرر
+## 9. تقرير موحّد لكل دفعة من 500 درس
 
-استخدم الأسماء المعروفة (تحقق من وجود الملف قبل الكتابة):
-- `artifacts/academic-us-ccss/grade-reports/G01-academic-certification-report.md`
-- `artifacts/academic-us-ccss/grade-reports/G02-academic-certification-report.md`
-- وهكذا حتى G08؛ ثم تقارير المقررات الثانوية بحسب `CourseCode`.
+أصدر تقرير قبول ونشر شاملًا للدفعة بترقيم ثابت:
+- `artifacts/academic-us-ccss/batch-reports/B01-500-lesson-certification-release.md`
+- `artifacts/academic-us-ccss/batch-reports/B02-500-lesson-certification-release.md`
+- `artifacts/academic-us-ccss/batch-reports/B03-500-lesson-certification-release.md`
+- `artifacts/academic-us-ccss/batch-reports/B04-60-lesson-certification-release.md`
 
-يتضمن **كل** `LessonCode` دون استثناء: الدرجة/الوحدة/العنوان، المصدر والطبعة والحقوق/CCSS، نتيجة **الأبعاد الثمانية**، `CORRECT_NO_CHANGE/REWORK_REQUIRED/BLOCKED`، تفاصيل العيوب والإصلاحات `before/after`، L1–L6، أدلة مولّد الأسئلة والتصحيح و`Rich V2`، اختباراته، `contentSha` و`sourceCommitSha`، وقرار `INTERNALLY_CERTIFIED` أو سبب المنع.
-
-في الملخص: `expected/unique/reviewed/correctWithoutChange/repaired/tested/blocked/L1-L4-pass/L1-L6-pass/internallyCertified`، وتغطية معايير الوالد والبنود الفرعية، ونتائج regression وstaging والـCI والـSHA. التقرير **لا** يعدّ اعتمادًا لمجرد وجوده. اسم `academic-certification-report` التاريخي لا يشير إلى اعتماد خارجي أو توقيع بشري.
+يتضمن **كل درس دون استثناء**: ترتيبه في manifest، `LessonCode`، الصف/المقرر والوحدة، مرجع المصدر والطبعة/الحقوق/المعايير، الأبعاد الثمانية، `CORRECT_NO_CHANGE/REWORK_REQUIRED/BLOCKED` والإصلاحات، L1–L6، اختبار Math وPractice وRich V2 وCI، `contentSha`، وقرار `INTERNALLY_CERTIFIED` والأدلة أو العوائق. إجمالي الدفعة: `expected/unique/reviewed/repaired/tested/blocked/internallyCertified`، التغطية المرجعية، regression، SHA الدفعة، commit الإصدار، Render Deploy ID وحالة `Live` وفحوصات الصحة. احتفظ بتقارير الصفوف السابقة `grade-reports/G01-...` وغيرها كمصادر تاريخية وتقارير فرعية؛ **ليست بديلًا عن تقرير الدفعة أو شرطًا يقسم نشرها**.
 
 ## 10. ترحيل نظام الاعتماد التقني (شرط لازم قبل أي PASS)
 
