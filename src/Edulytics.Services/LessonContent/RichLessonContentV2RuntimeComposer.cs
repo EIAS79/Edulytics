@@ -182,6 +182,7 @@ public static partial class RichLessonContentV2RuntimeComposer
             familyLabels);
 
         var visuals = BuildVisuals(
+            lessonCode,
             body.Title,
             examples,
             contract);
@@ -593,6 +594,7 @@ public static partial class RichLessonContentV2RuntimeComposer
         ];
 
     private static IReadOnlyList<RichLessonVisual> BuildVisuals(
+        string lessonCode,
         string title,
         IReadOnlyList<RichLessonWorkedExample> examples,
         LessonPracticeContract contract)
@@ -603,19 +605,82 @@ public static partial class RichLessonContentV2RuntimeComposer
                 $"{example.Question}  →  {example.Answer}")
             .ToList();
 
-        return
-        [
-            new RichLessonVisual
-            {
-                Kind = RichLessonVisualKind.EquationSet,
-                Title = $"{title} — question forms",
-                Description =
-                    "A compact view of several verified question-and-answer pairs from this lesson. " +
-                    "Use the worked examples above for the full reasoning.",
-                PrimaryLabel = HumanizeSkill(contract.SkillId),
-                Items = equationItems
-            }
-        ];
+        var questionForms = new RichLessonVisual
+        {
+            Kind = RichLessonVisualKind.EquationSet,
+            Title = $"{title} — question forms",
+            Description =
+                "A compact view of several verified question-and-answer pairs from this lesson. " +
+                "Use the worked examples above for the full reasoning.",
+            PrimaryLabel = HumanizeSkill(contract.SkillId),
+            Items = equationItems
+        };
+
+        // One publisher-goal-bound G1 pilot. These rows use the existing
+        // accessible table renderer, not a copied publisher image or licensed asset.
+        // A ten-frame contains two rows of five; a separate group shows six more.
+        if (lessonCode == "PED:US-CCSS-MATH:G1:U01:L01")
+        {
+            return
+            [
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.PlaceValueChart,
+                    Title = "Count and show 16 counters",
+                    Description =
+                        "Count each dot exactly once. A filled ten-frame shows " +
+                        "10 dots, and a second group shows 6 more: 10 + 6 = 16.",
+                    PrimaryLabel = "Sixteen counters",
+                    Rows =
+                    [
+                        new RichLessonVisualRow
+                        {
+                            Label = "Ten-frame — top",
+                            Cells = ["●", "●", "●", "●", "●"]
+                        },
+                        new RichLessonVisualRow
+                        {
+                            Label = "Ten-frame — bottom",
+                            Cells = ["●", "●", "●", "●", "●"]
+                        },
+                        new RichLessonVisualRow
+                        {
+                            Label = "Extra counters — first five",
+                            Cells = ["●", "●", "●", "●", "●"]
+                        },
+                        new RichLessonVisualRow
+                        {
+                            Label = "Extra counters — sixth",
+                            Cells = ["●", "", "", "", ""]
+                        }
+                    ]
+                },
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.PlaceValueChart,
+                    Title = "Add dots on two cubes",
+                    Description =
+                        "The first cube shows 5 dots and the second shows 3. " +
+                        "Count all eight, or count on from 5: 6, 7, 8. 5 + 3 = 8.",
+                    Rows =
+                    [
+                        new RichLessonVisualRow
+                        {
+                            Label = "First cube — 5 dots",
+                            Cells = ["●", "●", "●", "●", "●"]
+                        },
+                        new RichLessonVisualRow
+                        {
+                            Label = "Second cube — 3 dots",
+                            Cells = ["●", "●", "●", "", ""]
+                        }
+                    ]
+                },
+                questionForms
+            ];
+        }
+
+        return [questionForms];
     }
 
     private static int StableSeed(string value)
