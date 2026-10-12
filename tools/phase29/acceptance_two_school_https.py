@@ -142,6 +142,8 @@ for key, schoolname in SCHOOLS:
             "16 counters",
             "rich-lesson-visual",
             "rich-lesson-section",
+            "CC BY 4.0",
+            "im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/lesson.html",
         ):
             assert required in pilot_page, (
                 "G1 U01 L01 authenticated Rich V2 content missing", required)
