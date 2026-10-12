@@ -265,6 +265,48 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
     public const string ComposeFlatPatternShapesSteps = "Step 1: Select pattern blocks or flat paper shapes such as two small squares or triangles.\nStep 2: Place the pieces together along matching full edges without gaps or overlaps.\nStep 3: Trace the outer boundary of the new composite flat shape.\nStep 4: Name and describe the larger resulting shape, for example a rectangle from two squares.\nStep 5: Try a different arrangement and explain how the same pieces compose another shape.";
     public const string ComposeFlatPatternShapesMistakes = "Mistake: merely counting three sides on a triangle without joining pieces. Correction: compose and trace the new outer boundary.\nMistake: leaving gaps and claiming the result is one solid flat shape. Correction: make the edges touch.\nMistake: including an interior joining line as part of the final outer boundary. Correction: trace the boundary around all the joined pieces.";
 
+    public const string ShapeCardCountsLessonCode = "PED:US-CCSS-MATH:G1:U01:L08";
+    public const string ShapeCardCountsVersion = "us-ccss-g1-g1-u01-l08-source-goal-v1";
+    public const string ShapeCardCountsConcepts = "Sort shape cards into nonoverlapping categories using a single rule, then count the number in each category and show the counts with equal marks in a labeled picture graph. Rotating a shape does not change its category.";
+    public const string ShapeCardCountsExamples = "Example 1: Sort 5 triangle cards, 3 rectangle cards and 4 circle cards. Put one card in one category; record triangle 5, rectangle 3, circle 4.\nExample 2: Draw 5 equal marks beside Triangle, 3 beside Rectangle and 4 beside Circle. Each mark represents one card.\nExample 3: Count all the cards: 5 + 3 + 4 = 12. There are 5 - 3 = 2 more triangles than rectangles.\nExample 4: Rotate a rectangle card; it still belongs to the Rectangle category because the shape did not change.";
+    public const string ShapeCardCountsSteps = "Step 1: State the sorting rule and name three shape categories.\nStep 2: Classify each card once by its defining shape properties.\nStep 3: Count and record each category.\nStep 4: Make a picture graph with equal marks and clear labels.\nStep 5: Compare category counts and check that they total all cards.";
+    public const string ShapeCardCountsMistakes = "Mistake: sorting the same card twice. Correction: use one rule and one category for each item.\nMistake: drawing large icons to mean more cards. Correction: one identical mark represents one card.\nMistake: omitting one category when finding the total. Correction: add all counts: 5 + 3 + 4 = 12.";
+
+    public const string ClassFavoriteSurveyLessonCode = "PED:US-CCSS-MATH:G1:U01:L09";
+    public const string ClassFavoriteSurveyVersion = "us-ccss-g1-g1-u01-l09-source-goal-v1";
+    public const string ClassFavoriteSurveyConcepts = "Collect and organize categorical survey data. A table, tally chart, and picture graph may show the same data; category totals must remain the same. Count each person's answer once.";
+    public const string ClassFavoriteSurveyExamples = "Example 1: Survey 13 classmates about their favorite fruit: 6 choose apples, 4 choose bananas and 3 choose oranges. Record one tally per answer.\nExample 2: Draw a picture graph with 6 equal marks beside Apples, 4 beside Bananas and 3 beside Oranges. Match these counts to the tally chart.\nExample 3: The survey includes 6 + 4 + 3 = 13 responses. Apples received 6 - 3 = 3 more votes than oranges.\nExample 4: Redraw the picture graph as a three-row frequency table with counts 6, 4 and 3. The category frequencies must not change.";
+    public const string ClassFavoriteSurveySteps = "Step 1: Ask a survey question with clearly named answer categories.\nStep 2: Collect one response from each student and place a tally in its category.\nStep 3: Count category tallies and verify the total number surveyed.\nStep 4: Represent the same data using equal marks in a labeled graph.\nStep 5: Use the recorded counts to answer comparison and total questions.";
+    public const string ClassFavoriteSurveyMistakes = "Mistake: one student's answer counted twice. Correction: place one tally for each respondent.\nMistake: changing the counts while switching charts. Correction: keep each category's frequency unchanged.\nMistake: drawing unlabeled symbols. Correction: label each row and define what one mark means.";
+
+    public const string AroundRoomStoryProblemsLessonCode = "PED:US-CCSS-MATH:G1:U03:L28";
+    public const string AroundRoomStoryProblemsVersion = "us-ccss-g1-g1-u03-l28-source-goal-v1";
+    public const string AroundRoomStoryProblemsConcepts = "Create and solve addition and subtraction stories using classroom objects. Explain how an equation represents the situation, including three-addend sums within 20 and unknown numbers in different positions.";
+    public const string AroundRoomStoryProblemsExamples = "Example 1: A classroom has 4 red folders, 3 blue folders and 5 green folders. Combine 4 + 3 = 7, then 7 + 5 = 12, so 4 + 3 + 5 = 12 folders.\nExample 2: There are 6 crayons on one desk, 2 on another and 4 on a third. Combine 6 + 4 = 10, then add 2 to make 6 + 2 + 4 = 12 crayons.\nExample 3: A shelf held 15 books and 6 were borrowed. Model the 15 and remove 6: 15 - 6 = 9 books remain.\nExample 4: There are 7 pencils; then some are added and 11 are on the desk. The missing number solves 7 + ? = 11, so 7 + 4 = 11.";
+    public const string AroundRoomStoryProblemsSteps = "Step 1: Notice classroom objects and choose quantities for a solvable story.\nStep 2: Write a question with an unknown part or total and its matching equation.\nStep 3: Draw counters or a number path to represent every quantity.\nStep 4: Solve, for example 4 + 3 + 5 = 12 by combining the first two groups.\nStep 5: Report the answer using units and check it against the story.";
+    public const string AroundRoomStoryProblemsMistakes = "Mistake: listing objects without giving a problem to solve. Correction: include an unknown and a complete solution.\nMistake: ignoring the third group in a three-addend question. Correction: account for all three addends.\nMistake: answering with an unlabeled number. Correction: identify folders, pencils or books.";
+
+    public const string MeasuredShoesStoriesLessonCode = "PED:US-CCSS-MATH:G1:U06:L11";
+    public const string MeasuredShoesStoriesVersion = "us-ccss-g1-g1-u06-l11-source-goal-v1";
+    public const string MeasuredShoesStoriesConcepts = "Compare shoe lengths using identical length units, then write and solve addition or subtraction story equations. State results in cube-length units and use drawings of aligned units to justify differences.";
+    public const string MeasuredShoesStoriesExamples = "Example 1: Shoe A measures 17 identical connecting-cube lengths and Shoe B measures 8. Subtract to compare: 17 - 8 = 9 cube lengths longer.\nExample 2: Mia's shoe measures 12 cubes. Her friend's shoe is 3 cube lengths longer. Find 12 + 3 = 15 cube lengths.\nExample 3: A 14-cube shoe is 5 cube lengths longer than another. Solve ? + 5 = 14 by 14 - 5 = 9 cube lengths.\nExample 4: Draw aligned rows of 11 and 7 same-size cubes; four cubes remain unmatched, so 11 - 7 = 4 cube lengths.";
+    public const string MeasuredShoesStoriesSteps = "Step 1: Measure each shoe with equal-size connecting cubes without gaps or overlaps.\nStep 2: Record each length with its unit and align starting endpoints.\nStep 3: Read the story and decide whether the unknown is a length or a difference.\nStep 4: Write and solve the equation, such as 17 - 8 = 9.\nStep 5: Match or count cubes to verify the answer and report cube-length units.";
+    public const string MeasuredShoesStoriesMistakes = "Mistake: subtracting measurements made with different cube sizes. Correction: use the same length unit.\nMistake: giving the answer 9 without units. Correction: say 9 cube lengths.\nMistake: overlooking gaps between units. Correction: measure with touching, aligned cubes.";
+
+    public const string RectanglesSquaresAttributesLessonCode = "PED:US-CCSS-MATH:G1:U07:L06";
+    public const string RectanglesSquaresAttributesVersion = "us-ccss-g1-g1-u07-l06-source-goal-v1";
+    public const string RectanglesSquaresAttributesConcepts = "A rectangle has four straight sides and four square corners; a square is a rectangle with four equal-length sides. Orientation, size and color do not change a shape's defining attributes. Draw examples and nonexamples.";
+    public const string RectanglesSquaresAttributesExamples = "Example 1: Connect dot-paper corners (1,1), (5,1), (5,3), (1,3) to make a rectangle. It has four sides and four square corners.\nExample 2: Connect (1,1), (3,1), (3,3), (1,3) to make a square. Its four sides are equal and its corners are square; it is also a rectangle.\nExample 3: Draw a slanted parallelogram without square corners. It has four sides, but it is not a rectangle.\nExample 4: Rotate the square on the page; it is still a square and a rectangle because sides and corners do not change.";
+    public const string RectanglesSquaresAttributesSteps = "Step 1: Describe a rectangle's sides and square corners.\nStep 2: Draw and close a four-sided rectangle on dot paper.\nStep 3: Make a square with four equal sides and identify it as a special rectangle.\nStep 4: Draw a nonexample whose corners are not square corners.\nStep 5: Rotate each drawing and explain which defining properties remain.";
+    public const string RectanglesSquaresAttributesMistakes = "Mistake: saying a tilted rectangle is not a rectangle. Correction: orientation does not change the angles.\nMistake: excluding squares from rectangles. Correction: a square satisfies rectangle properties.\nMistake: sorting by color. Correction: use sides, corners and equal lengths.";
+
+    public const string CompositeShapesAndFactsCenterLessonCode = "PED:US-CCSS-MATH:G1:U07:L08";
+    public const string CompositeShapesAndFactsCenterVersion = "us-ccss-g1-g1-u07-l08-source-goal-v1";
+    public const string CompositeShapesAndFactsCenterConcepts = "Compose and describe flat and solid shapes using smaller pieces, while separately practicing addition and subtraction within 20. A full solution shows a shape composition and an arithmetic representation.";
+    public const string CompositeShapesAndFactsCenterExamples = "Example 1: Join 2 identical square tiles along one edge to form a larger flat rectangle. Name the two component squares and outer rectangle.\nExample 2: Join 3 equal cubes face to face in a row. The combined solid is 3 cubes long; count and describe the small blocks it uses.\nExample 3: Show 6 red counters and 4 blue counters on a ten-frame. Add to get 6 + 4 = 10.\nExample 4: Begin with 14 counters and remove 5. Nine remain, so 14 - 5 = 9; check with 9 + 5 = 14.";
+    public const string CompositeShapesAndFactsCenterSteps = "Step 1: Choose either the shape-composition task or the addition/subtraction center.\nStep 2: For shapes, join flat pieces along edges or cubes along faces.\nStep 3: Trace or describe the larger new shape and identify its components.\nStep 4: For numbers, model and solve an equation such as 6 + 4 = 10 or 14 - 5 = 9.\nStep 5: Explain the constructed shape or check the arithmetic with an inverse fact.";
+    public const string CompositeShapesAndFactsCenterMistakes = "Mistake: completing only addition without the shape task. Correction: the center also expects geometric composition.\nMistake: joining cubes at corners only. Correction: align whole faces to form the solid.\nMistake: saying 14 - 5 = 8. Correction: remove five counters and count nine remaining.";
+
     private static readonly IReadOnlyDictionary<string, Repair> Repairs =
         new Dictionary<string, Repair>(StringComparer.Ordinal)
         {
@@ -482,7 +524,79 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                 ComposeFlatPatternShapesConcepts,
                 ComposeFlatPatternShapesExamples,
                 ComposeFlatPatternShapesSteps,
-                ComposeFlatPatternShapesMistakes)
+                ComposeFlatPatternShapesMistakes),
+            [ShapeCardCountsLessonCode] = new Repair(
+                ShapeCardCountsLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-8/preparation.html",
+                "be08787b6ee918431235266d3571a0fa2e1bbb4e9a355412e5c19041e01bf144",
+                "b6cafcc471d8245b43782f53fc885eed25198877b36c1b5999e6c80bca15a466",
+                ShapeCardCountsVersion,
+                ["CCSS:1.MD.C.4"],
+                "Step 1: Look at the defining properties of the shape.\nStep 2: Count or describe relevant sides, corners, faces, or curved surfaces.\nStep 3: Use those properties to sort or identify the shape.\nStep 4: Check that turning or moving the shape would not change its classification.",
+                ShapeCardCountsConcepts,
+                ShapeCardCountsExamples,
+                ShapeCardCountsSteps,
+                ShapeCardCountsMistakes),
+            [ClassFavoriteSurveyLessonCode] = new Repair(
+                ClassFavoriteSurveyLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-9/preparation.html",
+                "10e8219d47606e63f59409e4ed0624ca17a20aa2afe58ec914677013584671d0",
+                "361b081710767655d3a35f613ed083479ffd8ccfcf57a778f5301a6a7ca558d3",
+                ClassFavoriteSurveyVersion,
+                ["CCSS:1.MD.C.4", "CCSS:1.OA.C.5"],
+                "Step 1: Read the category labels and the scale or counts.\nStep 2: Identify the values needed for the question.\nStep 3: Compare or combine the values as required.\nStep 4: State the conclusion using the data.",
+                ClassFavoriteSurveyConcepts,
+                ClassFavoriteSurveyExamples,
+                ClassFavoriteSurveySteps,
+                ClassFavoriteSurveyMistakes),
+            [AroundRoomStoryProblemsLessonCode] = new Repair(
+                AroundRoomStoryProblemsLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-28/preparation.html",
+                "d368a03846bbb97e423a2bec04c7ec4a68e18036f8b5a48073efc3c0e45cde01",
+                "4fc5dca4bba3b6f64f3f381e3cd0c412965dbe62486aa7a6433786bf36c13340",
+                AroundRoomStoryProblemsVersion,
+                ["CCSS:1.OA.A.1", "CCSS:1.OA.A.2", "CCSS:1.OA.B.3", "CCSS:1.OA.C.6"],
+                "Step 1: Represent the quantities or objects in the task.\nStep 2: Describe the relationship or pattern you notice.\nStep 3: Use the lesson key idea to reach a conclusion.\nStep 4: Check the conclusion against the original task.",
+                AroundRoomStoryProblemsConcepts,
+                AroundRoomStoryProblemsExamples,
+                AroundRoomStoryProblemsSteps,
+                AroundRoomStoryProblemsMistakes),
+            [MeasuredShoesStoriesLessonCode] = new Repair(
+                MeasuredShoesStoriesLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-11/preparation.html",
+                "40e9d244f81eb227330854e9508ccd90be83ae7d776e4be1e53ed4e6eeed416d",
+                "8f839a1365ce4ae2b2775ab2bd7f4c2fb88fa5d264d42a8b1e4432506cc35b89",
+                MeasuredShoesStoriesVersion,
+                ["CCSS:1.MD.A.2", "CCSS:1.OA.A.1", "CCSS:1.OA.A.2", "CCSS:1.OA.B.4", "CCSS:1.OA.C.6"],
+                "Step 1: Identify the starting quantity 17 and the amount 8 being removed or compared.\nStep 2: Use subtraction to find the difference.\nStep 3: 17 − 8 = 9.\nStep 4: Check that the answer fits the original situation.",
+                MeasuredShoesStoriesConcepts,
+                MeasuredShoesStoriesExamples,
+                MeasuredShoesStoriesSteps,
+                MeasuredShoesStoriesMistakes),
+            [RectanglesSquaresAttributesLessonCode] = new Repair(
+                RectanglesSquaresAttributesLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-6/preparation.html",
+                "a724a3695d3c5ae06cfe04378cdeff91413d2b9cc076a7a45e7310f7b03403d1",
+                "dca80fd3613e6e14bd78adc2f54da524aa914f31f3bd519d4fc6e873388d7a3f",
+                RectanglesSquaresAttributesVersion,
+                ["CCSS:1.G.A.1", "CCSS:1.NBT.C.4"],
+                "Step 1: Identify the two quantities, 57 and 10.\nStep 2: Start at 57 and count on 10 more, or combine the two groups.\nStep 3: The total is 67, so 57 + 10 = 67.\nStep 4: Check that the result matches the quantities and the lesson goal.",
+                RectanglesSquaresAttributesConcepts,
+                RectanglesSquaresAttributesExamples,
+                RectanglesSquaresAttributesSteps,
+                RectanglesSquaresAttributesMistakes),
+            [CompositeShapesAndFactsCenterLessonCode] = new Repair(
+                CompositeShapesAndFactsCenterLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-8/preparation.html",
+                "3fbcb9f24fb43d0353bc1385058088aadaed7d09cacd4552d7a4cddab375163b",
+                "0e1b2dd353d98a969aa41f0af2264754ca9e134d281b39bd55250fb66352ed36",
+                CompositeShapesAndFactsCenterVersion,
+                ["CCSS:1.G.A.1", "CCSS:1.G.A.2", "CCSS:1.OA.C.6"],
+                "Step 1: Identify the two quantities, 6 and 4.\nStep 2: Start at 6 and count on 4 more, or combine the two groups.\nStep 3: The total is 10, so 6 + 4 = 10.\nStep 4: Check that the result matches the quantities and the lesson goal.",
+                CompositeShapesAndFactsCenterConcepts,
+                CompositeShapesAndFactsCenterExamples,
+                CompositeShapesAndFactsCenterSteps,
+                CompositeShapesAndFactsCenterMistakes)
         };
 
     public static bool IsTarget(CanonicalLessonContentPackDocument document,
