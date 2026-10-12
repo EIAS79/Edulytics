@@ -12,7 +12,7 @@ function run(args = []) {
   const report = JSON.parse(result.stdout);
   return {result, report};
 }
-test('US CCSS academic gate defaults to read-only and reports NO-GO without signoffs', () => {
+test('US CCSS academic gate defaults to read-only and reports NO-GO until all six-gate evidence is complete', () => {
   const {result, report} = run();
   assert.equal(result.status, 0);
   assert.equal(report.certificationType, 'INTERNAL_EVIDENCE_BASED');
@@ -27,7 +27,7 @@ test('US CCSS academic gate defaults to read-only and reports NO-GO without sign
     'OFFICIAL_TEXT_NOT_CLOSED', 'SUBCLAUSE_NOT_CERTIFIED',
     'SEMANTIC_RELEASE_BLOCKED', 'INCOMPLETE_LESSONAUDIT',
     'INCOMPLETE_PARENTTRACE', 'INCOMPLETE_CHILDTRACE',
-    'INDEPENDENT_ACADEMIC_APPROVAL_MISSING',
+    'INTERNAL_EVIDENCE_ACCEPTANCE_MISSING',
     'RELEASE_AUTHORIZATION_MISSING', 'PRODUCTION_VALIDATION_MISSING'
   ]) assert.ok(blockers.has(required), required + ' must be a release blocker');
 });
