@@ -1,5 +1,13 @@
 # Grade 1 (G1) — whole-grade review: work-in-progress evidence
 
+## Active whole-grade review continuation: mixed-center fixes and durable L1–L7 ledger
+
+On the source-verified `main` baseline `cd6a01e20b4b60874a51b7dfba6b7abce1a788f6`, the **same G1 whole-grade review** resumed with four exact learner-body corrections: `G1:U06:L10` (estimate/measure **and** addition), `G1:U06:L16` (collections to 120 **and** unit length), `G1:U07:L12` (shape composition/drawing **and** number work), and `G1:U07:L17` (flat/solid shapes, clock and arithmetic). All four preserve lesson identity, source URL, official outcome order and previous English body SHA. Their new content and independent regression checks remain pending full PR acceptance.
+
+The machine-readable [G01-execution-checkpoint.json](G01-execution-checkpoint.json) now lists **all 146 unique lessons**, their original and local source hashes, each of the eight assessment dimensions, L1–L7 statuses, blockers, previous 25 merged technical corrections and four new PR-only repairs. It records the first unresolved lesson `G1:U01:L01` and the exact next operation, making resumption independent of conversation history. It intentionally records **0/146 complete eight-dimension verifications and 0 human L7 signatures**; technical repairs and static source matches cannot be counted as certifications.
+
+**Release decision: G1 CONTENT_REVIEW_INCOMPLETE / academic NO-GO; do not report CONTENT_REVIEW_COMPLETE or unlock G2 until all 146 lessons satisfy L1–L6.** Once content review is complete, G2 may proceed with G1's L7 pending under the latest execution instruction, without calling G1 academically certified. No production deploy is authorized.
+
 ## Current verified Grade 1 execution checkpoint — 2026-10-12
 
 | Evidence or state | Verified count | Meaning |
