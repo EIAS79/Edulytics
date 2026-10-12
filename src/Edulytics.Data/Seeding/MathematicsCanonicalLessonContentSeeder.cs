@@ -103,10 +103,10 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             (Document: d, Lesson: lesson))).ToArray();
         var codes = targets.Select(x => x.Lesson.LessonCode).ToArray();
 
-        // Fail closed on omissions/additions to the exact, previously reviewed
-        // engineering release set: G1 x3, G2 x8, G4 x1.
-        if (codes.Length != 12 ||
-            codes.Distinct(StringComparer.Ordinal).Count() != 12)
+        // Fail closed on source-bound technical release inventory drift:
+        // 12 previous mathematics repairs + 19 entity display corrections.
+        if (codes.Length != 31 ||
+            codes.Distinct(StringComparer.Ordinal).Count() != 31)
             throw new InvalidOperationException(
                 "Source-bound Common Core JSON metadata correction inventory drift.");
 
@@ -206,7 +206,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2StoryProblemsSourceCorrection.IsTarget(document, lesson) ||
          CommonCoreG2TapeDiagramAndStoryResolutionCorrection.IsTarget(document, lesson) ||
          CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(document, lesson) ||
-         CommonCoreG2SourceGroundedFoundationsCorrections.IsTarget(document, lesson));
+         CommonCoreG2SourceGroundedFoundationsCorrections.IsTarget(document, lesson) ||
+         CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -827,6 +828,20 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 translationsByContentId.TryGetValue(
                                     content.Id, out var g2U09ExistingRows)
                                     ? g2U09ExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreSourceBoundHtmlEntityCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreSourceBoundHtmlEntityCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var sourceHtmlEntityRows)
+                                    ? sourceHtmlEntityRows
                                     : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
