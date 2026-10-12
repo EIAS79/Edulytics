@@ -1,5 +1,11 @@
 # Grade 1 (G1) — whole-grade review: work-in-progress evidence
 
+## Authentic full-length Kendall Hunt teacher lesson HTML — 146/146 available
+
+After isolating the invalid student mirror, the local original `unit-N/lesson-M/lesson.html` files were checked. **Every one of the 146 G1 lessons** has a readable, non-404 full teacher lesson activity page with its own SHA-256 fingerprint, at least 4,356 visible characters and activity content. The pages collectively contain **2,377 raw `<img>` elements and 32 `<table>` elements**; these tag counts do not guarantee correctly rendered, accessible, mathematically accurate visuals. Detailed per-lesson source proof: [G01-146-full-kendallhunt-teacher-lesson-pages.json](G01-146-full-kendallhunt-teacher-lesson-pages.json).
+
+The **Student Public Mirror** is separately documented as 146 invalid 404 pages; it must not be used to verify student tasks or answer keys. Original teacher pages are valid *source material* for reviewing activity objectives and content, **not sufficient evidence of Edulytics runtime parity, learner questions/marking, publisher rights or L7 approval**. Their SHA links are included in the durable 146-row checkpoint for ongoing lesson-by-lesson L1–L6 work.
+
 ## Original student HTML archive integrity — critical 146/146 evidence block
 
 Read-only extraction of the entire locally mirrored **Student Public Mirror** Grade 1 `lesson.html` set found **146/146 files to be 404 site-shell HTML rather than authentic student lessons**. Each archive file displays `404 | Section | lesson-N`, has no `<main>` lesson element and zero visible task markers after script/style removal. Filenames and SHA-256 hashes still match the 146 expected lesson identities, but **presence of the file is not evidence of rendered math tasks, solutions, pictures or rubrics**.
