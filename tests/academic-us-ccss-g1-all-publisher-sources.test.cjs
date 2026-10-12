@@ -10,7 +10,7 @@ test('all 146 Grade 1 publisher preparation file identities are pinned without f
  assert.equal(pack.lessons.length,146);
  assert.equal(manifest.lessonRecords,146);
  assert.equal(manifest.sourceFilesMatched,146);
- assert.equal(manifest.uniqueLessonCount,146);
+ assert.equal(new Set(manifest.records.map(r=>r.lessonCode)).size,146);
  assert.equal(manifest.missingSourceFiles,0);
  assert.equal(manifest.independentAcademicApprovals,0);
  assert.equal(manifest.notFinalAcademicApproval,true);
