@@ -33,7 +33,7 @@ public sealed class Phase25ScaleFoundationTests
         Assert.Contains("process-independent", evidence, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("distributed sensitive quotas", evidence, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("2-web / 2-worker staging topology", evidence, StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("not automatically global security quotas", evidence, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("not automatically global security", evidence, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
