@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH/CCSSM-2010/G1",
+  "stage": "ENGINEERING_CONTENT_CORRECTIONS_NOT_INDEPENDENT_ACADEMIC_CERTIFICATION",
+  "sourceBlueprintPublisher": "Illustrative Mathematics / Kendall Hunt Grade 1 first edition",
+  "sourcePackUnchanged": true,
+  "lessonAndOfficialOutcomeMappingsUnchanged": true,
+  "existingPriorGrade1RepairsPreserved": 3,
+  "newExactLessons": 3,
+  "liveNeonWritesAuthorized": false,
+  "renderDeploymentAuthorized": false,
+  "independentHumanReview": "PENDING",
+  "stagingVerified": false,
+  "academicDecision": "NO-GO",
+  "originalContentHashPolicy": "Existing CommonCoreG1SourceGroundedInstructionalCorrections rejects any unexpected source URL, canonical body SHA, official outcome ordering, previous full English body SHA or old procedural steps; it also guards previously persisted translations and upgrades content version only for exact target identities.",
+  "implementedClass": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+  "regressionTest": "tests/academic-us-ccss-g1-source-guarded-corrections.test.cjs",
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L04",
+      "title": "More Work with 1 and 2",
+      "publisherSource": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-4/preparation.html",
+      "originalCanonicalBodySha256": "8806fa7a4977ea12d0c5bb3fe2dd20d8f04e440f4c64ca2ac4b4849234c7cbd4",
+      "originalEnglishBodySha256": "5041bfe615b64551b0fc59735b02065bcc4a6036ebea865faaf769e608f17eec",
+      "version": "us-ccss-g1-u01-l04-count-back-one-two-v1",
+      "mathChecks": [
+        "6 - 1 = 5",
+        "6 - 2 = 4",
+        "4 + 2 = 6"
+      ],
+      "defect": "Existing raw learner examples and first steps taught addition though official publisher teaches subtracting 1 or 2"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L10",
+      "title": "Center Day 2",
+      "publisherSource": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-10/preparation.html",
+      "originalCanonicalBodySha256": "522589f8997d542348d02624d4a654a6643134cc7b052355d2e1a0caf4e3b5cd",
+      "originalEnglishBodySha256": "287e0dcb25fc726798717075fc858e5f4cf529eead1b35837835ccfc2f7a20b8",
+      "version": "us-ccss-g1-u01-l10-center-add-subtract-v1",
+      "mathChecks": [
+        "6 + 4 = 10",
+        "10 - 4 = 6",
+        "10 - 7 = 3"
+      ],
+      "defect": "Raw worked example contained literal SVG path and classroom reflection, not worked arithmetic"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L17",
+      "title": "Puppies and Tulips (optional)",
+      "publisherSource": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-17/preparation.html",
+      "originalCanonicalBodySha256": "b54d271acd6cde5e44bd8ac7b7b7dc694be00b109c6316c2e09d329cac57f3bd",
+      "originalEnglishBodySha256": "39bce6dd35872fc984af0b9017b8c7c61be8abc23c678db5b0b10f93c462e9dd",
+      "version": "us-ccss-g1-u06-l17-puppies-tulips-compare-v1",
+      "mathChecks": [
+        "7 - 4 = 3",
+        "4 + 3 = 7",
+        "5 + 3 = 8",
+        "9 - 7 = 2"
+      ],
+      "defect": "Raw Grade 1 comparison story generated impossible out-of-scope negative count"
+    }
+  ]
+}
