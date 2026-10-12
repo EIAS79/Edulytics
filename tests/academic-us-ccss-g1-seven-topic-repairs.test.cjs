@@ -84,6 +84,8 @@ test('new Grade 1 text is learner-facing with worked applications and mathematic
  assert.match(constant('CompareLengthsIndirectlyExamples'),/reference|same pencil|marked string/i);
  assert.match(constant('MeasureConnectingCubeLengthExamples'),/cube lengths|cubes/);
  assert.match(constant('ComposeThreeDimensionalShapesExamples'),/stack|join/i);
+ assert.match(constant('ComposeThreeDimensionalShapesExamples'),/rectangular-prism shape/i);
+ assert.match(constant('ComposeThreeDimensionalShapesExamples'),/sketch the two layers/i);
  for(const key of ['ReadHalfPastClock','WriteClockTimes','ReadClockDailySchedule']){
   assert.match(constant(key+'Examples'),/\d+:30/);
   assert.match(constant(key+'Examples'),/minute hand/i);
