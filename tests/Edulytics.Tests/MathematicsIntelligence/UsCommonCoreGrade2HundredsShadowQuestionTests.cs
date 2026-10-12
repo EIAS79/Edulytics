@@ -25,8 +25,15 @@ public sealed class UsCommonCoreGrade2HundredsShadowQuestionTests
         foreach (var lesson in new[] {"L01", "L02", "L03"})
         {
             var code = "PED:US-CCSS-MATH:G2:U05:" + lesson;
-            Assert.False(LessonPracticeCapabilityResolver.TryResolve(code, out _),
-                "Academic signoff and exact constructed-response rubric are not complete: " + code);
+            // An earlier, independent READY_VERIFIED lesson contract can
+            // exist here. Preserve its already routed families, but require
+            // that neither NEW shadow candidate is made learner-accessible.
+            if (LessonPracticeCapabilityResolver.TryResolve(code, out var existing))
+            {
+                Assert.NotNull(existing);
+                Assert.DoesNotContain(FamilyIds[0], existing!.AllowedQuestionFamilies);
+                Assert.DoesNotContain(FamilyIds[1], existing.AllowedQuestionFamilies);
+            }
         }
     }
 
