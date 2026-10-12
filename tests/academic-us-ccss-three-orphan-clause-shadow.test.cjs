@@ -34,7 +34,7 @@ test('3.MD.C.7.a: all 100 rectangles satisfy independent tiled counts and produc
  assert.equal(a.length,100);
  for(const c of a){
   assert.equal(independentlyVerify(c,'rectangle_tiling_product'),true);
-  assert.throws(()=>independentlyVerify({...c,answerArea:c.rows+c.columns+1},
+  assert.throws(()=>independentlyVerify({...c,answerArea:c.answerArea+1},
    'rectangle_tiling_product'));
   assert.throws(()=>independentlyVerify({...c,tileRows:['#'.repeat(c.columns-1),...c.tileRows.slice(1)]},
    'rectangle_tiling_product'));
