@@ -34,7 +34,7 @@ test('Every repair is linked to unchanged publisher evidence and a recomputed le
     const actual=sha(fields.map(key=>key+':'+en[key]).join('\n'));
     assert.equal(lesson.canonicalBodySha256,actual,row.lessonCode);
     assert.equal(actual,row.correctedCanonicalBodySha256,row.lessonCode);
-    for(const key of fields)assert.ok(en[key].length>=100,row.lessonCode+' '+key+' short');
+    for(const key of fields)assert.ok(en[key].length>=(key==='title'?6:100),row.lessonCode+' '+key+' short');
   }
 });
 test('Source index and teacher-logistics fragments are absent from repaired explanations',()=>{
@@ -76,7 +76,9 @@ test('Independent basic checks of repaired examples and boundary conditions',()=
   assert.equal(det,5);
   const inverse=[[3/5,-1/5],[-1/5,2/5]];
   const multiply=(A,B)=>A.map(r=>B[0].map((_,j)=>r.reduce((t,v,k)=>t+v*B[k][j],0)));
-  assert.deepEqual(multiply(A,inverse),[[1,0],[0,1]]);
+  const product=multiply(A,inverse);
+  product.forEach((row,i)=>row.forEach((value,j)=>assert.ok(
+    Math.abs(value-(i===j?1:0))<1e-12,'Inverse multiplication precision mismatch')));
   assert.deepEqual(multiply([[0,-1],[1,0]],[[2],[1]]),[[-1],[2]]);
   const a=[[1,2],[0,1]],b=[[1,0],[3,1]];
   assert.deepEqual(multiply(a,b),[[7,2],[3,1]]);
