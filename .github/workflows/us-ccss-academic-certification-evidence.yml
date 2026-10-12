@@ -13,6 +13,8 @@ on:
       - 'tests/academic-us-ccss-certification-gate.test.cjs'
       - 'tests/academic-us-ccss-lesson-records.test.cjs'
       - 'tests/academic-us-ccss-phase04-hs-repairs.test.cjs'
+      - 'tests/academic-us-ccss-g1-whole-grade-review.test.cjs'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json'
       - 'docs/curriculum/us-ccss-phase04-hs-content-repair-pilot.json'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-complex-phase29-v1.lesson-content-pack.json'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json'
@@ -63,6 +65,8 @@ jobs:
           node tools/us-ccss-orphan-child-source-review.cjs --check > /tmp/us-ccss-orphan-source-evidence.json
       - name: Recheck seven exact HS learner-body repairs and independent mathematics
         run: node --test tests/academic-us-ccss-phase04-hs-repairs.test.cjs
+      - name: Check all 146 G1 source review rows without granting signoff
+        run: node --test tests/academic-us-ccss-g1-whole-grade-review.test.cjs
       - name: Validate all 1560 lesson certification ledger records (no signoff granted)
         run: |
           node --test tests/academic-us-ccss-lesson-records.test.cjs
