@@ -1,0 +1,55 @@
+name: US CCSS Official Text Rebaseline (read-only)
+
+# A green source check is not human academic approval.
+on:
+  pull_request:
+    paths:
+      - 'tools/us-ccss-official-text-audit.cjs'
+      - 'tests/us-ccss-official-html-math-notation.test.cjs'
+      - '.github/workflows/us-ccss-official-text-rebaseline.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture-source-delta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Protect mathematical superscript and operator capture
+        run: node --test tests/us-ccss-official-html-math-notation.test.cjs
+      - name: Fetch official pages and produce isolated comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/us-ccss-official-text-audit.cjs --compare-baseline \
+            --output=/tmp/us-ccss-official-diff-fresh.json \
+            | tee /tmp/official-rebaseline-summary.json
+          node - /tmp/us-ccss-official-diff-fresh.json <<'NODE'
+          const fs=require('node:fs');
+          const report=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
+          const failures=[];
+          if(report.sourceNodes!==363)failures.push('Parent standards drift '+report.sourceNodes);
+          if(report.officialChildSubstandards.length!==121)failures.push('Child standards drift '+report.officialChildSubstandards.length);
+          if(report.fetchErrors.length)failures.push('Official fetch failures '+report.fetchErrors.length);
+          if(report.missingInOfficialPage.length)failures.push('Missing official source '+report.missingInOfficialPage.length);
+          if(!report.baselineComparison)failures.push('Missing baseline delta');
+          if(failures.length)throw Error(failures.join('; '));
+          console.log('Official fetch integrity PASS; independent source adjudication remains required.');
+          NODE
+          test -z "$(git status --porcelain)"
+      - name: Retain source discrepancy report for independent reviewers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us-ccss-fresh-official-comparison
+          path: |
+            /tmp/us-ccss-official-diff-fresh.json
+            /tmp/official-rebaseline-summary.json
+          if-no-files-found: warn
+          retention-days: 30
