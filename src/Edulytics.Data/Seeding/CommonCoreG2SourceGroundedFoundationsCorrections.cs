@@ -87,7 +87,15 @@ public static class CommonCoreG2SourceGroundedFoundationsCorrections
     private static Repair? Find(
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson) =>
+        // The source-anchored Edulytics correction applies ONLY to the
+        // committed canonical CCSS lesson-content edition. Ad-hoc pedagogical
+        // fixtures may legitimately use the same official LessonCode with
+        // their own reviewed content/version, and must remain independently
+        // subject to the generic seeder's same-version body drift checks.
         string.Equals(document.PackCode, MathematicsCurriculumPackRegistry.CommonCoreCode,
+            StringComparison.Ordinal) &&
+        string.Equals(document.VersionCode, "CCSSM-2010", StringComparison.Ordinal) &&
+        string.Equals(document.ContentVersion, "phase30-common-core-rich-content-v1",
             StringComparison.Ordinal) ?
             Repairs.SingleOrDefault(x => string.Equals(x.Code, lesson.LessonCode,
                 StringComparison.Ordinal)) :

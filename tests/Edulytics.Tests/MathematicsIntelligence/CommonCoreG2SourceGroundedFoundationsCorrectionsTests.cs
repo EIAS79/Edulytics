@@ -115,6 +115,30 @@ public sealed class CommonCoreG2SourceGroundedFoundationsCorrectionsTests
     }
 
     [Fact]
+    public void SyntheticSameLessonCodeDoesNotOverrideDifferentCanonicalEdition()
+    {
+        var row = GetTargets()[0];
+        var saved = row.Document.ContentVersion;
+        try
+        {
+            // Regression: canonical pipeline's realistic synthetic source
+            // fixture reuses an official mapped LessonCode but has a different
+            // vetted publisher edition/content. Its own drift check must run.
+            row.Document.ContentVersion = "reviewed-v1";
+            Assert.False(CommonCoreG2SourceGroundedFoundationsCorrections
+                .IsTarget(row.Document, row.Lesson));
+
+            var unchanged = row.English.StepByStepSolutions;
+            CommonCoreG2SourceGroundedFoundationsCorrections.Apply(row.Document);
+            Assert.Equal(unchanged, row.English.StepByStepSolutions);
+        }
+        finally
+        {
+            row.Document.ContentVersion = saved;
+        }
+    }
+
+    [Fact]
     public void SourceTamperingAndUnrecognizedOldDatabaseContentFailClosed()
     {
         var row = GetTargets()[0];
