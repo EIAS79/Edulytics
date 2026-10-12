@@ -32,8 +32,8 @@ const oldBody = en => createHash('sha256').update([
 
 test('exact three Grade 1 original bodies, source locations, standard arrays and persistent hashes are pinned', () => {
   assert.ok(materializer.includes('CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document)'));
-  assert.ok(materializer.includes('CommonCoreG1SourceGroundedInstructionalCorrections.GetExpectedContentVersion'));
-  assert.ok(materializer.includes('CommonCoreG1SourceGroundedInstructionalCorrections.CanUpgradeExisting'));
+  assert.match(materializer, /CommonCoreG1SourceGroundedInstructionalCorrections\s*\.GetExpectedContentVersion/);
+  assert.match(materializer, /CommonCoreG1SourceGroundedInstructionalCorrections\s*\.CanUpgradeExisting/);
   assert.ok(source.includes('Refusing G1 instruction correction of unexpected prose'));
   assert.ok(source.includes('G1 instruction source/official-standard drift'));
   assert.ok(source.includes('Refusing to overwrite unrecognized G1 persisted text'));
