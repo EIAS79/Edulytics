@@ -18,6 +18,8 @@ on:
       - 'tests/academic-us-ccss-g1-seven-topic-repairs.test.cjs'
       - 'tests/academic-us-ccss-g1-six-local-source-corrections.test.cjs'
       - 'tests/academic-us-ccss-g1-all-publisher-sources.test.cjs'
+      - 'tests/academic-us-ccss-g1-six-source-goal-teaching-repairs.test.cjs'
+      - 'artifacts/academic-us-ccss/grade-reports/G01-six-source-goal-content-repairs.json'
       - 'artifacts/academic-us-ccss/grade-reports/G01-146-local-teacher-source-evidence.json'
       - 'artifacts/academic-us-ccss/grade-reports/G01-six-local-source-verified-corrections.json'
       - 'artifacts/academic-us-ccss/grade-reports/G01-seven-topic-mismatch-corrections.json'
@@ -81,6 +83,8 @@ jobs:
         run: node --test tests/academic-us-ccss-g1-six-local-source-corrections.test.cjs
       - name: Verify local original publisher source identity for all 146 G1 lessons
         run: node --test tests/academic-us-ccss-g1-all-publisher-sources.test.cjs
+      - name: Verify six G1 teacher-goal-aligned learner-body corrections
+        run: node --test tests/academic-us-ccss-g1-six-source-goal-teaching-repairs.test.cjs
       - name: Check all 146 G1 source review rows without granting signoff
         run: node --test tests/academic-us-ccss-g1-whole-grade-review.test.cjs
       - name: Validate all 1560 lesson certification ledger records (no signoff granted)
