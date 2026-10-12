@@ -290,8 +290,8 @@ public sealed class ExactSkillContractQuestionEngine
         if (family == "usccss.g1.u01.l01.count_collection_to20")
             return parameters.TryGetValue("count", out var count) &&
                 count is >= 1 and <= 20 &&
-                int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == count;
+                int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var counted) &&
+                counted == count;
         if (family == "usccss.g1.u01.l01.add_dot_cubes_to10")
             return parameters.TryGetValue("left", out var left) &&
                 parameters.TryGetValue("right", out var right) &&
@@ -574,10 +574,6 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
-            "usccss.g1.u01.l01.count_collection_to20" =>
-                BuildG1L01Counting(random, scale),
-            "usccss.g1.u01.l01.add_dot_cubes_to10" =>
-                BuildG1L01CubeAddition(random, scale),
             "number.whole.add.direct" =>
                 parameters["left"] >= 0 &&
                 parameters["right"] >= 0 &&
@@ -884,6 +880,10 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
+            "usccss.g1.u01.l01.count_collection_to20" =>
+                BuildG1L01Counting(random, scale),
+            "usccss.g1.u01.l01.add_dot_cubes_to10" =>
+                BuildG1L01CubeAddition(random, scale),
             "number.whole.add.direct" =>
                 BuildWholeAdd(random, scale),
             "number.whole.subtract.direct" =>
