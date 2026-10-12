@@ -307,6 +307,34 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
     public const string CompositeShapesAndFactsCenterSteps = "Step 1: Choose either the shape-composition task or the addition/subtraction center.\nStep 2: For shapes, join flat pieces along edges or cubes along faces.\nStep 3: Trace or describe the larger new shape and identify its components.\nStep 4: For numbers, model and solve an equation such as 6 + 4 = 10 or 14 - 5 = 9.\nStep 5: Explain the constructed shape or check the arithmetic with an inverse fact.";
     public const string CompositeShapesAndFactsCenterMistakes = "Mistake: completing only addition without the shape task. Correction: the center also expects geometric composition.\nMistake: joining cubes at corners only. Correction: align whole faces to form the solid.\nMistake: saying 14 - 5 = 8. Correction: remove five counters and count nine remaining.";
 
+    public const string EstimateMeasureAndAddCenterNextLessonCode = "PED:US-CCSS-MATH:G1:U06:L10";
+    public const string EstimateMeasureAndAddCenterNextVersion = "us-ccss-g1-g1-u06-l10-mixed-center-source-v1";
+    public const string EstimateMeasureAndAddCenterNextConcepts = "To measure an object, choose equal-length units, make an estimate, align the first unit with the object's endpoint, place units end to end without gaps or overlaps, then count the units. When adding within 100, decompose tens and ones to preserve place value. Estimating length and adding tens are separate mathematical tasks in this center.";
+    public const string EstimateMeasureAndAddCenterNextExamples = "Example 1: Estimate that a pencil is about 8 equal cube lengths. Line up identical cubes, with no gaps; if 9 cubes match the endpoints, its measured length is 9 cube lengths and the estimate was 1 cube shorter.\nExample 2: An eraser measures 4 equal cube lengths and a pencil measures 9. Using the same cube unit, find the difference: 9 - 4 = 5 cube lengths.\nExample 3: In the adding center, 24 stickers are joined with 30 more stickers. Add tens first: 20 + 30 = 50, then add 4 ones. Thus 24 + 30 = 54 stickers.\nExample 4: Compare two objects using the same cube unit: one is 7 cubes long and another is 5 cubes long. Their combined length, if placed end to end, is 7 + 5 = 12 cube lengths.";
+    public const string EstimateMeasureAndAddCenterNextSteps = "Step 1: Select either the Estimate and Measure task or an addition task.\nStep 2: For measurement, predict the length using one named unit such as a connecting cube.\nStep 3: Place identical length units touching end to end, align the object endpoints, and record the actual unit count.\nStep 4: For addition, represent two addends by tens and ones; for example 24 + 30 = 54.\nStep 5: Compare the measured length to the estimate, or check the sum with place-value blocks and label units.";
+    public const string EstimateMeasureAndAddCenterNextMistakes = "Mistake: adding up pieces of different-size cubes as if each were one equal unit. Correction: use identical length units to measure.\nMistake: leaving gaps between cubes. Correction: align units without gaps or overlaps before counting.\nMistake: counting 24 + 30 as 234. Correction: add 20 + 30 = 50, then add the 4 remaining ones.";
+
+    public const string CountTo120MeasureAndRecordLessonCode = "PED:US-CCSS-MATH:G1:U06:L16";
+    public const string CountTo120MeasureAndRecordVersion = "us-ccss-g1-g1-u06-l16-mixed-center-source-v1";
+    public const string CountTo120MeasureAndRecordConcepts = "Group collections of objects in tens and leftover ones and record totals up to 120. Repeated equal-sized measurement units must touch and align at both endpoints. Addition within 100 uses tens and ones and is distinct from the number of objects being counted or a length measurement.";
+    public const string CountTo120MeasureAndRecordExamples = "Example 1: Group 112 counters into 11 complete groups of ten and 2 single counters. Record 110 + 2 = 112, or 11 tens and 2 ones.\nExample 2: Count 118 counters and then find 2 more in the box. Add to record 118 + 2 = 120 counters; twelve groups of ten make 120.\nExample 3: A pencil aligns with a row of 6 identical cubes and a marker with a row of 9 identical cubes. The marker is 9 - 6 = 3 cube lengths longer.\nExample 4: In a separate addition activity, combine 65 counters with 20 more. Count on two tens: 65 + 20 = 85 counters.";
+    public const string CountTo120MeasureAndRecordSteps = "Step 1: Organize one collection into groups of ten and count leftover single objects.\nStep 2: Record the total (for example 110 + 2 = 112) and confirm it is no more than 120.\nStep 3: For measurement, place equal-length cubes touching and align both endpoints of the object.\nStep 4: For addition, combine tens and ones, for example 65 + 20 = 85.\nStep 5: Label each result as objects counted, units of length, or a sum, and verify it with the model.";
+    public const string CountTo120MeasureAndRecordMistakes = "Mistake: writing eleven tens and two ones as 1102. Correction: add 110 + 2 = 112.\nMistake: counting a gap as part of the measured length. Correction: place equal cubes with no gaps or overlaps.\nMistake: recording an object count as a length. Correction: distinguish objects from cube-length units.";
+
+    public const string DrawSolidShapesAndNumbersCenterLessonCode = "PED:US-CCSS-MATH:G1:U07:L12";
+    public const string DrawSolidShapesAndNumbersCenterVersion = "us-ccss-g1-g1-u07-l12-mixed-center-source-v1";
+    public const string DrawSolidShapesAndNumbersCenterConcepts = "A three-dimensional composite can be made by joining solids along matching flat faces. Describe what a partner should draw, with positions and shapes. Distinguish flat (2D) faces from solid (3D) objects. In the arithmetic center, apply tens-and-ones addition and subtraction within 10.";
+    public const string DrawSolidShapesAndNumbersCenterExamples = "Example 1: Join two identical cubes by a square face, then place a third cube above the left cube. Sketch the new solid as a three-cube L shape and explain how its cubes touch.\nExample 2: Describe a cylinder in a picture book: it has two flat circular faces and one curved surface. Ask a partner to draw a cylinder next to a box-shaped solid so the objects can be identified.\nExample 3: Add 35 + 20 = 55 by combining three tens and two more tens, with five ones remaining.\nExample 4: Start with 9 counters, remove 4 and count 5 left: 9 - 4 = 5; check using 5 + 4 = 9.";
+    public const string DrawSolidShapesAndNumbersCenterSteps = "Step 1: Choose the Can You Draw It shape center or the numerical center.\nStep 2: For shape work, examine solids and state shape properties and relative positions, using unambiguous geometric language.\nStep 3: Join cubes along faces to construct the described composite, draw it and compare the drawing with the construction.\nStep 4: For arithmetic, use place-value blocks for 35 + 20 = 55 or counters for 9 - 4 = 5.\nStep 5: Verify shapes against the described model and numbers using an inverse fact or counting.";
+    public const string DrawSolidShapesAndNumbersCenterMistakes = "Mistake: only naming a cube without composing or drawing a described solid. Correction: join parts into a complete composite and sketch the arrangement.\nMistake: calling a curved cylinder surface a flat face. Correction: identify the two circular flat faces separately from its curved surface.\nMistake: forgetting ones when adding whole tens. Correction: in 35 + 20, the five ones remain, giving 55.";
+
+    public const string SolidFlatShapesClockArithmeticCenterLessonCode = "PED:US-CCSS-MATH:G1:U07:L17";
+    public const string SolidFlatShapesClockArithmeticCenterVersion = "us-ccss-g1-g1-u07-l17-mixed-center-source-v1";
+    public const string SolidFlatShapesClockArithmeticCenterConcepts = "A triangle or rectangle is a flat shape; a cube or cylinder is a solid shape. Join solid blocks along faces to make a composite and describe it. Adding tens and ones and subtracting within 10 are separate numerical centers. For analog time, the minute hand on 12 indicates :00 and the short hand indicates the hour.";
+    public const string SolidFlatShapesClockArithmeticCenterExamples = "Example 1: A rectangle drawn on paper is flat and two-dimensional. Joining two cubes face to face makes a three-dimensional block that is two cubes long. Describe which faces meet.\nExample 2: Add 47 + 20 = 67 with four tens, seven ones and two additional tens. No ones are lost.\nExample 3: Begin with 8 counters, then take away 3. There are 8 - 3 = 5 counters left; check using 5 + 3 = 8.\nExample 4: On a clock the minute hand points at 12 and the short hour hand points at 4. Read and write 4:00, or four o'clock; at 4:30 the minute hand points at 6 and the shorter hand lies between 4 and 5.";
+    public const string SolidFlatShapesClockArithmeticCenterSteps = "Step 1: Choose the geometry, arithmetic or available analog-time task.\nStep 2: In geometry, distinguish a flat 2D drawing from a 3D solid and join cubes along faces to compose a new shape.\nStep 3: Describe the composite block's component shapes and their positions; draw or model the result.\nStep 4: For arithmetic, combine tens and ones or take counters away, for example 47 + 20 = 67 and 8 - 3 = 5.\nStep 5: For clock reading, use both hands to identify the hour or half hour; verify number answers using the model.";
+    public const string SolidFlatShapesClockArithmeticCenterMistakes = "Mistake: calling a flat square drawing a solid cube. Correction: a cube has volume and flat faces while a square is two-dimensional.\nMistake: adding 47 + 20 as 49. Correction: two tens means twenty, so the result is 67.\nMistake: mistaking a minute hand at 6 for six o'clock. Correction: the hand at 6 indicates thirty minutes, and the short hand names the hour.";
+
     private static readonly IReadOnlyDictionary<string, Repair> Repairs =
         new Dictionary<string, Repair>(StringComparer.Ordinal)
         {
@@ -596,7 +624,55 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                 CompositeShapesAndFactsCenterConcepts,
                 CompositeShapesAndFactsCenterExamples,
                 CompositeShapesAndFactsCenterSteps,
-                CompositeShapesAndFactsCenterMistakes)
+                CompositeShapesAndFactsCenterMistakes),
+            [EstimateMeasureAndAddCenterNextLessonCode] = new Repair(
+                EstimateMeasureAndAddCenterNextLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-10/preparation.html",
+                "b0392f033a63a72b6eaa5a30d1d1ff78ffbf2ecff6759cbb44b39c2b7ddc88c1",
+                "5b4d7d68720669b76dc204d5aaa41b06f80729357385d5fe797621cb0d9a7d67",
+                EstimateMeasureAndAddCenterNextVersion,
+                ["CCSS:1.MD.A.2", "CCSS:1.NBT.C.4", "CCSS:1.NBT.C.5", "CCSS:1.OA.C.5", "CCSS:1.OA.C.6"],
+                "Step 1: Decompose the smaller addend 24 into 20 and 4.\nStep 2: Add 20 first: 30 + 20 = 50.\nStep 3: Add the remaining 4 ones: 50 + 4 = 54.\nStep 4: Therefore, 24 + 30 = 54. Check the result using place value.",
+                EstimateMeasureAndAddCenterNextConcepts,
+                EstimateMeasureAndAddCenterNextExamples,
+                EstimateMeasureAndAddCenterNextSteps,
+                EstimateMeasureAndAddCenterNextMistakes),
+            [CountTo120MeasureAndRecordLessonCode] = new Repair(
+                CountTo120MeasureAndRecordLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-16/preparation.html",
+                "98a1d3eb2f4843aa29f09f970e8198d8bce3344bc72740319287f4fe605dad78",
+                "d25cdf21a928426d073e1c6fe6604f0e5ea596b7e2ad5d3412e520f427de44c4",
+                CountTo120MeasureAndRecordVersion,
+                ["CCSS:1.MD.A.2", "CCSS:1.NBT.A.1", "CCSS:1.NBT.C.4"],
+                "Step 1: Identify the two quantities, 65 and 20.\nStep 2: Start at 65 and count on 20 more, or combine the two groups.\nStep 3: The total is 85, so 65 + 20 = 85.\nStep 4: Check that the result matches the quantities and the lesson goal.",
+                CountTo120MeasureAndRecordConcepts,
+                CountTo120MeasureAndRecordExamples,
+                CountTo120MeasureAndRecordSteps,
+                CountTo120MeasureAndRecordMistakes),
+            [DrawSolidShapesAndNumbersCenterLessonCode] = new Repair(
+                DrawSolidShapesAndNumbersCenterLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-12/preparation.html",
+                "6692ba8a9610988d4524132b41a6df55517496cb28390274e50aea0dc880e4e5",
+                "534601db473394d53cb75c1a10126ff3e8db367ccfde50f473f110e68cae863b",
+                DrawSolidShapesAndNumbersCenterVersion,
+                ["CCSS:1.G.A.1", "CCSS:1.G.A.2", "CCSS:1.NBT.C.4", "CCSS:1.OA.C.6"],
+                "Step 1: Represent the quantities or objects in the task.\nStep 2: Describe the relationship or pattern you notice.\nStep 3: Use the lesson key idea to reach a conclusion.\nStep 4: Check the conclusion against the original task.",
+                DrawSolidShapesAndNumbersCenterConcepts,
+                DrawSolidShapesAndNumbersCenterExamples,
+                DrawSolidShapesAndNumbersCenterSteps,
+                DrawSolidShapesAndNumbersCenterMistakes),
+            [SolidFlatShapesClockArithmeticCenterLessonCode] = new Repair(
+                SolidFlatShapesClockArithmeticCenterLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-17/preparation.html",
+                "88d2973aea89e988e30f779e8d1b31e6ff5bf599a818f43706f5b029333c1fa1",
+                "de7287f76519462b9e756c54fe1aecebf7668556b1181c67b9b573da289bb72f",
+                SolidFlatShapesClockArithmeticCenterVersion,
+                ["CCSS:1.G.A.2", "CCSS:1.MD.B.3", "CCSS:1.NBT.C.4", "CCSS:1.OA.C.6"],
+                "Step 1: Represent the quantities or objects in the task.\nStep 2: Describe the relationship or pattern you notice.\nStep 3: Use the lesson key idea to reach a conclusion.\nStep 4: Check the conclusion against the original task.",
+                SolidFlatShapesClockArithmeticCenterConcepts,
+                SolidFlatShapesClockArithmeticCenterExamples,
+                SolidFlatShapesClockArithmeticCenterSteps,
+                SolidFlatShapesClockArithmeticCenterMistakes)
         };
 
     public static bool IsTarget(CanonicalLessonContentPackDocument document,
