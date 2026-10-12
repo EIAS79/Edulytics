@@ -140,7 +140,7 @@ for key, schoolname in SCHOOLS:
                    COALESCE(c."ContentVersion", 'NO_CONTENT_VERSION')
             FROM "CurriculumPedagogicalLessons" l
             LEFT JOIN "CurriculumLessonContents" c
-              ON c."PedagogicalLessonId"=l."Id"
+              ON c."LessonNodeId"=l."Id"
             WHERE l."Id"='""" + pilot_lesson_id + """';""")
         print("DISPOSABLE_G1_U01_L01_CONTENT_METADATA", pilot_meta, flush=True)
         try:
