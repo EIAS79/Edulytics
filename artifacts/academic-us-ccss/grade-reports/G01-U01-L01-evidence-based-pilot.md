@@ -3,7 +3,7 @@
 **Scope:** `PED:US-CCSS-MATH:G1:U01:L01` only. No lesson 2 or G1 grade certification.
 **Policy:** `EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2` — **L1–L6 only, eight review dimensions, no L7/human signature**.
 **Repository:** `EIAS79/Edulytics`, [PR #488](https://github.com/EIAS79/Edulytics/pull/488).
-**Report revised:** 2026-10-13.
+**Report revised:** 2026-10-13 (post-certification CI consistency closeout).
 **Current internal decision:** `INTERNALLY_CERTIFIED` for tested candidate `23786adefd0962e90a074342267baaa5216dddf5`. All L1–L6 and eight dimensions have source-specific versioned evidence; no human signature or L7. This is NOT external, grade-level or Render production certification.
 **Publication:** No Render deploy and no merge into `main` recorded.
 
@@ -47,9 +47,9 @@ The answer verifier recomputes numerical results independently from parameters a
 | 5. Worked examples | Explicit examples and step-by-step explanations; fingerprint guard | `TESTED` |
 | 6. Visuals/representations | Source-aligned first-party counter/ten-frame and dot cubes, Rich V2 model/unit tests | `TESTED` |
 | 7. Misconceptions | Skip/recount an object; count initial addend as new; invalid `5+3=7` | `SOURCE_REVIEWED` |
-| 8. Questions/answers/grading | Two exact families; positive and negative answer verifier tests; HTTPS grading | `TESTED` (both-family HTTPS pending final CI) |
+| 8. Questions/answers/grading | Two exact families; positive and negative answer verifier tests; HTTPS grading | `TESTED` (both-family HTTPS and persisted answers passed on candidate `23786adef`; certification ledger accepted) |
 
-Review-decision labels above describe **specific observations**, not canonical ledger PASS values; final ledger updates require successful candidate SHA checks, time and evidence IDs.
+Review-decision labels above describe **specific observations**. The canonical ledger records `PASS` statuses only with source/content SHA, evidence IDs, and verification timestamps; the eight review dimensions and six gates were validated by the successful certification-evidence checks.
 
 ## 4. L1–L6 gates and outstanding actions
 
@@ -77,7 +77,7 @@ Previous full passing candidate `20094c4f4907b991d82f19ce5327c892d37221a1`:
 - [Common Core Official Closure — run 38316222080](https://github.com/EIAS79/Edulytics/actions/runs/38316222080): passed.
 - [Neon Offline Content Inventory — run 38316222002](https://github.com/EIAS79/Edulytics/actions/runs/38316222002): passed.
 
-**Latest fully rendered candidate:** `23786adefd0962e90a074342267baaa5216dddf5` — [G1 authenticated Chromium and two-family HTTPS run 38317821666](https://github.com/EIAS79/Edulytics/actions/runs/38317821666) PASSED, including desktop (1440×900), mobile (390×844), two correct answers and source attribution. Screenshots: artifact `11776903191`, `g1-u01-l01-rich-v2-chromium-screenshots`. `Evaluation Production Gate` failed because this report had five trailing-whitespace lines; those are fixed in the current edit. The completed final CI state must be verified before recording `INTERNALLY_CERTIFIED`.
+**Latest fully rendered candidate:** `23786adefd0962e90a074342267baaa5216dddf5` — [G1 authenticated Chromium and two-family HTTPS run 38317821666](https://github.com/EIAS79/Edulytics/actions/runs/38317821666) PASSED, including desktop (1440×900), mobile (390×844), two correct answers and source attribution. Screenshots: artifact `11776903191`, `g1-u01-l01-rich-v2-chromium-screenshots`. An intermediate `Evaluation Production Gate` run failed on five trailing-whitespace lines in this report. They were corrected before certification. All eight PR-triggered workflows subsequently passed on the certification-record commit `8b04ca7470646634962a4b2d3a9e1b54d2ccf1f5`, including the evaluation and evidence-safety gates.
 
 ## 6. Durable execution checkpoint
 
@@ -92,10 +92,10 @@ status: INTERNALLY_CERTIFIED
 policyId: EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2
 contentVersion: us-ccss-g1-u01-l01-count-collections-dots-v1
 contentSha256: 2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680
-lastVerifiedGreenCandidate: 20094c4f4907b991d82f19ce5327c892d37221a1
+lastVerifiedGreenCandidate: 8b04ca7470646634962a4b2d3a9e1b54d2ccf1f5
 certifiedSourceCandidateSha: 23786adefd0962e90a074342267baaa5216dddf5
-lastCompletedOperation: Passed exact student Chromium mobile/desktop and both-family HTTPS assessment; identified and corrected report whitespace CI failure
-nextExactOperation: Verify Github Actions on this certification-record commit. Keep all other 1559 lessons queued; release/merge/Render deployment remain separately gated.
+lastCompletedOperation: Registered source-candidate-specific internal certification for one lesson and verified all eight GitHub Actions workflows on certification-record commit 8b04ca7470646634962a4b2d3a9e1b54d2ccf1f5
+nextExactOperation: Align PR description and confirm CI on any follow-up documentation commit; merge only after confirming no unapproved production auto-deploy. Keep 1559 other lessons queued.
 ```
 
 **Only one lesson reviewed in this pilot. No G1 grade certification, PR merge, or Render production deployment is implied.**
