@@ -1,5 +1,11 @@
 # Grade 1 (G1) — whole-grade review: work-in-progress evidence
 
+## Original student HTML archive integrity — critical 146/146 evidence block
+
+Read-only extraction of the entire locally mirrored **Student Public Mirror** Grade 1 `lesson.html` set found **146/146 files to be 404 site-shell HTML rather than authentic student lessons**. Each archive file displays `404 | Section | lesson-N`, has no `<main>` lesson element and zero visible task markers after script/style removal. Filenames and SHA-256 hashes still match the 146 expected lesson identities, but **presence of the file is not evidence of rendered math tasks, solutions, pictures or rubrics**.
+
+Per-lesson source disposition: [G01-146-student-mirror-404-disposition.json](G01-146-student-mirror-404-disposition.json). The 146-row checkpoint records each affected lesson as `BLOCKED_MISSING_EVIDENCE` for visual/assessment/delivery evidence (L4/L5/L6). Genuine publisher or properly authenticated Edulytics learner content plus independent mathematical and grading oracles are required; the invalid local mirror must not be used to pass those gates. This discovery has **not** invalidated the independently checked teacher preparation goals, but it prevents falsely equating publisher-goal matching with student-source verification.
+
 ## Active whole-grade review continuation: mixed-center fixes and durable L1–L7 ledger
 
 On the source-verified `main` baseline `cd6a01e20b4b60874a51b7dfba6b7abce1a788f6`, the **same G1 whole-grade review** resumed with four exact learner-body corrections: `G1:U06:L10` (estimate/measure **and** addition), `G1:U06:L16` (collections to 120 **and** unit length), `G1:U07:L12` (shape composition/drawing **and** number work), and `G1:U07:L17` (flat/solid shapes, clock and arithmetic). All four preserve lesson identity, source URL, official outcome order and previous English body SHA. Their new content and independent regression checks remain pending full PR acceptance.
