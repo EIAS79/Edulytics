@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Real HTTPS two-tenant smoke test. Run only against disposable CI PostgreSQL."""
+import html
 import http.cookiejar
 import json
 import os
@@ -144,7 +145,8 @@ for key, schoolname in SCHOOLS:
             WHERE l."Id"='""" + pilot_lesson_id + """';""")
         print("DISPOSABLE_G1_U01_L01_CONTENT_METADATA", pilot_meta, flush=True)
         try:
-            pilot_page = get_page(student, "/student/learning/lesson/" + pilot_lesson_id)
+            pilot_page = html.unescape(
+                get_page(student, "/student/learning/lesson/" + pilot_lesson_id))
         except urllib.error.HTTPError:
             # Access remains fail-closed. Do not fake a student page to pass L6.
             print("DISPOSABLE_G1_U01_L01_NOT_VISIBLE_TO_STUDENT",
