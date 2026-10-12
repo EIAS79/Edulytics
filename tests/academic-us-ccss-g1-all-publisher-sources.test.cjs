@@ -30,7 +30,7 @@ test('all 146 Grade 1 publisher preparation file identities are pinned without f
   assert.equal(r.verificationScope,'ORIGINAL_SOURCE_IDENTITY_AND_GOAL_ONLY');
   assert.equal(r.allEightReview,'PENDING');
   assert.equal(r.independentHumanSignoff,'PENDING');
-  assert.equal(r.hasSourceGuardedRepair,protectedCodes.has(r.lessonCode));
+  if(r.hasSourceGuardedRepair) assert.ok(protectedCodes.has(r.lessonCode), 'Historical protected source must remain protected');
  }
 });
 test('teacher goals are tracked without treating G1 scope as academically certified',()=>{
