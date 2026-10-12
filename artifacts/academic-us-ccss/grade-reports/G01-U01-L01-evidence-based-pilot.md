@@ -1,11 +1,11 @@
 # G1 Unit 01 Lesson 01 — Evidence-Based Single-Lesson Pilot (V2)
 
-**Scope:** ONE lesson only — `PED:US-CCSS-MATH:G1:U01:L01` / **Count and Add**.  
-**Execution policy:** `EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2`.  
-**Date:** 2026-10-12.  
-**Baseline `main` commit:** `2b1a1252814f584b81d57e9e6b6d02a0c949d764`.  
-**PR:** [#488](https://github.com/EIAS79/Edulytics/pull/488) — *pending CI and merge at creation of this report*.  
-**Final decision:** `REWORK_REQUIRED / NOT_CERTIFIED / GRADE_NO-GO`. No L7 internal acceptance has been granted.  
+**Scope:** ONE lesson only — `PED:US-CCSS-MATH:G1:U01:L01` / **Count and Add**.
+**Execution policy:** `EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2`.
+**Date:** 2026-10-12.
+**Baseline `main` commit:** `2b1a1252814f584b81d57e9e6b6d02a0c949d764`. Subsequent `main` plan-doc deletion: `891bc308cca7470e700ac451c589dd7b2892a5f7` (not part of this lesson repair).
+**PR:** [#488](https://github.com/EIAS79/Edulytics/pull/488) — resumed from existing commits; no new PR.
+**Final decision:** `REWORK_REQUIRED / NOT_CERTIFIED / GRADE_NO-GO` pending verified learner-specific L1–L6 evidence; no human signature or L7 is a requirement.
 **Scope protection:** No other lesson was intentionally changed. This pilot report is **not** the required final consolidated 146-lesson G1 report.
 
 ## 1. Verified source identity and version
@@ -60,12 +60,11 @@ This is an **instructional content repair**, not a claim that a diagram is prese
 | L1: Standards & Provenance | `IN_PROGRESS` | Lesson and official standard mapped; third-party visual rights, actual use/attribution unresolved |
 | L2: Mathematical Truth | `IN_PROGRESS` | Static examples arithmetically reviewed; source-bound CI and effective runtime proof pending |
 | L3: Instructional Quality | `IN_PROGRESS` | Identified and repaired embedded content gap; final runtime comparison pending |
-| L4: Examples & Representations | `BLOCKED` | Publisher-aligned examples authored, but real visual rendering missing |
-| L5: Practice & Assessment | `BLOCKED` | No authenticated per-lesson generation, incorrect-answer and rubric acceptance tests here |
-| L6: Learner Delivery | `BLOCKED` | No authenticated `Edulytics` Render staging, browser/screenshots or persisted digest on target SHA |
-| L7: Internal Evidence Acceptance | `BLOCKED` | L1–L6 incomplete; **no signature required and no internal PASS granted** |
+| L4: Examples & Representations | `IN_PROGRESS` | First-party ten-frame/dot-table render model added and unit tested; browser evidence remains to be collected |
+| L5: Practice & Assessment | `IN_PROGRESS` | Exact-family engine tests generated graded answers at three levels; full pedagogical counting/representation coverage remains unproved |
+| L6: Learner Delivery | `BLOCKED` | Disposable HTTPS school acceptance is green but not an authenticated rendered G1:U01:L01 learner screen on candidate SHA |
 
-**Policy and schema limitation:** `artifacts/academic-us-ccss/04-lesson-certification-records.json` still has historical V1 human-signature validation. The V2 policy document directs migration before any lesson receives official `INTERNALLY_CERTIFIED`; this pilot does not edit 1,560 historical records or fabricate a L7 status.
+**Policy and schema limitation:** `artifacts/academic-us-ccss/04-lesson-certification-records.json` still has historical V1 human-signature validation. The V2 policy document directs migration before any lesson receives official `INTERNALLY_CERTIFIED`; this pilot does not edit 1,560 historical records or fabricate a certification status.
 
 ## 5. Regression plan and delivery boundary
 
@@ -91,9 +90,17 @@ lastCompletedOperation: >
   Compared exact first-edition publisher lesson to the raw embedded G1 L01 body;
   authored SHA-guarded targeted repair and C# regression tests in PR #488.
 nextExactOperation: >
-  Check PR #488 CI and resolve any failures. Verify actual materialized
+  Fix identified GitHub whitespace gate and verify candidate SHA CI; inspect actual materialized
   English SHA, lesson SkillContract family behavior, answer grading,
-  publisher visual rights, and authenticated Rich V2 staging before L1–L7 PASS.
+  publisher visual rights, and authenticated Rich V2 staging before L1–L6 PASS.
 ```
 
 **This pilot ends at this lesson only, by explicit user instruction.** It does not start `G1:U01:L02` or `G2`.
+
+## 7. Continuation evidence (2026-10-12)
+
+- Existing candidate SHA `67afe83a957d7521023c901e16254ae7792be705`: seven workflow suites passed, including full .NET regression, clean PostgreSQL 18, and disposable two-school authenticated HTTPS; **Evaluation Production Gate** failed only at its `git diff --check` whitespace step (this report had six trailing-spaces lines). This is a formatting regression, **not** permission to bypass the gate.
+- Content changes already present in PR #488: G1 L01 conditional Rich V2 visual model with 16 counter dots in 10+6 and 5+3 cube dots, SHA-guarded source correction, focused Math Intelligence tests, source metadata reconciliation (54 incl. this pilot). They are reused, not rewritten.
+- Direct source is a first-edition publisher page; visual models are newly authored within Edulytics. The actual candidate-backed learner page, rights attribution, and complete L5 evidence remain independently required.
+- **Explicit owner policy:** Internal approval has exactly **L1–L6** mandatory gates plus the eight lesson dimensions and no unresolved blockers. **No L7 and no reviewer signature.** The attached old V2 plan was removed from GitHub along with the other plan documents; it is historical context, not current operative approval logic.
+- A successful test of any other US CCSS lesson does not count as exact G1 U01 L01 evidence.
