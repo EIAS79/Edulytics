@@ -39,6 +39,7 @@ public static class UsCcssB01CategoricalGraphVisuals
                 "supporting.statistics.table_total" => ["f1", "f2", "f3", "f4"],
                 "supporting.statistics.category_total" => ["a", "b", "c"],
                 "supporting.statistics.compare_category_counts" => ["a", "b"],
+                "usccss.b01.graph.scaled_compare" => ["countA", "countB"],
                 _ => []
             };
             if (keys.Length == 0 || keys.Any(k=>!p.ContainsKey(k)))
@@ -47,7 +48,17 @@ public static class UsCcssB01CategoricalGraphVisuals
             if (values.Any(x=>x<=0 || x>50)) continue;
             var total=values.Sum();
             // Total-frequency question must agree with the actual bar heights.
-            if (q.Family != "supporting.statistics.compare_category_counts" &&
+            if (q.Family=="usccss.b01.graph.scaled_compare")
+            {
+                if (!p.ContainsKey("unit") || !p.ContainsKey("ticksA") ||
+                    !p.ContainsKey("ticksB") ||
+                    p["unit"] is not (2 or 5 or 10) ||
+                    values[0]!=p["ticksA"]*p["unit"] ||
+                    values[1]!=p["ticksB"]*p["unit"] ||
+                    q.CorrectAnswer!=Math.Abs(values[0]-values[1]).ToString())
+                    continue;
+            }
+            else if (q.Family != "supporting.statistics.compare_category_counts" &&
                 !string.Equals(q.CorrectAnswer, total.ToString(),
                     StringComparison.Ordinal))
                 continue;
@@ -56,10 +67,15 @@ public static class UsCcssB01CategoricalGraphVisuals
             {
                 Kind=RichLessonVisualKind.BarGraph,
                 Title="Compare categorical counts in a bar graph",
-                Description=$"Each bar shows the exact recorded frequency. " +
-                    $"The categories contain {string.Join(", ", values)} items " +
-                    $"and the total is {total}. The longest bar represents " +
-                    "the largest count; bar lengths share one common linear scale.",
+                Description=q.Family=="usccss.b01.graph.scaled_compare"
+                    ? $"Each tick represents {p["unit"]} items. " +
+                      $"Category A has {values[0]}, category B has {values[1]}, " +
+                      $"and their difference is {q.CorrectAnswer}. " +
+                      "Both bars share one linear scale."
+                    : $"Each bar shows the exact recorded frequency. " +
+                      $"The categories contain {string.Join(", ", values)} items " +
+                      $"and the total is {total}. The longest bar represents " +
+                      "the largest count; bar lengths share one common linear scale.",
                 PrimaryLabel="Category and frequency",
                 Rows=values.Select((count,i)=>new RichLessonVisualRow
                 {
