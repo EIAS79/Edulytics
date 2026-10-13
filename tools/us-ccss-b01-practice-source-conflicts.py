@@ -36,6 +36,8 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G4:U03:L16": "usccss.b01.fraction.tenths_hundredths_within_one",
+    "PED:US-CCSS-MATH:G4:U03:L17": "usccss.b01.fraction.tenths_hundredths_over_one",
     "PED:US-CCSS-MATH:G2:U04:L01": "usccss.b01.number_line.locate_whole_to100",
     "PED:US-CCSS-MATH:G2:U05:L08": "usccss.b01.number_line.locate_three_digits",
     "PED:US-CCSS-MATH:G4:U04:L11": "usccss.b01.number_line.locate_large_numbers",
