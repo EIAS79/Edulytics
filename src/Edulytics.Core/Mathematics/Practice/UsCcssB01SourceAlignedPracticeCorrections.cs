@@ -12,6 +12,58 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // Original IM Grade 3 Unit 3 teacher preparations checked for
+        // addition/subtraction within 1,000 and the specific algorithms.
+        // Lesson exactness prevents generic 0–40 arithmetic from replacing
+        // three-digit regrouping or subtraction across zero.
+        new(
+            "PED:US-CCSS-MATH:G3:U03:L03",
+            "number.whole.add", "G3_PLACE_VALUE_ADDITION_STRATEGIES",
+            ["usccss.b01.g3.add_within1000"],
+            "IM2021_G3_U03_L03_ADD_WITHIN1000_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-g3-u03-algorithms-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U03:L05",
+            "number.whole.add", "G3_NEW_TEN_OR_HUNDRED_ALGORITHM",
+            ["usccss.b01.g3.add_regroup1000"],
+            "IM2021_G3_U03_L05_ADD_ALGORITHM_REGROUPING_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-g3-u03-algorithms-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U03:L07",
+            "number.whole.subtract", "G3_SUBTRACTION_STRATEGIES",
+            ["usccss.b01.g3.subtract_within1000"],
+            "IM2021_G3_U03_L07_SUBTRACT_WITHIN1000_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-g3-u03-algorithms-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U03:L08",
+            "number.whole.subtract", "G3_SUBTRACTION_EXPANDED_FORM",
+            ["usccss.b01.g3.subtract_regroup1000"],
+            "IM2021_G3_U03_L08_SUBTRACT_EXPANDED_FORM_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-g3-u03-algorithms-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U03:L09",
+            "number.whole.subtract", "G3_SUBTRACTION_DECOMPOSITION",
+            ["usccss.b01.g3.subtract_regroup1000"],
+            "IM2021_G3_U03_L09_SUBTRACT_REGROUP_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-g3-u03-algorithms-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U03:L10",
+            "number.whole.subtract", "G3_SUBTRACTION_DECOMPOSITION_STEPS",
+            ["usccss.b01.g3.subtract_regroup1000"],
+            "IM2021_G3_U03_L10_SUBTRACT_STEPS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-g3-u03-algorithms-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U03:L11",
+            "number.whole.subtract", "G3_SUBTRACTION_ACROSS_ZEROS",
+            ["usccss.b01.g3.subtract_across_zero"],
+            "IM2021_G3_U03_L11_SUBTRACT_ACROSS_ZERO_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-g3-u03-algorithms-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U03:L12",
+            "number.whole.subtract", "G3_SUBTRACTION_STRATEGY_CHOICE",
+            ["usccss.b01.g3.subtract_within1000"],
+            "IM2021_G3_U03_L12_SUBTRACT_CHOICE_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-g3-u03-algorithms-v1"),
         new(
             "PED:US-CCSS-MATH:G1:U01:L12",
             "supporting.statistics.charts", "COUNT_CATEGORIES_AND_TOTAL",

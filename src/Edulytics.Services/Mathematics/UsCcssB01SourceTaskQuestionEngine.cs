@@ -61,7 +61,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.place_value.tens_ones",
         "usccss.b01.place_value.count_to120",
         "usccss.b01.place_value.three_digits",
-        "usccss.b01.market.inventory_100"
+        "usccss.b01.market.inventory_100",
+        "usccss.b01.g3.add_within1000",
+        "usccss.b01.g3.add_regroup1000",
+        "usccss.b01.g3.subtract_within1000",
+        "usccss.b01.g3.subtract_regroup1000",
+        "usccss.b01.g3.subtract_across_zero"
     };
 
     public static bool Supports(string? family) =>
@@ -121,6 +126,81 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "The sum is the total after combining the two number cards; " +
                     "both cards are at most five.",
                     AssessmentItemType.Numeric,D(("first",a),("second",b)));
+
+            // Original IM Grade 3 U03: add and subtract within 1,000,
+            // represent hundreds/tens/ones, regroup and analyze across-zero
+            // decomposition. A tiny generic arithmetic question is not a
+            // substitute for these source goals.
+            case "usccss.b01.g3.add_within1000":
+            {
+                a=r.Next(100,700);
+                b=r.Next(100,1000-a);
+                return Make(f,
+                    $"Add {a} + {b} within 1,000. Show how hundreds, tens and ones combine.",
+                    "Combine equal place-value units; trade ten ones for one ten " +
+                    "or ten tens for one hundred only when needed, then verify by subtraction.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",0),("expected",a+b)));
+            }
+            case "usccss.b01.g3.add_regroup1000":
+            {
+                for(var attempt=0;attempt<128;attempt++)
+                {
+                    a=r.Next(120,700);b=r.Next(100,1000-a);
+                    var onesCarry=a%10+b%10>=10;
+                    var tensCarry=(a/10)%10+(b/10)%10+(onesCarry?1:0)>=10;
+                    if (!onesCarry && !tensCarry)continue;
+                    return Make(f,
+                        $"Use a written place-value addition algorithm for {a} + {b}. " +
+                        "Explain a newly composed ten or hundred, then find the sum.",
+                        "Regroup ten ones as one ten or ten tens as one hundred. " +
+                        "Record the carried unit above the corresponding column.",
+                        AssessmentItemType.Numeric,
+                        D(("left",a),("right",b),("operation",0),("expected",a+b)));
+                }
+                throw new InvalidOperationException("Could not generate regrouping addition.");
+            }
+            case "usccss.b01.g3.subtract_within1000":
+            {
+                a=r.Next(200,1000);b=r.Next(100,a);
+                return Make(f,
+                    $"Subtract {a} − {b} within 1,000. Choose a place-value " +
+                    "algorithm or an equivalent strategy, and explain your method.",
+                    "Compare the hundreds, tens and ones before choosing a method. " +
+                    "Check the difference by adding it back to the subtrahend.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",1),("expected",a-b)));
+            }
+            case "usccss.b01.g3.subtract_regroup1000":
+            {
+                for(var attempt=0;attempt<128;attempt++)
+                {
+                    a=r.Next(250,1000);b=r.Next(101,a);
+                    var borrowOnes=a%10<b%10;
+                    var borrowTens=(a/10)%10<(b/10)%10+(borrowOnes?1:0);
+                    if(!borrowOnes && !borrowTens)continue;
+                    return Make(f,
+                        $"Subtract {a} − {b} using an expanded-form " +
+                        "or written place-value algorithm. Show the necessary decomposition.",
+                        "Rename one higher-place unit as ten lower-place units " +
+                        "before subtracting. Check by adding the result back.",
+                        AssessmentItemType.Numeric,
+                        D(("left",a),("right",b),("operation",1),("expected",a-b)));
+                }
+                throw new InvalidOperationException("Could not generate regrouping subtraction.");
+            }
+            case "usccss.b01.g3.subtract_across_zero":
+            {
+                a=r.Next(3,10)*100;
+                b=r.Next(1,a/100)*100+r.Next(1,10)*10+r.Next(1,10);
+                return Make(f,
+                    $"Analyze the subtraction algorithm for {a} − {b}. " +
+                    "How do you decompose a hundred across the zero tens and zero ones?",
+                    "Exchange one hundred for ten tens, then exchange one ten " +
+                    "for ten ones; finish the subtraction and verify by addition.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",1),("expected",a-b)));
+            }
 
             case "usccss.b01.market.inventory_100":
                 // 2021 IM G2 U02 L16 optional market: one stock category <10,
@@ -628,6 +708,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int P(string key) => p[key];
         return f switch
         {
+            "usccss.b01.g3.add_within1000" or
+            "usccss.b01.g3.add_regroup1000" =>
+                (P("left")+P("right")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g3.subtract_within1000" or
+            "usccss.b01.g3.subtract_regroup1000" or
+            "usccss.b01.g3.subtract_across_zero" =>
+                (P("left")-P("right")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.market.inventory_100" =>
                 (P("mode") == 0 ? P("second") - P("sold") : P("third"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -751,6 +838,29 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int N(string key) => p[key];
         return family switch
         {
+            "usccss.b01.g3.add_within1000" or
+            "usccss.b01.g3.add_regroup1000" =>
+                Range("left",100,699) && Range("right",100,899) &&
+                Range("operation",0,0) && Range("expected",200,999) &&
+                N("left")+N("right")==N("expected") &&
+                (family=="usccss.b01.g3.add_within1000" ||
+                    (N("left")%10+N("right")%10>=10 ||
+                     N("left")/10%10+N("right")/10%10+
+                     (N("left")%10+N("right")%10>=10?1:0)>=10)),
+            "usccss.b01.g3.subtract_within1000" or
+            "usccss.b01.g3.subtract_regroup1000" or
+            "usccss.b01.g3.subtract_across_zero" =>
+                Range("left",200,999) && Range("right",100,998) &&
+                N("left")>N("right") && Range("operation",1,1) &&
+                Range("expected",1,899) &&
+                N("left")-N("right")==N("expected") &&
+                (family=="usccss.b01.g3.subtract_within1000" ||
+                 family=="usccss.b01.g3.subtract_regroup1000" &&
+                    (N("left")%10<N("right")%10 ||
+                     N("left")/10%10<N("right")/10%10+
+                       (N("left")%10<N("right")%10?1:0)) ||
+                 family=="usccss.b01.g3.subtract_across_zero" &&
+                    N("left")%100==0 && N("right")%100!=0),
             "usccss.b01.market.inventory_100" =>
                 Range("small",2,9) && Range("second",20,60) &&
                 Range("third",11,78) &&
