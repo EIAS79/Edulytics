@@ -269,6 +269,27 @@ public static class UsCcssB01SourceTaskVisuals
                                     (x.Item2%10).ToString()]
                             }).ToList()
                     },
+                "usccss.b01.g4.decimal_number_line_greater" when
+                    lessonCode=="PED:US-CCSS-MATH:G4:U04:L03" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.NumberLine,
+                        Title="Two decimals on the same hundredths number line",
+                        Description=$"The ticks grow by exactly 0.01. " +
+                            $"The first number is at tick {N("tickA")} and " +
+                            $"the second at tick {N("tickB")}. " +
+                            $"The correct larger decimal is {q.CorrectAnswer}.",
+                        PrimaryLabel="Compare the two marked decimal positions",
+                        SecondaryLabel="Two G4 decimal positions",
+                        SecondaryItems=[N("tickA").ToString(),N("tickB").ToString()],
+                        Items=Enumerable.Range(0,11)
+                            .Select(i=>((N("start")+i)/100m)
+                                .ToString("0.00",
+                                    System.Globalization.CultureInfo.InvariantCulture))
+                            .ToList()
+                    },
                 "usccss.b01.g2.order_three_digits_number_line" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U05:L09" &&
                     ExactSkillContractQuestionEngine.Verify(

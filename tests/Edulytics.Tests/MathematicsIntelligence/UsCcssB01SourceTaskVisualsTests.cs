@@ -283,6 +283,45 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void OriginalG4DecimalLessonShowsTwoExactHundredthsPositions()
+    {
+        const string code="PED:US-CCSS-MATH:G4:U04:L03";
+        const string family="usccss.b01.g4.decimal_number_line_greater";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+            family,out var input));
+        Assert.Equal(LessonPracticeInteractionKind.NumericEntry,input!.InteractionKind);
+        for(var seed=120300;seed<120395;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            Assert.Equal(p["start"]+p["tickA"],p["first"]);
+            Assert.Equal(p["start"]+p["tickB"],p["second"]);
+            Assert.NotEqual(p["first"],p["second"]);
+            var answer=Math.Max(p["first"],p["second"])/100m;
+            Assert.Equal(answer,decimal.Parse(q.CorrectAnswer,
+                System.Globalization.CultureInfo.InvariantCulture));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,answer.ToString("0.##",
+                    System.Globalization.CultureInfo.InvariantCulture)));
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.NumberLine,visual.Kind);
+            Assert.Equal(11,visual.Items.Count);
+            Assert.Equal((p["first"]/100m).ToString("0.00",
+                System.Globalization.CultureInfo.InvariantCulture),
+                visual.Items[p["tickA"]]);
+            Assert.Equal((p["second"]/100m).ToString("0.00",
+                System.Globalization.CultureInfo.InvariantCulture),
+                visual.Items[p["tickB"]]);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999.0"}]));
+        }
+    }
+
+    [Fact]
     public void ArrayVisualContainsExactlyTheUnitSquaresInTheVerifiedQuestion()
     {
         const string code="PED:US-CCSS-MATH:G3:U01:L16";

@@ -76,6 +76,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g1.compare_order_tens_ones",
         "usccss.b01.g4.whole_minus_proper_fraction",
         "usccss.b01.g2.order_three_digits_number_line",
+        "usccss.b01.g4.decimal_number_line_greater",
         "usccss.b01.g2.add_subtract_1000_no_regroup",
         "usccss.b01.g1.add_within100_no_compose_ten",
         "usccss.b01.g2.add_subtract_without_regroup",
@@ -334,6 +335,25 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     AssessmentItemType.Numeric,
                     D(("left",a),("right",b),("operation",m),
                       ("expected",m==0?a+b:a-b)));
+            }
+
+            // IM G4 U04 L03: compare hundredths by relative numeric
+            // positions on an equal-interval number line.
+            case "usccss.b01.g4.decimal_number_line_greater":
+            {
+                a=r.Next(0,9)*10;
+                b=r.Next(0,11);n=r.Next(0,11);
+                while(n==b)n=r.Next(0,11);
+                var first=a+b;var second=a+n;
+                return Make(f,
+                    "A number line uses equal 0.01 intervals. Two marked " +
+                    $"points are {(first/100m).ToString("0.00",CultureInfo.InvariantCulture)} " +
+                    $"and {(second/100m).ToString("0.00",CultureInfo.InvariantCulture)}. " +
+                    "Which decimal is farther RIGHT (greater)?",
+                    "Greater decimals are farther right. Each equal tick adds 0.01.",
+                    AssessmentItemType.ShortAnswer,
+                    D(("start",a),("tickA",b),("tickB",n),
+                      ("first",first),("second",second)));
             }
 
             case "usccss.b01.g2.order_three_digits_number_line":
@@ -1139,6 +1159,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 (P("left")+P("right")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.add_subtract_1000_no_regroup" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g4.decimal_number_line_greater" =>
+                (Math.Max(P("first"),P("second"))/100m)
+                    .ToString("0.00",CultureInfo.InvariantCulture),
             "usccss.b01.g2.order_three_digits_number_line" =>
                 Math.Max(P("first"),P("second"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -1383,6 +1406,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     :N("left")/100>N("right")/100 &&
                      N("left")/10%10>=N("right")/10%10 &&
                      N("left")%10>=N("right")%10),
+            "usccss.b01.g4.decimal_number_line_greater" =>
+                Range("start",0,80) && N("start")%10==0 &&
+                Range("tickA",0,10) && Range("tickB",0,10) &&
+                N("tickA")!=N("tickB") &&
+                Range("first",0,90) && Range("second",0,90) &&
+                N("first")==N("start")+N("tickA") &&
+                N("second")==N("start")+N("tickB"),
             "usccss.b01.g2.order_three_digits_number_line" =>
                 Range("start",100,800) && N("start")%100==0 &&
                 Range("tickA",0,10) && Range("tickB",0,10) &&
@@ -1594,6 +1624,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             if (!ValidDomain(family,p)) return false;
             // Independent CI oracles cross-check the mathematical result from
             // the structured generation parameters across all 19 families.
+            // Numeric decimal answers such as 0.30 and 0.3 are equivalent.
+            // Compare the exact decimal, with no rounding or float tolerance.
+            if(family=="usccss.b01.g4.decimal_number_line_greater")
+                return decimal.TryParse(answer.Trim(),
+                    NumberStyles.AllowDecimalPoint,
+                    CultureInfo.InvariantCulture,out var supplied) &&
+                    supplied==Math.Max(p["first"],p["second"])/100m;
             var checkedAnswer = family is "usccss.b01.array.equal_addends"
                 or "usccss.b01.array.equal_equation"
                 ? new string(answer.Where(c=>!char.IsWhiteSpace(c)).ToArray())

@@ -574,6 +574,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.order_three_digits_number_line"],
             "IM2021_G2_U05_L09_THREE_DIGIT_NUMBER_LINE_PURPOSE",
             "READY_VERIFIED", "usccss-b01-book-g2-line-v1"),
+        // IM 2021 G4 U04 L03: position and compare decimals on
+        // an accurately spaced number line in hundredths.
+        new(
+            "PED:US-CCSS-MATH:G4:U04:L03",
+            "supporting.decimals.place_value", "COMPARE_HUNDREDTHS_ON_NUMBER_LINE",
+            ["usccss.b01.g4.decimal_number_line_greater"],
+            "IM2021_G4_U04_L03_COMPARE_DECIMALS_ON_NUMBER_LINE",
+            "READY_VERIFIED", "usccss-b01-decimal-line-v1"),
         // G4 U03 L10: subtract a proper fraction from whole numbers,
         // renaming the whole as equivalent denominator-sized parts.
         new(

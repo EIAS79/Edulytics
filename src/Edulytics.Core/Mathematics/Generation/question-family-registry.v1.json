@@ -6607,6 +6607,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g4.decimal_number_line_greater",
+      "version": 1,
+      "skillId": "supporting.decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "source-g4-hundredths-position-decimal-oracle-v1",
+      "representations": [
+        "number_line_two_decimal_positions",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g2.order_three_digits_number_line",
       "version": 1,
       "skillId": "measurement.scale.read_equal_intervals",

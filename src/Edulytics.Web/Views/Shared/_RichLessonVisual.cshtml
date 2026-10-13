@@ -39,7 +39,8 @@
         // not just the first one. Other visual contracts stay unchanged.
         var comparisonTicks=new HashSet<int>();
         if(Model.Kind==RichLessonVisualKind.NumberLine &&
-            Model.SecondaryLabel=="Two G2 number-line positions" &&
+            (Model.SecondaryLabel=="Two G2 number-line positions" ||
+             Model.SecondaryLabel=="Two G4 decimal positions") &&
             Model.SecondaryItems.Count==2 &&
             int.TryParse(Model.SecondaryItems[0],out var comparisonFirst) &&
             int.TryParse(Model.SecondaryItems[1],out var comparisonSecond) &&
