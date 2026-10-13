@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Eleven lesson-code-exact B01 corrections independently checked against their
+/// Thirty-six lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -99,5 +99,156 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["supporting.sequences.skip_count"],
             "IM2021_G4_U01_L05_MORE_MULTIPLES",
             "READY_VERIFIED", "usccss-b01-source-scope-v1")
+,
+        new(
+            "PED:US-CCSS-MATH:G1:U07:L05",
+            "supporting.geometry.properties", "TRIANGLE_ATTRIBUTES",
+            ["usccss.b01.triangle.attributes"],
+            "IM2021_G1_U07_L05_TRIANGLE_ATTRIBUTES_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U07:L09",
+            "fractions.represent.interpret", "EQUAL_HALVES_FOURTHS",
+            ["usccss.b01.partition.halves_fourths"],
+            "IM2021_G1_U07_L09_EQUAL_HALVES_FOURTHS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U07:L10",
+            "fractions.represent.interpret", "ONE_PIECE_WHOLE_PIECES",
+            ["usccss.b01.partition.halves_fourths"],
+            "IM2021_G1_U07_L10_ONE_PIECE_WHOLE_PIECES_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U04:L02",
+            "measurement.scale.read_equal_intervals", "NUMBER_LINE_EQUAL_INTERVALS",
+            ["usccss.b01.number_line.equal_intervals"],
+            "IM2021_G2_U04_L02_NUMBER_LINE_EQUAL_INTERVALS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U06:L11",
+            "supporting.measurement.practical", "CLOCK_HALVES_QUARTERS",
+            ["usccss.b01.clock.half_quarters"],
+            "IM2021_G2_U06_L11_CLOCK_HALVES_QUARTERS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U08:L12",
+            "supporting.geometry.area_volume", "PARTITION_UNIT_SQUARES",
+            ["usccss.b01.rectangle.unit_squares"],
+            "IM2021_G2_U08_L12_PARTITION_UNIT_SQUARES_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U09:L03",
+            "supporting.measurement.practical", "MAP_MEASURE_LENGTHS",
+            ["usccss.b01.measure.map_lengths"],
+            "IM2021_G2_U09_L03_MAP_MEASURE_LENGTHS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L06",
+            "supporting.statistics.charts", "BAR_GRAPH_CHOOSE_SCALE",
+            ["usccss.b01.graph.choose_scale"],
+            "IM2021_G3_U01_L06_BAR_GRAPH_CHOOSE_SCALE_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L16",
+            "number.whole.multiply", "ARRANGE_ARRAYS",
+            ["usccss.b01.array.equal_groups"],
+            "IM2021_G3_U01_L16_ARRANGE_ARRAYS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L18",
+            "number.whole.multiply", "ARRAY_MULTIPLICATION_EXPRESSIONS",
+            ["usccss.b01.array.equal_groups"],
+            "IM2021_G3_U01_L18_ARRAY_MULTIPLICATION_EXPRESSIONS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L21",
+            "number.whole.multiply", "EQUAL_GROUPS_SEATING_PLAN",
+            ["usccss.b01.array.equal_groups"],
+            "IM2021_G3_U01_L21_EQUAL_GROUPS_SEATING_PLAN_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L03",
+            "supporting.geometry.area_volume", "RECTANGULAR_TILING_AREA",
+            ["usccss.b01.rectangle.unit_squares"],
+            "IM2021_G3_U02_L03_RECTANGULAR_TILING_AREA_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L11",
+            "supporting.geometry.area_volume", "AREA_MULTIPLICATION_TABLE",
+            ["usccss.b01.rectangle.unit_squares"],
+            "IM2021_G3_U02_L11_AREA_MULTIPLICATION_TABLE_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L15",
+            "supporting.geometry.area_volume", "COMPOSITE_RECTANGLE_AREAS",
+            ["usccss.b01.geometry.composite_rectangle_area"],
+            "IM2021_G3_U02_L15_COMPOSITE_RECTANGLE_AREAS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U04:L06",
+            "supporting.number.directed_operations", "DIVISION_UNKNOWN_FACTOR",
+            ["usccss.b01.division.unknown_factor"],
+            "IM2021_G3_U04_L06_DIVISION_UNKNOWN_FACTOR_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U05:L01",
+            "fractions.represent.interpret", "NAME_EQUAL_FRACTION_PARTS",
+            ["usccss.b01.fraction.name_parts"],
+            "IM2021_G3_U05_L01_NAME_EQUAL_FRACTION_PARTS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U06:L02",
+            "supporting.measurement.practical", "RULER_FOURTHS_OF_INCH",
+            ["usccss.b01.measure.quarter_inch"],
+            "IM2021_G3_U06_L02_RULER_FOURTHS_OF_INCH_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U01:L02",
+            "supporting.number.factors_primes", "RECTANGULAR_FACTOR_PAIRS",
+            ["usccss.b01.factors.factor_pairs"],
+            "IM2021_G4_U01_L02_RECTANGULAR_FACTOR_PAIRS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U01:L03",
+            "supporting.number.factors_primes", "PRIME_VS_COMPOSITE",
+            ["usccss.b01.factors.prime_composite"],
+            "IM2021_G4_U01_L03_PRIME_VS_COMPOSITE_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U01:L06",
+            "supporting.number.factors_primes", "FACTOR_TOGGLED_LOCKERS",
+            ["usccss.b01.factors.locker_square"],
+            "IM2021_G4_U01_L06_FACTOR_TOGGLED_LOCKERS_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U01:L07",
+            "supporting.number.factors_primes", "FACTORS_AND_MULTIPLES",
+            ["usccss.b01.factors.factors_multiples"],
+            "IM2021_G4_U01_L07_FACTORS_AND_MULTIPLES_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U01:L08",
+            "supporting.number.factors_primes", "MONDRIAN_FACTOR_RECTANGLES",
+            ["usccss.b01.factors.factor_pairs"],
+            "IM2021_G4_U01_L08_MONDRIAN_FACTOR_RECTANGLES_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U03:L04",
+            "supporting.fractions.multiply_divide", "NON_UNIT_FRACTION_WHOLE_MULTIPLY",
+            ["usccss.b01.fraction.whole_multiply"],
+            "IM2021_G4_U03_L04_NON_UNIT_FRACTION_WHOLE_MULTIPLY_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U03:L07",
+            "fractions.add_subtract", "FRACTION_AS_SUM_SAME_DENOMINATOR",
+            ["usccss.b01.fraction.decompose_same_denominator"],
+            "IM2021_G4_U03_L07_FRACTION_AS_SUM_SAME_DENOMINATOR_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U04:L10",
+            "supporting.number.place_value_rounding", "TEN_TIMES_DIGIT_VALUE",
+            ["usccss.b01.place_value.ten_times"],
+            "IM2021_G4_U04_L10_TEN_TIMES_DIGIT_VALUE_PURPOSE_CHECKED",
+            "READY_VERIFIED", "usccss-b01-source-task-v1")
     ];
 }
