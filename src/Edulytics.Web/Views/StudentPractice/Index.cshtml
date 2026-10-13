@@ -82,6 +82,9 @@ else
             <h2>@S["GeneratePrivatePractice"]</h2>
             <form asp-action="Generate" method="post" class="assessment-form" id="student-private-practice-form">
                 @Html.AntiForgeryToken()
+                @* One stable key per rendered form stops duplicate-click attempts
+                   without treating the session-wide CSRF token as a new attempt ID. *@
+                <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
                 <input type="hidden" name="curriculumAdoptionId" value="@selected.Value" />
                 <label>@S["PracticeScope"]</label>
                 <select id="practice-scope" name="scope">
