@@ -60,6 +60,13 @@ def analyze(publisher,rich):
         demands=[]
         for name,phrase,suitable in CUES:
             if re.search(phrase,intro,re.I):
+                # Publisher time-telling lessons may say "halves and quarters"
+                # referring to positions of a clock hand, not fractional
+                # shaded-piece task statements. A real ClockFace meets that
+                # source need; demanding FractionBars here is a false alarm.
+                if (name=="FRACTION_PARTS" and "ClockFace" in kinds and
+                    re.search(r"\\bclock|tell time|write times|half.past|quarter.past",intro,re.I)):
+                    continue
                 if name=="CLOCK_DIAGRAM":
                     # There is no first-party clock-face renderer in current Rich V2.
                     # Generic scales are not a substitute for analog hand placement.
