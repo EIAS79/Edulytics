@@ -307,7 +307,7 @@ public static class UsCcssB01SourceTaskVisuals
         };
     }
 
-    private static bool IsB01(string code)
+    internal static bool IsB01(string code)
     {
         var tokens = code.Split(':');
         if (tokens.Length != 5 ||
