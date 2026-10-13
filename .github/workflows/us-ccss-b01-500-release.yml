@@ -12,6 +12,7 @@ on:
       - 'tools/us-ccss-b01-bulk-content-screen.cjs'
       - 'tools/us-ccss-lesson-certification-records.cjs'
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
+      - 'tests/academic-us-ccss-b01-bulk-content-screen.test.cjs'
   workflow_dispatch:
 
 permissions:
@@ -27,7 +28,7 @@ jobs:
         with:
           node-version: '24'
       - name: Prove 500-lesson release refuses fake or incomplete evidence
-        run: node --test tests/academic-us-ccss-b01-release-gate.test.cjs
+        run: node --test tests/academic-us-ccss-b01-release-gate.test.cjs tests/academic-us-ccss-b01-bulk-content-screen.test.cjs
       - name: Screen ALL 500 learner content bodies together
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --output=b01-bulk-screen.json
       - name: Save 500-row bulk content screen, even when issues are found
