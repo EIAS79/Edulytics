@@ -144,7 +144,6 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G3:U04:L06": "usccss.b01.division.unknown_factor",
     "PED:US-CCSS-MATH:G3:U05:L01": "usccss.b01.fraction.name_parts",
     "PED:US-CCSS-MATH:G3:U06:L02": "usccss.b01.measure.quarter_inch",
-    "PED:US-CCSS-MATH:G4:U01:L02": "usccss.b01.factors.factor_pairs",
     "PED:US-CCSS-MATH:G4:U01:L03": "usccss.b01.factors.prime_composite",
     "PED:US-CCSS-MATH:G4:U01:L06": "usccss.b01.factors.locker_square",
     "PED:US-CCSS-MATH:G4:U01:L07": "usccss.b01.factors.factors_multiples",
