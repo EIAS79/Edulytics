@@ -47,6 +47,20 @@ class PublisherAlignmentTests(unittest.TestCase):
         self.assertFalse(module.allowed_source_url(
             "http://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/preparation.html"))
 
+    def test_optional_market_activity_is_proven_by_original_publisher_constraints(self):
+        html = """<main><h2>Activity 1: 100 Items</h2>
+        <p>Your market sells 3 kinds of items; at the beginning
+        the inventory contains a total of 100 items.</p>
+        <h2>Activity 2</h2><p>Sales update the inventory.</p></main>"""
+        r = module.check_optional_market_activity(html)
+        self.assertEqual(r["status"], "OFFICIAL_ACTIVITY_VERIFIED_NOT_CERTIFIED")
+        self.assertEqual(len(r["activityHtmlSha256"]), 64)
+
+    def test_optional_market_cannot_claim_activity_without_all_constraints(self):
+        html = "<main><p>Some items are for sale.</p></main>"
+        with self.assertRaisesRegex(ValueError, "stock/transaction constraints"):
+            module.check_optional_market_activity(html)
+
     def test_full_batch_requires_exactly_500_same_identities(self):
         with self.assertRaisesRegex(ValueError,"scope"):
             module.run({"batchId":"B01","lessons":[]},{"lessonRows":[]},lambda _:None)
