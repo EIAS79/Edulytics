@@ -146,6 +146,30 @@
             </table>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.BarGraph)
+    {
+        // Native progress meters keep each verified category count proportional,
+        // readable with assistive technology and usable without JavaScript.
+        var counts = Model.Rows
+            .Select(r => int.TryParse(r.Cells.FirstOrDefault(), out var count)
+                ? Math.Max(0, count) : 0)
+            .ToArray();
+        var graphMax = Math.Max(1, counts.DefaultIfEmpty(0).Max());
+        <div class="rich-lesson-bar-graph"
+             role="group" aria-label="@Model.Description">
+            @for (var i = 0; i < Model.Rows.Count; i++)
+            {
+                var category = Model.Rows[i].Label;
+                var count = counts[i];
+                <div class="rich-lesson-bar-graph__row">
+                    <label for="rich-bar-@i-@Model.GetHashCode()">@category</label>
+                    <progress id="rich-bar-@i-@Model.GetHashCode()" value="@count"
+                              max="@graphMax" aria-label="@category: @count"></progress>
+                    <strong>@count</strong>
+                </div>
+            }
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">
