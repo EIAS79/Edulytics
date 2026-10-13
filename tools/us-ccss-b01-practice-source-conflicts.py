@@ -36,6 +36,8 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G3:U02:L07": "usccss.b01.geometry.rectangle_area_real_world_units",
+    "PED:US-CCSS-MATH:G3:U02:L10": "usccss.b01.geometry.rectangle_area_real_world_units",
     "PED:US-CCSS-MATH:G3:U02:L05": "usccss.b01.geometry.rectangle_area_grid60",
     "PED:US-CCSS-MATH:G3:U02:L09": "usccss.b01.geometry.rectangle_area_ungridded",
     "PED:US-CCSS-MATH:G2:U01:L15": "usccss.b01.g2.compare_tape_unknown_positions",
