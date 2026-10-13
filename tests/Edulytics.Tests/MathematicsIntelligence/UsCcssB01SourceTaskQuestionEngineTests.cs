@@ -38,7 +38,10 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G4:U03:L04", "fraction.whole_multiply"),
         ("G4:U03:L07", "fraction.decompose_same_denominator"),
         ("G4:U04:L10", "place_value.ten_times"),
-        ("G2:U02:L16", "market.inventory_100")
+        ("G2:U02:L16", "market.inventory_100"),
+        ("G1:U07:L14", "clock.read_half_hour"),
+        ("G1:U07:L15", "clock.read_half_hour"),
+        ("G2:U06:L12", "clock.read_five_minutes")
     ];
 
     [Fact]
@@ -59,8 +62,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(26, lessonIds.Count);
-        Assert.Equal(20, familyIds.Count);
+        Assert.Equal(29, lessonIds.Count);
+        Assert.Equal(22, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -101,7 +104,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(78, generated);
+        Assert.Equal(87, generated);
     }
 
     [Fact]
@@ -127,6 +130,13 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         string Num(int n) => n.ToString(CultureInfo.InvariantCulture);
         switch (family)
         {
+            case "usccss.b01.clock.read_half_hour":
+                Assert.True(N("minutes") is 0 or 30);
+                return $"{N("hour")}:{N("minutes"):00}";
+            case "usccss.b01.clock.read_five_minutes":
+                Assert.InRange(N("minutes"), 0, 55);
+                Assert.Equal(0, N("minutes")%5);
+                return $"{N("hour")}:{N("minutes"):00}";
             case "usccss.b01.market.inventory_100":
                 Assert.Equal(100, N("small") + N("second") + N("third"));
                 Assert.InRange(N("small"), 1, 9);
