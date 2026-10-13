@@ -20,7 +20,7 @@ public sealed class UsCcssB01SourceDotCardsContentCorrectionTests
 
         var lesson = docs.SelectMany(d => d.Lessons.Select(l => (d,l)))
             .Single(x => x.l.LessonCode == Code);
-        var en = Assert.Single(lesson.l.Translations.Where(t => t.CultureCode == "en"));
+        var en = Assert.Single(lesson.l.Translations, t => t.CultureCode == "en");
         Assert.Equal(CommonCoreG1DotCardMatchingCorrection.CorrectedVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
                 lesson.d,lesson.l));
