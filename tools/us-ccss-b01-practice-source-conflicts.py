@@ -33,7 +33,7 @@ RULES = (
       not any(x in t for x in ("combinations of","choose two","pairs from a set"))),
 )
 
-# 25 original publisher lesson targets: exact approved code/family linkage.
+# 26 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G1:U07:L05": "usccss.b01.triangle.attributes",
@@ -61,6 +61,7 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G4:U03:L04": "usccss.b01.fraction.whole_multiply",
     "PED:US-CCSS-MATH:G4:U03:L07": "usccss.b01.fraction.decompose_same_denominator",
     "PED:US-CCSS-MATH:G4:U04:L10": "usccss.b01.place_value.ten_times",
+    "PED:US-CCSS-MATH:G2:U02:L16": "usccss.b01.market.inventory_100",
 }
 
 def analyze(runtime, publisher):
