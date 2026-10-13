@@ -37,7 +37,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G4:U01:L08", "factors.factor_pairs"),
         ("G4:U03:L04", "fraction.whole_multiply"),
         ("G4:U03:L07", "fraction.decompose_same_denominator"),
-        ("G4:U04:L10", "place_value.ten_times")
+        ("G4:U04:L10", "place_value.ten_times"),
+        ("G2:U02:L16", "market.inventory_100")
     ];
 
     [Fact]
@@ -58,8 +59,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(25, lessonIds.Count);
-        Assert.Equal(19, familyIds.Count);
+        Assert.Equal(26, lessonIds.Count);
+        Assert.Equal(20, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -100,7 +101,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(75, generated);
+        Assert.Equal(78, generated);
     }
 
     [Fact]
@@ -126,6 +127,11 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         string Num(int n) => n.ToString(CultureInfo.InvariantCulture);
         switch (family)
         {
+            case "usccss.b01.market.inventory_100":
+                Assert.Equal(100, N("small") + N("second") + N("third"));
+                Assert.InRange(N("small"), 1, 9);
+                Assert.True(N("second") > 10 && N("third") > 10);
+                return Num(N("mode") == 0 ? N("second") - N("sold") : N("third"));
             case "usccss.b01.triangle.attributes":
                 return Num(N("position"));
             case "usccss.b01.partition.halves_fourths":
