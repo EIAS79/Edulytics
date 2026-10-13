@@ -23,7 +23,7 @@ CUES = [
  ("AREA_MODEL",r"\barea of\b|\barea by\b|\barea with\b|\barea and\b",
   {"ShapeDecomposition","RectangleDiagram","PlaceValueChart"}),
  ("TRIANGLE_SHAPES",r"\btriangles?\b|defining attributes of shapes",
-  {"ShapeDecomposition"}),
+  {"ShapeDecomposition","PolygonDiagram"}),
  ("MEASUREMENT_SCALE",r"\bruler\b|measur(?:e|ing) lengths|\bmeasurement units\b",
   {"NumberLine","Scale"}),
  ("CLOCK_DIAGRAM",r"\banalog clock\b|\bclock hands\b|\bquarter past\b|\bhalf past\b",
@@ -65,11 +65,11 @@ def analyze(publisher,rich):
                 # shaded-piece task statements. A real ClockFace meets that
                 # source need; demanding FractionBars here is a false alarm.
                 if (name=="FRACTION_PARTS" and "ClockFace" in kinds and
-                    re.search(r"\\bclock|tell time|write times|half.past|quarter.past",intro,re.I)):
+                    re.search(r"\bclock|tell time|write times|half.past|quarter.past",intro,re.I)):
                     continue
                 if name=="CLOCK_DIAGRAM":
-                    # There is no first-party clock-face renderer in current Rich V2.
-                    # Generic scales are not a substitute for analog hand placement.
+                    # A verified ClockFace SVG, not a generic axis or table, meets
+                    # the source requirement for hand placement.
                     compatible="ClockFace" in kinds
                 else:
                     compatible=bool(kinds.intersection(suitable))
@@ -99,7 +99,7 @@ def analyze(publisher,rich):
         "visualReviewTypes":dict(sorted(categories.items())),
         "rows":results,
         "academicDecision":"NOT_CERTIFIED",
-        "warning":"Absence of a cue does NOT imply L4 PASS. Presence of a component does NOT establish mathematical correctness, accessibility or source activity equivalence. ClockFace is a missing first-party Rich V2 kind."
+        "warning":"Absence of a cue does NOT imply L4 PASS. Presence of a component does NOT establish mathematical correctness, accessibility or source activity equivalence. ClockFace and PolygonDiagram must have source-bound accurate parameters and an accessible renderer."
     }
 
 def main():
