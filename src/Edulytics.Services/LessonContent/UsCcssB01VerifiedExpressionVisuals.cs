@@ -26,9 +26,17 @@ public static partial class UsCcssB01VerifiedExpressionVisuals
 
         // B01 is all of Grades 1-3 and a source-fixed prefix of Grade 4;
         // original lesson bodies are never rewritten by this visual adapter.
-        if (!Regex.IsMatch(lessonCode,
-                @"^PED:US-CCSS-MATH:G[1-4]:U\d{2}:L\d{2}$",
-                RegexOptions.CultureInvariant))
+        var match = Regex.Match(lessonCode,
+            @"^PED:US-CCSS-MATH:G(?<grade>[1-4]):U(?<unit>\d{2}):L(?<lesson>\d{2})$",
+            RegexOptions.CultureInvariant);
+        if (!match.Success)
+            return [];
+        // B01 ends at G4 U04 L20. Never alter content of G4 lessons
+        // belonging to B02 or other US CCSS batches.
+        if (match.Groups["grade"].Value == "4" &&
+            (int.Parse(match.Groups["unit"].Value) > 4 ||
+             int.Parse(match.Groups["unit"].Value) == 4 &&
+             int.Parse(match.Groups["lesson"].Value) > 20))
             return [];
 
         foreach (Match m in AtomicEqualityRegex().Matches(body.WorkedExamples ?? string.Empty))
