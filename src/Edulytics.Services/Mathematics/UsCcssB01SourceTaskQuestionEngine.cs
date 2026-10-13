@@ -21,6 +21,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g1.complete_missing_dots",
         "usccss.b01.g1.check_off_add_within10",
         "usccss.b01.triangle.attributes",
+        "usccss.b01.shape.polygon_sides",
+        "usccss.b01.shape.specific_subcategory",
+        "usccss.b01.area.missing_composite_side",
         "usccss.b01.partition.halves_fourths",
         "usccss.b01.number_line.equal_intervals",
         "usccss.b01.clock.half_quarters",
@@ -180,6 +183,59 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     AssessmentItemType.Numeric,
                     D(("number",a),("hundreds",a/100),
                       ("tens",(a%100)/10),("ones",a%10),("mode",m)));
+
+            // G2 U06 L01: identify polygons by their defining side/corner count.
+            case "usccss.b01.shape.polygon_sides":
+                n = r.Next(3,7);
+                m = r.Next(0,2);
+                return Make(f,
+                    m == 0
+                      ? $"A closed polygon has {n} straight sides and {n} corners. " +
+                        "Name the polygon (triangle, quadrilateral, pentagon or hexagon)."
+                      : $"A polygon drawn on dot paper has {n} corners connected by " +
+                        $"{n} straight edges without gaps. What type of polygon is it?",
+                    "A triangle has 3 sides, a quadrilateral 4, a pentagon 5, " +
+                    "and a hexagon 6. Orientation and side lengths do not change the category.",
+                    AssessmentItemType.ShortAnswer, D(("sides",n),("variant",m)));
+
+            // G3 U07 L02: sort triangular and quadrilateral subcategories
+            // by their *specific* side and angle attributes.
+            case "usccss.b01.shape.specific_subcategory":
+                m = r.Next(0,4);
+                n = r.Next(0,3);
+                return Make(f,
+                    m switch
+                    {
+                      0 => "A triangle has three sides of equal length. " +
+                           "Name the most specific triangle category.",
+                      1 => "A triangle has one 90-degree angle. " +
+                           "Name the most specific triangle category given.",
+                      2 => "A four-sided polygon has four 90-degree angles, " +
+                           "but adjacent sides have different lengths. Name it.",
+                      _ => "A quadrilateral has four equal sides and four right " +
+                           "angles. Name its most specific category."
+                    } + (n==0 ? "" : n==1 ? " Ignore its rotation on paper." :
+                        " The sides form a closed polygon."),
+                    "Sort by shared defining attributes: three equal sides make an " +
+                    "equilateral triangle; a 90-degree angle makes a right triangle; " +
+                    "four right angles make a rectangle; four equal sides plus " +
+                    "four right angles make a square.",
+                    AssessmentItemType.ShortAnswer,D(("subcategory",m),("variant",n)));
+
+            // G3 U02 L14: composite area with a truly missing side.
+            case "usccss.b01.area.missing_composite_side":
+                a=r.Next(2,8); b=r.Next(2,8); n=r.Next(2,7);
+                return Make(f,
+                    $"An ungridded L-shaped figure can be split into two " +
+                    $"non-overlapping rectangles of the same height, {n} units. " +
+                    $"Its whole width is {a+b} units and the known left width is " +
+                    $"{a} units. The right width is NOT given. Find the total area " +
+                    "in square units by finding the missing width first.",
+                    $"The missing width is {a+b} − {a} = {b}. Add the two " +
+                    $"rectangle areas: {n}×{a} + {n}×{b} = {n*(a+b)}.",
+                    AssessmentItemType.Numeric,
+                    D(("widthTotal",a+b),("widthKnown",a),
+                      ("widthMissing",b),("height",n)));
 
             case "usccss.b01.triangle.attributes":
                 m = r.Next(1, 4);
@@ -515,6 +571,20 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 P("second").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g1.check_off_add_within10" =>
                 (P("first")+P("second")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.shape.polygon_sides" =>
+                P("sides") switch
+                {
+                    3=>"triangle",4=>"quadrilateral",5=>"pentagon",
+                    6=>"hexagon",_=>throw new InvalidOperationException()
+                },
+            "usccss.b01.shape.specific_subcategory" =>
+                P("subcategory") switch
+                {
+                    0=>"equilateral triangle",1=>"right triangle",
+                    2=>"rectangle",3=>"square",_=>throw new InvalidOperationException()
+                },
+            "usccss.b01.area.missing_composite_side" =>
+                (P("height")*P("widthTotal")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.triangle.attributes" => P("position").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.partition.halves_fourths" => P("denominator") == 2 ? "half" : "fourth",
             "usccss.b01.number_line.equal_intervals" =>
@@ -627,6 +697,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("first")+N("second")<=10,
             "usccss.b01.g1.check_off_add_within10" =>
                 Range("first",0,5) && Range("second",0,5),
+            "usccss.b01.shape.polygon_sides" =>
+                Range("sides",3,6) && Range("variant",0,1),
+            "usccss.b01.shape.specific_subcategory" =>
+                Range("subcategory",0,3) && Range("variant",0,2),
+            "usccss.b01.area.missing_composite_side" =>
+                Range("widthKnown",2,7) && Range("widthMissing",2,7) &&
+                Range("widthTotal",4,14) &&
+                N("widthTotal")==N("widthKnown")+N("widthMissing") &&
+                Range("height",2,6),
             "usccss.b01.triangle.attributes" =>
                 Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
