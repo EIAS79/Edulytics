@@ -152,6 +152,13 @@ jobs:
           name: g1-u01-l01-rich-v2-chromium-screenshots
           path: /tmp/g1-u01-l01-*.png
           if-no-files-found: warn
+      - name: Preserve G1 L02 independently rendered desktop/mobile evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-u01-l02-rich-v2-chromium-screenshots
+          path: /tmp/g1-u01-l02-*.png
+          if-no-files-found: warn
       - name: Verify only two synthetic schools were created
         run: |
           set -euo pipefail
