@@ -59,6 +59,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.geometry.composite_rectangle_area",
         "usccss.b01.geometry.rectangle_area_grid60",
         "usccss.b01.geometry.rectangle_area_ungridded",
+        "usccss.b01.g4.rectangle_area_is_multiple",
+        "usccss.b01.g3.distributive_area_partition",
+        "usccss.b01.g3.rectangle_area_perimeter_story",
         "usccss.b01.g3.same_perimeter_different_area",
         "usccss.b01.g3.same_area_different_perimeter",
         "usccss.b01.geometry.rectangle_area_real_world_units",
@@ -1061,6 +1064,54 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                       ("expected",2*(a+b-n-m))));
             }
 
+            // IM Grade 4 U01 L01: an area is a multiple of either
+            // integer side length of a rectangle.
+            case "usccss.b01.g4.rectangle_area_is_multiple":
+            {
+                a=r.Next(2,12);b=r.Next(2,11);
+                return Make(f,
+                    $"An area model has {a} equal rows with {b} unit squares " +
+                    $"per row. What is the area in unit squares? " +
+                    $"Explain why this result is a multiple of BOTH {a} and {b}.",
+                    "The total area equals rows × units per row; either " +
+                    "side length is a factor, so the product is a multiple of both.",
+                    AssessmentItemType.Numeric,
+                    D(("length",a),("width",b),("expected",a*b)));
+            }
+            // IM Grade 3 U04 L10: multiplication distributive property
+            // proved by two adjacent, non-overlapping area-model parts.
+            case "usccss.b01.g3.distributive_area_partition":
+            {
+                a=r.Next(2,9);b=r.Next(1,7);n=r.Next(1,7);
+                return Make(f,
+                    $"A rectangular array has {a} rows. A vertical partition " +
+                    $"splits its columns into {b} and {n}. " +
+                    $"Use {a}×({b}+{n}) = {a}×{b} + {a}×{n}. " +
+                    "What is the total area in unit squares?",
+                    "Count the two disjoint rectangular regions. " +
+                    "The distributive property recombines their areas.",
+                    AssessmentItemType.Numeric,
+                    D(("height",a),("leftWidth",b),("rightWidth",n),
+                      ("expected",a*(b+n))));
+            }
+            // IM Grade 3 U07 L10: both area AND perimeter in a
+            // contextual rectangle; never conflate square and linear units.
+            case "usccss.b01.g3.rectangle_area_perimeter_story":
+            {
+                a=r.Next(3,11);b=r.Next(2,10);m=r.Next(0,2);
+                return Make(f,
+                    $"A rectangular playground measures {a} meters by {b} meters. " +
+                    (m==0
+                       ?"How many square meters of surface does it cover?"
+                       :"How many meters of boundary fencing are needed?"),
+                    m==0
+                       ?"Area counts unit squares: multiply the two side lengths."
+                       :"Perimeter counts boundary lengths: add all four sides.",
+                    AssessmentItemType.Numeric,
+                    D(("length",a),("width",b),("mode",m),
+                      ("expected",m==0?a*b:2*(a+b))));
+            }
+
             case "usccss.b01.geometry.rectangle_area_ungridded":
                 a = r.Next(2,11);b = r.Next(2,11);
                 return Make(f,
@@ -1404,6 +1455,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g3.same_perimeter_different_area" or
             "usccss.b01.g3.same_area_different_perimeter" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g4.rectangle_area_is_multiple" or "usccss.b01.g3.distributive_area_partition" or "usccss.b01.g3.rectangle_area_perimeter_story" =>
+                P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.rectangle_area_ungridded" =>
                 (P("length")*P("width")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.composite_rectangle_area" =>
@@ -1722,6 +1775,21 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     2*(N("widthB")+N("heightB")) &&
                 N("expected")==2*(N("widthA")+N("heightA")-
                     N("widthB")-N("heightB")),
+            "usccss.b01.g4.rectangle_area_is_multiple" =>
+                Range("length",2,11) && Range("width",2,10) &&
+                Range("expected",4,110) &&
+                N("length")*N("width")==N("expected"),
+            "usccss.b01.g3.distributive_area_partition" =>
+                Range("height",2,8) && Range("leftWidth",1,6) &&
+                Range("rightWidth",1,6) && Range("expected",4,96) &&
+                N("expected")==N("height")*
+                    (N("leftWidth")+N("rightWidth")),
+            "usccss.b01.g3.rectangle_area_perimeter_story" =>
+                Range("length",3,10) && Range("width",2,9) &&
+                Range("mode",0,1) && Range("expected",10,90) &&
+                N("expected")==(N("mode")==0
+                    ?N("length")*N("width")
+                    :2*(N("length")+N("width"))),
             "usccss.b01.geometry.rectangle_area_ungridded" =>
                 Range("length",2,10) && Range("width",2,10),
             "usccss.b01.geometry.composite_rectangle_area" =>

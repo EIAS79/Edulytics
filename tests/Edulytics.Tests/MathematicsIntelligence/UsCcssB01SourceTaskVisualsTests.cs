@@ -1060,6 +1060,64 @@ public sealed class UsCcssB01SourceTaskVisualsTests
             $"Factor pair variety only {seen.Count}; 10 distinct examples required.");
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G4:U01:L01","usccss.b01.g4.rectangle_area_is_multiple")]
+    [InlineData("PED:US-CCSS-MATH:G3:U04:L10","usccss.b01.g3.distributive_area_partition")]
+    [InlineData("PED:US-CCSS-MATH:G3:U07:L10","usccss.b01.g3.rectangle_area_perimeter_story")]
+    public void OriginalAreaMultiplesDistributiveAndPerimeterSourcesHaveExactVisuals(
+        string code,string family)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var observedModes=new HashSet<int>();
+        for(var seed=953000;seed<953044;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            if(family=="usccss.b01.g4.rectangle_area_is_multiple")
+            {
+                var area=p["length"]*p["width"];
+                Assert.Equal(area,int.Parse(q.CorrectAnswer));
+                Assert.Equal(RichLessonVisualKind.RectangleDiagram,visual.Kind);
+                Assert.Equal(area%p["length"],0);
+                Assert.Equal(area%p["width"],0);
+                Assert.Equal(new[]{p["length"],p["width"]},
+                    visual.Items.Select(int.Parse));
+            }
+            else if(family=="usccss.b01.g3.distributive_area_partition")
+            {
+                var expected=p["height"]*(p["leftWidth"]+p["rightWidth"]);
+                Assert.Equal(expected,int.Parse(q.CorrectAnswer));
+                Assert.Equal(RichLessonVisualKind.ShapeDecomposition,visual.Kind);
+                Assert.Equal(p["height"],visual.Rows.Count);
+                Assert.Equal(expected,visual.Rows.Sum(r=>r.Cells.Count));
+                Assert.Equal(p["height"]*p["leftWidth"],
+                    visual.Rows.Sum(r=>r.Cells.Count(x=>x=="■")));
+                Assert.Equal(p["height"]*p["rightWidth"],
+                    visual.Rows.Sum(r=>r.Cells.Count(x=>x=="□")));
+            }
+            else
+            {
+                Assert.Equal(RichLessonVisualKind.RectangleDiagram,visual.Kind);
+                observedModes.Add(p["mode"]);
+                Assert.Equal(p["mode"]==0
+                    ?p["length"]*p["width"]
+                    :2*(p["length"]+p["width"]),
+                    int.Parse(q.CorrectAnswer));
+                Assert.Equal("m",visual.SecondaryLabel);
+                Assert.Equal(new[]{p["length"],p["width"]},
+                    visual.Items.Select(int.Parse));
+            }
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999999"}]));
+        }
+        if(family=="usccss.b01.g3.rectangle_area_perimeter_story")
+            Assert.Equal(new[]{0,1},observedModes.OrderBy(x=>x).ToArray());
+    }
+
     [Fact]
     public void GriddedGrade3RectangleHasTheExactUnitSquareCountAtMostSixty()
     {

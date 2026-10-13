@@ -12,6 +12,29 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // Official IM G4 U01 L01: area as multiples of its side lengths.
+        new(
+            "PED:US-CCSS-MATH:G4:U01:L01",
+            "supporting.number.factors_primes", "RECTANGLE_AREA_MULTIPLE_OF_SIDES",
+            ["usccss.b01.g4.rectangle_area_is_multiple"],
+            "IM2021_G4_U01_L01_AREA_TO_EXPLORE_MULTIPLES",
+            "READY_VERIFIED", "usccss-b01-area-properties-v1"),
+        // Official IM G3 U04 L10: visually partition arrays to prove
+        // the distributive property of multiplication.
+        new(
+            "PED:US-CCSS-MATH:G3:U04:L10",
+            "supporting.geometry.area_volume", "DISTRIBUTIVE_AREA_DIAGRAM",
+            ["usccss.b01.g3.distributive_area_partition"],
+            "IM2021_G3_U04_L10_MULTIPLICATION_AREA_DIAGRAM",
+            "READY_VERIFIED", "usccss-b01-area-properties-v1"),
+        // Official IM G3 U07 L10: distinguish area (square units)
+        // from perimeter (linear units) in garden/playground problems.
+        new(
+            "PED:US-CCSS-MATH:G3:U07:L10",
+            "supporting.geometry.area_volume", "PLAYGROUND_AREA_AND_PERIMETER",
+            ["usccss.b01.g3.rectangle_area_perimeter_story"],
+            "IM2021_G3_U07_L10_PLAYGROUND_AREA_PERIMETER",
+            "READY_VERIFIED", "usccss-b01-area-properties-v1"),
         // IM teacher G3 U07 L11: same perimeter, unequal areas.
         // IM teacher G3 U07 L12: same area, unequal perimeters.
         new(

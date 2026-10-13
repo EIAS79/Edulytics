@@ -878,6 +878,61 @@ public static class UsCcssB01SourceTaskVisuals
                         SecondaryLabel="fixed-comparison-scale",
                         Items=[N("widthA").ToString(),N("heightA").ToString()]
                     },
+                "usccss.b01.g4.rectangle_area_is_multiple" when
+                    lessonCode=="PED:US-CCSS-MATH:G4:U01:L01" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.RectangleDiagram,
+                        Title="Rectangle area is a multiple of either side length",
+                        PrimaryLabel=$"{N("length")} rows × {N("width")} per row",
+                        Description=$"{N("length")}×{N("width")} = " +
+                            $"{q.CorrectAnswer} square units. Dividing this area " +
+                            $"by either {N("length")} or {N("width")} leaves a whole " +
+                            "number of equal groups, so the area is a multiple of both.",
+                        Items=[N("length").ToString(),N("width").ToString()]
+                    },
+                "usccss.b01.g3.distributive_area_partition" when
+                    lessonCode=="PED:US-CCSS-MATH:G3:U04:L10" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.ShapeDecomposition,
+                        Title="A real area partition demonstrates multiplication distribution",
+                        Description=$"{N("height")}×({N("leftWidth")}+" +
+                            $"{N("rightWidth")}) = " +
+                            $"{N("height")*N("leftWidth")}+" +
+                            $"{N("height")*N("rightWidth")} = " +
+                            $"{q.CorrectAnswer}. Each symbol is exactly one " +
+                            "unit square; the two sections have no overlaps.",
+                        PrimaryLabel="Dark squares | light squares",
+                        Rows=Enumerable.Range(1,N("height"))
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"Row {i}",
+                                Cells=Enumerable.Repeat("■",N("leftWidth"))
+                                    .Concat(Enumerable.Repeat("□",N("rightWidth")))
+                                    .ToList()
+                            }).ToList()
+                    },
+                "usccss.b01.g3.rectangle_area_perimeter_story" when
+                    lessonCode=="PED:US-CCSS-MATH:G3:U07:L10" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.RectangleDiagram,
+                        Title="Playground: compare surface area with boundary perimeter",
+                        Description=$"Side lengths {N("length")} m and {N("width")} m. " +
+                            $"Area is {N("length")*N("width")} square meters, " +
+                            $"perimeter is {2*(N("length")+N("width"))} meters. " +
+                            $"The question asks for { (N("mode")==0?"area":"perimeter")} " +
+                            $"and its checked answer is {q.CorrectAnswer}.",
+                        SecondaryLabel="m",
+                        Items=[N("length").ToString(),N("width").ToString()]
+                    },
                 "usccss.b01.geometry.rectangle_area_ungridded" when
                     N("length")>0 && N("width")>0 &&
                     q.CorrectAnswer==(N("length")*N("width")).ToString() =>

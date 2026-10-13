@@ -6909,6 +6909,60 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g4.rectangle_area_is_multiple",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-area-properties-independent-product-and-perimeter-v1",
+      "representations": [
+        "same_scale_rectangle_multiple",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.g3.distributive_area_partition",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-area-properties-independent-product-and-perimeter-v1",
+      "representations": [
+        "distributive_unit_square_area_grid",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.g3.rectangle_area_perimeter_story",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-area-properties-independent-product-and-perimeter-v1",
+      "representations": [
+        "area_and_perimeter_rectangle",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.geometry.rectangle_area_ungridded",
       "version": 1,
       "skillId": "supporting.geometry.area_volume",
