@@ -223,6 +223,28 @@ public static class UsCcssB01SourceTaskVisuals
                                     (N("expected")%10).ToString()]
                             }).ToList()
                     },
+                "usccss.b01.g1.add_within100_no_compose_ten" when
+                    lessonCode=="PED:US-CCSS-MATH:G1:U05:L04" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title="Add tens and ones without composing a ten",
+                        PrimaryLabel="Tens | Ones",
+                        Description=$"{N("left")} + {N("right")} = " +
+                            $"{q.CorrectAnswer}. Since the ones sum is " +
+                            $"{N("left")%10+N("right")%10}, no new ten is composed.",
+                        Rows=new[]{("First addend",N("left")),
+                                   ("Second addend",N("right")),
+                                   ("Sum",N("expected"))}
+                            .Select(x=>new RichLessonVisualRow
+                            {
+                                Label=x.Item1,
+                                Cells=[(x.Item2/10).ToString(),
+                                    (x.Item2%10).ToString()]
+                            }).ToList()
+                    },
                 "usccss.b01.g2.add_subtract_1000_no_regroup" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U07:L04" &&
                     ExactSkillContractQuestionEngine.Verify(
