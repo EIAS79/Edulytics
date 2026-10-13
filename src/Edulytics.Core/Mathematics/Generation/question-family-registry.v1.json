@@ -6212,6 +6212,44 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.clock.read_on_hour",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_time",
+      "verificationPolicy": "b01-source-original-g1-full-hour-minute-at12-v1",
+      "representations": [
+        "analog_clock",
+        "digital_clock",
+        "textual_constraint"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.clock.read_five_minutes_am_pm",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_time",
+      "verificationPolicy": "b01-source-original-g2-five-minute-daypart-analogue-v1",
+      "representations": [
+        "analog_clock",
+        "digital_clock",
+        "textual_constraint"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.clock.read_half_hour",
       "version": 1,
       "skillId": "supporting.measurement.practical",
