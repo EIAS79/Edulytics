@@ -23,7 +23,7 @@ public sealed class UsCcssB01SourceAlignedPracticeCorrectionTests
             ["PED:US-CCSS-MATH:G1:U07:L14"] =
                 ["usccss.b01.clock.read_half_hour"],
             ["PED:US-CCSS-MATH:G3:U08:L10"] =
-                ["supporting.number.multiply", "supporting.number.divide"],
+                ["usccss.b01.g3.multiplication_division_inverse_array"],
             ["PED:US-CCSS-MATH:G3:U01:L15"] =
                 ["number.whole.multiply.fact_recall.apply"],
             ["PED:US-CCSS-MATH:G3:U04:L07"] =
@@ -88,7 +88,7 @@ public sealed class UsCcssB01SourceAlignedPracticeCorrectionTests
                         wrongNumericRejected++;
                     }
                 }
-        Assert.Equal(45,generated);
+        Assert.Equal(Expected.Sum(row=>row.Value.Length)*3,generated);
         Assert.True(wrongNumericRejected>0);
     }
 }
