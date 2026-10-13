@@ -21,7 +21,7 @@ CUES = [
  ("PLACE_VALUE",r"\bplace value\b|expanded form|base.ten|digit value",
   {"PlaceValueChart"}),
  ("AREA_MODEL",r"\barea of\b|\barea by\b|\barea with\b|\barea and\b",
-  {"ShapeDecomposition","PlaceValueChart"}),
+  {"ShapeDecomposition","RectangleDiagram","PlaceValueChart"}),
  ("TRIANGLE_SHAPES",r"\btriangles?\b|defining attributes of shapes",
   {"ShapeDecomposition"}),
  ("MEASUREMENT_SCALE",r"\bruler\b|measur(?:e|ing) lengths|\bmeasurement units\b",
