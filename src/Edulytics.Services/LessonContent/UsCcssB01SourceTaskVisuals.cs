@@ -18,12 +18,59 @@ public static class UsCcssB01SourceTaskVisuals
         var visual = new List<RichLessonVisual>(2);
         foreach (var q in questions)
         {
-            if (!q.Family.StartsWith("usccss.b01.", StringComparison.Ordinal))
+            if (!q.Family.StartsWith("usccss.b01.", StringComparison.Ordinal) &&
+                q.Family != "measurement.scale.equal_intervals.read_value" &&
+                q.Family != "fractions.equivalent.number_line")
                 continue;
             var p = q.Parameters;
             int N(string k) => p[k];
             RichLessonVisual? item = q.Family switch
             {
+                // A measured scale has verified equal intervals and a
+                // precise target tick, never an ornamental timeline.
+                "measurement.scale.equal_intervals.read_value" when
+                    N("intervals") is > 0 and <= 10 &&
+                    (N("end") - N("start")) % N("intervals") == 0 &&
+                    N("pointer") >= 0 && N("pointer") <= N("intervals") &&
+                    q.CorrectAnswer ==
+                    (N("start") +
+                     (N("end") - N("start")) / N("intervals") *
+                     N("pointer")).ToString() =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.Scale,
+                        Title = "Equal intervals on a measured scale",
+                        Description = $"Start at {N("start")}; count {N("intervals")} equal " +
+                            $"steps to {N("end")}. Each is " +
+                            $"{(N("end") - N("start")) / N("intervals")}; " +
+                            $"the marked tick is {q.CorrectAnswer}.",
+                        Items = Enumerable.Range(0, N("intervals") + 1)
+                            .Select(i => (N("start") + i *
+                                (N("end") - N("start")) / N("intervals")).ToString())
+                            .ToList()
+                    },
+                // Equivalent fractions occupy the same point: baseN/baseD
+                // and exact engine targetN/targetD. Show the genuine equal
+                // 1/baseD spacing, not uniformly-spaced arbitrary values.
+                "fractions.equivalent.number_line" when
+                    N("baseD") is >= 2 and <= 12 &&
+                    N("baseN") >= 1 && N("baseN") < N("baseD") &&
+                    N("targetD") > 0 &&
+                    N("baseN") * N("targetD") ==
+                      int.Parse(q.CorrectAnswer) * N("baseD") =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.NumberLine,
+                        Title = "Equivalent fractions at the same number-line point",
+                        Description = $"Place {N("baseN")}/{N("baseD")} and " +
+                            $"{q.CorrectAnswer}/{N("targetD")} at the same " +
+                            "location. The intervals are equal unit fractions.",
+                        Items = Enumerable.Range(0, N("baseD") + 1)
+                            .Select(i => i == 0 ? "0" :
+                                i == N("baseD") ? "1" :
+                                $"{i}/{N("baseD")}")
+                            .ToList()
+                    },
                 "usccss.b01.clock.read_half_hour" or
                 "usccss.b01.clock.read_five_minutes" =>
                     new RichLessonVisual
