@@ -564,6 +564,20 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.graph.scaled_compare"],
             "IM2021_G3_U01_L07_SCALED_HOW_MANY_MORE_OR_FEWER_PURPOSE",
             "READY_VERIFIED", "usccss-b01-source-scaled-graph-v1"),
+        // Original Grade 3 teacher source: L05 links area to multiplication;
+        // L09 measures side lengths and multiplies to calculate area.
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L05",
+            "supporting.geometry.area_volume", "CONNECT_MULTIPLICATION_TO_RECTANGLE_ARRAY",
+            ["usccss.b01.geometry.rectangle_area_grid60"],
+            "IM2021_G3_U02_L05_MULTIPLICATION_RECTANGLE_AREA",
+            "READY_VERIFIED", "usccss-b01-area-source-v2"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L09",
+            "supporting.geometry.area_volume", "MEASURE_RECTANGLE_SIDES_AND_MULTIPLY",
+            ["usccss.b01.geometry.rectangle_area_ungridded"],
+            "IM2021_G3_U02_L09_MEASURE_SIDES_MULTIPLY_AREA",
+            "READY_VERIFIED", "usccss-b01-area-source-v2"),
         new(
             "PED:US-CCSS-MATH:G3:U02:L04",
             "supporting.geometry.area_volume", "COUNT_TILES_AREA_UP_TO60",
