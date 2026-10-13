@@ -67,10 +67,12 @@ public static class UsCcssB01CategoricalGraphVisuals
             }
             else if (q.Family == "supporting.statistics.compare_category_counts")
             {
-                // A comparative question expects the difference, not the sum.
-                // Verify the plotted counts against that exact independent rule.
-                if (!string.Equals(q.CorrectAnswer,
-                    Math.Abs(values[0]-values[1]).ToString(),
+                // This Practice family asks WHICH category has more (A/B/equal),
+                // not the numeric difference. Independently check the source
+                // question's categorical answer against the plotted counts.
+                var expected=values[0]>values[1] ? "A" :
+                    values[1]>values[0] ? "B" : "equal";
+                if (!string.Equals(q.CorrectAnswer,expected,
                     StringComparison.Ordinal)) continue;
             }
             else if (!string.Equals(q.CorrectAnswer,total.ToString(),
@@ -87,8 +89,10 @@ public static class UsCcssB01CategoricalGraphVisuals
                       "Both bars share one linear scale."
                     : q.Family=="supporting.statistics.compare_category_counts"
                       ? $"Category A has {values[0]} and category B has {values[1]} items. " +
-                        $"The difference is {q.CorrectAnswer}; both bars use the same " +
-                        "linear scale and can be compared directly."
+                        (q.CorrectAnswer=="equal"
+                            ? "The categories have equal frequencies. "
+                            : $"Category {q.CorrectAnswer} has more items. ") +
+                        "Both bars share one linear scale and can be compared directly."
                       : $"Each bar shows the exact recorded frequency. " +
                         $"The categories contain {string.Join(", ", values)} items " +
                         $"and the total is {total}. The longest bar represents " +
