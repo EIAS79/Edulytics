@@ -1022,8 +1022,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // IM 2021 G3 U07 L11: equal perimeter does NOT force equal area.
             case "usccss.b01.g3.same_perimeter_different_area":
             {
-                var sideSum=r.Next(7,12);
-                a=2;b=sideSum-2;n=3;m=sideSum-3;
+                var sideSum=r.Next(7,14);
+                a=r.Next(2,Math.Min(6,(sideSum-2)/2)+1);
+                b=sideSum-a;n=a+1;m=sideSum-n;
                 return Make(f,
                     $"Rectangle A has width {a} and height {b}. Rectangle B " +
                     $"has width {n} and height {m}. Their perimeters are equal. " +
@@ -1037,8 +1038,17 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // IM 2021 G3 U07 L12: equal area does NOT force equal perimeter.
             case "usccss.b01.g3.same_area_different_perimeter":
             {
-                var t=r.Next(2,5);
-                a=2;b=3*t;n=3;m=2*t;
+                var pairs=(
+                    from aw in Enumerable.Range(2,7)
+                    from ah in Enumerable.Range(3,10)
+                    from bw in Enumerable.Range(3,7)
+                    from bh in Enumerable.Range(2,11)
+                    where aw<bw && aw*ah==bw*bh &&
+                          aw+ah>bw+bh
+                    select (aw,ah,bw,bh)).ToArray();
+                var selected=pairs[r.Next(pairs.Length)];
+                a=selected.aw;b=selected.ah;
+                n=selected.bw;m=selected.bh;
                 return Make(f,
                     $"Rectangle A has width {a} and height {b}. Rectangle B " +
                     $"has width {n} and height {m}. Their areas are equal. " +
@@ -1662,18 +1672,20 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("length",3,10) && Range("width",2,9) &&
                 Range("unitMode",0,1),
             "usccss.b01.g3.same_perimeter_different_area" =>
-                Range("widthA",2,2) && Range("widthB",3,3) &&
-                Range("heightA",5,9) && Range("heightB",4,8) &&
-                Range("expected",2,6) &&
+                Range("widthA",2,6) && Range("widthB",3,7) &&
+                Range("heightA",3,11) && Range("heightB",2,10) &&
+                N("widthB")==N("widthA")+1 &&
+                N("heightA")==N("heightB")+1 &&
+                Range("expected",1,9) &&
                 N("widthA")+N("heightA")==N("widthB")+N("heightB") &&
                 N("widthB")*N("heightB")>N("widthA")*N("heightA") &&
                 N("expected")==N("widthB")*N("heightB")-
                     N("widthA")*N("heightA"),
             "usccss.b01.g3.same_area_different_perimeter" =>
-                Range("widthA",2,2) && Range("widthB",3,3) &&
-                Range("heightA",6,12) && Range("heightB",4,8) &&
-                N("heightA")%3==0 && N("heightB")%2==0 &&
-                Range("expected",2,6) &&
+                Range("widthA",2,8) && Range("widthB",3,9) &&
+                Range("heightA",3,12) && Range("heightB",2,12) &&
+                N("widthA")<N("widthB") &&
+                Range("expected",1,22) &&
                 N("widthA")*N("heightA")==N("widthB")*N("heightB") &&
                 2*(N("widthA")+N("heightA"))>
                     2*(N("widthB")+N("heightB")) &&
