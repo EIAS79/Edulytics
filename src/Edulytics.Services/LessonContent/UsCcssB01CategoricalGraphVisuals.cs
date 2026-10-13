@@ -14,6 +14,10 @@ public static class UsCcssB01CategoricalGraphVisuals
     {
         "PED:US-CCSS-MATH:G2:U01:L08",
         "PED:US-CCSS-MATH:G2:U01:L09",
+        // Original Grade 2 U01 L10-L11: construct, read and answer questions
+        // from the actual categorical picture/bar graphs, not equations only.
+        "PED:US-CCSS-MATH:G2:U01:L10",
+        "PED:US-CCSS-MATH:G2:U01:L11",
         "PED:US-CCSS-MATH:G2:U01:L13",
         "PED:US-CCSS-MATH:G2:U07:L18",
         "PED:US-CCSS-MATH:G3:U01:L04",
@@ -61,10 +65,16 @@ public static class UsCcssB01CategoricalGraphVisuals
                     q.CorrectAnswer!=Math.Abs(values[0]-values[1]).ToString())
                     continue;
             }
-            else if (q.Family != "supporting.statistics.compare_category_counts" &&
-                !string.Equals(q.CorrectAnswer, total.ToString(),
-                    StringComparison.Ordinal))
-                continue;
+            else if (q.Family == "supporting.statistics.compare_category_counts")
+            {
+                // A comparative question expects the difference, not the sum.
+                // Verify the plotted counts against that exact independent rule.
+                if (!string.Equals(q.CorrectAnswer,
+                    Math.Abs(values[0]-values[1]).ToString(),
+                    StringComparison.Ordinal)) continue;
+            }
+            else if (!string.Equals(q.CorrectAnswer,total.ToString(),
+                StringComparison.Ordinal)) continue;
 
             return [new RichLessonVisual
             {
@@ -75,10 +85,14 @@ public static class UsCcssB01CategoricalGraphVisuals
                       $"Category A has {values[0]}, category B has {values[1]}, " +
                       $"and their difference is {q.CorrectAnswer}. " +
                       "Both bars share one linear scale."
-                    : $"Each bar shows the exact recorded frequency. " +
-                      $"The categories contain {string.Join(", ", values)} items " +
-                      $"and the total is {total}. The longest bar represents " +
-                      "the largest count; bar lengths share one common linear scale.",
+                    : q.Family=="supporting.statistics.compare_category_counts"
+                      ? $"Category A has {values[0]} and category B has {values[1]} items. " +
+                        $"The difference is {q.CorrectAnswer}; both bars use the same " +
+                        "linear scale and can be compared directly."
+                      : $"Each bar shows the exact recorded frequency. " +
+                        $"The categories contain {string.Join(", ", values)} items " +
+                        $"and the total is {total}. The longest bar represents " +
+                        "the largest count; bar lengths share one common linear scale.",
                 PrimaryLabel="Category and frequency",
                 Rows=values.Select((count,i)=>new RichLessonVisualRow
                 {
