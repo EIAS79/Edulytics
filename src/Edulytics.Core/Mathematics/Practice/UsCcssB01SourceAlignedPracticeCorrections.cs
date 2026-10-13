@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Fifty-five lesson-code-exact B01 corrections independently checked against their
+/// Fifty-six lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -365,6 +365,12 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "supporting.number.place_value_rounding", "WRITE_THREE_DIGIT_BASE_TEN",
             ["usccss.b01.place_value.three_digits"],
             "IM2021_G2_U05_L04_WRITE_THREE_DIGIT_BASE_TEN_PURPOSE",
-            "READY_VERIFIED", "usccss-b01-source-place-value-v1")
+            "READY_VERIFIED", "usccss-b01-source-place-value-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L07",
+            "supporting.statistics.charts", "SCALED_BAR_GRAPH_COMPARE",
+            ["usccss.b01.graph.scaled_compare"],
+            "IM2021_G3_U01_L07_SCALED_HOW_MANY_MORE_OR_FEWER_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-scaled-graph-v1")
     ];
 }
