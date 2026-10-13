@@ -77,7 +77,7 @@ public sealed class UsCcssB01VerifiedExpressionVisualsTests
             "PLACE_VALUE", ["supporting.number.place_value"], "IM2021",
             "READY_VERIFIED", "test");
         var visual = Assert.Single(UsCcssB01VerifiedExpressionVisuals.Build(
-            contract.LessonCode, Body("Example: represent 243 using base ten blocks."),
+            contract.LessonCode, Body("Example 15: represent 243 using base ten blocks."),
             contract));
         Assert.Equal(RichLessonVisualKind.PlaceValueChart, visual.Kind);
         Assert.Equal(3, visual.Rows.Count);
