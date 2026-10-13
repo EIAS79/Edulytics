@@ -1082,8 +1082,8 @@ public sealed class UsCcssB01SourceTaskVisualsTests
                 var area=p["length"]*p["width"];
                 Assert.Equal(area,int.Parse(q.CorrectAnswer));
                 Assert.Equal(RichLessonVisualKind.RectangleDiagram,visual.Kind);
-                Assert.Equal(area%p["length"],0);
-                Assert.Equal(area%p["width"],0);
+                Assert.Equal(0,area%p["length"]);
+                Assert.Equal(0,area%p["width"]);
                 Assert.Equal(new[]{p["length"],p["width"]},
                     visual.Items.Select(int.Parse));
             }
