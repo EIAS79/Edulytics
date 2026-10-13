@@ -63,10 +63,10 @@ test('B01 stays NO-GO with just one properly certified lesson', () => {
   const x = fixture();
   certify(x.ledger.records[0]);
   const state = inspectBatch(x);
-  assert.equal(state.certified, 1);
-  assert.equal(state.remaining, 499);
+  assert.equal(state.evidenceReady, 1);
+  assert.equal(state.remainingEvidence, 499);
   assert.equal(state.state, 'BATCH_NO-GO');
-  assert.equal(state.nextExactLesson, x.manifest.lessons[1].lessonCode);
+  assert.equal(state.gapsPreview[0].lessonCode, x.manifest.lessons[1].lessonCode);
 });
 
 test('B01 never accepts a missing or duplicated lesson identity', () => {
@@ -92,7 +92,7 @@ test('B01 is certification-ready only when exactly 500 pass', () => {
   const x = fixture();
   for (const row of x.ledger.records.slice(0, 500)) certify(row);
   const state = inspectBatch(x);
-  assert.equal(state.certified, 500);
-  assert.equal(state.remaining, 0);
-  assert.equal(state.state, 'BATCH_CERTIFIED_PENDING_CI_AND_DEPLOY');
+  assert.equal(state.evidenceReady, 500);
+  assert.equal(state.remainingEvidence, 0);
+  assert.equal(state.state, 'BATCH_EVIDENCE_READY');
 });
