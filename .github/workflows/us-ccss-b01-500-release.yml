@@ -58,6 +58,8 @@ jobs:
           node-version: '24'
       - name: Prove 500-lesson release refuses fake or incomplete evidence
         run: node --test tests/academic-us-ccss-b01-release-gate.test.cjs tests/academic-us-ccss-b01-bulk-content-screen.test.cjs
+      - name: Reject fabricated or stale L1-L6 progress
+        run: node --test tests/academic-us-ccss-b01-evidence-progress.test.cjs
       - name: Screen ALL 500 learner content bodies together
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --output=b01-bulk-screen.json
       - name: Save 500-row bulk content screen, even when issues are found
@@ -304,12 +306,62 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Use the real PR head so HEAD^ is the previous PR commit, not
+          # GitHub's synthetic merge parent (which includes the entire PR).
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 2
+      - name: Detect documentation/evidence-only draft commits
+        id: impact
+        shell: bash
+        env:
+          IS_DRAFT: ${{ github.event.pull_request.draft }}
+          EVENT_ACTION: ${{ github.event.action }}
+        run: |
+          # Fail safe: full regression on first/ready/reopened/dispatch events.
+          if [[ "$IS_DRAFT" != "true" || "$EVENT_ACTION" != "synchronize" ]]; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "Full suite mandatory outside draft synchronization."
+            exit 0
+          fi
+          if ! git rev-parse HEAD^ >/dev/null 2>&1; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "Parent unavailable: fail closed to full suite."
+            exit 0
+          fi
+          changed="$(git diff --name-only HEAD^ HEAD)" || {
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          }
+          if [[ -z "$changed" ]]; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          safe_only=true
+          while IFS= read -r file; do
+            case "$file" in
+              docs/*|artifacts/academic-us-ccss/batches/B01-execution-checkpoint.json|tools/us-ccss-b01-evidence-progress.cjs|tests/academic-us-ccss-b01-evidence-progress.test.cjs)
+                echo "Evidence/documentation-only change: $file" ;;
+              *)
+                echo "Product-impacting or unclassified change requires full suite: $file"
+                safe_only=false ;;
+            esac
+          done <<< "$changed"
+          if [[ "$safe_only" == "true" ]]; then
+            echo "full=false" >> "$GITHUB_OUTPUT"
+            echo "Draft-only fast lane; full suite still mandatory on ready_for_review."
+          else
+            echo "full=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-dotnet@v4
+        if: steps.impact.outputs.full == 'true'
         with:
           dotnet-version: '10.0.200'
       - name: Restore all application and test dependencies
+        if: steps.impact.outputs.full == 'true'
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - name: Run the full Edulytics regression suite, not only B01-filtered tests
+        if: steps.impact.outputs.full == 'true'
         run: |
           mkdir -p TestResults
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
@@ -318,7 +370,7 @@ jobs:
             --logger 'console;verbosity=normal'
       - name: Preserve complete regressions and precise failure evidence
         uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && steps.impact.outputs.full == 'true' }}
         with:
           name: b01-full-product-regression-trx
           path: TestResults/*.trx
