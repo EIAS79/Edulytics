@@ -33,9 +33,15 @@ RULES = (
       not any(x in t for x in ("combinations of","choose two","pairs from a set"))),
 )
 
-# 39 original publisher lesson targets: exact approved code/family linkage.
+# 45 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G1:U04:L08": "usccss.b01.place_value.tens_ones",
+    "PED:US-CCSS-MATH:G1:U04:L09": "usccss.b01.place_value.tens_ones",
+    "PED:US-CCSS-MATH:G1:U04:L10": "usccss.b01.place_value.tens_ones",
+    "PED:US-CCSS-MATH:G1:U08:L07": "usccss.b01.place_value.count_to120",
+    "PED:US-CCSS-MATH:G1:U08:L08": "usccss.b01.place_value.tens_ones",
+    "PED:US-CCSS-MATH:G2:U05:L04": "usccss.b01.place_value.three_digits",
     "PED:US-CCSS-MATH:G3:U05:L02": "usccss.b01.fraction.unit_parts",
     "PED:US-CCSS-MATH:G2:U08:L07": "usccss.b01.array.equal_groups",
     "PED:US-CCSS-MATH:G2:U08:L08": "usccss.b01.array.columns",
