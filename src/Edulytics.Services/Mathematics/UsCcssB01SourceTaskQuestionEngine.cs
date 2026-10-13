@@ -26,6 +26,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.rectangle.unit_squares",
         "usccss.b01.measure.map_lengths",
         "usccss.b01.graph.choose_scale",
+        "usccss.b01.graph.scaled_compare",
         "usccss.b01.array.equal_groups",
         "usccss.b01.array.columns",
         "usccss.b01.array.equal_addends",
@@ -237,6 +238,25 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "Choose equal intervals so the largest bar reaches the fourth tick.",
                     AssessmentItemType.Numeric, D(("step", a), ("dataVariant", n)));
 
+            // Publisher G3 U01 L07: within-100 "how many more/fewer"
+            // comparisons grounded in the units of a scaled bar chart.
+            case "usccss.b01.graph.scaled_compare":
+                m = new[] { 2, 5, 10 }[r.Next(0,3)];
+                a = r.Next(2, 9);
+                b = r.Next(1, 9);
+                if (a == b) b = b == 8 ? 7 : b+1;
+                n = r.Next(0,2);
+                return Make(f,
+                    $"A bar graph uses a scale of {m} items per tick. " +
+                    $"Category A reaches {a} ticks ({a*m} items) and category B " +
+                    $"reaches {b} ticks ({b*m} items). " +
+                    (n==0 ? "How many more items does the larger category have?"
+                          : "How many fewer items does the smaller category have?"),
+                    $"Each bar represents {m} items per marked tick. " +
+                    "Find both category counts, then subtract the smaller from the larger.",
+                    AssessmentItemType.Numeric,
+                    D(("unit",m),("ticksA",a),("ticksB",b),
+                      ("countA",a*m),("countB",b*m),("mode",n)));
             case "usccss.b01.array.equal_groups":
                 a = r.Next(2, 5 + level);
                 b = r.Next(2, Math.Min(11, 101 / a));
@@ -447,7 +467,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.measure.map_lengths" =>
                 (P("mode") == 0 ? P("a") + P("b") : P("b"))
                     .ToString(CultureInfo.InvariantCulture),
-            "usccss.b01.graph.choose_scale" => P("step").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.graph.scaled_compare" =>
+                Math.Abs(P("countA")-P("countB")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.graph.choose_scale" =>
+                P("step").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.composite_rectangle_area" =>
                 (P("height") * (P("width1") + P("width2"))).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.division.unknown_factor" =>
@@ -535,6 +558,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.measure.map_lengths" =>
                 Range("a",2,10) && Range("b",2,10) &&
                 N("a")+N("b")<=20 && Range("mode",0,1),
+            "usccss.b01.graph.scaled_compare" =>
+                (N("unit") is 2 or 5 or 10) &&
+                Range("ticksA",2,8) && Range("ticksB",1,8) &&
+                N("ticksA")!=N("ticksB") && Range("mode",0,1) &&
+                N("countA")==N("ticksA")*N("unit") &&
+                N("countB")==N("ticksB")*N("unit") &&
+                N("countA")<=100 && N("countB")<=100,
             "usccss.b01.graph.choose_scale" =>
                 (N("step") is 2 or 5 or 10) && Range("dataVariant",0,4),
             "usccss.b01.array.equal_groups" =>
