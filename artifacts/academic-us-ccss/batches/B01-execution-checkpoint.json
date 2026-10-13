@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 3,
+  "executionMode": "FIXED_500_LESSON_BATCHES",
+  "batchId": "B01",
+  "authoritativeRepository": "EIAS79/Edulytics",
+  "branch": "audit/us-ccss-b01-500-lesson-certification",
+  "baseMainSha": "9bdfc8b8c73f0a534abe426ed8d34db0f0c5c6ab",
+  "manifestPath": "artifacts/academic-us-ccss/batches/B01-lesson-manifest.json",
+  "releaseGate": "tools/us-ccss-b01-release-gate.cjs",
+  "releaseGateCi": ".github/workflows/us-ccss-b01-500-release.yml",
+  "canonicalLedger": "artifacts/academic-us-ccss/04-lesson-certification-records.json",
+  "expected": 500,
+  "uniqueAndSourceLocked": 500,
+  "certifiedFromCanonicalLedger": 1,
+  "remainingToCertify": 499,
+  "batchState": "BATCH_REVIEW_IN_PROGRESS",
+  "batchCertified": false,
+  "batchPublished": false,
+  "releaseEligible": false,
+  "historicalCertifiedLesson": {
+    "lessonCode": "PED:US-CCSS-MATH:G1:U01:L01",
+    "prNumber": 488,
+    "alreadyPublished": true,
+    "contentSha256": "2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680"
+  },
+  "nextLesson": {
+    "ordinal": 2,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
+    "name": "Explore Expressions and Sums",
+    "finding": "REWORK_REQUIRED_INSTRUCTIONAL_DOT_CUBE_MATCH_DRAW_ACTIVITY",
+    "academicStatus": "NOT_CERTIFIED",
+    "report": "artifacts/academic-us-ccss/batches/B01-G1-U01-L02-review-checkpoint.md"
+  },
+  "verifiedGitHubEvidence": {
+    "b01GateRunId": 38325230578,
+    "b01GateConclusion": "success",
+    "b01GateCommit": "4abf4d576e3bf8c71639051ee70319def2b495f4",
+    "certifiedCountFromRun": 1,
+    "nextLessonFromRun": "PED:US-CCSS-MATH:G1:U01:L02"
+  },
+  "lastCompletedOperation": "Locked all 500 unique B01 identities from four IM K5 publisher blueprints; implemented strict source/ledger release gate and 5 test cases; validated 1 certified/499 remaining in GitHub CI; compared L02 learner pack with source and identified missing taught dot-match/drawing representations.",
+  "nextExactOperation": "Repair G1 U01 L02 with source-and-SHA-guarded two-direction dot-cube visual examples, lesson-scoped practice and exact answer checks, then authenticated disposable Rich V2 verification and L1-L6 evidence. Do not certify before passing.",
+  "stopConditions": [
+    "Do not merge draft PR #492 into main",
+    "Do not trigger Render publishing until B01 has all 500 certified and CI green",
+    "No fabricated approvals or silent grade boundary"
+  ],
+  "notes": "Only one lesson is actually internally certified from the canonical ledger. No new L02 PASS has been recorded; the first-pass instructional review has its own report. No student accounts are needed during B01."
+}
