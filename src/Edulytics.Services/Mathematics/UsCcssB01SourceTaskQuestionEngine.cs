@@ -17,6 +17,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
     private static readonly HashSet<string> Families = new(StringComparer.Ordinal)
     {
+        "usccss.b01.g1.match_dot_cubes_expression",
+        "usccss.b01.g1.complete_missing_dots",
+        "usccss.b01.g1.check_off_add_within10",
         "usccss.b01.triangle.attributes",
         "usccss.b01.partition.halves_fourths",
         "usccss.b01.number_line.equal_intervals",
@@ -70,6 +73,47 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int a, b, n, d, m;
         switch (f)
         {
+            // Grade 1 U01 L02, official IM Activity 1: match paired dot
+            // cube pictures with their written expression, then find total.
+            // We explicitly provide visual dot groups rather than a word-only
+            // addition problem and bound all sums to ten.
+            case "usccss.b01.g1.match_dot_cubes_expression":
+                a = r.Next(1,7);
+                b = r.Next(1, Math.Min(7,11-a));
+                return Make(f,
+                    $"First dot cube: {string.Join(" ",Enumerable.Repeat("●",a))}. " +
+                    $"Second dot cube: {string.Join(" ",Enumerable.Repeat("●",b))}. " +
+                    "Write the matching addition expression as a+b (without a total).",
+                    "Count the two pictures separately, then write the two addends " +
+                    "in the same order using a plus sign.",
+                    AssessmentItemType.ShortAnswer,D(("first",a),("second",b)));
+
+            // Original student-facing Activity 1 asks students to draw the
+            // missing dots for a given expression. Numeric count is checked
+            // here; Rich V2 displays the pictured first group separately.
+            case "usccss.b01.g1.complete_missing_dots":
+                a = r.Next(1,7);
+                b = r.Next(1,Math.Min(7,11-a));
+                return Make(f,
+                    $"Draw the missing dot group so two groups represent {a} + {b}. " +
+                    $"One group already shows {a} dots: " +
+                    string.Join(" ",Enumerable.Repeat("●",a)) +
+                    ". How many dots must the second group contain?",
+                    $"Add exactly {b} more dots to match the second addend, then " +
+                    $"check that the combined total is {a+b}.",
+                    AssessmentItemType.Numeric,D(("first",a),("second",b)));
+
+            // Official IM Activity 2: draw two number cards at most five,
+            // find the sum, and check it off while recording the expression.
+            case "usccss.b01.g1.check_off_add_within10":
+                a = r.Next(0,6); b = r.Next(0,6);
+                return Make(f,
+                    $"In Check It Off, your two number cards are {a} and {b}. " +
+                    $"What sum do you check off? Record {a} + {b} beside that sum.",
+                    "The sum is the total after combining the two number cards; " +
+                    "both cards are at most five.",
+                    AssessmentItemType.Numeric,D(("first",a),("second",b)));
+
             case "usccss.b01.market.inventory_100":
                 // 2021 IM G2 U02 L16 optional market: one stock category <10,
                 // two categories >10, total exactly 100; transactions subtract
@@ -465,6 +509,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.place_value.count_to120" or
             "usccss.b01.place_value.three_digits" =>
                 P("number").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.match_dot_cubes_expression" =>
+                $"{P("first")}+{P("second")}",
+            "usccss.b01.g1.complete_missing_dots" =>
+                P("second").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.check_off_add_within10" =>
+                (P("first")+P("second")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.triangle.attributes" => P("position").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.partition.halves_fourths" => P("denominator") == 2 ? "half" : "fourth",
             "usccss.b01.number_line.equal_intervals" =>
@@ -571,6 +621,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("number",100,999) && Range("hundreds",1,9) &&
                 Range("tens",0,9) && Range("ones",0,9) && Range("mode",0,1) &&
                 N("number") == N("hundreds")*100 + N("tens")*10 + N("ones"),
+            "usccss.b01.g1.match_dot_cubes_expression" or
+            "usccss.b01.g1.complete_missing_dots" =>
+                Range("first",1,6) && Range("second",1,6) &&
+                N("first")+N("second")<=10,
+            "usccss.b01.g1.check_off_add_within10" =>
+                Range("first",0,5) && Range("second",0,5),
             "usccss.b01.triangle.attributes" =>
                 Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
