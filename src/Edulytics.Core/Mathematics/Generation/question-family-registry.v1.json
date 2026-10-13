@@ -6208,6 +6208,23 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.fraction.unit_parts",
+      "version": 1,
+      "skillId": "fractions.represent.interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "b01-unit-fraction-structured-parameters-exact-oracle",
+      "representations": [
+        "equal_part_fraction_bar"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
