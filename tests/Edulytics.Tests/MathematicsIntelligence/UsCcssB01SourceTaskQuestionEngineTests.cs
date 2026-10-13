@@ -30,7 +30,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G3:U04:L06", "division.unknown_factor"),
         ("G3:U05:L01", "fraction.name_parts"),
         ("G3:U06:L02", "measure.quarter_inch"),
-        ("G4:U01:L02", "factors.factor_pairs"),
+        ("G4:U01:L02", "g4.factor_pairs_two_rectangles"),
         ("G4:U01:L03", "factors.prime_composite"),
         ("G4:U01:L06", "factors.locker_square"),
         ("G4:U01:L07", "factors.factors_multiples"),
@@ -90,7 +90,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
         Assert.Equal(56, lessonIds.Count);
-        Assert.Equal(40, familyIds.Count);
+        Assert.Equal(41, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -188,6 +188,13 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                 Assert.Equal(N("number"),
                     100*N("hundreds")+10*N("tens")+N("ones"));
                 return Num(N("number"));
+            case "usccss.b01.g4.factor_pairs_two_rectangles":
+                Assert.Equal(N("area"),N("widthA")*N("heightA"));
+                Assert.Equal(N("area"),N("widthB")*N("heightB"));
+                Assert.True(N("widthA")<N("widthB"));
+                Assert.True(N("widthA")<=N("heightA"));
+                Assert.True(N("widthB")<=N("heightB"));
+                return Num(N("heightB"));
             case "usccss.b01.geometry.rectangle_area_grid60":
                 Assert.InRange(N("rows")*N("columns"),1,60);
                 return Num(N("rows")*N("columns"));
