@@ -63,6 +63,18 @@ class PublisherVisualEvidenceTests(unittest.TestCase):
         self.assertIn("CLOCK_DIAGRAM",
                       d["rows"][70]["publisherCueVisualReviewTypes"])
 
+    def test_polygon_shape_cue_requires_real_polygons_not_placeholder_tiles(self):
+        a,b=fixture()
+        a["rows"][15]["publisherTitle"]="Some Triangles, All Triangles"
+        a["rows"][15]["sourcePurposePreview"]="Identify defining attributes of triangles."
+        b["rows"][15]["visualKinds"]=["EquationSet","PlaceValueChart"]
+        d=audit.analyze(a,b)
+        self.assertIn("TRIANGLE_SHAPES",d["rows"][15]["publisherCueVisualReviewTypes"])
+        b["rows"][15]["visualKinds"]=["EquationSet","PolygonDiagram"]
+        d=audit.analyze(a,b)
+        self.assertNotIn("TRIANGLE_SHAPES",d["rows"][15]["publisherCueVisualReviewTypes"])
+        self.assertEqual(d["academicDecision"],"NOT_CERTIFIED")
+
     def test_one_source_content_sha_mismatch_blocks_exact_batch_integrity(self):
         a,b=fixture()
         b["rows"][301]["effectiveBodyFingerprint"]="b"*64
