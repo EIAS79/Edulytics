@@ -6517,6 +6517,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g2.add_subtract_without_regroup",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g2-no-regroup-independent-digit-math-v1",
+      "representations": [
+        "tens_ones_place_value_chart",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.g2.subtract_decompose_ten",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g2-required-ten-borrow-check-v1",
+      "representations": [
+        "tens_ones_place_value_chart",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g1.add_subtract_10_tens",
       "version": 1,
       "skillId": "number.whole.add_subtract",

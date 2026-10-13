@@ -522,6 +522,19 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.fraction.unit_parts"],
             "IM2021_G3_U05_L02_EQUAL_PARTS_UNIT_FRACTION_PURPOSE",
             "READY_VERIFIED", "usccss-b01-source-fraction-v1"),
+        // IM G2 U02 L01 does not regroup, L07 must decompose one ten.
+        new(
+            "PED:US-CCSS-MATH:G2:U02:L01",
+            "number.whole.add_subtract", "TWO_DIGIT_ADD_SUBTRACT_NO_REGROUP",
+            ["usccss.b01.g2.add_subtract_without_regroup"],
+            "IM2021_G2_U02_L01_NO_REGROUP_SOURCE",
+            "READY_VERIFIED", "usccss-b01-g2-two-digit-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U02:L07",
+            "number.whole.add_subtract", "SUBTRACT_TWO_DIGITS_DECOMPOSE_TEN",
+            ["usccss.b01.g2.subtract_decompose_ten"],
+            "IM2021_G2_U02_L07_DECOMPOSE_TEN_SOURCE",
+            "READY_VERIFIED", "usccss-b01-g2-two-digit-v1"),
         // Source IM G1 U04 L03/L04: operate on complete tens only,
         // never unrelated single-digit or general across-ten questions.
         new(

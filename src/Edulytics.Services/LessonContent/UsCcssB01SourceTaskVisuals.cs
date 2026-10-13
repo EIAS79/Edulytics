@@ -174,6 +174,55 @@ public static class UsCcssB01SourceTaskVisuals
                                 $"{i}/{N("baseD")}")
                             .ToList()
                     },
+                "usccss.b01.g2.add_subtract_without_regroup" or "usccss.b01.g2.subtract_decompose_ten" when
+                    ((lessonCode=="PED:US-CCSS-MATH:G2:U02:L01" &&
+                        q.Family=="usccss.b01.g2.add_subtract_without_regroup") ||
+                     (lessonCode=="PED:US-CCSS-MATH:G2:U02:L07" &&
+                        q.Family=="usccss.b01.g2.subtract_decompose_ten")) &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title=q.Family=="usccss.b01.g2.subtract_decompose_ten"
+                            ?"Decompose one ten to subtract"
+                            :"Add or subtract without regrouping",
+                        PrimaryLabel="Tens | Ones",
+                        Description=$"{N("left")} " +
+                            (N("operation")==0?"+":"−") +
+                            $" {N("right")} = {N("expected")}. " +
+                            (q.Family=="usccss.b01.g2.subtract_decompose_ten"
+                                ?"Exchange one ten for ten ones before subtracting."
+                                :"Neither ones nor tens require regrouping."),
+                        Rows=new List<RichLessonVisualRow>
+                        {
+                            new()
+                            {
+                                Label="First number",
+                                Cells=[(N("left")/10).ToString(),
+                                    (N("left")%10).ToString()]
+                            },
+                            new()
+                            {
+                                Label=N("operation")==0?"Add":"Subtract",
+                                Cells=[(N("right")/10).ToString(),
+                                    (N("right")%10).ToString()]
+                            }
+                        }.Concat(q.Family=="usccss.b01.g2.subtract_decompose_ten"
+                            ?new[]{new RichLessonVisualRow
+                            {
+                                Label="One ten exchanged for ten ones",
+                                Cells=[(N("left")/10-1).ToString(),
+                                    (N("left")%10+10).ToString()]
+                            }}
+                            :Array.Empty<RichLessonVisualRow>())
+                            .Append(new RichLessonVisualRow
+                            {
+                                Label="Result",
+                                Cells=[(N("expected")/10).ToString(),
+                                    (N("expected")%10).ToString()]
+                            }).ToList()
+                    },
                 "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" when
                     ((lessonCode=="PED:US-CCSS-MATH:G1:U04:L03" &&
                         q.Family=="usccss.b01.g1.add_subtract_10_tens") ||

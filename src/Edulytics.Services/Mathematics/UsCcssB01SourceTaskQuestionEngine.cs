@@ -72,6 +72,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.place_value.ten_times",
         "usccss.b01.place_value.tens_ones",
         "usccss.b01.g1.add_subtract_10_tens",
+        "usccss.b01.g2.add_subtract_without_regroup",
+        "usccss.b01.g2.subtract_decompose_ten",
         "usccss.b01.g1.add_subtract_tens_multiples",
         "usccss.b01.place_value.count_to120",
         "usccss.b01.place_value.three_digits",
@@ -238,6 +240,45 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // Official Grade 1 U04/U08: two-digit numerals are tens and ones.
             // Original IM Grade 1 U04 L03: add or subtract EXACTLY TEN
             // from a multiple of ten. There are no ones-domain tasks here.
+            // IM G2 U02 L01: two-digit arithmetic without regrouping.
+            case "usccss.b01.g2.add_subtract_without_regroup":
+            {
+                m=r.Next(0,2);
+                if(m==0)
+                {
+                    var lt=r.Next(1,8);var lo=r.Next(0,10);
+                    var rt=r.Next(1,10-lt);var ro=r.Next(0,10-lo);
+                    a=10*lt+lo;b=10*rt+ro;
+                }
+                else
+                {
+                    var lt=r.Next(2,10);var lo=r.Next(0,10);
+                    var rt=r.Next(1,lt+1);var ro=r.Next(0,lo+1);
+                    a=10*lt+lo;b=10*rt+ro;
+                }
+                return Make(f,
+                    $"Find {a} {(m==0?"+":"−")} {b} using tens and ones. " +
+                    "Do not compose or decompose a ten.",
+                    "Operate independently on tens and ones, without carrying or borrowing.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",m),
+                      ("expected",m==0?a+b:a-b)));
+            }
+            // IM G2 U02 L07: subtract using a mandatory ten decomposition.
+            case "usccss.b01.g2.subtract_decompose_ten":
+            {
+                var lt=r.Next(2,10);var lo=r.Next(0,9);
+                var rt=r.Next(1,lt);var ro=r.Next(lo+1,10);
+                a=lt*10+lo;b=rt*10+ro;
+                return Make(f,
+                    $"Subtract {a} − {b} with tens and ones. " +
+                    "Show how to decompose one ten into ten ones.",
+                    "Rename one ten as ten ones before subtracting the ones column.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",1),
+                      ("expected",a-b)));
+            }
+
             case "usccss.b01.g1.add_subtract_10_tens":
             {
                 a=r.Next(1,9)*10;
@@ -961,6 +1002,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.market.inventory_100" =>
                 (P("mode") == 0 ? P("second") - P("sold") : P("third"))
                     .ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.add_subtract_without_regroup" or "usccss.b01.g2.subtract_decompose_ten" or
             "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.place_value.tens_ones" or
@@ -1150,6 +1192,22 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("small") + N("second") + N("third") == 100 &&
                 Range("sold",1,11) && N("sold") < N("second") &&
                 Range("mode",0,1),
+            "usccss.b01.g2.add_subtract_without_regroup" =>
+                Range("left",10,99) && Range("right",10,99) &&
+                Range("operation",0,1) && Range("expected",0,99) &&
+                N("expected")==(N("operation")==0
+                    ?N("left")+N("right"):N("left")-N("right")) &&
+                (N("operation")==0
+                    ?N("left")%10+N("right")%10<10 &&
+                     N("left")/10+N("right")/10<=9
+                    :N("left")%10>=N("right")%10 &&
+                     N("left")/10>=N("right")/10),
+            "usccss.b01.g2.subtract_decompose_ten" =>
+                Range("left",20,99) && Range("right",11,89) &&
+                Range("operation",1,1) && Range("expected",1,88) &&
+                N("left")/10>N("right")/10 &&
+                N("left")%10<N("right")%10 &&
+                N("expected")==N("left")-N("right"),
             "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" =>
                 Range("left",10,80) && Range("right",10,80) &&
                 Range("operation",0,1) && Range("expected",0,90) &&

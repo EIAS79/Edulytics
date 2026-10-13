@@ -52,6 +52,47 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         Assert.Equal(new[]{0,1},operations.OrderBy(x=>x).ToArray());
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G2:U02:L01",
+        "usccss.b01.g2.add_subtract_without_regroup",false)]
+    [InlineData("PED:US-CCSS-MATH:G2:U02:L07",
+        "usccss.b01.g2.subtract_decompose_ten",true)]
+    public void OriginalGradeTwoTensBorrowConditionsAreIndependentlyVerified(
+        string code,string family,bool mustBorrow)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var operations=new HashSet<int>();
+        for(var seed=72000;seed<72100;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var a=p["left"];var b=p["right"];var op=p["operation"];
+            operations.Add(op);
+            Assert.Equal(op==0?a+b:a-b,int.Parse(q.CorrectAnswer));
+            Assert.Equal(mustBorrow,a%10<b%10);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var chart=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,chart.Kind);
+            Assert.Equal(mustBorrow?4:3,chart.Rows.Count);
+            if(mustBorrow)
+            {
+                var decomposed=chart.Rows[2].Cells.Select(int.Parse).ToArray();
+                Assert.Equal(a,decomposed[0]*10+decomposed[1]);
+                Assert.Equal(a/10-1,decomposed[0]);
+                Assert.Equal(a%10+10,decomposed[1]);
+            }
+            Assert.Equal(int.Parse(q.CorrectAnswer),
+                int.Parse(chart.Rows[^1].Cells[0])*10+
+                int.Parse(chart.Rows[^1].Cells[1]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="99999"}]));
+        }
+        Assert.Contains(1,operations);
+        if(!mustBorrow)Assert.Contains(0,operations);
+    }
+
     [Fact]
     public void ArrayVisualContainsExactlyTheUnitSquaresInTheVerifiedQuestion()
     {

@@ -36,6 +36,8 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G2:U02:L01": "usccss.b01.g2.add_subtract_without_regroup",
+    "PED:US-CCSS-MATH:G2:U02:L07": "usccss.b01.g2.subtract_decompose_ten",
     "PED:US-CCSS-MATH:G1:U04:L03": "usccss.b01.g1.add_subtract_10_tens",
     "PED:US-CCSS-MATH:G1:U04:L04": "usccss.b01.g1.add_subtract_tens_multiples",
     "PED:US-CCSS-MATH:G3:U02:L07": "usccss.b01.geometry.rectangle_area_real_world_units",
