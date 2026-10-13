@@ -88,6 +88,39 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void FractionNumberLineLabelsUseExactUnitFractionSpacing()
+    {
+        const string code = "PED:US-CCSS-MATH:G3:U05:L05";
+        var q = One(code, "fractions.equivalent.number_line", 390012);
+        var visual = Assert.Single(UsCcssB01SourceTaskVisuals.Build(code, [q]));
+        Assert.Equal(RichLessonVisualKind.NumberLine, visual.Kind);
+        Assert.Equal(q.Parameters["baseD"] + 1, visual.Items.Count);
+        Assert.Equal("0", visual.Items[0]);
+        Assert.Equal("1", visual.Items[^1]);
+        Assert.Equal(
+            $"{q.Parameters["baseN"]}/{q.Parameters["baseD"]}",
+            visual.Items[q.Parameters["baseN"]]);
+        Assert.Equal(q.Parameters["baseN"] * q.Parameters["targetD"],
+            int.Parse(q.CorrectAnswer) * q.Parameters["baseD"]);
+    }
+
+    [Fact]
+    public void ReadingScaleDiagramIsEquallySpacedAndHasTheVerifiedAnswer()
+    {
+        const string code = "PED:US-CCSS-MATH:G2:U04:L02";
+        var q = One(code, "measurement.scale.equal_intervals.read_value", 390021);
+        var visual = Assert.Single(UsCcssB01SourceTaskVisuals.Build(code, [q]));
+        Assert.Equal(RichLessonVisualKind.Scale, visual.Kind);
+        Assert.Equal(q.Parameters["intervals"] + 1, visual.Items.Count);
+        var labels = visual.Items.Select(int.Parse).ToArray();
+        var step = labels[1] - labels[0];
+        Assert.True(step > 0);
+        for(var i=1;i<labels.Length;i++)
+            Assert.Equal(step, labels[i] - labels[i-1]);
+        Assert.Equal(q.CorrectAnswer, visual.Items[q.Parameters["pointer"]]);
+    }
+
+    [Fact]
     public void DoNotDisplayB01SpecificDiagramsOnLaterBatchOrOtherCurricula()
     {
         var q=One("PED:US-CCSS-MATH:G3:U01:L16",
