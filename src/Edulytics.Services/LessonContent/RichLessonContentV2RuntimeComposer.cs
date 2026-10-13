@@ -183,7 +183,7 @@ public static partial class RichLessonContentV2RuntimeComposer
 
         var visuals = BuildVisuals(
             lessonCode,
-            body.Title,
+            body,
             examples,
             contract);
 
@@ -595,10 +595,11 @@ public static partial class RichLessonContentV2RuntimeComposer
 
     private static IReadOnlyList<RichLessonVisual> BuildVisuals(
         string lessonCode,
-        string title,
+        CanonicalLessonTranslationRecord body,
         IReadOnlyList<RichLessonWorkedExample> examples,
         LessonPracticeContract contract)
     {
+        var title = body.Title;
         var equationItems = examples
             .Take(4)
             .Select(example =>
@@ -680,7 +681,8 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
-        return [questionForms];
+        var sourceDerivedCounters = UsCcssB01VerifiedExpressionVisuals.Build(lessonCode, body);
+        return [..sourceDerivedCounters, questionForms];
     }
 
     private static int StableSeed(string value)
