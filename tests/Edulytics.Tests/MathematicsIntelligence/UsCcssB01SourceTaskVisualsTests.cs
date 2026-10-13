@@ -71,6 +71,45 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Theory]
+    [InlineData("PED:US-CCSS-MATH:G1:U07:L13",
+        "usccss.b01.clock.read_on_hour",false)]
+    [InlineData("PED:US-CCSS-MATH:G2:U06:L13",
+        "usccss.b01.clock.read_five_minutes_am_pm",true)]
+    public void SourceSpecificClockLessonsUseVerifiedHourMinuteAndAmPm(
+        string code,string family,bool hasDayPart)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var lesson));
+        Assert.Equal([family],lesson!.AllowedQuestionFamilies);
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+            family,out var presentation));
+        Assert.True(presentation!.HasVisualRepresentation);
+        Assert.Equal(LessonPracticeInteractionKind.StructuredEntry,
+            presentation.InteractionKind);
+        for(var seed=558600;seed<558617;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            Assert.InRange(p["hour"],1,12);
+            Assert.InRange(p["minutes"],0,55);
+            Assert.Equal(0,p["minutes"]%5);
+            if(!hasDayPart)Assert.Equal(0,p["minutes"]);
+            Assert.Equal(
+                $"{p["hour"]}:{p["minutes"]:00}" +
+                (hasDayPart ? (p["period"]==0?" a.m.":" p.m.") : ""),
+                q.CorrectAnswer);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var clock=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.ClockFace,clock.Kind);
+            Assert.Equal(p["hour"],int.Parse(clock.Items[0]));
+            Assert.Equal(p["minutes"],int.Parse(clock.Items[1]));
+            Assert.Contains(q.CorrectAnswer,clock.Title);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="99:99 p.m."}]));
+        }
+    }
+
+    [Theory]
     [InlineData("PED:US-CCSS-MATH:G1:U07:L14", "usccss.b01.clock.read_half_hour")]
     [InlineData("PED:US-CCSS-MATH:G1:U07:L15", "usccss.b01.clock.read_half_hour")]
     [InlineData("PED:US-CCSS-MATH:G2:U06:L12", "usccss.b01.clock.read_five_minutes")]
