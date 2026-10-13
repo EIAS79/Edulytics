@@ -32,6 +32,27 @@ public sealed class UsCcssB01CategoricalGraphVisualsTests
     }
 
     [Fact]
+    public void ScaledGrade3GraphBarsExplainExactlyTheHowManyMoreOrFewerAnswer()
+    {
+        const string code="PED:US-CCSS-MATH:G3:U01:L07";
+        const string family="usccss.b01.graph.scaled_compare";
+        for(var seed=550100;seed<550110;seed++)
+        {
+            var q=Generate(code,family,seed);
+            var chart=Assert.Single(UsCcssB01CategoricalGraphVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.BarGraph,chart.Kind);
+            Assert.Equal(2,chart.Rows.Count);
+            var counts=chart.Rows.Select(r=>int.Parse(Assert.Single(r.Cells))).ToArray();
+            Assert.Equal(q.Parameters["ticksA"]*q.Parameters["unit"],counts[0]);
+            Assert.Equal(q.Parameters["ticksB"]*q.Parameters["unit"],counts[1]);
+            Assert.Equal(Math.Abs(counts[0]-counts[1]),int.Parse(q.CorrectAnswer));
+            Assert.All(counts,c=>Assert.InRange(c,1,100));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+        }
+    }
+
+    [Fact]
     public void WrongQuestionAnswerOrNonGraphLessonCannotProduceMisleadingChart()
     {
         var lesson="PED:US-CCSS-MATH:G2:U01:L09";
