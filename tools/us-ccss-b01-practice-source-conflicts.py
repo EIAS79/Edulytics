@@ -36,6 +36,12 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    # Official IM G1 U01 L02: dot pictures, missing dots and Check It Off.
+    "PED:US-CCSS-MATH:G1:U01:L02": [
+        "usccss.b01.g1.match_dot_cubes_expression",
+        "usccss.b01.g1.complete_missing_dots",
+        "usccss.b01.g1.check_off_add_within10",
+    ],
     "PED:US-CCSS-MATH:G3:U02:L04": "usccss.b01.geometry.rectangle_area_grid60",
     "PED:US-CCSS-MATH:G3:U02:L08": "usccss.b01.geometry.rectangle_area_ungridded",
     "PED:US-CCSS-MATH:G3:U02:L12": "usccss.b01.geometry.composite_rectangle_area",
@@ -105,9 +111,13 @@ def analyze(runtime, publisher):
         flagged=[]
         actual_families = x.get("actualQuestionFamilies") or []
         exact_family = SOURCE_SCOPED_FAMILIES.get(x["lessonCode"])
-        if exact_family is not None and actual_families != [exact_family]:
+        expected_families = (
+            exact_family if isinstance(exact_family,list) else
+            [exact_family] if exact_family is not None else None
+        )
+        if expected_families is not None and actual_families != expected_families:
             flagged.append({"rule":"SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
-                            "expected":exact_family, "actual":actual_families})
+                            "expected":expected_families, "actual":actual_families})
         if exact_family is None and any(f.startswith("usccss.b01.") for f in actual_families):
             flagged.append({"rule":"SOURCE_TASK_LEAKED_OUTSIDE_EXACT_LESSON_SCOPE",
                             "actual":actual_families})
