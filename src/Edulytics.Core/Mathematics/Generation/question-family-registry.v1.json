@@ -5902,6 +5902,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g3.quarter_inch_line_plot_frequency",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-quarter-inch-measurement-frequency-math-v1",
+      "representations": [
+        "fractional_line_plot_quarter_inch_ticks",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g2.measurement.read_line_plot",
       "version": 1,
       "skillId": "supporting.statistics.charts",
