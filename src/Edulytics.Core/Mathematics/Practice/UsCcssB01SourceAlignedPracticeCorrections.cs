@@ -522,6 +522,20 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.fraction.unit_parts"],
             "IM2021_G3_U05_L02_EQUAL_PARTS_UNIT_FRACTION_PURPOSE",
             "READY_VERIFIED", "usccss-b01-source-fraction-v1"),
+        // Source IM G1 U04 L03/L04: operate on complete tens only,
+        // never unrelated single-digit or general across-ten questions.
+        new(
+            "PED:US-CCSS-MATH:G1:U04:L03",
+            "number.whole.add_subtract", "ADD_SUBTRACT_TEN_FROM_TENS",
+            ["usccss.b01.g1.add_subtract_10_tens"],
+            "IM2021_G1_U04_L03_ADD_SUBTRACT_TEN_FROM_MULTIPLES",
+            "READY_VERIFIED", "usccss-b01-g1-complete-tens-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U04:L04",
+            "number.whole.add_subtract", "ADD_SUBTRACT_MULTIPLES_OF_TEN",
+            ["usccss.b01.g1.add_subtract_tens_multiples"],
+            "IM2021_G1_U04_L04_ADD_SUBTRACT_MULTIPLES_OF_TEN",
+            "READY_VERIFIED", "usccss-b01-g1-complete-tens-v1"),
         new(
             "PED:US-CCSS-MATH:G1:U04:L08",
             "supporting.number.place_value_rounding", "INTERPRET_TWO_DIGIT_BASE_TEN",

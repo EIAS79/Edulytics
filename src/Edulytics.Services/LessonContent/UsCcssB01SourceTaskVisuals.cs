@@ -174,6 +174,40 @@ public static class UsCcssB01SourceTaskVisuals
                                 $"{i}/{N("baseD")}")
                             .ToList()
                     },
+                "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" when
+                    ((lessonCode=="PED:US-CCSS-MATH:G1:U04:L03" &&
+                        q.Family=="usccss.b01.g1.add_subtract_10_tens") ||
+                     (lessonCode=="PED:US-CCSS-MATH:G1:U04:L04" &&
+                        q.Family=="usccss.b01.g1.add_subtract_tens_multiples")) &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title="Add and subtract complete bundles of ten",
+                        Description=$"{N("left")/10} tens " +
+                            (N("operation")==0?"+":"−") +
+                            $" {N("right")/10} tens = {N("expected")/10} tens. " +
+                            "All ones-place digits remain zero.",
+                        PrimaryLabel="Tens | Ones",
+                        Rows=[
+                            new RichLessonVisualRow
+                            {
+                                Label="Starting number",
+                                Cells=[(N("left")/10).ToString(),"0"]
+                            },
+                            new RichLessonVisualRow
+                            {
+                                Label=N("operation")==0?"Tens added":"Tens removed",
+                                Cells=[(N("right")/10).ToString(),"0"]
+                            },
+                            new RichLessonVisualRow
+                            {
+                                Label="Answer",
+                                Cells=[(N("expected")/10).ToString(),"0"]
+                            }
+                        ]
+                    },
                 "usccss.b01.place_value.tens_ones" when
                     N("number") == N("tens")*10+N("ones") &&
                     N("number") is >= 10 and <= 99 =>

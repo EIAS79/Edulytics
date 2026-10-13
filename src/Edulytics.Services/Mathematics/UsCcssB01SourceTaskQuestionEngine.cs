@@ -71,6 +71,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.fraction.decompose_same_denominator",
         "usccss.b01.place_value.ten_times",
         "usccss.b01.place_value.tens_ones",
+        "usccss.b01.g1.add_subtract_10_tens",
+        "usccss.b01.g1.add_subtract_tens_multiples",
         "usccss.b01.place_value.count_to120",
         "usccss.b01.place_value.three_digits",
         "usccss.b01.market.inventory_100",
@@ -234,6 +236,38 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     D(("small", a), ("second", b), ("third", n), ("sold", d), ("mode", m)));
 
             // Official Grade 1 U04/U08: two-digit numerals are tens and ones.
+            // Original IM Grade 1 U04 L03: add or subtract EXACTLY TEN
+            // from a multiple of ten. There are no ones-domain tasks here.
+            case "usccss.b01.g1.add_subtract_10_tens":
+            {
+                a=r.Next(1,9)*10;
+                m=r.Next(0,2);
+                return Make(f,
+                    $"Start with {a}. {(m==0?"Add":"Subtract")} 10. " +
+                    "How many do you have? Show how tens and ones change.",
+                    "Every ten is one complete bundle with zero loose ones. " +
+                    (m==0?"Join one ten to the bundles.":"Remove one ten from the bundles."),
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",10),("operation",m),
+                      ("expected",m==0?a+10:a-10)));
+            }
+            // Original IM Grade 1 U04 L04: BOTH operands are multiples
+            // of ten; sum or difference always within the G1 tens domain.
+            case "usccss.b01.g1.add_subtract_tens_multiples":
+            {
+                a=r.Next(2,9)*10;
+                b=r.Next(1,Math.Min(a/10,9-a/10)+1)*10;
+                m=r.Next(0,2);
+                return Make(f,
+                    $"Calculate {a} {(m==0?"+":"−")} {b} using bundles of ten. " +
+                    "What is the sum or difference?",
+                    "Work with whole tens: each bundle represents 10 and " +
+                    "no ones are added or removed.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",m),
+                      ("expected",m==0?a+b:a-b)));
+            }
+
             case "usccss.b01.place_value.tens_ones":
                 a = r.Next(10, 100);
                 m = r.Next(0, 3);
@@ -927,6 +961,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.market.inventory_100" =>
                 (P("mode") == 0 ? P("second") - P("sold") : P("third"))
                     .ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" =>
+                P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.place_value.tens_ones" or
             "usccss.b01.place_value.count_to120" or
             "usccss.b01.place_value.three_digits" =>
@@ -1114,6 +1150,17 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("small") + N("second") + N("third") == 100 &&
                 Range("sold",1,11) && N("sold") < N("second") &&
                 Range("mode",0,1),
+            "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" =>
+                Range("left",10,80) && Range("right",10,80) &&
+                Range("operation",0,1) && Range("expected",0,90) &&
+                N("left")%10==0 && N("right")%10==0 &&
+                N("expected")==(N("operation")==0
+                    ?N("left")+N("right"):N("left")-N("right")) &&
+                (family=="usccss.b01.g1.add_subtract_tens_multiples" ||
+                    N("right")==10) &&
+                (family=="usccss.b01.g1.add_subtract_10_tens" ||
+                    (N("left")>=20 && N("left")<=80 &&
+                     N("right")<=Math.Min(N("left"),90-N("left")))),
             "usccss.b01.place_value.tens_ones" =>
                 Range("number",10,99) && Range("tens",1,9) &&
                 Range("ones",0,9) && Range("mode",0,2) &&

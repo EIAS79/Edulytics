@@ -13,6 +13,45 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         Assert.Single(_engine.Generate("b01-visual-structured",code,[family],
             ExactSkillQuestionDifficulty.Standard,1,seed,[]));
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G1:U04:L03",
+        "usccss.b01.g1.add_subtract_10_tens",true)]
+    [InlineData("PED:US-CCSS-MATH:G1:U04:L04",
+        "usccss.b01.g1.add_subtract_tens_multiples",false)]
+    public void OriginalGradeOneCompleteTensLessonsNeverGenerateOnesOnlyQuestions(
+        string code,string family,bool exactlyTen)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var operations=new HashSet<int>();
+        for(var seed=71000;seed<71100;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            int left=p["left"],right=p["right"],mode=p["operation"];
+            operations.Add(mode);
+            Assert.Equal(0,left%10);
+            Assert.Equal(0,right%10);
+            if(exactlyTen)Assert.Equal(10,right);
+            Assert.Equal(mode==0?left+right:left-right,
+                int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var chart=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,chart.Kind);
+            Assert.Equal(3,chart.Rows.Count);
+            var values=chart.Rows.Select(row=>
+                int.Parse(row.Cells[0])*10+int.Parse(row.Cells[1])).ToArray();
+            Assert.Equal(new[]{left,right,int.Parse(q.CorrectAnswer)},values);
+            Assert.All(chart.Rows,row=>Assert.Equal("0",row.Cells[1]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="9999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G1:U05:L03",[q]));
+        }
+        Assert.Equal(new[]{0,1},operations.OrderBy(x=>x).ToArray());
+    }
+
     [Fact]
     public void ArrayVisualContainsExactlyTheUnitSquaresInTheVerifiedQuestion()
     {
