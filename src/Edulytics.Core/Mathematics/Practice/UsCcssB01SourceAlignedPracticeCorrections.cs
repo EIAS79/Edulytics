@@ -289,7 +289,7 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
         new(
             "PED:US-CCSS-MATH:G2:U08:L10",
             "number.whole.add_subtract", "ARRAY_EQUATIONS",
-            ["usccss.b01.array.equal_addends"],
+            ["usccss.b01.array.equal_equation"],
             "IM2021_G2_U08_L10_ARRAY_EQUATIONS_PURPOSE",
             "READY_VERIFIED", "usccss-b01-source-array-v1"),
         new(
