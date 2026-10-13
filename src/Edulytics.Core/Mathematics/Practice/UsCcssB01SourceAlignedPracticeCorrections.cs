@@ -535,6 +535,15 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.subtract_decompose_ten"],
             "IM2021_G2_U02_L07_DECOMPOSE_TEN_SOURCE",
             "READY_VERIFIED", "usccss-b01-g2-two-digit-v1"),
+        // IM G2 U05 L09: three-digit magnitude by relative
+        // number-line positions rather than unrelated within-100 sums.
+        new(
+            "PED:US-CCSS-MATH:G2:U05:L09",
+            "measurement.scale.read_equal_intervals",
+            "THREE_DIGIT_COMPARE_BY_NUMBER_LINE",
+            ["usccss.b01.g2.order_three_digits_number_line"],
+            "IM2021_G2_U05_L09_THREE_DIGIT_NUMBER_LINE_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-book-g2-line-v1"),
         // G4 U03 L10: subtract a proper fraction from whole numbers,
         // renaming the whole as equivalent denominator-sized parts.
         new(
