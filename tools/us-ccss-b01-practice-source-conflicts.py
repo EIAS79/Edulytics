@@ -36,6 +36,10 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G1:U03:L12": "usccss.b01.g1.teen_no_regroup",
+    "PED:US-CCSS-MATH:G1:U03:L22": "usccss.b01.g1.teen_subtract_decompose_ten",
+    "PED:US-CCSS-MATH:G2:U02:L03": "usccss.b01.g2.story_without_regroup100",
+    "PED:US-CCSS-MATH:G2:U02:L11": "usccss.b01.g2.story_regroup50",
     "PED:US-CCSS-MATH:G4:U01:L01": "usccss.b01.g4.rectangle_area_is_multiple",
     "PED:US-CCSS-MATH:G3:U04:L10": "usccss.b01.g3.distributive_area_partition",
     "PED:US-CCSS-MATH:G3:U07:L10": "usccss.b01.g3.rectangle_area_perimeter_story",

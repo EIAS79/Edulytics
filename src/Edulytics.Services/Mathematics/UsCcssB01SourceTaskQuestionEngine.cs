@@ -81,6 +81,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.place_value.ten_times",
         "usccss.b01.place_value.tens_ones",
         "usccss.b01.g1.add_subtract_10_tens",
+        "usccss.b01.g1.teen_no_regroup",
+        "usccss.b01.g1.teen_subtract_decompose_ten",
+        "usccss.b01.g2.story_without_regroup100",
+        "usccss.b01.g2.story_regroup50",
         "usccss.b01.g1.compare_order_tens_ones",
         "usccss.b01.g4.whole_minus_proper_fraction",
         "usccss.b01.g2.order_three_digits_number_line",
@@ -411,6 +415,99 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "Write the three numbers in order before choosing the answer.",
                     AssessmentItemType.Numeric,
                     D(("first",a),("second",b),("third",n),("position",m)));
+            }
+
+            // Teacher IM G1 U03 L12: operate on teen ± one-digit
+            // without composing/decomposing the existing one ten.
+            case "usccss.b01.g1.teen_no_regroup":
+            {
+                m=r.Next(0,2);
+                a=m==0?r.Next(11,19):r.Next(11,20);
+                var ones=a%10;
+                b=r.Next(1,(m==0?9-ones:ones)+1);
+                return Make(f,
+                    $"Start with {a}. {(m==0?"Add":"Subtract")} {b} ones. " +
+                    "How many now? Keep the one ten intact.",
+                    "Keep the ten bundled and operate on the loose ones. " +
+                    "No new ten is made or broken.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",m),
+                      ("expected",m==0?a+b:a-b)));
+            }
+            // IM G1 U03 L22: subtract from teen numbers by exchanging
+            // a ten for ten ones before removing more than the loose ones.
+            case "usccss.b01.g1.teen_subtract_decompose_ten":
+            {
+                a=r.Next(10,19);
+                b=r.Next(a%10+1,10);
+                return Make(f,
+                    $"There are {a} cubes: one full ten and {a%10} loose ones. " +
+                    $"Take away {b} cubes. Decompose the ten into ten ones " +
+                    "before calculating the remainder.",
+                    "Rename one ten as ten ones, so that there are " +
+                    $"{10+a%10} loose ones. Then subtract {b}.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",1),
+                      ("expected",a-b)));
+            }
+            // IM G2 U02 L03: story problems within 100, NO regrouping.
+            case "usccss.b01.g2.story_without_regroup100":
+            {
+                m=r.Next(0,2);
+                if(m==0)
+                {
+                    var lt=r.Next(1,8);var lo=r.Next(0,10);
+                    var rt=r.Next(1,10-lt);var ro=r.Next(0,10-lo);
+                    a=10*lt+lo;b=10*rt+ro;
+                }
+                else
+                {
+                    var lt=r.Next(2,10);var lo=r.Next(0,10);
+                    var rt=r.Next(1,lt+1);var ro=r.Next(0,lo+1);
+                    a=10*lt+lo;b=10*rt+ro;
+                }
+                return Make(f,
+                    m==0
+                        ?$"A class has {a} stickers and receives {b} more. " +
+                         "How many stickers are there altogether? " +
+                         "Explain with tens and ones without regrouping."
+                        :$"A class has {a} stickers and gives away {b}. " +
+                         "How many remain? Explain with tens and ones without regrouping.",
+                    "Add or subtract tens and ones separately; no carrying " +
+                    "or borrowing is needed in this story.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",m),
+                      ("expected",m==0?a+b:a-b)));
+            }
+            // IM G2 U02 L11: story problems within 50 that REQUIRE
+            // composing a ten in addition or decomposing a ten in subtraction.
+            case "usccss.b01.g2.story_regroup50":
+            {
+                m=r.Next(0,2);
+                if(m==0)
+                {
+                    var lt=r.Next(1,3);var lo=r.Next(1,10);
+                    var rt=r.Next(1,4-lt);var ro=r.Next(10-lo,10);
+                    a=lt*10+lo;b=rt*10+ro;
+                }
+                else
+                {
+                    var lt=r.Next(2,5);var lo=r.Next(0,9);
+                    var rt=r.Next(1,lt);var ro=r.Next(lo+1,10);
+                    a=lt*10+lo;b=rt*10+ro;
+                }
+                return Make(f,
+                    m==0
+                        ?$"At a school event, one group counted {a} tickets and " +
+                         $"another counted {b}. How many tickets altogether? " +
+                         "Show how ten ones combine into one ten."
+                        :$"A school has {a} pencils and gives away {b}. " +
+                         "How many pencils remain? Show how one ten is decomposed.",
+                    "Use bundles of tens and single ones. " +
+                    "A composition or decomposition of ten is necessary.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",m),
+                      ("expected",m==0?a+b:a-b)));
             }
 
             case "usccss.b01.g1.add_subtract_10_tens":
@@ -1312,6 +1409,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.market.inventory_100" =>
                 (P("mode") == 0 ? P("second") - P("sold") : P("third"))
                     .ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.teen_no_regroup" or "usccss.b01.g1.teen_subtract_decompose_ten" or "usccss.b01.g2.story_without_regroup100" or "usccss.b01.g2.story_regroup50" or
             "usccss.b01.g2.add_subtract_without_regroup" or
             "usccss.b01.g2.subtract_decompose_ten" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
@@ -1544,6 +1642,37 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("small") + N("second") + N("third") == 100 &&
                 Range("sold",1,11) && N("sold") < N("second") &&
                 Range("mode",0,1),
+            "usccss.b01.g1.teen_no_regroup" =>
+                Range("left",11,19) && Range("right",1,9) &&
+                Range("operation",0,1) && Range("expected",10,19) &&
+                (N("operation")==0
+                    ?N("left")%10+N("right")<10
+                    :N("left")%10>=N("right")) &&
+                N("expected")==(N("operation")==0
+                    ?N("left")+N("right"):N("left")-N("right")),
+            "usccss.b01.g1.teen_subtract_decompose_ten" =>
+                Range("left",10,18) && Range("right",1,9) &&
+                Range("operation",1,1) && Range("expected",1,17) &&
+                N("left")%10<N("right") &&
+                N("expected")==N("left")-N("right"),
+            "usccss.b01.g2.story_without_regroup100" =>
+                Range("left",10,99) && Range("right",10,99) &&
+                Range("operation",0,1) && Range("expected",0,99) &&
+                N("expected")==(N("operation")==0
+                    ?N("left")+N("right"):N("left")-N("right")) &&
+                (N("operation")==0
+                    ?N("left")%10+N("right")%10<10 &&
+                     N("left")/10+N("right")/10<=9
+                    :N("left")%10>=N("right")%10 &&
+                     N("left")/10>=N("right")/10),
+            "usccss.b01.g2.story_regroup50" =>
+                Range("left",10,49) && Range("right",10,49) &&
+                Range("operation",0,1) && Range("expected",1,49) &&
+                N("expected")==(N("operation")==0
+                    ?N("left")+N("right"):N("left")-N("right")) &&
+                (N("operation")==0
+                    ?N("left")%10+N("right")%10>=10
+                    :N("left")%10<N("right")%10),
             "usccss.b01.g2.add_subtract_without_regroup" =>
                 Range("left",10,99) && Range("right",10,99) &&
                 Range("operation",0,1) && Range("expected",0,99) &&

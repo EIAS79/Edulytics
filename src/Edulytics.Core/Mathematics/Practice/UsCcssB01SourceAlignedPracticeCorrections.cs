@@ -12,6 +12,33 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // IM G1 U03 L12 no exchanging ten; L22 exchanging ten is essential.
+        new(
+            "PED:US-CCSS-MATH:G1:U03:L12",
+            "number.whole.add_subtract", "TEEN_PLUS_MINUS_ONES_NO_TEN_EXCHANGE",
+            ["usccss.b01.g1.teen_no_regroup"],
+            "IM2021_G1_U03_L12_NO_COMPOSE_DECOMPOSE_TEN",
+            "READY_VERIFIED", "usccss-b01-teen-story-regroup-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U03:L22",
+            "number.whole.add_subtract", "TEEN_SUBTRACTION_DECOMPOSE_TEN",
+            ["usccss.b01.g1.teen_subtract_decompose_ten"],
+            "IM2021_G1_U03_L22_SUBTRACT_TEEN_DECOMPOSE_TEN",
+            "READY_VERIFIED", "usccss-b01-teen-story-regroup-v1"),
+        // IM G2 U02 L03 place-value stories without regrouping;
+        // L11 stories within 50 with compulsory regrouping.
+        new(
+            "PED:US-CCSS-MATH:G2:U02:L03",
+            "number.whole.add_subtract", "STORY_WITHIN100_NO_REGROUP",
+            ["usccss.b01.g2.story_without_regroup100"],
+            "IM2021_G2_U02_L03_STORY_NO_COMPOSE_DECOMPOSE",
+            "READY_VERIFIED", "usccss-b01-teen-story-regroup-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U02:L11",
+            "number.whole.add_subtract", "STORY_WITHIN50_REQUIRED_REGROUP",
+            ["usccss.b01.g2.story_regroup50"],
+            "IM2021_G2_U02_L11_STORY_COMPOSE_DECOMPOSE_TEN",
+            "READY_VERIFIED", "usccss-b01-teen-story-regroup-v1"),
         // Official IM G4 U01 L01: area as multiples of its side lengths.
         new(
             "PED:US-CCSS-MATH:G4:U01:L01",

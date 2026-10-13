@@ -1118,6 +1118,50 @@ public sealed class UsCcssB01SourceTaskVisualsTests
             Assert.Equal(new[]{0,1},observedModes.OrderBy(x=>x).ToArray());
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G1:U03:L12","usccss.b01.g1.teen_no_regroup",false,false)]
+    [InlineData("PED:US-CCSS-MATH:G1:U03:L22","usccss.b01.g1.teen_subtract_decompose_ten",true,true)]
+    [InlineData("PED:US-CCSS-MATH:G2:U02:L03","usccss.b01.g2.story_without_regroup100",false,false)]
+    [InlineData("PED:US-CCSS-MATH:G2:U02:L11","usccss.b01.g2.story_regroup50",true,false)]
+    public void PublisherTeenAndStoryTasksMatchCompulsoryRegroupingOrItsAbsence(
+        string code,string family,bool regroup,bool subtractOnly)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var seen=new HashSet<int>();
+        for(var seed=973001;seed<973075;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var left=p["left"];var right=p["right"];var mode=p["operation"];
+            seen.Add(mode);
+            if(subtractOnly)Assert.Equal(1,mode);
+            var expected=mode==0?left+right:left-right;
+            Assert.Equal(expected,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            Assert.Equal(regroup,
+                mode==0?left%10+right%10>=10:left%10<right%10);
+            if(code.StartsWith("PED:US-CCSS-MATH:G1:",StringComparison.Ordinal))
+                Assert.InRange(left,10,19);
+            if(family=="usccss.b01.g2.story_regroup50")Assert.InRange(expected,1,49);
+            var v=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,v.Kind);
+            Assert.Equal(regroup && mode==1?4:3,v.Rows.Count);
+            if(regroup && mode==1)
+            {
+                var cells=v.Rows[2].Cells.Select(int.Parse).ToArray();
+                Assert.Equal(left,cells[0]*10+cells[1]);
+                Assert.Equal(left%10+10,cells[1]);
+            }
+            Assert.Equal(expected,int.Parse(v.Rows[^1].Cells[0])*10+
+                int.Parse(v.Rows[^1].Cells[1]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="99999"}]));
+        }
+        if(!subtractOnly)Assert.Equal(new[]{0,1},seen.OrderBy(x=>x).ToArray());
+    }
+
     [Fact]
     public void GriddedGrade3RectangleHasTheExactUnitSquareCountAtMostSixty()
     {

@@ -174,6 +174,66 @@ public static class UsCcssB01SourceTaskVisuals
                                 $"{i}/{N("baseD")}")
                             .ToList()
                     },
+                "usccss.b01.g1.teen_no_regroup" or "usccss.b01.g1.teen_subtract_decompose_ten" or "usccss.b01.g2.story_without_regroup100" or "usccss.b01.g2.story_regroup50" when
+                    ((lessonCode=="PED:US-CCSS-MATH:G1:U03:L12" &&
+                        q.Family=="usccss.b01.g1.teen_no_regroup") ||
+                     (lessonCode=="PED:US-CCSS-MATH:G1:U03:L22" &&
+                        q.Family=="usccss.b01.g1.teen_subtract_decompose_ten") ||
+                     (lessonCode=="PED:US-CCSS-MATH:G2:U02:L03" &&
+                        q.Family=="usccss.b01.g2.story_without_regroup100") ||
+                     (lessonCode=="PED:US-CCSS-MATH:G2:U02:L11" &&
+                        q.Family=="usccss.b01.g2.story_regroup50")) &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title=q.Family=="usccss.b01.g1.teen_subtract_decompose_ten" ||
+                            q.Family=="usccss.b01.g2.story_regroup50" && N("operation")==1
+                                ?"Decompose one ten into ten ones"
+                                :q.Family=="usccss.b01.g2.story_regroup50"
+                                    ?"Compose ten ones into one ten"
+                                    :"Keep ten bundles separate from ones",
+                        PrimaryLabel="Tens | Ones",
+                        Description=$"{N("left")} " +
+                            (N("operation")==0?"+":"−") +
+                            $" {N("right")} = {q.CorrectAnswer}. " +
+                            (q.Family=="usccss.b01.g1.teen_subtract_decompose_ten" ||
+                             q.Family=="usccss.b01.g2.story_regroup50" && N("operation")==1
+                                ?"Before subtraction rename one ten as ten ones."
+                                :q.Family=="usccss.b01.g2.story_regroup50"
+                                    ?"Compose ten ones as one additional ten."
+                                    :"No regrouping is required."),
+                        Rows=new List<RichLessonVisualRow>
+                        {
+                            new()
+                            {
+                                Label="Starting number",
+                                Cells=[(N("left")/10).ToString(),
+                                    (N("left")%10).ToString()]
+                            },
+                            new()
+                            {
+                                Label=N("operation")==0?"Add":"Subtract",
+                                Cells=[(N("right")/10).ToString(),
+                                    (N("right")%10).ToString()]
+                            }
+                        }.Concat((q.Family=="usccss.b01.g1.teen_subtract_decompose_ten" ||
+                                   q.Family=="usccss.b01.g2.story_regroup50" && N("operation")==1)
+                            ?new[]{new RichLessonVisualRow
+                            {
+                                Label="Exchange one ten for ten ones",
+                                Cells=[(N("left")/10-1).ToString(),
+                                    (N("left")%10+10).ToString()]
+                            }}
+                            :Array.Empty<RichLessonVisualRow>())
+                            .Append(new RichLessonVisualRow
+                            {
+                                Label="Result",
+                                Cells=[(N("expected")/10).ToString(),
+                                    (N("expected")%10).ToString()]
+                            }).ToList()
+                    },
                 "usccss.b01.g2.add_subtract_without_regroup" or "usccss.b01.g2.subtract_decompose_ten" when
                     (((lessonCode=="PED:US-CCSS-MATH:G2:U02:L01" ||
                         lessonCode=="PED:US-CCSS-MATH:G2:U03:L17") &&

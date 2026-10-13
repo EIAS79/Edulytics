@@ -6589,6 +6589,78 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g1.teen_no_regroup",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-original-teen-no-ten-exchange-verified-v1",
+      "representations": [
+        "tens_ones_place_value_chart",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.g1.teen_subtract_decompose_ten",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-original-teen-rename-ten-ones-verified-v1",
+      "representations": [
+        "tens_ones_place_value_chart",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.g2.story_without_regroup100",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-original-G2-story-no-regroup-verified-v1",
+      "representations": [
+        "tens_ones_place_value_chart",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.g2.story_regroup50",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-original-G2-story-required-regroup-verified-v1",
+      "representations": [
+        "tens_ones_place_value_chart",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g2.add_subtract_without_regroup",
       "version": 1,
       "skillId": "number.whole.add_subtract",
