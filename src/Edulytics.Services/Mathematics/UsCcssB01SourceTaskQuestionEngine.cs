@@ -27,6 +27,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.measure.map_lengths",
         "usccss.b01.graph.choose_scale",
         "usccss.b01.array.equal_groups",
+        "usccss.b01.array.columns",
+        "usccss.b01.array.equal_addends",
+        "usccss.b01.array.unknown_factor",
+        "usccss.b01.array.commutativity",
         "usccss.b01.geometry.composite_rectangle_area",
         "usccss.b01.division.unknown_factor",
         "usccss.b01.fraction.name_parts",
@@ -189,6 +193,35 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "An array contains rows × objects per row; its total can also be counted by equal groups.",
                     AssessmentItemType.Numeric, D(("rows", a), ("columns", b)));
 
+            case "usccss.b01.array.columns":
+                a = r.Next(2, 6 + level); b = r.Next(2, 7 + level);
+                return Make(f,
+                    $"An array has {a} equal rows with {b} objects in each row. " +
+                    "How many columns does this array have?",
+                    "Each column has one item from every row; the number of " +
+                    "columns equals the objects in each row.",
+                    AssessmentItemType.Numeric, D(("rows", a), ("columns", b)));
+            case "usccss.b01.array.equal_addends":
+                a = r.Next(2, 6 + level); b = r.Next(2, 7 + level);
+                return Make(f,
+                    $"An array has {a} rows of {b} objects. " +
+                    "Write the equal-addends expression representing all rows (use +).",
+                    "Each row contributes the same addend; repeat it once per row.",
+                    AssessmentItemType.ShortAnswer, D(("rows", a), ("columns", b)));
+            case "usccss.b01.array.unknown_factor":
+                a = r.Next(2, 6 + level); b = r.Next(2, 7 + level);
+                return Make(f,
+                    $"An array contains {a} equal rows and {a*b} objects overall. " +
+                    "How many objects are in each row?",
+                    "Find the unknown factor by dividing the total by the number of rows.",
+                    AssessmentItemType.Numeric, D(("rows", a), ("columns", b)));
+            case "usccss.b01.array.commutativity":
+                a = r.Next(2, 6 + level); b = r.Next(2, 7 + level);
+                return Make(f,
+                    $"An array has {a} rows and {b} columns. " +
+                    "Rotate it a quarter-turn. How many rows does it have after rotation?",
+                    $"A quarter-turn exchanges rows and columns: {a} × {b} = {b} × {a}.",
+                    AssessmentItemType.Numeric, D(("rows", a), ("columns", b)));
             case "usccss.b01.geometry.composite_rectangle_area":
                 a = r.Next(2, 6); b = r.Next(2, 7); n = r.Next(1, 5);
                 return Make(f,
@@ -323,6 +356,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.rectangle.unit_squares" or
             "usccss.b01.array.equal_groups" =>
                 (P("rows") * P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.array.columns" or
+            "usccss.b01.array.unknown_factor" or
+            "usccss.b01.array.commutativity" =>
+                P("columns").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.array.equal_addends" =>
+                string.Join("+", Enumerable.Repeat(
+                    P("columns").ToString(CultureInfo.InvariantCulture), P("rows"))),
             "usccss.b01.measure.map_lengths" =>
                 (P("mode") == 0 ? P("a") + P("b") : P("b"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -405,6 +445,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.array.equal_groups" =>
                 Range("rows",2,7) && Range("columns",2,11) &&
                 N("rows")*N("columns")<=100,
+            "usccss.b01.array.columns" or
+            "usccss.b01.array.equal_addends" or
+            "usccss.b01.array.unknown_factor" or
+            "usccss.b01.array.commutativity" =>
+                Range("rows",2,8) && Range("columns",2,9),
             "usccss.b01.geometry.composite_rectangle_area" =>
                 Range("height",2,5) && Range("width1",2,6) &&
                 Range("width2",1,4),
@@ -443,7 +488,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             if (!ValidDomain(family,p)) return false;
             // Independent CI oracles cross-check the mathematical result from
             // the structured generation parameters across all 19 families.
-            return string.Equals(answer.Trim(), Solve(family,p),
+            var checkedAnswer = family=="usccss.b01.array.equal_addends"
+                ? new string(answer.Where(c=>!char.IsWhiteSpace(c)).ToArray())
+                : answer.Trim();
+            return string.Equals(checkedAnswer, Solve(family,p),
                 StringComparison.OrdinalIgnoreCase);
         }
         catch (Exception e) when (e is KeyNotFoundException or
