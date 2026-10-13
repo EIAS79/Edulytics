@@ -370,6 +370,41 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G2:U01:L15")]
+    [InlineData("PED:US-CCSS-MATH:G2:U01:L16")]
+    public void OriginalCompareProblemsIncludeAllUnknownPositionsWithCorrectTape(
+        string code)
+    {
+        const string family="usccss.b01.g2.compare_tape_unknown_positions";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var positions=new HashSet<int>();
+        for(var seed=81200;seed<81340;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var m=p["unknownPosition"];
+            positions.Add(m);
+            Assert.InRange(m,0,2);
+            var expected=m switch
+            {
+                0=>p["difference"],1=>p["longCount"],_=>p["shortCount"]
+            };
+            Assert.Equal(expected,int.Parse(q.CorrectAnswer));
+            Assert.Equal(p["difference"],p["longCount"]-p["shortCount"]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var diagram=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.TapeDiagram,diagram.Kind);
+            Assert.Equal(new[]{p["longCount"],p["shortCount"],p["difference"],m},
+                diagram.Items.Select(int.Parse).ToArray());
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="100000"}]));
+        }
+        Assert.Equal(new[]{0,1,2},positions.OrderBy(x=>x).ToArray());
+    }
+
     [Fact]
     public void Grade2SourceCompareTapeLengthsAreExactlyProportional()
     {

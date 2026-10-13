@@ -43,6 +43,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g3.picture_graph.scaled_compare",
         "usccss.b01.g3.picture_graph.construct",
         "usccss.b01.g2.compare_tape_difference",
+        "usccss.b01.g2.compare_tape_unknown_positions",
         "usccss.b01.ruler.measure_without_zero",
         "usccss.b01.graph.choose_scale",
         "usccss.b01.graph.scaled_compare",
@@ -527,6 +528,30 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // Teacher source G2 U03 L14: interpret an X-mark line plot.
             // Original IM G2 U01 L14: two aligned tape bars show
             // a comparison with the difference unknown, within 20.
+            // IM G2 U01 L15 and L16: compare problems with the unknown
+            // in ALL three positions, not merely difference-unknown.
+            case "usccss.b01.g2.compare_tape_unknown_positions":
+            {
+                a=r.Next(8,20);b=r.Next(2,a);m=r.Next(0,3);
+                var diff=a-b;
+                var story=m switch
+                {
+                    0=>$"A group has {a} counters and another has {b}. " +
+                       "How many more counters does the first group have?",
+                    1=>$"One group has {b} counters. The other group has " +
+                       $"{diff} more counters. How many does the larger group have?",
+                    _=>$"A group has {a} counters, which is {diff} more " +
+                       "than a second group. How many does the second group have?"
+                };
+                return Make(f,
+                    $"{story} Use an aligned tape diagram to explain.",
+                    "The longer bar equals the shorter bar plus the difference. " +
+                    "Identify which of these three quantities is missing.",
+                    AssessmentItemType.Numeric,
+                    D(("longCount",a),("shortCount",b),
+                      ("difference",diff),("unknownPosition",m)));
+            }
+
             case "usccss.b01.g2.compare_tape_difference":
             {
                 a=r.Next(8,20);b=r.Next(2,a);
@@ -948,6 +973,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 string.Join("+", Enumerable.Repeat(
                     P("columns").ToString(CultureInfo.InvariantCulture), P("rows"))) +
                 "=" + (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.compare_tape_unknown_positions" =>
+                (P("unknownPosition") switch
+                {
+                    0=>P("difference"),
+                    1=>P("longCount"),
+                    2=>P("shortCount"),
+                    _=>throw new InvalidOperationException()
+                }).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.compare_tape_difference" =>
                 (P("longCount")-P("shortCount"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -1135,6 +1168,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.rectangle.unit_squares" =>
                 Range("rows",2,7) && Range("columns",2,13) &&
                 N("rows")*N("columns")<=35,
+            "usccss.b01.g2.compare_tape_unknown_positions" =>
+                Range("longCount",8,19) && Range("shortCount",2,18) &&
+                Range("difference",1,17) && Range("unknownPosition",0,2) &&
+                N("longCount")>N("shortCount") &&
+                N("difference")==N("longCount")-N("shortCount"),
             "usccss.b01.g2.compare_tape_difference" =>
                 Range("longCount",8,19) && Range("shortCount",2,18) &&
                 N("longCount")>N("shortCount") &&

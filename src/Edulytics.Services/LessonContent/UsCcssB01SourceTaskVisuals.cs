@@ -400,6 +400,28 @@ public static class UsCcssB01SourceTaskVisuals
                             $"{3 * N("step")}" ]
                     },
                 // Both ruler diagrams are derived from checked operands.
+                "usccss.b01.g2.compare_tape_unknown_positions" when
+                    (lessonCode=="PED:US-CCSS-MATH:G2:U01:L15" ||
+                     lessonCode=="PED:US-CCSS-MATH:G2:U01:L16") &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.TapeDiagram,
+                        Title="Compare: find the missing quantity in the tape diagram",
+                        Description=$"The longer bar contains {N("longCount")} units; " +
+                            $"the shorter bar contains {N("shortCount")}. " +
+                            $"The difference is {N("difference")}. " +
+                            $"Missing position {N("unknownPosition")} " +
+                            $"has the checked answer {q.CorrectAnswer}.",
+                        PrimaryLabel="0 = difference, 1 = larger, 2 = smaller",
+                        Items=[
+                            N("longCount").ToString(),
+                            N("shortCount").ToString(),
+                            N("difference").ToString(),
+                            N("unknownPosition").ToString()
+                        ]
+                    },
                 "usccss.b01.g2.compare_tape_difference" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U01:L14" &&
                     ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>

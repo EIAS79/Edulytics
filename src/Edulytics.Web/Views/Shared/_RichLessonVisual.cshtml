@@ -180,6 +180,8 @@
         var longer = int.TryParse(Model.Items.ElementAtOrDefault(0),out var l) ? l : 0;
         var shorter = int.TryParse(Model.Items.ElementAtOrDefault(1),out var s) ? s : 0;
         var difference = int.TryParse(Model.Items.ElementAtOrDefault(2),out var diff) ? diff : -1;
+        var unknownPosition = int.TryParse(Model.Items.ElementAtOrDefault(3),out var pos)
+            ? pos : 0;
         if (longer > 0 && shorter > 0 && longer > shorter &&
             difference == longer - shorter)
         {
@@ -189,17 +191,17 @@
                 .ToString("0.###",System.Globalization.CultureInfo.InvariantCulture);
             <div class="rich-tape-diagram" role="img" aria-label="@Model.Description"
                  style="max-width:540px;">
-                <p>First group: @longer units</p>
+                <p>First group: @(unknownPosition == 1 ? "?" : longer.ToString()) units</p>
                 <div style="border:2px solid currentColor;padding:0.4rem;width:100%;box-sizing:border-box">
                     @longer equal units
                 </div>
-                <p>Second group: @shorter units, plus the unknown difference</p>
+                <p>Second group: @(unknownPosition == 2 ? "?" : shorter.ToString()) units, plus @(unknownPosition == 0 ? "?" : difference.ToString()) extra units</p>
                 <div style="display:flex;width:100%;box-sizing:border-box;">
                     <div style="border:2px solid currentColor;box-sizing:border-box;width:@(portion)%;" >
-                        @shorter
+                        @(unknownPosition == 2 ? "?" : shorter.ToString())
                     </div>
                     <div style="border:2px dashed currentColor;box-sizing:border-box;width:@(remainder)%;">
-                        ? (@difference)
+                        @(unknownPosition == 0 ? "?" : difference.ToString())
                     </div>
                 </div>
             </div>

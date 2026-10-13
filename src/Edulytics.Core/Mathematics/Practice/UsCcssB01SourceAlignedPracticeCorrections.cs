@@ -12,6 +12,20 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // Original Grade 2 U01 L15-L16 ask for all three compare unknowns:
+        // longer quantity, shorter quantity, or the difference.
+        new(
+            "PED:US-CCSS-MATH:G2:U01:L15",
+            "number.whole.add_subtract", "TAPE_DIAGRAM_ALL_COMPARE_UNKNOWN_POSITIONS",
+            ["usccss.b01.g2.compare_tape_unknown_positions"],
+            "IM2021_G2_U01_L15_COMPARE_ALL_UNKNOWN_POSITIONS_TAPE",
+            "READY_VERIFIED", "usccss-b01-tape-unknown-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U01:L16",
+            "number.whole.add_subtract", "COMPARE_ALL_UNKNOWN_POSITIONS",
+            ["usccss.b01.g2.compare_tape_unknown_positions"],
+            "IM2021_G2_U01_L16_COMPARE_UNKNOWN_ALL_POSITIONS",
+            "READY_VERIFIED", "usccss-b01-tape-unknown-v1"),
         // IM 2021 G2 U01 L14: compare problems with a tape diagram,
         // where the unknown is the difference between aligned quantities.
         new(
