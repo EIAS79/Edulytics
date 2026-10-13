@@ -115,6 +115,14 @@ jobs:
         with:
           name: b01-effective-content-and-practice
           path: b01-effective-runtime
+      - name: Day-scoped publisher cache key
+        id: publisher-cache-key
+        run: echo "day=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - name: Reuse verified publisher extraction only within one UTC day
+        uses: actions/cache@v4
+        with:
+          path: .cache/usccss-b01-publisher
+          key: b01-publisher-im2021-${{ hashFiles('artifacts/academic-us-ccss/batches/B01-lesson-manifest.json') }}-${{ steps.publisher-cache-key.outputs.day }}
       - name: Test source parser and strict 500-identity join
         run: python3 tests/academic-us-ccss-b01-publisher-alignment.test.py
       - name: Cross-check all 500 actual student bodies against original publisher purposes
@@ -122,6 +130,8 @@ jobs:
           python3 tools/us-ccss-b01-publisher-goal-alignment.py \
             --effective-json b01-effective-runtime/b01-effective-content-and-practice.json \
             --out b01-publisher-alignment-500.json
+        env:
+          USCCSS_B01_SOURCE_CACHE: .cache/usccss-b01-publisher
       - name: Preserve 500-row source/goal mismatch and unresolved evidence register
         if: always()
         uses: actions/upload-artifact@v4
