@@ -13,6 +13,7 @@ on:
       - 'tools/us-ccss-lesson-certification-records.cjs'
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
       - 'tests/academic-us-ccss-b01-bulk-content-screen.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRuntimeAuditTests.cs'
   workflow_dispatch:
 
 permissions:
@@ -55,3 +56,25 @@ jobs:
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --check
       - name: Make ONE automatic batch certification decision (no per-lesson signoff)
         run: node tools/us-ccss-b01-release-gate.cjs --release-check
+
+  audit-b01-effective-materializer-and-real-practice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore actual application and test assemblies
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Validate effective learner content, Rich V2 quality and real question generation over all 500
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01CollectiveRuntimeAuditTests' --logger 'console;verbosity=normal'
+      - name: Retain 500-row effective content and practice runtime evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-effective-content-and-practice
+          path: b01-effective-content-and-practice.json
+          retention-days: 30
+          if-no-files-found: warn
