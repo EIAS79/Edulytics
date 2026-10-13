@@ -535,6 +535,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.subtract_decompose_ten"],
             "IM2021_G2_U02_L07_DECOMPOSE_TEN_SOURCE",
             "READY_VERIFIED", "usccss-b01-g2-two-digit-v1"),
+        // G4 U03 L10: subtract a proper fraction from whole numbers,
+        // renaming the whole as equivalent denominator-sized parts.
+        new(
+            "PED:US-CCSS-MATH:G4:U03:L10",
+            "fractions.add_subtract", "WHOLE_MINUS_PROPER_FRACTION",
+            ["usccss.b01.g4.whole_minus_proper_fraction"],
+            "IM2021_G4_U03_L10_WHOLE_MINUS_PROPER_FRACTION",
+            "READY_VERIFIED", "usccss-b01-whole-fraction-v1"),
         // IM 2021 G1 U04 L17: compare and order tens and ones,
         // including a tens-digit tie where ones decide the order.
         new(
