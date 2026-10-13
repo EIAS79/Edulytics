@@ -1,0 +1,387 @@
+name: US CCSS B01 500-Lesson Release Gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - '.github/workflows/us-ccss-b01-500-release.yml'
+      - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
+      - 'artifacts/academic-us-ccss/04-lesson-certification-records.json'
+      - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
+      - 'tools/us-ccss-b01-release-gate.cjs'
+      - 'tools/us-ccss-b01-bulk-content-screen.cjs'
+      - 'tools/us-ccss-b01-publisher-goal-alignment.py'
+      - 'tools/us-ccss-b01-practice-source-conflicts.py'
+      - 'tools/us-ccss-b01-source-visual-gaps.py'
+      - 'tools/us-ccss-b01-unified-eight-dimension-report.cjs'
+      - 'tools/us-ccss-b01-evidence-progress.cjs'
+      - 'tests/academic-us-ccss-b01-evidence-progress.test.cjs'
+      - 'tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs'
+      - 'tests/academic-us-ccss-b01-source-visual-gaps.test.py'
+      - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
+      - 'tests/academic-us-ccss-b01-publisher-alignment.test.py'
+      - 'src/**'
+      - 'tools/phase29/**'
+      - 'tools/us-ccss-lesson-certification-records.cjs'
+      - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
+      - 'tests/academic-us-ccss-b01-bulk-content-screen.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRuntimeAuditTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRichV2AuditTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01VerifiedExpressionVisualsTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceAlignedPracticeCorrectionTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskQuestionEngineTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceDotMatchingActivitiesTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceDotCardsContentCorrectionTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01NumberLineArithmeticalVisualsTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskVisualsTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPracticeVisualsTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CategoricalGraphVisualsTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CollectiveVisualArithmeticOracleTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01TenthsHundredthsSourceTests.cs'
+  workflow_dispatch:
+
+concurrency:
+  group: usccss-b01-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate-b01-manifest-and-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Prove 500-lesson release refuses fake or incomplete evidence
+        run: node --test tests/academic-us-ccss-b01-release-gate.test.cjs tests/academic-us-ccss-b01-bulk-content-screen.test.cjs
+      - name: Reject fabricated or stale L1-L6 progress
+        run: node --test tests/academic-us-ccss-b01-evidence-progress.test.cjs
+      - name: Screen ALL 500 learner content bodies together
+        run: node tools/us-ccss-b01-bulk-content-screen.cjs --output=b01-bulk-screen.json
+      - name: Save 500-row bulk content screen, even when issues are found
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: b01-bulk-content-screen
+          path: b01-bulk-screen.json
+          retention-days: 30
+      - name: Validate exact lesson identities and report true collective evidence coverage
+        run: node tools/us-ccss-b01-release-gate.cjs --status
+
+  release-all-500-only:
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
+    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues, consolidate-b01-eight-dimension-report, b01-full-product-regressions]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Recheck content of the entire 500-lesson batch before collective acceptance
+        run: node tools/us-ccss-b01-bulk-content-screen.cjs --check
+      - name: Make ONE automatic batch certification decision (no per-lesson signoff)
+        run: node tools/us-ccss-b01-release-gate.cjs --release-check
+
+  audit-b01-effective-materializer-and-real-practice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore actual application and test assemblies
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Validate effective learner content, Rich V2 quality and real question generation over all 500
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceDotCardsContentCorrectionTests|FullyQualifiedName~UsCcssB01NumberLineArithmeticalVisualsTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests|FullyQualifiedName~UsCcssB01TenthsHundredthsSourceTests' --logger 'console;verbosity=normal'
+      - name: Archive all 500 actual visual objects and independent numeric invariant findings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-visual-arithmetic-oracle-500
+          path: b01-visual-arithmetic-oracle-500.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Retain 500-row effective content and practice runtime evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-effective-content-and-practice
+          path: b01-effective-content-and-practice.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Retain 500-lesson actual Rich V2 composition inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-rich-v2-composition-500
+          path: b01-rich-v2-500.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  audit-b01-official-publisher-purposes:
+    needs: [audit-b01-effective-materializer-and-real-practice]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-effective-content-and-practice
+          path: b01-effective-runtime
+      - name: Day-scoped publisher cache key
+        id: publisher-cache-key
+        run: echo "day=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - name: Reuse verified publisher extraction only within one UTC day
+        uses: actions/cache@v4
+        with:
+          path: .cache/usccss-b01-publisher
+          key: b01-publisher-im2021-${{ hashFiles('artifacts/academic-us-ccss/batches/B01-lesson-manifest.json') }}-${{ steps.publisher-cache-key.outputs.day }}
+      - name: Test source parser and strict 500-identity join
+        run: python3 tests/academic-us-ccss-b01-publisher-alignment.test.py
+      - name: Cross-check all 500 actual student bodies against original publisher purposes
+        run: |
+          python3 tools/us-ccss-b01-publisher-goal-alignment.py \
+            --effective-json b01-effective-runtime/b01-effective-content-and-practice.json \
+            --out b01-publisher-alignment-500.json
+        env:
+          USCCSS_B01_SOURCE_CACHE: .cache/usccss-b01-publisher
+      - name: Preserve 500-row source/goal mismatch and unresolved evidence register
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-publisher-goal-alignment-500
+          path: b01-publisher-alignment-500.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  audit-b01-practice-source-conflicts:
+    needs: [audit-b01-official-publisher-purposes]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-effective-content-and-practice
+          path: b01-runtime
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-publisher-goal-alignment-500
+          path: b01-publisher
+      - name: Verify independent full-batch lesson target auditor
+        run: python3 tests/academic-us-ccss-b01-practice-source-conflicts.test.py
+      - name: REJECT any of 500 lessons with a high-confidence source/question-domain mismatch
+        run: |
+          python3 tools/us-ccss-b01-practice-source-conflicts.py \
+            --runtime b01-runtime/b01-effective-content-and-practice.json \
+            --publisher b01-publisher/b01-publisher-alignment-500.json \
+            --output b01-practice-source-conflicts-500.json --strict
+      - name: Preserve all 500 source-aware Practice findings even if gate fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-500-lesson-practice-source-conflicts
+          path: b01-practice-source-conflicts-500.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  audit-b01-rich-v2-publisher-visual-cues:
+    needs: [audit-b01-official-publisher-purposes, audit-b01-effective-materializer-and-real-practice]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-rich-v2-composition-500
+          path: b01-rich-visual
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-publisher-goal-alignment-500
+          path: b01-publisher-visual
+      - name: Prove fail-closed publisher-visual gap analysis and exact B01 identity join
+        run: python3 tests/academic-us-ccss-b01-source-visual-gaps.test.py
+      - name: Enumerate source-specific missing or generic Rich V2 visuals for ALL 500
+        run: |
+          python3 tools/us-ccss-b01-source-visual-gaps.py \
+            --publisher b01-publisher-visual/b01-publisher-alignment-500.json \
+            --rich b01-rich-visual/b01-rich-v2-500.json \
+            --output b01-rich-v2-source-visual-gaps-500.json
+      - name: Archive 500 real visual/source review rows and missing diagram families
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-rich-v2-publisher-visual-gaps
+          path: b01-rich-v2-source-visual-gaps-500.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: REJECT collective release with any unresolved source-specific visual gap
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
+        run: |
+          python3 tools/us-ccss-b01-source-visual-gaps.py \
+            --publisher b01-publisher-visual/b01-publisher-alignment-500.json \
+            --rich b01-rich-visual/b01-rich-v2-500.json \
+            --output b01-rich-v2-source-visual-gaps-500.json --strict
+
+  consolidate-b01-eight-dimension-report:
+    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-bulk-content-screen
+          path: b01-bulk
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-effective-content-and-practice
+          path: b01-effective
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-publisher-goal-alignment-500
+          path: b01-publisher
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-500-lesson-practice-source-conflicts
+          path: b01-practice
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-rich-v2-composition-500
+          path: b01-rich
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-rich-v2-publisher-visual-gaps
+          path: b01-visual
+      - name: Test join, classification, historical evidence reuse and fail closed logic
+        run: node --test tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs
+      - name: Produce ONE source-bound 500-row and eight-dimension classification report
+        run: node tools/us-ccss-b01-unified-eight-dimension-report.cjs
+      - name: Test ledger-to-audit evidence progress (no synthetic gate PASS)
+        run: node --test tests/academic-us-ccss-b01-evidence-progress.test.cjs
+      - name: Index real L1-L6 evidence gaps for all 500 without changing ledger
+        run: node tools/us-ccss-b01-evidence-progress.cjs
+      - name: Archive exact 500-row evidence/gate progress and defect groups
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-collective-evidence-progress-500
+          path: |
+            b01-collective-evidence-progress-500.json
+            b01-collective-evidence-progress-summary.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Preserve complete report and readable summary for continuation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-unified-eight-dimension-report-500
+          path: |
+            b01-unified-eight-dimension-report-500.json
+            b01-unified-eight-dimension-summary.md
+          retention-days: 30
+          if-no-files-found: warn
+
+  b01-full-product-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Inspect the real PR head; the full-product skip is gated by a
+          # known successful immutable .NET baseline, not a skipped parent.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 2
+      - name: Detect documentation/evidence-only draft commits
+        id: impact
+        shell: bash
+        env:
+          IS_DRAFT: ${{ github.event.pull_request.draft }}
+          EVENT_ACTION: ${{ github.event.action }}
+        run: |
+          # Fail safe: full regression on first/ready/reopened/dispatch events.
+          if [[ "$IS_DRAFT" != "true" || "$EVENT_ACTION" != "synchronize" ]]; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "Full suite mandatory outside draft synchronization."
+            exit 0
+          fi
+          if ! git rev-parse HEAD^ >/dev/null 2>&1; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "Parent unavailable: fail closed to full suite."
+            exit 0
+          fi
+          # Never infer a tested parent from a skipped or cancelled run:
+          # this immutable B01 commit has a VERIFIED successful complete
+          # .NET regression job in Actions run 38432646547.
+          tested_baseline="b4f84d0769f629e8b5a14e33ea0bb0a35e267fb1"
+          if ! git fetch --no-tags --depth=1 origin "$tested_baseline"; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "Cannot verify tested source baseline; run full suite."
+            exit 0
+          fi
+          changed="$(git diff --name-only "$tested_baseline" HEAD)" || {
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          }
+          if [[ -z "$changed" ]]; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          safe_only=true
+          while IFS= read -r file; do
+            case "$file" in
+              docs/*|artifacts/academic-us-ccss/batches/B01-execution-checkpoint.json|tools/us-ccss-b01-evidence-progress.cjs|tests/academic-us-ccss-b01-evidence-progress.test.cjs|.github/workflows/us-ccss-b01-500-release.yml)
+                echo "Unchanged tested product code; evidence-only delta: $file" ;;
+              *)
+                echo "Product-impacting or unclassified change since PASSED baseline: $file"
+                safe_only=false ;;
+            esac
+          done <<< "$changed"
+          if [[ "$safe_only" == "true" ]]; then
+            echo "full=false" >> "$GITHUB_OUTPUT"
+            echo "Draft-only fast lane; full suite still mandatory on ready_for_review."
+          else
+            echo "full=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-dotnet@v4
+        if: steps.impact.outputs.full == 'true'
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore all application and test dependencies
+        if: steps.impact.outputs.full == 'true'
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Run the full Edulytics regression suite, not only B01-filtered tests
+        if: steps.impact.outputs.full == 'true'
+        run: |
+          mkdir -p TestResults
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --logger "trx;LogFileName=b01-full-product.trx" \
+            --results-directory TestResults \
+            --logger 'console;verbosity=normal'
+      - name: Preserve complete regressions and precise failure evidence
+        uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.impact.outputs.full == 'true' }}
+        with:
+          name: b01-full-product-regression-trx
+          path: TestResults/*.trx
+          retention-days: 30
+          if-no-files-found: warn

@@ -181,11 +181,15 @@ public static partial class RichLessonContentV2RuntimeComposer
             contract,
             familyLabels);
 
-        var visuals = BuildVisuals(
-            lessonCode,
-            body.Title,
-            examples,
-            contract);
+        // Task visuals use the SAME structured numeric parameters that the
+        // exact engine just verified, not guesses parsed from display strings.
+        var visuals = UsCcssB01SourceTaskVisuals
+            .Build(lessonCode, generated)
+            .Concat(UsCcssB01SourceBoundNumberLineVisuals.Build(lessonCode, generated))
+            .Concat(UsCcssB01FractionPracticeVisuals.Build(lessonCode, generated))
+            .Concat(UsCcssB01CategoricalGraphVisuals.Build(lessonCode, generated))
+            .Concat(BuildVisuals(lessonCode, body, examples, contract))
+            .ToArray();
 
         var result = new RichLessonContentV2Lesson
         {
@@ -595,10 +599,11 @@ public static partial class RichLessonContentV2RuntimeComposer
 
     private static IReadOnlyList<RichLessonVisual> BuildVisuals(
         string lessonCode,
-        string title,
+        CanonicalLessonTranslationRecord body,
         IReadOnlyList<RichLessonWorkedExample> examples,
         LessonPracticeContract contract)
     {
+        var title = body.Title;
         var equationItems = examples
             .Take(4)
             .Select(example =>
@@ -680,7 +685,8 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
-        return [questionForms];
+        var sourceDerivedCounters = UsCcssB01VerifiedExpressionVisuals.Build(lessonCode, body, contract);
+        return [..sourceDerivedCounters, questionForms];
     }
 
     private static int StableSeed(string value)

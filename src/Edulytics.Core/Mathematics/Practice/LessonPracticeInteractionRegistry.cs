@@ -166,6 +166,11 @@ public static class LessonPracticeInteractionRegistry
             "exact_scalar" =>
                 LessonPracticeInteractionKind.NumericEntry,
 
+            // Clock answers such as 4:30 are strings with a validated time shape,
+            // not numbers accepted by the integer keypad.
+            "exact_time" =>
+                LessonPracticeInteractionKind.StructuredEntry,
+
             "exact_rational" =>
                 LessonPracticeInteractionKind.FractionEntry,
 

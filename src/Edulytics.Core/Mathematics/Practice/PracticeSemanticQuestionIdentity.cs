@@ -20,7 +20,10 @@ public static class PracticeSemanticQuestionIdentityPolicy
     private static readonly IReadOnlySet<string> NonSemanticParameterNames =
         new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            "variant"
+            "variant",
+            // Changes to graph sample data with the same assessed scale do
+            // not create a distinct mathematical task.
+            "dataVariant"
         };
 
     public static PracticeSemanticQuestionIdentity Create(
