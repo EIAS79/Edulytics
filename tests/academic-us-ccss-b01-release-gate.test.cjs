@@ -85,7 +85,7 @@ test('A synthetic PASS without six-gate evidence fails closed', () => {
   const x = fixture();
   x.ledger.records[0].status = 'INTERNALLY_CERTIFIED';
   x.ledger.records[0].academicDecision = 'INTERNALLY_CERTIFIED';
-  assert.throws(() => inspectBatch(x), /Internal certification requires/);
+  assert.throws(() => inspectBatch(x), /Missing review dimensions|Internal certification requires/);
 });
 
 test('B01 is certification-ready only when exactly 500 pass', () => {
