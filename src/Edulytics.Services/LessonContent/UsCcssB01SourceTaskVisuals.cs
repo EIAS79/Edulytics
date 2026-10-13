@@ -212,16 +212,17 @@ public static class UsCcssB01SourceTaskVisuals
 
     private static bool IsB01(string code)
     {
-        if (!code.StartsWith("PED:US-CCSS-MATH:G",StringComparison.Ordinal))
+        var tokens = code.Split(':');
+        if (tokens.Length != 5 ||
+            tokens[0] != "PED" || tokens[1] != "US-CCSS-MATH" ||
+            !tokens[2].StartsWith("G", StringComparison.Ordinal) ||
+            !tokens[3].StartsWith("U", StringComparison.Ordinal) ||
+            !tokens[4].StartsWith("L", StringComparison.Ordinal) ||
+            !int.TryParse(tokens[2].AsSpan(1), out var grade) ||
+            !int.TryParse(tokens[3].AsSpan(1), out var unit) ||
+            !int.TryParse(tokens[4].AsSpan(1), out var lesson) ||
+            grade < 1 || grade > 4 || unit < 1 || lesson < 1)
             return false;
-        var tokens=code.Split(':');
-        if (tokens.Length!=4) return false;
-        var grade=tokens[2];
-        if (!grade.StartsWith("G",StringComparison.Ordinal) ||
-            !int.TryParse(grade.AsSpan(1),out var g) || g<1 || g>4)
-            return false;
-        if (g<4) return true;
-        return int.TryParse(tokens[3].AsSpan(1),out _) || code.CompareTo(
-            "PED:US-CCSS-MATH:G4:U04:L20")<=0;
+        return grade < 4 || unit < 4 || (unit == 4 && lesson <= 20);
     }
 }
