@@ -9,6 +9,7 @@ on:
       - 'artifacts/academic-us-ccss/04-lesson-certification-records.json'
       - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
       - 'tools/us-ccss-b01-release-gate.cjs'
+      - 'tools/us-ccss-b01-bulk-content-screen.cjs'
       - 'tools/us-ccss-lesson-certification-records.cjs'
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
   workflow_dispatch:
@@ -27,7 +28,16 @@ jobs:
           node-version: '24'
       - name: Prove 500-lesson release refuses fake or incomplete evidence
         run: node --test tests/academic-us-ccss-b01-release-gate.test.cjs
-      - name: Validate exact lesson identities and report true progress
+      - name: Screen ALL 500 learner content bodies together
+        run: node tools/us-ccss-b01-bulk-content-screen.cjs --output=b01-bulk-screen.json
+      - name: Save 500-row bulk content screen, even when issues are found
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: b01-bulk-content-screen
+          path: b01-bulk-screen.json
+          retention-days: 30
+      - name: Validate exact lesson identities and report true collective evidence coverage
         run: node tools/us-ccss-b01-release-gate.cjs --status
 
   release-all-500-only:
@@ -40,5 +50,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Prevent partial publishing until all 500 are certified
+      - name: Recheck content of the entire 500-lesson batch before collective acceptance
+        run: node tools/us-ccss-b01-bulk-content-screen.cjs --check
+      - name: Make ONE automatic batch certification decision (no per-lesson signoff)
         run: node tools/us-ccss-b01-release-gate.cjs --release-check
