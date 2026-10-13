@@ -6553,6 +6553,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g4.whole_minus_proper_fraction",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "g4-whole-minus-fraction-independent-equivalence-v1",
+      "representations": [
+        "fraction_bars_equal_parts",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g1.compare_order_tens_ones",
       "version": 1,
       "skillId": "supporting.number.compare_order",
