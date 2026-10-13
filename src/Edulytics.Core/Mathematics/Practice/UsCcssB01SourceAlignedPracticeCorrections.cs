@@ -428,6 +428,24 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "supporting.geometry.area_volume", "MISSING_SIDE_COMPOSITE_AREA",
             ["usccss.b01.area.missing_composite_side"],
             "IM2021_G3_U02_L14_UNGRIDDED_MISSING_SIDE_AREA_PURPOSE",
-            "READY_VERIFIED", "usccss-b01-publisher-geometry-v1")
+            "READY_VERIFIED", "usccss-b01-publisher-geometry-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U04:L01",
+            "measurement.scale.read_equal_intervals", "LOCATE_WHOLE_NUMBERS",
+            ["usccss.b01.number_line.locate_whole_to100"],
+            "IM2021_G2_U04_L01_WHOLE_NUMBERS_NUMBER_LINE_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-publisher-number-line-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U05:L08",
+            "measurement.scale.read_equal_intervals", "LOCATE_THREE_DIGITS",
+            ["usccss.b01.number_line.locate_three_digits"],
+            "IM2021_G2_U05_L08_THREE_DIGIT_NUMBER_LINE_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-publisher-number-line-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U04:L11",
+            "measurement.scale.read_equal_intervals", "LOCATE_LARGE_NUMBERS",
+            ["usccss.b01.number_line.locate_large_numbers"],
+            "IM2021_G4_U04_L11_LARGE_NUMBER_LINE_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-publisher-number-line-v1")
     ];
 }
