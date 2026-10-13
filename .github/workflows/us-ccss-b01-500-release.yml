@@ -285,7 +285,7 @@ jobs:
             --output b01-rich-v2-source-visual-gaps-500.json --strict
 
   consolidate-b01-eight-dimension-report:
-    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues]
+    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues, audit-b01-original-teacher-activities]
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -317,6 +317,10 @@ jobs:
         with:
           name: b01-rich-v2-publisher-visual-gaps
           path: b01-visual
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-original-teacher-activities-500
+          path: b01-activities
       - name: Test join, classification, historical evidence reuse and fail closed logic
         run: node --test tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs
       - name: Produce ONE source-bound 500-row and eight-dimension classification report
