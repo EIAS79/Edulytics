@@ -215,6 +215,69 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void PublisherPolygonSortingDiagramHasTheCorrectSideCount()
+    {
+        var expectedSides = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            ["triangle"]=3,
+            ["quadrilateral"]=4,
+            ["pentagon"]=5,
+            ["hexagon"]=6
+        };
+        const string code = "PED:US-CCSS-MATH:G2:U06:L01";
+        for(var seed=810000;seed<810045;seed++)
+        {
+            var q=One(code,"usccss.b01.shape.polygon_sides",seed);
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PolygonDiagram,visual.Kind);
+            Assert.Equal(q.CorrectAnswer,Assert.Single(visual.Items));
+            Assert.Equal(q.Parameters["sides"],expectedSides[q.CorrectAnswer]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                q.Family,q.Parameters,q.CorrectAnswer));
+        }
+    }
+
+    [Fact]
+    public void PublisherShapeSubcategoryDiagramFollowsVerifiedSideAngleDefinition()
+    {
+        var names=new[]
+        {
+            "equilateral triangle","right triangle","rectangle","square"
+        };
+        const string code="PED:US-CCSS-MATH:G3:U07:L02";
+        for(var seed=820000;seed<820050;seed++)
+        {
+            var q=One(code,"usccss.b01.shape.specific_subcategory",seed);
+            Assert.Equal(names[q.Parameters["subcategory"]],q.CorrectAnswer);
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PolygonDiagram,visual.Kind);
+            Assert.Equal(q.CorrectAnswer,Assert.Single(visual.Items));
+        }
+    }
+
+    [Fact]
+    public void OriginalUngridCompositeFigureRequiresAndReconstructsMissingSide()
+    {
+        const string code="PED:US-CCSS-MATH:G3:U02:L14";
+        for(var seed=830000;seed<830040;seed++)
+        {
+            var q=One(code,"usccss.b01.area.missing_composite_side",seed);
+            var p=q.Parameters;
+            Assert.Equal(p["widthTotal"],p["widthKnown"]+p["widthMissing"]);
+            Assert.NotEqual(p["heightLeft"],p["heightRight"]);
+            var independent=p["widthKnown"]*p["heightLeft"]+
+                p["widthMissing"]*p["heightRight"];
+            Assert.Equal(independent,int.Parse(q.CorrectAnswer));
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.ShapeDecomposition,visual.Kind);
+            Assert.Equal(2,visual.Rows.Count);
+            Assert.Contains(q.CorrectAnswer,visual.Description);
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                q.Family,p,(independent+1).ToString()));
+        }
+    }
+
+    [Fact]
     public void DoNotDisplayB01SpecificDiagramsOnLaterBatchOrOtherCurricula()
     {
         var q=One("PED:US-CCSS-MATH:G3:U01:L16",
