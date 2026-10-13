@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Forty-eight lesson-code-exact B01 corrections independently checked against their
+/// Forty-nine lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -321,6 +321,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "supporting.geometry.area_volume", "MEASURE_AREA_IN_UNIT_SQUARES",
             ["usccss.b01.rectangle.unit_squares"],
             "IM2021_G3_U02_L02_MEASURE_AREA_IN_UNIT_SQUARES_PURPOSE",
-            "READY_VERIFIED", "usccss-b01-source-array-v1")
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        // IM Grade 3 Unit 5 Lesson 2: partition equal-size shape parts
+        // and write their unit fraction (not unrelated identity proofs).
+        new(
+            "PED:US-CCSS-MATH:G3:U05:L02",
+            "fractions.represent.interpret", "UNIT_FRACTION_EQUAL_PARTS",
+            ["usccss.b01.fraction.unit_parts"],
+            "IM2021_G3_U05_L02_EQUAL_PARTS_UNIT_FRACTION_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-fraction-v1")
     ];
 }
