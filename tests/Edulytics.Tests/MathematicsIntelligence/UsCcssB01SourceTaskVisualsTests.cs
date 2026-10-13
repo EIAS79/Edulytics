@@ -277,6 +277,28 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G2:U04:L01","usccss.b01.number_line.locate_whole_to100")]
+    [InlineData("PED:US-CCSS-MATH:G2:U05:L08","usccss.b01.number_line.locate_three_digits")]
+    [InlineData("PED:US-CCSS-MATH:G4:U04:L11","usccss.b01.number_line.locate_large_numbers")]
+    public void PublisherGradeNumberLinesUseTenEqualTicksAndExactAnswer(
+        string code,string family)
+    {
+        for(var seed=870000;seed<870015;seed++)
+        {
+            var q=One(code,family,seed);
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.NumberLine,visual.Kind);
+            Assert.Equal(11,visual.Items.Count);
+            var labels=visual.Items.Select(int.Parse).ToArray();
+            Assert.Equal(0,labels[0]);
+            for(var k=1;k<labels.Length;k++)
+                Assert.Equal(q.Parameters["step"],labels[k]-labels[k-1]);
+            Assert.Equal(q.CorrectAnswer,visual.Items[q.Parameters["tick"]]);
+            Assert.Contains(q.CorrectAnswer,visual.Description);
+        }
+    }
+
     [Fact]
     public void DoNotDisplayB01SpecificDiagramsOnLaterBatchOrOtherCurricula()
     {
