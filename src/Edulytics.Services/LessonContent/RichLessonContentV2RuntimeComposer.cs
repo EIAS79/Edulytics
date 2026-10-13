@@ -181,11 +181,12 @@ public static partial class RichLessonContentV2RuntimeComposer
             contract,
             familyLabels);
 
-        var visuals = BuildVisuals(
-            lessonCode,
-            body,
-            examples,
-            contract);
+        // Task visuals use the SAME structured numeric parameters that the
+        // exact engine just verified, not guesses parsed from display strings.
+        var visuals = UsCcssB01SourceTaskVisuals
+            .Build(lessonCode, generated)
+            .Concat(BuildVisuals(lessonCode, body, examples, contract))
+            .ToArray();
 
         var result = new RichLessonContentV2Lesson
         {
