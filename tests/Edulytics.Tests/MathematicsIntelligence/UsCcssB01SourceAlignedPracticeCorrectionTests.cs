@@ -21,7 +21,7 @@ public sealed class UsCcssB01SourceAlignedPracticeCorrectionTests
             ["PED:US-CCSS-MATH:G1:U06:L07"] =
                 ["supporting.measurement.unit_iteration"],
             ["PED:US-CCSS-MATH:G1:U07:L14"] =
-                ["supporting.measurement.clock_half_hour"],
+                ["usccss.b01.clock.read_half_hour"],
             ["PED:US-CCSS-MATH:G3:U08:L10"] =
                 ["supporting.number.multiply", "supporting.number.divide"],
             ["PED:US-CCSS-MATH:G3:U01:L15"] =
