@@ -74,6 +74,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g1.add_subtract_10_tens",
         "usccss.b01.g1.compare_order_tens_ones",
         "usccss.b01.g4.whole_minus_proper_fraction",
+        "usccss.b01.g2.order_three_digits_number_line",
         "usccss.b01.g2.add_subtract_without_regroup",
         "usccss.b01.g2.subtract_decompose_ten",
         "usccss.b01.g1.add_subtract_tens_multiples",
@@ -284,6 +285,24 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // Original IM G1 U04 L17: compare and ORDER three 2-digit
             // numbers by tens, breaking ties using the ones digit.
             // Original G4 U03 L10: subtract a proper fraction from a whole.
+            // Original G2 U05 L09: compare actual three-digit positions
+            // using the SAME equal-interval number line.
+            case "usccss.b01.g2.order_three_digits_number_line":
+            {
+                var startHundred=r.Next(1,9)*100;
+                a=r.Next(0,11);b=r.Next(0,11);
+                while(b==a)b=r.Next(0,11);
+                return Make(f,
+                    $"The numbers {startHundred+a*10} and {startHundred+b*10} " +
+                    "are placed on the same number line, with 10 units " +
+                    "between adjacent marks. Which number is farther right?",
+                    "Greater whole numbers lie farther right on the same " +
+                    "graduated line; do not add the two values.",
+                    AssessmentItemType.Numeric,
+                    D(("start",startHundred),("tickA",a),("tickB",b),
+                      ("first",startHundred+a*10),("second",startHundred+b*10)));
+            }
+
             case "usccss.b01.g4.whole_minus_proper_fraction":
             {
                 a=r.Next(1,5);d=r.Next(3,11);n=r.Next(1,d);
@@ -1043,6 +1062,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g2.add_subtract_without_regroup" or
             "usccss.b01.g2.subtract_decompose_ten" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.order_three_digits_number_line" =>
+                Math.Max(P("first"),P("second"))
+                    .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g4.whole_minus_proper_fraction" =>
                 ReducedFraction(P("whole")*P("denominator")-P("numerator"),
                     P("denominator")),
@@ -1256,6 +1278,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("left")/10>N("right")/10 &&
                 N("left")%10<N("right")%10 &&
                 N("expected")==N("left")-N("right"),
+            "usccss.b01.g2.order_three_digits_number_line" =>
+                Range("start",100,800) && N("start")%100==0 &&
+                Range("tickA",0,10) && Range("tickB",0,10) &&
+                N("tickA")!=N("tickB") &&
+                Range("first",100,900) && Range("second",100,900) &&
+                N("first")==N("start")+10*N("tickA") &&
+                N("second")==N("start")+10*N("tickB"),
             "usccss.b01.g4.whole_minus_proper_fraction" =>
                 Range("whole",1,4) && Range("denominator",3,10) &&
                 Range("numerator",1,N("denominator")-1),
