@@ -1360,8 +1360,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 P("step").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.rectangle_area_grid60" =>
                 (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
-            "usccss.b01.geometry.rectangle_area_real_world_units" or
-            "usccss.b01.g3.same_perimeter_different_area" or "usccss.b01.g3.same_area_different_perimeter" =>
+            "usccss.b01.geometry.rectangle_area_real_world_units" =>
+                (P("length")*P("width")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g3.same_perimeter_different_area" or
+            "usccss.b01.g3.same_area_different_perimeter" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.rectangle_area_ungridded" =>
                 (P("length")*P("width")).ToString(CultureInfo.InvariantCulture),
