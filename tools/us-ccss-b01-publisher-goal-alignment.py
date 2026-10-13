@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 from html.parser import HTMLParser
 import json
+import os
 import pathlib
 import re
 import time
@@ -126,6 +127,19 @@ def allowed_source_url(url):
 
 def fetch_source(url):
     if not allowed_source_url(url): raise ValueError("Source URL is not allowlisted")
+    cache_folder = os.getenv('USCCSS_B01_SOURCE_CACHE')
+    cache_file = (pathlib.Path(cache_folder) / (hashlib.sha256(url.encode()).hexdigest()+'.json')
+                  if cache_folder else None)
+    if cache_file is not None and cache_file.exists():
+        try:
+            cached=json.loads(cache_file.read_text())
+            if (cached.get('originalUrl')==url and
+                0 <= time.time()-cached.get('fetchedAtUnix',0)<86400 and
+                cached.get('data',{}).get('purpose') and
+                cached.get('data',{}).get('title')):
+                return cached['data']
+        except (OSError, ValueError, TypeError):
+            pass
     last=None
     for retry in range(3):
         try:
@@ -137,6 +151,13 @@ def fetch_source(url):
                 result=parse_publisher(html)
                 if not result["purpose"]:
                     raise ValueError("Publisher preparation lacks visible Lesson Purpose")
+                if cache_file is not None:
+                    cache_file.parent.mkdir(parents=True,exist_ok=True)
+                    cache_file.write_text(json.dumps({
+                        'originalUrl':url,
+                        'fetchedAtUnix':time.time(),
+                        'data':result
+                    },ensure_ascii=False))
                 return result
         except (HTTPError,URLError,TimeoutError,ValueError) as exc:
             last=str(exc)[:240]
