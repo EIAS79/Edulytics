@@ -35,12 +35,28 @@
                 out var parsedTick) &&
             parsedTick >= 0 && parsedTick < Model.Items.Count
                 ? parsedTick : -1;
+        // Ruler questions encode two actual centimeter MARK VALUES.
+        // Mark their corresponding tick positions, not a guessed index.
+        var rulerEndpoints = new HashSet<int>();
+        if (Model.Kind == RichLessonVisualKind.Scale &&
+            Model.SecondaryItems.Count == 2 &&
+            int.TryParse(Model.SecondaryItems[0], out var firstEndpoint) &&
+            int.TryParse(Model.SecondaryItems[1], out var lastEndpoint))
+        {
+            var firstIndex=Model.Items.IndexOf(firstEndpoint.ToString());
+            var lastIndex=Model.Items.IndexOf(lastEndpoint.ToString());
+            if (firstIndex >= 0 && lastIndex >= 0)
+            {
+                rulerEndpoints.Add(firstIndex);
+                rulerEndpoints.Add(lastIndex);
+            }
+        }
         <div class="rich-number-line-scroll">
             <div class="rich-number-line" role="img" aria-label="@Model.Description">
                 @for (var i = 0; i < Model.Items.Count; i++)
                 {
-                    <div class="rich-number-line__tick @(i == targetTick ? "rich-number-line__tick--target" : "")">
-                        @if (i == targetTick)
+                    <div class="rich-number-line__tick @(i == targetTick || rulerEndpoints.Contains(i) ? "rich-number-line__tick--target" : "")">
+                        @if (i == targetTick || rulerEndpoints.Contains(i))
                         {
                             <span aria-hidden="true" title="Marked target">◆</span>
                         }
