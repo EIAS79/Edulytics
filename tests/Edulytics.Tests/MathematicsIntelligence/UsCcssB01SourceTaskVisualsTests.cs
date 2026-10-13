@@ -312,6 +312,35 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void Grade2SourceCompareTapeLengthsAreExactlyProportional()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U01:L14";
+        const string family="usccss.b01.g2.compare_tape_difference";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=992000;seed<992025;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var first=p["longCount"];var second=p["shortCount"];
+            Assert.InRange(first,8,19);
+            Assert.InRange(second,2,18);
+            Assert.True(first>second);
+            Assert.Equal(first-second,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var tape=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.TapeDiagram,tape.Kind);
+            Assert.Equal(new[]{first,second,first-second},
+                tape.Items.Select(int.Parse).ToArray());
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="9999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G2:U01:L16",[q]));
+        }
+    }
+
+    [Fact]
     public void ReadingScaleDiagramIsEquallySpacedAndHasTheVerifiedAnswer()
     {
         const string code = "PED:US-CCSS-MATH:G2:U04:L02";

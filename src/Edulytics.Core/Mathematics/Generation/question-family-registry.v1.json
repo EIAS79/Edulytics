@@ -5830,6 +5830,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g2.compare_tape_difference",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "b01-source-compare-tape-integer-difference-verify-v1",
+      "representations": [
+        "proportional_tape_diagram",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g2.measurement.read_line_plot",
       "version": 1,
       "skillId": "supporting.statistics.charts",

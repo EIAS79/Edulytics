@@ -400,6 +400,24 @@ public static class UsCcssB01SourceTaskVisuals
                             $"{3 * N("step")}" ]
                     },
                 // Both ruler diagrams are derived from checked operands.
+                "usccss.b01.g2.compare_tape_difference" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U01:L14" &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.TapeDiagram,
+                        Title="Compare two aligned tape-diagram bars",
+                        Description=$"The first group has {N("longCount")} equal units, " +
+                            $"the second group has {N("shortCount")}. " +
+                            $"The unmatched part is {q.CorrectAnswer} units, " +
+                            "the exact difference between the aligned bars.",
+                        PrimaryLabel="Compare: how many more?",
+                        Items=[
+                            N("longCount").ToString(),
+                            N("shortCount").ToString(),
+                            N("difference").ToString()
+                        ]
+                    },
                 "usccss.b01.g2.measurement.read_line_plot" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L14" &&
                     ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>

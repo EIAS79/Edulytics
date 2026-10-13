@@ -29,7 +29,8 @@ public enum RichLessonVisualKind
     BarGraph = 11,
     RectangleDiagram = 12,
     PolygonDiagram = 13,
-    LinePlot = 14
+    LinePlot = 14,
+    TapeDiagram = 15
 }
 
 public sealed class RichLessonContentV2Document

@@ -40,6 +40,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.measure.map_lengths",
         "usccss.b01.ruler.compare_centimeters",
         "usccss.b01.g2.measurement.read_line_plot",
+        "usccss.b01.g2.compare_tape_difference",
         "usccss.b01.ruler.measure_without_zero",
         "usccss.b01.graph.choose_scale",
         "usccss.b01.graph.scaled_compare",
@@ -522,6 +523,21 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
             // IM 2021 G2 U03 L03: centimeter ruler comparison.
             // Teacher source G2 U03 L14: interpret an X-mark line plot.
+            // Original IM G2 U01 L14: two aligned tape bars show
+            // a comparison with the difference unknown, within 20.
+            case "usccss.b01.g2.compare_tape_difference":
+            {
+                a=r.Next(8,20);b=r.Next(2,a);
+                return Make(f,
+                    $"One group has {a} blocks while a second group has {b} " +
+                    "blocks. Show two aligned tape-diagram bars and find " +
+                    "how many more blocks the first group has.",
+                    "Align the bars at the same zero. The unmatched segment " +
+                    "equals the longer count minus the shorter count.",
+                    AssessmentItemType.Numeric,
+                    D(("longCount",a),("shortCount",b),("difference",a-b)));
+            }
+
             case "usccss.b01.g2.measurement.read_line_plot":
             {
                 a=r.Next(1,5);b=r.Next(1,5);m=r.Next(1,5);n=r.Next(1,5);
@@ -901,6 +917,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 string.Join("+", Enumerable.Repeat(
                     P("columns").ToString(CultureInfo.InvariantCulture), P("rows"))) +
                 "=" + (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.compare_tape_difference" =>
+                (P("longCount")-P("shortCount"))
+                    .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.read_line_plot" =>
                 P("targetLength") switch
                 {
@@ -1080,6 +1099,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.rectangle.unit_squares" =>
                 Range("rows",2,7) && Range("columns",2,13) &&
                 N("rows")*N("columns")<=35,
+            "usccss.b01.g2.compare_tape_difference" =>
+                Range("longCount",8,19) && Range("shortCount",2,18) &&
+                N("longCount")>N("shortCount") &&
+                Range("difference",1,17) &&
+                N("difference")==N("longCount")-N("shortCount"),
             "usccss.b01.g2.measurement.read_line_plot" =>
                 Range("count2",1,4) && Range("count3",1,4) &&
                 Range("count4",1,4) && Range("count5",1,4) &&

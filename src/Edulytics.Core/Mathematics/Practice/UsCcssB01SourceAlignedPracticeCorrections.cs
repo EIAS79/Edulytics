@@ -12,6 +12,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // IM 2021 G2 U01 L14: compare problems with a tape diagram,
+        // where the unknown is the difference between aligned quantities.
+        new(
+            "PED:US-CCSS-MATH:G2:U01:L14",
+            "number.whole.add_subtract", "TAPE_DIAGRAM_DIFFERENCE_UNKNOWN_WITHIN20",
+            ["usccss.b01.g2.compare_tape_difference"],
+            "IM2021_G2_U01_L14_BAR_GRAPH_TO_TAPE_COMPARE_SOURCE",
+            "READY_VERIFIED", "usccss-b01-source-tape-diagram-v1"),
         // IM Grade 2 U03 L14 original: interpret measurements in a line plot.
         new(
             "PED:US-CCSS-MATH:G2:U03:L14",

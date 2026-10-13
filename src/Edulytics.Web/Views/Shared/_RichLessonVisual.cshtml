@@ -173,6 +173,38 @@
             </table>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.TapeDiagram)
+    {
+        // Equal unit-width bars are aligned at zero, with the difference
+        // displayed as a distinct unmatched segment, not guessed SVG pixels.
+        var longer = int.TryParse(Model.Items.ElementAtOrDefault(0),out var l) ? l : 0;
+        var shorter = int.TryParse(Model.Items.ElementAtOrDefault(1),out var s) ? s : 0;
+        var difference = int.TryParse(Model.Items.ElementAtOrDefault(2),out var diff) ? diff : -1;
+        if (longer > 0 && shorter > 0 && longer > shorter &&
+            difference == longer - shorter)
+        {
+            var portion=(100.0*shorter/longer)
+                .ToString("0.###",System.Globalization.CultureInfo.InvariantCulture);
+            var remainder=(100.0*difference/longer)
+                .ToString("0.###",System.Globalization.CultureInfo.InvariantCulture);
+            <div class="rich-tape-diagram" role="img" aria-label="@Model.Description"
+                 style="max-width:540px;">
+                <p>First group: @longer units</p>
+                <div style="border:2px solid currentColor;padding:0.4rem;width:100%;box-sizing:border-box">
+                    @longer equal units
+                </div>
+                <p>Second group: @shorter units, plus the unknown difference</p>
+                <div style="display:flex;width:100%;box-sizing:border-box;">
+                    <div style="border:2px solid currentColor;box-sizing:border-box;width:@(portion)%;" >
+                        @shorter
+                    </div>
+                    <div style="border:2px dashed currentColor;box-sizing:border-box;width:@(remainder)%;">
+                        ? (@difference)
+                    </div>
+                </div>
+            </div>
+        }
+    }
     else if (Model.Kind == RichLessonVisualKind.LinePlot)
     {
         // A true numerical line plot has equal tick spacing and X stacks.
