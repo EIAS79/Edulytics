@@ -148,7 +148,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             case "usccss.b01.fraction.name_parts":
                 return Num(N("numerator")) + "/" + Num(N("denominator"));
             case "usccss.b01.measure.quarter_inch":
-                return Num(N("quarters")) + "/4";
+                return Num(N("wholeInches") * 4 + N("quarters")) + "/4";
             case "usccss.b01.factors.factor_pairs":
                 return Num(N("secondFactor"));
             case "usccss.b01.factors.prime_composite":
