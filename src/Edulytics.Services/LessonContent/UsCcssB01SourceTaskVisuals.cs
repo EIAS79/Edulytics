@@ -26,6 +26,71 @@ public static class UsCcssB01SourceTaskVisuals
             int N(string k) => p[k];
             RichLessonVisual? item = q.Family switch
             {
+                "usccss.b01.shape.polygon_sides" when
+                    N("sides") is >= 3 and <= 6 &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.PolygonDiagram,
+                        Title = $"A polygon with {N("sides")} straight sides",
+                        Description = $"This closed polygon has {N("sides")} straight sides " +
+                            $"and {N("sides")} corners, so it is a {q.CorrectAnswer}. " +
+                            "The drawing is schematic and side lengths are not to scale.",
+                        Items = [q.CorrectAnswer]
+                    },
+                "usccss.b01.shape.specific_subcategory" when
+                    N("subcategory") is >= 0 and <= 3 &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.PolygonDiagram,
+                        Title = $"Sort by defining attributes: {q.CorrectAnswer}",
+                        Description = q.Family == "usccss.b01.shape.specific_subcategory" ?
+                            $"The pictured {q.CorrectAnswer} has the angles and equal-side " +
+                            "attributes specified in the verified question." : "",
+                        Items = [q.CorrectAnswer]
+                    },
+                "usccss.b01.triangle.attributes" when
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.PolygonDiagram,
+                        Title = "A triangle always has three straight sides",
+                        Description = "This is a triangle: three straight segments form " +
+                            "one closed boundary, whether rotated or stretched.",
+                        Items = [N("style")==3 ? "right triangle" :
+                            N("style")==2 ? "triangle" : "equilateral triangle"]
+                    },
+                "usccss.b01.area.missing_composite_side" when
+                    N("widthTotal")==N("widthKnown")+N("widthMissing") &&
+                    N("heightLeft")!=N("heightRight") &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.ShapeDecomposition,
+                        Title = "Missing side in an L-shaped composite figure",
+                        Description = $"First find {N("widthMissing")} = {N("widthTotal")} − " +
+                            $"{N("widthKnown")}. Then add disjoint rectangle areas: " +
+                            $"{N("widthKnown")}×{N("heightLeft")} + " +
+                            $"{N("widthMissing")}×{N("heightRight")} = {q.CorrectAnswer}.",
+                        Rows =
+                        [
+                            new RichLessonVisualRow
+                            {
+                                Label = "Left rectangle",
+                                Cells = [$"Width {N("widthKnown")}",
+                                    $"Height {N("heightLeft")}",
+                                    $"Area {N("widthKnown")*N("heightLeft")}"]
+                            },
+                            new RichLessonVisualRow
+                            {
+                                Label = "Right rectangle",
+                                Cells = [$"Missing width {N("widthMissing")}",
+                                    $"Height {N("heightRight")}",
+                                    $"Area {N("widthMissing")*N("heightRight")}"]
+                            }
+                        ]
+                    },
                 // IM Grade 1 U01 L02 source activity: two dot-card
                 // pictures must match the exact addends and expression.
                 "usccss.b01.g1.match_dot_cubes_expression" or
