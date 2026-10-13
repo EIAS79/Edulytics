@@ -58,8 +58,14 @@ public static class UsCcssB01SourceTaskVisuals
                         Title = "A triangle always has three straight sides",
                         Description = "This is a triangle: three straight segments form " +
                             "one closed boundary, whether rotated or stretched.",
-                        Items = [N("style")==3 ? "right triangle" :
-                            N("style")==2 ? "triangle" : "equilateral triangle"]
+                        Items = [N("style") switch
+                        {
+                            0 => "narrow triangle",
+                            1 => "tilted triangle",
+                            2 => "triangle",
+                            3 => "right triangle",
+                            _ => "triangle"
+                        }]
                     },
                 "usccss.b01.area.missing_composite_side" when
                     N("widthTotal")==N("widthKnown")+N("widthMissing") &&
