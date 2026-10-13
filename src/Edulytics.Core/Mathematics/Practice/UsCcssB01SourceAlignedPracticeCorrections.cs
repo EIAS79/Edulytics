@@ -162,6 +162,25 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.partition.halves_fourths"],
             "IM2021_G1_U07_L10_ONE_PIECE_WHOLE_PIECES_PURPOSE_CHECKED",
             "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        // IM 2021 G2 U04 L03: represent an unlabeled whole-number
+        // number-line point and use equally spaced interval reasoning.
+        // Former generic "verify identity" did not ask about the line.
+        new(
+            "PED:US-CCSS-MATH:G2:U04:L03",
+            "measurement.scale.read_equal_intervals", "LOCATE_WHOLE_NUMBER_WITH_SKIP_COUNTING",
+            ["usccss.b01.number_line.locate_whole_to100"],
+            "IM2021_G2_U04_L03_NUMBER_LINE_SKIP_COUNTING_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-g2-u04-number-line-v2"),
+        // IM 2021 G2 U04 L06: number-line representation AND arithmetic
+        // within 100 are both taught; retain both verified operation families.
+        new(
+            "PED:US-CCSS-MATH:G2:U04:L06",
+            "number.whole.add_subtract", "NUMBER_LINE_AND_ADD_SUBTRACT_WITHIN_100",
+            ["usccss.b01.number_line.locate_whole_to100",
+             "number.whole.add_subtract.within_100.apply",
+             "number.whole.add_subtract.within_100.build"],
+            "IM2021_G2_U04_L06_NUMBER_LINE_AND_ADD_SUBTRACT_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-g2-u04-number-line-v2"),
         new(
             "PED:US-CCSS-MATH:G2:U04:L02",
             "measurement.scale.read_equal_intervals", "NUMBER_LINE_EQUAL_INTERVALS",
