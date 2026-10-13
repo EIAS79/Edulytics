@@ -14,6 +14,8 @@ on:
       - 'tools/us-ccss-b01-practice-source-conflicts.py'
       - 'tools/us-ccss-b01-source-visual-gaps.py'
       - 'tools/us-ccss-b01-unified-eight-dimension-report.cjs'
+      - 'tools/us-ccss-b01-evidence-progress.cjs'
+      - 'tests/academic-us-ccss-b01-evidence-progress.test.cjs'
       - 'tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs'
       - 'tests/academic-us-ccss-b01-source-visual-gaps.test.py'
       - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
@@ -272,6 +274,20 @@ jobs:
         run: node --test tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs
       - name: Produce ONE source-bound 500-row and eight-dimension classification report
         run: node tools/us-ccss-b01-unified-eight-dimension-report.cjs
+      - name: Test ledger-to-audit evidence progress (no synthetic gate PASS)
+        run: node --test tests/academic-us-ccss-b01-evidence-progress.test.cjs
+      - name: Index real L1-L6 evidence gaps for all 500 without changing ledger
+        run: node tools/us-ccss-b01-evidence-progress.cjs
+      - name: Archive exact 500-row evidence/gate progress and defect groups
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-collective-evidence-progress-500
+          path: |
+            b01-collective-evidence-progress-500.json
+            b01-collective-evidence-progress-summary.json
+          retention-days: 30
+          if-no-files-found: warn
       - name: Preserve complete report and readable summary for continuation
         if: always()
         uses: actions/upload-artifact@v4
