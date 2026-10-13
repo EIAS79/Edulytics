@@ -362,7 +362,29 @@
     }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
-        <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">
+        @if (Model.SecondaryLabel == "Equal-size-square-grid" &&
+             int.TryParse(Model.Items.ElementAtOrDefault(0),out var gridRows) &&
+             int.TryParse(Model.Items.ElementAtOrDefault(1),out var gridColumns) &&
+             gridRows > 0 && gridColumns > 0 &&
+             Model.Rows.Count == gridRows &&
+             Model.Rows.All(row=>row.Cells.Count==gridColumns))
+        {
+            var template=$"repeat({gridColumns},2rem)";
+            <div role="img" aria-label="@Model.Description"
+                 style="display:grid;grid-template-columns:@template;gap:0;width:max-content">
+                @foreach (var row in Model.Rows)
+                {
+                    @foreach (var tile in row.Cells)
+                    {
+                        <span aria-hidden="true"
+                              style="display:block;width:2rem;height:2rem;box-sizing:border-box;border:1px solid currentColor"></span>
+                    }
+                }
+            </div>
+        }
+        else
+        {
+            <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">
             @foreach (var row in Model.Rows)
             {
                 <article class="rich-shape-card">
@@ -373,6 +395,7 @@
                     }
                 </article>
             }
-        </div>
+            </div>
+        }
     }
 </figure>

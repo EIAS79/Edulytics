@@ -6482,6 +6482,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g2.compose_equal_square_shapes",
+      "version": 1,
+      "skillId": "supporting.geometry.shape_dimension",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "source-g2-equal-square-tile-composition-v1",
+      "representations": [
+        "actual_congruent_square_tile_grid",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g3.multiplication_division_inverse_array",
       "version": 1,
       "skillId": "supporting.number.directed_operations",

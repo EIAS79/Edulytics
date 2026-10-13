@@ -359,6 +359,41 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void SourceG2EqualSquareTileCompositionsBuildTrueSquaresAndRectangles()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U06:L06";
+        const string family="usccss.b01.g2.compose_equal_square_shapes";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+            family,out var input));
+        Assert.Equal(LessonPracticeInteractionKind.StructuredEntry,
+            input!.InteractionKind);
+        var modes=new HashSet<int>();
+        for(var seed=278100;seed<278170;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            modes.Add(p["mode"]);
+            var square=p["rows"]==p["columns"];
+            Assert.Equal(square?"square":"rectangle",q.CorrectAnswer);
+            Assert.Equal(square?0:1,p["mode"]);
+            Assert.Equal(p["rows"]*p["columns"],p["tiles"]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var v=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.ShapeDecomposition,v.Kind);
+            Assert.Equal("Equal-size-square-grid",v.SecondaryLabel);
+            Assert.Equal(p["rows"],v.Rows.Count);
+            Assert.All(v.Rows,row=>Assert.Equal(p["columns"],row.Cells.Count));
+            Assert.Equal(p["tiles"],v.Rows.Sum(row=>row.Cells.Count));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="trapezoid"}]));
+        }
+        Assert.Equal(new[]{0,1},modes.OrderBy(x=>x).ToArray());
+    }
+
+    [Fact]
     public void ArrayVisualContainsExactlyTheUnitSquaresInTheVerifiedQuestion()
     {
         const string code="PED:US-CCSS-MATH:G3:U01:L16";

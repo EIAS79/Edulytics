@@ -36,6 +36,7 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G2:U06:L06": "usccss.b01.g2.compose_equal_square_shapes",
     "PED:US-CCSS-MATH:G3:U08:L10": "usccss.b01.g3.multiplication_division_inverse_array",
     "PED:US-CCSS-MATH:G2:U03:L17": ["usccss.b01.g2.add_subtract_without_regroup", "usccss.b01.ruler.measure_without_zero", "usccss.b01.g2.measurement.read_line_plot"],
     "PED:US-CCSS-MATH:G4:U04:L03": "usccss.b01.g4.decimal_number_line_greater",

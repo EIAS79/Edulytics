@@ -54,6 +54,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.array.equal_equation",
         "usccss.b01.array.unknown_factor",
         "usccss.b01.g3.multiplication_division_inverse_array",
+        "usccss.b01.g2.compose_equal_square_shapes",
         "usccss.b01.array.commutativity",
         "usccss.b01.geometry.composite_rectangle_area",
         "usccss.b01.geometry.rectangle_area_grid60",
@@ -942,6 +943,20 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     AssessmentItemType.ShortAnswer, D(("rows", a), ("columns", b)));
             // Original IM G3 U08 L10: fluency within 100 by reasoning
             // from the SAME rectangular array in both × and ÷ directions.
+            // Original IM G2 U06 L06: compose square or non-square
+            // rectangle from congruent small squares, with no gaps.
+            case "usccss.b01.g2.compose_equal_square_shapes":
+            {
+                a=r.Next(2,5);m=r.Next(0,2);
+                b=m==0?a:2+(a-1)%3;
+                return Make(f,
+                    $"Place {a*b} equal-size square tiles in {a} rows " +
+                    $"and {b} columns. Do they form a square or a non-square rectangle?",
+                    "Squares have equal side lengths. A grid with unequal " +
+                    "numbers of rows and columns is a non-square rectangle.",
+                    AssessmentItemType.ShortAnswer,
+                    D(("rows",a),("columns",b),("mode",m),("tiles",a*b)));
+            }
             case "usccss.b01.g3.multiplication_division_inverse_array":
             {
                 a=r.Next(2,11);b=r.Next(2,11);m=r.Next(0,2);
@@ -1246,6 +1261,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.rectangle.unit_squares" or
             "usccss.b01.array.equal_groups" =>
                 (P("rows") * P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.compose_equal_square_shapes" => P("mode")==0?"square":"rectangle",
             "usccss.b01.g3.multiplication_division_inverse_array" =>
                 (P("operation")==0?P("total"):P("columns"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -1583,6 +1599,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.array.equal_groups" =>
                 Range("rows",2,7) && Range("columns",2,11) &&
                 N("rows")*N("columns")<=100,
+            "usccss.b01.g2.compose_equal_square_shapes" =>
+                Range("rows",2,4) && Range("columns",2,4) &&
+                Range("mode",0,1) && Range("tiles",4,16) &&
+                N("tiles")==N("rows")*N("columns") &&
+                (N("mode")==0?N("rows")==N("columns"):
+                    N("rows")!=N("columns")),
             "usccss.b01.g3.multiplication_division_inverse_array" =>
                 Range("rows",2,10) && Range("columns",2,10) &&
                 Range("total",4,100) && Range("operation",0,1) &&

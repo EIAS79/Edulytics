@@ -465,6 +465,26 @@ public static class UsCcssB01SourceTaskVisuals
                                     Cells = Enumerable.Repeat("■", N("rows")).ToList()
                                 })).ToList()
                     },
+                "usccss.b01.g2.compose_equal_square_shapes" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U06:L06" &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.ShapeDecomposition,
+                        Title="Compose a shape from equal-size square tiles",
+                        Description=$"{N("rows")} rows with {N("columns")} " +
+                            $"equal-size squares in each row form a {q.CorrectAnswer}. " +
+                            $"There are exactly {N("tiles")} tiles.",
+                        PrimaryLabel="Equal-size tiles, no gaps",
+                        SecondaryLabel="Equal-size-square-grid",
+                        Items=[N("rows").ToString(),N("columns").ToString()],
+                        Rows=Enumerable.Range(1,N("rows"))
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"Row {i}",
+                                Cells=Enumerable.Repeat("■",N("columns")).ToList()
+                            }).ToList()
+                    },
                 "usccss.b01.g3.multiplication_division_inverse_array" when
                     lessonCode=="PED:US-CCSS-MATH:G3:U08:L10" &&
                     ExactSkillContractQuestionEngine.Verify(

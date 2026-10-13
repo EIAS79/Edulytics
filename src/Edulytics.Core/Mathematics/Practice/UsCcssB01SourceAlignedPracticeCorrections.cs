@@ -221,6 +221,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["supporting.measurement.unit_iteration"],
             "IM2021_G1_U06_L07_MEASURE_WITH_DIFFERENT_UNITS",
             "READY_VERIFIED", "usccss-b01-source-scope-v1"),
+        // Original IM G2 U06 L06: compose and identify new shapes
+        // from congruent small squares with actual square/rectangle grids.
+        new(
+            "PED:US-CCSS-MATH:G2:U06:L06",
+            "supporting.geometry.shape_dimension", "COMPOSE_SQUARE_TILE_GEOMETRY",
+            ["usccss.b01.g2.compose_equal_square_shapes"],
+            "IM2021_G2_U06_L06_COMPOSE_EQUAL_SIZE_SHAPES",
+            "READY_VERIFIED", "usccss-b01-g2-shape-tiles-v1"),
         // Grade 3 U08 L10: one accurate array is reused to prove
         // multiplication and inverse division within 100.
         new(
