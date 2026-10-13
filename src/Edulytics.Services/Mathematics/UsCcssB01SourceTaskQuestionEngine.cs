@@ -73,6 +73,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.place_value.tens_ones",
         "usccss.b01.g1.add_subtract_10_tens",
         "usccss.b01.g1.compare_order_tens_ones",
+        "usccss.b01.g4.whole_minus_proper_fraction",
         "usccss.b01.g2.add_subtract_without_regroup",
         "usccss.b01.g2.subtract_decompose_ten",
         "usccss.b01.g1.add_subtract_tens_multiples",
@@ -282,6 +283,20 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
             // Original IM G1 U04 L17: compare and ORDER three 2-digit
             // numbers by tens, breaking ties using the ones digit.
+            // Original G4 U03 L10: subtract a proper fraction from a whole.
+            case "usccss.b01.g4.whole_minus_proper_fraction":
+            {
+                a=r.Next(1,5);d=r.Next(3,11);n=r.Next(1,d);
+                return Make(f,
+                    $"Calculate {a} − {n}/{d}. Express the whole as " +
+                    $"{a*d}/{d} and subtract equal denominator-sized parts. " +
+                    "Give a simplified fraction.",
+                    "Whole numbers can be renamed as fractions with the same denominator. " +
+                    "Subtract numerators after expressing equivalent units.",
+                    AssessmentItemType.ShortAnswer,
+                    D(("whole",a),("numerator",n),("denominator",d)));
+            }
+
             case "usccss.b01.g1.compare_order_tens_ones":
             {
                 a=r.Next(11,90);
@@ -1028,6 +1043,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g2.add_subtract_without_regroup" or
             "usccss.b01.g2.subtract_decompose_ten" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g4.whole_minus_proper_fraction" =>
+                ReducedFraction(P("whole")*P("denominator")-P("numerator"),
+                    P("denominator")),
             "usccss.b01.g1.compare_order_tens_ones" =>
                 (P("position")==0?Math.Max(P("first"),Math.Max(P("second"),P("third"))):
                  P("position")==1?Math.Min(P("first"),Math.Min(P("second"),P("third"))):
@@ -1238,6 +1256,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("left")/10>N("right")/10 &&
                 N("left")%10<N("right")%10 &&
                 N("expected")==N("left")-N("right"),
+            "usccss.b01.g4.whole_minus_proper_fraction" =>
+                Range("whole",1,4) && Range("denominator",3,10) &&
+                Range("numerator",1,N("denominator")-1),
             "usccss.b01.g1.compare_order_tens_ones" =>
                 Range("first",10,99) && Range("second",10,99) &&
                 Range("third",10,99) && Range("position",0,2) &&
