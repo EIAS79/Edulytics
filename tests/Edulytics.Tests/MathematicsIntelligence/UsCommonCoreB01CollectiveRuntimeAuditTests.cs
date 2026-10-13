@@ -146,6 +146,12 @@ public sealed class UsCommonCoreB01CollectiveRuntimeAuditTests
             failures.AddRange(issues.Select(e => lessonCode + ": " + e));
             rows.Add(new {
                 ordinal, lessonCode, effectiveContentSha256 = fingerprint,
+                learnerTeachingText = string.Join(" ",
+                    english.Explanation,
+                    english.KeyConceptsAndRules,
+                    english.WorkedExamples,
+                    english.StepByStepSolutions),
+                sourcePreparationUrl = lesson.SourceUrl,
                 effectiveContentVersion = CanonicalLessonContentMaterializer
                     .GetEffectiveContentVersion(doc, lesson),
                 richV2StructuralQuality = quality,
