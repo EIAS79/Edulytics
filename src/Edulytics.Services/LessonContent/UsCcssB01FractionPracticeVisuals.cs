@@ -50,7 +50,10 @@ public static class UsCcssB01FractionPracticeVisuals
                 return [ruler,bar];
             }
 
-            if (source == "fractions.represent.interpret.fraction_bar" &&
+            if (source == "usccss.b01.fraction.unit_parts" &&
+                Complete("denominator","shape"))
+                pairs.Add(("Exactly one equal part",1,p["denominator"]));
+            else if (source == "fractions.represent.interpret.fraction_bar" &&
                 Complete("numerator","denominator"))
                 pairs.Add(("Shaded amount",p["numerator"],p["denominator"]));
             else if (source.StartsWith("fractions.equivalent.",StringComparison.Ordinal))
