@@ -26,6 +26,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.area.missing_composite_side",
         "usccss.b01.partition.halves_fourths",
         "usccss.b01.number_line.equal_intervals",
+        "usccss.b01.number_line.locate_whole_to100",
+        "usccss.b01.number_line.locate_three_digits",
+        "usccss.b01.number_line.locate_large_numbers",
         "usccss.b01.clock.half_quarters",
         "usccss.b01.clock.read_half_hour",
         "usccss.b01.clock.read_five_minutes",
@@ -277,6 +280,34 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "What is one piece called: half or fourth?",
                     "A half is one of two equal parts; a fourth is one of four equal parts.",
                     AssessmentItemType.ShortAnswer, D(("denominator", d), ("shape", m)));
+
+            // Verified IM source targets: G2 U04 L01, G2 U05 L08
+            // and G4 U04 L11. Exact grade-scoped scales prevent
+            // teaching an irrelevant or impossible numeric range.
+            case "usccss.b01.number_line.locate_whole_to100":
+            case "usccss.b01.number_line.locate_three_digits":
+            case "usccss.b01.number_line.locate_large_numbers":
+                a = f switch
+                {
+                    "usccss.b01.number_line.locate_whole_to100" =>
+                        new[]{1,2,5,10}[r.Next(0,4)],
+                    "usccss.b01.number_line.locate_three_digits" =>
+                        new[]{50,100}[r.Next(0,2)],
+                    _ => new[]{1000,10000,100000}[r.Next(0,3)]
+                };
+                n=r.Next(f=="usccss.b01.number_line.locate_three_digits"?2:1,10);
+                m=r.Next(0,3);
+                return Make(f,
+                    $"A number line begins at 0 and has ten equal intervals " +
+                    $"of {a:N0} units each. " +
+                    (m==0 ? $"What whole number is at tick {n}?" :
+                    m==1 ? $"The marked point is {n} equal jumps from zero. " +
+                           "Write its exact number." :
+                           $"Skip-count by {a:N0} to tick {n}. What is its label?"),
+                    "Multiply the number of equal intervals by the interval " +
+                    "size to locate the number exactly.",
+                    AssessmentItemType.Numeric,
+                    D(("step",a),("tick",n),("mode",m)));
 
             case "usccss.b01.number_line.equal_intervals":
                 a = r.Next(1, 4 + level);
@@ -600,6 +631,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                  P("heightRight")*P("widthMissing")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.triangle.attributes" => P("position").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.partition.halves_fourths" => P("denominator") == 2 ? "half" : "fourth",
+            "usccss.b01.number_line.locate_whole_to100" or
+            "usccss.b01.number_line.locate_three_digits" or
+            "usccss.b01.number_line.locate_large_numbers" =>
+                (P("step")*P("tick")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.number_line.equal_intervals" =>
                 (2 * P("step")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.clock.read_half_hour" or
@@ -724,6 +759,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
                 (N("denominator") is 2 or 4) && Range("shape",0,4),
+            "usccss.b01.number_line.locate_whole_to100" =>
+                (N("step") is 1 or 2 or 5 or 10) &&
+                Range("tick",1,9) && Range("mode",0,2),
+            "usccss.b01.number_line.locate_three_digits" =>
+                (N("step") is 50 or 100) &&
+                Range("tick",2,9) && Range("mode",0,2),
+            "usccss.b01.number_line.locate_large_numbers" =>
+                (N("step") is 1000 or 10000 or 100000) &&
+                Range("tick",1,9) && Range("mode",0,2),
             "usccss.b01.number_line.equal_intervals" => Range("step",1,40),
             "usccss.b01.clock.read_half_hour" =>
                 Range("hour",1,12) && (N("minutes") is 0 or 30),
