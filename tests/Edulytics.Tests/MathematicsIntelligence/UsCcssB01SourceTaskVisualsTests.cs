@@ -559,6 +559,39 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G3:U02:L07")]
+    [InlineData("PED:US-CCSS-MATH:G3:U02:L10")]
+    public void SourceGrade3RealWorldAreaUsesMeasuredSquareFeetAndMeters(
+        string lesson)
+    {
+        const string family="usccss.b01.geometry.rectangle_area_real_world_units";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(lesson,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var units=new HashSet<int>();
+        for(var seed=78931;seed<79002;seed++)
+        {
+            var q=One(lesson,family,seed);
+            var p=q.Parameters;
+            var unit=p["unitMode"];
+            units.Add(unit);
+            Assert.InRange(unit,0,1);
+            Assert.Equal(p["length"]*p["width"],int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(lesson,[q]));
+            Assert.Equal(RichLessonVisualKind.RectangleDiagram,visual.Kind);
+            Assert.Equal(unit==0?"m":"ft",visual.SecondaryLabel);
+            Assert.Equal(p["length"],int.Parse(visual.Items[0]));
+            Assert.Equal(p["width"],int.Parse(visual.Items[1]));
+            Assert.Contains(unit==0?"square meters":"square feet",
+                visual.Description);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(lesson,
+                [q with {CorrectAnswer="888888"}]));
+        }
+        Assert.Equal(new[]{0,1},units.OrderBy(x=>x).ToArray());
+    }
+
     [Fact]
     public void UngriddedRectangleDiagramHasTheActualSideRatioAndGradedArea()
     {
