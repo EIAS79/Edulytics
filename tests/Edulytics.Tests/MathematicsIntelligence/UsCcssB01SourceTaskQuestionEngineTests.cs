@@ -51,7 +51,13 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G3:U01:L19", "array.unknown_factor"),
         ("G3:U01:L20", "array.commutativity"),
         ("G3:U02:L02", "rectangle.unit_squares"),
-        ("G3:U05:L02", "fraction.unit_parts")
+        ("G3:U05:L02", "fraction.unit_parts"),
+        ("G1:U04:L08", "place_value.tens_ones"),
+        ("G1:U04:L09", "place_value.tens_ones"),
+        ("G1:U04:L10", "place_value.tens_ones"),
+        ("G1:U08:L07", "place_value.count_to120"),
+        ("G1:U08:L08", "place_value.tens_ones"),
+        ("G2:U05:L04", "place_value.three_digits")
     ];
 
     [Fact]
@@ -72,8 +78,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(39, lessonIds.Count);
-        Assert.Equal(28, familyIds.Count);
+        Assert.Equal(45, lessonIds.Count);
+        Assert.Equal(31, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -114,7 +120,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(117, generated);
+        Assert.Equal(135, generated);
     }
 
     [Fact]
@@ -140,6 +146,20 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         string Num(int n) => n.ToString(CultureInfo.InvariantCulture);
         switch (family)
         {
+            case "usccss.b01.place_value.tens_ones":
+                Assert.InRange(N("number"),10,99);
+                Assert.Equal(N("number"),10*N("tens")+N("ones"));
+                return Num(N("number"));
+            case "usccss.b01.place_value.count_to120":
+                Assert.InRange(N("number"),40,120);
+                Assert.Equal(N("number"),
+                    100*N("hundreds")+10*N("tens")+N("ones"));
+                return Num(N("number"));
+            case "usccss.b01.place_value.three_digits":
+                Assert.InRange(N("number"),100,999);
+                Assert.Equal(N("number"),
+                    100*N("hundreds")+10*N("tens")+N("ones"));
+                return Num(N("number"));
             case "usccss.b01.clock.read_half_hour":
                 Assert.True(N("minutes") is 0 or 30);
                 return $"{N("hour")}:{N("minutes"):00}";
