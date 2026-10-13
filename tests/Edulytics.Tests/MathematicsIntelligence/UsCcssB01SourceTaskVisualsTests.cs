@@ -99,6 +99,38 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void GradeOneTensAndOnesComparisonShowsCorrectOrderedNumbers()
+    {
+        const string code="PED:US-CCSS-MATH:G1:U04:L17";
+        const string family="usccss.b01.g1.compare_order_tens_ones";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var testedModes=new HashSet<int>();
+        for(var seed=78000;seed<78090;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var numbers=new[]{p["first"],p["second"],p["third"]};
+            Assert.Equal(numbers.Length,numbers.Distinct().Count());
+            Assert.Equal(p["first"]/10,p["second"]/10);
+            var sorted=numbers.OrderBy(x=>x).ToArray();
+            testedModes.Add(p["position"]);
+            var expected=p["position"]==0?sorted[2]:
+                p["position"]==1?sorted[0]:sorted[1];
+            Assert.Equal(expected,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var chart=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,chart.Kind);
+            Assert.Equal(numbers,chart.Rows.Select(r=>
+                int.Parse(r.Cells[0])*10+int.Parse(r.Cells[1])).ToArray());
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999"}]));
+        }
+        Assert.Equal(new[]{0,1,2},testedModes.OrderBy(x=>x).ToArray());
+    }
+
+    [Fact]
     public void ArrayVisualContainsExactlyTheUnitSquaresInTheVerifiedQuestion()
     {
         const string code="PED:US-CCSS-MATH:G3:U01:L16";

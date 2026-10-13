@@ -72,6 +72,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.place_value.ten_times",
         "usccss.b01.place_value.tens_ones",
         "usccss.b01.g1.add_subtract_10_tens",
+        "usccss.b01.g1.compare_order_tens_ones",
         "usccss.b01.g2.add_subtract_without_regroup",
         "usccss.b01.g2.subtract_decompose_ten",
         "usccss.b01.g1.add_subtract_tens_multiples",
@@ -277,6 +278,28 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     AssessmentItemType.Numeric,
                     D(("left",a),("right",b),("operation",1),
                       ("expected",a-b)));
+            }
+
+            // Original IM G1 U04 L17: compare and ORDER three 2-digit
+            // numbers by tens, breaking ties using the ones digit.
+            case "usccss.b01.g1.compare_order_tens_ones":
+            {
+                a=r.Next(11,90);
+                b=(a/10)*10+r.Next(0,10);
+                if(b==a)b=(a/10)*10+(a%10+1)%10;
+                n=r.Next(10,100);
+                while(n==a||n==b)n=r.Next(10,100);
+                m=r.Next(0,3);
+                return Make(f,
+                    $"Order these two-digit numbers by tens, then ones: " +
+                    $"{a}, {b}, {n}. " +
+                    (m==0?"Which is greatest?":
+                     m==1?"Which is smallest?":
+                         "Which is in the middle after sorting from least to greatest?"),
+                    "Compare tens digits first. If the tens match, compare ones. " +
+                    "Write the three numbers in order before choosing the answer.",
+                    AssessmentItemType.Numeric,
+                    D(("first",a),("second",b),("third",n),("position",m)));
             }
 
             case "usccss.b01.g1.add_subtract_10_tens":
@@ -1003,6 +1026,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 (P("mode") == 0 ? P("second") - P("sold") : P("third"))
                     .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.add_subtract_without_regroup" or "usccss.b01.g2.subtract_decompose_ten" or
+            "usccss.b01.g1.compare_order_tens_ones" =>
+                (P("position")==0?Math.Max(P("first"),Math.Max(P("second"),P("third"))):
+                 P("position")==1?Math.Min(P("first"),Math.Min(P("second"),P("third"))):
+                 new[]{P("first"),P("second"),P("third")}.OrderBy(x=>x).ElementAt(1))
+                 .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.place_value.tens_ones" or
@@ -1208,6 +1236,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("left")/10>N("right")/10 &&
                 N("left")%10<N("right")%10 &&
                 N("expected")==N("left")-N("right"),
+            "usccss.b01.g1.compare_order_tens_ones" =>
+                Range("first",10,99) && Range("second",10,99) &&
+                Range("third",10,99) && Range("position",0,2) &&
+                N("first")!=N("second") && N("first")!=N("third") &&
+                N("second")!=N("third") &&
+                N("first")/10==N("second")/10,
             "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" =>
                 Range("left",10,80) && Range("right",10,80) &&
                 Range("operation",0,1) && Range("expected",0,90) &&

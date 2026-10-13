@@ -535,6 +535,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.subtract_decompose_ten"],
             "IM2021_G2_U02_L07_DECOMPOSE_TEN_SOURCE",
             "READY_VERIFIED", "usccss-b01-g2-two-digit-v1"),
+        // IM 2021 G1 U04 L17: compare and order tens and ones,
+        // including a tens-digit tie where ones decide the order.
+        new(
+            "PED:US-CCSS-MATH:G1:U04:L17",
+            "supporting.number.compare_order", "ORDER_TENS_THEN_ONES",
+            ["usccss.b01.g1.compare_order_tens_ones"],
+            "IM2021_G1_U04_L17_COMPARE_ORDER_TENS_ONES",
+            "READY_VERIFIED", "usccss-b01-g1-order-tens-ones-v1"),
         // Source IM G1 U04 L03/L04: operate on complete tens only,
         // never unrelated single-digit or general across-ten questions.
         new(

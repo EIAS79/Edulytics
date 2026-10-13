@@ -6553,6 +6553,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g1.compare_order_tens_ones",
+      "version": 1,
+      "skillId": "supporting.number.compare_order",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-g1-order-three-with-tens-ties-v1",
+      "representations": [
+        "tens_ones_place_value_chart",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g1.add_subtract_10_tens",
       "version": 1,
       "skillId": "number.whole.add_subtract",

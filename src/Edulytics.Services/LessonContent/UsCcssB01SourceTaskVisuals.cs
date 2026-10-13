@@ -223,6 +223,30 @@ public static class UsCcssB01SourceTaskVisuals
                                     (N("expected")%10).ToString()]
                             }).ToList()
                     },
+                "usccss.b01.g1.compare_order_tens_ones" when
+                    lessonCode=="PED:US-CCSS-MATH:G1:U04:L17" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title="Compare tens first and then ones",
+                        PrimaryLabel="Tens | Ones",
+                        Description=$"The increasing order is " +
+                            string.Join(", ",new[]{N("first"),N("second"),N("third")}
+                                .OrderBy(x=>x)) +
+                            $". The verified selected number is {q.CorrectAnswer}. " +
+                            "A tie in tens is resolved by the ones digit.",
+                        Rows=new[]{("First",N("first")),
+                                   ("Second",N("second")),
+                                   ("Third",N("third"))}
+                            .Select(entry=>new RichLessonVisualRow
+                            {
+                                Label=entry.Item1,
+                                Cells=[(entry.Item2/10).ToString(),
+                                    (entry.Item2%10).ToString()]
+                            }).ToList()
+                    },
                 "usccss.b01.g1.add_subtract_10_tens" or "usccss.b01.g1.add_subtract_tens_multiples" when
                     ((lessonCode=="PED:US-CCSS-MATH:G1:U04:L03" &&
                         q.Family=="usccss.b01.g1.add_subtract_10_tens") ||
