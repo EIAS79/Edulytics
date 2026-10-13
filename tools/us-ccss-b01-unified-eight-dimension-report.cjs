@@ -23,7 +23,7 @@ function strictMap(array, source, key = 'lessonCode') {
   }
   return byCode;
 }
-function summarize(manifest, ledger, bulk, runtime, publisher, practice, rich, visual) {
+function summarize(manifest, ledger, bulk, runtime, publisher, practice, rich, visual, activities = null) {
   assert(manifest.batchId === 'B01' && manifest.lessons.length === 500,
     'B01 manifest must contain exactly 500 lessons');
   const rows = {
@@ -32,7 +32,8 @@ function summarize(manifest, ledger, bulk, runtime, publisher, practice, rich, v
     publisher: strictMap(publisher.rows, 'publisher-source'),
     practice: strictMap(practice.rows, 'question-source'),
     rich: strictMap(rich.rows, 'Rich-V2'),
-    visual: strictMap(visual.rows, 'source-visual')
+    visual: strictMap(visual.rows, 'source-visual'),
+    ...(activities ? { activity: strictMap(activities.rows, 'official-teacher-activities') } : {})
   };
   const ledgerRows = new Map(ledger.records.map(item => [item.lessonCode, item]));
   const review = [];
@@ -110,6 +111,14 @@ function summarize(manifest, ledger, bulk, runtime, publisher, practice, rich, v
       set('visualRepresentations', 'PUBLISHER_VISUAL_CUE_' + missing, BLOCKED);
     if (s.visual.sameEffectiveContent === false)
       set('visualRepresentations', 'VISUAL_EVIDENCE_BODY_SHA_MISMATCH');
+    // Full original teacher activities are distinct from preparation goals.
+    // Candidate visuals are review cues, not automatically confirmed defects.
+    if (s.activity) {
+      if (s.activity.effectiveContentSha256 !== s.runtime.effectiveContentSha256)
+        set('explanation', 'OFFICIAL_ACTIVITY_EFFECTIVE_BODY_SHA_MISMATCH');
+      for (const cue of s.activity.candidateMissingRepresentations || [])
+        set('visualRepresentations', 'OFFICIAL_ACTIVITY_REVIEW_' + cue, BLOCKED);
+    }
     if (s.rich.commonMistakes === 0)
       set('commonMistakes', 'NO_RICH_V2_COMMON_MISTAKES');
     if (s.rich.workedExampleCount === 0)
@@ -180,6 +189,10 @@ function summarize(manifest, ledger, bulk, runtime, publisher, practice, rich, v
       effectiveContentSha256:s.runtime.effectiveContentSha256 ?? null,
       historicCertification:admittedHistorical ? 'PR_488_REUSED' :
         historical ? 'PR_488_SHA_RECHECK_REQUIRED' : null,
+      ...(s.activity ? {
+        teacherLessonActivityCount:s.activity.activityCount,
+        originalTeacherActivityReviewCues:s.activity.candidateMissingRepresentations || []
+      } : {}),
       dimensions, verdict,
       confirmedDefects:faults, missingEvidenceOrReviewCues:cues,
       evidenceSources:{
@@ -189,6 +202,7 @@ function summarize(manifest, ledger, bulk, runtime, publisher, practice, rich, v
         sourceQuestionMatch:'b01-500-lesson-practice-source-conflicts',
         richV2:'b01-rich-v2-composition-500',
         visualSourceMatch:'b01-rich-v2-publisher-visual-gaps',
+        originalTeacherActivities:activities ? 'b01-original-teacher-activities-500' : null,
         historicalCheckpoint:code.endsWith(':G1:U01:L02') ?
           'artifacts/academic-us-ccss/batches/B01-G1-U01-L02-review-checkpoint.md' : null
       }
@@ -220,7 +234,8 @@ function main() {
     read('b01-publisher/b01-publisher-alignment-500.json'),
     read('b01-practice/b01-practice-source-conflicts-500.json'),
     read('b01-rich/b01-rich-v2-500.json'),
-    read('b01-visual/b01-rich-v2-source-visual-gaps-500.json')
+    read('b01-visual/b01-rich-v2-source-visual-gaps-500.json'),
+    read('b01-activities/b01-original-teacher-activities-500.json')
   );
   fs.writeFileSync('b01-unified-eight-dimension-report-500.json',
     JSON.stringify(report, null, 2)+'\n');
