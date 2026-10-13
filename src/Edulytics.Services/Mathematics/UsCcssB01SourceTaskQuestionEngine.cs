@@ -225,17 +225,20 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // G3 U02 L14: composite area with a truly missing side.
             case "usccss.b01.area.missing_composite_side":
                 a=r.Next(2,8); b=r.Next(2,8); n=r.Next(2,7);
+                m=r.Next(2,7);
+                if (m==n) m = m==6 ? 5 : m+1;
                 return Make(f,
-                    $"An ungridded L-shaped figure can be split into two " +
-                    $"non-overlapping rectangles of the same height, {n} units. " +
-                    $"Its whole width is {a+b} units and the known left width is " +
-                    $"{a} units. The right width is NOT given. Find the total area " +
-                    "in square units by finding the missing width first.",
-                    $"The missing width is {a+b} − {a} = {b}. Add the two " +
-                    $"rectangle areas: {n}×{a} + {n}×{b} = {n*(a+b)}.",
+                    $"An ungridded L-shaped figure consists of two adjoining " +
+                    $"non-overlapping rectangles. The left rectangle is {n} units " +
+                    $"tall and {a} units wide. The right rectangle is {m} units tall. " +
+                    $"The full base is {a+b} units wide, but the right width " +
+                    $"is missing. Find the total area in square units.",
+                    $"Missing right width: {a+b} − {a} = {b}. Sum the " +
+                    $"non-overlapping areas: {n}×{a} + {m}×{b} = {n*a+m*b}.",
                     AssessmentItemType.Numeric,
                     D(("widthTotal",a+b),("widthKnown",a),
-                      ("widthMissing",b),("height",n)));
+                      ("widthMissing",b),("heightLeft",n),
+                      ("heightRight",m)));
 
             case "usccss.b01.triangle.attributes":
                 m = r.Next(1, 4);
@@ -584,7 +587,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     2=>"rectangle",3=>"square",_=>throw new InvalidOperationException()
                 },
             "usccss.b01.area.missing_composite_side" =>
-                (P("height")*P("widthTotal")).ToString(CultureInfo.InvariantCulture),
+                (P("heightLeft")*P("widthKnown")+
+                 P("heightRight")*P("widthMissing")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.triangle.attributes" => P("position").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.partition.halves_fourths" => P("denominator") == 2 ? "half" : "fourth",
             "usccss.b01.number_line.equal_intervals" =>
@@ -705,7 +709,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("widthKnown",2,7) && Range("widthMissing",2,7) &&
                 Range("widthTotal",4,14) &&
                 N("widthTotal")==N("widthKnown")+N("widthMissing") &&
-                Range("height",2,6),
+                Range("heightLeft",2,6) && Range("heightRight",2,6) &&
+                N("heightLeft")!=N("heightRight"),
             "usccss.b01.triangle.attributes" =>
                 Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
