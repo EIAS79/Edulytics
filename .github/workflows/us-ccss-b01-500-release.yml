@@ -35,6 +35,7 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPracticeVisualsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CategoricalGraphVisualsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CollectiveVisualArithmeticOracleTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01TenthsHundredthsSourceTests.cs'
   workflow_dispatch:
 
 concurrency:
@@ -94,7 +95,7 @@ jobs:
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - name: Validate effective learner content, Rich V2 quality and real question generation over all 500
         run: |
-          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceDotCardsContentCorrectionTests|FullyQualifiedName~UsCcssB01NumberLineArithmeticalVisualsTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests' --logger 'console;verbosity=normal'
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceDotCardsContentCorrectionTests|FullyQualifiedName~UsCcssB01NumberLineArithmeticalVisualsTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests|FullyQualifiedName~UsCcssB01TenthsHundredthsSourceTests' --logger 'console;verbosity=normal'
       - name: Archive all 500 actual visual objects and independent numeric invariant findings
         if: always()
         uses: actions/upload-artifact@v4
