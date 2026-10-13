@@ -131,6 +131,40 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void GradeTwoAddSubtractThousandExcludesAllCarryingAndBorrowing()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U07:L04";
+        const string family="usccss.b01.g2.add_subtract_1000_no_regroup";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var lesson));
+        Assert.Equal([family],lesson!.AllowedQuestionFamilies);
+        var operations=new HashSet<int>();
+        for(var seed=975000;seed<975100;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var a=p["left"];var b=p["right"];var mode=p["operation"];
+            operations.Add(mode);
+            Assert.Equal(mode==0?a+b:a-b,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            foreach(var place in new[]{1,10,100})
+            {
+                var da=a/place%10;var db=b/place%10;
+                if(mode==0)Assert.True(da+db<10);
+                else Assert.True(da>=db);
+            }
+            var chart=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,chart.Kind);
+            Assert.Equal(new[]{a,b,int.Parse(q.CorrectAnswer)},
+                chart.Rows.Select(row=>row.Cells.Select(int.Parse)
+                    .Aggregate(0,(acc,digit)=>acc*10+digit)).ToArray());
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="99999"}]));
+        }
+        Assert.Equal(new[]{0,1},operations.OrderBy(x=>x).ToArray());
+    }
+
+    [Fact]
     public void GradeTwoThreeDigitComparisonsUseTrueNumberLinePositions()
     {
         const string code="PED:US-CCSS-MATH:G2:U05:L09";
