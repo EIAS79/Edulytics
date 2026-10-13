@@ -163,6 +163,32 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void OriginalGradeOneAdditionToHundredNeverComposesTen()
+    {
+        const string code="PED:US-CCSS-MATH:G1:U05:L04";
+        const string family="usccss.b01.g1.add_within100_no_compose_ten";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var lesson));
+        Assert.Equal([family],lesson!.AllowedQuestionFamilies);
+        for(var seed=111000;seed<111075;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var a=p["left"];var b=p["right"];
+            Assert.InRange(a+b,20,99);
+            Assert.True(a%10+b%10<10);
+            Assert.Equal(a+b,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var chart=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,chart.Kind);
+            Assert.Equal(new[]{a,b,a+b},chart.Rows.Select(row=>
+                int.Parse(row.Cells[0])*10+int.Parse(row.Cells[1])).ToArray());
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="10001"}]));
+        }
+    }
+
+    [Fact]
     public void GradeTwoAddSubtractThousandExcludesAllCarryingAndBorrowing()
     {
         const string code="PED:US-CCSS-MATH:G2:U07:L04";
