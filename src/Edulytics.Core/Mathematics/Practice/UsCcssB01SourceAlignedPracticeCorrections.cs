@@ -543,6 +543,20 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.add_subtract_1000_no_regroup"],
             "IM2021_G2_U07_L04_NO_COMPOSE_OR_DECOMPOSE_UP_TO1000",
             "READY_VERIFIED", "usccss-b01-1000-noregroup-v1"),
+        // IM G3 U06 L04 interprets line plots to the nearest 1/4 inch;
+        // L05 constructs that SAME evenly spaced fractional plot.
+        new(
+            "PED:US-CCSS-MATH:G3:U06:L04",
+            "supporting.statistics.charts", "INTERPRET_FRACTIONAL_INCH_LINE_PLOT",
+            ["usccss.b01.g3.quarter_inch_line_plot_frequency"],
+            "IM2021_G3_U06_L04_INTERPRET_HALVES_QUARTERS_LINE_PLOT",
+            "READY_VERIFIED", "usccss-b01-g3-fraction-line-plot-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U06:L05",
+            "supporting.statistics.charts", "CONSTRUCT_FRACTIONAL_INCH_LINE_PLOT",
+            ["usccss.b01.g3.quarter_inch_line_plot_frequency"],
+            "IM2021_G3_U06_L05_MAKE_HALVES_QUARTERS_LINE_PLOT",
+            "READY_VERIFIED", "usccss-b01-g3-fraction-line-plot-v1"),
         // IM G2 U05 L09: three-digit magnitude by relative
         // number-line positions rather than unrelated within-100 sums.
         new(
