@@ -24,6 +24,18 @@ public static class UsCcssB01SourceTaskVisuals
             int N(string k) => p[k];
             RichLessonVisual? item = q.Family switch
             {
+                "usccss.b01.clock.half_quarters" =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.ClockFace,
+                        Title = "Analog clock: hour and minute hands",
+                        Description = $"The minute hand points to the {(N("position") == 0 ? "3" :
+                            N("position") == 1 ? "6" : "9")}. This is " +
+                            $"{15 * (N("position")+1)} minutes after the hour. " +
+                            "The short hour hand moves proportionally between hours.",
+                        Items = [N("hour").ToString(),
+                            (15 * (N("position")+1)).ToString()]
+                    },
                 "usccss.b01.array.equal_groups" or
                 "usccss.b01.rectangle.unit_squares" =>
                     new RichLessonVisual
