@@ -33,6 +33,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.number_line.locate_large_numbers",
         "usccss.b01.clock.half_quarters",
         "usccss.b01.clock.read_half_hour",
+        "usccss.b01.clock.read_on_hour",
+        "usccss.b01.clock.read_five_minutes_am_pm",
         "usccss.b01.clock.read_five_minutes",
         "usccss.b01.rectangle.unit_squares",
         "usccss.b01.measure.map_lengths",
@@ -439,6 +441,37 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     AssessmentItemType.Numeric, D(("step", a * b)));
 
             // Publisher G1 U07 L14-L15: hour/half-hour hand positions.
+            // Original IM G1 U07 L13: tell and write exact whole hours.
+            // This lesson does not teach elapsed time or half-hour answers.
+            case "usccss.b01.clock.read_on_hour":
+            {
+                a=r.Next(1,13);
+                return Make(f,
+                    $"On an analog clock the short hour hand points directly " +
+                    $"to {a} and the long minute hand points to 12. " +
+                    "Write the time as h:mm.",
+                    "The minute hand at 12 means zero minutes past the hour.",
+                    AssessmentItemType.ShortAnswer,D(("hour",a),("minutes",0)));
+            }
+            // Original IM G2 U06 L13: analog/digital time to five minutes,
+            // explicitly distinguished between a.m. and p.m.
+            case "usccss.b01.clock.read_five_minutes_am_pm":
+            {
+                a=r.Next(1,13);
+                b=r.Next(0,12)*5;
+                m=r.Next(0,2);
+                return Make(f,
+                    $"The analog clock's minute hand points to " +
+                    $"{(b==0?12:b/5)}, and the hour hand " +
+                    (b==0?$"points directly to {a}. ":
+                        $"is between {a} and {(a%12)+1}. ") +
+                    $"It is {(m==0?"before noon (morning)":"after noon (afternoon/evening)")}. " +
+                    "Write the digital time including a.m. or p.m.",
+                    "Read each number as five minutes, then use the described " +
+                    "part of the day to choose a.m. or p.m.",
+                    AssessmentItemType.ShortAnswer,
+                    D(("hour",a),("minutes",b),("period",m)));
+            }
             case "usccss.b01.clock.read_half_hour":
                 a = r.Next(1, 13);
                 m = r.Next(0, 2);
@@ -793,6 +826,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 (P("step")*P("tick")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.number_line.equal_intervals" =>
                 (2 * P("step")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.clock.read_on_hour" =>
+                $"{P("hour")}:00",
+            "usccss.b01.clock.read_five_minutes_am_pm" =>
+                $"{P("hour")}:{P("minutes"):00} {(P("period")==0?"a.m.":"p.m.")}",
             "usccss.b01.clock.read_half_hour" or
             "usccss.b01.clock.read_five_minutes" =>
                 $"{P("hour")}:{P("minutes"):00}",
@@ -966,6 +1003,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 (N("step") is 1000 or 10000 or 100000) &&
                 Range("tick",1,9) && Range("mode",0,2),
             "usccss.b01.number_line.equal_intervals" => Range("step",1,40),
+            "usccss.b01.clock.read_on_hour" =>
+                Range("hour",1,12) && Range("minutes",0,0),
+            "usccss.b01.clock.read_five_minutes_am_pm" =>
+                Range("hour",1,12) && Range("minutes",0,55) &&
+                N("minutes")%5==0 && Range("period",0,1),
             "usccss.b01.clock.read_half_hour" =>
                 Range("hour",1,12) && (N("minutes") is 0 or 30),
             "usccss.b01.clock.read_five_minutes" =>
