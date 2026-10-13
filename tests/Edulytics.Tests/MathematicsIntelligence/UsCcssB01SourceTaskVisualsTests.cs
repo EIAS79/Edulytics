@@ -360,8 +360,13 @@ public sealed class UsCcssB01SourceTaskVisualsTests
             }
             Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
                 [q with {CorrectAnswer="999"}]));
+            // L15 now legitimately constructs the same genuine line plot
+            // from source data; only non-line-plot lessons must reject it.
+            Assert.Equal(RichLessonVisualKind.LinePlot,
+                Assert.Single(UsCcssB01SourceTaskVisuals.Build(
+                    "PED:US-CCSS-MATH:G2:U03:L15",[q])).Kind);
             Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
-                "PED:US-CCSS-MATH:G2:U03:L15",[q]));
+                "PED:US-CCSS-MATH:G2:U03:L16",[q]));
         }
     }
 
