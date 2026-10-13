@@ -92,10 +92,14 @@ public sealed class UsCcssB01CategoricalGraphVisualsTests
             Assert.Equal(RichLessonVisualKind.BarGraph,comparisonGraph.Kind);
             var pair=comparisonGraph.Rows.Select(row=>int.Parse(Assert.Single(row.Cells))).ToArray();
             Assert.Equal(new[]{comparison.Parameters["a"],comparison.Parameters["b"]},pair);
-            Assert.Equal(int.Parse(comparison.CorrectAnswer),Math.Abs(pair[0]-pair[1]));
-            Assert.Contains("difference",comparisonGraph.Description,StringComparison.OrdinalIgnoreCase);
+            Assert.Equal(pair[0]>pair[1] ? "A" :
+                pair[1]>pair[0] ? "B" : "equal",comparison.CorrectAnswer);
+            Assert.Contains("Category A",comparisonGraph.Description);
+            Assert.Contains("Category B",comparisonGraph.Description);
             Assert.Empty(UsCcssB01CategoricalGraphVisuals.Build(code,
                 [comparison with {CorrectAnswer="9999"}]));
+            Assert.Empty(UsCcssB01CategoricalGraphVisuals.Build(code,
+                [comparison with {CorrectAnswer=Math.Abs(pair[0]-pair[1]).ToString()}]));
         }
     }
 
