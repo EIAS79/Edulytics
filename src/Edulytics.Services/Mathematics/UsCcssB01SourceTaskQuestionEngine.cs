@@ -56,6 +56,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.geometry.composite_rectangle_area",
         "usccss.b01.geometry.rectangle_area_grid60",
         "usccss.b01.geometry.rectangle_area_ungridded",
+        "usccss.b01.geometry.rectangle_area_real_world_units",
         "usccss.b01.division.unknown_factor",
         "usccss.b01.fraction.tenths_hundredths_within_one",
         "usccss.b01.fraction.tenths_hundredths_over_one",
@@ -738,6 +739,22 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     AssessmentItemType.Numeric,D(("rows",a),("columns",b)));
 
             // Publisher G3 U02 L08: area without full grid.
+            // IM G3 U02 L07/L10: measured rectangle coverage in
+            // square feet or square meters and concrete real-life contexts.
+            case "usccss.b01.geometry.rectangle_area_real_world_units":
+            {
+                a=r.Next(3,11);b=r.Next(2,10);m=r.Next(0,2);
+                var measure=m==0?"meters":"feet";
+                var place=m==0?"a rectangular school garden":"a reading rug";
+                return Make(f,
+                    $"The dimensions of {place} are {a} {measure} by " +
+                    $"{b} {measure}. How many SQUARE {measure} cover its area?",
+                    "The unit square has side length one linear unit; " +
+                    "multiply the measured side lengths to count the unit squares.",
+                    AssessmentItemType.Numeric,
+                    D(("length",a),("width",b),("unitMode",m)));
+            }
+
             case "usccss.b01.geometry.rectangle_area_ungridded":
                 a = r.Next(2,11);b = r.Next(2,11);
                 return Make(f,
@@ -1011,6 +1028,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 P("step").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.rectangle_area_grid60" =>
                 (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.geometry.rectangle_area_real_world_units" or
             "usccss.b01.geometry.rectangle_area_ungridded" =>
                 (P("length")*P("width")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.composite_rectangle_area" =>
@@ -1222,6 +1240,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.geometry.rectangle_area_grid60" =>
                 Range("rows",2,8) && Range("columns",2,30) &&
                 N("rows")*N("columns")<=60,
+            "usccss.b01.geometry.rectangle_area_real_world_units" =>
+                Range("length",3,10) && Range("width",2,9) &&
+                Range("unitMode",0,1),
             "usccss.b01.geometry.rectangle_area_ungridded" =>
                 Range("length",2,10) && Range("width",2,10),
             "usccss.b01.geometry.composite_rectangle_area" =>
