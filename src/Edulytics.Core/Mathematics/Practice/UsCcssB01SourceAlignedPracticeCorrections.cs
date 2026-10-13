@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Thirty-nine lesson-code-exact B01 corrections independently checked against their
+/// Forty-eight lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -267,6 +267,60 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "supporting.measurement.practical", "COUNT_BY_FIVE_ANALOG_CLOCK",
             ["usccss.b01.clock.read_five_minutes"],
             "IM2021_G2_U06_L12_FIVE_MINUTE_TIME_PURPOSE",
-            "READY_VERIFIED", "usccss-b01-source-clock-v1")
+            "READY_VERIFIED", "usccss-b01-source-clock-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U08:L07",
+            "supporting.geometry.properties", "INTRO_ROWS",
+            ["usccss.b01.array.equal_groups"],
+            "IM2021_G2_U08_L07_INTRO_ROWS_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U08:L08",
+            "supporting.geometry.properties", "INTRO_COLUMNS",
+            ["usccss.b01.array.columns"],
+            "IM2021_G2_U08_L08_INTRO_COLUMNS_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U08:L09",
+            "number.whole.add_subtract", "ROW_SUM_OF_EQUAL_ADDENDS",
+            ["usccss.b01.array.equal_addends"],
+            "IM2021_G2_U08_L09_ROW_SUM_OF_EQUAL_ADDENDS_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U08:L10",
+            "number.whole.add_subtract", "ARRAY_EQUATIONS",
+            ["usccss.b01.array.equal_addends"],
+            "IM2021_G2_U08_L10_ARRAY_EQUATIONS_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U08:L11",
+            "supporting.geometry.area_volume", "RECTANGLES_WITH_TILES",
+            ["usccss.b01.rectangle.unit_squares"],
+            "IM2021_G2_U08_L11_RECTANGLES_WITH_TILES_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L17",
+            "number.whole.multiply", "DRAW_ARRAYS",
+            ["usccss.b01.array.equal_groups"],
+            "IM2021_G3_U01_L17_DRAW_ARRAYS_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L19",
+            "number.whole.multiply", "ARRAY_UNKNOWN_SYMBOL",
+            ["usccss.b01.array.unknown_factor"],
+            "IM2021_G3_U01_L19_ARRAY_UNKNOWN_SYMBOL_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L20",
+            "number.whole.multiply", "COMMUTATIVE_ARRAY_ROTATION",
+            ["usccss.b01.array.commutativity"],
+            "IM2021_G3_U01_L20_COMMUTATIVE_ARRAY_ROTATION_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L02",
+            "supporting.geometry.area_volume", "MEASURE_AREA_IN_UNIT_SQUARES",
+            ["usccss.b01.rectangle.unit_squares"],
+            "IM2021_G3_U02_L02_MEASURE_AREA_IN_UNIT_SQUARES_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-array-v1")
     ];
 }
