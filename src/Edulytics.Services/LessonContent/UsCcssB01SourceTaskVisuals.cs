@@ -639,6 +639,28 @@ public static class UsCcssB01SourceTaskVisuals
                             }
                         ]
                     },
+                "usccss.b01.g3.quarter_inch_line_plot_frequency" when
+                    (lessonCode=="PED:US-CCSS-MATH:G3:U06:L04" ||
+                     lessonCode=="PED:US-CCSS-MATH:G3:U06:L05") &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.LinePlot,
+                        Title=lessonCode.EndsWith("L04",StringComparison.Ordinal)
+                            ?"Interpret fractional inch measurement line plots"
+                            :"Construct fractional inch measurement line plots",
+                        Description="The axis advances by exactly one quarter inch " +
+                            "between adjacent measurements. Every X is one " +
+                            $"observation; the requested tick contains {q.CorrectAnswer}.",
+                        PrimaryLabel="Inches (whole, 1/4, 1/2, 3/4)",
+                        Rows=new[]{"1","1 1/4","1 1/2","1 3/4","2"}
+                            .Select((name,i)=>new RichLessonVisualRow
+                            {
+                                Label=name+" in",
+                                Cells=Enumerable.Repeat("X",N($"count{i+1}")).ToList()
+                            }).ToList()
+                    },
                 "usccss.b01.g2.measurement.read_line_plot" when
                     (lessonCode=="PED:US-CCSS-MATH:G2:U03:L14" ||
                      lessonCode=="PED:US-CCSS-MATH:G2:U03:L15") &&
