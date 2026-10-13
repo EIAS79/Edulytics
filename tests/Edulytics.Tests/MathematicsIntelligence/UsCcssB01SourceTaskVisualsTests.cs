@@ -181,6 +181,40 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void GriddedGrade3RectangleHasTheExactUnitSquareCountAtMostSixty()
+    {
+        const string lesson="PED:US-CCSS-MATH:G3:U02:L04";
+        for(var seed=570201;seed<570216;seed++)
+        {
+            var q=One(lesson,"usccss.b01.geometry.rectangle_area_grid60",seed);
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(lesson,[q]));
+            Assert.Equal(RichLessonVisualKind.ShapeDecomposition,visual.Kind);
+            Assert.Equal(q.Parameters["rows"],visual.Rows.Count);
+            var cells=visual.Rows.Sum(r=>r.Cells.Count(c=>c=="■"));
+            Assert.Equal(q.Parameters["rows"]*q.Parameters["columns"],cells);
+            Assert.Equal(int.Parse(q.CorrectAnswer),cells);
+            Assert.InRange(cells,1,60);
+        }
+    }
+
+    [Fact]
+    public void UngriddedRectangleDiagramHasTheActualSideRatioAndGradedArea()
+    {
+        const string lesson="PED:US-CCSS-MATH:G3:U02:L08";
+        for(var seed=570221;seed<570231;seed++)
+        {
+            var q=One(lesson,"usccss.b01.geometry.rectangle_area_ungridded",seed);
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(lesson,[q]));
+            Assert.Equal(RichLessonVisualKind.RectangleDiagram,visual.Kind);
+            Assert.Equal(2,visual.Items.Count);
+            Assert.Equal(q.Parameters["length"].ToString(),visual.Items[0]);
+            Assert.Equal(q.Parameters["width"].ToString(),visual.Items[1]);
+            Assert.Equal(int.Parse(q.CorrectAnswer),
+                int.Parse(visual.Items[0])*int.Parse(visual.Items[1]));
+        }
+    }
+
+    [Fact]
     public void DoNotDisplayB01SpecificDiagramsOnLaterBatchOrOtherCurricula()
     {
         var q=One("PED:US-CCSS-MATH:G3:U01:L16",
