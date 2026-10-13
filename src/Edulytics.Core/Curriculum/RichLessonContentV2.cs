@@ -27,7 +27,8 @@ public enum RichLessonVisualKind
     ShapeDecomposition = 9,
     ClockFace = 10,
     BarGraph = 11,
-    RectangleDiagram = 12
+    RectangleDiagram = 12,
+    PolygonDiagram = 13
 }
 
 public sealed class RichLessonContentV2Document
