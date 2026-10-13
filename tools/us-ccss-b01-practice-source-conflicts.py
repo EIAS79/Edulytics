@@ -47,6 +47,12 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G4:U03:L16": "usccss.b01.fraction.tenths_hundredths_within_one",
     "PED:US-CCSS-MATH:G4:U03:L17": "usccss.b01.fraction.tenths_hundredths_over_one",
     "PED:US-CCSS-MATH:G2:U04:L01": "usccss.b01.number_line.locate_whole_to100",
+    "PED:US-CCSS-MATH:G2:U04:L03": "usccss.b01.number_line.locate_whole_to100",
+    "PED:US-CCSS-MATH:G2:U04:L06": [
+        "usccss.b01.number_line.locate_whole_to100",
+        "number.whole.add_subtract.within_100.apply",
+        "number.whole.add_subtract.within_100.build",
+    ],
     "PED:US-CCSS-MATH:G2:U05:L08": "usccss.b01.number_line.locate_three_digits",
     "PED:US-CCSS-MATH:G4:U04:L11": "usccss.b01.number_line.locate_large_numbers",
     "PED:US-CCSS-MATH:G2:U06:L01": "usccss.b01.shape.polygon_sides",
