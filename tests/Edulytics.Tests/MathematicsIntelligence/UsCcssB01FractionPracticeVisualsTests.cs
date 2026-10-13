@@ -54,6 +54,22 @@ public sealed class UsCcssB01FractionPracticeVisualsTests
     }
 
     [Fact]
+    public void SourceVerifiedEqualPartsAlwaysShowOneUnitFraction()
+    {
+        var code="PED:US-CCSS-MATH:G3:U05:L02";
+        var family="usccss.b01.fraction.unit_parts";
+        for (var seed=410100;seed<410115;seed++)
+        {
+            var q=One(code,family,seed);
+            Assert.Equal("1/"+q.Parameters["denominator"],q.CorrectAnswer);
+            var bar=Assert.Single(UsCcssB01FractionPracticeVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.FractionBars,bar.Kind);
+            Assert.Equal(1,bar.Rows[0].Numerator);
+            Assert.Equal(q.Parameters["denominator"],bar.Rows[0].Denominator);
+        }
+    }
+
+    [Fact]
     public void WrongStructuredCorrectAnswerAndOtherProgrammeCannotCreateFractions()
     {
         var code="PED:US-CCSS-MATH:G3:U05:L05";
