@@ -69,6 +69,24 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         Assert.Contains(int.Parse(visual.Items[1]), new[] { 15, 30, 45 });
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G1:U07:L14", "usccss.b01.clock.read_half_hour")]
+    [InlineData("PED:US-CCSS-MATH:G1:U07:L15", "usccss.b01.clock.read_half_hour")]
+    [InlineData("PED:US-CCSS-MATH:G2:U06:L12", "usccss.b01.clock.read_five_minutes")]
+    public void ClockHandsAndDigitalTimeUseExactlyTheSameVerifiedParameters(
+        string code, string family)
+    {
+        var question = One(code, family, 380019);
+        var visual = Assert.Single(UsCcssB01SourceTaskVisuals.Build(code, [question]));
+        Assert.Equal(RichLessonVisualKind.ClockFace, visual.Kind);
+        Assert.Equal(question.Parameters["hour"].ToString(), visual.Items[0]);
+        Assert.Equal(question.Parameters["minutes"].ToString(), visual.Items[1]);
+        Assert.Equal($"{question.Parameters["hour"]}:{question.Parameters["minutes"]:00}",
+            question.CorrectAnswer);
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family, question.Parameters, question.CorrectAnswer));
+    }
+
     [Fact]
     public void DoNotDisplayB01SpecificDiagramsOnLaterBatchOrOtherCurricula()
     {
