@@ -258,6 +258,61 @@ public static class UsCcssB01SourceTaskVisuals
                 "usccss.b01.partition.halves_fourths" =>
                     SingleFractionBar("Equal pieces of a whole", 1,
                         N("denominator")),
+                // Source IM G4 U03 L16–L17: 1/10 = 10/100.
+                // For a total > 1, shade a full bar AND its fractional
+                // remainder rather than incorrectly shading >100% of one bar.
+                "usccss.b01.fraction.tenths_hundredths_within_one" or
+                "usccss.b01.fraction.tenths_hundredths_over_one" when
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,q.Parameters,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.FractionBars,
+                        Title = "Tenths become hundredths before adding",
+                        Description = $"Convert {N("tenths")}/10 to " +
+                            $"{10*N("tenths")}/100. Add {N("hundredths")}/100 " +
+                            $"to obtain {q.CorrectAnswer}." +
+                            (N("totalHundredths")>100
+                                ? $" That's one whole and " +
+                                  $"{N("totalHundredths")-100}/100 more."
+                                : " The sum is at most one whole."),
+                        Rows = new List<RichLessonVisualRow>
+                        {
+                            new()
+                            {
+                                Label = "Equivalent tenths in hundredths",
+                                Numerator = 10*N("tenths"), Denominator = 100
+                            },
+                            new()
+                            {
+                                Label = "Hundredths addend",
+                                Numerator = N("hundredths"), Denominator = 100
+                            }
+                        }.Concat(N("totalHundredths")<=100
+                            ? new List<RichLessonVisualRow>
+                              {
+                                  new()
+                                  {
+                                      Label = "Total shaded hundredths",
+                                      Numerator = N("totalHundredths"),
+                                      Denominator = 100
+                                  }
+                              }
+                            : new List<RichLessonVisualRow>
+                              {
+                                  new()
+                                  {
+                                      Label = "One whole",
+                                      Numerator = 100, Denominator = 100
+                                  },
+                                  new()
+                                  {
+                                      Label = "Additional hundredths",
+                                      Numerator = N("totalHundredths")-100,
+                                      Denominator = 100
+                                  }
+                              }).ToList()
+                    },
                 "usccss.b01.fraction.decompose_same_denominator" =>
                     DecompositionBar(N("wholeN"), N("firstN"), N("denominator")),
                 "usccss.b01.fraction.whole_multiply" =>
