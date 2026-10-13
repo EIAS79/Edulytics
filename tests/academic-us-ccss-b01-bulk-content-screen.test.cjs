@@ -49,7 +49,7 @@ test('One wrong math expression is recorded as a batch defect',()=>{
   const f=fixture();
   f.packs[2].lessons[10].translations[0].workedExamples='2 + 3 = 9.';
   const r=scanBatch(f);
-  assert.ok(r.issues.some(x=>x.problem.startsWith('ARITHMETIC_CONTRADICTION')));
+  assert.ok(r.issues.some(x=>x.problem.startsWith('FALSE_EQUATION_NOT_EXPLICITLY_MARKED')));
   assert.equal(r.academicDecision,'NOT_CERTIFIED');
 });
 test('A missing learner source within the 500 produces a gap',()=>{
