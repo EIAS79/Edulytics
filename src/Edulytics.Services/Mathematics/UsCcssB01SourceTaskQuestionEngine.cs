@@ -187,13 +187,22 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // G2 U06 L01: identify polygons by their defining side/corner count.
             case "usccss.b01.shape.polygon_sides":
                 n = r.Next(3,7);
-                m = r.Next(0,2);
+                // Four conceptually genuine classroom representations per
+                // side-count, so a 10-question session is not exhausted.
+                m = r.Next(0,4);
                 return Make(f,
-                    m == 0
-                      ? $"A closed polygon has {n} straight sides and {n} corners. " +
-                        "Name the polygon (triangle, quadrilateral, pentagon or hexagon)."
-                      : $"A polygon drawn on dot paper has {n} corners connected by " +
-                        $"{n} straight edges without gaps. What type of polygon is it?",
+                    m switch
+                    {
+                        0 => $"A closed polygon has {n} straight sides and {n} " +
+                             "corners. Name its category.",
+                        1 => $"On dot paper, connect {n} corners with {n} straight " +
+                             "edges into a closed figure. Name the polygon.",
+                        2 => $"A shape card has {n} straight edges; its shape " +
+                             $"has exactly {n} vertices. Which polygon card is it?",
+                        _ => $"Rotate a polygon with {n} sides so it points " +
+                             $"in a new direction. It still has {n} corners. " +
+                             "What is its shape category?"
+                    } + " (triangle, quadrilateral, pentagon or hexagon)",
                     "A triangle has 3 sides, a quadrilateral 4, a pentagon 5, " +
                     "and a hexagon 6. Orientation and side lengths do not change the category.",
                     AssessmentItemType.ShortAnswer, D(("sides",n),("variant",m)));
@@ -702,7 +711,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g1.check_off_add_within10" =>
                 Range("first",0,5) && Range("second",0,5),
             "usccss.b01.shape.polygon_sides" =>
-                Range("sides",3,6) && Range("variant",0,1),
+                Range("sides",3,6) && Range("variant",0,3),
             "usccss.b01.shape.specific_subcategory" =>
                 Range("subcategory",0,3) && Range("variant",0,2),
             "usccss.b01.area.missing_composite_side" =>
