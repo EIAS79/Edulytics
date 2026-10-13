@@ -28,7 +28,7 @@ FULL_RE = re.compile(r"/k5/teachers/grade-[1-4]/unit-\d+/lesson-\d+/lesson\.html
 # lesson; teacher-side narrative can mention an optional representation.
 CUES = (
     ("DOT_IMAGES", r"\bdot (?:images?|cards?|cubes?|pictures?)\b", ("PlaceValueChart", "TenFrame")),
-    ("NUMBER_LINE", r"\bnumber line\b|\bline plots?\b", ("NumberLine", "Scale")),
+    ("NUMBER_LINE", r"\bnumber line\b|\bline plots?\b", ("NumberLine", "Scale", "LinePlot")),
     ("FRACTION_PARTS", r"\bfraction (?:bars?|strips?|models?)\b|\bshaded parts?\b",
      ("FractionBars", "ShapeDecomposition")),
     ("CLOCK_FACE", r"\bclock (?:face|hands?)\b|\banalog clock\b", ("ClockFace",)),
