@@ -6488,6 +6488,42 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.fraction.tenths_hundredths_within_one",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "b01-fraction-tenths-hundredths-structured-independent-oracle-v1",
+      "representations": [
+        "fraction_bar_hundredths",
+        "sum_at_most_one"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.fraction.tenths_hundredths_over_one",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "b01-fraction-tenths-hundredths-structured-independent-oracle-v1",
+      "representations": [
+        "fraction_bar_hundredths",
+        "sum_greater_than_one"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
