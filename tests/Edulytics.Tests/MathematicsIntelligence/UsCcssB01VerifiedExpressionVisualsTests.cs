@@ -62,5 +62,9 @@ public sealed class UsCcssB01VerifiedExpressionVisualsTests
             "PED:CAMBRIDGE-INTL-MATH:S1:U01:L02", example));
         Assert.Empty(UsCcssB01VerifiedExpressionVisuals.Build(
             "PED:US-CCSS-MATH:G8:U01:L02", example));
+        Assert.Empty(UsCcssB01VerifiedExpressionVisuals.Build(
+            "PED:US-CCSS-MATH:G4:U04:L21", example));
+        Assert.Empty(UsCcssB01VerifiedExpressionVisuals.Build(
+            "PED:US-CCSS-MATH:G4:U05:L01", example));
     }
 }
