@@ -66,6 +66,23 @@ public sealed class LessonPracticeInteractionRegistryTests
     }
 
     [Theory]
+    [InlineData("usccss.b01.g3.add_within1000")]
+    [InlineData("usccss.b01.g3.add_regroup1000")]
+    [InlineData("usccss.b01.g3.subtract_within1000")]
+    [InlineData("usccss.b01.g3.subtract_regroup1000")]
+    [InlineData("usccss.b01.g3.subtract_across_zero")]
+    public void Grade3SourceThreeDigitAlgorithmsUseIntegerKeypadAndPlaceValueVisual(
+        string family)
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad,contract!.InteractionKind);
+        Assert.Equal("exact_integer",contract.AnswerType);
+        Assert.True(contract.HasVisualRepresentation);
+        Assert.Contains("hundreds_tens_ones_place_value_chart",contract.Representations);
+    }
+
+    [Theory]
     [InlineData(
         "fractions.compare.unlike.common_denominator",
         LessonPracticeInteractionKind.RelationChoice)]
