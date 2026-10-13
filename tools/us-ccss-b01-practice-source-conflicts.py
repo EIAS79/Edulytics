@@ -36,6 +36,9 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G2:U06:L01": "usccss.b01.shape.polygon_sides",
+    "PED:US-CCSS-MATH:G3:U07:L02": "usccss.b01.shape.specific_subcategory",
+    "PED:US-CCSS-MATH:G3:U02:L14": "usccss.b01.area.missing_composite_side",
     # Official IM G1 U01 L02: dot pictures, missing dots and Check It Off.
     "PED:US-CCSS-MATH:G1:U01:L02": [
         "usccss.b01.g1.match_dot_cubes_expression",
