@@ -12,6 +12,20 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // IM teacher G3 U07 L11: same perimeter, unequal areas.
+        // IM teacher G3 U07 L12: same area, unequal perimeters.
+        new(
+            "PED:US-CCSS-MATH:G3:U07:L11",
+            "supporting.geometry.area_volume", "SAME_PERIMETER_DIFFERENT_AREA",
+            ["usccss.b01.g3.same_perimeter_different_area"],
+            "IM2021_G3_U07_L11_SAME_PERIMETER_DIFFERENT_AREA",
+            "READY_VERIFIED", "usccss-b01-dual-rectangle-proof-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U07:L12",
+            "supporting.geometry.area_volume", "SAME_AREA_DIFFERENT_PERIMETER",
+            ["usccss.b01.g3.same_area_different_perimeter"],
+            "IM2021_G3_U07_L12_SAME_AREA_DIFFERENT_PERIMETER",
+            "READY_VERIFIED", "usccss-b01-dual-rectangle-proof-v1"),
         // Original Grade 2 U01 L15-L16 ask for all three compare unknowns:
         // longer quantity, shorter quantity, or the difference.
         new(

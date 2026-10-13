@@ -304,8 +304,11 @@
             out var parsedWidth) ? Math.Clamp(parsedWidth, 1, 100) : 1;
         var measureUnit=Model.SecondaryLabel is "m" or "ft"
             ? Model.SecondaryLabel : "units";
-        var diagramScale = Math.Min(152.0 / rectangleLength,
-            100.0 / rectangleWidth);
+        // Both comparative rectangles use precisely 12 pixels per unit.
+        // Independently fitting each would misrepresent their relative sizes.
+        var diagramScale = Model.SecondaryLabel=="fixed-comparison-scale"
+            ? 12.0
+            : Math.Min(152.0 / rectangleLength,100.0 / rectangleWidth);
         var diagramW = (rectangleLength * diagramScale)
             .ToString(System.Globalization.CultureInfo.InvariantCulture);
         var diagramH = (rectangleWidth * diagramScale)

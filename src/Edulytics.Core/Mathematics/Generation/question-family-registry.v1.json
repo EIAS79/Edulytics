@@ -6855,6 +6855,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g3.same_perimeter_different_area",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-equal-perimeter-different-area-math-v1",
+      "representations": [
+        "equal_scale_dual_rectangle_diagrams",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.g3.same_area_different_perimeter",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-equal-area-different-perimeter-math-v1",
+      "representations": [
+        "equal_scale_dual_rectangle_diagrams",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.geometry.rectangle_area_ungridded",
       "version": 1,
       "skillId": "supporting.geometry.area_volume",

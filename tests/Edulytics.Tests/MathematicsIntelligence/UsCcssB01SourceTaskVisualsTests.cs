@@ -973,6 +973,55 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G3:U07:L11",
+        "usccss.b01.g3.same_perimeter_different_area",true)]
+    [InlineData("PED:US-CCSS-MATH:G3:U07:L12",
+        "usccss.b01.g3.same_area_different_perimeter",false)]
+    public void OriginalRectanglesWithEqualPerimeterOrAreaHaveProportionalVisualProof(
+        string code,string family,bool samePerimeter)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=710011;seed<710045;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            int aw=p["widthA"],ah=p["heightA"],bw=p["widthB"],bh=p["heightB"];
+            int areaA=aw*ah,areaB=bw*bh;
+            int perimeterA=2*(aw+ah),perimeterB=2*(bw+bh);
+            if(samePerimeter)
+            {
+                Assert.Equal(perimeterA,perimeterB);
+                Assert.NotEqual(areaA,areaB);
+                Assert.Equal(areaB-areaA,int.Parse(q.CorrectAnswer));
+            }
+            else
+            {
+                Assert.Equal(areaA,areaB);
+                Assert.NotEqual(perimeterA,perimeterB);
+                Assert.Equal(perimeterA-perimeterB,
+                    int.Parse(q.CorrectAnswer));
+            }
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var visuals=UsCcssB01SourceTaskVisuals.Build(code,[q]);
+            Assert.Equal(2,visuals.Count);
+            Assert.All(visuals,v=>
+            {
+                Assert.Equal(RichLessonVisualKind.RectangleDiagram,v.Kind);
+                Assert.Equal("fixed-comparison-scale",v.SecondaryLabel);
+                Assert.Contains(q.CorrectAnswer,v.Description);
+            });
+            Assert.Equal(new[]{aw,ah},visuals[0].Items.Select(int.Parse));
+            Assert.Equal(new[]{bw,bh},visuals[1].Items.Select(int.Parse));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="99999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G4:U07:L11",[q]));
+        }
+    }
+
     [Fact]
     public void GriddedGrade3RectangleHasTheExactUnitSquareCountAtMostSixty()
     {

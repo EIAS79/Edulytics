@@ -846,6 +846,24 @@ public static class UsCcssB01SourceTaskVisuals
                         SecondaryLabel=N("unitMode")==0?"m":"ft",
                         Items=[N("length").ToString(),N("width").ToString()]
                     },
+                "usccss.b01.g3.same_perimeter_different_area" or "usccss.b01.g3.same_area_different_perimeter" when
+                    ((lessonCode=="PED:US-CCSS-MATH:G3:U07:L11" &&
+                        q.Family=="usccss.b01.g3.same_perimeter_different_area") ||
+                     (lessonCode=="PED:US-CCSS-MATH:G3:U07:L12" &&
+                        q.Family=="usccss.b01.g3.same_area_different_perimeter")) &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.RectangleDiagram,
+                        Title="Rectangle A: area and perimeter",
+                        Description=$"Rectangle A is {N("widthA")} by {N("heightA")}; " +
+                            $"area {N("widthA")*N("heightA")} square units, " +
+                            $"perimeter {2*(N("widthA")+N("heightA"))}. " +
+                            $"The requested verified difference is {q.CorrectAnswer}.",
+                        SecondaryLabel="fixed-comparison-scale",
+                        Items=[N("widthA").ToString(),N("heightA").ToString()]
+                    },
                 "usccss.b01.geometry.rectangle_area_ungridded" when
                     N("length")>0 && N("width")>0 &&
                     q.CorrectAnswer==(N("length")*N("width")).ToString() =>
@@ -907,6 +925,24 @@ public static class UsCcssB01SourceTaskVisuals
                 _ => null
             };
             if (item is not null) visual.Add(item);
+            // The source comparison has TWO different actual rectangles,
+            // both with the SAME fixed pixel/unit scale in the student view.
+            if (item is not null &&
+                (q.Family is "usccss.b01.g3.same_perimeter_different_area" or "usccss.b01.g3.same_area_different_perimeter") &&
+                item.SecondaryLabel=="fixed-comparison-scale")
+            {
+                visual.Add(new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.RectangleDiagram,
+                    Title="Rectangle B: area and perimeter",
+                    Description=$"Rectangle B is {N("widthB")} by {N("heightB")}; " +
+                        $"area {N("widthB")*N("heightB")} square units, " +
+                        $"perimeter {2*(N("widthB")+N("heightB"))}. " +
+                        $"Compare with rectangle A: answer {q.CorrectAnswer}.",
+                    SecondaryLabel="fixed-comparison-scale",
+                    Items=[N("widthB").ToString(),N("heightB").ToString()]
+                });
+            }
             // Keep the page focused: only one task-scoped visual per lesson;
             // the ordinary QuestionForms diagram remains available afterward.
             if (visual.Count >= 1) break;

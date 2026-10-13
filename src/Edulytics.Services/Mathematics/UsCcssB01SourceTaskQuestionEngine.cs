@@ -59,6 +59,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.geometry.composite_rectangle_area",
         "usccss.b01.geometry.rectangle_area_grid60",
         "usccss.b01.geometry.rectangle_area_ungridded",
+        "usccss.b01.g3.same_perimeter_different_area",
+        "usccss.b01.g3.same_area_different_perimeter",
         "usccss.b01.geometry.rectangle_area_real_world_units",
         "usccss.b01.division.unknown_factor",
         "usccss.b01.fraction.tenths_hundredths_within_one",
@@ -1017,6 +1019,37 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     D(("length",a),("width",b),("unitMode",m)));
             }
 
+            // IM 2021 G3 U07 L11: equal perimeter does NOT force equal area.
+            case "usccss.b01.g3.same_perimeter_different_area":
+            {
+                var sideSum=r.Next(7,12);
+                a=2;b=sideSum-2;n=3;m=sideSum-3;
+                return Make(f,
+                    $"Rectangle A has width {a} and height {b}. Rectangle B " +
+                    $"has width {n} and height {m}. Their perimeters are equal. " +
+                    "How many more square units does rectangle B cover?",
+                    "Both perimeters equal twice the sum of adjacent sides. " +
+                    "Their areas differ: multiply length by width separately.",
+                    AssessmentItemType.Numeric,
+                    D(("widthA",a),("heightA",b),("widthB",n),("heightB",m),
+                      ("expected",n*m-a*b)));
+            }
+            // IM 2021 G3 U07 L12: equal area does NOT force equal perimeter.
+            case "usccss.b01.g3.same_area_different_perimeter":
+            {
+                var t=r.Next(2,5);
+                a=2;b=3*t;n=3;m=2*t;
+                return Make(f,
+                    $"Rectangle A has width {a} and height {b}. Rectangle B " +
+                    $"has width {n} and height {m}. Their areas are equal. " +
+                    "By how many units is perimeter A greater than perimeter B?",
+                    "The same number of unit squares can have a different " +
+                    "boundary length. Calculate each perimeter independently.",
+                    AssessmentItemType.Numeric,
+                    D(("widthA",a),("heightA",b),("widthB",n),("heightB",m),
+                      ("expected",2*(a+b-n-m))));
+            }
+
             case "usccss.b01.geometry.rectangle_area_ungridded":
                 a = r.Next(2,11);b = r.Next(2,11);
                 return Make(f,
@@ -1328,6 +1361,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.geometry.rectangle_area_grid60" =>
                 (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.rectangle_area_real_world_units" or
+            "usccss.b01.g3.same_perimeter_different_area" or "usccss.b01.g3.same_area_different_perimeter" =>
+                P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.rectangle_area_ungridded" =>
                 (P("length")*P("width")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.composite_rectangle_area" =>
@@ -1624,6 +1659,24 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.geometry.rectangle_area_real_world_units" =>
                 Range("length",3,10) && Range("width",2,9) &&
                 Range("unitMode",0,1),
+            "usccss.b01.g3.same_perimeter_different_area" =>
+                Range("widthA",2,2) && Range("widthB",3,3) &&
+                Range("heightA",5,9) && Range("heightB",4,8) &&
+                Range("expected",2,6) &&
+                N("widthA")+N("heightA")==N("widthB")+N("heightB") &&
+                N("widthB")*N("heightB")>N("widthA")*N("heightA") &&
+                N("expected")==N("widthB")*N("heightB")-
+                    N("widthA")*N("heightA"),
+            "usccss.b01.g3.same_area_different_perimeter" =>
+                Range("widthA",2,2) && Range("widthB",3,3) &&
+                Range("heightA",6,12) && Range("heightB",4,8) &&
+                N("heightA")%3==0 && N("heightB")%2==0 &&
+                Range("expected",2,6) &&
+                N("widthA")*N("heightA")==N("widthB")*N("heightB") &&
+                2*(N("widthA")+N("heightA"))>
+                    2*(N("widthB")+N("heightB")) &&
+                N("expected")==2*(N("widthA")+N("heightA")-
+                    N("widthB")-N("heightB")),
             "usccss.b01.geometry.rectangle_area_ungridded" =>
                 Range("length",2,10) && Range("width",2,10),
             "usccss.b01.geometry.composite_rectangle_area" =>
