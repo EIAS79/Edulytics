@@ -1,5 +1,6 @@
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Lessons;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.LessonContent;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -67,4 +68,51 @@ public sealed class UsCcssB01VerifiedExpressionVisualsTests
         Assert.Empty(UsCcssB01VerifiedExpressionVisuals.Build(
             "PED:US-CCSS-MATH:G4:U05:L01", example));
     }
+
+    [Fact]
+    public void PlaceValueContractUsesActualWorkedExampleDigitsWithoutGuessing()
+    {
+        var contract = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G2:U01:L10", "supporting.number.place_value_rounding",
+            "PLACE_VALUE", ["supporting.number.place_value"], "IM2021",
+            "READY_VERIFIED", "test");
+        var visual = Assert.Single(UsCcssB01VerifiedExpressionVisuals.Build(
+            contract.LessonCode, Body("Example: represent 243 using base ten blocks."),
+            contract));
+        Assert.Equal(RichLessonVisualKind.PlaceValueChart, visual.Kind);
+        Assert.Equal(3, visual.Rows.Count);
+        Assert.Equal(new[] { "Hundreds", "Tens", "Ones" },
+            visual.Rows.Select(x => x.Label).ToArray());
+        Assert.Equal(new[] { "200", "40", "3" },
+            visual.Rows.Select(x => x.Cells[1]).ToArray());
+    }
+
+    [Fact]
+    public void FractionContractUsesExactSourceFractionAndRejectsImproperBars()
+    {
+        var contract = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G3:U05:L03", "fractions.equivalent",
+            "FRACTION_EQUIVALENT", ["fractions.equivalent.recognize"], "IM2021",
+            "READY_VERIFIED", "test");
+        var ok = Assert.Single(UsCcssB01VerifiedExpressionVisuals.Build(
+            contract.LessonCode, Body(@"Show \frac{3}{4} of one whole."), contract));
+        Assert.Equal(RichLessonVisualKind.FractionBars, ok.Kind);
+        Assert.Equal(3, ok.Rows[0].Numerator);
+        Assert.Equal(4, ok.Rows[0].Denominator);
+        Assert.Empty(UsCcssB01VerifiedExpressionVisuals.Build(
+            contract.LessonCode, Body(@"Show \frac{7}{4} of one whole."), contract));
+    }
+
+    [Fact]
+    public void SourceNumbersAreNotConvertedIntoWrongDomainDiagrams()
+    {
+        var nonPlaceContract = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G2:U01:L10", "supporting.statistics.charts",
+            "CHARTS_TABLES", ["supporting.statistics.table_total"], "IM2021",
+            "READY_VERIFIED", "test");
+        Assert.Empty(UsCcssB01VerifiedExpressionVisuals.Build(
+            nonPlaceContract.LessonCode,
+            Body("Example: 243 votes are recorded."), nonPlaceContract));
+    }
+
 }
