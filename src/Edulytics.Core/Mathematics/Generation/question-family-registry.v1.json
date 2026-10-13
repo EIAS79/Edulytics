@@ -6093,6 +6093,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g4.factor_pairs_two_rectangles",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-g4-different-factor-pairs-one-area-independent-product-v1",
+      "representations": [
+        "same_scale_rectangles_factor_pairs",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.factors.factor_pairs",
       "version": 1,
       "skillId": "supporting.number.factors_primes",

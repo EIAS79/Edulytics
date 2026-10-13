@@ -864,6 +864,20 @@ public static class UsCcssB01SourceTaskVisuals
                         SecondaryLabel="fixed-comparison-scale",
                         Items=[N("widthA").ToString(),N("heightA").ToString()]
                     },
+                "usccss.b01.g4.factor_pairs_two_rectangles" when
+                    lessonCode=="PED:US-CCSS-MATH:G4:U01:L02" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.RectangleDiagram,
+                        Title="Factor pair A: build a rectangle",
+                        Description=$"Factor pair {N("widthA")}×{N("heightA")} " +
+                            $"makes {N("area")} unit squares. " +
+                            "The next rectangle uses a different factor pair.",
+                        SecondaryLabel="fixed-comparison-scale",
+                        Items=[N("widthA").ToString(),N("heightA").ToString()]
+                    },
                 "usccss.b01.geometry.rectangle_area_ungridded" when
                     N("length")>0 && N("width")>0 &&
                     q.CorrectAnswer==(N("length")*N("width")).ToString() =>
@@ -928,13 +942,17 @@ public static class UsCcssB01SourceTaskVisuals
             // The source comparison has TWO different actual rectangles,
             // both with the SAME fixed pixel/unit scale in the student view.
             if (item is not null &&
-                (q.Family is "usccss.b01.g3.same_perimeter_different_area" or "usccss.b01.g3.same_area_different_perimeter") &&
+                (q.Family is "usccss.b01.g3.same_perimeter_different_area" or
+                    "usccss.b01.g3.same_area_different_perimeter" or
+                    "usccss.b01.g4.factor_pairs_two_rectangles") &&
                 item.SecondaryLabel=="fixed-comparison-scale")
             {
                 visual.Add(new RichLessonVisual
                 {
                     Kind=RichLessonVisualKind.RectangleDiagram,
-                    Title="Rectangle B: area and perimeter",
+                    Title=q.Family=="usccss.b01.g4.factor_pairs_two_rectangles"
+                        ?"Factor pair B: a different rectangle with the same area"
+                        :"Rectangle B: area and perimeter",
                     Description=$"Rectangle B is {N("widthB")} by {N("heightB")}; " +
                         $"area {N("widthB")*N("heightB")} square units, " +
                         $"perimeter {2*(N("widthB")+N("heightB"))}. " +

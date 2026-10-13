@@ -69,6 +69,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.fraction.unit_parts",
         "usccss.b01.measure.quarter_inch",
         "usccss.b01.factors.factor_pairs",
+        "usccss.b01.g4.factor_pairs_two_rectangles",
         "usccss.b01.factors.prime_composite",
         "usccss.b01.factors.locker_square",
         "usccss.b01.factors.factors_multiples",
@@ -1141,6 +1142,34 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "Count whole inches as 4 quarter-inch parts each, then add the remaining parts.",
                     AssessmentItemType.ShortAnswer, D(("quarters", n), ("wholeInches", a)));
 
+            // IM Grade 4 U01 L02: MULTIPLE different factor pairs for
+            // the same numerical area, shown by different rectangles.
+            case "usccss.b01.g4.factor_pairs_two_rectangles":
+            {
+                var pairs=(
+                    from area in Enumerable.Range(12,61)
+                    from wa in Enumerable.Range(2,11)
+                    from wb in Enumerable.Range(2,11)
+                    where wa<wb && area%wa==0 && area%wb==0
+                    let ha=area/wa
+                    let hb=area/wb
+                    where wa<=ha && wb<=hb && ha<=12 && hb<=12
+                    select (wa,ha,wb,hb,area)).ToArray();
+                var chosen=pairs[r.Next(pairs.Length)];
+                return Make(f,
+                    $"A rectangle of {chosen.wa} by {chosen.ha} square tiles " +
+                    $"has area {chosen.area}. Construct a DIFFERENT rectangle " +
+                    $"with the SAME area and width {chosen.wb}. " +
+                    "What is its height in unit tiles?",
+                    "A pair of side lengths is a factor pair when their " +
+                    "product equals the number of unit squares. " +
+                    "The two different factor pairs must multiply to the same area.",
+                    AssessmentItemType.Numeric,
+                    D(("widthA",chosen.wa),("heightA",chosen.ha),
+                      ("widthB",chosen.wb),("heightB",chosen.hb),
+                      ("area",chosen.area)));
+            }
+
             case "usccss.b01.factors.factor_pairs":
                 a = r.Next(2, 9); b = r.Next(2, 10);
                 return Make(f,
@@ -1390,6 +1419,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 $"{P("numerator")}/{P("denominator")}",
             "usccss.b01.measure.quarter_inch" =>
                 $"{P("wholeInches") * 4 + P("quarters")}/4",
+            "usccss.b01.g4.factor_pairs_two_rectangles" =>
+                P("heightB").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.factors.factor_pairs" =>
                 P("secondFactor").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.factors.prime_composite" =>
@@ -1714,6 +1745,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("numerator",1,N("denominator")-1),
             "usccss.b01.measure.quarter_inch" =>
                 Range("quarters",1,3) && Range("wholeInches",0,3),
+            "usccss.b01.g4.factor_pairs_two_rectangles" =>
+                Range("widthA",2,12) && Range("heightA",2,12) &&
+                Range("widthB",2,12) && Range("heightB",2,12) &&
+                Range("area",12,72) && N("widthA")<N("widthB") &&
+                N("widthA")<=N("heightA") &&
+                N("widthB")<=N("heightB") &&
+                N("widthA")*N("heightA")==N("area") &&
+                N("widthB")*N("heightB")==N("area"),
             "usccss.b01.factors.factor_pairs" =>
                 Range("firstFactor",2,8) && Range("secondFactor",2,9),
             "usccss.b01.factors.prime_composite" => Range("number",2,100),

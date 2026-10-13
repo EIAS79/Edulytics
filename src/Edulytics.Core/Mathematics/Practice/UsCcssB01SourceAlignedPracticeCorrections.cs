@@ -420,12 +420,15 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.measure.quarter_inch"],
             "IM2021_G3_U06_L02_RULER_FOURTHS_OF_INCH_PURPOSE_CHECKED",
             "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        // Original IM G4 U01 L02: discover DIFFERENT factor pairs
+        // by composing multiple rectangles with the SAME area.
         new(
             "PED:US-CCSS-MATH:G4:U01:L02",
-            "supporting.number.factors_primes", "RECTANGULAR_FACTOR_PAIRS",
-            ["usccss.b01.factors.factor_pairs"],
-            "IM2021_G4_U01_L02_RECTANGULAR_FACTOR_PAIRS_PURPOSE_CHECKED",
-            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+            "supporting.number.factors_primes",
+            "DIFFERENT_RECTANGLES_EQUAL_AREA_FACTOR_PAIRS",
+            ["usccss.b01.g4.factor_pairs_two_rectangles"],
+            "IM2021_G4_U01_L02_BUILD_RECTANGLES_TO_FIND_FACTOR_PAIRS",
+            "READY_VERIFIED", "usccss-b01-g4-factor-rectangles-v1"),
         new(
             "PED:US-CCSS-MATH:G4:U01:L03",
             "supporting.number.factors_primes", "PRIME_VS_COMPOSITE",

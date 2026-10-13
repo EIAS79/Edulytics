@@ -1023,6 +1023,44 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void GradeFourFactorPairsComposeTwoDifferentSameAreaRectangles()
+    {
+        const string code="PED:US-CCSS-MATH:G4:U01:L02";
+        const string family="usccss.b01.g4.factor_pairs_two_rectangles";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var seen=new HashSet<string>();
+        for(var seed=850010;seed<850100;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            int aw=p["widthA"],ah=p["heightA"];
+            int bw=p["widthB"],bh=p["heightB"];
+            int area=p["area"];
+            Assert.Equal(area,aw*ah);
+            Assert.Equal(area,bw*bh);
+            Assert.True(aw<bw);
+            Assert.Equal(bh,int.Parse(q.CorrectAnswer));
+            seen.Add($"{aw}:{ah}:{bw}:{bh}");
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var visual=UsCcssB01SourceTaskVisuals.Build(code,[q]);
+            Assert.Equal(2,visual.Count);
+            Assert.All(visual,v=>
+            {
+                Assert.Equal(RichLessonVisualKind.RectangleDiagram,v.Kind);
+                Assert.Equal("fixed-comparison-scale",v.SecondaryLabel);
+            });
+            Assert.Equal(new[]{aw,ah},visual[0].Items.Select(int.Parse));
+            Assert.Equal(new[]{bw,bh},visual[1].Items.Select(int.Parse));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="9999"}]));
+        }
+        Assert.True(seen.Count>=10,
+            $"Factor pair variety only {seen.Count}; 10 distinct examples required.");
+    }
+
+    [Fact]
     public void GriddedGrade3RectangleHasTheExactUnitSquareCountAtMostSixty()
     {
         const string lesson="PED:US-CCSS-MATH:G3:U02:L04";

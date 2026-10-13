@@ -36,6 +36,7 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G4:U01:L02": "usccss.b01.g4.factor_pairs_two_rectangles",
     "PED:US-CCSS-MATH:G3:U07:L11": "usccss.b01.g3.same_perimeter_different_area",
     "PED:US-CCSS-MATH:G3:U07:L12": "usccss.b01.g3.same_area_different_perimeter",
     "PED:US-CCSS-MATH:G2:U06:L06": "usccss.b01.g2.compose_equal_square_shapes",
