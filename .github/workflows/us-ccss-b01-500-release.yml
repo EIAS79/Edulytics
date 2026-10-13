@@ -29,6 +29,7 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceAlignedPracticeCorrectionTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskQuestionEngineTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceDotMatchingActivitiesTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceDotCardsContentCorrectionTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskVisualsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPracticeVisualsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CategoricalGraphVisualsTests.cs'
@@ -91,7 +92,7 @@ jobs:
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - name: Validate effective learner content, Rich V2 quality and real question generation over all 500
         run: |
-          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests' --logger 'console;verbosity=normal'
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceDotCardsContentCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests' --logger 'console;verbosity=normal'
       - name: Retain 500-row effective content and practice runtime evidence
         if: always()
         uses: actions/upload-artifact@v4
