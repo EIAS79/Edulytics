@@ -36,6 +36,7 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G2:U05:L09": "usccss.b01.g2.order_three_digits_number_line",
     "PED:US-CCSS-MATH:G4:U03:L10": "usccss.b01.g4.whole_minus_proper_fraction",
     "PED:US-CCSS-MATH:G1:U04:L17": "usccss.b01.g1.compare_order_tens_ones",
     "PED:US-CCSS-MATH:G2:U02:L01": "usccss.b01.g2.add_subtract_without_regroup",
