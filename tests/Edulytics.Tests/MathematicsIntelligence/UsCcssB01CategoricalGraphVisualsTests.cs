@@ -52,6 +52,53 @@ public sealed class UsCcssB01CategoricalGraphVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G2:U01:L10", "supporting.statistics.charts.mixed")]
+    [InlineData("PED:US-CCSS-MATH:G2:U01:L10", "supporting.statistics.table_total")]
+    public void SourceGrade2Unit1Lesson10GraphsDisplayTrueCategoricalCounts(
+        string lesson,string family)
+    {
+        for (var seed=881110;seed<881114;seed++)
+        {
+            var question=Generate(lesson,family,seed);
+            var graph=Assert.Single(UsCcssB01CategoricalGraphVisuals.Build(lesson,[question]));
+            Assert.Equal(RichLessonVisualKind.BarGraph,graph.Kind);
+            var counts=graph.Rows.Select(row=>int.Parse(Assert.Single(row.Cells))).ToArray();
+            Assert.Equal(4,counts.Length);
+            Assert.Equal(question.Parameters["f1"],counts[0]);
+            Assert.Equal(question.Parameters["f2"],counts[1]);
+            Assert.Equal(question.Parameters["f3"],counts[2]);
+            Assert.Equal(question.Parameters["f4"],counts[3]);
+            Assert.Equal(int.Parse(question.CorrectAnswer),counts.Sum());
+        }
+    }
+
+    [Fact]
+    public void SourceGrade2Unit1Lesson11GraphsServeTotalsAndComparisons()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U01:L11";
+        for (var seed=881200;seed<881205;seed++)
+        {
+            var totalQuestion=Generate(code,"supporting.statistics.category_total",seed);
+            var totalGraph=Assert.Single(UsCcssB01CategoricalGraphVisuals.Build(code,[totalQuestion]));
+            Assert.Equal(RichLessonVisualKind.BarGraph,totalGraph.Kind);
+            var counts=totalGraph.Rows.Select(row=>int.Parse(Assert.Single(row.Cells))).ToArray();
+            Assert.Equal(new[]{totalQuestion.Parameters["a"],totalQuestion.Parameters["b"],
+                totalQuestion.Parameters["c"]},counts);
+            Assert.Equal(int.Parse(totalQuestion.CorrectAnswer),counts.Sum());
+
+            var comparison=Generate(code,"supporting.statistics.compare_category_counts",seed+101);
+            var comparisonGraph=Assert.Single(UsCcssB01CategoricalGraphVisuals.Build(code,[comparison]));
+            Assert.Equal(RichLessonVisualKind.BarGraph,comparisonGraph.Kind);
+            var pair=comparisonGraph.Rows.Select(row=>int.Parse(Assert.Single(row.Cells))).ToArray();
+            Assert.Equal(new[]{comparison.Parameters["a"],comparison.Parameters["b"]},pair);
+            Assert.Equal(int.Parse(comparison.CorrectAnswer),Math.Abs(pair[0]-pair[1]));
+            Assert.Contains("difference",comparisonGraph.Description,StringComparison.OrdinalIgnoreCase);
+            Assert.Empty(UsCcssB01CategoricalGraphVisuals.Build(code,
+                [comparison with {CorrectAnswer="9999"}]));
+        }
+    }
+
     [Fact]
     public void WrongQuestionAnswerOrNonGraphLessonCannotProduceMisleadingChart()
     {
