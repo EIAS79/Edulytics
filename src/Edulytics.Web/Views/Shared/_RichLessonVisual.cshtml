@@ -287,6 +287,8 @@
             out var parsedLength) ? Math.Clamp(parsedLength, 1, 100) : 1;
         var rectangleWidth = int.TryParse(Model.Items.ElementAtOrDefault(1),
             out var parsedWidth) ? Math.Clamp(parsedWidth, 1, 100) : 1;
+        var measureUnit=Model.SecondaryLabel is "m" or "ft"
+            ? Model.SecondaryLabel : "units";
         var diagramScale = Math.Min(152.0 / rectangleLength,
             100.0 / rectangleWidth);
         var diagramW = (rectangleLength * diagramScale)
@@ -304,9 +306,9 @@
                       height="@diagramH" fill="none"
                       stroke="currentColor" stroke-width="3" />
                 <text x="110" y="185" text-anchor="middle"
-                      fill="currentColor">@rectangleLength units long</text>
+                      fill="currentColor">@($"{rectangleLength} {measureUnit} long")</text>
                 <text x="110" y="22" text-anchor="middle"
-                      fill="currentColor">@rectangleWidth units wide</text>
+                      fill="currentColor">@($"{rectangleWidth} {measureUnit} wide")</text>
             </svg>
         </div>
     }
