@@ -17,11 +17,17 @@ public sealed class UsCcssB01SourceAlignedPracticeCorrectionTests
             ["PED:US-CCSS-MATH:G2:U05:L01"] =
                 ["supporting.number.place_value"],
             ["PED:US-CCSS-MATH:G2:U05:L05"] =
-                ["supporting.number.place_value"]
+                ["supporting.number.place_value"],
+            ["PED:US-CCSS-MATH:G1:U06:L07"] =
+                ["supporting.measurement.unit_iteration"],
+            ["PED:US-CCSS-MATH:G1:U07:L14"] =
+                ["supporting.measurement.clock_half_hour"],
+            ["PED:US-CCSS-MATH:G3:U08:L10"] =
+                ["supporting.number.multiply", "supporting.number.divide"]
         };
 
     [Fact]
-    public void FourSourceMatchedLessonContractsDoNotGenerateLegacyWrongTopic()
+    public void SevenSourceMatchedLessonContractsDoNotGenerateLegacyWrongTopic()
     {
         foreach (var (code, families) in Expected)
         {
@@ -73,7 +79,7 @@ public sealed class UsCcssB01SourceAlignedPracticeCorrectionTests
                         wrongNumericRejected++;
                     }
                 }
-        Assert.Equal(15,generated);
+        Assert.Equal(27,generated);
         Assert.True(wrongNumericRejected>0);
     }
 }
