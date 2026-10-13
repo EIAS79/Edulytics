@@ -1,6 +1,14 @@
 name: US CCSS Authenticated Academic Acceptance
 
 on:
+  push:
+    branches:
+      - audit/us-ccss-b01-500-lesson-certification
+    paths:
+      - '.github/workflows/us-ccss-authenticated-acceptance.yml'
+      - 'tools/Edulytics.CiFixtures/**'
+      - 'tools/phase29/acceptance_two_school_https.py'
+      - 'src/**'
   pull_request:
     paths:
       - '.github/workflows/us-ccss-authenticated-acceptance.yml'
