@@ -223,6 +223,30 @@ public static class UsCcssB01SourceTaskVisuals
                                     (N("expected")%10).ToString()]
                             }).ToList()
                     },
+                "usccss.b01.g4.whole_minus_proper_fraction" when
+                    lessonCode=="PED:US-CCSS-MATH:G4:U03:L10" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.FractionBars,
+                        Title="Subtract a fraction from complete wholes",
+                        Description=$"{N("whole")} wholes equal " +
+                            $"{N("whole")*N("denominator")}/{N("denominator")}. " +
+                            $"After removing {N("numerator")}/{N("denominator")}, " +
+                            $"the remaining amount is {q.CorrectAnswer}.",
+                        Rows=Enumerable.Range(0,N("whole"))
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=i==N("whole")-1
+                                    ?"Final whole minus the fractional amount"
+                                    :$"Whole {i+1}",
+                                Numerator=i==N("whole")-1
+                                    ?N("denominator")-N("numerator")
+                                    :N("denominator"),
+                                Denominator=N("denominator")
+                            }).ToList()
+                    },
                 "usccss.b01.g1.compare_order_tens_ones" when
                     lessonCode=="PED:US-CCSS-MATH:G1:U04:L17" &&
                     ExactSkillContractQuestionEngine.Verify(
