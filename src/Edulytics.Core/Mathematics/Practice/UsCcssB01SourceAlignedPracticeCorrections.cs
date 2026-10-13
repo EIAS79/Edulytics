@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Fifty-six lesson-code-exact B01 corrections independently checked against their
+/// Sixty lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -371,6 +371,30 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "supporting.statistics.charts", "SCALED_BAR_GRAPH_COMPARE",
             ["usccss.b01.graph.scaled_compare"],
             "IM2021_G3_U01_L07_SCALED_HOW_MANY_MORE_OR_FEWER_PURPOSE",
-            "READY_VERIFIED", "usccss-b01-source-scaled-graph-v1")
+            "READY_VERIFIED", "usccss-b01-source-scaled-graph-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L04",
+            "supporting.geometry.area_volume", "COUNT_TILES_AREA_UP_TO60",
+            ["usccss.b01.geometry.rectangle_area_grid60"],
+            "IM2021_G3_U02_L04_COUNT_TILES_AREA_UP_TO60_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-area-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L08",
+            "supporting.geometry.area_volume", "AREA_WITHOUT_GRID",
+            ["usccss.b01.geometry.rectangle_area_ungridded"],
+            "IM2021_G3_U02_L08_AREA_WITHOUT_GRID_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-area-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L12",
+            "supporting.geometry.area_volume", "DECOMPOSE_AREA_ADDITION",
+            ["usccss.b01.geometry.composite_rectangle_area"],
+            "IM2021_G3_U02_L12_DECOMPOSE_AREA_ADDITION_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-area-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L13",
+            "supporting.geometry.area_volume", "FIND_AREA_OF_COMPOSITE_RECTANGLES",
+            ["usccss.b01.geometry.composite_rectangle_area"],
+            "IM2021_G3_U02_L13_FIND_AREA_OF_COMPOSITE_RECTANGLES_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-area-v1")
     ];
 }
