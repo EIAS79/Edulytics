@@ -27,6 +27,10 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskVisualsTests.cs'
   workflow_dispatch:
 
+concurrency:
+  group: usccss-b01-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
