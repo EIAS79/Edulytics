@@ -18,6 +18,10 @@ public static class UsCcssB01FractionPracticeVisuals
 
         foreach (var q in questions)
         {
+            // Never paint a fraction from unverified or tampered question data.
+            if (!ExactSkillContractQuestionEngine.Verify(
+                    q.Family, q.Parameters, q.CorrectAnswer))
+                continue;
             var p = q.Parameters;
             bool Has(string key) => p.TryGetValue(key, out _);
             bool Complete(params string[] keys) => keys.All(Has);
