@@ -12,6 +12,34 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // Original IM teacher goals explicitly ask students to use a
+        // number line for equal-size/equivalent fractions. The prior generic
+        // missing-numerator contracts supplied no number-line representations.
+        // This is a source-scoped L4/L5 repair, not an L1-L6 certification.
+        new(
+            "PED:US-CCSS-MATH:G3:U05:L12",
+            "fractions.equivalent", "EQUIVALENT_FRACTIONS_ON_NUMBER_LINE",
+            ["fractions.equivalent.number_line"],
+            "IM2021_G3_U05_L12_DETERMINE_EQUIVALENCE_NUMBER_LINE",
+            "READY_VERIFIED", "usccss-b01-fraction-number-line-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U02:L04",
+            "fractions.equivalent", "EQUAL_SIZE_FRACTIONS_ON_NUMBER_LINE",
+            ["fractions.equivalent.number_line"],
+            "IM2021_G4_U02_L04_VISUAL_SAME_SIZE_AND_LOCATION",
+            "READY_VERIFIED", "usccss-b01-fraction-number-line-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U02:L05",
+            "fractions.equivalent", "EQUIVALENT_FRACTIONS_SAME_POINT",
+            ["fractions.equivalent.number_line"],
+            "IM2021_G4_U02_L05_SAME_POINT_EQUIVALENT_FRACTIONS",
+            "READY_VERIFIED", "usccss-b01-fraction-number-line-v1"),
+        new(
+            "PED:US-CCSS-MATH:G4:U02:L08",
+            "fractions.equivalent", "GENERATE_EQUIVALENTS_ON_NUMBER_LINE",
+            ["fractions.equivalent.number_line"],
+            "IM2021_G4_U02_L08_GENERATE_EQUIVALENTS_NUMBER_LINE",
+            "READY_VERIFIED", "usccss-b01-fraction-number-line-v1"),
         // Original IM Grade 3 Unit 3 teacher preparations checked for
         // addition/subtraction within 1,000 and the specific algorithms.
         // Lesson exactness prevents generic 0–40 arithmetic from replacing
