@@ -45,7 +45,10 @@ public static class UsCcssB01CategoricalGraphVisuals
             if (keys.Length == 0 || keys.Any(k=>!p.ContainsKey(k)))
                 continue;
             var values=keys.Select(k=>p[k]).ToArray();
-            if (values.Any(x=>x<=0 || x>50)) continue;
+            // Grade 3's official scaled graphs compare counts within 100.
+            // Other elementary category-total questions use smaller counts.
+            var limit = q.Family=="usccss.b01.graph.scaled_compare" ? 100 : 50;
+            if (values.Any(x=>x<=0 || x>limit)) continue;
             var total=values.Sum();
             // Total-frequency question must agree with the actual bar heights.
             if (q.Family=="usccss.b01.graph.scaled_compare")
