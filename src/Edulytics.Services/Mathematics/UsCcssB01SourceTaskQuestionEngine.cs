@@ -34,6 +34,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.array.unknown_factor",
         "usccss.b01.array.commutativity",
         "usccss.b01.geometry.composite_rectangle_area",
+        "usccss.b01.geometry.rectangle_area_grid60",
+        "usccss.b01.geometry.rectangle_area_ungridded",
         "usccss.b01.division.unknown_factor",
         "usccss.b01.fraction.name_parts",
         "usccss.b01.fraction.unit_parts",
@@ -304,6 +306,25 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "Rotate it a quarter-turn. How many rows does it have after rotation?",
                     $"A quarter-turn exchanges rows and columns: {a} × {b} = {b} × {a}.",
                     AssessmentItemType.Numeric, D(("rows", a), ("columns", b)));
+            // Publisher G3 U02 L04: count square tiles, area <= 60.
+            case "usccss.b01.geometry.rectangle_area_grid60":
+                a = r.Next(2,9);
+                b = r.Next(2,61/a);
+                return Make(f,
+                    $"A rectangle is tiled with {a} rows of {b} " +
+                    "equal unit squares and no gaps. How many square units is its area?",
+                    "One unit square in every grid cell; area = rows × columns.",
+                    AssessmentItemType.Numeric,D(("rows",a),("columns",b)));
+
+            // Publisher G3 U02 L08: area without full grid.
+            case "usccss.b01.geometry.rectangle_area_ungridded":
+                a = r.Next(2,11);b = r.Next(2,11);
+                return Make(f,
+                    $"An ungridded rectangle is {a} units long and " +
+                    $"{b} units wide. Find its area in square units.",
+                    "Rectangle area is length × width, even when no square grid is drawn.",
+                    AssessmentItemType.Numeric,D(("length",a),("width",b)));
+
             case "usccss.b01.geometry.composite_rectangle_area":
                 a = r.Next(2, 6); b = r.Next(2, 7); n = r.Next(1, 5);
                 return Make(f,
@@ -471,6 +492,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Math.Abs(P("countA")-P("countB")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.graph.choose_scale" =>
                 P("step").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.geometry.rectangle_area_grid60" =>
+                (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.geometry.rectangle_area_ungridded" =>
+                (P("length")*P("width")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.geometry.composite_rectangle_area" =>
                 (P("height") * (P("width1") + P("width2"))).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.division.unknown_factor" =>
@@ -576,6 +601,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.array.unknown_factor" or
             "usccss.b01.array.commutativity" =>
                 Range("rows",2,8) && Range("columns",2,9),
+            "usccss.b01.geometry.rectangle_area_grid60" =>
+                Range("rows",2,8) && Range("columns",2,30) &&
+                N("rows")*N("columns")<=60,
+            "usccss.b01.geometry.rectangle_area_ungridded" =>
+                Range("length",2,10) && Range("width",2,10),
             "usccss.b01.geometry.composite_rectangle_area" =>
                 Range("height",2,5) && Range("width1",2,6) &&
                 Range("width2",1,4),
