@@ -151,7 +151,8 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
-         SupportingPracticeCompletionEngine.Supports(family.Trim()));
+         SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
+         UsCcssB01SourceTaskQuestionEngine.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -299,6 +300,8 @@ public sealed class ExactSkillContractQuestionEngine
                 left + right <= 10 &&
                 int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var total) &&
                 total == left + right;
+        if (UsCcssB01SourceTaskQuestionEngine.Supports(family))
+            return UsCcssB01SourceTaskQuestionEngine.Verify(family, parameters, answer);
         if (SupportingPracticeCompletionEngine.Supports(family))
             return SupportingPracticeCompletionEngine.Verify(family, parameters, answer);
 
@@ -862,6 +865,12 @@ public sealed class ExactSkillContractQuestionEngine
             ExactSkillQuestionDifficulty.Challenge => 3,
             _ => 1
         };
+
+        if (UsCcssB01SourceTaskQuestionEngine.Supports(family))
+        {
+            var q = UsCcssB01SourceTaskQuestionEngine.Build(family, random, difficulty);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
 
         if (SupportingPracticeCompletionEngine.Supports(family))
         {
@@ -2654,6 +2663,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssB01SourceTaskQuestionEngine.Supports(problem.Family))
+            return UsCcssB01SourceTaskQuestionEngine.Solve(problem.Family, p);
         if (SupportingPracticeCompletionEngine.Supports(problem.Family))
             return SupportingPracticeCompletionEngine.Solve(problem.Family, p);
 
