@@ -10,6 +10,8 @@ on:
       - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
       - 'tools/us-ccss-b01-release-gate.cjs'
       - 'tools/us-ccss-b01-bulk-content-screen.cjs'
+      - 'src/**'
+      - 'tools/phase29/**'
       - 'tools/us-ccss-lesson-certification-records.cjs'
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
       - 'tests/academic-us-ccss-b01-bulk-content-screen.test.cjs'
@@ -45,7 +47,7 @@ jobs:
 
   release-all-500-only:
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
-    needs: [validate-b01-manifest-and-safety]
+    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
