@@ -446,6 +446,22 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "measurement.scale.read_equal_intervals", "LOCATE_LARGE_NUMBERS",
             ["usccss.b01.number_line.locate_large_numbers"],
             "IM2021_G4_U04_L11_LARGE_NUMBER_LINE_PURPOSE",
-            "READY_VERIFIED", "usccss-b01-publisher-number-line-v1")
+            "READY_VERIFIED", "usccss-b01-publisher-number-line-v1"),
+        // IM 2021 Grade 4 Unit 3 Lesson 16: express tenths in
+        // hundredths to add fractions, with a sum no greater than one.
+        new(
+            "PED:US-CCSS-MATH:G4:U03:L16",
+            "fractions.add_subtract", "EQUIVALENT_TENTHS_HUNDREDTHS_UP_TO_ONE",
+            ["usccss.b01.fraction.tenths_hundredths_within_one"],
+            "IM2021_G4_U03_L16_4NF_C5_TENTHS_HUNDREDTHS_UP_TO_ONE",
+            "READY_VERIFIED", "usccss-b01-source-fraction-tenths-v1"),
+        // IM 2021 Grade 4 Unit 3 Lesson 17 extends identical equivalence
+        // to sums strictly greater than one, including mixed whole/fraction.
+        new(
+            "PED:US-CCSS-MATH:G4:U03:L17",
+            "fractions.add_subtract", "EQUIVALENT_TENTHS_HUNDREDTHS_OVER_ONE",
+            ["usccss.b01.fraction.tenths_hundredths_over_one"],
+            "IM2021_G4_U03_L17_4NF_C5_TENTHS_HUNDREDTHS_OVER_ONE",
+            "READY_VERIFIED", "usccss-b01-source-fraction-tenths-v1")
     ];
 }
