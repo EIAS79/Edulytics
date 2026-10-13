@@ -26,6 +26,38 @@ public static class UsCcssB01SourceTaskVisuals
             int N(string k) => p[k];
             RichLessonVisual? item = q.Family switch
             {
+                // IM Grade 1 U01 L02 source activity: two dot-card
+                // pictures must match the exact addends and expression.
+                "usccss.b01.g1.match_dot_cubes_expression" or
+                "usccss.b01.g1.complete_missing_dots" or
+                "usccss.b01.g1.check_off_add_within10" when
+                    N("first") is >= 0 and <= 6 &&
+                    N("second") is >= 0 and <= 6 &&
+                    N("first") + N("second") <= 10 &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,q.Parameters,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.PlaceValueChart,
+                        Title = "Match dot pictures and addition expressions",
+                        Description = $"The dot groups contain {N("first")} and " +
+                            $"{N("second")} dots. Match them to " +
+                            $"{N("first")} + {N("second")} = " +
+                            $"{N("first")+N("second")}.",
+                        Rows =
+                        [
+                            new RichLessonVisualRow
+                            {
+                                Label = $"First cube: {N("first")}",
+                                Cells = Enumerable.Repeat("●",N("first")).ToList()
+                            },
+                            new RichLessonVisualRow
+                            {
+                                Label = $"Second cube: {N("second")}",
+                                Cells = Enumerable.Repeat("●",N("second")).ToList()
+                            }
+                        ]
+                    },
                 // A measured scale has verified equal intervals and a
                 // precise target tick, never an ornamental timeline.
                 "measurement.scale.equal_intervals.read_value" when
