@@ -1,4 +1,5 @@
 using Edulytics.Core.Curriculum;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.LessonContent;
 using Edulytics.Services.Mathematics;
 
@@ -102,6 +103,43 @@ public sealed class UsCcssB01SourceTaskVisualsTests
             visual.Items[q.Parameters["baseN"]]);
         Assert.Equal(q.Parameters["baseN"] * q.Parameters["targetD"],
             int.Parse(q.CorrectAnswer) * q.Parameters["baseD"]);
+    }
+
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G2:U04:L03",false)]
+    [InlineData("PED:US-CCSS-MATH:G2:U04:L06",true)]
+    public void Grade2OriginalWholeNumberLineAndOptionalArithmeticKeepCorrectLearningTargets(
+        string code,bool alsoPracticesArithmetic)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.NotNull(contract);
+        Assert.Contains("usccss.b01.number_line.locate_whole_to100",
+            contract!.AllowedQuestionFamilies);
+        if(alsoPracticesArithmetic)
+        {
+            Assert.Contains("number.whole.add_subtract.within_100.apply",
+                contract.AllowedQuestionFamilies);
+            Assert.Contains("number.whole.add_subtract.within_100.build",
+                contract.AllowedQuestionFamilies);
+        }
+        else Assert.Single(contract.AllowedQuestionFamilies);
+
+        for(var seed=660121;seed<660127;seed++)
+        {
+            var q=One(code,"usccss.b01.number_line.locate_whole_to100",seed);
+            var line=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.NumberLine,line.Kind);
+            Assert.Equal(11,line.Items.Count);
+            var labels=line.Items.Select(int.Parse).ToArray();
+            Assert.Equal(0,labels[0]);
+            Assert.All(labels.Zip(labels.Skip(1),(a,b)=>b-a),
+                delta=>Assert.Equal(q.Parameters["step"],delta));
+            Assert.Equal(labels[q.Parameters["tick"]],int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                q.Family,q.Parameters,q.CorrectAnswer));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="111111"}]));
+        }
     }
 
     [Fact]
