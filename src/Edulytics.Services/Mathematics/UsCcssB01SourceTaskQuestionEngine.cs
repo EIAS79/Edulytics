@@ -29,6 +29,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.array.equal_groups",
         "usccss.b01.array.columns",
         "usccss.b01.array.equal_addends",
+        "usccss.b01.array.equal_equation",
         "usccss.b01.array.unknown_factor",
         "usccss.b01.array.commutativity",
         "usccss.b01.geometry.composite_rectangle_area",
@@ -208,6 +209,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "Write the equal-addends expression representing all rows (use +).",
                     "Each row contributes the same addend; repeat it once per row.",
                     AssessmentItemType.ShortAnswer, D(("rows", a), ("columns", b)));
+            case "usccss.b01.array.equal_equation":
+                a = r.Next(2, 6 + level); b = r.Next(2, 7 + level);
+                return Make(f,
+                    $"An array has {a} equal rows of {b} objects. " +
+                    "Write an addition equation that represents the array " +
+                    "(equal addends on the left, total on the right).",
+                    $"Add the same addend {b} for every row, then write the " +
+                    $"total equal to {a*b}.",
+                    AssessmentItemType.ShortAnswer, D(("rows", a), ("columns", b)));
             case "usccss.b01.array.unknown_factor":
                 a = r.Next(2, 6 + level); b = r.Next(2, 7 + level);
                 return Make(f,
@@ -363,6 +373,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.array.equal_addends" =>
                 string.Join("+", Enumerable.Repeat(
                     P("columns").ToString(CultureInfo.InvariantCulture), P("rows"))),
+            "usccss.b01.array.equal_equation" =>
+                string.Join("+", Enumerable.Repeat(
+                    P("columns").ToString(CultureInfo.InvariantCulture), P("rows"))) +
+                "=" + (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.measure.map_lengths" =>
                 (P("mode") == 0 ? P("a") + P("b") : P("b"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -447,6 +461,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("rows")*N("columns")<=100,
             "usccss.b01.array.columns" or
             "usccss.b01.array.equal_addends" or
+            "usccss.b01.array.equal_equation" or
             "usccss.b01.array.unknown_factor" or
             "usccss.b01.array.commutativity" =>
                 Range("rows",2,8) && Range("columns",2,9),
@@ -488,7 +503,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             if (!ValidDomain(family,p)) return false;
             // Independent CI oracles cross-check the mathematical result from
             // the structured generation parameters across all 19 families.
-            var checkedAnswer = family=="usccss.b01.array.equal_addends"
+            var checkedAnswer = family is "usccss.b01.array.equal_addends"
+                or "usccss.b01.array.equal_equation"
                 ? new string(answer.Where(c=>!char.IsWhiteSpace(c)).ToArray())
                 : answer.Trim();
             return string.Equals(checkedAnswer, Solve(family,p),
