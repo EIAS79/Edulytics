@@ -504,10 +504,23 @@ for key, schoolname in SCHOOLS:
                 l02_fields = dict(practice_fields)
                 l02_fields["lessonId"] = next_id
                 l02_fields["questionCount"] = "3"  # 3 allowed lesson items, one per family
-                response = student.open(urllib.request.Request(
-                    BASE + "/student/practice/generate",
-                    data=urllib.parse.urlencode(l02_fields).encode(),
-                    method="POST"), timeout=60)
+                # Expose the exact redirect, route and HTTP failure instead
+                # of treating a 404 during lesson Practice as a source error.
+                assert next_id in offered_ids, (
+                    "L02 is visible as a lesson but not offered for Practice",
+                    next_id, offered_ids)
+                try:
+                    response = student.open(urllib.request.Request(
+                        BASE + "/student/practice/generate",
+                        data=urllib.parse.urlencode(l02_fields).encode(),
+                        method="POST"), timeout=60)
+                except urllib.error.HTTPError as error:
+                    print("DISPOSABLE_G1_L02_PRACTICE_HTTP_FAILURE",
+                          error.code, error.url,
+                          "location", error.headers.get("Location"),
+                          "body", error.read(650).decode("utf-8","replace"),
+                          flush=True)
+                    raise
                 with response:
                     assert response.status == 200
                     l02_path = urllib.parse.urlparse(response.url).path.lower()
