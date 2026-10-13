@@ -44,6 +44,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.fraction.whole_multiply",
         "usccss.b01.fraction.decompose_same_denominator",
         "usccss.b01.place_value.ten_times",
+        "usccss.b01.place_value.tens_ones",
+        "usccss.b01.place_value.count_to120",
+        "usccss.b01.place_value.three_digits",
         "usccss.b01.market.inventory_100"
     };
 
@@ -82,6 +85,54 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "from the relevant item, and do not subtract unrelated stock.",
                     AssessmentItemType.Numeric,
                     D(("small", a), ("second", b), ("third", n), ("sold", d), ("mode", m)));
+
+            // Official Grade 1 U04/U08: two-digit numerals are tens and ones.
+            case "usccss.b01.place_value.tens_ones":
+                a = r.Next(10, 100);
+                m = r.Next(0, 3);
+                return Make(f,
+                    m switch
+                    {
+                        0 => $"A base-ten model shows {a/10} bundles of TEN and " +
+                             $"{a%10} single ones. Write the numeral.",
+                        1 => $"A two-digit number is shown by the expression " +
+                             $"{(a/10)*10} + {a%10}. Write the numeral.",
+                        _ => $"A drawing groups {(a/10)*10} dots into tens with " +
+                             $"{a%10} loose dots. How many dots are there altogether?"
+                    },
+                    "Each bundle of ten is worth 10; single pieces are worth 1. " +
+                    "Combine tens and ones without changing the place values.",
+                    AssessmentItemType.Numeric,
+                    D(("number",a),("tens",a/10),("ones",a%10),("mode",m)));
+
+            // Official Grade 1 U08 L07: organize a counted collection up to 120.
+            case "usccss.b01.place_value.count_to120":
+                a = r.Next(40, 121);
+                return Make(f,
+                    $"A large collection has been organized into {a/100} group(s) " +
+                    $"of one hundred, {(a%100)/10} bundle(s) of ten, and {a%10} " +
+                    "remaining individual objects. How many objects are there?",
+                    "Count each complete hundred and bundle of ten once, " +
+                    "then add the remaining ones. The total must not exceed 120.",
+                    AssessmentItemType.Numeric,
+                    D(("number",a),("hundreds",a/100),
+                      ("tens",(a%100)/10),("ones",a%10)));
+
+            // Official Grade 2 U05 L04: base-ten numerals for 3-digit numbers.
+            case "usccss.b01.place_value.three_digits":
+                a = r.Next(100, 1000);
+                m = r.Next(0,2);
+                return Make(f,
+                    m == 0
+                        ? $"A base-ten drawing has {a/100} hundreds, " +
+                          $"{(a%100)/10} tens, and {a%10} ones. Write the three-digit numeral."
+                        : $"Write the numeral represented by {(a/100)*100} + " +
+                          $"{((a%100)/10)*10} + {a%10}.",
+                    "Value = 100 × hundreds + 10 × tens + ones. " +
+                    "Zero in a place keeps that place but adds no units.",
+                    AssessmentItemType.Numeric,
+                    D(("number",a),("hundreds",a/100),
+                      ("tens",(a%100)/10),("ones",a%10),("mode",m)));
 
             case "usccss.b01.triangle.attributes":
                 m = r.Next(1, 4);
@@ -363,6 +414,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.market.inventory_100" =>
                 (P("mode") == 0 ? P("second") - P("sold") : P("third"))
                     .ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.place_value.tens_ones" or
+            "usccss.b01.place_value.count_to120" or
+            "usccss.b01.place_value.three_digits" =>
+                P("number").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.triangle.attributes" => P("position").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.partition.halves_fourths" => P("denominator") == 2 ? "half" : "fourth",
             "usccss.b01.number_line.equal_intervals" =>
@@ -450,6 +505,18 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("small") + N("second") + N("third") == 100 &&
                 Range("sold",1,11) && N("sold") < N("second") &&
                 Range("mode",0,1),
+            "usccss.b01.place_value.tens_ones" =>
+                Range("number",10,99) && Range("tens",1,9) &&
+                Range("ones",0,9) && Range("mode",0,2) &&
+                N("number") == N("tens")*10 + N("ones"),
+            "usccss.b01.place_value.count_to120" =>
+                Range("number",40,120) && Range("hundreds",0,1) &&
+                Range("tens",0,9) && Range("ones",0,9) &&
+                N("number") == N("hundreds")*100 + N("tens")*10 + N("ones"),
+            "usccss.b01.place_value.three_digits" =>
+                Range("number",100,999) && Range("hundreds",1,9) &&
+                Range("tens",0,9) && Range("ones",0,9) && Range("mode",0,1) &&
+                N("number") == N("hundreds")*100 + N("tens")*10 + N("ones"),
             "usccss.b01.triangle.attributes" =>
                 Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
