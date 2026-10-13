@@ -94,6 +94,30 @@ public static class UsCcssB01SourceTaskVisuals
                         Items = [N("hour").ToString(),
                             (15 * (N("position")+1)).ToString()]
                     },
+                "usccss.b01.array.commutativity" =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.ShapeDecomposition,
+                        Title = "The same array before and after rotation",
+                        Description = $"Start with {N("rows")} × {N("columns")}. " +
+                            $"After rotation it is {N("columns")} × {N("rows")}. " +
+                            $"Both arrangements have {N("rows")*N("columns")} objects.",
+                        Rows = Enumerable.Range(1, N("rows"))
+                            .Select(row => new RichLessonVisualRow
+                            {
+                                Label = $"Before row {row}",
+                                Cells = Enumerable.Repeat("■", N("columns")).ToList()
+                            }).Concat(Enumerable.Range(1, N("columns"))
+                                .Select(row => new RichLessonVisualRow
+                                {
+                                    Label = $"After row {row}",
+                                    Cells = Enumerable.Repeat("■", N("rows")).ToList()
+                                })).ToList()
+                    },
+                "usccss.b01.array.columns" or
+                "usccss.b01.array.equal_addends" or
+                "usccss.b01.array.equal_equation" or
+                "usccss.b01.array.unknown_factor" or
                 "usccss.b01.array.equal_groups" or
                 "usccss.b01.rectangle.unit_squares" =>
                     new RichLessonVisual
@@ -101,7 +125,10 @@ public static class UsCcssB01SourceTaskVisuals
                         Kind = RichLessonVisualKind.ShapeDecomposition,
                         Title = $"An array of {N("rows")} rows and {N("columns")} columns",
                         Description = $"Count {N("columns")} equal unit squares in each of {N("rows")} rows. " +
-                            $"The total is {N("rows")} × {N("columns")} = {N("rows") * N("columns")}.",
+                            $"The total is {N("rows")} × {N("columns")} = {N("rows") * N("columns")}. " +
+                            $"Repeated addition is " +
+                            $"{string.Join("+",Enumerable.Repeat(N("columns").ToString(),N("rows")))}" +
+                            $"={N("rows")*N("columns")}.",
                         PrimaryLabel = "Unit square array",
                         Rows = Enumerable.Range(1, N("rows"))
                             .Select(row => new RichLessonVisualRow
