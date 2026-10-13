@@ -131,6 +131,39 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void OriginalG4WholeMinusFractionDoesNotGenerateIntegerSubtraction()
+    {
+        const string code="PED:US-CCSS-MATH:G4:U03:L10";
+        const string family="usccss.b01.g4.whole_minus_proper_fraction";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+            family,out var interaction));
+        Assert.Equal(LessonPracticeInteractionKind.FractionEntry,
+            interaction!.InteractionKind);
+        for(var seed=640000;seed<640055;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var parts=q.CorrectAnswer.Split('/').Select(int.Parse).ToArray();
+            Assert.Equal(2,parts.Length);
+            Assert.Equal((p["whole"]*p["denominator"]-p["numerator"])*parts[1],
+                p["denominator"]*parts[0]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var fraction=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.FractionBars,fraction.Kind);
+            Assert.Equal(p["whole"],fraction.Rows.Count);
+            Assert.Equal(p["whole"]*p["denominator"]-p["numerator"],
+                fraction.Rows.Sum(row=>row.Numerator));
+            Assert.All(fraction.Rows,
+                row=>Assert.Equal(p["denominator"],row.Denominator));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999/8"}]));
+        }
+    }
+
+    [Fact]
     public void ArrayVisualContainsExactlyTheUnitSquaresInTheVerifiedQuestion()
     {
         const string code="PED:US-CCSS-MATH:G3:U01:L16";
