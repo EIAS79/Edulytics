@@ -155,9 +155,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
             case "usccss.b01.partition.halves_fourths":
                 d = r.Next(0, 2) == 0 ? 2 : 4;
-                m = r.Next(0, 2);
+                // Five distinct equal-part shapes give ten meaningful
+                // shape/partition contexts without fake wording variants.
+                m = r.Next(0, 5);
+                var partitionShape = new[] { "circle", "rectangle", "square",
+                    "triangle", "paper strip" }[m];
                 return Make(f,
-                    $"A {(m == 0 ? "circle" : "rectangle")} is partitioned into {d} EQUAL pieces. " +
+                    $"A {partitionShape} is partitioned into {d} EQUAL pieces. " +
                     "What is one piece called: half or fourth?",
                     "A half is one of two equal parts; a fourth is one of four equal parts.",
                     AssessmentItemType.ShortAnswer, D(("denominator", d), ("shape", m)));
@@ -362,11 +366,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     AssessmentItemType.ShortAnswer, D(("numerator", n), ("denominator", d)));
 
             case "usccss.b01.measure.quarter_inch":
-                n = r.Next(0, 2) == 0 ? 1 : 3;
+                // 1/4, 2/4 and 3/4 are all valid ruler marks. The middle
+                // half-inch mark adds a genuinely different measured length.
+                n = r.Next(1, 4);
                 a = r.Next(0, 4);
                 return Make(f,
                     $"An inch ruler is marked in FOURTHS. A segment stops at {a} whole inch(es) " +
-                    $"plus {n} quarter-inch mark(s). Write its length as an improper fraction " +
+                    $"plus {n} quarter-inch mark(s). Write its length as a fraction " +
                     "of an inch (keep denominator 4).",
                     "Count whole inches as 4 quarter-inch parts each, then add the remaining parts.",
                     AssessmentItemType.ShortAnswer, D(("quarters", n), ("wholeInches", a)));
@@ -568,7 +574,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.triangle.attributes" =>
                 Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
-                (N("denominator") is 2 or 4) && Range("shape",0,1),
+                (N("denominator") is 2 or 4) && Range("shape",0,4),
             "usccss.b01.number_line.equal_intervals" => Range("step",1,40),
             "usccss.b01.clock.read_half_hour" =>
                 Range("hour",1,12) && (N("minutes") is 0 or 30),
@@ -618,7 +624,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 (N("denominator") is 2 or 3 or 4 or 6 or 8) &&
                 Range("numerator",1,N("denominator")-1),
             "usccss.b01.measure.quarter_inch" =>
-                (N("quarters") is 1 or 3) && Range("wholeInches",0,3),
+                Range("quarters",1,3) && Range("wholeInches",0,3),
             "usccss.b01.factors.factor_pairs" =>
                 Range("firstFactor",2,8) && Range("secondFactor",2,9),
             "usccss.b01.factors.prime_composite" => Range("number",2,100),

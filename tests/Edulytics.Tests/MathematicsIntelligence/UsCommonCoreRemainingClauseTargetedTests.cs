@@ -23,7 +23,7 @@ public sealed class UsCommonCoreRemainingClauseTargetedTests
 
     private static readonly Dictionary<string, string[]> PublisherLessons = new(StringComparer.Ordinal)
     {
-        ["PED:US-CCSS-MATH:G3:U02:L08"] = ["usccss.g3.rectangle_unit_tiles"],
+        ["PED:US-CCSS-MATH:G3:U02:L08"] = ["usccss.b01.geometry.rectangle_area_ungridded"],
         ["PED:US-CCSS-MATH:G5:U01:L01"] = ["usccss.g5.unit_cube_count"],
         ["PED:US-CCSS-MATH:G6:U08:L17"] = ["usccss.g6.observation_count"],
         ["PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10"] = ["usccss.hs.function_sum", "usccss.hs.function_composition"],
