@@ -6225,6 +6225,57 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.place_value.tens_ones",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "b01-bounded-base-ten-structured-parameters-v1",
+      "representations": [
+        "base_ten_place_value_chart"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.place_value.count_to120",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "b01-bounded-base-ten-structured-parameters-v1",
+      "representations": [
+        "base_ten_place_value_chart"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.place_value.three_digits",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "b01-bounded-base-ten-structured-parameters-v1",
+      "representations": [
+        "base_ten_place_value_chart"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
