@@ -71,6 +71,18 @@ public static class UsCcssB01SourceTaskVisuals
                                 $"{i}/{N("baseD")}")
                             .ToList()
                     },
+                "usccss.b01.place_value.tens_ones" when
+                    N("number") == N("tens")*10+N("ones") &&
+                    N("number") is >= 10 and <= 99 =>
+                    BaseTenModel(N("number"),0,N("tens"),N("ones"),false),
+                "usccss.b01.place_value.count_to120" when
+                    N("number")==N("hundreds")*100+N("tens")*10+N("ones") &&
+                    N("number") is >= 40 and <= 120 =>
+                    BaseTenModel(N("number"),N("hundreds"),N("tens"),N("ones"),true),
+                "usccss.b01.place_value.three_digits" when
+                    N("number")==N("hundreds")*100+N("tens")*10+N("ones") &&
+                    N("number") is >= 100 and <= 999 =>
+                    BaseTenModel(N("number"),N("hundreds"),N("tens"),N("ones"),true),
                 "usccss.b01.clock.read_half_hour" or
                 "usccss.b01.clock.read_five_minutes" =>
                     new RichLessonVisual
@@ -223,6 +235,35 @@ public static class UsCcssB01SourceTaskVisuals
             if (visual.Count >= 1) break;
         }
         return visual;
+    }
+
+    private static RichLessonVisual BaseTenModel(int number,int hundreds,int tens,
+        int ones,bool showHundreds)
+    {
+        var rows=new List<RichLessonVisualRow>();
+        if (showHundreds)
+            rows.Add(new RichLessonVisualRow
+            {
+                Label="Hundreds", Cells=[hundreds.ToString(),(hundreds*100).ToString()]
+            });
+        rows.Add(new RichLessonVisualRow
+        {
+            Label="Tens",Cells=[tens.ToString(),(tens*10).ToString()]
+        });
+        rows.Add(new RichLessonVisualRow
+        {
+            Label="Ones",Cells=[ones.ToString(),ones.ToString()]
+        });
+        return new RichLessonVisual
+        {
+            Kind=RichLessonVisualKind.PlaceValueChart,
+            Title=$"Build {number} from hundreds, tens, and ones",
+            Description=showHundreds
+                ? $"{hundreds} hundred(s) + {tens} ten(s) + {ones} one(s) = {number}."
+                : $"{tens} ten(s) + {ones} one(s) = {number}.",
+            PrimaryLabel="Digit and corresponding place value",
+            Rows=rows
+        };
     }
 
     private static RichLessonVisual SingleFractionBar(string title,int n,int d) =>
