@@ -503,7 +503,7 @@ for key, schoolname in SCHOOLS:
             for wrong_answers in (False, True):
                 l02_fields = dict(practice_fields)
                 l02_fields["lessonId"] = next_id
-                l02_fields["questionCount"] = "9"
+                l02_fields["questionCount"] = "3"  # 3 allowed lesson items, one per family
                 response = student.open(urllib.request.Request(
                     BASE + "/student/practice/generate",
                     data=urllib.parse.urlencode(l02_fields).encode(),
@@ -527,7 +527,7 @@ for key, schoolname in SCHOOLS:
                     WHERE a."Id"='""" + l02_attempt_id + """'
                     ORDER BY pi."Order";""").splitlines()
                 l02_items=[row.split("|",3) for row in l02_rows]
-                assert len(l02_items)==9,("L02 nine source questions missing",l02_rows)
+                assert len(l02_items)==3,("L02 three source questions missing",l02_rows)
                 assert all(row[0]==next_id and row[1] in next_families
                            and row[3].strip() for row in l02_items),(
                                "L02 wrong lesson/family/answer",l02_items)
@@ -565,7 +565,7 @@ for key, schoolname in SCHOOLS:
                     WHERE p."Id"='""" + l02_attempt_id + """'
                     GROUP BY p."Id",p."SubmittedAtUtc",p."Score";""")
                 submitted,score,correct_count=saved.split("|")
-                wanted=0 if wrong_answers else 9
+                wanted=0 if wrong_answers else 3
                 assert submitted=="1" and float(score)==wanted and int(correct_count)==wanted,(
                     "L02 wrong answer grading/persistence",wrong_answers,saved)
                 print("DISPOSABLE_G1_U01_L02_PRACTICE_SCORING_PASS",
