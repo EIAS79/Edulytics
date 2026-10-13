@@ -15,7 +15,8 @@ namespace Edulytics.Data.Seeding;
 public static class CommonCoreG1DotCardMatchingCorrection
 {
     public const string LessonCode = "PED:US-CCSS-MATH:G1:U01:L02";
-    public const string CorrectedVersion = "usccss-b01-g1-u01-l02-source-dot-cards-v1";
+    public const string CorrectedVersion = "usccss-b01-g1-u01-l02-source-dot-cards-v2";
+    public const string PriorCorrectedVersion = "usccss-b01-g1-u01-l02-source-dot-cards-v1";
     private const string SourceUrl = "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-2/preparation.html";
     private const string CanonicalSourceSha = "7d8c9aa59717d264f80522bcf07c5385b5f332b2808b66c5c75fb19672c70e33";
     private static readonly string Original_title = "Explore Expressions and Sums";
@@ -25,6 +26,9 @@ public static class CommonCoreG1DotCardMatchingCorrection
     private static readonly string Original_stepByStepSolutions = "Step 1: Identify the two quantities, 3 and 2.\nStep 2: Start at 3 and count on 2 more, or combine the two groups.\nStep 3: The total is 5, so 3 + 2 = 5.\nStep 4: Check that the result matches the quantities and the lesson goal.";
     private static readonly string Original_commonMistakes = "Do not confuse an expression with its value. The addends form the expression; the sum is the total after the addition is evaluated.";
     private static readonly string Original_quickSummary = "In this lesson, you will write addition expressions within 10 and find the sums. Key idea: An addition expression shows the addends being combined. The sum is the total value of the expression, and different addend orders can have the same sum.";
+    // Source-linked learner explanation: two real dot diagrams, the
+    // expression they encode, visual-to-symbol and symbol-to-visual flow.
+    public static readonly string Improved_explanation = "Use two dot-cube pictures to learn how an addition expression describes two separate groups of objects. Description: the first dot diagram shows ● ● ● (3 dots), and the second dot diagram shows ● ● (2 dots); place them side by side and write 3 + 2 to represent both counts. Count every dot once to check the sum: 3 + 2 = 5. When you see 5 + 2, draw five dots in one group and exactly two in a second group, then check that 7 dots appear in total. In Check It Off, choose two number cards from 0 through 5, find their sum within 10, check off the total, and record the two-addend expression. Explain why 3 + 2 and 2 + 3 have the same sum even though their dot groups are shown in a different order.";
     public static readonly string Improved_keyConceptsAndRules = "Learning goals:\n• Match a picture of TWO dot groups to the addition expression it represents.\n• Draw dots for a missing part of an expression and find the total within 10.\n• Choose two number cards from 0 to 5, find the sum and record the matching addition expression.\n\nAn addition expression such as 3 + 2 names the two dot groups. The sum, 5, tells how many dots there are altogether. Changing the order of the groups does not change the sum.";
     public static readonly string Improved_workedExamples = "Example 1 — Match dot pictures to an expression. The first picture has ● ● ● (3 dots). The second has ● ● (2 dots). Count the groups separately, then match to 3 + 2, not 3 + 3 or 4 + 2. Counting all dots gives 3 + 2 = 5.\n\nExample 2 — Compare another pair. ● ● ● ● and ● ● contain 4 and 2 dots. Connect their picture to 4 + 2 and find its total: 6. Check by counting each dot once.\n\nExample 3 — Draw the missing dots. The expression is 5 + 2. Draw one group of five dots and another group of exactly two dots: ● ● ● ● ●  and  ● ●. Count the seven dots to check 5 + 2 = 7. The same process also works for 2 + 6 = 8.\n\nExample 4 — Play Check It Off. Take number cards 4 and 3 from a deck using only 0–5. Combine the values, check off 7, and record the expression 4 + 3 by the sum. You can also record 3 + 4 for the same sum.";
     public static readonly string Improved_stepByStepSolutions = "Step 1: Look at each dot picture as a separate group; count its dots once.\nStep 2: Write an addition expression using the two group counts, for example 3 + 2.\nStep 3: Find the sum by combining both groups or counting on: 3, then 4, 5. Check 3 + 2 = 5.\nStep 4: If an expression has a missing dot group, draw exactly as many dots as its missing addend; for 5 + 2, draw two dots beside the group of five.\nStep 5: In Check It Off, choose two number cards no larger than 5, calculate their sum and record the expression next to that total.\nStep 6: Confirm that the displayed picture, written expression and total all describe the SAME two groups, and that the total is no more than 10.";
@@ -51,9 +55,10 @@ public static class CommonCoreG1DotCardMatchingCorrection
                     "G1 U01 L02 source URL, canonical body SHA or CCSS mapping changed.");
             var t = l.Translations.Single(x => x.CultureCode == "en");
             if (MatchesImproved(t)) continue;
-            if (!MatchesOriginal(t))
+            if (!MatchesOriginal(t) && !MatchesPriorImproved(t))
                 throw new InvalidOperationException(
                     "Refusing G1 U01 L02 content repair on unreviewed or partial learner prose.");
+            t.Explanation = Improved_explanation;
             t.KeyConceptsAndRules = Improved_keyConceptsAndRules;
             t.WorkedExamples = Improved_workedExamples;
             t.StepByStepSolutions = Improved_stepByStepSolutions;
@@ -72,6 +77,15 @@ public static class CommonCoreG1DotCardMatchingCorrection
 
     private static bool MatchesImproved(CanonicalLessonContentPackTranslation t) =>
         t.Title == Original_title &&
+        t.Explanation == Improved_explanation &&
+        t.KeyConceptsAndRules == Improved_keyConceptsAndRules &&
+        t.WorkedExamples == Improved_workedExamples &&
+        t.StepByStepSolutions == Improved_stepByStepSolutions &&
+        t.CommonMistakes == Improved_commonMistakes &&
+        t.QuickSummary == Improved_quickSummary;
+
+    private static bool MatchesPriorImproved(CanonicalLessonContentPackTranslation t) =>
+        t.Title == Original_title &&
         t.Explanation == Original_explanation &&
         t.KeyConceptsAndRules == Improved_keyConceptsAndRules &&
         t.WorkedExamples == Improved_workedExamples &&
@@ -88,8 +102,9 @@ public static class CommonCoreG1DotCardMatchingCorrection
         CanonicalLessonContentPackDocument d,
         CanonicalLessonContentPackLesson l,
         string priorVersion) =>
-        IsTarget(d,l) && priorVersion ==
-            CommonCoreRichContentCorrections.CorrectionContentVersion;
+        IsTarget(d,l) && (priorVersion ==
+            CommonCoreRichContentCorrections.CorrectionContentVersion ||
+            priorVersion == PriorCorrectedVersion);
 
     public static void ValidateExistingBodyBeforeUpgrade(
         CanonicalLessonContentPackDocument d,
@@ -106,8 +121,18 @@ public static class CommonCoreG1DotCardMatchingCorrection
         var t = persisted.Single();
         var current = BodyHash(t.Title, t.Explanation, t.KeyConceptsAndRules, t.WorkedExamples, t.StepByStepSolutions, t.CommonMistakes, t.QuickSummary);
         var original = BodyHash(Original_title, Original_explanation, Original_keyConceptsAndRules, Original_workedExamples, Original_stepByStepSolutions, Original_commonMistakes, Original_quickSummary);
-        var improved = BodyHash(Original_title, Original_explanation, Improved_keyConceptsAndRules, Improved_workedExamples, Improved_stepByStepSolutions, Improved_commonMistakes, Improved_quickSummary);
-        if (current != original && current != improved)
+        var previous = BodyHash(Original_title, Original_explanation,
+            Improved_keyConceptsAndRules, Improved_workedExamples,
+            Improved_stepByStepSolutions, Improved_commonMistakes,
+            Improved_quickSummary);
+        var improved = BodyHash(Original_title, Improved_explanation,
+            Improved_keyConceptsAndRules, Improved_workedExamples,
+            Improved_stepByStepSolutions, Improved_commonMistakes,
+            Improved_quickSummary);
+        var matchesVersion = priorVersion == PriorCorrectedVersion
+            ? current == previous || current == improved
+            : current == original || current == previous || current == improved;
+        if (!matchesVersion)
             throw new InvalidOperationException(
                 "Refusing G1 U01 L02 upgrade because persisted learner prose diverged.");
     }

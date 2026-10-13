@@ -24,6 +24,10 @@ public sealed class UsCcssB01SourceDotCardsContentCorrectionTests
         Assert.Equal(CommonCoreG1DotCardMatchingCorrection.CorrectedVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
                 lesson.d,lesson.l));
+        Assert.Contains("two dot-cube pictures",en.Explanation,
+            StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Description: the first dot diagram",en.Explanation);
+        Assert.Contains("3 + 2 = 5",en.Explanation);
         Assert.Contains("dot groups",en.KeyConceptsAndRules,
             StringComparison.OrdinalIgnoreCase);
         Assert.Contains("Match dot pictures",en.WorkedExamples,
@@ -47,8 +51,24 @@ public sealed class UsCcssB01SourceDotCardsContentCorrectionTests
         Assert.Equal(before,after);
         Assert.True(CommonCoreG1DotCardMatchingCorrection.CanUpgradeExisting(
             lesson.d,lesson.l,"common-core-rich-content-v1"));
+        Assert.True(CommonCoreG1DotCardMatchingCorrection.CanUpgradeExisting(
+            lesson.d,lesson.l,CommonCoreG1DotCardMatchingCorrection.PriorCorrectedVersion));
         Assert.False(CommonCoreG1DotCardMatchingCorrection.CanUpgradeExisting(
             lesson.d,lesson.l,"unexpected-content-version"));
+        // The academic structural floor is a prerequisite, not certification.
+        var structural=RichLessonContentQualityAudit.Evaluate(
+            lesson.d,lesson.l,en);
+        Assert.Equal(RichLessonOverallQuality.Good,structural.OverallQuality);
+        Assert.Equal(RichLessonVisualQuality.ExplicitInstructionalVisual,
+            structural.VisualQuality);
+        Assert.All(new[]{
+                structural.Explanation,
+                structural.KeyConceptsAndRules,
+                structural.WorkedExamples,
+                structural.StepByStepSolutions,
+                structural.CommonMistakes,
+                structural.QuickSummary
+            },row=>Assert.Equal(RichLessonSectionQuality.Strong,row.Quality));
     }
 
     [Fact]
