@@ -30,6 +30,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2TapeDiagramAndStoryResolutionCorrection.Apply(document);
         CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document);
         CommonCoreG1CountAndAddPilotCorrection.Apply(document);
+        CommonCoreG1DotCardMatchingCorrection.Apply(document);
         CommonCoreG2SourceGroundedFoundationsCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
 
@@ -190,8 +191,10 @@ public static class CanonicalLessonContentMaterializer
         var g1Pilot = CommonCoreG1CountAndAddPilotCorrection
             .GetExpectedContentVersion(document, lesson, g1);
 
-        var g2 = CommonCoreG2SourceGroundedFoundationsCorrections
+        var dotMatching = CommonCoreG1DotCardMatchingCorrection
             .GetExpectedContentVersion(document, lesson, g1Pilot);
+        var g2 = CommonCoreG2SourceGroundedFoundationsCorrections
+            .GetExpectedContentVersion(document, lesson, dotMatching);
 
         return CommonCoreSourceBoundHtmlEntityCorrections
             .GetExpectedContentVersion(document, lesson, g2);
@@ -223,6 +226,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1SourceGroundedInstructionalCorrections
             .IsTarget(document, lesson) ||
         CommonCoreG1CountAndAddPilotCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG1DotCardMatchingCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2SourceGroundedFoundationsCorrections
             .IsTarget(document, lesson) ||
@@ -286,6 +291,8 @@ public static class CanonicalLessonContentMaterializer
                 lesson,
                 existingContentVersion) ||
         CommonCoreG1CountAndAddPilotCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG1DotCardMatchingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2SourceGroundedFoundationsCorrections
             .CanUpgradeExisting(
