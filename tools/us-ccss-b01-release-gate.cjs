@@ -63,26 +63,58 @@ function inspectBatch({ manifest, source, ledger }) {
   // 8 review dimensions, content SHA, source candidate, and zero defects.
   validateLedger(source, ledger);
   const all = new Map(ledger.records.map(r => [r.lessonCode, r]));
-  let certified = 0;
+  const isCommitSha = x => typeof x === 'string' && /^[a-f0-9]{40}$/i.test(x);
+  let evidenceReady = 0;
+  let historicallyCertified = 0;
+  let openDefects = 0;
   const outstanding = [];
+  const byGrade = {};
   for (const entry of manifest.lessons) {
     const record = all.get(entry.lessonCode);
-    assert(record, 'Missing canonical ledger row: ' + entry.lessonCode);
-    const passed = record.status === 'INTERNALLY_CERTIFIED' &&
-      record.academicDecision === 'INTERNALLY_CERTIFIED' &&
-      record.unresolvedDefects.length === 0;
-    if (passed) certified++;
-    else outstanding.push({ ordinal: entry.ordinal,
-      lessonCode: entry.lessonCode, state: record.status });
+    assert(record, 'Missing canonical ledger coverage row: ' + entry.lessonCode);
+    const grade = entry.gradeOrCourse;
+    byGrade[grade] ??= { total: 0, evidenceReady: 0, outstanding: 0 };
+    byGrade[grade].total++;
+    openDefects += record.unresolvedDefects.length;
+    // This is coverage evidence, NOT an individual new certification.
+    const previouslyCertified = record.status === 'INTERNALLY_CERTIFIED' &&
+      record.academicDecision === 'INTERNALLY_CERTIFIED';
+    const allEvidenceReady = record.status === 'EVIDENCE_READY' &&
+      record.academicDecision === 'NOT_CERTIFIED';
+    const acceptedState = previouslyCertified || allEvidenceReady;
+    const sixGates = ['L1','L2','L3','L4','L5','L6'].every(g =>
+      record.gates[g]?.status === 'PASS' &&
+      record.gates[g]?.sourceSha === ledger.releaseCandidateSha);
+    const eightDimensions = record.reviewDimensions &&
+      Object.values(record.reviewDimensions).length === 8 &&
+      Object.values(record.reviewDimensions).every(d =>
+        ['PASS','NOT_APPLICABLE'].includes(d.status) &&
+        d.contentSha256 === record.contentSha256);
+    const ready = acceptedState && sixGates && eightDimensions &&
+      record.unresolvedDefects.length === 0 &&
+      isSha256(record.contentSha256) && isCommitSha(ledger.releaseCandidateSha) &&
+      typeof record.contentVersion === 'string' && record.contentVersion.length > 0;
+    if (ready) {
+      evidenceReady++;
+      byGrade[grade].evidenceReady++;
+      if (previouslyCertified) historicallyCertified++;
+    } else {
+      byGrade[grade].outstanding++;
+      outstanding.push({ ordinal: entry.ordinal, lessonCode: entry.lessonCode,
+        evidenceState: record.status, missingSixGateOrDimensions: !sixGates ||
+          !eightDimensions, unresolvedDefects: record.unresolvedDefects.length });
+    }
   }
   return {
-    batchId: 'B01', total: manifest.lessons.length, certified,
-    remaining: manifest.lessons.length - certified,
-    state: certified === manifest.lessons.length ?
-      'BATCH_CERTIFIED_PENDING_CI_AND_DEPLOY' : 'BATCH_NO-GO',
-    nextExactLesson: outstanding[0]?.lessonCode ?? null,
-    outstandingPreview: outstanding.slice(0, 12),
-    note: 'Release requires separate green CI and verified Render Live/health.'
+    batchId: 'B01', total: manifest.lessons.length,
+    evidenceReady, historicalCertificationsReused: historicallyCertified,
+    remainingEvidence: manifest.lessons.length - evidenceReady,
+    openDefects, byGrade,
+    state: evidenceReady === manifest.lessons.length && openDefects === 0 ?
+      'BATCH_EVIDENCE_READY' : 'BATCH_NO-GO',
+    gapsPreview: outstanding.slice(0, 15),
+    decisionScope: 'ONE_COLLECTIVE_BATCH_DECISION_ONLY',
+    note: 'Coverage does not imply L1-L6 correctness; 500 SHA-bound actual evidence records and full CI are mandatory. BATCH_CERTIFIED is decided collectively only by release-check.'
   };
 }
 
@@ -94,12 +126,20 @@ function main(argv = process.argv.slice(2)) {
   const ledger = JSON.parse(fs.readFileSync(ledgerFile, 'utf8'));
   const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
   const result = inspectBatch({ manifest, source, ledger });
-  process.stdout.write(JSON.stringify(result, null, 2) + '\n');
-  if (releaseCheck && result.certified !== result.total) {
-    throw Error('RELEASE BLOCKED: B01 has ' + result.remaining +
-      ' uncertified lessons; do not merge academic content into main.');
+  if (releaseCheck && result.state !== 'BATCH_EVIDENCE_READY') {
+    process.stdout.write(JSON.stringify(result, null, 2) + '\n');
+    throw Error('COLLECTIVE RELEASE BLOCKED: B01 lacks evidence for ' +
+      result.remainingEvidence + ' of 500 lessons or has ' + result.openDefects +
+      ' unresolved defects. No partial or individual certifications.');
   }
-  return result;
+  // This is ONE approval for the entire 500-lesson batch, not 500 rows
+  // silently rewritten to certified.
+  const decision = releaseCheck
+    ? { ...result, state: 'BATCH_CERTIFIED', decisionScope:
+        'ONE_AUTOMATIC_COLLECTIVE_DECISION', candidateSha: ledger.releaseCandidateSha }
+    : result;
+  process.stdout.write(JSON.stringify(decision, null, 2) + '\n');
+  return decision;
 }
 
 if (require.main === module) {
