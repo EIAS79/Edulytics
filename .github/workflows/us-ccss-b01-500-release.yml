@@ -15,6 +15,8 @@ on:
       - 'tools/us-ccss-b01-source-visual-gaps.py'
       - 'tools/us-ccss-b01-unified-eight-dimension-report.cjs'
       - 'tools/us-ccss-b01-evidence-progress.cjs'
+      - 'tools/us-ccss-b01-original-teacher-activities.py'
+      - 'tests/academic-us-ccss-b01-original-teacher-activities.test.py'
       - 'tests/academic-us-ccss-b01-evidence-progress.test.cjs'
       - 'tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs'
       - 'tests/academic-us-ccss-b01-source-visual-gaps.test.py'
@@ -122,6 +124,49 @@ jobs:
         with:
           name: b01-rich-v2-composition-500
           path: b01-rich-v2-500.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  audit-b01-original-teacher-activities:
+    needs: [audit-b01-effective-materializer-and-real-practice]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-effective-content-and-practice
+          path: b01-activity-runtime
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-rich-v2-composition-500
+          path: b01-activity-rich
+      - name: Source cache day
+        id: day
+        run: echo "value=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: .cache/usccss-b01-teacher-activities
+          key: b01-full-teacher-lessons-${{ hashFiles('artifacts/academic-us-ccss/batches/B01-lesson-manifest.json') }}-${{ steps.day.outputs.value }}
+      - name: Reject fabricated 500-way activity matches and unsafe source URLs
+        run: python3 tests/academic-us-ccss-b01-original-teacher-activities.test.py
+      - name: Inspect all 500 ORIGINAL full teacher Lesson activities vs effective learner Rich V2
+        env:
+          USCCSS_B01_TEACHER_LESSON_CACHE: .cache/usccss-b01-teacher-activities
+        run: |
+          python3 tools/us-ccss-b01-original-teacher-activities.py \
+            --runtime b01-activity-runtime/b01-effective-content-and-practice.json \
+            --rich b01-activity-rich/b01-rich-v2-500.json \
+            --output b01-original-teacher-activities-500.json
+      - name: Archive source activity metadata and candidate instructional gaps
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-original-teacher-activities-500
+          path: b01-original-teacher-activities-500.json
           retention-days: 30
           if-no-files-found: warn
 
