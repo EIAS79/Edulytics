@@ -21,6 +21,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.partition.halves_fourths",
         "usccss.b01.number_line.equal_intervals",
         "usccss.b01.clock.half_quarters",
+        "usccss.b01.clock.read_half_hour",
+        "usccss.b01.clock.read_five_minutes",
         "usccss.b01.rectangle.unit_squares",
         "usccss.b01.measure.map_lengths",
         "usccss.b01.graph.choose_scale",
@@ -108,6 +110,33 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "What is the missing tick value?",
                     "Consecutive ticks have equal differences: add the constant step again.",
                     AssessmentItemType.Numeric, D(("step", a * b)));
+
+            // Publisher G1 U07 L14-L15: hour/half-hour hand positions.
+            case "usccss.b01.clock.read_half_hour":
+                a = r.Next(1, 13);
+                m = r.Next(0, 2);
+                return Make(f,
+                    m == 0
+                        ? $"On an analog clock the hour hand points to {a} and " +
+                          "the minute hand points to 12. Write the time (h:mm)."
+                        : $"On an analog clock the hour hand is halfway between {a} " +
+                          $"and {(a%12)+1}, and the minute hand points to 6. " +
+                          "Write the time (h:mm).",
+                    "On the hour the minute hand points to 12; at half past " +
+                    "it points to 6 and the hour hand is halfway between numbers.",
+                    AssessmentItemType.ShortAnswer, D(("hour", a), ("minutes", 30*m)));
+
+            // Publisher G2 U06 L12: numbered clock ticks are five minutes apart.
+            case "usccss.b01.clock.read_five_minutes":
+                a = r.Next(1, 13);
+                m = r.Next(0, 12);
+                return Make(f,
+                    $"The analog clock's minute hand points to " +
+                    $"{(m==0 ? 12 : m)}, and the hour hand has reached or passed {a}. " +
+                    "Write the time (h:mm).",
+                    "Each number on an analog clock represents five minutes. " +
+                    "Count the minute-hand position in groups of five.",
+                    AssessmentItemType.ShortAnswer, D(("hour", a), ("minutes", m*5)));
 
             case "usccss.b01.clock.half_quarters":
                 m = r.Next(0, 3);
@@ -283,6 +312,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.partition.halves_fourths" => P("denominator") == 2 ? "half" : "fourth",
             "usccss.b01.number_line.equal_intervals" =>
                 (2 * P("step")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.clock.read_half_hour" or
+            "usccss.b01.clock.read_five_minutes" =>
+                $"{P("hour")}:{P("minutes"):00}",
             "usccss.b01.clock.half_quarters" =>
                 (P("position") + 1).ToString(CultureInfo.InvariantCulture) switch
                 {
@@ -355,6 +387,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.partition.halves_fourths" =>
                 (N("denominator") is 2 or 4) && Range("shape",0,1),
             "usccss.b01.number_line.equal_intervals" => Range("step",1,40),
+            "usccss.b01.clock.read_half_hour" =>
+                Range("hour",1,12) && (N("minutes") is 0 or 30),
+            "usccss.b01.clock.read_five_minutes" =>
+                Range("hour",1,12) && Range("minutes",0,55) &&
+                N("minutes")%5==0,
             "usccss.b01.clock.half_quarters" =>
                 Range("position",0,2) && Range("hour",1,12),
             "usccss.b01.rectangle.unit_squares" =>
