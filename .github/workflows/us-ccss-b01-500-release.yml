@@ -68,7 +68,7 @@ jobs:
 
   release-all-500-only:
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
-    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues, consolidate-b01-eight-dimension-report]
+    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues, consolidate-b01-eight-dimension-report, b01-full-product-regressions]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -270,5 +270,31 @@ jobs:
           path: |
             b01-unified-eight-dimension-report-500.json
             b01-unified-eight-dimension-summary.md
+          retention-days: 30
+          if-no-files-found: warn
+
+  b01-full-product-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore all application and test dependencies
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Run the full Edulytics regression suite, not only B01-filtered tests
+        run: |
+          mkdir -p TestResults
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --logger "trx;LogFileName=b01-full-product.trx" \
+            --results-directory TestResults \
+            --logger 'console;verbosity=normal'
+      - name: Preserve complete regressions and precise failure evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: b01-full-product-regression-trx
+          path: TestResults/*.trx
           retention-days: 30
           if-no-files-found: warn
