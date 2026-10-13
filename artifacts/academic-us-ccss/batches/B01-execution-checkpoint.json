@@ -51,7 +51,7 @@
     }
   },
   "lastCompletedOperation": "Produced one 500-row eight-dimension B01 report from prior effective/runtime/publisher/visual/question evidence, 5/5 report unit tests and collective workflow success. Implemented exact_time mapping, graph semantic identity, fractional/quarter-inch meaningful session diversity and source-aligned G3 routing on PR #492; 2377/2378 full regression tests passed on d1f8ef5. Updated stale interaction registry-count assertion to 324 in next commit. Previous PR #488 pilot certification remains preserved.",
-  "nextExactOperation": "Inspect latest CI after registry-count assertion correction; then address remaining true B01 content/source/math/visual L1–L6 gaps for all 500. Existing 500-row report is a triage checkpoint not BATCH_CERTIFIED; do not repeat unchanged content reviews, do not merge or deploy draft PR, do not start B02.",
+  "nextExactOperation": "Verify CI on evidence-driven implementation SHA 1251ee4 and inspect b01-collective-evidence-progress-500 artifact; then implement narrow, provenance-verified L1-L6 evidence ingestion from independent sources (publisher/visual math/practice/browser), grouping true defects and preserving historical PR #488 evidence. Do not re-run unchanged source analyses, auto-promote incomplete gates, remove Draft, merge or deploy.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -81,5 +81,20 @@
   },
   "totalEvidenceReady": 1,
   "remainingEvidenceNeeded": 499,
-  "lastKnownCandidateRef": "audit/us-ccss-b01-500-lesson-certification"
+  "lastKnownCandidateRef": "audit/us-ccss-b01-500-lesson-certification",
+  "evidenceDrivenExecution": {
+    "amendment": "V4.1 — Evidence-driven Collective Certification",
+    "plan": "docs/curriculum/US_CCSS_GRADE_BY_GRADE_LESSON_ACADEMIC_CERTIFICATION_PLAN.md",
+    "progressReconciler": "tools/us-ccss-b01-evidence-progress.cjs",
+    "test": "tests/academic-us-ccss-b01-evidence-progress.test.cjs",
+    "ci": ".github/workflows/us-ccss-b01-500-release.yml",
+    "firstImplementationHead": "1251ee49c7931499659c5b4742f14b377de08e12",
+    "executionState": "IMPLEMENTED_CI_PENDING",
+    "auditOutput": "b01-collective-evidence-progress-500.json",
+    "summaryOutput": "b01-collective-evidence-progress-summary.json",
+    "canonicalLedgerWrites": false,
+    "syntheticGatePassAllowed": false,
+    "currentCertifiedBaseline": 1,
+    "remainingGateEvidence": 499
+  }
 }
