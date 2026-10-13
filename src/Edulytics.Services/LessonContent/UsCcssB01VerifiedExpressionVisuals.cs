@@ -116,7 +116,13 @@ public static partial class UsCcssB01VerifiedExpressionVisuals
     private static RichLessonVisual? TryPlaceValueVisual(string? workedExamples)
     {
         if (string.IsNullOrWhiteSpace(workedExamples)) return null;
-        var match = Regex.Match(workedExamples,
+        // Source-authored examples may start with "Example 15:"; a label
+        // is not the number being taught. Discard structural labels before
+        // selecting numeric operands for any instructional diagram.
+        var authoredMath = Regex.Replace(workedExamples,
+            @"\b(?:Example|Step|Part)\s*\d{1,2}\s*[:.)\-–—]",
+            "", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        var match = Regex.Match(authoredMath,
             @"(?<![\d,])(?:\d{1,3}(?:,\d{3})+|\d{2,7})(?![\d,])",
             RegexOptions.CultureInvariant);
         if (!match.Success) return null;
