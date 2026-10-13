@@ -35,7 +35,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.factors.factors_multiples",
         "usccss.b01.fraction.whole_multiply",
         "usccss.b01.fraction.decompose_same_denominator",
-        "usccss.b01.place_value.ten_times"
+        "usccss.b01.place_value.ten_times",
+        "usccss.b01.market.inventory_100"
     };
 
     public static bool Supports(string? family) =>
@@ -55,6 +56,25 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int a, b, n, d, m;
         switch (f)
         {
+            case "usccss.b01.market.inventory_100":
+                // 2021 IM G2 U02 L16 optional market: one stock category <10,
+                // two categories >10, total exactly 100; transactions subtract
+                // sales from the real inventory.
+                a = r.Next(2, 10);
+                b = r.Next(20, 61);
+                n = 100 - a - b;
+                d = r.Next(1, Math.Min(b, 12));
+                m = r.Next(0, 2);
+                return Make(f,
+                    $"Your market starts with {a} apples, {b} notebooks and {n} pencils " +
+                    $"(100 items altogether). A customer buys {d} notebooks. " +
+                    (m == 0 ? "How many notebooks remain in stock?" :
+                              "How many pencils were in stock before the sale?"),
+                    "Model three inventory quantities totaling 100; subtract sales " +
+                    "from the relevant item, and do not subtract unrelated stock.",
+                    AssessmentItemType.Numeric,
+                    D(("small", a), ("second", b), ("third", n), ("sold", d), ("mode", m)));
+
             case "usccss.b01.triangle.attributes":
                 m = r.Next(1, 4);
                 n = r.Next(0, 4);
@@ -256,6 +276,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int P(string key) => p[key];
         return f switch
         {
+            "usccss.b01.market.inventory_100" =>
+                (P("mode") == 0 ? P("second") - P("sold") : P("third"))
+                    .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.triangle.attributes" => P("position").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.partition.halves_fourths" => P("denominator") == 2 ? "half" : "fourth",
             "usccss.b01.number_line.equal_intervals" =>
@@ -321,6 +344,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int N(string key) => p[key];
         return family switch
         {
+            "usccss.b01.market.inventory_100" =>
+                Range("small",2,9) && Range("second",20,60) &&
+                Range("third",11,78) &&
+                N("small") + N("second") + N("third") == 100 &&
+                Range("sold",1,11) && N("sold") < N("second") &&
+                Range("mode",0,1),
             "usccss.b01.triangle.attributes" =>
                 Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
