@@ -14,6 +14,7 @@ on:
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
       - 'tests/academic-us-ccss-b01-bulk-content-screen.test.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRuntimeAuditTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRichV2AuditTests.cs'
   workflow_dispatch:
 
 permissions:
@@ -69,12 +70,20 @@ jobs:
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - name: Validate effective learner content, Rich V2 quality and real question generation over all 500
         run: |
-          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01CollectiveRuntimeAuditTests' --logger 'console;verbosity=normal'
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective' --logger 'console;verbosity=normal'
       - name: Retain 500-row effective content and practice runtime evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: b01-effective-content-and-practice
           path: b01-effective-content-and-practice.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Retain 500-lesson actual Rich V2 composition inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-rich-v2-composition-500
+          path: b01-rich-v2-500.json
           retention-days: 30
           if-no-files-found: warn
