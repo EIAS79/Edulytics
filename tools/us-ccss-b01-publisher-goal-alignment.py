@@ -143,7 +143,43 @@ def fetch_source(url):
             if retry<2:time.sleep(1.5*(retry+1))
     raise RuntimeError(last)
 
-def run(manifest, effective, fetcher):
+# IM 2021 optional Grade 2 U02 L16 explicitly does not publish separate
+# Learning Goals, but has a detailed publisher Teacher Lesson activity.
+# Only this exact publisher-owned page can fill the alternative activity slot.
+OPTIONAL_ACTIVITY_LESSON_CODE = "PED:US-CCSS-MATH:G2:U02:L16"
+OPTIONAL_ACTIVITY_URL = (
+    "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-16/lesson.html"
+)
+
+def check_optional_market_activity(html: str):
+    parser = MainText()
+    parser.feed(html)
+    narrative = re.sub(r"\s+", " ", "".join(parser.fragments)).lower()
+    required = ["3 kinds of items", "100 items", "inventory"]
+    if not all(phrase in narrative for phrase in required):
+        raise ValueError("Official optional market activity missing required stock/transaction constraints")
+    return {
+        "sourceUrl": OPTIONAL_ACTIVITY_URL,
+        "activityHtmlSha256": hashlib.sha256(html.encode("utf-8")).hexdigest(),
+        "publisherActivityConstraints": [
+            "THREE_ITEM_KINDS", "TOTAL_100_STOCK", "SALES_INVENTORY"
+        ],
+        "goalSectionSource": "OPTIONAL_LESSON_HAS_PURPOSE_AND_TEACHER_ACTIVITY_NO_SEPARATE_GOALS",
+        "status": "OFFICIAL_ACTIVITY_VERIFIED_NOT_CERTIFIED"
+    }
+
+def fetch_optional_market_activity():
+    request = Request(OPTIONAL_ACTIVITY_URL, headers={
+        "User-Agent": "Edulytics-CCSS-Research/1.0 (+https://github.com/EIAS79/Edulytics)",
+        "Accept": "text/html"
+    })
+    with urlopen(request, timeout=25) as response:
+        if response.url != OPTIONAL_ACTIVITY_URL:
+            raise ValueError("Unexpected publisher activity redirect")
+        body = response.read(850000).decode("utf-8", "replace")
+    return check_optional_market_activity(body)
+
+def run(manifest, effective, fetcher, activity_fetcher=None):
     items=manifest["lessons"]
     rows=effective["lessonRows"]
     if len(items)!=500 or len(rows)!=500 or manifest["batchId"]!="B01":
@@ -161,6 +197,21 @@ def run(manifest, effective, fetcher):
             try:sources[url]=future.result()
             except Exception as e:errors.append({"url":url,"reason":str(e)[:240]})
             if idx%50==0:print(f"Fetched official preparations: {idx}/{len(urls)}",flush=True)
+    # G2 U02 L16 is the publisher's optional lesson with no Learning Goals
+    # heading. An independently checked official Teacher Lesson, NOT an
+    # invented teacher-facing goal, is used for alternative provenance.
+    activity_evidence = None
+    optional_errors = []
+    optional_item = next((item for item in items if
+        item["lessonCode"] == OPTIONAL_ACTIVITY_LESSON_CODE), None)
+    if optional_item is not None:
+        original_optional = sources.get(optional_item["sourceUrl"])
+        if original_optional and original_optional["purpose"] and not original_optional["goals"]:
+            try:
+                activity_evidence = (activity_fetcher or fetch_optional_market_activity)()
+            except (HTTPError, URLError, TimeoutError, ValueError) as exc:
+                optional_errors.append(str(exc)[:240])
+
     matrix=[]
     for item in items:
         original=sources.get(item["sourceUrl"])
@@ -168,7 +219,19 @@ def run(manifest, effective, fetcher):
             matrix.append({"ordinal":item["ordinal"],"lessonCode":item["lessonCode"],
                            "issues":["PUBLISHER_SOURCE_NOT_FETCHED"],"verdict":"BLOCKED"})
             continue
-        matrix.append(align_row(item,by_code[item["lessonCode"]],original))
+        row = align_row(item, by_code[item["lessonCode"]], original)
+        if item["lessonCode"] == OPTIONAL_ACTIVITY_LESSON_CODE and not original["goals"]:
+            row["publisherGoalSection"] = "NOT_PUBLISHED_FOR_OPTIONAL_LESSON"
+            if activity_evidence:
+                row["officialOptionalActivitySha256"] = activity_evidence["activityHtmlSha256"]
+                row["publisherActivityBasis"] = activity_evidence["goalSectionSource"]
+                row["issues"] = [issue for issue in row["issues"] if
+                    issue != "MISSING_PUBLISHER_PURPOSE_OR_GOALS"]
+                row["verdict"] = ("SOURCE_SCREENED_NOT_CERTIFIED" if not row["issues"] else
+                    "REVIEW_REQUIRED")
+            else:
+                row["issues"].append("OPTIONAL_LESSON_ACTIVITY_EVIDENCE_NOT_FETCHED")
+        matrix.append(row)
     problems={}
     for row in matrix:
         for issue in row["issues"]:
@@ -177,7 +240,9 @@ def run(manifest, effective, fetcher):
       "kind":"B01_500_OFFICIAL_PUBLISHER_VS_EFFECTIVE_LEARNER_ALIGNMENT",
       "expected":500,"observed":len(matrix),
       "distinctPublisherUrls":len(urls),"fetchedPublisherUrls":len(sources),
-      "sourceFetchFailures":errors,"issueCounts":dict(sorted(problems.items())),
+      "sourceFetchFailures":errors,"optionalSourceErrors":optional_errors,
+      "optionalPublisherActivityEvidence":activity_evidence,
+      "issueCounts":dict(sorted(problems.items())),
       "rows":matrix,"academicDecision":"NOT_CERTIFIED",
       "note":"This reads all 500 official lesson goals but keyword overlap is a triage heuristic, not L1-L6 PASS. Full publisher lesson activities, semantic math, visual rendering, practice alignment and eight dimensions require independent confirmation."
     }
