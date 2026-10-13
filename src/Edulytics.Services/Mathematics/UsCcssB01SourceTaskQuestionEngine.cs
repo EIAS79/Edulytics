@@ -302,26 +302,74 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         return r * r == x;
     }
 
+    // The verifier must reject a modified parameter payload even if someone
+    // supplies an answer consistent with those modified parameters.
+    private static bool ValidDomain(string family, IReadOnlyDictionary<string, int> p)
+    {
+        bool Range(string key,int lo,int hi) =>
+            p.TryGetValue(key,out var v) && v>=lo && v<=hi;
+        int N(string key) => p[key];
+        return family switch
+        {
+            "usccss.b01.triangle.attributes" => Range("position",1,3),
+            "usccss.b01.partition.halves_fourths" =>
+                (N("denominator") is 2 or 4) && Range("shape",0,1),
+            "usccss.b01.number_line.equal_intervals" => Range("step",1,40),
+            "usccss.b01.clock.half_quarters" => Range("position",0,2),
+            "usccss.b01.rectangle.unit_squares" =>
+                Range("rows",2,7) && Range("columns",2,13) &&
+                N("rows")*N("columns")<=35,
+            "usccss.b01.measure.map_lengths" =>
+                Range("a",2,10) && Range("b",2,10) &&
+                N("a")+N("b")<=20 && Range("mode",0,1),
+            "usccss.b01.graph.choose_scale" => N("step") is 2 or 5 or 10,
+            "usccss.b01.array.equal_groups" =>
+                Range("rows",2,7) && Range("columns",2,11) &&
+                N("rows")*N("columns")<=100,
+            "usccss.b01.geometry.composite_rectangle_area" =>
+                Range("height",2,5) && Range("width1",2,6) &&
+                Range("width2",1,4),
+            "usccss.b01.division.unknown_factor" =>
+                Range("objectsPerGroup",2,10) && Range("groups",2,10),
+            "usccss.b01.fraction.name_parts" =>
+                (N("denominator") is 2 or 3 or 4 or 6 or 8) &&
+                Range("numerator",1,N("denominator")-1),
+            "usccss.b01.measure.quarter_inch" => N("quarters") is 1 or 3,
+            "usccss.b01.factors.factor_pairs" =>
+                Range("firstFactor",2,8) && Range("secondFactor",2,9),
+            "usccss.b01.factors.prime_composite" => Range("number",2,100),
+            "usccss.b01.factors.locker_square" => Range("locker",1,20),
+            "usccss.b01.factors.factors_multiples" =>
+                Range("a",2,10) && Range("b",2,10) &&
+                Range("mode",0,1) && Range("offset",0,1),
+            "usccss.b01.fraction.whole_multiply" =>
+                Range("denominator",3,9) &&
+                Range("numerator",2,N("denominator")-1) && Range("whole",2,5),
+            "usccss.b01.fraction.decompose_same_denominator" =>
+                Range("denominator",4,10) &&
+                Range("wholeN",2,N("denominator")) &&
+                Range("firstN",1,N("wholeN")-1),
+            "usccss.b01.place_value.ten_times" =>
+                Range("digit",1,9) && (N("place") is 10 or 100 or 1000),
+            _ => false
+        };
+    }
+
     public static bool Verify(string family, IReadOnlyDictionary<string, int> p, string answer)
     {
         if (!Supports(family) || answer is null) return false;
-        // Reject tampered numeric generation data and out-of-domain parameters
-        // rather than trusting an input-supplied expected answer.
         try
         {
-            var generatedExpected = Solve(family, p);
-            if (family == "usccss.b01.factors.prime_composite" &&
-                (p["number"] < 2 || p["number"] > 100)) return false;
-            if (family == "usccss.b01.fraction.whole_multiply" &&
-                (p["numerator"] <= 1 || p["denominator"] <= p["numerator"] ||
-                 p["whole"] < 2 || p["whole"] > 5)) return false;
-            if (family == "usccss.b01.factors.factors_multiples" &&
-                (p["offset"] is < 0 or > 1 || p["a"] < 2 || p["mode"] is < 0 or > 1))
-                return false;
-            return string.Equals(answer.Trim(), generatedExpected,
+            if (!ValidDomain(family,p)) return false;
+            // Independent CI oracles cross-check the mathematical result from
+            // the structured generation parameters across all 19 families.
+            return string.Equals(answer.Trim(), Solve(family,p),
                 StringComparison.OrdinalIgnoreCase);
         }
         catch (Exception e) when (e is KeyNotFoundException or
-            InvalidOperationException or DivideByZeroException) { return false; }
+            InvalidOperationException or DivideByZeroException or OverflowException)
+        {
+            return false;
+        }
     }
 }
