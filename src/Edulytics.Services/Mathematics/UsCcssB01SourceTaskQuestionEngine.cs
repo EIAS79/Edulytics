@@ -40,6 +40,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.measure.map_lengths",
         "usccss.b01.ruler.compare_centimeters",
         "usccss.b01.g2.measurement.read_line_plot",
+        "usccss.b01.g3.quarter_inch_line_plot_frequency",
         "usccss.b01.g3.picture_graph.scaled_compare",
         "usccss.b01.g3.picture_graph.construct",
         "usccss.b01.g2.compare_tape_difference",
@@ -758,6 +759,30 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     D(("scale",m),("aIcons",a),("bIcons",b)));
             }
 
+            // Source G3 U06 L04–L05: read/construct a line plot with
+            // quarter- and half-inch measurements, not just whole units.
+            case "usccss.b01.g3.quarter_inch_line_plot_frequency":
+            {
+                a=r.Next(1,5);b=r.Next(1,5);n=r.Next(1,5);
+                d=r.Next(1,5);m=r.Next(1,5);
+                var index=r.Next(0,5);
+                var labels=new[]{"1","1 1/4","1 1/2","1 3/4","2"};
+                var observations=new[]{a,b,n,d,m};
+                var data=Enumerable.Range(0,5)
+                    .SelectMany(i=>Enumerable.Repeat(labels[i],observations[i]))
+                    .OrderBy(_=>r.Next()).ToArray();
+                return Make(f,
+                    "Lengths in inches measured to the nearest quarter-inch: " +
+                    $"{string.Join(", ",data)}. Make or read a line plot with " +
+                    "one X per item and marks 1/4 inch apart. " +
+                    $"How many observations measure {labels[index]} inches?",
+                    "Use five equal-spacing quarter-inch marks; count the X " +
+                    "above the requested fraction or whole-inch tick.",
+                    AssessmentItemType.Numeric,
+                    D(("count1",a),("count2",b),("count3",n),
+                      ("count4",d),("count5",m),("targetTick",index)));
+            }
+
             case "usccss.b01.g2.measurement.read_line_plot":
             {
                 a=r.Next(1,5);b=r.Next(1,5);m=r.Next(1,5);n=r.Next(1,5);
@@ -1187,6 +1212,16 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g3.picture_graph.construct" =>
                 P("bIcons").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g3.quarter_inch_line_plot_frequency" =>
+                P("targetTick") switch
+                {
+                    0=>P("count1").ToString(CultureInfo.InvariantCulture),
+                    1=>P("count2").ToString(CultureInfo.InvariantCulture),
+                    2=>P("count3").ToString(CultureInfo.InvariantCulture),
+                    3=>P("count4").ToString(CultureInfo.InvariantCulture),
+                    4=>P("count5").ToString(CultureInfo.InvariantCulture),
+                    _=>throw new InvalidOperationException()
+                },
             "usccss.b01.g2.measurement.read_line_plot" =>
                 P("targetLength") switch
                 {
@@ -1439,6 +1474,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g3.picture_graph.construct" =>
                 (N("scale") is 2 or 5) &&
                 Range("aIcons",2,5) && Range("bIcons",1,6),
+            "usccss.b01.g3.quarter_inch_line_plot_frequency" =>
+                Range("count1",1,4) && Range("count2",1,4) &&
+                Range("count3",1,4) && Range("count4",1,4) &&
+                Range("count5",1,4) && Range("targetTick",0,4),
             "usccss.b01.g2.measurement.read_line_plot" =>
                 Range("count2",1,4) && Range("count3",1,4) &&
                 Range("count4",1,4) && Range("count5",1,4) &&
