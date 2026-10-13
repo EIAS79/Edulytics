@@ -38,6 +38,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.clock.read_five_minutes",
         "usccss.b01.rectangle.unit_squares",
         "usccss.b01.measure.map_lengths",
+        "usccss.b01.ruler.compare_centimeters",
+        "usccss.b01.ruler.measure_without_zero",
         "usccss.b01.graph.choose_scale",
         "usccss.b01.graph.scaled_compare",
         "usccss.b01.array.equal_groups",
@@ -517,6 +519,33 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "Count the same number of unit squares in every row, then multiply rows by columns.",
                     AssessmentItemType.Numeric, D(("rows", a), ("columns", b)));
 
+            // IM 2021 G2 U03 L03: centimeter ruler comparison.
+            case "usccss.b01.ruler.compare_centimeters":
+            {
+                a=r.Next(4,16);b=r.Next(2,a);
+                return Make(f,
+                    $"One object measures {a} cm from zero on a ruler. " +
+                    $"A second object measures {b} cm with the same 1 cm ticks. " +
+                    "How many centimeters longer is the first?",
+                    "Compare the two lengths using equal centimeter marks. " +
+                    "Subtract the shorter length from the longer length.",
+                    AssessmentItemType.Numeric,
+                    D(("longLength",a),("shortLength",b),("difference",a-b)));
+            }
+            // IM 2021 G2 U03 L10: measure despite a nonzero starting tick.
+            case "usccss.b01.ruler.measure_without_zero":
+            {
+                a=r.Next(2,10);b=r.Next(3,14);n=a+b;
+                return Make(f,
+                    $"An object starts at the {a} cm mark and ends at " +
+                    $"the {n} cm mark on a ruler. It does NOT begin at zero. " +
+                    "What is the object's actual length in centimeters?",
+                    "Count the 1 cm intervals between the two endpoints " +
+                    "or subtract the start mark from the end mark.",
+                    AssessmentItemType.Numeric,
+                    D(("start",a),("end",n),("length",b)));
+            }
+
             case "usccss.b01.measure.map_lengths":
                 a = r.Next(2, 11);
                 b = r.Next(2, Math.Min(21 - a, 11));
@@ -852,6 +881,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 string.Join("+", Enumerable.Repeat(
                     P("columns").ToString(CultureInfo.InvariantCulture), P("rows"))) +
                 "=" + (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.ruler.compare_centimeters" =>
+                (P("longLength")-P("shortLength")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.ruler.measure_without_zero" =>
+                (P("end")-P("start")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.measure.map_lengths" =>
                 (P("mode") == 0 ? P("a") + P("b") : P("b"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -1018,6 +1051,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.rectangle.unit_squares" =>
                 Range("rows",2,7) && Range("columns",2,13) &&
                 N("rows")*N("columns")<=35,
+            "usccss.b01.ruler.compare_centimeters" =>
+                Range("longLength",4,15) && Range("shortLength",2,14) &&
+                Range("difference",1,13) &&
+                N("longLength")>N("shortLength") &&
+                N("difference")==N("longLength")-N("shortLength"),
+            "usccss.b01.ruler.measure_without_zero" =>
+                Range("start",2,9) && Range("end",5,22) &&
+                Range("length",3,13) &&
+                N("length")==N("end")-N("start"),
             "usccss.b01.measure.map_lengths" =>
                 Range("a",2,10) && Range("b",2,10) &&
                 N("a")+N("b")<=20 && Range("mode",0,1),

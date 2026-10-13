@@ -5830,6 +5830,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.ruler.compare_centimeters",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "b01-source-ruler-independent-endpoint-recalculation-v1",
+      "representations": [
+        "centimeter_ruler_equal_interval_scale",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.ruler.measure_without_zero",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "b01-source-ruler-independent-endpoint-recalculation-v1",
+      "representations": [
+        "centimeter_ruler_equal_interval_scale",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.measure.map_lengths",
       "version": 1,
       "skillId": "supporting.measurement.practical",

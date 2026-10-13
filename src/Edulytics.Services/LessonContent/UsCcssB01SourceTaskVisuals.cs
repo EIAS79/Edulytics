@@ -399,6 +399,37 @@ public static class UsCcssB01SourceTaskVisuals
                         Items = [ "0", $"{N("step")}", $"{2 * N("step")}",
                             $"{3 * N("step")}" ]
                     },
+                // Both ruler diagrams are derived from checked operands.
+                "usccss.b01.ruler.compare_centimeters" when
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.Scale,
+                        Title="Compare measured lengths on centimeter ruler",
+                        Description=$"Every adjacent ruler tick is 1 cm. " +
+                            $"The first object measures {N("longLength")} cm; " +
+                            $"the other measures {N("shortLength")} cm. " +
+                            $"Their difference is {q.CorrectAnswer} cm.",
+                        PrimaryLabel=$"{N("longLength")} cm − {N("shortLength")} cm",
+                        Items=Enumerable.Range(0,17).Select(i=>i.ToString()).ToList(),
+                        SecondaryItems=[N("longLength").ToString(),
+                            N("shortLength").ToString()]
+                    },
+                "usccss.b01.ruler.measure_without_zero" when
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.Scale,
+                        Title="Measure without aligning the edge with zero",
+                        Description=$"The ruler's equally spaced centimeter marks " +
+                            $"show a start of {N("start")} and end of {N("end")}. " +
+                            $"The length is {N("end")} − {N("start")} = {q.CorrectAnswer} cm.",
+                        PrimaryLabel=$"Object: tick {N("start")} to {N("end")}",
+                        Items=Enumerable.Range(0,24).Select(i=>i.ToString()).ToList(),
+                        SecondaryItems=[N("start").ToString(),N("end").ToString()]
+                    },
                 "usccss.b01.graph.choose_scale" =>
                     new RichLessonVisual
                     {

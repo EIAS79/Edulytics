@@ -249,6 +249,37 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G2:U03:L03",
+        "usccss.b01.ruler.compare_centimeters")]
+    [InlineData("PED:US-CCSS-MATH:G2:U03:L10",
+        "usccss.b01.ruler.measure_without_zero")]
+    public void SourceGrade2RulerMeasurementsHaveExactCmTicksAndCorrectAnswer(
+        string code,string family)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=90501;seed<90521;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var expected=family.EndsWith("compare_centimeters",StringComparison.Ordinal)
+                ?p["longLength"]-p["shortLength"]:p["end"]-p["start"];
+            Assert.Equal(expected,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var ruler=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.Scale,ruler.Kind);
+            var ticks=ruler.Items.Select(int.Parse).ToArray();
+            Assert.Equal(0,ticks[0]);
+            Assert.All(ticks.Zip(ticks.Skip(1),(a,b)=>b-a),
+                diff=>Assert.Equal(1,diff));
+            Assert.Contains(q.CorrectAnswer,ruler.Description);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999"}]));
+        }
+    }
+
     [Fact]
     public void ReadingScaleDiagramIsEquallySpacedAndHasTheVerifiedAnswer()
     {

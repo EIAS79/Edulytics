@@ -12,6 +12,19 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // Original teacher Grade 2 U03 L03 and L10 ruler purposes.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L03",
+            "supporting.measurement.practical", "RULER_CM_COMPARE_LENGTHS",
+            ["usccss.b01.ruler.compare_centimeters"],
+            "IM2021_G2_U03_L03_CREATE_USE_RULER_CM_COMPARISON",
+            "READY_VERIFIED", "usccss-b01-ruler-source-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L10",
+            "supporting.measurement.practical", "MEASURE_FROM_NONZERO_CM_MARK",
+            ["usccss.b01.ruler.measure_without_zero"],
+            "IM2021_G2_U03_L10_NONZERO_ENDPOINT_RULER",
+            "READY_VERIFIED", "usccss-b01-ruler-source-v1"),
         // IM 2021 G1 U07 L13: read and write only whole hours, not
         // unrelated elapsed-time computations.
         new(
