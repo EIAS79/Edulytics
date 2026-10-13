@@ -223,6 +223,60 @@ for key, schoolname in SCHOOLS:
                 browser.close()
         print("DISPOSABLE_US_CCSS_G1_U01_L01_STUDENT_RICH_V2_RENDER_PASS",
               pilot_code, pilot_lesson_id)
+        # Second original lesson: dot-cube equivalence is a different
+        # content SHA. L01 screenshots or a successful sign-in cannot certify L02.
+        next_code="PED:US-CCSS-MATH:G1:U01:L02"
+        next_ids=sql("""
+            SELECT "Id"::text FROM "CurriculumPedagogicalLessons"
+            WHERE "Code"='PED:US-CCSS-MATH:G1:U01:L02';""").splitlines()
+        assert len(next_ids)==1, ("Original G1 L02 source identity",next_ids)
+        next_id=next_ids[0]
+        next_html=html.unescape(get_page(
+            student,"/student/learning/lesson/"+next_id))
+        assert "rich-lesson-visual--placevaluechart" in next_html, (
+            "G1 L02 authentic student Rich V2 dot pictures missing")
+        assert "Match dot pictures" in next_html, (
+            "G1 L02 source dot-cube activity title not visible")
+        with sync_playwright() as playwright:
+            browser=playwright.chromium.launch(headless=True,args=["--no-sandbox"])
+            try:
+                for screen,width,height in (
+                    ("desktop",1440,900),
+                    ("mobile",390,844),
+                ):
+                    context=browser.new_context(
+                        ignore_https_errors=True,
+                        viewport={"width":width,"height":height})
+                    try:
+                        context.add_cookies(cookies)
+                        page=context.new_page()
+                        resp=page.goto(
+                            BASE+"/student/learning/lesson/"+next_id,
+                            wait_until="domcontentloaded",timeout=40000)
+                        assert resp is not None and resp.status==200, (
+                            screen,"L02 real student page unavailable")
+                        figures=page.locator(
+                            "figure.rich-lesson-visual--placevaluechart")
+                        assert figures.count()>0, (
+                            screen,"L02 actual dot cube visuals absent")
+                        for figure in figures.all():
+                            dots=figure.locator(
+                                ".rich-lesson-table td").all_text_contents().count("●")
+                            assert 1<=dots<=20,(
+                                screen,"L02 dot pictures have invalid count",dots)
+                        assert figures.first.is_visible(),(
+                            screen,"L02 learner visual hidden")
+                        page.screenshot(
+                            path=f"/tmp/g1-u01-l02-{screen}.png",
+                            full_page=True)
+                        print("DISPOSABLE_G1_L02_CHROMIUM_VIEWPORT_PASS",
+                              screen,width,height,flush=True)
+                    finally:
+                        context.close()
+            finally:
+                browser.close()
+        print("DISPOSABLE_US_CCSS_G1_U01_L02_STUDENT_RICH_V2_RENDER_PASS",
+              next_code,next_id,flush=True)
     get_page(student, "/student/practice")
     deny(student, "/school/assessments")
     deny(teacher, "/student/dashboard")
