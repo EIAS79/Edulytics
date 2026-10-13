@@ -28,13 +28,24 @@
     }
     else if (Model.Kind is RichLessonVisualKind.NumberLine or RichLessonVisualKind.Scale)
     {
+        // New source-bound B01 number lines encode the target TICK INDEX
+        // separately from labels. Existing legacy visual items are unchanged.
+        var targetTick = Model.Kind == RichLessonVisualKind.NumberLine &&
+            int.TryParse(Model.SecondaryItems.ElementAtOrDefault(0),
+                out var parsedTick) &&
+            parsedTick >= 0 && parsedTick < Model.Items.Count
+                ? parsedTick : -1;
         <div class="rich-number-line-scroll">
             <div class="rich-number-line" role="img" aria-label="@Model.Description">
-                @foreach (var item in Model.Items)
+                @for (var i = 0; i < Model.Items.Count; i++)
                 {
-                    <div class="rich-number-line__tick">
+                    <div class="rich-number-line__tick @(i == targetTick ? "rich-number-line__tick--target" : "")">
+                        @if (i == targetTick)
+                        {
+                            <span aria-hidden="true" title="Marked target">◆</span>
+                        }
                         <span class="rich-number-line__mark" aria-hidden="true"></span>
-                        <strong>@item</strong>
+                        <strong>@Model.Items[i]</strong>
                     </div>
                 }
             </div>
