@@ -290,6 +290,8 @@ public sealed class UsCcssB01SourceTaskVisualsTests
             var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
             Assert.Equal(RichLessonVisualKind.NumberLine,visual.Kind);
             Assert.Equal(11,visual.Items.Count);
+            Assert.Equal(q.Parameters["tick"].ToString(),
+                Assert.Single(visual.SecondaryItems));
             var labels=visual.Items.Select(int.Parse).ToArray();
             Assert.Equal(0,labels[0]);
             for(var k=1;k<labels.Length;k++)
