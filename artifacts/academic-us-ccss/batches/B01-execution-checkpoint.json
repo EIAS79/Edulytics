@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "executionMode": "FIXED_500_LESSON_BATCHES",
+  "executionMode": "FIXED_500_LESSON_BATCHES_COLLECTIVE",
   "batchId": "B01",
   "authoritativeRepository": "EIAS79/Edulytics",
   "branch": "audit/us-ccss-b01-500-lesson-certification",
@@ -12,8 +12,7 @@
   "expected": 500,
   "uniqueAndSourceLocked": 500,
   "certifiedFromCanonicalLedger": 1,
-  "remainingToCertify": 499,
-  "batchState": "BATCH_REVIEW_IN_PROGRESS",
+  "batchState": "BATCH_NO-GO",
   "batchCertified": false,
   "batchPublished": false,
   "releaseEligible": false,
@@ -23,14 +22,6 @@
     "alreadyPublished": true,
     "contentSha256": "2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680"
   },
-  "nextLesson": {
-    "ordinal": 2,
-    "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
-    "name": "Explore Expressions and Sums",
-    "finding": "REWORK_REQUIRED_INSTRUCTIONAL_DOT_CUBE_MATCH_DRAW_ACTIVITY",
-    "academicStatus": "NOT_CERTIFIED",
-    "report": "artifacts/academic-us-ccss/batches/B01-G1-U01-L02-review-checkpoint.md"
-  },
   "verifiedGitHubEvidence": {
     "b01GateRunId": 38325230578,
     "b01GateConclusion": "success",
@@ -38,12 +29,35 @@
     "certifiedCountFromRun": 1,
     "nextLessonFromRun": "PED:US-CCSS-MATH:G1:U01:L02"
   },
-  "lastCompletedOperation": "Locked all 500 unique B01 identities from four IM K5 publisher blueprints; implemented strict source/ledger release gate and 5 test cases; validated 1 certified/499 remaining in GitHub CI; compared L02 learner pack with source and identified missing taught dot-match/drawing representations.",
-  "nextExactOperation": "Repair G1 U01 L02 with source-and-SHA-guarded two-direction dot-cube visual examples, lesson-scoped practice and exact answer checks, then authenticated disposable Rich V2 verification and L1-L6 evidence. Do not certify before passing.",
+  "lastCompletedOperation": "Ran one bulk GitHub Actions scan of all 500 B01 learner bodies; cross-checked source and standards, inspected 486 simple arithmetic equations, collected 14 deliberate true/false style expressions for semantic review; added one automatic collective batch decision gate and CI regression tests. No batch certification claimed.",
+  "nextExactOperation": "Run full B01-wide source/semantic/visual/math generator/grading/Rich V2 review and remediation concurrently, gather 500/500 SHA-bound L1-L6 and 8-dimension evidence records; one release-check gives BATCH_CERTIFIED only when no missing/failed evidence and required CI passes.",
   "stopConditions": [
-    "Do not merge draft PR #492 into main",
-    "Do not trigger Render publishing until B01 has all 500 certified and CI green",
-    "No fabricated approvals or silent grade boundary"
+    "Never mark B01 PASS on static screening alone",
+    "Do not merge draft PR #492 or publish a partial academic batch",
+    "No sequential per-lesson certification; only a single batch decision"
   ],
-  "notes": "Only one lesson is actually internally certified from the canonical ledger. No new L02 PASS has been recorded; the first-pass instructional review has its own report. No student accounts are needed during B01."
+  "notes": "Plan V4 applies 500-at-once group processing. Previous single-lesson L02 research is historical input to unified defect register, not a processing mode.",
+  "planId": "US-CCSS-COLLECTIVE-500-BATCH-CERTIFICATION-V4",
+  "reviewUnit": "B01_ALL_500_AT_ONCE",
+  "approvalUnit": "ONE_AUTOMATIC_COLLECTIVE_BATCH_DECISION",
+  "releaseUnit": "ONE_RELEASE_PER_CERTIFIED_BATCH",
+  "bulkScreen": {
+    "runId": 38379028433,
+    "artifactUrl": "https://github.com/EIAS79/Edulytics/actions/runs/38379028433/artifacts/11803255110",
+    "coverage": {
+      "expected": 500,
+      "observed": 500,
+      "unique": 500
+    },
+    "sourceContentPacksScanned": 4,
+    "simpleEquationsChecked": 486,
+    "lessonsWithArithmeticSpotChecks": 143,
+    "lessonsWithVisualReviewCues": 368,
+    "falseStatementsForSemanticReview": 14,
+    "blockingStructuralIssues": 0,
+    "academicDecision": "NOT_CERTIFIED",
+    "screeningLimits": "Static source/content and arithmetic spot checks do not establish L2-L6 or release approval."
+  },
+  "totalEvidenceReady": 1,
+  "remainingEvidenceNeeded": 499
 }
