@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Thirty-seven lesson-code-exact B01 corrections independently checked against their
+/// Forty lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -255,6 +255,26 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "number.whole.add_subtract", "STORE_INVENTORY_100_ITEM_CONSTRAINTS",
             ["usccss.b01.market.inventory_100"],
             "IM2021_G2_U02_L16_OPTIONAL_STORE_100_ITEMS_PURPOSE_AND_ACTIVITY_CHECKED",
-            "READY_VERIFIED", "usccss-b01-source-task-v1")
+            "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        // Original 2021 IM G1 U07 L14-L15: recognize and write hours / half-hours.
+        new(
+            "PED:US-CCSS-MATH:G1:U07:L14",
+            "supporting.measurement.practical", "ANALOG_HALF_HOUR_READING",
+            ["usccss.b01.clock.read_half_hour"],
+            "IM2021_G1_U07_L14_ANALOG_HALF_HOUR_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-clock-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U07:L15",
+            "supporting.measurement.practical", "WRITE_DIGITAL_HOURS_AND_HALF_HOURS",
+            ["usccss.b01.clock.read_half_hour"],
+            "IM2021_G1_U07_L15_WRITE_TIME_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-clock-v1"),
+        // Original 2021 IM G2 U06 L12: each numbered clock tick is 5 minutes.
+        new(
+            "PED:US-CCSS-MATH:G2:U06:L12",
+            "supporting.measurement.practical", "COUNT_BY_FIVE_ANALOG_CLOCK",
+            ["usccss.b01.clock.read_five_minutes"],
+            "IM2021_G2_U06_L12_FIVE_MINUTE_TIME_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-clock-v1")
     ];
 }
