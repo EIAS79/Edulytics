@@ -6553,6 +6553,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g2.add_subtract_1000_no_regroup",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-three-digit-no-carry-no-borrow-digit-invariants-v1",
+      "representations": [
+        "hundreds_tens_ones_place_value_chart",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g2.order_three_digits_number_line",
       "version": 1,
       "skillId": "measurement.scale.read_equal_intervals",
