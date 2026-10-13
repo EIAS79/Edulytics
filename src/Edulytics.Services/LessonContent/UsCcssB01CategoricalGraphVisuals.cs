@@ -20,6 +20,11 @@ public static class UsCcssB01CategoricalGraphVisuals
         "PED:US-CCSS-MATH:G2:U01:L11",
         "PED:US-CCSS-MATH:G2:U01:L13",
         "PED:US-CCSS-MATH:G2:U07:L18",
+        // Original IM G3 U01 L01-L02 explicitly interpret or construct
+        // picture and bar graphs; these source-verified counts can be drawn
+        // from the actual verified categorical question parameters.
+        "PED:US-CCSS-MATH:G3:U01:L01",
+        "PED:US-CCSS-MATH:G3:U01:L02",
         "PED:US-CCSS-MATH:G3:U01:L04",
         "PED:US-CCSS-MATH:G3:U01:L05",
         "PED:US-CCSS-MATH:G3:U01:L07",
