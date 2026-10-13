@@ -76,3 +76,44 @@ test('source join refuses missing evidence, duplicates and changed order',()=>{
   b[5].rows[2].ordinal=99;
   assert.throws(()=>summarize(...b), /ordinal mismatch/);
 });
+
+test('source-backed dot-card repair clears ONLY the proven prior defect, not 499 missing certifications',()=>{
+  const a=fixture();
+  const runtime=a[3].lessonRows[1];
+  runtime.effectiveContentVersion='usccss-b01-g1-u01-l02-source-dot-cards-v1';
+  runtime.actualQuestionFamilies=[
+    'usccss.b01.g1.match_dot_cubes_expression',
+    'usccss.b01.g1.complete_missing_dots',
+    'usccss.b01.g1.check_off_add_within10'
+  ];
+  a[6].rows[1].visualKinds=['PlaceValueChart','EquationSet'];
+  a[6].rows[1].workedExampleCount=3;
+  const report=summarize(...a);
+  assert.equal(report.counts[CORRECT],1);
+  assert.equal(report.counts[REWORK],0);
+  assert.equal(report.counts[BLOCKED],499);
+  assert.equal(report.lessons[1].verdict,BLOCKED);
+  assert.ok(report.lessons[1].confirmedDefects.length===0);
+  assert.equal(report.lessons[1].dimensions.examples.status,BLOCKED);
+  assert.equal(report.batchDecision,'BATCH_NO-GO');
+});
+test('missing dot card visual, missing one family or wrong effective version keeps prior defect open',()=>{
+  for (const mutation of ['noVisual','missingFamily','staleVersion']) {
+    const a=fixture();
+    a[3].lessonRows[1].effectiveContentVersion=
+      'usccss-b01-g1-u01-l02-source-dot-cards-v1';
+    a[3].lessonRows[1].actualQuestionFamilies=[
+      'usccss.b01.g1.match_dot_cubes_expression',
+      'usccss.b01.g1.complete_missing_dots',
+      'usccss.b01.g1.check_off_add_within10'
+    ];
+    a[6].rows[1].visualKinds=['PlaceValueChart','EquationSet'];
+    a[6].rows[1].workedExampleCount=3;
+    if(mutation==='noVisual')a[6].rows[1].visualKinds=['EquationSet'];
+    if(mutation==='missingFamily')a[3].lessonRows[1].actualQuestionFamilies.pop();
+    if(mutation==='staleVersion')a[3].lessonRows[1].effectiveContentVersion='old-version';
+    const report=summarize(...a);
+    assert.equal(report.counts[REWORK],1);
+    assert.ok(report.lessons[1].confirmedDefects.some(x=>x.code.includes('PREVIOUS_SOURCE')));
+  }
+});
