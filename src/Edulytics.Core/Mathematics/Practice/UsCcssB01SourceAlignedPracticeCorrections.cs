@@ -406,6 +406,28 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
              "usccss.b01.g1.complete_missing_dots",
              "usccss.b01.g1.check_off_add_within10"],
             "IM2021_G1_U01_L02_OFFICIAL_ACTIVITY_1_2_DOT_MATCHING",
-            "READY_VERIFIED", "usccss-b01-source-dot-matching-v1")
+            "READY_VERIFIED", "usccss-b01-source-dot-matching-v1"),
+        // Original teacher preparation: G2 U06 L01 identifies 3–6 sided
+        // closed polygons; G3 U07 L02 sorts triangles and quadrilaterals
+        // by more specific defining attributes; G3 U02 L14 finds
+        // composite area when one side length is deliberately absent.
+        new(
+            "PED:US-CCSS-MATH:G2:U06:L01",
+            "supporting.geometry.properties", "CLASSIFY_POLYGONS_BY_SIDES",
+            ["usccss.b01.shape.polygon_sides"],
+            "IM2021_G2_U06_L01_POLYGON_SIDES_CORNERS_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-publisher-geometry-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U07:L02",
+            "supporting.geometry.properties", "SORT_TRIANGLE_QUADRILATERAL_SUBCATEGORIES",
+            ["usccss.b01.shape.specific_subcategory"],
+            "IM2021_G3_U07_L02_POLYGON_SUBCATEGORIES_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-publisher-geometry-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L14",
+            "supporting.geometry.area_volume", "MISSING_SIDE_COMPOSITE_AREA",
+            ["usccss.b01.area.missing_composite_side"],
+            "IM2021_G3_U02_L14_UNGRIDDED_MISSING_SIDE_AREA_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-publisher-geometry-v1")
     ];
 }
