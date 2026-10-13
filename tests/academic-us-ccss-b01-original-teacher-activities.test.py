@@ -87,6 +87,52 @@ class ActivityAuditTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"Duplicate|unexpected"):
             mod.analyze(m,r,v,lambda url:mod.parse_full_activity(SAMPLE))
 
+    def test_archived_500_source_sha_index_bypasses_network_and_cannot_be_reordered(self):
+        manifest, runtime, rich = self.fixture()
+        index = {
+            "batchId":"B01",
+            "kind":"B01_500_ORIGINAL_TEACHER_LESSON_LOCAL_SOURCE_METADATA",
+            "columns":["ordinal","lessonCode","teacherLessonHtmlSha256",
+                       "normalizedMainTextSha256","activityCount",
+                       "activityHeadingsAggregateSha256","sectionFlags",
+                       "representationCueBits"],
+            "representationCueKeys":[cue[0] for cue in mod.CUES],
+            "rows":[[item["ordinal"],item["lessonCode"],"c"*64,"d"*64,2,
+                     "e"*64,7,1] for item in manifest["lessons"]]
+        }
+        def forbidden_fetch(_):
+            self.fail("Original 500 sources must be read from archived metadata, not HTTP")
+        report = mod.analyze(manifest,runtime,rich,forbidden_fetch,source_index=index)
+        self.assertEqual(report["teacherPagesFetched"],500)
+        self.assertEqual(report["sourceAcquisitionMode"],"ARCHIVED_SHA256_METADATA")
+        self.assertEqual(report["academicDecision"],"NOT_CERTIFIED")
+        self.assertEqual(report["rows"][0]["teacherLessonHtmlSha256"],"c"*64)
+        self.assertEqual(report["rows"][0]["candidateMissingRepresentations"],["DOT_IMAGES"])
+        index["rows"][1][1] = index["rows"][0][1]
+        with self.assertRaisesRegex(ValueError,"Stale/reordered"):
+            mod.analyze(manifest,runtime,rich,forbidden_fetch,source_index=index)
+
+    def test_archived_index_missing_hash_and_invalid_visual_bits_fail_closed(self):
+        m,r,v=self.fixture()
+        index={
+            "batchId":"B01",
+            "kind":"B01_500_ORIGINAL_TEACHER_LESSON_LOCAL_SOURCE_METADATA",
+            "columns":["ordinal","lessonCode","teacherLessonHtmlSha256",
+                       "normalizedMainTextSha256","activityCount",
+                       "activityHeadingsAggregateSha256","sectionFlags",
+                       "representationCueBits"],
+            "representationCueKeys":[cue[0] for cue in mod.CUES],
+            "rows":[[item["ordinal"],item["lessonCode"],"c"*64,"d"*64,2,
+                     "e"*64,7,0] for item in m["lessons"]]
+        }
+        index["rows"][5][2] = "not-sha"
+        with self.assertRaisesRegex(ValueError,"SHA256"):
+            mod.load_preindexed_source(m["lessons"],index)
+        index["rows"][5][2] = "c"*64
+        index["rows"][5][7] = 512
+        with self.assertRaisesRegex(ValueError,"activity flags"):
+            mod.load_preindexed_source(m["lessons"],index)
+
     def test_url_restrictions(self):
         real="https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-14/preparation.html"
         self.assertEqual(mod.source_lesson_url(real),
