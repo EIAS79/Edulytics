@@ -50,7 +50,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G3:U01:L17", "array.equal_groups"),
         ("G3:U01:L19", "array.unknown_factor"),
         ("G3:U01:L20", "array.commutativity"),
-        ("G3:U02:L02", "rectangle.unit_squares")
+        ("G3:U02:L02", "rectangle.unit_squares"),
+        ("G3:U05:L02", "fraction.unit_parts")
     ];
 
     [Fact]
@@ -71,8 +72,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(38, lessonIds.Count);
-        Assert.Equal(27, familyIds.Count);
+        Assert.Equal(39, lessonIds.Count);
+        Assert.Equal(28, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -113,7 +114,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(114, generated);
+        Assert.Equal(117, generated);
     }
 
     [Fact]
@@ -179,6 +180,9 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                 return Num(N("height") * N("width1") + N("height") * N("width2"));
             case "usccss.b01.division.unknown_factor":
                 return Num(N("groups"));
+            case "usccss.b01.fraction.unit_parts":
+                Assert.Contains(N("denominator"),new[]{2,3,4,6,8});
+                return "1/" + Num(N("denominator"));
             case "usccss.b01.fraction.name_parts":
                 return Num(N("numerator")) + "/" + Num(N("denominator"));
             case "usccss.b01.measure.quarter_inch":
