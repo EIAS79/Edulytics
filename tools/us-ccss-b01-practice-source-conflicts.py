@@ -36,6 +36,8 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G1:U07:L13": "usccss.b01.clock.read_on_hour",
+    "PED:US-CCSS-MATH:G2:U06:L13": "usccss.b01.clock.read_five_minutes_am_pm",
     "PED:US-CCSS-MATH:G3:U05:L12": "fractions.equivalent.number_line",
     "PED:US-CCSS-MATH:G4:U02:L04": "fractions.equivalent.number_line",
     "PED:US-CCSS-MATH:G4:U02:L05": "fractions.equivalent.number_line",
