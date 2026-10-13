@@ -55,6 +55,9 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G2:U06:L01", "shape.polygon_sides"),
         ("G3:U07:L02", "shape.specific_subcategory"),
         ("G3:U02:L14", "area.missing_composite_side"),
+        ("G2:U04:L01", "number_line.locate_whole_to100"),
+        ("G2:U05:L08", "number_line.locate_three_digits"),
+        ("G4:U04:L11", "number_line.locate_large_numbers"),
         ("G1:U04:L08", "place_value.tens_ones"),
         ("G1:U04:L09", "place_value.tens_ones"),
         ("G1:U04:L10", "place_value.tens_ones"),
@@ -86,8 +89,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(53, lessonIds.Count);
-        Assert.Equal(37, familyIds.Count);
+        Assert.Equal(56, lessonIds.Count);
+        Assert.Equal(40, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -128,7 +131,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(159, generated);
+        Assert.Equal(168, generated);
     }
 
     [Fact]
@@ -218,6 +221,18 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                 Assert.InRange(N("small"), 1, 9);
                 Assert.True(N("second") > 10 && N("third") > 10);
                 return Num(N("mode") == 0 ? N("second") - N("sold") : N("third"));
+            case "usccss.b01.number_line.locate_whole_to100":
+                Assert.Contains(N("step"),new[]{1,2,5,10});
+                Assert.InRange(N("tick"),1,9);
+                return Num(N("step")*N("tick"));
+            case "usccss.b01.number_line.locate_three_digits":
+                Assert.Contains(N("step"),new[]{50,100});
+                Assert.InRange(N("tick"),2,9);
+                return Num(N("step")*N("tick"));
+            case "usccss.b01.number_line.locate_large_numbers":
+                Assert.Contains(N("step"),new[]{1000,10000,100000});
+                Assert.InRange(N("tick"),1,9);
+                return Num(N("step")*N("tick"));
             case "usccss.b01.shape.polygon_sides":
                 return N("sides") switch
                 {
