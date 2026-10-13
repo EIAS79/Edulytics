@@ -35,6 +35,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.geometry.composite_rectangle_area",
         "usccss.b01.division.unknown_factor",
         "usccss.b01.fraction.name_parts",
+        "usccss.b01.fraction.unit_parts",
         "usccss.b01.measure.quarter_inch",
         "usccss.b01.factors.factor_pairs",
         "usccss.b01.factors.prime_composite",
@@ -248,6 +249,17 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "Use the missing-factor equation: groups × objects in each group = total.",
                     AssessmentItemType.Numeric, D(("objectsPerGroup", a), ("groups", b)));
 
+            case "usccss.b01.fraction.unit_parts":
+                d = new[] { 2, 3, 4, 6, 8 }[r.Next(0,5)];
+                m = r.Next(0,3);
+                return Make(f,
+                    $"A {(m==0 ? "circle" : m==1 ? "square" : "rectangle")} " +
+                    $"is divided into {d} EQUAL parts. Exactly one part is shaded. " +
+                    "Write the unit fraction represented by that single part.",
+                    "A unit fraction has numerator 1 because exactly one " +
+                    "out of the equal parts is chosen; the denominator counts all equal parts.",
+                    AssessmentItemType.ShortAnswer,
+                    D(("denominator",d),("shape",m)));
             case "usccss.b01.fraction.name_parts":
                 d = new[] { 2, 3, 4, 6, 8 }[r.Next(0, 5)];
                 n = r.Next(1, d);
@@ -385,6 +397,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 (P("height") * (P("width1") + P("width2"))).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.division.unknown_factor" =>
                 P("groups").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.fraction.unit_parts" =>
+                $"1/{P("denominator")}",
             "usccss.b01.fraction.name_parts" =>
                 $"{P("numerator")}/{P("denominator")}",
             "usccss.b01.measure.quarter_inch" =>
@@ -470,6 +484,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("width2",1,4),
             "usccss.b01.division.unknown_factor" =>
                 Range("objectsPerGroup",2,10) && Range("groups",2,10),
+            "usccss.b01.fraction.unit_parts" =>
+                (N("denominator") is 2 or 3 or 4 or 6 or 8) &&
+                Range("shape",0,2),
             "usccss.b01.fraction.name_parts" =>
                 (N("denominator") is 2 or 3 or 4 or 6 or 8) &&
                 Range("numerator",1,N("denominator")-1),
