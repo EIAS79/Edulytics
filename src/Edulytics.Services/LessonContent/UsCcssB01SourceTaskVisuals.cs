@@ -223,6 +223,23 @@ public static class UsCcssB01SourceTaskVisuals
                                     (N("expected")%10).ToString()]
                             }).ToList()
                     },
+                "usccss.b01.g2.order_three_digits_number_line" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U05:L09" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.NumberLine,
+                        Title="Compare three-digit positions on the same number line",
+                        Description=$"The values {N("first")} (tick {N("tickA")}) " +
+                            $"and {N("second")} (tick {N("tickB")}) are ten units " +
+                            $"apart per tick, so {q.CorrectAnswer} lies farther right.",
+                        PrimaryLabel=$"Compare {N("first")} and {N("second")}",
+                        SecondaryLabel="Two G2 number-line positions",
+                        SecondaryItems=[N("tickA").ToString(),N("tickB").ToString()],
+                        Items=Enumerable.Range(0,11)
+                            .Select(i=>(N("start")+10*i).ToString()).ToList()
+                    },
                 "usccss.b01.g4.whole_minus_proper_fraction" when
                     lessonCode=="PED:US-CCSS-MATH:G4:U03:L10" &&
                     ExactSkillContractQuestionEngine.Verify(
