@@ -1025,7 +1025,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.market.inventory_100" =>
                 (P("mode") == 0 ? P("second") - P("sold") : P("third"))
                     .ToString(CultureInfo.InvariantCulture),
-            "usccss.b01.g2.add_subtract_without_regroup" or "usccss.b01.g2.subtract_decompose_ten" or
+            "usccss.b01.g2.add_subtract_without_regroup" or
+            "usccss.b01.g2.subtract_decompose_ten" =>
+                P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g1.compare_order_tens_ones" =>
                 (P("position")==0?Math.Max(P("first"),Math.Max(P("second"),P("third"))):
                  P("position")==1?Math.Min(P("first"),Math.Min(P("second"),P("third"))):
