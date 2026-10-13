@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Seven lesson-code-exact B01 corrections independently checked against their
+/// Eleven lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -65,6 +65,39 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "supporting.number.directed_operations", "MULTIPLICATION_DIVISION_RELATED",
             ["supporting.number.multiply", "supporting.number.divide"],
             "IM2021_G3_U08_L10_MULTIPLICATION_DIVISION_WITHIN_100",
+            "READY_VERIFIED", "usccss-b01-source-scope-v1"),
+        // Grade 3 U01 L15 solves multiplication situations, not algebraic
+        // factorization of polynomials.
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L15",
+            "number.whole.multiply", "MULTIPLICATION_FACTS",
+            ["number.whole.multiply.fact_recall.apply"],
+            "IM2021_G3_U01_L15_MULTIPLICATION_PROBLEMS",
+            "READY_VERIFIED", "usccss-b01-source-scope-v1"),
+        // Grade 3 U04 L07 relates multiplication to division.
+        new(
+            "PED:US-CCSS-MATH:G3:U04:L07",
+            "supporting.number.directed_operations",
+            "RELATED_MULTIPLICATION_DIVISION",
+            ["supporting.number.multiply","supporting.number.divide"],
+            "IM2021_G3_U04_L07_MULTIPLICATION_DIVISION",
+            "READY_VERIFIED", "usccss-b01-source-scope-v1"),
+        // Grade 4 U01 L04: source explicitly practices multiplication <=100,
+        // not GCF or LCM.
+        new(
+            "PED:US-CCSS-MATH:G4:U01:L04",
+            "number.whole.multiply", "MULTIPLICATION_FACT_RECALL",
+            ["number.whole.multiply.fact_recall.build",
+             "number.whole.multiply.fact_recall.apply"],
+            "IM2021_G4_U01_L04_MULTIPLICATION_PRACTICE",
+            "READY_VERIFIED", "usccss-b01-source-scope-v1"),
+        // Grade 4 U01 L05: single-digit multiples in real-world contexts;
+        // skip counting targets this original goal, unlike GCF/LCM.
+        new(
+            "PED:US-CCSS-MATH:G4:U01:L05",
+            "supporting.sequences.core", "SINGLE_DIGIT_MULTIPLES",
+            ["supporting.sequences.skip_count"],
+            "IM2021_G4_U01_L05_MORE_MULTIPLES",
             "READY_VERIFIED", "usccss-b01-source-scope-v1")
     ];
 }
