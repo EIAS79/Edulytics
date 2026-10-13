@@ -57,7 +57,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G1:U04:L10", "place_value.tens_ones"),
         ("G1:U08:L07", "place_value.count_to120"),
         ("G1:U08:L08", "place_value.tens_ones"),
-        ("G2:U05:L04", "place_value.three_digits")
+        ("G2:U05:L04", "place_value.three_digits"),
+        ("G3:U01:L07", "graph.scaled_compare")
     ];
 
     [Fact]
@@ -78,8 +79,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(45, lessonIds.Count);
-        Assert.Equal(31, familyIds.Count);
+        Assert.Equal(46, lessonIds.Count);
+        Assert.Equal(32, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -120,7 +121,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(135, generated);
+        Assert.Equal(138, generated);
     }
 
     [Fact]
@@ -160,6 +161,13 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                 Assert.Equal(N("number"),
                     100*N("hundreds")+10*N("tens")+N("ones"));
                 return Num(N("number"));
+            case "usccss.b01.graph.scaled_compare":
+                Assert.Contains(N("unit"),new[]{2,5,10});
+                Assert.Equal(N("countA"),N("unit")*N("ticksA"));
+                Assert.Equal(N("countB"),N("unit")*N("ticksB"));
+                Assert.InRange(N("countA"),1,100);
+                Assert.InRange(N("countB"),1,100);
+                return Num(Math.Abs(N("countA")-N("countB")));
             case "usccss.b01.clock.read_half_hour":
                 Assert.True(N("minutes") is 0 or 30);
                 return $"{N("hour")}:{N("minutes"):00}";
