@@ -223,6 +223,30 @@ public static class UsCcssB01SourceTaskVisuals
                                     (N("expected")%10).ToString()]
                             }).ToList()
                     },
+                "usccss.b01.g2.add_subtract_1000_no_regroup" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U07:L04" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title="Three-digit addition or subtraction without regrouping",
+                        PrimaryLabel="Hundreds | Tens | Ones",
+                        Description=$"Compute {N("left")} " +
+                            (N("operation")==0?"+":"−") +
+                            $" {N("right")} = {q.CorrectAnswer}. " +
+                            "No column requires composition or decomposition.",
+                        Rows=new[]{("First number",N("left")),
+                                   ("Second number",N("right")),
+                                   ("Answer",N("expected"))}
+                            .Select(x=>new RichLessonVisualRow
+                            {
+                                Label=x.Item1,
+                                Cells=[(x.Item2/100).ToString(),
+                                    (x.Item2/10%10).ToString(),
+                                    (x.Item2%10).ToString()]
+                            }).ToList()
+                    },
                 "usccss.b01.g2.order_three_digits_number_line" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U05:L09" &&
                     ExactSkillContractQuestionEngine.Verify(
