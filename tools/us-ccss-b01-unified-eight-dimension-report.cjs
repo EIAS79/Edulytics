@@ -118,11 +118,41 @@ function summarize(manifest, ledger, bulk, runtime, publisher, practice, rich, v
       set('explanation', 'NO_RICH_V2_EXPLANATION');
     if (s.runtime.generatedCases === 0)
       set('questions', 'NO_GENERATED_QUESTIONS');
-    // Checkpoints discovered in earlier work are carried forward, not erased.
+    // Earlier defect findings remain until the corrected *effective* body,
+    // verified source-target question families and correctly bound Rich V2
+    // dot-picture evidence all occur on this same 500-lesson candidate.
+    // Even when these conditions hold, this is only a repaired DEFECT, not
+    // independent source-semantic or rendered-browser L1-L6 certification.
     if (code === 'PED:US-CCSS-MATH:G1:U01:L02') {
-      set('examples', 'PREVIOUS_SOURCE_REVIEW_MISSING_DOT_CUBE_MATCHING_ACTIVITY');
-      set('visualRepresentations', 'PREVIOUS_SOURCE_REVIEW_MISSING_DOT_CUBE_DRAWING_EVIDENCE',
-        BLOCKED);
+      const originalActivities = [
+        'usccss.b01.g1.match_dot_cubes_expression',
+        'usccss.b01.g1.complete_missing_dots',
+        'usccss.b01.g1.check_off_add_within10'
+      ];
+      const sourceTaskRepairReady =
+        s.runtime.effectiveContentVersion ===
+          'usccss-b01-g1-u01-l02-source-dot-cards-v1' &&
+        JSON.stringify(s.runtime.actualQuestionFamilies) ===
+          JSON.stringify(originalActivities) &&
+        s.rich.visualKinds?.includes('PlaceValueChart') &&
+        s.rich.workedExampleCount >= 3 &&
+        s.visual.sameEffectiveContent === true &&
+        s.publisher.effectiveContentSha256 ===
+          s.runtime.effectiveContentSha256 &&
+        s.practice.conflicts?.length === 0;
+      if (sourceTaskRepairReady) {
+        set('examples', 'SOURCE_DOT_CARD_REPAIR_EVIDENCED_IN_EFFECTIVE_BODY_AND_ENGINE',
+          BLOCKED);
+        set('visualRepresentations',
+          'SOURCE_DOT_PICTURE_COMPOSED_RENDERING_AND_INDEPENDENT_L4_L6_STILL_REQUIRED',
+          BLOCKED);
+      } else {
+        set('examples',
+          'PREVIOUS_SOURCE_REVIEW_MISSING_DOT_CUBE_MATCHING_ACTIVITY');
+        set('visualRepresentations',
+          'PREVIOUS_SOURCE_REVIEW_MISSING_DOT_CUBE_DRAWING_EVIDENCE',
+          BLOCKED);
+      }
     }
     const historical = code === 'PED:US-CCSS-MATH:G1:U01:L01' &&
       evidence.status === 'INTERNALLY_CERTIFIED' &&
