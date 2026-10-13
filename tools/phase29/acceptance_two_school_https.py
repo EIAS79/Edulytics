@@ -490,6 +490,87 @@ for key, schoolname in SCHOOLS:
             key, "exact Practice answers not correctly scored/persisted", evidence)
         print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key,
               ",".join(row[1] for row in generated_items), flush=True)
+        if key == "commoncore-primary":
+            # A separate source lesson must independently prove generation,
+            # all three L02 source-task families, persistence and grading.
+            # Neither the L01 answer pass nor the L02 screenshot substitutes
+            # for this exact learner assessment acceptance evidence.
+            next_families = {
+                "usccss.b01.g1.match_dot_cubes_expression",
+                "usccss.b01.g1.complete_missing_dots",
+                "usccss.b01.g1.check_off_add_within10",
+            }
+            for wrong_answers in (False, True):
+                l02_fields = dict(practice_fields)
+                l02_fields["lessonId"] = next_id
+                l02_fields["questionCount"] = "9"
+                response = student.open(urllib.request.Request(
+                    BASE + "/student/practice/generate",
+                    data=urllib.parse.urlencode(l02_fields).encode(),
+                    method="POST"), timeout=60)
+                with response:
+                    assert response.status == 200
+                    l02_path = urllib.parse.urlparse(response.url).path.lower()
+                    l02_match = re.fullmatch(
+                        r"/student/practice/attempt/([0-9a-f-]{36})",
+                        l02_path)
+                    assert l02_match,("L02 generation failed",l02_path)
+                    l02_body = response.read().decode("utf-8")
+                l02_attempt_id=l02_match.group(1)
+                l02_rows=sql("""
+                    SELECT a."CurriculumPedagogicalLessonId"::text,
+                           i."GenerationFamily",pi."Id"::text,i."CorrectAnswer"
+                    FROM "PracticeAttempts" a
+                    JOIN "PracticeAttemptItems" pi
+                      ON pi."PracticeAttemptId"=a."Id"
+                    JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
+                    WHERE a."Id"='""" + l02_attempt_id + """'
+                    ORDER BY pi."Order";""").splitlines()
+                l02_items=[row.split("|",3) for row in l02_rows]
+                assert len(l02_items)==9,("L02 nine source questions missing",l02_rows)
+                assert all(row[0]==next_id and row[1] in next_families
+                           and row[3].strip() for row in l02_items),(
+                               "L02 wrong lesson/family/answer",l02_items)
+                assert {row[1] for row in l02_items}==next_families,(
+                    "L02 source activity coverage incomplete",l02_items)
+                csrf=re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    l02_body)
+                assert csrf,("L02 Practice CSRF token absent")
+                fields=[("__RequestVerificationToken",csrf.group(1))]
+                for index,(_,family,item_id,correct) in enumerate(l02_items):
+                    hidden=re.search(
+                        r'name="attemptItemIds\['+str(index)+
+                        r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                        l02_body)
+                    assert hidden and hidden.group(1)==item_id,(
+                        "L02 item identity changed",index,family)
+                    fields.extend([
+                        (f"attemptItemIds[{index}]",item_id),
+                        (f"answers[{index}]","999999" if wrong_answers else correct),
+                    ])
+                with student.open(urllib.request.Request(
+                    BASE+"/student/practice/attempt/"+l02_attempt_id+
+                    "/personal-test-submit",
+                    data=urllib.parse.urlencode(fields).encode(),
+                    method="POST"),timeout=60) as graded:
+                    assert graded.status==200,("L02 response not submitted")
+                saved=sql("""
+                    SELECT CASE WHEN p."SubmittedAtUtc" IS NOT NULL THEN 1 ELSE 0 END,
+                           p."Score"::text,COUNT(r."Id")::text
+                    FROM "PracticeAttempts" p
+                    JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                    LEFT JOIN "PracticeResponses" r
+                      ON r."PracticeAttemptItemId"=ai."Id" AND r."IsCorrect"=true
+                    WHERE p."Id"='""" + l02_attempt_id + """'
+                    GROUP BY p."Id",p."SubmittedAtUtc",p."Score";""")
+                submitted,score,correct_count=saved.split("|")
+                wanted=0 if wrong_answers else 9
+                assert submitted=="1" and float(score)==wanted and int(correct_count)==wanted,(
+                    "L02 wrong answer grading/persistence",wrong_answers,saved)
+                print("DISPOSABLE_G1_U01_L02_PRACTICE_SCORING_PASS",
+                      "negative" if wrong_answers else "positive",
+                      ",".join(sorted(next_families)),flush=True)
 
     practice_attempts[key] = match_attempt.group(1)
     students[key] = student
