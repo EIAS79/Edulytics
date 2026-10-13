@@ -132,6 +132,23 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
     }
 
     [Fact]
+    public void PolygonFamilySupportsFullTenQuestionSessionWithoutDuplicatedPrompts()
+    {
+        const string family="usccss.b01.shape.polygon_sides";
+        const string code="PED:US-CCSS-MATH:G2:U06:L01";
+        var questions=new ExactSkillContractQuestionEngine().Generate(
+            "usccss-b01-polygon-ten-distinct",
+            code,[family],ExactSkillQuestionDifficulty.Standard,
+            10,810901,[]);
+        Assert.Equal(10,questions.Count);
+        Assert.Equal(10,questions.Select(x=>x.Prompt)
+            .Distinct(StringComparer.Ordinal).Count());
+        Assert.All(questions,q=>
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                q.Family,q.Parameters,q.CorrectAnswer)));
+    }
+
+    [Fact]
     public void AllNewPracticeFamiliesRejectMissingOrTamperedData()
     {
         var engine = new ExactSkillContractQuestionEngine();
