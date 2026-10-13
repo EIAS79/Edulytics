@@ -24,6 +24,17 @@ public static class UsCcssB01SourceTaskVisuals
             int N(string k) => p[k];
             RichLessonVisual? item = q.Family switch
             {
+                "usccss.b01.clock.read_half_hour" or
+                "usccss.b01.clock.read_five_minutes" =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.ClockFace,
+                        Title = $"Read the analog clock: {N("hour")}:{N("minutes"):00}",
+                        Description = $"The short hand shows hour {N("hour")}; " +
+                            $"the long hand is at {N("minutes")/5 % 12} five-minute steps " +
+                            $"from 12, showing {N("minutes")} minutes past the hour.",
+                        Items = [N("hour").ToString(), N("minutes").ToString()]
+                    },
                 "usccss.b01.clock.half_quarters" =>
                     new RichLessonVisual
                     {
