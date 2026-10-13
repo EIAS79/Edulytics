@@ -186,6 +186,26 @@ public static class UsCcssB01SourceTaskVisuals
                     N("number")==N("hundreds")*100+N("tens")*10+N("ones") &&
                     N("number") is >= 100 and <= 999 =>
                     BaseTenModel(N("number"),N("hundreds"),N("tens"),N("ones"),true),
+                "usccss.b01.clock.read_on_hour" or
+                "usccss.b01.clock.read_five_minutes_am_pm" when
+                    N("hour") is >= 1 and <= 12 &&
+                    N("minutes")%5==0 &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.ClockFace,
+                        Title=$"Read the analog time: {q.CorrectAnswer}",
+                        Description=$"The short hour hand is at or just past {N("hour")}. " +
+                            $"The minute hand shows {N("minutes")} minutes past. " +
+                            (q.Family=="usccss.b01.clock.read_on_hour"
+                                ? "The hand at 12 means zero minutes."
+                                : N("period")==0
+                                    ? "The context says before noon: a.m."
+                                    : "The context says after noon: p.m."),
+                        PrimaryLabel=q.CorrectAnswer,
+                        Items=[N("hour").ToString(),N("minutes").ToString()]
+                    },
                 "usccss.b01.clock.read_half_hour" or
                 "usccss.b01.clock.read_five_minutes" =>
                     new RichLessonVisual
