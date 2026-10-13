@@ -947,8 +947,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // rectangle from congruent small squares, with no gaps.
             case "usccss.b01.g2.compose_equal_square_shapes":
             {
-                a=r.Next(2,5);m=r.Next(0,2);
-                b=m==0?a:2+(a-1)%3;
+                a=r.Next(2,8);m=r.Next(0,2);
+                // 6 square sizes and 30 distinct non-square row/column
+                // pairs; enough source-valid diversity for 10 unique items.
+                b=m==0?a:r.Next(2,7);
+                if(m==1 && b>=a)b++;
                 return Make(f,
                     $"Place {a*b} equal-size square tiles in {a} rows " +
                     $"and {b} columns. Do they form a square or a non-square rectangle?",
@@ -1600,8 +1603,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("rows",2,7) && Range("columns",2,11) &&
                 N("rows")*N("columns")<=100,
             "usccss.b01.g2.compose_equal_square_shapes" =>
-                Range("rows",2,4) && Range("columns",2,4) &&
-                Range("mode",0,1) && Range("tiles",4,16) &&
+                Range("rows",2,7) && Range("columns",2,7) &&
+                Range("mode",0,1) && Range("tiles",4,49) &&
                 N("tiles")==N("rows")*N("columns") &&
                 (N("mode")==0?N("rows")==N("columns"):
                     N("rows")!=N("columns")),
