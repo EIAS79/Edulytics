@@ -117,3 +117,34 @@ test('missing dot card visual, missing one family or wrong effective version kee
     assert.ok(report.lessons[1].confirmedDefects.some(x=>x.code.includes('PREVIOUS_SOURCE')));
   }
 });
+
+test('original teacher Lesson activity cues stay review-only and complete 500 identity join',()=>{
+  const a=fixture();
+  const activities={rows:a[0].lessons.map(item=>({
+    lessonCode:item.lessonCode,ordinal:item.ordinal,
+    effectiveContentSha256:'a'.repeat(64),activityCount:2,
+    candidateMissingRepresentations:item.ordinal===3?['DOT_IMAGES']:[]
+  }))};
+  const result=summarize(...a,activities);
+  assert.equal(result.lessons[2].verdict,BLOCKED);
+  assert.equal(result.lessons[2].confirmedDefects.length,0);
+  assert.ok(result.lessons[2].missingEvidenceOrReviewCues.some(
+    x=>x.code==='OFFICIAL_ACTIVITY_REVIEW_DOT_IMAGES'));
+  assert.equal(result.lessons[2].teacherLessonActivityCount,2);
+  activities.rows[4].ordinal=999;
+  assert.throws(()=>summarize(...a,activities),/ordinal mismatch/);
+});
+
+test('teacher activity source and real effective body hashes must agree',()=>{
+  const a=fixture();
+  const activities={rows:a[0].lessons.map(item=>({
+    lessonCode:item.lessonCode,ordinal:item.ordinal,
+    effectiveContentSha256:'a'.repeat(64),activityCount:1,
+    candidateMissingRepresentations:[]
+  }))};
+  activities.rows[4].effectiveContentSha256='f'.repeat(64);
+  const result=summarize(...a,activities);
+  assert.equal(result.lessons[4].verdict,REWORK);
+  assert.ok(result.lessons[4].confirmedDefects.some(
+    x=>x.code==='OFFICIAL_ACTIVITY_EFFECTIVE_BODY_SHA_MISMATCH'));
+});
