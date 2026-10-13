@@ -33,9 +33,18 @@ RULES = (
       not any(x in t for x in ("combinations of","choose two","pairs from a set"))),
 )
 
-# 29 original publisher lesson targets: exact approved code/family linkage.
+# 38 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G2:U08:L07": "usccss.b01.array.equal_groups",
+    "PED:US-CCSS-MATH:G2:U08:L08": "usccss.b01.array.columns",
+    "PED:US-CCSS-MATH:G2:U08:L09": "usccss.b01.array.equal_addends",
+    "PED:US-CCSS-MATH:G2:U08:L10": "usccss.b01.array.equal_equation",
+    "PED:US-CCSS-MATH:G2:U08:L11": "usccss.b01.rectangle.unit_squares",
+    "PED:US-CCSS-MATH:G3:U01:L17": "usccss.b01.array.equal_groups",
+    "PED:US-CCSS-MATH:G3:U01:L19": "usccss.b01.array.unknown_factor",
+    "PED:US-CCSS-MATH:G3:U01:L20": "usccss.b01.array.commutativity",
+    "PED:US-CCSS-MATH:G3:U02:L02": "usccss.b01.rectangle.unit_squares",
     "PED:US-CCSS-MATH:G1:U07:L05": "usccss.b01.triangle.attributes",
     "PED:US-CCSS-MATH:G1:U07:L09": "usccss.b01.partition.halves_fourths",
     "PED:US-CCSS-MATH:G1:U07:L10": "usccss.b01.partition.halves_fourths",
