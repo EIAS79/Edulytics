@@ -48,6 +48,21 @@ class PublisherVisualEvidenceTests(unittest.TestCase):
         d=audit.analyze(a,b)
         self.assertIn("CLOCK_DIAGRAM",d["rows"][20]["publisherCueVisualReviewTypes"])
 
+    def test_clock_halves_and_quarters_are_not_misclassified_as_fraction_bars(self):
+        a,b=fixture()
+        a["rows"][70]["publisherTitle"]="Tell Time with Halves and Quarters"
+        a["rows"][70]["sourcePurposePreview"]="Read times from an analog clock."
+        b["rows"][70]["visualKinds"]=["EquationSet","ClockFace"]
+        d=audit.analyze(a,b)
+        self.assertNotIn("FRACTION_PARTS",
+                         d["rows"][70]["publisherCueVisualReviewTypes"])
+        self.assertNotIn("CLOCK_DIAGRAM",
+                         d["rows"][70]["publisherCueVisualReviewTypes"])
+        b["rows"][70]["visualKinds"]=["EquationSet"]
+        d=audit.analyze(a,b)
+        self.assertIn("CLOCK_DIAGRAM",
+                      d["rows"][70]["publisherCueVisualReviewTypes"])
+
     def test_one_source_content_sha_mismatch_blocks_exact_batch_integrity(self):
         a,b=fixture()
         b["rows"][301]["effectiveBodyFingerprint"]="b"*64
