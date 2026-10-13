@@ -15,6 +15,8 @@ public sealed class UsCcssB01CategoricalGraphVisualsTests
     [Theory]
     [InlineData("PED:US-CCSS-MATH:G2:U01:L08","supporting.statistics.charts.mixed")]
     [InlineData("PED:US-CCSS-MATH:G2:U01:L09","supporting.statistics.table_total")]
+    [InlineData("PED:US-CCSS-MATH:G3:U01:L01","supporting.statistics.charts.mixed")]
+    [InlineData("PED:US-CCSS-MATH:G3:U01:L02","supporting.statistics.table_total")]
     [InlineData("PED:US-CCSS-MATH:G3:U01:L05","supporting.statistics.charts.mixed")]
     public void CategoryBarsAndTotalMatchIndependentlyGradedActualQuestions(
         string lesson,string family)
