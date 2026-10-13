@@ -46,6 +46,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.geometry.rectangle_area_grid60",
         "usccss.b01.geometry.rectangle_area_ungridded",
         "usccss.b01.division.unknown_factor",
+        "usccss.b01.fraction.tenths_hundredths_within_one",
+        "usccss.b01.fraction.tenths_hundredths_over_one",
         "usccss.b01.fraction.name_parts",
         "usccss.b01.fraction.unit_parts",
         "usccss.b01.measure.quarter_inch",
@@ -499,6 +501,31 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     "out of the equal parts is chosen; the denominator counts all equal parts.",
                     AssessmentItemType.ShortAnswer,
                     D(("denominator",d),("shape",m)));
+            // Official IM 2021 G4 U03 L16 and L17: bridge tenths
+            // and hundredths through denominator 100, preserving each
+            // lesson's below/above-one boundary without rounding.
+            case "usccss.b01.fraction.tenths_hundredths_within_one":
+                a = r.Next(1,10);
+                b = r.Next(1,101-10*a);
+                n = 10*a+b;
+                return Make(f,
+                    $"Use equivalent fractions to add {a}/10 + {b}/100. " +
+                    "Write your answer in hundredths (denominator 100, do not simplify).",
+                    $"{a}/10 = {10*a}/100, so {10*a}/100 + {b}/100 = {n}/100. " +
+                    "The total is at most one whole.",
+                    AssessmentItemType.ShortAnswer,
+                    D(("tenths",a),("hundredths",b),("totalHundredths",n)));
+            case "usccss.b01.fraction.tenths_hundredths_over_one":
+                a = r.Next(2,10);
+                b = r.Next(101-10*a,100);
+                n = 10*a+b;
+                return Make(f,
+                    $"Use equivalent fractions to add {a}/10 + {b}/100. " +
+                    "Write your answer in hundredths (denominator 100, do not simplify).",
+                    $"{a}/10 = {10*a}/100, so {10*a}/100 + {b}/100 = {n}/100. " +
+                    $"That is 1 and {n-100}/100, greater than one whole.",
+                    AssessmentItemType.ShortAnswer,
+                    D(("tenths",a),("hundredths",b),("totalHundredths",n)));
             case "usccss.b01.fraction.name_parts":
                 d = new[] { 2, 3, 4, 6, 8 }[r.Next(0, 5)];
                 n = r.Next(1, d);
@@ -676,6 +703,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 P("groups").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.fraction.unit_parts" =>
                 $"1/{P("denominator")}",
+            "usccss.b01.fraction.tenths_hundredths_within_one" or
+            "usccss.b01.fraction.tenths_hundredths_over_one" =>
+                $"{P("totalHundredths")}/100",
             "usccss.b01.fraction.name_parts" =>
                 $"{P("numerator")}/{P("denominator")}",
             "usccss.b01.measure.quarter_inch" =>
@@ -810,6 +840,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("width2",1,4),
             "usccss.b01.division.unknown_factor" =>
                 Range("objectsPerGroup",2,10) && Range("groups",2,10),
+            "usccss.b01.fraction.tenths_hundredths_within_one" =>
+                Range("tenths",1,9) && Range("hundredths",1,99) &&
+                N("totalHundredths") == 10*N("tenths")+N("hundredths") &&
+                N("totalHundredths")<=100,
+            "usccss.b01.fraction.tenths_hundredths_over_one" =>
+                Range("tenths",2,9) && Range("hundredths",1,99) &&
+                N("totalHundredths") == 10*N("tenths")+N("hundredths") &&
+                N("totalHundredths")>100 && N("totalHundredths")<200,
             "usccss.b01.fraction.unit_parts" =>
                 (N("denominator") is 2 or 3 or 4 or 6 or 8) &&
                 Range("shape",0,2),
