@@ -395,6 +395,17 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "supporting.geometry.area_volume", "FIND_AREA_OF_COMPOSITE_RECTANGLES",
             ["usccss.b01.geometry.composite_rectangle_area"],
             "IM2021_G3_U02_L13_FIND_AREA_OF_COMPOSITE_RECTANGLES_PURPOSE",
-            "READY_VERIFIED", "usccss-b01-source-area-v1")
+            "READY_VERIFIED", "usccss-b01-source-area-v1"),
+        // Official IM 2021 G1 U01 L02 Activity 1/2 verified from the teacher
+        // lesson: match paired dot pictures to expressions; complete missing
+        // dot pictures; Check It Off with two cards from 0 through 5.
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L02",
+            "number.whole.add", "MATCH_DOT_IMAGES_EXPRESSIONS_AND_CHECK_OFF",
+            ["usccss.b01.g1.match_dot_cubes_expression",
+             "usccss.b01.g1.complete_missing_dots",
+             "usccss.b01.g1.check_off_add_within10"],
+            "IM2021_G1_U01_L02_OFFICIAL_ACTIVITY_1_2_DOT_MATCHING",
+            "READY_VERIFIED", "usccss-b01-source-dot-matching-v1")
     ];
 }
