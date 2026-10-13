@@ -681,7 +681,7 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
-        var sourceDerivedCounters = UsCcssB01VerifiedExpressionVisuals.Build(lessonCode, body);
+        var sourceDerivedCounters = UsCcssB01VerifiedExpressionVisuals.Build(lessonCode, body, contract);
         return [..sourceDerivedCounters, questionForms];
     }
 
