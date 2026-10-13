@@ -173,6 +173,29 @@
             </table>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.LinePlot)
+    {
+        // A true numerical line plot has equal tick spacing and X stacks.
+        <div class="rich-line-plot" role="group" aria-label="@Model.Description"
+             style="display:flex;align-items:flex-end;gap:1rem;overflow-x:auto;border-bottom:2px solid currentColor;padding:0.75rem;">
+            @foreach (var row in Model.Rows)
+            {
+                <div class="rich-line-plot__column"
+                     role="group" aria-label="@($"{row.Label}: {row.Cells.Count} measured objects")"
+                     style="display:flex;flex-direction:column;align-items:center;min-width:2.75rem;">
+                    <div class="rich-line-plot__marks" aria-hidden="true"
+                         style="display:flex;flex-direction:column-reverse;align-items:center;">
+                        @foreach (var mark in row.Cells)
+                        {
+                            <strong>×</strong>
+                        }
+                    </div>
+                    <span aria-hidden="true">│</span>
+                    <strong>@row.Label</strong>
+                </div>
+            }
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.BarGraph)
     {
         // Native progress meters keep each verified category count proportional,

@@ -5830,6 +5830,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g2.measurement.read_line_plot",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-g2-numeric-line-plot-frequency-recompute-v1",
+      "representations": [
+        "numerical_line_plot_stacked_x_marks",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.ruler.compare_centimeters",
       "version": 1,
       "skillId": "supporting.measurement.practical",

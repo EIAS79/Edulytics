@@ -400,6 +400,24 @@ public static class UsCcssB01SourceTaskVisuals
                             $"{3 * N("step")}" ]
                     },
                 // Both ruler diagrams are derived from checked operands.
+                "usccss.b01.g2.measurement.read_line_plot" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L14" &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.LinePlot,
+                        Title="X-mark line plot for measured centimeter lengths",
+                        Description="Each X above a number represents one measured object. " +
+                            $"There are {q.CorrectAnswer} objects measuring " +
+                            $"{N("targetLength")} centimeters.",
+                        PrimaryLabel="Length in centimeters",
+                        Rows=Enumerable.Range(2,4)
+                            .Select(length=>new RichLessonVisualRow
+                            {
+                                Label=$"{length} cm",
+                                Cells=Enumerable.Repeat("X",N($"count{length}")).ToList()
+                            }).ToList()
+                    },
                 "usccss.b01.ruler.compare_centimeters" when
                     ExactSkillContractQuestionEngine.Verify(
                         q.Family,p,q.CorrectAnswer) =>

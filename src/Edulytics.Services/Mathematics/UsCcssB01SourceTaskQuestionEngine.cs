@@ -39,6 +39,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.rectangle.unit_squares",
         "usccss.b01.measure.map_lengths",
         "usccss.b01.ruler.compare_centimeters",
+        "usccss.b01.g2.measurement.read_line_plot",
         "usccss.b01.ruler.measure_without_zero",
         "usccss.b01.graph.choose_scale",
         "usccss.b01.graph.scaled_compare",
@@ -520,6 +521,25 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     AssessmentItemType.Numeric, D(("rows", a), ("columns", b)));
 
             // IM 2021 G2 U03 L03: centimeter ruler comparison.
+            // Teacher source G2 U03 L14: interpret an X-mark line plot.
+            case "usccss.b01.g2.measurement.read_line_plot":
+            {
+                a=r.Next(1,5);b=r.Next(1,5);m=r.Next(1,5);n=r.Next(1,5);
+                var target=r.Next(2,6);
+                var data=Enumerable.Repeat(2,a).Concat(Enumerable.Repeat(3,b))
+                    .Concat(Enumerable.Repeat(4,m)).Concat(Enumerable.Repeat(5,n))
+                    .OrderBy(_=>r.Next()).ToArray();
+                return Make(f,
+                    $"A group measured the following objects in centimeters: " +
+                    $"{string.Join(", ",data)}. Draw or read an X-mark line plot. " +
+                    $"How many objects are exactly {target} cm long?",
+                    "Plot one X above every measured length, then count the X marks " +
+                    "stacked above the requested tick.",
+                    AssessmentItemType.Numeric,
+                    D(("count2",a),("count3",b),("count4",m),("count5",n),
+                      ("targetLength",target)));
+            }
+
             case "usccss.b01.ruler.compare_centimeters":
             {
                 a=r.Next(4,16);b=r.Next(2,a);
@@ -881,6 +901,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 string.Join("+", Enumerable.Repeat(
                     P("columns").ToString(CultureInfo.InvariantCulture), P("rows"))) +
                 "=" + (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.measurement.read_line_plot" =>
+                P("targetLength") switch
+                {
+                    2=>P("count2").ToString(CultureInfo.InvariantCulture),
+                    3=>P("count3").ToString(CultureInfo.InvariantCulture),
+                    4=>P("count4").ToString(CultureInfo.InvariantCulture),
+                    5=>P("count5").ToString(CultureInfo.InvariantCulture),
+                    _=>throw new InvalidOperationException()
+                },
             "usccss.b01.ruler.compare_centimeters" =>
                 (P("longLength")-P("shortLength")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.ruler.measure_without_zero" =>
@@ -1051,6 +1080,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.rectangle.unit_squares" =>
                 Range("rows",2,7) && Range("columns",2,13) &&
                 N("rows")*N("columns")<=35,
+            "usccss.b01.g2.measurement.read_line_plot" =>
+                Range("count2",1,4) && Range("count3",1,4) &&
+                Range("count4",1,4) && Range("count5",1,4) &&
+                Range("targetLength",2,5),
             "usccss.b01.ruler.compare_centimeters" =>
                 Range("longLength",4,15) && Range("shortLength",2,14) &&
                 Range("difference",1,13) &&

@@ -36,6 +36,7 @@ RULES = (
 # 50 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G2:U03:L14": "usccss.b01.g2.measurement.read_line_plot",
     "PED:US-CCSS-MATH:G2:U03:L03": "usccss.b01.ruler.compare_centimeters",
     "PED:US-CCSS-MATH:G2:U03:L10": "usccss.b01.ruler.measure_without_zero",
     "PED:US-CCSS-MATH:G1:U07:L13": "usccss.b01.clock.read_on_hour",

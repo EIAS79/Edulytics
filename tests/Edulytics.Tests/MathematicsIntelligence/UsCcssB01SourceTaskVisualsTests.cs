@@ -281,6 +281,37 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void Grade2SourceLinePlotUsesExactlyVerifiedXMarkCounts()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U03:L14";
+        const string family="usccss.b01.g2.measurement.read_line_plot";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=99001;seed<99030;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            Assert.Equal(p[$"count{p["targetLength"]}"],int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var plot=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.LinePlot,plot.Kind);
+            Assert.Equal(4,plot.Rows.Count);
+            for(var length=2;length<=5;length++)
+            {
+                var row=plot.Rows[length-2];
+                Assert.Equal($"{length} cm",row.Label);
+                Assert.Equal(p[$"count{length}"],row.Cells.Count);
+                Assert.All(row.Cells,c=>Assert.Equal("X",c));
+            }
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G2:U03:L15",[q]));
+        }
+    }
+
+    [Fact]
     public void ReadingScaleDiagramIsEquallySpacedAndHasTheVerifiedAnswer()
     {
         const string code = "PED:US-CCSS-MATH:G2:U04:L02";
