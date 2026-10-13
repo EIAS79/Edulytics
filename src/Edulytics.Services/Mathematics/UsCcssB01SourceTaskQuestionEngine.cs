@@ -77,6 +77,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g4.whole_minus_proper_fraction",
         "usccss.b01.g2.order_three_digits_number_line",
         "usccss.b01.g2.add_subtract_1000_no_regroup",
+        "usccss.b01.g1.add_within100_no_compose_ten",
         "usccss.b01.g2.add_subtract_without_regroup",
         "usccss.b01.g2.subtract_decompose_ten",
         "usccss.b01.g1.add_subtract_tens_multiples",
@@ -290,6 +291,22 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // Original G2 U05 L09: compare actual three-digit positions
             // using the SAME equal-interval number line.
             // IM G2 U07 L04: add/subtract within 1,000 with NO regrouping.
+            // IM G1 U05 L04: two-digit addition within 100 without
+            // ever composing a new ten from the ones.
+            case "usccss.b01.g1.add_within100_no_compose_ten":
+            {
+                var ah=r.Next(1,9);var bh=r.Next(1,10-ah);
+                var ao=r.Next(0,10);var bo=r.Next(0,10-ao);
+                a=ah*10+ao;b=bh*10+bo;
+                return Make(f,
+                    $"Add {a} + {b} within 100 using tens and ones. " +
+                    "Do not compose a new ten.",
+                    "Combine tens with tens and ones with ones; their ones " +
+                    "total stays below 10, so no regrouping is necessary.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("expected",a+b)));
+            }
+
             case "usccss.b01.g2.add_subtract_1000_no_regroup":
             {
                 m=r.Next(0,2);
@@ -1118,6 +1135,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g2.add_subtract_without_regroup" or
             "usccss.b01.g2.subtract_decompose_ten" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.add_within100_no_compose_ten" =>
+                (P("left")+P("right")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.add_subtract_1000_no_regroup" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.order_three_digits_number_line" =>
@@ -1346,6 +1365,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("left")/10>N("right")/10 &&
                 N("left")%10<N("right")%10 &&
                 N("expected")==N("left")-N("right"),
+            "usccss.b01.g1.add_within100_no_compose_ten" =>
+                Range("left",10,89) && Range("right",10,89) &&
+                Range("expected",20,99) &&
+                N("left")+N("right")==N("expected") &&
+                N("left")%10+N("right")%10<10 &&
+                N("left")/10+N("right")/10<=9,
             "usccss.b01.g2.add_subtract_1000_no_regroup" =>
                 Range("left",100,999) && Range("right",100,899) &&
                 Range("operation",0,1) && Range("expected",0,999) &&
