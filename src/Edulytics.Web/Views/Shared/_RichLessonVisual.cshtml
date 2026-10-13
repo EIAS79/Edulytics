@@ -170,6 +170,37 @@
             }
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.RectangleDiagram)
+    {
+        // True rectangle aspect ratio from the SAME two side lengths used by
+        // the independently verified area question. No decorative tile grid.
+        var rectangleLength = int.TryParse(Model.Items.ElementAtOrDefault(0),
+            out var parsedLength) ? Math.Clamp(parsedLength, 1, 100) : 1;
+        var rectangleWidth = int.TryParse(Model.Items.ElementAtOrDefault(1),
+            out var parsedWidth) ? Math.Clamp(parsedWidth, 1, 100) : 1;
+        var diagramScale = Math.Min(152.0 / rectangleLength,
+            100.0 / rectangleWidth);
+        var diagramW = (rectangleLength * diagramScale)
+            .ToString(System.Globalization.CultureInfo.InvariantCulture);
+        var diagramH = (rectangleWidth * diagramScale)
+            .ToString(System.Globalization.CultureInfo.InvariantCulture);
+        var rectangleX = ((220 - rectangleLength * diagramScale) / 2)
+            .ToString(System.Globalization.CultureInfo.InvariantCulture);
+        var rectangleY = ((165 - rectangleWidth * diagramScale) / 2)
+            .ToString(System.Globalization.CultureInfo.InvariantCulture);
+        <div class="rich-rectangle-diagram" role="img" aria-label="@Model.Description">
+            <svg viewBox="0 0 220 200" width="280" height="250"
+                 style="max-width:100%;height:auto" aria-hidden="true">
+                <rect x="@rectangleX" y="@rectangleY" width="@diagramW"
+                      height="@diagramH" fill="none"
+                      stroke="currentColor" stroke-width="3" />
+                <text x="110" y="185" text-anchor="middle"
+                      fill="currentColor">@rectangleLength units long</text>
+                <text x="110" y="22" text-anchor="middle"
+                      fill="currentColor">@rectangleWidth units wide</text>
+            </svg>
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">
