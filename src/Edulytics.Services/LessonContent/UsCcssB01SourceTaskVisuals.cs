@@ -262,6 +262,24 @@ public static class UsCcssB01SourceTaskVisuals
                     DecompositionBar(N("wholeN"), N("firstN"), N("denominator")),
                 "usccss.b01.fraction.whole_multiply" =>
                     RepeatedFractionBars(N("numerator"), N("denominator"), N("whole")),
+                "usccss.b01.number_line.locate_whole_to100" or
+                "usccss.b01.number_line.locate_three_digits" or
+                "usccss.b01.number_line.locate_large_numbers" when
+                    N("step")>0 && N("tick")>=1 && N("tick")<=9 &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind = RichLessonVisualKind.NumberLine,
+                        Title = "Locate the actual number on equal intervals",
+                        Description = $"All ten intervals measure {N("step"):N0} " +
+                            $"units. The highlighted target tick is {N("tick")}, " +
+                            $"at the exact value {q.CorrectAnswer}.",
+                        PrimaryLabel = $"Target tick {N("tick")} equals {q.CorrectAnswer}",
+                        Items = Enumerable.Range(0,11)
+                            .Select(i => (i*N("step")).ToString())
+                            .ToList()
+                    },
                 "usccss.b01.number_line.equal_intervals" =>
                     new RichLessonVisual
                     {
