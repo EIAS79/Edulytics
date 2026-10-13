@@ -58,7 +58,11 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G1:U08:L07", "place_value.count_to120"),
         ("G1:U08:L08", "place_value.tens_ones"),
         ("G2:U05:L04", "place_value.three_digits"),
-        ("G3:U01:L07", "graph.scaled_compare")
+        ("G3:U01:L07", "graph.scaled_compare"),
+        ("G3:U02:L04", "geometry.rectangle_area_grid60"),
+        ("G3:U02:L08", "geometry.rectangle_area_ungridded"),
+        ("G3:U02:L12", "geometry.composite_rectangle_area"),
+        ("G3:U02:L13", "geometry.composite_rectangle_area")
     ];
 
     [Fact]
@@ -79,8 +83,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(46, lessonIds.Count);
-        Assert.Equal(32, familyIds.Count);
+        Assert.Equal(50, lessonIds.Count);
+        Assert.Equal(34, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -121,7 +125,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(138, generated);
+        Assert.Equal(150, generated);
     }
 
     [Fact]
@@ -161,6 +165,11 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                 Assert.Equal(N("number"),
                     100*N("hundreds")+10*N("tens")+N("ones"));
                 return Num(N("number"));
+            case "usccss.b01.geometry.rectangle_area_grid60":
+                Assert.InRange(N("rows")*N("columns"),1,60);
+                return Num(N("rows")*N("columns"));
+            case "usccss.b01.geometry.rectangle_area_ungridded":
+                return Num(N("length")*N("width"));
             case "usccss.b01.graph.scaled_compare":
                 Assert.Contains(N("unit"),new[]{2,5,10});
                 Assert.Equal(N("countA"),N("unit")*N("ticksA"));
