@@ -75,6 +75,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g1.compare_order_tens_ones",
         "usccss.b01.g4.whole_minus_proper_fraction",
         "usccss.b01.g2.order_three_digits_number_line",
+        "usccss.b01.g2.add_subtract_1000_no_regroup",
         "usccss.b01.g2.add_subtract_without_regroup",
         "usccss.b01.g2.subtract_decompose_ten",
         "usccss.b01.g1.add_subtract_tens_multiples",
@@ -287,6 +288,36 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // Original G4 U03 L10: subtract a proper fraction from a whole.
             // Original G2 U05 L09: compare actual three-digit positions
             // using the SAME equal-interval number line.
+            // IM G2 U07 L04: add/subtract within 1,000 with NO regrouping.
+            case "usccss.b01.g2.add_subtract_1000_no_regroup":
+            {
+                m=r.Next(0,2);
+                if(m==0)
+                {
+                    var leftH=r.Next(1,9);var rightH=r.Next(1,10-leftH);
+                    var leftT=r.Next(0,10);var rightT=r.Next(0,10-leftT);
+                    var leftO=r.Next(0,10);var rightO=r.Next(0,10-leftO);
+                    a=leftH*100+leftT*10+leftO;
+                    b=rightH*100+rightT*10+rightO;
+                }
+                else
+                {
+                    var leftH=r.Next(2,10);var rightH=r.Next(1,leftH);
+                    var leftT=r.Next(0,10);var rightT=r.Next(0,leftT+1);
+                    var leftO=r.Next(0,10);var rightO=r.Next(0,leftO+1);
+                    a=leftH*100+leftT*10+leftO;
+                    b=rightH*100+rightT*10+rightO;
+                }
+                return Make(f,
+                    $"Compute {a} {(m==0?"+":"−")} {b} with place-value " +
+                    "strategies, without composing or decomposing tens or hundreds.",
+                    "Every place is handled independently; check each ones, " +
+                    "tens and hundreds column against its own digit bounds.",
+                    AssessmentItemType.Numeric,
+                    D(("left",a),("right",b),("operation",m),
+                      ("expected",m==0?a+b:a-b)));
+            }
+
             case "usccss.b01.g2.order_three_digits_number_line":
             {
                 var startHundred=r.Next(1,9)*100;
@@ -1062,6 +1093,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g2.add_subtract_without_regroup" or
             "usccss.b01.g2.subtract_decompose_ten" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.add_subtract_1000_no_regroup" =>
+                P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.order_three_digits_number_line" =>
                 Math.Max(P("first"),P("second"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -1278,6 +1311,18 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("left")/10>N("right")/10 &&
                 N("left")%10<N("right")%10 &&
                 N("expected")==N("left")-N("right"),
+            "usccss.b01.g2.add_subtract_1000_no_regroup" =>
+                Range("left",100,999) && Range("right",100,899) &&
+                Range("operation",0,1) && Range("expected",0,999) &&
+                N("expected")==(N("operation")==0
+                    ?N("left")+N("right"):N("left")-N("right")) &&
+                (N("operation")==0
+                    ?N("left")/100+N("right")/100<10 &&
+                     N("left")/10%10+N("right")/10%10<10 &&
+                     N("left")%10+N("right")%10<10
+                    :N("left")/100>N("right")/100 &&
+                     N("left")/10%10>=N("right")/10%10 &&
+                     N("left")%10>=N("right")%10),
             "usccss.b01.g2.order_three_digits_number_line" =>
                 Range("start",100,800) && N("start")%100==0 &&
                 Range("tickA",0,10) && Range("tickB",0,10) &&
