@@ -276,6 +276,7 @@ public static class UsCcssB01SourceTaskVisuals
                             $"units. The highlighted target tick is {N("tick")}, " +
                             $"at the exact value {q.CorrectAnswer}.",
                         PrimaryLabel = $"Target tick {N("tick")} equals {q.CorrectAnswer}",
+                        SecondaryItems = [N("tick").ToString()],
                         Items = Enumerable.Range(0,11)
                             .Select(i => (i*N("step")).ToString())
                             .ToList()
