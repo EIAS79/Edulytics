@@ -35,6 +35,20 @@
                 out var parsedTick) &&
             parsedTick >= 0 && parsedTick < Model.Items.Count
                 ? parsedTick : -1;
+        // A source-correct G2 number-line comparison has TWO tick targets,
+        // not just the first one. Other visual contracts stay unchanged.
+        var comparisonTicks=new HashSet<int>();
+        if(Model.Kind==RichLessonVisualKind.NumberLine &&
+            Model.SecondaryLabel=="Two G2 number-line positions" &&
+            Model.SecondaryItems.Count==2 &&
+            int.TryParse(Model.SecondaryItems[0],out var comparisonFirst) &&
+            int.TryParse(Model.SecondaryItems[1],out var comparisonSecond) &&
+            comparisonFirst>=0 && comparisonFirst<Model.Items.Count &&
+            comparisonSecond>=0 && comparisonSecond<Model.Items.Count)
+        {
+            comparisonTicks.Add(comparisonFirst);
+            comparisonTicks.Add(comparisonSecond);
+        }
         // Ruler questions encode two actual centimeter MARK VALUES.
         // Mark their corresponding tick positions, not a guessed index.
         var rulerEndpoints = new HashSet<int>();
@@ -55,8 +69,8 @@
             <div class="rich-number-line" role="img" aria-label="@Model.Description">
                 @for (var i = 0; i < Model.Items.Count; i++)
                 {
-                    <div class="rich-number-line__tick @(i == targetTick || rulerEndpoints.Contains(i) ? "rich-number-line__tick--target" : "")">
-                        @if (i == targetTick || rulerEndpoints.Contains(i))
+                    <div class="rich-number-line__tick @(i == targetTick || rulerEndpoints.Contains(i) || comparisonTicks.Contains(i) ? "rich-number-line__tick--target" : "")">
+                        @if (i == targetTick || rulerEndpoints.Contains(i) || comparisonTicks.Contains(i))
                         {
                             <span aria-hidden="true" title="Marked target">◆</span>
                         }
