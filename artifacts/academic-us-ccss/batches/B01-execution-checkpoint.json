@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "Preserved V4.2, joined exact B01 500 LessonCodes to locally available original K5 teacher preparation files and existing per-file SHA256 manifest without exporting copyrighted HTML; saved source index in PR #492. Previous V4.1 six-gate evidence index still reports 1/500 ready. Full B01 CI run 38437628747 success; release skipped while Draft.",
-  "nextExactOperation": "Build provenance- and rights-checked 500-row source purpose/activity/visual semantic comparison from already indexed local/public original K5 sources, compare effective Edulytics learner bodies, repair confirmed shared mathematical/instructional/visual/Practice defects in families, and run authenticated student L6 acceptance. Benchmark a representative set of complete source-to-student certified lessons before calculating ETA. Do NOT equate 500 matched files with L1 PASS or alter original PR #488 evidence.",
+  "lastCompletedOperation": "Implemented full official teacher Lesson activity inspection for all B01 500, unit tests, parallel CI job, unified eight-dimension report integration, L3/L4/L5 evidence pointers; saved existing 500 preparation sources index. PR #492 remains Draft with 1 historical certified and 499 missing gate evidence. No program code changes to rights.",
+  "nextExactOperation": "Obtain actual Actions run/test result for original-full-teacher-activities workflow; fix CI/script blockers; inspect exact 500-row review cues and original activity-to-Practice mismatches; repair confirmed mathematical/pedagogical/visual/question-family issues by root-cause grouping; complete authenticated L6 acceptance, independent source-semantic evidence and 500/500 ledger. Do not merge or deploy until BATCH_CERTIFIED.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -89,7 +89,7 @@
     "test": "tests/academic-us-ccss-b01-evidence-progress.test.cjs",
     "ci": ".github/workflows/us-ccss-b01-500-release.yml",
     "firstImplementationHead": "1251ee49c7931499659c5b4742f14b377de08e12",
-    "executionState": "IMPLEMENTED_CI_PENDING",
+    "executionState": "V4_1_EVIDENCE_PROGRESS_CI_PASSED_AT_F1E7F17",
     "auditOutput": "b01-collective-evidence-progress-500.json",
     "summaryOutput": "b01-collective-evidence-progress-summary.json",
     "canonicalLedgerWrites": false,
@@ -131,5 +131,22 @@
     "limitation": "This measures only successful CI job time span on an unchanged product baseline, NOT human/source-semantic repair work, actual L6 acceptance effort, full code-change regression, nor time to academic certification.",
     "certifiedLessonThroughputInThisRun": 0,
     "realisticCompletionForecast": "NOT_CALIBRATED_UNTIL_REPRESENTATIVE_SOURCE_SEMANTIC+REPAIR+L5+L6_SAMPLE_COMPLETED"
+  },
+  "originalFullTeacherActivityAudit": {
+    "implementation": "tools/us-ccss-b01-original-teacher-activities.py",
+    "unitTests": "tests/academic-us-ccss-b01-original-teacher-activities.test.py",
+    "unifiedReport": "tools/us-ccss-b01-unified-eight-dimension-report.cjs",
+    "workflow": ".github/workflows/us-ccss-b01-500-release.yml",
+    "linkedStages": [
+      "L3_INSTRUCTIONAL_TARGETS",
+      "L4_VISUAL_REPRESENTATION_REVIEW",
+      "L5_PRACTICE_TARGET_REVIEW"
+    ],
+    "requestedSourceCoverage": 500,
+    "implementationScope": "Original full teacher Lesson pages and actual Rich V2 effective learner content. Emits only metadata and review cues; no source body copy, no invented certification.",
+    "academicDecision": "NOT_CERTIFIED",
+    "ciVerification": "PENDING_NEW_RUN",
+    "lastCodeCommit": "eeef41e45fc20fa5e857f880ee447d8a193564da",
+    "noNewLedgerPassGranted": true
   }
 }
