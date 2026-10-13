@@ -56,6 +56,20 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void SourceClockVisualUsesVerifiedQuarterHourAndHourHands()
+    {
+        const string code = "PED:US-CCSS-MATH:G2:U06:L11";
+        var q = One(code, "usccss.b01.clock.half_quarters", 41897);
+        var visual = Assert.Single(UsCcssB01SourceTaskVisuals.Build(code, [q]));
+        Assert.Equal(RichLessonVisualKind.ClockFace, visual.Kind);
+        Assert.Equal(q.Parameters["hour"], int.Parse(visual.Items[0]));
+        Assert.Equal(15 * (q.Parameters["position"] + 1), int.Parse(visual.Items[1]));
+        Assert.Contains(q.CorrectAnswer, visual.Description);
+        Assert.InRange(int.Parse(visual.Items[0]), 1, 12);
+        Assert.Contains(int.Parse(visual.Items[1]), new[] { 15, 30, 45 });
+    }
+
+    [Fact]
     public void DoNotDisplayB01SpecificDiagramsOnLaterBatchOrOtherCurricula()
     {
         var q=One("PED:US-CCSS-MATH:G3:U01:L16",
