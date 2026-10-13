@@ -535,6 +535,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.subtract_decompose_ten"],
             "IM2021_G2_U02_L07_DECOMPOSE_TEN_SOURCE",
             "READY_VERIFIED", "usccss-b01-g2-two-digit-v1"),
+        // IM G1 U05 L04 only adds within 100 without composing
+        // a ten; generic across-ten addition is mathematically off-purpose.
+        new(
+            "PED:US-CCSS-MATH:G1:U05:L04",
+            "number.whole.add_subtract", "ADD_WITHIN_100_NO_COMPOSING_TEN",
+            ["usccss.b01.g1.add_within100_no_compose_ten"],
+            "IM2021_G1_U05_L04_ADD_WITHIN100_WITHOUT_COMPOSING_TEN",
+            "READY_VERIFIED", "usccss-b01-g1-no-carry-v1"),
         // IM G2 U07 L04: no carrying or borrowing in hundreds,
         // tens, or ones; generic arithmetic within 100 is insufficient.
         new(
