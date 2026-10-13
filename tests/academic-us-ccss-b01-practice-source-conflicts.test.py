@@ -37,6 +37,28 @@ class WholeBatchSemanticTests(unittest.TestCase):
         b["rows"][200]["publisherTitle"]="Choose a Scale"
         b["rows"][200]["sourcePurposePreview"]="Pick an appropriate scale for a bar graph."
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],1)
+    def test_exact_b01_lesson_family_is_locked_and_mismatches_fail_closed(self):
+        a,b=fixtures()
+        code="PED:US-CCSS-MATH:G3:U01:L06"
+        a["lessonRows"][42]["lessonCode"]=code
+        b["rows"][42]["lessonCode"]=code
+        b["rows"][42]["publisherTitle"]="Choose a Scale"
+        b["rows"][42]["sourcePurposePreview"]="Choose the scale for a bar graph."
+        a["lessonRows"][42]["actualQuestionFamilies"]=["supporting.surds.coefficient"]
+        r=module.analyze(a,b)
+        self.assertEqual(r["conflictingLessons"],1)
+        self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+            [x["rule"] for x in r["rows"][42]["conflicts"]])
+
+    def test_source_scoped_task_cannot_be_leaked_to_another_lesson(self):
+        a,b=fixtures()
+        a["lessonRows"][17]["actualQuestionFamilies"]=[
+            "usccss.b01.triangle.attributes"]
+        result=module.analyze(a,b)
+        self.assertEqual(result["conflictingLessons"],1)
+        self.assertEqual(result["rows"][17]["conflicts"][0]["rule"],
+                         "SOURCE_TASK_LEAKED_OUTSIDE_EXACT_LESSON_SCOPE")
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):
