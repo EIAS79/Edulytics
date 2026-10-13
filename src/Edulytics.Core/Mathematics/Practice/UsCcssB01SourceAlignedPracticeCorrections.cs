@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Forty lesson-code-exact B01 corrections independently checked against their
+/// Thirty-nine lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -49,14 +49,6 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "supporting.measurement.practical", "LENGTH_UNIT_ITERATION",
             ["supporting.measurement.unit_iteration"],
             "IM2021_G1_U06_L07_MEASURE_WITH_DIFFERENT_UNITS",
-            "READY_VERIFIED", "usccss-b01-source-scope-v1"),
-        // Grade 1 U07 L14: analog-clock half past (minute hand at six),
-        // not circle area/circumference calculations.
-        new(
-            "PED:US-CCSS-MATH:G1:U07:L14",
-            "supporting.measurement.practical", "HALF_HOUR_ANALOG_CLOCK",
-            ["supporting.measurement.clock_half_hour"],
-            "IM2021_G1_U07_L14_HALF_HOUR_CLOCK",
             "READY_VERIFIED", "usccss-b01-source-scope-v1"),
         // Grade 3 U08 L10: division within 100 linked to multiplication,
         // not grade-six unit rates.
