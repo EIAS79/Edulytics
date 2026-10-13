@@ -88,6 +88,37 @@ public sealed class UsCcssB01SourceTaskVisualsTests
             family, question.Parameters, question.CorrectAnswer));
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G3:U05:L12")]
+    [InlineData("PED:US-CCSS-MATH:G4:U02:L04")]
+    [InlineData("PED:US-CCSS-MATH:G4:U02:L05")]
+    [InlineData("PED:US-CCSS-MATH:G4:U02:L08")]
+    public void EquivalentFractionSourceNumberLineTasksMatchRealFractionArithmetic(
+        string code)
+    {
+        const string family="fractions.equivalent.number_line";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=209100;seed<209111;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            Assert.Equal(p["baseN"]*p["targetD"],
+                int.Parse(q.CorrectAnswer)*p["baseD"]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var line=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.NumberLine,line.Kind);
+            Assert.Equal("0",line.Items[0]);
+            Assert.Equal("1",line.Items[^1]);
+            Assert.Equal(p["baseD"]+1,line.Items.Count);
+            Assert.Equal(
+                $"{p["baseN"]}/{p["baseD"]}",line.Items[p["baseN"]]);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999999"}]));
+        }
+    }
+
     [Fact]
     public void FractionNumberLineLabelsUseExactUnitFractionSpacing()
     {
