@@ -70,7 +70,12 @@ public sealed class UsCcssB01SourceTaskVisualsTests
             var a=p["left"];var b=p["right"];var op=p["operation"];
             operations.Add(op);
             Assert.Equal(op==0?a+b:a-b,int.Parse(q.CorrectAnswer));
-            Assert.Equal(mustBorrow,a%10<b%10);
+            if(op==1)Assert.Equal(mustBorrow,a%10<b%10);
+            else
+            {
+                Assert.False(mustBorrow);
+                Assert.True(a%10+b%10<10);
+            }
             Assert.True(ExactSkillContractQuestionEngine.Verify(
                 family,p,q.CorrectAnswer));
             var chart=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
