@@ -16,6 +16,7 @@ on:
       - 'tools/us-ccss-b01-unified-eight-dimension-report.cjs'
       - 'tools/us-ccss-b01-evidence-progress.cjs'
       - 'tools/us-ccss-b01-original-teacher-activities.py'
+      - 'artifacts/academic-us-ccss/batches/B01-original-teacher-activity-local-index-500.json'
       - 'tests/academic-us-ccss-b01-original-teacher-activities.test.py'
       - 'tests/academic-us-ccss-b01-evidence-progress.test.cjs'
       - 'tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs'
@@ -144,22 +145,14 @@ jobs:
         with:
           name: b01-rich-v2-composition-500
           path: b01-activity-rich
-      - name: Source cache day
-        id: day
-        run: echo "value=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
-      - uses: actions/cache@v4
-        with:
-          path: .cache/usccss-b01-teacher-activities
-          key: b01-full-teacher-lessons-${{ hashFiles('artifacts/academic-us-ccss/batches/B01-lesson-manifest.json') }}-${{ steps.day.outputs.value }}
-      - name: Reject fabricated 500-way activity matches and unsafe source URLs
+      - name: Reject fabricated or stale archived teacher Lesson source digests
         run: python3 tests/academic-us-ccss-b01-original-teacher-activities.test.py
-      - name: Inspect all 500 ORIGINAL full teacher Lesson activities vs effective learner Rich V2
-        env:
-          USCCSS_B01_TEACHER_LESSON_CACHE: .cache/usccss-b01-teacher-activities
+      - name: Screen original full teacher Lesson activities without 500 HTTP fetches
         run: |
           python3 tools/us-ccss-b01-original-teacher-activities.py \
             --runtime b01-activity-runtime/b01-effective-content-and-practice.json \
             --rich b01-activity-rich/b01-rich-v2-500.json \
+            --source-index artifacts/academic-us-ccss/batches/B01-original-teacher-activity-local-index-500.json \
             --output b01-original-teacher-activities-500.json
       - name: Archive source activity metadata and candidate instructional gaps
         if: always()
@@ -398,7 +391,7 @@ jobs:
           safe_only=true
           while IFS= read -r file; do
             case "$file" in
-              docs/*|artifacts/academic-us-ccss/batches/B01-execution-checkpoint.json|tools/us-ccss-b01-evidence-progress.cjs|tests/academic-us-ccss-b01-evidence-progress.test.cjs|.github/workflows/us-ccss-b01-500-release.yml)
+              docs/*|artifacts/academic-us-ccss/batches/B01-execution-checkpoint.json|tools/us-ccss-b01-evidence-progress.cjs|tests/academic-us-ccss-b01-evidence-progress.test.cjs|tools/us-ccss-b01-original-teacher-activities.py|tests/academic-us-ccss-b01-original-teacher-activities.test.py|tools/us-ccss-b01-unified-eight-dimension-report.cjs|tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs|artifacts/academic-us-ccss/batches/B01-original-teacher-activity-local-index-500.json|.github/workflows/us-ccss-b01-500-release.yml)
                 echo "Unchanged tested product code; evidence-only delta: $file" ;;
               *)
                 echo "Product-impacting or unclassified change since PASSED baseline: $file"
