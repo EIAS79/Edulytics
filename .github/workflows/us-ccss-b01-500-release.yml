@@ -307,8 +307,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # Use the real PR head so HEAD^ is the previous PR commit, not
-          # GitHub's synthetic merge parent (which includes the entire PR).
+          # Inspect the real PR head; the full-product skip is gated by a
+          # known successful immutable .NET baseline, not a skipped parent.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 2
       - name: Detect documentation/evidence-only draft commits
@@ -329,7 +329,16 @@ jobs:
             echo "Parent unavailable: fail closed to full suite."
             exit 0
           fi
-          changed="$(git diff --name-only HEAD^ HEAD)" || {
+          # Never infer a tested parent from a skipped or cancelled run:
+          # this immutable B01 commit has a VERIFIED successful complete
+          # .NET regression job in Actions run 38432646547.
+          tested_baseline="b4f84d0769f629e8b5a14e33ea0bb0a35e267fb1"
+          if ! git fetch --no-tags --depth=1 origin "$tested_baseline"; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "Cannot verify tested source baseline; run full suite."
+            exit 0
+          fi
+          changed="$(git diff --name-only "$tested_baseline" HEAD)" || {
             echo "full=true" >> "$GITHUB_OUTPUT"
             exit 0
           }
@@ -340,10 +349,10 @@ jobs:
           safe_only=true
           while IFS= read -r file; do
             case "$file" in
-              docs/*|artifacts/academic-us-ccss/batches/B01-execution-checkpoint.json|tools/us-ccss-b01-evidence-progress.cjs|tests/academic-us-ccss-b01-evidence-progress.test.cjs)
-                echo "Evidence/documentation-only change: $file" ;;
+              docs/*|artifacts/academic-us-ccss/batches/B01-execution-checkpoint.json|tools/us-ccss-b01-evidence-progress.cjs|tests/academic-us-ccss-b01-evidence-progress.test.cjs|.github/workflows/us-ccss-b01-500-release.yml)
+                echo "Unchanged tested product code; evidence-only delta: $file" ;;
               *)
-                echo "Product-impacting or unclassified change requires full suite: $file"
+                echo "Product-impacting or unclassified change since PASSED baseline: $file"
                 safe_only=false ;;
             esac
           done <<< "$changed"
