@@ -27,10 +27,31 @@
     "b01GateConclusion": "success",
     "b01GateCommit": "4abf4d576e3bf8c71639051ee70319def2b495f4",
     "certifiedCountFromRun": 1,
-    "nextLessonFromRun": "PED:US-CCSS-MATH:G1:U01:L02"
+    "nextLessonFromRun": "PED:US-CCSS-MATH:G1:U01:L02",
+    "unifiedEightDimensionReport": {
+      "runId": 38416647819,
+      "artifactId": 11824892703,
+      "artifactUrl": "https://github.com/EIAS79/Edulytics/actions/runs/38416647819/artifacts/11824892703",
+      "testedSha": "61f2628a2ee004eb8839d17579e49a95b70c43a8",
+      "lessonRows": 500,
+      "dimensions": 8,
+      "classifications": {
+        "CORRECT": 1,
+        "NEEDS_REPAIR": 1,
+        "BLOCKED_MISSING_EVIDENCE": 498
+      },
+      "batchState": "BATCH_NO-GO"
+    },
+    "regressionRepair": {
+      "sha": "d1f8ef54933076e5efca5f44461ff773b9891efc",
+      "testRunId": 38417688433,
+      "passed": 2377,
+      "failed": 1,
+      "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
+    }
   },
-  "lastCompletedOperation": "Ran one bulk GitHub Actions scan of all 500 B01 learner bodies; cross-checked source and standards, inspected 486 simple arithmetic equations, collected 14 deliberate true/false style expressions for semantic review; added one automatic collective batch decision gate and CI regression tests. No batch certification claimed.",
-  "nextExactOperation": "Run full B01-wide source/semantic/visual/math generator/grading/Rich V2 review and remediation concurrently, gather 500/500 SHA-bound L1-L6 and 8-dimension evidence records; one release-check gives BATCH_CERTIFIED only when no missing/failed evidence and required CI passes.",
+  "lastCompletedOperation": "Produced one 500-row eight-dimension B01 report from prior effective/runtime/publisher/visual/question evidence, 5/5 report unit tests and collective workflow success. Implemented exact_time mapping, graph semantic identity, fractional/quarter-inch meaningful session diversity and source-aligned G3 routing on PR #492; 2377/2378 full regression tests passed on d1f8ef5. Updated stale interaction registry-count assertion to 324 in next commit. Previous PR #488 pilot certification remains preserved.",
+  "nextExactOperation": "Inspect latest CI after registry-count assertion correction; then address remaining true B01 content/source/math/visual L1–L6 gaps for all 500. Existing 500-row report is a triage checkpoint not BATCH_CERTIFIED; do not repeat unchanged content reviews, do not merge or deploy draft PR, do not start B02.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -59,5 +80,6 @@
     "screeningLimits": "Static source/content and arithmetic spot checks do not establish L2-L6 or release approval."
   },
   "totalEvidenceReady": 1,
-  "remainingEvidenceNeeded": 499
+  "remainingEvidenceNeeded": 499,
+  "lastKnownCandidateRef": "audit/us-ccss-b01-500-lesson-certification"
 }

@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            290, // +2 exact source-bound G1 U01 L01 practice families
+            324, // Existing registry plus 34 source-scoped B01 practice families
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
