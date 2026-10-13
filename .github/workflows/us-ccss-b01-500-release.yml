@@ -13,6 +13,8 @@ on:
       - 'tools/us-ccss-b01-publisher-goal-alignment.py'
       - 'tools/us-ccss-b01-practice-source-conflicts.py'
       - 'tools/us-ccss-b01-source-visual-gaps.py'
+      - 'tools/us-ccss-b01-unified-eight-dimension-report.cjs'
+      - 'tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs'
       - 'tests/academic-us-ccss-b01-source-visual-gaps.test.py'
       - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
       - 'tests/academic-us-ccss-b01-publisher-alignment.test.py'
@@ -63,7 +65,7 @@ jobs:
 
   release-all-500-only:
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
-    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues]
+    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues, consolidate-b01-eight-dimension-report]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -219,3 +221,51 @@ jobs:
             --publisher b01-publisher-visual/b01-publisher-alignment-500.json \
             --rich b01-rich-visual/b01-rich-v2-500.json \
             --output b01-rich-v2-source-visual-gaps-500.json --strict
+
+  consolidate-b01-eight-dimension-report:
+    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-bulk-content-screen
+          path: b01-bulk
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-effective-content-and-practice
+          path: b01-effective
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-publisher-goal-alignment-500
+          path: b01-publisher
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-500-lesson-practice-source-conflicts
+          path: b01-practice
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-rich-v2-composition-500
+          path: b01-rich
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-rich-v2-publisher-visual-gaps
+          path: b01-visual
+      - name: Test join, classification, historical evidence reuse and fail closed logic
+        run: node --test tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs
+      - name: Produce ONE source-bound 500-row and eight-dimension classification report
+        run: node tools/us-ccss-b01-unified-eight-dimension-report.cjs
+      - name: Preserve complete report and readable summary for continuation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-unified-eight-dimension-report-500
+          path: |
+            b01-unified-eight-dimension-report-500.json
+            b01-unified-eight-dimension-summary.md
+          retention-days: 30
+          if-no-files-found: warn
