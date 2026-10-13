@@ -504,6 +504,10 @@ for key, schoolname in SCHOOLS:
                 l02_fields = dict(practice_fields)
                 l02_fields["lessonId"] = next_id
                 l02_fields["questionCount"] = "3"  # 3 allowed lesson items, one per family
+                # Every legitimate new Practice attempt must use a NEW
+                # idempotency key. Reusing the same anti-forgery form token
+                # as an implicit key across differing POST bodies is rejected.
+                l02_fields["_idempotencyKey"] = "ci-g1-l02-" + uuid.uuid4().hex
                 # Expose the exact redirect, route and HTTP failure instead
                 # of treating a 404 during lesson Practice as a source error.
                 assert next_id in offered_ids, (
