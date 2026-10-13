@@ -572,6 +572,20 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.geometry.rectangle_area_grid60"],
             "IM2021_G3_U02_L05_MULTIPLICATION_RECTANGLE_AREA",
             "READY_VERIFIED", "usccss-b01-area-source-v2"),
+        // Teacher G3 U02 L07: measure area in square feet/meters;
+        // L10 applies rectangular area to real-world problems.
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L07",
+            "supporting.geometry.area_volume", "RECTANGLE_AREA_FEET_AND_METERS",
+            ["usccss.b01.geometry.rectangle_area_real_world_units"],
+            "IM2021_G3_U02_L07_SQUARE_FEET_METERS_RECTANGLE_AREA",
+            "READY_VERIFIED", "usccss-b01-measured-area-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U02:L10",
+            "supporting.geometry.area_volume", "REAL_WORLD_AREA_MEASURED_SIDE_LENGTHS",
+            ["usccss.b01.geometry.rectangle_area_real_world_units"],
+            "IM2021_G3_U02_L10_REAL_WORLD_RECTANGLE_AREA",
+            "READY_VERIFIED", "usccss-b01-measured-area-v1"),
         new(
             "PED:US-CCSS-MATH:G3:U02:L09",
             "supporting.geometry.area_volume", "MEASURE_RECTANGLE_SIDES_AND_MULTIPLY",
