@@ -322,6 +322,43 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void PublisherG3DivisionLessonHasBothInverseOperationsAndExactArray()
+    {
+        const string code="PED:US-CCSS-MATH:G3:U08:L10";
+        const string family="usccss.b01.g3.multiplication_division_inverse_array";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var modes=new HashSet<int>();
+        for(var seed=881000;seed<881120;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var rows=p["rows"];
+            var cols=p["columns"];
+            var total=p["total"];
+            var op=p["operation"];
+            modes.Add(op);
+            Assert.InRange(total,4,100);
+            Assert.Equal(rows*cols,total);
+            Assert.Equal(op==0?total:cols,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var diagram=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.ShapeDecomposition,diagram.Kind);
+            Assert.Equal(rows,diagram.Rows.Count);
+            Assert.All(diagram.Rows,row=>Assert.Equal(cols,row.Cells.Count));
+            Assert.All(diagram.Rows.SelectMany(row=>row.Cells),
+                cell=>Assert.Equal("■",cell));
+            Assert.Contains($"{total} ÷ {rows} = {cols}",diagram.Description);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="99999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G4:U08:L10",[q]));
+        }
+        Assert.Equal(new[]{0,1},modes.OrderBy(x=>x).ToArray());
+    }
+
+    [Fact]
     public void ArrayVisualContainsExactlyTheUnitSquaresInTheVerifiedQuestion()
     {
         const string code="PED:US-CCSS-MATH:G3:U01:L16";

@@ -53,6 +53,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.array.equal_addends",
         "usccss.b01.array.equal_equation",
         "usccss.b01.array.unknown_factor",
+        "usccss.b01.g3.multiplication_division_inverse_array",
         "usccss.b01.array.commutativity",
         "usccss.b01.geometry.composite_rectangle_area",
         "usccss.b01.geometry.rectangle_area_grid60",
@@ -939,6 +940,24 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     $"Add the same addend {b} for every row, then write the " +
                     $"total equal to {a*b}.",
                     AssessmentItemType.ShortAnswer, D(("rows", a), ("columns", b)));
+            // Original IM G3 U08 L10: fluency within 100 by reasoning
+            // from the SAME rectangular array in both × and ÷ directions.
+            case "usccss.b01.g3.multiplication_division_inverse_array":
+            {
+                a=r.Next(2,11);b=r.Next(2,11);m=r.Next(0,2);
+                return Make(f,
+                    m==0
+                        ?$"An array has {a} rows of {b} equal objects. " +
+                         "How many objects are there altogether? " +
+                         $"Use {a} × {b} and the inverse division fact."
+                        :$"There are {a*b} objects arranged equally into " +
+                         $"{a} rows. How many are in each row? " +
+                         $"Use {a*b} ÷ {a} and its inverse multiplication fact.",
+                    $"The same {a} by {b} array proves both " +
+                    $"{a} × {b} = {a*b} and {a*b} ÷ {a} = {b}.",
+                    AssessmentItemType.Numeric,
+                    D(("rows",a),("columns",b),("total",a*b),("operation",m)));
+            }
             case "usccss.b01.array.unknown_factor":
                 a = r.Next(2, 6 + level); b = r.Next(2, 7 + level);
                 return Make(f,
@@ -1227,6 +1246,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.rectangle.unit_squares" or
             "usccss.b01.array.equal_groups" =>
                 (P("rows") * P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g3.multiplication_division_inverse_array" =>
+                (P("operation")==0?P("total"):P("columns"))
+                    .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.array.columns" or
             "usccss.b01.array.unknown_factor" or
             "usccss.b01.array.commutativity" =>
@@ -1561,6 +1583,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.array.equal_groups" =>
                 Range("rows",2,7) && Range("columns",2,11) &&
                 N("rows")*N("columns")<=100,
+            "usccss.b01.g3.multiplication_division_inverse_array" =>
+                Range("rows",2,10) && Range("columns",2,10) &&
+                Range("total",4,100) && Range("operation",0,1) &&
+                N("total")==N("rows")*N("columns"),
             "usccss.b01.array.columns" or
             "usccss.b01.array.equal_addends" or
             "usccss.b01.array.equal_equation" or

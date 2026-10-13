@@ -221,14 +221,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["supporting.measurement.unit_iteration"],
             "IM2021_G1_U06_L07_MEASURE_WITH_DIFFERENT_UNITS",
             "READY_VERIFIED", "usccss-b01-source-scope-v1"),
-        // Grade 3 U08 L10: division within 100 linked to multiplication,
-        // not grade-six unit rates.
+        // Grade 3 U08 L10: one accurate array is reused to prove
+        // multiplication and inverse division within 100.
         new(
             "PED:US-CCSS-MATH:G3:U08:L10",
-            "supporting.number.directed_operations", "MULTIPLICATION_DIVISION_RELATED",
-            ["supporting.number.multiply", "supporting.number.divide"],
+            "supporting.number.directed_operations", "MULTIPLICATION_DIVISION_ARRAY_INVERSES",
+            ["usccss.b01.g3.multiplication_division_inverse_array"],
             "IM2021_G3_U08_L10_MULTIPLICATION_DIVISION_WITHIN_100",
-            "READY_VERIFIED", "usccss-b01-source-scope-v1"),
+            "READY_VERIFIED", "usccss-b01-array-inverse-v1"),
         // Grade 3 U01 L15 solves multiplication situations, not algebraic
         // factorization of polynomials.
         new(

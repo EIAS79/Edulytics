@@ -465,6 +465,27 @@ public static class UsCcssB01SourceTaskVisuals
                                     Cells = Enumerable.Repeat("■", N("rows")).ToList()
                                 })).ToList()
                     },
+                "usccss.b01.g3.multiplication_division_inverse_array" when
+                    lessonCode=="PED:US-CCSS-MATH:G3:U08:L10" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.ShapeDecomposition,
+                        Title="One array shows both multiplication and division",
+                        Description=$"{N("rows")} rows of {N("columns")} objects " +
+                            $"have exactly {N("total")} squares. " +
+                            $"{N("rows")} × {N("columns")} = {N("total")} and " +
+                            $"{N("total")} ÷ {N("rows")} = {N("columns")}. " +
+                            $"The requested answer is {q.CorrectAnswer}.",
+                        PrimaryLabel="Equal-size rows and columns",
+                        Rows=Enumerable.Range(1,N("rows"))
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"Row {i}",
+                                Cells=Enumerable.Repeat("■",N("columns")).ToList()
+                            }).ToList()
+                    },
                 "usccss.b01.array.columns" or
                 "usccss.b01.array.equal_addends" or
                 "usccss.b01.array.equal_equation" or
