@@ -17,7 +17,7 @@ CUES = [
   {"ShapeDecomposition"}),
  ("NUMBER_LINE",r"\bnumber line\b|\bline plot\b",{"NumberLine","Scale"}),
  ("GRAPH_AND_SCALE",r"\bbar graph\b|\bpicture graph\b|\bscaled graph\b|\bgraph scales?\b",
-  {"Scale","RatioTable","ShapeDecomposition"}),
+  {"Scale","BarGraph","RatioTable","ShapeDecomposition"}),
  ("PLACE_VALUE",r"\bplace value\b|expanded form|base.ten|digit value",
   {"PlaceValueChart"}),
  ("AREA_MODEL",r"\barea of\b|\barea by\b|\barea with\b|\barea and\b",
