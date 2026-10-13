@@ -27,6 +27,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.partition.halves_fourths",
         "usccss.b01.number_line.equal_intervals",
         "usccss.b01.number_line.locate_whole_to100",
+        "usccss.b01.number_line.move_left_right_within100",
+        "usccss.b01.number_line.estimate_location_within100",
         "usccss.b01.number_line.locate_three_digits",
         "usccss.b01.number_line.locate_large_numbers",
         "usccss.b01.clock.half_quarters",
@@ -366,6 +368,42 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // Verified IM source targets: G2 U04 L01, G2 U05 L08
             // and G4 U04 L11. Exact grade-scoped scales prevent
             // teaching an irrelevant or impossible numeric range.
+            // Original IM G2 U04 L04: increasing to the right and
+            // decreasing to the left on a graduated whole-number line.
+            case "usccss.b01.number_line.move_left_right_within100":
+            {
+                var startTick=r.Next(2,9);
+                var jumps=r.Next(1,Math.Min(startTick,10-startTick)+1);
+                var direction=r.Next(0,2)==0?-1:1;
+                a=startTick*10;b=jumps*10;n=(startTick+direction*jumps)*10;
+                return Make(f,
+                    $"Start at {a} on a number line with marks every 10. " +
+                    $"Move {jumps} equal jump(s) to the {(direction==1?"right":"left")}. " +
+                    "Which whole number is at the ending point?",
+                    "Moving right increases a number and moving left decreases it. " +
+                    "Each labelled tick is ten units apart.",
+                    AssessmentItemType.Numeric,
+                    D(("start",a),("distance",b),("direction",direction),
+                      ("jumps",jumps),("end",n)));
+            }
+            // Original IM G2 U04 L05: estimate the relative location of a
+            // whole number on a line using bounding decades and distance.
+            case "usccss.b01.number_line.estimate_location_within100":
+            {
+                a=r.Next(0,10)*10;
+                b=new[]{1,2,3,4,6,7,8,9}[r.Next(0,8)];
+                n=a+b;
+                m=a+(b>=6?10:0);
+                return Make(f,
+                    $"A number line marks 0, 10, 20, ..., 100 equally. " +
+                    $"Place the number {n} between {a} and {a+10}. " +
+                    "Which labelled ten is closer to the point?",
+                    "Compare the distance from the point to both adjacent tens. " +
+                    "The closer labelled tick is its best estimate.",
+                    AssessmentItemType.Numeric,
+                    D(("target",n),("lower",a),("upper",a+10),("nearest",m)));
+            }
+
             case "usccss.b01.number_line.locate_whole_to100":
             case "usccss.b01.number_line.locate_three_digits":
             case "usccss.b01.number_line.locate_large_numbers":
@@ -745,6 +783,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                  P("heightRight")*P("widthMissing")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.triangle.attributes" => P("position").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.partition.halves_fourths" => P("denominator") == 2 ? "half" : "fourth",
+            "usccss.b01.number_line.move_left_right_within100" =>
+                P("end").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.number_line.estimate_location_within100" =>
+                P("nearest").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.number_line.locate_whole_to100" or
             "usccss.b01.number_line.locate_three_digits" or
             "usccss.b01.number_line.locate_large_numbers" =>
@@ -899,6 +941,21 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
                 (N("denominator") is 2 or 4) && Range("shape",0,4),
+            "usccss.b01.number_line.move_left_right_within100" =>
+                Range("start",20,80) && N("start")%10==0 &&
+                Range("distance",10,40) && N("distance")%10==0 &&
+                Range("jumps",1,4) && N("distance")==N("jumps")*10 &&
+                (N("direction") is -1 or 1) && Range("end",0,100) &&
+                N("end")==N("start")+N("direction")*N("distance"),
+            "usccss.b01.number_line.estimate_location_within100" =>
+                Range("target",1,99) &&
+                Range("lower",0,90) && N("lower")%10==0 &&
+                Range("upper",10,100) && N("upper")==N("lower")+10 &&
+                N("target")>N("lower") && N("target")<N("upper") &&
+                N("target")%10!=5 &&
+                Range("nearest",0,100) &&
+                N("nearest")==(N("target")-N("lower")<5
+                    ?N("lower"):N("upper")),
             "usccss.b01.number_line.locate_whole_to100" =>
                 (N("step") is 1 or 2 or 5 or 10) &&
                 Range("tick",1,9) && Range("mode",0,2),

@@ -317,6 +317,39 @@ public static class UsCcssB01SourceTaskVisuals
                     DecompositionBar(N("wholeN"), N("firstN"), N("denominator")),
                 "usccss.b01.fraction.whole_multiply" =>
                     RepeatedFractionBars(N("numerator"), N("denominator"), N("whole")),
+                "usccss.b01.number_line.move_left_right_within100" when
+                    N("start")%10==0 && N("distance")%10==0 &&
+                    N("end")==N("start")+N("direction")*N("distance") &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.NumberLine,
+                        Title="Move right to increase and left to decrease",
+                        Description=$"Start at {N("start")}. Move {N("jumps")} equal " +
+                            $"tick(s) {(N("direction")==1?"right":"left")}, " +
+                            $"each worth 10, to finish at {q.CorrectAnswer}. " +
+                            "All ticks are evenly spaced.",
+                        PrimaryLabel=$"{N("start")} to {N("end")}",
+                        SecondaryItems=[(N("start")/10).ToString(),
+                            (N("end")/10).ToString()],
+                        Items=Enumerable.Range(0,11).Select(i=>(i*10).ToString()).ToList()
+                    },
+                "usccss.b01.number_line.estimate_location_within100" when
+                    N("upper")==N("lower")+10 &&
+                    N("target")>N("lower") && N("target")<N("upper") &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.NumberLine,
+                        Title="Estimate a whole-number location between labelled tens",
+                        Description=$"The unlabelled point at {N("target")} lies strictly " +
+                            $"between {N("lower")} and {N("upper")}. " +
+                            $"The closer labelled tick is {q.CorrectAnswer}.",
+                        PrimaryLabel=$"Point {N("target")}: nearest {q.CorrectAnswer}",
+                        Items=Enumerable.Range(0,11).Select(i=>(i*10).ToString()).ToList()
+                    },
                 "usccss.b01.number_line.locate_whole_to100" or
                 "usccss.b01.number_line.locate_three_digits" or
                 "usccss.b01.number_line.locate_large_numbers" when

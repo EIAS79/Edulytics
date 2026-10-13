@@ -142,6 +142,43 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G2:U04:L04",
+        "usccss.b01.number_line.move_left_right_within100")]
+    [InlineData("PED:US-CCSS-MATH:G2:U04:L05",
+        "usccss.b01.number_line.estimate_location_within100")]
+    public void OriginalGrade2DirectionAndEstimationTargetSpecificNumberLineQuestions(
+        string code,string family)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=660260;seed<660275;seed++)
+        {
+            var question=One(code,family,seed);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,question.Parameters,question.CorrectAnswer));
+            var p=question.Parameters;
+            if(family.EndsWith("move_left_right_within100",StringComparison.Ordinal))
+                Assert.Equal(p["start"]+p["direction"]*p["distance"],
+                    int.Parse(question.CorrectAnswer));
+            else
+            {
+                Assert.InRange(p["target"],p["lower"]+1,p["upper"]-1);
+                Assert.Equal(Math.Abs(p["target"]-p["lower"])<
+                    Math.Abs(p["target"]-p["upper"])?p["lower"]:p["upper"],
+                    int.Parse(question.CorrectAnswer));
+            }
+            var line=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[question]));
+            Assert.Equal(RichLessonVisualKind.NumberLine,line.Kind);
+            Assert.Equal(11,line.Items.Count);
+            Assert.Equal(Enumerable.Range(0,11).Select(i=>i*10),
+                line.Items.Select(int.Parse));
+            Assert.Contains(question.CorrectAnswer,line.Description);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [question with {CorrectAnswer="100500"}]));
+        }
+    }
+
     [Fact]
     public void ReadingScaleDiagramIsEquallySpacedAndHasTheVerifiedAnswer()
     {

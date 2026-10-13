@@ -165,6 +165,20 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
         // IM 2021 G2 U04 L03: represent an unlabeled whole-number
         // number-line point and use equally spaced interval reasoning.
         // Former generic "verify identity" did not ask about the line.
+        // IM 2021 G2 U04 L04: positive direction, negative direction.
+        new(
+            "PED:US-CCSS-MATH:G2:U04:L04",
+            "measurement.scale.read_equal_intervals", "NUMBER_LINE_LEFT_RIGHT_DIRECTION",
+            ["usccss.b01.number_line.move_left_right_within100"],
+            "IM2021_G2_U04_L04_DIRECTIONAL_WHOLE_NUMBER_LINE_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-g2-u04-number-line-v2"),
+        // IM 2021 G2 U04 L05: estimate positions by proximity of ticks.
+        new(
+            "PED:US-CCSS-MATH:G2:U04:L05",
+            "measurement.scale.read_equal_intervals", "NUMBER_LINE_ESTIMATE_RELATIVE_POSITION",
+            ["usccss.b01.number_line.estimate_location_within100"],
+            "IM2021_G2_U04_L05_ESTIMATE_WHOLE_NUMBER_POSITION_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-g2-u04-number-line-v2"),
         new(
             "PED:US-CCSS-MATH:G2:U04:L03",
             "measurement.scale.read_equal_intervals", "LOCATE_WHOLE_NUMBER_WITH_SKIP_COUNTING",

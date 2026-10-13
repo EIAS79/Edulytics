@@ -48,6 +48,8 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G4:U03:L17": "usccss.b01.fraction.tenths_hundredths_over_one",
     "PED:US-CCSS-MATH:G2:U04:L01": "usccss.b01.number_line.locate_whole_to100",
     "PED:US-CCSS-MATH:G2:U04:L03": "usccss.b01.number_line.locate_whole_to100",
+    "PED:US-CCSS-MATH:G2:U04:L04": "usccss.b01.number_line.move_left_right_within100",
+    "PED:US-CCSS-MATH:G2:U04:L05": "usccss.b01.number_line.estimate_location_within100",
     "PED:US-CCSS-MATH:G2:U04:L06": [
         "usccss.b01.number_line.locate_whole_to100",
         "number.whole.add_subtract.within_100.apply",
