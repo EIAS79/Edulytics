@@ -20,6 +20,27 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.compare_tape_difference"],
             "IM2021_G2_U01_L14_BAR_GRAPH_TO_TAPE_COMPARE_SOURCE",
             "READY_VERIFIED", "usccss-b01-source-tape-diagram-v1"),
+        // Teacher G3 U01 L03 interprets SCALED picture graph,
+        // and L04 constructs a picture graph from frequencies and a key.
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L03",
+            "supporting.statistics.charts", "INTERPRET_SCALED_PICTURE_GRAPH",
+            ["usccss.b01.g3.picture_graph.scaled_compare"],
+            "IM2021_G3_U01_L03_INTERPRET_SCALED_PICTURE_GRAPH",
+            "READY_VERIFIED", "usccss-b01-picture-graph-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U01:L04",
+            "supporting.statistics.charts", "CONSTRUCT_SCALED_PICTURE_GRAPH",
+            ["usccss.b01.g3.picture_graph.construct"],
+            "IM2021_G3_U01_L04_CONSTRUCT_SCALED_PICTURE_GRAPH",
+            "READY_VERIFIED", "usccss-b01-picture-graph-v1"),
+        // Teacher G2 U03 L15 constructs a line plot, while L14 interprets.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L15",
+            "supporting.statistics.charts", "CREATE_NUMERIC_X_MARK_LINE_PLOT",
+            ["usccss.b01.g2.measurement.read_line_plot"],
+            "IM2021_G2_U03_L15_CREATE_NUMERIC_LINE_PLOT",
+            "READY_VERIFIED", "usccss-b01-source-line-plot-v2"),
         // IM Grade 2 U03 L14 original: interpret measurements in a line plot.
         new(
             "PED:US-CCSS-MATH:G2:U03:L14",

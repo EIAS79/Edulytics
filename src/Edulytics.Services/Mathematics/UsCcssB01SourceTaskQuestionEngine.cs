@@ -40,6 +40,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.measure.map_lengths",
         "usccss.b01.ruler.compare_centimeters",
         "usccss.b01.g2.measurement.read_line_plot",
+        "usccss.b01.g3.picture_graph.scaled_compare",
+        "usccss.b01.g3.picture_graph.construct",
         "usccss.b01.g2.compare_tape_difference",
         "usccss.b01.ruler.measure_without_zero",
         "usccss.b01.graph.choose_scale",
@@ -538,6 +540,35 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     D(("longCount",a),("shortCount",b),("difference",a-b)));
             }
 
+            // Original IM 2021 G3 U01 L03: scaled picture-graph
+            // interpretation. One printed symbol represents 2 or 5 people.
+            case "usccss.b01.g3.picture_graph.scaled_compare":
+            {
+                a=r.Next(3,7);b=r.Next(1,a);m=r.Next(0,2)==0?2:5;
+                return Make(f,
+                    $"On a scaled picture graph each ● stands for {m} responses. " +
+                    $"Category A has {a} symbols, while category B has {b}. " +
+                    "How many more responses does category A represent?",
+                    "Multiply each category's symbol count by the scale before " +
+                    "comparing the represented frequencies.",
+                    AssessmentItemType.Numeric,
+                    D(("scale",m),("aIcons",a),("bIcons",b)));
+            }
+            // Original IM 2021 G3 U01 L04: construct a SCALED
+            // picture graph from categorical frequencies.
+            case "usccss.b01.g3.picture_graph.construct":
+            {
+                a=r.Next(2,6);b=r.Next(1,7);m=r.Next(0,2)==0?2:5;
+                return Make(f,
+                    $"Make a scaled picture graph. One ● represents {m} votes. " +
+                    $"Category A received {a*m} votes and category B received {b*m}. " +
+                    "How many ● symbols must you draw for category B?",
+                    "Divide the B frequency by the value of one picture symbol. " +
+                    "Use the same key for both categories.",
+                    AssessmentItemType.Numeric,
+                    D(("scale",m),("aIcons",a),("bIcons",b)));
+            }
+
             case "usccss.b01.g2.measurement.read_line_plot":
             {
                 a=r.Next(1,5);b=r.Next(1,5);m=r.Next(1,5);n=r.Next(1,5);
@@ -920,6 +951,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g2.compare_tape_difference" =>
                 (P("longCount")-P("shortCount"))
                     .ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g3.picture_graph.scaled_compare" =>
+                ((P("aIcons")-P("bIcons"))*P("scale"))
+                    .ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g3.picture_graph.construct" =>
+                P("bIcons").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.read_line_plot" =>
                 P("targetLength") switch
                 {
@@ -1104,6 +1140,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("longCount")>N("shortCount") &&
                 Range("difference",1,17) &&
                 N("difference")==N("longCount")-N("shortCount"),
+            "usccss.b01.g3.picture_graph.scaled_compare" =>
+                (N("scale") is 2 or 5) &&
+                Range("aIcons",3,6) && Range("bIcons",1,5) &&
+                N("aIcons")>N("bIcons"),
+            "usccss.b01.g3.picture_graph.construct" =>
+                (N("scale") is 2 or 5) &&
+                Range("aIcons",2,5) && Range("bIcons",1,6),
             "usccss.b01.g2.measurement.read_line_plot" =>
                 Range("count2",1,4) && Range("count3",1,4) &&
                 Range("count4",1,4) && Range("count5",1,4) &&

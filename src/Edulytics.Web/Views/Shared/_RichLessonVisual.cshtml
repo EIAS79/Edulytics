@@ -205,6 +205,31 @@
             </div>
         }
     }
+    else if (Model.Kind == RichLessonVisualKind.PictureGraph)
+    {
+        var iconUnit=int.TryParse(Model.Items.ElementAtOrDefault(0),out var parsedUnit)
+            ? parsedUnit : 0;
+        if (iconUnit > 0)
+        {
+            <div class="rich-picture-graph" role="group" aria-label="@Model.Description">
+                <p><strong>@Model.PrimaryLabel</strong></p>
+                @foreach (var row in Model.Rows)
+                {
+                    <div class="rich-picture-graph__row" role="group"
+                         aria-label="@($"{row.Label}: {row.Cells.Count} symbols; {row.Cells.Count*iconUnit} responses")">
+                        <strong>@row.Label</strong>
+                        <div style="display:flex;gap:0.35rem;flex-wrap:wrap" aria-hidden="true">
+                            @foreach (var symbol in row.Cells)
+                            {
+                                <span class="rich-picture-graph__symbol">●</span>
+                            }
+                        </div>
+                        <span>@(row.Cells.Count*iconUnit) responses</span>
+                    </div>
+                }
+            </div>
+        }
+    }
     else if (Model.Kind == RichLessonVisualKind.LinePlot)
     {
         // A true numerical line plot has equal tick spacing and X stacks.

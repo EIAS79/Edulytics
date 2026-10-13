@@ -39,7 +39,7 @@ CUES = (
     ("MEASUREMENT_SCALE", r"\brulers?\b|\bmeasurement scale\b",
      ("Scale", "NumberLine")),
     ("DATA_GRAPH", r"\bbar graphs?\b|\bpicture graphs?\b",
-     ("BarGraph", "Scale", "RatioTable")),
+     ("BarGraph", "Scale", "RatioTable", "PictureGraph")),
 )
 
 class LessonText(HTMLParser):

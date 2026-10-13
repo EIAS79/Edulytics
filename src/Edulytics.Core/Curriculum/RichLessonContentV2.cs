@@ -30,7 +30,8 @@ public enum RichLessonVisualKind
     RectangleDiagram = 12,
     PolygonDiagram = 13,
     LinePlot = 14,
-    TapeDiagram = 15
+    TapeDiagram = 15,
+    PictureGraph = 16
 }
 
 public sealed class RichLessonContentV2Document

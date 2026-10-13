@@ -280,6 +280,60 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G3:U01:L03",
+        "usccss.b01.g3.picture_graph.scaled_compare")]
+    [InlineData("PED:US-CCSS-MATH:G3:U01:L04",
+        "usccss.b01.g3.picture_graph.construct")]
+    public void OriginalGrade3PictureGraphsRespectExactScaleAndSymbolCounts(
+        string code,string family)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=84000;seed<84024;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            Assert.Contains(p["scale"],new[]{2,5});
+            var expected=family.EndsWith("scaled_compare",StringComparison.Ordinal)
+                ?(p["aIcons"]-p["bIcons"])*p["scale"]:p["bIcons"];
+            Assert.Equal(expected,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var graph=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PictureGraph,graph.Kind);
+            Assert.Equal(2,graph.Rows.Count);
+            Assert.Equal(p["aIcons"],graph.Rows[0].Cells.Count);
+            Assert.Equal(p["bIcons"],graph.Rows[1].Cells.Count);
+            Assert.All(graph.Rows.SelectMany(x=>x.Cells),x=>Assert.Equal("●",x));
+            Assert.Equal(p["scale"],int.Parse(Assert.Single(graph.Items)));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G4:U01:L03",[q]));
+        }
+    }
+
+    [Fact]
+    public void Grade2Lesson15ConstructsAnExactMeasurementLinePlot()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U03:L15";
+        const string family="usccss.b01.g2.measurement.read_line_plot";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=94000;seed<94016;seed++)
+        {
+            var q=One(code,family,seed);
+            var v=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.LinePlot,v.Kind);
+            Assert.Contains("Construct",v.Title);
+            for(var length=2;length<=5;length++)
+                Assert.Equal(q.Parameters[$"count{length}"],v.Rows[length-2].Cells.Count);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+        }
+    }
+
     [Fact]
     public void Grade2SourceLinePlotUsesExactlyVerifiedXMarkCounts()
     {

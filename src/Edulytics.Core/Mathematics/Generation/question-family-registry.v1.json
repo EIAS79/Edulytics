@@ -5848,6 +5848,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g3.picture_graph.scaled_compare",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-g3-scaled-symbols-recompute-difference-v1",
+      "representations": [
+        "scaled_picture_graph_symbols",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.g3.picture_graph.construct",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-g3-picture-symbols-from-frequency-v1",
+      "representations": [
+        "scaled_picture_graph_symbols",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g2.measurement.read_line_plot",
       "version": 1,
       "skillId": "supporting.statistics.charts",

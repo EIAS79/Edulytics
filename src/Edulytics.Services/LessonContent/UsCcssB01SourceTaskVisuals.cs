@@ -418,16 +418,46 @@ public static class UsCcssB01SourceTaskVisuals
                             N("difference").ToString()
                         ]
                     },
+                "usccss.b01.g3.picture_graph.scaled_compare" or "usccss.b01.g3.picture_graph.construct" when
+                    (lessonCode=="PED:US-CCSS-MATH:G3:U01:L03" ||
+                     lessonCode=="PED:US-CCSS-MATH:G3:U01:L04") &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PictureGraph,
+                        Title="Scaled picture graph: each symbol has a value",
+                        Description=$"Each ● stands for {N("scale")} responses. " +
+                            $"Category A represents {N("aIcons")*N("scale")}, " +
+                            $"and category B represents {N("bIcons")*N("scale")} responses. " +
+                            $"The verified question answer is {q.CorrectAnswer}.",
+                        PrimaryLabel=$"Key: ● = {N("scale")} responses",
+                        Items=[N("scale").ToString()],
+                        Rows=[
+                            new RichLessonVisualRow
+                            {
+                                Label="Category A",
+                                Cells=Enumerable.Repeat("●",N("aIcons")).ToList()
+                            },
+                            new RichLessonVisualRow
+                            {
+                                Label="Category B",
+                                Cells=Enumerable.Repeat("●",N("bIcons")).ToList()
+                            }
+                        ]
+                    },
                 "usccss.b01.g2.measurement.read_line_plot" when
-                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L14" &&
+                    (lessonCode=="PED:US-CCSS-MATH:G2:U03:L14" ||
+                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L15") &&
                     ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
                     new RichLessonVisual
                     {
                         Kind=RichLessonVisualKind.LinePlot,
-                        Title="X-mark line plot for measured centimeter lengths",
-                        Description="Each X above a number represents one measured object. " +
-                            $"There are {q.CorrectAnswer} objects measuring " +
-                            $"{N("targetLength")} centimeters.",
+                        Title=lessonCode.EndsWith("L15",StringComparison.Ordinal)
+                            ?"Construct a line plot from measured lengths"
+                            :"Interpret an X-mark line plot",
+                        Description="Draw one X above each number for every object " +
+                            $"measured. The verified count at {N("targetLength")} cm " +
+                            $"is {q.CorrectAnswer}.",
                         PrimaryLabel="Length in centimeters",
                         Rows=Enumerable.Range(2,4)
                             .Select(length=>new RichLessonVisualRow
