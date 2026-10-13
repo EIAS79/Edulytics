@@ -88,7 +88,7 @@ public static class UsCcssB01CategoricalGraphVisuals
                       $"and their difference is {q.CorrectAnswer}. " +
                       "Both bars share one linear scale."
                     : q.Family=="supporting.statistics.compare_category_counts"
-                      ? $"Category A has {values[0]} and category B has {values[1]} items. " +
+                      ? $"Category A has {values[0]} and Category B has {values[1]} items. " +
                         (q.CorrectAnswer=="equal"
                             ? "The categories have equal frequencies. "
                             : $"Category {q.CorrectAnswer} has more items. ") +
