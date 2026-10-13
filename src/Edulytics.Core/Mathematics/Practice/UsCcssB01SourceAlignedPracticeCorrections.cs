@@ -3,7 +3,7 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Forty-nine lesson-code-exact B01 corrections independently checked against their
+/// Fifty-five lesson-code-exact B01 corrections independently checked against their
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
 /// The 500-lesson L1–L6 collective gate remains authoritative.
@@ -329,6 +329,42 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "fractions.represent.interpret", "UNIT_FRACTION_EQUAL_PARTS",
             ["usccss.b01.fraction.unit_parts"],
             "IM2021_G3_U05_L02_EQUAL_PARTS_UNIT_FRACTION_PURPOSE",
-            "READY_VERIFIED", "usccss-b01-source-fraction-v1")
+            "READY_VERIFIED", "usccss-b01-source-fraction-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U04:L08",
+            "supporting.number.place_value_rounding", "INTERPRET_TWO_DIGIT_BASE_TEN",
+            ["usccss.b01.place_value.tens_ones"],
+            "IM2021_G1_U04_L08_INTERPRET_TWO_DIGIT_BASE_TEN_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-place-value-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U04:L09",
+            "supporting.number.place_value_rounding", "REPRESENT_TWO_DIGIT_NUMBER",
+            ["usccss.b01.place_value.tens_ones"],
+            "IM2021_G1_U04_L09_REPRESENT_TWO_DIGIT_NUMBER_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-place-value-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U04:L10",
+            "supporting.number.place_value_rounding", "WRITE_TWO_DIGIT_BASE_TEN",
+            ["usccss.b01.place_value.tens_ones"],
+            "IM2021_G1_U04_L10_WRITE_TWO_DIGIT_BASE_TEN_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-place-value-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U08:L07",
+            "supporting.number.place_value_rounding", "COUNT_COLLECTION_UP_TO_120",
+            ["usccss.b01.place_value.count_to120"],
+            "IM2021_G1_U08_L07_COUNT_COLLECTION_UP_TO_120_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-place-value-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U08:L08",
+            "supporting.number.place_value_rounding", "TWO_DIGIT_MULTIPLE_REPRESENTATIONS",
+            ["usccss.b01.place_value.tens_ones"],
+            "IM2021_G1_U08_L08_TWO_DIGIT_MULTIPLE_REPRESENTATIONS_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-place-value-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U05:L04",
+            "supporting.number.place_value_rounding", "WRITE_THREE_DIGIT_BASE_TEN",
+            ["usccss.b01.place_value.three_digits"],
+            "IM2021_G2_U05_L04_WRITE_THREE_DIGIT_BASE_TEN_PURPOSE",
+            "READY_VERIFIED", "usccss-b01-source-place-value-v1")
     ];
 }
