@@ -22,6 +22,7 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRuntimeAuditTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRichV2AuditTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01VerifiedExpressionVisualsTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceAlignedPracticeCorrectionTests.cs'
   workflow_dispatch:
 
 permissions:
@@ -77,7 +78,7 @@ jobs:
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - name: Validate effective learner content, Rich V2 quality and real question generation over all 500
         run: |
-          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests' --logger 'console;verbosity=normal'
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests' --logger 'console;verbosity=normal'
       - name: Retain 500-row effective content and practice runtime evidence
         if: always()
         uses: actions/upload-artifact@v4
