@@ -57,14 +57,19 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         {
             case "usccss.b01.triangle.attributes":
                 m = r.Next(1, 4);
+                n = r.Next(0, 4);
                 return Make(f,
-                    "Which property MUST every triangle have? " +
+                    "Imagine " + (n == 0 ? "a narrow triangle" :
+                        n == 1 ? "a tilted triangle" :
+                        n == 2 ? "a triangle with unequal side lengths" :
+                                 "a right-angled triangle") +
+                    ". Which property MUST every triangle have? " +
                     (m == 1 ? "1) Three straight sides; 2) Three equal sides; 3) Four sides." :
                      m == 2 ? "1) Three equal sides; 2) Three straight sides; 3) Four sides." :
                               "1) Four sides; 2) Three equal sides; 3) Three straight sides.") +
                     " Enter the number of the correct choice.",
                     "A triangle is a closed shape with exactly three straight sides. Equal side lengths are not required.",
-                    AssessmentItemType.Numeric, D(("position", m)));
+                    AssessmentItemType.Numeric, D(("position", m), ("style", n)));
 
             case "usccss.b01.partition.halves_fourths":
                 d = r.Next(0, 2) == 0 ? 2 : 4;
@@ -86,12 +91,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
             case "usccss.b01.clock.half_quarters":
                 m = r.Next(0, 3);
+                n = r.Next(1, 13);
                 return Make(f,
-                    "On an analog clock, the minute hand points to " +
+                    $"On an analog clock, the hour hand is near {n} and the minute hand points to " +
                     (m == 0 ? "3" : m == 1 ? "6" : "9") +
                     ". How many minutes past the hour is that?",
                     "Each number on the minute scale represents five minutes.",
-                    AssessmentItemType.Numeric, D(("position", m)));
+                    AssessmentItemType.Numeric, D(("position", m), ("hour", n)));
 
             case "usccss.b01.rectangle.unit_squares":
                 a = r.Next(2, 4 + level);
@@ -117,12 +123,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
             case "usccss.b01.graph.choose_scale":
                 a = new[] { 2, 5, 10 }[r.Next(0, 3)];
+                n = r.Next(0, 5);
                 return Make(f,
-                    $"A bar graph should show counts {a}, {2*a}, {3*a}, and {4*a}. " +
+                    $"A bar graph should show counts {a}, {a*(n%3+1)}, {a*(3+(n%2))}, and {4*a}. " +
                     $"Which convenient vertical-axis scale fits the data in exactly four equal steps: " +
                     $"1, {a}, or {a*2}? Enter the chosen step size.",
                     "Choose equal intervals so the largest bar reaches the fourth tick.",
-                    AssessmentItemType.Numeric, D(("step", a)));
+                    AssessmentItemType.Numeric, D(("step", a), ("dataVariant", n)));
 
             case "usccss.b01.array.equal_groups":
                 a = r.Next(2, 5 + level);
@@ -160,11 +167,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
             case "usccss.b01.measure.quarter_inch":
                 n = r.Next(0, 2) == 0 ? 1 : 3;
+                a = r.Next(0, 4);
                 return Make(f,
-                    $"An inch ruler is marked in FOURTHS. A line stops at the {n}th quarter-inch mark " +
-                    "after zero. Write its length as a fraction of an inch (do not simplify).",
-                    "Each mark is one fourth of an inch; count marked segments from zero.",
-                    AssessmentItemType.ShortAnswer, D(("quarters", n)));
+                    $"An inch ruler is marked in FOURTHS. A segment stops at {a} whole inch(es) " +
+                    $"plus {n} quarter-inch mark(s). Write its length as an improper fraction " +
+                    "of an inch (keep denominator 4).",
+                    "Count whole inches as 4 quarter-inch parts each, then add the remaining parts.",
+                    AssessmentItemType.ShortAnswer, D(("quarters", n), ("wholeInches", a)));
 
             case "usccss.b01.factors.factor_pairs":
                 a = r.Next(2, 9); b = r.Next(2, 10);
@@ -269,7 +278,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 P("groups").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.fraction.name_parts" =>
                 $"{P("numerator")}/{P("denominator")}",
-            "usccss.b01.measure.quarter_inch" => $"{P("quarters")}/4",
+            "usccss.b01.measure.quarter_inch" =>
+                $"{P("wholeInches") * 4 + P("quarters")}/4",
             "usccss.b01.factors.factor_pairs" =>
                 P("secondFactor").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.factors.prime_composite" =>
@@ -311,18 +321,21 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int N(string key) => p[key];
         return family switch
         {
-            "usccss.b01.triangle.attributes" => Range("position",1,3),
+            "usccss.b01.triangle.attributes" =>
+                Range("position",1,3) && Range("style",0,3),
             "usccss.b01.partition.halves_fourths" =>
                 (N("denominator") is 2 or 4) && Range("shape",0,1),
             "usccss.b01.number_line.equal_intervals" => Range("step",1,40),
-            "usccss.b01.clock.half_quarters" => Range("position",0,2),
+            "usccss.b01.clock.half_quarters" =>
+                Range("position",0,2) && Range("hour",1,12),
             "usccss.b01.rectangle.unit_squares" =>
                 Range("rows",2,7) && Range("columns",2,13) &&
                 N("rows")*N("columns")<=35,
             "usccss.b01.measure.map_lengths" =>
                 Range("a",2,10) && Range("b",2,10) &&
                 N("a")+N("b")<=20 && Range("mode",0,1),
-            "usccss.b01.graph.choose_scale" => N("step") is 2 or 5 or 10,
+            "usccss.b01.graph.choose_scale" =>
+                (N("step") is 2 or 5 or 10) && Range("dataVariant",0,4),
             "usccss.b01.array.equal_groups" =>
                 Range("rows",2,7) && Range("columns",2,11) &&
                 N("rows")*N("columns")<=100,
@@ -334,7 +347,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.fraction.name_parts" =>
                 (N("denominator") is 2 or 3 or 4 or 6 or 8) &&
                 Range("numerator",1,N("denominator")-1),
-            "usccss.b01.measure.quarter_inch" => N("quarters") is 1 or 3,
+            "usccss.b01.measure.quarter_inch" =>
+                (N("quarters") is 1 or 3) && Range("wholeInches",0,3),
             "usccss.b01.factors.factor_pairs" =>
                 Range("firstFactor",2,8) && Range("secondFactor",2,9),
             "usccss.b01.factors.prime_composite" => Range("number",2,100),
