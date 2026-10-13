@@ -12,6 +12,8 @@ on:
       - 'tools/us-ccss-b01-bulk-content-screen.cjs'
       - 'tools/us-ccss-b01-publisher-goal-alignment.py'
       - 'tools/us-ccss-b01-practice-source-conflicts.py'
+      - 'tools/us-ccss-b01-source-visual-gaps.py'
+      - 'tests/academic-us-ccss-b01-source-visual-gaps.test.py'
       - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
       - 'tests/academic-us-ccss-b01-publisher-alignment.test.py'
       - 'src/**'
@@ -59,7 +61,7 @@ jobs:
 
   release-all-500-only:
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
-    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts]
+    needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -174,3 +176,44 @@ jobs:
           path: b01-practice-source-conflicts-500.json
           retention-days: 30
           if-no-files-found: warn
+
+  audit-b01-rich-v2-publisher-visual-cues:
+    needs: [audit-b01-official-publisher-purposes, audit-b01-effective-materializer-and-real-practice]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-rich-v2-composition-500
+          path: b01-rich-visual
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-publisher-goal-alignment-500
+          path: b01-publisher-visual
+      - name: Prove fail-closed publisher-visual gap analysis and exact B01 identity join
+        run: python3 tests/academic-us-ccss-b01-source-visual-gaps.test.py
+      - name: Enumerate source-specific missing or generic Rich V2 visuals for ALL 500
+        run: |
+          python3 tools/us-ccss-b01-source-visual-gaps.py \
+            --publisher b01-publisher-visual/b01-publisher-alignment-500.json \
+            --rich b01-rich-visual/b01-rich-v2-500.json \
+            --output b01-rich-v2-source-visual-gaps-500.json
+      - name: Archive 500 real visual/source review rows and missing diagram families
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-rich-v2-publisher-visual-gaps
+          path: b01-rich-v2-source-visual-gaps-500.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: REJECT collective release with any unresolved source-specific visual gap
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
+        run: |
+          python3 tools/us-ccss-b01-source-visual-gaps.py \
+            --publisher b01-publisher-visual/b01-publisher-alignment-500.json \
+            --rich b01-rich-visual/b01-rich-v2-500.json \
+            --output b01-rich-v2-source-visual-gaps-500.json --strict
