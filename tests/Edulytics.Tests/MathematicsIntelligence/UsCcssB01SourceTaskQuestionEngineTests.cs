@@ -41,7 +41,16 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G2:U02:L16", "market.inventory_100"),
         ("G1:U07:L14", "clock.read_half_hour"),
         ("G1:U07:L15", "clock.read_half_hour"),
-        ("G2:U06:L12", "clock.read_five_minutes")
+        ("G2:U06:L12", "clock.read_five_minutes"),
+        ("G2:U08:L07", "array.equal_groups"),
+        ("G2:U08:L08", "array.columns"),
+        ("G2:U08:L09", "array.equal_addends"),
+        ("G2:U08:L10", "array.equal_equation"),
+        ("G2:U08:L11", "rectangle.unit_squares"),
+        ("G3:U01:L17", "array.equal_groups"),
+        ("G3:U01:L19", "array.unknown_factor"),
+        ("G3:U01:L20", "array.commutativity"),
+        ("G3:U02:L02", "rectangle.unit_squares")
     ];
 
     [Fact]
@@ -62,8 +71,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(29, lessonIds.Count);
-        Assert.Equal(22, familyIds.Count);
+        Assert.Equal(38, lessonIds.Count);
+        Assert.Equal(27, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -104,7 +113,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(87, generated);
+        Assert.Equal(114, generated);
     }
 
     [Fact]
@@ -137,6 +146,15 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                 Assert.InRange(N("minutes"), 0, 55);
                 Assert.Equal(0, N("minutes")%5);
                 return $"{N("hour")}:{N("minutes"):00}";
+            case "usccss.b01.array.columns":
+            case "usccss.b01.array.unknown_factor":
+            case "usccss.b01.array.commutativity":
+                return Num(N("columns"));
+            case "usccss.b01.array.equal_addends":
+                return string.Join("+", Enumerable.Repeat(Num(N("columns")), N("rows")));
+            case "usccss.b01.array.equal_equation":
+                return string.Join("+", Enumerable.Repeat(Num(N("columns")), N("rows"))) +
+                    "=" + Num(N("rows")*N("columns"));
             case "usccss.b01.market.inventory_100":
                 Assert.Equal(100, N("small") + N("second") + N("third"));
                 Assert.InRange(N("small"), 1, 9);
