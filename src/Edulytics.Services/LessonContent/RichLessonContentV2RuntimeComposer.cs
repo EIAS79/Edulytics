@@ -185,6 +185,7 @@ public static partial class RichLessonContentV2RuntimeComposer
         // exact engine just verified, not guesses parsed from display strings.
         var visuals = UsCcssB01SourceTaskVisuals
             .Build(lessonCode, generated)
+            .Concat(UsCcssB01FractionPracticeVisuals.Build(lessonCode, generated))
             .Concat(BuildVisuals(lessonCode, body, examples, contract))
             .ToArray();
 
