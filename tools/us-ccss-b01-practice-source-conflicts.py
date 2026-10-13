@@ -33,6 +33,36 @@ RULES = (
       not any(x in t for x in ("combinations of","choose two","pairs from a set"))),
 )
 
+# 25 original publisher lesson targets: exact approved code/family linkage.
+# This protects against silently falling back to unrelated generic engines.
+SOURCE_SCOPED_FAMILIES = {
+    "PED:US-CCSS-MATH:G1:U07:L05": "usccss.b01.triangle.attributes",
+    "PED:US-CCSS-MATH:G1:U07:L09": "usccss.b01.partition.halves_fourths",
+    "PED:US-CCSS-MATH:G1:U07:L10": "usccss.b01.partition.halves_fourths",
+    "PED:US-CCSS-MATH:G2:U04:L02": "usccss.b01.number_line.equal_intervals",
+    "PED:US-CCSS-MATH:G2:U06:L11": "usccss.b01.clock.half_quarters",
+    "PED:US-CCSS-MATH:G2:U08:L12": "usccss.b01.rectangle.unit_squares",
+    "PED:US-CCSS-MATH:G2:U09:L03": "usccss.b01.measure.map_lengths",
+    "PED:US-CCSS-MATH:G3:U01:L06": "usccss.b01.graph.choose_scale",
+    "PED:US-CCSS-MATH:G3:U01:L16": "usccss.b01.array.equal_groups",
+    "PED:US-CCSS-MATH:G3:U01:L18": "usccss.b01.array.equal_groups",
+    "PED:US-CCSS-MATH:G3:U01:L21": "usccss.b01.array.equal_groups",
+    "PED:US-CCSS-MATH:G3:U02:L03": "usccss.b01.rectangle.unit_squares",
+    "PED:US-CCSS-MATH:G3:U02:L11": "usccss.b01.rectangle.unit_squares",
+    "PED:US-CCSS-MATH:G3:U02:L15": "usccss.b01.geometry.composite_rectangle_area",
+    "PED:US-CCSS-MATH:G3:U04:L06": "usccss.b01.division.unknown_factor",
+    "PED:US-CCSS-MATH:G3:U05:L01": "usccss.b01.fraction.name_parts",
+    "PED:US-CCSS-MATH:G3:U06:L02": "usccss.b01.measure.quarter_inch",
+    "PED:US-CCSS-MATH:G4:U01:L02": "usccss.b01.factors.factor_pairs",
+    "PED:US-CCSS-MATH:G4:U01:L03": "usccss.b01.factors.prime_composite",
+    "PED:US-CCSS-MATH:G4:U01:L06": "usccss.b01.factors.locker_square",
+    "PED:US-CCSS-MATH:G4:U01:L07": "usccss.b01.factors.factors_multiples",
+    "PED:US-CCSS-MATH:G4:U01:L08": "usccss.b01.factors.factor_pairs",
+    "PED:US-CCSS-MATH:G4:U03:L04": "usccss.b01.fraction.whole_multiply",
+    "PED:US-CCSS-MATH:G4:U03:L07": "usccss.b01.fraction.decompose_same_denominator",
+    "PED:US-CCSS-MATH:G4:U04:L10": "usccss.b01.place_value.ten_times",
+}
+
 def analyze(runtime, publisher):
     a=runtime["lessonRows"]; b=publisher["rows"]
     if len(a)!=500 or len(b)!=500:
@@ -48,7 +78,15 @@ def analyze(runtime, publisher):
         title=(origin.get("publisherTitle") or "").lower()
         context=title+" "+purpose
         flagged=[]
-        for family in x.get("actualQuestionFamilies") or []:
+        actual_families = x.get("actualQuestionFamilies") or []
+        exact_family = SOURCE_SCOPED_FAMILIES.get(x["lessonCode"])
+        if exact_family is not None and actual_families != [exact_family]:
+            flagged.append({"rule":"SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+                            "expected":exact_family, "actual":actual_families})
+        if exact_family is None and any(f.startswith("usccss.b01.") for f in actual_families):
+            flagged.append({"rule":"SOURCE_TASK_LEAKED_OUTSIDE_EXACT_LESSON_SCOPE",
+                            "actual":actual_families})
+        for family in actual_families:
             for key,fn in RULES:
                 if fn(family,context):
                     flagged.append({"rule":key,"family":family})
@@ -65,6 +103,7 @@ def analyze(runtime, publisher):
     return {
       "kind":"B01_500_PRACTICE_SOURCE_SEMANTIC_GUARD",
       "total":500,"checked":len(results),
+      "sourceTaskMappingsRequired":len(SOURCE_SCOPED_FAMILIES),
       "conflictingLessons":sum(bool(x["conflicts"]) for x in results),
       "conflictsByCategory":dict(grouped),"rows":results,
       "academicDecision":"NOT_CERTIFIED",
