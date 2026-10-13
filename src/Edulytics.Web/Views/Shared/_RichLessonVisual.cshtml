@@ -201,6 +201,37 @@
             </svg>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.PolygonDiagram)
+    {
+        // These are first-party, fixed instructional geometries. The label
+        // is selected by a verified question family, never raw SVG input.
+        var polygonType = Model.Items.FirstOrDefault() ?? "";
+        var polygonPoints = polygonType switch
+        {
+            "triangle" => "36,140 118,25 191,140",
+            "equilateral triangle" => "110,24 44,138 176,138",
+            "right triangle" => "42,26 42,140 182,140",
+            "quadrilateral" => "44,34 173,40 190,138 37,135",
+            "rectangle" => "38,43 182,43 182,137 38,137",
+            "square" => "50,26 169,26 169,145 50,145",
+            "pentagon" => "110,18 191,76 159,156 59,156 29,76",
+            "hexagon" => "63,22 157,22 195,87 157,152 63,152 25,87",
+            _ => ""
+        };
+        @if (!string.IsNullOrEmpty(polygonPoints))
+        {
+            <div class="rich-polygon-diagram" role="img" aria-label="@Model.Description">
+                <svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"
+                     style="width:100%;height:auto;max-width:300px"
+                     aria-hidden="true" focusable="false">
+                    <polygon points="@polygonPoints" fill="none"
+                             stroke="currentColor" stroke-width="4"
+                             stroke-linejoin="round" />
+                </svg>
+                <p>@Model.Title</p>
+            </div>
+        }
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">
