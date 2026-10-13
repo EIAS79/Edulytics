@@ -548,6 +548,23 @@ public static class UsCcssB01SourceTaskVisuals
                                 Cells=Enumerable.Repeat("■",N("columns")).ToList()
                             }).ToList()
                     },
+                "usccss.b01.geometry.rectangle_area_real_world_units" when
+                    N("length")>0 && N("width")>0 &&
+                    (N("unitMode") is 0 or 1) &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.RectangleDiagram,
+                        Title="Measure and multiply a real-world rectangular area",
+                        Description=$"The two sides are {N("length")} and {N("width")} " +
+                            (N("unitMode")==0?"meters":"feet") +
+                            $". This gives {q.CorrectAnswer} square " +
+                            (N("unitMode")==0?"meters":"feet") +
+                            ", checked independently by length × width.",
+                        SecondaryLabel=N("unitMode")==0?"m":"ft",
+                        Items=[N("length").ToString(),N("width").ToString()]
+                    },
                 "usccss.b01.geometry.rectangle_area_ungridded" when
                     N("length")>0 && N("width")>0 &&
                     q.CorrectAnswer==(N("length")*N("width")).ToString() =>
