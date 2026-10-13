@@ -1,0 +1,44 @@
+name: US CCSS B01 500-Lesson Release Gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - '.github/workflows/us-ccss-b01-500-release.yml'
+      - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
+      - 'artifacts/academic-us-ccss/04-lesson-certification-records.json'
+      - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
+      - 'tools/us-ccss-b01-release-gate.cjs'
+      - 'tools/us-ccss-lesson-certification-records.cjs'
+      - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-b01-manifest-and-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Prove 500-lesson release refuses fake or incomplete evidence
+        run: node --test tests/academic-us-ccss-b01-release-gate.test.cjs
+      - name: Validate exact lesson identities and report true progress
+        run: node tools/us-ccss-b01-release-gate.cjs --status
+
+  release-all-500-only:
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
+    needs: [validate-b01-manifest-and-safety]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Prevent partial publishing until all 500 are certified
+        run: node tools/us-ccss-b01-release-gate.cjs --release-check
