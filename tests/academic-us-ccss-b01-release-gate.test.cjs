@@ -96,3 +96,61 @@ test('B01 is certification-ready only when exactly 500 pass', () => {
   assert.equal(state.remainingEvidence, 0);
   assert.equal(state.state, 'BATCH_EVIDENCE_READY');
 });
+
+test('One collective decision accepts 499 evidence-ready rows plus the prior certified pilot', () => {
+  const x = fixture();
+  certify(x.ledger.records[0]);
+  for (const row of x.ledger.records.slice(1, 500)) {
+    certify(row);
+    row.status = 'EVIDENCE_READY';
+    row.academicDecision = 'NOT_CERTIFIED';
+  }
+  const state = inspectBatch(x);
+  assert.equal(state.evidenceReady, 500);
+  assert.equal(state.historicalCertificationsReused, 1);
+  assert.equal(state.state, 'BATCH_EVIDENCE_READY');
+  assert.equal(x.ledger.records[1].academicDecision, 'NOT_CERTIFIED');
+});
+
+test('One missing evidence record blocks approval of all 500', () => {
+  const x = fixture();
+  certify(x.ledger.records[0]);
+  for (const row of x.ledger.records.slice(1, 499)) {
+    certify(row);
+    row.status = 'EVIDENCE_READY';
+    row.academicDecision = 'NOT_CERTIFIED';
+  }
+  const state = inspectBatch(x);
+  assert.equal(state.evidenceReady, 499);
+  assert.equal(state.remainingEvidence, 1);
+  assert.equal(state.state, 'BATCH_NO-GO');
+});
+
+test('A foreign candidate SHA in one gate blocks collective acceptance', () => {
+  const x = fixture();
+  certify(x.ledger.records[0]);
+  for (const row of x.ledger.records.slice(1, 500)) {
+    certify(row);
+    row.status = 'EVIDENCE_READY';
+    row.academicDecision = 'NOT_CERTIFIED';
+  }
+  x.ledger.records[245].gates.L5.sourceSha = '2'.repeat(40);
+  const state = inspectBatch(x);
+  assert.equal(state.evidenceReady, 499);
+  assert.equal(state.state, 'BATCH_NO-GO');
+});
+
+test('Any unresolved defect blocks the entire batch', () => {
+  const x = fixture();
+  certify(x.ledger.records[0]);
+  for (const row of x.ledger.records.slice(1, 500)) {
+    certify(row);
+    row.status = 'EVIDENCE_READY';
+    row.academicDecision = 'NOT_CERTIFIED';
+  }
+  x.ledger.records[267].unresolvedDefects.push('B01-OPEN-ISSUE');
+  const state = inspectBatch(x);
+  assert.equal(state.evidenceReady, 499);
+  assert.equal(state.openDefects, 1);
+  assert.equal(state.state, 'BATCH_NO-GO');
+});
