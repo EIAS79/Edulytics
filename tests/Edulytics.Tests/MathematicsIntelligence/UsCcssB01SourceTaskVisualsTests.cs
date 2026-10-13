@@ -155,6 +155,31 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         Assert.Equal(b.ToString(), q.CorrectAnswer);
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G1:U04:L08", "usccss.b01.place_value.tens_ones", 2)]
+    [InlineData("PED:US-CCSS-MATH:G1:U08:L07", "usccss.b01.place_value.count_to120", 3)]
+    [InlineData("PED:US-CCSS-MATH:G2:U05:L04", "usccss.b01.place_value.three_digits", 3)]
+    public void GradeBoundedBaseTenChartsReconstructTheExactGradedNumber(
+        string code,string family,int expectedRows)
+    {
+        for(var seed=570091;seed<570101;seed++)
+        {
+            var q=One(code,family,seed);
+            var model=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,model.Kind);
+            Assert.Equal(expectedRows,model.Rows.Count);
+            var values=model.Rows.Select(r=>int.Parse(r.Cells[1])).ToArray();
+            Assert.Equal(int.Parse(q.CorrectAnswer),values.Sum());
+            Assert.Equal(q.Parameters["number"],values.Sum());
+            if (code.Contains(":G1:U04:",StringComparison.Ordinal))
+                Assert.InRange(values.Sum(),10,99);
+            if (family=="usccss.b01.place_value.count_to120")
+                Assert.InRange(values.Sum(),40,120);
+            if (family=="usccss.b01.place_value.three_digits")
+                Assert.InRange(values.Sum(),100,999);
+        }
+    }
+
     [Fact]
     public void DoNotDisplayB01SpecificDiagramsOnLaterBatchOrOtherCurricula()
     {
