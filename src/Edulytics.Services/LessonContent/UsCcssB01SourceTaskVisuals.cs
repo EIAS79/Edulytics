@@ -181,6 +181,36 @@ public static class UsCcssB01SourceTaskVisuals
                     },
                 "usccss.b01.market.inventory_100" =>
                     MarketInventory(p),
+                "usccss.b01.geometry.rectangle_area_grid60" when
+                    N("rows")>0 && N("columns")>0 &&
+                    N("rows")*N("columns")<=60 &&
+                    q.CorrectAnswer==(N("rows")*N("columns")).ToString() =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.ShapeDecomposition,
+                        Title="Find the area by counting unit squares",
+                        Description=$"{N("rows")} rows of {N("columns")} equal " +
+                            $"unit squares cover exactly {q.CorrectAnswer} square units " +
+                            "with no gaps or overlapping squares.",
+                        Rows=Enumerable.Range(1,N("rows"))
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"Row {i}",
+                                Cells=Enumerable.Repeat("■",N("columns")).ToList()
+                            }).ToList()
+                    },
+                "usccss.b01.geometry.rectangle_area_ungridded" when
+                    N("length")>0 && N("width")>0 &&
+                    q.CorrectAnswer==(N("length")*N("width")).ToString() =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.RectangleDiagram,
+                        Title="Dimensioned rectangle without a square grid",
+                        Description=$"Length {N("length")} units, width {N("width")} " +
+                            $"units, and area {q.CorrectAnswer} square units. " +
+                            "The rectangle has the actual mathematical side-length ratio.",
+                        Items=[N("length").ToString(),N("width").ToString()]
+                    },
                 "usccss.b01.geometry.composite_rectangle_area" =>
                     new RichLessonVisual
                     {
