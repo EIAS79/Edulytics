@@ -236,7 +236,7 @@ def analyze(manifest, runtime, rich, fetcher, source_index=None):
                 try:
                     fetched[url] = future.result()
                 except Exception as exc:
-                    fetch_errors.append({"url":url,"reason":str(exc)[:200])
+                    fetch_errors.append({"url":url,"reason":str(exc)[:200]})
     rows=[]
     for index, item in enumerate(lessons, 1):
         code=item["lessonCode"]
