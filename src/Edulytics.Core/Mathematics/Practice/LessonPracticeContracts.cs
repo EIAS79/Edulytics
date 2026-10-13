@@ -925,6 +925,17 @@ public static class LessonPracticeContractRegistry
             byLesson.TryAdd(projected.LessonCode, projected);
         }
 
+        // Publisher-goal-exact B01 remaps override legacy title-derived
+        // fallbacks for FOUR reviewed lessons only. No other US lesson or
+        // curriculum route is modified.
+        foreach (var correction in UsCcssB01SourceAlignedPracticeCorrections.Reviewed)
+        {
+            if (!byLesson.ContainsKey(correction.LessonCode))
+                throw new InvalidOperationException(
+                    "Missing existing B01 lesson contract: " + correction.LessonCode);
+            byLesson[correction.LessonCode] = correction;
+        }
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
