@@ -52,6 +52,9 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
         ("G3:U01:L20", "array.commutativity"),
         ("G3:U02:L02", "rectangle.unit_squares"),
         ("G3:U05:L02", "fraction.unit_parts"),
+        ("G2:U06:L01", "shape.polygon_sides"),
+        ("G3:U07:L02", "shape.specific_subcategory"),
+        ("G3:U02:L14", "area.missing_composite_side"),
         ("G1:U04:L08", "place_value.tens_ones"),
         ("G1:U04:L09", "place_value.tens_ones"),
         ("G1:U04:L10", "place_value.tens_ones"),
@@ -83,8 +86,8 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
             Assert.StartsWith("IM2021_", contract.SourceType, StringComparison.Ordinal);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         }
-        Assert.Equal(50, lessonIds.Count);
-        Assert.Equal(34, familyIds.Count);
+        Assert.Equal(53, lessonIds.Count);
+        Assert.Equal(37, familyIds.Count);
         // The exact prior approved PR #488 families must remain intact.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G1:U01:L01", out var prior));
@@ -125,7 +128,7 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                     family, q.Parameters, "guaranteed-invalid-answer"));
                 generated++;
             }
-        Assert.Equal(150, generated);
+        Assert.Equal(159, generated);
     }
 
     [Fact]
@@ -198,6 +201,25 @@ public sealed class UsCcssB01SourceTaskQuestionEngineTests
                 Assert.InRange(N("small"), 1, 9);
                 Assert.True(N("second") > 10 && N("third") > 10);
                 return Num(N("mode") == 0 ? N("second") - N("sold") : N("third"));
+            case "usccss.b01.shape.polygon_sides":
+                return N("sides") switch
+                {
+                    3=>"triangle",4=>"quadrilateral",5=>"pentagon",6=>"hexagon",
+                    _=>throw new InvalidOperationException()
+                };
+            case "usccss.b01.shape.specific_subcategory":
+                return N("subcategory") switch
+                {
+                    0=>"equilateral triangle",1=>"right triangle",
+                    2=>"rectangle",3=>"square",
+                    _=>throw new InvalidOperationException()
+                };
+            case "usccss.b01.area.missing_composite_side":
+                Assert.Equal(N("widthTotal"),
+                    N("widthKnown")+N("widthMissing"));
+                Assert.NotEqual(N("heightLeft"),N("heightRight"));
+                return Num(N("widthKnown")*N("heightLeft")+
+                    N("widthMissing")*N("heightRight"));
             case "usccss.b01.triangle.attributes":
                 return Num(N("position"));
             case "usccss.b01.partition.halves_fourths":
