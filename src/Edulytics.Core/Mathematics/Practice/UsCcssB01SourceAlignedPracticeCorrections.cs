@@ -535,6 +535,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.subtract_decompose_ten"],
             "IM2021_G2_U02_L07_DECOMPOSE_TEN_SOURCE",
             "READY_VERIFIED", "usccss-b01-g2-two-digit-v1"),
+        // IM G2 U07 L04: no carrying or borrowing in hundreds,
+        // tens, or ones; generic arithmetic within 100 is insufficient.
+        new(
+            "PED:US-CCSS-MATH:G2:U07:L04",
+            "number.whole.add_subtract", "THREE_DIGIT_NO_COMPOSE_DECOMPOSE",
+            ["usccss.b01.g2.add_subtract_1000_no_regroup"],
+            "IM2021_G2_U07_L04_NO_COMPOSE_OR_DECOMPOSE_UP_TO1000",
+            "READY_VERIFIED", "usccss-b01-1000-noregroup-v1"),
         // IM G2 U05 L09: three-digit magnitude by relative
         // number-line positions rather than unrelated within-100 sums.
         new(
