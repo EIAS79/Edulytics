@@ -120,6 +120,41 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         Assert.Equal(q.CorrectAnswer, visual.Items[q.Parameters["pointer"]]);
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G2:U08:L08", "usccss.b01.array.columns")]
+    [InlineData("PED:US-CCSS-MATH:G2:U08:L09", "usccss.b01.array.equal_addends")]
+    [InlineData("PED:US-CCSS-MATH:G2:U08:L10", "usccss.b01.array.equal_equation")]
+    [InlineData("PED:US-CCSS-MATH:G3:U01:L19", "usccss.b01.array.unknown_factor")]
+    public void SourceMatchedArrayFamiliesProduceExactGridAndRepeatedAddition(
+        string code, string family)
+    {
+        var question = One(code, family, 449101);
+        var visual = Assert.Single(UsCcssB01SourceTaskVisuals.Build(code, [question]));
+        Assert.Equal(RichLessonVisualKind.ShapeDecomposition, visual.Kind);
+        Assert.Equal(question.Parameters["rows"],visual.Rows.Count);
+        Assert.All(visual.Rows, r =>
+            Assert.Equal(question.Parameters["columns"],r.Cells.Count));
+        Assert.Contains(
+            question.Parameters["rows"]*question.Parameters["columns"]+"",
+            visual.Description);
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family, question.Parameters, question.CorrectAnswer));
+    }
+
+    [Fact]
+    public void CommutativityShowsBothRotatedArrangementsWithoutChangingObjectCount()
+    {
+        const string code = "PED:US-CCSS-MATH:G3:U01:L20";
+        var q = One(code, "usccss.b01.array.commutativity", 449115);
+        var vis = Assert.Single(UsCcssB01SourceTaskVisuals.Build(code, [q]));
+        var a = q.Parameters["rows"];
+        var b = q.Parameters["columns"];
+        Assert.Equal(a+b, vis.Rows.Count);
+        Assert.Equal(a*b, vis.Rows.Take(a).Sum(r=>r.Cells.Count));
+        Assert.Equal(a*b, vis.Rows.Skip(a).Sum(r=>r.Cells.Count));
+        Assert.Equal(b.ToString(), q.CorrectAnswer);
+    }
+
     [Fact]
     public void DoNotDisplayB01SpecificDiagramsOnLaterBatchOrOtherCurricula()
     {
