@@ -14,7 +14,33 @@ const packPaths = [1,2,3,4].map(g =>
 const fields = ['explanation','keyConceptsAndRules','workedExamples',
   'stepByStepSolutions','commonMistakes','quickSummary'];
 const sha = x => typeof x === 'string' && /^[a-f0-9]{64}$/i.test(x);
-const arithmetic = /(-?\d{1,7})\s*([+\-−×*÷])\s*(-?\d{1,7})\s*=\s*(-?\d{1,7})\b/g;
+// Match complete chained expressions instead of misreading `3+2 = 2+3` as `3+2=2`.
+const arithmetic = /(?:\d[\d,]*\s*[+\-−×*÷]\s*)+\d[\d,]*\s*=\s*(?:\d[\d,]*\s*[+\-−×*÷]\s*)*\d[\d,]*/g;
+function evaluateArithmeticSide(input) {
+  const text = input.replace(/\s/g, '').replace(/,/g, '').replace(/−/g, '-').replace(/×/g, '*').replace(/÷/g, '/');
+  const tokens = text.match(/\d+(?:\.\d+)?|[+\-*/]/g);
+  if (!tokens || tokens.join('') !== text) return null;
+  let i = 0;
+  const factor = () => {
+    if (tokens[i] === '-') { i++; return -factor(); }
+    const token = tokens[i++];
+    return /^\d+(?:\.\d+)?$/.test(token || '') ? Number(token) : NaN;
+  };
+  const term = () => {
+    let n = factor();
+    while (tokens[i] === '*' || tokens[i] === '/') {
+      const op = tokens[i++], v = factor();
+      n = op === '*' ? n * v : n / v;
+    }
+    return n;
+  };
+  let v = term();
+  while (tokens[i] === '+' || tokens[i] === '-') {
+    const op = tokens[i++], n = term();
+    v = op === '+' ? v + n : v - n;
+  }
+  return i === tokens.length && Number.isFinite(v) ? v : null;
+}
 const visualCue = /dot|cube|draw|diagram|picture|chart|graph|ten.frame|number.line|shape|fraction|array|strip|base.ten/i;
 
 function scanBatch({ manifest, audit, packs }) {
@@ -35,6 +61,8 @@ function scanBatch({ manifest, audit, packs }) {
   let representationsToReview = 0;
   let equationsChecked = 0;
   let lessonsWithMathChecks = 0;
+  let falseStatementsForSemanticReview = 0;
+  const reviewCandidates = [];
   let covered = 0;
   const evidenceMatrix = [];
   for (const [i, item] of manifest.lessons.entries()) {
@@ -61,19 +89,26 @@ function scanBatch({ manifest, audit, packs }) {
           if (typeof t[field] !== 'string' || !t[field].trim())
             rowIssues.push('MISSING_' + field.toUpperCase());
         const joined = fields.map(k => t[k] || '').join('\n');
-        const mathMatches = [...joined.matchAll(arithmetic)];
-        for (const match of mathMatches) {
-          const lhs = Number(match[1]), rhs = Number(match[3]), stated = Number(match[4]);
-          const op = match[2];
-          let actual;
-          if (op === '+') actual = lhs + rhs;
-          if (op === '-' || op === '−') actual = lhs - rhs;
-          if (op === '*' || op === '×') actual = lhs * rhs;
-          if (op === '÷' && rhs !== 0) actual = lhs / rhs;
-          if (actual !== undefined) {
+        // Evaluate the COMPLETE addition/subtraction equality, including
+        // associative and commutative expressions on BOTH sides.
+        for (const field of fields) {
+          const fieldText = (t[field] || '').replace(/\\!/g, '');
+          const isTrueFalseTask = /true or false|equation is false|statement is false/i.test(fieldText);
+          for (const match of fieldText.matchAll(arithmetic)) {
+            const equation = match[0];
+            const sides = equation.split('=');
+            const lhs = evaluateArithmeticSide(sides[0]);
+            const rhs = evaluateArithmeticSide(sides[1]);
+            if (lhs === null || rhs === null) continue;
             localEquations++;
-            if (Math.abs(actual - stated) > 1e-9)
-              rowIssues.push('ARITHMETIC_CONTRADICTION:' + match[0]);
+            if (Math.abs(lhs - rhs) > 1e-9) {
+              if (isTrueFalseTask) {
+                falseStatementsForSemanticReview++;
+                reviewCandidates.push({ ordinal: item.ordinal,
+                  lessonCode: item.lessonCode, field,
+                  kind: 'TRUE_FALSE_EXPRESSION_SEMANTIC_REVIEW', equation });
+              } else rowIssues.push('FALSE_EQUATION_NOT_EXPLICITLY_MARKED:' + equation);
+            }
           }
         }
         if (visualCue.test(item.title) || visualCue.test(joined))
@@ -101,8 +136,9 @@ function scanBatch({ manifest, audit, packs }) {
     counts: { sourceContentPacks: packs.length, equationsChecked,
       lessonsWithArithmeticSpotChecks: lessonsWithMathChecks,
       lessonsWithVisualReviewCues: representationsToReview,
+      falseStatementsForSemanticReview,
       blockingStructuralIssues: issues.length },
-    issues, evidenceMatrix,
+    issues, reviewCandidates, evidenceMatrix,
     academicDecision: 'NOT_CERTIFIED',
     warning: 'Content presence/source mapping and spot-check equations are NOT sufficient to certify math, visual instruction, practice grading or Rich V2. L1-L6 + eight verified dimensions must be evidenced for all 500.'
   };
