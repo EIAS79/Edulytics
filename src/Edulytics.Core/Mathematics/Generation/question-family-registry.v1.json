@@ -6293,6 +6293,42 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.geometry.rectangle_area_grid60",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "b01-source-grade-three-rectangle-area-independent-oracle",
+      "representations": [
+        "unit_square_grid",
+        "dimensioned_rectangle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.b01.geometry.rectangle_area_ungridded",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "b01-source-grade-three-rectangle-area-independent-oracle",
+      "representations": [
+        "unit_square_grid",
+        "dimensioned_rectangle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
