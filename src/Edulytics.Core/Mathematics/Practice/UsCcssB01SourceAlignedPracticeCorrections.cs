@@ -62,6 +62,18 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.measurement.read_line_plot"],
             "IM2021_G2_U03_L14_INTERPRET_MEASUREMENT_LINE_PLOT",
             "READY_VERIFIED", "usccss-b01-source-line-plot-v1"),
+        // Original IM G2 U03 L17 combines two-digit arithmetic,
+        // measuring with a ruler, and making a numerical X-mark line plot.
+        // Reuse independently verified source questions for all three goals.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L17",
+            "supporting.measurement.practical",
+            "ADD_SUBTRACT_MEASURE_AND_CONSTRUCT_LINE_PLOT",
+            ["usccss.b01.g2.add_subtract_without_regroup",
+             "usccss.b01.ruler.measure_without_zero",
+             "usccss.b01.g2.measurement.read_line_plot"],
+            "IM2021_G2_U03_L17_ADD_SUBTRACT_MEASURE_BUILD_LINE_PLOT",
+            "READY_VERIFIED", "usccss-b01-mixed-measurement-plot-v1"),
         // Original teacher Grade 2 U03 L03 and L10 ruler purposes.
         new(
             "PED:US-CCSS-MATH:G2:U03:L03",

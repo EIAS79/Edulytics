@@ -643,6 +643,57 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void MixedGrade2SourceLesson17PractisesArithmeticRulerAndLinePlot()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U03:L17";
+        string[] families=[
+            "usccss.b01.g2.add_subtract_without_regroup",
+            "usccss.b01.ruler.measure_without_zero",
+            "usccss.b01.g2.measurement.read_line_plot"
+        ];
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal(families,contract!.AllowedQuestionFamilies);
+        var kinds=new[]{
+            RichLessonVisualKind.PlaceValueChart,
+            RichLessonVisualKind.Scale,
+            RichLessonVisualKind.LinePlot
+        };
+        for(var i=0;i<families.Length;i++)
+        for(var seed=50000;seed<50018;seed++)
+        {
+            var q=One(code,families[i],seed);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                families[i],q.Parameters,q.CorrectAnswer));
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(kinds[i],visual.Kind);
+            if(i==0)
+            {
+                var p=q.Parameters;
+                Assert.Equal(p["operation"]==0
+                    ?p["left"]+p["right"]:p["left"]-p["right"],
+                    int.Parse(q.CorrectAnswer));
+            }
+            else if(i==1)
+            {
+                Assert.Equal(q.Parameters["end"]-q.Parameters["start"],
+                    int.Parse(q.CorrectAnswer));
+            }
+            else
+            {
+                var p=q.Parameters;
+                Assert.Equal(p[$"count{p["targetLength"]}"],
+                    int.Parse(q.CorrectAnswer));
+                Assert.Equal(4,visual.Rows.Count);
+                for(var length=2;length<=5;length++)
+                    Assert.Equal(p[$"count{length}"],
+                        visual.Rows[length-2].Cells.Count);
+            }
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999999"}]));
+        }
+    }
+
+    [Fact]
     public void Grade2SourceLinePlotUsesExactlyVerifiedXMarkCounts()
     {
         const string code="PED:US-CCSS-MATH:G2:U03:L14";

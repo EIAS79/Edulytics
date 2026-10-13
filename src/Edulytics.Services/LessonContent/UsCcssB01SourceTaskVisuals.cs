@@ -175,7 +175,8 @@ public static class UsCcssB01SourceTaskVisuals
                             .ToList()
                     },
                 "usccss.b01.g2.add_subtract_without_regroup" or "usccss.b01.g2.subtract_decompose_ten" when
-                    ((lessonCode=="PED:US-CCSS-MATH:G2:U02:L01" &&
+                    (((lessonCode=="PED:US-CCSS-MATH:G2:U02:L01" ||
+                        lessonCode=="PED:US-CCSS-MATH:G2:U03:L17") &&
                         q.Family=="usccss.b01.g2.add_subtract_without_regroup") ||
                      (lessonCode=="PED:US-CCSS-MATH:G2:U02:L07" &&
                         q.Family=="usccss.b01.g2.subtract_decompose_ten")) &&
@@ -706,12 +707,14 @@ public static class UsCcssB01SourceTaskVisuals
                     },
                 "usccss.b01.g2.measurement.read_line_plot" when
                     (lessonCode=="PED:US-CCSS-MATH:G2:U03:L14" ||
-                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L15") &&
+                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L15" ||
+                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L17") &&
                     ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
                     new RichLessonVisual
                     {
                         Kind=RichLessonVisualKind.LinePlot,
-                        Title=lessonCode.EndsWith("L15",StringComparison.Ordinal)
+                        Title=lessonCode.EndsWith("L15",StringComparison.Ordinal) ||
+                            lessonCode.EndsWith("L17",StringComparison.Ordinal)
                             ?"Construct a line plot from measured lengths"
                             :"Interpret an X-mark line plot",
                         Description="Draw one X above each number for every object " +
