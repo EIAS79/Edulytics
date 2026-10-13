@@ -84,7 +84,7 @@ class ActivityAuditTest(unittest.TestCase):
             mod.analyze(m,r,v,lambda url:mod.parse_full_activity(SAMPLE))
         m,r,v=self.fixture()
         r["lessonRows"][9]["lessonCode"]=r["lessonRows"][8]["lessonCode"]
-        with self.assertRaisesRegex(ValueError,"Duplicate|unexpected"):
+        with self.assertRaisesRegex(ValueError,"[Dd]uplicate|unexpected"):
             mod.analyze(m,r,v,lambda url:mod.parse_full_activity(SAMPLE))
 
     def test_archived_500_source_sha_index_bypasses_network_and_cannot_be_reordered(self):
