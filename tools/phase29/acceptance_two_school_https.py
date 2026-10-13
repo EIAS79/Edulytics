@@ -615,7 +615,8 @@ for source, _ in SCHOOLS:
     print("DISPOSABLE_CROSS_TENANT_ASSESSMENT_DENIAL_PASS", source, target)
     print("DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS", source, target)
 
-# POST real teacher assessment and validate persistence on disposable DB.teacher = teachers[SCHOOLS[0][0]]
+# POST real teacher assessment and validate persistence on disposable DB.
+teacher = teachers[SCHOOLS[0][0]]
 values = sql("""SELECT a."ClassGroupId",a."SubjectId",a."TermId"
 FROM "Assessments" a JOIN "Schools" s ON a."SchoolId"=s."Id"
 WHERE s."SchoolCode"='""" + SCHOOL_CODES[SCHOOLS[0][0]] + """' LIMIT 1;""").split("|")
