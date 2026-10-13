@@ -373,7 +373,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             case "usccss.b01.number_line.move_left_right_within100":
             {
                 var startTick=r.Next(2,9);
-                var jumps=r.Next(1,Math.Min(startTick,10-startTick)+1);
+                var jumps=r.Next(1,Math.Min(4,Math.Min(startTick,10-startTick))+1);
                 var direction=r.Next(0,2)==0?-1:1;
                 a=startTick*10;b=jumps*10;n=(startTick+direction*jumps)*10;
                 return Make(f,
