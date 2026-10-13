@@ -33,7 +33,7 @@ RULES = (
       not any(x in t for x in ("combinations of","choose two","pairs from a set"))),
 )
 
-# 26 original publisher lesson targets: exact approved code/family linkage.
+# 29 original publisher lesson targets: exact approved code/family linkage.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G1:U07:L05": "usccss.b01.triangle.attributes",
@@ -41,6 +41,9 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G1:U07:L10": "usccss.b01.partition.halves_fourths",
     "PED:US-CCSS-MATH:G2:U04:L02": "usccss.b01.number_line.equal_intervals",
     "PED:US-CCSS-MATH:G2:U06:L11": "usccss.b01.clock.half_quarters",
+    "PED:US-CCSS-MATH:G1:U07:L14": "usccss.b01.clock.read_half_hour",
+    "PED:US-CCSS-MATH:G1:U07:L15": "usccss.b01.clock.read_half_hour",
+    "PED:US-CCSS-MATH:G2:U06:L12": "usccss.b01.clock.read_five_minutes",
     "PED:US-CCSS-MATH:G2:U08:L12": "usccss.b01.rectangle.unit_squares",
     "PED:US-CCSS-MATH:G2:U09:L03": "usccss.b01.measure.map_lengths",
     "PED:US-CCSS-MATH:G3:U01:L06": "usccss.b01.graph.choose_scale",
