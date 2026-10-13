@@ -131,6 +131,33 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void GradeTwoThreeDigitComparisonsUseTrueNumberLinePositions()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U05:L09";
+        const string family="usccss.b01.g2.order_three_digits_number_line";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var lesson));
+        Assert.Equal([family],lesson!.AllowedQuestionFamilies);
+        for(var seed=951000;seed<951080;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            Assert.Equal(Math.Max(p["first"],p["second"]),
+                int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var line=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.NumberLine,line.Kind);
+            Assert.Equal(11,line.Items.Count);
+            Assert.Equal(p["first"],int.Parse(line.Items[p["tickA"]]));
+            Assert.Equal(p["second"],int.Parse(line.Items[p["tickB"]]));
+            Assert.Equal(new[]{p["tickA"],p["tickB"]},
+                line.SecondaryItems.Select(int.Parse).ToArray());
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="99999"}]));
+        }
+    }
+
+    [Fact]
     public void OriginalG4WholeMinusFractionDoesNotGenerateIntegerSubtraction()
     {
         const string code="PED:US-CCSS-MATH:G4:U03:L10";
