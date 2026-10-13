@@ -510,6 +510,38 @@ public sealed class UsCcssB01SourceTaskVisualsTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G3:U02:L05",
+        "usccss.b01.geometry.rectangle_area_grid60",true)]
+    [InlineData("PED:US-CCSS-MATH:G3:U02:L09",
+        "usccss.b01.geometry.rectangle_area_ungridded",false)]
+    public void OriginalGrade3AreaMultiplicationGoalsProduceCheckedGeometricModels(
+        string code,string family,bool gridded)
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        for(var seed=330010;seed<330030;seed++)
+        {
+            var q=One(code,family,seed);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+            var visual=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(gridded?RichLessonVisualKind.ShapeDecomposition:
+                RichLessonVisualKind.RectangleDiagram,visual.Kind);
+            var expected=gridded
+                ?q.Parameters["rows"]*q.Parameters["columns"]
+                :q.Parameters["length"]*q.Parameters["width"];
+            Assert.Equal(expected,int.Parse(q.CorrectAnswer));
+            if(gridded)
+                Assert.Equal(expected,visual.Rows.Sum(r=>r.Cells.Count));
+            else
+                Assert.Equal(expected,int.Parse(visual.Items[0])*
+                    int.Parse(visual.Items[1]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999999"}]));
+        }
+    }
+
     [Fact]
     public void GriddedGrade3RectangleHasTheExactUnitSquareCountAtMostSixty()
     {
