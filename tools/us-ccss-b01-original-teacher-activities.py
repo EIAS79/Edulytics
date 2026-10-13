@@ -147,7 +147,66 @@ def fetch_full(url):
                 time.sleep(0.5)
     raise RuntimeError(last_error)
 
-def analyze(manifest, runtime, rich, fetcher):
+def load_preindexed_source(lessons, metadata):
+    """Reconcile independently hashed full original teacher HTML metadata.
+
+    Provenance is the locally archived teacher Lesson bytes. This makes
+    repeat GitHub checks network-free while preserving all 500 exact source
+    identities. Metadata is REVIEW EVIDENCE, never a gate PASS.
+    """
+    required_columns = [
+        "ordinal", "lessonCode", "teacherLessonHtmlSha256",
+        "normalizedMainTextSha256", "activityCount",
+        "activityHeadingsAggregateSha256", "sectionFlags",
+        "representationCueBits",
+    ]
+    if (metadata.get("batchId") != "B01" or
+            metadata.get("kind") != "B01_500_ORIGINAL_TEACHER_LESSON_LOCAL_SOURCE_METADATA" or
+            metadata.get("columns") != required_columns or
+            metadata.get("representationCueKeys") != [cue[0] for cue in CUES] or
+            len(metadata.get("rows", [])) != 500 or len(lessons) != 500):
+        raise ValueError("Exact 500-source original teacher index schema mismatch")
+    sha = re.compile(r"^[a-f0-9]{64}$")
+    fetched = {}
+    for ordinal, (item, values) in enumerate(zip(lessons, metadata["rows"]), 1):
+        if not isinstance(values, list) or len(values) != len(required_columns):
+            raise ValueError("Invalid teacher source index row shape: " + str(ordinal))
+        row_ord, code, raw_sha, main_sha, count, heading_sha, flags, cue_bits = values
+        if row_ord != ordinal or code != item["lessonCode"]:
+            raise ValueError("Stale/reordered local original teacher source: " + str(ordinal))
+        if not all(isinstance(v, str) and sha.fullmatch(v)
+                   for v in (raw_sha, main_sha, heading_sha)):
+            raise ValueError("Missing teacher source SHA256: " + code)
+        if (not isinstance(count, int) or isinstance(count, bool) or count < 1
+                or not isinstance(flags, int) or isinstance(flags, bool)
+                or not 0 <= flags <= 7
+                or not isinstance(cue_bits, int) or isinstance(cue_bits, bool)
+                or not 0 <= cue_bits < (1 << len(CUES))):
+            raise ValueError("Invalid teacher Lesson activity flags: " + code)
+        url = source_lesson_url(item["sourceUrl"])
+        if url in fetched:
+            raise ValueError("Duplicate original teacher Lesson source: " + url)
+        fetched[url] = {
+            "teacherLessonHtmlSha256": raw_sha,
+            "normalizedMainTextSha256": main_sha,
+            "activityCount": count,
+            "activityHeadingDigests": [],
+            "activityHeadingsAggregateSha256": heading_sha,
+            "hasWarmUp": bool(flags & 1),
+            "hasCoolDown": bool(flags & 2),
+            "hasLessonSynthesis": bool(flags & 4),
+            "instructionalRepresentationCues": [
+                {"cue": cue[0], "expectedVisualKinds": list(cue[2])}
+                for i, cue in enumerate(CUES) if cue_bits & (1 << i)
+            ],
+            "hasReadableLessonBody": True,
+        }
+    if len(fetched) != 500:
+        raise ValueError("500 source activity index has missing original teacher pages")
+    return fetched
+
+
+def analyze(manifest, runtime, rich, fetcher, source_index=None):
     lessons = manifest.get("lessons") or []
     runtime_rows = runtime.get("lessonRows") or []
     rich_rows = rich.get("rows") or []
@@ -167,14 +226,17 @@ def analyze(manifest, runtime, rich, fetcher):
     if len(set(urls)) != 500:
         raise ValueError("Duplicate official source URL")
     fetched, fetch_errors = {}, []
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        futures = {pool.submit(fetcher, url):url for url in urls}
-        for future in as_completed(futures):
-            url=futures[future]
-            try:
-                fetched[url] = future.result()
-            except Exception as exc:
-                fetch_errors.append({"url":url,"reason":str(exc)[:200]})
+    if source_index is not None:
+        fetched = load_preindexed_source(lessons, source_index)
+    else:
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            futures = {pool.submit(fetcher, url):url for url in urls}
+            for future in as_completed(futures):
+                url=futures[future]
+                try:
+                    fetched[url] = future.result()
+                except Exception as exc:
+                    fetch_errors.append({"url":url,"reason":str(exc)[:200])
     rows=[]
     for index, item in enumerate(lessons, 1):
         code=item["lessonCode"]
@@ -203,6 +265,7 @@ def analyze(manifest, runtime, rich, fetcher):
             "teacherLessonHtmlSha256":parsed["teacherLessonHtmlSha256"] if parsed else None,
             "activityCount":parsed["activityCount"] if parsed else None,
             "activityHeadingDigests":parsed["activityHeadingDigests"] if parsed else [],
+            "activityHeadingsAggregateSha256":parsed.get("activityHeadingsAggregateSha256") if parsed else None,
             "instructionalRepresentationCues": [x["cue"] for x in
                 parsed["instructionalRepresentationCues"]] if parsed else [],
             "actualRichV2VisualKinds":sorted(actual_kinds),
@@ -217,6 +280,7 @@ def analyze(manifest, runtime, rich, fetcher):
         "schemaVersion":1,"kind":"B01_500_OFFICIAL_TEACHER_ACTIVITIES_VS_EFFECTIVE_LEARNER",
         "expected":500,"inspected":len(rows),"teacherPagesFetched":len(fetched),
         "sourceFetchFailures":fetch_errors,
+        "sourceAcquisitionMode":"ARCHIVED_SHA256_METADATA" if source_index is not None else "PUBLISHER_HTTP",
         "withReviewCues":sum(bool(r["candidateMissingRepresentations"]) for r in rows),
         "reviewCueTypes":dict(sorted(counts.items())),
         "rows":rows,"academicDecision":"NOT_CERTIFIED",
@@ -229,11 +293,14 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--runtime", required=True)
     ap.add_argument("--rich", required=True)
+    ap.add_argument("--source-index", required=True,
+                    help="B01 original archived teacher Lesson SHA256 metadata; no HTTP")
     ap.add_argument("--output",default="b01-original-teacher-activities-500.json")
     args=ap.parse_args()
     report=analyze(json.loads(MANIFEST.read_text()),
                    json.loads(Path(args.runtime).read_text()),
-                   json.loads(Path(args.rich).read_text()),fetch_full)
+                   json.loads(Path(args.rich).read_text()),fetch_full,
+                   source_index=json.loads(Path(args.source_index).read_text()))
     Path(args.output).write_text(json.dumps(report,indent=2)+"\n")
     print(json.dumps({k:v for k,v in report.items() if k not in ("rows","sourceFetchFailures")},indent=2))
     if report["teacherPagesFetched"] != 500:
