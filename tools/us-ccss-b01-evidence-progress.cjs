@@ -15,9 +15,9 @@ const isCommit = x => typeof x === 'string' && /^[a-f0-9]{40}$/i.test(x);
 const GATE_SIGNALS = Object.freeze({
   L1: ['publisher', 'staticScreen'],
   L2: ['staticScreen', 'effectiveRuntime'],
-  L3: ['publisher', 'richV2'],
-  L4: ['richV2', 'sourceVisualMatch'],
-  L5: ['effectiveRuntime', 'sourceQuestionMatch'],
+  L3: ['publisher', 'originalTeacherActivities', 'richV2'],
+  L4: ['originalTeacherActivities', 'richV2', 'sourceVisualMatch'],
+  L5: ['originalTeacherActivities', 'effectiveRuntime', 'sourceQuestionMatch'],
   L6: ['richV2', 'effectiveRuntime']
 });
 // Artifact pointers are TRIAGE INPUTS, not proof that the full gate passed.
