@@ -12,6 +12,22 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // IM 2021 G1 U07 L13: read and write only whole hours, not
+        // unrelated elapsed-time computations.
+        new(
+            "PED:US-CCSS-MATH:G1:U07:L13",
+            "supporting.measurement.practical", "READ_AND_WRITE_TIME_IN_HOURS",
+            ["usccss.b01.clock.read_on_hour"],
+            "IM2021_G1_U07_L13_TELL_AND_WRITE_HOURS_SOURCE",
+            "READY_VERIFIED", "usccss-b01-clock-source-v2"),
+        // IM 2021 G2 U06 L13: nearest five minutes with am/pm from
+        // analog and digital representations.
+        new(
+            "PED:US-CCSS-MATH:G2:U06:L13",
+            "supporting.measurement.practical", "FIVE_MINUTES_WITH_DAYPART",
+            ["usccss.b01.clock.read_five_minutes_am_pm"],
+            "IM2021_G2_U06_L13_FIVE_MINUTE_AM_PM_SOURCE",
+            "READY_VERIFIED", "usccss-b01-clock-source-v2"),
         // Original IM teacher goals explicitly ask students to use a
         // number line for equal-size/equivalent fractions. The prior generic
         // missing-numerator contracts supplied no number-line representations.
