@@ -326,7 +326,11 @@ for key, schoolname in SCHOOLS:
     adoption = re.search(
         r'name="curriculumAdoptionId"[^>]*value="([0-9a-fA-F-]{36})"',
         practice_html)
-    assert practice_token and adoption, (key, "private Practice form missing")
+    form_key = re.search(
+        r'name="_idempotencyKey"\s+value="([0-9a-fA-F]{32})"',
+        practice_html)
+    assert practice_token and adoption and form_key, (
+        key, "private Practice form lacks CSRF/adoption/unique idempotency key")
     before_practice = int(sql('SELECT count(*) FROM "PracticeAttempts";'))
     practice_fields = {
         "curriculumAdoptionId": adoption.group(1),
@@ -334,6 +338,7 @@ for key, schoolname in SCHOOLS:
         "difficulty": "AtClassLevel",
         "questionCount": "1",
         "__RequestVerificationToken": practice_token.group(1),
+        "_idempotencyKey": form_key.group(1),
     }
     expected_families = None
     chosen_lesson_id = None
