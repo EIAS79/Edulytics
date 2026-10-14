@@ -13,6 +13,9 @@ on:
       - 'tools/us-ccss-b01-v9-effective-root-cause-reconciliation.cjs'
       - 'tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests.cs'
+      - 'tests/Edulytics.Tests/Phase29/SourceBoundCommonCoreJsonMetadataReconciliationTests.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.cs'
       - 'tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs'
@@ -24,6 +27,7 @@ on:
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-goal-signal-memory-500.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-*-purpose-reviewed-metadata.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-nonlength-ruler-cohort-metadata.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-source-verified-nonmeasure-23-cohort.json'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
   workflow_dispatch:
 
@@ -64,7 +68,7 @@ jobs:
       - name: Materialize 500 corrections and compose Rich V2 from actual application
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
-            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests' \
+            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
             --logger 'console;verbosity=normal'
       - name: Join ALL 25 raw root cohorts to 500 effective Rich V2 facts and source purposes
         run: |
