@@ -1003,9 +1003,9 @@ public static class UsCcssB01SourceTaskVisuals
                     {
                         Kind=RichLessonVisualKind.Scale,
                         Title="Estimate and measure in inches",
-                        Description=${"Start at 0, and measure the endpoint at " +
-                            ${"{N("actual")} inches, on 1-inch tick intervals. " +
-                            ${"Estimate: {N("estimate")} inches; difference: {q.CorrectAnswer}.",
+                        Description=$"Start at 0, and measure the endpoint at " +
+                            $"{N("actual")} inches, on 1-inch tick intervals. " +
+                            $"Estimate: {N("estimate")} inches; difference: {q.CorrectAnswer}.",
                         PrimaryLabel="Inch ruler (not centimeters)",
                         SecondaryItems=["0",N("actual").ToString()],
                         Items=Enumerable.Range(0,N("actual")+1)

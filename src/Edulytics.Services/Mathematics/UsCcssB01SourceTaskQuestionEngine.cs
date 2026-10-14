@@ -1128,8 +1128,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 var estimate=Math.Max(1,actual+(r.Next(0,2)==0?-offset:offset));
                 if(estimate==actual)estimate=actual+1;
                 return Make(f,
-                    ${"An object is estimated to be {estimate} inches long. " +
-                    ${"On an inch ruler starting at 0, the object's endpoint is {actual}. " +
+                    $"An object is estimated to be {estimate} inches long. " +
+                    $"On an inch ruler starting at 0, the object's endpoint is {actual}. " +
                     "How many inches different are the estimate and measurement?",
                     "Count one-inch intervals from the zero endpoint, then " +
                     "compare the original estimate to the actual length.",
@@ -1151,8 +1151,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     0=>"largemouth bass",1=>"spiny dogfish shark",_=>"catfish"
                 };
                 return Make(f,
-                    ${"A {species} tape strip has been physically measured with " +
-                    ${"{inches} one-inch tiles and also {rulerUnits} complete " +
+                    $"A {species} tape strip has been physically measured with " +
+                    $"{inches} one-inch tiles and also {rulerUnits} complete " +
                     "foot-length rulers. The strip itself does not change. " +
                     (mode==0
                        ?"Which measurement counts MORE units? Enter 1 for inch tiles, 2 for foot-length rulers."
