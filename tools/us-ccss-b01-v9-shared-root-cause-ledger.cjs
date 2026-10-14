@@ -10,7 +10,8 @@ const packFiles=[1,2,3,4].map(n=>'src/Edulytics.Core/Curriculum/LessonContent/Pa
 const evidenceFiles=[
  'artifacts/academic-us-ccss/batches/B01-v9-fraction-purpose-reviewed-metadata.json',
  'artifacts/academic-us-ccss/batches/B01-v9-placevalue-purpose-reviewed-metadata.json',
- 'artifacts/academic-us-ccss/batches/B01-v9-unit-weight-ten-thousand-purpose-reviewed-metadata.json'
+ 'artifacts/academic-us-ccss/batches/B01-v9-unit-weight-ten-thousand-purpose-reviewed-metadata.json',
+ 'artifacts/academic-us-ccss/batches/B01-v9-nonlength-ruler-cohort-metadata.json'
 ];
 const SHA=/^[a-f0-9]{64}$/i;
 const definitions=[
@@ -29,6 +30,17 @@ const definitions=[
  {id:'LEARNER_TEACHER_PRONOUN_DRIFT',severity:'REVIEW_WORDING_NOT_COPYRIGHT_CLAIM',
   matching(t){return ['explanation','workedExamples'].filter(f=>/\b(?:support them in adding|as they learn a new stage|they are observing)\b/i.test(t[f]||''));}}
 ];
+// Sort by explicit learner goal, never classify a candidate as a confirmed error.
+// A number-line interval is deliberately distinct from physical length/ruler work.
+function rulerGoalContext(en){
+ const goal=(en.explanation||'').match(/Learning goal:\\s*([^\\n]+)/i)?.[1]||'';
+ if(!goal)return 'GOAL_UNRESOLVED';
+ if(/\\b(?:lengths?|centimeters?|met(?:ers?|res?)|inches?|feet|foot|yardsticks?|rulers?|measuring lengths?)\\b/i.test(goal))
+  return 'LENGTH_CONTEXT_POSSIBLY_RELEVANT';
+ if(/\\b(?:number line|tick marks|interval from|locate .* fractions?)\\b/i.test(goal))
+  return 'NUMBER_LINE_CONTEXT_REVIEW';
+ return 'NON_LENGTH_GOAL_SOURCE_REVIEW';
+}
 const assert=(condition,msg)=>{if(!condition)throw Error(msg)};
 function summarize({manifest,packs,reviewed}){
  assert(manifest?.batchId==='B01'&&manifest.expectedLessonCount===500&&manifest.lessons?.length===500,
@@ -42,7 +54,7 @@ function summarize({manifest,packs,reviewed}){
    contents.set(l.lessonCode,l);
   }
  }
- assert(Array.isArray(reviewed)&&reviewed.length===3,'Need three source-reviewed evidence inputs');
+ assert(Array.isArray(reviewed)&&reviewed.length===evidenceFiles.length,'Need three source-reviewed evidence inputs');
  const verified=new Map();
  for(const e of reviewed){
   const items=e.rows || e.reviewedObjectives;
@@ -55,7 +67,8 @@ function summarize({manifest,packs,reviewed}){
  }
  const groups=new Map(definitions.map(x=>[x.id,{id:x.id,classification:'ROOT_CAUSE_CANDIDATES_NOT_CERTIFICATION',
   rawCandidateCount:0,sourceGoalReviewedCandidates:0,unverifiedCandidates:0,
-  matchingLessons:[],sourceGoalReviewed:[],stillNeedsSourceVerification:[]}]));
+  matchingLessons:[],sourceGoalReviewed:[],stillNeedsSourceVerification:[],
+  byGoalContext:{LENGTH_CONTEXT_POSSIBLY_RELEVANT:0,NUMBER_LINE_CONTEXT_REVIEW:0,NON_LENGTH_GOAL_SOURCE_REVIEW:0,GOAL_UNRESOLVED:0}}]]));
  const rows=[],seen=new Set();
  for(const entry of manifest.lessons){
   assert(entry.lessonCode&&!seen.has(entry.lessonCode),'Duplicate B01 manifest identity');
@@ -74,7 +87,10 @@ function summarize({manifest,packs,reviewed}){
    assert(!proof||proof===entry.sourceSemanticSha256,
     'Stale academic source-goal fingerprint: '+entry.lessonCode);
    const outcome=sourceMatched?'SOURCE_GOAL_REVIEWED_REQUIRES_RUNTIME_RETEST':'SOURCE_GOAL_NOT_VERIFIED';
-   flags.push({rootCauseFamily:family.id,fieldHits:fields,reviewState:outcome});
+   const goalContext=family.id==='SHARED_RULER_METHOD_TEMPLATE'?rulerGoalContext(en):null;
+   flags.push({rootCauseFamily:family.id,fieldHits:fields,reviewState:outcome,
+    ...(goalContext?{goalContext}:{} )});
+   if(goalContext)group.byGoalContext[goalContext]++;
    group.rawCandidateCount++;
    group.matchingLessons.push(entry.lessonCode);
    if(sourceMatched){
@@ -89,6 +105,10 @@ function summarize({manifest,packs,reviewed}){
    certifiedByThisIndex:false});
  }
  assert(rows.length===500&&seen.size===500,'Incomplete B01 coverage');
+ for(const group of groups.values())
+  if(group.id==='SHARED_RULER_METHOD_TEMPLATE')
+   assert(Object.values(group.byGoalContext).reduce((a,b)=>a+b,0)===group.rawCandidateCount,
+    'Incomplete ruler-purpose partition');
  return {schemaVersion:1,kind:'B01_V9_COLLECTIVE_SHARED_ROOT_CAUSE_TRIAGE',
   scope:'B01 500 lessons one execution unit',coverage:{expected:500,actual:rows.length,unique:seen.size},
   source:{manifest:sourceFile,packFiles,verifiedSourceGoalEvidence:evidenceFiles},
