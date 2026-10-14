@@ -133,8 +133,7 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     [Theory]
     [InlineData("PED:US-CCSS-MATH:G3:U06:L04")]
     [InlineData("PED:US-CCSS-MATH:G3:U06:L05")]
-    [InlineData("PED:US-CCSS-MATH:G4:U03:L13")]
-    public void GradeThreeAndFourFractionalInchLinePlotsUseExactQuarterUnitIntervals(
+    public void GradeThreeFractionalInchLinePlotsUseExactQuarterUnitIntervals(
         string code)
     {
         const string family="usccss.b01.g3.quarter_inch_line_plot_frequency";
@@ -151,8 +150,6 @@ public sealed class UsCcssB01SourceTaskVisualsTests
                 family,p,q.CorrectAnswer));
             var plot=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
             Assert.Equal(RichLessonVisualKind.LinePlot,plot.Kind);
-            if (code=="PED:US-CCSS-MATH:G4:U03:L13")
-                Assert.Contains("Interpret",plot.Title,StringComparison.Ordinal);
             Assert.Equal(new[]{"1 in","1 1/4 in","1 1/2 in",
                 "1 3/4 in","2 in"},plot.Rows.Select(r=>r.Label));
             for(var i=0;i<5;i++)
@@ -162,6 +159,44 @@ public sealed class UsCcssB01SourceTaskVisualsTests
             }
             Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
                 [q with {CorrectAnswer="99999"}]));
+        }
+    }
+
+    [Fact]
+    public void GradeFourFractionalMeasurementsRequireRealEighthInchDataAndSubtraction()
+    {
+        const string code="PED:US-CCSS-MATH:G4:U03:L13";
+        const string family="usccss.b01.g4.eighth_inch_line_plot_difference";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var lesson));
+        Assert.Equal(new[]{
+            "usccss.b01.g3.quarter_inch_line_plot_frequency",family
+        },lesson!.AllowedQuestionFamilies);
+        for(var seed=960000;seed<960070;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var delta=p["lastTick"]-p["firstTick"];
+            Assert.InRange(delta,1,7);
+            Assert.Equal($"{delta}/8",q.CorrectAnswer);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,p,q.CorrectAnswer));
+            var plot=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.LinePlot,plot.Kind);
+            Assert.Contains("eighth-inch",plot.Title,StringComparison.Ordinal);
+            Assert.Equal(9,plot.Rows.Count);
+            Assert.Equal(p["whole"]+" in",plot.Rows[0].Label);
+            Assert.Equal(p["whole"]+" 2/8 in",plot.Rows[2].Label);
+            Assert.Equal(p["whole"]+" 4/8 in",plot.Rows[4].Label);
+            Assert.Equal((p["whole"]+1)+" in",plot.Rows[8].Label);
+            for(var i=0;i<9;i++)
+            {
+                Assert.Equal(p[$"count{i}"],plot.Rows[i].Cells.Count);
+                Assert.All(plot.Rows[i].Cells,mark=>Assert.Equal("X",mark));
+            }
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="99/8"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G3:U06:L04",[q]));
         }
     }
 
