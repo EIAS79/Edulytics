@@ -11,9 +11,13 @@ on:
       - 'tools/us-ccss-b01-v9-global-root-cause-graph.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9EffectiveRootCauseImpactTests.cs'
       - 'tools/us-ccss-b01-v9-effective-root-cause-reconciliation.cjs'
+      - 'tools/us-ccss-b01-v9-source-figure-dependency-audit.cjs'
+      - 'tests/academic-us-ccss-b01-v9-source-figure-dependency-audit.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01V9LearnerVoiceSharedRootCorrection.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9LearnerVoiceSharedRootCorrectionTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreSourceBoundHtmlEntityCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/Phase29/SourceBoundCommonCoreJsonMetadataReconciliationTests.cs'
@@ -29,6 +33,7 @@ on:
       - 'artifacts/academic-us-ccss/batches/B01-v9-*-purpose-reviewed-metadata.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-nonlength-ruler-cohort-metadata.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-verified-nonmeasure-23-cohort.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-learner-voice-2-cohort.json'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
   workflow_dispatch:
 
@@ -78,6 +83,14 @@ jobs:
             --effective=b01-v9-effective-root-cause-500.json \
             --out=b01-v9-global-effective-root-causes-500.json
           node -e "const r=require('./b01-v9-global-effective-root-causes-500.json');if(r.coverage.joined!==500||r.coverage.unique!==500||r.automaticFixAuthorization!==false||r.confirmedSemanticDefectsByThisTool!==0||r.academicDecision!=='BATCH_NO-GO'||r.groupCount!==25)process.exit(1);console.log(JSON.stringify({coverage:r.coverage,groupCount:r.groupCount,sharedPatternRoots:Object.fromEntries(Object.entries(r.sharedPatternRoots).map(([k,v])=>[k,{raw:v.rawCandidates,effective:v.effectiveMarkerStillPresent,changed:v.effectiveMarkerAbsent,visual:v.withComposedVisual}])),noVisual:r.richV2WithoutStructuralVisuals.count,decision:r.academicDecision}));"
+      - name: Audit all 40 original-figure reference gaps as ONE dependency family
+        run: |
+          node --test tests/academic-us-ccss-b01-v9-source-figure-dependency-audit.test.cjs
+          node tools/us-ccss-b01-v9-source-figure-dependency-audit.cjs \
+            --graph=b01-v9-global-root-cause-500.json \
+            --effective=b01-v9-global-effective-root-causes-500.json \
+            --out=b01-v9-source-figure-dependencies-40.json
+          node -e "const r=require('./b01-v9-source-figure-dependencies-40.json');if(r.cohorts.length!==40||r.academicDecision!=='BATCH_NO-GO'||r.figureReplacementAuthority!==false||r.cohorts.some(x=>x.releaseDisposition!=='BLOCKED_AWAITING_SOURCE_ACTIVITY_FIGURE_AND_RENDERED_COMPARISON'))process.exit(1);console.log(JSON.stringify({figureReferences:r.cohorts.length,causeBreakdown:r.structuralCorrelationTotals,academicDecision:r.academicDecision}));"
       - name: Preserve complete source-linked graph and impact groups, never an academic certificate
         if: always()
         uses: actions/upload-artifact@v4
@@ -87,5 +100,6 @@ jobs:
             b01-v9-global-root-cause-500.json
             b01-v9-effective-root-cause-500.json
             b01-v9-global-effective-root-causes-500.json
+            b01-v9-source-figure-dependencies-40.json
           if-no-files-found: warn
           retention-days: 30
