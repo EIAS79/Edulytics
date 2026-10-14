@@ -996,6 +996,36 @@ public static class UsCcssB01SourceTaskVisuals
                                 : Array.Empty<RichLessonVisualRow>())
                             .ToList()
                     },
+                // G1 U06 L11: source-bound results and measured parts.
+                "usccss.b01.g1.measurement.story_result_difference" when
+                    lessonCode=="PED:US-CCSS-MATH:G1:U06:L11" &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.TapeDiagram,
+                        Title="Measurement stories: join, take apart, compare",
+                        Description=$"Part one measures {N("first")} cubes, " +
+                            $"part two {N("other")} cubes, the whole {N("total")}. " +
+                            $"Story position {N("mode")}, verified response {q.CorrectAnswer}.",
+                        PrimaryLabel="0 = join; 1 = remaining; 2 = difference",
+                        Items=[N("first").ToString(),N("other").ToString(),
+                               N("total").ToString(),N("mode").ToString()]
+                    },
+                // G1 U06 L12: bigger/smaller unknown in the original story.
+                "usccss.b01.g1.measurement.compare_bigger_smaller_unknown" when
+                    lessonCode=="PED:US-CCSS-MATH:G1:U06:L12" &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.TapeDiagram,
+                        Title="Compare measured lengths, unknown in either bar",
+                        Description=$"Longer is {N("longer")} cubes, shorter " +
+                            $"is {N("shorter")} cubes and the difference " +
+                            $"is {N("difference")}. Checked answer: {q.CorrectAnswer}.",
+                        PrimaryLabel="0 = bigger unknown; 1 = smaller unknown",
+                        Items=[N("longer").ToString(),N("shorter").ToString(),
+                               N("difference").ToString(),N("mode").ToString()]
+                    },
                 "usccss.b01.g2.measurement.inch_ruler" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L08" &&
                     ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>

@@ -224,6 +224,25 @@ class WholeBatchSemanticTests(unittest.TestCase):
             a["lessonRows"][i]["actualQuestionFamilies"]=[family]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_g1_u06_measured_length_stories_reject_generic_compare(self):
+        a,b=fixtures()
+        for idx,code,family in [
+            (62,"PED:US-CCSS-MATH:G1:U06:L11","usccss.b01.g1.measurement.story_result_difference"),
+            (63,"PED:US-CCSS-MATH:G1:U06:L12","usccss.b01.g1.measurement.compare_bigger_smaller_unknown"),
+        ]:
+            a["lessonRows"][idx]["lessonCode"]=code
+            b["rows"][idx]["lessonCode"]=code
+            b["rows"][idx]["publisherTitle"]="Compare story measured lengths"
+            b["rows"][idx]["sourcePurposePreview"]=(
+                "Solve source-verified measured-length stories.")
+            a["lessonRows"][idx]["actualQuestionFamilies"]=[
+                "usccss.b01.g2.compare_tape_unknown_positions"]
+            bad=module.analyze(a,b)
+            self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+                [x["rule"] for x in bad["rows"][idx]["conflicts"]])
+            a["lessonRows"][idx]["actualQuestionFamilies"]=[family]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

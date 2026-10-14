@@ -40,6 +40,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.measure.map_lengths",
         "usccss.b01.g1.measure.same_length_different_units",
         "usccss.b01.g2.measurement.estimate_cm",
+        "usccss.b01.g1.measurement.story_result_difference",
+        "usccss.b01.g1.measurement.compare_bigger_smaller_unknown",
         "usccss.b01.g2.measurement.inch_ruler",
         "usccss.b01.g2.measurement.feet_inch_same_length",
         "usccss.b01.g2.measure.reptile_meterstick",
@@ -1121,6 +1123,50 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             }
 
             // Official G2 U03 L08: 1–11 inch ruler measurement and estimation.
+            // G1 U06 L11: Put Together result unknown, Take Apart
+            // result unknown, Compare difference unknown — all <=20 cubes.
+            case "usccss.b01.g1.measurement.story_result_difference":
+            {
+                var first=r.Next(4,12);
+                var other=r.Next(2,Math.Min(10,21-first));
+                var total=first+other;
+                var mode=r.Next(0,3);
+                var question=mode switch
+                {
+                    0=>$"One ribbon measures {first} cube units. Another " +
+                       $"measures {other}. How long are they together?",
+                    1=>$"A ribbon measures {total} cube units and one " +
+                       $"part is {first}. How long is the remaining part?",
+                    _=>$"A longer shoe measures {total} cube units and a " +
+                      $"shorter shoe measures {first}. How much longer is the first?"
+                };
+                return Make(f,question+" Explain with a measured tape diagram.",
+                    "Two lengths join to make the measured whole; a missing " +
+                    "part or difference is found by subtracting.",
+                    AssessmentItemType.Numeric,
+                    D(("first",first),("other",other),("total",total),("mode",mode)));
+            }
+
+            // G1 U06 L12: bigger unknown using MORE, smaller using FEWER.
+            case "usccss.b01.g1.measurement.compare_bigger_smaller_unknown":
+            {
+                var shorter=r.Next(4,12);
+                var difference=r.Next(2,Math.Min(9,21-shorter));
+                var longer=shorter+difference;
+                var mode=r.Next(0,2);
+                var question=mode==0
+                    ?$"A shoe measures {shorter} unit cubes. A second is " +
+                     $"{difference} cubes MORE. How long is the bigger shoe?"
+                    :$"A ribbon measures {longer} cube units. Another is " +
+                     $"{difference} cubes FEWER. How long is the shorter ribbon?";
+                return Make(f,question+" Show two aligned length bars.",
+                    "The longer measured bar is the shorter bar plus " +
+                    "the unmatched difference.",
+                    AssessmentItemType.Numeric,
+                    D(("shorter",shorter),("difference",difference),
+                      ("longer",longer),("mode",mode)));
+            }
+
             case "usccss.b01.g2.measurement.inch_ruler":
             {
                 var actual=r.Next(1,12);
@@ -1870,6 +1916,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     2=>P("lengthCm"),
                     _=>throw new InvalidOperationException()
                 }).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.measurement.story_result_difference" =>
+                (P("mode")==0?P("total"):P("other"))
+                    .ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.measurement.compare_bigger_smaller_unknown" =>
+                (P("mode")==0?P("longer"):P("shorter"))
+                    .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.inch_ruler" =>
                 Math.Abs(P("actual")-P("estimate")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.feet_inch_same_length" =>
@@ -2244,6 +2296,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("fullMeters")==N("lengthCm")/100 &&
                 N("remainingCm")==N("lengthCm")%100 &&
                 Range("mode",0,2),
+            "usccss.b01.g1.measurement.story_result_difference" =>
+                Range("first",4,11) && Range("other",2,9) &&
+                Range("total",6,20) && Range("mode",0,2) &&
+                N("total")==N("first")+N("other"),
+            "usccss.b01.g1.measurement.compare_bigger_smaller_unknown" =>
+                Range("shorter",4,11) && Range("difference",2,8) &&
+                Range("longer",6,20) && Range("mode",0,1) &&
+                N("longer")==N("shorter")+N("difference"),
             "usccss.b01.g2.measurement.inch_ruler" =>
                 Range("actual",1,11) && Range("estimate",1,14) &&
                 N("actual")!=N("estimate"),

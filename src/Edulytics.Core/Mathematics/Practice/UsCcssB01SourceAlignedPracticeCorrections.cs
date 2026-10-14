@@ -457,6 +457,22 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
         // Math Stories (the previous center's all-position comparisons).
         // Reuse TWO independently verified source families and visuals.
         // Source: G2 U03 L08 standard inch rulers with 1–11 inch objects.
+        // G1 U06 L11: Put Together, Take Apart and Compare Difference
+        // Unknown within 20 in source-based measurement contexts.
+        new(
+            "PED:US-CCSS-MATH:G1:U06:L11",
+            "number.whole.add_subtract", "MEASUREMENT_STORY_RESULT_DIFFERENCE",
+            ["usccss.b01.g1.measurement.story_result_difference"],
+            "IM2021_G1_U06_L11_MEASURE_STORY_SOURCE_VERIFIED",
+            "READY_VERIFIED", "usccss-b01-g1-u06-stories-v1"),
+        // G1 U06 L12: source Bigger Unknown/Smaller Unknown in
+        // MORE/FEWER measurement comparison stories.
+        new(
+            "PED:US-CCSS-MATH:G1:U06:L12",
+            "number.whole.add_subtract", "MEASURED_COMPARE_BIGGER_SMALLER_UNKNOWN",
+            ["usccss.b01.g1.measurement.compare_bigger_smaller_unknown"],
+            "IM2021_G1_U06_L12_COMPARE_SOURCE_VERIFIED",
+            "READY_VERIFIED", "usccss-b01-g1-u06-compare-v1"),
         new(
             "PED:US-CCSS-MATH:G2:U03:L08",
             "supporting.measurement.practical", "MEASURE_AND_ESTIMATE_IN_INCHES",

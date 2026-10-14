@@ -9,6 +9,61 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
 {
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G1:U06:L11","usccss.b01.g1.measurement.story_result_difference",3)]
+    [InlineData("PED:US-CCSS-MATH:G1:U06:L12","usccss.b01.g1.measurement.compare_bigger_smaller_unknown",2)]
+    public void SourceBoundGradeOneMeasurementStoryUnknownsAreAccurate(
+        string code,string family,int modeCount)
+    {
+        Assert.True(LessonPracticeContractRegistry.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var engine=new ExactSkillContractQuestionEngine();
+        var modes=new HashSet<int>();
+        for(var seed=991000;seed<991100;seed++)
+        {
+            var q=Assert.Single(engine.Generate("g1-u06-source-stories",code,
+                [family],ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+            var p=q.Parameters;
+            int answer=int.Parse(q.CorrectAnswer);
+            if(modeCount==3)
+            {
+                Assert.InRange(p["total"],6,20);
+                Assert.Equal(p["first"]+p["other"],p["total"]);
+                Assert.Equal(p["mode"]==0?p["total"]:p["other"],answer);
+            }
+            else
+            {
+                Assert.InRange(p["longer"],6,20);
+                Assert.Equal(p["shorter"]+p["difference"],p["longer"]);
+                Assert.Equal(p["mode"]==0?p["longer"]:p["shorter"],answer);
+            }
+            var diagram=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.TapeDiagram,diagram.Kind);
+            Assert.Equal(4,diagram.Items.Count);
+            Assert.Equal(p["mode"].ToString(),diagram.Items[3]);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(code,
+                [q with {CorrectAnswer="999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G1:U06:L10",[q]));
+            modes.Add(p["mode"]);
+        }
+        Assert.Equal(Enumerable.Range(0,modeCount),modes.Order());
+        var lesson=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(d=>d.PackCode=="US-CCSS-MATH" && d.VersionCode=="CCSSM-2010")
+            .SelectMany(d=>d.Lessons).Single(x=>x.LessonCode==code);
+        var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+        var body=new CanonicalLessonTranslationRecord(en.CultureCode,en.Title,
+            en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,
+            en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary);
+        var rich=RichLessonContentV2Registry.Find(code,"en") ??
+            RichLessonContentV2RuntimeComposer.TryCompose(code,body);
+        Assert.NotNull(rich);
+        Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.TapeDiagram);
+    }
+
+
     [Fact]
     public void Grade2Unit3InchAndFootUnitsMatchExactPublisherPractice()
     {
