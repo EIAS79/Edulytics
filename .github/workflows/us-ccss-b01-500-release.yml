@@ -15,6 +15,10 @@ on:
       - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
       - 'tools/us-ccss-b01-release-gate.cjs'
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01FractionPurposeCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPurposeCorrectionsTests.cs'
   pull_request:
     types: [ready_for_review, reopened]
   workflow_dispatch:
