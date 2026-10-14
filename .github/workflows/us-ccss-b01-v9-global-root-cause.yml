@@ -9,6 +9,12 @@ on:
     paths:
       - '.github/workflows/us-ccss-b01-v9-global-root-cause.yml'
       - 'tools/us-ccss-b01-v9-global-root-cause-graph.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9EffectiveRootCauseImpactTests.cs'
+      - 'tools/us-ccss-b01-v9-effective-root-cause-reconciliation.cjs'
+      - 'tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.cs'
       - 'tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs'
       - 'tools/us-ccss-b01-v9-math-element-index.cjs'
       - 'tools/us-ccss-b01-v9-shared-root-cause-ledger.cjs'
@@ -31,7 +37,7 @@ concurrency:
 jobs:
   graph-b01-all-500:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -46,11 +52,35 @@ jobs:
       - name: Verify report coverage and explicit no-go across EVERY node
         run: |
           node -e "const a=require('./b01-v9-global-root-cause-500.json');if(a.coverage.unique!==500||a.coverage.observed!==500||a.certificationDecision!=='BATCH_NO-GO'||a.repairDecision!=='NO_AUTOMATIC_REPAIR_AUTHORITY'||a.nodes.some(x=>x.academicDecision!=='NOT_CERTIFIED_BY_THIS_GRAPH'))process.exit(1);console.log(JSON.stringify({coverage:a.coverage,reviewedPurposes:a.academicSourcePurposeReviews,sharedTemplateGroups:a.repeatedExactLearnerTemplates.uniqueGroups,rootCauseCounts:Object.fromEntries(Object.entries(a.rootCauseSignals).map(([k,v])=>[k,v.candidateLessonCount])),academicDecision:a.certificationDecision}));"
+      - name: Verify fail-closed 500-way effective cohort reconciliation with negative tests
+        run: node --test tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore and compile REAL Rich V2 runtime and exact 500-way test
+        run: |
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore
+      - name: Materialize 500 corrections and compose Rich V2 from actual application
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
+            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests' \
+            --logger 'console;verbosity=normal'
+      - name: Join ALL 25 raw root cohorts to 500 effective Rich V2 facts and source purposes
+        run: |
+          node tools/us-ccss-b01-v9-effective-root-cause-reconciliation.cjs \
+            --graph=b01-v9-global-root-cause-500.json \
+            --effective=b01-v9-effective-root-cause-500.json \
+            --out=b01-v9-global-effective-root-causes-500.json
+          node -e "const r=require('./b01-v9-global-effective-root-causes-500.json');if(r.coverage.joined!==500||r.coverage.unique!==500||r.automaticFixAuthorization!==false||r.confirmedSemanticDefectsByThisTool!==0||r.academicDecision!=='BATCH_NO-GO'||r.groupCount!==25)process.exit(1);console.log(JSON.stringify({coverage:r.coverage,groupCount:r.groupCount,sharedPatternRoots:Object.fromEntries(Object.entries(r.sharedPatternRoots).map(([k,v])=>[k,{raw:v.rawCandidates,effective:v.effectiveMarkerStillPresent,changed:v.effectiveMarkerAbsent,visual:v.withComposedVisual}])),noVisual:r.richV2WithoutStructuralVisuals.count,decision:r.academicDecision}));"
       - name: Preserve complete source-linked graph and impact groups, never an academic certificate
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: b01-v9-global-root-cause-500-review-only
-          path: b01-v9-global-root-cause-500.json
+          path: |
+            b01-v9-global-root-cause-500.json
+            b01-v9-effective-root-cause-500.json
+            b01-v9-global-effective-root-causes-500.json
           if-no-files-found: warn
           retention-days: 30
