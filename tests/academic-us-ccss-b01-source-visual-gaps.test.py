@@ -103,6 +103,22 @@ class PublisherVisualEvidenceTests(unittest.TestCase):
         self.assertEqual(d["effectiveContentShaMismatches"],1)
         self.assertEqual(d["lessonsNeedingPedagogicalVisualReview"],1)
 
+    def test_ci_preview_lists_only_source_cue_cases_without_accreditation(self):
+        a,b=fixture()
+        a["rows"][0]["sourcePurposePreview"]="Read a line plot."
+        a["rows"][8]["sourcePurposePreview"]="Plot a value on a number line."
+        b["rows"][0]["visualKinds"]=["LinePlot"]
+        b["rows"][8]["visualKinds"]=["EquationSet"]
+        d=audit.analyze(a,b)
+        summary=audit.summarize_for_ci(d)
+        self.assertEqual(summary["lessonsNeedingPedagogicalVisualReview"],1)
+        self.assertEqual(len(summary["reviewCuePreview"]),1)
+        self.assertEqual(summary["reviewCuePreview"][0]["lessonCode"],"B01:008")
+        self.assertIn("NUMBER_LINE",summary["reviewCuePreview"][0]["missingRepresentationCues"])
+        self.assertNotIn("rows",summary)
+        self.assertFalse(summary["reviewCuePreviewTruncated"])
+        self.assertEqual(summary["academicDecision"],"NOT_CERTIFIED")
+
     def test_different_source_500_set_is_rejected(self):
         a,b=fixture()
         b["rows"][0]["lessonCode"]="OUT-OF-SCOPE"
