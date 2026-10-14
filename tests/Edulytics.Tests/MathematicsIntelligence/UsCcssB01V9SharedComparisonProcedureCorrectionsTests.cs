@@ -44,7 +44,7 @@ public sealed class UsCcssB01V9SharedComparisonProcedureCorrectionsTests
             Assert.Equal(shouldChange, CommonCoreB01V9SharedComparisonProcedureCorrections
                 .IsTarget(target.Doc,target.Lesson));
             if (!shouldChange) continue;
-            Assert.Equal(row.GetProperty("sourceSemanticSha256").GetString()!.Length,64);
+            Assert.Equal(64,row.GetProperty("sourceSemanticSha256").GetString()!.Length);
             Assert.Equal(CommonCoreB01V9SharedComparisonProcedureCorrections.CorrectedVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
                     target.Doc,target.Lesson));
