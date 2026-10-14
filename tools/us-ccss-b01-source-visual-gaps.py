@@ -103,6 +103,21 @@ def analyze(publisher,rich):
         "warning":"Absence of a cue does NOT imply L4 PASS. Presence of a component does NOT establish mathematical correctness, accessibility or source activity equivalence. ClockFace and PolygonDiagram must have source-bound accurate parameters and an accessible renderer."
     }
 
+def summarize_for_ci(data):
+    """Log a bounded, actionable review queue; never upgrade a cue to PASS."""
+    review = [r for r in data["rows"]
+              if r["publisherCueVisualReviewTypes"] or not r["sameEffectiveContent"]]
+    summary = {k: v for k, v in data.items() if k != "rows"}
+    summary["reviewCuePreview"] = [{
+        "lessonCode": r["lessonCode"],
+        "publisherTitle": r["publisherTitle"],
+        "missingRepresentationCues": r["publisherCueVisualReviewTypes"],
+        "actualVisualKinds": r["actualRichV2VisualKinds"],
+        "sameEffectiveContent": r["sameEffectiveContent"]
+    } for r in review[:40]]
+    summary["reviewCuePreviewTruncated"] = len(review) > 40
+    return summary
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--publisher",required=True)
@@ -113,7 +128,7 @@ def main():
     data=analyze(json.loads(pathlib.Path(args.publisher).read_text()),
                  json.loads(pathlib.Path(args.rich).read_text()))
     pathlib.Path(args.output).write_text(json.dumps(data,indent=2,ensure_ascii=False)+"\n")
-    print(json.dumps({k:v for k,v in data.items() if k!="rows"},indent=2))
+    print(json.dumps(summarize_for_ci(data),indent=2))
     if args.strict and (data["lessonsNeedingPedagogicalVisualReview"] or
                         data["effectiveContentShaMismatches"]):
         raise SystemExit("B01 L4 REJECTED: publisher-goal visual evidence is incomplete.")
