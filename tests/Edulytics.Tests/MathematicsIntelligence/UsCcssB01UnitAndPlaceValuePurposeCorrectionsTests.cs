@@ -62,7 +62,7 @@ public sealed class UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests
         Assert.Equal("CCSS:4.NBT.A.1",Assert.Single(lesson.OutcomeCodes));
         Assert.Contains("10 × 1,000 = 10,000",t.KeyConceptsAndRules);
         Assert.Contains("1 × 10,000",t.WorkedExamples);
-        Assert.Contains("ten-thousands place",t.StepByStepSolutions);
+        Assert.Contains("10 groups of 1,000",t.StepByStepSolutions);
         Assert.Contains("Ten hundreds make 1,000",t.CommonMistakes);
     }
 
