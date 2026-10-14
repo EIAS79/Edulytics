@@ -75,6 +75,27 @@ class PublisherVisualEvidenceTests(unittest.TestCase):
         self.assertNotIn("TRIANGLE_SHAPES",d["rows"][15]["publisherCueVisualReviewTypes"])
         self.assertEqual(d["academicDecision"],"NOT_CERTIFIED")
 
+    def test_line_plot_requires_x_mark_line_plot_not_only_numeric_axis(self):
+        a,b=fixture()
+        a["rows"][34]["publisherTitle"]="Interpret a Line Plot of Lengths"
+        b["rows"][34]["visualKinds"]=["NumberLine","Scale","EquationSet"]
+        d=audit.analyze(a,b)
+        self.assertIn("LINE_PLOT",d["rows"][34]["publisherCueVisualReviewTypes"])
+        b["rows"][34]["visualKinds"]=["LinePlot","EquationSet"]
+        d=audit.analyze(a,b)
+        self.assertNotIn("LINE_PLOT",d["rows"][34]["publisherCueVisualReviewTypes"])
+        self.assertEqual(d["academicDecision"],"NOT_CERTIFIED")
+
+    def test_number_line_is_not_satisfied_by_x_mark_line_plot(self):
+        a,b=fixture()
+        a["rows"][78]["sourcePurposePreview"]="Represent values on a number line."
+        b["rows"][78]["visualKinds"]=["LinePlot","EquationSet"]
+        d=audit.analyze(a,b)
+        self.assertIn("NUMBER_LINE",d["rows"][78]["publisherCueVisualReviewTypes"])
+        b["rows"][78]["visualKinds"]=["NumberLine","EquationSet"]
+        d=audit.analyze(a,b)
+        self.assertNotIn("NUMBER_LINE",d["rows"][78]["publisherCueVisualReviewTypes"])
+
     def test_one_source_content_sha_mismatch_blocks_exact_batch_integrity(self):
         a,b=fixture()
         b["rows"][301]["effectiveBodyFingerprint"]="b"*64
