@@ -1,0 +1,40 @@
+name: US CCSS B01 V9 Non-Length Ruler Root-Cause Repairs
+
+on:
+  push:
+    branches: [audit/us-ccss-b01-500-lesson-certification]
+    paths:
+      - '.github/workflows/us-ccss-b01-v9-nonlength-ruler.yml'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01NonLengthRulerTemplateCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01NonLengthRulerTemplateCorrectionsTests.cs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: b01-v9-nonlength-ruler-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-nonlength-ruler-root:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore and build actual test assembly
+        run: |
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore
+      - name: Check source-scoped fixes and 500-lesson effective runtime/visual regression
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
+            --filter 'FullyQualifiedName~UsCcssB01NonLengthRulerTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests' \
+            --logger 'console;verbosity=normal'
+      - name: Fail closed on any regression; no academic batch promotion from this job
+        run: echo 'TARGETED_REGRESSION_ONLY — B01 BATCH_NO-GO until complete L1-L6 and final release gate.'
