@@ -8,7 +8,7 @@ function fixture(){
   ordinal:i+1,lessonCode:lesson(i),sourceSemanticSha256:shaA,
   rawLearnerBodySha256:shaB,
   originalTeacherGoalSectionCaptured:true,
-  sourceTeacherPurposeSignals:i===0?['LENGTH']:['ADDITION'],
+  sourceTeacherPurposeSignals:i===1?['LENGTH']:['ADDITION'],
   rawExactTemplateIds:i<2?['SHARED_TEMPLATE']:[],
   academicDecision:'NOT_CERTIFIED_BY_THIS_GRAPH'
  }));
@@ -52,7 +52,7 @@ test('One joined graph reports actual materializer transforms while remaining fa
  assert.equal(x.groupCount,1);
  assert.equal(x.repeatedTemplateGroups[0].exactMaterializedTemplateStillUsed,1);
  assert.equal(x.repeatedTemplateGroups[0].exactMaterializedTemplateReplaced,1);
- assert.deepEqual(x.repeatedTemplateGroups[0].lexicalSourcePurposeMismatchCandidates,[lesson(1)]);
+ assert.deepEqual(x.repeatedTemplateGroups[0].lexicalSourcePurposeMismatchCandidates,[lesson(0)]);
  assert.equal(x.repeatedTemplateGroups[0].priorityScore,2);
  assert.equal(x.sharedPatternRoots.SHARED_RULER_METHOD_TEMPLATE.effectiveMarkerStillPresent,1);
  assert.equal(x.sharedPatternRoots.SHARED_RULER_METHOD_TEMPLATE.effectiveMarkerAbsent,1);
