@@ -96,6 +96,12 @@ public static class CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections
     private static bool Same(CurriculumLessonContentTranslation t, Guard g, bool after) =>
         Same(t.KeyConceptsAndRules, t.StepByStepSolutions, t.CommonMistakes, g, after);
 
+    private static bool SameWithLaterSharedRoot(string concepts, string steps,
+        string mistakes, Guard g) =>
+        concepts == NewConcepts(g) &&
+        CommonCoreB01V9SharedComparisonProcedureCorrections.MatchesFinalProcedure(
+            g.Code, steps, mistakes);
+
     public static void Apply(CanonicalLessonContentPackDocument d)
     {
         if (d.PackCode != "US-CCSS-MATH" || d.VersionCode != "CCSSM-2010") return;
@@ -104,7 +110,9 @@ public static class CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections
             if (!ByCode.TryGetValue(l.LessonCode, out var g)) continue;
             VerifySource(l,g);
             var t=l.Translations[0];
-            if (Same(t,g,true)) continue;
+            if (Same(t,g,true) || SameWithLaterSharedRoot(
+                t.KeyConceptsAndRules, t.StepByStepSolutions, t.CommonMistakes, g))
+                continue;
             if (!Same(t,g,false))
                 throw new InvalidOperationException("V9 shared root rejected partial or unexpected learner changes: " + l.LessonCode);
             var (steps,mistakes) = Replacements(g);
@@ -139,7 +147,9 @@ public static class CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections
         if (persisted.Count != 1 || persisted.Single().CultureCode != "en")
             throw new InvalidOperationException("V9 shared non-measure persisted culture drift.");
         var t=persisted.Single();
-        if (!Same(t,g,false) && !Same(t,g,true))
+        if (!Same(t,g,false) && !Same(t,g,true) &&
+            !SameWithLaterSharedRoot(t.KeyConceptsAndRules,
+                t.StepByStepSolutions, t.CommonMistakes, g))
             throw new InvalidOperationException("V9 shared non-measure persisted learner body drift: " + l.LessonCode);
     }
 }
