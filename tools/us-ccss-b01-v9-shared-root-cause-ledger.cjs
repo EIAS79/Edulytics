@@ -12,7 +12,8 @@ const evidenceFiles=[
  'artifacts/academic-us-ccss/batches/B01-v9-placevalue-purpose-reviewed-metadata.json',
  'artifacts/academic-us-ccss/batches/B01-v9-unit-weight-ten-thousand-purpose-reviewed-metadata.json',
  'artifacts/academic-us-ccss/batches/B01-v9-nonlength-ruler-cohort-metadata.json',
- 'artifacts/academic-us-ccss/batches/B01-v9-source-verified-nonmeasure-23-cohort.json'
+ 'artifacts/academic-us-ccss/batches/B01-v9-source-verified-nonmeasure-23-cohort.json',
+ 'artifacts/academic-us-ccss/batches/B01-v9-learner-voice-2-cohort.json'
 ];
 const SHA=/^[a-f0-9]{64}$/i;
 const definitions=[
