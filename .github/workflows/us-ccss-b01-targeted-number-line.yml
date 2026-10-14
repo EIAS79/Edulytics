@@ -8,6 +8,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01G2U04NumberLineEffectiveContractTests.cs'
       - 'src/Edulytics.Core/Mathematics/Practice/UsCcssB01SourceAlignedPracticeCorrections.cs'
       - 'src/Edulytics.Services/LessonContent/UsCcssB01SourceBoundNumberLineVisuals.cs'
+      - 'tools/us-ccss-b01-practice-source-conflicts.py'
+      - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
   workflow_dispatch:
 permissions:
   contents: read
@@ -20,6 +22,11 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test source-scoped L10 families; reject legacy place-value fallback
+        run: python3 tests/academic-us-ccss-b01-practice-source-conflicts.test.py
       - name: Test ONLY Grade 2 Unit 4 scoped source-to-Rich contracts
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \

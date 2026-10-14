@@ -59,6 +59,25 @@ class WholeBatchSemanticTests(unittest.TestCase):
         self.assertEqual(result["rows"][17]["conflicts"][0]["rule"],
                          "SOURCE_TASK_LEAKED_OUTSIDE_EXACT_LESSON_SCOPE")
 
+
+    def test_g2_u04_l10_cannot_fall_back_to_generic_place_value(self):
+        a,b=fixtures()
+        code="PED:US-CCSS-MATH:G2:U04:L10"
+        a["lessonRows"][50]["lessonCode"]=code
+        b["rows"][50]["lessonCode"]=code
+        b["rows"][50]["publisherTitle"]="Place Value and the Number Line"
+        b["rows"][50]["sourcePurposePreview"]=(
+            "Compare addition and subtraction within 100 using number line methods.")
+        a["lessonRows"][50]["actualQuestionFamilies"]=[
+            "supporting.number.place_value"]
+        findings=module.analyze(a,b)["rows"][50]["conflicts"]
+        self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+            [item["rule"] for item in findings])
+        a["lessonRows"][50]["actualQuestionFamilies"]=[
+            "number.whole.add_subtract.within_100.apply",
+            "number.whole.add_subtract.within_100.build"]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

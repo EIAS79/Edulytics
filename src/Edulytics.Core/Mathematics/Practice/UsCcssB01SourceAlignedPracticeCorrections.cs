@@ -395,6 +395,18 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
              "number.whole.add_subtract.within_100.build"],
             "IM2021_G2_U04_L06_NUMBER_LINE_AND_ADD_SUBTRACT_PURPOSE",
             "READY_VERIFIED", "usccss-b01-g2-u04-number-line-v2"),
+        // Source-verified IM G2 U04 L10 (Place Value and the Number Line):
+        // compare addition/subtraction within 100 using number-line jumps.
+        // The broad title-derived place-value contract selected unrelated
+        // Practice and prevented the ALREADY IMPLEMENTED number-line renderer
+        // from receiving any verified arithmetic operand parameters.
+        new(
+            "PED:US-CCSS-MATH:G2:U04:L10",
+            "number.whole.add_subtract", "PLACE_VALUE_STRATEGIES_ON_NUMBER_LINE",
+            ["number.whole.add_subtract.within_100.apply",
+             "number.whole.add_subtract.within_100.build"],
+            "IM2021_G2_U04_L10_COMPARE_ADD_SUBTRACT_NUMBER_LINE_METHODS",
+            "READY_VERIFIED", "usccss-b01-g2-u04-number-line-v3"),
         new(
             "PED:US-CCSS-MATH:G2:U04:L02",
             "measurement.scale.read_equal_intervals", "NUMBER_LINE_EQUAL_INTERVALS",
