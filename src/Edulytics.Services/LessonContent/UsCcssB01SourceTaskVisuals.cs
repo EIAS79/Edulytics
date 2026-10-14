@@ -15,7 +15,12 @@ public static class UsCcssB01SourceTaskVisuals
         string lessonCode, IReadOnlyList<ExactSkillGeneratedQuestion> questions)
     {
         if (!IsB01(lessonCode)) return [];
-        var visual = new List<RichLessonVisual>(2);
+        // The optional IM G2 U03 L07 center explicitly combines TWO
+        // different mathematical tasks: estimate-and-measure and length
+        // story problems. It needs both independently verified visuals.
+        // Leave the one-visual limit unchanged for all other lessons.
+        var visualLimit=lessonCode=="PED:US-CCSS-MATH:G2:U03:L07" ? 2 : 1;
+        var visual = new List<RichLessonVisual>(visualLimit);
         foreach (var q in questions)
         {
             if (!q.Family.StartsWith("usccss.b01.", StringComparison.Ordinal) &&
@@ -1269,7 +1274,7 @@ public static class UsCcssB01SourceTaskVisuals
             }
             // Keep the page focused: only one task-scoped visual per lesson;
             // the ordinary QuestionForms diagram remains available afterward.
-            if (visual.Count >= 1) break;
+            if (visual.Count >= visualLimit) break;
         }
         return visual;
     }
