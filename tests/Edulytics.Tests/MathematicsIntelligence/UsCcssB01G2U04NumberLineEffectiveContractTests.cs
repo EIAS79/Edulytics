@@ -1,5 +1,6 @@
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Core.Lessons;
 using Edulytics.Data.Seeding;
 using Edulytics.Services.LessonContent;
 
