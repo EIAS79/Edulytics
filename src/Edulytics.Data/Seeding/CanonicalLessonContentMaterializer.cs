@@ -35,6 +35,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
         CommonCoreB01FractionPurposeCorrections.Apply(document);
         CommonCoreB01PlaceValuePurposeCorrection.Apply(document);
+        CommonCoreB01UnitAndPlaceValuePurposeCorrections.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -202,8 +203,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2);
         var fractions = CommonCoreB01FractionPurposeCorrections
             .GetExpectedContentVersion(document, lesson, html);
-        return CommonCoreB01PlaceValuePurposeCorrection
+        var placeValue = CommonCoreB01PlaceValuePurposeCorrection
             .GetExpectedContentVersion(document, lesson, fractions);
+        return CommonCoreB01UnitAndPlaceValuePurposeCorrections
+            .GetExpectedContentVersion(document, lesson, placeValue);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -241,7 +244,8 @@ public static class CanonicalLessonContentMaterializer
             .IsTarget(document, lesson) ||
         CommonCoreB01FractionPurposeCorrections
             .IsTarget(document, lesson) ||
-        CommonCoreB01PlaceValuePurposeCorrection.IsTarget(document,lesson);
+        CommonCoreB01PlaceValuePurposeCorrection.IsTarget(document,lesson) ||
+        CommonCoreB01UnitAndPlaceValuePurposeCorrections.IsTarget(document,lesson);
 
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,
@@ -313,6 +317,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01FractionPurposeCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreB01PlaceValuePurposeCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreB01UnitAndPlaceValuePurposeCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion);
 
     public static string ComputeLessonFingerprint(
