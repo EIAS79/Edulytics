@@ -149,6 +149,8 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G1:U07:L15": "usccss.b01.clock.read_half_hour",
     "PED:US-CCSS-MATH:G2:U06:L12": "usccss.b01.clock.read_five_minutes",
     "PED:US-CCSS-MATH:G2:U08:L12": "usccss.b01.rectangle.unit_squares",
+    "PED:US-CCSS-MATH:G1:U06:L08": "usccss.b01.g1.measure.count_cubes_up_to110",
+    "PED:US-CCSS-MATH:G1:U06:L09": "usccss.b01.g1.measure.write_cubes_to120",
     "PED:US-CCSS-MATH:G1:U06:L07": [
         "supporting.measurement.unit_iteration",
         "usccss.b01.g1.measure.same_length_different_units",

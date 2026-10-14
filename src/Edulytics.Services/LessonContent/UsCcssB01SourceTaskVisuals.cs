@@ -459,6 +459,40 @@ public static class UsCcssB01SourceTaskVisuals
                     N("number") == N("tens")*10+N("ones") &&
                     N("number") is >= 10 and <= 99 =>
                     BaseTenModel(N("number"),0,N("tens"),N("ones"),false),
+                // G1 U06 L08/L09: source classroom measurement of a
+                // long, contiguous run of equal small unit cubes. Display
+                // exact groups of ten plus the measured single-unit end.
+                "usccss.b01.g1.measure.count_cubes_up_to110" or
+                "usccss.b01.g1.measure.write_cubes_to120" when
+                    ((lessonCode=="PED:US-CCSS-MATH:G1:U06:L08" &&
+                      q.Family=="usccss.b01.g1.measure.count_cubes_up_to110") ||
+                     (lessonCode=="PED:US-CCSS-MATH:G1:U06:L09" &&
+                      q.Family=="usccss.b01.g1.measure.write_cubes_to120")) &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title="Measured length in equal unit-cube groups",
+                        Description=$"The physical length is covered end-to-end " +
+                            $"by {N("number")} identical cubes without gaps. " +
+                            $"{N("tens")} complete groups of ten represent " +
+                            $"{N("tens")*10} cube units, plus {N("ones")} " +
+                            $"remaining cubes. The checked measurement is " +
+                            $"{q.CorrectAnswer} unit cubes.",
+                        PrimaryLabel=$"{N("number")} measured unit cubes",
+                        Rows=Enumerable.Range(0,N("tens"))
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"Group {i+1}: 10 cube units",
+                                Cells=Enumerable.Repeat("■",10).ToList()
+                            })
+                            .Append(new RichLessonVisualRow
+                            {
+                                Label=$"Remainder: {N("ones")} cube units",
+                                Cells=Enumerable.Repeat("■",N("ones")).ToList()
+                            }).ToList()
+                    },
                 "usccss.b01.place_value.count_to120" when
                     N("number")==N("hundreds")*100+N("tens")*10+N("ones") &&
                     N("number") is >= 40 and <= 120 =>

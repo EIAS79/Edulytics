@@ -105,6 +105,57 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
         Assert.Contains(rich.Visuals,v=>v.Kind==RichLessonVisualKind.TapeDiagram);
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G1:U06:L08",
+        "usccss.b01.g1.measure.count_cubes_up_to110",100,110)]
+    [InlineData("PED:US-CCSS-MATH:G1:U06:L09",
+        "usccss.b01.g1.measure.write_cubes_to120",95,120)]
+    public void GradeOneUnitSixLongLengthsCountActualCubeUnits(
+        string code,string family,int lower,int upper)
+    {
+        Assert.True(LessonPracticeContractRegistry.TryResolve(code,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var engine=new ExactSkillContractQuestionEngine();
+        var observed=new HashSet<int>();
+        for(var seed=611200;seed<611308;seed++)
+        {
+            var q=Assert.Single(engine.Generate(
+                "b01-g1-long-length-cubes",code,[family],
+                ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+            var p=q.Parameters;
+            var cubes=p["number"];
+            Assert.InRange(cubes,lower,upper);
+            Assert.Equal(p["tens"]*10+p["ones"],cubes);
+            Assert.Equal(cubes,int.Parse(q.CorrectAnswer));
+            var plot=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,plot.Kind);
+            Assert.Equal(p["tens"]+1,plot.Rows.Count);
+            Assert.Equal(cubes,plot.Rows.Sum(row=>row.Cells.Count));
+            for(var i=0;i<p["tens"];i++)
+                Assert.Equal(10,plot.Rows[i].Cells.Count);
+            Assert.Equal(p["ones"],plot.Rows[^1].Cells.Count);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                code,[q with {CorrectAnswer="9999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G1:U06:L10",[q]));
+            observed.Add(cubes);
+        }
+        Assert.True(observed.Count>=6);
+        var lesson=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(d=>d.PackCode=="US-CCSS-MATH"&&d.VersionCode=="CCSSM-2010")
+            .SelectMany(d=>d.Lessons).Single(x=>x.LessonCode==code);
+        var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+        var body=new CanonicalLessonTranslationRecord(en.CultureCode,en.Title,
+            en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,
+            en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary);
+        var rich=RichLessonContentV2Registry.Find(code,"en") ??
+            RichLessonContentV2RuntimeComposer.TryCompose(code,body);
+        Assert.NotNull(rich);
+        Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.PlaceValueChart);
+    }
+
     private const string G2ReptileCompare = "PED:US-CCSS-MATH:G2:U03:L06";
 
     [Fact]

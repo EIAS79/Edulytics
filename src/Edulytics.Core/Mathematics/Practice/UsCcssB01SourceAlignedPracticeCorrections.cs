@@ -288,6 +288,22 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "READY_VERIFIED", "usccss-b01-source-scope-v1"),
         // Original G1 U06 L07: compare paper clips of two lengths for
         // the SAME tape, retaining the earlier unit-count Practice case.
+        // Teacher G1 U06 L08: count and read a measured length of 100–110
+        // same-size unit cubes, with 10 tens explicitly representing 100.
+        new(
+            "PED:US-CCSS-MATH:G1:U06:L08",
+            "supporting.measurement.practical", "MEASURE_COUNT_CUBES_100_TO_110",
+            ["usccss.b01.g1.measure.count_cubes_up_to110"],
+            "IM2021_G1_U06_L08_MEASURE_COUNT_READ_UP_TO110",
+            "READY_VERIFIED", "usccss-b01-g1-u06-measure-100-v1"),
+        // Teacher G1 U06 L09: measure, represent and write 95–120 equal
+        // length units; do not substitute the generic 40–120 collection.
+        new(
+            "PED:US-CCSS-MATH:G1:U06:L09",
+            "supporting.measurement.practical", "MEASURE_WRITE_CUBES_95_TO_120",
+            ["usccss.b01.g1.measure.write_cubes_to120"],
+            "IM2021_G1_U06_L09_MEASURE_WRITE_95_TO120",
+            "READY_VERIFIED", "usccss-b01-g1-u06-measure-120-v1"),
         new(
             "PED:US-CCSS-MATH:G1:U06:L07",
             "supporting.measurement.practical", "LENGTH_UNIT_ITERATION_TWO_UNITS",

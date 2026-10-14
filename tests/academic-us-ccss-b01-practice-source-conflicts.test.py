@@ -182,6 +182,27 @@ class WholeBatchSemanticTests(unittest.TestCase):
             "usccss.b01.g2.length_compare.all_unknown_positions100"]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_grade1_original_long_cube_measurement_limits_are_source_scoped(self):
+        a,b=fixtures()
+        for row,code,expected in [
+            (52,"PED:US-CCSS-MATH:G1:U06:L08",
+             "usccss.b01.g1.measure.count_cubes_up_to110"),
+            (53,"PED:US-CCSS-MATH:G1:U06:L09",
+             "usccss.b01.g1.measure.write_cubes_to120"),
+        ]:
+            a["lessonRows"][row]["lessonCode"]=code
+            b["rows"][row]["lessonCode"]=code
+            b["rows"][row]["publisherTitle"]="Count and write measured lengths"
+            b["rows"][row]["sourcePurposePreview"]=(
+                "Measure and count equal cube units in long lengths.")
+            a["lessonRows"][row]["actualQuestionFamilies"]=[
+                "usccss.b01.place_value.count_to120"]
+            found=module.analyze(a,b)
+            self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+                [x["rule"] for x in found["rows"][row]["conflicts"]])
+            a["lessonRows"][row]["actualQuestionFamilies"]=[expected]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

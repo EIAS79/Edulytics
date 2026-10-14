@@ -103,6 +103,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g2.subtract_decompose_ten",
         "usccss.b01.g1.add_subtract_tens_multiples",
         "usccss.b01.place_value.count_to120",
+        "usccss.b01.g1.measure.count_cubes_up_to110",
+        "usccss.b01.g1.measure.write_cubes_to120",
         "usccss.b01.place_value.three_digits",
         "usccss.b01.market.inventory_100",
         "usccss.b01.g3.add_within1000",
@@ -574,6 +576,30 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     D(("number",a),("tens",a/10),("ones",a%10),("mode",m)));
 
             // Official Grade 1 U08 L07: organize a counted collection up to 120.
+            // IM G1 U06 L08 and L09: source-bound LONG length iteration
+            // and reading/writing the counted total: L08 100..110, L09
+            // 95..120 unit cubes, rather than a generic 40..120 collection.
+            case "usccss.b01.g1.measure.count_cubes_up_to110":
+            case "usccss.b01.g1.measure.write_cubes_to120":
+            {
+                var limit110=f=="usccss.b01.g1.measure.count_cubes_up_to110";
+                var cubes=limit110?r.Next(100,111):r.Next(95,121);
+                var mode=r.Next(0,2);
+                return Make(f,
+                    $"A long length is measured end-to-end using equal " +
+                    $"small unit cubes with NO gaps or overlaps. The cubes " +
+                    $"are organized into {cubes/10} groups of ten and " +
+                    $"{cubes%10} single cubes. " +
+                    (mode==0
+                        ?"How many unit cubes cover the entire length?"
+                        :"Write the complete measured length as a number of unit cubes."),
+                    "Every complete group contributes 10 equal cube units; " +
+                    "add all groups and remaining cubes to find the measured length.",
+                    AssessmentItemType.Numeric,
+                    D(("number",cubes),("tens",cubes/10),
+                      ("ones",cubes%10),("mode",mode)));
+            }
+
             case "usccss.b01.place_value.count_to120":
                 a = r.Next(40, 121);
                 return Make(f,
@@ -1675,6 +1701,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 P("expected").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.place_value.tens_ones" or
             "usccss.b01.place_value.count_to120" or
+            "usccss.b01.g1.measure.count_cubes_up_to110" or
+            "usccss.b01.g1.measure.write_cubes_to120" or
             "usccss.b01.place_value.three_digits" =>
                 P("number").ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g1.match_dot_cubes_expression" =>
@@ -2038,6 +2066,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("number",10,99) && Range("tens",1,9) &&
                 Range("ones",0,9) && Range("mode",0,2) &&
                 N("number") == N("tens")*10 + N("ones"),
+            "usccss.b01.g1.measure.count_cubes_up_to110" =>
+                Range("number",100,110) && Range("tens",10,11) &&
+                Range("ones",0,9) && Range("mode",0,1) &&
+                N("number")==N("tens")*10+N("ones"),
+            "usccss.b01.g1.measure.write_cubes_to120" =>
+                Range("number",95,120) && Range("tens",9,12) &&
+                Range("ones",0,9) && Range("mode",0,1) &&
+                N("number")==N("tens")*10+N("ones"),
             "usccss.b01.place_value.count_to120" =>
                 Range("number",40,120) && Range("hundreds",0,1) &&
                 Range("tens",0,9) && Range("ones",0,9) &&
