@@ -103,7 +103,7 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
             var fp=qf.Parameters;
             Assert.Equal(fp["fish"] switch {0=>24,1=>48,_=>36},fp["inchTiles"]);
             Assert.Equal(fp["fish"] switch {0=>2,1=>4,_=>3},fp["footRulers"]);
-            Assert.Equal(fp["mode"]==0?1:2,int.Parse(qf.CorrectAnswer));
+            Assert.Equal(fp["mode"] switch {0=>1,1=>2,2=>fp["inchTiles"],3=>fp["footRulers"],_=>throw new InvalidOperationException()},int.Parse(qf.CorrectAnswer));
             var comparison=Assert.Single(UsCcssB01SourceTaskVisuals.Build(feetCode,[qf]));
             Assert.Equal(RichLessonVisualKind.RatioTable,comparison.Kind);
             Assert.Equal(2,comparison.Rows.Count);
@@ -117,7 +117,7 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
             foundModes.Add(fp["mode"]);
         }
         Assert.Equal([0,1,2],foundFish.Order().ToArray());
-        Assert.Equal([0,1],foundModes.Order().ToArray());
+        Assert.Equal([0,1,2,3],foundModes.Order().ToArray());
 
         foreach(var item in new[]{
             (code:inchCode,kind:RichLessonVisualKind.Scale),
