@@ -10,6 +10,82 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
 {
     [Fact]
+    public void Grade2Unit3InchAndFootUnitsMatchExactPublisherPractice()
+    {
+        const string inchCode="PED:US-CCSS-MATH:G2:U03:L08";
+        const string feetCode="PED:US-CCSS-MATH:G2:U03:L09";
+        const string inchFamily="usccss.b01.g2.measurement.inch_ruler";
+        const string feetFamily="usccss.b01.g2.measurement.feet_inch_same_length";
+        var engine=new ExactSkillContractQuestionEngine();
+        Assert.True(LessonPracticeContractRegistry.TryResolve(inchCode,out var inch));
+        Assert.True(LessonPracticeContractRegistry.TryResolve(feetCode,out var feet));
+        Assert.Equal([inchFamily],inch!.AllowedQuestionFamilies);
+        Assert.Equal([feetFamily],feet!.AllowedQuestionFamilies);
+        var foundFish=new HashSet<int>();
+        var foundModes=new HashSet<int>();
+        for(var seed=900000;seed<900096;seed++)
+        {
+            var qi=Assert.Single(engine.Generate("b01-inch-ruler",
+                inchCode,[inchFamily],ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                inchFamily,qi.Parameters,qi.CorrectAnswer));
+            var ip=qi.Parameters;
+            Assert.InRange(ip["actual"],1,11);
+            Assert.Equal(Math.Abs(ip["estimate"]-ip["actual"]),
+                int.Parse(qi.CorrectAnswer));
+            var ruler=Assert.Single(UsCcssB01SourceTaskVisuals.Build(inchCode,[qi]));
+            Assert.Equal(RichLessonVisualKind.Scale,ruler.Kind);
+            Assert.Equal(Enumerable.Range(0,ip["actual"]+1).Select(i=>i.ToString()),
+                ruler.Items);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(inchCode,
+                [qi with {CorrectAnswer="999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(feetCode,[qi]));
+
+            var qf=Assert.Single(engine.Generate("b01-fish-tape",
+                feetCode,[feetFamily],ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                feetFamily,qf.Parameters,qf.CorrectAnswer));
+            var fp=qf.Parameters;
+            Assert.Equal(fp["fish"] switch {0=>24,1=>48,_=>36},fp["inchTiles"]);
+            Assert.Equal(fp["fish"] switch {0=>2,1=>4,_=>3},fp["footRulers"]);
+            Assert.Equal(fp["mode"]==0?1:2,int.Parse(qf.CorrectAnswer));
+            var comparison=Assert.Single(UsCcssB01SourceTaskVisuals.Build(feetCode,[qf]));
+            Assert.Equal(RichLessonVisualKind.RatioTable,comparison.Kind);
+            Assert.Equal(2,comparison.Rows.Count);
+            Assert.Equal(fp["inchTiles"].ToString(),comparison.Rows[0].Cells[0]);
+            Assert.Equal(fp["footRulers"].ToString(),comparison.Rows[1].Cells[0]);
+            Assert.Equal(comparison.Rows[0].Cells[2],comparison.Rows[1].Cells[2]);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(feetCode,
+                [qf with {CorrectAnswer="0"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(inchCode,[qf]));
+            foundFish.Add(fp["fish"]);
+            foundModes.Add(fp["mode"]);
+        }
+        Assert.Equal([0,1,2],foundFish.Order().ToArray());
+        Assert.Equal([0,1],foundModes.Order().ToArray());
+
+        foreach(var item in new[]{
+            (code:inchCode,kind:RichLessonVisualKind.Scale),
+            (code:feetCode,kind:RichLessonVisualKind.RatioTable)
+        })
+        {
+            var lesson=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+                .Where(d=>d.PackCode=="US-CCSS-MATH" &&
+                           d.VersionCode=="CCSSM-2010")
+                .SelectMany(d=>d.Lessons).Single(x=>x.LessonCode==item.code);
+            var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+            var body=new CanonicalLessonTranslationRecord(en.CultureCode,en.Title,
+                en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,
+                en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary);
+            var rich=RichLessonContentV2Registry.Find(item.code,"en") ??
+                RichLessonContentV2RuntimeComposer.TryCompose(item.code,body);
+            Assert.NotNull(rich);
+            Assert.Contains(rich.Visuals,x=>x.Kind==item.kind);
+        }
+    }
+
+
+    [Fact]
     public void GradeOneSameTapeTwoDifferentPaperclipSizesAreExactlyEquivalent()
     {
         const string family="usccss.b01.g1.measure.same_length_different_units";

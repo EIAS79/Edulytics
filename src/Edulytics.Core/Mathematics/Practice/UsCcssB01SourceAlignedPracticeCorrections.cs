@@ -456,6 +456,21 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
         // actual centimeter measurement and measurement error, then solve
         // Math Stories (the previous center's all-position comparisons).
         // Reuse TWO independently verified source families and visuals.
+        // Source: G2 U03 L08 standard inch rulers with 1–11 inch objects.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L08",
+            "supporting.measurement.practical", "MEASURE_AND_ESTIMATE_IN_INCHES",
+            ["usccss.b01.g2.measurement.inch_ruler"],
+            "IM2021_G2_U03_L08_INCH_RULER_MEASURE",
+            "READY_VERIFIED", "usccss-b01-g2-u03-inches-v1"),
+        // Source: G2 U03 L09 original bass/shark/catfish strips, physical
+        // measurement comparison. Excludes the 2ft6in koi partial-foot task.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L09",
+            "supporting.measurement.practical", "MEASURE_IN_FEET_AND_INCHES",
+            ["usccss.b01.g2.measurement.feet_inch_same_length"],
+            "IM2021_G2_U03_L09_FISH_TAPE_UNIT_COMPARE",
+            "READY_VERIFIED", "usccss-b01-g2-u03-feet-inches-v1"),
         new(
             "PED:US-CCSS-MATH:G2:U03:L07",
             "supporting.measurement.practical", "CENTER_ESTIMATE_AND_MATH_STORIES",

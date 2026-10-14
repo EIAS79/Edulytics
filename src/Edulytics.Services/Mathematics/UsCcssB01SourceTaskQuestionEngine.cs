@@ -40,6 +40,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.measure.map_lengths",
         "usccss.b01.g1.measure.same_length_different_units",
         "usccss.b01.g2.measurement.estimate_cm",
+        "usccss.b01.g2.measurement.inch_ruler",
+        "usccss.b01.g2.measurement.feet_inch_same_length",
         "usccss.b01.g2.measure.reptile_meterstick",
         "usccss.b01.g2.measurement.iterate_ruler_cm",
         "usccss.b01.ruler.compare_centimeters",
@@ -1118,6 +1120,50 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                       ("mode",mode)));
             }
 
+            // Official G2 U03 L08: 1–11 inch ruler measurement and estimation.
+            case "usccss.b01.g2.measurement.inch_ruler":
+            {
+                var actual=r.Next(1,12);
+                var offset=r.Next(1,Math.Min(4,actual+1));
+                var estimate=Math.Max(1,actual+(r.Next(0,2)==0?-offset:offset));
+                if(estimate==actual)estimate=actual+1;
+                return Make(f,
+                    ${"An object is estimated to be {estimate} inches long. " +
+                    ${"On an inch ruler starting at 0, the object's endpoint is {actual}. " +
+                    "How many inches different are the estimate and measurement?",
+                    "Count one-inch intervals from the zero endpoint, then " +
+                    "compare the original estimate to the actual length.",
+                    AssessmentItemType.Numeric,
+                    D(("actual",actual),("estimate",estimate)));
+            }
+
+            // Original G2 U03 L09 teacher strips: bass 2ft, shark 4ft,
+            // catfish 3ft. Children compare physically counted units,
+            // NOT perform calculated feet-to-inches conversions.
+            case "usccss.b01.g2.measurement.feet_inch_same_length":
+            {
+                var fish=r.Next(0,3);
+                var inches=fish switch {0=>24,1=>48,_=>36};
+                var rulerUnits=fish switch {0=>2,1=>4,_=>3};
+                var mode=r.Next(0,2);
+                var species=fish switch
+                {
+                    0=>"largemouth bass",1=>"spiny dogfish shark",_=>"catfish"
+                };
+                return Make(f,
+                    ${"A {species} tape strip has been physically measured with " +
+                    ${"{inches} one-inch tiles and also {rulerUnits} complete " +
+                    "foot-length rulers. The strip itself does not change. " +
+                    (mode==0
+                       ?"Which measurement counts MORE units? Enter 1 for inch tiles, 2 for foot-length rulers."
+                       :"Which measurement counts FEWER units? Enter 1 for inch tiles, 2 for foot-length rulers."),
+                    "A smaller unit needs more repetitions for the same " +
+                    "physical length; compare the supplied measured counts.",
+                    AssessmentItemType.Numeric,
+                    D(("fish",fish),("inchTiles",inches),
+                      ("footRulers",rulerUnits),("mode",mode)));
+            }
+
             case "usccss.b01.g2.measurement.estimate_cm":
             {
                 var actual=r.Next(5,31);
@@ -1824,6 +1870,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     2=>P("lengthCm"),
                     _=>throw new InvalidOperationException()
                 }).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.measurement.inch_ruler" =>
+                Math.Abs(P("actual")-P("estimate")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.measurement.feet_inch_same_length" =>
+                (P("mode")==0?1:2).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.estimate_cm" =>
                 Math.Abs(P("actual")-P("estimate")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.pencil_line_plot" =>
@@ -2194,6 +2244,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 N("fullMeters")==N("lengthCm")/100 &&
                 N("remainingCm")==N("lengthCm")%100 &&
                 Range("mode",0,2),
+            "usccss.b01.g2.measurement.inch_ruler" =>
+                Range("actual",1,11) && Range("estimate",1,14) &&
+                N("actual")!=N("estimate"),
+            "usccss.b01.g2.measurement.feet_inch_same_length" =>
+                Range("fish",0,2) && Range("mode",0,1) &&
+                N("inchTiles")==(N("fish")==0?24:N("fish")==1?48:36) &&
+                N("footRulers")==(N("fish")==0?2:N("fish")==1?4:3) &&
+                N("inchTiles")>N("footRulers"),
             "usccss.b01.g2.measurement.estimate_cm" =>
                 Range("actual",5,30) && Range("estimate",1,35) &&
                 Range("error",1,5) &&

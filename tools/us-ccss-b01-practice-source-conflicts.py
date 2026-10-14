@@ -155,6 +155,8 @@ SOURCE_SCOPED_FAMILIES = {
         "supporting.measurement.unit_iteration",
         "usccss.b01.g1.measure.same_length_different_units",
     ],
+    "PED:US-CCSS-MATH:G2:U03:L08": "usccss.b01.g2.measurement.inch_ruler",
+    "PED:US-CCSS-MATH:G2:U03:L09": "usccss.b01.g2.measurement.feet_inch_same_length",
     "PED:US-CCSS-MATH:G2:U03:L07": [
         "usccss.b01.g2.measurement.estimate_cm",
         "usccss.b01.g2.length_compare.all_unknown_positions100",

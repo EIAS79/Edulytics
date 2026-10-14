@@ -203,6 +203,27 @@ class WholeBatchSemanticTests(unittest.TestCase):
             a["lessonRows"][row]["actualQuestionFamilies"]=[expected]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_g2_inch_and_feet_original_lessons_reject_generic_cm_fallback(self):
+        a,b=fixtures()
+        for i,code,family in [
+            (60,"PED:US-CCSS-MATH:G2:U03:L08",
+             "usccss.b01.g2.measurement.inch_ruler"),
+            (61,"PED:US-CCSS-MATH:G2:U03:L09",
+             "usccss.b01.g2.measurement.feet_inch_same_length"),
+        ]:
+            a["lessonRows"][i]["lessonCode"]=code
+            b["rows"][i]["lessonCode"]=code
+            b["rows"][i]["publisherTitle"]="Measure original inch and foot units"
+            b["rows"][i]["sourcePurposePreview"]=(
+                "Measure original lengths using inch and foot units.")
+            a["lessonRows"][i]["actualQuestionFamilies"]=[
+                "usccss.b01.g2.measurement.estimate_cm"]
+            found=module.analyze(a,b)
+            self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+                [x["rule"] for x in found["rows"][i]["conflicts"]])
+            a["lessonRows"][i]["actualQuestionFamilies"]=[family]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

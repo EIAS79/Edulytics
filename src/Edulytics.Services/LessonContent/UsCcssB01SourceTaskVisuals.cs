@@ -996,6 +996,47 @@ public static class UsCcssB01SourceTaskVisuals
                                 : Array.Empty<RichLessonVisualRow>())
                             .ToList()
                     },
+                "usccss.b01.g2.measurement.inch_ruler" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L08" &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.Scale,
+                        Title="Estimate and measure in inches",
+                        Description=${"Start at 0, and measure the endpoint at " +
+                            ${"{N("actual")} inches, on 1-inch tick intervals. " +
+                            ${"Estimate: {N("estimate")} inches; difference: {q.CorrectAnswer}.",
+                        PrimaryLabel="Inch ruler (not centimeters)",
+                        SecondaryItems=["0",N("actual").ToString()],
+                        Items=Enumerable.Range(0,N("actual")+1)
+                            .Select(i=>i.ToString()).ToList()
+                    },
+                "usccss.b01.g2.measurement.feet_inch_same_length" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L09" &&
+                    ExactSkillContractQuestionEngine.Verify(q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.RatioTable,
+                        Title="Same fish tape measured with two unit sizes",
+                        Description="The small one-inch units require more tiles. " +
+                            "A full foot-length ruler covers a longer section. " +
+                            "The measured strip has not changed; the counts differ.",
+                        PrimaryLabel="Compare counted physical units",
+                        Rows=
+                        [
+                            new RichLessonVisualRow
+                            {
+                                Label="One-inch tiles",
+                                Cells=[N("inchTiles").ToString(),"1 inch each","same fish tape"]
+                            },
+                            new RichLessonVisualRow
+                            {
+                                Label="Foot-length rulers",
+                                Cells=[N("footRulers").ToString(),"12-inch ruler length",
+                                       "same fish tape"]
+                            }
+                        ]
+                    },
                 "usccss.b01.g2.measurement.estimate_cm" when
                     (lessonCode=="PED:US-CCSS-MATH:G2:U03:L04" ||
                      lessonCode=="PED:US-CCSS-MATH:G2:U03:L07") &&
