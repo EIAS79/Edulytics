@@ -133,7 +133,8 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     [Theory]
     [InlineData("PED:US-CCSS-MATH:G3:U06:L04")]
     [InlineData("PED:US-CCSS-MATH:G3:U06:L05")]
-    public void GradeThreeFractionalInchLinePlotsUseExactQuarterUnitIntervals(
+    [InlineData("PED:US-CCSS-MATH:G4:U03:L13")]
+    public void GradeThreeAndFourFractionalInchLinePlotsUseExactQuarterUnitIntervals(
         string code)
     {
         const string family="usccss.b01.g3.quarter_inch_line_plot_frequency";
@@ -150,6 +151,8 @@ public sealed class UsCcssB01SourceTaskVisualsTests
                 family,p,q.CorrectAnswer));
             var plot=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
             Assert.Equal(RichLessonVisualKind.LinePlot,plot.Kind);
+            if (code=="PED:US-CCSS-MATH:G4:U03:L13")
+                Assert.Contains("Interpret",plot.Title,StringComparison.Ordinal);
             Assert.Equal(new[]{"1 in","1 1/4 in","1 1/2 in",
                 "1 3/4 in","2 in"},plot.Rows.Select(r=>r.Label));
             for(var i=0;i<5;i++)

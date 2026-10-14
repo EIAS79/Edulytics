@@ -786,15 +786,16 @@ public static class UsCcssB01SourceTaskVisuals
                     },
                 "usccss.b01.g3.quarter_inch_line_plot_frequency" when
                     (lessonCode=="PED:US-CCSS-MATH:G3:U06:L04" ||
-                     lessonCode=="PED:US-CCSS-MATH:G3:U06:L05") &&
+                     lessonCode=="PED:US-CCSS-MATH:G3:U06:L05" ||
+                     lessonCode=="PED:US-CCSS-MATH:G4:U03:L13") &&
                     ExactSkillContractQuestionEngine.Verify(
                         q.Family,p,q.CorrectAnswer) =>
                     new RichLessonVisual
                     {
                         Kind=RichLessonVisualKind.LinePlot,
-                        Title=lessonCode.EndsWith("L04",StringComparison.Ordinal)
-                            ?"Interpret fractional inch measurement line plots"
-                            :"Construct fractional inch measurement line plots",
+                        Title=lessonCode=="PED:US-CCSS-MATH:G3:U06:L05"
+                            ?"Construct fractional inch measurement line plots"
+                            :"Interpret fractional inch measurement line plots",
                         Description="The axis advances by exactly one quarter inch " +
                             "between adjacent measurements. Every X is one " +
                             $"observation; the requested tick contains {q.CorrectAnswer}.",

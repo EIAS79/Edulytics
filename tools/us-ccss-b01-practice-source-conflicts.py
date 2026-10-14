@@ -53,6 +53,7 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G1:U05:L04": "usccss.b01.g1.add_within100_no_compose_ten",
     "PED:US-CCSS-MATH:G3:U06:L04": "usccss.b01.g3.quarter_inch_line_plot_frequency",
     "PED:US-CCSS-MATH:G3:U06:L05": "usccss.b01.g3.quarter_inch_line_plot_frequency",
+    "PED:US-CCSS-MATH:G4:U03:L13": "usccss.b01.g3.quarter_inch_line_plot_frequency",
     "PED:US-CCSS-MATH:G2:U07:L04": "usccss.b01.g2.add_subtract_1000_no_regroup",
     "PED:US-CCSS-MATH:G2:U05:L09": "usccss.b01.g2.order_three_digits_number_line",
     "PED:US-CCSS-MATH:G4:U03:L10": "usccss.b01.g4.whole_minus_proper_fraction",

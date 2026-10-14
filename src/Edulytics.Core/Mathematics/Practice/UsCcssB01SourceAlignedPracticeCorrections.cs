@@ -652,6 +652,15 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g3.quarter_inch_line_plot_frequency"],
             "IM2021_G3_U06_L05_MAKE_HALVES_QUARTERS_LINE_PLOT",
             "READY_VERIFIED", "usccss-b01-g3-fraction-line-plot-v1"),
+        // IM 2021 Grade 4 U03 L13: interpret fractional measurement
+        // data on an equally-spaced line plot (whole, halves, quarters).
+        // Use the existing source-verified quarter-inch plot family.
+        new(
+            "PED:US-CCSS-MATH:G4:U03:L13",
+            "supporting.statistics.charts", "INTERPRET_FRACTIONAL_MEASUREMENT_LINE_PLOT",
+            ["usccss.b01.g3.quarter_inch_line_plot_frequency"],
+            "IM2021_G4_U03_L13_INTERPRET_FRACTIONAL_MEASUREMENT_LINE_PLOT",
+            "READY_VERIFIED", "usccss-b01-fractional-line-plot-shared-v2"),
         // IM G2 U05 L09: three-digit magnitude by relative
         // number-line positions rather than unrelated within-100 sums.
         new(
