@@ -6,7 +6,9 @@ on:
     paths:
       - '.github/workflows/us-ccss-b01-targeted-number-line.yml'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01G2U04NumberLineEffectiveContractTests.cs'
-      - 'src/Edulytics.Core/Mathematics/Practice/UsCcssB01SourceAlignedPracticeCorrections.cs'
+      # The shared 125+lesson correction registry changes for unrelated lessons.
+      # For L10 family updates, run this targeted job manually; the final gate
+      # still re-verifies all lessons on the release candidate.
       - 'src/Edulytics.Services/LessonContent/UsCcssB01SourceBoundNumberLineVisuals.cs'
       - 'tools/us-ccss-b01-practice-source-conflicts.py'
       - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'

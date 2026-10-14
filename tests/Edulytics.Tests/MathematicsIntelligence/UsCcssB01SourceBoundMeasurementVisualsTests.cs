@@ -34,7 +34,7 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
                 .Sum(i=>p[$"count{i}"]);
             var upper=10-lower;
             Assert.Equal(p["mode"] switch {
-                0=>lower,1=>upper,_=>upper-lower
+                0=>lower,1=>upper,_=>Math.Abs(upper-lower)
             },int.Parse(q.CorrectAnswer));
             for(var i=0;i<7;i++)
             {

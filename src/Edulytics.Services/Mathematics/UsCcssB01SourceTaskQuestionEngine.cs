@@ -1022,8 +1022,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 {
                     0=>$"How many pencils are at most {startCm+targetTick} cm long?",
                     1=>$"How many pencils are longer than {startCm+targetTick} cm?",
-                    _=>$"How many more of the ten pencils are longer than {startCm+targetTick} cm than are at most this length? " +
-                       "If the longer group is smaller, enter the signed difference."
+                    _=>$"Find the difference between the number of pencils longer than " +
+                       $"{startCm+targetTick} cm and the number at most that long. " +
+                       "How many more pencils are in the larger group?"
                 };
                 var parameters=new List<(string Key,int Value)>
                 {
@@ -1661,7 +1662,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                         .Sum(i=>P($"count{i}")).ToString(CultureInfo.InvariantCulture),
                     1=>Enumerable.Range(P("targetTick")+1,6-P("targetTick"))
                         .Sum(i=>P($"count{i}")).ToString(CultureInfo.InvariantCulture),
-                    2=>(Enumerable.Range(P("targetTick")+1,6-P("targetTick"))
+                    2=>Math.Abs(Enumerable.Range(P("targetTick")+1,6-P("targetTick"))
                         .Sum(i=>P($"count{i}")) -
                         Enumerable.Range(0,P("targetTick")+1)
                         .Sum(i=>P($"count{i}"))).ToString(CultureInfo.InvariantCulture),
