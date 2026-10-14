@@ -213,7 +213,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson) ||
           CommonCoreB01FractionPurposeCorrections.IsTarget(document, lesson) ||
           CommonCoreB01PlaceValuePurposeCorrection.IsTarget(document, lesson) ||
-          CommonCoreB01UnitAndPlaceValuePurposeCorrections.IsTarget(document, lesson));
+          CommonCoreB01UnitAndPlaceValuePurposeCorrections.IsTarget(document, lesson) ||
+          CommonCoreB01NonLengthRulerTemplateCorrections.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -935,6 +936,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             document,sourceLesson,content.ContentVersion,
                             translationsByContentId.TryGetValue(content.Id,out var weightOrTenThousandExisting)
                                 ? weightOrTenThousandExisting : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreB01NonLengthRulerTemplateCorrections.IsTarget(document,sourceLesson))
+                    {
+                        CommonCoreB01NonLengthRulerTemplateCorrections.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var nonLengthExisting)
+                                ? nonLengthExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =
