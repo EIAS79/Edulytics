@@ -6,6 +6,12 @@ on:
     paths:
       - '.github/workflows/us-ccss-b01-first-edition-attribution.yml'
       - 'tests/academic-us-ccss-b01-first-edition-attribution.test.cjs'
+      - 'tests/academic-us-ccss-b01-v9-first-edition-license-ui.test.cjs'
+      - 'tests/academic-us-ccss-b01-v9-visual-math-equivalence.test.cjs'
+      - 'tools/us-ccss-b01-v9-visual-math-equivalence.cjs'
+      - 'src/Edulytics.Web/Views/Shared/_RichLessonFirstEditionAttribution.cshtml'
+      - 'src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml'
+      - 'src/Edulytics.Web/wwwroot/css/site.css'
       - 'src/Edulytics.Web/wwwroot/content-sources-licenses.html'
       - 'artifacts/academic-us-ccss/01-edition-specific-licence-evidence.json'
       - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
@@ -25,4 +31,20 @@ jobs:
         with:
           node-version: '24'
       - name: Verify no public IM source credit, preserve 500 private reference identities and fail-closed rights
-        run: node --test tests/academic-us-ccss-b01-first-edition-attribution.test.cjs
+        run: |
+          node --test tests/academic-us-ccss-b01-first-edition-attribution.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-first-edition-license-ui.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-visual-math-equivalence.test.cjs
+
+  compile-b01-cc-by-razor-attribution:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Compile the actual student-facing Razor view with CC BY source credit
+        run: |
+          dotnet restore src/Edulytics.Web/Edulytics.Web.csproj
+          dotnet build src/Edulytics.Web/Edulytics.Web.csproj --no-restore -c Release

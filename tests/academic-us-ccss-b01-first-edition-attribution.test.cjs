@@ -19,10 +19,17 @@ test('The public programme source page does not disclose internal IM academic-re
  assert.doesNotMatch(h,/im\.kendallhunt\.com/i);
  assert.doesNotMatch(h,/CCSS B01|2024 IM v\.360|ccss-b01-first-edition/i);
 });
-test('The actual student lesson view does not render any IM publisher credit or link',()=>{
+test('The student lesson has source-specific licensed CC BY attribution only through the B01 Rich V2 renderer',()=>{
  const view=fs.readFileSync(path.join(base,'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'),'utf8');
+ const rich=fs.readFileSync(path.join(base,'src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml'),'utf8');
+ const credit=fs.readFileSync(path.join(base,'src/Edulytics.Web/Views/Shared/_RichLessonFirstEditionAttribution.cshtml'),'utf8');
  assert.doesNotMatch(view,/Illustrative Mathematics|im\.kendallhunt\.com|lesson-source-attribution|Source inspiration/i);
  assert.match(view,/partial name="_RichLessonContentV2"/);
+ assert.match(rich,/Model\.LessonCode\.StartsWith\("PED:US-CCSS-MATH:"/);
+ assert.match(rich,/partial name="_RichLessonFirstEditionAttribution"/);
+ assert.match(credit,/https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//);
+ assert.match(credit,/2019–2021/);
+ assert.match(credit,/Separately attributed third-party images/);
 });
 test('General public curriculum register keeps official CCSS authority, not IM textbook references',()=>{
  const reg=fs.readFileSync(path.join(base,'src/Edulytics.Core/Curriculum/MathematicsCurriculumPackRegistry.cs'),'utf8');
