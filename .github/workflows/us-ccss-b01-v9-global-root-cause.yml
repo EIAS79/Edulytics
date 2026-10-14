@@ -34,6 +34,8 @@ on:
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-goal-signal-memory-500.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-optional-source-purpose-fallback-reviewed-metadata.json'
       - 'tests/academic-us-ccss-b01-v9-optional-source-purpose-fallback.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json'
+      - 'tests/academic-us-ccss-b01-v9-shared-comparison-cohort-44.test.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-lesson-activity-figure-context-40.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-original-activity-figure-frames-40.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-*-purpose-reviewed-metadata.json'
@@ -62,6 +64,7 @@ jobs:
       - name: Negative tests for complete coverage, identity drift and no fake certification
         run: |
           node --test tests/academic-us-ccss-b01-v9-optional-source-purpose-fallback.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-shared-comparison-cohort-44.test.cjs
           node --test tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs
           node --test tests/academic-us-ccss-b01-v9-math-element-index.test.cjs tests/academic-us-ccss-b01-v9-shared-root-cause-ledger.test.cjs
       - name: Produce one global impact graph using existing 500-source inventories and V9 indexes
