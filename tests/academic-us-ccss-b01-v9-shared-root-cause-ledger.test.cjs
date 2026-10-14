@@ -16,7 +16,8 @@ function fixture(){
  }
  const reviewed=[
   {batchId:'B01',rows:[{lessonCode:manifest.lessons[0].lessonCode,sourceSemanticSha256:'a'.repeat(64)}]},
-  {batchId:'B01',reviewedObjectives:[]},{batchId:'B01',rows:[]}
+  {batchId:'B01',reviewedObjectives:[]},{batchId:'B01',rows:[]},
+  {batchId:'B01',rows:[]}
  ];
  return {manifest,packs,reviewed};
 }
@@ -45,4 +46,25 @@ test('Single signal from words or figures cannot cause blanket template repair',
  assert.equal(x.groups.SOURCE_FIGURE_CAPTION_PLACEHOLDER.sourceGoalReviewedCandidates,0);
  assert.equal(x.rows[2].rootCauseCandidates[0].reviewState,'SOURCE_GOAL_NOT_VERIFIED');
  assert.equal(x.rows[2].independentL1L6Evidence,'NOT_IN_THIS_AUDIT');
+});
+
+test('Every ruler template cue is partitioned by explicit goal without certifying content',()=>{
+ const x=fixture();
+ x.packs[0].lessons[0].translations[0].explanation='Learning goal: Measure length with a ruler. ';
+ x.packs[0].lessons[1].translations[0].explanation='Learning goal: Compare fractions on a number line. ';
+ const audit=summarize(x), group=audit.groups.SHARED_RULER_METHOD_TEMPLATE;
+ assert.deepEqual(group.byGoalContext,{
+  LENGTH_CONTEXT_POSSIBLY_RELEVANT:1,NUMBER_LINE_CONTEXT_REVIEW:1,
+  NON_LENGTH_GOAL_SOURCE_REVIEW:0,GOAL_UNRESOLVED:0});
+ assert.equal(audit.academicDecision,'BATCH_NO-GO');
+ assert.equal(audit.rows[0].rootCauseCandidates[0].goalContext,'LENGTH_CONTEXT_POSSIBLY_RELEVANT');
+ assert.equal(audit.rows[1].rootCauseCandidates[0].goalContext,'NUMBER_LINE_CONTEXT_REVIEW');
+});
+test('Non-length goal stays review-only even if source reference is fingerprint-verified',()=>{
+ const x=fixture();
+ x.packs[0].lessons[0].translations[0].explanation='Learning goal: Compose hundreds as ten tens.';
+ const audit=summarize(x);
+ assert.equal(audit.rows[0].rootCauseCandidates[0].goalContext,'NON_LENGTH_GOAL_SOURCE_REVIEW');
+ assert.equal(audit.rows[0].rootCauseCandidates[0].reviewState,'SOURCE_GOAL_REVIEWED_REQUIRES_RUNTIME_RETEST');
+ assert.equal(audit.rows[0].certifiedByThisIndex,false);
 });
