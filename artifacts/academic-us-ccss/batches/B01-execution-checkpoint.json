@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "2026-10-14: user clarified original-authoring requirement: IM books are ONLY internal academic QA references, not intended for publication/adaptation. Source comparison on authorized read-only Our-CS identified near-verbatim learner explanation in G2 U05 L06; guarded correction revised it to independently written place-value explanations and examples (v2), no academic PASS claimed. Added V9 policy reference-only vs actual adapted protected material. Ran exact 500/500 conservative learner text authorship heuristic in GitHub Actions #38598497728: 440 review CANDIDATES, not proof of copying and not clearance of other 60. New candidate review GitHub workflow 3/3 test success. Existing public IM credit retained temporarily because production corpus still requires source-overlap verification; do not remove legally necessary attribution prematurely.",
-  "nextExactOperation": "Complete independent authoring review of 500 effective learner bodies and rich/practice examples against original teacher sources; group shared template/narrative transplant causes and replace confirmed protected prose/prompts/images with independently authored alternatives while retaining verified academic objectives. Only then remove IM from public Edulytics credits if no protectable IM material remains in published B01 (retain QA provenance internally). Re-run final 500 tests, obtain verified L1–L6 + 8 dimensions, rights as applied to what is actually published, and Render/live gates. NEVER pretend index cues establish copying or independence. B01 remains NO-GO.",
+  "lastCompletedOperation": "2026-10-14: V9 shared-root-cause B01 scope restored. GitHub Actions run 38602993107 indexed all exact 500 lesson identities in ONE audit, grouped common source-template candidates: SHARED_RULER_METHOD_TEMPLATE 63 lessons, SOURCE_FIGURE_CAPTION_PLACEHOLDER 44 lessons, LEARNER_TEACHER_PRONOUN_DRIFT 2 lessons (overlap possible). Negative tests 3/3 pass. Group counts are candidates, NOT confirmed defects; checked original teacher preparations of G3 U06 L06 weight and G4 U04 L06 place-value, found generic ruler instructions not aligned with distinct lesson goals, applied two guarded, independently authored corrective bodies via one common repair authority. Targeted .NET regression run 38602652703 PASS; all 500 still NOT CERTIFIED except 1 historical certification; no merge/deploy.",
+  "nextExactOperation": "Work ROOT-CAUSE BY ROOT-CAUSE, NOT lesson-by-lesson. For all 63 recurring ruler-template candidates, compare SOURCE PURPOSE and effective Rich V2 content to classify inappropriate template vs correct ruler instruction; retain legitimate measurement lessons unchanged. For 44 source figure caption placeholder candidates verify actual rendered graphics and source-compatible visuals before edits. For 2 narrative pronoun candidates verify learner presentation; perform bounded shared-source-component repairs with identity/semantic SHA guards. Continue same shared-root-cause process across other mathematical, visual and question-family patterns, run impact-specific plus 500 final tests, collect real L1-L6 8-dimension evidence. Do not infer copyright infringement from ordinary mathematical similarity or request default publisher permission. Do not start B02; B01 remains NO-GO until evidence 500/500 + deployment/live checks.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -212,5 +212,21 @@
     "publicAttributionRemoval": "DEFERRED_PENDING_VERIFIED_INDEPENDENCE",
     "placeValueVersion": "usccss-b01-g2-u05-l06-placevalue-purpose-independent-v2",
     "academicDecision": "NOT_CERTIFIED"
+  },
+  "v9RootCauseGrouping": {
+    "workflow": ".github/workflows/us-ccss-b01-v9-shared-root-cause.yml",
+    "run": 38602993107,
+    "conclusion": "success",
+    "testsPassed": 3,
+    "testsFailed": 0,
+    "coverage": 500,
+    "groups": {
+      "SHARED_RULER_METHOD_TEMPLATE": 63,
+      "SOURCE_FIGURE_CAPTION_PLACEHOLDER": 44,
+      "LEARNER_TEACHER_PRONOUN_DRIFT": 2
+    },
+    "interpretation": "REVIEW_CANDIDATES_ONLY_NOT_CONFIRMED_DEFECTS",
+    "currentFix": "TWO_SOURCE_VERIFIED_REPAIRS_RETESTED",
+    "release": "NOT_CERTIFIED"
   }
 }
