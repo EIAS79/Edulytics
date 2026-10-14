@@ -14,6 +14,7 @@ on:
       - 'artifacts/academic-us-ccss/04-lesson-certification-records.json'
       - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
       - 'tools/us-ccss-b01-release-gate.cjs'
+      - '.github/workflows/us-ccss-b01-500-release.yml'
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01FractionPurposeCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
