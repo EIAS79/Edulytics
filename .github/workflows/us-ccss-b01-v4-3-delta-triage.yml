@@ -1,0 +1,86 @@
+name: US CCSS B01 V4.3 Reuse-Only Delta Triage
+
+on:
+  push:
+    branches: [audit/us-ccss-b01-500-lesson-certification]
+    paths:
+      - '.github/workflows/us-ccss-b01-v4-3-delta-triage.yml'
+      - 'tools/us-ccss-b01-delta-review.cjs'
+      - 'tests/academic-us-ccss-b01-delta-review.test.cjs'
+  workflow_dispatch:
+    inputs:
+      baseline_run_id:
+        description: 'Prior successful 500-lesson audit run'
+        default: '38492263814'
+        type: string
+        required: true
+      baseline_code_sha:
+        description: 'Tested application SHA from the same run'
+        default: 'dfe40ca9c238f45967b436e937cfb6187e7975d5'
+        type: string
+        required: true
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: b01-v43-delta-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  group-reused-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PRIOR_RUN: ${{ inputs.baseline_run_id || '38492263814' }}
+      PRIOR_SHA: ${{ inputs.baseline_code_sha || 'dfe40ca9c238f45967b436e937cfb6187e7975d5' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test 500-lesson joins, SHA invalidation and no fake PASS
+        run: node --test tests/academic-us-ccss-b01-delta-review.test.cjs
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-rich-v2-publisher-visual-gaps
+          run-id: ${{ env.PRIOR_RUN }}
+          github-token: ${{ github.token }}
+          path: reused-visual
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-original-teacher-activities-500
+          run-id: ${{ env.PRIOR_RUN }}
+          github-token: ${{ github.token }}
+          path: reused-activity
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-unified-eight-dimension-report-500
+          run-id: ${{ env.PRIOR_RUN }}
+          github-token: ${{ github.token }}
+          path: reused-unified
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-collective-evidence-progress-500
+          run-id: ${{ env.PRIOR_RUN }}
+          github-token: ${{ github.token }}
+          path: reused-progress
+      - name: Compile previous review cues by root cause, WITHOUT full rescanning
+        run: |
+          node tools/us-ccss-b01-delta-review.cjs \
+            --manifest artifacts/academic-us-ccss/batches/B01-lesson-manifest.json \
+            --visual reused-visual/b01-rich-v2-source-visual-gaps-500.json \
+            --activity reused-activity/b01-original-teacher-activities-500.json \
+            --unified reused-unified/b01-unified-eight-dimension-report-500.json \
+            --progress reused-progress/b01-collective-evidence-progress-500.json \
+            --run-id "$PRIOR_RUN" --baseline-sha "$PRIOR_SHA" \
+            --output b01-v4-3-delta-review
+      - name: Preserve grouped review queue and L1-L6 gaps (no ledger changes)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: b01-v4-3-reused-evidence-root-cause-queue
+          path: |
+            b01-v4-3-delta-review.json
+            b01-v4-3-delta-review.md
+          if-no-files-found: warn
+          retention-days: 30
