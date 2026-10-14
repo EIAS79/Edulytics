@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test');
 const assert=require('node:assert/strict');
-const {verifyOriginalActivityFigures}=require('../tools/us-ccss-b01-v9-activity-figure-source-contract.cjs');
+const {verifyOriginalActivityFigures,sourceFigureReleasePreflight}=require('../tools/us-ccss-b01-v9-activity-figure-source-contract.cjs');
 function fixture(){
  const codes=Array.from({length:500},(_,i)=>'PED:US-CCSS-MATH:G2:U01:L'+String(i+1).padStart(3,'0'));
  const a='a'.repeat(64),b='b'.repeat(64);
@@ -85,4 +85,23 @@ test('Same counts from unrelated source frames cannot be silently treated as dia
  assert.equal(r.rows[0].sourceSemanticFigureMathematics,'NOT_VERIFIED');
  assert.equal(r.rows[0].publisherAssetReuseRight,'NOT_VERIFIED');
  assert.equal(r.blockedSourceFigureLessons,40);
+});
+
+test('Final collective 500 release cannot treat 383 source image pointers as 336 verified visual diagrams',()=>{
+ const f=fixture(),s=sourceFigureReleasePreflight(f);
+ assert.equal(s.coverage.totalLessons,500);
+ assert.equal(s.coverage.sourceFigureLessons,40);
+ assert.equal(s.coverage.unmappedFrames,80);
+ assert.equal(s.coverage.mediaPointers,120);
+ assert.equal(s.releaseEligible,false);
+ assert.equal(s.noAutomaticPublisherAssetReuse,true);
+ assert.equal(s.academicDecision,'BATCH_NO-GO');
+});
+test('Static gate rejects forged rights and false semantic image proof',()=>{
+ const a=fixture();a.activity.rows[0].rightsReview='APPROVED';
+ assert.throws(()=>sourceFigureReleasePreflight(a));
+ const b=fixture();b.activity.rows[0].sourceFigureContexts[0].mediaAssetToFigureIndexProven=true;
+ assert.throws(()=>sourceFigureReleasePreflight(b));
+ const c=fixture();c.context.rows[3].sourceSemanticSha256='b'.repeat(64);
+ assert.throws(()=>sourceFigureReleasePreflight(c));
 });
