@@ -12,7 +12,7 @@ namespace Edulytics.Tests.Phase29;
 public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
 {
     [Fact]
-    public void MetadataOnlyStartupSelector_ExposesExactlyOneHundredSixtySourceBoundLessons()
+    public void MetadataOnlyStartupSelector_ExposesExactV9SourceBoundRootCohorts()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var chosen = documents.SelectMany(d => d.Lessons
@@ -22,7 +22,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             .ToArray();
 
         // Source-bound corrections counted as a SET: of the 23 V9 root members, G4 U02 L03 was already selected by the HTML display fix; only 22 identities are new.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3 + 22 + 1 + 19 + 28 + 18; // addition 21 cohort targets; 3 already source-bound
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3 + 22 + 1 + 19 + 28 + 18 + 16; // addition adds 18 distinct and vetted subtraction adds up to 16
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
@@ -86,6 +86,10 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             CommonCoreB01V9SharedAdditionProcedureCorrections.IsTarget(d,l))).Select(l=>l.LessonCode).ToArray();
         Assert.Equal(21,verifiedAdditionProcedures.Length);
         Assert.All(verifiedAdditionProcedures,code=>Assert.Contains(code,selected));
+        var subtractionProcedures=documents.SelectMany(d=>d.Lessons.Where(l=>
+            CommonCoreB01V9SharedSubtractionProcedureCorrections.IsTarget(d,l))).Select(l=>l.LessonCode).ToArray();
+        Assert.Equal(16,subtractionProcedures.Length);
+        Assert.All(subtractionProcedures,code=>Assert.Contains(code,selected));
 
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L04", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L10", selected);

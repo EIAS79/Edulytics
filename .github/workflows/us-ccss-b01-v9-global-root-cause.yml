@@ -24,6 +24,9 @@ on:
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedComparisonProcedureCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedGeometryProcedureCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedAdditionProcedureCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedSubtractionProcedureCorrections.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedSubtractionProcedureCorrectionsTests.cs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-shared-subtraction-procedure-16-source-bound-repair.json'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedAdditionProcedureCorrectionsTests.cs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-addition-template-25-source-goal-activity-reviewed.json'
       - 'tests/academic-us-ccss-b01-v9-addition-cohort-25.test.cjs'
@@ -104,7 +107,7 @@ jobs:
       - name: Materialize 500 corrections and compose Rich V2 from actual application
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
-            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedGeometryProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedAdditionProcedureCorrectionsTests|FullyQualifiedName~CommonCoreG4MultiplesSourceCorrectionTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
+            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedGeometryProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedAdditionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedSubtractionProcedureCorrectionsTests|FullyQualifiedName~CommonCoreG4MultiplesSourceCorrectionTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
             --logger 'console;verbosity=normal'
       - name: Join ALL 25 raw root cohorts to 500 effective Rich V2 facts and source purposes
         run: |
