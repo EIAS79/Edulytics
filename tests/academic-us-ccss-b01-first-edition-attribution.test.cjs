@@ -27,7 +27,7 @@ test('The actual student lesson view does not render any IM publisher credit or 
 test('General public curriculum register keeps official CCSS authority, not IM textbook references',()=>{
  const reg=fs.readFileSync(path.join(base,'src/Edulytics.Core/Curriculum/MathematicsCurriculumPackRegistry.cs'),'utf8');
  const start=reg.indexOf('            CommonCoreCode,');
- const end=reg.indexOf('        new(',start+50);
+ const end=reg.indexOf('\n        new(\n',start+50);
  assert.ok(start>0&&end>start,'Could not isolate Common Core pack configuration');
  const us=reg.slice(start,end);
  assert.match(us,/Common Core State Standards Initiative/);
