@@ -1,0 +1,42 @@
+name: US CCSS B01 V9 Full-Batch Math Element Discovery
+
+# Pre-certification, 500/500 candidate discovery only.
+# This job never edits production content, rewrites ledgers, or certifies lessons.
+on:
+  push:
+    branches:
+      - audit/us-ccss-b01-500-lesson-certification
+    paths:
+      - 'tools/us-ccss-b01-v9-math-element-index.cjs'
+      - 'tests/academic-us-ccss-b01-v9-math-element-index.test.cjs'
+      - '.github/workflows/us-ccss-b01-v9-math-elements.yml'
+      - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: b01-v9-element-index-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  index-all-500:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate complete coverage and reject false certification
+        run: node --test tests/academic-us-ccss-b01-v9-math-element-index.test.cjs
+      - name: Index mathematical element candidates across complete B01
+        run: node tools/us-ccss-b01-v9-math-element-index.cjs --out=b01-v9-math-elements.json
+      - name: Publish metadata-only, non-certification candidate index
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-v9-math-elements-500-candidates
+          path: b01-v9-math-elements.json
+          retention-days: 30
