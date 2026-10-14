@@ -41,6 +41,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.ruler.compare_centimeters",
         "usccss.b01.g2.measurement.read_line_plot",
         "usccss.b01.g3.quarter_inch_line_plot_frequency",
+        "usccss.b01.g4.eighth_inch_line_plot_difference",
         "usccss.b01.g3.picture_graph.scaled_compare",
         "usccss.b01.g3.picture_graph.construct",
         "usccss.b01.g2.compare_tape_difference",
@@ -109,6 +110,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
     private static Dictionary<string, int> D(params (string Key, int Value)[] pairs) =>
         pairs.ToDictionary(x => x.Key, x => x.Value, StringComparer.Ordinal);
+
+    // Explicit eighth-inch tick labels. 2/8 and 4/8 preserve the actual
+    // eighth-inch plotting grid while representing fourths and halves.
+    private static string EighthLabel(int whole, int tick) =>
+        tick == 0 ? whole.ToString(CultureInfo.InvariantCulture) :
+        tick == 8 ? (whole+1).ToString(CultureInfo.InvariantCulture) :
+        $"{whole} {tick}/8";
 
     private static Problem Make(string family, string prompt, string explanation,
         AssessmentItemType type, Dictionary<string, int> p) =>
@@ -901,6 +909,35 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     D(("scale",m),("aIcons",a),("bIcons",b)));
             }
 
+            // Official G4 U03 L13: the source requires eighth-inch data,
+            // not merely the earlier Grade 3 quarter-inch frequency task.
+            // Compare two actually plotted measurements using eighths.
+            case "usccss.b01.g4.eighth_inch_line_plot_difference":
+            {
+                var whole=r.Next(7,10);
+                var counts=Enumerable.Range(0,9).Select(_=>r.Next(1,4)).ToArray();
+                var firstTick=r.Next(1,8);
+                var lastTick=r.Next(firstTick+1,9);
+                var data=Enumerable.Range(0,9)
+                    .SelectMany(i=>Enumerable.Repeat(EighthLabel(whole,i),counts[i]))
+                    .OrderBy(_=>r.Next()).ToArray();
+                var parameters=Enumerable.Range(0,9)
+                    .Select(i=>($"count{i}",counts[i])).ToList();
+                parameters.Add(("whole",whole));
+                parameters.Add(("firstTick",firstTick));
+                parameters.Add(("lastTick",lastTick));
+                return Make(f,
+                    "The following shoe lengths in inches were measured to the nearest " +
+                    "eighth: " + string.Join(", ",data) + ". Make a line plot " +
+                    "with one X per observation and marks 1/8 inch apart. " +
+                    $"Find the difference between {EighthLabel(whole,lastTick)} " +
+                    $"and {EighthLabel(whole,firstTick)} inches. " +
+                    "Give the answer in eighths of an inch (denominator 8).",
+                    "Use the equally spaced eighth-inch ticks on the line plot: " +
+                    $"({lastTick}-{firstTick})/8 = {lastTick-firstTick}/8 inch.",
+                    AssessmentItemType.ShortAnswer,D(parameters.ToArray()));
+            }
+
             // Source G3 U06 L04–L05: read/construct a line plot with
             // quarter- and half-inch measurements, not just whole units.
             case "usccss.b01.g3.quarter_inch_line_plot_frequency":
@@ -1516,6 +1553,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     .ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g3.picture_graph.construct" =>
                 P("bIcons").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g4.eighth_inch_line_plot_difference" =>
+                $"{P("lastTick")-P("firstTick")}/8",
             "usccss.b01.g3.quarter_inch_line_plot_frequency" =>
                 P("targetTick") switch
                 {
@@ -1830,6 +1869,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g3.picture_graph.construct" =>
                 (N("scale") is 2 or 5) &&
                 Range("aIcons",2,5) && Range("bIcons",1,6),
+            "usccss.b01.g4.eighth_inch_line_plot_difference" =>
+                Range("whole",7,9) &&
+                Range("firstTick",1,7) &&
+                Range("lastTick",2,8) &&
+                N("lastTick")>N("firstTick") &&
+                Enumerable.Range(0,9).All(i=>Range($"count{i}",1,3)),
             "usccss.b01.g3.quarter_inch_line_plot_frequency" =>
                 Range("count1",1,4) && Range("count2",1,4) &&
                 Range("count3",1,4) && Range("count4",1,4) &&
