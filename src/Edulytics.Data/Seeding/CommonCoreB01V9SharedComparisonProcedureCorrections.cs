@@ -66,6 +66,15 @@ public static class CommonCoreB01V9SharedComparisonProcedureCorrections
             _ => throw new InvalidOperationException("Unreviewed shared academic procedure family: " + family)
         };
 
+    // Exact final state for the ONE intersection with the earlier shared
+    // non-measure root. This is checked again on repeated materialization.
+    public static bool MatchesFinalProcedure(string lessonCode, string steps, string mistakes)
+    {
+        if (!ByCode.TryGetValue(lessonCode, out var guard)) return false;
+        var (expectedSteps, expectedMistakes) = ForFamily(guard.Family);
+        return steps == expectedSteps && mistakes == expectedMistakes;
+    }
+
     public static bool IsTarget(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson) =>
         doc.PackCode == "US-CCSS-MATH" && doc.VersionCode == "CCSSM-2010" &&
