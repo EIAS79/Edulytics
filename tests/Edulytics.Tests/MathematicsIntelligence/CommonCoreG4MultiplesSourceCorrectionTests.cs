@@ -86,9 +86,14 @@ public sealed class CommonCoreG4MultiplesSourceCorrectionTests
         var (doc, _, _) = GetEffectiveLesson();
         var another = Assert.Single(doc.Lessons,
             x => x.LessonCode == "PED:US-CCSS-MATH:G4:U01:L02");
-        Assert.Equal(CommonCoreRichContentCorrections.CorrectionContentVersion,
-            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, another));
+        // This lesson is NOT part of the older G4 multiples repair; it now
+        // has a separate, source-verified V9 rectangle-factor-pair procedure.
+        // Preserve the older correction boundary and test the later effective
+        // version rather than incorrectly pinning it to raw Rich Content V1.
         Assert.False(CommonCoreG4MultiplesSourceCorrection.IsTarget(doc, another));
+        Assert.True(CommonCoreB01V9SharedGeometryProcedureCorrections.IsTarget(doc, another));
+        Assert.Equal(CommonCoreB01V9SharedGeometryProcedureCorrections.CorrectedVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, another));
     }
 
     [Fact]
