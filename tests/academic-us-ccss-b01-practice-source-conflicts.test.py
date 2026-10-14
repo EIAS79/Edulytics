@@ -95,6 +95,22 @@ class WholeBatchSemanticTests(unittest.TestCase):
             "usccss.b01.g2.measurement.pencil_line_plot"]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_g2_u03_l04_estimate_cm_cannot_fall_back_to_generic_measuring(self):
+        a,b=fixtures()
+        code="PED:US-CCSS-MATH:G2:U03:L04"
+        a["lessonRows"][41]["lessonCode"]=code
+        b["rows"][41]["lessonCode"]=code
+        b["rows"][41]["publisherTitle"]="Measure and Estimate in Centimeters"
+        b["rows"][41]["sourcePurposePreview"]=(
+            "Estimate object lengths, then measure using a centimeter ruler.")
+        a["lessonRows"][41]["actualQuestionFamilies"]=["supporting.measurement.unit_iteration"]
+        result=module.analyze(a,b)
+        self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+            [x["rule"] for x in result["rows"][41]["conflicts"]])
+        a["lessonRows"][41]["actualQuestionFamilies"]=[
+            "usccss.b01.g2.measurement.estimate_cm"]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

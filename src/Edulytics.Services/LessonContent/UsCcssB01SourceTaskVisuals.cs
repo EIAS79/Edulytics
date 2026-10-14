@@ -850,6 +850,27 @@ public static class UsCcssB01SourceTaskVisuals
                     },
                 // Grade 2 U09 L04: measured pencil data must actually
                 // produce one X per pencil with a consistent centimeter axis.
+                // G2 U03 L04: the actual centimeter measurement is
+                // read at the endpoint of an equal-unit ruler. No guessed
+                // measurements or extrapolated longer-object activity.
+                "usccss.b01.g2.measurement.estimate_cm" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L04" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.Scale,
+                        Title="Estimate, then measure with centimeter marks",
+                        Description=$"First estimate: {N("estimate")} cm. " +
+                            $"Start at the ruler's 0 mark; the object ends " +
+                            $"at {N("actual")} cm. The error is " +
+                            $"{N("error")} cm, verified from the ruler values. " +
+                            "Each adjacent ruler tick is 1 cm.",
+                        PrimaryLabel=$"Measured: {N("actual")} cm; estimate: {N("estimate")} cm",
+                        SecondaryItems=["0",N("actual").ToString()],
+                        Items=Enumerable.Range(0,N("actual")+1)
+                            .Select(i=>i.ToString()).ToList()
+                    },
                 "usccss.b01.g2.measurement.pencil_line_plot" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U09:L04" &&
                     ExactSkillContractQuestionEngine.Verify(

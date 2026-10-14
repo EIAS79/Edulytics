@@ -149,6 +149,7 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G1:U07:L15": "usccss.b01.clock.read_half_hour",
     "PED:US-CCSS-MATH:G2:U06:L12": "usccss.b01.clock.read_five_minutes",
     "PED:US-CCSS-MATH:G2:U08:L12": "usccss.b01.rectangle.unit_squares",
+    "PED:US-CCSS-MATH:G2:U03:L04": "usccss.b01.g2.measurement.estimate_cm",
     "PED:US-CCSS-MATH:G2:U09:L04": "usccss.b01.g2.measurement.pencil_line_plot",
     "PED:US-CCSS-MATH:G2:U09:L03": "usccss.b01.measure.map_lengths",
     "PED:US-CCSS-MATH:G3:U01:L06": "usccss.b01.graph.choose_scale",

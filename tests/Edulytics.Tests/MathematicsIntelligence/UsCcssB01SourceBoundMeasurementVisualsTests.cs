@@ -9,6 +9,61 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
 {
+    private const string G2Estimate = "PED:US-CCSS-MATH:G2:U03:L04";
+
+    [Fact]
+    public void Grade2U03L04EstimationsMatchExactCentimeterRuler()
+    {
+        const string family="usccss.b01.g2.measurement.estimate_cm";
+        Assert.True(LessonPracticeContractRegistry.TryResolve(G2Estimate,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var engine=new ExactSkillContractQuestionEngine();
+        var over=0;
+        var under=0;
+        for(var seed=921000;seed<921096;seed++)
+        {
+            var q=Assert.Single(engine.Generate(
+                "b01-g2-u03-estimate-measure",G2Estimate,[family],
+                ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+            var p=q.Parameters;
+            var actual=p["actual"];
+            var estimate=p["estimate"];
+            Assert.InRange(actual,5,30);
+            Assert.Equal(Math.Abs(actual-estimate),p["error"]);
+            Assert.Equal(p["error"],int.Parse(q.CorrectAnswer));
+            if(estimate>actual)over++;else under++;
+            var diagram=Assert.Single(UsCcssB01SourceTaskVisuals.Build(
+                G2Estimate,[q]));
+            Assert.Equal(RichLessonVisualKind.Scale,diagram.Kind);
+            var tickValues=diagram.Items.Select(int.Parse).ToArray();
+            Assert.Equal(actual+1,tickValues.Length);
+            Assert.Equal(actual,tickValues[^1]);
+            for(var i=1;i<tickValues.Length;i++)
+                Assert.Equal(1,tickValues[i]-tickValues[i-1]);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                G2Estimate,[q with {CorrectAnswer="999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G2:U03:L05",[q]));
+        }
+        Assert.True(over>0 && under>0);
+
+        var lesson=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(doc=>doc.PackCode=="US-CCSS-MATH" &&
+                        doc.VersionCode=="CCSSM-2010")
+            .SelectMany(doc=>doc.Lessons)
+            .Single(x=>x.LessonCode==G2Estimate);
+        var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+        var body=new CanonicalLessonTranslationRecord(en.CultureCode,en.Title,
+            en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,
+            en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary);
+        var rich=RichLessonContentV2Registry.Find(G2Estimate,"en") ??
+            RichLessonContentV2RuntimeComposer.TryCompose(G2Estimate,body);
+        Assert.NotNull(rich);
+        Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.Scale);
+    }
+
     private const string G2Plot = "PED:US-CCSS-MATH:G2:U09:L04";
 
     [Fact]

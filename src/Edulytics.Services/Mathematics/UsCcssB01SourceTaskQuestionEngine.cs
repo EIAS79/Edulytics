@@ -38,6 +38,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.clock.read_five_minutes",
         "usccss.b01.rectangle.unit_squares",
         "usccss.b01.measure.map_lengths",
+        "usccss.b01.g2.measurement.estimate_cm",
         "usccss.b01.ruler.compare_centimeters",
         "usccss.b01.g2.measurement.read_line_plot",
         "usccss.b01.g2.measurement.pencil_line_plot",
@@ -1006,6 +1007,23 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // IM Grade 2 U09 L04: represent ten REAL (simulated) measured
             // pencil lengths, one X per centimeter observation, then
             // add/subtract the count of observations within 20.
+            // IM G2 U03 L04: estimate, then measure with a 1cm ruler.
+            // Longer (50–90cm) ruler iteration remains a separate source task.
+            case "usccss.b01.g2.measurement.estimate_cm":
+            {
+                var actual=r.Next(5,31);
+                var error=r.Next(1,Math.Min(6,actual));
+                var estimate=r.Next(0,2)==0 ? actual-error : actual+error;
+                return Make(f,
+                    $"A classroom object was estimated to be {estimate} cm long. " +
+                    $"A ruler placed at zero shows its endpoint at {actual} cm. " +
+                    "How many centimeters off was the estimate?",
+                    "Measure with equally spaced 1 cm marks starting at zero, " +
+                    "then compare the estimate with the measured length.",
+                    AssessmentItemType.Numeric,
+                    D(("actual",actual),("estimate",estimate),("error",error)));
+            }
+
             case "usccss.b01.g2.measurement.pencil_line_plot":
             {
                 var startCm=r.Next(8,12);
@@ -1655,6 +1673,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     2=>P($"count{P("targetTick")}").ToString(CultureInfo.InvariantCulture),
                     _=>throw new InvalidOperationException()
                 },
+            "usccss.b01.g2.measurement.estimate_cm" =>
+                Math.Abs(P("actual")-P("estimate")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.pencil_line_plot" =>
                 P("mode") switch
                 {
@@ -1991,6 +2011,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Enumerable.Range(0,11).Sum(i=>N($"count{i}"))==10 &&
                 Enumerable.Range(N("lastTick")+1,10-N("lastTick"))
                     .All(i=>N($"count{i}")==0),
+            "usccss.b01.g2.measurement.estimate_cm" =>
+                Range("actual",5,30) && Range("estimate",1,35) &&
+                Range("error",1,5) &&
+                Math.Abs(N("actual")-N("estimate"))==N("error"),
             "usccss.b01.g2.measurement.pencil_line_plot" =>
                 Range("start",8,11) && Range("targetTick",0,6) &&
                 Range("mode",0,2) &&

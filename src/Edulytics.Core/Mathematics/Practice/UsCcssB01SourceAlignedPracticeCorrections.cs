@@ -427,6 +427,15 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             "READY_VERIFIED", "usccss-b01-source-task-v1"),
         // IM G2 U09 L04: measure multiple pencil lengths in centimeters,
         // construct an X-mark line plot and add/subtract frequencies within 20.
+        // IM G2 U03 L04: estimate 5–30 cm objects, then use a standard
+        // zero-aligned centimeter ruler and compare estimate to measurement.
+        // The separate 50–90 cm ruler-iteration teacher activity is not certified.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L04",
+            "supporting.measurement.practical", "ESTIMATE_THEN_MEASURE_CM",
+            ["usccss.b01.g2.measurement.estimate_cm"],
+            "IM2021_G2_U03_L04_ESTIMATE_STANDARD_RULER_CENTIMETERS",
+            "READY_VERIFIED", "usccss-b01-g2-u03-ruler-estimate-v1"),
         new(
             "PED:US-CCSS-MATH:G2:U09:L04",
             "supporting.measurement.practical", "MEASURE_AND_PLOT_PENCILS",
