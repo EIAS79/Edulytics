@@ -38,6 +38,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.clock.read_five_minutes",
         "usccss.b01.rectangle.unit_squares",
         "usccss.b01.measure.map_lengths",
+        "usccss.b01.g1.measure.same_length_different_units",
         "usccss.b01.g2.measurement.estimate_cm",
         "usccss.b01.g2.measurement.iterate_ruler_cm",
         "usccss.b01.ruler.compare_centimeters",
@@ -1125,6 +1126,28 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     D(("start",a),("end",n),("length",b)));
             }
 
+            // Same physical tape measured with original teacher's 1in and
+            // 2in paper clips. Changing unit size changes the count.
+            case "usccss.b01.g1.measure.same_length_different_units":
+            {
+                var inches=new[]{12,16,18,20,24}[r.Next(0,5)];
+                var mode=r.Next(0,3);
+                return Make(f,
+                    $"A tape is {inches} inches long. Measure the SAME " +
+                    "tape with 1-inch paper clips and 2-inch paper clips, " +
+                    "without gaps or overlaps. " +
+                    (mode switch
+                    {
+                        0=>"How many 1-inch clips are needed?",
+                        1=>"How many 2-inch clips are needed?",
+                        _=>"How many MORE 1-inch clips than 2-inch clips are needed?"
+                    }),
+                    "The physical length remains unchanged. Larger units " +
+                    "need fewer clips for the same object.",
+                    AssessmentItemType.Numeric,
+                    D(("tapeInches",inches),("oneInchCount",inches),
+                      ("twoInchCount",inches/2),("mode",mode)));
+            }
             case "usccss.b01.measure.map_lengths":
                 a = r.Next(2, 11);
                 b = r.Next(2, Math.Min(21 - a, 11));
@@ -1724,6 +1747,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 (P("longLength")-P("shortLength")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.ruler.measure_without_zero" =>
                 (P("end")-P("start")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.measure.same_length_different_units" =>
+                (P("mode") switch
+                {
+                    0=>P("oneInchCount"),
+                    1=>P("twoInchCount"),
+                    2=>P("oneInchCount")-P("twoInchCount"),
+                    _=>throw new InvalidOperationException()
+                }).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.measure.map_lengths" =>
                 (P("mode") == 0 ? P("a") + P("b") : P("b"))
                     .ToString(CultureInfo.InvariantCulture),
@@ -2061,6 +2092,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("start",2,9) && Range("end",5,22) &&
                 Range("length",3,13) &&
                 N("length")==N("end")-N("start"),
+            "usccss.b01.g1.measure.same_length_different_units" =>
+                N("tapeInches") is 12 or 16 or 18 or 20 or 24 &&
+                N("oneInchCount")==N("tapeInches") &&
+                N("twoInchCount")*2==N("tapeInches") &&
+                Range("mode",0,2),
             "usccss.b01.measure.map_lengths" =>
                 Range("a",2,10) && Range("b",2,10) &&
                 N("a")+N("b")<=20 && Range("mode",0,1),

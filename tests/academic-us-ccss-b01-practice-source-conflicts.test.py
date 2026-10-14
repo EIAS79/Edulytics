@@ -112,6 +112,24 @@ class WholeBatchSemanticTests(unittest.TestCase):
             "usccss.b01.g2.measurement.iterate_ruler_cm"]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_g1_u06_l07_requires_same_object_two_different_units(self):
+        a,b=fixtures()
+        code="PED:US-CCSS-MATH:G1:U06:L07"
+        a["lessonRows"][45]["lessonCode"]=code
+        b["rows"][45]["lessonCode"]=code
+        b["rows"][45]["publisherTitle"]="Measure Length with Different Length Units"
+        b["rows"][45]["sourcePurposePreview"]=(
+            "Measure the same tape using 1-inch and 2-inch paper clips.")
+        a["lessonRows"][45]["actualQuestionFamilies"]=[
+            "supporting.measurement.unit_iteration"]
+        result=module.analyze(a,b)
+        self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+            [x["rule"] for x in result["rows"][45]["conflicts"]])
+        a["lessonRows"][45]["actualQuestionFamilies"]=[
+            "supporting.measurement.unit_iteration",
+            "usccss.b01.g1.measure.same_length_different_units"]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

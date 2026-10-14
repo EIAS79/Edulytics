@@ -286,14 +286,15 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["supporting.number.place_value"],
             "IM2021_G2_U05_L05_EXPANDED_FORM_SOURCE_ALIGNED",
             "READY_VERIFIED", "usccss-b01-source-scope-v1"),
-        // Grade 1 U06 L07: source goal is direct-unit iteration to
-        // measure the same object using different length units, not unit rates.
+        // Original G1 U06 L07: compare paper clips of two lengths for
+        // the SAME tape, retaining the earlier unit-count Practice case.
         new(
             "PED:US-CCSS-MATH:G1:U06:L07",
-            "supporting.measurement.practical", "LENGTH_UNIT_ITERATION",
-            ["supporting.measurement.unit_iteration"],
-            "IM2021_G1_U06_L07_MEASURE_WITH_DIFFERENT_UNITS",
-            "READY_VERIFIED", "usccss-b01-source-scope-v1"),
+            "supporting.measurement.practical", "LENGTH_UNIT_ITERATION_TWO_UNITS",
+            ["supporting.measurement.unit_iteration",
+             "usccss.b01.g1.measure.same_length_different_units"],
+            "IM2021_G1_U06_L07_SAME_OBJECT_DIFFERENT_UNIT_LENGTHS",
+            "READY_VERIFIED", "usccss-b01-g1-u06-two-unit-v2"),
         // Original IM G2 U06 L06: compose and identify new shapes
         // from congruent small squares with actual square/rectangle grids.
         new(

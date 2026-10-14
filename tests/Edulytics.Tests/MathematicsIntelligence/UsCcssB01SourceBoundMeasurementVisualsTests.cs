@@ -9,6 +9,61 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
 {
+    [Fact]
+    public void GradeOneSameTapeTwoDifferentPaperclipSizesAreExactlyEquivalent()
+    {
+        const string family="usccss.b01.g1.measure.same_length_different_units";
+        Assert.True(LessonPracticeContractRegistry.TryResolve(G1,out var contract));
+        Assert.Contains(family,contract!.AllowedQuestionFamilies);
+        var engine=new ExactSkillContractQuestionEngine();
+        var modes=new HashSet<int>();
+        var tapes=new HashSet<int>();
+        for(var seed=733000;seed<733110;seed++)
+        {
+            var q=Assert.Single(engine.Generate(
+                "b01-g1-u06-two-units",G1,[family],
+                ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+            var p=q.Parameters;
+            var tape=p["tapeInches"];
+            var ones=p["oneInchCount"];
+            var twos=p["twoInchCount"];
+            Assert.Equal(tape,ones);
+            Assert.Equal(tape,twos*2);
+            Assert.Equal(p["mode"] switch {
+                0=>ones,1=>twos,_=>ones-twos
+            },int.Parse(q.CorrectAnswer));
+            var visual=Assert.Single(UsCcssB01SourceBoundMeasurementVisuals.Build(
+                G1,[q]));
+            Assert.Equal(RichLessonVisualKind.RatioTable,visual.Kind);
+            Assert.Equal(2,visual.Rows.Count);
+            Assert.Equal(ones.ToString(),visual.Rows[0].Cells[0]);
+            Assert.Equal(twos.ToString(),visual.Rows[1].Cells[0]);
+            Assert.Equal($"{tape} inches total",visual.Rows[0].Cells[2]);
+            Assert.Equal(visual.Rows[0].Cells[2],visual.Rows[1].Cells[2]);
+            Assert.Empty(UsCcssB01SourceBoundMeasurementVisuals.Build(
+                G1,[q with {CorrectAnswer="999"}]));
+            Assert.Empty(UsCcssB01SourceBoundMeasurementVisuals.Build(
+                "PED:US-CCSS-MATH:G1:U06:L08",[q]));
+            modes.Add(p["mode"]);
+            tapes.Add(tape);
+        }
+        Assert.Equal([0,1,2],modes.Order().ToArray());
+        Assert.True(tapes.Count>=3);
+        var lesson=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(d=>d.PackCode=="US-CCSS-MATH" && d.VersionCode=="CCSSM-2010")
+            .SelectMany(d=>d.Lessons).Single(x=>x.LessonCode==G1);
+        var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+        var body=new CanonicalLessonTranslationRecord(en.CultureCode,en.Title,
+            en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,
+            en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary);
+        var rich=RichLessonContentV2Registry.Find(G1,"en") ??
+            RichLessonContentV2RuntimeComposer.TryCompose(G1,body);
+        Assert.NotNull(rich);
+        Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.RatioTable);
+    }
+
     private const string G2Estimate = "PED:US-CCSS-MATH:G2:U03:L04";
 
     [Fact]
@@ -169,7 +224,12 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
         string code,string family)
     {
         Assert.True(LessonPracticeContractRegistry.TryResolve(code,out var contract));
-        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        if(code==G1)
+            Assert.Equal(["supporting.measurement.unit_iteration",
+                "usccss.b01.g1.measure.same_length_different_units"],
+                contract!.AllowedQuestionFamilies);
+        else
+            Assert.Equal([family],contract!.AllowedQuestionFamilies);
         var engine=new ExactSkillContractQuestionEngine();
         var modes=new HashSet<int>();
         for (var seed=730100;seed<730164;seed++)

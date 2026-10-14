@@ -21,13 +21,59 @@ public static class UsCcssB01SourceBoundMeasurementVisuals
         if (lessonCode != Grade1UnitIteration && lessonCode != Grade2MapLengths)
             return [];
 
-        foreach (var q in questions)
+        // Prefer source-specific same-object comparison over earlier
+        // single-unit counting when both examples exist.
+        var ordered=lessonCode==Grade1UnitIteration
+            ? questions.OrderByDescending(q=>q.Family==
+                "usccss.b01.g1.measure.same_length_different_units")
+            : questions.AsEnumerable();
+        foreach (var q in ordered)
         {
             if (!ExactSkillContractQuestionEngine.Verify(
                     q.Family,q.Parameters,q.CorrectAnswer))
                 continue;
 
             var p = q.Parameters;
+            if(lessonCode==Grade1UnitIteration &&
+                q.Family=="usccss.b01.g1.measure.same_length_different_units" &&
+                p.TryGetValue("tapeInches",out var tape) &&
+                p.TryGetValue("oneInchCount",out var ones) &&
+                p.TryGetValue("twoInchCount",out var twos) &&
+                p.TryGetValue("mode",out var mode) &&
+                tape is 12 or 16 or 18 or 20 or 24 &&
+                ones==tape && 2*twos==tape && mode is >=0 and <=2 &&
+                int.TryParse(q.CorrectAnswer,NumberStyles.Integer,
+                    CultureInfo.InvariantCulture,out var answer) &&
+                answer==(mode==0?ones:mode==1?twos:ones-twos))
+            {
+                return [
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.RatioTable,
+                        Title="The same tape, different paper-clip unit sizes",
+                        Description=$"Both rows measure the SAME {tape}-inch " +
+                            "strip without gaps or overlaps. " +
+                            $"{ones} one-inch clips and {twos} two-inch clips " +
+                            $"each cover exactly {tape} inches. " +
+                            $"The verified result is {answer}.",
+                        PrimaryLabel=$"Object length: {tape} inches",
+                        Rows=[
+                            new RichLessonVisualRow
+                            {
+                                Label="1-inch clips",
+                                Cells=[ones.ToString(CultureInfo.InvariantCulture),
+                                    "1 inch per clip",$"{tape} inches total"]
+                            },
+                            new RichLessonVisualRow
+                            {
+                                Label="2-inch clips",
+                                Cells=[twos.ToString(CultureInfo.InvariantCulture),
+                                    "2 inches per clip",$"{tape} inches total"]
+                            }
+                        ]
+                    }
+                ];
+            }
             if (lessonCode == Grade1UnitIteration &&
                 q.Family == "supporting.measurement.unit_iteration" &&
                 p.TryGetValue("units",out var units) &&
