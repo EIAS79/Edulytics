@@ -1,0 +1,47 @@
+name: US CCSS B01 V9 Source-Verified Fraction Purpose Corrections
+
+on:
+  push:
+    branches:
+      - audit/us-ccss-b01-500-lesson-certification
+    paths:
+      - '.github/workflows/us-ccss-b01-v9-fraction-purpose-repairs.yml'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01FractionPurposeCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPurposeCorrectionsTests.cs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: b01-v9-fraction-repair-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-fraction-purpose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore application and test dependencies
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Build real application and tests, fail on compile error
+        run: dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore
+      - name: Verify all 12 independent source-aligned repairs and all 500 Rich V2 bodies
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
+            --filter 'FullyQualifiedName~UsCcssB01FractionPurposeCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests' \
+            --logger 'console;verbosity=normal'
+      - name: Preserve output inventories, NOT academic certification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-v9-fraction-source-repairs-500-rich-check
+          path: |
+            b01-rich-v2-500.json
+          if-no-files-found: ignore
+          retention-days: 30
