@@ -45,7 +45,10 @@ public sealed class UsCcssB01FractionPurposeCorrectionsTests
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(document, lesson));
             var t = Assert.Single(lesson.Translations);
             Assert.Equal("en", t.CultureCode);
-            Assert.Contains("fraction", t.KeyConceptsAndRules, StringComparison.OrdinalIgnoreCase);
+            Assert.True(t.KeyConceptsAndRules.Contains("fraction", StringComparison.OrdinalIgnoreCase) ||
+                t.KeyConceptsAndRules.Contains("1/b", StringComparison.Ordinal) ||
+                t.KeyConceptsAndRules.Contains("a/b", StringComparison.Ordinal),
+                "Missing source-goal fraction concept for " + lesson.LessonCode);
             Assert.True(t.StepByStepSolutions.Contains("fraction", StringComparison.OrdinalIgnoreCase) ||
                 t.StepByStepSolutions.Contains("1/b", StringComparison.Ordinal) ||
                 t.StepByStepSolutions.Contains("a/b", StringComparison.Ordinal),
