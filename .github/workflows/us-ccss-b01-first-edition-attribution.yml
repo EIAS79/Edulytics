@@ -1,4 +1,4 @@
-name: US CCSS B01 First Edition Licence Attribution Audit
+name: US CCSS B01 Reference-Only Public Source Boundary
 
 on:
   push:
@@ -16,7 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  verify-500-lesson-attribution:
+  verify-500-reference-only-boundary:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -24,5 +24,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Verify first-edition source declarations and honest attribution with no fabricated rights PASS
+      - name: Verify no public IM source credit, preserve 500 private reference identities and fail-closed rights
         run: node --test tests/academic-us-ccss-b01-first-edition-attribution.test.cjs
