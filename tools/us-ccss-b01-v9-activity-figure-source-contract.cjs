@@ -34,6 +34,18 @@ function verifyOriginalActivityFigures({manifest,sourceIndex,activity,context,gr
  assert.equal(effective.coverage.joined,500);
  assert.equal(effective.coverage.unique,500);
  assert.equal(effective.rows?.length,500);
+ // The source figure subset cannot conceal a missing or swapped OTHER lesson.
+ for(let i=0;i<500;i++){
+  const m=manifest.lessons[i],source=sourceIndex.rows[i],
+   g=graph.nodes[i],e=effective.rows[i];
+  assert.equal(m.ordinal,i+1,'Manifest ordinal drift');
+  assert.equal(source.ordinal,i+1,'Source inventory ordinal drift');
+  assert.equal(g.ordinal,i+1,'Root graph ordinal drift');
+  assert.equal(e.ordinal,i+1,'Effective graph ordinal drift');
+  assert.equal(m.lessonCode,source.lessonCode,'Source identity drift');
+  assert.equal(m.lessonCode,g.lessonCode,'Raw graph identity drift');
+  assert.equal(m.lessonCode,e.lessonCode,'Effective identity drift');
+ }
  const blocked=effective.sharedPatternRoots?.SOURCE_FIGURE_CAPTION_PLACEHOLDER;
  assert.ok(blocked,'Effective figure-root-cause group missing');
  assert.equal(blocked.effectiveMarkerStillPresent,40);
