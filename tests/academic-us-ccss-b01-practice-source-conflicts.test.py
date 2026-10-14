@@ -108,7 +108,8 @@ class WholeBatchSemanticTests(unittest.TestCase):
         self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
             [x["rule"] for x in result["rows"][41]["conflicts"]])
         a["lessonRows"][41]["actualQuestionFamilies"]=[
-            "usccss.b01.g2.measurement.estimate_cm"]
+            "usccss.b01.g2.measurement.estimate_cm",
+            "usccss.b01.g2.measurement.iterate_ruler_cm"]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
     def test_wrong_join_fails_closed(self):

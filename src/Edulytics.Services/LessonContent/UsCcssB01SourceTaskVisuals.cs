@@ -853,6 +853,43 @@ public static class UsCcssB01SourceTaskVisuals
                 // G2 U03 L04: the actual centimeter measurement is
                 // read at the endpoint of an equal-unit ruler. No guessed
                 // measurements or extrapolated longer-object activity.
+                // Repeat one 30cm ruler without shifting the reference
+                // measurements: every row has real exact start/end marks.
+                "usccss.b01.g2.measurement.iterate_ruler_cm" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L04" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title="Measure a long object by repeating the ruler",
+                        Description=$"Use {N("fullSpans")} complete 30 cm ruler spans " +
+                            $"plus {N("remainder")} cm on the final section. " +
+                            $"The measured length is {q.CorrectAnswer} cm; " +
+                            "each section begins exactly where the previous ends.",
+                        PrimaryLabel=$"Full 30 cm passes: {N("fullSpans")}; " +
+                            $"final remainder: {N("remainder")} cm",
+                        Rows=Enumerable.Range(0,N("fullSpans"))
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"Pass {i+1}: 30 cm",
+                                Cells=[(i*30).ToString(),
+                                    ((i+1)*30).ToString(),"30 cm"]
+                            })
+                            .Concat(N("remainder")>0
+                                ? new[]
+                                {
+                                    new RichLessonVisualRow
+                                    {
+                                        Label="Final partial pass",
+                                        Cells=[(N("fullSpans")*30).ToString(),
+                                            N("total").ToString(),
+                                            $"{N("remainder")} cm"]
+                                    }
+                                }
+                                : Array.Empty<RichLessonVisualRow>())
+                            .ToList()
+                    },
                 "usccss.b01.g2.measurement.estimate_cm" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L04" &&
                     ExactSkillContractQuestionEngine.Verify(

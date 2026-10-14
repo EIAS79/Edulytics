@@ -429,13 +429,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
         // construct an X-mark line plot and add/subtract frequencies within 20.
         // IM G2 U03 L04: estimate 5–30 cm objects, then use a standard
         // zero-aligned centimeter ruler and compare estimate to measurement.
-        // The separate 50–90 cm ruler-iteration teacher activity is not certified.
+        // Include the separate verified 50–90 cm repeated-ruler activity.
         new(
             "PED:US-CCSS-MATH:G2:U03:L04",
-            "supporting.measurement.practical", "ESTIMATE_THEN_MEASURE_CM",
-            ["usccss.b01.g2.measurement.estimate_cm"],
-            "IM2021_G2_U03_L04_ESTIMATE_STANDARD_RULER_CENTIMETERS",
-            "READY_VERIFIED", "usccss-b01-g2-u03-ruler-estimate-v1"),
+            "supporting.measurement.practical", "ESTIMATE_MEASURE_AND_ITERATE_RULER_CM",
+            ["usccss.b01.g2.measurement.estimate_cm",
+             "usccss.b01.g2.measurement.iterate_ruler_cm"],
+            "IM2021_G2_U03_L04_ESTIMATE_AND_ITERATE_STANDARD_RULER",
+            "READY_VERIFIED", "usccss-b01-g2-u03-ruler-estimate-v2"),
         new(
             "PED:US-CCSS-MATH:G2:U09:L04",
             "supporting.measurement.practical", "MEASURE_AND_PLOT_PENCILS",

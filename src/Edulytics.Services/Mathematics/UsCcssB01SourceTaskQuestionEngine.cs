@@ -39,6 +39,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.rectangle.unit_squares",
         "usccss.b01.measure.map_lengths",
         "usccss.b01.g2.measurement.estimate_cm",
+        "usccss.b01.g2.measurement.iterate_ruler_cm",
         "usccss.b01.ruler.compare_centimeters",
         "usccss.b01.g2.measurement.read_line_plot",
         "usccss.b01.g2.measurement.pencil_line_plot",
@@ -1009,6 +1010,26 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // add/subtract the count of observations within 20.
             // IM G2 U03 L04: estimate, then measure with a 1cm ruler.
             // Longer (50–90cm) ruler iteration remains a separate source task.
+            // Official IM G2 U03 L04: a long 50–90cm object requires
+            // iterating a standard 30cm ruler end-to-end (no gaps/overlap).
+            // Verified endpoints: 0, 30, 60, ... final remainder.
+            case "usccss.b01.g2.measurement.iterate_ruler_cm":
+            {
+                var total=r.Next(50,91);
+                var fullSpans=total/30;
+                var remainder=total%30;
+                return Make(f,
+                    $"A classroom object is longer than a 30 cm ruler. " +
+                    $"Move the ruler end-to-end without gaps or overlaps: " +
+                    $"{fullSpans} full passes of 30 cm and a final " +
+                    $"{remainder} cm. What is the object's total length?",
+                    "Multiply the full 30cm ruler passes, then add the " +
+                    "measured remainder without double-counting endpoints.",
+                    AssessmentItemType.Numeric,
+                    D(("fullSpans",fullSpans),("remainder",remainder),
+                      ("total",total)));
+            }
+
             case "usccss.b01.g2.measurement.estimate_cm":
             {
                 var actual=r.Next(5,31);
@@ -1673,6 +1694,8 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     2=>P($"count{P("targetTick")}").ToString(CultureInfo.InvariantCulture),
                     _=>throw new InvalidOperationException()
                 },
+            "usccss.b01.g2.measurement.iterate_ruler_cm" =>
+                (30*P("fullSpans")+P("remainder")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.estimate_cm" =>
                 Math.Abs(P("actual")-P("estimate")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.pencil_line_plot" =>
@@ -2011,6 +2034,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Enumerable.Range(0,11).Sum(i=>N($"count{i}"))==10 &&
                 Enumerable.Range(N("lastTick")+1,10-N("lastTick"))
                     .All(i=>N($"count{i}")==0),
+            "usccss.b01.g2.measurement.iterate_ruler_cm" =>
+                Range("fullSpans",1,3) && Range("remainder",0,29) &&
+                Range("total",50,90) &&
+                30*N("fullSpans")+N("remainder")==N("total"),
             "usccss.b01.g2.measurement.estimate_cm" =>
                 Range("actual",5,30) && Range("estimate",1,35) &&
                 Range("error",1,5) &&

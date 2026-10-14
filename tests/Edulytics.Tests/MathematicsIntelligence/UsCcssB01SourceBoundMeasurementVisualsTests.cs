@@ -12,11 +12,62 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
     private const string G2Estimate = "PED:US-CCSS-MATH:G2:U03:L04";
 
     [Fact]
+    public void Grade2U03L04RulerIterationPreservesExactLongObjectEndpoints()
+    {
+        const string family="usccss.b01.g2.measurement.iterate_ruler_cm";
+        var engine=new ExactSkillContractQuestionEngine();
+        var sawRemainder=false;
+        var sawExactMultiple=false;
+        for(var seed=723000;seed<723128;seed++)
+        {
+            var q=Assert.Single(engine.Generate(
+                "b01-g2-u03-long-ruler",G2Estimate,[family],
+                ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+            var p=q.Parameters;
+            var total=p["total"];
+            var full=p["fullSpans"];
+            var remainder=p["remainder"];
+            Assert.InRange(total,50,90);
+            Assert.Equal(total,full*30+remainder);
+            Assert.Equal(total,int.Parse(q.CorrectAnswer));
+            var drawing=Assert.Single(UsCcssB01SourceTaskVisuals.Build(
+                G2Estimate,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,drawing.Kind);
+            Assert.Equal(full+(remainder>0?1:0),drawing.Rows.Count);
+            for(var k=0;k<full;k++)
+            {
+                Assert.Equal((k*30).ToString(),drawing.Rows[k].Cells[0]);
+                Assert.Equal(((k+1)*30).ToString(),drawing.Rows[k].Cells[1]);
+                Assert.Equal("30 cm",drawing.Rows[k].Cells[2]);
+            }
+            if(remainder>0)
+            {
+                sawRemainder=true;
+                var row=drawing.Rows[^1];
+                Assert.Equal((full*30).ToString(),row.Cells[0]);
+                Assert.Equal(total.ToString(),row.Cells[1]);
+                Assert.Equal($"{remainder} cm",row.Cells[2]);
+            }
+            else sawExactMultiple=true;
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                G2Estimate,[q with {CorrectAnswer="999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G2:U03:L05",[q]));
+        }
+        Assert.True(sawRemainder);
+        Assert.True(sawExactMultiple);
+    }
+
+    [Fact]
     public void Grade2U03L04EstimationsMatchExactCentimeterRuler()
     {
         const string family="usccss.b01.g2.measurement.estimate_cm";
         Assert.True(LessonPracticeContractRegistry.TryResolve(G2Estimate,out var contract));
-        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        Assert.Equal(["usccss.b01.g2.measurement.estimate_cm",
+            "usccss.b01.g2.measurement.iterate_ruler_cm"],
+            contract!.AllowedQuestionFamilies);
         var engine=new ExactSkillContractQuestionEngine();
         var over=0;
         var under=0;
