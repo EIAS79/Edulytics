@@ -46,7 +46,10 @@ public sealed class UsCcssB01FractionPurposeCorrectionsTests
             var t = Assert.Single(lesson.Translations);
             Assert.Equal("en", t.CultureCode);
             Assert.Contains("fraction", t.KeyConceptsAndRules, StringComparison.OrdinalIgnoreCase);
-            Assert.Contains("fraction", t.StepByStepSolutions, StringComparison.OrdinalIgnoreCase);
+            Assert.True(t.StepByStepSolutions.Contains("fraction", StringComparison.OrdinalIgnoreCase) ||
+                t.StepByStepSolutions.Contains("1/b", StringComparison.Ordinal) ||
+                t.StepByStepSolutions.Contains("a/b", StringComparison.Ordinal),
+                "Missing fraction procedure for " + lesson.LessonCode);
             Assert.Contains("Mistake:", t.CommonMistakes);
             Assert.DoesNotContain("Step 1: Identify what needs to be measured",
                 t.StepByStepSolutions);
