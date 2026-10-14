@@ -19,6 +19,20 @@ test('The public programme source page does not disclose internal IM academic-re
  assert.doesNotMatch(h,/im\.kendallhunt\.com/i);
  assert.doesNotMatch(h,/CCSS B01|2024 IM v\.360|ccss-b01-first-edition/i);
 });
+test('The actual student lesson view does not render any IM publisher credit or link',()=>{
+ const view=fs.readFileSync(path.join(base,'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'),'utf8');
+ assert.doesNotMatch(view,/Illustrative Mathematics|im\.kendallhunt\.com|lesson-source-attribution|Source inspiration/i);
+ assert.match(view,/partial name="_RichLessonContentV2"/);
+});
+test('General public curriculum register keeps official CCSS authority, not IM textbook references',()=>{
+ const reg=fs.readFileSync(path.join(base,'src/Edulytics.Core/Curriculum/MathematicsCurriculumPackRegistry.cs'),'utf8');
+ const start=reg.indexOf('            CommonCoreCode,');
+ const end=reg.indexOf('        new(',start+50);
+ assert.ok(start>0&&end>start,'Could not isolate Common Core pack configuration');
+ const us=reg.slice(start,end);
+ assert.match(us,/Common Core State Standards Initiative/);
+ assert.doesNotMatch(us,/Illustrative Mathematics|im\.kendallhunt\.com/i);
+});
 test('500 internal edition/provenance records stay intact and do not imply rights signoff',()=>{
  const m=manifest();
  assert.equal(m.lessons.length,500);
