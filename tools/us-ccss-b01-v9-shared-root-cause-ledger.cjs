@@ -45,8 +45,9 @@ function summarize({manifest,packs,reviewed}){
  assert(Array.isArray(reviewed)&&reviewed.length===3,'Need three source-reviewed evidence inputs');
  const verified=new Map();
  for(const e of reviewed){
-  assert(e.batchId==='B01'&&Array.isArray(e.rows),'Unexpected evidence group');
-  for(const row of e.rows){
+  const items=e.rows || e.reviewedObjectives;
+  assert(e.batchId==='B01'&&Array.isArray(items),'Unexpected evidence group');
+  for(const row of items){
    assert(row.lessonCode&&SHA.test(row.sourceSemanticSha256),'Missing evidence/source fingerprint');
    assert(!verified.has(row.lessonCode),'Duplicate verified source-goal identity: '+row.lessonCode);
    verified.set(row.lessonCode,row.sourceSemanticSha256);
