@@ -8,7 +8,10 @@
     "sourceFilesRead": 500,
     "uniqueLessonCodes": 500,
     "teacherGoalSectionsFound": 499,
-    "sourceGoalSectionsUnresolved": 1
+    "sourceGoalSectionsUnresolved": 1,
+    "alternativeLessonPurposeHeadingsVerified": 1,
+    "sourcePurposeAvailableViaEitherHeading": 500,
+    "sourcePurposeUnavailable": 0
   },
   "unresolvedSourceGoalCodes": [
     "PED:US-CCSS-MATH:G2:U02:L16"
@@ -3539,10 +3542,19 @@
       "originalTeacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-16/preparation.html",
       "teacherGoalSectionFound": false,
       "teacherGoalTokenCount": 0,
-      "teacherFacingPurposeSignals": [],
+      "teacherFacingPurposeSignals": [
+        "ADDITION",
+        "SUBTRACTION",
+        "REPRESENTATION"
+      ],
       "studentFacingPurposeSignals": [],
-      "extractionState": "SOURCE_GOAL_SECTION_NOT_IN_LOCAL_HTML_SNAPSHOT_REQUIRES_ALTERNATE_SOURCE_CHECK",
-      "rightsScope": "REFERENCE_ONLY_NO_PUBLISHER_PROSE_STORED"
+      "extractionState": "ALTERNATE_OFFICIAL_LESSON_PURPOSE_SOURCE_CHECKED_NO_LEARNING_GOALS_HEADER",
+      "rightsScope": "REFERENCE_ONLY_NO_PUBLISHER_PROSE_STORED",
+      "alternativePurposeHeadingFound": true,
+      "alternativePurposeHeading": "Lesson Purpose",
+      "originalTeacherGoalStillAbsent": true,
+      "sourcePurposeSemanticParaphrase": "Apply strategies for adding and subtracting within 100 in an inventory/selling context, modeling constraints with equations or records.",
+      "sourcePurposeVerificationScope": "Teacher original optional-source Lesson Purpose in frozen local 2021 preparation, independently crosschecked official same-path preparation and teacher Lesson activities."
     },
     {
       "ordinal": 181,
@@ -9689,5 +9701,6 @@
       "extractionState": "AUTO_CAPTURED_GOAL_SIGNALS_NOT_ACADEMICALLY_VERIFIED",
       "rightsScope": "REFERENCE_ONLY_NO_PUBLISHER_PROSE_STORED"
     }
-  ]
+  ],
+  "sourcePurposeFallbackSemantics": "Teacher-facing Learning Goals section is genuinely absent in optional G2 U02 L16. Recovered a different publisher heading (Lesson Purpose), NOT fabricated a Learning Goals section or full L1-L6 pass."
 }
