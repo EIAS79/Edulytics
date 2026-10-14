@@ -27,9 +27,11 @@ public sealed class UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests
         foreach(var (doc,lesson) in targets)
         {
             var expectedEffectiveVersion =
-                lesson.LessonCode == Prefix + "G2:U08:L07"
-                    ? CommonCoreB01V9SharedComparisonProcedureCorrections.CorrectedVersion
-                    : CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.CorrectedVersion;
+                CommonCoreB01V9SharedAdditionProcedureCorrections.IsTarget(doc,lesson)
+                    ? CommonCoreB01V9SharedAdditionProcedureCorrections.CorrectedVersion
+                    : lesson.LessonCode == Prefix + "G2:U08:L07"
+                        ? CommonCoreB01V9SharedComparisonProcedureCorrections.CorrectedVersion
+                        : CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.CorrectedVersion;
             Assert.Equal(expectedEffectiveVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
             var en=Assert.Single(lesson.Translations);

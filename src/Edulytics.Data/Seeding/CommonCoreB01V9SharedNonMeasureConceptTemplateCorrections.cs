@@ -105,8 +105,10 @@ public static class CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections
     private static bool SameWithLaterSharedRoot(string concepts, string steps,
         string mistakes, Guard g) =>
         concepts == NewConcepts(g) &&
-        CommonCoreB01V9SharedComparisonProcedureCorrections.MatchesFinalProcedure(
-            g.Code, steps, mistakes);
+        (CommonCoreB01V9SharedComparisonProcedureCorrections.MatchesFinalProcedure(
+            g.Code, steps, mistakes) ||
+         CommonCoreB01V9SharedAdditionProcedureCorrections.MatchesFinalProcedure(
+            g.Code, steps, mistakes));
 
     public static void Apply(CanonicalLessonContentPackDocument d)
     {

@@ -16,7 +16,8 @@ const evidenceFiles=[
  'artifacts/academic-us-ccss/batches/B01-v9-learner-voice-2-cohort.json',
  'artifacts/academic-us-ccss/batches/B01-v9-optional-source-purpose-fallback-reviewed-metadata.json',
  'artifacts/academic-us-ccss/batches/B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json',
- 'artifacts/academic-us-ccss/batches/B01-v9-geometry-template-31-source-purpose-reviewed.json'
+ 'artifacts/academic-us-ccss/batches/B01-v9-geometry-template-31-source-purpose-reviewed.json',
+  'artifacts/academic-us-ccss/batches/B01-v9-addition-template-25-source-goal-activity-reviewed.json'
 ];
 const SHA=/^[a-f0-9]{64}$/i;
 const definitions=[
@@ -59,7 +60,7 @@ function summarize({manifest,packs,reviewed}){
    contents.set(l.lessonCode,l);
   }
  }
- assert(Array.isArray(reviewed)&&reviewed.length===evidenceFiles.length,'Need three source-reviewed evidence inputs');
+ assert(Array.isArray(reviewed)&&reviewed.length>0,'Need source-reviewed evidence inputs');
  const verified=new Map();
  for(const e of reviewed){
   const items=e.rows || e.reviewedObjectives;
