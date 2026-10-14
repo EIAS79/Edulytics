@@ -1,0 +1,35 @@
+name: US CCSS B01 Independent Authorship Review Candidates
+
+on:
+  push:
+    branches: [audit/us-ccss-b01-500-lesson-certification]
+    paths:
+      - '.github/workflows/us-ccss-b01-original-authorship-screen.yml'
+      - 'tools/us-ccss-b01-original-authorship-screen.cjs'
+      - 'tests/academic-us-ccss-b01-original-authorship-screen.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  all-500-learner-originality-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Prove 500-row joins and refusal of false copyright decisions
+        run: node --test tests/academic-us-ccss-b01-original-authorship-screen.test.cjs
+      - name: Create batch-wide learner-text review candidate report, not legal proof
+        run: node tools/us-ccss-b01-original-authorship-screen.cjs --out=b01-original-authorship-candidates-500.json
+      - name: Retain internal-only candidate metadata for source comparison
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-internal-original-authorship-review-candidates-500
+          path: b01-original-authorship-candidates-500.json
+          retention-days: 30
