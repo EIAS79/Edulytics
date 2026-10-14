@@ -80,7 +80,7 @@ test('source join refuses missing evidence, duplicates and changed order',()=>{
 test('source-backed dot-card repair clears ONLY the proven prior defect, not 499 missing certifications',()=>{
   const a=fixture();
   const runtime=a[3].lessonRows[1];
-  runtime.effectiveContentVersion='usccss-b01-g1-u01-l02-source-dot-cards-v1';
+  runtime.effectiveContentVersion='usccss-b01-g1-u01-l02-source-dot-cards-v2';
   runtime.actualQuestionFamilies=[
     'usccss.b01.g1.match_dot_cubes_expression',
     'usccss.b01.g1.complete_missing_dots',
@@ -98,10 +98,10 @@ test('source-backed dot-card repair clears ONLY the proven prior defect, not 499
   assert.equal(report.batchDecision,'BATCH_NO-GO');
 });
 test('missing dot card visual, missing one family or wrong effective version keeps prior defect open',()=>{
-  for (const mutation of ['noVisual','missingFamily','staleVersion']) {
+  for (const mutation of ['noVisual','missingFamily','staleVersion','priorVersion']) {
     const a=fixture();
     a[3].lessonRows[1].effectiveContentVersion=
-      'usccss-b01-g1-u01-l02-source-dot-cards-v1';
+      'usccss-b01-g1-u01-l02-source-dot-cards-v2';
     a[3].lessonRows[1].actualQuestionFamilies=[
       'usccss.b01.g1.match_dot_cubes_expression',
       'usccss.b01.g1.complete_missing_dots',
@@ -112,6 +112,7 @@ test('missing dot card visual, missing one family or wrong effective version kee
     if(mutation==='noVisual')a[6].rows[1].visualKinds=['EquationSet'];
     if(mutation==='missingFamily')a[3].lessonRows[1].actualQuestionFamilies.pop();
     if(mutation==='staleVersion')a[3].lessonRows[1].effectiveContentVersion='old-version';
+    if(mutation==='priorVersion')a[3].lessonRows[1].effectiveContentVersion='usccss-b01-g1-u01-l02-source-dot-cards-v1';
     const report=summarize(...a);
     assert.equal(report.counts[REWORK],1);
     assert.ok(report.lessons[1].confirmedDefects.some(x=>x.code.includes('PREVIOUS_SOURCE')));
