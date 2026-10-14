@@ -34,6 +34,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2SourceGroundedFoundationsCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
         CommonCoreB01FractionPurposeCorrections.Apply(document);
+        CommonCoreB01PlaceValuePurposeCorrection.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -199,8 +200,10 @@ public static class CanonicalLessonContentMaterializer
 
         var html = CommonCoreSourceBoundHtmlEntityCorrections
             .GetExpectedContentVersion(document, lesson, g2);
-        return CommonCoreB01FractionPurposeCorrections
+        var fractions = CommonCoreB01FractionPurposeCorrections
             .GetExpectedContentVersion(document, lesson, html);
+        return CommonCoreB01PlaceValuePurposeCorrection
+            .GetExpectedContentVersion(document, lesson, fractions);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -237,7 +240,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreSourceBoundHtmlEntityCorrections
             .IsTarget(document, lesson) ||
         CommonCoreB01FractionPurposeCorrections
-            .IsTarget(document, lesson);
+            .IsTarget(document, lesson) ||
+        CommonCoreB01PlaceValuePurposeCorrection.IsTarget(document,lesson);
 
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,
@@ -307,6 +311,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreSourceBoundHtmlEntityCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreB01FractionPurposeCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreB01PlaceValuePurposeCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion);
 
     public static string ComputeLessonFingerprint(
