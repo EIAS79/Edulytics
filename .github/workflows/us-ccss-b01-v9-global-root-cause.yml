@@ -13,6 +13,9 @@ on:
       - 'tools/us-ccss-b01-v9-effective-root-cause-reconciliation.cjs'
       - 'tools/us-ccss-b01-v9-source-figure-dependency-audit.cjs'
       - 'tools/us-ccss-b01-v9-activity-figure-source-contract.cjs'
+      - 'tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs'
+      - 'tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-original-teacher-figure-dom-asset-map-40.json'
       - 'tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-source-figure-dependency-audit.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs'
@@ -112,6 +115,12 @@ jobs:
             --effective=b01-v9-global-effective-root-causes-500.json \
             --out=b01-v9-activity-figure-source-guard-40.json
           node -e "const r=require('./b01-v9-activity-figure-source-guard-40.json');if(r.coverage.manifestLessons!==500||r.coverage.lessonIdentitiesJoined!==40||r.coverage.sourceFigureFrames!==336||r.coverage.sourceCMSAssetLocators!==383||r.blockedSourceFigureLessons!==40||r.figureAssetReuseAuthorization!==false||r.academicDecision!=='BATCH_NO-GO')process.exit(1);console.log(JSON.stringify({coverage:r.coverage,visualsBlocked:r.blockedSourceFigureLessons,decision:r.academicDecision}));"
+      - name: Prove original source figure frame to CMS record linkage while preserving strict L6 math/rights NO-GO
+        run: |
+          node --test tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs
+          node tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs \
+            --out=b01-v9-source-figure-dom-links-40.json
+          node -e "const r=require('./b01-v9-source-figure-dom-links-40.json');if(r.coverage.manifestLessons!==500||r.coverage.exactFrameToOriginalMediaDOMPointers!==397||r.coverage.uniquePublisherMediaURLs!==383||r.coverage.unlinkedFigureFrames!==0||r.independentlyVerifiedVisualMathematics!==0||r.blockedLessonsForMathRightsAndL6!==40||r.releaseEligible!==false)process.exit(1);console.log(JSON.stringify({sourceDom:r.coverage,blocked:r.blockedLessonsForMathRightsAndL6,decision:r.academicDecision}));"
       - name: Preserve complete source-linked graph and impact groups, never an academic certificate
         if: always()
         uses: actions/upload-artifact@v4
@@ -123,5 +132,6 @@ jobs:
             b01-v9-global-effective-root-causes-500.json
             b01-v9-source-figure-dependencies-40.json
             b01-v9-activity-figure-source-guard-40.json
+            b01-v9-source-figure-dom-links-40.json
           if-no-files-found: warn
           retention-days: 30
