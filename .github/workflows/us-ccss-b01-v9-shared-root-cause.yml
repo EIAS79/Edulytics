@@ -9,6 +9,7 @@ on:
       - 'tests/academic-us-ccss-b01-v9-shared-root-cause-ledger.test.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-*-purpose-reviewed-metadata.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-nonlength-ruler-cohort-metadata.json'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
   workflow_dispatch:
 
