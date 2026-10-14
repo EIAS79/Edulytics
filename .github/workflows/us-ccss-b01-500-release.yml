@@ -1,87 +1,22 @@
 name: US CCSS B01 500-Lesson Release Gate
 
+# V4.3: This is the FINAL, collective 500-lesson gate, not the per-commit
+# repair runner. Ordinary draft code/test commits have targeted workflows.
+# Re-run the complete suite only when the release candidate is promoted,
+# manually requested for final evidence, or core immutable batch/ledger
+# release inputs change. Never permit a partial academic release.
 on:
   push:
     branches:
       - audit/us-ccss-b01-500-lesson-certification
     paths:
-      - '.github/workflows/us-ccss-b01-500-release.yml'
       - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
       - 'artifacts/academic-us-ccss/04-lesson-certification-records.json'
       - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
       - 'tools/us-ccss-b01-release-gate.cjs'
-      - 'tools/us-ccss-b01-bulk-content-screen.cjs'
-      - 'tools/us-ccss-b01-publisher-goal-alignment.py'
-      - 'tools/us-ccss-b01-practice-source-conflicts.py'
-      - 'tools/us-ccss-b01-source-visual-gaps.py'
-      - 'tools/us-ccss-b01-unified-eight-dimension-report.cjs'
-      - 'tools/us-ccss-b01-evidence-progress.cjs'
-      - 'tools/us-ccss-b01-original-teacher-activities.py'
-      - 'artifacts/academic-us-ccss/batches/B01-original-teacher-activity-local-index-500.json'
-      - 'tests/academic-us-ccss-b01-original-teacher-activities.test.py'
-      - 'tests/academic-us-ccss-b01-evidence-progress.test.cjs'
-      - 'tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs'
-      - 'tests/academic-us-ccss-b01-source-visual-gaps.test.py'
-      - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
-      - 'tests/academic-us-ccss-b01-publisher-alignment.test.py'
-      - 'src/**'
-      - 'tools/phase29/**'
-      - 'tools/us-ccss-lesson-certification-records.cjs'
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
-      - 'tests/academic-us-ccss-b01-bulk-content-screen.test.cjs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRuntimeAuditTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRichV2AuditTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01VerifiedExpressionVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceAlignedPracticeCorrectionTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskQuestionEngineTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceDotMatchingActivitiesTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceDotCardsContentCorrectionTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01NumberLineArithmeticalVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPracticeVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CategoricalGraphVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CollectiveVisualArithmeticOracleTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01TenthsHundredthsSourceTests.cs'
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
-    paths:
-      - '.github/workflows/us-ccss-b01-500-release.yml'
-      - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
-      - 'artifacts/academic-us-ccss/04-lesson-certification-records.json'
-      - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
-      - 'tools/us-ccss-b01-release-gate.cjs'
-      - 'tools/us-ccss-b01-bulk-content-screen.cjs'
-      - 'tools/us-ccss-b01-publisher-goal-alignment.py'
-      - 'tools/us-ccss-b01-practice-source-conflicts.py'
-      - 'tools/us-ccss-b01-source-visual-gaps.py'
-      - 'tools/us-ccss-b01-unified-eight-dimension-report.cjs'
-      - 'tools/us-ccss-b01-evidence-progress.cjs'
-      - 'tools/us-ccss-b01-original-teacher-activities.py'
-      - 'artifacts/academic-us-ccss/batches/B01-original-teacher-activity-local-index-500.json'
-      - 'tests/academic-us-ccss-b01-original-teacher-activities.test.py'
-      - 'tests/academic-us-ccss-b01-evidence-progress.test.cjs'
-      - 'tests/academic-us-ccss-b01-unified-eight-dimension-report.test.cjs'
-      - 'tests/academic-us-ccss-b01-source-visual-gaps.test.py'
-      - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
-      - 'tests/academic-us-ccss-b01-publisher-alignment.test.py'
-      - 'src/**'
-      - 'tools/phase29/**'
-      - 'tools/us-ccss-lesson-certification-records.cjs'
-      - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
-      - 'tests/academic-us-ccss-b01-bulk-content-screen.test.cjs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRuntimeAuditTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreB01CollectiveRichV2AuditTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01VerifiedExpressionVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceAlignedPracticeCorrectionTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskQuestionEngineTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceDotMatchingActivitiesTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceDotCardsContentCorrectionTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01NumberLineArithmeticalVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceTaskVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPracticeVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CategoricalGraphVisualsTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CollectiveVisualArithmeticOracleTests.cs'
-      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01TenthsHundredthsSourceTests.cs'
+    types: [ready_for_review, reopened]
   workflow_dispatch:
 
 concurrency:
