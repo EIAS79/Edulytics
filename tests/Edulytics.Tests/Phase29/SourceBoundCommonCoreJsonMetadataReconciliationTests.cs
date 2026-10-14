@@ -12,7 +12,7 @@ namespace Edulytics.Tests.Phase29;
 public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
 {
     [Fact]
-    public void MetadataOnlyStartupSelector_ExposesExactlyFiftyFourSourceBoundLessons()
+    public void MetadataOnlyStartupSelector_ExposesExactlySixtySixSourceBoundLessons()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var chosen = documents.SelectMany(d => d.Lessons
@@ -21,8 +21,8 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
                 .Select(l => (Doc: d, Lesson: l)))
             .ToArray();
 
-        // Previous 53 source-bound lessons plus the one source-guarded G1 U01 L01 pilot.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1;
+        // Previous 54 (including historical G1 pilot) plus 12 exact IM source-bound fraction repairs.
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
