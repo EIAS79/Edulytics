@@ -431,6 +431,15 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
         // IM G2 U03 L04: estimate 5–30 cm objects, then use a standard
         // zero-aligned centimeter ruler and compare estimate to measurement.
         // Include the separate verified 50–90 cm repeated-ruler activity.
+        // IM Grade 2 U03 L05: measure source-provided reptile tapes
+        // with an exact meter stick (100 cm), preserving all seven prepared
+        // centimeter lengths and correct remaining partial meters.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L05",
+            "supporting.measurement.practical", "METERSTICK_REPTILE_TAPES",
+            ["usccss.b01.g2.measure.reptile_meterstick"],
+            "IM2021_G2_U03_L05_METERSTICKS_REPTILE_LENGTHS",
+            "READY_VERIFIED", "usccss-b01-g2-u03-meterstick-v1"),
         new(
             "PED:US-CCSS-MATH:G2:U03:L04",
             "supporting.measurement.practical", "ESTIMATE_MEASURE_AND_ITERATE_RULER_CM",

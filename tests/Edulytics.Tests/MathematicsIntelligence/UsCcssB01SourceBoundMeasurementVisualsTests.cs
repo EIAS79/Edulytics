@@ -64,6 +64,75 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
         Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.RatioTable);
     }
 
+    private const string G2Meter = "PED:US-CCSS-MATH:G2:U03:L05";
+
+    [Fact]
+    public void GradeTwoOriginalSevenMeterstickTapesHaveExactCmAndMeters()
+    {
+        const string family="usccss.b01.g2.measure.reptile_meterstick";
+        Assert.True(LessonPracticeContractRegistry.TryResolve(G2Meter,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var original=new[]{58,72,44,180,336,190,282};
+        var engine=new ExactSkillContractQuestionEngine();
+        var seenTapes=new HashSet<int>();
+        var modes=new HashSet<int>();
+        for(var seed=804001;seed<804156;seed++)
+        {
+            var q=Assert.Single(engine.Generate("b01-g2-u03-metersticks",
+                G2Meter,[family],ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+            var p=q.Parameters;
+            var idx=p["tapeIndex"];
+            Assert.InRange(idx,0,6);
+            Assert.Equal(original[idx],p["lengthCm"]);
+            Assert.Equal(original[idx]/100,p["fullMeters"]);
+            Assert.Equal(original[idx]%100,p["remainingCm"]);
+            Assert.Equal(p["mode"] switch {
+                0=>p["fullMeters"],1=>p["remainingCm"],_=>p["lengthCm"]
+            },int.Parse(q.CorrectAnswer));
+            var drawing=Assert.Single(UsCcssB01SourceTaskVisuals.Build(
+                G2Meter,[q]));
+            Assert.Equal(RichLessonVisualKind.PlaceValueChart,drawing.Kind);
+            Assert.Equal(p["fullMeters"]+(p["remainingCm"]>0?1:0),
+                drawing.Rows.Count);
+            for(var i=0;i<p["fullMeters"];i++)
+            {
+                Assert.Equal((i*100).ToString(),drawing.Rows[i].Cells[0]);
+                Assert.Equal(((i+1)*100).ToString(),drawing.Rows[i].Cells[1]);
+                Assert.Equal("100 cm",drawing.Rows[i].Cells[2]);
+            }
+            if(p["remainingCm"]>0)
+            {
+                var final=drawing.Rows[^1];
+                Assert.Equal((p["fullMeters"]*100).ToString(),final.Cells[0]);
+                Assert.Equal(p["lengthCm"].ToString(),final.Cells[1]);
+                Assert.Equal($"{p["remainingCm"]} cm",final.Cells[2]);
+            }
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                G2Meter,[q with {CorrectAnswer="9999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G2:U03:L04",[q]));
+            seenTapes.Add(idx);
+            modes.Add(p["mode"]);
+        }
+        Assert.Equal(7,seenTapes.Count);
+        Assert.Equal([0,1,2],modes.Order().ToArray());
+
+        var lesson=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(d=>d.PackCode=="US-CCSS-MATH"&&d.VersionCode=="CCSSM-2010")
+            .SelectMany(d=>d.Lessons).Single(x=>x.LessonCode==G2Meter);
+        var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+        var body=new CanonicalLessonTranslationRecord(en.CultureCode,en.Title,
+            en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,
+            en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary);
+        var rich=RichLessonContentV2Registry.Find(G2Meter,"en") ??
+            RichLessonContentV2RuntimeComposer.TryCompose(G2Meter,body);
+        Assert.NotNull(rich);
+        Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.PlaceValueChart);
+        Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.EquationSet);
+    }
+
     private const string G2Estimate = "PED:US-CCSS-MATH:G2:U03:L04";
 
     [Fact]

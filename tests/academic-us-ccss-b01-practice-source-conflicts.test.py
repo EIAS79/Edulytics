@@ -130,6 +130,23 @@ class WholeBatchSemanticTests(unittest.TestCase):
             "usccss.b01.g1.measure.same_length_different_units"]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_grade2_unit3_meterstick_tapes_cannot_use_unrelated_family(self):
+        a,b=fixtures()
+        code="PED:US-CCSS-MATH:G2:U03:L05"
+        a["lessonRows"][46]["lessonCode"]=code
+        b["rows"][46]["lessonCode"]=code
+        b["rows"][46]["publisherTitle"]="Measure in Meters"
+        b["rows"][46]["sourcePurposePreview"]=(
+            "Measure original reptile tape lengths with meter sticks and centimeter rulers.")
+        a["lessonRows"][46]["actualQuestionFamilies"]=[
+            "supporting.measurement.unit_iteration"]
+        conflict=module.analyze(a,b)
+        self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+            [r["rule"] for r in conflict["rows"][46]["conflicts"]])
+        a["lessonRows"][46]["actualQuestionFamilies"]=[
+            "usccss.b01.g2.measure.reptile_meterstick"]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

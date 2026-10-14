@@ -855,6 +855,48 @@ public static class UsCcssB01SourceTaskVisuals
                 // measurements or extrapolated longer-object activity.
                 // Repeat one 30cm ruler without shifting the reference
                 // measurements: every row has real exact start/end marks.
+                // Original G2 U03 L05 meter-stick reptiles. Every
+                // centimeter measurement is taken from the authorized
+                // source's seven tape labels; no synthetic length claim.
+                "usccss.b01.g2.measure.reptile_meterstick" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L05" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.PlaceValueChart,
+                        Title="One-meter sticks and leftover centimeters",
+                        Description=$"The teacher's tape label " +
+                            $"{(char)('A'+N("tapeIndex"))} measures " +
+                            $"{N("lengthCm")} cm. " +
+                            $"There are {N("fullMeters")} complete 100 cm " +
+                            $"placements and {N("remainingCm")} cm remaining. " +
+                            $"100 × {N("fullMeters")} + {N("remainingCm")} = " +
+                            $"{N("lengthCm")} cm. " +
+                            $"The verified question answer is {q.CorrectAnswer}.",
+                        PrimaryLabel=$"{N("lengthCm")} cm = " +
+                            $"{N("fullMeters")} m {N("remainingCm")} cm",
+                        Rows=Enumerable.Range(0,N("fullMeters"))
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"Meter-stick pass {i+1}",
+                                Cells=[(i*100).ToString(),
+                                    ((i+1)*100).ToString(),"100 cm"]
+                            })
+                            .Concat(N("remainingCm")>0
+                                ? new[]
+                                {
+                                    new RichLessonVisualRow
+                                    {
+                                        Label="Final shorter section",
+                                        Cells=[(N("fullMeters")*100).ToString(),
+                                            N("lengthCm").ToString(),
+                                            $"{N("remainingCm")} cm"]
+                                    }
+                                }
+                                : Array.Empty<RichLessonVisualRow>())
+                            .ToList()
+                    },
                 "usccss.b01.g2.measurement.iterate_ruler_cm" when
                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L04" &&
                     ExactSkillContractQuestionEngine.Verify(

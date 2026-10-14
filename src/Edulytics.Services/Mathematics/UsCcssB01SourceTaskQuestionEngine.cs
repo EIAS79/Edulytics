@@ -40,6 +40,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.measure.map_lengths",
         "usccss.b01.g1.measure.same_length_different_units",
         "usccss.b01.g2.measurement.estimate_cm",
+        "usccss.b01.g2.measure.reptile_meterstick",
         "usccss.b01.g2.measurement.iterate_ruler_cm",
         "usccss.b01.ruler.compare_centimeters",
         "usccss.b01.g2.measurement.read_line_plot",
@@ -1031,6 +1032,38 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                       ("total",total)));
             }
 
+            // IM G2 U03 L05 reptile tape preparations, source measurements:
+            // A 58, B 72, C 44, D 180, E 336, F 190, G 282 cm.
+            // One meter is exactly 100 cm; no approximate conversion.
+            case "usccss.b01.g2.measure.reptile_meterstick":
+            {
+                var idx=r.Next(0,7);
+                var lengths=new[]{58,72,44,180,336,190,282};
+                var names=new[]{"gila monster","baby alligator","baby cobra",
+                    "komodo dragon","adult alligator","adult cobra","ribbon snake"};
+                var lengthCm=lengths[idx];
+                var fullMeters=lengthCm/100;
+                var remainingCm=lengthCm%100;
+                var mode=r.Next(0,3);
+                return Make(f,
+                    $"The {names[idx]} tape (label {(char)('A'+idx)}) " +
+                    $"is {lengthCm} cm long. Use a meter stick (100 cm) " +
+                    "without gaps or overlaps. " +
+                    (mode switch
+                    {
+                        0=>"How many COMPLETE 1-meter sticks fit?",
+                        1=>"How many centimeters remain after the complete meter sticks?",
+                        _=>$"It measures {fullMeters} meter(s) and " +
+                          $"{remainingCm} centimeter(s). How many centimeters in total?"
+                    }),
+                    "One complete meter stick is 100 cm. Count complete " +
+                    "placements, then measure the remaining centimeters.",
+                    AssessmentItemType.Numeric,
+                    D(("tapeIndex",idx),("lengthCm",lengthCm),
+                      ("fullMeters",fullMeters),("remainingCm",remainingCm),
+                      ("mode",mode)));
+            }
+
             case "usccss.b01.g2.measurement.estimate_cm":
             {
                 var actual=r.Next(5,31);
@@ -1719,6 +1752,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 },
             "usccss.b01.g2.measurement.iterate_ruler_cm" =>
                 (30*P("fullSpans")+P("remainder")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.measure.reptile_meterstick" =>
+                (P("mode") switch
+                {
+                    0=>P("fullMeters"),
+                    1=>P("remainingCm"),
+                    2=>P("lengthCm"),
+                    _=>throw new InvalidOperationException()
+                }).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.estimate_cm" =>
                 Math.Abs(P("actual")-P("estimate")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.pencil_line_plot" =>
@@ -2069,6 +2110,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("fullSpans",1,3) && Range("remainder",0,29) &&
                 Range("total",50,90) &&
                 30*N("fullSpans")+N("remainder")==N("total"),
+            "usccss.b01.g2.measure.reptile_meterstick" =>
+                Range("tapeIndex",0,6) &&
+                N("lengthCm")==new[]{58,72,44,180,336,190,282}[N("tapeIndex")] &&
+                N("fullMeters")==N("lengthCm")/100 &&
+                N("remainingCm")==N("lengthCm")%100 &&
+                Range("mode",0,2),
             "usccss.b01.g2.measurement.estimate_cm" =>
                 Range("actual",5,30) && Range("estimate",1,35) &&
                 Range("error",1,5) &&
