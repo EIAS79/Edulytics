@@ -220,7 +220,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
           CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9SharedGeometryProcedureCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9SharedAdditionProcedureCorrections.IsTarget(document, lesson) ||
-          CommonCoreB01V9SharedSubtractionProcedureCorrections.IsTarget(document, lesson));
+          CommonCoreB01V9SharedSubtractionProcedureCorrections.IsTarget(document, lesson) ||
+          CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -998,6 +999,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             document,sourceLesson,content.ContentVersion,
                             translationsByContentId.TryGetValue(content.Id,out var subtractionExisting)
                                 ? subtractionExisting : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.IsTarget(document,sourceLesson))
+                    {
+                        CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var conceptExisting)
+                                ? conceptExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =
