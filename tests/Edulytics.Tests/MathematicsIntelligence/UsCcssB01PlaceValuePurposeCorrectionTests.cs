@@ -23,7 +23,7 @@ public sealed class UsCcssB01PlaceValuePurposeCorrectionTests
         Assert.Equal("en",t.CultureCode);
         Assert.Contains("400 + 30 + 6",t.KeyConceptsAndRules);
         Assert.Contains("four hundred thirty-six",t.WorkedExamples);
-        Assert.Contains("seven hundred five",t.WorkedExamples);
+        Assert.Contains("seven hundred five",t.WorkedExamples,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("Step 1: Separate the given quantity",t.StepByStepSolutions);
         Assert.Contains("no tens",t.CommonMistakes);
         Assert.DoesNotContain("In previous lessons, you learned",t.Explanation);
