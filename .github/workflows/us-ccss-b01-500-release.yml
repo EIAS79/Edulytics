@@ -1,6 +1,6 @@
 name: US CCSS B01 500-Lesson Release Gate
 
-# V4.3: This is the FINAL, collective 500-lesson gate, not the per-commit
+# Unified V9: This is the FINAL collective 500-lesson gate, not the per-commit
 # repair runner. Ordinary draft code/test commits have targeted workflows.
 # Re-run the complete suite only when the release candidate is promoted,
 # manually requested for final evidence, or core immutable batch/ledger
@@ -14,6 +14,10 @@ on:
       - 'artifacts/academic-us-ccss/04-lesson-certification-records.json'
       - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
       - 'tools/us-ccss-b01-release-gate.cjs'
+      - 'tools/us-ccss-b01-v9-activity-figure-source-contract.cjs'
+      - 'tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-original-activity-figure-frames-40.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-source-lesson-activity-figure-context-40.json'
       - '.github/workflows/us-ccss-b01-500-release.yml'
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01FractionPurposeCorrections.cs'
@@ -59,6 +63,19 @@ jobs:
         run: node --test tests/academic-us-ccss-b01-evidence-progress.test.cjs
       - name: Screen ALL 500 learner content bodies together
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --output=b01-bulk-screen.json
+      - name: Audit source-figure metadata as V9 lesson/asset release blockers without faking PASS
+        run: |
+          node --test tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs
+          node tools/us-ccss-b01-v9-activity-figure-source-contract.cjs \
+            --source-only --out=b01-original-activity-figure-preflight.json
+          node -e "const r=require('./b01-original-activity-figure-preflight.json');if(r.coverage.totalLessons!==500||r.coverage.sourceFigureLessons!==40||r.coverage.unmappedFrames!==336||r.coverage.mediaPointers!==383||r.releaseEligible!==false||r.academicDecision!=='BATCH_NO-GO')process.exit(1);console.log(JSON.stringify(r.coverage));"
+      - name: Preserve exact V9 figure source-asset blocker preflight for all 40
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: b01-v9-original-activity-figure-release-preflight
+          path: b01-original-activity-figure-preflight.json
+          retention-days: 30
       - name: Save 500-row bulk content screen, even when issues are found
         uses: actions/upload-artifact@v4
         if: always()
@@ -81,6 +98,10 @@ jobs:
           node-version: '24'
       - name: Recheck content of the entire 500-lesson batch before collective acceptance
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --check
+      - name: Reject final release without source-asset figure linkage, math oracle, rights and rendered L6
+        run: |
+          node tools/us-ccss-b01-v9-activity-figure-source-contract.cjs \
+            --source-only --strict
       - name: Make ONE automatic batch certification decision (no per-lesson signoff)
         run: node tools/us-ccss-b01-release-gate.cjs --release-check
 
