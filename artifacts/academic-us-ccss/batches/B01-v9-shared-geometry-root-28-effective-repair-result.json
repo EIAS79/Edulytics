@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-US-CCSS-UNIFIED-V9",
+  "batchId": "B01",
+  "kind": "B01_V9_SHARED_GEOMETRY_PROCEDURE_ROOT_28_POST_MATERIALIZER_RESULT",
+  "rootCauseId": "REPEATED_STEPBYSTEPSOLUTIONS_c94fcabbd2dba8c6f15e",
+  "originalTeacherSourcePurposeAndActivityMetadata": "artifacts/academic-us-ccss/batches/B01-v9-geometry-template-31-source-purpose-reviewed.json",
+  "rootImplementation": "src/Edulytics.Data/Seeding/CommonCoreB01V9SharedGeometryProcedureCorrections.cs",
+  "sourceBoundTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedGeometryProcedureCorrectionsTests.cs",
+  "scope": {
+    "sourceReviewedCohort": 31,
+    "newlyRepairedSharedCause": 28,
+    "previouslyCorrectedSeparateCauses": 2,
+    "appropriatePreviousGenericGeometry": 1,
+    "newMathematicalProcedureVariants": 22,
+    "newUniqueTeacherSourcePurposeReviews": 31,
+    "purposeReviewedTotal": 113,
+    "purposeRemaining": 387,
+    "sourceBoundMetadataTotalUnique": 142
+  },
+  "runtimeV9WholeBatch": {
+    "workflowRunId": 38637806801,
+    "conclusion": "success",
+    "wholeBatchManifestJoined": 500,
+    "repeatedSharedTemplateFamilies": 25,
+    "rawGeometryTemplateCandidates": 31,
+    "postMaterializerSameGenericTemplate": 1,
+    "postMaterializerReplaced": 30,
+    "targetedDotNetTestsPassed": 50,
+    "targetedDotNetTestsFailed": 0,
+    "academicCertificationByThisTool": 0
+  },
+  "fullProductGate": {
+    "workflowRunId": 38637813186,
+    "conclusion": "success",
+    "dotNetPassed": 2537,
+    "dotNetFailed": 0,
+    "releaseJob": "SKIPPED_DRAFT_BATCH_NO-GO",
+    "v9SourceAndPracticeJobs": "PASS",
+    "eightDimensionTechnicalReport": "PASS_NOT_500_ACADEMIC_CERTIFICATES"
+  },
+  "preservedControls": [
+    "PED:US-CCSS-MATH:G2:U06:L08",
+    "PED:US-CCSS-MATH:G3:U07:L04",
+    "PED:US-CCSS-MATH:G4:U01:L01"
+  ],
+  "sourceBoundGuards": "Exact original lesson identity/source URL/canonical body SHA/official outcome list, fixed old and newly authored body pairs, authenticated predecessor content versions and persisted unrelated text safeguards; one cohort authority; no automatic source-text replacement by lexical similarity.",
+  "visualAndRightsLimitations": {
+    "sourceFigureReferenceCasesStillBlocked": 40,
+    "sourceFigureDomRecordToCMSReferences": 397,
+    "uniqueOriginalPublisherMediaSources": 383,
+    "sourceFigureMathematicalEquivalenceChecked": 0,
+    "sourceFigureRightsForReuseChecked": 0,
+    "authenticatedStudentBrowserL6Checked": 0
+  },
+  "academic": {
+    "fullSourceL1toL6Passed": false,
+    "existingCertifiedLessonLedger": 1,
+    "needsFullEvidence": 499,
+    "autoCertificationGranted": 0,
+    "collectiveDecision": "BATCH_NO-GO",
+    "nextBatchStarted": false
+  },
+  "rows": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L03",
+      "ordinal": 230,
+      "originalTeacherSourceSemanticSha256": "407d9a17e9a6b75e0b7cb8bd01970359cbdb3f4da3436b9aa31dd6038ae9cb37",
+      "mathFamily": "DRAW_TO_SIDE_LENGTHS",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L11",
+      "ordinal": 277,
+      "originalTeacherSourceSemanticSha256": "d018c2b8dbd34053ca0e29079de0171c16b95946b0d37089546adc3724be90e3",
+      "mathFamily": "RECTANGLE_TILE_ARRAY",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L01",
+      "ordinal": 314,
+      "originalTeacherSourceSemanticSha256": "93425d8bcb11f7e8776c02c41fdcf0044e127bc0a5d852039f3a10bbd3904f55",
+      "mathFamily": "INTRO_COMPARE_AREA",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L02",
+      "ordinal": 315,
+      "originalTeacherSourceSemanticSha256": "d7256153eb6eff83349dd09214b22c4308a57a2bf33f97a54dbfa353fa28f373",
+      "mathFamily": "AREA_EQUAL_SQUARE_TILING",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L03",
+      "ordinal": 316,
+      "originalTeacherSourceSemanticSha256": "8e5dbf347b32845f80b5c5c9312415eac8fe606b1b93947853a1ebb130e840e0",
+      "mathFamily": "AREA_EQUAL_SQUARE_TILING",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L04",
+      "ordinal": 317,
+      "originalTeacherSourceSemanticSha256": "9d655912c641bd9bf08a316c4499f53747828d90192a79ce46689c839bb406c7",
+      "mathFamily": "AREA_ROWS_AND_COLUMNS",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L06",
+      "ordinal": 319,
+      "originalTeacherSourceSemanticSha256": "c7efd2593c2b02019c7dc65689b77501335ad84472ebc87fac88fc2cda4c0828",
+      "mathFamily": "AREA_SQUARE_UNIT_SELECTION",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L07",
+      "ordinal": 320,
+      "originalTeacherSourceSemanticSha256": "ee8dd43e4c4ee31dcef0ca845900311edba95496696049e3d76598a2d3f91747",
+      "mathFamily": "AREA_SQUARE_UNIT_SELECTION",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L08",
+      "ordinal": 321,
+      "originalTeacherSourceSemanticSha256": "7e7c18f4a0c416b6ea4f9b17b47b729a644054bfaed546c8e7cb180976a5eabf",
+      "mathFamily": "AREA_ROWS_AND_COLUMNS",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L09",
+      "ordinal": 322,
+      "originalTeacherSourceSemanticSha256": "61caab8352989b3c81b89fe087ac6be01d6b475b688683da006a5bb183181110",
+      "mathFamily": "AREA_SIDE_LENGTH_PRODUCT",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L10",
+      "ordinal": 323,
+      "originalTeacherSourceSemanticSha256": "6096e8bfe54cc213d6e240906e698a2e9a7064b6ac69f39e223ad17ae085244d",
+      "mathFamily": "AREA_REAL_WORLD_CONTEXT",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L12",
+      "ordinal": 325,
+      "originalTeacherSourceSemanticSha256": "699d92b39f9167884af7a29d290093c6313c59c4791b612252a6eb0163587409",
+      "mathFamily": "AREA_ADDITIVE_COMPOSITE",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L13",
+      "ordinal": 326,
+      "originalTeacherSourceSemanticSha256": "94eeed7d4ead02a1c8beb3196d9a1a9e19c7a79fad1d448cf065c56cfd1c9b7f",
+      "mathFamily": "AREA_ADDITIVE_COMPOSITE",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L14",
+      "ordinal": 327,
+      "originalTeacherSourceSemanticSha256": "257d7605bac8b36c088495dc0f293aeebe05012b50f7518b483514f208392827",
+      "mathFamily": "AREA_MISSING_LENGTH",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U04:L10",
+      "ordinal": 359,
+      "originalTeacherSourceSemanticSha256": "f4f1fccf9552326977b734076d20f58941458d0cffdf9d395593b6e641117f98",
+      "mathFamily": "DISTRIBUTIVE_RECTANGLE_MULTIPLICATION",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U04:L11",
+      "ordinal": 360,
+      "originalTeacherSourceSemanticSha256": "4994c5b07249a1e4f5581e9eb35b7e3ee98870fff3b0bebef9a7398a22297604",
+      "mathFamily": "DISTRIBUTIVE_RECTANGLE_MULTIPLICATION",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U06:L07",
+      "ordinal": 396,
+      "originalTeacherSourceSemanticSha256": "22ae3378b160e27009878121dd8e9d5541ea9c134a60d7531cb5d72fd3caa02c",
+      "mathFamily": "ESTIMATE_LIQUID_VOLUME_L",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U06:L08",
+      "ordinal": 397,
+      "originalTeacherSourceSemanticSha256": "e5f3a567bdd7bdb65a573e186323a3fe44b3b417769a10c334d7bc737b976f7a",
+      "mathFamily": "MEASURE_LIQUID_VOLUME_L",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U07:L06",
+      "ordinal": 411,
+      "originalTeacherSourceSemanticSha256": "29214a599fb498a81673c11fe501ff2f90ee939669a022861e7637c71182ca58",
+      "mathFamily": "PERIMETER_BOUNDARY_SUM",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U07:L08",
+      "ordinal": 413,
+      "originalTeacherSourceSemanticSha256": "114bfdf6d86acfbea88ece0d6a58949c79dff407c499109cbe888b331a9b9740",
+      "mathFamily": "PERIMETER_BOUNDARY_SUM",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U07:L09",
+      "ordinal": 414,
+      "originalTeacherSourceSemanticSha256": "b29220edfc92fc8d4896a7bfc6aef5574cdbcfd849a1cf03cd4835af98eed76e",
+      "mathFamily": "PERIMETER_UNKNOWN_SIDE",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U07:L10",
+      "ordinal": 415,
+      "originalTeacherSourceSemanticSha256": "d60dd371ab33f9919167e05844602e715a149382c0bb992090954c87afba5960",
+      "mathFamily": "AREA_AND_PERIMETER_SOLVE",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U07:L11",
+      "ordinal": 416,
+      "originalTeacherSourceSemanticSha256": "f27bd70973836af7d696bb4e5e619612a0cd9c6dd26b865044fe9bfe9d99c347",
+      "mathFamily": "SAME_PERIMETER_DIFFERENT_AREA",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U07:L12",
+      "ordinal": 417,
+      "originalTeacherSourceSemanticSha256": "9d3577e5dda9678cd20d2101b50ca78750d811918949aa5d4a622e154242da4a",
+      "mathFamily": "SAME_AREA_DIFFERENT_PERIMETER",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U07:L13",
+      "ordinal": 418,
+      "originalTeacherSourceSemanticSha256": "77dc4a80a6dfa3abe2b192b0dcc414a731ba1d89fe348e3d32e9291760ed9e11",
+      "mathFamily": "GEOMETRY_PARK_DESIGN",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U07:L14",
+      "ordinal": 419,
+      "originalTeacherSourceSemanticSha256": "755fbf77cd26040ba8330c7832fcc8f0bd502853c01e039dc26bba583ea5cac2",
+      "mathFamily": "GEOMETRY_WAX_PATTERN",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L02",
+      "ordinal": 437,
+      "originalTeacherSourceSemanticSha256": "9ccf3459efe7955566c2297eff77ea176590e965176d343728e3ca9975510ae5",
+      "mathFamily": "FACTOR_PAIR_RECTANGLES",
+      "academicCertified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L08",
+      "ordinal": 443,
+      "originalTeacherSourceSemanticSha256": "8f1651581bab8daea33804eabe4729b808200d25791230a8670248724dcb6b5b",
+      "mathFamily": "RECTANGLE_ART_FACTOR_MULTIPLE_DESIGN",
+      "academicCertified": false
+    }
+  ]
+}
