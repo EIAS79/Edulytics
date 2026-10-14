@@ -9,6 +9,8 @@ on:
       - 'src/Edulytics.Data/Seeding/CommonCoreB01FractionPurposeCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Data/Edulytics.Data.csproj'
+      - 'src/Edulytics.Web/Edulytics.Web.csproj'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPurposeCorrectionsTests.cs'
   workflow_dispatch:
 
