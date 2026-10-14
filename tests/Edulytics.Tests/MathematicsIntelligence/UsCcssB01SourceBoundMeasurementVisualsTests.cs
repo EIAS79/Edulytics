@@ -360,7 +360,10 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
         var rich=RichLessonContentV2Registry.Find(code,"en")
             ?? RichLessonContentV2RuntimeComposer.TryCompose(code,body);
         Assert.NotNull(rich);
-        Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.Scale);
+        if(code==G1)
+            Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.RatioTable);
+        else
+            Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.Scale);
         Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.EquationSet);
     }
     [Fact]
