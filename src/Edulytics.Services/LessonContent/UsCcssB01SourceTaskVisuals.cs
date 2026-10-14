@@ -848,6 +848,29 @@ public static class UsCcssB01SourceTaskVisuals
                                 Cells=Enumerable.Repeat("X",N($"count{i}")).ToList()
                             }).ToList()
                     },
+                // Grade 2 U09 L04: measured pencil data must actually
+                // produce one X per pencil with a consistent centimeter axis.
+                "usccss.b01.g2.measurement.pencil_line_plot" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U09:L04" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.LinePlot,
+                        Title="Construct a centimeter line plot from pencil measurements",
+                        Description="The horizontal scale advances by exactly 1 cm. " +
+                            "Each X represents a measured pencil. " +
+                            $"There are {Enumerable.Range(0,7).Sum(i=>N($"count{i}"))} " +
+                            "pencils in all. " +
+                            $"The independently verified answer is {q.CorrectAnswer}.",
+                        PrimaryLabel="Pencil length in centimeters",
+                        Rows=Enumerable.Range(0,7)
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"{N("start")+i} cm",
+                                Cells=Enumerable.Repeat("X",N($"count{i}")).ToList()
+                            }).ToList()
+                    },
                 "usccss.b01.g2.measurement.read_line_plot" when
                     (lessonCode=="PED:US-CCSS-MATH:G2:U03:L14" ||
                      lessonCode=="PED:US-CCSS-MATH:G2:U03:L15" ||

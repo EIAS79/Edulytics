@@ -78,6 +78,23 @@ class WholeBatchSemanticTests(unittest.TestCase):
             "number.whole.add_subtract.within_100.build"]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_g2_u09_l04_pencil_plot_cannot_revert_to_wrong_family(self):
+        a,b=fixtures()
+        code="PED:US-CCSS-MATH:G2:U09:L04"
+        a["lessonRows"][40]["lessonCode"]=code
+        b["rows"][40]["lessonCode"]=code
+        b["rows"][40]["publisherTitle"]="Measure and Plot"
+        b["rows"][40]["sourcePurposePreview"]=(
+            "Measure pencil lengths in centimeters; represent the data in line plots.")
+        a["lessonRows"][40]["actualQuestionFamilies"]=[
+            "supporting.measurement.unit_iteration"]
+        x=module.analyze(a,b)
+        self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+            [r["rule"] for r in x["rows"][40]["conflicts"]])
+        a["lessonRows"][40]["actualQuestionFamilies"]=[
+            "usccss.b01.g2.measurement.pencil_line_plot"]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

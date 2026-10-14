@@ -8,6 +8,11 @@ on:
       - 'src/Edulytics.Services/LessonContent/UsCcssB01SourceBoundMeasurementVisuals.cs'
       - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceBoundMeasurementVisualsTests.cs'
+      - 'src/Edulytics.Services/Mathematics/UsCcssB01SourceTaskQuestionEngine.cs'
+      - 'src/Edulytics.Services/LessonContent/UsCcssB01SourceTaskVisuals.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/UsCcssB01SourceAlignedPracticeCorrections.cs'
+      - 'tools/us-ccss-b01-practice-source-conflicts.py'
+      - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
   workflow_dispatch:
 permissions:
   contents: read
@@ -20,7 +25,12 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.200'
-      - name: Two source-bound measurement lessons — arithmetic, visuals, isolation and runtime
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify new source-bound pencil plot scope independently
+        run: python3 tests/academic-us-ccss-b01-practice-source-conflicts.test.py
+      - name: Three source-bound measurement lessons — arithmetic, visuals, isolation and runtime
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
             --filter 'FullyQualifiedName~UsCcssB01SourceBoundMeasurementVisualsTests' \

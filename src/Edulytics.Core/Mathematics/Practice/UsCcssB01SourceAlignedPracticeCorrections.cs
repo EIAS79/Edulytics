@@ -425,6 +425,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.rectangle.unit_squares"],
             "IM2021_G2_U08_L12_PARTITION_UNIT_SQUARES_PURPOSE_CHECKED",
             "READY_VERIFIED", "usccss-b01-source-task-v1"),
+        // IM G2 U09 L04: measure multiple pencil lengths in centimeters,
+        // construct an X-mark line plot and add/subtract frequencies within 20.
+        new(
+            "PED:US-CCSS-MATH:G2:U09:L04",
+            "supporting.measurement.practical", "MEASURE_AND_PLOT_PENCILS",
+            ["usccss.b01.g2.measurement.pencil_line_plot"],
+            "IM2021_G2_U09_L04_MEASURE_PENCILS_CONSTRUCT_LINEPLOT",
+            "READY_VERIFIED", "usccss-b01-g2-u09-measure-plot-v1"),
         new(
             "PED:US-CCSS-MATH:G2:U09:L03",
             "supporting.measurement.practical", "MAP_MEASURE_LENGTHS",
