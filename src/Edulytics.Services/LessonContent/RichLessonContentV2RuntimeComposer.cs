@@ -692,6 +692,60 @@ public static partial class RichLessonContentV2RuntimeComposer
         // This is an independently authored 1:37 example, not publisher art:
         // all 60 minute ticks and continuously moving hour hand are rendered
         // by the reusable ClockFace Razor partial.
+        // IM first-edition G2 U06 L02: students recognize and DRAW
+        // polygons by the count of closed straight sides and corners.
+        // The former EquationSet-only Rich V2 missed that spatial skill.
+        // Source lesson goal is guarded; these are Edulytics-owned SVG polygons
+        // with their actual vertices, not source image reuploads.
+        if (lessonCode == "PED:US-CCSS-MATH:G2:U06:L02")
+        {
+            if (body.Title != "Draw Shapes PLC Activity" ||
+                !body.Explanation.Contains("number of sides or corners", StringComparison.OrdinalIgnoreCase) ||
+                !body.KeyConceptsAndRules.Contains("pentagons", StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException(
+                    "G2 U06 L02 polygon visual rejected original learning-purpose drift.");
+
+            return
+            [
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.PolygonDiagram,
+                    Title = "Triangle — 3 sides and 3 corners",
+                    Description = "Closed triangle: count exactly 3 straight sides and 3 corners.",
+                    Items = ["triangle"]
+                },
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.PolygonDiagram,
+                    Title = "Quadrilateral — 4 sides and 4 corners",
+                    Description = "Closed quadrilateral: 4 straight sides and 4 corners. Unequal side lengths are allowed.",
+                    Items = ["quadrilateral"]
+                },
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.PolygonDiagram,
+                    Title = "Square — another quadrilateral",
+                    Description = "A square is also a closed 4-sided, 4-corner quadrilateral; equal sides do not change the side count.",
+                    Items = ["square"]
+                },
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.PolygonDiagram,
+                    Title = "Pentagon — 5 sides and 5 corners",
+                    Description = "Closed pentagon: 5 straight sides and 5 corners. An OPEN chain is not a pentagon.",
+                    Items = ["pentagon"]
+                },
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.PolygonDiagram,
+                    Title = "Hexagon — 6 sides and 6 corners",
+                    Description = "Closed hexagon: 6 straight sides and 6 corners, independent of orientation.",
+                    Items = ["hexagon"]
+                },
+                questionForms
+            ];
+        }
+
         if (lessonCode == "PED:US-CCSS-MATH:G3:U06:L09")
         {
             if (body.Title != "Time to the Nearest Minute" ||

@@ -15,11 +15,13 @@ test('Join all 500 actual Rich V2 lessons with 40 source figure lessons, detect 
  assert.equal(d.coverage.sourceFigureFrames,397);
  assert.equal(d.coverage.imageFileFrames,45);
  assert.equal(d.coverage.tikzFrames,352);
- assert.equal(d.coverage.studentLessonsOnlyEquations,12);
- assert.equal(d.coverage.studentLessonsWithStructuralDiagram,28);
+ assert.equal(d.coverage.studentLessonsOnlyEquations,11);
+ assert.equal(d.coverage.studentLessonsWithStructuralDiagram,29);
  assert.equal(d.coverage.studentLessonsWithNoVisual,0);
- assert.equal(d.highPriorityFigureLessons.length,12);
- assert(d.highPriorityFigureLessons.includes('PED:US-CCSS-MATH:G2:U06:L02'));
+ assert.equal(d.highPriorityFigureLessons.length,11);
+ assert(!d.highPriorityFigureLessons.includes('PED:US-CCSS-MATH:G2:U06:L02'));
+ assert(d.highPriorityFigureLessons.includes('PED:US-CCSS-MATH:G2:U06:L03'));
+ assert.deepEqual(d.rows.find(x=>x.lessonCode==='PED:US-CCSS-MATH:G2:U06:L02').actualStructuralDiagramKinds,Array(5).fill('PolygonDiagram'));
  assert(d.highPriorityFigureLessons.includes('PED:US-CCSS-MATH:G3:U07:L01'));
  assert(d.highPriorityFigureLessons.includes('PED:US-CCSS-MATH:G4:U04:L20'));
  assert(!d.highPriorityFigureLessons.includes('PED:US-CCSS-MATH:G3:U06:L09'));
