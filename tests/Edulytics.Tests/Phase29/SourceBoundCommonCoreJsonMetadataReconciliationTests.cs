@@ -12,7 +12,7 @@ namespace Edulytics.Tests.Phase29;
 public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
 {
     [Fact]
-    public void MetadataOnlyStartupSelector_ExposesExactlyNinetyFiveSourceBoundLessons()
+    public void MetadataOnlyStartupSelector_ExposesExactlyNinetyFourSourceBoundLessons()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var chosen = documents.SelectMany(d => d.Lessons
@@ -21,8 +21,8 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
                 .Select(l => (Doc: d, Lesson: l)))
             .ToArray();
 
-        // Source-bound corrections are counted explicitly, including the 3 additional V9 non-length ruler fixes.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3 + 23;
+        // Source-bound corrections counted as a SET: of the 23 V9 root members, G4 U02 L03 was already selected by the HTML display fix; only 22 identities are new.
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3 + 22;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
