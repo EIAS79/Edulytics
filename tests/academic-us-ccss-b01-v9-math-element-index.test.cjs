@@ -27,8 +27,15 @@ function sample() {
       state: 'REFERENCE_FILE_INVENTORIED_NOT_ACADEMICALLY_CERTIFIED'
     }))
   };
+  const teacherActivityIndex = {
+    batchId: 'B01', sourceCoverage: 500, sourceAvailable: 500,
+    representationCueKeys: ['DOT_IMAGES', 'NUMBER_LINE', 'FRACTION_PARTS',
+      'CLOCK_FACE', 'PLACE_VALUE', 'RECTANGULAR_ARRAY', 'MEASUREMENT_SCALE', 'DATA_GRAPH'],
+    rows: lessons.map((m, i) => [i + 1, m.lessonCode, 'd'.repeat(64),
+      'e'.repeat(64), 2, 'f'.repeat(64), 7, i === 1 ? 6 : 0])
+  };
   return { manifest: { batchId: 'B01', expectedLessonCount: 500, lessons },
-    sourceIndex, packs };
+    sourceIndex, teacherActivityIndex, packs };
 }
 test('Indexes all 500, without confusing candidate elements with taught skills or certification', () => {
   const result = buildIndex(sample());
@@ -47,6 +54,11 @@ test('Indexes all 500, without confusing candidate elements with taught skills o
   assert.equal(result.rows[0].originalTeacherSource.rawFileSha256, 'c'.repeat(64));
   assert.equal(result.rows[0].originalTeacherSource.state,
     'HASH_INVENTORIED_NOT_ACADEMICALLY_VERIFIED');
+  assert.deepEqual(result.rows[1].originalTeacherActivitySnapshot.representationCueCandidates,
+    ['NUMBER_LINE', 'FRACTION_PARTS']);
+  assert.equal(result.byTeacherCue.NUMBER_LINE.candidateLessons, 1);
+  assert.equal(result.rows[1].originalTeacherActivitySnapshot.state,
+    'SOURCE_ACTIVITY_HEURISTIC_NOT_L4_OR_DEFECT_PROOF');
 });
 test('Does not infer a repair or a defect from incidental vocabulary', () => {
   const f = sample();
@@ -81,4 +93,13 @@ test('Rejects source inventory drift, not simply missing learner content', () =>
   const g = sample();
   g.sourceIndex.rows[0].localFileByteSha256 = '';
   assert.throws(() => buildIndex(g), /Source inventory provenance missing\/mismatched/);
+});
+
+test('Teacher source cue identity or signature drift fails closed', () => {
+  const f = sample();
+  f.teacherActivityIndex.rows[0][1] = 'SOME:OTHER:LESSON';
+  assert.throws(() => buildIndex(f), /Teacher activity identity\/hash\/flag mismatch/);
+  const g = sample();
+  g.teacherActivityIndex.rows[0][7] = 256;
+  assert.throws(() => buildIndex(g), /Teacher activity identity\/hash\/flag mismatch/);
 });
