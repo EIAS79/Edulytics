@@ -22,7 +22,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             .ToArray();
 
         // Previous 54 (including historical G1 pilot) plus 12 exact IM source-bound fraction repairs.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1;
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
