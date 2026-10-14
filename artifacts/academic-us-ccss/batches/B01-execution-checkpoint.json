@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "2026-10-15 V9 B01 first edition IM K5 2019-2021 legal-rights clarification and exact all-397 figure attribution review: official IM Terms confirm IM 2019-2021 first-edition curriculum CC BY 4.0 INCLUDING COMMERCIAL reuse with attribution, license link, changes; trademark/logo exempt and separately attributed third-party assets not necessarily covered. Fetched ALL 40 teacher lesson original HTML pages and exact data-record-id for 397 CMS frames; classified 352 TikzFile and 45 ImageFile; found 5 explicit third-party image credits: 1 Pixabay Congerdesign (date and terms to confirm), 1 CC BY-SA 3.0 King of Hearts, 1 CC BY-SA 2.0 Luc Viatour, 2 CC0 pxhere/Pikrepo. Other 392 have no separate per-frame credit visible; this is NOT proof of public domain, first-party ownership or individual rights. Preserved source URLs/actual page SHA/media asset bytes SHA and short legal attribution factual statements, no copyrighted original picture bytes copied to repository; coded exact 397-way attribution gate + false license/math/browser PASS negative controls. Existing 383 asset HTTP200 SHA/dimensions validated; 115 preliminary alt risks. Still 1/500 L1-L6 academic certified, BATCH_NO-GO, draft PR, no merge, no Render, no B02. Additional L6 source HTML deep-context triage for all 115 earlier alt-warning figure frames: 115 official original teacher modal long-description tags parsed, only 1 populated (G4 U04 L20); 30 original image alt attributes empty with zero populated linked modal long-description; 45 modal captions were short labels and none were independently descriptive; no visible figcaption with descriptive text. These are SOURCE DOCUMENT observations only, not verified actual Edulytics student UI, math correctness, license or L6. Source evidence and strict negative tests recorded; no certification granted.",
-  "nextExactOperation": "Audit 30 empty-alt figure frames for mathematical semantics and teacher task context first; original modal long descriptions have zero nonempty for these. Build independently mathematically correct Edulytics accessible diagram descriptions and visual replacements when required, then test the actual authenticated student accessibility tree and responsive UI. Ensure 397 math figures, 383 source assets and all source attribution terms including 5 third-party cases, and all 500 L1–L6/eight dimensions/practice/assessment/worksheet/homework collectively verified before B01 live merge/publish or B02.",
+  "lastCompletedOperation": "2026-10-15 V9 B01 500-lesson faithful licensed mathematical diagram policy: official IM Terms and first-edition IM copyright verify 2019–2021 CC BY 4.0 author attribution, source URI, license URI and Edulytics adaptation note. Same source illustration shape/pixel identity or a different rendering style is NOT an academic defect by itself; only exact quantities, units, relations, fractional partitions, scales and task-specific diagram semantics determine mathematical equivalence. Integrated learner-facing CC BY source attribution into Rich Lesson V2 only for PED:US-CCSS-MATH grade 1–4 source codes and original source URL lookup, with author, actual license URL, change notice, no implied endorsement and distinct third-party image license caution; Polish, Arabic, English messages. Added explicit executable math-semantic comparator (no pixel/hash match requirement) and source edition license helper distinguishing 392 conditional first-edition default cases vs five separately credited third-party images, with strict fail-closed no automatic right/math/L6 or academic pass. CI path/test gate included; B01 remains 1/500 academically certified and BATCH_NO-GO.",
+  "nextExactOperation": "Run new CI on this immutable B01 head to compile Razor/Web and all 500 rich content source math guards, correct failing tests if any; independently validate actual Rich V2 student diagrams against each of 397 original teacher frames for math quantities, orientation where mathematically relevant, data/labels/scale, alt and mobile, using structured mathematical signatures plus visual browser evidence—not pixel hashing. Where original first-edition artwork is needed, reuse/ adapt under CC BY 4.0 with visible attribution, but handle the five separate third-party image licenses on their own. Complete 40 L6 figure lessons plus remaining 500 L1–L6/eight dimension assessment/practice/workbooks then publish B01 only after academic collective PASS; no B02 yet.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -638,5 +638,27 @@
     "evidencePath": "artifacts/academic-us-ccss/batches/B01-v9-original-figure-115-alt-modal-context.json",
     "tests": "tests/academic-us-ccss-b01-v9-figure-115-alt-modal-context.test.cjs",
     "disposition": "ORIGINAL_SOURCE_HTML_CONTEXT_TRIAGE_ONLY_DO_NOT_INFER_STUDENT_BROWSER_ACCESSIBILITY"
+  },
+  "v9MathematicalFigureEquivalenceAndLicenseUI": {
+    "manifestLessons": 500,
+    "sourceEdition": "IM K–12 Math first edition 2019–2021 CC BY 4.0",
+    "originalTeacherSourceLinkConstructibleForEveryLesson": 500,
+    "frontEndSourceAttributionVisibleForUsCcssRichV2": true,
+    "otherProgramsSourceAttributionUnchanged": true,
+    "authorCopyrightLicenseAndModificationNotice": true,
+    "thirdPartyImageLicensesNotAutomaticallyAssignedCCBY": true,
+    "artOrPixelIdentityMandatory": false,
+    "styleSimilarOrSameNotAutomaticFailure": true,
+    "semanticMathematicalEvidenceMandatory": true,
+    "numericQuantitiesFractionsRelationsScalesAndUnitsMustMatch": true,
+    "originalFramesFromSourceLedger": 397,
+    "conditionalCoreCurriculumCCBYCandidates": 392,
+    "separatelyCreditedThirdPartyFrames": 5,
+    "studentVisualMathCertifiedByThisChange": 0,
+    "academicCertificationsGranted": 0,
+    "kind": "IMPLEMENTED_FRONTEND_ATTRIBUTION_PLUS_VISUAL_EQUIVALENCE_POLICY_NOT_L6_CERTIFICATE",
+    "sourceRenderPartial": "src/Edulytics.Web/Views/Shared/_RichLessonFirstEditionAttribution.cshtml",
+    "policyTool": "tools/us-ccss-b01-v9-visual-math-equivalence.cjs",
+    "academicDecision": "BATCH_NO-GO"
   }
 }

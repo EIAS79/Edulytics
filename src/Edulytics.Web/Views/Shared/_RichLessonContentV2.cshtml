@@ -274,3 +274,8 @@
         </div>
     </section>
 }
+
+@if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:", StringComparison.Ordinal))
+{
+    <partial name="_RichLessonFirstEditionAttribution" model="Model" />
+}
