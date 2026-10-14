@@ -106,7 +106,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2; // G1 pilot + V9 B01 fraction repairs
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 23; // G1 pilot + V9 B01 fraction repairs
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -214,7 +214,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
           CommonCoreB01FractionPurposeCorrections.IsTarget(document, lesson) ||
           CommonCoreB01PlaceValuePurposeCorrection.IsTarget(document, lesson) ||
           CommonCoreB01UnitAndPlaceValuePurposeCorrections.IsTarget(document, lesson) ||
-          CommonCoreB01NonLengthRulerTemplateCorrections.IsTarget(document, lesson));
+          CommonCoreB01NonLengthRulerTemplateCorrections.IsTarget(document, lesson) ||
+          CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -944,6 +945,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             document,sourceLesson,content.ContentVersion,
                             translationsByContentId.TryGetValue(content.Id,out var nonLengthExisting)
                                 ? nonLengthExisting : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.IsTarget(document,sourceLesson))
+                    {
+                        CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var sharedCohortExisting)
+                                ? sharedCohortExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =
