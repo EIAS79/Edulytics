@@ -68,7 +68,7 @@ function summarize({manifest,packs,reviewed}){
  const groups=new Map(definitions.map(x=>[x.id,{id:x.id,classification:'ROOT_CAUSE_CANDIDATES_NOT_CERTIFICATION',
   rawCandidateCount:0,sourceGoalReviewedCandidates:0,unverifiedCandidates:0,
   matchingLessons:[],sourceGoalReviewed:[],stillNeedsSourceVerification:[],
-  byGoalContext:{LENGTH_CONTEXT_POSSIBLY_RELEVANT:0,NUMBER_LINE_CONTEXT_REVIEW:0,NON_LENGTH_GOAL_SOURCE_REVIEW:0,GOAL_UNRESOLVED:0}}]]));
+  byGoalContext:{LENGTH_CONTEXT_POSSIBLY_RELEVANT:0,NUMBER_LINE_CONTEXT_REVIEW:0,NON_LENGTH_GOAL_SOURCE_REVIEW:0,GOAL_UNRESOLVED:0}}]));
  const rows=[],seen=new Set();
  for(const entry of manifest.lessons){
   assert(entry.lessonCode&&!seen.has(entry.lessonCode),'Duplicate B01 manifest identity');
