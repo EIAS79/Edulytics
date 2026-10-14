@@ -49,7 +49,8 @@ function fixture(){
   packs,sourceIndex,teacherActivityIndex,sourceGoalMemory,reviewed:[
    {batchId:'B01',rows:[{lessonCode:lessons[0].lessonCode,sourceSemanticSha256:shaA}]},
    {batchId:'B01',reviewedObjectives:[]},
-   {batchId:'B01',rows:[]},{batchId:'B01',rows:[]}
+   {batchId:'B01',rows:[]},{batchId:'B01',rows:[]},
+   {batchId:'B01',rows:[]}
   ]};
 }
 test('Full B01 500/500 cross-joins mathematical, publisher-source and shared templates in ONE graph',()=>{
