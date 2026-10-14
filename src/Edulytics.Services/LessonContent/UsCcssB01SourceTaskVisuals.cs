@@ -784,6 +784,28 @@ public static class UsCcssB01SourceTaskVisuals
                             }
                         ]
                     },
+                "usccss.b01.g4.eighth_inch_line_plot_difference" when
+                    lessonCode=="PED:US-CCSS-MATH:G4:U03:L13" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.LinePlot,
+                        Title="Interpret eighth-inch measurements and subtract fractions",
+                        Description="Each equally spaced tick is 1/8 inch. " +
+                            "The labels 2/8, 4/8, and 6/8 also represent " +
+                            "quarters or halves. Every X is a real observation. " +
+                            $"The two selected lengths differ by {q.CorrectAnswer} inch.",
+                        PrimaryLabel="Shoe length (inches; nearest 1/8)",
+                        Rows=Enumerable.Range(0,9)
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=(i==0 ? N("whole").ToString() :
+                                    i==8 ? (N("whole")+1).ToString() :
+                                    $"{N("whole")} {i}/8")+" in",
+                                Cells=Enumerable.Repeat("X",N($"count{i}")).ToList()
+                            }).ToList()
+                    },
                 "usccss.b01.g3.quarter_inch_line_plot_frequency" when
                     (lessonCode=="PED:US-CCSS-MATH:G3:U06:L04" ||
                      lessonCode=="PED:US-CCSS-MATH:G3:U06:L05" ||
