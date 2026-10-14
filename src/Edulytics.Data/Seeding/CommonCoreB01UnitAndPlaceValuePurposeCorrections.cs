@@ -84,7 +84,7 @@ public static class CommonCoreB01UnitAndPlaceValuePurposeCorrections
         t.StepByStepSolutions == (after ? r.NewSteps : r.OldSteps) &&
         t.CommonMistakes == (after ? r.NewMistakes : r.OldMistakes);
 
-    private static bool Same(CanonicalLessonContentPackLessonTranslation t, Repair r, bool after) =>
+    private static bool Same(CanonicalLessonContentPackTranslation t, Repair r, bool after) =>
         t.Title == r.Title && t.Explanation == r.Explanation && t.QuickSummary == r.Summary &&
         t.KeyConceptsAndRules == (after ? r.NewConcepts : r.OldConcepts) &&
         t.WorkedExamples == (after ? r.NewExamples : r.OldExamples) &&
