@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "2026-10-15 V9 B01 first edition IM K5 2019-2021 legal-rights clarification and exact all-397 figure attribution review: official IM Terms confirm IM 2019-2021 first-edition curriculum CC BY 4.0 INCLUDING COMMERCIAL reuse with attribution, license link, changes; trademark/logo exempt and separately attributed third-party assets not necessarily covered. Fetched ALL 40 teacher lesson original HTML pages and exact data-record-id for 397 CMS frames; classified 352 TikzFile and 45 ImageFile; found 5 explicit third-party image credits: 1 Pixabay Congerdesign (date and terms to confirm), 1 CC BY-SA 3.0 King of Hearts, 1 CC BY-SA 2.0 Luc Viatour, 2 CC0 pxhere/Pikrepo. Other 392 have no separate per-frame credit visible; this is NOT proof of public domain, first-party ownership or individual rights. Preserved source URLs/actual page SHA/media asset bytes SHA and short legal attribution factual statements, no copyrighted original picture bytes copied to repository; coded exact 397-way attribution gate + false license/math/browser PASS negative controls. Existing 383 asset HTTP200 SHA/dimensions validated; 115 preliminary alt risks. Still 1/500 L1-L6 academic certified, BATCH_NO-GO, draft PR, no merge, no Render, no B02.",
-  "nextExactOperation": "Use source evidence to establish correct first-edition CC BY 4.0 attribution in Edulytics student display; for 5 explicitly third-party pictures verify ORIGINAL licensing (2 CC BY-SA adaptation/sharealike, 2 CC0 and source, 1 Pixabay Content License vs pre-2019 CC0 publication date). For other 392 inspect exact ownership and separate image attributions; do not blanket block IM original CC BY art and do not call no-credit public domain. Independently validate each of 397 diagram math semantics, 115 alt contextual cases and original tasks, legally render correct visuals in authenticated responsive student browser (L6). Complete ALL 500 academic math/explanations/examples/tasks/practice assessments worksheets homework across L1-L6/eight dimensions, collective B01 BATCH_PASS on immutable CI, merge, Render and live verification only then B02.",
+  "lastCompletedOperation": "2026-10-15 V9 B01 first edition IM K5 2019-2021 legal-rights clarification and exact all-397 figure attribution review: official IM Terms confirm IM 2019-2021 first-edition curriculum CC BY 4.0 INCLUDING COMMERCIAL reuse with attribution, license link, changes; trademark/logo exempt and separately attributed third-party assets not necessarily covered. Fetched ALL 40 teacher lesson original HTML pages and exact data-record-id for 397 CMS frames; classified 352 TikzFile and 45 ImageFile; found 5 explicit third-party image credits: 1 Pixabay Congerdesign (date and terms to confirm), 1 CC BY-SA 3.0 King of Hearts, 1 CC BY-SA 2.0 Luc Viatour, 2 CC0 pxhere/Pikrepo. Other 392 have no separate per-frame credit visible; this is NOT proof of public domain, first-party ownership or individual rights. Preserved source URLs/actual page SHA/media asset bytes SHA and short legal attribution factual statements, no copyrighted original picture bytes copied to repository; coded exact 397-way attribution gate + false license/math/browser PASS negative controls. Existing 383 asset HTTP200 SHA/dimensions validated; 115 preliminary alt risks. Still 1/500 L1-L6 academic certified, BATCH_NO-GO, draft PR, no merge, no Render, no B02. Additional L6 source HTML deep-context triage for all 115 earlier alt-warning figure frames: 115 official original teacher modal long-description tags parsed, only 1 populated (G4 U04 L20); 30 original image alt attributes empty with zero populated linked modal long-description; 45 modal captions were short labels and none were independently descriptive; no visible figcaption with descriptive text. These are SOURCE DOCUMENT observations only, not verified actual Edulytics student UI, math correctness, license or L6. Source evidence and strict negative tests recorded; no certification granted.",
+  "nextExactOperation": "Audit 30 empty-alt figure frames for mathematical semantics and teacher task context first; original modal long descriptions have zero nonempty for these. Build independently mathematically correct Edulytics accessible diagram descriptions and visual replacements when required, then test the actual authenticated student accessibility tree and responsive UI. Ensure 397 math figures, 383 source assets and all source attribution terms including 5 third-party cases, and all 500 L1–L6/eight dimensions/practice/assessment/worksheet/homework collectively verified before B01 live merge/publish or B02.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -619,5 +619,24 @@
     "evidencePath": "artifacts/academic-us-ccss/batches/B01-v9-source-figure-397-rights-attribution-triage.json",
     "negativeTest": "tests/academic-us-ccss-b01-v9-figure-397-rights-attribution.test.cjs",
     "academicDecision": "BATCH_NO-GO"
+  },
+  "v9OriginalFigure115AltCaptionContextCheck": {
+    "totalOriginalAltContextCandidates": 115,
+    "sourceFigureLessonsInScope": 40,
+    "affectedLessons": 30,
+    "emptyOriginalImageAlt": 30,
+    "shortAltCount": 85,
+    "modalDescriptionElementsFound": 115,
+    "modalDescriptionElementsNonempty": 1,
+    "emptySourceAltWithModalDescription": 0,
+    "nontrivialSourceDialogCaptions": 0,
+    "oneLetterOrShortModalCaptions": 45,
+    "nontrivialVisibleFigCaptions": 0,
+    "studentFacingAccessibleTextVerified": 0,
+    "diagramMathCertified": 0,
+    "newAcademicL1toL6Passes": 0,
+    "evidencePath": "artifacts/academic-us-ccss/batches/B01-v9-original-figure-115-alt-modal-context.json",
+    "tests": "tests/academic-us-ccss-b01-v9-figure-115-alt-modal-context.test.cjs",
+    "disposition": "ORIGINAL_SOURCE_HTML_CONTEXT_TRIAGE_ONLY_DO_NOT_INFER_STUDENT_BROWSER_ACCESSIBILITY"
   }
 }
