@@ -7,6 +7,7 @@ on:
       - '.github/workflows/us-ccss-b01-v4-3-delta-triage.yml'
       - 'tools/us-ccss-b01-delta-review.cjs'
       - 'tests/academic-us-ccss-b01-delta-review.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-targeted-visual-evidence-deltas.v1.json'
   workflow_dispatch:
     inputs:
       baseline_run_id:
@@ -73,6 +74,7 @@ jobs:
             --unified reused-unified/b01-unified-eight-dimension-report-500.json \
             --progress reused-progress/b01-collective-evidence-progress-500.json \
             --run-id "$PRIOR_RUN" --baseline-sha "$PRIOR_SHA" \
+            --verified-deltas artifacts/academic-us-ccss/batches/B01-targeted-visual-evidence-deltas.v1.json \
             --output b01-v4-3-delta-review
       - name: Preserve grouped review queue and L1-L6 gaps (no ledger changes)
         uses: actions/upload-artifact@v4

@@ -81,3 +81,39 @@ t('likely overbroad fractional lineplot cue is never silently declared fixed',()
   assert.equal(r.counts.potentialClassifierOvermatches,2);
   assert.equal(r.queue.find(x=>x.ordinal===8).reviewState,'REVIEW_REQUIRED_NOT_CERTIFIED');
 });
+
+t('V4.3 admits exact targeted cue proofs without re-running all 500 or granting L4',()=>{
+  const x=fixture(),code=x.manifest.lessons[5].lessonCode;
+  const row={lessonCode:code,sourceSemanticSha256:sha,publisherCue:'GRAPH_AND_SCALE',
+    evidenceRunId:38496013773,evidenceCodeSha:'d'.repeat(40),
+    verifiedVisualKind:'PictureGraph',
+    summary:'Publisher scaled picture graph classifier correction verified by targeted GitHub CI',
+    scope:'PUBLISHER_REVIEW_CUE_ONLY_NOT_L4_PASS'};
+  const validated={schemaVersion:1,baselineRunId:x.baselineRunId,
+    baselineCodeSha:x.baselineSha,resolutions:[row]};
+  const report=join({...x,verifiedDeltas:validated});
+  assert.equal(report.counts.baselinePublisherCues,2);
+  assert.equal(report.counts.verifiedCueResolutions,1);
+  assert.equal(report.counts.publisherCues,1);
+  assert.equal(report.counts.teacherCues,2);
+  assert.equal(report.counts.reviewUnion,3); // still teacher activity evidence gap
+  assert.equal(report.counts.missingEvidenceLessons,499);
+  assert.equal(report.academicDecision,'BATCH_NO-GO');
+  assert.equal(report.releaseEligible,false);
+  assert.equal(report.resolvedVisualCues[0].academicDecision,'NOT_CERTIFIED');
+  const stale=structuredClone(validated);
+  stale.resolutions[0].sourceSemanticSha256='e'.repeat(64);
+  assert.throws(()=>join({...x,verifiedDeltas:stale}),/source SHA drift/);
+  const absent=structuredClone(validated);
+  absent.resolutions[0].publisherCue='CLOCK_DIAGRAM';
+  assert.throws(()=>join({...x,verifiedDeltas:absent}),/absent legacy cue/);
+  const dupe=structuredClone(validated);
+  dupe.resolutions.push({...row});
+  assert.throws(()=>join({...x,verifiedDeltas:dupe}),/Duplicate lesson delta/);
+  const unverified=structuredClone(validated);
+  unverified.resolutions[0].evidenceRunId=0;
+  assert.throws(()=>join({...x,verifiedDeltas:unverified}),/Incomplete/);
+  const baseline=structuredClone(validated);
+  baseline.baselineCodeSha='f'.repeat(40);
+  assert.throws(()=>join({...x,verifiedDeltas:baseline}),/immutable baseline/);
+});

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "kind": "B01_TARGETED_PUBLISHER_VISUAL_REVIEW_CUE_RESOLUTIONS_NOT_CERTIFICATION",
+  "baselineRunId": 38492263814,
+  "baselineCodeSha": "dfe40ca9c238f45967b436e937cfb6187e7975d5",
+  "resolutions": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L10",
+      "sourceSemanticSha256": "a4adb4cfac91bfa6338e7aa7ab519b80d0f2b2b5bcf2d3d0142567b9974af659",
+      "publisherCue": "NUMBER_LINE",
+      "evidenceRunId": 38497332487,
+      "evidenceCodeSha": "736ff8985a15dd9dbc4fc501490150b1180633e4",
+      "verifiedVisualKind": "NumberLine",
+      "summary": "Actual Rich V2 number-line appearance and 60 verified arithmetic cases after corrected Practice family routing; L6 and source-strategy coverage not yet complete",
+      "scope": "PUBLISHER_REVIEW_CUE_ONLY_NOT_L4_PASS"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L04",
+      "sourceSemanticSha256": "ea860b67bfbd3e0329ec46747d45d1b342de1cec938807a2614da5c22fc18418",
+      "publisherCue": "GRAPH_AND_SCALE",
+      "evidenceRunId": 38496013773,
+      "evidenceCodeSha": "1b90b1f2ee02e0f22ddb9e6a42d7eb465d0a708e",
+      "verifiedVisualKind": "PictureGraph",
+      "summary": "Original publisher source specifies scaled picture graph, already present in learner Rich V2; false classifier exclusion corrected and targeted unit tests passed",
+      "scope": "PUBLISHER_REVIEW_CUE_ONLY_NOT_L4_PASS"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L13",
+      "sourceSemanticSha256": "f27e250226f1e84242bdb72610908958a2b4beb79b098f2b72bd4d09e089532d",
+      "publisherCue": "FRACTION_PARTS",
+      "evidenceRunId": 38496013773,
+      "evidenceCodeSha": "1b90b1f2ee02e0f22ddb9e6a42d7eb465d0a708e",
+      "verifiedVisualKind": "LinePlot",
+      "summary": "Original publisher source requires fractional measurements on X-mark line plots; LinePlot already present, fraction-bars cue was a classifier overmatch",
+      "scope": "PUBLISHER_REVIEW_CUE_ONLY_NOT_L4_PASS"
+    }
+  ]
+}

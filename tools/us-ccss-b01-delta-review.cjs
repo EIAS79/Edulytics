@@ -5,7 +5,7 @@
 const fs=require('node:fs');
 const assert=(ok,message)=>{if(!ok)throw Error(message)};
 const sha64=x=>typeof x==='string'&&/^[0-9a-f]{64}$/i.test(x);
-function join({manifest,visual,activity,unified,progress,baselineRunId,baselineSha}) {
+function join({manifest,visual,activity,unified,progress,baselineRunId,baselineSha,verifiedDeltas=null}) {
   assert(manifest.batchId==='B01'&&manifest.lessons?.length===500,'Wrong B01 manifest');
   assert(visual.expected===500&&visual.academicDecision==='NOT_CERTIFIED','Unverified visual baseline');
   assert(activity.expected===500&&activity.academicDecision==='NOT_CERTIFIED','Unverified teacher baseline');
@@ -19,8 +19,31 @@ function join({manifest,visual,activity,unified,progress,baselineRunId,baselineS
     ['unified',unified.lessons],['progress',progress.lessons]];
   for(const [name,rows] of sources)
     assert(Array.isArray(rows)&&rows.length===500,'Expected 500 '+name+' rows');
+  // V4.3: admit only externally verified, source-SHA-bound corrections to
+  // EXISTING publisher cue classifications. This is NOT an L1-L6 PASS.
+  const deltas=new Map(),resolvedVisualCues=[];
+  if(verifiedDeltas!==null){
+    assert(verifiedDeltas.schemaVersion===1 &&
+      verifiedDeltas.baselineRunId===baselineRunId &&
+      verifiedDeltas.baselineCodeSha===baselineSha &&
+      Array.isArray(verifiedDeltas.resolutions),
+      'Delta proof does not match immutable baseline run/commit');
+    for(const row of verifiedDeltas.resolutions){
+      assert(typeof row.lessonCode==='string' &&
+        sha64(row.sourceSemanticSha256) &&
+        typeof row.publisherCue==='string' && row.publisherCue.length>0 &&
+        typeof row.evidenceRunId==='number' && row.evidenceRunId>0 &&
+        typeof row.evidenceCodeSha==='string' && /^[a-f0-9]{40}$/i.test(row.evidenceCodeSha) &&
+        typeof row.verifiedVisualKind==='string' && row.verifiedVisualKind.length>0 &&
+        typeof row.summary==='string' && row.summary.length>8 &&
+        row.scope==='PUBLISHER_REVIEW_CUE_ONLY_NOT_L4_PASS',
+        'Incomplete/non-specific targeted evidence record');
+      assert(!deltas.has(row.lessonCode),'Duplicate lesson delta '+row.lessonCode);
+      deltas.set(row.lessonCode,row);
+    }
+  }
   const groups=new Map(),queue=[],missingByGate={};
-  let publisherOnly=0,teacherOnly=0,overlap=0,neither=0,confirmed=0,missing=0,classifier=0;
+  let publisherOnly=0,teacherOnly=0,overlap=0,neither=0,confirmed=0,missing=0,classifier=0,baselinePublisher=0;
   function group(kind,type,code) {
     const key=kind+':'+type;
     if(!groups.has(key))groups.set(key,{key,kind,issueType:type,affectedLessonCodes:[],
@@ -44,7 +67,27 @@ function join({manifest,visual,activity,unified,progress,baselineRunId,baselineS
       &&body===v.richV2EffectiveContentSha256
       &&body===a.effectiveContentSha256&&body===p.effectiveContentSha256
       &&v.sameEffectiveContent===true,'Effective content SHA drift '+code);
-    const cues=[...new Set(v.publisherCueVisualReviewTypes||[])].sort();
+    const priorCues=[...new Set(v.publisherCueVisualReviewTypes||[])].sort();
+    if(priorCues.length)baselinePublisher++;
+    const delta=deltas.get(code);
+    if(delta){
+      assert(delta.sourceSemanticSha256===m.sourceSemanticSha256,
+        'Targeted delta source SHA drift '+code);
+      assert(priorCues.includes(delta.publisherCue),
+        'Targeted delta cannot clear an absent legacy cue '+code);
+      resolvedVisualCues.push({lessonCode:code,
+        publisherCue:delta.publisherCue,
+        sourceSemanticSha256:m.sourceSemanticSha256,
+        originalEffectiveContentSha256:v.richV2EffectiveContentSha256,
+        evidenceRunId:delta.evidenceRunId,
+        evidenceCodeSha:delta.evidenceCodeSha,
+        verifiedVisualKind:delta.verifiedVisualKind,
+        scope:delta.scope,
+        summary:delta.summary,
+        academicDecision:'NOT_CERTIFIED'});
+      deltas.delete(code);
+    }
+    const cues=priorCues.filter(cue=>!delta||cue!==delta.publisherCue);
     const teacher=[...new Set(a.candidateMissingRepresentations||[])].sort();
     const defects=u.confirmedDefects||[];
     assert(JSON.stringify(defects)===JSON.stringify(p.confirmedDefects||[]),
@@ -78,12 +121,15 @@ function join({manifest,visual,activity,unified,progress,baselineRunId,baselineS
       possibleClassifierOvermatch,
       reviewState:'REVIEW_REQUIRED_NOT_CERTIFIED'});
   }
-  const counts={publisherOnly,teacherOnly,overlap,neither,
+  assert(deltas.size===0,'Targeted delta references an unknown lesson');
+  const counts={baselinePublisherCues:baselinePublisher,verifiedCueResolutions:resolvedVisualCues.length,publisherOnly,teacherOnly,overlap,neither,
     publisherCues:publisherOnly+overlap,teacherCues:teacherOnly+overlap,
     reviewUnion:500-neither,confirmedDefectLessons:confirmed,
     missingEvidenceLessons:missing,potentialClassifierOvermatches:classifier};
-  assert(counts.publisherCues===visual.lessonsNeedingPedagogicalVisualReview,
-    'Publisher review count drift');
+  assert(counts.baselinePublisherCues===visual.lessonsNeedingPedagogicalVisualReview,
+    'Original publisher review count drift');
+  assert(counts.publisherCues+counts.verifiedCueResolutions===counts.baselinePublisherCues,
+    'Resolved cue count mismatch');
   assert(counts.teacherCues===activity.withReviewCues,'Teacher review count drift');
   assert(missing===progress.remainingEvidence,'Evidence gap count drift');
   const rootCauseGroups=[...groups.values()].map(g=>({...g,count:g.affectedLessonCodes.length}))
@@ -97,7 +143,7 @@ function join({manifest,visual,activity,unified,progress,baselineRunId,baselineS
       'b01-original-teacher-activities-500',
       'b01-unified-eight-dimension-report-500',
       'b01-collective-evidence-progress-500']},
-    counts,missingByGate,rootCauseGroups,queue,
+    counts,missingByGate,rootCauseGroups,queue,resolvedVisualCues,
     releaseEligible:false,academicDecision:'BATCH_NO-GO',
     warning:'Review cues and possible classifier errors are NOT confirmed defects or L4 PASS. Lessons without cues still lack per-lesson L1-L6 evidence. This tool never writes PASS.'};
 }
@@ -106,7 +152,8 @@ function run(argv=process.argv.slice(2)){
   const read=k=>JSON.parse(fs.readFileSync(val(k),'utf8'));
   const r=join({manifest:read('manifest'),visual:read('visual'),activity:read('activity'),
     unified:read('unified'),progress:read('progress'),baselineRunId:Number(val('run-id')),
-    baselineSha:val('baseline-sha')});
+    baselineSha:val('baseline-sha'),
+    verifiedDeltas:argv.includes('--verified-deltas')?read('verified-deltas'):null});
   const out=val('output');
   fs.writeFileSync(out+'.json',JSON.stringify(r,null,2)+'\n');
   const c=r.counts;
@@ -114,7 +161,9 @@ function run(argv=process.argv.slice(2)){
     'Reused previous successful full-batch run '+r.baseline.runId+
       ' at code commit '+r.baseline.codeSha+'; no new 500-lesson scan.','',
     '| Metric | Lessons |','|---|---:|',
-    '| Publisher visual review | '+c.publisherCues+' |',
+    '| Baseline publisher visual cues (historical) | '+c.baselinePublisherCues+' |',
+    '| Independently verified targeted cue corrections (not L4 PASS) | '+c.verifiedCueResolutions+' |',
+    '| Publisher cues still pending review | '+c.publisherCues+' |',
     '| Teacher source activity review | '+c.teacherCues+' |',
     '| Overlapping review | '+c.overlap+' |',
     '| Unique lesson review queue | '+c.reviewUnion+' |',
@@ -123,6 +172,10 @@ function run(argv=process.argv.slice(2)){
     '| Still missing full evidence | '+c.missingEvidenceLessons+' |','',
     '## Root-cause review groups','','| Signal | Lessons |',
     '|---|---:|',...r.rootCauseGroups.map(x=>'| '+x.key+' | '+x.count+' |'),
+    '', '## Reused targeted correction proofs (not certification)', '',
+    ...r.resolvedVisualCues.map(x=>'- '+x.lessonCode+' / '+x.publisherCue+
+      ': [GitHub Actions run '+x.evidenceRunId+'](https://github.com/EIAS79/Edulytics/actions/runs/'+
+      x.evidenceRunId+') — '+x.summary),
     '', 'See JSON for exact affected LessonCodes, source/content SHAs and overlapping causes.',
     '', '**BATCH_NO-GO** — no release, certification or ledger mutation.'];
   fs.writeFileSync(out+'.md',md.join('\n')+'\n');
