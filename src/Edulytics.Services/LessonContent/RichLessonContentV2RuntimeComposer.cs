@@ -772,6 +772,14 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
+        // Repair all eleven original B01 figure-source lessons that have
+        // only EquationSet in their actual Rich V2 composition. Each group
+        // reuses exact independently authored source-purpose math primitives.
+        var sourceFigureVisuals =
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(lessonCode, body);
+        if (sourceFigureVisuals is not null)
+            return [.. sourceFigureVisuals, questionForms];
+
         var sourceDerivedCounters = UsCcssB01VerifiedExpressionVisuals.Build(lessonCode, body, contract);
         return [..sourceDerivedCounters, questionForms];
     }
