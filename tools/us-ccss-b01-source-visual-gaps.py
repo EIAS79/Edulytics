@@ -18,7 +18,7 @@ CUES = [
  ("NUMBER_LINE",r"\bnumber line\b",{"NumberLine","Scale"}),
  ("LINE_PLOT",r"\bline plot\b",{"LinePlot"}),
  ("GRAPH_AND_SCALE",r"\bbar graph\b|\bpicture graph\b|\bscaled graph\b|\bgraph scales?\b",
-  {"Scale","BarGraph","RatioTable","ShapeDecomposition"}),
+  {"Scale","BarGraph","RatioTable","ShapeDecomposition","PictureGraph"}),
  ("PLACE_VALUE",r"\bplace value\b|expanded form|base.ten|digit value",
   {"PlaceValueChart"}),
  ("AREA_MODEL",r"\barea of\b|\barea by\b|\barea with\b|\barea and\b",
@@ -67,6 +67,16 @@ def analyze(publisher,rich):
                 # source need; demanding FractionBars here is a false alarm.
                 if (name=="FRACTION_PARTS" and "ClockFace" in kinds and
                     re.search(r"\bclock|tell time|write times|half.past|quarter.past",intro,re.I)):
+                    continue
+                # A source task about fractional *measurement values on an X-mark
+                # line plot* is not a shaded-part or fraction-bar task. The
+                # actual LinePlot satisfies that representation family; L2,
+                # accurate tick labels, addition/subtraction and L6 still need
+                # separate proof. Restrict this exception to the source-verified
+                # fractional-measurement lesson, never to arbitrary fractions.
+                if (name=="FRACTION_PARTS" and "LinePlot" in kinds and
+                    re.search(r"\bfractional measurements on line plots\b",
+                              source.get("publisherTitle") or "", re.I)):
                     continue
                 if name=="CLOCK_DIAGRAM":
                     # A verified ClockFace SVG, not a generic axis or table, meets

@@ -96,6 +96,47 @@ class PublisherVisualEvidenceTests(unittest.TestCase):
         d=audit.analyze(a,b)
         self.assertNotIn("NUMBER_LINE",d["rows"][78]["publisherCueVisualReviewTypes"])
 
+    def test_source_verified_scaled_picture_graph_accepts_real_picture_graph(self):
+        a,b=fixture()
+        a["rows"][4]["publisherTitle"]="Create Scaled Picture Graphs"
+        a["rows"][4]["sourcePurposePreview"]=(
+            "Create a scaled picture graph of categorical data with a scale of 2.")
+        b["rows"][4]["visualKinds"]=["EquationSet"]
+        d=audit.analyze(a,b)
+        self.assertIn("GRAPH_AND_SCALE",
+                      d["rows"][4]["publisherCueVisualReviewTypes"])
+        b["rows"][4]["visualKinds"]=["EquationSet","PictureGraph"]
+        d=audit.analyze(a,b)
+        self.assertNotIn("GRAPH_AND_SCALE",
+                         d["rows"][4]["publisherCueVisualReviewTypes"])
+        self.assertEqual(d["academicDecision"],"NOT_CERTIFIED")
+
+    def test_fractional_eighth_measurements_use_line_plot_not_shading_bars(self):
+        a,b=fixture()
+        a["rows"][13]["publisherTitle"]="Fractional Measurements on Line Plots"
+        a["rows"][13]["sourcePurposePreview"]=(
+            "Plot one-eighth, quarter and half-inch fractional measurements "
+            "and add/subtract fractions from the line plot.")
+        b["rows"][13]["visualKinds"]=["EquationSet"]
+        d=audit.analyze(a,b)
+        self.assertIn("FRACTION_PARTS",
+                      d["rows"][13]["publisherCueVisualReviewTypes"])
+        self.assertIn("LINE_PLOT",
+                      d["rows"][13]["publisherCueVisualReviewTypes"])
+        b["rows"][13]["visualKinds"]=["EquationSet","LinePlot"]
+        d=audit.analyze(a,b)
+        self.assertNotIn("FRACTION_PARTS",
+                         d["rows"][13]["publisherCueVisualReviewTypes"])
+        self.assertNotIn("LINE_PLOT",
+                         d["rows"][13]["publisherCueVisualReviewTypes"])
+        self.assertEqual(d["academicDecision"],"NOT_CERTIFIED")
+        # No generic exemption: a distinct source about fraction *parts*
+        # still requires a fraction diagram even if some LinePlot is present.
+        a["rows"][13]["publisherTitle"]="Partition Fractions into Equal Parts"
+        d=audit.analyze(a,b)
+        self.assertIn("FRACTION_PARTS",
+                      d["rows"][13]["publisherCueVisualReviewTypes"])
+
     def test_one_source_content_sha_mismatch_blocks_exact_batch_integrity(self):
         a,b=fixture()
         b["rows"][301]["effectiveBodyFingerprint"]="b"*64
