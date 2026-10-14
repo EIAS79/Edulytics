@@ -106,7 +106,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 22 + 1 + 19; // 23 new root members overlap 1 existing source-bound HTML correction => +22 UNIQUE
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 22 + 1 + 19 + 28; // 23 new root members overlap 1 existing source-bound HTML correction => +22 UNIQUE
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -217,7 +217,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
           CommonCoreB01NonLengthRulerTemplateCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9LearnerVoiceSharedRootCorrection.IsTarget(document, lesson) ||
-          CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(document, lesson));
+          CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(document, lesson) ||
+          CommonCoreB01V9SharedGeometryProcedureCorrections.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -971,6 +972,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             document,sourceLesson,content.ContentVersion,
                             translationsByContentId.TryGetValue(content.Id,out var comparisonExisting)
                                 ? comparisonExisting : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreB01V9SharedGeometryProcedureCorrections.IsTarget(document,sourceLesson))
+                    {
+                        CommonCoreB01V9SharedGeometryProcedureCorrections.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var geometryExisting)
+                                ? geometryExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =
