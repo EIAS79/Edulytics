@@ -37,13 +37,16 @@ function fixture(){
    'CLOCK_FACE','PLACE_VALUE','RECTANGULAR_ARRAY','MEASUREMENT_SCALE','DATA_GRAPH'],
   rows:lessons.map(x=>[x.ordinal,x.lessonCode,shaD,shaE,1,shaF,2,x.ordinal===1?2:0])};
  const sourceGoalMemory={planId:'EDULYTICS-US-CCSS-UNIFIED-V9',batchId:'B01',
-  coverage:{manifestExpected:500,sourceFilesRead:500,sourceGoalSectionsUnresolved:1},
+  coverage:{manifestExpected:500,sourceFilesRead:500,sourceGoalSectionsUnresolved:1,alternativeLessonPurposeHeadingsVerified:1,sourcePurposeAvailableViaEitherHeading:500},
   rows:lessons.map((x,i)=>({ordinal:x.ordinal,lessonCode:x.lessonCode,
    sourceSemanticSha256:x.sourceSemanticSha256,
    sourceFileInventorySha256:sourceIndex.rows[i].localFileByteSha256,
    originalTeacherRelativePath:sourceIndex.rows[i].localRelativePath,
    originalTeacherSourceUrl:x.sourceUrl,
    teacherGoalSectionFound:i!==499,
+   alternativePurposeHeadingFound:i===499,
+   alternativePurposeHeading:i===499?'Lesson Purpose':undefined,
+   originalTeacherGoalStillAbsent:i===499,
    teacherFacingPurposeSignals:i<20?['LENGTH']:['ADDITION']}))};
  return {manifest:{batchId:'B01',expectedLessonCount:500,lessons},
   packs,sourceIndex,teacherActivityIndex,sourceGoalMemory,reviewed:[
@@ -74,6 +77,8 @@ test('Full B01 500/500 cross-joins mathematical, publisher-source and shared tem
  assert.equal(x.nodes[1].academicGoalSourceReview,'NOT_SOURCE_GOAL_VERIFIED');
  assert.equal(x.academicSourcePurposeReviews.stillNotPurposeReviewed,499);
  assert.equal(x.automaticSourceGoalSignalCapture.teacherGoalsFound,499);
+ assert.equal(x.automaticSourceGoalSignalCapture.alternateOfficialLessonPurposeHeadings,1);
+ assert.equal(x.automaticSourceGoalSignalCapture.teacherPurposesAvailableByEitherHeading,500);
  assert.equal(x.automaticSourceGoalSignalCapture.unresolvedLessonCodes.length,1);
  assert.equal(x.rootCauseSignals.SHARED_RULER_METHOD_TEMPLATE.byOriginalTeacherGoalContext.ORIGINAL_LENGTH,20);
  assert.equal(x.nodes[0].sourceTeacherPurposeSignals[0],'LENGTH');
