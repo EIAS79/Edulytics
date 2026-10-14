@@ -8,12 +8,14 @@ on:
       - '.github/workflows/us-ccss-b01-v9-fraction-purpose-repairs.yml'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01FractionPurposeCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01PlaceValuePurposeCorrection.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01UnitAndPlaceValuePurposeCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'src/Edulytics.Data/Edulytics.Data.csproj'
       - 'src/Edulytics.Web/Edulytics.Web.csproj'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPurposeCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01PlaceValuePurposeCorrectionTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests.cs'
   workflow_dispatch:
 
 permissions:
@@ -35,10 +37,10 @@ jobs:
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - name: Build real application and tests, fail on compile error
         run: dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore
-      - name: Verify all 12 independent source-aligned repairs and all 500 Rich V2 bodies
+      - name: Verify 12 fractions, place value, 2 newly corrected math goals and 500 Rich V2 bodies
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
-            --filter 'FullyQualifiedName~UsCcssB01FractionPurposeCorrectionsTests|FullyQualifiedName~UsCcssB01PlaceValuePurposeCorrectionTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests' \
+            --filter 'FullyQualifiedName~UsCcssB01FractionPurposeCorrectionsTests|FullyQualifiedName~UsCcssB01PlaceValuePurposeCorrectionTests|FullyQualifiedName~UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests' \
             --logger 'console;verbosity=normal'
       - name: Preserve output inventories, NOT academic certification
         if: always()
