@@ -18,6 +18,8 @@ on:
       - 'artifacts/academic-us-ccss/batches/B01-v9-original-teacher-figure-dom-asset-map-40.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-original-figure-383-media-byte-provenance.json'
       - 'tests/academic-us-ccss-b01-v9-original-figure-media-383.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-original-figure-alt-risk-triage-397.json'
+      - 'tests/academic-us-ccss-b01-v9-original-figure-alt-risk-triage.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-source-figure-dependency-audit.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs'
@@ -149,6 +151,7 @@ jobs:
       - name: Verify 397 source figure frames and 383 fetched original image-byte fingerprints (NO rights/math/browser PASS)
         run: |
           node --test tests/academic-us-ccss-b01-v9-original-figure-media-383.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-original-figure-alt-risk-triage.test.cjs
           node -e "const a=require('./artifacts/academic-us-ccss/batches/B01-v9-original-figure-383-media-byte-provenance.json');if(a.scope.originalMathVisualsIndependentlyVerified!==0||a.scope.rightsVerifiedAssets!==0||a.scope.fullL6LessonsVerified!==0||a.academicDecision!=='BATCH_NO-GO'||a.lessons.length!==40||a.assets.length!==383)process.exit(1);console.log(JSON.stringify({teacherFigureFrames:a.scope.sourceOriginalFigureFrames,livePublisherMediaBytesVerified:a.scope.HTTP200CompleteMediaFilesRead,uniqueByteHashes:a.scope.distinctContentByteSha256,formats:a.scope.mediaFormatCounts,rightsPass:a.scope.rightsVerifiedAssets,academicDecision:a.academicDecision}));"
       - name: Preserve complete source-linked graph and impact groups, never an academic certificate
         if: always()
