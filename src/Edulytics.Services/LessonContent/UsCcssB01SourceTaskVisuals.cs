@@ -721,7 +721,8 @@ public static class UsCcssB01SourceTaskVisuals
                 // the visual holds long, short and difference with the true
                 // unknown position, not generic unmeasured counters.
                 "usccss.b01.g2.length_compare.all_unknown_positions100" when
-                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L06" &&
+                    (lessonCode=="PED:US-CCSS-MATH:G2:U03:L06" ||
+                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L07") &&
                     ExactSkillContractQuestionEngine.Verify(
                         q.Family,p,q.CorrectAnswer) =>
                     new RichLessonVisual
@@ -957,7 +958,8 @@ public static class UsCcssB01SourceTaskVisuals
                             .ToList()
                     },
                 "usccss.b01.g2.measurement.estimate_cm" when
-                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L04" &&
+                    (lessonCode=="PED:US-CCSS-MATH:G2:U03:L04" ||
+                     lessonCode=="PED:US-CCSS-MATH:G2:U03:L07") &&
                     ExactSkillContractQuestionEngine.Verify(
                         q.Family,p,q.CorrectAnswer) =>
                     new RichLessonVisual

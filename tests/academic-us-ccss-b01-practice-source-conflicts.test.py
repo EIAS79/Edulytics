@@ -164,6 +164,24 @@ class WholeBatchSemanticTests(unittest.TestCase):
             "usccss.b01.g2.length_compare.all_unknown_positions100"]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_grade2_unit3_center_day_reuses_estimate_and_math_stories(self):
+        a,b=fixtures()
+        code="PED:US-CCSS-MATH:G2:U03:L07"
+        a["lessonRows"][48]["lessonCode"]=code
+        b["rows"][48]["lessonCode"]=code
+        b["rows"][48]["publisherTitle"]="Center Day 1"
+        b["rows"][48]["sourcePurposePreview"]=(
+            "Estimate and measure, solve math stories.")
+        a["lessonRows"][48]["actualQuestionFamilies"]=[
+            "usccss.b01.g2.measurement.estimate_cm"]
+        conflict=module.analyze(a,b)
+        self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+            [x["rule"] for x in conflict["rows"][48]["conflicts"]])
+        a["lessonRows"][48]["actualQuestionFamilies"]=[
+            "usccss.b01.g2.measurement.estimate_cm",
+            "usccss.b01.g2.length_compare.all_unknown_positions100"]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

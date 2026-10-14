@@ -436,6 +436,17 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
         // centimeter lengths and correct remaining partial meters.
         // Original G2 U03 L06: Compare reptile length stories within
         // 100 cm; all three unknown positions, shown by aligned tape bars.
+        // Original G2 U03 L07 optional Center Day: revisit estimate,
+        // actual centimeter measurement and measurement error, then solve
+        // Math Stories (the previous center's all-position comparisons).
+        // Reuse TWO independently verified source families and visuals.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L07",
+            "supporting.measurement.practical", "CENTER_ESTIMATE_AND_MATH_STORIES",
+            ["usccss.b01.g2.measurement.estimate_cm",
+             "usccss.b01.g2.length_compare.all_unknown_positions100"],
+            "IM2021_G2_U03_L07_ESTIMATE_AND_MATH_STORIES_CENTER",
+            "READY_VERIFIED", "usccss-b01-g2-u03-center-reuse-v1"),
         new(
             "PED:US-CCSS-MATH:G2:U03:L06",
             "number.whole.add_subtract", "COMPARE_REPTILE_LENGTHS_UNKNOWN_POSITION",

@@ -64,6 +64,47 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
         Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.RatioTable);
     }
 
+    [Fact]
+    public void Grade2U03L07ReusesBOTHVerifiedEstimateAndStoryFamilies()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U03:L07";
+        var families=new[]{
+            "usccss.b01.g2.measurement.estimate_cm",
+            "usccss.b01.g2.length_compare.all_unknown_positions100"};
+        Assert.True(LessonPracticeContractRegistry.TryResolve(code,out var contract));
+        Assert.Equal(families,contract!.AllowedQuestionFamilies);
+        var engine=new ExactSkillContractQuestionEngine();
+        foreach(var family in families)
+            for(var seed=840120;seed<840152;seed++)
+            {
+                var q=Assert.Single(engine.Generate(
+                    "b01-grade2-center-day",code,[family],
+                    ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,q.CorrectAnswer));
+                var picture=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+                Assert.Equal(family==families[0]
+                    ?RichLessonVisualKind.Scale
+                    :RichLessonVisualKind.TapeDiagram,picture.Kind);
+                Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                    code,[q with {CorrectAnswer="9999"}]));
+                Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                    "PED:US-CCSS-MATH:G2:U03:L08",[q]));
+            }
+        var lesson=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(d=>d.PackCode=="US-CCSS-MATH"&&d.VersionCode=="CCSSM-2010")
+            .SelectMany(d=>d.Lessons).Single(x=>x.LessonCode==code);
+        var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+        var body=new CanonicalLessonTranslationRecord(en.CultureCode,en.Title,
+            en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,
+            en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary);
+        var rich=RichLessonContentV2Registry.Find(code,"en") ??
+            RichLessonContentV2RuntimeComposer.TryCompose(code,body);
+        Assert.NotNull(rich);
+        Assert.Contains(rich.Visuals,v=>v.Kind==RichLessonVisualKind.Scale);
+        Assert.Contains(rich.Visuals,v=>v.Kind==RichLessonVisualKind.TapeDiagram);
+    }
+
     private const string G2ReptileCompare = "PED:US-CCSS-MATH:G2:U03:L06";
 
     [Fact]
