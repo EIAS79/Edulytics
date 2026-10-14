@@ -33,11 +33,11 @@ const definitions=[
 // Sort by explicit learner goal, never classify a candidate as a confirmed error.
 // A number-line interval is deliberately distinct from physical length/ruler work.
 function rulerGoalContext(en){
- const goal=(en.explanation||'').match(/Learning goal:\\s*([^\\n]+)/i)?.[1]||'';
+ const goal=(en.explanation||'').match(/Learning goal:\s*([^\n]+)/i)?.[1]||'';
  if(!goal)return 'GOAL_UNRESOLVED';
- if(/\\b(?:lengths?|centimeters?|met(?:ers?|res?)|inches?|feet|foot|yardsticks?|rulers?|measuring lengths?)\\b/i.test(goal))
+ if(/\b(?:lengths?|centimeters?|met(?:ers?|res?)|inches?|feet|foot|yardsticks?|rulers?|measuring lengths?)\b/i.test(goal))
   return 'LENGTH_CONTEXT_POSSIBLY_RELEVANT';
- if(/\\b(?:number line|tick marks|interval from|locate .* fractions?)\\b/i.test(goal))
+ if(/\b(?:number line|tick marks|interval from|locate .* fractions?)\b/i.test(goal))
   return 'NUMBER_LINE_CONTEXT_REVIEW';
  return 'NON_LENGTH_GOAL_SOURCE_REVIEW';
 }
