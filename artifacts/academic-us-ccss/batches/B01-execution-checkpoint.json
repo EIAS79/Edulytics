@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "2026-10-14 V9 B01: indexed all 500 learner-body math element candidates jointly with 500 SHA-locked original teacher file references and 500 original teacher-activity cue signatures. GitHub Actions run 38574904008 PASS 6/6 fail-closed tests; 500/500 coverage; artifact is heuristic review inventory only. B01 remains NO-GO with prior 1/500 historical academic certification.",
-  "nextExactOperation": "Join the complete 500-row element/teacher-activity candidate index with existing Rich V2 visual/oracle and practice reports; identify confirmed defects vs source-only representation cues, group by proven shared root cause, implement targeted fixes with independent checks, and collect SHA-linked L1-L6/eight-dimension lesson evidence. Do not merge or publish until 500/500, rights and Render gates pass.",
+  "lastCompletedOperation": "2026-10-14: source-grounded V9 corrected 12 fraction template mismatches (tested 9/9), corrected G2 U05 L06 place-value lesson's erroneously copied measuring procedure, and fixed the G2 fish-tape test to match 4 actual source task modes (targeted tests 17/17). Full GitHub Actions B01 audit run 38591193327 PASS at source code a310e328633fac51d459ddeae60316f936a6fac8, including 2,490/2,490 product regression tests, 500 manifest, effective Rich V2 and Practice, source purposes, teacher activities and visual cues, and eight-dimension triage. This is structural/partial audit, NOT 500 lesson certifications. PR remains draft, release job skipped.",
+  "nextExactOperation": "Continue B01 500/500 academically source-bound L1-L6 and eight-dimension evidence collection; prioritize 156 remaining representation review cues and other confirmed root-cause defects, inspect actual original source/learner Practice and Rich V2 semantics, fix narrowly with independent oracle/runtime checks, and keep all non-proved dimensions BLOCKED. Obtain independent rights review of first-edition and nested third-party asset permissions/attribution before certification. DO NOT certify, merge, or publish until 500/500 and legal/runtimes are satisfied; do not start B02.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -171,6 +171,29 @@
     "academicDecision": "NOT_CERTIFIED",
     "releaseEligibilityUnchanged": true,
     "originalTeacherActivityCueJoin": "500 exact full teacher-lesson source activity rows, each with distinct semantic/normalized text SHA256 and 8 bit-coded representation-cue candidates",
-    "notes": "Teacher cues and learner body mathematical elements are only discovery candidates. Rich V2 may render content not reflected in source-body text. No claim of missing representation, confirmed defect, academic L1-L6 PASS, or license clearance."
+    "notes": "Teacher cues and learner body mathematical elements are only discovery candidates. Rich V2 may render content not reflected in source-body text. No claim of missing representation, confirmed defect, academic L1-L6 PASS, or license clearance.",
+    "rerunAudit": {
+      "runId": 38591193327,
+      "conclusion": "success",
+      "verifiedFullRegressionTests": 2490,
+      "failed": 0,
+      "auditedSourceCodeSha": "a310e328633fac51d459ddeae60316f936a6fac8",
+      "releaseJob": "SKIPPED_NOT_CERTIFIED"
+    }
+  },
+  "v9VerifiedCorrections": {
+    "fractionLessonCodes": 12,
+    "placeValueLessonCode": "PED:US-CCSS-MATH:G2:U05:L06",
+    "placeValueSourcePurposeReviewedFromAuthorizedReadOnlyOurCS": true,
+    "placeValueSourceMemory": "artifacts/academic-us-ccss/batches/B01-v9-placevalue-purpose-reviewed-metadata.json",
+    "fractionSourceMemory": "artifacts/academic-us-ccss/batches/B01-v9-fraction-purpose-reviewed-metadata.json",
+    "fishTapeModes": 4,
+    "fishTapeTargetedRunId": 38590339860,
+    "fishTapeTargetedTests": 17,
+    "placeValueAndFractionTargetedRunId": 38591163281,
+    "placeValueAndFractionTargetedTests": 9,
+    "fullBatchRunId": 38591193327,
+    "fullBatchRegressionTests": 2490,
+    "fullBatchDecision": "BATCH_NO-GO"
   }
 }
