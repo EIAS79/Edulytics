@@ -69,7 +69,7 @@ jobs:
       - name: Materialize 500 corrections and compose Rich V2 from actual application
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
-            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests \
+            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
             --logger 'console;verbosity=normal'
       - name: Join ALL 25 raw root cohorts to 500 effective Rich V2 facts and source purposes
         run: |
