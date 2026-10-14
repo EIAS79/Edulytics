@@ -15,6 +15,9 @@ on:
       - 'artifacts/academic-us-ccss/04-lesson-academic-audit.json'
       - 'tools/us-ccss-b01-release-gate.cjs'
       - 'tools/us-ccss-b01-v9-activity-figure-source-contract.cjs'
+      - 'tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs'
+      - 'tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-original-teacher-figure-dom-asset-map-40.json'
       - 'tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-original-activity-figure-frames-40.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-lesson-activity-figure-context-40.json'
@@ -65,17 +68,17 @@ jobs:
         run: node --test tests/academic-us-ccss-b01-evidence-progress.test.cjs
       - name: Screen ALL 500 learner content bodies together
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --output=b01-bulk-screen.json
-      - name: Audit source-figure metadata as V9 lesson/asset release blockers without faking PASS
+      - name: Verify exact original figure DOM provenance and 40 outstanding source math/rights/L6 blockers
         run: |
-          node --test tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs
-          node tools/us-ccss-b01-v9-activity-figure-source-contract.cjs \
-            --source-only --out=b01-original-activity-figure-preflight.json
-          node -e "const r=require('./b01-original-activity-figure-preflight.json');if(r.coverage.totalLessons!==500||r.coverage.sourceFigureLessons!==40||r.coverage.unmappedFrames!==336||r.coverage.mediaPointers!==383||r.releaseEligible!==false||r.academicDecision!=='BATCH_NO-GO')process.exit(1);console.log(JSON.stringify(r.coverage));"
+          node --test tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs
+          node tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs \
+            --out=b01-original-activity-figure-preflight.json
+          node -e "const r=require('./b01-original-activity-figure-preflight.json');if(r.coverage.manifestLessons!==500||r.coverage.sourceFigureLessons!==40||r.coverage.exactFrameToOriginalMediaDOMPointers!==397||r.coverage.uniquePublisherMediaURLs!==383||r.coverage.unlinkedFigureFrames!==0||r.blockedLessonsForMathRightsAndL6!==40||r.releaseEligible!==false||r.academicDecision!=='BATCH_NO-GO')process.exit(1);console.log(JSON.stringify(r.coverage));"
       - name: Preserve exact V9 figure source-asset blocker preflight for all 40
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: b01-v9-original-activity-figure-release-preflight
+          name: b01-v9-figure-dom-linked-math-rights-L6-unverified-preflight
           path: b01-original-activity-figure-preflight.json
           retention-days: 30
       - name: Save 500-row bulk content screen, even when issues are found
@@ -102,8 +105,7 @@ jobs:
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --check
       - name: Reject final release without source-asset figure linkage, math oracle, rights and rendered L6
         run: |
-          node tools/us-ccss-b01-v9-activity-figure-source-contract.cjs \
-            --source-only --strict
+          node tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs --strict
       - name: Make ONE automatic batch certification decision (no per-lesson signoff)
         run: node tools/us-ccss-b01-release-gate.cjs --release-check
 
