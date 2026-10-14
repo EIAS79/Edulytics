@@ -10,8 +10,9 @@ on:
       # For L10 family updates, run this targeted job manually; the final gate
       # still re-verifies all lessons on the release candidate.
       - 'src/Edulytics.Services/LessonContent/UsCcssB01SourceBoundNumberLineVisuals.cs'
-      - 'tools/us-ccss-b01-practice-source-conflicts.py'
-      - 'tests/academic-us-ccss-b01-practice-source-conflicts.test.py'
+      # Shared 500-lesson semantic audits change for unrelated cohorts.
+      # The independent semantic checks still run inside this job whenever
+      # the G2 U04 workflow or its lesson-specific test is explicitly revised.
   workflow_dispatch:
 permissions:
   contents: read
