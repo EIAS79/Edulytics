@@ -92,6 +92,12 @@ function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,so
    Array.isArray(memory.teacherFacingPurposeSignals),
    'Stale, unverified or cross-linked V9 original teacher-goal memory '+m.lessonCode);
   if(!memory.teacherGoalSectionFound)unresolvedSourceGoalCodes.push(m.lessonCode);
+  assert(memory.teacherGoalSectionFound||memory.alternativePurposeHeadingFound,
+   'Genuine publisher source purpose must exist for all 500, never fabricated: '+m.lessonCode);
+  if(memory.alternativePurposeHeadingFound)
+    assert(memory.alternativePurposeHeading==='Lesson Purpose'&&
+     memory.originalTeacherGoalStillAbsent===true,
+     'Alternative optional lesson-purpose evidence must retain original absent heading');
   const originalTags=memory.teacherFacingPurposeSignals;
   const t=base.translations.find(x=>x.cultureCode==='en');
   assert(t,'Missing English learner translation '+m.lessonCode);
@@ -204,7 +210,10 @@ function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,so
    packPaths,reviewedPaths},
   automaticSourceGoalSignalCapture:{teacherGoalsFound:500-unresolvedSourceGoalCodes.length,
    unresolvedLessonCodes:unresolvedSourceGoalCodes,
-   provenance:'All 500 local teacher HTML read read-only; 499/500 section lexical extracts',
+   alternateOfficialLessonPurposeHeadings:sourceGoalMemory.rows.filter(x=>x.alternativePurposeHeadingFound).length,
+   teacherPurposesAvailableByEitherHeading:sourceGoalMemory.rows.filter(x=>x.teacherGoalSectionFound||x.alternativePurposeHeadingFound).length,
+   genuineMissingLearningGoalsHeadings:unresolvedSourceGoalCodes,
+   provenance:'All 500 local teacher HTML read read-only; 499 Learning Goals sections and 1 genuine optional Lesson Purpose section; never recast fallback as Learning Goals',
    academicVerification:'NOT_GRANTED_BY_LEXICAL_EXTRACTION'},
 
   academicSourcePurposeReviews:{
