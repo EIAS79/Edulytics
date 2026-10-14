@@ -1,0 +1,28 @@
+name: US CCSS B01 First Edition Licence Attribution Audit
+
+on:
+  push:
+    branches: [audit/us-ccss-b01-500-lesson-certification]
+    paths:
+      - '.github/workflows/us-ccss-b01-first-edition-attribution.yml'
+      - 'tests/academic-us-ccss-b01-first-edition-attribution.test.cjs'
+      - 'src/Edulytics.Web/wwwroot/content-sources-licenses.html'
+      - 'artifacts/academic-us-ccss/01-edition-specific-licence-evidence.json'
+      - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-500-lesson-attribution:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify first-edition source declarations and honest attribution with no fabricated rights PASS
+        run: node --test tests/academic-us-ccss-b01-first-edition-attribution.test.cjs
