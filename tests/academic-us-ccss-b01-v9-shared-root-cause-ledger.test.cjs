@@ -20,6 +20,7 @@ function fixture(){
   {batchId:'B01',rows:[]},
   {batchId:'B01',rows:[]},
   {batchId:'B01',rows:[]},
+  {batchId:'B01',rows:[]},
   {batchId:'B01',rows:[]}
  ];
  return {manifest,packs,reviewed};
