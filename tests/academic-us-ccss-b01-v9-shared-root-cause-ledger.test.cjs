@@ -18,6 +18,7 @@ function fixture(){
   {batchId:'B01',rows:[{lessonCode:manifest.lessons[0].lessonCode,sourceSemanticSha256:'a'.repeat(64)}]},
   {batchId:'B01',reviewedObjectives:[]},{batchId:'B01',rows:[]},
   {batchId:'B01',rows:[]},
+  {batchId:'B01',rows:[]},
   {batchId:'B01',rows:[]}
  ];
  return {manifest,packs,reviewed};
