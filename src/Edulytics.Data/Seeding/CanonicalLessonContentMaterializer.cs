@@ -33,6 +33,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1DotCardMatchingCorrection.Apply(document);
         CommonCoreG2SourceGroundedFoundationsCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
+        CommonCoreB01FractionPurposeCorrections.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -196,8 +197,10 @@ public static class CanonicalLessonContentMaterializer
         var g2 = CommonCoreG2SourceGroundedFoundationsCorrections
             .GetExpectedContentVersion(document, lesson, dotMatching);
 
-        return CommonCoreSourceBoundHtmlEntityCorrections
+        var html = CommonCoreSourceBoundHtmlEntityCorrections
             .GetExpectedContentVersion(document, lesson, g2);
+        return CommonCoreB01FractionPurposeCorrections
+            .GetExpectedContentVersion(document, lesson, html);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -232,6 +235,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2SourceGroundedFoundationsCorrections
             .IsTarget(document, lesson) ||
         CommonCoreSourceBoundHtmlEntityCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreB01FractionPurposeCorrections
             .IsTarget(document, lesson);
 
     public static bool CanUpgradeExisting(
@@ -300,6 +305,8 @@ public static class CanonicalLessonContentMaterializer
                 lesson,
                 existingContentVersion) ||
         CommonCoreSourceBoundHtmlEntityCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreB01FractionPurposeCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion);
 
     public static string ComputeLessonFingerprint(
