@@ -652,15 +652,16 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g3.quarter_inch_line_plot_frequency"],
             "IM2021_G3_U06_L05_MAKE_HALVES_QUARTERS_LINE_PLOT",
             "READY_VERIFIED", "usccss-b01-g3-fraction-line-plot-v1"),
-        // IM 2021 Grade 4 U03 L13: interpret fractional measurement
-        // data on an equally-spaced line plot (whole, halves, quarters).
-        // Use the existing source-verified quarter-inch plot family.
+        // The official Grade 4 lesson explicitly includes 1/8-inch data
+        // and fractional subtraction, not only the Grade 3 quarter-inch plot.
+        // Both families must be verified against the source's line-plot goal.
         new(
             "PED:US-CCSS-MATH:G4:U03:L13",
-            "supporting.statistics.charts", "INTERPRET_FRACTIONAL_MEASUREMENT_LINE_PLOT",
-            ["usccss.b01.g3.quarter_inch_line_plot_frequency"],
-            "IM2021_G4_U03_L13_INTERPRET_FRACTIONAL_MEASUREMENT_LINE_PLOT",
-            "READY_VERIFIED", "usccss-b01-fractional-line-plot-shared-v2"),
+            "supporting.statistics.charts", "INTERPRET_EIGHTH_INCH_LINE_PLOT_AND_SUBTRACT",
+            ["usccss.b01.g3.quarter_inch_line_plot_frequency",
+             "usccss.b01.g4.eighth_inch_line_plot_difference"],
+            "IM2021_G4_U03_L13_EIGHTHS_EQUIVALENCE_AND_FRACTION_DIFFERENCE",
+            "READY_VERIFIED", "usccss-b01-g4-eighth-line-plot-v3"),
         // IM G2 U05 L09: three-digit magnitude by relative
         // number-line positions rather than unrelated within-100 sums.
         new(
