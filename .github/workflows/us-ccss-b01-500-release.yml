@@ -18,10 +18,12 @@ on:
       - 'tests/academic-us-ccss-b01-release-gate.test.cjs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01FractionPurposeCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01PlaceValuePurposeCorrection.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01UnitAndPlaceValuePurposeCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPurposeCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01PlaceValuePurposeCorrectionTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceAlignedPracticeCorrectionTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceBoundMeasurementVisualsTests.cs'
       - 'src/Edulytics.Services/Mathematics/UsCcssB01SourceTaskQuestionEngine.cs'
@@ -91,7 +93,7 @@ jobs:
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - name: Validate effective learner content, Rich V2 quality and real question generation over all 500
         run: |
-          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceDotCardsContentCorrectionTests|FullyQualifiedName~UsCcssB01NumberLineArithmeticalVisualsTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests|FullyQualifiedName~UsCcssB01TenthsHundredthsSourceTests' --logger 'console;verbosity=normal'
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceDotCardsContentCorrectionTests|FullyQualifiedName~UsCcssB01NumberLineArithmeticalVisualsTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests|FullyQualifiedName~UsCcssB01TenthsHundredthsSourceTests|FullyQualifiedName~UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests' --logger 'console;verbosity=normal'
       - name: Archive all 500 actual visual objects and independent numeric invariant findings
         if: always()
         uses: actions/upload-artifact@v4
