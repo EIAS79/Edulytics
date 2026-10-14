@@ -16,7 +16,7 @@
       "confirmedDefect": "Generic ruler instruction unrelated to this lesson goal",
       "verifiedOn": "2026-10-14",
       "effect": "Scoped independent learner explanation/examples/steps where required",
-      "status": "FIX_COMMITTED_REQUIRES_TARGETED_AND_FINAL_RUNTIME_CHECK",
+      "status": "SOURCE_PURPOSE_CHECKED_FIX_COMMITTED_TARGETED_AND_FULL_REGRESSIONS_PASSED_NOT_CERTIFIED",
       "certified": false
     },
     {
@@ -29,7 +29,7 @@
       "confirmedDefect": "Generic ruler instruction unrelated to this lesson goal",
       "verifiedOn": "2026-10-14",
       "effect": "Scoped independent learner explanation/examples/steps where required",
-      "status": "FIX_COMMITTED_REQUIRES_TARGETED_AND_FINAL_RUNTIME_CHECK",
+      "status": "SOURCE_PURPOSE_CHECKED_FIX_COMMITTED_TARGETED_AND_FULL_REGRESSIONS_PASSED_NOT_CERTIFIED",
       "certified": false
     },
     {
@@ -42,9 +42,20 @@
       "confirmedDefect": "Generic ruler instruction unrelated to this lesson goal",
       "verifiedOn": "2026-10-14",
       "effect": "Scoped independent learner explanation/examples/steps where required",
-      "status": "FIX_COMMITTED_REQUIRES_TARGETED_AND_FINAL_RUNTIME_CHECK",
+      "status": "SOURCE_PURPOSE_CHECKED_FIX_COMMITTED_TARGETED_AND_FULL_REGRESSIONS_PASSED_NOT_CERTIFIED",
       "certified": false
     }
   ],
-  "academicDecision": "BATCH_NO-GO"
+  "academicDecision": "BATCH_NO-GO",
+  "verification": {
+    "targetedWorkflowRunId": 38606099552,
+    "targetedStatus": "success",
+    "fullB01WorkflowRunId": 38606860914,
+    "fullB01RunTestedSourceSha": "0d20aa4acb5f15f7a0eb1177a688f44f57a6df56",
+    "fullProductDotNetTestsPassed": 2497,
+    "fullProductDotNetTestsFailed": 0,
+    "collectiveAuditStatus": "success",
+    "releaseJob": "skipped",
+    "note": "Passed product/representation tests do not constitute all 500 independent academic L1–L6 gates or rendered browser L6 for each lesson."
+  }
 }
