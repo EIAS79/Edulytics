@@ -16,6 +16,8 @@ on:
       - 'tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs'
       - 'tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-original-teacher-figure-dom-asset-map-40.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-original-figure-383-media-byte-provenance.json'
+      - 'tests/academic-us-ccss-b01-v9-original-figure-media-383.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-source-figure-dependency-audit.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs'
@@ -144,6 +146,10 @@ jobs:
           node tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs \
             --out=b01-v9-source-figure-dom-links-40.json
           node -e "const r=require('./b01-v9-source-figure-dom-links-40.json');if(r.coverage.manifestLessons!==500||r.coverage.exactFrameToOriginalMediaDOMPointers!==397||r.coverage.uniquePublisherMediaURLs!==383||r.coverage.unlinkedFigureFrames!==0||r.independentlyVerifiedVisualMathematics!==0||r.blockedLessonsForMathRightsAndL6!==40||r.releaseEligible!==false)process.exit(1);console.log(JSON.stringify({sourceDom:r.coverage,blocked:r.blockedLessonsForMathRightsAndL6,decision:r.academicDecision}));"
+      - name: Verify 397 source figure frames and 383 fetched original image-byte fingerprints (NO rights/math/browser PASS)
+        run: |
+          node --test tests/academic-us-ccss-b01-v9-original-figure-media-383.test.cjs
+          node -e "const a=require('./artifacts/academic-us-ccss/batches/B01-v9-original-figure-383-media-byte-provenance.json');if(a.scope.originalMathVisualsIndependentlyVerified!==0||a.scope.rightsVerifiedAssets!==0||a.scope.fullL6LessonsVerified!==0||a.academicDecision!=='BATCH_NO-GO'||a.lessons.length!==40||a.assets.length!==383)process.exit(1);console.log(JSON.stringify({teacherFigureFrames:a.scope.sourceOriginalFigureFrames,livePublisherMediaBytesVerified:a.scope.HTTP200CompleteMediaFilesRead,uniqueByteHashes:a.scope.distinctContentByteSha256,formats:a.scope.mediaFormatCounts,rightsPass:a.scope.rightsVerifiedAssets,academicDecision:a.academicDecision}));"
       - name: Preserve complete source-linked graph and impact groups, never an academic certificate
         if: always()
         uses: actions/upload-artifact@v4
