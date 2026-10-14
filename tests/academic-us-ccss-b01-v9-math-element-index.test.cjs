@@ -18,7 +18,17 @@ function sample() {
     packCode: 'US-CCSS-MATH', versionCode: 'CCSSM-2010',
     lessons: records.slice(i * 125, (i + 1) * 125)
   }));
-  return { manifest: { batchId: 'B01', expectedLessonCount: 500, lessons }, packs };
+  const sourceIndex = {
+    batchId: 'B01', expectedLessonCount: 500, matchedToManifest: 500,
+    rows: lessons.map((m, i) => ({
+      ordinal: i + 1, lessonCode: m.lessonCode,
+      localRelativePath: '01_Grade_1_IM_K5\\Exact_Sources\\lesson-' + (i + 1) + '.html',
+      localFileByteSha256: 'c'.repeat(64), localFileBytes: 1024,
+      state: 'REFERENCE_FILE_INVENTORIED_NOT_ACADEMICALLY_CERTIFIED'
+    }))
+  };
+  return { manifest: { batchId: 'B01', expectedLessonCount: 500, lessons },
+    sourceIndex, packs };
 }
 test('Indexes all 500, without confusing candidate elements with taught skills or certification', () => {
   const result = buildIndex(sample());
@@ -34,6 +44,9 @@ test('Indexes all 500, without confusing candidate elements with taught skills o
     ['fraction', 'visual_number_line']);
   assert.equal(result.byFamily.root.candidateLessons, 1);
   assert.equal(result.byFamily.fraction.candidateLessons, 1);
+  assert.equal(result.rows[0].originalTeacherSource.rawFileSha256, 'c'.repeat(64));
+  assert.equal(result.rows[0].originalTeacherSource.state,
+    'HASH_INVENTORIED_NOT_ACADEMICALLY_VERIFIED');
 });
 test('Does not infer a repair or a defect from incidental vocabulary', () => {
   const f = sample();
@@ -59,4 +72,13 @@ test('Rejects stale or missing fingerprints and a shortened manifest', () => {
   const g = sample();
   g.manifest.lessons.pop();
   assert.throws(() => buildIndex(g), /exactly 500/);
+});
+
+test('Rejects source inventory drift, not simply missing learner content', () => {
+  const f = sample();
+  f.sourceIndex.rows[10].lessonCode = 'WRONG:SOURCE:LESSON';
+  assert.throws(() => buildIndex(f), /Source inventory provenance missing\/mismatched/);
+  const g = sample();
+  g.sourceIndex.rows[0].localFileByteSha256 = '';
+  assert.throws(() => buildIndex(g), /Source inventory provenance missing\/mismatched/);
 });
