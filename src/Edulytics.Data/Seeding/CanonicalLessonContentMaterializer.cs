@@ -36,6 +36,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01FractionPurposeCorrections.Apply(document);
         CommonCoreB01PlaceValuePurposeCorrection.Apply(document);
         CommonCoreB01UnitAndPlaceValuePurposeCorrections.Apply(document);
+        CommonCoreB01NonLengthRulerTemplateCorrections.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -205,8 +206,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, html);
         var placeValue = CommonCoreB01PlaceValuePurposeCorrection
             .GetExpectedContentVersion(document, lesson, fractions);
-        return CommonCoreB01UnitAndPlaceValuePurposeCorrections
+        var weightOrTenThousand = CommonCoreB01UnitAndPlaceValuePurposeCorrections
             .GetExpectedContentVersion(document, lesson, placeValue);
+        return CommonCoreB01NonLengthRulerTemplateCorrections
+            .GetExpectedContentVersion(document, lesson, weightOrTenThousand);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -245,7 +248,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01FractionPurposeCorrections
             .IsTarget(document, lesson) ||
         CommonCoreB01PlaceValuePurposeCorrection.IsTarget(document,lesson) ||
-        CommonCoreB01UnitAndPlaceValuePurposeCorrections.IsTarget(document,lesson);
+        CommonCoreB01UnitAndPlaceValuePurposeCorrections.IsTarget(document,lesson) ||
+        CommonCoreB01NonLengthRulerTemplateCorrections.IsTarget(document,lesson);
 
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,
@@ -319,7 +323,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01PlaceValuePurposeCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreB01UnitAndPlaceValuePurposeCorrections
-            .CanUpgradeExisting(document, lesson, existingContentVersion);
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreB01NonLengthRulerTemplateCorrections.CanUpgradeExisting(document, lesson, existingContentVersion);
 
     public static string ComputeLessonFingerprint(
         CanonicalLessonContentPackDocument document,
