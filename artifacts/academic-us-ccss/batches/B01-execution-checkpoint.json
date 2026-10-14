@@ -50,15 +50,15 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "Indexed all B01 500 exact original full IM K5 teacher Lesson pages from authorized Our-CS archive with recomputed raw file SHA256, counted their activities and visual review motifs; saved metadata-only source index. Added offline source-locked 500-way parser, negative tests and CI job using index instead of 500 internet fetches; unified report links L3/L4/L5. GitHub commit status for updated code not yet visible, NOT asserted green.",
-  "nextExactOperation": "Run/check GitHub Actions on head 1d340844..., inspect offline full activity report, fix any test/regression failures, compare source activity review cues with actual generated Rich V2/Practice and repair verified deficiencies. Produce independent L1-L6 and eight-dimension evidence and authenticated student L6 verification; do not certify or merge while 499 missing. Source legal clearance remains a separate deferred non-code matter, not an implementation branch.",
+  "lastCompletedOperation": "2026-10-14: unified V9 superseded previous active B01 plan in place; GitHub Actions run 38574223513 validated 500/500 learner-body mathematical-element candidates joined to existing SHA-locked 500 original-teacher source files, with 5/5 negative/coverage tests passing. Index is metadata-only, NOT a verified skill map, defect proof or certification.",
+  "nextExactOperation": "Use the existing 500-row source/activity and Rich V2 evidence to classify cross-lesson mathematical and pedagogical discrepancy candidates; prove root causes before any bulk repair; reuse SHA-bound earlier test evidence; maintain B01 BATCH_NO-GO until every L1-L6 and 8-dimension requirement plus rights and live release gates pass.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
     "No sequential per-lesson certification; only a single batch decision"
   ],
-  "notes": "Plan V4 applies 500-at-once group processing. Previous single-lesson L02 research is historical input to unified defect register, not a processing mode.",
-  "planId": "US-CCSS-COLLECTIVE-500-BATCH-CERTIFICATION-V4",
+  "notes": "V9 is the sole active US CCSS execution plan. Historical V4.3 evidence and diagnostic tools remain as reusable inputs; no 50-lesson units or per-lesson signoffs. Original teacher books remain read-only on Our-CS. V9 element index is a candidate inventory, not evidence of academic compliance.",
+  "planId": "EDULYTICS-US-CCSS-UNIFIED-V9",
   "reviewUnit": "B01_ALL_500_AT_ONCE",
   "approvalUnit": "ONE_AUTOMATIC_COLLECTIVE_BATCH_DECISION",
   "releaseUnit": "ONE_RELEASE_PER_CERTIFIED_BATCH",
@@ -150,5 +150,25 @@
     "candidateLastImplementationCommit": "1d340844f2648347f61f5595fb742d2f352c7f70",
     "academicCertificationGranted": 0,
     "note": "Review cues cannot prove academic errors or PASS. Archived full teacher source index does not replace independent goal/math/Practice and authenticated L6 review."
+  },
+  "historicalPlanId": "US-CCSS-COLLECTIVE-500-BATCH-CERTIFICATION-V4",
+  "governingPlanPath": "docs/curriculum/US_CCSS_GRADE_BY_GRADE_LESSON_ACADEMIC_CERTIFICATION_PLAN.md",
+  "v9MathematicalElementIndex": {
+    "workflow": ".github/workflows/us-ccss-b01-v9-math-elements.yml",
+    "script": "tools/us-ccss-b01-v9-math-element-index.cjs",
+    "tests": "tests/academic-us-ccss-b01-v9-math-element-index.test.cjs",
+    "verifiedGithubRun": 38574223513,
+    "verifiedGithubRunConclusion": "success",
+    "verifiedTestCount": 5,
+    "verifiedFailedTests": 0,
+    "coverage": {
+      "expected": 500,
+      "observed": 500
+    },
+    "originalTeacherSourceJoin": "500 source-reference rows, each with local raw-file SHA256 and byte count",
+    "artifactName": "b01-v9-math-elements-500-candidates",
+    "artifactId": 11899575585,
+    "academicDecision": "NOT_CERTIFIED",
+    "releaseEligibilityUnchanged": true
   }
 }
