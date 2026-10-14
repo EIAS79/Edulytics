@@ -7,6 +7,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const manifestPath = 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json';
+const sourceIndexPath = 'artifacts/academic-us-ccss/batches/B01-book-source-reference-index-500.json';
 const packPaths = [1, 2, 3, 4].map(g =>
   'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g' + g + '-phase29-v1.lesson-content-pack.json');
 const fields = ['explanation', 'keyConceptsAndRules', 'workedExamples',
@@ -30,10 +31,13 @@ const families = [
   { id: 'visual_number_line', re: /\b(?:number line|number-line|ten.frame|tape diagram|dot plot|array diagram)\b/i }
 ];
 
-function buildIndex({ manifest, packs }) {
+function buildIndex({ manifest, packs, sourceIndex }) {
   assert(manifest?.batchId === 'B01' && manifest.expectedLessonCount === 500 &&
     Array.isArray(manifest.lessons) && manifest.lessons.length === 500,
     'B01 must have exactly 500 manifest lessons');
+  assert(sourceIndex?.batchId === 'B01' && sourceIndex.expectedLessonCount === 500 &&
+    sourceIndex.matchedToManifest === 500 && Array.isArray(sourceIndex.rows) &&
+    sourceIndex.rows.length === 500, 'B01 original teacher-source index must cover 500/500');
   assert(Array.isArray(packs) && packs.length === 4, 'Expected four G1-G4 pack files');
   const packLessonMap = new Map();
   for (const pack of packs) {
@@ -48,11 +52,19 @@ function buildIndex({ manifest, packs }) {
     }
   }
   const seen = new Set(), rows = [], affected = new Map(families.map(f => [f.id, []]));
-  for (const m of manifest.lessons) {
+  for (const [ordinalIndex, m] of manifest.lessons.entries()) {
     assert(typeof m.lessonCode === 'string' && !seen.has(m.lessonCode),
       'Duplicate/missing B01 manifest identity');
     seen.add(m.lessonCode);
     assert(sha(m.sourceSemanticSha256), 'Missing source semantic fingerprint: ' + m.lessonCode);
+    const source = sourceIndex.rows[ordinalIndex];
+    assert(source?.ordinal === ordinalIndex + 1 &&
+      source.lessonCode === m.lessonCode &&
+      sha(source.localFileByteSha256) &&
+      Number.isInteger(source.localFileBytes) && source.localFileBytes > 0 &&
+      typeof source.localRelativePath === 'string' && source.localRelativePath.length > 0 &&
+      source.state === 'REFERENCE_FILE_INVENTORIED_NOT_ACADEMICALLY_CERTIFIED',
+      'Source inventory provenance missing/mismatched: ' + m.lessonCode);
     const row = packLessonMap.get(m.lessonCode);
     assert(row, 'Missing learner body: ' + m.lessonCode);
     assert(sha(row.canonicalBodySha256), 'Missing learner body fingerprint: ' + m.lessonCode);
@@ -71,6 +83,12 @@ function buildIndex({ manifest, packs }) {
       lessonCode: m.lessonCode,
       sourceSemanticSha256: m.sourceSemanticSha256,
       canonicalBodySha256: row.canonicalBodySha256,
+      originalTeacherSource: {
+        relativePath: source.localRelativePath,
+        rawFileSha256: source.localFileByteSha256,
+        bytes: source.localFileBytes,
+        state: 'HASH_INVENTORIED_NOT_ACADEMICALLY_VERIFIED'
+      },
       primaryTeachingSkill: null, // MUST come from verified academic source, not keywords
       mathematicalElements: hits,
       academicSourceVerification: 'NOT_PERFORMED_BY_THIS_INDEX',
@@ -87,7 +105,7 @@ function buildIndex({ manifest, packs }) {
     batchId: 'B01',
     method: 'UNVERIFIED_LEARNER_CONTENT_ELEMENT_CANDIDATE_INDEX',
     coverage: { expected: 500, observed: rows.length, unique: seen.size, missing: 0 },
-    source: { manifestPath, learnerPacks: packPaths },
+    source: { manifestPath, sourceIndexPath, learnerPacks: packPaths },
     classificationPolicy: 'No primary skill inferred; no repairs or certification from this index',
     byFamily,
     rows,
@@ -98,7 +116,7 @@ function buildIndex({ manifest, packs }) {
 
 function load() {
   const read = p => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
-  return { manifest: read(manifestPath), packs: packPaths.map(read) };
+  return { manifest: read(manifestPath), sourceIndex: read(sourceIndexPath), packs: packPaths.map(read) };
 }
 if (require.main === module) {
   const out = process.argv.find(x => x.startsWith('--out='));
