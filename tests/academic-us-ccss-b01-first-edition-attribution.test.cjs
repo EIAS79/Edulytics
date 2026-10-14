@@ -11,19 +11,15 @@ const packs=()=>[1,2,3,4].flatMap(g=>JSON.parse(fs.readFileSync(path.join(base,
  'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g'+g+
  '-phase29-v1.lesson-content-pack.json'),'utf8')).lessons);
 
-test('B01 attribution is transparent about source, edition, licence and adaptation',()=>{
+test('The public programme source page does not disclose internal IM academic-reference sources',()=>{
  const h=html();
- assert.match(h,/id="ccss-b01-first-edition"/);
- assert.match(h,/Illustrative Mathematics/);
- assert.match(h,/2019–2021 first edition/);
- assert.match(h,/https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//);
- assert.match(h,/Changes and independent material:/);
- assert.match(h,/not imply that Illustrative Mathematics sponsors,/);
- assert.match(h,/2024 IM v\.360 edition has a different, non-commercial licence/);
- for(let g=1;g<=4;g++)assert.ok(h.includes('https://im.kendallhunt.com/k5/teachers/grade-'+g+'/'));
- assert.doesNotMatch(h,/src="[^"]*(?:im\.kendallhunt|accessim)/i);
+ assert.match(h,/<h1>Content sources &amp; licences<\/h1>/);
+ assert.match(h,/Cambridge International Mathematics/);
+ assert.doesNotMatch(h,/Illustrative Mathematics/i);
+ assert.doesNotMatch(h,/im\.kendallhunt\.com/i);
+ assert.doesNotMatch(h,/CCSS B01|2024 IM v\.360|ccss-b01-first-edition/i);
 });
-test('All 500 B01 source declarations match first edition and approved licence; declarations do not equal signoff',()=>{
+test('500 internal edition/provenance records stay intact and do not imply rights signoff',()=>{
  const m=manifest();
  assert.equal(m.lessons.length,500);
  const ids=new Set(m.lessons.map(l=>l.lessonCode));
