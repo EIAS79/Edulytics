@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "2026-10-15 V9 B01 500-lesson faithful licensed mathematical diagram policy: official IM Terms and first-edition IM copyright verify 2019–2021 CC BY 4.0 author attribution, source URI, license URI and Edulytics adaptation note. Same source illustration shape/pixel identity or a different rendering style is NOT an academic defect by itself; only exact quantities, units, relations, fractional partitions, scales and task-specific diagram semantics determine mathematical equivalence. Integrated learner-facing CC BY source attribution into Rich Lesson V2 only for PED:US-CCSS-MATH grade 1–4 source codes and original source URL lookup, with author, actual license URL, change notice, no implied endorsement and distinct third-party image license caution; Polish, Arabic, English messages. Added explicit executable math-semantic comparator (no pixel/hash match requirement) and source edition license helper distinguishing 392 conditional first-edition default cases vs five separately credited third-party images, with strict fail-closed no automatic right/math/L6 or academic pass. CI path/test gate included; B01 remains 1/500 academically certified and BATCH_NO-GO.",
-  "nextExactOperation": "Run new CI on this immutable B01 head to compile Razor/Web and all 500 rich content source math guards, correct failing tests if any; independently validate actual Rich V2 student diagrams against each of 397 original teacher frames for math quantities, orientation where mathematically relevant, data/labels/scale, alt and mobile, using structured mathematical signatures plus visual browser evidence—not pixel hashing. Where original first-edition artwork is needed, reuse/ adapt under CC BY 4.0 with visible attribution, but handle the five separate third-party image licenses on their own. Complete 40 L6 figure lessons plus remaining 500 L1–L6/eight dimension assessment/practice/workbooks then publish B01 only after academic collective PASS; no B02 yet.",
+  "lastCompletedOperation": "2026-10-15 B01 V9 full 500 runtime renderer vs 40 original teacher figure lesson source-frame structural audit: real 500 corrected materializer and Rich V2 showed 13/40 figure-source lessons with only EquationSet and 27/40 with one or more concrete mathematical diagram families; this is a structural risk, not proven exact original-task math mismatch. Identified G3 U06 L09 nearest-minute clock goal, whose existing student representation was EquationSet-only and source example explicitly discussed 1:37. Added a source-identity/purpose guarded independently authored ClockFace 1:37 visual and upgraded the shared SVG clock renderer to show 60 equally spaced minute marks, 12 hour numbers, 5-minute major marks, fractional continuous hour hand with invariant numeric coordinates and an accessible descriptive text. After: 28/40 structural math diagram, 12/40 equations only, but zero independently certified source-math visual equivalence, L6 browser pass or academic cert. Added .NET mathematical tests, runtime 500 source join and negative tests and CI artifacts. Preserve edition CC BY attribution and separate third party license rules, no publisher artwork copied. BATCH_NO-GO, 1/500 full L1-L6.",
+  "nextExactOperation": "CI test this exact clock SVG and 500 materialized lessons on immutable HEAD, fix failures before continuing. Deep-review remaining 12 EquationSet-only original figure lessons one by one; for every source task verify original numbers, labels, partitions, units and skill before independently rendering or lawfully adapting a source diagram. Inspect 397 original figure math semantics vs actually composed student diagrams, source accessibility of 115 alt candidates and individual third-party license exceptions (5). 500 collective L1-L6/eight-dimension/practice/assessment/worksheet/homework completion and real authenticated student browser remains required before any B01 merge, Render or B02.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -659,6 +659,32 @@
     "kind": "IMPLEMENTED_FRONTEND_ATTRIBUTION_PLUS_VISUAL_EQUIVALENCE_POLICY_NOT_L6_CERTIFICATE",
     "sourceRenderPartial": "src/Edulytics.Web/Views/Shared/_RichLessonFirstEditionAttribution.cshtml",
     "policyTool": "tools/us-ccss-b01-v9-visual-math-equivalence.cjs",
+    "academicDecision": "BATCH_NO-GO"
+  },
+  "v9EffectiveSourceFigureStructuralComparison": {
+    "manifestLessons": 500,
+    "originalTeacherFigureLessons": 40,
+    "originalSourceFigureFrames": 397,
+    "originalImagesWithDistinctCMSPointers": 383,
+    "beforeFixLessonsWithConcreteRichV2Diagram": 27,
+    "beforeFixLessonsOnlyEquationSet": 13,
+    "afterFixLessonsWithConcreteRichV2Diagram": 28,
+    "afterFixLessonsOnlyEquationSet": 12,
+    "sourceVerifiedNewMinuteClockLesson": "PED:US-CCSS-MATH:G3:U06:L09",
+    "sourcePurpose": "Tell and write time to nearest minute using clock hands and marks between five-minute positions",
+    "ownedIndependentlyRenderedClockFace": true,
+    "rendererHasExactlySixtyMinuteTicks": true,
+    "rendererHasTwelveHourNumbers": true,
+    "hourHandMovesFractionOfHourByMinutes": true,
+    "teacherSourceURL": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-9/preparation.html",
+    "sourceBodySha256": "446e27ac04ac32ff683f4aadeda7271f3dffe3d7cf2c21cd3963a9a4416f59f7",
+    "exactSourceTaskVsStudentDiagramMathVerified": 0,
+    "responsiveAuthenticatedStudentBrowserPasses": 0,
+    "newAcademicCertifications": 0,
+    "runtimeEvidenceTest": "tests/academic-us-ccss-b01-v9-effective-figure-rich-v2-structure.test.cjs",
+    "clockMathematicalTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9NearestMinuteClockVisualTests.cs",
+    "actualRuntimeOutputCI": "b01-v9-effective-original-40-math-visual-structure.json",
+    "scopeCaveat": "Rich V2 structural kind existence cannot certify original figure task math, numeric content, legal rights or L6. Similar/equal original illustration appearance is not a failure; math quantities and labels govern equivalence.",
     "academicDecision": "BATCH_NO-GO"
   }
 }

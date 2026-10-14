@@ -61,6 +61,10 @@ on:
       - 'tests/Edulytics.Tests/Phase29/SourceBoundCommonCoreJsonMetadataReconciliationTests.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.cs'
+      - 'src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9NearestMinuteClockVisualTests.cs'
+      - 'tools/us-ccss-b01-v9-effective-figure-rich-v2-structure.cjs'
+      - 'tests/academic-us-ccss-b01-v9-effective-figure-rich-v2-structure.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs'
       - 'tools/us-ccss-b01-v9-math-element-index.cjs'
       - 'tools/us-ccss-b01-v9-shared-root-cause-ledger.cjs'
@@ -127,7 +131,7 @@ jobs:
       - name: Materialize 500 corrections and compose Rich V2 from actual application
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
-            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedGeometryProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedAdditionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedSubtractionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests|FullyQualifiedName~CommonCoreG4MultiplesSourceCorrectionTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
+            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedGeometryProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedAdditionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedSubtractionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9NearestMinuteClockVisualTests|FullyQualifiedName~UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests|FullyQualifiedName~CommonCoreG4MultiplesSourceCorrectionTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
             --logger 'console;verbosity=normal'
       - name: Join ALL 25 raw root cohorts to 500 effective Rich V2 facts and source purposes
         run: |
@@ -136,6 +140,13 @@ jobs:
             --effective=b01-v9-effective-root-cause-500.json \
             --out=b01-v9-global-effective-root-causes-500.json
           node -e "const r=require('./b01-v9-global-effective-root-causes-500.json');if(r.coverage.joined!==500||r.coverage.unique!==500||r.automaticFixAuthorization!==false||r.confirmedSemanticDefectsByThisTool!==0||r.academicDecision!=='BATCH_NO-GO'||r.groupCount!==25)process.exit(1);console.log(JSON.stringify({coverage:r.coverage,groupCount:r.groupCount,sharedPatternRoots:Object.fromEntries(Object.entries(r.sharedPatternRoots).map(([k,v])=>[k,{raw:v.rawCandidates,effective:v.effectiveMarkerStillPresent,changed:v.effectiveMarkerAbsent,visual:v.withComposedVisual}])),noVisual:r.richV2WithoutStructuralVisuals.count,decision:r.academicDecision}));"
+      - name: Compare the real 500-way student Rich V2 visuals to exact original 397 figure frames
+        run: |
+          node --test tests/academic-us-ccss-b01-v9-effective-figure-rich-v2-structure.test.cjs
+          node tools/us-ccss-b01-v9-effective-figure-rich-v2-structure.cjs \
+            --effective=b01-v9-effective-root-cause-500.json \
+            --out=b01-v9-effective-original-40-math-visual-structure.json
+          node -e "const a=require('./b01-v9-effective-original-40-math-visual-structure.json');if(a.coverage.manifestLessons!==500||a.coverage.sourceFigureLessons!==40||a.coverage.sourceFigureFrames!==397||a.coverage.studentLessonsWithStructuralDiagram!==28||a.coverage.studentLessonsOnlyEquations!==12||a.coverage.exactTaskMathDiagramComparisonsApproved!==0||a.coverage.lessonL6BrowserPassesApproved!==0||a.academicDecision!=='BATCH_NO-GO'||a.releaseEligible!==false)process.exit(1);console.log(JSON.stringify({originalFigures:a.coverage.sourceFigureFrames,withStructuredStudentDiagram:a.coverage.studentLessonsWithStructuralDiagram,equationOnly:a.coverage.studentLessonsOnlyEquations,academicDecision:a.academicDecision}));"
       - name: Audit all 40 original-figure reference gaps as ONE dependency family
         run: |
           node --test tests/academic-us-ccss-b01-v9-source-figure-dependency-audit.test.cjs
@@ -176,6 +187,7 @@ jobs:
             b01-v9-global-root-cause-500.json
             b01-v9-effective-root-cause-500.json
             b01-v9-global-effective-root-causes-500.json
+            b01-v9-effective-original-40-math-visual-structure.json
             b01-v9-source-figure-dependencies-40.json
             b01-v9-activity-figure-source-guard-40.json
             b01-v9-source-figure-dom-links-40.json

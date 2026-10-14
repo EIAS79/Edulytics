@@ -687,6 +687,37 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
+        // The exact first-edition G3 U06 L09 teacher activity teaches clock time
+        // to the nearest minute. An EquationSet alone is not an analog clock.
+        // This is an independently authored 1:37 example, not publisher art:
+        // all 60 minute ticks and continuously moving hour hand are rendered
+        // by the reusable ClockFace Razor partial.
+        if (lessonCode == "PED:US-CCSS-MATH:G3:U06:L09")
+        {
+            if (body.Title != "Time to the Nearest Minute" ||
+                !body.Explanation.Contains("nearest minute", StringComparison.OrdinalIgnoreCase) ||
+                !body.KeyConceptsAndRules.Contains("hour and minute hands", StringComparison.Ordinal))
+                throw new InvalidOperationException(
+                    "G3 U06 L09 minute-clock visual rejected source-purpose drift.");
+
+            return
+            [
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.ClockFace,
+                    Title = "Read 1:37 to the nearest minute",
+                    Description =
+                        "Analog clock showing 1:37. The minute hand points to the " +
+                        "second one-minute tick after the 7 (35-minute position); " +
+                        "the hour hand is 37/60 of the way from 1 toward 2. " +
+                        "The hands alone cannot tell a.m. from p.m.",
+                    PrimaryLabel = "One-minute tick marks",
+                    Items = ["1", "37"]
+                },
+                questionForms
+            ];
+        }
+
         var sourceDerivedCounters = UsCcssB01VerifiedExpressionVisuals.Build(lessonCode, body, contract);
         return [..sourceDerivedCounters, questionForms];
     }
