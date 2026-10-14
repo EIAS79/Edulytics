@@ -142,6 +142,69 @@ function verifyOriginalActivityFigures({manifest,sourceIndex,activity,context,gr
   rows
  };
 }
+// Static release preflight for the final all-500 gate when the separate
+// post-Materializer graph is not part of the release job's artifact set.
+// This must NEVER grant PASS based on retrieved URLs or figure counts.
+function sourceFigureReleasePreflight({manifest,sourceIndex,activity,context}){
+ assert.equal(manifest?.batchId,'B01');
+ assert.equal(manifest.lessons?.length,500);
+ assert.equal(sourceIndex.rows?.length,500);
+ assert.equal(activity?.planId,'EDULYTICS-US-CCSS-UNIFIED-V9');
+ assert.equal(activity?.batchId,'B01');
+ assert.equal(activity.rows?.length,40);
+ assert.equal(activity.coverage?.sourcePageHtmlRetrieved,40);
+ assert.equal(context?.planId,activity.planId);
+ assert.equal(context.rows?.length,40);
+ const all=new Set(),frameRows=new Map(activity.rows.map(x=>[x.lessonCode,x]));
+ const ctx=new Map(context.rows.map(x=>[x.lessonCode,x]));
+ assert.equal(frameRows.size,40);
+ assert.equal(ctx.size,40);
+ let totalFrames=0,totalAssets=0,unmappedFrames=0;
+ for(let i=0;i<500;i++){
+  const m=manifest.lessons[i],source=sourceIndex.rows[i];
+  assert.equal(m.ordinal,i+1);
+  assert.equal(source.ordinal,i+1);
+  assert.equal(source.lessonCode,m.lessonCode);
+  assert.ok(!all.has(m.lessonCode));
+  all.add(m.lessonCode);
+  const a=frameRows.get(m.lessonCode);
+  if(!a)continue;
+  const c=ctx.get(m.lessonCode);
+  assert.ok(c,'Missing verified activity page provenance');
+  assert.equal(a.ordinal,i+1);
+  assert.equal(c.ordinal,i+1);
+  assert.equal(a.sourceSemanticSha256,m.sourceSemanticSha256);
+  assert.equal(c.sourceSemanticSha256,m.sourceSemanticSha256);
+  assert.equal(a.originalPreparationUrl,m.sourceUrl);
+  assert.equal(c.originalPreparationUrl,m.sourceUrl);
+  assert.equal(a.teacherActivityUrl,c.activityPageUrl);
+  assert.equal(a.teacherActivityUrl,m.sourceUrl.replace(/\/preparation\.html$/,'/lesson.html'));
+  assert.equal(a.sourceFigureFrames,a.sourceFigureContexts.length);
+  assert.equal(a.sourceFigureFramesWithSemanticImageVerified,0);
+  assert.equal(a.sourceFigureFramesWithoutLinkedGraphic,a.sourceFigureFrames);
+  assert.ok(a.sourceFigureFrames>0);
+  assert.equal(a.sourceImageAssetReferences,a.unlinkedSourceCMSAssetReferences.length);
+  assert.ok(a.unlinkedSourceCMSAssetReferences.every(url=>
+   /^https:\/\/cms-assets\.illustrativemathematics\.org\/[a-z0-9]+(?:[/?#].*)?$/i.test(url)));
+  assert.ok(a.sourceFigureContexts.every((frame,j)=>frame.order===j+1&&
+   frame.mediaAssetToFigureIndexProven===false&&
+   frame.studentTaskDiagramMathematicsVerified===false));
+  assert.equal(a.rightsReview,'NOT_REVIEWED_PER_ASSET');
+  totalFrames+=a.sourceFigureFrames;totalAssets+=a.sourceImageAssetReferences;
+  unmappedFrames+=a.sourceFigureFramesWithoutLinkedGraphic;
+ }
+ assert.ok([...frameRows.keys()].every(code=>all.has(code)));
+ assert.equal(totalFrames,activity.summary.totalFigureFrames);
+ assert.equal(totalAssets,activity.summary.totalCmsMediaReferences);
+ return {planId:activity.planId,batchId:'B01',
+  coverage:{totalLessons:500,sourceFigureLessons:40,unmappedFrames,mediaPointers:totalAssets},
+  releaseEligible:false,academicDecision:'BATCH_NO-GO',
+  releaseBlockers:{
+   sourceFigureToAssetMapping:unmappedFrames,
+   figureLessonsWithoutProof:40,
+   mathematicsRightsAndAuthenticatedL6:'NOT_VERIFIED_FOR_ALL_40'},
+  noAutomaticPublisherAssetReuse:true};
+}
 function readArg(k,otherwise){
  const found=process.argv.find(s=>s.startsWith('--'+k+'='));
  return found?found.slice(k.length+3):otherwise;
@@ -155,15 +218,24 @@ if(require.main===module){
   graph:'b01-v9-global-root-cause-500.json',
   effective:'b01-v9-global-effective-root-causes-500.json'
  })[p]),'utf8'));
- const report=verifyOriginalActivityFigures({manifest:read('manifest'),sourceIndex:read('sourceIndex'),
-  activity:read('activity'),context:read('context'),graph:read('graph'),effective:read('effective')});
+ const sourceInputs={manifest:read('manifest'),sourceIndex:read('sourceIndex'),
+  activity:read('activity'),context:read('context')};
+ const report=process.argv.includes('--source-only')
+  ? sourceFigureReleasePreflight(sourceInputs)
+  : verifyOriginalActivityFigures({...sourceInputs,graph:read('graph'),effective:read('effective')});
  const out=readArg('out',null);
  if(out)fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');
  else process.stdout.write(JSON.stringify(report,null,2)+'\n');
- process.stderr.write('V9 B01 original figure source-asset guard '+report.blockedSourceFigureLessons+
-  '/40 BLOCKED; '+report.coverage.sourceFigureFrames+
-  ' frames; '+report.coverage.sourceCMSAssetLocators+
-  ' unlinked CMS media pointers; certification NO-GO\n');
- if(process.argv.includes('--strict')&&report.blockedSourceFigureLessons>0)process.exitCode=2;
+ process.stderr.write(process.argv.includes('--source-only')
+  ? 'V9 B01 RELEASE GUARD: '+report.coverage.sourceFigureLessons+
+      '/40 source figure lessons blocked, '+report.coverage.unmappedFrames+
+      ' frames without proven CMS binding; BATCH_NO-GO\n'
+  : 'V9 B01 original figure source-asset guard '+report.blockedSourceFigureLessons+
+      '/40 BLOCKED; '+report.coverage.sourceFigureFrames+
+      ' frames; '+report.coverage.sourceCMSAssetLocators+
+      ' unlinked CMS media pointers; certification NO-GO\n');
+ if(process.argv.includes('--strict')&&(
+    process.argv.includes('--source-only')?report.releaseEligible===false:
+    report.blockedSourceFigureLessons>0))process.exitCode=2;
 }
-module.exports={verifyOriginalActivityFigures};
+module.exports={verifyOriginalActivityFigures,sourceFigureReleasePreflight};
