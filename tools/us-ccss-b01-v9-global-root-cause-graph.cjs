@@ -22,7 +22,8 @@ const reviewedPaths=[
  sourcePrefix+'B01-v9-fraction-purpose-reviewed-metadata.json',
  sourcePrefix+'B01-v9-placevalue-purpose-reviewed-metadata.json',
  sourcePrefix+'B01-v9-unit-weight-ten-thousand-purpose-reviewed-metadata.json',
- sourcePrefix+'B01-v9-nonlength-ruler-cohort-metadata.json'
+ sourcePrefix+'B01-v9-nonlength-ruler-cohort-metadata.json',
+ sourcePrefix+'B01-v9-source-verified-nonmeasure-23-cohort.json'
 ];
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const assert=(v,msg)=>{if(!v)throw Error(msg)};
