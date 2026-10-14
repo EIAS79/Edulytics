@@ -22,6 +22,8 @@ on:
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedComparisonProcedureCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedGeometryProcedureCorrections.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedGeometryProcedureCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedComparisonProcedureCorrectionsTests.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9LearnerVoiceSharedRootCorrection.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9LearnerVoiceSharedRootCorrectionTests.cs'
@@ -40,6 +42,8 @@ on:
       - 'artifacts/academic-us-ccss/batches/B01-v9-optional-source-purpose-fallback-reviewed-metadata.json'
       - 'tests/academic-us-ccss-b01-v9-optional-source-purpose-fallback.test.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-geometry-template-31-source-purpose-reviewed.json'
+      - 'tests/academic-us-ccss-b01-v9-shared-geometry-purpose-31.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-shared-comparison-cohort-44.test.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-lesson-activity-figure-context-40.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-original-activity-figure-frames-40.json'
@@ -71,6 +75,7 @@ jobs:
         run: |
           node --test tests/academic-us-ccss-b01-v9-optional-source-purpose-fallback.test.cjs
           node --test tests/academic-us-ccss-b01-v9-shared-comparison-cohort-44.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-shared-geometry-purpose-31.test.cjs
           node --test tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs
           node --test tests/academic-us-ccss-b01-v9-math-element-index.test.cjs tests/academic-us-ccss-b01-v9-shared-root-cause-ledger.test.cjs
       - name: Produce one global impact graph using existing 500-source inventories and V9 indexes
@@ -90,7 +95,7 @@ jobs:
       - name: Materialize 500 corrections and compose Rich V2 from actual application
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
-            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
+            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedGeometryProcedureCorrectionsTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
             --logger 'console;verbosity=normal'
       - name: Join ALL 25 raw root cohorts to 500 effective Rich V2 facts and source purposes
         run: |
