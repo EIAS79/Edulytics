@@ -14,7 +14,7 @@ const cues=[
   fields:['explanation','quickSummary']},
  {id:'LEARNER_TEACHER_PRONOUN_DRIFT',re:/\b(?:students|the teacher|they are observing|support them in|tools they have used|as they learn)\b/i,
   fields:['explanation','stepByStepSolutions','workedExamples']},
- {id:'PUBLISHER_ASSET_PLACEHOLDER',re:/\b(?:Caption\s*:|Display\s*:|Image\s*:|alt text\s*:)\b/i,
+ {id:'PUBLISHER_ASSET_PLACEHOLDER',re:/\b(?:Caption|Display|Image|alt text)\s*:/i,
   fields:['workedExamples','explanation']},
  {id:'CLASSROOM_ACTIVITY_TRANSCRIPTION',re:/\b(?:in Activity\s+[1-9]|in the lesson synthesis|in the warm-up|in this center)\b/i,
   fields:['explanation','workedExamples']},
