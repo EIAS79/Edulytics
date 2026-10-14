@@ -23,9 +23,8 @@ public sealed class UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests
             .Where(l => CommonCoreB01UnitAndPlaceValuePurposeCorrections.IsTarget(d,l))
             .Select(l => (d,l))).ToArray();
         Assert.Equal(2,matches.Length);
-        Assert.Equal([TenThousandCode,WeightCode],
-            matches.Select(x=>x.l.LessonCode).OrderBy(x=>x,StringComparer.Ordinal).ToArray()
-                .OrderByDescending(x=>x,StringComparer.Ordinal).ToArray());
+        Assert.Equal(new[]{WeightCode,TenThousandCode},
+            matches.Select(x=>x.l.LessonCode).OrderBy(x=>x,StringComparer.Ordinal).ToArray());
         foreach(var (document,lesson) in matches)
         {
             var t=Assert.Single(lesson.Translations);
