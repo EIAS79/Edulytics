@@ -27,6 +27,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedAdditionProcedureCorrectionsTests.cs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-addition-template-25-source-goal-activity-reviewed.json'
       - 'tests/academic-us-ccss-b01-v9-addition-cohort-25.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-subtraction-55-source-goal-activity-purpose-reviewed.json'
+      - 'tests/academic-us-ccss-b01-v9-subtraction-cohort-55.test.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedGeometryProcedureCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG4MultiplesSourceCorrectionTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedComparisonProcedureCorrectionsTests.cs'
@@ -82,6 +84,7 @@ jobs:
           node --test tests/academic-us-ccss-b01-v9-shared-comparison-cohort-44.test.cjs
           node --test tests/academic-us-ccss-b01-v9-shared-geometry-purpose-31.test.cjs
           node --test tests/academic-us-ccss-b01-v9-addition-cohort-25.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-subtraction-cohort-55.test.cjs
           node --test tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs
           node --test tests/academic-us-ccss-b01-v9-math-element-index.test.cjs tests/academic-us-ccss-b01-v9-shared-root-cause-ledger.test.cjs
       - name: Produce one global impact graph using existing 500-source inventories and V9 indexes

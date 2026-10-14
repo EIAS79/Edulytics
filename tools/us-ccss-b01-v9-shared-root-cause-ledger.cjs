@@ -17,7 +17,8 @@ const evidenceFiles=[
  'artifacts/academic-us-ccss/batches/B01-v9-optional-source-purpose-fallback-reviewed-metadata.json',
  'artifacts/academic-us-ccss/batches/B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json',
  'artifacts/academic-us-ccss/batches/B01-v9-geometry-template-31-source-purpose-reviewed.json',
-  'artifacts/academic-us-ccss/batches/B01-v9-addition-template-25-source-goal-activity-reviewed.json'
+  'artifacts/academic-us-ccss/batches/B01-v9-addition-template-25-source-goal-activity-reviewed.json',
+  'artifacts/academic-us-ccss/batches/B01-v9-subtraction-55-source-goal-activity-purpose-reviewed.json'
 ];
 const SHA=/^[a-f0-9]{64}$/i;
 const definitions=[
