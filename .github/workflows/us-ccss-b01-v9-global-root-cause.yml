@@ -12,6 +12,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9EffectiveRootCauseImpactTests.cs'
       - 'tools/us-ccss-b01-v9-effective-root-cause-reconciliation.cjs'
       - 'tools/us-ccss-b01-v9-source-figure-dependency-audit.cjs'
+      - 'tools/us-ccss-b01-v9-activity-figure-source-contract.cjs'
+      - 'tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-source-figure-dependency-audit.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
@@ -30,6 +32,8 @@ on:
       - 'artifacts/academic-us-ccss/batches/B01-original-teacher-activity-local-index-500.json'
       - 'artifacts/academic-us-ccss/batches/B01-book-source-reference-index-500.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-goal-signal-memory-500.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-source-lesson-activity-figure-context-40.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-original-activity-figure-frames-40.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-*-purpose-reviewed-metadata.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-nonlength-ruler-cohort-metadata.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-verified-nonmeasure-23-cohort.json'
@@ -91,6 +95,14 @@ jobs:
             --effective=b01-v9-global-effective-root-causes-500.json \
             --out=b01-v9-source-figure-dependencies-40.json
           node -e "const r=require('./b01-v9-source-figure-dependencies-40.json');if(r.cohorts.length!==40||r.academicDecision!=='BATCH_NO-GO'||r.figureReplacementAuthority!==false||r.cohorts.some(x=>x.releaseDisposition!=='BLOCKED_AWAITING_SOURCE_ACTIVITY_FIGURE_AND_RENDERED_COMPARISON'))process.exit(1);console.log(JSON.stringify({figureReferences:r.cohorts.length,causeBreakdown:r.structuralCorrelationTotals,academicDecision:r.academicDecision}));"
+      - name: Verify exact original 336 figure-frame / 383 CMS URL linkage unresolved for 40
+        run: |
+          node --test tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs
+          node tools/us-ccss-b01-v9-activity-figure-source-contract.cjs \
+            --graph=b01-v9-global-root-cause-500.json \
+            --effective=b01-v9-global-effective-root-causes-500.json \
+            --out=b01-v9-activity-figure-source-guard-40.json
+          node -e "const r=require('./b01-v9-activity-figure-source-guard-40.json');if(r.coverage.manifestLessons!==500||r.coverage.lessonIdentitiesJoined!==40||r.coverage.sourceFigureFrames!==336||r.coverage.sourceCMSAssetLocators!==383||r.blockedSourceFigureLessons!==40||r.figureAssetReuseAuthorization!==false||r.academicDecision!=='BATCH_NO-GO')process.exit(1);console.log(JSON.stringify({coverage:r.coverage,visualsBlocked:r.blockedSourceFigureLessons,decision:r.academicDecision}));"
       - name: Preserve complete source-linked graph and impact groups, never an academic certificate
         if: always()
         uses: actions/upload-artifact@v4
@@ -101,5 +113,6 @@ jobs:
             b01-v9-effective-root-cause-500.json
             b01-v9-global-effective-root-causes-500.json
             b01-v9-source-figure-dependencies-40.json
+            b01-v9-activity-figure-source-guard-40.json
           if-no-files-found: warn
           retention-days: 30
