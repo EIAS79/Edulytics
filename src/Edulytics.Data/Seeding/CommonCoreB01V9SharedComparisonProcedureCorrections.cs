@@ -142,9 +142,16 @@ public static class CommonCoreB01V9SharedComparisonProcedureCorrections
         if ((actual.StepByStepSolutions != OldSteps || actual.CommonMistakes != OldMistakes) &&
             (actual.StepByStepSolutions != newSteps || actual.CommonMistakes != newMistakes))
             throw new InvalidOperationException("V9 shared comparison stored steps/mistakes drift: " + lesson.LessonCode);
+        // The overlapping G2 array lesson can legitimately move directly
+        // from pre-V9 Rich Content to both source-verified shared corrections.
+        // Accept only its frozen raw or first-layer concept body, never drift.
+        var allowedOldConcept = g.Code == "PED:US-CCSS-MATH:G2:U08:L07" &&
+            version == CommonCoreRichContentCorrections.CorrectionContentVersion &&
+            CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections
+                .IsVerifiedOriginalOrCorrectedConceptState(g.Code, actual.KeyConceptsAndRules);
         if (actual.Title != effective.Title ||
             actual.Explanation != effective.Explanation ||
-            actual.KeyConceptsAndRules != effective.KeyConceptsAndRules ||
+            (actual.KeyConceptsAndRules != effective.KeyConceptsAndRules && !allowedOldConcept) ||
             actual.WorkedExamples != effective.WorkedExamples ||
             actual.QuickSummary != effective.QuickSummary)
             throw new InvalidOperationException("V9 shared comparison stored unrelated mathematics drift: " + lesson.LessonCode);
