@@ -18,6 +18,8 @@ on:
       - 'tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01V9SharedComparisonProcedureCorrections.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedComparisonProcedureCorrectionsTests.cs'
       - 'src/Edulytics.Data/Seeding/CommonCoreB01V9LearnerVoiceSharedRootCorrection.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9LearnerVoiceSharedRootCorrectionTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests.cs'
@@ -41,6 +43,7 @@ on:
       - 'artifacts/academic-us-ccss/batches/B01-v9-*-purpose-reviewed-metadata.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-nonlength-ruler-cohort-metadata.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-verified-nonmeasure-23-cohort.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-comparison-20-source-task-family-contract.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-learner-voice-2-cohort.json'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
   workflow_dispatch:
@@ -84,7 +87,7 @@ jobs:
       - name: Materialize 500 corrections and compose Rich V2 from actual application
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
-            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
+            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
             --logger 'console;verbosity=normal'
       - name: Join ALL 25 raw root cohorts to 500 effective Rich V2 facts and source purposes
         run: |
