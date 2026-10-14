@@ -13,6 +13,8 @@ on:
       - 'artifacts/academic-us-ccss/batches/B01-v9-source-verified-nonmeasure-23-cohort.json'
       - 'artifacts/academic-us-ccss/batches/B01-v9-optional-source-purpose-fallback-reviewed-metadata.json'
       - 'tests/academic-us-ccss-b01-v9-optional-source-purpose-fallback.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json'
+      - 'tests/academic-us-ccss-b01-v9-shared-comparison-cohort-44.test.cjs'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
   workflow_dispatch:
 
@@ -32,6 +34,7 @@ jobs:
         run: |
           node --test tests/academic-us-ccss-b01-v9-shared-root-cause-ledger.test.cjs
           node --test tests/academic-us-ccss-b01-v9-optional-source-purpose-fallback.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-shared-comparison-cohort-44.test.cjs
       - name: Group shared defect candidates from all 500 lessons in one pass
         run: node tools/us-ccss-b01-v9-shared-root-cause-ledger.cjs --out=b01-v9-shared-root-causes-500.json
       - name: Publish review-only evidence, never automatically certify
