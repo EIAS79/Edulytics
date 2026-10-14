@@ -15,7 +15,8 @@ const evidenceFiles=[
  'artifacts/academic-us-ccss/batches/B01-v9-source-verified-nonmeasure-23-cohort.json',
  'artifacts/academic-us-ccss/batches/B01-v9-learner-voice-2-cohort.json',
  'artifacts/academic-us-ccss/batches/B01-v9-optional-source-purpose-fallback-reviewed-metadata.json',
- 'artifacts/academic-us-ccss/batches/B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json'
+ 'artifacts/academic-us-ccss/batches/B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json',
+ 'artifacts/academic-us-ccss/batches/B01-v9-geometry-template-31-source-purpose-reviewed.json'
 ];
 const SHA=/^[a-f0-9]{64}$/i;
 const definitions=[
