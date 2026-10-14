@@ -39,12 +39,12 @@ public static class UsCcssB01SourceBoundMeasurementVisuals
                 p.TryGetValue("tapeInches",out var tape) &&
                 p.TryGetValue("oneInchCount",out var ones) &&
                 p.TryGetValue("twoInchCount",out var twos) &&
-                p.TryGetValue("mode",out var mode) &&
+                p.TryGetValue("mode",out var clipMode) &&
                 tape is 12 or 16 or 18 or 20 or 24 &&
-                ones==tape && 2*twos==tape && mode is >=0 and <=2 &&
+                ones==tape && 2*twos==tape && clipMode is >=0 and <=2 &&
                 int.TryParse(q.CorrectAnswer,NumberStyles.Integer,
                     CultureInfo.InvariantCulture,out var answer) &&
-                answer==(mode==0?ones:mode==1?twos:ones-twos))
+                answer==(clipMode==0?ones:clipMode==1?twos:ones-twos))
             {
                 return [
                     new RichLessonVisual
