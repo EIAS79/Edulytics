@@ -1191,7 +1191,11 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 var fish=r.Next(0,3);
                 var inches=fish switch {0=>24,1=>48,_=>36};
                 var rulerUnits=fish switch {0=>2,1=>4,_=>3};
-                var mode=r.Next(0,2);
+                // Four genuinely distinct source-aligned requests per fish:
+                // compare larger/smaller UNIT COUNTS, or read each concrete
+                // physical count. Three original tape lengths x four prompts
+                // provide 12 semantic cases (>= 10 unique session tasks).
+                var mode=r.Next(0,4);
                 var species=fish switch
                 {
                     0=>"largemouth bass",1=>"spiny dogfish shark",_=>"catfish"
@@ -1200,11 +1204,16 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     $"A {species} tape strip has been physically measured with " +
                     $"{inches} one-inch tiles and also {rulerUnits} complete " +
                     "foot-length rulers. The strip itself does not change. " +
-                    (mode==0
-                       ?"Which measurement counts MORE units? Enter 1 for inch tiles, 2 for foot-length rulers."
-                       :"Which measurement counts FEWER units? Enter 1 for inch tiles, 2 for foot-length rulers."),
-                    "A smaller unit needs more repetitions for the same " +
-                    "physical length; compare the supplied measured counts.",
+                    (mode switch
+                    {
+                        0=>"Which measurement counts MORE units? Enter 1 for inch tiles, 2 for foot-length rulers.",
+                        1=>"Which measurement counts FEWER units? Enter 1 for inch tiles, 2 for foot-length rulers.",
+                        2=>"How many individual ONE-INCH tile units measured this strip?",
+                        _=>"How many complete FOOT-LENGTH ruler units measured this strip?"
+                    }),
+                    "The same length can be counted in different units. " +
+                    "Small inch tiles have the larger count, while longer foot " +
+                    "rulers have the smaller count. Read each given count exactly.",
                     AssessmentItemType.Numeric,
                     D(("fish",fish),("inchTiles",inches),
                       ("footRulers",rulerUnits),("mode",mode)));
@@ -1925,7 +1934,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g2.measurement.inch_ruler" =>
                 Math.Abs(P("actual")-P("estimate")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.feet_inch_same_length" =>
-                (P("mode")==0?1:2).ToString(CultureInfo.InvariantCulture),
+                (P("mode") switch
+                {
+                    0=>1,
+                    1=>2,
+                    2=>P("inchTiles"),
+                    3=>P("footRulers"),
+                    _=>throw new InvalidOperationException()
+                }).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.estimate_cm" =>
                 Math.Abs(P("actual")-P("estimate")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.measurement.pencil_line_plot" =>
@@ -2308,7 +2324,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("actual",1,11) && Range("estimate",1,14) &&
                 N("actual")!=N("estimate"),
             "usccss.b01.g2.measurement.feet_inch_same_length" =>
-                Range("fish",0,2) && Range("mode",0,1) &&
+                Range("fish",0,2) && Range("mode",0,3) &&
                 N("inchTiles")==(N("fish")==0?24:N("fish")==1?48:36) &&
                 N("footRulers")==(N("fish")==0?2:N("fish")==1?4:3) &&
                 N("inchTiles")>N("footRulers"),
