@@ -35,8 +35,14 @@ public sealed class CommonCoreSourceBoundHtmlEntityCorrectionsTests
         {
             var english = lesson.Translations.Single(x => x.CultureCode == "en");
             Assert.DoesNotContain("&nbsp;", english.WorkedExamples);
-            Assert.Equal(
-                CommonCoreSourceBoundHtmlEntityCorrections.CorrectedContentVersion,
+            // A V9 source-reviewed shared root fix builds on the existing
+            // nbsp display fix for this ONE overlapping identity. Both fixes
+            // must still be applied and idempotent, without reversion.
+            var expectedEffectiveVersion =
+                lesson.LessonCode == "PED:US-CCSS-MATH:G4:U02:L03"
+                    ? CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.CorrectedVersion
+                    : CommonCoreSourceBoundHtmlEntityCorrections.CorrectedContentVersion;
+            Assert.Equal(expectedEffectiveVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
                     document, lesson));
             var baseline = CanonicalLessonContentMaterializer
