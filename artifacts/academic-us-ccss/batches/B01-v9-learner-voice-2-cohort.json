@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-US-CCSS-UNIFIED-V9",
+  "batchId": "B01",
+  "kind": "B01_V9_LEARNER_VOICE_SHARED_SOURCE_REVIEW",
+  "rootCauseId": "LEARNER_TEACHER_PRONOUN_DRIFT",
+  "scope": 2,
+  "sourceReview": "Both original teacher preparation HTML Learning Goals sections verified read-only; teacher versus student pronouns differ by audience. No publisher prose copied.",
+  "rows": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L04",
+      "ordinal": 4,
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-4/preparation.html",
+      "sourceSemanticSha256": "a312a02a53f253b44a0e302c2722ba98b507673cfeead08209bc1f8c6abfcf17",
+      "sourceFileInventorySha256": "23960d51ce37895f37976a03735db7065920e540c3311f1267522b8d5eb64390",
+      "rawCanonicalBodySha256": null,
+      "sourcePurpose": "Original teacher-facing and student-facing goals differ in pronouns; learner should receive second-person instruction.",
+      "effectiveIssue": "Accidental teacher-facing third-person pronoun in student-facing explanation",
+      "repairAuthority": "CommonCoreB01V9LearnerVoiceSharedRootCorrection",
+      "outcomeCodes": [
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "academicCertification": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L05",
+      "ordinal": 5,
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-5/preparation.html",
+      "sourceSemanticSha256": "c85b2a707f082cccdc65445b3cfa361836e3570df5f5bfe98d70f19d115cbd69",
+      "sourceFileInventorySha256": "28a9ce6e3c8e9016d5a961ec3c2bcaa1707d27b6cacd8567393c81842efea87f",
+      "rawCanonicalBodySha256": null,
+      "sourcePurpose": "Original teacher-facing and student-facing goals differ in pronouns; learner should receive second-person instruction.",
+      "effectiveIssue": "Accidental teacher-facing third-person pronoun in student-facing explanation",
+      "repairAuthority": "CommonCoreB01V9LearnerVoiceSharedRootCorrection",
+      "outcomeCodes": [
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "academicCertification": false
+    }
+  ],
+  "decision": "ROOT_CAUSE_REPAIR_APPROVED_FOR_TWO",
+  "academicDecision": "BATCH_NO-GO"
+}
