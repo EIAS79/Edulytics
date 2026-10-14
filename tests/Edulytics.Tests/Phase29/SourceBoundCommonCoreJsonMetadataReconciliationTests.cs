@@ -12,7 +12,7 @@ namespace Edulytics.Tests.Phase29;
 public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
 {
     [Fact]
-    public void MetadataOnlyStartupSelector_ExposesExactlySixtySixSourceBoundLessons()
+    public void MetadataOnlyStartupSelector_ExposesExactlySeventyTwoSourceBoundLessons()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var chosen = documents.SelectMany(d => d.Lessons
@@ -21,8 +21,8 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
                 .Select(l => (Doc: d, Lesson: l)))
             .ToArray();
 
-        // Previous 54 (including historical G1 pilot) plus 12 exact IM source-bound fraction repairs.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2;
+        // Source-bound corrections are counted explicitly, including the 3 additional V9 non-length ruler fixes.
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
@@ -59,6 +59,9 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
         Assert.Contains("PED:US-CCSS-MATH:G1:U07:L04", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U07:L07", selected);
         Assert.Contains(CommonCoreG1CountAndAddPilotCorrection.LessonCode, selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U05:L01", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G3:U07:L02", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G4:U04:L19", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L04", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L10", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L17", selected);
