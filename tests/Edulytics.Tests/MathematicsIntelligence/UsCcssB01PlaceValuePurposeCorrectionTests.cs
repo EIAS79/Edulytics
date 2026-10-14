@@ -21,10 +21,19 @@ public sealed class UsCcssB01PlaceValuePurposeCorrectionTests
         var l = Assert.Single(candidates);
         var t = Assert.Single(l.Translations);
         Assert.Equal("en",t.CultureCode);
-        Assert.Contains("200 + 40 + 8",t.KeyConceptsAndRules);
-        Assert.Contains("nine hundred fifty-one",t.WorkedExamples);
-        Assert.Contains("Step 1: Read the three-digit numeral",t.StepByStepSolutions);
-        Assert.Contains("zero tens",t.CommonMistakes);
+        Assert.Contains("400 + 30 + 6",t.KeyConceptsAndRules);
+        Assert.Contains("four hundred thirty-six",t.WorkedExamples);
+        Assert.Contains("seven hundred five",t.WorkedExamples);
+        Assert.Contains("Step 1: Separate the given quantity",t.StepByStepSolutions);
+        Assert.Contains("no tens",t.CommonMistakes);
+        Assert.DoesNotContain("In previous lessons, you learned",t.Explanation);
+        Assert.DoesNotContain("In previous lessons, you learned",t.QuickSummary);
+        Assert.DoesNotContain("Which one doesn’t belong?",t.WorkedExamples);
+        Assert.DoesNotContain("Represent 627",t.WorkedExamples);
+        Assert.DoesNotContain("Represent 248",t.WorkedExamples);
+        Assert.Equal(CommonCoreB01PlaceValuePurposeCorrection.CorrectedVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
+                all.Single(d => d.Lessons.Contains(l)),l));
         Assert.DoesNotContain("Choose the required unit, align equal units",t.WorkedExamples);
         Assert.DoesNotContain("Step 1: Identify what needs to be measured",t.StepByStepSolutions);
         Assert.DoesNotContain("Measurement units must be equal in size",t.KeyConceptsAndRules);
