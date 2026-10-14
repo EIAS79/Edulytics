@@ -96,6 +96,11 @@ public sealed class UsCcssB01V9SharedComparisonProcedureCorrectionsTests
             CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.CorrectedVersion));
         Assert.False(CommonCoreB01V9SharedComparisonProcedureCorrections
             .CanUpgradeExisting(pair.Doc,pair.Lesson,"unreviewed"));
+        var concept = Assert.Single(pair.Lesson.Translations).KeyConceptsAndRules;
+        Assert.True(CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections
+            .IsVerifiedOriginalOrCorrectedConceptState(pair.Lesson.LessonCode, concept));
+        Assert.False(CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections
+            .IsVerifiedOriginalOrCorrectedConceptState(pair.Lesson.LessonCode, concept + " unreviewed"));
         var raw=pair.Lesson.CanonicalBodySha256;
         try
         {
