@@ -1,0 +1,36 @@
+name: US CCSS B01 V9 Shared Root-Cause 500 Grouping
+
+on:
+  push:
+    branches: [audit/us-ccss-b01-500-lesson-certification]
+    paths:
+      - '.github/workflows/us-ccss-b01-v9-shared-root-cause.yml'
+      - 'tools/us-ccss-b01-v9-shared-root-cause-ledger.cjs'
+      - 'tests/academic-us-ccss-b01-v9-shared-root-cause-ledger.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-*-purpose-reviewed-metadata.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  triage-grouped-500:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test 500 full-batch root cause grouping, fingerprint invariants and negative certification
+        run: node --test tests/academic-us-ccss-b01-v9-shared-root-cause-ledger.test.cjs
+      - name: Group shared defect candidates from all 500 lessons in one pass
+        run: node tools/us-ccss-b01-v9-shared-root-cause-ledger.cjs --out=b01-v9-shared-root-causes-500.json
+      - name: Publish review-only evidence, never automatically certify
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-v9-shared-root-cause-candidates-500
+          path: b01-v9-shared-root-causes-500.json
+          retention-days: 30
