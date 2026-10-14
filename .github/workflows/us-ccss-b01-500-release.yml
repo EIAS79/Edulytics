@@ -20,6 +20,7 @@ on:
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPurposeCorrectionsTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01SourceAlignedPracticeCorrectionTests.cs'
   pull_request:
     types: [ready_for_review, reopened]
   workflow_dispatch:
