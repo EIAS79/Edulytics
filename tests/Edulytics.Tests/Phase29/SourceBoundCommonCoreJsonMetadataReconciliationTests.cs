@@ -12,7 +12,7 @@ namespace Edulytics.Tests.Phase29;
 public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
 {
     [Fact]
-    public void MetadataOnlyStartupSelector_ExposesExactlyNinetyFiveSourceBoundLessons()
+    public void MetadataOnlyStartupSelector_ExposesExactlyOneHundredFourteenSourceBoundLessons()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var chosen = documents.SelectMany(d => d.Lessons
@@ -22,7 +22,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             .ToArray();
 
         // Source-bound corrections counted as a SET: of the 23 V9 root members, G4 U02 L03 was already selected by the HTML display fix; only 22 identities are new.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3 + 22 + 1;
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3 + 22 + 1 + 19;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
@@ -72,6 +72,11 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             CommonCoreB01V9LearnerVoiceSharedRootCorrection.IsTarget(d,l))).Select(l => l.LessonCode).ToArray();
         Assert.Equal(2, studentVoice.Length);
         Assert.All(studentVoice, code => Assert.Contains(code, selected));
+        var familyProcedures=documents.SelectMany(d => d.Lessons.Where(l =>
+            CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(d,l))).Select(l => l.LessonCode).ToArray();
+        Assert.Equal(20, familyProcedures.Length);
+        Assert.Equal(20, familyProcedures.Distinct(StringComparer.Ordinal).Count());
+        Assert.All(familyProcedures, code => Assert.Contains(code, selected));
 
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L04", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L10", selected);
