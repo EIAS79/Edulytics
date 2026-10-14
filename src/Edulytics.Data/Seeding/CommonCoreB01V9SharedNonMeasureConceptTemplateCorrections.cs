@@ -96,6 +96,12 @@ public static class CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections
     private static bool Same(CurriculumLessonContentTranslation t, Guard g, bool after) =>
         Same(t.KeyConceptsAndRules, t.StepByStepSolutions, t.CommonMistakes, g, after);
 
+    // Exact prior-to-after concept states for the sole overlap with the new
+    // V9 comparison procedure repair. No other lesson or arbitrary prose passes.
+    public static bool IsVerifiedOriginalOrCorrectedConceptState(string code, string concepts) =>
+        ByCode.TryGetValue(code, out var g) &&
+        (concepts == g.OldConcepts || concepts == NewConcepts(g));
+
     private static bool SameWithLaterSharedRoot(string concepts, string steps,
         string mistakes, Guard g) =>
         concepts == NewConcepts(g) &&
