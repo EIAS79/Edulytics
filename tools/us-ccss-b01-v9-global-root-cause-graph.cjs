@@ -26,7 +26,8 @@ const reviewedPaths=[
  sourcePrefix+'B01-v9-source-verified-nonmeasure-23-cohort.json',
  sourcePrefix+'B01-v9-learner-voice-2-cohort.json',
  sourcePrefix+'B01-v9-optional-source-purpose-fallback-reviewed-metadata.json',
- sourcePrefix+'B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json'
+ sourcePrefix+'B01-v9-shared-comparison-procedure-44-source-reviewed-metadata.json',
+ sourcePrefix+'B01-v9-geometry-template-31-source-purpose-reviewed.json'
 ];
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const assert=(v,msg)=>{if(!v)throw Error(msg)};
