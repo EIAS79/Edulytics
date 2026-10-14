@@ -11,6 +11,7 @@ function fixture(){
  const lessons=Array.from({length:500},(_,i)=>{
   const code='PED:US-CCSS-MATH:G2:U01:L'+String(i).padStart(3,'0');
   return {ordinal:i+1,lessonCode:code,title:'Fixture '+i,
+   sourceUrl:'https://example.invalid/teachers/lesson-'+i,
    sourceSemanticSha256:shaA,officialOutcomeCodes:[i%2?'CCSS:2.NBT.A.1':'CCSS:2.OA.A.1'],
    gradeOrCourse:i<250?'Grade 2':'Grade 3'};
  });
@@ -35,8 +36,17 @@ function fixture(){
   representationCueKeys:['DOT_IMAGES','NUMBER_LINE','FRACTION_PARTS',
    'CLOCK_FACE','PLACE_VALUE','RECTANGULAR_ARRAY','MEASUREMENT_SCALE','DATA_GRAPH'],
   rows:lessons.map(x=>[x.ordinal,x.lessonCode,shaD,shaE,1,shaF,2,x.ordinal===1?2:0])};
+ const sourceGoalMemory={planId:'EDULYTICS-US-CCSS-UNIFIED-V9',batchId:'B01',
+  coverage:{manifestExpected:500,sourceFilesRead:500,sourceGoalSectionsUnresolved:1},
+  rows:lessons.map((x,i)=>({ordinal:x.ordinal,lessonCode:x.lessonCode,
+   sourceSemanticSha256:x.sourceSemanticSha256,
+   sourceFileInventorySha256:sourceIndex.rows[i].localFileByteSha256,
+   originalTeacherRelativePath:sourceIndex.rows[i].localRelativePath,
+   originalTeacherSourceUrl:x.sourceUrl,
+   teacherGoalSectionFound:i!==499,
+   teacherFacingPurposeSignals:i<20?['LENGTH']:['ADDITION']}))};
  return {manifest:{batchId:'B01',expectedLessonCount:500,lessons},
-  packs,sourceIndex,teacherActivityIndex,reviewed:[
+  packs,sourceIndex,teacherActivityIndex,sourceGoalMemory,reviewed:[
    {batchId:'B01',rows:[{lessonCode:lessons[0].lessonCode,sourceSemanticSha256:shaA}]},
    {batchId:'B01',reviewedObjectives:[]},
    {batchId:'B01',rows:[]},{batchId:'B01',rows:[]}
@@ -60,6 +70,10 @@ test('Full B01 500/500 cross-joins mathematical, publisher-source and shared tem
  assert.equal(x.nodes[0].academicGoalSourceReview,'REVIEWED_PURPOSE_ONLY_NOT_L1_L6');
  assert.equal(x.nodes[1].academicGoalSourceReview,'NOT_SOURCE_GOAL_VERIFIED');
  assert.equal(x.academicSourcePurposeReviews.stillNotPurposeReviewed,499);
+ assert.equal(x.automaticSourceGoalSignalCapture.teacherGoalsFound,499);
+ assert.equal(x.automaticSourceGoalSignalCapture.unresolvedLessonCodes.length,1);
+ assert.equal(x.rootCauseSignals.SHARED_RULER_METHOD_TEMPLATE.byOriginalTeacherGoalContext.ORIGINAL_LENGTH,20);
+ assert.equal(x.nodes[0].sourceTeacherPurposeSignals[0],'LENGTH');
  assert.equal(x.originalTeacherRepresentationTextCorrelation.NUMBER_LINE.rawTextGapCandidates,1);
  assert.equal(x.certificationDecision,'BATCH_NO-GO');
  assert.equal(x.repairDecision,'NO_AUTOMATIC_REPAIR_AUTHORITY');
@@ -85,6 +99,8 @@ test('Rejects tampering with verified source, source index or the 500th identity
  assert.throws(()=>buildGraph(s),/Source inventory provenance missing\/mismatched/);
  const m=fixture();m.manifest.lessons.pop();
  assert.throws(()=>buildGraph(m),/exactly 500|Required one 500 lesson/);
+ const t=fixture();t.sourceGoalMemory.rows[0].sourceFileInventorySha256='9'.repeat(64);
+ assert.throws(()=>buildGraph(t),/original teacher-goal memory/);
 });
 test('No synthetic numeric domain guesses and no cross-field exact template conflation',()=>{
  assert.equal(standardDomain('CCSS:2.NF.A.2'),'NF');
