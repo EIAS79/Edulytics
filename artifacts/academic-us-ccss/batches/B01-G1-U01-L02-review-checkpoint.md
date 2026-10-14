@@ -48,3 +48,32 @@ The current English learner pack contains mathematically correct numerical examp
 | L6 | NOT_VERIFIED | Authenticated desktop/mobile rendered lesson and role isolation |
 
 **Next exact operation:** Implement the source-scoped G1 U01 L02 representation and lesson-family improvements on the B01 branch, then run targeted tests and secure disposable student acceptance. Do not promote the lesson to `INTERNALLY_CERTIFIED` before its source-specific evidence clears all six gates. Do not merge/publish B01 before 500/500.
+
+## 2026-10-14 — Source-repair verification after v2 materialization
+
+The older first-pass failure description above is historical, not an assertion
+about the current effective learner body. The actual G1 U01 L02 learner content
+was revised to `usccss-b01-g1-u01-l02-source-dot-cards-v2` (source correction
+commit `00a6e22688ce`). The three source-scoped Practice families and
+parameter-grounded dot visual were already present on the working branch.
+
+A later B01 audit still required `...source-dot-cards-v1`, so it was reporting
+the previously fixed defect as a current confirmed failure. The audit predicate
+was corrected in commit `5c39ff1d73a` and the regression tests were updated
+to accept the verified v2 predicate while explicitly rejecting the obsolete v1
+candidate in commit `99302c083d6`.
+
+**GitHub Actions verification:** B01 run
+[38490712903](https://github.com/EIAS79/Edulytics/actions/runs/38490712903)
+completed successfully at SHA `99302c083d656ec58b4977e6e6c02f4161f783e8`.
+The joined report now shows `CORRECT=1` (historical G1 L01),
+`NEEDS_REPAIR=0`, `BLOCKED_MISSING_EVIDENCE=499` and no currently
+confirmed defect clusters. The original L02 deficit is no longer asserted as
+a confirmed active failure, but L02 **remains blocked**, because source-linked
+academic proof, pixel/rendering checks and authenticated lesson-wide L1–L6
+evidence have not all been admitted in the canonical ledger.
+
+This update does **not** set any L1–L6 gate to PASS, authorize a per-lesson
+certificate, certify the 500-lesson batch, or authorize deployment. It records
+why the earlier finding should not be reopened merely because this historical
+checkpoint contains the first-pass description.
