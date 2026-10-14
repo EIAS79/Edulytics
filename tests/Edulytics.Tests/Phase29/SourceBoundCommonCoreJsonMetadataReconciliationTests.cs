@@ -12,7 +12,7 @@ namespace Edulytics.Tests.Phase29;
 public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
 {
     [Fact]
-    public void MetadataOnlyStartupSelector_ExposesExactlySeventyTwoSourceBoundLessons()
+    public void MetadataOnlyStartupSelector_ExposesExactlyNinetyFiveSourceBoundLessons()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var chosen = documents.SelectMany(d => d.Lessons
@@ -22,7 +22,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             .ToArray();
 
         // Source-bound corrections are counted explicitly, including the 3 additional V9 non-length ruler fixes.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3;
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 3 + 23;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
@@ -62,6 +62,13 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
         Assert.Contains("PED:US-CCSS-MATH:G2:U05:L01", selected);
         Assert.Contains("PED:US-CCSS-MATH:G3:U07:L02", selected);
         Assert.Contains("PED:US-CCSS-MATH:G4:U04:L19", selected);
+        var sharedCohort = documents.SelectMany(d => d.Lessons.Where(l =>
+            CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.IsTarget(d,l)))
+            .Select(l => l.LessonCode).ToArray();
+        Assert.Equal(23, sharedCohort.Length);
+        Assert.Equal(23, sharedCohort.Distinct(StringComparer.Ordinal).Count());
+        Assert.All(sharedCohort, code => Assert.Contains(code, selected));
+
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L04", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L10", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L17", selected);
