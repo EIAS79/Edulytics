@@ -40,6 +40,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.Apply(document);
         CommonCoreB01V9LearnerVoiceSharedRootCorrection.Apply(document);
         CommonCoreB01V9SharedComparisonProcedureCorrections.Apply(document);
+        CommonCoreB01V9SharedGeometryProcedureCorrections.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -215,7 +216,8 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, weightOrTenThousand);
         var nonMeasure = CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.GetExpectedContentVersion(document, lesson, v9Three);
         var learnerVoice=CommonCoreB01V9LearnerVoiceSharedRootCorrection.GetExpectedContentVersion(document, lesson, nonMeasure);
-        return CommonCoreB01V9SharedComparisonProcedureCorrections.GetExpectedContentVersion(document, lesson, learnerVoice);
+        var comparisons = CommonCoreB01V9SharedComparisonProcedureCorrections.GetExpectedContentVersion(document, lesson, learnerVoice);
+        return CommonCoreB01V9SharedGeometryProcedureCorrections.GetExpectedContentVersion(document, lesson, comparisons);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -258,7 +260,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01NonLengthRulerTemplateCorrections.IsTarget(document,lesson) ||
         CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.IsTarget(document,lesson) ||
         CommonCoreB01V9LearnerVoiceSharedRootCorrection.IsTarget(document,lesson) ||
-        CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(document,lesson);
+        CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(document,lesson) ||
+        CommonCoreB01V9SharedGeometryProcedureCorrections.IsTarget(document,lesson);
 
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,
@@ -336,7 +339,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01NonLengthRulerTemplateCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreB01V9SharedNonMeasureConceptTemplateCorrections.CanUpgradeExisting(document,lesson,existingContentVersion) ||
         CommonCoreB01V9LearnerVoiceSharedRootCorrection.CanUpgradeExisting(document,lesson,existingContentVersion) ||
-        CommonCoreB01V9SharedComparisonProcedureCorrections.CanUpgradeExisting(document,lesson,existingContentVersion);
+        CommonCoreB01V9SharedComparisonProcedureCorrections.CanUpgradeExisting(document,lesson,existingContentVersion) ||
+        CommonCoreB01V9SharedGeometryProcedureCorrections.CanUpgradeExisting(document,lesson,existingContentVersion);
 
     public static string ComputeLessonFingerprint(
         CanonicalLessonContentPackDocument document,
