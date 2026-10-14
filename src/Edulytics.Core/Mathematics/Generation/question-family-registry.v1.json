@@ -5938,6 +5938,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.b01.g2.measurement.plot_interpret_nonzero_start",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-g2-nonzero-plot-count-and-difference-v1",
+      "representations": [
+        "numerical_line_plot_nonzero_centimeter_ticks",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.b01.g2.measurement.read_line_plot",
       "version": 1,
       "skillId": "supporting.statistics.charts",

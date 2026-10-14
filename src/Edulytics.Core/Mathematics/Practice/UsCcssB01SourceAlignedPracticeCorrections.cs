@@ -119,6 +119,15 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
             ["usccss.b01.g2.measurement.read_line_plot"],
             "IM2021_G2_U03_L15_CREATE_NUMERIC_LINE_PLOT",
             "READY_VERIFIED", "usccss-b01-source-line-plot-v2"),
+        // IM 2021 G2 U03 L16: a nonzero-starting plant-height X-mark line
+        // plot with exact numeric comparisons from the source activity.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L16",
+            "supporting.statistics.charts",
+            "INTERPRET_NONZERO_START_NUMERIC_LINE_PLOT",
+            ["usccss.b01.g2.measurement.plot_interpret_nonzero_start"],
+            "IM2021_G2_U03_L16_PLANT_HEIGHT_LINE_PLOT_AND_COMPARISONS",
+            "READY_VERIFIED", "usccss-b01-g2-plant-height-plot-v1"),
         // IM Grade 2 U03 L14 original: interpret measurements in a line plot.
         new(
             "PED:US-CCSS-MATH:G2:U03:L14",

@@ -40,6 +40,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.measure.map_lengths",
         "usccss.b01.ruler.compare_centimeters",
         "usccss.b01.g2.measurement.read_line_plot",
+        "usccss.b01.g2.measurement.plot_interpret_nonzero_start",
         "usccss.b01.g3.quarter_inch_line_plot_frequency",
         "usccss.b01.g4.eighth_inch_line_plot_difference",
         "usccss.b01.g3.picture_graph.scaled_compare",
@@ -962,6 +963,45 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                       ("count4",d),("count5",m),("targetTick",index)));
             }
 
+            // Original IM G2 U03 L16: ten actual measurements, nonzero
+            // minimum tick, equal 1cm intervals, interpretable X counts.
+            case "usccss.b01.g2.measurement.plot_interpret_nonzero_start":
+            {
+                var start=r.Next(21,29);
+                var lastTick=r.Next(7,11);
+                var counts=new int[11];
+                counts[0]=1;
+                counts[lastTick]=1;
+                for(var j=0;j<8;j++)counts[r.Next(0,lastTick+1)]++;
+                var targetTick=r.Next(0,lastTick);
+                var mode=r.Next(0,3);
+                var data=Enumerable.Range(0,lastTick+1)
+                    .SelectMany(i=>Enumerable.Repeat(start+i,counts[i]))
+                    .OrderBy(_=>r.Next()).ToArray();
+                var parameters=new List<(string Key,int Value)>
+                {
+                    ("start",start),("lastTick",lastTick),
+                    ("targetTick",targetTick),("mode",mode)
+                };
+                parameters.AddRange(Enumerable.Range(0,11)
+                    .Select(i=>($"count{i}",counts[i])));
+                var question=mode switch
+                {
+                    0=>$"How many plants are taller than {start+targetTick} cm?",
+                    1=>"What is the difference in centimeters between the tallest and shortest plant?",
+                    _=>$"How many plants are exactly {start+targetTick} cm tall?"
+                };
+                return Make(f,
+                    "Ten measured plant heights in centimeters: " +
+                    string.Join(", ",data) + ". Make a line plot " +
+                    $"with one X per height and 1 cm marks beginning at {start}. " +
+                    question,
+                    "Begin at the smallest measurement, not at zero. Plot " +
+                    "one X for each plant and count or subtract based on " +
+                    "equally spaced centimeters.",
+                    AssessmentItemType.Numeric,D(parameters.ToArray()));
+            }
+
             case "usccss.b01.g2.measurement.read_line_plot":
             {
                 a=r.Next(1,5);b=r.Next(1,5);m=r.Next(1,5);n=r.Next(1,5);
@@ -1565,6 +1605,16 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     4=>P("count5").ToString(CultureInfo.InvariantCulture),
                     _=>throw new InvalidOperationException()
                 },
+            "usccss.b01.g2.measurement.plot_interpret_nonzero_start" =>
+                P("mode") switch
+                {
+                    0=>Enumerable.Range(P("targetTick")+1,
+                        P("lastTick")-P("targetTick"))
+                        .Sum(i=>P($"count{i}")).ToString(CultureInfo.InvariantCulture),
+                    1=>P("lastTick").ToString(CultureInfo.InvariantCulture),
+                    2=>P($"count{P("targetTick")}").ToString(CultureInfo.InvariantCulture),
+                    _=>throw new InvalidOperationException()
+                },
             "usccss.b01.g2.measurement.read_line_plot" =>
                 P("targetLength") switch
                 {
@@ -1879,6 +1929,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 Range("count1",1,4) && Range("count2",1,4) &&
                 Range("count3",1,4) && Range("count4",1,4) &&
                 Range("count5",1,4) && Range("targetTick",0,4),
+            "usccss.b01.g2.measurement.plot_interpret_nonzero_start" =>
+                Range("start",21,28) && Range("lastTick",7,10) &&
+                Range("targetTick",0,N("lastTick")-1) &&
+                Range("mode",0,2) &&
+                Enumerable.Range(0,11).All(i=>Range($"count{i}",0,10)) &&
+                N("count0")>0 && N($"count{N("lastTick")}")>0 &&
+                Enumerable.Range(0,11).Sum(i=>N($"count{i}"))==10 &&
+                Enumerable.Range(N("lastTick")+1,10-N("lastTick"))
+                    .All(i=>N($"count{i}")==0),
             "usccss.b01.g2.measurement.read_line_plot" =>
                 Range("count2",1,4) && Range("count3",1,4) &&
                 Range("count4",1,4) && Range("count5",1,4) &&

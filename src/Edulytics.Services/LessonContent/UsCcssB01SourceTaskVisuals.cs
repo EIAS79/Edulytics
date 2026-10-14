@@ -829,6 +829,25 @@ public static class UsCcssB01SourceTaskVisuals
                                 Cells=Enumerable.Repeat("X",N($"count{i+1}")).ToList()
                             }).ToList()
                     },
+                "usccss.b01.g2.measurement.plot_interpret_nonzero_start" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L16" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.LinePlot,
+                        Title="Plant-height line plot with a nonzero starting length",
+                        Description="Each X is a measured plant. The plot begins " +
+                            "at the smallest actual length, and each tick is 1 cm. " +
+                            $"The verified answer is {q.CorrectAnswer}.",
+                        PrimaryLabel="Plant height (cm)",
+                        Rows=Enumerable.Range(0,N("lastTick")+1)
+                            .Select(i=>new RichLessonVisualRow
+                            {
+                                Label=$"{N("start")+i} cm",
+                                Cells=Enumerable.Repeat("X",N($"count{i}")).ToList()
+                            }).ToList()
+                    },
                 "usccss.b01.g2.measurement.read_line_plot" when
                     (lessonCode=="PED:US-CCSS-MATH:G2:U03:L14" ||
                      lessonCode=="PED:US-CCSS-MATH:G2:U03:L15" ||

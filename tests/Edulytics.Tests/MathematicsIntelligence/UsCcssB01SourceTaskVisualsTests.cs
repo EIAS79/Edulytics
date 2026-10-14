@@ -163,6 +163,52 @@ public sealed class UsCcssB01SourceTaskVisualsTests
     }
 
     [Fact]
+    public void GradeTwoPlantHeightPlotsUseNonzeroStartAndActualMeasuredDifferences()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U03:L16";
+        const string family="usccss.b01.g2.measurement.plot_interpret_nonzero_start";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var lesson));
+        Assert.Equal([family],lesson!.AllowedQuestionFamilies);
+        var modes=new HashSet<int>();
+        for(var seed=981000;seed<981120;seed++)
+        {
+            var q=One(code,family,seed);
+            var p=q.Parameters;
+            var mode=p["mode"];
+            var last=p["lastTick"];
+            var target=p["targetTick"];
+            modes.Add(mode);
+            Assert.InRange(p["start"],21,28);
+            Assert.InRange(last,7,10);
+            Assert.Equal(10,Enumerable.Range(0,11).Sum(i=>p[$"count{i}"]));
+            Assert.True(p["count0"]>0 && p[$"count{last}"]>0);
+            var expected=mode switch
+            {
+                0=>Enumerable.Range(target+1,last-target).Sum(i=>p[$"count{i}"]),
+                1=>last,
+                _=>p[$"count{target}"]
+            };
+            Assert.Equal(expected,int.Parse(q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,q.CorrectAnswer));
+            var plot=Assert.Single(UsCcssB01SourceTaskVisuals.Build(code,[q]));
+            Assert.Equal(RichLessonVisualKind.LinePlot,plot.Kind);
+            Assert.Equal(last+1,plot.Rows.Count);
+            Assert.Equal($"{p["start"]} cm",plot.Rows[0].Label);
+            Assert.Equal($"{p["start"]+last} cm",plot.Rows[^1].Label);
+            for(var i=0;i<=last;i++)
+            {
+                Assert.Equal(p[$"count{i}"],plot.Rows[i].Cells.Count);
+                Assert.All(plot.Rows[i].Cells,c=>Assert.Equal("X",c));
+            }
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                code,[q with {CorrectAnswer="10000"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G2:U03:L14",[q]));
+        }
+        Assert.Equal([0,1,2],modes.OrderBy(x=>x).ToArray());
+    }
+
+    [Fact]
     public void GradeFourFractionalMeasurementsRequireRealEighthInchDataAndSubtraction()
     {
         const string code="PED:US-CCSS-MATH:G4:U03:L13";

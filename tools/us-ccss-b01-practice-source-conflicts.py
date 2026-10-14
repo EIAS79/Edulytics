@@ -72,6 +72,7 @@ SOURCE_SCOPED_FAMILIES = {
     "PED:US-CCSS-MATH:G2:U01:L15": "usccss.b01.g2.compare_tape_unknown_positions",
     "PED:US-CCSS-MATH:G2:U01:L16": "usccss.b01.g2.compare_tape_unknown_positions",
     "PED:US-CCSS-MATH:G2:U03:L15": "usccss.b01.g2.measurement.read_line_plot",
+    "PED:US-CCSS-MATH:G2:U03:L16": "usccss.b01.g2.measurement.plot_interpret_nonzero_start",
     "PED:US-CCSS-MATH:G3:U01:L03": "usccss.b01.g3.picture_graph.scaled_compare",
     "PED:US-CCSS-MATH:G3:U01:L04": "usccss.b01.g3.picture_graph.construct",
     "PED:US-CCSS-MATH:G2:U01:L14": "usccss.b01.g2.compare_tape_difference",
