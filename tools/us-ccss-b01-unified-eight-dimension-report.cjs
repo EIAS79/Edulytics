@@ -140,7 +140,7 @@ function summarize(manifest, ledger, bulk, runtime, publisher, practice, rich, v
       ];
       const sourceTaskRepairReady =
         s.runtime.effectiveContentVersion ===
-          'usccss-b01-g1-u01-l02-source-dot-cards-v1' &&
+          'usccss-b01-g1-u01-l02-source-dot-cards-v2' &&
         JSON.stringify(s.runtime.actualQuestionFamilies) ===
           JSON.stringify(originalActivities) &&
         s.rich.visualKinds?.includes('PlaceValueChart') &&
