@@ -51,6 +51,7 @@ function fixture(){
    {batchId:'B01',reviewedObjectives:[]},
    {batchId:'B01',rows:[]},{batchId:'B01',rows:[]},
    {batchId:'B01',rows:[]},
+   {batchId:'B01',rows:[]},
    {batchId:'B01',rows:[]}
   ]};
 }
