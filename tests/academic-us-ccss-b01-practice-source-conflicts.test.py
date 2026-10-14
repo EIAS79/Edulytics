@@ -147,6 +147,23 @@ class WholeBatchSemanticTests(unittest.TestCase):
             "usccss.b01.g2.measure.reptile_meterstick"]
         self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
 
+    def test_grade2_reptile_lengths_require_100cm_compare_tape_unknowns(self):
+        a,b=fixtures()
+        code="PED:US-CCSS-MATH:G2:U03:L06"
+        a["lessonRows"][47]["lessonCode"]=code
+        b["rows"][47]["lessonCode"]=code
+        b["rows"][47]["publisherTitle"]="Reptile Lengths in Story Problems"
+        b["rows"][47]["sourcePurposePreview"]=(
+            "Solve Compare reptile length story problems within 100 using tape diagrams.")
+        a["lessonRows"][47]["actualQuestionFamilies"]=[
+            "usccss.b01.g2.compare_tape_unknown_positions"]
+        result=module.analyze(a,b)
+        self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+            [x["rule"] for x in result["rows"][47]["conflicts"]])
+        a["lessonRows"][47]["actualQuestionFamilies"]=[
+            "usccss.b01.g2.length_compare.all_unknown_positions100"]
+        self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+
     def test_wrong_join_fails_closed(self):
         a,b=fixtures();b["rows"].pop()
         with self.assertRaisesRegex(ValueError,"500"):

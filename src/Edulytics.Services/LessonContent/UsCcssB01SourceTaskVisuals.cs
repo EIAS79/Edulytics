@@ -717,6 +717,30 @@ public static class UsCcssB01SourceTaskVisuals
                             $"{3 * N("step")}" ]
                     },
                 // Both ruler diagrams are derived from checked operands.
+                // Original G2 U03 L06: real measured lengths under 100cm;
+                // the visual holds long, short and difference with the true
+                // unknown position, not generic unmeasured counters.
+                "usccss.b01.g2.length_compare.all_unknown_positions100" when
+                    lessonCode=="PED:US-CCSS-MATH:G2:U03:L06" &&
+                    ExactSkillContractQuestionEngine.Verify(
+                        q.Family,p,q.CorrectAnswer) =>
+                    new RichLessonVisual
+                    {
+                        Kind=RichLessonVisualKind.TapeDiagram,
+                        Title="Compare reptile lengths: three possible unknowns",
+                        Description=$"The longer reptile is {N("longCount")} cm, " +
+                            $"the shorter reptile is {N("shortCount")} cm, " +
+                            $"and the difference is {N("difference")} cm. " +
+                            $"Unknown position {N("unknownPosition")} has " +
+                            $"the verified answer {q.CorrectAnswer} cm.",
+                        PrimaryLabel="0 = difference, 1 = longer, 2 = shorter",
+                        Items=[
+                            N("longCount").ToString(),
+                            N("shortCount").ToString(),
+                            N("difference").ToString(),
+                            N("unknownPosition").ToString()
+                        ]
+                    },
                 "usccss.b01.g2.compare_tape_unknown_positions" when
                     (lessonCode=="PED:US-CCSS-MATH:G2:U01:L15" ||
                      lessonCode=="PED:US-CCSS-MATH:G2:U01:L16") &&

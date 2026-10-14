@@ -153,6 +153,7 @@ SOURCE_SCOPED_FAMILIES = {
         "supporting.measurement.unit_iteration",
         "usccss.b01.g1.measure.same_length_different_units",
     ],
+    "PED:US-CCSS-MATH:G2:U03:L06": "usccss.b01.g2.length_compare.all_unknown_positions100",
     "PED:US-CCSS-MATH:G2:U03:L05": "usccss.b01.g2.measure.reptile_meterstick",
     "PED:US-CCSS-MATH:G2:U03:L04": [
         "usccss.b01.g2.measurement.estimate_cm",

@@ -52,6 +52,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g3.picture_graph.construct",
         "usccss.b01.g2.compare_tape_difference",
         "usccss.b01.g2.compare_tape_unknown_positions",
+        "usccss.b01.g2.length_compare.all_unknown_positions100",
         "usccss.b01.ruler.measure_without_zero",
         "usccss.b01.graph.choose_scale",
         "usccss.b01.graph.scaled_compare",
@@ -851,6 +852,33 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // a comparison with the difference unknown, within 20.
             // IM G2 U01 L15 and L16: compare problems with the unknown
             // in ALL three positions, not merely difference-unknown.
+            // IM G2 U03 L06: comparisons of reptile lengths WITHIN 100 cm
+            // where the unknown may be longer length, shorter length, or
+            // difference. Wording must not choose the operation by itself.
+            case "usccss.b01.g2.length_compare.all_unknown_positions100":
+            {
+                a=r.Next(41,100);
+                var difference=r.Next(5,Math.Min(a-1,31));
+                b=a-difference;
+                m=r.Next(0,3);
+                var question=m switch
+                {
+                    0=>$"A long reptile measures {a} cm. A shorter reptile " +
+                      $"measures {b} cm. How much longer is the first reptile?",
+                    1=>$"A smaller reptile measures {b} cm. The larger one " +
+                      $"is {difference} cm longer. What is the larger length?",
+                    _=>$"A large reptile measures {a} cm. That is " +
+                      $"{difference} cm longer than a second reptile. " +
+                      "What is the shorter length?"
+                };
+                return Make(f,question+" Use an aligned tape diagram.",
+                    "The longer measurement equals the shorter measurement " +
+                    "plus their difference, regardless of the story wording.",
+                    AssessmentItemType.Numeric,
+                    D(("longCount",a),("shortCount",b),
+                      ("difference",difference),("unknownPosition",m)));
+            }
+
             case "usccss.b01.g2.compare_tape_unknown_positions":
             {
                 a=r.Next(8,20);b=r.Next(2,a);m=r.Next(0,3);
@@ -1712,6 +1740,14 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 string.Join("+", Enumerable.Repeat(
                     P("columns").ToString(CultureInfo.InvariantCulture), P("rows"))) +
                 "=" + (P("rows")*P("columns")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.length_compare.all_unknown_positions100" =>
+                (P("unknownPosition") switch
+                {
+                    0=>P("difference"),
+                    1=>P("longCount"),
+                    2=>P("shortCount"),
+                    _=>throw new InvalidOperationException()
+                }).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.compare_tape_unknown_positions" =>
                 (P("unknownPosition") switch
                 {
@@ -2070,6 +2106,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.rectangle.unit_squares" =>
                 Range("rows",2,7) && Range("columns",2,13) &&
                 N("rows")*N("columns")<=35,
+            "usccss.b01.g2.length_compare.all_unknown_positions100" =>
+                Range("longCount",41,99) &&
+                Range("shortCount",11,94) &&
+                Range("difference",5,30) && Range("unknownPosition",0,2) &&
+                N("longCount")>N("shortCount") &&
+                N("difference")==N("longCount")-N("shortCount"),
             "usccss.b01.g2.compare_tape_unknown_positions" =>
                 Range("longCount",8,19) && Range("shortCount",2,18) &&
                 Range("difference",1,17) && Range("unknownPosition",0,2) &&

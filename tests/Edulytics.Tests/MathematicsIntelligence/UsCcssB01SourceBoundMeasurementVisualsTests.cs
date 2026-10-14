@@ -64,6 +64,62 @@ public sealed class UsCcssB01SourceBoundMeasurementVisualsTests
         Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.RatioTable);
     }
 
+    private const string G2ReptileCompare = "PED:US-CCSS-MATH:G2:U03:L06";
+
+    [Fact]
+    public void GradeTwoReptileLengthComparisonCoversAllThreeUnknownPositionsWithin100()
+    {
+        const string family="usccss.b01.g2.length_compare.all_unknown_positions100";
+        Assert.True(LessonPracticeContractRegistry.TryResolve(
+            G2ReptileCompare,out var contract));
+        Assert.Equal([family],contract!.AllowedQuestionFamilies);
+        var engine=new ExactSkillContractQuestionEngine();
+        var modes=new HashSet<int>();
+        for(var seed=902000;seed<902130;seed++)
+        {
+            var q=Assert.Single(engine.Generate(
+                "b01-reptile-compare",G2ReptileCompare,[family],
+                ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,q.CorrectAnswer));
+            var p=q.Parameters;
+            var larger=p["longCount"];
+            var smaller=p["shortCount"];
+            var difference=p["difference"];
+            var mode=p["unknownPosition"];
+            Assert.InRange(larger,41,99);
+            Assert.InRange(smaller,11,94);
+            Assert.Equal(larger-smaller,difference);
+            Assert.Equal(mode switch {0=>difference,1=>larger,_=>smaller},
+                int.Parse(q.CorrectAnswer));
+            var picture=Assert.Single(UsCcssB01SourceTaskVisuals.Build(
+                G2ReptileCompare,[q]));
+            Assert.Equal(RichLessonVisualKind.TapeDiagram,picture.Kind);
+            Assert.Equal([
+                larger.ToString(),smaller.ToString(),
+                difference.ToString(),mode.ToString()
+            ],picture.Items);
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                G2ReptileCompare,[q with {CorrectAnswer="999"}]));
+            Assert.Empty(UsCcssB01SourceTaskVisuals.Build(
+                "PED:US-CCSS-MATH:G2:U03:L05",[q]));
+            modes.Add(mode);
+        }
+        Assert.Equal([0,1,2],modes.Order().ToArray());
+
+        var lesson=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(d=>d.PackCode=="US-CCSS-MATH"&&d.VersionCode=="CCSSM-2010")
+            .SelectMany(d=>d.Lessons).Single(x=>x.LessonCode==G2ReptileCompare);
+        var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+        var body=new CanonicalLessonTranslationRecord(en.CultureCode,en.Title,
+            en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,
+            en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary);
+        var rich=RichLessonContentV2Registry.Find(G2ReptileCompare,"en") ??
+            RichLessonContentV2RuntimeComposer.TryCompose(G2ReptileCompare,body);
+        Assert.NotNull(rich);
+        Assert.Contains(rich.Visuals,x=>x.Kind==RichLessonVisualKind.TapeDiagram);
+    }
+
     private const string G2Meter = "PED:US-CCSS-MATH:G2:U03:L05";
 
     [Fact]

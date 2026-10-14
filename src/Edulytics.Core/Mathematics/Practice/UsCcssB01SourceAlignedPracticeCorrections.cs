@@ -434,6 +434,14 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
         // IM Grade 2 U03 L05: measure source-provided reptile tapes
         // with an exact meter stick (100 cm), preserving all seven prepared
         // centimeter lengths and correct remaining partial meters.
+        // Original G2 U03 L06: Compare reptile length stories within
+        // 100 cm; all three unknown positions, shown by aligned tape bars.
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L06",
+            "number.whole.add_subtract", "COMPARE_REPTILE_LENGTHS_UNKNOWN_POSITION",
+            ["usccss.b01.g2.length_compare.all_unknown_positions100"],
+            "IM2021_G2_U03_L06_REPTILE_LENGTH_COMPARE_100_TAPES",
+            "READY_VERIFIED", "usccss-b01-g2-u03-reptile-compare-v1"),
         new(
             "PED:US-CCSS-MATH:G2:U03:L05",
             "supporting.measurement.practical", "METERSTICK_REPTILE_TAPES",
