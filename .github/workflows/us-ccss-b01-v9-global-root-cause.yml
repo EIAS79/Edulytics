@@ -1,0 +1,55 @@
+name: US CCSS B01 V9 Full-500 Global Root-Cause Graph
+
+# Reuses verified source inventories; clusters causes across ALL 500.
+# Discovery ONLY: no edits, certifications, merge, or deployment.
+on:
+  push:
+    branches:
+      - audit/us-ccss-b01-500-lesson-certification
+    paths:
+      - '.github/workflows/us-ccss-b01-v9-global-root-cause.yml'
+      - 'tools/us-ccss-b01-v9-global-root-cause-graph.cjs'
+      - 'tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs'
+      - 'tools/us-ccss-b01-v9-math-element-index.cjs'
+      - 'tools/us-ccss-b01-v9-shared-root-cause-ledger.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
+      - 'artifacts/academic-us-ccss/batches/B01-original-teacher-activity-local-index-500.json'
+      - 'artifacts/academic-us-ccss/batches/B01-book-source-reference-index-500.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-*-purpose-reviewed-metadata.json'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-nonlength-ruler-cohort-metadata.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g*-phase29-v1.lesson-content-pack.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: usccss-b01-v9-global-graph
+  cancel-in-progress: true
+
+jobs:
+  graph-b01-all-500:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Negative tests for complete coverage, identity drift and no fake certification
+        run: |
+          node --test tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-math-element-index.test.cjs tests/academic-us-ccss-b01-v9-shared-root-cause-ledger.test.cjs
+      - name: Produce one global impact graph using existing 500-source inventories and V9 indexes
+        run: node tools/us-ccss-b01-v9-global-root-cause-graph.cjs --out=b01-v9-global-root-cause-500.json
+      - name: Verify report coverage and explicit no-go across EVERY node
+        run: |
+          node -e "const a=require('./b01-v9-global-root-cause-500.json');if(a.coverage.unique!==500||a.coverage.observed!==500||a.certificationDecision!=='BATCH_NO-GO'||a.repairDecision!=='NO_AUTOMATIC_REPAIR_AUTHORITY'||a.nodes.some(x=>x.academicDecision!=='NOT_CERTIFIED_BY_THIS_GRAPH'))process.exit(1);console.log(JSON.stringify({coverage:a.coverage,reviewedPurposes:a.academicSourcePurposeReviews,sharedTemplateGroups:a.repeatedExactLearnerTemplates.uniqueGroups,rootCauseCounts:Object.fromEntries(Object.entries(a.rootCauseSignals).map(([k,v])=>[k,v.candidateLessonCount])),academicDecision:a.certificationDecision}));"
+      - name: Preserve complete source-linked graph and impact groups, never an academic certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-v9-global-root-cause-500-review-only
+          path: b01-v9-global-root-cause-500.json
+          if-no-files-found: warn
+          retention-days: 30
