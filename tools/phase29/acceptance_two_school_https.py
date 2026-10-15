@@ -199,8 +199,13 @@ for key, schoolname in SCHOOLS:
                         # green DOM checks but a huge unstyled brand logo.
                         # Require actual static asset delivery AND applied CSS.
                         site_css=page.request.get(BASE+"/css/site.css",timeout=20000)
-                        assert site_css.status==200 and len(site_css.body())>20000, (
-                            "T001 student site.css missing",screen,site_css.status)
+                        assert (site_css.status==200
+                                and "text/css" in site_css.headers.get("content-type","")
+                                and len(site_css.body())>20000), (
+                            "T001 student site.css absent or replaced by HTML",
+                            screen,site_css.status,
+                            site_css.headers.get("content-type",""),
+                            len(site_css.body()),site_css.url)
                         brand_box=page.locator(
                             ".student-brand-link .localized-brand-logo").bounding_box()
                         assert brand_box and 0<brand_box["height"]<=90, (
