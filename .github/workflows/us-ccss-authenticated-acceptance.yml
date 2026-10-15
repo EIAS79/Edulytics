@@ -143,6 +143,17 @@ jobs:
           done
           test "$ready" = true
           python3 tools/phase29/acceptance_two_school_https.py
+      - name: Independently verify G1 L02 authenticated candidate against code, ledger, PNG bytes and scoring
+        run: |
+          node --test tests/academic-us-ccss-b01-l02-authenticated-l6-verifier.test.cjs
+          node tools/us-ccss-b01-l02-authenticated-l6-verifier.cjs
+      - name: Preserve independently verified G1 L02 candidate outcome
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-u01-l02-independent-l6-verification
+          path: /tmp/g1-u01-l02-independent-l6-verification.json
+          if-no-files-found: warn
       - name: Preserve G1 lesson desktop/mobile visual evidence
         if: always()
         uses: actions/upload-artifact@v4

@@ -229,6 +229,7 @@ for key, schoolname in SCHOOLS:
         # content SHA. L01 screenshots or a successful sign-in cannot certify L02.
         next_code="PED:US-CCSS-MATH:G1:U01:L02"
         l02_screens={}
+        l02_counts={}
 
         next_ids=sql("""
             SELECT "Id"::text FROM "CurriculumPedagogicalLessons"
@@ -263,11 +264,14 @@ for key, schoolname in SCHOOLS:
                             "figure.rich-lesson-visual--placevaluechart")
                         assert figures.count()>0, (
                             screen,"L02 actual dot cube visuals absent")
+                        count_sequence=[]
                         for figure in figures.all():
                             dots=figure.locator(
                                 ".rich-lesson-table td").all_text_contents().count("●")
                             assert 1<=dots<=20,(
                                 screen,"L02 dot pictures have invalid count",dots)
+                            count_sequence.append(dots)
+                        l02_counts[screen]=count_sequence
                         assert figures.first.is_visible(),(
                             screen,"L02 learner visual hidden")
                         shot=Path(f"/tmp/g1-u01-l02-{screen}.png")
@@ -615,6 +619,9 @@ for key, schoolname in SCHOOLS:
             # written only after the authenticated Chromium/DB proof passes.
             # Never infer L6 PASS or academic certification from the JSON alone.
             assert set(l02_screens)=={"desktop","mobile"}
+            assert set(l02_counts)=={"desktop","mobile"}
+            assert l02_counts["desktop"]==l02_counts["mobile"] and l02_counts["desktop"], (
+                "L02 viewport numerical visuals diverge",l02_counts)
             assert {x["case"] for x in l02_grading_evidence}=={"correct","wrong"}
             manifest=json.loads(Path(
                 "artifacts/academic-us-ccss/batches/B01-lesson-manifest.json"
@@ -641,6 +648,7 @@ for key, schoolname in SCHOOLS:
                 "effectiveContentSha256":current["contentSha256"],
                 "environment":"DISPOSABLE_US_PRIMARY_HTTPS_POSTGRES",
                 "screenshots":l02_screens,
+                "visualDotCountsByViewport":l02_counts,
                 "grading":l02_grading_evidence,
                 "academicDecision":"NOT_CERTIFIED"
             }
