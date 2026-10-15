@@ -46,6 +46,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Check constructed-graph JavaScript
+        run: node --check src/Edulytics.Web/wwwroot/js/t001-shape-chart.js
       - name: Verify fail-closed immutable-source academic release integrity
         run: node --test tests/us-ccss-t001-release-integrity.test.cjs
       - name: Inspect actual ten-lesson certification ledger without bypassing blocked gates

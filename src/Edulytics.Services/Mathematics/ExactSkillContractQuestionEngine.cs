@@ -153,6 +153,7 @@ public sealed class ExactSkillContractQuestionEngine
         (SupportedFamilies.Contains(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
+         UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
          UsCcssT001RepresentationChoices.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
@@ -287,6 +288,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssT001ConstructShapeGraph.Supports(family))
+            return UsCcssT001ConstructShapeGraph.Verify(family, parameters, answer);
         if (UsCcssT001RepresentationChoices.Supports(family))
             return UsCcssT001RepresentationChoices.Verify(family, parameters, answer);
         if (UsCcssT001ExactQuestions.Supports(family))
@@ -869,6 +872,12 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssT001ConstructShapeGraph.Supports(family))
+        {
+            var graph=UsCcssT001ConstructShapeGraph.Build(random);
+            return new ExactProblem(graph.Family,graph.Prompt,graph.Solution,
+                graph.ItemType,graph.Parameters);
+        }
         if (UsCcssT001RepresentationChoices.Supports(family))
         {
             var choice=UsCcssT001RepresentationChoices.Build(family,random);
@@ -2672,6 +2681,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssT001ConstructShapeGraph.Supports(problem.Family))
+            return UsCcssT001ConstructShapeGraph.Solve(p);
         if (UsCcssT001RepresentationChoices.Supports(problem.Family))
             return UsCcssT001RepresentationChoices.Solve(problem.Family, p);
         if (UsCcssT001ExactQuestions.Supports(problem.Family))

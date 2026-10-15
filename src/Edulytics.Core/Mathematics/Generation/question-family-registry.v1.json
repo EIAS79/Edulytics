@@ -5925,6 +5925,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.t001.g1.construct_shape_graph",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "usccss-t001-g1-constructed-graph-three-category-exact-v1",
+      "representations": [
+        "shape_cards",
+        "student_constructed_bar_graph"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.t001.g1.choose_shape_chart",
       "version": 1,
       "skillId": "supporting.statistics.charts",

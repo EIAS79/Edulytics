@@ -59,6 +59,26 @@ public sealed class UsCcssT001IsolatedReleaseTests
                         // Arithmetic oracle is intentionally separate from
                         // the production generator/solver and verifier.
                         var p=q.Parameters;
+                        if(family=="usccss.t001.g1.construct_shape_graph")
+                        {
+                            var fullGraph=string.Join(",",new[]{p["first"],p["second"],p["third"]});
+                            Assert.Equal(Edulytics.Core.Enums.AssessmentItemType.ShortAnswer,q.ItemType);
+                            Assert.Equal(fullGraph,q.CorrectAnswer);
+                            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,fullGraph));
+                            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"0,0,0"));
+                            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"5,5,5"));
+                            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"1,2"));
+                            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"1|2|3"));
+                            var cards=q.Prompt.Split("Cards: ",StringSplitOptions.None)[1]
+                                .Split(". ",StringSplitOptions.None)[0]
+                                .Split(", ",StringSplitOptions.None);
+                            Assert.InRange(cards.Length,3,10);
+                            Assert.Equal(p["first"],cards.Count(x=>x=="▲"));
+                            Assert.Equal(p["second"],cards.Count(x=>x=="■"));
+                            Assert.Equal(p["third"],cards.Count(x=>x=="●"));
+                            checkedCount++;
+                            continue;
+                        }
                         var independentlyComputed=family switch
                         {
                             "usccss.t001.g1.dot_pair_sum"=>p["left"]+p["right"],
@@ -171,7 +191,7 @@ public sealed class UsCcssT001IsolatedReleaseTests
                         checkedCount++;
                     }
         }
-        Assert.Equal(450,checkedCount); // 15 lesson family slots * 3 difficulties * 10 seeds
+        Assert.Equal(480,checkedCount); // 16 lesson family slots * 3 difficulties * 10 seeds
     }
 
     [Fact]
