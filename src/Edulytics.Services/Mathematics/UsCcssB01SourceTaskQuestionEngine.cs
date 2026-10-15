@@ -152,7 +152,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             // Official T001 G1 U01 L03: counting on EXACTLY one or two
             // within ten. This is not unbounded generic addition.
             case "usccss.b01.g1.add_one_or_two":
-                a=r.Next(0,9); b=r.Next(1,Math.Min(2,10-a)+1);
+                a=r.Next(0,10); b=r.Next(1,Math.Min(2,10-a)+1);
                 return Make(f,
                     $"Start at {a}. Count forward {b} step(s), one number per step. What is {a} + {b}?",
                     "Use a counter or a number path; count only the additional one or two steps.",
@@ -2139,7 +2139,7 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         return family switch
         {
             "usccss.b01.g1.add_one_or_two" =>
-                Range("start",0,8) && Range("step",1,2) &&
+                Range("start",0,9) && Range("step",1,2) &&
                 N("start")+N("step")<=10,
             "usccss.b01.g1.subtract_one_or_two" =>
                 Range("start",1,10) && Range("step",1,2) &&
