@@ -47,6 +47,16 @@ public static class CommonCoreB01V9SharedAdditionProcedureCorrections
 
     // A prior source-verified root can remain strictly idempotent even after
     // this separately source-bound addition upgrade. Never accept arbitrary text.
+    /// <summary>
+    /// Exact approved predecessor or source-verified replacement; used when a
+    /// later concept-only correction overlays this shared procedure safely.
+    /// </summary>
+    public static bool MatchesOriginalOrFinalProcedure(
+        string lessonCode, string steps, string mistakes) =>
+        ByCode.ContainsKey(lessonCode) &&
+        ((steps == OldSteps && mistakes == OldMistakes) ||
+         MatchesFinalProcedure(lessonCode, steps, mistakes));
+
     public static bool MatchesFinalProcedure(string code,string steps,string mistakes) =>
         ByCode.TryGetValue(code,out var guard) &&
         (steps,mistakes)==ForFamily(guard.MathFamily);
