@@ -244,6 +244,19 @@ for key, schoolname in SCHOOLS:
                                 "T001 browser lesson inaccessible",lesson_code,screen)
                             assert page.locator(".rich-lesson-section").count()>0, (
                                 "T001 browser Rich V2 missing",lesson_code,screen)
+                            assert page.get_by_text(
+                                "Worked model — lesson skill").first.is_visible(), (
+                                "T001 source-goal worked model not in student runtime",
+                                lesson_code,screen)
+                            assert page.get_by_text(
+                                "Learning goal:",exact=False).first.is_visible(), (
+                                "T001 source-goal learner explanation not rendered",
+                                lesson_code,screen)
+                            if lesson_code.endswith(":L09"):
+                                assert page.get_by_text(
+                                    "real survey",exact=False).first.is_visible(), (
+                                    "L09 must require real survey collection",
+                                    lesson_code,screen)
                             assert page.get_by_text("CC BY 4.0").first.is_visible(), (
                                 "T001 publisher license invisible",lesson_code,screen)
                             suffix=lesson_code.split(":")[-1]
