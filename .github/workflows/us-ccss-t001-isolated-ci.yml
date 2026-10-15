@@ -1,0 +1,39 @@
+name: T001 isolated first-ten curriculum candidate
+
+on:
+  pull_request:
+    paths:
+      - 'src/Edulytics.Data/Seeding/CommonCoreT001*.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/UsCcssT001PracticeContracts.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
+      - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
+      - 'src/Edulytics.Services/Mathematics/UsCcssT001ExactQuestions.cs'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
+      - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssT001IsolatedReleaseTests.cs'
+      - '.github/workflows/us-ccss-t001-isolated-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  t001-compile-and-source-math:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore exact project and all dependencies
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Run isolated real practice engine and canonical source tests
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --filter 'FullyQualifiedName~UsCcssT001IsolatedReleaseTests' \
+            --logger 'console;verbosity=normal'
+      - name: This job is technical, not academic certification or publication
+        run: echo 'T001 requires 10/10 independently verified L1-L6, eight dimensions and authenticated live student testing before merge.'
