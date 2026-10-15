@@ -433,6 +433,90 @@ for key, schoolname in SCHOOLS:
                               screen,stored,flush=True)
                         print("DISPOSABLE_T001_L08_GRAPH_CONSTRUCTED_BROWSER_PASS",
                               screen,answer,page.url,flush=True)
+
+                        # L02/L07/L09: actual student-authored controls,
+                        # authenticated form submission, and persisted grade.
+                        for suffix,kind,family in (
+                            ("L02","expression","usccss.t001.g1.write_dot_expression"),
+                            ("L07","sort","usccss.t001.g1.construct_tool_sort"),
+                            ("L09","survey","usccss.t001.g1.collect_survey_graph"),
+                        ):
+                            authored_id=next(lid for code,lid in candidates
+                                             if code.endswith(":"+suffix))
+                            page.goto(BASE+"/student/learning/lesson/"+authored_id,
+                                      wait_until="domcontentloaded",timeout=40000)
+                            start_form=page.locator(
+                                'form[action*="/student/practice/lesson/start"]').first
+                            assert start_form.count()==1,(suffix,"Practice start missing",screen)
+                            start_form.locator('button[type="submit"]').first.click()
+                            root=page.locator("[data-t001-authored-task='"+kind+"']")
+                            root.wait_for(timeout=40000)
+                            assert page.locator("[data-t001-authored-submit]").is_disabled(), (
+                                suffix,"Empty task should not submit",screen)
+                            stem=page.locator("[data-practice-question]").inner_text()
+                            if kind=="expression":
+                                dots=re.search(r"Dot cards: (●+) \| (●+)\.",stem)
+                                assert dots,(suffix,"Dot sources missing",stem)
+                                a,b=len(dots.group(1)),len(dots.group(2))
+                                fields=page.locator(".t001-authored-number")
+                                assert fields.count()==3
+                                for i,n in enumerate((a,b,a+b)):
+                                    fields.nth(i).fill(str(n))
+                                authored_answer=f"{a}+{b}={a+b}"
+                            elif kind=="sort":
+                                mixed=stem.split("Items: ",1)[1].split(". Sort EVERY",1)[0]
+                                cards=mixed.split(", ")
+                                assert 7<=len(cards)<=9
+                                kinds={"counter":0,"pattern block":1,"inch tile":2}
+                                selects=page.locator(".t001-authored-select")
+                                assert selects.count()==len(cards)
+                                for i,tool in enumerate(cards):
+                                    selects.nth(i).select_option(str(kinds[tool]))
+                                authored_answer=",".join(str(kinds[tool]) for tool in cards)
+                                assert page.locator(".t001-authored-bin-items .t001-authored-chip").count()==len(cards)
+                            else:
+                                assert "REAL CLASS SURVEY" in stem, (suffix,stem)
+                                for choice in (0,1,2,0,1):
+                                    page.locator(f"[data-vote-add='{choice}']").click()
+                                for choice,n in enumerate((2,2,1)):
+                                    for _ in range(n):
+                                        page.locator(f"[data-graph-add='{choice}']").click()
+                                authored_answer="v:01201|g:2,2,1"
+                            assert page.locator("[data-t001-authored-answer]").input_value()==authored_answer, (
+                                suffix,"Authored response mismatch",screen)
+                                authored_answer,page.locator("[data-t001-authored-answer]").input_value())
+                            assert page.locator("[data-t001-authored-submit]").is_enabled(), (
+                                suffix,"Valid completed task disabled",screen)
+                            page.screenshot(path=f"/tmp/t001-{suffix.lower()}-authored-{screen}.png",
+                                            full_page=True)
+                            page.locator("[data-t001-authored-submit]").click()
+                            page.wait_for_load_state("domcontentloaded")
+                            attempt_url=urllib.parse.urlparse(page.url).path
+                            attempt_match=re.search(
+                                r"/student/practice/lesson-attempt/([0-9a-fA-F-]{36})",
+                                attempt_url)
+                            assert attempt_match,(suffix,"No persisted lesson review",page.url)
+                            persisted=sql("""
+                                SELECT r."Answer",
+                                  CASE WHEN r."IsCorrect" THEN '1' ELSE '0' END,
+                                  r."Score"::text, i."GenerationFamily"
+                                FROM "PracticeResponses" r
+                                JOIN "PracticeAttemptItems" ai
+                                  ON ai."Id"=r."PracticeAttemptItemId"
+                                JOIN "AssessmentItems" i
+                                  ON i."Id"=ai."AssessmentItemId"
+                                WHERE ai."PracticeAttemptId"='""" +
+                                attempt_match.group(1) +
+                                """' AND i."GenerationFamily"='""" + family + """'
+                                ORDER BY r."AnsweredAtUtc" DESC LIMIT 1;""")
+                            parts=persisted.split("|")
+                            assert len(parts)==4 and parts[0]==authored_answer and (
+                                parts[1]=="1" and float(parts[2])==1.0 and parts[3]==family), (
+                                suffix,"Written/sorted/surveyed work not graded/saved",
+                                screen,persisted)
+                            assert page.locator("[data-t001-authored-readonly]").count()==0
+                            print("DISPOSABLE_T001_AUTHORED_PRACTICE_DB_PASS",
+                                  suffix,screen,persisted,flush=True)
                     finally:
                         context.close()
             finally:
