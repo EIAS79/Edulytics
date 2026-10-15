@@ -32,6 +32,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1CountAndAddPilotCorrection.Apply(document);
         CommonCoreG2SourceGroundedFoundationsCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
+        CommonCoreT001MixedAddSubtractContentCorrection.Apply(document);
+        CommonCoreT001FindThePairContentCorrection.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -193,8 +195,12 @@ public static class CanonicalLessonContentMaterializer
         var g2 = CommonCoreG2SourceGroundedFoundationsCorrections
             .GetExpectedContentVersion(document, lesson, g1Pilot);
 
-        return CommonCoreSourceBoundHtmlEntityCorrections
+        var html = CommonCoreSourceBoundHtmlEntityCorrections
             .GetExpectedContentVersion(document, lesson, g2);
+        var mixed = CommonCoreT001MixedAddSubtractContentCorrection
+            .GetExpectedContentVersion(document, lesson, html);
+        return CommonCoreT001FindThePairContentCorrection
+            .GetExpectedContentVersion(document, lesson, mixed);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -227,7 +233,9 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2SourceGroundedFoundationsCorrections
             .IsTarget(document, lesson) ||
         CommonCoreSourceBoundHtmlEntityCorrections
-            .IsTarget(document, lesson);
+            .IsTarget(document, lesson) ||
+        CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
+        CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson);
 
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,
@@ -293,6 +301,10 @@ public static class CanonicalLessonContentMaterializer
                 lesson,
                 existingContentVersion) ||
         CommonCoreSourceBoundHtmlEntityCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreT001MixedAddSubtractContentCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreT001FindThePairContentCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion);
 
     public static string ComputeLessonFingerprint(
