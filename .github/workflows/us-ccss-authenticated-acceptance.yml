@@ -15,6 +15,10 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests.cs'
       - 'tools/us-ccss-b01-l02-authenticated-l6-verifier.cjs'
       - 'tests/academic-us-ccss-b01-l02-authenticated-l6-verifier.test.cjs'
+      - 'tools/us-ccss-b01-all500-student-http-verifier.cjs'
+      - 'tests/academic-us-ccss-b01-all500-student-http-verifier.test.cjs'
+      - 'tools/us-ccss-b01-g1-all146-student-http-verifier.cjs'
+      - 'tests/academic-us-ccss-b01-g1-all146-student-http-verifier.test.cjs'
       - '.github/workflows/us-ccss-authenticated-acceptance.yml'
   pull_request:
     types: [ready_for_review, reopened]
