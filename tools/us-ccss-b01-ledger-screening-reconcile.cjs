@@ -26,7 +26,7 @@ function reconcile({manifest,source,ledger,runtime,headSha,runId,atUtc}){
    runtime.lessonRows?.length===500,'Successful complete 500-row runtime required');
  const output=structuredClone(ledger);
  const changes=[],skipped=[];
- let preservedCertified=0,alreadyScreened=0;
+ let preservedCertified=0,alreadyScreened=0,rescreened=0;
  for(let i=0;i<500;i++){
   const original=source.records[i],m=manifest.lessons[i],r=runtime.lessonRows[i];
   const l=output.records[i];
@@ -52,19 +52,31 @@ function reconcile({manifest,source,ledger,runtime,headSha,runId,atUtc}){
     l.reviewDimensions===null&&l.unresolvedDefects.length===0&&
     Object.values(l.gates).every(x=>x.status==='NOT_STARTED'),
     'Screening cannot overwrite started academic review: '+l.lessonCode);
-  assert(l.contentSha256===null||l.contentSha256===r.effectiveContentSha256,
-    'Effective learner-body fingerprint changed since review: '+l.lessonCode);
   if(l.status==='AUTOMATED_SCREENED'){
     const p=l.screeningProvenance;
-    assert(l.contentVersion===r.effectiveContentVersion &&
+    // Preserve integrity of the *previous* screen before replacing it.
+    // A genuine lesson repair changes its effective content SHA/version.
+    // Screening alone is NOT academic review; only unreviewed records can
+    // be re-screened against a new successful, exact-HEAD runtime probe.
+    assert(isSha(l.contentSha256) &&
+      typeof l.contentVersion==='string' && l.contentVersion.length>0 &&
       p?.type==='RUNTIME_MATH_AND_CONTENT_SCREEN_ONLY_NOT_CERTIFICATION' &&
       isCommit(p.auditedHeadSha) &&
       /^[1-9][0-9]*$/.test(String(p.githubRunId)) &&
-      p.learnerContentSha256===r.effectiveContentSha256,
+      p.learnerContentSha256===l.contentSha256,
       'Previously screened runtime provenance is missing or changed: '+l.lessonCode);
-    alreadyScreened++;
-    skipped.push(l.lessonCode);
-    continue;
+    if(l.contentSha256===r.effectiveContentSha256 &&
+       l.contentVersion===r.effectiveContentVersion){
+      alreadyScreened++;
+      skipped.push(l.lessonCode);
+      continue;
+    }
+    // This is a fresh automatic SCREEN, never a replacement for an L1-L6
+    // record or a way to hide confirmed defects: those are barred above.
+    rescreened++;
+  } else {
+    assert(l.contentSha256===null,
+      'Unreviewed queued record has a stale learner-body fingerprint: '+l.lessonCode);
   }
   l.contentSha256=r.effectiveContentSha256;
   l.contentVersion=r.effectiveContentVersion;
@@ -80,7 +92,7 @@ function reconcile({manifest,source,ledger,runtime,headSha,runId,atUtc}){
  return {ledger:output,summary:{
   kind:'B01_500_LEDGER_SCREENING_RECONCILIATION_PROPOSAL',
   auditedHeadSha:headSha,githubRunId:String(runId),
-  checked:500,screened:changes.length,alreadyScreened,preservedCertified,
+  checked:500,screened:changes.length-rescreened,rescreened,alreadyScreened,preservedCertified,
   refusedToAwardPass:true,academicDecision:'NOT_500_BATCH_CERTIFIED',
   stillNeedFullL1L6AndEightDimensions:changes.length+alreadyScreened,
   unchangedOtherCurriculumRows:output.records.length-500,
