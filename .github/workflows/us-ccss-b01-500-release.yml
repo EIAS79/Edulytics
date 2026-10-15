@@ -553,7 +553,7 @@ jobs:
           assert.equal(summary.refusedToAwardPass,true);
           assert.equal(updated.releaseCandidateSha,old.releaseCandidateSha);
           assert.equal(updated.records.length,1560);
-          let changed=0,unchanged=0,alreadyApproved=0;
+          let changed=0,unchanged=0,rescreened=0,alreadyApproved=0;
           for(let i=0;i<1560;i++){
             const a=old.records[i],b=updated.records[i];
             assert.equal(b.lessonCode,a.lessonCode);
@@ -571,21 +571,34 @@ jobs:
             assert.deepEqual(b.unresolvedDefects,a.unresolvedDefects);
             assert.equal(b.screeningProvenance.learnerContentSha256,b.contentSha256);
             assert.match(b.contentSha256,/^[a-f0-9]{64}$/);
-            if(a.contentSha256)assert.equal(b.contentSha256,a.contentSha256);
             if(a.status==='AUTOMATED_SCREENED'){
-              assert.deepEqual(b,a,'Do not rewrite previously proven screening evidence');
-              unchanged++;
+              assert.match(a.contentSha256,/^[a-f0-9]{64}$/);
+              assert.equal(a.screeningProvenance.learnerContentSha256,a.contentSha256);
+              assert.ok(typeof a.contentVersion==='string'&&a.contentVersion.length>0);
+              if(b.contentSha256===a.contentSha256&&b.contentVersion===a.contentVersion){
+                assert.deepEqual(b,a,'Unchanged screen must preserve old provenance');
+                unchanged++;
+              } else {
+                // A successful 500-way new-HEAD runtime may re-screen a
+                // repaired body, but it can NEVER overwrite academic reviews.
+                assert.equal(b.screeningProvenance.auditedHeadSha,process.env.GITHUB_SHA);
+                assert.equal(b.screeningProvenance.githubRunId,process.env.GITHUB_RUN_ID);
+                rescreened++;
+              }
             } else {
+              assert.equal(a.contentSha256,null,'Queued row must not have stale content hash');
               assert.equal(b.screeningProvenance.auditedHeadSha,process.env.GITHUB_SHA);
               assert.equal(b.screeningProvenance.githubRunId,process.env.GITHUB_RUN_ID);
               changed++;
             }
           }
           assert.equal(alreadyApproved,1);
-          assert.equal(changed+unchanged,499);
+          assert.equal(changed+unchanged+rescreened,499);
           assert.equal(summary.screened,changed);
+          assert.equal(summary.rescreened,rescreened);
           assert.equal(summary.alreadyScreened,unchanged);
-          console.log('Verified '+changed+' newly screened and '+unchanged+
+          console.log('Verified '+changed+' newly screened, '+rescreened+
+            ' legitimately re-screened changed bodies and '+unchanged+
             ' existing screened bodies; no academic PASS added');
           NODE
       - name: Commit ONLY the verified screening ledger proposal to the B01 branch
