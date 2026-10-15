@@ -600,7 +600,7 @@ for key, schoolname in SCHOOLS:
                 assert "rich-lesson-section" in lesson_html, (
                     "T001 rendered lesson lacks Rich V2", code)
                 if suffix == "05":
-                    assert "3 + 2 = 5" in lesson_html and "6 - 2 = 4" in lesson_html, (
+                    assert "4 + 2 = 6" in lesson_html and "6 - 2 = 4" in lesson_html, (
                         "T001 L05 cannot teach both operations", code)
                 if suffix == "06":
                     assert "6 + 4 = 10" in lesson_html and "10 - 6 = 4" in lesson_html, (
