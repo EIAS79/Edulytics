@@ -55,6 +55,8 @@
             question.GenerationFamily,
             question.GenerationParametersJson);
 
+    var isConstructShapeGraph = string.Equals(question?.GenerationFamily,
+        "usccss.t001.g1.construct_shape_graph", StringComparison.Ordinal);
     var prompt = question?.Prompt ?? string.Empty;
     var optionMatches = Regex.Matches(
         prompt,
@@ -214,6 +216,7 @@
     <link rel="stylesheet"
           href="~/css/practice-unified-ui-v2.css"
           asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t001-shape-chart.css" asp-append-version="true" />
     <style>
         .adaptive-gw-shell {
             display: grid;
@@ -567,7 +570,13 @@
                     {
                         <div class="adaptive-review-form"
                              data-practice-review>
-                            @if (isPromptMultipleChoice)
+                            @if (isConstructShapeGraph)
+                            {
+                                <div class="t001-shape-chart" data-t001-shape-chart
+                                     data-t001-readonly="true" data-t001-locale="@locale"
+                                     data-t001-initial="@reviewAnswer"></div>
+                            }
+                            else if (isPromptMultipleChoice)
                             {
                                 <div class="lp-server-choice-row"
                                      role="radiogroup"
@@ -654,7 +663,18 @@
                                    name="sequence"
                                    value="@question.Sequence" />
 
-                            @if (isPromptMultipleChoice)
+                            @if (isConstructShapeGraph)
+                            {
+                                <div class="t001-shape-chart" data-t001-shape-chart
+                                     data-t001-locale="@locale" data-t001-initial="@retryAnswer">
+                                    <noscript>Enable JavaScript to construct your graph.</noscript>
+                                </div>
+                                <input type="hidden" name="answer" value="" data-t001-shape-answer />
+                                <button class="gw-primary" type="submit" data-t001-shape-submit disabled>
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                            else if (isPromptMultipleChoice)
                             {
                                 <div class="lp-server-choice-row"
                                      role="radiogroup"
@@ -742,4 +762,5 @@
             asp-append-version="true"></script>
     <script src="~/js/student-lesson-practice.js"
             asp-append-version="true"></script>
+    <script src="~/js/t001-shape-chart.js" asp-append-version="true"></script>
 }

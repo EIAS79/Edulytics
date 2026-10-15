@@ -134,6 +134,9 @@
             out interaction);
     }
 
+    var isConstructShapeGraph = string.Equals(generationFamily,
+        "usccss.t001.g1.construct_shape_graph", StringComparison.Ordinal);
+
     var visualSvg =
         currentQuestion is null
             ? null
@@ -212,6 +215,7 @@
     <link rel="stylesheet" href="~/css/curriculum-workspace-runtime.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/eddy-overlap-v1.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/practice-unified-ui-v2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t001-shape-chart.css" asp-append-version="true" />
     <style>
         .lp-server-card {
             display: grid;
@@ -462,7 +466,17 @@
                                    name="attemptItemId"
                                    value="@(currentQuestion!.AttemptItemId)" />
 
-                            @if (isPromptMultipleChoice)
+                            @if (isConstructShapeGraph)
+                            {
+                                <div class="t001-shape-chart" data-t001-shape-chart data-t001-locale="@locale">
+                                    <noscript>Enable JavaScript to construct your graph.</noscript>
+                                </div>
+                                <input type="hidden" name="answer" value="" data-t001-shape-answer />
+                                <button class="gw-primary" type="submit" data-t001-shape-submit disabled>
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                            else if (isPromptMultipleChoice)
                             {
                                 <div class="lp-server-choice-row"
                                      role="radiogroup"
@@ -562,5 +576,6 @@
         asp-append-version="true"></script>
 <script src="~/js/student-lesson-practice.js"
         asp-append-version="true"></script>
+<script src="~/js/t001-shape-chart.js" asp-append-version="true"></script>
 </body>
 </html>
