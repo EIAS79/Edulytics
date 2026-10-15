@@ -41,7 +41,7 @@ const requireCurrentCandidateSha = (ledger, headSha, gitRoot = root) => {
     changed = execFileSync('git',
       ['diff','--name-only','--diff-filter=ACDMRT',candidateSha,headSha],
       {cwd:gitRoot, encoding:'utf8'})
-      .split(/\\r?\\n/).filter(Boolean);
+      .split(/\r?\n/).filter(Boolean);
   } catch(error) {
     throw new Error('T001 cannot inspect immutable code diff: '+error.message);
   }
