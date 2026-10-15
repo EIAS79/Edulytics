@@ -17,18 +17,54 @@ const ledgerFile = path.join(root,
 const isSha256 = x => typeof x === 'string' && /^[0-9a-f]{64}$/i.test(x);
 const assert = (v, msg) => { if (!v) throw Error(msg); };
 
-// Final release may NEVER approve evidence tied to an old commit. During
-// GitHub Actions GITHUB_SHA is the immutable checked-out release candidate.
-// Local release-checks must explicitly provide --candidate-sha=40hex.
-// --status stays read-only/diagnostic so partial evidence can be inspected.
-function requireCurrentCandidateSha(ledger, currentSha) {
+// The release subject is the frozen product/code commit. The evidence ledger
+// is committed AFTER that subject and therefore cannot contain the HEAD SHA:
+// doing so would recursively change HEAD. Only canonical certification evidence
+// may change between the subject and final HEAD. Everything else invalidates the
+// candidate and requires renewed, content-bound L1-L6 review.
+const { execFileSync } = require('node:child_process');
+const evidenceOnlyPaths = [
+  /^artifacts[/]academic-us-ccss[/]04-lesson-certification-records[.]json$/,
+  /^artifacts[/]academic-us-ccss[/]certification-evidence[/][A-Za-z0-9_.-]+[.]json$/
+];
+function actualCandidateProvenance(candidateSha, currentSha) {
+  const git = args => execFileSync('git', args, {
+    cwd: root, encoding: 'utf8', timeout: 15000, stdio: ['ignore','pipe','pipe']
+  }).trim();
+  assert(git(['rev-parse','HEAD']) === currentSha,
+    'Final release GITHUB_SHA must equal the checked-out Git HEAD');
+  let isAncestor = false;
+  try {
+    git(['merge-base','--is-ancestor',candidateSha,currentSha]);
+    isAncestor = true;
+  } catch {
+    // A missing or unrelated baseline must fail closed; never silently assume
+    // a shallow checkout is proof of ancestry.
+  }
+  assert(isAncestor,
+    'STALE B01 candidate: frozen releaseCandidateSha is not an ancestor of HEAD');
+  const names = git(['diff','--name-only','--no-renames',candidateSha,currentSha]);
+  return { headSha: currentSha, ancestorVerified: true,
+    changedPaths: names ? names.split('\n') : [] };
+}
+function requireCurrentCandidateSha(ledger, currentSha, verifiedGitProvenance) {
   assert(typeof currentSha === 'string' && /^[a-f0-9]{40}$/i.test(currentSha),
-    'Final B01 release requires immutable current candidate SHA (GITHUB_SHA or --candidate-sha=40hex)');
-  assert(ledger?.releaseCandidateSha === currentSha,
-    'STALE B01 candidate: canonical evidence is bound to '+
-    (ledger?.releaseCandidateSha ?? 'MISSING') +
-    ', but current release SHA is '+currentSha+'; rebuild/verify every affected L1–L6 gate on current SHA');
-  return currentSha;
+    'Final B01 release requires immutable current HEAD SHA (GITHUB_SHA or --candidate-sha=40hex)');
+  const candidateSha = ledger?.releaseCandidateSha;
+  assert(typeof candidateSha === 'string' && /^[a-f0-9]{40}$/i.test(candidateSha),
+    'Final B01 release requires a frozen 40-character releaseCandidateSha');
+  const proof = verifiedGitProvenance ??
+    actualCandidateProvenance(candidateSha, currentSha);
+  assert(proof?.headSha === currentSha && proof.ancestorVerified === true &&
+    Array.isArray(proof.changedPaths),
+    'Release requires verified Git ancestry and exact HEAD provenance');
+  const disallowed = proof.changedPaths.filter(file =>
+    typeof file !== 'string' || !evidenceOnlyPaths.some(pattern => pattern.test(file)) ||
+    file.includes('..') || file.includes(String.fromCharCode(92)));
+  assert(disallowed.length === 0,
+    'STALE B01 candidate: product, source, validator or workflow changed since frozen SHA: ' +
+    disallowed.slice(0, 10).join(', '));
+  return candidateSha;
 }
 
 function inspectBatch({ manifest, source, ledger }) {
@@ -185,4 +221,4 @@ if (require.main === module) {
     process.exitCode = 1;
   }
 }
-module.exports = { inspectBatch, requireCurrentCandidateSha, main };
+module.exports = { inspectBatch, requireCurrentCandidateSha, actualCandidateProvenance, main };

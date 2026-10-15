@@ -163,17 +163,42 @@ test('Any unresolved defect blocks the entire batch', () => {
   assert.equal(state.state, 'BATCH_NO-GO');
 });
 
-test('Final 500-lesson release binds every L1-L6 proof to the EXACT checked-out immutable HEAD, never stale source', () => {
+test('Release uses an immutable ancestor product candidate, not a circular HEAD SHA', () => {
  const x=fixture();
  for(const row of x.ledger.records.slice(0,500)) certify(row);
  assert.equal(inspectBatch(x).state,'BATCH_EVIDENCE_READY');
- assert.equal(requireCurrentCandidateSha(x.ledger,candidate),candidate);
- assert.throws(() => requireCurrentCandidateSha(x.ledger,'2'.repeat(40)),
-   /STALE B01 candidate/);
- assert.throws(() => requireCurrentCandidateSha(x.ledger,null),
-   /requires immutable current candidate SHA/);
- assert.throws(() => requireCurrentCandidateSha(x.ledger,'not-a-commit'),
-   /requires immutable current candidate SHA/);
+ const head='2'.repeat(40);
+ const verified={headSha:head,ancestorVerified:true,changedPaths:[
+  'artifacts/academic-us-ccss/04-lesson-certification-records.json',
+  'artifacts/academic-us-ccss/certification-evidence/B01-review.json'
+ ]};
+ assert.equal(requireCurrentCandidateSha(x.ledger,head,verified),candidate);
+ assert.equal(requireCurrentCandidateSha(x.ledger,candidate,{
+  headSha:candidate,ancestorVerified:true,changedPaths:[]
+ }),candidate);
+ for(const changed of [
+  'src/Edulytics.Services/Mathematics/UsCcssB01SourceTaskQuestionEngine.cs',
+  'artifacts/academic-us-ccss/04-lesson-academic-audit.json',
+  'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json',
+  'tools/us-ccss-b01-release-gate.cjs',
+  '.github/workflows/us-ccss-b01-500-release.yml',
+  'artifacts/academic-us-ccss/certification-evidence/../untrusted.json'
+ ]) assert.throws(()=>requireCurrentCandidateSha(x.ledger,head,{
+  ...verified,changedPaths:[changed]
+ }),/STALE B01 candidate/);
+ assert.throws(()=>requireCurrentCandidateSha(x.ledger,head,{
+  ...verified,ancestorVerified:false
+ }),/verified Git ancestry/);
+ assert.throws(()=>requireCurrentCandidateSha(x.ledger,head,{
+  ...verified,headSha:'3'.repeat(40)
+ }),/verified Git ancestry/);
+ assert.throws(()=>requireCurrentCandidateSha(x.ledger,null,verified),
+  /requires immutable current HEAD SHA/);
+ assert.throws(()=>requireCurrentCandidateSha(x.ledger,'not-a-commit',verified),
+  /requires immutable current HEAD SHA/);
+ x.ledger.releaseCandidateSha=null;
+ assert.throws(()=>requireCurrentCandidateSha(x.ledger,head,verified),
+  /frozen 40-character releaseCandidateSha/);
  assert.equal(inspectBatch(x).evidenceReady,500,
-   'The read-only status report is not a release authorization and stays usable');
+  'Read-only audit does not authorize release');
 });
