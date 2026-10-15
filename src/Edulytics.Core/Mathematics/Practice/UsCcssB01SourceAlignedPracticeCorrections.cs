@@ -3,15 +3,67 @@ using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
-/// Sixty lesson-code-exact B01 corrections independently checked against their
+/// B01 source-verified corrections, including T001's lesson-code-exact contracts, checked against
 /// original IM K-5 2021 teacher Lesson Purpose. Never select families from a
 /// broad keyword match or alter other programmes / other B01 lesson mappings.
-/// The 500-lesson L1–L6 collective gate remains authoritative.
+/// T001 L1–L6 and 8-dimension certification remains a separate strict gate.
 /// </summary>
 internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // T001 first ten: independently checked against IM 2021 G1 U01
+        // full teacher lesson narratives and source-goal activity families.
+        // Exercise skills may be represented with owned examples; class
+        // discussion / physical center interaction remains an L6 review item.
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L03",
+            "number.whole.add", "COUNT_ON_ONE_OR_TWO_WITHIN_TEN",
+            ["usccss.b01.g1.add_one_or_two"],
+            "IM2021_G1_U01_L03_ADD_ONE_TWO_COUNTING_SEQUENCE",
+            "READY_VERIFIED", "usccss-t001-source-practice-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L04",
+            "number.whole.subtract", "COUNT_BACK_ONE_OR_TWO_WITHIN_TEN",
+            ["usccss.b01.g1.subtract_one_or_two"],
+            "IM2021_G1_U01_L04_SUBTRACT_ONE_TWO_COUNT_BACK",
+            "READY_VERIFIED", "usccss-t001-source-practice-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L05",
+            "number.whole.add_subtract", "CHECK_IT_OFF_WITHIN_TEN",
+            ["number.whole.add_subtract.within_10.apply",
+             "number.whole.add_subtract.within_10.build"],
+            "IM2021_G1_U01_L05_CHECK_IT_OFF_ADD_SUBTRACT_WITHIN_TEN",
+            "READY_VERIFIED", "usccss-t001-source-practice-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L06",
+            "number.whole.add_subtract", "FIND_PAIR_MAKE_TEN",
+            ["usccss.b01.g1.make_ten_missing_part",
+             "number.whole.add_subtract.within_10.apply"],
+            "IM2021_G1_U01_L06_FIND_THE_PAIR_TEN_AND_CENTERS",
+            "READY_VERIFIED", "usccss-t001-source-practice-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L07",
+            "supporting.statistics.charts", "SORT_TOOLS_CATEGORY_COUNTS",
+            ["supporting.statistics.charts.mixed",
+             "supporting.statistics.table_total"],
+            "IM2021_G1_U01_L07_SORT_AND_COUNT_MATH_TOOLS",
+            "READY_VERIFIED", "usccss-t001-source-practice-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L09",
+            "supporting.statistics.charts", "CLASS_SURVEY_CATEGORY_COUNTS",
+            ["supporting.statistics.charts.mixed",
+             "supporting.statistics.table_total"],
+            "IM2021_G1_U01_L09_OWN_CLASS_SURVEY_RESPONSES",
+            "READY_VERIFIED", "usccss-t001-source-practice-v1"),
+        new(
+            "PED:US-CCSS-MATH:G1:U01:L10",
+            "number.whole.add_subtract", "WHATS_BEHIND_MY_BACK_MAKE_TEN",
+            ["usccss.b01.g1.make_ten_missing_part",
+             "number.whole.add_subtract.within_10.apply",
+             "number.whole.add_subtract.within_10.build"],
+            "IM2021_G1_U01_L10_MISSING_PART_TEN_AND_CENTERS",
+            "READY_VERIFIED", "usccss-t001-source-practice-v1"),
         // These are source-exact partial training corrections, not complete
         // academic certification of the optional centers/explorations.
         new(
