@@ -25,11 +25,14 @@ public sealed class UsCcssT001FirstTenSourceAndPracticeTests
          "number.whole.add_subtract.within_10.build"],
         ["usccss.b01.g1.make_ten_missing_part",
          "number.whole.add_subtract.within_10.apply"],
-        ["supporting.statistics.charts.mixed",
+        ["usccss.t001.g1.sort_math_tools",
+         "supporting.statistics.charts.mixed",
          "supporting.statistics.table_total"],
-        ["supporting.statistics.charts.mixed",
+        ["usccss.t001.g1.sort_shape_cards",
+         "supporting.statistics.charts.mixed",
          "supporting.statistics.table_total"],
-        ["supporting.statistics.charts.mixed",
+        ["usccss.t001.g1.class_survey_categories",
+         "supporting.statistics.charts.mixed",
          "supporting.statistics.table_total"],
         ["usccss.b01.g1.make_ten_missing_part",
          "number.whole.add_subtract.within_10.apply",
@@ -55,7 +58,10 @@ public sealed class UsCcssT001FirstTenSourceAndPracticeTests
             }
             if(i==6 || i==7 || i==8)
                 Assert.All(contract.AllowedQuestionFamilies,
-                    f => Assert.StartsWith("supporting.statistics.",f));
+                    f => Assert.True(
+                        f.StartsWith("supporting.statistics.",StringComparison.Ordinal) ||
+                        f.StartsWith("usccss.t001.g1.",StringComparison.Ordinal),
+                        "Expected source-bound category skill, not an unrelated topic: "+f));
             Assert.DoesNotContain(contract.AllowedQuestionFamilies,
                 f => f.Contains("across_ten",StringComparison.Ordinal));
         }
@@ -69,6 +75,9 @@ public sealed class UsCcssT001FirstTenSourceAndPracticeTests
             [Prefix+"03"]="usccss.b01.g1.add_one_or_two",
             [Prefix+"04"]="usccss.b01.g1.subtract_one_or_two",
             [Prefix+"06"]="usccss.b01.g1.make_ten_missing_part",
+            [Prefix+"07"]="usccss.t001.g1.sort_math_tools",
+            [Prefix+"08"]="usccss.t001.g1.sort_shape_cards",
+            [Prefix+"09"]="usccss.t001.g1.class_survey_categories",
             [Prefix+"10"]="usccss.b01.g1.make_ten_missing_part"
         };
         var engine=new ExactSkillContractQuestionEngine();
@@ -103,14 +112,29 @@ public sealed class UsCcssT001FirstTenSourceAndPracticeTests
                 Assert.InRange(p["start"]-p["step"],0,9);
                 Assert.Equal((p["start"]-p["step"]).ToString(),q.CorrectAnswer);
             }
-            else
+            else if(family.EndsWith(".make_ten_missing_part",StringComparison.Ordinal))
             {
                 Assert.Equal(10,p["known"]+p["missing"]);
                 Assert.Equal(p["missing"].ToString(),q.CorrectAnswer);
             }
+            else
+            {
+                Assert.InRange(p["category"],0,2);
+                string[] fields=family switch
+                {
+                    "usccss.t001.g1.sort_math_tools" => ["counters","blocks","tiles"],
+                    "usccss.t001.g1.sort_shape_cards" =>
+                        ["triangles","quadrilaterals","circles"],
+                    "usccss.t001.g1.class_survey_categories" =>
+                        ["apples","bananas","oranges"],
+                    _=>throw new InvalidOperationException(family)
+                };
+                Assert.All(fields,k=>Assert.InRange(p[k],1,7));
+                Assert.Equal(p[fields[p["category"]]].ToString(),q.CorrectAnswer);
+            }
             count++;
         }
-        Assert.Equal(120,count);
+        Assert.Equal(210,count);
     }
 
     [Fact]
