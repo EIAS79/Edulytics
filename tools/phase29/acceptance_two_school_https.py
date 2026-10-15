@@ -422,7 +422,11 @@ for key, schoolname in SCHOOLS:
                             """' AND i."GenerationFamily"=
                             'usccss.t001.g1.construct_shape_graph'
                             ORDER BY r."AnsweredAtUtc" DESC LIMIT 1;""")
-                        assert stored.split("|")==[answer,"1","1",answer], (
+                        saved_parts=stored.split("|")
+                        assert (len(saved_parts)==4 and
+                                saved_parts[0]==answer and saved_parts[1]=="1" and
+                                float(saved_parts[2])==1.0 and
+                                saved_parts[3]==answer), (
                             "L08 browser-built graph was not marked and persisted correctly",
                             screen,answer,stored)
                         print("DISPOSABLE_T001_L08_GRAPH_CONSTRUCTED_DB_PASS",
