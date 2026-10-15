@@ -196,9 +196,9 @@ test('Release uses an immutable ancestor product candidate, not a circular HEAD 
   /requires immutable current HEAD SHA/);
  assert.throws(()=>requireCurrentCandidateSha(x.ledger,'not-a-commit',verified),
   /requires immutable current HEAD SHA/);
+ assert.equal(inspectBatch(x).evidenceReady,500,
+  'Read-only audit does not authorize release');
  x.ledger.releaseCandidateSha=null;
  assert.throws(()=>requireCurrentCandidateSha(x.ledger,head,verified),
   /frozen 40-character releaseCandidateSha/);
- assert.equal(inspectBatch(x).evidenceReady,500,
-  'Read-only audit does not authorize release');
 });
