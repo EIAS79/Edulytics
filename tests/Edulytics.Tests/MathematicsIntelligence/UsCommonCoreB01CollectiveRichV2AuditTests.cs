@@ -65,6 +65,19 @@ public sealed class UsCommonCoreB01CollectiveRichV2AuditTests
                 continue;
             }
 
+            // Verify the fully materialized learner-visible lesson and visual,
+            // not merely an isolated helper object or raw JSON screening.
+            if (code == "PED:US-CCSS-MATH:G3:U03:L04")
+            {
+                Assert.DoesNotContain("Read the hour and minute hands separately",
+                    en.KeyConceptsAndRules, StringComparison.OrdinalIgnoreCase);
+                var chart = Assert.Single(rich.Visuals.Where(x =>
+                    x.Kind == RichLessonVisualKind.PlaceValueChart));
+                Assert.Equal(new[] {"Hundreds","Tens","Ones"}, chart.Rows[0].Cells);
+                Assert.Equal(new[] {"7","1","6"}, chart.Rows[^1].Cells);
+                Assert.Equal(716, 362 + 354);
+            }
+
             withRich++;
             if (sidecar is not null) explicitSidecars++;
             else runtimeComposed++;
