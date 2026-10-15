@@ -389,6 +389,69 @@ for key, schoolname in SCHOOLS:
             json.dumps(extra_witness,indent=2)+"\n",encoding="utf-8")
         print("DISPOSABLE_G1_U01_L03_L05_SOURCE_SCOPED_L6_CANDIDATE_PASS",
               len(extra_witness["lessonRecords"]),flush=True)
+        # Enumerate EVERY G1 original lesson through the authenticated
+        # student's actual HTTPS endpoint, with exact source identity and
+        # learner title; not an academic L6/visual correctness decision.
+        grade1_lessons=[
+            x for x in manifest["lessons"]
+            if x["lessonCode"].startswith("PED:US-CCSS-MATH:G1:")
+        ]
+        assert len(grade1_lessons)==146, "Original grade 1 lesson count drift"
+        db_rows=sql("""
+            SELECT "Code", "Id"::text FROM "CurriculumPedagogicalLessons"
+            WHERE "Code" LIKE 'PED:US-CCSS-MATH:G1:%'
+            ORDER BY "Code";""").splitlines()
+        id_by_code={}
+        for line in db_rows:
+            code, sep, lesson_id=line.partition("|")
+            assert sep and code not in id_by_code, (
+                "Grade 1 duplicate/malformed DB lesson identity",line)
+            id_by_code[code]=lesson_id
+        assert len(id_by_code)==146,(
+            "Grade 1 missing/extra source identities",len(id_by_code))
+        grade1_report={
+            "schemaVersion":1,
+            "kind":"B01_G1_146_AUTHENTICATED_STUDENT_HTTPS_CONTENT_INVENTORY",
+            "decision":"ROUTE_AND_STUDENT_CONTENT_SCREENED_NO_L6_OR_ACADEMIC_PASS",
+            "checkedOutCommit":os.environ["GITHUB_SHA"],
+            "batchId":"B01",
+            "schoolCode":"REHEARSAL-US-PRIMARY",
+            "lessonRows":[]
+        }
+        for position,m in enumerate(grade1_lessons,1):
+            code=m["lessonCode"]
+            assert code in id_by_code and code in ledger_by_code,(
+                "Missing DB or certification registry original G1 identity",code)
+            item=ledger_by_code[code]
+            assert item["contentSha256"] and len(item["contentSha256"])==64
+            lesson_html=html.unescape(get_page(
+                student,"/student/learning/lesson/"+id_by_code[code]))
+            matched_title=m["title"].casefold() in lesson_html.casefold()
+            has_section="rich-lesson-section" in lesson_html
+            if not matched_title or not has_section:
+                raise AssertionError((
+                    "Authenticated student lesson fails source-title/RichV2 check",
+                    code,matched_title,has_section))
+            # These are actual HTML response checks; rendered Chromium
+            # screenshot and correct grading must be assessed separately.
+            grade1_report["lessonRows"].append({
+                "ordinal":position,
+                "lessonCode":code,
+                "sourceSemanticSha256":m["sourceSemanticSha256"],
+                "effectiveContentSha256":item["contentSha256"],
+                "learnerTitleMatched":True,
+                "richV2HtmlPresent":True,
+                "mathVisualMarkupPresent":"rich-lesson-visual" in lesson_html,
+                "authenticatedHtmlSha256":
+                    hashlib.sha256(lesson_html.encode("utf-8")).hexdigest()
+            })
+        assert len(grade1_report["lessonRows"])==146
+        Path("/tmp/g1-all146-authenticated-student-html-inventory.json").write_text(
+            json.dumps(grade1_report,indent=2)+"\n",encoding="utf-8")
+        print("DISPOSABLE_G1_ALL146_AUTHENTICATED_HTTPS_HTML_SCREEN_PASS",
+              len(grade1_report["lessonRows"]),
+              sum(x["mathVisualMarkupPresent"]
+                  for x in grade1_report["lessonRows"]),flush=True)
     get_page(student, "/student/practice")
     deny(student, "/school/assessments")
     deny(teacher, "/student/dashboard")

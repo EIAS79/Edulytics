@@ -194,6 +194,20 @@ jobs:
             /tmp/g1-u01-l03-l05-authenticated-student-evidence.json
             /tmp/g1-u01-l03-l05-independent-verification.json
           if-no-files-found: warn
+      - name: Independently verify all 146 authenticated Grade 1 source-bound learner HTML responses
+        run: |
+          node --test tests/academic-us-ccss-b01-g1-all146-student-http-verifier.test.cjs
+          node tools/us-ccss-b01-g1-all146-student-http-verifier.cjs
+      - name: Preserve 146 Grade 1 authenticated student route inventory (not L6 approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-all146-authenticated-student-html-inventory
+          path: |
+            /tmp/g1-all146-authenticated-student-html-inventory.json
+            /tmp/g1-all146-authenticated-html-independent-verification.json
+          retention-days: 30
+          if-no-files-found: warn
       - name: Verify only two synthetic schools were created
         run: |
           set -euo pipefail
