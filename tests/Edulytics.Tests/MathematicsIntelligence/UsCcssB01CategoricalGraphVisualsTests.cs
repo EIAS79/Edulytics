@@ -63,9 +63,18 @@ public sealed class UsCcssB01CategoricalGraphVisualsTests
         for (var seed=881110;seed<881114;seed++)
         {
             var question=Generate(lesson,family,seed);
-            var graph=Assert.Single(UsCcssB01CategoricalGraphVisuals.Build(lesson,[question]));
+            var visuals=UsCcssB01CategoricalGraphVisuals.Build(lesson,[question]);
+            Assert.Equal(2,visuals.Count);
+            var picture=visuals[0];
+            var graph=visuals[1];
+            Assert.Equal(RichLessonVisualKind.PictureGraph,picture.Kind);
             Assert.Equal(RichLessonVisualKind.BarGraph,graph.Kind);
+            Assert.Equal("1",Assert.Single(picture.Items));
+            Assert.Equal("Picture graph — each symbol = 1 response",picture.PrimaryLabel);
             var counts=graph.Rows.Select(row=>int.Parse(Assert.Single(row.Cells))).ToArray();
+            Assert.Equal(counts,picture.Rows.Select(r=>r.Cells.Count).ToArray());
+            Assert.All(picture.Rows,r=>Assert.All(r.Cells,c=>Assert.Equal("●",c)));
+            Assert.Equal(counts.Sum(),picture.Rows.Sum(r=>r.Cells.Count));
             Assert.Equal(4,counts.Length);
             Assert.Equal(question.Parameters["f1"],counts[0]);
             Assert.Equal(question.Parameters["f2"],counts[1]);
@@ -73,6 +82,15 @@ public sealed class UsCcssB01CategoricalGraphVisualsTests
             Assert.Equal(question.Parameters["f4"],counts[3]);
             Assert.Equal(int.Parse(question.CorrectAnswer),counts.Sum());
         }
+    }
+
+    [Fact]
+    public void SourceGrade2Unit1Lesson10RejectsUnverifiedPictureGraphData()
+    {
+        const string code="PED:US-CCSS-MATH:G2:U01:L10";
+        var q=Generate(code,"supporting.statistics.table_total",991103);
+        Assert.Empty(UsCcssB01CategoricalGraphVisuals.Build(code,
+            [q with { CorrectAnswer="0" }]));
     }
 
     [Fact]

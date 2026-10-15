@@ -83,7 +83,7 @@ public static class UsCcssB01CategoricalGraphVisuals
             else if (!string.Equals(q.CorrectAnswer,total.ToString(),
                 StringComparison.Ordinal)) continue;
 
-            return [new RichLessonVisual
+            var bar=new RichLessonVisual
             {
                 Kind=RichLessonVisualKind.BarGraph,
                 Title="Compare categorical counts in a bar graph",
@@ -108,7 +108,31 @@ public static class UsCcssB01CategoricalGraphVisuals
                     Label=$"Category {(char)('A'+i)}",
                     Cells=[count.ToString()]
                 }).ToList()
-            }];
+            };
+
+            // G2 U01 L10 asks learners to REPRESENT the same dataset as both
+            // a picture graph and a bar graph. Previously only the bar chart
+            // existed, so the instructional visual omitted half the source goal.
+            // Use *the same verified question counts* and one dot per learner
+            // response; source photos / publisher CMS media are never copied.
+            if(lessonCode=="PED:US-CCSS-MATH:G2:U01:L10")
+            {
+                var picture=new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PictureGraph,
+                    Title="Represent the same categorical data with picture symbols",
+                    Description="Each ● represents exactly one response. The number of symbols in every category matches its bar height. The total number of symbols is "+total+".",
+                    PrimaryLabel="Picture graph — each symbol = 1 response",
+                    Items=["1"],
+                    Rows=values.Select((count,i)=>new RichLessonVisualRow
+                    {
+                        Label=$"Category {(char)('A'+i)}",
+                        Cells=Enumerable.Repeat("●",count).ToList()
+                    }).ToList()
+                };
+                return [picture,bar];
+            }
+            return [bar];
         }
         return [];
     }
