@@ -362,6 +362,48 @@ for key, schoolname in SCHOOLS:
                                 full_page=True)
                             print("DISPOSABLE_T001_CHROMIUM_RENDER_PASS",
                                   lesson_code,screen,flush=True)
+
+                        # Real authenticated L08 chart-building interaction
+                        # on each desktop/mobile viewport, not answer injection.
+                        l08_id=next(lid for code,lid in candidates
+                                    if code.endswith(":L08"))
+                        page.goto(BASE+"/student/learning/lesson/"+l08_id,
+                                  wait_until="domcontentloaded",timeout=40000)
+                        practice_start=page.locator(
+                            'form[action*="/student/practice/lesson/start"]').first
+                        assert practice_start.count()==1, (
+                            "L08 Practice start action missing",screen)
+                        practice_start.locator('button[type="submit"]').first.click()
+                        graph=page.locator("[data-t001-shape-chart]")
+                        graph.wait_for(timeout=40000)
+                        page.locator(".t001-chart-column").first.wait_for(timeout=20000)
+                        stem=page.locator("[data-practice-question]").inner_text()
+                        cards=stem.split("Cards: ",1)[1].split(". Build",1)[0].split(", ")
+                        counts=[cards.count("▲"),cards.count("■"),cards.count("●")]
+                        assert all(1<=n<=5 for n in counts) and sum(counts)<=10, (
+                            "L08 source cards/counts invalid",counts)
+                        assert page.locator("[data-t001-shape-submit]").is_disabled(), (
+                            "L08 empty graph must not submit",screen)
+                        columns=page.locator(".t001-chart-column")
+                        assert columns.count()==3, ("L08 must have three columns",screen)
+                        for column_index,amount in enumerate(counts):
+                            for _ in range(amount):
+                                columns.nth(column_index).locator(
+                                    "button.t001-chart-step").nth(1).click()
+                        answer=",".join(str(value) for value in counts)
+                        assert page.locator("[data-t001-shape-answer]").input_value()==answer, (
+                            "L08 learner graph did not serialize counts",screen)
+                        assert page.locator("[data-t001-shape-submit]").is_enabled(), (
+                            "L08 complete graph not submittable",screen)
+                        page.screenshot(
+                            path=f"/tmp/t001-l08-built-shape-graph-{screen}.png",
+                            full_page=True)
+                        page.locator("[data-t001-shape-submit]").click()
+                        page.wait_for_load_state("domcontentloaded")
+                        assert "/student/practice/" in page.url, (
+                            "L08 answer submission escaped Practice",page.url)
+                        print("DISPOSABLE_T001_L08_GRAPH_CONSTRUCTED_BROWSER_PASS",
+                              screen,answer,page.url,flush=True)
                     finally:
                         context.close()
             finally:
