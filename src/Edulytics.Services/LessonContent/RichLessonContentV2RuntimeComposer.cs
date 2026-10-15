@@ -201,6 +201,11 @@ public static partial class RichLessonContentV2RuntimeComposer
             Videos = []
         };
 
+        // First ten US-CCSS lessons: pedagogy from verified specific
+        // publisher purposes, independent of generic verified question text.
+        // The first certified pilot stays exactly as it was.
+        AddT001LearnerTeaching(lessonCode,result);
+
         RichLessonContentV2Registry.Validate(
             new RichLessonContentV2Document
             {
