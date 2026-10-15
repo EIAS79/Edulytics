@@ -591,6 +591,8 @@ jobs:
           test "$changed" = "artifacts/academic-us-ccss/04-lesson-certification-records.json"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add artifacts/academic-us-ccss/04-lesson-certification-records.json
+          # This legacy audited file lives under an ignored artifacts directory;
+          # force-stage the one exact path after the 1560-row non-PASS verifier.
+          git add -f -- artifacts/academic-us-ccss/04-lesson-certification-records.json
           git commit -m "audit(b01): persist reviewed 500-lesson runtime fingerprints as screened only"
           git push origin HEAD:"refs/heads/$branch"
