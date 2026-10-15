@@ -18,6 +18,7 @@ on:
       - '.github/workflows/us-ccss-t001-isolated-ci.yml'
       - 'artifacts/academic-us-ccss/batches/T001-lesson-manifest.json'
       - 'tools/us-ccss-t001-release-gate.cjs'
+      - 'tests/us-ccss-t001-release-integrity.test.cjs'
   workflow_dispatch:
 
 permissions:
@@ -42,6 +43,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Verify fail-closed immutable-source academic release integrity
+        run: node --test tests/us-ccss-t001-release-integrity.test.cjs
       - name: Inspect actual ten-lesson certification ledger without bypassing blocked gates
         run: |
           node tools/us-ccss-t001-release-gate.cjs --status > /tmp/t001-academic-status.json
