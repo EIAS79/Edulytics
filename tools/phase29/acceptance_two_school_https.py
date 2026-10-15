@@ -476,12 +476,18 @@ for key, schoolname in SCHOOLS:
                                 assert page.locator(".t001-authored-bin-items .t001-authored-chip").count()==len(cards)
                             else:
                                 assert "REAL CLASS SURVEY" in stem, (suffix,stem)
-                                for choice in (0,1,2,0,1):
+                                required=re.search(
+                                    r"Ask ([5-8]) to 10 real participants",stem)
+                                assert required,(suffix,"Missing authentic survey scope",stem)
+                                survey_votes=[i%3 for i in range(int(required.group(1)))]
+                                for choice in survey_votes:
                                     page.locator(f"[data-vote-add='{choice}']").click()
-                                for choice,n in enumerate((2,2,1)):
+                                survey_counts=[survey_votes.count(i) for i in range(3)]
+                                for choice,n in enumerate(survey_counts):
                                     for _ in range(n):
                                         page.locator(f"[data-graph-add='{choice}']").click()
-                                authored_answer="v:01201|g:2,2,1"
+                                authored_answer="v:"+''.join(str(i) for i in survey_votes)+(
+                                    "|g:"+','.join(str(i) for i in survey_counts))
                             assert page.locator("[data-t001-authored-answer]").input_value()==authored_answer, (
                                 suffix,"Authored response mismatch",screen)
                                 authored_answer,page.locator("[data-t001-authored-answer]").input_value())

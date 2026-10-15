@@ -54,13 +54,18 @@ public sealed class UsCcssT001IsolatedReleaseTests
         Assert.NotNull(type);
         var grade=type!.GetMethod("GradePersistedAnswer",BindingFlags.Public|BindingFlags.Static);
         Assert.NotNull(grade);
-        bool Check(string actual,string expected="survey-entry-protocol-v1")=>
+        const string metadata="{\"parameters\":{\"minimumVotes\":5,\"maximumVotes\":10,\"topic\":0}}";
+        const string eightVotes="{\"parameters\":{\"minimumVotes\":8,\"maximumVotes\":10,\"topic\":3}}";
+        bool Check(string actual,string expected="survey-entry-protocol-v1",
+            string parameters=metadata)=>
             (bool)grade!.Invoke(null,[
-                "usccss.t001.g1.collect_survey_graph",expected,actual])!;
+                "usccss.t001.g1.collect_survey_graph",expected,actual,parameters])!;
         Assert.False(Check("survey-entry-protocol-v1"));
         Assert.True(Check("v:01201|g:2,2,1"));
         Assert.False(Check("v:01201|g:2,1,2"));
         Assert.False(Check("v:01201|g:2,2,1","fake-sentinel"));
+        Assert.False(Check("v:01201|g:2,2,1",parameters:eightVotes));
+        Assert.False(Check("v:01201|g:2,2,1",parameters:"{\"parameters\":{}}"));
         Assert.False(Check("v:012|g:1,1,1"));
         Assert.False(Check("v:0120x|g:2,1,2"));
         Assert.False(Check("v:01201|g:02,2,1"));
@@ -127,10 +132,19 @@ public sealed class UsCcssT001IsolatedReleaseTests
                                 Assert.Equal("survey-entry-protocol-v1",q.CorrectAnswer);
                                 Assert.Contains("REAL CLASS SURVEY",q.Prompt);
                                 Assert.Contains("teacher",q.Prompt,StringComparison.OrdinalIgnoreCase);
-                                Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
-                                    "v:01201|g:2,2,1"));
+                                Assert.InRange(p["topic"],0,5);
+                                Assert.InRange(p["minimumVotes"],5,8);
+                                var sampleVotes=Enumerable.Range(0,p["minimumVotes"])
+                                    .Select(i=>i%3).ToArray();
+                                var computedCounts=Enumerable.Range(0,3)
+                                    .Select(i=>sampleVotes.Count(v=>v==i)).ToArray();
+                                var validSurvey="v:"+string.Concat(sampleVotes.Select(i=>i.ToString(
+                                    CultureInfo.InvariantCulture)))+"|g:"+
+                                    string.Join(",",computedCounts);
+                                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                                    family,p,validSurvey));
                                 Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
-                                    "v:01201|g:2,1,2"));
+                                    "v:"+string.Concat(sampleVotes)+"|g:0,0,0"));
                                 Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
                                     "v:0120|g:2,1,1"));
                                 Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,

@@ -89,6 +89,11 @@
   }else if(kind==="survey"){
    heading(tr.survey);root.append(el("p","t001-authored-help",tr.surveyNote));
    const found=/^v:([0-2]{0,10})\|g:(\d{1,2}),(\d{1,2}),(\d{1,2})$/.exec(initial);
+   const minimum=/Ask ([5-8]) to 10 real participants/.exec(stem);
+   const sourceCategories=/Choices: (.+?), (.+?), (.+?)\. Record/.exec(stem);
+   if(!minimum||!sourceCategories){root.append(el("p","t001-authored-error","Invalid source-bound survey question."));return;}
+   const minimumVotes=Number(minimum[1]);
+   const responseLabels=sourceCategories.slice(1,4);
    const votes=found?Array.from(found[1],n=>Number(n)):[];
    const graph=found?[Number(found[2]),Number(found[3]),Number(found[4])]:[0,0,0];
    const voteBar=el("div","t001-authored-vote-buttons");
@@ -98,9 +103,9 @@
    const graphLayout=el("div","t001-authored-bins");
    const bars=[],values=[];
    const update=()=>{
-    voteTitle.textContent=tr.votes+": "+votes.length+"/10";
+    voteTitle.textContent=tr.votes+": "+votes.length+"/10 (min "+minimumVotes+")";
     tape.replaceChildren();
-    for(const v of votes)tape.append(el("span","t001-authored-chip",tr.fruit[v]));
+    for(const v of votes)tape.append(el("span","t001-authored-chip",responseLabels[v]));
     graph.forEach((count,i)=>{bars[i].replaceChildren();for(let n=0;n<count;n++)bars[i].append(el("span","t001-authored-tally","●"));values[i].textContent=String(count);});
     root.querySelectorAll("[data-vote-add]").forEach(b=>b.disabled=readonly||votes.length>=10);
     root.querySelectorAll("[data-graph-add]").forEach(b=>b.disabled=readonly||graph.reduce((a,b)=>a+b,0)>=10||graph[Number(b.dataset.graphAdd)]>=10);
@@ -108,10 +113,10 @@
     const undo=root.querySelector("[data-vote-undo]");if(undo)undo.disabled=readonly||votes.length===0;
     sync();
    };
-   tr.fruit.forEach((fruit,i)=>{if(readonly)return;const b=button("+ "+fruit,()=>{if(votes.length<10){votes.push(i);update();}});b.dataset.voteAdd=String(i);voteBar.append(b);});
+   responseLabels.forEach((fruit,i)=>{if(readonly)return;const b=button("+ "+fruit,()=>{if(votes.length<10){votes.push(i);update();}});b.dataset.voteAdd=String(i);voteBar.append(b);});
    if(!readonly){const undo=button(tr.remove,()=>{votes.pop();update();});undo.dataset.voteUndo="true";voteBar.append(undo);}
    root.append(voteBar,voteTitle,tape,graphTitle,el("p","t001-authored-help",tr.shapeLabel));
-   tr.fruit.forEach((name,i)=>{
+   responseLabels.forEach((name,i)=>{
     const section=el("section","t001-authored-bin");section.append(el("h3","",name));
     const bar=el("div","t001-authored-tallybar");section.append(bar);bars.push(bar);
     const count=el("output","t001-authored-count");section.append(count);values.push(count);
@@ -123,7 +128,7 @@
    });
    root.append(graphLayout);
    getAnswer=()=> "v:"+votes.join("")+"|g:"+graph.join(",");
-   valid=()=>votes.length>=5&&votes.length<=10&&graph.reduce((a,b)=>a+b,0)===votes.length;
+   valid=()=>votes.length>=minimumVotes&&votes.length<=10&&graph.reduce((a,b)=>a+b,0)===votes.length;
    update();
   }else {root.append(el("p","t001-authored-error","Unknown authored task."));return;}
   root.append(status);sync();
