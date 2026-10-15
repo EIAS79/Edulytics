@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            302, // previous 298 plus 4 T001 source-purpose representation choices
+            303, // 302 existing interactive families plus L08 constructed chart
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
@@ -69,6 +69,17 @@ public sealed class LessonPracticeInteractionRegistryTests
         Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad,contract.InteractionKind);
         Assert.True(contract.HasVisualRepresentation);
         Assert.Equal("exact_integer",contract.AnswerType);
+    }
+
+    [Fact]
+    public void L08ConstructedShapeGraphUsesAContractDrivenInteraction()
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+            "usccss.t001.g1.construct_shape_graph",out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(LessonPracticeInteractionKind.ContractDriven, contract.InteractionKind);
+        Assert.Equal("contract_defined", contract.AnswerType);
+        Assert.True(contract.HasVisualRepresentation);
     }
 
     [Theory]
