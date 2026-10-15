@@ -6,8 +6,8 @@ using Edulytics.Services.LessonContent;
 namespace Edulytics.Tests.MathematicsIntelligence;
 
 /// <summary>
-/// B01 all-500 exact source identity: the formerly equations-only eleven
-/// figure-source lessons now have a source-goal-bound representative visual.
+/// B01 all-500 exact source identity: formerly equations-only source
+/// figure-source lessons now have source-goal-bound representative visuals.
 /// This explicitly does not pass original activity-by-activity fidelity/L6.
 /// </summary>
 public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
@@ -16,6 +16,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
 
     [Theory]
     [InlineData("G2:U06:L03","940b693c00be0380fb8449140b2648a3aa593291b5894f89643fcd9f7eb15c91","RectangleDiagram")]
+    [InlineData("G2:U06:L05","1fba9d0727ad2e26b5389c2e73fe80046871586273bc21502862a36fed9ea709","PolygonDiagram")]
     [InlineData("G2:U06:L19","5ed030269c542b6f0a1a7bb27c7108712dbb1c15daea05a36e9e424228de2a36","TapeDiagram")]
     [InlineData("G2:U08:L02","660fafd839d002c655c9495a460b037892e07cea3cc2a907d0bd7ba17246a28a","CounterPairs")]
     [InlineData("G2:U08:L03","41ca33c004b6c33458ca2f0e9003ccfc115f9077702d9c57ac358b6ece291f9c","CounterPairs")]
@@ -26,7 +27,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [InlineData("G3:U07:L06","c1231a52553453e0c5568f68fc908b247d53728ef1a65a656cc2bf829221933e","RectangleDiagram")]
     [InlineData("G3:U08:L01","9af7452882227dec9eb391337cf76a47c64497fcba9e30f126cb80b04af63da3","FractionBars")]
     [InlineData("G4:U04:L20","26096e487bc9df48865e2a3485c3001d75ab7d8a4a147524b5d7a527fef9ddac","PlaceValueChart")]
-    public void ElevenSourcePurposeLessonsGainMathematicallyConcreteVisual(
+    public void SourcePurposeLessonsGainMathematicallyConcreteVisual(
         string suffix,string rawBodySha,string kind)
     {
         var code=Prefix+suffix;
@@ -52,9 +53,9 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     }
 
     [Fact]
-    public void OneSharedElevenLessonScopeAndEvenOddSemanticsStayFailClosed()
+    public void SharedSourceLessonScopeAndEvenOddSemanticsStayFailClosed()
     {
-        Assert.Equal(11,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
+        Assert.Equal(12,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
         var even=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U08:L02",
             GetBody(Prefix+"G2:U08:L02"));
@@ -64,6 +65,15 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
             Prefix+"G2:U06:L03",GetBody(Prefix+"G2:U06:L03"));
         Assert.NotNull(measurements);
         Assert.Equal("cm",Assert.Single(measurements).SecondaryLabel);
+        var shapes=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
+            Prefix+"G2:U06:L05",GetBody(Prefix+"G2:U06:L05"));
+        Assert.NotNull(shapes);
+        Assert.Equal(["triangle","quadrilateral","hexagon"],
+            shapes.Select(v=>Assert.Single(v.Items)).ToArray());
+        Assert.All(shapes,v=>Assert.Equal(RichLessonVisualKind.PolygonDiagram,v.Kind));
+        var wrongSource=GetBody(Prefix+"G2:U06:L05") with { Title="Unrelated lesson" };
+        Assert.Throws<InvalidOperationException>(()=>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(Prefix+"G2:U06:L05",wrongSource));
         var money=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U06:L19",GetBody(Prefix+"G2:U06:L19"));
         Assert.NotNull(money);

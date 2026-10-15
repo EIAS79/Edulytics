@@ -4,7 +4,7 @@ using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
 /// <summary>
-/// Source-goal-bound representative mathematical visuals for the 11 B01
+/// Source-goal-bound representative mathematical visuals for the 12 B01
 /// figure-source lessons that previously composed ONLY an EquationSet.
 /// Shared rendering primitives and independent illustrations are reused;
 /// each exact source-goal identity fails closed on content drift.
@@ -18,6 +18,7 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
         new Dictionary<string,Goal>(StringComparer.Ordinal)
         {
             [Prefix+"G2:U06:L03"]=new("Specific Side Lengths","sides with a given length"),
+            [Prefix+"G2:U06:L05"]=new("Center Day 1 (optional)","describing, naming, and drawing triangles"),
             [Prefix+"G2:U06:L19"]=new("More Money Problems","context of money"),
             [Prefix+"G2:U08:L02"]=new("Partners Make Pairs","pair all of the objects"),
             [Prefix+"G2:U08:L03"]=new("Is it Odd or Even? PLC Activity","even or odd"),
@@ -46,6 +47,14 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
             "G2:U06:L03" => [Rectangle("3 cm by 2 cm rectangle",
                 "Rectangle with opposite 3 cm sides and opposite 2 cm sides. The display is NOT a physical-size ruler. Use a separate physical ruler for a 3 cm drawing.",
                 3,2,"cm")],
+            "G2:U06:L05" => [
+                Polygon("Triangle: exactly three straight sides",
+                    "A triangle has three straight sides and three corners. Orientation does not change whether a shape is a triangle.","triangle"),
+                Polygon("Quadrilateral: exactly four straight sides",
+                    "A quadrilateral is any simple closed polygon with four straight sides and four corners; a rectangle is one example.","quadrilateral"),
+                Polygon("Hexagon: exactly six straight sides",
+                    "A hexagon has six straight sides and six corners. Side lengths need not be equal.","hexagon")
+            ],
             "G2:U06:L19" => [new RichLessonVisual{
                 Kind=RichLessonVisualKind.TapeDiagram,
                 Title="Find the missing part: 68 cents in all, 39 cents known",
