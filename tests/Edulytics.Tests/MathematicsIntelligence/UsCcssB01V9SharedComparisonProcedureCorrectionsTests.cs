@@ -45,7 +45,10 @@ public sealed class UsCcssB01V9SharedComparisonProcedureCorrectionsTests
                 .IsTarget(target.Doc,target.Lesson));
             if (!shouldChange) continue;
             Assert.Equal(64,row.GetProperty("sourceSemanticSha256").GetString()!.Length);
-            Assert.Equal(CommonCoreB01V9SharedComparisonProcedureCorrections.CorrectedVersion,
+            var effectiveVersion = CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(target.Doc,target.Lesson)
+                ? CommonCoreB01V9OffTopicClockConceptCorrections.CorrectedVersion
+                : CommonCoreB01V9SharedComparisonProcedureCorrections.CorrectedVersion;
+            Assert.Equal(effectiveVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
                     target.Doc,target.Lesson));
             var en = Assert.Single(target.Lesson.Translations);
