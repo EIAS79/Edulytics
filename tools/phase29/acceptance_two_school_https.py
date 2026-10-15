@@ -622,7 +622,7 @@ for key, schoolname in SCHOOLS:
                     assert "4 + 2 = 6" in lesson_html and "6 - 2 = 4" in lesson_html, (
                         "T001 L05 cannot teach both operations", code)
                 if suffix == "06":
-                    assert "6 + 4 = 10" in lesson_html and "10 - 6 = 4" in lesson_html, (
+                    assert "7 + 3 = 10" in lesson_html and "10 - 7 = 3" in lesson_html, (
                         "T001 L06 missing make-ten instruction", code)
                 if suffix in ("07", "08", "09"):
                     assert "rich-lesson-visual--placevaluechart" in lesson_html, (
