@@ -151,7 +151,8 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
-         SupportingPracticeCompletionEngine.Supports(family.Trim()));
+         SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
+         UsCcssT001ExactQuestions.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -285,6 +286,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssT001ExactQuestions.Supports(family))
+            return UsCcssT001ExactQuestions.Verify(family, parameters, answer);
         // Grade 1 first-edition source: cardinality up to 20 and
         // addition of two dot cubes up to 10. Fail closed for tampered tasks.
         if (family == "usccss.g1.u01.l01.count_collection_to20")
@@ -863,6 +866,12 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssT001ExactQuestions.Supports(family))
+        {
+            var t001=UsCcssT001ExactQuestions.Build(family,random);
+            return new ExactProblem(t001.Family,t001.Prompt,t001.Solution,
+                t001.ItemType,t001.Parameters);
+        }
         if (SupportingPracticeCompletionEngine.Supports(family))
         {
             var supporting = SupportingPracticeCompletionEngine.Build(
@@ -2654,6 +2663,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssT001ExactQuestions.Supports(problem.Family))
+            return UsCcssT001ExactQuestions.Solve(problem.Family, p);
         if (SupportingPracticeCompletionEngine.Supports(problem.Family))
             return SupportingPracticeCompletionEngine.Solve(problem.Family, p);
 
