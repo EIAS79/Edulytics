@@ -4,6 +4,7 @@ using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Practice;
 using Edulytics.Services.Assessments;
+using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Services.Practice;
 
@@ -196,7 +197,12 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
             return PracticeQueryResult<PracticeFeedback>.Failure(PracticeErrorCode.ItemNotFound);
         }
 
-        var correct = AnswersMatch(answer, item.CorrectAnswer);
+        // A constructed graph is a typed count vector, never a scalar.
+        // Do not accept ambiguous locale/grouping numeric equivalence.
+        var correct = string.Equals(item.GenerationFamily,
+                UsCcssT001ConstructShapeGraph.Family, StringComparison.Ordinal)
+            ? string.Equals(answer.Trim(), item.CorrectAnswer, StringComparison.Ordinal)
+            : AnswersMatch(answer, item.CorrectAnswer);
         var score = correct ? attemptItem.MaxScore : 0m;
         var response = new PracticeResponse
         {
