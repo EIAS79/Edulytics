@@ -150,6 +150,13 @@ jobs:
           name: g1-u01-l01-rich-v2-chromium-screenshots
           path: /tmp/g1-u01-l01-*.png
           if-no-files-found: warn
+      - name: Preserve G1 L02 authenticated candidate L6 viewport and grading evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-u01-l02-source-sha-browser-grading-evidence
+          path: /tmp/g1-u01-l02-student-l6-evidence.json
+          if-no-files-found: warn
       - name: Preserve G1 L02 independently rendered desktop/mobile evidence
         if: always()
         uses: actions/upload-artifact@v4

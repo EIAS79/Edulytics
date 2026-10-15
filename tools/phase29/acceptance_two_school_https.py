@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Real HTTPS two-tenant smoke test. Run only against disposable CI PostgreSQL."""
 import html
+import hashlib
 import http.cookiejar
 import json
 import os
@@ -227,6 +228,8 @@ for key, schoolname in SCHOOLS:
         # Second original lesson: dot-cube equivalence is a different
         # content SHA. L01 screenshots or a successful sign-in cannot certify L02.
         next_code="PED:US-CCSS-MATH:G1:U01:L02"
+        l02_screens={}
+
         next_ids=sql("""
             SELECT "Id"::text FROM "CurriculumPedagogicalLessons"
             WHERE "Code"='PED:US-CCSS-MATH:G1:U01:L02';""").splitlines()
@@ -267,9 +270,14 @@ for key, schoolname in SCHOOLS:
                                 screen,"L02 dot pictures have invalid count",dots)
                         assert figures.first.is_visible(),(
                             screen,"L02 learner visual hidden")
-                        page.screenshot(
-                            path=f"/tmp/g1-u01-l02-{screen}.png",
-                            full_page=True)
+                        shot=Path(f"/tmp/g1-u01-l02-{screen}.png")
+                        page.screenshot(path=str(shot),full_page=True)
+                        assert shot.exists() and shot.stat().st_size>1000,(
+                            screen,"L02 screenshot was not persisted")
+                        l02_screens[screen]={
+                            "viewportWidth":width,"viewportHeight":height,
+                            "screenshotSha256":hashlib.sha256(shot.read_bytes()).hexdigest()
+                        }
                         print("DISPOSABLE_G1_L02_CHROMIUM_VIEWPORT_PASS",
                               screen,width,height,flush=True)
                     finally:
@@ -506,6 +514,7 @@ for key, schoolname in SCHOOLS:
                 "usccss.b01.g1.complete_missing_dots",
                 "usccss.b01.g1.check_off_add_within10",
             }
+            l02_grading_evidence=[]
             for wrong_answers in (False, True):
                 l02_fields = dict(practice_fields)
                 l02_fields["lessonId"] = next_id
@@ -591,9 +600,54 @@ for key, schoolname in SCHOOLS:
                 wanted=0 if wrong_answers else 3
                 assert submitted=="1" and float(score)==wanted and int(correct_count)==wanted,(
                     "L02 wrong answer grading/persistence",wrong_answers,saved)
+                l02_grading_evidence.append({
+                    "case":"wrong" if wrong_answers else "correct",
+                    "submitted":submitted=="1",
+                    "expectedCorrectItems":wanted,
+                    "persistedCorrectItems":int(correct_count),
+                    "persistedScore":float(score),
+                    "familyIds":sorted(next_families)
+                })
                 print("DISPOSABLE_G1_U01_L02_PRACTICE_SCORING_PASS",
                       "negative" if wrong_answers else "positive",
                       ",".join(sorted(next_families)),flush=True)
+            # The screenshot and positive/negative grading evidence is
+            # written only after the authenticated Chromium/DB proof passes.
+            # Never infer L6 PASS or academic certification from the JSON alone.
+            assert set(l02_screens)=={"desktop","mobile"}
+            assert {x["case"] for x in l02_grading_evidence}=={"correct","wrong"}
+            manifest=json.loads(Path(
+                "artifacts/academic-us-ccss/batches/B01-lesson-manifest.json"
+            ).read_text(encoding="utf-8"))
+            lesson_rows=[x for x in manifest["lessons"]
+                         if x["lessonCode"]==next_code]
+            assert len(lesson_rows)==1
+            ledger=json.loads(Path(
+                "artifacts/academic-us-ccss/04-lesson-certification-records.json"
+            ).read_text(encoding="utf-8"))
+            certified=[x for x in ledger["records"]
+                       if x["lessonCode"]==next_code]
+            assert len(certified)==1
+            current=certified[0]
+            assert current["contentSha256"] and len(current["contentSha256"])==64
+            assert current["status"]=="AUTOMATED_SCREENED"
+            evidence={
+                "schemaVersion":1,
+                "kind":"G1_U01_L02_AUTHENTICATED_STUDENT_L6_CANDIDATE",
+                "decision":"BROWSER_AND_GRADING_PROOF_ONLY_NOT_ACADEMIC_CERTIFICATION",
+                "checkedOutCommit":os.environ.get("GITHUB_SHA"),
+                "lessonCode":next_code,
+                "sourceSemanticSha256":lesson_rows[0]["sourceSemanticSha256"],
+                "effectiveContentSha256":current["contentSha256"],
+                "environment":"DISPOSABLE_US_PRIMARY_HTTPS_POSTGRES",
+                "screenshots":l02_screens,
+                "grading":l02_grading_evidence,
+                "academicDecision":"NOT_CERTIFIED"
+            }
+            Path("/tmp/g1-u01-l02-student-l6-evidence.json").write_text(
+                json.dumps(evidence,indent=2)+"\n",encoding="utf-8")
+            print("DISPOSABLE_G1_L02_AUTHENTICATED_SHA_BOUND_L6_CANDIDATE_PASS",
+                  current["contentSha256"],flush=True)
 
     practice_attempts[key] = match_attempt.group(1)
     students[key] = student
