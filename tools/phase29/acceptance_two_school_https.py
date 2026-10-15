@@ -163,7 +163,10 @@ for key, schoolname in SCHOOLS:
             "rich-lesson-visual",
             "rich-lesson-section",
             "CC BY 4.0",
-            "im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/lesson.html",
+            # The public CC BY 4.0 footer links the original teacher
+            # preparation page, not the private V9 source audit's lesson.html.
+            # Validate the actual credited URL instead of a stale test literal.
+            "im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/preparation.html",
         ):
             assert required in pilot_page, (
                 "G1 U01 L01 authenticated Rich V2 content missing", required)
