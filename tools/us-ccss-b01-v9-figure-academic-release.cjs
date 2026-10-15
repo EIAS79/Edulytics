@@ -66,13 +66,33 @@ function validate({domReport,activityMap,ledger,verification}) {
     assert.ok(sha(p.rightsDeterminationSha256),
       'No-restriction rights determination must have auditable original evidence');
     linked('L1',p.rightsDeterminationEvidenceId);
-   } else if(p.rightsBasis==='LICENSED_PUBLISHER_ASSET_REUSE') {
+   } else if(p.rightsBasis==='CC_BY_4_0_OPEN_LICENSE') {
+    // CC BY 4.0 grants permission through the public license itself.
+    // Do not demand an individual publisher grant for openly licensed assets.
     assert.equal(p.publisherAssetDisplayed,true);
     assert.equal(p.attributionRequired,true,
-      'Copied CC BY assets require attribution; a silent copy is not licensed');
+      'CC BY 4.0 requires an actual attribution even for free software');
+    linked('L1',p.openLicenseEvidenceId);
+    linked('L1',p.attributionLocationEvidenceId);
+    licensed++;
+   } else if(p.rightsBasis==='CC_BY_NC_4_0_VERIFIED_NONCOMMERCIAL') {
+    // Zero purchase price alone cannot prove noncommercial usage.
+    assert.equal(p.publisherAssetDisplayed,true);
+    assert.equal(p.attributionRequired,true,
+      'CC BY-NC 4.0 retains the attribution requirement');
+    assert.equal(p.nonCommercialUseVerified,true,
+      'Free distribution is not proof of noncommercial use');
+    linked('L1',p.openLicenseEvidenceId);
+    linked('L1',p.nonCommercialUseAssessmentEvidenceId);
+    linked('L1',p.attributionLocationEvidenceId);
+    licensed++;
+   } else if(p.rightsBasis==='LICENSED_PUBLISHER_ASSET_REUSE') {
+    // Separate permission is needed only when relying on a separate grant,
+    // rather than on the conditions of a suitable open license.
+    assert.equal(p.publisherAssetDisplayed,true);
+    assert.equal(p.attributionRequired,true,
+      'Follow attribution terms for this explicitly licensed asset');
     linked('L1',p.licenseGrantEvidenceId);
-    assert.ok(eid(p.attributionLocationEvidenceId),
-      'A valid linked attribution/credits proof is required');
     linked('L1',p.attributionLocationEvidenceId);
     licensed++;
    } else assert.fail('Unresolved original-image rights classification');

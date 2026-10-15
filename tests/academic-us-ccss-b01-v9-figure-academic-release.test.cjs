@@ -87,6 +87,40 @@ test('Copying a CC BY publisher asset without required credit is blocked',()=>{
  x.ledger.records[0].gates.L1.evidenceIds.push(p.attributionLocationEvidenceId);
  assert.equal(verifyFigureAcademicRelease(x).releaseEligible,true);
 });
+test('CC BY 4.0 permits publisher-asset reuse without a separate written grant',()=>{
+ const x=fixture(),p=x.verification.records[0].figures[0],
+  l1=x.ledger.records[0].gates.L1;
+ p.rightsBasis='CC_BY_4_0_OPEN_LICENSE';
+ p.publisherAssetDisplayed=true;
+ p.attributionRequired=true;
+ p.openLicenseEvidenceId='cc_by_2021_original_license';
+ p.attributionLocationEvidenceId='credits_2021_original_image';
+ l1.evidenceIds.push(p.openLicenseEvidenceId,p.attributionLocationEvidenceId);
+ assert.equal(verifyFigureAcademicRelease(x).releaseEligible,true);
+ p.attributionRequired=false;
+ assert.throws(()=>verifyFigureAcademicRelease(x),/attribution/);
+ p.attributionRequired=true;
+ p.openLicenseEvidenceId='not_linked_license';
+ assert.throws(()=>verifyFigureAcademicRelease(x),/linked evidence/);
+});
+test('CC BY-NC 4.0 demands proof of noncommercial use, not just a free price',()=>{
+ const x=fixture(),p=x.verification.records[0].figures[0],
+  l1=x.ledger.records[0].gates.L1;
+ p.rightsBasis='CC_BY_NC_4_0_VERIFIED_NONCOMMERCIAL';
+ p.publisherAssetDisplayed=true;
+ p.attributionRequired=true;
+ p.openLicenseEvidenceId='cc_by_nc_2024_original_license';
+ p.attributionLocationEvidenceId='credits_2024_original_image';
+ p.nonCommercialUseAssessmentEvidenceId='noncommercial_purpose_assessment';
+ p.salePrice=0;
+ l1.evidenceIds.push(p.openLicenseEvidenceId,
+  p.attributionLocationEvidenceId,p.nonCommercialUseAssessmentEvidenceId);
+ assert.throws(()=>verifyFigureAcademicRelease(x),/Free distribution/);
+ p.nonCommercialUseVerified=true;
+ assert.equal(verifyFigureAcademicRelease(x).releaseEligible,true);
+ p.nonCommercialUseAssessmentEvidenceId='not_linked_assessment';
+ assert.throws(()=>verifyFigureAcademicRelease(x),/linked evidence/);
+});
 test('Any fabricated or stale math/rights/L6 evidence blocks final visual release',()=>{
  const bad=[
   x=>x.verification.records.pop(),
