@@ -44,8 +44,8 @@ public sealed class UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests
             .Where(l=>MathematicsCanonicalLessonContentSeeder
                 .IsSourceBoundJsonMetadataCandidate(d,l))
             .Select(l=>l.LessonCode)).ToArray();
-        Assert.Equal(181,candidates.Length);
-        Assert.Equal(181,candidates.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(182,candidates.Length);
+        Assert.Equal(182,candidates.Distinct(StringComparer.Ordinal).Count());
         foreach(var code in Codes)
             Assert.Contains(code,candidates);
         Assert.Equal(5,CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.ExpectedCount);
