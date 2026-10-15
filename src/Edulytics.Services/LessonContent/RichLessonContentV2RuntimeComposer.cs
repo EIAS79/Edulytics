@@ -680,6 +680,67 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
+        // First-party source-goal relevant models for T001.
+        // No IM/Kendall Hunt images or textual source tasks reproduced.
+        if(lessonCode=="PED:US-CCSS-MATH:G1:U01:L06" ||
+           lessonCode=="PED:US-CCSS-MATH:G1:U01:L10")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Find the missing partner to make ten",
+                    Description="A ten-frame has ten spaces: six filled dots and four empty spaces. Fill four blanks to make ten: 6+4=10 and 10-6=4.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Top five",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Bottom five",Cells=["●","○","○","○","○"]}
+                    ]
+                },
+                questionForms
+            ];
+        }
+        if(lessonCode=="PED:US-CCSS-MATH:G1:U01:L07" ||
+           lessonCode=="PED:US-CCSS-MATH:G1:U01:L08" ||
+           lessonCode=="PED:US-CCSS-MATH:G1:U01:L09")
+        {
+            var visual=lessonCode.EndsWith("L07",StringComparison.Ordinal)
+                ? new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Sort school math tools into categories",
+                    Description="Count the tools in each labeled category; every object appears in only one group. Total nine objects.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Counters — 4",Cells=["●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Inch tiles — 3",Cells=["■","■","■"]},
+                        new RichLessonVisualRow {Label="Pattern blocks — 2",Cells=["⬡","⬡"]}
+                    ]
+                }
+                : lessonCode.EndsWith("L08",StringComparison.Ordinal)
+                ? new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Shape categories and how many",
+                    Description="Sort shapes by their kind: 2 triangles, 3 squares and 4 circles, all labeled. Total nine cards.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Triangles — 2",Cells=["▲","▲"]},
+                        new RichLessonVisualRow {Label="Squares — 3",Cells=["■","■","■"]},
+                        new RichLessonVisualRow {Label="Circles — 4",Cells=["●","●","●","●"]}
+                    ]
+                }
+                : new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Sample class survey category table",
+                    Description="Fictional practice data only, not real class votes. Name each category and show 3 apple, 2 banana and 4 orange votes.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Apples — 3",Cells=["●","●","●"]},
+                        new RichLessonVisualRow {Label="Bananas — 2",Cells=["●","●"]},
+                        new RichLessonVisualRow {Label="Oranges — 4",Cells=["●","●","●","●"]}
+                    ]
+                };
+            return [visual,questionForms];
+        }
+
         return [questionForms];
     }
 
