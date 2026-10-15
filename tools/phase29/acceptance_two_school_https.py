@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Real HTTPS two-tenant smoke test. Run only against disposable CI PostgreSQL."""
 import html
+import hashlib
 import http.cookiejar
 import json
 import os
@@ -299,6 +300,22 @@ for key, schoolname in SCHOOLS:
                                 ).count()>0, (
                                     "T001 original skill visual missing",
                                     lesson_code,screen)
+                            if screen=="desktop":
+                                rendered_sections=page.locator(
+                                    ".rich-lesson-section").all_inner_texts()
+                                rendered_text="\\n".join(
+                                    item.strip() for item in rendered_sections)
+                                assert (len(rendered_text)>400
+                                        and "Worked model" in rendered_text), (
+                                    "T001 rendered academic body unexpectedly empty",
+                                    lesson_code,len(rendered_text))
+                                digest=hashlib.sha256(
+                                    rendered_text.encode("utf-8")).hexdigest()
+                                print("T001_RENDERED_LESSON_SHA256",
+                                      lesson_code,digest,
+                                      "sections",len(rendered_sections),
+                                      "characters",len(rendered_text),
+                                      flush=True)
                             page.screenshot(
                                 path=f"/tmp/g1-u01-{suffix.lower()}-{screen}.png",
                                 full_page=True)
