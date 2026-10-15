@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "kind": "B01_SOURCE_BOUND_AUTHENTICATED_STUDENT_L6_CANDIDATE_WITNESS",
+  "decision": "REVIEWABLE_L6_CANDIDATE_NOT_ACADEMIC_CERTIFICATION",
+  "batchId": "B01",
+  "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
+  "title": "Explore Expressions and Sums",
+  "sourceEdition": "IM K5 2021 (CC BY 4.0)",
+  "originalTeacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-2/lesson.html",
+  "originalTeacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-2/preparation.html",
+  "originalLessonBodySha256": "7d8c9aa59717d264f80522bcf07c5385b5f332b2808b66c5c75fb19672c70e33",
+  "sourceSemanticSha256": "fdcaa650396daf2509379d57c4695bd2fefcf04ed67ed28ad2030c887a56396e",
+  "effectiveContentSha256": "bbf2fce57dc8701025d804b36a72665ec6ac912f76443e99c5d716244b3c332e",
+  "checkedOutCommit": "e4c2c5f02beb7f8a765c42f2188f1a06a8197fde",
+  "githubRunId": "38742726103",
+  "githubRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/38742726103",
+  "environment": "DISPOSABLE_US_PRIMARY_HTTPS_POSTGRES",
+  "screenshots": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "dotCounts": [
+        5,
+        5
+      ],
+      "sha256": "51bf7d6b0087d69a0df93cb24b8631c36fc8c05425d70c3255ecc8b3c3b24ba6"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "dotCounts": [
+        5,
+        5
+      ],
+      "sha256": "cba99d7769cc1eb2147f7c329d1ac89deaeefd67c3f294a4c7ebca1bb6e9df0a"
+    }
+  },
+  "verifiedScoring": [
+    {
+      "case": "correct",
+      "submitted": true,
+      "persistedCorrectItems": 3,
+      "persistedScore": 3
+    },
+    {
+      "case": "wrong",
+      "submitted": true,
+      "persistedCorrectItems": 0,
+      "persistedScore": 0
+    }
+  ],
+  "exactSourceFamilies": [
+    "usccss.b01.g1.check_off_add_within10",
+    "usccss.b01.g1.complete_missing_dots",
+    "usccss.b01.g1.match_dot_cubes_expression"
+  ],
+  "artifactIds": {
+    "authenticatedSourceShaBrowserGrading": "11975539856",
+    "authenticatedDesktopMobileScreenshots": "11975729692",
+    "independentL6Verification": "11976915615"
+  },
+  "independentVerificationDecision": "BROWSER_EVIDENCE_REVIEWABLE_NOT_ACADEMIC_L6_PASS",
+  "originalTeacherActivityEvidence": [
+    "Source activity matches two dot-image groups to one addition expression",
+    "Source prompts include matching 4+2, completing 5+2 and 2+6, and finding each sum",
+    "Separate Check It Off practice uses two number cards 0–5 and records their sum"
+  ],
+  "pendingBeforeCertification": [
+    "Independently review all six L1–L6 academic gate requirements and eight lesson dimensions against the frozen product release candidate",
+    "Verify that archived source-matched student screenshots remain available; CI artifacts expire",
+    "Do not treat disposable test-school interaction as proof of live Render deployment",
+    "No PASS or INTERNAL_CERTIFIED status may be derived solely from this candidate witness"
+  ],
+  "approvedL1L6": false,
+  "approvedEightDimensions": false,
+  "academicDecision": "NOT_CERTIFIED",
+  "batchReleaseEligible": false
+}
