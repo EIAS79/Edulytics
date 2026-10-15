@@ -14,6 +14,8 @@ on:
       - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssT001IsolatedReleaseTests.cs'
       - '.github/workflows/us-ccss-t001-isolated-ci.yml'
+      - 'artifacts/academic-us-ccss/batches/T001-lesson-manifest.json'
+      - 'tools/us-ccss-t001-release-gate.cjs'
   workflow_dispatch:
 
 permissions:
@@ -35,5 +37,13 @@ jobs:
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
             --filter 'FullyQualifiedName~UsCcssT001IsolatedReleaseTests' \
             --logger 'console;verbosity=normal'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Inspect actual ten-lesson certification ledger without bypassing blocked gates
+        run: |
+          node tools/us-ccss-t001-release-gate.cjs --status > /tmp/t001-academic-status.json
+          cat /tmp/t001-academic-status.json
+          node -e 'const d=require("/tmp/t001-academic-status.json");if(d.state!=="BATCH_NO-GO"&&d.state!=="BATCH_EVIDENCE_READY")process.exit(1);console.log("T001",d.state,"evidenceReady",d.evidenceReady,"missing",d.remainingEvidence);'
       - name: This job is technical, not academic certification or publication
         run: echo 'T001 requires 10/10 independently verified L1-L6, eight dimensions and authenticated live student testing before merge.'
