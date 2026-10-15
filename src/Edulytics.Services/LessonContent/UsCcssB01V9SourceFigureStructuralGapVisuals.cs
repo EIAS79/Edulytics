@@ -4,7 +4,7 @@ using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
 /// <summary>
-/// Source-goal-bound representative mathematical visuals for the 13 B01
+/// Source-goal-bound representative mathematical visuals for the 14 B01
 /// figure-source lessons that previously composed ONLY an EquationSet.
 /// Shared rendering primitives and independent illustrations are reused;
 /// each exact source-goal identity fails closed on content drift.
@@ -17,6 +17,7 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
     private static readonly IReadOnlyDictionary<string,Goal> SourceGoals =
         new Dictionary<string,Goal>(StringComparer.Ordinal)
         {
+            [Prefix+"G2:U05:L07"]=new("Center Day 1 (optional)","work with place value and practice addition and subtraction within 100"),
             [Prefix+"G2:U06:L03"]=new("Specific Side Lengths","sides with a given length"),
             [Prefix+"G2:U06:L05"]=new("Center Day 1 (optional)","describing, naming, and drawing triangles"),
             [Prefix+"G2:U06:L19"]=new("More Money Problems","context of money"),
@@ -43,6 +44,12 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
            !body.Explanation.Contains(goal.Cue,StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(
                 "B01 source-bound figure purpose drift: "+lessonCode);
+        // The original G2 center has students pick exactly three cards for a
+        // mystery three-digit number and describe hundreds, tens, and ones.
+        if(lessonCode==Prefix+"G2:U05:L07" &&
+           !body.Explanation.Contains("three-digit number",StringComparison.OrdinalIgnoreCase))
+            throw new InvalidOperationException(
+                "B01 G2 U05 L07 mystery-number center purpose drift: "+lessonCode);
         if(lessonCode==Prefix+"G2:U09:L10" &&
            (!body.WorkedExamples.Contains("Elena picked 29 apples.",StringComparison.Ordinal) ||
             !body.WorkedExamples.Contains("14 fewer apples than Han",StringComparison.Ordinal) ||
@@ -51,6 +58,16 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                 "B01 G2 U09 L10 student-story quantities drift: "+lessonCode);
         return lessonCode[Prefix.Length..] switch
         {
+            "G2:U05:L07" => [new RichLessonVisual {
+                Kind=RichLessonVisualKind.PlaceValueChart,
+                Title="Mystery number: three digit cards 3, 7 and 4",
+                Description="Illustrative student-made card example, not a copied publisher diagram: 3 hundreds, 7 tens and 4 ones form 374. The 3 is worth 300, the 7 is worth 70, and the 4 is worth 4. Clue: a three-digit number between 370 and 380 with 4 ones.",
+                Rows=[
+                    new RichLessonVisualRow { Label="Place", Cells=["Hundreds","Tens","Ones"] },
+                    new RichLessonVisualRow { Label="Card", Cells=["3","7","4"] },
+                    new RichLessonVisualRow { Label="Value", Cells=["300","70","4"] }
+                ]
+            }],
             "G2:U06:L03" => [Rectangle("3 cm by 2 cm rectangle",
                 "Rectangle with opposite 3 cm sides and opposite 2 cm sides. The display is NOT a physical-size ruler. Use a separate physical ruler for a 3 cm drawing.",
                 3,2,"cm")],

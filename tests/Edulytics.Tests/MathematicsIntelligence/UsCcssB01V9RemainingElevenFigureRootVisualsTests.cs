@@ -15,6 +15,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     private const string Prefix="PED:US-CCSS-MATH:";
 
     [Theory]
+    [InlineData("G2:U05:L07","fc5517a9c6a940a221cfae873c6739ac981bb60d8f1157c14068adeea61cf2ee","PlaceValueChart")]
     [InlineData("G2:U06:L03","940b693c00be0380fb8449140b2648a3aa593291b5894f89643fcd9f7eb15c91","RectangleDiagram")]
     [InlineData("G2:U06:L05","1fba9d0727ad2e26b5389c2e73fe80046871586273bc21502862a36fed9ea709","PolygonDiagram")]
     [InlineData("G2:U06:L19","5ed030269c542b6f0a1a7bb27c7108712dbb1c15daea05a36e9e424228de2a36","TapeDiagram")]
@@ -57,7 +58,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [Fact]
     public void SharedSourceLessonScopeAndEvenOddSemanticsStayFailClosed()
     {
-        Assert.Equal(13,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
+        Assert.Equal(14,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
         var even=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U08:L02",
             GetBody(Prefix+"G2:U08:L02"));
@@ -98,6 +99,23 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
         Assert.Throws<InvalidOperationException>(()=>
             UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
                 Prefix+"G2:U08:L02",altered));
+    }
+
+    [Fact]
+    public void ThreeDigitMysteryCardModelRepresentsHundredsTensAndOnes()
+    {
+        var code=Prefix+"G2:U05:L07";
+        var visuals=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,GetBody(code));
+        Assert.NotNull(visuals);
+        var v=Assert.Single(visuals);
+        Assert.Equal(RichLessonVisualKind.PlaceValueChart,v.Kind);
+        Assert.Equal(["Hundreds","Tens","Ones"],v.Rows[0].Cells);
+        Assert.Equal(["3","7","4"],v.Rows[1].Cells);
+        Assert.Equal(["300","70","4"],v.Rows[2].Cells);
+        Assert.Equal(374,300+70+4);
+        var altered=GetBody(code) with { Explanation="Generic algebra activity" };
+        Assert.Throws<InvalidOperationException>(()=>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,altered));
     }
 
     [Fact]
