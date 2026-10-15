@@ -69,6 +69,32 @@ public sealed class UsCcssT001IsolatedReleaseTests
                         if(n==6 || (n==10 && family.EndsWith("make_ten_missing_part",
                                 StringComparison.Ordinal)))
                             Assert.Equal(10,q.Parameters["known"]+q.Parameters["missing"]);
+                        // Detect a dishonest "sorting" prompt that already
+                        // displays the category count and requires no classification.
+                        if(n is 7 or 8 or 9)
+                        {
+                            var label=n==7?"Tools: ":n==8?"Cards: ":"Unsorted votes: ";
+                            var begin=q.Prompt.IndexOf(label,StringComparison.Ordinal);
+                            Assert.True(begin>=0,"Missing unsorted items for "+code);
+                            begin+=label.Length;
+                            var end=q.Prompt.IndexOf(". ",begin,StringComparison.Ordinal);
+                            Assert.True(end>begin,"Unsorted items not delimited");
+                            var listed=q.Prompt[begin..end]
+                                .Split(", ",StringSplitOptions.None);
+                            string[] tokens=n switch
+                            {
+                                7=>["counter","pattern block","inch tile"],
+                                8=>["triangle","square","circle"],
+                                _=>["apple","banana","orange"]
+                            };
+                            Assert.Equal(q.Parameters["first"]+
+                                q.Parameters["second"]+q.Parameters["third"],listed.Length);
+                            Assert.Equal(q.Parameters["first"],listed.Count(x=>x==tokens[0]));
+                            Assert.Equal(q.Parameters["second"],listed.Count(x=>x==tokens[1]));
+                            Assert.Equal(q.Parameters["third"],listed.Count(x=>x==tokens[2]));
+                            Assert.All(listed,x=>Assert.Contains(x,tokens));
+                        }
+
                         checkedCount++;
                     }
         }
