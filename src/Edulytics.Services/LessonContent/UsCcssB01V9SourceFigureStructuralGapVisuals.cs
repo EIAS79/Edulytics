@@ -4,7 +4,7 @@ using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
 /// <summary>
-/// Source-goal-bound representative mathematical visuals for the 15 B01
+/// Source-goal-bound representative mathematical visuals for the 16 B01
 /// figure-source lessons that previously composed ONLY an EquationSet.
 /// Shared rendering primitives and independent illustrations are reused;
 /// each exact source-goal identity fails closed on content drift.
@@ -31,7 +31,8 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
             [Prefix+"G3:U07:L04"]=new("Attributes of Rectangles, Rhombuses, and Squares PLC Activity","rhombus, rectangle, or square"),
             [Prefix+"G3:U07:L06"]=new("Distance Around Shapes","perimeter"),
             [Prefix+"G3:U08:L01"]=new("Estimation Explorations with Fractions","fraction representations through estimation"),
-            [Prefix+"G4:U04:L20"]=new("Add and Subtract Within 1,000,000 PLC Activity","multiple compositions or decompositions")
+            [Prefix+"G4:U04:L20"]=new("Add and Subtract Within 1,000,000 PLC Activity","multiple compositions or decompositions"),
+            [Prefix+"G4:U01:L08"]=new("Mondrian's Art (optional)","area of rectangles and factor pairs")
         };
 
     public static int ExpectedCount => SourceGoals.Count;
@@ -51,6 +52,12 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
            !body.Explanation.Contains("three-digit number",StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(
                 "B01 G2 U05 L07 mystery-number center purpose drift: "+lessonCode);
+        if(lessonCode==Prefix+"G4:U01:L08" &&
+           (!body.WorkedExamples.Contains("18-by-24 grid",StringComparison.Ordinal) ||
+            !body.WorkedExamples.Contains("at least 12 rectangles",StringComparison.Ordinal) ||
+            !body.WorkedExamples.Contains("prime number",StringComparison.Ordinal)))
+            throw new InvalidOperationException(
+                "B01 G4 U01 L08 area-design source constraints drift: "+lessonCode);
         if(lessonCode==Prefix+"G3:U05:L18" &&
            (!body.WorkedExamples.Contains(@"\frac{1}{2}",StringComparison.Ordinal) ||
             !body.WorkedExamples.Contains("Connect each point",StringComparison.Ordinal)))
@@ -146,6 +153,20 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                     new RichLessonVisualRow{Label="Estimate: one half",Numerator=4,Denominator=8},
                     new RichLessonVisualRow{Label="Five eighths",Numerator=5,Denominator=8}
                 ]}],
+            "G4:U01:L08" => [new RichLessonVisual{
+                Kind=RichLessonVisualKind.ShapeDecomposition,
+                Title="Create your own 18 by 24 rectangular area design",
+                Description="One independent solution to the art-and-factors challenge: an 18 by 24 unit grid with six horizontal bands, split into 12 rectangles. Two separate rectangles both have area 2 square units, which is prime. All 12 rectangles cover exactly 432 unit squares without overlaps. Different correct designs are possible.",
+                SecondaryLabel="Independent-G4-18x24-Rectangular-Partition",
+                Rows=[
+                    new RichLessonVisualRow {Label="Band 1",Cells=["1","2","22"]},
+                    new RichLessonVisualRow {Label="Band 2",Cells=["2","1","23"]},
+                    new RichLessonVisualRow {Label="Band 3",Cells=["3","8","16"]},
+                    new RichLessonVisualRow {Label="Band 4",Cells=["4","5","19"]},
+                    new RichLessonVisualRow {Label="Band 5",Cells=["5","10","14"]},
+                    new RichLessonVisualRow {Label="Band 6",Cells=["3","12","12"]}
+                ]
+            }],
             "G4:U04:L20" => [new RichLessonVisual{
                 Kind=RichLessonVisualKind.PlaceValueChart,
                 Title="Regroup 75,940 − 12,786 without changing value",

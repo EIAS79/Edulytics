@@ -31,6 +31,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [InlineData("G3:U07:L06","c1231a52553453e0c5568f68fc908b247d53728ef1a65a656cc2bf829221933e","RectangleDiagram")]
     [InlineData("G3:U08:L01","9af7452882227dec9eb391337cf76a47c64497fcba9e30f126cb80b04af63da3","FractionBars")]
     [InlineData("G4:U04:L20","26096e487bc9df48865e2a3485c3001d75ab7d8a4a147524b5d7a527fef9ddac","PlaceValueChart")]
+    [InlineData("G4:U01:L08","aa8fa8c24ac3bba53600725e8f3a92d16e35a644d2783c121cd3183087eb0d5c","ShapeDecomposition")]
     public void SourcePurposeLessonsGainMathematicallyConcreteVisual(
         string suffix,string rawBodySha,string kind)
     {
@@ -59,7 +60,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [Fact]
     public void SharedSourceLessonScopeAndEvenOddSemanticsStayFailClosed()
     {
-        Assert.Equal(15,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
+        Assert.Equal(16,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
         var even=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U08:L02",
             GetBody(Prefix+"G2:U08:L02"));
@@ -145,6 +146,36 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
         var drift=GetBody(code) with { WorkedExamples="Draw a square only" };
         Assert.Throws<InvalidOperationException>(()=>
             UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,drift));
+    }
+
+    [Fact]
+    public void SourceAreaMosaicUsesAll432SquaresAndTwelveRectangles()
+    {
+        var code=Prefix+"G4:U01:L08";
+        var visual=Assert.Single(UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,GetBody(code))!);
+        Assert.Equal(RichLessonVisualKind.ShapeDecomposition,visual.Kind);
+        Assert.Equal("Independent-G4-18x24-Rectangular-Partition",visual.SecondaryLabel);
+        Assert.Equal(6,visual.Rows.Count);
+        var areaCounts=new List<int>();
+        var totalHeight=0;
+        foreach(var row in visual.Rows)
+        {
+            var height=int.Parse(row.Cells[0]);
+            var left=int.Parse(row.Cells[1]);
+            var right=int.Parse(row.Cells[2]);
+            Assert.Equal(24,left+right);
+            totalHeight+=height;
+            areaCounts.Add(height*left);
+            areaCounts.Add(height*right);
+        }
+        Assert.Equal(18,totalHeight);
+        Assert.Equal(12,areaCounts.Count);
+        Assert.Equal(432,areaCounts.Sum());
+        Assert.True(areaCounts.Count(n=>n==2)>=2);
+        Assert.Contains(2,areaCounts);
+        var changed=GetBody(code) with { WorkedExamples="Random rectangles without source counts" };
+        Assert.Throws<InvalidOperationException>(()=>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,changed));
     }
 
     [Fact]
