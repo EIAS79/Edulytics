@@ -123,10 +123,10 @@ jobs:
           export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/phase-uat-identity.pfx
           export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
           export Edulytics__MeetingDemo__ResetAndSeed='false'
-          # The runner starts at repository root. Pin the ASP.NET content root
-          # to the web project so MapStaticAssets serves wwwroot CSS/JS/images.
-          export ASPNETCORE_CONTENTROOT="$GITHUB_WORKSPACE/src/Edulytics.Web"
-          dotnet run --no-build --no-launch-profile --project src/Edulytics.Web/Edulytics.Web.csproj > /tmp/us-ccss-web.log 2>&1 &
+          # Test the actual published web root (not development-only static
+          # asset manifests). This is the Render-like deployable artifact.
+          export ASPNETCORE_CONTENTROOT=/tmp/us-ccss-web-publish
+          dotnet /tmp/us-ccss-web-publish/Edulytics.Web.dll > /tmp/us-ccss-web.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           ready=false
