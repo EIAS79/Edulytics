@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text.Json;
 using Edulytics.Core.Enums;
 
 namespace Edulytics.Services.Mathematics;
@@ -59,17 +60,36 @@ internal static class UsCcssT001AuthoredActivities
                 AssessmentItemType.ShortAnswer,parameters);
         }
 
+        // Six genuinely different Grade 1 survey questions, each with a
+        // source-meaningful sample-size requirement. This gives 24 distinct
+        // semantic instances; do NOT pad ten-item sessions with duplicate
+        // wording-only variants or fictitious named respondents.
+        var topics=new[]
+        {
+            ("fruit","apple, banana, orange"),
+            ("animal","cat, dog, bird"),
+            ("color","red, blue, green"),
+            ("shape","triangle, square, circle"),
+            ("classroom tool","pencil, notebook, eraser"),
+            ("game","tag, hopscotch, hide and seek")
+        };
+        var topic=rng.Next(topics.Length);
+        var minimumVotes=rng.Next(5,9);
         return new Problem(family,
-            "REAL CLASS SURVEY: Ask 5 to 10 participants which fruit they prefer: "+
-            "apple, banana or orange. Record each vote once WITHOUT names, "+
-            "then build your OWN three-column chart. A teacher must verify "+
-            "that actual people were surveyed; the automatic check only "+
+            $"REAL CLASS SURVEY: Ask {minimumVotes} to 10 real participants " +
+            $"which {topics[topic].Item1} they like best. " +
+            $"Choices: {topics[topic].Item2}. Record each vote once WITHOUT names, " +
+            "then build your OWN three-column chart. A teacher must verify " +
+            "that actual people were surveyed; the automatic check only " +
             "checks the entered votes against the graph.",
-            "Your recorded anonymous votes and chart counts must agree. "+
+            "Your recorded anonymous votes and chart counts must agree. " +
             "Teacher verification is required for evidence of real participant collection.",
             AssessmentItemType.ShortAnswer,
             new Dictionary<string,int>(StringComparer.Ordinal)
-            { ["minimumVotes"]=5,["maximumVotes"]=10 });
+            {
+                ["minimumVotes"]=minimumVotes,["maximumVotes"]=10,
+                ["topic"]=topic
+            });
     }
 
     private static bool Valid(string family,IReadOnlyDictionary<string,int> p)
@@ -94,7 +114,9 @@ internal static class UsCcssT001AuthoredActivities
         }
         return p.TryGetValue("minimumVotes",out var minimum) &&
             p.TryGetValue("maximumVotes",out var maximum) &&
-            minimum==5 && maximum==10;
+            p.TryGetValue("topic",out var topic) &&
+            minimum is >=5 and <=8 && maximum==10 &&
+            topic is >=0 and <=5;
     }
 
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
@@ -121,19 +143,35 @@ internal static class UsCcssT001AuthoredActivities
     /// anonymous vote/tally pairs; this is NOT proof of real participants.
     /// </summary>
     public static bool GradePersistedAnswer(
-        string? family,string expected,string? submitted)
+        string? family,string expected,string? submitted,string? parametersJson)
     {
         if(!Supports(family) || string.IsNullOrWhiteSpace(submitted))
             return false;
         if(family!=Survey)
             return string.Equals(submitted.Trim(),expected,StringComparison.Ordinal);
-        if(!string.Equals(expected,SurveySolverSentinel,StringComparison.Ordinal))
+        if(!string.Equals(expected,SurveySolverSentinel,StringComparison.Ordinal) ||
+            string.IsNullOrWhiteSpace(parametersJson))
             return false;
-        var scope=new Dictionary<string,int>(StringComparer.Ordinal)
+        // The item is server-owned and persisted. Never allow a student
+        // to pick the required sample size or survey question during grading.
+        try
         {
-            ["minimumVotes"]=5,["maximumVotes"]=10
-        };
-        return GradeStudentAnswer(Survey,scope,submitted);
+            using var json=JsonDocument.Parse(parametersJson);
+            if(!json.RootElement.TryGetProperty("parameters",out var parameters) ||
+                parameters.ValueKind!=JsonValueKind.Object)
+                return false;
+            var p=new Dictionary<string,int>(StringComparer.Ordinal);
+            foreach(var field in parameters.EnumerateObject())
+            {
+                if(field.Value.ValueKind!=JsonValueKind.Number ||
+                    !field.Value.TryGetInt32(out var value))
+                    return false;
+                p[field.Name]=value;
+            }
+            return GradeStudentAnswer(Survey,p,submitted);
+        }
+        catch(JsonException) { return false; }
+        catch(InvalidOperationException) { return false; }
     }
 
     public static bool GradeStudentAnswer(
