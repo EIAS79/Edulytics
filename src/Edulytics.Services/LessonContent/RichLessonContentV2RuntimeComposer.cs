@@ -685,6 +685,74 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
+        // Grade 1 source-aligned visible models. Each marker stands for
+        // exactly one counter or one step, authored by Edulytics rather
+        // than lifted from publisher artwork.
+        if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L02")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Two dot cards make an addition expression",
+                    Description="Draw the two groups separately, then count them together. Four dots and three dots show 4 + 3 = 7.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="First card — four",Cells=["●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Second card — three",Cells=["●","●","●"]}
+                    ]
+                },
+                questionForms
+            ];
+        }
+        if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L03")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Start at five, count forward two",
+                    Description="Keep the first five counters; add two new counters. The two new counting numbers are six and seven: 5 + 2 = 7.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Start with five",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Count on: six, seven",Cells=["①","②","","",""]}
+                    ]
+                },
+                questionForms
+            ];
+        }
+        if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L04")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Start at eight, take away two",
+                    Description="Cross out exactly two counters. Count backward: eight, seven, six. Six counters remain, so 8 - 2 = 6.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Eight counters",Cells=["●","●","●","●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="After two removed",Cells=["●","●","●","●","●","●","×","×"]}
+                    ]
+                },
+                questionForms
+            ];
+        }
+        if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L05")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Joining and taking away are different actions",
+                    Description="First join four and two counters: 4 + 2 = 6. Then remove two from six: 6 - 2 = 4.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Four plus two",Cells=["●","●","●","●","○","○"]},
+                        new RichLessonVisualRow {Label="Six minus two",Cells=["●","●","●","●","×","×"]}
+                    ]
+                },
+                questionForms
+            ];
+        }
+
         // First-party source-goal relevant models for T001.
         // No IM/Kendall Hunt images or textual source tasks reproduced.
         if(lessonCode=="PED:US-CCSS-MATH:G1:U01:L06" ||
