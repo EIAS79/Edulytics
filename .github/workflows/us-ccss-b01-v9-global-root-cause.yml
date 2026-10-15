@@ -153,6 +153,10 @@ jobs:
           node --test tests/academic-us-ccss-b01-v9-full-500-numeric-equation-triage.test.cjs
           node tools/us-ccss-b01-v9-full-500-numeric-equation-triage.cjs --out=b01-v9-500-numeric-equations-no-fake-academic-pass.json
           node -e "const x=require('./b01-v9-500-numeric-equations-no-fake-academic-pass.json');if(x.scope.expected!==500||x.scope.covered!==500||x.scope.unique!==500||x.rows.length!==500||x.scope.fullLessonAcademicCertificationsGranted!==0||x.academicDecision!=='BATCH_NO-GO'||x.releaseEligible!==false)process.exit(1);console.log(JSON.stringify({scope:x.scope,decision:x.academicDecision}));"
+      - name: Inspect actual canonical 500-lesson collective certification gate — read-only NO premature merge
+        run: |
+          node tools/us-ccss-b01-release-gate.cjs --status > b01-v9-canonical-release-status-500.json
+          node -e "const x=require('./b01-v9-canonical-release-status-500.json');if(x.total!==500||x.decisionScope!=='ONE_COLLECTIVE_BATCH_DECISION_ONLY'||x.remainingEvidence!==500-x.evidenceReady||!['BATCH_NO-GO','BATCH_EVIDENCE_READY'].includes(x.state))process.exit(1);console.log(JSON.stringify({total:x.total,evidenceReady:x.evidenceReady,remainingEvidence:x.remainingEvidence,openDefects:x.openDefects,state:x.state}));"
       - name: Compare the real 500-way student Rich V2 visuals to exact original 397 figure frames
         run: |
           node --test tests/academic-us-ccss-b01-v9-effective-figure-rich-v2-structure.test.cjs
@@ -204,6 +208,7 @@ jobs:
             b01-v9-global-effective-root-causes-500.json
             b01-v9-effective-original-40-math-visual-structure.json
             b01-v9-500-numeric-equations-no-fake-academic-pass.json
+            b01-v9-canonical-release-status-500.json
             b01-v9-source-figure-dependencies-40.json
             b01-v9-activity-figure-source-guard-40.json
             b01-v9-source-figure-dom-links-40.json
