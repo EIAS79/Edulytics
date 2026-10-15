@@ -135,8 +135,11 @@ jobs:
       - name: Validate exact lesson identities and report true collective evidence coverage
         run: node tools/us-ccss-b01-release-gate.cjs --status
 
+  # Historical 500-way diagnostics remain useful; publishing 500 at once was
+  # superseded by the owner's 2026-10-15 ten-lesson certification policy.
+  # T001's new gate is separate and refuses broad PR #492 as a deployment.
   release-all-500-only:
-    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
+    if: ${{ false }}
     needs: [validate-b01-manifest-and-safety, audit-b01-effective-materializer-and-real-practice, audit-b01-official-publisher-purposes, audit-b01-practice-source-conflicts, audit-b01-rich-v2-publisher-visual-cues, consolidate-b01-eight-dimension-report, b01-full-product-regressions]
     runs-on: ubuntu-latest
     timeout-minutes: 10
