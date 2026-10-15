@@ -78,6 +78,8 @@ jobs:
         run: |
           python3 -m pip install --disable-pip-version-check playwright==1.55.0
           python3 -m playwright install --with-deps chromium
+      # The real WWWROOT CSS/style gate runs inside the authenticated test
+      # script. Successful HTTP text/HTML alone is not visual L6 evidence.
       - name: Create American primary and secondary school fixtures, then exercise real HTTPS student/teacher flows
         env:
           RENDER_SERVICE_ID: ci-disposable

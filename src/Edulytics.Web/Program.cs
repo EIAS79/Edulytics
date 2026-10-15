@@ -521,6 +521,13 @@ app.Use(async (context, next) =>
 // Parse culture after the static-to-main-application bridge has been normalized.
 app.UseRequestLocalization();
 
+// wwwroot CSS/images must be served in production and in disposable CI HTTPS.
+// MapStaticAssets handles build-discovered endpoints, while UseStaticFiles
+// independently serves the real physical webroot assets in Staging/Render.
+// Without this fallback the student screenshot can appear as raw HTML with a
+// gigantic unscaled logo even when the math lesson endpoint returns HTTP 200.
+app.UseStaticFiles();
+
 app.UseRouting();
 
 // The always-on static public front door wakes this free web service in the
