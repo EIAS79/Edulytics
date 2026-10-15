@@ -54,7 +54,7 @@ jobs:
           cat /tmp/t001-academic-status.json
           node -e 'const d=require("/tmp/t001-academic-status.json");if(d.state!=="BATCH_NO-GO"&&d.state!=="BATCH_EVIDENCE_READY")process.exit(1);console.log("T001",d.state,"evidenceReady",d.evidenceReady,"missing",d.remainingEvidence);'
           if node -e 'process.exit(require("/tmp/t001-academic-status.json").state==="BATCH_EVIDENCE_READY"?0:1)'; then
-            node tools/us-ccss-t001-release-gate.cjs --release-check --head-sha="${GITHUB_SHA}"
+            node tools/us-ccss-t001-release-gate.cjs --release-check --head-sha="$(git rev-parse HEAD)"
           else
             echo "T001 evidence incomplete: release remains fail-closed; this technical CI does not grant academic PASS"
           fi
