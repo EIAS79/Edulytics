@@ -115,6 +115,27 @@ internal static class UsCcssT001AuthoredActivities
         (string.Equals(answer,Solve(family,p),StringComparison.Ordinal) ||
          (family==Survey && GradeStudentAnswer(family,p,answer)));
 
+    /// <summary>
+    /// Grade a persisted item without treating the survey solver sentinel as
+    /// student evidence. L09 is marked correct only for internally consistent
+    /// anonymous vote/tally pairs; this is NOT proof of real participants.
+    /// </summary>
+    public static bool GradePersistedAnswer(
+        string? family,string expected,string? submitted)
+    {
+        if(!Supports(family) || string.IsNullOrWhiteSpace(submitted))
+            return false;
+        if(family!=Survey)
+            return string.Equals(submitted.Trim(),expected,StringComparison.Ordinal);
+        if(!string.Equals(expected,SurveySolverSentinel,StringComparison.Ordinal))
+            return false;
+        var scope=new Dictionary<string,int>(StringComparer.Ordinal)
+        {
+            ["minimumVotes"]=5,["maximumVotes"]=10
+        };
+        return GradeStudentAnswer(Survey,scope,submitted);
+    }
+
     public static bool GradeStudentAnswer(
         string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
