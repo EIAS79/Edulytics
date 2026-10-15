@@ -30,6 +30,20 @@ internal static class UsCcssT001ExactQuestions
     private static IReadOnlyDictionary<string,int> D(params (string K,int V)[] pairs)=>
         pairs.ToDictionary(x=>x.K,x=>x.V,StringComparer.Ordinal);
 
+    // The student must actually categorize the items, not simply read
+    // pre-counted labels. Group membership/quantity is kept in parameters
+    // for independent grading while the shuffled order changes by seed.
+    private static string ShuffledItems(Random rng,params (string Item,int Count)[] groups)
+    {
+        var items=groups.SelectMany(x=>Enumerable.Repeat(x.Item,x.Count)).ToArray();
+        for(var i=items.Length-1;i>0;i--)
+        {
+            var j=rng.Next(i+1);
+            (items[i],items[j])=(items[j],items[i]);
+        }
+        return string.Join(", ",items);
+    }
+
     public static Problem Build(string family,Random rng)
     {
         if(!Supports(family))
@@ -78,26 +92,29 @@ internal static class UsCcssT001ExactQuestions
             case "usccss.t001.g1.sort_math_tools":
                 a=rng.Next(1,7);b=rng.Next(1,7);c=rng.Next(1,7);category=rng.Next(0,3);
                 string[] tools=["counters","pattern blocks","inch tiles"];
+                var mixedTools=ShuffledItems(rng,("counter",a),("pattern block",b),("inch tile",c));
                 return new(family,
-                    $"Sort {a} counters, {b} pattern blocks and {c} inch tiles into three named categories. " +
-                    $"How many objects are in the '{tools[category]}' category?",
+                    $"Look at this mixed collection of tools and sort each object by its kind. " +
+                    $"Tools: {mixedTools}. How many objects belong in the '{tools[category]}' category?",
                     "Sort by tool kind, count each once, then enter the labelled category count.",
                     AssessmentItemType.Numeric,D(("first",a),("second",b),("third",c),("category",category)));
             case "usccss.t001.g1.sort_shape_cards":
                 a=rng.Next(1,7);b=rng.Next(1,7);c=rng.Next(1,7);category=rng.Next(0,3);
                 string[] shapes=["triangles","squares","circles"];
+                var mixedShapes=ShuffledItems(rng,("triangle",a),("square",b),("circle",c));
                 return new(family,
-                    $"A shape sort contains {a} triangles, {b} squares and {c} circles. " +
-                    $"Make three labeled groups. How many cards are in '{shapes[category]}'?",
+                    $"Sort this mixed set of shape cards into three groups. " +
+                    $"Cards: {mixedShapes}. How many cards belong in '{shapes[category]}'?",
                     "Separate shapes by defining geometry and record each category count.",
                     AssessmentItemType.Numeric,D(("first",a),("second",b),("third",c),("category",category)));
             case "usccss.t001.g1.class_survey_categories":
                 a=rng.Next(1,8);b=rng.Next(1,8);c=rng.Next(1,8);category=rng.Next(0,3);
                 string[] fruits=["apples","bananas","oranges"];
+                var votes=ShuffledItems(rng,("apple",a),("banana",b),("orange",c));
                 return new(family,
-                    $"A fictional class survey collected one vote per student: " +
-                    $"{a} apples, {b} bananas and {c} oranges. " +
-                    $"Complete a labeled category table. How many chose '{fruits[category]}'?",
+                    $"A fictional class survey asks each student to vote for one favorite fruit. " +
+                    $"Unsorted votes: {votes}. Organize the votes in a labeled table. " +
+                    $"How many votes belong in '{fruits[category]}'?",
                     "Record one vote per student, with clear labels for all three categories.",
                     AssessmentItemType.Numeric,D(("first",a),("second",b),("third",c),("category",category)));
             default:
