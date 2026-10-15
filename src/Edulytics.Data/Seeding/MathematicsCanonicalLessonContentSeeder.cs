@@ -210,7 +210,9 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(document, lesson) ||
          CommonCoreG1CountAndAddPilotCorrection.IsTarget(document, lesson) ||
          CommonCoreG2SourceGroundedFoundationsCorrections.IsTarget(document, lesson) ||
-         CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson));
+         CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson) ||
+         CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
+         CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -888,6 +890,23 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                     content.Id, out var countAndAddRows)
                                     ? countAndAddRows
                                     : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    // Only two reviewed T001 source-bound content edits in this
+                    // main-based release branch: no other B01 lesson upgrade.
+                    if (CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreT001MixedAddSubtractContentCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var mixedExisting)
+                                ? mixedExisting : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+                    if (CommonCoreT001FindThePairContentCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreT001FindThePairContentCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var pairExisting)
+                                ? pairExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =
