@@ -193,9 +193,12 @@ function main(argv = process.argv.slice(2)) {
   const result = inspectBatch({ manifest, source, ledger });
   if (releaseCheck) {
     // Never allow a stale 500-row ledger or a missing live release SHA.
-    const explicit = argv.find(x => x.startsWith('--candidate-sha='));
-    const currentSha = explicit ? explicit.slice('--candidate-sha='.length) :
-      process.env.GITHUB_SHA;
+    const explicit = argv.find(x => x.startsWith('--head-sha=')) ??
+      argv.find(x => x.startsWith('--candidate-sha='));
+    // GitHub pull_request GITHUB_SHA is normally a synthetic merge commit.
+    // The release subject must instead be the explicitly checked-out PR HEAD.
+    const currentSha = explicit ? explicit.slice(explicit.indexOf('=') + 1) :
+      process.env.B01_RELEASE_HEAD_SHA || process.env.GITHUB_SHA;
     requireCurrentCandidateSha(ledger, currentSha);
   }
   if (releaseCheck && result.state !== 'BATCH_EVIDENCE_READY') {
