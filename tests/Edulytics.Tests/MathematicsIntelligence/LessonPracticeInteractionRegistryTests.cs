@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            290, // +2 exact source-bound G1 U01 L01 practice families
+            298, // previous 290 plus 8 source-purpose-exact T001 families
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
@@ -47,6 +47,24 @@ public sealed class LessonPracticeInteractionRegistryTests
                     Enum.IsDefined(
                         contract.InteractionKind));
             });
+    }
+
+    [Theory]
+    [InlineData("usccss.t001.g1.dot_pair_sum")]
+    [InlineData("usccss.t001.g1.add_one_or_two")]
+    [InlineData("usccss.t001.g1.subtract_one_or_two")]
+    [InlineData("usccss.t001.g1.mixed_add_subtract")]
+    [InlineData("usccss.t001.g1.make_ten_missing_part")]
+    [InlineData("usccss.t001.g1.sort_math_tools")]
+    [InlineData("usccss.t001.g1.sort_shape_cards")]
+    [InlineData("usccss.t001.g1.class_survey_categories")]
+    public void AllEightT001FamiliesHaveSafeIntegerKeypadAndVisualInteraction(string family)
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad,contract.InteractionKind);
+        Assert.True(contract.HasVisualRepresentation);
+        Assert.Equal("exact_integer",contract.AnswerType);
     }
 
     [Theory]
