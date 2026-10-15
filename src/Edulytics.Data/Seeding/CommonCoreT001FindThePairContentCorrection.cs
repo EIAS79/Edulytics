@@ -83,13 +83,9 @@ public static class CommonCoreT001FindThePairContentCorrection
                 "T001 source/standard/body SHA mismatch: " + lesson.LessonCode);
     }
 
-    private static string[] Fields(CurriculumLessonContentTranslation row) =>
-        [row.KeyConceptsAndRules,row.WorkedExamples,row.StepByStepSolutions,
-         row.CommonMistakes,row.QuickSummary];
-
-    private static string[] Fields(CanonicalLessonContentPackTranslation row) =>
-        [row.KeyConceptsAndRules,row.WorkedExamples,row.StepByStepSolutions,
-         row.CommonMistakes,row.QuickSummary];
+    private static string[] Fields(string concepts, string examples, string steps,
+        string mistakes, string summary) =>
+        [concepts,examples,steps,mistakes,summary];
 
     public static void Apply(CanonicalLessonContentPackDocument doc)
     {
@@ -99,7 +95,8 @@ public static class CommonCoreT001FindThePairContentCorrection
             if(!IsTarget(doc,lesson))continue;
             Verify(lesson);
             var t=lesson.Translations.Single();
-            var values=Fields(t);
+            var values=Fields(t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,
+                t.CommonMistakes,t.QuickSummary);
             if(values.SequenceEqual(CorrectedFields,StringComparer.Ordinal))continue;
             if(!values.SequenceEqual(OriginalFields,StringComparer.Ordinal))
                 throw new InvalidOperationException(
@@ -139,7 +136,8 @@ public static class CommonCoreT001FindThePairContentCorrection
         var expected=lesson.Translations.Single();
         if(actual.Title!=expected.Title || actual.Explanation!=expected.Explanation)
             throw new InvalidOperationException("T001 unrelated stored content drift");
-        var values=Fields(actual);
+        var values=Fields(actual.KeyConceptsAndRules,actual.WorkedExamples,
+            actual.StepByStepSolutions,actual.CommonMistakes,actual.QuickSummary);
         if(!values.SequenceEqual(OriginalFields,StringComparer.Ordinal) &&
            !values.SequenceEqual(CorrectedFields,StringComparer.Ordinal))
             throw new InvalidOperationException("T001 stored content not an approved predecessor");
