@@ -1,0 +1,78 @@
+@model IReadOnlyList<Edulytics.Core.Curriculum.MathematicsCurriculumPackDefinition>
+@using System.Globalization
+@{
+    Layout = null;
+    var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    ViewData["Title"] = language == "pl" ? "Prywatny rejestr źródeł" : language == "ar" ? "سجل المصادر الخاص بالمبرمج" : "Developer source and rights register";
+}
+<!doctype html>
+<html lang="@language" dir="@(language == "ar" ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>@ViewData["Title"] — Edulytics</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body { background:#f4f7fc; color:#18263c; line-height:1.6; margin:0; font-family:system-ui, sans-serif }
+        main { max-width:1000px; margin:0 auto; padding:36px 18px 70px }
+        article { background:#fff; border:1px solid #dce4ef; border-radius:14px; padding:20px 26px; margin:16px 0 }
+        h1,h2,h3 {line-height:1.3} h1{margin-bottom:7px}
+        .metadata {color:#576980} a {overflow-wrap:anywhere}
+        code {white-space:normal;overflow-wrap:anywhere}
+        .warning {border-inline-start:4px solid #c97b24; padding:12px 15px;background:#fff8ed}
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <h1>@ViewData["Title"]</h1>
+        <p class="metadata">Edulytics — developer-only internal research archive (not a public licence notice)</p>
+    </header>
+
+    <article class="warning">
+        <strong>Internal academic research only.</strong>
+        This page is restricted to the specifically configured developer identity.
+        It records research sources and working rights classifications.
+        It does not confer permission to republish images or replace any attribution
+        required by a licence for images actually displayed to learners.
+    </article>
+
+    <article>
+        <h2>US CCSS B01 — original mathematical figures</h2>
+        <p>Internal source-audit inventory: 40 original lesson pages with 397
+        referenced frames linked to 383 distinct publisher CMS media sources.
+        DOM linkage is a provenance pointer, not evidence that a specific image
+        was licensed, visually checked or shown correctly to a learner.</p>
+        <dl>
+            <dt>Original curriculum and 2021-era source reference</dt>
+            <dd><a href="https://im.kendallhunt.com/k5/teachers/" rel="noopener noreferrer external" target="_blank">Illustrative Mathematics K–5 teacher source library</a></dd>
+            <dt>Open-use terms for original 2021-era material, where applicable</dt>
+            <dd><a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer external" target="_blank">Creative Commons Attribution 4.0</a>. Original assets and third-party materials may have separate terms; attribution may be required.</dd>
+            <dt>Later edition (not automatically interchangeable with B01 source)</dt>
+            <dd><a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="noopener noreferrer external" target="_blank">CC Attribution–NonCommercial 4.0</a> applies where confirmed for the relevant edition or asset, and requires a genuinely noncommercial use assessment.</dd>
+            <dt>Per-image reuse decisions</dt>
+            <dd>Pending independent media-byte inspection and rights review. Do not represent this inventory as clearance for all 397 frames.</dd>
+        </dl>
+    </article>
+
+    <article>
+        <h2>Registered curriculum references</h2>
+        @foreach (var pack in Model)
+        {
+            <section>
+                <h3>@pack.DisplayName</h3>
+                <p><strong>Rights / attribution:</strong> @pack.RequiredAttribution</p>
+                <p><strong>Evidence / reuse basis:</strong> @pack.EvidenceNote</p>
+                <ul>
+                @foreach (var source in pack.Sources)
+                {
+                    <li><a href="@source.Url" target="_blank" rel="noopener noreferrer external">@source.Purpose</a> — @source.Authority, @source.VersionLabel</li>
+                }
+                </ul>
+            </section>
+        }
+    </article>
+</main>
+</body>
+</html>
