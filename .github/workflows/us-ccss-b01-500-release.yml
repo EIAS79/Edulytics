@@ -21,6 +21,8 @@ on:
       - 'tests/academic-us-ccss-b01-v9-figure-academic-release.test.cjs'
       - 'tools/us-ccss-b01-original-image-reuse-audit.cjs'
       - 'tests/academic-us-ccss-b01-original-image-reuse-audit.test.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-identified-third-party-image-rights.json'
+      - 'tests/academic-us-ccss-b01-third-party-image-rights.test.cjs'
       - 'src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml'
       - 'src/Edulytics.Web/Controllers/DeveloperCreditsController.cs'
       - 'tests/Edulytics.Tests/Security/DeveloperCreditsAuthorizationTests.cs'
@@ -82,6 +84,7 @@ jobs:
       - name: Identify direct publisher-media reuse in actual canonical lesson data
         run: |
           node --test tests/academic-us-ccss-b01-original-image-reuse-audit.test.cjs
+          node --test tests/academic-us-ccss-b01-third-party-image-rights.test.cjs
           node tools/us-ccss-b01-original-image-reuse-audit.cjs --out b01-source-image-reuse-audit.json
       - name: Archive source image candidates with undecided rights
         uses: actions/upload-artifact@v4
