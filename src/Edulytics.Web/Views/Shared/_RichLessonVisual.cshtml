@@ -253,7 +253,12 @@
         var difference = int.TryParse(Model.Items.ElementAtOrDefault(2),out var diff) ? diff : -1;
         var unknownPosition = int.TryParse(Model.Items.ElementAtOrDefault(3),out var pos)
             ? pos : 0;
-        var tapeUnit = Model.SecondaryLabel == "cents" ? "cents" : "units";
+        var tapeUnit = Model.SecondaryLabel switch
+        {
+            "cents" => "cents",
+            "apples" => "apples",
+            _ => "units"
+        };
         if (longer > 0 && shorter > 0 && longer > shorter &&
             difference == longer - shorter)
         {

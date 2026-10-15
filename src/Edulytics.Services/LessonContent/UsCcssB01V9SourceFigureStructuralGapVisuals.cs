@@ -4,7 +4,7 @@ using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
 /// <summary>
-/// Source-goal-bound representative mathematical visuals for the 12 B01
+/// Source-goal-bound representative mathematical visuals for the 13 B01
 /// figure-source lessons that previously composed ONLY an EquationSet.
 /// Shared rendering primitives and independent illustrations are reused;
 /// each exact source-goal identity fails closed on content drift.
@@ -22,6 +22,7 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
             [Prefix+"G2:U06:L19"]=new("More Money Problems","context of money"),
             [Prefix+"G2:U08:L02"]=new("Partners Make Pairs","pair all of the objects"),
             [Prefix+"G2:U08:L03"]=new("Is it Odd or Even? PLC Activity","even or odd"),
+            [Prefix+"G2:U09:L10"]=new("What’s the Question? PLC Activity","tape diagram and number line diagram"),
             [Prefix+"G3:U04:L11"]=new("Multiplication Strategies on Ungridded Rectangles","ungridded rectangle"),
             [Prefix+"G3:U04:L15"]=new("Equal Groups, Larger Numbers","factor is a teen number"),
             [Prefix+"G3:U07:L01"]=new("What Attributes Do You See?","sort shapes into categories"),
@@ -42,6 +43,12 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
            !body.Explanation.Contains(goal.Cue,StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(
                 "B01 source-bound figure purpose drift: "+lessonCode);
+        if(lessonCode==Prefix+"G2:U09:L10" &&
+           (!body.WorkedExamples.Contains("Elena picked 29 apples.",StringComparison.Ordinal) ||
+            !body.WorkedExamples.Contains("14 fewer apples than Han",StringComparison.Ordinal) ||
+            !body.WorkedExamples.Contains("15 more apples than Diego",StringComparison.Ordinal)))
+            throw new InvalidOperationException(
+                "B01 G2 U09 L10 student-story quantities drift: "+lessonCode);
         return lessonCode[Prefix.Length..] switch
         {
             "G2:U06:L03" => [Rectangle("3 cm by 2 cm rectangle",
@@ -62,6 +69,26 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                 Items=["68","39","29","0"],SecondaryLabel="cents"}],
             "G2:U08:L02" => [Pairs(8),Pairs(9)],
             "G2:U08:L03" => [Pairs(9),Pairs(10)],
+            // Two independent generic maths renderers; neither loads a
+            // publisher diagram. The original lesson's story gives Elena=29,
+            // Han=29+14=43 and Diego=43-15=28 apples.
+            "G2:U09:L10" => [
+                new RichLessonVisual {
+                    Kind=RichLessonVisualKind.TapeDiagram,
+                    Title="Compare Elena's 29 apples with Han's 43 apples",
+                    Description="Elena picked 29 apples, 14 fewer than Han. Han therefore picked 29 + 14 = 43 apples. The longer bar is 43, made from Elena's 29 and the extra 14.",
+                    Items=["43","29","14","3"],SecondaryLabel="apples"
+                },
+                new RichLessonVisual {
+                    Kind=RichLessonVisualKind.NumberLine,
+                    Title="Compare Diego's 28 apples with Han's 43 apples",
+                    Description="Han picked 43 apples, which is 15 more than Diego. Count from 28 to 43 in 15 equal steps, so Diego picked 43 - 15 = 28 apples. Both endpoints are marked.",
+                    Items=Enumerable.Range(28,16).Select(n=>
+                        n.ToString(System.Globalization.CultureInfo.InvariantCulture)).ToList(),
+                    SecondaryItems=["0","15"],
+                    SecondaryLabel="Two G2 number-line positions"
+                }
+            ],
             "G3:U04:L11" => [
                 Rectangle("Full ungridded 3 by 6 rectangle",
                     "A 3 by 6 rectangle has area 18 square units. Partition its width conceptually into 4 and 2: 3 times (4 + 2) = 12 + 6 = 18.",6,3,"fixed-comparison-scale"),

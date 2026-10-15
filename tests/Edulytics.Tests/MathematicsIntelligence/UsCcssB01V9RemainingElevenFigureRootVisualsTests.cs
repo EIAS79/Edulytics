@@ -21,6 +21,8 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [InlineData("G2:U08:L02","660fafd839d002c655c9495a460b037892e07cea3cc2a907d0bd7ba17246a28a","CounterPairs")]
     [InlineData("G2:U08:L03","41ca33c004b6c33458ca2f0e9003ccfc115f9077702d9c57ac358b6ece291f9c","CounterPairs")]
     [InlineData("G3:U04:L11","22c621a374729fce1b200753918143a74e10bfbb7132656d83a87d5ed10bcf09","RectangleDiagram")]
+    [InlineData("G2:U09:L10","4852071d4ef4e24610dff7ceaa8225b8b27d3a02773987226234ac049372e253","TapeDiagram")]
+    [InlineData("G2:U09:L10","4852071d4ef4e24610dff7ceaa8225b8b27d3a02773987226234ac049372e253","NumberLine")]
     [InlineData("G3:U04:L15","89ed7539905eec8ad315639c003331ddd008a90007b81c5434db0cc47788abff","RectangleDiagram")]
     [InlineData("G3:U07:L01","9f71865e95819ead4a1726c0a6f9b55267c73fffaa9a401dd0ddd07e98087543","PolygonDiagram")]
     [InlineData("G3:U07:L04","0d135f72d96aeae8eec1aa54ade2bd79325201f4e56efe9dec167ff3cca88967","PolygonDiagram")]
@@ -55,7 +57,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [Fact]
     public void SharedSourceLessonScopeAndEvenOddSemanticsStayFailClosed()
     {
-        Assert.Equal(12,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
+        Assert.Equal(13,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
         var even=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U08:L02",
             GetBody(Prefix+"G2:U08:L02"));
@@ -96,6 +98,29 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
         Assert.Throws<InvalidOperationException>(()=>
             UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
                 Prefix+"G2:U08:L02",altered));
+    }
+
+    [Fact]
+    public void StoryApplesShowConsistentSourceBoundTapeAndNumberLine()
+    {
+        var code=Prefix+"G2:U09:L10";
+        var visuals=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,GetBody(code));
+        Assert.NotNull(visuals);
+        Assert.Equal(2,visuals.Count);
+        var tape=visuals[0];
+        Assert.Equal(RichLessonVisualKind.TapeDiagram,tape.Kind);
+        Assert.Equal(["43","29","14","3"],tape.Items);
+        Assert.Equal("apples",tape.SecondaryLabel);
+        Assert.Equal(43,29+14);
+        var line=visuals[1];
+        Assert.Equal(RichLessonVisualKind.NumberLine,line.Kind);
+        Assert.Equal("Two G2 number-line positions",line.SecondaryLabel);
+        Assert.Equal(["0","15"],line.SecondaryItems);
+        Assert.Equal(Enumerable.Range(28,16).Select(x=>x.ToString()).ToArray(),line.Items);
+        Assert.Equal(28,43-15);
+        var drift=GetBody(code) with { WorkedExamples="Similar problem with different numbers" };
+        Assert.Throws<InvalidOperationException>(()=>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,drift));
     }
 
     [Fact]
