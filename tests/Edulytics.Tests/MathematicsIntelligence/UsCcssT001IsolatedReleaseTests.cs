@@ -54,6 +54,29 @@ public sealed class UsCcssT001IsolatedReleaseTests
                             "usccss-t001-independent-math-oracle",code,[family],
                             difficulty,1,1881100+checkedCount,[]));
                         Assert.Equal(family,q.Family);
+                        // Arithmetic oracle is intentionally separate from
+                        // the production generator/solver and verifier.
+                        var p=q.Parameters;
+                        var independentlyComputed=family switch
+                        {
+                            "usccss.t001.g1.dot_pair_sum"=>p["left"]+p["right"],
+                            "usccss.t001.g1.add_one_or_two"=>p["start"]+p["step"],
+                            "usccss.t001.g1.subtract_one_or_two"=>p["start"]-p["step"],
+                            "usccss.t001.g1.mixed_add_subtract"=>
+                                p["operation"]==0?p["left"]+p["right"]:p["left"]-p["right"],
+                            "usccss.t001.g1.make_ten_missing_part"=>10-p["known"],
+                            "usccss.t001.g1.sort_math_tools" or
+                            "usccss.t001.g1.sort_shape_cards" or
+                            "usccss.t001.g1.class_survey_categories"=>
+                                p["category"] switch
+                                {
+                                    0=>p["first"],1=>p["second"],2=>p["third"],
+                                    _=>throw new InvalidOperationException("Unreviewed category")
+                                },
+                            _=>throw new InvalidOperationException("Unreviewed T001 family")
+                        };
+                        Assert.Equal(independentlyComputed.ToString(CultureInfo.InvariantCulture),
+                            q.CorrectAnswer);
                         Assert.True(ExactSkillContractQuestionEngine.Verify(
                             family,q.Parameters,q.CorrectAnswer));
                         var a=int.Parse(q.CorrectAnswer,CultureInfo.InvariantCulture);
