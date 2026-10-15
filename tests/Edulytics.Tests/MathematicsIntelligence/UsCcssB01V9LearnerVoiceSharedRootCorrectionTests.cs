@@ -18,7 +18,10 @@ public sealed class UsCcssB01V9LearnerVoiceSharedRootCorrectionTests
             cohort.Select(x=>x.Lesson.LessonCode).OrderBy(s=>s,StringComparer.Ordinal).ToArray());
         foreach(var (d,l) in cohort)
         {
-            Assert.Equal(CommonCoreB01V9LearnerVoiceSharedRootCorrection.CorrectedVersion,
+            var expectedVersion=l.LessonCode==Prefix+"L05"
+                ? CommonCoreT001MixedAddSubtractContentCorrection.CorrectedVersion
+                : CommonCoreB01V9LearnerVoiceSharedRootCorrection.CorrectedVersion;
+            Assert.Equal(expectedVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(d,l));
             var t=Assert.Single(l.Translations);
             Assert.DoesNotContain("support them in adding",t.Explanation);
@@ -34,7 +37,8 @@ public sealed class UsCcssB01V9LearnerVoiceSharedRootCorrectionTests
         Assert.Contains("6 - 2 = 4",subtraction.WorkedExamples);
         var mixed=Assert.Single(cohort.Single(x=>x.Lesson.LessonCode==Prefix+"L05").Lesson.Translations);
         Assert.Contains("add and subtract within 10",mixed.Explanation);
-        Assert.Contains("6 − 1 = 5",mixed.WorkedExamples);
+        Assert.Contains("3 + 2 = 5",mixed.WorkedExamples);
+        Assert.Contains("6 - 2 = 4",mixed.WorkedExamples);
     }
     [Fact]
     public void StaleSourceOrCorruptProseCannotBeRewrittenOrPromoted()
