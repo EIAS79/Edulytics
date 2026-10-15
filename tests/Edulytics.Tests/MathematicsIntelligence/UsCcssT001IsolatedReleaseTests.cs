@@ -67,6 +67,11 @@ public sealed class UsCcssT001IsolatedReleaseTests
                             "usccss.t001.g1.mixed_add_subtract"=>
                                 p["operation"]==0?p["left"]+p["right"]:p["left"]-p["right"],
                             "usccss.t001.g1.make_ten_missing_part"=>10-p["known"],
+                            "usccss.t001.g1.choose_dot_expression" or
+                            "usccss.t001.g1.choose_tool_sort" or
+                            "usccss.t001.g1.choose_shape_chart" or
+                            "usccss.t001.g1.choose_survey_table"=>
+                                1+((p["first"]+2*p["second"]+3*p["third"])%3),
                             "usccss.t001.g1.sort_math_tools" or
                             "usccss.t001.g1.sort_shape_cards" or
                             "usccss.t001.g1.class_survey_categories"=>
@@ -85,6 +90,17 @@ public sealed class UsCcssT001IsolatedReleaseTests
                         Assert.False(ExactSkillContractQuestionEngine.Verify(
                             family,q.Parameters,(a+11).ToString(CultureInfo.InvariantCulture)));
                         Assert.InRange(a,0,10);
+                        if(family.Contains("choose_",StringComparison.Ordinal))
+                        {
+                            Assert.InRange(a,1,3);
+                            Assert.Contains("Options:",q.Prompt);
+                            Assert.Contains("1)",q.Prompt);
+                            Assert.Contains("2)",q.Prompt);
+                            Assert.Contains("3)",q.Prompt);
+                            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                                family,p,(a%3+1).ToString(CultureInfo.InvariantCulture)));
+                        }
+
                         if(n==3)Assert.InRange(q.Parameters["step"],1,2);
                         if(n==4)
                         {
@@ -96,7 +112,8 @@ public sealed class UsCcssT001IsolatedReleaseTests
                             Assert.Equal(10,q.Parameters["known"]+q.Parameters["missing"]);
                         // Detect a dishonest "sorting" prompt that already
                         // displays the category count and requires no classification.
-                        if(n is 7 or 8 or 9)
+                        if((n is 7 or 8 or 9) &&
+                           !family.Contains("choose_",StringComparison.Ordinal))
                         {
                             var label=n==7?"Tools: ":n==8?"Cards: ":"Unsorted votes: ";
                             var begin=q.Prompt.IndexOf(label,StringComparison.Ordinal);
@@ -123,7 +140,7 @@ public sealed class UsCcssT001IsolatedReleaseTests
                         checkedCount++;
                     }
         }
-        Assert.Equal(330,checkedCount); // 11 family slots across L02-L10 * 3 * 10
+        Assert.Equal(450,checkedCount); // 15 lesson family slots * 3 difficulties * 10 seeds
     }
 
     [Fact]
