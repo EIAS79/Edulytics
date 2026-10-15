@@ -67,6 +67,32 @@ public sealed class UsCcssB01V9OffTopicClockConceptCorrectionsTests
     }
 
     [Fact]
+    public void ExactRawRichContentPredecessorsMayUpgradeWithoutSkippingSafety()
+    {
+        var docs = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        foreach (var code in Codes)
+        {
+            var pair = docs.SelectMany(d => d.Lessons.Select(l => (Doc: d, Lesson: l)))
+                .Single(x => x.Lesson.LessonCode == code);
+            Assert.True(CommonCoreB01V9OffTopicClockConceptCorrections
+                .CanUpgradeExisting(pair.Doc, pair.Lesson,
+                    CommonCoreRichContentCorrections.CorrectionContentVersion));
+            Assert.True(CommonCoreB01V9OffTopicClockConceptCorrections
+                .CanUpgradeExisting(pair.Doc, pair.Lesson,
+                    CommonCoreB01V9OffTopicClockConceptCorrections.CorrectedVersion));
+            Assert.False(CommonCoreB01V9OffTopicClockConceptCorrections
+                .CanUpgradeExisting(pair.Doc, pair.Lesson, "non-reviewed-version"));
+            var t=pair.Lesson.Translations.Single();
+            var approved = code.EndsWith("G3:U01:L09",StringComparison.Ordinal)
+                ? CommonCoreB01V9SharedComparisonProcedureCorrections
+                    .MatchesOriginalOrFinalProcedure(code,t.StepByStepSolutions,t.CommonMistakes)
+                : CommonCoreB01V9SharedAdditionProcedureCorrections
+                    .MatchesOriginalOrFinalProcedure(code,t.StepByStepSolutions,t.CommonMistakes);
+            Assert.True(approved);
+        }
+    }
+
+    [Fact]
     public void SourceFingerprintAndUnexpectedTextDriftFailClosed()
     {
         var doc=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
