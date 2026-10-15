@@ -11,6 +11,8 @@ on:
     paths:
       - 'tools/Edulytics.CiFixtures/**'
       - 'tools/phase29/acceptance_two_school_https.py'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests.cs'
       - 'tools/us-ccss-b01-l02-authenticated-l6-verifier.cjs'
       - 'tests/academic-us-ccss-b01-l02-authenticated-l6-verifier.test.cjs'
       - '.github/workflows/us-ccss-authenticated-acceptance.yml'

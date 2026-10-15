@@ -37,6 +37,21 @@ public sealed class UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests
     }
 
     [Fact]
+    public void MetadataOnlySourceBoundInventoryIncludesAllFiveAdditionalDistinctGeometryCorrections()
+    {
+        var documents=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        var candidates=documents.SelectMany(d=>d.Lessons
+            .Where(l=>MathematicsCanonicalLessonContentSeeder
+                .IsSourceBoundJsonMetadataCandidate(d,l))
+            .Select(l=>l.LessonCode)).ToArray();
+        Assert.Equal(178,candidates.Length);
+        Assert.Equal(178,candidates.Distinct(StringComparer.Ordinal).Count());
+        foreach(var code in Codes)
+            Assert.Contains(code,candidates);
+        Assert.Equal(5,CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.ExpectedCount);
+    }
+
+    [Fact]
     public void ExactlyFiveSourceVerifiedRepairsRemoveUnrelatedGeometryClassification()
     {
         using var file = JsonDocument.Parse(File.ReadAllText(Path.Combine(

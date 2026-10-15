@@ -104,13 +104,21 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         var codes = targets.Select(x => x.Lesson.LessonCode).ToArray();
 
         // Fail closed on source-bound technical release inventory drift:
-        // 12 previous mathematics repairs + 19 entity display corrections
-        // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 12 + 1 + 2 + 22 + 1 + 19 + 28 + 18 + 16; // 21 source-reviewed addition targets overlap 3 prior; 16 vetted subtraction targets
+        // 173 previously source-reviewed, distinct correction targets.
+        // The five V9 off-topic-geometry concept repairs were subsequently
+        // added to IsSourceBoundJsonMetadataCandidate but not this immutable
+        // inventory count. Keep a precise constant + reviewed-five expectation;
+        // never remove the count/duplicate validation or silently seed all.
+        const int previousSourceBoundCorrections = 173;
+        var expectedSourceBoundCorrectionCount =
+            previousSourceBoundCorrections +
+            CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.ExpectedCount;
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
-                "Source-bound Common Core JSON metadata correction inventory drift.");
+                $"Source-bound Common Core JSON metadata correction inventory drift: " +
+                $"actual={codes.Length}, distinct={codes.Distinct(StringComparer.Ordinal).Count()}, " +
+                $"expected={expectedSourceBoundCorrectionCount}.");
 
         var lessons = await _db.CurriculumPedagogicalLessons.AsNoTracking()
             .Where(x =>
