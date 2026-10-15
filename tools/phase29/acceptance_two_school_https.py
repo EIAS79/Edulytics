@@ -247,6 +247,15 @@ for key, schoolname in SCHOOLS:
                             assert page.get_by_text("CC BY 4.0").first.is_visible(), (
                                 "T001 publisher license invisible",lesson_code,screen)
                             suffix=lesson_code.split(":")[-1]
+                            expected_source=(
+                                "https://im.kendallhunt.com/k5/teachers/"
+                                "grade-1/unit-1/lesson-"
+                                +str(int(suffix[1:]))+"/lesson.html")
+                            displayed_source=page.locator(
+                                ".lesson-source-attribution a").first.get_attribute("href")
+                            assert displayed_source==expected_source, (
+                                "T001 source attribution points to wrong original lesson",
+                                lesson_code,displayed_source,expected_source)
                             if suffix in ("L06","L07","L08","L09","L10"):
                                 assert page.locator(
                                     "figure.rich-lesson-visual--placevaluechart"
