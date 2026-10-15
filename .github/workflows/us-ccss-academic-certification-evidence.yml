@@ -9,6 +9,8 @@ on:
     paths:
       - 'artifacts/academic-us-ccss/certification-evidence/**'
       - 'tests/academic-us-ccss-b01-l02-l6-candidate-record.test.cjs'
+      - 'tests/academic-us-ccss-g1-source-guarded-corrections.test.cjs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - '.github/workflows/us-ccss-academic-certification-evidence.yml'
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
