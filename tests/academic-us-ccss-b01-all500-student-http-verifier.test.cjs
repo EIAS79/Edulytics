@@ -5,7 +5,8 @@ const grades=[['G1',146],['G2',146],['G3',143],['G4',65]];
 const headSha='f'.repeat(40);
 function fixture(){
  const lessons=grades.flatMap(([grade,n])=>Array.from({length:n},(_,i)=>({
- lessonCode:'PED:US-CCSS-MATH:'+grade+':U01:L'+String(i+1).padStart(3,'0'),
+ lessonCode:grade==='G1'&&i===0 ? 'PED:US-CCSS-MATH:G1:U01:L01' :
+   'PED:US-CCSS-MATH:'+grade+':U01:L'+String(i+1).padStart(3,'0'),
  sourceSemanticSha256:'b'.repeat(64)
  })));
  const manifest={batchId:'B01',lessons:lessons.map((x,i)=>({...x,ordinal:i+1}))};
@@ -26,6 +27,17 @@ test('Grade-specific 500 authenticated HTML source coverage never promotes acade
  assert.deepEqual(x.gradeCounts,{G1:146,G2:146,G3:143,G4:65});
  assert.equal(x.verifiedEveryChromiumScreen,false);
  assert.match(x.decision,/NOT_APPROVED/);
+});
+test('Only the actual G1 U01 L01 identity may carry the historical certification',()=>{
+ const x=fixture();
+ assert.equal(x.manifest.lessons[0].lessonCode,'PED:US-CCSS-MATH:G1:U01:L01');
+ const wrong=fixture();
+ wrong.ledger.records[0].lessonCode='PED:US-CCSS-MATH:G1:U01:L002';
+ assert.throws(()=>verify(wrong),/Original 500-row SHA ledger required/);
+ const fake=fixture();
+ fake.ledger.records[1].academicDecision='INTERNALLY_CERTIFIED';
+ fake.ledger.records[1].gates.L6.status='PASS';
+ assert.throws(()=>verify(fake),/Expected values/);
 });
 test('Missing, duplicate, renamed and shuffled lessons fail closed',()=>{
  const a=fixture();a.proof.lessonRows.pop();
