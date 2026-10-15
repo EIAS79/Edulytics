@@ -61,6 +61,10 @@ jobs:
           dotnet tool restore
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln --no-restore
+          # Match container production layout: published static-asset manifest
+          # and wwwroot must both be present in Staging.
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj \
+            --configuration Release --no-restore --output /tmp/us-ccss-web-publish
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
       - name: Install isolated Chromium visual test dependencies
