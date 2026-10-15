@@ -48,7 +48,29 @@ function fixture(){
    alternativePurposeHeading:i===499?'Lesson Purpose':undefined,
    originalTeacherGoalStillAbsent:i===499,
    teacherFacingPurposeSignals:i<20?['LENGTH']:['ADDITION']}))};
- return {manifest:{batchId:'B01',expectedLessonCount:500,lessons},
+ const firstPassCoverage={
+  schemaVersion:1,
+  kind:'B01_FULL_500_SOURCE_PURPOSE_COMPARISON_COVERAGE_REFERENCE',
+  batchId:'B01',
+  scope:{manifestLessons:500,previouslySourcePurposeReviewed:1,
+   newlySourcePurposeCompared315:499,sourcePurposeComparedTotal:500,
+   fullL1toL6CertificationsGranted:0},
+  newReviewedRows:lessons.slice(1).map((item,index)=>({
+   ordinal:item.ordinal,
+   lessonCode:item.lessonCode,
+   sourceSemanticSha256:item.sourceSemanticSha256,
+   sourceFileInventorySha256:sourceIndex.rows[index+1].localFileByteSha256,
+   canonicalOriginalLearnerBodySha256:shaB,
+   originalTeacherSourceUrl:item.sourceUrl,
+   originalTeacherActivityUrl:item.sourceUrl.replace('/preparation.html','/lesson.html'),
+   liveTeacherPreparationSha256:shaD,
+   liveTeacherActivitySha256:shaE,
+   officialGoalElementsRead:1,
+   officialTeacherActivityHeadingsRead:2,
+   academicCertified:false,effectiveRuntimeAndL1ToL6VerificationStillRequired:true
+  }))
+ };
+ return {firstPassCoverage,manifest:{batchId:'B01',expectedLessonCount:500,lessons},
   packs,sourceIndex,teacherActivityIndex,sourceGoalMemory,reviewed:[
    {batchId:'B01',rows:[{lessonCode:lessons[0].lessonCode,sourceSemanticSha256:shaA}]},
    {batchId:'B01',reviewedObjectives:[]},
@@ -75,9 +97,14 @@ test('Full B01 500/500 cross-joins mathematical, publisher-source and shared tem
  assert.equal(x.nodes[24].rawExactTemplateIds.length,1);
  assert.equal(x.nodes[25].rawExactTemplateIds.length,0);
  assert.equal(x.mathElementCandidatesByFamily.measurement_units,25);
- assert.equal(x.nodes[0].academicGoalSourceReview,'REVIEWED_PURPOSE_ONLY_NOT_L1_L6');
- assert.equal(x.nodes[1].academicGoalSourceReview,'NOT_SOURCE_GOAL_VERIFIED');
- assert.equal(x.academicSourcePurposeReviews.stillNotPurposeReviewed,499);
+ assert.equal(x.nodes[0].academicGoalSourceReview,'PRIOR_SOURCE_PURPOSE_REVIEW_NOT_L1_L6');
+ assert.equal(x.nodes[1].academicGoalSourceReview,'NEW_SOURCE_GOAL_ACTIVITY_FIRST_PASS_NOT_L1_L6');
+ assert.equal(x.academicSourcePurposeReviews.previousSourcePurposeReviews,1);
+ assert.equal(x.academicSourcePurposeReviews.newSourceGoalActivityFirstPass,499);
+ assert.equal(x.academicSourcePurposeReviews.firstPassSourceGoalActivityComparedTotal,500);
+ assert.equal(x.academicSourcePurposeReviews.missingSourceGoalActivityFirstPass,0);
+ assert.equal(x.academicSourcePurposeReviews.firstPassIsFullAcademicCertification,false);
+ assert.equal(x.academicSourcePurposeReviews.newlyCertifiedByThisGraph,0);
  assert.equal(x.automaticSourceGoalSignalCapture.teacherGoalsFound,499);
  assert.equal(x.automaticSourceGoalSignalCapture.alternateOfficialLessonPurposeHeadings,1);
  assert.equal(x.automaticSourceGoalSignalCapture.teacherPurposesAvailableByEitherHeading,500);
@@ -111,6 +138,12 @@ test('Rejects tampering with verified source, source index or the 500th identity
  assert.throws(()=>buildGraph(m),/exactly 500|Required one 500 lesson/);
  const t=fixture();t.sourceGoalMemory.rows[0].sourceFileInventorySha256='9'.repeat(64);
  assert.throws(()=>buildGraph(t),/original teacher-goal memory/);
+ const missing=fixture();missing.firstPassCoverage.newReviewedRows.pop();
+ assert.throws(()=>buildGraph(missing),/Source first-pass must join/);
+ const drift=fixture();drift.firstPassCoverage.newReviewedRows[0].sourceFileInventorySha256='0'.repeat(64);
+ assert.throws(()=>buildGraph(drift),/Source first-pass new row mismatched/);
+ const fake=fixture();fake.firstPassCoverage.newReviewedRows[0].academicCertified=true;
+ assert.throws(()=>buildGraph(fake),/Source first-pass new row mismatched/);
 });
 test('No synthetic numeric domain guesses and no cross-field exact template conflation',()=>{
  assert.equal(standardDomain('CCSS:2.NF.A.2'),'NF');

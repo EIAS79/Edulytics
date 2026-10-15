@@ -1,7 +1,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { inspectBatch } = require('../tools/us-ccss-b01-release-gate.cjs');
+const { inspectBatch, requireCurrentCandidateSha } = require('../tools/us-ccss-b01-release-gate.cjs');
 const { createInitialLedger, gateNames, dimensionNames, policyId } =
   require('../tools/us-ccss-lesson-certification-records.cjs');
 
@@ -65,6 +65,14 @@ test('B01 stays NO-GO with just one properly certified lesson', () => {
   const state = inspectBatch(x);
   assert.equal(state.evidenceReady, 1);
   assert.equal(state.remainingEvidence, 499);
+  assert.equal(state.evidenceGapRows.length, 499);
+  assert.equal(state.evidenceGapRows[0].ordinal, 2);
+  assert.deepEqual(state.evidenceGapRows[0].missingGates,
+    ['L1','L2','L3','L4','L5','L6']);
+  assert.equal(state.evidenceGapRows[0].missingDimensions.length, 8);
+  assert.equal(state.missingGateProofTotals.L6, 499);
+  assert.equal(state.missingDimensionProofTotals.mathematicalCorrectness, 499);
+  assert.equal(state.noteNoDefectsRecordedDoesNotProveReviewed,true);
   assert.equal(state.state, 'BATCH_NO-GO');
   assert.equal(state.gapsPreview[0].lessonCode, x.manifest.lessons[1].lessonCode);
 });
@@ -153,4 +161,19 @@ test('Any unresolved defect blocks the entire batch', () => {
   assert.equal(state.evidenceReady, 499);
   assert.equal(state.openDefects, 1);
   assert.equal(state.state, 'BATCH_NO-GO');
+});
+
+test('Final 500-lesson release binds every L1-L6 proof to the EXACT checked-out immutable HEAD, never stale source', () => {
+ const x=fixture();
+ for(const row of x.ledger.records.slice(0,500)) certify(row);
+ assert.equal(inspectBatch(x).state,'BATCH_EVIDENCE_READY');
+ assert.equal(requireCurrentCandidateSha(x.ledger,candidate),candidate);
+ assert.throws(() => requireCurrentCandidateSha(x.ledger,'2'.repeat(40)),
+   /STALE B01 candidate/);
+ assert.throws(() => requireCurrentCandidateSha(x.ledger,null),
+   /requires immutable current candidate SHA/);
+ assert.throws(() => requireCurrentCandidateSha(x.ledger,'not-a-commit'),
+   /requires immutable current candidate SHA/);
+ assert.equal(inspectBatch(x).evidenceReady,500,
+   'The read-only status report is not a release authorization and stays usable');
 });

@@ -9,6 +9,7 @@ on:
     paths:
       - '.github/workflows/us-ccss-b01-v9-global-root-cause.yml'
       - 'tools/us-ccss-b01-v9-global-root-cause-graph.cjs'
+      - 'artifacts/academic-us-ccss/batches/B01-v9-full-500-source-purpose-comparison-coverage.json'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9EffectiveRootCauseImpactTests.cs'
       - 'tools/us-ccss-b01-v9-effective-root-cause-reconciliation.cjs'
       - 'tools/us-ccss-b01-v9-source-figure-dependency-audit.cjs'
@@ -126,7 +127,7 @@ jobs:
         run: node tools/us-ccss-b01-v9-global-root-cause-graph.cjs --out=b01-v9-global-root-cause-500.json
       - name: Verify report coverage and explicit no-go across EVERY node
         run: |
-          node -e "const a=require('./b01-v9-global-root-cause-500.json');if(a.coverage.unique!==500||a.coverage.observed!==500||a.certificationDecision!=='BATCH_NO-GO'||a.repairDecision!=='NO_AUTOMATIC_REPAIR_AUTHORITY'||a.nodes.some(x=>x.academicDecision!=='NOT_CERTIFIED_BY_THIS_GRAPH'))process.exit(1);console.log(JSON.stringify({coverage:a.coverage,reviewedPurposes:a.academicSourcePurposeReviews,sharedTemplateGroups:a.repeatedExactLearnerTemplates.uniqueGroups,rootCauseCounts:Object.fromEntries(Object.entries(a.rootCauseSignals).map(([k,v])=>[k,v.candidateLessonCount])),academicDecision:a.certificationDecision}));"
+          node -e "const a=require('./b01-v9-global-root-cause-500.json');if(a.coverage.unique!==500||a.coverage.observed!==500||a.certificationDecision!=='BATCH_NO-GO'||a.repairDecision!=='NO_AUTOMATIC_REPAIR_AUTHORITY'||a.nodes.some(x=>x.academicDecision!=='NOT_CERTIFIED_BY_THIS_GRAPH')||a.academicSourcePurposeReviews.firstPassSourceGoalActivityComparedTotal!==500||a.academicSourcePurposeReviews.missingSourceGoalActivityFirstPass!==0||a.academicSourcePurposeReviews.firstPassIsFullAcademicCertification!==false||a.academicSourcePurposeReviews.newlyCertifiedByThisGraph!==0)process.exit(1);console.log(JSON.stringify({coverage:a.coverage,reviewedPurposes:a.academicSourcePurposeReviews,sharedTemplateGroups:a.repeatedExactLearnerTemplates.uniqueGroups,rootCauseCounts:Object.fromEntries(Object.entries(a.rootCauseSignals).map(([k,v])=>[k,v.candidateLessonCount])),academicDecision:a.certificationDecision}));"
       - name: Verify fail-closed 500-way effective cohort reconciliation with negative tests
         run: node --test tests/academic-us-ccss-b01-v9-effective-root-cause-reconciliation.test.cjs
       - uses: actions/setup-dotnet@v4

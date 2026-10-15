@@ -16,6 +16,7 @@ const manifestPath=sourcePrefix+'B01-lesson-manifest.json';
 const sourceIndexPath=sourcePrefix+'B01-book-source-reference-index-500.json';
 const teacherActivityIndexPath=sourcePrefix+'B01-original-teacher-activity-local-index-500.json';
 const sourceGoalMemoryPath=sourcePrefix+'B01-v9-source-goal-signal-memory-500.json';
+const firstPassPath=sourcePrefix+'B01-v9-full-500-source-purpose-comparison-coverage.json';
 const packPaths=[1,2,3,4].map(g=>
  'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g'+g+'-phase29-v1.lesson-content-pack.json');
 const reviewedPaths=[
@@ -49,7 +50,7 @@ function groupCandidate(p,field,content){
   conclusion:'SUSPECTED_ISSUE_REQUIRES_SOURCE_AND_EFFECTIVE_CONTENT_REVIEW',
   approvedToModify:false,academicPass:false};
 }
-function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,sourceGoalMemory}){
+function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,sourceGoalMemory,firstPassCoverage}){
  assert(sourceGoalMemory?.planId==='EDULYTICS-US-CCSS-UNIFIED-V9'&&
   sourceGoalMemory.batchId==='B01'&&sourceGoalMemory.coverage?.manifestExpected===500&&
   sourceGoalMemory.coverage.sourceFilesRead===500&&sourceGoalMemory.rows?.length===500,
@@ -74,6 +75,40 @@ function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,so
    verified.set(r.lessonCode,r.sourceSemanticSha256);
   }
  }
+ const firstPassNew=new Map();
+ assert(firstPassCoverage?.schemaVersion===1 &&
+  firstPassCoverage.kind==='B01_FULL_500_SOURCE_PURPOSE_COMPARISON_COVERAGE_REFERENCE' &&
+  firstPassCoverage.batchId==='B01' &&
+  firstPassCoverage.scope?.manifestLessons===500 &&
+  firstPassCoverage.scope.previouslySourcePurposeReviewed===verified.size &&
+  Array.isArray(firstPassCoverage.newReviewedRows) &&
+  firstPassCoverage.newReviewedRows.length+verified.size===500 &&
+  firstPassCoverage.scope.sourcePurposeComparedTotal===500 &&
+  firstPassCoverage.scope.newlySourcePurposeCompared315===firstPassCoverage.newReviewedRows.length &&
+  firstPassCoverage.scope.fullL1toL6CertificationsGranted===0,
+  'Source first-pass must join 500 previously/newly audited source-purpose records without academic PASS');
+ const originalByCode=new Map(manifest.lessons.map(m=>[m.lessonCode,m]));
+ const originalSourceByCode=new Map(sourceIndex.rows.map(x=>[x.lessonCode,x]));
+ for(const row of firstPassCoverage.newReviewedRows){
+  const m=originalByCode.get(row.lessonCode);
+  const original=originalSourceByCode.get(row.lessonCode);
+  const lesson=learner.get(row.lessonCode);
+  assert(m && original && lesson && !verified.has(row.lessonCode) &&
+   !firstPassNew.has(row.lessonCode) && row.ordinal===m.ordinal &&
+   row.sourceSemanticSha256===m.sourceSemanticSha256 &&
+   row.sourceFileInventorySha256===original.localFileByteSha256 &&
+   row.canonicalOriginalLearnerBodySha256===lesson.canonicalBodySha256 &&
+   row.originalTeacherSourceUrl===m.sourceUrl &&
+   row.originalTeacherActivityUrl===m.sourceUrl.replace('/preparation.html','/lesson.html') &&
+   isSha(row.liveTeacherPreparationSha256) &&
+   isSha(row.liveTeacherActivitySha256) &&
+   row.officialGoalElementsRead>=1 && row.officialTeacherActivityHeadingsRead>=1 &&
+   row.academicCertified===false &&
+   row.effectiveRuntimeAndL1ToL6VerificationStillRequired===true,
+   'Source first-pass new row mismatched immutable teacher or canonical lesson: '+row.lessonCode);
+  firstPassNew.set(row.lessonCode,row);
+ }
+ assert(firstPassNew.size+verified.size===500,'Full 500 first-pass identity coverage missing');
  const repeated=new Map(),nodes=[];
  const flagged=new Map(Object.keys(triage.groups).map(k=>[k,[]]));
  const cueGap=new Map(teacherActivityIndex.representationCueKeys.map(k=>[k,[]]));
@@ -106,6 +141,8 @@ function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,so
   const t=base.translations.find(x=>x.cultureCode==='en');
   assert(t,'Missing English learner translation '+m.lessonCode);
   const sourceReviewed=verified.has(m.lessonCode);
+  const firstPassNewReviewed=firstPassNew.has(m.lessonCode);
+  assert(sourceReviewed||firstPassNewReviewed,'Missing 500th teacher goal/activity first-pass identity');
   if(sourceReviewed)assert(verified.get(m.lessonCode)===m.sourceSemanticSha256,
    'Source evidence fingerprint drift '+m.lessonCode);
   const domains=[...new Set((m.officialOutcomeCodes||[]).map(standardDomain))].sort();
@@ -160,7 +197,7 @@ function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,so
    sourceSemanticSha256:m.sourceSemanticSha256,rawLearnerBodySha256:base.canonicalBodySha256,
    originalTeacherFileSha256:source.localFileByteSha256,
    standards:m.officialOutcomeCodes,standardDomains:domains,
-   academicGoalSourceReview:sourceReviewed?'REVIEWED_PURPOSE_ONLY_NOT_L1_L6':'NOT_SOURCE_GOAL_VERIFIED',
+   academicGoalSourceReview:sourceReviewed?'PRIOR_SOURCE_PURPOSE_REVIEW_NOT_L1_L6':'NEW_SOURCE_GOAL_ACTIVITY_FIRST_PASS_NOT_L1_L6',
    originalTeacherGoalSectionCaptured:memory.teacherGoalSectionFound,
    sourceTeacherPurposeSignals:originalTags,
    sourcePurposeMemoryState:'EXTRACTED_SIGNALS_NOT_SEMANTIC_L1_CERTIFICATION',
@@ -211,7 +248,7 @@ function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,so
   batchId:'B01',batchManifest:'ONE_IMMUTABLE_500_LESSON_SCOPE',
   coverage:{expected:500,observed:nodes.length,unique:covered.size,missing:0},
   inputs:{manifestPath,sourceIndexPath,teacherActivityIndexPath,sourceGoalMemoryPath,
-   packPaths,reviewedPaths},
+   packPaths,reviewedPaths,firstPassPath},
   automaticSourceGoalSignalCapture:{teacherGoalsFound:500-unresolvedSourceGoalCodes.length,
    unresolvedLessonCodes:unresolvedSourceGoalCodes,
    alternateOfficialLessonPurposeHeadings:sourceGoalMemory.rows.filter(x=>x.alternativePurposeHeadingFound).length,
@@ -221,8 +258,13 @@ function buildGraph({manifest,packs,sourceIndex,teacherActivityIndex,reviewed,so
    academicVerification:'NOT_GRANTED_BY_LEXICAL_EXTRACTION'},
 
   academicSourcePurposeReviews:{
-   verifiedPurposeOnly:verified.size,stillNotPurposeReviewed:500-verified.size,
-   clarification:'Purpose review and source hash indexing are NOT complete source element cards or L1–L6'},
+   previousSourcePurposeReviews:verified.size,
+   newSourceGoalActivityFirstPass:firstPassNew.size,
+   firstPassSourceGoalActivityComparedTotal:verified.size+firstPassNew.size,
+   missingSourceGoalActivityFirstPass:500-(verified.size+firstPassNew.size),
+   firstPassIsFullAcademicCertification:false,
+   newlyCertifiedByThisGraph:0,
+   clarification:'500 goals/activity source-purpose cues first-pass compared. NOT a full source task-by-task, representation, math, rights, L1–L6 or eight-dimension certification'},
   mathElementCandidatesByFamily:domainSummary,
   rootCauseSignals:rootFamilies,
   repeatedExactLearnerTemplates:{
@@ -246,7 +288,8 @@ function load(){
  return {manifest:read(manifestPath),sourceIndex:read(sourceIndexPath),
   teacherActivityIndex:read(teacherActivityIndexPath),
   sourceGoalMemory:read(sourceGoalMemoryPath),
-  packs:packPaths.map(read),reviewed:reviewedPaths.map(read)};
+  packs:packPaths.map(read),reviewed:reviewedPaths.map(read),
+  firstPassCoverage:read(firstPassPath)};
 }
 if(require.main===module){
  const graph=buildGraph(load());

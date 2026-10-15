@@ -6,7 +6,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const {
-  loadSource, validateLedger, policyId
+  loadSource, validateLedger, policyId, gateNames, dimensionNames
 } = require('./us-ccss-lesson-certification-records.cjs');
 
 const root = path.resolve(__dirname, '..');
@@ -16,6 +16,20 @@ const ledgerFile = path.join(root,
   'artifacts/academic-us-ccss/04-lesson-certification-records.json');
 const isSha256 = x => typeof x === 'string' && /^[0-9a-f]{64}$/i.test(x);
 const assert = (v, msg) => { if (!v) throw Error(msg); };
+
+// Final release may NEVER approve evidence tied to an old commit. During
+// GitHub Actions GITHUB_SHA is the immutable checked-out release candidate.
+// Local release-checks must explicitly provide --candidate-sha=40hex.
+// --status stays read-only/diagnostic so partial evidence can be inspected.
+function requireCurrentCandidateSha(ledger, currentSha) {
+  assert(typeof currentSha === 'string' && /^[a-f0-9]{40}$/i.test(currentSha),
+    'Final B01 release requires immutable current candidate SHA (GITHUB_SHA or --candidate-sha=40hex)');
+  assert(ledger?.releaseCandidateSha === currentSha,
+    'STALE B01 candidate: canonical evidence is bound to '+
+    (ledger?.releaseCandidateSha ?? 'MISSING') +
+    ', but current release SHA is '+currentSha+'; rebuild/verify every affected L1–L6 gate on current SHA');
+  return currentSha;
+}
 
 function inspectBatch({ manifest, source, ledger }) {
   assert(manifest.schemaVersion === 1 &&
@@ -69,6 +83,8 @@ function inspectBatch({ manifest, source, ledger }) {
   let openDefects = 0;
   const outstanding = [];
   const byGrade = {};
+  const missingGateProofTotals = Object.fromEntries(gateNames.map(g => [g,0]));
+  const missingDimensionProofTotals = Object.fromEntries(dimensionNames.map(d => [d,0]));
   for (const entry of manifest.lessons) {
     const record = all.get(entry.lessonCode);
     assert(record, 'Missing canonical ledger coverage row: ' + entry.lessonCode);
@@ -82,14 +98,19 @@ function inspectBatch({ manifest, source, ledger }) {
     const allEvidenceReady = record.status === 'EVIDENCE_READY' &&
       record.academicDecision === 'NOT_CERTIFIED';
     const acceptedState = previouslyCertified || allEvidenceReady;
-    const sixGates = ['L1','L2','L3','L4','L5','L6'].every(g =>
-      record.gates[g]?.status === 'PASS' &&
-      record.gates[g]?.sourceSha === ledger.releaseCandidateSha);
-    const eightDimensions = record.reviewDimensions &&
-      Object.values(record.reviewDimensions).length === 8 &&
-      Object.values(record.reviewDimensions).every(d =>
-        ['PASS','NOT_APPLICABLE'].includes(d.status) &&
-        d.contentSha256 === record.contentSha256);
+    const missingGates=gateNames.filter(g =>
+      record.gates[g]?.status !== 'PASS' ||
+      record.gates[g]?.sourceSha !== ledger.releaseCandidateSha);
+    const missingDimensions=dimensionNames.filter(d => {
+      const field=record.reviewDimensions?.[d];
+      return !field || !['PASS','NOT_APPLICABLE'].includes(field.status) ||
+        field.contentSha256 !== record.contentSha256;
+    });
+    for(const gate of missingGates)missingGateProofTotals[gate]++;
+    for(const dimension of missingDimensions)missingDimensionProofTotals[dimension]++;
+    const sixGates = missingGates.length === 0;
+    const eightDimensions = missingDimensions.length === 0 &&
+      record.reviewDimensions && Object.values(record.reviewDimensions).length === 8;
     const ready = acceptedState && sixGates && eightDimensions &&
       record.unresolvedDefects.length === 0 &&
       isSha256(record.contentSha256) && isCommitSha(ledger.releaseCandidateSha) &&
@@ -101,15 +122,23 @@ function inspectBatch({ manifest, source, ledger }) {
     } else {
       byGrade[grade].outstanding++;
       outstanding.push({ ordinal: entry.ordinal, lessonCode: entry.lessonCode,
-        evidenceState: record.status, missingSixGateOrDimensions: !sixGates ||
-          !eightDimensions, unresolvedDefects: record.unresolvedDefects.length });
+        evidenceState: record.status, academicDecision: record.academicDecision,
+        missingGates, missingDimensions,
+        missingContentSha: !isSha256(record.contentSha256),
+        missingContentVersion: !record.contentVersion,
+        missingSixGateOrDimensions: !sixGates || !eightDimensions,
+        unresolvedDefects: record.unresolvedDefects.length,
+        noRecordedDefectsDoesNotMeanMathReviewed: true });
     }
   }
   return {
     batchId: 'B01', total: manifest.lessons.length,
     evidenceReady, historicalCertificationsReused: historicallyCertified,
     remainingEvidence: manifest.lessons.length - evidenceReady,
-    openDefects, byGrade,
+    openDefects, byGrade, missingGateProofTotals, missingDimensionProofTotals,
+    releaseCandidateSha: ledger.releaseCandidateSha,
+    evidenceGapRows: outstanding,
+    noteNoDefectsRecordedDoesNotProveReviewed: true,
     state: evidenceReady === manifest.lessons.length && openDefects === 0 ?
       'BATCH_EVIDENCE_READY' : 'BATCH_NO-GO',
     gapsPreview: outstanding.slice(0, 15),
@@ -126,6 +155,13 @@ function main(argv = process.argv.slice(2)) {
   const ledger = JSON.parse(fs.readFileSync(ledgerFile, 'utf8'));
   const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
   const result = inspectBatch({ manifest, source, ledger });
+  if (releaseCheck) {
+    // Never allow a stale 500-row ledger or a missing live release SHA.
+    const explicit = argv.find(x => x.startsWith('--candidate-sha='));
+    const currentSha = explicit ? explicit.slice('--candidate-sha='.length) :
+      process.env.GITHUB_SHA;
+    requireCurrentCandidateSha(ledger, currentSha);
+  }
   if (releaseCheck && result.state !== 'BATCH_EVIDENCE_READY') {
     process.stdout.write(JSON.stringify(result, null, 2) + '\n');
     throw Error('COLLECTIVE RELEASE BLOCKED: B01 lacks evidence for ' +
@@ -149,4 +185,4 @@ if (require.main === module) {
     process.exitCode = 1;
   }
 }
-module.exports = { inspectBatch, main };
+module.exports = { inspectBatch, requireCurrentCandidateSha, main };

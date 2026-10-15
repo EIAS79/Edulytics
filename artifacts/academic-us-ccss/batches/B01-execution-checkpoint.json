@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "2026-10-15 B01 V9: after latest GitHub CI success on 204019d (500-way graph + targeted visuals), followed plan full 500 collective batch, not an 11-lesson release. Inspected all 11 outstanding original teacher figure-source goal and learner content identities and created one shared source-goal guarded Rich V2 visual correction reused across their mathematical content. Added CounterPairs (2 counters exactly per pair, remainder if odd) and first-party rhombus SVG; used existing polygon, scaled rectangle, fractions, tape diagram and place value table to represent G2 U06 L03/19; G2 U08 L02/03; G3 U04 L11/15; G3 U07 L01/04/06; G3 U08 L01; G4 U04 L20. Original pack source identifiers and sha guarded by tests, malformed goals rejected, original 2021 CC BY course attribution remains, 5 separately licensed images not copied. Structural Rich V2 visual coverage for 40/40 original figure-source lessons targeted (was 29/40), but DOES NOT prove mathematical equivalence of all 397 frames, original task completeness, student L6 accessibility/browser or image rights: these remain 0 completed. All 500 L1-L6 and 8 dimensions not closed; BATCH_NO-GO, canonical certificates 1/500, no merge/publish/B02. 2026-10-15 additional math semantics refinement: CI 1e8f971 and followup 87f18ee caught a missing CounterPairs markup, restored renderer while preserving rhombus; tests revealed whitespace-sensitive visual assertion that is being normalized. Tightened actual unit labels for source G2 measuring 3 cm/2 cm, source money 68-39 cents, and preserved exact shared scale for multiplication-area G3 3x6 split into 3x4 and 3x2 (otherwise relative area rendering is misleading). Implemented explicit complete numeric-equality arithmetic triage over full 500 raw learner lessons to prevent mistaken repairs of intentionally false true/false practice statements and mathematically valid multi-term equalities. This is independent review and no fake academic approval. 2026-10-15 latest GitHub Actions V9 89b3e7e commit SUCCESS complete: all 500 actual Rich V2 lessons composed and reconciled with 40 original teacher figure lessons, all 40 have structural non-equation diagrams; 397 original source frames remain semantically/rights/L6 unverified. Fresh numeric math expression scan across all 500 raw learner lessons: 151 complete numeric LaTex equations evaluated, 131 numeric true, 20 likely intentionally false within true/false classroom problems and MUST NOT auto-correct, 154 further expressions not evaluated by narrow arithmetic parser. No complete academic proof. Added read-only collective canonical 500 gate to CI to surface actual ledger readiness rather than trusting structural presence or partial source reviews. Certification historical 1/500, BATCH_NO-GO.",
-  "nextExactOperation": "Examine latest immutable CI read-only release-gate counts and defects, then close real canonical ledger L1–L6 evidence and eight dimensions individually for all 500 on stable effective Sha. Structural diagrams now present 40/40 but 397 exact original source figure frame mathematical task correspondences, 115 alt-source context candidates and authenticated browser L6 remain unverified. No merge/Render before BATCH_EVIDENCE_READY, collective BATCH_CERTIFIED and full release suite; no B02 before post-deploy BATCH_PASS_AND_LIVE.",
+  "lastCompletedOperation": "2026-10-15 V9 B01: release gate and global source/root graph review found stale diagnostic: global graph continued to show legacy 185/500 despite 315 additional original teacher preparation/activity first-pass reviews having been read and SHA-verified in a 500-manifest combined report; corrected graph to JOIN EXACT prior+new verified 185+315, detect overlap/identity/source/body SHA drift and report 500 FIRST PASS with 0 L1–L6 or source task semantic PASS. Canonical final release gate improved to require checked-out immutable GITHUB_SHA (or explicit candidate flag) to MATCH 500-lesson canonical ledger releaseCandidateSha; refuses stale evidence. Gate now emits all 499 unverified lesson codes and their missing L1–L6 and eight-dimension fields, not merely first 15, and states no recorded defects is not proof of academic correctness. No ledger certification forged; all 500 remain ONE B01; no merge, Render publish or B02.",
+  "nextExactOperation": "Confirm latest source-join graph CI and release SHA/499 gap negative tests on the new exact GitHub immutable HEAD; record actual results and correct any failures. The canonical 499 outstanding lessons need real per-lesson L1–L6 and eight-dimension source/effective math, explanation/worked solution, visual, original-task and graded practice evidence, with individual actual student browser L6 and SHA-current tests. Source goal/activity first-pass 500/500 and structural visual coverage 40/40 are NOT certification. Collect a stable release candidate SHA and only then revalidate full 500 evidence, collective BATCH_CERTIFIED, merge PR, deploy Render and verify BATCH_PASS_AND_LIVE; B02 stays blocked.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -773,6 +773,27 @@
     "readOnly": true,
     "doesNotCreateCertification": true,
     "finalReleaseRequires": "all 500 evidence-ready + zero unresolved defects on stable release candidate SHA, full L1-L6/eight dimensions and separate live deploy verification",
+    "academicDecision": "BATCH_NO-GO"
+  },
+  "v9ImmutableShaAndFull500EvidenceGapGuard": {
+    "authoritativeLedgerRecordCount": 1560,
+    "b01Scope": 500,
+    "previouslyAcademicEvidenceReady": 1,
+    "remainingIndividualAcademicEvidenceGaps": 499,
+    "firstPassSourceGoalActivityCoverage": 500,
+    "priorReviewedSourcePurposeCohort": 185,
+    "newFirstPassSourceGoalAndActivityCohort": 315,
+    "newB01CertificationsIssuedByReport": 0,
+    "finalReleaseMustMatchCurrentCheckedOutCommitSha": true,
+    "releaseMayReadStatusOnOldSha": true,
+    "finalReleaseMayUseStaleSha": false,
+    "perLessonMissingL1toL6AndEightDimensionsDetailed": true,
+    "noRecordedDefectsDoesNotMeanAcademicVerification": true,
+    "codePaths": [
+      "tools/us-ccss-b01-release-gate.cjs",
+      "tools/us-ccss-b01-v9-global-root-cause-graph.cjs"
+    ],
+    "canonicalLedgerMutation": "NONE",
     "academicDecision": "BATCH_NO-GO"
   }
 }
