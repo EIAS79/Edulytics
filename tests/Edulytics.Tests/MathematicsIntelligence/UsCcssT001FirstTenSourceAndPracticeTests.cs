@@ -149,6 +149,14 @@ public sealed class UsCcssT001FirstTenSourceAndPracticeTests
         var l04=selected.Single(x=>x.Lesson.LessonCode==Prefix+"04").Lesson;
         Assert.Contains("6 - 2 = 4",l04.Translations.Single().WorkedExamples);
         Assert.DoesNotContain("6 + 1 = 7",l04.Translations.Single().WorkedExamples);
+        var l05=selected.Single(x=>x.Lesson.LessonCode==Prefix+"05");
+        var mixed=l05.Lesson.Translations.Single();
+        Assert.Contains("3 + 2 = 5",mixed.WorkedExamples);
+        Assert.Contains("6 - 2 = 4",mixed.WorkedExamples);
+        Assert.Contains("combine",mixed.KeyConceptsAndRules,
+            StringComparison.OrdinalIgnoreCase);
+        Assert.Equal(CommonCoreT001MixedAddSubtractContentCorrection.CorrectedVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(l05.Doc,l05.Lesson));
         var l06=selected.Single(x=>x.Lesson.LessonCode==Prefix+"06");
         Assert.Contains("6 + 4 = 10",l06.Lesson.Translations.Single().WorkedExamples);
         Assert.DoesNotContain("flash cards",l06.Lesson.Translations.Single().WorkedExamples,
@@ -159,6 +167,29 @@ public sealed class UsCcssT001FirstTenSourceAndPracticeTests
         Assert.Contains("10 - 4 = 6",l10.Translations.Single().WorkedExamples);
         Assert.DoesNotContain("<path",l10.Translations.Single().WorkedExamples,
             StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public void MixedAdditionSubtractionRepairRequiresExactSourceAndPreservesEarlierVoiceFix()
+    {
+        var docs=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        var pair=docs.SelectMany(d=>d.Lessons.Select(l=>(Doc:d,Lesson:l)))
+            .Single(x=>x.Lesson.LessonCode==Prefix+"05");
+        var t=pair.Lesson.Translations.Single();
+        Assert.Contains("You will explore a new stage",t.Explanation);
+        Assert.DoesNotContain("as they learn a new stage",t.Explanation);
+        var old=CanonicalLessonContentMaterializer.ComputeLessonFingerprint(pair.Doc,pair.Lesson);
+        CommonCoreT001MixedAddSubtractContentCorrection.Apply(pair.Doc);
+        Assert.Equal(old,
+            CanonicalLessonContentMaterializer.ComputeLessonFingerprint(pair.Doc,pair.Lesson));
+        var sha=pair.Lesson.CanonicalBodySha256;
+        try
+        {
+            pair.Lesson.CanonicalBodySha256=new string('0',64);
+            Assert.Throws<InvalidOperationException>(()=>
+                CommonCoreT001MixedAddSubtractContentCorrection.Apply(pair.Doc));
+        }
+        finally {pair.Lesson.CanonicalBodySha256=sha;}
     }
 
     [Fact]
