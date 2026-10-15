@@ -45,6 +45,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01V9SharedSubtractionProcedureCorrections.Apply(document);
         CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.Apply(document);
         CommonCoreB01V9OffTopicClockConceptCorrections.Apply(document);
+        CommonCoreT001FindThePairContentCorrection.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -225,7 +226,8 @@ public static class CanonicalLessonContentMaterializer
         var addition=CommonCoreB01V9SharedAdditionProcedureCorrections.GetExpectedContentVersion(document, lesson, geometry);
         var subtraction=CommonCoreB01V9SharedSubtractionProcedureCorrections.GetExpectedContentVersion(document, lesson, addition);
         var geometryConcept=CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.GetExpectedContentVersion(document, lesson, subtraction);
-        return CommonCoreB01V9OffTopicClockConceptCorrections.GetExpectedContentVersion(document, lesson, geometryConcept);
+        var offTopic=CommonCoreB01V9OffTopicClockConceptCorrections.GetExpectedContentVersion(document,lesson,geometryConcept);
+        return CommonCoreT001FindThePairContentCorrection.GetExpectedContentVersion(document,lesson,offTopic);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -273,7 +275,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01V9SharedAdditionProcedureCorrections.IsTarget(document,lesson) ||
         CommonCoreB01V9SharedSubtractionProcedureCorrections.IsTarget(document,lesson) ||
         CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.IsTarget(document,lesson) ||
-        CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document,lesson);
+        CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document,lesson) ||
+        CommonCoreT001FindThePairContentCorrection.IsTarget(document,lesson);
 
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,
@@ -356,7 +359,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB01V9SharedAdditionProcedureCorrections.CanUpgradeExisting(document,lesson,existingContentVersion) ||
         CommonCoreB01V9SharedSubtractionProcedureCorrections.CanUpgradeExisting(document,lesson,existingContentVersion) ||
         CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.CanUpgradeExisting(document,lesson,existingContentVersion) ||
-        CommonCoreB01V9OffTopicClockConceptCorrections.CanUpgradeExisting(document,lesson,existingContentVersion);
+        CommonCoreB01V9OffTopicClockConceptCorrections.CanUpgradeExisting(document,lesson,existingContentVersion) ||
+        CommonCoreT001FindThePairContentCorrection.CanUpgradeExisting(document,lesson,existingContentVersion);
 
     public static string ComputeLessonFingerprint(
         CanonicalLessonContentPackDocument document,
