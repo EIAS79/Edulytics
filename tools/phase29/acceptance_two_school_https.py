@@ -293,6 +293,102 @@ for key, schoolname in SCHOOLS:
                 browser.close()
         print("DISPOSABLE_US_CCSS_G1_U01_L02_STUDENT_RICH_V2_RENDER_PASS",
               next_code,next_id,flush=True)
+        # G1 Unit 1 lessons 03-05: distinct source-bound authenticated
+        # rendering witnesses. These are candidate L6 checks, NOT approval.
+        additional_lessons = (
+            ("PED:US-CCSS-MATH:G1:U01:L03", "Add 1 or 2",
+             "add within 10 when one addend is 1 or 2"),
+            ("PED:US-CCSS-MATH:G1:U01:L04", "More Work with 1 and 2",
+             "subtract 1 or 2 within 10"),
+            ("PED:US-CCSS-MATH:G1:U01:L05",
+             "Explore Addition and Subtraction PLC Activity",
+             "add and subtract within 10"),
+        )
+        root=Path(__file__).resolve().parents[2]
+        manifest=json.loads((root/"artifacts/academic-us-ccss/batches/B01-lesson-manifest.json").read_text())
+        ledger=json.loads((root/"artifacts/academic-us-ccss/04-lesson-certification-records.json").read_text())
+        manifest_by_code={x["lessonCode"]:x for x in manifest["lessons"]}
+        ledger_by_code={x["lessonCode"]:x for x in ledger["records"]}
+        extra_witness={
+            "schemaVersion":1,
+            "kind":"B01_G1_U01_L03_L05_AUTHENTICATED_STUDENT_RENDER_CANDIDATES",
+            "environment":"DISPOSABLE_US_PRIMARY_HTTPS_POSTGRES",
+            "checkedOutCommit":os.environ["GITHUB_SHA"],
+            "academicDecision":"NOT_CERTIFIED",
+            "lessonRecords":[]
+        }
+        extra_ids={}
+        for code,title,objective in additional_lessons:
+            result=sql("""
+                SELECT "Id"::text FROM "CurriculumPedagogicalLessons"
+                WHERE "Code"='""" + code + """';""").splitlines()
+            assert len(result)==1, ("G1 U01 additional lesson source ID mismatch",code,result)
+            lesson_id=result[0]
+            rendered=html.unescape(get_page(
+                student,"/student/learning/lesson/"+lesson_id))
+            for required in (title,objective,"rich-lesson-section","rich-lesson-visual"):
+                assert required.lower() in rendered.lower(), (
+                    "Authenticated source-purpose lesson has incomplete learner content",
+                    code,required)
+            assert code in manifest_by_code and code in ledger_by_code
+            m=manifest_by_code[code]
+            l=ledger_by_code[code]
+            assert l["status"]=="AUTOMATED_SCREENED" and l["academicDecision"]=="NOT_CERTIFIED",(
+                "Do not claim an academic certificate via disposable browser",code)
+            assert len(l["contentSha256"])==64
+            extra_ids[code]=lesson_id
+            extra_witness["lessonRecords"].append({
+                "lessonCode":code,"title":title,
+                "sourceSemanticSha256":m["sourceSemanticSha256"],
+                "effectiveContentSha256":l["contentSha256"],
+                "learnerPageHttpVerified":True,
+                "screenshots":{}
+            })
+        with sync_playwright() as playwright:
+            browser=playwright.chromium.launch(headless=True,args=["--no-sandbox"])
+            try:
+                for screen,width,height in (("desktop",1440,900),("mobile",390,844)):
+                    context=browser.new_context(ignore_https_errors=True,
+                        viewport={"width":width,"height":height})
+                    try:
+                        context.add_cookies(cookies)
+                        page=context.new_page()
+                        for row in extra_witness["lessonRecords"]:
+                            code=row["lessonCode"]
+                            lesson_id=extra_ids[code]
+                            response=page.goto(
+                                BASE+"/student/learning/lesson/"+lesson_id,
+                                wait_until="domcontentloaded",timeout=40000)
+                            assert response is not None and response.status==200,(
+                                "G1 U01 student Chromium page unavailable",code,screen)
+                            assert page.get_by_text(row["title"],exact=False).first.is_visible(),(
+                                "G1 U01 lesson title not visible",code,screen)
+                            figures=page.locator("figure.rich-lesson-visual")
+                            assert figures.count()>0,(
+                                "G1 U01 mathematically meaningful visual absent",
+                                code,screen)
+                            assert figures.first.is_visible(),(
+                                "G1 U01 first maths representation hidden",
+                                code,screen)
+                            suffix=code.rsplit(":",1)[-1].lower()
+                            image_path=Path("/tmp/g1-u01-"+suffix+"-"+screen+".png")
+                            page.screenshot(path=str(image_path),full_page=True)
+                            digest=hashlib.sha256(image_path.read_bytes()).hexdigest()
+                            row["screenshots"][screen]={
+                                "viewportWidth":width,"viewportHeight":height,
+                                "imageSha256":digest,
+                                "visibleMathVisualCount":figures.count()
+                            }
+                            print("DISPOSABLE_G1_SOURCE_SCREENSHOT_CANDIDATE_PASS",
+                                  code,screen,figures.count(),flush=True)
+                    finally:
+                        context.close()
+            finally:
+                browser.close()
+        Path("/tmp/g1-u01-l03-l05-authenticated-student-evidence.json").write_text(
+            json.dumps(extra_witness,indent=2)+"\n",encoding="utf-8")
+        print("DISPOSABLE_G1_U01_L03_L05_SOURCE_SCOPED_L6_CANDIDATE_PASS",
+              len(extra_witness["lessonRecords"]),flush=True)
     get_page(student, "/student/practice")
     deny(student, "/school/assessments")
     deny(teacher, "/student/dashboard")

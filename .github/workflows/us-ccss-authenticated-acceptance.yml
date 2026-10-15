@@ -180,6 +180,20 @@ jobs:
           name: g1-u01-l02-rich-v2-chromium-screenshots
           path: /tmp/g1-u01-l02-*.png
           if-no-files-found: warn
+      - name: Independently verify L03-L05 authenticated viewports, source/content fingerprints and screenshots
+        run: |
+          node --test tests/academic-us-ccss-b01-g1-lesson3to5-l6-verifier.test.cjs
+          node tools/us-ccss-b01-g1-lesson3to5-l6-verifier.cjs
+      - name: Preserve authenticated student source-bound L03-L05 evidence and verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-u01-l03-l05-authenticated-student-l6-candidates
+          path: |
+            /tmp/g1-u01-l0[345]-*.png
+            /tmp/g1-u01-l03-l05-authenticated-student-evidence.json
+            /tmp/g1-u01-l03-l05-independent-verification.json
+          if-no-files-found: warn
       - name: Verify only two synthetic schools were created
         run: |
           set -euo pipefail
