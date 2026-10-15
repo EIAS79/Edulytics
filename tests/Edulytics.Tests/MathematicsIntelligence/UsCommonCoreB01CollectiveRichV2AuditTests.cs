@@ -78,6 +78,18 @@ public sealed class UsCommonCoreB01CollectiveRichV2AuditTests
                 Assert.Equal(716, 362 + 354);
             }
 
+            if (code == "PED:US-CCSS-MATH:G1:U01:L06")
+            {
+                Assert.Contains("6 + 4 = 10",en.WorkedExamples);
+                var chart=Assert.Single(rich.Visuals.Where(v=>
+                    v.Kind==RichLessonVisualKind.PlaceValueChart));
+                Assert.Equal(new[] {"●","●","●","●","●"},chart.Rows[0].Cells);
+                Assert.Equal(new[] {"●","○","○","○","○"},chart.Rows[1].Cells);
+                Assert.Equal(10,chart.Rows.Sum(row=>row.Cells.Count));
+                Assert.DoesNotContain("flash cards",en.WorkedExamples,
+                    StringComparison.OrdinalIgnoreCase);
+            }
+
             withRich++;
             if (sidecar is not null) explicitSidecars++;
             else runtimeComposed++;
