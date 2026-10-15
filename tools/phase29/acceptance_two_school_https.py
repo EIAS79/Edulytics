@@ -294,11 +294,21 @@ for key, schoolname in SCHOOLS:
                             assert displayed_source==expected_source, (
                                 "T001 source attribution points to wrong original lesson",
                                 lesson_code,displayed_source,expected_source)
-                            if suffix in ("L06","L07","L08","L09","L10"):
-                                assert page.locator(
-                                    "figure.rich-lesson-visual--placevaluechart"
-                                ).count()>0, (
-                                    "T001 original skill visual missing",
+                            assert page.locator(
+                                "figure.rich-lesson-visual--placevaluechart"
+                            ).count()>0, (
+                                "T001 original skill visual missing",
+                                lesson_code,screen)
+                            visual_models={
+                                "L02":"Two dot cards make an addition expression",
+                                "L03":"Start at five, count forward two",
+                                "L04":"Start at eight, take away two",
+                                "L05":"Joining and taking away are different actions",
+                            }
+                            if suffix in visual_models:
+                                assert page.get_by_text(
+                                    visual_models[suffix],exact=True).first.is_visible(), (
+                                    "T001 actual counter/counting model not displayed",
                                     lesson_code,screen)
                             if screen=="desktop":
                                 rendered_sections=page.locator(
