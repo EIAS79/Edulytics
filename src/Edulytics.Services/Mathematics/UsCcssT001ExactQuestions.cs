@@ -101,7 +101,7 @@ internal static class UsCcssT001ExactQuestions
             case "usccss.t001.g1.sort_shape_cards":
                 a=rng.Next(1,7);b=rng.Next(1,7);c=rng.Next(1,7);category=rng.Next(0,3);
                 string[] shapes=["triangles","squares","circles"];
-                var mixedShapes=ShuffledItems(rng,("triangle",a),("square",b),("circle",c));
+                var mixedShapes=ShuffledItems(rng,("▲",a),("■",b),("●",c));
                 return new(family,
                     $"Sort this mixed set of shape cards into three groups. " +
                     $"Cards: {mixedShapes}. How many cards belong in '{shapes[category]}'?",
