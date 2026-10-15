@@ -187,6 +187,10 @@ function main(argv = process.argv.slice(2)) {
   const statusOnly = argv.includes('--status');
   const releaseCheck = argv.includes('--release-check');
   assert(statusOnly !== releaseCheck, 'Specify exactly --status or --release-check');
+  // T001..T156 (ten each) supersede this historical B01=500 gate.
+  // Retain --status for audit provenance; NEVER certify 500 via this CLI.
+  assert(!releaseCheck,
+    'SUPERSEDED_RELEASE_POLICY: 500-lesson release disabled; use the ten-lesson T001 gate');
   const source = loadSource();
   const ledger = JSON.parse(fs.readFileSync(ledgerFile, 'utf8'));
   const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
