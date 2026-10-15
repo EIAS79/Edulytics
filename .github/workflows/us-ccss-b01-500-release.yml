@@ -57,6 +57,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreSourceBoundHtmlEntityCorrectionsTests.cs'
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreB01V9OffTopicClockConceptCorrections.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9OffTopicClockConceptCorrectionsTests.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01FractionPurposeCorrectionsTests.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01PlaceValuePurposeCorrectionTests.cs'
@@ -168,7 +170,7 @@ jobs:
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - name: Validate effective learner content, Rich V2 quality and real question generation over all 500
         run: |
-          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01V9ThreeSourcePracticeTargetsTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceDotCardsContentCorrectionTests|FullyQualifiedName~UsCcssB01NumberLineArithmeticalVisualsTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests|FullyQualifiedName~UsCcssB01TenthsHundredthsSourceTests|FullyQualifiedName~UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests' --logger 'console;verbosity=normal'
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore --filter 'FullyQualifiedName~UsCommonCoreB01Collective|FullyQualifiedName~UsCcssB01VerifiedExpressionVisualsTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01SourceTaskQuestionEngineTests|FullyQualifiedName~UsCcssB01V9ThreeSourcePracticeTargetsTests|FullyQualifiedName~UsCcssB01V9OffTopicClockConceptCorrectionsTests|FullyQualifiedName~UsCcssB01V9RemainingElevenFigureRootVisualsTests|FullyQualifiedName~UsCcssB01SourceDotMatchingActivitiesTests|FullyQualifiedName~UsCcssB01SourceDotCardsContentCorrectionTests|FullyQualifiedName~UsCcssB01NumberLineArithmeticalVisualsTests|FullyQualifiedName~UsCcssB01SourceTaskVisualsTests|FullyQualifiedName~UsCcssB01FractionPracticeVisualsTests|FullyQualifiedName~UsCcssB01CategoricalGraphVisualsTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests|FullyQualifiedName~UsCcssB01TenthsHundredthsSourceTests|FullyQualifiedName~UsCcssB01UnitAndPlaceValuePurposeCorrectionsTests' --logger 'console;verbosity=normal'
       - name: Prepare exact SHA-bound screening reconciliation (never academic PASS)
         run: |
           node tools/us-ccss-b01-ledger-screening-reconcile.cjs \
