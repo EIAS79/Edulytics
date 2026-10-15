@@ -39,8 +39,11 @@ test('500 audited runtime rows become SCREENED, not certified; 1060 other lesson
 });
 test('Running the exact same runtime twice cannot change certified states',()=>{
  const a=fixture(),first=reconcile(a).ledger;
- const second=reconcile({...a,ledger:first}).ledger;
- assert.deepEqual(second,first);
+ const after=reconcile({...a,ledger:first});
+ assert.deepEqual(after.ledger,first);
+ assert.equal(after.summary.screened,0);
+ assert.equal(after.summary.alreadyScreened,500);
+ assert.equal(after.summary.stillNeedFullL1L6AndEightDimensions,500);
 });
 test('Certified pilot is never overwritten',()=>{
  const a=fixture();a.ledger.records[0].status='INTERNALLY_CERTIFIED';

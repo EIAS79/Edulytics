@@ -551,7 +551,7 @@ jobs:
           assert.equal(summary.refusedToAwardPass,true);
           assert.equal(updated.releaseCandidateSha,old.releaseCandidateSha);
           assert.equal(updated.records.length,1560);
-          let changed=0,alreadyApproved=0;
+          let changed=0,unchanged=0,alreadyApproved=0;
           for(let i=0;i<1560;i++){
             const a=old.records[i],b=updated.records[i];
             assert.equal(b.lessonCode,a.lessonCode);
@@ -567,17 +567,24 @@ jobs:
             assert.deepEqual(b.gates,a.gates);
             assert.deepEqual(b.reviewDimensions,a.reviewDimensions);
             assert.deepEqual(b.unresolvedDefects,a.unresolvedDefects);
-            assert.equal(b.screeningProvenance.auditedHeadSha,process.env.GITHUB_SHA);
-            assert.equal(b.screeningProvenance.githubRunId,process.env.GITHUB_RUN_ID);
             assert.equal(b.screeningProvenance.learnerContentSha256,b.contentSha256);
             assert.match(b.contentSha256,/^[a-f0-9]{64}$/);
             if(a.contentSha256)assert.equal(b.contentSha256,a.contentSha256);
-            changed++;
+            if(a.status==='AUTOMATED_SCREENED'){
+              assert.deepEqual(b,a,'Do not rewrite previously proven screening evidence');
+              unchanged++;
+            } else {
+              assert.equal(b.screeningProvenance.auditedHeadSha,process.env.GITHUB_SHA);
+              assert.equal(b.screeningProvenance.githubRunId,process.env.GITHUB_RUN_ID);
+              changed++;
+            }
           }
           assert.equal(alreadyApproved,1);
-          assert.equal(changed,499);
-          assert.equal(summary.screened,499);
-          console.log('Verified 499 screened bodies, no new PASS or academic certificates');
+          assert.equal(changed+unchanged,499);
+          assert.equal(summary.screened,changed);
+          assert.equal(summary.alreadyScreened,unchanged);
+          console.log('Verified '+changed+' newly screened and '+unchanged+
+            ' existing screened bodies; no academic PASS added');
           NODE
       - name: Commit ONLY the verified screening ledger proposal to the B01 branch
         run: |
@@ -588,6 +595,10 @@ jobs:
           cp b01-screened-proposal/b01-ledger-screening-proposal-1560.json artifacts/academic-us-ccss/04-lesson-certification-records.json
           git diff --check
           changed=$(git diff --name-only)
+          if test -z "$changed"; then
+            echo "Already reconciled: no new screening record changes to commit"
+            exit 0
+          fi
           test "$changed" = "artifacts/academic-us-ccss/04-lesson-certification-records.json"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

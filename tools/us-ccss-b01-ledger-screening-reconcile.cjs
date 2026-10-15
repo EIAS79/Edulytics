@@ -26,7 +26,7 @@ function reconcile({manifest,source,ledger,runtime,headSha,runId,atUtc}){
    runtime.lessonRows?.length===500,'Successful complete 500-row runtime required');
  const output=structuredClone(ledger);
  const changes=[],skipped=[];
- let preservedCertified=0;
+ let preservedCertified=0,alreadyScreened=0;
  for(let i=0;i<500;i++){
   const original=source.records[i],m=manifest.lessons[i],r=runtime.lessonRows[i];
   const l=output.records[i];
@@ -54,6 +54,18 @@ function reconcile({manifest,source,ledger,runtime,headSha,runId,atUtc}){
     'Screening cannot overwrite started academic review: '+l.lessonCode);
   assert(l.contentSha256===null||l.contentSha256===r.effectiveContentSha256,
     'Effective learner-body fingerprint changed since review: '+l.lessonCode);
+  if(l.status==='AUTOMATED_SCREENED'){
+    const p=l.screeningProvenance;
+    assert(l.contentVersion===r.effectiveContentVersion &&
+      p?.type==='RUNTIME_MATH_AND_CONTENT_SCREEN_ONLY_NOT_CERTIFICATION' &&
+      isCommit(p.auditedHeadSha) &&
+      /^[1-9][0-9]*$/.test(String(p.githubRunId)) &&
+      p.learnerContentSha256===r.effectiveContentSha256,
+      'Previously screened runtime provenance is missing or changed: '+l.lessonCode);
+    alreadyScreened++;
+    skipped.push(l.lessonCode);
+    continue;
+  }
   l.contentSha256=r.effectiveContentSha256;
   l.contentVersion=r.effectiveContentVersion;
   l.status='AUTOMATED_SCREENED';
@@ -68,9 +80,9 @@ function reconcile({manifest,source,ledger,runtime,headSha,runId,atUtc}){
  return {ledger:output,summary:{
   kind:'B01_500_LEDGER_SCREENING_RECONCILIATION_PROPOSAL',
   auditedHeadSha:headSha,githubRunId:String(runId),
-  checked:500,screened:changes.length,preservedCertified,
+  checked:500,screened:changes.length,alreadyScreened,preservedCertified,
   refusedToAwardPass:true,academicDecision:'NOT_500_BATCH_CERTIFIED',
-  stillNeedFullL1L6AndEightDimensions:changes.length,
+  stillNeedFullL1L6AndEightDimensions:changes.length+alreadyScreened,
   unchangedOtherCurriculumRows:output.records.length-500,
   note:'A 500-row successful runtime does not prove academic correctness or browser L6. Review and apply the ledger proposal separately; do NOT use it as release approval.'
  }};
