@@ -40,6 +40,14 @@ test('No legal ownership claim is manufactured from CMS type or metadata',()=>{
  assert.ok(view.includes('independentSymbol'));
  assert.ok(!view.includes('cms-assets.illustrativemathematics.org'));
 });
+test('Copyright lookup is not imposed on self-authored or verified trivial mathematical visuals',()=>{
+ const x=auditOriginalImageReuse({figureMap:map(),gradePacks:packs()});
+ assert.equal(x.visualCopyPolicy.ordinaryVerifiedMathematicalSchematicsRequirePublisherSearch,false);
+ assert.equal(x.visualCopyPolicy.excludePhotosFromDirectCopy,true);
+ assert.equal(x.visualCopyPolicy.directReuseOfUninspectedPublisherFile,false);
+ assert.ok(x.imageFileCandidates.every(a=>a.policyBeforeVisualInspection
+  ==='INSPECT_ACTUAL_VISUAL_BEFORE_COPYING_SOURCE_FILE'));
+});
 test('Tampered source facts or missing grade pack fail closed',()=>{
  const p=packs();delete p[3];
  assert.throws(()=>auditOriginalImageReuse({figureMap:map(),gradePacks:p}),/Missing grade pack/);

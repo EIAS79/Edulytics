@@ -4,6 +4,7 @@
 // A teacher-page DOM reference never supplies image-byte inspection or permission.
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const {decideVisualReuse}=require('./us-ccss-b01-visual-reuse-policy.cjs');
 function auditOriginalImageReuse({figureMap,gradePacks}){
  assert.equal(figureMap.batchId,'B01');
  assert.equal(figureMap.rows.length,40);
@@ -37,7 +38,8 @@ function auditOriginalImageReuse({figureMap,gradePacks}){
     imageFileCandidates.push({lessonCode:r.lessonCode,publisherRecordId:f.publisherRecordId,
      activity:f.teacherActivitySection,sourceMediaUrl:f.mediaSrc,
      legalStatus:'NOT_DETERMINED',sourceImageBytesInspected:false,
-     flaggedReason:'Inspect actual expressive artwork and its terms before copying this source asset'});
+     flaggedReason:'First inspect whether this file is merely a generic math symbol or a photograph/distinctive artwork; filename alone determines neither',
+     policyBeforeVisualInspection:decideVisualReuse({visualClass:'UNINSPECTED'}).decision});
    } else assert.fail('Unrecognized media type');
    urls.add(f.mediaSrc);
    if(body.includes(f.mediaSrc)){exact++;embedded.push(f.publisherRecordId);}
@@ -63,7 +65,14 @@ function auditOriginalImageReuse({figureMap,gradePacks}){
    actualImageBytesInspected:0,verifiedCopyrightClaims:0,verifiedL6:0},
   checkedGrades,confirmedProtectedSourceImages:[],
   legalReviewStatus:'ALL_397_NOT_DETERMINED',
-  note:'This is only direct URL scanning of canonical grade packs. RichV2/runtime and each publisher image must be audited separately before a rights claim or academic release.',
+  visualCopyPolicy:{
+   ordinaryVerifiedMathematicalSchematicsRequirePublisherSearch:false,
+   genericColoredCountSymbolsMayBeUnprotected:true,
+   excludePhotosFromDirectCopy:true,
+   distinguishDistinctiveArtwork:true,
+   directReuseOfUninspectedPublisherFile:false
+  },
+  note:'URL scanning does not certify rights, live RichV2, or L6. Generic mathematical diagrams can be used without publisher credit after visual simplicity is confirmed; unknown source files must not be copied merely because they are in a math lesson.',
   releaseEligible:false,imageFileCandidates,lessonRows};
 }
 function run(){

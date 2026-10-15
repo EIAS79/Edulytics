@@ -21,7 +21,7 @@ test('Actual third-party authors, attribution licenses, CC0 and unknown license 
  assert.deepEqual(rights.filter(x=>x.status==='LICENSE_CONFIRMED_ATTRIBUTION_REQUIRED_IF_COPIED')
   .map(x=>x.publisherRecordId),['38252','38253']);
  assert.equal(rights.filter(x=>x.license==='CC0').length,2);
- assert.deepEqual(rights.filter(x=>x.status==='THIRD_PARTY_AUTHOR_NAMED_LICENSE_NOT_SHOWN')
+ assert.deepEqual(rights.filter(x=>x.status==='THIRD_PARTY_SOURCE_CREDIT_ASSET_IDENTITY_UNVERIFIED')
   .map(x=>x.publisherRecordId),['39878']);
  assert.ok(rights.filter(x=>x.status.includes('ATTRIBUTION_REQUIRED'))
   .every(x=>x.licenseEvidence&&x.actionForNoCreditsUI.startsWith('USE_INDEPENDENT')));
