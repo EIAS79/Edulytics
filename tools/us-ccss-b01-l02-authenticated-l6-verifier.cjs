@@ -70,7 +70,7 @@ function validate({manifest,ledger,proof,headSha,readScreenshot}){
    reason:'Actual student Chromium and database evidence is a prerequisite, not a full independent L1-L6 academic decision'};
 }
 function main(){
- const root=path.resolve(__dirname,'..'),read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+ const root=path.resolve(__dirname,'..'),read=(p)=>JSON.parse(fs.readFileSync(path.isAbsolute(p)?p:path.join(root,p),'utf8'));
  const input=read('/tmp/g1-u01-l02-student-l6-evidence.json');
  const result=validate({
   manifest:read('artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'),
