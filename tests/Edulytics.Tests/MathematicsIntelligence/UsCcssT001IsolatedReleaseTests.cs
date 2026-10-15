@@ -97,6 +97,37 @@ public sealed class UsCcssT001IsolatedReleaseTests
                             Assert.Contains("1)",q.Prompt);
                             Assert.Contains("2)",q.Prompt);
                             Assert.Contains("3)",q.Prompt);
+                            var choices=q.Prompt.Split(" Options: ",StringSplitOptions.None);
+                            Assert.Equal(2,choices.Length);
+                            var displayed=choices[1].Split(" | ",StringSplitOptions.None);
+                            Assert.Equal(3,displayed.Length);
+                            Assert.Equal(3,displayed.Distinct(StringComparer.Ordinal).Count());
+                            Assert.StartsWith(a.ToString(CultureInfo.InvariantCulture)+") ",
+                                displayed[a-1]);
+                            if(family=="usccss.t001.g1.choose_dot_expression")
+                                Assert.EndsWith(
+                                    p["first"]+" + "+p["second"],displayed[a-1]);
+                            else
+                            {
+                                string[] names=family switch
+                                {
+                                    "usccss.t001.g1.choose_tool_sort"=>
+                                        ["Counters","Pattern blocks","Inch tiles"],
+                                    "usccss.t001.g1.choose_shape_chart"=>
+                                        ["Triangles","Squares","Circles"],
+                                    _=>["Apples","Bananas","Oranges"]
+                                };
+                                for(var labelIndex=0;labelIndex<3;labelIndex++)
+                                {
+                                    var amount=labelIndex switch
+                                    {
+                                        0=>p["first"],1=>p["second"],_=>p["third"]
+                                    };
+                                    Assert.Contains(
+                                        names[labelIndex]+": "+new string('●',amount),
+                                        displayed[a-1]);
+                                }
+                            }
                             Assert.False(ExactSkillContractQuestionEngine.Verify(
                                 family,p,(a%3+1).ToString(CultureInfo.InvariantCulture)));
                         }
