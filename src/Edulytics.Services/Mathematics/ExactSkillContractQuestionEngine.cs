@@ -152,7 +152,8 @@ public sealed class ExactSkillContractQuestionEngine
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
-         UsCcssT001ExactQuestions.Supports(family.Trim()));
+         UsCcssT001ExactQuestions.Supports(family.Trim()) ||
+         UsCcssT001RepresentationChoices.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -286,6 +287,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssT001RepresentationChoices.Supports(family))
+            return UsCcssT001RepresentationChoices.Verify(family, parameters, answer);
         if (UsCcssT001ExactQuestions.Supports(family))
             return UsCcssT001ExactQuestions.Verify(family, parameters, answer);
         // Grade 1 first-edition source: cardinality up to 20 and
@@ -866,6 +869,12 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssT001RepresentationChoices.Supports(family))
+        {
+            var choice=UsCcssT001RepresentationChoices.Build(family,random);
+            return new ExactProblem(choice.Family,choice.Prompt,choice.Solution,
+                choice.ItemType,choice.Parameters);
+        }
         if (UsCcssT001ExactQuestions.Supports(family))
         {
             var t001=UsCcssT001ExactQuestions.Build(family,random);
@@ -2663,6 +2672,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssT001RepresentationChoices.Supports(problem.Family))
+            return UsCcssT001RepresentationChoices.Solve(problem.Family, p);
         if (UsCcssT001ExactQuestions.Supports(problem.Family))
             return UsCcssT001ExactQuestions.Solve(problem.Family, p);
         if (SupportingPracticeCompletionEngine.Supports(problem.Family))
