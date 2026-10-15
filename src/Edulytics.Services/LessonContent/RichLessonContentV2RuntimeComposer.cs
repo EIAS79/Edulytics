@@ -723,6 +723,73 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
+
+        // G1 U01 L07–L09: representative category displays are original
+        // Edulytics examples, not copies of the teacher's classroom materials.
+        // Each explicitly makes the sorting rule, labels and counts visible.
+        if (lessonCode == "PED:US-CCSS-MATH:G1:U01:L07")
+        {
+            if(!body.KeyConceptsAndRules.Contains("categor",StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("T001 L07 math tools category concept drift.");
+            return
+            [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Sort the tools by kind",
+                    Description="Put each object in one named category. This model has 4 counters, 3 inch tiles, and 2 pattern blocks. Count the symbols in each row, then compare the group sizes. The three counts total 9 objects.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Counters — 4",Cells=["●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Inch tiles — 3",Cells=["■","■","■"]},
+                        new RichLessonVisualRow {Label="Pattern blocks — 2",Cells=["⬡","⬡"]}
+                    ]
+                },
+                questionForms
+            ];
+        }
+        if (lessonCode == "PED:US-CCSS-MATH:G1:U01:L08")
+        {
+            if(!body.KeyConceptsAndRules.Contains("shape",StringComparison.OrdinalIgnoreCase) ||
+               !body.KeyConceptsAndRules.Contains("categor",StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("T001 L08 three shape categories drift.");
+            return
+            [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Three categories of shape cards",
+                    Description="This model sorts by the kind of shape: 2 triangles, 3 squares, and 4 circles. Name the groups and record the counts. The squares are one example of 4-sided shapes; the circles have curved boundaries. There are 9 cards altogether.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Triangles — 2",Cells=["▲","▲"]},
+                        new RichLessonVisualRow {Label="Squares — 3",Cells=["■","■","■"]},
+                        new RichLessonVisualRow {Label="Circles — 4",Cells=["●","●","●","●"]}
+                    ]
+                },
+                questionForms
+            ];
+        }
+        if (lessonCode == "PED:US-CCSS-MATH:G1:U01:L09")
+        {
+            if(!body.KeyConceptsAndRules.Contains("survey",StringComparison.OrdinalIgnoreCase) &&
+               !body.KeyConceptsAndRules.Contains("categor",StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("T001 L09 class survey purpose drift.");
+            return
+            [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Represent a sample class survey",
+                    Description="This is fictional practice data, not votes collected from your actual class. Students chose a favorite fruit: 3 voted for apples, 2 for bananas, and 4 for oranges. Label each category and preserve its count when changing from cube groups to a table. There are 9 votes altogether.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Apples — 3",Cells=["●","●","●"]},
+                        new RichLessonVisualRow {Label="Bananas — 2",Cells=["●","●"]},
+                        new RichLessonVisualRow {Label="Oranges — 4",Cells=["●","●","●","●"]}
+                    ]
+                },
+                questionForms
+            ];
+        }
+
         // The exact first-edition G3 U06 L09 teacher activity teaches clock time
         // to the nearest minute. An EquationSet alone is not an analog clock.
         // This is an independently authored 1:37 example, not publisher art:
