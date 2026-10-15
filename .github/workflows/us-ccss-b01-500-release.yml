@@ -19,6 +19,11 @@ on:
       - 'tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs'
       - 'tools/us-ccss-b01-v9-figure-academic-release.cjs'
       - 'tests/academic-us-ccss-b01-v9-figure-academic-release.test.cjs'
+      - 'tools/us-ccss-b01-original-image-reuse-audit.cjs'
+      - 'tests/academic-us-ccss-b01-original-image-reuse-audit.test.cjs'
+      - 'src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml'
+      - 'src/Edulytics.Web/Controllers/DeveloperCreditsController.cs'
+      - 'tests/Edulytics.Tests/Security/DeveloperCreditsAuthorizationTests.cs'
       - 'tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-original-teacher-figure-dom-asset-map-40.json'
       - 'tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs'
@@ -74,6 +79,17 @@ jobs:
         run: node --test tests/academic-us-ccss-b01-evidence-progress.test.cjs
       - name: Screen ALL 500 learner content bodies together
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --output=b01-bulk-screen.json
+      - name: Identify direct publisher-media reuse in actual canonical lesson data
+        run: |
+          node --test tests/academic-us-ccss-b01-original-image-reuse-audit.test.cjs
+          node tools/us-ccss-b01-original-image-reuse-audit.cjs --out b01-source-image-reuse-audit.json
+      - name: Archive source image candidates with undecided rights
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: b01-source-image-reuse-audit
+          path: b01-source-image-reuse-audit.json
+          retention-days: 30
       - name: Verify exact original figure DOM provenance and 40 outstanding source math/rights/L6 blockers
         run: |
           node --test tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs tests/academic-us-ccss-b01-v9-figure-academic-release.test.cjs
