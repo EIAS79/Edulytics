@@ -4,8 +4,8 @@ using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
 /// <summary>
-/// Source-goal-bound representative mathematical visuals for the 19 B01
-/// figure-source lessons that previously composed ONLY an EquationSet.
+/// Source-goal-bound representative mathematical visuals for B01 lessons
+/// whose actual source purpose requires more than a generic EquationSet.
 /// Shared rendering primitives and independent illustrations are reused;
 /// each exact source-goal identity fails closed on content drift.
 /// Does NOT imply complete source-activity fidelity, rights approval or L6.
@@ -26,6 +26,7 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
             [Prefix+"G2:U08:L02"]=new("Partners Make Pairs","pair all of the objects"),
             [Prefix+"G2:U08:L03"]=new("Is it Odd or Even? PLC Activity","even or odd"),
             [Prefix+"G2:U09:L10"]=new("What’s the Question? PLC Activity","tape diagram and number line diagram"),
+            [Prefix+"G3:U03:L04"]=new("Introduction to Addition Algorithms PLC Activity","base-ten diagrams"),
             [Prefix+"G3:U04:L11"]=new("Multiplication Strategies on Ungridded Rectangles","ungridded rectangle"),
             [Prefix+"G3:U04:L15"]=new("Equal Groups, Larger Numbers","factor is a teen number"),
             [Prefix+"G3:U05:L18"]=new("Design With Fractions (optional)","create geometric designs"),
@@ -68,6 +69,10 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
            !body.Explanation.Contains("three-digit number",StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(
                 "B01 G2 U05 L07 mystery-number center purpose drift: "+lessonCode);
+        if(lessonCode==Prefix+"G3:U03:L04" &&
+           !body.WorkedExamples.Contains("362 + 354",StringComparison.Ordinal))
+            throw new InvalidOperationException(
+                "B01 G3 U03 L04 base-ten addition example drift: "+lessonCode);
         if(lessonCode==Prefix+"G4:U01:L08" &&
            (!body.WorkedExamples.Contains("18-by-24 grid",StringComparison.Ordinal) ||
             !body.WorkedExamples.Contains("at least 12 rectangles",StringComparison.Ordinal) ||
@@ -164,6 +169,18 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                     SecondaryLabel="Two G2 number-line positions"
                 }
             ],
+            "G3:U03:L04" => [new RichLessonVisual {
+                Kind=RichLessonVisualKind.PlaceValueChart,
+                Title="Relate a base-ten model to an addition algorithm",
+                Description="An original place-value representation for 362 + 354. Add 3 hundreds + 3 hundreds, 6 tens + 5 tens, and 2 ones + 4 ones. Exchange 10 of the 11 tens for a hundred. The sum has 7 hundreds, 1 ten, 6 ones: 716. The regrouping is the same in expanded and vertical algorithms.",
+                Rows=[
+                    new RichLessonVisualRow {Label="Place",Cells=["Hundreds","Tens","Ones"]},
+                    new RichLessonVisualRow {Label="362",Cells=["3","6","2"]},
+                    new RichLessonVisualRow {Label="354",Cells=["3","5","4"]},
+                    new RichLessonVisualRow {Label="Combined before regrouping",Cells=["6","11","6"]},
+                    new RichLessonVisualRow {Label="After regrouping",Cells=["7","1","6"]}
+                ]
+            }],
             "G3:U04:L11" => [
                 Rectangle("Full ungridded 3 by 6 rectangle",
                     "A 3 by 6 rectangle has area 18 square units. Partition its width conceptually into 4 and 2: 3 times (4 + 2) = 12 + 6 = 18.",6,3,"fixed-comparison-scale"),
