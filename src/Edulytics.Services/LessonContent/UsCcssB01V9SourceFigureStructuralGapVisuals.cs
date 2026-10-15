@@ -4,7 +4,7 @@ using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
 /// <summary>
-/// Source-goal-bound representative mathematical visuals for the 16 B01
+/// Source-goal-bound representative mathematical visuals for the 18 B01
 /// figure-source lessons that previously composed ONLY an EquationSet.
 /// Shared rendering primitives and independent illustrations are reused;
 /// each exact source-goal identity fails closed on content drift.
@@ -17,6 +17,8 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
     private static readonly IReadOnlyDictionary<string,Goal> SourceGoals =
         new Dictionary<string,Goal>(StringComparer.Ordinal)
         {
+            [Prefix+"G1:U08:L09"]=new("Solve Number Riddles","use your understanding of place value to solve number riddles"),
+            [Prefix+"G2:U03:L13"]=new("Center Day 2 (optional)","estimating and measuring lengths"),
             [Prefix+"G2:U05:L07"]=new("Center Day 1 (optional)","work with place value and practice addition and subtraction within 100"),
             [Prefix+"G2:U06:L03"]=new("Specific Side Lengths","sides with a given length"),
             [Prefix+"G2:U06:L05"]=new("Center Day 1 (optional)","describing, naming, and drawing triangles"),
@@ -48,6 +50,14 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                 "B01 source-bound figure purpose drift: "+lessonCode);
         // The original G2 center has students pick exactly three cards for a
         // mystery three-digit number and describe hundreds, tens, and ones.
+        if(lessonCode==Prefix+"G1:U08:L09" &&
+           !body.Explanation.Contains("secret number",StringComparison.OrdinalIgnoreCase))
+            throw new InvalidOperationException(
+                "B01 G1 U08 L09 source number-riddle concept drift: "+lessonCode);
+        if(lessonCode==Prefix+"G2:U03:L13" &&
+           !body.Explanation.Contains("Target Measurements",StringComparison.Ordinal))
+            throw new InvalidOperationException(
+                "B01 G2 U03 L13 ruler-target center concept drift: "+lessonCode);
         if(lessonCode==Prefix+"G2:U05:L07" &&
            !body.Explanation.Contains("three-digit number",StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(
@@ -71,6 +81,35 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                 "B01 G2 U09 L10 student-story quantities drift: "+lessonCode);
         return lessonCode[Prefix.Length..] switch
         {
+            "G1:U08:L09" => [new RichLessonVisual {
+                Kind=RichLessonVisualKind.PlaceValueChart,
+                Title="Solve a new place-value number riddle",
+                Description="Illustrative original riddle: My number has 4 ones, is greater than 30, and is less than 40. The only solution is 34, because 3 tens are 30 and 4 ones are 4. Other numbers ending in 4 fail the range clue.",
+                Rows=[
+                    new RichLessonVisualRow {Label="Place",Cells=["Tens","Ones"]},
+                    new RichLessonVisualRow {Label="Number of units",Cells=["3","4"]},
+                    new RichLessonVisualRow {Label="Value",Cells=["30","4"]}
+                ]
+            }],
+            "G2:U03:L13" => [
+                new RichLessonVisual {
+                    Kind=RichLessonVisualKind.Scale,
+                    Title="Compare a 7 cm target with a 6 cm measured line",
+                    Description="Independent ruler example, not a life-size printable ruler: a centimeter scale from 0 to 10 with equal unit spacing. Mark 6 cm as the measured endpoint and 7 cm as the target endpoint. The absolute distance from measured to target is 1 cm.",
+                    PrimaryLabel="Centimeters (schematic, not physical size)",
+                    Items=Enumerable.Range(0,11).Select(n=>n.ToString(System.Globalization.CultureInfo.InvariantCulture)).ToList(),
+                    SecondaryItems=["6","7"]
+                },
+                new RichLessonVisual {
+                    Kind=RichLessonVisualKind.RatioTable,
+                    Title="Target Measurements: check the score",
+                    Description="The measured line is 6 cm and the target is 7 cm. The absolute difference is |7 - 6| = 1 cm. A difference of zero would be an exact match.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Quantity",Cells=["Target","Measured","Absolute difference"]},
+                        new RichLessonVisualRow {Label="Length",Cells=["7 cm","6 cm","1 cm"]}
+                    ]
+                }
+            ],
             "G2:U05:L07" => [new RichLessonVisual {
                 Kind=RichLessonVisualKind.PlaceValueChart,
                 Title="Mystery number: three digit cards 3, 7 and 4",

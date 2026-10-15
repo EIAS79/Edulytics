@@ -15,6 +15,9 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     private const string Prefix="PED:US-CCSS-MATH:";
 
     [Theory]
+    [InlineData("G1:U08:L09","dd74764b87e53b0d6900a35e30a905dfc05d30acab9db978ed2e9ac11626720b","PlaceValueChart")]
+    [InlineData("G2:U03:L13","5fbacc4927f2d2e2ed57f65965b4ffd2503752d6bd762d2cc24759a0ae14cfa6","Scale")]
+    [InlineData("G2:U03:L13","5fbacc4927f2d2e2ed57f65965b4ffd2503752d6bd762d2cc24759a0ae14cfa6","RatioTable")]
     [InlineData("G2:U05:L07","fc5517a9c6a940a221cfae873c6739ac981bb60d8f1157c14068adeea61cf2ee","PlaceValueChart")]
     [InlineData("G2:U06:L03","940b693c00be0380fb8449140b2648a3aa593291b5894f89643fcd9f7eb15c91","RectangleDiagram")]
     [InlineData("G2:U06:L05","1fba9d0727ad2e26b5389c2e73fe80046871586273bc21502862a36fed9ea709","PolygonDiagram")]
@@ -60,7 +63,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [Fact]
     public void SharedSourceLessonScopeAndEvenOddSemanticsStayFailClosed()
     {
-        Assert.Equal(16,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
+        Assert.Equal(18,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
         var even=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U08:L02",
             GetBody(Prefix+"G2:U08:L02"));
@@ -101,6 +104,42 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
         Assert.Throws<InvalidOperationException>(()=>
             UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
                 Prefix+"G2:U08:L02",altered));
+    }
+
+    [Fact]
+    public void FirstGradeNumberRiddleKeepsTensAndOnesConsistent()
+    {
+        var code=Prefix+"G1:U08:L09";
+        var v=Assert.Single(UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,GetBody(code))!);
+        Assert.Equal(RichLessonVisualKind.PlaceValueChart,v.Kind);
+        Assert.Equal(["Tens","Ones"],v.Rows[0].Cells);
+        Assert.Equal(["3","4"],v.Rows[1].Cells);
+        Assert.Equal(["30","4"],v.Rows[2].Cells);
+        Assert.Equal(34,3*10+4);
+        Assert.True(34>30 && 34<40 && 34%10==4);
+        var changed=GetBody(code) with { Explanation="Generic activity without target clues" };
+        Assert.Throws<InvalidOperationException>(()=>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,changed));
+    }
+
+    [Fact]
+    public void TargetMeasurementCenterUsesEqualTicksAndExactAbsoluteError()
+    {
+        var code=Prefix+"G2:U03:L13";
+        var v=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,GetBody(code))!;
+        Assert.Equal(2,v.Count);
+        var scale=v[0];
+        Assert.Equal(RichLessonVisualKind.Scale,scale.Kind);
+        Assert.Equal(Enumerable.Range(0,11).Select(n=>n.ToString()).ToArray(),scale.Items);
+        Assert.Equal(["6","7"],scale.SecondaryItems);
+        var table=v[1];
+        Assert.Equal(RichLessonVisualKind.RatioTable,table.Kind);
+        Assert.Equal(["Target","Measured","Absolute difference"],table.Rows[0].Cells);
+        Assert.Equal(["7 cm","6 cm","1 cm"],table.Rows[1].Cells);
+        Assert.Equal(1,Math.Abs(7-6));
+        var changed=GetBody(code) with { Explanation="Math center with no ruler activity" };
+        Assert.Throws<InvalidOperationException>(()=>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,changed));
     }
 
     [Fact]
