@@ -437,6 +437,132 @@ for key, schoolname in SCHOOLS:
         print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key,
               ",".join(row[1] for row in generated_items), flush=True)
 
+        # T001 isolated 10-lesson candidate: one actual authenticated
+        # StudentPortal GET, generation, correct-answer marking and persisted
+        # attempt for EACH remaining lesson 02-10. CI fixtures only.
+        # The already-proven L01 pilot is assessed above.
+        if key == "commoncore-primary":
+            t001 = {
+                "02": ["usccss.t001.g1.dot_pair_sum"],
+                "03": ["usccss.t001.g1.add_one_or_two"],
+                "04": ["usccss.t001.g1.subtract_one_or_two"],
+                "05": ["usccss.t001.g1.mixed_add_subtract"],
+                "06": ["usccss.t001.g1.make_ten_missing_part"],
+                "07": ["usccss.t001.g1.sort_math_tools"],
+                "08": ["usccss.t001.g1.sort_shape_cards"],
+                "09": ["usccss.t001.g1.class_survey_categories"],
+                "10": ["usccss.t001.g1.make_ten_missing_part",
+                       "usccss.t001.g1.mixed_add_subtract"],
+            }
+            offered_by_code = {
+                code: lesson_id
+                for lesson_id, code in (
+                    row.split("|", 1) for row in offered if "|" in row)
+            }
+            for suffix, expected in t001.items():
+                code = "PED:US-CCSS-MATH:G1:U01:L" + suffix
+                assert code in offered_by_code, (
+                    "T001 lesson not offered to the actual Grade 1 pupil", code)
+                lesson_id = offered_by_code[code]
+                lesson_html = html.unescape(
+                    get_page(student, "/student/learning/lesson/" + lesson_id))
+                assert "rich-lesson-section" in lesson_html, (
+                    "T001 rendered lesson lacks Rich V2", code)
+                if suffix == "05":
+                    assert "3 + 2 = 5" in lesson_html and "6 - 2 = 4" in lesson_html, (
+                        "T001 L05 cannot teach both operations", code)
+                if suffix == "06":
+                    assert "6 + 4 = 10" in lesson_html and "10 - 6 = 4" in lesson_html, (
+                        "T001 L06 missing make-ten instruction", code)
+                if suffix in ("07", "08", "09"):
+                    assert "rich-lesson-visual--placevaluechart" in lesson_html, (
+                        "T001 category picture not rendered", code)
+                form = get_page(student, "/student/practice")
+                token = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    form)
+                assert token, ("T001 practice form missing CSRF", code)
+                fields = {
+                    "curriculumAdoptionId": adoption.group(1),
+                    "scope": "Lesson",
+                    "lessonId": lesson_id,
+                    "difficulty": "AtClassLevel",
+                    "questionCount": str(len(expected)),
+                    "__RequestVerificationToken": token.group(1),
+                }
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/generate",
+                    data=urllib.parse.urlencode(fields).encode(), method="POST",
+                ), timeout=60) as response:
+                    assert response.status == 200, (code, "generation HTTP failure")
+                    attempt_url = urllib.parse.urlparse(response.url).path.lower()
+                    found = re.fullmatch(
+                        r"/student/practice/attempt/([0-9a-f-]{36})",
+                        attempt_url)
+                    assert found, (code, "did not create Practice attempt", attempt_url)
+                    attempt_id = found.group(1)
+                    attempt_body = response.read().decode("utf-8")
+                recorded = sql("""
+                    SELECT a."CurriculumPedagogicalLessonId"::text,
+                           i."GenerationFamily",pi."Id"::text,i."CorrectAnswer"
+                    FROM "PracticeAttempts" a
+                    JOIN "PracticeAttemptItems" pi
+                      ON pi."PracticeAttemptId"=a."Id"
+                    JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
+                    WHERE a."Id"='""" + attempt_id + """'
+                    ORDER BY pi."Order";""").splitlines()
+                items = [line.split("|", 3) for line in recorded]
+                assert len(items) == len(expected), (
+                    code, "missing persisted exact generated items", items)
+                assert all(row[0] == lesson_id and row[1] in expected
+                           for row in items), (
+                    code, "wrong lesson or out-of-scope Practice family", items)
+                assert {row[1] for row in items} == set(expected), (
+                    code, "incomplete source goal question families", items)
+                csrf = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    attempt_body)
+                assert csrf, (code, "no attempt CSRF token")
+                response_fields = [
+                    ("__RequestVerificationToken", csrf.group(1))]
+                for index, (_, family, item_id, answer) in enumerate(items):
+                    posted_id = re.search(
+                        r'name="attemptItemIds\[' + str(index) +
+                        r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                        attempt_body)
+                    assert posted_id and posted_id.group(1) == item_id, (
+                        code, family, "item mismatch")
+                    response_fields.extend([
+                        ("attemptItemIds[" + str(index) + "]", item_id),
+                        ("answers[" + str(index) + "]", answer),
+                    ])
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/attempt/" + attempt_id
+                    + "/personal-test-submit",
+                    data=urllib.parse.urlencode(response_fields).encode(),
+                    method="POST",
+                ), timeout=60) as grade_result:
+                    assert grade_result.status == 200, (
+                        code, "student answer submission failed")
+                saved = sql("""
+                    SELECT CASE WHEN p."SubmittedAtUtc" IS NOT NULL THEN 1 ELSE 0 END,
+                           p."Score"::text,COUNT(r."Id")::text
+                    FROM "PracticeAttempts" p
+                    JOIN "PracticeAttemptItems" ai
+                      ON ai."PracticeAttemptId"=p."Id"
+                    LEFT JOIN "PracticeResponses" r
+                      ON r."PracticeAttemptItemId"=ai."Id"
+                     AND r."IsCorrect"=true
+                    WHERE p."Id"='""" + attempt_id + """'
+                    GROUP BY p."Id",p."SubmittedAtUtc",p."Score";""")
+                completed, score, correct = saved.split("|")
+                assert completed == "1" and float(score) == len(items) \
+                       and int(correct) == len(items), (
+                    code, "student correct-answer grading/persistence failed",
+                    saved)
+                print("DISPOSABLE_T001_AUTHENTICATED_L6_PRACTICE_PASS",
+                      code,attempt_id,",".join(expected),flush=True)
+
     practice_attempts[key] = match_attempt.group(1)
     students[key] = student
     teachers[key] = teacher
