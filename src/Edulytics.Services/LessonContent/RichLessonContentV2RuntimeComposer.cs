@@ -687,6 +687,42 @@ public static partial class RichLessonContentV2RuntimeComposer
             ];
         }
 
+        // IM 2021 G1 U01 L06, Find the Pair: teach the missing part
+        // of ten with an independently authored two-row ten-frame.
+        // Black = known counters; hollow = the four counters to find.
+        if (lessonCode == "PED:US-CCSS-MATH:G1:U01:L06")
+        {
+            if (!body.WorkedExamples.Contains("6 + 4 = 10", StringComparison.Ordinal) ||
+                !body.KeyConceptsAndRules.Contains("10 - 6 = 4", StringComparison.Ordinal))
+                throw new InvalidOperationException(
+                    "T001 make-ten visual refused source-purpose/content drift.");
+            return
+            [
+                new RichLessonVisual
+                {
+                    Kind = RichLessonVisualKind.PlaceValueChart,
+                    Title = "Find the Pair: 6 and 4 fill a ten-frame",
+                    Description =
+                        "Each row has five equal boxes. Six filled counters ● " +
+                        "and four empty spaces ○ make one complete ten-frame. " +
+                        "Count the four missing counters: 6 + 4 = 10 and 10 - 6 = 4.",
+                    PrimaryLabel = "Filled ● = 6; missing ○ = 4",
+                    Rows =
+                    [
+                        new RichLessonVisualRow {
+                            Label = "First five boxes",
+                            Cells = ["●", "●", "●", "●", "●"]
+                        },
+                        new RichLessonVisualRow {
+                            Label = "Next five boxes",
+                            Cells = ["●", "○", "○", "○", "○"]
+                        }
+                    ]
+                },
+                questionForms
+            ];
+        }
+
         // The exact first-edition G3 U06 L09 teacher activity teaches clock time
         // to the nearest minute. An EquationSet alone is not an analog clock.
         // This is an independently authored 1:37 example, not publisher art:
