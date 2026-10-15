@@ -1,0 +1,62 @@
+name: US CCSS ten-lesson certification (T001)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'docs/curriculum/US_CCSS_GRADE_BY_GRADE_LESSON_ACADEMIC_CERTIFICATION_PLAN.md'
+      - 'artifacts/academic-us-ccss/batches/T001-lesson-manifest.json'
+      - 'artifacts/academic-us-ccss/04-lesson-certification-records.json'
+      - 'tools/us-ccss-t001-release-gate.cjs'
+      - 'tools/us-ccss-lesson-certification-records.cjs'
+      - 'tools/us-ccss-b01-release-gate.cjs'
+      - 'tests/academic-us-ccss-t001-release-gate.test.cjs'
+      - 'src/Edulytics.Data/Seeding/**'
+      - 'src/Edulytics.Services/LessonContent/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: usccss-ten-t001-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inspect-t001-10:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test exactly ten lessons and immutable evidence guards
+        run: node --test tests/academic-us-ccss-t001-release-gate.test.cjs
+      - name: Report T001 only (NO-GO is a truthful progress result)
+        run: node tools/us-ccss-t001-release-gate.cjs --status
+
+  release-t001-10-only:
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
+    needs: [inspect-t001-10]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Refuse T001 until all ten independently pass L1-L6 and eight dimensions
+        run: node tools/us-ccss-t001-release-gate.cjs --release-check --head-sha=${{ github.event.pull_request.head.sha }}
+      - name: Refuse merging this old all-500 PR as a ten-lesson deployment
+        shell: bash
+        run: |
+          if [[ "${{ github.event.pull_request.number }}" == "492" ]]; then
+            echo "::error::PR #492 contains historical all-500 changes. Isolate a ten-lesson deploy candidate branch before publishing T001."
+            exit 1
+          fi
