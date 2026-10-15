@@ -758,7 +758,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                 {
                     Kind=RichLessonVisualKind.PlaceValueChart,
                     Title="Three categories of shape cards",
-                    Description="This model sorts by the kind of shape: 2 triangles, 3 squares, and 4 circles. Name the groups and record the counts. The squares are one example of 4-sided shapes; the circles have curved boundaries. There are 9 cards altogether.",
+                    Description="This model sorts by shape category: 2 triangles, 3 squares, and 4 circles. Name the groups and record the counts. The squares are one example of 4-sided shapes; the circles have curved boundaries. There are 9 cards altogether.",
                     Rows=[
                         new RichLessonVisualRow {Label="Triangles — 2",Cells=["▲","▲"]},
                         new RichLessonVisualRow {Label="Squares — 3",Cells=["■","■","■"]},
