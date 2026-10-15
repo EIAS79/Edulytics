@@ -125,6 +125,53 @@ public sealed class UsCcssT001IsolatedReleaseTests
     }
 
     [Fact]
+    public void NineLearnerRichV2LessonsTeachTheSpecificPublisherGoalAndPracticalActivities()
+    {
+        var all=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .SelectMany(d=>d.Lessons)
+            .ToDictionary(x=>x.LessonCode,StringComparer.Ordinal);
+        for(var n=2;n<=10;n++)
+        {
+            var code=Prefix+n.ToString("D2");
+            Assert.True(all.TryGetValue(code,out var original),code);
+            var translation=Assert.Single(original!.Translations);
+            var lesson=RichLessonContentV2RuntimeComposer.TryCompose(code,translation);
+            Assert.NotNull(lesson);
+            Assert.StartsWith("Learning goal: ",lesson!.ExplanationParagraphs[0]);
+            Assert.StartsWith("Try",lesson.ExplanationParagraphs[1]);
+            Assert.Equal("Worked model — lesson skill",lesson.WorkedExamples[0].Title);
+            Assert.NotEmpty(lesson.WorkedExamples[0].Steps);
+            Assert.NotEmpty(lesson.WorkedExamples[0].Check);
+            Assert.NotEmpty(lesson.CommonMistakes[0].Correction);
+            Assert.True(lesson.WorkedExamples.Count>=5);
+            if(n==6)
+            {
+                Assert.Contains("make ten",lesson.ExplanationParagraphs[1],
+                    StringComparison.OrdinalIgnoreCase);
+                Assert.Contains("10 - 7 = 3",lesson.WorkedExamples[0].Check);
+            }
+            if(n is 7 or 8)
+            {
+                Assert.Contains("sort",lesson.ExplanationParagraphs[1],
+                    StringComparison.OrdinalIgnoreCase);
+                Assert.Contains("one",lesson.CommonMistakes[0].Correction,
+                    StringComparison.OrdinalIgnoreCase);
+            }
+            if(n==9)
+            {
+                Assert.Contains("real survey",lesson.ExplanationParagraphs[1],
+                    StringComparison.OrdinalIgnoreCase);
+                Assert.Contains("fictional votes",lesson.ExplanationParagraphs[1],
+                    StringComparison.OrdinalIgnoreCase);
+            }
+        }
+        var pilot=RichLessonContentV2RuntimeComposer.TryCompose(
+            Prefix+"01",Assert.Single(all[Prefix+"01"].Translations));
+        Assert.NotNull(pilot);
+        Assert.NotEqual("Worked model — lesson skill",pilot!.WorkedExamples[0].Title);
+    }
+
+    [Fact]
     public void CanonicalL05AndL06HaveCorrectedWorkedMathAndDoNotModifyPilot()
     {
         var pairs=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
