@@ -4,7 +4,7 @@ using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
 /// <summary>
-/// Source-goal-bound representative mathematical visuals for the 18 B01
+/// Source-goal-bound representative mathematical visuals for the 19 B01
 /// figure-source lessons that previously composed ONLY an EquationSet.
 /// Shared rendering primitives and independent illustrations are reused;
 /// each exact source-goal identity fails closed on content drift.
@@ -33,6 +33,7 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
             [Prefix+"G3:U07:L04"]=new("Attributes of Rectangles, Rhombuses, and Squares PLC Activity","rhombus, rectangle, or square"),
             [Prefix+"G3:U07:L06"]=new("Distance Around Shapes","perimeter"),
             [Prefix+"G3:U08:L01"]=new("Estimation Explorations with Fractions","fraction representations through estimation"),
+            [Prefix+"G3:U08:L14"]=new("Estimation Exploration","measurement of fractional lengths"),
             [Prefix+"G4:U04:L20"]=new("Add and Subtract Within 1,000,000 PLC Activity","multiple compositions or decompositions"),
             [Prefix+"G4:U01:L08"]=new("Mondrian's Art (optional)","area of rectangles and factor pairs")
         };
@@ -50,6 +51,11 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                 "B01 source-bound figure purpose drift: "+lessonCode);
         // The original G2 center has students pick exactly three cards for a
         // mystery three-digit number and describe hundreds, tens, and ones.
+        if(lessonCode==Prefix+"G3:U08:L14" &&
+           !body.WorkedExamples.Contains("nearest half or fourth of an inch",
+               StringComparison.OrdinalIgnoreCase))
+            throw new InvalidOperationException(
+                "B01 G3 U08 L14 fractional-length estimation purpose drift: "+lessonCode);
         if(lessonCode==Prefix+"G1:U08:L09" &&
            !body.Explanation.Contains("secret number",StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(
@@ -206,6 +212,25 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                     new RichLessonVisualRow {Label="Band 6",Cells=["3","12","12"]}
                 ]
             }],
+            "G3:U08:L14" => [
+                new RichLessonVisual {
+                    Kind=RichLessonVisualKind.NumberLine,
+                    Title="Quarter-inch marks for a new estimation example",
+                    Description="This is a schematic evenly spaced number line in quarter-inch steps, not a physical-size ruler or the publisher earthworm photograph. A sample strip measures 1¾ inches; 1½ inches is a low estimate. The marked positions represent 1½ and 1¾ inches and differ by exactly ¼ inch.",
+                    Items=["0","¼","½","¾","1","1¼","1½","1¾","2"],
+                    SecondaryItems=["6","7"],
+                    SecondaryLabel="Two G3 quarter-inch positions"
+                },
+                new RichLessonVisual {
+                    Kind=RichLessonVisualKind.RatioTable,
+                    Title="Estimate too low, about right, and too high",
+                    Description="For this independently authored sample of a 1¾ inch strip, 1½ is below the measured length, 1¾ is exact, and 2 is above it. Real measurements must be checked with a physical ruler, not screen pixels.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Estimate",Cells=["Too low","About right","Too high"]},
+                        new RichLessonVisualRow {Label="Length",Cells=["1½ in","1¾ in","2 in"]}
+                    ]
+                }
+            ],
             "G4:U04:L20" => [new RichLessonVisual{
                 Kind=RichLessonVisualKind.PlaceValueChart,
                 Title="Regroup 75,940 − 12,786 without changing value",

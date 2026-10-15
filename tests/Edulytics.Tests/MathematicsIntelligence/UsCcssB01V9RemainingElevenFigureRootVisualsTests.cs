@@ -33,6 +33,8 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [InlineData("G3:U07:L04","0d135f72d96aeae8eec1aa54ade2bd79325201f4e56efe9dec167ff3cca88967","PolygonDiagram")]
     [InlineData("G3:U07:L06","c1231a52553453e0c5568f68fc908b247d53728ef1a65a656cc2bf829221933e","RectangleDiagram")]
     [InlineData("G3:U08:L01","9af7452882227dec9eb391337cf76a47c64497fcba9e30f126cb80b04af63da3","FractionBars")]
+    [InlineData("G3:U08:L14","17d95d0eb810c72cc430e91ded70a2e41f293fe0ccbc904325c3808bea2eda5a","NumberLine")]
+    [InlineData("G3:U08:L14","17d95d0eb810c72cc430e91ded70a2e41f293fe0ccbc904325c3808bea2eda5a","RatioTable")]
     [InlineData("G4:U04:L20","26096e487bc9df48865e2a3485c3001d75ab7d8a4a147524b5d7a527fef9ddac","PlaceValueChart")]
     [InlineData("G4:U01:L08","aa8fa8c24ac3bba53600725e8f3a92d16e35a644d2783c121cd3183087eb0d5c","ShapeDecomposition")]
     public void SourcePurposeLessonsGainMathematicallyConcreteVisual(
@@ -63,7 +65,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [Fact]
     public void SharedSourceLessonScopeAndEvenOddSemanticsStayFailClosed()
     {
-        Assert.Equal(18,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
+        Assert.Equal(19,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
         var even=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U08:L02",
             GetBody(Prefix+"G2:U08:L02"));
@@ -104,6 +106,28 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
         Assert.Throws<InvalidOperationException>(()=>
             UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
                 Prefix+"G2:U08:L02",altered));
+    }
+
+    [Fact]
+    public void ThirdGradeEstimationUsesActualQuarterInchFractionsNotCopiedPhotos()
+    {
+        var code=Prefix+"G3:U08:L14";
+        var visuals=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,GetBody(code))!;
+        Assert.Equal(2,visuals.Count);
+        var scale=visuals[0];
+        Assert.Equal(RichLessonVisualKind.NumberLine,scale.Kind);
+        Assert.Equal("Two G3 quarter-inch positions",scale.SecondaryLabel);
+        Assert.Equal(["0","¼","½","¾","1","1¼","1½","1¾","2"],scale.Items);
+        Assert.Equal(["6","7"],scale.SecondaryItems);
+        var estimates=visuals[1];
+        Assert.Equal(RichLessonVisualKind.RatioTable,estimates.Kind);
+        Assert.Equal(["Too low","About right","Too high"],estimates.Rows[0].Cells);
+        Assert.Equal(["1½ in","1¾ in","2 in"],estimates.Rows[1].Cells);
+        Assert.True(1.5<1.75 && 1.75<2.0);
+        Assert.Equal(0.25,1.75-1.5);
+        var drift=GetBody(code) with { WorkedExamples="General addition tasks" };
+        Assert.Throws<InvalidOperationException>(()=>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,drift));
     }
 
     [Fact]
