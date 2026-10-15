@@ -141,8 +141,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: g1-u01-l01-rich-v2-chromium-screenshots
-          path: /tmp/g1-u01-l01-*.png
+          name: t001-ten-lessons-rich-v2-desktop-mobile-chromium
+          path: /tmp/g1-u01-l*.png
           if-no-files-found: warn
       - name: Verify only two synthetic schools were created
         run: |
