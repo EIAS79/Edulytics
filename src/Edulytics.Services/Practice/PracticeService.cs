@@ -343,7 +343,10 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
                 item.GenerationParametersJson,
                 response is not null,
                 response?.IsCorrect,
-                response?.Feedback);
+                response?.Feedback)
+            {
+                SubmittedAnswer = response?.Answer
+            };
         }).ToArray();
 
         return new PracticeAttemptDetails(

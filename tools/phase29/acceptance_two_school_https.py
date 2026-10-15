@@ -402,6 +402,31 @@ for key, schoolname in SCHOOLS:
                         page.wait_for_load_state("domcontentloaded")
                         assert "/student/practice/" in page.url, (
                             "L08 answer submission escaped Practice",page.url)
+                        graph_attempt=re.search(
+                            r"/student/practice/lesson-attempt/([0-9a-fA-F-]{36})",
+                            urllib.parse.urlparse(page.url).path)
+                        assert graph_attempt, (
+                            "L08 browser did not reach persisted lesson Practice",
+                            page.url)
+                        stored=sql("""
+                            SELECT r."Answer",
+                                   CASE WHEN r."IsCorrect" THEN '1' ELSE '0' END,
+                                   r."Score"::text, i."CorrectAnswer"
+                            FROM "PracticeResponses" r
+                            JOIN "PracticeAttemptItems" ai
+                              ON ai."Id"=r."PracticeAttemptItemId"
+                            JOIN "AssessmentItems" i
+                              ON i."Id"=ai."AssessmentItemId"
+                            WHERE ai."PracticeAttemptId"='""" +
+                            graph_attempt.group(1) +
+                            """' AND i."GenerationFamily"=
+                            'usccss.t001.g1.construct_shape_graph'
+                            ORDER BY r."AnsweredAtUtc" DESC LIMIT 1;""")
+                        assert stored.split("|")==[answer,"1","1",answer], (
+                            "L08 browser-built graph was not marked and persisted correctly",
+                            screen,answer,stored)
+                        print("DISPOSABLE_T001_L08_GRAPH_CONSTRUCTED_DB_PASS",
+                              screen,stored,flush=True)
                         print("DISPOSABLE_T001_L08_GRAPH_CONSTRUCTED_BROWSER_PASS",
                               screen,answer,page.url,flush=True)
                     finally:

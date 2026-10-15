@@ -432,6 +432,12 @@
 
                     @if (isCorrectReview && currentQuestion is not null)
                     {
+                        @if (isConstructShapeGraph)
+                        {
+                            <div class="t001-shape-chart" data-t001-shape-chart
+                                 data-t001-readonly="true" data-t001-locale="@locale"
+                                 data-t001-initial="@currentQuestion.SubmittedAnswer"></div>
+                        }
                         <div class="lp-server-actions">
                             <a class="gw-primary"
                                asp-action="LessonAttempt"

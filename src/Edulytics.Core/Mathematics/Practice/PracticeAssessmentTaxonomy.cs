@@ -56,6 +56,24 @@ public static class PracticeQuestionFormCapabilityRegistry
 
         family = family.Trim();
 
+        // L08 requires constructing a three-column graph; claiming the
+        // learner merely "calculates" would mislabel the assessment evidence.
+        if (string.Equals(
+                family,
+                "usccss.t001.g1.construct_shape_graph",
+                StringComparison.Ordinal))
+        {
+            return
+            [
+                new(
+                    PracticeQuestionForm.Apply,
+                    PracticeCognitiveOperation.Apply,
+                    PracticeCognitiveDifficulty.Standard,
+                    PracticeCognitiveDifficulty.Standard,
+                    AllVariantSlots)
+            ];
+        }
+
         if (string.Equals(
                 family,
                 "supporting.number.place_value",

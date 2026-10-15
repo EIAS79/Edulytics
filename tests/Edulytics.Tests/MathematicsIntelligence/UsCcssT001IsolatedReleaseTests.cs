@@ -35,6 +35,17 @@ public sealed class UsCcssT001IsolatedReleaseTests
     }
 
     [Fact]
+    public void L08ConstructedGraphIsAnAppliedProductionTaskNotAGenericCalculation()
+    {
+        var capability=Assert.Single(PracticeQuestionFormCapabilityRegistry.Resolve(
+            "usccss.t001.g1.construct_shape_graph"));
+        Assert.Equal(PracticeQuestionForm.Apply,capability.Form);
+        Assert.Equal(PracticeCognitiveOperation.Apply,capability.CognitiveOperation);
+        Assert.Equal(PracticeCognitiveDifficulty.Standard,capability.MinimumDifficulty);
+        Assert.Equal(PracticeCognitiveDifficulty.Standard,capability.MaximumDifficulty);
+    }
+
+    [Fact]
     public void SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds()
     {
         var engine=new ExactSkillContractQuestionEngine();
