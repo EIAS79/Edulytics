@@ -714,7 +714,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                     Description="Keep the first five counters; add two new counters. The two new counting numbers are six and seven: 5 + 2 = 7.",
                     Rows=[
                         new RichLessonVisualRow {Label="Start with five",Cells=["●","●","●","●","●"]},
-                        new RichLessonVisualRow {Label="Count on: six, seven",Cells=["①","②","","",""]}
+                        new RichLessonVisualRow {Label="Next two numbers",Cells=["6","7","","",""]}
                     ]
                 },
                 questionForms
