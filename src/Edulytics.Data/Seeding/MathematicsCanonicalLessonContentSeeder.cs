@@ -105,7 +105,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
         // Fail closed on source-bound technical release inventory drift:
         // Reconciled against the actual distinct source-guarded lesson union
-        // on the disposable US CCSS database: 181 lesson codes, 181 distinct
+        // on the disposable US CCSS database: 182 lesson codes, 182 distinct
         // (CI run 38741558965). The historical arithmetic total 173 had
         // become stale across several later reviewed correction cohorts.
         // This remains an exact fail-closed inventory, not a permissive count.
@@ -227,7 +227,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
           CommonCoreB01V9SharedAdditionProcedureCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9SharedSubtractionProcedureCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.IsTarget(document, lesson) ||
-          CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document, lesson));
+          CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document, lesson) ||
+          CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -1025,6 +1026,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             document,sourceLesson,content.ContentVersion,
                             translationsByContentId.TryGetValue(content.Id,out var clockConceptExisting)
                                 ? clockConceptExisting : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreT001FindThePairContentCorrection.IsTarget(document,sourceLesson))
+                    {
+                        CommonCoreT001FindThePairContentCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var t001Existing)
+                                ? t001Existing : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =
