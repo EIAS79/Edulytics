@@ -5745,6 +5745,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.t001.g1.write_dot_expression",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "usccss-t001-write_dot_expression-teacher-independent-review-v1",
+      "representations": [
+        "dot_cards",
+        "student_written_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.t001.g1.dot_pair_sum",
       "version": 1,
       "skillId": "number.whole.add",
@@ -5835,6 +5853,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.t001.g1.construct_tool_sort",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "usccss-t001-construct_tool_sort-teacher-independent-review-v1",
+      "representations": [
+        "math_tools",
+        "student_sorted_cards"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.t001.g1.sort_math_tools",
       "version": 1,
       "skillId": "supporting.statistics.charts",
@@ -5865,6 +5901,24 @@
       "representations": [
         "symbolic",
         "category_count_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.t001.g1.collect_survey_graph",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "usccss-t001-collect_survey_graph-teacher-independent-review-v1",
+      "representations": [
+        "anonymous_vote_sequence",
+        "student_created_survey_graph"
       ],
       "status": "ShadowVerified",
       "productionRouting": false,

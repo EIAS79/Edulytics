@@ -154,6 +154,7 @@ public sealed class ExactSkillContractQuestionEngine
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
+         UsCcssT001AuthoredActivities.Supports(family.Trim()) ||
          UsCcssT001RepresentationChoices.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
@@ -288,6 +289,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssT001AuthoredActivities.Supports(family))
+            return UsCcssT001AuthoredActivities.Verify(family, parameters, answer);
         if (UsCcssT001ConstructShapeGraph.Supports(family))
             return UsCcssT001ConstructShapeGraph.Verify(family, parameters, answer);
         if (UsCcssT001RepresentationChoices.Supports(family))
@@ -872,6 +875,12 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssT001AuthoredActivities.Supports(family))
+        {
+            var authored=UsCcssT001AuthoredActivities.Build(family,random);
+            return new ExactProblem(authored.Family,authored.Prompt,authored.Solution,
+                authored.ItemType,authored.Parameters);
+        }
         if (UsCcssT001ConstructShapeGraph.Supports(family))
         {
             var graph=UsCcssT001ConstructShapeGraph.Build(random);
@@ -2681,6 +2690,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssT001AuthoredActivities.Supports(problem.Family))
+            return UsCcssT001AuthoredActivities.Solve(problem.Family,p);
         if (UsCcssT001ConstructShapeGraph.Supports(problem.Family))
             return UsCcssT001ConstructShapeGraph.Solve(p);
         if (UsCcssT001RepresentationChoices.Supports(problem.Family))

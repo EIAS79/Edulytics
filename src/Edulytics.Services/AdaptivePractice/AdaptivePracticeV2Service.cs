@@ -428,7 +428,10 @@ public sealed class AdaptivePracticeV2Service(
         var correct = string.Equals(item.GenerationFamily,
                 UsCcssT001ConstructShapeGraph.Family, StringComparison.Ordinal)
             ? string.Equals(trimmed, item.CorrectAnswer, StringComparison.Ordinal)
-            : MathematicsAnswerEquivalence.AreEquivalent(trimmed, item.CorrectAnswer);
+            : UsCcssT001AuthoredActivities.Supports(item.GenerationFamily)
+                ? UsCcssT001AuthoredActivities.GradePersistedAnswer(
+                    item.GenerationFamily, item.CorrectAnswer, trimmed)
+                : MathematicsAnswerEquivalence.AreEquivalent(trimmed, item.CorrectAnswer);
 
         var existingMisconceptionStates =
             await adaptiveRepository.GetMisconceptionStatesAsync(
