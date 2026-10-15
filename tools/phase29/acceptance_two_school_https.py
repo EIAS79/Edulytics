@@ -863,4 +863,134 @@ with teacher.open(urllib.request.Request(
 assert sql('SELECT count(*) FROM "Assessments" WHERE "Title"=\''+title+'\';') == "1"
 print("DISPOSABLE_TEACHER_ASSESSMENT_POST_PASS")
 
+# Full B01 student HTTP source-identity scan in a DISPOSABLE database.
+# Rebind a disposable, pre-provisioned student login to EXISTING anonymized
+# grade cohorts. Keep the number of users/schools constant and restore the
+# original G1 login mapping; no real student/school data is touched.
+if PROGRAMME=="US-CCSS":
+    import html as html_module
+    source_manifest=json.loads(Path(
+        "artifacts/academic-us-ccss/batches/B01-lesson-manifest.json"
+    ).read_text(encoding="utf-8"))
+    source_ledger=json.loads(Path(
+        "artifacts/academic-us-ccss/04-lesson-certification-records.json"
+    ).read_text(encoding="utf-8"))
+    ledger_map={r["lessonCode"]:r for r in source_ledger["records"]}
+    user_email="commoncore-primary.student.primary@edulytiks.com"
+    login_id=sql("""SELECT "Id"::text FROM "AspNetUsers"
+        WHERE "Email"='""" + user_email + """';""")
+    assert re.fullmatch(r"[0-9a-fA-F-]{36}",login_id), (
+        "Disposable US primary student login missing",login_id)
+    original_profile=sql("""SELECT "Id"::text FROM "StudentProfiles"
+        WHERE "UserId"='""" + login_id + """';""")
+    assert re.fullmatch(r"[0-9a-fA-F-]{36}",original_profile)
+    all_rows=list(grade1_report["lessonRows"])
+    assert len(all_rows)==146
+    expected_counts={"G2":146,"G3":143,"G4":65}
+    try:
+        for grade_name,number in (("G2",2),("G3",3),("G4",4)):
+            cohort=[
+                m for m in source_manifest["lessons"]
+                if m["lessonCode"].startswith(
+                    "PED:US-CCSS-MATH:"+grade_name+":")
+            ]
+            assert len(cohort)==expected_counts[grade_name],(
+                "Missing original source cohort",grade_name,len(cohort))
+            logical_level=number+1
+            profile_id=sql("""
+                SELECT p."Id"::text
+                FROM "StudentProfiles" p
+                JOIN "StudentEnrollments" e
+                    ON e."StudentProfileId"=p."Id"
+                JOIN "ClassGroups" c ON c."Id"=e."ClassGroupId"
+                JOIN "SchoolCurriculumAdoptions" a
+                    ON a."Id"=c."CurriculumAdoptionId"
+                JOIN "Schools" s ON s."Id"=p."SchoolId"
+                WHERE s."SchoolCode"='REHEARSAL-US-PRIMARY'
+                  AND a."CurriculumLogicalLevel"=""" + str(logical_level) + """
+                  AND p."UserId" IS NULL
+                ORDER BY p."StudentNumber" LIMIT 1;""")
+            assert re.fullmatch(r"[0-9a-fA-F-]{36}",profile_id), (
+                "Exact disposable grade cohort target missing",grade_name)
+            # Temporary changes are confined to this CI database. Re-authenticate
+            # after changing class context so the student session uses its own
+            # actual grade-specific membership/entitlements.
+            unlinked=sql("""UPDATE "StudentProfiles" SET "UserId"=NULL
+                WHERE "UserId"='""" + login_id + """';""")
+            relinked=sql("""UPDATE "StudentProfiles"
+                SET "UserId"='""" + login_id + """'
+                WHERE "Id"='""" + profile_id + """'
+                  AND "SchoolId"=(SELECT "Id" FROM "Schools"
+                      WHERE "SchoolCode"='REHEARSAL-US-PRIMARY')
+                  AND "UserId" IS NULL;""")
+            assert unlinked=="UPDATE 1" and relinked=="UPDATE 1",(
+                "Disposable student class relink failed",
+                grade_name,unlinked,relinked)
+            grade_student=connect("commoncore-primary","Student")
+            ids=sql("""SELECT "Code","Id"::text FROM "CurriculumPedagogicalLessons"
+                WHERE "Code" LIKE 'PED:US-CCSS-MATH:""" + grade_name + """:%'
+                ORDER BY "Code";""").splitlines()
+            grade_ids={}
+            for line in ids:
+                code,sep,lesson_id=line.partition("|")
+                assert sep and code not in grade_ids,(
+                    "Duplicate grade lesson code",grade_name,line)
+                grade_ids[code]=lesson_id
+            assert len(grade_ids)==expected_counts[grade_name],(
+                "Unexpected grade lesson identities",grade_name,len(grade_ids))
+            for m in cohort:
+                code=m["lessonCode"]
+                assert code in grade_ids and code in ledger_map,(
+                    "Missing original lesson code in disposable DB",code)
+                cert=ledger_map[code]
+                assert cert["academicDecision"]=="NOT_CERTIFIED"
+                assert cert["contentSha256"] and len(cert["contentSha256"])==64
+                source_html=html_module.unescape(get_page(
+                    grade_student,
+                    "/student/learning/lesson/"+grade_ids[code]))
+                title_present=m["title"].casefold() in source_html.casefold()
+                rich_present="rich-lesson-section" in source_html
+                assert title_present and rich_present,(
+                    "Authenticated grade-specific Rich V2 page mismatch",
+                    grade_name,code,title_present,rich_present)
+                all_rows.append({
+                    "ordinal":m["ordinal"],
+                    "lessonCode":code,
+                    "sourceSemanticSha256":m["sourceSemanticSha256"],
+                    "effectiveContentSha256":cert["contentSha256"],
+                    "learnerTitleMatched":True,
+                    "richV2HtmlPresent":True,
+                    "mathVisualMarkupPresent":"rich-lesson-visual" in source_html,
+                    "authenticatedHtmlSha256":
+                        hashlib.sha256(source_html.encode("utf-8")).hexdigest(),
+                    "authenticatedCohort":grade_name
+                })
+            print("DISPOSABLE_B01_AUTHENTICATED_GRADE_HTTP_PASS",
+                  grade_name,len(cohort),flush=True)
+    finally:
+        # NEVER leave even a disposable student's fixture enrolled in another
+        # grade when subsequent product regression checks might reuse the DB.
+        sql("""UPDATE "StudentProfiles" SET "UserId"=NULL
+            WHERE "UserId"='""" + login_id + """';""")
+        restored=sql("""UPDATE "StudentProfiles" SET "UserId"='""" +
+            login_id + """' WHERE "Id"='""" + original_profile + """'
+            AND "UserId" IS NULL;""")
+        assert restored=="UPDATE 1","Grade 1 original test account not restored"
+    assert len(all_rows)==500 and len({r["lessonCode"] for r in all_rows})==500
+    all500={
+        "schemaVersion":1,
+        "kind":"B01_ALL500_GRADE_SPECIFIC_AUTHENTICATED_STUDENT_HTTPS_INVENTORY",
+        "batchId":"B01",
+        "checkedOutCommit":os.environ["GITHUB_SHA"],
+        "sourceProgramme":"US-CCSS",
+        "schoolCode":"REHEARSAL-US-PRIMARY",
+        "decision":"500_STUDENT_HTTP_SOURCE_AND_RICHV2_SCREEN_NOT_ACADEMIC_L6_PASS",
+        "lessonRows":all_rows
+    }
+    Path("/tmp/b01-all500-authenticated-student-https-inventory.json").write_text(
+        json.dumps(all500,indent=2)+"\n",encoding="utf-8")
+    print("DISPOSABLE_B01_ALL500_GRADE_SPECIFIC_AUTHENTICATED_HTTPS_PASS",
+          len(all_rows),
+          sum(r["mathVisualMarkupPresent"] for r in all_rows),flush=True)
+
 print("DISPOSABLE_TWO_SCHOOL_FULL_DATA_HTTP_REHEARSAL_PASS")

@@ -208,6 +208,20 @@ jobs:
             /tmp/g1-all146-authenticated-html-independent-verification.json
           retention-days: 30
           if-no-files-found: warn
+      - name: Verify original 500 CCSS lessons rendered through grade-specific authenticated student HTTPS
+        run: |
+          node --test tests/academic-us-ccss-b01-all500-student-http-verifier.test.cjs
+          node tools/us-ccss-b01-all500-student-http-verifier.cjs
+      - name: Preserve all-500 source-scoped authenticated student HTTP coverage (NOT final L6)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b01-all500-grade-specific-authenticated-student-http-inventory
+          path: |
+            /tmp/b01-all500-authenticated-student-https-inventory.json
+            /tmp/b01-all500-authenticated-student-http-verification.json
+          retention-days: 30
+          if-no-files-found: warn
       - name: Verify only two synthetic schools were created
         run: |
           set -euo pipefail
