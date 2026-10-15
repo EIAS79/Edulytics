@@ -48,11 +48,18 @@ internal static class UsCcssT001RepresentationChoices
         var c=rng.Next(1,5);
         if(family!="usccss.t001.g1.choose_dot_expression")
         {
-            // Distinct counts are required so rotated tables/graphs are never
-            // accidentally also valid answers.
-            b=(a%4)+1;
-            c=(b%4)+1;
-            if(c==a)c=(c%4)+1;
+            // Grade 1: at most ten objects in three categories. Independently
+            // draw each non-zero count (1..6) until all are distinct, so the
+            // rotated full-table distractors are actually wrong. This yields
+            // 60 valid ordered triples rather than four cyclic templates and
+            // supports a ten-question diverse lesson session.
+            do
+            {
+                a=rng.Next(1,7);
+                b=rng.Next(1,7);
+                c=rng.Next(1,7);
+            }
+            while(a==b || b==c || a==c || a+b+c>10);
         }
         var position=AnswerPosition(a,b,c);
         string prompt,solution,correct,wrong1,wrong2;
@@ -115,10 +122,11 @@ internal static class UsCcssT001RepresentationChoices
            !p.TryGetValue("first",out var a)||
            !p.TryGetValue("second",out var b)||
            !p.TryGetValue("third",out var c)||
-           a is <1 or >4||b is <1 or >4||c is <1 or >4)
+           a is <1 or >6||b is <1 or >6||c is <1 or >6)
             return false;
-        return family=="usccss.t001.g1.choose_dot_expression"||
-            (a!=b && b!=c && a!=c);
+        if(family=="usccss.t001.g1.choose_dot_expression")
+            return a<=4 && b<=4 && c<=4;
+        return a!=b && b!=c && a!=c && a+b+c<=10;
     }
 
     public static string Solve(string family,IReadOnlyDictionary<string,int> parameters)
