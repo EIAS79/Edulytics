@@ -59,7 +59,10 @@ public sealed class UsCcssB01V9SharedAdditionProcedureCorrectionsTests
                 Assert.DoesNotContain("Identify the quantities being combined",t.StepByStepSolutions);
                 Assert.Contains("Step 4:",t.StepByStepSolutions);
                 Assert.StartsWith("Mistake:",t.CommonMistakes);
-                Assert.Equal(CommonCoreB01V9SharedAdditionProcedureCorrections.CorrectedVersion,
+                var effectiveVersion = CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(item.Doc,item.Lesson)
+                    ? CommonCoreB01V9OffTopicClockConceptCorrections.CorrectedVersion
+                    : CommonCoreB01V9SharedAdditionProcedureCorrections.CorrectedVersion;
+                Assert.Equal(effectiveVersion,
                     CanonicalLessonContentMaterializer.GetEffectiveContentVersion(item.Doc,item.Lesson));
             }
             else
