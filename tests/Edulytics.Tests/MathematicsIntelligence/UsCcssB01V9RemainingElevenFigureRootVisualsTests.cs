@@ -65,7 +65,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [Fact]
     public void SharedSourceLessonScopeAndEvenOddSemanticsStayFailClosed()
     {
-        Assert.Equal(19,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
+        Assert.Equal(20,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
         var even=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U08:L02",
             GetBody(Prefix+"G2:U08:L02"));
@@ -106,6 +106,24 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
         Assert.Throws<InvalidOperationException>(()=>
             UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
                 Prefix+"G2:U08:L02",altered));
+    }
+
+    [Fact]
+    public void ThirdGradeAdditionAlgorithmHasSourceBoundRegroupedBaseTenChart()
+    {
+        var code=Prefix+"G3:U03:L04";
+        var chart=Assert.Single(UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
+            code,GetBody(code))!);
+        Assert.Equal(RichLessonVisualKind.PlaceValueChart,chart.Kind);
+        Assert.Equal(["Hundreds","Tens","Ones"],chart.Rows[0].Cells);
+        Assert.Equal(["3","6","2"],chart.Rows[1].Cells);
+        Assert.Equal(["3","5","4"],chart.Rows[2].Cells);
+        Assert.Equal(["6","11","6"],chart.Rows[3].Cells);
+        Assert.Equal(["7","1","6"],chart.Rows[4].Cells);
+        Assert.Equal(362+354,7*100+1*10+6);
+        var altered=GetBody(code) with { WorkedExamples="Unrelated arithmetic only" };
+        Assert.Throws<InvalidOperationException>(() =>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,altered));
     }
 
     [Fact]
