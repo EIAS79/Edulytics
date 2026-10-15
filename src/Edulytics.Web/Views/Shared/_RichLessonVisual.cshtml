@@ -440,7 +440,34 @@
     }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
-        @if (Model.SecondaryLabel == "Equal-size-square-grid" &&
+        @if (Model.SecondaryLabel == "Independent-Nested-Midpoint-Squares" &&
+             Model.Items.SequenceEqual(new[] {"0","1","2","3"}))
+        {
+            @* Every nested square is formed by joining the midpoints
+               of the previous square's sides. *@
+            <div class="rich-midpoint-squares" role="group" aria-label="@Model.Description">
+                <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true" focusable="false"
+                     style="width:min(100%,320px);height:auto">
+                    <polygon points="20,20 220,20 220,220 20,220"
+                             fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    <polygon points="120,20 220,120 120,220 20,120"
+                             fill="none" stroke="#2563eb" stroke-width="3"/>
+                    <polygon points="70,70 170,70 170,170 70,170"
+                             fill="none" stroke="#059669" stroke-width="3"/>
+                    <polygon points="120,70 170,120 120,170 70,120"
+                             fill="none" stroke="#b45309" stroke-width="3"/>
+                    @foreach(var midpoint in new[]{(120,20),(220,120),(120,220),(20,120)})
+                    {
+                        <circle cx="@midpoint.Item1" cy="@midpoint.Item2" r="4"
+                                fill="currentColor"/>
+                    }
+                </svg>
+                <p>Outer square → join the side midpoints → repeat twice.
+                   Every marked point is at ½ of its side.</p>
+            </div>
+        }
+        else if (Model.SecondaryLabel == "Equal-size-square-grid" &&
              int.TryParse(Model.Items.ElementAtOrDefault(0),out var gridRows) &&
              int.TryParse(Model.Items.ElementAtOrDefault(1),out var gridColumns) &&
              gridRows > 0 && gridColumns > 0 &&

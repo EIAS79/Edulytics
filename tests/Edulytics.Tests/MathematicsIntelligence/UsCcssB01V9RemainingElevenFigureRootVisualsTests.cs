@@ -25,6 +25,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [InlineData("G2:U09:L10","4852071d4ef4e24610dff7ceaa8225b8b27d3a02773987226234ac049372e253","TapeDiagram")]
     [InlineData("G2:U09:L10","4852071d4ef4e24610dff7ceaa8225b8b27d3a02773987226234ac049372e253","NumberLine")]
     [InlineData("G3:U04:L15","89ed7539905eec8ad315639c003331ddd008a90007b81c5434db0cc47788abff","RectangleDiagram")]
+    [InlineData("G3:U05:L18","46233b5fde84d4bd8de62493712433ff4194026e36112619adc4b9b1d331d235","ShapeDecomposition")]
     [InlineData("G3:U07:L01","9f71865e95819ead4a1726c0a6f9b55267c73fffaa9a401dd0ddd07e98087543","PolygonDiagram")]
     [InlineData("G3:U07:L04","0d135f72d96aeae8eec1aa54ade2bd79325201f4e56efe9dec167ff3cca88967","PolygonDiagram")]
     [InlineData("G3:U07:L06","c1231a52553453e0c5568f68fc908b247d53728ef1a65a656cc2bf829221933e","RectangleDiagram")]
@@ -58,7 +59,7 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
     [Fact]
     public void SharedSourceLessonScopeAndEvenOddSemanticsStayFailClosed()
     {
-        Assert.Equal(14,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
+        Assert.Equal(15,UsCcssB01V9SourceFigureStructuralGapVisuals.ExpectedCount);
         var even=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
             Prefix+"G2:U08:L02",
             GetBody(Prefix+"G2:U08:L02"));
@@ -116,6 +117,34 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
         var altered=GetBody(code) with { Explanation="Generic algebra activity" };
         Assert.Throws<InvalidOperationException>(()=>
             UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,altered));
+    }
+
+    [Fact]
+    public void SourceFractionDesignUsesMidpointsAndGeometricallyNestedSquares()
+    {
+        var code=Prefix+"G3:U05:L18";
+        var visual=Assert.Single(UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,GetBody(code))!);
+        Assert.Equal(RichLessonVisualKind.ShapeDecomposition,visual.Kind);
+        Assert.Equal("Independent-Nested-Midpoint-Squares",visual.SecondaryLabel);
+        Assert.Equal(["0","1","2","3"],visual.Items);
+        Assert.Contains("half the area",visual.Description);
+        double Area((int x,int y)[] pts)
+        {
+            long twice=0;
+            for(int i=0;i<pts.Length;i++)
+            {
+                var a=pts[i];var b=pts[(i+1)%pts.Length];
+                twice+=(long)a.x*b.y-(long)b.x*a.y;
+            }
+            return Math.Abs(twice)/2.0;
+        }
+        Assert.Equal(40000.0,Area([(20,20),(220,20),(220,220),(20,220)]));
+        Assert.Equal(20000.0,Area([(120,20),(220,120),(120,220),(20,120)]));
+        Assert.Equal(10000.0,Area([(70,70),(170,70),(170,170),(70,170)]));
+        Assert.Equal(5000.0,Area([(120,70),(170,120),(120,170),(70,120)]));
+        var drift=GetBody(code) with { WorkedExamples="Draw a square only" };
+        Assert.Throws<InvalidOperationException>(()=>
+            UsCcssB01V9SourceFigureStructuralGapVisuals.Build(code,drift));
     }
 
     [Fact]

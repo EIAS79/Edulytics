@@ -4,7 +4,7 @@ using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
 /// <summary>
-/// Source-goal-bound representative mathematical visuals for the 14 B01
+/// Source-goal-bound representative mathematical visuals for the 15 B01
 /// figure-source lessons that previously composed ONLY an EquationSet.
 /// Shared rendering primitives and independent illustrations are reused;
 /// each exact source-goal identity fails closed on content drift.
@@ -26,6 +26,7 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
             [Prefix+"G2:U09:L10"]=new("What’s the Question? PLC Activity","tape diagram and number line diagram"),
             [Prefix+"G3:U04:L11"]=new("Multiplication Strategies on Ungridded Rectangles","ungridded rectangle"),
             [Prefix+"G3:U04:L15"]=new("Equal Groups, Larger Numbers","factor is a teen number"),
+            [Prefix+"G3:U05:L18"]=new("Design With Fractions (optional)","create geometric designs"),
             [Prefix+"G3:U07:L01"]=new("What Attributes Do You See?","sort shapes into categories"),
             [Prefix+"G3:U07:L04"]=new("Attributes of Rectangles, Rhombuses, and Squares PLC Activity","rhombus, rectangle, or square"),
             [Prefix+"G3:U07:L06"]=new("Distance Around Shapes","perimeter"),
@@ -50,6 +51,11 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
            !body.Explanation.Contains("three-digit number",StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(
                 "B01 G2 U05 L07 mystery-number center purpose drift: "+lessonCode);
+        if(lessonCode==Prefix+"G3:U05:L18" &&
+           (!body.WorkedExamples.Contains(@"\frac{1}{2}",StringComparison.Ordinal) ||
+            !body.WorkedExamples.Contains("Connect each point",StringComparison.Ordinal)))
+            throw new InvalidOperationException(
+                "B01 G3 U05 L18 midpoint-fraction task changed: "+lessonCode);
         if(lessonCode==Prefix+"G2:U09:L10" &&
            (!body.WorkedExamples.Contains("Elena picked 29 apples.",StringComparison.Ordinal) ||
             !body.WorkedExamples.Contains("14 fewer apples than Han",StringComparison.Ordinal) ||
@@ -114,6 +120,13 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
             "G3:U04:L15" => [
                 Rectangle("15 feet by 4 feet mural",
                     "A 15-foot by 4-foot rectangle has area 15 times 4 = 60 square feet. Split 15 into 10 and 5: 40 + 20 = 60.",15,4,"ft")],
+            "G3:U05:L18" => [new RichLessonVisual {
+                Kind=RichLessonVisualKind.ShapeDecomposition,
+                Title="Use one-half of every side to make nested squares",
+                Description="Start with a square. Mark the exact halfway point on all four sides. Connect those four midpoints to make a smaller rotated square. Repeat on each new square to make alternating aligned and rotated squares. Every new square has one-half the area of the previous square. This is a new Edulytics geometric construction, not copied publisher artwork.",
+                SecondaryLabel="Independent-Nested-Midpoint-Squares",
+                Items=["0","1","2","3"]
+            }],
             "G3:U07:L01" => [
                 Polygon("Right triangle: right angle","A triangle has exactly three straight sides; this example has a right angle.","right triangle"),
                 Polygon("Rectangle: four right angles","A rectangle is a quadrilateral with four right angles; orientation does not change its properties.","rectangle"),
