@@ -90,6 +90,23 @@ public sealed class UsCommonCoreB01CollectiveRichV2AuditTests
                     StringComparison.OrdinalIgnoreCase);
             }
 
+            if (code is "PED:US-CCSS-MATH:G1:U01:L07"
+                or "PED:US-CCSS-MATH:G1:U01:L08"
+                or "PED:US-CCSS-MATH:G1:U01:L09")
+            {
+                var display=Assert.Single(rich.Visuals.Where(v=>
+                    v.Kind==RichLessonVisualKind.PlaceValueChart));
+                Assert.Equal(3,display.Rows.Count);
+                Assert.Equal(9,display.Rows.Sum(row=>row.Cells.Count));
+                Assert.All(display.Rows,row=>
+                {
+                    Assert.False(string.IsNullOrWhiteSpace(row.Label));
+                    Assert.True(row.Cells.Count>=2);
+                });
+                Assert.Contains("category",display.Description,
+                    StringComparison.OrdinalIgnoreCase);
+            }
+
             withRich++;
             if (sidecar is not null) explicitSidecars++;
             else runtimeComposed++;
