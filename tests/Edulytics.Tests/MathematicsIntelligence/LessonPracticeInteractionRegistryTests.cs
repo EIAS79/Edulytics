@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            298, // previous 290 plus 8 source-purpose-exact T001 families
+            302, // previous 298 plus 4 T001 source-purpose representation choices
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
@@ -58,7 +58,11 @@ public sealed class LessonPracticeInteractionRegistryTests
     [InlineData("usccss.t001.g1.sort_math_tools")]
     [InlineData("usccss.t001.g1.sort_shape_cards")]
     [InlineData("usccss.t001.g1.class_survey_categories")]
-    public void AllEightT001FamiliesHaveSafeIntegerKeypadAndVisualInteraction(string family)
+    [InlineData("usccss.t001.g1.choose_dot_expression")]
+    [InlineData("usccss.t001.g1.choose_tool_sort")]
+    [InlineData("usccss.t001.g1.choose_shape_chart")]
+    [InlineData("usccss.t001.g1.choose_survey_table")]
+    public void AllTwelveT001FamiliesHaveSafeIntegerKeypadAndVisualInteraction(string family)
     {
         Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var contract));
         Assert.NotNull(contract);
