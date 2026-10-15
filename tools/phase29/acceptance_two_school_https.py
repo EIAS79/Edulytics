@@ -274,6 +274,10 @@ for key, schoolname in SCHOOLS:
                                 "T001 source-goal worked model not in student runtime",
                                 lesson_code,screen)
                             assert page.get_by_text(
+                                "— question forms",exact=False).count()==0, (
+                                "T001 answer-filled question wall should stay in Practice",
+                                lesson_code,screen)
+                            assert page.get_by_text(
                                 "Learning goal:",exact=False).first.is_visible(), (
                                 "T001 source-goal learner explanation not rendered",
                                 lesson_code,screen)
