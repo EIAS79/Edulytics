@@ -181,9 +181,17 @@ public static partial class RichLessonContentV2RuntimeComposer
             Answer = teaching.Answer,
             Check = teaching.Check
         });
-        for(var i=0;i<earlierExamples.Length;i++)
+        // An authored Grade 1 lesson should not print a wall of MCQ
+        // options and pre-filled answers as repeated examples. Save all
+        // interactive choices for Practice, while retaining at most two
+        // simple numerical examples alongside the explicit worked model.
+        var additionalExamples=earlierExamples
+            .Where(example=>!example.Question.Contains(
+                "Options:",StringComparison.OrdinalIgnoreCase))
+            .Take(2).ToArray();
+        for(var i=0;i<additionalExamples.Length;i++)
         {
-            var example=earlierExamples[i];
+            var example=additionalExamples[i];
             lesson.WorkedExamples.Add(new RichLessonWorkedExample
             {
                 Title=$"Try another example {i+1}",
