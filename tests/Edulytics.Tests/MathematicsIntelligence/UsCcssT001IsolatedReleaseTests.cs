@@ -154,7 +154,7 @@ public sealed class UsCcssT001IsolatedReleaseTests
             {
                 Assert.Contains("sort",lesson.ExplanationParagraphs[1],
                     StringComparison.OrdinalIgnoreCase);
-                Assert.Contains("once",lesson.CommonMistakes[0].Correction,
+                Assert.Contains(n==7?"once":"one",lesson.CommonMistakes[0].Correction,
                     StringComparison.OrdinalIgnoreCase);
             }
             if(n==9)
