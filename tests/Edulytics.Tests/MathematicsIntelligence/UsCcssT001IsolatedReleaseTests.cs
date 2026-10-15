@@ -84,7 +84,7 @@ public sealed class UsCcssT001IsolatedReleaseTests
                             string[] tokens=n switch
                             {
                                 7=>["counter","pattern block","inch tile"],
-                                8=>["triangle","square","circle"],
+                                8=>["▲","■","●"],
                                 _=>["apple","banana","orange"]
                             };
                             Assert.Equal(q.Parameters["first"]+
