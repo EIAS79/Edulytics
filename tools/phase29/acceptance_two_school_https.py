@@ -489,7 +489,7 @@ for key, schoolname in SCHOOLS:
                                 authored_answer="v:"+''.join(str(i) for i in survey_votes)+(
                                     "|g:"+','.join(str(i) for i in survey_counts))
                             assert page.locator("[data-t001-authored-answer]").input_value()==authored_answer, (
-                                suffix,"Authored response mismatch",screen)
+                                suffix,"Authored response mismatch",screen,
                                 authored_answer,page.locator("[data-t001-authored-answer]").input_value())
                             assert page.locator("[data-t001-authored-submit]").is_enabled(), (
                                 suffix,"Valid completed task disabled",screen)
