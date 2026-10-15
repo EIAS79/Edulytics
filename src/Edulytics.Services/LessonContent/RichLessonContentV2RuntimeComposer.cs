@@ -783,8 +783,8 @@ public static partial class RichLessonContentV2RuntimeComposer
                     Description="Count the tools in each labeled category; every object appears in only one group. Total nine objects.",
                     Rows=[
                         new RichLessonVisualRow {Label="Counters — 4",Cells=["●","●","●","●"]},
-                        new RichLessonVisualRow {Label="Inch tiles — 3",Cells=["■","■","■"]},
-                        new RichLessonVisualRow {Label="Pattern blocks — 2",Cells=["⬡","⬡"]}
+                        new RichLessonVisualRow {Label="Pattern blocks — 3",Cells=["⬡","⬡","⬡"]},
+                        new RichLessonVisualRow {Label="Inch tiles — 2",Cells=["■","■"]}
                     ]
                 }
                 : lessonCode.EndsWith("L08",StringComparison.Ordinal)
@@ -792,10 +792,10 @@ public static partial class RichLessonContentV2RuntimeComposer
                 {
                     Kind=RichLessonVisualKind.PlaceValueChart,
                     Title="Shape categories and how many",
-                    Description="Sort shapes by their kind: 2 triangles, 3 squares and 4 circles, all labeled. Total nine cards.",
+                    Description="Sort shapes by their kind: 3 triangles, 2 squares and 4 circles, all labeled. Total nine cards.",
                     Rows=[
-                        new RichLessonVisualRow {Label="Triangles — 2",Cells=["▲","▲"]},
-                        new RichLessonVisualRow {Label="Squares — 3",Cells=["■","■","■"]},
+                        new RichLessonVisualRow {Label="Triangles — 3",Cells=["▲","▲","▲"]},
+                        new RichLessonVisualRow {Label="Squares — 2",Cells=["■","■"]},
                         new RichLessonVisualRow {Label="Circles — 4",Cells=["●","●","●","●"]}
                     ]
                 }
@@ -803,11 +803,11 @@ public static partial class RichLessonContentV2RuntimeComposer
                 {
                     Kind=RichLessonVisualKind.PlaceValueChart,
                     Title="Sample class survey category table",
-                    Description="Fictional practice data only, not real class votes. Name each category and show 3 apple, 2 banana and 4 orange votes.",
+                    Description="Fictional practice data only, not real class votes. Name each category and show 5 apple, 3 banana and 2 orange votes. Total ten votes.",
                     Rows=[
-                        new RichLessonVisualRow {Label="Apples — 3",Cells=["●","●","●"]},
-                        new RichLessonVisualRow {Label="Bananas — 2",Cells=["●","●"]},
-                        new RichLessonVisualRow {Label="Oranges — 4",Cells=["●","●","●","●"]}
+                        new RichLessonVisualRow {Label="Apples — 5",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Bananas — 3",Cells=["●","●","●"]},
+                        new RichLessonVisualRow {Label="Oranges — 2",Cells=["●","●"]}
                     ]
                 };
             return [visual];
