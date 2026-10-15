@@ -729,8 +729,10 @@ public static partial class RichLessonContentV2RuntimeComposer
                     Title="Start at eight, take away two",
                     Description="Cross out exactly two counters. Count backward: eight, seven, six. Six counters remain, so 8 - 2 = 6.",
                     Rows=[
-                        new RichLessonVisualRow {Label="Eight counters",Cells=["●","●","●","●","●","●","●","●"]},
-                        new RichLessonVisualRow {Label="After two removed",Cells=["●","●","●","●","●","●","×","×"]}
+                        new RichLessonVisualRow {Label="Before — first five",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Before — next three",Cells=["●","●","●","",""]},
+                        new RichLessonVisualRow {Label="After — first five remain",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="After — one remains, two removed",Cells=["●","×","×","",""]}
                     ]
                 },
                 questionForms
@@ -745,8 +747,10 @@ public static partial class RichLessonContentV2RuntimeComposer
                     Title="Joining and taking away are different actions",
                     Description="First join four and two counters: 4 + 2 = 6. Then remove two from six: 6 - 2 = 4.",
                     Rows=[
-                        new RichLessonVisualRow {Label="Four plus two",Cells=["●","●","●","●","○","○"]},
-                        new RichLessonVisualRow {Label="Six minus two",Cells=["●","●","●","●","×","×"]}
+                        new RichLessonVisualRow {Label="First group — four",Cells=["●","●","●","●",""]},
+                        new RichLessonVisualRow {Label="Added group — two",Cells=["○","○","","",""]},
+                        new RichLessonVisualRow {Label="Four still here after removal",Cells=["●","●","●","●",""]},
+                        new RichLessonVisualRow {Label="Two removed from six",Cells=["×","×","","",""]}
                     ]
                 },
                 questionForms
