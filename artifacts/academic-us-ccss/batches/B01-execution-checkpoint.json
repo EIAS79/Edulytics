@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "2026-10-15 B01 V9: after latest GitHub CI success on 204019d (500-way graph + targeted visuals), followed plan full 500 collective batch, not an 11-lesson release. Inspected all 11 outstanding original teacher figure-source goal and learner content identities and created one shared source-goal guarded Rich V2 visual correction reused across their mathematical content. Added CounterPairs (2 counters exactly per pair, remainder if odd) and first-party rhombus SVG; used existing polygon, scaled rectangle, fractions, tape diagram and place value table to represent G2 U06 L03/19; G2 U08 L02/03; G3 U04 L11/15; G3 U07 L01/04/06; G3 U08 L01; G4 U04 L20. Original pack source identifiers and sha guarded by tests, malformed goals rejected, original 2021 CC BY course attribution remains, 5 separately licensed images not copied. Structural Rich V2 visual coverage for 40/40 original figure-source lessons targeted (was 29/40), but DOES NOT prove mathematical equivalence of all 397 frames, original task completeness, student L6 accessibility/browser or image rights: these remain 0 completed. All 500 L1-L6 and 8 dimensions not closed; BATCH_NO-GO, canonical certificates 1/500, no merge/publish/B02.",
-  "nextExactOperation": "Run precise GitHub CI on same immutable commit to verify all 500 canonical effective Rich V2 source-linked materializations, B01 40/40 structural diagrams, arithmetic/geometry/odd-even/shape source tests and full Web Razor compile. Fix failures without weakening guards. Then run ACTUAL independent task-level academic semantic comparison of 397 original teacher figure frames against real rendered Edulytics visuals (representation, specific values, axes, scale, units, labels, shapes, all problem variants), plus 115 source alt-description checks and actual authenticated student browser L6. Review full source permissions for 5 separately attributed publisher images and rights notices. Complete L1-L6 + eight dimensions + Practice/Assessment/Worksheet/Homework for each of all 500, zero FAIL/BLOCKED and one SHA-locked collective certification; ONLY then merge PR #492 and Render publish and post-deploy verify, B02 blocked.",
+  "lastCompletedOperation": "2026-10-15 B01 V9: after latest GitHub CI success on 204019d (500-way graph + targeted visuals), followed plan full 500 collective batch, not an 11-lesson release. Inspected all 11 outstanding original teacher figure-source goal and learner content identities and created one shared source-goal guarded Rich V2 visual correction reused across their mathematical content. Added CounterPairs (2 counters exactly per pair, remainder if odd) and first-party rhombus SVG; used existing polygon, scaled rectangle, fractions, tape diagram and place value table to represent G2 U06 L03/19; G2 U08 L02/03; G3 U04 L11/15; G3 U07 L01/04/06; G3 U08 L01; G4 U04 L20. Original pack source identifiers and sha guarded by tests, malformed goals rejected, original 2021 CC BY course attribution remains, 5 separately licensed images not copied. Structural Rich V2 visual coverage for 40/40 original figure-source lessons targeted (was 29/40), but DOES NOT prove mathematical equivalence of all 397 frames, original task completeness, student L6 accessibility/browser or image rights: these remain 0 completed. All 500 L1-L6 and 8 dimensions not closed; BATCH_NO-GO, canonical certificates 1/500, no merge/publish/B02. 2026-10-15 additional math semantics refinement: CI 1e8f971 and followup 87f18ee caught a missing CounterPairs markup, restored renderer while preserving rhombus; tests revealed whitespace-sensitive visual assertion that is being normalized. Tightened actual unit labels for source G2 measuring 3 cm/2 cm, source money 68-39 cents, and preserved exact shared scale for multiplication-area G3 3x6 split into 3x4 and 3x2 (otherwise relative area rendering is misleading). Implemented explicit complete numeric-equality arithmetic triage over full 500 raw learner lessons to prevent mistaken repairs of intentionally false true/false practice statements and mathematically valid multi-term equalities. This is independent review and no fake academic approval.",
+  "nextExactOperation": "Re-run CI to completion on latest SHA including 500 numeric equality audit, 40/40 composed source figure visual existence, source-goal guarded 11 repaired visuals, Razor image accessibility and unit/scale tests; fix tests/code without reducing coverage. Then source task-by-task math fidelity and original figure 397 visuals, 115 alt, 5 third-party licensed images and real student L6 browser. Finish 500/500 full eight dimensions and L1–L6 practice/assessment/worksheet/homework with no blockers, only then collective BATCH_CERTIFIED, PR merge, Render live and post-deploy verified. No B02 until BATCH_PASS_AND_LIVE.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -740,6 +740,30 @@
     "mathTests": "tests/academic-us-ccss-b01-v9-remaining-eleven-figure-math.test.cjs",
     "dotnetTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9RemainingElevenFigureRootVisualsTests.cs",
     "academicDecision": "BATCH_NO-GO",
-    "testPassingDoesNotGrantAcademicCertification": true
+    "testPassingDoesNotGrantAcademicCertification": true,
+    "learnerSourceDiagramNumericFidelityImprovements": {
+      "G2_U06_L03_unit": "centimeters (cm) explicitly on the rectangle",
+      "G2_U06_L19_unit": "cents explicitly on 68-39 tape",
+      "G3_U04_L11_relativeScale": "identical fixed 12px-per-unit scale for 3x6,3x4,3x2 area diagrams",
+      "sourceTaskAllProblemFiguresVerified": false,
+      "newAcademicCertificates": 0
+    }
+  },
+  "v9B01Full500RawNumericEquationSafetyAudit": {
+    "batch": "B01",
+    "manifestLessons": 500,
+    "mathSourceEvidence": "raw canonical English math equations on ALL 500; exact isolated LaTex expressions, complete LHS/RHS arithmetic parser",
+    "falsePositivePrevention": "do not mistake multicomponent mathematical equalities or intentional true-false exercises for arithmetic mistakes",
+    "candidateIncorrectStatementsNeedSourceContext": true,
+    "modifiesOriginalPublisherText": false,
+    "grantsAcademicCertification": false,
+    "sourceFilesReadAndLessonIdentityChecked": 500,
+    "testPath": "tests/academic-us-ccss-b01-v9-full-500-numeric-equation-triage.test.cjs",
+    "cliPath": "tools/us-ccss-b01-v9-full-500-numeric-equation-triage.cjs",
+    "ciArtifact": "b01-v9-500-numeric-equations-no-fake-academic-pass.json",
+    "runtimeEffectiveCorrectionsVerifiedByThisAudit": false,
+    "allTasksMathematicallyVerified": false,
+    "lessonCertificationsGranted": 0,
+    "academicDecision": "BATCH_NO-GO"
   }
 }

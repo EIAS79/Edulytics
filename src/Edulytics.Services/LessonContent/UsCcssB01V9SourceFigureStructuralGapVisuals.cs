@@ -50,14 +50,14 @@ public static class UsCcssB01V9SourceFigureStructuralGapVisuals
                 Kind=RichLessonVisualKind.TapeDiagram,
                 Title="Find the missing part: 68 cents in all, 39 cents known",
                 Description="The whole is 68 cents. A known part is 39 cents, so the unknown part is 68 - 39 = 29 cents. The two parts exactly make the whole.",
-                Items=["68","39","29","0"]}],
+                Items=["68","39","29","0"],SecondaryLabel="cents"}],
             "G2:U08:L02" => [Pairs(8),Pairs(9)],
             "G2:U08:L03" => [Pairs(9),Pairs(10)],
             "G3:U04:L11" => [
                 Rectangle("Full ungridded 3 by 6 rectangle",
-                    "A 3 by 6 rectangle has area 18 square units. Partition its width conceptually into 4 and 2: 3 times (4 + 2) = 12 + 6 = 18.",6,3),
-                Rectangle("First part: 3 by 4","3 by 4 has area 12 square units. Compare with the remaining 3 by 2 part.",4,3),
-                Rectangle("Second part: 3 by 2","3 by 2 has area 6 square units. Both areas sum to 18; no grid is required.",2,3)],
+                    "A 3 by 6 rectangle has area 18 square units. Partition its width conceptually into 4 and 2: 3 times (4 + 2) = 12 + 6 = 18.",6,3,"fixed-comparison-scale"),
+                Rectangle("First part: 3 by 4","3 by 4 has area 12 square units. Compare with the remaining 3 by 2 part.",4,3,"fixed-comparison-scale"),
+                Rectangle("Second part: 3 by 2","3 by 2 has area 6 square units. Both areas sum to 18; no grid is required.",2,3,"fixed-comparison-scale")],
             "G3:U04:L15" => [
                 Rectangle("15 feet by 4 feet mural",
                     "A 15-foot by 4-foot rectangle has area 15 times 4 = 60 square feet. Split 15 into 10 and 5: 40 + 20 = 60.",15,4,"ft")],

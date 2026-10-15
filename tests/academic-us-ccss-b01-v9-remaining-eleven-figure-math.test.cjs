@@ -29,7 +29,7 @@ test('Pairs visually show exactly two counters in each pair and one extra iff od
  assert(html.includes('RichLessonVisualKind.CounterPairs'));
  assert(html.includes('var pairCount = total / 2'));
  assert(html.includes('var leftover = total % 2'));
- assert(html.includes('pair < pairCount'));
+ assert(/@for\s*\(\s*var pair\s*=\s*0\s*;\s*pair\s*<\s*pairCount\s*;/.test(html));
  assert(html.includes('leftover == 1'));
  assert(html.includes('aria-label="@Model.Description"'));
  for(let n=1;n<=99;n++){

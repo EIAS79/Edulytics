@@ -69,6 +69,8 @@ on:
       - 'src/Edulytics.Services/LessonContent/UsCcssB01V9SourceFigureStructuralGapVisuals.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01V9RemainingElevenFigureRootVisualsTests.cs'
       - 'tests/academic-us-ccss-b01-v9-remaining-eleven-figure-math.test.cjs'
+      - 'tools/us-ccss-b01-v9-full-500-numeric-equation-triage.cjs'
+      - 'tests/academic-us-ccss-b01-v9-full-500-numeric-equation-triage.test.cjs'
       - 'tools/us-ccss-b01-v9-effective-figure-rich-v2-structure.cjs'
       - 'tests/academic-us-ccss-b01-v9-effective-figure-rich-v2-structure.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs'
@@ -146,6 +148,11 @@ jobs:
             --effective=b01-v9-effective-root-cause-500.json \
             --out=b01-v9-global-effective-root-causes-500.json
           node -e "const r=require('./b01-v9-global-effective-root-causes-500.json');if(r.coverage.joined!==500||r.coverage.unique!==500||r.automaticFixAuthorization!==false||r.confirmedSemanticDefectsByThisTool!==0||r.academicDecision!=='BATCH_NO-GO'||r.groupCount!==25)process.exit(1);console.log(JSON.stringify({coverage:r.coverage,groupCount:r.groupCount,sharedPatternRoots:Object.fromEntries(Object.entries(r.sharedPatternRoots).map(([k,v])=>[k,{raw:v.rawCandidates,effective:v.effectiveMarkerStillPresent,changed:v.effectiveMarkerAbsent,visual:v.withComposedVisual}])),noVisual:r.richV2WithoutStructuralVisuals.count,decision:r.academicDecision}));"
+      - name: Examine complete numeric equalities across 500 lessons without corrupting true-false exercises
+        run: |
+          node --test tests/academic-us-ccss-b01-v9-full-500-numeric-equation-triage.test.cjs
+          node tools/us-ccss-b01-v9-full-500-numeric-equation-triage.cjs --out=b01-v9-500-numeric-equations-no-fake-academic-pass.json
+          node -e "const x=require('./b01-v9-500-numeric-equations-no-fake-academic-pass.json');if(x.scope.expected!==500||x.scope.covered!==500||x.scope.unique!==500||x.rows.length!==500||x.scope.fullLessonAcademicCertificationsGranted!==0||x.academicDecision!=='BATCH_NO-GO'||x.releaseEligible!==false)process.exit(1);console.log(JSON.stringify({scope:x.scope,decision:x.academicDecision}));"
       - name: Compare the real 500-way student Rich V2 visuals to exact original 397 figure frames
         run: |
           node --test tests/academic-us-ccss-b01-v9-effective-figure-rich-v2-structure.test.cjs
@@ -196,6 +203,7 @@ jobs:
             b01-v9-effective-root-cause-500.json
             b01-v9-global-effective-root-causes-500.json
             b01-v9-effective-original-40-math-visual-structure.json
+            b01-v9-500-numeric-equations-no-fake-academic-pass.json
             b01-v9-source-figure-dependencies-40.json
             b01-v9-activity-figure-source-guard-40.json
             b01-v9-source-figure-dom-links-40.json

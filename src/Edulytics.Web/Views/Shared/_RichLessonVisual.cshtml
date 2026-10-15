@@ -253,6 +253,7 @@
         var difference = int.TryParse(Model.Items.ElementAtOrDefault(2),out var diff) ? diff : -1;
         var unknownPosition = int.TryParse(Model.Items.ElementAtOrDefault(3),out var pos)
             ? pos : 0;
+        var tapeUnit = Model.SecondaryLabel == "cents" ? "cents" : "units";
         if (longer > 0 && shorter > 0 && longer > shorter &&
             difference == longer - shorter)
         {
@@ -262,11 +263,11 @@
                 .ToString("0.###",System.Globalization.CultureInfo.InvariantCulture);
             <div class="rich-tape-diagram" role="img" aria-label="@Model.Description"
                  style="max-width:540px;">
-                <p>First group: @(unknownPosition == 1 ? "?" : longer.ToString()) units</p>
+                <p>First group: @(unknownPosition == 1 ? "?" : longer.ToString()) @tapeUnit</p>
                 <div style="border:2px solid currentColor;padding:0.4rem;width:100%;box-sizing:border-box">
-                    @longer equal units
+                    @longer equal @tapeUnit
                 </div>
-                <p>Second group: @(unknownPosition == 2 ? "?" : shorter.ToString()) units, plus @(unknownPosition == 0 ? "?" : difference.ToString()) extra units</p>
+                <p>Second group: @(unknownPosition == 2 ? "?" : shorter.ToString()) @tapeUnit, plus @(unknownPosition == 0 ? "?" : difference.ToString()) extra @tapeUnit</p>
                 <div style="display:flex;width:100%;box-sizing:border-box;">
                     <div style="border:2px solid currentColor;box-sizing:border-box;width:@(portion)%;" >
                         @(unknownPosition == 2 ? "?" : shorter.ToString())
@@ -358,7 +359,7 @@
             out var parsedLength) ? Math.Clamp(parsedLength, 1, 100) : 1;
         var rectangleWidth = int.TryParse(Model.Items.ElementAtOrDefault(1),
             out var parsedWidth) ? Math.Clamp(parsedWidth, 1, 100) : 1;
-        var measureUnit=Model.SecondaryLabel is "m" or "ft"
+        var measureUnit=Model.SecondaryLabel is "m" or "ft" or "cm" or "in"
             ? Model.SecondaryLabel : "units";
         // Both comparative rectangles use precisely 12 pixels per unit.
         // Independently fitting each would misrepresent their relative sizes.

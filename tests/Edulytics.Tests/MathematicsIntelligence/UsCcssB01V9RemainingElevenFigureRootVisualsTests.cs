@@ -60,6 +60,19 @@ public sealed class UsCcssB01V9RemainingElevenFigureRootVisualsTests
             GetBody(Prefix+"G2:U08:L02"));
         Assert.NotNull(even);
         Assert.Equal(["8","9"],even.Select(v=>v.Items.Single()).ToArray());
+        var measurements=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
+            Prefix+"G2:U06:L03",GetBody(Prefix+"G2:U06:L03"));
+        Assert.NotNull(measurements);
+        Assert.Equal("cm",Assert.Single(measurements).SecondaryLabel);
+        var money=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
+            Prefix+"G2:U06:L19",GetBody(Prefix+"G2:U06:L19"));
+        Assert.NotNull(money);
+        Assert.Equal("cents",Assert.Single(money).SecondaryLabel);
+        var area=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
+            Prefix+"G3:U04:L11",GetBody(Prefix+"G3:U04:L11"));
+        Assert.NotNull(area);
+        Assert.Equal(3,area.Count);
+        Assert.All(area,v=>Assert.Equal("fixed-comparison-scale",v.SecondaryLabel));
         Assert.Contains("zero counters left over",even[0].Description);
         Assert.Contains("one counter left over",even[1].Description);
         var more=UsCcssB01V9SourceFigureStructuralGapVisuals.Build(
