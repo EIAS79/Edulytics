@@ -67,9 +67,43 @@ test('Source order, content hashes and runtime failures fail closed',()=>{
  const d=fixture();d.runtime.runtimeFailures=1;
  assert.throws(()=>reconcile(d),/Successful complete/);
 });
+
+test('A repaired AUTOMATED_SCREENED lesson is re-screened against the new exact HEAD without academic PASS',()=>{
+ const a=fixture(),first=reconcile(a);
+ const old=structuredClone(first.ledger);
+ a.runtime.lessonRows[2].effectiveContentSha256='f'.repeat(64);
+ a.runtime.lessonRows[2].effectiveContentVersion='lesson-repair-v2';
+ const next=reconcile({...a,ledger:old,runId:'38740000002',
+   headSha:'1234567890abcdef1234567890abcdef12345678'});
+ assert.equal(next.summary.screened,0);
+ assert.equal(next.summary.rescreened,1);
+ assert.equal(next.summary.alreadyScreened,499);
+ assert.equal(next.summary.stillNeedFullL1L6AndEightDimensions,500);
+ assert.equal(next.ledger.records[2].contentSha256,'f'.repeat(64));
+ assert.equal(next.ledger.records[2].contentVersion,'lesson-repair-v2');
+ assert.equal(next.ledger.records[2].screeningProvenance.githubRunId,'38740000002');
+ assert.equal(next.ledger.records[2].screeningProvenance.auditedHeadSha,
+   '1234567890abcdef1234567890abcdef12345678');
+ assert.equal(next.ledger.records[2].academicDecision,'NOT_CERTIFIED');
+ assert.equal(next.ledger.records[2].reviewDimensions,null);
+ assert.ok(Object.values(next.ledger.records[2].gates).every(x=>x.status==='NOT_STARTED'));
+ assert.equal(next.ledger.records[3].contentSha256,old.records[3].contentSha256);
+ assert.equal(old.records[2].contentVersion,'sample-v1');
+});
+test('Re-screen refuses corrupted previous provenance or started academic gates',()=>{
+ const a=fixture(),first=reconcile(a).ledger;
+ a.runtime.lessonRows[2].effectiveContentSha256='f'.repeat(64);
+ const invalid=structuredClone(first);
+ invalid.records[2].screeningProvenance.learnerContentSha256='a'.repeat(64);
+ assert.throws(()=>reconcile({...a,ledger:invalid}),/Previously screened runtime provenance/);
+ const active=structuredClone(first);
+ active.records[2].gates.L4.status='IN_PROGRESS';
+ assert.throws(()=>reconcile({...a,ledger:active}),/cannot overwrite started academic review/);
+});
+
 test('Previously reviewed academic gates and changed body fingerprints never get overwritten',()=>{
  const a=fixture();a.ledger.records[2].gates.L4.status='IN_PROGRESS';
  assert.throws(()=>reconcile(a),/cannot overwrite started/);
  const b=fixture();b.ledger.records[2].contentSha256='f'.repeat(64);
- assert.throws(()=>reconcile(b),/fingerprint changed/);
+ assert.throws(()=>reconcile(b),/stale learner-body fingerprint/);
 });
