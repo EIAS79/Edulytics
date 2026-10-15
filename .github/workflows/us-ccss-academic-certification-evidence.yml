@@ -10,6 +10,9 @@ on:
       - 'artifacts/academic-us-ccss/certification-evidence/**'
       - 'tests/academic-us-ccss-b01-l02-l6-candidate-record.test.cjs'
       - 'tests/academic-us-ccss-g1-source-guarded-corrections.test.cjs'
+      - 'tests/academic-us-ccss-g1-seven-topic-repairs.test.cjs'
+      - 'tests/academic-us-ccss-g1-six-local-source-corrections.test.cjs'
+      - 'tests/academic-us-ccss-g1-six-source-goal-teaching-repairs.test.cjs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - '.github/workflows/us-ccss-academic-certification-evidence.yml'
   pull_request:
