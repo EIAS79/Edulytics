@@ -1,6 +1,11 @@
 name: US CCSS ten-lesson certification (T001)
 
 on:
+  # Read-only T001 validation on every audited branch push, even while the
+  # broad historical PR remains draft. Push NEVER authorizes release.
+  push:
+    branches:
+      - 'audit/us-ccss-b01-500-lesson-certification'
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
@@ -58,7 +63,7 @@ jobs:
       - name: Verify ten source-accurate contracts, graded arithmetic, and materialized content
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
-            --filter 'FullyQualifiedName~UsCcssT001FirstTenSourceAndPracticeTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
+            --filter 'FullyQualifiedName~UsCcssT001FirstTenSourceAndPracticeTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
             --logger 'console;verbosity=normal'
 
   release-t001-10-only:
