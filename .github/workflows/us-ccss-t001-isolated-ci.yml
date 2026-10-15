@@ -30,6 +30,9 @@ jobs:
     timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.200'
@@ -50,5 +53,10 @@ jobs:
           node tools/us-ccss-t001-release-gate.cjs --status > /tmp/t001-academic-status.json
           cat /tmp/t001-academic-status.json
           node -e 'const d=require("/tmp/t001-academic-status.json");if(d.state!=="BATCH_NO-GO"&&d.state!=="BATCH_EVIDENCE_READY")process.exit(1);console.log("T001",d.state,"evidenceReady",d.evidenceReady,"missing",d.remainingEvidence);'
+          if node -e 'process.exit(require("/tmp/t001-academic-status.json").state==="BATCH_EVIDENCE_READY"?0:1)'; then
+            node tools/us-ccss-t001-release-gate.cjs --release-check --head-sha="${GITHUB_SHA}"
+          else
+            echo "T001 evidence incomplete: release remains fail-closed; this technical CI does not grant academic PASS"
+          fi
       - name: This job is technical, not academic certification or publication
         run: echo 'T001 requires 10/10 independently verified L1-L6, eight dimensions and authenticated live student testing before merge.'
