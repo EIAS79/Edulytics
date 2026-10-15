@@ -55,6 +55,14 @@
             question.GenerationFamily,
             question.GenerationParametersJson);
 
+    var authoredTaskKind = question?.GenerationFamily switch
+    {
+        "usccss.t001.g1.write_dot_expression" => "expression",
+        "usccss.t001.g1.construct_tool_sort" => "sort",
+        "usccss.t001.g1.collect_survey_graph" => "survey",
+        _ => null
+    };
+
     var isConstructShapeGraph = string.Equals(question?.GenerationFamily,
         "usccss.t001.g1.construct_shape_graph", StringComparison.Ordinal);
     var prompt = question?.Prompt ?? string.Empty;
@@ -217,6 +225,7 @@
           href="~/css/practice-unified-ui-v2.css"
           asp-append-version="true" />
     <link rel="stylesheet" href="~/css/t001-shape-chart.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t001-authored-practice.css" asp-append-version="true" />
     <style>
         .adaptive-gw-shell {
             display: grid;
@@ -570,7 +579,13 @@
                     {
                         <div class="adaptive-review-form"
                              data-practice-review>
-                            @if (isConstructShapeGraph)
+                            @if (authoredTaskKind is not null)
+                            {
+                                <div class="t001-authored" data-t001-authored-task="@authoredTaskKind"
+                                     data-t001-source="@stem" data-t001-locale="@locale"
+                                     data-t001-readonly="true" data-t001-initial="@reviewAnswer"></div>
+                            }
+                            else if (isConstructShapeGraph)
                             {
                                 <div class="t001-shape-chart" data-t001-shape-chart
                                      data-t001-readonly="true" data-t001-locale="@locale"
@@ -663,7 +678,17 @@
                                    name="sequence"
                                    value="@question.Sequence" />
 
-                            @if (isConstructShapeGraph)
+                            @if (authoredTaskKind is not null)
+                            {
+                                <div class="t001-authored" data-t001-authored-task="@authoredTaskKind"
+                                     data-t001-source="@stem" data-t001-locale="@locale"
+                                     data-t001-readonly="false" data-t001-initial="@retryAnswer"><noscript>Enable JavaScript to complete the activity.</noscript></div>
+                                <input type="hidden" name="answer" value="" data-t001-authored-answer />
+                                <button class="gw-primary" type="submit" data-t001-authored-submit disabled>
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                            else if (isConstructShapeGraph)
                             {
                                 <div class="t001-shape-chart" data-t001-shape-chart
                                      data-t001-locale="@locale" data-t001-initial="@retryAnswer">
@@ -763,4 +788,5 @@
     <script src="~/js/student-lesson-practice.js"
             asp-append-version="true"></script>
     <script src="~/js/t001-shape-chart.js" asp-append-version="true"></script>
+    <script src="~/js/t001-authored-practice.js" asp-append-version="true"></script>
 }
