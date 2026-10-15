@@ -146,7 +146,7 @@ public sealed class UsCcssT001IsolatedReleaseTests
             Assert.True(lesson.WorkedExamples.Count>=5);
             if(n==6)
             {
-                Assert.Contains("make ten",lesson.ExplanationParagraphs[1],
+                Assert.Contains("Find the Pair",lesson.ExplanationParagraphs[1],
                     StringComparison.OrdinalIgnoreCase);
                 Assert.Contains("10 - 7 = 3",lesson.WorkedExamples[0].Check);
             }
@@ -154,7 +154,7 @@ public sealed class UsCcssT001IsolatedReleaseTests
             {
                 Assert.Contains("sort",lesson.ExplanationParagraphs[1],
                     StringComparison.OrdinalIgnoreCase);
-                Assert.Contains("one",lesson.CommonMistakes[0].Correction,
+                Assert.Contains("once",lesson.CommonMistakes[0].Correction,
                     StringComparison.OrdinalIgnoreCase);
             }
             if(n==9)
