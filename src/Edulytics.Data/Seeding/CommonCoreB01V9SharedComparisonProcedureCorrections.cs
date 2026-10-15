@@ -68,6 +68,16 @@ public static class CommonCoreB01V9SharedComparisonProcedureCorrections
 
     // Exact final state for the ONE intersection with the earlier shared
     // non-measure root. This is checked again on repeated materialization.
+    /// <summary>
+    /// Exact approved predecessor or source-verified replacement; used when a
+    /// later concept-only correction overlays this shared procedure safely.
+    /// </summary>
+    public static bool MatchesOriginalOrFinalProcedure(
+        string lessonCode, string steps, string mistakes) =>
+        ByCode.ContainsKey(lessonCode) &&
+        ((steps == OldSteps && mistakes == OldMistakes) ||
+         MatchesFinalProcedure(lessonCode, steps, mistakes));
+
     public static bool MatchesFinalProcedure(string lessonCode, string steps, string mistakes)
     {
         if (!ByCode.TryGetValue(lessonCode, out var guard)) return false;
