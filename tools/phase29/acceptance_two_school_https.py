@@ -515,7 +515,9 @@ for key, schoolname in SCHOOLS:
                                 attempt_match.group(1) +
                                 """' AND i."GenerationFamily"='""" + family + """'
                                 ORDER BY r."AnsweredAtUtc" DESC LIMIT 1;""")
-                            parts=persisted.split("|")
+                            # Survey payload itself contains '|'; split off only
+                            # the three trusted SQL columns from the RIGHT.
+                            parts=persisted.rsplit("|",3)
                             assert len(parts)==4 and parts[0]==authored_answer and (
                                 parts[1]=="1" and float(parts[2])==1.0 and parts[3]==family), (
                                 suffix,"Written/sorted/surveyed work not graded/saved",
