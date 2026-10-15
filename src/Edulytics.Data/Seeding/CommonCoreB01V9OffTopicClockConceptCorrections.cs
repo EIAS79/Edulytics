@@ -105,7 +105,12 @@ public static class CommonCoreB01V9OffTopicClockConceptCorrections
         CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson, string version) =>
         IsTarget(doc, lesson) &&
-        (version == CorrectedVersion || version == ByCode[lesson.LessonCode].PreviousVersion);
+        (version == CorrectedVersion ||
+         version == ByCode[lesson.LessonCode].PreviousVersion ||
+         CommonCoreB01V9SharedComparisonProcedureCorrections
+             .CanUpgradeExisting(doc, lesson, version) ||
+         CommonCoreB01V9SharedAdditionProcedureCorrections
+             .CanUpgradeExisting(doc, lesson, version));
 
     public static void ValidateExistingBodyBeforeUpgrade(
         CanonicalLessonContentPackDocument doc,
@@ -124,11 +129,22 @@ public static class CommonCoreB01V9OffTopicClockConceptCorrections
             old.KeyConceptsAndRules != OriginalConcepts(current.KeyConceptsAndRules, g))
             throw new InvalidOperationException("Off-topic clock concepts diverged.");
 
-        if (old.Title != current.Title ||
+        // A draft B01 release may upgrade directly from the original Rich
+        // Content baseline to BOTH reviewed procedure and concept corrections.
+        // Do not reject the old exact procedure merely because the shared
+        // procedure has not previously shipped to production.
+        var approvedProcedure =
+            CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(doc, lesson)
+                ? CommonCoreB01V9SharedComparisonProcedureCorrections
+                    .MatchesOriginalOrFinalProcedure(lesson.LessonCode,
+                        old.StepByStepSolutions, old.CommonMistakes)
+                : CommonCoreB01V9SharedAdditionProcedureCorrections
+                    .MatchesOriginalOrFinalProcedure(lesson.LessonCode,
+                        old.StepByStepSolutions, old.CommonMistakes);
+        if (!approvedProcedure ||
+            old.Title != current.Title ||
             old.Explanation != current.Explanation ||
             old.WorkedExamples != current.WorkedExamples ||
-            old.StepByStepSolutions != current.StepByStepSolutions ||
-            old.CommonMistakes != current.CommonMistakes ||
             old.QuickSummary != current.QuickSummary)
             throw new InvalidOperationException("Off-topic clock unrelated lesson field drift.");
     }
