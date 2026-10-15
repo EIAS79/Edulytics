@@ -139,9 +139,40 @@ public static partial class RichLessonContentV2RuntimeComposer
             !string.Equals(lesson.CultureCode,"en",StringComparison.OrdinalIgnoreCase))
             return;
 
-        lesson.ExplanationParagraphs.Insert(0,"Learning goal: "+teaching.Goal);
-        lesson.ExplanationParagraphs.Insert(1,teaching.Activity);
-        lesson.WorkedExamples.Insert(0,new RichLessonWorkedExample
+        // Unlike the catalogue-wide compiler, the actual Grade 1 learner
+        // should see mathematical instruction, not engineering claims about
+        // verified contracts, namespace IDs, solver pipelines or provenance.
+        var originalIntro=lesson.ExplanationParagraphs.FirstOrDefault()??teaching.Goal;
+        var originalCore=lesson.KeyConcepts.FirstOrDefault();
+        var earlierExamples=lesson.WorkedExamples.ToArray();
+        var originalMistake=lesson.CommonMistakes.FirstOrDefault();
+
+        lesson.ExplanationParagraphs.Clear();
+        lesson.ExplanationParagraphs.Add("Learning goal: "+teaching.Goal);
+        lesson.ExplanationParagraphs.Add(teaching.Activity);
+        lesson.ExplanationParagraphs.Add(originalIntro);
+        lesson.ExplanationParagraphs.Add("Now look at the worked examples. " +
+            "Show the quantities with counters, dots, cards or a table before answering.");
+
+        lesson.KeyConcepts.Clear();
+        if(originalCore is not null)lesson.KeyConcepts.Add(originalCore);
+        lesson.KeyConcepts.Add(new RichLessonKeyConcept
+        {
+            Title="Our learning goal",
+            Definition=teaching.Goal,
+            Rule=teaching.Method,
+            Example=teaching.Question
+        });
+        lesson.KeyConcepts.Add(new RichLessonKeyConcept
+        {
+            Title="Check what you did",
+            Definition=teaching.Check,
+            Rule=teaching.Correction,
+            Example=teaching.Answer
+        });
+
+        lesson.WorkedExamples.Clear();
+        lesson.WorkedExamples.Add(new RichLessonWorkedExample
         {
             Title = "Worked model — lesson skill",
             Question = teaching.Question,
@@ -150,12 +181,41 @@ public static partial class RichLessonContentV2RuntimeComposer
             Answer = teaching.Answer,
             Check = teaching.Check
         });
-        lesson.CommonMistakes.Insert(0,new RichLessonCommonMistake
+        for(var i=0;i<earlierExamples.Length;i++)
+        {
+            var example=earlierExamples[i];
+            lesson.WorkedExamples.Add(new RichLessonWorkedExample
+            {
+                Title=$"Try another example {i+1}",
+                Question=example.Question,
+                Method=teaching.Method,
+                Steps=
+                [
+                    "Show or picture what the question describes.",
+                    example.Steps.Count>2?example.Steps[2]:
+                        "Count or sort the quantities using the lesson model.",
+                    "Write your answer: "+example.Answer+".",
+                    "Count again to make sure every object or step was used once."
+                ],
+                Answer=example.Answer,
+                Check="Check the question and each counted step against your answer."
+            });
+        }
+
+        lesson.CommonMistakes.Clear();
+        lesson.CommonMistakes.Add(new RichLessonCommonMistake
         {
             Mistake = teaching.Mistake,
             WhyWrong = teaching.WhyWrong,
             Correction = teaching.Correction
         });
-        lesson.SummaryPoints.Insert(0,teaching.Goal);
+        if(originalMistake is not null)
+            lesson.CommonMistakes.Add(originalMistake);
+
+        lesson.SummaryPoints.Clear();
+        lesson.SummaryPoints.Add(teaching.Goal);
+        lesson.SummaryPoints.Add(teaching.Method);
+        lesson.SummaryPoints.Add("Check: "+teaching.Check);
+        lesson.SummaryPoints.Add("Remember: "+teaching.Correction);
     }
 }
