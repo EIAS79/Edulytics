@@ -450,7 +450,6 @@
             @* Each of six horizontal bands spans exactly 24 unit columns;
                their heights sum to 18, producing 12 non-overlapping
                rectangles on a consistent linear scale (1 cell = 16px). *@
-            var y=20;
             <div role="group" aria-label="@Model.Description" class="rich-g4-rectangle-design">
                 <svg viewBox="0 0 424 328" xmlns="http://www.w3.org/2000/svg"
                      style="width:min(100%,424px);height:auto" aria-hidden="true" focusable="false">
@@ -458,13 +457,14 @@
                     {
                         var cells=Model.Rows[i].Cells;
                         var height=int.Parse(cells[0])*16;
+                        var y=20+Model.Rows.Take(i).Sum(r=>int.Parse(r.Cells[0]))*16;
                         var left=int.Parse(cells[1])*16;
                         var right=int.Parse(cells[2])*16;
                         <rect x="20" y="@y" width="@left" height="@height"
                               fill="#dbeafe" stroke="currentColor" stroke-width="1.5"/>
                         <rect x="@(20+left)" y="@y" width="@right" height="@height"
                               fill="#fef3c7" stroke="currentColor" stroke-width="1.5"/>
-                        y+=height;
+                        @* Y is derived from previous band heights: no mutable state. *@
                     }
                 </svg>
                 <p>Six bands × two rectangles = 12 rectangles. Two small
