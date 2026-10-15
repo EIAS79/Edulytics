@@ -7,6 +7,7 @@
 // migration and previous-batch live proof before their release can be enabled.
 const fs = require('node:fs');
 const path = require('node:path');
+const { spawnSync, execFileSync } = require('node:child_process');
 const {
   loadSource, validateLedger, policyId, gateNames, dimensionNames
 } = require('./us-ccss-lesson-certification-records.cjs');
@@ -19,9 +20,36 @@ const ledgerFile = path.join(root,
 const assert = (c, m) => { if (!c) throw Error(m); };
 const isSha = v => typeof v === 'string' && /^[0-9a-f]{64}$/i.test(v);
 const isCommit = v => typeof v === 'string' && /^[0-9a-f]{40}$/.test(v);
-const requireCurrentCandidateSha = (ledger, headSha) => {
-  assert(isCommit(headSha) && ledger.releaseCandidateSha === headSha,
-    'T001 release candidate must be bound to exact reviewed HEAD SHA');
+// Avoid the impossible self-referential hash of a commit that contains its
+// own SHA in the JSON ledger. Code is frozen on one immutable candidate commit.
+// The later evidence commit may modify ONLY the canonical ledger. Diffing the
+// immutable Git objects, not trusting a manifest's filename, prevents code
+// drift between verification and the academic signoff.
+const requireCurrentCandidateSha = (ledger, headSha, gitRoot = root) => {
+  const candidateSha = ledger.releaseCandidateSha;
+  assert(isCommit(headSha) && isCommit(candidateSha),
+    'T001 source candidate and reviewed HEAD must each be full Git SHAs');
+  if (headSha === candidateSha) return;
+  const ancestor = spawnSync('git',
+    ['merge-base','--is-ancestor',candidateSha,headSha],
+    { cwd: gitRoot, encoding: 'utf8' });
+  assert(ancestor.status === 0,
+    'T001 source candidate not ancestor of HEAD; fetch full Git history ' +
+    'and verify the exact code candidate before certifying');
+  let changed;
+  try {
+    changed = execFileSync('git',
+      ['diff','--name-only','--diff-filter=ACDMRT',candidateSha,headSha],
+      {cwd:gitRoot, encoding:'utf8'})
+      .split(/\\r?\\n/).filter(Boolean);
+  } catch(error) {
+    throw new Error('T001 cannot inspect immutable code diff: '+error.message);
+  }
+  assert(changed.length>0 && changed.every(file =>
+    file === 'artifacts/academic-us-ccss/04-lesson-certification-records.json'),
+    'T001 academic evidence commit must modify only the approved ledger; ' +
+    'any code, workflow, source or content change requires a new candidate ' +
+    '(detected paths: '+changed.join(', ')+')');
 };
 
 function inspectTen({manifest, source, ledger}) {
@@ -127,4 +155,4 @@ if (require.main === module) {
   try { main(); }
   catch(e){ console.error('[US CCSS T001 release gate] ' + e.message); process.exitCode=1; }
 }
-module.exports = { inspectTen, main };
+module.exports = { inspectTen, main, requireCurrentCandidateSha };
