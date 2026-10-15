@@ -106,10 +106,10 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // Reconciled against the actual distinct source-guarded lesson union
         // on the disposable US CCSS database: 182 lesson codes, 182 distinct
-        // (181 verified in historical CI; the T001 additional lesson requires a fresh run). The historical arithmetic total 173 had
+        // (181 verified in historical CI; the two T001 additions require a fresh run). The historical arithmetic total 173 had
         // become stale across several later reviewed correction cohorts.
         // This remains an exact fail-closed inventory, not a permissive count.
-        const int expectedSourceBoundCorrectionCount = 182;
+        const int expectedSourceBoundCorrectionCount = 183;
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -228,7 +228,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
           CommonCoreB01V9SharedSubtractionProcedureCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document, lesson) ||
-          CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson));
+          CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson) ||
+          CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -968,7 +969,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 ? sharedCohortExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
-                    if (CommonCoreB01V9LearnerVoiceSharedRootCorrection.IsTarget(document,sourceLesson))
+                    if (CommonCoreB01V9LearnerVoiceSharedRootCorrection.IsTarget(document,sourceLesson) &&
+                        !CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document,sourceLesson))
                     {
                         CommonCoreB01V9LearnerVoiceSharedRootCorrection.ValidateExistingBodyBeforeUpgrade(
                             document,sourceLesson,content.ContentVersion,
@@ -1034,6 +1036,17 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             document,sourceLesson,content.ContentVersion,
                             translationsByContentId.TryGetValue(content.Id,out var t001Existing)
                                 ? t001Existing : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    // L05 overlays a verified learner-voice repair, so its
+                    // composite validator handles the exact old/new fields
+                    // while retaining the original source-SHA guard.
+                    if (CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document,sourceLesson))
+                    {
+                        CommonCoreT001MixedAddSubtractContentCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var mixedExisting)
+                                ? mixedExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =
