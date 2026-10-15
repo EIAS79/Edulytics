@@ -24,6 +24,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g1.match_dot_cubes_expression",
         "usccss.b01.g1.complete_missing_dots",
         "usccss.b01.g1.check_off_add_within10",
+        "usccss.b01.g1.add_one_or_two",
+        "usccss.b01.g1.subtract_one_or_two",
+        "usccss.b01.g1.make_ten_missing_part",
         "usccss.b01.triangle.attributes",
         "usccss.b01.shape.polygon_sides",
         "usccss.b01.shape.specific_subcategory",
@@ -146,6 +149,30 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int a, b, n, d, m;
         switch (f)
         {
+            // Official T001 G1 U01 L03: counting on EXACTLY one or two
+            // within ten. This is not unbounded generic addition.
+            case "usccss.b01.g1.add_one_or_two":
+                a=r.Next(0,9); b=r.Next(1,Math.Min(2,10-a)+1);
+                return Make(f,
+                    $"Start at {a}. Count forward {b} step(s), one number per step. What is {a} + {b}?",
+                    "Use a counter or a number path; count only the additional one or two steps.",
+                    AssessmentItemType.Numeric,D(("start",a),("step",b)));
+            // Official T001 G1 U01 L04: counting BACK exactly one or two
+            // within ten, with no negative totals or addition-only drift.
+            case "usccss.b01.g1.subtract_one_or_two":
+                a=r.Next(1,11); b=r.Next(1,Math.Min(2,a)+1);
+                return Make(f,
+                    $"Start with {a} counters. Remove {b} counter(s). Count back {b} step(s). How many remain?",
+                    "Counting backward means each step takes away one; check by adding the removed counters.",
+                    AssessmentItemType.Numeric,D(("start",a),("step",b)));
+            // Official T001 G1 U01 L06: Find the Pair, Make 10.
+            // A card plus its complement MUST fill exactly ten spaces.
+            case "usccss.b01.g1.make_ten_missing_part":
+                a=r.Next(0,11); b=10-a;
+                return Make(f,
+                    $"In Find the Pair, you have card {a}. Which number card makes exactly 10 with it? Complete {a} + ? = 10.",
+                    "Find the empty spots in a ten-frame or subtract the known part from 10.",
+                    AssessmentItemType.Numeric,D(("known",a),("missing",b)));
             // IM G1 U08 L09: clues intentionally leave multiple candidates
             // until a tens interval plus exact ones selects one secret number.
             case "usccss.b01.g1.place_value_number_riddle":
@@ -1812,6 +1839,12 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int P(string key) => p[key];
         return f switch
         {
+            "usccss.b01.g1.add_one_or_two" =>
+                (P("start")+P("step")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.subtract_one_or_two" =>
+                (P("start")-P("step")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.make_ten_missing_part" =>
+                (10-P("known")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g3.add_within1000" or
             "usccss.b01.g3.add_regroup1000" =>
                 (P("left")+P("right")).ToString(CultureInfo.InvariantCulture),
@@ -2105,6 +2138,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int N(string key) => p[key];
         return family switch
         {
+            "usccss.b01.g1.add_one_or_two" =>
+                Range("start",0,8) && Range("step",1,2) &&
+                N("start")+N("step")<=10,
+            "usccss.b01.g1.subtract_one_or_two" =>
+                Range("start",1,10) && Range("step",1,2) &&
+                N("start")>=N("step"),
+            "usccss.b01.g1.make_ten_missing_part" =>
+                Range("known",0,10) && Range("missing",0,10) &&
+                N("known")+N("missing")==10,
             "usccss.b01.g3.add_within1000" or
             "usccss.b01.g3.add_regroup1000" =>
                 Range("left",100,699) && Range("right",100,899) &&
