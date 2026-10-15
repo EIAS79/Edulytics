@@ -50,6 +50,39 @@ class WholeBatchSemanticTests(unittest.TestCase):
         self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
             [x["rule"] for x in r["rows"][42]["conflicts"]])
 
+    def test_three_new_source_purpose_families_are_only_allowed_in_exact_lessons(self):
+        targets=[
+            ("PED:US-CCSS-MATH:G1:U08:L09",
+             "usccss.b01.g1.place_value_number_riddle",
+             "Solve Number Riddles",
+             "Use place value to determine a secret number."),
+            ("PED:US-CCSS-MATH:G2:U03:L13",
+             "usccss.b01.g2.target_measurement_difference_cm",
+             "Center Day 2 (optional)",
+             "Estimate and measure lengths in inches and centimeters."),
+            ("PED:US-CCSS-MATH:G3:U08:L14",
+             "usccss.b01.g3.quarter_inch_estimate_classify",
+             "Estimation Exploration",
+             "Estimate length to the nearest half or fourth inch.")
+        ]
+        for code,family,title,purpose in targets:
+            with self.subTest(lesson=code):
+                self.assertEqual(module.SOURCE_SCOPED_FAMILIES[code],family)
+                a,b=fixtures()
+                a["lessonRows"][0]["lessonCode"]=code
+                b["rows"][0]["lessonCode"]=code
+                b["rows"][0]["publisherTitle"]=title
+                b["rows"][0]["sourcePurposePreview"]=purpose
+                a["lessonRows"][0]["actualQuestionFamilies"]=[family]
+                self.assertEqual(module.analyze(a,b)["conflictingLessons"],0)
+                a["lessonRows"][0]["actualQuestionFamilies"]=["number.whole.add.direct"]
+                self.assertIn("SOURCE_TASK_EXACT_LESSON_FAMILY_DRIFT",
+                    [f["rule"] for f in module.analyze(a,b)["rows"][0]["conflicts"]])
+                a,b=fixtures()
+                a["lessonRows"][0]["actualQuestionFamilies"]=[family]
+                self.assertIn("SOURCE_TASK_LEAKED_OUTSIDE_EXACT_LESSON_SCOPE",
+                    [f["rule"] for f in module.analyze(a,b)["rows"][0]["conflicts"]])
+
     def test_source_scoped_task_cannot_be_leaked_to_another_lesson(self):
         a,b=fixtures()
         a["lessonRows"][17]["actualQuestionFamilies"]=[

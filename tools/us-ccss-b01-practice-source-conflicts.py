@@ -33,9 +33,18 @@ RULES = (
       not any(x in t for x in ("combinations of","choose two","pairs from a set"))),
 )
 
-# 50 original publisher lesson targets: exact approved code/family linkage.
+# Source-reviewed original publisher targets: exact code/family linkage.
+# A mathematics family is not globally available just because it is supported.
 # This protects against silently falling back to unrelated generic engines.
 SOURCE_SCOPED_FAMILIES = {
+    # Independent riddle/measurement purpose review (2026-10-15); keep these
+    # exact scoped families out of all other curricula and source lessons.
+    "PED:US-CCSS-MATH:G1:U08:L09":
+        "usccss.b01.g1.place_value_number_riddle",
+    "PED:US-CCSS-MATH:G2:U03:L13":
+        "usccss.b01.g2.target_measurement_difference_cm",
+    "PED:US-CCSS-MATH:G3:U08:L14":
+        "usccss.b01.g3.quarter_inch_estimate_classify",
     "PED:US-CCSS-MATH:G1:U03:L12": "usccss.b01.g1.teen_no_regroup",
     "PED:US-CCSS-MATH:G1:U03:L22": "usccss.b01.g1.teen_subtract_decompose_ten",
     "PED:US-CCSS-MATH:G2:U02:L03": "usccss.b01.g2.story_without_regroup100",
