@@ -124,6 +124,29 @@ if(require.main===module){
  else process.stdout.write(JSON.stringify(report,null,2)+'\n');
  process.stderr.write('B01 V9 DOM source figure '+report.coverage.exactFrameToOriginalMediaDOMPointers+
   '/397 linked; math, rights & production L6 still 40/40 blocked; BATCH_NO-GO\n');
- if(process.argv.includes('--strict')&&!report.releaseEligible)process.exitCode=2;
+ if(process.argv.includes('--strict')) {
+   // The publisher DOM preflight is never sufficient for academic acceptance.
+   // Its private links do not impose publisher attribution on independently
+   // authored Edulytics graphics.
+   const verifiedPath=arg('verified',
+     'artifacts/academic-us-ccss/certification-evidence/B01-v9-figure-math-rights-l6-40.json');
+   if(!fs.existsSync(verifiedPath)) {
+     process.stderr.write('BATCH_NO-GO: independent visual mathematics, rights and student L6 evidence missing\n');
+     process.exitCode=2;
+   } else {
+     const canonicalLedger=JSON.parse(fs.readFileSync(
+       'artifacts/academic-us-ccss/04-lesson-certification-records.json','utf8'));
+     const verifiedEvidence=JSON.parse(fs.readFileSync(verifiedPath,'utf8'));
+     const {verifyFigureAcademicRelease}=require('./us-ccss-b01-v9-figure-academic-release.cjs');
+     const independentResult=verifyFigureAcademicRelease({
+       domReport:report,activityMap:read('activityMap'),
+       ledger:canonicalLedger,verification:verifiedEvidence
+     });
+     if(out)fs.writeFileSync(out,JSON.stringify(independentResult,null,2)+'\n');
+     else process.stdout.write(JSON.stringify({releaseEligible:independentResult.releaseEligible,
+       independentlyVerifiedVisualMathematics:independentResult.independentlyVerifiedVisualMathematics,
+       authenticatedAccessibleProductionVisualsVerified:independentResult.authenticatedAccessibleProductionVisualsVerified})+'\n');
+   }
+ }
 }
 module.exports={verifyDomLinks};

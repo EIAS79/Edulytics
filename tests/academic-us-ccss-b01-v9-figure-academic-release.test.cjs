@@ -26,7 +26,7 @@ function fixture(){
     mathVerificationMethod:'SOURCE_VISUAL_AND_NUMERIC_INVARIANT',
     mathEvidenceId:math,renderedVisualId:'render_'+s.ordinal+'_'+j,
     rightsEvidenceId:rights,rightsBasis:'EDULYTICS_INDEPENDENT_NO_SOURCE_REUSE',
-    publisherAssetDisplayed:false};
+    publisherAssetDisplayed:false,attributionRequired:false};
   });
   const learnerL6={status:'PASS',candidateSha:product,
    effectiveContentSha256:content,completedFlow:[...exactFlow],
@@ -52,6 +52,40 @@ test('Complete linked fixture proves final visual gate has a reachable success s
  const x=fixture(),r=verifyFigureAcademicRelease(x);
  assert.equal(r.releaseEligible,true);assert.equal(r.independentlyVerifiedVisualMathematics,397);
  assert.equal(r.authenticatedAccessibleProductionVisualsVerified,40);
+});
+
+test('Independently authored mathematics diagrams need no publisher credit or public source link',()=>{
+ const x=fixture();
+ const r=verifyFigureAcademicRelease(x);
+ assert.equal(r.releaseEligible,true);
+ for(const record of x.verification.records)
+  for(const f of record.figures) {
+   assert.equal(f.attributionRequired,false);
+   assert.equal(f.publisherAssetDisplayed,false);
+  }
+});
+test('No-credit reuse of truly public-domain or unprotected media requires a documented L1 rights finding',()=>{
+ const x=fixture(),p=x.verification.records[0].figures[0];
+ p.rightsBasis='PUBLIC_DOMAIN_OR_UNPROTECTED_VERIFIED';
+ p.publisherAssetDisplayed=true;
+ p.rightsDeterminationSha256='d'.repeat(64);
+ p.rightsDeterminationEvidenceId='rights_public_domain_148_0';
+ x.ledger.records[0].gates.L1.evidenceIds.push(p.rightsDeterminationEvidenceId);
+ assert.equal(verifyFigureAcademicRelease(x).releaseEligible,true);
+ p.rightsDeterminationEvidenceId='unlinked_reference';
+ assert.throws(()=>verifyFigureAcademicRelease(x),/linked evidence/);
+});
+test('Copying a CC BY publisher asset without required credit is blocked',()=>{
+ const x=fixture(),p=x.verification.records[0].figures[0];
+ p.rightsBasis='LICENSED_PUBLISHER_ASSET_REUSE';
+ p.publisherAssetDisplayed=true;
+ p.licenseGrantEvidenceId='publisher_license_148_0';
+ x.ledger.records[0].gates.L1.evidenceIds.push(p.licenseGrantEvidenceId);
+ assert.throws(()=>verifyFigureAcademicRelease(x),/attribution/);
+ p.attributionRequired=true;
+ p.attributionLocationEvidenceId='credit_footer_148_0';
+ x.ledger.records[0].gates.L1.evidenceIds.push(p.attributionLocationEvidenceId);
+ assert.equal(verifyFigureAcademicRelease(x).releaseEligible,true);
 });
 test('Any fabricated or stale math/rights/L6 evidence blocks final visual release',()=>{
  const bad=[

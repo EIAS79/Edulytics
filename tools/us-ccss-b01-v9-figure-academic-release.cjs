@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// Independent source-figure mathematical comparison + rights + real student L6.
+// Independent visual mathematical comparison + rights + real student L6. Source linking stays in private audit metadata, never compulsory public UI credit.
 // Structural evidence binding does not create academic proof or invoke approval.
 const assert=require('node:assert/strict');
 const sha=x=>typeof x==='string'&&/^[0-9a-f]{64}$/i.test(x);
@@ -55,13 +55,27 @@ function validate({domReport,activityMap,ledger,verification}) {
    assert.equal(p.mathVerificationMethod,'SOURCE_VISUAL_AND_NUMERIC_INVARIANT');
    assert.ok(eid(p.renderedVisualId),'No actual student visual ID');
    linked('L4',p.mathEvidenceId); linked('L1',p.rightsEvidenceId);
+   // Attribution belongs to the license of a copied media asset, not to
+   // mathematical ideas. Neither publisher IDs nor source URLs are student UI.
    if(p.rightsBasis==='EDULYTICS_INDEPENDENT_NO_SOURCE_REUSE') {
-    assert.equal(p.publisherAssetDisplayed,false,'Unauthorized source media display');
+    assert.equal(p.publisherAssetDisplayed,false,'Original source image cannot be silently reused');
+    assert.equal(p.attributionRequired,false,'Independent visual has no publisher credit requirement');
+   } else if(p.rightsBasis==='PUBLIC_DOMAIN_OR_UNPROTECTED_VERIFIED') {
+    assert.equal(p.publisherAssetDisplayed,true);
+    assert.equal(p.attributionRequired,false);
+    assert.ok(sha(p.rightsDeterminationSha256),
+      'No-restriction rights determination must have auditable original evidence');
+    linked('L1',p.rightsDeterminationEvidenceId);
    } else if(p.rightsBasis==='LICENSED_PUBLISHER_ASSET_REUSE') {
     assert.equal(p.publisherAssetDisplayed,true);
+    assert.equal(p.attributionRequired,true,
+      'Copied CC BY assets require attribution; a silent copy is not licensed');
     linked('L1',p.licenseGrantEvidenceId);
+    assert.ok(eid(p.attributionLocationEvidenceId),
+      'A valid linked attribution/credits proof is required');
+    linked('L1',p.attributionLocationEvidenceId);
     licensed++;
-   } else assert.fail('Unresolved rights disposition');
+   } else assert.fail('Unresolved original-image rights classification');
    frames++;
   }
   const l=proof.learnerL6;

@@ -17,6 +17,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CollectiveVisualArithmeticOracleTests.cs'
       - 'tools/us-ccss-b01-v9-activity-figure-source-contract.cjs'
       - 'tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs'
+      - 'tools/us-ccss-b01-v9-figure-academic-release.cjs'
+      - 'tests/academic-us-ccss-b01-v9-figure-academic-release.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-v9-original-teacher-figure-dom-asset-map-40.json'
       - 'tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs'
@@ -74,7 +76,7 @@ jobs:
         run: node tools/us-ccss-b01-bulk-content-screen.cjs --output=b01-bulk-screen.json
       - name: Verify exact original figure DOM provenance and 40 outstanding source math/rights/L6 blockers
         run: |
-          node --test tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs
+          node --test tests/academic-us-ccss-b01-v9-activity-figure-source-contract.test.cjs tests/academic-us-ccss-b01-v9-source-figure-dom-linkage-gate.test.cjs tests/academic-us-ccss-b01-v9-figure-academic-release.test.cjs
           node tools/us-ccss-b01-v9-source-figure-dom-linkage-gate.cjs \
             --out=b01-original-activity-figure-preflight.json
           node -e "const r=require('./b01-original-activity-figure-preflight.json');if(r.coverage.manifestLessons!==500||r.coverage.sourceFigureLessons!==40||r.coverage.exactFrameToOriginalMediaDOMPointers!==397||r.coverage.uniquePublisherMediaURLs!==383||r.coverage.unlinkedFigureFrames!==0||r.blockedLessonsForMathRightsAndL6!==40||r.releaseEligible!==false||r.academicDecision!=='BATCH_NO-GO')process.exit(1);console.log(JSON.stringify(r.coverage));"
