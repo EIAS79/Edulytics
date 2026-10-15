@@ -104,15 +104,12 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         var codes = targets.Select(x => x.Lesson.LessonCode).ToArray();
 
         // Fail closed on source-bound technical release inventory drift:
-        // 173 previously source-reviewed, distinct correction targets.
-        // The five V9 off-topic-geometry concept repairs were subsequently
-        // added to IsSourceBoundJsonMetadataCandidate but not this immutable
-        // inventory count. Keep a precise constant + reviewed-five expectation;
-        // never remove the count/duplicate validation or silently seed all.
-        const int previousSourceBoundCorrections = 173;
-        var expectedSourceBoundCorrectionCount =
-            previousSourceBoundCorrections +
-            CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.ExpectedCount;
+        // Reconciled against the actual distinct source-guarded lesson union
+        // on the disposable US CCSS database: 181 lesson codes, 181 distinct
+        // (CI run 38741558965). The historical arithmetic total 173 had
+        // become stale across several later reviewed correction cohorts.
+        // This remains an exact fail-closed inventory, not a permissive count.
+        const int expectedSourceBoundCorrectionCount = 181;
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
