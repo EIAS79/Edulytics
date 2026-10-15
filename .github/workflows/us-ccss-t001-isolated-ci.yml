@@ -11,6 +11,9 @@ on:
       - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
       - 'src/Edulytics.Services/Mathematics/UsCcssT001ExactQuestions.cs'
       - 'src/Edulytics.Services/Mathematics/UsCcssT001ConstructShapeGraph.cs'
+      - 'src/Edulytics.Services/Mathematics/UsCcssT001AuthoredActivities.cs'
+      - 'src/Edulytics.Web/wwwroot/js/t001-authored-practice.js'
+      - 'src/Edulytics.Web/wwwroot/css/t001-authored-practice.css'
       - 'src/Edulytics.Web/wwwroot/js/t001-shape-chart.js'
       - 'src/Edulytics.Web/wwwroot/css/t001-shape-chart.css'
       - 'src/Edulytics.Core/Mathematics/Practice/PracticeAssessmentTaxonomy.cs'
@@ -50,8 +53,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Check constructed-graph JavaScript
-        run: node --check src/Edulytics.Web/wwwroot/js/t001-shape-chart.js
+      - name: Check constructed graph and authored Practice JavaScript
+        run: |
+          node --check src/Edulytics.Web/wwwroot/js/t001-shape-chart.js
+          node --check src/Edulytics.Web/wwwroot/js/t001-authored-practice.js
       - name: Verify fail-closed immutable-source academic release integrity
         run: node --test tests/us-ccss-t001-release-integrity.test.cjs
       - name: Inspect actual ten-lesson certification ledger without bypassing blocked gates

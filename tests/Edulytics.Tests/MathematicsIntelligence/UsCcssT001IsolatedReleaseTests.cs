@@ -46,6 +46,28 @@ public sealed class UsCcssT001IsolatedReleaseTests
     }
 
     [Fact]
+    public void SurveyPersistedGraderNeverAcceptsTheInternalSolverSentinel()
+    {
+        var type=typeof(ExactSkillContractQuestionEngine).Assembly.GetType(
+            "Edulytics.Services.Mathematics.UsCcssT001AuthoredActivities",
+            throwOnError:true);
+        Assert.NotNull(type);
+        var grade=type!.GetMethod("GradePersistedAnswer",BindingFlags.Public|BindingFlags.Static);
+        Assert.NotNull(grade);
+        bool Check(string actual,string expected="survey-entry-protocol-v1")=>
+            (bool)grade!.Invoke(null,[
+                "usccss.t001.g1.collect_survey_graph",expected,actual])!;
+        Assert.False(Check("survey-entry-protocol-v1"));
+        Assert.True(Check("v:01201|g:2,2,1"));
+        Assert.False(Check("v:01201|g:2,1,2"));
+        Assert.False(Check("v:01201|g:2,2,1","fake-sentinel"));
+        Assert.False(Check("v:012|g:1,1,1"));
+        Assert.False(Check("v:0120x|g:2,1,2"));
+        Assert.False(Check("v:01201|g:02,2,1"));
+        Assert.False(Check("v:01201|g:2,2,1|teacher-approved"));
+    }
+
+    [Fact]
     public void SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds()
     {
         var engine=new ExactSkillContractQuestionEngine();
@@ -70,6 +92,53 @@ public sealed class UsCcssT001IsolatedReleaseTests
                         // Arithmetic oracle is intentionally separate from
                         // the production generator/solver and verifier.
                         var p=q.Parameters;
+                        if(family is
+                            "usccss.t001.g1.write_dot_expression" or
+                            "usccss.t001.g1.construct_tool_sort" or
+                            "usccss.t001.g1.collect_survey_graph")
+                        {
+                            Assert.Equal(Edulytics.Core.Enums.AssessmentItemType.ShortAnswer,q.ItemType);
+                            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,q.CorrectAnswer));
+                            if(family=="usccss.t001.g1.write_dot_expression")
+                            {
+                                Assert.Equal($"{p["left"]}+{p["right"]}={p["left"]+p["right"]}",q.CorrectAnswer);
+                                Assert.Contains("Dot cards: ",q.Prompt);
+                                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                                    $"{p["right"]}+{p["left"]}={p["left"]+p["right"]+1}"));
+                                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                                    (p["left"]+p["right"]).ToString(CultureInfo.InvariantCulture)));
+                            }
+                            else if(family=="usccss.t001.g1.construct_tool_sort")
+                            {
+                                var tokens=q.Prompt.Split("Items: ",StringSplitOptions.None)[1]
+                                    .Split(". Sort EVERY",StringSplitOptions.None)[0]
+                                    .Split(", ",StringSplitOptions.None);
+                                var kinds=new[]{"counter","pattern block","inch tile"};
+                                Assert.Equal(p["length"],tokens.Length);
+                                for(var position=0;position<tokens.Length;position++)
+                                    Assert.Equal(kinds[p["item"+position]],tokens[position]);
+                                Assert.Equal(string.Join(",",Enumerable.Range(0,p["length"])
+                                    .Select(i=>p["item"+i])),q.CorrectAnswer);
+                                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                                    "0,0,0,0,0,0,0,0,0"));
+                            }
+                            else
+                            {
+                                Assert.Equal("survey-entry-protocol-v1",q.CorrectAnswer);
+                                Assert.Contains("REAL CLASS SURVEY",q.Prompt);
+                                Assert.Contains("teacher",q.Prompt,StringComparison.OrdinalIgnoreCase);
+                                Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+                                    "v:01201|g:2,2,1"));
+                                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                                    "v:01201|g:2,1,2"));
+                                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                                    "v:0120|g:2,1,1"));
+                                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                                    "v:0120x|g:2,1,2"));
+                            }
+                            checkedCount++;
+                            continue;
+                        }
                         if(family=="usccss.t001.g1.construct_shape_graph")
                         {
                             var fullGraph=string.Join(",",new[]{p["first"],p["second"],p["third"]});
@@ -202,7 +271,7 @@ public sealed class UsCcssT001IsolatedReleaseTests
                         checkedCount++;
                     }
         }
-        Assert.Equal(480,checkedCount); // 16 lesson family slots * 3 difficulties * 10 seeds
+        Assert.Equal(570,checkedCount); // 19 family slots * 3 difficulties * 10 seeds
     }
 
     [Fact]
