@@ -129,6 +129,52 @@ public static partial class RichLessonContentV2RuntimeComposer
                 "Count two missing cubes; verify visible plus hidden equals ten.")
         };
 
+    private static RichLessonWorkedExample OneMoreModel(int number,string method)
+    {
+        // An additional concrete case preserves Rich V2 worked-example
+        // completeness without exposing raw multiple-choice distractor walls.
+        (string Question,string Step,string Answer,string Check) sample=number switch
+        {
+            2=>("A dot card has 2 dots and another card has 5. Write the addition expression and total.",
+                "Combine the groups: 2 + 5 = 7.","7","2 + 5 has two addends and exactly seven dots."),
+            3=>("Start with 7 counters. Add one more. What is the new total?",
+                "Count one step after seven: eight.","8","7 + 1 = 8."),
+            4=>("Start with 9 counters. Take away one. How many remain?",
+                "Move one step back from nine: eight.","8","9 - 1 = 8; 8 + 1 = 9."),
+            5=>("Join three counters and four more, then remove three from the total. Write both equations.",
+                "Join to make 3 + 4 = 7, then remove to make 7 - 3 = 4.",
+                "3 + 4 = 7; 7 - 3 = 4","Both adding and subtracting are shown by the counters."),
+            6=>("A card shows 8. What card completes ten? How can subtraction check?",
+                "Eight and two fill all ten places: 8 + 2 = 10.",
+                "2","10 - 8 = 2, so the missing partner is two."),
+            7=>("Sort 3 counters, 2 pattern blocks and 4 inch tiles by tool type.",
+                "Put each tool into one labelled group, then count the three groups.",
+                "Counters 3; Blocks 2; Tiles 4",
+                "3 + 2 + 4 = 9 objects, each counted once."),
+            8=>("Draw category marks for 2 triangle cards, 3 squares and 4 circles.",
+                "Draw two marks under Triangles, three under Squares and four under Circles.",
+                "2, 3, 4","There are nine equal picture marks in three labelled rows."),
+            9=>("A sample survey records 2 apple votes, 4 banana votes and 3 orange votes. Make a table.",
+                "Give each fruit one row and one mark per response.",
+                "Apples 2; Bananas 4; Oranges 3",
+                "The table shows nine votes with no response counted twice."),
+            10=>("You can see five cubes and five are hidden. How many cubes were there altogether?",
+                "Five visible and five hidden form ten: 5 + 5 = 10.",
+                "10","10 - 5 = 5 confirms the hidden part."),
+            _=>throw new InvalidOperationException("No T001 worked model for lesson "+number)
+        };
+        return new RichLessonWorkedExample
+        {
+            Title="One more worked example",
+            Question=sample.Question,
+            Method=method,
+            Steps=["Show the objects or draw the groups.",sample.Step,
+                "Write the answer and explain what each number means."],
+            Answer=sample.Answer,
+            Check=sample.Check
+        };
+    }
+
     private static void AddT001LearnerTeaching(
         string lessonCode, RichLessonContentV2Lesson lesson)
     {
@@ -173,6 +219,13 @@ public static partial class RichLessonContentV2RuntimeComposer
             Rule=teaching.Correction,
             Example=teaching.Answer
         });
+        lesson.KeyConcepts.Add(new RichLessonKeyConcept
+        {
+            Title="Try it with objects",
+            Definition=teaching.Activity,
+            Rule=teaching.Method,
+            Example=teaching.Question
+        });
 
         lesson.WorkedExamples.Clear();
         lesson.WorkedExamples.Add(new RichLessonWorkedExample
@@ -212,6 +265,8 @@ public static partial class RichLessonContentV2RuntimeComposer
                 Check="Check the question and each counted step against your answer."
             });
         }
+
+        lesson.WorkedExamples.Add(OneMoreModel(number,teaching.Method));
 
         lesson.CommonMistakes.Clear();
         lesson.CommonMistakes.Add(new RichLessonCommonMistake
