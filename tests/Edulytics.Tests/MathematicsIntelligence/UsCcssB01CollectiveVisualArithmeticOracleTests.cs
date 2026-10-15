@@ -79,11 +79,12 @@ public sealed class UsCcssB01CollectiveVisualArithmeticOracleTests
                     if (visual.Kind==RichLessonVisualKind.ClockFace)
                     {
                         checkedClockFaces++;
-                        if (visual.Items.Count<2 ||
-                            !int.TryParse(visual.Items[0],out var hour) ||
-                            !int.TryParse(visual.Items[1],out var minute) ||
-                            hour<1 || hour>12 || minute<0 || minute>59 ||
-                            minute%5!=0)
+                        // In G3 U06 L09 the teacher asks for 1:37, NOT only
+                        // 5-minute positions. The shared ClockFace Razor SVG
+                        // renders 60 equal minute ticks and a continuously
+                        // moving hour hand. Reject impossible hand values,
+                        // NEVER reject a correct 37-minute reading.
+                        if (!ClockItemsAreRepresentable(visual.Items))
                             issues.Add("CLOCK_HANDS_UNREPRESENTABLE_FROM_ITEMS");
                     }
                     if (visual.Kind is RichLessonVisualKind.NumberLine
@@ -135,6 +136,42 @@ public sealed class UsCcssB01CollectiveVisualArithmeticOracleTests
         Assert.True(allFailures.Count==0,
             allFailures.Count+" batch visual arithmetic defects: "+
             string.Join(" | ",allFailures.Take(50)));
+    }
+
+    internal static bool ClockItemsAreRepresentable(IReadOnlyList<string> items)
+    {
+        if (items.Count < 2 ||
+            !int.TryParse(items[0],out var hour) ||
+            !int.TryParse(items[1],out var minute))
+            return false;
+        return hour is >= 1 and <= 12 &&
+            minute is >= 0 and <= 59;
+    }
+
+    [Theory]
+    [InlineData(1,37,true)]
+    [InlineData(1,35,true)]
+    [InlineData(12,59,true)]
+    [InlineData(6,0,true)]
+    [InlineData(0,37,false)]
+    [InlineData(13,37,false)]
+    [InlineData(1,60,false)]
+    [InlineData(1,-1,false)]
+    public void EveryRealMinuteCanBeRepresentedButInvalidClockValuesCannot(
+        int hour,int minute,bool valid)
+    {
+        Assert.Equal(valid,ClockItemsAreRepresentable(
+            new [] {hour.ToString(CultureInfo.InvariantCulture),
+                minute.ToString(CultureInfo.InvariantCulture)}));
+    }
+
+    [Fact]
+    public void ClockRejectsMissingOrNonNumericHandData()
+    {
+        Assert.False(ClockItemsAreRepresentable(Array.Empty<string>()));
+        Assert.False(ClockItemsAreRepresentable(new []{"1"}));
+        Assert.False(ClockItemsAreRepresentable(new []{"1","1:37"}));
+        Assert.False(ClockItemsAreRepresentable(new []{"hour","37"}));
     }
 
     private static double? ParseRational(string raw)

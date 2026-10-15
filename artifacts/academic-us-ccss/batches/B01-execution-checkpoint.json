@@ -50,8 +50,8 @@
       "remainingAtThatSha": "One stale hardcoded Practice interaction registry count expected 290, actual 324; all other full-product tests passed"
     }
   },
-  "lastCompletedOperation": "2026-10-15 V9 B01: release gate and global source/root graph review found stale diagnostic: global graph continued to show legacy 185/500 despite 315 additional original teacher preparation/activity first-pass reviews having been read and SHA-verified in a 500-manifest combined report; corrected graph to JOIN EXACT prior+new verified 185+315, detect overlap/identity/source/body SHA drift and report 500 FIRST PASS with 0 L1–L6 or source task semantic PASS. Canonical final release gate improved to require checked-out immutable GITHUB_SHA (or explicit candidate flag) to MATCH 500-lesson canonical ledger releaseCandidateSha; refuses stale evidence. Gate now emits all 499 unverified lesson codes and their missing L1–L6 and eight-dimension fields, not merely first 15, and states no recorded defects is not proof of academic correctness. No ledger certification forged; all 500 remain ONE B01; no merge, Render publish or B02.",
-  "nextExactOperation": "Confirm latest source-join graph CI and release SHA/499 gap negative tests on the new exact GitHub immutable HEAD; record actual results and correct any failures. The canonical 499 outstanding lessons need real per-lesson L1–L6 and eight-dimension source/effective math, explanation/worked solution, visual, original-task and graded practice evidence, with individual actual student browser L6 and SHA-current tests. Source goal/activity first-pass 500/500 and structural visual coverage 40/40 are NOT certification. Collect a stable release candidate SHA and only then revalidate full 500 evidence, collective BATCH_CERTIFIED, merge PR, deploy Render and verify BATCH_PASS_AND_LIVE; B02 stays blocked.",
+  "lastCompletedOperation": "2026-10-15 V9 B01 full 500 release regression exposed a real false rejection of G3 U06 L09 original nearest-minute clock: 500-way Rich V2 arithmetic oracle required minute%5==0 although correct source goal and rendered 60-minute ticks demand arbitrary minute such as 1:37. Fixed the mathematical oracle (not the correct visual), added exact 1:37 and 12:59 positive, 13:37 and 1:60 negative checks and source reference; CI paths include whole 500 visual oracle. Latest collective gate still says 499 evidence-incomplete and draft B01 BATCH_NO-GO. Historical first-pass source-goal graph count was corrected to prior 185 + fresh 315 = 500/500, but still not L1-L6.",
+  "nextExactOperation": "Run immutable CI after newest exact-minute oracle correction: full 500 actual Rich V2 arithmetic, source-goal first-pass 500, all L1–L6 record-gap guard; fix any new failure while refusing fake certification. Full 500 academic source task-by-task mathematical verification + question generator/grader and authenticated StudentPortal L6/eight dimensions remain required before collective BATCH_CERTIFIED. Only after merge and Render live check BATCH_PASS_AND_LIVE; keep B02 blocked.",
   "stopConditions": [
     "Never mark B01 PASS on static screening alone",
     "Do not merge draft PR #492 or publish a partial academic batch",
@@ -795,5 +795,25 @@
     ],
     "canonicalLedgerMutation": "NONE",
     "academicDecision": "BATCH_NO-GO"
+  },
+  "v9NearestMinuteActual500OracleCorrection": {
+    "lessonCode": "PED:US-CCSS-MATH:G3:U06:L09",
+    "mathematicalPurpose": "Read and write analog clock time to any individual minute, including 1:37",
+    "originalOracleDefect": "The 500-way actual Rich V2 visual arithmetic test incorrectly rejected all minutes not divisible by 5 (minute%5!=0), despite 60-tick clock SVG and grade 3 3.MD.A.1",
+    "sourceEvidence": "Original 2021 teacher preparation G3 U06 L09, lesson title Time to the Nearest Minute, source example 1:37",
+    "correctedOracle": "Accept hours 1..12 and every minute 0..59; reject missing/non-numeric/out-of-range values, preserve whole-batch true arithmetic checks",
+    "newBoundaryCases": [
+      "1:37 PASS",
+      "12:59 PASS",
+      "6:00 PASS",
+      "13:37 REJECT",
+      "1:60 REJECT",
+      "1:-1 REJECT"
+    ],
+    "newAcademicCertifications": 0,
+    "releaseStatus": "BATCH_NO-GO",
+    "fixedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CollectiveVisualArithmeticOracleTests.cs",
+    "evidenceSource": "https://github.com/EIAS79/Edulytics/actions/runs/38660492694",
+    "academicDecision": "NO-L1-L6-PASS-FROM-TEST"
   }
 }

@@ -75,6 +75,7 @@ on:
       - 'tools/us-ccss-b01-v9-effective-figure-rich-v2-structure.cjs'
       - 'tests/academic-us-ccss-b01-v9-effective-figure-rich-v2-structure.test.cjs'
       - 'tests/academic-us-ccss-b01-v9-global-root-cause-graph.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB01CollectiveVisualArithmeticOracleTests.cs'
       - 'tools/us-ccss-b01-v9-math-element-index.cjs'
       - 'tools/us-ccss-b01-v9-shared-root-cause-ledger.cjs'
       - 'artifacts/academic-us-ccss/batches/B01-lesson-manifest.json'
@@ -140,7 +141,7 @@ jobs:
       - name: Materialize 500 corrections and compose Rich V2 from actual application
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build \
-            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedGeometryProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedAdditionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedSubtractionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9NearestMinuteClockVisualTests|FullyQualifiedName~UsCcssB01V9Grade2SourcePolygonVisualTests|FullyQualifiedName~UsCcssB01V9RemainingElevenFigureRootVisualsTests|FullyQualifiedName~UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests|FullyQualifiedName~CommonCoreG4MultiplesSourceCorrectionTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
+            --filter 'FullyQualifiedName~UsCcssB01V9EffectiveRootCauseImpactTests|FullyQualifiedName~UsCcssB01V9SharedNonMeasureConceptTemplateCorrectionsTests|FullyQualifiedName~UsCcssB01V9LearnerVoiceSharedRootCorrectionTests|FullyQualifiedName~UsCcssB01V9SharedComparisonProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedGeometryProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedAdditionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9SharedSubtractionProcedureCorrectionsTests|FullyQualifiedName~UsCcssB01V9NearestMinuteClockVisualTests|FullyQualifiedName~UsCcssB01V9Grade2SourcePolygonVisualTests|FullyQualifiedName~UsCcssB01V9RemainingElevenFigureRootVisualsTests|FullyQualifiedName~UsCcssB01CollectiveVisualArithmeticOracleTests|FullyQualifiedName~UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests|FullyQualifiedName~CommonCoreG4MultiplesSourceCorrectionTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests|FullyQualifiedName~CommonCoreSourceBoundHtmlEntityCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
             --logger 'console;verbosity=normal'
       - name: Join ALL 25 raw root cohorts to 500 effective Rich V2 facts and source purposes
         run: |
