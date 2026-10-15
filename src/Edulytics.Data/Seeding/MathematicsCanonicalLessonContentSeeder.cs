@@ -226,7 +226,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
           CommonCoreB01V9SharedGeometryProcedureCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9SharedAdditionProcedureCorrections.IsTarget(document, lesson) ||
           CommonCoreB01V9SharedSubtractionProcedureCorrections.IsTarget(document, lesson) ||
-          CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.IsTarget(document, lesson));
+          CommonCoreB01V9UnrelatedGeometryConceptRuleCorrections.IsTarget(document, lesson) ||
+          CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -974,7 +975,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 ? voiceExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
-                    if (CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(document,sourceLesson))
+                    if (CommonCoreB01V9SharedComparisonProcedureCorrections.IsTarget(document,sourceLesson) &&
+                        !CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document,sourceLesson))
                     {
                         CommonCoreB01V9SharedComparisonProcedureCorrections.ValidateExistingBodyBeforeUpgrade(
                             document,sourceLesson,content.ContentVersion,
@@ -990,7 +992,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 ? geometryExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
-                    if (CommonCoreB01V9SharedAdditionProcedureCorrections.IsTarget(document,sourceLesson))
+                    if (CommonCoreB01V9SharedAdditionProcedureCorrections.IsTarget(document,sourceLesson) &&
+                        !CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document,sourceLesson))
                     {
                         CommonCoreB01V9SharedAdditionProcedureCorrections.ValidateExistingBodyBeforeUpgrade(
                             document,sourceLesson,content.ContentVersion,
@@ -1012,6 +1015,16 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             document,sourceLesson,content.ContentVersion,
                             translationsByContentId.TryGetValue(content.Id,out var conceptExisting)
                                 ? conceptExisting : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    // New source-bound correction validates the complete previous
+                    // body (including the unchanged old procedure fields) itself.
+                    if (CommonCoreB01V9OffTopicClockConceptCorrections.IsTarget(document,sourceLesson))
+                    {
+                        CommonCoreB01V9OffTopicClockConceptCorrections.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var clockConceptExisting)
+                                ? clockConceptExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =
