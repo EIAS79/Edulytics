@@ -195,6 +195,25 @@ for key, schoolname in SCHOOLS:
                             wait_until="domcontentloaded", timeout=40000)
                         assert response is not None and response.status == 200, (
                             screen, "Grade 1 browser lesson was not accessible")
+                        # Rendering without CSS previously gave misleading
+                        # green DOM checks but a huge unstyled brand logo.
+                        # Require actual static asset delivery AND applied CSS.
+                        site_css=page.request.get(BASE+"/css/site.css",timeout=20000)
+                        assert site_css.status==200 and len(site_css.body())>20000, (
+                            "T001 student site.css missing",screen,site_css.status)
+                        brand_box=page.locator(
+                            ".student-brand-link .localized-brand-logo").bounding_box()
+                        assert brand_box and 0<brand_box["height"]<=90, (
+                            "T001 student brand oversized / CSS not applied",
+                            screen,brand_box)
+                        if screen=="desktop":
+                            shell_display=page.locator(
+                                ".student-app-shell").evaluate(
+                                    "(element) => getComputedStyle(element).display")
+                            assert shell_display=="grid", (
+                                "T001 desktop app shell CSS missing",shell_display)
+                        print("DISPOSABLE_T001_STYLESHEET_LAYOUT_PASS",
+                              screen,round(brand_box["height"]),flush=True)
                         figures = page.locator(
                             "figure.rich-lesson-visual--placevaluechart")
                         assert figures.count() == 2, (
