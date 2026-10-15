@@ -13,6 +13,10 @@ on:
       - 'tests/academic-us-ccss-t001-release-gate.test.cjs'
       - 'src/Edulytics.Data/Seeding/**'
       - 'src/Edulytics.Services/LessonContent/**'
+      - 'src/Edulytics.Services/Mathematics/UsCcssB01SourceTaskQuestionEngine.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/UsCcssB01SourceAlignedPracticeCorrections.cs'
+      - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssT001FirstTenSourceAndPracticeTests.cs'
   workflow_dispatch:
 
 permissions:
@@ -38,9 +42,28 @@ jobs:
       - name: Report T001 only (NO-GO is a truthful progress result)
         run: node tools/us-ccss-t001-release-gate.cjs --status
 
+  verify-t001-academic-engine-and-visuals:
+    needs: [inspect-t001-10]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore production assembly and exact practice test project
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Verify ten source-accurate contracts, graded arithmetic, and materialized content
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --filter 'FullyQualifiedName~UsCcssT001FirstTenSourceAndPracticeTests|FullyQualifiedName~UsCcssB01SourceAlignedPracticeCorrectionTests|FullyQualifiedName~UsCcssB01V9UnrelatedGeometryConceptRuleCorrectionsTests|FullyQualifiedName~UsCommonCoreB01CollectiveRichV2AuditTests' \
+            --logger 'console;verbosity=normal'
+
   release-t001-10-only:
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
-    needs: [inspect-t001-10]
+    needs: [inspect-t001-10, verify-t001-academic-engine-and-visuals]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
