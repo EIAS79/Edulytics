@@ -66,8 +66,8 @@ public sealed class UsCcssT001IsolatedReleaseTests
                             Assert.InRange(q.Parameters["step"],1,2);
                             Assert.True(q.Parameters["start"]>=q.Parameters["step"]);
                         }
-                        if(n==6 || (n==10 && family.EndsWith("make_ten_missing_part",
-                                StringComparison.Ordinal)))
+                        if((n==6 || n==10) && family.EndsWith("make_ten_missing_part",
+                                StringComparison.Ordinal))
                             Assert.Equal(10,q.Parameters["known"]+q.Parameters["missing"]);
                         // Detect a dishonest "sorting" prompt that already
                         // displays the category count and requires no classification.
@@ -98,7 +98,7 @@ public sealed class UsCcssT001IsolatedReleaseTests
                         checkedCount++;
                     }
         }
-        Assert.Equal(300,checkedCount); // 10 family slots across L02-L10 * 3 * 10
+        Assert.Equal(330,checkedCount); // 11 family slots across L02-L10 * 3 * 10
     }
 
     [Fact]
