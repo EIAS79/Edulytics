@@ -700,8 +700,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                         new RichLessonVisualRow {Label="First card — four",Cells=["●","●","●","●"]},
                         new RichLessonVisualRow {Label="Second card — three",Cells=["●","●","●"]}
                     ]
-                },
-                questionForms
+                }
             ];
         }
         if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L03")
@@ -716,8 +715,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                         new RichLessonVisualRow {Label="Start with five",Cells=["●","●","●","●","●"]},
                         new RichLessonVisualRow {Label="Next two numbers",Cells=["6","7","","",""]}
                     ]
-                },
-                questionForms
+                }
             ];
         }
         if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L04")
@@ -734,8 +732,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                         new RichLessonVisualRow {Label="After — first five remain",Cells=["●","●","●","●","●"]},
                         new RichLessonVisualRow {Label="After — one remains, two removed",Cells=["●","×","×","",""]}
                     ]
-                },
-                questionForms
+                }
             ];
         }
         if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L05")
@@ -752,8 +749,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                         new RichLessonVisualRow {Label="Four still here after removal",Cells=["●","●","●","●",""]},
                         new RichLessonVisualRow {Label="Two removed from six",Cells=["×","×","","",""]}
                     ]
-                },
-                questionForms
+                }
             ];
         }
 
@@ -772,8 +768,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                         new RichLessonVisualRow {Label="Top five",Cells=["●","●","●","●","●"]},
                         new RichLessonVisualRow {Label="Bottom five",Cells=["●","○","○","○","○"]}
                     ]
-                },
-                questionForms
+                }
             ];
         }
         if(lessonCode=="PED:US-CCSS-MATH:G1:U01:L07" ||
@@ -815,7 +810,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                         new RichLessonVisualRow {Label="Oranges — 4",Cells=["●","●","●","●"]}
                     ]
                 };
-            return [visual,questionForms];
+            return [visual];
         }
 
         return [questionForms];
