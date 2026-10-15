@@ -278,6 +278,14 @@ for key, schoolname in SCHOOLS:
                                 "T001 answer-filled question wall should stay in Practice",
                                 lesson_code,screen)
                             assert page.get_by_text(
+                                "you may lead them",exact=False).count()==0, (
+                                "T001 grade-one page still exposes teacher-guide instructions",
+                                lesson_code,screen)
+                            assert page.get_by_text(
+                                "MP7, MP8",exact=False).count()==0, (
+                                "T001 grade-one page still exposes teacher-only standards shorthand",
+                                lesson_code,screen)
+                            assert page.get_by_text(
                                 "Learning goal:",exact=False).first.is_visible(), (
                                 "T001 source-goal learner explanation not rendered",
                                 lesson_code,screen)
