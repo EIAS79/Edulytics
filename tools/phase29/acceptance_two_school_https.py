@@ -322,6 +322,25 @@ for key, schoolname in SCHOOLS:
                                     visual_models[suffix],exact=True).first.is_visible(), (
                                     "T001 actual counter/counting model not displayed",
                                     lesson_code,screen)
+                            # The displayed chart must use the SAME counts
+                            # as the authored worked example in these lessons.
+                            model_rows={
+                                "L07":["Counters — 4","Pattern blocks — 3",
+                                       "Inch tiles — 2"],
+                                "L08":["Triangles — 3","Squares — 2",
+                                       "Circles — 4"],
+                                "L09":["Apples — 5","Bananas — 3",
+                                       "Oranges — 2"],
+                            }
+                            if suffix in model_rows:
+                                figure=page.locator(
+                                    "figure.rich-lesson-visual--placevaluechart"
+                                ).first
+                                for row_label in model_rows[suffix]:
+                                    assert row_label in figure.inner_text(), (
+                                        "T001 displayed category count contradicts "
+                                        "the lesson's worked model",
+                                        lesson_code,row_label,screen)
                             if screen=="desktop":
                                 rendered_sections=page.locator(
                                     ".rich-lesson-section").all_inner_texts()
