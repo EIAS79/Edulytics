@@ -227,6 +227,40 @@ public sealed class UsCcssT001IsolatedReleaseTests
         Assert.Empty(pilot.ExplanationParagraphs);
     }
 
+    [Theory]
+    [InlineData("usccss.t001.g1.choose_tool_sort")]
+    [InlineData("usccss.t001.g1.choose_shape_chart")]
+    [InlineData("usccss.t001.g1.choose_survey_table")]
+    public void EachCategorizationRepresentationFamilySupportsTenDistinctWithinTenChoices(
+        string family)
+    {
+        var engine=new ExactSkillContractQuestionEngine();
+        foreach(var seed in new[]{913456,913457,913458})
+        {
+            var questions=engine.Generate(
+                "t001-full-category-session-capacity",family,[family],
+                ExactSkillQuestionDifficulty.Standard,10,seed,[]);
+            Assert.Equal(10,questions.Count);
+            Assert.Equal(10,questions.Select(x=>x.ExposureFingerprint)
+                .Distinct(StringComparer.Ordinal).Count());
+            Assert.Equal(10,questions.Select(x=>
+                string.Join(",",new[]{
+                    x.Parameters["first"],x.Parameters["second"],x.Parameters["third"]
+                })).Distinct(StringComparer.Ordinal).Count());
+            foreach(var q in questions)
+            {
+                var p=q.Parameters;
+                Assert.All(new[]{"first","second","third"},
+                    label=>Assert.InRange(p[label],1,6));
+                Assert.Equal(3,new[]{p["first"],p["second"],p["third"]}
+                    .Distinct().Count());
+                Assert.InRange(p["first"]+p["second"]+p["third"],6,10);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    family,p,q.CorrectAnswer));
+            }
+        }
+    }
+
     [Fact]
     public void CanonicalL05AndL06HaveCorrectedWorkedMathAndDoNotModifyPilot()
     {
