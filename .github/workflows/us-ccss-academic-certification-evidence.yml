@@ -3,6 +3,13 @@ name: US CCSS Academic Certification Evidence Safety
 # Green means the evidence gate is correctly enforced, NOT that the
 # curriculum is academically certified or safe to publish.
 on:
+  push:
+    branches:
+      - audit/us-ccss-b01-500-lesson-certification
+    paths:
+      - 'artifacts/academic-us-ccss/certification-evidence/**'
+      - 'tests/academic-us-ccss-b01-l02-l6-candidate-record.test.cjs'
+      - '.github/workflows/us-ccss-academic-certification-evidence.yml'
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
