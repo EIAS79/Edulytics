@@ -217,6 +217,47 @@ for key, schoolname in SCHOOLS:
                             path=f"/tmp/g1-u01-l01-{screen}.png", full_page=True)
                         print("DISPOSABLE_G1_L01_CHROMIUM_VIEWPORT_PASS",
                               screen, width, height, flush=True)
+                        # Full visual proof for all ten T001 lessons at
+                        # both viewports. This checks the actual browser DOM
+                        # and licensed source attribution, not merely HTTP.
+                        lesson_rows=sql("""
+                            SELECT "Code" || '|' || "Id"::text
+                            FROM "CurriculumPedagogicalLessons"
+                            WHERE "Code" LIKE 'PED:US-CCSS-MATH:G1:U01:L%'
+                            ORDER BY "Code";""").splitlines()
+                        assert len(lesson_rows)>=10, (
+                            "Source-backed G1 unit 1 lesson IDs missing",lesson_rows)
+                        candidates=[
+                            row.split("|",1) for row in lesson_rows
+                            if row.split("|",1)[0].split(":")[-1] in
+                               ["L"+str(v).zfill(2) for v in range(1,11)]
+                        ]
+                        assert len(candidates)==10, (
+                            "T001 visual source lesson identity count",candidates)
+                        for lesson_code, rendered_id in candidates:
+                            if lesson_code==pilot_code:
+                                continue
+                            rendered=page.goto(
+                                BASE+"/student/learning/lesson/"+rendered_id,
+                                wait_until="domcontentloaded", timeout=40000)
+                            assert rendered and rendered.status==200, (
+                                "T001 browser lesson inaccessible",lesson_code,screen)
+                            assert page.locator(".rich-lesson-section").count()>0, (
+                                "T001 browser Rich V2 missing",lesson_code,screen)
+                            assert page.get_by_text("CC BY 4.0").first.is_visible(), (
+                                "T001 publisher license invisible",lesson_code,screen)
+                            suffix=lesson_code.split(":")[-1]
+                            if suffix in ("L06","L07","L08","L09","L10"):
+                                assert page.locator(
+                                    "figure.rich-lesson-visual--placevaluechart"
+                                ).count()>0, (
+                                    "T001 original skill visual missing",
+                                    lesson_code,screen)
+                            page.screenshot(
+                                path=f"/tmp/g1-u01-{suffix.lower()}-{screen}.png",
+                                full_page=True)
+                            print("DISPOSABLE_T001_CHROMIUM_RENDER_PASS",
+                                  lesson_code,screen,flush=True)
                     finally:
                         context.close()
             finally:
