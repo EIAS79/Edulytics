@@ -105,6 +105,34 @@
             </div>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.CounterPairs)
+    {
+        // Actual counter groups rather than a decorative EquationSet:
+        // exactly two counters in every complete pair and one leftover if odd.
+        var total = int.TryParse(Model.Items.ElementAtOrDefault(0),out var count)
+            ? Math.Clamp(count,1,100) : 1;
+        var pairCount = total / 2;
+        var leftover = total % 2;
+        <div class="rich-counter-pairs" role="img" aria-label="@Model.Description">
+            <div class="rich-counter-pairs__groups"
+                 style="display:flex;flex-wrap:wrap;gap:.65rem">
+                @for(var pair=0;pair<pairCount;pair++)
+                {
+                    <div class="rich-counter-pairs__pair" aria-hidden="true"
+                         style="display:flex;gap:.2rem;align-items:center;padding:.3rem;border:1px solid currentColor;border-radius:.5rem">
+                        <span>●</span><span>●</span>
+                    </div>
+                }
+                @if(leftover == 1)
+                {
+                    <div class="rich-counter-pairs__leftover" aria-hidden="true"
+                         style="padding:.3rem;border:2px dashed currentColor;border-radius:.5rem">●</div>
+                }
+            </div>
+            <p>@pairCount complete pairs, @leftover left over:
+                @total is @(leftover == 0 ? "even" : "odd").</p>
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ClockFace)
     {
         // This is a mathematical clock face, not a symbolic circle icon.
