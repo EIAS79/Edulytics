@@ -17,6 +17,10 @@ internal static class UsCcssB01SourceTaskQuestionEngine
 
     private static readonly HashSet<string> Families = new(StringComparer.Ordinal)
     {
+        // Source-verified optional center / riddle / fractional estimate goals.
+        "usccss.b01.g1.place_value_number_riddle",
+        "usccss.b01.g2.target_measurement_difference_cm",
+        "usccss.b01.g3.quarter_inch_estimate_classify",
         "usccss.b01.g1.match_dot_cubes_expression",
         "usccss.b01.g1.complete_missing_dots",
         "usccss.b01.g1.check_off_add_within10",
@@ -142,6 +146,48 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int a, b, n, d, m;
         switch (f)
         {
+            // IM G1 U08 L09: clues intentionally leave multiple candidates
+            // until a tens interval plus exact ones selects one secret number.
+            case "usccss.b01.g1.place_value_number_riddle":
+                a=r.Next(1,10); // tens, 1..9
+                b=r.Next(1,10); // ones, 1..9 for strict inequalities
+                return Make(f,
+                    $"I have {b} ones. My number is greater than {a*10} " +
+                    $"and less than {(a+1)*10}. What is the secret number?",
+                    "Ten ones form one ten. Combine the single possible tens " +
+                    "digit with the exact ones digit, and verify both clues.",
+                    AssessmentItemType.Numeric,
+                    D(("tens",a),("ones",b),("number",a*10+b)));
+            // IM G2 U03 L13 Target Measurements: a length is chosen, drawn
+            // and measured; the game's error is the absolute difference.
+            case "usccss.b01.g2.target_measurement_difference_cm":
+                a=r.Next(4,21); // target in centimeters
+                b=a+r.Next(-3,4); // observed measurement, may be exact
+                return Make(f,
+                    $"Target Measurements center: draw a line as close as " +
+                    $"possible to {a} cm. A ruler shows the drawn line is {b} cm. " +
+                    "What is the absolute difference in centimeters?",
+                    "Take the positive distance between the target and actual " +
+                    "length; an exact match scores zero.",
+                    AssessmentItemType.Numeric,
+                    D(("target",a),("measured",b)));
+            // IM G3 U08 L14: estimate a fractional-inch length and check
+            // whether a proposed estimate is low, right or high. A synthetic
+            // physical object replaces the source's third-party photograph.
+            case "usccss.b01.g3.quarter_inch_estimate_classify":
+                a=r.Next(4,12); // true length in quarter-inch marks, 1..2¾ in
+                n=r.Next(0,3);  // 0 low, 1 right, 2 high
+                b=a+n-1;
+                return Make(f,
+                    $"A strip measures {a}/4 inches using a ruler marked " +
+                    $"in fourths. A student estimates {b}/4 inches. Is that " +
+                    "estimate 'too low', 'about right', or 'too high'?",
+                    "Compare the proposed and measured lengths using equal " +
+                    "quarter-inch intervals. A smaller estimate is low, " +
+                    "an equal estimate is about right, and a larger one is high.",
+                    AssessmentItemType.ShortAnswer,
+                    D(("actualQuarters",a),("estimateQuarters",b),("mode",n)));
+
             // Grade 1 U01 L02, official IM Activity 1: match paired dot
             // cube pictures with their written expression, then find total.
             // We explicitly provide visual dot groups rather than a word-only
@@ -1780,6 +1826,13 @@ internal static class UsCcssB01SourceTaskQuestionEngine
             "usccss.b01.g2.add_subtract_without_regroup" or
             "usccss.b01.g2.subtract_decompose_ten" =>
                 P("expected").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g1.place_value_number_riddle" =>
+                P("number").ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g2.target_measurement_difference_cm" =>
+                Math.Abs(P("target")-P("measured")).ToString(CultureInfo.InvariantCulture),
+            "usccss.b01.g3.quarter_inch_estimate_classify" =>
+                P("mode") switch { 0 => "too low", 1 => "about right",
+                    2 => "too high", _ => throw new InvalidOperationException() },
             "usccss.b01.g1.add_within100_no_compose_ten" =>
                 (P("left")+P("right")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g2.add_subtract_1000_no_regroup" =>
@@ -2180,6 +2233,17 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                 (family=="usccss.b01.g1.add_subtract_10_tens" ||
                     (N("left")>=20 && N("left")<=80 &&
                      N("right")<=Math.Min(N("left"),90-N("left")))),
+            "usccss.b01.g1.place_value_number_riddle" =>
+                Range("tens",1,9) && Range("ones",1,9) &&
+                Range("number",11,99) &&
+                N("number")==N("tens")*10+N("ones"),
+            "usccss.b01.g2.target_measurement_difference_cm" =>
+                Range("target",4,20) && Range("measured",1,23) &&
+                Math.Abs(N("target")-N("measured"))<=3,
+            "usccss.b01.g3.quarter_inch_estimate_classify" =>
+                Range("actualQuarters",4,11) && Range("mode",0,2) &&
+                Range("estimateQuarters",3,12) &&
+                N("estimateQuarters")==N("actualQuarters")+N("mode")-1,
             "usccss.b01.place_value.tens_ones" =>
                 Range("number",10,99) && Range("tens",1,9) &&
                 Range("ones",0,9) && Range("mode",0,2) &&

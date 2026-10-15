@@ -12,6 +12,27 @@ internal static class UsCcssB01SourceAlignedPracticeCorrections
 {
     public static IReadOnlyList<LessonPracticeContract> Reviewed =
     [
+        // These are source-exact partial training corrections, not complete
+        // academic certification of the optional centers/explorations.
+        new(
+            "PED:US-CCSS-MATH:G1:U08:L09",
+            "supporting.number.place_value_rounding", "TENS_ONES_NUMBER_RIDDLE",
+            ["usccss.b01.g1.place_value_number_riddle"],
+            "IM2021_G1_U08_L09_FOUR_CLUE_PLACE_VALUE_RIDDLES",
+            "READY_VERIFIED", "usccss-b01-source-riddle-v1"),
+        new(
+            "PED:US-CCSS-MATH:G2:U03:L13",
+            "supporting.measurement.practical", "TARGET_MEASUREMENT_DIFFERENCE",
+            ["usccss.b01.g2.target_measurement_difference_cm"],
+            "IM2021_G2_U03_L13_TARGET_MEASUREMENTS_CENTER_STAGE1",
+            "READY_VERIFIED", "usccss-b01-source-target-measure-v1"),
+        new(
+            "PED:US-CCSS-MATH:G3:U08:L14",
+            "supporting.measurement.practical", "ESTIMATE_FRACTIONAL_INCH_LENGTH",
+            ["usccss.b01.g3.quarter_inch_estimate_classify"],
+            "IM2021_G3_U08_L14_DESIGN_ESTIMATION_EXPLORATION_QUARTERS",
+            "READY_VERIFIED", "usccss-b01-source-fraction-estimate-v1"),
+
         // IM G1 U03 L12 no exchanging ten; L22 exchanging ten is essential.
         new(
             "PED:US-CCSS-MATH:G1:U03:L12",
