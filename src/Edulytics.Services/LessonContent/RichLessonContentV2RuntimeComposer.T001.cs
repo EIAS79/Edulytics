@@ -142,20 +142,23 @@ public static partial class RichLessonContentV2RuntimeComposer
         // Unlike the catalogue-wide compiler, the actual Grade 1 learner
         // should see mathematical instruction, not engineering claims about
         // verified contracts, namespace IDs, solver pipelines or provenance.
-        var originalIntro=lesson.ExplanationParagraphs.FirstOrDefault()??teaching.Goal;
-        var originalCore=lesson.KeyConcepts.FirstOrDefault();
+        // The canonical pack also contains teacher-facing meta prose
+        // (MP7/MP8 references, "students", "you may lead them").
+        // Preserve that data in the pack, but do not expose it as a first-grade
+        // learner explanation. The explicit goal, activity, worked model,
+        // misconception, and picture below teach the exact source purpose.
         var earlierExamples=lesson.WorkedExamples.ToArray();
         var originalMistake=lesson.CommonMistakes.FirstOrDefault();
 
         lesson.ExplanationParagraphs.Clear();
         lesson.ExplanationParagraphs.Add("Learning goal: "+teaching.Goal);
         lesson.ExplanationParagraphs.Add(teaching.Activity);
-        lesson.ExplanationParagraphs.Add(originalIntro);
+
         lesson.ExplanationParagraphs.Add("Now look at the worked examples. " +
             "Show the quantities with counters, dots, cards or a table before answering.");
 
         lesson.KeyConcepts.Clear();
-        if(originalCore is not null)lesson.KeyConcepts.Add(originalCore);
+
         lesson.KeyConcepts.Add(new RichLessonKeyConcept
         {
             Title="Our learning goal",
