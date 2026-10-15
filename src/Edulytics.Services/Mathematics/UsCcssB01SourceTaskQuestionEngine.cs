@@ -27,6 +27,9 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         "usccss.b01.g1.add_one_or_two",
         "usccss.b01.g1.subtract_one_or_two",
         "usccss.b01.g1.make_ten_missing_part",
+        "usccss.t001.g1.sort_math_tools",
+        "usccss.t001.g1.sort_shape_cards",
+        "usccss.t001.g1.class_survey_categories",
         "usccss.b01.triangle.attributes",
         "usccss.b01.shape.polygon_sides",
         "usccss.b01.shape.specific_subcategory",
@@ -173,6 +176,57 @@ internal static class UsCcssB01SourceTaskQuestionEngine
                     $"In Find the Pair, you have card {a}. Which number card makes exactly 10 with it? Complete {a} + ? = 10.",
                     "Find the empty spots in a ten-frame or subtract the known part from 10.",
                     AssessmentItemType.Numeric,D(("known",a),("missing",b)));
+
+            // G1 U01 L07: pupils NAME the category and count the items.
+            // Original independently-authored practice, not copied task cards.
+            case "usccss.t001.g1.sort_math_tools":
+            {
+                a=r.Next(1,7); b=r.Next(1,7); n=r.Next(1,7);
+                m=r.Next(0,3);
+                var toolLabel=m switch {0=>"counters",1=>"pattern blocks",_=>"inch tiles"};
+                return Make(f,
+                    $"Sort a mixed collection into these labeled tool categories: " +
+                    $"{a} counters, {b} pattern blocks, and {n} inch tiles. " +
+                    $"How many belong in the category '{toolLabel}'? " +
+                    "Each tool must appear in exactly one category.",
+                    "Name the tool categories, then count each group once; " +
+                    "do not count the same tool in two groups.",
+                    AssessmentItemType.Numeric,
+                    D(("counters",a),("blocks",b),("tiles",n),("category",m)));
+            }
+            // G1 U01 L08: three distinct shape categories with labelled counts.
+            case "usccss.t001.g1.sort_shape_cards":
+            {
+                a=r.Next(1,7); b=r.Next(1,7); n=r.Next(1,7);
+                m=r.Next(0,3);
+                var shape=m switch {0=>"triangles (3 straight sides)",
+                    1=>"quadrilaterals (4 straight sides)",_=>"circles (curved boundaries)"};
+                return Make(f,
+                    $"You sorted shape cards by their defining shapes: " +
+                    $"{a} triangles, {b} quadrilaterals, and {n} circles. " +
+                    $"Complete a labeled three-category chart. " +
+                    $"What count belongs under '{shape}'?",
+                    "Classify by geometric properties, not color or orientation; " +
+                    "record the number of cards under each label.",
+                    AssessmentItemType.Numeric,
+                    D(("triangles",a),("quadrilaterals",b),("circles",n),("category",m)));
+            }
+            // G1 U01 L09: a model student survey, not fictitious actual class data.
+            case "usccss.t001.g1.class_survey_categories":
+            {
+                a=r.Next(1,8); b=r.Next(1,8); n=r.Next(1,8);
+                m=r.Next(0,3);
+                var choice=m switch {0=>"apples",1=>"bananas",_=>"oranges"};
+                return Make(f,
+                    $"A sample class survey asks 'Which fruit do you like most?' " +
+                    $"The votes were apples: {a}, bananas: {b}, oranges: {n}. " +
+                    $"Make a labeled category-count table. How many students " +
+                    $"voted for '{choice}'? Keep one vote per student.",
+                    "Every vote contributes once to exactly one labeled category; " +
+                    "the written table must preserve the counts.",
+                    AssessmentItemType.Numeric,
+                    D(("apples",a),("bananas",b),("oranges",n),("category",m)));
+            }
             // IM G1 U08 L09: clues intentionally leave multiple candidates
             // until a tens interval plus exact ones selects one secret number.
             case "usccss.b01.g1.place_value_number_riddle":
@@ -1839,6 +1893,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int P(string key) => p[key];
         return f switch
         {
+            "usccss.t001.g1.sort_math_tools" =>
+                (P("category") switch {0=>P("counters"),1=>P("blocks"),2=>P("tiles"),
+                    _=>throw new InvalidOperationException()}).ToString(CultureInfo.InvariantCulture),
+            "usccss.t001.g1.sort_shape_cards" =>
+                (P("category") switch {0=>P("triangles"),1=>P("quadrilaterals"),2=>P("circles"),
+                    _=>throw new InvalidOperationException()}).ToString(CultureInfo.InvariantCulture),
+            "usccss.t001.g1.class_survey_categories" =>
+                (P("category") switch {0=>P("apples"),1=>P("bananas"),2=>P("oranges"),
+                    _=>throw new InvalidOperationException()}).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g1.add_one_or_two" =>
                 (P("start")+P("step")).ToString(CultureInfo.InvariantCulture),
             "usccss.b01.g1.subtract_one_or_two" =>
@@ -2138,6 +2201,15 @@ internal static class UsCcssB01SourceTaskQuestionEngine
         int N(string key) => p[key];
         return family switch
         {
+            "usccss.t001.g1.sort_math_tools" =>
+                Range("counters",1,6) && Range("blocks",1,6) &&
+                Range("tiles",1,6) && Range("category",0,2),
+            "usccss.t001.g1.sort_shape_cards" =>
+                Range("triangles",1,6) && Range("quadrilaterals",1,6) &&
+                Range("circles",1,6) && Range("category",0,2),
+            "usccss.t001.g1.class_survey_categories" =>
+                Range("apples",1,7) && Range("bananas",1,7) &&
+                Range("oranges",1,7) && Range("category",0,2),
             "usccss.b01.g1.add_one_or_two" =>
                 Range("start",0,9) && Range("step",1,2) &&
                 N("start")+N("step")<=10,
