@@ -11,6 +11,9 @@ on:
     paths:
       - 'tools/Edulytics.CiFixtures/**'
       - 'tools/phase29/acceptance_two_school_https.py'
+      - 'tools/us-ccss-b01-l02-authenticated-l6-verifier.cjs'
+      - 'tests/academic-us-ccss-b01-l02-authenticated-l6-verifier.test.cjs'
+      - '.github/workflows/us-ccss-authenticated-acceptance.yml'
   pull_request:
     types: [ready_for_review, reopened]
   workflow_dispatch:
