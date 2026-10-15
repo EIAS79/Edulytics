@@ -508,3 +508,89 @@ jobs:
           path: TestResults/*.trx
           retention-days: 30
           if-no-files-found: warn
+
+  apply-screening-evidence-to-b01-branch:
+    # Source-scoped audit bookkeeping only, NEVER an L1-L6 promotion or release.
+    # The GITHUB_TOKEN commit will not recursively trigger a second workflow.
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/audit/us-ccss-b01-500-lesson-certification' }}
+    needs:
+      - validate-b01-manifest-and-safety
+      - audit-b01-effective-materializer-and-real-practice
+      - consolidate-b01-eight-dimension-report
+      - b01-full-product-regressions
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@v4
+        with:
+          name: b01-screened-ledger-proposal-1560
+          path: b01-screened-proposal
+      - name: Check exact 500 B01 records; forbid added PASS, changed pilot or changes outside B01
+        run: |
+          node - <<'NODE'
+          const assert=require('node:assert/strict');
+          const fs=require('node:fs');
+          const {loadSource,validateLedger}=require('./tools/us-ccss-lesson-certification-records.cjs');
+          const old=JSON.parse(fs.readFileSync('artifacts/academic-us-ccss/04-lesson-certification-records.json','utf8'));
+          const updated=JSON.parse(fs.readFileSync('b01-screened-proposal/b01-ledger-screening-proposal-1560.json','utf8'));
+          const summary=JSON.parse(fs.readFileSync('b01-screened-proposal/b01-ledger-screening-proposal-summary.json','utf8'));
+          const source=loadSource();
+          validateLedger(source,old);validateLedger(source,updated);
+          assert.equal(summary.auditedHeadSha,process.env.GITHUB_SHA);
+          assert.equal(summary.githubRunId,process.env.GITHUB_RUN_ID);
+          assert.equal(summary.academicDecision,'NOT_500_BATCH_CERTIFIED');
+          assert.equal(summary.refusedToAwardPass,true);
+          assert.equal(updated.releaseCandidateSha,old.releaseCandidateSha);
+          assert.equal(updated.records.length,1560);
+          let changed=0,alreadyApproved=0;
+          for(let i=0;i<1560;i++){
+            const a=old.records[i],b=updated.records[i];
+            assert.equal(b.lessonCode,a.lessonCode);
+            if(i>=500||a.status==='INTERNALLY_CERTIFIED'){
+              assert.deepEqual(b,a,'Pilot and non-B01 curriculum are immutable');
+              if(i<500)alreadyApproved++;
+              continue;
+            }
+            assert.equal(a.academicDecision,'NOT_CERTIFIED');
+            assert.ok(a.status==='QUEUED'||a.status==='AUTOMATED_SCREENED');
+            assert.equal(b.academicDecision,'NOT_CERTIFIED');
+            assert.equal(b.status,'AUTOMATED_SCREENED');
+            assert.deepEqual(b.gates,a.gates);
+            assert.deepEqual(b.reviewDimensions,a.reviewDimensions);
+            assert.deepEqual(b.unresolvedDefects,a.unresolvedDefects);
+            assert.equal(b.screeningProvenance.auditedHeadSha,process.env.GITHUB_SHA);
+            assert.equal(b.screeningProvenance.githubRunId,process.env.GITHUB_RUN_ID);
+            assert.equal(b.screeningProvenance.learnerContentSha256,b.contentSha256);
+            assert.match(b.contentSha256,/^[a-f0-9]{64}$/);
+            if(a.contentSha256)assert.equal(b.contentSha256,a.contentSha256);
+            changed++;
+          }
+          assert.equal(alreadyApproved,1);
+          assert.equal(changed,499);
+          assert.equal(summary.screened,499);
+          console.log('Verified 499 screened bodies, no new PASS or academic certificates');
+          NODE
+      - name: Commit ONLY the verified screening ledger proposal to the B01 branch
+        run: |
+          set -euo pipefail
+          branch=audit/us-ccss-b01-500-lesson-certification
+          remote_head=$(git ls-remote origin "refs/heads/$branch" | cut -f1)
+          test "$remote_head" = "$GITHUB_SHA"
+          cp b01-screened-proposal/b01-ledger-screening-proposal-1560.json artifacts/academic-us-ccss/04-lesson-certification-records.json
+          git diff --check
+          changed=$(git diff --name-only)
+          test "$changed" = "artifacts/academic-us-ccss/04-lesson-certification-records.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add artifacts/academic-us-ccss/04-lesson-certification-records.json
+          git commit -m "audit(b01): persist reviewed 500-lesson runtime fingerprints as screened only"
+          git push origin HEAD:"refs/heads/$branch"
