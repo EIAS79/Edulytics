@@ -106,10 +106,10 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // Reconciled against the actual distinct source-guarded lesson union
         // on the disposable US CCSS database: 182 lesson codes, 182 distinct
-        // (181 verified in historical CI; the two T001 additions require a fresh run). The historical arithmetic total 173 had
+        // (181 verified in historical CI; the single additional distinct T001 lesson (L06) requires a fresh run; L05 was already included via learner-voice repair). The historical arithmetic total 173 had
         // become stale across several later reviewed correction cohorts.
         // This remains an exact fail-closed inventory, not a permissive count.
-        const int expectedSourceBoundCorrectionCount = 183;
+        const int expectedSourceBoundCorrectionCount = 182;
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
