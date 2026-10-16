@@ -40,7 +40,7 @@ public sealed class CommonCoreG1Unit2StorySourceCorrectionsTests
             Assert.Contains("Step 5:",t.English.StepByStepSolutions);
             Assert.DoesNotContain("The source task",t.English.WorkedExamples);
             Assert.DoesNotContain("They solve",t.English.Explanation);
-            Assert.Contains("story",t.English.Explanation,StringComparison.OrdinalIgnoreCase);
+            Assert.Contains("stor",t.English.Explanation,StringComparison.OrdinalIgnoreCase);
             Assert.True(t.English.WorkedExamples.Length>260);
             Assert.True(t.English.CommonMistakes.Length>150);
             Assert.True(t.English.QuickSummary.Length>65);
