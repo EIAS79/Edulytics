@@ -59,6 +59,7 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
         var technicalBlockers = new List<string>();
         var qualityCounts = new Dictionary<string, int>(StringComparer.Ordinal);
         var placeholderCount = 0;
+        var placeholderCodes = new List<string>();
         var curatedCount = 0;
         var compiledCount = 0;
 
@@ -91,7 +92,7 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
                 english.StepByStepSolutions,english.CommonMistakes,english.QuickSummary);
             var generic = GenericPlaceholders.Where(p => instructional.Contains(
                 p, StringComparison.OrdinalIgnoreCase)).ToArray();
-            if (generic.Length > 0) placeholderCount++;
+            if (generic.Length > 0) { placeholderCount++; placeholderCodes.Add(code); }
             var quality = RichLessonContentQualityAudit.Evaluate(document,lesson,english);
             var qualityLabel = quality.OverallQuality.ToString();
             qualityCounts[qualityLabel] = qualityCounts.GetValueOrDefault(qualityLabel)+1;
@@ -178,6 +179,9 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
                 curated=curatedCount,compiled=compiledCount,
                 genericPlaceholderLessonCount=placeholderCount,
                 qualityHeuristicCounts=qualityCounts,
+                genericByGrade=placeholderCodes.GroupBy(c=>c.Split(':')[2])
+                    .ToDictionary(g=>g.Key,g=>g.Count()),
+                first30GenericCodes=placeholderCodes.Take(30).ToArray(),
                 academicApproved=0
             }));
         Assert.Equal(500,rows.Count);
