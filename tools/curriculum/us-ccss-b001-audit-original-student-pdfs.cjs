@@ -53,7 +53,7 @@ async function fetchPdf(url,file,signal){
  const fd=await fsp.open(file,'w'),hash=crypto.createHash('sha256');let bytes=0;
  try{
   for await(const buf of Readable.fromWeb(res.body)){
-   bytes+=buf.length;if(bytes>35*1024*1024)throw Error('SIZE_LIMIT');
+   bytes+=buf.length;if(bytes>100*1024*1024)throw Error('SIZE_LIMIT');
    hash.update(buf);await fd.writeFile(buf);
   }
  }finally{await fd.close();}
