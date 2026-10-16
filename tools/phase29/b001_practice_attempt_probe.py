@@ -75,7 +75,7 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
         found=sql("""
             SELECT p."CurriculumPedagogicalLessonId"::text,
                    pi."Id"::text, i."GenerationFamily", i."CorrectAnswer",
-                   COALESCE(i."GenerationParametersJson",'')
+                   COALESCE(i."GenerationParametersJson"::text,'')
             FROM "PracticeAttempts" p
             JOIN "PracticeAttemptItems" pi ON pi."PracticeAttemptId"=p."Id"
             JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
