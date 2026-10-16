@@ -61,7 +61,7 @@ assert all(count > 0 for count in rows[2:]), rows
 assert sql("""SELECT count(*) FROM "Schools" WHERE "SchoolCode" LIKE 'REHEARSAL-%';""") == "2"
 
 
-def connect(key, role):
+def connect(key, role, student_suffix="primary"):
     jar = http.cookiejar.CookieJar()
     opener = urllib.request.build_opener(
         urllib.request.HTTPCookieProcessor(jar),
@@ -78,7 +78,7 @@ def connect(key, role):
     elif role == "Teacher":
         user = f"{key}.teacher.primary@edulytiks.com"
     else:
-        user = f"{key}.student.primary@edulytiks.com"
+        user = f"{key}.student.{student_suffix}@edulytiks.com"
     payload = urllib.parse.urlencode({
         "Email": user, "Password": PASSWORD, "AccountType": role,
         "__RequestVerificationToken": match.group(1),
@@ -973,7 +973,21 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         code, lesson_id, title, level = raw.split("|", 3)
         assert code not in by_code, ("duplicate disposable lesson", code)
         by_code[code] = (lesson_id, title, level)
+    # The Grade 1 fixture student must never be granted arbitrary cross-grade
+    # access. Keep that student intact; re-enrol only the SECOND synthetic
+    # primary-school student in a real existing class per grade (CI DB only).
     primary_fixture_student = students["commoncore-primary"]
+    grade_student = primary_fixture_student
+    active_grade = 1
+    secondary_email = "commoncore-primary.student.secondary@edulytiks.com"
+    original_secondary_enrolments = sql("""
+        SELECT e."ClassGroupId"::text
+        FROM "StudentEnrollments" e
+        JOIN "StudentProfiles" p ON p."Id" = e."StudentProfileId"
+        JOIN "AspNetUsers" u ON u."Id" = p."UserId"
+        WHERE u."Email"='commoncore-primary.student.secondary@edulytiks.com';""").splitlines()
+    assert len(original_secondary_enrolments) == 1, (
+        "secondary fixture must have one original class enrollment")
     for ordinal, lesson in enumerate(source_lessons, 1):
         code = lesson["lessonCode"]
         assert code in by_code, ("missing canonical DB lesson", ordinal, code)
@@ -982,8 +996,29 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         grade_match = re.search(r":G([1-4]):", code)
         assert grade_match and level == "Grade " + grade_match.group(1), (
             "grade misrouting", code, level)
+        target_grade = int(grade_match.group(1))
+        if target_grade != active_grade:
+            assert target_grade in (2, 3, 4)
+            # CCSS logical level 1=K, 2=G1, 3=G2, 4=G3, 5=G4.
+            class_rows = sql("""
+                SELECT c."Id"::text FROM "ClassGroups" c
+                JOIN "Schools" s ON s."Id" = c."SchoolId"
+                WHERE s."SchoolCode"='REHEARSAL-US-PRIMARY'
+                  AND c."Code" LIKE 'L""" + str(target_grade + 1).zfill(2) + """-%';""").splitlines()
+            assert len(class_rows) == 1, ("missing genuine grade class", target_grade)
+            assignment = sql("""
+                UPDATE "StudentEnrollments" e
+                SET "ClassGroupId"='""" + class_rows[0] + """'
+                FROM "StudentProfiles" p
+                JOIN "AspNetUsers" u ON u."Id" = p."UserId"
+                WHERE e."StudentProfileId"=p."Id" AND u."Email"='""" + secondary_email + """'
+                RETURNING e."Id"::text;""").splitlines()
+            assert len(assignment) == 1, ("must update one disposable enrollment", target_grade)
+            grade_student = connect("commoncore-primary", "Student", "secondary")
+            active_grade = target_grade
+            print("B001_DISPOSABLE_GRADE_SCOPED_STUDENT", target_grade, flush=True)
         body = html.unescape(
-            get_page(primary_fixture_student, "/student/learning/lesson/" + lesson_id))
+            get_page(grade_student, "/student/learning/lesson/" + lesson_id))
         assert "rich-lesson-section" in body, (
             code, "missing learner lesson content in authenticated HTML")
         rendered = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
@@ -993,6 +1028,15 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
               ordinal, code, flush=True)
     print("B001_500_DISPOSABLE_AUTHENTICATED_HTML_COMPLETE",
           len(source_lessons), grade_counts, flush=True)
+    restored = sql("""
+        UPDATE "StudentEnrollments" e
+        SET "ClassGroupId"='""" + original_secondary_enrolments[0] + """'
+        FROM "StudentProfiles" p
+        JOIN "AspNetUsers" u ON u."Id"=p."UserId"
+        WHERE e."StudentProfileId"=p."Id"
+          AND u."Email"='""" + secondary_email + """'
+        RETURNING e."Id"::text;""").splitlines()
+    assert len(restored) == 1, "must restore disposable fixture grade enrollment"
 
 # POST real teacher assessment and validate persistence on disposable DB.
 import uuid
