@@ -32,8 +32,14 @@ function strictRows(name,rows,expected){
   return seen;
 }
 function reconcile(catalogue,engine,content,https,meta){
-  const sha=meta?.sha;
-  if(!fullSha.test(sha||''))throw Error('Exact 40-character candidate SHA required');
+  const branchSha=meta?.sha,sha=meta?.testedCheckoutSha||branchSha;
+  if(!fullSha.test(branchSha||'')||!fullSha.test(sha||''))
+    throw Error('Exact branch and tested-checkout SHA required');
+  // A pull_request workflow normally tests GitHub's synthetic two-parent
+  // merge commit, not the branch-head SHA. Its ancestry MUST be verified
+  // using GitHub's REST API by the trusted workflow before reconciliation.
+  if(sha!==branchSha&&meta.verifiedTestMergeParentSha!==branchSha)
+    throw Error('PR test-merge SHA is not verified against actual branch head');
   for(const k of ['engineRun','contentRun','httpsRun']){
     if(!Number.isSafeInteger(meta[k])||meta[k]<1)throw Error('Valid actual Actions '+k+' required');
   }
@@ -57,7 +63,7 @@ function reconcile(catalogue,engine,content,https,meta){
     throw Error('Authenticated HTTPS evidence was missing or did not pass all 500 tests');
   // HTTPS artifact does not encode a commit SHA. The associated verified
   // workflow-run head SHA MUST be checked by GitHub API before invoking this.
-  if(meta.httpsRunHeadSha!==sha)throw Error('HTTPS workflow run is not from the exact candidate SHA');
+  if(meta.httpsRunHeadSha!==branchSha)throw Error('HTTPS workflow run is not from the expected branch head');
   const e=strictRows('real engine',engine.lessons,expected);
   const v=strictRows('real learner composer',content.lessons,expected);
   const h=strictRows('real authenticated HTTPS',https.lessons,expected);
@@ -108,6 +114,8 @@ function reconcile(catalogue,engine,content,https,meta){
   }
   const validated=500-problems.length;
   return {schemaVersion:1,batchId:'US-CCSS-B001',candidateSha:sha,
+    workflowRunHeadSha:branchSha,
+    testedSourceKind:sha===branchSha?'EXACT_PUSH_CHECKOUT_SHA':'GITHUB_PR_SYNTHETIC_MERGE_CHECKOUT_VERIFIED',
     originalSource:'Real prior GitHub Actions P4 artifacts on exact commit, NOT a new test run',
     evidenceRuns:{
       engine:{id:meta.engineRun,url:url(meta.engineRun)},
@@ -130,7 +138,9 @@ function main(args=process.argv.slice(2)){
   const a=parseArgs(args),load=p=>JSON.parse(fs.readFileSync(path.resolve(p),'utf8'));
   const report=reconcile(load(a.catalogue||catalogueDefault),load(a.engine),load(a.content),
     load(a.https),{
-      sha:a.sha,engineRun:Number(a['engine-run']),contentRun:Number(a['content-run']),
+      sha:a.sha,testedCheckoutSha:a['tested-checkout-sha'],
+      verifiedTestMergeParentSha:a['verified-test-merge-parent-sha'],
+      engineRun:Number(a['engine-run']),contentRun:Number(a['content-run']),
       httpsRun:Number(a['https-run']),httpsRunHeadSha:a['https-run-head-sha']
     });
   const out=path.resolve(a.out);
