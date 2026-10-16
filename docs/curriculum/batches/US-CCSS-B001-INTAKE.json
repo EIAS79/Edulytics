@@ -91,13 +91,14 @@
     "implementationStatus": "Pre-release staging and evidence; no B001 500-lesson approval",
     "engineSamplingPr": "https://github.com/EIAS79/Edulytics/pull/508",
     "gateHardeningPr": "https://github.com/EIAS79/Edulytics/pull/509",
-    "currentB001AcceptanceDecision": "NO_GO"
+    "currentB001AcceptanceDecision": "NO_GO",
+    "recordedP4ToP5Pr": "https://github.com/EIAS79/Edulytics/pull/542"
   },
   "deployment": {
     "verifiedLiveSha": null,
     "renderDeployId": null,
     "ownerUat": "NOT_STARTED",
-    "status": "B001_FULL_BATCH_NO_GO_500_METADATA_ONLY"
+    "status": "B001_FULL_BATCH_NO_GO_500_TECHNICAL_EVIDENCE_RECONCILED"
   },
   "notes": [
     "All 500 real canonical LessonCodes were extracted from the 2021 Grade 1-4 IM-based source blueprints, and linked to 500 stored content records by matching titles, canonical codes, outcomes and source URLs.",
@@ -282,11 +283,50 @@
       "rawEmbeddedStepsRepeatedInFiveOrMoreGradeLessons": 463,
       "riskSignalOnly": true,
       "originalPublisherActivityAndEffectiveContentParity": "NOT_ESTABLISHED",
-      "auditWorkflowConclusion": "PENDING",
-      "note": "All 500 exact source/embedded metadata identities were cross-checked. Raw template repetition is NOT evidence of a wrong student-visible page, especially where code materializes source-specific corrections. Academic acceptance is not granted."
+      "auditWorkflowConclusion": "success",
+      "note": "All 500 exact source/embedded metadata identities were cross-checked. Raw template repetition is NOT evidence of a wrong student-visible page, especially where code materializes source-specific corrections. Academic acceptance is not granted.",
+      "optionalLessonG2U02L16SourceGoalAbsenceVerified": true,
+      "unresolvedMissingGoalExtractionCount": 0
     },
     "academicAcceptedUnderB001": 0,
     "releaseDecision": "NO_GO",
-    "whyNoGo": "Publisher-source teaching, interactive original student activities and lesson-specific independent academic proof not completed for all 500 on the same candidate SHA. Post-release live and owner UAT not done."
+    "whyNoGo": "Publisher-source teaching, interactive original student activities and lesson-specific independent academic proof not completed for all 500 on the same candidate SHA. Post-release live and owner UAT not done.",
+    "recordedP4IntoExistingP5": {
+      "observedUtc": "2026-10-16T23:55:46Z",
+      "workflow": "https://github.com/EIAS79/Edulytics/actions/runs/38983916786",
+      "proofArtifact": "https://github.com/EIAS79/Edulytics/actions/runs/38983916786/artifacts/12081833841",
+      "bridgePr": "https://github.com/EIAS79/Edulytics/pull/542",
+      "branchHeadSha": "02d24dd3c26ae644d630a822d68536044eed083f",
+      "verifiedGitHubTestMergeSha": "d38dad69d15398ec2b1ac6a54927338a07e21f5b",
+      "testRuns": {
+        "engine": "https://github.com/EIAS79/Edulytics/actions/runs/38982303443",
+        "effectiveContent": "https://github.com/EIAS79/Edulytics/actions/runs/38982303426",
+        "authenticatedHttps": "https://github.com/EIAS79/Edulytics/actions/runs/38982303414"
+      },
+      "sourceLedgerContainsExactly500Codes": true,
+      "sameTestCheckoutShaAcrossEngineAndComposer": true,
+      "allThreeRunsSameGitHubBranchHead": true,
+      "technicalRichV2Composable": 500,
+      "realEngineQuestionAndMalformedCheckPassed": 500,
+      "disposableSchoolGradingAndRejectionPersisted": 500,
+      "syntheticSurveyFixtureRows": 2,
+      "academicContentGoalParityIndependentlyAccepted": 0,
+      "newAcademicAcceptance": 0,
+      "existingP5GateOutcome": "NO_GO",
+      "missingOrInvalidAcademicProofRecords": 500,
+      "missingEvidenceKinds": [
+        "source_provenance_and_licence",
+        "effective_learner_visible_content",
+        "lesson_specific_mathematics_oracle",
+        "student_and_school_isolation"
+      ],
+      "missingAdditionalFields": [
+        "effectiveBodySha256",
+        "INTERNALLY_ACCEPTED decision",
+        "historicalT001DriftVerified for 15 prior lessons",
+        "production owner UAT after batch approval"
+      ],
+      "caveats": "These are 500 per-lesson real prior P4 technical results from a verified PR test-merge commit, not proof of original source pedagogy, licensing, independent mathematical oracle, live production UAT or 500/500 internal academic acceptance. The existing P5 gate consumes these results without replaying tests and correctly returns NO_GO."
+    }
   }
 }
