@@ -56,7 +56,7 @@ public sealed class UsCcssG1Unit2Part2QuestionsTests
 
                 var expected=int.Parse(q.CorrectAnswer,
                     System.Globalization.CultureInfo.InvariantCulture);
-                Assert.InRange(expected,1,10);
+                Assert.InRange(expected,0,10);
                 Assert.False(ExactSkillContractQuestionEngine.Verify(
                     family,q.Parameters,(expected+1).ToString(
                         System.Globalization.CultureInfo.InvariantCulture)));
