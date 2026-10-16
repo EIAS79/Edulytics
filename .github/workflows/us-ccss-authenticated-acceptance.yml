@@ -184,3 +184,41 @@ jobs:
           set -euo pipefail
           ids="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -A -t -c 'SELECT "SchoolCode" FROM "Schools" ORDER BY "SchoolCode";')"
           test "$ids" = "$(printf 'REHEARSAL-US-PRIMARY\nREHEARSAL-US-SECONDARY')"
+
+  # Use the already executed 500-lesson authenticated Practice probe artifact.
+  # This job does NOT rerun lesson tests or grant academic/production acceptance.
+  b001-authenticated-practice-persistence:
+    name: b001-authenticated-practice-persistence
+    needs: isolated-us-school-https
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Read exact-run real Practice grading artifact (no replay)
+        uses: actions/download-artifact@v4
+        with:
+          name: b001-500-real-practice-grade-probe-not-academic-acceptance
+          path: /tmp/b001-practice-evidence
+      - name: Fail closed unless all 500 real generated grades and bad submissions persisted
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import glob,json
+          files=glob.glob('/tmp/b001-practice-evidence/*.json')
+          if len(files)!=1:
+              raise SystemExit('Missing or ambiguous 500-lesson real Practice artifact')
+          with open(files[0],encoding='utf-8') as fh:
+              d=json.load(fh)
+          rows=d.get('lessons')
+          if (d.get('batchId')!='US-CCSS-B001' or d.get('checked')!=500 or
+              not isinstance(rows,list) or len(rows)!=500 or
+              len({x.get('lessonCode') for x in rows})!=500 or
+              d.get('generationAndSelfGradingPassed')!=500 or
+              d.get('malformedAnswersRejectedAndPersisted')!=500 or
+              d.get('malformedAnswersNotVerified')!=0 or
+              d.get('releaseDecision')!='NO_GO' or
+              d.get('productionAuthenticatedUatApproved')!=0):
+              raise SystemExit('B001 real Practice evidence mismatch; refusing PASS')
+          print('Verified actual previous-job Practice artifact: 500/500 persisted grades,')
+          print('500/500 malformed answers rejected and persisted, NO academic release')
+          PY
