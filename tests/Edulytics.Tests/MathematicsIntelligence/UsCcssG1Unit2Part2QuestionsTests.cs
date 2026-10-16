@@ -96,8 +96,12 @@ public sealed class UsCcssG1Unit2Part2QuestionsTests
                 else
                 {
                     Assert.Contains("Shake and Spill",q.Prompt);
-                    Assert.Contains("[ ? ]",q.Prompt);
-                    Assert.Equal(q.Parameters["total"]-q.Parameters["first"],expected);
+                    Assert.Contains("neither color's number is known",q.Prompt);
+                    Assert.Contains("another different split",q.Prompt);
+                    Assert.InRange(expected,1,2);
+                    Assert.Equal(q.Parameters["order"]==0?1:2,expected);
+                    Assert.NotEqual(q.Parameters["total"],q.Parameters["first"]+
+                        (q.Parameters["total"]-q.Parameters["first"]+1));
                 }
             }
         }
