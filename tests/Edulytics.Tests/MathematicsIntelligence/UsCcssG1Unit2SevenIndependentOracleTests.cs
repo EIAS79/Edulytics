@@ -63,7 +63,7 @@ public sealed class UsCcssG1Unit2SevenIndependentOracleTests
             Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract), code);
             Assert.NotNull(contract);
             Assert.Equal("READY_VERIFIED", contract!.Readiness);
-            Assert.Equal([family], contract.AllowedQuestionFamilies);
+            Assert.Equal(new[]{family}, contract.AllowedQuestionFamilies);
             var branches = new HashSet<string>(StringComparer.Ordinal);
             foreach(var difficulty in new[] {
                 ExactSkillQuestionDifficulty.Standard,
