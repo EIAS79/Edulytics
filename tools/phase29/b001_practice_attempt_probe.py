@@ -5,6 +5,7 @@ This verifies *system self-consistency*, NOT independent answer correctness or
 pedagogical parity. Never run with production accounts or databases.
 """
 from collections import Counter
+import json
 import re
 import subprocess
 import urllib.error
@@ -23,6 +24,28 @@ def extract_adoption(html):
 def extract_idempotency_key(html):
     found=re.search(r'name="_idempotencyKey"[^>]*value="([^"]+)"',html)
     return found.group(1) if found else None
+
+SURVEY_FAMILY = "usccss.t001.g1.collect_survey_graph"
+SURVEY_SENTINEL = "survey-entry-protocol-v1"
+
+def synthetic_survey_protocol(expected, parameters_json):
+    """Exercise graph grading with synthetic CI-only votes; never claim real human respondents."""
+    if expected != SURVEY_SENTINEL or not parameters_json:
+        raise ValueError("Survey requires the server-owned, intentionally ungradeable sentinel")
+    payload = json.loads(parameters_json)
+    if not isinstance(payload,dict):
+        raise ValueError("Survey must carry parameter object")
+    p = payload.get("parameters")
+    if not isinstance(p,dict):
+        raise ValueError("Survey must have embedded server-owned parameters")
+    minimum,maximum,topic = (p.get("minimumVotes"),p.get("maximumVotes"),p.get("topic"))
+    if type(minimum) is not int or not (5<=minimum<=8) or maximum != 10 or type(topic) is not int or not (0<=topic<=5):
+        raise ValueError("Invalid survey source parameters")
+    # This vote sequence is intentionally fabricated CI fixture input. It tests
+    # only graph tally consistency and deliberately cannot prove pupil interviews.
+    votes = "".join(str(i%3) for i in range(minimum))
+    tally = ",".join(str(votes.count(str(i))) for i in range(3))
+    return "v:"+votes+"|g:"+tally
 
 def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
     """Generate and self-grade one real question scoped to a single lesson."""
@@ -51,7 +74,8 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
         # Real DB evidence prevents false success from HTTP 200 on an error page.
         found=sql("""
             SELECT p."CurriculumPedagogicalLessonId"::text,
-                   pi."Id"::text, i."GenerationFamily", i."CorrectAnswer"
+                   pi."Id"::text, i."GenerationFamily", i."CorrectAnswer",
+                   COALESCE(i."GenerationParametersJson",'')
             FROM "PracticeAttempts" p
             JOIN "PracticeAttemptItems" pi ON pi."PracticeAttemptId"=p."Id"
             JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
@@ -59,10 +83,17 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
             ORDER BY pi."Order";""").splitlines()
         if len(found)!=1:
             return {"status":"INCORRECT_GENERATED_ITEM_COUNT","count":len(found)}
-        row=found[0].split("|",3)
-        if len(row)!=4 or row[0].lower()!=lesson_id.lower() or not row[2] or not row[3].strip():
+        row=found[0].split("|",4)
+        if len(row)!=5 or row[0].lower()!=lesson_id.lower() or not row[2] or not row[3].strip():
             return {"status":"QUESTION_FAMILY_OR_ANSWER_MISSING"}
-        _,item_id,family,answer=row
+        _,item_id,family,answer,parameter_json=row
+        synthetic_survey = family == SURVEY_FAMILY
+        if synthetic_survey:
+            try:
+                answer = synthetic_survey_protocol(answer,parameter_json)
+            except (ValueError,TypeError,KeyError,json.JSONDecodeError) as exc:
+                return {"status":"SURVEY_SYNTHETIC_FIXTURE_INVALID","family":family,
+                        "errorType":type(exc).__name__}
         token=extract_csrf(page)
         item_match=re.search(r'name="attemptItemIds\[0\]"[^>]*value="('+UUID+r')"',page)
         if not token or not item_match or item_match.group(1).lower()!=item_id.lower():
@@ -90,6 +121,9 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
             GROUP BY p."Id",p."SubmittedAtUtc",p."Score";""").split("|")
         if len(result)!=3 or result[0]!="1" or float(result[1])!=1.0 or result[2]!="1":
             return {"status":"INCORRECT_GRADE_OR_PERSISTENCE","family":family}
+        if synthetic_survey:
+            return {"status":"SYNTHETIC_SURVEY_TALLY_PERSISTED_NEEDS_REAL_TEACHER_VERIFICATION",
+                    "family":family,"humanParticipantsVerified":False}
         return {"status":"SELF_CONSISTENT_GRADE_PERSISTED","family":family}
     except urllib.error.HTTPError as exc:
         return {"status":"HTTP_ERROR","httpStatus":exc.code}
@@ -103,12 +137,15 @@ def summarize(rows):
     if len(rows)!=500 or len({x["lessonCode"] for x in rows})!=500:
         raise ValueError("B001 graded-attempt probe requires all 500 unique canonical codes")
     statuses=dict(Counter(x["status"] for x in rows))
-    grade_passed=statuses.get("SELF_CONSISTENT_GRADE_PERSISTED",0)
+    grade_passed=(statuses.get("SELF_CONSISTENT_GRADE_PERSISTED",0)
+        +statuses.get("SYNTHETIC_SURVEY_TALLY_PERSISTED_NEEDS_REAL_TEACHER_VERIFICATION",0))
     return {
         "batchId":"US-CCSS-B001","checked":500,"byStatus":statuses,
         "generationAndSelfGradingPassed":grade_passed,"notSelfGraded":500-grade_passed,
         "independentlyMathVerified":0,"teacherAcademicApproved":0,
         "productionAuthenticatedUatApproved":0,"releaseDecision":"NO_GO",
+        "syntheticSurveyCount":statuses.get("SYNTHETIC_SURVEY_TALLY_PERSISTED_NEEDS_REAL_TEACHER_VERIFICATION",0),
+        "realSurveyParticipantsVerified":0,
         "assurance":"Synthetic school HTTPS and internal stored CorrectAnswer only. Does not independently validate source objectives, the generated answer oracle, wrong-answer rejection, media accessibility, or real-student production UAT.",
         "lessons":rows
     }
@@ -122,6 +159,15 @@ if __name__=="__main__":
             self.assertEqual(extract_adoption('<input name="curriculumAdoptionId" value="12345678-abcd-1234-abcd-1234567890ab">'),
                              "12345678-abcd-1234-abcd-1234567890ab")
             self.assertEqual(extract_idempotency_key('<input name="_idempotencyKey" value="0123456789abcdef0123456789abcdef">'),"0123456789abcdef0123456789abcdef")
+        def test_survey_is_synthetic_and_cannot_use_the_solver_sentinel(self):
+            p=json.dumps({"parameters":{"minimumVotes":6,"maximumVotes":10,"topic":0}})
+            self.assertEqual(synthetic_survey_protocol(SURVEY_SENTINEL,p),"v:012012|g:2,2,2")
+            self.assertRaises(ValueError,synthetic_survey_protocol,SURVEY_SENTINEL,None)
+            self.assertRaises(ValueError,synthetic_survey_protocol,"6",p)
+            self.assertRaises(ValueError,synthetic_survey_protocol,SURVEY_SENTINEL,
+                              json.dumps({"parameters":{"minimumVotes":3,"maximumVotes":10,"topic":0}}))
+            self.assertRaises(ValueError,synthetic_survey_protocol,SURVEY_SENTINEL,
+                              json.dumps({"parameters":{"minimumVotes":6,"maximumVotes":10,"topic":9}}))
         def test_a_500_shape_cannot_forge_signoff(self):
             data=[{"lessonCode":f"L{i}","status":"SELF_CONSISTENT_GRADE_PERSISTED"} for i in range(500)]
             x=summarize(data)
