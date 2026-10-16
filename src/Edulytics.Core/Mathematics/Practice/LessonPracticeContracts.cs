@@ -967,6 +967,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 Part2 lesson missing source Practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Original IM 2021 G1 U02 L08-L10, not broad strand projections.
+        foreach(var reviewed in UsCcssG1Unit2Part3PracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G1 U02 L08-L10 source lesson missing practice mapping: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
