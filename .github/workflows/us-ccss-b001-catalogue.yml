@@ -1,0 +1,46 @@
+name: US CCSS B001 Source Catalogue
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade[1-4]-im-k5-2021.lesson-blueprint.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g[1-4]-phase29-v1.lesson-content-pack.json'
+      - 'docs/curriculum/us-ccss-g1-g12-structural-audit.json'
+      - 'docs/curriculum/batches/US-CCSS-B001-*'
+      - 'tools/curriculum/us-ccss-b001-inventory.cjs'
+      - 'tests/us-ccss-b001-inventory.test.cjs'
+      - '.github/workflows/us-ccss-b001-catalogue.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade[1-4]-im-k5-2021.lesson-blueprint.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g[1-4]-phase29-v1.lesson-content-pack.json'
+      - 'docs/curriculum/us-ccss-g1-g12-structural-audit.json'
+      - 'docs/curriculum/batches/US-CCSS-B001-*'
+      - 'tools/curriculum/us-ccss-b001-inventory.cjs'
+      - 'tests/us-ccss-b001-inventory.test.cjs'
+      - '.github/workflows/us-ccss-b001-catalogue.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-catalogue:
+    name: b001-source-catalogue
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out PR
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check
+        run: node --check tools/curriculum/us-ccss-b001-inventory.cjs
+      - name: Deterministic catalogue check
+        run: node tools/curriculum/us-ccss-b001-inventory.cjs --check
+      - name: Source-content mapping tests
+        run: node --test tests/us-ccss-b001-inventory.test.cjs
