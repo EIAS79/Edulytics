@@ -14,6 +14,9 @@ on:
       - 'tests/us-ccss-b001-im2021-source-fingerprint-triage.test.cjs'
       - 'tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs'
       - 'tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs'
+      - 'tests/us-ccss-b001-g1-u02-original-pdf-task-review.test.cjs'
+      - 'tools/curriculum/us-ccss-b001-build-500-reviewer-worklist.cjs'
+      - 'tests/us-ccss-b001-500-reviewer-worklist.test.cjs'
       - '.github/workflows/us-ccss-b001-catalogue.yml'
   push:
     branches: [main]
@@ -28,6 +31,9 @@ on:
       - 'tests/us-ccss-b001-im2021-source-fingerprint-triage.test.cjs'
       - 'tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs'
       - 'tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs'
+      - 'tests/us-ccss-b001-g1-u02-original-pdf-task-review.test.cjs'
+      - 'tools/curriculum/us-ccss-b001-build-500-reviewer-worklist.cjs'
+      - 'tests/us-ccss-b001-500-reviewer-worklist.test.cjs'
       - '.github/workflows/us-ccss-b001-catalogue.yml'
   workflow_dispatch:
 
@@ -60,3 +66,18 @@ jobs:
         run: node --test tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs
       - name: Original 2021 500 lesson purposes and student-facing activities (not approval)
         run: node --test tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs
+      - name: G1 U02 L04-L10 original task-PDF text and unresolved activity review evidence (no teacher approval)
+        run: node --test tests/us-ccss-b001-g1-u02-original-pdf-task-review.test.cjs
+      - name: Cross-check all 500 lessons and produce unsigned academic reviewer JSON/CSV worklist
+        run: |
+          node --check tools/curriculum/us-ccss-b001-build-500-reviewer-worklist.cjs
+          node --test tests/us-ccss-b001-500-reviewer-worklist.test.cjs
+          node tools/curriculum/us-ccss-b001-build-500-reviewer-worklist.cjs --out=/tmp/b001-review-worklist
+      - name: Preserve all-500 human review worklist (NO academic approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-500-unsigned-source-pdf-math-reviewer-worklist
+          path: /tmp/b001-review-worklist/
+          if-no-files-found: warn
+          retention-days: 30
