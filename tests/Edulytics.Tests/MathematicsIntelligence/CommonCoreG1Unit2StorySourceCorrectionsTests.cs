@@ -176,7 +176,8 @@ public sealed class CommonCoreG1Unit2StorySourceCorrectionsTests
             foreach(var q in questions)
             {
                 Assert.Equal(family,q.Family);
-                Assert.Contains("story",q.Explanation,StringComparison.OrdinalIgnoreCase);
+                Assert.Contains("A child",q.Prompt);
+                Assert.True(q.Solution.Length > 35);
                 Assert.True(ExactSkillContractQuestionEngine.Verify(
                     family,q.Parameters,q.CorrectAnswer));
                 Assert.False(ExactSkillContractQuestionEngine.Verify(
