@@ -46,7 +46,7 @@ public sealed class CommonCoreG1Unit2Part4SourceTeachingCorrectionsTests
             Assert.NotNull(rendered);
             Assert.NotEmpty(rendered!.WorkedExamples);
         }
-        Assert.Contains("9 - 5 = 4",selected[0].En.WorkedExamples);
+        Assert.Contains("5 + [4] = 9",selected[0].En.WorkedExamples);
         Assert.Contains("10 - 6 = 4",selected[1].En.WorkedExamples);
         Assert.Contains("7 - 4 = 3",selected[2].En.WorkedExamples);
         Assert.Contains("8 - 3 = [5]",selected[3].En.WorkedExamples);
