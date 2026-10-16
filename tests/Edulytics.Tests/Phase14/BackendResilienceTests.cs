@@ -7,6 +7,7 @@ using Edulytics.Web.Resilience;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Primitives;
 
 namespace Edulytics.Tests.Phase14;
 
@@ -123,6 +124,43 @@ public sealed class BackendResilienceTests
             service);
 
         Assert.Equal(2, executions);
+    }
+
+    [Fact]
+    public async Task Practice_forms_reusing_csrf_but_issuing_new_nonces_are_distinct()
+    {
+        var service = new FakeIdempotencyService();
+        var runs = 0;
+        var middleware = new IdempotencyMiddleware(
+            _ => { runs++; return Task.CompletedTask; },
+            NullLogger<IdempotencyMiddleware>.Instance);
+
+        DefaultHttpContext Form(string nonce)
+        {
+            var context = CreateContext("ignored-header");
+            context.Request.Headers.Remove("Idempotency-Key");
+            context.Request.Path = "/student/practice/generate";
+            context.Request.ContentType = "application/x-www-form-urlencoded";
+            context.Request.Form = new FormCollection(
+                new Dictionary<string, StringValues>
+                {
+                    ["__RequestVerificationToken"] = "reusable-session-csrf",
+                    ["_idempotencyKey"] = nonce,
+                    ["lessonId"] = "c3ace6d2-5d8a-4efc-b3a2-9292d4ea14af"
+                });
+            return context;
+        }
+
+        await middleware.InvokeAsync(Form("practice-form-1"), service);
+        await middleware.InvokeAsync(Form("practice-form-2"), service);
+        Assert.Equal(2, runs);
+
+        var duplicate = Form("practice-form-2");
+        await middleware.InvokeAsync(duplicate, service);
+        Assert.Equal(2, runs);
+        Assert.Equal(StatusCodes.Status409Conflict, duplicate.Response.StatusCode);
+        Assert.Equal("duplicate",
+            duplicate.Response.Headers["Idempotency-Conflict"].ToString());
     }
 
     [Fact]
