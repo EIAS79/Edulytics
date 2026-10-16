@@ -12,6 +12,7 @@ on:
       - 'tests/us-ccss-b001-inventory.test.cjs'
       - 'tests/us-ccss-b001-original-source-intake.test.cjs'
       - 'tests/us-ccss-b001-im2021-source-fingerprint-triage.test.cjs'
+      - 'tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs'
       - '.github/workflows/us-ccss-b001-catalogue.yml'
   push:
     branches: [main]
@@ -24,6 +25,7 @@ on:
       - 'tests/us-ccss-b001-inventory.test.cjs'
       - 'tests/us-ccss-b001-original-source-intake.test.cjs'
       - 'tests/us-ccss-b001-im2021-source-fingerprint-triage.test.cjs'
+      - 'tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs'
       - '.github/workflows/us-ccss-b001-catalogue.yml'
   workflow_dispatch:
 
@@ -52,3 +54,5 @@ jobs:
         run: node --test tests/us-ccss-b001-original-source-intake.test.cjs
       - name: Original-source 500 lesson file fingerprints and diagnostics (not certification)
         run: node --test tests/us-ccss-b001-im2021-source-fingerprint-triage.test.cjs
+      - name: Original 500 student-task PDF link correspondence (not academic signoff)
+        run: node --test tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs
