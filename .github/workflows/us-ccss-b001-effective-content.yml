@@ -1,0 +1,59 @@
+name: B001 Effective Learner Content Review
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001EffectiveLearnerContentAuditTests.cs'
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g[1-4]-phase29-v1.lesson-content-pack.json'
+      - 'src/Edulytics.Data/Seeding/CommonCore*.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer*.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
+      - '.github/workflows/us-ccss-b001-effective-content.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001EffectiveLearnerContentAuditTests.cs'
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g[1-4]-phase29-v1.lesson-content-pack.json'
+      - 'src/Edulytics.Data/Seeding/CommonCore*.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer*.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
+      - '.github/workflows/us-ccss-b001-effective-content.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  effective-source-rich:
+    name: b001-effective-learner-content-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore unit-test project
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Execute actual Rich V2 learner composer for B001 500 lessons
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --filter 'FullyQualifiedName~UsCcssB001EffectiveLearnerContentAuditTests' \
+            --logger 'console;verbosity=normal'
+      - name: Upload learner content gap evidence regardless of test conclusion
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-500-effective-learner-content-triage
+          path: artifacts/curriculum-delivery/US-CCSS-MATH/B001/effective-learner-content-triage.json
+          if-no-files-found: warn
+          retention-days: 30
