@@ -950,6 +950,50 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_G1_ALL_READS") == "
     assert len(seen_codes) == 146
     print("B001_DISPOSABLE_G1_146_AUTHENTICATED_READS_PASS",len(seen_codes),flush=True)
 
+# Whole-B001 authenticated HTML breadth on real HTTPS and disposable school DB.
+# A single release scope: exactly the 500 ordered canonical IDs, not batches
+# of five lessons. This does not approve teaching/PDF/Practice/grades.
+if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "1":
+    catalogue_path = Path("docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json")
+    catalogue = json.loads(catalogue_path.read_text(encoding="utf-8"))
+    source_lessons = catalogue["lessons"]
+    assert len(source_lessons) == 500
+    assert len({x["lessonCode"] for x in source_lessons}) == 500
+    grade_counts = [sum(
+        re.search(r":G([1-4]):", row["lessonCode"]).group(1) == str(grade)
+        for row in source_lessons
+    ) for grade in (1, 2, 3, 4)]
+    assert grade_counts == [146, 146, 143, 65], grade_counts
+    all_us_rows = sql("""
+        SELECT "Code", "Id"::text, "Title", "NativeLevel"
+        FROM "CurriculumPedagogicalLessons"
+        WHERE "Code" LIKE 'PED:US-CCSS-MATH:G%';""").splitlines()
+    by_code = {}
+    for raw in all_us_rows:
+        code, lesson_id, title, level = raw.split("|", 3)
+        assert code not in by_code, ("duplicate disposable lesson", code)
+        by_code[code] = (lesson_id, title, level)
+    primary_fixture_student = students["commoncore-primary"]
+    for ordinal, lesson in enumerate(source_lessons, 1):
+        code = lesson["lessonCode"]
+        assert code in by_code, ("missing canonical DB lesson", ordinal, code)
+        lesson_id, title, level = by_code[code]
+        assert re.fullmatch(r"[a-f0-9-]{36}", lesson_id), ("invalid lesson ID", code)
+        grade_match = re.search(r":G([1-4]):", code)
+        assert grade_match and level == "Grade " + grade_match.group(1), (
+            "grade misrouting", code, level)
+        body = html.unescape(
+            get_page(primary_fixture_student, "/student/learning/lesson/" + lesson_id))
+        assert "rich-lesson-section" in body, (
+            code, "missing learner lesson content in authenticated HTML")
+        rendered = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
+        expected = re.sub(r"\s+", " ", html.unescape(title)).casefold()
+        assert expected in rendered, (code, "missing exact lesson title", expected)
+        print("B001_500_DISPOSABLE_AUTHENTICATED_PAGE_PASS",
+              ordinal, code, flush=True)
+    print("B001_500_DISPOSABLE_AUTHENTICATED_HTML_COMPLETE",
+          len(source_lessons), grade_counts, flush=True)
+
 # POST real teacher assessment and validate persistence on disposable DB.
 import uuid
 teacher = teachers[SCHOOLS[0][0]]
