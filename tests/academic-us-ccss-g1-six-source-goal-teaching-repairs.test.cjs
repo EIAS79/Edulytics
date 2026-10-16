@@ -16,7 +16,7 @@ test('six source-verified G1 repairs preserve all pinned before-state guarantees
  assert.equal(proofs.academicApproval,'PENDING');
  assert.equal(proofs.originalPacksUnchanged,true);
  assert.ok(selector.includes(
-  'expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2; // L01 pilot plus source-SHA-guarded T001 L05/L06'));
+  'expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2; // T001 L05/L06, G1 B03 L12/L14; all source-SHA-guarded'));
  assert.ok(selector.includes(
   'CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||'));
  assert.ok(selector.includes(
