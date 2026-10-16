@@ -33,7 +33,8 @@ internal static class UsCcssB001SourceGoalQuestions
             // Both possible operations can be solved by tens/ones with no
             // composing or decomposing a ten, unlike legacy 32-18 or 27+15.
             var first=random.Next(2,6)*10 + random.Next(4,8);
-            var second=random.Next(1,3)*10 + random.Next(1,10-first%10);
+            var maxSecondOnes=Math.Min(first%10,9-first%10);
+            var second=random.Next(1,3)*10 + random.Next(1,maxSecondOnes+1);
             var operation=random.Next(2); // 0 = total; 1 = compare
             var noun=random.Next(3);
             var item=new[]{"popcorn","pretzels","fruit"}[noun];
