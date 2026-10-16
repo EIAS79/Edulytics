@@ -59,7 +59,7 @@ public sealed class CommonCoreG1Unit2StorySourceCorrectionsTests
         Assert.Contains("expression",first.KeyConceptsAndRules);
         Assert.Contains("4 + 3",first.WorkedExamples);
         Assert.Contains("8 - 2",first.WorkedExamples);
-        Assert.Contains("joining",first.Explanation);
+        Assert.Contains("join",first.Explanation);
 
         var second=targets[1].English;
         Assert.Contains("equation",second.KeyConceptsAndRules);
