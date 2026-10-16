@@ -35,6 +35,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
         CommonCoreG1Unit2Part2SourceTeachingCorrections.Apply(document);
+        CommonCoreG1Unit2Part3SourceTeachingCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
         CommonCoreT001MixedAddSubtractContentCorrection.Apply(document);
         CommonCoreT001FindThePairContentCorrection.Apply(document);
@@ -207,8 +208,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g1Stories);
         var g1Part2 = CommonCoreG1Unit2Part2SourceTeachingCorrections
             .GetExpectedContentVersion(document, lesson, b001Goals);
-        var html = CommonCoreSourceBoundHtmlEntityCorrections
+        var g1Part3 = CommonCoreG1Unit2Part3SourceTeachingCorrections
             .GetExpectedContentVersion(document, lesson, g1Part2);
+        var html = CommonCoreSourceBoundHtmlEntityCorrections
+            .GetExpectedContentVersion(document, lesson, g1Part3);
         var mixed = CommonCoreT001MixedAddSubtractContentCorrection
             .GetExpectedContentVersion(document, lesson, html);
         return CommonCoreT001FindThePairContentCorrection
@@ -248,6 +251,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
+        CommonCoreG1Unit2Part3SourceTeachingCorrections.IsTarget(document, lesson) ||
         CommonCoreSourceBoundHtmlEntityCorrections
             .IsTarget(document, lesson) ||
         CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
@@ -323,6 +327,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreB001SourceGoalMismatchCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2Part2SourceTeachingCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG1Unit2Part3SourceTeachingCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreSourceBoundHtmlEntityCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
