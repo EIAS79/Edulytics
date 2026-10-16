@@ -184,7 +184,6 @@ jobs:
           set -euo pipefail
           ids="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -A -t -c 'SELECT "SchoolCode" FROM "Schools" ORDER BY "SchoolCode";')"
           test "$ids" = "$(printf 'REHEARSAL-US-PRIMARY\nREHEARSAL-US-SECONDARY')"
-
   # Use the already executed 500-lesson authenticated Practice probe artifact.
   # This job does NOT rerun lesson tests or grant academic/production acceptance.
   b001-authenticated-practice-persistence:
