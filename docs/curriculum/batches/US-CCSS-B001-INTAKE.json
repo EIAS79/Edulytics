@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "planId": "EDULYTICS-US-CCSS-500-V2",
   "batchId": "US-CCSS-B001",
-  "status": "SOURCE_CONTENT_AND_PRODUCTION_IDENTITY_MATCHED_AWAITING_500_LESSON_ACCEPTANCE",
+  "status": "PRODUCTION_METADATA_AND_RICH_COMPOSER_VERIFIED_AWAITING_ACADEMIC_AND_LIVE_UAT",
   "sourceInventory": "docs/curriculum/us-ccss-g1-g12-structural-audit.json",
   "sourceInventoryGeneratedUtc": "2026-10-11T20:55:36.562Z",
   "snapshotLessonCount": 1560,
@@ -97,7 +97,7 @@
     "verifiedLiveSha": null,
     "renderDeployId": null,
     "ownerUat": "NOT_STARTED",
-    "status": "NO_B001_CURRICULUM_RELEASE_500_OUT_OF_500"
+    "status": "B001_FULL_BATCH_NO_GO_500_METADATA_ONLY"
   },
   "notes": [
     "All 500 real canonical LessonCodes were extracted from the 2021 Grade 1-4 IM-based source blueprints, and linked to 500 stored content records by matching titles, canonical codes, outcomes and source URLs.",
@@ -113,7 +113,10 @@
     "Historical 15 Grade 1 lessons are already shipped in T001 first ten and G1 batch03 five (commit 54833b16, prior Render deployment dep-db8opibbc2fs738nuvd0); correct next not previously released ordinal is G1 #16.",
     "500/500 release acceptance remains NO_GO. The fail-closed release evidence gate is merged in PR #505; G2 source correction draft PR #506 is held from production until batch gates are satisfied.",
     "GitHub Actions 38881061253 successfully generated/verified engine samples for all 500 B001 codes at three difficulties with deliberately invalid-answer negative controls; not 500 independent academic approvals.",
-    "Full per-lesson canonical learning objective/rendered text fidelity, authenticated response persistence, source licences, exact checked commit evidence and owner UAT still pending."
+    "Full per-lesson canonical learning objective/rendered text fidelity, authenticated response persistence, source licences, exact checked commit evidence and owner UAT still pending.",
+    "2026-10-16: Run 38884041697 tested exact 500 effective in-repository canonical bodies and composed Rich V2 output; 500 technically composable, 128 source-body generic patterns, heuristic quality 496 NeedsExpansion/4 Good, no independent academic approvals.",
+    "Production Neon read-only B001 parity 500/500 published Status=3 with matching lesson identities and content versions. Production persisted translation rows are zero under ReadFromJson model; actual deployed JSON/HTTP body remains unverified.",
+    "Grade-level 128 generic patterns: Grade 2=55, Grade 3=43, Grade 4=30, Grade 1=0. Preserve issue #513 as remedial academic review queue. B001 release gate remains NO_GO."
   ],
   "sourceContentIndexFile": "docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json",
   "sourceContentIndexGenerator": "tools/curriculum/us-ccss-b001-inventory.cjs",
@@ -172,7 +175,17 @@
     "mismatches": 0,
     "totalCodesForGrade1ThroughGrade4": 584,
     "outOfBatchGrade4Codes": 84,
-    "limitations": "No production content-body parity, effective-materialized SHA, authenticated Practice response or database write tests covered by this identity query."
+    "limitations": "No production content-body parity, effective-materialized SHA, authenticated Practice response or database write tests covered by this identity query.",
+    "matchedSourceGradeOrdinalTitleCodes": 500,
+    "publishedLessonContentRows": 500,
+    "publishedAtPresent": 500,
+    "statusCode3Rows": 500,
+    "nonemptyContentVersionRows": 500,
+    "persistedTranslationRows": 0,
+    "readFromJsonEmbeddedBodyContentParity": "NOT_VERIFIED_ON_LIVE_RENDER",
+    "queryArtifact": "tools/curriculum/us-ccss-b001-neon-metadata-parity.readonly.sql",
+    "queryPr": "https://github.com/EIAS79/Edulytics/pull/512",
+    "explanation": "Production content is linked by CurriculumLessonContents.LessonNodeId = CurriculumPedagogicalLessons.Id; OfficialLessonNodeId is NULL for these records. No stored translations is expected for ReadFromJson configuration but effective deployed learner content needs separate SHA/HTTP testing."
   },
   "priorPublishedLessonBaseline": {
     "total": 15,
@@ -205,5 +218,37 @@
     "effectiveStudentVisibleTeachingApproval": "NOT_TESTED",
     "productionDataParity": "NOT_TESTED",
     "isInternalAcademicCertification": false
+  },
+  "effectiveLearnerContentAudit": {
+    "status": "500_OF_500_EFFECTIVE_EMBEDDED_RICH_V2_COMPOSABLE_NOT_ACADEMICALLY_ACCEPTED",
+    "githubActionRun": "https://github.com/EIAS79/Edulytics/actions/runs/38884041697",
+    "pullRequest": "https://github.com/EIAS79/Edulytics/pull/511",
+    "reportArtifact": "b001-500-effective-learner-content-triage",
+    "lessonCodesProcessed": 500,
+    "canonicalContentAndRichCompositionTechnicalFailures": 0,
+    "richV2RuntimeComposed": 500,
+    "richV2Curated": 0,
+    "canonicalRichQualityHeuristic": {
+      "Good": 4,
+      "NeedsExpansion": 496
+    },
+    "canonicalTemplatePlaceholderLessons": 128,
+    "templatePlaceholderByGrade": {
+      "Grade 1": 0,
+      "Grade 2": 55,
+      "Grade 3": 43,
+      "Grade 4": 30
+    },
+    "caveat": "NeedsExpansion is a heuristic measuring section lengths/math signals/examples/visual structure in canonical lesson bodies, not verified mathematical error or factual grade. Rich V2 compilation itself does not verify exact source objective fidelity.",
+    "academicSourceGoalApproval": 0,
+    "authenticatedPersistenceVerifiedInThisRun": 0,
+    "productionBrowserLessonUat": "NOT_RUN",
+    "remediationIssue": "https://github.com/EIAS79/Edulytics/issues/513"
+  },
+  "historical15SourceCodeDiff": {
+    "baselineCommit": "54833b1669fe33f39c0043ac229f7440e1c8da9a",
+    "comparisonEndpoint": "https://github.com/EIAS79/Edulytics/compare/54833b1669fe33f39c0043ac229f7440e1c8da9a...main",
+    "runtimeSourceChangesObservedThroughMainAtAudit": 0,
+    "note": "Source code file diff absent in the initial commit comparison, but no authenticated production E2E reassessment or effective content fingerprint parity performed; do not promote 15 baseline lessons to newly accepted B001."
   }
 }
