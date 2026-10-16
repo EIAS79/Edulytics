@@ -87,6 +87,8 @@
             <span class="lesson-mode-tab lesson-mode-tab--active" aria-current="page">@S["Lesson"]</span>
             <form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
                 @Html.AntiForgeryToken()
+                @* A fresh lesson page render is a new user action; do not reuse the CSRF token as the idempotency identity. *@
+                <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
                 <input type="hidden" name="curriculumAdoptionId" value="@unifiedPracticeAdoptionId.Value" />
                 <input type="hidden" name="lessonId" value="@Model.Id" />
                 <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@P["Practice"]</button>

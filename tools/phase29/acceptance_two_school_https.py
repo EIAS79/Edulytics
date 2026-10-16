@@ -988,8 +988,15 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         WHERE u."Email"='commoncore-primary.student.secondary@edulytiks.com';""").splitlines()
     assert len(original_secondary_enrolments) == 1, (
         "secondary fixture must have one original class enrollment")
-    from b001_practice_form_coverage import has_lesson_start_form, coverage_report
+    from b001_practice_form_coverage import has_lesson_start_form, has_lesson_start_nonce, coverage_report
     b001_practice_forms = []
+    b001_e2e_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_ATTEMPTS") == "1"
+    b001_e2e_rows = []
+    if b001_e2e_enabled:
+        from b001_practice_attempt_probe import (
+            probe_lesson, summarize, extract_csrf, extract_adoption,
+            extract_idempotency_key)
+
     for ordinal, lesson in enumerate(source_lessons, 1):
         code = lesson["lessonCode"]
         assert code in by_code, ("missing canonical DB lesson", ordinal, code)
@@ -1033,7 +1040,26 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             "ordinal": ordinal,
             "lessonCode": code,
             "hasLessonStartForm": has_lesson_start_form(body),
+            "hasUniqueLessonStartNonce": has_lesson_start_nonce(body),
         })
+
+        if b001_e2e_enabled:
+            # Fresh actual form for every attempt. CSRF is reusable, while
+            # the explicit idempotency nonce must be unique per form render.
+            try:
+                practice_index = get_page(grade_student, "/student/practice")
+                csrf = extract_csrf(practice_index)
+                adoption = extract_adoption(practice_index)
+                nonce = extract_idempotency_key(practice_index)
+            except (urllib.error.HTTPError, AssertionError):
+                csrf = adoption = nonce = None
+            result = probe_lesson(grade_student, BASE, lesson_id,
+                                  adoption, csrf, nonce, sql)
+            result["ordinal"] = ordinal
+            result["lessonCode"] = code
+            b001_e2e_rows.append(result)
+            print("B001_DISPOSABLE_500_REAL_PRACTICE_PROBE",
+                  ordinal, code, result["status"], result.get("httpStatus", ""), flush=True)
 
         print("B001_500_DISPOSABLE_AUTHENTICATED_PAGE_PASS",
               ordinal, code, flush=True)
@@ -1051,6 +1077,23 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         assert practice_matrix["missingLessonStartForms"] == 0, (
             "B001 Practice CTA remains incomplete for a 500-lesson release",
             practice_matrix["missingLessonStartForms"])
+        assert practice_matrix["missingLessonStartNonces"] == 0, (
+            "B001 Practice lesson-start forms lack per-render idempotency nonces",
+            practice_matrix["missingLessonStartNonces"])
+
+    if b001_e2e_enabled:
+        b001_attempts = summarize(b001_e2e_rows)
+        Path("/tmp/b001-500-real-practice-generation-and-grading-probe.json").write_text(
+            json.dumps(b001_attempts, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8")
+        print("B001_500_REAL_PRACTICE_GENERATE_AND_GRADE_SUMMARY",
+              b001_attempts["generationAndSelfGradingPassed"],
+              b001_attempts["notSelfGraded"],
+              json.dumps(b001_attempts["byStatus"], sort_keys=True), flush=True)
+        if os.environ.get("EDULYTICS_B001_REQUIRE_ALL500_GRADED") == "1":
+            assert b001_attempts["notSelfGraded"] == 0, (
+                "B001 500-lesson student Practice grading gate NO_GO",
+                b001_attempts["byStatus"])
 
     restored = sql("""
         WITH restoration AS (
