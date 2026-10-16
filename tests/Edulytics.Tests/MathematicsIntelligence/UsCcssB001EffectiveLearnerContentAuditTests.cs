@@ -172,6 +172,14 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
                 lessons=rows
             },new JsonSerializerOptions {WriteIndented=true})+"\n");
 
+        Console.WriteLine("B001_EFFECTIVE_CONTENT_AUDIT_JSON:"+
+            JsonSerializer.Serialize(new {
+                expected=500,examined=rows.Count,technicalBlockers=technicalBlockers.Count,
+                curated=curatedCount,compiled=compiledCount,
+                genericPlaceholderLessonCount=placeholderCount,
+                qualityHeuristicCounts=qualityCounts,
+                academicApproved=0
+            }));
         Assert.Equal(500,rows.Count);
         Assert.True(technicalBlockers.Count==0,
             $"{technicalBlockers.Count} effective source/Rich V2 technical blockers: "+
