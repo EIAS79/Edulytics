@@ -8,6 +8,7 @@ on:
       - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2HundredsPlaceValueSourceCorrectionsTests.cs'
+      - 'tests/Edulytics.Tests/Phase29/SourceBoundCommonCoreJsonMetadataReconciliationTests.cs'
       - '.github/workflows/us-ccss-b001-g2-hundreds.yml'
   workflow_dispatch:
 
@@ -29,7 +30,7 @@ jobs:
       - name: Run reviewed G2 source correction and independent shadow number oracles
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
-            --filter 'FullyQualifiedName~CommonCoreG2HundredsPlaceValueSourceCorrectionsTests|FullyQualifiedName~UsCommonCoreGrade2HundredsShadowQuestionTests' \
+            --filter 'FullyQualifiedName~CommonCoreG2HundredsPlaceValueSourceCorrectionsTests|FullyQualifiedName~UsCommonCoreGrade2HundredsShadowQuestionTests|FullyQualifiedName~SourceBoundCommonCoreJsonMetadataReconciliationTests' \
             --logger 'console;verbosity=normal'
       - name: Current B001 remains NO_GO until all 500 lesson-level evidence exists
         shell: bash
