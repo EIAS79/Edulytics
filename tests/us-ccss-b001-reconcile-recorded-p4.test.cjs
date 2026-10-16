@@ -67,6 +67,26 @@ test('Fails closed on mixed commit SHAs, absent lesson rows and spoofed HTTPS pr
   content.lessons.pop();
   assert.throws(()=>reconcile(catalogue,engine,content,https,meta),/exactly 500/);
 });
+test('Real PR workflows use a verified GitHub synthetic test-merge checkout SHA, not the branch head',()=>{
+  const {engine,content,https}=fixture();
+  const checkedOut='d'.repeat(40);
+  engine.candidateSha=checkedOut;
+  content.candidateSha=checkedOut;
+  assert.throws(()=>reconcile(catalogue,engine,content,https,{
+    ...meta,testedCheckoutSha:checkedOut
+  }),/not verified against actual branch head/);
+  const x=reconcile(catalogue,engine,content,https,{
+    ...meta,testedCheckoutSha:checkedOut,verifiedTestMergeParentSha:sha
+  });
+  assert.equal(x.candidateSha,checkedOut);
+  assert.equal(x.workflowRunHeadSha,sha);
+  assert.equal(x.testedSourceKind,'GITHUB_PR_SYNTHETIC_MERGE_CHECKOUT_VERIFIED');
+  assert.equal(x.technicalVerifiedLessons,500);
+  assert.equal(x.releaseDecision,'NO_GO');
+  assert.equal(evaluateEvidence(catalogue,x,sha).state,'NO_GO');
+  assert.equal(evaluateEvidence(catalogue,x,checkedOut).state,'NO_GO');
+});
+
 test('Incorrect persisted or generated lesson stays unverified, never certifies the whole batch',()=>{
   const {engine,content,https}=fixture();
   engine.lessons[12].status='ENGINE_SAMPLES_FAILED';
