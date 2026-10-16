@@ -193,4 +193,36 @@ public sealed class CommonCoreG1Unit2StorySourceCorrectionsTests
             }
         }
     }
+
+    [Fact]
+    public void MathematicalOraclesCheckExpressionVsEquationAndNonfinalUnknownAnswer()
+    {
+        const string expression="usccss.g1.u02.story.choose_expression";
+        const string equation="usccss.g1.u02.story.choose_equation";
+        const string unknown="usccss.g1.u02.story.add_change_unknown";
+        // 6 + 2 = 8. Choice 1 is addition with flip=0.
+        IReadOnlyDictionary<string,int> add=new Dictionary<string,int>
+        {
+            ["start"]=6,["amount"]=2,["action"]=0,["noun"]=0,["flip"]=0
+        };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(expression,add,"1"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(equation,add,"1"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(unknown,add,"2"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(unknown,add,"8"));
+
+        // Same story, reordered options: now subtraction is choice 1.
+        var flipped=add.ToDictionary(x=>x.Key,x=>x.Value);
+        flipped["flip"]=1;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(expression,flipped,"2"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(equation,flipped,"2"));
+
+        // 7 - 3 = 4, with subtraction listed first after option flip.
+        IReadOnlyDictionary<string,int> take=new Dictionary<string,int>
+        {
+            ["start"]=7,["amount"]=3,["action"]=1,["noun"]=0,["flip"]=1
+        };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(expression,take,"1"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(equation,take,"1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(unknown,take,"3"));
+    }
 }
