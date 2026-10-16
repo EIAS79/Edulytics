@@ -1,6 +1,6 @@
 # US CCSS T001 — original-source goal crosswalk and runtime evidence
 
-**Scope:** Grade 1 Unit 1, Lessons 1–10 ONLY. **Status:** source-purpose comparison completed; **not a substitute for L1–L6 signoff**. **Source reading:** 2026-10-15; first-party source files on authorized Our-CS, read-only.
+**Scope:** Grade 1 Unit 1, Lessons 1–10 ONLY. **Status:** source-purpose comparison completed; **not a substitute for lesson-specific automated test acceptance**. **Source reading:** 2026-10-15; first-party source files on authorized Our-CS, read-only.
 
 ## Original 2021 publisher teaching goals versus actual lesson practice
 
@@ -44,10 +44,12 @@ The following **raw-file SHA-256** digests were calculated read-only from the or
 - At that same commit, [T001 math checks](https://github.com/EIAS79/Edulytics/actions/runs/38789535559) passed actual .NET question engine tests, including generation and independent grading. On later commits the L06 mixed-family expansion and 20-screenshot authenticated Chromium smoke must **rerun and pass**.
 - [Academic T001 gate](https://github.com/EIAS79/Edulytics/actions/runs/38789535559): `BATCH_NO-GO`, `evidenceReady: 1`, `remainingEvidence: 9`. This is an **honest pending-certification state** and must not be bypassed.
 
-## Remaining before publication
+## Tests-only software acceptance (no mandatory human reviewer)
 
-1. Independently review final assembled Rich V2 explanations, worked examples, misconceptions and all teaching visuals **for each of the nine remaining lessons** against the cited originals; only fix genuine defects. This crosswalk verifies the publisher's lesson *purpose* and corresponding generated skill families, not every displayed learning element.
-2. Record actual L1–L5 evidence for those nine in the existing SHA-bound six-gate ledger, with applicable dimensions and defensible review, rather than fabricating `PASS` values. L09's survey requires human/contextual teaching even though a sampled fictional tally question is automatically graded; numeric-only practice must not be represented as a complete independent class survey.
-3. Re-run all required CI checks on the exact final HEAD SHA; require mobile/desktop authenticated screenshots for L01–L10, correct student grading and database persistence. Then capture genuinely reviewer-authorized `BATCH_PASS` and after deployment `LIVE` proof. Do not merge PR #492 / 500-lesson changes into this isolated release.
+The [T001 automated acceptance policy](T001_AUTOMATED_LESSON_ACCEPTANCE.md) replaces a human academic review/sign-off requirement with **the three reproducible lesson/system CI checks on the same full Git SHA**. Fail-closed outcomes come from `tools/us-ccss-t001-test-acceptance.cjs`; no manual PASS entries are added to the historical academic ledger.
+
+1. Verify source-goal mapping and concrete lesson student interactions, including L02 writing an expression, L07 sorting each math-tool card, L08 building a shape chart, and L09 recording anonymous responses and building a matching graph. The original publisher goals remain unchanged.
+2. Require independent mathematics/verifier tests, authenticated student Practice submission and persisted scoring, desktop/mobile Chromium interactions, cross-school authorization, regression, and source/commit integrity. An untested or failed category blocks **test acceptance** until a new tested commit passes.
+3. `BATCH_INTERNAL_ACADEMIC_APPROVED` means **Edulytics internal academic acceptance according to owner-approved source-linked test criteria**. No external or internal academic-specialist signature is required. The existing `BATCH_NO-GO` or `BATCH_CERTIFIED` **academic** ledger represents different historical evidence; never silently convert successful CI into a claim that children demonstrated mastery or a real-world L09 survey was performed. Publication/deployment, if authorized separately, must still preserve attribution, security and code integrity.
 
 **Licensing:** Original publisher preparation pages show a CC BY 4.0 notice, while the publisher name/logo and separately attributed third-party imagery can carry separate restrictions. Edulytics uses first-party authored task text/visuals; keep required attribution visible, and do not upload the raw source HTML, logos or third-party diagrams from Our-CS to GitHub.

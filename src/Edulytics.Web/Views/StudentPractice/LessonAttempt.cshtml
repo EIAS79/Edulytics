@@ -134,6 +134,14 @@
             out interaction);
     }
 
+    var authoredTaskKind = generationFamily switch
+    {
+        "usccss.t001.g1.write_dot_expression" => "expression",
+        "usccss.t001.g1.construct_tool_sort" => "sort",
+        "usccss.t001.g1.collect_survey_graph" => "survey",
+        _ => null
+    };
+
     var isConstructShapeGraph = string.Equals(generationFamily,
         "usccss.t001.g1.construct_shape_graph", StringComparison.Ordinal);
 
@@ -216,6 +224,7 @@
     <link rel="stylesheet" href="~/css/eddy-overlap-v1.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/practice-unified-ui-v2.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/t001-shape-chart.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t001-authored-practice.css" asp-append-version="true" />
     <style>
         .lp-server-card {
             display: grid;
@@ -432,6 +441,12 @@
 
                     @if (isCorrectReview && currentQuestion is not null)
                     {
+                        @if (authoredTaskKind is not null)
+                        {
+                            <div class="t001-authored" data-t001-authored-task="@authoredTaskKind"
+                                 data-t001-source="@stem" data-t001-locale="@locale"
+                                 data-t001-readonly="true" data-t001-initial="@currentQuestion.SubmittedAnswer"></div>
+                        }
                         @if (isConstructShapeGraph)
                         {
                             <div class="t001-shape-chart" data-t001-shape-chart
@@ -472,7 +487,17 @@
                                    name="attemptItemId"
                                    value="@(currentQuestion!.AttemptItemId)" />
 
-                            @if (isConstructShapeGraph)
+                            @if (authoredTaskKind is not null)
+                            {
+                                <div class="t001-authored" data-t001-authored-task="@authoredTaskKind"
+                                     data-t001-source="@stem" data-t001-locale="@locale"
+                                     data-t001-readonly="false" data-t001-initial=""><noscript>Enable JavaScript to complete the activity.</noscript></div>
+                                <input type="hidden" name="answer" value="" data-t001-authored-answer />
+                                <button class="gw-primary" type="submit" data-t001-authored-submit disabled>
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                            else if (isConstructShapeGraph)
                             {
                                 <div class="t001-shape-chart" data-t001-shape-chart data-t001-locale="@locale">
                                     <noscript>Enable JavaScript to construct your graph.</noscript>
@@ -583,5 +608,6 @@
 <script src="~/js/student-lesson-practice.js"
         asp-append-version="true"></script>
 <script src="~/js/t001-shape-chart.js" asp-append-version="true"></script>
+<script src="~/js/t001-authored-practice.js" asp-append-version="true"></script>
 </body>
 </html>

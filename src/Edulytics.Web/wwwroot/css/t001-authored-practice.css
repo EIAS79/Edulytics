@@ -1,0 +1,30 @@
+/* Scoped source T001 authored work, not global Practice styles. */
+.t001-authored{display:grid;gap:12px;width:min(740px,100%);padding:15px;margin:0 auto;background:#fff;border:2px solid #c9e1e8;border-radius:18px;color:#163441;text-align:center}
+.t001-authored-title{margin:0;font-size:1.2rem;color:#163441}
+.t001-authored-help{margin:0;font-size:.9rem;color:#274d5b}
+.t001-authored-status{margin:0;font-size:.9rem;font-weight:700;color:#174b5c}
+.t001-authored-dotcards{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.t001-authored-dotcard{min-width:95px;min-height:70px;padding:9px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;background:#eaf4ff;border:2px solid #86b9d6;border-radius:11px}
+.t001-authored-dot{font-size:1.2rem;color:#226e81}
+.t001-authored-expression-line{display:flex;justify-content:center;align-items:end;gap:9px;flex-wrap:wrap}
+.t001-authored-field{display:grid;gap:5px;font-size:.82rem;font-weight:700}
+.t001-authored-number{width:82px;min-height:48px;text-align:center;font-size:1.3rem;font-weight:900;border:2px solid #368ba1;border-radius:9px;background:#fff;color:#163441}
+.t001-authored-symbol{align-self:end;padding-bottom:9px;font-size:1.4rem}
+.t001-authored-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:9px}
+.t001-authored-card{padding:8px;background:#edf6f8;border:1px solid #9fc9d4;border-radius:10px;display:grid;gap:6px;text-align:start}
+.t001-authored-card-name{font-size:1rem;font-weight:750}
+.t001-authored-select{width:100%;min-height:42px;padding:6px;border:2px solid #398ba1;border-radius:8px;background:#fff;color:#163441;font-size:.9rem}
+.t001-authored-bins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.t001-authored-bin{min-width:0;padding:9px 5px;background:#e9f3f5;border-radius:11px;display:grid;align-content:start;gap:6px;justify-items:center}
+.t001-authored-bin h3{font-size:.87rem;margin:0;overflow-wrap:anywhere;color:#163441}
+.t001-authored-bin-items,.t001-authored-vote-tape{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;min-height:23px}
+.t001-authored-chip{padding:3px 7px;border-radius:7px;background:#c9e9f1;font-size:.83rem;word-break:break-word}
+.t001-authored-vote-buttons,.t001-authored-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+.t001-authored-btn{min-height:42px;min-width:42px;padding:6px 10px;border:2px solid #276e84;border-radius:10px;background:#fff;color:#17536a;cursor:pointer;font-weight:800}
+.t001-authored-btn:disabled{opacity:.4;cursor:default}
+.t001-authored-btn:focus-visible,.t001-authored-select:focus-visible,.t001-authored-number:focus-visible{outline:3px solid #eb9f28;outline-offset:2px}
+.t001-authored-tallybar{height:150px;width:100%;display:flex;flex-direction:column-reverse;justify-content:flex-start;align-items:center;gap:2px;padding:6px;border-radius:6px;background:#fff}
+.t001-authored-tally{display:block;width:min(95%,95px);height:13px;border-radius:3px;background:#a5dce9;color:#215f73;font-size:12px;line-height:13px}
+.t001-authored-count{font-weight:900;font-size:1.18rem}
+.t001-authored-error{color:#932f37;font-weight:750}
+@media(max-width:450px){.t001-authored{padding:8px}.t001-authored-bins{gap:3px}.t001-authored-bin{padding:7px 2px}.t001-authored-bin h3{font-size:.75rem}.t001-authored-number{width:67px}.t001-authored-btn{font-size:.8rem}}

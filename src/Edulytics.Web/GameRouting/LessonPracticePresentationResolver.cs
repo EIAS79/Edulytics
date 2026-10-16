@@ -45,11 +45,14 @@ public static class LessonPracticePresentationResolver
             return false;
         }
 
-        // L08 must build a chart in server-verified Practice even when
-        // Adaptive V2 is disabled; never redirect its main Practice action
-        // to the generic categorization game.
-        if (string.Equals(lessonCode,
-                "PED:US-CCSS-MATH:G1:U01:L08", StringComparison.Ordinal))
+        // Authored Grade 1 activities must reach the dedicated exact Practice
+        // renderer even when Adaptive V2 is disabled. Never silently route
+        // these lessons to a generic selection-only game.
+        if (lessonCode is
+            "PED:US-CCSS-MATH:G1:U01:L02" or
+            "PED:US-CCSS-MATH:G1:U01:L07" or
+            "PED:US-CCSS-MATH:G1:U01:L08" or
+            "PED:US-CCSS-MATH:G1:U01:L09")
         {
             presentation = new LessonPracticePresentationRoute(
                 LessonPracticePresentationKind.ServerVerifiedExact,
