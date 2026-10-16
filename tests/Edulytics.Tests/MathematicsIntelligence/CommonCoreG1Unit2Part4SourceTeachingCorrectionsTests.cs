@@ -48,7 +48,7 @@ public sealed class CommonCoreG1Unit2Part4SourceTeachingCorrectionsTests
         }
         Assert.Contains("5 + [4] = 9",selected[0].En.WorkedExamples);
         Assert.Contains("10 - 6 = 4",selected[1].En.WorkedExamples);
-        Assert.Contains("7 - 4 = 3",selected[2].En.WorkedExamples);
+        Assert.Contains("7 - 4 = [3]",selected[2].En.WorkedExamples);
         Assert.Contains("8 - 3 = [5]",selected[3].En.WorkedExamples);
         Assert.Contains("8 - 6 = [2]",selected[4].En.WorkedExamples);
         Assert.Contains("not a real classroom survey",selected[2].En.KeyConceptsAndRules);
