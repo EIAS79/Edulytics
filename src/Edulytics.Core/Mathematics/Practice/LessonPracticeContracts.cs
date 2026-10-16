@@ -959,6 +959,30 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Original IM 2021 source-corrected G1 U02 L04-L07.
+        foreach(var reviewed in UsCcssG1Unit2Part2PracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G1 U02 Part2 lesson missing source Practice contract: " + reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        // Original IM 2021 G1 U02 L08-L10, not broad strand projections.
+        foreach(var reviewed in UsCcssG1Unit2Part3PracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G1 U02 L08-L10 source lesson missing practice mapping: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        // Source-specific Grade 1 Unit 2 L11-L15 comparison and story items.
+        foreach(var reviewed in UsCcssG1Unit2Part4PracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G1 U02 L11-L15 source lesson missing existing contract: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
