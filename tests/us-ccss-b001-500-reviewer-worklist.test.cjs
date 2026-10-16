@@ -12,6 +12,10 @@ test('all 500 original academic reviewer packets are source-PDF/teacher-goal cro
   assert.equal(result.rows.length,500);
   assert.equal(new Set(result.rows.map(x=>x.lessonCode)).size,500);
   assert.equal(result.observedOriginalStudentPdfTextInspectionCount,7);
+  assert.equal(result.missingOriginalStudentFacingGoalExcerptCount,1);
+  assert.equal(result.rows[179].lessonCode,'PED:US-CCSS-MATH:G2:U02:L16');
+  assert.ok(result.rows[179].specificReviewGaps.join(' ').includes('student-facing learning-goal excerpt was absent'));
+
   assert.equal(result.qualifiedTeacherApprovals,0);
   assert.equal(result.independentGraphicsApprovals,0);
   assert.equal(result.independentMathApprovals,0);
