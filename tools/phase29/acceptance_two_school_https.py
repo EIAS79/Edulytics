@@ -991,6 +991,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
     from b001_practice_form_coverage import has_lesson_start_form, has_lesson_start_nonce, coverage_report
     b001_practice_forms = []
     b001_e2e_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_ATTEMPTS") == "1"
+    b001_negative_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_MALFORMED_ANSWERS") == "1"
     b001_e2e_rows = []
     if b001_e2e_enabled:
         from b001_practice_attempt_probe import (
@@ -1055,6 +1056,24 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 csrf = adoption = nonce = None
             result = probe_lesson(grade_student, BASE, lesson_id,
                                   adoption, csrf, nonce, sql)
+            if b001_negative_enabled:
+                # A separate real Practice attempt is needed because a graded
+                # one-question personal test is immutable after submission.
+                try:
+                    malformed_form = get_page(grade_student, "/student/practice")
+                    bad_csrf = extract_csrf(malformed_form)
+                    bad_adoption = extract_adoption(malformed_form)
+                    bad_nonce = extract_idempotency_key(malformed_form)
+                except (urllib.error.HTTPError, AssertionError):
+                    bad_csrf = bad_adoption = bad_nonce = None
+                negative = probe_lesson(grade_student, BASE, lesson_id,
+                                       bad_adoption, bad_csrf, bad_nonce, sql,
+                                       answer_mode="malformed")
+                result["negativeStatus"] = negative["status"]
+                result["negativeFamily"] = negative.get("family")
+                print("B001_DISPOSABLE_500_MALFORMED_ANSWER_PROBE",
+                      ordinal, code, negative["status"],
+                      negative.get("httpStatus",""), flush=True)
             result["ordinal"] = ordinal
             result["lessonCode"] = code
             b001_e2e_rows.append(result)
@@ -1090,10 +1109,18 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
               b001_attempts["generationAndSelfGradingPassed"],
               b001_attempts["notSelfGraded"],
               json.dumps(b001_attempts["byStatus"], sort_keys=True), flush=True)
+        if b001_negative_enabled:
+            print("B001_500_MALFORMED_ANSWER_REJECTION_SUMMARY",
+                  b001_attempts["malformedAnswersRejectedAndPersisted"],
+                  b001_attempts["malformedAnswersNotVerified"], flush=True)
         if os.environ.get("EDULYTICS_B001_REQUIRE_ALL500_GRADED") == "1":
             assert b001_attempts["notSelfGraded"] == 0, (
                 "B001 500-lesson student Practice grading gate NO_GO",
                 b001_attempts["byStatus"])
+            if b001_negative_enabled:
+                assert b001_attempts["malformedAnswersNotVerified"] == 0, (
+                    "B001 500-lesson malformed-answer rejection gate NO_GO",
+                    b001_attempts["malformedAnswersNotVerified"])
 
     restored = sql("""
         WITH restoration AS (

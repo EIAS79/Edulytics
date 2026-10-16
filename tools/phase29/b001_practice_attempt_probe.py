@@ -47,8 +47,10 @@ def synthetic_survey_protocol(expected, parameters_json):
     tally = ",".join(str(votes.count(str(i))) for i in range(3))
     return "v:"+votes+"|g:"+tally
 
-def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
-    """Generate and self-grade one real question scoped to a single lesson."""
+def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answer_mode="correct"):
+    """Generate, submit and check one real scoped Practice question."""
+    if answer_mode not in ("correct","malformed"):
+        return {"status":"INVALID_PROBE_ANSWER_MODE"}
     if not re.fullmatch(UUID,lesson_id):
         return {"status":"BAD_LESSON_GUID"}
     if not re.fullmatch(UUID,adoption_id or "") or not csrf:
@@ -94,6 +96,13 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
             except (ValueError,TypeError,KeyError,json.JSONDecodeError) as exc:
                 return {"status":"SURVEY_SYNTHETIC_FIXTURE_INVALID","family":family,
                         "errorType":type(exc).__name__}
+        if answer_mode=="malformed":
+            # Deliberately invalid for numbers, expressions, category lists and
+            # survey tally protocols alike. The source generation family
+            # remains server-owned; this is a negative control, not a math oracle.
+            if answer=="B001_MALFORMED_RESPONSE_INVALID":
+                return {"status":"MALFORMED_FIXTURE_COLLIDES_WITH_CORRECT_ANSWER"}
+            answer="B001_MALFORMED_RESPONSE_INVALID"
         token=extract_csrf(page)
         item_match=re.search(r'name="attemptItemIds\[0\]"[^>]*value="('+UUID+r')"',page)
         if not token or not item_match or item_match.group(1).lower()!=item_id.lower():
@@ -112,14 +121,22 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
         result=sql("""
             SELECT CASE WHEN p."SubmittedAtUtc" IS NULL THEN 0 ELSE 1 END,
                    p."Score"::text,
-                   count(r."Id")::text
+                   COUNT(r."Id") FILTER (WHERE r."IsCorrect"=true)::text,
+                   COUNT(r."Id")::text,
+                   COALESCE(MAX(r."Answer"),'')
             FROM "PracticeAttempts" p
             JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
             LEFT JOIN "PracticeResponses" r ON r."PracticeAttemptItemId"=ai."Id"
-                 AND r."IsCorrect"=true
             WHERE p."Id"='"""+attempt_id+"""'
-            GROUP BY p."Id",p."SubmittedAtUtc",p."Score";""").split("|")
-        if len(result)!=3 or result[0]!="1" or float(result[1])!=1.0 or result[2]!="1":
+            GROUP BY p."Id",p."SubmittedAtUtc",p."Score";""").split("|",4)
+        if len(result)!=5 or result[0]!="1" or result[3]!="1" or result[4]!=answer:
+            return {"status":"MISSING_SUBMITTED_RESPONSE_OR_ANSWER_MISMATCH",
+                    "family":family,"answerMode":answer_mode}
+        if answer_mode=="malformed":
+            if float(result[1])!=0.0 or result[2]!="0":
+                return {"status":"MALFORMED_ANSWER_INCORRECTLY_ACCEPTED","family":family}
+            return {"status":"MALFORMED_ANSWER_REJECTED_AND_PERSISTED","family":family}
+        if float(result[1])!=1.0 or result[2]!="1":
             return {"status":"INCORRECT_GRADE_OR_PERSISTENCE","family":family}
         if synthetic_survey:
             return {"status":"SYNTHETIC_SURVEY_TALLY_PERSISTED_NEEDS_REAL_TEACHER_VERIFICATION",
@@ -142,11 +159,13 @@ def summarize(rows):
     return {
         "batchId":"US-CCSS-B001","checked":500,"byStatus":statuses,
         "generationAndSelfGradingPassed":grade_passed,"notSelfGraded":500-grade_passed,
+        "malformedAnswersRejectedAndPersisted":sum(r.get("negativeStatus")=="MALFORMED_ANSWER_REJECTED_AND_PERSISTED" for r in rows),
+        "malformedAnswersNotVerified":sum(r.get("negativeStatus")!="MALFORMED_ANSWER_REJECTED_AND_PERSISTED" for r in rows),
         "independentlyMathVerified":0,"teacherAcademicApproved":0,
         "productionAuthenticatedUatApproved":0,"releaseDecision":"NO_GO",
         "syntheticSurveyCount":statuses.get("SYNTHETIC_SURVEY_TALLY_PERSISTED_NEEDS_REAL_TEACHER_VERIFICATION",0),
         "realSurveyParticipantsVerified":0,
-        "assurance":"Synthetic school HTTPS and internal stored CorrectAnswer only. Does not independently validate source objectives, the generated answer oracle, wrong-answer rejection, media accessibility, or real-student production UAT.",
+        "assurance":"Synthetic school HTTPS: correct-answer self-grading plus a deliberately malformed submitted-answer rejection for every lesson, not independent source mathematics or real-student UAT. No human survey respondents were consulted.",
         "lessons":rows
     }
 
@@ -174,5 +193,7 @@ if __name__=="__main__":
             self.assertEqual(x["generationAndSelfGradingPassed"],500)
             self.assertEqual(x["releaseDecision"],"NO_GO")
             self.assertEqual(x["independentlyMathVerified"],0)
+            self.assertEqual(x["malformedAnswersNotVerified"],500)
+            self.assertEqual(x["malformedAnswersRejectedAndPersisted"],0)
             self.assertRaises(ValueError,summarize,data[:499])
     unittest.main()
