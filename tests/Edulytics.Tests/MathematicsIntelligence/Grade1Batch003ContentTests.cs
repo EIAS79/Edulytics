@@ -1,3 +1,4 @@
+using Edulytics.Core.Curriculum;
 using System.Reflection;
 using Edulytics.Core.Lessons;
 using Edulytics.Services.LessonContent;
