@@ -57,3 +57,35 @@ jobs:
           path: artifacts/curriculum-delivery/US-CCSS-MATH/B001/effective-learner-content-triage.json
           if-no-files-found: warn
           retention-days: 30
+
+  # Exact-SHA source inventory and authentic independent mathematical checks.
+  # These existing tests do NOT certify academic parity for all 500 lessons.
+  b001-source-and-math:
+    name: b001-independent-source-content-and-math
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Cross-check all 500 source-goal and original-student-activity packets
+        run: |
+          node --test tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs
+          node --test tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs
+          node --test tests/us-ccss-b001-500-reviewer-worklist.test.cjs
+          node --test tests/us-ccss-b001-source-remediation-500.test.cjs
+      - name: Restore the source-mathematics test project
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Run existing independent mathematical/source-goal tests
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --filter 'FullyQualifiedName~UsCcssB001SourceGoalPracticeQuestionsTests|FullyQualifiedName~UsCommonCoreOrphanChildIndependentOracleTests|FullyQualifiedName~CommonCoreG2HundredsPlaceValueSourceCorrectionsTests' \
+            --logger 'console;verbosity=normal'
+      - name: Preserve strict educational scope
+        run: |
+          echo '500 source-linked identities audited; existing targeted independent mathematical tests passed.'
+          echo 'NOT 500 lesson-specific academic approvals, original student activity parity, or live UAT.'
