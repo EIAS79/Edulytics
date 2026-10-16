@@ -950,6 +950,15 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 source lesson missing existing contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode] = reviewed;
         }
+        // Four original IM 2021 G2/G3 source-goal repairs:
+        // do not silently fall back to generic outcome projections.
+        foreach (var reviewed in UsCcssB001SourceGoalPracticeContracts.Reviewed)
+        {
+            if (!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
