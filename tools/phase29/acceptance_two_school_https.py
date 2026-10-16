@@ -988,7 +988,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         WHERE u."Email"='commoncore-primary.student.secondary@edulytiks.com';""").splitlines()
     assert len(original_secondary_enrolments) == 1, (
         "secondary fixture must have one original class enrollment")
-    from b001_practice_form_coverage import has_lesson_start_form, coverage_report
+    from b001_practice_form_coverage import has_lesson_start_form, has_lesson_start_nonce, coverage_report
     b001_practice_forms = []
     b001_e2e_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_ATTEMPTS") == "1"
     b001_e2e_rows = []
@@ -1040,6 +1040,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             "ordinal": ordinal,
             "lessonCode": code,
             "hasLessonStartForm": has_lesson_start_form(body),
+            "hasUniqueLessonStartNonce": has_lesson_start_nonce(body),
         })
 
         if b001_e2e_enabled:
@@ -1076,6 +1077,9 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         assert practice_matrix["missingLessonStartForms"] == 0, (
             "B001 Practice CTA remains incomplete for a 500-lesson release",
             practice_matrix["missingLessonStartForms"])
+        assert practice_matrix["missingLessonStartNonces"] == 0, (
+            "B001 Practice lesson-start forms lack per-render idempotency nonces",
+            practice_matrix["missingLessonStartNonces"])
 
     if b001_e2e_enabled:
         b001_attempts = summarize(b001_e2e_rows)
