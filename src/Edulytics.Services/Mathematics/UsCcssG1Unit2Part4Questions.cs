@@ -147,10 +147,10 @@ internal static class UsCcssG1Unit2Part4Questions
             return p.Count==3 && p.TryGetValue("kind",out var kind) &&
                 kind is >=0 and <=2;
         if(family==Equations)
-            return p.Count==4 && p.TryGetValue("mode",out var mode) &&
-                mode is 0 or 1 && p.TryGetValue("flip",out var flip) &&
+            return p.Count==4 && p.TryGetValue("mode",out var equationMode) &&
+                equationMode is 0 or 1 && p.TryGetValue("flip",out var flip) &&
                 flip is 0 or 1;
-        return p.Count==3 && p.TryGetValue("mode",out var mode) &&
-            mode is >=0 and <=3;
+        return p.Count==3 && p.TryGetValue("mode",out var storyMode) &&
+            storyMode is >=0 and <=3;
     }
 }
