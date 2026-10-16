@@ -992,12 +992,10 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
     b001_practice_forms = []
     b001_e2e_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_ATTEMPTS") == "1"
     b001_e2e_rows = []
-    b001_e2e_session_grade = None
-    b001_e2e_csrf = None
-    b001_e2e_adoption = None
     if b001_e2e_enabled:
         from b001_practice_attempt_probe import (
-            probe_lesson, summarize, extract_csrf, extract_adoption)
+            probe_lesson, summarize, extract_csrf, extract_adoption,
+            extract_idempotency_key)
 
     for ordinal, lesson in enumerate(source_lessons, 1):
         code = lesson["lessonCode"]
@@ -1045,22 +1043,22 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         })
 
         if b001_e2e_enabled:
-            if b001_e2e_session_grade != target_grade:
-                try:
-                    practice_index = get_page(grade_student, "/student/practice")
-                    b001_e2e_csrf = extract_csrf(practice_index)
-                    b001_e2e_adoption = extract_adoption(practice_index)
-                except (urllib.error.HTTPError, AssertionError):
-                    b001_e2e_csrf = None
-                    b001_e2e_adoption = None
-                b001_e2e_session_grade = target_grade
+            # Fresh actual form for every attempt. CSRF is reusable, while
+            # the explicit idempotency nonce must be unique per form render.
+            try:
+                practice_index = get_page(grade_student, "/student/practice")
+                csrf = extract_csrf(practice_index)
+                adoption = extract_adoption(practice_index)
+                nonce = extract_idempotency_key(practice_index)
+            except (urllib.error.HTTPError, AssertionError):
+                csrf = adoption = nonce = None
             result = probe_lesson(grade_student, BASE, lesson_id,
-                                  b001_e2e_adoption, b001_e2e_csrf, sql)
+                                  adoption, csrf, nonce, sql)
             result["ordinal"] = ordinal
             result["lessonCode"] = code
             b001_e2e_rows.append(result)
             print("B001_DISPOSABLE_500_REAL_PRACTICE_PROBE",
-                  ordinal, code, result["status"], flush=True)
+                  ordinal, code, result["status"], result.get("httpStatus", ""), flush=True)
 
         print("B001_500_DISPOSABLE_AUTHENTICATED_PAGE_PASS",
               ordinal, code, flush=True)
