@@ -5,23 +5,42 @@ on:
     branches: [main]
     paths:
       - 'tools/curriculum/us-ccss-b001-acceptance-gate.cjs'
+      - 'tools/curriculum/us-ccss-b001-reconcile-recorded-p4.cjs'
       - 'tests/us-ccss-b001-acceptance-gate.test.cjs'
+      - 'tests/us-ccss-b001-reconcile-recorded-p4.test.cjs'
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
       - '.github/workflows/us-ccss-b001-acceptance-gate.yml'
   push:
     branches: [main]
     paths:
       - 'tools/curriculum/us-ccss-b001-acceptance-gate.cjs'
+      - 'tools/curriculum/us-ccss-b001-reconcile-recorded-p4.cjs'
       - 'tests/us-ccss-b001-acceptance-gate.test.cjs'
+      - 'tests/us-ccss-b001-reconcile-recorded-p4.test.cjs'
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
       - '.github/workflows/us-ccss-b001-acceptance-gate.yml'
+  # Reconcile P4 evidence after an already-run source, engine or HTTPS workflow.
+  # This does not replay any 500-lesson test and can never itself approve B001.
+  workflow_run:
+    workflows:
+      - B001 Effective Learner Content Review
+      - B001 Real 500 Lesson Engine Sampling
+      - US CCSS Authenticated Academic Acceptance
+    types: [completed]
   workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: Exact 40-character tested commit SHA (empty for the negative-control run)
+        required: false
+        type: string
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   negative-control:
+    if: github.event_name != 'workflow_run'
     name: b001-fail-closed-negative-control
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -30,8 +49,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Unit tests for 500-lesson release gate
-        run: node --test tests/us-ccss-b001-acceptance-gate.test.cjs
+      - name: Unit tests for 500-lesson gate and recorded P4 reconciliation
+        run: |
+          node --test tests/us-ccss-b001-acceptance-gate.test.cjs
+          node --test tests/us-ccss-b001-reconcile-recorded-p4.test.cjs
       - name: Confirm current B001 cannot pass without full academic evidence
         shell: bash
         run: |
@@ -50,3 +71,177 @@ jobs:
           node -e 'const d=require("/tmp/b001-current-no-go.json");
             if(d.outcome!=="NO_GO" || d.evidenceAcceptedCount!==0 ||
                d.deployed!==false) process.exit(5)'
+
+  recorded-p4-evidence:
+    name: b001-reuse-real-P4-artifacts-not-academic-release
+    if: github.event_name == 'workflow_run' || (github.event_name == 'workflow_dispatch' && inputs.candidate_sha != '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    permissions:
+      contents: read
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Always run trusted default-branch reconciliation code, including
+          # for PR-head candidate artifacts. Do not execute a PR's scripts.
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Confirm exact triggering source and discover earlier PASS artifacts
+        id: discover
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          TRIGGER_REPO: ${{ github.event.workflow_run.head_repository.full_name }}
+          TRIGGER_SHA: ${{ github.event.workflow_run.head_sha }}
+          INPUT_SHA: ${{ inputs.candidate_sha }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "workflow_run" ]; then
+            test "$TRIGGER_REPO" = "EIAS79/Edulytics"
+            SHA="$TRIGGER_SHA"
+          else
+            SHA="$INPUT_SHA"
+          fi
+          [[ "$SHA" =~ ^[0-9a-fA-F]{40}$ ]]
+          echo "candidate_sha=$SHA" >> "$GITHUB_OUTPUT"
+          mkdir -p /tmp/b001-recorded-p4
+          echo "$SHA" > /tmp/b001-recorded-p4/candidate-sha.txt
+          # Read the historical SUCCESSFUL runs for the exact same tested commit.
+          # This reuses their archived test results and never executes a lesson.
+          choose_run() {
+            local workflow="$1" run
+            run="$(gh run list --repo EIAS79/Edulytics --workflow "$workflow" \
+              --commit "$SHA" --limit 100 --json databaseId,status,conclusion \
+              --jq '[.[] | select(.status=="completed" and .conclusion=="success")] | sort_by(.databaseId) | last | .databaseId')"
+            if [[ ! "$run" =~ ^[1-9][0-9]*$ ]]; then
+              echo "No successful exact-SHA prior test run for $workflow" >&2
+              echo "ready=false" >> "$GITHUB_OUTPUT"
+              printf '%s\n' "NO_GO: missing successful prior $workflow" \
+                >> /tmp/b001-recorded-p4/missing-tests.txt
+              return 1
+            fi
+            local actual
+            actual="$(gh api "repos/EIAS79/Edulytics/actions/runs/$run" --jq '.head_sha')"
+            if [ "$actual" != "$SHA" ]; then
+              echo "GitHub run SHA mismatch $run" >&2
+              return 1
+            fi
+            printf '%s' "$run"
+          }
+          missing=0
+          engine="$(choose_run us-ccss-b001-500-engine-sampling.yml)" || missing=1
+          content="$(choose_run us-ccss-b001-effective-content.yml)" || missing=1
+          https="$(choose_run us-ccss-authenticated-acceptance.yml)" || missing=1
+          if [ "$missing" -ne 0 ]; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "engine_run=$engine" >> "$GITHUB_OUTPUT"
+          echo "content_run=$content" >> "$GITHUB_OUTPUT"
+          echo "https_run=$https" >> "$GITHUB_OUTPUT"
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+      - name: Download actual recorded 500-lesson CI artifacts (no tests rerun)
+        if: steps.discover.outputs.ready == 'true'
+        shell: bash
+        env:
+          ENGINE: ${{ steps.discover.outputs.engine_run }}
+          CONTENT: ${{ steps.discover.outputs.content_run }}
+          HTTPS: ${{ steps.discover.outputs.https_run }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/b001-recorded-p4/{engine,content,https}
+          gh run download "$ENGINE" --repo EIAS79/Edulytics \
+            --name b001-500-real-engine-sampling --dir /tmp/b001-recorded-p4/engine
+          gh run download "$CONTENT" --repo EIAS79/Edulytics \
+            --name b001-500-effective-learner-content-triage --dir /tmp/b001-recorded-p4/content
+          gh run download "$HTTPS" --repo EIAS79/Edulytics \
+            --name b001-500-real-practice-grade-probe-not-academic-acceptance \
+            --dir /tmp/b001-recorded-p4/https
+      - name: Verify exact checked-out SHA of the recorded test artifacts
+        if: steps.discover.outputs.ready == 'true'
+        id: verified-checkout
+        shell: bash
+        env:
+          SHA: ${{ steps.discover.outputs.candidate_sha }}
+          ENGINE: ${{ steps.discover.outputs.engine_run }}
+          CONTENT: ${{ steps.discover.outputs.content_run }}
+          HTTPS: ${{ steps.discover.outputs.https_run }}
+        run: |
+          set -euo pipefail
+          ENGINE_TESTED="$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).candidateSha)' \
+            /tmp/b001-recorded-p4/engine/practice-engine-slice.json)"
+          CONTENT_TESTED="$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).candidateSha)' \
+            /tmp/b001-recorded-p4/content/effective-learner-content-triage.json)"
+          [[ "$ENGINE_TESTED" =~ ^[0-9a-fA-F]{40}$ ]]
+          test "$ENGINE_TESTED" = "$CONTENT_TESTED"
+          if [ "$ENGINE_TESTED" != "$SHA" ]; then
+            # pull_request checks often evaluate GitHub's temporary test merge.
+            # Verify the test merge directly in GitHub's trusted commit graph.
+            ENGINE_EVENT="$(gh api "repos/EIAS79/Edulytics/actions/runs/$ENGINE" --jq .event)"
+            CONTENT_EVENT="$(gh api "repos/EIAS79/Edulytics/actions/runs/$CONTENT" --jq .event)"
+            HTTPS_EVENT="$(gh api "repos/EIAS79/Edulytics/actions/runs/$HTTPS" --jq .event)"
+            test "$ENGINE_EVENT" = pull_request
+            test "$CONTENT_EVENT" = pull_request
+            test "$HTTPS_EVENT" = pull_request
+            PARENTS="$(gh api "repos/EIAS79/Edulytics/commits/$ENGINE_TESTED" \
+              --jq '[.parents[].sha] | join(" ")')"
+            set -- $PARENTS
+            test "$#" -eq 2
+            test "$2" = "$SHA"
+            echo "PR test-merge verified: checked out $ENGINE_TESTED, head $SHA"
+          else
+            echo "Exact push checkout verified: $SHA"
+          fi
+          echo "tested_sha=$ENGINE_TESTED" >> "$GITHUB_OUTPUT"
+      - name: Generate truthful 500-row per-lesson P4 results for existing P5
+        if: steps.discover.outputs.ready == 'true'
+        env:
+          SHA: ${{ steps.discover.outputs.candidate_sha }}
+          TESTED_SHA: ${{ steps.verified-checkout.outputs.tested_sha }}
+          ENGINE: ${{ steps.discover.outputs.engine_run }}
+          CONTENT: ${{ steps.discover.outputs.content_run }}
+          HTTPS: ${{ steps.discover.outputs.https_run }}
+        run: |
+          set -euo pipefail
+          node --test tests/us-ccss-b001-reconcile-recorded-p4.test.cjs
+          node tools/curriculum/us-ccss-b001-reconcile-recorded-p4.cjs \
+            --sha="$SHA" --tested-checkout-sha="$TESTED_SHA" \
+            --verified-test-merge-parent-sha="$SHA" --https-run-head-sha="$SHA" \
+            --engine-run="$ENGINE" --content-run="$CONTENT" --https-run="$HTTPS" \
+            --engine=/tmp/b001-recorded-p4/engine/practice-engine-slice.json \
+            --content=/tmp/b001-recorded-p4/content/effective-learner-content-triage.json \
+            --https=/tmp/b001-recorded-p4/https/b001-500-real-practice-generation-and-grading-probe.json \
+            --out=/tmp/b001-recorded-p4/partial-lesson-evidence.json
+          # The EXISTING gate consumes the recorded per-lesson results.
+          # It must remain NO_GO while original academic proofs are incomplete.
+          set +e
+          node tools/curriculum/us-ccss-b001-acceptance-gate.cjs \
+            --sha="$TESTED_SHA" --evidence=/tmp/b001-recorded-p4/partial-lesson-evidence.json \
+            > /tmp/b001-recorded-p4/current-acceptance-decision.json
+          rc="$?"
+          set -e
+          cat /tmp/b001-recorded-p4/current-acceptance-decision.json
+          if [ "$rc" -ne 1 ]; then
+            echo "Unexpected acceptance gate status, fail closed" >&2
+            exit 1
+          fi
+          node -e 'const x=require("/tmp/b001-recorded-p4/current-acceptance-decision.json");
+            if(x.outcome!=="NO_GO"||x.evidenceAcceptedCount!==0||x.deployed!==false)
+              process.exit(1)'
+      - name: Retain exact-SHA real P4 evidence and P5 result (never a fake approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-exact-sha-recorded-p4-to-existing-p5-no-academic-approval
+          path: |
+            /tmp/b001-recorded-p4/partial-lesson-evidence.json
+            /tmp/b001-recorded-p4/current-acceptance-decision.json
+            /tmp/b001-recorded-p4/candidate-sha.txt
+            /tmp/b001-recorded-p4/missing-tests.txt
+          if-no-files-found: warn
+          retention-days: 30
