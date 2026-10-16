@@ -155,7 +155,8 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
          UsCcssT001AuthoredActivities.Supports(family.Trim()) ||
-         UsCcssT001RepresentationChoices.Supports(family.Trim()));
+         UsCcssT001RepresentationChoices.Supports(family.Trim()) ||
+         UsCcssG1Batch03DataQuestions.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -289,6 +290,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssG1Batch03DataQuestions.Supports(family))
+            return UsCcssG1Batch03DataQuestions.Verify(family, parameters, answer);
         if (UsCcssT001AuthoredActivities.Supports(family))
             return UsCcssT001AuthoredActivities.Verify(family, parameters, answer);
         if (UsCcssT001ConstructShapeGraph.Supports(family))
@@ -875,6 +878,12 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssG1Batch03DataQuestions.Supports(family))
+        {
+            var data=UsCcssG1Batch03DataQuestions.Build(family,random);
+            return new ExactProblem(data.Family,data.Prompt,data.Solution,
+                data.ItemType,data.Parameters);
+        }
         if (UsCcssT001AuthoredActivities.Supports(family))
         {
             var authored=UsCcssT001AuthoredActivities.Build(family,random);
@@ -2690,6 +2699,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssG1Batch03DataQuestions.Supports(problem.Family))
+            return UsCcssG1Batch03DataQuestions.Solve(problem.Family,p);
         if (UsCcssT001AuthoredActivities.Supports(problem.Family))
             return UsCcssT001AuthoredActivities.Solve(problem.Family,p);
         if (UsCcssT001ConstructShapeGraph.Supports(problem.Family))
