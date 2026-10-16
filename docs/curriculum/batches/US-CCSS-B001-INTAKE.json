@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "planId": "EDULYTICS-US-CCSS-500-V2",
   "batchId": "US-CCSS-B001",
-  "status": "SOURCE_AND_STORED_CONTENT_INDEXED_DB_UNVERIFIED",
+  "status": "SOURCE_CONTENT_AND_PRODUCTION_IDENTITY_MATCHED_AWAITING_500_LESSON_ACCEPTANCE",
   "sourceInventory": "docs/curriculum/us-ccss-g1-g12-structural-audit.json",
   "sourceInventoryGeneratedUtc": "2026-10-11T20:55:36.562Z",
   "snapshotLessonCount": 1560,
   "batchPlannedTotal": 500,
   "exactLessonCodesResolved": true,
-  "catalogueDatabaseReconciliation": "NOT_STARTED",
+  "catalogueDatabaseReconciliation": "500_OF_500_CANONICAL_CODES_GRADE_ORDINALS_TITLES_MATCHED_READ_ONLY",
   "sourceLicenseReview": "NOT_STARTED",
   "segments": [
     {
@@ -56,26 +56,45 @@
     "newWorkCount": 0
   },
   "unprocessedPositionsIncludingHistorical": 500,
-  "newLessonsRequiringReconciliationOrProcessing": 490,
+  "newLessonsRequiringReconciliationOrProcessing": 485,
   "actualLessonCodesInventoried": 500,
   "newLessonsReviewed": 0,
   "newLessonsTested": 0,
   "lessonsInternallyAcceptedUnderThisBatch": 0,
-  "blocked": [],
+  "blocked": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L01",
+      "reason": "Source-goal/learner steps mismatch; correction prepared in draft PR #506, not released"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L02",
+      "reason": "Generic/unfinished learner instruction; correction prepared in draft PR #506, not released"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L03",
+      "reason": "Three-digit regrouping missing in effective learner steps; correction prepared in draft PR #506, not released"
+    }
+  ],
   "nextUnprocessedCursor": {
     "gradeOrCourse": "Grade 1",
-    "gradeOrdinal": 11,
-    "reason": "Continue ordinary sequence while running Grade 2 lesson content source-repair track concurrently; don't skip Grade 1."
+    "gradeOrdinal": 16,
+    "reason": "G1 L01-L15 were previously published in separate releases; B001 drift verification is still pending for those 15."
   },
   "github": {
-    "policyPr": null,
-    "implementationPrs": [],
-    "verifiedBatchCommitSha": null
+    "policyPr": "https://github.com/EIAS79/Edulytics/pull/500",
+    "inventoryPr": "https://github.com/EIAS79/Edulytics/pull/501",
+    "mathTriagePr": "https://github.com/EIAS79/Edulytics/pull/502",
+    "measuredCheckpointPr": "https://github.com/EIAS79/Edulytics/pull/503",
+    "releaseGatePr": "https://github.com/EIAS79/Edulytics/pull/505",
+    "sourceCorrectionDraftPr": "https://github.com/EIAS79/Edulytics/pull/506",
+    "verifiedBatchCommitSha": null,
+    "implementationStatus": "Pre-release staging and evidence; no B001 500-lesson approval"
   },
   "deployment": {
     "verifiedLiveSha": null,
     "renderDeployId": null,
-    "ownerUat": "NOT_STARTED"
+    "ownerUat": "NOT_STARTED",
+    "status": "B001_NOT_RELEASED"
   },
   "notes": [
     "All 500 real canonical LessonCodes were extracted from the 2021 Grade 1-4 IM-based source blueprints, and linked to 500 stored content records by matching titles, canonical codes, outcomes and source URLs.",
@@ -86,7 +105,10 @@
     "Grade ordinals must not be confused with unit lesson numbers; B001 ends at PED:US-CCSS-MATH:G4:U04:L20.",
     "On 16 Oct 2026 B001 500-lesson static math capability triage completed in GitHub Actions run 38877987637: 497 registry READY_VERIFIED, 3 require review; semantic content 383 UNCLASSIFIED, 104 PASS_WITH_WARNINGS, 13 PASS_TARGETED.",
     "Three Grade 2 Unit 5 records require source-grounded content repair. No automatic promotion to acceptance from these numbers.",
-    "Actual independent Practice/answer tests, DB parity, published runtime, production UAT still NOT_RUN."
+    "Actual independent Practice/answer tests, DB parity, published runtime, production UAT still NOT_RUN.",
+    "Read-only Neon production SQL confirms 500/500 B001 source LessonCodes with exact NativeLevel, SortOrder, Title on 2026-10-16; this does not establish actual learner content or Practice parity.",
+    "Historical 15 Grade 1 lessons are already shipped in T001 first ten and G1 batch03 five (commit 54833b16, prior Render deployment dep-db8opibbc2fs738nuvd0); correct next not previously released ordinal is G1 #16.",
+    "500/500 release acceptance remains NO_GO. The fail-closed release evidence gate is merged in PR #505; G2 source correction draft PR #506 is held from production until batch gates are satisfied."
   ],
   "sourceContentIndexFile": "docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json",
   "sourceContentIndexGenerator": "tools/curriculum/us-ccss-b001-inventory.cjs",
@@ -133,5 +155,28 @@
       }
     ],
     "safetyRule": "READY_VERIFIED is a registry/capability classification, NOT independent question correctness or internal academic acceptance. All 500 require runtime evidence before acceptance."
+  },
+  "productionDatabaseReadEvidence": {
+    "provider": "Neon",
+    "projectId": "tiny-lab-44877119",
+    "branchId": "br-frosty-block-b52tnjky",
+    "observationDate": "2026-10-16",
+    "queryType": "SELECT-only canonical lesson identity cross-check",
+    "comparedCodes": 500,
+    "exactCodeGradeOrdinalTitleMatches": 500,
+    "mismatches": 0,
+    "totalCodesForGrade1ThroughGrade4": 584,
+    "outOfBatchGrade4Codes": 84,
+    "limitations": "No production content-body parity, effective-materialized SHA, authenticated Practice response or database write tests covered by this identity query."
+  },
+  "priorPublishedLessonBaseline": {
+    "total": 15,
+    "historicalT001FirstTen": 10,
+    "grade1Batch03Lessons11To15": 5,
+    "historicalBatch03Commit": "54833b1669fe33f39c0043ac229f7440e1c8da9a",
+    "historicalBatch03RenderDeployment": "dep-db8opibbc2fs738nuvd0",
+    "historicalBatch03RenderState": "previously_live_then_superseded",
+    "editionAndCodeDriftChecksForB001": "NOT_RUN",
+    "limitations": "Previous release ≠ B001 academic acceptance. Prior first-15 must be compared against current effective content and actual live lesson behavior."
   }
 }
