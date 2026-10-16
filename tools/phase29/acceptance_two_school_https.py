@@ -919,6 +919,37 @@ for source, _ in SCHOOLS:
     print("DISPOSABLE_CROSS_TENANT_ASSESSMENT_DENIAL_PASS", source, target)
     print("DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS", source, target)
 
+# Optional B001 breadth check: real authenticated GET for all 146 Grade 1
+# canonical pages using the existing disposable, school-scoped student account.
+# This DOES NOT grade 146 Practice attempts, certify publisher fidelity, or
+# permit a cross-grade student to access lessons outside the assigned school.
+if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_G1_ALL_READS") == "1":
+    grade_rows = sql("""
+        SELECT "Code", "Id"::text, "Title"
+        FROM "CurriculumPedagogicalLessons"
+        WHERE "NativeLevel"='Grade 1'
+          AND "Code" LIKE 'PED:US-CCSS-MATH:G1:%'
+        ORDER BY "SortOrder";""").splitlines()
+    assert len(grade_rows) == 146, ("unexpected G1 catalogue size", len(grade_rows))
+    seen_codes = set()
+    grade1_student = students["commoncore-primary"]
+    for index, record in enumerate(grade_rows, 1):
+        code, lesson_id, lesson_title = record.split("|", 2)
+        assert code.startswith("PED:US-CCSS-MATH:G1:"), ("wrong programme", code)
+        assert code not in seen_codes, ("duplicated lesson", code)
+        seen_codes.add(code)
+        assert re.fullmatch(r"[a-f0-9-]{36}", lesson_id), ("bad canonical GUID", code)
+        body = html.unescape(
+            get_page(grade1_student, "/student/learning/lesson/" + lesson_id))
+        assert "rich-lesson-section" in body, (code, "no rich teaching in authenticated HTML")
+        rendered_text = re.sub(r"\\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
+        expected_title = re.sub(r"\\s+", " ", html.unescape(lesson_title)).casefold()
+        assert expected_title in rendered_text, (
+            code, "canonical title missing from student HTML", expected_title)
+        print("B001_DISPOSABLE_G1_AUTHENTICATED_PAGE_PASS", index, code, flush=True)
+    assert len(seen_codes) == 146
+    print("B001_DISPOSABLE_G1_146_AUTHENTICATED_READS_PASS",len(seen_codes),flush=True)
+
 # POST real teacher assessment and validate persistence on disposable DB.
 import uuid
 teacher = teachers[SCHOOLS[0][0]]
