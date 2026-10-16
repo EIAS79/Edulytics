@@ -975,6 +975,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L08-L10 source lesson missing practice mapping: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Source-specific Grade 1 Unit 2 L11-L15 comparison and story items.
+        foreach(var reviewed in UsCcssG1Unit2Part4PracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G1 U02 L11-L15 source lesson missing existing contract: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
