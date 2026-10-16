@@ -1,0 +1,52 @@
+name: B001 Acceptance Gate Negative Control
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/curriculum/us-ccss-b001-acceptance-gate.cjs'
+      - 'tests/us-ccss-b001-acceptance-gate.test.cjs'
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - '.github/workflows/us-ccss-b001-acceptance-gate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/curriculum/us-ccss-b001-acceptance-gate.cjs'
+      - 'tests/us-ccss-b001-acceptance-gate.test.cjs'
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - '.github/workflows/us-ccss-b001-acceptance-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  negative-control:
+    name: b001-fail-closed-negative-control
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Unit tests for 500-lesson release gate
+        run: node --test tests/us-ccss-b001-acceptance-gate.test.cjs
+      - name: Confirm current B001 cannot pass without full academic evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha="$(git rev-parse HEAD)"
+          set +e
+          node tools/curriculum/us-ccss-b001-acceptance-gate.cjs \
+            --sha="$sha" > /tmp/b001-current-no-go.json
+          rc="$?"
+          set -e
+          cat /tmp/b001-current-no-go.json
+          if [ "$rc" -eq 0 ]; then
+            echo "FAIL: incomplete B001 incorrectly passed readiness gate" >&2
+            exit 2
+          fi
+          node -e 'const d=require("/tmp/b001-current-no-go.json");
+            if(d.outcome!=="NO_GO" || d.evidenceAcceptedCount!==0 ||
+               d.deployed!==false) process.exit(5)'
