@@ -988,6 +988,8 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         WHERE u."Email"='commoncore-primary.student.secondary@edulytiks.com';""").splitlines()
     assert len(original_secondary_enrolments) == 1, (
         "secondary fixture must have one original class enrollment")
+    from b001_practice_form_coverage import has_lesson_start_form, coverage_report
+    b001_practice_forms = []
     for ordinal, lesson in enumerate(source_lessons, 1):
         code = lesson["lessonCode"]
         assert code in by_code, ("missing canonical DB lesson", ordinal, code)
@@ -1026,10 +1028,30 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         rendered = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
         expected = re.sub(r"\s+", " ", html.unescape(title)).casefold()
         assert expected in rendered, (code, "missing exact lesson title", expected)
+
+        b001_practice_forms.append({
+            "ordinal": ordinal,
+            "lessonCode": code,
+            "hasLessonStartForm": has_lesson_start_form(body),
+        })
+
         print("B001_500_DISPOSABLE_AUTHENTICATED_PAGE_PASS",
               ordinal, code, flush=True)
     print("B001_500_DISPOSABLE_AUTHENTICATED_HTML_COMPLETE",
           len(source_lessons), grade_counts, flush=True)
+
+    practice_matrix = coverage_report(b001_practice_forms)
+    Path("/tmp/b001-500-lesson-practice-form-preflight.json").write_text(
+        json.dumps(practice_matrix, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8")
+    print("B001_500_LESSON_PRACTICE_CTA_PREFLIGHT",
+          practice_matrix["lessonStartFormsPresent"],
+          practice_matrix["missingLessonStartForms"], flush=True)
+    if os.environ.get("EDULYTICS_B001_REQUIRE_ALL500_PRACTICE_CTA") == "1":
+        assert practice_matrix["missingLessonStartForms"] == 0, (
+            "B001 Practice CTA remains incomplete for a 500-lesson release",
+            practice_matrix["missingLessonStartForms"])
+
     restored = sql("""
         WITH restoration AS (
         UPDATE "StudentEnrollments" e
