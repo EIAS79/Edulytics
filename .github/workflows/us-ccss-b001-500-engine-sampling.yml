@@ -1,0 +1,45 @@
+name: B001 Real 500 Lesson Engine Sampling
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001FiveHundredPracticeEngineTests.cs'
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - '.github/workflows/us-ccss-b001-500-engine-sampling.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001FiveHundredPracticeEngineTests.cs'
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - '.github/workflows/us-ccss-b001-500-engine-sampling.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  engine-questions:
+    name: b001-500-engine-sampling
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore unit-test project
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Real practice engine sampling over B001 500 lesson codes
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --filter 'FullyQualifiedName~UsCcssB001FiveHundredPracticeEngineTests' \
+            --logger 'console;verbosity=normal'
+      - name: Store 500-lesson non-certifying engine evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-500-real-engine-sampling
+          path: artifacts/curriculum-delivery/US-CCSS-MATH/B001/practice-engine-slice.json
+          if-no-files-found: warn
+          retention-days: 30
