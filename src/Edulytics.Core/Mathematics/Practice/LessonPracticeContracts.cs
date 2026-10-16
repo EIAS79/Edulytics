@@ -942,6 +942,14 @@ public static class LessonPracticeContractRegistry
                     "G1 B03 source lesson missing original contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // B001 first source-reviewed unshipped grade positions 16–18.
+        foreach (var reviewed in UsCcssG1Unit2StoryPracticeContracts.Reviewed)
+        {
+            if (!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G1 U02 source lesson missing existing contract: " + reviewed.LessonCode);
+            byLesson[reviewed.LessonCode] = reviewed;
+        }
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
