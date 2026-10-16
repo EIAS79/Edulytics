@@ -120,6 +120,14 @@ def main() -> int:
         "warning": WARNING,
         "summary": result["summary"],
         "globalAuditBlockerCount": len(result["globalAuditBlockers"]),
+        "needsAttention": [
+            {"lessonCode": row["lessonCode"], "title": row["title"],
+             "generationReadiness": row["generationReadiness"],
+             "semanticContentStatus": row["semanticContentStatus"],
+             "reasons": row["reasons"]}
+            for row in result["lessons"]
+            if row["generationReadiness"] not in {"READY_VERIFIED", "READY_CONTEXTUAL"}
+        ][:20],
         "artifact": str(OUTPUT.relative_to(ROOT)) if args.write_report else None,
     }, ensure_ascii=False, indent=2))
     return 0
