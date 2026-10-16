@@ -24,5 +24,5 @@ The source preparation and the complete lesson include activity and learning-goa
 
 - Code: `CommonCoreB001SourceGoalMismatchCorrections.cs`; tests: `CommonCoreB001SourceGoalMismatchCorrectionsTests.cs`. The new examples are original Edulytics text.
 - Per-lesson math arithmetic, effective Rich V2 learner rendering, old-version drift and idempotence have automated regression coverage, pending GitHub CI results on the exact branch SHA.
-- Matching **Practice question families** for each primary source learning goal, authentic student attempts/response persistence for these exact four, lesson-specific teacher signoff, visual activity parity and final source licence verification are **not complete**.
+- Matching **Practice question families** for each primary source learning goal are now implemented and wired in the same PR via `UsCcssB001SourceGoalPracticeContracts` and `UsCcssB001SourceGoalQuestions`. Exact independent-solve and wrong-answer/tamper tests cover 4 families; CI remains the arbiter of their technical validity. **Actual visual activity parity, authenticated student-attempt persistence for these exact four, independent pedagogical review, lesson-level signoff and final source rights verification remain open.**
 - No B001 academic approval, no full 500-lesson release, and no owner production UAT is asserted. **B001 NO_GO** remains in force.
