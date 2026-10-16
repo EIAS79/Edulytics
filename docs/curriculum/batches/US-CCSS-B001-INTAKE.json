@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "planId": "EDULYTICS-US-CCSS-500-V2",
   "batchId": "US-CCSS-B001",
-  "status": "PLANNED_NOT_INVENTORIED",
+  "status": "SOURCE_AND_STORED_CONTENT_INDEXED_DB_UNVERIFIED",
   "sourceInventory": "docs/curriculum/us-ccss-g1-g12-structural-audit.json",
   "sourceInventoryGeneratedUtc": "2026-10-11T20:55:36.562Z",
   "snapshotLessonCount": 1560,
   "batchPlannedTotal": 500,
-  "exactLessonCodesResolved": false,
+  "exactLessonCodesResolved": true,
   "catalogueDatabaseReconciliation": "NOT_STARTED",
   "sourceLicenseReview": "NOT_STARTED",
   "segments": [
@@ -57,7 +57,7 @@
   },
   "unprocessedPositionsIncludingHistorical": 500,
   "newLessonsRequiringReconciliationOrProcessing": 490,
-  "actualLessonCodesInventoried": 0,
+  "actualLessonCodesInventoried": 500,
   "newLessonsReviewed": 0,
   "newLessonsTested": 0,
   "lessonsInternallyAcceptedUnderThisBatch": 0,
@@ -77,8 +77,15 @@
     "ownerUat": "NOT_STARTED"
   },
   "notes": [
-    "Planning checkpoint only: no actual 500-ID inventory or per-lesson audit has been run.",
-    "Grade ordinals must be reconciled with source and DB; do not assume they are unit lesson numbers.",
-    "Do not treat prior T001 records as new passes or claim B001 accepted."
-  ]
+    "All 500 real canonical LessonCodes were extracted from the 2021 Grade 1-4 IM-based source blueprints, and linked to 500 stored content records by matching titles, canonical codes, outcomes and source URLs.",
+    "Structural presence of content does not verify pedagogical correctness, real student-visible runtime composition, generator fidelity, publisher validity/licence, or database consistency.",
+    "Actual production database reconciliation and independent question/answer verification are NOT_RUN; the 490 non-T001 lessons are NOT_REVIEWED.",
+    "Ten historical T001 rows need exact-commit/content drift checks before their prior published status may contribute to a new batch acceptance gate.",
+    "Regenerate the source/content catalogue with node tools/curriculum/us-ccss-b001-inventory.cjs --write; run --check before each acceptance attempt.",
+    "Grade ordinals must not be confused with unit lesson numbers; B001 ends at PED:US-CCSS-MATH:G4:U04:L20."
+  ],
+  "sourceContentIndexFile": "docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json",
+  "sourceContentIndexGenerator": "tools/curriculum/us-ccss-b001-inventory.cjs",
+  "catalogueSourceContentStructuralReconciliation": "500_UNIQUE_CODES_AND_500_STORED_CONTENT_RECORDS_MATCHED",
+  "storedEnglishLessonRecordsWithRequiredFields": 500
 }
