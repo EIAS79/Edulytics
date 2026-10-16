@@ -171,6 +171,12 @@ artifacts or temporary acceptance directories, not normal source commits.
 The already-tracked historical `phase08-screenshots.zip` is preserved in this
 phase. Phase 24 prevents new artifacts; it does not rewrite repository history.
 
+## Curriculum lesson delivery — current execution plan
+
+Future mathematics curriculum work follows the [grade-first, five-lesson execution plan](docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md): inventory each grade once, process five consecutive lessons per chunk, reuse lesson content and Practice capabilities, test only affected behaviour, then commit and release under existing protections. The historical 500-lesson-batch plan is superseded. The first ten US Grade 1 lessons already published in T001 count as the first two five-lesson groups; next is Grade 1 Lessons 11–15.
+
+This is an execution **policy**, not a change to live CI, protected branch settings, or Render deploy triggers. Those require separate engineered and tested updates.
+
 ## Deployment and operations
 
 See:
