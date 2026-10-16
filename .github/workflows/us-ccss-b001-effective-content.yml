@@ -58,8 +58,8 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
-  # This verifies real publisher-source crosswalk and independently recomputes
-  # candidate math answers; it DOES NOT claim 500/500 educational parity.
+  # Exact-SHA source inventory and authentic independent mathematical checks.
+  # These existing tests do NOT certify academic parity for all 500 lessons.
   b001-source-and-math:
     name: b001-independent-source-content-and-math
     runs-on: ubuntu-latest
@@ -72,22 +72,20 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.200'
-      - name: Check all 500 original publisher lesson goals and student activities (not lesson approval)
-        run: node --test tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs
-      - name: Verify source-task PDF references and recorded Grade 1 text inspection limits
+      - name: Cross-check all 500 source-goal and original-student-activity packets
         run: |
+          node --test tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs
           node --test tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs
-          node --test tests/us-ccss-b001-g1-u02-original-pdf-task-review.test.cjs
           node --test tests/us-ccss-b001-500-reviewer-worklist.test.cjs
-      - name: Restore source math oracle test project
+          node --test tests/us-ccss-b001-source-remediation-500.test.cjs
+      - name: Restore the source-mathematics test project
         run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
-      - name: Independently recompute source-specific Grade 1 L04–L15 question answers
+      - name: Run existing independent mathematical/source-goal tests
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
-            --filter 'FullyQualifiedName~UsCcssG1Unit2SevenIndependentOracleTests|FullyQualifiedName~UsCcssG1Unit2Part4IndependentOracleTests' \
+            --filter 'FullyQualifiedName~UsCcssB001SourceGoalPracticeQuestionsTests|FullyQualifiedName~UsCommonCoreOrphanChildIndependentOracleTests|FullyQualifiedName~CommonCoreG2HundredsPlaceValueSourceCorrectionsTests|FullyQualifiedName~UsCcssG1Unit2SevenIndependentOracleTests|FullyQualifiedName~UsCcssG1Unit2Part4IndependentOracleTests' \
             --logger 'console;verbosity=normal'
-      - name: Report scope honestly
+      - name: Preserve strict educational scope
         run: |
-          echo '500 original publisher lesson identities/source packets cross-checked.'
-          echo '12 current G1 Unit 2 source-specific mathematical oracle families tested.'
-          echo 'This is NOT 500 lesson academic approval, student-activity parity or live UAT.'
+          echo '500 source-linked identities audited; existing targeted independent mathematical tests passed.'
+          echo 'NOT 500 lesson-specific academic approvals, original student activity parity, or live UAT.'
