@@ -123,7 +123,7 @@ async function main(){
  const tmp=await fsp.mkdtemp(path.join(os.tmpdir(),'b001-pdf-'));
  const records=Array(500).fill(null);let n=0;
  try{
-  async function worker(){while(n<500){const i=n++;records[i]=await audit(lessons[i],tmp,packets[i]);console.log((i+1)+'/500 '+records[i].status+' '+lessons[i].lessonCode+' '+(records[i].flags||[]).join(',')+' '+(records[i].error||''));}}
+  async function worker(){while(n<500){const i=n++;records[i]=await audit(lessons[i],tmp,packets[i]);console.log((i+1)+'/500 '+records[i].status+' '+lessons[i].lessonCode+' '+(records[i].flags||[]).join(',')+' '+(records[i].studentTaskSourceComparison?.status||'')+' '+(records[i].error||''));}}
   await Promise.all([worker(),worker(),worker(),worker()]);
   const summary=summarize(records);
   const report={batchId:'US-CCSS-B001',generatedAt:new Date().toISOString(),
