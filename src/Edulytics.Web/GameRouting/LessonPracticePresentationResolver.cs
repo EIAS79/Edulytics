@@ -45,6 +45,21 @@ public static class LessonPracticePresentationResolver
             return false;
         }
 
+        // Authored Grade 1 activities must reach the dedicated exact Practice
+        // renderer even when Adaptive V2 is disabled. Never silently route
+        // these lessons to a generic selection-only game.
+        if (lessonCode is
+            "PED:US-CCSS-MATH:G1:U01:L02" or
+            "PED:US-CCSS-MATH:G1:U01:L07" or
+            "PED:US-CCSS-MATH:G1:U01:L08" or
+            "PED:US-CCSS-MATH:G1:U01:L09")
+        {
+            presentation = new LessonPracticePresentationRoute(
+                LessonPracticePresentationKind.ServerVerifiedExact,
+                ServerVerifiedRendererKey, null, contract);
+            return true;
+        }
+
         var gameRoute =
             GameLessonRouteResolver.Resolve(
                 lessonCode,

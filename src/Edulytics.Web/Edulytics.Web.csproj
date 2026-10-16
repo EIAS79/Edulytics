@@ -20,6 +20,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="PDFsharp-MigraDoc" Version="6.2.4" />
+    <!-- Override the older PKCS transitive dependency with the patched October 2026 release. -->
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+    <!-- Resolve vulnerable SignalR transitive MessagePack 2.5.302 to patched 2.x line. -->
+    <PackageReference Include="MessagePack" Version="2.5.307" />
   </ItemGroup>
 
 </Project>

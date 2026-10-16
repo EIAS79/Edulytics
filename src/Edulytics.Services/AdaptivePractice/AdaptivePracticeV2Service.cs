@@ -5,6 +5,7 @@ using Edulytics.Core.Entities;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Core.Practice;
 using Edulytics.Services.Assessments;
+using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Services.AdaptivePractice;
 
@@ -422,9 +423,16 @@ public sealed class AdaptivePracticeV2Service(
 
         var now = DateTime.UtcNow;
         var trimmed = answer.Trim();
-        var correct = MathematicsAnswerEquivalence.AreEquivalent(
-            trimmed,
-            item.CorrectAnswer);
+        // Constructed graph counts are an ordered 3-category vector.
+        // Scalar equivalence could erase separators or accept malformed data.
+        var correct = string.Equals(item.GenerationFamily,
+                UsCcssT001ConstructShapeGraph.Family, StringComparison.Ordinal)
+            ? string.Equals(trimmed, item.CorrectAnswer, StringComparison.Ordinal)
+            : UsCcssT001AuthoredActivities.Supports(item.GenerationFamily)
+                ? UsCcssT001AuthoredActivities.GradePersistedAnswer(
+                    item.GenerationFamily, item.CorrectAnswer, trimmed,
+                    item.GenerationParametersJson)
+                : MathematicsAnswerEquivalence.AreEquivalent(trimmed, item.CorrectAnswer);
 
         var existingMisconceptionStates =
             await adaptiveRepository.GetMisconceptionStatesAsync(

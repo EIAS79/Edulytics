@@ -51,7 +51,12 @@ public sealed record PracticeAttemptQuestion(
     string? GenerationParametersJson,
     bool Answered,
     bool? IsCorrect,
-    string? Feedback);
+    string? Feedback)
+{
+    // Display exactly what the student built when reviewing graph answers.
+    // This is already the owned attempt's persisted response, never a key.
+    public string? SubmittedAnswer { get; init; }
+}
 
 public sealed record PracticeAttemptDetails(
     Guid AttemptId,

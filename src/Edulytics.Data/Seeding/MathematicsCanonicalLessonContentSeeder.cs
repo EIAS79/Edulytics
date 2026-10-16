@@ -106,7 +106,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1; // G1 U01 L01 pilot
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2; // L01 pilot plus source-SHA-guarded T001 L05/L06
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -210,7 +210,9 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(document, lesson) ||
          CommonCoreG1CountAndAddPilotCorrection.IsTarget(document, lesson) ||
          CommonCoreG2SourceGroundedFoundationsCorrections.IsTarget(document, lesson) ||
-         CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson));
+         CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson) ||
+         CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
+         CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson));
 
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
@@ -888,6 +890,23 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                     content.Id, out var countAndAddRows)
                                     ? countAndAddRows
                                     : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    // Only two reviewed T001 source-bound content edits in this
+                    // main-based release branch: no other B01 lesson upgrade.
+                    if (CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreT001MixedAddSubtractContentCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var mixedExisting)
+                                ? mixedExisting : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+                    if (CommonCoreT001FindThePairContentCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreT001FindThePairContentCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var pairExisting)
+                                ? pairExisting : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     var canUpgradeReviewedCorrection =

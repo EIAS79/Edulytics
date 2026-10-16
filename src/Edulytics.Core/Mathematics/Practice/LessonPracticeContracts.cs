@@ -925,6 +925,15 @@ public static class LessonPracticeContractRegistry
             byLesson.TryAdd(projected.LessonCode, projected);
         }
 
+        // Original IM 2021 Grade 1 Unit 1 lesson-code exact overrides.
+        // Pilot L01 is deliberately untouched; only L02 through L10.
+        foreach (var reviewed in UsCcssT001PracticeContracts.Reviewed)
+        {
+            if (!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "T001 source lesson missing original contract: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            290, // +2 exact source-bound G1 U01 L01 practice families
+            306, // previously 303, plus L02/L07/L09 independent authored activities
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
@@ -47,6 +47,52 @@ public sealed class LessonPracticeInteractionRegistryTests
                     Enum.IsDefined(
                         contract.InteractionKind));
             });
+    }
+
+    [Theory]
+    [InlineData("usccss.t001.g1.dot_pair_sum")]
+    [InlineData("usccss.t001.g1.add_one_or_two")]
+    [InlineData("usccss.t001.g1.subtract_one_or_two")]
+    [InlineData("usccss.t001.g1.mixed_add_subtract")]
+    [InlineData("usccss.t001.g1.make_ten_missing_part")]
+    [InlineData("usccss.t001.g1.sort_math_tools")]
+    [InlineData("usccss.t001.g1.sort_shape_cards")]
+    [InlineData("usccss.t001.g1.class_survey_categories")]
+    [InlineData("usccss.t001.g1.choose_dot_expression")]
+    [InlineData("usccss.t001.g1.choose_tool_sort")]
+    [InlineData("usccss.t001.g1.choose_shape_chart")]
+    [InlineData("usccss.t001.g1.choose_survey_table")]
+    public void AllTwelveT001FamiliesHaveSafeIntegerKeypadAndVisualInteraction(string family)
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad,contract.InteractionKind);
+        Assert.True(contract.HasVisualRepresentation);
+        Assert.Equal("exact_integer",contract.AnswerType);
+    }
+
+    [Theory]
+    [InlineData("usccss.t001.g1.write_dot_expression")]
+    [InlineData("usccss.t001.g1.construct_tool_sort")]
+    [InlineData("usccss.t001.g1.collect_survey_graph")]
+    public void NewT001AuthoringFamiliesAreContractDriven(string family)
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(LessonPracticeInteractionKind.ContractDriven,contract.InteractionKind);
+        Assert.Equal("contract_defined",contract.AnswerType);
+        Assert.True(contract.HasVisualRepresentation);
+    }
+
+    [Fact]
+    public void L08ConstructedShapeGraphUsesAContractDrivenInteraction()
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+            "usccss.t001.g1.construct_shape_graph",out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(LessonPracticeInteractionKind.ContractDriven, contract.InteractionKind);
+        Assert.Equal("contract_defined", contract.AnswerType);
+        Assert.True(contract.HasVisualRepresentation);
     }
 
     [Theory]

@@ -1,0 +1,16 @@
+/* Scope: Grade 1, T001 L08 constructed chart. */
+.t001-shape-chart{width:min(680px,100%);padding:15px;margin:0 auto 10px;border:2px solid #c5e0e8;border-radius:18px;background:#fff;color:#163441;text-align:center}
+.t001-chart-title{margin:0 0 5px;color:#163441;font-size:1.25rem}
+.t001-chart-help{margin:0 0 12px;font-size:.95rem}
+.t001-chart-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.t001-chart-column{min-width:0;display:flex;flex-direction:column;gap:7px;align-items:center}
+.t001-chart-label{margin:0;font-size:.9rem;color:#163441}
+.t001-chart-bar{width:100%;max-width:140px;height:168px;padding:6px;border-radius:9px;background:#e9f3f5;display:flex;flex-direction:column-reverse;align-items:center;justify-content:flex-start;gap:3px}
+.t001-chart-mark{height:27px;width:100%;max-width:105px;border-radius:4px;display:grid;place-items:center;background:#addce8;color:#1f596d;font-weight:900}
+.t001-chart-count{color:#163441;font-size:1.35rem;font-weight:900}
+.t001-chart-actions{display:flex;gap:7px}
+.t001-chart-step{min-width:42px;min-height:42px;border:2px solid #226e81;border-radius:11px;background:#fff;color:#164e61;font-size:1.45rem;font-weight:900;cursor:pointer}
+.t001-chart-step:focus-visible{outline:3px solid #e9a334;outline-offset:2px}
+.t001-chart-step:disabled{opacity:.4;cursor:default}
+.t001-chart-status{margin:12px 0 0;font-size:.86rem;font-weight:700;color:#274d5b}
+@media(max-width:460px){.t001-shape-chart{padding:7px}.t001-chart-columns{gap:5px}.t001-chart-label{font-size:.8rem}.t001-chart-bar{height:160px;padding:4px}.t001-chart-step{min-width:37px}}

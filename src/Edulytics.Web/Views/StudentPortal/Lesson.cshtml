@@ -135,6 +135,25 @@
                    target="_blank" rel="noopener noreferrer">License terms</a>.
             </p>
         }
+        else if (Model.LessonCode is { } t001Code
+            && t001Code.StartsWith("PED:US-CCSS-MATH:G1:U01:L", StringComparison.Ordinal)
+            && int.TryParse(t001Code["PED:US-CCSS-MATH:G1:U01:L".Length..],
+                out var t001LessonNumber)
+            && t001LessonNumber is >= 2 and <= 10)
+        {
+            <p class="lesson-source-attribution">
+                Source inspiration:
+                <a href="@($"https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-{t001LessonNumber}/lesson.html")"
+                   target="_blank" rel="noopener noreferrer">
+                    Illustrative Mathematics, Grade 1, Unit 1, Lesson @t001LessonNumber
+                </a>
+                (© 2021 Illustrative Mathematics, CC BY 4.0).
+                The lesson teaching and first-party practice are adapted for Edulytics; this
+                does not imply endorsement by the publisher.
+                <a href="https://creativecommons.org/licenses/by/4.0/"
+                   target="_blank" rel="noopener noreferrer">License terms</a>.
+            </p>
+        }
     </main>@if (Model.Outcomes.Count > 0) { <aside class="lesson-reader-sidebar" aria-label="@L["LessonReference"]"><section class="lesson-reader-sidecard"><h2>@L["StandardsReference"]</h2><div class="lesson-reader-outcomes">@foreach (var outcome in Model.Outcomes) { <article class="lesson-reader-outcome"><strong>@outcome.Code</strong></article> }</div></section></aside> }</div>
 </div>
 

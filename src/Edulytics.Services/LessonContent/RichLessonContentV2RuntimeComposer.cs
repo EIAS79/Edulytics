@@ -201,6 +201,11 @@ public static partial class RichLessonContentV2RuntimeComposer
             Videos = []
         };
 
+        // First ten US-CCSS lessons: pedagogy from verified specific
+        // publisher purposes, independent of generic verified question text.
+        // The first certified pilot stays exactly as it was.
+        AddT001LearnerTeaching(lessonCode,result);
+
         RichLessonContentV2Registry.Validate(
             new RichLessonContentV2Document
             {
@@ -678,6 +683,134 @@ public static partial class RichLessonContentV2RuntimeComposer
                 },
                 questionForms
             ];
+        }
+
+        // Grade 1 source-aligned visible models. Each marker stands for
+        // exactly one counter or one step, authored by Edulytics rather
+        // than lifted from publisher artwork.
+        if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L02")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Two dot cards make an addition expression",
+                    Description="Draw the two groups separately, then count them together. Four dots and three dots show 4 + 3 = 7.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="First card — four",Cells=["●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Second card — three",Cells=["●","●","●"]}
+                    ]
+                }
+            ];
+        }
+        if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L03")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Start at five, count forward two",
+                    Description="Keep the first five counters; add two new counters. The two new counting numbers are six and seven: 5 + 2 = 7.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Start with five",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Next two numbers",Cells=["6","7","","",""]}
+                    ]
+                }
+            ];
+        }
+        if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L04")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Start at eight, take away two",
+                    Description="Cross out exactly two counters. Count backward: eight, seven, six. Six counters remain, so 8 - 2 = 6.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Before — first five",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Before — next three",Cells=["●","●","●","",""]},
+                        new RichLessonVisualRow {Label="After — first five remain",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="After — one remains, two removed",Cells=["●","×","×","",""]}
+                    ]
+                }
+            ];
+        }
+        if (lessonCode=="PED:US-CCSS-MATH:G1:U01:L05")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Joining and taking away are different actions",
+                    Description="First join four and two counters: 4 + 2 = 6. Then remove two from six: 6 - 2 = 4.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="First group — four",Cells=["●","●","●","●",""]},
+                        new RichLessonVisualRow {Label="Added group — two",Cells=["○","○","","",""]},
+                        new RichLessonVisualRow {Label="Four still here after removal",Cells=["●","●","●","●",""]},
+                        new RichLessonVisualRow {Label="Two removed from six",Cells=["×","×","","",""]}
+                    ]
+                }
+            ];
+        }
+
+        // First-party source-goal relevant models for T001.
+        // No IM/Kendall Hunt images or textual source tasks reproduced.
+        if(lessonCode=="PED:US-CCSS-MATH:G1:U01:L06" ||
+           lessonCode=="PED:US-CCSS-MATH:G1:U01:L10")
+        {
+            return [
+                new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Find the missing partner to make ten",
+                    Description="A ten-frame has ten spaces: six filled dots and four empty spaces. Fill four blanks to make ten: 6+4=10 and 10-6=4.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Top five",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Bottom five",Cells=["●","○","○","○","○"]}
+                    ]
+                }
+            ];
+        }
+        if(lessonCode=="PED:US-CCSS-MATH:G1:U01:L07" ||
+           lessonCode=="PED:US-CCSS-MATH:G1:U01:L08" ||
+           lessonCode=="PED:US-CCSS-MATH:G1:U01:L09")
+        {
+            var visual=lessonCode.EndsWith("L07",StringComparison.Ordinal)
+                ? new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Sort school math tools into categories",
+                    Description="Count the tools in each labeled category; every object appears in only one group. Total nine objects.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Counters — 4",Cells=["●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Pattern blocks — 3",Cells=["⬡","⬡","⬡"]},
+                        new RichLessonVisualRow {Label="Inch tiles — 2",Cells=["■","■"]}
+                    ]
+                }
+                : lessonCode.EndsWith("L08",StringComparison.Ordinal)
+                ? new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Shape categories and how many",
+                    Description="Sort shapes by their kind: 3 triangles, 2 squares and 4 circles, all labeled. Total nine cards.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Triangles — 3",Cells=["▲","▲","▲"]},
+                        new RichLessonVisualRow {Label="Squares — 2",Cells=["■","■"]},
+                        new RichLessonVisualRow {Label="Circles — 4",Cells=["●","●","●","●"]}
+                    ]
+                }
+                : new RichLessonVisual
+                {
+                    Kind=RichLessonVisualKind.PlaceValueChart,
+                    Title="Sample class survey category table",
+                    Description="Fictional practice data only, not real class votes. Name each category and show 5 apple, 3 banana and 2 orange votes. Total ten votes.",
+                    Rows=[
+                        new RichLessonVisualRow {Label="Apples — 5",Cells=["●","●","●","●","●"]},
+                        new RichLessonVisualRow {Label="Bananas — 3",Cells=["●","●","●"]},
+                        new RichLessonVisualRow {Label="Oranges — 2",Cells=["●","●"]}
+                    ]
+                };
+            return [visual];
         }
 
         return [questionForms];

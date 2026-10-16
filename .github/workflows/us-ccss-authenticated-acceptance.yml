@@ -61,6 +61,10 @@ jobs:
           dotnet tool restore
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln --no-restore
+          # Match container production layout: published static-asset manifest
+          # and wwwroot must both be present in Staging.
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj \
+            --configuration Release --no-restore --output /tmp/us-ccss-web-publish
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
       - name: Install isolated Chromium visual test dependencies
@@ -119,7 +123,10 @@ jobs:
           export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/phase-uat-identity.pfx
           export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
           export Edulytics__MeetingDemo__ResetAndSeed='false'
-          dotnet run --no-build --no-launch-profile --project src/Edulytics.Web/Edulytics.Web.csproj > /tmp/us-ccss-web.log 2>&1 &
+          # Test the actual published web root (not development-only static
+          # asset manifests). This is the Render-like deployable artifact.
+          export ASPNETCORE_CONTENTROOT=/tmp/us-ccss-web-publish
+          dotnet /tmp/us-ccss-web-publish/Edulytics.Web.dll > /tmp/us-ccss-web.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           ready=false
@@ -141,8 +148,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: g1-u01-l01-rich-v2-chromium-screenshots
-          path: /tmp/g1-u01-l01-*.png
+          name: t001-ten-lessons-rich-v2-desktop-mobile-chromium
+          path: /tmp/g1-u01-l*.png
           if-no-files-found: warn
       - name: Verify only two synthetic schools were created
         run: |

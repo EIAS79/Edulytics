@@ -151,7 +151,11 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
-         SupportingPracticeCompletionEngine.Supports(family.Trim()));
+         SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
+         UsCcssT001ExactQuestions.Supports(family.Trim()) ||
+         UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
+         UsCcssT001AuthoredActivities.Supports(family.Trim()) ||
+         UsCcssT001RepresentationChoices.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -285,6 +289,14 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssT001AuthoredActivities.Supports(family))
+            return UsCcssT001AuthoredActivities.Verify(family, parameters, answer);
+        if (UsCcssT001ConstructShapeGraph.Supports(family))
+            return UsCcssT001ConstructShapeGraph.Verify(family, parameters, answer);
+        if (UsCcssT001RepresentationChoices.Supports(family))
+            return UsCcssT001RepresentationChoices.Verify(family, parameters, answer);
+        if (UsCcssT001ExactQuestions.Supports(family))
+            return UsCcssT001ExactQuestions.Verify(family, parameters, answer);
         // Grade 1 first-edition source: cardinality up to 20 and
         // addition of two dot cubes up to 10. Fail closed for tampered tasks.
         if (family == "usccss.g1.u01.l01.count_collection_to20")
@@ -863,6 +875,30 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssT001AuthoredActivities.Supports(family))
+        {
+            var authored=UsCcssT001AuthoredActivities.Build(family,random);
+            return new ExactProblem(authored.Family,authored.Prompt,authored.Solution,
+                authored.ItemType,authored.Parameters);
+        }
+        if (UsCcssT001ConstructShapeGraph.Supports(family))
+        {
+            var graph=UsCcssT001ConstructShapeGraph.Build(random);
+            return new ExactProblem(graph.Family,graph.Prompt,graph.Solution,
+                graph.ItemType,graph.Parameters);
+        }
+        if (UsCcssT001RepresentationChoices.Supports(family))
+        {
+            var choice=UsCcssT001RepresentationChoices.Build(family,random);
+            return new ExactProblem(choice.Family,choice.Prompt,choice.Solution,
+                choice.ItemType,choice.Parameters);
+        }
+        if (UsCcssT001ExactQuestions.Supports(family))
+        {
+            var t001=UsCcssT001ExactQuestions.Build(family,random);
+            return new ExactProblem(t001.Family,t001.Prompt,t001.Solution,
+                t001.ItemType,t001.Parameters);
+        }
         if (SupportingPracticeCompletionEngine.Supports(family))
         {
             var supporting = SupportingPracticeCompletionEngine.Build(
@@ -2654,6 +2690,14 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssT001AuthoredActivities.Supports(problem.Family))
+            return UsCcssT001AuthoredActivities.Solve(problem.Family,p);
+        if (UsCcssT001ConstructShapeGraph.Supports(problem.Family))
+            return UsCcssT001ConstructShapeGraph.Solve(p);
+        if (UsCcssT001RepresentationChoices.Supports(problem.Family))
+            return UsCcssT001RepresentationChoices.Solve(problem.Family, p);
+        if (UsCcssT001ExactQuestions.Supports(problem.Family))
+            return UsCcssT001ExactQuestions.Solve(problem.Family, p);
         if (SupportingPracticeCompletionEngine.Supports(problem.Family))
             return SupportingPracticeCompletionEngine.Solve(problem.Family, p);
 
