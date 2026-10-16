@@ -62,7 +62,7 @@ public sealed class Grade1Batch003ContentTests
         var asking=Empty(Prefix+"13");
         append.Invoke(null,[asking.LessonCode,asking]);
         Assert.Contains("Ask questions",asking.ExplanationParagraphs[0]);
-        Assert.Contains("who voted",asking.WorkedExamples[1].Check,
+        Assert.Contains("individual names",asking.WorkedExamples[1].Check,
             StringComparison.OrdinalIgnoreCase);
     }
 
