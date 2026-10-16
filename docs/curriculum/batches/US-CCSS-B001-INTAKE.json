@@ -88,13 +88,16 @@
     "releaseGatePr": "https://github.com/EIAS79/Edulytics/pull/505",
     "sourceCorrectionDraftPr": "https://github.com/EIAS79/Edulytics/pull/506",
     "verifiedBatchCommitSha": null,
-    "implementationStatus": "Pre-release staging and evidence; no B001 500-lesson approval"
+    "implementationStatus": "Pre-release staging and evidence; no B001 500-lesson approval",
+    "engineSamplingPr": "https://github.com/EIAS79/Edulytics/pull/508",
+    "gateHardeningPr": "https://github.com/EIAS79/Edulytics/pull/509",
+    "currentB001AcceptanceDecision": "NO_GO"
   },
   "deployment": {
     "verifiedLiveSha": null,
     "renderDeployId": null,
     "ownerUat": "NOT_STARTED",
-    "status": "B001_NOT_RELEASED"
+    "status": "NO_B001_CURRICULUM_RELEASE_500_OUT_OF_500"
   },
   "notes": [
     "All 500 real canonical LessonCodes were extracted from the 2021 Grade 1-4 IM-based source blueprints, and linked to 500 stored content records by matching titles, canonical codes, outcomes and source URLs.",
@@ -108,7 +111,9 @@
     "Actual independent Practice/answer tests, DB parity, published runtime, production UAT still NOT_RUN.",
     "Read-only Neon production SQL confirms 500/500 B001 source LessonCodes with exact NativeLevel, SortOrder, Title on 2026-10-16; this does not establish actual learner content or Practice parity.",
     "Historical 15 Grade 1 lessons are already shipped in T001 first ten and G1 batch03 five (commit 54833b16, prior Render deployment dep-db8opibbc2fs738nuvd0); correct next not previously released ordinal is G1 #16.",
-    "500/500 release acceptance remains NO_GO. The fail-closed release evidence gate is merged in PR #505; G2 source correction draft PR #506 is held from production until batch gates are satisfied."
+    "500/500 release acceptance remains NO_GO. The fail-closed release evidence gate is merged in PR #505; G2 source correction draft PR #506 is held from production until batch gates are satisfied.",
+    "GitHub Actions 38881061253 successfully generated/verified engine samples for all 500 B001 codes at three difficulties with deliberately invalid-answer negative controls; not 500 independent academic approvals.",
+    "Full per-lesson canonical learning objective/rendered text fidelity, authenticated response persistence, source licences, exact checked commit evidence and owner UAT still pending."
   ],
   "sourceContentIndexFile": "docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json",
   "sourceContentIndexGenerator": "tools/curriculum/us-ccss-b001-inventory.cjs",
@@ -178,5 +183,27 @@
     "historicalBatch03RenderState": "previously_live_then_superseded",
     "editionAndCodeDriftChecksForB001": "NOT_RUN",
     "limitations": "Previous release ≠ B001 academic acceptance. Prior first-15 must be compared against current effective content and actual live lesson behavior."
+  },
+  "practiceEngineExecution": {
+    "status": "PASSED_REAL_GENERATION_AND_INVALID_INPUT_SAMPLING_NOT_END_TO_END",
+    "githubWorkflowRun": "https://github.com/EIAS79/Edulytics/actions/runs/38881061253",
+    "workflowConclusion": "success",
+    "pullRequest": "https://github.com/EIAS79/Edulytics/pull/508",
+    "artifactUrl": "https://github.com/EIAS79/Edulytics/actions/runs/38881061253/artifacts/12037203560",
+    "auditedRealLessonCodes": 500,
+    "samplePassCount": 500,
+    "sampleFailureCount": 0,
+    "difficulties": [
+      "Standard",
+      "Stretch",
+      "Challenge"
+    ],
+    "independentCorrectAnswerCheck": true,
+    "malformedAnswerRejectionCheck": true,
+    "minGeneratedCases": 1500,
+    "actualAuthenticatedResponsePersistence": "NOT_TESTED",
+    "effectiveStudentVisibleTeachingApproval": "NOT_TESTED",
+    "productionDataParity": "NOT_TESTED",
+    "isInternalAcademicCertification": false
   }
 }
