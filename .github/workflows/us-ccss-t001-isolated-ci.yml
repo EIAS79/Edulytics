@@ -14,6 +14,9 @@ on:
       - 'src/Edulytics.Services/Mathematics/UsCcssT001AuthoredActivities.cs'
       - 'src/Edulytics.Web/wwwroot/js/t001-authored-practice.js'
       - 'src/Edulytics.Web/wwwroot/css/t001-authored-practice.css'
+      - 'docs/curriculum/T001_AUTOMATED_LESSON_ACCEPTANCE.md'
+      - 'tools/us-ccss-t001-test-acceptance.cjs'
+      - 'tests/us-ccss-t001-test-acceptance.test.cjs'
       - 'src/Edulytics.Web/wwwroot/js/t001-shape-chart.js'
       - 'src/Edulytics.Web/wwwroot/css/t001-shape-chart.css'
       - 'src/Edulytics.Core/Mathematics/Practice/PracticeAssessmentTaxonomy.cs'
@@ -57,6 +60,8 @@ jobs:
         run: |
           node --check src/Edulytics.Web/wwwroot/js/t001-shape-chart.js
           node --check src/Edulytics.Web/wwwroot/js/t001-authored-practice.js
+      - name: Verify tests-only acceptance gate fails closed against missing, stale and failed checks
+        run: node --test tests/us-ccss-t001-test-acceptance.test.cjs
       - name: Verify fail-closed immutable-source academic release integrity
         run: node --test tests/us-ccss-t001-release-integrity.test.cjs
       - name: Inspect actual ten-lesson certification ledger without bypassing blocked gates
