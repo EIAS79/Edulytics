@@ -27,6 +27,7 @@ const requiredChecks = Object.freeze([
   'b001-source-catalogue',
   'b001-math-capability-triage',
   'b001-500-engine-sampling',
+  'b001-effective-learner-content-review',
   'b001-independent-source-content-and-math',
   'b001-authenticated-practice-persistence'
 ]);
