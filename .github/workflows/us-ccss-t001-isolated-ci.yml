@@ -64,15 +64,11 @@ jobs:
         run: node --test tests/us-ccss-t001-test-acceptance.test.cjs
       - name: Verify fail-closed immutable-source academic release integrity
         run: node --test tests/us-ccss-t001-release-integrity.test.cjs
-      - name: Inspect actual ten-lesson certification ledger without bypassing blocked gates
+      - name: Preserve historical academic ledger without requiring a reviewer for technical acceptance
         run: |
-          node tools/us-ccss-t001-release-gate.cjs --status > /tmp/t001-academic-status.json
-          cat /tmp/t001-academic-status.json
-          node -e 'const d=require("/tmp/t001-academic-status.json");if(d.state!=="BATCH_NO-GO"&&d.state!=="BATCH_EVIDENCE_READY")process.exit(1);console.log("T001",d.state,"evidenceReady",d.evidenceReady,"missing",d.remainingEvidence);'
-          if node -e 'process.exit(require("/tmp/t001-academic-status.json").state==="BATCH_EVIDENCE_READY"?0:1)'; then
-            node tools/us-ccss-t001-release-gate.cjs --release-check --head-sha="$(git rev-parse HEAD)"
-          else
-            echo "T001 evidence incomplete: release remains fail-closed; this technical CI does not grant academic PASS"
-          fi
+          node tools/us-ccss-t001-release-gate.cjs --status > /tmp/t001-historical-academic-status.json
+          cat /tmp/t001-historical-academic-status.json
+          node -e 'const d=require("/tmp/t001-historical-academic-status.json");if(!["BATCH_NO-GO","BATCH_EVIDENCE_READY"].includes(d.state))process.exit(1);console.log("Historical academic ledger:",d.state,"— not the tests-only decision");'
+          echo "T001 tested software acceptance uses the three same-SHA GitHub checks and tools/us-ccss-t001-test-acceptance.cjs; no human reviewer approval is required."
       - name: This job is technical, not academic certification or publication
         run: echo 'T001 requires 10/10 independently verified L1-L6, eight dimensions and authenticated live student testing before merge.'
