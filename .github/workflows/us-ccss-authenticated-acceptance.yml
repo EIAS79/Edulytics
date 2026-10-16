@@ -39,6 +39,7 @@ jobs:
       EDULYTICS_B001_ALL500_READS: '1'
       EDULYTICS_B001_REQUIRE_ALL500_PRACTICE_CTA: '1'  # Fail closed on missing lesson Practice entry, not academic clearance
       EDULYTICS_B001_PROBE_500_ATTEMPTS: '1'  # Real disposable Practice generation + persistence probe
+      EDULYTICS_B001_PROBE_500_MALFORMED_ANSWERS: '1'  # 500 additional wrong answers must score 0 and persist
       EDULYTICS_B001_REQUIRE_ALL500_GRADED: '1'  # Strict technical 500/500; NOT 500 academic approvals
       ASPNETCORE_ENVIRONMENT: Staging
       PGPASSWORD: postgres
