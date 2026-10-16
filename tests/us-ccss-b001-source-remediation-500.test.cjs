@@ -23,7 +23,13 @@ test('all 500 original 2021 teaching goals, canonical source hashes, outcomes an
   assert.equal(data.rows[499].lessonCode,'PED:US-CCSS-MATH:G4:U04:L20');
   assert.equal(data.rows[179].lessonCode,'PED:US-CCSS-MATH:G2:U02:L16');
   assert.equal(data.rows[179].originalStudentGoalExcerptPresent,false);
-  assert.equal(data.priorityCounts.P0_SOURCE_GOAL,1);
+  assert.equal(data.rows[179].originalGoalAbsenceVerifiedOptional,true);
+  assert.deepEqual(data.rows[179].reviewFlags.filter(x=>x.includes('GOAL')),
+    ['OPTIONAL_LESSON_NO_SEPARATE_STUDENT_GOAL_IN_SOURCE']);
+  assert.ok(data.rows[179].nextAction.includes('market inventory'));
+  assert.equal(data.grades['Grade 2'].missingStudentGoal,1);
+  assert.equal(data.grades['Grade 2'].verifiedOptionalWithoutGoal,1);
+  assert.equal(data.priorityCounts.P0_SOURCE_GOAL??0,0);
   assert.ok(data.grades['Grade 1'].rawGenericExamples>30);
   assert.ok(data.grades['Grade 2'].repeatedRawStepTemplates>20);
   assert.ok(data.grades['Grade 3'].repeatedRawStepTemplates>20);
