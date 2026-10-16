@@ -34,6 +34,12 @@ on:
       - 'tests/Edulytics.Tests/Phase44/**'
       - 'docs/evaluation/**'
       - 'tools/evaluation/**'
+      # Any change to authenticated B001 Practice QA must trigger real
+      # production regression checks on both PR and main push. Render uses
+      # checksPass, so omission here previously left a merged QA SHA undeployed.
+      - 'tools/phase29/b001_practice_*.py'
+      - 'tools/phase29/acceptance_two_school_https.py'
+      - '.github/workflows/us-ccss-authenticated-acceptance.yml'
       - 'scripts/ci-localization-parity.py'
       - '.github/workflows/evaluation-production.yml'
   push:
@@ -69,6 +75,12 @@ on:
       - 'tests/Edulytics.Tests/Phase44/**'
       - 'docs/evaluation/**'
       - 'tools/evaluation/**'
+      # Any change to authenticated B001 Practice QA must trigger real
+      # production regression checks on both PR and main push. Render uses
+      # checksPass, so omission here previously left a merged QA SHA undeployed.
+      - 'tools/phase29/b001_practice_*.py'
+      - 'tools/phase29/acceptance_two_school_https.py'
+      - '.github/workflows/us-ccss-authenticated-acceptance.yml'
       - 'scripts/ci-localization-parity.py'
       - '.github/workflows/evaluation-production.yml'
   workflow_dispatch:
