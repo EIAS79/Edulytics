@@ -849,6 +849,22 @@ for key, schoolname in SCHOOLS:
                         attempt_body)
                     assert posted_id and posted_id.group(1) == item_id, (
                         code, family, "item mismatch")
+                    if family == "usccss.t001.g1.collect_survey_graph":
+                        # Personal Test uses the actual student response
+                        # protocol rather than the internal generator sentinel.
+                        # Construct a *synthetic* anonymous survey matching
+                        # this item's server-owned minimum participant count.
+                        minimum_text = sql("""
+                            SELECT "GenerationParametersJson"::jsonb
+                              ->'parameters'->>'minimumVotes'
+                            FROM "AssessmentItems" WHERE "Id"='""" + item_id + """';""")
+                        minimum = int(minimum_text)
+                        assert 5 <= minimum <= 8, (
+                            code, "L09 invalid source-owned survey quorum", minimum)
+                        votes = [n % 3 for n in range(minimum)]
+                        counts = [votes.count(i) for i in range(3)]
+                        answer = ("v:" + "".join(str(n) for n in votes)
+                                  + "|g:" + ",".join(str(n) for n in counts))
                     response_fields.extend([
                         ("attemptItemIds[" + str(index) + "]", item_id),
                         ("answers[" + str(index) + "]", answer),
