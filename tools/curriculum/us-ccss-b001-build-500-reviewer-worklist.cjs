@@ -42,7 +42,7 @@ function build(){
        c.batchOrdinal!==i+1||f.ordinal!==i+1||p.ordinal!==i+1||
        c.sourceUrl!==f.sourceTeacherPreparationUrl||
        !f.originalStudentTaskStatementPdfUrl||
-       !p.teacherPurposeExcerpt||!p.studentFacingGoalExcerpt)
+       !p.teacherPurposeExcerpt)
       throw Error('B001 source/PDF identity drift at ordinal '+(i+1));
     if(s&&(s.ordinal!==i+1||s.sourceStudentPdfUrl!==f.originalStudentTaskStatementPdfUrl||
        s.academicDecision!=='NO_GO'||s.independentTeacherDecision!=='UNSIGNED'))
@@ -54,7 +54,7 @@ function build(){
       studentTaskPdfUrl:f.originalStudentTaskStatementPdfUrl,
       sourceEdition:c.sourceEdition,
       teacherPurpose:p.teacherPurposeExcerpt,
-      studentGoal:p.studentFacingGoalExcerpt,
+      studentGoal:p.studentFacingGoalExcerpt||'[NOT PRESENT IN ORIGINAL STUDENT GOAL EXTRACTION — REVIEW REQUIRED]',
       originalActivityNames:p.originalActivities.map(x=>x.name).filter(Boolean),
       baselineSkillFamilies:mapping?.allowedQuestionFamilies||[],
       sourceReviewFlags:p.reviewFlags||[],
@@ -64,9 +64,14 @@ function build(){
       independentMathOracleApproval:'PENDING_HUMAN_REVIEW',
       teacherSignoff:'UNSIGNED',
       releaseDecision:'NO_GO',
-      specificReviewGaps:s?s.blockingFindings:[
-        'Independently compare the original student PDF page content and visual diagrams with the learner body and exact generated Practice family.',
-        'Verify real student activities and mathematical correctness; obtain independent qualified-teacher signoff.'
+      specificReviewGaps:[
+        ...(s?s.blockingFindings:[
+          'Independently compare the original student PDF page content and visual diagrams with the learner body and exact generated Practice family.',
+          'Verify real student activities and mathematical correctness; obtain independent qualified-teacher signoff.'
+        ]),
+        ...(!p.studentFacingGoalExcerpt?[
+          'The original student-facing learning-goal excerpt was absent; inspect full 2021 student task and teacher goal, do not synthesize it.'
+        ]:[])
       ]
     };
     if(row.baselineSkillFamilies.some(x=>typeof x!=='string'))
@@ -79,6 +84,7 @@ function build(){
   return {
     schemaVersion:1,batchId:'US-CCSS-B001',total:500,
     observedOriginalStudentPdfTextInspectionCount:7,
+    missingOriginalStudentFacingGoalExcerptCount:rows.filter(x=>x.studentGoal.startsWith('[NOT PRESENT')).length,
     independentGraphicsApprovals:0,independentMathApprovals:0,
     qualifiedTeacherApprovals:0,productionLearnerUatApprovals:0,
     academicReleaseDecision:'NO_GO',
