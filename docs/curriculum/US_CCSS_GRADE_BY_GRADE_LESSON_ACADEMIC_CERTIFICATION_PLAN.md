@@ -1,15 +1,11 @@
-# RETIRED — US-CCSS 500-Lesson Batch Certification and Release Plan
+# HISTORICAL — Original 500-Lesson Academic Certification Plan
 
-**Status:** **SUPERSEDED as an execution policy on 2026-10-16**.
+**Status:** The *original* 500-lesson policy is superseded, but the owner has now requested a **new 500-lesson programme**.
 
-**Current authoritative curriculum-delivery plan:** [EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md](EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md).
+**Current authoritative operational plan:** [Edulytics 500-Lesson Batch Execution Plan V2](EDULYTICS_500_LESSON_BATCH_EXECUTION_PLAN_V2.md).
 
-The former compulsory **500 + 500 + 500 + 60** batch model, single 500-lesson approval decisions, grade-crossing batch boundaries, and related multi-week full-catalogue regression requirements are **not** the operating model for future lesson creation. Do **not** execute that workflow or apply it to the new five-lesson chunks.
+Do **not** run the old all-or-nothing 500-certification instructions from this historical file or re-label its prior six-gate records as successes. The newly adopted V2 policy schedules **500 + 500 + 500 + 60** across grade boundaries, but requires genuine evidence per lesson and preserves the ten already published T001 lessons without duplicate certification.
 
-The new policy processes **one grade or named course at a time** and completes **five consecutive lessons per chunk** (a final chunk of 1–4 is allowed). Content, math, Practice, licence and security correctness remain necessary; tests are selected by change impact. Existing mandatory GitHub/Render checks remain active **until separately changed and validated**.
+The original text remains recoverable in Git history. The intermediate five-lesson policy is also historical, and neither historical policy by itself proves a curriculum or software release.
 
-### Historical records remain valid
-
-This original file's former 500-lesson instructions are retained in Git history for traceability. Do **not** delete or alter the historical `artifacts/academic-us-ccss/` ledger, existing T001 ten-lesson manifest, or already-published curriculum work. The ten Grade 1 Unit 1 lessons previously released as T001 count as **the first two historical groups of five**, without inventing new evidence.
-
-**For all upcoming curriculum work, use the linked new plan—not any old 500- or 10-lesson execution instructions.**
+**Production CI, protected branches, academic correctness, licensing, security and Render deployment gates remain in force until independently implemented and verified changes are merged.**
