@@ -942,8 +942,8 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_G1_ALL_READS") == "
         body = html.unescape(
             get_page(grade1_student, "/student/learning/lesson/" + lesson_id))
         assert "rich-lesson-section" in body, (code, "no rich teaching in authenticated HTML")
-        rendered_text = re.sub(r"\\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
-        expected_title = re.sub(r"\\s+", " ", html.unescape(lesson_title)).casefold()
+        rendered_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
+        expected_title = re.sub(r"\s+", " ", html.unescape(lesson_title)).casefold()
         assert expected_title in rendered_text, (
             code, "canonical title missing from student HTML", expected_title)
         print("B001_DISPOSABLE_G1_AUTHENTICATED_PAGE_PASS", index, code, flush=True)
