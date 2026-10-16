@@ -6,12 +6,26 @@ on:
     paths:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001EffectiveLearnerContentAuditTests.cs'
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g[1-4]-phase29-v1.lesson-content-pack.json'
+      - 'src/Edulytics.Data/Seeding/CommonCore*.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer*.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
       - '.github/workflows/us-ccss-b001-effective-content.yml'
   push:
     branches: [main]
     paths:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001EffectiveLearnerContentAuditTests.cs'
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g[1-4]-phase29-v1.lesson-content-pack.json'
+      - 'src/Edulytics.Data/Seeding/CommonCore*.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer*.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
       - '.github/workflows/us-ccss-b001-effective-content.yml'
   workflow_dispatch:
 
