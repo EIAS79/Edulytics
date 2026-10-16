@@ -1,6 +1,8 @@
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Lessons;
+using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Services.Mathematics;
 using Edulytics.Data.Seeding;
 using Edulytics.Services.LessonContent;
 
@@ -131,6 +133,63 @@ public sealed class CommonCoreG1Unit2StorySourceCorrectionsTests
             CommonCoreG1Unit2StorySourceCorrections.ValidateExistingBodyBeforeUpgrade(
                 row.Doc,row.Lesson,CommonCoreRichContentCorrections.CorrectionContentVersion,
                 []);
+        }
+    }
+
+    [Fact]
+    public void AllThreeStoryPracticeContractsUseExactSupportedSourceFamilies()
+    {
+        var expected=new[]
+        {
+            "usccss.g1.u02.story.choose_expression",
+            "usccss.g1.u02.story.choose_equation",
+            "usccss.g1.u02.story.add_change_unknown"
+        };
+        for(var i=1;i<=3;i++)
+        {
+            var code=Prefix+i.ToString("D2");
+            Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract),code);
+            Assert.NotNull(contract);
+            Assert.Equal("READY_VERIFIED",contract!.Readiness);
+            Assert.Equal(new[] {expected[i-1]},contract.AllowedQuestionFamilies);
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(expected[i-1]));
+        }
+    }
+
+    [Fact]
+    public void StoryActionAndUnknownQuestionsGenerateGradeRejectWrongAnswersAndTampering()
+    {
+        var engine=new ExactSkillContractQuestionEngine();
+        foreach(var family in new[]
+        {
+            "usccss.g1.u02.story.choose_expression",
+            "usccss.g1.u02.story.choose_equation",
+            "usccss.g1.u02.story.add_change_unknown"
+        })
+        {
+            var questions=engine.Generate(
+                "g1-u02-source-story-targeted",family,[family],
+                ExactSkillQuestionDifficulty.Standard,12,20261016,[]);
+            Assert.Equal(12,questions.Count);
+            Assert.Equal(12,questions.Select(x=>x.ExposureFingerprint)
+                .Distinct(StringComparer.Ordinal).Count());
+            foreach(var q in questions)
+            {
+                Assert.Equal(family,q.Family);
+                Assert.Contains("story",q.Explanation,StringComparison.OrdinalIgnoreCase);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,q.CorrectAnswer));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,q.CorrectAnswer=="1"?"2":"1"));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,"-1"));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,"not a number"));
+                var wrong=q.Parameters.ToDictionary(k=>k.Key,k=>k.Value);
+                wrong["start"]=25;
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,wrong,q.CorrectAnswer));
+            }
         }
     }
 }
