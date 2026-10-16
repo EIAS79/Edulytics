@@ -40,7 +40,7 @@ function validate(){
   assert.equal(m.teacherPreparationSha256,te?.teacherPreparationSha256);
   assert.equal(m.studentMirrorSha256,st?.studentLocalSha256);
   assert.ok(m.sourceLicense==='CC BY 4.0');
-  assert.equal(m.optional,/\\(optional\\)/i.test(q.Title));
+  assert.equal(m.optional,/\(optional\)/i.test(q.Title));
   if(i<10)assert.equal(m.history?.productionReleased,true);
   else assert.equal(m.history,null);
  }
