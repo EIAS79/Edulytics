@@ -857,7 +857,10 @@ for key, schoolname in SCHOOLS:
                         minimum_text = sql("""
                             SELECT "GenerationParametersJson"::jsonb
                               ->'parameters'->>'minimumVotes'
-                            FROM "AssessmentItems" WHERE "Id"='""" + item_id + """';""")
+                            FROM "PracticeAttemptItems" pi
+                            JOIN "AssessmentItems" i
+                              ON i."Id"=pi."AssessmentItemId"
+                            WHERE pi."Id"='""" + item_id + """';""")
                         minimum = int(minimum_text)
                         assert 5 <= minimum <= 8, (
                             code, "L09 invalid source-owned survey quorum", minimum)
