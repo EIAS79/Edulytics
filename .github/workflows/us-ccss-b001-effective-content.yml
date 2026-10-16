@@ -83,7 +83,7 @@ jobs:
       - name: Run existing independent mathematical/source-goal tests
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
-            --filter 'FullyQualifiedName~UsCcssB001SourceGoalPracticeQuestionsTests|FullyQualifiedName~UsCommonCoreOrphanChildIndependentOracleTests|FullyQualifiedName~CommonCoreG2HundredsPlaceValueSourceCorrectionsTests' \
+            --filter 'FullyQualifiedName~UsCcssB001SourceGoalPracticeQuestionsTests|FullyQualifiedName~UsCommonCoreOrphanChildIndependentOracleTests|FullyQualifiedName~CommonCoreG2HundredsPlaceValueSourceCorrectionsTests|FullyQualifiedName~UsCcssG1Unit2SevenIndependentOracleTests|FullyQualifiedName~UsCcssG1Unit2Part4IndependentOracleTests' \
             --logger 'console;verbosity=normal'
       - name: Preserve strict educational scope
         run: |
