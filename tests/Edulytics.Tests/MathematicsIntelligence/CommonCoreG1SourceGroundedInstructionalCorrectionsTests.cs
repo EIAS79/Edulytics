@@ -149,7 +149,7 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
         var (doc, _, _) = Effective(
             CommonCoreG1SourceGroundedInstructionalCorrections.DataQuestionsLessonCode);
         var untouched = Assert.Single(doc.Lessons,
-            l => l.LessonCode == "PED:US-CCSS-MATH:G1:U01:L12");
+            l => l.LessonCode == "PED:US-CCSS-MATH:G1:U02:L01");
         Assert.Equal(CommonCoreRichContentCorrections.CorrectionContentVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, untouched));
     }

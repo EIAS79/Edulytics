@@ -237,6 +237,51 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
     public const string ClassPetSurveyStatementsSteps = "Step 1: Read the survey question and category labels, for example cats, dogs and fish.\nStep 2: Count each tally carefully, remembering a crossed bundle of five marks represents five.\nStep 3: Choose a statement to test; identify the two categories or total it refers to.\nStep 4: Compare the numbers in the data to decide whether the statement is true or false.\nStep 5: Write your own supported statement, such as 6 - 2 = 4 more cat votes than fish votes.";
     public const string ClassPetSurveyStatementsMistakes = "Mistake: reading a crossed group of five tallies as four. Correction: the diagonal stroke is a fifth tally.\nMistake: deciding a statement is true without reading its category labels. Correction: point to the supporting counts.\nMistake: treating personal pet preferences as survey results. Correction: use only the responses collected.";
 
+
+    public const string HowManyLessonCode = "PED:US-CCSS-MATH:G1:U01:L12";
+    public const string HowManyVersion = "us-ccss-g1-u01-l12-data-tallies-and-totals-v1";
+    public const string HowManyConcepts =
+        "Learning goals: Read labeled tables, tally marks and numerals; tell how many objects are in each category and how many in all. " +
+        "Each tally mark stands for exactly one object. A group of four marks crossed by a fifth represents five, not four. " +
+        "Add category counts without counting any category twice.";
+    public const string HowManyExamples =
+        "Example 1 — Read a number table. The chart shows 4 books, 3 blocks and 2 pencils. How many books? 4 books.\n" +
+        "Example 2 — Count tallies. Five crossed tally marks represent 5 votes, not 4. Two more marks make 7.\n" +
+        "Example 3 — Add the categories. For books 4, blocks 3 and pencils 2, find 4 + 3 + 2 = 9 objects in all. Count each group once.\n" +
+        "Example 4 — Check with a different display. Draw four identical marks for books, three for blocks and two for pencils; there are nine marks in all.";
+    public const string HowManySteps =
+        "Step 1: Read the title and three category labels on the table or tally chart.\n" +
+        "Step 2: Read the numeral or count each tally carefully, including the diagonal fifth mark.\n" +
+        "Step 3: To answer 'how many in a category', name that category and its count.\n" +
+        "Step 4: To answer 'how many in all', add the counts of every category once. For 4, 3 and 2, 4 + 3 + 2 = 9.\n" +
+        "Step 5: Point to every count to check that the total matches the data.";
+    public const string HowManyMistakes =
+        "Mistake: answering 'in all' by choosing the largest group. Correction: add every category count once.\n" +
+        "Mistake: counting a tally group with a diagonal stroke as four. Correction: the crossed tally is the fifth mark.\n" +
+        "Mistake: dropping the category label when reporting a number. Correction: answer with both the number and what it counts.";
+
+    public const string CenterThreeLessonCode = "PED:US-CCSS-MATH:G1:U01:L14";
+    public const string CenterThreeVersion = "us-ccss-g1-u01-l14-sort-display-centers-v1";
+    public const string CenterThreeConcepts =
+        "Learning goals: Sort 10 to 20 classroom objects into two or three named groups, record a display, and practise addition and subtraction within 10. " +
+        "Each object appears once in the display; a category name explains the sorting rule. " +
+        "Addition combines and subtraction takes away or finds a missing part.";
+    public const string CenterThreeExamples =
+        "Example 1 — Sort and display. Sort 12 items by type: 5 counters, 4 tiles and 3 blocks. Draw five, four and three equal marks in the labeled rows; 5 + 4 + 3 = 12.\n" +
+        "Example 2 — Check your sorting rule. If a counter is drawn under two categories, the picture graph incorrectly shows 13 objects. Move it to the correct one category only.\n" +
+        "Example 3 — Addition center. Start with 4 counters and add 3. Count on 5, 6, 7; 4 + 3 = 7.\n" +
+        "Example 4 — Subtraction center. Begin with 9 tiles and remove 2. Seven remain; 9 - 2 = 7. Check with 7 + 2 = 9.";
+    public const string CenterThreeSteps =
+        "Step 1: Choose a sorting rule and prepare two or three category labels.\n" +
+        "Step 2: Sort 10–20 classroom objects; place each object in exactly one group.\n" +
+        "Step 3: Draw one same-sized mark per object and add the category counts to check the total. For 5, 4 and 3, the total is 12.\n" +
+        "Step 4: At an arithmetic center, solve an addition within 10, then a subtraction within 10 using counters.\n" +
+        "Step 5: Explain your sorting rule and check the arithmetic by recounting or using a related fact.";
+    public const string CenterThreeMistakes =
+        "Mistake: placing one item in two sorting groups. Correction: one sorting rule gives each item exactly one group.\n" +
+        "Mistake: drawing pictures of different sizes as if each stood for different counts. Correction: use one equal mark for each object.\n" +
+        "Mistake: changing subtraction into addition when removing counters. Correction: model the action with counters and check the inverse addition fact.";
+
     public const string ChooseIndirectLengthComparatorLessonCode = "PED:US-CCSS-MATH:G1:U06:L03";
     public const string ChooseIndirectLengthComparatorVersion = "us-ccss-g1-g1-u06-l03-instruction-v1";
     public const string ChooseIndirectLengthComparatorConcepts = "Choose an appropriate third object to compare two lengths indirectly. The same comparison tool must retain its length, and the object's endpoints must be aligned each time; a string with marked endpoints may be used when the objects cannot be moved.";
@@ -477,6 +522,24 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                 ClassPetSurveyStatementsExamples,
                 ClassPetSurveyStatementsSteps,
                 ClassPetSurveyStatementsMistakes),
+
+            [HowManyLessonCode] = new Repair(
+                HowManyLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-12/preparation.html",
+                "15fb22a92ba7bfca597ace5885c483c00d38cd3057625798dcaba420242c099f",
+                "dcf400f0018af0fa6fd4ea5e7f035f158efa913b65128cb3554b62a4132e5bde",
+                HowManyVersion, ["CCSS:1.MD.C.4"],
+                "Step 1: Read the category labels and the scale or counts.\nStep 2: Identify the values needed for the question.\nStep 3: Compare or combine the values as required.\nStep 4: State the conclusion using the data.",
+                HowManyConcepts, HowManyExamples, HowManySteps, HowManyMistakes),
+            [CenterThreeLessonCode] = new Repair(
+                CenterThreeLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-14/preparation.html",
+                "9205c20801a8e4fdc646cc86a03aea1140cf42367cc34b68d184a69b92d84603",
+                "4044330e49e2eb82b1d3cfcbecc58da85d3c0412d40a661311fbdceb1eaa05b1",
+                CenterThreeVersion,
+                ["CCSS:1.MD.C.4", "CCSS:1.OA.B.4", "CCSS:1.OA.C.5", "CCSS:1.OA.C.6"],
+                "Step 1: Identify the two quantities, 4 and 2.\nStep 2: Start at 4 and count on 2 more, or combine the two groups.\nStep 3: The total is 6, so 4 + 2 = 6.\nStep 4: Check that the result matches the quantities and the lesson goal.",
+                CenterThreeConcepts, CenterThreeExamples, CenterThreeSteps, CenterThreeMistakes),
             [ChooseIndirectLengthComparatorLessonCode] = new Repair(
                 ChooseIndirectLengthComparatorLessonCode,
                 "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-3/preparation.html",

@@ -934,6 +934,14 @@ public static class LessonPracticeContractRegistry
                     "T001 source lesson missing original contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Incremental Grade 1 batch 03: exact original lesson codes only.
+        foreach (var reviewed in UsCcssG1Batch03PracticeContracts.Reviewed)
+        {
+            if (!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G1 B03 source lesson missing original contract: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
