@@ -23,3 +23,21 @@
 - Baseline production content version prior to patch: `common-core-rich-content-v1` for all three (read-only Neon 2026-10-16).
 - Code and test evidence: PR CI must pass on candidate SHA. `IN_REVIEW` until same-SHA CI, Practice, student-visible UAT, and academic signoff.
 - Next cursor: Grade 1 Unit 2 Lesson 4, once source full lesson has been compared.
+
+## 2021 original publisher HTML verified on connected Our-CS (read-only)
+
+Source archive: `C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core`. This review inspected the original 2021 Kendall Hunt **teacher** `preparation.html` and `lesson.html`, including the student-facing tasks reproduced in the teacher lesson. We did not copy the third-party HTML or licensed figures into the repository. The separate `Student_Public_Mirror` includes newer IM v.360 pages and some 404s and **must not** be substituted for the 2021 edition.
+
+| Source lesson | teacher preparation raw SHA-256 | full teacher lesson raw SHA-256 |
+|---|---|---|
+| G1 U02 L01 | `5963e65f6af0bec30b6cdc51306692a52e4dd982f9aa28efcb38c3b2f8cf7b11` | `6cabbae49552d47181695dec77907bda36af4a4914604bf8c57689530583b89a` |
+| G1 U02 L02 | `a447c6b3ecd69d3ae0c1f2f8f27c65d91391de6fd49117df2e5dc9b6a35bdc01` | `ae35a3e4a83534342393f55c1969d3a1d62df95643fcf43b17e4a011275f9399` |
+| G1 U02 L03 | `d9e3229faa6f5805627e273fe754e11652073cb5285c43fc33ea32ee98ee4bfe` | `28c0eb6c8edc820313f3f188433f5164913a71900b4d91632885dffb51a99094` |
+
+The local teacher text verifies source goals: L01's **The Library** activity explicitly emphasizes expression construction (equations introduced later); L02's **Write Equations** activity emphasizes story-to-equation sensemaking and meaning of each number; L03's **Kiran's Books** activity emphasizes **Add To, Change Unknown** and identifying the answer as the added amount. Preserve these exact differences in student teaching and Practice.
+
+### On-device directory completeness (not academic approval)
+
+The original local 2021 teacher archive has complete `preparation.html` + `lesson.html` file pairs for Grade 1: **146/146**, Grade 2: **146/146**, Grade 3: **143/143**, Grade 4: **149/149**. B001 uses only the first 65 grade-ordinal positions of G4, so the required 500 have the corresponding source **directory pairs available**. This confirms archive file presence, **not** that all 500 source pages have been individually read, checked for edition/accuracy/rights, compared with the learner content, tested or approved.
+
+Review and quality status remains **BATCH_NO_GO**; source-file presence is an intake gate only.
