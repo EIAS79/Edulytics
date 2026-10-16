@@ -103,6 +103,24 @@ public sealed class UsCcssG1Batch03FiveLessonTests
     }
 
     [Fact]
+    public void ExistingCanonicalDataCorrectionsAlsoCoverL12AndL14()
+    {
+        var docs=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        var targets=docs.SelectMany(doc=>doc.Lessons.Select(lesson=>(doc,lesson)))
+            .Where(x=>x.lesson.LessonCode==Prefix+"12"||x.lesson.LessonCode==Prefix+"14")
+            .ToDictionary(x=>x.lesson.LessonCode);
+        Assert.Equal(2,targets.Count);
+        var l12=targets[Prefix+"12"];
+        var l14=targets[Prefix+"14"];
+        Assert.Contains("4 + 3 + 2 = 9",l12.lesson.Translations.Single().WorkedExamples);
+        Assert.Contains("Sort 12 items",l14.lesson.Translations.Single().WorkedExamples);
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.HowManyVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(l12.doc,l12.lesson));
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.CenterThreeVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(l14.doc,l14.lesson));
+    }
+
+    [Fact]
     public void EffectiveCanonicalRepairAlreadyExistsForL11L13AndL15()
     {
         var docs=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
