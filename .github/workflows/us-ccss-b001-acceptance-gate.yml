@@ -5,14 +5,18 @@ on:
     branches: [main]
     paths:
       - 'tools/curriculum/us-ccss-b001-acceptance-gate.cjs'
+      - 'tools/curriculum/us-ccss-b001-reconcile-recorded-p4.cjs'
       - 'tests/us-ccss-b001-acceptance-gate.test.cjs'
+      - 'tests/us-ccss-b001-reconcile-recorded-p4.test.cjs'
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
       - '.github/workflows/us-ccss-b001-acceptance-gate.yml'
   push:
     branches: [main]
     paths:
       - 'tools/curriculum/us-ccss-b001-acceptance-gate.cjs'
+      - 'tools/curriculum/us-ccss-b001-reconcile-recorded-p4.cjs'
       - 'tests/us-ccss-b001-acceptance-gate.test.cjs'
+      - 'tests/us-ccss-b001-reconcile-recorded-p4.test.cjs'
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
       - '.github/workflows/us-ccss-b001-acceptance-gate.yml'
   # Reconcile P4 evidence after an already-run source, engine or HTTPS workflow.
@@ -158,8 +162,10 @@ jobs:
           gh run download "$HTTPS" --repo EIAS79/Edulytics \
             --name b001-500-real-practice-grade-probe-not-academic-acceptance \
             --dir /tmp/b001-recorded-p4/https
-      - name: Generate truthful 500-row per-lesson P4 results for existing P5
+      - name: Verify exact checked-out SHA of the recorded test artifacts
         if: steps.discover.outputs.ready == 'true'
+        id: verified-checkout
+        shell: bash
         env:
           SHA: ${{ steps.discover.outputs.candidate_sha }}
           ENGINE: ${{ steps.discover.outputs.engine_run }}
@@ -167,9 +173,45 @@ jobs:
           HTTPS: ${{ steps.discover.outputs.https_run }}
         run: |
           set -euo pipefail
+          ENGINE_TESTED="$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).candidateSha)' \
+            /tmp/b001-recorded-p4/engine/practice-engine-slice.json)"
+          CONTENT_TESTED="$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).candidateSha)' \
+            /tmp/b001-recorded-p4/content/effective-learner-content-triage.json)"
+          [[ "$ENGINE_TESTED" =~ ^[0-9a-fA-F]{40}$ ]]
+          test "$ENGINE_TESTED" = "$CONTENT_TESTED"
+          if [ "$ENGINE_TESTED" != "$SHA" ]; then
+            # pull_request checks often evaluate GitHub's temporary test merge.
+            # Verify the test merge directly in GitHub's trusted commit graph.
+            ENGINE_EVENT="$(gh api "repos/EIAS79/Edulytics/actions/runs/$ENGINE" --jq .event)"
+            CONTENT_EVENT="$(gh api "repos/EIAS79/Edulytics/actions/runs/$CONTENT" --jq .event)"
+            HTTPS_EVENT="$(gh api "repos/EIAS79/Edulytics/actions/runs/$HTTPS" --jq .event)"
+            test "$ENGINE_EVENT" = pull_request
+            test "$CONTENT_EVENT" = pull_request
+            test "$HTTPS_EVENT" = pull_request
+            PARENTS="$(gh api "repos/EIAS79/Edulytics/commits/$ENGINE_TESTED" \
+              --jq '[.parents[].sha] | join(" ")')"
+            set -- $PARENTS
+            test "$#" -eq 2
+            test "$2" = "$SHA"
+            echo "PR test-merge verified: checked out $ENGINE_TESTED, head $SHA"
+          else
+            echo "Exact push checkout verified: $SHA"
+          fi
+          echo "tested_sha=$ENGINE_TESTED" >> "$GITHUB_OUTPUT"
+      - name: Generate truthful 500-row per-lesson P4 results for existing P5
+        if: steps.discover.outputs.ready == 'true'
+        env:
+          SHA: ${{ steps.discover.outputs.candidate_sha }}
+          TESTED_SHA: ${{ steps.verified-checkout.outputs.tested_sha }}
+          ENGINE: ${{ steps.discover.outputs.engine_run }}
+          CONTENT: ${{ steps.discover.outputs.content_run }}
+          HTTPS: ${{ steps.discover.outputs.https_run }}
+        run: |
+          set -euo pipefail
           node --test tests/us-ccss-b001-reconcile-recorded-p4.test.cjs
           node tools/curriculum/us-ccss-b001-reconcile-recorded-p4.cjs \
-            --sha="$SHA" --https-run-head-sha="$SHA" \
+            --sha="$SHA" --tested-checkout-sha="$TESTED_SHA" \
+            --verified-test-merge-parent-sha="$SHA" --https-run-head-sha="$SHA" \
             --engine-run="$ENGINE" --content-run="$CONTENT" --https-run="$HTTPS" \
             --engine=/tmp/b001-recorded-p4/engine/practice-engine-slice.json \
             --content=/tmp/b001-recorded-p4/content/effective-learner-content-triage.json \
@@ -179,7 +221,7 @@ jobs:
           # It must remain NO_GO while original academic proofs are incomplete.
           set +e
           node tools/curriculum/us-ccss-b001-acceptance-gate.cjs \
-            --sha="$SHA" --evidence=/tmp/b001-recorded-p4/partial-lesson-evidence.json \
+            --sha="$TESTED_SHA" --evidence=/tmp/b001-recorded-p4/partial-lesson-evidence.json \
             > /tmp/b001-recorded-p4/current-acceptance-decision.json
           rc="$?"
           set -e
