@@ -66,19 +66,30 @@ function build(){
       .test(en.stepByStepSolutions||'');
     const stepTemplateCount=duplicates.get(item.gradeOrCourse+'|'+normalized(en.stepByStepSolutions))||1;
     const sourceGoalMissing=!String(packet.studentFacingGoalExcerpt||'').trim();
+    // The original first-edition publisher identifies this as an optional
+    // applied-modeling lesson and supplies no separate teacher/student goal.
+    // Preserve the blank source fields; do not fabricate a goal to silence a
+    // generic extraction warning. Activity parity is still unverified.
+    const optionalWithoutSeparateGoal=sourceGoalMissing &&
+      item.lessonCode==='PED:US-CCSS-MATH:G2:U02:L16' &&
+      item.title==='Our Market’s Inventory (optional)' &&
+      !String(packet.teacherLearningGoalsExcerpt||'').trim() &&
+      String(packet.teacherPurposeExcerpt||'').includes(
+        'apply strategies for adding and subtracting within 100 within the context of a store') &&
+      activities.length===3;
     const taskNeedsWrittenOrVisualEvidence=/draw|drawing|sketch|diagram|picture|graph|chart|table|plot|explain|show your thinking|tell how|justify|center|game|sort|build|create|make a story|write a story|survey|partner/i
       .test(activityText);
     const sourceActivityTextNotCaptured=activities.length>0 &&
       studentExcerpts.length===0;
     const reviewFlags=[
-      ...(sourceGoalMissing?['STUDENT_GOAL_EXCERPT_MISSING']:[]),
+      ...(sourceGoalMissing?[optionalWithoutSeparateGoal?'OPTIONAL_LESSON_NO_SEPARATE_STUDENT_GOAL_IN_SOURCE':'STUDENT_GOAL_EXCERPT_MISSING']:[]),
       ...(sourceActivityTextNotCaptured?['NO_STUDENT_FACING_ACTIVITY_EXCERPT']:[]),
       ...(rawGenericExample?['RAW_PACK_GENERIC_EXAMPLES']:[]),
       ...(rawGenericStep?['RAW_PACK_GENERIC_STEPS']:[]),
       ...(stepTemplateCount>=5?['RAW_PACK_REPEATED_STEP_TEMPLATE']:[]),
       ...(taskNeedsWrittenOrVisualEvidence?['SOURCE_ACTIVITY_NEEDS_INTERACTION_PARITY_REVIEW']:[])
     ];
-    const urgency=sourceGoalMissing?'P0_SOURCE_GOAL':
+    const urgency=sourceGoalMissing&&!optionalWithoutSeparateGoal?'P0_SOURCE_GOAL':
       rawGenericExample||rawGenericStep||stepTemplateCount>=5?
       'P1_LEARNER_BODY_TEMPLATE':taskNeedsWrittenOrVisualEvidence?
       'P2_STUDENT_ACTIVITY_PARITY':'P3_OTHER_SOURCE_PARITY';
@@ -87,6 +98,7 @@ function build(){
       gradeOrdinal:item.gradeOrdinal,title:item.title,sourceUrl:item.sourceUrl,
       sourceEdition:item.sourceEdition,licenceRecorded:item.recordedLicense,
       originalStudentGoalExcerptPresent:!sourceGoalMissing,
+      originalGoalAbsenceVerifiedOptional:optionalWithoutSeparateGoal,
       originalTeacherPurpose:packet.teacherPurposeExcerpt,
       sourceActivityCount:activities.length,
       originalStudentFacingActivityExcerptCount:studentExcerpts.length,
@@ -104,7 +116,8 @@ function build(){
       lessonIndependentMathProof:'NOT_VERIFIED_BY_SOURCE_RISK_AUDIT',
       lessonAuthenticatedProductionUat:'NOT_VERIFIED_BY_SOURCE_RISK_AUDIT',
       internalAcceptance:'NOT_GRANTED_BY_SOURCE_RISK_AUDIT',
-      nextAction:sourceGoalMissing?'Recover missing original student-goal evidence':
+      nextAction:sourceGoalMissing&&!optionalWithoutSeparateGoal?'Recover missing original student-goal evidence':
+        optionalWithoutSeparateGoal?'Verify full market inventory, buying/selling and sales-report activity parity with publisher source and live learner interaction':
         rawGenericExample||rawGenericStep||stepTemplateCount>=5?
           'Compare EFFECTIVE learner-rendered explanation/examples/steps with original lesson purpose and repair only genuine misalignment':
           taskNeedsWrittenOrVisualEvidence?
@@ -118,7 +131,7 @@ function build(){
   for(const row of rows){
     if(!grades[row.grade])grades[row.grade]={
       total:0,rawGenericExamples:0,rawGenericSteps:0,repeatedRawStepTemplates:0,
-      activityInteractionParityReview:0,missingStudentGoal:0,historicalPrior15:0
+      activityInteractionParityReview:0,missingStudentGoal:0,verifiedOptionalWithoutGoal:0,historicalPrior15:0
     };
     const g=grades[row.grade];
     g.total++;
@@ -127,6 +140,7 @@ function build(){
     if(row.rawEmbeddedNormalizedStepTemplateUsesInGrade>=5)g.repeatedRawStepTemplates++;
     if(row.sourceActivityNeedsInteractionParityReview)g.activityInteractionParityReview++;
     if(!row.originalStudentGoalExcerptPresent)g.missingStudentGoal++;
+    if(row.originalGoalAbsenceVerifiedOptional)g.verifiedOptionalWithoutGoal++;
     if(row.historicalFirst15PreviouslyPublished)g.historicalPrior15++;
     priorities[row.reviewPriority]=(priorities[row.reviewPriority]||0)+1;
   }
@@ -141,7 +155,7 @@ function build(){
     independentAcademicAcceptedInThisAudit:0,
     fullBatchPublishAuthorization:false,
     releaseDecision:'NO_GO',
-    caveat:'Repeated RAW generic prose is a prioritization flag, not proof the effective student view is wrong. No external teacher signoff is needed for internal V2 acceptance; independent source and mathematical evidence for all 500 is still required.',
+    caveat:'The original G2 U02 L16 optional market lesson contains activities but no separately stated goals; absence remains recorded, not fabricated. Repeated RAW generic prose is a prioritization flag, not proof the effective student view is wrong. No external teacher signoff is needed for internal V2 acceptance; independent source and mathematical evidence for all 500 is still required.',
     rows
   };
 }
