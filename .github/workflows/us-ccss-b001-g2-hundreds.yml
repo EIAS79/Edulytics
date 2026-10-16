@@ -1,0 +1,43 @@
+name: B001 Grade 2 Hundreds Source Repair
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/Edulytics.Data/Seeding/CommonCoreG2HundredsPlaceValueSourceCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2HundredsPlaceValueSourceCorrectionsTests.cs'
+      - '.github/workflows/us-ccss-b001-g2-hundreds.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  targeted-source-math:
+    name: b001-g2-hundreds-source-math
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore test project
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Run reviewed G2 source correction and independent shadow number oracles
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --filter 'FullyQualifiedName~CommonCoreG2HundredsPlaceValueSourceCorrectionsTests|FullyQualifiedName~UsCommonCoreGrade2HundredsShadowQuestionTests' \
+            --logger 'console;verbosity=normal'
+      - name: Current B001 remains NO_GO until all 500 lesson-level evidence exists
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/curriculum/us-ccss-b001-acceptance-gate.cjs \
+            --sha="$(git rev-parse HEAD)" > /tmp/b001-gate.json && {
+            echo "Unexpected B001 acceptance without evidence" >&2
+            exit 2
+          }
+          cat /tmp/b001-gate.json
