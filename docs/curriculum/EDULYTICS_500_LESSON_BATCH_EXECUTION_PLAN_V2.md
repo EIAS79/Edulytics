@@ -18,18 +18,18 @@
 5. Batch scope is **500** for extraction, workload tracking and aggregate acceptance. Internal engineering can use **grade-scoped checkpoints, reviewable PRs, test shards and resumable jobs** for operational safety. Those subdivisions are *not* a return to the five-lesson completion policy.
 6. **All 500 must have genuine lesson-level evidence** before `BATCH_INTERNAL_ACADEMIC_ACCEPTED` can be recorded. One blocked or unverified lesson means the batch is not accepted. A CI green build by itself is insufficient.
 7. A 500-lesson **production release** is permitted only once the entire batch has met acceptance and existing GitHub + Render safety gates have passed. Incremental commits on a work branch do not mean the public site is live; do not skip protection rules or deploy unaccepted content. Owner confirms the live deployment and samples end-to-end workflows.
-8. Keep historical T001 (Grade 1, Unit 1, lessons 01–10) as previously published work; preserve exact SHAs and prior acceptance evidence. These **ten** occupy the first ten positions of B001 but are **not ten newly implemented lessons**, and are rechecked for drift rather than falsely reapproved.
+8. Keep **15 previously shipped Grade 1 lessons** in historical baseline: T001 (Unit 1 L01–L10) plus Grade 1 Batch 03 (L11–L15, prior release commit `54833b1669fe33f39c0043ac229f7440e1c8da9a`). Preserve their exact SHAs and prior acceptance evidence. These positions must be rechecked for drift, not reported as 15 newly implemented or automatically recertified lessons.
 9. Never fabricate source approval, external accreditation, publisher licence, independent verification, deployment IDs, test PASS labels or production evidence.
 
 ## 2. Exact sequence by planning snapshot
 
 | Batch | Sequence in canonical curriculum order | Planned total | Previously delivered / work remaining |
 |---|---|---:|---|
-| **B001** | Grade 1: 146; Grade 2: 146; Grade 3: 143; Grade 4: first 65 | **500** | T001 prior 10; **490 require processing/status reconciliation** |
+| **B001** | Grade 1: 146; Grade 2: 146; Grade 3: 143; Grade 4: first 65 | **500** | 15 prior G1 releases (T001 10 + G1 B03 5); **485 need processing/status reconciliation** |
 | **B002** | Grade 4: remaining 84; Grade 5: 148; Grade 6: 147; Grade 7: first 121 | **500** | Status unverified |
 | **B003** | Grade 7: remaining 24; Grade 8: 131; Algebra 1: 132; Geometry: 124; Algebra 2: first 89 | **500** | Status unverified |
 | **B004** | Algebra 2: remaining 31; named advanced supplementary courses: 29 (retain each course's own identity) | **60** | Status unverified |
-| **Total** | US CCSS Grade 1–8, named high-school courses/supplements | **1,560** | Ten already documented as published under T001 |
+| **Total** | US CCSS Grade 1–8, named high-school courses/supplements | **1,560** | 15 prior G1 lessons documented as published (T001 10 + B03 5) |
 
 This partition is **count-based** until exact ordered `LessonCode` arrays are built and cross-checked with actual database records, blueprint sources and officially licensed/authorized edition references. Do not group unrelated advanced supplements under a fabricated grade label.
 
@@ -39,7 +39,7 @@ The British/Cambridge, Polish and UAE curricula are outside the 1,560 US-CCSS sc
 
 ## 3. B001 intake and fixed checkpoint
 
-**Next operational target:** `US-CCSS-B001`, positions 1–500 of the US CCSS stable cross-grade order. The first 10 are historical T001; next unprocessed position is **Grade 1 #11**.
+**Next operational target:** `US-CCSS-B001`, positions 1–500 of the US CCSS stable cross-grade order. The first 15 Grade 1 lessons were previously released in T001 (first ten) and G1 Batch 03 (next five); next not previously shipped position is **Grade 1 #16**. Prior production teaching and attempt drift verification remains required.
 
 **Intake outputs required before lesson editing:**
 
@@ -49,7 +49,7 @@ The British/Cambridge, Polish and UAE curricula are outside the 1,560 US-CCSS sc
 - A per-lesson status including `NOT_REVIEWED`, `READY_REUSE`, `CONTENT_REPAIR`, `PRACTICE_REPAIR`, `NEW_SHARED_CAPABILITY`, `BLOCKED`, `TESTED`, `INTERNALLY_ACCEPTED`. Never mark these 500 as accepted by default.
 - A grade boundary-aware resume cursor and batch dashboard that survives interruptions without repeating completed grade extraction.
 
-**Initial checkpoint record:** `docs/curriculum/batches/US-CCSS-B001-INTAKE.json`; it is **planning metadata**, not evidence that any of the 490 outstanding lessons were completed.
+**Initial checkpoint record:** `docs/curriculum/batches/US-CCSS-B001-INTAKE.json`; it is **planning metadata**, not evidence that any of the 485 outstanding lessons were completed.
 
 ## 4. Track A + Track B for each lesson
 
@@ -89,7 +89,7 @@ For **each** of the 500, require:
 
 **Risk-based CI:** test unchanged text differently from a new shared math engine. Always run existing required repository checks until separate, measured CI optimization is implemented. Schema/auth/security/core grading changes require wider regression, security and migration verification.
 
-**Batch-level gate**: `500/500` genuinely accepted for B001–B003; `60/60` for B004. Compute from machine-readable per-lesson evidence tied to source edition and exact code SHAs. Anything below the target is `BATCH_BLOCKED`, not `BATCH_ACCEPTED`. Historical T001 evidence may count for ten only if version drift has been checked.
+**Batch-level gate**: `500/500` genuinely accepted for B001–B003; `60/60` for B004. Compute from machine-readable per-lesson evidence tied to source edition and exact code SHAs. Anything below the target is `BATCH_BLOCKED`, not `BATCH_ACCEPTED`. Historical evidence for the 15 prior Grade 1 lessons may count only after full content-version, student-visible behavior and SHA drift checks; all 500 still require B001-level acceptance.
 
 **Deployment**: use normal branch protections, checks, merge and Render triggers. Verify deployment ID, live SHA, HTTP health, real course navigation and authenticated Practice persisted grading. Owner runs post-release production UAT. A merged Markdown policy is **not** a released 500-lesson curriculum batch.
 
@@ -147,8 +147,8 @@ After any work session or checkpoint, report the **actual**:
 Programme: US-CCSS-MATH
 Batch: B001 of 4  |  planned scope: 500
 Actual IDs inventoried: X/500
-Existing T001 baseline: 10 (historical, drift check pending/passed)
-New lessons source/content reviewed: X/490
+Previously released baseline: 15 (T001 10 + G1 B03 5; drift checks required)
+New lessons source/content reviewed: X/485
 Practice/Math aligned and independently tested: X/500
 Per-lesson internal acceptance: X/500
 Blocked: count + exact LessonCodes/reasons
