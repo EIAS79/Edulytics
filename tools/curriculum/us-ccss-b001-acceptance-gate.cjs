@@ -32,7 +32,7 @@ const requiredChecks = Object.freeze([
 const isNonempty = value => typeof value === 'string' && value.trim() !== '';
 const isValidGitHubActionsUrl = value =>
   typeof value === 'string' &&
-  /^https:\/\/github\.com\/EIAS79\/Edulytics\/actions\/runs\/[1-9]\d*(?:\/jobs\/[1-9]\d*)?(?:\/)?$/.test(value);
+  /^https:\/\/github\.com\/EIAS79\/Edulytics\/actions\/runs\/[1-9]\d*(?:\/(?:job|jobs)\/[1-9]\d*)?(?:\/)?$/.test(value);
 
 function loadCatalogue(filename = catalogueFile) {
   const catalogue = JSON.parse(fs.readFileSync(filename, 'utf8'));
