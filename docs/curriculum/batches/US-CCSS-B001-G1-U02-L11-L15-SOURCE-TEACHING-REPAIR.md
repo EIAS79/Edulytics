@@ -1,7 +1,7 @@
 # B001 — G1 U02 L11–L15 source-aligned learner teaching repairs (candidate only)
 
-**Batch:** US-CCSS-B001, canonical ordinals **26–30/500**, Grade 1 Unit 2.  
-**Authority:** Illustrative Mathematics / Kendall Hunt K–5 Mathematics, first edition (2021), teacher preparation pages and original teacher/student-facing activity extracts already recorded in B001's source-pedagogy packets. Original Student Task Statement PDF links are preserved by canonical lesson code. No independent full-page/diagram validation of these five student PDFs is claimed here.  
+**Batch:** US-CCSS-B001, canonical ordinals **26–30/500**, Grade 1 Unit 2.
+**Authority:** Illustrative Mathematics / Kendall Hunt K–5 Mathematics, first edition (2021), teacher preparation pages and original teacher/student-facing activity extracts already recorded in B001's source-pedagogy packets. Original Student Task Statement PDF links are preserved by canonical lesson code. No independent full-page/diagram validation of these five student PDFs is claimed here.
 **Release status:** **NOT internally accepted**, no new B001 approval, no production authorization. No human teacher signature is required for *Edulytics internal* source-and-test-based acceptance under V2.
 
 | Lesson | Source teaching objective | Learner body defect corrected | Candidate-specific teaching |
