@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-US-CCSS-500-V2",
+  "batchId": "US-CCSS-B001",
+  "status": "PLANNED_NOT_INVENTORIED",
+  "sourceInventory": "docs/curriculum/us-ccss-g1-g12-structural-audit.json",
+  "sourceInventoryGeneratedUtc": "2026-10-11T20:55:36.562Z",
+  "snapshotLessonCount": 1560,
+  "batchPlannedTotal": 500,
+  "exactLessonCodesResolved": false,
+  "catalogueDatabaseReconciliation": "NOT_STARTED",
+  "sourceLicenseReview": "NOT_STARTED",
+  "segments": [
+    {
+      "gradeOrCourse": "Grade 1",
+      "inclusiveGradeOrdinals": {
+        "start": 1,
+        "end": 146
+      },
+      "plannedCount": 146,
+      "historicalT001LessonCount": 10
+    },
+    {
+      "gradeOrCourse": "Grade 2",
+      "inclusiveGradeOrdinals": {
+        "start": 1,
+        "end": 146
+      },
+      "plannedCount": 146,
+      "historicalT001LessonCount": 0
+    },
+    {
+      "gradeOrCourse": "Grade 3",
+      "inclusiveGradeOrdinals": {
+        "start": 1,
+        "end": 143
+      },
+      "plannedCount": 143,
+      "historicalT001LessonCount": 0
+    },
+    {
+      "gradeOrCourse": "Grade 4",
+      "inclusiveGradeOrdinals": {
+        "start": 1,
+        "end": 65
+      },
+      "plannedCount": 65,
+      "historicalT001LessonCount": 0
+    }
+  ],
+  "historicalT001": {
+    "count": 10,
+    "source": "docs/curriculum/T001_AUTOMATED_LESSON_ACCEPTANCE.md",
+    "alreadyPublishedPerPriorPlan": true,
+    "driftVerification": "NOT_STARTED",
+    "newWorkCount": 0
+  },
+  "unprocessedPositionsIncludingHistorical": 500,
+  "newLessonsRequiringReconciliationOrProcessing": 490,
+  "actualLessonCodesInventoried": 0,
+  "newLessonsReviewed": 0,
+  "newLessonsTested": 0,
+  "lessonsInternallyAcceptedUnderThisBatch": 0,
+  "blocked": [],
+  "nextUnprocessedCursor": {
+    "gradeOrCourse": "Grade 1",
+    "gradeOrdinal": 11
+  },
+  "github": {
+    "policyPr": null,
+    "implementationPrs": [],
+    "verifiedBatchCommitSha": null
+  },
+  "deployment": {
+    "verifiedLiveSha": null,
+    "renderDeployId": null,
+    "ownerUat": "NOT_STARTED"
+  },
+  "notes": [
+    "Planning checkpoint only: no actual 500-ID inventory or per-lesson audit has been run.",
+    "Grade ordinals must be reconciled with source and DB; do not assume they are unit lesson numbers.",
+    "Do not treat prior T001 records as new passes or claim B001 accepted."
+  ]
+}
