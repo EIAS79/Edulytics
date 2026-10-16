@@ -988,6 +988,17 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         WHERE u."Email"='commoncore-primary.student.secondary@edulytiks.com';""").splitlines()
     assert len(original_secondary_enrolments) == 1, (
         "secondary fixture must have one original class enrollment")
+    from b001_practice_form_coverage import has_lesson_start_form, coverage_report
+    b001_practice_forms = []
+    b001_e2e_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_ATTEMPTS") == "1"
+    b001_e2e_rows = []
+    b001_e2e_session_grade = None
+    b001_e2e_csrf = None
+    b001_e2e_adoption = None
+    if b001_e2e_enabled:
+        from b001_practice_attempt_probe import (
+            probe_lesson, summarize, extract_csrf, extract_adoption)
+
     for ordinal, lesson in enumerate(source_lessons, 1):
         code = lesson["lessonCode"]
         assert code in by_code, ("missing canonical DB lesson", ordinal, code)
@@ -1026,10 +1037,62 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         rendered = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
         expected = re.sub(r"\s+", " ", html.unescape(title)).casefold()
         assert expected in rendered, (code, "missing exact lesson title", expected)
+
+        b001_practice_forms.append({
+            "ordinal": ordinal,
+            "lessonCode": code,
+            "hasLessonStartForm": has_lesson_start_form(body),
+        })
+
+        if b001_e2e_enabled:
+            if b001_e2e_session_grade != target_grade:
+                try:
+                    practice_index = get_page(grade_student, "/student/practice")
+                    b001_e2e_csrf = extract_csrf(practice_index)
+                    b001_e2e_adoption = extract_adoption(practice_index)
+                except (urllib.error.HTTPError, AssertionError):
+                    b001_e2e_csrf = None
+                    b001_e2e_adoption = None
+                b001_e2e_session_grade = target_grade
+            result = probe_lesson(grade_student, BASE, lesson_id,
+                                  b001_e2e_adoption, b001_e2e_csrf, sql)
+            result["ordinal"] = ordinal
+            result["lessonCode"] = code
+            b001_e2e_rows.append(result)
+            print("B001_DISPOSABLE_500_REAL_PRACTICE_PROBE",
+                  ordinal, code, result["status"], flush=True)
+
         print("B001_500_DISPOSABLE_AUTHENTICATED_PAGE_PASS",
               ordinal, code, flush=True)
     print("B001_500_DISPOSABLE_AUTHENTICATED_HTML_COMPLETE",
           len(source_lessons), grade_counts, flush=True)
+
+    practice_matrix = coverage_report(b001_practice_forms)
+    Path("/tmp/b001-500-lesson-practice-form-preflight.json").write_text(
+        json.dumps(practice_matrix, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8")
+    print("B001_500_LESSON_PRACTICE_CTA_PREFLIGHT",
+          practice_matrix["lessonStartFormsPresent"],
+          practice_matrix["missingLessonStartForms"], flush=True)
+    if os.environ.get("EDULYTICS_B001_REQUIRE_ALL500_PRACTICE_CTA") == "1":
+        assert practice_matrix["missingLessonStartForms"] == 0, (
+            "B001 Practice CTA remains incomplete for a 500-lesson release",
+            practice_matrix["missingLessonStartForms"])
+
+    if b001_e2e_enabled:
+        b001_attempts = summarize(b001_e2e_rows)
+        Path("/tmp/b001-500-real-practice-generation-and-grading-probe.json").write_text(
+            json.dumps(b001_attempts, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8")
+        print("B001_500_REAL_PRACTICE_GENERATE_AND_GRADE_SUMMARY",
+              b001_attempts["generationAndSelfGradingPassed"],
+              b001_attempts["notSelfGraded"],
+              json.dumps(b001_attempts["byStatus"], sort_keys=True), flush=True)
+        if os.environ.get("EDULYTICS_B001_REQUIRE_ALL500_GRADED") == "1":
+            assert b001_attempts["notSelfGraded"] == 0, (
+                "B001 500-lesson student Practice grading gate NO_GO",
+                b001_attempts["byStatus"])
+
     restored = sql("""
         WITH restoration AS (
         UPDATE "StudentEnrollments" e

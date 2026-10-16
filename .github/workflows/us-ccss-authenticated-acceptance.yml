@@ -15,7 +15,7 @@ permissions:
 jobs:
   isolated-us-school-https:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 65
     services:
       postgres:
         image: postgres:18
@@ -37,6 +37,9 @@ jobs:
       EDULYTICS_CI_REHEARSAL_PROGRAMME: 'US-CCSS'
       EDULYTICS_B001_G1_ALL_READS: '0'
       EDULYTICS_B001_ALL500_READS: '1'
+      EDULYTICS_B001_REQUIRE_ALL500_PRACTICE_CTA: '1'  # Fail closed on missing lesson Practice entry, not academic clearance
+      EDULYTICS_B001_PROBE_500_ATTEMPTS: '1'  # Real disposable Practice generation + persistence probe
+      EDULYTICS_B001_REQUIRE_ALL500_GRADED: '0'  # Informational until blockers fixed, release remains NO_GO
       ASPNETCORE_ENVIRONMENT: Staging
       PGPASSWORD: postgres
       Edulytics__LessonContent__ReadFromJson: 'true'
@@ -55,6 +58,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Validate fail-closed B001 Practice form classification
+        run: |
+          python3 -m py_compile tools/phase29/acceptance_two_school_https.py tools/phase29/b001_practice_form_coverage.py
+          python3 tools/phase29/b001_practice_form_coverage.py
+          python3 -m py_compile tools/phase29/b001_practice_attempt_probe.py
+          python3 tools/phase29/b001_practice_attempt_probe.py
       - name: Prove embedded content is unchanged
         run: python3 tools/phase29/verify_main_content_parity.py
       - name: Build application and apply only disposable schema
@@ -146,6 +155,22 @@ jobs:
           done
           test "$ready" = true
           python3 tools/phase29/acceptance_two_school_https.py
+      - name: Preserve exact 500 lesson disposable real Practice generation and grading evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-500-real-practice-grade-probe-not-academic-acceptance
+          path: /tmp/b001-500-real-practice-generation-and-grading-probe.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Preserve original B001 500 lesson Practice entry availability matrix
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-500-practice-entry-preflight-no-academic-approval
+          path: /tmp/b001-500-lesson-practice-form-preflight.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Preserve G1 lesson desktop/mobile visual evidence
         if: always()
         uses: actions/upload-artifact@v4
