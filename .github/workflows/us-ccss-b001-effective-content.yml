@@ -57,3 +57,37 @@ jobs:
           path: artifacts/curriculum-delivery/US-CCSS-MATH/B001/effective-learner-content-triage.json
           if-no-files-found: warn
           retention-days: 30
+
+  # This verifies real publisher-source crosswalk and independently recomputes
+  # candidate math answers; it DOES NOT claim 500/500 educational parity.
+  b001-source-and-math:
+    name: b001-independent-source-content-and-math
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Check all 500 original publisher lesson goals and student activities (not lesson approval)
+        run: node --test tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs
+      - name: Verify source-task PDF references and recorded Grade 1 text inspection limits
+        run: |
+          node --test tests/us-ccss-b001-im2021-original-student-pdf-source-links.test.cjs
+          node --test tests/us-ccss-b001-g1-u02-original-pdf-task-review.test.cjs
+          node --test tests/us-ccss-b001-500-reviewer-worklist.test.cjs
+      - name: Restore source math oracle test project
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Independently recompute source-specific Grade 1 L04–L15 question answers
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-restore \
+            --filter 'FullyQualifiedName~UsCcssG1Unit2SevenIndependentOracleTests|FullyQualifiedName~UsCcssG1Unit2Part4IndependentOracleTests' \
+            --logger 'console;verbosity=normal'
+      - name: Report scope honestly
+        run: |
+          echo '500 original publisher lesson identities/source packets cross-checked.'
+          echo '12 current G1 Unit 2 source-specific mathematical oracle families tested.'
+          echo 'This is NOT 500 lesson academic approval, student-activity parity or live UAT.'
