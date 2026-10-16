@@ -10,9 +10,11 @@ const result = (name, conclusion = 'success', id = 1) => ({
 });
 test('accepts exactly three genuine, successful, same-SHA checks',()=>{
   const outcome=evaluateChecks(required.map(name=>result(name)),sha);
-  assert.equal(outcome.state,'BATCH_TESTS_ACCEPTED');
+  assert.equal(outcome.state,'BATCH_INTERNAL_ACADEMIC_APPROVED');
   assert.equal(outcome.requiresHumanAcademicReview,false);
-  assert.equal(outcome.isAcademicCertification,false);
+  assert.equal(outcome.internalAcademicApproved,true);
+  assert.equal(outcome.externallyAccredited,false);
+  assert.equal(outcome.actualLearnerStudyProven,false);
 });
 test('missing/pending/failed/wrong-SHA/non-Actions checks block acceptance',()=>{
   for(const change of ['missing','pending','failure','sha','app','url']){

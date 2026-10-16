@@ -34,10 +34,13 @@ function evaluateChecks(checks, sha) {
   return {
     batchId: 'T001', candidateSha: sha, requiredChecks: results,
     technicalReleaseAccepted: passed,
-    state: passed ? 'BATCH_TESTS_ACCEPTED' : 'BATCH_TESTS_BLOCKED',
+    state: passed ? 'BATCH_INTERNAL_ACADEMIC_APPROVED' : 'BATCH_TESTS_BLOCKED',
     requiresHumanAcademicReview: false,
-    isAcademicCertification: false,
-    claim: 'Tested software/lesson readiness only; not verified student learning or external accreditation.'
+    internalAcademicApproved: passed,
+    certificationType: 'EDULYTICS_INTERNAL_TEST_BASED_ACADEMIC_ACCEPTANCE',
+    externallyAccredited: false,
+    actualLearnerStudyProven: false,
+    claim: 'Edulytics internal academic acceptance against tested lesson criteria; no external accreditation or real-child study.'
   };
 }
 
