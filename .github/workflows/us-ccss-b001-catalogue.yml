@@ -10,6 +10,7 @@ on:
       - 'docs/curriculum/batches/US-CCSS-B001-*'
       - 'tools/curriculum/us-ccss-b001-inventory.cjs'
       - 'tests/us-ccss-b001-inventory.test.cjs'
+      - 'tests/us-ccss-b001-original-source-intake.test.cjs'
       - '.github/workflows/us-ccss-b001-catalogue.yml'
   push:
     branches: [main]
@@ -20,6 +21,7 @@ on:
       - 'docs/curriculum/batches/US-CCSS-B001-*'
       - 'tools/curriculum/us-ccss-b001-inventory.cjs'
       - 'tests/us-ccss-b001-inventory.test.cjs'
+      - 'tests/us-ccss-b001-original-source-intake.test.cjs'
       - '.github/workflows/us-ccss-b001-catalogue.yml'
   workflow_dispatch:
 
@@ -44,3 +46,5 @@ jobs:
         run: node tools/curriculum/us-ccss-b001-inventory.cjs --check
       - name: Source-content mapping tests
         run: node --test tests/us-ccss-b001-inventory.test.cjs
+      - name: Exact 500 on-device source evidence crosswalk (snapshot consistency only)
+        run: node --test tests/us-ccss-b001-original-source-intake.test.cjs
