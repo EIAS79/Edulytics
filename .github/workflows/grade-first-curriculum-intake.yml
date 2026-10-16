@@ -1,0 +1,29 @@
+name: Grade-first five-lesson intake and scoped source validation
+
+on:
+  pull_request:
+    paths:
+      - 'tools/curriculum/grade-five-intake.cjs'
+      - 'tests/curriculum/grade-five-intake.test.cjs'
+      - 'artifacts/curriculum-delivery/**'
+      - '.github/workflows/grade-first-curriculum-intake.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grade-intake-source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check intake syntax
+        run: node --check tools/curriculum/grade-five-intake.cjs
+      - name: Validate Grade 1 exact grade inventory and first five-lesson chunk
+        run: node --test tests/curriculum/grade-five-intake.test.cjs
+      - name: Print source and DB reconciliation summary
+        run: node tools/curriculum/grade-five-intake.cjs
