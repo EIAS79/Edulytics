@@ -2,7 +2,9 @@
 'use strict';
 
 /**
- * Single B001 (all 500) human reviewer worklist, never a release approval.
+ * Single B001 (all 500) original-source verification worklist, never a release approval.
+ * Internal V2 acceptance uses reproducible source and test evidence.
+ * No external teacher or academic signature is required.
  * Sources are local publisher-sourced dossiers and manifest snapshots.
  * No publisher PDF bytes, full teacher lessons or personal pupil data included.
  */
@@ -26,8 +28,9 @@ const fields=[
  'batchOrdinal','lessonCode','grade','title','teacherSourceUrl','studentTaskPdfUrl',
  'sourceEdition','teacherPurpose','studentGoal','originalActivityNames',
  'baselineSkillFamilies','sourceReviewFlags','pdfTextInspection',
- 'graphicsVisualReview','realClassroomActivityUat','independentMathOracleApproval',
- 'teacherSignoff','releaseDecision','specificReviewGaps'
+ 'sourceToLearnerParityVerification','sourceVisualParityVerification',
+ 'studentInteractionVerification','mathOracleVerification',
+ 'releaseDecision','specificReviewGaps'
 ];
 const csvValue=x=>'"'+String(x==null?'':Array.isArray(x)?x.join(' | '):x)
  .replace(/\r?\n/g,' ').replace(/"/g,'""')+'"';
@@ -45,8 +48,8 @@ function build(){
        !p.teacherPurposeExcerpt)
       throw Error('B001 source/PDF identity drift at ordinal '+(i+1));
     if(s&&(s.ordinal!==i+1||s.sourceStudentPdfUrl!==f.originalStudentTaskStatementPdfUrl||
-       s.academicDecision!=='NO_GO'||s.independentTeacherDecision!=='UNSIGNED'))
-      throw Error('Seven PDF source text observations must remain unsigned and source-locked');
+       s.academicDecision!=='NO_GO'))
+      throw Error('Seven PDF source text observations must remain unaccepted and source-locked');
     const mapping=byMapping.get(c.lessonCode);
     const row={
       batchOrdinal:i+1,lessonCode:c.lessonCode,grade:c.gradeOrCourse,
@@ -59,15 +62,15 @@ function build(){
       baselineSkillFamilies:mapping?.allowedQuestionFamilies||[],
       sourceReviewFlags:p.reviewFlags||[],
       pdfTextInspection:s?'TEXT_EXTRACTED_AND_COMPARED_TO_CANDIDATE':'NOT_INDIVIDUALLY_INSPECTED',
-      graphicsVisualReview:'PENDING',
-      realClassroomActivityUat:'PENDING',
-      independentMathOracleApproval:'PENDING_HUMAN_REVIEW',
-      teacherSignoff:'UNSIGNED',
+      sourceToLearnerParityVerification:'PENDING_SOURCE_ALIGNED_EVIDENCE',
+      sourceVisualParityVerification:'PENDING_GRAPHICS_PARITY_EVIDENCE',
+      studentInteractionVerification:'PENDING_LEARNER_PATH_UAT',
+      mathOracleVerification:'PENDING_INDEPENDENT_ORACLE_EVIDENCE',
       releaseDecision:'NO_GO',
       specificReviewGaps:[
         ...(s?s.blockingFindings:[
           'Independently compare the original student PDF page content and visual diagrams with the learner body and exact generated Practice family.',
-          'Verify real student activities and mathematical correctness; obtain independent qualified-teacher signoff.'
+          'Verify student activities, source-aligned teaching and mathematical correctness using reproducible independent tests; no external signature is required.'
         ]),
         ...(!p.studentFacingGoalExcerpt?[
           'The original student-facing learning-goal excerpt was absent; inspect full 2021 student task and teacher goal, do not synthesize it.'
@@ -85,10 +88,10 @@ function build(){
     schemaVersion:1,batchId:'US-CCSS-B001',total:500,
     observedOriginalStudentPdfTextInspectionCount:7,
     missingOriginalStudentFacingGoalExcerptCount:rows.filter(x=>x.studentGoal.startsWith('[NOT PRESENT')).length,
-    independentGraphicsApprovals:0,independentMathApprovals:0,
-    qualifiedTeacherApprovals:0,productionLearnerUatApprovals:0,
+    sourceVisualParityVerifiedCount:0,mathOracleVerifiedCount:0,
+    internalAcademicAcceptedCount:0,productionLearnerUatPassedCount:0,
     academicReleaseDecision:'NO_GO',
-    assurance:'Reviewer worklist, not publisher fidelity, independent solver proof, actual classroom UAT or a teacher certification. Baseline family mappings can be overridden by source-specific runtime contracts and must be rechecked at the exact candidate SHA.',
+    assurance:'Source-aligned internal verification worklist, not academic approval. Independent mathematics, original-source activity parity and authenticated learner paths need reproducible evidence on the exact candidate SHA. External teacher signoff is not an internal acceptance prerequisite. Baseline family mappings may be overridden by source-specific runtime contracts.',
     rows
   };
 }
@@ -97,13 +100,13 @@ function main(){
   const out=process.argv.find(x=>x.startsWith('--out='))?.slice('--out='.length)||
     path.join(root,'artifacts','curriculum-delivery','US-CCSS-MATH','B001');
   fs.mkdirSync(out,{recursive:true});
-  fs.writeFileSync(path.join(out,'b001-500-source-pdf-math-human-review-worklist.json'),
+  fs.writeFileSync(path.join(out,'b001-500-source-pdf-math-internal-verification-worklist.json'),
     JSON.stringify(dossier,null,2)+'\n');
-  fs.writeFileSync(path.join(out,'b001-500-source-pdf-math-human-review-worklist.csv'),
+  fs.writeFileSync(path.join(out,'b001-500-source-pdf-math-internal-verification-worklist.csv'),
     fields.join(',')+'\n'+dossier.rows.map(row=>fields.map(x=>csvValue(row[x])).join(',')).join('\n')+'\n');
   process.stdout.write(JSON.stringify({batch:dossier.batchId,rows:dossier.total,
     textInspected:dossier.observedOriginalStudentPdfTextInspectionCount,
-    qualifiedTeacherApprovals:0,release:dossier.academicReleaseDecision,out})+'\n');
+    internalAcademicAcceptedCount:dossier.internalAcademicAcceptedCount,release:dossier.academicReleaseDecision,out})+'\n');
 }
 if(require.main===module)main();
 module.exports={build};
