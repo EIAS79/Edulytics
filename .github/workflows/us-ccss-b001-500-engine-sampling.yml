@@ -5,12 +5,26 @@ on:
     branches: [main]
     paths:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001FiveHundredPracticeEngineTests.cs'
+      # Regenerate exact-commit B001 proof when actual question/Practice/content code changes.
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Data/Seeding/CommonCore*.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
       - '.github/workflows/us-ccss-b001-500-engine-sampling.yml'
   push:
     branches: [main]
     paths:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001FiveHundredPracticeEngineTests.cs'
+      # Regenerate exact-commit B001 proof when actual question/Practice/content code changes.
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Data/Seeding/CommonCore*.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
       - '.github/workflows/us-ccss-b001-500-engine-sampling.yml'
   workflow_dispatch:
