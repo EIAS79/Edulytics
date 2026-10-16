@@ -1007,13 +1007,15 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                   AND c."Code" LIKE 'L""" + str(target_grade + 1).zfill(2) + """-%';""").splitlines()
             assert len(class_rows) == 1, ("missing genuine grade class", target_grade)
             assignment = sql("""
+                WITH reassignment AS (
                 UPDATE "StudentEnrollments" e
                 SET "ClassGroupId"='""" + class_rows[0] + """'
                 FROM "StudentProfiles" p
                 JOIN "AspNetUsers" u ON u."Id" = p."UserId"
                 WHERE e."StudentProfileId"=p."Id" AND u."Email"='""" + secondary_email + """'
-                RETURNING e."Id"::text;""").splitlines()
-            assert len(assignment) == 1, ("must update one disposable enrollment", target_grade)
+                RETURNING e."Id"
+                ) SELECT count(*) FROM reassignment;""")
+            assert assignment == "1", ("must update one disposable enrollment", target_grade, assignment)
             grade_student = connect("commoncore-primary", "Student", "secondary")
             active_grade = target_grade
             print("B001_DISPOSABLE_GRADE_SCOPED_STUDENT", target_grade, flush=True)
@@ -1029,14 +1031,16 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
     print("B001_500_DISPOSABLE_AUTHENTICATED_HTML_COMPLETE",
           len(source_lessons), grade_counts, flush=True)
     restored = sql("""
+        WITH restoration AS (
         UPDATE "StudentEnrollments" e
         SET "ClassGroupId"='""" + original_secondary_enrolments[0] + """'
         FROM "StudentProfiles" p
         JOIN "AspNetUsers" u ON u."Id"=p."UserId"
         WHERE e."StudentProfileId"=p."Id"
           AND u."Email"='""" + secondary_email + """'
-        RETURNING e."Id"::text;""").splitlines()
-    assert len(restored) == 1, "must restore disposable fixture grade enrollment"
+        RETURNING e."Id"
+        ) SELECT count(*) FROM restoration;""")
+    assert restored == "1", "must restore disposable fixture grade enrollment"
 
 # POST real teacher assessment and validate persistence on disposable DB.
 import uuid
