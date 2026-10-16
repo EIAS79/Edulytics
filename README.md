@@ -173,7 +173,7 @@ phase. Phase 24 prevents new artifacts; it does not rewrite repository history.
 
 ## Curriculum lesson delivery — current execution plan
 
-Future mathematics curriculum work follows the [grade-first, five-lesson execution plan](docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md): inventory each grade once, process five consecutive lessons per chunk, reuse lesson content and Practice capabilities, test only affected behaviour, then commit and release under existing protections. The historical 500-lesson-batch plan is superseded. The first ten US Grade 1 lessons already published in T001 count as the first two five-lesson groups; next is Grade 1 Lessons 11–15.
+Future US Common Core mathematics curriculum work follows the [500-lesson batch execution plan V2](docs/curriculum/EDULYTICS_500_LESSON_BATCH_EXECUTION_PLAN_V2.md): 1,560 lessons are grouped into **B001 (500) + B002 (500) + B003 (500) + B004 (60)**, preserving grade/unit/lesson order across batch boundaries. Reconcile each source/DB grade index once, reuse existing lesson and Practice capabilities, inspect actual student-visible content, independently test every lesson and aggregate only genuine acceptance evidence. The ten Grade 1 T001 lessons already published remain historical baseline entries within B001; the first new target is Grade 1 lesson 11. See the [B001 planning checkpoint](docs/curriculum/batches/US-CCSS-B001-INTAKE.json). The previous five-lesson policy and earlier original 500-lesson certification policy are historical, not executable acceptance evidence.
 
 This is an execution **policy**, not a change to live CI, protected branch settings, or Render deploy triggers. Those require separate engineered and tested updates.
 
