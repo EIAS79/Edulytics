@@ -250,5 +250,43 @@
     "comparisonEndpoint": "https://github.com/EIAS79/Edulytics/compare/54833b1669fe33f39c0043ac229f7440e1c8da9a...main",
     "runtimeSourceChangesObservedThroughMainAtAudit": 0,
     "note": "Source code file diff absent in the initial commit comparison, but no authenticated production E2E reassessment or effective content fingerprint parity performed; do not promote 15 baseline lessons to newly accepted B001."
+  },
+  "postIntakeTechnicalVerification": {
+    "observationDate": "2026-10-16",
+    "scope": "500 B001 canonical lesson IDs; separate from 500 internal academic acceptance",
+    "authenticatedDisposableHttps": {
+      "workflowRunId": 38951234465,
+      "url": "https://github.com/EIAS79/Edulytics/actions/runs/38951234465",
+      "exactTestedCommit": "e1f38d22294857766cd6ab23e6c4152c3330e86e",
+      "workflowConclusion": "success",
+      "authenticatedLessonPagesVerified": 500,
+      "practiceGenerateAndGradePersistenceProbeCount": 500,
+      "selfConsistentGradesPersisted": 498,
+      "syntheticSurveyTalliesPersisted": 2,
+      "malformedAnswersRejectedAndPersisted": 500,
+      "knownLimits": "Disposable student/school accounts and synthetic survey data, not independent comparison to original lesson objectives, real survey respondents, production login or academic UAT."
+    },
+    "laterSourceCandidateEngineSampling": {
+      "runId": 38978957362,
+      "url": "https://github.com/EIAS79/Edulytics/actions/runs/38978957362",
+      "exactCandidateCommit": "212272bee30a88b207bd8c4958ce806a8ca27828",
+      "workflowConclusion": "success",
+      "canonicalCodesCovered": 500,
+      "testShape": "One test iterates all 500 lesson codes at Standard, Stretch and Challenge, including malformed-answer controls. Not 500 separate lesson-content approvals."
+    },
+    "all500SourceRemediation": {
+      "pullRequest": "https://github.com/EIAS79/Edulytics/pull/538",
+      "candidateTool": "tools/curriculum/us-ccss-b001-source-remediation-500.cjs",
+      "rawPackRiskAuditCoverage": 500,
+      "sourceGoalExcerptMissing": 1,
+      "rawEmbeddedStepsRepeatedInFiveOrMoreGradeLessons": 463,
+      "riskSignalOnly": true,
+      "originalPublisherActivityAndEffectiveContentParity": "NOT_ESTABLISHED",
+      "auditWorkflowConclusion": "PENDING",
+      "note": "All 500 exact source/embedded metadata identities were cross-checked. Raw template repetition is NOT evidence of a wrong student-visible page, especially where code materializes source-specific corrections. Academic acceptance is not granted."
+    },
+    "academicAcceptedUnderB001": 0,
+    "releaseDecision": "NO_GO",
+    "whyNoGo": "Publisher-source teaching, interactive original student activities and lesson-specific independent academic proof not completed for all 500 on the same candidate SHA. Post-release live and owner UAT not done."
   }
 }
