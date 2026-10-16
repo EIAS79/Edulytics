@@ -16,6 +16,8 @@ on:
       - 'tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs'
       - 'tests/us-ccss-b001-g1-u02-original-pdf-task-review.test.cjs'
       - 'tools/curriculum/us-ccss-b001-build-500-reviewer-worklist.cjs'
+      - 'tools/curriculum/us-ccss-b001-source-remediation-500.cjs'
+      - 'tests/us-ccss-b001-source-remediation-500.test.cjs'
       - 'tests/us-ccss-b001-500-reviewer-worklist.test.cjs'
       - '.github/workflows/us-ccss-b001-catalogue.yml'
   push:
@@ -33,6 +35,8 @@ on:
       - 'tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs'
       - 'tests/us-ccss-b001-g1-u02-original-pdf-task-review.test.cjs'
       - 'tools/curriculum/us-ccss-b001-build-500-reviewer-worklist.cjs'
+      - 'tools/curriculum/us-ccss-b001-source-remediation-500.cjs'
+      - 'tests/us-ccss-b001-source-remediation-500.test.cjs'
       - 'tests/us-ccss-b001-500-reviewer-worklist.test.cjs'
       - '.github/workflows/us-ccss-b001-catalogue.yml'
   workflow_dispatch:
@@ -79,5 +83,18 @@ jobs:
         with:
           name: b001-500-source-pdf-math-internal-verification-worklist
           path: /tmp/b001-review-worklist/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Verify all 500 original source/embedded learner data and enumerate remediation priorities
+        run: |
+          node --check tools/curriculum/us-ccss-b001-source-remediation-500.cjs
+          node --test tests/us-ccss-b001-source-remediation-500.test.cjs
+          node tools/curriculum/us-ccss-b001-source-remediation-500.cjs --out=/tmp/b001-500-remediation
+      - name: Preserve full 500-lesson P2/P3 risk ledger (not academic acceptance)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-500-source-aligned-remediation-ledger
+          path: /tmp/b001-500-remediation/
           if-no-files-found: warn
           retention-days: 30
