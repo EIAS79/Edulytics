@@ -39,6 +39,7 @@ public sealed class UsCcssB001FiveHundredPracticeEngineTests
         var rows = new List<object>();
         var errors = new List<string>();
         var generatedCount = 0;
+        var passedLessons = 0;
         foreach (var (code, ordinal) in lessons.Select((code, i) => (code, i + 1)))
         {
             var reasons = new List<string>();
@@ -107,6 +108,8 @@ public sealed class UsCcssB001FiveHundredPracticeEngineTests
             }
             if (reasons.Count > 0)
                 errors.Add($"{code}: {string.Join("; ", reasons)}");
+            else
+                passedLessons++;
             rows.Add(new {
                 ordinal, lessonCode = code, familiesTested, generatedCases = generatedForLesson,
                 status = reasons.Count == 0 ? "ENGINE_SAMPLES_PASSED" : "ENGINE_SAMPLES_FAILED",
@@ -126,8 +129,7 @@ public sealed class UsCcssB001FiveHundredPracticeEngineTests
             testType = "B001_ENGINE_SAMPLING_NOT_FINAL_ACADEMIC_CERTIFICATION",
             candidateSha = Environment.GetEnvironmentVariable("GITHUB_SHA") ?? "local-unpinned",
             lessonCount = rows.Count,
-            lessonEngineSamplePassCount = rows.Count(r =>
-                r.ToString()?.Contains("ENGINE_SAMPLES_PASSED", StringComparison.Ordinal) == true),
+            lessonEngineSamplePassCount = passedLessons,
             lessonEngineFailureCount = errors.Count,
             generatedCases = generatedCount,
             academicDecision = "NOT_ACCEPTED",
