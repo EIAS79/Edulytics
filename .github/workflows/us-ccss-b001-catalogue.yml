@@ -68,16 +68,16 @@ jobs:
         run: node --test tests/us-ccss-b001-500-original-pedagogy-packets.test.cjs
       - name: G1 U02 L04-L10 original task-PDF text and unresolved activity review evidence (no teacher approval)
         run: node --test tests/us-ccss-b001-g1-u02-original-pdf-task-review.test.cjs
-      - name: Cross-check all 500 lessons and produce unsigned academic reviewer JSON/CSV worklist
+      - name: Cross-check 500 source dossiers and produce internal evidence-based verification worklist
         run: |
           node --check tools/curriculum/us-ccss-b001-build-500-reviewer-worklist.cjs
           node --test tests/us-ccss-b001-500-reviewer-worklist.test.cjs
           node tools/curriculum/us-ccss-b001-build-500-reviewer-worklist.cjs --out=/tmp/b001-review-worklist
-      - name: Preserve all-500 human review worklist (NO academic approval)
+      - name: Preserve all-500 internal source verification worklist (NO academic approval)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: b001-500-unsigned-source-pdf-math-reviewer-worklist
+          name: b001-500-source-pdf-math-internal-verification-worklist
           path: /tmp/b001-review-worklist/
           if-no-files-found: warn
           retention-days: 30
