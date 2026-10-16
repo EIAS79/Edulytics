@@ -159,7 +159,8 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG1Batch03DataQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
-         UsCcssG1Unit2Part2Questions.Supports(family.Trim()));
+         UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
+         UsCcssG1Unit2Part3Questions.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -293,6 +294,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssG1Unit2Part3Questions.Supports(family))
+            return UsCcssG1Unit2Part3Questions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2Part2Questions.Supports(family))
             return UsCcssG1Unit2Part2Questions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
@@ -887,6 +890,12 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssG1Unit2Part3Questions.Supports(family))
+        {
+            var reviewed=UsCcssG1Unit2Part3Questions.Build(family,random);
+            return new ExactProblem(reviewed.Family,reviewed.Prompt,reviewed.Solution,
+                reviewed.ItemType,reviewed.Parameters);
+        }
         if (UsCcssG1Unit2Part2Questions.Supports(family))
         {
             var story=UsCcssG1Unit2Part2Questions.Build(family,random);
@@ -2726,6 +2735,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssG1Unit2Part3Questions.Supports(problem.Family))
+            return UsCcssG1Unit2Part3Questions.Solve(problem.Family,p);
         if (UsCcssG1Unit2Part2Questions.Supports(problem.Family))
             return UsCcssG1Unit2Part2Questions.Solve(problem.Family,p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
