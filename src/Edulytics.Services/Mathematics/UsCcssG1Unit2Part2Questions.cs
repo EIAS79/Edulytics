@@ -90,13 +90,23 @@ internal static class UsCcssG1Unit2Part2Questions
             var order=rng.Next(2);
             var color=rng.Next(2);
             p["total"]=total;p["first"]=first;p["order"]=order;p["color"]=color;
-            prompt=$"Shake and Spill: you have {total} two-color counters in all. "+
-                $"After spilling, {first} show {(color==0?"red":"yellow")}. "+
-                "How many show the other color? "+
-                (order==0?$"Complete {total} = {first} + [ ? ].":$"Complete {first} + [ ? ] = {total}.")+
-                " Enter the missing part; imagine another way to split the same total.";
-            solution="Count all counters, then the known color. The missing color plus the known "+
-                "color must equal the total. The equals sign is true on either side.";
+            // L07 has BOTH addends unknown. Show two candidate decompositions
+            // and ask which one is possible; asking for a missing given color
+            // belongs in L08 (Shake, Spill, and Cover), not here.
+            var correctPair=$"{first} {(color==0?"red":"yellow")} and {total-first} "+
+                (color==0?"yellow":"red");
+            var falsePair=$"{first} {(color==0?"red":"yellow")} and {total-first+1} "+
+                (color==0?"yellow":"red");
+            var firstChoice=order==0?correctPair:falsePair;
+            var secondChoice=order==0?falsePair:correctPair;
+            prompt=$"Shake and Spill: You have {total} two-color counters "+
+                "but neither color's number is known yet. "+
+                "Which possible split makes EXACTLY the total? "+
+                $"Enter 1 or 2: 1) {firstChoice}; 2) {secondChoice}. "+
+                "Then try to find another different split of the same total.";
+            solution="In a both-parts-unknown story, the two color groups can vary. "+
+                "Check that their counts add to the total and try different true "+
+                "decompositions, including one with the total on the left of =.";
         }
         return new Problem(family,prompt,solution,AssessmentItemType.Numeric,p);
     }
@@ -111,7 +121,7 @@ internal static class UsCcssG1Unit2Part2Questions
                 p["mode"]==2?p["start"]-p["change"]:p["start"]+p["change"],
             CenterStory=>(p["action"]==p["flip"])?1:2,
             PetsTotal=>p["first"]+p["second"],
-            ShakeSpill=>p["total"]-p["first"],
+            ShakeSpill=>p["order"]==0?1:2,
             _=>throw new InvalidOperationException("Unknown family")
         };
         return answer.ToString(CultureInfo.InvariantCulture);
