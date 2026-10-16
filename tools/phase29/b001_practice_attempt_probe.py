@@ -20,16 +20,22 @@ def extract_adoption(html):
     found=re.search(r'name="curriculumAdoptionId"[^>]*value="('+UUID+r')"',html)
     return found.group(1) if found else None
 
-def probe_lesson(opener,base,lesson_id,adoption_id,csrf,sql):
+def extract_idempotency_key(html):
+    found=re.search(r'name="_idempotencyKey"[^>]*value="([^"]+)"',html)
+    return found.group(1) if found else None
+
+def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql):
     """Generate and self-grade one real question scoped to a single lesson."""
     if not re.fullmatch(UUID,lesson_id):
         return {"status":"BAD_LESSON_GUID"}
     if not re.fullmatch(UUID,adoption_id or "") or not csrf:
         return {"status":"NO_ADOPTION_OR_CSRF"}
+    if not re.fullmatch(r"[0-9a-fA-F]{32}",idempotency_key or ""):
+        return {"status":"MISSING_PER_FORM_IDEMPOTENCY_NONCE"}
     form={
         "curriculumAdoptionId":adoption_id,"scope":"Lesson",
         "lessonId":lesson_id,"difficulty":"AtClassLevel","questionCount":"1",
-        "__RequestVerificationToken":csrf
+        "__RequestVerificationToken":csrf,"_idempotencyKey":idempotency_key
     }
     try:
         with opener.open(urllib.request.Request(
@@ -115,6 +121,7 @@ if __name__=="__main__":
             self.assertIsNone(extract_csrf('<div>no csrf</div>'))
             self.assertEqual(extract_adoption('<input name="curriculumAdoptionId" value="12345678-abcd-1234-abcd-1234567890ab">'),
                              "12345678-abcd-1234-abcd-1234567890ab")
+            self.assertEqual(extract_idempotency_key('<input name="_idempotencyKey" value="0123456789abcdef0123456789abcdef">'),"0123456789abcdef0123456789abcdef")
         def test_a_500_shape_cannot_forge_signoff(self):
             data=[{"lessonCode":f"L{i}","status":"SELF_CONSISTENT_GRADE_PERSISTED"} for i in range(500)]
             x=summarize(data)
