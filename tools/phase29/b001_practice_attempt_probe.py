@@ -6,6 +6,7 @@ pedagogical parity. Never run with production accounts or databases.
 """
 from collections import Counter
 import re
+import subprocess
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -88,6 +89,9 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,sql):
         return {"status":"HTTP_ERROR","httpStatus":exc.code}
     except (ValueError,TypeError,IndexError,AssertionError) as exc:
         return {"status":"PROBE_ASSERTION_OR_PARSE_ERROR","errorType":type(exc).__name__}
+    except (urllib.error.URLError,TimeoutError,ConnectionError,OSError,
+            subprocess.CalledProcessError) as exc:
+        return {"status":"NETWORK_OR_DB_ERROR","errorType":type(exc).__name__}
 
 def summarize(rows):
     if len(rows)!=500 or len({x["lessonCode"] for x in rows})!=500:
