@@ -40,7 +40,7 @@ public static class CommonCoreG1Unit2Part2SourceTeachingCorrections
         CanonicalLessonContentPackLesson lesson)=>
         doc.PackCode==MathematicsCurriculumPackRegistry.CommonCoreCode &&
         doc.VersionCode=="CCSSM-2010" &&
-        doc.ContentVersion=="phase30-common-core-rich-content-v1"
+        doc.ContentVersion=="phase29-source-intelligence-en-v2-g1"
             ? Repairs.SingleOrDefault(x=>x.Code==lesson.LessonCode)
             : null;
 
