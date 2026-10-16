@@ -1,5 +1,6 @@
 using System.Reflection;
 using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Lessons;
 using Edulytics.Services.LessonContent;
 using Edulytics.Services.Mathematics;
