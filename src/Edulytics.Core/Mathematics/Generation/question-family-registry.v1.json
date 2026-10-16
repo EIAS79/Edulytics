@@ -6139,6 +6139,82 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u02.bar_total_or_difference.no_regroup",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-b001-four-source-goals-independent-exact-recompute-v1",
+      "representations": [
+        "symbolic",
+        "story_problem",
+        "bar_graph_or_tape_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.two_step_ribbon_length",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-b001-four-source-goals-independent-exact-recompute-v1",
+      "representations": [
+        "symbolic",
+        "story_problem",
+        "bar_graph_or_tape_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g3.u01.equal_groups.model_product",
+      "version": 1,
+      "skillId": "number.whole.multiply",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-b001-four-source-goals-independent-exact-recompute-v1",
+      "representations": [
+        "symbolic",
+        "story_problem",
+        "bar_graph_or_tape_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g3.u01.equal_groups.unknown_factor",
+      "version": 1,
+      "skillId": "number.whole.multiply",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-b001-four-source-goals-independent-exact-recompute-v1",
+      "representations": [
+        "symbolic",
+        "story_problem",
+        "bar_graph_or_tape_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
