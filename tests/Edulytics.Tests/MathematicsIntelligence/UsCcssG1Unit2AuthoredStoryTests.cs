@@ -104,6 +104,35 @@ public sealed class UsCcssG1Unit2AuthoredStoryTests
         }
     }
 
+    [Theory]
+    [InlineData(0)]
+    [InlineData(1)]
+    public void CenterStoryShowsFirstPartyCountedPictureWithoutSolvedEquation(int action)
+    {
+        var parameters=new Dictionary<string,int>
+        {
+            ["start"]=6, ["change"]=2, ["action"]=action,["flip"]=0
+        };
+        var json=System.Text.Json.JsonSerializer.Serialize(new {parameters});
+        var svg=Edulytics.Web.Presentation.PracticeMathVisualRenderer.RenderSvg(
+            UsCcssG1Unit2Part2Questions.CenterStory,json);
+        Assert.NotNull(svg);
+        Assert.Contains("<svg ",svg);
+        Assert.Contains("Tell a story",svg);
+        Assert.Contains(action==0 ? "JOINING" : "LEAVING",svg);
+        Assert.Equal(8,System.Text.RegularExpressions.Regex.Matches(svg,
+            "<circle cx=").Count);
+        Assert.DoesNotContain("6+2=8",svg);
+        Assert.DoesNotContain("6-2=4",svg);
+        Assert.DoesNotContain("<image",svg);
+        Assert.Null(Edulytics.Web.Presentation.PracticeMathVisualRenderer.RenderSvg(
+            UsCcssG1Unit2Part2Questions.CenterStory,
+            System.Text.Json.JsonSerializer.Serialize(new
+            {
+                parameters=new {start=99,change=2,action,flip=0}
+            })));
+    }
+
     [Fact]
     public void SameResultCannotSubstituteForConstructedMath()
     {

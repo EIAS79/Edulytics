@@ -949,7 +949,7 @@ for key, schoolname in SCHOOLS:
                 ]
                 assert len(authored_indexes) >= 2, (
                     code, "authored skills not present", items)
-                assert any("WRITE" in html.unescape(attempt_html) for _ in [0]), (
+                assert re.search(r"\bwrite\b", html.unescape(attempt_html), re.I), (
                     code, "student did not receive authored instructions")
                 wrong_index = authored_indexes[-1]
                 csrf = re.search(
@@ -991,6 +991,79 @@ for key, schoolname in SCHOOLS:
                     ), (code, "incorrect grading or persisted answer", line)
                 print("V1_G1_004_AUTHORED_LEARNER_HTTPS_PERSISTED",
                       code, "4 correct / 1 wrong", flush=True)
+
+
+            # V1 G1-004 L20: real authenticated first-party picture and grading.
+            picture_code = "PED:US-CCSS-MATH:G1:U02:L05"
+            assert picture_code in offered_by_code, (
+                "Source-bound picture-story lesson not offered", picture_code)
+            picture_id = offered_by_code[picture_code]
+            picture_form = get_page(student, "/student/practice")
+            token = re.search(
+                r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                picture_form)
+            assert token, ("Picture-story Practice missing CSRF", picture_code)
+            payload = {
+                "curriculumAdoptionId": adoption.group(1),
+                "scope": "Lesson", "lessonId": picture_id,
+                "difficulty": "AtClassLevel", "questionCount": "1",
+                "__RequestVerificationToken": token.group(1),
+            }
+            with student.open(urllib.request.Request(
+                BASE + "/student/practice/generate",
+                data=urllib.parse.urlencode(payload).encode(),method="POST"),
+                timeout=60) as response:
+                attempt_path=urllib.parse.urlparse(response.url).path.lower()
+                found=re.fullmatch(
+                    r"/student/practice/attempt/([0-9a-f-]{36})",attempt_path)
+                assert found and response.status==200, (
+                    picture_code,"cannot begin picture task",attempt_path)
+                picture_attempt_id=found.group(1)
+                picture_html=response.read().decode("utf-8")
+            assert "practice-math-visual" in picture_html and (
+                "JOINING" in picture_html or "LEAVING" in picture_html), (
+                    picture_code,"first-party count picture missing")
+            rows=sql("""
+                SELECT p."CurriculumPedagogicalLessonId"::text,
+                       i."GenerationFamily",ai."Id"::text,i."CorrectAnswer"
+                FROM "PracticeAttempts" p
+                JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                JOIN "AssessmentItems" i ON i."Id"=ai."AssessmentItemId"
+                WHERE p."Id"='""" + picture_attempt_id + """';""").splitlines()
+            assert len(rows)==1,(picture_code,"wrong picture item count",rows)
+            lesson_id,family,item_id,answer=rows[0].split("|",3)
+            assert lesson_id==picture_id and family==(
+                "usccss.g1.u02.center.picture_story_equation"),(
+                picture_code,"wrong story family",family)
+            csrf = re.search(
+                r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                picture_html)
+            assert csrf, (picture_code,"attempt CSRF missing")
+            post={
+                "__RequestVerificationToken":csrf.group(1),
+                "attemptItemIds[0]":item_id,
+                "answers[0]":answer,
+            }
+            with student.open(urllib.request.Request(
+                BASE + "/student/practice/attempt/" + picture_attempt_id
+                + "/personal-test-submit",
+                data=urllib.parse.urlencode(post).encode(),method="POST"),
+                timeout=60) as response:
+                assert response.status==200,(picture_code,"submit failed")
+            persisted=sql("""
+                SELECT CASE WHEN p."SubmittedAtUtc" IS NOT NULL THEN 1 ELSE 0 END,
+                       p."Score"::text,COALESCE(r."Answer",''),
+                       CASE WHEN r."IsCorrect" THEN 1 ELSE 0 END
+                FROM "PracticeAttempts" p
+                JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                JOIN "PracticeResponses" r ON r."PracticeAttemptItemId"=ai."Id"
+                WHERE p."Id"='""" + picture_attempt_id + """';""")
+            stored=persisted.split("|")
+            assert len(stored)==4 and stored[0]=="1" and (
+                float(stored[1])==1 and stored[2]==answer and stored[3]=="1"),(
+                    picture_code,"picture task grading/persistence failed",stored)
+            print("V1_G1_004_PICTURE_STORY_HTTPS_PERSISTED",
+                  picture_code,flush=True)
 
 
     practice_attempts[key] = match_attempt.group(1)

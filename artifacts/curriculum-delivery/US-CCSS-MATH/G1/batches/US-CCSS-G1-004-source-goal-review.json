@@ -106,7 +106,9 @@
       "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
       "independentlyAccepted": false,
       "codeChangeInThisV1Candidate": true,
-      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations.",
+      "newAuthoredPracticeCandidate": true,
+      "authoredPracticeStatus": "SOURCE_WRITTEN_EQUATION_SCOPED_LOCAL_PASS_AUTHENTICATED_CI_PENDING"
     },
     {
       "gradeOrdinal": 20,
@@ -126,7 +128,9 @@
       "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
       "independentlyAccepted": false,
       "codeChangeInThisV1Candidate": true,
-      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations.",
+      "firstPartyVisual": "SERVER_PARAMETER_COUNTED_BALLS_JOINING_LEAVING_NO_SOLVED_EQUATION",
+      "authoredMathStoryStudentSubmission": "NOT_YET_VERIFIED"
     }
   ],
   "nextScopedInstructionalFix": {
@@ -147,5 +151,21 @@
     "environment": "Our-CS dedicated V1 worktree; .NET SDK 10.0.200",
     "runSourceCommit": "0a3d8cadbc233b0f82b22c143a366590045a5ba8",
     "note": "Only code/tests covered; GitHub candidate must run CI at its own SHA"
+  },
+  "verifiedLocalFocusedTests": {
+    "passed": 41,
+    "failed": 0,
+    "environment": "Our-CS isolated V1 worktree, .NET 10.0.200",
+    "testedCodeSha": "63aa7f0863cf9af247acc2383576a8cc4b24ec1a",
+    "note": "Local source/test/tree byte comparison required against GitHub candidate; CI must prove HTTPS at exact candidate SHA."
+  },
+  "authenticatedCiProgress": {
+    "lastPriorRunSha": "b3eeeec86a699b2dc8029287579c667e05a0b61a",
+    "l16": true,
+    "l17": true,
+    "l19": "NOT_VERIFIED_PREVIOUS_RUN_TEST_ISSUE_WRITING_CASE",
+    "l20": "NEW_FIRST_PARTY_PICTURE_NEEDS_HTTPS_PROOF",
+    "status": "CI_REQUIRED_EXACT_NEW_CANDIDATE",
+    "note": "Previous CI had genuine correct/incorrect persisted G1 U02 L01/L02 outcomes. L04 failed prior uppercase-only test; corrected to case-insensitive match. Do not automatically accept failed past run."
   }
 }
