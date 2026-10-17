@@ -7,20 +7,20 @@ namespace Edulytics.Core.Mathematics.Practice;
 /// </summary>
 internal static class UsCcssG1Unit2StoryPracticeContracts
 {
-    public const string Version="usccss-g1-u02-story-practice-v1";
+    public const string Version="usccss-g1-u02-story-practice-authored-v2";
 
     public static readonly IReadOnlyList<LessonPracticeContract> Reviewed =
     [
         new("PED:US-CCSS-MATH:G1:U02:L01",
             "number.whole.add_subtract",
             "STORY_TO_EXPRESSION",
-            ["usccss.g1.u02.story.choose_expression"],
+            ["usccss.g1.u02.story.write_expression","usccss.g1.u02.story.choose_expression"],
             "IM2021_G1_U02_L01_ADD_TO_TAKE_FROM_RESULT_UNKNOWN",
             "READY_VERIFIED",Version),
         new("PED:US-CCSS-MATH:G1:U02:L02",
             "number.whole.add_subtract",
             "STORY_TO_EQUATION",
-            ["usccss.g1.u02.story.choose_equation"],
+            ["usccss.g1.u02.story.write_equation","usccss.g1.u02.story.choose_equation"],
             "IM2021_G1_U02_L02_MATCH_STORY_EQUATION",
             "READY_VERIFIED",Version),
         new("PED:US-CCSS-MATH:G1:U02:L03",

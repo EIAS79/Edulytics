@@ -13,6 +13,8 @@ internal static class UsCcssG1Unit2StoryQuestions
     public const string Expression="usccss.g1.u02.story.choose_expression";
     public const string Equation="usccss.g1.u02.story.choose_equation";
     public const string ChangeUnknown="usccss.g1.u02.story.add_change_unknown";
+    public const string WriteExpression="usccss.g1.u02.story.write_expression";
+    public const string WriteEquation="usccss.g1.u02.story.write_equation";
 
     private static readonly string[] Nouns = ["books","blocks","pencils","stickers","counters","cards"];
 
@@ -20,7 +22,7 @@ internal static class UsCcssG1Unit2StoryQuestions
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is Expression or Equation or ChangeUnknown;
+        family is Expression or Equation or ChangeUnknown or WriteExpression or WriteEquation;
 
     public static Problem Build(string family,Random random)
     {
@@ -39,7 +41,21 @@ internal static class UsCcssG1Unit2StoryQuestions
         var result=action==0?start+amount:start-amount;
         var subject=Nouns[nounIndex];
         string prompt,solution;
-        if (family==ChangeUnknown)
+        if (family is WriteExpression or WriteEquation)
+        {
+            var story=action==0
+                ? $"A child has {start} {subject}. Then {amount} more join."
+                : $"A child has {start} {subject}. Then {amount} are given away.";
+            var target=family==WriteExpression?"an addition or subtraction expression":
+                "a complete addition or subtraction equation, including the equals sign";
+            prompt=story+$" Write {target} yourself. "+
+                "Do not choose 1 or 2: enter the actual mathematical symbols and numbers.";
+            solution="Match the initial group and change to the action in the story. "+
+                "Joining uses plus; leaving uses minus. "+
+                (family==WriteEquation?"Include the final result after the equals sign.":
+                    "An expression names the operation without an equals sign.");
+        }
+        else if (family==ChangeUnknown)
         {
             prompt=$"A child has {start} {subject}. Someone gives them some more. "+
                    $"Now there are {start+amount} {subject}. How many were added? "+
@@ -67,7 +83,9 @@ internal static class UsCcssG1Unit2StoryQuestions
                 "Getting more joins the groups; the matching operation is addition.":
                 "Giving objects away leaves fewer; the matching operation is subtraction.";
         }
-        return new Problem(family,prompt,solution,AssessmentItemType.Numeric,p);
+        return new Problem(family,prompt,solution,
+            family is WriteExpression or WriteEquation
+                ? AssessmentItemType.ShortAnswer : AssessmentItemType.Numeric,p);
     }
 
     private static bool Valid(string family,IReadOnlyDictionary<string,int> p)
@@ -89,11 +107,29 @@ internal static class UsCcssG1Unit2StoryQuestions
         if(!Valid(family,p))throw new InvalidOperationException("Invalid Grade 1 story parameters");
         if(family==ChangeUnknown)
             return p["amount"].ToString(CultureInfo.InvariantCulture);
+        if(family is WriteExpression or WriteEquation)
+        {
+            var start=p["start"];var amount=p["amount"];
+            var op=p["action"]==0?"+":"-";
+            var core=$"{start}{op}{amount}";
+            return family==WriteExpression?core:
+                $"{core}={(p["action"]==0?start+amount:start-amount).ToString(CultureInfo.InvariantCulture)}";
+        }
         // Flip=0 places addition first. Flip=1 places subtraction first.
         var correctChoice=p["action"]==p["flip"]?1:2;
         return correctChoice.ToString(CultureInfo.InvariantCulture);
     }
 
+    private static string NormalizeMathWriting(string? value) =>
+        string.Concat((value??string.Empty)
+            .Where(c=>!char.IsWhiteSpace(c)))
+            .Replace('−','-').Replace('–','-')
+            .Replace('＋','+').Replace('＝','=');
+
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string answer) =>
-        Valid(family,p) && string.Equals(answer,Solve(family,p),StringComparison.Ordinal);
+        Valid(family,p) &&
+        string.Equals(
+            family is WriteExpression or WriteEquation
+                ? NormalizeMathWriting(answer) : answer,
+            Solve(family,p),StringComparison.Ordinal);
 }

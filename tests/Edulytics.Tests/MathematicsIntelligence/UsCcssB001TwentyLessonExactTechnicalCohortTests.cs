@@ -251,6 +251,60 @@ public sealed class UsCcssB001TwentyLessonExactTechnicalCohortTests
     }
 
     [Fact]
+    public void UnitTwoStudentWritesAnActualExpressionOrFullEquationNotJustOneOrTwo()
+    {
+        var engine=new ExactSkillContractQuestionEngine();
+        var targets=new[]{
+            ("PED:US-CCSS-MATH:G1:U02:L01",
+                "usccss.g1.u02.story.write_expression",false),
+            ("PED:US-CCSS-MATH:G1:U02:L02",
+                "usccss.g1.u02.story.write_equation",true)
+        };
+        foreach(var (code,family,requiresEquality) in targets)
+        {
+            Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+            Assert.Contains(family,contract!.AllowedQuestionFamilies);
+            Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var interaction));
+            Assert.Equal(LessonPracticeInteractionKind.StructuredEntry,
+                interaction!.InteractionKind);
+            Assert.Equal("enum_text",interaction.AnswerType);
+            var observedActions=new HashSet<int>();
+            for(var n=0;n<30;n++)
+            {
+                var q=Assert.Single(engine.Generate(
+                    "b001-typed-math-audited-original",code,[family],
+                    ExactSkillQuestionDifficulty.Standard,1,20262026+n*41,[]));
+                var p=q.Parameters;
+                var start=p["start"];
+                var amount=p["amount"];
+                var action=p["action"];
+                observedActions.Add(action);
+                var op=action==0?"+":"-";
+                var answer=$"{start}{op}{amount}";
+                if(requiresEquality)
+                    answer+="="+(action==0?start+amount:start-amount);
+                Assert.Equal(answer,q.CorrectAnswer);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    family,p,answer));
+                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    family,p,answer.Replace("+"," + ").Replace("-"," − ").Replace("="," = ")));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,p,(action==0?start+amount:start-amount).ToString()));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    "1"));
+                var incorrectOperation=action==0?"-":"+";
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    start+incorrectOperation+amount+(requiresEquality?"=999":"")));
+                var tampered=p.ToDictionary(kv=>kv.Key,kv=>kv.Value,StringComparer.Ordinal);
+                tampered["start"]=99;
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,tampered,answer));
+                Assert.Contains("Write",q.Prompt,StringComparison.OrdinalIgnoreCase);
+            }
+            Assert.Equal(2,observedActions.Count);
+        }
+    }
+
+    [Fact]
     public void FirstHandStudentPdfTextReviewIsTraceableWithoutInventingAcademicApproval()
     {
         var root=RepositoryRoot().FullName;

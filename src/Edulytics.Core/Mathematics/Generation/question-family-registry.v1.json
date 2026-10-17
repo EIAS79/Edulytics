@@ -6123,6 +6123,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g1.u02.story.write_expression",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "g1-u02-typed-expression-source-story-oracle-v1",
+      "representations": [
+        "symbolic",
+        "story_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g1.u02.story.write_equation",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "g1-u02-typed-equation-source-story-oracle-v1",
+      "representations": [
+        "symbolic",
+        "story_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g1.u02.story.add_change_unknown",
       "version": 1,
       "skillId": "number.whole.add_subtract",
