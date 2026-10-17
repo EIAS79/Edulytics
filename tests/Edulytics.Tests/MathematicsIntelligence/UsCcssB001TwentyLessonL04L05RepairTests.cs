@@ -95,6 +95,21 @@ public sealed class UsCcssB001TwentyLessonL04L05RepairTests
             foreach(var q in questions)
             {
                 Assert.Equal(family,q.Family);
+                if(family==Families[1])
+                {
+                    Assert.Contains("Dot picture (before):",q.Prompt);
+                    Assert.Contains("Dot picture (change):",q.Prompt);
+                    Assert.Contains("Dot picture (after):",q.Prompt);
+                    var picture=q.Prompt.Split("Dot picture (before): ",2)[1]
+                        .Split(" (",2)[0];
+                    Assert.Equal(q.Parameters["start"],picture.Count(ch=>ch=='●'));
+                    var after=q.Prompt.Split("Dot picture (after): ",2)[1]
+                        .Split(".",2)[0];
+                    Assert.Equal(q.Parameters["action"]==0
+                        ? q.Parameters["start"]+q.Parameters["change"]
+                        : q.Parameters["start"]-q.Parameters["change"],
+                        after.Count(ch=>ch is '●' or '○'));
+                }
                 Assert.True(ExactSkillContractQuestionEngine.Verify(
                     family,q.Parameters,q.CorrectAnswer));
                 var expected=int.Parse(q.CorrectAnswer,

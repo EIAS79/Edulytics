@@ -53,9 +53,22 @@ internal static class UsCcssG1Unit2Part2Questions
             var action=rng.Next(2);
             var flip=rng.Next(2);
             p["start"]=start;p["change"]=change;p["action"]=action;p["flip"]=flip;
+            // Student-visible original dot diagram: the question must actually
+            // supply the picture instead of merely claiming one exists.
+            // Text labels accompany the dots for screen readers and speech.
+            var beforeDots=new string('●',start);
+            var joiningDots=new string('○',change);
+            var remainingDots=new string('●',start-change);
+            var removedDots=new string('×',change);
             var story=action==0
-                ? $"The picture shows {start} balls. Then {change} more balls roll into the scene."
-                : $"The picture shows {start} balls. Then {change} balls roll away.";
+                ? $"Dot picture (before): {beforeDots} ({start} balls). "+
+                    $"Dot picture (change): {joiningDots} ({change} joining). "+
+                    $"Dot picture (after): {beforeDots}{joiningDots}. "+
+                    "The open circles are the newly arrived balls."
+                : $"Dot picture (before): {beforeDots} ({start} balls). "+
+                    $"Dot picture (change): {removedDots} ({change} removed). "+
+                    $"Dot picture (after): {remainingDots}. "+
+                    "The crossed-out symbols mean the balls rolled away.";
             var addition=$"{start} + {change} = {start+change}";
             var subtraction=$"{start} - {change} = {start-change}";
             var first=flip==0?addition:subtraction;
