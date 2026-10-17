@@ -906,6 +906,11 @@ for key, schoolname in SCHOOLS:
                 ("02", "usccss.g1.u02.story.write_equation"),
                 ("03", "usccss.g1.u02.story.write_change_unknown_equation"),
                 ("04", "usccss.g1.u02.story.write_result_or_change_equation"),
+                ("06", "usccss.g1.u02.pets.write_two_equations"),
+                ("07", "usccss.g1.u02.shake_spill.enumerate_partitions"),
+                ("08", "usccss.g1.u02.shake_cover.write_missing_addend"),
+                ("09", "usccss.g1.u02.story.compare_unknowns_equations"),
+                ("10", "usccss.g1.u02.center.capture_squares.select_legal_edge"),
             ):
                 code = "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix
                 assert code in offered_by_code, ("V1 lesson not available to student", code)
@@ -945,6 +950,11 @@ for key, schoolname in SCHOOLS:
                 items = [row.split("|", 3) for row in rows]
                 assert len(items) == 5 and all(row[0] == lesson_id for row in items), (
                     code, "wrong student lesson or incomplete items", items)
+                if lesson_suffix == "10":
+                    assert any(row[1] ==
+                        "usccss.g1.u02.center.mental_subtraction_within10"
+                        for row in items), (
+                            code, "source mental subtraction warm-up absent", items)
                 authored_indexes = [
                     index for index, row in enumerate(items) if row[1] == authored_family
                 ]

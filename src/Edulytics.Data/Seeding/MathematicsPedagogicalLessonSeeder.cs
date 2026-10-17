@@ -419,7 +419,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
                         UnitTitle =
                             lesson.UnitTitle,
                         Title =
-                            lesson.Title,
+                            CommonCoreG1Unit2NextFiveSourceTeachingCorrections
+                                .ProjectVerifiedPublisherTitle(lesson.LessonCode,lesson.Title),
                         LogicalLevelFrom =
                             document.SchemaVersion == 1
                                 ? document.LogicalLevel
@@ -856,6 +857,9 @@ public sealed class MathematicsPedagogicalLessonSeeder
                         current,
                         row) &&
                     !TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
+                        current,
+                        row) &&
+                    !TryReconcileG1PublisherLessonTitle(
                         current,
                         row))
                 {
@@ -1530,6 +1534,29 @@ public sealed class MathematicsPedagogicalLessonSeeder
         current.UpdatedAtUtc =
             DateTime.UtcNow;
 
+        return true;
+    }
+
+    private static bool TryReconcileG1PublisherLessonTitle(
+        CurriculumPedagogicalLesson current,
+        CurriculumPedagogicalLesson expected)
+    {
+        if(!CommonCoreG1Unit2NextFiveSourceTeachingCorrections
+            .TryGetVerifiedPublisherTitle(expected.Code,out var historical,
+                out var publisher))
+            return false;
+        if(expected.Title!=publisher ||
+            (current.Title!=historical && current.Title!=publisher))
+            throw new InvalidOperationException(
+                $"G1 U02 source title migration refused: {expected.Code}");
+        if(current.Title==historical)
+        {
+            current.Title=publisher;
+            current.UpdatedAtUtc=DateTime.UtcNow;
+        }
+        // Every property except the explicitly authorized title still has
+        // to agree with the canonical historical curriculum projection.
+        EnsureLessonMatches(current,expected);
         return true;
     }
 

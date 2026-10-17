@@ -959,6 +959,15 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // V1 G1-005: source-ordered Grade 1 Unit 2 lessons 6–10.
+        // Replace only the five existing generic contracts, preserve prior grades.
+        foreach (var reviewed in UsCcssG1Unit2NextFivePracticeContracts.Reviewed)
+        {
+            if (!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "V1 G1-005 missing existing lesson contract: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         // V2 B001 first 20: ONLY G1 U02 L04-L05 (L06 onward remains B002).
         foreach(var reviewed in UsCcssG1Unit2Part2PracticeContracts.Reviewed)
         {

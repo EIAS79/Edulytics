@@ -93,6 +93,12 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.hs.rational_branch_limit_sign" => UsRationalGraph(parameters, hasHole: false),
                 "usccss.vector.head_tail_endpoint_y" => UsVectorHeadTailDiagram(parameters),
                 "usccss.vector.scalar_direction_class" => UsVectorScalarDiagram(parameters),
+                "usccss.g1.u02.pets.write_two_equations" or
+                "usccss.g1.u02.shake_spill.enumerate_partitions" or
+                "usccss.g1.u02.shake_cover.write_missing_addend" or
+                "usccss.g1.u02.story.compare_unknowns_equations" or
+                "usccss.g1.u02.center.capture_squares.select_legal_edge"
+                    => GradeOneUnit2NextFiveVisual(family,parameters),
                 "usccss.g1.u02.center.picture_story_equation" or
                 "usccss.g1.u02.center.author_math_story" => GradeOneCenterStoryPicture(parameters),
                 "supporting.trigonometry.area_sine_double" or

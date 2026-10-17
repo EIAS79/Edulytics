@@ -60,20 +60,34 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
+      # V1 supersedes the V2 twenty-lesson release policy. Keep the existing
+      # job/status identity so required checks cannot disappear unexpectedly.
+      # The historical NO_GO negative-control remains manually runnable.
       - uses: actions/checkout@v4
+      - name: V1 source policy identity - legacy V2 cohort inactive
+        if: github.event_name != 'workflow_dispatch'
+        run: |
+          test -s docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md
+          grep -Fq 'EDULYTICS-GRADE-FIRST-5-V1' docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md
+          grep -Fq 'SUPERSEDED / INACTIVE' docs/curriculum/EDULYTICS_500_LESSON_BATCH_EXECUTION_PLAN_V2.md
+          echo 'LEGACY_V2_INACTIVE_FOR_V1: 20-lesson reapproval not run; V1 academic evidence is separate.'
       - uses: actions/setup-node@v4
+        if: github.event_name == 'workflow_dispatch'
         with:
           node-version: '24'
       - name: Verify source catalogue stays unchanged and 20 canonical IDs match
+        if: github.event_name == 'workflow_dispatch'
         run: |
           node tools/curriculum/us-ccss-b001-inventory.cjs --check
           node tools/curriculum/us-ccss-b001-20-inventory.cjs --check
       - name: Validate 20-lesson P1, P4 projection and P5 fail-closed contract
+        if: github.event_name == 'workflow_dispatch'
         run: |
           node --test tests/us-ccss-b001-20-*.test.cjs
           node --test tests/us-ccss-b001-acceptance-gate.test.cjs
           node --test tests/us-ccss-b001-reconcile-recorded-p4.test.cjs
       - name: Prove real missing P5 records cannot authorize 20-lesson release
+        if: github.event_name == 'workflow_dispatch'
         shell: bash
         run: |
           set -euo pipefail
@@ -92,7 +106,7 @@ jobs:
               x.outcome!=="NO_GO"||x.evidenceAcceptedCount!==0||
               x.missingOrInvalidCount!==20||x.deployed!==false) process.exit(1)'
       - name: Retain truthful negative-control result (not an acceptance certificate)
-        if: always()
+        if: github.event_name == 'workflow_dispatch' && always()
         uses: actions/upload-artifact@v4
         with:
           name: b001-v2-20-gate-no-go-contract

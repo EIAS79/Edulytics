@@ -444,8 +444,12 @@ public sealed class Phase29CommonCoreElementaryBatchTests
                         expected.LessonCode,
                         out var actual));
 
+                // Effective publisher titles are a guarded projection of
+                // three original IM 2021 lessons; immutable blueprint aliases
+                // and all historical lesson identifiers remain unchanged.
                 Assert.Equal(
-                    expected.Title,
+                    CommonCoreG1Unit2NextFiveSourceTeachingCorrections
+                        .ProjectVerifiedPublisherTitle(expected.LessonCode,expected.Title),
                     actual!.Title);
 
                 Assert.Equal(
