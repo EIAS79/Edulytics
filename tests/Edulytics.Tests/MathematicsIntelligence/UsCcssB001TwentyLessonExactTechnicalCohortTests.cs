@@ -153,6 +153,83 @@ public sealed class UsCcssB001TwentyLessonExactTechnicalCohortTests
     }
 
     [Fact]
+    public void UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles()
+    {
+        const string prefix="PED:US-CCSS-MATH:G1:U02:L";
+        var families=new[]
+        {
+            "usccss.g1.u02.story.choose_expression",
+            "usccss.g1.u02.story.choose_equation",
+            "usccss.g1.u02.story.add_change_unknown",
+            "usccss.g1.u02.story.mixed_result_or_change",
+            "usccss.g1.u02.center.picture_story_equation"
+        };
+        var engine=new ExactSkillContractQuestionEngine();
+        var checkedQuestions=0;
+        for(var i=0;i<families.Length;i++)
+        {
+            var code=prefix+(i+1).ToString("D2");
+            var family=families[i];
+            Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract));
+            Assert.Contains(family,contract!.AllowedQuestionFamilies);
+            foreach(var difficulty in new[]{
+                ExactSkillQuestionDifficulty.Standard,
+                ExactSkillQuestionDifficulty.Stretch,
+                ExactSkillQuestionDifficulty.Challenge})
+            for(var trial=0;trial<10;trial++)
+            {
+                var q=Assert.Single(engine.Generate(
+                    "b001-source-math-independent-oracle",code,[family],
+                    difficulty,1,20261017+100*i+trial,[]));
+                Assert.Equal(family,q.Family);
+                var p=q.Parameters;
+                var independentAnswer=i switch
+                {
+                    0 or 1 or 4 => p["action"]==p["flip"]?1:2,
+                    2 => p["amount"],
+                    3 => p["mode"] switch {
+                        0=>p["start"]+p["change"],
+                        1=>p["change"],
+                        2=>p["start"]-p["change"],
+                        _=>throw new InvalidOperationException("Invalid story mode") },
+                    _=>throw new InvalidOperationException("Unexpected lesson")
+                };
+                Assert.Equal(independentAnswer.ToString(
+                    System.Globalization.CultureInfo.InvariantCulture),q.CorrectAnswer);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,q.CorrectAnswer));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,p,(independentAnswer+11).ToString()));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"malformed"));
+                var corrupted=p.ToDictionary(kv=>kv.Key,kv=>kv.Value,StringComparer.Ordinal);
+                corrupted["start"]=99;
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,corrupted,q.CorrectAnswer));
+                if(i==4)
+                {
+                    Assert.Contains("Dot picture (before):",q.Prompt);
+                    Assert.Contains("Dot picture (after):",q.Prompt);
+                    var after=q.Prompt.Split("Dot picture (after): ",2)[1]
+                        .Split(".",2)[0];
+                    var expectedDots=p["action"]==0?
+                        p["start"]+p["change"]:p["start"]-p["change"];
+                    Assert.Equal(expectedDots,after.Count(ch=>ch is '●' or '○'));
+                }
+                else if(i==2)
+                {
+                    Assert.InRange(p["amount"],1,3);
+                    Assert.Contains("[ ? ]",q.Prompt);
+                }
+                else if(i==3)
+                {
+                    Assert.InRange(p["start"]+p["change"],1,10);
+                }
+                checkedQuestions++;
+            }
+        }
+        Assert.Equal(150,checkedQuestions);
+    }
+
+    [Fact]
     public void TechnicalSourceAndPracticeChecksCannotMintAcademicP5Approval()
     {
         var root=RepositoryRoot().FullName;
