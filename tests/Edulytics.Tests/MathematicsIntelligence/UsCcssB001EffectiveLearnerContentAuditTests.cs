@@ -32,6 +32,40 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
         throw new InvalidOperationException("Edulytics root not found");
     }
 
+    // The historical B001 catalogue retained activity-name aliases for these three
+    // 2021 IM lessons. The actual locally archived teacher/student pages have the
+    // following lesson headings. Reconciliation must be exact and source-bound,
+    // never a generic waiver of the 500-lesson title-integrity gate.
+    private static bool IsVerified2021PublisherTitleCorrection(
+        string root, string code, string historicalTitle, string effectiveTitle, string sourceUrl)
+    {
+        (string Old, string New, string Number)? verified = code switch
+        {
+            "PED:US-CCSS-MATH:G1:U02:L07" =>
+                ("Shake and Spill", "One Part Red, One Part Yellow", "7"),
+            "PED:US-CCSS-MATH:G1:U02:L08" =>
+                ("Shake, Spill, and Cover", "One Part Red, How Many Yellow?", "8"),
+            "PED:US-CCSS-MATH:G1:U02:L09" =>
+                ("Compare Story Problems PLC Activity", "What Is the Unknown?", "9"),
+            _ => ((string Old, string New, string Number)?)null
+        };
+        if (verified is null || historicalTitle != verified.Value.Old ||
+            effectiveTitle != verified.Value.New ||
+            sourceUrl != "https://im.kendallhunt.com/k5/teachers/grade-1/unit-2/lesson-" +
+                verified.Value.Number + "/preparation.html")
+            return false;
+        using var batch = JsonDocument.Parse(File.ReadAllText(Path.Combine(root,
+            "artifacts", "curriculum-delivery", "US-CCSS-MATH", "G1", "batches",
+            "US-CCSS-G1-005.json")));
+        var matching = batch.RootElement.GetProperty("lessons").EnumerateArray()
+            .Where(x => x.GetProperty("lessonCode").GetString() == code).ToArray();
+        return matching.Length == 1 &&
+            matching[0].GetProperty("title").GetString() == effectiveTitle &&
+            matching[0].GetProperty("previousCatalogueTitle").GetString() == historicalTitle &&
+            matching[0].GetProperty("teacherPreparationUrl").GetString() == sourceUrl &&
+            matching[0].GetProperty("locallyVerifiedPublisherTitle").GetBoolean();
+    }
+
     [Fact]
     public void EveryCanonicalB001LessonHasSourceLinkedEffectiveTeachingAndCompilableRichContent()
     {
@@ -85,7 +119,9 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
                 technicalBlockers.Add(code+": English content missing");
                 continue;
             }
-            if (english.Title != title)
+            if (english.Title != title &&
+                !IsVerified2021PublisherTitleCorrection(root, code, title,
+                    english.Title, source))
                 issues.Add("TITLE_MISMATCH");
             var instructional = string.Join("\n",english.Explanation,
                 english.KeyConceptsAndRules,english.WorkedExamples,
