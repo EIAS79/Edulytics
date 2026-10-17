@@ -69,6 +69,42 @@ public sealed class UsCcssG1Unit2AuthoredStoryTests
     }
 
     [Fact]
+    public void Unit2LessonFourGeneratesAndGradesStudentWrittenEquations()
+    {
+        var family=UsCcssG1Unit2Part2Questions.WriteResultOrChangeEquation;
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var ui));
+        Assert.Equal(LessonPracticeInteractionKind.ContractDriven,ui!.InteractionKind);
+        Assert.Equal("contract_defined",ui.AnswerType);
+        var lesson=LessonPracticeContractRegistry.All.Single(
+            x => x.LessonCode=="PED:US-CCSS-MATH:G1:U02:L04");
+        Assert.Contains(family,lesson.AllowedQuestionFamilies);
+        var contract=lesson.ToLegacyStage18Contract();
+        var items=new Edulytics.Services.Practice.Stage18SkillContractPracticeEngine()
+            .GenerateComposed(Guid.NewGuid(),Guid.NewGuid(),Guid.NewGuid(),contract,
+                Edulytics.Services.Practice.StudentPrivatePracticeDifficulty.MyLevel,
+                6,20261017,[],Guid.NewGuid());
+        Assert.Equal(6,items.Count);
+        Assert.Contains(items,x=>x.GenerationFamily==family);
+        var quality=new Edulytics.Services.Practice.PracticeSessionQualityValidator()
+            .Validate(contract,items,6);
+        Assert.True(quality.IsReady,string.Join(";",quality.ReasonCodes));
+        foreach(var item in items.Where(x=>x.GenerationFamily==family))
+        {
+            Assert.Equal(AssessmentItemType.ShortAnswer,item.ItemType);
+            Assert.Contains('=',item.CorrectAnswer);
+            Assert.True(UsCcssG1Unit2Part2Questions.GradePersistedAuthoredAnswer(
+                family,item.CorrectAnswer," "+item.CorrectAnswer.Replace("="," = ")+" "));
+            Assert.False(UsCcssG1Unit2Part2Questions.GradePersistedAuthoredAnswer(
+                family,item.CorrectAnswer,"9"));
+            Assert.False(UsCcssG1Unit2Part2Questions.GradePersistedAuthoredAnswer(
+                family,item.CorrectAnswer,item.CorrectAnswer[..item.CorrectAnswer.IndexOf('=')]));
+            Assert.False(UsCcssG1Unit2Part2Questions.Verify(family,
+                new Dictionary<string,int> { ["start"]=99,["change"]=2,["mode"]=0,["context"]=0 },
+                item.CorrectAnswer));
+        }
+    }
+
+    [Fact]
     public void SameResultCannotSubstituteForConstructedMath()
     {
         var p=new Dictionary<string,int> { ["start"]=6,["amount"]=2,["action"]=0,["noun"]=0,["flip"]=0 };

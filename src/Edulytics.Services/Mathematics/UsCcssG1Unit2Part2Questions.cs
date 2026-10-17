@@ -8,22 +8,29 @@ namespace Edulytics.Services.Mathematics;
 /// no-action total and two-color partition tasks.
 /// Integer responses are exact and verified against constrained source parameters.
 /// </summary>
-internal static class UsCcssG1Unit2Part2Questions
+public static class UsCcssG1Unit2Part2Questions
 {
     public const string MixedStory="usccss.g1.u02.story.mixed_result_or_change";
+    public const string WriteResultOrChangeEquation="usccss.g1.u02.story.write_result_or_change_equation";
+    public static bool IsAuthoredFamily(string? family) => family==WriteResultOrChangeEquation;
+    public static bool GradePersistedAuthoredAnswer(
+        string? family,string expected,string? submitted) =>
+        IsAuthoredFamily(family) && submitted is not null &&
+        string.Equals(string.Concat(submitted.Where(x=>!char.IsWhiteSpace(x))),
+            expected,StringComparison.Ordinal);
     public const string CenterStory="usccss.g1.u02.center.picture_story_equation";
     private static readonly string[] Things=["books","cards","stickers"];
     public sealed record Problem(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     public static bool Supports(string? family)=>
-        family is MixedStory or CenterStory;
+        family is MixedStory or CenterStory or WriteResultOrChangeEquation;
 
     public static Problem Build(string family,Random rng)
     {
         if(!Supports(family))throw new InvalidOperationException("Unknown G1 U02 Part2 family");
         string prompt = string.Empty, solution = string.Empty;
         var p=new Dictionary<string,int>(StringComparer.Ordinal);
-        if(family==MixedStory)
+        if(family==MixedStory || IsAuthoredFamily(family))
         {
             var start=rng.Next(3,8);
             var change=rng.Next(1,4);
@@ -31,6 +38,18 @@ internal static class UsCcssG1Unit2Part2Questions
             var context=rng.Next(Things.Length);
             p["start"]=start;p["change"]=change;p["mode"]=mode;p["context"]=context;
             var noun=Things[context];
+            if(IsAuthoredFamily(family))
+            {
+                prompt=mode switch
+                {
+                    0=>$"A child has {start} {noun}. A friend gives {change} more. Write the COMPLETE addition equation to find the new total.",
+                    1=>$"A child has {start} {noun}. More arrive and now there are {start+change}. Write the COMPLETE equation with the missing change filled in.",
+                    _=>$"A child has {start} {noun} and gives away {change}. Write the COMPLETE subtraction equation to find how many remain."
+                };
+                prompt+=" Show the story with counters or a drawing. Type the full equation, not the answer alone.";
+                solution="Compare what changes and what remains. Include the starting number, change, operation, equals sign and correct result.";
+                return new Problem(family,prompt,solution,AssessmentItemType.ShortAnswer,p);
+            }
             if(mode==0)
                 prompt=$"A child has {start} {noun}. A friend gives {change} more. "+
                     "How many are there now? Draw the starting group and the joining group. "+
@@ -72,6 +91,13 @@ internal static class UsCcssG1Unit2Part2Questions
     {
         if(!Valid(family,p))
             throw new InvalidOperationException("Invalid G1 U02 Part2 original source parameters");
+        if(IsAuthoredFamily(family))
+        {
+            var start=p["start"];var change=p["change"];
+            return p["mode"]==2
+                ? $"{start}-{change}={start-change}"
+                : $"{start}+{change}={start+change}";
+        }
         int answer=family switch
         {
             MixedStory=>p["mode"]==1?p["change"]:
@@ -83,12 +109,14 @@ internal static class UsCcssG1Unit2Part2Questions
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> parameters,string answer)=>
         Valid(family,parameters) &&
-        string.Equals(answer,Solve(family,parameters),StringComparison.Ordinal);
+        (IsAuthoredFamily(family)
+            ? GradePersistedAuthoredAnswer(family,Solve(family,parameters),answer)
+            : string.Equals(answer,Solve(family,parameters),StringComparison.Ordinal));
 
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
     {
         if(!Supports(family))return false;
-        if(family==MixedStory)
+        if(family==MixedStory || IsAuthoredFamily(family))
             return p.Count==4 &&
                 p.TryGetValue("start",out var start) &&
                 p.TryGetValue("change",out var change) &&

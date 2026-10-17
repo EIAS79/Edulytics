@@ -74,7 +74,9 @@ public sealed class UsCcssB001TwentyLessonL04L05RepairTests
             Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var practice),code);
             Assert.NotNull(practice);
             Assert.Equal("READY_VERIFIED",practice!.Readiness);
-            Assert.Equal(new[]{family},practice.AllowedQuestionFamilies);
+            Assert.Equal(i==0
+                ? new[]{family,UsCcssG1Unit2Part2Questions.WriteResultOrChangeEquation}
+                : new[]{family},practice.AllowedQuestionFamilies);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
             Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var interaction));
             Assert.NotNull(interaction);

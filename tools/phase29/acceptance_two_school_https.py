@@ -904,6 +904,7 @@ for key, schoolname in SCHOOLS:
             for lesson_suffix, authored_family in (
                 ("01", "usccss.g1.u02.story.write_expression"),
                 ("02", "usccss.g1.u02.story.write_equation"),
+                ("04", "usccss.g1.u02.story.write_result_or_change_equation"),
             ):
                 code = "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix
                 assert code in offered_by_code, ("V1 lesson not available to student", code)
@@ -918,7 +919,7 @@ for key, schoolname in SCHOOLS:
                 payload = {
                     "curriculumAdoptionId": adoption.group(1),
                     "scope": "Lesson", "lessonId": lesson_id,
-                    "difficulty": "AtClassLevel", "questionCount": "6",
+                    "difficulty": "AtClassLevel", "questionCount": "5",
                     "__RequestVerificationToken": token.group(1),
                 }
                 with student.open(urllib.request.Request(
@@ -941,7 +942,7 @@ for key, schoolname in SCHOOLS:
                     WHERE p."Id"='""" + attempt_id + """'
                     ORDER BY ai."Order";""").splitlines()
                 items = [row.split("|", 3) for row in rows]
-                assert len(items) == 6 and all(row[0] == lesson_id for row in items), (
+                assert len(items) == 5 and all(row[0] == lesson_id for row in items), (
                     code, "wrong student lesson or incomplete items", items)
                 authored_indexes = [
                     index for index, row in enumerate(items) if row[1] == authored_family
@@ -981,7 +982,7 @@ for key, schoolname in SCHOOLS:
                     JOIN "PracticeResponses" r ON r."PracticeAttemptItemId"=ai."Id"
                     WHERE ai."PracticeAttemptId"='""" + attempt_id + """'
                     ORDER BY ai."Order";""").splitlines()
-                assert len(results) == 6, (code, "responses not persisted", results)
+                assert len(results) == 5, (code, "responses not persisted", results)
                 for index, line in enumerate(results):
                     order, correct, saved_answer = line.split("|", 2)
                     expected_answer = "999" if index == wrong_index else items[index][3]
@@ -989,7 +990,7 @@ for key, schoolname in SCHOOLS:
                         correct == ("0" if index == wrong_index else "1")
                     ), (code, "incorrect grading or persisted answer", line)
                 print("V1_G1_004_AUTHORED_LEARNER_HTTPS_PERSISTED",
-                      code, "5 correct / 1 wrong", flush=True)
+                      code, "4 correct / 1 wrong", flush=True)
 
 
     practice_attempts[key] = match_attempt.group(1)
