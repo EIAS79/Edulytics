@@ -205,6 +205,8 @@ public static partial class RichLessonContentV2RuntimeComposer
         // publisher purposes, independent of generic verified question text.
         // The first certified pilot stays exactly as it was.
         AddT001LearnerTeaching(lessonCode,result);
+        // Grade-first batch G1-003: source-purpose teaching, same Rich V2 layout.
+        AddG1003LearnerTeaching(lessonCode,result);
 
         RichLessonContentV2Registry.Validate(
             new RichLessonContentV2Document
