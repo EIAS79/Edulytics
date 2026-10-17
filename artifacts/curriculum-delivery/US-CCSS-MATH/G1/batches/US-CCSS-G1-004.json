@@ -15,7 +15,7 @@
   "lessonCount": 5,
   "releaseStatus": "NOT_APPROVED_NOT_DEPLOYED",
   "pr553PriorWork": "PRESERVE_SOURCE_GROUNDED_CANDIDATE_REPAIR_WORK; REUSE_WHEN_SHA_COMPATIBLE",
-  "fiveLessonReviewStatus": "P1_SOURCE_IDENTITIES_INDEXED; P2_NOT_COMPLETED; P3_P4_NOT_RUN",
+  "fiveLessonReviewStatus": "P1_SOURCE_INDEXED; P2_PRIOR_SOURCE_GOAL_ANALYSIS_REUSED_ACTIVITY_UI_PARITY_PENDING; P3_L04_L05_STAGED; P4_LOCAL_PRECHECK_PASSED_EXACT_BRANCH_CI_PENDING",
   "nextRequiredWork": "Read current actual student-visible lesson and Practice against original source goal/activity for each code, classify observed gaps; reuse existing candidate and proof only if code/content SHA behavior matches. Verify production DB read-only prior to modifications.",
   "historicalGrade1First15": "Previously shipped under older batches per archived records; no automatic V1 five-lesson reacceptance inferred.",
   "lessons": [
@@ -44,9 +44,11 @@
       "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
       "internalAcademicAcceptance": "NOT_ASSERTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
-      "repairClassification": "NOT_REVIEWED",
-      "technicalTests": "NOT_RUN_ON_V1_CHUNK",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED"
+      "repairClassification": "PRIOR_MAIN_REPAIR_PRESENT_PRACTICE_PARITY_REVIEW",
+      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
+      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "p2ActivityGap": "Multiple student-authored expressions and drawing/word explanation not proved by binary operation-choice questions.",
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
     },
     {
       "gradeOrdinal": 17,
@@ -74,9 +76,11 @@
       "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
       "internalAcademicAcceptance": "NOT_ASSERTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
-      "repairClassification": "NOT_REVIEWED",
-      "technicalTests": "NOT_RUN_ON_V1_CHUNK",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED"
+      "repairClassification": "PRIOR_MAIN_REPAIR_PRESENT_PRACTICE_PARITY_REVIEW",
+      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
+      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "p2ActivityGap": "Full equation authoring and learner drawing/word reasoning not proved by 1-or-2 matching questions.",
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
     },
     {
       "gradeOrdinal": 18,
@@ -107,9 +111,11 @@
       "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
       "internalAcademicAcceptance": "NOT_ASSERTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
-      "repairClassification": "NOT_REVIEWED",
-      "technicalTests": "NOT_RUN_ON_V1_CHUNK",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED"
+      "repairClassification": "PRIOR_MAIN_REPAIR_PRESENT_PRACTICE_PARITY_REVIEW",
+      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
+      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "p2ActivityGap": "Reasoning about the pictured peer equation, authored drawing, and alternate-centre choice unverified.",
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
     },
     {
       "gradeOrdinal": 19,
@@ -137,9 +143,11 @@
       "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
       "internalAcademicAcceptance": "NOT_ASSERTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
-      "repairClassification": "NOT_REVIEWED",
-      "technicalTests": "NOT_RUN_ON_V1_CHUNK",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED"
+      "repairClassification": "CONTENT_AND_PRACTICE_REPAIR_STAGED",
+      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
+      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "p2ActivityGap": "Original page drawing/equation submissions not proved by a numeric total or change answer.",
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
     },
     {
       "gradeOrdinal": 20,
@@ -169,9 +177,34 @@
       "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
       "internalAcademicAcceptance": "NOT_ASSERTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
-      "repairClassification": "NOT_REVIEWED",
-      "technicalTests": "NOT_RUN_ON_V1_CHUNK",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED"
+      "repairClassification": "CONTENT_AND_PRACTICE_REPAIR_STAGED",
+      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
+      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "p2ActivityGap": "Authored student math picture/story and genuine three-centre choice not proved by a labeled diagram plus multiple choice.",
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
     }
-  ]
+  ],
+  "scopedCandidateCodeProvenance": {
+    "originalWork": "PR #550",
+    "originalHeadSha": "16cb4ed6bef3ae26dd1fac3e7c17ae6724fff5c8",
+    "localWorktreeCommitSha": "f10502ba8a95e70c03557392091809e4989a5fcc",
+    "currentGitHubCandidateSha": "SET_BY_GITHUB_AFTER_COMMIT",
+    "changedLessonCodes": [
+      "PED:US-CCSS-MATH:G1:U02:L04",
+      "PED:US-CCSS-MATH:G1:U02:L05"
+    ],
+    "unchangedPreviouslySourceRepaired": [
+      "PED:US-CCSS-MATH:G1:U02:L01",
+      "PED:US-CCSS-MATH:G1:U02:L02",
+      "PED:US-CCSS-MATH:G1:U02:L03"
+    ]
+  },
+  "localPreflight": {
+    "scope": "35 focused source-alignment and exact question-family/mathematics/interaction/metadata tests under .NET SDK 10.0.200 in dedicated Our-CS worktree",
+    "passed": 35,
+    "failed": 0,
+    "exitCode": 0,
+    "localCommitSha": "f10502ba8a95e70c03557392091809e4989a5fcc",
+    "note": "Local check is not a PASS for the later GitHub commit SHA. Await exact SHA CI and authenticated learner flow before V1 approval."
+  }
 }

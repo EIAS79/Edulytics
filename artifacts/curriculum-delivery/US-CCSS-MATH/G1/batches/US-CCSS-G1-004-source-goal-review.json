@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "kind": "V1_FIVE_LESSON_SOURCE_GOAL_VS_IMPLEMENTATION_REVIEW",
+  "planId": "EDULYTICS-GRADE-FIRST-5-V1",
+  "batchId": "US-CCSS-G1-004",
+  "sourceMainSha": "f2faf39cc6c23bd252d065605be03015e40c3201",
+  "reusedPriorEvidence": {
+    "pr550": "16cb4ed6bef3ae26dd1fac3e7c17ae6724fff5c8",
+    "pr553": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3"
+  },
+  "coverageCount": 5,
+  "localScopeTestCount": 35,
+  "localTestsPassed": 35,
+  "localTestsFailed": 0,
+  "fullAcademicAcceptedCount": 0,
+  "exactGitHubCandidateCi": "NOT_YET_VERIFIED",
+  "learnerFacingDeployment": "NOT_PERFORMED",
+  "notes": [
+    "Source-based activity comparisons and learner-visible uncertainty are reused from documented prior evidence, not reinvented or treated as approval.",
+    "The imported Part2 L04-L05 improvements are code candidates; teacher-guided or written/oral original learning outcomes need suitable digital task evidence, not a copy of publisher assets.",
+    "Existing L01-L03 story learning patches remain unchanged. Source activities requiring student-authored expressions/equations and narrative reasoning are not proven by two-option responses.",
+    "Previous recorded source-to-student study and P4 runs from a distinct V2 SHA are not automatically transferred into current V1 candidate acceptance.",
+    "No source textbook artwork reproduced, no database change, and no student grades altered."
+  ],
+  "lessons": [
+    {
+      "gradeOrdinal": 16,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L01",
+      "title": "Story Problems and Expressions",
+      "originalActivitySummary": "Use library joining/leaving narratives, model the changes with a drawing or objects, solve and write matching expressions.",
+      "sourcePedagogyActivities": [
+        "The Library",
+        "Story Problems about the Library"
+      ],
+      "priorContentProvenance": "source-guarded G1 U02 L01-L03 teaching repairs already on main",
+      "intendedSkillAndActivity": "Use library joining/leaving narratives, model the changes with a drawing or objects, solve and write matching expressions.",
+      "gapRequiringP2BrowserCheck": "Multiple student-authored expressions and drawing/word explanation not proved by binary operation-choice questions.",
+      "sourceReview": "REFERENCE_DOCUMENTED",
+      "instructionalText": "REUSE_EXISTING_SOURCE_GROUNDED_TEACHING",
+      "practiceVerification": "LOCAL_MATH_VERIFIER_PASS_BUT_AUTHORED_RESPONSE_PARITY_UNCONFIRMED",
+      "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
+      "independentlyAccepted": false,
+      "codeChangeInThisV1Candidate": false,
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+    },
+    {
+      "gradeOrdinal": 17,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L02",
+      "title": "Story Problems and Equations",
+      "originalActivitySummary": "Write full equations for join/leave book and library stories, also showing independently how an answer was obtained.",
+      "sourcePedagogyActivities": [
+        "Write Equations",
+        "Solve and Write Equations"
+      ],
+      "priorContentProvenance": "source-guarded G1 U02 L01-L03 teaching repairs already on main",
+      "intendedSkillAndActivity": "Write full equations for join/leave book and library stories, also showing independently how an answer was obtained.",
+      "gapRequiringP2BrowserCheck": "Full equation authoring and learner drawing/word reasoning not proved by 1-or-2 matching questions.",
+      "sourceReview": "REFERENCE_DOCUMENTED",
+      "instructionalText": "REUSE_EXISTING_SOURCE_GROUNDED_TEACHING",
+      "practiceVerification": "LOCAL_MATH_VERIFIER_PASS_BUT_AUTHORED_RESPONSE_PARITY_UNCONFIRMED",
+      "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
+      "independentlyAccepted": false,
+      "codeChangeInThisV1Candidate": false,
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+    },
+    {
+      "gradeOrdinal": 18,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L03",
+      "title": "A Change is Coming PLC Activity",
+      "originalActivitySummary": "Find an unknown number of books added, evaluate another child's pictured equation and reasoning, and select a centre.",
+      "sourcePedagogyActivities": [
+        "Kiran’s Books",
+        "Lin Represents a Story Problem",
+        "Centers: Choice Time"
+      ],
+      "priorContentProvenance": "source-guarded G1 U02 L01-L03 teaching repairs already on main",
+      "intendedSkillAndActivity": "Find an unknown number of books added, evaluate another child's pictured equation and reasoning, and select a centre.",
+      "gapRequiringP2BrowserCheck": "Reasoning about the pictured peer equation, authored drawing, and alternate-centre choice unverified.",
+      "sourceReview": "REFERENCE_DOCUMENTED",
+      "instructionalText": "REUSE_EXISTING_SOURCE_GROUNDED_TEACHING",
+      "practiceVerification": "LOCAL_MATH_VERIFIER_PASS_BUT_AUTHORED_RESPONSE_PARITY_UNCONFIRMED",
+      "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
+      "independentlyAccepted": false,
+      "codeChangeInThisV1Candidate": false,
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+    },
+    {
+      "gradeOrdinal": 19,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L04",
+      "title": "Result or Change Unknown",
+      "originalActivitySummary": "Compare result-unknown with change-unknown book stories, solve take-from examples, and write an equation plus representation for each.",
+      "sourcePedagogyActivities": [
+        "Compare the Problems",
+        "Story Problems about Books"
+      ],
+      "priorContentProvenance": "existing PR #550 G1 U02 L04-L05 source-grounded corrections reused on this candidate",
+      "intendedSkillAndActivity": "Compare result-unknown with change-unknown book stories, solve take-from examples, and write an equation plus representation for each.",
+      "gapRequiringP2BrowserCheck": "Original page drawing/equation submissions not proved by a numeric total or change answer.",
+      "sourceReview": "REFERENCE_DOCUMENTED",
+      "instructionalText": "SOURCE_GUARDED_IMPROVEMENT_STAGED_IN_V1_CANDIDATE",
+      "practiceVerification": "LOCAL_MATH_VERIFIER_PASS_BUT_AUTHORED_RESPONSE_PARITY_UNCONFIRMED",
+      "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
+      "independentlyAccepted": false,
+      "codeChangeInThisV1Candidate": true,
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+    },
+    {
+      "gradeOrdinal": 20,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L05",
+      "title": "Center Day 1",
+      "originalActivitySummary": "Use an illustrated math warm-up, choose Sort and Display / Math Stories / Find the Pair, and construct/tell a story from a picture.",
+      "sourcePedagogyActivities": [
+        "Introduce Math Stories, Add and Subtract",
+        "Centers: Choice Time"
+      ],
+      "priorContentProvenance": "existing PR #550 G1 U02 L04-L05 source-grounded corrections reused on this candidate",
+      "intendedSkillAndActivity": "Use an illustrated math warm-up, choose Sort and Display / Math Stories / Find the Pair, and construct/tell a story from a picture.",
+      "gapRequiringP2BrowserCheck": "Authored student math picture/story and genuine three-centre choice not proved by a labeled diagram plus multiple choice.",
+      "sourceReview": "REFERENCE_DOCUMENTED",
+      "instructionalText": "SOURCE_GUARDED_IMPROVEMENT_STAGED_IN_V1_CANDIDATE",
+      "practiceVerification": "LOCAL_MATH_VERIFIER_PASS_BUT_AUTHORED_RESPONSE_PARITY_UNCONFIRMED",
+      "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
+      "independentlyAccepted": false,
+      "codeChangeInThisV1Candidate": true,
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+    }
+  ]
+}
