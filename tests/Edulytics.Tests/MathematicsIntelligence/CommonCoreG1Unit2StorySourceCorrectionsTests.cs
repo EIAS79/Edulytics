@@ -155,7 +155,7 @@ public sealed class CommonCoreG1Unit2StorySourceCorrectionsTests
             {
                 1 => new[]{expected[i-1],UsCcssG1Unit2StoryQuestions.WriteExpression},
                 2 => new[]{expected[i-1],UsCcssG1Unit2StoryQuestions.WriteEquation},
-                _ => new[]{expected[i-1]}
+                _ => new[]{expected[i-1],UsCcssG1Unit2StoryQuestions.WriteChangeEquation}
             };
             Assert.Equal(allowed,contract.AllowedQuestionFamilies);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(expected[i-1]));
