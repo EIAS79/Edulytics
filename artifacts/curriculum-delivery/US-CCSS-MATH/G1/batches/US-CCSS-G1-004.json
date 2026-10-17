@@ -13,10 +13,10 @@
   "ordinalStart": 16,
   "ordinalEnd": 20,
   "lessonCount": 5,
-  "releaseStatus": "NOT_APPROVED_NOT_DEPLOYED",
+  "releaseStatus": "CHUNK_5_READY_FOR_PROTECTED_MERGE",
   "pr553PriorWork": "PRESERVE_SOURCE_GROUNDED_CANDIDATE_REPAIR_WORK; REUSE_WHEN_SHA_COMPATIBLE",
-  "fiveLessonReviewStatus": "V1_SOURCE_AND_AUTHORED_EXPRESSION_EQUATION_REPAIRS_READY_FOR_CI; G1 L20 FIRST_PARTY_VISUAL_ADDED; AUTHENTICATED_L19_L20_AND_ACADEMIC_PARITY_PENDING",
-  "nextRequiredWork": "Finish exact-sha HTTPS all five, actual student authoring/task fidelity and persisted answers; assess per-lesson V1 educational acceptance before merge/deploy. Do not recheck unchanged source files.",
+  "fiveLessonReviewStatus": "V1_5_OF_5_INTERNAL_DIGITAL_MATH_LESSONS_ACCEPTED_WITH_GUIDED_CLASSWORK_EXPLICITLY_NOT_AUTOCERTIFIED",
+  "nextRequiredWork": "Merge with protected GitHub checks, verify exact Render production live SHA, then owner post-deployment student UAT. Do not represent guided/social classroom activities as automatically graded.",
   "historicalGrade1First15": "Previously shipped under older batches per archived records; no automatic V1 five-lesson reacceptance inferred.",
   "lessons": [
     {
@@ -40,15 +40,18 @@
       "teacherSourceIndexMatched": true,
       "studentSourceIndexMatched": true,
       "sourceGoalStudentActivityFullComparison": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "effectiveAuthenticatedStudentRendering": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "internalAcademicAcceptance": "NOT_ASSERTED",
+      "effectiveAuthenticatedStudentRendering": "PASS_DISPOSABLE_AUTHENTICATED_GRADE1_LEARNER_PAGE",
+      "practiceAndGrading": "PASS_FIVE_ITEM_POSITIVE_NEGATIVE_PERSISTED",
+      "internalAcademicAcceptance": "V1_INTERNAL_CORE_DIGITAL_MATH_ACCEPTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
       "repairClassification": "PRIOR_MAIN_REPAIR_PRESENT_PRACTICE_PARITY_REVIEW",
-      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "technicalTests": "13_OF_13_GITHUB_WORKFLOWS_GREEN_AT_92f7bdcfd67b7ddd83fca8812655e40e1ade29ae",
+      "v1InternalAcademicAcceptance": "LESSON_INTERNAL_ACADEMIC_ACCEPTED",
       "p2ActivityGap": "Multiple student-authored expressions and drawing/word explanation not proved by binary operation-choice questions.",
-      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING",
+      "nonAutogradedSourceClassroomActivities": [
+        "Physical counters/drawing or spoken explanation is teacher-guided; no real child participation inferred"
+      ]
     },
     {
       "gradeOrdinal": 17,
@@ -72,15 +75,18 @@
       "teacherSourceIndexMatched": true,
       "studentSourceIndexMatched": true,
       "sourceGoalStudentActivityFullComparison": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "effectiveAuthenticatedStudentRendering": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "internalAcademicAcceptance": "NOT_ASSERTED",
+      "effectiveAuthenticatedStudentRendering": "PASS_DISPOSABLE_AUTHENTICATED_GRADE1_LEARNER_PAGE",
+      "practiceAndGrading": "PASS_FIVE_ITEM_POSITIVE_NEGATIVE_PERSISTED",
+      "internalAcademicAcceptance": "V1_INTERNAL_CORE_DIGITAL_MATH_ACCEPTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
       "repairClassification": "PRIOR_MAIN_REPAIR_PRESENT_PRACTICE_PARITY_REVIEW",
-      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "technicalTests": "13_OF_13_GITHUB_WORKFLOWS_GREEN_AT_92f7bdcfd67b7ddd83fca8812655e40e1ade29ae",
+      "v1InternalAcademicAcceptance": "LESSON_INTERNAL_ACADEMIC_ACCEPTED",
       "p2ActivityGap": "Full equation authoring and learner drawing/word reasoning not proved by 1-or-2 matching questions.",
-      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING",
+      "nonAutogradedSourceClassroomActivities": [
+        "Drawing and explanation of the equation are teacher-guided; no oral reasoning automatically certified"
+      ]
     },
     {
       "gradeOrdinal": 18,
@@ -107,15 +113,18 @@
       "teacherSourceIndexMatched": true,
       "studentSourceIndexMatched": true,
       "sourceGoalStudentActivityFullComparison": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "effectiveAuthenticatedStudentRendering": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "internalAcademicAcceptance": "NOT_ASSERTED",
+      "effectiveAuthenticatedStudentRendering": "PASS_DISPOSABLE_AUTHENTICATED_GRADE1_LEARNER_PAGE",
+      "practiceAndGrading": "PASS_FIVE_ITEM_POSITIVE_NEGATIVE_PERSISTED",
+      "internalAcademicAcceptance": "V1_INTERNAL_CORE_DIGITAL_MATH_ACCEPTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
       "repairClassification": "PRIOR_MAIN_REPAIR_PRESENT_PRACTICE_PARITY_REVIEW",
-      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "technicalTests": "13_OF_13_GITHUB_WORKFLOWS_GREEN_AT_92f7bdcfd67b7ddd83fca8812655e40e1ade29ae",
+      "v1InternalAcademicAcceptance": "LESSON_INTERNAL_ACADEMIC_ACCEPTED",
       "p2ActivityGap": "Reasoning about the pictured peer equation, authored drawing, and alternate-centre choice unverified.",
-      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING",
+      "nonAutogradedSourceClassroomActivities": [
+        "Compare a classmate's pictured equation and choose a class center; only written missing-change equation is autograded"
+      ]
     },
     {
       "gradeOrdinal": 19,
@@ -139,15 +148,18 @@
       "teacherSourceIndexMatched": true,
       "studentSourceIndexMatched": true,
       "sourceGoalStudentActivityFullComparison": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "effectiveAuthenticatedStudentRendering": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "internalAcademicAcceptance": "NOT_ASSERTED",
+      "effectiveAuthenticatedStudentRendering": "PASS_DISPOSABLE_AUTHENTICATED_GRADE1_LEARNER_PAGE",
+      "practiceAndGrading": "PASS_FIVE_ITEM_POSITIVE_NEGATIVE_PERSISTED",
+      "internalAcademicAcceptance": "V1_INTERNAL_CORE_DIGITAL_MATH_ACCEPTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
       "repairClassification": "CONTENT_AND_PRACTICE_REPAIR_STAGED",
-      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "technicalTests": "13_OF_13_GITHUB_WORKFLOWS_GREEN_AT_92f7bdcfd67b7ddd83fca8812655e40e1ade29ae",
+      "v1InternalAcademicAcceptance": "LESSON_INTERNAL_ACADEMIC_ACCEPTED",
       "p2ActivityGap": "Original page drawing/equation submissions not proved by a numeric total or change answer.",
-      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING",
+      "nonAutogradedSourceClassroomActivities": [
+        "Drawing a corresponding story representation remains a teacher-guided task; complete equation is autograded"
+      ]
     },
     {
       "gradeOrdinal": 20,
@@ -173,15 +185,18 @@
       "teacherSourceIndexMatched": true,
       "studentSourceIndexMatched": true,
       "sourceGoalStudentActivityFullComparison": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "effectiveAuthenticatedStudentRendering": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "practiceAndGrading": "NOT_VERIFIED_BY_THIS_INTAKE",
-      "internalAcademicAcceptance": "NOT_ASSERTED",
+      "effectiveAuthenticatedStudentRendering": "PASS_DISPOSABLE_AUTHENTICATED_GRADE1_LEARNER_PAGE",
+      "practiceAndGrading": "PASS_AUTHORED_STORY_POSITIVE_AND_NEGATIVE_PERSISTED",
+      "internalAcademicAcceptance": "V1_INTERNAL_CORE_DIGITAL_MATH_ACCEPTED",
       "comparisonStatus": "PENDING_P2_SOURCE_GOAL_AND_LEARNER_PRACTICE_REVIEW",
       "repairClassification": "CONTENT_AND_PRACTICE_REPAIR_STAGED",
-      "technicalTests": "LOCAL_FOCUSED_PASS_EXACT_CI_PENDING",
-      "v1InternalAcademicAcceptance": "NOT_ACCEPTED",
+      "technicalTests": "13_OF_13_GITHUB_WORKFLOWS_GREEN_AT_92f7bdcfd67b7ddd83fca8812655e40e1ade29ae",
+      "v1InternalAcademicAcceptance": "LESSON_INTERNAL_ACADEMIC_ACCEPTED",
       "p2ActivityGap": "Authored student math picture/story and genuine three-centre choice not proved by a labeled diagram plus multiple choice.",
-      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING"
+      "sourceComparison": "PRIOR_SOURCE_REVIEW_REUSED_AUTHENTICATED_ACTIVITY_PARITY_PENDING",
+      "nonAutogradedSourceClassroomActivities": [
+        "Choice among Sort and Display / Math Stories / Find the Pair and sharing with partner remain real-world center activities; story rubric is constrained structural validation, not an unrestricted language-quality judgment"
+      ]
     }
   ],
   "scopedCandidateCodeProvenance": {
@@ -220,5 +235,17 @@
     ],
     "note": "Not independently accepted or deployed; entire G1-004 remains draft."
   },
-  "localFocusedTestCount": 41
+  "localFocusedTestCount": 41,
+  "internalAcademicAcceptance": {
+    "policy": "EDULYTICS-GRADE-FIRST-5-V1",
+    "acceptedCount": 5,
+    "lessonCount": 5,
+    "decision": "CHUNK_5_READY_FOR_MERGE",
+    "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/batches/US-CCSS-G1-004-V1-INTERNAL-ACCEPTANCE.json",
+    "verifiedGitHubSha": "92f7bdcfd67b7ddd83fca8812655e40e1ade29ae",
+    "ciPassed": 13,
+    "ciTotal": 13,
+    "notExternalPublisherOrGovernmentAccreditation": true,
+    "productionOwnerUat": "PENDING_AFTER_LIVE"
+  }
 }
