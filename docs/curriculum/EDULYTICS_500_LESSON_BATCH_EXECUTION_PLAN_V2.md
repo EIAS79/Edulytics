@@ -3,7 +3,7 @@
 
 **Plan ID:** `EDULYTICS-US-CCSS-20-V2` (replaces the prior `EDULYTICS-US-CCSS-500-V2` policy ID for future batch planning; preserve legacy artifact IDs as history)  
 **Effective:** 2026-10-17 owner-approved amendment; V2 originally adopted on 2026-10-16  
-**Status:** Authoritative operational **20-lesson batch** policy for US Common Core, replacing the earlier V2 500-lesson release unit; V1 five-lesson delivery remains superseded  
+**Status:** **SUPERSEDED / INACTIVE** by owner direction on 2026-10-17. The original V1 grade-first five-lesson plan is restored as the active curriculum execution policy. All other V2 text below is retained only as historical policy and evidence context; V2's 20-lesson release/acceptance procedure must not be started for future work  
 **Repository:** `EIAS79/Edulytics`  
 **Programme:** `US-CCSS-MATH`  
 **Recorded scope:** 1,560 unique lessons, excluding Kindergarten, from `docs/curriculum/us-ccss-g1-g12-structural-audit.json` (2026-10-11 snapshot)  
