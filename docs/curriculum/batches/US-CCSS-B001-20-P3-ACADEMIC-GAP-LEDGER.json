@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-US-CCSS-20-V2",
+  "batchId": "US-CCSS-B001",
+  "cohortSize": 20,
+  "inputs": {
+    "canonical20Intake": "docs/curriculum/batches/US-CCSS-B001-20-INTAKE.json",
+    "historicSourcePacket": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-1-OF-2.json",
+    "historicSourceFingerprintTriage": "docs/curriculum/batches/US-CCSS-B001-IM2021-500-SOURCE-FINGERPRINTS-TRIAGE.json"
+  },
+  "assurance": "Machine-grounded status accounting only. Archived 2021 teacher/student-facing sources inspected previously. No academic PASS, source book text replication, new production release or live student UAT.",
+  "counts": {
+    "canonicalCodes": 20,
+    "historicallyShipped": 15,
+    "previouslyUnshippedWithMainTeachingCorrections": 3,
+    "previouslyUnshippedWithCurrentP3UnmergedCandidate": 2,
+    "academicAcceptedUnderV2_20": 0,
+    "historicalDriftAccepted": 0,
+    "originalActivityAndLearnerParityAccepted": 0,
+    "releaseDecision": "NO_GO"
+  },
+  "outstandingGates": [
+    "Independent per-lesson original-source student task/activities to Edulytics learner-visible content review for all 20",
+    "Actual effective rendered lesson body SHA/provenance and source-edition review for all 20",
+    "Exact Practice family and independent mathematical oracle evidence on tested SHA for all 20",
+    "Verify previous 15 effective-body versions, student progress and recorded historic acceptance/drift",
+    "Real student authenticated persisted Practice, tenant isolation, correct/wrong/malformed tests on release candidate SHA",
+    "Full academic 20/20 P5; then merge + verified Render SHA + owner live UAT"
+  ],
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L01",
+      "gradeOrdinal": 1,
+      "lessonTitle": "Count and Add",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "c2e9ac8dc1f5c5ecccb0c4207edfe14885cbfdca1e7d1004dd6cc6bcf9a53aad",
+      "sourceTeacherLessonSha256": "d8964d1647d363fb56283c96c141cb616a388a54d2281d2a93cf500a75b6a214",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Revisit Counting Collections, Up to 20",
+        "Introduce: Number Race, Add to 10"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE",
+        "RAW_WORKED_EXAMPLES_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
+      "gradeOrdinal": 2,
+      "lessonTitle": "Explore Expressions and Sums",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "e1f8cffb9a84048ac36077c72c54c2aec5d142257600263877a1e124ddf589aa",
+      "sourceTeacherLessonSha256": "74008e82fc3b153b2efb624efcec5a253e323537e5d213d356fc9f74546ad74d",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Matching Dot Cards and Expressions",
+        "Introduce: Check it Off, Add within 10"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L03",
+      "gradeOrdinal": 3,
+      "lessonTitle": "Add 1 or 2",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "3dc044029307286bedb7e984f71d6f34fc677ad51c013718ea84fce978c033ce",
+      "sourceTeacherLessonSha256": "f3ece3ae90f9f4d261bc21bd4da5da1fef66393b7ab62ff96eed051248608e53",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Introduce Five in a Row: Addition and Subtraction, Add 1 or 2",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE",
+        "RAW_WORKED_EXAMPLES_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L04",
+      "gradeOrdinal": 4,
+      "lessonTitle": "More Work with 1 and 2",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "4bfc2ebbabc8039814e8a63991eed3bbaba81fe93567783bb817630a49caf46f",
+      "sourceTeacherLessonSha256": "b497a6b9a60d2e51e644936a6abddde2675c3b9e29a0d8c23f33cae7795e2bbb",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Introduce Five in a Row: Addition and Subtraction, Subtract 1 or 2",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L05",
+      "gradeOrdinal": 5,
+      "lessonTitle": "Explore Addition and Subtraction PLC Activity",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "f896b11834224b9cddf37bd711ad1978e46825f66934c883b5aefe4246843565",
+      "sourceTeacherLessonSha256": "f854ae45ef242c78a01b882f24b7e4df9a2d2e7755381fb3fa5b0ecb21f74728",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Introduce Check it Off, Subtract within 10",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE",
+        "RAW_STEPS_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L06",
+      "gradeOrdinal": 6,
+      "lessonTitle": "Center Day 1",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "41eb08f0c8e1307a588fb7eddc469d505871a184abc5d02f52c564d29e1e78a7",
+      "sourceTeacherLessonSha256": "b99a6d7cd3896cef240305687fa005f7cfd91048ea3711733666069e71473256",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Revisit Find the Pair, Make 10",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L07",
+      "gradeOrdinal": 7,
+      "lessonTitle": "Sort Math Tools",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "d19aef5b2a3f98ae99cbb42a3c5f2d6f4ab2745202e5ad1c87b7e97a1c1caa8b",
+      "sourceTeacherLessonSha256": "35cb5f461f47c7d55e8dfe89e5033937c7363eb850f1e1f8207ffc7d8900602d",
+      "sourceActivityCountRecorded": 3,
+      "sourceActivityNamesOnly": [
+        "Sort Objects",
+        "How Did They Sort?",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_STEPS_SHORT",
+        "RAW_WORKED_EXAMPLES_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L08",
+      "gradeOrdinal": 8,
+      "lessonTitle": "Sort and Count Shape Cards PLC Activity",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "e807abf86a7653c3dbb08cb5f0f58a2a2a5ecfdf1d54238b25b5d6da6e2b0cf1",
+      "sourceTeacherLessonSha256": "2df9e1013a9384852add035d5b9780fc1f2a2da0f0c968e082cca4c6ad1d40a8",
+      "sourceActivityCountRecorded": 3,
+      "sourceActivityNamesOnly": [
+        "Sort Shapes",
+        "Show Your Sort",
+        "Shape Sort Gallery Walk"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_WORKED_EXAMPLES_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L09",
+      "gradeOrdinal": 9,
+      "lessonTitle": "What is Your Favorite ______________ ?",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "7c58bd6fcae60d7918be9d5474d072a2f136e9e3f0e01f7afae7b24dce63aaa7",
+      "sourceTeacherLessonSha256": "e4b94554f24e672feff988754a86a16164491567e7cc67a380ca0620d865625e",
+      "sourceActivityCountRecorded": 3,
+      "sourceActivityNamesOnly": [
+        "A Class Survey",
+        "Show Our Class Data",
+        "Different Ways to Show Data"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_STEPS_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L10",
+      "gradeOrdinal": 10,
+      "lessonTitle": "Center Day 2",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "b572daf3314eb25cf7836b37b4aecd8175f29b3f2e5c3492da09a089de8c069f",
+      "sourceTeacherLessonSha256": "5a7f3aca8530a93ac85f5f77f84ca9746842394c38783508300188bbcc689347",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Revisit What’s Behind My Back, 10 Cubes",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_WORKED_EXAMPLES_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L11",
+      "gradeOrdinal": 11,
+      "lessonTitle": "Class Pet Surveys",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "8fe1b07adc64c2bdc0db34f1d9b284a2cae477501e3f61135b6ee5201fc053f9",
+      "sourceTeacherLessonSha256": "774937bfb9c1b69f78965824d1343236d9148155de5f2373d5752e743834d330",
+      "sourceActivityCountRecorded": 3,
+      "sourceActivityNamesOnly": [
+        "Jada’s Class Pet Survey",
+        "Interpret Data About Class Pets",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_STEPS_SHORT",
+        "RAW_WORKED_EXAMPLES_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L12",
+      "gradeOrdinal": 12,
+      "lessonTitle": "How Many? PLC Activity",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "12e28ee3ff578e60ddc400dd748211bee00f2517f167e3efae63fb496ae94456",
+      "sourceTeacherLessonSha256": "9e55f0ecb92b2c16943e78028409a58c8bcb76e2157560896c73e79628b92aec",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Data Represented with Tally Marks",
+        "Data Represented with Numbers"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_STEPS_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L13",
+      "gradeOrdinal": 13,
+      "lessonTitle": "Questions About Data",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "75cc8a9a39c5653ec173c838efffa548a6e4076b75f4f340bf687f785a0f1abd",
+      "sourceTeacherLessonSha256": "ab7075d72cf8ad98b24f19da84dd44b6dd24873a2742263933c2d918b6c9c0a4",
+      "sourceActivityCountRecorded": 3,
+      "sourceActivityNamesOnly": [
+        "Can You Answer It?",
+        "Ask Questions",
+        "Answer Questions"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L14",
+      "gradeOrdinal": 14,
+      "lessonTitle": "Center Day 3",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "4aaa2e133948ba89f384b0696e5e82d92168604af87f34759de24afd3b417bdb",
+      "sourceTeacherLessonSha256": "fae31aeaacfd7237ce4268dd8074174f6790edddf499ae20e18329d351512898",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Introduce Sort and Display, Any Way",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L15",
+      "gradeOrdinal": 15,
+      "lessonTitle": "Animals in the Jungle (optional)",
+      "historicalPreviouslyShipped": true,
+      "p3ImplementationStage": "HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "ea077b75ddab7ad5a76187a3bfc4835b06f11c6c5db3d73ee863910cf2c0d8c8",
+      "sourceTeacherLessonSha256": "08862f24b3782e4a755ebe460bae79430d3cb269d8233cf94ccc3e86acf6e51c",
+      "sourceActivityCountRecorded": 3,
+      "sourceActivityNamesOnly": [
+        "Collect Survey Data",
+        "Ask Our Own Questions",
+        "Share Data"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE",
+        "RAW_STEPS_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_VERIFIED",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L01",
+      "gradeOrdinal": 16,
+      "lessonTitle": "Story Problems and Expressions",
+      "historicalPreviouslyShipped": false,
+      "p3ImplementationStage": "SOURCE_GUARDED_TEACHING_PATCH_IN_MAIN_REQUIRES_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "5963e65f6af0bec30b6cdc51306692a52e4dd982f9aa28efcb38c3b2f8cf7b11",
+      "sourceTeacherLessonSha256": "6cabbae49552d47181695dec77907bda36af4a4914604bf8c57689530583b89a",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "The Library",
+        "Story Problems about the Library"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE",
+        "RAW_STEPS_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_APPLICABLE",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L02",
+      "gradeOrdinal": 17,
+      "lessonTitle": "Story Problems and Equations",
+      "historicalPreviouslyShipped": false,
+      "p3ImplementationStage": "SOURCE_GUARDED_TEACHING_PATCH_IN_MAIN_REQUIRES_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "a447c6b3ecd69d3ae0c1f2f8f27c65d91391de6fd49117df2e5dc9b6a35bdc01",
+      "sourceTeacherLessonSha256": "ae35a3e4a83534342393f55c1969d3a1d62df95643fcf43b17e4a011275f9399",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Write Equations",
+        "Solve and Write Equations"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_APPLICABLE",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L03",
+      "gradeOrdinal": 18,
+      "lessonTitle": "A Change is Coming PLC Activity",
+      "historicalPreviouslyShipped": false,
+      "p3ImplementationStage": "SOURCE_GUARDED_TEACHING_PATCH_IN_MAIN_REQUIRES_ACADEMIC_PROOF",
+      "sourceTeacherPreparationSha256": "d9e3229faa6f5805627e273fe754e11652073cb5285c43fc33ea32ee98ee4bfe",
+      "sourceTeacherLessonSha256": "28c0eb6c8edc820313f3f188433f5164913a71900b4d91632885dffb51a99094",
+      "sourceActivityCountRecorded": 3,
+      "sourceActivityNamesOnly": [
+        "Kiran’s Books",
+        "Lin Represents a Story Problem",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE",
+        "RAW_WORKED_EXAMPLES_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_APPLICABLE",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L04",
+      "gradeOrdinal": 19,
+      "lessonTitle": "Result or Change Unknown",
+      "historicalPreviouslyShipped": false,
+      "p3ImplementationStage": "TWO_LESSON_SOURCE_GOAL_PRACTICE_REPAIR_CANDIDATE_NOT_MERGED",
+      "sourceTeacherPreparationSha256": "59fb7e0d8a2375c58eeb76994f8ce0f33f436e3a150e92d70240e93dcbf877fc",
+      "sourceTeacherLessonSha256": "88444c77e3c8645803a34ee16ade1de246cfefcf9d6884a48e444fcb760de613",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Compare the Problems",
+        "Story Problems about Books"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_GENERIC_EXAMPLE"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_APPLICABLE",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L05",
+      "gradeOrdinal": 20,
+      "lessonTitle": "Center Day 1",
+      "historicalPreviouslyShipped": false,
+      "p3ImplementationStage": "TWO_LESSON_SOURCE_GOAL_PRACTICE_REPAIR_CANDIDATE_NOT_MERGED",
+      "sourceTeacherPreparationSha256": "6928549a88118f638a3affe3d2ecd0277c8eba48b32e7b1351261f42b87b991b",
+      "sourceTeacherLessonSha256": "50951b0a27c23f1b2f1bbc836a231ea2ca983cb9eb067840b185da72bf612bbd",
+      "sourceActivityCountRecorded": 2,
+      "sourceActivityNamesOnly": [
+        "Introduce Math Stories, Add and Subtract",
+        "Centers: Choice Time"
+      ],
+      "sourceExtractionReviewFlags": [
+        "RAW_WORKED_EXAMPLES_SHORT"
+      ],
+      "sourceTeacherPurposeGoalPresent": true,
+      "originalStudentActivityParity": "NOT_INDEPENDENTLY_APPROVED",
+      "actualEffectiveLearnerBodyParity": "NOT_INDEPENDENTLY_APPROVED",
+      "perLessonExactPracticeMathOracle": "NOT_INDEPENDENTLY_ACCEPTED",
+      "historicalContentAndAttemptDrift": "NOT_APPLICABLE",
+      "actualP4EvidenceOnReleaseCandidateSha": "NOT_RECONCILED_ON_CURRENT_P3_CANDIDATE",
+      "p5AcademicAcceptance": "NOT_ACCEPTED",
+      "p6LiveLessonReleaseAndUat": "NOT_VERIFIED"
+    }
+  ]
+}
