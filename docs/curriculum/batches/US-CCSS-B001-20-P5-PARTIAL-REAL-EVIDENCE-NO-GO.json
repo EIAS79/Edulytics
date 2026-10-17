@@ -53,11 +53,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-1",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -67,11 +67,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -100,11 +100,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -114,11 +114,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-2",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -128,11 +128,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -161,11 +161,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -175,11 +175,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-3",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -189,11 +189,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -222,11 +222,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -236,11 +236,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-4",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -250,11 +250,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -283,11 +283,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -297,11 +297,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-5",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -311,11 +311,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -344,11 +344,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -358,11 +358,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-6",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -372,11 +372,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -405,11 +405,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -419,11 +419,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-7",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -433,11 +433,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -466,11 +466,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -480,11 +480,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-8",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -494,11 +494,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -527,11 +527,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -541,11 +541,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-9",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -555,11 +555,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -588,11 +588,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -602,11 +602,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-10",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -616,11 +616,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -663,11 +663,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-11",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -677,11 +677,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -724,11 +724,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-12",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -738,11 +738,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -785,11 +785,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-13",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -799,11 +799,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -846,11 +846,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-14",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -860,11 +860,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -907,11 +907,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-15",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -921,11 +921,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -954,11 +954,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles + UnitTwoStudentWritesAnActualExpressionOrFullEquationNotJustOneOrTwo",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -968,11 +968,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-16",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -982,11 +982,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -1015,11 +1015,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles + UnitTwoStudentWritesAnActualExpressionOrFullEquationNotJustOneOrTwo",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -1029,11 +1029,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-17",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -1043,11 +1043,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -1076,11 +1076,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -1090,11 +1090,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-18",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -1104,11 +1104,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -1137,11 +1137,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles + UnitTwoLaterStudentWritesExactResultChangeAndPictureEquations",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -1151,11 +1151,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-19",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -1165,11 +1165,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     },
@@ -1198,11 +1198,11 @@
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles + UnitTwoLaterStudentWritesExactResultChangeAndPictureEquations",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
@@ -1212,11 +1212,11 @@
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
-          "result": "pending_plausible_wrong_per_family",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
-          "testId": "b001-500-real-practice-generation-and-grading-probe.json",
-          "reviewNote": "Real malformed answer was rejected and persisted for the first family of each code; plausibly wrong answers for all families remain unproved by this artifact."
+          "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-20",
+          "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
@@ -1226,11 +1226,11 @@
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
-          "result": "pending_exact_lesson_isolation",
+          "result": "pass",
           "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
           "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
-          "reviewNote": "Two schools and cross-tenant attempts checked broadly, but an isolated denial test against every one of this twenty's specific Practice attempts was not separately proved."
+          "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
       }
     }
