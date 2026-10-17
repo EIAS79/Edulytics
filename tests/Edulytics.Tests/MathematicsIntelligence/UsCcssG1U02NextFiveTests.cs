@@ -83,7 +83,7 @@ public sealed class UsCcssG1U02NextFiveTests
     }
 
     [Fact]
-    public void ShakeSpillRequiresAllUniqueTwoColorDecompositions()
+    public void ShakeSpillAcceptsTwoDistinctRedYellowArrangementsAndOptionalExtra()
     {
         var p=new Dictionary<string,int>{{"total",6}};
         var f=UsCcssG1Unit2NextFiveQuestions.Shake;
@@ -91,18 +91,23 @@ public sealed class UsCcssG1U02NextFiveTests
             UsCcssG1Unit2NextFiveQuestions.Solve(f,p));
         Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,
             "6+0=6;5+1=6;4+2=6;3+3=6"));
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,
+            "1+5=6;5+1=6"));
         Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,
-            "0+6=6;1+5=6;2+4=6;2+4=6"));
+            "0+6=6;0+6=6"));
     }
 
     [Fact]
-    public void CoveredCountersRequireAddAndRelatedSubtract()
+    public void CoveredCountersAcceptAdditionOrSubtractionSourceStrategies()
     {
         var p=new Dictionary<string,int>{{"total",8},{"visible",5}};
         var f=UsCcssG1Unit2NextFiveQuestions.Cover;
         Assert.Equal("5+3=8;8-5=3",UsCcssG1Unit2NextFiveQuestions.Solve(f,p));
         Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3"));
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"5+3=8"));
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"8-5=3"));
         Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"8 - 5 = 3;5+3=8"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"8-3=5"));
     }
 
     [Fact]
@@ -110,19 +115,25 @@ public sealed class UsCcssG1U02NextFiveTests
     {
         var p=new Dictionary<string,int>{{"total",9},{"a",4},{"mode",2}};
         var f=UsCcssG1Unit2NextFiveQuestions.Compare;
-        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3+6=9;4+5=9"));
-        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3+6=9;6+3=9"));
-        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3+6=9;4+5=10"));
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3+6=9;4+5=9;UNKNOWN=BOTH"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3+6=9;4+5=9"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3+6=9;6+3=9;UNKNOWN=BOTH"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3+6=9;4+5=10;UNKNOWN=BOTH"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"3+6=9;4+5=9;UNKNOWN=TOTAL"));
     }
 
     [Fact]
     public void CaptureSquaresChecksActualCellAndOneValidEdge()
     {
-        var p=new Dictionary<string,int>{{"first",4},{"second",3}};
+        var p=new Dictionary<string,int>{{"first",4},{"second",3},{"mask",7}};
         var f=UsCcssG1Unit2NextFiveQuestions.Capture;
-        Assert.Equal("A2:TOP",UsCcssG1Unit2NextFiveQuestions.Solve(f,p));
-        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"a2:right"));
-        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"B2:TOP"));
-        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"A2:DIAGONAL"));
+        Assert.Equal("A2:LEFT:CAPTURE",UsCcssG1Unit2NextFiveQuestions.Solve(f,p));
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"a2:left:capture"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"B2:LEFT:CAPTURE"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"A2:TOP:CAPTURE"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"A2:LEFT:CONTINUE"));
+        p["mask"]=0;
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"A2:TOP:CONTINUE"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"A2:TOP:CAPTURE"));
     }
 }

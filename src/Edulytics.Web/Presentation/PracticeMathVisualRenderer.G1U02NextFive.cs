@@ -22,11 +22,13 @@ public static partial class PracticeMathVisualRenderer
             }
             case "usccss.g1.u02.shake_spill.enumerate_partitions":
             {
-                var n=GetInt(p,"total");if(n is <4 or >8)throw new JsonException();
+                var n=GetInt(p,"total");if(n is <1 or >10)throw new JsonException();
                 Text(sb,205,39,"Shake and Spill: split the counters","label");
+                // First-party illustration of the two-sided red/yellow counters.
+                // It depicts an example split; the student must create others.
                 for(var i=0;i<n;i++)
-                    sb.Append($"<circle cx='{55+(i%5)*53}' cy='{92+(i/5)*49}' r='17' class='shape fill'/>");
-                Text(sb,205,221,"How many different two-color splits?","hint");
+                    sb.Append($"<circle cx='{55+(i%5)*53}' cy='{92+(i/5)*49}' r='17' class='shape' style='fill:{(i<n/2?"#bc4550":"#e8c94d")}'/>");
+                Text(sb,205,221,"Show two different red-and-yellow splits.","hint");
                 break;
             }
             case "usccss.g1.u02.shake_cover.write_missing_addend":
@@ -55,20 +57,30 @@ public static partial class PracticeMathVisualRenderer
             }
             case "usccss.g1.u02.center.capture_squares.select_legal_edge":
             {
-                var x=GetInt(p,"first");var y=GetInt(p,"second");
-                if(x is <1 or >5||y is <1 or >5||x+y is <6 or >9)throw new JsonException();
+                var x=GetInt(p,"first");var y=GetInt(p,"second");var mask=GetInt(p,"mask");
+                if(x is <1 or >5||y is <1 or >5||x+y is <6 or >9 ||
+                    !(mask==0||mask is 7 or 11 or 13 or 14))throw new JsonException();
                 Text(sb,100,36,$"Dice: {x} and {y}","label");
                 const int gridX=210,gridY=38,cellW=88,cellH=86;
                 for(var r=0;r<2;r++)
                 for(var c=0;c<2;c++)
                 {
-                    var label= r==0?(c==0?"A1":"A2"):(c==0?"B1":"B2");
+                    var label=r==0?(c==0?"A1":"A2"):(c==0?"B1":"B2");
                     var num=6+2*r+c;
-                    sb.Append($"<rect x='{gridX+cellW*c}' y='{gridY+cellH*r}' width='{cellW}' height='{cellH}' class='shape' fill='none'/>");
-                    Text(sb,gridX+cellW*c+43,gridY+cellH*r+31,label,"label");
-                    Text(sb,gridX+cellW*c+43,gridY+cellH*r+62,num.ToString(),"label");
+                    var left=gridX+cellW*c;var top=gridY+cellH*r;
+                    // Dashed outlines are NOT previously drawn edges.
+                    sb.Append($"<rect x='{left}' y='{top}' width='{cellW}' height='{cellH}' class='tick dash' fill='none'/>");
+                    Text(sb,left+43,top+31,label,"label");
+                    Text(sb,left+43,top+62,num.ToString(),"label");
+                    if(num!=x+y||mask==0)continue;
+                    if((mask&1)!=0)sb.Append($"<line x1='{left}' y1='{top}' x2='{left+cellW}' y2='{top}' class='shape' stroke-width='7'/>");
+                    if((mask&2)!=0)sb.Append($"<line x1='{left+cellW}' y1='{top}' x2='{left+cellW}' y2='{top+cellH}' class='shape' stroke-width='7'/>");
+                    if((mask&4)!=0)sb.Append($"<line x1='{left}' y1='{top+cellH}' x2='{left+cellW}' y2='{top+cellH}' class='shape' stroke-width='7'/>");
+                    if((mask&8)!=0)sb.Append($"<line x1='{left}' y1='{top}' x2='{left}' y2='{top+cellH}' class='shape' stroke-width='7'/>");
                 }
-                Text(sb,210,232,"Find the sum. Choose its cell and one edge.","hint");
+                Text(sb,210,232,mask==0
+                    ?"Choose the TOP edge: no square captured."
+                    :"Three thick edges: close the square.","hint");
                 break;
             }
             default:throw new JsonException("Unsupported G1 U02 L06–L10 visual.");

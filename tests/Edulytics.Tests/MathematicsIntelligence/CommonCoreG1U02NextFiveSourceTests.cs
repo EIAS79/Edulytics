@@ -50,7 +50,7 @@ public sealed class CommonCoreG1U02NextFiveSourceTests
                 CanonicalLessonContentMaterializer.ComputeLessonFingerprint(t.Doc,t.Lesson));
         }
         Assert.Contains("two matching addition equations",targets[0].En.Explanation, StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("EVERY distinct combination",targets[1].En.Explanation);
+        Assert.Contains("different combinations",targets[1].En.Explanation);
         Assert.Contains("under a cup",targets[2].En.Explanation);
         Assert.Contains("Both Parts Unknown",targets[3].En.KeyConceptsAndRules);
         Assert.Contains("fourth side",targets[4].En.Explanation);
@@ -60,9 +60,17 @@ public sealed class CommonCoreG1U02NextFiveSourceTests
     public void AChangedOriginalSourceHashFailsClosed()
     {
         var t=Targets()[0];
-        t.Lesson.CanonicalBodySha256=new string('0',64);
-        Assert.Throws<InvalidOperationException>(()=>
-            CommonCoreG1Unit2NextFiveSourceTeachingCorrections.Apply(t.Doc));
+        var original=t.Lesson.CanonicalBodySha256;
+        try
+        {
+            t.Lesson.CanonicalBodySha256=new string('0',64);
+            Assert.Throws<InvalidOperationException>(()=>
+                CommonCoreG1Unit2NextFiveSourceTeachingCorrections.Apply(t.Doc));
+        }
+        finally
+        {
+            t.Lesson.CanonicalBodySha256=original;
+        }
     }
 
     [Theory]

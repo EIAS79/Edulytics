@@ -53,14 +53,14 @@ public static class UsCcssG1Unit2NextFiveQuestions
             }
             case Shake:
             {
-                var total=random.Next(4,9);
+                var total=random.Next(1,11);
                 p["total"]=total;
                 prompt=$"Shake and Spill: there are exactly {total} two-color counters. "+
-                    "List EVERY different way to split them into two color groups without "+
-                    "counting the reversed colors twice. Include zero counters of one color. "+
-                    "WRITE each addition equation separated by semicolons. "+
-                    $"For example, for 3 counters: 0+3=3; 1+2=3. Find all combinations for {total}.";
-                solution="Start with 0 of the first color and increase by 1 until the first group meets the second; no partition may be missing or repeated.";
+                     "Write at least TWO DIFFERENT red-and-yellow arrangements, each with a matching full addition equation. "+
+                    "Write the number of RED counters first and YELLOW counters second (red+yellow=total), "+
+                    "separating your equations with semicolons. "+
+                    $"For example, for 3 counters: 1+2=3; 2+1=3. If you have time, find ALL combinations for {total}.";
+                solution="Each arrangement needs two colored parts whose total matches the whole. Changing the color counts can reverse the addends; a complete list is an optional challenge.";
                 break;
             }
             case Cover:
@@ -71,9 +71,10 @@ public static class UsCcssG1Unit2NextFiveQuestions
                 prompt=$"Shake, Spill, and Cover: There are {total} counters in all; "+
                     $"{visible} are visible and the others are hidden under a cup. "+
                     "Count the visible counters and think how many are under the cup. "+
-                    "WRITE the completed addition equation AND the related subtraction equation, "+
-                    "separated by a semicolon (visible+hidden=total; total-visible=hidden).";
-                solution="Count on from what is visible to the whole; subtraction checks the hidden part.";
+                    "WRITE a complete addition equation with the missing number filled in OR "+
+                    "a correct subtraction equation for the SAME whole and visible part. "+
+                    "Either strategy is valid. You may write both separated by a semicolon.";
+                solution="Count on from what is visible to the whole, or subtract the visible from the total. Both are valid strategies; write a matching equation.";
                 break;
             }
             case Compare:
@@ -86,14 +87,16 @@ public static class UsCcssG1Unit2NextFiveQuestions
                 prompt=mode switch
                 {
                     0=>$"Story A: {a} reptiles are turtles and {b} are lizards. How many reptiles in all? "+
-                       "WRITE two addition equations in opposite orders for this total-unknown story.",
+                       "WRITE a complete matching addition equation (two different orders are optional).",
                     1=>$"Story B: A class has {total} reptiles altogether, {a} are turtles, and the rest are lizards. "+
-                       "How many lizards? WRITE a completed addition equation AND a related subtraction equation.",
+                       "How many lizards? WRITE a completed addition equation OR a related subtraction equation; both are optional.",
                     _=>$"Story C: A class has {total} reptiles. We do not know how many are turtles or lizards. "+
                        "WRITE TWO DIFFERENT positive-number addition equations showing two possible splits; "+
                        "each equation must equal the total. Do not repeat a split with the addends reversed."
                 };
-                prompt+=" Separate the two equations with a semicolon and identify what is unknown in each story.";
+                prompt+=" Separate any equations with a semicolon. At the end write "+
+                    "UNKNOWN=TOTAL, UNKNOWN=PART or UNKNOWN=BOTH to identify what the story asks for. "+
+                    "Use a box around the unknown when you draw the matching equation on paper.";
                 solution="Total unknown: combine both groups; one part unknown: find the missing addend; both parts unknown: more than one decomposition can be valid.";
                 break;
             }
@@ -102,15 +105,17 @@ public static class UsCcssG1Unit2NextFiveQuestions
                 var target=random.Next(6,10);
                 var first=random.Next(Math.Max(1,target-5),Math.Min(5,target-1)+1);
                 var second=target-first;
-                p["first"]=first;p["second"]=second;
-                prompt=$"Capture Squares center: Roll two number cubes: {first} and {second}. "+
-                    "Find their sum. On the FIRST-PARTY 2-by-2 game board, "+
-                    "top-left A1 has 6, top-right A2 has 7, bottom-left B1 has 8, bottom-right B2 has 9. "+
-                    "Choose the cell with the correct sum and ONE side to mark on that cell. "+
-                    "WRITE a cell-and-side move such as A1:TOP, A2:RIGHT, B1:BOTTOM or B2:LEFT. "+
-                    "An edge represents one legal turn on an initially empty board; capturing a square "+
-                    "requires later turns with three existing sides, played with a teacher or partner.";
-                solution="Add the two number cubes, find the matching square, then name one side to draw on the empty board. No square is captured after a single edge.";
+                var scenario=random.Next(2);
+                int mask=scenario==0?0:new[]{7,11,13,14}[random.Next(4)];
+                p["first"]=first;p["second"]=second;p["mask"]=mask;
+                prompt=$"Capture Squares Stage 1: Roll two number cubes: {first} and {second}. "+
+                    "On this FIRST-PARTY practice board, A1 is 6, A2 is 7, B1 is 8 and B2 is 9. "+
+                    (mask==0
+                        ?"The board has no marked sides yet. Find your sum and start by marking the TOP side of the matching square. "
+                        :"Three sides of the matching square are ALREADY marked (shown with thick edges). Find the ONLY remaining side and close it. ")+
+                    "Type CELL:SIDE:RESULT, where RESULT is CONTINUE if no square is captured or CAPTURE when the fourth side closes the square. "+
+                    "For example, A1:TOP:CONTINUE. A full two-player Capture Squares game still requires a teacher or partner.";
+                solution="Add the dice and locate the matching sum. Choose the required unused side; closing a fourth side captures the square. A first side does not.";
                 break;
             }
             default:throw new InvalidOperationException("Unknown family");
@@ -126,12 +131,13 @@ public static class UsCcssG1Unit2NextFiveQuestions
         {
             Pets =>p.Count==2&&Has("a",out var a)&&Has("b",out var b) &&
                 a is >=2 and <=5 && b is >=2 and <=5 && a!=b && a+b<=10,
-            Shake=>p.Count==1&&Has("total",out var total)&&total is >=4 and <=8,
+            Shake=>p.Count==1&&Has("total",out var total)&&total is >=1 and <=10,
             Cover=>p.Count==2&&Has("total",out var whole)&&Has("visible",out var visible) &&
                 whole is >=6 and <=10 && visible>=2 && visible<whole,
             Compare=>p.Count==3&&Has("total",out var n)&&Has("a",out var part)&&Has("mode",out var mode) &&
                 n is >=6 and <=10 && part>=2 && part<n && mode is >=0 and <=2,
-            Capture=>p.Count==2&&Has("first",out var first)&&Has("second",out var second) &&
+            Capture=>p.Count==3&&Has("first",out var first)&&Has("second",out var second) &&
+                Has("mask",out var mask) && (mask==0 || mask is 7 or 11 or 13 or 14) &&
                 first is >=1 and <=5 && second is >=1 and <=5 &&
                 first+second is >=6 and <=9,
             _=>false
@@ -145,7 +151,7 @@ public static class UsCcssG1Unit2NextFiveQuestions
         {
             Pets=>Sum(p["a"],p["b"],p["a"]+p["b"])+";"+
                 Sum(p["b"],p["a"],p["a"]+p["b"]),
-            Shake=>string.Join(";",Enumerable.Range(0,p["total"]/2+1)
+            Shake=>string.Join(";",Enumerable.Range(0,p["total"]==1?2:p["total"]/2+1)
                 .Select(a=>Sum(a,p["total"]-a,p["total"]))),
             Cover=>Sum(p["visible"],p["total"]-p["visible"],p["total"])+";"+
                 $"{p["total"]}-{p["visible"]}={p["total"]-p["visible"]}",
@@ -156,8 +162,8 @@ public static class UsCcssG1Unit2NextFiveQuestions
                 1=>Sum(p["a"],p["total"]-p["a"],p["total"])+";"+
                     $"{p["total"]}-{p["a"]}={p["total"]-p["a"]}",
                 _=>Sum(1,p["total"]-1,p["total"])+";"+Sum(2,p["total"]-2,p["total"])
-            },
-            Capture=>$"{((p["first"]+p["second"]) switch {6=>"A1",7=>"A2",8=>"B1",_=>"B2"})}:TOP",
+            } + ";UNKNOWN=" + (p["mode"] switch {0=>"TOTAL",1=>"PART",_=>"BOTH"}),
+            Capture=>$"{((p["first"]+p["second"]) switch {6=>"A1",7=>"A2",8=>"B1",_=>"B2"})}:{(p["mask"] switch {7=>"LEFT",11=>"BOTTOM",13=>"RIGHT",_=>"TOP"})}:{(p["mask"]==0?"CONTINUE":"CAPTURE")}",
             _=>throw new InvalidOperationException()
         };
     }
@@ -171,24 +177,58 @@ public static class UsCcssG1Unit2NextFiveQuestions
             a.Order(StringComparer.Ordinal).SequenceEqual(b.Order(StringComparer.Ordinal));
     }
 
-    private static bool EveryPartition(string expected,string submitted)
+    private static bool DistinctColorPartitions(string expected,string submitted)
     {
         var canonical=Parts(expected);
         var actual=Parts(submitted);
-        if(actual.Length!=canonical.Length)return false;
+        if(actual.Length<2 || actual.Length>12)return false;
         var total=int.Parse(canonical[0].Split('=')[1],CultureInfo.InvariantCulture);
         var sets=new HashSet<string>(StringComparer.Ordinal);
         foreach(var piece in actual)
         {
             var m=Regex.Match(piece,@"^(\d+)\+(\d+)=(\d+)$");
             if(!m.Success)return false;
-            var a=int.Parse(m.Groups[1].Value); var b=int.Parse(m.Groups[2].Value);
-                var t=int.Parse(m.Groups[3].Value);
+            var a=int.Parse(m.Groups[1].Value);var b=int.Parse(m.Groups[2].Value);
+            var t=int.Parse(m.Groups[3].Value);
             if(a+b!=total || t!=total)return false;
-            sets.Add($"{Math.Min(a,b)}+{Math.Max(a,b)}={total}");
+            if(!sets.Add($"{a}+{b}={total}"))return false;
         }
-        return sets.Count==canonical.Length &&
-            canonical.All(x=>sets.Contains(x));
+        return sets.Count>=2;
+    }
+
+    private static bool EitherMissingAddendEquation(string expected,string submitted)
+    {
+        var source=Parts(expected);
+        if(source.Length!=2)return false;
+        var m=Regex.Match(source[0],@"^(\d+)\+(\d+)=(\d+)$");
+        if(!m.Success)return false;
+        var visible=int.Parse(m.Groups[1].Value);
+        var hidden=int.Parse(m.Groups[2].Value);
+        var total=int.Parse(m.Groups[3].Value);
+        var allowed=new HashSet<string>(StringComparer.Ordinal)
+        {
+            $"{visible}+{hidden}={total}",$"{hidden}+{visible}={total}",
+            $"{total}-{visible}={hidden}"
+        };
+        var equations=Parts(submitted);
+        return equations.Length is >=1 and <=2 &&
+            equations.Distinct(StringComparer.Ordinal).Count()==equations.Length &&
+            equations.All(allowed.Contains);
+    }
+
+    private static bool CompareUnknowns(string expected,string submitted)
+    {
+        var original=Parts(expected);var entries=Parts(submitted);
+        if(original.Length!=3 || entries.Length<2)return false;
+        var label=original[2];
+        if(entries[^1]!=label)return false;
+        var equations=entries[..^1];
+        if(label=="UNKNOWN=BOTH")
+            return TwoDifferentDecompositions(
+                string.Join(";",original.Take(2)),string.Join(";",equations));
+        return equations.Length is >=1 and <=2 &&
+            equations.Distinct(StringComparer.Ordinal).Count()==equations.Length &&
+            equations.All(e=>original.Take(2).Contains(e,StringComparer.Ordinal));
     }
 
     private static bool TwoDifferentDecompositions(string expected,string submitted)
@@ -215,15 +255,12 @@ public static class UsCcssG1Unit2NextFiveQuestions
         if(family==Capture)
         {
             var actual=Regex.Match(Compact(response).ToUpperInvariant(),
-                @"^(A1|A2|B1|B2):(TOP|RIGHT|BOTTOM|LEFT)$");
-            if(!actual.Success)return false;
-            var ex=Regex.Match(expected,@"^(A1|A2|B1|B2):TOP$");
-            return ex.Success &&
-                actual.Groups[1].Value==ex.Groups[1].Value;
+                @"^(A1|A2|B1|B2):(TOP|RIGHT|BOTTOM|LEFT):(CONTINUE|CAPTURE)$");
+            return actual.Success && Compact(response).Equals(expected,StringComparison.OrdinalIgnoreCase);
         }
-        if(family==Shake)return EveryPartition(expected,response);
-        if(family==Compare && expected.StartsWith("1+",StringComparison.Ordinal))
-            return TwoDifferentDecompositions(expected,response);
+        if(family==Shake)return DistinctColorPartitions(expected,response);
+        if(family==Cover)return EitherMissingAddendEquation(expected,response);
+        if(family==Compare)return CompareUnknowns(expected,response);
         return TwoEquationSet(expected,response);
     }
 
