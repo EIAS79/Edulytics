@@ -113,7 +113,7 @@ public static class UsCcssG1Unit2NextFiveQuestions
                     (mask==0
                         ?"The board has no marked sides yet. Find your sum and start by marking the TOP side of the matching square. "
                         :"Three sides of the matching square are ALREADY marked (shown with thick edges). Find the ONLY remaining side and close it. ")+
-                    "Type CELL:SIDE:RESULT, where RESULT is CONTINUE if no square is captured or CAPTURE when the fourth side closes the square. "+
+                    "WRITE CELL:SIDE:RESULT, where RESULT is CONTINUE if no square is captured or CAPTURE when the fourth side closes the square. "+
                     "For example, A1:TOP:CONTINUE. A full two-player Capture Squares game still requires a teacher or partner.";
                 solution="Add the dice and locate the matching sum. Choose the required unused side; closing a fourth side captures the square. A first side does not.";
                 break;
