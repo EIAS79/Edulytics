@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-US-CCSS-20-V2",
+  "batchId": "US-CCSS-B001",
+  "comparisonKind": "REAL_MAIN_BASELINE_VS_CANDIDATE_EFFECTIVE_RICH_MODEL_SHA_NOT_PRODUCTION_UAT",
+  "baselineSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+  "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+  "details": "Read-only .NET composition of canonical lesson EN fields and Rich V2 lesson model using identical diagnostic implementation on a separate detached main worktree and the candidate worktree. SHA-256 over serialized RichLessonContentV2Lesson. This is deterministic program output and not a published historical student session SHA.",
+  "counts": {
+    "total": 20,
+    "richBodyUnchanged": 8,
+    "richBodyChanged": 12,
+    "unmodifiedHistoricalLessons": 8,
+    "historicalLessonsModified": 7,
+    "originalActivityParityAccepted": 0,
+    "academicAccepted": 0
+  },
+  "rows": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L01",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "699f9224f7fb0d8a90f391fdc1d243f7202897827a7af98ec868f4f52bb30116",
+      "candidateRichBodySha256": "699f9224f7fb0d8a90f391fdc1d243f7202897827a7af98ec868f4f52bb30116",
+      "richBodyUnchanged": true,
+      "baselineContentVersion": "us-ccss-g1-u01-l01-count-collections-dots-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l01-count-collections-dots-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.g1.u01.l01.count_collection_to20",
+        "usccss.g1.u01.l01.add_dot_cubes_to10"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u01.l01.count_collection_to20",
+        "usccss.g1.u01.l01.add_dot_cubes_to10"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "b9b4ee7f896e135e705c89d8928f87f98b33849b99ea606a783b531d74d9c0e2",
+      "candidateRichBodySha256": "5a1d0b0f5a3c20fb4bac90778734377ebc2d698f97d40df84b6a347192cdd257",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "common-core-rich-content-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l02-l03-source-story-dot-centers-v1",
+      "contentVersionUnchanged": false,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.write_dot_expression",
+        "usccss.t001.g1.dot_pair_sum",
+        "usccss.t001.g1.choose_dot_expression"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.write_dot_expression",
+        "usccss.t001.g1.dot_pair_sum",
+        "usccss.t001.g1.choose_dot_expression"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L03",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "3ccaa549ea3154fe1fe61d97a045f25e030395f4a88f2a6b83bb6ee87a38ae44",
+      "candidateRichBodySha256": "c9d891aa32600ba66957f7b2e97496fd19c2d769568e0505fddaa7fefe70ad94",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "common-core-rich-content-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l02-l03-source-story-dot-centers-v1",
+      "contentVersionUnchanged": false,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.add_one_or_two"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.add_one_or_two"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L04",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "55a5a786df614c0719a9c6a3f063e1149bdbf52d8b3c3946fa2ebd02420fbff7",
+      "candidateRichBodySha256": "55a5a786df614c0719a9c6a3f063e1149bdbf52d8b3c3946fa2ebd02420fbff7",
+      "richBodyUnchanged": true,
+      "baselineContentVersion": "us-ccss-g1-u01-l04-count-back-one-two-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l04-count-back-one-two-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.subtract_one_or_two"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.subtract_one_or_two"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L05",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "f2058b1af11ea95d2206664144a9ac29a9de096b9417b1cf08d8962fd1ab1658",
+      "candidateRichBodySha256": "f2058b1af11ea95d2206664144a9ac29a9de096b9417b1cf08d8962fd1ab1658",
+      "richBodyUnchanged": true,
+      "baselineContentVersion": "usccss-t001-g1-u01-l05-add-and-subtract-mixed-v1",
+      "candidateContentVersion": "usccss-t001-g1-u01-l05-add-and-subtract-mixed-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.mixed_add_subtract"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.mixed_add_subtract"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L06",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "95f81bed705d47956a0945d1bacbf10e499201e53bdc1e8e02da14a8c26a7c10",
+      "candidateRichBodySha256": "95f81bed705d47956a0945d1bacbf10e499201e53bdc1e8e02da14a8c26a7c10",
+      "richBodyUnchanged": true,
+      "baselineContentVersion": "usccss-t001-g1-u01-l06-find-pair-make-ten-v1",
+      "candidateContentVersion": "usccss-t001-g1-u01-l06-find-pair-make-ten-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.make_ten_missing_part",
+        "usccss.t001.g1.mixed_add_subtract"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.make_ten_missing_part",
+        "usccss.t001.g1.mixed_add_subtract"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L07",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "f1594eea9818b204ea8bf747a508960bf43823c3c60d00eab37d92fbb85f91c6",
+      "candidateRichBodySha256": "f1594eea9818b204ea8bf747a508960bf43823c3c60d00eab37d92fbb85f91c6",
+      "richBodyUnchanged": true,
+      "baselineContentVersion": "us-ccss-g1-g1-u01-l07-instruction-v1",
+      "candidateContentVersion": "us-ccss-g1-g1-u01-l07-instruction-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.construct_tool_sort",
+        "usccss.t001.g1.sort_math_tools",
+        "usccss.t001.g1.choose_tool_sort"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.construct_tool_sort",
+        "usccss.t001.g1.sort_math_tools",
+        "usccss.t001.g1.choose_tool_sort"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L08",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "4b4f4ea6383e847d9178b4be6f82ac2e292139b87959135ed3905130af27edf6",
+      "candidateRichBodySha256": "4b4f4ea6383e847d9178b4be6f82ac2e292139b87959135ed3905130af27edf6",
+      "richBodyUnchanged": true,
+      "baselineContentVersion": "us-ccss-g1-g1-u01-l08-source-goal-v1",
+      "candidateContentVersion": "us-ccss-g1-g1-u01-l08-source-goal-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.construct_shape_graph",
+        "usccss.t001.g1.sort_shape_cards",
+        "usccss.t001.g1.choose_shape_chart"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.construct_shape_graph",
+        "usccss.t001.g1.sort_shape_cards",
+        "usccss.t001.g1.choose_shape_chart"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L09",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "175eda5a6b76d505844c2e99c57d8fb66a3e8d03cc98cf333a9a21e054b52e4a",
+      "candidateRichBodySha256": "175eda5a6b76d505844c2e99c57d8fb66a3e8d03cc98cf333a9a21e054b52e4a",
+      "richBodyUnchanged": true,
+      "baselineContentVersion": "us-ccss-g1-g1-u01-l09-source-goal-v1",
+      "candidateContentVersion": "us-ccss-g1-g1-u01-l09-source-goal-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.collect_survey_graph",
+        "usccss.t001.g1.class_survey_categories",
+        "usccss.t001.g1.choose_survey_table"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.collect_survey_graph",
+        "usccss.t001.g1.class_survey_categories",
+        "usccss.t001.g1.choose_survey_table"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L10",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "fa3c6ccfd49d3d6a1884a11c97e783f644c2544806e8bb0640a9166977516dea",
+      "candidateRichBodySha256": "fa3c6ccfd49d3d6a1884a11c97e783f644c2544806e8bb0640a9166977516dea",
+      "richBodyUnchanged": true,
+      "baselineContentVersion": "us-ccss-g1-u01-l10-center-add-subtract-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l10-center-add-subtract-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.make_ten_missing_part",
+        "usccss.t001.g1.mixed_add_subtract"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.make_ten_missing_part",
+        "usccss.t001.g1.mixed_add_subtract"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 11,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L11",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "592f079cb293a13b57388c5b698c7956d9b9678864cd5faf22931f92216fda7d",
+      "candidateRichBodySha256": "1d898d0b40cb5c4dcc0be69174e6ec86bb36fd17e080460dac82ed6942994bbe",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "us-ccss-g1-g1-u01-l11-instruction-v1",
+      "candidateContentVersion": "us-ccss-g1-g1-u01-l11-instruction-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.g1.u01.b03.check_data_statement",
+        "usccss.g1.u01.b03.count_category_data"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u01.b03.check_data_statement",
+        "usccss.g1.u01.b03.count_category_data"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 12,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L12",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "8311294d76b9c8c24228009df66cebf40c8328d2fc1aa64fd2c6a64a32b7cad1",
+      "candidateRichBodySha256": "3456ab6d0ea1e8a6ba436d9ce9ac0dc272d96ecaf563841c7861c721998fa9f7",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "us-ccss-g1-u01-l12-data-tallies-and-totals-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l12-data-tallies-and-totals-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.g1.u01.b03.count_category_data"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u01.b03.count_category_data"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 13,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L13",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "4419428ca2b0caee5e83cb8221a1de44c7ef173592ca77681d456901c745aa33",
+      "candidateRichBodySha256": "86bdc09cf30cb4a2a46dde5f53729290046cd7e472a1f2bc9b173b7576800d98",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "us-ccss-g1-u01-l13-data-questions-correction-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l13-data-questions-correction-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.g1.u01.b03.answerable_data_question",
+        "usccss.g1.u01.b03.count_category_data"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u01.b03.answerable_data_question",
+        "usccss.g1.u01.b03.count_category_data"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 14,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L14",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "546047d9cec6dc6a6c290fc43c04730337642afa533edd8fd08e8857ae010c3a",
+      "candidateRichBodySha256": "ee1423731cd8204c538ffed43e2226f0ae8418eae731a5ad78293a417c918bec",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "us-ccss-g1-u01-l14-sort-display-centers-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l14-sort-display-centers-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.construct_tool_sort",
+        "usccss.t001.g1.construct_shape_graph",
+        "usccss.t001.g1.mixed_add_subtract"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.construct_tool_sort",
+        "usccss.t001.g1.construct_shape_graph",
+        "usccss.t001.g1.mixed_add_subtract"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 15,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L15",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "e7d81bff1ae63642fc1bd91217bf1658744eac9e97b89c680c0a87dbfcfc16fc",
+      "candidateRichBodySha256": "2f5304e42a3c4ad2949149fd11197ed5dc5d0da7a4eb9b6cdaa285c8e494a85e",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "us-ccss-g1-u01-l15-survey-and-tallies-correction-v1",
+      "candidateContentVersion": "us-ccss-g1-u01-l15-survey-and-tallies-correction-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.t001.g1.collect_survey_graph",
+        "usccss.g1.u01.b03.answerable_data_question"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.t001.g1.collect_survey_graph",
+        "usccss.g1.u01.b03.answerable_data_question"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 16,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L01",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "696ba169a803e046a47e3ee0e3915ce746d9fba73119788fe87fc62bb2cd58c4",
+      "candidateRichBodySha256": "6c2a6a84f8be1b19ff295b6c5076ed1c08409d985cbb4faddcf819ecdcb24f05",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "us-ccss-g1-u02-story-source-fidelity-v1",
+      "candidateContentVersion": "us-ccss-g1-u02-story-source-fidelity-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.g1.u02.story.choose_expression"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u02.story.write_expression",
+        "usccss.g1.u02.story.choose_expression"
+      ],
+      "practiceFamiliesUnchanged": false
+    },
+    {
+      "ordinal": 17,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L02",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "20c3216d518535e0092047bd3298fd5adb04c588b04c7483cff2ec1f049e7327",
+      "candidateRichBodySha256": "16bfcb07857464113e50da18313b2dabcba7b27bae188801a64752f711918795",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "us-ccss-g1-u02-story-source-fidelity-v1",
+      "candidateContentVersion": "us-ccss-g1-u02-story-source-fidelity-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.g1.u02.story.choose_equation"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u02.story.write_equation",
+        "usccss.g1.u02.story.choose_equation"
+      ],
+      "practiceFamiliesUnchanged": false
+    },
+    {
+      "ordinal": 18,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L03",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "993520403d02ebffe4d0093bb0b15119fe1811e144a95f2a72d2d503bf35d361",
+      "candidateRichBodySha256": "44203cd2db30893b4f7728bd26916974f8f7741d5205293c056ec125f8bfc436",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "us-ccss-g1-u02-story-source-fidelity-v1",
+      "candidateContentVersion": "us-ccss-g1-u02-story-source-fidelity-v1",
+      "contentVersionUnchanged": true,
+      "baselineAllowedPracticeFamilies": [
+        "usccss.g1.u02.story.add_change_unknown"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u02.story.add_change_unknown"
+      ],
+      "practiceFamiliesUnchanged": true
+    },
+    {
+      "ordinal": 19,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L04",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "a24159005fbabb56967182af9a169d98404c00ad9aa49851ea01a730657e7650",
+      "candidateRichBodySha256": "1e6a694e061cc452b4addbf8d3181b6fd72f24571a18dec55fd8a95a199cd71c",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "common-core-rich-content-v1",
+      "candidateContentVersion": "us-ccss-g1-u02-part2-original-source-teaching-v1",
+      "contentVersionUnchanged": false,
+      "baselineAllowedPracticeFamilies": [
+        "number.whole.add.direct"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u02.story.write_result_or_change_equation",
+        "usccss.g1.u02.story.mixed_result_or_change"
+      ],
+      "practiceFamiliesUnchanged": false
+    },
+    {
+      "ordinal": 20,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L05",
+      "baselineCodeSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "candidateCodeSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "baselineRichBodySha256": "55a8131b5ed06bb13e0944d113463f22c61c01354c36d5df5a2df8751e31910c",
+      "candidateRichBodySha256": "0fd091d19f9dc60478b2ccdccd1e4e93e017fcb4203f60b011eff15539295912",
+      "richBodyUnchanged": false,
+      "baselineContentVersion": "common-core-rich-content-v1",
+      "candidateContentVersion": "us-ccss-g1-u02-part2-original-source-teaching-v1",
+      "contentVersionUnchanged": false,
+      "baselineAllowedPracticeFamilies": [
+        "number.whole.add_subtract.across_ten.apply",
+        "number.whole.add_subtract.across_ten.build",
+        "number.whole.add_subtract.within_10.apply",
+        "number.whole.add_subtract.within_10.build",
+        "supporting.statistics.charts.mixed",
+        "supporting.statistics.table_total"
+      ],
+      "candidateAllowedPracticeFamilies": [
+        "usccss.g1.u02.center.write_picture_equation",
+        "usccss.g1.u02.center.picture_story_equation"
+      ],
+      "practiceFamiliesUnchanged": false
+    }
+  ],
+  "limits": [
+    "A match shows unchanged current-main generated learner Rich V2 model, not an independent educational approval.",
+    "A mismatch must undergo lesson-specific P2 source review before shipping; do not automatically revert.",
+    "Main baseline version is not proof of historic production DB body or any learner score/attempt drift.",
+    "The exact candidate and main SHAs are fixed; any subsequent code change invalidates this comparison for affected outputs."
+  ],
+  "decision": "P2_PARTIAL_DRIFT_EVIDENCE_NOT_P5"
+}
