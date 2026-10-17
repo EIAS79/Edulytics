@@ -959,6 +959,14 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Original IM 2021 source-corrected G1 U02 L04-L07.
+        foreach(var reviewed in UsCcssG1Unit2Part2PracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G1 U02 Part2 lesson missing source Practice contract: " + reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
