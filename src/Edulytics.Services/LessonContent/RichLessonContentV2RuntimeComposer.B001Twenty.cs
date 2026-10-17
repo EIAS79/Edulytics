@@ -142,6 +142,57 @@ public static partial class RichLessonContentV2RuntimeComposer
             [R("Before — 9 blocks","●●●●●●●●●"),R("Packed away — 4","××××"),R("Remain — 5","●●●●●")])
     };
 
+
+    private sealed record B001SecondWorked(string Question,string Answer,string Check);
+
+    // The second model must be a mathematically independent activity, not a
+    // duplicate of the first example or a changed heading on the same answer.
+    // Independently authored; source skill/grade scope reviewed in B001 P2.
+    private static readonly IReadOnlyDictionary<string,B001SecondWorked> B001SecondWorkedByCode=
+        new Dictionary<string,B001SecondWorked>(StringComparer.Ordinal)
+    {
+        ["PED:US-CCSS-MATH:G1:U01:L11"]=new(
+            "Write two true observations and correct one false observation about the pet chart.",
+            "Six children chose cats. Two children chose fish. 'Four chose cats' is false: four chose dogs.",
+            "Check the labeled cat, fish and dog rows separately: 6, 2 and 4 marks."),
+        ["PED:US-CCSS-MATH:G1:U01:L12"]=new(
+            "The tally chart has seven apples and three bananas. How many more apples than bananas?",
+            "4 more apples.",
+            "Five tally strokes plus two make seven apples; 7 - 3 = 4."),
+        ["PED:US-CCSS-MATH:G1:U01:L13"]=new(
+            "Write a different question you can answer from the chart about art, music and sports, then answer it.",
+            "How many children chose sports? Three children.",
+            "The sports row has three marks. Ask about what the chart actually shows."),
+        ["PED:US-CCSS-MATH:G1:U01:L14"]=new(
+            "In the example sort of five counters, four tiles and three blocks, which category has two more items than blocks?",
+            "Counters. Five counters is two more than three blocks.",
+            "Each object is counted once; 5 - 3 = 2."),
+        ["PED:US-CCSS-MATH:G1:U01:L15"]=new(
+            "Write a survey question with the three animal choices. How would you collect actual replies?",
+            "Which jungle animal would you most like to see: monkey, lion or parrot? Ask each person once and tally their one choice.",
+            "This is a plan for collecting real responses. The demonstration 4, 3 and 2 are not real survey votes."),
+        ["PED:US-CCSS-MATH:G1:U02:L01"]=new(
+            "New story: Nine counters are on a table, and four are taken away. Write the subtraction expression.",
+            "9 - 4.",
+            "The story says four leave nine; 9 - 4 describes it without an equals sign."),
+        ["PED:US-CCSS-MATH:G1:U02:L02"]=new(
+            "New story: Eight pencils are on the table. Three are taken away. Write a complete equation.",
+            "8 - 3 = 5.",
+            "Start with eight, cross out three and count five remaining."),
+        ["PED:US-CCSS-MATH:G1:U02:L03"]=new(
+            "A child has three books and ends with eight books. How many new books arrived? Show an equation.",
+            "Five new books; 3 + 5 = 8.",
+            "Count on from three to eight: four, five, six, seven, eight is five additions."),
+        ["PED:US-CCSS-MATH:G1:U02:L04"]=new(
+            "Seven birds sit in a tree. Two fly away. Write the equation and name the unknown result.",
+            "7 - 2 = 5. The unknown result is five birds remaining.",
+            "Draw seven birds and cross out two; five remain."),
+        ["PED:US-CCSS-MATH:G1:U02:L05"]=new(
+            "Tell a new joining story with two counters at first and three joining. Write its equation.",
+            "Two apples are in a basket. Three more are added. There are five apples: 2 + 3 = 5.",
+            "Draw two filled dots and three open dots; count five dots in all.")
+    };
+
     private static bool TryB001TailTeaching(string code,out B001TailTeaching? value)=>
         B001TailTeachingByCode.TryGetValue(code,out value);
 
@@ -168,10 +219,9 @@ public static partial class RichLessonContentV2RuntimeComposer
         if(!string.Equals(lesson.CultureCode,"en",StringComparison.OrdinalIgnoreCase) ||
            !TryB001TailTeaching(lessonCode,out var spec) || spec is null)
             return;
-        var generated=lesson.WorkedExamples
-            .Where(x=>!x.Question.Contains("Enter 1 or 2",StringComparison.OrdinalIgnoreCase)
-                      && !x.Question.Contains("Options:",StringComparison.OrdinalIgnoreCase))
-            .Take(1).ToArray();
+        if(!B001SecondWorkedByCode.TryGetValue(lessonCode,out var second))
+            throw new InvalidOperationException("Missing independent B001 follow-up worked model: "+lessonCode);
+        var chartLabels=string.Join("; ",spec.Diagram.Select(row=>row.Label));
         lesson.ExplanationParagraphs.Clear();
         lesson.ExplanationParagraphs.Add("Learning goal: "+spec.Goal);
         lesson.ExplanationParagraphs.Add(spec.Activity);
@@ -202,19 +252,17 @@ public static partial class RichLessonContentV2RuntimeComposer
             ],
             Answer=spec.Answer,Check=spec.Check
         });
-        foreach(var generatedCase in generated)
-            lesson.WorkedExamples.Add(new RichLessonWorkedExample {
-                Title="Try one more — same lesson skill",
-                Question=generatedCase.Question,Method=spec.Method,
-                Steps=[
-                    "Show the starting quantities with counters or marks.",
-                    "Use the same counting, comparing or story method as the worked model.",
-                    "Find the result and check each part matches the original question.",
-                    generatedCase.Steps.Count>2?generatedCase.Steps[2]:
-                        "Check by recounting each group."
-                ],Answer=generatedCase.Answer,
-                Check="Check each quantity against its category and the question."
-            });
+        lesson.WorkedExamples.Add(new RichLessonWorkedExample {
+            Title="Try one more — a different lesson-skill problem",
+            Question=second.Question,Method=spec.Method,
+            Steps=[
+                "Read this new question carefully and identify the requested group or action.",
+                "Draw fresh counters, tallies or a new story diagram; do not assume the first example's numbers.",
+                "Solve the new question yourself before reading the solution.",
+                "Check using the new quantities: "+second.Check
+            ],
+            Answer=second.Answer,Check=second.Check
+        });
         lesson.WorkedExamples.Add(new RichLessonWorkedExample {
             Title="Check with another representation",
             Question="How could you show the same answer using counters or a written calculation?",
@@ -225,7 +273,8 @@ public static partial class RichLessonContentV2RuntimeComposer
                 "Check the answer against the original worked model.",
                 "Explain how each counter matches one item in the picture."
             ],
-            Answer=spec.Answer,Check=spec.Check
+            Answer="Use these labeled groups: "+chartLabels+". "+spec.Check,
+            Check=spec.Check
         });
         lesson.WorkedExamples.Add(new RichLessonWorkedExample {
             Title="Explain the diagram to a partner",
@@ -237,7 +286,9 @@ public static partial class RichLessonContentV2RuntimeComposer
                 "Say which number is your answer and why.",
                 "Check: "+spec.Check
             ],
-            Answer=spec.Answer,Check=spec.Check
+            Answer="Name which group represents each number and explain the comparison or change. "+
+                spec.Check,
+            Check=spec.Check
         });
         if(lesson.WorkedExamples.Count<3) throw new InvalidOperationException(
             "B001 hand-authored lesson must provide at least three examples: "+lessonCode);

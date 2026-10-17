@@ -125,6 +125,25 @@ public sealed class UsCcssB001TwentyLessonExactTechnicalCohortTests
                 Assert.True(rich.WorkedExamples.Count>=3,
                     "Missing hand-authored student worked examples: "+code);
                 Assert.StartsWith("Worked model",rich.WorkedExamples[0].Title);
+                var separate=rich.WorkedExamples[1];
+                Assert.StartsWith("Try one more",separate.Title);
+                Assert.NotEqual(rich.WorkedExamples[0].Question,separate.Question);
+                Assert.NotEqual(rich.WorkedExamples[0].Answer,separate.Answer);
+                Assert.False(string.IsNullOrWhiteSpace(separate.Check));
+                Assert.StartsWith("Check with another",rich.WorkedExamples[2].Title);
+                Assert.StartsWith("Explain the diagram",rich.WorkedExamples[3].Title);
+                Assert.Contains("labeled groups:",rich.WorkedExamples[2].Answer);
+                Assert.Contains("comparison or change",rich.WorkedExamples[3].Answer);
+                Assert.NotEqual(rich.WorkedExamples[0].Answer,rich.WorkedExamples[2].Answer);
+                Assert.NotEqual(rich.WorkedExamples[0].Answer,rich.WorkedExamples[3].Answer);
+                Assert.DoesNotContain("same lesson skill",separate.Title,
+                    StringComparison.OrdinalIgnoreCase);
+                if(ordinal is 11 or 13 or 15)
+                    Assert.Contains("Write",separate.Question,
+                        StringComparison.OrdinalIgnoreCase);
+                if(ordinal==20)
+                    Assert.Contains("story",separate.Question,
+                        StringComparison.OrdinalIgnoreCase);
             }
             Assert.False(string.IsNullOrWhiteSpace(
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
