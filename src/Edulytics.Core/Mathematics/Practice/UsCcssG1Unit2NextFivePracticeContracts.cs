@@ -25,7 +25,8 @@ internal static class UsCcssG1Unit2NextFivePracticeContracts
             "IM2021_G1_U02_L09_COMPARE_STORY_TYPES", "READY_VERIFIED",Version),
         new("PED:US-CCSS-MATH:G1:U02:L10",
             "number.whole.add_subtract","CAPTURE_SQUARES_FIRST_TURN",
-            ["usccss.g1.u02.center.capture_squares.select_legal_edge"],
+            ["usccss.g1.u02.center.capture_squares.select_legal_edge",
+             "usccss.g1.u02.center.mental_subtraction_within10"],
             "IM2021_G1_U02_L10_CENTER_DAY_2", "READY_VERIFIED",Version)
     ];
 }

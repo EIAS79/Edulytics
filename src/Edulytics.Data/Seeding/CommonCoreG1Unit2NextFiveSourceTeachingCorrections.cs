@@ -84,6 +84,15 @@ public static class CommonCoreG1Unit2NextFiveSourceTeachingCorrections
             throw new InvalidOperationException($"G1 U02 L06-L10 original source/standard drift: {lesson.LessonCode}");
     }
 
+    // Official teacher/student lesson headings from locally archived 2021 IM K-5 source.
+    // The earlier catalogue uses activity names for L07-L09; preserve lesson IDs.
+    private static (string Previous,string Verified) SourceTitle(string code)=>code switch
+    {
+        "PED:US-CCSS-MATH:G1:U02:L07"=>("Shake and Spill","One Part Red, One Part Yellow"),
+        "PED:US-CCSS-MATH:G1:U02:L08"=>("Shake, Spill, and Cover","One Part Red, How Many Yellow?"),
+        "PED:US-CCSS-MATH:G1:U02:L09"=>("Compare Story Problems PLC Activity","What Is the Unknown?"),
+        _=>("", "")
+    };
     private static bool Matches(CanonicalLessonContentPackTranslation en,Repair r)=>
         en.Explanation==r.Explanation && en.KeyConceptsAndRules==r.Concepts &&
         en.WorkedExamples==r.Examples && en.StepByStepSolutions==r.Steps &&
@@ -99,10 +108,19 @@ public static class CommonCoreG1Unit2NextFiveSourceTeachingCorrections
             if(r is null)continue;
             Check(lesson,r);
             var en=lesson.Translations.Single(x=>x.CultureCode=="en");
-            if(Matches(en,r))continue;
+            var (previousTitle,verifiedTitle)=SourceTitle(r.Code);
+            if(verifiedTitle.Length>0 &&
+               en.Title!=previousTitle && en.Title!=verifiedTitle)
+                throw new InvalidOperationException($"G1 U02 unknown existing publisher title: {r.Code}");
+            if(Matches(en,r))
+            {
+                if(verifiedTitle.Length>0)en.Title=verifiedTitle;
+                continue;
+            }
             if(!en.StepByStepSolutions.StartsWith(r.OldFirstStep,StringComparison.Ordinal) ||
                !en.WorkedExamples.StartsWith(r.OldFirstExample,StringComparison.Ordinal))
                 throw new InvalidOperationException($"G1 U02 L06-L10 unknown old learner body: {lesson.LessonCode}");
+            if(verifiedTitle.Length>0)en.Title=verifiedTitle;
             en.Explanation=r.Explanation;
             en.KeyConceptsAndRules=r.Concepts;
             en.WorkedExamples=r.Examples;

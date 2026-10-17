@@ -17,11 +17,12 @@ public static class UsCcssG1Unit2NextFiveQuestions
     public const string Cover = "usccss.g1.u02.shake_cover.write_missing_addend";
     public const string Compare = "usccss.g1.u02.story.compare_unknowns_equations";
     public const string Capture = "usccss.g1.u02.center.capture_squares.select_legal_edge";
+    public const string Mental = "usccss.g1.u02.center.mental_subtraction_within10";
 
     public sealed record Problem(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     public static bool Supports(string? family) =>
-        family is Pets or Shake or Cover or Compare or Capture;
+        family is Pets or Shake or Cover or Compare or Capture or Mental;
 
     private static string Compact(string s) =>
         string.Concat(s.Where(ch=>!char.IsWhiteSpace(ch)));
@@ -100,6 +101,17 @@ public static class UsCcssG1Unit2NextFiveQuestions
                 solution="Total unknown: combine both groups; one part unknown: find the missing addend; both parts unknown: more than one decomposition can be valid.";
                 break;
             }
+            case Mental:
+            {
+                var start=random.Next(4,11);
+                var amount=random.Next(1,3);
+                p["start"]=start;p["amount"]=amount;
+                prompt=$"Number Talk warm-up: Solve {start} - {amount} mentally. "+
+                    "Count back, use the count sequence or a related addition fact. "+
+                    "WRITE the missing difference. Show your counting strategy to your teacher or partner.";
+                solution="Count back one or two steps and check with addition.";
+                break;
+            }
             case Capture:
             {
                 var target=random.Next(6,10);
@@ -120,7 +132,8 @@ public static class UsCcssG1Unit2NextFiveQuestions
             }
             default:throw new InvalidOperationException("Unknown family");
         }
-        return new Problem(family,prompt,solution,AssessmentItemType.ShortAnswer,p);
+        return new Problem(family,prompt,solution,
+            family==Mental?AssessmentItemType.Numeric:AssessmentItemType.ShortAnswer,p);
     }
 
     public static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
@@ -136,6 +149,9 @@ public static class UsCcssG1Unit2NextFiveQuestions
                 whole is >=6 and <=10 && visible>=2 && visible<whole,
             Compare=>p.Count==3&&Has("total",out var n)&&Has("a",out var part)&&Has("mode",out var mode) &&
                 n is >=6 and <=10 && part>=2 && part<n && mode is >=0 and <=2,
+            Mental=>p.Count==2 && Has("start",out var number) &&
+                Has("amount",out var taken) && number is >=4 and <=10 &&
+                taken is >=1 and <=2 && taken<number,
             Capture=>p.Count==3&&Has("first",out var first)&&Has("second",out var second) &&
                 Has("mask",out var mask) && (mask==0 || mask is 7 or 11 or 13 or 14) &&
                 first is >=1 and <=5 && second is >=1 and <=5 &&
@@ -163,6 +179,7 @@ public static class UsCcssG1Unit2NextFiveQuestions
                     $"{p["total"]}-{p["a"]}={p["total"]-p["a"]}",
                 _=>Sum(1,p["total"]-1,p["total"])+";"+Sum(2,p["total"]-2,p["total"])
             } + ";UNKNOWN=" + (p["mode"] switch {0=>"TOTAL",1=>"PART",_=>"BOTH"}),
+            Mental=>(p["start"]-p["amount"]).ToString(CultureInfo.InvariantCulture),
             Capture=>$"{((p["first"]+p["second"]) switch {6=>"A1",7=>"A2",8=>"B1",_=>"B2"})}:{(p["mask"] switch {7=>"LEFT",11=>"BOTTOM",13=>"RIGHT",_=>"TOP"})}:{(p["mask"]==0?"CONTINUE":"CAPTURE")}",
             _=>throw new InvalidOperationException()
         };
@@ -252,6 +269,7 @@ public static class UsCcssG1Unit2NextFiveQuestions
     public static bool GradePersistedAnswer(string? family,string expected,string? response)
     {
         if(!Supports(family)||response is null)return false;
+        if(family==Mental)return string.Equals(Compact(response),expected,StringComparison.Ordinal);
         if(family==Capture)
         {
             var actual=Regex.Match(Compact(response).ToUpperInvariant(),

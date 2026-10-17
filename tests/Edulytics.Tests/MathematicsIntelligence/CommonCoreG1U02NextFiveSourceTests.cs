@@ -49,6 +49,11 @@ public sealed class CommonCoreG1U02NextFiveSourceTests
             Assert.Equal(fingerprint,
                 CanonicalLessonContentMaterializer.ComputeLessonFingerprint(t.Doc,t.Lesson));
         }
+        Assert.Equal("Problems about Pets",targets[0].En.Title);
+        Assert.Equal("One Part Red, One Part Yellow",targets[1].En.Title);
+        Assert.Equal("One Part Red, How Many Yellow?",targets[2].En.Title);
+        Assert.Equal("What Is the Unknown?",targets[3].En.Title);
+        Assert.Equal("Center Day 2",targets[4].En.Title);
         Assert.Contains("two matching addition equations",targets[0].En.Explanation, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("different combinations",targets[1].En.Explanation);
         Assert.Contains("under a cup",targets[2].En.Explanation);

@@ -25,7 +25,9 @@ public sealed class UsCcssG1U02NextFiveTests
         int ordinal,string lessonCode,string family)
     {
         var contract=LessonPracticeContractRegistry.All.Single(x=>x.LessonCode==lessonCode);
-        Assert.Equal(new[]{family},contract.AllowedQuestionFamilies);
+        Assert.Equal(ordinal==10?
+            new[]{family,UsCcssG1Unit2NextFiveQuestions.Mental}:
+            new[]{family},contract.AllowedQuestionFamilies);
         Assert.Equal("number.whole.add_subtract",contract.SkillId);
         Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var interaction));
         Assert.Equal(LessonPracticeInteractionKind.ContractDriven,interaction!.InteractionKind);
@@ -69,6 +71,27 @@ public sealed class UsCcssG1U02NextFiveTests
             Assert.Contains("B1",svg);
             Assert.Contains("B2",svg);
         }
+    }
+
+    [Fact]
+    public void CenterDay2AlsoChecksActualWithin10SubtractionWarmup()
+    {
+        var family=UsCcssG1Unit2NextFiveQuestions.Mental;
+        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+        var p=new Dictionary<string,int>{{"start",8},{"amount",2}};
+        Assert.Equal("6",UsCcssG1Unit2NextFiveQuestions.Solve(family,p));
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(family,p,"6"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(family,p,"8"));
+        var engine=new ExactSkillContractQuestionEngine();
+        var items=engine.Generate("V1-G1-005","mental-subtraction",[family],
+            ExactSkillQuestionDifficulty.Standard,10,20261017,[]);
+        Assert.Equal(10,items.Count);
+        Assert.All(items,item=>
+        {
+            Assert.Equal(AssessmentItemType.Numeric,item.ItemType);
+            Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(
+                family,item.Parameters,item.CorrectAnswer));
+        });
     }
 
     [Fact]

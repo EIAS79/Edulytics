@@ -950,6 +950,11 @@ for key, schoolname in SCHOOLS:
                 items = [row.split("|", 3) for row in rows]
                 assert len(items) == 5 and all(row[0] == lesson_id for row in items), (
                     code, "wrong student lesson or incomplete items", items)
+                if lesson_suffix == "10":
+                    assert any(row[1] ==
+                        "usccss.g1.u02.center.mental_subtraction_within10"
+                        for row in items), (
+                            code, "source mental subtraction warm-up absent", items)
                 authored_indexes = [
                     index for index, row in enumerate(items) if row[1] == authored_family
                 ]
