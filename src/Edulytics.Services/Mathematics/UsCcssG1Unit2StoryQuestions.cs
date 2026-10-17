@@ -8,11 +8,22 @@ namespace Edulytics.Services.Mathematics;
 /// to joining/leaving action and find an unknown added amount.
 /// Numeric responses 1/2 mean explicit expression choices, not arithmetic facts.
 /// </summary>
-internal static class UsCcssG1Unit2StoryQuestions
+public static class UsCcssG1Unit2StoryQuestions
 {
     public const string Expression="usccss.g1.u02.story.choose_expression";
     public const string Equation="usccss.g1.u02.story.choose_equation";
     public const string ChangeUnknown="usccss.g1.u02.story.add_change_unknown";
+    public const string WriteExpression="usccss.g1.u02.story.write_expression";
+    public const string WriteEquation="usccss.g1.u02.story.write_equation";
+    public static bool IsAuthoredFamily(string? family) =>
+        family is WriteExpression or WriteEquation;
+    // Accept spacing, not an unrelated equal-value number or a wrong operation.
+    public static bool GradePersistedAuthoredAnswer(
+        string? family, string expected, string? response) =>
+        IsAuthoredFamily(family) && response is not null &&
+        string.Equals(
+            string.Concat(response.Where(ch => !char.IsWhiteSpace(ch))),
+            expected, StringComparison.Ordinal);
 
     private static readonly string[] Nouns = ["books","blocks","pencils","stickers","counters","cards"];
 
@@ -20,7 +31,7 @@ internal static class UsCcssG1Unit2StoryQuestions
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is Expression or Equation or ChangeUnknown;
+        family is Expression or Equation or ChangeUnknown or WriteExpression or WriteEquation;
 
     public static Problem Build(string family,Random random)
     {
@@ -39,6 +50,20 @@ internal static class UsCcssG1Unit2StoryQuestions
         var result=action==0?start+amount:start-amount;
         var subject=Nouns[nounIndex];
         string prompt,solution;
+        if (IsAuthoredFamily(family))
+        {
+            var story=action==0
+                ? $"A child has {start} {subject}. {amount} more arrive."
+                : $"A child has {start} {subject} and gives away {amount}.";
+            prompt=story+" Show the action with counters or a drawing. "+
+                (family==WriteExpression
+                    ? "WRITE the matching math expression yourself (for example, 3+2 or 5-2). Type the expression, not the answer alone."
+                    : "WRITE the COMPLETE matching equation yourself (for example, 3+2=5 or 5-2=3). Type the full equation, not just a number.");
+            solution="Choose + for joining or - for leaving. "+
+                "Use the starting group and change to make an expression, "+
+                "and if asked for an equation include the correct result.";
+            return new Problem(family,prompt,solution,AssessmentItemType.ShortAnswer,p);
+        }
         if (family==ChangeUnknown)
         {
             prompt=$"A child has {start} {subject}. Someone gives them some more. "+
@@ -87,6 +112,16 @@ internal static class UsCcssG1Unit2StoryQuestions
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(family,p))throw new InvalidOperationException("Invalid Grade 1 story parameters");
+        if(IsAuthoredFamily(family))
+        {
+            var start=p["start"];
+            var amount=p["amount"];
+            var join=p["action"]==0;
+            var expression=$"{start}{(join?"+":"-")}{amount}";
+            return family==WriteEquation
+                ? $"{expression}={(join?start+amount:start-amount)}"
+                : expression;
+        }
         if(family==ChangeUnknown)
             return p["amount"].ToString(CultureInfo.InvariantCulture);
         // Flip=0 places addition first. Flip=1 places subtraction first.
@@ -95,5 +130,8 @@ internal static class UsCcssG1Unit2StoryQuestions
     }
 
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string answer) =>
-        Valid(family,p) && string.Equals(answer,Solve(family,p),StringComparison.Ordinal);
+        Valid(family,p) &&
+        (IsAuthoredFamily(family)
+            ? GradePersistedAuthoredAnswer(family,Solve(family,p),answer)
+            : string.Equals(answer,Solve(family,p),StringComparison.Ordinal));
 }

@@ -40,8 +40,10 @@
       "practiceVerification": "LOCAL_MATH_VERIFIER_PASS_BUT_AUTHORED_RESPONSE_PARITY_UNCONFIRMED",
       "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
       "independentlyAccepted": false,
-      "codeChangeInThisV1Candidate": false,
-      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+      "codeChangeInThisV1Candidate": true,
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations.",
+      "newAuthoredPracticeCandidate": true,
+      "authoredPracticeStatus": "LOCAL_TESTS_PASS_CI_AND_AUTHENTICATED_BROWSER_PENDING"
     },
     {
       "gradeOrdinal": 17,
@@ -60,8 +62,10 @@
       "practiceVerification": "LOCAL_MATH_VERIFIER_PASS_BUT_AUTHORED_RESPONSE_PARITY_UNCONFIRMED",
       "authenticatedLearnerActivitySubmission": "NOT_VERIFIED",
       "independentlyAccepted": false,
-      "codeChangeInThisV1Candidate": false,
-      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
+      "codeChangeInThisV1Candidate": true,
+      "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations.",
+      "newAuthoredPracticeCandidate": true,
+      "authoredPracticeStatus": "LOCAL_TESTS_PASS_CI_AND_AUTHENTICATED_BROWSER_PENDING"
     },
     {
       "gradeOrdinal": 18,
@@ -124,5 +128,24 @@
       "codeChangeInThisV1Candidate": true,
       "nextReview": "Inspect real authenticated learner activity and Practice interaction; do not treat numerical/choice answers as proof of authored stories or equation explanations."
     }
-  ]
+  ],
+  "nextScopedInstructionalFix": {
+    "gradeOrdinals": [
+      16,
+      17
+    ],
+    "detail": "Add first-party text-entry Practice family for learner-authored expression U02:L01 and complete equation U02:L02; keep existing choices as supplemental rather than proof of authorship.",
+    "currentState": "CODE_AND_LOCAL_TESTS_ONLY_NOT_YET_AUTHENTICATED_STUDENT_PERSISTENCE",
+    "verifiedLocalCSharpTests": 38,
+    "failed": 0,
+    "authoringCorrectness": "Exact operation, quantities and equation result; rejects numeric-only responses and incorrect operator. Persisted Practice and Adaptive grading use same structural verifier.",
+    "limitations": "Typed expression/equation is validated but drawing, oral explanation, picture-story authorship for later lessons, live HTTPS submission and owner UAT are not verified. No academic pass is inferred."
+  },
+  "localFocusedTestResult": {
+    "passed": 38,
+    "failed": 0,
+    "environment": "Our-CS dedicated V1 worktree; .NET SDK 10.0.200",
+    "runSourceCommit": "0a3d8cadbc233b0f82b22c143a366590045a5ba8",
+    "note": "Only code/tests covered; GitHub candidate must run CI at its own SHA"
+  }
 }

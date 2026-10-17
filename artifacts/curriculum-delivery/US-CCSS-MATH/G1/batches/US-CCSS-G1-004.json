@@ -15,7 +15,7 @@
   "lessonCount": 5,
   "releaseStatus": "NOT_APPROVED_NOT_DEPLOYED",
   "pr553PriorWork": "PRESERVE_SOURCE_GROUNDED_CANDIDATE_REPAIR_WORK; REUSE_WHEN_SHA_COMPATIBLE",
-  "fiveLessonReviewStatus": "P1_SOURCE_INDEXED; P2_PRIOR_SOURCE_GOAL_ANALYSIS_REUSED_ACTIVITY_UI_PARITY_PENDING; P3_L04_L05_STAGED; P4_LOCAL_PRECHECK_PASSED_EXACT_BRANCH_CI_PENDING",
+  "fiveLessonReviewStatus": "V1_SOURCE_REVIEWED; AUTHORED_EXPRESSION_EQUATION_FOR_L16_17_LOCAL_VERIFIED; L19_20_SOURCE_REPAIR_TESTED; STUDENT_RENDERED_UI_AND_UAT_PENDING",
   "nextRequiredWork": "Read current actual student-visible lesson and Practice against original source goal/activity for each code, classify observed gaps; reuse existing candidate and proof only if code/content SHA behavior matches. Verify production DB read-only prior to modifications.",
   "historicalGrade1First15": "Previously shipped under older batches per archived records; no automatic V1 five-lesson reacceptance inferred.",
   "lessons": [
@@ -206,5 +206,18 @@
     "exitCode": 0,
     "localCommitSha": "f10502ba8a95e70c03557392091809e4989a5fcc",
     "note": "Local check is not a PASS for the later GitHub commit SHA. Await exact SHA CI and authenticated learner flow before V1 approval."
+  },
+  "followOnTechnicalProof": {
+    "newAuthoredPracticeFamilies": [
+      "usccss.g1.u02.story.write_expression",
+      "usccss.g1.u02.story.write_equation"
+    ],
+    "localTestsPassed": 38,
+    "localTestsFailed": 0,
+    "gradeOrdinals": [
+      16,
+      17
+    ],
+    "note": "Not independently accepted or deployed; entire G1-004 remains draft."
   }
 }
