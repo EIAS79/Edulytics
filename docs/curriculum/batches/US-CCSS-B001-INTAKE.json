@@ -327,6 +327,67 @@
         "production owner UAT after batch approval"
       ],
       "caveats": "These are 500 per-lesson real prior P4 technical results from a verified PR test-merge commit, not proof of original source pedagogy, licensing, independent mathematical oracle, live production UAT or 500/500 internal academic acceptance. The existing P5 gate consumes these results without replaying tests and correctly returns NO_GO."
+    },
+    "original2021StudentTaskPdfInspection": {
+      "reportGeneratedUtc": "2026-10-17T00:00:03Z",
+      "workflowRun": "https://github.com/EIAS79/Edulytics/actions/runs/38984222729",
+      "originalMetadataOnlyArtifact": "https://github.com/EIAS79/Edulytics/actions/runs/38984222729/artifacts/12081519261",
+      "testedMainCommitSha": "3ecd051c50a65ff9e22bf2de7f59b0a59596293a",
+      "originalTaskPdfCount": 500,
+      "structurallyRead": 500,
+      "failedToRead": 0,
+      "publisherPdfSha256RecordedPerLesson": true,
+      "sourceTaskTextLexicalSupportOnly": 432,
+      "lexicalSupportInconclusive": 56,
+      "lowLexicalSupportNeedsReview": 2,
+      "missingStudentPromptExcerptForComparison": 8,
+      "sourcePromptExcerptTooGenericForComparison": 2,
+      "lowTextDensityVisualReviewRequired": 3,
+      "nonLexicallySupportedDoesNotProveIncorrect": 68,
+      "gradeBreakdown": {
+        "Grade 1": {
+          "total": 146,
+          "lexicalSupport": 112,
+          "inconclusive": 26,
+          "noStudentPrompt": 5,
+          "lowSupport": 1,
+          "genericPrompt": 2
+        },
+        "Grade 2": {
+          "total": 146,
+          "lexicalSupport": 115,
+          "inconclusive": 27,
+          "noStudentPrompt": 3,
+          "lowSupport": 1,
+          "genericPrompt": 0
+        },
+        "Grade 3": {
+          "total": 143,
+          "lexicalSupport": 140,
+          "inconclusive": 3,
+          "noStudentPrompt": 0,
+          "lowSupport": 0,
+          "genericPrompt": 0
+        },
+        "Grade 4": {
+          "total": 65,
+          "lexicalSupport": 65,
+          "inconclusive": 0,
+          "noStudentPrompt": 0,
+          "lowSupport": 0,
+          "genericPrompt": 0
+        }
+      },
+      "threeSparseVisualPdfLessonCodes": [
+        "PED:US-CCSS-MATH:G1:U01:L01",
+        "PED:US-CCSS-MATH:G1:U03:L21",
+        "PED:US-CCSS-MATH:G2:U06:L05"
+      ],
+      "independentStudentVisualSourceActivityParityAccepted": 0,
+      "originalPublisherLicenceIndependentlyApproved": 0,
+      "internalAcademicAcceptanceGranted": 0,
+      "releaseDecision": "NO_GO",
+      "scopeLimits": "This is genuine original 2021 PDF structural/text-token evidence only. Lexical corroboration (432) does not establish full pedagogical alignment, math answer or source-image fidelity, student drawing/game representation, intellectual-property licence validation, or live authenticated release. All 500 require V2 lesson-specific evidence."
     }
   }
 }
