@@ -363,6 +363,88 @@ for key, schoolname in SCHOOLS:
                             print("DISPOSABLE_T001_CHROMIUM_RENDER_PASS",
                                   lesson_code,screen,flush=True)
 
+                        # New 20-lesson V2 cohort: the first ten were
+                        # inspected above. Verify ordinals 11-20 in a real
+                        # authenticated browser at BOTH viewports, not just
+                        # JSON metadata, a C# composer, or HTTP status.
+                        b001_rows=sql("""
+                            SELECT "Code" || '|' || "Id"::text
+                            FROM "CurriculumPedagogicalLessons"
+                            WHERE "NativeLevel"='Grade 1'
+                              AND "Code" LIKE 'PED:US-CCSS-MATH:G1:%'
+                              AND "SortOrder" BETWEEN 11 AND 20
+                            ORDER BY "SortOrder";""").splitlines()
+                        assert len(b001_rows)==10, (
+                            "B001 new V2 historical/forward G1 tail missing",
+                            b001_rows)
+                        seen=set()
+                        for record in b001_rows:
+                            code,lesson_id=record.split("|",1)
+                            assert code not in seen, ("duplicate lesson",code)
+                            seen.add(code)
+                            rendered=page.goto(
+                                BASE+"/student/learning/lesson/"+lesson_id,
+                                wait_until="domcontentloaded",timeout=40000)
+                            assert rendered and rendered.status==200, (
+                                "V2 B001 browser lesson inaccessible",
+                                code,screen)
+                            sections=page.locator(".rich-lesson-section")
+                            assert sections.count()>0, (
+                                "V2 B001 Rich V2 section not rendered",
+                                code,screen)
+                            rendered_text="\n".join(
+                                part.strip() for part in sections.all_inner_texts())
+                            assert len(rendered_text)>450, (
+                                "V2 B001 effective learner text unexpectedly empty",
+                                code,screen,len(rendered_text))
+                            assert page.locator(
+                                'form[action*="/student/practice/lesson/start"]'
+                            ).count()==1, (
+                                "V2 B001 authenticated Practice start missing",
+                                code,screen)
+                            assert page.locator(
+                                "figure[class*='rich-lesson-visual']"
+                            ).count()>0, (
+                                "V2 B001 visible mathematical representation absent",
+                                code,screen)
+                            # Independent Edulytics-authored lessons do
+                            # not require publisher branding or a displayed
+                            # attribution unless actual licensed material is
+                            # reused. The immutable teacher/source URL and
+                            # licence provenance are checked in the P1 audit.
+                            assert page.get_by_text(
+                                "you may lead them",exact=False).count()==0, (
+                                "V2 B001 exposed teacher-only instructional text",
+                                code,screen)
+                            attribution=page.locator(
+                                ".lesson-source-attribution a").first
+                            if attribution.count():
+                                source_url=attribution.get_attribute("href")
+                                unit=int(code.split(":")[-2][1:])
+                                local_lesson=int(code.split(":")[-1][1:])
+                                required_path=(
+                                    f"/grade-1/unit-{unit}/lesson-{local_lesson}/")
+                                assert (source_url and
+                                        source_url.startswith(
+                                            "https://im.kendallhunt.com/k5/teachers") and
+                                        required_path in source_url), (
+                                    "V2 B001 displayed source link incorrect",
+                                    code,source_url)
+                            if screen=="desktop":
+                                digest=hashlib.sha256(
+                                    rendered_text.encode("utf-8")).hexdigest()
+                                print("B001_V2_20_RENDERED_LESSON_SHA256",
+                                      code,digest,"sections",sections.count(),
+                                      "characters",len(rendered_text),
+                                      flush=True)
+                            suffix=code.split(":")[-1].lower()
+                            unit_label=code.split(":")[-2].lower()
+                            page.screenshot(
+                                path=f"/tmp/b001-g1-{unit_label}-{suffix}-{screen}.png",
+                                full_page=True)
+                            print("DISPOSABLE_B001_V2_20_BROWSER_VIEW_PASS",
+                                  code,screen,flush=True)
+
                         # Real authenticated L08 chart-building interaction
                         # on each desktop/mobile viewport, not answer injection.
                         l08_id=next(lid for code,lid in candidates

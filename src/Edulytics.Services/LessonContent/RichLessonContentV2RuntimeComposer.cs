@@ -205,6 +205,8 @@ public static partial class RichLessonContentV2RuntimeComposer
         // publisher purposes, independent of generic verified question text.
         // The first certified pilot stays exactly as it was.
         AddT001LearnerTeaching(lessonCode,result);
+        AddB001TailLearnerTeaching(lessonCode,result);
+        AddB001TailLearnerTeaching(lessonCode,result);
 
         RichLessonContentV2Registry.Validate(
             new RichLessonContentV2Document
@@ -620,6 +622,10 @@ public static partial class RichLessonContentV2RuntimeComposer
             PrimaryLabel = HumanizeSkill(contract.SkillId),
             Items = equationItems
         };
+
+        var b001TailVisual=BuildB001TailVisual(lessonCode);
+        if(b001TailVisual is not null)
+            return [b001TailVisual];
 
         // One publisher-goal-bound G1 pilot. These rows use the existing
         // accessible table renderer, not a copied publisher image or licensed asset.
