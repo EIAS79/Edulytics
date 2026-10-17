@@ -1,0 +1,73 @@
+name: B001 V2 20-Lesson Contract and Fail-Closed Gate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/curriculum/us-ccss-b001-20-*.cjs'
+      - 'tests/us-ccss-b001-20-*.test.cjs'
+      - 'docs/curriculum/batches/US-CCSS-B001-20-INTAKE.json'
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade1-im-k5-2021.lesson-blueprint.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json'
+      - '.github/workflows/us-ccss-b001-20-acceptance-gate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/curriculum/us-ccss-b001-20-*.cjs'
+      - 'tests/us-ccss-b001-20-*.test.cjs'
+      - 'docs/curriculum/batches/US-CCSS-B001-20-INTAKE.json'
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade1-im-k5-2021.lesson-blueprint.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json'
+      - '.github/workflows/us-ccss-b001-20-acceptance-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  twenty-cohort-contract:
+    name: b001-20-inventory-and-fail-closed-gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify source catalogue stays unchanged and 20 canonical IDs match
+        run: |
+          node tools/curriculum/us-ccss-b001-inventory.cjs --check
+          node tools/curriculum/us-ccss-b001-20-inventory.cjs --check
+      - name: Validate 20-lesson P1, P4 projection and P5 fail-closed contract
+        run: |
+          node --test tests/us-ccss-b001-20-*.test.cjs
+          node --test tests/us-ccss-b001-acceptance-gate.test.cjs
+          node --test tests/us-ccss-b001-reconcile-recorded-p4.test.cjs
+      - name: Prove real missing P5 records cannot authorize 20-lesson release
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha="$(git rev-parse HEAD)"
+          set +e
+          node tools/curriculum/us-ccss-b001-20-acceptance-gate.cjs             --sha="$sha" > /tmp/b001-20-actual-no-go.json
+          rc=$?
+          set -e
+          cat /tmp/b001-20-actual-no-go.json
+          if [ "$rc" -ne 1 ]; then
+            echo "FAIL: 20-lesson gate allowed missing academic evidence or crashed" >&2
+            exit 2
+          fi
+          node -e 'const x=require("/tmp/b001-20-actual-no-go.json");
+            if(x.planId!=="EDULYTICS-US-CCSS-20-V2"||x.indexedLessons!==20||
+              x.outcome!=="NO_GO"||x.evidenceAcceptedCount!==0||
+              x.missingOrInvalidCount!==20||x.deployed!==false) process.exit(1)'
+      - name: Retain truthful negative-control result (not an acceptance certificate)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-v2-20-gate-no-go-contract
+          path: /tmp/b001-20-actual-no-go.json
+          if-no-files-found: warn
+          retention-days: 30
