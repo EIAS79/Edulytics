@@ -105,6 +105,27 @@ public sealed class UsCcssB001TwentyLessonExactTechnicalCohortTests
                     effective.QuickSummary));
             Assert.NotNull(rich);
             Assert.NotEmpty(rich!.WorkedExamples);
+            if(ordinal>=11)
+            {
+                Assert.StartsWith("Learning goal:",rich.ExplanationParagraphs[0]);
+                Assert.DoesNotContain("verified lesson contract",
+                    string.Join(" ",rich.ExplanationParagraphs),
+                    StringComparison.OrdinalIgnoreCase);
+                Assert.DoesNotContain("— question forms",
+                    string.Join(" ",rich.Visuals.Select(v=>v.Title)),
+                    StringComparison.OrdinalIgnoreCase);
+                var visual=Assert.Single(rich.Visuals);
+                Assert.Equal(RichLessonVisualKind.PlaceValueChart,visual.Kind);
+                var expectedCounts=new int[][] {
+                    [6,4,2],[5,2,3],[7,5,3],[5,4,3],[4,3,2],
+                    [4,3,7],[6,2,8],[6,2,8],[4,3,7],[9,4,5]
+                }[ordinal-11];
+                Assert.Equal(expectedCounts,
+                    visual.Rows.Select(r=>r.Cells.Count).ToArray());
+                Assert.True(rich.WorkedExamples.Count>=3,
+                    "Missing hand-authored student worked examples: "+code);
+                Assert.StartsWith("Worked model",rich.WorkedExamples[0].Title);
+            }
             Assert.False(string.IsNullOrWhiteSpace(
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
                     canonical.doc,lesson)));
