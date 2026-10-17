@@ -151,7 +151,13 @@ public sealed class CommonCoreG1Unit2StorySourceCorrectionsTests
             Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract),code);
             Assert.NotNull(contract);
             Assert.Equal("READY_VERIFIED",contract!.Readiness);
-            Assert.Equal(new[] {expected[i-1]},contract.AllowedQuestionFamilies);
+            var allowed=i switch
+            {
+                1 => new[]{expected[i-1],UsCcssG1Unit2StoryQuestions.WriteExpression},
+                2 => new[]{expected[i-1],UsCcssG1Unit2StoryQuestions.WriteEquation},
+                _ => new[]{expected[i-1],UsCcssG1Unit2StoryQuestions.WriteChangeEquation}
+            };
+            Assert.Equal(allowed,contract.AllowedQuestionFamilies);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(expected[i-1]));
         }
     }

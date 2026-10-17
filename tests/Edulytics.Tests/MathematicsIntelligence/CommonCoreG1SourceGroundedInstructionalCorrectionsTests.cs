@@ -148,8 +148,11 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
     {
         var (doc, _, _) = Effective(
             CommonCoreG1SourceGroundedInstructionalCorrections.DataQuestionsLessonCode);
+        // L04/L05 are B001 repair candidates; L06 belongs to B002 and must
+        // still retain its prior untouched content and version.
         var untouched = Assert.Single(doc.Lessons,
-            l => l.LessonCode == "PED:US-CCSS-MATH:G1:U02:L04");
+            l => l.LessonCode == "PED:US-CCSS-MATH:G1:U02:L06");
+        Assert.False(CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(doc, untouched));
         Assert.Equal(CommonCoreRichContentCorrections.CorrectionContentVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, untouched));
     }
