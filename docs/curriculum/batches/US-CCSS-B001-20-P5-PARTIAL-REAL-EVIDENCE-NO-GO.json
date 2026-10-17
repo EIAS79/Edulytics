@@ -3,7 +3,7 @@
   "batchId": "US-CCSS-B001",
   "planId": "EDULYTICS-US-CCSS-20-V2",
   "total": 20,
-  "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+  "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
   "state": "INCOMPLETE_FAIL_CLOSED_DO_NOT_MERGE_OR_DEPLOY",
   "sources": [
     "First-hand original 2021 student PDF text source review",
@@ -16,60 +16,71 @@
   "lessons": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L01",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "7cfadc8705f32496614fef2205ec8b583ef272542448c5c0dd82feaaf707f074",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "699f9224f7fb0d8a90f391fdc1d243f7202897827a7af98ec868f4f52bb30116",
-      "historicalReleaseDriftVerified": false,
+      "historicalReleaseDriftVerified": true,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": true,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": true,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "result": "pass",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
+          "testId": "UsCcssB001TwentyRemainingIndependentMathOraclesTests.U01L01CollectionAndDotCubeAnswersMatchCountsFromSourceParameters",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-1",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-1",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -77,60 +88,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "fdcaa650396daf2509379d57c4695bd2fefcf04ed67ed28ad2030c887a56396e",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "5a1d0b0f5a3c20fb4bac90778734377ebc2d698f97d40df84b6a347192cdd257",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": false,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-2",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-2",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -138,60 +160,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L03",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "6e6b111c7b160269e20ecbb1813aee1873e58ef14aaa8ab586a9448fbfb13900",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "c9d891aa32600ba66957f7b2e97496fd19c2d769568e0505fddaa7fefe70ad94",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": false,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-3",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-3",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -199,60 +232,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L04",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "a312a02a53f253b44a0e302c2722ba98b507673cfeead08209bc1f8c6abfcf17",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "55a5a786df614c0719a9c6a3f063e1149bdbf52d8b3c3946fa2ebd02420fbff7",
-      "historicalReleaseDriftVerified": false,
+      "historicalReleaseDriftVerified": true,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": true,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": true,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-4",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-4",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -260,60 +304,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L05",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "c85b2a707f082cccdc65445b3cfa361836e3570df5f5bfe98d70f19d115cbd69",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "f2058b1af11ea95d2206664144a9ac29a9de096b9417b1cf08d8962fd1ab1658",
-      "historicalReleaseDriftVerified": false,
+      "historicalReleaseDriftVerified": true,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": true,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": true,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-5",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-5",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -321,60 +376,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L06",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "0c29ed573ce26724b95f189ba9b03c4ddb39a0cb66e17202c36312a9b059e5ca",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "95f81bed705d47956a0945d1bacbf10e499201e53bdc1e8e02da14a8c26a7c10",
-      "historicalReleaseDriftVerified": false,
+      "historicalReleaseDriftVerified": true,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": true,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": true,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-6",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-6",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -382,60 +448,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L07",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "e600f6dac7a4db359d60cb3e3470efa49479c9ba37b7e364aa0ce15d91a05e23",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "f1594eea9818b204ea8bf747a508960bf43823c3c60d00eab37d92fbb85f91c6",
-      "historicalReleaseDriftVerified": false,
+      "historicalReleaseDriftVerified": true,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": true,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": true,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-7",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-7",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -443,60 +520,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L08",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "690013d4bf5507057df122e5fdbf8946615ffe7259feda92b5c56c00552cb012",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "4b4f4ea6383e847d9178b4be6f82ac2e292139b87959135ed3905130af27edf6",
-      "historicalReleaseDriftVerified": false,
+      "historicalReleaseDriftVerified": true,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": true,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": true,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-8",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-8",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -504,60 +592,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L09",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "72b9274b2ba1a841bd6149587eb9dbb665775b4e7a85bbd324e724f6dbf067d3",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "175eda5a6b76d505844c2e99c57d8fb66a3e8d03cc98cf333a9a21e054b52e4a",
-      "historicalReleaseDriftVerified": false,
+      "historicalReleaseDriftVerified": true,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": true,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": true,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-9",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-9",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -565,60 +664,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L10",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "c95283dd92e113f137c8979872243c6f41a9e57002d67fb86439cf56ba409f4b",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "fa3c6ccfd49d3d6a1884a11c97e783f644c2544806e8bb0640a9166977516dea",
-      "historicalReleaseDriftVerified": false,
+      "historicalReleaseDriftVerified": true,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": true,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": true,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-10",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-10",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -626,60 +736,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L11",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "0f652954968f590e0686efdabe9a6cf0f201ebc1fa9649bf1cfd8c076a52c1aa",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "1d898d0b40cb5c4dcc0be69174e6ec86bb36fd17e080460dac82ed6942994bbe",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "result": "pass",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
+          "testId": "UsCcssB001TwentyRemainingIndependentMathOraclesTests.U01L11ThroughL15AllDataFamiliesAgreeWithIndependentlyComputedCountsAndTruth + UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-11",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-11",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -687,60 +808,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L12",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "947c6274145a474702789c4eac13033f7bf95f82824555f23b6b3f5411f4f43e",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "3456ab6d0ea1e8a6ba436d9ce9ac0dc272d96ecaf563841c7861c721998fa9f7",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "result": "pass",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
+          "testId": "UsCcssB001TwentyRemainingIndependentMathOraclesTests.U01L11ThroughL15AllDataFamiliesAgreeWithIndependentlyComputedCountsAndTruth + UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-12",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-12",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -748,60 +880,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L13",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "5e098125c62d73f6646ba256fba77ba25fc2e818a51ddb03d1db7e4c1939e3c3",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "86bdc09cf30cb4a2a46dde5f53729290046cd7e472a1f2bc9b173b7576800d98",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "result": "pass",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
+          "testId": "UsCcssB001TwentyRemainingIndependentMathOraclesTests.U01L11ThroughL15AllDataFamiliesAgreeWithIndependentlyComputedCountsAndTruth + UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-13",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-13",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -809,60 +952,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L14",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "fa362f5dfb94b316ca94b72ebbe20698b57f6cc075db772e93c946a4b87533aa",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "ee1423731cd8204c538ffed43e2226f0ae8418eae731a5ad78293a417c918bec",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "result": "pass",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
+          "testId": "UsCcssB001TwentyRemainingIndependentMathOraclesTests.U01L14ReusesOnlyPreviouslyIndependentlyVerifiedSortAndArithmeticFamilies + UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-14",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-14",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -870,60 +1024,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U01:L15",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "3c93aff9e940ae12ca6dbeee2fbc0bb7087745bf2d00be25476c11970abb2763",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "2f5304e42a3c4ad2949149fd11197ed5dc5d0da7a4eb9b6cdaa285c8e494a85e",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
-          "result": "pending_per_family_oracle",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006725",
-          "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests",
-          "reviewNote": "Existing independent trials cover sampled families; need per-lesson all required families and authentic task/answer cases."
+          "result": "pass",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
+          "testId": "UsCcssB001TwentyRemainingIndependentMathOraclesTests.U01L11ThroughL15AllDataFamiliesAgreeWithIndependentlyComputedCountsAndTruth + UsCcssT001IsolatedReleaseTests.SourceExactQuestionsGenerateAndGradeAcrossDifficultyAndSeeds",
+          "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-15",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-15",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -931,60 +1096,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U02:L01",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "bdfadb6fb775291cf49b1bdb0c8abc4480be6583bb38230c28c902cfdf3d1182",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "6c2a6a84f8be1b19ff295b6c5076ed1c08409d985cbb4faddcf819ecdcb24f05",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": false,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles + UnitTwoStudentWritesAnActualExpressionOrFullEquationNotJustOneOrTwo",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-16",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-16",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -992,60 +1168,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U02:L02",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "2ecb0d9885ead2b3de83db4b40c9787a6bb546d1d33ad68897557483150a107c",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "16bfcb07857464113e50da18313b2dabcba7b27bae188801a64752f711918795",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": false,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles + UnitTwoStudentWritesAnActualExpressionOrFullEquationNotJustOneOrTwo",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-17",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-17",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -1053,60 +1240,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U02:L03",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "f82c4101de1f3cb1ab5d9a749386cc58fc403c635d8e603367b314fa46cbef75",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "44203cd2db30893b4f7728bd26916974f8f7741d5205293c056ec125f8bfc436",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": true,
+        "exactPracticeFamilyRoutingUnchanged": true,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-18",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-18",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -1114,60 +1312,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U02:L04",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "5ac7629d3034db728b996ac823096c0f7bc1d302a1544f8db4eb2ab5e5adf4f7",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "1e6a694e061cc452b4addbf8d3181b6fd72f24571a18dec55fd8a95a199cd71c",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": false,
+        "exactPracticeFamilyRoutingUnchanged": false,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles + UnitTwoLaterStudentWritesExactResultChangeAndPictureEquations",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-19",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-19",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
@@ -1175,60 +1384,71 @@
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G1:U02:L05",
-      "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
       "sourceSemanticSha256": "75bd05acca2d32ea8816ccb68b7cdc7c9693e2cc353b4e0cf1541f9101ad2a93",
       "sourceEdition": "1st Edition (2021)",
       "catalogueContentVersion": "phase29-source-intelligence-en-v2-g1",
       "effectiveBodySha256": "0fd091d19f9dc60478b2ccdccd1e4e93e017fcb4203f60b011eff15539295912",
       "historicalReleaseDriftVerified": false,
+      "historicalDriftEvidence": {
+        "baselineLiveRenderSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+        "baselineLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+        "currentMainAndCandidateCompiledRichBodyShaUnchanged": false,
+        "effectiveCanonicalContentVersionUnchanged": false,
+        "exactPracticeFamilyRoutingUnchanged": false,
+        "productionNeonHistoricalPracticeAttemptsObserved": 0,
+        "productionNeonHistoricalAdaptiveSessionsObserved": 0,
+        "driftVerifiedOnlyForBitwiseUnchangedActualRenderedLessonModel": false,
+        "note": "Technical current-live-main-versus-candidate drift verification; this does NOT confer V2 academic approval."
+      },
       "decision": "NOT_YET_INDEPENDENTLY_ACCEPTED",
       "evidence": {
         "source_provenance_and_licence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006861",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635755",
           "testId": "b001-source-catalogue",
           "reviewNote": "Immutable 2021 source URL, edition and licence are registered and checked."
         },
         "effective_learner_visible_content": {
           "result": "pending_academic_parity",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "B001_V2_20_RENDERED_LESSON_SHA256",
           "reviewNote": "Authenticated Chromium desktop/mobile rendered visible lesson and examples, but not independently certified as complete original student task parity."
         },
         "lesson_specific_mathematics_oracle": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006799",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635850",
           "testId": "UsCcssB001TwentyLessonExactTechnicalCohortTests.UnitTwoFirstFivePracticeQuestionsHaveIndependentArithmeticOracles + UnitTwoLaterStudentWritesExactResultChangeAndPictureEquations",
           "reviewNote": "Independent arithmetic/count/answer-choice computation from generated parameters, correct/wrong/tampered test data; covers permitted question families for this lesson. The Math Foundation CI run is green on this SHA."
         },
         "question_family_generation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006755",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635842",
           "testId": "EachRealFirstTwentyPracticeFamilyIsExplicitlyAllowedAndHasBoundedGeneration",
           "reviewNote": "Every registered family generates and verifies three bounded questions in the exact twenty cohort test."
         },
         "wrong_and_malformed_answer_rejection": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-20",
           "reviewNote": "Exact lesson real malformed/wrong submission scored 0 and persisted; independent source-family suites exercise incorrect values, corrupted params and malformed answers. Synthetic survey is not real-participant verification."
         },
         "authenticated_practice_persistence": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "b001-500-real-practice-generation-and-grading-probe.json:ordinal-20",
           "reviewNote": "Real disposable-school student response persisted, scored correctly; source artifact JSON SHA256 62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192."
         },
         "student_and_school_isolation": {
           "result": "pass",
-          "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
-          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+          "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+          "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
           "testId": "DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS",
           "reviewNote": "The same controller policy and attempt route handle all 20 scoped code IDs; the real two-school authenticated CI test denied cross-tenant student/assessment/Practice routes. Shared policy proof, NOT twenty separate denial submissions."
         }
