@@ -93,6 +93,26 @@ public static class CommonCoreG1Unit2NextFiveSourceTeachingCorrections
         "PED:US-CCSS-MATH:G1:U02:L09"=>("Compare Story Problems PLC Activity","What Is the Unknown?"),
         _=>("", "")
     };
+    // Keep the immutable historical blueprint/title alias for traceability.
+    // Only the three local teacher/student-page-verified lesson headings may
+    // replace those aliases in the live canonical grade catalogue.
+    public static bool TryGetVerifiedPublisherTitle(
+        string code, out string historical, out string publisher)
+    {
+        (historical, publisher)=SourceTitle(code);
+        return publisher.Length>0;
+    }
+
+    public static string ProjectVerifiedPublisherTitle(string code,string blueprintTitle)
+    {
+        if(!TryGetVerifiedPublisherTitle(code,out var historical,out var publisher))
+            return blueprintTitle;
+        if(blueprintTitle!=historical && blueprintTitle!=publisher)
+            throw new InvalidOperationException(
+                $"G1 U02 unexpected baseline catalogue title: {code}");
+        return publisher;
+    }
+
     private static bool Matches(CanonicalLessonContentPackTranslation en,Repair r)=>
         en.Explanation==r.Explanation && en.KeyConceptsAndRules==r.Concepts &&
         en.WorkedExamples==r.Examples && en.StepByStepSolutions==r.Steps &&

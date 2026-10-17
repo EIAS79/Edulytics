@@ -62,6 +62,33 @@ public sealed class CommonCoreG1U02NextFiveSourceTests
     }
 
     [Fact]
+    public void PublisherTitleProjectionOnlyUpgradesThreeSourceVerifiedLessonTitles()
+    {
+        var aliases = new[]
+        {
+            ("PED:US-CCSS-MATH:G1:U02:L07", "Shake and Spill",
+                "One Part Red, One Part Yellow"),
+            ("PED:US-CCSS-MATH:G1:U02:L08", "Shake, Spill, and Cover",
+                "One Part Red, How Many Yellow?"),
+            ("PED:US-CCSS-MATH:G1:U02:L09",
+                "Compare Story Problems PLC Activity", "What Is the Unknown?")
+        };
+        foreach(var (code,historical,publisher) in aliases)
+        {
+            Assert.Equal(publisher,CommonCoreG1Unit2NextFiveSourceTeachingCorrections
+                .ProjectVerifiedPublisherTitle(code,historical));
+            Assert.Equal(publisher,CommonCoreG1Unit2NextFiveSourceTeachingCorrections
+                .ProjectVerifiedPublisherTitle(code,publisher));
+            Assert.Throws<InvalidOperationException>(()=>
+                CommonCoreG1Unit2NextFiveSourceTeachingCorrections
+                    .ProjectVerifiedPublisherTitle(code,"unreviewed third title"));
+        }
+        Assert.Equal("untouched other lesson",CommonCoreG1Unit2NextFiveSourceTeachingCorrections
+            .ProjectVerifiedPublisherTitle("PED:US-CCSS-MATH:G1:U02:L05",
+                "untouched other lesson"));
+    }
+
+    [Fact]
     public void AChangedOriginalSourceHashFailsClosed()
     {
         var t=Targets()[0];
