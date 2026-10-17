@@ -899,6 +899,99 @@ for key, schoolname in SCHOOLS:
                 print("DISPOSABLE_T001_AUTHENTICATED_L6_PRACTICE_PASS",
                       code,attempt_id,",".join(expected),flush=True)
 
+            # V1 G1-004 L16/L17: exercise learner-authored expression/equation
+            # submissions through REAL disposable HTTPS + persisted Practice rows.
+            for lesson_suffix, authored_family in (
+                ("01", "usccss.g1.u02.story.write_expression"),
+                ("02", "usccss.g1.u02.story.write_equation"),
+            ):
+                code = "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix
+                assert code in offered_by_code, ("V1 lesson not available to student", code)
+                lesson_id = offered_by_code[code]
+                lesson_html = get_page(student, "/student/learning/lesson/" + lesson_id)
+                assert "rich-lesson-section" in lesson_html, (code, "learner lesson missing")
+                form = get_page(student, "/student/practice")
+                token = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    form)
+                assert token, (code, "CSRF missing")
+                payload = {
+                    "curriculumAdoptionId": adoption.group(1),
+                    "scope": "Lesson", "lessonId": lesson_id,
+                    "difficulty": "AtClassLevel", "questionCount": "6",
+                    "__RequestVerificationToken": token.group(1),
+                }
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/generate",
+                    data=urllib.parse.urlencode(payload).encode(), method="POST"
+                ), timeout=60) as response:
+                    attempt_path = urllib.parse.urlparse(response.url).path.lower()
+                    match = re.fullmatch(
+                        r"/student/practice/attempt/([0-9a-f-]{36})", attempt_path)
+                    assert match and response.status == 200, (
+                        code, "cannot start lesson practice", attempt_path)
+                    attempt_id = match.group(1)
+                    attempt_html = response.read().decode("utf-8")
+                rows = sql("""
+                    SELECT p."CurriculumPedagogicalLessonId"::text,
+                           i."GenerationFamily",ai."Id"::text,i."CorrectAnswer"
+                    FROM "PracticeAttempts" p
+                    JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                    JOIN "AssessmentItems" i ON i."Id"=ai."AssessmentItemId"
+                    WHERE p."Id"='""" + attempt_id + """'
+                    ORDER BY ai."Order";""").splitlines()
+                items = [row.split("|", 3) for row in rows]
+                assert len(items) == 6 and all(row[0] == lesson_id for row in items), (
+                    code, "wrong student lesson or incomplete items", items)
+                authored_indexes = [
+                    index for index, row in enumerate(items) if row[1] == authored_family
+                ]
+                assert len(authored_indexes) >= 2, (
+                    code, "authored skills not present", items)
+                assert any("WRITE" in html.unescape(attempt_html) for _ in [0]), (
+                    code, "student did not receive authored instructions")
+                wrong_index = authored_indexes[-1]
+                csrf = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    attempt_html)
+                assert csrf, (code, "attempt CSRF missing")
+                post = [("__RequestVerificationToken", csrf.group(1))]
+                for index, (_, family, item_id, answer) in enumerate(items):
+                    posted_id = re.search(
+                        r'name="attemptItemIds\[' + str(index) +
+                        r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                        attempt_html)
+                    assert posted_id and posted_id.group(1) == item_id, (
+                        code, "HTML and persisted item do not match", family)
+                    post.extend([
+                        ("attemptItemIds[" + str(index) + "]", item_id),
+                        ("answers[" + str(index) + "]",
+                         "999" if index == wrong_index else answer),
+                    ])
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/attempt/" + attempt_id
+                    + "/personal-test-submit",
+                    data=urllib.parse.urlencode(post).encode(), method="POST"
+                ), timeout=60) as response:
+                    assert response.status == 200, (code, "submit failed")
+                results = sql("""
+                    SELECT ai."Order"::text,CASE WHEN r."IsCorrect" THEN '1' ELSE '0' END,
+                           COALESCE(r."Answer",'')
+                    FROM "PracticeAttemptItems" ai
+                    JOIN "PracticeResponses" r ON r."PracticeAttemptItemId"=ai."Id"
+                    WHERE ai."PracticeAttemptId"='""" + attempt_id + """'
+                    ORDER BY ai."Order";""").splitlines()
+                assert len(results) == 6, (code, "responses not persisted", results)
+                for index, line in enumerate(results):
+                    order, correct, saved_answer = line.split("|", 2)
+                    expected_answer = "999" if index == wrong_index else items[index][3]
+                    assert order == str(index+1) and saved_answer == expected_answer and (
+                        correct == ("0" if index == wrong_index else "1")
+                    ), (code, "incorrect grading or persisted answer", line)
+                print("V1_G1_004_AUTHORED_LEARNER_HTTPS_PERSISTED",
+                      code, "5 correct / 1 wrong", flush=True)
+
+
     practice_attempts[key] = match_attempt.group(1)
     students[key] = student
     teachers[key] = teacher

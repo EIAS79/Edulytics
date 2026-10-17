@@ -57,8 +57,8 @@ public static class UsCcssG1Unit2StoryQuestions
                 : $"A child has {start} {subject} and gives away {amount}.";
             prompt=story+" Show the action with counters or a drawing. "+
                 (family==WriteExpression
-                    ? "WRITE the matching math expression yourself (for example, 3+2 or 5-2). Type the expression, not the answer alone."
-                    : "WRITE the COMPLETE matching equation yourself (for example, 3+2=5 or 5-2=3). Type the full equation, not just a number.");
+                    ? "WRITE the matching math expression yourself using the two quantities and the correct + or - sign. Type the expression, not the answer alone."
+                    : "WRITE the COMPLETE matching equation yourself using the two quantities, the correct + or - sign and an equals sign. Type the full equation, not just a number.");
             solution="Choose + for joining or - for leaving. "+
                 "Use the starting group and change to make an expression, "+
                 "and if asked for an equation include the correct result.";

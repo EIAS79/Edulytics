@@ -38,6 +38,36 @@ public sealed class UsCcssG1Unit2AuthoredStoryTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G1:U02:L01",
+        UsCcssG1Unit2StoryQuestions.WriteExpression)]
+    [InlineData("PED:US-CCSS-MATH:G1:U02:L02",
+        UsCcssG1Unit2StoryQuestions.WriteEquation)]
+    public void ActualLearnerPracticeComposesAndGradesAuthoredTasks(
+        string lessonCode, string writtenFamily)
+    {
+        var contract = LessonPracticeContractRegistry.All
+            .Single(x => x.LessonCode == lessonCode).ToLegacyStage18Contract();
+        var items = new Edulytics.Services.Practice.Stage18SkillContractPracticeEngine()
+            .GenerateComposed(
+                Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), contract,
+                Edulytics.Services.Practice.StudentPrivatePracticeDifficulty.MyLevel,
+                6, 20261017, [], Guid.NewGuid());
+        Assert.Equal(6, items.Count);
+        Assert.Contains(items, x => x.GenerationFamily == writtenFamily);
+        var check = new Edulytics.Services.Practice.PracticeSessionQualityValidator()
+            .Validate(contract, items, 6);
+        Assert.True(check.IsReady,
+            string.Join("; ", check.ReasonCodes));
+        foreach (var item in items.Where(x => x.GenerationFamily == writtenFamily))
+        {
+            Assert.True(UsCcssG1Unit2StoryQuestions.GradePersistedAuthoredAnswer(
+                item.GenerationFamily, item.CorrectAnswer, item.CorrectAnswer));
+            Assert.False(UsCcssG1Unit2StoryQuestions.GradePersistedAuthoredAnswer(
+                item.GenerationFamily, item.CorrectAnswer, "8"));
+        }
+    }
+
     [Fact]
     public void SameResultCannotSubstituteForConstructedMath()
     {
