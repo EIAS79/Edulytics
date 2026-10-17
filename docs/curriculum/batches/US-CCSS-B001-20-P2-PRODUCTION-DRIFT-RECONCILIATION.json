@@ -24,7 +24,9 @@
     "p2ProvisionalPracticeRepairCases": 5,
     "p2ClosedAndAccepted": 0,
     "fullSourceGraphicsAndLiveStudentParityReviewed": 0,
-    "p2Outcome": "INCOMPLETE_DO_NOT_ADVANCE_TO_NEW_P3"
+    "p2Outcome": "INCOMPLETE_DO_NOT_ADVANCE_TO_NEW_P3",
+    "p2SharedRichComposerDefectImpactedLessons": 10,
+    "p2RichComposerIndividuallyScreenshotInspected": 3
   },
   "lessons": [
     {
@@ -433,11 +435,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "PRACTICE_REPAIR",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": true,
       "p2IndividuallyDocumentedGap": "Original student page asks the child to WRITE several statements about the pictured pet counts; current B03 Practice families check statements or counts but do not elicit student-authored statements.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 12,
@@ -469,11 +480,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "READY_REUSE_PENDING_PARITY_VERIFICATION",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": false,
       "p2IndividuallyDocumentedGap": "Objective/material appear supported in effective prose and registered Practice; independent graphics, rich rendering, actual learner activity/answer and historical behavior equivalence must still be verified. Do not create speculative new features.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 13,
@@ -507,11 +527,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "PRACTICE_REPAIR",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": true,
       "p2IndividuallyDocumentedGap": "Original student page asks students to COMPOSE questions answerable by their chart; current Practice selects whether a question is answerable or supplies a category count.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 14,
@@ -545,11 +574,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "READY_REUSE_PENDING_PARITY_VERIFICATION",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": false,
       "p2IndividuallyDocumentedGap": "Objective/material appear supported in effective prose and registered Practice; independent graphics, rich rendering, actual learner activity/answer and historical behavior equivalence must still be verified. Do not create speculative new features.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 15,
@@ -583,11 +621,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "PRACTICE_REPAIR",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": false,
       "p2IndividuallyDocumentedGap": "Original optional source task asks students to ask a survey question, collect ten genuine responses and write questions about the results; existing graph/survey input alone has no verified original authored-question and actual-participant proof.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 16,
@@ -620,11 +667,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "READY_REUSE_PENDING_PARITY_VERIFICATION",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": false,
       "p2IndividuallyDocumentedGap": "Objective/material appear supported in effective prose and registered Practice; independent graphics, rich rendering, actual learner activity/answer and historical behavior equivalence must still be verified. Do not create speculative new features.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 17,
@@ -657,11 +713,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "READY_REUSE_PENDING_PARITY_VERIFICATION",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": false,
       "p2IndividuallyDocumentedGap": "Objective/material appear supported in effective prose and registered Practice; independent graphics, rich rendering, actual learner activity/answer and historical behavior equivalence must still be verified. Do not create speculative new features.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 18,
@@ -694,11 +759,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "PRACTICE_REPAIR",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": true,
       "p2IndividuallyDocumentedGap": "Original peer equation/pictured reasoning asks the student to explain and compare a method; current change-unknown Practice verifies only numeric change.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 19,
@@ -731,11 +805,20 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "READY_REUSE_PENDING_PARITY_VERIFICATION",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": false,
       "p2IndividuallyDocumentedGap": "Objective/material appear supported in effective prose and registered Practice; independent graphics, rich rendering, actual learner activity/answer and historical behavior equivalence must still be verified. Do not create speculative new features.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     },
     {
       "gradeOrdinal": 20,
@@ -768,12 +851,21 @@
       "rawProseDigestIsActualRenderedSha": false,
       "p2SourceTextReviewed": true,
       "p2FullSourceGraphicsAndLiveStudentParityReviewed": false,
-      "p2ProvisionalClassification": "PRACTICE_REPAIR",
+      "p2ProvisionalClassification": "CONTENT_REPAIR",
       "p2ProvenAuthoredResponseMismatch": true,
       "p2IndividuallyDocumentedGap": "Original picture-story center asks the student to make and communicate a math story; current Practice verifies a matching written equation, not the story narrative itself.",
       "p2Decision": "PENDING_INDEPENDENT_FULL_PARITY_REVIEW",
-      "p2Accepted": false
+      "p2Accepted": false,
+      "p2SharedCandidateTeachingDefect": {
+        "cause": "B001Tail learner composer repeats an identical worked model under 'Try one more' and reuses the fixed numeric/sample answer for a different explanation or representation question rather than answering it.",
+        "basis": "Authenticated desktop Chrome screenshots for G1 U01 L11, L13 and L15 at candidate 1b01ec7d plus inspection of the common method applied to all B001 grade ordinals 11-20.",
+        "implementationFile": "src/Edulytics.Services/LessonContent/RichLessonContentV2RuntimeComposer.B001Twenty.cs",
+        "studentScreenshotEvidence": "https://github.com/EIAS79/Edulytics/actions/runs/39036980735",
+        "fullTenIndividuallyManuallyVerified": false,
+        "fixStatus": "PENDING_VERIFIED_SHARED_CONTENT_REPAIR_AFTER_P2",
+        "doesNotImplyPracticeOrP5Success": true
+      }
     }
   ],
-  "p2ReviewScope": "First-hand 2021 student PDF text + source teacher goals + real canonical learner fields / exact Practice contracts. Rich runtime + complete publisher graphics + authenticated learner original activity submission and historical drift still pending."
+  "p2ReviewScope": "First-hand 2021 student PDF text + source teacher goals + real canonical learner fields / exact Practice contracts. Rich runtime + complete publisher graphics + authenticated learner original activity submission and historical drift still pending. Authenticated screenshot review confirmed a shared P3 learner-facing duplication/mismatched-answer defect; P2 is NOT closed."
 }
