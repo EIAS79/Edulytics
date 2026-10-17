@@ -179,6 +179,14 @@ jobs:
           name: t001-ten-lessons-rich-v2-desktop-mobile-chromium
           path: /tmp/g1-u01-l*.png
           if-no-files-found: warn
+      - name: Preserve authenticated B001 lessons 11-20 desktop/mobile visual proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-v2-20-g1-extra-ten-authenticated-rich-v2-chromium-not-academic-acceptance
+          path: /tmp/b001-g1-*.png
+          if-no-files-found: warn
+          retention-days: 14
       - name: Verify only two synthetic schools were created
         run: |
           set -euo pipefail
