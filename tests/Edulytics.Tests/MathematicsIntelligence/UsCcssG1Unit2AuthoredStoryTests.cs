@@ -9,6 +9,7 @@ public sealed class UsCcssG1Unit2AuthoredStoryTests
     [Theory]
     [InlineData(UsCcssG1Unit2StoryQuestions.WriteExpression)]
     [InlineData(UsCcssG1Unit2StoryQuestions.WriteEquation)]
+    [InlineData(UsCcssG1Unit2StoryQuestions.WriteChangeEquation)]
     public void ExactGeneratedAuthoredResponsesUseTextNotBinaryChoice(string family)
     {
         Assert.True(LessonPracticeInteractionRegistry.TryResolve(family, out var interaction));
@@ -33,7 +34,7 @@ public sealed class UsCcssG1Unit2AuthoredStoryTests
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,
                 q.Parameters.ToDictionary(k => k.Key,k => k.Key=="start" ? 99 : k.Value),q.CorrectAnswer));
             var expected=q.CorrectAnswer;
-            Assert.Equal(family==UsCcssG1Unit2StoryQuestions.WriteEquation,
+            Assert.Equal(family!=UsCcssG1Unit2StoryQuestions.WriteExpression,
                 expected.Contains('='));
         }
     }
@@ -43,6 +44,8 @@ public sealed class UsCcssG1Unit2AuthoredStoryTests
         UsCcssG1Unit2StoryQuestions.WriteExpression)]
     [InlineData("PED:US-CCSS-MATH:G1:U02:L02",
         UsCcssG1Unit2StoryQuestions.WriteEquation)]
+    [InlineData("PED:US-CCSS-MATH:G1:U02:L03",
+        UsCcssG1Unit2StoryQuestions.WriteChangeEquation)]
     public void ActualLearnerPracticeComposesAndGradesAuthoredTasks(
         string lessonCode, string writtenFamily)
     {
@@ -101,6 +104,46 @@ public sealed class UsCcssG1Unit2AuthoredStoryTests
             Assert.False(UsCcssG1Unit2Part2Questions.Verify(family,
                 new Dictionary<string,int> { ["start"]=99,["change"]=2,["mode"]=0,["context"]=0 },
                 item.CorrectAnswer));
+        }
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(1)]
+    public void AuthorPictureStoryUsesWordsQuestionAndCorrectEquation(int action)
+    {
+        var family=UsCcssG1Unit2Part2Questions.AuthorStory;
+        var p=new Dictionary<string,int> {
+            ["start"]=6,["change"]=2,["action"]=action,["flip"]=0
+        };
+        var answer=UsCcssG1Unit2Part2Questions.Solve(family,p);
+        Assert.StartsWith("Story:",answer);
+        Assert.True(UsCcssG1Unit2Part2Questions.Verify(family,p,answer));
+        Assert.False(UsCcssG1Unit2Part2Questions.Verify(family,p,"8"));
+        Assert.False(UsCcssG1Unit2Part2Questions.Verify(family,p,
+            answer.Replace(action==0?"6+2=8":"6-2=4","6+2=9")));
+        Assert.False(UsCcssG1Unit2Part2Questions.Verify(family,p,
+            "Story: Six balls are shown. How many? Equation: "+
+            (action==0?"6+2=8":"6-2=4")));
+        var contract=LessonPracticeContractRegistry.All.Single(
+            x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U02:L05")
+            .ToLegacyStage18Contract();
+        Assert.Contains(family,contract.AllowedQuestionFamilies);
+        var items=new Edulytics.Services.Practice.Stage18SkillContractPracticeEngine()
+            .GenerateComposed(Guid.NewGuid(),Guid.NewGuid(),Guid.NewGuid(),contract,
+                Edulytics.Services.Practice.StudentPrivatePracticeDifficulty.MyLevel,
+                6,20261017,[],Guid.NewGuid());
+        Assert.Contains(items,x=>x.GenerationFamily==family);
+        var quality=new Edulytics.Services.Practice.PracticeSessionQualityValidator()
+            .Validate(contract,items,6);
+        Assert.True(quality.IsReady,string.Join(";",quality.ReasonCodes));
+        foreach(var item in items.Where(x=>x.GenerationFamily==family))
+        {
+            Assert.Equal(AssessmentItemType.ShortAnswer,item.ItemType);
+            Assert.True(UsCcssG1Unit2Part2Questions.GradePersistedStoryAnswer(
+                family,item.CorrectAnswer,item.CorrectAnswer));
+            Assert.False(UsCcssG1Unit2Part2Questions.GradePersistedStoryAnswer(
+                family,item.CorrectAnswer,"42"));
         }
     }
 

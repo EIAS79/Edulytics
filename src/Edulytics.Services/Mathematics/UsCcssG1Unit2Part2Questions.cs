@@ -19,11 +19,48 @@ public static class UsCcssG1Unit2Part2Questions
         string.Equals(string.Concat(submitted.Where(x=>!char.IsWhiteSpace(x))),
             expected,StringComparison.Ordinal);
     public const string CenterStory="usccss.g1.u02.center.picture_story_equation";
+    public const string AuthorStory="usccss.g1.u02.center.author_math_story";
+    public static bool IsStoryFamily(string? family)=>family==AuthorStory;
+    // Structured first-grade story authoring: the child writes a short
+    // question and a complete equation. Source-owned parameters are the oracle.
+    public static bool GradePersistedStoryAnswer(string? family,string expected,string? response)
+    {
+        if(!IsStoryFamily(family) || string.IsNullOrWhiteSpace(response))return false;
+        var original=System.Text.RegularExpressions.Regex.Match(expected,
+            @"Equation:\s*(\d+[+-]\d+=\d+)$",
+            System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+        if(!original.Success)return false;
+        var entry=System.Text.RegularExpressions.Regex.Match(response,
+            @"^Story:\s*(?<story>.+?)\s*Equation:\s*(?<equation>\d+\s*[+-]\s*\d+\s*=\s*\d+)\s*$",
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase |
+            System.Text.RegularExpressions.RegexOptions.Singleline |
+            System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+        if(!entry.Success)return false;
+        var story=entry.Groups["story"].Value.Trim();
+        if(story.Length is <20 or >250 || !story.Contains('?') ||
+            !System.Text.RegularExpressions.Regex.IsMatch(story,@"\bballs?\b",
+                System.Text.RegularExpressions.RegexOptions.IgnoreCase))return false;
+        var numbers=System.Text.RegularExpressions.Regex.Matches(
+            original.Groups[1].Value,@"\d+").Select(x=>x.Value).ToArray();
+        if(numbers.Length!=3 || !numbers.Take(2).All(value=>
+            System.Text.RegularExpressions.Regex.IsMatch(story,
+                @"\b"+value+@"\b")))return false;
+        var operation=original.Groups[1].Value.Contains('+');
+        var actionWords=operation
+            ? @"\b(join|joins|joining|arrive|arrives|more|added|come|comes|roll in)\b"
+            : @"\b(leave|leaves|leaving|away|roll out|removed|remove|lost|give|gave)\b";
+        if(!System.Text.RegularExpressions.Regex.IsMatch(story,actionWords,
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase))return false;
+        var candidate=string.Concat(
+            entry.Groups["equation"].Value.Where(x=>!char.IsWhiteSpace(x)));
+        return string.Equals(candidate,original.Groups[1].Value,
+            StringComparison.Ordinal);
+    }
     private static readonly string[] Things=["books","cards","stickers"];
     public sealed record Problem(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     public static bool Supports(string? family)=>
-        family is MixedStory or CenterStory or WriteResultOrChangeEquation;
+        family is MixedStory or CenterStory or WriteResultOrChangeEquation or AuthorStory;
 
     public static Problem Build(string family,Random rng)
     {
@@ -65,7 +102,7 @@ public static class UsCcssG1Unit2Part2Questions
             solution="Show the story with objects; distinguish the result from the change. "+
                 "Box the number that actually answers the question and verify your equation.";
         }
-        else if(family==CenterStory)
+        else if(family==CenterStory || IsStoryFamily(family))
         {
             var start=rng.Next(4,9);
             var change=rng.Next(1,Math.Min(4,11-start));
@@ -75,6 +112,15 @@ public static class UsCcssG1Unit2Part2Questions
             var story=action==0
                 ? $"The picture shows {start} balls. Then {change} more balls roll into the scene."
                 : $"The picture shows {start} balls. Then {change} balls roll away.";
+            if(IsStoryFamily(family))
+            {
+                prompt=story+" Write your OWN short math story about the balls with a question mark, then write its full equation. "+
+                    "Answer format: Story: [your story and a question?] Equation: [complete equation]. "+
+                    "Your story must name the two groups and whether they join or leave. "+
+                    "Do not copy the picture description; tell what happens and ask a question.";
+                solution="Tell a complete math story from the picture and match the joining or leaving action to a valid equation.";
+                return new Problem(family,prompt,solution,AssessmentItemType.ShortAnswer,p);
+            }
             var addition=$"{start} + {change} = {start+change}";
             var subtraction=$"{start} - {change} = {start-change}";
             var first=flip==0?addition:subtraction;
@@ -91,6 +137,16 @@ public static class UsCcssG1Unit2Part2Questions
     {
         if(!Valid(family,p))
             throw new InvalidOperationException("Invalid G1 U02 Part2 original source parameters");
+        if(IsStoryFamily(family))
+        {
+            var start=p["start"];var change=p["change"];
+            var joined=p["action"]==0;
+            var result=joined?start+change:start-change;
+            var text=joined
+                ? $"Story: There are {start} balls. {change} more join. How many balls now?"
+                : $"Story: There are {start} balls. {change} balls leave. How many balls remain?";
+            return text+$" Equation: {start}{(joined?"+":"-")}{change}={result}";
+        }
         if(IsAuthoredFamily(family))
         {
             var start=p["start"];var change=p["change"];
@@ -109,7 +165,9 @@ public static class UsCcssG1Unit2Part2Questions
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> parameters,string answer)=>
         Valid(family,parameters) &&
-        (IsAuthoredFamily(family)
+        (IsStoryFamily(family)
+            ? GradePersistedStoryAnswer(family,Solve(family,parameters),answer)
+            : IsAuthoredFamily(family)
             ? GradePersistedAuthoredAnswer(family,Solve(family,parameters),answer)
             : string.Equals(answer,Solve(family,parameters),StringComparison.Ordinal));
 
@@ -125,7 +183,7 @@ public static class UsCcssG1Unit2Part2Questions
                 start is >=3 and <=7 && change is >=1 and <=3 &&
                 start+change<=10 && mode is >=0 and <=2 &&
                 context is >=0 and <=2;
-        if(family==CenterStory)
+        if(family==CenterStory || IsStoryFamily(family))
             return p.Count==4 &&
                 p.TryGetValue("start",out var cstart) &&
                 p.TryGetValue("change",out var cchange) &&

@@ -28,7 +28,8 @@ internal static class UsCcssG1Unit2StoryPracticeContracts
         new("PED:US-CCSS-MATH:G1:U02:L03",
             "number.whole.add_subtract",
             "ADD_TO_CHANGE_UNKNOWN",
-            ["usccss.g1.u02.story.add_change_unknown"],
+            ["usccss.g1.u02.story.add_change_unknown",
+             "usccss.g1.u02.story.write_change_unknown_equation"],
             "IM2021_G1_U02_L03_FIND_CHANGE_NOT_TOTAL",
             "READY_VERIFIED",Version)
     ];

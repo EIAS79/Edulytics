@@ -56,6 +56,10 @@ public static class PracticeQuestionFormCapabilityRegistry
 
         family = family.Trim();
 
+        // Story authoring measures creative application, not numeric calculation.
+        if (family == "usccss.g1.u02.center.author_math_story")
+            return [new(PracticeQuestionForm.Apply, PracticeCognitiveOperation.Reason,
+                PracticeCognitiveDifficulty.Standard, PracticeCognitiveDifficulty.Standard, AllVariantSlots)];
         // Audited authored activities have form-specific, Standard-only capabilities.
         if (family == "usccss.t001.g1.write_dot_expression")
             return [new(PracticeQuestionForm.Apply, PracticeCognitiveOperation.Apply,

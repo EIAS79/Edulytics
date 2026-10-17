@@ -904,6 +904,7 @@ for key, schoolname in SCHOOLS:
             for lesson_suffix, authored_family in (
                 ("01", "usccss.g1.u02.story.write_expression"),
                 ("02", "usccss.g1.u02.story.write_equation"),
+                ("03", "usccss.g1.u02.story.write_change_unknown_equation"),
                 ("04", "usccss.g1.u02.story.write_result_or_change_equation"),
             ):
                 code = "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix
@@ -1064,6 +1065,93 @@ for key, schoolname in SCHOOLS:
                     picture_code,"picture task grading/persistence failed",stored)
             print("V1_G1_004_PICTURE_STORY_HTTPS_PERSISTED",
                   picture_code,flush=True)
+
+
+            # L20: a pupil-authored story and full equation are materially
+            # different from a preselected 1/2 equation. Check the real HTML,
+            # two distinct server-generated families and two separate DB writes.
+            for wrong_story in (False, True):
+                form = get_page(student, "/student/practice")
+                token = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    form)
+                assert token, ("L20 story practice missing CSRF", wrong_story)
+                payload = {
+                    "curriculumAdoptionId": adoption.group(1),
+                    "scope": "Lesson", "lessonId": picture_id,
+                    "difficulty": "AtClassLevel", "questionCount": "2",
+                    "__RequestVerificationToken": token.group(1),
+                }
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/generate",
+                    data=urllib.parse.urlencode(payload).encode(),method="POST"),
+                    timeout=60) as response:
+                    path = urllib.parse.urlparse(response.url).path.lower()
+                    found = re.fullmatch(
+                        r"/student/practice/attempt/([0-9a-f-]{36})", path)
+                    assert found and response.status==200, (
+                        picture_code, "authoring practice start failed", path)
+                    authored_attempt=found.group(1)
+                    authored_html=response.read().decode("utf-8")
+                assert "practice-math-visual" in authored_html and (
+                    "Tell a story" in html.unescape(authored_html)), (
+                    picture_code,"source picture/story not visible to learner")
+                item_rows=sql("""
+                    SELECT i."GenerationFamily",ai."Id"::text,i."CorrectAnswer"
+                    FROM "PracticeAttempts" p
+                    JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                    JOIN "AssessmentItems" i ON i."Id"=ai."AssessmentItemId"
+                    WHERE p."Id"='""" + authored_attempt + """'
+                    ORDER BY ai."Order";""").splitlines()
+                items = [line.split("|",2) for line in item_rows]
+                assert len(items)==2 and {x[0] for x in items}=={
+                    "usccss.g1.u02.center.picture_story_equation",
+                    "usccss.g1.u02.center.author_math_story"
+                }, (picture_code,"missing authored story family",items)
+                csrf = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    authored_html)
+                assert csrf, (picture_code,"authored story CSRF absent")
+                post=[("__RequestVerificationToken",csrf.group(1))]
+                expected_saved=[]
+                for index,(family,item_id,answer) in enumerate(items):
+                    matched=re.search(
+                        r'name="attemptItemIds\['+str(index)+r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                        authored_html)
+                    assert matched and matched.group(1)==item_id, (
+                        picture_code, "HTML item identity mismatch",family)
+                    if family=="usccss.g1.u02.center.author_math_story" and wrong_story:
+                        answer="42"
+                    expected_saved.append((item_id,answer))
+                    post.extend([
+                        ("attemptItemIds["+str(index)+"]",item_id),
+                        ("answers["+str(index)+"]",answer),
+                    ])
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/attempt/" + authored_attempt
+                    + "/personal-test-submit",
+                    data=urllib.parse.urlencode(post).encode(),method="POST"),
+                    timeout=60) as response:
+                    assert response.status==200, (picture_code,"story submit failed")
+                persisted=sql("""
+                    SELECT ai."Id"::text,r."Answer",
+                           CASE WHEN r."IsCorrect" THEN 1 ELSE 0 END
+                    FROM "PracticeAttemptItems" ai
+                    JOIN "PracticeResponses" r ON r."PracticeAttemptItemId"=ai."Id"
+                    WHERE ai."PracticeAttemptId"='""" + authored_attempt + """'
+                    ORDER BY ai."Order";""").splitlines()
+                assert len(persisted)==2, (picture_code,"story rows missing",persisted)
+                for index,row in enumerate(persisted):
+                    item_id,answer,is_correct=row.split("|",2)
+                    assert (item_id,answer)==expected_saved[index], (
+                        picture_code,"lost submitted story",row)
+                    should_be_correct=not (wrong_story and items[index][0]==(
+                        "usccss.g1.u02.center.author_math_story"))
+                    assert is_correct==("1" if should_be_correct else "0"), (
+                        picture_code,"story misgraded",row)
+                print("V1_G1_004_AUTHORED_STORY_HTTPS_PERSISTED",
+                    picture_code, "negative" if wrong_story else "correct",
+                    flush=True)
 
 
     practice_attempts[key] = match_attempt.group(1)

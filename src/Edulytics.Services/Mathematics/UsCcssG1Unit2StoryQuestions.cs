@@ -15,8 +15,9 @@ public static class UsCcssG1Unit2StoryQuestions
     public const string ChangeUnknown="usccss.g1.u02.story.add_change_unknown";
     public const string WriteExpression="usccss.g1.u02.story.write_expression";
     public const string WriteEquation="usccss.g1.u02.story.write_equation";
+    public const string WriteChangeEquation="usccss.g1.u02.story.write_change_unknown_equation";
     public static bool IsAuthoredFamily(string? family) =>
-        family is WriteExpression or WriteEquation;
+        family is WriteExpression or WriteEquation or WriteChangeEquation;
     // Accept spacing, not an unrelated equal-value number or a wrong operation.
     public static bool GradePersistedAuthoredAnswer(
         string? family, string expected, string? response) =>
@@ -31,7 +32,7 @@ public static class UsCcssG1Unit2StoryQuestions
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is Expression or Equation or ChangeUnknown or WriteExpression or WriteEquation;
+        family is Expression or Equation or ChangeUnknown or WriteExpression or WriteEquation or WriteChangeEquation;
 
     public static Problem Build(string family,Random random)
     {
@@ -39,7 +40,7 @@ public static class UsCcssG1Unit2StoryQuestions
             throw new InvalidOperationException("Unknown Grade 1 story family.");
         var start=random.Next(3,9);
         var amount=random.Next(1,Math.Min(4,11-start));
-        var action=family==ChangeUnknown?0:random.Next(2); // 0 join, 1 leave
+        var action=family is ChangeUnknown or WriteChangeEquation?0:random.Next(2); // 0 join, 1 leave
         var nounIndex=random.Next(Nouns.Length);
         var flip=random.Next(2);
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
@@ -52,11 +53,15 @@ public static class UsCcssG1Unit2StoryQuestions
         string prompt,solution;
         if (IsAuthoredFamily(family))
         {
-            var story=action==0
+            var story=family==WriteChangeEquation
+                ? $"A child starts with {start} {subject}. Some more arrive, and now there are {start+amount} {subject}. How many were added? A classmate writes {start} + ? = {start+amount}."
+                : action==0
                 ? $"A child has {start} {subject}. {amount} more arrive."
                 : $"A child has {start} {subject} and gives away {amount}.";
             prompt=story+" Show the action with counters or a drawing. "+
-                (family==WriteExpression
+                (family==WriteChangeEquation
+                    ? "WRITE the completed addition equation using the missing change and explain which number answers the question. Type the full equation, not the ending total."
+                    : family==WriteExpression
                     ? "WRITE the matching math expression yourself using the two quantities and the correct + or - sign. Type the expression, not the answer alone."
                     : "WRITE the COMPLETE matching equation yourself using the two quantities, the correct + or - sign and an equals sign. Type the full equation, not just a number.");
             solution="Choose + for joining or - for leaving. "+
@@ -106,7 +111,7 @@ public static class UsCcssG1Unit2StoryQuestions
             return false;
         return start is >=3 and <=8 && amount>=1 && amount<=3 &&
             start+amount<=10 && action is 0 or 1 && noun>=0 && noun<Nouns.Length &&
-            flip is 0 or 1 && (family!=ChangeUnknown || action==0);
+            flip is 0 or 1 && (family is not (ChangeUnknown or WriteChangeEquation) || action==0);
     }
 
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
@@ -118,7 +123,7 @@ public static class UsCcssG1Unit2StoryQuestions
             var amount=p["amount"];
             var join=p["action"]==0;
             var expression=$"{start}{(join?"+":"-")}{amount}";
-            return family==WriteEquation
+            return family is WriteEquation or WriteChangeEquation
                 ? $"{expression}={(join?start+amount:start-amount)}"
                 : expression;
         }

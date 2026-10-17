@@ -16,7 +16,8 @@ internal static class UsCcssG1Unit2Part2PracticeContracts
             "IM2021_G1_U02_L04_MIXED_RESULT_CHANGE_TAKE_FROM","READY_VERIFIED",Version),
         new("PED:US-CCSS-MATH:G1:U02:L05",
             "number.whole.add_subtract","PICTURE_STORY_TO_EQUATION",
-            ["usccss.g1.u02.center.picture_story_equation"],
+            ["usccss.g1.u02.center.picture_story_equation",
+             "usccss.g1.u02.center.author_math_story"],
             "IM2021_G1_U02_L05_MATH_STORIES_CENTER","READY_VERIFIED",Version)
     ];
 }
