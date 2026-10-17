@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            316, // 309 prior, three G1 U02 story and four G2/G3 source-goal families
+            318, // 316 previously registered; only B001 G1 U02 L04-L05 add two families
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
