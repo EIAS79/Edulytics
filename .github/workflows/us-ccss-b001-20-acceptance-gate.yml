@@ -10,6 +10,20 @@ on:
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
       - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade1-im-k5-2021.lesson-blueprint.json'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json'
+      # Run the existing 20-cohort fail-closed checks when P3 changes real learner content or exact Practice.
+      - 'src/Edulytics.Data/Seeding/CommonCoreG1Unit1L02L03SourceTeachingCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreG1Unit2Part2SourceTeachingCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreG1Unit2StorySourceCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/UsCcssG1Unit2Part2PracticeContracts.cs'
+      - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
+      - 'src/Edulytics.Services/Mathematics/UsCcssG1Unit2Part2Questions.cs'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001TwentyLessonL04L05RepairTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001U01L02L03SourceTeachingTests.cs'
+      - 'tests/Edulytics.Tests/Phase29/SourceBoundCommonCoreJsonMetadataReconciliationTests.cs'
       - '.github/workflows/us-ccss-b001-20-acceptance-gate.yml'
   push:
     branches: [main]
@@ -20,6 +34,20 @@ on:
       - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
       - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade1-im-k5-2021.lesson-blueprint.json'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json'
+      # Run the existing 20-cohort fail-closed checks when P3 changes real learner content or exact Practice.
+      - 'src/Edulytics.Data/Seeding/CommonCoreG1Unit1L02L03SourceTeachingCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreG1Unit2Part2SourceTeachingCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreG1Unit2StorySourceCorrections.cs'
+      - 'src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/UsCcssG1Unit2Part2PracticeContracts.cs'
+      - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
+      - 'src/Edulytics.Services/Mathematics/UsCcssG1Unit2Part2Questions.cs'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001TwentyLessonL04L05RepairTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssB001U01L02L03SourceTeachingTests.cs'
+      - 'tests/Edulytics.Tests/Phase29/SourceBoundCommonCoreJsonMetadataReconciliationTests.cs'
       - '.github/workflows/us-ccss-b001-20-acceptance-gate.yml'
   workflow_dispatch:
 
