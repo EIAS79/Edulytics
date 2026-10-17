@@ -251,6 +251,52 @@ public sealed class UsCcssB001TwentyLessonExactTechnicalCohortTests
     }
 
     [Fact]
+    public void FirstHandStudentPdfTextReviewIsTraceableWithoutInventingAcademicApproval()
+    {
+        var root=RepositoryRoot().FullName;
+        using var intake=JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            root,"docs","curriculum","batches","US-CCSS-B001-20-INTAKE.json")));
+        using var master=JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            root,"docs","curriculum","batches",
+            "US-CCSS-B001-IM2021-STUDENT-TASKS-PDF-SOURCES-500.json")));
+        using var audit=JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            root,"docs","curriculum","batches",
+            "US-CCSS-B001-20-ORIGINAL-STUDENT-PDF-TEXT-REVIEW.json")));
+        var lessons=intake.RootElement.GetProperty("lessons").EnumerateArray().ToArray();
+        var original=master.RootElement.GetProperty("lessons").EnumerateArray()
+            .Take(20).ToArray();
+        var reviewed=audit.RootElement.GetProperty("lessons").EnumerateArray().ToArray();
+        Assert.Equal(20,lessons.Length);
+        Assert.Equal(20,reviewed.Length);
+        Assert.Equal(20,audit.RootElement.GetProperty("metrics")
+            .GetProperty("sourcePdfSha256Verified").GetInt32());
+        Assert.Equal(0,audit.RootElement.GetProperty("metrics")
+            .GetProperty("fullStudentActivityParityApproved").GetInt32());
+        Assert.Equal("NO_GO",audit.RootElement.GetProperty("metrics")
+            .GetProperty("releaseDecision").GetString());
+        for(var i=0;i<20;i++)
+        {
+            var code=lessons[i].GetProperty("lessonCode").GetString();
+            Assert.Equal(code,reviewed[i].GetProperty("lessonCode").GetString());
+            Assert.Equal(code,original[i].GetProperty("lessonCode").GetString());
+            Assert.Equal(original[i].GetProperty("originalStudentTaskStatementPdfUrl").GetString(),
+                reviewed[i].GetProperty("studentPdfUrl").GetString());
+            var sha=reviewed[i].GetProperty("pdfSha256").GetString()!;
+            Assert.True(System.Text.RegularExpressions.Regex.IsMatch(sha,
+                "^[0-9a-f]{64}$"),code+" recorded PDF SHA");
+            Assert.True(reviewed[i].GetProperty("pages").GetInt32()>=1,code);
+            Assert.True(reviewed[i].GetProperty("firstHandPdfTextReviewed").GetBoolean(),code);
+            Assert.False(reviewed[i].GetProperty("pdfEmbeddedGraphicsFullVisualReviewPassed")
+                .GetBoolean());
+            Assert.False(reviewed[i].GetProperty("effectiveStudentActivityParityAccepted")
+                .GetBoolean());
+            Assert.False(reviewed[i].GetProperty("academicallyAccepted").GetBoolean());
+            Assert.NotEmpty(reviewed[i].GetProperty("academicOrInteractionEvidenceStillRequired")
+                .GetString()!);
+        }
+    }
+
+    [Fact]
     public void TechnicalSourceAndPracticeChecksCannotMintAcademicP5Approval()
     {
         var root=RepositoryRoot().FullName;

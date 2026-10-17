@@ -11,6 +11,13 @@ def build():
     intake=load("US-CCSS-B001-20-INTAKE.json")
     source=load("US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-1-OF-2.json")
     fingerprint=load("US-CCSS-B001-IM2021-500-SOURCE-FINGERPRINTS-TRIAGE.json")
+    studentpdf=load("US-CCSS-B001-20-ORIGINAL-STUDENT-PDF-TEXT-REVIEW.json")
+    assert studentpdf["metrics"]["pdfTextsReadFirstHand"]==20
+    assert studentpdf["metrics"]["academicallyAcceptedUnderV2"]==0
+    assert studentpdf["metrics"]["releaseDecision"]=="NO_GO"
+    assert len(studentpdf["lessons"])==20
+    pdf_by_code={x["lessonCode"]:x for x in studentpdf["lessons"]}
+    assert len(pdf_by_code)==20
     assert intake["planId"]=="EDULYTICS-US-CCSS-20-V2" and intake["total"]==20
     assert source["lessonCount"]==250 and fingerprint["batchId"]=="US-CCSS-B001"
     lookup1={x["code"]:x for x in source["lessons"]}
@@ -20,6 +27,11 @@ def build():
         code=x["lessonCode"]; ref=lookup1[code]; fingerprints=lookup2[code]
         assert ref["ordinal"]==x["programmeOrdinal"]==fingerprints["ordinal"]
         assert ref["title"]==x["title"]
+        pdf=pdf_by_code[code]
+        assert pdf["gradeOrdinal"]==x["gradeOrdinal"]
+        assert pdf["firstHandPdfTextReviewed"] is True
+        assert len(pdf["pdfSha256"])==64
+        assert pdf["academicallyAccepted"] is False
         if x["programmeOrdinal"] in (2,3):stage="HISTORICAL_SHIPPED_G1_U01_L02_L03_REPAIR_CANDIDATE_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF"
         elif x["programmeOrdinal"]<=15:stage="HISTORICAL_SHIPPED_REQUIRES_DRIFT_AND_FRESH_ACADEMIC_PROOF"
         elif x["programmeOrdinal"]<=18:stage="SOURCE_GUARDED_TEACHING_PATCH_IN_MAIN_REQUIRES_ACADEMIC_PROOF"
@@ -30,6 +42,12 @@ def build():
             "p3ImplementationStage":stage,
             "sourceTeacherPreparationSha256":fingerprints["sourcePreparationSha256"],
             "sourceTeacherLessonSha256":fingerprints["sourceFullLessonSha256"],
+            "original2021StudentPdfSha256":pdf["pdfSha256"],
+            "originalStudentPdfPageCount":pdf["pages"],
+            "sourceStudentTaskTextReview":"FIRST_HAND_TEXT_REVIEWED",
+            "sourceStudentTaskSummary":pdf["paraphrasedStudentTaskCoverage"],
+            "sourceStudentTaskGraphicReview":"FULL_VISUAL_PARITY_PENDING",
+            "studentActivityParityBlocker":pdf["academicOrInteractionEvidenceStillRequired"],
             "sourceActivityCountRecorded":len(ref["originalActivities"]),
             "sourceActivityNamesOnly":[a["name"] for a in ref["originalActivities"]],
             "sourceExtractionReviewFlags":ref["reviewFlags"],
@@ -49,7 +67,8 @@ def build():
         "cohortSize":20,"inputs":{
             "canonical20Intake":"docs/curriculum/batches/US-CCSS-B001-20-INTAKE.json",
             "historicSourcePacket":"docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-1-OF-2.json",
-            "historicSourceFingerprintTriage":"docs/curriculum/batches/US-CCSS-B001-IM2021-500-SOURCE-FINGERPRINTS-TRIAGE.json"},
+            "historicSourceFingerprintTriage":"docs/curriculum/batches/US-CCSS-B001-IM2021-500-SOURCE-FINGERPRINTS-TRIAGE.json",
+            "firstHandOriginalStudentPdfReview":"docs/curriculum/batches/US-CCSS-B001-20-ORIGINAL-STUDENT-PDF-TEXT-REVIEW.json"},
         "assurance":"Machine-grounded status accounting only. Archived 2021 teacher/student-facing sources inspected previously. No academic PASS, source book text replication, new production release or live student UAT.",
         "counts":{
             "canonicalCodes":20,"historicallyShipped":15,
@@ -57,11 +76,13 @@ def build():
             "previouslyUnshippedWithCurrentP3UnmergedCandidate":2,
             "historicallyShippedWithNewG1U01L02L03P3RepairCandidates":2,
             "totalFourSourceBoundRepairsInIntegratedDraft":4,
+            "original2021StudentPdfFirstHandTextRead":20,
+            "original2021StudentPdfFullGraphicsAccepted":0,
             "academicAcceptedUnderV2_20":0,"historicalDriftAccepted":0,
             "originalActivityAndLearnerParityAccepted":0,
             "releaseDecision":"NO_GO"},
         "outstandingGates":[
-            "Independent per-lesson original-source student task/activities to Edulytics learner-visible content review for all 20",
+            "Original 20 student task PDFs have first-hand text review; full graphics, original activity equivalence, and student-produced work remain independently unaccepted",
             "Actual effective rendered lesson body SHA/provenance and source-edition review for all 20",
             "Exact Practice family and independent mathematical oracle evidence on tested SHA for all 20",
             "Verify previous 15 effective-body versions, student progress and recorded historic acceptance/drift",
