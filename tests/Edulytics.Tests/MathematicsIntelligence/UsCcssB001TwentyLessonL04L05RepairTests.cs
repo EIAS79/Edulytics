@@ -16,6 +16,11 @@ public sealed class UsCcssB001TwentyLessonL04L05RepairTests
         "usccss.g1.u02.story.mixed_result_or_change",
         "usccss.g1.u02.center.picture_story_equation"
     ];
+    private static readonly string[] TypedFamilies =
+    [
+        "usccss.g1.u02.story.write_result_or_change_equation",
+        "usccss.g1.u02.center.write_picture_equation"
+    ];
 
     private static IReadOnlyList<(CanonicalLessonContentPackDocument Doc,
         CanonicalLessonContentPackLesson Lesson,
@@ -74,7 +79,12 @@ public sealed class UsCcssB001TwentyLessonL04L05RepairTests
             Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var practice),code);
             Assert.NotNull(practice);
             Assert.Equal("READY_VERIFIED",practice!.Readiness);
-            Assert.Equal(new[]{family},practice.AllowedQuestionFamilies);
+            Assert.Equal(new[]{TypedFamilies[i],family},practice.AllowedQuestionFamilies);
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(TypedFamilies[i]));
+            Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+                TypedFamilies[i],out var authored));
+            Assert.Equal(LessonPracticeInteractionKind.StructuredEntry,
+                authored!.InteractionKind);
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
             Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var interaction));
             Assert.NotNull(interaction);

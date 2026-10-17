@@ -6271,6 +6271,43 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g1.u02.story.write_result_or_change_equation",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "g1-u02-typed-result-change-and-take-from-equation-oracle-v1",
+      "representations": [
+        "symbolic",
+        "story_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g1.u02.center.write_picture_equation",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "g1-u02-typed-picture-story-equation-oracle-v1",
+      "representations": [
+        "symbolic",
+        "story_problem",
+        "dot_picture"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g1.u02.center.picture_story_equation",
       "version": 1,
       "skillId": "number.whole.add_subtract",

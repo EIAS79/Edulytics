@@ -251,6 +251,58 @@ public sealed class UsCcssB001TwentyLessonExactTechnicalCohortTests
     }
 
     [Fact]
+    public void UnitTwoLaterStudentWritesExactResultChangeAndPictureEquations()
+    {
+        var engine=new ExactSkillContractQuestionEngine();
+        var targets=new[]{
+            ("PED:US-CCSS-MATH:G1:U02:L04",
+             "usccss.g1.u02.story.write_result_or_change_equation"),
+            ("PED:US-CCSS-MATH:G1:U02:L05",
+             "usccss.g1.u02.center.write_picture_equation")
+        };
+        foreach(var (code,family) in targets)
+        {
+            Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var practice));
+            Assert.Contains(family,practice!.AllowedQuestionFamilies);
+            Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var input));
+            Assert.Equal(LessonPracticeInteractionKind.StructuredEntry,input!.InteractionKind);
+            var modes=new HashSet<int>();
+            for(var trial=0;trial<40;trial++)
+            {
+                var q=Assert.Single(engine.Generate(
+                    "b001-u02-later-source-written-equations",code,[family],
+                    ExactSkillQuestionDifficulty.Standard,1,20261017+17*trial,[]));
+                var p=q.Parameters;
+                var start=p["start"];var change=p["change"];
+                var action=family.EndsWith("write_picture_equation",StringComparison.Ordinal)
+                    ? p["action"] : p["mode"]==2?1:0;
+                modes.Add(family.EndsWith("write_picture_equation",StringComparison.Ordinal)
+                    ? action : p["mode"]);
+                var op=action==0?"+":"-";
+                var expected=$"{start}{op}{change}="+
+                    (action==0?start+change:start-change);
+                Assert.Equal(expected,q.CorrectAnswer);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+                    expected.Replace("+"," + ").Replace("-"," − ").Replace("="," = ")));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    (action==0?start+change:start-change).ToString()));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    expected.Replace("=", "==")));
+                var tampered=p.ToDictionary(x=>x.Key,x=>x.Value,StringComparer.Ordinal);
+                tampered["start"]=99;
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,tampered,expected));
+                if(family.EndsWith("write_picture_equation",StringComparison.Ordinal))
+                    Assert.Contains("Dot picture (before):",q.Prompt);
+                Assert.Contains("equation",q.Prompt,StringComparison.OrdinalIgnoreCase);
+            }
+            Assert.Equal(
+                family.EndsWith("write_picture_equation",StringComparison.Ordinal)?2:3,
+                modes.Count);
+        }
+    }
+
+    [Fact]
     public void UnitTwoStudentWritesAnActualExpressionOrFullEquationNotJustOneOrTwo()
     {
         var engine=new ExactSkillContractQuestionEngine();

@@ -12,18 +12,20 @@ internal static class UsCcssG1Unit2Part2Questions
 {
     public const string MixedStory="usccss.g1.u02.story.mixed_result_or_change";
     public const string CenterStory="usccss.g1.u02.center.picture_story_equation";
+    public const string WriteMixedEquation="usccss.g1.u02.story.write_result_or_change_equation";
+    public const string WritePictureEquation="usccss.g1.u02.center.write_picture_equation";
     private static readonly string[] Things=["books","cards","stickers"];
     public sealed record Problem(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     public static bool Supports(string? family)=>
-        family is MixedStory or CenterStory;
+        family is MixedStory or CenterStory or WriteMixedEquation or WritePictureEquation;
 
     public static Problem Build(string family,Random rng)
     {
         if(!Supports(family))throw new InvalidOperationException("Unknown G1 U02 Part2 family");
         string prompt = string.Empty, solution = string.Empty;
         var p=new Dictionary<string,int>(StringComparer.Ordinal);
-        if(family==MixedStory)
+        if(family is MixedStory or WriteMixedEquation)
         {
             var start=rng.Next(3,8);
             var change=rng.Next(1,4);
@@ -43,10 +45,25 @@ internal static class UsCcssG1Unit2Part2Questions
                 prompt=$"A child has {start} {noun} and gives away {change}. "+
                     "How many remain? Show a picture where some leave and complete "+
                     $"{start} - {change} = [ ? ]. Enter the result.";
+            if(family==WriteMixedEquation)
+            {
+                var question=mode switch
+                {
+                    0=>"Write a full equation including the ending number.",
+                    1=>"The change was missing; show how many joined in your full equation.",
+                    _=>"Write a full subtraction equation showing how many remain."
+                };
+                prompt=mode==0
+                    ? $"A child starts with {start} {noun}; {change} more arrive. "+question
+                    : mode==1
+                    ? $"A child starts with {start} {noun}, then has {start+change}. "+question
+                    : $"A child starts with {start} {noun} and gives away {change}. "+question;
+                prompt+=" Type the numbers, operation and equals sign, not just the answer.";
+            }
             solution="Show the story with objects; distinguish the result from the change. "+
                 "Box the number that actually answers the question and verify your equation.";
         }
-        else if(family==CenterStory)
+        else if(family is CenterStory or WritePictureEquation)
         {
             var start=rng.Next(4,9);
             var change=rng.Next(1,Math.Min(4,11-start));
@@ -73,18 +90,34 @@ internal static class UsCcssG1Unit2Part2Questions
             var subtraction=$"{start} - {change} = {start-change}";
             var first=flip==0?addition:subtraction;
             var second=flip==0?subtraction:addition;
-            prompt=story+" Tell your partner a complete math story and question. "+
-                $"Which equation matches your story? Enter 1 or 2: 1) {first}; 2) {second}.";
+            prompt=family==WritePictureEquation
+                ? story+" Tell your partner a complete math story from the picture. "+
+                    "Write its addition or subtraction equation yourself, "+
+                    "including the equals sign and final number."
+                : story+" Tell your partner a complete math story and question. "+
+                    $"Which equation matches your story? Enter 1 or 2: 1) {first}; 2) {second}.";
             solution="Explain what the picture's action means. More joining needs addition; "+
                 "some leaving needs subtraction. Point to each amount in the chosen equation.";
         }
-        return new Problem(family,prompt,solution,AssessmentItemType.Numeric,p);
+        return new Problem(family,prompt,solution,
+            family is WriteMixedEquation or WritePictureEquation
+                ? AssessmentItemType.ShortAnswer : AssessmentItemType.Numeric,p);
     }
 
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(family,p))
             throw new InvalidOperationException("Invalid G1 U02 Part2 original source parameters");
+        if(family==WriteMixedEquation)
+        {
+            var a=p["start"];var b=p["change"];
+            return p["mode"]==2?$"{a}-{b}={a-b}":$"{a}+{b}={a+b}";
+        }
+        if(family==WritePictureEquation)
+        {
+            var a=p["start"];var b=p["change"];
+            return p["action"]==0?$"{a}+{b}={a+b}":$"{a}-{b}={a-b}";
+        }
         int answer=family switch
         {
             MixedStory=>p["mode"]==1?p["change"]:
@@ -94,14 +127,21 @@ internal static class UsCcssG1Unit2Part2Questions
         };
         return answer.ToString(CultureInfo.InvariantCulture);
     }
+    private static string NormalizeEquation(string? answer)=>
+        string.Concat((answer??string.Empty).Where(c=>!char.IsWhiteSpace(c)))
+            .Replace('−','-').Replace('–','-').Replace('＋','+').Replace('＝','=');
+
     public static bool Verify(string family,IReadOnlyDictionary<string,int> parameters,string answer)=>
         Valid(family,parameters) &&
-        string.Equals(answer,Solve(family,parameters),StringComparison.Ordinal);
+        string.Equals(
+            family is WriteMixedEquation or WritePictureEquation
+                ? NormalizeEquation(answer) : answer,
+            Solve(family,parameters),StringComparison.Ordinal);
 
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
     {
         if(!Supports(family))return false;
-        if(family==MixedStory)
+        if(family is MixedStory or WriteMixedEquation)
             return p.Count==4 &&
                 p.TryGetValue("start",out var start) &&
                 p.TryGetValue("change",out var change) &&
@@ -110,7 +150,7 @@ internal static class UsCcssG1Unit2Part2Questions
                 start is >=3 and <=7 && change is >=1 and <=3 &&
                 start+change<=10 && mode is >=0 and <=2 &&
                 context is >=0 and <=2;
-        if(family==CenterStory)
+        if(family is CenterStory or WritePictureEquation)
             return p.Count==4 &&
                 p.TryGetValue("start",out var cstart) &&
                 p.TryGetValue("change",out var cchange) &&
