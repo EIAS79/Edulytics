@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const ROOT=path.resolve(__dirname,'..');
-const {initial,evaluate}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
+const {initial,evaluate,validSourceAssessmentEvidence,validRecordedAuthorshipDecision}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
 const manifest=JSON.parse(fs.readFileSync(path.join(ROOT,'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'),'utf8'));
 const fresh=()=>structuredClone(initial(manifest));
 test('146 unique canonical lessons, first new ordinal 51, old 50 historical only',()=>{
@@ -47,4 +47,50 @@ test('rejected source or wrong candidate SHA cannot be inferred as accepted',()=
   const result=evaluate(manifest,d,'bad');
   assert.equal(result.outcome,'NO_GO');
   assert.ok(result.issues.some(x=>x.includes('Candidate SHA')));
+});
+
+test('original lesson 65 authentic authoring can be assessed without inventing an auto-graded numeric family',()=>{
+  const authored={
+    allowedFamilies:[],authoredOriginalWorkVerified:true,
+    authenticatedStudentWorkVerified:true,teacherAssessmentRecorded:true,
+    authoredOriginalWorkProofPath:'real-authored-work-proof',
+    authoredOriginalWorkProofSha256:'a'.repeat(64)
+  };
+  const simulatedVerifiedProof=()=>true;
+  assert.equal(validSourceAssessmentEvidence(65,authored,simulatedVerifiedProof),true);
+  assert.equal(validSourceAssessmentEvidence(65,{...authored,teacherAssessmentRecorded:false},simulatedVerifiedProof),false);
+  assert.equal(validSourceAssessmentEvidence(65,{...authored,allowedFamilies:['fake.numeric.quiz']},simulatedVerifiedProof),false);
+  // The real unchanged rubric has no student evidence or teacher assessment yet.
+  assert.equal(validRecordedAuthorshipDecision(65),false);
+});
+
+test('lesson 146 numeric check never substitutes for student-authored riddle',()=>{
+  const digital={
+    allowedFamilies:['usccss.g1.u08.l10.write_number_riddles'],
+    realPracticeGradingPersisted:true,independentCorrectAndWrongAnswersVerified:true,
+    independentGradingProofPath:'math',independentGradingProofSha256:'a'.repeat(64),
+    runtimePracticeProofPath:'attempt',runtimePracticeProofSha256:'b'.repeat(64)
+  };
+  const simulatedVerifiedProof=()=>true;
+  assert.equal(validSourceAssessmentEvidence(146,digital,simulatedVerifiedProof),false);
+  const authored={...digital,authenticatedStudentWorkVerified:true,
+    authoredOriginalWorkVerified:true,teacherAssessmentRecorded:true,
+    authoredOriginalWorkProofPath:'student-authored-riddle',
+    authoredOriginalWorkProofSha256:'c'.repeat(64)};
+  assert.equal(validSourceAssessmentEvidence(146,authored,simulatedVerifiedProof),true);
+  assert.equal(validRecordedAuthorshipDecision(146),false);
+});
+
+test('ordinary Grade 1 digital lesson still requires real graded answer and persistent runtime evidence',()=>{
+  const complete={
+    allowedFamilies:['math.family'],
+    realPracticeGradingPersisted:true,independentCorrectAndWrongAnswersVerified:true,
+    independentGradingProofPath:'independent-grading',
+    runtimePracticeProofPath:'persisted-attempt'
+  };
+  const simulatedVerifiedProof=()=>true;
+  assert.equal(validSourceAssessmentEvidence(51,complete,simulatedVerifiedProof),true);
+  assert.equal(validSourceAssessmentEvidence(51,{...complete,realPracticeGradingPersisted:false},simulatedVerifiedProof),false);
+  assert.equal(validSourceAssessmentEvidence(51,{...complete,allowedFamilies:[]},simulatedVerifiedProof),false);
+  assert.equal(validSourceAssessmentEvidence(51,complete,()=>false),false);
 });
