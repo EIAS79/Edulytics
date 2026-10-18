@@ -85,9 +85,9 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
         foreach(var family in UsCcssG1FullGradeStrategyAndTensQuestions.Families)
         {
             var items=engine.Generate("G1-real-numeric-61-70",family,[family],
-                ExactSkillQuestionDifficulty.Standard,5,20261018,[]);
-            Assert.Equal(5,items.Count);
-            Assert.Equal(5,items.Select(x=>x.Prompt).Distinct(StringComparer.Ordinal).Count());
+                ExactSkillQuestionDifficulty.Standard,10,20261018,[]);
+            Assert.Equal(10,items.Count);
+            Assert.Equal(10,items.Select(x=>x.Prompt).Distinct(StringComparer.Ordinal).Count());
             foreach(var item in items)
                 Assert.True(ExactSkillContractQuestionEngine.Verify(family,item.Parameters,item.CorrectAnswer));
         }

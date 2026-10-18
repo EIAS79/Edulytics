@@ -86,8 +86,20 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             CenterWithin20=>mode%2==0
                 ?$"Center numeric task: solve {a}+{b} within 20. Write RESULT=number."
                 :$"Center numeric task: solve {a}-{b} within 20. Write RESULT=number.",
-            CountTens=>$"A class has {a} groups of TEN counters (one group has 10 counters). Count them all. Write GROUPS=number;TOTAL=number.",
-            MatchTens=>$"Match a drawing of {a} towers of TEN cubes to the numeral. Write TENS=number;NUMBER=number.",
+            CountTens=>mode switch
+            {
+                0=>$"Count {a} separate BUNDLES of exactly ten counters each. Write GROUPS=number;TOTAL=number.",
+                1=>$"Count objects on {a} PLATES, with exactly ten counters on every plate. Write GROUPS=number;TOTAL=number.",
+                2=>$"Count {a} FULL ten-frames, with every frame holding exactly ten dots. Write GROUPS=number;TOTAL=number.",
+                _=>$"Count {a} TOWERS of cubes, each tower exactly ten cubes tall. Write GROUPS=number;TOTAL=number."
+            },
+            MatchTens=>mode switch
+            {
+                0=>$"Match {a} TOWERS of ten cubes to the numeral for the same amount. Write TENS=number;NUMBER=number.",
+                1=>$"Match {a} FULL ten-frames to the numeral for the same amount. Write TENS=number;NUMBER=number.",
+                2=>$"Match {a} BAGS, each with ten counters, to the numeral for the same amount. Write TENS=number;NUMBER=number.",
+                _=>$"Match {a} TEN-RODS (one rod stands for ten ones) to the numeral for the same amount. Write TENS=number;NUMBER=number."
+            },
             AddRemoveTen=>mode%2==0
                 ?$"There are {a} ten-cube towers. Add ONE whole tower of ten. Write TENS=number;TOTAL=number."
                 :$"There are {a} ten-cube towers. Remove ONE whole tower of ten. Write TENS=number;TOTAL=number.",
