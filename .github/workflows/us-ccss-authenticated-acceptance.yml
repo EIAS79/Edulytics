@@ -156,6 +156,14 @@ jobs:
           done
           test "$ready" = true
           python3 tools/phase29/acceptance_two_school_https.py
+      - name: Preserve 95 genuinely executed G1 digital lesson HTTPS and persisted grading records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-full-grade-95-real-learner-attempt-proofs-not-academic-release
+          path: /tmp/g1-95-real-authenticated-practice-evidence.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Preserve exact 500 lesson disposable real Practice generation and grading evidence
         if: always()
         uses: actions/upload-artifact@v4
