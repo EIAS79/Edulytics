@@ -3,11 +3,11 @@ using Edulytics.Core.Entities;
 
 namespace Edulytics.Data.Seeding;
 
-/// <summary>Source-goal grounded learner-text corrections for G1 ordinals 51–60.
+/// <summary>Source-goal grounded learner-text corrections for G1 ordinals 51–70.
 /// Teaching body only: this does NOT independently certify practice or classroom activities.</summary>
 public static class CommonCoreG1FullGradeStartingContentCorrections
 {
-    public const string Version="us-ccss-g1-full-grade-u03-l14-l23-content-source-v2";
+    public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l05-source-v3";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -161,7 +161,157 @@ Step 3: Split the amount being subtracted into that part and the remaining part.
 Step 4: Subtract the remaining part from ten; keep every written equality true.
 Step 5: Check with addition: the result plus the removed amount must equal the original teen number.",
             @"Do not write 13-3=10-3=7; 13-3 equals 10, not seven. Instead write 13-6=13-3-3=10-3=7. Do not remove the ten twice or assume a one-digit answer without checking.",
-            @"I can use the group of ten to subtract and explain accurate intermediate steps within 20.")
+            @"I can use the group of ten to subtract and explain accurate intermediate steps within 20."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L24",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-24/preparation.html",@"3fd5d2c854c79d76d2678582f6cf6d3285a8004ed7e608a62fe54d2777be9761",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
+            @"Relate Counting to Addition and Subtraction PLC Activity",
+            @"Compare subtracting by counting ON from the smaller number and taking AWAY from the larger number; explain which route is shorter. This is an original-source PLC activity and discussion must be teacher-facilitated, not automatically graded.",
+            @"Learning goal: analyze and use counting-on and taking-away strategies to subtract within 20. For 15-8, one strategy takes away 5 to reach 10, then 3 more; another counts on 2 to reach 10 and 5 more to reach 15. Both produce 7, though their steps differ.",
+            @"Example 1: 15-8=7. Take away: 15-5=10, 10-3=7. Count on: 8+2=10, 10+5=15, and 2+5=7.
+Example 2: 13-9=4. Count on 9+1=10, then 10+3=13, so 1+3=4.
+Example 3: 18-6=12; removing six ones is direct and does not need crossing ten.",
+            @"Step 1: Identify starting amount, removed amount and difference.
+Step 2: Solve by physically taking away or by subtracting in stages.
+Step 3: Solve again by counting ON from the smaller number until you reach the start.
+Step 4: Check both methods give the same difference; discuss which is easier for these numbers.
+Step 5: Use a true equation and a drawing, not a false chain.",
+            @"Do not subtract 8-15 for a 15-8 story. Do not count only the jump to ten: 8 to 10 is 2, then to 15 is 5 more, so the difference is 7.",
+            @"I can compare counting-on and taking-away subtraction methods and explain my choice; teacher-led PLC discussion remains a class activity."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L25",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-25/preparation.html",@"a6cb06045a13078308b3af728d4251a25a747c461a7199d6ca82d9d29e3ab104",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
+            @"How Do You Want to Subtract?",
+            @"Choose an efficient subtraction strategy for each pair of numbers within 20. You can take away, count on using related addition, or break a teen number at ten. Do not force the same method on every question.",
+            @"Learning goal: flexibly choose a mathematically correct subtraction method based on operands. For 20-15, counting on from 15 to 20 is a quick five-step jump. For 17-4, taking away four ones is direct. For 14-8, subtract to ten and then the rest.",
+            @"Example 1: 20-15=5 because 15+5=20.
+Example 2: 17-4=13 by removing four ones.
+Example 3: 14-8=14-4-4=10-4=6.
+Example 4: 19-9=10, subtracting the nine extra ones.",
+            @"Step 1: Read the starting and removed amounts.
+Step 2: Ask whether taking away, counting on or crossing ten will be simplest.
+Step 3: Represent the steps with counters, a ten-frame or a true subtraction/addition equation.
+Step 4: Find the difference without reversing the order.
+Step 5: Check the answer using the related addition fact.",
+            @"Do not confuse a short count-on jump with the total number: 20-15 is 5, not 15. Avoid false equality chains: 14-4=10-4=6 is invalid, but 14-8=14-4-4=6 is correct.",
+            @"I can select and explain a helpful subtraction method within 20."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L26",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-26/preparation.html",@"66dfe676b9c7e8a0d7d9efdda13be6a4dceaa7c8d3108fb6dd9e3d400fe5c4b3",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.6" },
+            @"What’s the Story?",
+            @"Solve addition AND subtraction stories where the unknown may be the start, the change or the result. Interpret the event before writing an equation: an amount may be added, taken away or compared. Match your equation to the story rather than assuming the final amount is always unknown.",
+            @"Learning goal: solve addition and subtraction story problems with unknown values in different positions. Result unknown: 7+5=?. Change unknown: 7+?=12. Start unknown: ?+5=12. For subtraction, 14-?=8 and ?-6=8 require different reasoning.",
+            @"Example 1: Seven children are playing; five join. Total 7+5=12.
+Example 2: Seven are playing; some join, now twelve. 7+?=12, so ?=5.
+Example 3: Some children were playing; five joined and now twelve play. ?+5=12, so ?=7.
+Example 4: Fourteen counters; some leave, eight remain. 14-?=8, so six leave.
+Example 5: Some counters are present; six leave, eight remain. ?-6=8, so fourteen were there.",
+            @"Step 1: Identify the story event: join, leave, compare or change.
+Step 2: Draw a bar, counters or a change diagram and mark what is UNKNOWN.
+Step 3: Write an equation with the box in the correct position.
+Step 4: Use related addition/subtraction or counting to find the box.
+Step 5: Substitute into the original equation and check with the story.",
+            @"Do not change a start-unknown or change-unknown story into result-unknown without justification. A missing number in 7+□=12 is 5, not 19. The equal sign must be true after substitution.",
+            @"I can identify and solve addition/subtraction stories with start, change or result unknown."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L27",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-27/preparation.html",@"19d5c3db8365d26e5ada5e0b8e59344a6c8132a8707eac7bb0e9d787e47ad854",new[] { @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
+            @"Center Day 4",
+            @"Practice adding and subtracting within 20 through teacher-facilitated center games. The digital numeric exercises can check calculations and equations but do not replace physical turn-taking, card comparison, strategy explanation or partner games.",
+            @"Learning goal: add and subtract within 20 using known facts, make-ten and counting strategies. Carefully distinguish an addition expression from a subtraction expression, and do not allow negative numbers in the within-20 first-grade card set.",
+            @"Example 1: 8+7=15 by making ten: 8+2+5=15.
+Example 2: 16-9=7 by subtracting 6 to ten and 3 more.
+Example 3: 12+6=18 using a ten and eight ones.
+Example 4: 20-8=12 because 12+8=20.",
+            @"Step 1: Identify the operation chosen by the center card/game task.
+Step 2: Use counters, a ten-frame or a trusted fact.
+Step 3: Calculate a sum or a nonnegative difference within 20.
+Step 4: Verify the result with an opposite operation or second strategy.
+Step 5: If in classroom play, explain and compare strategies with your partner.",
+            @"Do not subtract a larger card from a smaller card and claim a negative difference is in the reviewed first-grade center scope. Partner center participation cannot be automatically certified by a multiple-choice quiz.",
+            @"I can add and subtract within 20 and explain a strategy while following the teacher's center rules."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L28",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-28/preparation.html",@"d368a03846bbb97e423a2bec04c7ec4a68e18036f8b5a48073efc3c0e45cde01",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.A.2", @"CCSS:1.OA.B.3", @"CCSS:1.OA.C.6" },
+            @"Around the Room (optional)",
+            @"Optional activity: WRITE your own mathematically sensible addition or subtraction story, and solve it. Choose a real classroom setting and provide enough information to determine the unknown. For three-addend stories, show all three groups. Authoring and discussion require teacher judgment; a digital calculation alone cannot prove a student wrote a clear story.",
+            @"Learning goal: create and solve your own within-20 addition/subtraction story, including addition with three addends when appropriate. Represent the unknown in a meaningful place and show a true matching equation.",
+            @"Example 1: I put 4 crayons, then 5, then 6 on a table. How many crayons? 4+5+6=15.
+Example 2: I have 14 stickers and give 6 away. How many remain? 14-6=8.
+Example 3: I had some blocks; 5 were added, now there are 12. How many did I start with? □+5=12, so 7.
+Example 4: Eight books are on the shelf; some are added to make 13. 8+□=13, so 5 are added.",
+            @"Step 1: Pick classroom objects or a realistic activity.
+Step 2: Decide whether the story is adding, removing or finding a missing value.
+Step 3: Give all required quantities except one unknown; write a clear question.
+Step 4: Draw a representation and write a true equation that fits your story.
+Step 5: Solve and check your explanation makes sense to another person.",
+            @"Do not write a story that cannot be solved because it omits essential data, and do not present someone else's story as a learner-authored response. Three-addend stories must count all three quantities.",
+            @"I can write, represent and solve my own within-20 story; the teacher evaluates clarity and originality."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-1/preparation.html",@"5f7a4f43ed4319bca795c0b82d6a05acb7fd3bf1e20175f4e57825aa89c9dd16",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
+            @"Count Large Collections",
+            @"Count large collections by organizing loose counters or classroom objects into groups of TEN. Show the number as a multiple of ten up to sixty, and explain why grouping prevents double counting. Real objects and class discussion are teacher-led.",
+            @"Learning goal: count 10, 20, 30, 40, 50 and 60 objects, and compare strategies for making and recording equal groups of ten. One ten is ten ones; six tens are sixty ones. Zero tens are zero.",
+            @"Example 1: Three equal bags with ten counters each contain 10+10+10=30 counters.
+Example 2: Five bundles of ten pencils contain 5 tens=50 pencils.
+Example 3: Six groups of ten cubes contain 60 cubes. Count 10,20,30,40,50,60.
+Example 4: Two plates each hold ten counters, so 2 tens=20 counters.",
+            @"Step 1: Arrange your collection into separate groups of exactly ten objects.
+Step 2: Count the number of complete groups, without recounting an object.
+Step 3: Skip-count by tens, beginning at ten and stopping at the last group.
+Step 4: Write 'n tens = 10n ones' and show a drawing/bundles.
+Step 5: Check each group has ten and the total is at most sixty for this lesson.",
+            @"Do not count five groups of ten as five objects or count the same group twice. Six tens is 60, not 6, and the unit 'ten' matters.",
+            @"I can count and represent collections of up to six complete groups of ten."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L02",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-2/preparation.html",@"f916e5b744814c256800ad18834e648885de72c02121535104d72d46e32ed067",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2" },
+            @"Match Representations of Tens",
+            @"Match the numeral, the number of tens and a picture of towers/bundles of ten for MULTIPLES OF TEN. Explain why three towers of ten, '3 tens', and numeral 30 describe the same collection.",
+            @"Learning goal: interpret base-ten representations of multiples of ten, compare a numeral with bundles and words, and justify each match. In 70, the digit 7 represents seven tens, not seven single cubes.",
+            @"Example 1: 3 tens = 3 towers of ten = 30 cubes.
+Example 2: 7 tens = 7 towers of ten = 70 cubes.
+Example 3: 5 tens = 50 ones: 10+10+10+10+10=50.
+Example 4: 4 towers of ten represent 40, not 14.",
+            @"Step 1: Count complete ten-cube towers or drawn bundles.
+Step 2: Write the number of 'tens' in words.
+Step 3: Skip-count by ten to find the total objects.
+Step 4: Match this total to the correct numeral (20,30,...,90).
+Step 5: Explain how the tens digit records the number of towers.",
+            @"Do not confuse the count of towers with the count of loose ones. Four tens means 40, not 4. Avoid matching pictures by their approximate size without counting.",
+            @"I can match different representations of a multiple of ten."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L03",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-3/preparation.html",@"e353f2b71bd5eb8973dcf261433992a18a0bd8f454d84f27c0db0c33270f4a16",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
+            @"Addition and Subtraction with Tens",
+            @"Add or subtract ONE group of ten from a nonnegative multiple of ten by counting the number of tens. A ten-block changes the tens digit by one. Use drawings and a true equation, and never use the irrelevant negative-number example 2-3=-1.",
+            @"Learning goal: add and subtract 10 from multiples of ten (within the lesson's 0–100 place-value range). Treat 40 as four tens, so 40+10 is five tens and 40-10 is three tens. For subtraction the starting value must contain a ten to remove.",
+            @"Example 1: Four towers of ten plus one tower is five towers: 40+10=50.
+Example 2: Six tens minus one ten leaves five tens: 60-10=50.
+Example 3: 30+10=40, and 30-10=20.
+Example 4: 80-10=70; check 70+10=80.",
+            @"Step 1: Represent the starting multiple of ten with bundled tens.
+Step 2: If adding, join exactly one bundle; if subtracting, take away one bundle.
+Step 3: Count the remaining/combined tens.
+Step 4: Convert tens to a numeral and write the correct equation.
+Step 5: Check with the opposite operation; no subtraction below zero.",
+            @"Do not treat 40+10 as 41 or 40-10 as 39. The unit being added/removed is a WHOLE TEN, not one. Never substitute unreviewed negative-number examples for first-grade tens arithmetic.",
+            @"I can add or take away exactly one ten from a multiple of ten using place-value bundles."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-4/preparation.html",@"aea5b61803df4c4b9df6fd46f89e9413a5bb48d0ef33c3e8178327ec9e22b5c7",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6" },
+            @"More Addition and Subtraction with Tens PLC Activity",
+            @"Add and subtract different MULTIPLES of ten by combining or taking away groups of ten. Use drawings, simple story contexts and equations. Unlike the previous lesson, the change can be 20, 30 or more—not always one ten.",
+            @"Learning goal: add and subtract multiples of ten from multiples of ten (within 0–100) using tens as a unit. Addition 30+20 joins three tens and two tens; subtraction 70-40 removes four of seven tens.",
+            @"Example 1: 30+20=(3+2) tens=50.
+Example 2: 70-40=(7-4) tens=30.
+Example 3: 40+50=90, nine groups of ten.
+Example 4: 90-60=30, and 30+60=90.",
+            @"Step 1: Draw a tower for each ten in the starting number.
+Step 2: Model adding or removing the stated multiple of ten, not single ones.
+Step 3: Add or subtract the number of ten-blocks.
+Step 4: Multiply the block count by ten to get the result.
+Step 5: Check the result stays within 0–100 and agrees with a story context.",
+            @"Do not confuse 30+20 with 3+2=5: it is 5 tens=50. Do not reverse subtraction and produce negative bundles; model a nonnegative within-grade context.",
+            @"I can add and subtract multiples of ten by reasoning with whole groups of ten."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L05",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-5/preparation.html",@"e7cfc5b7e32e9bb81e4fd304bfbf0fcb85259e5e85278ccbdb5f1314f63f34ce",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
+            @"Center Day 1",
+            @"Teacher-led Center Day: practice adding and subtracting multiples of TEN and, in other reviewed centers, numbers within 20. The Check It Off Stage 3 card activity uses number cards marked 0,10,...,90 and students choose a valid addition/subtraction expression. The digital portion grades mathematically valid numbers but never simulates partner turn-taking as completed.",
+            @"Learning goals: use tens as units when adding/subtracting whole tens, and fluently add/subtract within 20. If the tens cards are 40 and 30, students may compute 40+30=70 or 40-30=10. For number cards producing totals above 100, those are outside the reviewed early place-value scope.",
+            @"Example 1: Cards 40 and 30: 40+30=70.
+Example 2: Cards 70 and 20: 70-20=50.
+Example 3: A previous center includes 8+7=15 by making ten.
+Example 4: 16-8=8 because 8+8=16.",
+            @"Step 1: Read the number cards and choose a permitted operation.
+Step 2: For tens, combine or remove whole groups of ten.
+Step 3: For within-20 numbers, count on, make ten or use a known fact.
+Step 4: Check that the expression and answer obey the activity's value limits.
+Step 5: If participating in center play, discuss the strategy and turns with the teacher/partner.",
+            @"Do not treat 40+30 as seven ones. Do not automatically mark center-play requirements met by solving one digital equation. Check that subtraction does not remove more than the starting number.",
+            @"I can calculate with tens and with numbers within 20; classroom center games stay teacher-led.")
     ];
     private static Repair? Find(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson) =>
