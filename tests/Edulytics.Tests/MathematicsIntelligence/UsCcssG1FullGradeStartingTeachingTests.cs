@@ -45,7 +45,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
 
         string unit4Text(int n)
         {
-            var row=doc.Lessons.Single(x=>x.LessonCode=$"PED:US-CCSS-MATH:G1:U04:L{n:00}");
+            var row=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U04:L{n:00}");
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
             Assert.Equal(CommonCoreG1FullGradeStartingContentCorrections.Version,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
