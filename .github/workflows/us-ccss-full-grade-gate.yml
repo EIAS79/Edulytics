@@ -12,6 +12,9 @@ on:
       - 'tests/us-ccss-g1-full-grade-authorship-review.test.cjs'
       - 'tests/us-ccss-g1-static-remaining-triage.test.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-65-learner-authored-story-review-rubric.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-academic-evidence-matrix.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-146-number-riddle-authorship-rubric.json'
+      - 'tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L71-L146-STATIC-SOURCE-CONTENT-TRIAGE.json'
       - 'src/Edulytics.Services/Mathematics/UsCcssG1FullGrade*.cs'
       - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
@@ -38,6 +41,9 @@ on:
       - 'tests/us-ccss-g1-full-grade-authorship-review.test.cjs'
       - 'tests/us-ccss-g1-static-remaining-triage.test.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-65-learner-authored-story-review-rubric.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-academic-evidence-matrix.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-146-number-riddle-authorship-rubric.json'
+      - 'tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L71-L146-STATIC-SOURCE-CONTENT-TRIAGE.json'
       - 'src/Edulytics.Services/Mathematics/UsCcssG1FullGrade*.cs'
       - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
@@ -79,6 +85,7 @@ jobs:
           node --test tests/us-ccss-full-grade-worklist.test.cjs
           node --test tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs
           node --test tests/us-ccss-g1-full-grade-authorship-review.test.cjs
+          node --test tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs
           node --test tests/us-ccss-g1-static-remaining-triage.test.cjs
       - name: Prove full-grade work scope includes all 96 consecutive lessons (never five)
         shell: bash
