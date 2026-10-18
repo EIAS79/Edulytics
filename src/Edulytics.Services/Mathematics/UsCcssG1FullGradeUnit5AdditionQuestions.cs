@@ -57,7 +57,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     public static Problem Build(string family,Random random)
     {
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
-        int a=0,b=0,mode=random.Next(4);
+        int a=0,b=0;
+        int mode=random.Next(4);
         // Generate genuine operand choices satisfying this source-goal family.
         for(int tries=0;tries<1000;tries++)
         {
