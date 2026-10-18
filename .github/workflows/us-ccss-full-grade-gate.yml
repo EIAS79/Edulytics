@@ -15,6 +15,8 @@ on:
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-academic-evidence-matrix.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-146-number-riddle-authorship-rubric.json'
       - 'tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs'
+      - 'tests/us-ccss-g1-readonly-source-cache-integrity.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/readonly-source-cache-integrity-20261019.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L71-L146-STATIC-SOURCE-CONTENT-TRIAGE.json'
       - 'src/Edulytics.Services/Mathematics/UsCcssG1FullGrade*.cs'
       - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
@@ -24,6 +26,7 @@ on:
       - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
       - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1IndependentNumericalOracleTests.cs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
       - 'tools/curriculum/us-ccss-full-grade-gate.cjs'
       - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
@@ -44,6 +47,8 @@ on:
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-academic-evidence-matrix.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-146-number-riddle-authorship-rubric.json'
       - 'tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs'
+      - 'tests/us-ccss-g1-readonly-source-cache-integrity.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/readonly-source-cache-integrity-20261019.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L71-L146-STATIC-SOURCE-CONTENT-TRIAGE.json'
       - 'src/Edulytics.Services/Mathematics/UsCcssG1FullGrade*.cs'
       - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
@@ -53,6 +58,7 @@ on:
       - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
       - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1IndependentNumericalOracleTests.cs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
       - 'tools/curriculum/us-ccss-full-grade-gate.cjs'
       - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
@@ -86,6 +92,7 @@ jobs:
           node --test tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs
           node --test tests/us-ccss-g1-full-grade-authorship-review.test.cjs
           node --test tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs
+          node --test tests/us-ccss-g1-readonly-source-cache-integrity.test.cjs
           node --test tests/us-ccss-g1-static-remaining-triage.test.cjs
       - name: Prove full-grade work scope includes all 96 consecutive lessons (never five)
         shell: bash
