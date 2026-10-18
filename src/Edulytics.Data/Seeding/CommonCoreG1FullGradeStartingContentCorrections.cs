@@ -222,21 +222,6 @@ Step 4: Verify the result with an opposite operation or second strategy.
 Step 5: If in classroom play, explain and compare strategies with your partner.",
             @"Do not subtract a larger card from a smaller card and claim a negative difference is in the reviewed first-grade center scope. Partner center participation cannot be automatically certified by a multiple-choice quiz.",
             @"I can add and subtract within 20 and explain a strategy while following the teacher's center rules."),
-        new(@"PED:US-CCSS-MATH:G1:U03:L28",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-28/preparation.html",@"d368a03846bbb97e423a2bec04c7ec4a68e18036f8b5a48073efc3c0e45cde01",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.A.2", @"CCSS:1.OA.B.3", @"CCSS:1.OA.C.6" },
-            @"Around the Room (optional)",
-            @"Optional activity: WRITE your own mathematically sensible addition or subtraction story, and solve it. Choose a real classroom setting and provide enough information to determine the unknown. For three-addend stories, show all three groups. Authoring and discussion require teacher judgment; a digital calculation alone cannot prove a student wrote a clear story.",
-            @"Learning goal: create and solve your own within-20 addition/subtraction story, including addition with three addends when appropriate. Represent the unknown in a meaningful place and show a true matching equation.",
-            @"Example 1: I put 4 crayons, then 5, then 6 on a table. How many crayons? 4+5+6=15.
-Example 2: I have 14 stickers and give 6 away. How many remain? 14-6=8.
-Example 3: I had some blocks; 5 were added, now there are 12. How many did I start with? □+5=12, so 7.
-Example 4: Eight books are on the shelf; some are added to make 13. 8+□=13, so 5 are added.",
-            @"Step 1: Pick classroom objects or a realistic activity.
-Step 2: Decide whether the story is adding, removing or finding a missing value.
-Step 3: Give all required quantities except one unknown; write a clear question.
-Step 4: Draw a representation and write a true equation that fits your story.
-Step 5: Solve and check your explanation makes sense to another person.",
-            @"Do not write a story that cannot be solved because it omits essential data, and do not present someone else's story as a learner-authored response. Three-addend stories must count all three quantities.",
-            @"I can write, represent and solve my own within-20 story; the teacher evaluates clarity and originality."),
         new(@"PED:US-CCSS-MATH:G1:U04:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-1/preparation.html",@"5f7a4f43ed4319bca795c0b82d6a05acb7fd3bf1e20175f4e57825aa89c9dd16",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
             @"Count Large Collections",
             @"Count large collections by organizing loose counters or classroom objects into groups of TEN. Show the number as a multiple of ten up to sixty, and explain why grouping prevents double counting. Real objects and class discussion are teacher-led.",
@@ -267,21 +252,6 @@ Step 4: Match this total to the correct numeral (20,30,...,90).
 Step 5: Explain how the tens digit records the number of towers.",
             @"Do not confuse the count of towers with the count of loose ones. Four tens means 40, not 4. Avoid matching pictures by their approximate size without counting.",
             @"I can match different representations of a multiple of ten."),
-        new(@"PED:US-CCSS-MATH:G1:U04:L03",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-3/preparation.html",@"e353f2b71bd5eb8973dcf261433992a18a0bd8f454d84f27c0db0c33270f4a16",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
-            @"Addition and Subtraction with Tens",
-            @"Add or subtract ONE group of ten from a nonnegative multiple of ten by counting the number of tens. A ten-block changes the tens digit by one. Use drawings and a true equation, and never use the irrelevant negative-number example 2-3=-1.",
-            @"Learning goal: add and subtract 10 from multiples of ten (within the lesson's 0–100 place-value range). Treat 40 as four tens, so 40+10 is five tens and 40-10 is three tens. For subtraction the starting value must contain a ten to remove.",
-            @"Example 1: Four towers of ten plus one tower is five towers: 40+10=50.
-Example 2: Six tens minus one ten leaves five tens: 60-10=50.
-Example 3: 30+10=40, and 30-10=20.
-Example 4: 80-10=70; check 70+10=80.",
-            @"Step 1: Represent the starting multiple of ten with bundled tens.
-Step 2: If adding, join exactly one bundle; if subtracting, take away one bundle.
-Step 3: Count the remaining/combined tens.
-Step 4: Convert tens to a numeral and write the correct equation.
-Step 5: Check with the opposite operation; no subtraction below zero.",
-            @"Do not treat 40+10 as 41 or 40-10 as 39. The unit being added/removed is a WHOLE TEN, not one. Never substitute unreviewed negative-number examples for first-grade tens arithmetic.",
-            @"I can add or take away exactly one ten from a multiple of ten using place-value bundles."),
         new(@"PED:US-CCSS-MATH:G1:U04:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-4/preparation.html",@"aea5b61803df4c4b9df6fd46f89e9413a5bb48d0ef33c3e8178327ec9e22b5c7",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6" },
             @"More Addition and Subtraction with Tens PLC Activity",
             @"Add and subtract different MULTIPLES of ten by combining or taking away groups of ten. Use drawings, simple story contexts and equations. Unlike the previous lesson, the change can be 20, 30 or more—not always one ten.",
@@ -327,7 +297,7 @@ Step 5: If participating in center play, discuss the strategy and turns with the
         if (lesson.SourceUrl!=r.Url ||
             !string.Equals(lesson.CanonicalBodySha256,r.Sha,StringComparison.OrdinalIgnoreCase)||
             !lesson.OutcomeCodes.SequenceEqual(r.Outcomes))
-            throw new InvalidOperationException("G1 full-grade L51-L55 source/body/outcome drift: "+lesson.LessonCode);
+            throw new InvalidOperationException("G1 full-grade source/body/outcome drift: "+lesson.LessonCode);
         return r;
     }
     public static void Apply(CanonicalLessonContentPackDocument doc)

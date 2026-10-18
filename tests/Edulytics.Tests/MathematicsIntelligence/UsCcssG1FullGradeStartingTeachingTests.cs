@@ -35,7 +35,13 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("20-15=5",text(25));
         Assert.Contains("7+5=12",text(26));
         Assert.Contains("16-9=7",text(27));
-        Assert.Contains("4+5+6=15",text(28));
+        var preexistingStory=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L28");
+        Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,preexistingStory));
+        Assert.True(CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(doc,preexistingStory));
+        Assert.Contains("4 + 3 + 5 = 12",preexistingStory.Translations.Single(x=>x.CultureCode=="en").WorkedExamples);
+        var preexistingTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L03");
+        Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,preexistingTens));
+        Assert.True(CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(doc,preexistingTens));
         var historical=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L13");
         Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,historical));
     }
@@ -46,8 +52,8 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         var targets=docs.SelectMany(d=>d.Lessons.Where(l=>
             CommonCoreG1FullGradeStartingContentCorrections.IsTarget(d,l)))
             .Select(l=>l.LessonCode).ToArray();
-        Assert.Equal(20,targets.Length);
-        Assert.Equal(20,targets.Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(new[]{14,15,16,17,18,19,20,21,22,23,24,25,26,27,28}.Select(n=>$"PED:US-CCSS-MATH:G1:U03:L{n:00}").Concat(Enumerable.Range(1,5).Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")),targets);
+        Assert.Equal(18,targets.Length);
+        Assert.Equal(18,targets.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(new[]{14,15,16,17,18,19,20,21,22,23,24,25,26,27}.Select(n=>$"PED:US-CCSS-MATH:G1:U03:L{n:00}").Concat(new[]{1,2,4,5}.Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")),targets);
     }
 }
