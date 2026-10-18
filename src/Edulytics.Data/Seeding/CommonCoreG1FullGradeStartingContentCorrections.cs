@@ -3,11 +3,11 @@ using Edulytics.Core.Entities;
 
 namespace Edulytics.Data.Seeding;
 
-/// <summary>Source-goal grounded learner-text corrections for G1 ordinals 51–55.
+/// <summary>Source-goal grounded learner-text corrections for G1 ordinals 51–60.
 /// Teaching body only: this does NOT independently certify practice or classroom activities.</summary>
 public static class CommonCoreG1FullGradeStartingContentCorrections
 {
-    public const string Version="us-ccss-g1-full-grade-u03-l14-l18-content-source-v1";
+    public const string Version="us-ccss-g1-full-grade-u03-l14-l23-content-source-v2";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -86,7 +86,82 @@ Step 3: Match or write several equivalent expressions.
 Step 4: Compare the addends in your matched expressions and describe the pattern you notice.
 Step 5: Check each proposed equation by calculating both sides or rearranging counters on a double ten-frame.",
             @"Do not assume any expression using the same digits is equivalent. For example, 8+4=12 is not equal to 10+3=13. Check both sides and keep the sum fixed while moving counters.",
-            @"I can match 10+n expressions to equivalent additions and explain patterns that preserve the total.")
+            @"I can match 10+n expressions to equivalent additions and explain patterns that preserve the total."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L19",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-19/preparation.html",@"a133b4dd3e0a328f621dde57fbd3502262b47b6d41fa59ba3b8b8a145ffe85fc",new[] { @"CCSS:1.OA.B.3", @"CCSS:1.OA.C.6" },
+            @"Methods for Addition Within 20",
+            @"Add within 20 by choosing a useful method for the actual numbers. Compare counting on, making ten, using doubles, and breaking one addend into friendly parts. Different correct strategies can show the same sum. Explain why the selected method is efficient; partner discussion is led by a teacher.",
+            @"The commutative property allows 8+5=5+8, and regrouping does not change a sum. For near-ten addition, 9+6 = 10+5. For a near-double, 7+8 = 7+7+1. Select a strategy based on the numbers, not just a memorized sequence of two-digit equations.",
+            @"Example 1: 9+6=9+1+5=10+5=15 (make ten).
+Example 2: 7+8=7+7+1=14+1=15 (near double).
+Example 3: 6+8=8+2+4=10+4=14 (decompose six).
+Example 4: 5+8=8+5=13. Swap the addends to count on fewer steps.",
+            @"Step 1: Read the two addends and check the sum is within 20.
+Step 2: Look for a ten, a double, or a known addition fact.
+Step 3: Choose a method: count on, make ten, or build from a double.
+Step 4: Write a correct chain of equal expressions, keeping all values equivalent.
+Step 5: Confirm the total with counters or a second method and explain why your method works.",
+            @"Do not write 9+6=10+6, because one must leave the six when the nine becomes ten. Do not claim every example requires making ten: near doubles may be easier for some sums.",
+            @"I can choose a helpful, accurate addition strategy for two numbers within 20 and explain another possible method."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L20",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-20/preparation.html",@"b5be6aa0b9dc3671e4b3eb4907e6bdd1422d88405599558e2e910a37085d4779",new[] { @"CCSS:1.OA.A.2", @"CCSS:1.OA.C.6" },
+            @"A Trip to the Zoo",
+            @"Solve a zoo visit story by finding the total of THREE groups of animals or visitors. Read all quantities carefully, represent each group in a drawing or counters, and write a complete three-addend expression. Sometimes two groups make ten; other times count on or add a convenient pair. The source goal is three-addend story meaning, not only adding two numbers.",
+            @"Learning goal: solve story problems with THREE addends flexibly, within 20. Count all three groups even if no pair makes exactly ten. You can rearrange or group addends without changing the total. Label the answer with the story unit (animals/visitors).",
+            @"Example 1: At the zoo, 4 ducks, 6 geese and 3 swans swim: 4+6+3=10+3=13 birds.
+Example 2: Five penguins, three seals and four otters are counted: 5+3+4=12 animals.
+Example 3: The guide spots 2 lions, 7 zebras and 8 giraffes: 2+8+7=17 animals.
+Example 4: Three groups contain 5, 4 and 6 visitors: 5+4+6=15 visitors.",
+            @"Step 1: Read the zoo story and identify every group named.
+Step 2: Write a three-addend equation, not a two-addend one.
+Step 3: Draw or model the three groups with counters.
+Step 4: Look for friendly pairs such as ten or a known sum, and calculate the total within 20.
+Step 5: Check all three quantities were included and give an answer with a unit.",
+            @"Do not ignore the third group. 5+3+4 is 12, not 8. Not every three-addend problem contains a ten-pair, so never invent one or force a fake ten.",
+            @"I can solve a three-group story within 20 using a strategy that fits the numbers."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L21",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-21/preparation.html",@"bdda6d45824c14cdbbba931843195f9efc05abf0c4c45c174ba21cdf81fdbe29",new[] { @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
+            @"Center Day 3",
+            @"Practice two-number and three-number addition within 20 in the How Close? and Five in a Row centers. Make a ten, count on or use known facts. Write an accurate three-addend equation for each three-group problem. Physical turn-taking, cards and winning rows remain class activities; digital Practice can check only numeric equations.",
+            @"Learning goals: add two AND three numbers within 20; write equations with three addends. You may arrange addends to make ten or use a known double. The original How Close? and Five in a Row game rules, partners and materials require a real classroom.",
+            @"Example 1: Three counters groups: 3+6+7=3+7+6=10+6=16.
+Example 2: Two-number card: 8+5=10+3=13.
+Example 3: Three-number card: 4+5+6=10+5=15.
+Example 4: 2+8+9=10+9=19. Every group is counted once.",
+            @"Step 1: Read the two or three visible card/group values.
+Step 2: Decide whether to count on, make ten or regroup.
+Step 3: For three groups, write a full equation containing three addends before simplifying.
+Step 4: Solve and check the sum is no more than 20.
+Step 5: Tell a partner which method you used if working in a supervised center.",
+            @"Do not complete a three-addend task with a two-addend equation. For 3+6+7, adding only 3+7 gives ten but is not the final total; add the six to make sixteen.",
+            @"I can add two and three numbers within 20 and write complete three-addend equations. Classroom games are teacher-led."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L22",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-22/preparation.html",@"ffd4ed62506326b6154d4231afe24476c91c6dd7553bb4840c317d4a43a1710d",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
+            @"Subtract from Teen Numbers",
+            @"Subtract a one-digit amount from a teen number, including when you must break apart a ten. Compare taking away counters with counting on from the subtracted amount to the starting amount. Use a full ten-frame and extra ones to see why removing more than the loose ones must cross ten.",
+            @"Learning goal: subtract within 20 in a way that makes mathematical sense. For 14-6, remove four ones to reach ten, then remove two more to reach eight. Or count from six to fourteen: 6+8=14. Distinguish subtracting without breaking a ten (e.g., 17-4=13) from crossing ten (14-6=8).",
+            @"Example 1: 14-6: first 14-4=10, then 10-2=8, so 14-6=8.
+Example 2: 12-5: remove two to reach ten and three more to reach seven, so 12-5=7.
+Example 3: 17-4=13: remove four ones; the full ten stays intact.
+Example 4: 13-8=5 because 8+5=13. Count on to check.",
+            @"Step 1: Show the teen starting value as ten and some ones.
+Step 2: Find how many counters to remove and whether the loose ones are enough.
+Step 3: If needed, subtract to ten first, then remove the remaining amount.
+Step 4: Write accurate equations for each stage and find the final result.
+Step 5: Verify with a related addition equation.",
+            @"Do not pretend crossing ten is the same as removing only loose ones. 14-6 is not 14-4=10 as the final answer; two further counters must be removed. When using a chain, keep both sides equal: 14-6=14-4-2=8.",
+            @"I can subtract from teen numbers by taking away, counting on, or using the structure of ten."),
+        new(@"PED:US-CCSS-MATH:G1:U03:L23",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-23/preparation.html",@"56d2765a92f9b568461f2e650752f6cb7b95f275e1d8efe4a11a5e734bf3276f",new[] { @"CCSS:1.OA.C.6" },
+            @"Use a Ten to Subtract",
+            @"Use a full ten-frame as a landmark for subtraction within 20. Move down to ten first, then subtract the rest. Show each step with true equations. Compare this method with counting on to verify the difference, and explain why a subtraction across ten needs more than one removal.",
+            @"Learning goal: use one ten to find differences within 20. For 13-6, split six into three and three, then 13-3-3=7. Another check: 6+7=13. Note the incorrect equality 13-3=10-3=7; 13-3 is 10 and 10-3 is 7, so the chain falsely equates different values.",
+            @"Example 1: 13-6=13-3-3=10-3=7.
+Example 2: 15-8=15-5-3=10-3=7.
+Example 3: 12-7=12-2-5=10-5=5.
+Example 4: 16-9=16-6-3=10-3=7.",
+            @"Step 1: Show the first number as ten and some ones on a double ten-frame.
+Step 2: Find how many ones to subtract to reach exactly ten.
+Step 3: Split the amount being subtracted into that part and the remaining part.
+Step 4: Subtract the remaining part from ten; keep every written equality true.
+Step 5: Check with addition: the result plus the removed amount must equal the original teen number.",
+            @"Do not write 13-3=10-3=7; 13-3 equals 10, not seven. Instead write 13-6=13-3-3=10-3=7. Do not remove the ten twice or assume a one-digit answer without checking.",
+            @"I can use the group of ten to subtract and explain accurate intermediate steps within 20.")
     ];
     private static Repair? Find(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson) =>

@@ -26,6 +26,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("6 + 5 + 4 = 15 + 10 is FALSE",text(16));
         Assert.Contains("8 + 6 = 10 + 4 = 14",text(17));
         Assert.Contains("9 + 4 = 8 + 5 = 7 + 6 = 13",text(18));
+        Assert.Contains("7+8=7+7+1=14+1=15",text(19));
+        Assert.Contains("5+3+4=12",text(20));
+        Assert.Contains("3+6+7=3+7+6=10+6=16",text(21));
+        Assert.Contains("14-6=14-4-2=8",text(22));
+        Assert.Contains("13-6=13-3-3=10-3=7",text(23));
         var historical=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L13");
         Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,historical));
     }
@@ -36,8 +41,8 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         var targets=docs.SelectMany(d=>d.Lessons.Where(l=>
             CommonCoreG1FullGradeStartingContentCorrections.IsTarget(d,l)))
             .Select(l=>l.LessonCode).ToArray();
-        Assert.Equal(5,targets.Length);
-        Assert.Equal(5,targets.Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(new[]{14,15,16,17,18}.Select(n=>$"PED:US-CCSS-MATH:G1:U03:L{n:00}"),targets);
+        Assert.Equal(10,targets.Length);
+        Assert.Equal(10,targets.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(new[]{14,15,16,17,18,19,20,21,22,23}.Select(n=>$"PED:US-CCSS-MATH:G1:U03:L{n:00}"),targets);
     }
 }
