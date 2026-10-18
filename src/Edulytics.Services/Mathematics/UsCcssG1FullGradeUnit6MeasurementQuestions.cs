@@ -82,7 +82,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             5=>$"A pencil is exactly covered by {a} identical paper clips, end to end, without gaps or overlaps. Record the measurement. Write LENGTH=number.",
             6=>$"One strip is {a} long units. A small unit is HALF the length of one long unit. How many small units cover the SAME strip? Write SMALL_UNITS=number.",
             7=>$"A long object measures {a} identical cube units. Organize the count into tens and ones. Write TENS=number;ONES=number;TOTAL=number.",
-            8=>$"Write the numeral for a count of {a} equal cube-length units. Grade 1 range is up to 120. Write NUMBER=number.",
+            8=>$"Write the number represented by {a/10} complete TENS and {a%10} leftover ONES. Grade 1 range is up to 120. Write NUMBER=number.",
             9=>mode%2==0?$"Center arithmetic: add {a}+{b} within 100. Write RESULT=number.":
                 $"Center numeric measuring task: {a} same-sized cubes arranged without gaps. Write LENGTH=number.",
             10=>$"Two shoes are {a} and {b} identical cube-length units long. How many units longer is the longer shoe? Write DIFFERENCE=number.",
@@ -90,8 +90,8 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             12=>mode%3==0?$"Take From: {a} marbles were present; {b} are taken away. Write REMAINING=number.":
                 mode%3==1?$"Take From: {a} marbles were present, {a-b} remain. How many were taken? Write REMOVED=number.":
                 $"Take From: Some marbles were present; {b} leave, {a-b} remain. Write START=number.",
-            13=>mode%2==0?$"Match the equation to a story: {a} cubes, {b} leave, {a-b} remain. Write OP=SUBTRACT;TOTAL=number.":
-                $"Story: {a-b} cubes, {b} join, {a} in all. Write OP=ADD;TOTAL=number.",
+            13=>mode%2==0?$"Match the equation to a story: {a} cubes, {b} leave, {a-b} remain. Write OP=ADD/SUBTRACT;TOTAL=number.":
+                $"Story: {a-b} cubes, {b} join, {a} in all. Write OP=ADD/SUBTRACT;TOTAL=number.",
             14=>mode%2==0?$"Write a true equation for {a} birds, {b} fly away. Write EQUATION=number-number=number.":
                 $"Write an addition equation for {a-b} children, {b} join to make {a}. Write EQUATION=number+number=number.",
             15=>mode%2==0?$"Center addition within 100: {a}+{b}. Write RESULT=number.":
