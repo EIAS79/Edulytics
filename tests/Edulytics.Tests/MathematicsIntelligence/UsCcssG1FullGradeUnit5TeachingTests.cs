@@ -41,6 +41,6 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
         Assert.Contains("47 + 8 = 47 + 3 + 5 = 50 + 5 = 55",lesson(5,5));
         Assert.Contains("23 + 45 = (20 + 40) + (3 + 5) = 60 + 8 = 68",lesson(5,2));
         Assert.Contains("37+26 = (30+20)+(7+6) = 50+13=63",lesson(5,10));
-        Assert.Contains("30+7=37",lesson(4,22)); // source-comparison lesson refers to place value, not negative subtraction
+        Assert.Contains("74 is greater than 68",lesson(4,22));
     }
 }
