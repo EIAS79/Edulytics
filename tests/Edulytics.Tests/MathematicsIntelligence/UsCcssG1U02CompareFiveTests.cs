@@ -57,6 +57,8 @@ public sealed class UsCcssG1U02CompareFiveTests
     public void FirstPartyVisualShowsGivenCountsWithoutDisclosingDifference(
         int originalNumber,string code,string family)
     {
+        Assert.InRange(originalNumber,11,15);
+        Assert.EndsWith($"L{originalNumber:00}",code);
         var p=new Dictionary<string,int>
         {{"small",4},{"big",9},{"other",3},{"mode",family==UsCcssG1Unit2CompareFiveQuestions.Mixed?2:0}};
         var json=System.Text.Json.JsonSerializer.Serialize(new{parameters=p});
