@@ -105,6 +105,11 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u02.compare.write_related_equations" or
                 "usccss.g1.u02.compare.mixed_story_equation"
                     => GradeOneUnit2CompareFiveVisual(family,parameters),
+                "usccss.g1.u02.story.compare_structure_and_equation" or
+                "usccss.g1.u02.story.match_equation_with_unknown_box" or
+                "usccss.g1.u02.story.two_matching_equations" or
+                "usccss.g1.u02.story.compose_scaffold_from_equation"
+                    => GradeOneUnit2EquationStoryFiveVisual(family,parameters),
                 "usccss.g1.u02.center.picture_story_equation" or
                 "usccss.g1.u02.center.author_math_story" => GradeOneCenterStoryPicture(parameters),
                 "supporting.trigonometry.area_sine_double" or
