@@ -129,6 +129,32 @@ jobs:
           path: /tmp/grade-gate-decision.json
           if-no-files-found: warn
 
+  grade-source-practice-math:
+    name: g1-full-grade-source-practice-math
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore Edulytics test dependencies
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Run all new Grade 1 lesson practice, teaching and independent numeric oracle tests
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --no-restore --configuration Release \
+            --filter 'FullyQualifiedName~UsCcssG1FullGrade|FullyQualifiedName~UsCcssG1IndependentNumericalOracleTests' \
+            --logger 'trx;LogFileName=g1-full-grade-source-practice.trx' \
+            --results-directory /tmp/g1-full-grade-tests
+      - name: Retain authentic targeted xUnit results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-full-grade-real-math-tests
+          path: /tmp/g1-full-grade-tests/*.trx
+          if-no-files-found: warn
+
   grade-real-release-gate:
     name: g1-full-grade-real-acceptance
     if: github.event_name == 'workflow_dispatch' && inputs.candidate_sha != ''
