@@ -34,6 +34,19 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
             }
     }
     [Fact]
+    public void TextualPracticePromptsDoNotProvidePreFilledCorrectAnswers()
+    {
+        foreach(var family in UsCcssG1FullGradeUnit7GeometryTimeQuestions.Families)
+        {
+            for(int seed=0;seed<60;seed++)
+            {
+                var q=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(family,new Random(seed*17+5));
+                var answer=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,q.Parameters);
+                Assert.DoesNotContain("Write "+answer+".",q.Prompt,StringComparison.Ordinal);
+            }
+        }
+    }
+    [Fact]
     public void ClocksUseWholeHoursAndHalfHoursNotUnintroducedQuarterHours()
     {
         const string f="usccss.g1.u07.l14.half_hour_clock";
