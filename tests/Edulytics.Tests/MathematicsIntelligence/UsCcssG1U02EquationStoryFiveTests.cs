@@ -42,6 +42,7 @@ public sealed class UsCcssG1U02EquationStoryFiveTests
         foreach(var item in items)
         {
             Assert.Equal(family,item.Family);
+            Assert.DoesNotContain(item.CorrectAnswer,item.Prompt,StringComparison.Ordinal);
             Assert.True(UsCcssG1Unit2EquationStoryFiveQuestions.Valid(family,item.Parameters));
             Assert.True(ExactSkillContractQuestionEngine.Verify(
                 family,item.Parameters,item.CorrectAnswer));

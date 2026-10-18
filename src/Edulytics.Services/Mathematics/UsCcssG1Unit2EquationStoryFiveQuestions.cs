@@ -37,13 +37,13 @@ public static class UsCcssG1Unit2EquationStoryFiveQuestions
             {
                 0=>$"Story A: {a} children play outside. {b} more join. How many children are playing NOW? "+
                     "What type of unknown is this? Write TYPE=TOTAL and one completed equation. "+
-                    "Format: TYPE=TOTAL; EQUATION=2+3=5 (use YOUR numbers).",
+                    "Format: TYPE=TOTAL; EQUATION=FIRST+SECOND=WHOLE (replace letter names with the story's numbers).",
                 1=>$"Story B: {sum} children play outside. {a} came first and the rest joined later. "+
                     "How many joined later? Write TYPE=CHANGE and one complete matching equation. "+
-                    "Format: TYPE=CHANGE; EQUATION=5-2=3 (use YOUR numbers).",
+                    "Format: TYPE=CHANGE; EQUATION=WHOLE-START=CHANGE (replace letter names).",
                 _=>$"Story C: {sum} children were playing. {b} left. How many children remain? "+
                     "Write TYPE=RESULT and one complete matching equation. "+
-                    "Format: TYPE=RESULT; EQUATION=5-3=2 (use YOUR numbers)."
+                    "Format: TYPE=RESULT; EQUATION=WHOLE-LEFT=REMAINING (replace letter names)."
             },
             Box=>mode switch
             {
@@ -63,19 +63,18 @@ public static class UsCcssG1Unit2EquationStoryFiveQuestions
                 "Separate equations with a semicolon, not just two answers.",
             Create=>mode switch
             {
-                0=>$"An equation is {a} + {b} = {sum}. COMPOSE a TWO-SENTENCE joining story "+
-                     "that fits it, by filling this student-authored story scaffold: "+
-                     $"STORY=I had {a} shells. I got {b} more shells and now I have {sum} shells. "+
-                     "Rewrite with your own classroom objects if you want; keep the numbers, "+
-                     "joining action and complete sentences.",
-                1=>$"An equation is {sum} - {b} = {a}. COMPOSE a TWO-SENTENCE taking-away story "+
-                     "that fits it. Use this scaffold, or another matching object: "+
-                     $"STORY=I had {sum} shells. I gave away {b} shells and now I have {a} shells. "+
-                     "Change the objects if desired. The teacher can check more creative stories.",
-                _=>$"An equation is {a} + □ = {sum}. COMPOSE a TWO-SENTENCE joining story "+
-                     "with a missing part. Use this scaffold, or another matching object: "+
-                     $"STORY=I had {a} shells. I got {b} more shells and now I have {sum} shells. "+
-                     "Write your own nouns if desired. A teacher checks fully original stories."
+                0=>$"An equation is {a} + {b} = {sum}. COMPOSE a TWO-SENTENCE joining story. "+
+                     "Write your own story, replacing START, CHANGE and END with numbers from the equation: "+
+                     "STORY=I had START shells. I got CHANGE more shells and now I have END shells. "+
+                     "A teacher checks unrestricted creative stories.",
+                1=>$"An equation is {sum} - {b} = {a}. COMPOSE a TWO-SENTENCE taking-away story. "+
+                     "Write your story, replacing START, CHANGE and END with numbers from the equation: "+
+                     "STORY=I had START shells. I gave away CHANGE shells and now I have END shells. "+
+                     "Choose your own objects if you wish.",
+                _=>$"An equation is {a} + □ = {sum}. COMPOSE a TWO-SENTENCE joining story. "+
+                     "Write your story, finding the unknown CHANGE and filling in the scaffold: "+
+                     "STORY=I had START shells. I got CHANGE more shells and now I have END shells. "+
+                     "A teacher checks original stories without the scaffold."
             },
             _=>throw new InvalidOperationException()
         };
