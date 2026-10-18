@@ -138,6 +138,12 @@ public static class LessonPracticeInteractionRegistry
         string familyId,
         string answerType)
     {
+        // G1 U08 has a keyed DIFFERENCE=number Compare story, not
+        // the generic symbol-only relation choice interface.
+        if (familyId=="usccss.g1.u08.l06.compare_difference_story" &&
+            answerType=="contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
         // G1 U04 L16-L23 answers are keyed strings (SYMBOL, ORDER, TENS,
         // ONES, COUNT/GAP), not the bare relation-choice widget. Keep the
         // original exact answer contract for the source-goal digital tasks.

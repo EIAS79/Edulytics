@@ -172,7 +172,8 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG1FullGradeTensAndOnesQuestions.Supports(family.Trim()) ||
          UsCcssG1FullGradeTwoDigitOperationsQuestions.Supports(family.Trim()) ||
          UsCcssG1FullGradeUnit5AdditionQuestions.Supports(family.Trim()) ||
-         UsCcssG1FullGradeUnit4FinalQuestions.Supports(family.Trim()));
+         UsCcssG1FullGradeUnit4FinalQuestions.Supports(family.Trim()) ||
+         UsCcssG1FullGradeUnit8ReviewQuestions.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -307,6 +308,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssG1FullGradeUnit8ReviewQuestions.Supports(family))
+            return UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,parameters,answer);
         if (UsCcssG1FullGradeUnit4FinalQuestions.Supports(family))
             return UsCcssG1FullGradeUnit4FinalQuestions.Verify(family,parameters,answer);
         if (UsCcssG1FullGradeUnit5AdditionQuestions.Supports(family))
@@ -927,6 +930,11 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssG1FullGradeUnit8ReviewQuestions.Supports(family))
+        {
+            var item=UsCcssG1FullGradeUnit8ReviewQuestions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Explanation,item.ItemType,item.Parameters);
+        }
         if (UsCcssG1FullGradeUnit4FinalQuestions.Supports(family))
         {
             var item=UsCcssG1FullGradeUnit4FinalQuestions.Build(family,random);
@@ -2833,6 +2841,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssG1FullGradeUnit8ReviewQuestions.Supports(problem.Family))
+            return UsCcssG1FullGradeUnit8ReviewQuestions.Solve(problem.Family,p);
         if (UsCcssG1FullGradeUnit4FinalQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit4FinalQuestions.Solve(problem.Family,p);
         if (UsCcssG1FullGradeUnit5AdditionQuestions.Supports(problem.Family))
@@ -3444,7 +3454,8 @@ public sealed class ExactSkillContractQuestionEngine
             UsCcssG1FullGradeTensAndOnesQuestions.Supports(family) ||
             UsCcssG1FullGradeTwoDigitOperationsQuestions.Supports(family) ||
             UsCcssG1FullGradeUnit5AdditionQuestions.Supports(family) ||
-            UsCcssG1FullGradeUnit4FinalQuestions.Supports(family))
+            UsCcssG1FullGradeUnit4FinalQuestions.Supports(family) ||
+            UsCcssG1FullGradeUnit8ReviewQuestions.Supports(family))
             ? "PROMPT=" + NormalizePrompt(prompt)
             : string.Join(
                 ";",
@@ -3476,6 +3487,7 @@ public sealed class ExactSkillContractQuestionEngine
         UsCcssG1FullGradeTwoDigitOperationsQuestions.Supports(family) ||
         UsCcssG1FullGradeUnit5AdditionQuestions.Supports(family) ||
         UsCcssG1FullGradeUnit4FinalQuestions.Supports(family) ||
+        UsCcssG1FullGradeUnit8ReviewQuestions.Supports(family) ||
         family is
             "supporting.geometry.shape_dimension" or
             "supporting.reasoning.multistep" or

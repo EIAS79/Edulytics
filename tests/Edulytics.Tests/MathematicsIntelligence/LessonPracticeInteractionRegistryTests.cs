@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            419, // Previous 411 + 8 source-goal digital/teacher-bound Grade 1 Unit 4 L16-L23 families
+            429, // Previous 419 + ten G1 U08 mathematics review digital families, teacher activities separated
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
