@@ -56,37 +56,37 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
         {
             0=>mode switch
             {
-                0=>$"Classify solid shape for object #{a}: it has 6 square FLAT faces and 8 corners. Write SHAPE=CUBE.",
-                1=>$"Classify solid shape for object #{a}: it has a CURVED continuous surface and no flat face. Write SHAPE=SPHERE.",
-                2=>$"Classify solid shape for object #{a}: it has two flat circular faces and a curved side. Write SHAPE=CYLINDER.",
-                _=>$"Classify solid shape for object #{a}: one circular base and one point joined by a curved surface. Write SHAPE=CONE."
+                0=>$"Classify solid shape for object #{a}: it has 6 square FLAT faces and 8 corners. Write SHAPE=name.",
+                1=>$"Classify solid shape for object #{a}: it has a CURVED continuous surface and no flat face. Write SHAPE=name.",
+                2=>$"Classify solid shape for object #{a}: it has two flat circular faces and a curved side. Write SHAPE=name.",
+                _=>$"Classify solid shape for object #{a}: one circular base and one point joined by a curved surface. Write SHAPE=name."
             },
             1=>$"A model for building contains {a} cube pieces and {b} rectangular-prism pieces. Count ALL pieces before teacher verifies the physical composition. Write PIECES=number.",
-            2=>mode%2==0?$"Sort shape card #{a}: this CLOSED FLAT shape has 3 STRAIGHT sides. Write SHAPE=TRIANGLE.":
-                $"Sort shape card #{a}: this CLOSED FLAT shape has 4 equal straight sides and 4 right angles. Write SHAPE=SQUARE.",
+            2=>mode%2==0?$"Sort shape card #{a}: this CLOSED FLAT shape has 3 STRAIGHT sides. Write SHAPE=name.":
+                $"Sort shape card #{a}: this CLOSED FLAT shape has 4 equal straight sides and 4 right angles. Write SHAPE=name.",
             3=>mode%2==0?$"Before DRAWING a triangle for card #{a}, list how many straight sides and corners it MUST have. Write SIDES=number;CORNERS=number.":
                 $"Before DRAWING a rectangle for card #{a}, list its straight sides and corners. Write SIDES=number;CORNERS=number.",
             4=>$"Triangle card #{a}: three line segments form a CLOSED boundary (rotation {b} degrees is not being tested). How many defining straight SIDES? Write SIDES=number.",
-            5=>mode%2==0?$"Shape card #{a}: a square has 4 equal sides and 4 right angles. Is every SQUARE also a RECTANGLE? Write ANSWER=YES.":
-                $"Shape card #{a}: a rectangle has 4 right angles but need not have equal sides. Is every RECTANGLE necessarily a SQUARE? Write ANSWER=NO.",
+            5=>mode%2==0?$"Shape card #{a}: a square has 4 equal sides and 4 right angles. Is every SQUARE also a RECTANGLE? Write ANSWER=YES/NO.":
+                $"Shape card #{a}: a rectangle has 4 right angles but need not have equal sides. Is every RECTANGLE necessarily a SQUARE? Write ANSWER=YES/NO.",
             6=>$"Two equal right triangles can be placed along their diagonal to form a rectangle. Card #{a}, model #{b}. Count the number of triangular COMPONENTS. Write PARTS=number.",
             7=>mode%2==0?$"Center numerical task {a}+{b} (sum within 24, classroom shape center assessed separately). Write RESULT=number.":
-                $"Center shape naming card #{a}: a CLOSED flat figure with exactly 3 straight sides. Write SHAPE=TRIANGLE.",
-            8=>mode%2==0?$"A rectangle card #{a} is partitioned into 2 EQUAL-area pieces. What is each piece called? Write PART=HALF;PIECES=2.":
-                $"A circle card #{a} is partitioned into 4 EQUAL-area pieces. What is each piece called? Write PART=FOURTH;PIECES=4.",
-            9=>mode%2==0?$"Two equal halves rejoin to make one WHOLE rectangle; card #{a}. Write PARTS=2;WHOLES=1.":
-                $"Four equal fourths rejoin to make one WHOLE circle; card #{a}. Write PARTS=4;WHOLES=1.",
-            10=>$"In the SAME shape #{a}, compare one HALF and one FOURTH. Which is larger? Write LARGER=HALF;FOURTHS_PER_HALF=2.",
+                $"Center shape naming card #{a}: a CLOSED flat figure with exactly 3 straight sides. Write SHAPE=name.",
+            8=>mode%2==0?$"A rectangle card #{a} is partitioned into 2 EQUAL-area pieces. What is each piece called? Write PART=name;PIECES=number.":
+                $"A circle card #{a} is partitioned into 4 EQUAL-area pieces. What is each piece called? Write PART=name;PIECES=number.",
+            9=>mode%2==0?$"Two equal halves rejoin to make one WHOLE rectangle; card #{a}. Write PARTS=number;WHOLES=number.":
+                $"Four equal fourths rejoin to make one WHOLE circle; card #{a}. Write PARTS=number;WHOLES=number.",
+            10=>$"In the SAME shape #{a}, compare one HALF and one FOURTH. Which is larger? Write LARGER=part_name;FOURTHS_PER_HALF=number.",
             11=>mode%2==0?$"Center arithmetic: add {a}+{b} (within 24). Write RESULT=number.":
-                $"Center shape card #{a}: 3 straight sides, 3 corners, closed. Write SHAPE=TRIANGLE.",
-            12=>$"Clock card #{b}: the MINUTE hand points at 12, and the HOUR hand points at {a}. Tell the time. Write TIME={a}:00.",
-            13=>$"Half-hour clock #{b}: minute hand at SIX, hour hand halfway between {a} and next hour. Write MINUTES=30;HOUR=number.",
-            14=>mode%2==0?$"Clock card #{b}: hour hand at {a}, minute hand at 12. Write TIME=hour:00.":
-                $"Clock card #{b}: hour hand past {a}, minute hand at SIX. Write TIME=hour:30.",
-            15=>mode%2==0?$"A school schedule says reading starts at {a}:00. Write TIME=hour:00.":
-                $"A school schedule says snack begins at half past {a}. Write TIME=hour:30.",
+                $"Center shape card #{a}: 3 straight sides, 3 corners, closed. Write SHAPE=name.",
+            12=>$"Clock card #{b}: the MINUTE hand points at 12, and the HOUR hand points at {a}. Tell the time. Write TIME=hour:minutes.",
+            13=>$"Half-hour clock #{b}: minute hand at SIX, hour hand halfway between {a} and next hour. Write MINUTES=number;HOUR=number.",
+            14=>mode%2==0?$"Clock card #{b}: hour hand at {a}, minute hand at 12. Write TIME=hour:minutes.":
+                $"Clock card #{b}: hour hand past {a}, minute hand at SIX. Write TIME=hour:minutes.",
+            15=>mode%2==0?$"A school schedule says reading starts at {a}:00. Write TIME=hour:minutes.":
+                $"A school schedule says snack begins at half past {a}. Write TIME=hour:minutes.",
             16=>mode%2==0?$"Teacher-led center numerical task: subtract {b} from {a+b} (under 24). Write RESULT=number.":
-                $"Teacher-led center time task: minute hand at SIX, hour hand past {a}. Write TIME=hour:30.",
+                $"Teacher-led center time task: minute hand at SIX, hour hand past {a}. Write TIME=hour:minutes.",
             _=>throw new InvalidOperationException()
         };
         return new(family,prompt,
