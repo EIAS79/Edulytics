@@ -1,10 +1,10 @@
 # Edulytics — Grade-First Full-Grade Curriculum Delivery Plan
 
-**Plan ID:** `EDULYTICS-GRADE-FIRST-FULL-GRADE-V1`  
-**Adopted:** 2026-10-18, by owner instruction (implementation must be tested/merged before operational release).  
-**Programme:** `US-CCSS-MATH`.  
-**Predecessor:** `EDULYTICS-GRADE-FIRST-5-V1`, retained unmodified to preserve historical evidence.  
-**Execution/acceptance/release unit:** one **whole grade**, or one named high-school course. No fixed five-lesson chunk.  
+**Plan ID:** `EDULYTICS-GRADE-FIRST-FULL-GRADE-V1`
+**Adopted:** 2026-10-18, by owner instruction (implementation must be tested/merged before operational release).
+**Programme:** `US-CCSS-MATH`.
+**Predecessor:** `EDULYTICS-GRADE-FIRST-5-V1`, retained unmodified to preserve historical evidence.
+**Execution/acceptance/release unit:** one **whole grade**, or one named high-school course. No fixed five-lesson chunk.
 **Resume:** Grade 1, ordinal **51 of 146**. Ordinals 1–50 were already released; do **not** redo their curriculum authoring or per-lesson academic acceptance. Complete the remaining **96** lessons, then move to Grade 2.
 
 ## 1. Binding owner decisions
