@@ -159,4 +159,108 @@ public sealed class UsCcssG1U02NextFiveTests
         Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"A2:TOP:CONTINUE"));
         Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(f,p,"A2:TOP:CAPTURE"));
     }
+    [Fact]
+    public void SourceTwoColorCountersAreUnassignedNotASolvedSplit()
+    {
+        var svg=Edulytics.Web.Presentation.PracticeMathVisualRenderer.RenderSvg(
+            UsCcssG1Unit2NextFiveQuestions.Shake,
+            """{"parameters":{"total":6}}""");
+        Assert.NotNull(svg);
+        Assert.Equal(6,System.Text.RegularExpressions.Regex.Matches(
+            svg,"data-role='unassigned-two-color-counter'").Count);
+        Assert.DoesNotContain("example split",svg);
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(1)]
+    [InlineData(2)]
+    public void ReptileStoryPicturesOnlyShowInformationGivenToThePupil(int mode)
+    {
+        var json=System.Text.Json.JsonSerializer.Serialize(new {
+            parameters=new {total=8,a=3,mode}
+        });
+        var svg=Edulytics.Web.Presentation.PracticeMathVisualRenderer.RenderSvg(
+            UsCcssG1Unit2NextFiveQuestions.Compare,json);
+        Assert.NotNull(svg);
+        Assert.DoesNotContain("UNKNOWN=",svg);
+        var turtles=System.Text.RegularExpressions.Regex.Matches(svg,"data-animal='turtle'").Count;
+        var lizards=System.Text.RegularExpressions.Regex.Matches(svg,"data-animal='lizard'").Count;
+        if(mode==0)
+        {
+            Assert.Equal(3,turtles);
+            Assert.Equal(5,lizards);
+            Assert.DoesNotContain("Lizards: ?",svg);
+        }
+        else if(mode==1)
+        {
+            Assert.Equal(3,turtles);
+            Assert.Equal(0,lizards);
+            Assert.Contains("Lizards: ?",svg);
+            Assert.DoesNotContain("data-role='unassigned-counter'",svg);
+        }
+        else
+        {
+            Assert.Equal(0,turtles);
+            Assert.Equal(0,lizards);
+            Assert.Equal(8,System.Text.RegularExpressions.Regex.Matches(
+                svg,"data-role='unassigned-counter'").Count);
+            Assert.Contains("Turtles: ?",svg);
+            Assert.Contains("Lizards: ?",svg);
+        }
+    }
+
+    [Fact]
+    public void PetDiagramDepictsExactlyTheTwoNamedSpecies()
+    {
+        var svg=Edulytics.Web.Presentation.PracticeMathVisualRenderer.RenderSvg(
+            UsCcssG1Unit2NextFiveQuestions.Pets,
+            """{"parameters":{"a":3,"b":4}}""");
+        Assert.NotNull(svg);
+        Assert.Equal(3,System.Text.RegularExpressions.Regex.Matches(
+            svg,"data-animal='cat'").Count);
+        Assert.Equal(4,System.Text.RegularExpressions.Regex.Matches(
+            svg,"data-animal='dog'").Count);
+        Assert.DoesNotContain("3+4=7",svg);
+    }
+
+    [Fact]
+    public void InstructionsDoNotIncludeLiteralCopyableCompletedAnswers()
+    {
+        for(var seed=0;seed<64;seed++)
+        {
+            var shake=UsCcssG1Unit2NextFiveQuestions.Build(
+                UsCcssG1Unit2NextFiveQuestions.Shake,new Random(seed));
+            var capture=UsCcssG1Unit2NextFiveQuestions.Build(
+                UsCcssG1Unit2NextFiveQuestions.Capture,new Random(seed));
+            Assert.DoesNotContain("1+2=3; 2+1=3",shake.Prompt);
+            Assert.DoesNotContain("A1:TOP:CONTINUE",capture.Prompt);
+            Assert.DoesNotContain("Choose the TOP edge",capture.Prompt);
+        }
+    }
+
+    [Fact]
+    public void CaptureSquaresEmptyBoardAcceptsEveryLegalFirstEdgeNotOnlyTop()
+    {
+        var p=new Dictionary<string,int>{{"first",4},{"second",3},{"mask",0}};
+        var family=UsCcssG1Unit2NextFiveQuestions.Capture;
+        foreach(var edge in new[]{"TOP","RIGHT","BOTTOM","LEFT"})
+        {
+            Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(
+                family,p,$"A2:{edge}:CONTINUE"));
+            Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(
+                family,p,$"A2:{edge}:CAPTURE"));
+            Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(
+                family,p,$"A1:{edge}:CONTINUE"));
+        }
+        p["mask"]=7;
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(
+            family,p,"A2:LEFT:CAPTURE"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(
+            family,p,"A2:RIGHT:CAPTURE"));
+        var prompt=UsCcssG1Unit2NextFiveQuestions.Build(
+            family,new Random(1)).Prompt;
+        Assert.DoesNotContain("start by marking the TOP side",prompt);
+    }
+
 }

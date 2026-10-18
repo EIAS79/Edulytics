@@ -60,7 +60,7 @@ public static class UsCcssG1Unit2NextFiveQuestions
                      "Write at least TWO DIFFERENT red-and-yellow arrangements, each with a matching full addition equation. "+
                     "Write the number of RED counters first and YELLOW counters second (red+yellow=total), "+
                     "separating your equations with semicolons. "+
-                    $"For example, for 3 counters: 1+2=3; 2+1=3. If you have time, find ALL combinations for {total}.";
+                    $"If you have time, find ALL combinations for {total}. Check that each color arrangement is different.";
                 solution="Each arrangement needs two colored parts whose total matches the whole. Changing the color counts can reverse the addends; a complete list is an optional challenge.";
                 break;
             }
@@ -123,10 +123,11 @@ public static class UsCcssG1Unit2NextFiveQuestions
                 prompt=$"Capture Squares Stage 1: Roll two number cubes: {first} and {second}. "+
                     "On this FIRST-PARTY practice board, A1 is 6, A2 is 7, B1 is 8 and B2 is 9. "+
                     (mask==0
-                        ?"The board has no marked sides yet. Find your sum and start by marking the TOP side of the matching square. "
+                        ?"The board has no marked sides yet. Find your sum and choose ANY ONE unmarked side of the matching square. "
                         :"Three sides of the matching square are ALREADY marked (shown with thick edges). Find the ONLY remaining side and close it. ")+
                     "WRITE CELL:SIDE:RESULT, where RESULT is CONTINUE if no square is captured or CAPTURE when the fourth side closes the square. "+
-                    "For example, A1:TOP:CONTINUE. A full two-player Capture Squares game still requires a teacher or partner.";
+                    "Use one of TOP, RIGHT, BOTTOM, LEFT and CONTINUE or CAPTURE, as appropriate. "+
+                    "A full two-player Capture Squares game still requires a teacher or partner.";
                 solution="Add the dice and locate the matching sum. Choose the required unused side; closing a fourth side captures the square. A first side does not.";
                 break;
             }
@@ -274,7 +275,19 @@ public static class UsCcssG1Unit2NextFiveQuestions
         {
             var actual=Regex.Match(Compact(response).ToUpperInvariant(),
                 @"^(A1|A2|B1|B2):(TOP|RIGHT|BOTTOM|LEFT):(CONTINUE|CAPTURE)$");
-            return actual.Success && Compact(response).Equals(expected,StringComparison.OrdinalIgnoreCase);
+            if(!actual.Success)return false;
+            if(Compact(response).Equals(expected,StringComparison.OrdinalIgnoreCase))
+                return true;
+            // On a genuinely empty first-turn board, all four unmarked sides
+            // are legal. The canonical TOP answer is only one representative.
+            // A fourth-edge CAPTURE has precisely one legal missing edge.
+            var canonical=Regex.Match(expected,
+                @"^(A1|A2|B1|B2):(TOP|RIGHT|BOTTOM|LEFT):(CONTINUE|CAPTURE)$");
+            return canonical.Success &&
+                canonical.Groups[2].Value=="TOP" &&
+                canonical.Groups[3].Value=="CONTINUE" &&
+                actual.Groups[1].Value==canonical.Groups[1].Value &&
+                actual.Groups[3].Value=="CONTINUE";
         }
         if(family==Shake)return DistinctColorPartitions(expected,response);
         if(family==Cover)return EitherMissingAddendEquation(expected,response);
