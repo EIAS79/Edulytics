@@ -131,4 +131,56 @@ public sealed class CommonCoreG1U02NextFiveSourceTests
                 item.GenerationFamily,item.CorrectAnswer,"999"));
         }
     }
+    [Fact]
+    public void Source2021TeacherPreparationStandardsAreNotDowngradedByActivityOnlyNotes()
+    {
+        var expected=new[]
+        {
+            (Addressing:new[]{"1.OA.A.1","1.OA.B.4","1.OA.C.6"},
+                Building:new[]{"1.OA.B.3","1.OA.D.7"}),
+            (Addressing:new[]{"1.OA.A.1","1.OA.C.6"},
+                Building:new[]{"1.OA.B.3"}),
+            (Addressing:new[]{"1.NBT.A.1","1.OA.A.1","1.OA.C.6"},
+                Building:new[]{"1.OA.D.8"}),
+            (Addressing:new[]{"1.OA.A.1","1.OA.B.3","1.OA.D.7"},
+                Building:Array.Empty<string>()),
+            (Addressing:new[]{"1.OA.A.1","1.OA.C.6"},
+                Building:Array.Empty<string>())
+        };
+        var names=new[]
+        {
+            "US-CCSS-G1-005.json",
+            "US-CCSS-G1-005-LOCAL-SOURCE-CROSSWALK.json"
+        };
+        foreach(var name in names)
+        {
+            DirectoryInfo? folder=new(AppContext.BaseDirectory);
+            string? sourcePath=null;
+            while(folder is not null)
+            {
+                var path=Path.Combine(folder.FullName,"artifacts",
+                    "curriculum-delivery","US-CCSS-MATH","G1","batches",name);
+                if(File.Exists(path)){sourcePath=path;break;}
+                folder=folder.Parent;
+            }
+            Assert.NotNull(sourcePath);
+            using var doc=System.Text.Json.JsonDocument.Parse(
+                File.ReadAllText(sourcePath!));
+            var lessons=doc.RootElement.GetProperty("lessons").EnumerateArray().ToArray();
+            Assert.Equal(5,lessons.Length);
+            for(var i=0;i<5;i++)
+            {
+                var row=lessons[i];
+                Assert.Equal(expected[i].Addressing,row
+                    .GetProperty("publisher2021PreparationStandardsAddressing")
+                    .EnumerateArray().Select(x=>x.GetString()!).ToArray());
+                Assert.Equal(expected[i].Building,row
+                    .GetProperty("publisher2021PreparationStandardsBuildingToward")
+                    .EnumerateArray().Select(x=>x.GetString()!).ToArray());
+                Assert.Contains("PREPARATION",row
+                    .GetProperty("preparationVsActivityStandardsScope").GetString());
+            }
+        }
+    }
+
 }
