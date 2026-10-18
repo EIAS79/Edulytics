@@ -57,6 +57,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("50+3 = 53",unit4Text(8));
         Assert.Contains("60+4",unit4Text(9));
         Assert.Contains("30+7",unit4Text(10));
+        Assert.Contains("34+20=54",unit4Text(11));
+        Assert.Contains("58+10=68",unit4Text(12));
+        Assert.Contains("43+20=63",unit4Text(13));
+        Assert.Contains("64 is GREATER THAN 57",unit4Text(14));
+        Assert.Contains("52 > 39",unit4Text(15));
         var historical=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L13");
         Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,historical));
     }
@@ -67,8 +72,8 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         var targets=docs.SelectMany(d=>d.Lessons.Where(l=>
             CommonCoreG1FullGradeStartingContentCorrections.IsTarget(d,l)))
             .Select(l=>l.LessonCode).ToArray();
-        Assert.Equal(23,targets.Length);
-        Assert.Equal(23,targets.Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(new[]{14,15,16,17,18,19,20,21,22,23,24,25,26,27}.Select(n=>$"PED:US-CCSS-MATH:G1:U03:L{n:00}").Concat(new[]{1,2,4,5,6,7,8,9,10}.Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")),targets);
+        Assert.Equal(28,targets.Length);
+        Assert.Equal(28,targets.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(new[]{14,15,16,17,18,19,20,21,22,23,24,25,26,27}.Select(n=>$"PED:US-CCSS-MATH:G1:U03:L{n:00}").Concat(new[]{1,2,4,5,6,7,8,9,10,11,12,13,14,15}.Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")),targets);
     }
 }

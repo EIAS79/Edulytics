@@ -3,11 +3,11 @@ using Edulytics.Core.Entities;
 
 namespace Edulytics.Data.Seeding;
 
-/// <summary>Source-goal grounded learner-text corrections for G1 ordinals 51–75.
+/// <summary>Source-goal grounded learner-text corrections for G1 ordinals 51–80.
 /// Teaching body only: this does NOT independently certify practice or classroom activities.</summary>
 public static class CommonCoreG1FullGradeStartingContentCorrections
 {
-    public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l10-source-v4";
+    public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -356,7 +356,82 @@ Step 3: Write the tens digit in the first position and the ones digit in the sec
 Step 4: Read the finished numeral aloud and match it to the expanded expression.
 Step 5: Check the total of the represented objects and that the digits are not reversed.",
             @"Do not write 3 tens and 7 ones as 73; the first digit is tens. Do not omit the zero in 8 tens and 0 ones: write 80, not 8.",
-            @"I can write two-digit numerals from tens-and-ones representations.")
+            @"I can write two-digit numerals from tens-and-ones representations."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L11",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-11/preparation.html",@"87d02e4b8c376f99a6d01c847535fa868f7d915d3ffa539930c6905f981d9b96",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4" },
+            @"Add Tens to Two-digit Numbers",
+            @"Add a WHOLE multiple of ten to a two-digit number while keeping the existing ones unchanged. Model the number with bundles of ten and single ones and explain why adding tens affects only the tens count when the result stays within 100.",
+            @"Learning goal: add a two-digit number and a multiple of ten, using place value. For 34+20, combine 3 tens and 2 tens, keep 4 ones, and obtain 54. Unlike adding single ones, adding full tens does not change the ones digit.",
+            @"Example 1: 34+20=54 because 3 tens+2 tens=5 tens and four ones remain.
+Example 2: 47+30=77, as 40+30+7=70+7.
+Example 3: 62+10=72, as 6 tens+1 ten=7 tens and two ones.
+Example 4: 51+40=91, with one extra one unchanged.",
+            @"Step 1: Break the non-round number into tens and ones.
+Step 2: Count the number of full tens being added.
+Step 3: Add tens to tens; copy the original number of ones.
+Step 4: Recombine the tens and ones in a two-digit answer within 100.
+Step 5: Verify with base-ten rods or a drawing.",
+            @"Do not add 20 to the ones place in 34+20. The answer is 54, not 36 or 314. Check for totals above 100 rather than silently using out-of-scope operands.",
+            @"I can add a multiple of ten to a two-digit number without changing the ones."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L12",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-12/preparation.html",@"6d8b12cdd219f0b4ec414c51ecc71740b29e31b04dcbe0fb57e85494df44658d",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.C.5", @"CCSS:1.OA.C.6" },
+            @"Mentally Add and Subtract Tens (optional)",
+            @"Optional mental-math activity: use place-value reasoning to find TEN MORE or TEN LESS than a two-digit number. No written algorithm is necessary when students can describe the effect on the tens place. Explain the mental pattern rather than memorizing isolated answers.",
+            @"Learning goal: mentally find 10 more and 10 less than a two-digit number. Tens change by one full group, ones remain the same: 46+10=56 and 46-10=36. Restrict subtracting 10 to numbers with at least one ten.",
+            @"Example 1: Ten more than 58 is 68; the eight ones stay the same.
+Example 2: Ten less than 64 is 54; the four ones stay the same.
+Example 3: Ten more than 39 is 49; only the tens count increases.
+Example 4: Ten less than 71 is 61.",
+            @"Step 1: Read the starting two-digit number.
+Step 2: Identify the tens and ones digits.
+Step 3: Add or remove ONE ten, leaving the ones unchanged.
+Step 4: Name the new two-digit number.
+Step 5: Explain mentally why the number is ten more or ten less.",
+            @"Do not change the ones digit when only ten is added or removed. 58+10 is 68, not 59. Do not remove a full ten from a number with no tens.",
+            @"I can mentally say ten more or ten less than a two-digit number using tens and ones."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L13",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-13/preparation.html",@"aa81321cc4958d6903637c2972c2530def7482777bd0ff87af07b86cc29522b3",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
+            @"Center Day 2",
+            @"Practice within-20 addition/subtraction AND work with two-digit numbers in a teacher-led center choice. In the two-digit centers, model adding tens; in counting centers, represent mixed collections; in within-20 centers, use known number relationships. The classroom choice and partner games are not automatically evaluated by digital Practice.",
+            @"Learning goals: add and subtract within 20, add tens to two-digit numbers, and count and represent collections. Do not reduce this center day to only one arithmetic type.",
+            @"Example 1: 8+7=15 using make-ten: 8+2+5=15.
+Example 2: 17-9=8 using a ten-frame or a known fact.
+Example 3: 43+20=63 because four tens plus two tens makes six tens, and three ones remain.
+Example 4: Four tens and six ones represent 46 objects.",
+            @"Step 1: Read the selected center's actual task and quantity representation.
+Step 2: Identify whether it calls for within-20 calculation, tens addition, or counting tens and ones.
+Step 3: Solve using a matching strategy, with drawings or counters if helpful.
+Step 4: Verify that all answers match the task's number range.
+Step 5: For physical center play, follow the teacher's rules and explain the strategy to a partner.",
+            @"Do not mark physical game turns or partner explanations complete from a numeric answer. Do not apply the same ten-addition algorithm to a within-20 subtraction problem.",
+            @"I can use different place-value and within-20 methods in the right center activity."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L14",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-14/preparation.html",@"0b28935630a688ace4cb6cd871768f2f6cfe349d7740017b705cbad49f18418d",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.B.3", @"CCSS:1.NBT.C.5", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
+            @"Let’s Compare",
+            @"Compare TWO-DIGIT numbers using the VALUE of their tens and ones digits. First compare the number of tens; only if those are equal, compare the ones. Explain which number is greater or less using words and drawings. The source introduces the terms 'greater than' and 'less than' before formal symbol writing.",
+            @"Learning goal: compare two-digit numbers based on tens and ones, and use greater-than/less-than language. For 64 and 57, six tens exceed five tens even though 4 is less than 7. For 63 and 68, the tens match, so compare the ones.",
+            @"Example 1: 64 is GREATER THAN 57 because six tens exceed five tens.
+Example 2: 63 is LESS THAN 68 because both have six tens and three ones are less than eight.
+Example 3: 42 and 42 are EQUAL: four tens and two ones each.
+Example 4: 79 is GREATER THAN 71 because nine ones exceed one when tens are both seven.",
+            @"Step 1: Represent or name the tens and ones in each two-digit number.
+Step 2: Compare the tens counts first.
+Step 3: If the tens match, compare the ones.
+Step 4: State the relationship in full words: greater than, less than or equal to.
+Step 5: Support the comparison with rods/dots or the value of each digit.",
+            @"Do not compare just the ones digit when tens are different: 64 is greater than 57 even though four ones are fewer than seven. Formal < and > notation is taught in the next lesson, not required here.",
+            @"I can compare two-digit values by their tens and ones and explain greater or less."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L15",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-15/preparation.html",@"461322580dbb19eef16268d3c8eed6a02c5ca5a037c2a5ba2d106d53481c72b6",new[] { @"CCSS:1.NBT.B.3", @"CCSS:1.NBT.C.5", @"CCSS:1.OA.D.7" },
+            @"Greater Than, Less Than",
+            @"Understand and INTERPRET the comparison symbols > (greater than), < (less than) and = (equal). The wide-opening side faces the GREATER number. Translate a true symbol statement into a sentence and back, reasoning first with place value.",
+            @"Learning goal: interpret comparisons of two-digit numbers using <, > and =. Compare values rather than simply drawing the symbol shape. For 65>48, sixty-five is greater than forty-eight; 36<63 means thirty-six is less than sixty-three.",
+            @"Example 1: 52 > 39 because five tens exceed three tens.
+Example 2: 36 < 63 because three tens are fewer than six tens.
+Example 3: 47 = 47 since both represent four tens and seven ones.
+Example 4: 71 < 79 because both have seven tens and one one is fewer than nine.",
+            @"Step 1: Compare tens, then compare ones only if tens are tied.
+Step 2: Determine whether the first value is greater, less or equal.
+Step 3: Write or interpret the correct symbol between the two numbers.
+Step 4: Read the full comparison sentence aloud.
+Step 5: Recheck direction by explaining which digit determines the comparison.",
+            @"Do not reverse < and >: the OPEN side points toward the larger value. Do not treat = as a prompt to calculate a new result; it means both sides have equal values.",
+            @"I can interpret greater-than, less-than and equals symbols in two-digit comparisons.")
     ];
     private static Repair? Find(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson) =>
