@@ -215,6 +215,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2NextFiveSourceTeachingCorrections.IsTarget(document, lesson) ||
+         CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.IsTarget(document, lesson) ||
          CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson) ||
          CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
          CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson));
@@ -892,6 +893,18 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 translationsByContentId.TryGetValue(
                                     content.Id, out var b001SourceGoalsExistingRows)
                                     ? b001SourceGoalsExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG1Unit2CompareFiveSourceTeachingCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG1Unit2CompareFiveSourceTeachingCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document, sourceLesson, content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g1CompareExisting)
+                                    ? g1CompareExisting
                                     : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
