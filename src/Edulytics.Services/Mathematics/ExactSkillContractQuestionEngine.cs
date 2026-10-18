@@ -160,7 +160,8 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
-         UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()));
+         UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
+         UsCcssG1Unit2CompareFiveQuestions.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -294,6 +295,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssG1Unit2CompareFiveQuestions.Supports(family))
+            return UsCcssG1Unit2CompareFiveQuestions.Verify(family,parameters,answer);
         if (UsCcssG1Unit2NextFiveQuestions.Supports(family))
             return UsCcssG1Unit2NextFiveQuestions.Verify(family,parameters,answer);
         if (UsCcssG1Unit2Part2Questions.Supports(family))
@@ -890,6 +893,12 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssG1Unit2CompareFiveQuestions.Supports(family))
+        {
+            var item=UsCcssG1Unit2CompareFiveQuestions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,
+                item.ItemType,item.Parameters);
+        }
         if (UsCcssG1Unit2NextFiveQuestions.Supports(family))
         {
             var item=UsCcssG1Unit2NextFiveQuestions.Build(family,random);
@@ -2735,6 +2744,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssG1Unit2CompareFiveQuestions.Supports(problem.Family))
+            return UsCcssG1Unit2CompareFiveQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2NextFiveQuestions.Supports(problem.Family))
             return UsCcssG1Unit2NextFiveQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2Part2Questions.Supports(problem.Family))
