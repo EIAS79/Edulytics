@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            368, // Previous 358 plus ten source-specific V1 G1-010 mathematical activities
+            373, // Previous 368 plus five source-goal Practice families for NEW G1 lessons 51-55
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
