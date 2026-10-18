@@ -144,22 +144,22 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
     }
 
     [Fact]
-    public void UnrelatedGrade1LessonRetainsPriorVersion()
+    public void NextFiveGrade1SourceScopeAndPreviousBatchContentVersionsRemainIsolated()
     {
         var (doc, _, _) = Effective(
             CommonCoreG1SourceGroundedInstructionalCorrections.DataQuestionsLessonCode);
-        // V1 G1-006 now source-reviews L11-L15. Keep a genuine adjacent
-        // untouched lesson (L16) under the old content-version invariant.
-        var untouched = Assert.Single(doc.Lessons,
+        var newBatch = Assert.Single(doc.Lessons,
             l => l.LessonCode == "PED:US-CCSS-MATH:G1:U02:L16");
-        Assert.False(CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(doc, untouched));
-        Assert.False(CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.IsTarget(doc, untouched));
-        Assert.Equal(CommonCoreRichContentCorrections.CorrectionContentVersion,
-            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, untouched));
-        var newlyReviewed = Assert.Single(doc.Lessons,
-            l => l.LessonCode == "PED:US-CCSS-MATH:G1:U02:L11");
+        Assert.False(CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(doc,newBatch));
+        Assert.False(CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.IsTarget(doc,newBatch));
+        Assert.True(CommonCoreG1Unit2EquationsAndStoriesSourceCorrections.IsTarget(doc,newBatch));
+        Assert.Equal(CommonCoreG1Unit2EquationsAndStoriesSourceCorrections.CorrectedContentVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,newBatch));
+        var olderBatch=Assert.Single(doc.Lessons,
+            l=>l.LessonCode=="PED:US-CCSS-MATH:G1:U02:L11");
+        Assert.False(CommonCoreG1Unit2EquationsAndStoriesSourceCorrections.IsTarget(doc,olderBatch));
         Assert.Equal(CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.CorrectedContentVersion,
-            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,newlyReviewed));
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,olderBatch));
     }
 
     [Fact]
