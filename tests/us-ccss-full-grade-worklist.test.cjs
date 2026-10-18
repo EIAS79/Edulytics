@@ -21,7 +21,7 @@ test('ONE whole-grade queue includes ALL 96 ordinals 51-146 with no five-lesson 
   assert.equal(w.items[95].lessonCode,'PED:US-CCSS-MATH:G1:U08:L10');
   assert.equal(w.historic.count,50);
   assert.equal(w.historic.policy,'REFERENCE_ONLY_NO_RETEST');
-  assert.equal(w.status,'NO_GO');
+  assert.equal(w.status,w.acceptedNew===96?'ELIGIBLE_FOR_SEPARATE_FULL_GRADE_EVIDENCE_GATE':'NO_GO');
   const start=ledger.newLessons.find(x=>x.status==='NOT_STARTED')?.ordinal??147;
   assert.equal(w.implementation.nextUnstartedOrdinal,start);
   assert.equal(w.academicVerification.firstPendingOrdinal,ledger.nextOrdinal);
@@ -30,12 +30,10 @@ test('ONE whole-grade queue includes ALL 96 ordinals 51-146 with no five-lesson 
 });
 test('same one-grade queue persists beyond 5/10/30 without synthetic acceptance',()=>{
   const w=buildWorklist(manifest,copy(),{remainingOnly:true});
-  assert.equal(w.items.length,96);
-  assert.equal(w.items[5].ordinal,56);
-  assert.equal(w.items[30].ordinal,81);
-  assert.equal(w.items[95].ordinal,146);
-  assert.equal(w.acceptedNew,0);
-  assert.equal(w.firstUnfinishedOrdinal,51);
+  const pending=ledger.newLessons.filter(x=>x.status!=='INTERNALLY_ACCEPTED');
+  assert.deepEqual(w.items.map(x=>x.ordinal),pending.map(x=>x.ordinal));
+  assert.equal(w.acceptedNew,96-pending.length);
+  assert.equal(w.firstUnfinishedOrdinal,pending[0]?.ordinal??147);
 });
 test('start NEW lesson implementation after already started work, without duplicating 51–80',()=>{
   const first=ledger.newLessons.find(x=>x.status==='NOT_STARTED')?.ordinal??147;
@@ -45,7 +43,7 @@ test('start NEW lesson implementation after already started work, without duplic
   assert.equal(queue.items[0]?.ordinal??147,first);
   assert.equal(queue.items.length,ledger.newLessons.filter(x=>x.status==='NOT_STARTED').length);
   assert.ok(queue.items.every(x=>x.status==='NOT_STARTED'));
-  assert.equal(queue.academicVerification.firstPendingOrdinal,51);
+  assert.equal(queue.academicVerification.firstPendingOrdinal,ledger.nextOrdinal);
   assert.equal(queue.fixedChunkSize,null);
   assert.throws(()=>buildWorklist(manifest,copy(),{newOnly:true,remainingOnly:true}),/either academic/);
 });
@@ -59,8 +57,9 @@ test('no five-chunk fallback if canonical identity or scope altered',()=>{
 });
 test('resumption never skips earlier unfinished lessons just because 30 started',()=>{
   const progress=copy();
-  assert.equal(buildWorklist(manifest,progress).firstUnfinishedOrdinal,51);
-  progress.nextOrdinal=81;
+  const first=buildWorklist(manifest,progress).firstUnfinishedOrdinal;
+  assert.equal(first,ledger.nextOrdinal);
+  progress.nextOrdinal=first===51?81:51;
   assert.throws(()=>buildWorklist(manifest,progress),/Resume cursor disagrees/);
 });
 test('all-accepted label cannot itself publish the grade or impersonate source evidence',()=>{
