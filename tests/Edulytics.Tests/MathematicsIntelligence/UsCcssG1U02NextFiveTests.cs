@@ -239,4 +239,28 @@ public sealed class UsCcssG1U02NextFiveTests
         }
     }
 
+    [Fact]
+    public void CaptureSquaresEmptyBoardAcceptsEveryLegalFirstEdgeNotOnlyTop()
+    {
+        var p=new Dictionary<string,int>{{"first",4},{"second",3},{"mask",0}};
+        var family=UsCcssG1Unit2NextFiveQuestions.Capture;
+        foreach(var edge in new[]{"TOP","RIGHT","BOTTOM","LEFT"})
+        {
+            Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(
+                family,p,$"A2:{edge}:CONTINUE"));
+            Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(
+                family,p,$"A2:{edge}:CAPTURE"));
+            Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(
+                family,p,$"A1:{edge}:CONTINUE"));
+        }
+        p["mask"]=7;
+        Assert.True(UsCcssG1Unit2NextFiveQuestions.Verify(
+            family,p,"A2:LEFT:CAPTURE"));
+        Assert.False(UsCcssG1Unit2NextFiveQuestions.Verify(
+            family,p,"A2:RIGHT:CAPTURE"));
+        var prompt=UsCcssG1Unit2NextFiveQuestions.Build(
+            family,new Random(1)).Prompt;
+        Assert.DoesNotContain("start by marking the TOP side",prompt);
+    }
+
 }
