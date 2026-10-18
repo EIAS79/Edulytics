@@ -961,6 +961,11 @@ public static class LessonPracticeContractRegistry
         }
         // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
         // V1 G1-010: original 2021 ordinals 46-50 only (U03 L09-L13).
+        foreach(var reviewed in UsCcssG1FullGradeUnit7GeometryTimePracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("G1 U07 source lesson missing: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         foreach(var reviewed in UsCcssG1FullGradeUnit6MeasurementPracticeContracts.Reviewed)
         {
             if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("G1 U06 original lesson missing: "+reviewed.LessonCode);
