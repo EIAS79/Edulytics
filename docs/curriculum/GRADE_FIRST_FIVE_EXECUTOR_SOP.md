@@ -36,7 +36,7 @@ An authorized older source with sufficient objective/activity evidence is usable
 
 ## Source parity and reusable reporting
 
-Use the [G1-005 locally verified review](../artifacts/curriculum-delivery/US-CCSS-MATH/G1/batches/US-CCSS-G1-005-LOCAL-SOURCE-CROSSWALK.json) as a **level-of-detail example**, not a claim that all its subject matter or number of mathematical families generalizes. For every candidate lesson record keep analogous evidence for:
+Use the [G1-005 locally verified review](../../artifacts/curriculum-delivery/US-CCSS-MATH/G1/batches/US-CCSS-G1-005-LOCAL-SOURCE-CROSSWALK.json) as a **level-of-detail example**, not a claim that all its subject matter or number of mathematical families generalizes. For every candidate lesson record keep analogous evidence for:
 
 1. Preparation whole-lesson Addressing and Building Towards; activity-level Addressing and Building Towards, with scope differences separated from true omissions.
 2. Actual teacher task, available Student Facing task, original source files/hashes, and any alternate edition's actual task **and** explicit degree of overlap; record `no independent student PDF inspection` where true.
