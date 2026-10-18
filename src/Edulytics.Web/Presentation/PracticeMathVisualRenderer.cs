@@ -99,6 +99,12 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u02.story.compare_unknowns_equations" or
                 "usccss.g1.u02.center.capture_squares.select_legal_edge"
                     => GradeOneUnit2NextFiveVisual(family,parameters),
+                "usccss.g1.u02.compare.equal_cubes_write_equation" or
+                "usccss.g1.u02.compare.school_supplies_difference" or
+                "usccss.g1.u02.compare.art_supply_data_difference" or
+                "usccss.g1.u02.compare.write_related_equations" or
+                "usccss.g1.u02.compare.mixed_story_equation"
+                    => GradeOneUnit2CompareFiveVisual(family,parameters),
                 "usccss.g1.u02.center.picture_story_equation" or
                 "usccss.g1.u02.center.author_math_story" => GradeOneCenterStoryPicture(parameters),
                 "supporting.trigonometry.area_sine_double" or

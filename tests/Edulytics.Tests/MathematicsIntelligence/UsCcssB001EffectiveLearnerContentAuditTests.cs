@@ -47,6 +47,9 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
                 ("Shake, Spill, and Cover", "One Part Red, How Many Yellow?", "8"),
             "PED:US-CCSS-MATH:G1:U02:L09" =>
                 ("Compare Story Problems PLC Activity", "What Is the Unknown?", "9"),
+            "PED:US-CCSS-MATH:G1:U02:L14" =>
+                ("Compare with Addition and Subtraction PLC Activity",
+                 "Compare with Addition and Subtraction", "14"),
             _ => ((string Old, string New, string Number)?)null
         };
         if (verified is null || historicalTitle != verified.Value.Old ||
@@ -54,16 +57,25 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
             sourceUrl != "https://im.kendallhunt.com/k5/teachers/grade-1/unit-2/lesson-" +
                 verified.Value.Number + "/preparation.html")
             return false;
+        var nextBatch=code=="PED:US-CCSS-MATH:G1:U02:L14";
         using var batch = JsonDocument.Parse(File.ReadAllText(Path.Combine(root,
             "artifacts", "curriculum-delivery", "US-CCSS-MATH", "G1", "batches",
-            "US-CCSS-G1-005.json")));
+            nextBatch?"US-CCSS-G1-006.json":"US-CCSS-G1-005.json")));
         var matching = batch.RootElement.GetProperty("lessons").EnumerateArray()
             .Where(x => x.GetProperty("lessonCode").GetString() == code).ToArray();
-        return matching.Length == 1 &&
-            matching[0].GetProperty("title").GetString() == effectiveTitle &&
-            matching[0].GetProperty("previousCatalogueTitle").GetString() == historicalTitle &&
-            matching[0].GetProperty("teacherPreparationUrl").GetString() == sourceUrl &&
-            matching[0].GetProperty("locallyVerifiedPublisherTitle").GetBoolean();
+        if(matching.Length!=1)return false;
+        var target=matching[0];
+        if(nextBatch)
+            return batch.RootElement.GetProperty("lessonCount").GetInt32()==5 &&
+                target.GetProperty("source2021LessonTitle").GetString()==effectiveTitle &&
+                target.GetProperty("oldCatalogTitle").GetString()==historicalTitle &&
+                target.GetProperty("originalSourceTeacherPreparationUrl").GetString()==sourceUrl &&
+                target.GetProperty("originalSourceTeacherPreparationSha256").GetString()==
+                    "18a8baef801cf09e27f5d6e64283a4287c274425db159bd240b1bd74cc27a904";
+        return target.GetProperty("title").GetString() == effectiveTitle &&
+            target.GetProperty("previousCatalogueTitle").GetString() == historicalTitle &&
+            target.GetProperty("teacherPreparationUrl").GetString() == sourceUrl &&
+            target.GetProperty("locallyVerifiedPublisherTitle").GetBoolean();
     }
 
     [Fact]

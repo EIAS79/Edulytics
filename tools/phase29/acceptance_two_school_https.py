@@ -911,12 +911,32 @@ for key, schoolname in SCHOOLS:
                 ("08", "usccss.g1.u02.shake_cover.write_missing_addend"),
                 ("09", "usccss.g1.u02.story.compare_unknowns_equations"),
                 ("10", "usccss.g1.u02.center.capture_squares.select_legal_edge"),
+                # V1 G1-006: five original first-edition 2021 source lessons.
+                ("11", "usccss.g1.u02.compare.equal_cubes_write_equation"),
+                ("12", "usccss.g1.u02.compare.school_supplies_difference"),
+                ("13", "usccss.g1.u02.compare.art_supply_data_difference"),
+                ("14", "usccss.g1.u02.compare.write_related_equations"),
+                ("15", "usccss.g1.u02.compare.mixed_story_equation"),
             ):
                 code = "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix
                 assert code in offered_by_code, ("V1 lesson not available to student", code)
                 lesson_id = offered_by_code[code]
                 lesson_html = get_page(student, "/student/learning/lesson/" + lesson_id)
                 assert "rich-lesson-section" in lesson_html, (code, "learner lesson missing")
+                if lesson_suffix in ("11", "12", "13", "14", "15"):
+                    assert "Goal:" in lesson_html, (code, "publisher goal absent")
+                    # Rich V2 deliberately transforms source Step N prose into
+                    # numbered <li> nodes in rendered worked-example cards.
+                    # Assert the actual learner-facing worked method structure,
+                    # not a raw storage marker that the template never prints.
+                    assert "rich-solution-card" in lesson_html and re.search(
+                        r'<ol[^>]*>\s*<li[^>]*>[^<]+</li>', lesson_html, re.I
+                    ), (code, "learner-facing worked methods absent")
+                    assert "The source task combines" not in lesson_html, (
+                        code, "historical generic example leaked")
+                if lesson_suffix == "14":
+                    assert "Compare with Addition and Subtraction" in html.unescape(lesson_html), (
+                        code, "2021 original title not projected")
                 form = get_page(student, "/student/practice")
                 token = re.search(
                     r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
@@ -1000,7 +1020,9 @@ for key, schoolname in SCHOOLS:
                     assert order == str(index+1) and saved_answer == expected_answer and (
                         correct == ("0" if index == wrong_index else "1")
                     ), (code, "incorrect grading or persisted answer", line)
-                print("V1_G1_004_AUTHORED_LEARNER_HTTPS_PERSISTED",
+                print("V1_G1_006_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("11", "12", "13", "14", "15") else
+                      "V1_G1_004_AUTHORED_LEARNER_HTTPS_PERSISTED",
                       code, "4 correct / 1 wrong", flush=True)
 
 
