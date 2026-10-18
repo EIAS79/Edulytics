@@ -89,9 +89,28 @@ public static class UsCcssG1Unit2CompareFiveQuestions
     private static string Add(int a,int b,int t)=>$"{a}+{b}={t}";
     private static string Sub(int t,int a,int b)=>$"{t}-{a}={b}";
     private static string Compact(string s)=>string.Concat(s.Where(c=>!char.IsWhiteSpace(c)));
+
+    // 2021 IM G1 U02 L14 teaches that "10 = 7 + 3" is as valid as
+    // "7 + 3 = 10". Preserve the original mathematical question:
+    // normalize ONLY one expression-versus-number equality, not an
+    // unrelated arithmetic or an arbitrary/ill-formed expression.
+    private static string NormalizeEqualityOrientation(string equation)
+    {
+        var equals=equation.IndexOf('=');
+        if(equals<=0||equals==equation.Length-1||
+           equation.LastIndexOf('=')!=equals)return equation;
+        var left=equation[..equals];
+        var right=equation[(equals+1)..];
+        var leftHasOperation=left.Contains('+')||left.Contains('-');
+        var rightHasOperation=right.Contains('+')||right.Contains('-');
+        return !leftHasOperation&&rightHasOperation
+            ?right+"="+left
+            :equation;
+    }
+
     private static string[] Parts(string s)=>s.Split(';',
         StringSplitOptions.TrimEntries|StringSplitOptions.RemoveEmptyEntries)
-        .Select(Compact).ToArray();
+        .Select(x=>NormalizeEqualityOrientation(Compact(x))).ToArray();
 
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
