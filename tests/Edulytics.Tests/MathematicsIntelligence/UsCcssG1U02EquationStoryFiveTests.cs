@@ -48,7 +48,7 @@ public sealed class UsCcssG1U02EquationStoryFiveTests
             Assert.False(ExactSkillContractQuestionEngine.Verify(
                 family,item.Parameters,"999"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(
-                family,item.Parameters,"2+3=5"));
+                family,item.Parameters,"1+1=99"));
             var svg=Edulytics.Web.Presentation.PracticeMathVisualRenderer.RenderSvg(
                 family,System.Text.Json.JsonSerializer.Serialize(new{parameters=item.Parameters}));
             Assert.NotNull(svg);

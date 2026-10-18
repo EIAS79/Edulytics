@@ -21,7 +21,7 @@ public sealed class CommonCoreG1U02EquationStoryFiveSourceTests
         var rows=Targets();
         Assert.Equal(5,rows.Count);
         var titles=new[]{"Center Day 3","How Do the Stories Compare?",
-            "Equations with Unknowns","Story Problems and Equations","What's the Story?"};
+            "Equations with Unknowns","Story Problems and Equations","What’s the Story?"};
         for(var i=0;i<5;i++)
         {
             var l=rows[i];
