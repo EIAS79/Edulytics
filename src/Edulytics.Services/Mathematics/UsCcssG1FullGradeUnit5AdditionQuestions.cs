@@ -50,7 +50,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             Kind.NoComposeTwoDigits=>a>=10&&a<=89&&b>=10&&b<=89&&sum<=99&&ones<10,
             Kind.MakeNewTen=>a>=20&&a<=89&&b>=1&&b<=9&&sum<=99&&ones>=10,
             Kind.ComposingTwoDigits=>a>=10&&a<=89&&b>=10&&b<=89&&sum<=100&&ones>=10,
-            Kind.Flexible=>a>=20&&a<=89&&b>=1&&b<=10&&sum<=99,
+            Kind.Flexible=>a>=20&&a<=89&&b>=1&&b<=(spec.LessonCode=="L07"?9:10)&&sum<=99,
             _=>false
         };
     }
@@ -70,7 +70,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             {
                 Kind.NoComposeTwoDigits or Kind.ComposingTwoDigits=>random.Next(10,90),
                 Kind.TensOrOnes when mode%2==1=>random.Next(1,4)*10,
-                Kind.Flexible=>random.Next(1,11),
+                Kind.Flexible=>random.Next(1,spec.LessonCode=="L07"?10:11),
                 _=>random.Next(1,10)
             };
             var candidate=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}};
