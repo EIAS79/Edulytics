@@ -58,7 +58,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("60+4",unit4Text(9));
         Assert.Contains("30+7",unit4Text(10));
         Assert.Contains("34+20=54",unit4Text(11));
-        Assert.Contains("58+10=68",unit4Text(12));
+        Assert.Contains("Ten more than 58 is 68",unit4Text(12));
         Assert.Contains("43+20=63",unit4Text(13));
         Assert.Contains("64 is GREATER THAN 57",unit4Text(14));
         Assert.Contains("52 > 39",unit4Text(15));

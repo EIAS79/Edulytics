@@ -138,6 +138,14 @@ public static class LessonPracticeInteractionRegistry
         string familyId,
         string answerType)
     {
+        // Source-specific G1 two-digit comparison prompts use structured
+        // RELATION=GREATER/LESS/EQUAL or SYMBOL=<,>,= entries, not a single
+        // RelationChoice response. Preserve that real grading contract.
+        if ((familyId.StartsWith("usccss.g1.u04.l14.",StringComparison.Ordinal) ||
+             familyId.StartsWith("usccss.g1.u04.l15.",StringComparison.Ordinal)) &&
+            answerType == "contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
         // Structured comparison families may share a ".compare" family prefix
         // without using the < = > response shape. Resolve their declared answer
         // contract before the generic comparison fallback.
