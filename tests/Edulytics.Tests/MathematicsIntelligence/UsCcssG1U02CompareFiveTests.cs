@@ -82,6 +82,8 @@ public sealed class UsCcssG1U02CompareFiveTests
         Assert.Equal("5+4=9",UsCcssG1Unit2CompareFiveQuestions.Solve(family,p));
         Assert.True(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,"9 - 5 = 4"));
         Assert.True(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,"4 + 5 = 9"));
+        Assert.True(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,"9=5+4"));
+        Assert.True(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,"4=9-5"));
         Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,"9+5=14"));
         Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,"4"));
     }
@@ -93,11 +95,23 @@ public sealed class UsCcssG1U02CompareFiveTests
         var p=new Dictionary<string,int>{{"small",5},{"big",9},{"other",2},{"mode",0}};
         Assert.True(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,
             "9 - 5 = 4 ; 4 + 5 = 9"));
+        // Explicitly attested in the original 2021 L14 warm-up:
+        // a completed number sentence remains true with the sides reversed.
+        Assert.True(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,
+            "9 = 5 + 4 ; 4 = 9 - 5"));
+        Assert.True(UsCcssG1Unit2CompareFiveQuestions.GradePersistedAnswer(
+            family,"5+4=9;9-5=4","9=4+5;4=9-5"));
         Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,"5+4=9"));
         Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,
             "5+4=9;4+5=9"));
         Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,
             "5+4=9;9-4=5"));
+        Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,
+            "9=5+4;5=9-5"));
+        Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,
+            "9=5+4;9=5+4"));
+        Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(family,p,
+            "9==5+4;4=9-5"));
     }
 
     [Fact]
