@@ -13,7 +13,7 @@ test('full-grade new-lesson source-to-evidence trace is exact and NO_GO',()=>{
   assert.equal(x.records.length,96);
   assert.deepEqual(x.records.map(z=>z.lessonCode),m.lessons.slice(50).map(y=>y.lessonCode));
   assert.deepEqual(x.records.map(z=>z.ordinal),Array.from({length:96},(_,i)=>i+51));
-  assert.equal(x.releaseDecision,'NO_GO');
+  assert.equal(x.releaseDecision,state.release);
   assert.equal(state.release,'NO_GO');
   for(const z of x.records){
     assert.equal(z.independentAcademicAcceptance,false);
