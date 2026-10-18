@@ -82,7 +82,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 6=>$"Start counting at {a} (NOT at one); count ON by {b} steps, remaining at most 120. Write LAST=number.",
                 7=>$"Make {a} in two ways. Exchange ONE ten-rod for ten ones. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.",
                 8=>$"Number riddle: The secret two-digit number is 10 LESS than {a+10}, and has {a/10} tens and {a%10} ones. Write NUMBER=number.",
-                9=>$"Review a hypothetical student-written number riddle (not proof of authorship): the secret is {a}, has {a/10} tens and {a%10} ones, and is ten less than {a+10}. Verify its numerical clues. Write NUMBER=number;VALID=YES.",
+                9=>$"Review a hypothetical student-written number riddle (not proof of authorship): the secret is {a}, has {a/10} tens and {a%10} ones, and is ten less than {a+10}. Verify its numerical clues. Write NUMBER=number;VALID=YES/NO.",
                 _=>throw new InvalidOperationException()
             };
             return new(family,prompt,"Use first-grade addition, difference, grouping and place value reasoning. Actual student-authored riddles, drawings and PLC explanations require independent teacher evidence.",AssessmentItemType.ShortAnswer,p);
