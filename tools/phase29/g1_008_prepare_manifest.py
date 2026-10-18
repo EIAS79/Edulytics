@@ -30,6 +30,7 @@ pdf_hashes={
   40:"7496b244a00f14a2fe6a93d9ab841e20df4de2ea8eda989c775cb82cebb24b6b"
 }
 d["studentPdfInspection"]="ORIGINAL_2021_STUDENT_TASK_PDFS_ALL_FIVE_TEXT_INSPECTED_AND_SHA256_VERIFIED"
+d["sourceReview"]="ORIGINAL_TEACHER_PREPARATION_AND_FULL_LESSONS_READ; ORIGINAL_STUDENT_TASK_PDF_TEXT_ALL_FIVE_INSPECTED; PUBLISHER_DIAGRAM_PIXEL_PARITY_NOT_VERIFIED"
 for i,lesson in enumerate(d["lessons"]):
     lesson["original2021StudentTaskPdfSha256"]=pdf_hashes[lesson["gradeOrdinal"]]
     lesson["independentStudentTaskTextReview"]="ORIGINAL_PDF_TEXT_STRUCTURE_REVIEWED; graphics parity separate"
@@ -62,7 +63,7 @@ manifest={
   "ownerProductionUat":"PENDING",
   "externalPublisherSignoff":"NOT_CLAIMED",
   "lessonCodes":[x["lessonCode"] for x in d["lessons"]],
-  "sourceLimitations":["Publisher-original student task PDFs 37/40 not independently text inspected",
+  "sourceLimitations":["Publisher-original student task PDF texts 36-40 reviewed; independent illustration and diagram pixel parity not verified",
     "Partner centers and fully open authored questions/stories require real teacher review",
     "Digital sample survey is clearly labeled and does not assert any real classroom poll"],
   "nextPermittedBatch":"US-CCSS-G1-009, only after V1 completion criteria"
