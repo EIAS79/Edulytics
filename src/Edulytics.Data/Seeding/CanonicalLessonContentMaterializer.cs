@@ -42,6 +42,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1SourceFiveNextCorrections.Apply(document);
         CommonCoreG1TenAndTeenSourceFiveCorrections.Apply(document);
         CommonCoreG1FullGradeStartingContentCorrections.Apply(document);
+        CommonCoreG1FullGradeFinalUnit4Corrections.Apply(document);
         CommonCoreG1FullGradeUnit5ContentCorrections.Apply(document);
         CommonCoreG1FullGradeUnit6To8ContentCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
@@ -230,8 +231,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document,lesson,g1009);
         var g1FullGrade = CommonCoreG1FullGradeStartingContentCorrections
             .GetExpectedContentVersion(document, lesson, g1010);
-        var g1Unit5 = CommonCoreG1FullGradeUnit5ContentCorrections
+        var g1EndUnit4 = CommonCoreG1FullGradeFinalUnit4Corrections
             .GetExpectedContentVersion(document,lesson,g1FullGrade);
+        var g1Unit5 = CommonCoreG1FullGradeUnit5ContentCorrections
+            .GetExpectedContentVersion(document,lesson,g1EndUnit4);
         var g1Unit6To8 = CommonCoreG1FullGradeUnit6To8ContentCorrections
             .GetExpectedContentVersion(document,lesson,g1Unit5);
         var html = CommonCoreSourceBoundHtmlEntityCorrections
@@ -282,6 +285,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1SourceFiveNextCorrections.IsTarget(document, lesson) ||
         CommonCoreG1TenAndTeenSourceFiveCorrections.IsTarget(document, lesson) ||
         CommonCoreG1FullGradeStartingContentCorrections.IsTarget(document, lesson) ||
+        CommonCoreG1FullGradeFinalUnit4Corrections.IsTarget(document, lesson) ||
         CommonCoreG1FullGradeUnit5ContentCorrections.IsTarget(document, lesson) ||
         CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(document, lesson) ||
         CommonCoreSourceBoundHtmlEntityCorrections
@@ -373,6 +377,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1TenAndTeenSourceFiveCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1FullGradeStartingContentCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG1FullGradeFinalUnit4Corrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1FullGradeUnit5ContentCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
