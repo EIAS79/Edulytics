@@ -35,7 +35,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         var docs=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var targets=docs.SelectMany(d=>d.Lessons.Where(l=>
             CommonCoreG1FullGradeStartingContentCorrections.IsTarget(d,l)))
-            .Select(l=>l.LessonCode)).ToArray();
+            .Select(l=>l.LessonCode).ToArray();
         Assert.Equal(5,targets.Length);
         Assert.Equal(5,targets.Distinct(StringComparer.Ordinal).Count());
         Assert.Equal(new[]{14,15,16,17,18}.Select(n=>$"PED:US-CCSS-MATH:G1:U03:L{n:00}"),targets);
