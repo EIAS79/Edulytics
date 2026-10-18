@@ -60,7 +60,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
         for (var n=14;n<=28;n++)
             Assert.Contains($"PED:US-CCSS-MATH:G1:U03:L{n:00}",selected);
         for (var n=1;n<=5;n++)
-            Assert.Contains($"PED:US-CCSS-MATH:G1:U03:L{n:00}",selected);
+            Assert.Contains($"PED:US-CCSS-MATH:G1:U04:L{n:00}",selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U03:L28", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L11", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U07:L06", selected);
