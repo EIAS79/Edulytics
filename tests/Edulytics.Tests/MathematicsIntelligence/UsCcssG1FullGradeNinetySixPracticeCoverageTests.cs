@@ -37,8 +37,8 @@ public sealed class UsCcssG1FullGradeNinetySixPracticeCoverageTests
                 {
                     // Lesson 65 learner-authored optional stories:
                     // a numeric generated answer is NOT evidence of writing one.
-                    Assert.False(contract.AllowedQuestionFamilies.Any(x=>
-                        x.StartsWith("usccss.g1.u03.l28.",StringComparison.Ordinal)));
+                    Assert.DoesNotContain(contract.AllowedQuestionFamilies,x=>
+                        x.StartsWith("usccss.g1.u03.l28.",StringComparison.Ordinal));
                     continue;
                 }
                 var f=Assert.Single(contract.AllowedQuestionFamilies);
