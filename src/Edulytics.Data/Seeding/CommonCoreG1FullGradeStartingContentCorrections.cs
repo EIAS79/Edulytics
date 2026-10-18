@@ -343,7 +343,7 @@ Step 5: If participating in center play, discuss the strategy and turns with the
                 en.QuickSummary==r.Summary) continue;
             if(!en.WorkedExamples.StartsWith("Example 1:",StringComparison.Ordinal)||
                 !en.StepByStepSolutions.StartsWith("Step 1:",StringComparison.Ordinal))
-                throw new InvalidOperationException("G1 full-grade L51-L55 unexpected pre-repair body");
+                throw new InvalidOperationException("G1 full-grade unexpected pre-repair body: "+lesson.LessonCode+" | example="+en.WorkedExamples[..Math.Min(42,en.WorkedExamples.Length)]+" | steps="+en.StepByStepSolutions[..Math.Min(42,en.StepByStepSolutions.Length)]);
             en.Title=r.Title;en.Explanation=r.Explanation;en.KeyConceptsAndRules=r.Concepts;
             en.WorkedExamples=r.Examples;en.StepByStepSolutions=r.Steps;
             en.CommonMistakes=r.Mistakes;en.QuickSummary=r.Summary;
