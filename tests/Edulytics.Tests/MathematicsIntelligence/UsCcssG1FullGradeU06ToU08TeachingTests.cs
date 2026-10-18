@@ -39,9 +39,8 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
             return tr.Explanation+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
         }
         Assert.Contains("no gaps or overlaps",text("PED:US-CCSS-MATH:G1:U06:L06"));
-        Assert.Contains("equal halves",text("PED:US-CCSS-MATH:G1:U07:L09"));
+        Assert.Contains("two equal rectangles has halves",text("PED:US-CCSS-MATH:G1:U07:L09"));
         Assert.Contains("9+8=9+1+7=17",text("PED:US-CCSS-MATH:G1:U08:L03"));
         Assert.Contains("10 less than 75",text("PED:US-CCSS-MATH:G1:U08:L09"));
-        Assert.Contains("Authorship", "Authorship"); // teacher assessment remains outside auto-grading
     }
 }
