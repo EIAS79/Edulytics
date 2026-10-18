@@ -1,0 +1,155 @@
+using Edulytics.Core.Enums;
+
+namespace Edulytics.Services.Mathematics;
+
+/// <summary>
+/// G1 newly scoped U03 L24–L27 and U04 L01–L05. These are the independently
+/// gradeable numeric COMPONENTS of the original activities. PLC, peer-led
+/// centers, learner-authored stories and classroom discussion are NOT
+/// automatically certified by these generators.
+/// U03 L28 (ordinal 65) intentionally requires a separate teacher-reviewed
+/// original student story rubric and has no numeric "authorship" generator.
+/// </summary>
+public static class UsCcssG1FullGradeStrategyAndTensQuestions
+{
+    public const string CountOnOrAway="usccss.g1.u03.l24.strategy.count_on_or_away";
+    public const string FlexibleSubtract="usccss.g1.u03.l25.strategy.flexible_subtract";
+    public const string StoryUnknowns="usccss.g1.u03.l26.story.unknown_positions";
+    public const string CenterWithin20="usccss.g1.u03.l27.center.add_subtract";
+    public const string CountTens="usccss.g1.u04.l01.count.groups_of_ten";
+    public const string MatchTens="usccss.g1.u04.l02.match.tens_equivalence";
+    public const string AddRemoveTen="usccss.g1.u04.l03.tens.add_or_remove_one";
+    public const string AddRemoveMultipleTens="usccss.g1.u04.l04.tens.add_remove_multiples";
+    public const string CenterTens="usccss.g1.u04.l05.center.tens_and_within20";
+    public static readonly IReadOnlyList<string> Families=
+    [CountOnOrAway,FlexibleSubtract,StoryUnknowns,CenterWithin20,
+     CountTens,MatchTens,AddRemoveTen,AddRemoveMultipleTens,CenterTens];
+
+    public sealed record Problem(string Family,string Prompt,string Explanation,
+        AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
+    public static bool Supports(string? family)=>family is not null && Families.Contains(family,StringComparer.Ordinal);
+    private static string Norm(string? s)=>string.Concat((s??"").Where(c=>!char.IsWhiteSpace(c))).ToUpperInvariant();
+    public static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!Supports(family)||p.Count!=4||
+           !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+           !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
+           mode<0||mode>5 || c!=0)return false;
+        return family switch
+        {
+            CountOnOrAway or FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a,
+            StoryUnknowns=>a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20,
+            CenterWithin20=>mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a,
+            CountTens=>mode<=3&&a>=1&&a<=6&&b==0,
+            MatchTens=>mode<=3&&a>=1&&a<=9&&b==0,
+            AddRemoveTen=>mode<=3&&a>=2&&a<=8&&b==1,
+            AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,10-a),
+            CenterTens=>(mode<=1&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,10-a))||
+                        (mode>=2&&mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a),
+            _=>false
+        };
+    }
+    public static Problem Build(string family,Random random)
+    {
+        if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
+        int mode=family==StoryUnknowns?random.Next(6):random.Next(4);
+        int a=0,b=0;
+        if(family is CountOnOrAway or FlexibleSubtract){a=random.Next(11,21);b=random.Next(1,Math.Min(9,a-1)+1);}
+        else if(family==StoryUnknowns){a=random.Next(1,11);b=random.Next(1,11);}
+        else if(family==CenterWithin20){a=random.Next(11,18);b=random.Next(1,21-a);}
+        else if(family==CountTens){a=random.Next(1,7);}
+        else if(family==MatchTens){a=random.Next(1,10);}
+        else if(family==AddRemoveTen){a=random.Next(2,9);b=1;}
+        else if(family==AddRemoveMultipleTens){a=random.Next(2,8);b=random.Next(1,Math.Min(a,10-a)+1);}
+        else if(family==CenterTens)
+        {
+            if(mode<=1){a=random.Next(2,8);b=random.Next(1,Math.Min(a,10-a)+1);}
+            else{a=random.Next(11,18);b=random.Next(1,21-a);}
+        }
+        var p=new Dictionary<string,int>(StringComparer.Ordinal)
+            {["a"]=a,["b"]=b,["c"]=0,["mode"]=mode};
+        if(!Valid(family,p))throw new InvalidOperationException("Grade 1 source problem violates value bounds");
+        var t=a+b;
+        string prompt=family switch
+        {
+            CountOnOrAway=>$"Compare counting ON from {b} to {a} with taking AWAY {b} from {a}. Both methods must find the difference. Write DIFFERENCE=number;CHECK=number+number=number.",
+            FlexibleSubtract=>$"Choose a subtraction method for {a}-{b}. Check using related addition. Write DIFFERENCE=number;CHECK=number+number=number.",
+            StoryUnknowns=>mode switch
+            {
+                0=>$"{a} birds are here and {b} more arrive. How many birds NOW? Write UNKNOWN=number;EQUATION=number+number=number.",
+                1=>$"{a} birds are here; some arrive, and now {t} birds are here. How many ARRIVED? Write UNKNOWN=number;EQUATION=number+number=number.",
+                2=>$"Some birds are here; {b} arrive, and now {t} birds are here. How many were here at START? Write UNKNOWN=number;EQUATION=number+number=number.",
+                3=>$"{t} birds are here and {b} fly away. How many REMAIN? Write UNKNOWN=number;EQUATION=number-number=number.",
+                4=>$"{t} birds are here; some fly away, and {a} remain. How many FLEW AWAY? Write UNKNOWN=number;EQUATION=number-number=number.",
+                _=>$"Some birds are here, {b} fly away, and {a} remain. How many were here at START? Write UNKNOWN=number;EQUATION=number-number=number."
+            },
+            CenterWithin20=>mode%2==0
+                ?$"Center numeric task: solve {a}+{b} within 20. Write RESULT=number."
+                :$"Center numeric task: solve {a}-{b} within 20. Write RESULT=number.",
+            CountTens=>$"A class has {a} groups of TEN counters (one group has 10 counters). Count them all. Write GROUPS=number;TOTAL=number.",
+            MatchTens=>$"Match a drawing of {a} towers of TEN cubes to the numeral. Write TENS=number;NUMBER=number.",
+            AddRemoveTen=>mode%2==0
+                ?$"There are {a} ten-cube towers. Add ONE whole tower of ten. Write TENS=number;TOTAL=number."
+                :$"There are {a} ten-cube towers. Remove ONE whole tower of ten. Write TENS=number;TOTAL=number.",
+            AddRemoveMultipleTens=>mode%2==0
+                ?$"Add {b} tens to {a} tens. Write TENS=number;TOTAL=number."
+                :$"Take away {b} tens from {a} tens. Write TENS=number;TOTAL=number.",
+            CenterTens=>mode switch
+            {
+                0=>$"Check It Off number cards: add {a*10}+{b*10}. Write RESULT=number.",
+                1=>$"Check It Off number cards: subtract {a*10}-{b*10}. Write RESULT=number.",
+                2=>$"Earlier center: add {a}+{b} within 20. Write RESULT=number.",
+                _=>$"Earlier center: subtract {a}-{b} within 20. Write RESULT=number."
+            },
+            _=>throw new InvalidOperationException()
+        };
+        return new(family,prompt,"Explain correct group-ten, story-equation or within-20 arithmetic. This numeric task does not certify student-authored work, PLC activities or classroom partner games.",AssessmentItemType.ShortAnswer,p);
+    }
+    public static string Solve(string family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!Valid(family,p))throw new InvalidOperationException("Invalid scoped G1 strategy/tens instance");
+        int a=p["a"],b=p["b"],mode=p["mode"],sum=a+b;
+        return family switch
+        {
+            CountOnOrAway or FlexibleSubtract=>$"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
+            StoryUnknowns=>mode switch
+            {
+                0=>$"UNKNOWN={sum};EQUATION={a}+{b}={sum}",
+                1=>$"UNKNOWN={b};EQUATION={a}+{b}={sum}",
+                2=>$"UNKNOWN={a};EQUATION={a}+{b}={sum}",
+                3=>$"UNKNOWN={a};EQUATION={sum}-{b}={a}",
+                4=>$"UNKNOWN={b};EQUATION={sum}-{b}={a}",
+                _=>$"UNKNOWN={sum};EQUATION={sum}-{b}={a}"
+            },
+            CenterWithin20=>$"RESULT={(mode%2==0?a+b:a-b)}",
+            CountTens=>$"GROUPS={a};TOTAL={10*a}",
+            MatchTens=>$"TENS={a};NUMBER={10*a}",
+            AddRemoveTen=>mode%2==0
+                ?$"TENS={a+1};TOTAL={10*(a+1)}"
+                :$"TENS={a-1};TOTAL={10*(a-1)}",
+            AddRemoveMultipleTens=>mode%2==0
+                ?$"TENS={sum};TOTAL={10*sum}"
+                :$"TENS={a-b};TOTAL={10*(a-b)}",
+            CenterTens=>$"RESULT={ (mode==0?10*sum:mode==1?10*(a-b):mode==2?sum:a-b)}",
+            _=>throw new InvalidOperationException()
+        };
+    }
+    public static bool GradePersistedAnswer(string? family,string? expected,string? response)
+    {
+        if(!Supports(family)||string.IsNullOrWhiteSpace(expected)||string.IsNullOrWhiteSpace(response))return false;
+        var e=Norm(expected).Split(';');var v=Norm(response).Split(';');
+        if(e.Length!=v.Length)return false;
+        var wanted=new Dictionary<string,string>(StringComparer.Ordinal);
+        var got=new Dictionary<string,string>(StringComparer.Ordinal);
+        foreach(var (parts,target) in new[]{(e,wanted),(v,got)})
+            foreach(var part in parts)
+            {
+                int k=part.IndexOf('=');
+                if(k<=0||k==part.Length-1||!target.TryAdd(part[..k],part[(k+1)..]))return false;
+            }
+        return wanted.Count==got.Count &&
+            wanted.All(item=>got.TryGetValue(item.Key,out var val)&&val==item.Value);
+    }
+    public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? response)=>
+        Valid(family,p)&&GradePersistedAnswer(family,Solve(family!,p),response);
+}
