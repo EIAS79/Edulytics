@@ -925,7 +925,13 @@ for key, schoolname in SCHOOLS:
                 assert "rich-lesson-section" in lesson_html, (code, "learner lesson missing")
                 if lesson_suffix in ("11", "12", "13", "14", "15"):
                     assert "Goal:" in lesson_html, (code, "publisher goal absent")
-                    assert "Step 4:" in lesson_html, (code, "source methods absent")
+                    # Rich V2 deliberately transforms source Step N prose into
+                    # numbered <li> nodes in rendered worked-example cards.
+                    # Assert the actual learner-facing worked method structure,
+                    # not a raw storage marker that the template never prints.
+                    assert "rich-solution-card" in lesson_html and re.search(
+                        r'<ol[^>]*>\s*<li[^>]*>[^<]+</li>', lesson_html, re.I
+                    ), (code, "learner-facing worked methods absent")
                     assert "The source task combines" not in lesson_html, (
                         code, "historical generic example leaked")
                 if lesson_suffix == "14":
