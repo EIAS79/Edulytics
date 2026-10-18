@@ -77,7 +77,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             1=>$"Without moving two separate strips, a SAME reference strip of {a} cubes matches strip A and another of {b} cubes matches B. Which is longer? Write LONGER=A/B/EQUAL.",
             2=>$"Two classroom objects cannot be laid together. A third measuring strip gives lengths {a} and {b} in SAME size units. Choose the longer one. Write LONGER=A/B/EQUAL.",
             3=>mode%2==0?$"Center addition: compute {a}+{b} within 100. Write RESULT=number.":
-                $"Center expression comparison: compare {Math.Min(a,12)}+{Math.Min(b,8)} and {Math.Min(a,12)}+{Math.Min(b,8)}. Write RELATION=EQUAL.",
+                $"Center expression comparison within 20: compare {a%8+1}+{b%8+1} with {a/10%8+1}+{b/10%8+1}. Write RELATION=GREATER/LESS/EQUAL.",
             4=>$"A line is tiled by {a} EQUAL connecting cubes, placed edge to edge with NO gaps or overlap. How many cube-length units? Write LENGTH=number.",
             5=>$"A pencil is exactly covered by {a} identical paper clips, end to end, without gaps or overlaps. Record the measurement. Write LENGTH=number.",
             6=>$"One strip is {a} long units. A small unit is HALF the length of one long unit. How many small units cover the SAME strip? Write SMALL_UNITS=number.",
@@ -112,7 +112,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         {
             0=>$"LONGER={Relation(a,b,"RED","BLUE")};DIFFERENCE={Math.Abs(a-b)}",
             1 or 2=>$"LONGER={Relation(a,b,"A","B")}",
-            3=>mode%2==0?$"RESULT={a+b}":"RELATION=EQUAL",
+            3=>mode%2==0?$"RESULT={a+b}":$"RELATION={Relation(a%8+b%8+2,a/10%8+b/10%8+2,"GREATER","LESS")}",
             4 or 5=>$"LENGTH={a}",
             6=>$"SMALL_UNITS={a*2}",
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
