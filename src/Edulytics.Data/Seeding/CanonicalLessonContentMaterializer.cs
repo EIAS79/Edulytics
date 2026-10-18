@@ -39,6 +39,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.Apply(document);
         CommonCoreG1Unit2EquationsAndStoriesSourceCorrections.Apply(document);
         CommonCoreG1NextSourceFiveCorrections.Apply(document);
+        CommonCoreG1SourceFiveNextCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
         CommonCoreT001MixedAddSubtractContentCorrection.Apply(document);
         CommonCoreT001FindThePairContentCorrection.Apply(document);
@@ -219,8 +220,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document,lesson,compared);
         var next=CommonCoreG1NextSourceFiveCorrections
             .GetExpectedContentVersion(document,lesson,stories);
+        var g1009=CommonCoreG1SourceFiveNextCorrections
+            .GetExpectedContentVersion(document,lesson,next);
         var html = CommonCoreSourceBoundHtmlEntityCorrections
-            .GetExpectedContentVersion(document, lesson, next);
+            .GetExpectedContentVersion(document, lesson, g1009);
         var mixed = CommonCoreT001MixedAddSubtractContentCorrection
             .GetExpectedContentVersion(document, lesson, html);
         return CommonCoreT001FindThePairContentCorrection
@@ -264,6 +267,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2EquationsAndStoriesSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1NextSourceFiveCorrections.IsTarget(document, lesson) ||
+        CommonCoreG1SourceFiveNextCorrections.IsTarget(document, lesson) ||
         CommonCoreSourceBoundHtmlEntityCorrections
             .IsTarget(document, lesson) ||
         CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
@@ -347,6 +351,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1Unit2EquationsAndStoriesSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1NextSourceFiveCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG1SourceFiveNextCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreSourceBoundHtmlEntityCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||

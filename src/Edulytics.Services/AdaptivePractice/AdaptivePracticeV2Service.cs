@@ -428,6 +428,9 @@ public sealed class AdaptivePracticeV2Service(
         var correct = string.Equals(item.GenerationFamily,
                 UsCcssT001ConstructShapeGraph.Family, StringComparison.Ordinal)
             ? string.Equals(trimmed, item.CorrectAnswer, StringComparison.Ordinal)
+             : UsCcssG1SourceFiveNextQuestions.Supports(item.GenerationFamily)
+                ? UsCcssG1SourceFiveNextQuestions.GradePersistedAnswer(
+                    item.GenerationFamily,item.CorrectAnswer,trimmed)
              : UsCcssG1NextSourceFiveQuestions.Supports(item.GenerationFamily)
                 ? UsCcssG1NextSourceFiveQuestions.GradePersistedAnswer(
                     item.GenerationFamily,item.CorrectAnswer,trimmed)

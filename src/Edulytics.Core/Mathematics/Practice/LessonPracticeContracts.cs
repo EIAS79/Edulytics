@@ -959,6 +959,13 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
+        foreach(var reviewed in UsCcssG1SourceFiveNextContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException("V1 G1-009 missing: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         // V1 G1-008: original 2021 G1 ordinals 36–40, including optional L22.
         foreach(var reviewed in UsCcssG1NextSourceFivePracticeContracts.Reviewed)
         {
