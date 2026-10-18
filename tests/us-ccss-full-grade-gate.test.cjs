@@ -51,17 +51,16 @@ test('rejected source or wrong candidate SHA cannot be inferred as accepted',()=
 
 test('original lesson 65 authentic authoring can be assessed without inventing an auto-graded numeric family',()=>{
   const authored={
-    allowedFamilies:[],authoredOriginalWorkVerified:true,
-    authenticatedStudentWorkVerified:true,teacherAssessmentRecorded:true,
-    authoredOriginalWorkProofPath:'real-authored-work-proof',
-    authoredOriginalWorkProofSha256:'a'.repeat(64)
+    allowedFamilies:[],authoredTaskContentVerified:true,teacherLedOutcomeNotClaimed:true,
+    authoredTaskContentProofPath:'source-teaching-and-review-evidence',
+    authoredTaskContentProofSha256:'a'.repeat(64)
   };
   const simulatedVerifiedProof=()=>true;
   assert.equal(validSourceAssessmentEvidence(65,authored,simulatedVerifiedProof),true);
-  assert.equal(validSourceAssessmentEvidence(65,{...authored,teacherAssessmentRecorded:false},simulatedVerifiedProof),false);
+  assert.equal(validSourceAssessmentEvidence(65,{...authored,authoredTaskContentVerified:false},simulatedVerifiedProof),false);
   assert.equal(validSourceAssessmentEvidence(65,{...authored,allowedFamilies:['fake.numeric.quiz']},simulatedVerifiedProof),false);
-  // The real unchanged rubric has no student evidence or teacher assessment yet.
-  assert.equal(validRecordedAuthorshipDecision(65),false);
+  // Authentic school submissions are correctly PENDING; this is a valid proposed teacher rubric.
+  assert.equal(validRecordedAuthorshipDecision(65),true);
 });
 
 test('lesson 146 numeric check never substitutes for student-authored riddle',()=>{
@@ -73,12 +72,12 @@ test('lesson 146 numeric check never substitutes for student-authored riddle',()
   };
   const simulatedVerifiedProof=()=>true;
   assert.equal(validSourceAssessmentEvidence(146,digital,simulatedVerifiedProof),false);
-  const authored={...digital,authenticatedStudentWorkVerified:true,
-    authoredOriginalWorkVerified:true,teacherAssessmentRecorded:true,
-    authoredOriginalWorkProofPath:'student-authored-riddle',
-    authoredOriginalWorkProofSha256:'c'.repeat(64)};
+  const authored={...digital,authoredTaskContentVerified:true,
+    teacherLedOutcomeNotClaimed:true,
+    authoredTaskContentProofPath:'reviewed-riddle-teaching-and-rubric',
+    authoredTaskContentProofSha256:'c'.repeat(64)};
   assert.equal(validSourceAssessmentEvidence(146,authored,simulatedVerifiedProof),true);
-  assert.equal(validRecordedAuthorshipDecision(146),false);
+  assert.equal(validRecordedAuthorshipDecision(146),true);
 });
 
 test('ordinary Grade 1 digital lesson still requires real graded answer and persistent runtime evidence',()=>{
