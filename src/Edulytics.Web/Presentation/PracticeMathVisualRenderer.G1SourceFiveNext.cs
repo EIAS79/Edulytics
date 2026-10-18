@@ -22,9 +22,10 @@ public static partial class PracticeMathVisualRenderer
             for(int i=0;i<10;i++)
                 sb.Append($"<rect x='98' y='{42+i*16}' width='21' height='15' rx='2' fill='#6294bd' stroke='#274f6c'/>");
             Text(sb,175,110,"ONE TEN","label");
-            for(int i=0;i<6;i++)
-                sb.Append($"<rect x='{242+(i%3)*28}' y='{84+(i/3)*28}' width='20' height='20' rx='3' fill='none' stroke='#688a9b' stroke-dasharray='3 3'/>");
-            Text(sb,285,170,"? extra ones","hint");
+            // A single blank work area communicates unknown extra ones without
+            // suggesting a fixed answer of six or leaking the generated value.
+            sb.Append("<rect x='238' y='82' width='125' height='82' rx='9' fill='none' stroke='#688a9b' stroke-dasharray='5 5' data-role='open-ones-area'/>");
+            Text(sb,299,177,"? extra ones","hint");
             Text(sb,210,223,"Bundle ten before counting leftover singles","hint");
         }
         else if(family.Contains(".l04.make_ten.",StringComparison.Ordinal))
@@ -61,10 +62,12 @@ public static partial class PracticeMathVisualRenderer
         else
         {
             Text(sb,210,28,"Subtract with counters or use a related addition","label");
-            for(int i=0;i<8;i++)
+            // L05 mathematical drawings must use the generated MINUEND,
+            // never an unrelated static set of eight counters.
+            for(int i=0;i<a;i++)
             {
-                var x=62+(i%8)*43;var y=96;
-                sb.Append($"<circle cx='{x}' cy='{y}' r='14' fill='#78a6cb' stroke='#426989'/>");
+                var x=55+(i%10)*36;var y=96;
+                sb.Append($"<circle cx='{x}' cy='{y}' r='13' fill='#78a6cb' stroke='#426989' data-role='start-counter'/>");
             }
             sb.Append("<rect x='132' y='151' width='155' height='47' rx='9' fill='#eef5fa' stroke='#718da4'/>");
             Text(sb,210,178,"? + ? = ?","hint");

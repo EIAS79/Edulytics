@@ -157,4 +157,42 @@ public sealed class UsCcssG1SourceFiveNextTests
             UsCcssG1SourceFiveNextQuestions.FourTeens,teen,
             "ONES=6,7,8,10"));
     }
+
+    [Fact]
+    public void L05SubtractionPicturesMatchGeneratedStartingCountNotHardcodedEight()
+    {
+        for(int n=4;n<=10;n++)
+        {
+            var json=System.Text.Json.JsonSerializer.Serialize(new
+            {
+                parameters=new Dictionary<string,int>
+                    {{"a",n},{"b",1},{"c",1},{"mode",0}}
+            });
+            var svg=Edulytics.Web.Presentation.PracticeMathVisualRenderer.RenderSvg(
+                UsCcssG1SourceFiveNextQuestions.RelatedDifference,json);
+            Assert.NotNull(svg);
+            Assert.Equal(n,System.Text.RegularExpressions.Regex.Matches(svg!,
+                "data-role='start-counter'").Count);
+        }
+    }
+
+    [Fact]
+    public void L08TenAsUnitArtNeverHardcodesSixOrRevealsExtraOnes()
+    {
+        for(int n=10;n<=19;n++)
+        {
+            var json=System.Text.Json.JsonSerializer.Serialize(new
+            {
+                parameters=new Dictionary<string,int>
+                    {{"a",n},{"b",1},{"c",1},{"mode",0}}
+            });
+            var svg=Edulytics.Web.Presentation.PracticeMathVisualRenderer.RenderSvg(
+                UsCcssG1SourceFiveNextQuestions.TenUnit,json);
+            Assert.NotNull(svg);
+            Assert.Single(System.Text.RegularExpressions.Regex.Matches(svg!,
+                "data-role='open-ones-area'"));
+            Assert.DoesNotContain("data-role='start-counter'",svg);
+            Assert.DoesNotContain("ONES="+(n-10),svg);
+        }
+    }
 }
