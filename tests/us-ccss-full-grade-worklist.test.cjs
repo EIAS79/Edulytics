@@ -22,6 +22,11 @@ test('ONE whole-grade queue includes ALL 96 ordinals 51-146 with no five-lesson 
   assert.equal(w.historic.count,50);
   assert.equal(w.historic.policy,'REFERENCE_ONLY_NO_RETEST');
   assert.equal(w.status,'NO_GO');
+  const start=ledger.newLessons.find(x=>x.status==='NOT_STARTED')?.ordinal??147;
+  assert.equal(w.implementation.nextUnstartedOrdinal,start);
+  assert.equal(w.academicVerification.firstPendingOrdinal,ledger.nextOrdinal);
+  assert.equal(w.implementation.inProgressCount,
+    ledger.newLessons.filter(x=>x.status==='IN_PROGRESS').length);
 });
 test('same one-grade queue persists beyond 5/10/30 without synthetic acceptance',()=>{
   const w=buildWorklist(manifest,copy(),{remainingOnly:true});
@@ -31,6 +36,18 @@ test('same one-grade queue persists beyond 5/10/30 without synthetic acceptance'
   assert.equal(w.items[95].ordinal,146);
   assert.equal(w.acceptedNew,0);
   assert.equal(w.firstUnfinishedOrdinal,51);
+});
+test('start NEW lesson implementation after already started work, without duplicating 51–80',()=>{
+  const first=ledger.newLessons.find(x=>x.status==='NOT_STARTED')?.ordinal??147;
+  const queue=buildWorklist(manifest,copy(),{newOnly:true});
+  assert.equal(queue.queueSelection,'NOT_STARTED_IMPLEMENTATION_ONLY');
+  assert.equal(queue.implementation.nextUnstartedOrdinal,first);
+  assert.equal(queue.items[0]?.ordinal??147,first);
+  assert.equal(queue.items.length,ledger.newLessons.filter(x=>x.status==='NOT_STARTED').length);
+  assert.ok(queue.items.every(x=>x.status==='NOT_STARTED'));
+  assert.equal(queue.academicVerification.firstPendingOrdinal,51);
+  assert.equal(queue.fixedChunkSize,null);
+  assert.throws(()=>buildWorklist(manifest,copy(),{newOnly:true,remainingOnly:true}),/either academic/);
 });
 test('no five-chunk fallback if canonical identity or scope altered',()=>{
   const bad=copy();bad.newLessons[5].ordinal=55;
@@ -54,4 +71,5 @@ test('all-accepted label cannot itself publish the grade or impersonate source e
   assert.equal(w.items.length,0);
   assert.equal(w.status,'ELIGIBLE_FOR_SEPARATE_FULL_GRADE_EVIDENCE_GATE');
   assert.equal(w.nextGradeAllowed,false);
+  assert.equal(w.implementation.nextUnstartedOrdinal,147);
 });

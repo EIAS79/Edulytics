@@ -5,7 +5,7 @@
 **Programme:** `US-CCSS-MATH`.
 **Predecessor:** `EDULYTICS-GRADE-FIRST-5-V1`, retained unmodified to preserve historical evidence.
 **Execution/acceptance/release unit:** one **whole grade**, or one named high-school course. No fixed five-lesson chunk.
-**Resume:** Grade 1, ordinal **51 of 146**. Ordinals 1–50 were already released; do **not** redo their curriculum authoring or per-lesson academic acceptance. Complete the remaining **96** lessons, then move to Grade 2.
+**Resume:** Grade 1 content implementation at ordinal **81**, since ordinals **51–80 already have implementation in progress**. Academic evidence review still begins at ordinal **51**; none of the 96 new lessons have a recorded final academic acceptance. Ordinals 1–50 were already released; do **not** redo their curriculum authoring or per-lesson academic acceptance. Complete the remaining **96** lessons, then move to Grade 2.
 
 ## 1. Binding owner decisions
 
@@ -34,7 +34,7 @@ The machine-readable grade scope and resume command is `node tools/curriculum/us
 | New work | 51–146 | Exactly 96 real lesson reviews/repairs/tests |
 | Grade closure | 1–146 | 50 historical + 96 accepted, then required release checks |
 
-Start at `PED:US-CCSS-MATH:G1:U03:L14` (ordinal 51). Finish at ordinal 146 `PED:US-CCSS-MATH:G1:U08:L10`. Subsequent grade/course sizes and first unfinished ordinals derive from their **own** reconciled inventory, not G1 arithmetic. Never skip, duplicate or change a canonical lesson identity.
+Academic verification starts at `PED:US-CCSS-MATH:G1:U03:L14` (ordinal 51), but preserve its existing implementation and the other already-started lessons 52–80; **new lesson authoring starts at ordinal 81**. Finish at ordinal 146 `PED:US-CCSS-MATH:G1:U08:L10`. Subsequent grade/course sizes and first unfinished ordinals derive from their **own** reconciled inventory, not G1 arithmetic. Never skip, duplicate or change a canonical lesson identity.
 
 ## 3. Unchanged V1 production stages A–F
 

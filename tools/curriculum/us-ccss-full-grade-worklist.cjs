@@ -6,7 +6,8 @@
  * academic acceptance. It cannot and must not publish data to production.
  *
  * node tools/curriculum/us-ccss-full-grade-worklist.cjs
- * node tools/curriculum/us-ccss-full-grade-worklist.cjs --remaining
+ * node tools/curriculum/us-ccss-full-grade-worklist.cjs --remaining (all lacking academic acceptance)
+ * node tools/curriculum/us-ccss-full-grade-worklist.cjs --new (only not-yet-started implementation)
  */
 const fs=require('node:fs');
 const path=require('node:path');
@@ -22,7 +23,8 @@ const knownStates=new Set([
 
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),'utf8'));
 
-function buildWorklist(manifest,ledger,{remainingOnly=false}={}) {
+function buildWorklist(manifest,ledger,{remainingOnly=false,newOnly=false}={}) {
+  if(remainingOnly&&newOnly)throw new Error('Use either academic --remaining or implementation --new, never both');
   const all=manifest?.lessons;
   if(!Array.isArray(all)||all.length!==146||
      all.some((x,i)=>x.gradeOrdinal!==i+1||typeof x.lessonCode!=='string')||
@@ -63,7 +65,14 @@ function buildWorklist(manifest,ledger,{remainingOnly=false}={}) {
   const firstUnfinished=unfinished[0]?.ordinal??147;
   if(ledger.nextOrdinal!==firstUnfinished)
     throw new Error('Resume cursor disagrees with actual pending work; expected '+firstUnfinished);
-  const items=remainingOnly?unfinished:workItems;
+  // Two different cursors are essential: content creation resumes at the
+  // first NOT_STARTED item (currently 81), while A-D academic verification
+  // still includes the 30 partially implemented 51–80 (currently 51).
+  // Neither cursor imposes any five-lesson delivery boundary.
+  const notStarted=workItems.filter(x=>x.status==='NOT_STARTED');
+  const nextUnstartedOrdinal=notStarted[0]?.ordinal??147;
+  const inProgressCount=workItems.filter(x=>x.status!=='NOT_STARTED'&&x.needsNewAcademicEvidence).length;
+  const items=newOnly?notStarted:remainingOnly?unfinished:workItems;
   return {
     planId:PLAN,programme:'US-CCSS-MATH',grade:'G1',
     executionUnit:'ONE_WHOLE_GRADE',
@@ -76,7 +85,11 @@ function buildWorklist(manifest,ledger,{remainingOnly=false}={}) {
     stages:'ORIGINAL_V1_A_THROUGH_F_UNCHANGED',
     academicGate:'ONE_AGGREGATED_GRADE_GATE_FAIL_CLOSED',
     releaseGate:'EXACT_SHA_AND_REQUIRED_CI_RENDER_AND_OWNER_UAT',
-    expectedItems:remainingOnly?unfinished.length:96,
+    expectedItems:items.length,
+    implementation:{nextUnstartedOrdinal,notStartedCount:notStarted.length,inProgressCount,
+      instruction:'PRESERVE EXISTING IN_PROGRESS WORK; start new-content work at nextUnstartedOrdinal; individually verify earlier started lessons'},
+    academicVerification:{firstPendingOrdinal:firstUnfinished,pendingCount:unfinished.length},
+    queueSelection:newOnly?'NOT_STARTED_IMPLEMENTATION_ONLY':remainingOnly?'PENDING_ACADEMIC_EVIDENCE':'ALL_96_GRADE_ITEMS',
     acceptedNew:96-unfinished.length,
     firstUnfinishedOrdinal:firstUnfinished,
     nextGradeAllowed:false,
@@ -89,7 +102,7 @@ function buildWorklist(manifest,ledger,{remainingOnly=false}={}) {
 if(require.main===module){
   try {
     const worklist=buildWorklist(read(MANIFEST),read(LEDGER),
-      {remainingOnly:process.argv.includes('--remaining')});
+      {remainingOnly:process.argv.includes('--remaining'),newOnly:process.argv.includes('--new')});
     console.log(JSON.stringify(worklist,null,2));
   }catch(e){console.error(e.stack||String(e));process.exitCode=1;}
 }
