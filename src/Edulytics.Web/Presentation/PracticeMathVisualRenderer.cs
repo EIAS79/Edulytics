@@ -105,6 +105,17 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u02.compare.write_related_equations" or
                 "usccss.g1.u02.compare.mixed_story_equation"
                     => GradeOneUnit2CompareFiveVisual(family,parameters),
+                "usccss.g1.u02.l21.number_puzzles.distinct_cards" or
+                "usccss.g1.u02.l21.related_missing_values" or
+                "usccss.g1.u02.l22.survey.three_equations" or
+                "usccss.g1.u02.l22.survey.compare_question" or
+                "usccss.g1.u03.l01.sums.fluency_selfcheck" or
+                "usccss.g1.u03.l01.sums.favorite_and_reason" or
+                "usccss.g1.u03.l02.count_on.start_steps_total" or
+                "usccss.g1.u03.l02.commutativity.two_equations" or
+                "usccss.g1.u03.l03.expressions.compare_both_sides" or
+                "usccss.g1.u03.l03.expressions.sort_equal_sums"
+                    => GradeOneNextFiveVisual(family,parameters),
                 "usccss.g1.u02.story.compare_structure_and_equation" or
                 "usccss.g1.u02.story.match_equation_with_unknown_box" or
                 "usccss.g1.u02.story.two_matching_equations" or

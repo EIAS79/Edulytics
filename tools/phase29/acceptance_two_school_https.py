@@ -924,14 +924,23 @@ for key, schoolname in SCHOOLS:
                 ("18", "usccss.g1.u02.story.match_equation_with_unknown_box"),
                 ("19", "usccss.g1.u02.story.two_matching_equations"),
                 ("20", "usccss.g1.u02.story.compose_scaffold_from_equation"),
+                # V1 G1-008: original 2021 lessons 36-40 across units 2 and 3.
+                ("21", "usccss.g1.u02.l21.number_puzzles.distinct_cards"),
+                ("22", "usccss.g1.u02.l22.survey.three_equations"),
+                ("03:01", "usccss.g1.u03.l01.sums.fluency_selfcheck"),
+                ("03:02", "usccss.g1.u03.l02.count_on.start_steps_total"),
+                ("03:03", "usccss.g1.u03.l03.expressions.compare_both_sides"),
             ):
-                code = "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix
+                code = ("PED:US-CCSS-MATH:G1:U03:L" + lesson_suffix.split(":", 1)[1]
+                        if lesson_suffix.startswith("03:") else
+                        "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix)
                 assert code in offered_by_code, ("V1 lesson not available to student", code)
                 lesson_id = offered_by_code[code]
                 lesson_html = get_page(student, "/student/learning/lesson/" + lesson_id)
                 assert "rich-lesson-section" in lesson_html, (code, "learner lesson missing")
                 if lesson_suffix in ("11", "12", "13", "14", "15",
-                                    "16", "17", "18", "19", "20"):
+                                    "16", "17", "18", "19", "20",
+                                    "21", "22", "03:01", "03:02", "03:03"):
                     assert "Goal:" in lesson_html, (code, "publisher goal absent")
                     # Rich V2 deliberately transforms source Step N prose into
                     # numbered <li> nodes in rendered worked-example cards.
@@ -989,8 +998,23 @@ for key, schoolname in SCHOOLS:
                 authored_indexes = [
                     index for index, row in enumerate(items) if row[1] == authored_family
                 ]
-                assert len(authored_indexes) >= 2, (
-                    code, "authored skills not present", items)
+                if lesson_suffix in ("21","22","03:01","03:02","03:03"):
+                    # Both source-specific activity skills must appear, not just
+                    # some correct generic addition items from the same outcome.
+                    pairs={
+                        "21": "usccss.g1.u02.l21.related_missing_values",
+                        "22": "usccss.g1.u02.l22.survey.compare_question",
+                        "03:01": "usccss.g1.u03.l01.sums.favorite_and_reason",
+                        "03:02": "usccss.g1.u03.l02.commutativity.two_equations",
+                        "03:03": "usccss.g1.u03.l03.expressions.sort_equal_sums",
+                    }
+                    assert all(row[1] in (authored_family,pairs[lesson_suffix])
+                               for row in items), (code,"unrelated fallback",items)
+                    assert authored_indexes and any(row[1]==pairs[lesson_suffix]
+                               for row in items), (code,"missing source activity",items)
+                else:
+                    assert len(authored_indexes) >= 2, (
+                        code, "authored skills not present", items)
                 assert re.search(r"\bwrite\b", html.unescape(attempt_html), re.I), (
                     code, "student did not receive authored instructions")
                 wrong_index = authored_indexes[-1]
@@ -1031,7 +1055,9 @@ for key, schoolname in SCHOOLS:
                     assert order == str(index+1) and saved_answer == expected_answer and (
                         correct == ("0" if index == wrong_index else "1")
                     ), (code, "incorrect grading or persisted answer", line)
-                print("V1_G1_007_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                print("V1_G1_008_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("21", "22", "03:01", "03:02", "03:03") else
+                      "V1_G1_007_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
                       ("16", "17", "18", "19", "20") else
                       "V1_G1_006_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
                       ("11", "12", "13", "14", "15") else

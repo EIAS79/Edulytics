@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-5-V1",
+  "batchId": "US-CCSS-G1-008",
+  "grade": "G1",
+  "gradeOrdinalStart": 36,
+  "gradeOrdinalEnd": 40,
+  "lessonCount": 5,
+  "sourceEdition": "IM/Kendall Hunt K5 original first edition (2021)",
+  "sourceBase": "Common Core/01_Grade_1_IM_K5 (Our-CS; read only)",
+  "originalV1Unchanged": true,
+  "baselineMainSha": "74c86ee9c2a2ba73dea555fd13d02c88b8fac3d8",
+  "sourceRights": "Reference-only; first-party student text/visuals. Retain applicable attribution requirements for licensed derivative content.",
+  "sourceReview": "ORIGINAL_TEACHER_PREPARATION_AND_FULL_LESSONS_READ; ORIGINAL_STUDENT_TASK_PDF_TEXT_ALL_FIVE_INSPECTED; PUBLISHER_DIAGRAM_PIXEL_PARITY_NOT_VERIFIED",
+  "studentPdfInspection": "ORIGINAL_2021_STUDENT_TASK_PDFS_ALL_FIVE_TEXT_INSPECTED_AND_SHA256_VERIFIED",
+  "newerAccessImComparison": "NOT_PERFORMED; DO_NOT_REPLACE_2021_TASKS_BY_LESSON_NUMBER",
+  "academicAcceptance": "PENDING_CI_AND_LIVE_DEPLOY",
+  "automatedE2E": "AUTHENTICATED_CI_TEST_STAGED_NOT_RUN",
+  "productionDeployment": "NOT_ATTEMPTED",
+  "ownerProductionUat": "PENDING",
+  "lessons": [
+    {
+      "gradeOrdinal": 36,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L21",
+      "sourceLessonCode": "1.2.21",
+      "originalLessonTitle": "Center Day 4",
+      "sourceTeacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-2/lesson-21/preparation.html",
+      "originalSourcePreparationRelativePath": "unit-2/lesson-21/preparation.html",
+      "originalSourceLessonRelativePath": "unit-2/lesson-21/lesson.html",
+      "originalTeacherPreparationSha256": "dd3f48fd054cc3b5071fed432e2b8874bfe9770a5f436f0dd207a2e2e8a729bd",
+      "originalTeacherLessonSha256": "6e7c61c62a6063de020753523f4bc4a467dc5e3d6f9d0bca4fe2f71033d2c477",
+      "canonicalBodySha256": "ecbb3ab93b1b78091587963b92944a098db3182f988a3cbf465cb826b93985c2",
+      "originalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/w8nt0n56mupw0x19n9qcqjsgnyld",
+      "standardsAddressingFromOriginalPreparation": [
+        "1.OA.A.1",
+        "1.OA.A.2",
+        "1.OA.B.4",
+        "1.OA.C.6",
+        "1.OA.D.8"
+      ],
+      "sourceGoals": [
+        {
+          "goalId": "number_puzzles",
+          "requirement": "Use non-repeating digit cards to complete addition/subtraction equations within 10, including unknown at varied positions",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u02.l21.number_puzzles.distinct_cards | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "missing_values",
+          "requirement": "Connect related addition/subtraction missing-value equations mentally",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u02.l21.related_missing_values | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "centers",
+          "requirement": "Choose and explain additional subtraction/addition center practice; real partner collaboration not autograded",
+          "coverage": "TEACHER_FACILITATED_NOT_DIGITALLY_CERTIFIED",
+          "assessmentEvidence": "REAL_TEACHER_PARTNER_WORK_NOT_MEASURED",
+          "classroomOnly": true
+        }
+      ],
+      "observedPreRepairGaps": [
+        "Existing lesson steps are generic rather than teaching the one-use-digit constraint and multiple blanks",
+        "Exact lesson-specific Practice verification still absent"
+      ],
+      "academicDecision": "LOCAL_MATH_AND_CONTENT_TESTED_AWAITING_EXACT_HEAD_AUTHENTICATED_CI",
+      "original2021StudentTaskPdfSha256": "2c3fcd2e9f30d36b10014c77ea742ad693a2ae45ecbcb91aae4d26336513b1a7",
+      "independentStudentTaskTextReview": "ORIGINAL_PDF_TEXT_STRUCTURE_REVIEWED; graphics parity separate",
+      "publisherImageParity": "NOT_VERIFIED"
+    },
+    {
+      "gradeOrdinal": 37,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L22",
+      "sourceLessonCode": "1.2.22",
+      "originalLessonTitle": "Story Problems and Equations (optional)",
+      "sourceTeacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-2/lesson-22/preparation.html",
+      "originalSourcePreparationRelativePath": "unit-2/lesson-22/preparation.html",
+      "originalSourceLessonRelativePath": "unit-2/lesson-22/lesson.html",
+      "originalTeacherPreparationSha256": "4eba68d6a9e2d03c368472198bd3e9974a041bfedd83b38490b4e00e6d7b25a3",
+      "originalTeacherLessonSha256": "36ae8c24b976d11369aab2c60ebb5ed5f91e726cbdb78a3c342a7b44b39412e0",
+      "canonicalBodySha256": "7afbdf796ab6cb0033428c5e1804cac7fd6b22c78dcd37eff5d260278e28dfde",
+      "originalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/utpvx06gq1bwh7rmwdw94cg2ommp",
+      "standardsAddressingFromOriginalPreparation": [
+        "1.OA.A",
+        "1.OA.B.4"
+      ],
+      "sourceGoals": [
+        {
+          "goalId": "survey_equations",
+          "requirement": "Use actual collected or clearly labeled sample category data to write at least three valid equations",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u02.l22.survey.three_equations | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "data_questions",
+          "requirement": "Construct meaningful how-many-more and how-many-fewer questions from the same data and solve with matching equations",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u02.l22.survey.compare_question | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "authored_story",
+          "requirement": "Create a story/question corresponding to chosen survey values; partner explanation is teacher-reviewed",
+          "coverage": "TEACHER_FACILITATED_NOT_DIGITALLY_CERTIFIED",
+          "assessmentEvidence": "REAL_TEACHER_PARTNER_WORK_NOT_MEASURED",
+          "classroomOnly": false
+        }
+      ],
+      "observedPreRepairGaps": [
+        "Existing worked example is isolated 4+5 rather than data-to-equation modeling",
+        "No exact survey-data-based lesson Practice proven"
+      ],
+      "academicDecision": "LOCAL_MATH_AND_CONTENT_TESTED_AWAITING_EXACT_HEAD_AUTHENTICATED_CI",
+      "original2021StudentTaskPdfSha256": "9c2a3a074a3f3cb26948f772c4c1bf1eb97c7400b85098fdc3f4f7ece18de47d",
+      "independentStudentTaskTextReview": "ORIGINAL_PDF_TEXT_STRUCTURE_REVIEWED; graphics parity separate",
+      "publisherImageParity": "NOT_VERIFIED"
+    },
+    {
+      "gradeOrdinal": 38,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L01",
+      "sourceLessonCode": "1.3.1",
+      "originalLessonTitle": "Sums I Know",
+      "sourceTeacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-1/preparation.html",
+      "originalSourcePreparationRelativePath": "unit-3/lesson-1/preparation.html",
+      "originalSourceLessonRelativePath": "unit-3/lesson-1/lesson.html",
+      "originalTeacherPreparationSha256": "92ed389af0a651d923eba08310f8419321281432d7c9c313d848f42258ce879b",
+      "originalTeacherLessonSha256": "f458c3efcdeaf89e30008e2ed45dec7d37d7a02ddc29d784014935393066732a",
+      "canonicalBodySha256": "92fe6c1a47321348cc26707360ac41cfe26ca02ab9787ee42e77d8a8de52a9ca",
+      "originalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/qa8cc2ove6naxr0yuk52yx5ls683",
+      "standardsAddressingFromOriginalPreparation": [
+        "1.OA.C.6"
+      ],
+      "sourceGoals": [
+        {
+          "goalId": "favorite_sum",
+          "requirement": "Choose a favorite sum within 10 and explain its representation",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u03.l01.sums.favorite_and_reason | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "fluency_inventory",
+          "requirement": "Calculate sums and distinguish quick/known from not-yet-fluent without grading self-assessment as mathematical wrongness",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u03.l01.sums.fluency_selfcheck | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        }
+      ],
+      "observedPreRepairGaps": [
+        "Existing student-facing prose retains malformed third-person wording",
+        "Content lacks actual got-it/not-yet task structure and has generic worked algorithm",
+        "Lesson-specific diagnostic and competency Practice not verified"
+      ],
+      "academicDecision": "LOCAL_MATH_AND_CONTENT_TESTED_AWAITING_EXACT_HEAD_AUTHENTICATED_CI",
+      "original2021StudentTaskPdfSha256": "7f299d7ee652937c86de62adeb86d81041a03e24a7440af0fc6218e5a1c64500",
+      "independentStudentTaskTextReview": "ORIGINAL_PDF_TEXT_STRUCTURE_REVIEWED; graphics parity separate",
+      "publisherImageParity": "NOT_VERIFIED"
+    },
+    {
+      "gradeOrdinal": 39,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L02",
+      "sourceLessonCode": "1.3.2",
+      "originalLessonTitle": "Relate Counting to Addition",
+      "sourceTeacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-2/preparation.html",
+      "originalSourcePreparationRelativePath": "unit-3/lesson-2/preparation.html",
+      "originalSourceLessonRelativePath": "unit-3/lesson-2/lesson.html",
+      "originalTeacherPreparationSha256": "d11d794b93869911ac430c8469bd3103c40001de5a11eaec8688e3705d9455f2",
+      "originalTeacherLessonSha256": "c0fe21aca7ffc155d8472d76dc59b7376f2a49d41cd5907d5b489024dbf4d4e4",
+      "canonicalBodySha256": "847b6901d88bc965981af4673fa134251b10962fe06515dab9c0358adf01321b",
+      "originalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/ukj788bt2rlf5alfew9v5m8wqxx3",
+      "standardsAddressingFromOriginalPreparation": [
+        "1.OA.A.1",
+        "1.OA.B.3",
+        "1.OA.C.5",
+        "1.OA.C.6",
+        "1.OA.D.8"
+      ],
+      "sourceGoals": [
+        {
+          "goalId": "count_on",
+          "requirement": "Model counting on to find a sum within 10 from an indicated addend",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u03.l02.count_on.start_steps_total | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "commutativity",
+          "requirement": "Explain why count-on strategies from either addend represent the same total",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u03.l02.commutativity.two_equations | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "story_equation",
+          "requirement": "Solve Shake-and-Spill part-whole stories and write a correct equation, highlighting the answer",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u03.l02.commutativity.two_equations | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        }
+      ],
+      "observedPreRepairGaps": [
+        "Current steps teach a generic count-on method but do not compare both counting strategies",
+        "Exact counting-on and commutative source task Practice not verified"
+      ],
+      "academicDecision": "LOCAL_MATH_AND_CONTENT_TESTED_AWAITING_EXACT_HEAD_AUTHENTICATED_CI",
+      "original2021StudentTaskPdfSha256": "4f9356ab99fc5d2ea3f424a0d6decfe44cc581492a8413e7034c1321bb837dfc",
+      "independentStudentTaskTextReview": "ORIGINAL_PDF_TEXT_STRUCTURE_REVIEWED; graphics parity separate",
+      "publisherImageParity": "NOT_VERIFIED"
+    },
+    {
+      "gradeOrdinal": 40,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L03",
+      "sourceLessonCode": "1.3.3",
+      "originalLessonTitle": "Are the Expressions Equal?",
+      "sourceTeacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-3/preparation.html",
+      "originalSourcePreparationRelativePath": "unit-3/lesson-3/preparation.html",
+      "originalSourceLessonRelativePath": "unit-3/lesson-3/lesson.html",
+      "originalTeacherPreparationSha256": "40c6f4afa70436b4064380ad353da82d064cbc790a0805df74515fa57dca7ec8",
+      "originalTeacherLessonSha256": "215565002e461c23cec1c566788499b29b668ec255d8f107938a36999572fef5",
+      "canonicalBodySha256": "c84526f98dd95a7ea6ed6e71d8fcfce09d3703aebd440ec145b6a912df43f4e8",
+      "originalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/y3dy1ea2atmmxoh2z0gk911hj7ju",
+      "standardsAddressingFromOriginalPreparation": [
+        "1.OA.B.3",
+        "1.OA.C.6",
+        "1.OA.D.7"
+      ],
+      "sourceGoals": [
+        {
+          "goalId": "sort_sums",
+          "requirement": "Group different addition expressions with the same sum",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u03.l03.expressions.sort_equal_sums | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "expression_equality",
+          "requirement": "Decide whether equations with two addition expressions are true or false and justify by evaluating both sides",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u03.l03.expressions.compare_both_sides | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        },
+        {
+          "goalId": "commutativity",
+          "requirement": "Recognize swapped-addend equalities among valid equations",
+          "coverage": "SOURCE_TARGETED_DIGITAL_PRACTICE_LOCAL_TEST_PASS",
+          "assessmentEvidence": "usccss.g1.u03.l03.expressions.compare_both_sides | UsCcssG1NextSourceFiveTests | E2E_CI_PENDING",
+          "classroomOnly": false
+        }
+      ],
+      "observedPreRepairGaps": [
+        "Existing worked examples already include true/false equality; retain if technically correct",
+        "Exact family, persistence and student effective rendered results not independently verified"
+      ],
+      "academicDecision": "LOCAL_MATH_AND_CONTENT_TESTED_AWAITING_EXACT_HEAD_AUTHENTICATED_CI",
+      "original2021StudentTaskPdfSha256": "7496b244a00f14a2fe6a93d9ab841e20df4de2ea8eda989c775cb82cebb24b6b",
+      "independentStudentTaskTextReview": "ORIGINAL_PDF_TEXT_STRUCTURE_REVIEWED; graphics parity separate",
+      "publisherImageParity": "NOT_VERIFIED"
+    }
+  ]
+}
