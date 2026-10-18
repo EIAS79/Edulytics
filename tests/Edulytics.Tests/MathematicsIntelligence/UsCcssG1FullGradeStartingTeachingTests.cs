@@ -19,7 +19,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             Assert.Equal(CommonCoreG1FullGradeStartingContentCorrections.Version,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             var tr=row.Translations.Single(x=>x.CultureCode=="en");
-            return tr.Explanation+"\n"+tr.KeyConceptsAndRules+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions;
+            return tr.Explanation+"\n"+tr.KeyConceptsAndRules+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes+"\n"+tr.QuickSummary;
         }
         Assert.Contains("13 - 7 = 6",text(14));
         Assert.Contains("3 + 8 + 7 = 10 + 8 = 18",text(15));
