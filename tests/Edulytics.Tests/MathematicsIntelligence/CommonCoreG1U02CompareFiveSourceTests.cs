@@ -111,4 +111,69 @@ public sealed class CommonCoreG1U02CompareFiveSourceTests
             CommonCoreG1Unit2NextFiveSourceTeachingCorrections
                 .ProjectVerifiedPublisherTitle(c,"unreviewed version"));
     }
+    [Fact]
+    public void G1006UsesSameSourceComparisonDetailAsG1005WithoutAssumingEditionIsFailure()
+    {
+        var directory=new DirectoryInfo(AppContext.BaseDirectory);
+        while(directory is not null &&
+              !File.Exists(Path.Combine(directory.FullName,"Edulytics.sln")))
+            directory=directory.Parent;
+        Assert.NotNull(directory);
+
+        var root=Path.Combine(directory!.FullName,"artifacts",
+            "curriculum-delivery","US-CCSS-MATH","G1","batches");
+        using var reviewed=System.Text.Json.JsonDocument.Parse(
+            File.ReadAllText(Path.Combine(root,"US-CCSS-G1-006-LOCAL-SOURCE-CROSSWALK.json")));
+        using var prior=System.Text.Json.JsonDocument.Parse(
+            File.ReadAllText(Path.Combine(root,"US-CCSS-G1-005-LOCAL-SOURCE-CROSSWALK.json")));
+        var oldRows=prior.RootElement.GetProperty("lessons").EnumerateArray().ToArray();
+        var rows=reviewed.RootElement.GetProperty("lessons").EnumerateArray().ToArray();
+        Assert.Equal(5,oldRows.Length);
+        Assert.Equal(5,rows.Length);
+        var expected=Targets();
+        var expectedStandards=new[]
+        {
+            new[]{"1.OA.A.1"},
+            new[]{"1.OA.A.1","1.OA.C.5"},
+            new[]{"1.MD.C.4","1.OA.A.1"},
+            new[]{"1.OA.A.1","1.OA.C.5","1.OA.C.6","1.OA.D.7"},
+            new[]{"1.OA.A.1","1.OA.B.4","1.OA.C.6"}
+        };
+        for(var i=0;i<rows.Length;i++)
+        {
+            var row=rows[i];
+            Assert.Equal(i+26,row.GetProperty("gradeOrdinal").GetInt32());
+            Assert.Equal(expected[i].Lesson.LessonCode,
+                row.GetProperty("lessonCode").GetString());
+            Assert.Equal(expectedStandards[i],row.GetProperty(
+                "publisherLessonActivityStandardsAddressing").EnumerateArray()
+                .Select(x=>x.GetString()!).ToArray());
+            Assert.Equal(row.GetProperty("sourcePrepWholeLessonAddressing").EnumerateArray()
+                    .Select(x=>x.GetString()!).ToArray(),
+                row.GetProperty("publisher2021PreparationStandardsAddressing")
+                    .EnumerateArray().Select(x=>x.GetString()!).ToArray());
+            Assert.True(row.GetProperty("sourceFilesSha256")
+                .GetProperty("studentLesson").ValueKind==
+                System.Text.Json.JsonValueKind.Null);
+            Assert.Equal("NOT_INDEPENDENTLY_CERTIFIED",
+                row.GetProperty("publisherGraphicsInspection").GetString());
+            Assert.False(row.GetProperty("classroomActivitiesDigitallyVerified").GetBoolean());
+            Assert.NotEmpty(row.GetProperty("originalStudentTask").GetString()!);
+            Assert.NotEmpty(row.GetProperty("sourceToLearnerReview").GetString()!);
+            Assert.NotEmpty(row.GetProperty("targetSkill").GetString()!);
+            var version=row.GetProperty("alternateEditionTaskComparison");
+            Assert.Contains(version.GetProperty("classification").GetString(),
+                new[]{"SAME_GOAL_REVISED_TASK","PARTIAL_OVERLAP"});
+            Assert.Equal(64,version.GetProperty("sha256").GetString()!.Length);
+            Assert.Contains("rather than excluded solely",
+                version.GetProperty("decision").GetString());
+        }
+        Assert.Equal("AccessIM v.360",
+            rows[2].GetProperty("alternateEditionTaskComparison").GetProperty("edition").GetString());
+        Assert.Equal("SAME_GOAL_REVISED_TASK",rows[2].GetProperty(
+            "alternateEditionTaskComparison").GetProperty("classification").GetString());
+        Assert.Equal("PARTIAL_OVERLAP",rows[3].GetProperty(
+            "alternateEditionTaskComparison").GetProperty("classification").GetString());
+    }
+
 }
