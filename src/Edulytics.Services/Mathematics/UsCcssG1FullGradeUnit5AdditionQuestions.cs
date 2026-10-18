@@ -77,7 +77,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             var candidate=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}};
             if(Valid(family,candidate))
             {
-                var sum=a+b,composes=(a%10+b%10)>=10;
+                // Only source-permitted valid operands enter the verified prompt.
                 string activity=spec.LessonCode switch
                 {
                     "L02" or "L06" or "L11"=>"Interpret and explain the true equations.",
