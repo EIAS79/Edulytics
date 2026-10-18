@@ -50,6 +50,9 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
             "PED:US-CCSS-MATH:G1:U02:L14" =>
                 ("Compare with Addition and Subtraction PLC Activity",
                  "Compare with Addition and Subtraction", "14"),
+            "PED:US-CCSS-MATH:G1:U02:L19" =>
+                ("Story Problems and Equations PLC Activity",
+                 "Story Problems and Equations", "19"),
             _ => ((string Old, string New, string Number)?)null
         };
         if (verified is null || historicalTitle != verified.Value.Old ||
@@ -58,13 +61,22 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
                 verified.Value.Number + "/preparation.html")
             return false;
         var nextBatch=code=="PED:US-CCSS-MATH:G1:U02:L14";
+        var thirdBatch=code=="PED:US-CCSS-MATH:G1:U02:L19";
         using var batch = JsonDocument.Parse(File.ReadAllText(Path.Combine(root,
             "artifacts", "curriculum-delivery", "US-CCSS-MATH", "G1", "batches",
-            nextBatch?"US-CCSS-G1-006.json":"US-CCSS-G1-005.json")));
+            thirdBatch?"US-CCSS-G1-007.json":
+                nextBatch?"US-CCSS-G1-006.json":"US-CCSS-G1-005.json")));
         var matching = batch.RootElement.GetProperty("lessons").EnumerateArray()
             .Where(x => x.GetProperty("lessonCode").GetString() == code).ToArray();
         if(matching.Length!=1)return false;
         var target=matching[0];
+        if(thirdBatch)
+            return batch.RootElement.GetProperty("lessonCount").GetInt32()==5 &&
+                target.GetProperty("originalLessonTitle").GetString()==effectiveTitle &&
+                target.GetProperty("previousCatalogTitle").GetString()==historicalTitle &&
+                target.GetProperty("sourceTeacherPreparationUrl").GetString()==sourceUrl &&
+                target.GetProperty("originalSourceTeacherPreparationSha256").GetString()==
+                    "2a1017cd2f32bb0573a862379760b2c817c684c49d7beba60558f677bc70cec7";
         if(nextBatch)
             return batch.RootElement.GetProperty("lessonCount").GetInt32()==5 &&
                 target.GetProperty("source2021LessonTitle").GetString()==effectiveTitle &&
