@@ -106,7 +106,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -217,6 +217,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG1Unit2NextFiveSourceTeachingCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2EquationsAndStoriesSourceCorrections.IsTarget(document, lesson) ||
+         CommonCoreG1NextSourceFiveCorrections.IsTarget(document, lesson) ||
          CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson) ||
          CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
          CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson));
@@ -897,6 +898,17 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                     : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
+                    if (CommonCoreG1NextSourceFiveCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG1NextSourceFiveCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document, sourceLesson, content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g1008ExistingRows)
+                                    ? g1008ExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
                     if (CommonCoreG1Unit2EquationsAndStoriesSourceCorrections
                         .IsTarget(document, sourceLesson))
                     {
