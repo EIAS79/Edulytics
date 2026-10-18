@@ -22,3 +22,19 @@ test('triage never asserts new course/Practice academic acceptance',()=>{
     assert.ok(r.originalTeacherGoalExcerpt && r.originalTeacherGoalExcerpt.length>8);
   }
 });
+
+test('read-only original full teacher lesson activity index spans all 96 mapped source lessons',()=>{
+  const index=get('artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-teacher-activity-preflight.json');
+  assert.equal(index.records.length,96);
+  assert.deepEqual(index.records.map(z=>z.lessonCode),
+    manifest.lessons.slice(50).map(z=>z.lessonCode));
+  assert.equal(index.activityCount,226);
+  assert.equal(index.teacherEmbeddedStudentFacingSections,280);
+  assert.equal(index.digitalCandidateFamilyCount,95);
+  assert.deepEqual(index.withoutDigitalFamily,[65]);
+  for(const row of index.records){
+    assert.match(row.sourceFullTeacherLessonSha256,/^[a-f0-9]{64}$/);
+    assert.ok(row.sourceActivityCount>=1);
+    assert.ok(row.teacherEmbeddedStudentFacingSections>=1);
+  }
+});
