@@ -936,6 +936,12 @@ for key, schoolname in SCHOOLS:
                 ("03:06", "usccss.g1.u03.l06.story.start_unknown"),
                 ("03:07", "usccss.g1.u03.l07.center.compare_cards"),
                 ("03:08", "usccss.g1.u03.l08.ten_unit.compose"),
+                # V1 G1-010: five original IM2021 unit 3 lessons 9–13.
+                ("03:09", "usccss.g1.u03.l09.ten.add_frame"),
+                ("03:10", "usccss.g1.u03.l10.teen.story_unknown"),
+                ("03:11", "usccss.g1.u03.l11.teen.add_story"),
+                ("03:12", "usccss.g1.u03.l12.teen.take_from"),
+                ("03:13", "usccss.g1.u03.l13.teen.result_unknown"),
             ):
                 code = ("PED:US-CCSS-MATH:G1:U03:L" + lesson_suffix.split(":", 1)[1]
                         if lesson_suffix.startswith("03:") else
@@ -947,7 +953,8 @@ for key, schoolname in SCHOOLS:
                 if lesson_suffix in ("11", "12", "13", "14", "15",
                                     "16", "17", "18", "19", "20",
                                     "21", "22", "03:01", "03:02", "03:03",
-                                    "03:04", "03:05", "03:06", "03:07", "03:08"):
+                                    "03:04", "03:05", "03:06", "03:07", "03:08",
+                                    "03:09", "03:10", "03:11", "03:12", "03:13"):
                     assert "Goal:" in lesson_html, (code, "publisher goal absent")
                     # Rich V2 deliberately transforms source Step N prose into
                     # numbered <li> nodes in rendered worked-example cards.
@@ -1006,7 +1013,8 @@ for key, schoolname in SCHOOLS:
                     index for index, row in enumerate(items) if row[1] == authored_family
                 ]
                 if lesson_suffix in ("21","22","03:01","03:02","03:03",
-                                     "03:04","03:05","03:06","03:07","03:08"):
+                                     "03:04","03:05","03:06","03:07","03:08",
+                                     "03:09","03:10","03:11","03:12","03:13"):
                     # Both source-specific activity skills must appear, not just
                     # some correct generic addition items from the same outcome.
                     pairs={
@@ -1020,6 +1028,11 @@ for key, schoolname in SCHOOLS:
                         "03:06": "usccss.g1.u03.l06.story.other_unknown_positions",
                         "03:07": "usccss.g1.u03.l07.center.find_pair_to_ten",
                         "03:08": "usccss.g1.u03.l08.ten_unit.four_teen_numbers",
+                        "03:09": "usccss.g1.u03.l09.ten.missing_equation",
+                        "03:10": "usccss.g1.u03.l10.teen.related_equations",
+                        "03:11": "usccss.g1.u03.l11.teen.add_missing",
+                        "03:12": "usccss.g1.u03.l12.teen.shake_cover",
+                        "03:13": "usccss.g1.u03.l13.teen.change_unknown",
                     }
                     assert all(row[1] in (authored_family,pairs[lesson_suffix])
                                for row in items), (code,"unrelated fallback",items)
@@ -1068,7 +1081,9 @@ for key, schoolname in SCHOOLS:
                     assert order == str(index+1) and saved_answer == expected_answer and (
                         correct == ("0" if index == wrong_index else "1")
                     ), (code, "incorrect grading or persisted answer", line)
-                print("V1_G1_009_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                print("V1_G1_010_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("03:09","03:10","03:11","03:12","03:13") else
+                      "V1_G1_009_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
                       ("03:04", "03:05", "03:06", "03:07", "03:08") else
                       "V1_G1_008_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
                       ("21", "22", "03:01", "03:02", "03:03") else
