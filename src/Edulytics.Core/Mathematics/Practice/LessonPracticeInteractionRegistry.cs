@@ -141,6 +141,14 @@ public static class LessonPracticeInteractionRegistry
         // Structured comparison families may share a ".compare" family prefix
         // without using the < = > response shape. Resolve their declared answer
         // contract before the generic comparison fallback.
+        if ((familyId.StartsWith("usccss.g1.u03.l09.",StringComparison.Ordinal) ||
+             familyId.StartsWith("usccss.g1.u03.l10.",StringComparison.Ordinal) ||
+             familyId.StartsWith("usccss.g1.u03.l11.",StringComparison.Ordinal) ||
+             familyId.StartsWith("usccss.g1.u03.l12.",StringComparison.Ordinal) ||
+             familyId.StartsWith("usccss.g1.u03.l13.",StringComparison.Ordinal)) &&
+            answerType == "contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
         if ((familyId.StartsWith("usccss.g1.u03.l04.",StringComparison.Ordinal) ||
              familyId.StartsWith("usccss.g1.u03.l05.",StringComparison.Ordinal) ||
              familyId.StartsWith("usccss.g1.u03.l06.",StringComparison.Ordinal) ||

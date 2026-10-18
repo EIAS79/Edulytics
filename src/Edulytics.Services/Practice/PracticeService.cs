@@ -202,6 +202,9 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
         var correct = string.Equals(item.GenerationFamily,
                 UsCcssT001ConstructShapeGraph.Family, StringComparison.Ordinal)
             ? string.Equals(answer.Trim(), item.CorrectAnswer, StringComparison.Ordinal)
+             : UsCcssG1TeenFiveQuestions.Supports(item.GenerationFamily)
+                ? UsCcssG1TeenFiveQuestions.GradePersistedAnswer(
+                    item.GenerationFamily,item.CorrectAnswer,answer)
              : UsCcssG1SourceFiveNextQuestions.Supports(item.GenerationFamily)
                 ? UsCcssG1SourceFiveNextQuestions.GradePersistedAnswer(
                     item.GenerationFamily,item.CorrectAnswer,answer)
