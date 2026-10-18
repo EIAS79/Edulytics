@@ -43,6 +43,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1TenAndTeenSourceFiveCorrections.Apply(document);
         CommonCoreG1FullGradeStartingContentCorrections.Apply(document);
         CommonCoreG1FullGradeUnit5ContentCorrections.Apply(document);
+        CommonCoreG1FullGradeUnit6To8ContentCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
         CommonCoreT001MixedAddSubtractContentCorrection.Apply(document);
         CommonCoreT001FindThePairContentCorrection.Apply(document);
@@ -231,8 +232,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g1010);
         var g1Unit5 = CommonCoreG1FullGradeUnit5ContentCorrections
             .GetExpectedContentVersion(document,lesson,g1FullGrade);
+        var g1Unit6To8 = CommonCoreG1FullGradeUnit6To8ContentCorrections
+            .GetExpectedContentVersion(document,lesson,g1Unit5);
         var html = CommonCoreSourceBoundHtmlEntityCorrections
-            .GetExpectedContentVersion(document, lesson, g1Unit5);
+            .GetExpectedContentVersion(document, lesson, g1Unit6To8);
         var mixed = CommonCoreT001MixedAddSubtractContentCorrection
             .GetExpectedContentVersion(document, lesson, html);
         return CommonCoreT001FindThePairContentCorrection
@@ -280,6 +283,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1TenAndTeenSourceFiveCorrections.IsTarget(document, lesson) ||
         CommonCoreG1FullGradeStartingContentCorrections.IsTarget(document, lesson) ||
         CommonCoreG1FullGradeUnit5ContentCorrections.IsTarget(document, lesson) ||
+        CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(document, lesson) ||
         CommonCoreSourceBoundHtmlEntityCorrections
             .IsTarget(document, lesson) ||
         CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
@@ -371,6 +375,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1FullGradeStartingContentCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1FullGradeUnit5ContentCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG1FullGradeUnit6To8ContentCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreSourceBoundHtmlEntityCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
