@@ -43,6 +43,22 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(f,p,"SMALL_UNITS=6"));
     }
     [Fact]
+    public void CenterExpressionsCompareDifferentValuesWithin20()
+    {
+        const string f="usccss.g1.u06.l04.center_add_compare";
+        var p=new Dictionary<string,int>{{"a",31},{"b",6},{"c",0},{"mode",1}};
+        Assert.Equal("RELATION=GREATER",UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(f,p));
+        var q=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(f,new Random(412));
+        // The random branch may choose an addition variant. Both remain
+        // individually source-scoped, with a correct and rejectable key.
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(f,q.Parameters));
+        p["a"]=65;p["b"]=16;
+        Assert.Equal("RELATION=LESS",UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(f,p));
+        p["a"]=16;p["b"]=1;
+        Assert.Equal("RELATION=EQUAL",UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(f,p));
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(f,p,"RELATION=GREATER"));
+    }
+    [Fact]
     public void EngineSupportsTenDistinctDigitalPromptsPerSourceSkill()
     {
         var engine=new ExactSkillContractQuestionEngine();
