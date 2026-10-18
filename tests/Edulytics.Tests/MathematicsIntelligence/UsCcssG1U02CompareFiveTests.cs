@@ -48,7 +48,11 @@ public sealed class UsCcssG1U02CompareFiveTests
                 family,item.Parameters,"999"));
             Assert.False(UsCcssG1Unit2CompareFiveQuestions.GradePersistedAnswer(
                 family,item.CorrectAnswer,"1+1=2"));
-            Assert.Contains("equation",item.Prompt,StringComparison.OrdinalIgnoreCase);
+            if(family==UsCcssG1Unit2CompareFiveQuestions.Data &&
+               item.Parameters["mode"]!=0)
+                Assert.Contains("TRUE or FALSE",item.Prompt);
+            else
+                Assert.Contains("equation",item.Prompt,StringComparison.OrdinalIgnoreCase);
         }
     }
 
@@ -130,4 +134,34 @@ public sealed class UsCcssG1U02CompareFiveTests
         Assert.False(UsCcssG1Unit2CompareFiveQuestions.GradePersistedAnswer(
             f,"5+4=9","5+4=10"));
     }
+    [Fact]
+    public void ArtSupplyDataSupportsBothComparisonStatementsAndDifferenceEquations()
+    {
+        var family=UsCcssG1Unit2CompareFiveQuestions.Data;
+        var modes=new HashSet<int>();
+        for(var seed=0;seed<110;seed++)
+        {
+            var task=UsCcssG1Unit2CompareFiveQuestions.Build(family,new Random(seed*37+11));
+            var mode=task.Parameters["mode"];
+            modes.Add(mode);
+            var expected=UsCcssG1Unit2CompareFiveQuestions.Solve(family,task.Parameters);
+            Assert.True(UsCcssG1Unit2CompareFiveQuestions.Verify(
+                family,task.Parameters,expected));
+            if(mode==0)Assert.Contains("equation",task.Prompt);
+            if(mode==1)
+            {
+                Assert.Equal("TRUE",expected);
+                Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(
+                    family,task.Parameters,"FALSE"));
+            }
+            if(mode==2)
+            {
+                Assert.Equal("FALSE",expected);
+                Assert.False(UsCcssG1Unit2CompareFiveQuestions.Verify(
+                    family,task.Parameters,"TRUE"));
+            }
+        }
+        Assert.Equal(3,modes.Count);
+    }
+
 }

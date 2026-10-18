@@ -29,7 +29,7 @@ public static class UsCcssG1Unit2CompareFiveQuestions
         int small=random.Next(2,8);
         int big=random.Next(small+1,11);
         int other=random.Next(1,8);
-        int mode=family==Mixed?random.Next(3):0;
+        int mode=family==Mixed||family==Data?random.Next(3):0;
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
         {
             ["small"]=small,["big"]=big,["other"]=other,["mode"]=mode
@@ -37,7 +37,7 @@ public static class UsCcssG1Unit2CompareFiveQuestions
         string question=family switch
         {
             Towers=>$"A blue cube tower has {big} cubes and a yellow tower has {small} cubes. "+
-                "How many cubes must be ADDED to the shorter tower to make the towers the same height? "+
+                "How many cubes must be ADDED to the shorter tower OR REMOVED from the taller tower to make the towers the same height? "+
                 "Write one complete addition or subtraction equation showing the DIFFERENCE. "+
                 "You may also show your cube-matching strategy to your teacher.",
             Supplies=>$"There are {big} notebooks for a class, but only {small} pencils. "+
@@ -45,8 +45,11 @@ public static class UsCcssG1Unit2CompareFiveQuestions
                 "Write one full addition or subtraction equation that matches the comparison.",
             Data=>$"An imaginary classroom chart shows favorite art supplies: "+
                 $"crayons {big}, markers {small}, paint {other}. "+
-                "How many MORE votes did crayons receive than markers? "+
-                "Match their two category counts and write one full addition or subtraction equation. "+
+                (mode==0
+                    ?"How many MORE votes did crayons receive than markers? "+
+                     "Match their two category counts and write one full addition or subtraction equation. "
+                    :$"Statement: There were {big-small+(mode==2?1:0)} MORE crayon votes than marker votes. "+
+                     "Decide whether the statement matches the data. Write TRUE or FALSE. ")+
                 "These are sample data, NOT a real class survey.",
             Related=>$"A tower has {big} cubes and another has {small} cubes. "+
                 "Find the DIFFERENCE. Write BOTH a completed addition equation "+
@@ -80,7 +83,7 @@ public static class UsCcssG1Unit2CompareFiveQuestions
            !p.TryGetValue("mode",out var mode))return false;
         return small is >=2 and <=7 &&
             big>small&&big<=10&&other is >=1 and <=7 &&
-            mode is >=0 and <=2&&(family==Mixed||mode==0);
+            mode is >=0 and <=2&&(family==Mixed||family==Data||mode==0);
     }
 
     private static string Add(int a,int b,int t)=>$"{a}+{b}={t}";
@@ -94,6 +97,8 @@ public static class UsCcssG1Unit2CompareFiveQuestions
     {
         if(!Valid(family,p))throw new InvalidOperationException("Invalid Grade 1 comparison parameters");
         int small=p["small"],big=p["big"],difference=big-small;
+        if(family==Data&&p["mode"]!=0)
+            return p["mode"]==1?"TRUE":"FALSE";
         return family==Related
             ?Add(small,difference,big)+";"+Sub(big,small,difference)
             :Add(small,difference,big);
@@ -102,6 +107,8 @@ public static class UsCcssG1Unit2CompareFiveQuestions
     public static bool GradePersistedAnswer(string? family,string expected,string? response)
     {
         if(!Supports(family)||response is null)return false;
+        if(family==Data && expected is ("TRUE" or "FALSE"))
+            return string.Equals(response.Trim(),expected,StringComparison.OrdinalIgnoreCase);
         var canonical=Parts(expected);
         var parts=Parts(response);
         if(canonical.Length is <1 or >2||parts.Length<1||parts.Length>2)return false;
