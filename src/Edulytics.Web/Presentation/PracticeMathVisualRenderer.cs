@@ -105,6 +105,11 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u02.compare.write_related_equations" or
                 "usccss.g1.u02.compare.mixed_story_equation"
                     => GradeOneUnit2CompareFiveVisual(family,parameters),
+                "usccss.g1.u07.l13.hour_clock" or
+                "usccss.g1.u07.l14.half_hour_clock" or
+                "usccss.g1.u07.l15.write_hours_halfhours" or
+                "usccss.g1.u07.l17.center_geometry_and_time"
+                    => GradeOneFullGradeClockVisual(family,parameters),
                 "usccss.g1.u03.l09.ten.add_frame" or
                 "usccss.g1.u03.l09.ten.missing_equation" or
                 "usccss.g1.u03.l10.teen.story_unknown" or
