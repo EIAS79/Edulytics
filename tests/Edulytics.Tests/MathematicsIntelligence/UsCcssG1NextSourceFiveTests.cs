@@ -115,4 +115,46 @@ public sealed class UsCcssG1NextSourceFiveTests
             Assert.NotEmpty(modes);
         }
     }
+
+    [Fact]
+    public void IdenticalVisibleTasksHaveStableExposureAcrossUnusedParametersAndSessions()
+    {
+        var engine=new ExactSkillContractQuestionEngine();
+        var familyList=Codes.SelectMany(code=>LessonPracticeContractRegistry.All
+            .Single(c=>c.LessonCode==code).AllowedQuestionFamilies).ToArray();
+        Assert.Equal(10,familyList.Length);
+        foreach(var family in familyList)
+        {
+            var seen=new Dictionary<string,(string ExposureFingerprint,string Parameters)>(
+                StringComparer.Ordinal);
+            for(var seed=1;seed<=300;seed++)
+            {
+                var q=Assert.Single(engine.Generate(
+                    "G1-008-exposures",family,[family],
+                    ExactSkillQuestionDifficulty.Standard,1,seed,[]));
+                var fingerprintParameters=string.Join(";",
+                    q.Parameters.OrderBy(kv=>kv.Key,StringComparer.Ordinal)
+                        .Select(kv=>$"{kv.Key}={kv.Value}"));
+                if(seen.TryGetValue(q.Prompt,out var previous))
+                {
+                    // The identity is the task a child can actually see:
+                    // irrelevant c/mode must not change longitudinal exposure.
+                    Assert.Equal(previous.ExposureFingerprint,q.ExposureFingerprint);
+                }
+                else
+                    seen[q.Prompt]=(q.ExposureFingerprint,fingerprintParameters);
+            }
+            Assert.True(seen.Count>4,"Expected a meaningful task pool for "+family);
+            var batch=engine.Generate("G1-008-exposures",family,[family],
+                ExactSkillQuestionDifficulty.Standard,5,20261018,[]);
+            Assert.Equal(5,batch.Select(q=>q.Prompt)
+                .Distinct(StringComparer.OrdinalIgnoreCase).Count());
+            var initial=Assert.Single(engine.Generate("G1-008-exposures",
+                family,[family],ExactSkillQuestionDifficulty.Standard,1,99,[]));
+            var withHistory=Assert.Single(engine.Generate("G1-008-exposures",
+                family,[family],ExactSkillQuestionDifficulty.Standard,1,99,
+                [initial.ExposureFingerprint]));
+            Assert.NotEqual(initial.Prompt,withHistory.Prompt);
+        }
+    }
 }

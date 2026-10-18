@@ -236,7 +236,8 @@ public sealed class ExactSkillContractQuestionEngine
                     fingerprintNamespace,
                     scopeKey,
                     family,
-                    problem.Parameters);
+                    problem.Parameters,
+                    problem.Prompt);
 
                 var normalizedPrompt = NormalizePrompt(problem.Prompt);
                 var hasSemanticVariant =
@@ -3338,13 +3339,19 @@ public sealed class ExactSkillContractQuestionEngine
         string fingerprintNamespace,
         string scopeKey,
         string family,
-        IReadOnlyDictionary<string, int> parameters)
+        IReadOnlyDictionary<string, int> parameters,
+        string prompt)
     {
-        var canonicalParameters = string.Join(
-            ";",
-            parameters
-                .OrderBy(x => x.Key, StringComparer.Ordinal)
-                .Select(x => $"{x.Key}={x.Value.ToString(CultureInfo.InvariantCulture)}"));
+        // V1 G1-008: several source-based families carry unused randomized
+        // helper fields (e.g. c or mode). An identical learner-visible
+        // mathematical task must have ONE exposure fingerprint across seeds.
+        var canonicalParameters = UsCcssG1NextSourceFiveQuestions.Supports(family)
+            ? "PROMPT=" + NormalizePrompt(prompt)
+            : string.Join(
+                ";",
+                parameters
+                    .OrderBy(x => x.Key, StringComparer.Ordinal)
+                    .Select(x => $"{x.Key}={x.Value.ToString(CultureInfo.InvariantCulture)}"));
 
         var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(
             $"{fingerprintNamespace}|{scopeKey}|{family}|{canonicalParameters}"));
@@ -3360,6 +3367,7 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> Parameters);
 
     private static bool RequiresPromptUniqueness(string family) =>
+        UsCcssG1NextSourceFiveQuestions.Supports(family) ||
         family is
             "supporting.geometry.shape_dimension" or
             "supporting.reasoning.multistep" or
