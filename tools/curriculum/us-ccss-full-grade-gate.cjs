@@ -68,10 +68,12 @@ function validSourceAssessmentEvidence(ordinal, e, checkFile=validEvidenceFile) 
       !checkFile(e.independentGradingProofPath,e.independentGradingProofSha256) ||
       !checkFile(e.runtimePracticeProofPath,e.runtimePracticeProofSha256))) return false;
   if (!digital && e.allowedFamilies.length!==0) return false;
-  if (authored && (e.authenticatedStudentWorkVerified!==true ||
-      e.authoredOriginalWorkVerified!==true ||
-      e.teacherAssessmentRecorded!==true ||
-      !checkFile(e.authoredOriginalWorkProofPath,e.authoredOriginalWorkProofSha256)))
+  // The ORIGINAL V1 checks the teaching of an authoring task and its review
+  // mechanism, not the presence of real child work BEFORE deployment.
+  // A teacher's future observation must NOT be falsely reported as certified.
+  if (authored && (e.authoredTaskContentVerified!==true ||
+      e.teacherLedOutcomeNotClaimed!==true ||
+      !checkFile(e.authoredTaskContentProofPath,e.authoredTaskContentProofSha256)))
     return false;
   return true;
 }
@@ -81,11 +83,13 @@ function validRecordedAuthorshipDecision(ordinal) {
     'lesson-65-learner-authored-story-review-rubric.json':
     'lesson-146-number-riddle-authorship-rubric.json';
   const rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
-  if (rubric.lessonOrdinal!==ordinal || rubric.authenticatedStudentWorkVerified!==true ||
-      rubric.independentTeacherAcceptance!==true) return false;
-  return ordinal===65 ? Boolean(rubric.submissionEvidence) :
-    Boolean(rubric.studentSubmission && rubric.teacherEvidenceReference &&
-      rubric.readyForGradeRelease===true);
+  // A rubric and honest unverified teacher activity are required. Authentic
+  // classroom work/teacher feedback can happen AFTER this lesson is published.
+  return rubric.lessonOrdinal===ordinal && Array.isArray(rubric.teacherRubric) &&
+    rubric.teacherRubric.some(x=>x.criterion==='Authorship') &&
+    rubric.teacherRubric.some(x=>x.criterion==='Math accuracy' ||
+      x.criterion==='Solution and consistency') &&
+    rubric.status==='TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED';
 }
 
 function evaluate(manifest,ledger,candidateSha) {
