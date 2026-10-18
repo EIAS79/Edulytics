@@ -1031,7 +1031,7 @@ for key, schoolname in SCHOOLS:
                         "03:09": "usccss.g1.u03.l09.ten.missing_equation",
                         "03:10": "usccss.g1.u03.l10.teen.related_equations",
                         "03:11": "usccss.g1.u03.l11.teen.add_missing",
-                        "03:12": "usccss.g1.u03.l12.teen.shake_cover",
+                        "03:12": "usccss.g1.u03.l12.teen.equations_missing",
                         "03:13": "usccss.g1.u03.l13.teen.change_unknown",
                     }
                     assert all(row[1] in (authored_family,pairs[lesson_suffix])

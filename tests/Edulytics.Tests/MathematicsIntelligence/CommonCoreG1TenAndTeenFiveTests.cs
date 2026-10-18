@@ -48,6 +48,9 @@ public sealed class CommonCoreG1TenAndTeenFiveTests
         Assert.Contains("ten-frame",rows[0].En.Explanation,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("missing start",rows[1].En.KeyConceptsAndRules,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("rock",rows[2].En.Explanation,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Addition and Subtraction Equations with Teen Numbers",rows[3].En.Explanation);
+        Assert.Contains("18+2=20",rows[2].En.Explanation);
+        Assert.Contains("second complete ten",rows[2].En.WorkedExamples);
         Assert.Contains("Shake and Spill",rows[3].En.Explanation);
         Assert.Contains("Change Unknown",rows[4].En.Explanation);
     }

@@ -112,7 +112,7 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u03.l11.teen.add_story" or
                 "usccss.g1.u03.l11.teen.add_missing" or
                 "usccss.g1.u03.l12.teen.take_from" or
-                "usccss.g1.u03.l12.teen.shake_cover" or
+                "usccss.g1.u03.l12.teen.equations_missing" or
                 "usccss.g1.u03.l13.teen.result_unknown" or
                 "usccss.g1.u03.l13.teen.change_unknown"
                     => GradeOneTeenFiveVisual(family,parameters),

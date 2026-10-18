@@ -13,7 +13,7 @@ requirements={
 48:["Solve an Add To, Result Unknown story by adding one digit to a teen number within 20",
     "Find a missing addend or total in different-position equations with a teen addend"],
 49:["Solve a Take From, Result Unknown story by subtracting from a teen number without decomposing a ten",
-    "Use visible and hidden parts in Shake and Spill, Cover with 11–20 counters; partner gameplay requires a teacher"],
+    "Find missing values in the original student Activity 12.2, Addition and Subtraction Equations with Teen Numbers; teacher-led Shake and Spill is a separate center"],
 50:["Solve a Take From, Result Unknown story using a teen starting quantity",
     "Solve a Take From, Change Unknown story and explain why the position of the unknown changes the equation"]
 }

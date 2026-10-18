@@ -171,6 +171,33 @@ public sealed class UsCcssG1TeenFiveTests
         Assert.False(UsCcssG1TeenFiveQuestions.Verify(family,p,
             $"MISSING={(correctMissing==10?6:10)};RELATED=10+6=16"));
     }
+    [Theory]
+    [InlineData(0,"MISSING=12;CHECK=12+3=15")]
+    [InlineData(1,"MISSING=3;CHECK=12+3=15")]
+    [InlineData(2,"MISSING=15;CHECK=12+3=15")]
+    [InlineData(3,"MISSING=12;CHECK=12+3=15")]
+    public void OriginalL12TeenEquationsAssessUnknownPositionNotCoveredCounters(
+        int mode,string expected)
+    {
+        var p=new Dictionary<string,int>{{"a",15},{"b",3},{"c",0},{"mode",mode}};
+        var family=UsCcssG1TeenFiveQuestions.TeenEquations;
+        Assert.True(UsCcssG1TeenFiveQuestions.Verify(family,p,expected));
+        Assert.True(UsCcssG1TeenFiveQuestions.GradePersistedAnswer(family,
+            UsCcssG1TeenFiveQuestions.Solve(family,p),expected));
+        var wrong=mode==1?"MISSING=12;CHECK=12+3=15":
+                              "MISSING=3;CHECK=12+3=15";
+        Assert.False(UsCcssG1TeenFiveQuestions.Verify(family,p,wrong));
+    }
+    [Fact]
+    public void OriginalL12SecondFamilyIsNotUnrelatedShakeCover()
+    {
+        var lesson=LessonPracticeContractRegistry.All.Single(
+            x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L12");
+        Assert.Contains(UsCcssG1TeenFiveQuestions.TeenEquations,
+            lesson.AllowedQuestionFamilies);
+        Assert.DoesNotContain("usccss.g1.u03.l12.teen.shake_cover",
+            lesson.AllowedQuestionFamilies);
+    }
     [Fact]
     public void OriginalG1010VisualsDoNotShowAnswersOrInventHiddenCounters()
     {

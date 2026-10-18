@@ -14,12 +14,12 @@ public static class UsCcssG1TeenFiveQuestions
     public const string AddRockStory="usccss.g1.u03.l11.teen.add_story";
     public const string TeenAddMissing="usccss.g1.u03.l11.teen.add_missing";
     public const string SubtractCollection="usccss.g1.u03.l12.teen.take_from";
-    public const string HiddenCounters="usccss.g1.u03.l12.teen.shake_cover";
+    public const string TeenEquations="usccss.g1.u03.l12.teen.equations_missing";
     public const string ResultStory="usccss.g1.u03.l13.teen.result_unknown";
     public const string ChangeStory="usccss.g1.u03.l13.teen.change_unknown";
     public static readonly IReadOnlyList<string> Families=[
         TenFrame,TenMissing,TeenStories,TeenRelations,AddRockStory,
-        TeenAddMissing,SubtractCollection,HiddenCounters,ResultStory,ChangeStory
+        TeenAddMissing,SubtractCollection,TeenEquations,ResultStory,ChangeStory
     ];
     public sealed record Problem(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
@@ -40,7 +40,7 @@ public static class UsCcssG1TeenFiveQuestions
             TeenStories=>a is >=11 and <=19 && b is >=1 and <=10 && b<a,
             AddRockStory or TeenAddMissing=>a is >=11 and <=19 && b is >=1 and <=9 && a+b<=20,
             SubtractCollection=>a is >=11 and <=19 && b is >=1 and <=9 && a-b>=10,
-            HiddenCounters=>a is >=11 and <=20 && b is >=1 and <=19 && b<a,
+            TeenEquations=>a is >=11 and <=19 && b is >=1 and <=9 && a-b>=10,
             ResultStory=>a is >=11 and <=20 && b is >=1 and <=9 && b<a,
             ChangeStory=>a is >=11 and <=20 && b is >=1 and <=19 && b<a,
             _=>false
@@ -88,7 +88,7 @@ public static class UsCcssG1TeenFiveQuestions
             case AddRockStory:
                 a=random.Next(11,20);b=random.Next(1,21-a);
                 prompt=mode%2==0
-                 ?$"Kiran has {a} rocks and finds {b} more on a hike. How many rocks does he have? Keep the group of ten and add the ones. Write TOTAL=number;EQUATION=number+number=number."
+                 ?$"Kiran has {a} rocks and finds {b} more on a hike. How many rocks does he have? Combine the ones; if ten ones are made, show a SECOND group of ten. Write TOTAL=number;EQUATION=number+number=number."
                  :$"A child collects {a} stones and then {b} additional stones. Find the new total using a full ten-frame and ones. Write TOTAL=number;EQUATION=number+number=number.";
                 break;
             case TeenAddMissing:
@@ -107,11 +107,18 @@ public static class UsCcssG1TeenFiveQuestions
                  ?$"Noah has {a} game pieces and takes {b} out. How many remain? Show subtraction without breaking the bundle of ten. Write REMAIN=number;EQUATION=number-number=number."
                  :$"A box contains {a} counters. A child removes {b} counters. How many counters remain? Keep the ten intact. Write REMAIN=number;EQUATION=number-number=number.";
                 break;
-            case HiddenCounters:
-                a=random.Next(11,21);b=random.Next(1,a);
-                prompt=mode%2==0
-                 ?$"Shake and Spill, Cover: there are {a} counters in total; {b} red counters are visible and the yellow counters are hidden under a cup. How many yellow counters are hidden? Write HIDDEN=number;EQUATION=number+number=number."
-                 :$"Shake and Spill, Cover: out of {a} counters, you can see {b}. The rest are under the cup. How many are covered? Write HIDDEN=number;EQUATION=number+number=number. Tell a partner your method.";
+            case TeenEquations:
+                // IM 2021 L12 Activity 12.2: solve teen-number addition
+                // AND subtraction equations for the unknown in every
+                // position, keeping one full ten without regrouping.
+                a=random.Next(11,20);b=random.Next(1,a-9);
+                prompt=mode switch
+                {
+                    0=>$"Addition and Subtraction Equations with Teen Numbers: solve {a}-{b}=□. Write MISSING=number;CHECK=number+number=number.",
+                    1=>$"Addition and Subtraction Equations with Teen Numbers: solve {a}-□={a-b}. Write MISSING=number;CHECK=number+number=number.",
+                    2=>$"Addition and Subtraction Equations with Teen Numbers: solve {a-b}+{b}=□. Write MISSING=number;CHECK=number+number=number.",
+                    _=>$"Addition and Subtraction Equations with Teen Numbers: solve □+{b}={a}. Write MISSING=number;CHECK=number+number=number."
+                };
                 break;
             case ResultStory:
                 a=random.Next(11,21);b=random.Next(1,10);
@@ -147,7 +154,7 @@ public static class UsCcssG1TeenFiveQuestions
             AddRockStory=>$"TOTAL={a+b};EQUATION={a}+{b}={a+b}",
             TeenAddMissing=>$"MISSING={(mode is 0 or 1?a+b:b)};EQUATION={a}+{b}={a+b}",
             SubtractCollection=>$"REMAIN={a-b};EQUATION={a}-{b}={a-b}",
-            HiddenCounters=>$"HIDDEN={a-b};EQUATION={b}+{a-b}={a}",
+            TeenEquations=>$"MISSING={(mode==1?b:mode==2?a:a-b)};CHECK={a-b}+{b}={a}",
             ResultStory=>$"REMAIN={a-b};EQUATION={a}-{b}={a-b}",
             ChangeStory=>$"LEFT={a-b};EQUATION={a}-{a-b}={b}",
             _=>throw new InvalidOperationException()
