@@ -959,6 +959,13 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // V1 G1-007: five consecutive original 2021 lessons L16–L20.
+        foreach(var reviewed in UsCcssG1Unit2EquationsAndStoriesPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException("V1 G1-007 missing: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         // V1 G1-006: first-edition 2021 G1 Unit 2 lessons 11-15.
         foreach(var reviewed in UsCcssG1Unit2CompareFivePracticeContracts.Reviewed)
         {

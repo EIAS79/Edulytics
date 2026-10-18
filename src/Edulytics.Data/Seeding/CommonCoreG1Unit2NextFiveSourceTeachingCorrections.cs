@@ -92,6 +92,7 @@ public static class CommonCoreG1Unit2NextFiveSourceTeachingCorrections
         "PED:US-CCSS-MATH:G1:U02:L08"=>("Shake, Spill, and Cover","One Part Red, How Many Yellow?"),
         "PED:US-CCSS-MATH:G1:U02:L09"=>("Compare Story Problems PLC Activity","What Is the Unknown?"),
         "PED:US-CCSS-MATH:G1:U02:L14"=>("Compare with Addition and Subtraction PLC Activity","Compare with Addition and Subtraction"),
+        "PED:US-CCSS-MATH:G1:U02:L19"=>("Story Problems and Equations PLC Activity","Story Problems and Equations"),
         _=>("", "")
     };
     // Keep the immutable historical blueprint/title alias for traceability.

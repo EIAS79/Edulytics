@@ -37,6 +37,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1Unit2Part2SourceTeachingCorrections.Apply(document);
         CommonCoreG1Unit2NextFiveSourceTeachingCorrections.Apply(document);
         CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.Apply(document);
+        CommonCoreG1Unit2EquationsAndStoriesSourceCorrections.Apply(document);
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
         CommonCoreT001MixedAddSubtractContentCorrection.Apply(document);
         CommonCoreT001FindThePairContentCorrection.Apply(document);
@@ -213,8 +214,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g1Part2);
         var compared=CommonCoreG1Unit2CompareFiveSourceTeachingCorrections
             .GetExpectedContentVersion(document,lesson,g1Next);
+        var stories=CommonCoreG1Unit2EquationsAndStoriesSourceCorrections
+            .GetExpectedContentVersion(document,lesson,compared);
         var html = CommonCoreSourceBoundHtmlEntityCorrections
-            .GetExpectedContentVersion(document, lesson, compared);
+            .GetExpectedContentVersion(document, lesson, stories);
         var mixed = CommonCoreT001MixedAddSubtractContentCorrection
             .GetExpectedContentVersion(document, lesson, html);
         return CommonCoreT001FindThePairContentCorrection
@@ -256,6 +259,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2NextFiveSourceTeachingCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.IsTarget(document, lesson) ||
+        CommonCoreG1Unit2EquationsAndStoriesSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreSourceBoundHtmlEntityCorrections
             .IsTarget(document, lesson) ||
         CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
@@ -335,6 +339,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1Unit2NextFiveSourceTeachingCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2CompareFiveSourceTeachingCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG1Unit2EquationsAndStoriesSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreSourceBoundHtmlEntityCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||

@@ -917,13 +917,21 @@ for key, schoolname in SCHOOLS:
                 ("13", "usccss.g1.u02.compare.art_supply_data_difference"),
                 ("14", "usccss.g1.u02.compare.write_related_equations"),
                 ("15", "usccss.g1.u02.compare.mixed_story_equation"),
+                # V1 G1-007: exactly the next five original 2021 lessons.
+                # L16 reuses proven Capture Squares generator, no duplicate.
+                ("16", "usccss.g1.u02.center.capture_squares.select_legal_edge"),
+                ("17", "usccss.g1.u02.story.compare_structure_and_equation"),
+                ("18", "usccss.g1.u02.story.match_equation_with_unknown_box"),
+                ("19", "usccss.g1.u02.story.two_matching_equations"),
+                ("20", "usccss.g1.u02.story.compose_scaffold_from_equation"),
             ):
                 code = "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix
                 assert code in offered_by_code, ("V1 lesson not available to student", code)
                 lesson_id = offered_by_code[code]
                 lesson_html = get_page(student, "/student/learning/lesson/" + lesson_id)
                 assert "rich-lesson-section" in lesson_html, (code, "learner lesson missing")
-                if lesson_suffix in ("11", "12", "13", "14", "15"):
+                if lesson_suffix in ("11", "12", "13", "14", "15",
+                                    "16", "17", "18", "19", "20"):
                     assert "Goal:" in lesson_html, (code, "publisher goal absent")
                     # Rich V2 deliberately transforms source Step N prose into
                     # numbered <li> nodes in rendered worked-example cards.
@@ -937,6 +945,9 @@ for key, schoolname in SCHOOLS:
                 if lesson_suffix == "14":
                     assert "Compare with Addition and Subtraction" in html.unescape(lesson_html), (
                         code, "2021 original title not projected")
+                if lesson_suffix == "19":
+                    assert "Story Problems and Equations" in html.unescape(lesson_html), (
+                        code, "2021 original L19 title not projected")
                 form = get_page(student, "/student/practice")
                 token = re.search(
                     r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
@@ -970,7 +981,7 @@ for key, schoolname in SCHOOLS:
                 items = [row.split("|", 3) for row in rows]
                 assert len(items) == 5 and all(row[0] == lesson_id for row in items), (
                     code, "wrong student lesson or incomplete items", items)
-                if lesson_suffix == "10":
+                if lesson_suffix in ("10", "16"):
                     assert any(row[1] ==
                         "usccss.g1.u02.center.mental_subtraction_within10"
                         for row in items), (
@@ -1020,7 +1031,9 @@ for key, schoolname in SCHOOLS:
                     assert order == str(index+1) and saved_answer == expected_answer and (
                         correct == ("0" if index == wrong_index else "1")
                     ), (code, "incorrect grading or persisted answer", line)
-                print("V1_G1_006_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                print("V1_G1_007_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("16", "17", "18", "19", "20") else
+                      "V1_G1_006_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
                       ("11", "12", "13", "14", "15") else
                       "V1_G1_004_AUTHORED_LEARNER_HTTPS_PERSISTED",
                       code, "4 correct / 1 wrong", flush=True)
