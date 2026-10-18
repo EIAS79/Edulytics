@@ -8,6 +8,12 @@ Read live `main`, current candidate, the ordered canonical source grade manifest
 
 For G1, historical ordinals 1–50 are already published under the predecessor and remain untouched. The work cursor is **51**, not the manifest's stale `nextDeliveryChunk=G1-004`. Current scope is **exactly 96 new lessons 51–146**. The previous batch evidence is retained as immutable historical coverage, never rewritten to claim new tests.
 
+## Whole-grade execution, not five-by-five
+
+Treat `node tools/curriculum/us-ccss-full-grade-worklist.cjs` as the **single Grade 1 scope** containing every ordinal **51–146 (96)**. It must never be partitioned into execution batches of five, ten, twenty, thirty, etc. `--remaining` lists every unfinished new lesson without a size limit. The worklist does not manufacture course content or publish anything; it prevents scope truncation.
+
+Work through the genuine per-lesson V1 A–D source/teaching/Practice/test checks on the whole grade. Save source-verified progress as necessary for resumability, not as five-lesson approvals. If a step is blocked, retain a truthful blocked state; do not bypass academic tests just to reach the end of the worklist. After all **96 genuinely** receive independent academic acceptance and required evidence, perform **one** final grade-level E/F gate, protected CI, exact Render SHA verification, and owner UAT. Historical 1–50 stay untouched.
+
 ## Stages A–F (unchanged in substance)
 
 | Stage | Execution | Evidence |

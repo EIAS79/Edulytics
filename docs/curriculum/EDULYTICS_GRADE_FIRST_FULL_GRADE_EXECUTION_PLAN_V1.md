@@ -18,6 +18,12 @@ This is **the same V1 stages A–F, source standards, first-party lessons and Pr
 - No timeslots or minimum/maximum minutes for any lesson or stage; V1's 25–75-minute five-lesson estimate is an obsolete planning illustration, not an execution rule.
 - Existing V2 20- or 500-lesson scheduling/NO_GO gates remain historical/inactive, never carried forward as positive acceptance. A successful negative-control test only demonstrates that invalid evidence was rejected.
 
+## Continuous full-grade executor requirement — 2026-10-18 correction
+
+**The executor is not permitted to stop at, select, approve or publish five-lesson waves.** A–D must be applied to every outstanding lesson in the **one Grade 1 work unit 51–146**. Checkpoints and Git commits can occur after any individual lesson or technical change, without treating those saves as release boundaries. Do not artificially wait for a certain number of lessons. A difficult/blocked lesson remains BLOCKED and must be resolved; do not skip to publish a misleading grade success. Content fixes, Practice, source-student-task review, authenticated scoring and lesson-specific tests are performed for each new lesson as required, and the final E/F gate remains ONE grade.
+
+The machine-readable grade scope and resume command is `node tools/curriculum/us-ccss-full-grade-worklist.cjs` (all 96 ordinals) or `--remaining` (unfinished items, without a cap). Its output is a **scope worklist only**, not an autonomous executor, test evidence, acceptance, or production release. Real lesson implementation must continue against that grade-wide worklist on GitHub-authorized development workflows, without five-lesson stopping points. CI verifies that it contains **all 96** and that the historical **50 are referenced only**.
+
 ## 2. Grade manifest, checkpoint and ordering
 
 `artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json` inventories **146 ordered unique lessons** across eight units; sources are IM/Kendall Hunt 2021. Original source identity and lawful provenance must be preserved. The old manifest's `nextDeliveryChunk: US-CCSS-G1-004` is stale and **not** a new-work cursor. Use the **new ledger** `artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json`.

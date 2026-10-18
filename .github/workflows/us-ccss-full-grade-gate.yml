@@ -23,6 +23,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
       - 'tools/curriculum/us-ccss-full-grade-gate.cjs'
+      - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
+      - 'tests/us-ccss-full-grade-worklist.test.cjs'
       - 'tests/us-ccss-full-grade-gate.test.cjs'
       - '.github/workflows/us-ccss-full-grade-gate.yml'
   push:
@@ -47,6 +49,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
       - 'tools/curriculum/us-ccss-full-grade-gate.cjs'
+      - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
+      - 'tests/us-ccss-full-grade-worklist.test.cjs'
       - 'tests/us-ccss-full-grade-gate.test.cjs'
       - '.github/workflows/us-ccss-full-grade-gate.yml'
   workflow_dispatch:
@@ -72,9 +76,16 @@ jobs:
       - name: Test honest 96-lesson source triage and fail-closed grade control
         run: |
           node --test tests/us-ccss-full-grade-gate.test.cjs
+          node --test tests/us-ccss-full-grade-worklist.test.cjs
           node --test tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs
           node --test tests/us-ccss-g1-full-grade-authorship-review.test.cjs
           node --test tests/us-ccss-g1-static-remaining-triage.test.cjs
+      - name: Prove full-grade work scope includes all 96 consecutive lessons (never five)
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/curriculum/us-ccss-full-grade-worklist.cjs > /tmp/g1-full-grade-worklist.json
+          node -e "const x=require('/tmp/g1-full-grade-worklist.json');if(x.executionUnit!=='ONE_WHOLE_GRADE'||x.items.length!==96||x.fixedChunkSize!==null||x.items[0].ordinal!==51||x.items[95].ordinal!==146||x.historic.count!==50||x.status!=='NO_GO')process.exit(1)"
       - name: Negative control on freshly built, deliberately incomplete 146-row grade ledger
         shell: bash
         run: |
@@ -89,6 +100,13 @@ jobs:
              result.historicRetestedCount!==0||result.productionLive!==false)process.exit(1);
           console.log('Negative control correctly NO_GO; does not certify current lesson progress.');
           NODE
+      - name: Save grade-wide 96-lesson execution worklist (not approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-full-grade-96-lessons-worklist
+          path: /tmp/g1-full-grade-worklist.json
+          if-no-files-found: warn
       - name: Save blocked release decision, not an academic certificate
         if: always()
         uses: actions/upload-artifact@v4
