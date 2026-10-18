@@ -56,42 +56,6 @@ function sourceUnchangedSinceProof(proofSha,releaseSha) {
     'src/Edulytics.Web','tests/Edulytics.Tests','tools/phase29'],{cwd:ROOT});
   return diff.status===0;
 }
-// Preserve V1 source-task evidence standards without falsely forcing all original
-// Grade 1 source activities into an auto-gradable numeric family.
-function validSourceAssessmentEvidence(ordinal, e, checkFile=validEvidenceFile) {
-  if (!Array.isArray(e.allowedFamilies)) return false;
-  const authored = ordinal===65 || ordinal===146;
-  const digital = ordinal!==65;
-  if (digital && (e.allowedFamilies.length===0 ||
-      e.realPracticeGradingPersisted!==true ||
-      e.independentCorrectAndWrongAnswersVerified!==true ||
-      !checkFile(e.independentGradingProofPath,e.independentGradingProofSha256) ||
-      !checkFile(e.runtimePracticeProofPath,e.runtimePracticeProofSha256))) return false;
-  if (!digital && e.allowedFamilies.length!==0) return false;
-  // The ORIGINAL V1 checks the teaching of an authoring task and its review
-  // mechanism, not the presence of real child work BEFORE deployment.
-  // A teacher's future observation must NOT be falsely reported as certified.
-  if (authored && (e.authoredTaskContentVerified!==true ||
-      e.teacherLedOutcomeNotClaimed!==true ||
-      !checkFile(e.authoredTaskContentProofPath,e.authoredTaskContentProofSha256)))
-    return false;
-  return true;
-}
-function validRecordedAuthorshipDecision(ordinal) {
-  if (ordinal!==65 && ordinal!==146) return true;
-  const name=ordinal===65?
-    'lesson-65-learner-authored-story-review-rubric.json':
-    'lesson-146-number-riddle-authorship-rubric.json';
-  const rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
-  // A rubric and honest unverified teacher activity are required. Authentic
-  // classroom work/teacher feedback can happen AFTER this lesson is published.
-  return rubric.lessonOrdinal===ordinal && Array.isArray(rubric.teacherRubric) &&
-    rubric.teacherRubric.some(x=>x.criterion==='Authorship') &&
-    rubric.teacherRubric.some(x=>x.criterion==='Math accuracy' ||
-      x.criterion==='Solution and consistency') &&
-    rubric.status==='TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED';
-}
-
 function evaluate(manifest,ledger,candidateSha) {
   const issues=[],missing=[];
   if(!Array.isArray(manifest?.lessons)) return {outcome:'NO_GO',issues:['No valid grade manifest']};
@@ -128,14 +92,16 @@ function evaluate(manifest,ledger,candidateSha) {
     const e=r.evidence||{};
     const valid = (e.reviewedOriginalTeacherSource===true && e.reviewedOriginalStudentTask===true &&
       e.licenseVerified===true && e.actualLearnerRenderingVerified===true &&
-      validSourceAssessmentEvidence(ord,e) &&
-      validRecordedAuthorshipDecision(ord) &&
+      e.realPracticeGradingPersisted===true && e.independentCorrectAndWrongAnswersVerified===true &&
+      Array.isArray(e.allowedFamilies)&&e.allowedFamilies.length>0 &&
       Array.isArray(e.forbiddenFamilies)&&
       Array.isArray(e.sourceObjectives)&&e.sourceObjectives.length>0 &&
       isHash(e.sourceSha256)&&isHash(e.effectiveStudentBodySha256)&&
       e.sourceSha256===original.teacherPreparationSha256 &&
       isSha(e.testedCodeSha) && verifiedProof(e.testedCodeSha) &&
       validEvidenceFile(e.sourceReviewPath,e.sourceReviewFileSha256) &&
+      validEvidenceFile(e.independentGradingProofPath,e.independentGradingProofSha256) &&
+      validEvidenceFile(e.runtimePracticeProofPath,e.runtimePracticeProofSha256) &&
       Array.isArray(e.tests)&&e.tests.length>0 && e.tests.every(x=>validEvidenceFile(x.path,x.sha256)));
     if(!valid){missing.push({ordinal:ord,reason:'Invalid/missing verifiable source, grading, runtime, tests or exact-candidate evidence'});firstUnfinished=Math.min(ord,firstUnfinished);continue;}
     accepted++;
@@ -165,4 +131,4 @@ function main(args){
   if(report.issues.length || (args.includes('--release') && report.outcome==='NO_GO'))process.exitCode=1;
 }
 if(require.main===module){try{main(process.argv.slice(2));}catch(e){console.error(e.stack);process.exitCode=2;}}
-module.exports={initial,evaluate,validEvidenceFile,sourceUnchangedSinceProof,validSourceAssessmentEvidence,validRecordedAuthorshipDecision};
+module.exports={initial,evaluate,validEvidenceFile,sourceUnchangedSinceProof};
