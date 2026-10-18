@@ -2,6 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const {spawnSync} = require('node:child_process');
 const ROOT = path.resolve(__dirname,'../..');
 const PLAN = 'EDULYTICS-GRADE-FIRST-FULL-GRADE-V1';
 const HISTORIC_SHA = '2c7c43a8f3af7151d422acc6e8e9e8fa5348833c';
@@ -42,6 +43,19 @@ function validEvidenceFile(rel, hash) {
   const actual=crypto.createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
   return actual.toLowerCase()===hash.toLowerCase();
 }
+function sourceUnchangedSinceProof(proofSha,releaseSha) {
+  if(!isSha(proofSha)||!isSha(releaseSha))return false;
+  // Evidence rows cannot embed their own future commit SHA: commit hashes
+  // change whenever the signed/attested ledger is committed. Verify that
+  // the independently TESTED source revision is an ancestor and that its
+  // academic/runtime code is byte-for-byte unchanged at release.
+  const ancestor=spawnSync('git',['merge-base','--is-ancestor',proofSha,releaseSha],{cwd:ROOT});
+  if(ancestor.status!==0)return false;
+  const diff=spawnSync('git',['diff','--quiet',proofSha,releaseSha,'--',
+    'src/Edulytics.Core','src/Edulytics.Services','src/Edulytics.Data',
+    'src/Edulytics.Web','tests/Edulytics.Tests','tools/phase29'],{cwd:ROOT});
+  return diff.status===0;
+}
 function evaluate(manifest,ledger,candidateSha) {
   const issues=[],missing=[];
   if(!Array.isArray(manifest?.lessons)) return {outcome:'NO_GO',issues:['No valid grade manifest']};
@@ -59,6 +73,12 @@ function evaluate(manifest,ledger,candidateSha) {
     issues.push('New lesson scope must be exactly 51-146');
   if(candidateSha!==undefined && !isSha(candidateSha)) issues.push('Candidate SHA must be exact 40 hex');
   let accepted=0, firstUnfinished=147;
+  const stableProofCache=new Map();
+  const verifiedProof=sha=>{
+    if(candidateSha===undefined)return true;
+    if(!stableProofCache.has(sha))stableProofCache.set(sha,sourceUnchangedSinceProof(sha,candidateSha));
+    return stableProofCache.get(sha);
+  };
   for(let i=0;i<96;i++){
     const ord=i+51,original=source[i+50],r=rows[i];
     if(!r||!original){missing.push({ordinal:ord,reason:'Missing canonical/new lesson'});firstUnfinished=Math.min(ord,firstUnfinished);continue;}
@@ -77,8 +97,8 @@ function evaluate(manifest,ledger,candidateSha) {
       Array.isArray(e.forbiddenFamilies)&&
       Array.isArray(e.sourceObjectives)&&e.sourceObjectives.length>0 &&
       isHash(e.sourceSha256)&&isHash(e.effectiveStudentBodySha256)&&
-      isSha(e.candidateSha) &&
-      (candidateSha===undefined || candidateSha===e.candidateSha) &&
+      e.sourceSha256===original.teacherPreparationSha256 &&
+      isSha(e.testedCodeSha) && verifiedProof(e.testedCodeSha) &&
       validEvidenceFile(e.sourceReviewPath,e.sourceReviewFileSha256) &&
       validEvidenceFile(e.independentGradingProofPath,e.independentGradingProofSha256) &&
       validEvidenceFile(e.runtimePracticeProofPath,e.runtimePracticeProofSha256) &&
@@ -100,10 +120,15 @@ function main(args){
   const shaArg=args.find(x=>x.startsWith('--sha='));
   const sha=shaArg?.slice(6);
   if(args.includes('--release')&&!sha) throw new Error('Use --release --sha=<exact-commit-sha>');
+  if(args.includes('--release')){
+    const actual=spawnSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'});
+    if(actual.status!==0||actual.stdout.trim()!==sha)
+      throw new Error('Refusing academic decision on a different code SHA than the checked-out candidate');
+  }
   const report=evaluate(manifest,ledger,args.includes('--release')?sha:undefined);
   if(args.includes('--inspect')) report.missing=report.missing.slice(0,5);
   console.log(JSON.stringify(report,null,2));
   if(report.issues.length || (args.includes('--release') && report.outcome==='NO_GO'))process.exitCode=1;
 }
 if(require.main===module){try{main(process.argv.slice(2));}catch(e){console.error(e.stack);process.exitCode=2;}}
-module.exports={initial,evaluate,validEvidenceFile};
+module.exports={initial,evaluate,validEvidenceFile,sourceUnchangedSinceProof};
