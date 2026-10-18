@@ -22,7 +22,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             .ToArray();
 
         // Previous 56 source-bound lessons plus exact source-SHA-guarded Grade 1 B03 L12/L14.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 18;
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 23;
         // Exact next five source-bound IM2021 G1 Unit 2 lesson rows, not a broad catalogue expansion.
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
@@ -59,7 +59,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L09", selected);
         for (var n=14;n<=27;n++)
             Assert.Contains($"PED:US-CCSS-MATH:G1:U03:L{n:00}",selected);
-        foreach(var n in new[]{1,2,4,5})
+        foreach(var n in new[]{1,2,4,5,6,7,8,9,10})
             Assert.Contains($"PED:US-CCSS-MATH:G1:U04:L{n:00}",selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U03:L28", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L11", selected);

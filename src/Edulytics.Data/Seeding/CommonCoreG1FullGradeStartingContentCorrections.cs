@@ -3,11 +3,11 @@ using Edulytics.Core.Entities;
 
 namespace Edulytics.Data.Seeding;
 
-/// <summary>Source-goal grounded learner-text corrections for G1 ordinals 51–70.
+/// <summary>Source-goal grounded learner-text corrections for G1 ordinals 51–75.
 /// Teaching body only: this does NOT independently certify practice or classroom activities.</summary>
 public static class CommonCoreG1FullGradeStartingContentCorrections
 {
-    public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l05-source-v3";
+    public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l10-source-v4";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -281,7 +281,82 @@ Step 3: For within-20 numbers, count on, make ten or use a known fact.
 Step 4: Check that the expression and answer obey the activity's value limits.
 Step 5: If participating in center play, discuss the strategy and turns with the teacher/partner.",
             @"Do not treat 40+30 as seven ones. Do not automatically mark center-play requirements met by solving one digital equation. Check that subtraction does not remove more than the starting number.",
-            @"I can calculate with tens and with numbers within 20; classroom center games stay teacher-led.")
+            @"I can calculate with tens and with numbers within 20; classroom center games stay teacher-led."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L06",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-6/preparation.html",@"c4019c5dfc3093c6cc9a477048c2aaa08c0a29618b5be8034c615c6c1306953d",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
+            @"Count Larger Collections",
+            @"Organize and count a mixed collection by grouping ten ones into each bundle of ten, with leftover single objects kept separate. Use cubes, drawings or physical objects to show how the same total is counted by tens and ones. Teacher-led formative counting and comparing classmates' methods are not simulated as completed.",
+            @"Learning goal: organize, count and represent a collection up to 99 using TENS and ONES, including partial groups. Ten ones compose one ten; if there are 4 bundles and 6 loose cubes the total is 46. Make every bundle exactly ten before counting the leftover ones.",
+            @"Example 1: Thirty-seven cubes form 3 complete bundles of ten and 7 separate ones: 30+7=37.
+Example 2: Two tens and five ones make 20+5=25 counters.
+Example 3: Fifty-four buttons can be counted as five tens and four ones: 50+4=54.
+Example 4: Six bundles of ten and zero loose ones represent 60 objects.",
+            @"Step 1: Touch or move each object exactly once while making complete groups of ten.
+Step 2: Count whole bundles first by tens.
+Step 3: Count remaining loose objects by ones (0–9).
+Step 4: Record both the groups-of-ten count and the leftover ones, then calculate the total.
+Step 5: Check by recounting or another arrangement and explain how the representations match.",
+            @"Do not leave ten or more loose objects after claiming grouping is complete; exchange ten ones for one ten. Four tens and seven ones is 47, not 11 or 74. Do not count a cube twice.",
+            @"I can count a larger mixed collection using complete tens and leftover ones and explain my arrangement."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L07",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-7/preparation.html",@"ed75036a11c93eb282fbaeb8df00eb8591b49297eb7eb9528ed79e95d90ea5a5",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
+            @"Numbers With Tens and Ones",
+            @"Read a two-digit number by recognizing its tens and ones. Describe a number shown using ten-sticks and one-cubes or a ten-frame collection. At this stage the original teacher preparation emphasizes READING and COMPOSING two-digit numbers; formal writing is introduced in a later lesson.",
+            @"Learning goal: understand ANY two-digit number as groups of tens and leftover ones. 54 has 5 tens and 4 ones. A zero in the ones position, as in 70, means seven tens and zero loose ones. This lesson should not demand unreviewed production of written numerals as the primary activity.",
+            @"Example 1: Four bundles of ten and three cubes represent forty-three (43): 40+3=43.
+Example 2: The number 58 is read 'fifty-eight'; it contains five tens and eight ones.
+Example 3: Seven tens and zero ones represents seventy (70).
+Example 4: A picture with two tens and nine ones shows twenty-nine (29).",
+            @"Step 1: Identify how many complete groups of ten are represented.
+Step 2: Count loose individual objects, fewer than ten.
+Step 3: Say the number by naming the total number of tens and ones (for example, 'fifty-eight').
+Step 4: Confirm the quantity shown by counting by tens and then by ones.
+Step 5: Explain how the parts make the complete two-digit number.",
+            @"Do not read 46 as 'four six' or treat the 4 as four loose ones; it represents four tens. If there are ten loose ones, make one more ten first.",
+            @"I can read and explain a two-digit number using tens and ones."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-8/preparation.html",@"f3fa805d6421b2677b3a20200f257432271cbfee1e3b9c1ec6d34b8ba855d4da",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2" },
+            @"Different Representations of Tens and Ones PLC Activity",
+            @"Interpret multiple representations of the SAME two-digit number: a drawing of ten-rods and one-dots, words such as '4 tens 2 ones', and the addition expression 40+2. Match the representations and explain their equivalence. Teachers manage any physical card or group activity.",
+            @"Learning goal: interpret base-ten diagrams, '__ tens __ ones' descriptions and expanded additions for two-digit numbers. In 62 the six denotes six tens and the two denotes two ones. Different pictures and expressions must preserve the same total.",
+            @"Example 1: Five ten-rods and three dots = 5 tens 3 ones = 50+3 = 53.
+Example 2: 70+8 corresponds to 7 tens and 8 ones, a total of 78.
+Example 3: Two tens and nine ones = 20+9 = 29.
+Example 4: 4 ten-rods and 0 dots corresponds to 40+0 = 40.",
+            @"Step 1: Count the tens and ones in a diagram.
+Step 2: Translate into words, for example '5 tens and 3 ones'.
+Step 3: Write or recognize the matching expanded expression 50+3.
+Step 4: Calculate or read the numeral and compare all representations.
+Step 5: Explain why all representations show the same quantity.",
+            @"Do not equate 5 tens and 3 ones with 5+3=8; the five tens are fifty. Do not match 50+3 to 35 by reversing the places.",
+            @"I can match diagrams, words and addition expressions for two-digit numbers."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-9/preparation.html",@"eecf5776e8b806188c62ba41baf5e045e8b9425ba1d411a1df483e635d1d1688",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
+            @"Show Me Your Number",
+            @"Show a chosen two-digit number using multiple representations: bundle tens with leftover ones, sketch ten-rods and dots, name the tens and ones, and give an expanded addition expression. The original gallery walk and peer discussion require a classroom setting; a digital answer does not certify they occurred.",
+            @"Learning goal: REPRESENT the place-value structure of two-digit numbers, not only recognize a preprinted match. Use diagrams, words and expressions, keeping the total unchanged in all forms.",
+            @"Example 1: Represent 64 as six rods of ten plus four dots, '6 tens 4 ones', and 60+4.
+Example 2: Represent 35 as three rods and five dots, '3 tens 5 ones', and 30+5.
+Example 3: Represent 80 as eight rods and no leftover ones, and 80+0.
+Example 4: Represent 47 as 4 tens and 7 ones, 40+7=47.",
+            @"Step 1: Pick or read the target two-digit value.
+Step 2: Organize 10-object bundles and loose ones.
+Step 3: Draw one rod per ten and one dot per remaining one.
+Step 4: State the number of tens and ones and write a matching expanded expression.
+Step 5: Check that all three representations have the same total and explain to a partner if teacher-led.",
+            @"Do not draw six dots when you mean six tens or write 60+4=10. Do not claim to have completed a gallery walk without participating in the real class activity.",
+            @"I can create correct drawings, words and an expanded expression for a two-digit number."),
+        new(@"PED:US-CCSS-MATH:G1:U04:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-10/preparation.html",@"c124655e43c41ae5360f7e5ca5f49ae8e4a483a583cdd2be74d5266000debe47",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2" },
+            @"Write Two-digit Numbers",
+            @"Write a two-digit numeral from a base-ten picture, number of tens and ones, or expanded tens-plus-ones expression. This lesson introduces writing the standard numeral for these representations and checks place-value position carefully.",
+            @"Learning goal: write two-digit numerals that correspond to ten-rods plus one-cubes, written tens-and-ones descriptions and expanded expressions. The tens digit counts complete groups of ten, and the ones digit counts leftovers.",
+            @"Example 1: 3 tens and 7 ones are written 37 (30+7).
+Example 2: Four ten-rods and two ones are written 42 (40+2).
+Example 3: Nine tens and zero ones are written 90 (90+0).
+Example 4: 60+5 is written 65; the 6 is in the tens place.",
+            @"Step 1: Read the number of tens in the supplied diagram, words or expression.
+Step 2: Read the number of single ones (0–9).
+Step 3: Write the tens digit in the first position and the ones digit in the second.
+Step 4: Read the finished numeral aloud and match it to the expanded expression.
+Step 5: Check the total of the represented objects and that the digits are not reversed.",
+            @"Do not write 3 tens and 7 ones as 73; the first digit is tens. Do not omit the zero in 8 tens and 0 ones: write 80, not 8.",
+            @"I can write two-digit numerals from tens-and-ones representations.")
     ];
     private static Repair? Find(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson) =>
