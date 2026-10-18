@@ -77,7 +77,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             1=>$"Without moving two separate strips, a SAME reference strip of {a} cubes matches strip A and another of {b} cubes matches B. Which is longer? Write LONGER=A/B/EQUAL.",
             2=>$"Two classroom objects cannot be laid together. A third measuring strip gives lengths {a} and {b} in SAME size units. Choose the longer one. Write LONGER=A/B/EQUAL.",
             3=>mode%2==0?$"Center addition: compute {a}+{b} within 100. Write RESULT=number.":
-                $"Center expression comparison: compare {Math.Min(a,20)}+{Math.Min(b,10)} and {Math.Min(a,20)}+{Math.Min(b,10)}. Write RELATION=EQUAL.",
+                $"Center expression comparison: compare {Math.Min(a,12)}+{Math.Min(b,8)} and {Math.Min(a,12)}+{Math.Min(b,8)}. Write RELATION=EQUAL.",
             4=>$"A line is tiled by {a} EQUAL connecting cubes, placed edge to edge with NO gaps or overlap. How many cube-length units? Write LENGTH=number.",
             5=>$"A pencil is exactly covered by {a} identical paper clips, end to end, without gaps or overlaps. Record the measurement. Write LENGTH=number.",
             6=>$"One strip is {a} long units. A small unit is HALF the length of one long unit. How many small units cover the SAME strip? Write SMALL_UNITS=number.",

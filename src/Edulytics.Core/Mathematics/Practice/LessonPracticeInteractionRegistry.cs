@@ -138,6 +138,12 @@ public static class LessonPracticeInteractionRegistry
         string familyId,
         string answerType)
     {
+        // U06 responses are keyed LONGER/DIFFERENCE/RESULT/EQUATION,
+        // never bare <,>,= choice; center/manual measurement needs a teacher.
+        if(familyId.StartsWith("usccss.g1.u06.l",StringComparison.Ordinal) &&
+           answerType=="contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
         // G1 U08 has a keyed DIFFERENCE=number Compare story, not
         // the generic symbol-only relation choice interface.
         if (familyId=="usccss.g1.u08.l06.compare_difference_story" &&
