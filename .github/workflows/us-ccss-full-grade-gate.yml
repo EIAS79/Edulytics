@@ -26,6 +26,11 @@ on:
       - 'tests/us-ccss-full-grade-gate.test.cjs'
       - '.github/workflows/us-ccss-full-grade-gate.yml'
   workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: 'Exact commit for final full-grade 96-new-lesson acceptance (leave empty for negative control)'
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -44,21 +49,60 @@ jobs:
         run: |
           node --test tests/us-ccss-full-grade-gate.test.cjs
           node --test tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs
-      - name: Confirm incomplete 96 new lessons do NOT pass full-grade release
+      - name: Negative control on freshly built, deliberately incomplete 146-row grade ledger
         shell: bash
         run: |
           set -euo pipefail
-          set +e
-          node tools/curriculum/us-ccss-full-grade-gate.cjs --release --sha="$(git rev-parse HEAD)" > /tmp/grade-gate-decision.json
-          rc=$?
-          set -e
-          cat /tmp/grade-gate-decision.json
-          test "$rc" -eq 1
-          node -e "const x=require('/tmp/grade-gate-decision.json');if(x.outcome!=='NO_GO'||x.newAccepted!==0||x.newNotAccepted!==96||x.productionLive!==false)process.exit(1)"
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const {initial,evaluate}=require('./tools/curriculum/us-ccss-full-grade-gate.cjs');
+          const m=JSON.parse(fs.readFileSync('artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json','utf8'));
+          const result=evaluate(m,initial(m));
+          fs.writeFileSync('/tmp/grade-gate-decision.json',JSON.stringify(result,null,2));
+          if(result.outcome!=='NO_GO'||result.newAccepted!==0||result.newNotAccepted!==96||
+             result.historicRetestedCount!==0||result.productionLive!==false)process.exit(1);
+          console.log('Negative control correctly NO_GO; does not certify current lesson progress.');
+          NODE
       - name: Save blocked release decision, not an academic certificate
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: grade-full-gate-no-go-initial
           path: /tmp/grade-gate-decision.json
+          if-no-files-found: warn
+
+  grade-real-release-gate:
+    name: g1-full-grade-real-acceptance
+    if: github.event_name == 'workflow_dispatch' && inputs.candidate_sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify exact checked-out candidate SHA before any acceptance
+        shell: bash
+        env:
+          CANDIDATE: ${{ inputs.candidate_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$CANDIDATE" =~ ^[0-9a-fA-F]{40}$ ]]
+          test "$(git rev-parse HEAD)" = "$CANDIDATE"
+      - name: Require real 96/96 source and Practice evidence
+        shell: bash
+        env:
+          CANDIDATE: ${{ inputs.candidate_sha }}
+        run: |
+          set -euo pipefail
+          node tools/curriculum/us-ccss-full-grade-gate.cjs --release --sha="$CANDIDATE" > /tmp/grade-real-release.json
+          node -e "const x=require('/tmp/grade-real-release.json');if(x.outcome!=='GRADE_READY_FOR_REQUIRED_CI_AND_RELEASE'||x.newAccepted!==96||x.historicRetestedCount!==0||x.productionLive!==false)process.exit(1)"
+      - name: Publish grade evidence decision (not Render / owner-UAT signoff)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade-g1-real-release-eligibility
+          path: /tmp/grade-real-release.json
           if-no-files-found: warn
