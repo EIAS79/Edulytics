@@ -1,0 +1,104 @@
+using Edulytics.Core.Enums;
+
+namespace Edulytics.Services.Mathematics;
+
+/// <summary>
+/// G1 new U04 L11-L15, ordinals 76-80. These are gradeable parts only.
+/// Partner centers, concrete base-ten models and oral reasoning remain teacher-assessed.
+/// L14 uses comparison WORDS; L15 introduces the formal symbols.
+/// </summary>
+public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
+{
+    public const string AddTens="usccss.g1.u04.l11.add_tens.two_digit";
+    public const string TenMoreLess="usccss.g1.u04.l12.mental.ten_more_less";
+    public const string CenterReview="usccss.g1.u04.l13.center.place_value_mix";
+    public const string CompareWords="usccss.g1.u04.l14.compare.two_digits_words";
+    public const string CompareSymbols="usccss.g1.u04.l15.compare.symbols";
+    public static readonly IReadOnlyList<string> Families=
+        [AddTens,TenMoreLess,CenterReview,CompareWords,CompareSymbols];
+    public sealed record Problem(string Family,string Prompt,string Explanation,
+        AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
+    public static bool Supports(string? family)=>family is not null&&Families.Contains(family,StringComparer.Ordinal);
+    public static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!Supports(family)||p.Count!=4||
+           !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+           !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
+           z!=0||mode<0||mode>3)return false;
+        return family switch
+        {
+            AddTens=>a>=20&&a<=79&&b>=10&&b<=30&&b%10==0&&a+b<=99,
+            TenMoreLess=>a>=20&&a<=89&&b==10,
+            CompareWords or CompareSymbols=>a>=20&&a<=99&&b>=20&&b<=99,
+            CenterReview=>mode switch
+            {
+                0=>a>=11&&a<=17&&b>=1&&a+b<=20,
+                1=>a>=11&&a<=20&&b>=1&&b<=9&&b<a,
+                2=>a>=20&&a<=69&&b>=10&&b<=30&&b%10==0&&a+b<=99,
+                _=>a>=1&&a<=9&&b>=0&&b<=9
+            },
+            _=>false
+        };
+    }
+    public static Problem Build(string family,Random random)
+    {
+        if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
+        int mode=random.Next(4),a,b;
+        if(family==AddTens){a=random.Next(20,80);b=random.Next(1,Math.Min(3,(99-a)/10)+1)*10;}
+        else if(family==TenMoreLess){a=random.Next(20,90);b=10;}
+        else if(family is CompareWords or CompareSymbols)
+        {
+            a=random.Next(20,100);b=mode==0?a:random.Next(20,100);
+        }
+        else
+        {
+            if(mode==0){a=random.Next(11,18);b=random.Next(1,21-a);}
+            else if(mode==1){a=random.Next(11,21);b=random.Next(1,10);}
+            else if(mode==2){a=random.Next(20,70);b=random.Next(1,4)*10;}
+            else {a=random.Next(1,10);b=random.Next(0,10);}
+        }
+        var p=new Dictionary<string,int>(StringComparer.Ordinal)
+            {["a"]=a,["b"]=b,["mode"]=mode,["unused"]=0};
+        if(!Valid(family,p))throw new InvalidOperationException("Source family generated invalid grade 1 operands");
+        string prompt=family switch
+        {
+            AddTens=>$"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
+            TenMoreLess=>mode%2==0?$"What is TEN MORE than {a}? Write RESULT=number.":
+                $"What is TEN LESS than {a}? Write RESULT=number.",
+            CenterReview=>mode switch
+            {
+                0=>$"Teacher-led center numeric portion: calculate {a}+{b} within 20. Write RESULT=number.",
+                1=>$"Teacher-led center numeric portion: calculate {a}-{b} within 20. Write RESULT=number.",
+                2=>$"Teacher-led place value center numeric portion: calculate {a}+{b}. Write RESULT=number.",
+                _=>$"Teacher-led counting center numeric portion: count {a} tens and {b} loose ones. Write RESULT=number."
+            },
+            CompareWords=>$"Compare the value of {a} and {b} by tens, then ones. Is the FIRST number GREATER, LESS or EQUAL? Write RELATION=GREATER/LESS/EQUAL.",
+            CompareSymbols=>$"Compare {a} and {b}. Write the mathematical comparison SYMBOL between the two numbers, one of >, < or =. Write SYMBOL=sign.",
+            _=>throw new InvalidOperationException()
+        };
+        return new(family,prompt,
+          "Show tens/ones reasoning. Oral responses and real classroom center participation cannot be certified through one numeric answer.",
+          AssessmentItemType.ShortAnswer,p);
+    }
+    public static string Solve(string family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!Valid(family,p))throw new InvalidOperationException("Source family parameters out of range");
+        int a=p["a"],b=p["b"],mode=p["mode"];
+        return family switch
+        {
+            AddTens=>$"TOTAL={a+b};ONES={a%10}",
+            TenMoreLess=>$"RESULT={(mode%2==0?a+10:a-10)}",
+            CenterReview=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}",
+            CompareWords=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
+            CompareSymbols=>$"SYMBOL={(a>b?">":a<b?"<":"=")}",
+            _=>throw new InvalidOperationException()
+        };
+    }
+    private static string Norm(string? s)=>
+        string.Concat((s??"").Where(c=>!char.IsWhiteSpace(c))).ToUpperInvariant();
+    public static bool GradePersistedAnswer(string? family,string? expected,string? submitted)=>
+        Supports(family)&&!string.IsNullOrWhiteSpace(expected)&&!string.IsNullOrWhiteSpace(submitted)&&
+        Norm(expected)==Norm(submitted);
+    public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? answer)=>
+        Valid(family,p)&&GradePersistedAnswer(family,Solve(family!,p),answer);
+}
