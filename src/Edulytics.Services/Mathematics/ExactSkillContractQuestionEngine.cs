@@ -165,7 +165,8 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG1Unit2EquationStoryFiveQuestions.Supports(family.Trim()) ||
          UsCcssG1NextSourceFiveQuestions.Supports(family.Trim()) ||
          UsCcssG1SourceFiveNextQuestions.Supports(family.Trim()) ||
-         UsCcssG1TeenFiveQuestions.Supports(family.Trim()));
+         UsCcssG1TeenFiveQuestions.Supports(family.Trim()) ||
+         UsCcssG1FullGradeStartQuestions.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -300,6 +301,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssG1FullGradeStartQuestions.Supports(family))
+            return UsCcssG1FullGradeStartQuestions.Verify(family,parameters,answer);
         if (UsCcssG1TeenFiveQuestions.Supports(family))
             return UsCcssG1TeenFiveQuestions.Verify(family,parameters,answer);
         if (UsCcssG1SourceFiveNextQuestions.Supports(family))
@@ -906,6 +909,11 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssG1FullGradeStartQuestions.Supports(family))
+        {
+            var item=UsCcssG1FullGradeStartQuestions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Explanation,item.ItemType,item.Parameters);
+        }
         if (UsCcssG1TeenFiveQuestions.Supports(family))
         {
             var item=UsCcssG1TeenFiveQuestions.Build(family,random);
@@ -2777,6 +2785,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssG1FullGradeStartQuestions.Supports(problem.Family))
+            return UsCcssG1FullGradeStartQuestions.Solve(problem.Family,p);
         if (UsCcssG1TeenFiveQuestions.Supports(problem.Family))
             return UsCcssG1TeenFiveQuestions.Solve(problem.Family,p);
         if (UsCcssG1SourceFiveNextQuestions.Supports(problem.Family))
@@ -3367,7 +3377,8 @@ public sealed class ExactSkillContractQuestionEngine
         // mathematical task must have ONE exposure fingerprint across seeds.
         var canonicalParameters = (UsCcssG1NextSourceFiveQuestions.Supports(family) ||
             UsCcssG1SourceFiveNextQuestions.Supports(family) ||
-            UsCcssG1TeenFiveQuestions.Supports(family))
+            UsCcssG1TeenFiveQuestions.Supports(family) ||
+            UsCcssG1FullGradeStartQuestions.Supports(family))
             ? "PROMPT=" + NormalizePrompt(prompt)
             : string.Join(
                 ";",
@@ -3392,6 +3403,7 @@ public sealed class ExactSkillContractQuestionEngine
         UsCcssG1NextSourceFiveQuestions.Supports(family) ||
         UsCcssG1SourceFiveNextQuestions.Supports(family) ||
         UsCcssG1TeenFiveQuestions.Supports(family) ||
+        UsCcssG1FullGradeStartQuestions.Supports(family) ||
         family is
             "supporting.geometry.shape_dimension" or
             "supporting.reasoning.multistep" or
