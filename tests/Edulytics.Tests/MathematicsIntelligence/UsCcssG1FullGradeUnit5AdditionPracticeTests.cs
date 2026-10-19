@@ -84,6 +84,8 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
     [InlineData(16,0,3,"MISSING=0;NEW_TEN=NO;TOTAL=16")]
     [InlineData(8,12,4,"MISSING=12;NEW_TEN=YES;TOTAL=20")]
     [InlineData(8,35,4,"MISSING=35;NEW_TEN=YES;TOTAL=43")]
+    [InlineData(8,75,4,"MISSING=75;NEW_TEN=YES;TOTAL=83")]
+    [InlineData(8,71,5,"MISSING=71;NEW_TEN=NO;TOTAL=79")]
     [InlineData(8,11,5,"MISSING=11;NEW_TEN=NO;TOTAL=19")]
     [InlineData(8,30,5,"MISSING=30;NEW_TEN=NO;TOTAL=38")]
     public void AllFourOriginalWaterSmudgeSourceQuestionsAcceptSourceValidChoices(
