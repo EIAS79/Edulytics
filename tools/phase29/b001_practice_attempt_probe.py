@@ -59,7 +59,7 @@ def syntactically_valid_wrong_answer(correct):
     key,sep,value=parts[0].partition("=")
     if not sep or not key or not value:
         raise ValueError("No first answer field")
-    number=re.search(r"\\d+",value)
+    number=re.search(r"\d+",value)
     if number:
         original=number.group()
         different=str(int(original)+1)
