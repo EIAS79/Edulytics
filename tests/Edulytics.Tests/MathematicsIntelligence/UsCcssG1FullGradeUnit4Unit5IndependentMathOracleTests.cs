@@ -11,13 +11,17 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
 {
     private static string Symbol(int a,int b)=>a>b?">":a<b?"<":"=";
-    private static string OriginalUnit4Oracle(int index,int a,int b,int c,int mode)
+    private static string OriginalUnit4Oracle(int index,int a,int b,int c,int mode,
+        IReadOnlyDictionary<string,int> sourceParams)
     {
         switch(index)
         {
             case 0:return "SYMBOL="+Symbol(a,b);
-            case 1:return "ORDER="+string.Join(",",mode%2==0?
-                new[]{a,b,c}.Order():new[]{a,b,c}.OrderDescending());
+            case 1:return mode==3?"ORDER="+string.Join(",",
+                new[]{"a","b","c","d","e","f","g","h","i","j"}
+                    .Select(key=>sourceParams[key]).Order()):
+                "ORDER="+string.Join(",",mode%2==0?
+                    new[]{a,b,c}.Order():new[]{a,b,c}.OrderDescending());
             case 2:return mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):
                 "SYMBOL="+Symbol(a,b);
             case 3:return $"TENS={a/10-1};ONES={a%10+10}";
@@ -52,7 +56,7 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
                 list[i],new Random(4223+i*137+seed*89));
             var p=problem.Parameters;
             Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(list[i],p));
-            var result=OriginalUnit4Oracle(i,p["a"],p["b"],p["c"],p["mode"]);
+            var result=OriginalUnit4Oracle(i,p["a"],p["b"],p["c"],p["mode"],p);
             Assert.Equal(result,UsCcssG1FullGradeUnit4FinalQuestions.Solve(list[i],p));
             Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Verify(list[i],p,result));
             Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Verify(

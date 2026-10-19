@@ -64,6 +64,38 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
     }
 
     [Fact]
+    public void OriginalStudentFacingTenNumberInsertionTaskHasCorrectOrderedAnswer()
+    {
+        const string f="usccss.g1.u04.l17.order_three_numbers";
+        var p=new Dictionary<string,int>{{"a",1},{"b",5},{"c",10},{"d",50},{"e",99},
+            {"f",49},{"g",8},{"h",25},{"i",98},{"j",13},{"mode",3}};
+        const string correct="ORDER=1,5,8,10,13,25,49,50,98,99";
+        Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(f,p));
+        Assert.Equal(correct,UsCcssG1FullGradeUnit4FinalQuestions.Solve(f,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,correct));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+            "ORDER=1,5,8,10,13,25,50,49,98,99"));
+        p["i"]=8;
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(f,p));
+    }
+    [Fact]
+    public void NumberInsertionGeneratorProducesTenDistinctSortedAnswers()
+    {
+        const string f="usccss.g1.u04.l17.order_three_numbers";
+        int checkedInserted=0;
+        for(int seed=0;seed<250;seed++)
+        {
+            var q=UsCcssG1FullGradeUnit4FinalQuestions.Build(f,new Random(seed*53+9));
+            if(q.Parameters["mode"]!=3)continue;
+            checkedInserted++;
+            Assert.Equal(11,q.Parameters.Count);
+            var answer=UsCcssG1FullGradeUnit4FinalQuestions.Solve(f,q.Parameters);
+            Assert.Equal(10,answer["ORDER=".Length..].Split(',').Distinct().Count());
+            Assert.Contains("INSERT",q.Prompt);
+        }
+        Assert.True(checkedInserted>30);
+    }
+    [Fact]
     public void EngineCanGenerateTenDifferentIndependentItemsPerFamily()
     {
         var engine=new ExactSkillContractQuestionEngine();

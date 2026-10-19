@@ -25,16 +25,19 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static bool Supports(string? family)=>family!=null&&Families.Contains(family,StringComparer.Ordinal);
     public static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
     {
-        if(!Supports(family)||p.Count!=4||
+        bool tenCardTask=family==Families[1]&&p.TryGetValue("mode",out int proposedMode)&&proposedMode==3;
+        if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
            mode<0||mode>3)return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" or
-            "usccss.g1.u04.l17.order_three_numbers" or
             "usccss.g1.u04.l18.center_count_compare_order" or
             "usccss.g1.u04.l22.center_place_value" =>
+                a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
+            "usccss.g1.u04.l17.order_three_numbers"=>
+                mode==3?ValidTenCardInsertion(p):
                 a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
             "usccss.g1.u04.l19.regroup_one_ten" or
             "usccss.g1.u04.l20.equivalent_tens_ones" =>
@@ -46,6 +49,20 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             _=>false
         };
     }
+    private static bool ValidTenCardInsertion(IReadOnlyDictionary<string,int> p)
+    {
+        string[] keys=["a","b","c","d","e","f","g","h","i","j"];
+        var values=new List<int>();
+        foreach(string key in keys)
+        {
+            if(!p.TryGetValue(key,out int value)||value<1||value>99)return false;
+            values.Add(value);
+        }
+        return values.Distinct().Count()==10&&
+               values[0]<values[1]&&values[1]<values[2]&&
+               values[2]<values[3]&&values[3]<values[4];
+    }
+
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
@@ -55,12 +72,25 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(family==Families[5])c=0;
         if(family==Families[7]){b=Math.Clamp(a+random.Next(-9,10),10,99);c=0;}
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
+        if(family==Families[1]&&mode==3)
+        {
+            // Original 2021 U04 L17: insert five numbers into a sorted
+            // five-card sequence, then explain two placements to a teacher.
+            int[] ten=Enumerable.Range(1,99).OrderBy(_=>random.Next()).Take(10).ToArray();
+            int[] firstFive=ten.Take(5).Order().ToArray();
+            string[] firstKeys=["a","b","c","d","e"];
+            string[] addedKeys=["f","g","h","i","j"];
+            for(int i=0;i<5;i++)p[firstKeys[i]]=firstFive[i];
+            for(int i=0;i<5;i++)p[addedKeys[i]]=ten[i+5];
+        }
         if(!Valid(family,p))throw new InvalidOperationException("Invalid Grade 1 tens-and-ones problem");
         string prompt=family switch
         {
             "usccss.g1.u04.l16.write_comparison"=>
                 $"Write the TRUE comparison for {a} and {b} using one of >, <, =. Answer SYMBOL=sign.",
             "usccss.g1.u04.l17.order_three_numbers"=>
+                mode==3?
+                    $"Five cards start in order: {a}, {b}, {c}, {p["d"]}, {p["e"]}. INSERT these five additional cards correctly: {p["f"]}, {p["g"]}, {p["h"]}, {p["i"]}, {p["j"]}. Write ALL ten numbers from least to greatest as ORDER=n1,n2,n3,n4,n5,n6,n7,n8,n9,n10. Explain why two inserted numbers belong where you placed them.":
                 mode%2==0?
                     $"Order {a}, {b}, {c} from LEAST to GREATEST. Write ORDER=number,number,number.":
                     $"Order {a}, {b}, {c} from GREATEST to LEAST. Write ORDER=number,number,number.",
@@ -91,7 +121,10 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         {
             "usccss.g1.u04.l16.write_comparison"=>$"SYMBOL={Sign(a,b)}",
             "usccss.g1.u04.l17.order_three_numbers"=>
-                "ORDER="+string.Join(",",mode%2==0?new[]{a,b,c}.Order():new[]{a,b,c}.OrderDescending()),
+                mode==3?"ORDER="+string.Join(",",
+                    new[]{"a","b","c","d","e","f","g","h","i","j"}
+                        .Select(key=>p[key]).Order()):
+                    "ORDER="+string.Join(",",mode%2==0?new[]{a,b,c}.Order():new[]{a,b,c}.OrderDescending()),
             "usccss.g1.u04.l18.center_count_compare_order"=>
                 mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):$"SYMBOL={Sign(a,b)}",
             "usccss.g1.u04.l19.regroup_one_ten"=>$"TENS={a/10-1};ONES={a%10+10}",
