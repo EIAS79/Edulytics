@@ -36,6 +36,7 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
             Assert.Equal(unit==4
                     ?CommonCoreG1FullGradeUnit5ContentCorrections.Unit4EndSourceVersion
                     :lesson<=7?CommonCoreG1FullGradeUnit5ContentCorrections.Unit5EarlySourceVersion
+                    :lesson<=13?CommonCoreG1FullGradeUnit5ContentCorrections.Unit5LaterSourceVersion
                     :CommonCoreG1FullGradeUnit5ContentCorrections.Version,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             var t=row.Translations.Single(x=>x.CultureCode=="en");
@@ -55,6 +56,21 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
         Assert.Contains("45+□=50",lesson(5,6));
         Assert.Contains("Target Numbers",lesson(5,6));
         Assert.Contains("26+3 DOES NOT",lesson(5,7));
+        Assert.Contains("Target Numbers Stage 2",lesson(5,8));
+        Assert.Contains("STARTS AT 25",lesson(5,8));
+        Assert.Contains("35+6=41 points",lesson(5,8));
+        Assert.Contains("17+36=53",lesson(5,9));
+        Assert.Contains("Grab and Add",lesson(5,9));
+        Assert.Contains("28+56",lesson(5,10));
+        Assert.Contains("27+44",lesson(5,10));
+        Assert.Contains("Number Puzzles Stage 4",lesson(5,10));
+        Assert.Contains("37+25",lesson(5,11));
+        Assert.Contains("23+68=91",lesson(5,11));
+        Assert.Contains("48+15=63",lesson(5,12));
+        Assert.Contains("57+36=93",lesson(5,12));
+        Assert.Contains("22+18=40",lesson(5,12));
+        Assert.Contains("Target Numbers Stage 3",lesson(5,13));
+        Assert.Contains("Five in a Row Stage 6",lesson(5,13));
         Assert.Contains("23 + 45 = (20 + 40) + (3 + 5) = 60 + 8 = 68",lesson(5,2));
         Assert.Contains("37+26 = (30+20)+(7+6) = 50+13=63",lesson(5,10));
         Assert.Contains("74 is greater than 68",lesson(4,22));
