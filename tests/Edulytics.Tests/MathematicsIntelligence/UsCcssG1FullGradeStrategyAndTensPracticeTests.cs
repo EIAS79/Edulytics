@@ -91,6 +91,32 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
         }
     }
     [Fact]
+    public void Original2021HanUnknownStartSixPlusNineEqualsFifteenIsReachable()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;
+        var original=new Dictionary<string,int>{{"a",6},{"b",9},{"c",0},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,original));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,original,
+            "UNKNOWN=6;EQUATION=6+9=15"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,original,
+            "UNKNOWN=6;EQUATION=6+9=16"));
+        original["b"]=8;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,original));
+        var made=Enumerable.Range(0,360)
+            .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+                family,new Random(n*61+37))).Where(q=>q.Parameters["mode"]==2).ToArray();
+        Assert.True(made.Length>40);
+        Assert.All(made,q=>
+        {
+            Assert.Equal(6,q.Parameters["a"]);
+            Assert.Equal(9,q.Parameters["b"]);
+            Assert.Contains("Han has some pencils",q.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void Source2021ElenaSixToEighteenUnknownChangeMustBeReachableAndCorrect()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;
