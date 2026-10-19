@@ -46,6 +46,39 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
             }
         }
     }
+    [Theory]
+    [InlineData(7,2,"COLOR=BLUE;TIME=7:00;WORDS=seven_oclock")]
+    [InlineData(7,3,"COLOR=RED;TIME=7:30;WORDS=half_past_seven")]
+    [InlineData(12,3,"COLOR=RED;TIME=12:30;WORDS=half_past_twelve")]
+    public void SourceHalfClockColorClassificationAndSpelledTimeMustBothBeCorrect(
+        int hour,int mode,string answer)
+    {
+        const string f="usccss.g1.u07.l14.half_hour_clock";
+        var p=new Dictionary<string,int>{{"a",hour},{"b",2},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(f,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,p));
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,answer));
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,
+            answer.Replace("COLOR=BLUE","COLOR=RED").Replace("COLOR=RED","COLOR=BLUE")));
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,
+            "MINUTES=30;HOUR="+hour));
+    }
+    [Theory]
+    [InlineData(6,2)]
+    [InlineData(8,3)]
+    public void OriginalWriteTimesMinuteCountingRequiresSixHopsFiveEach(int hour,int mode)
+    {
+        const string f="usccss.g1.u07.l15.write_hours_halfhours";
+        var p=new Dictionary<string,int>{{"a",hour},{"b",2},{"c",0},{"mode",mode}};
+        const string expected="HOPS=6;MINUTES=30;STOP_AT=6";
+        Assert.Equal(expected,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,p));
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,expected));
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,
+            "HOPS=5;MINUTES=25;STOP_AT=5"));
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,
+            $"TIME={hour}:30"));
+    }
+
     [Fact]
     public void ClocksUseWholeHoursAndHalfHoursNotUnintroducedQuarterHours()
     {

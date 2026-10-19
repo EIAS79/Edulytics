@@ -50,6 +50,8 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
         };
     }
 
+    private static string ClockWord(int h)=>new[]
+    {"","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"}[h];
     private static string SourceGeometryOracle(int i,int a,int b,int mode)
     {
         return i switch
@@ -67,8 +69,10 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
             11=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             12=>$"TIME={a}:00",
-            13=>$"MINUTES=30;HOUR={a}",
-            14 or 15=>$"TIME={a}:{(mode%2==0?"00":"30")}",
+            13=>mode<=1?$"MINUTES=30;HOUR={a}":
+                $"COLOR={(mode==2?"BLUE":"RED")};TIME={a}:{(mode==2?"00":"30")};WORDS={(mode==2?ClockWord(a)+"_oclock":"half_past_"+ClockWord(a))}",
+            14=>mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
+            15=>$"TIME={a}:{(mode%2==0?"00":"30")}",
             16=>mode%2==0?$"RESULT={a}":"SHAPE=RECTANGLE",
             _=>throw new InvalidOperationException("Unsupported source geometry/time family")
         };

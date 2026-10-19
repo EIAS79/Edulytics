@@ -34,6 +34,29 @@ public sealed class UsCcssG1FullGradeAnalogClockSourceVisualTests
         Assert.DoesNotContain("<image ",svg);
     }
     [Fact]
+    public void OriginalHalfClockSortHasWholeHourAndHalfPastDiagrams()
+    {
+        const string f="usccss.g1.u07.l14.half_hour_clock";
+        var whole=Clock(f,7,2);
+        var half=Clock(f,7,3);
+        Assert.NotEqual(whole,half);
+        Assert.Contains("class='clock-minute' x1='210' y1='130' x2='210' y2='57'",whole);
+        Assert.Contains("class='clock-minute' x1='210' y1='130' x2='210' y2='203'",half);
+    }
+
+    [Fact]
+    public void SourceCountMinutesHalfClockShowsMinuteHandAtSix()
+    {
+        const string f="usccss.g1.u07.l15.write_hours_halfhours";
+        foreach(var mode in new[]{2,3})
+        {
+            var svg=Clock(f,4,mode);
+            Assert.Contains("class='clock-minute' x1='210' y1='130' x2='210' y2='203'",svg);
+            Assert.DoesNotContain("HOPS=6",svg);
+        }
+    }
+
+    [Fact]
     public void HalfPastHourHandMovesHalfwayWhileMinuteHandPointsToSix()
     {
         const string hour="usccss.g1.u07.l13.hour_clock";

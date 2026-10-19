@@ -80,9 +80,15 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             11=>mode%2==0?$"Center arithmetic: add {a}+{b} (within 24). Write RESULT=number.":
                 $"Center shape card #{a}: 3 straight sides, 3 corners, closed. Write SHAPE=name.",
             12=>$"Clock card #{b}: the MINUTE hand points at 12, and the HOUR hand points at {a}. Tell the time. Write TIME=hour:minutes.",
-            13=>$"Half-hour clock #{b}: minute hand at SIX, hour hand halfway between {a} and next hour. Write MINUTES=number;HOUR=number.",
-            14=>mode%2==0?$"Clock card #{b}: hour hand at {a}, minute hand at 12. Write TIME=hour:minutes.":
-                $"Clock card #{b}: hour hand past {a}, minute hand at SIX. Write TIME=hour:minutes.",
+            13=>mode<=1?
+                $"Half-hour clock #{b}: minute hand at SIX, hour hand halfway between {a} and next hour. Write MINUTES=number;HOUR=number.":
+                mode==2?
+                $"ORIGINAL CARD SORT: Clock #{b} shows the minute hand at 12 and the short hand at {a}. Color it BLUE for o'clock (RED is half past). Write COLOR=BLUE;TIME=hour:minutes;WORDS=hour_oclock. Use a lowercase spelled-out hour word such as seven_oclock, not a digit.":
+                $"ORIGINAL CARD SORT: Clock #{b} shows the minute hand at SIX and the short hand halfway past {a}. Color it RED for half past (BLUE is o'clock). Write COLOR=RED;TIME=hour:minutes;WORDS=half_past_hour (e.g. half_past_seven).",
+            14=>mode<=1?(mode==0?
+                $"Clock card #{b}: hour hand at {a}, minute hand at 12. Write TIME=hour:minutes.":
+                $"Clock card #{b}: hour hand past {a}, minute hand at SIX. Write TIME=hour:minutes."):
+                $"ORIGINAL COUNT THE MINUTES: Start at 12 on the clock, count clockwise in steps of five until you reach the minute hand on SIX. How many five-minute HOPS and total MINUTES are in half a clock? Write HOPS=number;MINUTES=number;STOP_AT=number.",
             15=>mode%2==0?
                 $"Read the analog clock face for the hypothetical READING schedule. The short hand is at {a} and the minute hand is at 12. What time do you see? Write TIME=hour:minutes.":
                 $"Read the analog clock face for a hypothetical SNACK time. The short hand is halfway from {a} to the next hour and the long hand points at 6. Write TIME=hour:minutes.",
@@ -114,13 +120,20 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
             11=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             12=>$"TIME={a}:00",
-            13=>$"MINUTES=30;HOUR={a}",
-            14=>$"TIME={a}:{(mode%2==0?"00":"30")}",
+            13=>mode<=1?$"MINUTES=30;HOUR={a}":
+                $"COLOR={(mode==2?"BLUE":"RED")};TIME={a}:{(mode==2?"00":"30")};WORDS={(mode==2?HourName(a)+"_oclock":"half_past_"+HourName(a))}",
+            14=>mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
             15=>$"TIME={a}:{(mode%2==0?"00":"30")}",
             16=>mode%2==0?$"RESULT={a}":"SHAPE=RECTANGLE",
             _=>throw new InvalidOperationException()
         };
     }
+    private static string HourName(int h)=>h switch
+    {
+        1=>"one",2=>"two",3=>"three",4=>"four",5=>"five",6=>"six",
+        7=>"seven",8=>"eight",9=>"nine",10=>"ten",11=>"eleven",12=>"twelve",
+        _=>throw new InvalidOperationException("Clock hour outside one through twelve")
+    };
     private static string Norm(string? s)=>string.Concat((s??"").Where(c=>!char.IsWhiteSpace(c))).ToUpperInvariant();
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? response)=>
         Valid(family,p)&&!string.IsNullOrWhiteSpace(response)&&Norm(Solve(family!,p))==Norm(response);
