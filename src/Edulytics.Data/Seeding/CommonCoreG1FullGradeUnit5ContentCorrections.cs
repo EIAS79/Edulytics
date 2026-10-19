@@ -182,7 +182,7 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
        IsTarget(doc,lesson)&&
        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
-        (previous==PreviousVersion && lesson.LessonCode=="PED:US-CCSS-MATH:G1:U05:L14")||
+        previous==PreviousVersion||
         (previous==Version&&(IsUnit4End(lesson.LessonCode)||IsUnit5Early(lesson.LessonCode)||
            IsUnit5Later(lesson.LessonCode))));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
