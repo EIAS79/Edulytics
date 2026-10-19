@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 72,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L07",
+  "title": "Numbers With Tens and Ones",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "d3c251a9cfaa06ec9e0b71ea89fe3a3bbefe9615dfe4353fa520f6295a0759c9",
+    "teacherPreparationSha256": "d38379de782d82a09f642c369c9554a745b3b1ce5a6ce733b630a0a76f2a0ba0",
+    "studentHtmlSha256": "2c31b40a755dcf87da5f341c3dbd87bb05f47dd4fc41628c1eefb425a6f50c5e",
+    "teacherHeadings": [
+      "Activity 1: Make It: Tens and Ones (15 minutes)",
+      "Activity 2: Who Do You Agree With? (10 minutes)",
+      "Activity 3: Centers: Choice Time (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Set A 0 1 2 3 4 5 6 7 8 9 Set B 10 23 45 76 89 Student Response <p st",
+      "Student Facing Partner 1 draws 2 number cards and uses them to make a two-digit number. Each partner says the number. Partner 2 builds the number using cubes. Partner 1 c",
+      "Student Facing [visual] [visual] <div id=\"dialog-long-description-TikzFile-1491"
+    ],
+    "sourceSpecificFinding": "Original digit comparison; Clare claims 68, Diego claims 86, source model contains 8 tens and 6 ones",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
