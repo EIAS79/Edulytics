@@ -33,9 +33,26 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         {
             var lesson=doc.Lessons.Single(x=>x.LessonCode==code);
             Assert.True(CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(doc,lesson));
-            Assert.Equal(code.Contains(":U06:",StringComparison.Ordinal)
-                    ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6OriginalSourceVersion
-                    :CommonCoreG1FullGradeUnit6To8ContentCorrections.Version,
+            var expectedVersion=code.Contains(":U06:",StringComparison.Ordinal)
+                ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6OriginalSourceVersion
+                :code is "PED:US-CCSS-MATH:G1:U07:L01" or
+                     "PED:US-CCSS-MATH:G1:U07:L03" or
+                     "PED:US-CCSS-MATH:G1:U07:L09" or
+                     "PED:US-CCSS-MATH:G1:U07:L10" or
+                     "PED:US-CCSS-MATH:G1:U07:L11" or
+                     "PED:US-CCSS-MATH:G1:U07:L12" or
+                     "PED:US-CCSS-MATH:G1:U07:L17" or
+                     "PED:US-CCSS-MATH:G1:U08:L01" or
+                     "PED:US-CCSS-MATH:G1:U08:L02" or
+                     "PED:US-CCSS-MATH:G1:U08:L03" or
+                     "PED:US-CCSS-MATH:G1:U08:L04" or
+                     "PED:US-CCSS-MATH:G1:U08:L05" or
+                     "PED:US-CCSS-MATH:G1:U08:L06" or
+                     "PED:US-CCSS-MATH:G1:U08:L07" or
+                     "PED:US-CCSS-MATH:G1:U08:L10"
+                ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit7Unit8OriginalSourceVersion
+                :CommonCoreG1FullGradeUnit6To8ContentCorrections.Version;
+            Assert.Equal(expectedVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
             var tr=lesson.Translations.Single(t=>t.CultureCode=="en");
             return tr.Explanation+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
@@ -55,6 +72,21 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("Counting Collections Stage 3",text("PED:US-CCSS-MATH:G1:U06:L16"));
         Assert.Contains("two equal rectangles has halves",text("PED:US-CCSS-MATH:G1:U07:L09"));
         Assert.Contains("9+8=9+1+7=17",text("PED:US-CCSS-MATH:G1:U08:L03"));
+        Assert.Contains("FEELS an object hidden in a bag",text("PED:US-CCSS-MATH:G1:U07:L01"));
+        Assert.Contains("GROUP 1, GROUP 2 and GROUP 3",text("PED:US-CCSS-MATH:G1:U07:L03"));
+        Assert.Contains("CIRCLE and a SQUARE",text("PED:US-CCSS-MATH:G1:U07:L09"));
+        Assert.Contains("NOT EQUAL PIECES",text("PED:US-CCSS-MATH:G1:U07:L10"));
+        Assert.Contains("Priya says she wants HALF",text("PED:US-CCSS-MATH:G1:U07:L11"));
+        Assert.Contains("Can You Draw It?",text("PED:US-CCSS-MATH:G1:U07:L12"));
+        Assert.Contains("Which One? Grade 1 Shapes",text("PED:US-CCSS-MATH:G1:U07:L17"));
+        Assert.Contains("PERSONAL index card",text("PED:US-CCSS-MATH:G1:U08:L01"));
+        Assert.Contains("4+□=9",text("PED:US-CCSS-MATH:G1:U08:L02"));
+        Assert.Contains("Heads Up",text("PED:US-CCSS-MATH:G1:U08:L03"));
+        Assert.Contains("16-□=9",text("PED:US-CCSS-MATH:G1:U08:L04"));
+        Assert.Contains("7 first graders",text("PED:US-CCSS-MATH:G1:U08:L05"));
+        Assert.Contains("WRITE and ANSWER TWO new questions",text("PED:US-CCSS-MATH:G1:U08:L06"));
+        Assert.Contains("number 103",text("PED:US-CCSS-MATH:G1:U08:L07"));
+        Assert.Contains("70=24+46 is TRUE",text("PED:US-CCSS-MATH:G1:U08:L10"));
         var riddles=text("PED:US-CCSS-MATH:G1:U08:L09");
         // Original Student Facing starts with three possible numbers before
         // a fourth clue selects one. Validate the now-correct objective.
