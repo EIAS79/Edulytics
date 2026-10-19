@@ -34,6 +34,42 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
             }
     }
     [Fact]
+    public void GeneratedOriginalMeasurementComparisonsIncludeBothLongerDirectionsAndEquality()
+    {
+        var families=new[]{
+            "usccss.g1.u06.l01.compare_lengths",
+            "usccss.g1.u06.l02.indirect_length_comparison",
+            "usccss.g1.u06.l03.choose_indirect_comparison",
+            "usccss.g1.u06.l11.compare_shoe_lengths"
+        };
+        foreach(var family in families)
+        {
+            var seen=new HashSet<int>();
+            var answers=new HashSet<string>(StringComparer.Ordinal);
+            for(int seed=0;seed<1200;seed++)
+            {
+                var problem=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                    family,new Random(seed*97+137));
+                var p=problem.Parameters;
+                if(family==families[0]&&p["mode"]%2==1)continue;
+                seen.Add(Math.Sign(p["a"]-p["b"]));
+                string result=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p);
+                answers.Add(result);
+                Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(family,p,result));
+            }
+            Assert.Contains(-1,seen); // strip B / second object longer
+            Assert.Contains(0,seen);  // genuinely equal length
+            Assert.Contains(1,seen);  // strip A / first object longer
+            if(family==families[0])
+            {
+                Assert.Contains(answers,x=>x.StartsWith("LONGER=BLUE;",StringComparison.Ordinal));
+                Assert.Contains(answers,x=>x.StartsWith("LONGER=RED;",StringComparison.Ordinal));
+                Assert.Contains(answers,x=>x.StartsWith("LONGER=EQUAL;",StringComparison.Ordinal));
+            }
+        }
+    }
+
+    [Fact]
     public void ChangingUnitSizeChangesTheMeasureCountNotThePhysicalLength()
     {
         const string f="usccss.g1.u06.l07.unit_length_matters";

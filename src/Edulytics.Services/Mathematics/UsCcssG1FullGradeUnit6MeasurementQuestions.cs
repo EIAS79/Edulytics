@@ -67,13 +67,19 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
         int mode=random.Next(4),a=0,b=0,c=0;
-        if(i is 0 or 1 or 2 or 10){a=random.Next(4,21);b=random.Next(1,21);}
-        if(i==0&&mode%2==1)
+        if(i is 0 or 1 or 2 or 10)
         {
-            // The original U06 L01 student task ALSO orders three objects,
-            // which a simple pairwise longer/shorter question cannot test.
-            do{b=random.Next(4,21);}while(b==a);
-            do{c=random.Next(4,21);}while(c==a||c==b);
+            // Preserve independent source-comparison lengths. Previously these
+            // operands were overwritten by the fallback branch, making strip
+            // A almost always at least as long as B in lessons 1-3 and 11.
+            a=random.Next(4,21);
+            b=random.Next(1,21);
+            if(i==0&&mode%2==1)
+            {
+                // Original U06 L01 also orders THREE distinct objects.
+                do{b=random.Next(4,21);}while(b==a);
+                do{c=random.Next(4,21);}while(c==a||c==b);
+            }
         }
         else if(i==11)
         {
