@@ -16,6 +16,19 @@ test('146 unique canonical lessons, first new ordinal 51, old 50 historical only
   assert.equal(ledger.newLessons[0].lessonCode,'PED:US-CCSS-MATH:G1:U03:L14');
   assert.equal(ledger.historical.status,'HISTORICALLY_RELEASED_NO_RETEST');
 });
+test('the ACTUAL progress ledger counts every internally accepted lesson only with original V1 source, Practice, tests and SHA proofs',()=>{
+  const ledger=JSON.parse(fs.readFileSync(
+    path.join(ROOT,'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'),'utf8'));
+  const candidateSha=require('node:child_process').execFileSync('git',['rev-parse','HEAD'],
+    {cwd:ROOT,encoding:'utf8'}).trim();
+  const report=evaluate(manifest,ledger,candidateSha);
+  const declared=ledger.newLessons.filter(x=>x.status==='INTERNALLY_ACCEPTED').length;
+  assert.equal(report.issues.length,0,report.issues.join('; '));
+  assert.equal(report.newAccepted,declared,
+    'An internally accepted lesson without exact V1 proofs is an academic NO_GO');
+  assert.equal(report.newNotAccepted,96-declared);
+  if(declared<96)assert.equal(report.outcome,'NO_GO');
+});
 test('real incomplete Grade 1 is NO_GO, not a 146 pass',()=>{
   const a=evaluate(manifest,fresh());
   assert.equal(a.outcome,'NO_GO');
