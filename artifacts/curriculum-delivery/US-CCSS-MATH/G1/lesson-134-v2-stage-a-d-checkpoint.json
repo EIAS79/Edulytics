@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Source/task parity and existing candidate correction checkpoint under original V1 A-D; not academic approval",
+  "grade": "G1",
+  "ordinal": 134,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L15",
+  "title": "Write Times",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics Grade 1 (2021)",
+    "fullTeacherHtmlRelativePath": "unit-7/lesson-15/lesson.html",
+    "observedReadOnlySourceSha256": "3f2ec47baa9e0b37693927e8c12f7fa66b4ca64cc73b49199fb8bcdb4dfad670",
+    "sourceShaMatchedIndexedRegistry": true
+  },
+  "stageA": {
+    "sourceStudentFacingReadDirectly": true,
+    "originalWarmup": "30=30 TRUE;10+15=15+10 TRUE;10+10+10=3 FALSE",
+    "originalTasks": [
+      "Count around analog clock from 12 to half-turn and circle 6 at minute 30",
+      "READ and WRITE times for each complete clock",
+      "DRAW the missing MINUTE hand on incomplete clocks and write the time",
+      "Given ONLY a minute hand, draw one possible HOUR hand, write resulting time and propose alternative valid hours"
+    ],
+    "identifiedGap": "Existing learner instructions covered reading/half-hour minutes but omitted drawing a missing minute hand and open-choice hour hand; digital clock-value grading cannot substitute for original drawing."
+  },
+  "stageB": {
+    "existingCandidateReused": true,
+    "correctedSourceFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "sourceTeachingRepairCommit": "f6541cc01e27f0e3f7ee1776b960032977869a51",
+    "newlineFormattingCommit": "ca5a702e3ab6a5bc09a82292d42d3e1019be76f6",
+    "sourceBoundary": "Only first-party text; real pupil clock-face diagrams remain teacher-reviewed; no publisher picture copied"
+  },
+  "stageC": {
+    "existingFamilyReused": "usccss.g1.u07.l15.write_clock_times",
+    "digitalPartialSkill": "Recognize hour/half-hour and write numerical time",
+    "originalSourceAuthoredTask": "Open-choice drawing with multiple possible valid hours cannot be proven by one auto-scored time answer"
+  },
+  "stageD": {
+    "sourceAssertions": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "testCommit": "93e94d9bda2616401bddb69a5721edd7ad537a2e",
+    "githubCiAuthoring": "NOT_RUN_AS_SCHEDULED",
+    "dotNetTests": "NOT_RUN",
+    "authenticatedStudentRenderingAndPersistence": "PENDING",
+    "visualRightsAccessibility": "PENDING",
+    "originalV1AtoDInternalAcceptance": "NOT_CLAIMED"
+  },
+  "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO"
+}
