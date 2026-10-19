@@ -140,6 +140,34 @@ public sealed class UsCcssG1FullGradeStartingPracticeTests
             UsCcssG1FullGradeStartQuestions.MakeTen,ten,"MOVE=1;REST=5;TOTAL=14"));
     }
     [Fact]
+    public void OriginalNinePlusGameRequiresTwoCorrectStudentConstructedEquations()
+    {
+        const string family=UsCcssG1FullGradeStartQuestions.MakeTen;
+        var original=new Dictionary<string,int>{{"a",9},{"b",5},{"c",0},{"mode",2}};
+        const string equivalent="EQUATION=9+5=14;TEN_EQUATION=10+4=14;TOTAL=14";
+        Assert.True(UsCcssG1FullGradeStartQuestions.Valid(family,original));
+        Assert.Equal(equivalent,UsCcssG1FullGradeStartQuestions.Solve(family,original));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,original,equivalent));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,original,
+            "EQUATION=9+5=14;TEN_EQUATION=10+3=13;TOTAL=14"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,original,
+            "MOVE=1;REST=4;TOTAL=14"));
+        original["a"]=8;
+        Assert.False(UsCcssG1FullGradeStartQuestions.Valid(family,original));
+        var tasks=Enumerable.Range(0,350)
+            .Select(n=>UsCcssG1FullGradeStartQuestions.Build(family,new Random(53*n+19)))
+            .Where(q=>q.Parameters["mode"]==2).ToArray();
+        Assert.True(tasks.Length>35);
+        Assert.All(tasks,q=>
+        {
+            Assert.Equal(9,q.Parameters["a"]);
+            Assert.Contains("Nine Plus Game",q.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,UsCcssG1FullGradeStartQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void ProductionEngineGeneratesFiveDistinctAndGradeableQuestionsPerFamily()
     {
         var engine=new ExactSkillContractQuestionEngine();
