@@ -105,7 +105,7 @@ Step 5: Confirm the total with counters or a second method and explain why your 
         new(@"PED:US-CCSS-MATH:G1:U03:L20",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-20/preparation.html",@"b5be6aa0b9dc3671e4b3eb4907e6bdd1422d88405599558e2e910a37085d4779",new[] { @"CCSS:1.OA.A.2", @"CCSS:1.OA.C.6" },
             @"A Trip to the Zoo",
             @"Solve a zoo visit story by finding the total of THREE groups of animals or visitors. Read all quantities carefully, represent each group in a drawing or counters, and write a complete three-addend expression. Sometimes two groups make ten; other times count on or add a convenient pair. The source goal is three-addend story meaning, not only adding two numbers.",
-            @"Learning goal: solve story problems with THREE addends flexibly, within 20. Count all three groups even if no pair makes exactly ten. You can rearrange or group addends without changing the total. Label the answer with the story unit (animals/visitors).",
+            @"Learning goal: solve story problems with THREE addends flexibly, within 20. ORIGINAL student-facing reptile story: Jada saw 8 snakes, 7 iguanas and 5 frogs, for a total of 20 animals across all three groups. Count all three groups even if no pair makes exactly ten. You can rearrange or group addends without changing the total. Label the answer with the story unit (animals/visitors).",
             @"Example 1: At the zoo, 4 ducks, 6 geese and 3 swans swim: 4+6+3=10+3=13 birds.
 Example 2: Five penguins, three seals and four otters are counted: 5+3+4=12 animals.
 Example 3: The guide spots 2 lions, 7 zebras and 8 giraffes: 2+8+7=17 animals.

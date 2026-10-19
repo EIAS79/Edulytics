@@ -55,6 +55,32 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
             UsCcssG1FullGradeNextQuestions.ZooThree,zoo,"TOTAL=8;EQUATION=3+5=8"));
     }
     [Fact]
+    public void Original2021ZooStudentFacingReptileStoryHasExactlyThreeSourceGroups()
+    {
+        const string f=UsCcssG1FullGradeNextQuestions.ZooThree;
+        var p=new Dictionary<string,int>{{"a",8},{"b",7},{"c",5},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(f,p));
+        Assert.Equal("TOTAL=20;EQUATION=8+7+5=20",
+            UsCcssG1FullGradeNextQuestions.Solve(f,p));
+        Assert.True(UsCcssG1FullGradeNextQuestions.Verify(
+            f,p,"TOTAL=20;EQUATION=8+7+5=20"));
+        Assert.False(UsCcssG1FullGradeNextQuestions.Verify(
+            f,p,"TOTAL=15;EQUATION=8+7=15"));
+        p["c"]=4;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(f,p));
+        var seen=Enumerable.Range(0,350)
+            .Select(n=>UsCcssG1FullGradeNextQuestions.Build(f,new Random(n*71+7)))
+            .Where(q=>q.Parameters["mode"]==2).ToArray();
+        Assert.True(seen.Length>30);
+        Assert.All(seen,q=>
+        {
+            Assert.Contains("8 snakes, 7 iguanas and 5 frogs",q.Prompt);
+            Assert.Equal("TOTAL=20;EQUATION=8+7+5=20",
+                UsCcssG1FullGradeNextQuestions.Solve(f,q.Parameters));
+        });
+    }
+
+    [Fact]
     public void AllFamiliesGenerateDistinctRealPracticeQuestions()
     {
         var engine=new ExactSkillContractQuestionEngine();
