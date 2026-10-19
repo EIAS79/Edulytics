@@ -95,7 +95,15 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("PERSONAL index card",text("PED:US-CCSS-MATH:G1:U08:L01"));
         Assert.Contains("4+□=9",text("PED:US-CCSS-MATH:G1:U08:L02"));
         Assert.Contains("Heads Up",text("PED:US-CCSS-MATH:G1:U08:L03"));
-        Assert.Contains("16-□=9",text("PED:US-CCSS-MATH:G1:U08:L04"));
+        var aquarium=text("PED:US-CCSS-MATH:G1:U08:L04");
+        Assert.Contains("FOUR distinct CHANGE-UNKNOWN stories",aquarium);
+        Assert.Contains("8+□=15",aquarium);  // Turtles
+        Assert.Contains("17-□=5",aquarium);  // Penguins
+        Assert.Contains("20-□=3",aquarium);  // Fish
+        Assert.Contains("6+□=14",aquarium); // Stingrays and sea stars
+        Assert.Contains("16-□=9",aquarium); // Andre and bullfrogs
+        Assert.Contains("20-17=3",aquarium);
+        Assert.Contains("6+8=14",aquarium);
         Assert.Contains("7 first graders",text("PED:US-CCSS-MATH:G1:U08:L05"));
         Assert.Contains("WRITE and ANSWER TWO new questions",text("PED:US-CCSS-MATH:G1:U08:L06"));
         Assert.Contains("number 103",text("PED:US-CCSS-MATH:G1:U08:L07"));
