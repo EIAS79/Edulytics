@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 73,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L08",
+  "title": "Different Representations of Tens and Ones PLC Activity",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "c5a8fdd8bfd16ee332095959eae1b68950aee11abb9f692fea75b11bc045084e",
+    "teacherPreparationSha256": "206a5a74e868c135313e05544f08468863ac99fe8bd23d78d53b4fb278aef1f8",
+    "studentHtmlSha256": "5893c1a00a8ef433a62d6a0321c324ca9cef9740338bd915bbbb142c0cb2fda8",
+    "teacherHeadings": [
+      "Activity 1: Compare Representations of a Collection (10 minutes)",
+      "Activity 2: Card Sort: Base-ten Representations (15 minutes)",
+      "Activity 3: Introduce Grab and Count, Ones Cubes (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing How many do you see? [visual] [visual] </sv",
+      "Student Facing Each student counted and showed a collection. Clare drew [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,6",
+      "Student Facing Your teacher will give you a set of cards that show different representations of a two-digit number. Find the cards that match. Be ready to explain your re"
+    ],
+    "sourceSpecificFinding": "Kiran 3 ones+7 tens and Priya 70+3 both 73; original estimation and teacher card sort",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
