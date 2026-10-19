@@ -189,15 +189,15 @@ Minimum *targeted* acceptance for each modified lesson:
 | Shared core engine, auth, grading persistence, schema/migration, multi-tenant boundary | Integration plus relevant broad regression/security/migration tests | **Yes**: risk-based wider CI, not optional bypass |
 | Deployment configuration or release pipeline changed | Validate workflow/branch protection, deploy trigger, readiness, rollback path | **Yes**: deployment checks before changing production rules |
 
-**Important current-state constraint:** Existing GitHub workflows, required status checks and Render's `checksPass` deploy trigger **already exist**. This plan does **not** disable them today. Simplifying CI requires an explicit follow-on engineering change to path-sensitive checks, branch protection, build dependencies and deploy gating, plus validation that documentation-only commits do not break production delivery. Until then, the present mandatory checks run normally.
+**Important current-state constraint:** Existing GitHub workflows, required status checks and Render's `checksPass` deploy trigger **already exist** and are NOT disabled. The separate authoring branch has no open PR, so PR-triggered heavy CI is not repeatedly invoked by its commits; all workflows remain active for their configured events. At final promotion to PR #567 all mandatory required checks run normally on the exact current review SHA. No branch protection or deployment-trigger modification is authorized by this throughput amendment.
 
-### Stage E — Record EACH lesson acceptance immediately; aggregate ONE whole grade
+### Stage E — Evidence-freeze; record EACH verified lesson acceptance; aggregate ONE whole grade
 
-- **On completing Stage D for lesson N, record the original V1 `LESSON_INTERNAL_ACADEMIC_ACCEPTED` equivalent for N immediately**, with its `sourceVersion/contentVersion`, mapped skills, changed files, real source/Practice/test evidence and relevant Git SHA. A mere candidate family or compiled code is never an approval. The first unaccepted ordinal is the next academic task.
+- **During continuous Stage A–D work**, retain source/task, Rich V2, allowed Practice, independent mathematics and teacher-only boundary evidence **for each lesson**, but do not initiate full GitHub CI or overwrite `testedCodeSha` after every intermediate shared-engine commit. On frozen-grade authentic CI, record the original V1 `LESSON_INTERNAL_ACADEMIC_ACCEPTED` equivalent **individually for each genuinely verified lesson** with its `sourceVersion/contentVersion`, skills, changed files, checked authentic Practice/score evidence and exact applicable Git SHA. Candidate family or compiled code alone is never approval. The existing first-unaccepted ordinal remains the academic completion cursor.
 - One failed lesson is **not silently counted as approved**; fix that lesson and rerun its impacted checks. Keep all other independently valid per-lesson records. Do not create a 5/5, 10/10, 20/20 or 500/500 intermediary *release* decision. **Do not re-review the original already accepted 1–50 as new lessons**.
 - The internal Edulytics decision stays **per-lesson test-based acceptance using unchanged Five-Lesson V1 §5 A–D**, aggregated into a single full-grade report: for current Grade 1, **50 historic release references + 96/96 genuinely accepted new lessons**. No external academic specialist signature, observed child work, teacher classroom signature, pixel-by-pixel publisher figure proof or pre-deployment owner production UAT is newly required. No blanket approval based on code compilation.
 - Final grade eligibility is `GRADE_READY` **only when every new lesson passes** and the 146-lesson inventory reconciles to 50 preserved historic references plus 96 new true internal acceptances. `BLOCKED`, `FAILED`, missing evidence or a red still-required CI check means **NO_GO**; an intentionally passing negative-control test does not prove eligibility.
-- **Git commits are checkpoints, not approval/release boundaries.** Save coherent changes and real proofs at sensible points, preferably one focused workstream; **do not produce repeated commits solely to refresh a SHA or synthetic paperwork**, and do not rewrite or discard the existing candidate history. No mandatory 10–25 minute manual certification-report ritual. When the grade is genuinely ready, prepare the final one-grade PR/merge under current GitHub protections.
+- **Git commits are checkpoints, not approval/release boundaries.** Save coherent changes and real source proofs in the unpublished working branch; **do not produce repeated PR commits solely to restart CI or refresh an obsolete SHA**. Freeze the source/code once, gather authentic final CI evidence, reconcile individual approvals, then promote/verify the same candidate through the preserved PR. No mandatory manual report after each lesson or hidden relaxation of existing protections.
 
 ### Stage F — Deploy and owner acceptance
 
@@ -253,10 +253,12 @@ GRADE_INVENTORIED (reused manifest; G1 historical 1-50 preserved)
     -> NEXT_UNACCEPTED_LESSON_SELECTED
     -> LESSON_REUSE_READY / LESSON_REPAIR_REQUIRED / LESSON_CAPABILITY_REQUIRED
     -> LESSON_TESTED / LESSON_BLOCKED
-    -> LESSON_INTERNAL_ACADEMIC_ACCEPTED (immediately, for each genuinely passing new lesson)
-    -> NEXT_UNACCEPTED_LESSON_SELECTED (repeat until all remaining are truly accepted)
-    -> GRADE_READY (all new lessons accepted + historical release refs retained)
-    -> PROTECTED_CI -> MERGED -> DEPLOYING -> LIVE -> OWNER_UAT
+    -> LESSON_A_D_REVIEWED / LESSON_BLOCKED (evidence saved per new lesson, continuous authoring)
+    -> CODE_AND_SOURCE_FREEZE -> EXISTING_PROTECTED_CI_AND_AUTHENTICATED_PROOFS
+    -> LESSON_INTERNAL_ACADEMIC_ACCEPTED (each independently; only when final-SHA evidence qualifies)
+    -> EVIDENCE_LEDGER_FINALIZATION -> CURRENT_HEAD_REQUIRED_CI
+    -> GRADE_READY (96/96 actual acceptances + historical release refs + green checks)
+    -> PROTECTED_MERGE -> DEPLOYING -> LIVE -> OWNER_UAT
     -> GRADE_COMPLETE (only after inventory and actual production outcome reconciled)
 ```
 
@@ -342,9 +344,9 @@ Do not fill any field with guessed values or present `READY_REUSE`, code compile
 
 ## 11. Acceptance criteria for this PLAN document
 
-This plan is the **owner-approved full-grade delivery amendment to the original successful Five-Lesson V1**, not a new acceptance model. It becomes operative only when the owner approves it and an accurate policy/instruction change is committed without bypassing required checks. This policy adoption **does not** approve a candidate lesson, turn PR #567 green, alter student data, authorize CI simplification, or deploy anything. The next software task is to **preserve existing PR #567**, correct demonstrated CI blockers with scoped tests, and resume original A–D **per-lesson acceptance at Grade 1 ordinal 51**, reusing existing 51–146 candidate implementations as appropriate. Grade release remains **NO_GO until all 96 new lessons satisfy original V1 requirements**.
+This plan is the **owner-approved full-grade delivery amendment to the original successful Five-Lesson V1**, not a new acceptance model. It becomes operative only when the owner approves it and an accurate policy/instruction change is committed without bypassing required checks. This policy adoption **does not** approve a candidate lesson, turn PR #567 green, alter student data, authorize CI simplification, or deploy anything. The next software task is to **preserve existing PR #567**, use the exact-head non-PR working branch documented in the continuous-authoring protocol, complete original V1 A–D for all unfinished candidates using the existing 51–146 implementations, then freeze and perform end-of-grade authentic CI/evidence certification. Grade release remains **NO_GO until all 96 new lessons satisfy original V1 requirements**.
 
-**Governing principle:** *Exact original Five-Lesson V1 per-lesson academic quality, source fidelity, Practice, evidence, test and production safety; only the five-lesson PUBLISHING BOUNDARY changes to one whole grade. Preserve accepted history; inspect/reuse before repairing; accept each lesson as it qualifies; release once and verify LIVE.*
+**Governing principle:** *Exact original Five-Lesson V1 per-lesson academic quality, source fidelity, Practice, evidence, test and production safety. Delivery is ONE whole grade, while intermediate development occurs on a separate non-PR branch; full protected CI and final-SHA per-lesson approval evidence are consolidated at grade freeze, never waived. Preserve accepted history, reuse before repairing, record each true lesson acceptance and release once only after 96/96 and mandatory checks.*
 
 ### Non-negotiable parity audit (interpretation only; NO new criterion)
 
@@ -356,7 +358,7 @@ This plan is the **owner-approved full-grade delivery amendment to the original 
 | V1 §5 B: correct examples, representations and Rich V2 | SAME educational quality, no invented polish/rebuild scope |
 | V1 §5 C: only source-matching allowed Practice families, correct/wrong verification, stored scoring | SAME source-specific family coverage; no one-family quota or synthetic classroom proof |
 | V1 §5 D: touched-behaviour tests, affected shared consumers and existing mandatory repository CI | SAME risk-based tests; never bypass existing protections |
-| V1 §5 E: independent real internal acceptance per lesson | SAME meaning, recorded promptly **one lesson at a time**, aggregated as 96 new plus 50 historical references |
+| V1 §5 E: independent real internal acceptance per lesson | SAME individual V1 academic judgment and actual authenticated proof; interim Stage A–D notes accumulate while authoring, and actual `INTERNALLY_ACCEPTED` is recorded per lesson at frozen-code/final-SHA verification; aggregated as 96 new plus 50 historical references |
 | V1 §5 E/F: former 5-lesson batch ready / published | **ONLY CHANGED ITEM:** one whole-grade ready / published after every new lesson accepted |
 | V1 §5 F: protected merge, Render exact LIVE, HTTP, owner production UAT | SAME actual checks, after the single full-grade release; no fake pre-deploy owner acceptance |
 | V1 §6–§11: privacy, licensing, checkpoints, historical records, no false PASS | SAME controls and safeguards; no forced new tools, duplicated approvals or retroactive recertification |
