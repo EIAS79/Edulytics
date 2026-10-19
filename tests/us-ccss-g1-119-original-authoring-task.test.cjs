@@ -1,0 +1,23 @@
+'use strict';
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const src=fs.readFileSync(path.join(root,'src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs'),'utf8');
+const rubric=read('artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-119-puppies-tulips-authorship-rubric.json');
+const candidate=read('artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json').records.find(x=>x.ordinal===119);
+test('original 2021 puppies/tulips lesson requires real authored comparison story teaching',()=>{
+  assert.equal(rubric.lessonOrdinal,119);
+  assert.equal(rubric.lessonCode,'PED:US-CCSS-MATH:G1:U06:L17');
+  assert.equal(rubric.status,'TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED');
+  assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Authorship'));
+  assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Math accuracy'));
+  assert.match(src,/ORIGINAL AUTHORING TASK: Create your own puppy-and-tulip comparison problem/);
+  assert.match(src,/Step 6: Write an original puppies-and-tulips Compare story/);
+  assert.equal(candidate.assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
+  assert.equal(candidate.candidateFamily,rubric.numericDigitalPracticeFamily);
+  assert.equal(rubric.actualAuthenticatedLearnerWorkVerified,false);
+  assert.equal(rubric.teacherObservationClaimed,false);
+});

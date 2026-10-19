@@ -66,13 +66,14 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile) {
       !checkFile(e.independentGradingProofPath,e.independentGradingProofSha256) ||
       !checkFile(e.runtimePracticeProofPath,e.runtimePracticeProofSha256)))return false;
   if(!needsDigital && e.allowedFamilies.length!==0)return false;
-  if(ordinal===65 || ordinal===146) {
+  if(ordinal===65 || ordinal===119 || ordinal===146) {
     if(e.originalAuthorshipTaskReviewed!==true ||
        e.learnerAuthoredTaskRendered!==true ||
        e.teacherReviewRubricAvailable!==true ||
        e.actualTeacherObservationNotClaimed!==true)return false;
     const name=ordinal===65?
       'lesson-65-learner-authored-story-review-rubric.json':
+      ordinal===119?'lesson-119-puppies-tulips-authorship-rubric.json':
       'lesson-146-number-riddle-authorship-rubric.json';
     const rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
     if(rubric.lessonOrdinal!==ordinal ||

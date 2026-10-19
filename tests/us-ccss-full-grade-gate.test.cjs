@@ -81,3 +81,17 @@ test('ordinary numeric lessons keep actual grading and persisted attempts mandat
   assert.equal(validLessonAssessment(51,{...e,independentCorrectAndWrongAnswersVerified:false},()=>true),false);
   assert.equal(validLessonAssessment(51,e,()=>false),false);
 });
+
+test('original optional ordinal 119 requires source-authored comparison-story teaching AND true numeric grading',()=>{
+  const digital={allowedFamilies:['usccss.g1.u06.l17.optional_compare_stories'],
+    realPracticeGradingPersisted:true,independentCorrectAndWrongAnswersVerified:true,
+    independentGradingProofPath:'math',independentGradingProofSha256:'a'.repeat(64),
+    runtimePracticeProofPath:'https',runtimePracticeProofSha256:'b'.repeat(64)};
+  assert.equal(validLessonAssessment(119,digital,()=>true),false);
+  const both={...digital,originalAuthorshipTaskReviewed:true,
+    learnerAuthoredTaskRendered:true,teacherReviewRubricAvailable:true,
+    actualTeacherObservationNotClaimed:true};
+  assert.equal(validLessonAssessment(119,both,()=>true),true);
+  assert.equal(validLessonAssessment(119,{...both,realPracticeGradingPersisted:false},()=>true),false);
+  assert.equal(validLessonAssessment(119,{...both,learnerAuthoredTaskRendered:false},()=>true),false);
+});

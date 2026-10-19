@@ -1467,8 +1467,15 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                         "MALFORMED_ANSWER_REJECTED_AND_PERSISTED"), (
                         code,"malformed answer accepted or not saved",result)
                     if source_mode=="DIGITAL_AND_SOURCE_AUTHORED_TASK":
-                        assert "riddle" in rendered and "write" in rendered, (
-                            code,"learner riddle-authorship teaching missing")
+                        if ordinal==146:
+                            assert "riddle" in rendered and "write" in rendered, (
+                                code,"learner riddle-authorship teaching missing")
+                        elif ordinal==119:
+                            assert "puppi" in rendered and "tulip" in rendered and (
+                                "write" in rendered or "create" in rendered), (
+                                code,"learner comparison-story-authorship teaching missing")
+                        else:
+                            raise AssertionError((code,"unexpected authored-plus-digital lesson"))
                     g1_e2e_rows.append({"ordinal":ordinal,"lessonCode":code,
                         "assessmentMode":source_mode,
                         "actualFamily":result["family"],
