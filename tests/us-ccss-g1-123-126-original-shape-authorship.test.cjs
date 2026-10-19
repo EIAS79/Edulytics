@@ -35,5 +35,17 @@ test('original first-edition geometry drawing authorship cannot masquerade as a 
   assert.equal(rubric.teacherObservationClaimed,false);
   assert.equal(rubric.actualAuthenticatedLearnerAuthoredWorkVerified,false);
   assert.match(content,regex);
+  if(ordinal===124){
+    assert.match(content,/DRAW THREE other closed or open figures that are NOT triangles/);
+    assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Three source nonexamples'));
+  }
+  if(ordinal===125){
+    assert.match(content,/DRAW THREE other closed shapes that are NOT rectangles/);
+    assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Three source nonexamples'));
+  }
+  if(ordinal===126){
+    assert.match(content,/SAME resulting object again using DIFFERENT pattern blocks/);
+    assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Same-outline alternate construction'));
+  }
  }
 });

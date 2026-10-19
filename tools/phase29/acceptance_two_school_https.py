@@ -1511,6 +1511,13 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                             assert expected_fragment in rendered, (
                                 code,"source-specific geometric authorship target missing",
                                 expected_fragment)
+                            if ordinal in (124,125):
+                                assert ("not triangles" if ordinal==124
+                                        else "not rectangles") in rendered, (
+                                    code,"original source requires multiple drawn nonexamples")
+                            if ordinal==126:
+                                assert "same" in rendered and "different" in rendered, (
+                                    code,"original pattern-block reconstruction goal missing")
                         elif ordinal==135:
                             assert "sunday" in rendered and "schedule" in rendered and (
                                 "draw" in rendered or "clock" in rendered), (
