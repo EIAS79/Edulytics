@@ -84,7 +84,9 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
         return i switch
         {
             0=>$"RESULT={a+b}",
-            1=>$"LEFT={a};WHOLE={a+b}",
+            1=>mode<=1?$"LEFT={a};WHOLE={a+b}":
+                mode==2?$"ADD={a}+{b}={a+b};SUB={a+b}-{b}={a}":
+                $"MISSING_ADD={b};MISSING_SUB={a}",
             2=>$"RESULT={(mode%2==0?a+b:a-b)}",
             3=>mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
             4=>$"MISSING={b};TOTAL={a+b}",

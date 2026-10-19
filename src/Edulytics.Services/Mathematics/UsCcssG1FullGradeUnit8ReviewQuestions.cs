@@ -88,7 +88,11 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             string prompt=n switch
             {
                 0=>$"Find the sum within ten: {a}+{b}. Write RESULT=number.",
-                1=>$"The two parts are {a} and {b}, with whole {whole}. If {a}+{b}={whole}, remove the {b} part from the whole. Write LEFT=number;WHOLE=number.",
+                1=>mode<=1?
+                    $"The two parts are {a} and {b}, with whole {whole}. If {a}+{b}={whole}, remove the {b} part from the whole. Write LEFT=number;WHOLE=number.":
+                    mode==2?
+                    $"ORIGINAL CUBE TOWERS: Two connecting-cube towers contain {a} and {b} cubes. Write ONE complete addition equation and ONE matching subtraction equation using the same whole, the two parts and the equals sign. Write ADD=number+number=number;SUB=number-number=number.":
+                    $"ORIGINAL MISSING NUMBER: Find the TWO unknown values for {a} + □ = {whole} and {whole} - {b} = □. Write MISSING_ADD=number;MISSING_SUB=number.",
                 2=>mode%2==0?$"Add within 20: {a}+{b}. Write RESULT=number.":
                     $"Subtract within 20: {a}-{b}. Write RESULT=number.",
                 3=>mode%2==0?$"There are {a} counters and some JOIN. Now there are {whole}. How many joined? Write CHANGE=number;FINAL=number.":
@@ -116,7 +120,9 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         return n switch
         {
             0=>$"RESULT={a+b}",
-            1=>$"LEFT={a};WHOLE={a+b}",
+            1=>mode<=1?$"LEFT={a};WHOLE={a+b}":
+                mode==2?$"ADD={a}+{b}={a+b};SUB={a+b}-{b}={a}":
+                $"MISSING_ADD={b};MISSING_SUB={a}",
             2=>$"RESULT={(mode%2==0?a+b:a-b)}",
             3=>mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
             4=>$"MISSING={b};TOTAL={a+b}",

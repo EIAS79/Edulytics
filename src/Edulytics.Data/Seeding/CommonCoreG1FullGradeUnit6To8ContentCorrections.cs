@@ -165,7 +165,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
             @"I can find sums within ten using facts and a strategy I understand."),
         new(@"PED:US-CCSS-MATH:G1:U08:L02",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-2/preparation.html",@"72db439ba6f87caafe696606b4ab7db25a14b1cbb5a2f3b1ffeeafd701e57be3",[@"CCSS:1.OA.C.6",@"CCSS:1.OA.D.8"],
             @"Relate Addition and Subtraction",
-            @"Relate addition and subtraction within ten as inverse number relationships. A single set of three numbers can yield a fact family.",
+            @"ORIGINAL STUDENT FACING TASK: use connecting cubes to WRITE an ADDITION and a SUBTRACTION equation that both match the SAME cube arrangement. Then FIND both unknown values in linked equations, for example 4+□=9 and 9-5=□, and explain the connection. Relate addition and subtraction within ten as inverse facts. A numeric correct-answer check cannot certify actual cube construction or peer reasoning.",
             @"Example 1: If 5+4=9, then 9-4=5 and 9-5=4. Example 2: 6+3=9 and 9-6=3.",
             @"Step 1: Find two parts and their whole, at most ten. Step 2: Write a true addition fact. Step 3: Begin a subtraction with the whole. Step 4: Remove one part to find the other. Step 5: Check.",
             @"Do not write 5-9=4 for a within-ten part-whole fact; start subtraction from the whole nine.",

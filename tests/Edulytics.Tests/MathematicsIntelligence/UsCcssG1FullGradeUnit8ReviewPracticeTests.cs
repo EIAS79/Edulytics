@@ -95,6 +95,24 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
         Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,count));
     }
 
+    [Theory]
+    [InlineData(4,5,2,"ADD=4+5=9;SUB=9-5=4")]
+    [InlineData(4,5,3,"MISSING_ADD=5;MISSING_SUB=4")]
+    [InlineData(2,7,2,"ADD=2+7=9;SUB=9-7=2")]
+    public void OriginalUnit8Lesson2ChecksBothEquationsOrBothUnknowns(
+        int a,int b,int mode,string correct)
+    {
+        const string family="usccss.g1.u08.l02.inverse_add_subtract";
+        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
+        Assert.Equal(correct,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,correct));
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
+            "LEFT="+a+";WHOLE="+(a+b)));
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
+            correct+";FAKE=1"));
+    }
+
     [Fact]
     public void AStudentCreatedRiddleIsNotInferredFromACorrectNumericClue()
     {
