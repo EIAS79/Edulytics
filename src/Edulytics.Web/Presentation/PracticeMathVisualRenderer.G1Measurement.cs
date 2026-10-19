@@ -76,7 +76,7 @@ public static partial class PracticeMathVisualRenderer
                     svg.Append($"<rect class='length-{i}' x='{F(x)}' y='{y}' width='{F(step)}' height='24' fill='rgba(33,128,184,.24)' stroke='currentColor' stroke-width='1'/>");
                 }
             }
-            Text(svg,210,239,orderThree?"Order THREE from shortest to longest.":"Compare the aligned starting endpoints.","hint");
+            Text(svg,210,239,orderThree?(mode==1?"Order THREE from shortest to longest.":"Order THREE from longest to shortest."):"Compare the aligned starting endpoints.","hint");
         }
         else if(cubes||clips)
         {
