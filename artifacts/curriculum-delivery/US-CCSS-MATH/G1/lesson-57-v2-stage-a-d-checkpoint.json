@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Resume original V1 A-D source/teaching/Practice review for next unfinished lesson; progress checkpoint only, not a new acceptance scheme",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 57,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L20",
+  "unit": 3,
+  "lessonNumber": 20,
+  "title": "A Trip to the Zoo",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original 2021 IM/Kendall Hunt Grade 1 sources",
+    "teacherPreparationRelativePath": "Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-3_lesson-20_preparation.html",
+    "fullTeacherLessonRelativePath": "unit-3/lesson-20/lesson.html",
+    "studentMirrorRelativePath": "Student_Public_Mirror/unit-3/lesson-20/lesson.html",
+    "originalPreparationSha256": "738cb182e7d4dfab21834fe305cc5f5269709f91d5e9d3b186fff25fb286a1ea",
+    "originalFullTeacherLessonSha256": "b52d02ff8f09926ec8e838c59bc9b924949226cfc7f2be8c0de05909a2338011",
+    "originalStudentMirrorSha256": "7169287c637f1849d193d00ffdc97fd8f790ec6e1fce05939f386ba450f2b89e",
+    "localHashesIndependentlyComparedWithManifest": true,
+    "reuseExistingSourceAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json"
+  },
+  "stageA": {
+    "originalGoal": "Solve story problems with three addends; allow different mathematically valid methods, drawings, numbers or words",
+    "originalTasksReviewed": [
+      "Four mental warm-up expressions: 8+2+4, 8+6, 7+3+6, 7+9 (paired totals 14 and 16)",
+      "Activity 1: Jada's reptile story, 8 snakes, 7 iguanas, 5 frogs",
+      "Activity 2: bird exhibit, 3 herons, 6 hawks, 7 hummingbirds",
+      "Activity 2: large cats, 8 lions, 4 tigers, 3 cheetahs",
+      "Activity 2: petting zoo, 8 goats, 7 sheep, 4 pigs",
+      "Original section summary distinguishes make-ten strategies for two and three addends"
+    ],
+    "comparedExistingLearnerSource": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "comparedExistingPractice": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeNextQuestions.cs",
+    "demonstratedGap": "Existing teaching named reptile and bird tasks but omitted explicit mental warm-up and the two other original zoo exhibit quantities; Practice already generated those source groups",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "correction": "Retained the existing Rich V2 teaching structure and added only original mental warm-up, large cat and petting zoo tasks, plus accurate reptile decomposition 8+7+5=8+2+5+5=20 and honest teacher-only drawings boundary",
+    "existingTeachingReused": true,
+    "originalPracticeEngineReused": true,
+    "noPublisherArtworkCopied": true,
+    "newLessonSpecificContentVersion": "us-ccss-g1-u03-l20-zoo-2021-source-v6",
+    "guardedUpgrade": "Only lesson U03 L20 can upgrade from shared original v5; other Grade 1 content versions remain unchanged",
+    "changedSourcePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "codeCommit": "c6f2af243e97dbf1d721bb01c6058be71fe34da0"
+  },
+  "stageC": {
+    "reusedQuestionFamily": "usccss.g1.u03.l20.zoo.three_addends",
+    "previouslyImplementedOriginalReptileBirdCatsPettingVariants": true,
+    "existingGroupEquationVerifierReviewed": true,
+    "mathematicsStaticReview": [
+      "8+2+4=8+6=14",
+      "7+3+6=7+9=16",
+      "8+7+5=20",
+      "3+6+7=16",
+      "8+4+3=15",
+      "8+7+4=19"
+    ],
+    "limitation": "Digital Practice verifies arithmetic equation with exact source-group quantities; it does not grade a child's freehand drawing or teacher-facilitated strategy discussion"
+  },
+  "stageD": {
+    "teachingAssertionsUpdatedIn": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "testCodeCommit": "e63dee586c207c70b8c2d9a1e667066a7fdd5a5e",
+    "currentHeadCiExecutedDuringAuthoring": false,
+    "staticSourceReviewPerformed": true,
+    "passingTestRunClaimed": false,
+    "authenticatedLearnerRenderVerifiedAtCurrentHead": false,
+    "authenticatedScoringAndPersistenceVerifiedAtCurrentHead": false,
+    "sourceSpecificAccessibilityAndRightsApprovalAtFinalSha": "PENDING",
+    "fullGradeFinalShaEvidence": "PENDING",
+    "remaining": "Complete original V1 Stage D and individual final academic acceptance against final frozen-grade CI; carry forward this source evidence without inventing checks"
+  },
+  "lessonInternalAcademicAcceptance": "NOT_CLAIMED",
+  "progressLedgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "ownerProductionUat": "PENDING",
+  "nextAction": "Continue original per-lesson review on ordinal 58 using existing candidate; hold lesson 57 acceptance for genuine required evidence at grade freeze",
+  "currentAcademicSourceOfTruth": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
