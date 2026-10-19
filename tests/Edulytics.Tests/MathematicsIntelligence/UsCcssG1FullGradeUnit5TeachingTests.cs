@@ -35,12 +35,26 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
             Assert.True(CommonCoreG1FullGradeUnit5ContentCorrections.IsTarget(doc,row));
             Assert.Equal(unit==4
                     ?CommonCoreG1FullGradeUnit5ContentCorrections.Unit4EndSourceVersion
+                    :lesson<=7?CommonCoreG1FullGradeUnit5ContentCorrections.Unit5EarlySourceVersion
                     :CommonCoreG1FullGradeUnit5ContentCorrections.Version,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             var t=row.Translations.Single(x=>x.CultureCode=="en");
             return t.Explanation+"\n"+t.WorkedExamples+"\n"+t.StepByStepSolutions+"\n"+t.CommonMistakes;
         }
-        Assert.Contains("47 + 8 = 47 + 3 + 5 = 50 + 5 = 55",lesson(5,5));
+        Assert.Contains("Original 8+47=47+3+5=55",lesson(5,5));
+        Assert.Contains("37+7=44 dollars",lesson(5,5));
+        Assert.Contains("43+50=93",lesson(5,1));
+        Assert.Contains("93+6=99",lesson(5,1));
+        Assert.Contains("23+45",lesson(5,2));
+        Assert.Contains("63+25=88",lesson(5,2));
+        Assert.Contains("Five in a Row Stage 5",lesson(5,2));
+        Assert.Contains("32+54=86",lesson(5,3));
+        Assert.Contains("23+74=97",lesson(5,3));
+        Assert.Contains("Number Puzzles Stage 3",lesson(5,4));
+        Assert.Contains("Kiran has 14 marbles",lesson(5,4));
+        Assert.Contains("45+□=50",lesson(5,6));
+        Assert.Contains("Target Numbers",lesson(5,6));
+        Assert.Contains("26+3 DOES NOT",lesson(5,7));
         Assert.Contains("23 + 45 = (20 + 40) + (3 + 5) = 60 + 8 = 68",lesson(5,2));
         Assert.Contains("37+26 = (30+20)+(7+6) = 50+13=63",lesson(5,10));
         Assert.Contains("74 is greater than 68",lesson(4,22));
