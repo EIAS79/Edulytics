@@ -94,7 +94,17 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   if(!Array.isArray(scope)||scope.length===0||new Set(scope).size!==scope.length||
      (affectedPaths!==undefined && scope.some(p=>!isSafeGitFile(p) ||
        !/^(src\/|tests\/|tools\/)/.test(p))))return false;
-  const diff=spawnSync('git',['diff','--quiet',proofSha,releaseSha,'--',...scope],{cwd:ROOT});
+  // Narrow lesson scope never waives revalidation when the shared math,
+  // lesson-contract or authenticated grading path changed after the proof.
+  const sharedCritical=[
+    'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
+    'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
+    'src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
+    'tools/phase29/b001_practice_attempt_probe.py',
+    'tools/phase29/acceptance_two_school_https.py'
+  ];
+  const verifiedScope=[...new Set([...scope,...sharedCritical])];
+  const diff=spawnSync('git',['diff','--quiet',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT});
   return diff.status===0;
 }
 // V1 accepts source-grounded lesson readiness, not synthetic human activity.
