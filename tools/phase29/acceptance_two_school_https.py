@@ -1474,6 +1474,10 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                             assert "puppi" in rendered and "tulip" in rendered and (
                                 "write" in rendered or "create" in rendered), (
                                 code,"learner comparison-story-authorship teaching missing")
+                        elif ordinal==135:
+                            assert "sunday" in rendered and "schedule" in rendered and (
+                                "draw" in rendered or "clock" in rendered), (
+                                code,"source learner-authored Sunday schedule teaching missing")
                         else:
                             raise AssertionError((code,"unexpected authored-plus-digital lesson"))
                     g1_e2e_rows.append({"ordinal":ordinal,"lessonCode":code,

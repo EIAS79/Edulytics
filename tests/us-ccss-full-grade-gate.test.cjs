@@ -95,3 +95,17 @@ test('original optional ordinal 119 requires source-authored comparison-story te
   assert.equal(validLessonAssessment(119,{...both,realPracticeGradingPersisted:false},()=>true),false);
   assert.equal(validLessonAssessment(119,{...both,learnerAuthoredTaskRendered:false},()=>true),false);
 });
+
+test('original Grade 1 ordinal 135 teacher-reviewed Sunday schedule is required alongside validated clock Practice',()=>{
+ const e={allowedFamilies:['usccss.g1.u07.l16.daily_schedule_time'],
+   realPracticeGradingPersisted:true,independentCorrectAndWrongAnswersVerified:true,
+   independentGradingProofPath:'math',independentGradingProofSha256:'a'.repeat(64),
+   runtimePracticeProofPath:'https',runtimePracticeProofSha256:'b'.repeat(64)};
+ assert.equal(validLessonAssessment(135,e,()=>true),false);
+ const together={...e,originalAuthorshipTaskReviewed:true,
+  learnerAuthoredTaskRendered:true,teacherReviewRubricAvailable:true,
+  actualTeacherObservationNotClaimed:true};
+ assert.equal(validLessonAssessment(135,together,()=>true),true);
+ assert.equal(validLessonAssessment(135,{...together,actualTeacherObservationNotClaimed:false},()=>true),false);
+ assert.equal(validLessonAssessment(135,{...together,realPracticeGradingPersisted:false},()=>true),false);
+});

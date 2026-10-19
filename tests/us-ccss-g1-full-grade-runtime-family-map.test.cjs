@@ -17,6 +17,7 @@ test('all 96 source-ordered Grade 1 new candidates have one honest assessment mo
   assert.equal(x.records[14].candidateFamily,null);
   assert.equal(x.records[95].assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
   assert.equal(x.records[119-51].assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
+  assert.equal(x.records[135-51].assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
 });
 test('each proposed family maps to one real registered C# contract, never unrelated fallback',()=>{
   const root='src/Edulytics.Core/Mathematics/Practice/';
