@@ -31,7 +31,8 @@ public static class UsCcssG1FullGradeStartQuestions
             Center => a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
                 (mode==0?a+b<=20:true)&&
                 (mode<=1?c==0:(c>=1&&c<=9&&c<a&&c!=b)),
-            ThreeStory or Expression => a>=1&&a<=9&&b==10-a&&c>=1&&c<=10,
+            ThreeStory or Expression => a>=1&&a<=9&&b==10-a&&c>=1&&c<=10&&
+                (family!=ThreeStory||mode!=2||(a==7&&b==3&&c==8)), 
             MakeTen or Pattern => a>=6&&a<=9&&b>10-a&&b<=10&&a+b<=20&&c==0&&
                 (family!=MakeTen||mode!=2||a==9),
             _=>false
@@ -51,7 +52,8 @@ public static class UsCcssG1FullGradeStartQuestions
                 do{c=random.Next(1,10);}while(c==b);
         }
         else if(family==ThreeStory||family==Expression){
-            a=random.Next(1,10);b=10-a;c=random.Next(1,11);
+            if(family==ThreeStory&&mode==2){a=7;b=3;c=8;} // Original 2021 three bird groups: 7 blue, 8 brown, 3 babies.
+            else {a=random.Next(1,10);b=10-a;c=random.Next(1,11);}
         }
         else {a=family==MakeTen&&mode==2?9:random.Next(6,10);b=random.Next(11-a,11);}
         var p=new Dictionary<string,int>(StringComparer.Ordinal){
@@ -63,7 +65,9 @@ public static class UsCcssG1FullGradeStartQuestions
                 $"Number Puzzles: add {a} + {b}. Write ANSWER=number.":
                 $"Number Puzzles: subtract {a} - {b}. Write ANSWER=number."):
                 $"Number Puzzles: use TWO DIFFERENT digit cards, each at most ONCE. Fill □ + {a-b} = {a} and {a} - □ = {a-c}. Write CARDS=first_digit,second_digit. Do not repeat a card.",
-            ThreeStory=>mode%2==0?
+            ThreeStory=>mode==2?
+                "ORIGINAL 2021 STUDENT FACING: 7 blue birds fly in the sky, 8 brown birds sit in a tree, and 3 baby birds sit in a nest. How many altogether? Show all THREE groups and write TOTAL=number;EQUATION=number+number+number=number. Discuss your drawing or counters with a teacher.":
+                mode%2==0?
                 $"Birds arrive in three groups of {a}, {c}, and {b}. Two groups make ten. How many birds are there in all? Write TOTAL=number;EQUATION=number+number+number=number.":
                 $"Add three collections of {a}, {b}, and {c} stones. Pair two groups to make ten. Write TOTAL=number;EQUATION=number+number+number=number.",
             Expression=>mode switch

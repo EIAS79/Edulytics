@@ -140,6 +140,32 @@ public sealed class UsCcssG1FullGradeStartingPracticeTests
             UsCcssG1FullGradeStartQuestions.MakeTen,ten,"MOVE=1;REST=5;TOTAL=14"));
     }
     [Fact]
+    public void Original2021ThreeBirdGroupsAreARealGeneratedSourceMode()
+    {
+        const string family=UsCcssG1FullGradeStartQuestions.ThreeStory;
+        var source=new Dictionary<string,int>{{"a",7},{"b",3},{"c",8},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeStartQuestions.Valid(family,source));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source,
+            "TOTAL=18;EQUATION=7+8+3=18"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+            "TOTAL=18;EQUATION=7+7+4=18"));
+        source["c"]=9;
+        Assert.False(UsCcssG1FullGradeStartQuestions.Valid(family,source));
+        var seen=Enumerable.Range(0,360).Select(n=>
+            UsCcssG1FullGradeStartQuestions.Build(family,new Random(n*47+9)))
+            .Where(q=>q.Parameters["mode"]==2).ToArray();
+        Assert.True(seen.Length>40);
+        Assert.All(seen,q=>
+        {
+            Assert.Contains("7 blue birds",q.Prompt);
+            Assert.Contains("8 brown birds",q.Prompt);
+            Assert.Contains("3 baby birds",q.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStartQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void OriginalNinePlusGameRequiresTwoCorrectStudentConstructedEquations()
     {
         const string family=UsCcssG1FullGradeStartQuestions.MakeTen;
