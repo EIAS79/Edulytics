@@ -81,6 +81,16 @@ def syntactically_valid_wrong_answer(correct):
             "ADD":"SUBTRACT","SUBTRACT":"ADD",
         }
         replacement=categories.get(value.upper())
+        if replacement is None and key.upper()=="ORDER":
+            # Original G1 U06 L01 has THREE distinct measured strips; its
+            # answer is a comma-separated permutation, not a scalar/category.
+            # Reverse their order while preserving exactly the same labels,
+            # keeping the negative answer syntactically valid and genuinely wrong.
+            labels=[part.strip().upper() for part in value.split(",")]
+            if len(labels)==3 and set(labels)=={"A","B","C"}:
+                replacement=",".join(reversed(labels))
+            else:
+                raise ValueError("Unexpected source three-strip order format")
         if replacement is None and key.upper()=="MATCH":
             # The ORIGINAL U06 L14 source asks the child to circle exactly
             # TWO distinct equations. Keep the letter-pair answer format
@@ -249,12 +259,23 @@ if __name__=="__main__":
                               json.dumps({"parameters":{"minimumVotes":3,"maximumVotes":10,"topic":0}}))
             self.assertRaises(ValueError,synthetic_survey_protocol,SURVEY_SENTINEL,
                               json.dumps({"parameters":{"minimumVotes":6,"maximumVotes":10,"topic":9}}))
+        def test_original_u06_l01_three_strip_order_stays_a_permutation(self):
+            for original in ("ORDER=A,B,C","ORDER=B,A,C","ORDER=C,B,A",
+                             "ORDER=A,C,B","ORDER=B,C,A","ORDER=C,A,B"):
+                wrong=syntactically_valid_wrong_answer(original)
+                self.assertNotEqual(wrong,original)
+                self.assertTrue(wrong.startswith("ORDER="))
+                self.assertEqual(set(wrong.split("=",1)[1].split(",")),
+                                 {"A","B","C"})
+            for invalid in ("ORDER=A,A,B","ORDER=A,B","ORDER=RED,BLUE,RED"):
+                self.assertRaises(ValueError,syntactically_valid_wrong_answer,invalid)
+
         def test_well_formed_wrong_original_grade1_answers_are_distinct(self):
             for correct in ("RESULT=18","NAME=seventy-two","SYMBOL=>",
                             "SHAPE=RECTANGLE","TIME=7:30","ORDER=2,3,6",
                             "CANDIDATES=34,44,54","MATCH=10+8;TOTAL=18",
                             "CARDS=4,8","ALT_ONES=24;WAYS=4","ANSWER=YES",
-                            "MATCH=A,C;TOTAL=20","MATCH=B,C;TOTAL=18"):
+                            "MATCH=A,C;TOTAL=20","MATCH=B,C;TOTAL=18","ORDER=A,B,C","ORDER=C,B,A"):
                 wrong=syntactically_valid_wrong_answer(correct)
                 self.assertNotEqual(wrong,correct)
                 self.assertEqual(wrong.split(";")[0].split("=")[0],
