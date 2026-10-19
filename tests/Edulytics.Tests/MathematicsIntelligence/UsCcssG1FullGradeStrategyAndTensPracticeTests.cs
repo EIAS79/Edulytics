@@ -78,6 +78,59 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
           UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveTen,
           new Dictionary<string,int>{{"a",2},{"b",3},{"c",0},{"mode",1}}));
     }
+    [Theory]
+    [InlineData(3,2,0,"TENS=5;TOTAL=50")]
+    [InlineData(7,4,1,"TENS=3;TOTAL=30")]
+    [InlineData(4,3,2,"TENS=7;TOTAL=70")]
+    [InlineData(7,3,3,"TENS=4;TOTAL=40")]
+    public void Original2021G1U04L04BagStoriesAndTensPracticeHaveIndependentMath(
+        int firstTens,int otherTens,int mode,string expected)
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveMultipleTens;
+        var p=new Dictionary<string,int>{
+            ["a"]=firstTens,["b"]=otherTens,["c"]=0,["mode"]=mode};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected.Replace("TOTAL=","TOTAL=9")));
+    }
+
+    [Fact]
+    public void OriginalBagOfCubesStoryOperandsCannotBeRewrittenAsDifferentSourceNumbers()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveMultipleTens;
+        foreach(var (a,b,mode) in new[]{
+            (4,2,0),(3,1,0),(6,4,1),(7,3,1),
+            (2,8,2),(3,4,3)
+        })
+            Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(
+                family,new Dictionary<string,int>{
+                    ["a"]=a,["b"]=b,["c"]=0,["mode"]=mode}));
+        var seen=new HashSet<int>();
+        for(int seed=0;seed<170;seed++)
+        {
+            var problem=UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+                family,new Random(seed*31+17));
+            seen.Add(problem.Parameters["mode"]);
+            if(problem.Parameters["mode"]==0)
+            {
+                Assert.Equal(3,problem.Parameters["a"]);
+                Assert.Equal(2,problem.Parameters["b"]);
+                Assert.Contains("Jada",problem.Prompt);
+                Assert.Contains("30 cubes",problem.Prompt);
+            }
+            if(problem.Parameters["mode"]==1)
+            {
+                Assert.Equal(7,problem.Parameters["a"]);
+                Assert.Equal(4,problem.Parameters["b"]);
+                Assert.Contains("Tyler",problem.Prompt);
+                Assert.Contains("40 cubes",problem.Prompt);
+            }
+        }
+        Assert.Equal(4,seen.Count);
+    }
+
     [Fact]
     public void RealEngineEmitsFiveDistinctQuestionsPerFamily()
     {
