@@ -48,7 +48,7 @@ def synthetic_survey_protocol(expected, parameters_json):
     return "v:"+votes+"|g:"+tally
 
 
-def syntactically_valid_wrong_answer(correct):
+def syntactically_valid_wrong_answer(correct, family=None):
     """Create a real incorrect Grade 1 submission, preserving its answer
     field/schema; unlike a malformed sentinel, this exercises math grading.
     A full independent source oracle is tested separately in C#.
@@ -81,6 +81,13 @@ def syntactically_valid_wrong_answer(correct):
             "ADD":"SUBTRACT","SUBTRACT":"ADD",
         }
         replacement=categories.get(value.upper())
+        if key.upper()=="SHORTER" and value.upper() in ("MAI","CLARE","EQUAL"):
+            # Original U06 L03 compares the two school routes; inventing
+            # GREATER is not a well-formed answer to a shorter-walk question.
+            replacement={"MAI":"CLARE","CLARE":"MAI","EQUAL":"MAI"}[value.upper()]
+        if key.upper()=="LONGER" and value.upper()=="EQUAL":
+            # SOURCE comparison uses two admissible label systems.
+            replacement="RED" if family=="usccss.g1.u06.l01.compare_lengths" else "A"
         if key.upper()=="SORT" and value.upper() in ("EQUAL","UNEQUAL"):
             # G1 U07 L10 physically sorts equally/unequally divided shapes.
             # Both are the only source-valid labels; "GREATER" is not a sort.
@@ -167,7 +174,7 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
             # A survey requiring human participants cannot be auto-tested.
             if synthetic_survey:
                 return {"status":"SURVEY_REQUIRES_HUMAN_NOT_VALID_WRONG_FIXTURE","family":family}
-            answer=syntactically_valid_wrong_answer(answer)
+            answer=syntactically_valid_wrong_answer(answer,family)
         if answer_mode=="malformed":
             # Deliberately invalid for numbers, expressions, category lists and
             # survey tally protocols alike. The source generation family
@@ -263,6 +270,26 @@ if __name__=="__main__":
                               json.dumps({"parameters":{"minimumVotes":3,"maximumVotes":10,"topic":0}}))
             self.assertRaises(ValueError,synthetic_survey_protocol,SURVEY_SENTINEL,
                               json.dumps({"parameters":{"minimumVotes":6,"maximumVotes":10,"topic":9}}))
+        def test_source_valid_wrong_shorter_walk_and_equal_strip_comparison(self):
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "SHORTER=MAI","usccss.g1.u06.l03.choose_indirect_comparison"),
+                "SHORTER=CLARE")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "SHORTER=CLARE","usccss.g1.u06.l03.choose_indirect_comparison"),
+                "SHORTER=MAI")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "SHORTER=EQUAL","usccss.g1.u06.l03.choose_indirect_comparison"),
+                "SHORTER=MAI")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "LONGER=EQUAL","usccss.g1.u06.l01.compare_lengths"),
+                "LONGER=RED")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "LONGER=EQUAL","usccss.g1.u06.l03.choose_indirect_comparison"),
+                "LONGER=A")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "FITS=YES","usccss.g1.u06.l03.choose_indirect_comparison"),
+                "FITS=NO")
+
         def test_original_g1_equal_and_unequal_partition_sort_stays_valid(self):
             self.assertEqual(
                 syntactically_valid_wrong_answer("SORT=EQUAL;PIECES=4"),
