@@ -27,6 +27,10 @@ Work through the genuine per-lesson V1 A–D source/teaching/Practice/test check
 
 A–D operate on individual **new** lessons to catch failures early. E–F apply to the **whole current grade**, not arbitrary five-lesson chunks. No hard minimum/maximum minutes per lesson; advance only after real correctness evidence.
 
+## V1-equivalent evidence and approval rules
+
+Carry forward the original V1 academic gate for **each new lesson 51–146**: original goal and student task, effective real teaching content, permitted Practice where gradeable, independent right/wrong mathematical tests, authenticated generation/grading/persisted attempts where applicable, honest residual teacher-only activity limits, test/commit linkage and all current security/deploy protections. No mandatory **external** academic approval, actual child submission, teacher-observed classroom evidence, or owner UAT before release. Grade 1 ordinal 65 requires a source-grounded authored-story learner task and teacher review rubric, instead of manufactured numeric grading. Ordinal 146 requires both the source-authored four-clue number riddle teaching/rubric and independently verified digital Practice. A rubric alone does not prove the actual learner page contains the authored assignment. Ensure exact-head positive eligibility runs inside the whole-grade PR and stays red while incomplete. Never touch the historic 1–50 lessons.
+
 ## Release rules
 
 - No new Grade 1 release while `NO_GO`; a successful "gate refused incomplete content" negative-control is NOT approval.
