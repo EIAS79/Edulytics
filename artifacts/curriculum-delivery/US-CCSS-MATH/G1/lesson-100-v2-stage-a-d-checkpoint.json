@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 100,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L12",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "20df0875849ea1176e8b0eb74c6275e62da72f2d030adcf312482f4c3e9fcfc2",
+    "teacherPreparationSha256": "3eb8ed2b44b6a99f3b7bce3de8deb9b7b5056e66dbfc2f18cb86d56625c1f034",
+    "studentMirrorSha256": "5297408925281f87e2704fce6c4e642ee1c5acae07c07610228024c6f17be089",
+    "teacherActivityHeadings": [
+      "Activity 1: Add Two-digit Numbers Within 100 (15 minutes)",
+      "Activity 2: Reason About Addition (20 minutes)",
+      "Activity 3: Ways We Volunteer [OPTIONAL] (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(7 + 3\\) \\(37 + 3\\) \\(7 + 8\\) \\(57 + 8\\) Student Response Teachers with a valid work email address can click h",
+      "Student Facing Find the value of each sum using any method that you want. Show your thinking using drawings, numbers, or words. Write equations to represent your thinking",
+      "Student Facing 37 22 18 56 41 Choose 2 numbers from above and write an addition expression to make each statement true. This sum has the smallest possible value. Expressi"
+    ],
+    "sourceSpecificComparison": "Original 48+15 and 57+36; 37,22,18,56,41 choose min/max/exact ten/compose categories",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
