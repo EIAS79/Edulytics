@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 90,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L02",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "8ecf6f24057ae9f0b20dbe809b5de3421758f9087598a8e679552bcf2b33b3bc",
+    "teacherPreparationSha256": "64e65d8055ab349030dfc4b4faa58bd730a240c72c7f3e919a9356f2be6bd7cc",
+    "studentMirrorSha256": "63aa40d4f987dfd42b05883f0875e0f3f61653c8ec192d4c519a17d76502aa6f",
+    "teacherActivityHeadings": [
+      "Activity 1: Find the Value (15 minutes)",
+      "Activity 2: Elena and Andre Represent $63 + 25$ (10 minutes)",
+      "Activity 3: Introduce Five in a Row, Add Within 100 without Composing (15 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of \\(23 + 45\\) . Show your thinking using drawings, numbers, or words. [visual] [visual] <div aria-describedby=\"dialog-long-description-Imag",
+      "Student Facing Here are 2 drawings students made for \\(63 + 25\\) . Elena's work [visual] [visual] <div aria-describedby=\"dialog-long-description-ImageFile-43616\" aria-lab"
+    ],
+    "sourceSpecificComparison": "Original 23+45; Elena and Andre 63+25 methods; choral backward70–20; Five in a Row Stage 5",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
