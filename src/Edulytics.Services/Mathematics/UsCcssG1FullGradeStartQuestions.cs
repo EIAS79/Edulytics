@@ -61,9 +61,13 @@ public static class UsCcssG1FullGradeStartQuestions
             ThreeStory=>mode%2==0?
                 $"Birds arrive in three groups of {a}, {c}, and {b}. Two groups make ten. How many birds are there in all? Write TOTAL=number;REST=number.":
                 $"Add three collections of {a}, {b}, and {c} stones. Pair two groups to make ten. Write TOTAL=number;REST=number.",
-            Expression=>mode%2==0?
-                $"Decide if {a} + {c} + {b} = 10 + {c} is true. Write TRUE=YES/NO;TOTAL=number.":
-                $"Decide if {a} + {c} + {b} = 10 + {c+1} is true. Write TRUE=YES/NO;TOTAL=number.",
+            Expression=>mode switch
+            {
+                0=>$"Decide if {a} + {c} + {b} = 10 + {c} is true. Write TRUE=YES/NO;TOTAL=number.",
+                1=>$"Decide if {a} + {c} + {b} = 10 + {c-1} is true. Write TRUE=YES/NO;TOTAL=number.",
+                2=>$"MATCH the three-addend expression {a} + {c} + {b} to the equivalent expression. A: 10 + {c}. B: 10 + {c-1}. Write MATCH=10+number;TOTAL=number.",
+                _=>$"MATCH the three-addend expression {a} + {c} + {b} to the equivalent expression. A: 10 + {c-1}. B: 10 + {c}. Write MATCH=10+number;TOTAL=number."
+            },
             MakeTen=>$"Complete a ten-frame: {a}+{b} = 10+□. Move counters from the second group. Write MOVE=number;REST=number;TOTAL=number.",
             Pattern=>mode%2==0?
                 $"Are {a}+{b} and 10+{a+b-10} equal? Write EQUAL=YES/NO;TOTAL=number.":
@@ -82,7 +86,7 @@ public static class UsCcssG1FullGradeStartQuestions
         {
             Center=>mode<=1?$"ANSWER={(mode==0?a+b:a-b)}":$"CARDS={b},{c}",
             ThreeStory=>$"TOTAL={a+b+c};REST={c}",
-            Expression=>$"TRUE={(mode%2==0?"YES":"NO")};TOTAL={a+b+c}",
+            Expression=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={a+b+c}":$"MATCH=10+{c};TOTAL={a+b+c}",
             MakeTen=>$"MOVE={10-a};REST={a+b-10};TOTAL={a+b}",
             Pattern=>$"EQUAL={(mode%2==0?"YES":"NO")};TOTAL={a+b}",
             _=>throw new InvalidOperationException()

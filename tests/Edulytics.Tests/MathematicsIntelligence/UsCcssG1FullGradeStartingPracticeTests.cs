@@ -60,6 +60,25 @@ public sealed class UsCcssG1FullGradeStartingPracticeTests
         Assert.False(UsCcssG1FullGradeStartQuestions.Valid(f,p));
     }
 
+    [Theory]
+    [InlineData(4,6,8,2,"MATCH=10+8;TOTAL=18")]
+    [InlineData(3,7,6,3,"MATCH=10+6;TOTAL=16")]
+    [InlineData(9,1,10,2,"MATCH=10+10;TOTAL=20")]
+    public void SourceUnit3L16MatchesWholeThreeAddendExpressionToEqualTenPlusExpression(
+        int first,int tenPartner,int remaining,int mode,string expected)
+    {
+        const string family=UsCcssG1FullGradeStartQuestions.Expression;
+        var p=new Dictionary<string,int>{{"a",first},{"b",tenPartner},
+            {"c",remaining},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeStartQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeStartQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            $"MATCH=10+{remaining-1};TOTAL={first+tenPartner+remaining}"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            $"TRUE=YES;TOTAL={first+tenPartner+remaining}"));
+    }
+
     [Fact]
     public void ThreeAddendAndMakeTenSpecificWrongAnswerControls()
     {
