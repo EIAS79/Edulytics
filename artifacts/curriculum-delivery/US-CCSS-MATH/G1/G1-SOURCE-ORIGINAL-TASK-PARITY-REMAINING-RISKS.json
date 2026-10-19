@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V1",
+  "scope": {
+    "newOrdinals": "51-146",
+    "historicalOrdinalsUnchanged": "1-50",
+    "remainingRequiredLessonCount": 96
+  },
+  "purpose": "Record concrete original student-facing activity-to-digital/teacher-task parity discrepancies. Reviewed summaries are an aid to manual A-D acceptance, not academic approval.",
+  "provenance": "Read-only original 2021 local teacher/student HTML with matching hashes from full-grade-original-student-facing-task-inventory.json, paired with repository Practice source.",
+  "countActuallyTriaged": 23,
+  "total96AcademicAcceptedOnThisEvidence": 0,
+  "limitations": "Teacher/full Student Facing HTML index is abbreviated; drawings, source PDF artwork, digital UI runtime for exact head, licensed graphics and actual physical pupil work have not been fully audited. Some newly corrected paths are still undergoing GitHub CI. No original 1-50 lesson changes.",
+  "rows": [
+    {
+      "ordinal": 51,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L14",
+      "original2021FullTeacherLessonHtmlSha256": "9d9fabad803c0b7353b5247d651525c32c193541764bbd80211c0f046902511c",
+      "original2021TeacherPreparationSha256": "fe19d293e214a19212ee74fa2cd634e0381a77916645fa6b600f40d9c9c5eef2",
+      "original2021StudentFacingHtmlSha256": "c20420c7d07ba8245603a358063ff217a279cdfd3a2088117454dbdad4793ef9",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Number Puzzles, Within 20 (15 minutes)",
+        "Activity 2: Centers: Choice Time (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Decide whether each statement is true or false. Be prepared to explain your reasoning. \\(3 + 2 = 3 + 2\\) \\(5 + 1 = 5 + 2\\) \\(4 + 6 = 3 + 7\\) Student Respon",
+        "Student Facing Choose a center. Number Puzzles [visual] [visual] <svg aria-hidden=\"true\" c"
+      ],
+      "sourceRequiredTaskInterpretation": "Use true/false equations and distinct digit cards in Number Puzzles; teacher guides choice centers.",
+      "currentDigitalOrTeacherContentCandidate": "Two-card board and numeric equation grading were added.",
+      "remainingAcademicTaskParityWork": "Original group-choice and physical card play are teacher-led; verify real learner board and statement tasks independently.",
+      "candidateDigitalFamily": "usccss.g1.u03.l14.center.add_subtract",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 65,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L28",
+      "original2021FullTeacherLessonHtmlSha256": "cca057a71e8fb653ed6f843b997cf38bba52b62d9b27dcad971fd1629f2ad47e",
+      "original2021TeacherPreparationSha256": "a6c67818c96fe3c4d21b600d05eec7f27834d415afcb7ab51b1ee27e1e57e213",
+      "original2021StudentFacingHtmlSha256": "81f78b384eda60a3565f259121acb0512a908a4f434642749b9617706d1a6919",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Writing Classroom Story Problems (20 minutes)",
+        "Activity 2: Story Problem Posters (10 minutes)",
+        "Activity 3: Poster Gallery Walk (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <div class=\"im-c-modal__conte",
+        "Student Facing Noah had 8 pencils. Elena had 5 pencils. Han had 4 pencils. Addition story problem: Solve the story problem. Show your thinking using drawings, numbers, or",
+        "Student Facing Let's solve our classmates' story problems. Solve the story problem using drawings, numbers, or words. Equation: ________________________________ Solve the"
+      ],
+      "sourceRequiredTaskInterpretation": "Learners write new classroom story problems and solve classmates' authored problems.",
+      "currentDigitalOrTeacherContentCandidate": "Separate authorship rubric; no fake numerical assessment of the child's authored story.",
+      "remainingAcademicTaskParityWork": "Requires source-backed teaching text, teacher review instructions, real learner rendering; no pre-release child work assumed.",
+      "candidateDigitalFamily": null,
+      "assessingMode": "SOURCE_AUTHORED_TASK",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 103,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L01",
+      "original2021FullTeacherLessonHtmlSha256": "a8b03480c296b5709f7f400125b538b8bb6441cb38c88561c06f4ee4d3efcf88",
+      "original2021TeacherPreparationSha256": "e282e2ebafd26ad41c6ad436f16963f46019c0d027feac44a9e0fb10f0f64c71",
+      "original2021StudentFacingHtmlSha256": "109f05b5b842e7e7b2949c2e8955636c62901a2f72535560a530d32e9f39eddd",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Is it Longer or Shorter? (15 minutes)",
+        "Activity 2: Order Objects (10 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,1",
+        "Student Facing Share your thinking with your partner. Choose 2 objects and compare their lengths. Choose 2 different objects and compare their lengths. Write down your an",
+        "Student Facing Pick 3 objects. With your partner, put the objects in order from shortest to longest. Trace or draw your objects. Pick 3 new objects. With your partner, pu"
+      ],
+      "sourceRequiredTaskInterpretation": "Compare lengths of two objects and order three different objects from shortest to longest.",
+      "currentDigitalOrTeacherContentCandidate": "Direct comparison plus independent three-strip ordering and length controls.",
+      "remainingAcademicTaskParityWork": "Verify source objects, alignment model and correct results in actual student view.",
+      "candidateDigitalFamily": "usccss.g1.u06.l01.compare_lengths",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 104,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L02",
+      "original2021FullTeacherLessonHtmlSha256": "ea6bc52203032df01439e188edd0fac8c338778df37e39da92f46a278155c14d",
+      "original2021TeacherPreparationSha256": "a6f522f5506bd28cc065368f92a242ab905c3b986bacf75df9b6a2da7daf589d",
+      "original2021StudentFacingHtmlSha256": "ee36738491cb99a2a6a793e261fa6b3104f8aa258787fee6e6e30167c7791247",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Which is Longer? Which is Shorter? (15 minutes)",
+        "Activity 2: Measure Your Desk (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(35 + 20\\) \\(35 + 25\\) \\(30 + 45\\) \\(37 + 45\\) Student Response Teachers with a valid work email address can c",
+        "Student Facing Find 2 objects that are longer and 2 objects that are shorter than the unsharpened pencil. Write a sentence that compares each object to the pencil. Exampl",
+        "Student Facing Compare the length of the side of your desk and the length of one of the legs of your desk using the string. [visual] [visual] <path d=\"M1162.5,198.75,1001"
+      ],
+      "sourceRequiredTaskInterpretation": "Compare the length of objects indirectly through a stable third reference, including desk/leg measurement.",
+      "currentDigitalOrTeacherContentCandidate": "Indirect two-object diagram uses matching unit references with deliberately separate drawing starts.",
+      "remainingAcademicTaskParityWork": "Real desk/string manipulation and explanation remain teacher-led; no actual measurements claimed.",
+      "candidateDigitalFamily": "usccss.g1.u06.l02.indirect_length_comparison",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 105,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L03",
+      "original2021FullTeacherLessonHtmlSha256": "b27cb37ee22383dd9489f3c4de9d64e3ebce6fff02d3ca5ab79d95a33e95dda5",
+      "original2021TeacherPreparationSha256": "170ffc52e90c2dbe4763f2a30b095090e2f3ef24b6d20ef0368a2483d427e078",
+      "original2021StudentFacingHtmlSha256": "8a1308bdb975c5c64caae1a10b0d7bc03e4f9805a9b56d87d369f840c7293a1a",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Mai and Clare Walk to School (15 minutes)",
+        "Activity 2: Will It Fit? (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] </pa",
+        "Student Facing Who has a shorter walk to school, Clare or Mai? How do you know? Be ready to explain your thinking in a way that others will understand. [visual] [visual] ",
+        "Student Facing Will the teacher's desk fit through the door? Show your thinking using drawings, numbers, or words. Will a student desk fit through the door? Show your thi"
+      ],
+      "sourceRequiredTaskInterpretation": "Choose a useful indirect length comparison to judge walks or whether desks fit through a doorway.",
+      "currentDigitalOrTeacherContentCandidate": "Reference unit comparison math and separate reference diagrams provided.",
+      "remainingAcademicTaskParityWork": "A generic longer/shorter result does not itself assess the door-fit decision or justify choosing the third comparison object.",
+      "candidateDigitalFamily": "usccss.g1.u06.l03.choose_indirect_comparison",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 114,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L12",
+      "original2021FullTeacherLessonHtmlSha256": "66b1985b33e5fff962e7586e95c4a8ad933faba867c1f522353e6bd31e31910e",
+      "original2021TeacherPreparationSha256": "93d68add0b23995acb8d3f14bcbefc490c4730634b1400fd54d7d41e4b6c451a",
+      "original2021StudentFacingHtmlSha256": "3f4d4b21999d615054fb6a217827b8d6ba3a20b9fe55b72f9aea4fd753536b2f",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Friendship Bracelets (15 minutes)",
+        "Activity 2: Same Bracelets, Different Story (10 minutes)",
+        "Activity 3: Introduce Write Numbers, Numbers to 120 by 1 (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? \\(6 + 8 = 14\\) \\(8 + 6 = 14\\) \\(14 - 6 = 8\\) \\(14 - 8 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) Student Response Teac",
+        "Student Facing Priya and Han are comparing the lengths of their friendship bracelets. Han's bracelet is 14 cubes long. The length of Priya's bracelet is 4 cubes fewer tha",
+        "Student Facing Han's bracelet is 4 cubes longer than Priya's bracelet. Priya's bracelet is 10 cubes long. How long is Han's bracelet? Show your thinking using drawings, n"
+      ],
+      "sourceRequiredTaskInterpretation": "Find unknown smaller/larger friendship bracelet length when a difference is given.",
+      "currentDigitalOrTeacherContentCandidate": "Digital source stories now require LENGTH as an unknown rather than only computing a stated difference.",
+      "remainingAcademicTaskParityWork": "Check text parity of bracelet stories and persistent wrong/correct trials at current SHA.",
+      "candidateDigitalFamily": "usccss.g1.u06.l12.compare_measurements",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 119,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L17",
+      "original2021FullTeacherLessonHtmlSha256": "2e228fd50b7d6c15eb19517b36ae58488a586deb3a8ac733c775fe079439de45",
+      "original2021TeacherPreparationSha256": "28e460bdec60efa9c12585fc5f5ae1a654a0d81c754cd4bace615d5cc48617f3",
+      "original2021StudentFacingHtmlSha256": "a70a234b659fea2c27065dd3ca15bcc31a6f72458aeff8fd76ee162e4bdfea6d",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Puppy and Tulip Stories (25 minutes)",
+        "Activity 2: Act it Out (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual]",
+        "Student Facing [visual] [visual]",
+        "Student Facing Group A: Read your problems to your partner group. Group B: Act out and solve the problems. Show your thinking using drawings, numbers, or words. Write an "
+      ],
+      "sourceRequiredTaskInterpretation": "Write original puppies/tulips comparison stories; exchange with another group who acts out, models and solves.",
+      "currentDigitalOrTeacherContentCandidate": "Numeric comparison remains plus source-authored story guidance and separate teacher rubric.",
+      "remainingAcademicTaskParityWork": "Partner-produced stories, peer performances and actual child work are not digitally demonstrated; teacher content must be reviewed.",
+      "candidateDigitalFamily": "usccss.g1.u06.l17.optional_compare_stories",
+      "assessingMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 120,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L01",
+      "original2021FullTeacherLessonHtmlSha256": "73c3ccf07b172132f3c2bb6ffc8f90f6a5499ddee88a66be6dcf2be21a6573da",
+      "original2021TeacherPreparationSha256": "dc3f76d9df47fdefff176057e2aefe23d33065fac29222d7016eb21af8634bd5",
+      "original2021StudentFacingHtmlSha256": "1f845279f44f90d7a66759e503186485ddd38c0edbd85bcc2c2089b17b1161d1",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Sort Solid Shapes (20 minutes)",
+        "Activity 2: Describe and Find Shapes (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,100",
+        "Student Facing Sort some of the shapes into categories in a way that makes sense to you. Explain how you sorted the shapes. Sort some of your shapes into categories in a ",
+        "Student Facing Pick a bag. Each partner feels the shape in the bag without looking at it and thinks about which shape it is. Each partner tells which shape they think it "
+      ],
+      "sourceRequiredTaskInterpretation": "Classify and describe three-dimensional solids; sort tangible solids by chosen attributes.",
+      "currentDigitalOrTeacherContentCandidate": "Source-grounded 3D recognition visuals and mathematical shape classification.",
+      "remainingAcademicTaskParityWork": "Source sorting categories, several shape choices, tactile characteristics and learners' oral explanation not fully assessed by one name.",
+      "candidateDigitalFamily": "usccss.g1.u07.l01.sort_solids_attributes",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 121,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L02",
+      "original2021FullTeacherLessonHtmlSha256": "ff7a9e73620ee8d280af4fad7acbaacb1c0c333b9120bca0f0cebef68698bbc6",
+      "original2021TeacherPreparationSha256": "674a753e87083cf85f96db91e2ff929cca74dfc484ef7d3b55859c2a980ac2f4",
+      "original2021StudentFacingHtmlSha256": "e431f7556f9da770a8c94c9082a41ddcaf0e4a26e0af22d2210913b7c7f0aa18",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Build With Solid Shapes (15 minutes)",
+        "Activity 2: Use Shapes to Make Other Shapes (10 minutes)",
+        "Activity 3: Introduce Geoblocks, Describe and Find (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <div class=\"i"
+      ],
+      "sourceRequiredTaskInterpretation": "Construct and combine three-dimensional shapes from physical shapes.",
+      "currentDigitalOrTeacherContentCandidate": "First-party isometric cube/prism component visual plus accurate count grading.",
+      "remainingAcademicTaskParityWork": "Counting blocks does not verify building a new three-dimensional object or which 3D structures can be assembled.",
+      "candidateDigitalFamily": "usccss.g1.u07.l02.compose_solids_components",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 123,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L04",
+      "original2021FullTeacherLessonHtmlSha256": "760d36107c20a300e101d29a56e02c962d5e75850018fe449825066c57fba7f4",
+      "original2021TeacherPreparationSha256": "6f2dd41a7ce1547bf8651bc32d3fe3cfcfe1496988425376d0852b00e59a0393",
+      "original2021StudentFacingHtmlSha256": "b5b81578d2c853a2f42a2557c22d929a8d19b9c14a68d7a9d666e6f49dd1ada0",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Draw Shapes on Dot Paper (10 minutes)",
+        "Activity 2: Introduce How Are They the Same, Grade 1 Shapes (15 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <d",
+        "Student Facing Pick a shape card. Each partner draws the shape on dot paper. Take turns describing the shape you drew. Student Response Teachers with a valid work email a",
+        "Student Facing Choose a center. Capture Squares [visual] [visual] <div class=\"im-c-modal"
+      ],
+      "sourceRequiredTaskInterpretation": "Draw and describe flat shapes on dot paper; compare with a peer.",
+      "currentDigitalOrTeacherContentCandidate": "Visual triangle/square attribute checks added.",
+      "remainingAcademicTaskParityWork": "Needs genuine drawing instruction and reviewable figure/teacher rubric, not just 3 or 4 sides.",
+      "candidateDigitalFamily": "usccss.g1.u07.l04.draw_shape_attribute_check",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 124,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L05",
+      "original2021FullTeacherLessonHtmlSha256": "d538cf55fee8231e96bc67c1be251233f37b49adce584af222d3434def142083",
+      "original2021TeacherPreparationSha256": "e84cbae9a21a158ef0120c909bca9dda8a9c7ce5a33418c1f1e7555529670d05",
+      "original2021StudentFacingHtmlSha256": "bc81a8da752545318e065ade80b97621de39d672adf6f240ff27281f53f0c113",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Triangles and \"Not Triangles\" (10 minutes)",
+        "Activity 2: Draw Triangles (10 minutes)",
+        "Activity 3: Centers: Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5",
+        "Student Facing These are triangles. [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75",
+        "Student Facing Draw 3 different triangles. [visual] [visual] <div class=\"im-c-mo"
+      ],
+      "sourceRequiredTaskInterpretation": "Distinguish rotated triangles from non-triangles and draw three different triangles.",
+      "currentDigitalOrTeacherContentCandidate": "Recognize three defining sides; display first-party triangle.",
+      "remainingAcademicTaskParityWork": "Three visually different student-drawn triangles and non-examples not independently captured.",
+      "candidateDigitalFamily": "usccss.g1.u07.l05.defining_triangles",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 125,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L06",
+      "original2021FullTeacherLessonHtmlSha256": "83ca489ce0c19d6715638c4d93e7e785020ea5625e8efdb6b1f8ce31ce41c62d",
+      "original2021TeacherPreparationSha256": "cd79903f14d4516444eb63543e7695f197431a3a47d6d6312ed0474776479091",
+      "original2021StudentFacingHtmlSha256": "9feefe3c6ac5e9f3ad9ff25e686890a9087f6bdda3b7b249aee5122cb87a4bdc",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Rectangles and Squares (20 minutes)",
+        "Activity 2: Draw Rectangles and Squares (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(57 + 10\\) \\(57 + 11\\) \\(57 + 21\\) \\(57 + 42\\) Student Response Teachers with a valid work email address can c",
+        "Student Facing These are rectangles. [visual] [visual] <div cla",
+        "Student Facing Draw 5 rectangles. [visual] [visual] <div class=\"im-c-modal__con"
+      ],
+      "sourceRequiredTaskInterpretation": "Distinguish rectangles/squares by attributes and draw five rectangles.",
+      "currentDigitalOrTeacherContentCandidate": "First-party rectangle/square geometry and property tests.",
+      "remainingAcademicTaskParityWork": "Do not claim five independently drawn rectangles from a yes/no properties answer.",
+      "candidateDigitalFamily": "usccss.g1.u07.l06.square_and_rectangle_properties",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 126,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L07",
+      "original2021FullTeacherLessonHtmlSha256": "a118d512bb31f39a8515910dcd23e43c2ede495bd3de236f5d790f2be87d0cd8",
+      "original2021TeacherPreparationSha256": "374318fadd28cb0b966adf6326416138df14809990c545c41ea70832556231ef",
+      "original2021StudentFacingHtmlSha256": "29e0f84a3f3e011941875c5f3ee7863d3050f95bed8f695e9f3ff8a34b1387e4",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Build with Pattern Blocks (15 minutes)",
+        "Activity 2: Shape Pictures (10 minutes)",
+        "Activity 3: Introduce Picture Books, Find Shapes (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <button",
+        "Student Facing Build something using the pattern blocks. Trace what you made and record how many pattern blocks you used. [visual] [visual] <div aria-describedby=\"dialog-",
+        "Student Facing We learned about solid shapes. [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-icon--close\" he"
+      ],
+      "sourceRequiredTaskInterpretation": "Compose shapes using pattern blocks; trace and document different compositions.",
+      "currentDigitalOrTeacherContentCandidate": "Two-piece geometric composition illustration and component count.",
+      "remainingAcademicTaskParityWork": "Constructing, rearranging, tracing and recording actual pattern blocks still requires specific task/evidence.",
+      "candidateDigitalFamily": "usccss.g1.u07.l07.compose_flat_shapers",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 128,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L09",
+      "original2021FullTeacherLessonHtmlSha256": "379696977db7eab4c7dfe5b67373e94be92723b5ad5c823e74995ffee477a759",
+      "original2021TeacherPreparationSha256": "2312f52d1effd02e6183490004cb0cdad3ef1d4334f8d115dae59239ea2a02e3",
+      "original2021StudentFacingHtmlSha256": "39dec858c7c416286b80be95d5b48b173f507206e5fafab8a1b7d74c26101c23",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Build a Circle (10 minutes)",
+        "Activity 2: Fold into Equal Pieces (15 minutes)",
+        "Activity 3: Halves or Fourths (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,3",
+        "Student Facing Synthesis: [visual] [visual]",
+        "Student Facing Cut out one circle and one square. Fold each shape so that there are 2 equal pieces. Be ready to explain how you know your shape has 2 equal pieces. Cut ou"
+      ],
+      "sourceRequiredTaskInterpretation": "Fold one circle and one square into halves and fourths and justify equal areas.",
+      "currentDigitalOrTeacherContentCandidate": "First-party equal halves/fourths diagrams; numeric terminology tests.",
+      "remainingAcademicTaskParityWork": "Actual student equal folding/cutting and mathematical justification not confirmed.",
+      "candidateDigitalFamily": "usccss.g1.u07.l09.equal_halves_fourths",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 130,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L11",
+      "original2021FullTeacherLessonHtmlSha256": "e18e2f818e043f76e2dd961c7756cddeba5b88acb1e0b202957bc2a57efecc83",
+      "original2021TeacherPreparationSha256": "dd086f96aa27fecb2b028621aaafd13d70732e828efe3aa611584d0bda3daa98",
+      "original2021StudentFacingHtmlSha256": "446d863852f94f0edc15fa0bde5becc57838f1418ccf27435a831344e3c3f97a",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Which is Bigger? (15 minutes)",
+        "Activity 2: Priya and Han Share Roti (10 minutes)",
+        "Activity 3: Introduce Geoblocks, Feel and Guess (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Each partner cuts out their circle. Decide who will cut into halves and who will cut into fourths. Fold your circle into halves or fourths then cut it. Com",
+        "Student Facing Priya and Han are sharing roti. Priya says, \"I want half of the roti because halves are bigger than fourths.\" Han says, \"I want a fourth of the roti becaus",
+        "Student Facing We learned that circles and rectangles can be split into two equal pieces which are called halves and four equal pieces which are called fourths or quarter"
+      ],
+      "sourceRequiredTaskInterpretation": "Compare one half with one fourth of the same whole, including a roti sharing explanation.",
+      "currentDigitalOrTeacherContentCandidate": "Same-size circular fraction diagrams and larger-part comparisons.",
+      "remainingAcademicTaskParityWork": "Source teacher discussion, actual physical folding and student explanation not digitally observed.",
+      "candidateDigitalFamily": "usccss.g1.u07.l11.bigger_piece_halves_fourths",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 132,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L13",
+      "original2021FullTeacherLessonHtmlSha256": "1e3e780104ff93572151c32c95e2663e5c57fba42e8875ac65f12d5debdee639",
+      "original2021TeacherPreparationSha256": "d67c387d478389b669d78b613930afc2aa0d01a541dc05e0b245764f83915293",
+      "original2021StudentFacingHtmlSha256": "92c4b141dd28ce4ac098468aaf4e12ce6ec34ec05130078d62beb12004841281",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Card Sort: Clocks (15 minutes)",
+        "Activity 2: Connect Clocks to Written Times (10 minutes)",
+        "Activity 3: Our School Day (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <button class=\"js-mo",
+        "Student Facing What do you notice about this clock? What do you wonder? [visual] [visual] </butt",
+        "Student Facing These clocks both show the same time. What time do they show? How do you know? [visual] [visual]"
+      ],
+      "sourceRequiredTaskInterpretation": "Sort analog/digital clock cards and read o'clock time from hands.",
+      "currentDigitalOrTeacherContentCandidate": "First-party numbered analog clock with hour/minute hands and gradeable result.",
+      "remainingAcademicTaskParityWork": "Card sort, digital-clock comparison, and clock-hand manipulation require further student task verification.",
+      "candidateDigitalFamily": "usccss.g1.u07.l13.hour_clock",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 133,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L14",
+      "original2021FullTeacherLessonHtmlSha256": "4448f6bfc00cfd3a4acd81ade39655673b6f3c921cfa233b3aa641fbf5b8f415",
+      "original2021TeacherPreparationSha256": "3587f9122a517825602f964340408540409f402d04c46eb15763215a474e9e28",
+      "original2021StudentFacingHtmlSha256": "f7482861ac3d0840f4650a4d9aad7709d4431cb767668b5371379215d72798de",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Put Times in Order (15 minutes)",
+        "Activity 2: Half Past What? (10 minutes)",
+        "Activity 3: Notice and Wonder: The Hands on the Clock Go Round and Round (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(30 + 10\\) \\(30 + 15\\) \\(30 + 30\\) \\(30 + 35\\) Student Response Teachers with a valid work email address can c",
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <svg aria-hidden=\"true\"",
+        "Student Facing What time is shown on each clock? If the time is half past, color the clock red. If the time is o'clock, color the clock blue. Write the time in words usin"
+      ],
+      "sourceRequiredTaskInterpretation": "Order different times and identify clocks at half past versus o'clock.",
+      "currentDigitalOrTeacherContentCandidate": "First-party half-hour clock diagram and half-hour interpretation.",
+      "remainingAcademicTaskParityWork": "Actual multi-clock ordering, color classification and verbal identification not fully captured by single time check.",
+      "candidateDigitalFamily": "usccss.g1.u07.l14.half_hour_clock",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 134,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L15",
+      "original2021FullTeacherLessonHtmlSha256": "3f2ec47baa9e0b37693927e8c12f7fa66b4ca64cc73b49199fb8bcdb4dfad670",
+      "original2021TeacherPreparationSha256": "94d12f9add390c8ec21aaa46156edd90f1d2d9391c12d1e39dc03e5ba403bbd4",
+      "original2021StudentFacingHtmlSha256": "15efad812e0b29341987f26fba69f28e87c14b8ea086a043cd5e845809264d8e",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Count the Minutes (10 minutes)",
+        "Activity 2: All the Time in the World (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(30 = 30\\) \\(10 + 15 = 15 + 10\\) \\(10 + 10 + 10 = 3\\) [visual] [visual]",
+        "Student Facing Start at 12. Count the minutes around the clock until you get to half the clock. Circle where you stop. [visual] [visual] <path d=\"M1162.5,198.75,1001.25,3",
+        "Student Facing For each clock, write the time. [visual] [visual] <div aria-describedby=\"dialog-long-description-TikzFile-147989\" aria-label=\"Image information\" aria-label"
+      ],
+      "sourceRequiredTaskInterpretation": "Count minute intervals around the analog dial and write the times shown.",
+      "currentDigitalOrTeacherContentCandidate": "First-party analog whole/half hour face with real hand positions.",
+      "remainingAcademicTaskParityWork": "Source minute-counting activity and multiple independent clocks need comparison, not just a single time.",
+      "candidateDigitalFamily": "usccss.g1.u07.l15.write_hours_halfhours",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 135,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L16",
+      "original2021FullTeacherLessonHtmlSha256": "7e19459ccd4594daa5ecd4a50269cbdf4a01c7dbd1add9b94776455566db53de",
+      "original2021TeacherPreparationSha256": "575d3578a40d2c725fbb0186b868afd1ec65eeee29eaa9ea1159c25336508be1",
+      "original2021StudentFacingHtmlSha256": "0caa2fcbb4c472be98e6284ffff93cb73b73783fb68c9ac5f9ab64045a0516be",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: What's the Time? (15 minutes)",
+        "Activity 2: What's the Time, Again? (10 minutes)",
+        "Activity 3: Sunday Schedule (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(8 + 32\\) \\(8 + 33\\) \\(8 + 38\\) \\(8 + 48\\) Student Response Teachers with a valid work email address can click",
+        "Student Facing [visual] [visual] <button class=\"js-modal-close i",
+        "Student Facing Fill in the blanks to show your ideal Sunday schedule. Time Activity Clock [visual] [visual]"
+      ],
+      "sourceRequiredTaskInterpretation": "Create an ideal Sunday schedule with time/activity/clock and discuss elapsed order.",
+      "currentDigitalOrTeacherContentCandidate": "First-party clock diagram and read-time numerical answer.",
+      "remainingAcademicTaskParityWork": "Generating a single hypothetical reading/snack time cannot verify original student-created schedule or clock entries.",
+      "candidateDigitalFamily": "usccss.g1.u07.l16.daily_schedule_time",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 136,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L17",
+      "original2021FullTeacherLessonHtmlSha256": "d43c914747290a154566d4ba4e32805adaf8b79773ae8edecb35ee263eb98c21",
+      "original2021TeacherPreparationSha256": "290eca13c9d22a5c8ceade880ca7f0e6c8aa5195a08cabb9ec8e641c8e790778",
+      "original2021StudentFacingHtmlSha256": "a0303f6963b27834d6640466d6c8bfe3a615d38d5f7bbfc7e36487406dcdd907",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Which One, Grade 1 Shapes (20 minutes)",
+        "Activity 2: Centers: Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,1162.5",
+        "Student Facing Choose a center. Can You Draw It? [visual] [visual] <path d=\"M1162.5,198.75,"
+      ],
+      "sourceRequiredTaskInterpretation": "Play shape centers, choose and explain flat or solid shapes, and draw shapes.",
+      "currentDigitalOrTeacherContentCandidate": "First-party shape model plus center arithmetic/text checks.",
+      "remainingAcademicTaskParityWork": "Drawing center and teacher-led choice/participation not evidenced by a shape name.",
+      "candidateDigitalFamily": "usccss.g1.u07.l17.center_geometry_and_time",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 143,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L07",
+      "original2021FullTeacherLessonHtmlSha256": "9c14ba5337fb82d9563274eabe5847ea75c521f41f96f1d1cff04668bf9f83d2",
+      "original2021TeacherPreparationSha256": "a67fed1ba0a673be7bda73baf011e3966eca8d0003bb870602375b0f442292fa",
+      "original2021StudentFacingHtmlSha256": "db30e2f1e30bdf2e2161348b6e8361479503f16ff05c58c59322e54a3eb6fc1d",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Last Number Wins (15 minutes)",
+        "Activity 2: Count and Represent (15 minutes)",
+        "Activity 3: How Many Cats? (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you know about 103? Student Response Teachers with a valid work email address can click here to register or sign in for free access to Student Resp",
+        "Student Facing How many objects are in your collection? Represent how many in as many ways as you can. [visual] [visual] <div aria-describedby=\"dialog-long-description-Im",
+        "Student Facing How many cats are there? [visual] [visual] <div class=\"im-c-modal__content im-c-content"
+      ],
+      "sourceRequiredTaskInterpretation": "Count and organize up to 120 physical objects and represent quantity in more than one way.",
+      "currentDigitalOrTeacherContentCandidate": "Now includes count-on game plus grouped tens-and-ones collection model to 120.",
+      "remainingAcademicTaskParityWork": "Physical counting, pupil-generated alternate representations and collection discussion unobserved.",
+      "candidateDigitalFamily": "usccss.g1.u08.l07.count_on_to120",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 145,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L09",
+      "original2021FullTeacherLessonHtmlSha256": "1bf9ea00bef926bb33d30558617325e078a38fcc18cbbf93d5dc6497a1e86a8b",
+      "original2021TeacherPreparationSha256": "052e36c045fe2c36af09e563fee7e0e54c798cbbe28e908bf376f4bfd310a39e",
+      "original2021StudentFacingHtmlSha256": "a214772f2e6a530cd2bfacb172b3a0a089af299786f9d1a596425fb4349c9cd8",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: A Number Riddle (10 minutes)",
+        "Activity 2: More Number Riddles (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(65 > 35\\) \\(65 = 75 - 10\\) \\(65 > 35 + 30\\) Student Response Teachers w",
+        "Student Facing My number is less than 60. My number has 4 ones. My number is more than 30. What numbers fit these clues? Secret number: ___________ Student Response Teach",
+        "Student Facing Secret Numbers A: __________ B: __________ C: __________ D: __________ E: __________ F: __________ G: __________ H: __________ <div c"
+      ],
+      "sourceRequiredTaskInterpretation": "Find all numbers satisfying preliminary place-value clues; final extra clue selects one secret number.",
+      "currentDigitalOrTeacherContentCandidate": "Corrected initial multi-candidate and final unique-number problem/answer paths.",
+      "remainingAcademicTaskParityWork": "Teacher-held riddle cards, justification and groups' reasoning still require authentic activity review.",
+      "candidateDigitalFamily": "usccss.g1.u08.l09.solve_number_riddle",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 146,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L10",
+      "original2021FullTeacherLessonHtmlSha256": "69c5e7937dd21fad5c4d9b12bf08706e2d9c0e33e69e935f7c92f8f7b861b7d4",
+      "original2021TeacherPreparationSha256": "7901e533b6aebf15b976f3c6fd5b9a518bd4a97a84b9aec9e97c30b1732c97bf",
+      "original2021StudentFacingHtmlSha256": "59f350094bbc236b2bc4933b5e674bf5e82f0e8ea28e3491204354c1d4d49929",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Write Number Riddles (15 minutes)",
+        "Activity 2: Solve Our Number Riddles (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(60 = 25 + 45\\) \\(70 = 24 + 46\\) \\(80 = 32 + 37\\) Student Response Teach",
+        "Student Facing Our secret number: ____________ Our 4 clues: Write each clue on an index card. Make sure the last clue is an addition expression. Fold that clue in half. S",
+        "Student Facing Record your ideas as you solve each number riddle. Student Response Teachers with a valid work email address can click here to register or sign in for free"
+      ],
+      "sourceRequiredTaskInterpretation": "Author an original secret number riddle with four clues, last a valid addition expression, then swap and solve.",
+      "currentDigitalOrTeacherContentCandidate": "Numeric validity check plus explicit authored-riddle teaching and teacher rubric.",
+      "remainingAcademicTaskParityWork": "A generated true/false clue is not evidence the learner authored a solvable four-clue riddle.",
+      "candidateDigitalFamily": "usccss.g1.u08.l10.write_riddle_numeric_check",
+      "assessingMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    }
+  ]
+}
