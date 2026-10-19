@@ -69,6 +69,34 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         }
     }
 
+    [Theory]
+    [InlineData(5,9,1,"SHORTER=MAI")]
+    [InlineData(10,4,1,"SHORTER=CLARE")]
+    [InlineData(9,9,1,"SHORTER=EQUAL")]
+    [InlineData(7,8,2,"FITS=NO")]
+    [InlineData(8,7,2,"FITS=YES")]
+    [InlineData(9,9,2,"FITS=YES")]
+    [InlineData(7,8,3,"FITS=NO")]
+    [InlineData(8,7,3,"FITS=YES")]
+    public void OriginalUnit6Lesson3StudentTasksIncludeShorterRouteAndDoorFit(
+        int referenceA,int referenceB,int mode,string expected)
+    {
+        const string family="usccss.g1.u06.l03.choose_indirect_comparison";
+        var p=new Dictionary<string,int>{
+            ["a"]=referenceA,["b"]=referenceB,["c"]=0,["mode"]=mode};
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected+";UNREVIEWED=1"));
+        if(mode>=2)
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family,p,expected=="FITS=YES"?"FITS=NO":"FITS=YES"));
+        else
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family,p,expected=="SHORTER=MAI"?"SHORTER=CLARE":"SHORTER=MAI"));
+    }
+
     [Fact]
     public void ChangingUnitSizeChangesTheMeasureCountNotThePhysicalLength()
     {
