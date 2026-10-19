@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 102,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L14",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "7a2e3ed4d8e2ccb705f24d97457d2e528bea0510119d46cf2aad2dc446091288",
+    "teacherPreparationSha256": "aef287abd6682c3b9c5665c66a1800b9424f481a181437f425675fa59b674ac3",
+    "studentMirrorSha256": "2120af8d7f9be1503686809385c13cde90d3e94f5b26e27c677774ec7dff5a22",
+    "teacherActivityHeadings": [
+      "Activity 1: Cans for the Food Drive (20 minutes)",
+      "Activity 2: Boxes of Cans (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing How many cans did the first graders collect for the food drive? [visual] [visual]",
+      "Student Facing Student Cans Collected Lin 18 Priya 24 Han 13 Tyler 30 Partner A: Write an equation to represent your thinking. How many cans did Lin and Priya collect alt",
+      "Student Facing Room Cans Collected on Day 1 Kindergarten 18 1st grade 51 2nd grade 23 3rd grade 13 4th grade 39 5th grade 40 6th grade 8 7th grade 29 8th grade 30 Find di"
+    ],
+    "sourceSpecificComparison": "Original Food Drive four students and Day1 grade-count tables already present in pre-existing candidate; handwritten sharing and packing remain teacher only",
+    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": false,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": null
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": false,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
