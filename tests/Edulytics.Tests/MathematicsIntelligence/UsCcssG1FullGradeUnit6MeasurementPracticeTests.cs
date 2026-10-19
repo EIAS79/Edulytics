@@ -79,18 +79,28 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(f,p,"SMALL_UNITS=6"));
     }
     [Theory]
-    [InlineData(7,4,9,"ORDER=B,A,C")]
-    [InlineData(8,20,12,"ORDER=A,C,B")]
-    [InlineData(17,9,4,"ORDER=C,B,A")]
+    [InlineData(7,4,9,1,"ORDER=B,A,C")]
+    [InlineData(8,20,12,1,"ORDER=A,C,B")]
+    [InlineData(17,9,4,1,"ORDER=C,B,A")]
+    [InlineData(7,4,9,3,"ORDER=C,A,B")]
+    [InlineData(8,20,12,3,"ORDER=B,C,A")]
+    [InlineData(17,9,4,3,"ORDER=A,B,C")]
     public void OriginalU06L01RequiresThreeDistinctLengthsOrderedNotOnlyTwoCompared(
-        int a,int b,int c,string expected)
+        int a,int b,int c,int mode,string expected)
     {
         const string family="usccss.g1.u06.l01.compare_lengths";
-        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",1}};
+        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
         Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
         Assert.Equal(expected,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
-        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"ORDER=A,B,C"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";FAKE=1"));
+        // Both original directions are distinct whenever all three lengths differ.
+        var other=new Dictionary<string,int>(p);
+        other["mode"]=mode==1?3:1;
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,other));
+        var reverse=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,other);
+        Assert.NotEqual(expected,reverse);
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,reverse));
     }
 
     [Fact]
