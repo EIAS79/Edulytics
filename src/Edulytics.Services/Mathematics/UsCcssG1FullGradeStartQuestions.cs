@@ -32,7 +32,8 @@ public static class UsCcssG1FullGradeStartQuestions
                 (mode==0?a+b<=20:true)&&
                 (mode<=1?c==0:(c>=1&&c<=9&&c<a&&c!=b)),
             ThreeStory or Expression => a>=1&&a<=9&&b==10-a&&c>=1&&c<=10,
-            MakeTen or Pattern => a>=6&&a<=9&&b>10-a&&b<=10&&a+b<=20&&c==0,
+            MakeTen or Pattern => a>=6&&a<=9&&b>10-a&&b<=10&&a+b<=20&&c==0&&
+                (family!=MakeTen||mode!=2||a==9),
             _=>false
         };
     }
@@ -52,7 +53,7 @@ public static class UsCcssG1FullGradeStartQuestions
         else if(family==ThreeStory||family==Expression){
             a=random.Next(1,10);b=10-a;c=random.Next(1,11);
         }
-        else {a=random.Next(6,10);b=random.Next(11-a,11);}
+        else {a=family==MakeTen&&mode==2?9:random.Next(6,10);b=random.Next(11-a,11);}
         var p=new Dictionary<string,int>(StringComparer.Ordinal){
             ["a"]=a,["b"]=b,["c"]=c,["mode"]=mode};
         if(!Valid(family,p))throw new InvalidOperationException("Generated out-of-scope mathematics");
@@ -72,7 +73,9 @@ public static class UsCcssG1FullGradeStartQuestions
                 2=>$"MATCH the three-addend expression {a} + {c} + {b} to the equivalent expression. A: 10 + {c}. B: 10 + {c-1}. Write MATCH=10+number;TOTAL=number.",
                 _=>$"MATCH the three-addend expression {a} + {c} + {b} to the equivalent expression. A: 10 + {c-1}. B: 10 + {c}. Write MATCH=10+number;TOTAL=number."
             },
-            MakeTen=>$"Complete a ten-frame: {a}+{b} = 10+□. Move counters from the second group. Write MOVE=number;REST=number;TOTAL=number.",
+            MakeTen=>mode==2?
+                $"Original 2021 Nine Plus Game: put out NINE counters then pick a {b} card and add that many. Show TWO matching equations: 9+{b}=... and 10+{b-1}=... . Write EQUATION=expression=value;TEN_EQUATION=expression=value;TOTAL=number. Teacher leads physical counters/card activity.":
+                $"Complete a ten-frame: {a}+{b} = 10+□. Move counters from the second group. Write MOVE=number;REST=number;TOTAL=number.",
             Pattern=>mode switch
             {
                 0=>$"Are {a}+{b} and 10+{a+b-10} equal? Write EQUAL=YES/NO;TOTAL=number.",
@@ -95,7 +98,9 @@ public static class UsCcssG1FullGradeStartQuestions
             Center=>mode<=1?$"ANSWER={(mode==0?a+b:a-b)}":$"CARDS={b},{c}",
             ThreeStory=>$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}",
             Expression=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={a+b+c}":$"MATCH=10+{c};TOTAL={a+b+c}",
-            MakeTen=>$"MOVE={10-a};REST={a+b-10};TOTAL={a+b}",
+            MakeTen=>mode==2?
+                $"EQUATION=9+{b}={9+b};TEN_EQUATION=10+{b-1}={9+b};TOTAL={9+b}":
+                $"MOVE={10-a};REST={a+b-10};TOTAL={a+b}",
             Pattern=>mode<=1?$"EQUAL={(mode==0?"YES":"NO")};TOTAL={a+b}":
                 mode==2?$"MATCH=10+{a+b-10};TOTAL={a+b}":
                 $"PAIR={a+1}+{b-1};TOTAL={a+b}",
