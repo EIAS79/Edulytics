@@ -95,14 +95,14 @@
       "teacherPreparationSha256": "88d1748438c4fadc21bf4538457f105b7606047d4a6103073450dafd8810d8dd",
       "studentSourceHtmlSha256": "3c413000e5aa316afe9d4bb956ae1676bba1264431fa606a28749d369de56eaf",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "ORIGINAL_V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": false,
       "authoredOriginalWorkRubricRequired": false,
@@ -124,16 +124,65 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_A_D_INTERNAL_ACADEMIC_ACCEPTANCE",
+          "ordinal": 52,
+          "provenLessonCode": "PED:US-CCSS-MATH:G1:U03:L15",
+          "reviewedOriginalLocalSource": true,
+          "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-STUDENT-TASK-AUDIT-51-52-53-65-146.json",
+          "sourceTeacherPreparationSha256": "88d1748438c4fadc21bf4538457f105b7606047d4a6103073450dafd8810d8dd",
+          "studentOriginalSha256": "3c413000e5aa316afe9d4bb956ae1676bba1264431fa606a28749d369de56eaf",
+          "renderedAuthHtmlSha256": "752f3d4a8093080bcdc70761666b394ff4e6f682736a1239ec629f5c3f6fa204",
+          "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "checkoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
+          "authenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+          "runtimeArtifactId": 12211766120,
+          "independentTests": [
+            {
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+              "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+              "reference": {
+                "kind": "GIT_FILE",
+                "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+                "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+                "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              }
+            },
+            {
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+              "sha256": "f17f9f11854c0290bd6ff81a88f35561a43f761ca8cb6403e78cb31ecb934777",
+              "reference": {
+                "kind": "GIT_FILE",
+                "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+                "sha256": "f17f9f11854c0290bd6ff81a88f35561a43f761ca8cb6403e78cb31ecb934777",
+                "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              }
+            },
+            {
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+              "reference": {
+                "kind": "GIT_FILE",
+                "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+                "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+                "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              }
+            }
+          ],
+          "classTasksLimit": "Actual student images and original bird artwork remain source references only; Edulytics uses first-party content and equations. Original classroom drawing and authored-story submission require teacher review.",
+          "licensingLimit": "No publisher images or student PDF figures included in Edulytics candidate; original publisher artwork rights not asserted",
+          "internalAcceptance": true,
+          "release": "NO_GO"
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "teacherFacilitatedActivities": "NOT_DIGITALLY_CLAIMED",
+        "publisherArtwork": "SOURCE_ONLY_NOT_COPIED",
+        "ownerProductionUat": "PENDING",
+        "gradeRelease": "NO_GO_UNTIL_ALL_96"
+      }
     },
     {
       "ordinal": 53,
@@ -144,14 +193,14 @@
       "teacherPreparationSha256": "7c8ab7b11b895c9b5433e5a5a3da95ac11788de4119a10c927f8e7207ad13503",
       "studentSourceHtmlSha256": "6697b65d9715cf564a5a964364d390887a3f8bacdf7c1d7c475ff8e235006da2",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "ORIGINAL_V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": false,
       "authoredOriginalWorkRubricRequired": false,
@@ -173,16 +222,65 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_A_D_INTERNAL_ACADEMIC_ACCEPTANCE",
+          "ordinal": 53,
+          "provenLessonCode": "PED:US-CCSS-MATH:G1:U03:L16",
+          "reviewedOriginalLocalSource": true,
+          "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+          "sourceTeacherPreparationSha256": "7c8ab7b11b895c9b5433e5a5a3da95ac11788de4119a10c927f8e7207ad13503",
+          "studentOriginalSha256": "6697b65d9715cf564a5a964364d390887a3f8bacdf7c1d7c475ff8e235006da2",
+          "renderedAuthHtmlSha256": "d6753f9f6964b49ad806e7937818d7ad1e55c8f8b1a3035ca80d291d153d0ff2",
+          "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "checkoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
+          "authenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+          "runtimeArtifactId": 12211766120,
+          "independentTests": [
+            {
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+              "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+              "reference": {
+                "kind": "GIT_FILE",
+                "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+                "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+                "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              }
+            },
+            {
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+              "sha256": "f17f9f11854c0290bd6ff81a88f35561a43f761ca8cb6403e78cb31ecb934777",
+              "reference": {
+                "kind": "GIT_FILE",
+                "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+                "sha256": "f17f9f11854c0290bd6ff81a88f35561a43f761ca8cb6403e78cb31ecb934777",
+                "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              }
+            },
+            {
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+              "reference": {
+                "kind": "GIT_FILE",
+                "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+                "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+                "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              }
+            }
+          ],
+          "classTasksLimit": "Publisher paper card images and classroom pairing/galleries are not reproduced or claimed as automated participation; source-directed numeric/missing-expression digital work is first-party.",
+          "licensingLimit": "No publisher images or student PDF figures included in Edulytics candidate; original publisher artwork rights not asserted",
+          "internalAcceptance": true,
+          "release": "NO_GO"
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "teacherFacilitatedActivities": "NOT_DIGITALLY_CLAIMED",
+        "publisherArtwork": "SOURCE_ONLY_NOT_COPIED",
+        "ownerProductionUat": "PENDING",
+        "gradeRelease": "NO_GO_UNTIL_ALL_96"
+      }
     },
     {
       "ordinal": 54,
