@@ -63,7 +63,7 @@ test('historic source/HTTPS CI links are useful technical evidence, never 96 aut
 
 test('read-only three-file cache source checks cannot be silently forged into lesson approval',()=>{
   const source=read(dir+'G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json');
-  for(const ordinal of [66,70]){
+  for(const ordinal of [66,67,68,69,70]){
     const item=source.rows.find(z=>z.ordinal===ordinal);
     const stamp=item.readOnlyOriginal2021SourceIntegrityReverified;
     assert.equal(stamp.status,'THREE_LOCAL_SHA256_MATCH_EXISTING_REGISTRY');
