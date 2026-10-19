@@ -228,6 +228,26 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
     }
 
     [Fact]
+    public void OriginalU07L07RequiresSameOutlineWithDifferentBlocksAndPictureBookShapes()
+    {
+        const string code=CommonCoreG1SourceGroundedInstructionalCorrections.ComposeFlatPatternShapesLessonCode;
+        var (doc,lesson,en)=Effective(code);
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.ComposeFlatPatternShapesVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
+        Assert.Contains("SAME resulting figure again with DIFFERENT pattern blocks",en.KeyConceptsAndRules);
+        Assert.Contains("MOST possible pieces",en.KeyConceptsAndRules);
+        Assert.Contains("Picture Books Stage 3",en.KeyConceptsAndRules);
+        Assert.Contains("SIX small equal equilateral triangles",en.WorkedExamples);
+        Assert.Contains("TWO matching pattern-block trapezoids",en.WorkedExamples);
+        Assert.Contains("EXACT SAME outer shape",en.StepByStepSolutions);
+        Assert.Contains("DRAW or NAME the observed shapes",en.WorkedExamples);
+        Assert.Contains("a completely different shape is not a valid response",en.CommonMistakes);
+        var fingerprint=CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson);
+        CanonicalLessonContentMaterializer.Materialize(doc);
+        Assert.Equal(fingerprint,CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson));
+    }
+
+    [Fact]
     public void NextFiveGrade1SourceScopeAndPreviousBatchContentVersionsRemainIsolated()
     {
         var (doc, _, _) = Effective(
