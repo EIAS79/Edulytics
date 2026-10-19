@@ -41,6 +41,11 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("no gaps or overlaps",text("PED:US-CCSS-MATH:G1:U06:L06"));
         Assert.Contains("two equal rectangles has halves",text("PED:US-CCSS-MATH:G1:U07:L09"));
         Assert.Contains("9+8=9+1+7=17",text("PED:US-CCSS-MATH:G1:U08:L03"));
-        Assert.Contains("10 less than 75",text("PED:US-CCSS-MATH:G1:U08:L09"));
+        var riddles=text("PED:US-CCSS-MATH:G1:U08:L09");
+        // Original Student Facing starts with three possible numbers before
+        // a fourth clue selects one. Validate the now-correct objective.
+        Assert.Contains("34, 44, 54",riddles);
+        Assert.Contains("final clue",riddles,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("unique answer is 44",riddles);
     }
 }

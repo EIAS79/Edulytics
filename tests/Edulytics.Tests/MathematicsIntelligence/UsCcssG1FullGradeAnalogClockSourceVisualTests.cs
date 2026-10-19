@@ -67,7 +67,13 @@ public sealed class UsCcssG1FullGradeAnalogClockSourceVisualTests
         var json=JsonSerializer.Serialize(new {parameters=new {a=7,b=2,c=0,mode=0}});
         Assert.Null(PracticeMathVisualRenderer.RenderSvg(
             "usccss.g1.u07.l17.center_geometry_and_time",json));
-        Assert.Null(PracticeMathVisualRenderer.RenderSvg(
+        // The source-bound U08 count-on path now has a legitimate non-clock
+        // drawing; assert it is truly a count-on diagram, not a clock.
+        var countOn=Assert.IsType<string>(PracticeMathVisualRenderer.RenderSvg(
             "usccss.g1.u08.l07.count_on_to120",json));
+        Assert.Contains("<svg ",countOn);
+        Assert.Contains("count",countOn,StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("clock-hour",countOn);
+        Assert.DoesNotContain("clock-minute",countOn);
     }
 }
