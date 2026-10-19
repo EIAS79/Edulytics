@@ -42,6 +42,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l19.regroup_one_ten" or
             "usccss.g1.u04.l20.equivalent_tens_ones" =>
                 a>=20&&a<=99&&b==0&&c==0&&
+                (family!=Families[3]||((mode!=0||a==65)&&(mode!=1||a==37)))&&
                 (family!=Families[4]||mode!=2||a==94),
             "usccss.g1.u04.l21.compare_nonstandard_forms" =>
                 a>=20&&a<=99&&b>=20&&b<=99&&c==0&&
@@ -73,6 +74,8 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(family==Families[3]||family==Families[4])
         {
             b=0;c=0;
+            if(family==Families[3]&&mode==0)a=65; // No breaking or building ten-towers.
+            if(family==Families[3]&&mode==1)a=37; // Multiple valid tens/ones ways.
             if(family==Families[4]&&mode==2)
                 a=94; // Original 2021 Student Facing: ways to show 94.
         }
@@ -109,7 +112,11 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 mode%2==0?$"Center numeric task: order {a}, {b}, {c} from least to greatest. Write ORDER=number,number,number.":
                     $"Center numeric task: compare {a} and {b}. Write SYMBOL=sign.",
             "usccss.g1.u04.l19.regroup_one_ten"=>
-                $"Make {a} in another way: exchange ONE full ten for ten single ones. Write TENS=number;ONES=number.",
+                mode==0?
+                    "ORIGINAL 2021 G1 U04 L19 Activity 1: create 65 using a physical bag with FIVE existing ten-towers and FIFTEEN loose ones. You may not break existing towers or construct another tower. Write TENS=number;ONES=number to represent the permitted collection. Teacher reviews the actual drawing and physical arrangement.":
+                mode==1?
+                    "ORIGINAL 2021 G1 U04 L19 Activity 2: represent 37 in at least TWO different mathematically equivalent tens-and-ones ways. Write TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number. Teacher reviews the pupil's drawings or words.":
+                    $"Show {a} in another way: exchange ONE full ten for ten single ones. Write TENS=number;ONES=number.",
             "usccss.g1.u04.l20.equivalent_tens_ones"=>
                 $"Original How Many Ways?: Start with {a/10} ten-rods and {a%10} ones, making {a}. Exchange {Math.Min(a/10,mode+1)} full ten-rods for loose ones; find a SECOND valid regrouping, and calculate how many tens-and-ones regroupings exist when all zero-to-{a/10} complete ten-rods are allowed. Write NUMBER=number;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number;WAYS=number. Teacher reviews original drawings and partner explanations.",
             "usccss.g1.u04.l21.compare_nonstandard_forms"=>
@@ -138,7 +145,11 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                     "ORDER="+string.Join(",",mode%2==0?new[]{a,b,c}.Order():new[]{a,b,c}.OrderDescending()),
             "usccss.g1.u04.l18.center_count_compare_order"=>
                 mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):$"SYMBOL={Sign(a,b)}",
-            "usccss.g1.u04.l19.regroup_one_ten"=>$"TENS={a/10-1};ONES={a%10+10}",
+            "usccss.g1.u04.l19.regroup_one_ten"=>mode==0?
+                "TENS=5;ONES=15":
+                mode==1?
+                "TENS=3;ONES=7;ALT_TENS=2;ALT_ONES=17":
+                $"TENS={a/10-1};ONES={a%10+10}",
             "usccss.g1.u04.l20.equivalent_tens_ones"=>
                 $"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}",
             "usccss.g1.u04.l21.compare_nonstandard_forms"=>$"SYMBOL={Sign(a,b)}",
@@ -179,8 +190,32 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         return 10*altT+altO==n;
     }
 
+    private static bool VerifyStudent37Ways(string? response)
+    {
+        var parts=Normalize(response).Split(';');
+        if(parts.Length!=4)return false;
+        var map=new Dictionary<string,string>(StringComparer.Ordinal);
+        foreach(var part in parts)
+        {
+            int pos=part.IndexOf('=');
+            if(pos<=0||pos==part.Length-1||
+               !map.TryAdd(part[..pos],part[(pos+1)..]))return false;
+        }
+        if(map.Count!=4||!map.TryGetValue("TENS",out var tens)||
+           !map.TryGetValue("ONES",out var ones)||
+           !map.TryGetValue("ALT_TENS",out var altTens)||
+           !map.TryGetValue("ALT_ONES",out var altOnes)||
+           !int.TryParse(tens,out var t)||t!=3||
+           !int.TryParse(ones,out var o)||o!=7||
+           !int.TryParse(altTens,out var altT)||altT<0||altT>=3||
+           !int.TryParse(altOnes,out var altO)||altO<10)return false;
+        return 10*altT+altO==37;
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? value)=>
         Valid(family,p)&&!string.IsNullOrWhiteSpace(value)&&
-        (family==Families[4]?VerifyStudentChosenTensTrade(p,value):
+        (family==Families[3]&&p["mode"]==1?
+            VerifyStudent37Ways(value):
+            family==Families[4]?VerifyStudentChosenTensTrade(p,value):
             Normalize(Solve(family!,p))==Normalize(value));
 }

@@ -36,7 +36,7 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
     public void ANonstandardRegroupingKeepsTheSameTwoDigitQuantity()
     {
         const string f="usccss.g1.u04.l19.regroup_one_ten";
-        var p=new Dictionary<string,int>{{"a",43},{"b",0},{"c",0},{"mode",0}};
+        var p=new Dictionary<string,int>{{"a",43},{"b",0},{"c",0},{"mode",2}};
         Assert.Equal("TENS=3;ONES=13",UsCcssG1FullGradeUnit4FinalQuestions.Solve(f,p));
         Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Verify(f,p,"TENS=3;ONES=13"));
         Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Verify(f,p,"TENS=4;ONES=13"));
@@ -59,6 +59,34 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
             $"NUMBER={total}"));
         Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Verify(f,p,
             expected.Replace("WAYS="+(total/10+1),"WAYS="+(total/10))));
+    }
+
+    [Fact]
+    public void Original2021SixtyFiveTowersCannotBeBrokenAndThirtySevenHasDifferentValidForms()
+    {
+        const string family="usccss.g1.u04.l19.regroup_one_ten";
+        var source=new Dictionary<string,int>{{"a",65},{"b",0},{"c",0},{"mode",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source,
+            "TENS=5;ONES=15"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+            "TENS=6;ONES=5"));
+        source["mode"]=1;source["a"]=37;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source,
+            "TENS=3;ONES=7;ALT_TENS=2;ALT_ONES=17"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source,
+            "ALT_ONES=27;TENS=3;ALT_TENS=1;ONES=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+            "TENS=3;ONES=7;ALT_TENS=3;ALT_ONES=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+            "TENS=3;ONES=7;ALT_TENS=2;ALT_ONES=18"));
+        source["a"]=65;
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,source));
+        var seen=Enumerable.Range(0,360).Select(n=>
+            UsCcssG1FullGradeUnit4FinalQuestions.Build(family,new Random(n*83+27))).ToArray();
+        Assert.Contains(seen,q=>q.Prompt.Contains("FIVE existing ten-towers",StringComparison.Ordinal));
+        Assert.Contains(seen,q=>q.Prompt.Contains("represent 37",StringComparison.Ordinal));
+        Assert.All(seen,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family,q.Parameters,UsCcssG1FullGradeUnit4FinalQuestions.Solve(family,q.Parameters))));
     }
 
     [Fact]
