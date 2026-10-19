@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 Stage A–D original 2021 source-task parity repair checkpoint; no signoff claim",
+  "grade": "G1",
+  "ordinal": 132,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L13",
+  "title": "Tell Time in Hours",
+  "sourceBasis": {
+    "sourceEdition": "IM K-5 2021",
+    "fullTeacherLessonRelativePath": "unit-7/lesson-13/lesson.html",
+    "observedOriginalSourceSha256": "1e3e780104ff93572151c32c95e2663e5c57fba42e8875ac65f12d5debdee639",
+    "sourceInventoryHashMatched": true,
+    "sourceReviewMethod": "Read-only full teacher HTML Student Facing text; no original figures redistributed"
+  },
+  "stageA": {
+    "sourceTasksDirectlyInspected": true,
+    "originalActivities": [
+      "Card Sort Clocks: analog cards with only hour hand intentionally shown",
+      "Connect analog hour-hand cards to matching digital whole-hour times",
+      "Our School Day: fill NINE individual clocks for Arrival, Reading, Snack, Math, Lunch, Recess, Art, Dismissal and Homework, source times read from original illustrated schedule",
+      "Lesson synthesis adds the minute hand at 12 for exact hours"
+    ],
+    "realGap": "Existing authored teaching stated both minute and hour hands and clock-card matching but omitted original intro-only hour hand cards and nine school-day clocks; original start-time diagram remains visually uninspected."
+  },
+  "stageB": {
+    "existingSourceSpecificCorrectionReused": true,
+    "teachingPath": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "repairCommit": "e130be1eca54880a7ce866289e965332fa95530d",
+    "sourceArtworkCopies": 0,
+    "sourceVisualTimes": "NOT_INVENTED"
+  },
+  "stageC": {
+    "existingNumericPracticeReused": true,
+    "digitalCoverage": "Reading and matching whole-hour times",
+    "remainingStudentTaskBoundary": "Original physical sorting of cards and nine student-drawn clock faces require real review; do not treat one digital clock answer as covering all"
+  },
+  "stageD": {
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "testCommit": "974288c336f63ebac84741150ce72d10423d66e7",
+    "currentHeadDotNet": "NOT_RUN",
+    "authenticatedCurrentHeadRendering": "PENDING",
+    "actualGradingPersistenceCurrentHead": "PENDING",
+    "sourceVisualRightsAndA11y": "PENDING",
+    "internalOriginalV1AcademicSignoff": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
