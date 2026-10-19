@@ -124,6 +124,13 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("9-6=3",rides);
         Assert.Contains("each be a coherent and mathematically answerable question",rides);
         Assert.Contains("number 103",text("PED:US-CCSS-MATH:G1:U08:L07"));
+        var classBook=text("PED:US-CCSS-MATH:G1:U08:L08");
+        Assert.Contains("BETWEEN 20 AND 100",classBook);
+        Assert.Contains("CLASS NUMBER BOOK",classBook);
+        Assert.Contains("AT LEAST THREE",classBook);
+        Assert.Contains("80+4=70+14=60+24",classBook);
+        Assert.Contains("GALLERY WALK",classBook);
+        Assert.Contains("Compare, How Close? and Write Numbers",classBook);
         Assert.Contains("70=24+46 is TRUE",text("PED:US-CCSS-MATH:G1:U08:L10"));
         var riddles=text("PED:US-CCSS-MATH:G1:U08:L09");
         // Original Student Facing starts with three possible numbers before
