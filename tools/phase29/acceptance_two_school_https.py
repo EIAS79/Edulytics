@@ -1491,6 +1491,10 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                         result)
                     assert result.get("wellFormedWrongFamily")==candidate["candidateFamily"], (
                         code,"well-formed wrong answer used different family",result)
+                    if ordinal==102:
+                        assert "food drive" in rendered and "35" in rendered and (
+                            "65" in rendered or "sixty-five" in rendered), (
+                            code,"source Food Drive grouping/packing objective missing")
                     if source_mode=="DIGITAL_AND_SOURCE_AUTHORED_TASK":
                         if ordinal==146:
                             assert "riddle" in rendered and "write" in rendered, (

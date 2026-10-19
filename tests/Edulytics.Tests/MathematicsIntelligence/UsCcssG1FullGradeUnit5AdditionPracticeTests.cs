@@ -48,6 +48,35 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
         Assert.Equal("MOVE=3;REST=5;TOTAL=55",UsCcssG1FullGradeUnit5AdditionQuestions.Solve(yesFamily,yes));
         Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Verify(yesFamily,yes,"MOVE=3;REST=8;TOTAL=55"));
     }
+    [Theory]
+    [InlineData(18,24,0,"PAIR=42;ALL=85")]
+    [InlineData(18,24,1,"FIRST_PAIR=42;SECOND_PAIR=43;ALL=85")]
+    [InlineData(18,23,2,"TOTAL=41;PACK=YES")]
+    [InlineData(51,40,2,"TOTAL=91;PACK=NO")]
+    [InlineData(18,23,3,"TOTAL=54;PACK=YES")]
+    [InlineData(51,23,3,"TOTAL=87;PACK=NO")]
+    public void RealOriginal2021FoodDriveStudentAndGradeTablesAreMathematicallyGradeable(
+        int first,int second,int mode,string expected)
+    {
+        const string f="usccss.g1.u05.l14.optional_food_drive_numeric";
+        var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(f,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit5AdditionQuestions.Solve(f,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+            expected+";FABRICATED=YES"));
+    }
+    [Fact]
+    public void FoodDriveRejectsDuplicatedGradeRowsAndOutOfSourceValues()
+    {
+        const string f="usccss.g1.u05.l14.optional_food_drive_numeric";
+        foreach(var (a,b,mode) in new (int,int,int)[]
+            {(18,18,0),(18,51,0),(51,51,2),(24,13,2),(13,40,3),
+             (51,40,3),(99,23,2)})
+            Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(
+                f,new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}}));
+    }
+
     [Fact]
     public void SourceSpecificEngineProvidesAtLeastTenDistinctPracticeItemsPerLesson()
     {

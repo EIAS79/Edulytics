@@ -33,9 +33,17 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
         }
     }
 
-    private static string OriginalUnit5Oracle(int index,int a,int b)
+    private static string OriginalUnit5Oracle(int index,int a,int b,int mode)
     {
         int total=a+b;
+        if(index==13)
+            return mode switch
+            {
+                0=>$"PAIR={total};ALL=85",
+                1=>$"FIRST_PAIR={total};SECOND_PAIR={85-total};ALL=85",
+                2=>$"TOTAL={total};PACK={(total>=35&&total<=65?"YES":"NO")}",
+                _=>$"TOTAL={total+13};PACK={(total+13>=35&&total+13<=65?"YES":"NO")}"
+            };
         int carry=(a%10+b%10)/10;
         if(index is 4 or 5)
             return $"MOVE={10-a%10};REST={b-(10-a%10)};TOTAL={total}";
@@ -76,7 +84,7 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
                 list[i],new Random(5233+i*137+seed*89));
             var p=problem.Parameters;
             Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(list[i],p));
-            var result=OriginalUnit5Oracle(i,p["a"],p["b"]);
+            var result=OriginalUnit5Oracle(i,p["a"],p["b"],p["mode"]);
             Assert.Equal(result,UsCcssG1FullGradeUnit5AdditionQuestions.Solve(list[i],p));
             Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Verify(list[i],p,result));
             Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Verify(

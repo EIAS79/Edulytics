@@ -30,6 +30,56 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         new("usccss.g1.u05.l14.optional_food_drive_numeric",Kind.ComposingTwoDigits,"L14")
     ];
     public static readonly IReadOnlyList<string> Families=Specs.Select(x=>x.Code).ToArray();
+    private static readonly int[] FoodPupils=[18,24,13,30];
+    private static readonly int[] FoodGradeDayOne=[18,51,23,13,39,40,8,29,30];
+    private static string Pupil(int n)=>n switch
+    {
+        18=>"Lin",24=>"Priya",13=>"Han",30=>"Tyler",
+        _=>throw new InvalidOperationException("Unverified food-drive pupil")
+    };
+    private static string SchoolGrade(int n)=>n switch
+    {
+        18=>"Kindergarten",51=>"1st grade",23=>"2nd grade",
+        13=>"3rd grade",39=>"4th grade",40=>"5th grade",
+        8=>"6th grade",29=>"7th grade",30=>"8th grade",
+        _=>throw new InvalidOperationException("Unverified source school-grade")
+    };
+    private static bool FoodDriveValid(int a,int b,int mode)=>
+        a!=b&&(mode<=1?
+            FoodPupils.Contains(a)&&FoodPupils.Contains(b):
+            FoodGradeDayOne.Contains(a)&&FoodGradeDayOne.Contains(b)
+            &&(mode!=3||a!=13&&b!=13&&a+b+13<=100));
+    private static string FoodDriveSolve(int a,int b,int mode)=>mode switch
+    {
+        0=>$"PAIR={a+b};ALL=85",
+        1=>$"FIRST_PAIR={a+b};SECOND_PAIR={85-a-b};ALL=85",
+        2=>$"TOTAL={a+b};PACK={(a+b>=35&&a+b<=65?"YES":"NO")}",
+        3=>$"TOTAL={a+b+13};PACK={(a+b+13>=35&&a+b+13<=65?"YES":"NO")}",
+        _=>throw new InvalidOperationException("Unreviewed Food Drive variant")
+    };
+    private static Problem FoodDriveBuild(string family,Random random,int mode)
+    {
+        for(int attempt=0;attempt<400;attempt++)
+        {
+            var available=mode<=1?FoodPupils:FoodGradeDayOne;
+            int a=available[random.Next(available.Length)];
+            int b=available[random.Next(available.Length)];
+            if(!FoodDriveValid(a,b,mode))continue;
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}};
+            string question=mode switch
+            {
+                0=>$"Original Food Drive student table: Lin 18, Priya 24, Han 13, Tyler 30 cans. How many cans did {Pupil(a)} and {Pupil(b)} collect together? How many did all FOUR collect? Write PAIR=number;ALL=number.",
+                1=>$"Original Food Drive student table: Lin 18, Priya 24, Han 13, Tyler 30 cans. Partner A/B: Group {Pupil(a)} and {Pupil(b)} into one pair and the OTHER two students into a second pair. How many does each pair have, and how many cans did all four collect? Write FIRST_PAIR=number;SECOND_PAIR=number;ALL=number.",
+                2=>$"Original Food Drive Day 1 grade table: {SchoolGrade(a)} collected {a} cans and {SchoolGrade(b)} collected {b} cans. A box must hold between 35 and 65 cans INCLUSIVE from exactly TWO grades. Calculate the total and whether these two grades qualify. Write TOTAL=number;PACK=YES/NO.",
+                _=>$"Original Food Drive optional challenge: {SchoolGrade(a)} collected {a}, {SchoolGrade(b)} collected {b}, and 3rd grade collected 13 cans. Could these THREE distinct grades share ONE box requiring 35 to 65 cans INCLUSIVE? Write TOTAL=number;PACK=YES/NO."
+            };
+            return new(family,question,
+                "These are copied numerical quantities only from the source 2021 student tables. Demonstrating math grading does not claim the children actually collected cans, packed boxes or discussed alternatives.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        throw new InvalidOperationException("Cannot sample source-true Food Drive group combination");
+    }
+
     public sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     private static Family? Get(string? f)=>Specs.SingleOrDefault(x=>x.Code==f);
@@ -41,6 +91,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||mode>3)
             return false;
+        if(spec.LessonCode=="L14")return FoodDriveValid(a,b,mode);
         int ones=a%10+b%10,sum=a+b;
         return spec.Kind switch
         {
@@ -59,6 +110,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
         int mode=random.Next(4);
+        if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
         // Generate genuine operand choices satisfying this source-goal family.
         for(int tries=0;tries<1000;tries++)
         {
@@ -106,6 +158,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     {
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G1 U05 source-scoped operands");
         var spec=Get(family)!;int a=p["a"],b=p["b"],sum=a+b;
+        if(spec.LessonCode=="L14")return FoodDriveSolve(a,b,p["mode"]);
         return spec.Kind switch
         {
             Kind.MakeNewTen=>$"MOVE={10-a%10};REST={b-(10-a%10)};TOTAL={sum}",
