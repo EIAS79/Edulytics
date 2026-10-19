@@ -33,12 +33,26 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         {
             var lesson=doc.Lessons.Single(x=>x.LessonCode==code);
             Assert.True(CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(doc,lesson));
-            Assert.Equal(CommonCoreG1FullGradeUnit6To8ContentCorrections.Version,
+            Assert.Equal(code.Contains(":U06:",StringComparison.Ordinal)
+                    ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6OriginalSourceVersion
+                    :CommonCoreG1FullGradeUnit6To8ContentCorrections.Version,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
             var tr=lesson.Translations.Single(t=>t.CultureCode=="en");
             return tr.Explanation+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
         }
         Assert.Contains("no gaps or overlaps",text("PED:US-CCSS-MATH:G1:U06:L06"));
+        Assert.Contains("SEVEN digit cards",text("PED:US-CCSS-MATH:G1:U06:L04"));
+        Assert.Contains("TWO two-digit numbers",text("PED:US-CCSS-MATH:G1:U06:L04"));
+        Assert.Contains("SIX different tape strips A–F",text("PED:US-CCSS-MATH:G1:U06:L06"));
+        Assert.Contains("Jeison's foot",text("PED:US-CCSS-MATH:G1:U06:L07"));
+        Assert.Contains("MORE THAN 100 same-size small cubes",text("PED:US-CCSS-MATH:G1:U06:L08"));
+        Assert.Contains("BEAVER, DOG, GIANT ANTEATER",text("PED:US-CCSS-MATH:G1:U06:L09"));
+        Assert.Contains("24+30=44 FALSE",text("PED:US-CCSS-MATH:G1:U06:L10"));
+        Assert.Contains("Priya's length is 10",text("PED:US-CCSS-MATH:G1:U06:L12"));
+        Assert.Contains("UNKNOWN starting count is 20",text("PED:US-CCSS-MATH:G1:U06:L13"));
+        Assert.Contains("TWO valid equations per story",text("PED:US-CCSS-MATH:G1:U06:L14"));
+        Assert.Contains("9 were TAKEN away",text("PED:US-CCSS-MATH:G1:U06:L15"));
+        Assert.Contains("Counting Collections Stage 3",text("PED:US-CCSS-MATH:G1:U06:L16"));
         Assert.Contains("two equal rectangles has halves",text("PED:US-CCSS-MATH:G1:U07:L09"));
         Assert.Contains("9+8=9+1+7=17",text("PED:US-CCSS-MATH:G1:U08:L03"));
         var riddles=text("PED:US-CCSS-MATH:G1:U08:L09");
