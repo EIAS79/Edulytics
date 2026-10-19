@@ -68,6 +68,51 @@ public static partial class PracticeMathVisualRenderer
         return SvgEnd(svg);
     }
 
+    // Source-inspired, first-party Unit4 L04 bag-of-cubes drawings. They
+    // illustrate the quantities, not student-created physical tower work.
+    private static string GradeOneOriginalBagsOfTenVisual(JsonElement p)
+    {
+        int a=GetInt(p,"a"),b=GetInt(p,"b"),c=GetInt(p,"c"),mode=GetInt(p,"mode");
+        if(c!=0||mode<0||mode>3||a<2||a>7||b<1||
+           (mode%2==0?b>10-a:b>a)||
+           (mode==0&&(a!=3||b!=2))||
+           (mode==1&&(a!=7||b!=4)))
+            throw new JsonException("Invalid original Grade 1 U04 L04 bag quantities");
+
+        var svg=SvgStart("First-party Grade 1 tens representation. Each rod consists of ten equal cubes; original classroom manipulatives and drawings are teacher assessed.");
+        const int step=49,rodWidth=42;
+        if(mode%2==0)
+        {
+            Text(svg,24,33,mode==0?"Jada: Bag A":"First group of tens","label");
+            Text(svg,24,143,mode==0?"Jada: Bag B":"Second group of tens","label");
+            for(int group=0;group<2;group++)
+            {
+                int count=group==0?a:b,y=group==0?57:166;
+                for(int k=0;k<count;k++)
+                {
+                    int x=26+k*step;
+                    svg.Append($"<rect class='g1-source-bag-ten-{group}' x='{x}' y='{y}' width='{rodWidth}' height='30' fill='rgba(33,128,184,.22)' stroke='currentColor' stroke-width='1.5'/>");
+                    for(int n=1;n<10;n++)
+                        svg.Append($"<line x1='{F(x+rodWidth*n/10d)}' y1='{y}' x2='{F(x+rodWidth*n/10d)}' y2='{y+30}' stroke='currentColor' stroke-width='.7'/>");
+                }
+            }
+        }
+        else
+        {
+            Text(svg,24,33,mode==1?"Tyler: Bag C before taking away":"Tens before subtraction","label");
+            Text(svg,24,166,"Outlined rods are taken away.","hint");
+            for(int k=0;k<a;k++)
+            {
+                int x=26+k*step,y=66;
+                string fill=k<b?"rgba(204,134,41,.20)":"rgba(33,128,184,.22)";
+                svg.Append($"<rect class='g1-source-bag-ten-{(k<b?"removed":"remaining")}' x='{x}' y='{y}' width='{rodWidth}' height='30' fill='{fill}' stroke='currentColor' stroke-width='1.5'/>");
+                for(int n=1;n<10;n++)
+                    svg.Append($"<line x1='{F(x+rodWidth*n/10d)}' y1='{y}' x2='{F(x+rodWidth*n/10d)}' y2='{y+30}' stroke='currentColor' stroke-width='.7'/>");
+            }
+        }
+        return SvgEnd(svg);
+    }
+
     private static string? GradeOneNewCountOnPath(JsonElement p)
     {
         int start=GetInt(p,"a"),steps=GetInt(p,"b");
