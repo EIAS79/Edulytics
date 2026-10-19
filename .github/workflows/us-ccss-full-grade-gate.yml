@@ -93,6 +93,7 @@ jobs:
         run: |
           node --test tests/us-ccss-full-grade-gate.test.cjs
           node --test tests/us-ccss-g1-full-grade-runtime-family-map.test.cjs
+          node --test tests/us-ccss-g1-targeted-original-source-review.test.cjs
           node --test tests/us-ccss-full-grade-worklist.test.cjs
           node --test tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs
           node --test tests/us-ccss-g1-full-grade-authorship-review.test.cjs
