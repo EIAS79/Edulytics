@@ -8,9 +8,13 @@ const originals=read(root+'full-grade-original-student-facing-task-inventory.jso
 const digital=read(root+'full-grade-practice-candidate-map.json').records;
 test('all manually triaged original Student Facing task-risk rows use exact original SHA and new grade scope',()=>{
  assert.equal(ledger.planId,'EDULYTICS-GRADE-FIRST-FULL-GRADE-V1');
- assert.ok(ledger.rows.length>=23);
+ assert.equal(ledger.rows.length,96,'All NEW Grade1 lessons require individual initial source-task triage');
  assert.equal(ledger.countActuallyTriaged,ledger.rows.length);
  assert.equal(ledger.total96AcademicAcceptedOnThisEvidence,0);
+ assert.equal(ledger.rows.filter(x=>x.evidenceStage==='2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL').length,69,
+   'Source excerpt-only triage is never confused with full original-activity review');
+ assert.equal(ledger.rows.filter(x=>x.internalAcademicApproval==='NOT_CLAIMED').length,96);
+ assert.deepEqual(ledger.rows.map(x=>x.ordinal),Array.from({length:96},(_,i)=>i+51));
  const seen=new Set();
  for(const r of ledger.rows){
   assert.ok(Number.isInteger(r.ordinal)&&r.ordinal>=51&&r.ordinal<=146);

@@ -6,11 +6,11 @@
     "historicalOrdinalsUnchanged": "1-50",
     "remainingRequiredLessonCount": 96
   },
-  "purpose": "Record concrete original student-facing activity-to-digital/teacher-task parity discrepancies. Reviewed summaries are an aid to manual A-D acceptance, not academic approval.",
+  "purpose": "First-pass source-task gap REGISTER for 96 NEW lessons, not approval or replacement for the V1 full original activity, math Practice, HTTPS, test and licensed figure audit.",
   "provenance": "Read-only original 2021 local teacher/student HTML with matching hashes from full-grade-original-student-facing-task-inventory.json, paired with repository Practice source.",
-  "countActuallyTriaged": 27,
+  "countActuallyTriaged": 96,
   "total96AcademicAcceptedOnThisEvidence": 0,
-  "limitations": "Teacher/full Student Facing HTML index is abbreviated; drawings, source PDF artwork, digital UI runtime for exact head, licensed graphics and actual physical pupil work have not been fully audited. Some newly corrected paths are still undergoing GitHub CI. No original 1-50 lesson changes.",
+  "limitations": "ALL 96 lesson-level 2021 source Student Facing excerpts and teacher activity headings have an initial task/gap register with exact source HTML SHA; 27 rows earlier received detailed reviewed summaries, 69 additional rows are ONLY excerpt-level triage. Exact full Student Facing page and source artwork, learner-facing interactive UI, licensing and human internal academic A–D acceptance NOT completed. No prior 1-50 content touched, no real pupil classroom participation claimed.",
   "rows": [
     {
       "ordinal": 51,
@@ -35,6 +35,31 @@
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 52,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L15",
+      "original2021FullTeacherLessonHtmlSha256": "3ebda6280929e3f5f4248ffbbdba744a4b027f0738e46ce788dbfe00674edb98",
+      "original2021TeacherPreparationSha256": "88d1748438c4fadc21bf4538457f105b7606047d4a6103073450dafd8810d8dd",
+      "original2021StudentFacingHtmlSha256": "3c413000e5aa316afe9d4bb956ae1676bba1264431fa606a28749d369de56eaf",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Louis Agassiz Fuertes's Birds (20 minutes)",
+        "Activity 2: Fuertes's Bird Cards (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual] <path d=\"",
+        "Student Facing 7 blue birds fly in the sky. 8 brown birds sit in a tree. 3 baby birds sit in a nest. How many birds are there altogether? Show your thinking using objects",
+        "Student Facing Noah collected 3 bird picture cards. Clare collected 4 cards. Jada collected 7 cards. How many cards did they collect altogether? Show your thinking using "
+      ],
+      "sourceRequiredTaskInterpretation": "Solve the 7 blue birds, 8 brown birds and 3 baby birds three-addend story; represent all groups with objects or drawings.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l15.story.three_addends_ten; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check actual three-group visual representations, bird story units and different make-ten solutions, not only numerical total.",
+      "candidateDigitalFamily": "usccss.g1.u03.l15.story.three_addends_ten",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
     },
     {
       "ordinal": 53,
@@ -63,6 +88,277 @@
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
     },
     {
+      "ordinal": 54,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L17",
+      "original2021FullTeacherLessonHtmlSha256": "be4d10fd3c4949b7d26b366e3b4cdd65ff2a576b8c85288d1fcb1b4dd855490f",
+      "original2021TeacherPreparationSha256": "e1e90ee62cdd6aa0b2bfd4d06620a4717aeee7ae78981cefcdc2baf117bfa38e",
+      "original2021StudentFacingHtmlSha256": "6ae6929bda1e501f7331da8ee17a9debd0a248f5d8a7b6bb54cd47b8793aa066",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: The 9 Plus Game (20 minutes)",
+        "Activity 2: Clare's Birds (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75",
+        "Student Facing Put out 9 counters. Pick a number card and add that many counters. Write an equation to represent the counters. Can you write more than one? Equations: Rou",
+        "Student Facing Clare draws some birds. She draws 3 birds in a nest and 9 birds flying. How many birds did she draw? Show your thinking using drawings, numbers, or words. "
+      ],
+      "sourceRequiredTaskInterpretation": "Play the Nine Plus Game with 9 counters and a number card; add new counters and write more than one matching equation.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l17.make_ten.decompose; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Inspect ten-frame/counter picture and multiple equivalent equations; actual physical card-and-counter center is teacher-led.",
+      "candidateDigitalFamily": "usccss.g1.u03.l17.make_ten.decompose",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 55,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L18",
+      "original2021FullTeacherLessonHtmlSha256": "266599a164dbb07d8105b453cea47ea92e991ef8d235be9f94f830d02eabb4c5",
+      "original2021TeacherPreparationSha256": "70e2af6f2e87e459a3f5ec65f95ae2bdbcc841e924633f1c59e28c52cc631d03",
+      "original2021StudentFacingHtmlSha256": "05714c201c07151ce72f07b68dbe92e4cb47c6a8fa009679301d7c29663cf143",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Expression Match (10 minutes)",
+        "Activity 2: Compare and Connect: Gallery Walk (15 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual] <path d=\"M1162.5,198.75,10",
+        "Student Facing Take out all the expression cards that have the number 10. Mix up the rest of the cards. Pick a card. Place the card under the expression with 10 that it i",
+        "Student Facing Choose a center. Shake and Spill [visual] [visual] <div class=\"i"
+      ],
+      "sourceRequiredTaskInterpretation": "Match mixed addition expression cards under equal-valued expressions containing 10, explain the pattern and compare gallery responses.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l18.addition.pattern; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify multiple mathematical matches and pattern reasoning against original cards; physical gallery discussion cannot be claimed.",
+      "candidateDigitalFamily": "usccss.g1.u03.l18.addition.pattern",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 56,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L19",
+      "original2021FullTeacherLessonHtmlSha256": "30fb5b2631f546806753f3608e2e4afbcdf63a21dae4242ec370449889ada605",
+      "original2021TeacherPreparationSha256": "6ffedee9b6724bf1330eab70de05b0634941a860db7e07acd00d8e4af4d1e857",
+      "original2021StudentFacingHtmlSha256": "7e639068e7092da29ad29ca83e80a24ab4089a2a8b82c5af053504169500dac9",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Lin, Han, and Kiran Add (20 minutes)",
+        "Activity 2: How Did You Add? (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(5 + 8\\) \\(6 + 7\\) \\(8 + 7\\) \\(6 + 9\\) Student Response Teachers with a valid work email address can click her",
+        "Student Facing Lin, Han, and Kiran are finding the value of \\(8 + 7\\) . [visual] [visual]",
+        "Student Facing Choose an addition card. Each partner finds the value independently. Each partner gives a signal when they are ready to explain their thinking. Each partne"
+      ],
+      "sourceRequiredTaskInterpretation": "Compare Lin, Han and Kiran strategies for 8+7 and explain a suitable addition method for other sums within 20.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l19.flexible.make_ten; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check that strategies rather than only one numeric sum are assessed; teacher discussion of drawings must remain explicit.",
+      "candidateDigitalFamily": "usccss.g1.u03.l19.flexible.make_ten",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 57,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L20",
+      "original2021FullTeacherLessonHtmlSha256": "b52d02ff8f09926ec8e838c59bc9b924949226cfc7f2be8c0de05909a2338011",
+      "original2021TeacherPreparationSha256": "738cb182e7d4dfab21834fe305cc5f5269709f91d5e9d3b186fff25fb286a1ea",
+      "original2021StudentFacingHtmlSha256": "7169287c637f1849d193d00ffdc97fd8f790ec6e1fce05939f386ba450f2b89e",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: How Many Reptiles? (15 minutes)",
+        "Activity 2: Zoo Exhibits (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(8 + 2 + 4\\) \\(8 + 6\\) \\(7 + 3 + 6\\) \\(7 + 9\\) Student Response Teachers with a valid work email address can c",
+        "Student Facing Jada went to the zoo with her family. They went to the reptile exhibit and saw 8 snakes, 7 iguanas, and 5 frogs. [visual] [visual] </",
+        "Student Facing In the bird exhibit, Jada saw 3 herons, 6 hawks, and 7 hummingbirds. How many birds did Jada see? Show your thinking using drawings, numbers, or words. Nex"
+      ],
+      "sourceRequiredTaskInterpretation": "Solve the zoo story with three reptile groups, 8 snakes, 7 iguanas and 5 frogs, and model the entire combined total.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l20.zoo.three_addends; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Compare original animal figures and three separate groups, an equation and valid within-20 outcome; physical visuals need review.",
+      "candidateDigitalFamily": "usccss.g1.u03.l20.zoo.three_addends",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 58,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L21",
+      "original2021FullTeacherLessonHtmlSha256": "26cd4b1a20f8958d83c62453efc87429f3244e3f7a8b61a4a8e7039ac5bfffe4",
+      "original2021TeacherPreparationSha256": "8cbeceb26ad5a84032236df11fd4860b8b5315c8a9639912a849c6f0e93d573a",
+      "original2021StudentFacingHtmlSha256": "c51e9baa3f5918ac205329d403d39e241960fde3bc3fa3bc124eb2eb03512b4d",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce How Close? Add to 20 (20 minutes)",
+        "Activity 2: Introduce Five in a Row, Add 7, 8, or 9 (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you know about 20? Student Response Teachers with a valid work email address can click here to register or sign in for free access to Student Respo"
+      ],
+      "sourceRequiredTaskInterpretation": "Play How Close? Add to 20 and Five in a Row with 7, 8 or 9 in teacher-organized centers.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l21.center.two_three_addends; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify center rule and winning target in teaching; generic arithmetic does not prove turn-taking or strategy.",
+      "candidateDigitalFamily": "usccss.g1.u03.l21.center.two_three_addends",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 59,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L22",
+      "original2021FullTeacherLessonHtmlSha256": "a75f5ec320130a0ff353b152a864971f432f6b3f04c3d07ea8aca07a32944c46",
+      "original2021TeacherPreparationSha256": "9ecb527f5dfcc9235617657a4abdefb4e519b494b92357f8f22cf1bb60697368",
+      "original2021StudentFacingHtmlSha256": "1bbab17d1a279f86072342726fe2cbf983ae798fc97b4efb3acf237da7d9f4c2",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Subtraction Methods (20 minutes)",
+        "Activity 2: Number Card Subtraction (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(14 - 4\\) \\(14 - 5\\) \\(17 - 7\\) \\(17 - 9\\) Student Response Teachers with a valid work email address can click",
+        "Student Facing [visual] [visual] <div id=\"dialog-long-description-Im",
+        "Student Facing Choose a teen number card. Choose a number card to subtract. Find the difference. Write an equation. My equations: Pick your favorite equation. Show how yo"
+      ],
+      "sourceRequiredTaskInterpretation": "Use teen-number subtraction strategies and physical number cards to explain subtraction from a teen number.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l22.teen.subtract_cross_ten; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review original number-card instructions and decomposition examples; independent subtraction results alone do not prove a method.",
+      "candidateDigitalFamily": "usccss.g1.u03.l22.teen.subtract_cross_ten",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 60,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L23",
+      "original2021FullTeacherLessonHtmlSha256": "102284813648fcb3cf670ad78479e0ee7b4562075544972d9afa5a906d4d1c95",
+      "original2021TeacherPreparationSha256": "3d61461754434b6c9c881fc5c0b1d76f43ed016ccc8323e65e11a06ba6b3ae3c",
+      "original2021StudentFacingHtmlSha256": "767e9bccece257e19183cf5bf8be29f826bf4242ae1289615d5dd43c7be213ec",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Number Card Subtraction with 10-frames (15 minutes)",
+        "Activity 2: Diego and Andre Find the Difference (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(17 - 7\\) \\(17 - 7 - 1\\) \\(17 - 8\\) \\(17 - 9\\) Student Response Teachers with a valid work email address can c",
+        "Student Facing Choose a teen number card. Build the number on 10-frames. Choose a number card to subtract. Find the difference. Write an equation. My equations: Pick your",
+        "Student Facing Diego is playing Number Card Subtraction. He started with 15 and then picked an 8. He started out by doing this: [visual] [visual]"
+      ],
+      "sourceRequiredTaskInterpretation": "Choose a teen number card, build it on ten-frames, subtract a second card and write the resulting equation.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l23.ten.subtract_in_steps; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify ten-frame modeling and the selected minuend/subtrahend; physical card and counter handling is unobserved.",
+      "candidateDigitalFamily": "usccss.g1.u03.l23.ten.subtract_in_steps",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 61,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L24",
+      "original2021FullTeacherLessonHtmlSha256": "7727fab9724ea22ea3c6632acfada0efc1e50d371ce75de2d581cfc2fda81c6e",
+      "original2021TeacherPreparationSha256": "afbb7d19a17c12cc8b94ef1379d25440b4d186e019294af787e5e0ad7ff78bca",
+      "original2021StudentFacingHtmlSha256": "01aaf25d22d1d41cabcbed10a962ba9c39f3331e6175988bfe71d14687268af1",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Different Ways to Subtract (20 minutes)",
+        "Activity 2: Find the Number That Makes Each Equation True (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Yesterday, we saw Diego's method to find the value of \\(15 - 8\\) . Diego's way [visual] [visual] <svg aria-hid",
+        "Student Facing Find the number that makes each equation true. Be sure you can explain your thinking in a way that others will understand. Set A: \\(12 - 7 = \\boxed{\\phanto"
+      ],
+      "sourceRequiredTaskInterpretation": "Find unknown values in both subtraction and addition equations; explain why each strategy makes the equation true.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l24.strategy.count_on_or_away; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Confirm unknowns occur in varied positions, and source representations plus multiple solution methods are taught.",
+      "candidateDigitalFamily": "usccss.g1.u03.l24.strategy.count_on_or_away",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 62,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L25",
+      "original2021FullTeacherLessonHtmlSha256": "b60f6a4e850c7ad881747a5405313de63a57ab235c11b5042deda174f76ae4d6",
+      "original2021TeacherPreparationSha256": "0b14637e94392a5b27db672701a83f723063a8b2cb137a161dc4529f7ea5cc4a",
+      "original2021StudentFacingHtmlSha256": "52b25327b13302c898993d954547451b3a8f57d1de9fc1674a8929a2bb36ccc9",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Choose Your Own Subtraction Method (20 minutes)",
+        "Activity 2: Solve Story Problems (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing \\(20 - 15 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) Show your thinking using drawings, numbers, or words. \\(19 - 3 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) Sh",
+        "Student Facing There are 12 pencils on the table. The teacher picks up 7 pencils. How many pencils are still on the table? Show your thinking using drawings, numbers, or "
+      ],
+      "sourceRequiredTaskInterpretation": "Choose a subtraction method and solve a 12-pencil story where 7 pencils are removed, using drawings, numbers or words.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l25.strategy.flexible_subtract; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify meaningful student-selected method and story representation; a fixed numerical subtraction answer is only partial.",
+      "candidateDigitalFamily": "usccss.g1.u03.l25.strategy.flexible_subtract",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 63,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L26",
+      "original2021FullTeacherLessonHtmlSha256": "b8c56d86a6641a27281083c44e709c7ff04482d53bee94a0a51c596478327b01",
+      "original2021TeacherPreparationSha256": "1a73e7a18c120fb5f212d52df425577053ce3549d086fac63579efc94f7d0a8c",
+      "original2021StudentFacingHtmlSha256": "65e8336fcf8b804256afa3f61029ea4cfec3261baa9620560be6bc8443a8e265",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Solve Related Story Problems (15 minutes)",
+        "Activity 2: More Story Problems (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(15 - 10\\) \\(15 - 12\\) \\(16 - 10\\) \\(16 - 13\\) Student Response Teachers with a valid work email address can c",
+        "Student Facing Elena has 6 counters. She gets some more counters. Now she has 18 counters. How many more counters did Elena get? Show your thinking using drawings, number",
+        "Student Facing Story Problem 1 Han has some pencils. He gets 9 pencils from the art store. Now he has 15 pencils. How many pencils did Han have to start? Story Problem 2 "
+      ],
+      "sourceRequiredTaskInterpretation": "Solve related story problems including Elena's start of 6 counters growing to 18 with an unknown increase.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l26.story.unknown_positions; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify changes of unknown position and story context; compare drawings/equations with each original Student Facing item.",
+      "candidateDigitalFamily": "usccss.g1.u03.l26.story.unknown_positions",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 64,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L27",
+      "original2021FullTeacherLessonHtmlSha256": "dafd276a86a3631edcd0a6a6c7872dee5e804d6ae7eacd9483f3d14bab1969d3",
+      "original2021TeacherPreparationSha256": "51c202d3fcd38c22b90895c8c8efccc348a42630a23d0afed10cf4d5baec03f5",
+      "original2021StudentFacingHtmlSha256": "864a95d3af6a93d2011330ebab283a44ebf2eaa29c65ad965df3b5aed8845d76",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce How Close? Subtract from 20 (15 minutes)",
+        "Activity 2: Introduce Compare, Add and Subtract Within 20 (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(20 - 10\\) \\(20 - 10 - 1\\) \\(18 -10 - 4\\) \\(18- 14\\) Student Response Teachers with a valid work email address",
+        "Student Facing Choose a center. Compare [visual] [visual] <div class=\"im-c-modal__content im-c-c"
+      ],
+      "sourceRequiredTaskInterpretation": "Use How Close? Subtract from 20 and Compare centers to reason about subtracting and comparing within 20.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u03.l27.center.add_subtract; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review original center instructions, multiple strategies and teacher-led games; no synthetic center participation.",
+      "candidateDigitalFamily": "usccss.g1.u03.l27.center.add_subtract",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
       "ordinal": 65,
       "lessonCode": "PED:US-CCSS-MATH:G1:U03:L28",
       "original2021FullTeacherLessonHtmlSha256": "cca057a71e8fb653ed6f843b997cf38bba52b62d9b27dcad971fd1629f2ad47e",
@@ -87,6 +383,206 @@
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 66,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L01",
+      "original2021FullTeacherLessonHtmlSha256": "af5e0f582b63ea811e8c856108975f99de19dc694f31162d76342f5232a9be08",
+      "original2021TeacherPreparationSha256": "51191bc0e1c9d41ca5f645c540927e2b5116c765dcafbdbdbb7d1f50ca96f96e",
+      "original2021StudentFacingHtmlSha256": "d8c585c57fd3443caa12fd338157c1775dada17fab1698fecb2fc921fb917af7",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Count a Collection (10 minutes)",
+        "Activity 2: Count More Than One Collection (15 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-ic",
+        "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
+      ],
+      "sourceRequiredTaskInterpretation": "Count a physical collection, then count more than one collection; organize and describe chosen counting units.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l01.count.groups_of_ten; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Validate count organization and representation of collections; a single ten/one numerical answer is insufficient evidence.",
+      "candidateDigitalFamily": "usccss.g1.u04.l01.count.groups_of_ten",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 67,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L02",
+      "original2021FullTeacherLessonHtmlSha256": "022c3477ec7ce5b3395fdf95f65b099d05056d321dca3cef1b70de5ff562901e",
+      "original2021TeacherPreparationSha256": "8156c3ea178cd7f22ba5bc695db71a23d33078a1a2abd18e7ff292931dde7020",
+      "original2021StudentFacingHtmlSha256": "c0b31de9b3e6515000b6eca5962dd7b16756a4bd57912a9cee82e7b92f254002",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Representations of Tens (20 minutes)",
+        "Activity 2: It's a Match! (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Round 1: How many cubes? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-icon--close\" heig"
+      ],
+      "sourceRequiredTaskInterpretation": "Count collections of connecting cubes and match several representations of a full group of tens.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l02.match.tens_equivalence; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify equivalent forms of tens against source cube arrangements and exact count in each picture.",
+      "candidateDigitalFamily": "usccss.g1.u04.l02.match.tens_equivalence",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 68,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L03",
+      "original2021FullTeacherLessonHtmlSha256": "a62afd3fa6322b2b58412571d9a1e391cb7c3436fc4795451c1d88776089853e",
+      "original2021TeacherPreparationSha256": "10b8644e3359ab3a2f2a00320565bce8567f9670210111ebf1c2fc299fd42a5a",
+      "original2021StudentFacingHtmlSha256": "dd651ef5f9064308b1fb0dc5ea444ae298c7516dd6131e4fc9a874bfc0a67bc1",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: How Many Tens Now? (10 minutes)",
+        "Activity 2: Introduce Five in a Row, Add or Subtract 10 (15 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual] <div class=\"im-c-modal__con",
+        "Student Facing Show 1 ten. Add a ten. How many do you have now? Add another ten. How many do you have now? Show your thinking using drawings, numbers, or words. Add anoth",
+        "Student Facing [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-icon--close\" height"
+      ],
+      "sourceRequiredTaskInterpretation": "Build one ten, add successive full tens and record how the total grows; explain with cubes and equations.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l03.tens.add_or_remove_one; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check repeated 10-unit steps and number patterns, not only a standalone addition result.",
+      "candidateDigitalFamily": "usccss.g1.u04.l03.tens.add_or_remove_one",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 69,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L04",
+      "original2021FullTeacherLessonHtmlSha256": "b5484d49647426674fb667d3d9edad0bf562f0c5ff1f069afbef006604f02c1a",
+      "original2021TeacherPreparationSha256": "a13aa2388451d217c756ab46417c2f363570bb181869971769928de7a6130e04",
+      "original2021StudentFacingHtmlSha256": "eba3152bd7bfe7adef7492617f7ed40b55c789be1c0d1e6cb0c490ac6cdab468",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: How Many Are in the Bag? (20 minutes)",
+        "Activity 2: Add and Subtract Tens (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(30 + 10\\) \\(40 + 10\\) \\(80 - 10\\) \\(70 - 10 \\) Student Response Teachers with a valid work email address can ",
+        "Student Facing Jada is counting collections of cubes. In Bag A there are 30 cubes. In Bag B there are 2 towers of 10. How many cubes are in the two bags all together? Sho",
+        "Student Facing Add 20: [visual] [visual]"
+      ],
+      "sourceRequiredTaskInterpretation": "Combine Bag A containing 30 cubes with Bag B containing two towers of ten; solve and represent the resulting total.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l04.tens.add_remove_multiples; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify 30 plus two distinct 10-towers equals 50; compare original grouped illustration and story explanation.",
+      "candidateDigitalFamily": "usccss.g1.u04.l04.tens.add_remove_multiples",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 70,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L05",
+      "original2021FullTeacherLessonHtmlSha256": "863d835c8dbd398118116f21cb46c854f6f218ef9897b34302710d3ab00ea245",
+      "original2021TeacherPreparationSha256": "b7949271b8a3a489fe15124a659ffc983332994876872daff01eecfddebefce0",
+      "original2021StudentFacingHtmlSha256": "46085fb4203b61d437cb4697425e47f72f8ef8f1ae13c6a656fcd8eddc998e45",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Check It Off, Add or Subtract Tens (15 minutes)",
+        "Activity 2: Centers: Choice Time (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,",
+        "Student Facing Choose a center. Five in a Row [visual] [visual] <div class=\"im-c-"
+      ],
+      "sourceRequiredTaskInterpretation": "Play Check It Off with addition or subtraction of tens and choose other center practice.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l05.center.tens_and_within20; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review teacher-stated source game rules and tens arithmetic; partner/center activity remains classroom-specific.",
+      "candidateDigitalFamily": "usccss.g1.u04.l05.center.tens_and_within20",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 71,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L06",
+      "original2021FullTeacherLessonHtmlSha256": "8210b93ef8034620be513eb55889b1f509b267f285ed999e9606423c7849dbe3",
+      "original2021TeacherPreparationSha256": "d85b5ac0d3fe04e57710daf4637d19f5a34e5746a25642008acc220abb63ecfd",
+      "original2021StudentFacingHtmlSha256": "7dfd4f10f12ae3ba75bdddedab7551984dfde04fb8c66511ea93a1992963a348",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Count Another Collection (15 minutes)",
+        "Activity 2: Noah Counts a Collection (10 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Noah organized his collection of connecting cubes. [visual] [visual] <div class=\"im-c-mo",
+        "Student Facing Choose a center. Check It Off [visual] [visual] <div class=\"im-c-modal__cont"
+      ],
+      "sourceRequiredTaskInterpretation": "Count and explain Noah's organized collection of connecting cubes, comparing groupings and counting a different collection.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l06.collection.tens_ones; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check student-created tens/ones explanation and counted objects; exact source collection pictures need independent review.",
+      "candidateDigitalFamily": "usccss.g1.u04.l06.collection.tens_ones",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 72,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L07",
+      "original2021FullTeacherLessonHtmlSha256": "d3c251a9cfaa06ec9e0b71ea89fe3a3bbefe9615dfe4353fa520f6295a0759c9",
+      "original2021TeacherPreparationSha256": "d38379de782d82a09f642c369c9554a745b3b1ce5a6ce733b630a0a76f2a0ba0",
+      "original2021StudentFacingHtmlSha256": "2c31b40a755dcf87da5f341c3dbd87bb05f47dd4fc41628c1eefb425a6f50c5e",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Make It: Tens and Ones (15 minutes)",
+        "Activity 2: Who Do You Agree With? (10 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Set A 0 1 2 3 4 5 6 7 8 9 Set B 10 23 45 76 89 Student Response <p st",
+        "Student Facing Partner 1 draws 2 number cards and uses them to make a two-digit number. Each partner says the number. Partner 2 builds the number using cubes. Partner 1 c",
+        "Student Facing [visual] [visual] <div id=\"dialog-long-description-TikzFile-1491"
+      ],
+      "sourceRequiredTaskInterpretation": "Partner draws two number cards to form a two-digit number, says its name, and the other partner builds it using cubes.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l07.read.two_digit; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify tens/ones, numeral reading and chosen digits without duplicating a digit; partner roles and physical tower assembly not proven.",
+      "candidateDigitalFamily": "usccss.g1.u04.l07.read.two_digit",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 73,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L08",
+      "original2021FullTeacherLessonHtmlSha256": "c5a8fdd8bfd16ee332095959eae1b68950aee11abb9f692fea75b11bc045084e",
+      "original2021TeacherPreparationSha256": "206a5a74e868c135313e05544f08468863ac99fe8bd23d78d53b4fb278aef1f8",
+      "original2021StudentFacingHtmlSha256": "5893c1a00a8ef433a62d6a0321c324ca9cef9740338bd915bbbb142c0cb2fda8",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Compare Representations of a Collection (10 minutes)",
+        "Activity 2: Card Sort: Base-ten Representations (15 minutes)",
+        "Activity 3: Introduce Grab and Count, Ones Cubes (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? [visual] [visual] </sv",
+        "Student Facing Each student counted and showed a collection. Clare drew [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,6",
+        "Student Facing Your teacher will give you a set of cards that show different representations of a two-digit number. Find the cards that match. Be ready to explain your re"
+      ],
+      "sourceRequiredTaskInterpretation": "Compare Clare's cube-collection drawing with others, sort base-ten cards and count a grab of ones.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l08.match.tens_ones_expression; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Audit representation equivalence and source card-sort choices; a single standard representation doesn't capture sorting.",
+      "candidateDigitalFamily": "usccss.g1.u04.l08.match.tens_ones_expression",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
     },
     {
       "ordinal": 74,
@@ -115,6 +611,254 @@
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
     },
     {
+      "ordinal": 75,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L10",
+      "original2021FullTeacherLessonHtmlSha256": "411a4236237e45ad88d3337ce50c235aa079a8d7c2cadbc9d267f73405c3028c",
+      "original2021TeacherPreparationSha256": "aeae9fce3faab1797917c720702781517c52acbd33c6959696192cd52d9ba234",
+      "original2021StudentFacingHtmlSha256": "e60e101ee27f4062b444fa23b6fdc2a0a2d405b81102f1197567ec3921334a57",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Write Numbers to Match Base-Ten Representations (15 minutes)",
+        "Activity 2: Introduce Write Numbers, Numbers to 99 by 1 (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? A [visual] [visual] <svg aria-hidden=\"true\" cla",
+        "Student Facing Write the number that matches each representation. 1 ten 4 ones Number: ____________ [visual] [visual]"
+      ],
+      "sourceRequiredTaskInterpretation": "Write the numeral for each displayed tens/ones representation, including the source example one ten and four ones.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l10.write.two_digit_numeral; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Inspect original multiple pictures and writing outcomes, including place-position reversal errors.",
+      "candidateDigitalFamily": "usccss.g1.u04.l10.write.two_digit_numeral",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 76,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L11",
+      "original2021FullTeacherLessonHtmlSha256": "142ba60b69b021a9f6122d5df8b3d160a71bf399fccc25c4bcabda7e827ec1a8",
+      "original2021TeacherPreparationSha256": "86eef401000ecd9c255cb38b4a40516584b7244a335bb7de8721af56ecc474b7",
+      "original2021StudentFacingHtmlSha256": "2d09b372c5cf3f361d2cca7bb352802af461e363fe206f4901c7c4021b0173a1",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Add Two-digit Numbers and Tens (20 minutes)",
+        "Activity 2: The Missing Digit (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(80 + 5 = 5 + 80\\) \\(70 + 1 = 80 + 1\\) \\(20 + 6 = 6 + 30\\) Student Respo",
+        "Student Facing Find the number that makes each equation true. Show your thinking using drawings, numbers, or words. \\(37 + 20 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(60",
+        "Student Facing This equation is true. [visual] [visual] <svg aria-"
+      ],
+      "sourceRequiredTaskInterpretation": "Solve missing-number equations such as 37+20 and additional cases where tens are added to two-digit values.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l11.add_tens.two_digit; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify missing-digit positions and explanations of unchanged ones digit; not just simple two-digit sums.",
+      "candidateDigitalFamily": "usccss.g1.u04.l11.add_tens.two_digit",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 77,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L12",
+      "original2021FullTeacherLessonHtmlSha256": "9aeaacd09e4d34c6d7cd9138b3e40c33b79d310bedb0d7abde2360a184ad93c7",
+      "original2021TeacherPreparationSha256": "f079b91b320cbbdaed28a10e1f5cf41205488205ce56f8966767d3822965c382",
+      "original2021StudentFacingHtmlSha256": "bc498182c4cdb1c2221310f0abf40469780a0c0f09542b4a4a52b4f59c962b96",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Write Numbers, Numbers to 99 by 10 (20 minutes)",
+        "Activity 2: Add and Subtract 10 (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(3 + 10\\) \\(10 + 5\\) \\(13 - 10\\) \\(15 - 10\\) Student Response Teachers with a valid work email address can cli",
+        "Student Facing Find the number that makes each equation true. Then tell what you notice. \\(67 + 10 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(67 - 10 = \\boxed{\\phantom{\\fr"
+      ],
+      "sourceRequiredTaskInterpretation": "Mentally add or subtract ten from a fixed two-digit number and notice the structural pattern.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l12.mental.ten_more_less; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review paired addition/subtraction expressions and place-value explanations, not isolated calculations.",
+      "candidateDigitalFamily": "usccss.g1.u04.l12.mental.ten_more_less",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 78,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L13",
+      "original2021FullTeacherLessonHtmlSha256": "ed9502bae50434a90c6d02fc65174df640774f14a71aab3ce932f2650a954ac4",
+      "original2021TeacherPreparationSha256": "863dc31852ab4bff585e28839806c52eab34a4ee0705a831aec4293830bc7708",
+      "original2021StudentFacingHtmlSha256": "2a1eaca8bf9cde20a32da210b3a773f2561e3d5ab752795300785819cf9160dd",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Centers: Choice Time (20 minutes)",
+        "Activity 2: Centers Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(10 + 4\\) \\(9 + 4\\) \\(9 + 6\\) \\(15 - 6\\) Student Response Teachers with a valid work email address can click h",
+        "Student Facing Choose a center. Grab and Count [visual] [visual] <div class=\"im-c-modal__",
+        "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
+      ],
+      "sourceRequiredTaskInterpretation": "Choose and play the Grab and Count center, among other teacher-directed centers.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l13.center.place_value_mix; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify numeric count tasks and teacher-facing rules without claiming actual center play or collection manipulation.",
+      "candidateDigitalFamily": "usccss.g1.u04.l13.center.place_value_mix",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 79,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L14",
+      "original2021FullTeacherLessonHtmlSha256": "d085cf009cac851f80ca7335a1b230ea2702c30a7b1764370ce8869531166b89",
+      "original2021TeacherPreparationSha256": "28c110215f8fc9764f408486415ade1af7f5c4d48a1022c00b52d62dfc3ca5e9",
+      "original2021StudentFacingHtmlSha256": "714e294a8720b92a70e455ec27acdd609ca2105e0834150148b9f8144f63e115",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Which is More? (15 minutes)",
+        "Activity 2: Elena and Noah Compare Numbers (10 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Each partner spins a spinner. Each partner shows the number any way they choose. Compare with your partner. Which number is more? Spinner A: [visual] [visu",
+        "Student Facing Elena says 75 is greater than 65 because 7 is greater than 6. What do you think Elena means? How could Elena be more clear? Noah says 39 is greater than 41",
+        "Student Facing Choose a center. Write Numbers [visual] [visual] <div class=\"im-c-modal__co"
+      ],
+      "sourceRequiredTaskInterpretation": "Spin two two-digit numbers, represent both freely and explain which is greater; critique Elena's and Noah's comparisons.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l14.compare.two_digits_words; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Require genuine place-value reasoning and visibility of alternative number representations; no silent yes/no-only coverage.",
+      "candidateDigitalFamily": "usccss.g1.u04.l14.compare.two_digits_words",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 80,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L15",
+      "original2021FullTeacherLessonHtmlSha256": "03b7fb51dd40741eb9ea181b2441fcf4954451e7e1eb6921ba3f11b45ca088ac",
+      "original2021TeacherPreparationSha256": "2f860ae1cd7c3dd963a5ecc39594caaf4c49c25ad67fb9bddcade11a67c1f7c5",
+      "original2021StudentFacingHtmlSha256": "0ae74d9fe789b1e4539fa545d20716cc369c914894bca5b117521219004d4322",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Which is Greater, Which is Less? (20 minutes)",
+        "Activity 2: True or False Comparisons (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(35 + 10\\) \\(52 + 10\\) \\(52 -10\\) \\(83-10\\) Student Response Teachers with a valid work email address can clic",
+        "Student Facing Circle the statement that is true in each pair. Be ready to explain how you know so that others will understand. \\(27 < 17\\) \\(17<27\\) \\(34 < 36\\) \\(36 < 3",
+        "Student Facing Read each statement. Determine whether each statement is true or false. Be ready to explain how you know so that others will understand. \\(17 < 47\\) \\(58 ="
+      ],
+      "sourceRequiredTaskInterpretation": "Circle the true greater-than or less-than comparison among paired statements, and explain why each comparison holds.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l15.compare.symbols; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Audit reversed symbol and equal-number distractors against source statements, plus teacher-led explanations.",
+      "candidateDigitalFamily": "usccss.g1.u04.l15.compare.symbols",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 81,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L16",
+      "original2021FullTeacherLessonHtmlSha256": "9b253f98a275d7d5bfc748ae8b09bf99a984df736851e4099cb3e2e8ba6387d4",
+      "original2021TeacherPreparationSha256": "be018f07997b639f971c5b68899d5694a72cbc94f170fe5a5e3c595af4c145f0",
+      "original2021StudentFacingHtmlSha256": "80e2fabe1b92b8ed634546b8d9da43d7d2ff650da4cdec6bc812649d683fb459",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Greatest of Them All, Two-digit Numbers (20 minutes)",
+        "Activity 2: Make the Statement True (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? \\(49 > 45\\) \\(45 < 49\\) Student Response Teachers with a valid work email address can click here to register or sig",
+        "Student Facing Compare the numbers. Write <, >, or = in each blank. Then read the comparison statement. \\(56 \\underline{\\hspace{1 cm}} 26\\) \\(72 \\underline{\\hspace{1 cm}}"
+      ],
+      "sourceRequiredTaskInterpretation": "Read a true two-digit comparison and write the correct symbol <, > or = in multiple original number pairs.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l16.write_comparison; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify signs, source-specific examples and numerals; reading aloud remains a teacher-observed part.",
+      "candidateDigitalFamily": "usccss.g1.u04.l16.write_comparison",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 82,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L17",
+      "original2021FullTeacherLessonHtmlSha256": "7d36cff8abddda3544ffd565a83475b54ce07e28d087eba487122d9521a20d35",
+      "original2021TeacherPreparationSha256": "0711e8ef8e6dbcd7e32305f5d7c06a1b58a58f34b6ba9bba42a6805eb7ef6789",
+      "original2021StudentFacingHtmlSha256": "c43998e7c0673eacd725564ce5fdd9bb3e08afb78d9e1c44908863cd7dc5b920",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Compare and Order Quantities (20 minutes)",
+        "Activity 2: Order Numbers (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37",
+        "Student Facing [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,1162.5,600,761.25l401.25,401.25,16",
+        "Student Facing Here are some numbers in order: 1 5 10 50 99 Add these numbers to the list: 49 8 25 98 13 Make sure all the numbers are in order from least to greatest. Ch"
+      ],
+      "sourceRequiredTaskInterpretation": "Compare and order several quantities and their matching numbers, justifying ordering by tens and ones.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l17.order_three_numbers; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review whether Practice orders the required number of quantities and preserves original image/count correspondence.",
+      "candidateDigitalFamily": "usccss.g1.u04.l17.order_three_numbers",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 83,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L18",
+      "original2021FullTeacherLessonHtmlSha256": "092f14ec7dd25e67f71615cc3528c37ed9eacf1bfca8779f436cec9fa75bd2e6",
+      "original2021TeacherPreparationSha256": "dac90ffdc5f8c127bb6d8cc1746912e668defcb49269cd2e03249e3437242f83",
+      "original2021StudentFacingHtmlSha256": "13ae2e9414d3632e01eda90baa90a7f19f6842c348b716d011323d0291ce242c",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Get Your Numbers In Order, Two-digit Numbers (20 minutes)",
+        "Activity 2: Centers: Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(32 + 10\\) \\(32 + 10 + 10\\) \\(32 + 20\\) \\(32 - 20\\) Student Response Teachers with a valid work email address ",
+        "Student Facing Choose a center. Greatest of Them All [visual] [visual] <di"
+      ],
+      "sourceRequiredTaskInterpretation": "Introduce Get Your Numbers in Order center, ordering two-digit number cards; choose further center practice.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l18.center_count_compare_order; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Compare number card counts and sequence against source center instructions; avoid claiming real games.",
+      "candidateDigitalFamily": "usccss.g1.u04.l18.center_count_compare_order",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 84,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L19",
+      "original2021FullTeacherLessonHtmlSha256": "21d9425b22f8c46ba79ace4cb20deebba25a684bdd33140454c31fabeefbdd9f",
+      "original2021TeacherPreparationSha256": "0375ba6ec2e471055563df42d29a4a9bb6b5c3a44497a7e42ead857290f5eb4c",
+      "original2021StudentFacingHtmlSha256": "965b8d9c7530e37d807848f76da259a631c5c623aadf45f4521525af10a07cb0",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Make 65 Using Tens and Ones (15 minutes)",
+        "Activity 2: Make 37 in Different Ways (10 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,",
+        "Student Facing Create a collection of 65. You may not break apart any towers. You may not make any new towers. Show your collection in a way that others will understand. ",
+        "Student Facing How many ways can you make 37? Show your thinking using drawings, numbers, or words. Student Response Teachers with a valid work email address can click he"
+      ],
+      "sourceRequiredTaskInterpretation": "Make 65 without breaking existing ten-towers or creating new ones; also show 37 in more than one way.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l19.regroup_one_ten; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Audit constraints on which rods are available plus nonstandard representations; unrestricted digit addition cannot assess tower constraints.",
+      "candidateDigitalFamily": "usccss.g1.u04.l19.regroup_one_ten",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
       "ordinal": 85,
       "lessonCode": "PED:US-CCSS-MATH:G1:U04:L20",
       "original2021FullTeacherLessonHtmlSha256": "57008ac700f8814140758da2674b96827731fe205d1f34affdf9da5509b53b09",
@@ -138,6 +882,433 @@
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 86,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L21",
+      "original2021FullTeacherLessonHtmlSha256": "d8381222018f3be3077f2019a9dcdbefe9889f0137a35f5418fa6182868ceb37",
+      "original2021TeacherPreparationSha256": "17699d29bf5b2ce885c03cfe4a5ea8172435379f7537e5e5e2d56eb8de4e5307",
+      "original2021StudentFacingHtmlSha256": "fd561e73546287377f742d8521e7cd0475388eec901bcbfc932142178d6a51d6",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Elena and Kiran Compare Collections (15 minutes)",
+        "Activity 2: Base-Ten Representation Compare (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\\\(10 + 6\\\\) \\\\(9 + 6\\\\) \\\\(10 + 7\\\\) \\\\(8 + 7\\\\) Student Response Teachers with a valid work email address can",
+        "Student Facing Elena and Kiran are comparing their collections. Elena says, \"I have 5 tens 32 ones.\" Kiran says, \"I have 7 tens 2 ones.\" Who has more in their collection?",
+        "Student Facing What do you notice? [visual] [visual] <path d=\"M1162.5,198.75,"
+      ],
+      "sourceRequiredTaskInterpretation": "Compare Elena's collection of FIVE tens and THIRTY-TWO ones with Kiran's SEVEN tens and TWO ones.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l21.compare_nonstandard_forms; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check 82 versus 72 nonstandard regrouping and source figure; earlier specific correction requires fresh exact-SHA evidence.",
+      "candidateDigitalFamily": "usccss.g1.u04.l21.compare_nonstandard_forms",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 87,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L22",
+      "original2021FullTeacherLessonHtmlSha256": "2a56a19b52f47b36b1faffcf9e56ea5c0c0ba2838a4544c77a2c1862b50986a5",
+      "original2021TeacherPreparationSha256": "1f7a2aab38415a47d79c4bdc814431bd7b7a7c9e28bd71d57091841bb7222218",
+      "original2021StudentFacingHtmlSha256": "3166e64e4ca4290266ee702384bb5b78013dd4f1263eb88b41d90ebd59642784",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Mystery Number, Two-digit Numbers (15 minutes)",
+        "Activity 2: Center: Choice Time (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(92 = 90 + 2\\) \\(90 + 2 > 80 + 12\\) \\(20 + 13 < 30 + 13\\) Student Respon",
+        "Student Facing Choose a center. Mystery Number [visual] [visual] <div class=\"im-"
+      ],
+      "sourceRequiredTaskInterpretation": "Use Mystery Number center to infer two-digit numbers from place-value clues and explain the result.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l22.center_place_value; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review consistency and uniqueness of clues and several original cards; not merely numeric grade.",
+      "candidateDigitalFamily": "usccss.g1.u04.l22.center_place_value",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 88,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L23",
+      "original2021FullTeacherLessonHtmlSha256": "49a4abdbfc72a974394661f746a84c411fa5478f8babf090e21cd4e2d041e0b6",
+      "original2021TeacherPreparationSha256": "3fd91382fe53cdc5618e7e8ebfe569b90490618d6bb77cef792acdb61674cabe",
+      "original2021StudentFacingHtmlSha256": "861b98234aef17414e9deab9ed6144eae7fe5ba2ff60c23860b9970b3d251b8d",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Count the Objects (15 minutes)",
+        "Activity 2: Quantities Card Sort (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many beans are there? [visual] [visual] <div class=\"im-c-modal__content im",
+        "Student Facing Experiment 1: How many objects are in 2 handfuls? Record an estimate that is: too low about right too high \\(\\phantom{\\hspace{2.5cm} \\\\ \\hspace{2.5cm}}\\) \\",
+        "Student Facing Estimate and sort the pictures based on the amount of items you see. Sort into these groups. Less than 20 20 to 50 More than 50 Select 1 picture from each "
+      ],
+      "sourceRequiredTaskInterpretation": "Estimate quantity in two handfuls as too low/about right/too high and classify object quantities by size.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l23.estimate_and_count; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify estimation categories relative to actual sample collection, and source visual quantities; generated estimate isn't child-authored.",
+      "candidateDigitalFamily": "usccss.g1.u04.l23.estimate_and_count",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 89,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L01",
+      "original2021FullTeacherLessonHtmlSha256": "1c40b187f1cbdea17e257d172727fd116547806b3605bb6030a08fae6aee0fcf",
+      "original2021TeacherPreparationSha256": "29067a77c0097012cecab4af602665c9b2561c0555154d416b6adb4b06bac97a",
+      "original2021StudentFacingHtmlSha256": "27d6ff967f51c53900199bcfc7e357c38ec912bf365d7f31a50dda63d4d97f9c",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: What Did I Add? (20 minutes)",
+        "Activity 2: Add Tens or Ones (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual] <div class=\"im-c-modal__c",
+        "Student Facing Partner A: Spin to get a starting number. [visual] [visual] <div cl",
+        "Student Facing Find the number that makes each equation true. \\(43 + 5 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(43 + 50 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(51 + 3 "
+      ],
+      "sourceRequiredTaskInterpretation": "Spin for a starting two-digit number and determine whether tens or ones were added, using place-value explanations.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l01.tens_or_ones_no_compose; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Inspect source spinner and alternative question cases; addition score alone cannot prove identification of tens vs ones.",
+      "candidateDigitalFamily": "usccss.g1.u05.l01.tens_or_ones_no_compose",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 90,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L02",
+      "original2021FullTeacherLessonHtmlSha256": "8ecf6f24057ae9f0b20dbe809b5de3421758f9087598a8e679552bcf2b33b3bc",
+      "original2021TeacherPreparationSha256": "64e65d8055ab349030dfc4b4faa58bd730a240c72c7f3e919a9356f2be6bd7cc",
+      "original2021StudentFacingHtmlSha256": "63aa40d4f987dfd42b05883f0875e0f3f61653c8ec192d4c519a17d76502aa6f",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Find the Value (15 minutes)",
+        "Activity 2: Elena and Andre Represent $63 + 25$ (10 minutes)",
+        "Activity 3: Introduce Five in a Row, Add Within 100 without Composing (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of \\(23 + 45\\) . Show your thinking using drawings, numbers, or words. [visual] [visual] <div aria-describedby=\"dialog-long-description-Imag",
+        "Student Facing Here are 2 drawings students made for \\(63 + 25\\) . Elena's work [visual] [visual] <div aria-describedby=\"dialog-long-description-ImageFile-43616\" aria-lab"
+      ],
+      "sourceRequiredTaskInterpretation": "Find 23+45 and analyze Elena's/Andre's distinct drawings of 63+25; represent tens and ones separately.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l02.explain_no_compose_equations; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Compare representations of two separate strategies and numerical results without pretending actual learner drawings exist.",
+      "candidateDigitalFamily": "usccss.g1.u05.l02.explain_no_compose_equations",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 91,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L03",
+      "original2021FullTeacherLessonHtmlSha256": "7d05b1a514cb3035cd9cf34a82d25d813087295c271d87f9da274d3359cd58af",
+      "original2021TeacherPreparationSha256": "39ca0277f4d216517798b2d719f8b5185449841a58cfdedb55056bebdb9b12e7",
+      "original2021StudentFacingHtmlSha256": "af5733823e92a313a905e9513208d2c6b1bfcf4fa0e08914d3477844e8a8120b",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Lin and Han Add (15 minutes)",
+        "Activity 2: I Heard You Say (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(13 + 21\\) \\(13 + 31\\) \\(23 + 31\\) \\(33 + 41\\) Student Response Teachers with a valid work email address can c",
+        "Student Facing Lin and Han are both finding the value of \\(32+ 54\\) . Look at how each student started. What should they do next to find the value? Write equations to rep",
+        "Student Facing Find the value of \\(23 + 74\\) using Lin's or Han's method. Write equations to represent your thinking. \\(23 + 74\\) [visual] [visual] <div aria-describedby="
+      ],
+      "sourceRequiredTaskInterpretation": "Analyze Lin and Han's unfinished 32+54 methods, finish each correctly and explain the next step.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l03.write_no_compose_equations; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check intermediate written regrouping and place-value algorithms, not only final total.",
+      "candidateDigitalFamily": "usccss.g1.u05.l03.write_no_compose_equations",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 92,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L04",
+      "original2021FullTeacherLessonHtmlSha256": "739a9e6ac524b9023d8424f23acfbc81422aaf62445207a007a985856c2cc000",
+      "original2021TeacherPreparationSha256": "69351d4a90bf9e86459496b561b7155a0ebb472a045761eaba188ac4d3d5356f",
+      "original2021StudentFacingHtmlSha256": "f16803cdade8304f976d57751d2e51ef03fba2fbfe7dae6c56c032c50fea7174",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Number Puzzles, Within 100 without Composing (15 minutes)",
+        "Activity 2: Centers: Choice Time (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? Kiran and Priya each have some marbles. Kiran has 14 marbles. Priya has 23 marbles. [visual] [visual] <path d=\"M116",
+        "Student Facing Choose a center. Number Puzzles [visual] [visual]"
+      ],
+      "sourceRequiredTaskInterpretation": "Play Number Puzzles within 100 without composing a new ten and record equations.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l04.center_no_compose; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify each generation genuinely stays in no-new-ten domain and follows original puzzle card constraints.",
+      "candidateDigitalFamily": "usccss.g1.u05.l04.center_no_compose",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 93,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L05",
+      "original2021FullTeacherLessonHtmlSha256": "73710b4c1ef184266111f990dd490865957c411ad149c3e65e972ac91bb42469",
+      "original2021TeacherPreparationSha256": "45805b8e86c9a780fa36f371f354a43735b95394c593eea480d70e77f5dcf265",
+      "original2021StudentFacingHtmlSha256": "5348f2bb4da8bf1ddeb690fbf56843e95b1d099900a4644f12eb0784322ce44c",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Choose a Way to Add (20 minutes)",
+        "Activity 2: Add `Em Up Partner (20 minutes)",
+        "Activity 3: Tyler's Teacher [OPTIONAL] (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual] <path",
+        "Student Facing Find the value of \\(8 + 47\\) . Show your thinking using drawings, numbers, or words. Student Response Teachers with a valid work email address can click he",
+        "Student Facing Practice Round: Show your thinking using drawings, numbers, or words. Equation: __________________________________ [visual] [visual] <div aria-describedby="
+      ],
+      "sourceRequiredTaskInterpretation": "Find 8+47 using the make-ten strategy; compare related partner adding strategies.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l05.make_new_ten; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check correct regrouping/ten creation and resulting 55, plus Student Facing representation.",
+      "candidateDigitalFamily": "usccss.g1.u05.l05.make_new_ten",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 94,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L06",
+      "original2021FullTeacherLessonHtmlSha256": "a58ee11a551f51771aca99deb4319b5a0f40f8366b217ef575971abdfbb2d436",
+      "original2021TeacherPreparationSha256": "1bbe707720ab3370c673dccbd84c4016c7609a5bb47e508e502bc8a74e20655b",
+      "original2021StudentFacingHtmlSha256": "90c3cb131f71170c022705ad5e676cfd900131c207a925a771ad91d2622723ef",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: How Many to the Next Ten? (10 minutes)",
+        "Activity 2: Elena and Andre Add (15 minutes)",
+        "Activity 3: Introduce Target Numbers, Add Ones (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(8 + 2\\) \\(8 + 5\\) \\(9 + 8\\) \\(7 + 6\\) Student Response Teachers with a valid work email address can click her",
+        "Student Facing Find the number that makes each equation true. Be ready to explain your thinking in a way that others will understand. [visual] [visual] <button class=\"js-",
+        "Student Facing Elena and Andre found the value of \\(34 + 9\\) . Elena started with \\(34 + 6 = 40\\) . What does Elena need to do next? Show your thinking using drawings, nu"
+      ],
+      "sourceRequiredTaskInterpretation": "Find unknown digits that make the displayed addition equations true and show how to reach the next ten.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l06.explain_make_ten_equations; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review equality position and ten-making explanation, not only the resulting number.",
+      "candidateDigitalFamily": "usccss.g1.u05.l06.explain_make_ten_equations",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 95,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L07",
+      "original2021FullTeacherLessonHtmlSha256": "b8437e235cba98c3fc020e2d0cbe0cbd0a0eb1ba5067662b9abfa7a683bf34af",
+      "original2021TeacherPreparationSha256": "90e4768c60f81198c12b2f46682b9055435d1c0b2fe7c8aa19ecdb08be94315a",
+      "original2021StudentFacingHtmlSha256": "640f6560ed2f9d4d2455531cd6977864305cfe91577469453252d024745d248c",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: A Ten or Not a Ten? (15 minutes)",
+        "Activity 2: Missing Numbers (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,",
+        "Student Facing Jada likes to look for ways to make a new ten when she adds. Would she be able to a make a new ten when she adds to find the value of these sums? If Jada c",
+        "Student Facing Lin's brother spilled water on her math work! Figure out what number Lin wrote before it got smudged. Lin wrote a one-digit number with which you can make "
+      ],
+      "sourceRequiredTaskInterpretation": "Decide whether each addition makes a new ten, using Jada's example and missing-number cases.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l07.detect_new_ten; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify actual ones-place threshold and yes/no reasoning with source problems, including positive and negative cases.",
+      "candidateDigitalFamily": "usccss.g1.u05.l07.detect_new_ten",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 96,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L08",
+      "original2021FullTeacherLessonHtmlSha256": "38e9b69a54b2cd0443d1fffe300237f8470152fa24ae92867b319f534efb1870",
+      "original2021TeacherPreparationSha256": "ac0a5c1e267857fd3f3e3249669f293969d3966332aea43690b46512c6081338",
+      "original2021StudentFacingHtmlSha256": "1929e21623faff7459d5811a907986488932b7e137f569ef16dd5ff69d13607c",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Target Numbers, Add Tens or Ones (15 minutes)",
+        "Activity 2: Centers: Choice Time (25 minutes)",
+        "Activity 3: Addition Stories [OPTIONAL] (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(68 + 2\\) \\(3 + 68\\) \\(5 + 45\\) \\(45 + 7\\) Student Response Teachers with a valid work email address can click",
+        "Student Facing Choose a center. Target Numbers [visual] [visual] <div class=\"im-c-modal__",
+        "Student Facing Priya watched a football game. The home team scored 35 points in the first half. In the second half they scored 6 more points. How many points did they sco"
+      ],
+      "sourceRequiredTaskInterpretation": "Choose Target Numbers center with additions of tens or ones, then justify target achievement.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l08.center_add_within100; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Audit valid target ranges and game rules; success with one arithmetic item cannot certify the center.",
+      "candidateDigitalFamily": "usccss.g1.u05.l08.center_add_within100",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 97,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L09",
+      "original2021FullTeacherLessonHtmlSha256": "c8f3f91e51f4013e8771beb2cf3d1ea0206be8d3afa2812182cd024f9ff1e032",
+      "original2021TeacherPreparationSha256": "960e6eb093f63dc4a0a0d1ad2581381ee13cd4d9131bda919c2ebfe6d044f2ab",
+      "original2021StudentFacingHtmlSha256": "f0b17fad278a12c6be8ae9fbe47255a7f47c8c852a92d01044e89b9df177ef90",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: How Did You Find the Value? (20 minutes)",
+        "Activity 2: Grab and Add (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(38 + 2\\) \\(40 + 3\\) \\(38 + 5\\) \\(38 + 15\\) Student Response Teachers with a valid work email address can clic",
+        "Student Facing Find the value of \\(17 + 36\\) . Show your thinking using drawings, numbers, or words. Student Response Teachers with a valid work email address can click h",
+        "Student Facing Round 1: Grab a handful of towers of ten and a handful of single cubes. I have ______________ cubes and my partner has ______________ cubes. How many cubes"
+      ],
+      "sourceRequiredTaskInterpretation": "Find 17+36, using drawings, numbers or words, and compare strategies for adding two two-digit numbers.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l09.two_digit_composing; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check composition of a new ten and a supported visual or teacher assessment path, not just 53.",
+      "candidateDigitalFamily": "usccss.g1.u05.l09.two_digit_composing",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 98,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L10",
+      "original2021FullTeacherLessonHtmlSha256": "fe86a27f015f52b7c360b454267bb39b94fd82932bcee3beae064b6b03978c4d",
+      "original2021TeacherPreparationSha256": "68dde060fd68fb0bb825bc7c743e408eea2e04a1abc3d05d27549e875775eb7b",
+      "original2021StudentFacingHtmlSha256": "1e049f8c114dff8cf4fefccfda27ca6791b098aa094df4e0097b308216ac709b",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Priya`s Work (10 minutes)",
+        "Activity 2: Finish the Work (15 minutes)",
+        "Activity 3: Introduce Number Puzzles, Within 100 with Composing (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual]",
+        "Student Facing Find the value of \\(37 + 26\\) . Priya's work [visual] [visual] <div aria-describedby=\"dialog-long-description-ImageFile-38597\" aria-label=\"Image informatio",
+        "Student Facing Each expression shows a first step to find the number that makes each equation true. Finish the work to find the number that makes each equation true. Show"
+      ],
+      "sourceRequiredTaskInterpretation": "Understand Priya's representation of 37+26 and finish several regrouped tens-and-ones additions.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l10.tens_tens_ones_ones; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review tens and ones representations of partial work; answer 63 alone is inadequate to prove model understanding.",
+      "candidateDigitalFamily": "usccss.g1.u05.l10.tens_tens_ones_ones",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 99,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L11",
+      "original2021FullTeacherLessonHtmlSha256": "dd527eb2551cea14d16cb91dce79fd12e770ce69f6e5f1321af4e65ee255b71a",
+      "original2021TeacherPreparationSha256": "89bd8ae8e74ffeb5dc5aba633f49ad463c73f37fc7895d7120d13b2daaeeac6d",
+      "original2021StudentFacingHtmlSha256": "802445ee69a402c2ec738326374e33fb93fc496e90a8abbbd5b7b60859905055",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: How Much Litter? (15 minutes)",
+        "Activity 2: It's Your Turn to Add (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(24 + 3 = 54\\) \\(42 + 5 = 47\\) \\(42 + 30 = 45\\) Student Response Teacher",
+        "Student Facing [visual] [visual]",
+        "Student Facing Find the value of \\(23 + 68\\) . Show your thinking using drawings, numbers, or words. If you have time: Think about a math story this expression could repr"
+      ],
+      "sourceRequiredTaskInterpretation": "Solve original litter cleanup addition stories and represent or explain how much was gathered.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l11.explain_addition_method; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify each original story quantity and explanation, including student-facing images, not a generated one-line sum.",
+      "candidateDigitalFamily": "usccss.g1.u05.l11.explain_addition_method",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 100,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L12",
+      "original2021FullTeacherLessonHtmlSha256": "20df0875849ea1176e8b0eb74c6275e62da72f2d030adcf312482f4c3e9fcfc2",
+      "original2021TeacherPreparationSha256": "3eb8ed2b44b6a99f3b7bce3de8deb9b7b5056e66dbfc2f18cb86d56625c1f034",
+      "original2021StudentFacingHtmlSha256": "5297408925281f87e2704fce6c4e642ee1c5acae07c07610228024c6f17be089",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Add Two-digit Numbers Within 100 (15 minutes)",
+        "Activity 2: Reason About Addition (20 minutes)",
+        "Activity 3: Ways We Volunteer [OPTIONAL] (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(7 + 3\\) \\(37 + 3\\) \\(7 + 8\\) \\(57 + 8\\) Student Response Teachers with a valid work email address can click h",
+        "Student Facing Find the value of each sum using any method that you want. Show your thinking using drawings, numbers, or words. Write equations to represent your thinking",
+        "Student Facing 37 22 18 56 41 Choose 2 numbers from above and write an addition expression to make each statement true. This sum has the smallest possible value. Expressi"
+      ],
+      "sourceRequiredTaskInterpretation": "Solve multiple two-digit sums with a chosen method, drawing or writing equations to show why the result is correct.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l12.write_addition_equations; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review alternative strategies and at least one intermediate equation; correctness-only proof remains partial.",
+      "candidateDigitalFamily": "usccss.g1.u05.l12.write_addition_equations",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 101,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L13",
+      "original2021FullTeacherLessonHtmlSha256": "e048b84f04ebe8caeb2c5f638b427a56e4e6b7afeac787fb1894a1c7473704fe",
+      "original2021TeacherPreparationSha256": "98214b672c3a04a2726ac105efa8e99e57b1afe4421cf6302e8c6331cdad7cf4",
+      "original2021StudentFacingHtmlSha256": "90e58fdce2622c7a720dd14ff00d79ecfb29875988351aefa4ec3310edb94d20",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Target Numbers, Add Two-Digit Numbers (20 minutes)",
+        "Activity 2: Introduce Five in a Row, Add within 100 with Composing (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Choose a center. Target Numbers [visual] [visual] <div class=\"im-c-modal__",
+        "Student Facing Choose a center. Five in a Row [visual] [visual] <div class=\"im-c-"
+      ],
+      "sourceRequiredTaskInterpretation": "Choose Target Numbers and Five in a Row centers to add within 100 with new-ten composition.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l13.center_add_within100; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Audit original center rules, targets and alternate choice flow; a single score cannot prove live partner participation.",
+      "candidateDigitalFamily": "usccss.g1.u05.l13.center_add_within100",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 102,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U05:L14",
+      "original2021FullTeacherLessonHtmlSha256": "7a2e3ed4d8e2ccb705f24d97457d2e528bea0510119d46cf2aad2dc446091288",
+      "original2021TeacherPreparationSha256": "aef287abd6682c3b9c5665c66a1800b9424f481a181437f425675fa59b674ac3",
+      "original2021StudentFacingHtmlSha256": "2120af8d7f9be1503686809385c13cde90d3e94f5b26e27c677774ec7dff5a22",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Cans for the Food Drive (20 minutes)",
+        "Activity 2: Boxes of Cans (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many cans did the first graders collect for the food drive? [visual] [visual]",
+        "Student Facing Student Cans Collected Lin 18 Priya 24 Han 13 Tyler 30 Partner A: Write an equation to represent your thinking. How many cans did Lin and Priya collect alt",
+        "Student Facing Room Cans Collected on Day 1 Kindergarten 18 1st grade 51 2nd grade 23 3rd grade 13 4th grade 39 5th grade 40 6th grade 8 7th grade 29 8th grade 30 Find di"
+      ],
+      "sourceRequiredTaskInterpretation": "Use Food Drive cans table (Lin 18, Priya 24, Han 13, Tyler 30) to compute and explain two-group sums and packing.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u05.l14.optional_food_drive_numeric; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review full chart and all two-part story constraints, especially regrouping and representation with cans/boxes.",
+      "candidateDigitalFamily": "usccss.g1.u05.l14.optional_food_drive_numeric",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
     },
     {
       "ordinal": 103,
@@ -216,6 +1387,203 @@
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
     },
     {
+      "ordinal": 106,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L04",
+      "original2021FullTeacherLessonHtmlSha256": "b816ef46daff8a9e4940e2155defefb0ffdef95795502cc36580f76e100d7717",
+      "original2021TeacherPreparationSha256": "85ffa8f28e6d374031eaad1b3f8d7c247d64a0817c2828b433a8a1d7b6b01c4c",
+      "original2021StudentFacingHtmlSha256": "3ba209cbb2ceaa661ec74265463d592cf5fc5dc6b4d17b671d93af40987e2f20",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce How Close? Add to 100 (20 minutes)",
+        "Activity 2: Centers: Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(9 + 6\\) \\(29 + 6\\) \\(39 + 7\\) \\(39 + 9\\) Student Response Teachers with a valid work email address can click ",
+        "Student Facing Choose a center. Target Numbers [visual] [visual] <div class=\"im-c-modal__"
+      ],
+      "sourceRequiredTaskInterpretation": "Play How Close? Add to 100 with teacher-guided estimate/target comparison.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l04.center_add_compare; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check absolute differences and game goal against original number cards; physical game remains unobserved.",
+      "candidateDigitalFamily": "usccss.g1.u06.l04.center_add_compare",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 107,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L05",
+      "original2021FullTeacherLessonHtmlSha256": "1f9bca82de04d074fa9eb61f4e117a69ddbc3c5c20c9ace7f893cff41782f027",
+      "original2021TeacherPreparationSha256": "abcd86b8e263753ef168fc185f5bd7d2b8661197d9927543e27fe4ab205b0f84",
+      "original2021StudentFacingHtmlSha256": "84f448581abe068feba13fa3c1c9d485a1c0f33ea3bda6b983d4c102f72dedc1",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Lengths of Creepy, Crawly Things (15 minutes)",
+        "Activity 2: Measure More Creepy, Crawly Things (10 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,1",
+        "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
+      ],
+      "sourceRequiredTaskInterpretation": "Measure lengths of creepy-crawly creatures with connecting cubes and compare several objects.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l05.measure_connecting_cubes; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review cube adjacency and no-gap unit counts across the source animal pictures; actual tabletop measuring is teacher-led.",
+      "candidateDigitalFamily": "usccss.g1.u06.l05.measure_connecting_cubes",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 108,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L06",
+      "original2021FullTeacherLessonHtmlSha256": "c0ac17b7bd1be968c8d7c6a7cccba29eac97a959fbae84a7976c737e54b3c8fc",
+      "original2021TeacherPreparationSha256": "cfe598f934fa20cc6980e39f90dbce96a9a4d4a18c091db2f991a0b0ed079a27",
+      "original2021StudentFacingHtmlSha256": "9594ebb0ebe401b75141266890408f615c7a934948481d0b3aa02dc657b0c408",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Measure with Paper Clips (10 minutes)",
+        "Activity 2: Measure Our Workbook (10 minutes)",
+        "Activity 3: Measure Strips of Tape (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How long is the desk? [visual] [visual] <div id=\"",
+        "Student Facing Circle whether you agree or disagree with each student. Explain why you agree or disagree. [visual] [visual] <div aria-describedby=\"dialog-long-description",
+        "Student Facing Use paper clips to measure each strip of tape. The length of Tape A is _________ paper clips. The length of Tape B is _________ paper clips. The length of "
+      ],
+      "sourceRequiredTaskInterpretation": "Measure the same desk/workbook/tape lengths with paper clips and justify agreeing/disagreeing with classmates.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l06.measure_paperclips; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Confirm paper-clip unit size, no gaps/overlaps and multiple source measurement figures; physical measurement not simulated.",
+      "candidateDigitalFamily": "usccss.g1.u06.l06.measure_paperclips",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 109,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L07",
+      "original2021FullTeacherLessonHtmlSha256": "a604350cbcfcffc9d05a100683ebb077ae0df79ae351412464c5ca088d809172",
+      "original2021TeacherPreparationSha256": "468912dc9aaa1513ad0cfb8d918b63d66f3e0e09ffabd9438d70e3b55ba12f14",
+      "original2021StudentFacingHtmlSha256": "e7e0b5e888b0e5aeca24990562694077ed45e852398457a7966da5a35440b9ce",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Measure With Different Objects (20 minutes)",
+        "Activity 2: Measure the Teacher's Shoe (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual] <",
+        "Student Facing Circle the 3 objects you will use: connecting cubes small cubes small paper clips large paper clips Measure the length of Jeison's foot with each object yo",
+        "Student Facing Andre measured his teacher's shoe and said it was 15 connecting cubes long. [visual] [visual] <div aria-describedby=\"dialog-long-description-ImageFile-3766"
+      ],
+      "sourceRequiredTaskInterpretation": "Choose THREE different measuring objects and compare their unit counts for Jeison's foot and the teacher's shoe.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l07.unit_length_matters; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check that same physical length gets different counts when unit sizes differ; verify three actual original units.",
+      "candidateDigitalFamily": "usccss.g1.u06.l07.unit_length_matters",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 110,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L08",
+      "original2021FullTeacherLessonHtmlSha256": "ce9ca220d75f0c6735f1a7fba607444fca514a4b0d26b99d6428ba55d7573b1c",
+      "original2021TeacherPreparationSha256": "0ab0fae63c51848816ff63b210745e41763848e8105160af733b73e221d824c7",
+      "original2021StudentFacingHtmlSha256": "f578497fd62863ad2dfc87a09c44ef9e1ca0c9b810b9aac3b6b5ca154f6c6c3b",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Long Lengths with Small Cubes (25 minutes)",
+        "Activity 2: Representations of Large Numbers (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Represent your measurement using drawings, numbers, or words. Student Response Teachers with a valid work email address can click here to register or sign ",
+        "Student Facing [visual] [visual] <div id=\"dialog-long-description-TikzFile-150"
+      ],
+      "sourceRequiredTaskInterpretation": "Measure long objects with small cubes, represent large organized numbers and explain grouping up to 110.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l08.count_to110_cube_groups; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify long strip/cube artwork, partial tens and leftover ones; typed place-value answer doesn't prove measuring.",
+      "candidateDigitalFamily": "usccss.g1.u06.l08.count_to110_cube_groups",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 111,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L09",
+      "original2021FullTeacherLessonHtmlSha256": "1bee642ee0a01a82060d33f0004d751f801ebb88e93a6cfb6ed866f02a3648f2",
+      "original2021TeacherPreparationSha256": "3c4098931483131fce3921bc3fb9d69abf8691917a4291793c752b1098ed3fc9",
+      "original2021StudentFacingHtmlSha256": "7a1bbaa3ac755cb79ebd8429add0346f41990079b99ab4031457cfa9a60c8495",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Measure Animal Lengths (15 minutes)",
+        "Activity 2: Write Numbers to Represent Animal Lengths (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Animal:________________________________ Length: _______________________ Show your thinking using drawings, numbers, or words. Student Response Teachers wit",
+        "Student Facing For each animal, write the number of cubes that represent its length. The beaver is ______________________ long. The dog is ______________________ long. Th"
+      ],
+      "sourceRequiredTaskInterpretation": "Write the cube-count numerals for original beaver, dog and other animal lengths up to 120.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l09.write_number_to120; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Review picture-to-number mapping and source animal labels; image-based quantities require verified actual graphics.",
+      "candidateDigitalFamily": "usccss.g1.u06.l09.write_number_to120",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 112,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L10",
+      "original2021FullTeacherLessonHtmlSha256": "957716d3b60d94d1ac79ad5925ef681327f7bf125302cc6a79592ce458bed384",
+      "original2021TeacherPreparationSha256": "e9ecffd3a504eca764eff0251525c6109ea7687c3fc33b681afda5d074b281a5",
+      "original2021StudentFacingHtmlSha256": "e6e5b7b58dd7ed67f94a530986772c42cd32bbf0f263265ddb60b22a55937a5a",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Estimate and Measure, Choose Your Unit (20 minutes)",
+        "Activity 2: Centers: Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Is each statement true or false? Be prepared to explain your reasoning. \\(24 + 30 = 44\\) \\(24 + 40 = 64\\) \\(30 + 45 = 75\\) \\(32 + 45 = 76\\) Student Respons",
+        "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
+      ],
+      "sourceRequiredTaskInterpretation": "Estimate and measure using a chosen unit during How Close? and other centers.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l10.center_measure_and_add; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify whether Practice differentiates estimate from measured result and unit selection; real observation cannot be inferred.",
+      "candidateDigitalFamily": "usccss.g1.u06.l10.center_measure_and_add",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 113,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L11",
+      "original2021FullTeacherLessonHtmlSha256": "6fbdb8d29ff7fcfbf58920b1a34e57c5f3c8b38358ef77de1ccda44f1d08a19c",
+      "original2021TeacherPreparationSha256": "7d5bb7bcf31f80b42dbe1dee890e850190e131987bbce293e109ceff71a7ee8c",
+      "original2021StudentFacingHtmlSha256": "234d5f12167e2c3c6d8284ca20b4e54f4a700b87ca396b84c74e2899d8b49286",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: The Length of Our Shoes (20 minutes)",
+        "Activity 2: Shoe Stories (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing What do you notice? What do you wonder? [visual] [visual]",
+        "Student Facing My teacher's shoe is ____________ connecting cubes long. My shoe is ____________ connecting cubes long. My partner's shoe is ____________ connecting cubes ",
+        "Student Facing Show your thinking using drawings, numbers, words, or equations. Clare's shoe is 9 cubes long. Han's shoe is 7 cubes long. How many cubes long are Clare's "
+      ],
+      "sourceRequiredTaskInterpretation": "Measure the teacher's shoe, student's shoe and partner's shoe in equal-size connecting cubes, then solve shoe stories.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l11.compare_shoe_lengths; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Audit three concrete measurements and comparison stories; no fabricated real-person shoe measurements.",
+      "candidateDigitalFamily": "usccss.g1.u06.l11.compare_shoe_lengths",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
       "ordinal": 114,
       "lessonCode": "PED:US-CCSS-MATH:G1:U06:L12",
       "original2021FullTeacherLessonHtmlSha256": "66b1985b33e5fff962e7586e95c4a8ad933faba867c1f522353e6bd31e31910e",
@@ -242,6 +1610,31 @@
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
     },
     {
+      "ordinal": 115,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L13",
+      "original2021FullTeacherLessonHtmlSha256": "997f1161670ac8d0e986eec63bbc6bcb597543553a2a1b7c72329fbfcab05b9e",
+      "original2021TeacherPreparationSha256": "b388ee70ac8272c764915c94e4f1b6481249ca694d157ba06e33131992579aa2",
+      "original2021StudentFacingHtmlSha256": "4af6727972a25a3ccc9f1a79a7a5259831d787e975d2a340264453803ed94a0f",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: How Many to Start? (20 minutes)",
+        "Activity 2: One Representation, Three Stories (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(15 + 10\\) \\(15 + 15\\) \\(25 + 25\\) \\(25 + 28\\) Student Response Teachers with a valid work email address can c",
+        "Student Facing Elena bought a bag of beads to make bracelets. She takes out 9 beads to make a bracelet. There are 11 beads left in the bag. How many beads were in the bag",
+        "Student Facing Discuss with your partner how the drawing shows each problem. [visual] [visual] <div class="
+      ],
+      "sourceRequiredTaskInterpretation": "Find Elena's initial bead count when 9 were removed and 11 remain; match one representation to three story problems.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l13.take_from_unknown; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check start-unknown relation 20-9=11 and different equations/story positions; original drawings need review.",
+      "candidateDigitalFamily": "usccss.g1.u06.l13.take_from_unknown",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
       "ordinal": 116,
       "lessonCode": "PED:US-CCSS-MATH:G1:U06:L14",
       "original2021FullTeacherLessonHtmlSha256": "40c7df6e1ec09643c59e8a0277086012d596c36021794b9050d31995791f19e6",
@@ -264,6 +1657,55 @@
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 117,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L15",
+      "original2021FullTeacherLessonHtmlSha256": "4c610cb7d33d9b528d78efefd3605fe82e24aaff1fbbe6c03be47bba36b74291",
+      "original2021TeacherPreparationSha256": "bfa1cadac2cb04f2bd53f0f6472da28528fbd9b08820247d5cfc1e46d36dd3b8",
+      "original2021StudentFacingHtmlSha256": "7fa656eb42fedaaae515eb3a2cd12ff2d6e2ad6af5e4824ac5779355023133d8",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Story Problems about Origami (10 minutes)",
+        "Activity 2: Gallery Walk: Write Equations (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many cranes are there in the image? [visual] [visual]",
+        "Student Facing Show your thinking using drawings, numbers, or words. Clare made some paper cranes. She gives 12 of them to Han. Now Clare has 7 cranes left. How many cran",
+        "Student Facing Write an equation that matches your classmates' work for each story problem. Equation: ________________________________ Equation: _________________________"
+      ],
+      "sourceRequiredTaskInterpretation": "Find initial origami cranes when Clare gave 12 away and has 7 remaining; write equations and compare gallery work.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l15.write_story_equations; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check unknown-start subtraction and multiple correct inverse equations; actual gallery explanation unobserved.",
+      "candidateDigitalFamily": "usccss.g1.u06.l15.write_story_equations",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 118,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L16",
+      "original2021FullTeacherLessonHtmlSha256": "b96e0b48fba434df78098a2654230f49a380d3ae6ddf2319af0c04174d07d4c6",
+      "original2021TeacherPreparationSha256": "e661079055a10f71dafd3d1d8dab5d7dfee925ae93c7468e616bbabea8437a8d",
+      "original2021StudentFacingHtmlSha256": "ec30d67ac184d24a02bd1d58bd2e9da9b298d62b75ee56944886058b9e2dfc84",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Counting Collections, Estimate and Count Up to 120 (20 minutes)",
+        "Activity 2: Centers: Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(65 + 20\\) \\(85 + 1\\) \\(65 + 20 + 1\\) \\(65 + 21\\) Student Response Teachers with a valid work email address ca",
+        "Student Facing Choose a center. Write Numbers [visual] [visual] <div class=\"im-c-modal__co"
+      ],
+      "sourceRequiredTaskInterpretation": "Estimate and count collections up to 120, including choice-center writing numbers.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l16.center_mixed_math; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify actual collection grouping and student estimates are not misidentified as machine-generated answers.",
+      "candidateDigitalFamily": "usccss.g1.u06.l16.center_mixed_math",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
     },
     {
       "ordinal": 119,
@@ -338,6 +1780,30 @@
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 122,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L03",
+      "original2021FullTeacherLessonHtmlSha256": "fd3ab3d3aa06a8d49d8cc78c078e4068bf2f4f7e40b933e3093ca6b7df56dbe7",
+      "original2021TeacherPreparationSha256": "8c90389d4170777cebc04a52323b49aeda59c16323488a0a9d6fd4417f5f3a57",
+      "original2021StudentFacingHtmlSha256": "4c8700539a6a9e38cee7b92968dea0d24a045327616799977b3bc8bcaf283cf8",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Card Sort: Flat Shapes (15 minutes)",
+        "Activity 2: Shape Sort Gallery Walk (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.",
+        "Student Facing Group 1: They sorted Group 2: They sorted Group 3: They sorted [visual] [visual] <div aria-describedby=\"dialog-long-description-ImageFile-43567\" aria-label"
+      ],
+      "sourceRequiredTaskInterpretation": "Sort FLAT shape cards into self-chosen categories and explain why groups' sorting choices differ.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u07.l03.sort_flat_shapers; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check category rationale and nonexamples, not just the correct name of one flat shape.",
+      "candidateDigitalFamily": "usccss.g1.u07.l03.sort_flat_shapers",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
     },
     {
       "ordinal": 123,
@@ -443,6 +1909,30 @@
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
     },
     {
+      "ordinal": 127,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L08",
+      "original2021FullTeacherLessonHtmlSha256": "67220bb3d8d1eb7a99a9c5568a72ee694f4289746e56d5c6f353f135195d531f",
+      "original2021TeacherPreparationSha256": "9da076c4e8eee4655aa4dd2b3ed079394f97364d1d925efa0d144568c468341a",
+      "original2021StudentFacingHtmlSha256": "e5dae29463831702c8568fe9b648de532353d370749db047707f2aed88f3be36",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Match Mine, Solid Shapes (20 minutes)",
+        "Activity 2: Centers: Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(6 + 4 + 8\\) \\(6 + 8 + 4\\) \\(6 + 8 + 5\\) \\(6 + 5 + 9\\) Student Response Teachers with a valid work email addre",
+        "Student Facing Choose a center. Picture Books [visual] [visual] <div class=\"im-c-modal__co"
+      ],
+      "sourceRequiredTaskInterpretation": "Play Match Mine with solid-shape objects, describing them so the partner recreates an equivalent construction.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u07.l08.center_shapes_add_subtract; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify shape attributes and source matching rules; no claim of actual partner tactile reconstruction.",
+      "candidateDigitalFamily": "usccss.g1.u07.l08.center_shapes_add_subtract",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
       "ordinal": 128,
       "lessonCode": "PED:US-CCSS-MATH:G1:U07:L09",
       "original2021FullTeacherLessonHtmlSha256": "379696977db7eab4c7dfe5b67373e94be92723b5ad5c823e74995ffee477a759",
@@ -469,6 +1959,32 @@
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
     },
     {
+      "ordinal": 129,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L10",
+      "original2021FullTeacherLessonHtmlSha256": "a6ba92ee0f724437de42e7e7e2b9bdeb9a96e201fb378b2f33f7e1b71bcec7d7",
+      "original2021TeacherPreparationSha256": "297266aed8bd4f92d5a5ec832645f645614f1d27ec0cbdd03d70957328b3569d",
+      "original2021StudentFacingHtmlSha256": "fcc20f1a75d53ba3ab4b2617540a079696ef73ea5e3759673bb4e76d98de6572",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Color a Piece (10 minutes)",
+        "Activity 2: Card Sort: Shaded Pieces (15 minutes)",
+        "Activity 3: Describe Equal Pieces (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600",
+        "Student Facing Split the square into halves. [visual] [visual] <div class=\"im-c-mod",
+        "Student Facing Sort the cards into categories in a way that makes sense to you. Explain how you sorted the cards. [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,6"
+      ],
+      "sourceRequiredTaskInterpretation": "Partition a square into halves, shade one selected part and sort shaded-piece cards with a mathematical explanation.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u07.l10.parts_make_whole; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Audit equal areas, whole/part vocabulary and shaded card variability, not only HALF vs FOURTH label.",
+      "candidateDigitalFamily": "usccss.g1.u07.l10.parts_make_whole",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
       "ordinal": 130,
       "lessonCode": "PED:US-CCSS-MATH:G1:U07:L11",
       "original2021FullTeacherLessonHtmlSha256": "e18e2f818e043f76e2dd961c7756cddeba5b88acb1e0b202957bc2a57efecc83",
@@ -493,6 +2009,30 @@
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 131,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U07:L12",
+      "original2021FullTeacherLessonHtmlSha256": "84a063fa1d074552de7b57a56b5e97c0862cb97700dd58c90247f63bd128c01c",
+      "original2021TeacherPreparationSha256": "2d02f272e19adabdab105d1e99e202f9514ad09f75ea39689bf6f0e9722fe801",
+      "original2021StudentFacingHtmlSha256": "cf6be6d33d8f27fb6223655fd5d637c292237c47e33790ec52a850f36c94d1be",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Introduce Can You Draw It, Grade 1 Shapes (20 minutes)",
+        "Activity 2: Centers: Choice Time (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual] <path d=\"M1162.5,198.75,1001.25",
+        "Student Facing Choose a center. Picture Books [visual] [visual] <path d=\"M1162.5,198.75,1001."
+      ],
+      "sourceRequiredTaskInterpretation": "Play Can You Draw It? shape center and describe 2D forms while selecting teacher-guided centers.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u07.l12.center_shape_number; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify drawing requirement, shape attributes, and teacher rubrics; numeric label alone cannot claim creation.",
+      "candidateDigitalFamily": "usccss.g1.u07.l12.center_shape_number",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
     },
     {
       "ordinal": 132,
@@ -622,6 +2162,157 @@
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
     },
     {
+      "ordinal": 137,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L01",
+      "original2021FullTeacherLessonHtmlSha256": "6391e9f728e6afc9244d6542a396c12f13a49541722b834ed8822e8c59e709ad",
+      "original2021TeacherPreparationSha256": "32a58089fdc8d6fb8473fd35e247a965462231e6d42261c25bbe3cf841903f4a",
+      "original2021StudentFacingHtmlSha256": "179bdf8a3f4f51fa60adb05f8d30dcfb72e9c98309edac43de8d6bb31b09e681",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Sums I've Got (15 minutes)",
+        "Activity 2: Centers: Choice Time (25 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual] <div class=\"im-c-mo",
+        "Student Facing Color the sums you know the value of from memory. [visual] [visual] <div id=",
+        "Student Facing Choose a center. Check it Off [visual] [visual] <div class=\"im-c-modal__cont"
+      ],
+      "sourceRequiredTaskInterpretation": "Identify sums within ten already known from memory, color the familiar ones and practice for fluency.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u08.l01.addition_fluency_within10; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Distinguish demonstrated retrieval fluency from repeated recalculated responses; original coloring is learner-produced.",
+      "candidateDigitalFamily": "usccss.g1.u08.l01.addition_fluency_within10",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 138,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L02",
+      "original2021FullTeacherLessonHtmlSha256": "da0061db3582b6b3692fee6e2f4bb0066315e6085e690bcba3670e427b00e408",
+      "original2021TeacherPreparationSha256": "4abf9188959bde2324d56b7eb5a94ebb511859fc08852ec19810950679014c60",
+      "original2021StudentFacingHtmlSha256": "e47751bde211416d665055e1d15b56fb5f405418945f97422f7f0112d3055d1b",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Cube Tower Addition and Subtraction (15 minutes)",
+        "Activity 2: Find the Unknown Number (10 minutes)",
+        "Activity 3: Differences I've Got (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(5 + 4\\) \\(4 + 5\\) \\(9 - 4\\) \\(9 - 5\\) Student Response Teachers with a valid work email address can click her",
+        "Student Facing Write an addition and a subtraction equation to match the connecting cubes. [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,3",
+        "Student Facing Find the number that makes each equation true. Explain to your partner how you found it. \\(4 + \\boxed{\\phantom{\\frac{aaai}{aaai}}} = 9\\) \\(9 - 5 = \\boxed{\\"
+      ],
+      "sourceRequiredTaskInterpretation": "Write both addition and subtraction equations for connecting-cube towers; find missing related facts.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u08.l02.inverse_add_subtract; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify related operations/fact families using identical cubes/quantities, not two unrelated correct answers.",
+      "candidateDigitalFamily": "usccss.g1.u08.l02.inverse_add_subtract",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 139,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L03",
+      "original2021FullTeacherLessonHtmlSha256": "df5b1c12e3924da9f8b992c7afcbf7cd572d375ed1a30c0a92dc2d0f2efd3a1f",
+      "original2021TeacherPreparationSha256": "8fb301904358135b78b1d243afc5b600e9a485e596cff70321e16be4501ab688",
+      "original2021StudentFacingHtmlSha256": "8ea7cd0cbb96508e04b9105c64bb6e72806908a3e24f821501eeee8aa2001aad",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Many Ways to Add and Subtract (20 minutes)",
+        "Activity 2: Heads Up (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(6 + 7\\) \\(13 - 7\\) \\(7 + 8\\) \\(15 - 7\\) Student Response Teachers with a valid work email address can click h",
+        "Student Facing Circle 1 addition expression and 1 subtraction expression. \\(5+9\\) \\(14-8\\) \\(4 + 7\\) \\(15-9\\) \\(6+ 4 +4\\) \\(13-6\\) Find the valu",
+        "Student Facing Write an equation for each round you play. Round 1: ________________________________ Round 2: ________________________________ Round 3: ___________________"
+      ],
+      "sourceRequiredTaskInterpretation": "Choose one addition and one subtraction expression, calculate both and explain methods to a partner.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u08.l03.fluency_within20; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Validate both operation types and source expression choices; no false claim of actual partner exchange.",
+      "candidateDigitalFamily": "usccss.g1.u08.l03.fluency_within20",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 140,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L04",
+      "original2021FullTeacherLessonHtmlSha256": "a861ababa5f28c07fc50f133f9424f107b2eac133cdcefa40a685f8b9a59c7eb",
+      "original2021TeacherPreparationSha256": "75d20f217d43235bb699fc7752a68329908b0a02f390383860d272659fb3dd37",
+      "original2021StudentFacingHtmlSha256": "ed332eb6083369e51bebe3743637584c8a96cd6665b5a196167d9f7e71cc213c",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Field Trip to the Aquarium (20 minutes)",
+        "Activity 2: Find the Unknown Number (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? How do you see them? [visual] [visual]",
+        "Student Facing Solve each problem. Show your thinking using drawings, numbers, or words. Clare saw 8 sea turtles swimming together in the tank. Some more turtles joined t",
+        "Student Facing Clare watched 16 bullfrogs at the aquarium. Then some of them swam away. Now Clare can only see 9 bullfrogs. How many bullfrogs swam away? Andre wrote \\(16"
+      ],
+      "sourceRequiredTaskInterpretation": "Solve aquarium change-unknown stories (8 sea turtles plus unknown joining) and represent the equation.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u08.l04.change_unknown_story; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Verify unknown change versus unknown result across story problems, and original turtle model.",
+      "candidateDigitalFamily": "usccss.g1.u08.l04.change_unknown_story",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 141,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L05",
+      "original2021FullTeacherLessonHtmlSha256": "319e05d2d15992b41580bb454092aacaca5d9133c084a45fd5063ebff52aebba",
+      "original2021TeacherPreparationSha256": "c2a92790e546f0decf49114d9b54ec86cb895b8dce19ffbbec38ed81095e3cc5",
+      "original2021StudentFacingHtmlSha256": "52b65ea831546bf931defcb7fdf349bcf1bad823a97a7208a5bb1ffba54bbbbb",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: At the Planetarium (20 minutes)",
+        "Activity 2: Which Equations Match? (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(57 + 20 = 59\\) \\(66 - 4 = 62\\) \\(17 + 76 = 59\\) Student Response Teache",
+        "Student Facing Solve each problem. Show your thinking using drawings, numbers, or words. There are 7 first graders and some second graders at the planetarium. There are 1",
+        "Student Facing Circle 2 equations that can be used to solve each problem. Be ready to explain how the equations represent the story and why the other equation doesn't. No"
+      ],
+      "sourceRequiredTaskInterpretation": "Solve put-together planetarium stories with unknown first/second grade groups and select matching equations.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u08.l05.missing_part_story; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check total and unknown position, group sizes and at least two mathematically equivalent forms.",
+      "candidateDigitalFamily": "usccss.g1.u08.l05.missing_part_story",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
+      "ordinal": 142,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L06",
+      "original2021FullTeacherLessonHtmlSha256": "c3543159e0b1e5c757e3b171caf6425ae856bd2e86838df886d4aea1637dba08",
+      "original2021TeacherPreparationSha256": "7d14dd3dc06dda21e14bc0eccd0e7961daf7b1ab7e8ae184c48b2640b48e44a0",
+      "original2021StudentFacingHtmlSha256": "4e41fb1f943c740a41f4ab6a9f8522d47db4bcb6f6ee14dd8117b6bcaa8a3b00",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: The School Carnival (20 minutes)",
+        "Activity 2: How Many Rides? (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? \\(10 = 6 + 4\\) \\(16 - 5 = 11\\) \\(11 = 6 + 4 + 1\\) \\(3 + 8 = 11\\) Student Response Teachers with a valid work email address can cl",
+        "Student Facing Solve each problem. Show your thinking using drawings, numbers, or words. Lin has 7 tickets for rides. Mai has 12 tickets. How many more tickets does Mai h",
+        "Student Facing Write and answer 2 questions using the information. Use the picture for the first one if it is helpful. Diego went on 7 rides. Priya went on 11 rides. [vis"
+      ],
+      "sourceRequiredTaskInterpretation": "Solve carnival comparison stories (Mai has 12 tickets, Lin 7) and identify extra tickets/rides.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u08.l06.compare_difference_story; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Check 12-7 comparison gap as a relationship between persons, rather than subtracting unlabelled digits.",
+      "candidateDigitalFamily": "usccss.g1.u08.l06.compare_difference_story",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
+    },
+    {
       "ordinal": 143,
       "lessonCode": "PED:US-CCSS-MATH:G1:U08:L07",
       "original2021FullTeacherLessonHtmlSha256": "9c14ba5337fb82d9563274eabe5847ea75c521f41f96f1d1cff04668bf9f83d2",
@@ -646,6 +2337,31 @@
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 144,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U08:L08",
+      "original2021FullTeacherLessonHtmlSha256": "1891443191e0f5a8299cccdf5ce15b86cacd55f13707c3b4c5bb0118c63a5809",
+      "original2021TeacherPreparationSha256": "b976ab8f239f4193f5106ecb44b511994964f770b227b3b4b80be211d868bc7d",
+      "original2021StudentFacingHtmlSha256": "d1b28e72b4d038325f72465c7808b0c0cec01487e4e520a11cd0fe38e9a62d9c",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Represent Our Favorite Numbers (15 minutes)",
+        "Activity 2: Gallery Walk: Our Favorite Numbers (10 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing [visual] [visual]",
+        "Student Facing Choose a center. Compare [visual] [visual] <div class=\"im-c-modal__content im-c-c"
+      ],
+      "sourceRequiredTaskInterpretation": "Represent chosen favorite numbers in more than one way, then describe examples during a gallery walk.",
+      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u08.l08.same_number_tens_ones; this excerpt-level triage does NOT certify full activity coverage.",
+      "remainingAcademicTaskParityWork": "Document learner choice and alternate source representations with a teacher rubric; never claim a gallery walk took place.",
+      "candidateDigitalFamily": "usccss.g1.u08.l08.same_number_tens_ones",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL"
     },
     {
       "ordinal": 145,
