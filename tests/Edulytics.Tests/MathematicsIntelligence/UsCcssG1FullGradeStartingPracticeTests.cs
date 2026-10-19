@@ -135,4 +135,29 @@ public sealed class UsCcssG1FullGradeStartingPracticeTests
             }
         }
     }
+    [Fact]
+    public void CenterAdditionNeverExceedsOriginalWithin20Scope()
+    {
+        const string family=UsCcssG1FullGradeStartQuestions.Center;
+        var invalid=new Dictionary<string,int>{{"a",19},{"b",2},{"c",0},{"mode",0}};
+        Assert.False(UsCcssG1FullGradeStartQuestions.Valid(family,invalid));
+        invalid["a"]=20;invalid["b"]=1;
+        Assert.False(UsCcssG1FullGradeStartQuestions.Valid(family,invalid));
+        invalid["a"]=19;invalid["b"]=1;
+        Assert.True(UsCcssG1FullGradeStartQuestions.Valid(family,invalid));
+
+        var generatedAdditionCount=0;
+        for(var seed=0;seed<1000;seed++)
+        {
+            var question=UsCcssG1FullGradeStartQuestions.Build(family,new Random(seed*67+11));
+            if(question.Parameters["mode"]!=0)continue;
+            generatedAdditionCount++;
+            Assert.InRange(question.Parameters["a"]+question.Parameters["b"],0,20);
+            Assert.True(UsCcssG1FullGradeStartQuestions.Valid(family,question.Parameters));
+            Assert.True(UsCcssG1FullGradeStartQuestions.Verify(
+                family,question.Parameters,UsCcssG1FullGradeStartQuestions.Solve(family,question.Parameters)));
+        }
+        Assert.True(generatedAdditionCount>100,"Expected randomized addition questions");
+    }
+
 }
