@@ -43,7 +43,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             CountTens=>mode<=3&&a>=1&&a<=6&&b==0,
             MatchTens=>mode<=3&&a>=1&&a<=9&&b==0,
             AddRemoveTen=>mode<=3&&a>=2&&a<=8&&b==1,
-            AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,10-a)&&
+            AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&
+                (mode%2==0?b<=10-a:b<=a)&&
                 (mode==0?a==3&&b==2:mode==1?a==7&&b==4:true),
             CenterTens=>(mode<=1&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,10-a))||
                         (mode>=2&&mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a),
@@ -65,7 +66,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         {
             if(mode==0){a=3;b=2;} // Original 2021 Jada, Bag A 30 and Bag B 2 ten-towers.
             else if(mode==1){a=7;b=4;} // Original 2021 Tyler, 7 ten-towers minus 40.
-            else{a=random.Next(2,8);b=random.Next(1,Math.Min(a,10-a)+1);}
+            else
+            {
+                a=random.Next(2,8);
+                b=random.Next(1,(mode%2==0?10-a:a)+1);
+            }
         }
         else if(family==CenterTens)
         {
