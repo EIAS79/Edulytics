@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 78,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L13",
+  "title": "Center Day 2",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "ed9502bae50434a90c6d02fc65174df640774f14a71aab3ce932f2650a954ac4",
+    "teacherPreparationSha256": "863dc31852ab4bff585e28839806c52eab34a4ee0705a831aec4293830bc7708",
+    "studentHtmlSha256": "2a1eaca8bf9cde20a32da210b3a773f2561e3d5ab752795300785819cf9160dd",
+    "teacherHeadings": [
+      "Activity 1: Centers: Choice Time (20 minutes)",
+      "Activity 2: Centers Choice Time (20 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(10 + 4\\) \\(9 + 4\\) \\(9 + 6\\) \\(15 - 6\\) Student Response Teachers with a valid work email address can click h",
+      "Student Facing Choose a center. Grab and Count [visual] [visual] <div class=\"im-c-modal__",
+      "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
+    ],
+    "sourceSpecificFinding": "Original within-20 number talk, 70 and 20 center card choices, and 8+7+5=20 from source hand",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
