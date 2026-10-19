@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 95,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L07",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "b8437e235cba98c3fc020e2d0cbe0cbd0a0eb1ba5067662b9abfa7a683bf34af",
+    "teacherPreparationSha256": "90e4768c60f81198c12b2f46682b9055435d1c0b2fe7c8aa19ecdb08be94315a",
+    "studentMirrorSha256": "640f6560ed2f9d4d2455531cd6977864305cfe91577469453252d024745d248c",
+    "teacherActivityHeadings": [
+      "Activity 1: A Ten or Not a Ten? (15 minutes)",
+      "Activity 2: Missing Numbers (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,",
+      "Student Facing Jada likes to look for ways to make a new ten when she adds. Would she be able to a make a new ten when she adds to find the value of these sums? If Jada c",
+      "Student Facing Lin's brother spilled water on her math work! Figure out what number Lin wrote before it got smudged. Lin wrote a one-digit number with which you can make "
+    ],
+    "sourceSpecificComparison": "Original compose-ten choices 45+5,9+63,26+3,8+47; four valid-open missing-number conditions, visual pending",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
