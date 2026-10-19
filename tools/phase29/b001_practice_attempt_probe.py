@@ -102,6 +102,11 @@ def syntactically_valid_wrong_answer(correct, family=None):
                 replacement=",".join(reversed(labels))
             else:
                 raise ValueError("Unexpected source three-strip order format")
+        if key.upper()=="MATCH" and value.upper() in ("A","B","C"):
+            # Original U04 L02 asks which one of THREE written number-name
+            # cards matches the base-ten representation: a single A/B/C,
+            # unlike U06 L14's TWO distinct equations (comma-separated).
+            replacement={"A":"B","B":"C","C":"A"}[value.upper()]
         if replacement is None and key.upper()=="MATCH":
             # The ORIGINAL U06 L14 source asks the child to circle exactly
             # TWO distinct equations. Keep the letter-pair answer format
@@ -290,6 +295,13 @@ if __name__=="__main__":
                 "FITS=YES","usccss.g1.u06.l03.choose_indirect_comparison"),
                 "FITS=NO")
 
+        def test_single_original_tens_word_matching_card_remains_a_valid_distractor(self):
+            for original,wrong in (
+                ("MATCH=A;TENS=3;NUMBER=30","MATCH=B;TENS=3;NUMBER=30"),
+                ("MATCH=B;TENS=4;NUMBER=40","MATCH=C;TENS=4;NUMBER=40"),
+                ("MATCH=C;TENS=5;NUMBER=50","MATCH=A;TENS=5;NUMBER=50")):
+                self.assertEqual(syntactically_valid_wrong_answer(original),wrong)
+
         def test_original_g1_equal_and_unequal_partition_sort_stays_valid(self):
             self.assertEqual(
                 syntactically_valid_wrong_answer("SORT=EQUAL;PIECES=4"),
@@ -314,7 +326,10 @@ if __name__=="__main__":
                             "SHAPE=RECTANGLE","TIME=7:30","ORDER=2,3,6",
                             "CANDIDATES=34,44,54","MATCH=10+8;TOTAL=18",
                             "CARDS=4,8","ALT_ONES=24;WAYS=4","ANSWER=YES",
-                            "MATCH=A,C;TOTAL=20","MATCH=B,C;TOTAL=18","ORDER=A,B,C","ORDER=C,B,A",
+                            "MATCH=A,C;TOTAL=20","MATCH=B,C;TOTAL=18",
+                            "MATCH=A;TENS=3;NUMBER=30",
+                            "MATCH=B;TENS=4;NUMBER=40",
+                            "MATCH=C;TENS=5;NUMBER=50","ORDER=A,B,C","ORDER=C,B,A",
                             "SORT=EQUAL;PIECES=4","SORT=UNEQUAL;PIECES=2"):
                 wrong=syntactically_valid_wrong_answer(correct)
                 self.assertNotEqual(wrong,correct)
