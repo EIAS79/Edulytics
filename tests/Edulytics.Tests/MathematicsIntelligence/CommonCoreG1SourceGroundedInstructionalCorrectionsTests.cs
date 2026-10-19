@@ -144,6 +144,27 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
     }
 
     [Fact]
+    public void Original2021U06L02LearnerWorkRequiresFourPencilComparisonsAndUnchangedDeskString()
+    {
+        const string code=CommonCoreG1SourceGroundedInstructionalCorrections.CompareLengthsIndirectlyLessonCode;
+        var (doc,lesson,en)=Effective(code);
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.CompareLengthsIndirectlyVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
+        Assert.Contains("TWO classroom objects longer",en.KeyConceptsAndRules);
+        Assert.Contains("TWO shorter",en.KeyConceptsAndRules);
+        Assert.Contains("FOUR complete comparison sentences",en.StepByStepSolutions);
+        Assert.Contains("desk's side",en.StepByStepSolutions);
+        Assert.Contains("one piece of string",en.StepByStepSolutions);
+        Assert.Contains("Draw or write an explanation",en.StepByStepSolutions);
+        Assert.Contains("35+20=55",en.WorkedExamples);
+        Assert.Contains("37+45=82",en.WorkedExamples);
+        Assert.Contains("cannot be invented",en.CommonMistakes);
+        var fingerprint=CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson);
+        CanonicalLessonContentMaterializer.Materialize(doc);
+        Assert.Equal(fingerprint,CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson));
+    }
+
+    [Fact]
     public void NextFiveGrade1SourceScopeAndPreviousBatchContentVersionsRemainIsolated()
     {
         var (doc, _, _) = Effective(
