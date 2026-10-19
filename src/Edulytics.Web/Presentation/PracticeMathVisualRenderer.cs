@@ -100,6 +100,10 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u06.l06.measure_paperclips" or
                 "usccss.g1.u06.l07.unit_length_matters"
                     => GradeOneSourceMeasurementVisual(family,parameters),
+                "usccss.g1.u04.l03.tens.add_or_remove_one"
+                    => GetInt(parameters,"mode")>=2
+                        ? GradeOneOriginalTenTowerSequenceVisual(parameters)
+                        : null,
                 "usccss.g1.u04.l04.tens.add_remove_multiples"
                     => GradeOneOriginalBagsOfTenVisual(parameters),
                 "usccss.g1.u04.l06.collection.tens_ones" or
