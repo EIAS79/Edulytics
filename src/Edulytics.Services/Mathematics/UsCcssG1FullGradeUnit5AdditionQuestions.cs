@@ -236,7 +236,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec.LessonCode=="L06"&&p["mode"]==2)
             return "MOVE=6;REST=3;TOTAL=43;ELENA=34+6+3=43;ANDRE=9+1+33=43";
         if(spec.LessonCode=="L07"&&p["mode"]>=2)
-            return $"MISSING={b};NEW_TEN={(p["mode"]==2?"YES":"NO")};TOTAL={sum}";
+            return $"MISSING={b};NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         return spec.Kind switch
         {
             Kind.MakeNewTen=>$"MOVE={10-a%10};REST={b-(10-a%10)};TOTAL={sum}",
