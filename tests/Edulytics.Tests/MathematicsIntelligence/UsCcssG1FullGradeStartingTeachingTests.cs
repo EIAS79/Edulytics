@@ -40,6 +40,12 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("ORIGINAL Set B: find missing addends",text(24));
         Assert.Contains("8 snakes, 7 iguanas and 5 frogs",text(20));
         Assert.Contains("3 herons, 6 hawks and 7 hummingbirds",text(20));
+        Assert.Contains("8+2+4=14 and 8+6=14",text(20));
+        Assert.Contains("7+3+6=16 and 7+9=16",text(20));
+        Assert.Contains("8+2+5+5=20",text(20));
+        Assert.Contains("8 lions, 4 tigers and 3 cheetahs",text(20));
+        Assert.Contains("8 goats, 7 sheep and 4 pigs",text(20));
+        Assert.Contains("digital equation check verifies arithmetic",text(20));
         Assert.Contains("display five numeral cards",text(21));
         Assert.Contains("choose to add 7, 8 or 9",text(21));
         Assert.Contains("five markers consecutively in a row",text(21));
