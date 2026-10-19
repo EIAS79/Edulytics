@@ -22,7 +22,7 @@ public sealed class UsCcssG1FullGradeFinalUnit4TeachingTests
         Assert.Contains("3 tens and 13 ones",representation.Translations.Single(x=>x.CultureCode=="en").WorkedExamples);
         var noBreak=doc.Lessons.Single(l=>l.LessonCode=="PED:US-CCSS-MATH:G1:U04:L19")
             .Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("CANNOT break a tower or build a new tower",noBreak.Introduction);
+        Assert.Contains("CANNOT break a tower or build a new tower",noBreak.Explanation);
         Assert.Contains("65 = 5 pre-existing ten-towers and 15 loose ones",noBreak.WorkedExamples);
         var bags=doc.Lessons.Single(l=>l.LessonCode=="PED:US-CCSS-MATH:G1:U04:L20")
             .Translations.Single(x=>x.CultureCode=="en").StepByStepSolutions;

@@ -55,7 +55,7 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
             Assert.InRange(b,1,9);
             bool actuallyComposes=a%10+b>=10;
             Assert.Equal(mode==2,actuallyComposes);
-            Assert.Equal(mode==2?b>=threshold:b<threshold,true);
+            Assert.True(mode==2?b>=threshold:b<threshold);
             return $"MISSING={b};NEW_TEN={(actuallyComposes?"YES":"NO")};TOTAL={total}";
         }
         int carry=(a%10+b%10)/10;
