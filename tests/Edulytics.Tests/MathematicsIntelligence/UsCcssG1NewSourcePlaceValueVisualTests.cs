@@ -13,6 +13,42 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
         PracticeMathVisualRenderer.RenderSvg(family,
             JsonSerializer.Serialize(new{parameters=p}));
 
+    [Fact]
+    public void OriginalU04L04JadaAndTylerBagStoriesHaveCorrectFirstPartyTenCubeFigures()
+    {
+        const string family="usccss.g1.u04.l04.tens.add_remove_multiples";
+        var jada=Assert.IsType<string>(Visual(family,new{a=3,b=2,c=0,mode=0}));
+        Assert.Contains("Jada: Bag A",jada);
+        Assert.Contains("Jada: Bag B",jada);
+        Assert.Equal(3,System.Text.RegularExpressions.Regex.Matches(
+            jada,"class='g1-source-bag-ten-0'").Count);
+        Assert.Equal(2,System.Text.RegularExpressions.Regex.Matches(
+            jada,"class='g1-source-bag-ten-1'").Count);
+        Assert.DoesNotContain("TENS=5",jada);
+        Assert.DoesNotContain("TOTAL=50",jada);
+        Assert.DoesNotContain("<image ",jada);
+        var tyler=Assert.IsType<string>(Visual(family,new{a=7,b=4,c=0,mode=1}));
+        Assert.Contains("Tyler: Bag C",tyler);
+        Assert.Equal(4,System.Text.RegularExpressions.Regex.Matches(
+            tyler,"class='g1-source-bag-ten-removed'").Count);
+        Assert.Equal(3,System.Text.RegularExpressions.Regex.Matches(
+            tyler,"class='g1-source-bag-ten-remaining'").Count);
+        Assert.DoesNotContain("TENS=3",tyler);
+        Assert.DoesNotContain("TOTAL=30",tyler);
+        Assert.DoesNotContain("<image ",tyler);
+    }
+
+    [Fact]
+    public void OriginalBagsOfTenFiguresRejectAlteredHistoricSourceNumbers()
+    {
+        const string family="usccss.g1.u04.l04.tens.add_remove_multiples";
+        Assert.Null(Visual(family,new{a=4,b=2,c=0,mode=0}));
+        Assert.Null(Visual(family,new{a=7,b=3,c=0,mode=1}));
+        Assert.Null(Visual(family,new{a=3,b=2,c=1,mode=0}));
+        Assert.Null(Visual(family,new{a=4,b=7,c=0,mode=2}));
+        Assert.Null(Visual(family,new{a=3,b=4,c=0,mode=3}));
+    }
+
     [Theory]
     [InlineData("usccss.g1.u04.l06.collection.tens_ones",4,7)]
     [InlineData("usccss.g1.u04.l07.read.two_digit",8,0)]
