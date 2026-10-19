@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A-D source task comparison, first-party learner content correction and teacher-authorship rubric checkpoint — NOT an approval",
+  "grade": "G1",
+  "ordinal": 142,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L06",
+  "title": "Compare Story Problems",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics Grade 1 (2021)",
+    "sourceFullHtml": "unit-8/lesson-6/lesson.html",
+    "readOnlyOriginalHtmlSha256": "c3543159e0b1e5c757e3b171caf6425ae856bd2e86838df886d4aea1637dba08",
+    "matchesExistingOriginalSourceIndex": true
+  },
+  "stageA": {
+    "reviewedStudentFacingText": true,
+    "originalFourCarnivalComparisons": [
+      {
+        "context": "Mai 12 vs Lin 7 ride tickets",
+        "difference": 5
+      },
+      {
+        "context": "17 blue vs 7 pink cotton-candy bags",
+        "difference": 10
+      },
+      {
+        "context": "13 toys vs 9 stuffed animals",
+        "difference": 4
+      },
+      {
+        "context": "Ferris wheel capacity 20 vs swings 14",
+        "difference": 6
+      }
+    ],
+    "originalSourceAuthoredTask": "Using rides Diego7, Priya11, Jada3, Kiran6, Noah9, student must WRITE and ANSWER TWO distinct questions",
+    "discoveredGap": "Existing authored teaching omitted Ferris wheel context and instructed only generic computation instead of clearly requiring two student-authored source questions"
+  },
+  "stageB": {
+    "existingSourceSpecificContentReused": true,
+    "repairFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "repairCommit": "19a8c3387bbb936fbee8a1ad23ef06b89293f687",
+    "firstPartyTeacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-142-original-two-ride-questions-authorship-rubric.json",
+    "rubricCommit": "442c39e0eca19b73c8911c2dc5216969642e9c97",
+    "sourcePhotoCopied": false
+  },
+  "stageC": {
+    "digitalSkillFamily": "usccss.g1.u08.l06.compare_stories",
+    "numericPracticeScope": "Difference word problem grading only; not evidence of new pupil-authored questions",
+    "originalTwoQuestionTask": "Prepared in learner lesson instructions and first-party rubric for future teacher review, no observed child submissions claimed"
+  },
+  "stageD": {
+    "sourceAssertions": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "regressionTestCommit": "4be0606a17521dec8a668877bf9920df01d13497",
+    "dotNetBuildAndTests": "NOT_RUN_AUTHORING_POLICY",
+    "authenticatedLearnerRubricTaskRendering": "PENDING_FROZEN_SHA",
+    "correctWrongMalformedAndPersistence": "PENDING",
+    "sourceMediaRightsAccessibility": "PENDING",
+    "originalV1InternalAcademicSignoff": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "ledgerReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
