@@ -29,7 +29,7 @@ Step 4: Check the addition or subtraction relation and explain why it works.",
             @"I can add and subtract within 20, judge true and false equations, and explain a number puzzle. Partner center play remains a classroom activity."),
         new(@"PED:US-CCSS-MATH:G1:U03:L15",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-15/preparation.html",@"5841d00d899ca1a7452c1fd015f90a23c5bd134642f0c42ff1da9f8734388a24",new[] { @"CCSS:1.OA.A.2", @"CCSS:1.OA.B.3", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
             @"Solve Story Problems with Three Numbers",
-            @"Solve a story with three groups of objects, where TWO of the addends combine to ten. Instead of adding only the first two numbers, identify all three groups, choose a pair that makes ten, then add the remaining number. Draw counters or a double ten-frame and write a three-addend equation.",
+            @"Solve a story with three groups of objects, where TWO of the addends combine to ten. Instead of adding only the first two numbers, identify all three groups, choose a pair that makes ten, then add the remaining number. Draw counters or a double ten-frame and write a three-addend equation. The original 2021 student activity ALSO asks learners to WRITE THEIR OWN bird story with 9 birds, 8 birds, and 1 bird; students author the story and show a matching equation, reviewed by the teacher rather than fabricated by digital Practice.",
             @"Learning goal: solve story problems within 20 involving THREE addends, two making 10. The order and grouping of addends may change while the sum stays the same. For example, 3 + 8 + 7 = (3 + 7) + 8 = 10 + 8 = 18. Explain the story and write a matching equation; a two-addend total alone does not establish the goal.",
             @"Example 1: Three groups of birds contain 3, 8, and 7 birds. 3 and 7 make ten, so 3 + 8 + 7 = 10 + 8 = 18 birds.
 Example 2: A card collection has piles of 5, 9, and 5 cards. Combine 5 + 5 first to make 10, then 10 + 9 = 19 cards.
@@ -38,9 +38,10 @@ Example 3: Three jars have 4, 6, and 7 beads. 4 + 6 = 10; 10 + 7 = 17 beads.",
 Step 2: Write an equation containing three addends, including the unknown total.
 Step 3: Find a pair summing to 10, even if the pair is separated by another addend.
 Step 4: Regroup as 10 plus the leftover amount, then compute the sum (at most 20).
-Step 5: Check that the total and unit answer the original story; explain with a double ten-frame or drawing.",
+Step 5: Check that the total and unit answer the original story; explain with a double ten-frame or drawing.
+Step 6: ORIGINAL STUDENT-AUTHORED TASK: write your own three-group bird story using 9 birds, 8 birds and 1 bird, draw or describe all groups and write a matching equation. A teacher reviews the student's actual wording and representation; auto-graded Practice does not claim the pupil wrote a story.",
             @"Do not ignore the third group, or assume only neighboring addends can form ten. 3+8+7 is 18, not 11; 3+7=10 and 10+8=18. Adding two numbers in isolation does not represent a three-part story.",
-            @"I can write and solve three-addend story equations by pairing two groups into ten and then adding the remaining group."),
+            @"I can write and solve three-addend story equations by pairing two groups into ten and then adding the remaining group. I can also write my own three-group bird story and show its equation; this authored classroom task needs teacher review."),
         new(@"PED:US-CCSS-MATH:G1:U03:L16",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-16/preparation.html",@"9636f47c3b2c14156f0974ae3b476bec15740b659111527850386b592335bcaa",new[] { @"CCSS:1.OA.B.3", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.7" },
             @"Add Three Numbers",
             @"Rewrite three-number additions as equivalent ten-plus-something expressions. Two numbers in each three-addend expression make ten. Also decide whether an equation with an expression on BOTH sides is true. Matching two expressions is more than finding one isolated sum.",
