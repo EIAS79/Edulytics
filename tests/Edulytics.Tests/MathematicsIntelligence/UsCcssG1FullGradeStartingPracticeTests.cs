@@ -62,7 +62,7 @@ public sealed class UsCcssG1FullGradeStartingPracticeTests
 
     [Theory]
     [InlineData(4,6,8,2,"MATCH=10+8;TOTAL=18")]
-    [InlineData(3,7,6,3,"MATCH=10+6;TOTAL=16")]
+    [InlineData(3,7,6,3,"WRITE=10+6;TOTAL=16")]
     [InlineData(9,1,10,2,"MATCH=10+10;TOTAL=20")]
     public void SourceUnit3L16MatchesWholeThreeAddendExpressionToEqualTenPlusExpression(
         int first,int tenPartner,int remaining,int mode,string expected)
