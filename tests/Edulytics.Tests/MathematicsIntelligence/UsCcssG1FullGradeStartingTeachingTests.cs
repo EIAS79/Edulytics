@@ -115,8 +115,10 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         {
             var row=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U04:L{n:00}");
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
-            Assert.Equal(CommonCoreG1FullGradeStartingContentCorrections.Version,
+            Assert.Equal(CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+                doc,row,CommonCoreG1FullGradeStartingContentCorrections.Version));
             var tr=row.Translations.Single(x=>x.CultureCode=="en");
             return tr.Explanation+"\n"+tr.KeyConceptsAndRules+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
         }
@@ -159,6 +161,28 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("43+20=63",unit4Text(13));
         Assert.Contains("64 is GREATER THAN 57",unit4Text(14));
         Assert.Contains("52 > 39",unit4Text(15));
+        Assert.Contains("Noah",unit4Text(6));
+        Assert.Contains("40+8=48",unit4Text(6));
+        Assert.Contains("52 objects",unit4Text(6));
+        Assert.Contains("Clare/Diego",unit4Text(7));
+        Assert.Contains("EIGHT tens and SIX ones",unit4Text(7));
+        Assert.Contains("73",unit4Text(8));
+        Assert.Contains("too-low, about-right and too-high estimate",unit4Text(8));
+        Assert.Contains("AT LEAST FOUR real collections",unit4Text(9));
+        Assert.Contains("1 ten and 4 ones=14",unit4Text(10));
+        Assert.Contains("2 ones and 8 tens=82",unit4Text(10));
+        Assert.Contains("Write Numbers Stage 1 center",unit4Text(10));
+        Assert.Contains("37+20=57",unit4Text(11));
+        Assert.Contains("30+65=95",unit4Text(11));
+        Assert.Contains("smudged diagram",unit4Text(11));
+        Assert.Contains("67+10=77",unit4Text(12));
+        Assert.Contains("99-10-10-10=69",unit4Text(12));
+        Assert.Contains("Write Numbers Stage 2 center",unit4Text(12));
+        Assert.Contains("8+7+5=20",unit4Text(13));
+        Assert.Contains("Elena argues 75>65",unit4Text(14));
+        Assert.Contains("39<41",unit4Text(14));
+        Assert.Contains("17<27",unit4Text(15));
+        Assert.Contains("58=53 FALSE",unit4Text(15));
         var historical=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L13");
         Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,historical));
     }
