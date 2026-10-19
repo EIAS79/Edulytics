@@ -74,8 +74,12 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 $"Center shape naming card #{a}: a CLOSED flat figure with exactly 3 straight sides. Write SHAPE=name.",
             8=>mode%2==0?$"A rectangle card #{a} is partitioned into 2 EQUAL-area pieces. What is each piece called? Write PART=name;PIECES=number.":
                 $"A circle card #{a} is partitioned into 4 EQUAL-area pieces. What is each piece called? Write PART=name;PIECES=number.",
-            9=>mode%2==0?$"Two equal halves rejoin to make one WHOLE rectangle; card #{a}. Write PARTS=number;WHOLES=number.":
-                $"Four equal fourths rejoin to make one WHOLE circle; card #{a}. Write PARTS=number;WHOLES=number.",
+            9=>mode<=1?(mode==0?
+                $"Two equal halves rejoin to make one WHOLE rectangle; card #{a}. Write PARTS=number;WHOLES=number.":
+                $"Four equal fourths rejoin to make one WHOLE circle; card #{a}. Write PARTS=number;WHOLES=number."):
+                mode==2?
+                $"ORIGINAL SHADED-PIECES CARD SORT: Card #{a} shows a rectangle split by a line into two parts. Judge the area of the two parts from the drawing. Are these true equal halves? Write SORT=EQUAL/UNEQUAL;PIECES=number.":
+                $"ORIGINAL SHADED-PIECES CARD SORT: Card #{a} shows a rectangle partitioned into four regions. Judge the area of the four parts from the drawing. Write SORT=EQUAL/UNEQUAL;PIECES=number.",
             10=>$"In the SAME shape #{a}, compare one HALF and one FOURTH. Which is larger? Write LARGER=part_name;FOURTHS_PER_HALF=number.",
             11=>mode%2==0?$"Center arithmetic: add {a}+{b} (within 24). Write RESULT=number.":
                 $"Center shape card #{a}: 3 straight sides, 3 corners, closed. Write SHAPE=name.",
@@ -116,7 +120,8 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             6=>"PARTS=2",
             7=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             8=>mode%2==0?"PART=HALF;PIECES=2":"PART=FOURTH;PIECES=4",
-            9=>mode%2==0?"PARTS=2;WHOLES=1":"PARTS=4;WHOLES=1",
+            9=>mode<=1?(mode==0?"PARTS=2;WHOLES=1":"PARTS=4;WHOLES=1"):
+                (mode==2?"SORT=UNEQUAL;PIECES=2":"SORT=EQUAL;PIECES=4"),
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
             11=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             12=>$"TIME={a}:00",

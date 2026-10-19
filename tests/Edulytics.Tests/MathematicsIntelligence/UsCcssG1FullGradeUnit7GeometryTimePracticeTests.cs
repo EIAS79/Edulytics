@@ -47,6 +47,23 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
         }
     }
     [Theory]
+    [InlineData(2,"SORT=UNEQUAL;PIECES=2")]
+    [InlineData(3,"SORT=EQUAL;PIECES=4")]
+    public void OriginalShadedPieceCardSortDistinguishesEqualAndUnequalArea(
+        int mode,string expected)
+    {
+        const string family="usccss.g1.u07.l10.parts_make_whole";
+        var p=new Dictionary<string,int>{{"a",4},{"b",3},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,p));
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,p,expected));
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,p,
+            mode==2?"SORT=EQUAL;PIECES=2":"SORT=UNEQUAL;PIECES=4"));
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,p,
+            "PARTS=2;WHOLES=1"));
+    }
+
+    [Theory]
     [InlineData(7,2,"COLOR=BLUE;TIME=7:00;WORDS=seven_oclock")]
     [InlineData(7,3,"COLOR=RED;TIME=7:30;WORDS=half_past_seven")]
     [InlineData(12,3,"COLOR=RED;TIME=12:30;WORDS=half_past_twelve")]

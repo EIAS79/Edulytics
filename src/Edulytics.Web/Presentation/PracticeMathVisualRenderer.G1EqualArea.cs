@@ -16,7 +16,9 @@ public static partial class PracticeMathVisualRenderer
                           "usccss.g1.u07.l10.parts_make_whole" or
                           "usccss.g1.u07.l11.bigger_piece_halves_fourths"))
             throw new JsonException("Source task has no equal-area visual");
-        var svg=SvgStart("First grade equal-area fractions, partitioned into matching equal pieces.");
+        var svg=SvgStart(family=="usccss.g1.u07.l10.parts_make_whole"&&mode>=2?
+            "Original shaded-piece sort: inspect whether the depicted areas are equal, not merely the number of regions.":
+            "First grade equal-area fractions, partitioned into matching equal pieces.");
         bool fourths=mode%2==1;
         if(family=="usccss.g1.u07.l11.bigger_piece_halves_fourths")
         {
@@ -25,6 +27,24 @@ public static partial class PracticeMathVisualRenderer
             FractionCircle(svg,308,124,4);
             Text(svg,112,236,"Piece A","hint");
             Text(svg,308,236,"Piece B","hint");
+        }
+        else if(family=="usccss.g1.u07.l10.parts_make_whole"&&mode>=2)
+        {
+            // Student must inspect a first-party source-inspired picture:
+            // mode 2 has unequal regions; mode 3 has four equal regions.
+            svg.Append("<rect class='shape' x='126' y='39' width='168' height='168' fill='none'/>");
+            if(mode==2)
+            {
+                svg.Append("<rect x='126' y='39' width='61' height='168' fill='rgba(33,128,184,.28)'/>");
+                svg.Append("<line class='partition-unequal' x1='187' y1='39' x2='187' y2='207' stroke='currentColor' stroke-width='2'/>");
+            }
+            else
+            {
+                svg.Append("<rect x='126' y='39' width='84' height='84' fill='rgba(33,128,184,.28)'/>");
+                svg.Append("<line class='partition-equal' x1='210' y1='39' x2='210' y2='207' stroke='currentColor' stroke-width='2'/>");
+                svg.Append("<line class='partition-equal' x1='126' y1='123' x2='294' y2='123' stroke='currentColor' stroke-width='2'/>");
+            }
+            Text(svg,210,240,"Compare the areas of the shaded and unshaded parts.","hint");
         }
         else if(fourths)
         {

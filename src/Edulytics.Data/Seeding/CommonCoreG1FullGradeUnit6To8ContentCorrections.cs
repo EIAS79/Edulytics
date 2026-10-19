@@ -130,7 +130,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
             @"I can partition circles and rectangles into halves and fourths."),
         new(@"PED:US-CCSS-MATH:G1:U07:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-10/preparation.html",@"a533c8a407a83aae674d36464cd91dac2f7e1da0c48e5f0ce787f5cf23fcd12a",[@"CCSS:1.G.A.3"],
             @"One of the Pieces, All of the Pieces",
-            @"Describe how two halves or four fourths make one complete shape, and name ONE equal piece as a half or fourth of that whole.",
+            @"ORIGINAL STUDENT FACING TASK: split the square into two equal halves, then SORT the shaded-piece picture cards into categories and EXPLAIN how you grouped them. Distinguish true equal-area halves/fourths from visually unequal pieces, even when both pictures have the same number of regions. Two halves or four fourths make one whole only when all those shares have EQUAL area. The classroom cutting, card sorting and pupil explanations are teacher-facilitated, not proven by a single digital classification.",
             @"Example 1: Two equal halves of a rectangle make one whole. Example 2: Four equal fourths of a circle make one whole. Example 3: One of four equal squares in a partitioned rectangle is one fourth of the rectangle.",
             @"Step 1: Show the whole. Step 2: Verify pieces are equal in area. Step 3: Count two equal halves or four equal fourths. Step 4: Identify one piece using a correct part-of-whole description.",
             @"Do not call one of three unequal pieces a fourth. Names halves and fourths depend on the total number of equal pieces.",

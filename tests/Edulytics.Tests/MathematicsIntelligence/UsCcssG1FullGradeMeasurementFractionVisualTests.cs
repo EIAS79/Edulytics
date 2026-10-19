@@ -93,6 +93,21 @@ public sealed class UsCcssG1FullGradeMeasurementFractionVisualTests
     }
 
     [Fact]
+    public void SourceShadedCardSortActuallyDrawsUnequalVsFourEqualRegions()
+    {
+        const string family="usccss.g1.u07.l10.parts_make_whole";
+        var unequal=Assert.IsType<string>(Draw(family,4,3,2));
+        var equal=Assert.IsType<string>(Draw(family,4,3,3));
+        Assert.Contains("class='partition-unequal'",unequal);
+        Assert.DoesNotContain("class='partition-equal'",unequal);
+        Assert.Equal(2,System.Text.RegularExpressions.Regex.Matches(
+            equal,"class='partition-equal'").Count);
+        Assert.DoesNotContain("class='partition-unequal'",equal);
+        Assert.DoesNotContain("SORT=EQUAL",equal);
+        Assert.DoesNotContain("SORT=UNEQUAL",unequal);
+    }
+
+    [Fact]
     public void OnlySourceGuardedVisualFamiliesProduceDiagrams()
     {
         Assert.Null(Draw("usccss.g1.u06.l12.compare_measurements",14,4,0));
