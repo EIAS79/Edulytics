@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 79,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L14",
+  "title": "Let's Compare",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "d085cf009cac851f80ca7335a1b230ea2702c30a7b1764370ce8869531166b89",
+    "teacherPreparationSha256": "28c110215f8fc9764f408486415ade1af7f5c4d48a1022c00b52d62dfc3ca5e9",
+    "studentHtmlSha256": "714e294a8720b92a70e455ec27acdd609ca2105e0834150148b9f8144f63e115",
+    "teacherHeadings": [
+      "Activity 1: Which is More? (15 minutes)",
+      "Activity 2: Elena and Noah Compare Numbers (10 minutes)",
+      "Activity 3: Centers: Choice Time (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Each partner spins a spinner. Each partner shows the number any way they choose. Compare with your partner. Which number is more? Spinner A: [visual] [visu",
+      "Student Facing Elena says 75 is greater than 65 because 7 is greater than 6. What do you think Elena means? How could Elena be more clear? Noah says 39 is greater than 41",
+      "Student Facing Choose a center. Write Numbers [visual] [visual] <div class=\"im-c-modal__co"
+    ],
+    "sourceSpecificFinding": "Original Elena 75>65 reasoning versus incorrect Noah 39>41; tens-place justification",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
