@@ -110,7 +110,9 @@ Step 5: Confirm the total with counters or a second method and explain why your 
             @"Example 1: At the zoo, 4 ducks, 6 geese and 3 swans swim: 4+6+3=10+3=13 birds.
 Example 2: Five penguins, three seals and four otters are counted: 5+3+4=12 animals.
 Example 3: The guide spots 2 lions, 7 zebras and 8 giraffes: 2+8+7=17 animals.
-Example 4: Three groups contain 5, 4 and 6 visitors: 5+4+6=15 visitors.",
+Example 4: Three groups contain 5, 4 and 6 visitors: 5+4+6=15 visitors.
+Original 2021 reptile story: Jada sees 8 snakes, 7 iguanas and 5 frogs: 8+7+5=20 animals across THREE groups.
+Original 2021 zoo bird exhibit: 3 herons, 6 hawks and 7 hummingbirds: 3+7+6=10+6=16 birds. These examples preserve the original quantities without copying publisher illustrations.",
             @"Step 1: Read the zoo story and identify every group named.
 Step 2: Write a three-addend equation, not a two-addend one.
 Step 3: Draw or model the three groups with counters.
@@ -130,7 +132,9 @@ Example 4: 2+8+9=10+9=19. Every group is counted once.",
 Step 2: Decide whether to count on, make ten or regroup.
 Step 3: For three groups, write a full equation containing three addends before simplifying.
 Step 4: Solve and check the sum is no more than 20.
-Step 5: Tell a partner which method you used if working in a supervised center.",
+Step 5: Tell a partner which method you used if working in a supervised center.
+Original source HOW CLOSE? center (teacher-led): remove any ten-value cards; display five numeral cards; select two or three cards and write a true addition equation whose sum is nearest to 20. Compare how close the sums are, replenish the hand to five cards, and award a point to the closer result. The game winner has more round points.
+Original source FIVE IN A ROW center (teacher-led): pick a number card, choose to add 7, 8 or 9, calculate the sum, and place a marker on that sum on the gameboard. The first partner with five markers consecutively in a row wins. This digital Practice tests the underlying arithmetic ONLY; it does not claim students physically played a card round, followed partner rules, or won a board.",
             @"Do not complete a three-addend task with a two-addend equation. For 3+6+7, adding only 3+7 gives ten but is not the final total; add the six to make sixteen.",
             @"I can add two and three numbers within 20 and write complete three-addend equations. Classroom games are teacher-led."),
         new(@"PED:US-CCSS-MATH:G1:U03:L22",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-22/preparation.html",@"ffd4ed62506326b6154d4231afe24476c91c6dd7553bb4840c317d4a43a1710d",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
@@ -185,7 +189,10 @@ Step 6: ORIGINAL Set A: find missing values in subtraction equations (such as 12
             @"Example 1: 20-15=5 because 15+5=20.
 Example 2: 17-4=13 by removing four ones.
 Example 3: 14-8=14-4-4=10-4=6.
-Example 4: 19-9=10, subtracting the nine extra ones.",
+Example 4: 19-9=10, subtracting the nine extra ones.
+Original 2021 pencil story: 12 pencils are on a table; a teacher picks up 7, leaving 12-7=5 pencils.
+Original unknown-change story: Clare starts with 8 glue sticks and finishes with 15; 8+7=15, so the unknown additional amount is 7.
+Original missing-subtrahend story: Kiran has 17 crayons and 9 after sharing; 17-8=9, so he shared 8 crayons.",
             @"Step 1: Read the starting and removed amounts.
 Step 2: Ask whether taking away, counting on or crossing ten will be simplest.
 Step 3: Represent the steps with counters, a ten-frame or a true subtraction/addition equation.

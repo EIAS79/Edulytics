@@ -36,6 +36,14 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("8 to 10 is 2",text(24));
         Assert.Contains("ORIGINAL Set A: find missing values",text(24));
         Assert.Contains("ORIGINAL Set B: find missing addends",text(24));
+        Assert.Contains("8 snakes, 7 iguanas and 5 frogs",text(20));
+        Assert.Contains("3 herons, 6 hawks and 7 hummingbirds",text(20));
+        Assert.Contains("display five numeral cards",text(21));
+        Assert.Contains("choose to add 7, 8 or 9",text(21));
+        Assert.Contains("five markers consecutively in a row",text(21));
+        Assert.Contains("12-7=5 pencils",text(25));
+        Assert.Contains("8+7=15",text(25));
+        Assert.Contains("17-8=9",text(25));
         Assert.Contains("20-15=5",text(25));
         Assert.Contains("7+5=12",text(26));
         Assert.Contains("Elena has 6 counters",text(26));
