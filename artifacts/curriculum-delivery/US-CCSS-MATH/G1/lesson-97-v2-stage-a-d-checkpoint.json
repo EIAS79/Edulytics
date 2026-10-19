@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 97,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L09",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "c8f3f91e51f4013e8771beb2cf3d1ea0206be8d3afa2812182cd024f9ff1e032",
+    "teacherPreparationSha256": "960e6eb093f63dc4a0a0d1ad2581381ee13cd4d9131bda919c2ebfe6d044f2ab",
+    "studentMirrorSha256": "f0b17fad278a12c6be8ae9fbe47255a7f47c8c852a92d01044e89b9df177ef90",
+    "teacherActivityHeadings": [
+      "Activity 1: How Did You Find the Value? (20 minutes)",
+      "Activity 2: Grab and Add (15 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(38 + 2\\) \\(40 + 3\\) \\(38 + 5\\) \\(38 + 15\\) Student Response Teachers with a valid work email address can clic",
+      "Student Facing Find the value of \\(17 + 36\\) . Show your thinking using drawings, numbers, or words. Student Response Teachers with a valid work email address can click h",
+      "Student Facing Round 1: Grab a handful of towers of ten and a handful of single cubes. I have ______________ cubes and my partner has ______________ cubes. How many cubes"
+    ],
+    "sourceSpecificComparison": "Original 17+36=53; Grab and Add physical cubes, repeated partner rounds",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
