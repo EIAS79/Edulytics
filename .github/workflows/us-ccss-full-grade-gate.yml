@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md'
+      - 'docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md'
       - 'docs/curriculum/plans/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L51-L146-SOURCE-GOAL-TRIAGE.json'
@@ -41,7 +41,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md'
+      - 'docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md'
       - 'docs/curriculum/plans/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L51-L146-SOURCE-GOAL-TRIAGE.json'
@@ -178,7 +178,7 @@ jobs:
 
   grade-real-release-gate:
     name: g1-full-grade-real-acceptance
-    if: (github.event_name == 'pull_request' && startsWith(github.head_ref, 'curriculum/full-grade-')) || (github.event_name == 'workflow_dispatch' && inputs.candidate_sha != '')
+    if: (github.event_name == 'pull_request' && github.event.pull_request.draft == false && startsWith(github.head_ref, 'curriculum/full-grade-')) || (github.event_name == 'workflow_dispatch' && inputs.candidate_sha != '')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
