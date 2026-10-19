@@ -53,7 +53,7 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
     [InlineData(49,1,2,"MISSING=1;NEW_TEN=YES;TOTAL=50")]
     [InlineData(46,3,3,"MISSING=3;NEW_TEN=NO;TOTAL=49")]
     [InlineData(50,9,3,"MISSING=9;NEW_TEN=NO;TOTAL=59")]
-    public void OriginalU05L07MissingNumberTasksFindTheExtremalValidOneDigit(
+    public void OriginalU05L07MissingNumberTasksAcceptValidOpenOneDigitChoices(
         int known,int missing,int mode,string expected)
     {
         const string family="usccss.g1.u05.l07.detect_new_ten";
@@ -72,14 +72,38 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
     {
         const string family="usccss.g1.u05.l07.detect_new_ten";
         foreach(var (a,b,mode) in new[]{
-            (40,10,2), // ones=0 means no single-digit addend makes a new ten
-            (49,0,3),  // ones=9 means no positive digit avoids a new ten
-            (45,6,2),  // yes, but not the smallest digit
-            (46,2,3),  // no, but not the largest digit
-            (39,9,3)   // ones=9 cannot avoid making a ten
+            (40,9,2),  // ones=0 means no one-digit addend makes a new ten
+            (49,1,3),  // ones=9 means no positive addend avoids a new ten
+            (45,4,2),  // four does not make the next ten
+            (46,4,3),  // four WOULD make a new ten
+            (39,9,3)   // any positive digit composes a new ten
         })
             Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,
                 new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}}));
+    }
+
+    [Fact]
+    public void OriginalSourceOpenChoiceAcceptsMultipleDifferentValidStudentAnswers()
+    {
+        const string family="usccss.g1.u05.l07.detect_new_ten";
+        var makes=new Dictionary<string,int>{{"a",45},{"b",5},{"mode",2}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,makes,
+            "MISSING=5;NEW_TEN=YES;TOTAL=50"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,makes,
+            "TOTAL=51;NEW_TEN=YES;MISSING=6"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,makes,
+            "MISSING=4;NEW_TEN=NO;TOTAL=49"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,makes,
+            "MISSING=6;NEW_TEN=YES;TOTAL=50"));
+        var not=new Dictionary<string,int>{{"a",46},{"b",3},{"mode",3}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,not,
+            "MISSING=1;NEW_TEN=NO;TOTAL=47"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,not,
+            "MISSING=3;NEW_TEN=NO;TOTAL=49"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,not,
+            "MISSING=4;NEW_TEN=YES;TOTAL=50"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,not,
+            "MISSING=3;NEW_TEN=NO;TOTAL=49;EXTRA=1"));
     }
 
     [Fact]
@@ -98,7 +122,8 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
             {
                 Assert.Contains("MISSING=",correct);
                 Assert.Contains("□",q.Prompt);
-                Assert.Contains(q.Parameters["mode"]==2?"SMALLEST":"LARGEST",q.Prompt);
+                Assert.Contains("COULD",q.Prompt);
+                Assert.Contains("Choose ANY",q.Prompt);
             }
         }
         Assert.Equal(4,variants.Count);

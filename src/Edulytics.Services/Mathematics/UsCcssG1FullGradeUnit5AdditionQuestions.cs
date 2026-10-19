@@ -103,8 +103,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             Kind.ComposingTwoDigits=>a>=10&&a<=89&&b>=10&&b<=89&&sum<=100&&ones>=10,
             Kind.Flexible=>a>=20&&a<=89&&b>=1&&b<=(spec.LessonCode=="L07"?9:10)&&sum<=99&&
                 (spec.LessonCode!="L07"||mode<=1||
-                 (mode==2?a%10>=1&&b==10-a%10:
-                          a%10<=8&&b==9-a%10)),
+                 (mode==2?a%10>=1&&b>=10-a%10:
+                          a%10<=8&&b<10-a%10)),
             _=>false
         };
     }
@@ -127,9 +127,9 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 Kind.NoComposeTwoDigits or Kind.ComposingTwoDigits=>random.Next(10,90),
                 Kind.TensOrOnes when mode%2==1=>random.Next(1,4)*10,
                 Kind.Flexible when spec.LessonCode=="L07"&&mode==2=>
-                    10-a%10, // Smallest one-digit missing addend that makes a ten.
+                    random.Next(Math.Min(9,10-a%10),10),
                 Kind.Flexible when spec.LessonCode=="L07"&&mode==3=>
-                    9-a%10,  // Largest positive one-digit missing addend without a new ten.
+                    random.Next(1,Math.Max(2,10-a%10)),
                 Kind.Flexible=>random.Next(1,spec.LessonCode=="L07"?10:11),
                 _=>random.Next(1,10)
             };
@@ -151,17 +151,17 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 if(spec.LessonCode=="L07"&&mode>=2)
                 {
                     string condition=mode==2?"WOULD make a new ten":"would NOT make a new ten";
-                    string extremum=mode==2?"SMALLEST":"LARGEST";
                     string promptMissing=
-                        $"Original source-inspired Missing Numbers: {a}+□. Find the {extremum} " +
-                        $"POSITIVE ONE-DIGIT missing addend that {condition}. " +
+                        $"Original 2021 OPEN-CHOICE Missing Numbers task: {a}+□. " +
+                        $"What positive ONE-DIGIT number COULD be put in the box that {condition}? " +
+                        "Choose ANY valid missing value and show the actual sum. " +
                         "Write MISSING=number;NEW_TEN=YES/NO;TOTAL=number. " +
-                        "Use the ones-place digits to explain your choice.";
+                        "Use place-value reasoning; teacher reviews children's own explanations.";
                     return new(family,promptMissing,
-                        "The source permits more than one answer to an open missing-digit task; " +
-                        "this specifically requests an extremal digit to give a unique, " +
-                        "independently gradeable digital case. Students' chosen equations " +
-                        "and real classroom reasoning are assessed separately.",
+                        "Source allows several mathematically valid additions: the verifier " +
+                        "accepts any correct one-digit choice meeting the stated make-ten " +
+                        "constraint, not only the generator's sample answer. Teacher-led " +
+                        "written and two-digit extensions remain independent classroom work.",
                         AssessmentItemType.ShortAnswer,candidate);
                 }
                 string prompt=spec.Kind switch
@@ -207,6 +207,32 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             }
         return em.Count==rm.Count&&em.All(x=>rm.TryGetValue(x.Key,out var value)&&value==x.Value);
     }
+    private static bool VerifyOpenMissingAddend(IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        var values=Norm(answer).Split(';');
+        if(values.Length!=3)return false;
+        var fields=new Dictionary<string,string>(StringComparer.Ordinal);
+        foreach(var part in values)
+        {
+            int pos=part.IndexOf('=');
+            if(pos<=0||pos==part.Length-1||
+               !fields.TryAdd(part[..pos],part[(pos+1)..]))return false;
+        }
+        if(fields.Count!=3||
+           !fields.TryGetValue("MISSING",out var digitText)||
+           !fields.TryGetValue("NEW_TEN",out var tenText)||
+           !fields.TryGetValue("TOTAL",out var totalText)||
+           !int.TryParse(digitText,out var digit)||digit<1||digit>9||
+           !int.TryParse(totalText,out var total)||total!=p["a"]+digit||total>99)
+            return false;
+        bool makesNewTen=p["a"]%10+digit>=10;
+        return makesNewTen==(p["mode"]==2) &&
+               tenText==(makesNewTen?"YES":"NO");
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? submitted)=>
-        Valid(family,p)&&GradePersistedAnswer(family,Solve(family!,p),submitted);
+        Valid(family,p)&&
+        (family==Specs[6].Code&&p["mode"]>=2?
+            VerifyOpenMissingAddend(p,submitted):
+            GradePersistedAnswer(family,Solve(family!,p),submitted));
 }

@@ -52,12 +52,11 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
         if(index==6&&mode>=2)
         {
             int threshold=10-a%10;
-            int independentlyRequired=mode==2?threshold:threshold-1;
-            Assert.InRange(independentlyRequired,1,9);
-            Assert.Equal(independentlyRequired,b);
-            bool actuallyComposes=a%10+independentlyRequired>=10;
+            Assert.InRange(b,1,9);
+            bool actuallyComposes=a%10+b>=10;
             Assert.Equal(mode==2,actuallyComposes);
-            return $"MISSING={independentlyRequired};NEW_TEN={(actuallyComposes?"YES":"NO")};TOTAL={total}";
+            Assert.Equal(mode==2?b>=threshold:b<threshold,true);
+            return $"MISSING={b};NEW_TEN={(actuallyComposes?"YES":"NO")};TOTAL={total}";
         }
         int carry=(a%10+b%10)/10;
         if(index is 4 or 5)
