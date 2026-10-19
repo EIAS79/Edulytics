@@ -82,7 +82,7 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile) {
       !checkFile(e.independentGradingProofPath,e.independentGradingProofSha256) ||
       !checkFile(e.runtimePracticeProofPath,e.runtimePracticeProofSha256)))return false;
   if(!needsDigital && e.allowedFamilies.length!==0)return false;
-  if(ordinal===65 || ordinal===119 || ordinal===135 || ordinal===146) {
+  if([65,119,123,124,125,126,135,146].includes(ordinal)) {
     if(e.originalAuthorshipTaskReviewed!==true ||
        e.learnerAuthoredTaskRendered!==true ||
        e.teacherReviewRubricAvailable!==true ||
@@ -90,6 +90,8 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile) {
     const name=ordinal===65?
       'lesson-65-learner-authored-story-review-rubric.json':
       ordinal===119?'lesson-119-puppies-tulips-authorship-rubric.json':
+      [123,124,125,126].includes(ordinal)?
+        'lesson-'+ordinal+'-original-shape-creation-rubric.json':
       ordinal===135?'lesson-135-original-sunday-schedule-authorship-rubric.json':
       'lesson-146-number-riddle-authorship-rubric.json';
     const rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);

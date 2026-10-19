@@ -114,3 +114,22 @@ test('original Grade 1 ordinal 135 teacher-reviewed Sunday schedule is required 
  assert.equal(validLessonAssessment(135,{...together,actualTeacherObservationNotClaimed:false},()=>true),false);
  assert.equal(validLessonAssessment(135,{...together,realPracticeGradingPersisted:false},()=>true),false);
 });
+
+test('source-drawing original unit 7 lessons 123-126 require both numeric Practice proof and teacher shape-creation rubric',()=>{
+  for(const ordinal of [123,124,125,126]){
+    const mapping=require('../artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json');
+    const f=mapping.records.find(x=>x.ordinal===ordinal).candidateFamily;
+    const digital={allowedFamilies:[f],realPracticeGradingPersisted:true,
+      independentCorrectAndWrongAnswersVerified:true,
+      independentGradingProofPath:'math',independentGradingProofSha256:'a'.repeat(64),
+      runtimePracticeProofPath:'https',runtimePracticeProofSha256:'b'.repeat(64)};
+    assert.equal(validLessonAssessment(ordinal,digital,()=>true),false);
+    const full={...digital,originalAuthorshipTaskReviewed:true,
+       learnerAuthoredTaskRendered:true,teacherReviewRubricAvailable:true,
+       actualTeacherObservationNotClaimed:true};
+    assert.equal(validLessonAssessment(ordinal,full,()=>true),true);
+    assert.equal(validLessonAssessment(ordinal,{...full,realPracticeGradingPersisted:false},()=>true),false);
+    assert.equal(validLessonAssessment(ordinal,{...full,learnerAuthoredTaskRendered:false},()=>true),false);
+    assert.equal(validLessonAssessment(ordinal,{...full,actualTeacherObservationNotClaimed:false},()=>true),false);
+  }
+});

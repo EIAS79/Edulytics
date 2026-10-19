@@ -1499,6 +1499,18 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                             assert "puppi" in rendered and "tulip" in rendered and (
                                 "write" in rendered or "create" in rendered), (
                                 code,"learner comparison-story-authorship teaching missing")
+                        elif ordinal in (123,124,125,126):
+                            assert "draw" in rendered or "trace" in rendered, (
+                                code,"original learner-drawn or composed shape teaching missing")
+                            expected_fragment={
+                                123:"dot paper",
+                                124:"three different triangles",
+                                125:"five",
+                                126:"pattern blocks"
+                            }[ordinal]
+                            assert expected_fragment in rendered, (
+                                code,"source-specific geometric authorship target missing",
+                                expected_fragment)
                         elif ordinal==135:
                             assert "sunday" in rendered and "schedule" in rendered and (
                                 "draw" in rendered or "clock" in rendered), (
