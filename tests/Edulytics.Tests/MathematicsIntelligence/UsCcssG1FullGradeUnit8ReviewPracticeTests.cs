@@ -33,6 +33,38 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
                 Assert.False(ExactSkillContractQuestionEngine.Verify(f,q.Parameters,answer+";FAKE=1"));
             }
     }
+    [Theory]
+    [InlineData(34,0,"CANDIDATES=34,44,54")]
+    [InlineData(34,1,"NUMBER=44")]
+    [InlineData(51,2,"CANDIDATES=51,61,71")]
+    [InlineData(51,3,"NUMBER=61")]
+    public void OriginalStudentFacing2021RiddleFirstAllowsSeveralNumbersThenOneFinalSolution(
+        int lowest,int mode,string expected)
+    {
+        const string family="usccss.g1.u08.l09.solve_number_riddle";
+        var p=new Dictionary<string,int>{{"a",lowest},{"b",10},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,expected));
+        var prompt=UsCcssG1FullGradeUnit8ReviewQuestions.Build(family,
+            new Random(lowest*23+mode)).Prompt;
+        Assert.Contains("NUMBER RIDDLE",prompt);
+        Assert.Contains("ones",prompt);
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
+            mode%2==0?"CANDIDATES="+lowest:"NUMBER="+lowest));
+    }
+
+    [Fact]
+    public void OriginalRiddleBoundsExcludeImpossibleOrAmbiguousDigitVariants()
+    {
+        const string family="usccss.g1.u08.l09.solve_number_riddle";
+        foreach(int value in new[]{30,80,99,20})
+        {
+            var p=new Dictionary<string,int>{{"a",value},{"b",10},{"c",0},{"mode",0}};
+            Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
+        }
+    }
+
     [Fact]
     public void AStudentCreatedRiddleIsNotInferredFromACorrectNumericClue()
     {

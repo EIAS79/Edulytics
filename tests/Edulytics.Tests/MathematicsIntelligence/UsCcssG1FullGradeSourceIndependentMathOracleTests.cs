@@ -80,7 +80,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             5=>$"DIFFERENCE={a-b}",
             6=>$"LAST={a+b}",
             7=>$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}",
-            8=>$"NUMBER={a}",
+            8=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}",
             9=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}",
             _=>throw new InvalidOperationException("Unsupported source review family")
         };
