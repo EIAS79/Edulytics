@@ -59,7 +59,8 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
         Assert.Equal(answer,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,p));
         Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,answer));
         Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,
-            answer.Replace("COLOR=BLUE","COLOR=RED").Replace("COLOR=RED","COLOR=BLUE")));
+            answer.Replace(mode==2?"COLOR=BLUE":"COLOR=RED",
+                           mode==2?"COLOR=RED":"COLOR=BLUE")));
         Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,
             "MINUTES=30;HOUR="+hour));
     }
