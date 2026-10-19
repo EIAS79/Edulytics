@@ -1400,6 +1400,22 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         rendered = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
         expected = re.sub(r"\s+", " ", html.unescape(title)).casefold()
         assert expected in rendered, (code, "missing exact lesson title", expected)
+        if code == "PED:US-CCSS-MATH:G1:U03:L14":
+            # Original 2021 source inspected read-only on Our-CS: Number
+            # Puzzles Stage 2 is within 20, both operations and distinct
+            # digit cards; the warm-up includes true/false equalities.
+            # This asserts the ACTUAL authenticated learner-facing teaching,
+            # without claiming physical center participation or gameboard
+            # figure parity.
+            source_goal_terms = (
+                "number puzzles", "digit card", "addition",
+                "subtraction", "true", "false"
+            )
+            absent = [term for term in source_goal_terms if term not in rendered]
+            assert not absent, (
+                code, "source 2021 lesson 51 learner goal not rendered",
+                absent)
+            print("G1_L51_AUTHENTICATED_SOURCE_GOAL_TEXT_PASS", flush=True)
         # Exact CI-response fingerprint, not stable pedagogical-content identity:
         # unescaping the HTML is part of this pre-existing learner-page read.
         g1_learner_response_sha = (hashlib.sha256(body.encode("utf-8")).hexdigest()
