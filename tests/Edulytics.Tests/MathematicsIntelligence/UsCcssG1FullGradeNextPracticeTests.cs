@@ -55,6 +55,32 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
             UsCcssG1FullGradeNextQuestions.ZooThree,zoo,"TOTAL=8;EQUATION=3+5=8"));
     }
     [Fact]
+    public void Original2021LinHanKiranStrategiesRetainAllThreeEquivalentExpressions()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.FlexibleAdd;
+        var p=new Dictionary<string,int>{{"a",8},{"b",7},{"c",0},{"mode",2}};
+        const string original="LIN=8+2+5=15;HAN=7+7+1=15;KIRAN=8+8-1=15;TOTAL=15";
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        Assert.Equal(original,UsCcssG1FullGradeNextQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,original));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "LIN=8+2+5=15;HAN=7+7+1=15;KIRAN=8+8-1=16;TOTAL=15"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MOVE=2;REST=5;TOTAL=15"));
+        p["b"]=6;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        var sourceTasks=Enumerable.Range(0,360)
+            .Select(n=>UsCcssG1FullGradeNextQuestions.Build(family,new Random(73*n+11)))
+            .Where(q=>q.Parameters["mode"]==2).ToArray();
+        Assert.True(sourceTasks.Length>35);
+        Assert.All(sourceTasks,q=>
+        {
+            Assert.Contains("Lin, Han and Kiran",q.Prompt);
+            Assert.Equal(original,UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters));
+        });
+    }
+
+    [Fact]
     public void Original2021ZooStudentFacingReptileStoryHasExactlyThreeSourceGroups()
     {
         const string f=UsCcssG1FullGradeNextQuestions.ZooThree;
