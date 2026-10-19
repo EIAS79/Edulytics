@@ -102,7 +102,13 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 $"Two drawn strips start at the SAME line. The red strip has {a} equal cube lengths; blue has {b}. State LONGER=RED/BLUE/EQUAL;DIFFERENCE=number.":
                 $"Three strips A, B, and C share the SAME start line and measure {a}, {b}, and {c} equal cube-length units. Original student Activity 2: order three objects {(mode==1?"from SHORTEST to LONGEST":"from LONGEST to SHORTEST")}. Write ORDER=A,B,C (the letters in their correct order).",
             1=>$"Without moving two separate strips, a SAME reference strip of {a} cubes matches strip A and another of {b} cubes matches B. Which is longer? Write LONGER=A/B/EQUAL.",
-            2=>$"Two classroom objects cannot be laid together. A third measuring strip gives lengths {a} and {b} in SAME size units. Choose the longer one. Write LONGER=A/B/EQUAL.",
+            2=>mode switch
+            {
+                0=>$"Two classroom objects cannot be laid together. One flexible SAME reference unit gives lengths {a} and {b}. Choose the longer one. Write LONGER=A/B/EQUAL.",
+                1=>$"SOURCE-INSPIRED WALK TO SCHOOL: Mai's route measures {a} and Clare's measures {b} of the SAME reference units. The two paths cannot be laid together: use the SAME movable reference string to compare indirectly. Who has the SHORTER route? Write SHORTER=MAI/CLARE/EQUAL.",
+                2=>$"SOURCE-INSPIRED WILL IT FIT: Teacher's desk WIDTH is {b} units; doorway OPENING is {a} of the SAME reference units. Using a common comparison string for both, will the desk fit widthwise? Write FITS=YES/NO.",
+                _=>$"SOURCE-INSPIRED WILL IT FIT: Student desk WIDTH is {b} units; doorway OPENING is {a} of the SAME reference units. Using a common comparison string for both, will the desk fit widthwise? Write FITS=YES/NO."
+            },
             3=>mode%2==0?$"Center addition: compute {a}+{b} within 100. Write RESULT=number.":
                 $"Center expression comparison within 20: compare {a%8+1}+{b%8+1} with {a/10%8+1}+{b/10%8+1}. Write RELATION=GREATER/LESS/EQUAL.",
             4=>$"A line is tiled by {a} EQUAL connecting cubes, placed edge to edge with NO gaps or overlap. How many cube-length units? Write LENGTH=number.",
@@ -151,7 +157,13 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                         ?new[]{(Length:a,Label:"A"),(Length:b,Label:"B"),(Length:p["c"],Label:"C")}.OrderBy(x=>x.Length)
                         :new[]{(Length:a,Label:"A"),(Length:b,Label:"B"),(Length:p["c"],Label:"C")}.OrderByDescending(x=>x.Length))
                     .Select(x=>x.Label)),
-            1 or 2=>$"LONGER={Relation(a,b,"A","B")}",
+            1=>$"LONGER={Relation(a,b,"A","B")}",
+            2=>mode switch
+            {
+                0=>$"LONGER={Relation(a,b,"A","B")}",
+                1=>$"SHORTER={Relation(a,b,"CLARE","MAI")}",
+                _=>$"FITS={(b<=a?"YES":"NO")}"
+            },
             3=>mode%2==0?$"RESULT={a+b}":$"RELATION={Relation(a%8+b%8+2,a/10%8+b/10%8+2,"GREATER","LESS")}",
             4 or 5=>$"LENGTH={a}",
             6=>$"SMALL_UNITS={a*2}",
