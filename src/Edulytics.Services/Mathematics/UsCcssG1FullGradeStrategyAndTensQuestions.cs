@@ -64,10 +64,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             CountOnOrAway or FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
                 (family!=FlexibleSubtract||mode!=2||(a==12&&b==7)),
             StoryUnknowns=>((a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
-                ((mode==1||mode==3)&&a==6&&b==12))&&
+                ((mode==1||mode==4)&&a==6&&b==12))&&
                 (mode!=2||(a==6&&b==9))&&
-                (mode!=3||(a==6&&b==12))&&
-                (mode!=4||(a==9&&b==6)),
+                (mode!=4||((a==6&&b==12)||(a==9&&b==6))),
             CenterWithin20=>mode==0?
                 (a>=1&&a<=10&&b>=1&&b<=10&&c==0&&a+b<=20):
                 mode==2?
@@ -104,8 +103,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             // Elena starts with 6 counters and finishes with 18.
             if(mode==1){a=6;b=12;}
             else if(mode==2){a=6;b=9;} // Original Han unknown START.
-            else if(mode==3){a=6;b=12;} // Original Elena 18 minus unknown is 6.
-            else if(mode==4){a=9;b=6;} // Original Han 15 minus unknown is 9.
+            else if(mode==4)
+            {
+                if(random.Next(2)==0){a=6;b=12;} // Elena: 18 minus missing number leaves 6.
+                else{a=9;b=6;} // Han: 15 minus missing number leaves 9.
+            }
             else{a=random.Next(1,11);b=random.Next(1,11);}
         }
         else if(family==CenterWithin20)
@@ -166,8 +168,10 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                     "ORIGINAL 2021 STORY: Elena has 6 counters. She gets some more. Now she has 18 counters. How many MORE did Elena get? Write UNKNOWN=number;EQUATION=number+number=number.":
                     $"{a} birds are here; some arrive, and now {t} birds are here. How many ARRIVED? Write UNKNOWN=number;EQUATION=number+number=number.",
                 2=>"ORIGINAL 2021 STORY: Han has some pencils. He gets 9 pencils from the art store. Now he has 15 pencils. How many pencils did Han have to START? Write UNKNOWN=number;EQUATION=number+number=number. Explain using objects, drawings, numbers or words.",
-                3=>"ORIGINAL 2021 STORY: Elena has 18 counters, gives away 12 and now has 6. How many REMAIN? Show thinking and write UNKNOWN=number;EQUATION=number-number=number.",
-                4=>"ORIGINAL 2021 STORY: Han has 15 pencils, gives some to friends and now has 9. How many did he GIVE AWAY? Show thinking and write UNKNOWN=number;EQUATION=number-number=number.",
+                3=>$"{t} birds are here, {b} fly away. How many REMAIN? Show thinking and write UNKNOWN=number;EQUATION=number-number=number.",
+                4=>a==6&&b==12?
+                    "ORIGINAL 2021 STORY: Elena has 18 counters. She gets rid of SOME and now has 6 counters. How many did Elena get rid of? Show thinking and write UNKNOWN=number;EQUATION=number-number=number.":
+                    "ORIGINAL 2021 STORY: Han has 15 pencils, gives SOME pencils to friends and now has 9. How many did he GIVE AWAY? Show thinking and write UNKNOWN=number;EQUATION=number-number=number.",
                 _=>$"Some birds are here, {b} fly away, and {a} remain. How many were here at START? Write UNKNOWN=number;EQUATION=number-number=number."
             },
             CenterWithin20=>mode==0?

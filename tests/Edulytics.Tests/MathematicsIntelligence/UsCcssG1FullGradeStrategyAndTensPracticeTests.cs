@@ -94,10 +94,12 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     public void OriginalElenaAndHanTakeAwayStoryVariantsHaveCorrectUnknownPositions()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;
-        var elena=new Dictionary<string,int>{{"a",6},{"b",12},{"c",0},{"mode",3}};
+        var elena=new Dictionary<string,int>{{"a",6},{"b",12},{"c",0},{"mode",4}};
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,elena,
+            "UNKNOWN=12;EQUATION=18-12=6"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,elena,
             "UNKNOWN=6;EQUATION=18-12=6"));
-        elena["mode"]=4;elena["a"]=9;elena["b"]=6;
+        elena["a"]=9;elena["b"]=6;
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,elena,
             "UNKNOWN=6;EQUATION=15-6=9"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(family,elena,
