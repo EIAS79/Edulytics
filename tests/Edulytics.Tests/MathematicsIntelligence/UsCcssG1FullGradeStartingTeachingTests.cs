@@ -16,9 +16,14 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         {
             var row=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U03:L{n:00}");
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
-            var expectedVersion=n==20
-                ?CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion
-                :CommonCoreG1FullGradeStartingContentCorrections.Version;
+            var expectedVersion=n switch
+            {
+                20=>CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion,
+                21=>CommonCoreG1FullGradeStartingContentCorrections.CenterSourceContentVersion,
+                22=>CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion,
+                23=>CommonCoreG1FullGradeStartingContentCorrections.TenSubtractSourceContentVersion,
+                _=>CommonCoreG1FullGradeStartingContentCorrections.Version
+            };
             Assert.Equal(expectedVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             var tr=row.Translations.Single(x=>x.CultureCode=="en");
@@ -49,9 +54,23 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("8 lions, 4 tigers and 3 cheetahs",text(20));
         Assert.Contains("8 goats, 7 sheep and 4 pigs",text(20));
         Assert.Contains("digital equation check verifies arithmetic",text(20));
+        Assert.Contains("What do you know about 20?",text(21));
+        Assert.Contains("10+10=13+7=20",text(21));
+        Assert.Contains("14-4=10 helps solve 14-5=9",text(22));
+        Assert.Contains("Elena has 16 crayons",text(22));
+        Assert.Contains("16-7=9 crayons",text(22));
+        Assert.Contains("17-7-1=9",text(23));
+        Assert.Contains("Diego's and Andre's different ten-frame methods",text(23));
+        Assert.Contains("14-5=9 and 13-6=7",text(23));
         var zoo=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L20");
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,zoo,CommonCoreG1FullGradeStartingContentCorrections.Version));
+        foreach(var number in new[]{21,22,23})
+        {
+            var lesson=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U03:L{number:00}");
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+                doc,lesson,CommonCoreG1FullGradeStartingContentCorrections.Version));
+        }
         var flexible=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L19");
         Assert.False(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,flexible,CommonCoreG1FullGradeStartingContentCorrections.Version));
