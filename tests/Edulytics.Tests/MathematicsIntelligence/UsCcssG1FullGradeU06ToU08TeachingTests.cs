@@ -104,7 +104,16 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("16-□=9",aquarium); // Andre and bullfrogs
         Assert.Contains("20-17=3",aquarium);
         Assert.Contains("6+8=14",aquarium);
-        Assert.Contains("7 first graders",text("PED:US-CCSS-MATH:G1:U08:L05"));
+        var planetarium=text("PED:US-CCSS-MATH:G1:U08:L05");
+        Assert.Contains("FOUR different missing-part stories",planetarium);
+        Assert.Contains("7+□=18",planetarium);   // First/second graders
+        Assert.Contains("13+□=18",planetarium);  // Bright and dim stars
+        Assert.Contains("6+□=15",planetarium);   // Diego and Tyler
+        Assert.Contains("12+□=20",planetarium);  // Elena stickers
+        Assert.Contains("17-9=□ and 9+□=17",planetarium);  // Noah two matches
+        Assert.Contains("11+□=16 and 16-11=□",planetarium); // Kiran two matches
+        Assert.Contains("9+17=□ does NOT",planetarium); // Original distractor
+        Assert.Contains("16+11=□ is NOT",planetarium); // Original distractor
         Assert.Contains("WRITE and ANSWER TWO new questions",text("PED:US-CCSS-MATH:G1:U08:L06"));
         Assert.Contains("number 103",text("PED:US-CCSS-MATH:G1:U08:L07"));
         Assert.Contains("70=24+46 is TRUE",text("PED:US-CCSS-MATH:G1:U08:L10"));
