@@ -95,10 +95,14 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
         var parameters=new Dictionary<string,int>{
             ["a"]=tens,["b"]=0,["c"]=0,["mode"]=3};
         Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,parameters));
-        var problem=UsCcssG1FullGradeStrategyAndTensQuestions.Build(
-            family,new Random(tens*113+7));
-        // Generator may choose a different mode: direct source-card mode must
-        // independently match the answer's card/quantity contract.
+        // Independently sample the real generator until this ten-word card
+        // is emitted, so the student-facing option and letter are tested.
+        var sourceCard=Enumerable.Range(0,2400)
+            .Select(seed=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+                family,new Random(seed*71+17)))
+            .First(q=>q.Parameters["a"]==tens&&q.Parameters["mode"]==3);
+        Assert.Contains($"{correctCard}: {correctWord}",sourceCard.Prompt);
+        Assert.Contains("no spelling required",sourceCard.Prompt);
         string expected=$"MATCH={correctCard};TENS={tens};NUMBER={tens*10}";
         Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(
             family,parameters));
