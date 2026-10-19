@@ -140,6 +140,35 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void Original2021ElenaSixteenMinusSevenUsesExactCrayonStoryAndIndependentChecks()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.TeenSubtract;
+        var p=new Dictionary<string,int>{{"a",16},{"b",7},{"c",0},{"mode",3}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        const string correct="REACH10=6;REST=1;DIFFERENCE=9;EQUATION=16-7=9";
+        Assert.Equal(correct,UsCcssG1FullGradeNextQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,correct));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "REACH10=6;REST=1;DIFFERENCE=10;EQUATION=16-7=10"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "REACH10=6;REST=1;DIFFERENCE=9;EQUATION=16-7=8"));
+        p["a"]=15;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        var sampled=Enumerable.Range(0,360)
+            .Select(n=>UsCcssG1FullGradeNextQuestions.Build(family,new Random(31*n+19)))
+            .Where(q=>q.Parameters["mode"]==3).ToArray();
+        Assert.True(sampled.Length>40);
+        Assert.All(sampled,q=>
+        {
+            Assert.Contains("Elena has 16 crayons",q.Prompt);
+            Assert.Equal(16,q.Parameters["a"]);
+            Assert.Equal(7,q.Parameters["b"]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void Diego2021FifteenMinusEightIsGeneratedAndTenFrameMethodChecked()
     {
         const string family=UsCcssG1FullGradeNextQuestions.TenSubtract;
