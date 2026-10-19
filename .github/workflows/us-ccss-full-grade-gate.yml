@@ -4,8 +4,8 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'docs/curriculum/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md'
-      - 'docs/curriculum/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md'
+      - 'docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md'
+      - 'docs/curriculum/plans/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L51-L146-SOURCE-GOAL-TRIAGE.json'
       - 'tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs'
@@ -41,8 +41,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'docs/curriculum/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md'
-      - 'docs/curriculum/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md'
+      - 'docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md'
+      - 'docs/curriculum/plans/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L51-L146-SOURCE-GOAL-TRIAGE.json'
       - 'tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs'

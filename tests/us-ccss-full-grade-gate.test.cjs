@@ -152,7 +152,7 @@ test('V1 immutable Git evidence supports real existing source/tests, not invente
   const {execFileSync}=require('node:child_process');
   const {validGitEvidenceReference}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
   const head=execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim();
-  const source='docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md';
+  const source='docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md';
   const content=execFileSync('git',['show',head+':'+source],{cwd:ROOT});
   const real={kind:'GIT_FILE',commitSha:head,path:source,
     sha256:crypto.createHash('sha256').update(content).digest('hex')};

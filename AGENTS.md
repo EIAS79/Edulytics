@@ -1,8 +1,8 @@
 # Edulytics — instructions for curriculum executors
 
 Before any curriculum changes, read the **entire** authoritative
-[`EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md`](docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md)
-and the [executor SOP](docs/curriculum/GRADE_FIRST_FIVE_EXECUTOR_SOP.md).
+[`EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md`](docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md)
+and the [executor SOP](docs/curriculum/plans/GRADE_FIRST_FIVE_EXECUTOR_SOP.md).
 
 **The plan `EDULYTICS-GRADE-FIRST-5-V1` is authoritative and unchanged.**
 The SOP only makes existing execution steps repeatable between human or AI sessions.
