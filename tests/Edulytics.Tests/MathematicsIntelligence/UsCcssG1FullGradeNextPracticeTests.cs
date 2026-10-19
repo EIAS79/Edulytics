@@ -73,6 +73,35 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void OriginalHowCloseAndFiveInARowStayDifferentSourceGames()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.CenterTwoThree;
+        var five=new Dictionary<string,int>{{"a",11},{"b",9},{"c",0},{"mode",3}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,five));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,five,
+            "TOTAL=20;EQUATION=9+11=20"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,five,
+            "TOTAL=20;EQUATION=9+10+1=20"));
+        five["b"]=6;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,five));
+        var triple=new Dictionary<string,int>{{"a",3},{"b",6},{"c",7},{"mode",1}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,triple,
+            "TOTAL=16;EQUATION=3+7+6=16"));
+        var modeThree=Enumerable.Range(0,350)
+            .Select(seed=>UsCcssG1FullGradeNextQuestions.Build(family,new Random(41*seed+17)))
+            .Where(q=>q.Parameters["mode"]==3).ToArray();
+        Assert.True(modeThree.Length>50);
+        Assert.All(modeThree,q=>
+        {
+            Assert.InRange(q.Parameters["b"],7,9);
+            Assert.Equal(0,q.Parameters["c"]);
+            Assert.Contains("FIVE IN A ROW",q.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void Zoo2021OriginalBirdExhibitUsesAllThreeSourceGroups()
     {
         const string family=UsCcssG1FullGradeNextQuestions.ZooThree;

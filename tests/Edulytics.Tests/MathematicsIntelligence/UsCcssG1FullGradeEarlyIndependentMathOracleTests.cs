@@ -36,9 +36,9 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
             0=>mode==2?"LIN=8+2+5=15;HAN=7+7+1=15;KIRAN=8+8-1=15;TOTAL=15":
                 $"MOVE={10-a};REST={b-(10-a)};TOTAL={a+b}",
             1=>$"TOTAL={sum};EQUATION={a}+{b}+{c}={sum}",
-            2=>mode%2==0?
-                $"TOTAL={a+b};EQUATION={a}+{b}={a+b}":
-                $"TOTAL={sum};EQUATION={a}+{b}+{c}={sum}",
+            2=>mode==1?
+                $"TOTAL={sum};EQUATION={a}+{b}+{c}={sum}":
+                $"TOTAL={a+b};EQUATION={a}+{b}={a+b}",
             3=>$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             4=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             _=>throw new InvalidOperationException()

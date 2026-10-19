@@ -33,8 +33,10 @@ public static class UsCcssG1FullGradeNextQuestions
             ZooThree=>a>=1&&a<=8&&b>=1&&b<=8&&c>=1&&c<=8&&a+b+c<=20&&
                 (mode!=2||(a==8&&b==7&&c==5))&&
                 (mode!=3||(a==3&&b==6&&c==7)),
-            CenterTwoThree=>a>=1&&a<=8&&b>=1&&b<=8&&
-                (mode%2==0?c==0:c>=1&&c<=8)&&a+b+c<=20,
+            CenterTwoThree=>mode==3?
+                (a>=1&&a<=11&&b>=7&&b<=9&&c==0&&a+b<=20):
+                (a>=1&&a<=8&&b>=1&&b<=8&&
+                 (mode==1?c>=1&&c<=8:c==0)&&a+b+c<=20),
             TeenSubtract or TenSubtract=>a>=11&&a<=18&&b>=a-9&&b<=9&&c==0,
             _=>false
         };
@@ -60,8 +62,17 @@ public static class UsCcssG1FullGradeNextQuestions
         }
         else if(family==CenterTwoThree)
         {
-            a=random.Next(1,9);b=random.Next(1,9);
-            c=mode%2==0?0:random.Next(1,Math.Min(8,20-a-b)+1);
+            if(mode==3)
+            {
+                // Original 2021 Five in a Row: numeral card + 7, 8 or 9.
+                a=random.Next(1,12);b=random.Next(7,10);c=0;
+            }
+            else
+            {
+                // How Close? Add to 20: two- or three-card combination.
+                a=random.Next(1,9);b=random.Next(1,9);
+                c=mode==1?random.Next(1,Math.Min(8,20-a-b)+1):0;
+            }
         }
         else
         {
@@ -82,9 +93,11 @@ public static class UsCcssG1FullGradeNextQuestions
                 mode%2==0?
                 $"At a zoo, there are {a} zebras, {b} penguins and {c} monkeys. All three groups count. Write TOTAL=number;EQUATION=number+number+number=number.":
                 $"At a zoo there are {a} lions, {b} birds and {c} seals. Use ANY correct addition method for all three groups. Write TOTAL=number;EQUATION=number+number+number=number.",
-            CenterTwoThree=>mode%2==0
-                ?$"How Close? Add the TWO number cards {a} and {b} within 20. Write TOTAL=number;EQUATION=number+number=number."
-                :$"Five in a Row: add ALL THREE card numbers {a}, {b} and {c}. Write TOTAL=number;EQUATION=number+number+number=number.",
+            CenterTwoThree=>mode==3
+                ?$"Original 2021 FIVE IN A ROW: choose a numeral card {a}; choose to add 7, 8 or 9 (chosen {b}). Calculate {a}+{b}, and write TOTAL=number;EQUATION=number+number=number. The actual card/board/partner game remains teacher-led."
+                :mode==1
+                ?$"How Close? Add to 20: choose THREE cards {a}, {b} and {c} and find how close the sum is to 20. Write TOTAL=number;EQUATION=number+number+number=number. Comparing hands and assigning a winner requires a teacher-led game."
+                :$"How Close? Add to 20: choose TWO cards {a} and {b} and find how close their sum is to 20. Write TOTAL=number;EQUATION=number+number=number.",
             TeenSubtract=>$"Take From: start with {a} counters and remove {b}. To cross ten, remove the ones first, then part of a ten. Write your subtraction EQUATION. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
             TenSubtract=>$"Use ten as a landmark for {a}-{b}. First subtract enough to get to ten, then subtract the rest. Write the original source subtraction EQUATION too. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
             _=>throw new InvalidOperationException()
@@ -103,9 +116,9 @@ public static class UsCcssG1FullGradeNextQuestions
                 "LIN=8+2+5=15;HAN=7+7+1=15;KIRAN=8+8-1=15;TOTAL=15":
                 $"MOVE={10-a};REST={b-(10-a)};TOTAL={a+b}",
             ZooThree=>$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}",
-            CenterTwoThree=>mode%2==0
-                ?$"TOTAL={a+b};EQUATION={a}+{b}={a+b}"
-                :$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}",
+            CenterTwoThree=>mode==1
+                ?$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}"
+                :$"TOTAL={a+b};EQUATION={a}+{b}={a+b}",
             TeenSubtract=>$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             TenSubtract=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             _=>throw new InvalidOperationException()
