@@ -54,6 +54,20 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
         Assert.Equal("MINUTES=30;HOUR=7",UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,p));
         Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(f,p,"MINUTES=15;HOUR=7"));
     }
+    [Theory]
+    [InlineData(7,3,0,"RESULT=7")]
+    [InlineData(7,3,1,"SHAPE=RECTANGLE")]
+    public void OriginalU07L17CenterUsesShapeOrArithmeticRatherThanOffTopicClock(
+        int a,int b,int mode,string answer)
+    {
+        const string family="usccss.g1.u07.l17.center_geometry_and_time";
+        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
+        Assert.Equal(answer,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,p));
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,p,answer));
+        Assert.DoesNotContain("minute hand",UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+            family,new Random(17)).Prompt,StringComparison.OrdinalIgnoreCase);
+    }
+
     [Fact]
     public void AllTextualGeometryAndTimePromptsOfferTenDistinctCases()
     {

@@ -23,7 +23,8 @@ public static partial class PracticeMathVisualRenderer
         {
             "usccss.g1.u07.l13.hour_clock"=>0,
             "usccss.g1.u07.l14.half_hour_clock"=>30,
-            "usccss.g1.u07.l15.write_hours_halfhours"=>mode%2==0?0:30,
+            "usccss.g1.u07.l15.write_hours_halfhours" or
+            "usccss.g1.u07.l16.daily_schedule_time"=>mode%2==0?0:30,
             _=>throw new JsonException("Family is not a Grade 1 analog clock assessment.")
         };
         const double cx=210,cy=130;

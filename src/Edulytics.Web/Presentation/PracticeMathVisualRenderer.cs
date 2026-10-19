@@ -100,13 +100,25 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u06.l06.measure_paperclips" or
                 "usccss.g1.u06.l07.unit_length_matters"
                     => GradeOneSourceMeasurementVisual(family,parameters),
+                "usccss.g1.u07.l01.sort_solids_attributes" or
+                "usccss.g1.u07.l02.compose_solids_components" or
+                "usccss.g1.u07.l03.sort_flat_shapers" or
+                "usccss.g1.u07.l04.draw_shape_attribute_check" or
+                "usccss.g1.u07.l05.defining_triangles" or
+                "usccss.g1.u07.l06.square_and_rectangle_properties" or
+                "usccss.g1.u07.l07.compose_flat_shapers" or
+                "usccss.g1.u07.l08.center_shapes_add_subtract" or
+                "usccss.g1.u07.l12.center_shape_number" or
+                "usccss.g1.u07.l17.center_geometry_and_time"
+                    => GradeOneSourceShapeVisual(family,parameters),
                 "usccss.g1.u07.l09.equal_halves_fourths" or
                 "usccss.g1.u07.l10.parts_make_whole" or
                 "usccss.g1.u07.l11.bigger_piece_halves_fourths"
                     => GradeOneSourceEqualAreaVisual(family,parameters),
                 "usccss.g1.u07.l13.hour_clock" or
                 "usccss.g1.u07.l14.half_hour_clock" or
-                "usccss.g1.u07.l15.write_hours_halfhours"
+                "usccss.g1.u07.l15.write_hours_halfhours" or
+                "usccss.g1.u07.l16.daily_schedule_time"
                     => GradeOneFullGradeClockFace(family,parameters),
                 "usccss.g1.u02.pets.write_two_equations" or
                 "usccss.g1.u02.shake_spill.enumerate_partitions" or

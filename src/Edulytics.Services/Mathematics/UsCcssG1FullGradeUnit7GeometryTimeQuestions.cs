@@ -83,10 +83,12 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             13=>$"Half-hour clock #{b}: minute hand at SIX, hour hand halfway between {a} and next hour. Write MINUTES=number;HOUR=number.",
             14=>mode%2==0?$"Clock card #{b}: hour hand at {a}, minute hand at 12. Write TIME=hour:minutes.":
                 $"Clock card #{b}: hour hand past {a}, minute hand at SIX. Write TIME=hour:minutes.",
-            15=>mode%2==0?$"A school schedule says reading starts at {a}:00. Write TIME=hour:minutes.":
-                $"A school schedule says snack begins at half past {a}. Write TIME=hour:minutes.",
-            16=>mode%2==0?$"Teacher-led center numerical task: subtract {b} from {a+b} (under 24). Write RESULT=number.":
-                $"Teacher-led center time task: minute hand at SIX, hour hand past {a}. Write TIME=hour:minutes.",
+            15=>mode%2==0?
+                $"Read the analog clock face for the hypothetical READING schedule. The short hand is at {a} and the minute hand is at 12. What time do you see? Write TIME=hour:minutes.":
+                $"Read the analog clock face for a hypothetical SNACK time. The short hand is halfway from {a} to the next hour and the long hand points at 6. Write TIME=hour:minutes.",
+            16=>mode%2==0?
+                $"Grade 1 center numerical task: subtract {b} from {a+b} (under 24). Write RESULT=number.":
+                $"Grade 1 WHICH ONE/Can You Draw It center: a closed four-sided flat shape has 4 right angles and its opposite sides are equal. What SHAPE could it be? Write SHAPE=name.",
             _=>throw new InvalidOperationException()
         };
         return new(family,prompt,
@@ -115,7 +117,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             13=>$"MINUTES=30;HOUR={a}",
             14=>$"TIME={a}:{(mode%2==0?"00":"30")}",
             15=>$"TIME={a}:{(mode%2==0?"00":"30")}",
-            16=>mode%2==0?$"RESULT={a}":$"TIME={a}:30",
+            16=>mode%2==0?$"RESULT={a}":"SHAPE=RECTANGLE",
             _=>throw new InvalidOperationException()
         };
     }

@@ -48,6 +48,19 @@ public sealed class UsCcssG1FullGradeAnalogClockSourceVisualTests
             UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(half,
             new Dictionary<string,int>{{"a",7},{"b",2},{"c",0},{"mode",0}}));
     }
+    [Theory]
+    [InlineData(6,0)]
+    [InlineData(6,1)]
+    public void SourceHardTimesRequiresAnalogClockReadingRatherThanCopyingDigits(
+        int hour,int mode)
+    {
+        const string family="usccss.g1.u07.l16.daily_schedule_time";
+        var svg=Clock(family,hour,mode);
+        Assert.Contains("class='clock-hour'",svg);
+        Assert.Contains("class='clock-minute'",svg);
+        Assert.Contains("<svg ",svg);
+    }
+
     [Fact]
     public void DoNotFabricateAnalogClockForUnrelatedClassroomCenter()
     {
@@ -55,6 +68,6 @@ public sealed class UsCcssG1FullGradeAnalogClockSourceVisualTests
         Assert.Null(PracticeMathVisualRenderer.RenderSvg(
             "usccss.g1.u07.l17.center_geometry_and_time",json));
         Assert.Null(PracticeMathVisualRenderer.RenderSvg(
-            "usccss.g1.u07.l16.daily_schedule_time",json));
+            "usccss.g1.u08.l07.count_on_to120",json));
     }
 }
