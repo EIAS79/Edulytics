@@ -38,7 +38,8 @@ public static class UsCcssG1FullGradeNextQuestions
                 (a>=1&&a<=8&&b>=1&&b<=8&&
                  (mode==1?c>=1&&c<=8:c==0)&&a+b+c<=20),
             TeenSubtract or TenSubtract=>a>=11&&a<=18&&b>=a-9&&b<=9&&c==0&&
-                (family!=TenSubtract||mode!=2||(a==15&&b==8)),
+                (family!=TenSubtract||mode!=2||(a==15&&b==8))&&
+                (family!=TeenSubtract||mode!=3||(a==16&&b==7)),
             _=>false
         };
     }
@@ -82,6 +83,7 @@ public static class UsCcssG1FullGradeNextQuestions
         else
         {
             if(family==TenSubtract&&mode==2){a=15;b=8;} // Original Diego's number-card subtraction.
+            else if(family==TeenSubtract&&mode==3){a=16;b=7;} // Original Elena's 16-crayon story.
             else{a=random.Next(11,19);b=random.Next(a-9,10);}
         }
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
@@ -108,7 +110,9 @@ public static class UsCcssG1FullGradeNextQuestions
                 :mode==1
                 ?$"How Close? Add to 20: choose THREE cards {a}, {b} and {c} and find how close the sum is to 20. Write TOTAL=number;EQUATION=number+number+number=number. Comparing hands and assigning a winner requires a teacher-led game."
                 :$"How Close? Add to 20: choose TWO cards {a} and {b} and find how close their sum is to 20. Write TOTAL=number;EQUATION=number+number=number.",
-            TeenSubtract=>$"Take From: start with {a} counters and remove {b}. To cross ten, remove the ones first, then part of a ten. Write your subtraction EQUATION. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
+            TeenSubtract=>mode==3?
+                "ORIGINAL 2021 STUDENT FACING: Elena has 16 crayons and gives 7 crayons to Diego. How many crayons remain? Show your thinking with drawings, numbers, or words. For this digital method, write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Original classroom drawings, posters and alternative strategies require teacher review.":
+                $"Take From: start with {a} counters and remove {b}. To cross ten, remove the ones first, then part of a ten. Write your subtraction EQUATION. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
             TenSubtract=>mode==2?
                 "ORIGINAL 2021 STUDENT FACING: Diego starts Number Card Subtraction with 15, then picks an 8. Show 15 on ten-frames, subtract 8 using a ten, and write the matching EQUATION. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Explain your drawing to a teacher.":
                 $"Use ten as a landmark for {a}-{b}. First subtract enough to get to ten, then subtract the rest. Write the original source subtraction EQUATION too. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
