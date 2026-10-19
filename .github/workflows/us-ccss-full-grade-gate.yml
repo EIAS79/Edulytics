@@ -92,6 +92,10 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Evidence SHA references require git merge-base and git show of older verified commits.
+          # Shallow checkouts can falsely reject valid original V1 lesson acceptances.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
