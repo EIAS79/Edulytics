@@ -33,8 +33,16 @@
   },
   "stageC": {
     "existingPracticeReused": true,
-    "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "permittedDigitRangeAndArithmeticUnchanged": false,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceSpecificGeneratorCorrection": {
+      "path": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+      "commit": "eb98432c25ddc01d8f3e808fa08081e1a5749ed0",
+      "defect": "Prior L07 mode 4 reported NEW_TEN=NO for 8+two-digit operand when the ones sum composed a new ten; e.g. 8+75=83 must report YES",
+      "mathResolution": "Derived NEW_TEN from (a%10+b%10>=10), consistent with existing independently computed verifier; no change to source-permitted domains or teacher-only boundaries",
+      "relevantHistoricCi": "https://github.com/EIAS79/Edulytics/actions/runs/39310776955",
+      "independentlyRunOnNewCommit": false
+    }
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -44,7 +52,11 @@
     "learnerRenderingExactFrozenSha": "PENDING",
     "authenticatedGradePersistence": "PENDING",
     "independentMathAndLegalMediaEvidence": "PENDING",
-    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED",
+    "practiceTestsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5AdditionPracticeTests.cs",
+    "practiceNegativeCarryRegressionCommit": "91e7f7088f636ef376059958a66a97a68f1e7f83",
+    "oldCiFailureRootCauseIdentified": true,
+    "newSourceMathRun": "NOT_RUN_AUTHORING_POLICY"
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
