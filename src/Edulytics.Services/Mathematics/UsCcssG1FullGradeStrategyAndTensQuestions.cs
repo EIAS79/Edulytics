@@ -25,6 +25,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
     [CountOnOrAway,FlexibleSubtract,StoryUnknowns,CenterWithin20,
      CountTens,MatchTens,AddRemoveTen,AddRemoveMultipleTens,CenterTens];
 
+    private static string OriginalU04L01Bag(int tens)=>tens switch
+    {
+        1=>"F",2=>"A",3=>"E",4=>"B",5=>"C",6=>"D",
+        _=>throw new InvalidOperationException("Unknown 2021 source bag quantity")
+    };
     private static string TensWord(int tens)=>tens switch
     {
         1=>"ten",2=>"twenty",3=>"thirty",4=>"forty",5=>"fifty",
@@ -59,7 +64,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             CountOnOrAway or FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a,
             StoryUnknowns=>a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20,
             CenterWithin20=>mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a,
-            CountTens=>mode<=3&&a>=1&&a<=6&&b==0,
+            CountTens=>mode<=3&&a>=1&&a<=6&&b==0&&
+                (mode!=0||a==4),
             MatchTens=>mode<=3&&a>=1&&a<=9&&b==0,
             AddRemoveTen=>mode<=3&&b==1&&
                 (mode==2?a==9:mode==3?a==1:a>=2&&a<=8),
@@ -79,7 +85,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         if(family is CountOnOrAway or FlexibleSubtract){a=random.Next(11,21);b=random.Next(1,Math.Min(9,a-1)+1);}
         else if(family==StoryUnknowns){a=random.Next(1,11);b=random.Next(1,11);}
         else if(family==CenterWithin20){a=random.Next(11,18);b=random.Next(1,21-a);}
-        else if(family==CountTens){a=random.Next(1,7);}
+        else if(family==CountTens){a=mode==0?4:random.Next(1,7);}
         else if(family==MatchTens){a=random.Next(1,10);}
         else if(family==AddRemoveTen)
         {
@@ -123,10 +129,10 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 :$"Center numeric task: solve {a}-{b} within 20. Write RESULT=number.",
             CountTens=>mode switch
             {
-                0=>$"Count {a} separate BUNDLES of exactly ten counters each. Write GROUPS=number;TOTAL=number.",
-                1=>$"Count objects on {a} PLATES, with exactly ten counters on every plate. Write GROUPS=number;TOTAL=number.",
-                2=>$"Count {a} FULL ten-frames, with every frame holding exactly ten dots. Write GROUPS=number;TOTAL=number.",
-                _=>$"Count {a} TOWERS of cubes, each tower exactly ten cubes tall. Write GROUPS=number;TOTAL=number."
+                0=>"Original 2021 G1 U04 L01 Activity 1: a source counting bag contains exactly 40 objects. Organize them into COMPLETE groups of ten and count all objects. Write GROUPS=number;TOTAL=number. Choose and describe a physical counting method with your teacher.",
+                1=>$"Original 2021 G1 U04 L01 Activity 2 Bag {OriginalU04L01Bag(a)} has exactly {10*a} objects. Organize it in tens and count them. Source bags A=20, B=40, C=50, D=60, E=30, F=10. Write GROUPS=number;TOTAL=number. Partner bag-switching and drawings are teacher reviewed.",
+                2=>$"Source-inspired way to organize the collection: count {a} FULL ten-frames, each with ten dots, then explain the total. Write GROUPS=number;TOTAL=number.",
+                _=>$"Source-inspired way to organize the collection: count {a} TOWERS of cubes, each with ten cubes, then explain the total. Write GROUPS=number;TOTAL=number."
             },
             MatchTens=>mode switch
             {
