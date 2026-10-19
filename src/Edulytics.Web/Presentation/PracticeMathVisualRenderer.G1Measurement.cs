@@ -14,7 +14,7 @@ public static partial class PracticeMathVisualRenderer
     private static string GradeOneSourceMeasurementVisual(string family,JsonElement p)
     {
         int a=GetInt(p,"a"),b=GetInt(p,"b"),c=GetInt(p,"c"),mode=GetInt(p,"mode");
-        if(c!=0||mode<0||mode>3)throw new JsonException("Invalid Grade 1 measurement mode");
+        if(mode<0||mode>3)throw new JsonException("Invalid Grade 1 measurement mode");
         bool compare=family is "usccss.g1.u06.l01.compare_lengths" or
             "usccss.g1.u06.l02.indirect_length_comparison" or
             "usccss.g1.u06.l03.choose_indirect_comparison";
@@ -23,29 +23,31 @@ public static partial class PracticeMathVisualRenderer
         bool smallUnits=family=="usccss.g1.u06.l07.unit_length_matters";
         if(!compare&&!cubes&&!clips&&!smallUnits)
             throw new JsonException("Not an original Grade 1 measurement family");
-        if(compare && (a<4||a>20||b<1||b>20) ||
-           (cubes||clips) && (a<2||a>20||b!=0) ||
-           smallUnits && (a<2||a>14||b!=2))
+        bool orderThree=family=="usccss.g1.u06.l01.compare_lengths"&&mode%2==1;
+        if(compare && (a<4||a>20||b<1||b>20||
+             (orderThree?(b<4||c<4||c>20||a==b||a==c||b==c):c!=0)) ||
+           (cubes||clips) && (a<2||a>20||b!=0||c!=0) ||
+           smallUnits && (a<2||a>14||b!=2||c!=0))
             throw new JsonException("Invalid source measurement operands");
         var svg=SvgStart("Source-based first grade visual. Equal-size units, common starting line, and endpoint comparison.");
         svg.Append("<line x1='38' y1='39' x2='38' y2='219' stroke='currentColor' stroke-width='2' stroke-dasharray='4 4'/>");
         if(compare)
         {
-            int first=a,second=b;
-            double step=330d/Math.Max(a,b);
-            Text(svg,52,58,"A","label");
-            Text(svg,52,149,"B","label");
-            for(int n=0;n<first;n++)
+            double step=330d/(orderThree?Math.Max(a,Math.Max(b,c)):Math.Max(a,b));
+            var lengths=orderThree?
+                new[]{a,b,c}:new[]{a,b};
+            string[] labels=["A","B","C"];
+            for(int i=0;i<lengths.Length;i++)
             {
-                double x=39+n*step;
-                svg.Append($"<rect class='length-a' x='{F(x)}' y='73' width='{F(step)}' height='29' fill='rgba(33,128,184,.24)' stroke='currentColor' stroke-width='1'/>");
+                int y=orderThree?69+i*63:73+i*91;
+                Text(svg,52,y-13,labels[i],"label");
+                for(int n=0;n<lengths[i];n++)
+                {
+                    double x=39+n*step;
+                    svg.Append($"<rect class='length-{i}' x='{F(x)}' y='{y}' width='{F(step)}' height='24' fill='rgba(33,128,184,.24)' stroke='currentColor' stroke-width='1'/>");
+                }
             }
-            for(int n=0;n<second;n++)
-            {
-                double x=39+n*step;
-                svg.Append($"<rect class='length-b' x='{F(x)}' y='164' width='{F(step)}' height='29' fill='rgba(204,134,41,.28)' stroke='currentColor' stroke-width='1'/>");
-            }
-            Text(svg,210,237,"Both strips start at the SAME line.","hint");
+            Text(svg,210,239,orderThree?"Order THREE from shortest to longest.":"Compare the aligned starting endpoints.","hint");
         }
         else if(cubes||clips)
         {

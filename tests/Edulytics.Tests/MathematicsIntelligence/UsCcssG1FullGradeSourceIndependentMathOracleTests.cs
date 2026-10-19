@@ -15,11 +15,15 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
     private static string Relation(int a,int b,string larger,string smaller) =>
         a>b?larger:a<b?smaller:"EQUAL";
 
-    private static string SourceMeasurementOracle(int i,int a,int b,int mode)
+    private static string SourceMeasurementOracle(int i,int a,int b,int c,int mode)
     {
         return i switch
         {
-            0=>$"LONGER={Relation(a,b,"RED","BLUE")};DIFFERENCE={Math.Abs(a-b)}",
+            0=>mode%2==0?$"LONGER={Relation(a,b,"RED","BLUE")};DIFFERENCE={Math.Abs(a-b)}":
+                "ORDER="+string.Join(",",new[]{
+                    (Length:a,Label:"A"),(Length:b,Label:"B"),
+                    (Length:c,Label:"C")}
+                    .OrderBy(x=>x.Length).Select(x=>x.Label)),
             1 or 2=>$"LONGER={Relation(a,b,"A","B")}",
             3=>mode%2==0?$"RESULT={a+b}":
                 $"RELATION={Relation((a%8+1)+(b%8+1),(a/10%8+1)+(b/10%8+1),"GREATER","LESS")}",
@@ -94,7 +98,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 .Build(list[i],new Random(7100+seed*67+i*101)).Parameters;
             int a=p["a"],b=p["b"],mode=p["mode"];
             Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(list[i],p));
-            var expected=SourceMeasurementOracle(i,a,b,mode);
+            var expected=SourceMeasurementOracle(i,a,b,p["c"],mode);
             Assert.Equal(expected,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(list[i],p));
             Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(list[i],p,expected));
             Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(list[i],p,expected+";FALSE=1"));

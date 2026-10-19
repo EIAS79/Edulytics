@@ -35,6 +35,17 @@ public sealed class UsCcssG1FullGradeMeasurementFractionVisualTests
     }
 
     [Fact]
+    public void OriginalU06L01ThreeLengthsAreDrawnFromTheSameStartingLine()
+    {
+        const string family="usccss.g1.u06.l01.compare_lengths";
+        var json=JsonSerializer.Serialize(new{parameters=new{a=7,b=4,c=9,mode=1}});
+        var svg=Assert.IsType<string>(PracticeMathVisualRenderer.RenderSvg(family,json));
+        Assert.Equal(7,System.Text.RegularExpressions.Regex.Matches(svg,"class='length-0'").Count);
+        Assert.Equal(4,System.Text.RegularExpressions.Regex.Matches(svg,"class='length-1'").Count);
+        Assert.Equal(9,System.Text.RegularExpressions.Regex.Matches(svg,"class='length-2'").Count);
+    }
+
+    [Fact]
     public void UnitSizesChangePhysicalUnitCountButNotMeasuredBarLength()
     {
         var svg=Assert.IsType<string>(Draw("usccss.g1.u06.l07.unit_length_matters",6,2,0));

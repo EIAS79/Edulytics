@@ -42,6 +42,32 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(f,p,"SMALL_UNITS=12"));
         Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(f,p,"SMALL_UNITS=6"));
     }
+    [Theory]
+    [InlineData(7,4,9,"ORDER=B,A,C")]
+    [InlineData(8,20,12,"ORDER=A,C,B")]
+    [InlineData(17,9,4,"ORDER=C,B,A")]
+    public void OriginalU06L01RequiresThreeDistinctLengthsOrderedNotOnlyTwoCompared(
+        int a,int b,int c,string expected)
+    {
+        const string family="usccss.g1.u06.l01.compare_lengths";
+        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"ORDER=A,B,C"));
+    }
+
+    [Fact]
+    public void OriginalThreeObjectComparisonRejectsDuplicateOrOutOfRangeLengths()
+    {
+        const string family="usccss.g1.u06.l01.compare_lengths";
+        foreach(var (a,b,c) in new[]{(7,7,9),(7,9,9),(7,9,0),(7,9,21)})
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",1}};
+            Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        }
+    }
+
     [Fact]
     public void CenterExpressionsCompareDifferentValuesWithin20()
     {
