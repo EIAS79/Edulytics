@@ -20,6 +20,12 @@ public sealed class UsCcssG1FullGradeFinalUnit4TeachingTests
         var representation=doc.Lessons.Single(l=>l.LessonCode=="PED:US-CCSS-MATH:G1:U04:L19");
         Assert.Contains("85 > 58",comparison.Translations.Single(x=>x.CultureCode=="en").WorkedExamples);
         Assert.Contains("3 tens and 13 ones",representation.Translations.Single(x=>x.CultureCode=="en").WorkedExamples);
+        var bags=doc.Lessons.Single(l=>l.LessonCode=="PED:US-CCSS-MATH:G1:U04:L20")
+            .Translations.Single(x=>x.CultureCode=="en").StepByStepSolutions;
+        Assert.Contains("Bag A has five tens and two ones (52)",bags);
+        Assert.Contains("Bag B has four tens and twenty-five ones (65)",bags);
+        Assert.Contains("Bag C has 49 cubes with 29 ones",bags);
+        Assert.Contains("Bag D has 36 cubes with two tens",bags);
         Assert.Equal(CommonCoreG1FullGradeFinalUnit4Corrections.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,comparison));
     }
