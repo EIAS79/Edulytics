@@ -24,6 +24,14 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string ChooseSubtractSourceContentVersion="us-ccss-g1-u03-l25-original-activities-v6";
     public const string StorySourceContentVersion="us-ccss-g1-u03-l26-original-activities-v6";
     public const string CenterFourSourceContentVersion="us-ccss-g1-u03-l27-original-activities-v6";
+    private const string UnitFourCollectionLessonCode="PED:US-CCSS-MATH:G1:U04:L01";
+    private const string UnitFourTensMatchLessonCode="PED:US-CCSS-MATH:G1:U04:L02";
+    private const string UnitFourMultipleTensLessonCode="PED:US-CCSS-MATH:G1:U04:L04";
+    private const string UnitFourCenterLessonCode="PED:US-CCSS-MATH:G1:U04:L05";
+    public const string UnitFourCollectionSourceContentVersion="us-ccss-g1-u04-l01-original-activities-v6";
+    public const string UnitFourTensMatchSourceContentVersion="us-ccss-g1-u04-l02-original-activities-v6";
+    public const string UnitFourMultipleTensSourceContentVersion="us-ccss-g1-u04-l04-original-activities-v6";
+    public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v6";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -274,11 +282,13 @@ Original 2021 Compare, Add and Subtract Within 20: compare the values of additio
         new(@"PED:US-CCSS-MATH:G1:U04:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-1/preparation.html",@"5f7a4f43ed4319bca795c0b82d6a05acb7fd3bf1e20175f4e57825aa89c9dd16",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
             @"Count Large Collections",
             @"Count large collections by organizing loose counters or classroom objects into groups of TEN. Show the number as a multiple of ten up to sixty, and explain why grouping prevents double counting. Real objects and class discussion are teacher-led.",
-            @"Learning goal: count 10, 20, 30, 40, 50 and 60 objects, and compare strategies for making and recording equal groups of ten. One ten is ten ones; six tens are sixty ones. Zero tens are zero.",
+            @"Learning goal: count 10, 20, 30, 40, 50 and 60 objects, and compare strategies for making and recording equal groups of ten. One ten is ten ones; six tens are sixty ones. Zero tens are zero. Original 2021 Activity 1 uses a physical collection of 40 objects; Activity 2 uses several different collections of multiples of ten with groups trading bags. Warm-up: choral count by tens and discuss patterns.",
             @"Example 1: Three equal bags with ten counters each contain 10+10+10=30 counters.
 Example 2: Five bundles of ten pencils contain 5 tens=50 pencils.
 Example 3: Six groups of ten cubes contain 60 cubes. Count 10,20,30,40,50,60.
-Example 4: Two plates each hold ten counters, so 2 tens=20 counters.",
+Example 4: Two plates each hold ten counters, so 2 tens=20 counters.
+Original 2021 first collection: 40 objects can be arranged as four groups of ten (4 tens=40).
+Original 2021 group activity: pupils count a second bag after trading collections; the teacher checks that physical objects are counted only once.",
             @"Step 1: Arrange your collection into separate groups of exactly ten objects.
 Step 2: Count the number of complete groups, without recounting an object.
 Step 3: Skip-count by tens, beginning at ten and stopping at the last group.
@@ -289,11 +299,12 @@ Step 5: Check each group has ten and the total is at most sixty for this lesson.
         new(@"PED:US-CCSS-MATH:G1:U04:L02",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-2/preparation.html",@"f916e5b744814c256800ad18834e648885de72c02121535104d72d46e32ed067",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2" },
             @"Match Representations of Tens",
             @"Match the numeral, the number of tens and a picture of towers/bundles of ten for MULTIPLES OF TEN. Explain why three towers of ten, '3 tens', and numeral 30 describe the same collection.",
-            @"Learning goal: interpret base-ten representations of multiples of ten, compare a numeral with bundles and words, and justify each match. In 70, the digit 7 represents seven tens, not seven single cubes.",
+            @"Learning goal: interpret base-ten representations of multiples of ten, compare a numeral with bundles and words, and justify each match. In 70, the digit 7 represents seven tens, not seven single cubes. The original 2021 estimation warm-up asks for a too-low, about-right, and too-high estimate before examining ten-cube towers; estimates must not be reported as observed pupil work by a numeric auto-grader.",
             @"Example 1: 3 tens = 3 towers of ten = 30 cubes.
 Example 2: 7 tens = 7 towers of ten = 70 cubes.
 Example 3: 5 tens = 50 ones: 10+10+10+10+10=50.
-Example 4: 4 towers of ten represent 40, not 14.",
+Example 4: 4 towers of ten represent 40, not 14.
+Original 2021 matching tasks pair number words (such as seventy), a numeral (70), and seven ten-cube towers or tens drawings. The classroom movement/matching with two classmates remains teacher-facilitated.",
             @"Step 1: Count complete ten-cube towers or drawn bundles.
 Step 2: Write the number of 'tens' in words.
 Step 3: Skip-count by ten to find the total objects.
@@ -304,11 +315,14 @@ Step 5: Explain how the tens digit records the number of towers.",
         new(@"PED:US-CCSS-MATH:G1:U04:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-4/preparation.html",@"aea5b61803df4c4b9df6fd46f89e9413a5bb48d0ef33c3e8178327ec9e22b5c7",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6" },
             @"More Addition and Subtraction with Tens PLC Activity",
             @"Add and subtract different MULTIPLES of ten by combining or taking away groups of ten. Use drawings, simple story contexts and equations. Unlike the previous lesson, the change can be 20, 30 or more—not always one ten.",
-            @"Learning goal: add and subtract multiples of ten from multiples of ten (within 0–100) using tens as a unit. Addition 30+20 joins three tens and two tens; subtraction 70-40 removes four of seven tens.",
+            @"Learning goal: add and subtract multiples of ten from multiples of ten (within 0–100) using tens as a unit. Addition 30+20 joins three tens and two tens; subtraction 70-40 removes four of seven tens. The original 2021 warm-up asks 30+10=40, 40+10=50, 80-10=70 and 70-10=60; pupil strategies may use the number of tens.",
             @"Example 1: 30+20=(3+2) tens=50.
 Example 2: 70-40=(7-4) tens=30.
 Example 3: 40+50=90, nine groups of ten.
-Example 4: 90-60=30, and 30+60=90.",
+Example 4: 90-60=30, and 30+60=90.
+Original 2021 story: Jada counts 30 cubes in Bag A and 2 towers of 10 in Bag B, so 30+20=50 cubes.
+Original 2021 story: Tyler has 7 towers of ten in Bag C, removes 40 cubes, and has 70-40=30 cubes.
+Original 2021 student tasks: 4 tens and 5 tens make 9 tens=90; 8 tens take away 3 tens leaves 5 tens=50; 20+60=80; 70-20=50; 90-70=20; 40+40=80.",
             @"Step 1: Draw a tower for each ten in the starting number.
 Step 2: Model adding or removing the stated multiple of ten, not single ones.
 Step 3: Add or subtract the number of ten-blocks.
@@ -318,12 +332,13 @@ Step 5: Check the result stays within 0–100 and agrees with a story context.",
             @"I can add and subtract multiples of ten by reasoning with whole groups of ten."),
         new(@"PED:US-CCSS-MATH:G1:U04:L05",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-5/preparation.html",@"e7cfc5b7e32e9bb81e4fd304bfbf0fcb85259e5e85278ccbdb5f1314f63f34ce",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
             @"Center Day 1",
-            @"Teacher-led Center Day: practice adding and subtracting multiples of TEN and, in other reviewed centers, numbers within 20. The Check It Off Stage 3 card activity uses number cards marked 0,10,...,90 and students choose a valid addition/subtraction expression. The digital portion grades mathematically valid numbers but never simulates partner turn-taking as completed.",
-            @"Learning goals: use tens as units when adding/subtracting whole tens, and fluently add/subtract within 20. If the tens cards are 40 and 30, students may compute 40+30=70 or 40-30=10. For number cards producing totals above 100, those are outside the reviewed early place-value scope.",
+            @"Teacher-led Center Day: practice adding and subtracting multiples of TEN and, in other reviewed centers, numbers within 20. The Check It Off Stage 2 card activity uses number cards marked 0,10,...,90 and students choose a valid addition/subtraction expression. The digital portion grades mathematically valid numbers but never simulates partner turn-taking as completed.",
+            @"Learning goals: use tens as units when adding/subtracting whole tens, and fluently add/subtract within 20. If the tens cards are 40 and 30, students may compute 40+30=70 or 40-30=10. For number cards producing totals above 100, those are outside the reviewed early place-value scope. Original 2021 Check It Off Stage 2 uses two multiples-of-ten cards (0–90) with the chosen result checked on the board; a result must lie within the activity's board range. The warm-up Which One Doesn't Belong? uses four pictures of tens whose explanations require a teacher.",
             @"Example 1: Cards 40 and 30: 40+30=70.
 Example 2: Cards 70 and 20: 70-20=50.
 Example 3: A previous center includes 8+7=15 by making ten.
-Example 4: 16-8=8 because 8+8=16.",
+Example 4: 16-8=8 because 8+8=16.
+Original 2021 Check It Off example: cards 40 and 50 can produce a 90 sum or 10 difference. If 90 is already marked, subtract 50-40=10 to mark the remaining value; the teacher-led center tracks card and board state.",
             @"Step 1: Read the number cards and choose a permitted operation.
 Step 2: For tens, combine or remove whole groups of ten.
 Step 3: For within-20 numbers, count on, make ten or use a known fact.
@@ -531,6 +546,10 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
             ChooseSubtractLessonCode=>ChooseSubtractSourceContentVersion,
             StoryLessonCode=>StorySourceContentVersion,
             CenterFourLessonCode=>CenterFourSourceContentVersion,
+            UnitFourCollectionLessonCode=>UnitFourCollectionSourceContentVersion,
+            UnitFourTensMatchLessonCode=>UnitFourTensMatchSourceContentVersion,
+            UnitFourMultipleTensLessonCode=>UnitFourMultipleTensSourceContentVersion,
+            UnitFourCenterLessonCode=>UnitFourCenterSourceContentVersion,
                 _=>Version
             })
             : previous;
@@ -540,7 +559,9 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
-             CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode));
+             CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
+             UnitFourCollectionLessonCode or UnitFourTensMatchLessonCode or
+             UnitFourMultipleTensLessonCode or UnitFourCenterLessonCode));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
