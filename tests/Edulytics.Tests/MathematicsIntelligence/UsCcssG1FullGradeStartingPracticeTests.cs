@@ -42,6 +42,24 @@ public sealed class UsCcssG1FullGradeStartingPracticeTests
                 Assert.False(UsCcssG1FullGradeStartQuestions.GradePersistedAnswer(family,answer,answer+";EXTRA=1"));
             }
     }
+    [Theory]
+    [InlineData(17,4,8,2)]
+    [InlineData(16,7,3,3)]
+    public void OriginalNumberPuzzleDigitCardsCannotBeReused(
+        int total,int firstCard,int secondCard,int mode)
+    {
+        const string f=UsCcssG1FullGradeStartQuestions.Center;
+        var p=new Dictionary<string,int>{{"a",total},{"b",firstCard},{"c",secondCard},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeStartQuestions.Valid(f,p));
+        var answer=$"CARDS={firstCard},{secondCard}";
+        Assert.Equal(answer,UsCcssG1FullGradeStartQuestions.Solve(f,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,answer));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+            $"CARDS={firstCard},{firstCard}"));
+        p["c"]=firstCard;
+        Assert.False(UsCcssG1FullGradeStartQuestions.Valid(f,p));
+    }
+
     [Fact]
     public void ThreeAddendAndMakeTenSpecificWrongAnswerControls()
     {

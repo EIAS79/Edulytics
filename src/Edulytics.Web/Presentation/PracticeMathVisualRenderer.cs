@@ -100,6 +100,8 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u06.l06.measure_paperclips" or
                 "usccss.g1.u06.l07.unit_length_matters"
                     => GradeOneSourceMeasurementVisual(family,parameters),
+                "usccss.g1.u03.l14.center.add_subtract"
+                    => GradeOneFullGradeNumberPuzzleBoard(parameters),
                 "usccss.g1.u07.l01.sort_solids_attributes" or
                 "usccss.g1.u07.l02.compose_solids_components" or
                 "usccss.g1.u07.l03.sort_flat_shapers" or

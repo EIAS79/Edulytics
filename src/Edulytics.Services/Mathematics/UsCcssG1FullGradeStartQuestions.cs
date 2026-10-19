@@ -28,7 +28,8 @@ public static class UsCcssG1FullGradeStartQuestions
             mode<0||mode>3) return false;
         return family switch
         {
-            Center => a>=11&&a<=20&&b>=1&&b<=9&&b<a&&c==0,
+            Center => a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
+                (mode<=1?c==0:(c>=1&&c<=9&&c<a&&c!=b)),
             ThreeStory or Expression => a>=1&&a<=9&&b==10-a&&c>=1&&c<=10,
             MakeTen or Pattern => a>=6&&a<=9&&b>10-a&&b<=10&&a+b<=20&&c==0,
             _=>false
@@ -38,7 +39,12 @@ public static class UsCcssG1FullGradeStartQuestions
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 full-grade family");
         int mode=random.Next(4),a=0,b=0,c=0;
-        if(family==Center){a=random.Next(11,21);b=random.Next(1,Math.Min(10,a));}
+        if(family==Center)
+        {
+            a=random.Next(11,21);b=random.Next(1,10);
+            if(mode>=2)
+                do{c=random.Next(1,10);}while(c==b);
+        }
         else if(family==ThreeStory||family==Expression){
             a=random.Next(1,10);b=10-a;c=random.Next(1,11);
         }
@@ -48,9 +54,10 @@ public static class UsCcssG1FullGradeStartQuestions
         if(!Valid(family,p))throw new InvalidOperationException("Generated out-of-scope mathematics");
         string prompt=family switch
         {
-            Center=>mode%2==0?
+            Center=>mode<=1?(mode==0?
                 $"Number Puzzles: add {a} + {b}. Write ANSWER=number.":
-                $"Number Puzzles: subtract {a} - {b}. Write ANSWER=number.",
+                $"Number Puzzles: subtract {a} - {b}. Write ANSWER=number."):
+                $"Number Puzzles: use TWO DIFFERENT digit cards, each at most ONCE. Fill □ + {a-b} = {a} and {a} - □ = {a-c}. Write CARDS=first_digit,second_digit. Do not repeat a card.",
             ThreeStory=>mode%2==0?
                 $"Birds arrive in three groups of {a}, {c}, and {b}. Two groups make ten. How many birds are there in all? Write TOTAL=number;REST=number.":
                 $"Add three collections of {a}, {b}, and {c} stones. Pair two groups to make ten. Write TOTAL=number;REST=number.",
@@ -73,7 +80,7 @@ public static class UsCcssG1FullGradeStartQuestions
         var a=p["a"];var b=p["b"];var c=p["c"];var mode=p["mode"];
         return family switch
         {
-            Center=>$"ANSWER={(mode%2==0?a+b:a-b)}",
+            Center=>mode<=1?$"ANSWER={(mode==0?a+b:a-b)}":$"CARDS={b},{c}",
             ThreeStory=>$"TOTAL={a+b+c};REST={c}",
             Expression=>$"TRUE={(mode%2==0?"YES":"NO")};TOTAL={a+b+c}",
             MakeTen=>$"MOVE={10-a};REST={a+b-10};TOTAL={a+b}",
