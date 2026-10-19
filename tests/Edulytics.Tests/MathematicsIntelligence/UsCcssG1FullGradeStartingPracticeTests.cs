@@ -104,9 +104,13 @@ public sealed class UsCcssG1FullGradeStartingPracticeTests
     {
         var p=new Dictionary<string,int>{{"a",3},{"b",7},{"c",6},{"mode",1}};
         Assert.True(UsCcssG1FullGradeStartQuestions.Verify(
-            UsCcssG1FullGradeStartQuestions.ThreeStory,p,"TOTAL=16;REST=6"));
+            UsCcssG1FullGradeStartQuestions.ThreeStory,p,"TOTAL=16;EQUATION=3+7+6=16"));
         Assert.False(UsCcssG1FullGradeStartQuestions.Verify(
-            UsCcssG1FullGradeStartQuestions.ThreeStory,p,"TOTAL=10;REST=6"));
+            UsCcssG1FullGradeStartQuestions.ThreeStory,p,"TOTAL=10;EQUATION=3+7+6=16"));
+        Assert.False(UsCcssG1FullGradeStartQuestions.Verify(
+            UsCcssG1FullGradeStartQuestions.ThreeStory,p,"TOTAL=16;EQUATION=3+7+6=15"));
+        Assert.False(UsCcssG1FullGradeStartQuestions.Verify(
+            UsCcssG1FullGradeStartQuestions.ThreeStory,p,"TOTAL=16;REST=6"));
         Assert.True(UsCcssG1FullGradeStartQuestions.Verify(
             UsCcssG1FullGradeStartQuestions.Expression,p,"TRUE=NO;TOTAL=16"));
         Assert.False(UsCcssG1FullGradeStartQuestions.Verify(
