@@ -16,7 +16,7 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
         return index switch
         {
             0=>mode<=1?$"ANSWER={(mode==0?a+b:a-b)}":$"CARDS={b},{c}",
-            1=>$"TOTAL={sum};REST={c}",
+            1=>$"TOTAL={sum};EQUATION={a}+{b}+{c}={sum}",
             2=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={sum}":$"MATCH=10+{c};TOTAL={sum}",
             3=>$"MOVE={10-a};REST={b-(10-a)};TOTAL={a+b}",
             4=>mode<=1?$"EQUAL={(mode==0?"YES":"NO")};TOTAL={a+b}":
