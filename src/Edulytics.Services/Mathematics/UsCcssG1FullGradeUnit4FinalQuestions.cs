@@ -72,7 +72,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l20.equivalent_tens_ones"=>
                 $"A picture shows {a/10-1} ten-rods and {a%10+10} loose ones. State the original two-digit NUMBER. Write NUMBER=number.",
             "usccss.g1.u04.l21.compare_nonstandard_forms"=>
-                $"Compare {a/10-1} tens and {a%10+10} ones with {b/10} tens and {b%10} ones. Write SYMBOL=sign.",
+                $"Compare {a/10-Math.Min(mode+1,a/10)} tens and {a%10+10*Math.Min(mode+1,a/10)} ones with {b/10} tens and {b%10} ones. Write SYMBOL=sign.",
             "usccss.g1.u04.l22.center_place_value"=>
                 mode%2==0?$"Center numeric task: compare two-digit numbers {a} and {b}. Write SYMBOL=sign.":
                     $"Center numeric task: identify number made of {a/10} tens and {a%10} ones. Write NUMBER=number.",
