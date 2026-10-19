@@ -23,6 +23,8 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         }
         Assert.Contains("13 - 7 = 6",text(14));
         Assert.Contains("3 + 8 + 7 = 10 + 8 = 18",text(15));
+        Assert.Contains("WRITE THEIR OWN bird story with 9 birds, 8 birds, and 1 bird",text(15));
+        Assert.Contains("teacher reviews",text(15),StringComparison.OrdinalIgnoreCase);
         Assert.Contains("6 + 5 + 4 = 15 + 10 is FALSE",text(16));
         Assert.Contains("8 + 6 = 10 + 4 = 14",text(17));
         Assert.Contains("9 + 4 = 8 + 5 = 7 + 6 = 13",text(18));
