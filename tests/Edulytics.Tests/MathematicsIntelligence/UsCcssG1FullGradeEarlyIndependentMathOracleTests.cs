@@ -30,7 +30,8 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
         int sum=a+b+c;
         return index switch
         {
-            0=>$"MOVE={10-a};REST={b-(10-a)};TOTAL={a+b}",
+            0=>mode==2?"LIN=8+2+5=15;HAN=7+7+1=15;KIRAN=8+8-1=15;TOTAL=15":
+                $"MOVE={10-a};REST={b-(10-a)};TOTAL={a+b}",
             1=>$"TOTAL={sum};EQUATION={a}+{b}+{c}={sum}",
             2=>mode%2==0?
                 $"TOTAL={a+b};EQUATION={a}+{b}={a+b}":
