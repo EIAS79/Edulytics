@@ -359,7 +359,7 @@ This plan is the **owner-approved full-grade delivery amendment to the original 
 | V1 §5 C: only source-matching allowed Practice families, correct/wrong verification, stored scoring | SAME source-specific family coverage; no one-family quota or synthetic classroom proof |
 | V1 §5 D: touched-behaviour tests, affected shared consumers and existing mandatory repository CI | SAME risk-based tests; never bypass existing protections |
 | V1 §5 E: independent real internal acceptance per lesson | SAME individual V1 academic judgment and actual authenticated proof; interim Stage A–D notes accumulate while authoring, and actual `INTERNALLY_ACCEPTED` is recorded per lesson at frozen-code/final-SHA verification; aggregated as 96 new plus 50 historical references |
-| V1 §5 E/F: former 5-lesson batch ready / published | **ONLY CHANGED ITEM:** one whole-grade ready / published after every new lesson accepted |
+| V1 §5 E/F: former 5-lesson batch ready / published | **ONLY RELEASE-GRANULARITY CHANGE:** one whole-grade ready / published after every new lesson is genuinely accepted and final required checks pass. Separate authoring-branch/final-CI cadence optimizes execution timing only; no test or proof is waived. |
 | V1 §5 F: protected merge, Render exact LIVE, HTTP, owner production UAT | SAME actual checks, after the single full-grade release; no fake pre-deploy owner acceptance |
 | V1 §6–§11: privacy, licensing, checkpoints, historical records, no false PASS | SAME controls and safeguards; no forced new tools, duplicated approvals or retroactive recertification |
 
