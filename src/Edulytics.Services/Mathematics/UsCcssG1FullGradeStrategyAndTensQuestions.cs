@@ -31,6 +31,10 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         6=>"sixty",7=>"seventy",8=>"eighty",9=>"ninety",
         _=>throw new InvalidOperationException("Unreviewed multiples-of-ten word card")
     };
+    private static string TensWordCardLetter(int tens)=>(tens%3) switch
+    {
+        0=>"A",1=>"B",_=>"C"
+    };
     private static string[] TensWordOptions(int tens)
     {
         int correct=tens%3;
@@ -166,7 +170,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             CenterWithin20=>$"RESULT={(mode%2==0?a+b:a-b)}",
             CountTens=>$"GROUPS={a};TOTAL={10*a}",
             MatchTens=>mode==3
-                ?$"MATCH={new[]{"A","B","C"}[a%3]};TENS={a};NUMBER={10*a}"
+                ?$"MATCH={TensWordCardLetter(a)};TENS={a};NUMBER={10*a}"
                 :$"TENS={a};NUMBER={10*a}",
             AddRemoveTen=>mode%2==0
                 ?$"TENS={a+1};TOTAL={10*(a+1)}"
