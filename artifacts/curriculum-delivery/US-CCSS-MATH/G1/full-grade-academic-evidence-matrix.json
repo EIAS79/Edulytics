@@ -291,14 +291,14 @@
       "teacherPreparationSha256": "e1e90ee62cdd6aa0b2bfd4d06620a4717aeee7ae78981cefcdc2baf117bfa38e",
       "studentSourceHtmlSha256": "6ae6929bda1e501f7331da8ee17a9debd0a248f5d8a7b6bb54cd47b8793aa066",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "ORIGINAL_V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": true,
       "authoredOriginalWorkRubricRequired": false,
@@ -320,17 +320,41 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_A_D_INTERNAL_ACCEPTANCE",
+          "ordinal": 54,
+          "originalSourceTasks": [
+            "Original nine-plus game with repeated counter-card turns, no synthetic classroom participation",
+            "Clare bird story contexts 3+9, 6+8 and 7+5: first-party worked addition representations, no original publisher art copied"
+          ],
+          "originalSourceGoals": [
+            "Use the 2021 Nine Plus Game with nine counters and a number card, and write more than one equivalent source equation",
+            "Decompose a near-ten addend to make ten; preserve the sum to 20",
+            "Clare's three two-addend bird stories are mathematical contexts; actual drawing and physical counters remain teacher assessed"
+          ],
+          "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+          "originalTeacherPreparationSha256": "e1e90ee62cdd6aa0b2bfd4d06620a4717aeee7ae78981cefcdc2baf117bfa38e",
+          "originalStudentSourceSha256": "6ae6929bda1e501f7331da8ee17a9debd0a248f5d8a7b6bb54cd47b8793aa066",
+          "renderedLearnerHtmlSha256": "e55b0eb1b9a0164e447481d848e085187e187ac2488617e8381efa1d5248bef4",
+          "testedSourceCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "runtimeEvidenceRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+          "runtimeArtifactId": 12211766120,
+          "referenceTests": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+            "tools/phase29/acceptance_two_school_https.py"
+          ],
+          "teacherClassroomTaskNotClaimed": true,
+          "release": "NO_GO"
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence",
-        "Teacher-led physical, visual, or classroom work correctly documented without fictional pupil outcomes"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "classroomPhysicalSource": "TEACHER_FACILITATED_NOT_ELECTRONICALLY_CERTIFIED",
+        "publisherImages": "REFERENCED_IN_SOURCE_ONLY_NOT_INCLUDED_IN_EDULYTICS",
+        "UAT": "PENDING_GRADE_RELEASE"
+      }
     },
     {
       "ordinal": 55,
@@ -341,14 +365,14 @@
       "teacherPreparationSha256": "70e2af6f2e87e459a3f5ec65f95ae2bdbcc841e924633f1c59e28c52cc631d03",
       "studentSourceHtmlSha256": "05714c201c07151ce72f07b68dbe92e4cb47c6a8fa009679301d7c29663cf143",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "ORIGINAL_V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": false,
       "authoredOriginalWorkRubricRequired": false,
@@ -370,16 +394,41 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_A_D_INTERNAL_ACCEPTANCE",
+          "ordinal": 55,
+          "originalSourceTasks": [
+            "Paper cards grouped by equal values of 10+n; numerical construction/match plus true/false comparisons are the first-party digital subset",
+            "Original gallery walk and paper center activities retain classroom/teacher assessment boundary"
+          ],
+          "originalSourceGoals": [
+            "Match equivalent addition-expression cards to 10+n and justify a make-ten strategy",
+            "Explain conservation of the sum when increasing one addend and decreasing another",
+            "Physical Compare Card Sort, Gallery Walk, expression posters and partner participation remain teacher-facilitated"
+          ],
+          "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+          "originalTeacherPreparationSha256": "70e2af6f2e87e459a3f5ec65f95ae2bdbcc841e924633f1c59e28c52cc631d03",
+          "originalStudentSourceSha256": "05714c201c07151ce72f07b68dbe92e4cb47c6a8fa009679301d7c29663cf143",
+          "renderedLearnerHtmlSha256": "5f7bc6c13132b18360c6de8b44036e6377a4000c46a9482a9bd928211e8",
+          "testedSourceCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "runtimeEvidenceRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+          "runtimeArtifactId": 12211766120,
+          "referenceTests": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+            "tools/phase29/acceptance_two_school_https.py"
+          ],
+          "teacherClassroomTaskNotClaimed": true,
+          "release": "NO_GO"
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "classroomPhysicalSource": "TEACHER_FACILITATED_NOT_ELECTRONICALLY_CERTIFIED",
+        "publisherImages": "REFERENCED_IN_SOURCE_ONLY_NOT_INCLUDED_IN_EDULYTICS",
+        "UAT": "PENDING_GRADE_RELEASE"
+      }
     },
     {
       "ordinal": 56,
@@ -390,14 +439,14 @@
       "teacherPreparationSha256": "6ffedee9b6724bf1330eab70de05b0634941a860db7e07acd00d8e4af4d1e857",
       "studentSourceHtmlSha256": "7e639068e7092da29ad29ca83e80a24ab4089a2a8b82c5af053504169500dac9",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "ORIGINAL_V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": false,
       "authoredOriginalWorkRubricRequired": false,
@@ -419,16 +468,41 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_A_D_INTERNAL_ACCEPTANCE",
+          "ordinal": 56,
+          "originalSourceTasks": [
+            "Original strategy responses Lin: 8+2+5, Han: 7+7+1, Kiran: 8+8-1; all yield 15",
+            "Original choice of addition card and independent partner explanation not falsely auto-certified"
+          ],
+          "originalSourceGoals": [
+            "Compare three explicit original 2021 Lin/Han/Kiran methods for finding 8+7",
+            "Use flexible addition within 20 and explain an appropriate method for each sum",
+            "Partner explanations, drawings and real counter manipulation remain teacher-reviewed"
+          ],
+          "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+          "originalTeacherPreparationSha256": "6ffedee9b6724bf1330eab70de05b0634941a860db7e07acd00d8e4af4d1e857",
+          "originalStudentSourceSha256": "7e639068e7092da29ad29ca83e80a24ab4089a2a8b82c5af053504169500dac9",
+          "renderedLearnerHtmlSha256": "959847872b90844638509bfaef8bdd89a5868d0117b2d047bba55873e532eaea",
+          "testedSourceCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "runtimeEvidenceRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+          "runtimeArtifactId": 12211766120,
+          "referenceTests": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+            "tools/phase29/acceptance_two_school_https.py"
+          ],
+          "teacherClassroomTaskNotClaimed": true,
+          "release": "NO_GO"
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "classroomPhysicalSource": "TEACHER_FACILITATED_NOT_ELECTRONICALLY_CERTIFIED",
+        "publisherImages": "REFERENCED_IN_SOURCE_ONLY_NOT_INCLUDED_IN_EDULYTICS",
+        "UAT": "PENDING_GRADE_RELEASE"
+      }
     },
     {
       "ordinal": 57,

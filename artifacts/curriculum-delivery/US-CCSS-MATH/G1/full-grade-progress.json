@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 54,
+  "nextOrdinal": 57,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -400,8 +400,112 @@
         "CCSS:1.OA.B.3",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "actualLearnerRenderingVerified": true,
+        "originalSourceStudentTaskFindings": [
+          "Original nine-plus game with repeated counter-card turns, no synthetic classroom participation",
+          "Clare bird story contexts 3+9, 6+8 and 7+5: first-party worked addition representations, no original publisher art copied"
+        ],
+        "sourceObjectives": [
+          "Use the 2021 Nine Plus Game with nine counters and a number card, and write more than one equivalent source equation",
+          "Decompose a near-ten addend to make ten; preserve the sum to 20",
+          "Clare's three two-addend bird stories are mathematical contexts; actual drawing and physical counters remain teacher assessed"
+        ],
+        "sourceActivityScope": "Original 2021 teacher preparation, full original teacher/student-facing HTML and read-only Our-CS source hashes were reviewed; physical card/counter manipulation, teacher-observed drawings and partner/gallery activity are not claimed as electronically completed",
+        "allowedFamilies": [
+          "usccss.g1.u03.l17.make_ten.decompose"
+        ],
+        "forbiddenFamilies": [],
+        "sourceSha256": "e1e90ee62cdd6aa0b2bfd4d06620a4717aeee7ae78981cefcdc2baf117bfa38e",
+        "originalStudentHtmlSha256": "6ae6929bda1e501f7331da8ee17a9debd0a248f5d8a7b6bb54cd47b8793aa066",
+        "effectiveStudentBodySha256": "e55b0eb1b9a0164e447481d848e085187e187ac2488617e8381efa1d5248bef4",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of volatile, HTML-unescaped authenticated disposable-school learner response from original 2026-10-19 test checkout ac6afc686b2d18c44abd21699d138e33bfdc8a1e; not the canonical Rich V2 source text digest",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+        "independentGradingProofSha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+        "independentGradingProofReference": {
+          "kind": "GIT_FILE",
+          "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+          "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofReference": {
+          "kind": "GIT_FILE",
+          "path": "tools/phase29/acceptance_two_school_https.py",
+          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+        "sourceReviewFileSha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+        "sourceReviewReference": {
+          "kind": "GIT_FILE",
+          "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+          "sha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12211766120,
+          "academicStatus": "SOURCE_TASK_REVIEWED_SEPARATELY",
+          "matchedSourceFamily": "usccss.g1.u03.l17.make_ten.decompose",
+          "lessonOrdinal": 54,
+          "correctWrongMalformedPersisted": true,
+          "originalAuthoredClassroomParticipationNotClaimed": true
+        },
+        "affectedCodePaths": [
+          "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
+          "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+          "tools/phase29/acceptance_two_school_https.py"
+        ],
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+            "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+              "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+            "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tools/phase29/acceptance_two_school_https.py",
+              "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          }
+        ],
+        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO."
+      }
     },
     {
       "ordinal": 55,
@@ -414,8 +518,112 @@
         "CCSS:1.OA.C.6",
         "CCSS:1.OA.D.8"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "actualLearnerRenderingVerified": true,
+        "originalSourceStudentTaskFindings": [
+          "Paper cards grouped by equal values of 10+n; numerical construction/match plus true/false comparisons are the first-party digital subset",
+          "Original gallery walk and paper center activities retain classroom/teacher assessment boundary"
+        ],
+        "sourceObjectives": [
+          "Match equivalent addition-expression cards to 10+n and justify a make-ten strategy",
+          "Explain conservation of the sum when increasing one addend and decreasing another",
+          "Physical Compare Card Sort, Gallery Walk, expression posters and partner participation remain teacher-facilitated"
+        ],
+        "sourceActivityScope": "Original 2021 teacher preparation, full original teacher/student-facing HTML and read-only Our-CS source hashes were reviewed; physical card/counter manipulation, teacher-observed drawings and partner/gallery activity are not claimed as electronically completed",
+        "allowedFamilies": [
+          "usccss.g1.u03.l18.addition.pattern"
+        ],
+        "forbiddenFamilies": [],
+        "sourceSha256": "70e2af6f2e87e459a3f5ec65f95ae2bdbcc841e924633f1c59e28c52cc631d03",
+        "originalStudentHtmlSha256": "05714c201c07151ce72f07b68dbe92e4cb47c6a8fa009679301d7c29663cf143",
+        "effectiveStudentBodySha256": "5f7bc6c13132b18360c6de8b44036e6377a4000c46a9482a9bd928211e8",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of volatile, HTML-unescaped authenticated disposable-school learner response from original 2026-10-19 test checkout ac6afc686b2d18c44abd21699d138e33bfdc8a1e; not the canonical Rich V2 source text digest",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+        "independentGradingProofSha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+        "independentGradingProofReference": {
+          "kind": "GIT_FILE",
+          "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+          "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofReference": {
+          "kind": "GIT_FILE",
+          "path": "tools/phase29/acceptance_two_school_https.py",
+          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+        "sourceReviewFileSha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+        "sourceReviewReference": {
+          "kind": "GIT_FILE",
+          "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+          "sha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12211766120,
+          "academicStatus": "SOURCE_TASK_REVIEWED_SEPARATELY",
+          "matchedSourceFamily": "usccss.g1.u03.l18.addition.pattern",
+          "lessonOrdinal": 55,
+          "correctWrongMalformedPersisted": true,
+          "originalAuthoredClassroomParticipationNotClaimed": true
+        },
+        "affectedCodePaths": [
+          "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
+          "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+          "tools/phase29/acceptance_two_school_https.py"
+        ],
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+            "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+              "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+            "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tools/phase29/acceptance_two_school_https.py",
+              "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          }
+        ],
+        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO."
+      }
     },
     {
       "ordinal": 56,
@@ -428,8 +636,112 @@
         "CCSS:1.OA.B.3",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "actualLearnerRenderingVerified": true,
+        "originalSourceStudentTaskFindings": [
+          "Original strategy responses Lin: 8+2+5, Han: 7+7+1, Kiran: 8+8-1; all yield 15",
+          "Original choice of addition card and independent partner explanation not falsely auto-certified"
+        ],
+        "sourceObjectives": [
+          "Compare three explicit original 2021 Lin/Han/Kiran methods for finding 8+7",
+          "Use flexible addition within 20 and explain an appropriate method for each sum",
+          "Partner explanations, drawings and real counter manipulation remain teacher-reviewed"
+        ],
+        "sourceActivityScope": "Original 2021 teacher preparation, full original teacher/student-facing HTML and read-only Our-CS source hashes were reviewed; physical card/counter manipulation, teacher-observed drawings and partner/gallery activity are not claimed as electronically completed",
+        "allowedFamilies": [
+          "usccss.g1.u03.l19.flexible.make_ten"
+        ],
+        "forbiddenFamilies": [],
+        "sourceSha256": "6ffedee9b6724bf1330eab70de05b0634941a860db7e07acd00d8e4af4d1e857",
+        "originalStudentHtmlSha256": "7e639068e7092da29ad29ca83e80a24ab4089a2a8b82c5af053504169500dac9",
+        "effectiveStudentBodySha256": "959847872b90844638509bfaef8bdd89a5868d0117b2d047bba55873e532eaea",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of volatile, HTML-unescaped authenticated disposable-school learner response from original 2026-10-19 test checkout ac6afc686b2d18c44abd21699d138e33bfdc8a1e; not the canonical Rich V2 source text digest",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
+        "independentGradingProofSha256": "fb74538c787c8549f0656c5e2b45d2f0514bc353a1c05477c986f31195cee5e0",
+        "independentGradingProofReference": {
+          "kind": "GIT_FILE",
+          "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
+          "sha256": "fb74538c787c8549f0656c5e2b45d2f0514bc353a1c05477c986f31195cee5e0",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofReference": {
+          "kind": "GIT_FILE",
+          "path": "tools/phase29/acceptance_two_school_https.py",
+          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+        "sourceReviewFileSha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+        "sourceReviewReference": {
+          "kind": "GIT_FILE",
+          "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+          "sha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+        },
+        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12211766120,
+          "academicStatus": "SOURCE_TASK_REVIEWED_SEPARATELY",
+          "matchedSourceFamily": "usccss.g1.u03.l19.flexible.make_ten",
+          "lessonOrdinal": 56,
+          "correctWrongMalformedPersisted": true,
+          "originalAuthoredClassroomParticipationNotClaimed": true
+        },
+        "affectedCodePaths": [
+          "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeNextQuestions.cs",
+          "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+          "tools/phase29/acceptance_two_school_https.py"
+        ],
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
+            "sha256": "fb74538c787c8549f0656c5e2b45d2f0514bc353a1c05477c986f31195cee5e0",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
+              "sha256": "fb74538c787c8549f0656c5e2b45d2f0514bc353a1c05477c986f31195cee5e0",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+            "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
+              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tools/phase29/acceptance_two_school_https.py",
+              "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+            }
+          }
+        ],
+        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO."
+      }
     },
     {
       "ordinal": 57,
