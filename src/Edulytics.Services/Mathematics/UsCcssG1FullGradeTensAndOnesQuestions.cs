@@ -50,7 +50,7 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
             MixedCollection=>$"Count an organized collection with {tens} FULL groups of ten and {ones} loose objects. No object counted twice. Write TENS=number;ONES=number;TOTAL=number.",
             ReadNumber=>$"READ this two-digit number: {total}. Express its number NAME (for example 43 = forty-three). Write NAME=word.",
             MatchRepresentations=>$"Match {tens} ten-rods and {ones} ones with its numeral and expanded expression {10*tens}+{ones}. Write TENS=number;ONES=number;NUMBER=number.",
-            ShowMultipleWays=>$"Show the number {total} using bundles of ten, loose cubes and expanded addition. Write EXPANDED=number+number;TENS=number;ONES=number. Teacher checks any actual drawing.",
+            ShowMultipleWays=>$"Original Show Me Your Number: represent {total} in TWO mathematically equivalent ways. First use {tens} tens and {ones} ones (= {10*tens}+{ones}). Then trade {Math.Min(tens,mode+1)} full ten-rods for loose ones. Fill both forms: EXPANDED=ten_value+ones;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number. Drawings and gallery walk require teacher review.",
             WriteNumeral=>$"Write the TWO-DIGIT numeral for {tens} tens and {ones} ones. Write NUMBER=number.",
             _=>throw new InvalidOperationException()
         };
@@ -61,13 +61,13 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G1 tens-and-ones source instance");
-        int t=p["tens"],o=p["ones"],n=10*t+o;
+        int t=p["tens"],o=p["ones"],mode=p["mode"],n=10*t+o;
         return family switch
         {
             MixedCollection=>$"TENS={t};ONES={o};TOTAL={n}",
             ReadNumber=>$"NAME={NumberWords(t,o)}",
             MatchRepresentations=>$"TENS={t};ONES={o};NUMBER={n}",
-            ShowMultipleWays=>$"EXPANDED={10*t}+{o};TENS={t};ONES={o}",
+            ShowMultipleWays=>$"EXPANDED={10*t}+{o};TENS={t};ONES={o};ALT_TENS={t-Math.Min(t,mode+1)};ALT_ONES={o+10*Math.Min(t,mode+1)}",
             WriteNumeral=>$"NUMBER={n}",
             _=>throw new InvalidOperationException()
         };

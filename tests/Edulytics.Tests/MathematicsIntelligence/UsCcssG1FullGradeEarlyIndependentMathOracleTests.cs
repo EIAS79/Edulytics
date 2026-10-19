@@ -72,7 +72,7 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
                        "fifteen","sixteen","seventeen","eighteen","nineteen"];
         return t==1?teen[o]:o==0?tens[t]:tens[t]+"-"+ones[o];
     }
-    private static string TensOnes(int index,int t,int o)
+    private static string TensOnes(int index,int t,int o,int mode)
     {
         int total=t*10+o;
         return index switch
@@ -80,7 +80,7 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
             0=>$"TENS={t};ONES={o};TOTAL={total}",
             1=>$"NAME={NumberName(t,o)}",
             2=>$"TENS={t};ONES={o};NUMBER={total}",
-            3=>$"EXPANDED={t*10}+{o};TENS={t};ONES={o}",
+            3=>$"EXPANDED={t*10}+{o};TENS={t};ONES={o};ALT_TENS={t-Math.Min(t,mode+1)};ALT_ONES={o+10*Math.Min(t,mode+1)}",
             4=>$"NUMBER={total}",
             _=>throw new InvalidOperationException()
         };
@@ -154,7 +154,7 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
             var f=families[i];
             var p=UsCcssG1FullGradeTensAndOnesQuestions.Build(
                 f,new Random(3600+i*173+seed*37)).Parameters;
-            var want=TensOnes(i,p["tens"],p["ones"]);
+            var want=TensOnes(i,p["tens"],p["ones"],p["mode"]);
             Assert.Equal(want,UsCcssG1FullGradeTensAndOnesQuestions.Solve(f,p));
             Assert.True(UsCcssG1FullGradeTensAndOnesQuestions.Verify(f,p,want));
             Assert.False(UsCcssG1FullGradeTensAndOnesQuestions.Verify(f,p,want+";BAD=1"));

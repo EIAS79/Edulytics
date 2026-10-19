@@ -329,7 +329,7 @@ Step 5: Explain why all representations show the same quantity.",
             @"I can match diagrams, words and addition expressions for two-digit numbers."),
         new(@"PED:US-CCSS-MATH:G1:U04:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-9/preparation.html",@"eecf5776e8b806188c62ba41baf5e045e8b9425ba1d411a1df483e635d1d1688",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
             @"Show Me Your Number",
-            @"Show a chosen two-digit number using multiple representations: bundle tens with leftover ones, sketch ten-rods and dots, name the tens and ones, and give an expanded addition expression. The original gallery walk and peer discussion require a classroom setting; a digital answer does not certify they occurred.",
+            @"Show a chosen two-digit number using multiple representations: bundle tens with leftover ones, sketch ten-rods and dots, name the tens and ones, and give an expanded addition expression. ALSO trade a full ten into ten extra ones and describe a SECOND, different but mathematically equal model, e.g. 47=4 tens 7 ones=3 tens 17 ones. The original gallery walk and peer discussion require a classroom setting; a digital answer does not certify they occurred.",
             @"Learning goal: REPRESENT the place-value structure of two-digit numbers, not only recognize a preprinted match. Use diagrams, words and expressions, keeping the total unchanged in all forms.",
             @"Example 1: Represent 64 as six rods of ten plus four dots, '6 tens 4 ones', and 60+4.
 Example 2: Represent 35 as three rods and five dots, '3 tens 5 ones', and 30+5.

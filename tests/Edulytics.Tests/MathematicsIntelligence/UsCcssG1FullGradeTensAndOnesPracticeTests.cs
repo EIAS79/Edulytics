@@ -52,6 +52,28 @@ public sealed class UsCcssG1FullGradeTensAndOnesPracticeTests
         Assert.True(UsCcssG1FullGradeTensAndOnesQuestions.Verify(
             UsCcssG1FullGradeTensAndOnesQuestions.ReadNumber,p,"name = FIFTY-EIGHT"));
     }
+    [Theory]
+    [InlineData(4,7,0,"EXPANDED=40+7;TENS=4;ONES=7;ALT_TENS=3;ALT_ONES=17")]
+    [InlineData(4,7,1,"EXPANDED=40+7;TENS=4;ONES=7;ALT_TENS=2;ALT_ONES=27")]
+    [InlineData(4,7,2,"EXPANDED=40+7;TENS=4;ONES=7;ALT_TENS=1;ALT_ONES=37")]
+    [InlineData(2,3,3,"EXPANDED=20+3;TENS=2;ONES=3;ALT_TENS=0;ALT_ONES=23")]
+    public void OriginalShowMeYourNumberRequiresTwoDifferentButEquivalentRepresentations(
+        int tens,int ones,int mode,string expected)
+    {
+        const string family=UsCcssG1FullGradeTensAndOnesQuestions.ShowMultipleWays;
+        var p=new Dictionary<string,int>{{"tens",tens},{"ones",ones},{"mode",mode},{"unused",0}};
+        Assert.True(UsCcssG1FullGradeTensAndOnesQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeTensAndOnesQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            $"EXPANDED={10*tens}+{ones};TENS={tens};ONES={ones}"));
+        int exchange=Math.Min(tens,mode+1);
+        Assert.Equal(10*tens+ones,10*(tens-exchange)+(ones+10*exchange));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            expected.Replace("ALT_ONES="+(ones+10*exchange),
+                             "ALT_ONES="+(ones+10*exchange+1))));
+    }
+
     [Fact]
     public void EngineCanGenerateDistinctPracticedPlaceValueAnswers()
     {
