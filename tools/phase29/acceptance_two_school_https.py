@@ -1438,6 +1438,25 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 print("B001_DISPOSABLE_500_MALFORMED_ANSWER_PROBE",
                       ordinal, code, negative["status"],
                       negative.get("httpStatus",""), flush=True)
+            if b001_e2e_enabled and code in g1_expected and ordinal!=65:
+                # Third authenticated, unique student attempt: a different
+                # algebraically wrong yet well-formed submission. Correct and
+                # malformed trials alone DO NOT prove genuine wrong-answer
+                # grading for this exact original Grade 1 lesson.
+                try:
+                    wrong_form=get_page(grade_student,"/student/practice")
+                    wrong_csrf=extract_csrf(wrong_form)
+                    wrong_adoption=extract_adoption(wrong_form)
+                    wrong_nonce=extract_idempotency_key(wrong_form)
+                except (urllib.error.HTTPError,AssertionError):
+                    wrong_csrf=wrong_adoption=wrong_nonce=None
+                valid_wrong=probe_lesson(grade_student,BASE,lesson_id,
+                                         wrong_adoption,wrong_csrf,wrong_nonce,
+                                         sql,answer_mode="well_formed_wrong")
+                result["wellFormedWrongStatus"]=valid_wrong["status"]
+                result["wellFormedWrongFamily"]=valid_wrong.get("family")
+                print("G1_ORIGINAL_95_WELL_FORMED_WRONG_HTTPS_ATTEMPT",
+                      ordinal,code,valid_wrong["status"],flush=True)
             result["ordinal"] = ordinal
             result["lessonCode"] = code
             b001_e2e_rows.append(result)
@@ -1466,6 +1485,12 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                     assert result.get("negativeStatus")==(
                         "MALFORMED_ANSWER_REJECTED_AND_PERSISTED"), (
                         code,"malformed answer accepted or not saved",result)
+                    assert result.get("wellFormedWrongStatus")==(
+                        "WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED"), (
+                        code,"mathematically wrong but well-formed answer accepted or not saved",
+                        result)
+                    assert result.get("wellFormedWrongFamily")==candidate["candidateFamily"], (
+                        code,"well-formed wrong answer used different family",result)
                     if source_mode=="DIGITAL_AND_SOURCE_AUTHORED_TASK":
                         if ordinal==146:
                             assert "riddle" in rendered and "write" in rendered, (
@@ -1485,6 +1510,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                         "actualFamily":result["family"],
                         "correctAnswerSelfConsistentAndPersisted":True,
                         "malformedAnswerRejectedAndPersisted":True,
+                        "wellFormedIncorrectAnswerRejectedAndPersisted":True,
                         "authenticStudentAuthorshipNotClaimed":True})
             print("B001_DISPOSABLE_500_REAL_PRACTICE_PROBE",
                   ordinal, code, result["status"], result.get("httpStatus", ""), flush=True)
@@ -1535,6 +1561,8 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         assert len(g1_e2e_rows)==96, ("G1 full-grade runtime evidence incomplete",
                                      len(g1_e2e_rows))
         assert sum(r["assessmentMode"]!="SOURCE_AUTHORED_TASK"
+                   for r in g1_e2e_rows)==95
+        assert sum(r.get("wellFormedIncorrectAnswerRejectedAndPersisted") is True
                    for r in g1_e2e_rows)==95
         Path("/tmp/g1-96-source-family-https-candidate-evidence.json").write_text(
             json.dumps({"scope":"G1_51_TO_146_ONLY",

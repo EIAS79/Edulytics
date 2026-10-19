@@ -6,6 +6,7 @@ on:
       - '.github/workflows/us-ccss-authenticated-acceptance.yml'
       - 'tools/Edulytics.CiFixtures/**'
       - 'tools/phase29/acceptance_two_school_https.py'
+      - 'tools/phase29/b001_practice_attempt_probe.py'
       - 'src/**'
   workflow_dispatch:
 

@@ -47,9 +47,52 @@ def synthetic_survey_protocol(expected, parameters_json):
     tally = ",".join(str(votes.count(str(i))) for i in range(3))
     return "v:"+votes+"|g:"+tally
 
+
+def syntactically_valid_wrong_answer(correct):
+    """Create a real incorrect Grade 1 submission, preserving its answer
+    field/schema; unlike a malformed sentinel, this exercises math grading.
+    A full independent source oracle is tested separately in C#.
+    """
+    if not isinstance(correct,str) or "=" not in correct:
+        raise ValueError("Expected answer with named fields")
+    parts=correct.split(";")
+    key,sep,value=parts[0].partition("=")
+    if not sep or not key or not value:
+        raise ValueError("No first answer field")
+    number=re.search(r"\\d+",value)
+    if number:
+        original=number.group()
+        different=str(int(original)+1)
+        replacement=value[:number.start()]+different+value[number.end():]
+    else:
+        # Alternatives are intentionally valid first-grade categorical
+        # answers. Do NOT send the generic malformed-answer sentinel here.
+        categories={
+            "YES":"NO","NO":"YES",
+            ">":"<","<":">","=":">",
+            "RED":"BLUE","BLUE":"RED",
+            "A":"B","B":"A",
+            "EQUAL":"GREATER","GREATER":"LESS","LESS":"GREATER",
+            "TRIANGLE":"SQUARE","SQUARE":"TRIANGLE",
+            "CUBE":"SPHERE","SPHERE":"CUBE",
+            "CYLINDER":"CONE","CONE":"CYLINDER",
+            "RECTANGLE":"SQUARE",
+            "HALF":"FOURTH","FOURTH":"HALF",
+            "ADD":"SUBTRACT","SUBTRACT":"ADD",
+        }
+        replacement=categories.get(value.upper())
+        if replacement is None and key.upper()=="NAME":
+            replacement="one" if value.lower()!="one" else "two"
+        if replacement is None:
+            raise ValueError("Unrecognized Grade 1 categorical answer "+key)
+    wrong=";".join([key+"="+replacement,*parts[1:]])
+    if wrong.upper()==correct.upper() or not wrong or "B001_MALFORMED" in wrong:
+        raise ValueError("Valid-wrong fixture not distinct from expected")
+    return wrong
+
 def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answer_mode="correct"):
     """Generate, submit and check one real scoped Practice question."""
-    if answer_mode not in ("correct","malformed"):
+    if answer_mode not in ("correct","malformed","well_formed_wrong"):
         return {"status":"INVALID_PROBE_ANSWER_MODE"}
     if not re.fullmatch(UUID,lesson_id):
         return {"status":"BAD_LESSON_GUID"}
@@ -96,6 +139,13 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
             except (ValueError,TypeError,KeyError,json.JSONDecodeError) as exc:
                 return {"status":"SURVEY_SYNTHETIC_FIXTURE_INVALID","family":family,
                         "errorType":type(exc).__name__}
+        if answer_mode=="well_formed_wrong":
+            # A syntactically correct but mathematically wrong answer tests
+            # the real ASP.NET grading and persisted zero-score response.
+            # A survey requiring human participants cannot be auto-tested.
+            if synthetic_survey:
+                return {"status":"SURVEY_REQUIRES_HUMAN_NOT_VALID_WRONG_FIXTURE","family":family}
+            answer=syntactically_valid_wrong_answer(answer)
         if answer_mode=="malformed":
             # Deliberately invalid for numbers, expressions, category lists and
             # survey tally protocols alike. The source generation family
@@ -136,6 +186,10 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
             if float(result[1])!=0.0 or result[2]!="0":
                 return {"status":"MALFORMED_ANSWER_INCORRECTLY_ACCEPTED","family":family}
             return {"status":"MALFORMED_ANSWER_REJECTED_AND_PERSISTED","family":family}
+        if answer_mode=="well_formed_wrong":
+            if float(result[1])!=0.0 or result[2]!="0":
+                return {"status":"WELL_FORMED_WRONG_ANSWER_INCORRECTLY_ACCEPTED","family":family}
+            return {"status":"WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED","family":family}
         if float(result[1])!=1.0 or result[2]!="1":
             return {"status":"INCORRECT_GRADE_OR_PERSISTENCE","family":family}
         if synthetic_survey:
@@ -187,6 +241,18 @@ if __name__=="__main__":
                               json.dumps({"parameters":{"minimumVotes":3,"maximumVotes":10,"topic":0}}))
             self.assertRaises(ValueError,synthetic_survey_protocol,SURVEY_SENTINEL,
                               json.dumps({"parameters":{"minimumVotes":6,"maximumVotes":10,"topic":9}}))
+        def test_well_formed_wrong_original_grade1_answers_are_distinct(self):
+            for correct in ("RESULT=18","NAME=seventy-two","SYMBOL=>",
+                            "SHAPE=RECTANGLE","TIME=7:30","ORDER=2,3,6",
+                            "CANDIDATES=34,44,54","MATCH=10+8;TOTAL=18",
+                            "CARDS=4,8","ALT_ONES=24;WAYS=4","ANSWER=YES"):
+                wrong=syntactically_valid_wrong_answer(correct)
+                self.assertNotEqual(wrong,correct)
+                self.assertEqual(wrong.split(";")[0].split("=")[0],
+                                 correct.split(";")[0].split("=")[0])
+                self.assertNotIn("B001_MALFORMED",wrong)
+            self.assertRaises(ValueError,syntactically_valid_wrong_answer,
+                              "UNSUPPORTED=ZZZZ")
         def test_a_500_shape_cannot_forge_signoff(self):
             data=[{"lessonCode":f"L{i}","status":"SELF_CONSISTENT_GRADE_PERSISTED"} for i in range(500)]
             x=summarize(data)
