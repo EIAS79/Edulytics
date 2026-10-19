@@ -44,7 +44,7 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
             _=>throw new InvalidOperationException()
         };
     }
-    private static string StrategyAndTens(int index,int a,int b,int mode)
+    private static string StrategyAndTens(int index,int a,int b,int c,int mode)
     {
         int sum=a+b;
         return index switch
@@ -62,7 +62,9 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
                 4=>$"UNKNOWN={b};EQUATION={sum}-{b}={a}",
                 _=>$"UNKNOWN={sum};EQUATION={sum}-{b}={a}"
             },
-            3=>$"RESULT={(mode%2==0?sum:a-b)}",
+            3=>mode==0?$"RESULT={20-a-b};EQUATION=20-{a}-{b}={20-a-b}":
+                mode==2?$"RESULT={20-a-b-c};EQUATION=20-{a}-{b}-{c}={20-a-b-c}":
+                $"RESULT={(mode==1?a+b:a-b)}",
             4=>$"GROUPS={a};TOTAL={a*10}",
             5=>mode==3
                 // Independent source match: A/B/C corresponds to the
@@ -164,7 +166,7 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
             var f=families[i];
             var p=UsCcssG1FullGradeStrategyAndTensQuestions.Build(
                 f,new Random(3400+i*173+seed*37)).Parameters;
-            var want=StrategyAndTens(i,p["a"],p["b"],p["mode"]);
+            var want=StrategyAndTens(i,p["a"],p["b"],p["c"],p["mode"]);
             Assert.Equal(want,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(f,p));
             Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Verify(f,p,want));
             Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Verify(f,p,want+";BAD=1"));

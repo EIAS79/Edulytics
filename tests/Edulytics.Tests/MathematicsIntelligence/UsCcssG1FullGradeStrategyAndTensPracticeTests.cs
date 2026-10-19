@@ -117,6 +117,37 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void OriginalHowCloseSubtractFromTwentyChecksTwoAndThreeChosenCards()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CenterWithin20;
+        var two=new Dictionary<string,int>{{"a",9},{"b",8},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,two));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,two,
+            "RESULT=3;EQUATION=20-9-8=3"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,two,
+            "RESULT=17;EQUATION=9+8=17"));
+        var three=new Dictionary<string,int>{{"a",6},{"b",4},{"c",9},{"mode",2}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,three,
+            "RESULT=1;EQUATION=20-6-4-9=1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,three,
+            "RESULT=1;EQUATION=20-6-4=10"));
+        three["c"]=11;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,three));
+        var made=Enumerable.Range(0,400)
+            .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+                family,new Random(59*n+41))).ToArray();
+        Assert.True(made.Count(q=>q.Parameters["mode"]==0)>50);
+        Assert.True(made.Count(q=>q.Parameters["mode"]==2)>50);
+        Assert.All(made,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            if(q.Parameters["mode"]==2)Assert.Contains("THREE number cards",q.Prompt);
+        });
+    }
+
+    [Fact]
     public void Original2021TwelvePencilsMinusSevenStoryIsGeneratedAndGradeable()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;

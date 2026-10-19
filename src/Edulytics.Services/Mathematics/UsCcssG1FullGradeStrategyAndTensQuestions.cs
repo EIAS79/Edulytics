@@ -58,7 +58,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>5 || c!=0)return false;
+           mode<0||mode>5 || (c!=0 && family!=CenterWithin20))return false;
         return family switch
         {
             CountOnOrAway or FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
@@ -66,7 +66,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             StoryUnknowns=>((a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
                 (mode==1&&a==6&&b==12))&&
                 (mode!=2||(a==6&&b==9)),
-            CenterWithin20=>mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a,
+            CenterWithin20=>mode==0?
+                (a>=1&&a<=10&&b>=1&&b<=10&&c==0&&a+b<=20):
+                mode==2?
+                (a>=1&&a<=9&&b>=1&&b<=9&&c>=1&&c<=10&&a+b+c<=20):
+                (mode==1||mode==3)&&a>=11&&a<=17&&b>=1&&b<=20-a&&c==0,
             CountTens=>mode<=3&&a>=1&&a<=6&&b==0&&
                 (mode!=0||a==4),
             MatchTens=>mode<=3&&a>=1&&a<=9&&b==0,
@@ -86,7 +90,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
         int mode=family is StoryUnknowns or CenterTens?random.Next(6):random.Next(4);
-        int a=0,b=0;
+        int a=0,b=0,c=0;
         if(family is CountOnOrAway or FlexibleSubtract)
         {
             if(family==FlexibleSubtract&&mode==2){a=12;b=7;} // Original teacher's pencils story.
@@ -100,7 +104,19 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             else if(mode==2){a=6;b=9;} // Original 2021 Han start unknown.
             else{a=random.Next(1,11);b=random.Next(1,11);}
         }
-        else if(family==CenterWithin20){a=random.Next(11,18);b=random.Next(1,21-a);}
+        else if(family==CenterWithin20)
+        {
+            if(mode==0)
+            {
+                a=random.Next(1,11);b=random.Next(1,11);
+            }
+            else if(mode==2)
+            {
+                a=random.Next(1,10);b=random.Next(1,10);
+                c=random.Next(1,Math.Min(10,20-a-b)+1);
+            }
+            else{a=random.Next(11,18);b=random.Next(1,21-a);}
+        }
         else if(family==CountTens){a=mode==0?4:random.Next(1,7);}
         else if(family==MatchTens){a=random.Next(1,10);}
         else if(family==AddRemoveTen)
@@ -126,7 +142,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             else{a=random.Next(2,8);b=random.Next(1,Math.Min(a,9-a)+1);}
         }
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
-            {["a"]=a,["b"]=b,["c"]=0,["mode"]=mode};
+            {["a"]=a,["b"]=b,["c"]=c,["mode"]=mode};
         if(!Valid(family,p))throw new InvalidOperationException("Grade 1 source problem violates value bounds");
         var t=a+b;
         string prompt=family switch
@@ -150,9 +166,13 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 4=>$"{t} birds are here; some fly away, and {a} remain. How many FLEW AWAY? Write UNKNOWN=number;EQUATION=number-number=number.",
                 _=>$"Some birds are here, {b} fly away, and {a} remain. How many were here at START? Write UNKNOWN=number;EQUATION=number-number=number."
             },
-            CenterWithin20=>mode%2==0
-                ?$"Center numeric task: solve {a}+{b} within 20. Write RESULT=number."
-                :$"Center numeric task: solve {a}-{b} within 20. Write RESULT=number.",
+            CenterWithin20=>mode==0?
+                $"ORIGINAL 2021 HOW CLOSE? Subtract from 20: select TWO number cards {a}, {b} from a teacher-led four-card hand. Subtract both from 20 to approach zero. Write RESULT=number;EQUATION=20-number-number=number. Partner comparison and winning points are teacher observed.":
+                mode==2?
+                $"ORIGINAL 2021 HOW CLOSE? Subtract from 20: select THREE number cards {a}, {b}, {c} from a teacher-led four-card hand. Subtract all three from 20 to approach zero. Write RESULT=number;EQUATION=20-number-number-number=number. The real card game remains teacher-led.":
+                mode==1?
+                $"COMPARE center: evaluate the source-style addition expression {a}+{b} within 20, then compare it to another partner's expression under teacher supervision. Write RESULT=number.":
+                $"COMPARE center: evaluate the source-style subtraction expression {a}-{b} within 20, then compare it to another partner's expression under teacher supervision. Write RESULT=number.",
             CountTens=>mode switch
             {
                 0=>"Original 2021 G1 U04 L01 Activity 1: a source counting bag contains exactly 40 objects. Organize them into COMPLETE groups of ten and count all objects. Write GROUPS=number;TOTAL=number. Choose and describe a physical counting method with your teacher.",
@@ -215,7 +235,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 4=>$"UNKNOWN={b};EQUATION={sum}-{b}={a}",
                 _=>$"UNKNOWN={sum};EQUATION={sum}-{b}={a}"
             },
-            CenterWithin20=>$"RESULT={(mode%2==0?a+b:a-b)}",
+            CenterWithin20=>mode==0?
+                $"RESULT={20-a-b};EQUATION=20-{a}-{b}={20-a-b}":
+                mode==2?
+                $"RESULT={20-a-b-c};EQUATION=20-{a}-{b}-{c}={20-a-b-c}":
+                $"RESULT={(mode==1?a+b:a-b)}",
             CountTens=>$"GROUPS={a};TOTAL={10*a}",
             MatchTens=>mode==3
                 ?$"MATCH={TensWordCardLetter(a)};TENS={a};NUMBER={10*a}"

@@ -228,7 +228,9 @@ Example 4: 20-8=12 because 12+8=20.",
 Step 2: Use counters, a ten-frame or a trusted fact.
 Step 3: Calculate a sum or a nonnegative difference within 20.
 Step 4: Verify the result with an opposite operation or second strategy.
-Step 5: If in classroom play, explain and compare strategies with your partner.",
+Step 5: If in classroom play, explain and compare strategies with your partner.
+Original 2021 How Close? Subtract from 20, Stage 2: a student starts with four numeral cards from 0 to 10, selects TWO or THREE cards, subtracts their combined amounts from 20, and records a correct equation; a result closer to ZERO wins a round. This requires an actual teacher-led card game, so Edulytics grades only the chosen-card subtraction and its equation, not partner competition or winning.
+Original 2021 Compare, Add and Subtract Within 20: compare the values of addition or subtraction expression cards; explain strategies in a teacher-led center.",
             @"Do not subtract a larger card from a smaller card and claim a negative difference is in the reviewed first-grade center scope. Partner center participation cannot be automatically certified by a multiple-choice quiz.",
             @"I can add and subtract within 20 and explain a strategy while following the teacher's center rules."),
         new(@"PED:US-CCSS-MATH:G1:U04:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-1/preparation.html",@"5f7a4f43ed4319bca795c0b82d6a05acb7fd3bf1e20175f4e57825aa89c9dd16",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
