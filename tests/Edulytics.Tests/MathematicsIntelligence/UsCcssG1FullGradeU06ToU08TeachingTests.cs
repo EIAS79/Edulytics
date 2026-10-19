@@ -71,7 +71,16 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("24+30=44 FALSE",text("PED:US-CCSS-MATH:G1:U06:L10"));
         Assert.Contains("Priya's length is 10",text("PED:US-CCSS-MATH:G1:U06:L12"));
         Assert.Contains("UNKNOWN starting count is 20",text("PED:US-CCSS-MATH:G1:U06:L13"));
-        Assert.Contains("TWO valid equations per story",text("PED:US-CCSS-MATH:G1:U06:L14"));
+        var equations=text("PED:US-CCSS-MATH:G1:U06:L14");
+        Assert.Contains("SIX separate story contexts",equations);
+        Assert.Contains("CIRCLE TWO matching equations for EACH",equations);
+        Assert.Contains("8+□=11 and 11-8=□",equations); // Jada
+        Assert.Contains("19-□=11 and 19-11=□",equations); // Kiran
+        Assert.Contains("10+□=16 and 16-10=□",equations); // Han and Lin
+        Assert.Contains("9+5=14 and 5+9=14",equations); // Elena and Andre
+        Assert.Contains("6+□=16 and 16-6=□",equations); // Noah and Tyler
+        Assert.Contains("5+9=□ and □-9=5",equations); // Clare
+        Assert.Contains("partner sorting",equations);
         Assert.Contains("9 were TAKEN away",text("PED:US-CCSS-MATH:G1:U06:L15"));
         Assert.Contains("Counting Collections Stage 3",text("PED:US-CCSS-MATH:G1:U06:L16"));
         Assert.Contains("two equal rectangles has halves",text("PED:US-CCSS-MATH:G1:U07:L09"));
