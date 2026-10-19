@@ -1400,6 +1400,10 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         rendered = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
         expected = re.sub(r"\s+", " ", html.unescape(title)).casefold()
         assert expected in rendered, (code, "missing exact lesson title", expected)
+        # Exact CI-response fingerprint, not stable pedagogical-content identity:
+        # unescaping the HTML is part of this pre-existing learner-page read.
+        g1_learner_response_sha = (hashlib.sha256(body.encode("utf-8")).hexdigest()
+                                   if code in g1_expected else None)
 
         b001_practice_forms.append({
             "ordinal": ordinal,
@@ -1473,6 +1477,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                     g1_e2e_rows.append({"ordinal":ordinal,"lessonCode":code,
                         "assessmentMode":source_mode,
                         "learnerTeachingRendered":True,
+                        "unescapedAuthenticatedLearnerHtmlSha256":g1_learner_response_sha,
                         "authenticStudentAuthorshipNotClaimed":True})
                 else:
                     assert source_mode in ("DIGITAL_PRACTICE",
@@ -1531,6 +1536,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                     g1_e2e_rows.append({"ordinal":ordinal,"lessonCode":code,
                         "assessmentMode":source_mode,
                         "actualFamily":result["family"],
+                        "unescapedAuthenticatedLearnerHtmlSha256":g1_learner_response_sha,
                         "correctAnswerSelfConsistentAndPersisted":True,
                         "malformedAnswerRejectedAndPersisted":True,
                         "wellFormedIncorrectAnswerRejectedAndPersisted":True,
@@ -1589,7 +1595,10 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                    for r in g1_e2e_rows)==95
         Path("/tmp/g1-96-source-family-https-candidate-evidence.json").write_text(
             json.dumps({"scope":"G1_51_TO_146_ONLY",
-                "claim":"Authenticated source-family and grading technology ONLY; no academic lesson signoff",
+                "testedCheckoutSha":subprocess.check_output(
+                    ["git","rev-parse","HEAD"],text=True).strip(),
+                "claim":"Authenticated disposable-school learner HTML hashes, exact source-family and grading technology ONLY; NOT visual source-task parity, publisher rights, or academic lesson signoff",
+                "learnerHtmlHashSemantics":"SHA-256 of HTML-unescaped authenticated HTTP response for this CI attempt; volatile tokens prevent treating it as canonical content identity",
                 "rows":g1_e2e_rows},indent=2,ensure_ascii=False)+"\n",
             encoding="utf-8")
         print("G1_96_CANDIDATE_SOURCE_FAMILY_HTTPS_PASS",
