@@ -45,10 +45,16 @@ public static partial class PracticeMathVisualRenderer
             int[] origins=[50,95];
             int[] yPositions=[80,167];
             int[] lengths=[a,b];
+            bool sourceComparison=family=="usccss.g1.u06.l03.choose_indirect_comparison";
+            string[] labels=sourceComparison && mode==1
+                ?["Mai route","Clare route"]
+                :sourceComparison && mode>=2
+                    ?["Door opening",mode==2?"Teacher desk width":"Student desk width"]
+                    :["Object A","Object B"];
             for(int i=0;i<2;i++)
             {
                 int x0=origins[i],y=yPositions[i];
-                Text(svg,x0,y-22,i==0?"Object A":"Object B","label");
+                Text(svg,x0,y-22,labels[i],"label");
                 svg.Append($"<line class='indirect-reference-{i}' x1='{x0}' y1='{y-8}' x2='{x0+220}' y2='{y-8}' stroke='currentColor' stroke-width='1'/>");
                 for(int n=0;n<lengths[i];n++)
                 {
@@ -56,7 +62,9 @@ public static partial class PracticeMathVisualRenderer
                     svg.Append($"<rect class='indirect-unit-{i}' x='{F(x)}' y='{y}' width='{F(step)}' height='28' fill='rgba(33,128,184,.21)' stroke='currentColor' stroke-width='1'/>");
                 }
             }
-            Text(svg,210,238,"Compare through the SAME reference unit.","hint");
+            Text(svg,210,238,sourceComparison && mode>=2
+                ?"Compare WIDTH with the SAME reference unit."
+                :"Compare through the SAME reference unit.","hint");
             return SvgEnd(svg);
         }
         svg.Append("<line x1='38' y1='39' x2='38' y2='219' stroke='currentColor' stroke-width='2' stroke-dasharray='4 4'/>");
