@@ -13,6 +13,11 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
     public const string Version = "us-ccss-g1-full-grade-u04-l22-through-u05-l14-teaching-v1";
     public const string Unit4EndSourceVersion="us-ccss-g1-u04-l22-l23-original-activities-v2";
     public const string Unit5EarlySourceVersion="us-ccss-g1-u05-l01-l07-source-activities-v2";
+    public const string Unit5LaterSourceVersion="us-ccss-g1-u05-l08-l13-source-activities-v2";
+    private static bool IsUnit5Later(string code)=>code is
+        "PED:US-CCSS-MATH:G1:U05:L08" or "PED:US-CCSS-MATH:G1:U05:L09" or
+        "PED:US-CCSS-MATH:G1:U05:L10" or "PED:US-CCSS-MATH:G1:U05:L11" or
+        "PED:US-CCSS-MATH:G1:U05:L12" or "PED:US-CCSS-MATH:G1:U05:L13";
     private static bool IsUnit5Early(string code)=>code is
         "PED:US-CCSS-MATH:G1:U05:L01" or "PED:US-CCSS-MATH:G1:U05:L02" or
         "PED:US-CCSS-MATH:G1:U05:L03" or "PED:US-CCSS-MATH:G1:U05:L04" or
@@ -89,42 +94,42 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
             @"I can tell when adding composes a new ten and justify with an equation."),
         new(@"PED:US-CCSS-MATH:G1:U05:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-8/preparation.html",@"aad87cbe8f02f23279a42bd4de1e5febd1a53b58cf29e1c41e45294fd6d2c3eb",[@"CCSS:1.NBT.C.4",@"CCSS:1.OA.C.6",@"CCSS:1.OA.D.8"],
             @"Center Day 2",
-            @"Teacher-led center day: add within 100, including examples with or without composing a ten. Show the math and check the value; physical game participation is not auto-scored.",
-            @"Example 1: 38+6=38+2+4=44 (make a ten). Example 2: 32+24=56 (no new ten). Example 3: 57+25=82 (new ten).",
+            @"Teacher-led center day: add within 100, including examples with or without composing a ten. Original 2021 number talk: 68+2=70, 3+68=71, 5+45=50 and 45+7=52. Original Target Numbers Stage 2 STARTS AT 25, chooses a number card and adds that many TENS or ONES, attempting to reach 95 without going over in SIX rounds. The teacher-led center choices are Target Numbers, Number Puzzles and Five in a Row; optional original football stories are arithmetic contexts, not proof of pupil participation."
+            @"Example 1: 38+6=38+2+4=44 (make a ten). Example 2: 32+24=56 (no new ten). Example 3: 57+25=82 (new ten). Original optional football story: home team scores 35 and then 6 more, 35+6=41 points; 9 visiting and 45 home supporters make 9+45=54 fans."
             @"Step 1: Identify the addends. Step 2: Choose add-tens/ones or make-ten. Step 3: Write a correct equation. Step 4: Verify the total is within 100 and explain your choice.",
             @"Do not reuse a no-regrouping algorithm when ones make ten; 57+25 is 82, not 72.",
             @"I can add within 100 using strategies that fit the numbers."),
         new(@"PED:US-CCSS-MATH:G1:U05:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-9/preparation.html",@"77345a8d0297619605cf994f800beeb7c99b1e74bf8bd70a4598fdbf50575d42",[@"CCSS:1.NBT.C.4"],
             @"Add 2 Two-digit Numbers",
-            @"Add two two-digit numbers that compose a ten. Explain where the new ten comes from rather than mechanically carrying a digit.",
-            @"Example 1: 38+25=38+20+2+3=63. Example 2: 46+27=73; six ones plus seven ones make one ten and three ones.",
+            @"Add two two-digit numbers that compose a ten. Original 2021 student Activity 1 finds 17+36 using a chosen place-value method. Activity 2 Grab and Add has partners combine genuine handfuls of tens towers and singles in multiple rounds, making tens when necessary; digital arithmetic cannot prove physical handful counts. Original number talk 38+2,40+3,38+5,38+15 prepares composing tens."
+            @"Example 1: Original 17+36=53 by 17+30=47, then 47+6=53; 7+6=13 ones creates a new ten. Example 2: 38+25=38+20+2+3=63. Example 3: 46+27=73; six ones plus seven ones make one ten and three ones."
             @"Step 1: Add tens. Step 2: Combine ones. Step 3: Exchange ten of the ones for one additional ten. Step 4: Record the new number of tens and leftover ones. Step 5: Verify.",
             @"Do not ignore the newly made ten: 38+25 is 63, not 53.",
             @"I can add two two-digit numbers within 100 by composing a new ten."),
         new(@"PED:US-CCSS-MATH:G1:U05:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-10/preparation.html",@"d959d22c069d35452c3261e2d47ece8b5602cd6c284962754be8a8432241201e",[@"CCSS:1.NBT.C.4",@"CCSS:1.OA.D.8"],
             @"Tens and Tens, Ones and Ones",
-            @"Add two-digit numbers by explicitly combining TENS with TENS and ONES with ONES, exchanging when there are ten or more ones.",
-            @"Example 1: 37+26 = (30+20)+(7+6) = 50+13=63. Exchange ten of the thirteen ones for an additional ten.",
+            @"Add two-digit numbers by explicitly combining TENS with TENS and ONES with ONES, exchanging when there are ten or more ones. Original 2021 pupils interpret Priya drawing for 37+26, finish 28+56 given first step 20+50, finish 27+44 given first step 7+4, then find 34+57 and 18+55. Original Number Puzzles Stage 4 uses one-use digit cards to create within-100 addition WITH composing; physical game is teacher-led."
+            @"Example 1: Original Priya 37+26=(30+20)+(7+6)=50+13=63. Example 2: 28+56=(20+50)+(8+6)=70+14=84. Example 3: 27+44=(20+40)+(7+4)=60+11=71. Example 4: 34+57=91; 18+55=73. In each case exchange ten ones when the ones sum exceeds nine."
             @"Step 1: Represent each addend as tens and ones. Step 2: Add tens and ones separately. Step 3: Regroup ten ones into one ten. Step 4: Combine to a final total and check.",
             @"Do not mistake 50+13 for 513 or for 53; ten ones represent an additional ten.",
             @"I can explain how tens and ones combine in two-digit addition."),
         new(@"PED:US-CCSS-MATH:G1:U05:L11",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-11/preparation.html",@"0560868a9b518234ee6d9396ab88055086709f55a9d9830b085ed7d4044b29d9",[@"CCSS:1.NBT.C.4",@"CCSS:1.OA.D.7"],
             @"How Did You Do That?",
-            @"Analyze two-digit addition methods and explain how different true equations represent the same sum.",
-            @"Example 1: 37+25=37+20+5=57+3+2=62. Example 2: (30+20)+(7+5)=50+12=62. Both methods agree.",
+            @"Analyze two-digit addition methods and explain how different true equations represent the same sum. Original 2021 source cleanup story has 37 plastic bottles and 25 paper wrappers, with Jada, Kiran and Tyler demonstrating THREE distinct methods. Original student next problem is 23+68=91, including optional student-created story and partner gallery discussion. Source warm-up asks whether 24+3=54, 42+5=47 and 42+30=45 are true."
+            @"Example 1: Original Jada method 37+25: 30+20=50;7+5=12;50+12=62. Example 2: Original Kiran method 37+3+2=42;42+20=62. Example 3: Original Tyler method 37+20=57;57+3+2=62. Example 4: Student next task 23+68=91, for example 23+60=83, 83+8=91. Each equality remains true."
             @"Step 1: Read both addends and one proposed strategy. Step 2: Check each transformation preserves the total. Step 3: Identify where a ten forms. Step 4: Compare with another valid method.",
             @"Do not write 37+25=37+20+2 because three ones disappear.",
             @"I can interpret and compare accurate place-value addition strategies."),
         new(@"PED:US-CCSS-MATH:G1:U05:L12",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-12/preparation.html",@"c62773916f506f2731dbb37579492188cf54f92f50fda9fa2146209e03e6de31",[@"CCSS:1.NBT.C.4"],
             @"Add it Up PLC Activity",
-            @"Write equations to show HOW two two-digit numbers can be added, including making a new ten.",
-            @"Example 1: 37+25=(30+20)+(7+5)=50+12=62. Example 2: 48+14=48+10+2+2=62.",
+            @"Write equations to show HOW two two-digit numbers can be added, including making a new ten. Original 2021 pupils calculate 48+15 and 57+36 using any valid strategy and explain true equations. Original Reason About Addition provides number cards 37,22,18,56,41 and asks for smallest/largest sums, sums requiring NO new ten, sums composing a ten with some ones left, and sums composing an exact ten. Optional original volunteer stories require classroom review when used."
+            @"Example 1: Original 48+15=63 (48+2+13=50+13=63). Example 2: Original 57+36=93 (57+30+3+3=93). Example 3: Cards 37+22=59 makes no new ten; 22+18=40 composes exactly one new ten; 37+18=55 composes with five ones remaining. From the source card set, smallest pair is 18+22=40 and largest is 56+41=97. Multiple answers satisfy some other card rules."
             @"Step 1: Choose a strategy (tens/ones or add-on). Step 2: Write the starting addition. Step 3: Show the tens composition as a true equation. Step 4: Write the final sum and verify.",
             @"Do not omit ones or create an equality that changes the value between steps.",
             @"I can write equivalent equations describing my two-digit addition method."),
         new(@"PED:US-CCSS-MATH:G1:U05:L13",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-13/preparation.html",@"bd186fde246e3a3b3ff5dd24dae4d2b54f0a8192642f291372a14de5b2a9228a",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.3",@"CCSS:1.NBT.C.4",@"CCSS:1.OA.C.5",@"CCSS:1.OA.C.6",@"CCSS:1.OA.D.8"],
             @"Center Day 3",
-            @"Center day: practice adding within 100 with place-value representations and explain the observed number pattern. Teacher evaluates partner discussion; digital tasks evaluate calculations only.",
+            @"Original 2021 Center Day 3: count backward by ONES from 100 to 70 in the choral warm-up. Introduce Target Numbers Stage 3 (add TWO-DIGIT numbers) and Five in a Row Stage 6 (add within 100 WITH composing), then choose among other already learned centers. Real board turns, number-card manipulation and partner participation remain teacher-facilitated; digital tasks evaluate only applicable mathematics."
             @"Example 1: 26+38=64 because 20+30=50 and 6+8=14. Example 2: 54+25=79 because ones make nine and tens make seventy.",
             @"Step 1: Read the actual center prompt. Step 2: Decide whether ten must be composed. Step 3: Use a drawing/equation to add accurately. Step 4: Explain the pattern if a teacher supervises the activity.",
             @"Do not treat a teacher-led game as completed when only an addition answer was entered.",
@@ -170,12 +175,14 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
        IsTarget(doc,lesson)
            ?(IsUnit4End(lesson.LessonCode)?Unit4EndSourceVersion:
-             IsUnit5Early(lesson.LessonCode)?Unit5EarlySourceVersion:Version)
+             IsUnit5Early(lesson.LessonCode)?Unit5EarlySourceVersion:
+             IsUnit5Later(lesson.LessonCode)?Unit5LaterSourceVersion:Version)
            :previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
        IsTarget(doc,lesson)&&
        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
-        (previous==Version&&(IsUnit4End(lesson.LessonCode)||IsUnit5Early(lesson.LessonCode))));
+        (previous==Version&&(IsUnit4End(lesson.LessonCode)||IsUnit5Early(lesson.LessonCode)||
+           IsUnit5Later(lesson.LessonCode))));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
