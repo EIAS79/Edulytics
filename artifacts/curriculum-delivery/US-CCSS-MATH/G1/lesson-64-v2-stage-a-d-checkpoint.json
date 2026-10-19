@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 64,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L27",
+  "title": "Center Day 4",
+  "sourceBasis": {
+    "device": "Our-CS original 2021 Grade 1 cached textbook (READ ONLY)",
+    "teacherLessonRelativePath": "unit-3/lesson-27/lesson.html",
+    "indexedSourceTaskEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json",
+    "reusedExistingSourceAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json"
+  },
+  "stageA": {
+    "originalStudentTeacherActivitiesRead": [
+      "Number Talk 20−10,20−10−1,18−10−4,18−14",
+      "How Close? Stage 2 subtract two or three from 20 to approach zero",
+      "Compare 9+6 vs19−6 and maintain physical game teacher facilitation"
+    ],
+    "existingCandidateCompared": true,
+    "documentedGap": "Original warm-up and exact expression comparison absent; existing How Close and Compare rules retained",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "method": "Unchanged original Five-Lesson V1 A–D source review and minimal teaching repair",
+    "existingRichV2Reused": true,
+    "codePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "codeCommit": "c30d0f59c21408f8c56fdd6c7d17809327368036",
+    "versionField": "CenterFourSourceContentVersion",
+    "sourceArtworkCopied": false
+  },
+  "stageC": {
+    "reuseOfExistingPractice": true,
+    "existingMathGeneratorAndVerifierPreserved": true,
+    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified"
+  },
+  "stageD": {
+    "originalTaskAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "assertionCommit": "89b32ac0e91fe9505d632467a0a8f6362d163095",
+    "CIExecutedDuringAuthoring": false,
+    "targetedTestPassClaimed": false,
+    "authenticatedGradeRendering": "PENDING_FINAL_CI",
+    "realPracticeScorePersistence": "PENDING_FINAL_CI",
+    "rightsAndVisualEvidence": "PENDING",
+    "lessonAcceptance": "NOT_CLAIMED"
+  },
+  "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "academicStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue original V1 review for next ordinal; final frozen-grade evidence required before acceptance"
+}
