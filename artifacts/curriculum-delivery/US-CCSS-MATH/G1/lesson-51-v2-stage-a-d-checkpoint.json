@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Resume original Five-Lesson V1 A-D for the next unaccepted G1 lesson, reusing prior evidence; no new acceptance criteria",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 51,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L14",
+  "unit": 3,
+  "lessonNumber": 14,
+  "title": "Center Day 2",
+  "sourceBasis": {
+    "device": "Our-CS, READ-ONLY original 2021 source library; no online re-intake",
+    "localRelativeTeacherPreparation": "Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-3_lesson-14_preparation.html",
+    "localRelativeFullTeacherLesson": "unit-3/lesson-14/lesson.html",
+    "originalTeacherPreparationSha256": "fe19d293e214a19212ee74fa2cd634e0381a77916645fa6b600f40d9c9c5eef2",
+    "previousCacheAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/readonly-source-cache-integrity-20261019.json",
+    "reusedReview": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-STUDENT-TASK-AUDIT-51-52-53-65-146.json",
+    "materialReviewed": "Teacher preparation, original full teacher lesson's student-facing warm-up and center explanation; prior original Student_Public_Mirror review used by reference",
+    "sourceFindings": [
+      "Warm-up includes true/false addition equality questions and asks pupils to explain",
+      "Number Puzzles center uses distinct digit cards in addition and subtraction equations within 20",
+      "Physical center choices, partner explanations and work are teacher facilitated, not recorded as digitally completed"
+    ]
+  },
+  "stageA": {
+    "sourceAndCandidateCompared": true,
+    "actualCandidateReferences": [
+      "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+      "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
+      "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1NumberPuzzle.cs"
+    ],
+    "confirmedMathDefect": "Before corrective commit, mode-0 addition could generate a sum above 20 despite the source's within-20 requirement",
+    "classification": "PRACTICE_REPAIR",
+    "reuse": "Existing teaching, visual board, subtraction and no-duplicate digit cards retained"
+  },
+  "stageB": {
+    "existingLearnerTeachingReused": true,
+    "teachingModified": false,
+    "candidateTeaches": [
+      "equality and false equations",
+      "within-20 addition/subtraction",
+      "distinct digit cards"
+    ],
+    "publisherArtworkReused": false,
+    "fullPublisherMaterialsLicenseIndependentlyCleared": false
+  },
+  "stageC": {
+    "existingFamily": "usccss.g1.u03.l14.center.add_subtract",
+    "repair": "Mode-0 addition now bounded to sum <=20 and rejects invalid greater-than-20 inputs",
+    "repairCommit": "616f420b1d35cbda4dd88fb7d4610a0d734d021c",
+    "gradeChecks": [
+      "correct",
+      "malformed/wrong",
+      "unique digit cards"
+    ],
+    "remainingSourceTaskParity": "Confirm the full original multiple-card center gameboard and student-visible rendering; classroom center participation not digitally claimed"
+  },
+  "stageD": {
+    "checkedExactCandidateSha": "a014de468399991ca9191d1c56107b38a69a99eb",
+    "workflowRuns": 15,
+    "workflowPass": 15,
+    "workflowRunExample": "https://github.com/EIAS79/Edulytics/actions/runs/39270515773",
+    "targetedTestPaths": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNumberPuzzleBoardVisualTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs"
+    ],
+    "targetedTestChange": "1000 deterministic seeds include mode-0 addition upper-bound; existing distinct-card and negative controls retained",
+    "authRuntimeEvidence": "Existing disposable HTTPS 96-lesson checks passed at exact source commit; covers one generated candidate, response validation and persistence, NOT original complete task/visual parity",
+    "evidenceLimits": [
+      "No independent complete original physical gameboard to real learner-board parity certification",
+      "No verified full graphical/student-book original materials licensing determination",
+      "No conclusive source-figure accessibility and real learner visual task parity evidence at the exact candidate head"
+    ]
+  },
+  "lessonInternalAcademicAcceptance": "NOT_CLAIMED",
+  "progressLedgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue V1 Stage D for THIS lesson; fill only the proven remaining source task/runtime/licensing evidence. Do not move to 52/53 for independent certification until this lesson qualifies or its specific blockage is resolved. No owner UAT or production deployment claimed."
+}
