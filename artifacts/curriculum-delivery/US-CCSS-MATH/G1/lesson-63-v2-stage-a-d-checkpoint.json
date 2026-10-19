@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 63,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L26",
+  "title": "What's the Story?",
+  "sourceBasis": {
+    "device": "Our-CS original 2021 Grade 1 cached textbook (READ ONLY)",
+    "teacherLessonRelativePath": "unit-3/lesson-26/lesson.html",
+    "indexedSourceTaskEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json",
+    "reusedExistingSourceAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json"
+  },
+  "stageA": {
+    "originalStudentTeacherActivitiesRead": [
+      "Number Talk 15−10,15−12,16−10,16−13",
+      "Two Elena unknown-change stories: 6+□=18 and 18−□=6",
+      "Four distinct Han pencils unknown-position stories and student explanations"
+    ],
+    "existingCandidateCompared": true,
+    "documentedGap": "Existing teaching included first Elena task but did not fully represent opposite story and Han's four original story forms",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "method": "Unchanged original Five-Lesson V1 A–D source review and minimal teaching repair",
+    "existingRichV2Reused": true,
+    "codePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "codeCommit": "c30d0f59c21408f8c56fdd6c7d17809327368036",
+    "versionField": "StorySourceContentVersion",
+    "sourceArtworkCopied": false
+  },
+  "stageC": {
+    "reuseOfExistingPractice": true,
+    "existingMathGeneratorAndVerifierPreserved": true,
+    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified"
+  },
+  "stageD": {
+    "originalTaskAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "assertionCommit": "89b32ac0e91fe9505d632467a0a8f6362d163095",
+    "CIExecutedDuringAuthoring": false,
+    "targetedTestPassClaimed": false,
+    "authenticatedGradeRendering": "PENDING_FINAL_CI",
+    "realPracticeScorePersistence": "PENDING_FINAL_CI",
+    "rightsAndVisualEvidence": "PENDING",
+    "lessonAcceptance": "NOT_CLAIMED"
+  },
+  "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "academicStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue original V1 review for next ordinal; final frozen-grade evidence required before acceptance"
+}
