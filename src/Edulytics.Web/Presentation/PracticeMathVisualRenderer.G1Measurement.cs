@@ -47,10 +47,10 @@ public static partial class PracticeMathVisualRenderer
             int[] lengths=[a,b];
             bool sourceComparison=family=="usccss.g1.u06.l03.choose_indirect_comparison";
             string[] labels=sourceComparison && mode==1
-                ?["Mai route","Clare route"]
+                ?new[]{"Mai route","Clare route"}
                 :sourceComparison && mode>=2
-                    ?["Door opening",mode==2?"Teacher desk width":"Student desk width"]
-                    :["Object A","Object B"];
+                    ?new[]{"Door opening",mode==2?"Teacher desk width":"Student desk width"}
+                    :new[]{"Object A","Object B"};
             for(int i=0;i<2;i++)
             {
                 int x0=origins[i],y=yPositions[i];
