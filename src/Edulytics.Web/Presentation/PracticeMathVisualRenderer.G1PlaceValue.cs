@@ -68,6 +68,40 @@ public static partial class PracticeMathVisualRenderer
         return SvgEnd(svg);
     }
 
+    // Original 2021 U04 L03: starting tower(s) and eight as-yet-unfilled
+    // addition/removal steps; blanks deliberately do NOT reveal eight totals.
+    private static string GradeOneOriginalTenTowerSequenceVisual(JsonElement p)
+    {
+        int a=GetInt(p,"a"),b=GetInt(p,"b"),c=GetInt(p,"c"),mode=GetInt(p,"mode");
+        if(c!=0||b!=1||mode<2||mode>3||
+           (mode==2&&a!=9)||(mode==3&&a!=1))
+            throw new JsonException("Invalid original source ten-tower sequence");
+        bool adding=mode==2;
+        var svg=SvgStart(adding
+            ?"Original Grade 1: start with one full tower of ten cubes, add a whole ten tower eight times. Empty outlines are unfilled steps, not answers."
+            :"Original Grade 1: start with nine full towers of ten cubes, take one full tower away eight times. Shaded rods are marked for removal, not scored answers.");
+        Text(svg,20,36,adding?"Start: ONE TEN. Add one ten 8 times.":"Start: NINE TENS. Remove one ten 8 times.","label");
+        const int rodWidth=38,step=43,rodY=78;
+        for(int k=0;k<9;k++)
+        {
+            int x=20+k*step;
+            string marker=adding&&k>0?"step-blank":!adding&&k<8?"step-remove":"step-start";
+            string fill=adding&&k>0?"none":!adding&&k<8?
+                "rgba(204,134,41,.20)":"rgba(33,128,184,.22)";
+            svg.Append($"<rect class='g1-original-ten-{marker}' x='{x}' y='{rodY}' width='{rodWidth}' height='56' fill='{fill}' stroke='currentColor' stroke-width='1.6' stroke-dasharray='{(adding&&k>0?"3 3":"none")}'/>");
+            if(!adding||k==0)
+                for(int m=1;m<10;m++)
+                {
+                    var y=rodY+56*m/10d;
+                    svg.Append($"<line x1='{x}' y1='{F(y)}' x2='{x+rodWidth}' y2='{F(y)}' stroke='currentColor' stroke-width='.65'/>");
+                }
+        }
+        Text(svg,20,181,adding
+            ?"Write the 8 totals after each new tower.":"Write the 8 totals after removing each tower.","hint");
+        Text(svg,20,217,"Every tower contains exactly TEN equal cubes.","hint");
+        return SvgEnd(svg);
+    }
+
     // Source-inspired, first-party Unit4 L04 bag-of-cubes drawings. They
     // illustrate the quantities, not student-created physical tower work.
     private static string GradeOneOriginalBagsOfTenVisual(JsonElement p)
