@@ -20,7 +20,7 @@ test('six source-verified G1 repairs preserve all pinned before-state guarantees
  // legitimately add extra source-bound lessons without rewriting old six.
  const sourceBound=selector.match(/const int expectedSourceBoundCorrectionCount = ([^;]+);/);
  assert.ok(sourceBound,'Missing source-bound correction count assertion');
- const terms=sourceBound[1].split(/\\s*\\+\\s*/).map(x=>Number(x));
+ const terms=sourceBound[1].split(/\s*\+\s*/).map(x=>Number(x));
  assert.ok(terms.length>=9 && terms.every(x=>Number.isSafeInteger(x)&&x>0),
    'Source-bound correction count must stay a sum of positive integers');
  assert.deepEqual(terms.slice(0,9),[12,19,3,7,6,6,1,2,2],
