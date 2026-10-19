@@ -22,6 +22,10 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
                 21=>CommonCoreG1FullGradeStartingContentCorrections.CenterSourceContentVersion,
                 22=>CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion,
                 23=>CommonCoreG1FullGradeStartingContentCorrections.TenSubtractSourceContentVersion,
+                24=>CommonCoreG1FullGradeStartingContentCorrections.CountRelationSourceContentVersion,
+                25=>CommonCoreG1FullGradeStartingContentCorrections.ChooseSubtractSourceContentVersion,
+                26=>CommonCoreG1FullGradeStartingContentCorrections.StorySourceContentVersion,
+                27=>CommonCoreG1FullGradeStartingContentCorrections.CenterFourSourceContentVersion,
                 _=>CommonCoreG1FullGradeStartingContentCorrections.Version
             };
             Assert.Equal(expectedVersion,
@@ -65,7 +69,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         var zoo=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L20");
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,zoo,CommonCoreG1FullGradeStartingContentCorrections.Version));
-        foreach(var number in new[]{21,22,23})
+        foreach(var number in new[]{21,22,23,24,25,26,27})
         {
             var lesson=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U03:L{number:00}");
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
@@ -82,6 +86,21 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("17-8=9",text(25));
         Assert.Contains("20-15=5",text(25));
         Assert.Contains("7+5=12",text(26));
+        Assert.Contains("BACKWARD by one from 50 to 20",text(24));
+        Assert.Contains("16-3=13, 17-8=9 and 18-15=3",text(24));
+        Assert.Contains("18-5=□",text(24));
+        Assert.Contains("20=15+□",text(24));
+        Assert.Contains("FORWARD from 50 through 100",text(25));
+        Assert.Contains("19-3=16, 13-5=8, 18-9=9 and 17-15=2",text(25));
+        Assert.Contains("Clare 8+□=15",text(25));
+        Assert.Contains("Kiran 17-□=9",text(25));
+        Assert.Contains("15-10=5, 15-12=3, 16-10=6, 16-13=3",text(26));
+        Assert.Contains("Han story 1: □+9=15",text(26));
+        Assert.Contains("Han story 2: 15-□=9",text(26));
+        Assert.Contains("Han story 3: 9+□=15",text(26));
+        Assert.Contains("Han story 4: 15-9=6",text(26));
+        Assert.Contains("20-10-1=9, 18-10-4=4",text(27));
+        Assert.Contains("9+6=15 is greater than 19-6=13",text(27));
         Assert.Contains("Elena has 6 counters",text(26));
         Assert.Contains("16-9=7",text(27));
         var preexistingStory=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L28");
