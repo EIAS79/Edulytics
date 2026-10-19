@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A-D resume evidence; not an academic acceptance or new verification method",
+  "grade": "G1",
+  "ordinal": 58,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L21",
+  "title": "Center Day 3",
+  "sourceBasis": {
+    "device": "Our-CS cached IM/Kendall Hunt 2021 source, read-only",
+    "teacherPreparationRelativePath": "Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-3_lesson-21_preparation.html",
+    "fullTeacherLessonRelativePath": "unit-3/lesson-21/lesson.html",
+    "teacherPreparationSha256": "8cbeceb26ad5a84032236df11fd4860b8b5315c8a9639912a849c6f0e93d573a",
+    "fullTeacherHtmlSha256": "26cd4b1a20f8958d83c62453efc87429f3244e3f7a8b61a4a8e7039ac5bfffe4",
+    "studentMirrorSha256": "c51e9baa3f5918ac205329d403d39e241960fde3bc3fa3bc124eb2eb03512b4d",
+    "existingSourceAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalTasksReadFromFullTeacherLesson": [
+      "Original open-ended warm-up: What do you know about 20?",
+      "How Close? Add to 20: choose two or three cards from five, after excluding cards numbered 10",
+      "Five in a Row: choose numeral card, add 7/8/9, mark result on board; first five consecutive markers wins"
+    ],
+    "existingCandidateCompared": true,
+    "confirmedGap": "Open-ended warm-up with multiple representations of 20 absent from source-grounded teaching examples",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceSpecificRepair": "Original warm-up added to teaching; actual teacher-led five-card optimization/board game not claimed automatically graded",
+    "teachingPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingCommit": "9afccf0b8680b947ba80b9cf9828cea0a9a78589",
+    "method": "Original V1 source comparison and surgical repair; no change in academic procedure",
+    "sourceArtworkCopied": false
+  },
+  "stageC": {
+    "reusedPracticeFamily": "usccss.g1.u03.l21.center.two_three_addends",
+    "reusedExistingImplementation": "Existing How Close? and Five in a Row teaching/Practice and teacher-led boundaries reused",
+    "additionalMathChange": "Existing Practice math logic preserved",
+    "practicePath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeNextQuestions.cs",
+    "practiceCommit": null,
+    "limitations": "Digital numerics do not prove pupil drawings, physical/partner participation or teacher-observed strategy explanations"
+  },
+  "stageD": {
+    "newSourceAndMathAssertionsAuthored": true,
+    "teachingTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "practiceTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs (existing)",
+    "githubCiExecutedDuringAuthoring": false,
+    "currentHeadMathTestPassClaimed": false,
+    "authenticatedRenderingAtFinalSha": "PENDING",
+    "authenticatedGradingPersistenceAtFinalSha": "PENDING",
+    "visualRightsAndAccessibilityFinalEvidence": "PENDING",
+    "finalIndividualV1Acceptance": "PENDING"
+  },
+  "academicAcceptance": "NOT_CLAIMED",
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "ownerUat": "PENDING",
+  "currentAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
