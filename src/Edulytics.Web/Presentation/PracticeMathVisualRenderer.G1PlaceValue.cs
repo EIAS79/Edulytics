@@ -68,6 +68,33 @@ public static partial class PracticeMathVisualRenderer
         return SvgEnd(svg);
     }
 
+    // Original 2021 U04 L01: a fixed 40-object bag in Activity 1,
+    // and Bags A-F containing respectively 20,40,50,60,30,10 in Activity 2.
+    // First-party dots represent countable pieces, NOT actual student sorting.
+    private static string GradeOneOriginalSourceCountCollectionsVisual(JsonElement p)
+    {
+        int a=GetInt(p,"a"),b=GetInt(p,"b"),c=GetInt(p,"c"),mode=GetInt(p,"mode");
+        if(a<1||a>6||b!=0||c!=0||mode<0||mode>3||(mode==0&&a!=4))
+            throw new JsonException("Invalid original Grade 1 U04 L01 collection");
+        string label=mode==0?"Activity 1: fixed 2021 collection":
+            mode==1?"Activity 2: Bag "+(a switch{1=>"F",2=>"A",3=>"E",4=>"B",5=>"C",_=>"D"}):
+            mode==2?"Ten-frame representation":"Tower representation";
+        var svg=SvgStart("Grade 1 original counting collections. Count each unnumbered group of ten dots; source classroom manipulation and student drawings require teacher review.");
+        Text(svg,16,32,label,"label");
+        for(int group=0;group<a;group++)
+        {
+            int x=20+(group%3)*133,y=48+(group/3)*103;
+            svg.Append($"<rect class='g1-original-collection-frame' x='{x}' y='{y}' width='115' height='79' rx='5' fill='none' stroke='currentColor' stroke-width='1.5'/>");
+            for(int dot=0;dot<10;dot++)
+            {
+                int cx=x+15+(dot%5)*21,cy=y+24+(dot/5)*29;
+                svg.Append($"<circle class='g1-original-collection-dot' cx='{cx}' cy='{cy}' r='6' fill='rgba(33,128,184,.45)' stroke='currentColor' stroke-width='.8'/>");
+            }
+        }
+        Text(svg,16,248,"Count all the pieces. Each complete frame contains ten.","hint");
+        return SvgEnd(svg);
+    }
+
     // Original 2021 U04 L03: starting tower(s) and eight as-yet-unfilled
     // addition/removal steps; blanks deliberately do NOT reveal eight totals.
     private static string GradeOneOriginalTenTowerSequenceVisual(JsonElement p)
