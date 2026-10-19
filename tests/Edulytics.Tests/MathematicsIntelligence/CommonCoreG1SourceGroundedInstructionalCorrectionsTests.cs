@@ -165,6 +165,26 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
     }
 
     [Fact]
+    public void Original2021U07L06RequiresBothRectangleAndSquareDrawingSets()
+    {
+        const string code=CommonCoreG1SourceGroundedInstructionalCorrections.RectanglesSquaresAttributesLessonCode;
+        var (doc,lesson,en)=Effective(code);
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.RectanglesSquaresAttributesVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
+        Assert.Contains("DRAW FIVE rectangles and THREE shapes",en.KeyConceptsAndRules);
+        Assert.Contains("DRAW FIVE squares and THREE shapes",en.KeyConceptsAndRules);
+        Assert.Contains("TWO distinct sets of eight",en.KeyConceptsAndRules);
+        Assert.Contains("FIVE different valid rectangles",en.StepByStepSolutions);
+        Assert.Contains("THREE figures that are NOT rectangles",en.StepByStepSolutions);
+        Assert.Contains("FIVE squares and THREE figures that are NOT squares",en.StepByStepSolutions);
+        Assert.Contains("A non-square rectangle is a valid RECTANGLE nonexample of a SQUARE",en.WorkedExamples);
+        Assert.Contains("SECOND source task",en.CommonMistakes);
+        var before=CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson);
+        CanonicalLessonContentMaterializer.Materialize(doc);
+        Assert.Equal(before,CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson));
+    }
+
+    [Fact]
     public void NextFiveGrade1SourceScopeAndPreviousBatchContentVersionsRemainIsolated()
     {
         var (doc, _, _) = Effective(
