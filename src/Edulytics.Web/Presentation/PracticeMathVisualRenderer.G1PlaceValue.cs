@@ -68,6 +68,33 @@ public static partial class PracticeMathVisualRenderer
         return SvgEnd(svg);
     }
 
+    // 2021 U04 L05 Check It Off: board numbers 0..90, with one checked
+    // and the desired target free. The learner must choose ADD or SUBTRACT.
+    private static string GradeOneOriginalCheckItOffBoard(JsonElement p)
+    {
+        int a=GetInt(p,"a"),b=GetInt(p,"b"),c=GetInt(p,"c"),mode=GetInt(p,"mode");
+        if(c!=0||mode is <4 or >5||
+           (mode==4&&(a!=5||b!=4))||
+           (mode==5&&(a<2||a>7||b<1||b>Math.Min(a,9-a))))
+            throw new JsonException("Invalid Grade 1 Check It Off board");
+        int crossed=mode==4?90:10*(a-b);
+        int needed=mode==4?10:10*(a+b);
+        var svg=SvgStart("Source-inspired Check It Off 0 to 90 number board. One number is already crossed out and another is available. Choose the equation and operator yourself.");
+        Text(svg,20,32,mode==4?"Cards 40 and 50":"Two number cards shown in the question","label");
+        for(int k=0;k<10;k++)
+        {
+            int n=k*10,x=20+(k%5)*78,y=49+(k/5)*79;
+            string state=n==crossed?"g1-checked-off":
+                n==needed?"g1-free-target":"g1-other-board";
+            svg.Append($"<rect class='{state}' x='{x}' y='{y}' width='64' height='54' rx='5' fill='none' stroke='currentColor' stroke-width='1.5'/>");
+            Text(svg,x+15,y+36,n.ToString(),"label");
+            if(n==crossed)
+                svg.Append($"<line class='g1-board-cross' x1='{x+5}' y1='{y+5}' x2='{x+59}' y2='{y+49}' stroke='currentColor' stroke-width='2.4'/>");
+        }
+        Text(svg,18,232,"Which operation covers an unchecked number? Explain.","hint");
+        return SvgEnd(svg);
+    }
+
     // Original 2021 U04 L01: a fixed 40-object bag in Activity 1,
     // and Bags A-F containing respectively 20,40,50,60,30,10 in Activity 2.
     // First-party dots represent countable pieces, NOT actual student sorting.
