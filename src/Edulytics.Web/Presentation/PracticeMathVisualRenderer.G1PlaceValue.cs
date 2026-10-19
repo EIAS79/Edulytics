@@ -32,6 +32,7 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u06.l08.count_to110_cube_groups"=>20,
                 "usccss.g1.u06.l09.write_number_to120"=>100,
                 "usccss.g1.u08.l08.same_number_tens_ones"=>20,
+                "usccss.g1.u08.l07.count_on_to120"=>20,
                 _=>throw new JsonException("Unrelated source number family")
             };
             int max=family switch
@@ -39,6 +40,7 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u06.l08.count_to110_cube_groups"=>110,
                 "usccss.g1.u06.l09.write_number_to120"=>120,
                 "usccss.g1.u08.l08.same_number_tens_ones"=>99,
+                "usccss.g1.u08.l07.count_on_to120"=>120,
                 _=>throw new JsonException("Unrelated source number family")
             };
             if(value<min||value>max)throw new JsonException("Out of source scope number");
@@ -69,8 +71,17 @@ public static partial class PracticeMathVisualRenderer
     private static string? GradeOneNewCountOnPath(JsonElement p)
     {
         int start=GetInt(p,"a"),steps=GetInt(p,"b");
-        if(GetInt(p,"c")!=0||GetInt(p,"mode") is <0 or >3||
-           start<1||start>119||steps<1||steps>120-start)
+        int mode=GetInt(p,"mode");
+        if(GetInt(p,"c")!=0||mode is <0 or >3)
+            throw new JsonException("Invalid original counting task");
+        if(mode>=2)
+        {
+            if(start<20||start>120||steps!=0)
+                throw new JsonException("Invalid original 120-collection task");
+            return GradeOneNewTensOnesVisual(
+                "usccss.g1.u08.l07.count_on_to120",p);
+        }
+        if(start<1||start>119||steps<1||steps>120-start)
             throw new JsonException("Invalid original count-on task");
         if(steps>10)return null; // Avoid a misleading compressed large path.
         var svg=SvgStart("Start at the shown number, then count one more for each blank hop.");

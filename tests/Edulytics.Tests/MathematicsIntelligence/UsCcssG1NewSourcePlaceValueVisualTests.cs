@@ -41,6 +41,24 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
         Assert.DoesNotContain("NUMBER=",svg);
     }
     [Theory]
+    [InlineData(37,3,7)]
+    [InlineData(110,11,0)]
+    [InlineData(120,12,0)]
+    public void OriginalLargeCollectionTaskUsesTensAndOnesVisuals(
+        int total,int tenRods,int singleCubes)
+    {
+        const string family="usccss.g1.u08.l07.count_on_to120";
+        var model=Assert.IsType<string>(Visual(
+            family,new{a=total,b=0,c=0,mode=2}));
+        Assert.Equal(tenRods,System.Text.RegularExpressions.Regex.Matches(
+            model,"class='g1-ten-rod'").Count);
+        Assert.Equal(singleCubes,System.Text.RegularExpressions.Regex.Matches(
+            model,"class='g1-one-cube'").Count);
+        Assert.DoesNotContain("TOTAL=",model);
+        Assert.DoesNotContain("LAST=",model);
+    }
+
+    [Theory]
     [InlineData(80,3)]
     [InlineData(105,5)]
     [InlineData(118,2)]

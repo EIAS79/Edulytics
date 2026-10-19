@@ -65,6 +65,36 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
         }
     }
 
+    [Theory]
+    [InlineData(37,2,"TENS=3;ONES=7;TOTAL=37")]
+    [InlineData(110,3,"TENS=11;ONES=0;TOTAL=110")]
+    [InlineData(120,2,"TENS=12;ONES=0;TOTAL=120")]
+    public void Original2021Unit8Lesson7ActualCollectionCanBeCountedAndRepresented(
+        int collectionSize,int mode,string answer)
+    {
+        const string family="usccss.g1.u08.l07.count_on_to120";
+        var p=new Dictionary<string,int>{{"a",collectionSize},{"b",0},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,answer));
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(
+            family,p,"LAST="+collectionSize));
+    }
+    [Fact]
+    public void CountOnAndCountCollectionModesRequireDifferentValidSourceOperands()
+    {
+        const string family="usccss.g1.u08.l07.count_on_to120";
+        var count=new Dictionary<string,int>{{"a",116},{"b",4},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,count));
+        Assert.Equal("LAST=120",UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,count));
+        count["mode"]=3;
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,count));
+        count["b"]=0;
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,count));
+        count["a"]=121;
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,count));
+    }
+
     [Fact]
     public void AStudentCreatedRiddleIsNotInferredFromACorrectNumericClue()
     {

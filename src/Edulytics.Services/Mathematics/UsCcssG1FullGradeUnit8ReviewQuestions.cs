@@ -47,7 +47,9 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             3=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&c==0,
             4=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&c==0,
             5=>a>=7&&a<=20&&b>=1&&b<a&&c==0,
-            6=>a>=1&&a<=119&&b>=1&&b<=120-a&&c==0,
+            6=>c==0&&(mode<=1?
+                a>=1&&a<=119&&b>=1&&b<=120-a:
+                a>=20&&a<=120&&b==0),
             7=>a>=20&&a<=99&&b==0&&c==0,
             8=>a>=31&&a<=79&&a%10>0&&b==10&&c==0,
             9=>a>=1&&a<=120&&b>=0&&b<=a&&c==0,
@@ -64,7 +66,19 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
             else if(n<=4){a=random.Next(2,20);b=random.Next(1,10);}
             else if(n==5){a=random.Next(7,21);b=random.Next(1,a);}
-            else if(n==6){a=random.Next(1,120);b=random.Next(1,Math.Min(6,121-a));}
+            else if(n==6)
+            {
+                if(mode<=1)
+                {
+                    a=random.Next(1,120);
+                    b=random.Next(1,Math.Min(6,121-a));
+                }
+                else
+                {
+                    a=random.Next(20,121);
+                    b=0;
+                }
+            }
             else if(n==9){a=random.Next(1,121);b=random.Next(0,a+1);}
             else if(n==8){a=random.Next(3,8)*10+random.Next(1,10);b=10;}
             else{a=random.Next(20,100);b=n>=8?10:0;}
@@ -81,7 +95,9 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     $"There are {whole} counters. Some LEAVE. Now {a} remain. How many left? Write CHANGE=number;FINAL=number.",
                 4=>$"There are {whole} objects total; one part has {a} objects. How many are in the other part? Write MISSING=number;TOTAL=number.",
                 5=>$"There are {a} blue cubes and {b} red cubes. How many MORE blue cubes than red cubes? Write DIFFERENCE=number.",
-                6=>$"Start counting at {a} (NOT at one); count ON by {b} steps, remaining at most 120. Write LAST=number.",
+                6=>mode<=1?
+                    $"Last Number Wins: start at {a} (not at one); count ON {b} hops up to 120. Write LAST=number.":
+                    $"Count an organized collection of objects with tens bundles and loose ones. The display has NO double-counted cubes and contains between 20 and 120 objects. How many are there? Write TENS=number;ONES=number;TOTAL=number.",
                 7=>$"Make {a} in two ways. Exchange ONE ten-rod for ten ones. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.",
                 8=>mode%2==0?
                     $"NUMBER RIDDLE: My secret number has {a%10} ones. It is GREATER than {(a/10)*10} and LESS than {(a/10+3)*10}. List ALL three possible numbers in order from smallest to largest. Write CANDIDATES=n1,n2,n3.":
@@ -105,7 +121,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             3=>mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
             4=>$"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
-            6=>$"LAST={a+b}",
+            6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
             7=>$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}",
             8=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}",
             9=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}",
