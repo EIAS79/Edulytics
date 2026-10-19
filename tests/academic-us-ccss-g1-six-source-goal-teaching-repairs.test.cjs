@@ -15,8 +15,18 @@ test('six source-verified G1 repairs preserve all pinned before-state guarantees
  assert.equal(new Set(proofs.lessons.map(x=>x.lessonCode)).size,6);
  assert.equal(proofs.academicApproval,'PENDING');
  assert.equal(proofs.originalPacksUnchanged,true);
- assert.ok(selector.includes(
-  'expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2; // T001 L05/L06, G1 B03 L12/L14; all source-SHA-guarded'));
+ // Preserve the exact original V1 count PREFIX and independently pinned
+ // source and learner-content SHA checks below. Later full-grade corrections
+ // legitimately add extra source-bound lessons without rewriting old six.
+ const sourceBound=selector.match(/const int expectedSourceBoundCorrectionCount = ([^;]+);/);
+ assert.ok(sourceBound,'Missing source-bound correction count assertion');
+ const terms=sourceBound[1].split(/\\s*\\+\\s*/).map(x=>Number(x));
+ assert.ok(terms.length>=9 && terms.every(x=>Number.isSafeInteger(x)&&x>0),
+   'Source-bound correction count must stay a sum of positive integers');
+ assert.deepEqual(terms.slice(0,9),[12,19,3,7,6,6,1,2,2],
+   'The original V1 source-bound correction cohort must remain unchanged');
+ assert.ok(selector.includes('codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount'),
+   'Source-bound correction count must still fail on duplicate lesson codes');
  assert.ok(selector.includes(
   'CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||'));
  assert.ok(selector.includes(
