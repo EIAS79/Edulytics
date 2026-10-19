@@ -123,8 +123,8 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             {
                 0=>$"Match the equation to a story: {a} cubes, {b} leave, {a-b} remain. Write OP=ADD/SUBTRACT;TOTAL=number.",
                 1=>$"Story: {a-b} cubes, {b} join, {a} in all. Write OP=ADD/SUBTRACT;TOTAL=number.",
-                2=>$"Original source: CIRCLE TWO equations matching this Take From story. There are {a} cubes, {b} are taken away, and {a-b} remain. A: {a}-{b}={a-b}. B: {a}+{b}={a-b}. C: {a-b}+{b}={a}. Write MATCH=A,C;TOTAL=number (correct letters and the whole).",
-                _=>$"Original source: CIRCLE TWO equations matching this Put Together story. There are {a-b} cubes and {b} more join, making {a} in all. A: {a}+{b}={a}. B: {a-b}+{b}={a}. C: {a}-{a-b}={b}. Write MATCH=B,C;TOTAL=number (correct letters and the whole)."
+                2=>$"Original source: CIRCLE TWO equations matching this Take From story. There are {a} cubes, {b} are taken away, and {a-b} remain. A: {a}-{b}={a-b}. B: {a}+{b}={a-b}. C: {a-b}+{b}={a}. Write MATCH=first_letter,second_letter;TOTAL=number (the TWO correct letters in alphabetical order, followed by the whole).",
+                _=>$"Original source: CIRCLE TWO equations matching this Put Together story. There are {a-b} cubes and {b} more join, making {a} in all. A: {a}+{b}={a}. B: {a-b}+{b}={a}. C: {a}-{a-b}={b}. Write MATCH=first_letter,second_letter;TOTAL=number (the TWO correct letters in alphabetical order, followed by the whole)."
             },
             14=>mode%2==0?$"Write a true equation for {a} birds, {b} fly away. Write EQUATION=number-number=number.":
                 $"Write an addition equation for {a-b} children, {b} join to make {a}. Write EQUATION=number+number=number.",
