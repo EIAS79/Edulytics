@@ -26,6 +26,9 @@ on:
       - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
       - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Source*.cs'
+      - 'src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1*.cs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-119-puppies-tulips-authorship-rubric.json'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1IndependentNumericalOracleTests.cs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json'
@@ -60,6 +63,9 @@ on:
       - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
       - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Source*.cs'
+      - 'src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1*.cs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-119-puppies-tulips-authorship-rubric.json'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1IndependentNumericalOracleTests.cs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json'
@@ -136,6 +142,35 @@ jobs:
           name: grade-full-gate-no-go-initial
           path: /tmp/grade-gate-decision.json
           if-no-files-found: warn
+
+  grade-new-original-practice-math:
+    name: g1-full-grade-source-practice-math
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Independently verify candidate mathematics for 95 new digital original Grade 1 lessons
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          mkdir -p /tmp/g1-new-original-math-trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release --no-restore \
+            --filter 'FullyQualifiedName~UsCcssG1FullGrade|FullyQualifiedName~UsCcssG1SourceShapesAndHardTimesVisualTests|FullyQualifiedName~UsCcssG1IndependentNumericalOracleTests' \
+            --logger 'trx;LogFileName=g1-original-math-and-visuals.trx' \
+            --results-directory /tmp/g1-new-original-math-trx
+      - name: Archive math tests and authentic run result; not source academic approval
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-95-digital-independent-math-and-diagrams-not-academic-acceptance
+          path: /tmp/g1-new-original-math-trx/*.trx
+          if-no-files-found: warn
+          retention-days: 14
 
   grade-real-release-gate:
     name: g1-full-grade-real-acceptance
