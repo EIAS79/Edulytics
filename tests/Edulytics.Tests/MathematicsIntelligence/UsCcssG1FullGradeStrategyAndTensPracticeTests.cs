@@ -79,6 +79,60 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
           new Dictionary<string,int>{{"a",2},{"b",3},{"c",0},{"mode",1}}));
     }
     [Theory]
+    [InlineData(1,"F")]
+    [InlineData(2,"A")]
+    [InlineData(3,"E")]
+    [InlineData(4,"B")]
+    [InlineData(5,"C")]
+    [InlineData(6,"D")]
+    public void Original2021U04L01NamedBagsCountExactlyTheSourceMultiplesOfTen(int tens,string bag)
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CountTens;
+        var p=new Dictionary<string,int>{{"a",tens},{"b",0},{"c",0},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+        string expected=$"GROUPS={tens};TOTAL={tens*10}";
+        Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            $"GROUPS={tens};TOTAL={tens*10+10}"));
+        // Exercise the actual lesson generator, including original bag text.
+        var q=Enumerable.Range(0,3000)
+            .Select(seed=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+                family,new Random(seed*41+13)))
+            .First(x=>x.Parameters["mode"]==1&&x.Parameters["a"]==tens);
+        Assert.Contains($"Bag {bag}",q.Prompt);
+        Assert.Contains($"{tens*10} objects",q.Prompt);
+    }
+
+    [Fact]
+    public void Original2021U04L01FirstSourceActivityUsesExactlyFortyObjects()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CountTens;
+        var original=new Dictionary<string,int>{{"a",4},{"b",0},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,original));
+        Assert.Equal("GROUPS=4;TOTAL=40",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,original));
+        foreach(int altered in new[]{1,2,3,5,6})
+        {
+            original["a"]=altered;
+            Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,original));
+        }
+        var seen=new HashSet<int>();
+        for(int seed=0;seed<300;seed++)
+        {
+            var q=UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+                family,new Random(seed*31+11));
+            seen.Add(q.Parameters["mode"]);
+            if(q.Parameters["mode"]==0)
+            {
+                Assert.Equal(4,q.Parameters["a"]);
+                Assert.Contains("40 objects",q.Prompt);
+            }
+        }
+        Assert.Equal(4,seen.Count);
+    }
+
+    [Theory]
     [InlineData(9,1,2,"TOTALS=20,30,40,50,60,70,80,90;LAST=90")]
     [InlineData(1,1,3,"TOTALS=80,70,60,50,40,30,20,10;LAST=10")]
     [InlineData(4,1,0,"TENS=5;TOTAL=50")]
