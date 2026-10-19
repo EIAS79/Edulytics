@@ -12,90 +12,93 @@ namespace Edulytics.Data.Seeding;
 public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
 {
     public const string Version = "us-ccss-g1-full-grade-u06-u08-source-teaching-v1";
+    public const string Unit6OriginalSourceVersion="us-ccss-g1-u06-original-student-source-activities-v2";
+    private static bool IsReviewedUnit6Lesson(string code)=>
+        code.StartsWith("PED:US-CCSS-MATH:G1:U06:",StringComparison.Ordinal);
     private sealed record Repair(string Code,string SourceUrl,string OriginalSha,string[] Outcomes,
         string Title,string Explanation,string Examples,string Steps,string Mistakes,string Summary);
     private static readonly Repair[] Repairs =
     [
         new(@"PED:US-CCSS-MATH:G1:U06:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-1/preparation.html",@"1e7c5a4544f35d093f56b1c369e46977617cee4b14761a6972b3f9d4e78583f0",[@"CCSS:1.MD.A.1",@"CCSS:1.NBT.B.3",@"CCSS:1.NBT.C.4",@"CCSS:1.NBT.C.5",@"CCSS:1.OA.C.5",@"CCSS:1.OA.C.6"],
             @"Compare Lengths",
-            @"Compare object lengths directly by aligning their starting endpoints and describing which extends farther. Order three objects shortest to longest.",
+            @"Compare lengths directly by aligning starting endpoints. Original 2021 pupils compare two classroom objects twice, contrast objects with 3-cube and 8-cube towers, then select three objects and order both shortest-to-longest and longest-to-shortest. Physical alignment, drawings and peer observations require teacher evidence."
             @"Example 1: A strip starts at the same line as another strip. The red strip ends after the blue one, so red is longer. Example 2: 5 cubes, 7 cubes, 9 cubes ordered by identical unit are shortest to longest.",
             @"Step 1: Put one end of each object at the same starting line. Step 2: Compare where the other ends stop. Step 3: Order three objects. Step 4: Describe 'shorter than' or 'longer than'.",
             @"Do not compare objects from different starting positions or confuse the number of objects with their length.",
             @"I can compare and order lengths by aligning starting points."),
         new(@"PED:US-CCSS-MATH:G1:U06:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-4/preparation.html",@"581639bdcf507873e2e385bc2c3a1699e9047f95df19faa384c0a59e18f27126",[@"CCSS:1.NBT.B.3",@"CCSS:1.NBT.C.4",@"CCSS:1.NBT.C.5",@"CCSS:1.OA.C.5",@"CCSS:1.OA.C.6"],
             @"Center Day 1",
-            @"Choose between teacher-led within-100 addition games and within-20 number-expression comparisons. Only numeric answers are digitally checked; live center turns require a teacher.",
-            @"Example 1: 35+24=59 using tens and ones. Example 2: 8+7=15 and 18-3=15, so those expressions are equal.",
+            @"Original 2021 How Close? Stage 3 Add to 100 asks pupils to pick SEVEN digit cards and choose FOUR to make TWO two-digit numbers, add them and select the sum closest to 100. Original center choices: Target Numbers, Five in a Row and Get Your Numbers in Order. Warm-up 9+6,29+6,39+7,39+9. Existing digital arithmetic can check addition, but cannot certify classroom card choices or the seven-card physical center."
+            @"Example 1: 35+24=59 using tens and ones. Example 2: 8+7=15 and 18-3=15, so those expressions are equal. Original 2021 mental warm-up: 9+6=15;29+6=35;39+7=46;39+9=48. The How Close Stage 3 goal is TWO two-digit addends making a sum near 100, not merely a within-20 comparison."
             @"Step 1: Identify whether the center requires a within-100 sum or comparison of within-20 expressions. Step 2: Select a matching method. Step 3: Solve both sides if comparing. Step 4: Explain the reasoning.",
             @"Do not compare 8+7 and 18-3 as strings or infer equality from matching operation signs.",
             @"I can add within 100 and compare the values of expressions in center work."),
         new(@"PED:US-CCSS-MATH:G1:U06:L06",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-6/preparation.html",@"d2f09da62e97e4c09ef87f1d9f12b196f0739758ac79e86127959e2e8a2b449e",[@"CCSS:1.MD.A.2"],
             @"Measure with Paper Clips",
-            @"Measure object length by placing paper clips end to end. The clips must be equally long and leave no gaps or overlaps; record the count with unit name.",
+            @"Original 2021 source asks pupils to critique Andre, Tyler and Clare workbook measurements for gaps or overlap, using the ACTUAL drawings. Pupils also measure SIX different tape strips A–F in equal paper clip units. Paper clips must be same size, end to end and leave no gaps or overlaps; record the count and unit. Diagram-specific true/false verdicts cannot be certified from text alone."
             @"Example 1: A pencil spans 8 equally sized paper clips in a continuous row, so it is 8 paper clips long. Example 2: Four short clips cannot be compared directly with four long clips as equal lengths.",
             @"Step 1: Choose same-size paper clips. Step 2: Put first clip at the object's start. Step 3: Place others end-to-end with no gaps or overlap. Step 4: Count the clips and record the unit.",
             @"Do not leave spaces, overlap clips, or mix clip lengths and then trust the count as a length.",
             @"I can measure an object accurately with repeated identical paper clips."),
         new(@"PED:US-CCSS-MATH:G1:U06:L07",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-7/preparation.html",@"f7456562f66997352ad3572adcfa3f9f579d7f1d8e07c82e52925a3ae523fc3d",[@"CCSS:1.MD.A.2"],
             @"Measure Length with Different Length Units",
-            @"Measure the SAME object using different size units and explain why the numerical count changes while actual length stays the same.",
+            @"Original 2021 learners measure Jeison's foot using THREE selected unit types among connecting cubes, small cubes, small paper clips and large paper clips. They critique Andre, Jada, Clare and Kiran measurements of the teacher's shoe based on the ACTUAL source drawings. Measure the SAME length using different uniform units; counts vary with unit length, and original diagram judgments remain subject to verified visual evidence."
             @"Example 1: A strip measures 6 short blocks but 3 double-length blocks; the strip did not change. Example 2: 4 equal paper clips may cover the same length as 8 half-length units.",
             @"Step 1: Measure an object with repeated equal small units. Step 2: Repeat with a different unit length. Step 3: Record both numbers AND unit names. Step 4: Compare how unit size affects the count.",
             @"Do not conclude that the object became longer merely because the count using smaller units increased.",
             @"I can explain how choice of length unit changes the number in a measurement."),
         new(@"PED:US-CCSS-MATH:G1:U06:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-8/preparation.html",@"b625fea9b79d9f98966d0d0859def6ac325d9cf01a6637900d006f2b226018ec",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.A.1"],
             @"Groups Up to 110 PLC Activity",
-            @"PLC: measure a long length in equal cube lengths, then organize those counted units into full tens to read a total up to 110. Teacher discussion remains teacher-led.",
+            @"Original 2021 choral count goes from 80 to 110 by ones. Learners measure a real long strip with MORE THAN 100 same-size small cubes, then organize the actual count into tens. They also compare base-ten diagrams and written values near or above 100. The original physical strip count and learner representations are teacher observed, not invented from numeric examples."
             @"Example 1: 8 full groups of ten cubes and 6 extra cubes total 86 units. Example 2: 10 groups of ten and 7 loose units total 107.",
             @"Step 1: Lay cubes in a continuous length with no gaps. Step 2: Count the equal cube units. Step 3: Bundle counts of ten to avoid losing track. Step 4: Read the final count up to 110.",
             @"Do not count a gap as a cube unit or read 10 tens and 7 ones as 17.",
             @"I can group and read up to 110 equal length units."),
         new(@"PED:US-CCSS-MATH:G1:U06:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-9/preparation.html",@"d5eacde6dde26130eda406c988167c58bbad3d0575c7f5b817e3fd4b05c95b64",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.A.1"],
             @"Write Numbers to 120",
-            @"Count to and write numbers as high as 120 while measuring lengths in equal units. Model 100 as ten tens and distinguish 111 from 101.",
+            @"Original 2021 choral count runs from 90 through 120 by ones. Pupils measure animal-length tape strips between 95 and 120 cubes and write the actual length for BEAVER, DOG, GIANT ANTEATER, RACCOON, RED FOX and SNAKE. Authentic length observations depend on original strips and physical units, not guessed values. Model 100 as ten tens and distinguish 111 from 101."
             @"Example 1: After 99 come 100, 101, 102. Example 2: Eleven tens and 4 ones make 114, which is less than 120. Example 3: A length of 103 cubes is 100 plus three equal cube units.",
             @"Step 1: Count by tens to a useful landmark. Step 2: Add leftover ones without skipping. Step 3: Say and write the number up to 120. Step 4: Check digits and unit count.",
             @"Do not write 110 as 101 or jump from 109 to 200. Numbers from 100 through 120 have three digits.",
             @"I can read and write counts and measurements through 120."),
         new(@"PED:US-CCSS-MATH:G1:U06:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-10/preparation.html",@"b0392f033a63a72b6eaa5a30d1d1ff78ffbf2ecff6759cbb44b39c2b7ddc88c1",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.C.4",@"CCSS:1.NBT.C.5",@"CCSS:1.OA.C.5",@"CCSS:1.OA.C.6"],
             @"Center Day 2",
-            @"Teacher-led center: add within 100 and measure with same-size length units placed without gaps or overlaps. These are separate center objectives.",
+            @"Original 2021 Estimate and Measure, Choose Your Unit center: choose object and uniform length unit, ESTIMATE first, then measure to nearest whole unit. Warm-up asks 24+30=44 FALSE,24+40=64 TRUE,30+45=75 TRUE,32+45=76 FALSE. Other centers: How Close?, Target Numbers, Five in a Row. Genuine object measurement and classroom gameplay are teacher-reviewed."
             @"Example 1: 36+25=61 using tens and ones. Example 2: A line covered by 9 equal connecting cubes measures 9 cube-length units.",
             @"Step 1: Read which center task is selected. Step 2: For addition, combine tens/ones and regroup when needed. Step 3: For measurement, tile equal units with no gaps. Step 4: Check the answer and name the units.",
             @"Do not substitute arithmetic for actual measurement, or count units of mixed sizes as though they are interchangeable.",
             @"I can add or measure accurately in an appropriate teacher-led center."),
         new(@"PED:US-CCSS-MATH:G1:U06:L12",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-12/preparation.html",@"363d352cea320e9ccd94af0b40e318eaa9d62365af11578b202ceae7c15df3b1",[@"CCSS:1.NBT.A.1",@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
             @"Compare Measurements",
-            @"Solve Compare Bigger Unknown and Compare Smaller Unknown measurement stories, as in the original 2021 lesson. When one bracelet is four cubes fewer or longer than the other, the UNKNOWN is the second bracelet's LENGTH, not the difference already supplied. Draw or explain a same-unit bar model and solve the missing length.",
+            @"Original 2021: Han's bracelet is 14 cubes; Priya's is FOUR shorter, so Priya's length is 10. In the second story, Priya is 10 cubes and Han is FOUR longer, so Han is 14. Solve Compare Bigger Unknown and Compare Smaller Unknown measurement stories, as in the original 2021 lesson. When one bracelet is four cubes fewer or longer than the other, the UNKNOWN is the second bracelet's LENGTH, not the difference already supplied. Draw or explain a same-unit bar model and solve the missing length.",
             @"Example 1 (Smaller Unknown): Han's bracelet is 14 cubes long; Priya's is 4 fewer, so Priya measures 14-4=10 cubes. Example 2 (Bigger Unknown): Priya measures 9 cubes; Han is 4 longer, so Han measures 9+4=13 cubes. The given difference is NOT the requested unknown length.",
             @"Step 1: Read whose length is known and who is longer or shorter; identify the MISSING bracelet length. Step 2: Use identical cube-length units and draw a bar showing the known length plus or minus the stated difference. Step 3: For Smaller Unknown subtract the difference; for Bigger Unknown add the difference. Step 4: Check that the two resulting lengths actually differ by the stated amount, and include cube-length units.",
             @"Do not answer 4 just because the story says one bracelet is four cubes shorter; four is the KNOWN difference, not the unknown length. Use same-sized units, and choose addition for Bigger Unknown or subtraction for Smaller Unknown.",
             @"I can find an unknown bigger or smaller bracelet length using a known length and the stated difference, and verify it with a same-unit bar model."),
         new(@"PED:US-CCSS-MATH:G1:U06:L13",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-13/preparation.html",@"62ab518f62ff56349f745ece86db222fb39e2d4ac3c6333665492000a8fa743c",[@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
             @"Solve Take From Story Problems",
-            @"Solve Take From stories with unknown starting amount, amount removed, or amount left. Use counters and related addition/subtraction.",
+            @"Original 2021 Elena bracelet-bead story: she takes out 9 beads and has 11 left, so the UNKNOWN starting count is 20. A second source activity shows 15-5=10, □-5=10 and 15-□=10 as different Take From stories. Use counters and related addition/subtraction, keeping the unknown in the original position."
             @"Example 1: There were 16 cubes, 7 were taken, 9 remain: 16-7=9. Example 2: 15 were present, some taken, 6 remain: 15-□=6, so 9 taken. Example 3: Some cubes present, 4 taken, 8 remain: □-4=8, so 12 originally.",
             @"Step 1: Identify the story's original total, removed amount and remaining amount. Step 2: Place the unknown correctly. Step 3: Solve using a model or related fact. Step 4: Check the story.",
             @"Do not assume every subtraction question asks for the amount left; unknowns can occur in any position.",
             @"I can solve Take From stories with the unknown in different positions."),
         new(@"PED:US-CCSS-MATH:G1:U06:L14",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-14/preparation.html",@"f33bbb87cd343930eedd91a620add7ffc259147edd5bb1e301e1326770cddb06",[@"CCSS:1.OA.A.1",@"CCSS:1.OA.B.4",@"CCSS:1.OA.C.6"],
             @"Which Equation Matches? PLC Activity",
-            @"PLC: match addition or subtraction equations to realistic stories, including unknowns in all positions. Discuss WHY an equation represents the story.",
-            @"Example 1: 12 birds, 5 fly away, 7 left corresponds to 12-5=7. Example 2: 7 birds present and 5 join corresponds to 7+5=12. Example 3: 12 present and some depart leaving 7 corresponds to 12-□=7.",
+            @"Original 2021 sorting task includes stories with different unknown positions. The next Stories and Equations task requires TWO valid equations per story, not just one. For Jada, 8 people plus unknown animal pictures equals 11 pictures: 8+□=11 and 11-8=□ are both valid. Explain the story-to-equation meaning; physical sorting and discussions are teacher-facilitated."
+            @"Example 1: Original Jada picture story is 8+□=11 and 11-8=□, so three are animal pictures. Example 2: 12 birds, 5 fly away, 7 left corresponds to 12-5=7. Example 3: 7 birds present and 5 join corresponds to 7+5=12. Example 4: 12 present and some depart leaving 7 corresponds to 12-□=7."
             @"Step 1: Identify what changes in the situation. Step 2: Name the known numbers and unknown. Step 3: Match operation and blank position. Step 4: Check the proposed equation is true for the story.",
             @"Do not choose addition for a leaving story simply because it contains the same numbers, unless using inverse addition to solve a missing value.",
             @"I can explain which equation matches a story and where its unknown belongs."),
         new(@"PED:US-CCSS-MATH:G1:U06:L15",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-15/preparation.html",@"e571c6469550156f7be3ef50c61f02865a0872176c04123b15a9bb4f867e5632",[@"CCSS:1.NBT.A.1",@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
             @"Write Equations for Story Problems",
             @"Write, not just select, an addition or subtraction equation matching a story with a missing start, change, or result.",
-            @"Example 1: Nine people, five join: 9+5=14. Example 2: □ children plus 6 children makes 13, so □+6=13 and □=7. Example 3: 17-□=8, so 9 left.",
+            @"Example 1: Original origami story: Clare gives 12 paper cranes away and has seven left, so □-12=7 and she STARTED with 19. Example 2: Tyler made 15 butterflies and Jada made 9 fewer, so Jada made 6. Example 3: Nine people, five join: 9+5=14. Example 4: □ children plus 6 children makes 13, so □+6=13 and □=7. Example 5: 17-□=8 means 9 were TAKEN away, while 8 remain."
             @"Step 1: Read the whole story before calculating. Step 2: Draw or describe its quantities. Step 3: Put the box in the correct equation position. Step 4: Find the unknown and verify the equation matches the story.",
             @"Do not always place □ at the end. In □+6=13 the unknown START equals 7, not 19.",
             @"I can write accurate equations for different addition/subtraction stories."),
         new(@"PED:US-CCSS-MATH:G1:U06:L16",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-16/preparation.html",@"98a1d3eb2f4843aa29f09f970e8198d8bce3344bc72740319287f4fe605dad78",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.C.4"],
             @"Center Day 3",
-            @"Center review includes counting collections through 120, measuring with equal units, and addition within 100. Physical measurement and classroom turns remain teacher-facilitated.",
+            @"Original 2021 number talk: 65+20=85,85+1=86,65+20+1=86,65+21=86. Counting Collections Stage 3 estimates and counts a real collection of up to 120 objects. Center choices include Write Numbers and Estimate and Measure. Physical collections and classroom turns remain teacher-facilitated."
             @"Example 1: 9 tens and 5 ones represent 95 objects. Example 2: 42+37=79. Example 3: a strip measuring 8 identical cubes is 8 cube lengths.",
             @"Step 1: Identify which center objective the task actually uses. Step 2: Count tens/ones, measure equal units, or add two numbers as appropriate. Step 3: Record quantity, units or equation. Step 4: Verify.",
             @"Do not automatically certify paper-and-cube measurement from a digital numerical answer or omit the unit.",
@@ -261,10 +264,12 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
-        IsTarget(doc,lesson)?Version:previous;
+        IsTarget(doc,lesson)?(IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:Version):previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
-        IsTarget(doc,lesson)&&previous==CommonCoreRichContentCorrections.CorrectionContentVersion;
+        IsTarget(doc,lesson)&&
+        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
+         (IsReviewedUnit6Lesson(lesson.LessonCode)&&previous==Version));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
