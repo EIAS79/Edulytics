@@ -73,14 +73,16 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 (mode%2==0?b<=10-a:b<=a)&&
                 (mode==0?a==3&&b==2:mode==1?a==7&&b==4:true),
             CenterTens=>(mode<=1&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,10-a))||
-                        (mode>=2&&mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a),
+                        (mode>=2&&mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a)||
+                        (mode==4&&a==5&&b==4)||
+                        (mode==5&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,9-a)),
             _=>false
         };
     }
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
-        int mode=family==StoryUnknowns?random.Next(6):random.Next(4);
+        int mode=family is StoryUnknowns or CenterTens?random.Next(6):random.Next(4);
         int a=0,b=0;
         if(family is CountOnOrAway or FlexibleSubtract){a=random.Next(11,21);b=random.Next(1,Math.Min(9,a-1)+1);}
         else if(family==StoryUnknowns){a=random.Next(1,11);b=random.Next(1,11);}
@@ -105,7 +107,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         else if(family==CenterTens)
         {
             if(mode<=1){a=random.Next(2,8);b=random.Next(1,Math.Min(a,10-a)+1);}
-            else{a=random.Next(11,18);b=random.Next(1,21-a);}
+            else if(mode<=3){a=random.Next(11,18);b=random.Next(1,21-a);}
+            else if(mode==4){a=5;b=4;} // Exact 2021 teacher example, 90 crossed off and 10 free.
+            else{a=random.Next(2,8);b=random.Next(1,Math.Min(a,9-a)+1);}
         }
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
             {["a"]=a,["b"]=b,["c"]=0,["mode"]=mode};
@@ -160,7 +164,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 0=>$"Check It Off number cards: add {a*10}+{b*10}. Write RESULT=number.",
                 1=>$"Check It Off number cards: subtract {a*10}-{b*10}. Write RESULT=number.",
                 2=>$"Earlier center: add {a}+{b} within 20. Write RESULT=number.",
-                _=>$"Earlier center: subtract {a}-{b} within 20. Write RESULT=number."
+                3=>$"Earlier center: subtract {a}-{b} within 20. Write RESULT=number.",
+                4=>"Original 2021 Check It Off: your two number cards show 40 and 50. The 90 box is ALREADY checked, but the 10 box is NOT. Choose ADD or SUBTRACT to check off 10, then write the equation. Write MOVE=ADD/SUBTRACT;COVER=number;EQUATION=expression.",
+                _=>$"Check It Off source-inspired new turn: number cards {10*a} and {10*b}; the {10*(a+b)} box is NOT yet checked, while the difference box is already checked. Choose ADD or SUBTRACT to mark the available box, and write its equation. Write MOVE=ADD/SUBTRACT;COVER=number;EQUATION=expression."
             },
             _=>throw new InvalidOperationException()
         };
@@ -197,7 +203,15 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             AddRemoveMultipleTens=>mode%2==0
                 ?$"TENS={sum};TOTAL={10*sum}"
                 :$"TENS={a-b};TOTAL={10*(a-b)}",
-            CenterTens=>$"RESULT={ (mode==0?10*sum:mode==1?10*(a-b):mode==2?sum:a-b)}",
+            CenterTens=>mode switch
+            {
+                0=>$"RESULT={10*sum}",
+                1=>$"RESULT={10*(a-b)}",
+                2=>$"RESULT={sum}",
+                3=>$"RESULT={a-b}",
+                4=>"MOVE=SUBTRACT;COVER=10;EQUATION=50-40=10",
+                _=>$"MOVE=ADD;COVER={10*sum};EQUATION={10*a}+{10*b}={10*sum}"
+            },
             _=>throw new InvalidOperationException()
         };
     }
