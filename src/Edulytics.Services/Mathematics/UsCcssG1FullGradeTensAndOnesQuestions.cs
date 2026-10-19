@@ -100,9 +100,9 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
         if(pieces.Length!=6)return false;
         foreach(var piece in pieces)
         {
-            var at=piece.IndexOf('=');
-            if(at<=0||at==piece.Length-1||
-               !fields.TryAdd(piece[..at],piece[(at+1)..]))return false;
+            var separatorIndex=piece.IndexOf('=');
+            if(separatorIndex<=0||separatorIndex==piece.Length-1||
+               !fields.TryAdd(piece[..separatorIndex],piece[(separatorIndex+1)..]))return false;
         }
         int t=p["tens"],o=p["ones"];
         if(fields.Count!=6||!fields.TryGetValue("EXPANDED",out var expanded)||
