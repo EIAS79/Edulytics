@@ -7,7 +7,8 @@ const ledger=read(root+'G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json');
 const originals=read(root+'full-grade-original-student-facing-task-inventory.json').rows;
 const digital=read(root+'full-grade-practice-candidate-map.json').records;
 test('all manually triaged original Student Facing task-risk rows use exact original SHA and new grade scope',()=>{
- assert.equal(ledger.planId,'EDULYTICS-GRADE-FIRST-FULL-GRADE-V2');
+ assert.equal(ledger.planId,'EDULYTICS-GRADE-FIRST-FULL-GRADE-V1',
+   'Archived source triage retains its original historical policy identity; active execution uses V2');
  assert.equal(ledger.rows.length,96,'All NEW Grade1 lessons require individual initial source-task triage');
  assert.equal(ledger.countActuallyTriaged,ledger.rows.length);
  assert.equal(ledger.total96AcademicAcceptedOnThisEvidence,0);
