@@ -33,7 +33,9 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
             var code=$"PED:US-CCSS-MATH:G1:U{unit:00}:L{lesson:00}";
             var row=doc.Lessons.Single(x=>x.LessonCode==code);
             Assert.True(CommonCoreG1FullGradeUnit5ContentCorrections.IsTarget(doc,row));
-            Assert.Equal(CommonCoreG1FullGradeUnit5ContentCorrections.Version,
+            Assert.Equal(unit==4
+                    ?CommonCoreG1FullGradeUnit5ContentCorrections.Unit4EndSourceVersion
+                    :CommonCoreG1FullGradeUnit5ContentCorrections.Version,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             var t=row.Translations.Single(x=>x.CultureCode=="en");
             return t.Explanation+"\n"+t.WorkedExamples+"\n"+t.StepByStepSolutions+"\n"+t.CommonMistakes;
@@ -42,6 +44,10 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
         Assert.Contains("23 + 45 = (20 + 40) + (3 + 5) = 60 + 8 = 68",lesson(5,2));
         Assert.Contains("37+26 = (30+20)+(7+6) = 50+13=63",lesson(5,10));
         Assert.Contains("74 is greater than 68",lesson(4,22));
+        Assert.Contains("Mystery Number",lesson(4,22));
+        Assert.Contains("90+2>80+12 FALSE",lesson(4,22));
+        Assert.Contains("THREE two-handful",lesson(4,23));
+        Assert.Contains("LESS THAN 20, 20 TO 50 or MORE THAN 50",lesson(4,23));
         Assert.Contains("Many correct options are possible",lesson(5,7));
         Assert.Contains("32+8=40 and 32+9=41",lesson(5,7));
         Assert.Contains("8+12=20, 8+35=43 and 8+49=57",lesson(5,7));
