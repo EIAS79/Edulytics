@@ -44,6 +44,19 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
                 2=>$"TOTAL={total};PACK={(total>=35&&total<=65?"YES":"NO")}",
                 _=>$"TOTAL={total+13};PACK={(total+13>=35&&total+13<=65?"YES":"NO")}"
             };
+        // Original U05 L07 includes source-inspired missing-addend variants.
+        // Independently derive the smallest one-digit addend crossing the next
+        // ten and the largest positive one-digit addend staying below it.
+        if(index==6&&mode>=2)
+        {
+            int threshold=10-a%10;
+            int independentlyRequired=mode==2?threshold:threshold-1;
+            Assert.InRange(independentlyRequired,1,9);
+            Assert.Equal(independentlyRequired,b);
+            bool actuallyComposes=a%10+independentlyRequired>=10;
+            Assert.Equal(mode==2,actuallyComposes);
+            return $"MISSING={independentlyRequired};NEW_TEN={(actuallyComposes?"YES":"NO")};TOTAL={total}";
+        }
         int carry=(a%10+b%10)/10;
         if(index is 4 or 5)
             return $"MOVE={10-a%10};REST={b-(10-a%10)};TOTAL={total}";
