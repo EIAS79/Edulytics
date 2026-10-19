@@ -7,7 +7,7 @@
   "sourceEdition": "Illustrative Mathematics 2021 First Edition",
   "sourceTeacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-6/preparation.html",
   "originalStudentFacingSourceSha256": "9feefe3c6ac5e9f3ad9ff25e686890a9087f6bdda3b7b249aee5122cb87a4bdc",
-  "sourceStudentTask": "Draw FIVE rectangles and THREE shapes that are NOT rectangles. Explain why the valid five are rectangles.",
+  "sourceStudentTask": "Original 2021 requires FOUR separately produced drawing sets: FIVE rectangles, THREE non-rectangles, FIVE squares, THREE non-squares; pupils justify defining attributes of each.",
   "status": "TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED",
   "digitalPracticeFamily": "usccss.g1.u07.l06.square_and_rectangle_properties",
   "teacherRubric": [
@@ -30,10 +30,36 @@
     {
       "criterion": "Three source nonexamples",
       "required": "Teacher checks three separately drawn non-rectangles and an explanation of missing four-right-angle attributes; five true rectangles must remain separately justified."
+    },
+    {
+      "criterion": "Five source squares and three source non-squares",
+      "required": "Teacher examines FIVE separate valid closed four-equal-side/right-angle square drawings and THREE separate non-square drawings, with explanations. A non-square rectangle is a legitimate non-square but remains a rectangle. This is IN ADDITION TO the five rectangles and three non-rectangles."
     }
   ],
   "learnerAuthoredTeachingContentExpected": true,
   "actualAuthenticatedLearnerAuthoredWorkVerified": false,
   "teacherObservationClaimed": false,
-  "academicInternalApproval": "NOT_CLAIMED"
+  "academicInternalApproval": "NOT_CLAIMED",
+  "originalSourceTaskSets": [
+    {
+      "name": "rectangles",
+      "valid": 5,
+      "nonexamples": 3,
+      "defining": [
+        "four straight sides",
+        "four right angles"
+      ]
+    },
+    {
+      "name": "squares",
+      "valid": 5,
+      "nonexamples": 3,
+      "defining": [
+        "four straight sides",
+        "four right angles",
+        "four equal-length sides"
+      ]
+    }
+  ],
+  "authenticatedStudentWorkVerified": false
 }
