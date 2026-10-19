@@ -81,6 +81,32 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void OriginalSourceGroupEquationsAcceptValidAddendOrderNotReplacementNumbers()
+    {
+        const string zoo=UsCcssG1FullGradeNextQuestions.ZooThree;
+        var actual=new Dictionary<string,int>{{"a",8},{"b",7},{"c",5},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Verify(zoo,actual,
+            "EQUATION=5+8+7=20;TOTAL=20"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(zoo,actual,
+            "TOTAL=20;EQUATION=7+5+8=20"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(zoo,actual,
+            "TOTAL=20;EQUATION=6+6+8=20"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(zoo,actual,
+            "TOTAL=20;EQUATION=8+7+5=19"));
+        const string center=UsCcssG1FullGradeNextQuestions.CenterTwoThree;
+        var three=new Dictionary<string,int>{{"a",3},{"b",6},{"c",7},{"mode",1}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(center,three,
+            "TOTAL=16;EQUATION=7+3+6=16"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(center,three,
+            "TOTAL=16;EQUATION=7+4+5=16"));
+        three["mode"]=0;three["c"]=0;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(center,three,
+            "TOTAL=9;EQUATION=6+3=9"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(center,three,
+            "TOTAL=9;EQUATION=6+2+1=9"));
+    }
+
+    [Fact]
     public void Original2021ZooStudentFacingReptileStoryHasExactlyThreeSourceGroups()
     {
         const string f=UsCcssG1FullGradeNextQuestions.ZooThree;
