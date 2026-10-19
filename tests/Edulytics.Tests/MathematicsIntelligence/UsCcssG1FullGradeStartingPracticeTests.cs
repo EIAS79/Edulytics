@@ -79,6 +79,26 @@ public sealed class UsCcssG1FullGradeStartingPracticeTests
             $"TRUE=YES;TOTAL={first+tenPartner+remaining}"));
     }
 
+    [Theory]
+    [InlineData(9,5,2,"MATCH=10+4;TOTAL=14")]
+    [InlineData(8,6,3,"PAIR=9+5;TOTAL=14")]
+    [InlineData(7,8,2,"MATCH=10+5;TOTAL=15")]
+    public void OriginalAdditionPatternsRequireCardMatchingAndSameSumRegrouping(
+        int a,int b,int mode,string expected)
+    {
+        const string family=UsCcssG1FullGradeStartQuestions.Pattern;
+        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeStartQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeStartQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            $"EQUAL=YES;TOTAL={a+b}"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            mode==2?$"MATCH=10+{a+b-9};TOTAL={a+b}":
+                     $"PAIR={a+1}+{b};TOTAL={a+b}"));
+        Assert.Equal(a+b,a+1+b-1);
+    }
+
     [Fact]
     public void ThreeAddendAndMakeTenSpecificWrongAnswerControls()
     {

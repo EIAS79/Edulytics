@@ -69,9 +69,13 @@ public static class UsCcssG1FullGradeStartQuestions
                 _=>$"MATCH the three-addend expression {a} + {c} + {b} to the equivalent expression. A: 10 + {c-1}. B: 10 + {c}. Write MATCH=10+number;TOTAL=number."
             },
             MakeTen=>$"Complete a ten-frame: {a}+{b} = 10+□. Move counters from the second group. Write MOVE=number;REST=number;TOTAL=number.",
-            Pattern=>mode%2==0?
-                $"Are {a}+{b} and 10+{a+b-10} equal? Write EQUAL=YES/NO;TOTAL=number.":
-                $"Are {a}+{b} and 10+{a+b-9} equal? Write EQUAL=YES/NO;TOTAL=number.",
+            Pattern=>mode switch
+            {
+                0=>$"Are {a}+{b} and 10+{a+b-10} equal? Write EQUAL=YES/NO;TOTAL=number.",
+                1=>$"Are {a}+{b} and 10+{a+b-9} equal? Write EQUAL=YES/NO;TOTAL=number.",
+                2=>$"ORIGINAL EXPRESSION MATCH: Take card {a}+{b}. Match it under the EQUIVALENT ten-plus expression. Card A: 10+{a+b-10}. Card B: 10+{a+b-9}. Write MATCH=10+number;TOTAL=number.",
+                _=>$"ORIGINAL ADDITION PATTERN: Start with {a}+{b}, then INCREASE the first addend by 1 and DECREASE the second by 1 so the total stays unchanged. Write the new two-addend PAIR=first+second;TOTAL=number."
+            },
             _=>throw new InvalidOperationException()
         };
         return new(family,prompt,
@@ -88,7 +92,9 @@ public static class UsCcssG1FullGradeStartQuestions
             ThreeStory=>$"TOTAL={a+b+c};REST={c}",
             Expression=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={a+b+c}":$"MATCH=10+{c};TOTAL={a+b+c}",
             MakeTen=>$"MOVE={10-a};REST={a+b-10};TOTAL={a+b}",
-            Pattern=>$"EQUAL={(mode%2==0?"YES":"NO")};TOTAL={a+b}",
+            Pattern=>mode<=1?$"EQUAL={(mode==0?"YES":"NO")};TOTAL={a+b}":
+                mode==2?$"MATCH=10+{a+b-10};TOTAL={a+b}":
+                $"PAIR={a+1}+{b-1};TOTAL={a+b}",
             _=>throw new InvalidOperationException()
         };
     }
