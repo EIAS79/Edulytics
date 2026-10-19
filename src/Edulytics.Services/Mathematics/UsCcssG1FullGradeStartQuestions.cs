@@ -120,6 +120,41 @@ public static class UsCcssG1FullGradeStartQuestions
         if(em.Count!=vm.Count)return false;
         return em.All(x=>vm.TryGetValue(x.Key,out var actual)&&actual==x.Value);
     }
+    // The 2021 three-addend story explicitly permits commutative/associative
+    // solutions. A student's equation may use any ORDER, but it must use
+    // exactly the three story quantities, not merely an arbitrary equal sum.
+    private static bool VerifyStoryEquation(IReadOnlyDictionary<string,int> p,string? response)
+    {
+        var parts=Norm(response).Split(';');
+        if(parts.Length!=2)return false;
+        var fields=new Dictionary<string,string>(StringComparer.Ordinal);
+        foreach(var part in parts)
+        {
+            var separator=part.IndexOf('=');
+            if(separator<=0||separator==part.Length-1||
+                !fields.TryAdd(part[..separator],part[(separator+1)..]))
+                return false;
+        }
+        if(fields.Count!=2||!fields.TryGetValue("TOTAL",out var totalText)||
+           !fields.TryGetValue("EQUATION",out var equation)||
+           !int.TryParse(totalText,out var total))return false;
+        var match=System.Text.RegularExpressions.Regex.Match(
+            equation,@"^(\d+)\+(\d+)\+(\d+)=(\d+)$");
+        if(!match.Success)return false;
+        var values=new int[4];
+        for(var i=0;i<4;i++)
+            if(!int.TryParse(match.Groups[i+1].Value,out values[i]))return false;
+        var expected=new[]{p["a"],p["b"],p["c"]};
+        var submitted=new[]{values[0],values[1],values[2]};
+        Array.Sort(expected);
+        Array.Sort(submitted);
+        return expected.SequenceEqual(submitted) &&
+            total==p["a"]+p["b"]+p["c"] &&
+            values[3]==total;
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? response)=>
-        Valid(family,p)&&GradePersistedAnswer(family,Solve(family!,p),response);
+        Valid(family,p) &&
+        (family==ThreeStory?VerifyStoryEquation(p,response):
+            GradePersistedAnswer(family,Solve(family!,p),response));
 }
