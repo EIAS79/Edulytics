@@ -207,7 +207,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
             @"I can count and represent large collections and start from a number other than one."),
         new(@"PED:US-CCSS-MATH:G1:U08:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-8/preparation.html",@"fccd90f84c40b1cd77b77acd7c94f39fbdb9d78f08cf00f499de4f05d2cd2b73",[@"CCSS:1.NBT.A.1",@"CCSS:1.OA.C.6"],
             @"Show Me All the Ways PLC Activity",
-            @"PLC: REPRESENT a two-digit number in different valid ways using tens, ones, base-ten drawings and expanded addition. Replacing one ten with ten ones does not change the total.",
+            @"ORIGINAL STUDENT FACING TASK: REPRESENT your OWN chosen favorite two-digit number using as many different correct tens-and-ones drawings or equations as possible, and EXPLAIN them in a classroom gallery walk. Replacing one ten-rod by ten ones, or replacing TWO ten-rods by twenty ones, leaves the same total. If the original model has t full tens, there are t+1 whole-ten exchange possibilities including the all-loose-ones model. Digital Practice checks two different regroupings and counts possibilities, not actual learner-chosen work or classroom participation.",
             @"Example 1: 54=5 tens 4 ones=4 tens 14 ones. Example 2: 68=60+8=5 tens 18 ones. Example 3: 73=70+3.",
             @"Step 1: Write or build the original two-digit number. Step 2: Show tens-and-ones model. Step 3: Break one ten into ten ones for an alternative. Step 4: Compare totals to verify equivalent representations.",
             @"Do not read 4 tens 14 ones as 414; it is 40+14=54. Classroom comparison requires a real partner or teacher.",

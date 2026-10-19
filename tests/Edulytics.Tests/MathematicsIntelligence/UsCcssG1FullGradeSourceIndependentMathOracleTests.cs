@@ -92,7 +92,9 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             4=>$"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
-            7=>$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}",
+            7=>mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
+                mode==2?$"ALT_TENS={a/10-2};ALT_ONES={a%10+20};TOTAL={a}":
+                $"WAYS={a/10+1};ZERO_TENS_ONES={a};TOTAL={a}",
             8=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}",
             9=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}",
             _=>throw new InvalidOperationException("Unsupported source review family")

@@ -102,7 +102,11 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 6=>mode<=1?
                     $"Last Number Wins: start at {a} (not at one); count ON {b} hops up to 120. Write LAST=number.":
                     $"Count an organized collection of objects with tens bundles and loose ones. The display has NO double-counted cubes and contains between 20 and 120 objects. How many are there? Write TENS=number;ONES=number;TOTAL=number.",
-                7=>$"Make {a} in two ways. Exchange ONE ten-rod for ten ones. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.",
+                7=>mode<=1?
+                    $"Show the two-digit number {a} in tens and ones, then exchange ONE full ten-rod for ten loose ones without changing the total. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.":
+                    mode==2?
+                    $"ORIGINAL SHOW ME ALL THE WAYS: Start with {a/10} tens and {a%10} ones representing {a}. TRADE TWO full ten-rods for 20 more loose ones to show a SECOND different model. Write ALT_TENS=number;ALT_ONES=number;TOTAL=number.":
+                    $"ORIGINAL FAVORITE NUMBER GALLERY: The number is {a}. Exchange any number of complete ten-rods for ten loose ones. How many DISTINCT tens-and-ones models exist when ZERO full tens is allowed, and how many loose ones remain in the all-loose model? Write WAYS=number;ZERO_TENS_ONES=number;TOTAL=number.",
                 8=>mode%2==0?
                     $"NUMBER RIDDLE: My secret number has {a%10} ones. It is GREATER than {(a/10)*10} and LESS than {(a/10+3)*10}. List ALL three possible numbers in order from smallest to largest. Write CANDIDATES=n1,n2,n3.":
                     $"NUMBER RIDDLE: My secret number has {a%10} ones. It is GREATER than {(a/10)*10} and LESS than {(a/10+3)*10}. First find the three possible numbers. FINAL clue: it is exactly 10 MORE than {a}. Which one number now satisfies ALL four clues? Write NUMBER=number.",
@@ -128,7 +132,9 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             4=>$"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
-            7=>$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}",
+            7=>mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
+                mode==2?$"ALT_TENS={a/10-2};ALT_ONES={a%10+20};TOTAL={a}":
+                $"WAYS={a/10+1};ZERO_TENS_ONES={a};TOTAL={a}",
             8=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}",
             9=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}",
             _=>throw new InvalidOperationException()
