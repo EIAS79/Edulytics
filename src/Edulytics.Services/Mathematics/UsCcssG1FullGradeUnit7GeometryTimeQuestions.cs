@@ -44,13 +44,15 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
         if(Index(family)<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode))return false;
-        return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&mode<=3;
+        return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&mode<=3&&
+            (Index(family)!=12||mode!=3||a!=b);
     }
     public static Problem Build(string family,Random random)
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unsupported G1 Unit7 original-source family");
         int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(4);
+        if(i==12&&mode==3&&b==a)b=a==12?1:a+1;
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
         string prompt=i switch
         {
@@ -83,7 +85,11 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             10=>$"In the SAME shape #{a}, compare one HALF and one FOURTH. Which is larger? Write LARGER=part_name;FOURTHS_PER_HALF=number.",
             11=>mode%2==0?$"Center arithmetic: add {a}+{b} (within 24). Write RESULT=number.":
                 $"Center shape card #{a}: 3 straight sides, 3 corners, closed. Write SHAPE=name.",
-            12=>$"Clock card #{b}: the MINUTE hand points at 12, and the HOUR hand points at {a}. Tell the time. Write TIME=hour:minutes.",
+            12=>mode<=1?
+                $"Clock card #{b}: the MINUTE hand points at 12, and the HOUR hand points at {a}. Tell the time. Write TIME=hour:minutes.":
+                mode==2?
+                $"ORIGINAL CONNECT CLOCKS: The analog clock shows two hands, and a second digital card displays {a}:00. Do these clocks show the SAME time? Write SAME=YES/NO;TIME=hour:minutes.":
+                $"ORIGINAL CONNECT CLOCKS: The analog clock shows two hands, and a second digital card displays {b}:00. Do these clocks show the SAME time? Write SAME=YES/NO;TIME=hour:minutes.",
             13=>mode<=1?
                 $"Half-hour clock #{b}: minute hand at SIX, hour hand halfway between {a} and next hour. Write MINUTES=number;HOUR=number.":
                 mode==2?
@@ -124,7 +130,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 (mode==2?"SORT=UNEQUAL;PIECES=2":"SORT=EQUAL;PIECES=4"),
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
             11=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
-            12=>$"TIME={a}:00",
+            12=>mode<=1?$"TIME={a}:00":$"SAME={(mode==2?"YES":"NO")};TIME={a}:00",
             13=>mode<=1?$"MINUTES=30;HOUR={a}":
                 $"COLOR={(mode==2?"BLUE":"RED")};TIME={a}:{(mode==2?"00":"30")};WORDS={(mode==2?HourName(a)+"_oclock":"half_past_"+HourName(a))}",
             14=>mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",

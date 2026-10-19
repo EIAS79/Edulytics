@@ -52,6 +52,11 @@ public static partial class PracticeMathVisualRenderer
         svg.Append($"<line class='clock-hour' x1='210' y1='130' x2='{F(hourEndX)}' y2='{F(hourEndY)}' stroke='currentColor' stroke-width='6' stroke-linecap='round'/>");
         svg.Append($"<line class='clock-minute' x1='210' y1='130' x2='{F(minEndX)}' y2='{F(minEndY)}' stroke='currentColor' stroke-width='3' stroke-linecap='round'/>");
         svg.Append("<circle cx='210' cy='130' r='5' fill='currentColor'/>");
+        if(family=="usccss.g1.u07.l13.hour_clock"&&mode>=2)
+        {
+            int digitalHour=mode==2?hour:card;
+            Text(svg,210,24,$"Digital card: {digitalHour}:00","hint");
+        }
         Text(svg,210,244,"Read the short hand, then the long hand.","hint");
         return SvgEnd(svg);
     }

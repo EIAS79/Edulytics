@@ -64,6 +64,29 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
     }
 
     [Theory]
+    [InlineData(7,7,2,"SAME=YES;TIME=7:00")]
+    [InlineData(7,9,3,"SAME=NO;TIME=7:00")]
+    [InlineData(12,1,3,"SAME=NO;TIME=12:00")]
+    public void OriginalClockConnectionsCompareAnalogAndDigitalTimes(
+        int hour,int otherDigitalHour,int mode,string answer)
+    {
+        const string family="usccss.g1.u07.l13.hour_clock";
+        var p=new Dictionary<string,int>{{"a",hour},{"b",otherDigitalHour},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,p));
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,p,answer));
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,p,
+            $"TIME={hour}:00"));
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,p,
+            mode==2?$"SAME=NO;TIME={hour}:00":$"SAME=YES;TIME={hour}:00"));
+        if(mode==3)
+        {
+            p["b"]=hour;
+            Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        }
+    }
+
+    [Theory]
     [InlineData(7,2,"COLOR=BLUE;TIME=7:00;WORDS=seven_oclock")]
     [InlineData(7,3,"COLOR=RED;TIME=7:30;WORDS=half_past_seven")]
     [InlineData(12,3,"COLOR=RED;TIME=12:30;WORDS=half_past_twelve")]

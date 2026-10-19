@@ -34,6 +34,18 @@ public sealed class UsCcssG1FullGradeAnalogClockSourceVisualTests
         Assert.DoesNotContain("<image ",svg);
     }
     [Fact]
+    public void ClockComparisonGivesAVisibleDigitalCardWithoutPrefillingSameAnswer()
+    {
+        const string f="usccss.g1.u07.l13.hour_clock";
+        var matched=Clock(f,7,2);
+        var other=Clock(f,7,3);
+        Assert.Contains("Digital card: 7:00",matched);
+        Assert.Contains("Digital card: 2:00",other);
+        Assert.DoesNotContain("SAME=YES",matched);
+        Assert.DoesNotContain("SAME=NO",other);
+    }
+
+    [Fact]
     public void OriginalHalfClockSortHasWholeHourAndHalfPastDiagrams()
     {
         const string f="usccss.g1.u07.l14.half_hour_clock";
