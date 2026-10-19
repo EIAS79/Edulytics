@@ -41,9 +41,11 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
             "usccss.g1.u04.l19.regroup_one_ten" or
             "usccss.g1.u04.l20.equivalent_tens_ones" =>
-                a>=20&&a<=99&&b==0&&c==0,
+                a>=20&&a<=99&&b==0&&c==0&&
+                (family!=Families[4]||mode!=2||a==94),
             "usccss.g1.u04.l21.compare_nonstandard_forms" =>
-                a>=20&&a<=99&&b>=20&&b<=99&&c==0,
+                a>=20&&a<=99&&b>=20&&b<=99&&c==0&&
+                (mode!=2||(a==82&&b==72)),
             "usccss.g1.u04.l23.estimate_and_count" =>
                 a>=20&&a<=99&&b>=10&&b<=99&&c==0,
             _=>false
@@ -68,8 +70,17 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
         int mode=random.Next(4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
-        if(family==Families[3]||family==Families[4]){b=0;c=0;}
-        if(family==Families[5])c=0;
+        if(family==Families[3]||family==Families[4])
+        {
+            b=0;c=0;
+            if(family==Families[4]&&mode==2)
+                a=94; // Original 2021 Student Facing: ways to show 94.
+        }
+        if(family==Families[5])
+        {
+            c=0;
+            if(mode==2){a=82;b=72;} // Elena 5 tens +32 ones vs Kiran 7 tens +2.
+        }
         if(family==Families[7]){b=Math.Clamp(a+random.Next(-9,10),10,99);c=0;}
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
         if(family==Families[1]&&mode==3)

@@ -83,6 +83,43 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
     }
 
     [Fact]
+    public void ActualGeneratedSourceModesPresentTheExact94And82Vs72Tasks()
+    {
+        const string ways="usccss.g1.u04.l20.equivalent_tens_ones";
+        const string compare="usccss.g1.u04.l21.compare_nonstandard_forms";
+        int actual94=0,actualElena=0;
+        for(var seed=0;seed<350;seed++)
+        {
+            var q=UsCcssG1FullGradeUnit4FinalQuestions.Build(ways,new Random(101*seed+3));
+            if(q.Parameters["mode"]==2)
+            {
+                actual94++;
+                Assert.Equal(94,q.Parameters["a"]);
+                Assert.Contains("Start with 9 ten-rods and 4 ones",q.Prompt);
+                Assert.Equal(10,94/10+1);
+            }
+            var second=UsCcssG1FullGradeUnit4FinalQuestions.Build(compare,new Random(71*seed+15));
+            if(second.Parameters["mode"]==2)
+            {
+                actualElena++;
+                Assert.Equal(82,second.Parameters["a"]);
+                Assert.Equal(72,second.Parameters["b"]);
+                Assert.Contains("5 tens and 32 ones with 7 tens and 2 ones",second.Prompt);
+                Assert.Equal("SYMBOL=>",
+                    UsCcssG1FullGradeUnit4FinalQuestions.Solve(compare,second.Parameters));
+            }
+        }
+        Assert.True(actual94>40);
+        Assert.True(actualElena>40);
+        var changed=new Dictionary<string,int>{{"a",83},{"b",72},{"c",0},{"mode",2}};
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(compare,changed));
+        changed["a"]=94;changed["b"]=0;
+        Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(ways,changed));
+        changed["a"]=93;
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(ways,changed));
+    }
+
+    [Fact]
     public void OriginalUnit4Lesson21ComparesThirtyTwoLooseOnesCorrectly()
     {
         const string family="usccss.g1.u04.l21.compare_nonstandard_forms";
