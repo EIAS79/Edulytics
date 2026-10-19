@@ -66,6 +66,42 @@ public sealed class UsCcssG1FullGradeMeasurementFractionVisualTests
     }
 
     [Fact]
+    public void OriginalSourceLengthOrderDiagramSupportsBothTeacherTaskDirections()
+    {
+        const string family="usccss.g1.u06.l01.compare_lengths";
+        var asc=JsonSerializer.Serialize(new{parameters=new{a=7,b=4,c=9,mode=1}});
+        var desc=JsonSerializer.Serialize(new{parameters=new{a=7,b=4,c=9,mode=3}});
+        var a=Assert.IsType<string>(PracticeMathVisualRenderer.RenderSvg(family,asc));
+        var d=Assert.IsType<string>(PracticeMathVisualRenderer.RenderSvg(family,desc));
+        Assert.Contains("shortest to longest",a);
+        Assert.Contains("longest to shortest",d);
+        Assert.Contains("class='length-0'",a);
+        Assert.Contains("class='length-1'",a);
+        Assert.Contains("class='length-2'",a);
+        Assert.DoesNotContain("ORDER=",d);
+    }
+
+    [Theory]
+    [InlineData(1,"Mai route","Clare route")]
+    [InlineData(2,"Door opening","Teacher desk width")]
+    [InlineData(3,"Door opening","Student desk width")]
+    public void OriginalIndirectStudentSourceTasksExposeTheActualComparedDimensions(
+        int mode,string firstLabel,string secondLabel)
+    {
+        const string family="usccss.g1.u06.l03.choose_indirect_comparison";
+        var svg=Assert.IsType<string>(Draw(family,8,9,mode));
+        Assert.Contains(firstLabel,svg);
+        Assert.Contains(secondLabel,svg);
+        Assert.Equal(8,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='indirect-unit-0'").Count);
+        Assert.Equal(9,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='indirect-unit-1'").Count);
+        Assert.DoesNotContain("SHORTER=",svg);
+        Assert.DoesNotContain("FITS=",svg);
+        Assert.DoesNotContain("<image ",svg);
+    }
+
+    [Fact]
     public void UnitSizesChangePhysicalUnitCountButNotMeasuredBarLength()
     {
         var svg=Assert.IsType<string>(Draw("usccss.g1.u06.l07.unit_length_matters",6,2,0));
