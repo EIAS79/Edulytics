@@ -31,7 +31,8 @@ public static class UsCcssG1FullGradeNextQuestions
             FlexibleAdd=>a>=6&&a<=9&&b>=11-a&&b<=10&&c==0&&
                 (mode!=2||(a==8&&b==7)),
             ZooThree=>a>=1&&a<=8&&b>=1&&b<=8&&c>=1&&c<=8&&a+b+c<=20&&
-                (mode!=2||(a==8&&b==7&&c==5)),
+                (mode!=2||(a==8&&b==7&&c==5))&&
+                (mode!=3||(a==3&&b==6&&c==7)),
             CenterTwoThree=>a>=1&&a<=8&&b>=1&&b<=8&&
                 (mode%2==0?c==0:c>=1&&c<=8)&&a+b+c<=20,
             TeenSubtract or TenSubtract=>a>=11&&a<=18&&b>=a-9&&b<=9&&c==0,
@@ -49,7 +50,8 @@ public static class UsCcssG1FullGradeNextQuestions
         }
         else if(family==ZooThree)
         {
-            if(mode==2){a=8;b=7;c=5;} // Actual 2021 student reptile story.
+            if(mode==2){a=8;b=7;c=5;} // Original reptile story.
+            else if(mode==3){a=3;b=6;c=7;} // Original bird exhibit story.
             else
             {
                 a=random.Next(1,9);b=random.Next(1,9);
@@ -75,6 +77,8 @@ public static class UsCcssG1FullGradeNextQuestions
                 $"Compare addition methods for {a}+{b} within 20. Make a ten by moving counters from the second addend. Write MOVE=number;REST=number;TOTAL=number.",
             ZooThree=>mode==2?
                 $"ORIGINAL 2021 STUDENT STORY: Jada sees 8 snakes, 7 iguanas and 5 frogs at the reptile exhibit. How many reptiles? Count all THREE groups and write the matching equation. Write TOTAL=number;EQUATION=number+number+number=number.":
+                mode==3?
+                "ORIGINAL 2021 STUDENT STORY: In the bird exhibit Jada sees 3 herons, 6 hawks and 7 hummingbirds. How many birds did Jada see? Show thinking using drawings, counters, numbers or words. Write TOTAL=number;EQUATION=number+number+number=number.":
                 mode%2==0?
                 $"At a zoo, there are {a} zebras, {b} penguins and {c} monkeys. All three groups count. Write TOTAL=number;EQUATION=number+number+number=number.":
                 $"At a zoo there are {a} lions, {b} birds and {c} seals. Use ANY correct addition method for all three groups. Write TOTAL=number;EQUATION=number+number+number=number.",

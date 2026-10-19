@@ -73,6 +73,32 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void Zoo2021OriginalBirdExhibitUsesAllThreeSourceGroups()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.ZooThree;
+        var p=new Dictionary<string,int>{{"a",3},{"b",6},{"c",7},{"mode",3}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TOTAL=16;EQUATION=7+3+6=16"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TOTAL=16;EQUATION=6+4+6=16"));
+        p["a"]=4;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        var generated=Enumerable.Range(0,340).Select(n=>
+            UsCcssG1FullGradeNextQuestions.Build(family,new Random(97*n+23)))
+            .Where(q=>q.Parameters["mode"]==3).ToArray();
+        Assert.True(generated.Length>40);
+        Assert.All(generated,q=>
+        {
+            Assert.Contains("3 herons",q.Prompt);
+            Assert.Contains("6 hawks",q.Prompt);
+            Assert.Contains("7 hummingbirds",q.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void Original2021LinHanKiranStrategiesRetainAllThreeEquivalentExpressions()
     {
         const string family=UsCcssG1FullGradeNextQuestions.FlexibleAdd;
