@@ -499,14 +499,16 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
-        IsTarget(doc,lesson)?lesson.LessonCode switch
-        {
-            ZooLessonCode=>ZooSourceContentVersion,
-            CenterLessonCode=>CenterSourceContentVersion,
-            TeenSubtractLessonCode=>TeenSubtractSourceContentVersion,
-            TenSubtractLessonCode=>TenSubtractSourceContentVersion,
-            _=>Version
-        }:previous;
+        IsTarget(doc,lesson)
+            ? (lesson.LessonCode switch
+            {
+                ZooLessonCode=>ZooSourceContentVersion,
+                CenterLessonCode=>CenterSourceContentVersion,
+                TeenSubtractLessonCode=>TeenSubtractSourceContentVersion,
+                TenSubtractLessonCode=>TenSubtractSourceContentVersion,
+                _=>Version
+            })
+            : previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)&&
