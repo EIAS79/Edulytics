@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 101,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L13",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "e048b84f04ebe8caeb2c5f638b427a56e4e6b7afeac787fb1894a1c7473704fe",
+    "teacherPreparationSha256": "98214b672c3a04a2726ac105efa8e99e57b1afe4421cf6302e8c6331cdad7cf4",
+    "studentMirrorSha256": "90e58fdce2622c7a720dd14ff00d79ecfb29875988351aefa4ec3310edb94d20",
+    "teacherActivityHeadings": [
+      "Activity 1: Introduce Target Numbers, Add Two-Digit Numbers (20 minutes)",
+      "Activity 2: Introduce Five in a Row, Add within 100 with Composing (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Choose a center. Target Numbers [visual] [visual] <div class=\"im-c-modal__",
+      "Student Facing Choose a center. Five in a Row [visual] [visual] <div class=\"im-c-"
+    ],
+    "sourceSpecificComparison": "Original count down from 100 to70; Target Numbers Stage3 and Five in a Row Stage6 physical centers",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
