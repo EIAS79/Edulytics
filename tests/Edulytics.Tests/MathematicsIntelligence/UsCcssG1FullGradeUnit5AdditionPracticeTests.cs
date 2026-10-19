@@ -36,6 +36,35 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
         }
     }
     [Fact]
+    public void Original2021MakeTenStudentFacingIsActuallyGeneratedWithBothElenaAndAndreStrategies()
+    {
+        const string lesson5="usccss.g1.u05.l05.make_new_ten";
+        const string lesson6="usccss.g1.u05.l06.explain_make_ten_equations";
+        var set=new Dictionary<string,int>{{"a",47},{"b",8},{"mode",2}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(lesson5,set,
+            "MOVE=3;REST=5;TOTAL=55"));
+        set["a"]=26;set["mode"]=3;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(lesson5,set,
+            "MOVE=4;REST=4;TOTAL=34"));
+        set["a"]=34;set["b"]=9;set["mode"]=2;
+        const string completed="MOVE=6;REST=3;TOTAL=43;ELENA=34+6+3=43;ANDRE=9+1+33=43";
+        Assert.True(ExactSkillContractQuestionEngine.Verify(lesson6,set,completed));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(lesson6,set,
+            completed.Replace("ANDRE=9+1+33=43","ANDRE=9+1+34=44")));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(lesson6,set,
+            "MOVE=6;REST=3;TOTAL=43"));
+        set["b"]=8;
+        Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(lesson6,set));
+        var generated=Enumerable.Range(0,400)
+            .Select(n=>UsCcssG1FullGradeUnit5AdditionQuestions.Build(
+                lesson6,new Random(n*83+31))).ToArray();
+        Assert.Contains(generated,q=>q.Prompt.Contains("Elena and Andre both find 34+9"));
+        Assert.Contains(generated,q=>q.Prompt.Contains("Find 6+68"));
+        Assert.All(generated,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+            lesson6,q.Parameters,UsCcssG1FullGradeUnit5AdditionQuestions.Solve(lesson6,q.Parameters))));
+    }
+
+    [Fact]
     public void ComposingAndNoComposingCannotBeMixed()
     {
         var no=new Dictionary<string,int>{{"a",43},{"b",5},{"mode",0}};

@@ -99,7 +99,14 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 ((b>=1&&b<=9&&ones<10)||
                  (b>=10&&b<=30&&b%10==0)),
             Kind.NoComposeTwoDigits=>a>=10&&a<=89&&b>=10&&b<=89&&sum<=99&&ones<10,
-            Kind.MakeNewTen=>a>=20&&a<=89&&b>=1&&b<=9&&sum<=99&&ones>=10,
+            Kind.MakeNewTen=>a>=20&&a<=89&&b>=1&&b<=9&&sum<=99&&ones>=10&&
+                (spec.LessonCode!="L05"||
+                    (mode!=1||(a==37&&b==7))&&
+                    (mode!=2||(a==47&&b==8))&&
+                    (mode!=3||(a==26&&b==8)))&&
+                (spec.LessonCode!="L06"||
+                    (mode!=2||(a==34&&b==9))&&
+                    (mode!=3||(a==68&&b==6))),
             Kind.ComposingTwoDigits=>a>=10&&a<=89&&b>=10&&b<=89&&sum<=100&&ones>=10,
             Kind.Flexible=>a>=20&&a<=89&&b>=1&&b<=(spec.LessonCode=="L07"?9:10)&&sum<=99&&
                 (spec.LessonCode!="L07"||mode<=1||
@@ -133,6 +140,17 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 Kind.Flexible=>random.Next(1,spec.LessonCode=="L07"?10:11),
                 _=>random.Next(1,10)
             };
+            if(spec.LessonCode=="L05")
+            {
+                if(mode==1){a=37;b=7;}
+                if(mode==2){a=47;b=8;}
+                if(mode==3){a=26;b=8;}
+            }
+            if(spec.LessonCode=="L06")
+            {
+                if(mode==2){a=34;b=9;}
+                if(mode==3){a=68;b=6;}
+            }
             var candidate=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}};
             if(Valid(family,candidate))
             {
@@ -166,7 +184,17 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 }
                 string prompt=spec.Kind switch
                 {
-                    Kind.MakeNewTen=>$"{activity} {operation} To form the next ten, split the smaller addend. Write MOVE=number;REST=number;TOTAL=number.",
+                    Kind.MakeNewTen=>spec.LessonCode=="L05"&&mode==2?
+                        "ORIGINAL 2021 STUDENT: Find 8+47. Make the next ten using 47+3+5=55. Show the source drawing or equation to a teacher. Write MOVE=number;REST=number;TOTAL=number.":
+                    spec.LessonCode=="L05"&&mode==1?
+                        "ORIGINAL 2021 FIELD TRIP STORY: 37 dollars plus 7 more; how much money did Tyler's teacher collect? Write MOVE=number;REST=number;TOTAL=number.":
+                    spec.LessonCode=="L05"&&mode==3?
+                        "ORIGINAL 2021 CLASSROOM STORY: 8 students sit at tables and 26 sit on the rug. How many students? Write MOVE=number;REST=number;TOTAL=number.":
+                    spec.LessonCode=="L06"&&mode==2?
+                        "ORIGINAL 2021 STUDENT: Elena and Andre both find 34+9. Elena starts with 34+6=40 and then adds 3. Andre starts with 9+1=10 and then adds 33. Complete BOTH true methods. Write MOVE=number;REST=number;TOTAL=number;ELENA=expression;ANDRE=expression. Teacher reviews personal drawings/explanations.":
+                    spec.LessonCode=="L06"&&mode==3?
+                        "ORIGINAL 2021 STUDENT: Find 6+68 by making ten. Show the equation and explain to your teacher. Write MOVE=number;REST=number;TOTAL=number.":
+                    $"{activity} {operation} To form the next ten, split the smaller addend. Write MOVE=number;REST=number;TOTAL=number.",
                     Kind.ComposingTwoDigits=>$"{activity} {operation} Combine tens and ones, exchanging ten ones for a new ten. Write TENS=number;ONES=number;TOTAL=number.",
                     _=>$"{activity} {operation} Check if ten ones compose a new ten. Write NEW_TEN=YES/NO;TOTAL=number."
                 };
@@ -182,6 +210,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G1 U05 source-scoped operands");
         var spec=Get(family)!;int a=p["a"],b=p["b"],sum=a+b;
         if(spec.LessonCode=="L14")return FoodDriveSolve(a,b,p["mode"]);
+        if(spec.LessonCode=="L06"&&p["mode"]==2)
+            return "MOVE=6;REST=3;TOTAL=43;ELENA=34+6+3=43;ANDRE=9+1+33=43";
         if(spec.LessonCode=="L07"&&p["mode"]>=2)
             return $"MISSING={b};NEW_TEN={(p["mode"]==2?"YES":"NO")};TOTAL={sum}";
         return spec.Kind switch

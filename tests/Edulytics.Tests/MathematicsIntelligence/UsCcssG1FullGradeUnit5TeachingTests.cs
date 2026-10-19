@@ -44,5 +44,7 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
         Assert.Contains("74 is greater than 68",lesson(4,22));
         Assert.Contains("Many correct options are possible",lesson(5,7));
         Assert.Contains("45+5=50 and 45+6=51",lesson(5,7));
+        Assert.Contains("Elena begins with 34+6=40",lesson(5,6));
+        Assert.Contains("34+9=9+1+33=10+33=43",lesson(5,6));
     }
 }

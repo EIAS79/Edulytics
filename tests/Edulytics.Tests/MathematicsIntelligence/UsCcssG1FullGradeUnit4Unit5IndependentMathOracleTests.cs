@@ -59,6 +59,8 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
             return $"MISSING={b};NEW_TEN={(actuallyComposes?"YES":"NO")};TOTAL={total}";
         }
         int carry=(a%10+b%10)/10;
+        if(index==5&&mode==2)
+            return "MOVE=6;REST=3;TOTAL=43;ELENA=34+6+3=43;ANDRE=9+1+33=43";
         if(index is 4 or 5)
             return $"MOVE={10-a%10};REST={b-(10-a%10)};TOTAL={total}";
         if(index is 8 or 9 or 10 or 11 or 13)
