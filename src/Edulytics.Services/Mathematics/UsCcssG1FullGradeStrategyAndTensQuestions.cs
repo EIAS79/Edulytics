@@ -217,7 +217,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(family,p))throw new InvalidOperationException("Invalid scoped G1 strategy/tens instance");
-        int a=p["a"],b=p["b"],mode=p["mode"],sum=a+b;
+        int a=p["a"],b=p["b"],c=p["c"],mode=p["mode"],sum=a+b;
         return family switch
         {
             CountOnOrAway=>mode==2?
