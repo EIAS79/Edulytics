@@ -11,22 +11,25 @@ namespace Edulytics.Data.Seeding;
 public static class CommonCoreG1FullGradeUnit5ContentCorrections
 {
     public const string Version = "us-ccss-g1-full-grade-u04-l22-through-u05-l14-teaching-v1";
+    public const string Unit4EndSourceVersion="us-ccss-g1-u04-l22-l23-original-activities-v2";
+    private static bool IsUnit4End(string code)=>code is
+        "PED:US-CCSS-MATH:G1:U04:L22" or "PED:US-CCSS-MATH:G1:U04:L23";
     private sealed record Repair(string Code,string SourceUrl,string OriginalSha,string[] Outcomes,
         string Title,string Explanation,string Examples,string Steps,string Mistakes,string Summary);
     private static readonly Repair[] Repairs =
     [
         new(@"PED:US-CCSS-MATH:G1:U04:L22",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-22/preparation.html",@"b85aea088222d4e41c7277cd0b59f55d8e177689037f8ba35a6c28b7e1fd7519",[@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
             @"Center Day 4",
-            @"Compare within 99 using place value and describe what a numeral means in tens and ones.",
-            @"Example 1: 74 is greater than 68 because seven tens are more than six tens. Example 2: 53 and 59 share five tens; 53 is less because three ones are fewer than nine.",
-            @"Step 1: Represent each number with tens and ones. Step 2: Compare tens, then ones when tens match. Step 3: Explain which quantity is greater and why.",
+            @"Compare within 99 using place value and describe what a numeral means in tens and ones. Original 2021 warm-up evaluates four comparison cards, including explaining why 35<20 is false. Original Mystery Number center requires each student to give truthful clues about a two-digit mystery number; a partner guesses after clues and records a score. Physical center games and partner responses are teacher facilitated.",
+            @"Example 1: 74 is greater than 68 because seven tens are more than six tens. Example 2: 53 and 59 share five tens; 53 is less because three ones are fewer than nine. Original 2021 warm-up: 92=90+2 TRUE; 90+2>80+12 FALSE (both equal 92); 20+13<30+13 TRUE (33<43).",
+            @"Step 1: Represent each number with tens and ones. Step 2: Compare tens, then ones when tens match. Step 3: Explain which quantity is greater and why. Step 4: In original Mystery Number play, make a two-digit mystery number and give clues about tens and ones; partners make guesses. Digital mathematics cannot assert that pupils played a partner game.",
             @"Comparing only ones is wrong: 68 is not greater than 74 simply because 8 exceeds 4.",
             @"I can identify and compare two-digit numbers, including number-card center representations."),
         new(@"PED:US-CCSS-MATH:G1:U04:L23",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-23/preparation.html",@"b64853c6fba2b3fb89c0192538cb6629db49583e2844ce48f4b367e4721b9384",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
             @"Two-Digit Numbers in Our World (optional)",
-            @"Optional investigation: estimate a collection before organizing and counting it. A teacher supervises actual collection and measurement, which a digital response cannot certify.",
-            @"Example 1: I estimate about 50 counters. Group into four tens and seven ones to count 47; my estimate is 3 more. Example 2: Six tens and two ones represent 62.",
-            @"Step 1: View the real or pictured collection; estimate a plausible number up to 99. Step 2: Organize into full groups of ten and leftover ones. Step 3: Count accurately and compare estimate with actual.",
+            @"Optional investigation: estimate a collection before organizing and counting it. Original 2021 bean warm-up estimates too low, about right, too high from a picture marked with a group of TEN beans. Original Activity 1 has THREE two-handful estimation/counting experiments. Original Activity 2 sorts pictures by quantity into LESS THAN 20, 20 TO 50, and MORE THAN 50; pupils then represent one from each group using tens and ones. Real collection measurements and source-artwork comparisons require teacher supervision and verified visuals.",
+            @"Example 1: I estimate about 50 counters. Group into four tens and seven ones to count 47; my estimate is 3 more. Example 2: Six tens and two ones represent 62. Original image sorting cannot be claimed to be mathematically graded without the source pictures or a fully reviewed first-party equivalent.",
+            @"Step 1: View real objects or an authorized first-party picture; predict a too-low, about-right and too-high estimate. Step 2: For the original THREE two-handful experiments, estimate and then physically count and represent the actual amount. Step 3: Sort the original quantity pictures into LESS THAN 20, 20 TO 50 or MORE THAN 50, and choose one from each to model in tens and ones. Step 4: Explain estimates versus observed counts; teacher reviews physical work rather than fabricated digital participation.",
             @"Do not claim the estimate is an exact count. Five tens and three ones is 53, not 8.",
             @"I can estimate, count, and represent a collection up to 99. A real-life investigation needs real evidence."),
         new(@"PED:US-CCSS-MATH:G1:U05:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-1/preparation.html",@"39aba045753ec23ceacd9c40cbd05dfc4e50f98ce3f39f1fe0f9799e4435f276",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.C.4"],
@@ -159,9 +162,11 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
         }
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
-       IsTarget(doc,lesson)?Version:previous;
+       IsTarget(doc,lesson)?(IsUnit4End(lesson.LessonCode)?Unit4EndSourceVersion:Version):previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
-       IsTarget(doc,lesson)&&previous==CommonCoreRichContentCorrections.CorrectionContentVersion;
+       IsTarget(doc,lesson)&&
+       (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
+        (IsUnit4End(lesson.LessonCode)&&previous==Version));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
