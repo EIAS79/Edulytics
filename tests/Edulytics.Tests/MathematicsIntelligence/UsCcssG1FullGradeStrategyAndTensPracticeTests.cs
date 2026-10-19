@@ -91,6 +91,26 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
         }
     }
     [Fact]
+    public void OriginalElenaAndHanTakeAwayStoryVariantsHaveCorrectUnknownPositions()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;
+        var elena=new Dictionary<string,int>{{"a",6},{"b",12},{"c",0},{"mode",3}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,elena,
+            "UNKNOWN=6;EQUATION=18-12=6"));
+        elena["mode"]=4;elena["a"]=9;elena["b"]=6;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,elena,
+            "UNKNOWN=6;EQUATION=15-6=9"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,elena,
+            "UNKNOWN=6;EQUATION=15-5=10"));
+        var tasks=Enumerable.Range(0,340).Select(n=>
+            UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(n*71+9))).ToArray();
+        Assert.Contains(tasks,q=>q.Prompt.Contains("Elena has 18 counters"));
+        Assert.Contains(tasks,q=>q.Prompt.Contains("Han has 15 pencils"));
+        Assert.All(tasks,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family,q.Parameters,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters))));
+    }
+
+    [Fact]
     public void Original2021HanUnknownStartSixPlusNineEqualsFifteenIsReachable()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;

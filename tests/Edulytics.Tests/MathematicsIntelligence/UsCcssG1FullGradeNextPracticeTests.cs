@@ -102,6 +102,18 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void OriginalZooStudentTasksIncludeCatsAndPettingAnimals()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.ZooThree;
+        var tasks=Enumerable.Range(0,450).Select(n=>
+            UsCcssG1FullGradeNextQuestions.Build(family,new Random(n*79+5))).ToArray();
+        Assert.Contains(tasks,q=>q.Prompt.Contains("8 lions, 4 tigers and 3 cheetahs"));
+        Assert.Contains(tasks,q=>q.Prompt.Contains("8 goats, 7 sheep and 4 pigs"));
+        Assert.All(tasks,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family,q.Parameters,UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters))));
+    }
+
+    [Fact]
     public void Zoo2021OriginalBirdExhibitUsesAllThreeSourceGroups()
     {
         const string family=UsCcssG1FullGradeNextQuestions.ZooThree;

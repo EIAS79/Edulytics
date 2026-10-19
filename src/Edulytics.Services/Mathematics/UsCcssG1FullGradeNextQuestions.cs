@@ -55,6 +55,10 @@ public static class UsCcssG1FullGradeNextQuestions
         {
             if(mode==2){a=8;b=7;c=5;} // Original reptile story.
             else if(mode==3){a=3;b=6;c=7;} // Original bird exhibit story.
+            else if(mode==0 && random.Next(2)==0)
+            {a=8;b=4;c=3;} // Original large cats: lions, tigers, cheetahs.
+            else if(mode==1 && random.Next(2)==0)
+            {a=8;b=7;c=4;} // Original petting zoo: goats, sheep, pigs.
             else
             {
                 a=random.Next(1,9);b=random.Next(1,9);
@@ -92,6 +96,10 @@ public static class UsCcssG1FullGradeNextQuestions
                 $"ORIGINAL 2021 STUDENT STORY: Jada sees 8 snakes, 7 iguanas and 5 frogs at the reptile exhibit. How many reptiles? Count all THREE groups and write the matching equation. Write TOTAL=number;EQUATION=number+number+number=number.":
                 mode==3?
                 "ORIGINAL 2021 STUDENT STORY: In the bird exhibit Jada sees 3 herons, 6 hawks and 7 hummingbirds. How many birds did Jada see? Show thinking using drawings, counters, numbers or words. Write TOTAL=number;EQUATION=number+number+number=number.":
+                mode==0 && a==8 && b==4 && c==3?
+                "ORIGINAL 2021 LARGE CATS: Jada sees 8 lions, 4 tigers and 3 cheetahs. How many large cats are there? Show all groups and write TOTAL=number;EQUATION=number+number+number=number.":
+                mode==1 && a==8 && b==7 && c==4?
+                "ORIGINAL 2021 PETTING ZOO: Jada pets 8 goats, 7 sheep and 4 pigs. How many animals did she pet? Show all groups and write TOTAL=number;EQUATION=number+number+number=number.":
                 mode%2==0?
                 $"At a zoo, there are {a} zebras, {b} penguins and {c} monkeys. All three groups count. Write TOTAL=number;EQUATION=number+number+number=number.":
                 $"At a zoo there are {a} lions, {b} birds and {c} seals. Use ANY correct addition method for all three groups. Write TOTAL=number;EQUATION=number+number+number=number.",
