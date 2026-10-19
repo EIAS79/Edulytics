@@ -49,6 +49,62 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
         Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Verify(yesFamily,yes,"MOVE=3;REST=8;TOTAL=55"));
     }
     [Theory]
+    [InlineData(45,5,2,"MISSING=5;NEW_TEN=YES;TOTAL=50")]
+    [InlineData(49,1,2,"MISSING=1;NEW_TEN=YES;TOTAL=50")]
+    [InlineData(46,3,3,"MISSING=3;NEW_TEN=NO;TOTAL=49")]
+    [InlineData(50,9,3,"MISSING=9;NEW_TEN=NO;TOTAL=59")]
+    public void OriginalU05L07MissingNumberTasksFindTheExtremalValidOneDigit(
+        int known,int missing,int mode,string expected)
+    {
+        const string family="usccss.g1.u05.l07.detect_new_ten";
+        var p=new Dictionary<string,int>{{"a",known},{"b",missing},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected+";NOT_REVIEWED=1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected.Replace($"MISSING={missing}",$"MISSING={missing+1}")));
+    }
+
+    [Fact]
+    public void MissingNumberVariantsExcludeCasesWithNoValidPositiveDigitOrNonExtremalDigit()
+    {
+        const string family="usccss.g1.u05.l07.detect_new_ten";
+        foreach(var (a,b,mode) in new[]{
+            (40,10,2), // ones=0 means no single-digit addend makes a new ten
+            (49,0,3),  // ones=9 means no positive digit avoids a new ten
+            (45,6,2),  // yes, but not the smallest digit
+            (46,2,3),  // no, but not the largest digit
+            (39,9,3)   // ones=9 cannot avoid making a ten
+        })
+            Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,
+                new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}}));
+    }
+
+    [Fact]
+    public void GeneratedOriginalMissingDigitQuestionsContainBothTenCompositionConstraints()
+    {
+        const string family="usccss.g1.u05.l07.detect_new_ten";
+        var variants=new HashSet<int>();
+        for(int seed=0;seed<240;seed++)
+        {
+            var q=UsCcssG1FullGradeUnit5AdditionQuestions.Build(family,new Random(seed*71+19));
+            variants.Add(q.Parameters["mode"]);
+            Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,q.Parameters));
+            var correct=UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,q.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,correct));
+            if(q.Parameters["mode"]>=2)
+            {
+                Assert.Contains("MISSING=",correct);
+                Assert.Contains("□",q.Prompt);
+                Assert.Contains(q.Parameters["mode"]==2?"SMALLEST":"LARGEST",q.Prompt);
+            }
+        }
+        Assert.Equal(4,variants.Count);
+    }
+
+    [Theory]
     [InlineData(18,24,0,"PAIR=42;ALL=85")]
     [InlineData(18,24,1,"FIRST_PAIR=42;SECOND_PAIR=43;ALL=85")]
     [InlineData(18,23,2,"TOTAL=41;PACK=YES")]
