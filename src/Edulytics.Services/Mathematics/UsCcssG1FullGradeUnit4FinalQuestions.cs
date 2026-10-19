@@ -100,7 +100,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l19.regroup_one_ten"=>
                 $"Make {a} in another way: exchange ONE full ten for ten single ones. Write TENS=number;ONES=number.",
             "usccss.g1.u04.l20.equivalent_tens_ones"=>
-                $"A picture shows {a/10-1} ten-rods and {a%10+10} loose ones. State the original two-digit NUMBER. Write NUMBER=number.",
+                $"Original How Many Ways?: Start with {a/10} ten-rods and {a%10} ones, making {a}. Exchange {Math.Min(a/10,mode+1)} full ten-rods for loose ones; find a SECOND valid regrouping, and calculate how many tens-and-ones regroupings exist when all zero-to-{a/10} complete ten-rods are allowed. Write NUMBER=number;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number;WAYS=number. Teacher reviews original drawings and partner explanations.",
             "usccss.g1.u04.l21.compare_nonstandard_forms"=>
                 $"Compare {a/10-Math.Min(mode+1,a/10)} tens and {a%10+10*Math.Min(mode+1,a/10)} ones with {b/10} tens and {b%10} ones. Write SYMBOL=sign.",
             "usccss.g1.u04.l22.center_place_value"=>
@@ -128,7 +128,8 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l18.center_count_compare_order"=>
                 mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):$"SYMBOL={Sign(a,b)}",
             "usccss.g1.u04.l19.regroup_one_ten"=>$"TENS={a/10-1};ONES={a%10+10}",
-            "usccss.g1.u04.l20.equivalent_tens_ones"=>$"NUMBER={a}",
+            "usccss.g1.u04.l20.equivalent_tens_ones"=>
+                $"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}",
             "usccss.g1.u04.l21.compare_nonstandard_forms"=>$"SYMBOL={Sign(a,b)}",
             "usccss.g1.u04.l22.center_place_value"=>
                 mode%2==0?$"SYMBOL={Sign(a,b)}":$"NUMBER={a}",

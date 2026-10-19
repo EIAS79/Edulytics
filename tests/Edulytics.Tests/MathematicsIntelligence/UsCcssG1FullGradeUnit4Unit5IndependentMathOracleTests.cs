@@ -25,7 +25,7 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
             case 2:return mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):
                 "SYMBOL="+Symbol(a,b);
             case 3:return $"TENS={a/10-1};ONES={a%10+10}";
-            case 4:return $"NUMBER={a}";
+            case 4:return $"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}";
             case 5:return "SYMBOL="+Symbol(a,b);
             case 6:return mode%2==0?"SYMBOL="+Symbol(a,b):$"NUMBER={a}";
             case 7:return $"COUNT={a};GAP={Math.Abs(a-b)}";

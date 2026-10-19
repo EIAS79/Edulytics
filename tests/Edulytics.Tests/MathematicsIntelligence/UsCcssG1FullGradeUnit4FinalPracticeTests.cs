@@ -41,6 +41,26 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
         Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Verify(f,p,"TENS=3;ONES=13"));
         Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Verify(f,p,"TENS=4;ONES=13"));
     }
+    [Theory]
+    [InlineData(94,0,"NUMBER=94;TENS=9;ONES=4;ALT_TENS=8;ALT_ONES=14;WAYS=10")]
+    [InlineData(94,2,"NUMBER=94;TENS=9;ONES=4;ALT_TENS=6;ALT_ONES=34;WAYS=10")]
+    [InlineData(27,3,"NUMBER=27;TENS=2;ONES=7;ALT_TENS=0;ALT_ONES=27;WAYS=3")]
+    public void OriginalU04L20MoreThanOneRegroupingAndTotalWaysAreIndependentlyCorrect(
+        int total,int mode,string expected)
+    {
+        const string f="usccss.g1.u04.l20.equivalent_tens_ones";
+        var p=new Dictionary<string,int>{{"a",total},{"b",0},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(f,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit4FinalQuestions.Solve(f,p));
+        Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Verify(f,p,expected));
+        int moved=Math.Min(total/10,mode+1);
+        Assert.Equal(total,10*(total/10-moved)+total%10+10*moved);
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Verify(f,p,
+            $"NUMBER={total}"));
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Verify(f,p,
+            expected.Replace("WAYS="+(total/10+1),"WAYS="+(total/10))));
+    }
+
     [Fact]
     public void OriginalUnit4Lesson21ComparesThirtyTwoLooseOnesCorrectly()
     {
