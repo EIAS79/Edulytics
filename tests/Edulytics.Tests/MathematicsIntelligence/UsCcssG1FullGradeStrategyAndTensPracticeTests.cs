@@ -79,6 +79,53 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
           new Dictionary<string,int>{{"a",2},{"b",3},{"c",0},{"mode",1}}));
     }
     [Theory]
+    [InlineData(9,1,2,"TOTALS=20,30,40,50,60,70,80,90;LAST=90")]
+    [InlineData(1,1,3,"TOTALS=80,70,60,50,40,30,20,10;LAST=10")]
+    [InlineData(4,1,0,"TENS=5;TOTAL=50")]
+    [InlineData(4,1,1,"TENS=3;TOTAL=30")]
+    public void OriginalU04L03ShowsEightSuccessiveTensChangesAndCorrectAnswers(
+        int a,int b,int mode,string expected)
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveTen;
+        var p=new Dictionary<string,int>{
+            ["a"]=a,["b"]=b,["c"]=0,["mode"]=mode};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            expected.Replace(mode>=2?"TOTALS=":"TENS=",mode>=2?"TOTALS=99,":"TENS=99")));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";FICTITIOUS=1"));
+    }
+
+    [Fact]
+    public void OriginalU04L03SequenceEndpointsCannotBeSilentlyReplaced()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveTen;
+        foreach(var (a,mode) in new[]{
+            (8,2),(1,2),(9,3),(2,3),(0,3),(9,0),(1,1)
+        })
+            Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+                new Dictionary<string,int>{
+                    ["a"]=a,["b"]=1,["c"]=0,["mode"]=mode}));
+        var covered=new HashSet<int>();
+        for(int seed=0;seed<350;seed++)
+        {
+            var q=UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+                family,new Random(seed*37+29));
+            covered.Add(q.Parameters["mode"]);
+            if(q.Parameters["mode"]>=2)
+            {
+                Assert.Contains("EIGHT totals",q.Prompt);
+                Assert.Contains("1 TEN",q.Prompt);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,
+                    UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            }
+        }
+        Assert.Equal(4,covered.Count);
+    }
+
+    [Theory]
     [InlineData(1,"B","ten")]
     [InlineData(2,"C","twenty")]
     [InlineData(3,"A","thirty")]
