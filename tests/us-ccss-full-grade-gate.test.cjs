@@ -133,3 +133,49 @@ test('source-drawing original unit 7 lessons 123-126 require both numeric Practi
     assert.equal(validLessonAssessment(ordinal,{...full,actualTeacherObservationNotClaimed:false},()=>true),false);
   }
 });
+
+
+test('V1 accepts two source-mapped Practice families without permitting arbitrary extras',()=>{
+  const {sourceGroundedFamilies}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
+  assert.deepEqual(sourceGroundedFamilies({candidateFamily:'source.a'}),['source.a']);
+  assert.deepEqual(sourceGroundedFamilies({
+    candidateFamilies:['source.a','source.b']
+  }),['source.a','source.b']);
+  assert.deepEqual(sourceGroundedFamilies({candidateFamily:null}),[]);
+  assert.equal(sourceGroundedFamilies({candidateFamilies:['source.a','source.a']}),null);
+  assert.equal(sourceGroundedFamilies({candidateFamilies:['source.a','']}),null);
+  assert.equal(sourceGroundedFamilies({candidateFamilies:[123]}),null);
+});
+
+test('V1 immutable Git evidence supports real existing source/tests, not invented URLs or fake hashes',()=>{
+  const crypto=require('node:crypto');
+  const {execFileSync}=require('node:child_process');
+  const {validGitEvidenceReference}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
+  const head=execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim();
+  const source='docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md';
+  const content=execFileSync('git',['show',head+':'+source],{cwd:ROOT});
+  const real={kind:'GIT_FILE',commitSha:head,path:source,
+    sha256:crypto.createHash('sha256').update(content).digest('hex')};
+  assert.equal(validGitEvidenceReference(real,head),true);
+  assert.equal(validGitEvidenceReference({...real,sha256:'0'.repeat(64)},head),false);
+  assert.equal(validGitEvidenceReference({...real,kind:'GITHUB_URL'},head),false);
+  assert.equal(validGitEvidenceReference({...real,path:'../package.json'},head),false);
+  assert.equal(validGitEvidenceReference({...real,path:'-malicious'},head),false);
+  assert.equal(validGitEvidenceReference({...real,commitSha:'f'.repeat(40)},head),false);
+  assert.equal(validGitEvidenceReference(real,'not_a_sha'),false);
+});
+
+test('V1 code proof can be scoped to explicit impacted files but cannot omit its scope',()=>{
+  const {execFileSync}=require('node:child_process');
+  const {sourceUnchangedSinceProof}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
+  const head=execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim();
+  assert.equal(sourceUnchangedSinceProof(head,head),true);
+  assert.equal(sourceUnchangedSinceProof(head,head,
+    ['tools/curriculum/us-ccss-full-grade-gate.cjs']),true);
+  assert.equal(sourceUnchangedSinceProof(head,head,[]),false);
+  assert.equal(sourceUnchangedSinceProof(head,head,
+    ['tools/curriculum/us-ccss-full-grade-gate.cjs','tools/curriculum/us-ccss-full-grade-gate.cjs']),false);
+  assert.equal(sourceUnchangedSinceProof(head,head,['../README.md']),false);
+  assert.equal(sourceUnchangedSinceProof(head,head,['src/Edulytics.Core']),false);
+  assert.equal(sourceUnchangedSinceProof(head,'bad_sha',['src/Edulytics.Core/placeholder.cs']),false);
+});
