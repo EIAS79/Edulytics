@@ -65,30 +65,74 @@ public sealed class UsCcssG1IndependentNumericalOracleTests
     [Fact]
     public void AllClockHoursUseCorrectWholeAndHalfHourOutcomes()
     {
+        // Each original-source family now has distinct response contracts by mode.
+        // Verify all twelve hours and all four modes without downgrading newly
+        // introduced analog/digital comparisons, word descriptions or 5-minute hops.
+        string[] names =
+        [
+            "one", "two", "three", "four", "five", "six",
+            "seven", "eight", "nine", "ten", "eleven", "twelve"
+        ];
+        const string hourFamily = "usccss.g1.u07.l13.hour_clock";
+        const string halfFamily = "usccss.g1.u07.l14.half_hour_clock";
+        const string writeFamily = "usccss.g1.u07.l15.write_hours_halfhours";
+
         for (int hour = 1; hour <= 12; hour++)
         for (int mode = 0; mode < 4; mode++)
         {
+            int differentDigitalHour = hour == 12 ? 1 : hour + 1;
             var p = new Dictionary<string, int>
             {
-                ["a"] = hour, ["b"] = 2, ["c"] = 0, ["mode"] = mode
+                ["a"] = hour, ["b"] = differentDigitalHour, ["c"] = 0, ["mode"] = mode
             };
+            string word = names[hour - 1];
 
-            Assert.Equal($"TIME={hour}:00",
-                UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
-                    "usccss.g1.u07.l13.hour_clock", p));
-
-            Assert.Equal($"MINUTES=30;HOUR={hour}",
-                UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
-                    "usccss.g1.u07.l14.half_hour_clock", p));
-
-            var clockExpected = $"TIME={hour}:" + (mode % 2 == 0 ? "00" : "30");
-            const string clockFamily = "usccss.g1.u07.l15.write_hours_halfhours";
-            Assert.Equal(clockExpected,
-                UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(clockFamily, p));
+            string hourExpected = mode switch
+            {
+                0 or 1 => $"TIME={hour}:00",
+                2 => $"SAME=YES;TIME={hour}:00",
+                _ => $"SAME=NO;TIME={hour}:00"
+            };
+            Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(hourFamily, p));
+            Assert.Equal(hourExpected,
+                UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(hourFamily, p));
             Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(
-                clockFamily, p, clockExpected));
+                hourFamily, p, hourExpected));
             Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(
-                clockFamily, p, clockExpected + ";UNVERIFIED=1"));
+                hourFamily, p, mode <= 1 ? $"TIME={hour}:30" :
+                    $"SAME={(mode == 2 ? "NO" : "YES")};TIME={hour}:00"));
+
+            string halfExpected = mode switch
+            {
+                0 or 1 => $"MINUTES=30;HOUR={hour}",
+                2 => $"COLOR=BLUE;TIME={hour}:00;WORDS={word}_oclock",
+                _ => $"COLOR=RED;TIME={hour}:30;WORDS=half_past_{word}"
+            };
+            Assert.Equal(halfExpected,
+                UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(halfFamily, p));
+            Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(
+                halfFamily, p, halfExpected));
+            Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(
+                halfFamily, p, halfExpected + ";FAKE=1"));
+
+            string writeExpected = mode <= 1
+                ? $"TIME={hour}:" + (mode == 0 ? "00" : "30")
+                : "HOPS=6;MINUTES=30;STOP_AT=6";
+            Assert.Equal(writeExpected,
+                UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(writeFamily, p));
+            Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(
+                writeFamily, p, writeExpected));
+            Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(
+                writeFamily, p, mode <= 1 ? writeExpected + ";UNVERIFIED=1" :
+                    "HOPS=5;MINUTES=25;STOP_AT=5"));
+
+            if (mode == 3)
+            {
+                // A digital card equal to the analog time cannot represent
+                // the intentionally different-clock variant.
+                p["b"] = hour;
+                Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(hourFamily, p));
+            }
         }
     }
 }
