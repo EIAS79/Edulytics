@@ -6,6 +6,7 @@ Active curriculum **plans** and their two grade-first execution **SOPs** are sto
 
 - [Grade-first full-grade execution plan V2](EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md) — sole active whole-grade delivery policy; original V1 per-lesson academic acceptance unchanged.
 - [Full-grade executor SOP](GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md) — step-by-step implementation and release procedures.
+- [Continuous whole-grade authoring + concentrated final-CI protocol](EDULYTICS_FULL_GRADE_CONTINUOUS_AUTHORING_FINAL_CI_PROTOCOL_V1.md) — owner-requested operational acceleration: isolate work from PR-triggered CI until frozen grade review; retain all original source/math/learner/rights and mandatory release criteria.
 
 ## Original V1 quality criteria and historical execution
 

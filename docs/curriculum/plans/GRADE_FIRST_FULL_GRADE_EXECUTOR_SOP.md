@@ -1,3 +1,5 @@
+> **Owner-approved execution efficiency amendment (2026-10-19):** [Continuous grade authoring / final-CI protocol](EDULYTICS_FULL_GRADE_CONTINUOUS_AUTHORING_FINAL_CI_PROTOCOL_V1.md) controls workflow timing and the isolated WIP branch. Do not push intermediate authoring commits to Draft PR #567. Never weaken original V1 A–D, per-lesson source analysis, fail-closed 96/96 acceptance, or protected final CI. Old sentences below that appear to demand one full CI/evidence-SHA cycle after each lesson are interpreted as **individual academic evidence requirements**, not immediate GitHub CI scheduling. Final V1 internal sign-off is bound to authentic frozen-candidate CI, and requires a final current-head CI check after any evidence commit.
+
 # Full-grade executor SOP — retain original V1 stage quality
 
 **Governing plan:** [EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md](EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md) (`EDULYTICS-GRADE-FIRST-FULL-GRADE-V2`). Supersedes **only future delivery size** of the five-lesson V1 policy; never overwrite prior evidence.
