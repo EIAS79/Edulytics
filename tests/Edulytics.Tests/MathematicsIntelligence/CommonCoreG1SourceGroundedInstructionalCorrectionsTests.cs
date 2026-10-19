@@ -207,6 +207,27 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
     }
 
     [Fact]
+    public void OriginalU07L13HourHandCardsAndNineSchoolDayClocksRender()
+    {
+        const string code=CommonCoreG1SourceGroundedInstructionalCorrections.ClockHourIntroductionLessonCode;
+        var (doc,lesson,en)=Effective(code);
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.ClockHourIntroductionVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
+        Assert.Contains("ONLY THE HOUR HAND",en.KeyConceptsAndRules);
+        Assert.Contains("MATCH these hour-hand-only analog cards",en.KeyConceptsAndRules);
+        Assert.Contains("NINE school activities",en.KeyConceptsAndRules);
+        Assert.Contains("Arrival, Reading, Snack, Math, Lunch, Recess, Art, Dismissal and Homework",
+            en.KeyConceptsAndRules);
+        Assert.Contains("clock with only the hour hand at 1",en.WorkedExamples);
+        Assert.Contains("SORT the original whole-hour CLOCK CARDS",en.StepByStepSolutions);
+        Assert.Contains("READ the given time for each named activity",en.StepByStepSolutions);
+        Assert.Contains("not incomplete",en.CommonMistakes);
+        var fingerprint=CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson);
+        CanonicalLessonContentMaterializer.Materialize(doc);
+        Assert.Equal(fingerprint,CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson));
+    }
+
+    [Fact]
     public void NextFiveGrade1SourceScopeAndPreviousBatchContentVersionsRemainIsolated()
     {
         var (doc, _, _) = Effective(
