@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 94,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L06",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "a58ee11a551f51771aca99deb4319b5a0f40f8366b217ef575971abdfbb2d436",
+    "teacherPreparationSha256": "1bbe707720ab3370c673dccbd84c4016c7609a5bb47e508e502bc8a74e20655b",
+    "studentMirrorSha256": "90c3cb131f71170c022705ad5e676cfd900131c207a925a771ad91d2622723ef",
+    "teacherActivityHeadings": [
+      "Activity 1: How Many to the Next Ten? (10 minutes)",
+      "Activity 2: Elena and Andre Add (15 minutes)",
+      "Activity 3: Introduce Target Numbers, Add Ones (15 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(8 + 2\\) \\(8 + 5\\) \\(9 + 8\\) \\(7 + 6\\) Student Response Teachers with a valid work email address can click her",
+      "Student Facing Find the number that makes each equation true. Be ready to explain your thinking in a way that others will understand. [visual] [visual] <button class=\"js-",
+      "Student Facing Elena and Andre found the value of \\(34 + 9\\) . Elena started with \\(34 + 6 = 40\\) . What does Elena need to do next? Show your thinking using drawings, nu"
+    ],
+    "sourceSpecificComparison": "Original eight next-ten blank equations, Elena/Andre 34+9, 6+68; Target Numbers start 55 with 95 ceiling",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
