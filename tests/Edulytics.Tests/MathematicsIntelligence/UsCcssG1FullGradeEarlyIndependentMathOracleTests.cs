@@ -57,8 +57,18 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
             },
             3=>$"RESULT={(mode%2==0?sum:a-b)}",
             4=>$"GROUPS={a};TOTAL={a*10}",
-            5=>$"TENS={a};NUMBER={10*a}",
-            6=>$"TENS={(mode%2==0?a+1:a-1)};TOTAL={10*(mode%2==0?a+1:a-1)}",
+            5=>mode==3
+                // Independent source match: A/B/C corresponds to the
+                // tens-word option at index (number of tens modulo three).
+                ?$"MATCH={(char)('A'+a%3)};TENS={a};NUMBER={10*a}"
+                :$"TENS={a};NUMBER={10*a}",
+            6=>mode switch
+            {
+                0=>$"TENS={a+1};TOTAL={10*(a+1)}",
+                1=>$"TENS={a-1};TOTAL={10*(a-1)}",
+                2=>$"TOTALS={string.Join(",",Enumerable.Range(2,8).Select(t=>10*t))};LAST=90",
+                _=>$"TOTALS={string.Join(",",Enumerable.Range(1,8).Reverse().Select(t=>10*t))};LAST=10"
+            },
             7=>$"TENS={(mode%2==0?sum:a-b)};TOTAL={10*(mode%2==0?sum:a-b)}",
             8=>$"RESULT={(mode==0?10*sum:mode==1?10*(a-b):mode==2?sum:a-b)}",
             _=>throw new InvalidOperationException()
