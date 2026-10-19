@@ -111,13 +111,17 @@ Step 5: Confirm the total with counters or a second method and explain why your 
 Example 2: Five penguins, three seals and four otters are counted: 5+3+4=12 animals.
 Example 3: The guide spots 2 lions, 7 zebras and 8 giraffes: 2+8+7=17 animals.
 Example 4: Three groups contain 5, 4 and 6 visitors: 5+4+6=15 visitors.
-Original 2021 reptile story: Jada sees 8 snakes, 7 iguanas and 5 frogs: 8+7+5=20 animals across THREE groups.
-Original 2021 zoo bird exhibit: 3 herons, 6 hawks and 7 hummingbirds: 3+7+6=10+6=16 birds. These examples preserve the original quantities without copying publisher illustrations.",
+Original 2021 mental warm-up: 8+2+4=14 and 8+6=14; 7+3+6=16 and 7+9=16. Each pair has the same value: splitting an addend or regrouping does not change the total.
+Original 2021 reptile story: Jada sees 8 snakes, 7 iguanas and 5 frogs: 8+7+5=20 animals across THREE groups. One valid method splits 7 into 2 and 5: 8+2+5+5=20. A double ten-frame also shows twenty counters.
+Original 2021 zoo bird exhibit: 3 herons, 6 hawks and 7 hummingbirds: 3+7+6=10+6=16 birds.
+Original 2021 large cat exhibit: 8 lions, 4 tigers and 3 cheetahs: 8+4+3=15 large cats.
+Original 2021 petting zoo: 8 goats, 7 sheep and 4 pigs: 8+7+4=19 animals. These original source quantities are represented with first-party teaching text rather than copied publisher illustrations.",
             @"Step 1: Read the zoo story and identify every group named.
 Step 2: Write a three-addend equation, not a two-addend one.
 Step 3: Draw or model the three groups with counters.
 Step 4: Look for friendly pairs such as ten or a known sum, and calculate the total within 20.
-Step 5: Check all three quantities were included and give an answer with a unit.",
+Step 5: Check all three quantities were included and give an answer with a unit.
+Step 6: In the original zoo activities, show your thinking with drawings, numbers, or words and discuss different valid strategies. The digital equation check verifies arithmetic, not an individual pupil's drawing or classroom explanation.",
             @"Do not ignore the third group. 5+3+4 is 12, not 8. Not every three-addend problem contains a ten-pair, so never invent one or force a fake ten.",
             @"I can solve a three-group story within 20 using a strategy that fits the numbers."),
         new(@"PED:US-CCSS-MATH:G1:U03:L21",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-21/preparation.html",@"bdda6d45824c14cdbbba931843195f9efc05abf0c4c45c174ba21cdf81fdbe29",new[] { @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
