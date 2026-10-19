@@ -12,6 +12,12 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
 {
     public const string Version = "us-ccss-g1-full-grade-u04-l22-through-u05-l14-teaching-v1";
     public const string Unit4EndSourceVersion="us-ccss-g1-u04-l22-l23-original-activities-v2";
+    public const string Unit5EarlySourceVersion="us-ccss-g1-u05-l01-l07-source-activities-v2";
+    private static bool IsUnit5Early(string code)=>code is
+        "PED:US-CCSS-MATH:G1:U05:L01" or "PED:US-CCSS-MATH:G1:U05:L02" or
+        "PED:US-CCSS-MATH:G1:U05:L03" or "PED:US-CCSS-MATH:G1:U05:L04" or
+        "PED:US-CCSS-MATH:G1:U05:L05" or "PED:US-CCSS-MATH:G1:U05:L06" or
+        "PED:US-CCSS-MATH:G1:U05:L07";
     private static bool IsUnit4End(string code)=>code is
         "PED:US-CCSS-MATH:G1:U04:L22" or "PED:US-CCSS-MATH:G1:U04:L23";
     private sealed record Repair(string Code,string SourceUrl,string OriginalSha,string[] Outcomes,
@@ -34,42 +40,42 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
             @"I can estimate, count, and represent a collection up to 99. A real-life investigation needs real evidence."),
         new(@"PED:US-CCSS-MATH:G1:U05:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-1/preparation.html",@"39aba045753ec23ceacd9c40cbd05dfc4e50f98ce3f39f1fe0f9799e4435f276",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.C.4"],
             @"Add Tens or Ones",
-            @"Add TENS or ONES to a two-digit number without composing a new ten. Draw rods for tens and single dots for ones.",
-            @"Example 1: 43 + 5 = 48; three ones plus five ones makes eight ones. Example 2: 43 + 20 = 63; four tens plus two tens makes six tens, and three ones remain.",
+            @"Add TENS or ONES to a two-digit number without composing a new ten. Draw rods for tens and single dots for ones. Original 2021 What Did I Add? partner activity: spin a starting number; secretly choose a card, decide to add that number of ONES or TENS within 100, then let a partner infer the addition. The original warm-up also uses images of ten-frames; teacher verifies any partner reasoning.",
+            @"Example 1: 43 + 5 = 48; three ones plus five ones makes eight ones. Example 2: 43 + 20 = 63; four tens plus two tens makes six tens, and three ones remain. Original student equations: 43+50=93; 51+3=54; 51+30=81; 2+75=77; 20+75=95; 93+6=99; 60+28=88; 5+74=79. These are no-composing examples with the same original quantities."
             @"Step 1: Identify whether the addend contains tens or ones. Step 2: Add like units without combining ten ones. Step 3: Rewrite and check the resulting two-digit number.",
             @"Do not treat +20 as adding two ones. Do not generate a sum with ten or more ones in this no-composing lesson.",
             @"I can add tens or ones to two-digit numbers when no new ten is made."),
         new(@"PED:US-CCSS-MATH:G1:U05:L02",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-2/preparation.html",@"d5f9bd01b30984d63c60ef831e3ba9db91dfba03a1ff02e398bac487c9f4ef6a",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.C.4"],
             @"How Did You Add? PLC Activity",
-            @"Use place-value methods to add two two-digit numbers WITHOUT composing a new ten, and interpret equations showing those methods.",
-            @"Example 1: 23 + 45 = (20 + 40) + (3 + 5) = 60 + 8 = 68. Example 2: 32 + 54 = 86 by combining eight tens and six ones.",
+            @"Use place-value methods to add two two-digit numbers WITHOUT composing a new ten, and interpret equations showing those methods. Original 2021 Choral Count warm-up counts BACKWARD by ones from 70 to 20. Original student-facing task asks for 23+45. Next students match Elena and Andre drawings for 63+25 to two different correct methods. Original Five in a Row Stage 5 adds within 100 WITHOUT composing in a teacher-led partner game."
+            @"Example 1: 23 + 45 = (20 + 40) + (3 + 5) = 60 + 8 = 68. Example 2: Original Elena/Andre task 63+25=88: Elena may combine 60+20=80, 3+5=8, then 80+8=88. Andre can add 20 to 63 to get 83, then add 5 to get 88. Both are equivalent. Example 3: 32+54=86 by combining eight tens and six ones."
             @"Step 1: Break both addends into tens and ones. Step 2: Add tens together. Step 3: Add ones together (fewer than ten). Step 4: Interpret every equality and check the sum.",
             @"Do not regroup when the ones sum is below ten, and do not claim 23+45=20+40 without adding the ones.",
             @"I can explain valid equations for two-digit addition with no composing."),
         new(@"PED:US-CCSS-MATH:G1:U05:L03",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-3/preparation.html",@"2d5c8b8a5fd81e87736b2e54acfd6fe1f0ef46c6e6a4316edac14ae0a5cd6d35",[@"CCSS:1.NBT.C.4"],
             @"Add It, Explain It",
-            @"Write, not merely interpret, equations representing two-digit addition without composing a new ten.",
-            @"Example 1: 13 + 21 = 10 + 20 + 3 + 1 = 30 + 4 = 34. Example 2: 24 + 32 = (20+30)+(4+2)=56.",
+            @"Write, not merely interpret, equations representing two-digit addition without composing a new ten. Original 2021 warm-up sums 13+21, 13+31, 23+31, 33+41. Original Lin and Han activity starts 32+54 differently: Lin has 30+50=80, Han has 54+30=84; pupils COMPLETE the method. Original next task uses 23+74 and the I Heard You Say partner reflection."
+            @"Example 1: 13 + 21 = 10 + 20 + 3 + 1 = 30 + 4 = 34. Example 2: Lin and Han original 32+54=86: Lin 30+50=80, 2+4=6, total 86; Han 54+30=84, then 84+2=86. Example 3: original 23+74=97, where 20+70=90 and 3+4=7."
             @"Step 1: Sketch tens and ones for each addend. Step 2: Write an equation decomposing the quantities. Step 3: Combine tens and ones and write a true final equality. Step 4: Explain the equation.",
             @"An equation such as 13+21=30 is false because four ones have been dropped.",
             @"I can write my own equations showing a correct place-value addition method."),
         new(@"PED:US-CCSS-MATH:G1:U05:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-4/preparation.html",@"d0dfcf1a9ddb0e856a1e95d63556dd08dda10a6cdfa1ff7d3d8c92a91ab40170",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.C.4",@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6",@"CCSS:1.OA.D.8"],
             @"Center Day 1",
-            @"Teacher-led center for addition within 100 WITHOUT composing a new ten. Digital Practice checks numerical totals but not classroom partner turns.",
+            @"Teacher-led center for addition within 100 WITHOUT composing a new ten. Original 2021 warm-up: Kiran has 14 marbles, Priya has 23; pupils NOTICE and WONDER and invent their own addition/comparison questions. Original Number Puzzles Stage 3 uses digit cards at most once per page to create within-100 no-composing equations; partner choices and original gameboard require teacher review. Original center choices: Number Puzzles, Five in a Row, Greatest of Them All. Digital Practice checks numerical totals but not classroom turns."
             @"Example 1: 31 + 26 = 57: three tens plus two tens is fifty; one plus six makes seven. Example 2: 42 + 15 = 57 without regrouping.",
             @"Step 1: Read the selected center's two numbers. Step 2: Add tens and ones separately. Step 3: Make sure the ones sum is below ten. Step 4: Check by showing bundles and ones.",
             @"Do not mark a center game completed from a single numeric answer; do not slip in composing-ten questions as though they are the same objective.",
             @"I can add within 100 without composing a new ten in a teacher-facilitated center."),
         new(@"PED:US-CCSS-MATH:G1:U05:L05",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-5/preparation.html",@"3d56c54577b9ed9dbaa2eca03ba5f8c41e0aed29b705dde350dd9ccbb7cd7c6c",[@"CCSS:1.NBT.C.4"],
             @"Make a Ten",
-            @"Add a one-digit number to a two-digit number by composing a new TEN; decompose the one-digit addend to complete the next multiple of ten.",
-            @"Example 1: 47 + 8 = 47 + 3 + 5 = 50 + 5 = 55. Example 2: 36 + 7 = 36 + 4 + 3 = 43.",
+            @"Add a one-digit number to a two-digit number by composing a new TEN; decompose the one-digit addend to complete the next multiple of ten. Original 2021 Choose a Way to Add uses 8+47 and accepts several strategies, including making ten. Add Em Up Partner runs a practice round and five regular rounds with actual partner interaction. The optional Tyler teacher story includes 37 dollars plus 7 more dollars and 8 students plus 26 on the rug; classroom actions are teacher-reviewed."
+            @"Example 1: Original 8+47=47+3+5=55; composing ten first gives 50+5=55. Example 2: 36+7=36+4+3=40+3=43. Example 3: Optional Tyler teacher field trip 37+7=44 dollars. Example 4: Optional classroom group 8+26=34 students."
             @"Step 1: Find how many ones the two-digit number needs to reach the next ten. Step 2: Split the one-digit addend into that part and leftovers. Step 3: Compose a full ten and add leftovers. Step 4: Check by counting on.",
             @"Do not stop at 50 after using only three of the eight added ones in 47+8; five ones still remain.",
             @"I can make a new ten while adding a one-digit number to a two-digit number."),
         new(@"PED:US-CCSS-MATH:G1:U05:L06",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-6/preparation.html",@"973308633a370cd4487792a7ea75b8a8123eccf12337992b7cb76d277b123854",[@"CCSS:1.NBT.C.4",@"CCSS:1.OA.C.6"],
             @"Make a Ten and Make Sense of Equations PLC Activity",
-            @"Analyze the ORIGINAL 2021 two complementary strategies for 34+9: Elena begins with 34+6=40 and adds the remaining 3, while Andre begins with 9+1=10 and adds 33. Both must equal 43. The source also asks for 6+68=74. Learner drawings and teacher discussion are not automatically certified by the numeric answer.",
+            @"Analyze the ORIGINAL 2021 two complementary strategies for 34+9: Elena begins with 34+6=40 and adds the remaining 3, while Andre begins with 9+1=10 and adds 33. Both must equal 43. Source also asks for 6+68=74. Original 2021 Next Ten tasks: 45+□=50, 38+□=40, 63+□=70, 24+□=30, 42+□=50, 57+□=60, 71+□=80 and 89+□=90, with pupil explanation. Original Target Numbers game starts at 55 and seeks 95 or as close without exceeding it in six turns; genuine partner gameplay is teacher-led."
             @"Original Elena: 34+9=34+6+3=40+3=43. Original Andre: 34+9=9+1+33=10+33=43. Original 6+68=68+2+4=70+4=74. Additional 47+8=47+3+5=55.",
             @"Step 1: Read Elena and Andre's different first steps for 34+9. Step 2: Complete Elena's 34+6=40 then add 3 to reach 43. Step 3: Complete Andre's 9+1=10 then add 33 to reach 43. Step 4: Explain with counters or a drawing why both methods preserve 34+9. Step 5: For the separate source task, solve 6+68 by making 70 then adding 4. Teacher reviews original individual reasoning.",
             @"Do not write 47+8=50+8: moving three ones to complete a ten leaves five, not eight.",
@@ -77,7 +83,7 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
         new(@"PED:US-CCSS-MATH:G1:U05:L07",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-7/preparation.html",@"241b1c73722edb009d4121faa6cbcbe86161c462bdf79e9671cdd56b909761ee",[@"CCSS:1.NBT.C.4"],
             @"Does it Make a New Ten?",
             @"ORIGINAL 2021 Lin water-smudged source activity has FOUR separate open-choice situations: 32+□ with a ONE-DIGIT missing number that DOES make a ten; 16+□ with a ONE-DIGIT number that DOES NOT make a ten; 8+□ with a TWO-DIGIT missing number that DOES make a ten; and 8+□ with a TWO-DIGIT number that DOES NOT make a ten. Different correct values are possible; students write equations and a teacher reviews personal explanations.",
-            @"Original one-digit examples: 32+8=40 and 32+9=41 BOTH make a new ten; 16+0=16, 16+1=17, 16+2=18 and 16+3=19 do not. Original two-digit examples: 8+12=20, 8+35=43 and 8+49=57 make a ten; 8+11=19, 8+30=38 and 8+41=49 do not. Source requires thinking, not a single preset answer.",
+            @"Original one-digit examples: 32+8=40 and 32+9=41 BOTH make a new ten; 16+0=16, 16+1=17, 16+2=18 and 16+3=19 do not. Original two-digit examples: 8+12=20, 8+35=43 and 8+49=57 make a ten; 8+11=19, 8+30=38 and 8+41=49 do not. Original Jada decision prompts: 45+5 DOES make ten, 9+63 DOES, 26+3 DOES NOT, 8+47 DOES; explanations and true equations required. Source artwork behind the smudges still requires verified visual evidence. Source requires thinking, not a single preset answer."
             @"Step 1: Add the ones of both addends. Step 2: If the ones total reaches ten or more, compose one new ten. Step 3: Write an equation recording what changes. Step 4: Verify the total.",
             @"Do not claim every two-digit plus one-digit addition makes a new ten. 43+5=48 does not.",
             @"I can tell when adding composes a new ten and justify with an equation."),
@@ -162,11 +168,14 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
         }
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
-       IsTarget(doc,lesson)?(IsUnit4End(lesson.LessonCode)?Unit4EndSourceVersion:Version):previous;
+       IsTarget(doc,lesson)
+           ?(IsUnit4End(lesson.LessonCode)?Unit4EndSourceVersion:
+             IsUnit5Early(lesson.LessonCode)?Unit5EarlySourceVersion:Version)
+           :previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
        IsTarget(doc,lesson)&&
        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
-        (IsUnit4End(lesson.LessonCode)&&previous==Version));
+        (previous==Version&&(IsUnit4End(lesson.LessonCode)||IsUnit5Early(lesson.LessonCode))));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
