@@ -32,7 +32,7 @@ public static class UsCcssG1FullGradeStartQuestions
                 (mode==0?a+b<=20:true)&&
                 (mode<=1?c==0:(c>=1&&c<=9&&c<a&&c!=b)),
             ThreeStory or Expression => a>=1&&a<=9&&b==10-a&&c>=1&&c<=10&&
-                (family!=ThreeStory||mode!=2||(a==7&&b==3&&c==8)), 
+                (family!=ThreeStory||mode!=2||(a==7&&b==3&&c==8)),
             MakeTen or Pattern => a>=6&&a<=9&&b>10-a&&b<=10&&a+b<=20&&c==0&&
                 (family!=MakeTen||mode!=2||a==9),
             _=>false
