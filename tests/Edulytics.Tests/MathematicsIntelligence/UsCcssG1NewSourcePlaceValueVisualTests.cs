@@ -14,6 +14,39 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
             JsonSerializer.Serialize(new{parameters=p}));
 
     [Theory]
+    [InlineData(5,4,4,90,10)]
+    [InlineData(3,2,5,10,50)]
+    [InlineData(5,4,5,10,90)]
+    public void Original2021CheckItOffBoardMarksAUsedCellButNeverSuppliesOperator(
+        int firstTens,int secondTens,int mode,int used,int available)
+    {
+        const string family="usccss.g1.u04.l05.center.tens_and_within20";
+        string svg=Assert.IsType<string>(Visual(family,
+            new{a=firstTens,b=secondTens,c=0,mode}));
+        Assert.Equal(10,System.Text.RegularExpressions.Regex.Matches(
+            svg,"<rect class='g1-.*board|<rect class='g1-checked-off'|<rect class='g1-free-target'").Count);
+        Assert.Contains("class='g1-checked-off'",svg);
+        Assert.Contains("class='g1-free-target'",svg);
+        Assert.Contains($">{used}</text>",svg);
+        Assert.Contains($">{available}</text>",svg);
+        Assert.Equal(1,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='g1-board-cross'").Count);
+        Assert.DoesNotContain("MOVE=",svg);
+        Assert.DoesNotContain("EQUATION=",svg);
+        Assert.DoesNotContain("<image ",svg);
+    }
+
+    [Fact]
+    public void CheckItOffBoardRejectsNonSourceCardAndGameMode()
+    {
+        const string family="usccss.g1.u04.l05.center.tens_and_within20";
+        Assert.Null(Visual(family,new{a=4,b=5,c=0,mode=4}));
+        Assert.Null(Visual(family,new{a=5,b=4,c=1,mode=4}));
+        Assert.Null(Visual(family,new{a=8,b=2,c=0,mode=5}));
+        Assert.Null(Visual(family,new{a=4,b=2,c=0,mode=0}));
+    }
+
+    [Theory]
     [InlineData(4,0,"Activity 1: fixed 2021 collection")]
     [InlineData(1,1,"Activity 2: Bag F")]
     [InlineData(2,1,"Activity 2: Bag A")]
