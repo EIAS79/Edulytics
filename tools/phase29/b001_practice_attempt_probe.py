@@ -81,6 +81,10 @@ def syntactically_valid_wrong_answer(correct):
             "ADD":"SUBTRACT","SUBTRACT":"ADD",
         }
         replacement=categories.get(value.upper())
+        if key.upper()=="SORT" and value.upper() in ("EQUAL","UNEQUAL"):
+            # G1 U07 L10 physically sorts equally/unequally divided shapes.
+            # Both are the only source-valid labels; "GREATER" is not a sort.
+            replacement="UNEQUAL" if value.upper()=="EQUAL" else "EQUAL"
         if replacement is None and key.upper()=="ORDER":
             # Original G1 U06 L01 has THREE distinct measured strips; its
             # answer is a comma-separated permutation, not a scalar/category.
@@ -259,6 +263,14 @@ if __name__=="__main__":
                               json.dumps({"parameters":{"minimumVotes":3,"maximumVotes":10,"topic":0}}))
             self.assertRaises(ValueError,synthetic_survey_protocol,SURVEY_SENTINEL,
                               json.dumps({"parameters":{"minimumVotes":6,"maximumVotes":10,"topic":9}}))
+        def test_original_g1_equal_and_unequal_partition_sort_stays_valid(self):
+            self.assertEqual(
+                syntactically_valid_wrong_answer("SORT=EQUAL;PIECES=4"),
+                "SORT=UNEQUAL;PIECES=4")
+            self.assertEqual(
+                syntactically_valid_wrong_answer("SORT=UNEQUAL;PIECES=2"),
+                "SORT=EQUAL;PIECES=2")
+
         def test_original_u06_l01_three_strip_order_stays_a_permutation(self):
             for original in ("ORDER=A,B,C","ORDER=B,A,C","ORDER=C,B,A",
                              "ORDER=A,C,B","ORDER=B,C,A","ORDER=C,A,B"):
@@ -275,7 +287,8 @@ if __name__=="__main__":
                             "SHAPE=RECTANGLE","TIME=7:30","ORDER=2,3,6",
                             "CANDIDATES=34,44,54","MATCH=10+8;TOTAL=18",
                             "CARDS=4,8","ALT_ONES=24;WAYS=4","ANSWER=YES",
-                            "MATCH=A,C;TOTAL=20","MATCH=B,C;TOTAL=18","ORDER=A,B,C","ORDER=C,B,A"):
+                            "MATCH=A,C;TOTAL=20","MATCH=B,C;TOTAL=18","ORDER=A,B,C","ORDER=C,B,A",
+                            "SORT=EQUAL;PIECES=4","SORT=UNEQUAL;PIECES=2"):
                 wrong=syntactically_valid_wrong_answer(correct)
                 self.assertNotEqual(wrong,correct)
                 self.assertEqual(wrong.split(";")[0].split("=")[0],
