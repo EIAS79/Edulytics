@@ -29,6 +29,7 @@ public static class UsCcssG1FullGradeStartQuestions
         return family switch
         {
             Center => a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
+                (mode==0?a+b<=20:true)&&
                 (mode<=1?c==0:(c>=1&&c<=9&&c<a&&c!=b)),
             ThreeStory or Expression => a>=1&&a<=9&&b==10-a&&c>=1&&c<=10,
             MakeTen or Pattern => a>=6&&a<=9&&b>10-a&&b<=10&&a+b<=20&&c==0,
@@ -41,7 +42,10 @@ public static class UsCcssG1FullGradeStartQuestions
         int mode=random.Next(4),a=0,b=0,c=0;
         if(family==Center)
         {
-            a=random.Next(11,21);b=random.Next(1,10);
+            // In the original Grade 1 lesson 14, BOTH addends must total at most 20.
+            // Preserve the existing subtraction / distinct-card modes unchanged.
+            a=mode==0?random.Next(11,20):random.Next(11,21);
+            b=mode==0?random.Next(1,Math.Min(9,20-a)+1):random.Next(1,10);
             if(mode>=2)
                 do{c=random.Next(1,10);}while(c==b);
         }
