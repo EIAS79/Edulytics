@@ -43,7 +43,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             CountTens=>mode<=3&&a>=1&&a<=6&&b==0,
             MatchTens=>mode<=3&&a>=1&&a<=9&&b==0,
             AddRemoveTen=>mode<=3&&a>=2&&a<=8&&b==1,
-            AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,10-a),
+            AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,10-a)&&
+                (mode==0?a==3&&b==2:mode==1?a==7&&b==4:true),
             CenterTens=>(mode<=1&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,10-a))||
                         (mode>=2&&mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a),
             _=>false
@@ -60,7 +61,12 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         else if(family==CountTens){a=random.Next(1,7);}
         else if(family==MatchTens){a=random.Next(1,10);}
         else if(family==AddRemoveTen){a=random.Next(2,9);b=1;}
-        else if(family==AddRemoveMultipleTens){a=random.Next(2,8);b=random.Next(1,Math.Min(a,10-a)+1);}
+        else if(family==AddRemoveMultipleTens)
+        {
+            if(mode==0){a=3;b=2;} // Original 2021 Jada, Bag A 30 and Bag B 2 ten-towers.
+            else if(mode==1){a=7;b=4;} // Original 2021 Tyler, 7 ten-towers minus 40.
+            else{a=random.Next(2,8);b=random.Next(1,Math.Min(a,10-a)+1);}
+        }
         else if(family==CenterTens)
         {
             if(mode<=1){a=random.Next(2,8);b=random.Next(1,Math.Min(a,10-a)+1);}
@@ -103,9 +109,13 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             AddRemoveTen=>mode%2==0
                 ?$"There are {a} ten-cube towers. Add ONE whole tower of ten. Write TENS=number;TOTAL=number."
                 :$"There are {a} ten-cube towers. Remove ONE whole tower of ten. Write TENS=number;TOTAL=number.",
-            AddRemoveMultipleTens=>mode%2==0
-                ?$"Add {b} tens to {a} tens. Write TENS=number;TOTAL=number."
-                :$"Take away {b} tens from {a} tens. Write TENS=number;TOTAL=number.",
+            AddRemoveMultipleTens=>mode switch
+            {
+                0=>"Original 2021 U04 L04 How Many Are in the Bag? Jada has 30 cubes in Bag A and two TOWERS OF TEN in Bag B. How many cubes altogether? Write TENS=number;TOTAL=number.",
+                1=>"Original 2021 U04 L04 How Many Are in the Bag? Tyler has SEVEN TOWERS OF TEN in Bag C and takes away 40 cubes. How many cubes remain? Write TENS=number;TOTAL=number.",
+                2=>$"Original 2021 Add and Subtract Tens practice: add {b} tens to {a} tens. Write TENS=number;TOTAL=number.",
+                _=>$"Original 2021 Add and Subtract Tens practice: take away {b} tens from {a} tens. Write TENS=number;TOTAL=number."
+            },
             CenterTens=>mode switch
             {
                 0=>$"Check It Off number cards: add {a*10}+{b*10}. Write RESULT=number.",
