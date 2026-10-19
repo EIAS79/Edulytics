@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A–D source task review and code correction checkpoint; not a lesson approval",
+  "grade": "G1",
+  "ordinal": 126,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L07",
+  "title": "Put Together Flat Shapes",
+  "sourceBasis": {
+    "originalEdition": "Illustrative Mathematics Grade 1 (2021)",
+    "originalFullLessonRelativePath": "unit-7/lesson-7/lesson.html",
+    "observedOriginalHtmlSha256": "a118d512bb31f39a8515910dcd23e43c2ede495bd3de236f5d790f2be87d0cd8",
+    "observedSourceHashMatchedInventory": true,
+    "mode": "READ_ONLY original full teacher HTML, Student Facing tasks"
+  },
+  "stageA": {
+    "sourceTaskInspected": true,
+    "originalTasks": [
+      "Build a pattern-block object, TRACE its outside and count components",
+      "Rebuild the SAME outline using DIFFERENT pattern blocks, recount and compare",
+      "Optionally rebuild that SAME outline with the MOST possible pieces",
+      "Picture Books Stage 3: find and RECORD observed shapes in book pictures using drawing or words"
+    ],
+    "sourceGap": "Existing concepts mentioned same-shape task but instruction steps incorrectly suggested composing a DIFFERENT final shape from the same pieces; source Picture Books Stage 3 absent"
+  },
+  "stageB": {
+    "existingSourceRepairReused": true,
+    "correctionFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "commit": "c26a8ab9098125df229ea8e17d0c0485f06f9a85",
+    "example": "Same hexagon exterior covered with six equilateral small pattern triangles or two matching trapezoids",
+    "thirdPartyPublisherGraphicsCopied": false
+  },
+  "stageC": {
+    "existingPracticeFamily": "usccss.g1.u07.l07.compose_flat_shapers",
+    "existingRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-126-original-shape-creation-rubric.json",
+    "digitalMathCoverageOnlyPartial": true,
+    "teacherReviewBoundary": "Original tracing, student-created design, alternate physical block decompositions and picture books are not certified by arithmetic or virtual shape count"
+  },
+  "stageD": {
+    "sourceAssertionFile": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "assertionCommit": "1f41c882844fad0fa97a15ef12db72fc533a1d55",
+    "dotNetBuildAndTestsOnCurrentHead": "NOT_RUN",
+    "authenticatedStudentTeachingAndScoring": "PENDING",
+    "sourceGraphicsRightsAccessibility": "PENDING",
+    "individualOriginalV1AtoDSignoff": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
