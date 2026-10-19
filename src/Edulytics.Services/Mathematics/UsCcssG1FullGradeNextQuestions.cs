@@ -28,7 +28,8 @@ public static class UsCcssG1FullGradeNextQuestions
            mode<0||mode>3)return false;
         return family switch
         {
-            FlexibleAdd=>a>=6&&a<=9&&b>=11-a&&b<=10&&c==0,
+            FlexibleAdd=>a>=6&&a<=9&&b>=11-a&&b<=10&&c==0&&
+                (mode!=2||(a==8&&b==7)),
             ZooThree=>a>=1&&a<=8&&b>=1&&b<=8&&c>=1&&c<=8&&a+b+c<=20&&
                 (mode!=2||(a==8&&b==7&&c==5)),
             CenterTwoThree=>a>=1&&a<=8&&b>=1&&b<=8&&
@@ -43,7 +44,8 @@ public static class UsCcssG1FullGradeNextQuestions
         int mode=random.Next(4),a=0,b=0,c=0;
         if(family==FlexibleAdd)
         {
-            a=random.Next(6,10);b=random.Next(11-a,11);
+            if(mode==2){a=8;b=7;} // Original 2021 Lin/Han/Kiran 8+7 task.
+            else{a=random.Next(6,10);b=random.Next(11-a,11);}
         }
         else if(family==ZooThree)
         {
@@ -68,7 +70,9 @@ public static class UsCcssG1FullGradeNextQuestions
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G1 L56–60 parameters");
         string prompt=family switch
         {
-            FlexibleAdd=>$"Compare addition methods for {a}+{b} within 20. Make a ten by moving counters from the second addend. Write MOVE=number;REST=number;TOTAL=number.",
+            FlexibleAdd=>mode==2?
+                "Original 2021 Student Facing: Lin, Han and Kiran each solve 8+7. Compare the THREE mathematically equivalent methods: Lin uses 8+2+5, Han uses 7+7+1, Kiran uses 8+8-1. Write LIN=expression=value;HAN=expression=value;KIRAN=expression=value;TOTAL=number. Draw or explain why each method works with your teacher.":
+                $"Compare addition methods for {a}+{b} within 20. Make a ten by moving counters from the second addend. Write MOVE=number;REST=number;TOTAL=number.",
             ZooThree=>mode==2?
                 $"ORIGINAL 2021 STUDENT STORY: Jada sees 8 snakes, 7 iguanas and 5 frogs at the reptile exhibit. How many reptiles? Count all THREE groups and write the matching equation. Write TOTAL=number;EQUATION=number+number+number=number.":
                 mode%2==0?
@@ -91,7 +95,9 @@ public static class UsCcssG1FullGradeNextQuestions
         int a=p["a"],b=p["b"],c=p["c"],mode=p["mode"];
         return family switch
         {
-            FlexibleAdd=>$"MOVE={10-a};REST={b-(10-a)};TOTAL={a+b}",
+            FlexibleAdd=>mode==2?
+                "LIN=8+2+5=15;HAN=7+7+1=15;KIRAN=8+8-1=15;TOTAL=15":
+                $"MOVE={10-a};REST={b-(10-a)};TOTAL={a+b}",
             ZooThree=>$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}",
             CenterTwoThree=>mode%2==0
                 ?$"TOTAL={a+b};EQUATION={a}+{b}={a+b}"
