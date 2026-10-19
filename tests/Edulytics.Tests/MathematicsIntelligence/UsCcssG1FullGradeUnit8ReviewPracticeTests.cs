@@ -41,6 +41,42 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
         Assert.Equal("NUMBER=47;VALID=YES",UsCcssG1FullGradeUnit8ReviewQuestions.Solve(f,p));
         Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(f,p,"NUMBER=47;VALID=NO"));
     }
+    [Theory]
+    [InlineData(1)]
+    [InlineData(47)]
+    [InlineData(99)]
+    [InlineData(100)]
+    [InlineData(112)]
+    [InlineData(120)]
+    public void Original2021RiddleRangeOneTo120AndFourCluesAreSupported(int target)
+    {
+        const string f="usccss.g1.u08.l10.write_riddle_numeric_check";
+        int b=target/2;
+        foreach(int mode in new[]{0,1})
+        {
+            var p=new Dictionary<string,int>{{"a",target},{"b",b},{"c",0},{"mode",mode}};
+            Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(f,p));
+            var answer=UsCcssG1FullGradeUnit8ReviewQuestions.Solve(f,p);
+            Assert.Equal(mode==0?$"NUMBER={target};VALID=YES":$"NUMBER={target};VALID=NO",answer);
+            Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(f,p,answer));
+            Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(f,p,$"NUMBER={target};VALID=MAYBE"));
+            var prompt=UsCcssG1FullGradeUnit8ReviewQuestions.Build(f,new Random(target*17+mode)).Prompt;
+            Assert.Contains("FOUR-clue",prompt);
+            Assert.Contains("1 to 120",prompt);
+            Assert.Contains("addition expression",prompt);
+        }
+    }
+    [Fact]
+    public void Original2021RiddleTargetOutsideOneTo120IsInvalid()
+    {
+        const string f="usccss.g1.u08.l10.write_riddle_numeric_check";
+        foreach(int target in new[]{0,121})
+        {
+            var p=new Dictionary<string,int>{{"a",target},{"b",0},{"c",0},{"mode",0}};
+            Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(f,p));
+        }
+    }
+
     [Fact]
     public void TenDistinctTasksAreAvailableForEveryU08DigitalFamily()
     {

@@ -50,7 +50,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             6=>a>=1&&a<=119&&b>=1&&b<=120-a&&c==0,
             7=>a>=20&&a<=99&&b==0&&c==0,
             8=>a>=20&&a<=99&&b==10&&c==0,
-            9=>a>=20&&a<=99&&b==10&&c==0,
+            9=>a>=1&&a<=120&&b>=0&&b<=a&&c==0,
             _=>false
         };
     }
@@ -65,6 +65,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             else if(n<=4){a=random.Next(2,20);b=random.Next(1,10);}
             else if(n==5){a=random.Next(7,21);b=random.Next(1,a);}
             else if(n==6){a=random.Next(1,120);b=random.Next(1,Math.Min(6,121-a));}
+            else if(n==9){a=random.Next(1,121);b=random.Next(0,a+1);}
             else{a=random.Next(20,100);b=n>=8?10:0;}
             var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
             if(!Valid(family,p))continue;
@@ -82,7 +83,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 6=>$"Start counting at {a} (NOT at one); count ON by {b} steps, remaining at most 120. Write LAST=number.",
                 7=>$"Make {a} in two ways. Exchange ONE ten-rod for ten ones. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.",
                 8=>$"Number riddle: The secret two-digit number is 10 LESS than {a+10}, and has {a/10} tens and {a%10} ones. Write NUMBER=number.",
-                9=>$"Review a hypothetical student-written number riddle (not proof of authorship): the secret is {a}, has {a/10} tens and {a%10} ones, and is ten less than {a+10}. Verify its numerical clues. Write NUMBER=number;VALID=YES/NO.",
+                9=>$"Review a proposed FOUR-clue number riddle for a secret number within 1 to 120 (not proof of authorship): Clue 1: My number is more than {a-1}. Clue 2: My number is less than {a+1}. Clue 3: My number has {a/10} tens and {a%10} ones. Clue 4, an addition expression: {b} + {a-b+(mode%2)}. Decide whether ALL four clues are consistent. Write NUMBER=number;VALID=YES/NO.",
                 _=>throw new InvalidOperationException()
             };
             return new(family,prompt,"Use first-grade addition, difference, grouping and place value reasoning. Actual student-authored riddles, drawings and PLC explanations require independent teacher evidence.",AssessmentItemType.ShortAnswer,p);
@@ -104,7 +105,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             6=>$"LAST={a+b}",
             7=>$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}",
             8=>$"NUMBER={a}",
-            9=>$"NUMBER={a};VALID=YES",
+            9=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}",
             _=>throw new InvalidOperationException()
         };
     }

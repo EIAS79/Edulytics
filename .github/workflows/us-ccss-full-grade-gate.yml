@@ -28,6 +28,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1IndependentNumericalOracleTests.cs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json'
+      - 'tests/us-ccss-g1-full-grade-runtime-family-map.test.cjs'
       - 'tools/curriculum/us-ccss-full-grade-gate.cjs'
       - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
       - 'tests/us-ccss-full-grade-worklist.test.cjs'
@@ -60,6 +62,8 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1IndependentNumericalOracleTests.cs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json'
+      - 'tests/us-ccss-g1-full-grade-runtime-family-map.test.cjs'
       - 'tools/curriculum/us-ccss-full-grade-gate.cjs'
       - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
       - 'tests/us-ccss-full-grade-worklist.test.cjs'
@@ -88,6 +92,7 @@ jobs:
       - name: Test honest 96-lesson source triage and fail-closed grade control
         run: |
           node --test tests/us-ccss-full-grade-gate.test.cjs
+          node --test tests/us-ccss-g1-full-grade-runtime-family-map.test.cjs
           node --test tests/us-ccss-full-grade-worklist.test.cjs
           node --test tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs
           node --test tests/us-ccss-g1-full-grade-authorship-review.test.cjs

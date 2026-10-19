@@ -59,7 +59,7 @@ test('authored-only original lesson 65 must not be certified by unrelated numeri
   assert.equal(validLessonAssessment(65,{...e,actualTeacherObservationNotClaimed:false},()=>true),false);
 });
 test('mixed digital/authored original lesson 146 needs BOTH proofs',()=>{
-  const digital={allowedFamilies:['usccss.g1.u08.l10.write_number_riddles'],
+  const digital={allowedFamilies:['usccss.g1.u08.l10.write_riddle_numeric_check'],
     realPracticeGradingPersisted:true,independentCorrectAndWrongAnswersVerified:true,
     independentGradingProofPath:'math',independentGradingProofSha256:'a'.repeat(64),
     runtimePracticeProofPath:'attempt',runtimePracticeProofSha256:'b'.repeat(64)};

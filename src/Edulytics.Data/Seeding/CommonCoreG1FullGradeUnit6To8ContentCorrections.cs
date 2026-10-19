@@ -221,10 +221,10 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
             @"I can solve number riddles and prove a candidate satisfies all clues."),
         new(@"PED:US-CCSS-MATH:G1:U08:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-10/preparation.html",@"b05db505b2fc2f6fd1a6d0ef8e5e1ff62c6d3fc13bcf03e941504436f748dd59",[@"CCSS:1.NBT.C.4"],
             @"Write Number Riddles",
-            @"Create an ORIGINAL number riddle using place-value clues and a truthful addition/subtraction relation, then solve it and check uniqueness when requested. Authorship and clarity need teacher assessment.",
-            @"Example 1: I am between 40 and 50, have 4 tens and 7 ones, and am 10 more than 37. I am 47. Example 2: I have six tens and two ones, and am 10 less than 72: I am 62.",
-            @"Step 1: Choose a target two-digit number. Step 2: Write independent true clues about tens, ones, or ten more/less. Step 3: Check every equation and clue. Step 4: Ask another person to solve it. Step 5: Revise if clues are wrong or unclear.",
-            @"Do not invent a clue inconsistent with your own target: if the number is 47, 'ten more than 47' is 57, not 47. A generated prompt cannot prove student originality.",
+            @"Write an ORIGINAL four-clue number riddle about a number between 1 and 120. Include accurate place-value clues and make the FOURTH clue an addition expression. Then check each clue and ask a partner to solve. A numeric Practice check cannot prove authorship or real classroom activity.",
+            @"Example 1: Choose 47. Four clues: (1) Greater than 40, (2) less than 50, (3) four tens and seven ones, (4) 40 + 7. Each clue fits 47. Example 2: Choose 112. Four clues: (1) greater than 110, (2) less than 115, (3) one hundred, one ten and two ones, (4) 100 + 12. Each clue fits 112.",
+            @"Step 1: Choose a secret number from 1 through 120. Step 2: Write exactly four clues: use true ranges/place value and make the FINAL clue a matching addition expression. Step 3: Check all four clues against the same secret number; notice 100–120 can contain one hundred and extra tens/ones. Step 4: Have a partner attempt the riddle and explain the number. Step 5: Revise an unclear or inconsistent clue after a teacher checks the written work.",
+            @"Do not make an incorrect final addition clue: 40 + 8 cannot describe 47. A two-digit-only limit incorrectly excludes valid targets 100 through 120. Do not claim an auto-scored answer proves that the learner authored four coherent clues.",
             @"I can write an accurate number riddle and explain its solution.")
     ];
     private static Repair? Find(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson)=>
