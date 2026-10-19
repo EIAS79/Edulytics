@@ -101,7 +101,10 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             Kind.NoComposeTwoDigits=>a>=10&&a<=89&&b>=10&&b<=89&&sum<=99&&ones<10,
             Kind.MakeNewTen=>a>=20&&a<=89&&b>=1&&b<=9&&sum<=99&&ones>=10,
             Kind.ComposingTwoDigits=>a>=10&&a<=89&&b>=10&&b<=89&&sum<=100&&ones>=10,
-            Kind.Flexible=>a>=20&&a<=89&&b>=1&&b<=(spec.LessonCode=="L07"?9:10)&&sum<=99,
+            Kind.Flexible=>a>=20&&a<=89&&b>=1&&b<=(spec.LessonCode=="L07"?9:10)&&sum<=99&&
+                (spec.LessonCode!="L07"||mode<=1||
+                 (mode==2?a%10>=1&&b==10-a%10:
+                          a%10<=8&&b==9-a%10)),
             _=>false
         };
     }
@@ -123,6 +126,10 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             {
                 Kind.NoComposeTwoDigits or Kind.ComposingTwoDigits=>random.Next(10,90),
                 Kind.TensOrOnes when mode%2==1=>random.Next(1,4)*10,
+                Kind.Flexible when spec.LessonCode=="L07"&&mode==2=>
+                    10-a%10, // Smallest one-digit missing addend that makes a ten.
+                Kind.Flexible when spec.LessonCode=="L07"&&mode==3=>
+                    9-a%10,  // Largest positive one-digit missing addend without a new ten.
                 Kind.Flexible=>random.Next(1,spec.LessonCode=="L07"?10:11),
                 _=>random.Next(1,10)
             };
@@ -141,6 +148,22 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 string operation=spec.LessonCode=="L14"
                     ?$"Two hypothetical food-drive boxes contain {a} and {b} items."
                     :$"Add {a}+{b} within 100.";
+                if(spec.LessonCode=="L07"&&mode>=2)
+                {
+                    string condition=mode==2?"WOULD make a new ten":"would NOT make a new ten";
+                    string extremum=mode==2?"SMALLEST":"LARGEST";
+                    string promptMissing=
+                        $"Original source-inspired Missing Numbers: {a}+□. Find the {extremum} " +
+                        $"POSITIVE ONE-DIGIT missing addend that {condition}. " +
+                        "Write MISSING=number;NEW_TEN=YES/NO;TOTAL=number. " +
+                        "Use the ones-place digits to explain your choice.";
+                    return new(family,promptMissing,
+                        "The source permits more than one answer to an open missing-digit task; " +
+                        "this specifically requests an extremal digit to give a unique, " +
+                        "independently gradeable digital case. Students' chosen equations " +
+                        "and real classroom reasoning are assessed separately.",
+                        AssessmentItemType.ShortAnswer,candidate);
+                }
                 string prompt=spec.Kind switch
                 {
                     Kind.MakeNewTen=>$"{activity} {operation} To form the next ten, split the smaller addend. Write MOVE=number;REST=number;TOTAL=number.",
@@ -159,6 +182,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G1 U05 source-scoped operands");
         var spec=Get(family)!;int a=p["a"],b=p["b"],sum=a+b;
         if(spec.LessonCode=="L14")return FoodDriveSolve(a,b,p["mode"]);
+        if(spec.LessonCode=="L07"&&p["mode"]>=2)
+            return $"MISSING={b};NEW_TEN={(p["mode"]==2?"YES":"NO")};TOTAL={sum}";
         return spec.Kind switch
         {
             Kind.MakeNewTen=>$"MOVE={10-a%10};REST={b-(10-a%10)};TOTAL={sum}",
