@@ -48,8 +48,8 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("8 to 10 is 2",text(24));
         Assert.Contains("How Close? Subtract from 20, Stage 2",text(27));
         Assert.Contains("selects TWO or THREE cards",text(27));
-        Assert.Contains("ORIGINAL Set A: find missing values",text(24));
-        Assert.Contains("ORIGINAL Set B: find missing addends",text(24));
+        Assert.Contains("ORIGINAL Set A: fill 12-7=□, 18-5=□",text(24));
+        Assert.Contains("ORIGINAL Set B: fill 5+□=18, 13=□+6, 20=15+□",text(24));
         Assert.Contains("8 snakes, 7 iguanas and 5 frogs",text(20));
         Assert.Contains("3 herons, 6 hawks and 7 hummingbirds",text(20));
         Assert.Contains("8+2+4=14 and 8+6=14",text(20));
