@@ -166,6 +166,37 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
         if len(row)!=5 or row[0].lower()!=lesson_id.lower() or not row[2] or not row[3].strip():
             return {"status":"QUESTION_FAMILY_OR_ANSWER_MISSING"}
         _,item_id,family,answer,parameter_json=row
+        # Original 2021 G1 U03 L14 Stage 2: only a genuinely generated
+        # two-card mode must show the first-party two-blank SVG in the
+        # authenticated student's real Practice page. This is a targeted
+        # V1 Stage-D learner-rendering check, not publisher artwork copying.
+        l51_card_mode = None
+        l51_board_rendered = False
+        if family == "usccss.g1.u03.l14.center.add_subtract":
+            try:
+                payload=json.loads(parameter_json)
+                params=payload.get("parameters",payload)
+                if not isinstance(params,dict):
+                    raise ValueError("Missing server-owned parameters")
+                l51_card_mode=params.get("mode")
+                if type(l51_card_mode) is not int or l51_card_mode not in (0,1,2,3):
+                    raise ValueError("Invalid original Number Puzzles mode")
+            except (ValueError,TypeError,AttributeError,json.JSONDecodeError):
+                return {"status":"G1_L51_GENERATION_PARAMETER_INTEGRITY_FAILED",
+                        "family":family}
+            if l51_card_mode>=2:
+                # Renderer creates a first-party accessible SVG with exactly
+                # two blank card positions; answers must NOT be prefilled.
+                import html
+                student_page=html.unescape(page)
+                l51_board_rendered=(
+                    "<svg " in student_page and
+                    "practice-math-visual" in student_page and
+                    "Each card may only be used once" in student_page and
+                    "Different cards, no repetition." in student_page)
+                if not l51_board_rendered:
+                    return {"status":"G1_L51_TWO_CARD_BOARD_NOT_IN_STUDENT_PRACTICE",
+                            "family":family,"mode":l51_card_mode}
         synthetic_survey = family == SURVEY_FAMILY
         if synthetic_survey:
             try:
@@ -229,7 +260,11 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
         if synthetic_survey:
             return {"status":"SYNTHETIC_SURVEY_TALLY_PERSISTED_NEEDS_REAL_TEACHER_VERIFICATION",
                     "family":family,"humanParticipantsVerified":False}
-        return {"status":"SELF_CONSISTENT_GRADE_PERSISTED","family":family}
+        result={"status":"SELF_CONSISTENT_GRADE_PERSISTED","family":family}
+        if l51_card_mode is not None:
+            result["numberPuzzleMode"]=l51_card_mode
+            result["numberPuzzleBoardRendered"]=l51_board_rendered
+        return result
     except urllib.error.HTTPError as exc:
         return {"status":"HTTP_ERROR","httpStatus":exc.code}
     except (ValueError,TypeError,IndexError,AssertionError) as exc:
