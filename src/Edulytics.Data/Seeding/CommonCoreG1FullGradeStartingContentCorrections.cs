@@ -10,6 +10,12 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5";
     private const string ZooLessonCode="PED:US-CCSS-MATH:G1:U03:L20";
     public const string ZooSourceContentVersion="us-ccss-g1-u03-l20-zoo-2021-source-v6";
+    private const string CenterLessonCode="PED:US-CCSS-MATH:G1:U03:L21";
+    private const string TeenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L22";
+    private const string TenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L23";
+    public const string CenterSourceContentVersion="us-ccss-g1-u03-l21-centers-2021-source-v6";
+    public const string TeenSubtractSourceContentVersion="us-ccss-g1-u03-l22-teen-2021-source-v6";
+    public const string TenSubtractSourceContentVersion="us-ccss-g1-u03-l23-ten-2021-source-v6";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -129,11 +135,12 @@ Step 6: In the original zoo activities, show your thinking with drawings, number
         new(@"PED:US-CCSS-MATH:G1:U03:L21",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-21/preparation.html",@"bdda6d45824c14cdbbba931843195f9efc05abf0c4c45c174ba21cdf81fdbe29",new[] { @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
             @"Center Day 3",
             @"Practice two-number and three-number addition within 20 in the How Close? and Five in a Row centers. Make a ten, count on or use known facts. Write an accurate three-addend equation for each three-group problem. Physical turn-taking, cards and winning rows remain class activities; digital Practice can check only numeric equations.",
-            @"Learning goals: add two AND three numbers within 20; write equations with three addends. You may arrange addends to make ten or use a known double. The original How Close? and Five in a Row game rules, partners and materials require a real classroom.",
+            @"Learning goals: add two AND three numbers within 20; write equations with three addends. You may arrange addends to make ten or use a known double. The original How Close? and Five in a Row game rules, partners and materials require a real classroom. The original 2021 warm-up also asks What do you know about 20? Learners may show 20 as two filled ten-frames, 10+10, 13+7, or twenty counters, and discuss how representations are connected; this open response remains teacher-facilitated.",
             @"Example 1: Three counters groups: 3+6+7=3+7+6=10+6=16.
 Example 2: Two-number card: 8+5=10+3=13.
 Example 3: Three-number card: 4+5+6=10+5=15.
-Example 4: 2+8+9=10+9=19. Every group is counted once.",
+Example 4: 2+8+9=10+9=19. Every group is counted once.
+Original 2021 warm-up representation: 10+10=13+7=20. Two full ten-frames also represent 20; pupils can suggest and explain other mathematically correct representations.",
             @"Step 1: Read the two or three visible card/group values.
 Step 2: Decide whether to count on, make ten or regroup.
 Step 3: For three groups, write a full equation containing three addends before simplifying.
@@ -146,26 +153,30 @@ Original source FIVE IN A ROW center (teacher-led): pick a number card, choose t
         new(@"PED:US-CCSS-MATH:G1:U03:L22",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-22/preparation.html",@"ffd4ed62506326b6154d4231afe24476c91c6dd7553bb4840c317d4a43a1710d",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
             @"Subtract from Teen Numbers",
             @"Subtract a one-digit amount from a teen number, including when you must break apart a ten. Compare taking away counters with counting on from the subtracted amount to the starting amount. Use a full ten-frame and extra ones to see why removing more than the loose ones must cross ten.",
-            @"Learning goal: subtract within 20 in a way that makes mathematical sense. For 14-6, remove four ones to reach ten, then remove two more to reach eight. Or count from six to fourteen: 6+8=14. Distinguish subtracting without breaking a ten (e.g., 17-4=13) from crossing ten (14-6=8).",
+            @"Learning goal: subtract within 20 in a way that makes mathematical sense. For 14-6, remove four ones to reach ten, then remove two more to reach eight. Or count from six to fourteen: 6+8=14. Distinguish subtracting without breaking a ten (e.g., 17-4=13) from crossing ten (14-6=8). In the original 2021 source warm-up, 14-4=10 helps solve 14-5=9 and 17-7=10 helps solve 17-9=8. The original source story also asks how many crayons Elena has left after giving 7 away from 16.",
             @"Example 1: 14-6: first 14-4=10, then 10-2=8, so 14-6=8.
 Example 2: 12-5: remove two to reach ten and three more to reach seven, so 12-5=7.
 Example 3: 17-4=13: remove four ones; the full ten stays intact.
-Example 4: 13-8=5 because 8+5=13. Count on to check.",
+Example 4: 13-8=5 because 8+5=13. Count on to check.
+Original 2021 Student Facing: Elena has 16 crayons and gives 7 to Diego. She has 16-7=9 crayons left. One method uses 16-6=10, then 10-1=9; another counts from 7 up to 16. The classroom poster and explanation are not automatically verified by numeric Practice.",
             @"Step 1: Show the teen starting value as ten and some ones.
 Step 2: Find how many counters to remove and whether the loose ones are enough.
 Step 3: If needed, subtract to ten first, then remove the remaining amount.
 Step 4: Write accurate equations for each stage and find the final result.
-Step 5: Verify with a related addition equation.",
+Step 5: Verify with a related addition equation.
+Step 6: For the original Elena story, represent the 16 crayons and 7 given away, show your own thinking with drawings, numbers, or words, and explain the method to a teacher or partner.",
             @"Do not pretend crossing ten is the same as removing only loose ones. 14-6 is not 14-4=10 as the final answer; two further counters must be removed. When using a chain, keep both sides equal: 14-6=14-4-2=8.",
             @"I can subtract from teen numbers by taking away, counting on, or using the structure of ten."),
         new(@"PED:US-CCSS-MATH:G1:U03:L23",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-23/preparation.html",@"56d2765a92f9b568461f2e650752f6cb7b95f275e1d8efe4a11a5e734bf3276f",new[] { @"CCSS:1.OA.C.6" },
             @"Use a Ten to Subtract",
             @"Use a full ten-frame as a landmark for subtraction within 20. Move down to ten first, then subtract the rest. Show each step with true equations. Compare this method with counting on to verify the difference, and explain why a subtraction across ten needs more than one removal.",
-            @"Learning goal: use one ten to find differences within 20. For 13-6, split six into three and three, then 13-3-3=7. Another check: 6+7=13. Note the incorrect equality 13-3=10-3=7; 13-3 is 10 and 10-3 is 7, so the chain falsely equates different values.",
+            @"Learning goal: use one ten to find differences within 20. For 13-6, split six into three and three, then 13-3-3=7. Another check: 6+7=13. Note the incorrect equality 13-3=10-3=7; 13-3 is 10 and 10-3 is 7, so the chain falsely equates different values. Original 2021 students compare Diego's and Andre's different ten-frame methods for 15-8 and then solve 14-5 and 13-6 by a chosen valid method; drawing and method discussion require teacher review.",
             @"Example 1: 13-6=13-3-3=10-3=7.
 Example 2: 15-8=15-5-3=10-3=7.
 Example 3: 12-7=12-2-5=10-5=5.
-Example 4: 16-9=16-6-3=10-3=7.",
+Example 4: 16-9=16-6-3=10-3=7.
+Original 2021 mental warm-up: 17-7=10, 17-7-1=9, 17-8=9, and 17-9=8.
+Original 2021 Diego and Andre task: 15-8=7; a separate correct step chain is 15-5=10, then 10-3=7. Additional student tasks: 14-5=9 and 13-6=7, with drawings, numbers, or words to explain the chosen method.",
             @"Step 1: Show the first number as ten and some ones on a double ten-frame.
 Step 2: Find how many ones to subtract to reach exactly ten.
 Step 3: Split the amount being subtracted into that part and the remaining part.
@@ -488,13 +499,20 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
-        IsTarget(doc,lesson)?
-            (lesson.LessonCode==ZooLessonCode?ZooSourceContentVersion:Version):previous;
+        IsTarget(doc,lesson)?lesson.LessonCode switch
+        {
+            ZooLessonCode=>ZooSourceContentVersion,
+            CenterLessonCode=>CenterSourceContentVersion,
+            TeenSubtractLessonCode=>TeenSubtractSourceContentVersion,
+            TenSubtractLessonCode=>TenSubtractSourceContentVersion,
+            _=>Version
+        }:previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
-         (lesson.LessonCode==ZooLessonCode&&previous==Version));
+         (previous==Version&&lesson.LessonCode is
+             ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
