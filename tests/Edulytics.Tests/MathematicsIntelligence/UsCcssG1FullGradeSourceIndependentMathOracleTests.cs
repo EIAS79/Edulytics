@@ -20,11 +20,18 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
         return i switch
         {
             0=>mode%2==0?$"LONGER={Relation(a,b,"RED","BLUE")};DIFFERENCE={Math.Abs(a-b)}":
-                "ORDER="+string.Join(",",new[]{
-                    (Length:a,Label:"A"),(Length:b,Label:"B"),
-                    (Length:c,Label:"C")}
-                    .OrderBy(x=>x.Length).Select(x=>x.Label)),
-            1 or 2=>$"LONGER={Relation(a,b,"A","B")}",
+                "ORDER="+string.Join(",",
+                    (mode==1
+                        ?new[]{(Length:a,Label:"A"),(Length:b,Label:"B"),(Length:c,Label:"C")}.OrderBy(x=>x.Length)
+                        :new[]{(Length:a,Label:"A"),(Length:b,Label:"B"),(Length:c,Label:"C")}.OrderByDescending(x=>x.Length))
+                    .Select(x=>x.Label)),
+            1=>$"LONGER={Relation(a,b,"A","B")}",
+            2=>mode switch
+            {
+                0=>$"LONGER={Relation(a,b,"A","B")}",
+                1=>$"SHORTER={Relation(a,b,"CLARE","MAI")}",
+                _=>$"FITS={(b<=a?"YES":"NO")}"
+            },
             3=>mode%2==0?$"RESULT={a+b}":
                 $"RELATION={Relation((a%8+1)+(b%8+1),(a/10%8+1)+(b/10%8+1),"GREATER","LESS")}",
             4 or 5=>$"LENGTH={a}",
