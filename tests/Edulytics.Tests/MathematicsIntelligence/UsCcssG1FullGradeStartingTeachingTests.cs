@@ -38,6 +38,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("ORIGINAL Set B: find missing addends",text(24));
         Assert.Contains("20-15=5",text(25));
         Assert.Contains("7+5=12",text(26));
+        Assert.Contains("Elena has 6 counters",text(26));
         Assert.Contains("16-9=7",text(27));
         var preexistingStory=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L28");
         Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,preexistingStory));

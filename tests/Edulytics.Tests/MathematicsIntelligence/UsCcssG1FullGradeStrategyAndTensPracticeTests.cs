@@ -91,6 +91,34 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
         }
     }
     [Fact]
+    public void Source2021ElenaSixToEighteenUnknownChangeMustBeReachableAndCorrect()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;
+        var p=new Dictionary<string,int>{{"a",6},{"b",12},{"c",0},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+        Assert.Equal("UNKNOWN=12;EQUATION=6+12=18",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "UNKNOWN=12;EQUATION=6+12=18"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "UNKNOWN=11;EQUATION=6+11=17"));
+        var seen=Enumerable.Range(0,350)
+            .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(n*71+7)))
+            .Where(q=>q.Parameters["mode"]==1).ToArray();
+        Assert.True(seen.Length>30);
+        Assert.All(seen,q=>
+        {
+            Assert.Equal(6,q.Parameters["a"]);
+            Assert.Equal(12,q.Parameters["b"]);
+            Assert.Contains("Elena has 6 counters",q.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+        });
+        p["b"]=13;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+    }
+
+    [Fact]
     public void TensAreNeverMistakenForSingleOnesOrNegativeOne()
     {
         var add=new Dictionary<string,int>{{"a",4},{"b",1},{"c",0},{"mode",0}};

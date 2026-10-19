@@ -62,7 +62,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         return family switch
         {
             CountOnOrAway or FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a,
-            StoryUnknowns=>a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20,
+            StoryUnknowns=>(a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
+                (mode==1&&a==6&&b==12),
             CenterWithin20=>mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a,
             CountTens=>mode<=3&&a>=1&&a<=6&&b==0&&
                 (mode!=0||a==4),
@@ -85,7 +86,13 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         int mode=family is StoryUnknowns or CenterTens?random.Next(6):random.Next(4);
         int a=0,b=0;
         if(family is CountOnOrAway or FlexibleSubtract){a=random.Next(11,21);b=random.Next(1,Math.Min(9,a-1)+1);}
-        else if(family==StoryUnknowns){a=random.Next(1,11);b=random.Next(1,11);}
+        else if(family==StoryUnknowns)
+        {
+            // Original 2021 U03 L26 learner-authored source problem:
+            // Elena starts with 6 counters and finishes with 18.
+            if(mode==1){a=6;b=12;}
+            else{a=random.Next(1,11);b=random.Next(1,11);}
+        }
         else if(family==CenterWithin20){a=random.Next(11,18);b=random.Next(1,21-a);}
         else if(family==CountTens){a=mode==0?4:random.Next(1,7);}
         else if(family==MatchTens){a=random.Next(1,10);}
@@ -126,7 +133,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             StoryUnknowns=>mode switch
             {
                 0=>$"{a} birds are here and {b} more arrive. How many birds NOW? Write UNKNOWN=number;EQUATION=number+number=number.",
-                1=>$"{a} birds are here; some arrive, and now {t} birds are here. How many ARRIVED? Write UNKNOWN=number;EQUATION=number+number=number.",
+                1=>a==6&&b==12?
+                    "ORIGINAL 2021 STORY: Elena has 6 counters. She gets some more. Now she has 18 counters. How many MORE did Elena get? Write UNKNOWN=number;EQUATION=number+number=number.":
+                    $"{a} birds are here; some arrive, and now {t} birds are here. How many ARRIVED? Write UNKNOWN=number;EQUATION=number+number=number.",
                 2=>$"Some birds are here; {b} arrive, and now {t} birds are here. How many were here at START? Write UNKNOWN=number;EQUATION=number+number=number.",
                 3=>$"{t} birds are here and {b} fly away. How many REMAIN? Write UNKNOWN=number;EQUATION=number-number=number.",
                 4=>$"{t} birds are here; some fly away, and {a} remain. How many FLEW AWAY? Write UNKNOWN=number;EQUATION=number-number=number.",

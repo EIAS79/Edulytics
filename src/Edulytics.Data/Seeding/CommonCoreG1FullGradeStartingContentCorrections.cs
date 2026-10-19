@@ -196,7 +196,7 @@ Step 5: Check the answer using the related addition fact.",
         new(@"PED:US-CCSS-MATH:G1:U03:L26",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-26/preparation.html",@"66dfe676b9c7e8a0d7d9efdda13be6a4dceaa7c8d3108fb6dd9e3d400fe5c4b3",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.6" },
             @"What’s the Story?",
             @"Solve addition AND subtraction stories where the unknown may be the start, the change or the result. Interpret the event before writing an equation: an amount may be added, taken away or compared. Match your equation to the story rather than assuming the final amount is always unknown.",
-            @"Learning goal: solve addition and subtraction story problems with unknown values in different positions. Result unknown: 7+5=?. Change unknown: 7+?=12. Start unknown: ?+5=12. For subtraction, 14-?=8 and ?-6=8 require different reasoning.",
+            @"Learning goal: solve addition and subtraction story problems with unknown values in different positions. Result unknown: 7+5=?. Change unknown: 7+?=12. Start unknown: ?+5=12. For subtraction, 14-?=8 and ?-6=8 require different reasoning. ORIGINAL Student Facing Elena story: Elena has 6 counters; some more join; now she has 18 counters. The missing change is 12 because 6+12=18.",
             @"Example 1: Seven children are playing; five join. Total 7+5=12.
 Example 2: Seven are playing; some join, now twelve. 7+?=12, so ?=5.
 Example 3: Some children were playing; five joined and now twelve play. ?+5=12, so ?=7.
