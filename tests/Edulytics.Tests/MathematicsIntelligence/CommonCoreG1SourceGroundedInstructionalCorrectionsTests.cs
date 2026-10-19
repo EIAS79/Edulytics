@@ -178,6 +178,7 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
         Assert.Contains("THREE figures that are NOT rectangles",en.StepByStepSolutions);
         Assert.Contains("FIVE squares and THREE figures that are NOT squares",en.StepByStepSolutions);
         Assert.Contains("A non-square rectangle is a valid RECTANGLE nonexample of a SQUARE",en.WorkedExamples);
+        Assert.Contains("57+42=99",en.WorkedExamples);
         Assert.Contains("SECOND source task",en.CommonMistakes);
         var before=CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson);
         CanonicalLessonContentMaterializer.Materialize(doc);
