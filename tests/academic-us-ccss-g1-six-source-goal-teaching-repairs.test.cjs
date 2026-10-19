@@ -53,7 +53,17 @@ test('six source-verified G1 repairs preserve all pinned before-state guarantees
   const examples=get(p.key+'Examples'),steps=get(p.key+'Steps'),concepts=get(p.key+'Concepts'),mistakes=get(p.key+'Mistakes');
   assert.equal(examples,p.examples);
   assert.equal(steps,p.steps);
-  assert.equal(concepts,p.concepts);
+  if(p.key==='RectanglesSquaresAttributes'){
+    // Source-specific U07 L06 learner task is an intentional *additive*
+    // revision. Preserve exact approved original instructional concepts as
+    // prefix, require the authentic five-rectangle drawing instruction and
+    // do NOT rewrite the historical source/English hashes or old steps.
+    assert.ok(concepts.startsWith(p.concepts),p.short+': original concepts altered');
+    assert.match(concepts,/ORIGINAL STUDENT FACING TASK: DRAW FIVE distinct rectangles/);
+    assert.match(concepts,/teacher-reviewed/);
+  }else{
+    assert.equal(concepts,p.concepts);
+  }
   assert.equal(mistakes,p.mistakes);
   assert.equal((examples.match(/Example \d:/g)||[]).length,4,p.short);
   assert.equal((steps.match(/Step \d:/g)||[]).length,5,p.short);
