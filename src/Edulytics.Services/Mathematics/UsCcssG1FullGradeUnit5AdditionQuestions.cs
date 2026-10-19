@@ -55,10 +55,29 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         1=>$"FIRST_PAIR={a+b};SECOND_PAIR={85-a-b};ALL=85",
         2=>$"TOTAL={a+b};PACK={(a+b>=35&&a+b<=65?"YES":"NO")}",
         3=>$"TOTAL={a+b+13};PACK={(a+b+13>=35&&a+b+13<=65?"YES":"NO")}",
+        4=>"MIN_BOXES=4",
         _=>throw new InvalidOperationException("Unreviewed Food Drive variant")
     };
     private static Problem FoodDriveBuild(string family,Random random,int mode)
     {
+        if(mode==4)
+        {
+            // The original 2021 final question asks for the fewest boxes across ALL grades.
+            // Four boxes are possible only when the optional three-grade grouping is allowed;
+            // children's own grouping proof remains a teacher-reviewed paper activity.
+            string[] phrasings =
+            [
+                "The original Food Drive Day 1 totals for all nine grades are 18, 51, 23, 13, 39, 40, 8, 29, 30.",
+                "Food Drive minimum-box challenge: Kindergarten 18, first 51, second 23, third 13, fourth 39, fifth 40, sixth 8, seventh 29, eighth 30.",
+                "From the original Food Drive nine-grade table, the grade totals are 18, 51, 23, 13, 39, 40, 8, 29, 30.",
+                "The original grade-level Food Drive collected 251 cans in nine intact grade groups: 18, 51, 23, 13, 39, 40, 8, 29, 30."
+            ];
+            return new(family,
+                phrasings[random.Next(phrasings.Length)]+" If every box has 35–65 cans and the OPTIONAL three-grade combination is allowed, what is the least number of boxes that can hold all cans, using each grade group exactly once? Write MIN_BOXES=number. Explain a four-box grouping to your teacher; digital scoring checks only the minimum number.",
+                "The total is 251 cans. Three 65-can boxes hold only 195. A four-box witness is 18+39+8=65, 51+13=64, 23+40=63, 29+30=59; each grade is used once. A strict two-grade-per-box restriction would NOT permit this four-box witness.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string,int>{{"a",0},{"b",0},{"mode",4}});
+        }
         for(int attempt=0;attempt<400;attempt++)
         {
             var available=mode<=1?FoodPupils:FoodGradeDayOne;
@@ -90,9 +109,9 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec==null||p.Count!=3||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||
-           mode>(spec.LessonCode=="L07"?5:3))
+           mode>(spec.LessonCode=="L07"?5:spec.LessonCode=="L14"?4:3))
             return false;
-        if(spec.LessonCode=="L14")return FoodDriveValid(a,b,mode);
+        if(spec.LessonCode=="L14")return mode==4 ? a==0&&b==0 : FoodDriveValid(a,b,mode);
         int ones=a%10+b%10,sum=a+b;
         return spec.Kind switch
         {
@@ -122,7 +141,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     {
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
-        int mode=random.Next(spec.LessonCode=="L07"?6:4);
+        int mode=random.Next(spec.LessonCode=="L07"?6:spec.LessonCode=="L14"?5:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
         // Generate genuine operand choices satisfying this source-goal family.
         for(int tries=0;tries<1000;tries++)
