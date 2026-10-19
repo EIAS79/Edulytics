@@ -29,7 +29,7 @@ public sealed class UsCcssG1FullGradeMeasurementFractionVisualTests
         var svg=Assert.IsType<string>(Draw(family,a,b,mode));
         Assert.Contains("<svg ",svg);
         Assert.Contains("role='img'",svg);
-        Assert.Contains("Same",svg,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Equal-size units",svg,StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("<image ",svg);
         Assert.DoesNotContain("LENGTH=",svg);
     }
