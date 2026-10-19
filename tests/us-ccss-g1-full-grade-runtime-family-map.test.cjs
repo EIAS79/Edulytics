@@ -27,13 +27,19 @@ test('each proposed family maps to one real registered C# contract, never unrela
   const actual=new Map();
   for(const file of files){
     const source=fs.readFileSync(path.join(ROOT,root,file),'utf8');
-    const regex=/new\(\s*@?"(PED:US-CCSS-MATH:G1:U\d{2}:L\d{2})"[\s\S]*?\[\s*"([^"]+)"\s*\]/g;
+    const regex=/new\(\s*@?"(PED:US-CCSS-MATH:G1:U\d{2}:L\d{2})"\s*,\s*"[^"]+"\s*,\s*"[^"]+"\s*,\s*\[([^\]]*)\]/g;
     for(const match of source.matchAll(regex)){
       assert.equal(actual.has(match[1]),false,'Duplicate: '+match[1]);
-      actual.set(match[1],match[2]);
+      const families=Array.from(match[2].matchAll(/"([^"]+)"/g),m=>m[1]);
+      assert.equal(families.length>0,true,'Empty digital Practice family: '+match[1]);
+      assert.equal(new Set(families).size,families.length,'Duplicate family: '+match[1]);
+      actual.set(match[1],families);
     }
   }
   assert.equal(actual.size,95);
-  for(const row of x.records)
-    assert.equal(row.candidateFamily,actual.get(row.lessonCode)??null,row.lessonCode);
+  for(const row of x.records){
+    const planned=row.candidateFamilies??
+      (row.candidateFamily===null?[]:[row.candidateFamily]);
+    assert.deepEqual(planned,actual.get(row.lessonCode)??[],row.lessonCode);
+  }
 });
