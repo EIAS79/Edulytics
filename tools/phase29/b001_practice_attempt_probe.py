@@ -81,6 +81,14 @@ def syntactically_valid_wrong_answer(correct):
             "ADD":"SUBTRACT","SUBTRACT":"ADD",
         }
         replacement=categories.get(value.upper())
+        if replacement is None and key.upper()=="MATCH":
+            # The ORIGINAL U06 L14 source asks the child to circle exactly
+            # TWO distinct equations. Keep the letter-pair answer format
+            # intact while submitting a genuinely wrong pair.
+            candidate=value.upper()
+            if candidate not in ("A,B","A,C","B,C"):
+                raise ValueError("Unexpected two-equation matching format")
+            replacement="A,B" if candidate!="A,B" else "B,C"
         if replacement is None and key.upper()=="NAME":
             replacement="one" if value.lower()!="one" else "two"
         if replacement is None:
@@ -245,7 +253,8 @@ if __name__=="__main__":
             for correct in ("RESULT=18","NAME=seventy-two","SYMBOL=>",
                             "SHAPE=RECTANGLE","TIME=7:30","ORDER=2,3,6",
                             "CANDIDATES=34,44,54","MATCH=10+8;TOTAL=18",
-                            "CARDS=4,8","ALT_ONES=24;WAYS=4","ANSWER=YES"):
+                            "CARDS=4,8","ALT_ONES=24;WAYS=4","ANSWER=YES",
+                            "MATCH=A,C;TOTAL=20","MATCH=B,C;TOTAL=18"):
                 wrong=syntactically_valid_wrong_answer(correct)
                 self.assertNotEqual(wrong,correct)
                 self.assertEqual(wrong.split(";")[0].split("=")[0],
