@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 80,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L15",
+  "title": "Greater Than, Less Than",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "03b7fb51dd40741eb9ea181b2441fcf4954451e7e1eb6921ba3f11b45ca088ac",
+    "teacherPreparationSha256": "2f860ae1cd7c3dd963a5ecc39594caaf4c49c25ad67fb9bddcade11a67c1f7c5",
+    "studentHtmlSha256": "0ae74d9fe789b1e4539fa545d20716cc369c914894bca5b117521219004d4322",
+    "teacherHeadings": [
+      "Activity 1: Which is Greater, Which is Less? (20 minutes)",
+      "Activity 2: True or False Comparisons (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(35 + 10\\) \\(52 + 10\\) \\(52 -10\\) \\(83-10\\) Student Response Teachers with a valid work email address can clic",
+      "Student Facing Circle the statement that is true in each pair. Be ready to explain how you know so that others will understand. \\(27 < 17\\) \\(17<27\\) \\(34 < 36\\) \\(36 < 3",
+      "Student Facing Read each statement. Determine whether each statement is true or false. Be ready to explain how you know so that others will understand. \\(17 < 47\\) \\(58 ="
+    ],
+    "sourceSpecificFinding": "Original comparison-choice pairs, five true/false comparison statements and tens warm-up",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
