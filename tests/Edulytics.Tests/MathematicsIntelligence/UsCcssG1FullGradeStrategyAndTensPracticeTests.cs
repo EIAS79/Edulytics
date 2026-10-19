@@ -102,7 +102,7 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveMultipleTens;
         foreach(var (a,b,mode) in new[]{
             (4,2,0),(3,1,0),(6,4,1),(7,3,1),
-            (2,8,2),(3,4,3)
+            (4,7,2),(3,4,3)
         })
             Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(
                 family,new Dictionary<string,int>{
