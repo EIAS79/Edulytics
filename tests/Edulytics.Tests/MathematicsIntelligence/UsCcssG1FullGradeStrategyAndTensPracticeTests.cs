@@ -79,6 +79,58 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
           new Dictionary<string,int>{{"a",2},{"b",3},{"c",0},{"mode",1}}));
     }
     [Theory]
+    [InlineData(5,4,4,"MOVE=SUBTRACT;COVER=10;EQUATION=50-40=10")]
+    [InlineData(2,1,5,"MOVE=ADD;COVER=30;EQUATION=20+10=30")]
+    [InlineData(3,2,5,"MOVE=ADD;COVER=50;EQUATION=30+20=50")]
+    [InlineData(5,4,5,"MOVE=ADD;COVER=90;EQUATION=50+40=90")]
+    public void Original2021U04L05CheckItOffRequiresChoosingTheActuallyAvailableBoardCell(
+        int firstCardTens,int secondCardTens,int mode,string expected)
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CenterTens;
+        var p=new Dictionary<string,int>{
+            ["a"]=firstCardTens,["b"]=secondCardTens,["c"]=0,["mode"]=mode};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        string wrongOperation=mode==4?
+            expected.Replace("MOVE=SUBTRACT","MOVE=ADD"):
+            expected.Replace("MOVE=ADD","MOVE=SUBTRACT");
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,wrongOperation));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";FAKE=1"));
+    }
+
+    [Fact]
+    public void OriginalCheckItOffCardLimitsRejectFakeOptionsOutsideTheGameBoard()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CenterTens;
+        foreach(var (a,b,mode) in new[]{
+            (4,5,4),(5,3,4),(7,3,5),(8,1,5),
+            (4,0,5),(4,6,5),(5,4,6)
+        })
+            Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+                new Dictionary<string,int>{
+                    ["a"]=a,["b"]=b,["c"]=0,["mode"]=mode}));
+        var seen=new HashSet<int>();
+        for(int seed=0;seed<350;seed++)
+        {
+            var p=UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+                family,new Random(seed*41+31));
+            seen.Add(p.Parameters["mode"]);
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(
+                family,p.Parameters));
+            if(p.Parameters["mode"]==4)
+            {
+                Assert.Contains("40 and 50",p.Prompt);
+                Assert.Contains("90 box",p.Prompt);
+                Assert.Contains("10 box",p.Prompt);
+            }
+            if(p.Parameters["mode"]==5)
+                Assert.Contains("NOT yet checked",p.Prompt);
+        }
+        Assert.Equal(6,seen.Count);
+    }
+
+    [Theory]
     [InlineData(1,"F")]
     [InlineData(2,"A")]
     [InlineData(3,"E")]
