@@ -103,6 +103,47 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
     }
 
     [Fact]
+    public void AllFourWaterSmudgeTasksExhaustivelyAgreeWithOnesBasedCarryOracle()
+    {
+        // The four original open-choice source tasks allow 88 concrete
+        // mathematically valid missing values in the registered domains.
+        // Protect the complete domains, not only a few hand-picked examples.
+        const string family="usccss.g1.u05.l07.detect_new_ten";
+        int validCases=0;
+        foreach(var mode in new[]{2,3,4,5})
+        {
+            int known=mode==2?32:mode==3?16:8;
+            for(int missing=0;missing<=91;missing++)
+            {
+                bool sizeValid=mode<=3?missing<=9:missing>=10;
+                bool makesNewTen=known%10+missing%10>=10;
+                bool sourceCondition=mode is 2 or 4;
+                bool shouldBeValid=sizeValid&&makesNewTen==sourceCondition&&
+                    known+missing<=99;
+                var p=new Dictionary<string,int>
+                {
+                    ["a"]=known,["b"]=missing,["mode"]=mode
+                };
+                Assert.Equal(shouldBeValid,
+                    UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,p));
+                if(!shouldBeValid)continue;
+                validCases++;
+                var expected=$"MISSING={missing};NEW_TEN={(makesNewTen?"YES":"NO")};TOTAL={known+missing}";
+                Assert.Equal(expected,
+                    UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,p));
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    expected.Replace(makesNewTen?"NEW_TEN=YES":"NEW_TEN=NO",
+                                     makesNewTen?"NEW_TEN=NO":"NEW_TEN=YES")));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    expected.Replace($"TOTAL={known+missing}",
+                                     $"TOTAL={known+missing+1}")));
+            }
+        }
+        Assert.Equal(88,validCases);
+    }
+
+    [Fact]
     public void OriginalFourOpenChoiceSourceTasksPermitDifferentMathematicallyValidAnswers()
     {
         const string family="usccss.g1.u05.l07.detect_new_ten";
