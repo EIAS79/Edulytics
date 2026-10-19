@@ -42,3 +42,20 @@ test('All 17 committed blueprint sources are screened without automatic rights a
     row.status === 'PENDING_INDEPENDENT_RIGHTS_REVIEW'));
   assert(result.entries.every(row => row.blueprint && row.sourceFile));
 });
+
+test('Public attribution names only the 2021 first edition and disclaims brand and third-party image rights',()=>{
+  const fs=require('node:fs');
+  const html=fs.readFileSync(path.join(__dirname,
+    '../src/Edulytics.Web/wwwroot/content-sources-licenses.html'),'utf8');
+  assert.match(html,/US Common Core Mathematics — Grade 1, first edition \(2021\)/);
+  assert.match(html,/Based on IM® K–12 Math by Illustrative Mathematics®/);
+  assert.match(html,/https:\/\/im\.kendallhunt\.com\/k5\/teachers\/grade-1/);
+  assert.match(html,/https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//);
+  assert.match(html,/modified or newly authored/);
+  assert.match(html,/does not imply endorsement, partnership/);
+  assert.match(html,/Individual third-party photographs, illustrations/);
+  assert.match(html,/IM v\.360 is licensed under/);
+  const policy=require('../artifacts/academic-us-ccss/01-edition-specific-licence-evidence.json');
+  assert.equal(policy.reviewStatus,'INDEPENDENT_RIGHTS_SIGNOFF_PENDING');
+  assert.equal(policy.academicGate,'NO-GO');
+});
