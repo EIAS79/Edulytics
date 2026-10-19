@@ -26,7 +26,7 @@ public static partial class PracticeMathVisualRenderer
             "usccss.g1.u07.l15.write_hours_halfhours"=>mode%2==0?0:30,
             _=>throw new JsonException("Family is not a Grade 1 analog clock assessment.")
         };
-        const double cx=210,cy=130,radius=91;
+        const double cx=210,cy=130;
         var svg=SvgStart("Analog clock face with 12 numbered hours and two hands. Read their positions to tell the time.");
         svg.Append("<circle cx='210' cy='130' r='91' class='shape'/>");
         for(int number=1;number<=12;number++)

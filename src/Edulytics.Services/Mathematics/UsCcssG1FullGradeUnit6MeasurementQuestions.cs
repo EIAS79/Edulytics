@@ -47,7 +47,10 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
            mode<0||mode>3||c!=0)return false;
         return i switch
         {
-            0 or 1 or 2 or 10 or 11=>a>=4&&a<=20&&b>=1&&b<=20,
+            0 or 1 or 2 or 10=>a>=4&&a<=20&&b>=1&&b<=20,
+            // Original U06 L12 targets Compare Bigger Unknown / Smaller Unknown,
+            // NOT Difference Unknown from two already known lengths.
+            11=>a>=4&&a<=20&&b>=1&&b<=9&&(mode%2==0?b<a:a+b<=20),
             3 or 9 or 15=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
             4 or 5=>a>=2&&a<=20&&b==0,
             6=>a>=2&&a<=14&&b==2,
@@ -62,7 +65,14 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
         int mode=random.Next(4),a=0,b=0;
-        if(i is 0 or 1 or 2 or 10 or 11){a=random.Next(4,21);b=random.Next(1,21);}
+        if(i is 0 or 1 or 2 or 10){a=random.Next(4,21);b=random.Next(1,21);}
+        else if(i==11)
+        {
+            // Stable first-grade lengths that exercise both unknown positions.
+            a=mode%2==0?random.Next(7,21):random.Next(4,17);
+            b=mode%2==0?random.Next(1,Math.Min(10,a)):
+                           random.Next(1,Math.Min(10,21-a));
+        }
         else if(i is 3 or 9 or 15){a=random.Next(11,66);b=random.Next(1,Math.Min(20,100-a)+1);}
         else if(i is 4 or 5){a=random.Next(2,21);}
         else if(i==6){a=random.Next(2,15);b=2;}
@@ -86,7 +96,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             9=>mode%2==0?$"Center arithmetic: add {a}+{b} within 100. Write RESULT=number.":
                 $"Center numeric measuring task: {a} same-sized cubes arranged without gaps. Write LENGTH=number.",
             10=>$"Two shoes are {a} and {b} identical cube-length units long. How many units longer is the longer shoe? Write DIFFERENCE=number.",
-            11=>$"Two ribbons measure {a} and {b} of the SAME units. Find their length difference. Write DIFFERENCE=number.",
+            11=>mode%2==0?
+                $"Han's friendship bracelet is {a} connecting cubes long. Priya's bracelet is {b} cubes FEWER than Han's. How long is PRIYA's bracelet? Write LENGTH=number;DIFFERENCE=number.":
+                $"Priya's friendship bracelet is {a} connecting cubes long. Han's bracelet is {b} cubes MORE than Priya's. How long is HAN's bracelet? Write LENGTH=number;DIFFERENCE=number.",
             12=>mode%3==0?$"Take From: {a} marbles were present; {b} are taken away. Write REMAINING=number.":
                 mode%3==1?$"Take From: {a} marbles were present, {a-b} remain. How many were taken? Write REMOVED=number.":
                 $"Take From: Some marbles were present; {b} leave, {a-b} remain. Write START=number.",
@@ -118,7 +130,8 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
             9=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
-            10 or 11=>$"DIFFERENCE={Math.Abs(a-b)}",
+            10=>$"DIFFERENCE={Math.Abs(a-b)}",
+            11=>$"LENGTH={(mode%2==0?a-b:a+b)};DIFFERENCE={b}",
             12=>mode%3==0?$"REMAINING={a-b}":mode%3==1?$"REMOVED={b}":$"START={a}",
             13=>mode%2==0?$"OP=SUBTRACT;TOTAL={a-b}":$"OP=ADD;TOTAL={a}",
             14=>mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
