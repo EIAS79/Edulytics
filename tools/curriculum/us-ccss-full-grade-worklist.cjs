@@ -14,7 +14,7 @@ const path=require('node:path');
 const ROOT=path.resolve(__dirname,'../..');
 const MANIFEST='artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json';
 const LEDGER='artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json';
-const PLAN='EDULYTICS-GRADE-FIRST-FULL-GRADE-V1';
+const PLAN='EDULYTICS-GRADE-FIRST-FULL-GRADE-V2';
 const APPROVED='INTERNALLY_ACCEPTED';
 const knownStates=new Set([
   'NOT_STARTED','IN_PROGRESS','READY_REUSE','CONTENT_REPAIR','PRACTICE_REPAIR',
