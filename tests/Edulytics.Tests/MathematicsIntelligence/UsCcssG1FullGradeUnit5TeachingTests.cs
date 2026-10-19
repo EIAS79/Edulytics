@@ -84,4 +84,55 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
         Assert.Contains("Elena begins with 34+6=40",lesson(5,6));
         Assert.Contains("34+9=9+1+33=10+33=43",lesson(5,6));
     }
+    [Fact]
+    public void Unit5Lesson14_FoodDrivePreservesBothPartnerTasksAndOriginalMinimumBoxesChallenge()
+    {
+        const string code = "PED:US-CCSS-MATH:G1:U05:L14";
+        var doc = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Single(d => d.Lessons.Any(l => l.LessonCode == code));
+        CanonicalLessonContentMaterializer.Materialize(doc);
+        var lesson = doc.Lessons.Single(l => l.LessonCode == code);
+        Assert.True(CommonCoreG1FullGradeUnit5ContentCorrections.IsTarget(doc, lesson));
+        Assert.Equal(CommonCoreG1FullGradeUnit5ContentCorrections.Version,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, lesson));
+
+        var en = lesson.Translations.Single(t => t.CultureCode == "en");
+        var visible = en.Explanation + "\n" + en.WorkedExamples + "\n" +
+                      en.StepByStepSolutions + "\n" + en.CommonMistakes;
+        Assert.Contains("Lin 18", visible);
+        Assert.Contains("Priya 24", visible);
+        Assert.Contains("Han 13", visible);
+        Assert.Contains("Tyler 30", visible);
+        Assert.Contains("Tyler 30 + Priya 24 = 54", visible);
+        Assert.Contains("Lin 18 + Han 13 = 31", visible);
+        Assert.Contains("42", visible);
+        Assert.Contains("43", visible);
+        Assert.Contains("85", visible);
+        Assert.Contains("LEAST NUMBER OF BOXES", visible);
+        Assert.Contains("18+51+23+13+39+40+8+29+30=251", visible);
+        Assert.Contains("three-grade box", visible);
+        Assert.Contains("strict two-grades-per-box", visible);
+
+        // Independent source-quantity oracle for all NINE original Day 1 grade rows.
+        // Four bins achieve the lower bound only if the optional three-grade task is allowed.
+        int[] cans = [18, 51, 23, 13, 39, 40, 8, 29, 30];
+        int[][] boxGradeIndices = [[0, 4, 6], [1, 3], [2, 5], [7, 8]];
+        int total = cans.Sum();
+        Assert.Equal(251, total);
+        Assert.Equal(4, (total + 64) / 65);
+        Assert.Equal(4, boxGradeIndices.Length);
+        Assert.Equal(9, boxGradeIndices.SelectMany(box => box).Distinct().Count());
+        Assert.Equal(9, boxGradeIndices.Sum(box => box.Length));
+        Assert.All(boxGradeIndices, box =>
+        {
+            int sum = box.Sum(index => cans[index]);
+            Assert.InRange(sum, 35, 65);
+        });
+        Assert.Equal(total, boxGradeIndices.Sum(box => box.Sum(index => cans[index])));
+
+        // The prior real learner version is eligible for this lesson-only content upgrade.
+        Assert.True(CommonCoreG1FullGradeUnit5ContentCorrections.CanUpgradeExisting(
+            doc, lesson, "us-ccss-g1-full-grade-u04-l22-through-u05-l14-teaching-v1"));
+    }
+
 }
