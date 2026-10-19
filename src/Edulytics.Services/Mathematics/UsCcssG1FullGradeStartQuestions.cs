@@ -71,7 +71,7 @@ public static class UsCcssG1FullGradeStartQuestions
                 0=>$"Decide if {a} + {c} + {b} = 10 + {c} is true. Write TRUE=YES/NO;TOTAL=number.",
                 1=>$"Decide if {a} + {c} + {b} = 10 + {c-1} is true. Write TRUE=YES/NO;TOTAL=number.",
                 2=>$"MATCH the three-addend expression {a} + {c} + {b} to the equivalent expression. A: 10 + {c}. B: 10 + {c-1}. Write MATCH=10+number;TOTAL=number.",
-                _=>$"MATCH the three-addend expression {a} + {c} + {b} to the equivalent expression. A: 10 + {c-1}. B: 10 + {c}. Write MATCH=10+number;TOTAL=number."
+                _=>$"Original student-written task: WRITE a 10+n expression equal to {a} + {c} + {b}; pair {a} and {b} to make ten. Write WRITE=10+number;TOTAL=number."
             },
             MakeTen=>mode==2?
                 $"Original 2021 Nine Plus Game: put out NINE counters then pick a {b} card and add that many. Show TWO matching equations: 9+{b}=... and 10+{b-1}=... . Write EQUATION=expression=value;TEN_EQUATION=expression=value;TOTAL=number. Teacher leads physical counters/card activity.":
@@ -97,7 +97,9 @@ public static class UsCcssG1FullGradeStartQuestions
         {
             Center=>mode<=1?$"ANSWER={(mode==0?a+b:a-b)}":$"CARDS={b},{c}",
             ThreeStory=>$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}",
-            Expression=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={a+b+c}":$"MATCH=10+{c};TOTAL={a+b+c}",
+            Expression=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={a+b+c}":
+                mode==2?$"MATCH=10+{c};TOTAL={a+b+c}":
+                $"WRITE=10+{c};TOTAL={a+b+c}",
             MakeTen=>mode==2?
                 $"EQUATION=9+{b}={9+b};TEN_EQUATION=10+{b-1}={9+b};TOTAL={9+b}":
                 $"MOVE={10-a};REST={a+b-10};TOTAL={a+b}",
