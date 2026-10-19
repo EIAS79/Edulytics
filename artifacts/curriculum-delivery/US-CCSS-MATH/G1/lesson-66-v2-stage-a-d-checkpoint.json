@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 66,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L01",
+  "title": "Count Large Collections",
+  "sourceBasis": {
+    "readOnlyOurCsSource": true,
+    "edition": "IM K–5 2021",
+    "fullTeacherLessonRelativePath": "unit-4/lesson-1/lesson.html",
+    "teacherPreparationSha256": "51191bc0e1c9d41ca5f645c540927e2b5116c765dcafbdbdbb7d1f50ca96f96e",
+    "fullTeacherHtmlSha256": "af5e0f582b63ea811e8c856108975f99de19dc694f31162d76342f5232a9be08",
+    "studentMirrorSha256": "d8c585c57fd3443caa12fd338157c1775dada17fab1698fecb2fc921fb917af7",
+    "originalTeacherActivityHeadings": [
+      "Activity 1: Count a Collection (10 minutes)",
+      "Activity 2: Count More Than One Collection (15 minutes)",
+      "Activity 3: Centers: Choice Time (15 minutes)"
+    ]
+  },
+  "stageA": {
+    "reviewedSourceTaskExcerpts": [
+      "Student Facing [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-ic",
+      "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
+    ],
+    "existingCandidateReused": true,
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "reviewAndCorrectionSummary": "Added source original 40-object collection and exchange of multiple tens-bags; retained existing bounded CountTens generator",
+    "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "candidateEditCommit": "344ddaef861be613e97423e8685111ee29f47872",
+    "publisherArtworkCopied": false
+  },
+  "stageC": {
+    "reusedPracticeFamily": "usccss.g1.u04.l01.count.groups_of_ten",
+    "changedGeneratorCommit": null,
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence"
+  },
+  "stageD": {
+    "sourceAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "practiceBoundsAssertions": null,
+    "ciRunDuringAuthoring": false,
+    "CIResult": "NOT_RUN_AUTHORING_POLICY",
+    "originalV1AuthenticatedStudentRendering": "PENDING_FINAL_SHA",
+    "originalV1MathAndPersistence": "PENDING_FINAL_SHA",
+    "copyrightAccessibilityAndTeacherOnlyBoundaries": "PENDING_REQUIRED_EVIDENCE",
+    "originalV1InternalAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
