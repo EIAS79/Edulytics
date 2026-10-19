@@ -125,6 +125,44 @@ public static class UsCcssG1FullGradeNextQuestions
         if(left.Count!=right.Count)return false;
         return left.All(item=>right.TryGetValue(item.Key,out var value)&&value==item.Value);
     }
+    // Original 2021 three-group zoo and center stories accept regrouping and
+    // commutativity, not one arbitrary textual addend order. Check the exact
+    // story quantities so an unrelated expression with the same sum fails.
+    private static bool VerifySourceGroupEquation(IReadOnlyDictionary<string,int> p,string? response)
+    {
+        var parts=Normalize(response).Split(';');
+        if(parts.Length!=2)return false;
+        var fields=new Dictionary<string,string>(StringComparer.Ordinal);
+        foreach(var part in parts)
+        {
+            var cut=part.IndexOf('=');
+            if(cut<=0||cut==part.Length-1||
+                !fields.TryAdd(part[..cut],part[(cut+1)..]))return false;
+        }
+        if(fields.Count!=2||!fields.TryGetValue("TOTAL",out var totalText)||
+           !fields.TryGetValue("EQUATION",out var equation)||
+           !int.TryParse(totalText,out var reportedTotal))return false;
+        var requiredTotal=p["a"]+p["b"]+p["c"];
+        if(reportedTotal!=requiredTotal)return false;
+        var equality=equation.Split('=');
+        if(equality.Length!=2||
+           !int.TryParse(equality[1],out var result)||result!=requiredTotal)return false;
+        var operands=equality[0].Split('+');
+        var sourceOperands=p["c"]==0
+            ?new[]{p["a"],p["b"]}
+            :new[]{p["a"],p["b"],p["c"]};
+        if(operands.Length!=sourceOperands.Length)return false;
+        var parsed=new int[operands.Length];
+        for(int i=0;i<operands.Length;i++)
+            if(!int.TryParse(operands[i],out parsed[i]))return false;
+        Array.Sort(parsed);
+        Array.Sort(sourceOperands);
+        return parsed.SequenceEqual(sourceOperands);
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? response)=>
-        Valid(family,p)&&GradePersistedAnswer(family,Solve(family!,p),response);
+        Valid(family,p) &&
+        (family is ZooThree or CenterTwoThree?
+            VerifySourceGroupEquation(p,response):
+            GradePersistedAnswer(family,Solve(family!,p),response));
 }
