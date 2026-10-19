@@ -32,6 +32,11 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string UnitFourTensMatchSourceContentVersion="us-ccss-g1-u04-l02-original-activities-v6";
     public const string UnitFourMultipleTensSourceContentVersion="us-ccss-g1-u04-l04-original-activities-v6";
     public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v6";
+    private static readonly HashSet<string> UnitFourLaterLessonCodes =
+        Enumerable.Range(6,10)
+            .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
+            .ToHashSet(StringComparer.Ordinal);
+    public const string UnitFourLaterSourceContentVersion="us-ccss-g1-u04-l06-l15-original-student-activities-v6";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -353,7 +358,10 @@ Step 5: If participating in center play, discuss the strategy and turns with the
             @"Example 1: Thirty-seven cubes form 3 complete bundles of ten and 7 separate ones: 30+7=37.
 Example 2: Two tens and five ones make 20+5=25 counters.
 Example 3: Fifty-four buttons can be counted as five tens and four ones: 50+4=54.
-Example 4: Six bundles of ten and zero loose ones represent 60 objects.",
+Example 4: Six bundles of ten and zero loose ones represent 60 objects.
+Original 2021 collection task: group 52 objects into five complete tens and two ones, 50+2=52.
+Original 2021 Noah discussion: he claims his tower collection shows 50; it actually has four complete tens and eight ones, 40+8=48. A tower with eight objects is NOT another ten.
+Original choral warm-up: count by ones from 50 to 81 and notice the change across 59, 60 and 69, 70.",
             @"Step 1: Touch or move each object exactly once while making complete groups of ten.
 Step 2: Count whole bundles first by tens.
 Step 3: Count remaining loose objects by ones (0–9).
@@ -368,7 +376,9 @@ Step 5: Check by recounting or another arrangement and explain how the represent
             @"Example 1: Four bundles of ten and three cubes represent forty-three (43): 40+3=43.
 Example 2: The number 58 is read 'fifty-eight'; it contains five tens and eight ones.
 Example 3: Seven tens and zero ones represents seventy (70).
-Example 4: A picture with two tens and nine ones shows twenty-nine (29).",
+Example 4: A picture with two tens and nine ones shows twenty-nine (29).
+Original 2021 Notice and Wonder uses single digits 0–9 and two-digit numbers 10, 23, 45, 76, 89; compare the number of digits.
+Original 2021 Clare/Diego task: Clare claims a shown model is 68 and Diego claims 86. It has EIGHT tens and SIX ones, so Diego's 86 is correct even if the ones appear before the tens in the drawing. The written numeral still places tens first.",
             @"Step 1: Identify how many complete groups of ten are represented.
 Step 2: Count loose individual objects, fewer than ten.
 Step 3: Say the number by naming the total number of tens and ones (for example, 'fifty-eight').
@@ -383,12 +393,15 @@ Step 5: Explain how the parts make the complete two-digit number.",
             @"Example 1: Five ten-rods and three dots = 5 tens 3 ones = 50+3 = 53.
 Example 2: 70+8 corresponds to 7 tens and 8 ones, a total of 78.
 Example 3: Two tens and nine ones = 20+9 = 29.
-Example 4: 4 ten-rods and 0 dots corresponds to 40+0 = 40.",
+Example 4: 4 ten-rods and 0 dots corresponds to 40+0 = 40.
+Original 2021 compare-representations activity: Kiran describes 3 ones and 7 tens, and Priya writes 70+3. Both show 73, regardless of drawing order; Clare's and Han's diagrams must be interpreted in their source context.
+Original estimation warm-up separately asks for a too-low, about-right and too-high estimate before counting; no student's actual estimate is invented by Practice.",
             @"Step 1: Count the tens and ones in a diagram.
 Step 2: Translate into words, for example '5 tens and 3 ones'.
 Step 3: Write or recognize the matching expanded expression 50+3.
 Step 4: Calculate or read the numeral and compare all representations.
-Step 5: Explain why all representations show the same quantity.",
+Step 5: Explain why all representations show the same quantity.
+Step 6: For the original 2021 card sort, match picture, tens-and-ones description and expanded expression, and explain the match to a teacher; the Grab and Count real cube estimate/count is a classroom task.",
             @"Do not equate 5 tens and 3 ones with 5+3=8; the five tens are fifty. Do not match 50+3 to 35 by reversing the places.",
             @"I can match diagrams, words and addition expressions for two-digit numbers."),
         new(@"PED:US-CCSS-MATH:G1:U04:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-9/preparation.html",@"eecf5776e8b806188c62ba41baf5e045e8b9425ba1d411a1df483e635d1d1688",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
@@ -398,7 +411,8 @@ Step 5: Explain why all representations show the same quantity.",
             @"Example 1: Represent 64 as six rods of ten plus four dots, '6 tens 4 ones', and 60+4.
 Example 2: Represent 35 as three rods and five dots, '3 tens 5 ones', and 30+5.
 Example 3: Represent 80 as eight rods and no leftover ones, and 80+0.
-Example 4: Represent 47 as 4 tens and 7 ones, 40+7=47.",
+Example 4: Represent 47 as 4 tens and 7 ones, 40+7=47.
+Original 2021 Show Collections In Many Ways asks students to visit AT LEAST FOUR real collections and show each in several equivalent forms. Teacher/partner gallery participation is not established by solving a generated number.",
             @"Step 1: Pick or read the target two-digit value.
 Step 2: Organize 10-object bundles and loose ones.
 Step 3: Draw one rod per ten and one dot per remaining one.
@@ -413,12 +427,14 @@ Step 5: Check that all three representations have the same total and explain to 
             @"Example 1: 3 tens and 7 ones are written 37 (30+7).
 Example 2: Four ten-rods and two ones are written 42 (40+2).
 Example 3: Nine tens and zero ones are written 90 (90+0).
-Example 4: 60+5 is written 65; the 6 is in the tens place.",
+Example 4: 60+5 is written 65; the 6 is in the tens place.
+Original 2021 learner entries: 1 ten and 4 ones=14, 9 tens=90, 20+5=25, 7+40=47, 2 ones and 8 tens=82, and 1+40=41. Blank numeral-writing prompts belong to the student; these are worked answers for instruction.",
             @"Step 1: Read the number of tens in the supplied diagram, words or expression.
 Step 2: Read the number of single ones (0–9).
 Step 3: Write the tens digit in the first position and the ones digit in the second.
 Step 4: Read the finished numeral aloud and match it to the expanded expression.
-Step 5: Check the total of the represented objects and that the digits are not reversed.",
+Step 5: Check the total of the represented objects and that the digits are not reversed.
+Step 6: In the original Write Numbers Stage 1 center, players take turns writing the next one, two or three numerals on the board, counting forward or backward within 99; the winner and physical board are teacher-observed.",
             @"Do not write 3 tens and 7 ones as 73; the first digit is tens. Do not omit the zero in 8 tens and 0 ones: write 80, not 8.",
             @"I can write two-digit numerals from tens-and-ones representations."),
         new(@"PED:US-CCSS-MATH:G1:U04:L11",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-11/preparation.html",@"87d02e4b8c376f99a6d01c847535fa868f7d915d3ffa539930c6905f981d9b96",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4" },
@@ -428,7 +444,10 @@ Step 5: Check the total of the represented objects and that the digits are not r
             @"Example 1: 34+20=54 because 3 tens+2 tens=5 tens and four ones remain.
 Example 2: 47+30=77, as 40+30+7=70+7.
 Example 3: 62+10=72, as 6 tens+1 ten=7 tens and two ones.
-Example 4: 51+40=91, with one extra one unchanged.",
+Example 4: 51+40=91, with one extra one unchanged.
+Original 2021 student equations: 37+20=57; 60+23=83; 48+50=98; 54+20=74; 30+65=95.
+Original 2021 True/False warm-up: 80+5=5+80 TRUE; 70+1=80+1 FALSE; 20+6=6+30 FALSE.
+The original Missing Digit activity has a smudged diagram that requires visual source inspection; do not certify the missing digit from prose alone.",
             @"Step 1: Break the non-round number into tens and ones.
 Step 2: Count the number of full tens being added.
 Step 3: Add tens to tens; copy the original number of ones.
@@ -443,7 +462,10 @@ Step 5: Verify with base-ten rods or a drawing.",
             @"Example 1: Ten more than 58 is 68; the eight ones stay the same.
 Example 2: Ten less than 64 is 54; the four ones stay the same.
 Example 3: Ten more than 39 is 49; only the tens count increases.
-Example 4: Ten less than 71 is 61.",
+Example 4: Ten less than 71 is 61.
+Original 2021 source equations: 67+10=77, 67-10=57; 39+10=49, 39-10=29; 52+10=62, 52-10=42; 75+10=85, 75-10=65.
+Further original sequences: 67+10+10+10=97; 99-10-10-10=69; 45+10+10=65, 45-10-10=25, 45+10-10=45.
+The original Write Numbers Stage 2 center counts by TEN forward or backward, writing one, two or three numbers on each turn; teacher supervises real gameplay.",
             @"Step 1: Read the starting two-digit number.
 Step 2: Identify the tens and ones digits.
 Step 3: Add or remove ONE ten, leaving the ones unchanged.
@@ -458,7 +480,10 @@ Step 5: Explain mentally why the number is ten more or ten less.",
             @"Example 1: 8+7=15 using make-ten: 8+2+5=15.
 Example 2: 17-9=8 using a ten-frame or a known fact.
 Example 3: 43+20=63 because four tens plus two tens makes six tens, and three ones remain.
-Example 4: Four tens and six ones represent 46 objects.",
+Example 4: Four tens and six ones represent 46 objects.
+Original 2021 number talk: 10+4=14, 9+4=13, 9+6=15 and 15-6=9.
+Original 2021 Check It Off center: 70 and 20 produce 90 by addition or 50 by subtraction.
+Original 2021 How Close? source hand 8, 4, 1, 7, 5 can select THREE cards 8+7+5=20, precisely reaching the target. Real center selection and peer gameplay remain teacher-led.",
             @"Step 1: Read the selected center's actual task and quantity representation.
 Step 2: Identify whether it calls for within-20 calculation, tens addition, or counting tens and ones.
 Step 3: Solve using a matching strategy, with drawings or counters if helpful.
@@ -473,7 +498,10 @@ Step 5: For physical center play, follow the teacher's rules and explain the str
             @"Example 1: 64 is GREATER THAN 57 because six tens exceed five tens.
 Example 2: 63 is LESS THAN 68 because both have six tens and three ones are less than eight.
 Example 3: 42 and 42 are EQUAL: four tens and two ones each.
-Example 4: 79 is GREATER THAN 71 because nine ones exceed one when tens are both seven.",
+Example 4: 79 is GREATER THAN 71 because nine ones exceed one when tens are both seven.
+Original 2021 Elena argues 75>65 because 7>6; refine the explanation to SEVEN TENS exceeds SIX TENS.
+Original 2021 Noah incorrectly claims 39>41 because 9 is the largest single digit; 39<41 because THREE tens are fewer than FOUR tens. Explain why comparing ones first is wrong.
+The original comparison-spinner and partner discussion are physical teacher-led tasks.",
             @"Step 1: Represent or name the tens and ones in each two-digit number.
 Step 2: Compare the tens counts first.
 Step 3: If the tens match, compare the ones.
@@ -488,7 +516,10 @@ Step 5: Support the comparison with rods/dots or the value of each digit.",
             @"Example 1: 52 > 39 because five tens exceed three tens.
 Example 2: 36 < 63 because three tens are fewer than six tens.
 Example 3: 47 = 47 since both represent four tens and seven ones.
-Example 4: 71 < 79 because both have seven tens and one one is fewer than nine.",
+Example 4: 71 < 79 because both have seven tens and one one is fewer than nine.
+Original 2021 comparison choices include 17<27, 34<36, 25<52, 54>24, 29>21, 85>58, 45<54, 74<78 and 21>12. Learners select a TRUE comparison from each pair.
+Original 2021 True/False activity: 17<47 TRUE, 58=53 FALSE, 45>63 FALSE, 39<93 TRUE, 4=46 FALSE. For a false statement, write a corrected comparison and explain the place values.
+Original source warm-up: 35+10=45, 52+10=62, 52-10=42, and 83-10=73.",
             @"Step 1: Compare tens, then compare ones only if tens are tied.
 Step 2: Determine whether the first value is greater, less or equal.
 Step 3: Write or interpret the correct symbol between the two numbers.
@@ -550,6 +581,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
             UnitFourTensMatchLessonCode=>UnitFourTensMatchSourceContentVersion,
             UnitFourMultipleTensLessonCode=>UnitFourMultipleTensSourceContentVersion,
             UnitFourCenterLessonCode=>UnitFourCenterSourceContentVersion,
+            var l when UnitFourLaterLessonCodes.Contains(l)=>UnitFourLaterSourceContentVersion,
                 _=>Version
             })
             : previous;
@@ -561,7 +593,8 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
              UnitFourCollectionLessonCode or UnitFourTensMatchLessonCode or
-             UnitFourMultipleTensLessonCode or UnitFourCenterLessonCode));
+             UnitFourMultipleTensLessonCode or UnitFourCenterLessonCode)||
+         (previous==Version && UnitFourLaterLessonCodes.Contains(lesson.LessonCode)));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
