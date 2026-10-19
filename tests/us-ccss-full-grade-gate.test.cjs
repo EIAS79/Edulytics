@@ -72,12 +72,17 @@ test('mixed digital/authored original lesson 146 needs BOTH proofs',()=>{
   assert.equal(validLessonAssessment(146,both,()=>false),false);
 });
 test('ordinary numeric lessons keep actual grading and persisted attempts mandatory',()=>{
-  const e={allowedFamilies:['math.family'],realPracticeGradingPersisted:true,
+  const e={allowedFamilies:['usccss.g1.u03.l14.center.add_subtract'],realPracticeGradingPersisted:true,
     independentCorrectAndWrongAnswersVerified:true,
     independentGradingProofPath:'math',independentGradingProofSha256:'a'.repeat(64),
     runtimePracticeProofPath:'attempt',runtimePracticeProofSha256:'b'.repeat(64)};
   assert.equal(validLessonAssessment(51,e,()=>true),true);
   assert.equal(validLessonAssessment(51,{...e,allowedFamilies:[]},()=>true),false);
+  assert.equal(validLessonAssessment(51,{...e,allowedFamilies:['math.family']},()=>true),false);
+  assert.equal(validLessonAssessment(51,{...e,allowedFamilies:['usccss.g1.u03.l15.story.three_addends_ten']},()=>true),false);
+  assert.equal(validLessonAssessment(51,{...e,allowedFamilies:[e.allowedFamilies[0],e.allowedFamilies[0]]},()=>true),false);
+  assert.equal(validLessonAssessment(50,e,()=>true),false);
+  assert.equal(validLessonAssessment(147,e,()=>true),false);
   assert.equal(validLessonAssessment(51,{...e,independentCorrectAndWrongAnswersVerified:false},()=>true),false);
   assert.equal(validLessonAssessment(51,e,()=>false),false);
 });

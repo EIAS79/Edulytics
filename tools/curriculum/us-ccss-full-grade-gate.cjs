@@ -8,6 +8,7 @@ const PLAN = 'EDULYTICS-GRADE-FIRST-FULL-GRADE-V1';
 const HISTORIC_SHA = '2c7c43a8f3af7151d422acc6e8e9e8fa5348833c';
 const MANIFEST = 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json';
 const LEDGER = 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json';
+const CANDIDATE_FAMILY_MAP = 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json';
 const isSha = s => typeof s === 'string' && /^[0-9a-f]{40}$/i.test(s);
 const isHash = s => typeof s === 'string' && /^[0-9a-f]{64}$/i.test(s);
 const load = p => JSON.parse(fs.readFileSync(path.resolve(ROOT,p),'utf8'));
@@ -58,7 +59,22 @@ function sourceUnchangedSinceProof(proofSha,releaseSha) {
 }
 // V1 accepts source-grounded lesson readiness, not synthetic human activity.
 function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile) {
-  if(!Array.isArray(e.allowedFamilies))return false;
+  if(!Array.isArray(e.allowedFamilies)||!Number.isInteger(ordinal)||
+     ordinal<51||ordinal>146)return false;
+  // The original five-lesson V1 requires lesson-specific Practice selected
+  // from ORIGINAL source goals. Merely naming any gradeable family is NOT
+  // evidence that the learner's actual lesson task was assessed.
+  // The map itself is separately cross-checked against the real registered
+  // C# lesson contract and authenticated HTTPS family in this PR.
+  const mapping=load(CANDIDATE_FAMILY_MAP);
+  const candidate=mapping.records?.[ordinal-51];
+  if(mapping.academicAcceptance!=='NOT_CLAIMED'||!candidate||
+      candidate.ordinal!==ordinal || typeof candidate.lessonCode!=='string')
+      return false;
+  const expected=candidate.candidateFamily==null?[]:[candidate.candidateFamily];
+  if(e.allowedFamilies.length!==expected.length||
+      e.allowedFamilies.some((family,i)=>family!==expected[i]))
+      return false;
   const needsDigital=ordinal!==65;
   if(needsDigital && (e.allowedFamilies.length===0 ||
       e.realPracticeGradingPersisted!==true ||
