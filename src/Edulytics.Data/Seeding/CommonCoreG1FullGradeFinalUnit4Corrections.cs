@@ -9,6 +9,11 @@ namespace Edulytics.Data.Seeding;
 public static class CommonCoreG1FullGradeFinalUnit4Corrections
 {
     public const string Version="us-ccss-g1-full-grade-u04-l16-l20-source-teaching-v1";
+    public const string OriginalComparisonsVersion="us-ccss-g1-u04-l16-l18-original-activities-v2";
+    private static bool IsOriginalComparisonLesson(string code)=>code is
+        "PED:US-CCSS-MATH:G1:U04:L16" or
+        "PED:US-CCSS-MATH:G1:U04:L17" or
+        "PED:US-CCSS-MATH:G1:U04:L18";
     private sealed record Repair(string Code,string SourceUrl,string Sha,string[] Outcomes,
         string Title,string Explanation,string Examples,string Steps,string Mistakes,string Summary);
     private static readonly Repair[] Repairs =
@@ -16,22 +21,22 @@ public static class CommonCoreG1FullGradeFinalUnit4Corrections
         new(@"PED:US-CCSS-MATH:G1:U04:L16",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-16/preparation.html",@"d764f755ec9e673edcc52916b619fd43ce29871330e55b616c82235b7ec33121",[@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
             @"Write Comparisons with Symbols PLC Activity",
             @"Compare two-digit numbers and WRITE true statements with >, < or =. In the teacher-led PLC discussion, explain the place-value reasoning used to choose a symbol.",
-            @"Example 1: The digits 8 and 5 can form 85 and 58; 85 > 58 because eight tens are more than five tens. Example 2: 42 < 47 because they have equal tens but 2 ones is fewer than 7. Example 3: 63 = 63.",
-            @"Step 1: Model or identify the tens and ones in each number. Step 2: Compare tens first and then ones if tied. Step 3: Choose and WRITE >, < or =. Step 4: Explain why the statement is true.",
+            @"Example 1: The digits 8 and 5 can form 85 and 58; 85 > 58 because eight tens are more than five tens. Example 2: 42 < 47 because they have equal tens but 2 ones is fewer than 7. Example 3: 63 = 63. Original 2021 warm-up: 49>45 and 45<49 express the SAME comparison with reversed sides. Original symbol blanks: 56>26; 72<78; 6<55; 92>29; 23=23. Original open-ended number boxes require any true choices (e.g. □>78, 39<□, 13=□), not just one preselected answer.",
+            @"Step 1: Model or identify the tens and ones in each number. Step 2: Compare tens first and then ones if tied. Step 3: Choose and WRITE >, < or =. Step 4: Explain why the statement is true. Step 5: In the original Greatest of Them All classroom game, place drawn digits into a two-digit number without moving a previously placed digit; compare both numbers and award the partner point according to the teacher-led rules.",
             @"Do not compare only the ones digits or reverse the symbol. Rotating a card does not change its place value; 85 is greater than 58.",
             @"I can write true comparisons using two-digit place value and symbols."),
         new(@"PED:US-CCSS-MATH:G1:U04:L17",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-17/preparation.html",@"2ed667761176401d13ff64b8670dd09c4e643480721d3d46588b29737d7b106b",[@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
             @"Compare and Order Numbers",
             @"Compare and ORDER several numbers within 99 using tens and ones. The original 2021 Student Facing activity begins with the ordered sequence 1, 5, 10, 50, 99; students must INSERT five more numbers 49, 8, 25, 98, 13 in their correct positions, then justify two placements. A three-number order check is only a small subset of the source task.",
-            @"Example 1: 37 < 49 < 52 is increasing because 3 tens, 4 tens, and 5 tens. Example 2: Order 64, 69, 61 as 61 < 64 < 69. Example 3 (original insertion): Start at 1, 5, 10, 50, 99. Insert 49, 8, 25, 98 and 13, yielding 1, 5, 8, 10, 13, 25, 49, 50, 98, 99. Explain how each inserted number fits between neighbors.",
+            @"Example 1: 37 < 49 < 52 is increasing because 3 tens, 4 tens, and 5 tens. Example 2: Order 64, 69, 61 as 61 < 64 < 69. Example 3 (original insertion): Start at 1, 5, 10, 50, 99. Insert 49, 8, 25, 98 and 13, yielding 1, 5, 8, 10, 13, 25, 49, 50, 98, 99. Explain how each inserted number fits between neighbors. Original 2021 extension also asks for numbers that make 25<□ and 25>□ true; multiple correct numbers are possible.",
             @"Step 1: Read every number card. Step 2: Compare tens. Step 3: If tens match, compare ones. Step 4: Place every card in the requested order. Step 5: Read each comparison to check it is true.",
             @"Do not sort by the ones alone; 49 is less than 52 even though nine ones are greater than two ones.",
             @"I can order two-digit numbers and justify each adjacent comparison."),
         new(@"PED:US-CCSS-MATH:G1:U04:L18",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-18/preparation.html",@"431537a16be04c98f8b8f7bd149d2202ae2c6202f890e8e741aabeb2a137848f",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3",@"CCSS:1.NBT.C.4",@"CCSS:1.NBT.C.5",@"CCSS:1.NBT.C.6"],
             @"Center Day 3",
             @"Teacher-led center day: count collections, create/compare/order numbers through 99 and write numerals. Different center activities have different response formats.",
-            @"Example 1: Five tens and two ones make 52. Example 2: 53 > 47 because 5 tens exceed 4. Example 3: Order 32, 48 and 39 as 32 < 39 < 48.",
-            @"Step 1: Read the actual center instruction. Step 2: Bundle complete tens when counting. Step 3: Compare tens before ones for ordering. Step 4: Write accurate two-digit numerals and check with objects or number cards.",
+            @"Example 1: Five tens and two ones make 52. Example 2: 53 > 47 because 5 tens exceed 4. Example 3: Order 32, 48 and 39 as 32 < 39 < 48. Original 2021 number talk: 32+10=42; 32+10+10=52; 32+20=52; 32-20=12. The two twenty-addition expressions give equal sums but different written groups of tens.",
+            @"Step 1: Read the actual center instruction. Step 2: Bundle complete tens when counting. Step 3: Compare tens before ones for ordering. Step 4: Write accurate two-digit numerals and check with objects or number cards. Step 5: For the original Get Your Numbers in Order center, players take turns placing two-digit cards in increasing order; an unplaceable card is a pass that scores a point, and the lower total wins under teacher supervision.",
             @"Solving one digital number fact does not prove a physical center game or partner conversation was completed.",
             @"I can count, compare, order and write two-digit numbers in the appropriate center."),
         new(@"PED:US-CCSS-MATH:G1:U04:L19",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-19/preparation.html",@"d74fcda3398cc4843865133bfdbac41151b56c6c46fb0f35a2e1992300b4eeec",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
@@ -79,9 +84,13 @@ public static class CommonCoreG1FullGradeFinalUnit4Corrections
         }
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
-        IsTarget(doc,lesson)?Version:previous;
+        IsTarget(doc,lesson)
+            ?(IsOriginalComparisonLesson(lesson.LessonCode)?OriginalComparisonsVersion:Version)
+            :previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
-        IsTarget(doc,lesson)&&previous==CommonCoreRichContentCorrections.CorrectionContentVersion;
+        IsTarget(doc,lesson)&&
+        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
+         (IsOriginalComparisonLesson(lesson.LessonCode)&&previous==Version));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
