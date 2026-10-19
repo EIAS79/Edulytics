@@ -39,8 +39,8 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
             2=>mode%2==0?
                 $"TOTAL={a+b};EQUATION={a}+{b}={a+b}":
                 $"TOTAL={sum};EQUATION={a}+{b}+{c}={sum}",
-            3=>$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b}",
-            4=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b}",
+            3=>$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
+            4=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             _=>throw new InvalidOperationException()
         };
     }
@@ -49,7 +49,10 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
         int sum=a+b;
         return index switch
         {
-            0 or 1=>$"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
+            0=>mode==2?$"UNKNOWN={a-b};EQUATION={a}-{b}={a-b}":
+                mode==3?$"UNKNOWN={a-b};EQUATION={a-b}+{b}={a}":
+                $"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
+            1=>$"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
             2=>mode switch
             {
                 0=>$"UNKNOWN={sum};EQUATION={a}+{b}={sum}",

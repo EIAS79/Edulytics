@@ -81,8 +81,8 @@ public static class UsCcssG1FullGradeNextQuestions
             CenterTwoThree=>mode%2==0
                 ?$"How Close? Add the TWO number cards {a} and {b} within 20. Write TOTAL=number;EQUATION=number+number=number."
                 :$"Five in a Row: add ALL THREE card numbers {a}, {b} and {c}. Write TOTAL=number;EQUATION=number+number+number=number.",
-            TeenSubtract=>$"Take From: start with {a} counters and remove {b}. To cross ten, remove the ones first, then part of a ten. Write REACH10=number;REST=number;DIFFERENCE=number.",
-            TenSubtract=>$"Use ten as a landmark for {a}-{b}. First subtract enough to get to ten, then subtract the rest. Write TO10=number;REST=number;DIFFERENCE=number.",
+            TeenSubtract=>$"Take From: start with {a} counters and remove {b}. To cross ten, remove the ones first, then part of a ten. Write your subtraction EQUATION. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
+            TenSubtract=>$"Use ten as a landmark for {a}-{b}. First subtract enough to get to ten, then subtract the rest. Write the original source subtraction EQUATION too. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
             _=>throw new InvalidOperationException()
         };
         return new(family,prompt,
@@ -102,8 +102,8 @@ public static class UsCcssG1FullGradeNextQuestions
             CenterTwoThree=>mode%2==0
                 ?$"TOTAL={a+b};EQUATION={a}+{b}={a+b}"
                 :$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}",
-            TeenSubtract=>$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b}",
-            TenSubtract=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b}",
+            TeenSubtract=>$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
+            TenSubtract=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             _=>throw new InvalidOperationException()
         };
     }

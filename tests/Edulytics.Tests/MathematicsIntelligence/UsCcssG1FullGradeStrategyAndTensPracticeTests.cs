@@ -40,6 +40,33 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
         }
     }
     [Fact]
+    public void Original2021U03L24SetASetBMissingNumberEquationsAreActuallyGraded()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CountOnOrAway;
+        var p=new Dictionary<string,int>{{"a",13},{"b",6},{"c",0},{"mode",2}};
+        Assert.Equal("UNKNOWN=7;EQUATION=13-6=7",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "UNKNOWN=7;EQUATION=13-6=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "UNKNOWN=7;EQUATION=13-6=8"));
+        p["mode"]=3;
+        Assert.Equal("UNKNOWN=7;EQUATION=7+6=13",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "UNKNOWN=7;EQUATION=7+6=13"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "UNKNOWN=7;EQUATION=8+6=14"));
+        var sourceModes=Enumerable.Range(0,320)
+            .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(73*n+13)))
+            .Where(q=>q.Parameters["mode"]>=2).ToArray();
+        Assert.True(sourceModes.Length>100);
+        Assert.All(sourceModes,q=>
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters))));
+    }
+
+    [Fact]
     public void StoryModeSupportsStartChangeResultAndSubtractionUnknowns()
     {
         for(int mode=0;mode<6;mode++)

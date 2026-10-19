@@ -117,7 +117,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         var t=a+b;
         string prompt=family switch
         {
-            CountOnOrAway=>$"Compare counting ON from {b} to {a} with taking AWAY {b} from {a}. Both methods must find the difference. Write DIFFERENCE=number;CHECK=number+number=number.",
+            CountOnOrAway=>mode==2?
+                $"Original 2021 Set A: find the unknown in {a} - {b} = □ and write the full subtraction equation. Write UNKNOWN=number;EQUATION=number-number=number.":
+                mode==3?
+                $"Original 2021 Set B: find the missing addend in □ + {b} = {a}. Use counting ON or taking AWAY to justify your choice. Write UNKNOWN=number;EQUATION=number+number=number.":
+                $"Compare counting ON from {b} to {a} with taking AWAY {b} from {a}. Both methods must find the difference. Write DIFFERENCE=number;CHECK=number+number=number.",
             FlexibleSubtract=>$"Choose a subtraction method for {a}-{b}. Check using related addition. Write DIFFERENCE=number;CHECK=number+number=number.",
             StoryUnknowns=>mode switch
             {
@@ -178,7 +182,12 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         int a=p["a"],b=p["b"],mode=p["mode"],sum=a+b;
         return family switch
         {
-            CountOnOrAway or FlexibleSubtract=>$"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
+            CountOnOrAway=>mode==2?
+                $"UNKNOWN={a-b};EQUATION={a}-{b}={a-b}":
+                mode==3?
+                $"UNKNOWN={a-b};EQUATION={a-b}+{b}={a}":
+                $"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
+            FlexibleSubtract=>$"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
             StoryUnknowns=>mode switch
             {
                 0=>$"UNKNOWN={sum};EQUATION={a}+{b}={sum}",

@@ -174,7 +174,7 @@ Example 3: 18-6=12; removing six ones is direct and does not need crossing ten."
 Step 2: Solve by physically taking away or by subtracting in stages.
 Step 3: Solve again by counting ON from the smaller number until you reach the start.
 Step 4: Check both methods give the same difference; discuss which is easier for these numbers.
-Step 5: Use a true equation and a drawing, not a false chain.",
+Step 5: Use a true equation and a drawing, not a false chain.\nStep 6: ORIGINAL Set A: find missing values in subtraction equations (such as 12-7=□ and □=14-6). ORIGINAL Set B: find missing addends (such as 5+□=18 and 13=□+6). Show how each strategy makes the equation true.",
             @"Do not subtract 8-15 for a 15-8 story. Do not count only the jump to ten: 8 to 10 is 2, then to 15 is 5 more, so the difference is 7.",
             @"I can compare counting-on and taking-away subtraction methods and explain my choice; teacher-led PLC discussion remains a class activity."),
         new(@"PED:US-CCSS-MATH:G1:U03:L25",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-25/preparation.html",@"a6cb06045a13078308b3af728d4251a25a747c461a7199d6ca82d9d29e3ab104",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },

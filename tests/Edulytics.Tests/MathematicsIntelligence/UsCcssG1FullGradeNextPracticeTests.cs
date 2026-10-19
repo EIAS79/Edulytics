@@ -45,15 +45,33 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     {
         var p=new Dictionary<string,int>{{"a",14},{"b",6},{"c",0},{"mode",0}};
         Assert.True(UsCcssG1FullGradeNextQuestions.Verify(
-            UsCcssG1FullGradeNextQuestions.TeenSubtract,p,"REACH10=4;REST=2;DIFFERENCE=8"));
+            UsCcssG1FullGradeNextQuestions.TeenSubtract,p,"REACH10=4;REST=2;DIFFERENCE=8;EQUATION=14-6=8"));
         Assert.False(UsCcssG1FullGradeNextQuestions.Verify(
-            UsCcssG1FullGradeNextQuestions.TeenSubtract,p,"REACH10=4;REST=0;DIFFERENCE=10"));
+            UsCcssG1FullGradeNextQuestions.TeenSubtract,p,"REACH10=4;REST=0;DIFFERENCE=10;EQUATION=14-6=10"));
         var zoo=new Dictionary<string,int>{{"a",3},{"b",5},{"c",7},{"mode",0}};
         Assert.True(UsCcssG1FullGradeNextQuestions.Verify(
             UsCcssG1FullGradeNextQuestions.ZooThree,zoo,"TOTAL=15;EQUATION=3+5+7=15"));
         Assert.False(UsCcssG1FullGradeNextQuestions.Verify(
             UsCcssG1FullGradeNextQuestions.ZooThree,zoo,"TOTAL=8;EQUATION=3+5=8"));
     }
+    [Fact]
+    public void Original2021TeenAndTenFrameSubtractionRequireStudentWrittenEquations()
+    {
+        var p=new Dictionary<string,int>{{"a",15},{"b",8},{"c",0},{"mode",2}};
+        foreach(var family in new[]{
+            UsCcssG1FullGradeNextQuestions.TeenSubtract,
+            UsCcssG1FullGradeNextQuestions.TenSubtract})
+        {
+            var expected=UsCcssG1FullGradeNextQuestions.Solve(family,p);
+            Assert.Contains("EQUATION=15-8=7",expected);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                expected.Replace("EQUATION=15-8=7","EQUATION=15-8=6")));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                expected.Split(";EQUATION=",StringSplitOptions.None)[0]));
+        }
+    }
+
     [Fact]
     public void Original2021LinHanKiranStrategiesRetainAllThreeEquivalentExpressions()
     {
