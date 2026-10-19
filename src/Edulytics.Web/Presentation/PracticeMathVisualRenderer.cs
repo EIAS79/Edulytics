@@ -100,6 +100,17 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.g1.u06.l06.measure_paperclips" or
                 "usccss.g1.u06.l07.unit_length_matters"
                     => GradeOneSourceMeasurementVisual(family,parameters),
+                "usccss.g1.u04.l06.collection.tens_ones" or
+                "usccss.g1.u04.l07.read.two_digit" or
+                "usccss.g1.u04.l08.match.tens_ones_expression" or
+                "usccss.g1.u04.l09.show.expanded_form" or
+                "usccss.g1.u04.l10.write.two_digit_numeral" or
+                "usccss.g1.u06.l08.count_to110_cube_groups" or
+                "usccss.g1.u06.l09.write_number_to120" or
+                "usccss.g1.u08.l08.same_number_tens_ones"
+                    => GradeOneNewTensOnesVisual(family,parameters),
+                "usccss.g1.u08.l07.count_on_to120"
+                    => GradeOneNewCountOnPath(parameters),
                 "usccss.g1.u03.l14.center.add_subtract"
                     => GradeOneFullGradeNumberPuzzleBoard(parameters),
                 "usccss.g1.u07.l01.sort_solids_attributes" or
