@@ -93,6 +93,10 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.hs.rational_branch_limit_sign" => UsRationalGraph(parameters, hasHole: false),
                 "usccss.vector.head_tail_endpoint_y" => UsVectorHeadTailDiagram(parameters),
                 "usccss.vector.scalar_direction_class" => UsVectorScalarDiagram(parameters),
+                "usccss.g1.u07.l13.hour_clock" or
+                "usccss.g1.u07.l14.half_hour_clock" or
+                "usccss.g1.u07.l15.write_hours_halfhours"
+                    => GradeOneFullGradeClockFace(family,parameters),
                 "usccss.g1.u02.pets.write_two_equations" or
                 "usccss.g1.u02.shake_spill.enumerate_partitions" or
                 "usccss.g1.u02.shake_cover.write_missing_addend" or
