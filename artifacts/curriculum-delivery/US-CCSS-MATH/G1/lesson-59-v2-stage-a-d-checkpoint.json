@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A-D resume evidence; not an academic acceptance or new verification method",
+  "grade": "G1",
+  "ordinal": 59,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L22",
+  "title": "Subtract from Teen Numbers",
+  "sourceBasis": {
+    "device": "Our-CS cached IM/Kendall Hunt 2021 source, read-only",
+    "teacherPreparationRelativePath": "Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-3_lesson-22_preparation.html",
+    "fullTeacherLessonRelativePath": "unit-3/lesson-22/lesson.html",
+    "teacherPreparationSha256": "9ecb527f5dfcc9235617657a4abdefb4e519b494b92357f8f22cf1bb60697368",
+    "fullTeacherHtmlSha256": "a75f5ec320130a0ff353b152a864971f432f6b3f04c3d07ea8aca07a32944c46",
+    "studentMirrorSha256": "1bbab17d1a279f86072342726fe2cbf983ae798fc97b4efb3acf237da7d9f4c2",
+    "existingSourceAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalTasksReadFromFullTeacherLesson": [
+      "Original number-talk 14-4,14-5,17-7,17-9",
+      "Elena's 16 crayons, 7 given to Diego, 9 remaining",
+      "Number Card Subtraction: choose teen card and amount to subtract, create equation, explain favorite via drawings/numbers/words"
+    ],
+    "existingCandidateCompared": true,
+    "confirmedGap": "Original Elena 16−7 student story and original mental warm-up not explicitly represented; generic digital family did not guarantee Elena source prompt",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceSpecificRepair": "Original source teaching and source-scoped mode 3 Elena prompt added; child-generated poster/drawing not asserted automatically graded",
+    "teachingPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingCommit": "9afccf0b8680b947ba80b9cf9828cea0a9a78589",
+    "method": "Original V1 source comparison and surgical repair; no change in academic procedure",
+    "sourceArtworkCopied": false
+  },
+  "stageC": {
+    "reusedPracticeFamily": "usccss.g1.u03.l22.teen.subtract_cross_ten",
+    "reusedExistingImplementation": "Existing Take From numeric family and subtraction methods reused",
+    "additionalMathChange": "Elena 16−7 existing TeenSubtract family mode 3 now source-bound with same numeric method and verifier",
+    "practicePath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeNextQuestions.cs",
+    "practiceCommit": "b8b9545835605a60f2cd56bc5b6c4693864bcb42",
+    "limitations": "Digital numerics do not prove pupil drawings, physical/partner participation or teacher-observed strategy explanations"
+  },
+  "stageD": {
+    "newSourceAndMathAssertionsAuthored": true,
+    "teachingTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "practiceTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
+    "githubCiExecutedDuringAuthoring": false,
+    "currentHeadMathTestPassClaimed": false,
+    "authenticatedRenderingAtFinalSha": "PENDING",
+    "authenticatedGradingPersistenceAtFinalSha": "PENDING",
+    "visualRightsAndAccessibilityFinalEvidence": "PENDING",
+    "finalIndividualV1Acceptance": "PENDING"
+  },
+  "academicAcceptance": "NOT_CLAIMED",
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "ownerUat": "PENDING",
+  "currentAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
