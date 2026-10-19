@@ -21,11 +21,13 @@
 - Group cross-lesson work **by shared capability or source issue**, not by a per-lesson stop/commit/check/re-run ceremony. A shared math-engine repair should be done once, with a dependency list and affected mathematical assertions; NEVER count one general CI pass as 96 academic acceptances.
 - No five-lesson **release** chunks, no per-lesson user progress reports, no time quotas. Source notes remain lesson-specific and fully auditable.
 
-## 3. Lightweight authoring checks versus expensive final gates
+## 3. Unchanged lesson review; all authoring CI deferred until grade freeze
 
-**During continuous authoring:** review diffs, static format/syntax, sample mathematical positive/negative cases, source parity, and narrowly scoped deterministic affected tests **only when needed to prevent cascading defects** and when the execution environment supports them. Prefer one focused check after completing a shared component rather than running full CI after each edited lesson. Fail fast on a demonstrated syntax/math/security regression; fix it before building more changes on it.
+**Only the CI schedule changes.** Keep the previously approved original V1 A–D method for preparing, matching, reviewing, correcting and documenting **each** lesson exactly as it was. Do not replace the lesson review method, source activity comparison, independent mathematical correctness requirements, or existing per-lesson evidence with a faster checklist or a new methodology.
 
-**Do not repeatedly launch on intermediate commits:** full solution CI matrices, repeat isolated PostgreSQL/seed, 500-lesson login-and-attempt probes, Chromium screenshots, full multi-tenant HTTPS flows, Render redeploys, full original-source rehashing, full-grade positive eligibility, or mass SHA recertification.
+**During continuous authoring:** do not manually trigger **any GitHub Actions CI**, whether a full suite, lightweight/scope-limited CI, or workflow dispatch, after individual lesson edits or intermediate commits. Continue the existing source/teaching/Practice review and mathematical correctness work without CI; required tests and assertions can be prepared as normal but their GitHub CI runs are deferred until final grade content freeze. This instruction does not disable an existing automatically triggered repository workflow or excuse a known defect.
+
+**Do not launch on intermediate commits:** full solution CI matrices, repeat isolated PostgreSQL/seed, 500-lesson login-and-attempt probes, Chromium screenshots, full multi-tenant HTTPS flows, Render redeploys, full original-source rehashing, full-grade positive eligibility, or mass SHA recertification.
 
 **When all grade candidate code/teaching/Practice is finished, content-freeze and run final validation:**
 1. Freeze the code and source-derived text. Reconcile full manifest, source-task coverage, allowed Practice families, correctness/negative tests, security and all previously reviewed rights/teacher-only boundaries.
