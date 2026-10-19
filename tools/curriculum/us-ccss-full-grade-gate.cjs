@@ -11,6 +11,39 @@ const LEDGER = 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progres
 const CANDIDATE_FAMILY_MAP = 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json';
 const isSha = s => typeof s === 'string' && /^[0-9a-f]{40}$/i.test(s);
 const isHash = s => typeof s === 'string' && /^[0-9a-f]{64}$/i.test(s);
+// An immutable, unchanged Git file is valid V1 source/test evidence;
+// do not mandate duplicating every proof into a separate per-lesson JSON.
+const isSafeGitFile = p => typeof p==='string' && p.length>0 &&
+  !p.startsWith('/') && !p.includes('\\') &&
+  !p.split('/').some(x=>x==='.'||x==='..'||x==='') &&
+  /^(docs\/curriculum\/|artifacts\/curriculum-delivery\/|tests\/|src\/|tools\/)/.test(p) &&
+  /\.(?:md|json|cs|cjs|js|py|html|yml|yaml|trx)$/.test(p);
+function validGitEvidenceReference(ref,releaseSha) {
+  if(!ref||ref.kind!=='GIT_FILE'||!isSha(ref.commitSha)||
+     !isSafeGitFile(ref.path)||!isHash(ref.sha256)||!isSha(releaseSha))return false;
+  if(spawnSync('git',['merge-base','--is-ancestor',ref.commitSha,releaseSha],{cwd:ROOT}).status!==0)
+    return false;
+  if(spawnSync('git',['diff','--quiet',ref.commitSha,releaseSha,'--',ref.path],{cwd:ROOT}).status!==0)
+    return false;
+  const original=spawnSync('git',['show',ref.commitSha+':'+ref.path],
+    {cwd:ROOT,maxBuffer:8*1024*1024});
+  return original.status===0 &&
+    crypto.createHash('sha256').update(original.stdout).digest('hex').toLowerCase()===
+      ref.sha256.toLowerCase();
+}
+function validProof(file,hash,ref,sha,checkFile=validEvidenceFile) {
+  return checkFile(file,hash) || validGitEvidenceReference(ref,sha);
+}
+function sourceGroundedFamilies(candidate) {
+  // No arbitrary one-family limit: old V1 G1-010 used two per lesson.
+  // Every allowed family must first appear in the source-reviewed mapping.
+  const families=Array.isArray(candidate?.candidateFamilies)
+    ?candidate.candidateFamilies
+    :(candidate?.candidateFamily==null?[]:[candidate.candidateFamily]);
+  if(families.some(x=>typeof x!=='string'||!x.trim()) ||
+     new Set(families).size!==families.length)return null;
+  return families;
+}
 const load = p => JSON.parse(fs.readFileSync(path.resolve(ROOT,p),'utf8'));
 
 function initial(manifest) {
@@ -44,7 +77,7 @@ function validEvidenceFile(rel, hash) {
   const actual=crypto.createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
   return actual.toLowerCase()===hash.toLowerCase();
 }
-function sourceUnchangedSinceProof(proofSha,releaseSha) {
+function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   if(!isSha(proofSha)||!isSha(releaseSha))return false;
   // Evidence rows cannot embed their own future commit SHA: commit hashes
   // change whenever the signed/attested ledger is committed. Verify that
@@ -52,13 +85,20 @@ function sourceUnchangedSinceProof(proofSha,releaseSha) {
   // academic/runtime code is byte-for-byte unchanged at release.
   const ancestor=spawnSync('git',['merge-base','--is-ancestor',proofSha,releaseSha],{cwd:ROOT});
   if(ancestor.status!==0)return false;
-  const diff=spawnSync('git',['diff','--quiet',proofSha,releaseSha,'--',
-    'src/Edulytics.Core','src/Edulytics.Services','src/Edulytics.Data',
-    'src/Edulytics.Web','tests/Edulytics.Tests','tools/phase29'],{cwd:ROOT});
+  // V1 changes invalidate only the affected lesson/capability proof.
+  // No supplied scope retains the conservative old all-shared-code check.
+  const scope=affectedPaths===undefined
+    ?['src/Edulytics.Core','src/Edulytics.Services','src/Edulytics.Data',
+      'src/Edulytics.Web','tests/Edulytics.Tests','tools/phase29']
+    :affectedPaths;
+  if(!Array.isArray(scope)||scope.length===0||new Set(scope).size!==scope.length||
+     (affectedPaths!==undefined && scope.some(p=>!isSafeGitFile(p) ||
+       !/^(src\/|tests\/|tools\/)/.test(p))))return false;
+  const diff=spawnSync('git',['diff','--quiet',proofSha,releaseSha,'--',...scope],{cwd:ROOT});
   return diff.status===0;
 }
 // V1 accepts source-grounded lesson readiness, not synthetic human activity.
-function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile) {
+function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha) {
   if(!Array.isArray(e.allowedFamilies)||!Number.isInteger(ordinal)||
      ordinal<51||ordinal>146)return false;
   // The original five-lesson V1 requires lesson-specific Practice selected
@@ -71,16 +111,18 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile) {
   if(mapping.academicAcceptance!=='NOT_CLAIMED'||!candidate||
       candidate.ordinal!==ordinal || typeof candidate.lessonCode!=='string')
       return false;
-  const expected=candidate.candidateFamily==null?[]:[candidate.candidateFamily];
-  if(e.allowedFamilies.length!==expected.length||
+  const expected=sourceGroundedFamilies(candidate);
+  if(!expected||e.allowedFamilies.length!==expected.length||
       e.allowedFamilies.some((family,i)=>family!==expected[i]))
       return false;
   const needsDigital=ordinal!==65;
   if(needsDigital && (e.allowedFamilies.length===0 ||
       e.realPracticeGradingPersisted!==true ||
       e.independentCorrectAndWrongAnswersVerified!==true ||
-      !checkFile(e.independentGradingProofPath,e.independentGradingProofSha256) ||
-      !checkFile(e.runtimePracticeProofPath,e.runtimePracticeProofSha256)))return false;
+      !validProof(e.independentGradingProofPath,e.independentGradingProofSha256,
+        e.independentGradingProofReference,releaseSha,checkFile) ||
+      !validProof(e.runtimePracticeProofPath,e.runtimePracticeProofSha256,
+        e.runtimePracticeProofReference,releaseSha,checkFile)))return false;
   if(!needsDigital && e.allowedFamilies.length!==0)return false;
   if([65,119,123,124,125,126,135,146].includes(ordinal)) {
     if(e.originalAuthorshipTaskReviewed!==true ||
@@ -123,10 +165,12 @@ function evaluate(manifest,ledger,candidateSha) {
   if(candidateSha!==undefined && !isSha(candidateSha)) issues.push('Candidate SHA must be exact 40 hex');
   let accepted=0, firstUnfinished=147;
   const stableProofCache=new Map();
-  const verifiedProof=sha=>{
+  const verifiedProof=(sha,paths)=>{
     if(candidateSha===undefined)return true;
-    if(!stableProofCache.has(sha))stableProofCache.set(sha,sourceUnchangedSinceProof(sha,candidateSha));
-    return stableProofCache.get(sha);
+    const key=sha+':'+JSON.stringify(paths);
+    if(!stableProofCache.has(key))
+      stableProofCache.set(key,sourceUnchangedSinceProof(sha,candidateSha,paths));
+    return stableProofCache.get(key);
   };
   for(let i=0;i<96;i++){
     const ord=i+51,original=source[i+50],r=rows[i];
@@ -141,14 +185,16 @@ function evaluate(manifest,ledger,candidateSha) {
     const e=r.evidence||{};
     const valid = (e.reviewedOriginalTeacherSource===true && e.reviewedOriginalStudentTask===true &&
       e.licenseVerified===true && e.actualLearnerRenderingVerified===true &&
-      validLessonAssessment(ord,e) &&
+      validLessonAssessment(ord,e,validEvidenceFile,candidateSha) &&
       Array.isArray(e.forbiddenFamilies)&&
       Array.isArray(e.sourceObjectives)&&e.sourceObjectives.length>0 &&
       isHash(e.sourceSha256)&&isHash(e.effectiveStudentBodySha256)&&
       e.sourceSha256===original.teacherPreparationSha256 &&
-      isSha(e.testedCodeSha) && verifiedProof(e.testedCodeSha) &&
-      validEvidenceFile(e.sourceReviewPath,e.sourceReviewFileSha256) &&
-      Array.isArray(e.tests)&&e.tests.length>0 && e.tests.every(x=>validEvidenceFile(x.path,x.sha256)));
+      isSha(e.testedCodeSha) && verifiedProof(e.testedCodeSha,e.affectedCodePaths) &&
+      validProof(e.sourceReviewPath,e.sourceReviewFileSha256,
+        e.sourceReviewReference,candidateSha) &&
+      Array.isArray(e.tests)&&e.tests.length>0 &&
+      e.tests.every(x=>validProof(x.path,x.sha256,x.reference,candidateSha)));
     if(!valid){missing.push({ordinal:ord,reason:'Invalid/missing verifiable source, grading, runtime, tests or exact-candidate evidence'});firstUnfinished=Math.min(ord,firstUnfinished);continue;}
     accepted++;
   }
@@ -177,4 +223,5 @@ function main(args){
   if(report.issues.length || (args.includes('--release') && report.outcome==='NO_GO'))process.exitCode=1;
 }
 if(require.main===module){try{main(process.argv.slice(2));}catch(e){console.error(e.stack);process.exitCode=2;}}
-module.exports={initial,validLessonAssessment,evaluate,validEvidenceFile,sourceUnchangedSinceProof};
+module.exports={initial,validLessonAssessment,evaluate,validEvidenceFile,
+  validGitEvidenceReference,sourceGroundedFamilies,sourceUnchangedSinceProof};
