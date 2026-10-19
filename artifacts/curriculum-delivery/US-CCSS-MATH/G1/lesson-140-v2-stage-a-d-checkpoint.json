@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Individual original V1 A–D source task audit checkpoint, not internal acceptance",
+  "grade": "G1",
+  "ordinal": 140,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L04",
+  "title": "Change Unknown Story Problems PLC Activity",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics 2021 Grade 1",
+    "sourceRelativePath": "unit-8/lesson-4/lesson.html",
+    "readOnlyFullTeacherLessonHtmlSha256": "a861ababa5f28c07fc50f133f9424f107b2eac133cdcefa40a685f8b9a59c7eb",
+    "matchesIndexedSource": true,
+    "originalArtworkAndThirdPartyPhotoPermissions": "NOT_FULLY_VERIFIED"
+  },
+  "stageA": {
+    "originalStudentFacingRead": true,
+    "originalWarmup": "10+7=17;8+2+7=17;10+5+2=17",
+    "originalMainProblems": [
+      {
+        "context": "8 turtles swim, unknown turtles join, total 15",
+        "equation": "8+□=15",
+        "unknown": 7
+      },
+      {
+        "context": "17 penguins on rocks, unknown penguins leave, five remain",
+        "equation": "17-□=5",
+        "unknown": 12
+      },
+      {
+        "context": "Seals eat unknown fish from 20, only 3 remain",
+        "equation": "20-□=3",
+        "unknown": 17
+      },
+      {
+        "context": "Tyler touched 6 stingrays plus sea stars, total 14 animals",
+        "equation": "6+□=14",
+        "unknown": 8
+      }
+    ],
+    "secondTask": "Andre's 16 bullfrogs, unknown swam away, nine remain (16-□=9); explain subtraction/inverse addition",
+    "identifiedGap": "Existing learner teaching previously omitted source-specific fish-bucket and stingray/sea-star problems"
+  },
+  "stageB": {
+    "reuseExistingLessonTeaching": true,
+    "repairedFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "repairCommit": "3355877d13784c92b670a88741a66826e34141fa",
+    "originalSourcePhotoCopied": false
+  },
+  "stageC": {
+    "existingCandidateReused": true,
+    "existingFamily": "usccss.g1.u08.l04.change_unknown",
+    "teacherOnlyScope": "Original student drawings and source photo, group discussion and manipulation are not proven digitally"
+  },
+  "stageD": {
+    "addedAssertions": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "testCommit": "61f0c2082f07f2c581f42a3be51f5324f64868c4",
+    "currentHeadDotNetExecuted": false,
+    "finalGithubCI": "PENDING_GRADE_FREEZE",
+    "authenticatedRenderingScoringPersistence": "PENDING",
+    "sourceMediaRightsAndAccessibility": "PENDING",
+    "lessonV1InternalAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
