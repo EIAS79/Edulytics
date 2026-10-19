@@ -17,7 +17,9 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
         {
             0=>mode<=1?$"ANSWER={(mode==0?a+b:a-b)}":$"CARDS={b},{c}",
             1=>$"TOTAL={sum};EQUATION={a}+{b}+{c}={sum}",
-            2=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={sum}":$"MATCH=10+{c};TOTAL={sum}",
+            2=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={sum}":
+                mode==2?$"MATCH=10+{c};TOTAL={sum}":
+                $"WRITE=10+{c};TOTAL={sum}",
             3=>mode==2?$"EQUATION=9+{b}={9+b};TEN_EQUATION=10+{b-1}={9+b};TOTAL={9+b}":
                 $"MOVE={10-a};REST={b-(10-a)};TOTAL={a+b}",
             4=>mode<=1?$"EQUAL={(mode==0?"YES":"NO")};TOTAL={a+b}":
