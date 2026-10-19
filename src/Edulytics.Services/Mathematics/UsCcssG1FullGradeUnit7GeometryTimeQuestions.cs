@@ -92,7 +92,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             _=>throw new InvalidOperationException()
         };
         return new(family,prompt,
-            "This is a text-only concept check. It does NOT verify learner drawings, actual 2D/3D construction, equal-area picture partitions, reading of rendered clock faces, physical game participation or teacher-led oral reasoning.",
+            "A source-related digital math and shape concept check. Where a first-party SVG is rendered, it illustrates the mathematical shape, equal-area parts, or actual clock-hand positions; the separate numeric or terminology answer does not certify learner drawings, physical solid/flat construction, clock-card manipulation, games, or teacher-led oral reasoning.",
             AssessmentItemType.ShortAnswer,p);
     }
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)

@@ -45,6 +45,12 @@ public sealed class UsCcssG1SourceShapesAndHardTimesVisualTests
         var visual=Assert.IsType<string>(Visual(2,4,3,0));
         Assert.Equal(4,System.Text.RegularExpressions.Regex.Matches(visual,"class='shape-cube'").Count);
         Assert.Equal(3,System.Text.RegularExpressions.Regex.Matches(visual,"class='shape-prism'").Count);
+        Assert.Contains("<g class='shape-cube'>",visual);
+        Assert.Contains("<g class='shape-prism'>",visual);
+        Assert.Contains("L 79 49",visual); // First cube: slanted top face
+        Assert.Contains("L 321 52",visual); // First isometric prism top face
+        Assert.DoesNotContain("<rect class='shape-cube'",visual);
+        Assert.DoesNotContain("<rect class='shape-prism'",visual);
         Assert.DoesNotContain("PIECES=7",visual);
     }
     [Theory]

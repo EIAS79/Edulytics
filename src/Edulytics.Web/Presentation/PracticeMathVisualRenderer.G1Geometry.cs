@@ -50,9 +50,21 @@ public static partial class PracticeMathVisualRenderer
                     int col=n%6,row=n/6;
                     int x=42+col*59,y=49+row*47;
                     if(n<a)
-                        svg.Append($"<rect class='shape-cube' x='{x}' y='{y}' width='27' height='27' fill='rgba(33,128,184,.22)' stroke='currentColor' stroke-width='1.5'/>");
+                    {
+                        // Isometric first-party cube with three visible faces,
+                        // NOT a flat square mislabeled as a physical solid.
+                        svg.Append($"<g class='shape-cube'><path d='M {x} {y+9} L {x+10} {y} L {x+37} {y} L {x+27} {y+9} Z' fill='rgba(33,128,184,.18)' stroke='currentColor' stroke-width='1'/>");
+                        svg.Append($"<path d='M {x+27} {y+9} L {x+37} {y} L {x+37} {y+27} L {x+27} {y+36} Z' fill='rgba(33,128,184,.36)' stroke='currentColor' stroke-width='1'/>");
+                        svg.Append($"<rect x='{x}' y='{y+9}' width='27' height='27' fill='rgba(33,128,184,.23)' stroke='currentColor' stroke-width='1.5'/></g>");
+                    }
                     else
-                        svg.Append($"<rect class='shape-prism' x='{x}' y='{y+5}' width='39' height='18' fill='rgba(204,134,41,.23)' stroke='currentColor' stroke-width='1.5'/>");
+                    {
+                        // A longer three-dimensional rectangular prism, with
+                        // visibly unequal edges and depth, not a flat rectangle.
+                        svg.Append($"<g class='shape-prism'><path d='M {x} {y+12} L {x+10} {y+3} L {x+43} {y+3} L {x+33} {y+12} Z' fill='rgba(204,134,41,.18)' stroke='currentColor' stroke-width='1'/>");
+                        svg.Append($"<path d='M {x+33} {y+12} L {x+43} {y+3} L {x+43} {y+25} L {x+33} {y+34} Z' fill='rgba(204,134,41,.36)' stroke='currentColor' stroke-width='1'/>");
+                        svg.Append($"<rect x='{x}' y='{y+12}' width='33' height='22' fill='rgba(204,134,41,.23)' stroke='currentColor' stroke-width='1.5'/></g>");
+                    }
                 }
                 Text(svg,210,249,"Count each shape component once.","hint");
                 break;
