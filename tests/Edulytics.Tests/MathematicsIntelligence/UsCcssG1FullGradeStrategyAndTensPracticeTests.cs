@@ -79,6 +79,38 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
           new Dictionary<string,int>{{"a",2},{"b",3},{"c",0},{"mode",1}}));
     }
     [Theory]
+    [InlineData(1,"B","ten")]
+    [InlineData(2,"C","twenty")]
+    [InlineData(3,"A","thirty")]
+    [InlineData(4,"B","forty")]
+    [InlineData(5,"C","fifty")]
+    [InlineData(6,"A","sixty")]
+    [InlineData(7,"B","seventy")]
+    [InlineData(8,"C","eighty")]
+    [InlineData(9,"A","ninety")]
+    public void Original2021U04L02SourceWordCardsAreRecognizedWithoutSpelling(
+        int tens,string correctCard,string correctWord)
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.MatchTens;
+        var parameters=new Dictionary<string,int>{
+            ["a"]=tens,["b"]=0,["c"]=0,["mode"]=3};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,parameters));
+        var problem=UsCcssG1FullGradeStrategyAndTensQuestions.Build(
+            family,new Random(tens*113+7));
+        // Generator may choose a different mode: direct source-card mode must
+        // independently match the answer's card/quantity contract.
+        string expected=$"MATCH={correctCard};TENS={tens};NUMBER={tens*10}";
+        Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(
+            family,parameters));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,parameters,expected));
+        string wrongCard=correctCard=="A"?"B":"A";
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+            $"MATCH={wrongCard};TENS={tens};NUMBER={tens*10}"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+            $"MATCH={correctCard};TENS={tens};NUMBER={tens*10+10}"));
+    }
+
+    [Theory]
     [InlineData(3,2,0,"TENS=5;TOTAL=50")]
     [InlineData(7,4,1,"TENS=3;TOTAL=30")]
     [InlineData(4,3,2,"TENS=7;TOTAL=70")]
