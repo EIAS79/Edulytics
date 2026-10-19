@@ -1349,6 +1349,14 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
     b001_e2e_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_ATTEMPTS") == "1"
     b001_negative_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_MALFORMED_ANSWERS") == "1"
     b001_e2e_rows = []
+    # Candidate family map is NOT academic approval: it detects an unrelated
+    # fallback family from real authenticated Grade 1 student attempts.
+    g1_map_path = Path(__file__).resolve().parents[2] / "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json"
+    g1_scope = json.loads(g1_map_path.read_text(encoding="utf-8"))
+    g1_expected = {r["lessonCode"]: r for r in g1_scope["records"]}
+    assert len(g1_expected) == 96 and len(set(g1_expected)) == 96
+    assert g1_scope["digitalLessonCount"] == 95
+    g1_e2e_rows = []
     if b001_e2e_enabled:
         from b001_practice_attempt_probe import (
             probe_lesson, summarize, extract_csrf, extract_adoption,
@@ -1433,6 +1441,40 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             result["ordinal"] = ordinal
             result["lessonCode"] = code
             b001_e2e_rows.append(result)
+            if code in g1_expected:
+                candidate=g1_expected[code]
+                assert candidate["ordinal"] == ordinal, (code, ordinal)
+                source_mode=candidate["assessmentMode"]
+                if source_mode=="SOURCE_AUTHORED_TASK":
+                    # Original optional U03 L28 writing task is NOT assessed
+                    # by this general-purpose auto-grader; check the learner
+                    # instruction exists and leave teacher observation unclaimed.
+                    assert "story" in rendered and "write" in rendered, (
+                        code, "learner-authored story teaching missing")
+                    g1_e2e_rows.append({"ordinal":ordinal,"lessonCode":code,
+                        "assessmentMode":source_mode,
+                        "learnerTeachingRendered":True,
+                        "authenticStudentAuthorshipNotClaimed":True})
+                else:
+                    assert source_mode in ("DIGITAL_PRACTICE",
+                                           "DIGITAL_AND_SOURCE_AUTHORED_TASK")
+                    assert result["status"]=="SELF_CONSISTENT_GRADE_PERSISTED", (
+                        code,"correct answer persistence failed",result)
+                    assert result.get("family")==candidate["candidateFamily"], (
+                        code,"unrelated fallback Practice family",result.get("family"),
+                        candidate["candidateFamily"])
+                    assert result.get("negativeStatus")==(
+                        "MALFORMED_ANSWER_REJECTED_AND_PERSISTED"), (
+                        code,"malformed answer accepted or not saved",result)
+                    if source_mode=="DIGITAL_AND_SOURCE_AUTHORED_TASK":
+                        assert "riddle" in rendered and "write" in rendered, (
+                            code,"learner riddle-authorship teaching missing")
+                    g1_e2e_rows.append({"ordinal":ordinal,"lessonCode":code,
+                        "assessmentMode":source_mode,
+                        "actualFamily":result["family"],
+                        "correctAnswerSelfConsistentAndPersisted":True,
+                        "malformedAnswerRejectedAndPersisted":True,
+                        "authenticStudentAuthorshipNotClaimed":True})
             print("B001_DISPOSABLE_500_REAL_PRACTICE_PROBE",
                   ordinal, code, result["status"], result.get("httpStatus", ""), flush=True)
 
@@ -1478,6 +1520,18 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                     "B001 500-lesson malformed-answer rejection gate NO_GO",
                     b001_attempts["malformedAnswersNotVerified"])
 
+    if b001_e2e_enabled:
+        assert len(g1_e2e_rows)==96, ("G1 full-grade runtime evidence incomplete",
+                                     len(g1_e2e_rows))
+        assert sum(r["assessmentMode"]!="SOURCE_AUTHORED_TASK"
+                   for r in g1_e2e_rows)==95
+        Path("/tmp/g1-96-source-family-https-candidate-evidence.json").write_text(
+            json.dumps({"scope":"G1_51_TO_146_ONLY",
+                "claim":"Authenticated source-family and grading technology ONLY; no academic lesson signoff",
+                "rows":g1_e2e_rows},indent=2,ensure_ascii=False)+"\n",
+            encoding="utf-8")
+        print("G1_96_CANDIDATE_SOURCE_FAMILY_HTTPS_PASS",
+              len(g1_e2e_rows),flush=True)
     restored = sql("""
         WITH restoration AS (
         UPDATE "StudentEnrollments" e

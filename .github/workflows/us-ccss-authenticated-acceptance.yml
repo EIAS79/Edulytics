@@ -164,6 +164,14 @@ jobs:
           path: /tmp/b001-500-real-practice-generation-and-grading-probe.json
           if-no-files-found: warn
           retention-days: 14
+      - name: Preserve G1 51-146 candidate family, authenticated grading and authored-task rendering proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-96-original-source-practice-https-candidate-not-academic-clearance
+          path: /tmp/g1-96-source-family-https-candidate-evidence.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Preserve original B001 500 lesson Practice entry availability matrix
         if: always()
         uses: actions/upload-artifact@v4
