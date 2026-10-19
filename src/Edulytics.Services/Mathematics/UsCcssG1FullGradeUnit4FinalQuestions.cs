@@ -138,6 +138,38 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         };
     }
     private static string Normalize(string? s)=>string.Concat((s??"").Where(c=>!char.IsWhiteSpace(c))).ToUpperInvariant();
+    // Original 2021 "How Many Ways?" permits the student to CHOOSE how
+    // many whole tens to exchange. The authored reference answer offers one
+    // valid trade, not the only correct nonstandard representation.
+    private static bool VerifyStudentChosenTensTrade(IReadOnlyDictionary<string,int> p,string? response)
+    {
+        var fields=new Dictionary<string,string>(StringComparer.Ordinal);
+        var parts=Normalize(response).Split(';');
+        if(parts.Length!=6)return false;
+        foreach(var part in parts)
+        {
+            var k=part.IndexOf('=');
+            if(k<=0||k==part.Length-1||
+               !fields.TryAdd(part[..k],part[(k+1)..]))return false;
+        }
+        if(fields.Count!=6||
+            !fields.TryGetValue("NUMBER",out var number)||
+            !fields.TryGetValue("TENS",out var tens)||
+            !fields.TryGetValue("ONES",out var ones)||
+            !fields.TryGetValue("ALT_TENS",out var alternateTens)||
+            !fields.TryGetValue("ALT_ONES",out var alternateOnes)||
+            !fields.TryGetValue("WAYS",out var ways)||
+            !int.TryParse(number,out var n)||n!=p["a"]||
+            !int.TryParse(tens,out var t)||t!=n/10||
+            !int.TryParse(ones,out var o)||o!=n%10||
+            !int.TryParse(alternateTens,out var altT)||altT<0||altT>=t||
+            !int.TryParse(alternateOnes,out var altO)||altO<10||
+            !int.TryParse(ways,out var reportedWays)||reportedWays!=t+1)return false;
+        return 10*altT+altO==n;
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? value)=>
-        Valid(family,p)&&!string.IsNullOrWhiteSpace(value)&&Normalize(Solve(family!,p))==Normalize(value);
+        Valid(family,p)&&!string.IsNullOrWhiteSpace(value)&&
+        (family==Families[4]?VerifyStudentChosenTensTrade(p,value):
+            Normalize(Solve(family!,p))==Normalize(value));
 }

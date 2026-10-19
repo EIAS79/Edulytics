@@ -62,6 +62,27 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
     }
 
     [Fact]
+    public void OriginalHowManyWaysAcceptsAnyCorrectSecondRepresentationButNoFalseTrade()
+    {
+        const string family="usccss.g1.u04.l20.equivalent_tens_ones";
+        var source=new Dictionary<string,int>{{"a",94},{"b",0},{"c",0},{"mode",2}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source,
+            "NUMBER=94;TENS=9;ONES=4;ALT_TENS=8;ALT_ONES=14;WAYS=10"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source,
+            "ONES=4;ALT_ONES=74;NUMBER=94;WAYS=10;TENS=9;ALT_TENS=2"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source,
+            "NUMBER=94;TENS=9;ONES=4;ALT_TENS=0;ALT_ONES=94;WAYS=10"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+            "NUMBER=94;TENS=9;ONES=4;ALT_TENS=9;ALT_ONES=4;WAYS=10"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+            "NUMBER=94;TENS=9;ONES=4;ALT_TENS=2;ALT_ONES=64;WAYS=10"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+            "NUMBER=94;TENS=9;ONES=4;ALT_TENS=2;ALT_ONES=74;WAYS=9"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+            "NUMBER=94;TENS=9;ONES=4;ALT_TENS=2;ALT_ONES=74;WAYS=10;EXTRA=2"));
+    }
+
+    [Fact]
     public void OriginalUnit4Lesson21ComparesThirtyTwoLooseOnesCorrectly()
     {
         const string family="usccss.g1.u04.l21.compare_nonstandard_forms";
