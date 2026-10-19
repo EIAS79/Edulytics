@@ -89,6 +89,37 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
         return correct.Count==actual.Count && correct.All(x=>
             actual.TryGetValue(x.Key,out var value)&&value==x.Value);
     }
+    // Original Show Me Your Number does not prescribe which ten-rods a
+    // student trades. Accept any second, DIFFERENT mathematically equivalent
+    // nonstandard tens-and-ones model, not only the one seeded by the engine.
+    private static bool VerifyStudentChosenRegrouping(
+        IReadOnlyDictionary<string,int> p,string? candidate)
+    {
+        var fields=new Dictionary<string,string>(StringComparer.Ordinal);
+        var pieces=Norm(candidate).Split(';');
+        if(pieces.Length!=6)return false;
+        foreach(var piece in pieces)
+        {
+            var at=piece.IndexOf('=');
+            if(at<=0||at==piece.Length-1||
+               !fields.TryAdd(piece[..at],piece[(at+1)..]))return false;
+        }
+        int t=p["tens"],o=p["ones"];
+        if(fields.Count!=6||!fields.TryGetValue("EXPANDED",out var expanded)||
+            expanded!=$"{t*10}+{o}"||
+            !fields.TryGetValue("TENS",out var originalTens)||
+            !fields.TryGetValue("ONES",out var originalOnes)||
+            !fields.TryGetValue("ALT_TENS",out var alternateTens)||
+            !fields.TryGetValue("ALT_ONES",out var alternateOnes)||
+            !int.TryParse(originalTens,out var qt)||qt!=t||
+            !int.TryParse(originalOnes,out var qo)||qo!=o||
+            !int.TryParse(alternateTens,out var at)||at<0||at>=t||
+            !int.TryParse(alternateOnes,out var ao)||ao<10)return false;
+        return 10*at+ao==10*t+o;
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? candidate)=>
-        Valid(family,p)&&GradePersistedAnswer(family,Solve(family!,p),candidate);
+        Valid(family,p)&&
+        (family==ShowMultipleWays?VerifyStudentChosenRegrouping(p,candidate):
+            GradePersistedAnswer(family,Solve(family!,p),candidate));
 }

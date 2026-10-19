@@ -23,6 +23,29 @@ public sealed class UsCcssG1FullGradeTensAndOnesPracticeTests
         }
     }
     [Fact]
+    public void OriginalShowMeYourNumberAcceptsAnyDistinctMathematicallyCorrectTensTrade()
+    {
+        const string family=UsCcssG1FullGradeTensAndOnesQuestions.ShowMultipleWays;
+        var p=new Dictionary<string,int>{{"tens",6},{"ones",5},{"mode",1},{"unused",0}};
+        const string oneTrade="EXPANDED=60+5;TENS=6;ONES=5;ALT_TENS=5;ALT_ONES=15";
+        const string fourTrades="ONES=5;TENS=6;EXPANDED=60+5;ALT_ONES=45;ALT_TENS=2";
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,oneTrade));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,fourTrades));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "EXPANDED=60+5;TENS=6;ONES=5;ALT_TENS=0;ALT_ONES=65"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "EXPANDED=60+5;TENS=6;ONES=5;ALT_TENS=6;ALT_ONES=5"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "EXPANDED=60+5;TENS=6;ONES=5;ALT_TENS=2;ALT_ONES=35"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "EXPANDED=60+5;TENS=6;ONES=5;ALT_TENS=-1;ALT_ONES=75"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "EXPANDED=60+5;TENS=6;ONES=5;ALT_TENS=2;ALT_ONES=45;EXTRA=1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "EXPANDED=60+5;TENS=6;ONES=5;ALT_TENS=2;ALT_TENS=2"));
+    }
+
+    [Fact]
     public void ValidTwoDigitValuesStayWithinGrade1AndWrongResponsesFail()
     {
         foreach(var family in UsCcssG1FullGradeTensAndOnesQuestions.Families)
