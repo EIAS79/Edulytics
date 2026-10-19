@@ -61,7 +61,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             CenterWithin20=>mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a,
             CountTens=>mode<=3&&a>=1&&a<=6&&b==0,
             MatchTens=>mode<=3&&a>=1&&a<=9&&b==0,
-            AddRemoveTen=>mode<=3&&a>=2&&a<=8&&b==1,
+            AddRemoveTen=>mode<=3&&b==1&&
+                (mode==2?a==9:mode==3?a==1:a>=2&&a<=8),
             AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&
                 (mode%2==0?b<=10-a:b<=a)&&
                 (mode==0?a==3&&b==2:mode==1?a==7&&b==4:true),
@@ -80,7 +81,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         else if(family==CenterWithin20){a=random.Next(11,18);b=random.Next(1,21-a);}
         else if(family==CountTens){a=random.Next(1,7);}
         else if(family==MatchTens){a=random.Next(1,10);}
-        else if(family==AddRemoveTen){a=random.Next(2,9);b=1;}
+        else if(family==AddRemoveTen)
+        {
+            a=mode==2?9:mode==3?1:random.Next(2,9);
+            b=1;
+        }
         else if(family==AddRemoveMultipleTens)
         {
             if(mode==0){a=3;b=2;} // Original 2021 Jada, Bag A 30 and Bag B 2 ten-towers.
@@ -130,9 +135,13 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 2=>$"Match {a} BAGS, each with ten counters, to the numeral for the same amount. Write TENS=number;NUMBER=number.",
                 _=>$"Original 2021 source word-card matching: {a} TEN-RODS (one rod = 10). Which NUMBER-NAME card matches the rods? A: {TensWordOptions(a)[0]}, B: {TensWordOptions(a)[1]}, C: {TensWordOptions(a)[2]}. Choose the card; no spelling required. Write MATCH=A/B/C;TENS=number;NUMBER=number."
             },
-            AddRemoveTen=>mode%2==0
-                ?$"There are {a} ten-cube towers. Add ONE whole tower of ten. Write TENS=number;TOTAL=number."
-                :$"There are {a} ten-cube towers. Remove ONE whole tower of ten. Write TENS=number;TOTAL=number.",
+            AddRemoveTen=>mode switch
+            {
+                0=>$"There are {a} ten-cube towers. Add ONE whole tower of ten. Write TENS=number;TOTAL=number.",
+                1=>$"There are {a} ten-cube towers. Remove ONE whole tower of ten. Write TENS=number;TOTAL=number.",
+                2=>"Original 2021 Unit 4 Lesson 3: SHOW 1 TEN then repeatedly ADD exactly one full ten-tower until you SHOW 9 TENS. Record the EIGHT totals in order AFTER each addition (start at 20 and end at 90). Write TOTALS=number,number,...;LAST=number.",
+                _=>"Original 2021 Unit 4 Lesson 3: SHOW 9 TENS then repeatedly TAKE AWAY exactly one full ten-tower until you SHOW 1 TEN. Record the EIGHT totals in order AFTER each subtraction (start at 80 and end at 10). Write TOTALS=number,number,...;LAST=number."
+            },
             AddRemoveMultipleTens=>mode switch
             {
                 0=>"Original 2021 U04 L04 How Many Are in the Bag? Jada has 30 cubes in Bag A and two TOWERS OF TEN in Bag B. How many cubes altogether? Write TENS=number;TOTAL=number.",
@@ -172,9 +181,13 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             MatchTens=>mode==3
                 ?$"MATCH={TensWordCardLetter(a)};TENS={a};NUMBER={10*a}"
                 :$"TENS={a};NUMBER={10*a}",
-            AddRemoveTen=>mode%2==0
-                ?$"TENS={a+1};TOTAL={10*(a+1)}"
-                :$"TENS={a-1};TOTAL={10*(a-1)}",
+            AddRemoveTen=>mode switch
+            {
+                0=>$"TENS={a+1};TOTAL={10*(a+1)}",
+                1=>$"TENS={a-1};TOTAL={10*(a-1)}",
+                2=>"TOTALS=20,30,40,50,60,70,80,90;LAST=90",
+                _=>"TOTALS=80,70,60,50,40,30,20,10;LAST=10"
+            },
             AddRemoveMultipleTens=>mode%2==0
                 ?$"TENS={sum};TOTAL={10*sum}"
                 :$"TENS={a-b};TOTAL={10*(a-b)}",
