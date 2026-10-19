@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 75,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L10",
+  "title": "Write Two-digit Numbers",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "411a4236237e45ad88d3337ce50c235aa079a8d7c2cadbc9d267f73405c3028c",
+    "teacherPreparationSha256": "aeae9fce3faab1797917c720702781517c52acbd33c6959696192cd52d9ba234",
+    "studentHtmlSha256": "e60e101ee27f4062b444fa23b6fdc2a0a2d405b81102f1197567ec3921334a57",
+    "teacherHeadings": [
+      "Activity 1: Write Numbers to Match Base-Ten Representations (15 minutes)",
+      "Activity 2: Introduce Write Numbers, Numbers to 99 by 1 (20 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing What do you notice? What do you wonder? A [visual] [visual] <svg aria-hidden=\"true\" cla",
+      "Student Facing Write the number that matches each representation. 1 ten 4 ones Number: ____________ [visual] [visual]"
+    ],
+    "sourceSpecificFinding": "Original blank-number tasks for 14,90,25,47,82,41 and Stage 1 Write Numbers center",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
