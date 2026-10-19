@@ -60,3 +60,23 @@ test('historic source/HTTPS CI links are useful technical evidence, never 96 aut
     assert.equal(row.originalStudentTasksFullyReviewed,false);
   }
 });
+
+test('read-only three-file cache source checks cannot be silently forged into lesson approval',()=>{
+  const source=read(dir+'G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json');
+  for(const ordinal of [66,70]){
+    const item=source.rows.find(z=>z.ordinal===ordinal);
+    const stamp=item.readOnlyOriginal2021SourceIntegrityReverified;
+    assert.equal(stamp.status,'THREE_LOCAL_SHA256_MATCH_EXISTING_REGISTRY');
+    assert.equal(stamp.verificationDate,'2026-10-19');
+    assert.equal(stamp.algorithm,'SHA-256');
+    assert.equal(stamp.fullTeacherLessonSha256,item.original2021FullTeacherLessonHtmlSha256);
+    assert.equal(stamp.teacherPreparationSha256,item.original2021TeacherPreparationSha256);
+    assert.equal(stamp.studentFacingSha256,item.original2021StudentFacingHtmlSha256);
+    assert.equal(Object.keys(stamp.originalFiles).length,3);
+    assert.equal(item.sourcePublisherArtworkFullyReviewed,false);
+    assert.equal(item.actualAuthenticatedTaskRenderingAtExactHeadConfirmed,false);
+    assert.equal(item.internalAcademicApproval,'NOT_CLAIMED');
+    assert.equal(state.newLessons[ordinal-51].status,'IN_PROGRESS');
+    assert.equal(x.records[ordinal-51].internalEvidenceBasedAcademicAcceptance,false);
+  }
+});
