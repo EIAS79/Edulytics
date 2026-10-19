@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 99,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L11",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "dd527eb2551cea14d16cb91dce79fd12e770ce69f6e5f1321af4e65ee255b71a",
+    "teacherPreparationSha256": "89bd8ae8e74ffeb5dc5aba633f49ad463c73f37fc7895d7120d13b2daaeeac6d",
+    "studentMirrorSha256": "802445ee69a402c2ec738326374e33fb93fc496e90a8abbbd5b7b60859905055",
+    "teacherActivityHeadings": [
+      "Activity 1: How Much Litter? (15 minutes)",
+      "Activity 2: It's Your Turn to Add (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(24 + 3 = 54\\) \\(42 + 5 = 47\\) \\(42 + 30 = 45\\) Student Response Teacher",
+      "Student Facing [visual] [visual]",
+      "Student Facing Find the value of \\(23 + 68\\) . Show your thinking using drawings, numbers, or words. If you have time: Think about a math story this expression could repr"
+    ],
+    "sourceSpecificComparison": "Original litter story 37+25 with Jada, Kiran, Tyler methods; original 23+68 student problem",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
