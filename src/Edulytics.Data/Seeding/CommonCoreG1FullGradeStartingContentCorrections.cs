@@ -16,6 +16,14 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string CenterSourceContentVersion="us-ccss-g1-u03-l21-centers-2021-source-v6";
     public const string TeenSubtractSourceContentVersion="us-ccss-g1-u03-l22-teen-2021-source-v6";
     public const string TenSubtractSourceContentVersion="us-ccss-g1-u03-l23-ten-2021-source-v6";
+    private const string CountRelationLessonCode="PED:US-CCSS-MATH:G1:U03:L24";
+    private const string ChooseSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L25";
+    private const string StoryLessonCode="PED:US-CCSS-MATH:G1:U03:L26";
+    private const string CenterFourLessonCode="PED:US-CCSS-MATH:G1:U03:L27";
+    public const string CountRelationSourceContentVersion="us-ccss-g1-u03-l24-original-activities-v6";
+    public const string ChooseSubtractSourceContentVersion="us-ccss-g1-u03-l25-original-activities-v6";
+    public const string StorySourceContentVersion="us-ccss-g1-u03-l26-original-activities-v6";
+    public const string CenterFourSourceContentVersion="us-ccss-g1-u03-l27-original-activities-v6";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -187,29 +195,35 @@ Step 5: Check with addition: the result plus the removed amount must equal the o
         new(@"PED:US-CCSS-MATH:G1:U03:L24",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-24/preparation.html",@"3fd5d2c854c79d76d2678582f6cf6d3285a8004ed7e608a62fe54d2777be9761",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
             @"Relate Counting to Addition and Subtraction PLC Activity",
             @"Compare subtracting by counting ON from the smaller number and taking AWAY from the larger number; explain which route is shorter. This is an original-source PLC activity and discussion must be teacher-facilitated, not automatically graded.",
-            @"Learning goal: analyze and use counting-on and taking-away strategies to subtract within 20. For 15-8, one strategy takes away 5 to reach 10, then 3 more; another counts on 2 to reach 10 and 5 more to reach 15. Both produce 7, though their steps differ.",
+            @"Learning goal: analyze and use counting-on and taking-away strategies to subtract within 20. For 15-8, one strategy takes away 5 to reach 10, then 3 more; another counts on 2 to reach 10 and 5 more to reach 15. Both produce 7, though their steps differ. Original 2021 choral warm-up counts BACKWARD by one from 50 to 20, noticing place-value patterns. Original Diego-versus-Tyler tasks include 16-3, 17-8 and 18-15 using both count-on and take-away methods.",
             @"Example 1: 15-8=7. Take away: 15-5=10, 10-3=7. Count on: 8+2=10, 10+5=15, and 2+5=7.
 Example 2: 13-9=4. Count on 9+1=10, then 10+3=13, so 1+3=4.
-Example 3: 18-6=12; removing six ones is direct and does not need crossing ten.",
+Example 3: 18-6=12; removing six ones is direct and does not need crossing ten.
+Original 2021 Different Ways to Subtract: 16-3=13, 17-8=9 and 18-15=3. For 18-15, take away fifteen to leave three, or count on 15+3=18.
+Original 2021 Set A missing values: 12-7=5; 18-5=13; 14-6=8; 15-12=3; 13-4=9.
+Original 2021 Set B missing addends: 5+13=18; 13=7+6; 20=15+5. These answers are worked-example explanations; original tasks retain blanks for students.",
             @"Step 1: Identify starting amount, removed amount and difference.
 Step 2: Solve by physically taking away or by subtracting in stages.
 Step 3: Solve again by counting ON from the smaller number until you reach the start.
 Step 4: Check both methods give the same difference; discuss which is easier for these numbers.
 Step 5: Use a true equation and a drawing, not a false chain.
-Step 6: ORIGINAL Set A: find missing values in subtraction equations (such as 12-7=□ and □=14-6). ORIGINAL Set B: find missing addends (such as 5+□=18 and 13=□+6). Show how each strategy makes the equation true.",
+Step 6: ORIGINAL Set A: fill 12-7=□, 18-5=□, □=14-6, 15-12=□, 13-4=□. ORIGINAL Set B: fill 5+□=18, 13=□+6, 20=15+□. Explain how the selected strategy makes each equation true; do not pre-fill pupil blanks.
+Step 7: Compare Diego's take-away and Tyler's count-on methods for 16-3, 17-8 and 18-15 using teacher-supported drawings, numbers or words.",
             @"Do not subtract 8-15 for a 15-8 story. Do not count only the jump to ten: 8 to 10 is 2, then to 15 is 5 more, so the difference is 7.",
             @"I can compare counting-on and taking-away subtraction methods and explain my choice; teacher-led PLC discussion remains a class activity."),
         new(@"PED:US-CCSS-MATH:G1:U03:L25",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-25/preparation.html",@"a6cb06045a13078308b3af728d4251a25a747c461a7199d6ca82d9d29e3ab104",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
             @"How Do You Want to Subtract?",
             @"Choose an efficient subtraction strategy for each pair of numbers within 20. You can take away, count on using related addition, or break a teen number at ten. Do not force the same method on every question.",
-            @"Learning goal: flexibly choose a mathematically correct subtraction method based on operands. For 20-15, counting on from 15 to 20 is a quick five-step jump. For 17-4, taking away four ones is direct. For 14-8, subtract to ten and then the rest.",
+            @"Learning goal: flexibly choose a mathematically correct subtraction method based on operands. For 20-15, counting on from 15 to 20 is a quick five-step jump. For 17-4, taking away four ones is direct. For 14-8, subtract to ten and then the rest. The original 2021 choral warm-up counts FORWARD from 50 through 100, noticing patterns; this is teacher facilitated.",
             @"Example 1: 20-15=5 because 15+5=20.
 Example 2: 17-4=13 by removing four ones.
 Example 3: 14-8=14-4-4=10-4=6.
 Example 4: 19-9=10, subtracting the nine extra ones.
 Original 2021 pencil story: 12 pencils are on a table; a teacher picks up 7, leaving 12-7=5 pencils.
 Original unknown-change story: Clare starts with 8 glue sticks and finishes with 15; 8+7=15, so the unknown additional amount is 7.
-Original missing-subtrahend story: Kiran has 17 crayons and 9 after sharing; 17-8=9, so he shared 8 crayons.",
+Original missing-subtrahend story: Kiran has 17 crayons and 9 after sharing; 17-8=9, so he shared 8 crayons.
+Original 2021 student expressions: 20-15=5, 19-3=16, 13-5=8, 18-9=9 and 17-15=2. Select a suitable method for each, explaining why.
+Original 2021 full story trio: 12-7=5 pencils; Clare 8+□=15 glue sticks gives □=7; Kiran 17-□=9 crayons gives □=8. Preserve each unknown's position.",
             @"Step 1: Read the starting and removed amounts.
 Step 2: Ask whether taking away, counting on or crossing ten will be simplest.
 Step 3: Represent the steps with counters, a ten-frame or a true subtraction/addition equation.
@@ -220,12 +234,19 @@ Step 5: Check the answer using the related addition fact.",
         new(@"PED:US-CCSS-MATH:G1:U03:L26",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-26/preparation.html",@"66dfe676b9c7e8a0d7d9efdda13be6a4dceaa7c8d3108fb6dd9e3d400fe5c4b3",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.6" },
             @"What’s the Story?",
             @"Solve addition AND subtraction stories where the unknown may be the start, the change or the result. Interpret the event before writing an equation: an amount may be added, taken away or compared. Match your equation to the story rather than assuming the final amount is always unknown.",
-            @"Learning goal: solve addition and subtraction story problems with unknown values in different positions. Result unknown: 7+5=?. Change unknown: 7+?=12. Start unknown: ?+5=12. For subtraction, 14-?=8 and ?-6=8 require different reasoning. ORIGINAL Student Facing Elena story: Elena has 6 counters; some more join; now she has 18 counters. The missing change is 12 because 6+12=18.",
+            @"Learning goal: solve addition and subtraction story problems with unknown values in different positions. Result unknown: 7+5=?. Change unknown: 7+?=12. Start unknown: ?+5=12. For subtraction, 14-?=8 and ?-6=8 require different reasoning. ORIGINAL Student Facing Elena story: Elena has 6 counters; some more join; now she has 18 counters. The missing change is 12 because 6+12=18. A second original Elena task starts with 18, removes an unknown number, and ends at 6: 18-□=6. Both stories have unknown change 12 but distinct events.",
             @"Example 1: Seven children are playing; five join. Total 7+5=12.
 Example 2: Seven are playing; some join, now twelve. 7+?=12, so ?=5.
 Example 3: Some children were playing; five joined and now twelve play. ?+5=12, so ?=7.
 Example 4: Fourteen counters; some leave, eight remain. 14-?=8, so six leave.
-Example 5: Some counters are present; six leave, eight remain. ?-6=8, so fourteen were there.",
+Example 5: Some counters are present; six leave, eight remain. ?-6=8, so fourteen were there.
+Original 2021 warm-up: 15-10=5, 15-12=3, 16-10=6, 16-13=3.
+Original 2021 Elena change stories: 6+12=18 and 18-12=6.
+Original 2021 Han story 1: □+9=15, so Han began with 6 pencils.
+Original 2021 Han story 2: 15-□=9, so Han gave away 6 pencils.
+Original 2021 Han story 3: 9+□=15, so Han received 6 pencils.
+Original 2021 Han story 4: 15-9=6, so Han has 6 pencils left.
+Teacher-facilitated classroom posters and original pupil representations are not electronically certified.",
             @"Step 1: Identify the story event: join, leave, compare or change.
 Step 2: Draw a bar, counters or a change diagram and mark what is UNKNOWN.
 Step 3: Write an equation with the box in the correct position.
@@ -249,7 +270,7 @@ Step 5: If in classroom play, explain and compare strategies with your partner.
 Original 2021 How Close? Subtract from 20, Stage 2: a student starts with four numeral cards from 0 to 10, selects TWO or THREE cards, subtracts their combined amounts from 20, and records a correct equation; a result closer to ZERO wins a round. This requires an actual teacher-led card game, so Edulytics grades only the chosen-card subtraction and its equation, not partner competition or winning.
 Original 2021 Compare, Add and Subtract Within 20: compare the values of addition or subtraction expression cards; explain strategies in a teacher-led center.",
             @"Do not subtract a larger card from a smaller card and claim a negative difference is in the reviewed first-grade center scope. Partner center participation cannot be automatically certified by a multiple-choice quiz.",
-            @"I can add and subtract within 20 and explain a strategy while following the teacher's center rules."),
+            @"I can add and subtract within 20 and explain a strategy while following the teacher's center rules. Original 2021 warm-up: 20-10=10, 20-10-1=9, 18-10-4=4, and 18-14=4. During the teacher-led Compare center, 9+6=15 is greater than 19-6=13."),
         new(@"PED:US-CCSS-MATH:G1:U04:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-1/preparation.html",@"5f7a4f43ed4319bca795c0b82d6a05acb7fd3bf1e20175f4e57825aa89c9dd16",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
             @"Count Large Collections",
             @"Count large collections by organizing loose counters or classroom objects into groups of TEN. Show the number as a multiple of ten up to sixty, and explain why grouping prevents double counting. Real objects and class discussion are teacher-led.",
@@ -506,6 +527,10 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
                 CenterLessonCode=>CenterSourceContentVersion,
                 TeenSubtractLessonCode=>TeenSubtractSourceContentVersion,
                 TenSubtractLessonCode=>TenSubtractSourceContentVersion,
+            CountRelationLessonCode=>CountRelationSourceContentVersion,
+            ChooseSubtractLessonCode=>ChooseSubtractSourceContentVersion,
+            StoryLessonCode=>StorySourceContentVersion,
+            CenterFourLessonCode=>CenterFourSourceContentVersion,
                 _=>Version
             })
             : previous;
@@ -514,7 +539,8 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
          (previous==Version&&lesson.LessonCode is
-             ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode));
+             ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
+             CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
