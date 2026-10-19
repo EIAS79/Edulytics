@@ -186,6 +186,27 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
     }
 
     [Fact]
+    public void OriginalU07L15ClockTasksPreserveDrawingAndOpenChoiceHourHand()
+    {
+        const string code=CommonCoreG1SourceGroundedInstructionalCorrections.WriteClockTimesLessonCode;
+        var (doc,lesson,en)=Effective(code);
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.WriteClockTimesVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
+        Assert.Contains("DRAW the MINUTE HAND",en.KeyConceptsAndRules);
+        Assert.Contains("ONLY a minute hand shown",en.KeyConceptsAndRules);
+        Assert.Contains("OTHER valid hour choices",en.KeyConceptsAndRules);
+        Assert.Contains("minute hand at the 6",en.WorkedExamples);
+        Assert.Contains("2:30",en.WorkedExamples);
+        Assert.Contains("7:30",en.WorkedExamples);
+        Assert.Contains("POSSIBLE matching hour hand",en.StepByStepSolutions);
+        Assert.Contains("Find at least one OTHER hour-hand position",en.StepByStepSolutions);
+        Assert.Contains("DRAW-MINUTE-HAND tasks",en.CommonMistakes);
+        var current=CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson);
+        CanonicalLessonContentMaterializer.Materialize(doc);
+        Assert.Equal(current,CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc,lesson));
+    }
+
+    [Fact]
     public void NextFiveGrade1SourceScopeAndPreviousBatchContentVersionsRemainIsolated()
     {
         var (doc, _, _) = Effective(
