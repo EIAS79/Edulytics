@@ -4,8 +4,10 @@ namespace Edulytics.Web.Presentation;
 
 /// <summary>
 /// First-party original Grade 1 Unit 6 digital Practice diagrams.
-/// Illustrations represent equal-sized measurement units, aligned endpoints
-/// and equal physical lengths. They do not assert any actual classroom
+/// Illustrations represent equal-sized measurement units, directly aligned
+/// endpoints ONLY in the direct-comparison lesson. Indirect lessons compare
+/// measurements through a shared reference tool, not aligned endpoints.
+/// They do not assert any actual classroom
 /// measuring, physical manipulation, source-publisher asset reuse or teacher
 /// observation.
 /// </summary>
@@ -29,7 +31,34 @@ public static partial class PracticeMathVisualRenderer
            (cubes||clips) && (a<2||a>20||b!=0||c!=0) ||
            smallUnits && (a<2||a>14||b!=2||c!=0))
             throw new JsonException("Invalid source measurement operands");
-        var svg=SvgStart("Source-based first grade visual. Equal-size units, common starting line, and endpoint comparison.");
+        bool indirect=family is "usccss.g1.u06.l02.indirect_length_comparison" or
+            "usccss.g1.u06.l03.choose_indirect_comparison";
+        var svg=SvgStart(indirect?
+            "Two objects cannot be placed together. Each is measured separately with the SAME reference unit.":
+            "Source-based first grade visual. Equal-size units, common starting line, and endpoint comparison.");
+        if(indirect)
+        {
+            // Separate work areas intentionally have DIFFERENT drawing origins:
+            // student infers longer/shorter from matching standard unit counts,
+            // not from aligning the two objects or comparing their endpoints.
+            const double step=11.0;
+            int[] origins=[50,95];
+            int[] yPositions=[80,167];
+            int[] lengths=[a,b];
+            for(int i=0;i<2;i++)
+            {
+                int x0=origins[i],y=yPositions[i];
+                Text(svg,x0,y-22,i==0?"Object A":"Object B","label");
+                svg.Append($"<line class='indirect-reference-{i}' x1='{x0}' y1='{y-8}' x2='{x0+220}' y2='{y-8}' stroke='currentColor' stroke-width='1'/>");
+                for(int n=0;n<lengths[i];n++)
+                {
+                    double x=x0+n*step;
+                    svg.Append($"<rect class='indirect-unit-{i}' x='{F(x)}' y='{y}' width='{F(step)}' height='28' fill='rgba(33,128,184,.21)' stroke='currentColor' stroke-width='1'/>");
+                }
+            }
+            Text(svg,210,238,"Compare through the SAME reference unit.","hint");
+            return SvgEnd(svg);
+        }
         svg.Append("<line x1='38' y1='39' x2='38' y2='219' stroke='currentColor' stroke-width='2' stroke-dasharray='4 4'/>");
         if(compare)
         {

@@ -34,6 +34,26 @@ public sealed class UsCcssG1FullGradeMeasurementFractionVisualTests
         Assert.DoesNotContain("LENGTH=",svg);
     }
 
+    [Theory]
+    [InlineData("usccss.g1.u06.l02.indirect_length_comparison",9,14)]
+    [InlineData("usccss.g1.u06.l03.choose_indirect_comparison",14,9)]
+    public void OriginalIndirectComparisonShowsTwoSeparateReferenceUnitMeasurements(
+        string family,int first,int second)
+    {
+        var svg=Assert.IsType<string>(Draw(family,first,second,0));
+        Assert.Equal(first,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='indirect-unit-0'").Count);
+        Assert.Equal(second,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='indirect-unit-1'").Count);
+        Assert.Contains("class='indirect-reference-0'",svg);
+        Assert.Contains("class='indirect-reference-1'",svg);
+        Assert.Contains("Compare through the SAME reference unit",svg);
+        Assert.DoesNotContain("common starting line",svg);
+        Assert.DoesNotContain("Compare the aligned starting endpoints",svg);
+        Assert.DoesNotContain("LONGER=",svg);
+        Assert.DoesNotContain("<image ",svg);
+    }
+
     [Fact]
     public void OriginalU06L01ThreeLengthsAreDrawnFromTheSameStartingLine()
     {
