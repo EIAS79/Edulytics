@@ -8,6 +8,8 @@ namespace Edulytics.Data.Seeding;
 public static class CommonCoreG1FullGradeStartingContentCorrections
 {
     public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5";
+    private const string ZooLessonCode="PED:US-CCSS-MATH:G1:U03:L20";
+    public const string ZooSourceContentVersion="us-ccss-g1-u03-l20-zoo-2021-source-v6";
     private sealed record Repair(string Code,string Url,string Sha,string[] Outcomes,
         string Title,string Explanation,string Concepts,string Examples,string Steps,
         string Mistakes,string Summary);
@@ -486,10 +488,13 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
-        IsTarget(doc,lesson)?Version:previous;
+        IsTarget(doc,lesson)?
+            (lesson.LessonCode==ZooLessonCode?ZooSourceContentVersion:Version):previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
-        IsTarget(doc,lesson)&&previous==CommonCoreRichContentCorrections.CorrectionContentVersion;
+        IsTarget(doc,lesson)&&
+        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
+         (lesson.LessonCode==ZooLessonCode&&previous==Version));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
