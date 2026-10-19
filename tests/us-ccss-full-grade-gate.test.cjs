@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const ROOT=path.resolve(__dirname,'..');
-const {initial,evaluate}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
+const {initial,evaluate,validLessonAssessment}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
 const manifest=JSON.parse(fs.readFileSync(path.join(ROOT,'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'),'utf8'));
 const fresh=()=>structuredClone(initial(manifest));
 test('146 unique canonical lessons, first new ordinal 51, old 50 historical only',()=>{
@@ -47,4 +47,37 @@ test('rejected source or wrong candidate SHA cannot be inferred as accepted',()=
   const result=evaluate(manifest,d,'bad');
   assert.equal(result.outcome,'NO_GO');
   assert.ok(result.issues.some(x=>x.includes('Candidate SHA')));
+});
+
+test('authored-only original lesson 65 must not be certified by unrelated numeric Practice',()=>{
+  const e={allowedFamilies:[],originalAuthorshipTaskReviewed:true,
+    learnerAuthoredTaskRendered:true,teacherReviewRubricAvailable:true,
+    actualTeacherObservationNotClaimed:true};
+  assert.equal(validLessonAssessment(65,e,()=>true),true);
+  assert.equal(validLessonAssessment(65,{...e,learnerAuthoredTaskRendered:false},()=>true),false);
+  assert.equal(validLessonAssessment(65,{...e,allowedFamilies:['fake.addition']},()=>true),false);
+  assert.equal(validLessonAssessment(65,{...e,actualTeacherObservationNotClaimed:false},()=>true),false);
+});
+test('mixed digital/authored original lesson 146 needs BOTH proofs',()=>{
+  const digital={allowedFamilies:['usccss.g1.u08.l10.write_number_riddles'],
+    realPracticeGradingPersisted:true,independentCorrectAndWrongAnswersVerified:true,
+    independentGradingProofPath:'math',independentGradingProofSha256:'a'.repeat(64),
+    runtimePracticeProofPath:'attempt',runtimePracticeProofSha256:'b'.repeat(64)};
+  assert.equal(validLessonAssessment(146,digital,()=>true),false);
+  const both={...digital,originalAuthorshipTaskReviewed:true,
+    learnerAuthoredTaskRendered:true,teacherReviewRubricAvailable:true,
+    actualTeacherObservationNotClaimed:true};
+  assert.equal(validLessonAssessment(146,both,()=>true),true);
+  assert.equal(validLessonAssessment(146,{...both,realPracticeGradingPersisted:false},()=>true),false);
+  assert.equal(validLessonAssessment(146,both,()=>false),false);
+});
+test('ordinary numeric lessons keep actual grading and persisted attempts mandatory',()=>{
+  const e={allowedFamilies:['math.family'],realPracticeGradingPersisted:true,
+    independentCorrectAndWrongAnswersVerified:true,
+    independentGradingProofPath:'math',independentGradingProofSha256:'a'.repeat(64),
+    runtimePracticeProofPath:'attempt',runtimePracticeProofSha256:'b'.repeat(64)};
+  assert.equal(validLessonAssessment(51,e,()=>true),true);
+  assert.equal(validLessonAssessment(51,{...e,allowedFamilies:[]},()=>true),false);
+  assert.equal(validLessonAssessment(51,{...e,independentCorrectAndWrongAnswersVerified:false},()=>true),false);
+  assert.equal(validLessonAssessment(51,e,()=>false),false);
 });

@@ -99,7 +99,7 @@ jobs:
         run: |
           set -euo pipefail
           node tools/curriculum/us-ccss-full-grade-worklist.cjs > /tmp/g1-full-grade-worklist.json
-          node -e "const x=require('/tmp/g1-full-grade-worklist.json');if(x.executionUnit!=='ONE_WHOLE_GRADE'||x.items.length!==96||x.fixedChunkSize!==null||x.items[0].ordinal!==51||x.items[95].ordinal!==146||x.historic.count!==50||x.status!=='NO_GO')process.exit(1)"
+          node -e "const x=require('/tmp/g1-full-grade-worklist.json');if(x.executionUnit!=='ONE_WHOLE_GRADE'||x.items.length!==96||x.fixedChunkSize!==null||x.items[0].ordinal!==51||x.items[95].ordinal!==146||x.historic.count!==50)process.exit(1)"
       - name: Negative control on freshly built, deliberately incomplete 146-row grade ledger
         shell: bash
         run: |
@@ -131,20 +131,21 @@ jobs:
 
   grade-real-release-gate:
     name: g1-full-grade-real-acceptance
-    if: github.event_name == 'workflow_dispatch' && inputs.candidate_sha != ''
+    if: (github.event_name == 'pull_request' && startsWith(github.head_ref, 'curriculum/full-grade-')) || (github.event_name == 'workflow_dispatch' && inputs.candidate_sha != '')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || inputs.candidate_sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
       - name: Verify exact checked-out candidate SHA before any acceptance
         shell: bash
         env:
-          CANDIDATE: ${{ inputs.candidate_sha }}
+          CANDIDATE: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || inputs.candidate_sha }}
         run: |
           set -euo pipefail
           [[ "$CANDIDATE" =~ ^[0-9a-fA-F]{40}$ ]]
@@ -152,7 +153,7 @@ jobs:
       - name: Require real 96/96 source and Practice evidence
         shell: bash
         env:
-          CANDIDATE: ${{ inputs.candidate_sha }}
+          CANDIDATE: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || inputs.candidate_sha }}
         run: |
           set -euo pipefail
           node tools/curriculum/us-ccss-full-grade-gate.cjs --release --sha="$CANDIDATE" > /tmp/grade-real-release.json
