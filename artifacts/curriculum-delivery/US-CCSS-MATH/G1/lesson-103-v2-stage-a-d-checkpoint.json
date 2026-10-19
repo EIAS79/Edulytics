@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Existing original V1 A-D source/content/Practice review checkpoint, NOT internal academic acceptance or a replacement review method",
+  "grade": "G1",
+  "ordinal": 103,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U06:L01",
+  "title": "Compare Lengths",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics Grade 1 (2021)",
+    "sourceMode": "READ_ONLY original full teacher HTML inspected on Our-CS",
+    "fullTeacherLessonRelativePath": "unit-6/lesson-1/lesson.html",
+    "observedOriginalFullTeacherHtmlSha256": "a8b03480c296b5709f7f400125b538b8bb6441cb38c88561c06f4ee4d3efcf88",
+    "expectedInventoryFullTeacherHtmlSha256": "a8b03480c296b5709f7f400125b538b8bb6441cb38c88561c06f4ee4d3efcf88",
+    "sourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json",
+    "teacherActivityHeadings": [
+      "Activity 1: Is it Longer or Shorter?",
+      "Activity 2: Order Objects",
+      "Activity 3: Centers: Choice Time"
+    ]
+  },
+  "stageA": {
+    "originalWarmup": "Notice and wonder using an original pencil illustration; visual content not independently cleared",
+    "originalStudentFacingTextActuallyInspected": [
+      "Choose TWO objects twice to compare lengths; align starting endpoints",
+      "Compare one classroom object to THREE connecting cubes and another to EIGHT connecting cubes, with drawings",
+      "Find an object SHORTER than pupil's own FOOT and another LONGER than pupil's POINTER FINGER; write both length comparison sentences",
+      "Choose THREE objects and order shortest-to-longest, tracing or drawing chosen objects",
+      "Choose THREE NEW objects and order longest-to-shortest, record their names",
+      "Choose teacher-facilitated center among Target Numbers, Five in a Row and Get Your Numbers in Order"
+    ],
+    "originalGraphics": "NOT_FULLY_VERIFIED; original publisher drawings not copied",
+    "sourceTextReview": "COMPARED_WITH_EXISTING_CANDIDATE",
+    "reviewBoundary": "Physical choices, foot/finger comparisons, real endpoint alignment, handmade drawings, and partner center participation cannot be inferred from generated numeric response"
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "targetedCorrection": "Restored omitted foot/finger reference comparison, different set of three objects, original center choices to existing Unit6 lesson content",
+    "existingCandidatePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "changedContentCommit": "48541c101d6255f0d2dbe990c498f8a4f334b504",
+    "originalTeachingMaterialCopied": false
+  },
+  "stageC": {
+    "existingDigitalFamilyReused": "usccss.g1.u06.l01.compare_lengths",
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+    "testedNumericCoverageClaim": false,
+    "digitizedSubtask": "Compare same-origin first-party equal-unit strips and three different lengths in either order",
+    "cannotCertify": "Original chosen physical items, student's measured foot/finger references, traced drawings or live center gameplay"
+  },
+  "stageD": {
+    "regressionAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "regressionCommit": "9e158baab1839af8dcc07309e54983b46c5856a7",
+    "currentHeadDotNetBuild": "NOT_RUN",
+    "currentHeadCiDuringAuthoring": "NOT_RUN_BY_POLICY",
+    "independentlyExecutedPositiveAndNegativeMathTests": "PENDING",
+    "authenticatedCurrentShaLearnerRender": "PENDING",
+    "correctWrongMalformedAnswerAndPersistence": "PENDING",
+    "visualMediaRightsAndA11y": "PENDING",
+    "originalV1IndividualInternalAcademicSignoff": "NOT_CLAIMED"
+  },
+  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Complete unchanged original V1 Stage D evidence on final frozen-grade SHA and per-lesson academic acceptance; do not certify classroom actions digitally"
+}
