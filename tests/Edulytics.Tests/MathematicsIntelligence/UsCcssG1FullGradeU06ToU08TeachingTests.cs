@@ -57,6 +57,10 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
             var tr=lesson.Translations.Single(t=>t.CultureCode=="en");
             return tr.Explanation+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
         }
+        Assert.Contains("SHORTER than the pupil's FOOT",text("PED:US-CCSS-MATH:G1:U06:L01"));
+        Assert.Contains("LONGER than the pupil's POINTER FINGER",text("PED:US-CCSS-MATH:G1:U06:L01"));
+        Assert.Contains("THREE NEW objects",text("PED:US-CCSS-MATH:G1:U06:L01"));
+        Assert.Contains("Get Your Numbers in Order",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("no gaps or overlaps",text("PED:US-CCSS-MATH:G1:U06:L06"));
         Assert.Contains("SEVEN digit cards",text("PED:US-CCSS-MATH:G1:U06:L04"));
         Assert.Contains("TWO two-digit numbers",text("PED:US-CCSS-MATH:G1:U06:L04"));
