@@ -24,7 +24,7 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
         string svg=Assert.IsType<string>(Visual(family,
             new{a=firstTens,b=secondTens,c=0,mode}));
         Assert.Equal(10,System.Text.RegularExpressions.Regex.Matches(
-            svg,"<rect class='g1-.*board|<rect class='g1-checked-off'|<rect class='g1-free-target'").Count);
+            svg,"<rect class='g1-(?:checked-off|free-target|other-board)'").Count);
         Assert.Contains("class='g1-checked-off'",svg);
         Assert.Contains("class='g1-free-target'",svg);
         Assert.Contains($">{used}</text>",svg);
