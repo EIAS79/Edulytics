@@ -14,6 +14,42 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
             JsonSerializer.Serialize(new{parameters=p}));
 
     [Fact]
+    public void OriginalU04L03SequenceVisualShowsStartAndEightUnfilledOrMarkedTenTowerSteps()
+    {
+        const string family="usccss.g1.u04.l03.tens.add_or_remove_one";
+        var growing=Assert.IsType<string>(Visual(
+            family,new{a=9,b=1,c=0,mode=2}));
+        Assert.Contains("Start: ONE TEN",growing);
+        Assert.Equal(1,System.Text.RegularExpressions.Regex.Matches(
+            growing,"class='g1-original-ten-step-start'").Count);
+        Assert.Equal(8,System.Text.RegularExpressions.Regex.Matches(
+            growing,"class='g1-original-ten-step-blank'").Count);
+        Assert.DoesNotContain("TOTALS=",growing);
+        Assert.DoesNotContain("LAST=",growing);
+        Assert.DoesNotContain("<image ",growing);
+        var shrinking=Assert.IsType<string>(Visual(
+            family,new{a=1,b=1,c=0,mode=3}));
+        Assert.Contains("Start: NINE TENS",shrinking);
+        Assert.Equal(8,System.Text.RegularExpressions.Regex.Matches(
+            shrinking,"class='g1-original-ten-step-remove'").Count);
+        Assert.Equal(1,System.Text.RegularExpressions.Regex.Matches(
+            shrinking,"class='g1-original-ten-step-start'").Count);
+        Assert.DoesNotContain("TOTALS=",shrinking);
+        Assert.DoesNotContain("LAST=",shrinking);
+    }
+
+    [Fact]
+    public void OriginalU04L03SequenceFigureRejectsFakeEndpointsAndUnsupportedModes()
+    {
+        const string family="usccss.g1.u04.l03.tens.add_or_remove_one";
+        Assert.Null(Visual(family,new{a=8,b=1,c=0,mode=2}));
+        Assert.Null(Visual(family,new{a=9,b=1,c=0,mode=3}));
+        Assert.Null(Visual(family,new{a=9,b=2,c=0,mode=2}));
+        Assert.Null(Visual(family,new{a=9,b=1,c=3,mode=2}));
+        Assert.Null(Visual(family,new{a=4,b=1,c=0,mode=0}));
+    }
+
+    [Fact]
     public void OriginalU04L04JadaAndTylerBagStoriesHaveCorrectFirstPartyTenCubeFigures()
     {
         const string family="usccss.g1.u04.l04.tens.add_remove_multiples";
