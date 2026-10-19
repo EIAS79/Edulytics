@@ -13,6 +13,40 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
         PracticeMathVisualRenderer.RenderSvg(family,
             JsonSerializer.Serialize(new{parameters=p}));
 
+    [Theory]
+    [InlineData(4,0,"Activity 1: fixed 2021 collection")]
+    [InlineData(1,1,"Activity 2: Bag F")]
+    [InlineData(2,1,"Activity 2: Bag A")]
+    [InlineData(3,1,"Activity 2: Bag E")]
+    [InlineData(4,1,"Activity 2: Bag B")]
+    [InlineData(5,1,"Activity 2: Bag C")]
+    [InlineData(6,1,"Activity 2: Bag D")]
+    public void OriginalU04L01SourceCollectionsDrawEveryOneOfTenDotsInEachGroup(
+        int tens,int mode,string label)
+    {
+        const string family="usccss.g1.u04.l01.count.groups_of_ten";
+        var svg=Assert.IsType<string>(Visual(family,new{a=tens,b=0,c=0,mode}));
+        Assert.Contains(label,svg);
+        Assert.Equal(tens,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='g1-original-collection-frame'").Count);
+        Assert.Equal(tens*10,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='g1-original-collection-dot'").Count);
+        Assert.Contains("role='img'",svg);
+        Assert.DoesNotContain("TOTAL=",svg);
+        Assert.DoesNotContain("GROUPS=",svg);
+        Assert.DoesNotContain("<image ",svg);
+    }
+
+    [Fact]
+    public void OriginalSourceCollectionVisualRejectsMadeUpBagQuantities()
+    {
+        const string family="usccss.g1.u04.l01.count.groups_of_ten";
+        Assert.Null(Visual(family,new{a=3,b=0,c=0,mode=0}));
+        Assert.Null(Visual(family,new{a=7,b=0,c=0,mode=1}));
+        Assert.Null(Visual(family,new{a=4,b=1,c=0,mode=1}));
+        Assert.Null(Visual(family,new{a=4,b=0,c=1,mode=0}));
+    }
+
     [Fact]
     public void OriginalU04L03SequenceVisualShowsStartAndEightUnfilledOrMarkedTenTowerSteps()
     {
