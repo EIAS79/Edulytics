@@ -40,24 +40,27 @@ test('student-authored riddle readiness requires teacher rubric without fake cla
 });
 
 
-test('historic source/HTTPS CI links are useful technical evidence, never 96 automatic academic approvals',()=>{
-  assert.equal(state.release,'NO_GO');
-  assert.equal(x.releaseDecision,'NO_GO');
+test('historic source/HTTPS CI links remain technical-only as individual V1 approvals progress',()=>{
+  assert.equal(x.releaseDecision,state.release);
   assert.equal(state.newLessons.length,96);
-  assert.equal(state.newLessons.filter(z=>z.status==='INTERNALLY_ACCEPTED').length,0);
-  assert.equal(x.records.filter(z=>z.internalEvidenceBasedAcademicAcceptance===true).length,0);
   const technicalSha='1aabc3a2821d68858fd337b86bbec87673cec2f9';
   for(const row of x.records){
-    assert.equal(row.evidenceReferences.length,2);
-    for(const ref of row.evidenceReferences){
-      assert.equal(ref.kind,'HISTORIC_EXACT_SHA_CI_TECHNICAL_ONLY');
+    const historic=row.evidenceReferences.filter(ref=>ref.kind==='HISTORIC_EXACT_SHA_CI_TECHNICAL_ONLY');
+    for(const ref of historic){
       assert.equal(ref.testedCodeSha,technicalSha);
       assert.equal(ref.lessonOrdinal,row.ordinal);
       assert.equal(ref.approval,'NOT_CLAIMED');
       assert.match(ref.url,/^https:\/\/github\.com\/EIAS79\/Edulytics\/actions\/runs\/\d+$/);
     }
-    assert.equal(row.effectiveAuthenticatedLearnerRenderingVerified,false);
-    assert.equal(row.originalStudentTasksFullyReviewed,false);
+    if(row.internalEvidenceBasedAcademicAcceptance){
+      assert.equal(row.originalStudentTasksFullyReviewed,true);
+      assert.equal(row.effectiveAuthenticatedLearnerRenderingVerified,true);
+      assert.ok(row.evidenceReferences.some(ref=>ref.kind!=='HISTORIC_EXACT_SHA_CI_TECHNICAL_ONLY'),
+        'historic CI-only evidence cannot certify a new lesson');
+    }
+  }
+  if(state.newLessons.some(row=>row.status!=='INTERNALLY_ACCEPTED')){
+    assert.equal(state.release,'NO_GO');
   }
 });
 
@@ -76,7 +79,7 @@ test('read-only three-file cache source checks cannot be silently forged into le
     assert.equal(item.sourcePublisherArtworkFullyReviewed,false);
     assert.equal(item.actualAuthenticatedTaskRenderingAtExactHeadConfirmed,false);
     assert.equal(item.internalAcademicApproval,'NOT_CLAIMED');
-    assert.equal(state.newLessons[ordinal-51].status,'IN_PROGRESS');
-    assert.equal(x.records[ordinal-51].internalEvidenceBasedAcademicAcceptance,false);
+    assert.equal(x.records[ordinal-51].internalEvidenceBasedAcademicAcceptance,
+      state.newLessons[ordinal-51].status==='INTERNALLY_ACCEPTED');
   }
 });

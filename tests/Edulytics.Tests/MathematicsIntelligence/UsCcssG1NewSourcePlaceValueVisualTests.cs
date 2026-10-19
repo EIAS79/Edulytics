@@ -29,8 +29,8 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
         Assert.Contains("class='g1-free-target'",svg);
         Assert.Contains($">{used}</text>",svg);
         Assert.Contains($">{available}</text>",svg);
-        Assert.Equal(1,System.Text.RegularExpressions.Regex.Matches(
-            svg,"class='g1-board-cross'").Count);
+        Assert.Single(System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='g1-board-cross'").Cast<System.Text.RegularExpressions.Match>());
         Assert.DoesNotContain("MOVE=",svg);
         Assert.DoesNotContain("EQUATION=",svg);
         Assert.DoesNotContain("<image ",svg);
@@ -87,8 +87,8 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
         var growing=Assert.IsType<string>(Visual(
             family,new{a=9,b=1,c=0,mode=2}));
         Assert.Contains("Start: ONE TEN",growing);
-        Assert.Equal(1,System.Text.RegularExpressions.Regex.Matches(
-            growing,"class='g1-original-ten-step-start'").Count);
+        Assert.Single(System.Text.RegularExpressions.Regex.Matches(
+            growing,"class='g1-original-ten-step-start'").Cast<System.Text.RegularExpressions.Match>());
         Assert.Equal(8,System.Text.RegularExpressions.Regex.Matches(
             growing,"class='g1-original-ten-step-blank'").Count);
         Assert.DoesNotContain("TOTALS=",growing);
@@ -99,8 +99,8 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
         Assert.Contains("Start: NINE TENS",shrinking);
         Assert.Equal(8,System.Text.RegularExpressions.Regex.Matches(
             shrinking,"class='g1-original-ten-step-remove'").Count);
-        Assert.Equal(1,System.Text.RegularExpressions.Regex.Matches(
-            shrinking,"class='g1-original-ten-step-start'").Count);
+        Assert.Single(System.Text.RegularExpressions.Regex.Matches(
+            shrinking,"class='g1-original-ten-step-start'").Cast<System.Text.RegularExpressions.Match>());
         Assert.DoesNotContain("TOTALS=",shrinking);
         Assert.DoesNotContain("LAST=",shrinking);
     }

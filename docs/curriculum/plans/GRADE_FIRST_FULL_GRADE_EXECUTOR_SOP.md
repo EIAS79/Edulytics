@@ -1,6 +1,6 @@
 # Full-grade executor SOP — retain original V1 stage quality
 
-**Governing plan:** [EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md](EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md) (`EDULYTICS-GRADE-FIRST-FULL-GRADE-V1`). Supersedes **only future delivery size** of the five-lesson V1 policy; never overwrite prior evidence.
+**Governing plan:** [EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md](EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md) (`EDULYTICS-GRADE-FIRST-FULL-GRADE-V2`). Supersedes **only future delivery size** of the five-lesson V1 policy; never overwrite prior evidence.
 
 ## Before doing new lesson work
 
@@ -10,7 +10,7 @@ For G1, historical ordinals 1–50 are already published under the predecessor a
 
 ## Whole-grade execution, not five-by-five
 
-Treat `node tools/curriculum/us-ccss-full-grade-worklist.cjs` as the **single Grade 1 scope** containing every ordinal **51–146 (96)**. It must never be partitioned into execution batches of five, ten, twenty, thirty, etc. `--remaining` lists every lesson needing academic evidence (currently 51–146), and **`--new` lists only lessons where implementation has not started (currently 81–146, 66 lessons)**. There is no size cap. Continue source-and-test work on 51–80; do not rewrite or discard their existing changes. The worklist does not manufacture course content or publish anything; it prevents scope truncation.
+Treat `node tools/curriculum/us-ccss-full-grade-worklist.cjs` as the **single Grade 1 scope** containing every ordinal **51–146 (96)**. It must never be partitioned into execution batches of five, ten, twenty, thirty, etc. `--remaining` lists every lesson needing academic evidence (currently 51–146), and **`--new` reports only records still marked unstarted in the ledger and does not authorize reauthoring candidates already present in code**. There is no size cap. Continue source-and-test work on 51–80; do not rewrite or discard their existing changes. The worklist does not manufacture course content or publish anything; it prevents scope truncation.
 
 Work through the genuine per-lesson V1 A–D source/teaching/Practice/test checks on the whole grade. Save source-verified progress as necessary for resumability, not as five-lesson approvals. If a step is blocked, retain a truthful blocked state; do not bypass academic tests just to reach the end of the worklist. After all **96 genuinely** receive independent academic acceptance and required evidence, perform **one** final grade-level E/F gate, protected CI, exact Render SHA verification, and owner UAT. Historical 1–50 stay untouched.
 
@@ -29,7 +29,7 @@ A–D operate on individual **new** lessons to catch failures early. E–F apply
 
 ## V1-equivalent evidence and approval rules
 
-Carry forward the original V1 academic gate for **each new lesson 51–146**: original goal and student task, effective real teaching content, permitted Practice where gradeable, independent right/wrong mathematical tests, authenticated generation/grading/persisted attempts where applicable, honest residual teacher-only activity limits, test/commit linkage and all current security/deploy protections. No mandatory **external** academic approval, actual child submission, teacher-observed classroom evidence, or owner UAT before release. Grade 1 ordinal 65 requires a source-grounded authored-story learner task and teacher review rubric, instead of manufactured numeric grading. Ordinal 146 requires both the source-authored four-clue number riddle teaching/rubric and independently verified digital Practice. A rubric alone does not prove the actual learner page contains the authored assignment. Ensure exact-head positive eligibility runs inside the whole-grade PR and stays red while incomplete. Never touch the historic 1–50 lessons.
+Carry forward the original V1 academic gate for **each new lesson 51–146**: original goal and student task, effective real teaching content, permitted Practice where gradeable, independent right/wrong mathematical tests, authenticated generation/grading/persisted attempts where applicable, honest residual teacher-only activity limits, test/commit linkage and all current security/deploy protections. No mandatory **external** academic approval, actual child submission, teacher-observed classroom evidence, or owner UAT before release. Grade 1 ordinal 65 requires a source-grounded authored-story learner task and teacher review rubric, instead of manufactured numeric grading. Ordinal 146 requires both the source-authored four-clue number riddle teaching/rubric and independently verified digital Practice. A rubric alone does not prove the actual learner page contains the authored assignment. Run the exact-head positive eligibility check when the grade is actually ready for final release review; on Draft/WIP PRs, run scoped correctness and negative control without treating intentional NO_GO as a software build failure. NEVER merge or release while the actual 96/96 gate is not green. Never touch the historic 1–50 lessons.
 
 ## Release rules
 
