@@ -61,17 +61,17 @@
           "CCSS:1.OA.D.8"
         ],
         "sourceSha256": "fe19d293e214a19212ee74fa2cd634e0381a77916645fa6b600f40d9c9c5eef2",
-        "effectiveStudentBodySha256": "fbece9c4372eb8640c709a074a88440a073831692203e59c4cf78db6de167463",
-        "effectiveStudentBodyHashSemantics": "Volatile-token-containing authenticated unescaped HTML response SHA-256 in 2026-10-19 CI; not the canonical RichV2 authored body digest",
+        "effectiveStudentBodySha256": "113d72dcb84531004eacba476a5032987915e038581a2a31a509e8c7f69c01a5",
+        "effectiveStudentBodyHashSemantics": "Authenticated HTML-unescaped response SHA-256 captured from disposable CI school at tested GitHub merge checkout ac6afc... (includes volatile tokens; not canonical authored content identity)",
         "independentCorrectAndWrongAnswersVerified": true,
         "realPracticeGradingPersisted": true,
         "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
-        "independentGradingProofSha256": "1431042eb9cb6953a1acbf12c0d8c8885b32dd16bc775d863e0e5bf2bcecc5e3",
+        "independentGradingProofSha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
         "independentGradingProofReference": {
           "kind": "GIT_FILE",
           "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
-          "sha256": "1431042eb9cb6953a1acbf12c0d8c8885b32dd16bc775d863e0e5bf2bcecc5e3",
-          "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+          "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
         },
         "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
         "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
@@ -89,10 +89,10 @@
           "sha256": "f107d9fa3c6dee2550142d7c287ded3ca8a4503f633d28dfc013e2e31d88c742",
           "commitSha": "a99633d99e2141cd19784ec39f89fe5192f61814"
         },
-        "testedCodeSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48",
-        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39276748370",
-        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39276748405",
-        "testingCheckoutMergeSha": "df54761496ed98249828c18a89394a48e28009a0",
+        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
         "affectedCodePaths": [
           "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
           "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1NumberPuzzle.cs",
@@ -105,12 +105,12 @@
         "tests": [
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
-            "sha256": "1431042eb9cb6953a1acbf12c0d8c8885b32dd16bc775d863e0e5bf2bcecc5e3",
+            "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
-              "sha256": "1431042eb9cb6953a1acbf12c0d8c8885b32dd16bc775d863e0e5bf2bcecc5e3",
-              "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+              "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
+              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
             }
           },
           {
@@ -134,7 +134,13 @@
             }
           }
         ],
-        "acceptanceBoundary": "Edulytics internal evidence-based academic acceptance only; not actual classroom participation, copied publisher board artwork, production deployment or owner UAT"
+        "acceptanceBoundary": "Edulytics internal evidence-based academic acceptance only; not actual classroom participation, copied publisher board artwork, production deployment or owner UAT",
+        "runtimeEvidenceArtifact": {
+          "runId": 39299597728,
+          "artifactId": 12211766120,
+          "scope": "G1 all 96 candidate technical samples; 95 real graded trials; NOT academic signoff",
+          "originalLesson51BoardRendered": true
+        }
       }
     },
     {
