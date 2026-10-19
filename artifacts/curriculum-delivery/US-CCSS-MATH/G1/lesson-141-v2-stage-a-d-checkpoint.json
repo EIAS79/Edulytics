@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A–D source-task parity checkpoint and target repair, not signoff",
+  "grade": "G1",
+  "ordinal": 141,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L05",
+  "title": "Put Together and Take Apart Story Problems",
+  "sourceBasis": {
+    "originalSourceEdition": "Illustrative Mathematics Grade 1 (2021)",
+    "sourceRelativePath": "unit-8/lesson-5/lesson.html",
+    "originalTeacherHtmlSha256": "319e05d2d15992b41580bb454092aacaca5d9133c084a45fd5063ebff52aebba",
+    "sourceHashMatchesIndexedRegistry": true,
+    "sourceInspection": "Read-only original 2021 Student Facing lesson HTML; original photographs not copied"
+  },
+  "stageA": {
+    "originalSourceTasksDirectlyInspected": true,
+    "originalWarmup": "57+20=59 FALSE;66-4=62 TRUE;17+76=59 FALSE",
+    "sourceMainStoryContexts": [
+      {
+        "title": "7 first graders and second graders, total 18",
+        "equation": "7+□=18",
+        "missing": 11
+      },
+      {
+        "title": "13 of 18 stars bright, remainder dim",
+        "equation": "13+□=18",
+        "missing": 5
+      },
+      {
+        "title": "Diego saw six of fifteen shooting stars; Tyler the rest",
+        "equation": "6+□=15",
+        "missing": 9
+      },
+      {
+        "title": "Elena twelve star stickers within twenty total, remainder planets",
+        "equation": "12+□=20",
+        "missing": 8
+      }
+    ],
+    "sourceTwoEquationChoiceStories": [
+      {
+        "title": "Noah nine white stars of seventeen",
+        "valid": [
+          "17-9=□",
+          "9+□=17"
+        ],
+        "invalid": "9+17=□",
+        "missing": 8
+      },
+      {
+        "title": "Kiran eleven stars of sixteen objects",
+        "valid": [
+          "11+□=16",
+          "16-11=□"
+        ],
+        "invalid": "16+11=□",
+        "missing": 5
+      }
+    ],
+    "identifiedGap": "Existing source-bound learner content omitted two of four story contexts and second of two source equation-choice stories, leaving source-distractor reasoning unrepresented."
+  },
+  "stageB": {
+    "existingRichV2SourceRepairReused": true,
+    "sourceFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "repairCommit": "a59bb480df022f147ca9fdb2454a50127e2ff340",
+    "teacherFacilitatedTaskBoundary": "Source pictures, handwriting, chosen equations, partner explanation remain genuine separate student/teacher work; no publisher artwork copied"
+  },
+  "stageC": {
+    "digitalPracticeExisting": true,
+    "existingFamily": "usccss.g1.u08.l05.missing_part",
+    "sourceTaskRole": "Numeric missing-part arithmetic plus authored first-party explanation; exact original choice/drawing not auto-certified by numeric score"
+  },
+  "stageD": {
+    "sourceAssertionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "testCommit": "b2ad3adf65308bfe3599c516eef9dd1ab9e67868",
+    "dotNetTestsAtCurrentSha": "NOT_RUN",
+    "authenticatedLearnerAndCorrectWrongMalformedGradingPersistence": "PENDING",
+    "rightsAccessibility": "PENDING",
+    "perLessonAcademicSignoff": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "sourceOfTruth": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
