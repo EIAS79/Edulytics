@@ -114,7 +114,15 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("11+□=16 and 16-11=□",planetarium); // Kiran two matches
         Assert.Contains("9+17=□ does NOT",planetarium); // Original distractor
         Assert.Contains("16+11=□ is NOT",planetarium); // Original distractor
-        Assert.Contains("WRITE and ANSWER TWO new questions",text("PED:US-CCSS-MATH:G1:U08:L06"));
+        var rides=text("PED:US-CCSS-MATH:G1:U08:L06");
+        Assert.Contains("FOUR comparison stories",rides);
+        Assert.Contains("ferris wheel holds 20 people and swings 14",rides);
+        Assert.Contains("20-14=6 FEWER",rides);
+        Assert.Contains("Diego 7, Priya 11, Jada 3, Kiran 6 and Noah 9",rides);
+        Assert.Contains("WRITE and ANSWER TWO new questions",rides);
+        Assert.Contains("11-3=8",rides);
+        Assert.Contains("9-6=3",rides);
+        Assert.Contains("each be a coherent and mathematically answerable question",rides);
         Assert.Contains("number 103",text("PED:US-CCSS-MATH:G1:U08:L07"));
         Assert.Contains("70=24+46 is TRUE",text("PED:US-CCSS-MATH:G1:U08:L10"));
         var riddles=text("PED:US-CCSS-MATH:G1:U08:L09");
