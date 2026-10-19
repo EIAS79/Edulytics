@@ -89,7 +89,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         var spec=Get(family);
         if(spec==null||p.Count!=3||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
-           !p.TryGetValue("mode",out int mode)||mode<0||mode>3)
+           !p.TryGetValue("mode",out int mode)||mode<0||
+           mode>(spec.LessonCode=="L07"?5:3))
             return false;
         if(spec.LessonCode=="L14")return FoodDriveValid(a,b,mode);
         int ones=a%10+b%10,sum=a+b;
@@ -108,10 +109,12 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                     (mode!=2||(a==34&&b==9))&&
                     (mode!=3||(a==68&&b==6))),
             Kind.ComposingTwoDigits=>a>=10&&a<=89&&b>=10&&b<=89&&sum<=100&&ones>=10,
-            Kind.Flexible=>a>=20&&a<=89&&b>=1&&b<=(spec.LessonCode=="L07"?9:10)&&sum<=99&&
-                (spec.LessonCode!="L07"||mode<=1||
-                 (mode==2?a%10>=1&&b>=10-a%10:
-                          a%10<=8&&b<10-a%10)),
+            Kind.Flexible=>spec.LessonCode=="L07"&&mode>=2?
+                (mode==2?a==32&&b>=8&&b<=9:
+                 mode==3?a==16&&b>=0&&b<=3:
+                 mode==4?a==8&&b>=10&&b<=91&&b%10>=2:
+                         a==8&&b>=10&&b<=91&&b%10<=1):
+                a>=20&&a<=89&&b>=1&&b<=10&&sum<=99,
             _=>false
         };
     }
@@ -119,7 +122,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     {
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
-        int mode=random.Next(4);
+        int mode=random.Next(spec.LessonCode=="L07"?6:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
         // Generate genuine operand choices satisfying this source-goal family.
         for(int tries=0;tries<1000;tries++)
@@ -151,6 +154,24 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 if(mode==2){a=34;b=9;}
                 if(mode==3){a=68;b=6;}
             }
+            if(spec.LessonCode=="L07"&&mode>=2)
+            {
+                // Exact 2021 Student Facing image-alt source quantities:
+                // 32 + □ one-digit with new ten, 16 + □ without,
+                // 8 + □ two-digit with/without new ten.
+                if(mode==2){a=32;b=random.Next(8,10);}
+                else if(mode==3){a=16;b=random.Next(0,4);}
+                else if(mode==4)
+                {
+                    a=8;
+                    do{b=random.Next(10,92);}while(b%10<2);
+                }
+                else
+                {
+                    a=8;
+                    do{b=random.Next(10,92);}while(b%10>1);
+                }
+            }
             var candidate=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}};
             if(Valid(family,candidate))
             {
@@ -168,13 +189,15 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                     :$"Add {a}+{b} within 100.";
                 if(spec.LessonCode=="L07"&&mode>=2)
                 {
-                    string condition=mode==2?"WOULD make a new ten":"would NOT make a new ten";
+                    bool yes=mode==2||mode==4;
+                    string condition=yes?"WOULD make a new ten":"would NOT make a new ten";
+                    string size=mode<=3?"ONE-DIGIT (0 to 9)":"TWO-DIGIT (10 to 91)";
                     string promptMissing=
-                        $"Original 2021 OPEN-CHOICE Missing Numbers task: {a}+□. " +
-                        $"What positive ONE-DIGIT number COULD be put in the box that {condition}? " +
-                        "Choose ANY valid missing value and show the actual sum. " +
-                        "Write MISSING=number;NEW_TEN=YES/NO;TOTAL=number. " +
-                        "Use place-value reasoning; teacher reviews children's own explanations.";
+                        $"ORIGINAL 2021 STUDENT FACING — Lin's water-smudged number: {a}+□. " +
+                        $"What {size} number COULD she have written that {condition}? " +
+                        "Choose ANY mathematically valid missing value, show the actual sum, " +
+                        "and write MISSING=number;NEW_TEN=YES/NO;TOTAL=number. " +
+                        "Teacher reviews personal drawings or equations and explains why several answers work.";
                     return new(family,promptMissing,
                         "Source allows several mathematically valid additions: the verifier " +
                         "accepts any correct one-digit choice meeting the stated make-ten " +
@@ -252,11 +275,14 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
            !fields.TryGetValue("MISSING",out var digitText)||
            !fields.TryGetValue("NEW_TEN",out var tenText)||
            !fields.TryGetValue("TOTAL",out var totalText)||
-           !int.TryParse(digitText,out var digit)||digit<1||digit>9||
+           !int.TryParse(digitText,out var digit)||
            !int.TryParse(totalText,out var total)||total!=p["a"]+digit||total>99)
             return false;
-        bool makesNewTen=p["a"]%10+digit>=10;
-        return makesNewTen==(p["mode"]==2) &&
+        int mode=p["mode"];
+        bool oneDigit=mode==2||mode==3;
+        if(oneDigit?(digit<0||digit>9):(digit<10||digit>91))return false;
+        bool makesNewTen=p["a"]%10+digit%10>=10;
+        return makesNewTen==(mode==2||mode==4)&&
                tenText==(makesNewTen?"YES":"NO");
     }
 

@@ -78,11 +78,15 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
         Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Verify(yesFamily,yes,"MOVE=3;REST=8;TOTAL=55"));
     }
     [Theory]
-    [InlineData(45,5,2,"MISSING=5;NEW_TEN=YES;TOTAL=50")]
-    [InlineData(49,1,2,"MISSING=1;NEW_TEN=YES;TOTAL=50")]
-    [InlineData(46,3,3,"MISSING=3;NEW_TEN=NO;TOTAL=49")]
-    [InlineData(50,9,3,"MISSING=9;NEW_TEN=NO;TOTAL=59")]
-    public void OriginalU05L07MissingNumberTasksAcceptValidOpenOneDigitChoices(
+    [InlineData(32,8,2,"MISSING=8;NEW_TEN=YES;TOTAL=40")]
+    [InlineData(32,9,2,"MISSING=9;NEW_TEN=YES;TOTAL=41")]
+    [InlineData(16,3,3,"MISSING=3;NEW_TEN=NO;TOTAL=19")]
+    [InlineData(16,0,3,"MISSING=0;NEW_TEN=NO;TOTAL=16")]
+    [InlineData(8,12,4,"MISSING=12;NEW_TEN=YES;TOTAL=20")]
+    [InlineData(8,35,4,"MISSING=35;NEW_TEN=YES;TOTAL=43")]
+    [InlineData(8,11,5,"MISSING=11;NEW_TEN=NO;TOTAL=19")]
+    [InlineData(8,30,5,"MISSING=30;NEW_TEN=NO;TOTAL=38")]
+    public void AllFourOriginalWaterSmudgeSourceQuestionsAcceptSourceValidChoices(
         int known,int missing,int mode,string expected)
     {
         const string family="usccss.g1.u05.l07.detect_new_ten";
@@ -90,57 +94,58 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
         Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,p));
         Assert.Equal(expected,UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,p));
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
-        Assert.False(ExactSkillContractQuestionEngine.Verify(
-            family,p,expected+";NOT_REVIEWED=1"));
-        Assert.False(ExactSkillContractQuestionEngine.Verify(
-            family,p,expected.Replace($"MISSING={missing}",$"MISSING={missing+1}")));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            expected+";NOT_REVIEWED=1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            expected.Replace($"TOTAL={known+missing}",$"TOTAL={known+missing+1}")));
     }
 
     [Fact]
-    public void MissingNumberVariantsExcludeCasesWithNoValidPositiveDigitOrNonExtremalDigit()
+    public void OriginalFourOpenChoiceSourceTasksPermitDifferentMathematicallyValidAnswers()
     {
         const string family="usccss.g1.u05.l07.detect_new_ten";
-        foreach(var (a,b,mode) in new[]{
-            (40,9,2),  // ones=0 means no one-digit addend makes a new ten
-            (49,1,3),  // ones=9 means no positive addend avoids a new ten
-            (45,4,2),  // four does not make the next ten
-            (46,4,3),  // four WOULD make a new ten
-            (39,9,3)   // any positive digit composes a new ten
+        var p=new Dictionary<string,int>{{"a",32},{"b",8},{"mode",2}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MISSING=9;NEW_TEN=YES;TOTAL=41"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MISSING=7;NEW_TEN=YES;TOTAL=39"));
+        p["a"]=16;p["b"]=0;p["mode"]=3;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MISSING=2;NEW_TEN=NO;TOTAL=18"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MISSING=4;NEW_TEN=NO;TOTAL=20"));
+        p["a"]=8;p["b"]=12;p["mode"]=4;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MISSING=49;NEW_TEN=YES;TOTAL=57"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MISSING=11;NEW_TEN=YES;TOTAL=19"));
+        p["b"]=11;p["mode"]=5;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MISSING=41;NEW_TEN=NO;TOTAL=49"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MISSING=12;NEW_TEN=NO;TOTAL=20"));
+    }
+
+    [Fact]
+    public void MissingNumberCasesRejectNonSourceSizeAndCarryContradictions()
+    {
+        const string family="usccss.g1.u05.l07.detect_new_ten";
+        foreach(var (a,b,mode) in new (int,int,int)[]
+        {
+            (32,7,2), (16,4,3), (8,11,4), (8,12,5),
+            (8,92,4), (32,11,2), (16,10,3),
+            (8,8,4), (8,8,5)
         })
             Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,
                 new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}}));
     }
 
     [Fact]
-    public void OriginalSourceOpenChoiceAcceptsMultipleDifferentValidStudentAnswers()
-    {
-        const string family="usccss.g1.u05.l07.detect_new_ten";
-        var makes=new Dictionary<string,int>{{"a",45},{"b",5},{"mode",2}};
-        Assert.True(ExactSkillContractQuestionEngine.Verify(family,makes,
-            "MISSING=5;NEW_TEN=YES;TOTAL=50"));
-        Assert.True(ExactSkillContractQuestionEngine.Verify(family,makes,
-            "TOTAL=51;NEW_TEN=YES;MISSING=6"));
-        Assert.False(ExactSkillContractQuestionEngine.Verify(family,makes,
-            "MISSING=4;NEW_TEN=NO;TOTAL=49"));
-        Assert.False(ExactSkillContractQuestionEngine.Verify(family,makes,
-            "MISSING=6;NEW_TEN=YES;TOTAL=50"));
-        var not=new Dictionary<string,int>{{"a",46},{"b",3},{"mode",3}};
-        Assert.True(ExactSkillContractQuestionEngine.Verify(family,not,
-            "MISSING=1;NEW_TEN=NO;TOTAL=47"));
-        Assert.True(ExactSkillContractQuestionEngine.Verify(family,not,
-            "MISSING=3;NEW_TEN=NO;TOTAL=49"));
-        Assert.False(ExactSkillContractQuestionEngine.Verify(family,not,
-            "MISSING=4;NEW_TEN=YES;TOTAL=50"));
-        Assert.False(ExactSkillContractQuestionEngine.Verify(family,not,
-            "MISSING=3;NEW_TEN=NO;TOTAL=49;EXTRA=1"));
-    }
-
-    [Fact]
-    public void GeneratedOriginalMissingDigitQuestionsContainBothTenCompositionConstraints()
+    public void GeneratedOriginalMissingDigitAndTwoDigitTasksIncludeAllSourceCases()
     {
         const string family="usccss.g1.u05.l07.detect_new_ten";
         var variants=new HashSet<int>();
-        for(int seed=0;seed<240;seed++)
+        for(int seed=0;seed<350;seed++)
         {
             var q=UsCcssG1FullGradeUnit5AdditionQuestions.Build(family,new Random(seed*71+19));
             variants.Add(q.Parameters["mode"]);
@@ -153,9 +158,10 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
                 Assert.Contains("□",q.Prompt);
                 Assert.Contains("COULD",q.Prompt);
                 Assert.Contains("Choose ANY",q.Prompt);
+                Assert.Contains(q.Parameters["mode"]<=3?"ONE-DIGIT":"TWO-DIGIT",q.Prompt);
             }
         }
-        Assert.Equal(4,variants.Count);
+        Assert.Equal(6,variants.Count);
     }
 
     [Theory]

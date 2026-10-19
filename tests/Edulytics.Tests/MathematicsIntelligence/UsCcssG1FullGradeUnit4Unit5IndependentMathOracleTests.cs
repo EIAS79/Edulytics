@@ -46,16 +46,16 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
                 2=>$"TOTAL={total};PACK={(total>=35&&total<=65?"YES":"NO")}",
                 _=>$"TOTAL={total+13};PACK={(total+13>=35&&total+13<=65?"YES":"NO")}"
             };
-        // Original U05 L07 includes source-inspired missing-addend variants.
-        // Independently derive the smallest one-digit addend crossing the next
-        // ten and the largest positive one-digit addend staying below it.
+        // Four original 2021 water-smudged open tasks, preserving the
+        // exact pictured bases: 32, 16, 8 and 8, and one/two-digit answer domains.
         if(index==6&&mode>=2)
         {
-            int threshold=10-a%10;
-            Assert.InRange(b,1,9);
-            bool actuallyComposes=a%10+b>=10;
-            Assert.Equal(mode==2,actuallyComposes);
-            Assert.True(mode==2?b>=threshold:b<threshold);
+            Assert.Equal(mode==2?32:mode==3?16:8,a);
+            if(mode<=3)Assert.InRange(b,0,9);
+            else Assert.InRange(b,10,91);
+            bool actuallyComposes=a%10+b%10>=10;
+            Assert.Equal(mode==2||mode==4,actuallyComposes);
+            Assert.InRange(total,0,99);
             return $"MISSING={b};NEW_TEN={(actuallyComposes?"YES":"NO")};TOTAL={total}";
         }
         int carry=(a%10+b%10)/10;
