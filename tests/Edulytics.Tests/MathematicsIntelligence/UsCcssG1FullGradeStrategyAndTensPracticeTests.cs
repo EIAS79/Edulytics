@@ -69,25 +69,26 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     [Fact]
     public void StoryModeSupportsStartChangeResultAndSubtractionUnknowns()
     {
-        for(int mode=0;mode<6;mode++)
+        // Use source-approved parameter values for the four original fixed
+        // Student Facing variants, and generic values only in remaining modes.
+        var cases=new (int A,int B,int Mode,string Expected)[]
         {
-            var p=new Dictionary<string,int>{{"a",7},{"b",5},{"c",0},{"mode",mode}};
-            var answer=UsCcssG1FullGradeStrategyAndTensQuestions.Solve(
-                UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns,p);
-            var expected=mode switch
-            {
-                0=>"UNKNOWN=12;EQUATION=7+5=12",
-                1=>"UNKNOWN=5;EQUATION=7+5=12",
-                2=>"UNKNOWN=7;EQUATION=7+5=12",
-                3=>"UNKNOWN=7;EQUATION=12-5=7",
-                4=>"UNKNOWN=5;EQUATION=12-5=7",
-                _=>"UNKNOWN=12;EQUATION=12-5=7"
-            };
-            Assert.Equal(expected,answer);
-            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Verify(
-                UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns,p,expected));
+            (7,5,0,"UNKNOWN=12;EQUATION=7+5=12"),
+            (6,12,1,"UNKNOWN=12;EQUATION=6+12=18"),
+            (6,9,2,"UNKNOWN=6;EQUATION=6+9=15"),
+            (7,5,3,"UNKNOWN=7;EQUATION=12-5=7"),
+            (9,6,4,"UNKNOWN=6;EQUATION=15-6=9"),
+            (7,5,5,"UNKNOWN=12;EQUATION=12-5=7")
+        };
+        foreach(var (first,second,mode,expected) in cases)
+        {
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"c",0},{"mode",mode}};
+            const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+            Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Verify(family,p,expected));
             Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Verify(
-                UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns,p,"UNKNOWN=99;EQUATION=7+5=12"));
+                family,p,expected+";UNREVIEWED=1"));
         }
     }
     [Fact]

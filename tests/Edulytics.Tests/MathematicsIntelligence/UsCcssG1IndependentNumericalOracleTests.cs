@@ -50,7 +50,7 @@ public sealed class UsCcssG1IndependentNumericalOracleTests
         {
             var p = new Dictionary<string, int>
             {
-                ["a"] = value, ["b"] = 0, ["c"] = 0, ["mode"] = 0
+                ["a"] = value, ["b"] = 0, ["c"] = 0, ["mode"] = 2
             };
             int ones = value % 10 + 10;
             int tens = value / 10 - 1;
