@@ -160,7 +160,7 @@ jobs:
           mkdir -p /tmp/g1-new-original-math-trx
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
             --configuration Release --no-restore \
-            --filter 'FullyQualifiedName~UsCcssG1FullGrade|FullyQualifiedName~UsCcssG1SourceShapesAndHardTimesVisualTests|FullyQualifiedName~UsCcssG1IndependentNumericalOracleTests' \
+            --filter 'FullyQualifiedName~UsCcssG1FullGrade|FullyQualifiedName~UsCcssG1SourceShapesAndHardTimesVisualTests|FullyQualifiedName~UsCcssG1NewSourcePlaceValueVisualTests|FullyQualifiedName~UsCcssG1IndependentNumericalOracleTests' \
             --logger 'trx;LogFileName=g1-original-math-and-visuals.trx' \
             --results-directory /tmp/g1-new-original-math-trx
       - name: Archive math tests and authentic run result; not source academic approval
