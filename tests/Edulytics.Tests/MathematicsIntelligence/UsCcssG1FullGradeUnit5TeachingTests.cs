@@ -72,13 +72,13 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
         Assert.Contains("Target Numbers Stage 3",lesson(5,13));
         Assert.Contains("Five in a Row Stage 6",lesson(5,13));
         Assert.Contains("23 + 45 = (20 + 40) + (3 + 5) = 60 + 8 = 68",lesson(5,2));
-        Assert.Contains("37+26 = (30+20)+(7+6) = 50+13=63",lesson(5,10));
+        Assert.Contains("37+26=(30+20)+(7+6)=50+13=63",lesson(5,10));
         Assert.Contains("74 is greater than 68",lesson(4,22));
         Assert.Contains("Mystery Number",lesson(4,22));
         Assert.Contains("90+2>80+12 FALSE",lesson(4,22));
         Assert.Contains("THREE two-handful",lesson(4,23));
         Assert.Contains("LESS THAN 20, 20 TO 50 or MORE THAN 50",lesson(4,23));
-        Assert.Contains("Many correct options are possible",lesson(5,7));
+        Assert.Contains("Source requires thinking, not a single preset answer",lesson(5,7));
         Assert.Contains("32+8=40 and 32+9=41",lesson(5,7));
         Assert.Contains("8+12=20, 8+35=43 and 8+49=57",lesson(5,7));
         Assert.Contains("Elena begins with 34+6=40",lesson(5,6));
