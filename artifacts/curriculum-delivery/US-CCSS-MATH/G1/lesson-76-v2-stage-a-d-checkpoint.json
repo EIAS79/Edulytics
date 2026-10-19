@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 76,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L11",
+  "title": "Add Tens to Two-digit Numbers",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "142ba60b69b021a9f6122d5df8b3d160a71bf399fccc25c4bcabda7e827ec1a8",
+    "teacherPreparationSha256": "86eef401000ecd9c255cb38b4a40516584b7244a335bb7de8721af56ecc474b7",
+    "studentHtmlSha256": "2d09b372c5cf3f361d2cca7bb352802af461e363fe206f4901c7c4021b0173a1",
+    "teacherHeadings": [
+      "Activity 1: Add Two-digit Numbers and Tens (20 minutes)",
+      "Activity 2: The Missing Digit (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(80 + 5 = 5 + 80\\) \\(70 + 1 = 80 + 1\\) \\(20 + 6 = 6 + 30\\) Student Respo",
+      "Student Facing Find the number that makes each equation true. Show your thinking using drawings, numbers, or words. \\(37 + 20 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(60",
+      "Student Facing This equation is true. [visual] [visual] <svg aria-"
+    ],
+    "sourceSpecificFinding": "Original true/false warm-up and 37+20,60+23,48+50,54+20,30+65; smudged diagram still requires visual evidence",
+    "classification": "CONTENT_REPAIR_VISUAL_REVIEW_PENDING"
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
