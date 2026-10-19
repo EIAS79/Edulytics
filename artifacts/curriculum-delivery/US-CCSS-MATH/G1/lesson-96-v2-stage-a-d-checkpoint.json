@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 96,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L08",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "38e9b69a54b2cd0443d1fffe300237f8470152fa24ae92867b319f534efb1870",
+    "teacherPreparationSha256": "ac0a5c1e267857fd3f3e3249669f293969d3966332aea43690b46512c6081338",
+    "studentMirrorSha256": "1929e21623faff7459d5811a907986488932b7e137f569ef16dd5ff69d13607c",
+    "teacherActivityHeadings": [
+      "Activity 1: Introduce Target Numbers, Add Tens or Ones (15 minutes)",
+      "Activity 2: Centers: Choice Time (25 minutes)",
+      "Activity 3: Addition Stories [OPTIONAL] (10 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(68 + 2\\) \\(3 + 68\\) \\(5 + 45\\) \\(45 + 7\\) Student Response Teachers with a valid work email address can click",
+      "Student Facing Choose a center. Target Numbers [visual] [visual] <div class=\"im-c-modal__",
+      "Student Facing Priya watched a football game. The home team scored 35 points in the first half. In the second half they scored 6 more points. How many points did they sco"
+    ],
+    "sourceSpecificComparison": "Original Target Numbers Stage 2 start 25/add tens or ones toward 95; optional football 35+6 and 9+45",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
