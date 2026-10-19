@@ -78,25 +78,25 @@
 flowchart TD
     A[Choose curriculum and grade or named course] --> B[One-time grade extraction and database reconciliation]
     B --> C[Freeze versioned grade inventory and objective map]
-    C --> D[Select next UNACCEPTED new lesson in this grade]
-    D --> E[Compare actual student-visible content and Practice with the source]
-    E --> F{Existing capabilities match the goals?}
-    F -->|Yes| G[Reuse lesson layout, content components, skills and generator families]
-    F -->|Partial| H[Patch only documented content or Practice gaps]
-    F -->|No| I[Implement one reusable capability only if no correct existing one works]
-    G --> J[Run change-scoped correctness and integration checks]
-    H --> J
-    I --> J
-    J --> K{Does THIS lesson have unchanged V1 A-D evidence?}
-    K -->|No| L[Fix affected lessons only and rerun impacted checks]
-    L --> J
-    K -->|Yes| M[Record THIS lesson internal academic acceptance with real V1 evidence]
-    M --> Q{All new lessons in this grade internally accepted?}
-    Q -->|No| D
-    Q -->|Yes| N[Perform final whole-grade evidence aggregation and existing protected CI]
-    N --> O[Merge approved full-grade release; verify exact Render LIVE SHA and HTTP]
-    O --> P[Owner performs production user acceptance]
-    P --> R[Close grade and open next grade or course]
+    C --> D[Stage A: select and compare ALL currently unaccepted new lessons together]
+    D --> E[Record source and teaching/Practice gaps separately for EACH lesson]
+    E --> F[Stage B: reuse correct teaching and repair only proven gaps across the cohort]
+    F --> G[Stage C: verify permitted Practice, mathematics and answer checks for EACH lesson]
+    G --> H[Stage D preparation: retain per-lesson checks and evidence without manual GitHub CI]
+    H --> I{Any known source, teaching or Practice gap remains?}
+    I -->|Yes| J[Repair affected lessons or shared capability once and update affected evidence]
+    J --> F
+    I -->|No| K[Freeze the complete grade candidate and reconcile all lesson families and sources]
+    K --> L[Promote safely to preserved PR 567; run required protected CI and authenticated runtime checks]
+    L --> M{Each lesson has valid original V1 A-D proof and required checks pass?}
+    M -->|No| N[Keep affected lessons blocked; repair, refreeze and rerun required checks]
+    N --> K
+    M -->|Yes| O[Record each new lesson's independent internal academic acceptance]
+    O --> P[Run required checks on the evidence-frozen head if necessary]
+    P --> Q{All 96 new lessons accepted and mandatory checks green?}
+    Q -->|No| N
+    Q -->|Yes| R[Merge one full-grade release; verify exact Render LIVE SHA and HTTP]
+    R --> S[Owner production user acceptance and grade closure]
 ```
 
 ### Two independent technical tracks
@@ -142,11 +142,13 @@ Keep detailed logs, screenshots, generated student responses and browser traces 
 
 ---
 
-## 5. The original V1 lesson cycle A–D, then ONE full-grade release E–F
+## 5. The original V1 A–D stages across all unaccepted lessons, then ONE full-grade release E–F
 
-### Stage A — Select and compare (the next unaccepted lesson)
+**Whole-grade stage order (same five-lesson V1 method, larger cohort):** Start Stage A with **all currently unaccepted new lessons together**, in canonical grade order (not just the next lesson). Compare and classify each one independently; then apply Stage B across that cohort, Stage C across that cohort, and prepare Stage D evidence and test assertions for every lesson. Fix shared defects once where appropriate. The CI-dependent part of Stage D and final exact-SHA academic approvals remain deferred until the whole-grade content freeze under the approved continuous-authoring protocol. This is a change of cohort size and final CI timing, **not** a waiver of any original V1 per-lesson check.
 
-- Load the **next unaccepted new lesson** by stable grade ordinal and original source unit association; do not jump ahead just to maximize authored code. A genuinely blocked lesson stays explicitly `BLOCKED` and is escalated for its actual source/capability fix; it cannot be counted accepted or silently skipped.
+### Stage A — Select and compare (all currently unaccepted new lessons together)
+
+- Load **every currently unaccepted new lesson** from the existing Grade 1 scope (ordinals 51–146) as **one cohort**, preserving stable grade order and original source unit association. Exclude the six already accepted lessons 51–56 from redundant review unless their relevant dependencies actually change. Do not silently exclude a blocked candidate or split the remaining lessons into invented five-lesson batches. A genuinely blocked lesson stays explicitly `BLOCKED` and is escalated for its actual source/capability fix; it cannot be counted accepted or silently skipped.
 - Compare each lesson's actual learning outcomes against the effective teaching body and the current Practice contract, examples, explanations and expected student response.
 - Group defects by type; one shared issue (e.g., wrong graph-family mapping) is fixed once for all affected lessons.
 - Do not rewrite content that already teaches the correct objective, even if another stylistic version could be generated. **Inspect the existing #567 candidate before editing; choose `READY_REUSE` wherever its actual effective lesson already qualifies.**
@@ -250,8 +252,8 @@ Never commit tokens, database passwords, identifying student responses, unlicens
 
 ```text
 GRADE_INVENTORIED (reused manifest; G1 historical 1-50 preserved)
-    -> NEXT_UNACCEPTED_LESSON_SELECTED
-    -> LESSON_REUSE_READY / LESSON_REPAIR_REQUIRED / LESSON_CAPABILITY_REQUIRED
+    -> ALL_CURRENTLY_UNACCEPTED_LESSONS_SELECTED_FOR_STAGE_A
+    -> INDIVIDUAL_LESSON_REUSE_READY / LESSON_REPAIR_REQUIRED / LESSON_CAPABILITY_REQUIRED
     -> LESSON_TESTED / LESSON_BLOCKED
     -> LESSON_A_D_REVIEWED / LESSON_BLOCKED (evidence saved per new lesson, continuous authoring)
     -> CODE_AND_SOURCE_FREEZE -> EXISTING_PROTECTED_CI_AND_AUTHENTICATED_PROOFS
@@ -276,7 +278,7 @@ When a lesson is blocked, capture `LessonCode`, missing evidence or failing test
 |---|---|---|
 | Grade intake | One extraction + database/source reconciliation for the entire grade | Measure empirically per grade; **not repeated per lesson** |
 | Single `READY_REUSE` lesson | Match source, preserve/adjust text and map existing family | **5–15 minutes** preparation and focused verification |
-| Next individual lesson | Run unchanged V1 A–D, persist evidence and acceptance before progressing | Variable; reuse existing candidates and measure actual durations, not arbitrary quotas |
+| Whole unaccepted-lesson cohort | Complete Stage A comparisons across all outstanding lessons, then Stage B and C work across the same cohort; retain individual A–D evidence and defer CI-dependent sign-off until grade freeze | Variable; reuse existing candidates and measure actual durations, not arbitrary quotas |
 | Targeted checks per changed lesson | Run changed content/family tests and affected shared consumers; preserve mandatory repo CI | Variable; actual measurements only |
 | New complex skill, solver, UI, source/licence gap or flaky environment | Separate reusable engineering task | **Variable; not capped by the fast-path target** |
 | Merge-to-production | Current CI + queue + Render build/cold start | **Variable; track separately from lesson authoring**, never promise a fixed SLA |
@@ -304,14 +306,14 @@ When a lesson is blocked, capture `LessonCode`, missing evidence or failing test
 |---|---|---|
 | **P0 — Authoritative policy / instruction sync** | Adopt THIS single delivery-size amendment; leave the original Five-Lesson V1 file intact as the academic-quality source; update `AGENTS.md`, README and executor SOP to point to the same policy after approval, **without relocating historical files merely for style** | No five-lesson/full-grade instruction conflict; 50 historical lessons and all old evidence untouched |
 | **P1 — Reuse existing grade manifest** | Check current 146-lesson G1 index against existing source/DB snapshots and original crosswalks; do not create a new extractor if the current one works | 146 exact ordered lesson IDs; historic 50 and new 96 delineated |
-| **P2 — Rescue existing candidate** | Safeguard [PR #567](https://github.com/EIAS79/Edulytics/pull/567) and its head; reuse existing authoring/Practice/visual work; fix proven build blockers; compare next unaccepted ordinal 51 against actual source and rendered code | Real, scoped defect/READY_REUSE classification, no mass rewriting or fake approval |
+| **P2 — Rescue existing candidate** | Safeguard [PR #567](https://github.com/EIAS79/Edulytics/pull/567) and its head; reuse existing authoring/Practice/visual work; fix proven build blockers; compare all currently unaccepted new lessons against actual source and rendered code in Stage A | Real, scoped defect/READY_REUSE classification, no mass rewriting or fake approval |
 | **P3 — Continuous original V1 A–D authoring** | Review/repair all remaining original-source activities on an isolated un-PR'd working branch; reuse prior artifacts; do lightweight checks after a shared component change; preserve per-lesson review checkpoints; defer expensive CI and per-lesson final SHA sign-off until content freeze | 96 source/teaching/Practice candidates independently reviewed and ready for final verification, with outstanding blockers explicit |
 | **P4 — No unnecessary infrastructure** | Reuse V1 grade evidence/acceptance instruments, protected CI and Render wiring; assess whether **a simple aggregate of 96 lesson decisions** is already obtainable; add no fresh approval system, CI job, schema, branch workflow or report unless a concrete unfilled need is proven | No extra release standards, no duplicated ledger authorities, no weakening required checks |
 | **P5 — ONE production release** | Aggregate 50 historical links + 96 new real acceptances; pass all existing mandatory exact-commit checks; merge approved grade, verify Render actual commit LIVE, health, authenticated grading; owner production UAT | No false go-live, one complete grade release and verified production status |
 | **P6 — Grade closure** | Grade manifest reconciled with each original/historical lesson and all newly reviewed Grade 1 lessons | 146 identities = 50 historical release records + 96 accepted new; no silent skips |
 | **P7 — Repeat** | Grade 2 then Grade 3, etc., later separate named high-school courses | Same V1 methods, one full-grade release each, without duplicate intake/engine reimplementation |
 
-**Rollout order:** This document is owner-approved but is not repository-active until committed and merged through protected checks. Its acceptance does not authorize merging PR #567 or deploying a red candidate. There is **no prerequisite P1–P4 infrastructure rewrite**: reuse what is already functioning under Five-Lesson V1, then process lesson 51 acceptance and continue. Specific existing CI/build failures must be fixed without bypass; protect uncommitted/local work and all historical branches before any code surgery.
+**Rollout order:** This document is owner-approved but is not repository-active until committed and merged through protected checks. Its acceptance does not authorize merging PR #567 or deploying a red candidate. There is **no prerequisite P1–P4 infrastructure rewrite**: reuse what is already functioning under Five-Lesson V1, then review the complete currently unaccepted Stage A cohort and continue through B/C and D preparation. Specific existing CI/build failures must be fixed without bypass; protect uncommitted/local work and all historical branches before any code surgery.
 
 ---
 
@@ -333,7 +335,7 @@ Targeted checks: <actual pass/fail with links>; still-required GitHub checks: <a
 Commit/PR: <actual SHA/URL> | final grade release: NO_GO / eligible when real 96/96
 Production deploy: NOT YET / <actual Render ID/status>; owner UAT: PENDING / PASS / ISSUES_FOUND
 Blockers: <specific LessonCode and reason, or NONE>
-Next: <next unaccepted new ordinal; NEVER a 5-lesson batch>
+Next: <current whole-grade stage, remaining unaccepted count and oldest open evidence ordinal; NEVER a 5-lesson batch>
 ```
 
 When the grade is actually ready and deployed, provide the final same-format whole-grade report and direct owner UAT links. A work-in-progress lesson checkpoint must never be described as production publication.
