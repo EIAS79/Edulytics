@@ -25,6 +25,21 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
     [CountOnOrAway,FlexibleSubtract,StoryUnknowns,CenterWithin20,
      CountTens,MatchTens,AddRemoveTen,AddRemoveMultipleTens,CenterTens];
 
+    private static string TensWord(int tens)=>tens switch
+    {
+        1=>"ten",2=>"twenty",3=>"thirty",4=>"forty",5=>"fifty",
+        6=>"sixty",7=>"seventy",8=>"eighty",9=>"ninety",
+        _=>throw new InvalidOperationException("Unreviewed multiples-of-ten word card")
+    };
+    private static string[] TensWordOptions(int tens)
+    {
+        int correct=tens%3;
+        string[] words=new string[3];
+        words[correct]=TensWord(tens);
+        words[(correct+1)%3]=TensWord(tens==1?9:tens-1);
+        words[(correct+2)%3]=TensWord(tens==9?1:tens+1);
+        return words;
+    }
     public sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     public static bool Supports(string? family)=>family is not null && Families.Contains(family,StringComparer.Ordinal);
@@ -109,7 +124,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 0=>$"Match {a} TOWERS of ten cubes to the numeral for the same amount. Write TENS=number;NUMBER=number.",
                 1=>$"Match {a} FULL ten-frames to the numeral for the same amount. Write TENS=number;NUMBER=number.",
                 2=>$"Match {a} BAGS, each with ten counters, to the numeral for the same amount. Write TENS=number;NUMBER=number.",
-                _=>$"Match {a} TEN-RODS (one rod stands for ten ones) to the numeral for the same amount. Write TENS=number;NUMBER=number."
+                _=>$"Original 2021 source word-card matching: {a} TEN-RODS (one rod = 10). Which NUMBER-NAME card matches the rods? A: {TensWordOptions(a)[0]}, B: {TensWordOptions(a)[1]}, C: {TensWordOptions(a)[2]}. Choose the card; no spelling required. Write MATCH=A/B/C;TENS=number;NUMBER=number."
             },
             AddRemoveTen=>mode%2==0
                 ?$"There are {a} ten-cube towers. Add ONE whole tower of ten. Write TENS=number;TOTAL=number."
@@ -150,7 +165,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             },
             CenterWithin20=>$"RESULT={(mode%2==0?a+b:a-b)}",
             CountTens=>$"GROUPS={a};TOTAL={10*a}",
-            MatchTens=>$"TENS={a};NUMBER={10*a}",
+            MatchTens=>mode==3
+                ?$"MATCH={new[]{"A","B","C"}[a%3]};TENS={a};NUMBER={10*a}"
+                :$"TENS={a};NUMBER={10*a}",
             AddRemoveTen=>mode%2==0
                 ?$"TENS={a+1};TOTAL={10*(a+1)}"
                 :$"TENS={a-1};TOTAL={10*(a-1)}",
