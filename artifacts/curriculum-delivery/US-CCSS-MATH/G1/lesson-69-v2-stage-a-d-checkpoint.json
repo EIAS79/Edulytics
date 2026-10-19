@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 69,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L04",
+  "title": "More Addition and Subtraction with Tens PLC Activity",
+  "sourceBasis": {
+    "readOnlyOurCsSource": true,
+    "edition": "IM K–5 2021",
+    "fullTeacherLessonRelativePath": "unit-4/lesson-4/lesson.html",
+    "teacherPreparationSha256": "a13aa2388451d217c756ab46417c2f363570bb181869971769928de7a6130e04",
+    "fullTeacherHtmlSha256": "b5484d49647426674fb667d3d9edad0bf562f0c5ff1f069afbef006604f02c1a",
+    "studentMirrorSha256": "eba3152bd7bfe7adef7492617f7ed40b55c789be1c0d1e6cb0c490ac6cdab468",
+    "originalTeacherActivityHeadings": [
+      "Activity 1: How Many Are in the Bag? (20 minutes)",
+      "Activity 2: Add and Subtract Tens (15 minutes)"
+    ]
+  },
+  "stageA": {
+    "reviewedSourceTaskExcerpts": [
+      "Student Facing Find the value of each expression mentally. \\(30 + 10\\) \\(40 + 10\\) \\(80 - 10\\) \\(70 - 10 \\) Student Response Teachers with a valid work email address can ",
+      "Student Facing Jada is counting collections of cubes. In Bag A there are 30 cubes. In Bag B there are 2 towers of 10. How many cubes are in the two bags all together? Sho",
+      "Student Facing Add 20: [visual] [visual]"
+    ],
+    "existingCandidateReused": true,
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "reviewAndCorrectionSummary": "Added original number talk, Jada 30+20 bag story, Tyler 70−40 bag story and named student tens equations; original strategies/classroom materials stay teacher-led",
+    "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "candidateEditCommit": "344ddaef861be613e97423e8685111ee29f47872",
+    "publisherArtworkCopied": false
+  },
+  "stageC": {
+    "reusedPracticeFamily": "usccss.g1.u04.l04.tens.add_remove_multiples",
+    "changedGeneratorCommit": null,
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence"
+  },
+  "stageD": {
+    "sourceAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "practiceBoundsAssertions": null,
+    "ciRunDuringAuthoring": false,
+    "CIResult": "NOT_RUN_AUTHORING_POLICY",
+    "originalV1AuthenticatedStudentRendering": "PENDING_FINAL_SHA",
+    "originalV1MathAndPersistence": "PENDING_FINAL_SHA",
+    "copyrightAccessibilityAndTeacherOnlyBoundaries": "PENDING_REQUIRED_EVIDENCE",
+    "originalV1InternalAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+}
