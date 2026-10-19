@@ -63,8 +63,8 @@ public static class UsCcssG1FullGradeStartQuestions
                 $"Number Puzzles: subtract {a} - {b}. Write ANSWER=number."):
                 $"Number Puzzles: use TWO DIFFERENT digit cards, each at most ONCE. Fill □ + {a-b} = {a} and {a} - □ = {a-c}. Write CARDS=first_digit,second_digit. Do not repeat a card.",
             ThreeStory=>mode%2==0?
-                $"Birds arrive in three groups of {a}, {c}, and {b}. Two groups make ten. How many birds are there in all? Write TOTAL=number;REST=number.":
-                $"Add three collections of {a}, {b}, and {c} stones. Pair two groups to make ten. Write TOTAL=number;REST=number.",
+                $"Birds arrive in three groups of {a}, {c}, and {b}. Two groups make ten. How many birds are there in all? Write TOTAL=number;EQUATION=number+number+number=number.":
+                $"Add three collections of {a}, {b}, and {c} stones. Pair two groups to make ten. Write TOTAL=number;EQUATION=number+number+number=number.",
             Expression=>mode switch
             {
                 0=>$"Decide if {a} + {c} + {b} = 10 + {c} is true. Write TRUE=YES/NO;TOTAL=number.",
@@ -93,7 +93,7 @@ public static class UsCcssG1FullGradeStartQuestions
         return family switch
         {
             Center=>mode<=1?$"ANSWER={(mode==0?a+b:a-b)}":$"CARDS={b},{c}",
-            ThreeStory=>$"TOTAL={a+b+c};REST={c}",
+            ThreeStory=>$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}",
             Expression=>mode<=1?$"TRUE={(mode==0?"YES":"NO")};TOTAL={a+b+c}":$"MATCH=10+{c};TOTAL={a+b+c}",
             MakeTen=>$"MOVE={10-a};REST={a+b-10};TOTAL={a+b}",
             Pattern=>mode<=1?$"EQUAL={(mode==0?"YES":"NO")};TOTAL={a+b}":
