@@ -34,7 +34,7 @@ public static partial class PracticeMathVisualRenderer
         bool indirect=family is "usccss.g1.u06.l02.indirect_length_comparison" or
             "usccss.g1.u06.l03.choose_indirect_comparison";
         var svg=SvgStart(indirect?
-            "Two objects cannot be placed together. Each is measured separately with the SAME reference unit.":
+            "Equal-size units: two objects cannot be placed together. Each is measured separately with the SAME reference unit.":
             "Source-based first grade visual. Equal-size units, common starting line, and endpoint comparison.");
         if(indirect)
         {
