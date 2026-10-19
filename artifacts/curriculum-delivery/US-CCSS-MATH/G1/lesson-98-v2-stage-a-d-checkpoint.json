@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 98,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L10",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "fe86a27f015f52b7c360b454267bb39b94fd82932bcee3beae064b6b03978c4d",
+    "teacherPreparationSha256": "68dde060fd68fb0bb825bc7c743e408eea2e04a1abc3d05d27549e875775eb7b",
+    "studentMirrorSha256": "1e049f8c114dff8cf4fefccfda27ca6791b098aa094df4e0097b308216ac709b",
+    "teacherActivityHeadings": [
+      "Activity 1: Priya`s Work (10 minutes)",
+      "Activity 2: Finish the Work (15 minutes)",
+      "Activity 3: Introduce Number Puzzles, Within 100 with Composing (15 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing How many do you see? How do you see them? [visual] [visual]",
+      "Student Facing Find the value of \\(37 + 26\\) . Priya's work [visual] [visual] <div aria-describedby=\"dialog-long-description-ImageFile-38597\" aria-label=\"Image informatio",
+      "Student Facing Each expression shows a first step to find the number that makes each equation true. Finish the work to find the number that makes each equation true. Show"
+    ],
+    "sourceSpecificComparison": "Original Priya 37+26, 28+56,27+44,34+57,18+55; Number Puzzles Stage 4",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
