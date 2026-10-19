@@ -15,14 +15,14 @@
       "teacherPreparationSha256": "fe19d293e214a19212ee74fa2cd634e0381a77916645fa6b600f40d9c9c5eef2",
       "studentSourceHtmlSha256": "c20420c7d07ba8245603a358063ff217a279cdfd3a2088117454dbdad4793ef9",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": true,
       "authoredOriginalWorkRubricRequired": false,
@@ -44,17 +44,34 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_A_D_INDEPENDENT_INTERNAL_LESSON_APPROVAL",
+          "sourceAuditPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-51-original-v1-a-d-source-practice-acceptance.json",
+          "proofGitCommit": "a99633d99e2141cd19784ec39f89fe5192f61814",
+          "provenLessonCode": "PED:US-CCSS-MATH:G1:U03:L14",
+          "scopedCurrentHead": "e5ee6331a546dbfdb1f02957b1e3037462240e48",
+          "authenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39276748370",
+          "mathTestsRun": "https://github.com/EIAS79/Edulytics/actions/runs/39276748405",
+          "proof": [
+            "Local 2021 original teacher preparation/full lesson/center and saved student source identity",
+            "Original-V1 source/teaching/Practice fit review including warm-up and teacher-facilitated center boundary",
+            "Independent math correctness and malformed/wrong/duplicate-card tests",
+            "Real authenticated student source-goal text and original two-blank card SVG",
+            "Correct, wrong and malformed answer attempt persistence on disposable CI school",
+            "First-party artwork/no publisher gameboard file reuse"
+          ],
+          "limitation": "Internal academic acceptance of Edulytics original-goal digital implementation only. The original publisher blackline gameboard remains a physical teacher resource and is not copied; no child center attendance or production UAT is claimed."
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence",
-        "Teacher-led physical, visual, or classroom work correctly documented without fictional pupil outcomes"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "humanOrPartnerCenterParticipation": "TEACHER_FACILITATED_NOT_DIGITALLY_CLAIMED",
+        "unusedPublisherAssets": "NOT_REDISTRIBUTED_OR_LICENSE_GRANTED",
+        "originalIllustrations": "Edulytics first-party two-blank SVG, no image replication",
+        "ownerProductionUat": "PENDING_AFTER_FULL_GRADE_RELEASE",
+        "gradeRelease": "NO_GO_UNTIL_96_OF_96"
+      }
     },
     {
       "ordinal": 52,
