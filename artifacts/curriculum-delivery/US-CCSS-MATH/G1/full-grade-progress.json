@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 51,
+  "nextOrdinal": 52,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -35,8 +35,107 @@
         "CCSS:1.OA.D.7",
         "CCSS:1.OA.D.8"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Digital first-party add/subtract and number-card board within 20; physical partner center remains teacher facilitated, not electronically certified",
+        "allowedFamilies": [
+          "usccss.g1.u03.l14.center.add_subtract"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Add and subtract within 20",
+          "Decide if both sides of an equation are equal",
+          "Place nonrepeating digit cards into source-goal number puzzles, while physical center play remains teacher-led"
+        ],
+        "mappedSkills": [
+          "number.whole.add_subtract",
+          "CCSS:1.OA.C.6",
+          "CCSS:1.OA.D.7",
+          "CCSS:1.OA.D.8"
+        ],
+        "sourceSha256": "fe19d293e214a19212ee74fa2cd634e0381a77916645fa6b600f40d9c9c5eef2",
+        "effectiveStudentBodySha256": "fbece9c4372eb8640c709a074a88440a073831692203e59c4cf78db6de167463",
+        "effectiveStudentBodyHashSemantics": "Volatile-token-containing authenticated unescaped HTML response SHA-256 in 2026-10-19 CI; not the canonical RichV2 authored body digest",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+        "independentGradingProofSha256": "1431042eb9cb6953a1acbf12c0d8c8885b32dd16bc775d863e0e5bf2bcecc5e3",
+        "independentGradingProofReference": {
+          "kind": "GIT_FILE",
+          "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+          "sha256": "1431042eb9cb6953a1acbf12c0d8c8885b32dd16bc775d863e0e5bf2bcecc5e3",
+          "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+        },
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofReference": {
+          "kind": "GIT_FILE",
+          "path": "tools/phase29/acceptance_two_school_https.py",
+          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+          "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+        },
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-51-original-v1-a-d-source-practice-acceptance.json",
+        "sourceReviewFileSha256": "f107d9fa3c6dee2550142d7c287ded3ca8a4503f633d28dfc013e2e31d88c742",
+        "sourceReviewReference": {
+          "kind": "GIT_FILE",
+          "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-51-original-v1-a-d-source-practice-acceptance.json",
+          "sha256": "f107d9fa3c6dee2550142d7c287ded3ca8a4503f633d28dfc013e2e31d88c742",
+          "commitSha": "a99633d99e2141cd19784ec39f89fe5192f61814"
+        },
+        "testedCodeSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39276748370",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39276748405",
+        "testingCheckoutMergeSha": "df54761496ed98249828c18a89394a48e28009a0",
+        "affectedCodePaths": [
+          "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
+          "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1NumberPuzzle.cs",
+          "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNumberPuzzleBoardVisualTests.cs",
+          "tools/phase29/acceptance_two_school_https.py",
+          "tools/phase29/b001_practice_attempt_probe.py"
+        ],
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+            "sha256": "1431042eb9cb6953a1acbf12c0d8c8885b32dd16bc775d863e0e5bf2bcecc5e3",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
+              "sha256": "1431042eb9cb6953a1acbf12c0d8c8885b32dd16bc775d863e0e5bf2bcecc5e3",
+              "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+            }
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNumberPuzzleBoardVisualTests.cs",
+            "sha256": "8d177b86fc0aed2f022ab2486ce7b7290b73d06e0fedd93da57d25cb29f0e786",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNumberPuzzleBoardVisualTests.cs",
+              "sha256": "8d177b86fc0aed2f022ab2486ce7b7290b73d06e0fedd93da57d25cb29f0e786",
+              "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+            }
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+            "reference": {
+              "kind": "GIT_FILE",
+              "path": "tools/phase29/acceptance_two_school_https.py",
+              "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+              "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+            }
+          }
+        ],
+        "acceptanceBoundary": "Edulytics internal evidence-based academic acceptance only; not actual classroom participation, copied publisher board artwork, production deployment or owner UAT"
+      }
     },
     {
       "ordinal": 52,
