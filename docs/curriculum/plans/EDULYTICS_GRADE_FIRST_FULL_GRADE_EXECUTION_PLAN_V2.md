@@ -1,13 +1,13 @@
 # Edulytics — Grade-First, Full-Grade Curriculum Delivery Plan (Exact Five-Lesson V1 Quality Parity)
 
-**Plan ID:** `EDULYTICS-GRADE-FIRST-FULL-GRADE-V2`  
-**Status:** **Owner-approved recovery execution policy; becomes repository-active only when this branch is reviewed and merged under existing GitHub protections. No grade release is authorized by adoption alone.**  
-**Prepared:** 2026-10-19  
-**Controlling quality standard:** `EDULYTICS-GRADE-FIRST-5-V1` (2026-10-16), preserved verbatim and incorporated by reference  
-**Repository:** `EIAS79/Edulytics`  
-**Current initial programme:** `US-CCSS-MATH` (US Common Core Mathematics)  
-**Release unit:** exactly **ONE complete grade** (or explicitly named high-school course) for its new release decision.  
-**Lesson work/acceptance unit:** **ONE lesson at a time**, running original V1 A–D and recording the same evidence-based internal acceptance as soon as that lesson qualifies.  
+**Plan ID:** `EDULYTICS-GRADE-FIRST-FULL-GRADE-V2`
+**Status:** **Owner-approved recovery execution policy; becomes repository-active only when this branch is reviewed and merged under existing GitHub protections. No grade release is authorized by adoption alone.**
+**Prepared:** 2026-10-19
+**Controlling quality standard:** `EDULYTICS-GRADE-FIRST-5-V1` (2026-10-16), preserved verbatim and incorporated by reference
+**Repository:** `EIAS79/Edulytics`
+**Current initial programme:** `US-CCSS-MATH` (US Common Core Mathematics)
+**Release unit:** exactly **ONE complete grade** (or explicitly named high-school course) for its new release decision.
+**Lesson work/acceptance unit:** **ONE lesson at a time**, running original V1 A–D and recording the same evidence-based internal acceptance as soon as that lesson qualifies.
 **Primary operating rule:** **Extract a grade once; process the next unaccepted lesson using the unchanged V1 source → teaching → Practice → targeted-test → lesson-acceptance procedure; save progress without a five-lesson cutoff; release the ONE WHOLE GRADE only after every new lesson is individually accepted and existing protected CI and Render checks pass; owner tests the deployed grade in production.**
 
 > **Supersession:** `EDULYTICS-GRADE-FIRST-FULL-GRADE-V2` replaces the previous Full-Grade V1 as the sole active full-grade delivery policy after protected merge. Historical Full-Grade V1 text is retained in Git history and a labeled archived copy, never as executable instruction or a second approval authority. `EDULYTICS-GRADE-FIRST-5-V1` remains unchanged and is controlling ONLY for original per-lesson A–D academic quality and evidence. The existing 50 historical published lessons, 96 candidate lessons, and their real proofs must remain intact.
