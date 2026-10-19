@@ -70,7 +70,15 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
                 _=>$"TOTALS={string.Join(",",Enumerable.Range(1,8).Reverse().Select(t=>10*t))};LAST=10"
             },
             7=>$"TENS={(mode%2==0?sum:a-b)};TOTAL={10*(mode%2==0?sum:a-b)}",
-            8=>$"RESULT={(mode==0?10*sum:mode==1?10*(a-b):mode==2?sum:a-b)}",
+            8=>mode switch
+            {
+                0=>$"RESULT={10*sum}",
+                1=>$"RESULT={10*(a-b)}",
+                2=>$"RESULT={sum}",
+                3=>$"RESULT={a-b}",
+                4=>"MOVE=SUBTRACT;COVER=10;EQUATION=50-40=10",
+                _=>$"MOVE=ADD;COVER={10*sum};EQUATION={10*a}+{10*b}={10*sum}"
+            },
             _=>throw new InvalidOperationException()
         };
     }
