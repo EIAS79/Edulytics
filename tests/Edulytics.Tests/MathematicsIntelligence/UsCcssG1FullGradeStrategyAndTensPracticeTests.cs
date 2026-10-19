@@ -40,6 +40,30 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
         }
     }
     [Fact]
+    public void OriginalCheckItOffStageTwoRejectsTotalsOutsideZeroToNinetyBoard()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CenterTens;
+        var tooHigh=new Dictionary<string,int>{{"a",7},{"b",3},{"c",0},{"mode",0}};
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,tooHigh));
+        var maximum=new Dictionary<string,int>{{"a",7},{"b",2},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,maximum));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,maximum,"RESULT=90"));
+        var zero=new Dictionary<string,int>{{"a",7},{"b",7},{"c",0},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,zero));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,zero,"RESULT=0"));
+        var generated=Enumerable.Range(0,420)
+            .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(n*43+19)))
+            .Where(q=>q.Parameters["mode"]==0).ToArray();
+        Assert.True(generated.Length>50);
+        Assert.All(generated,q=>
+        {
+            var expected=UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters);
+            Assert.True(q.Parameters["a"]+q.Parameters["b"]<=9);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,expected));
+        });
+    }
+
+    [Fact]
     public void Original2021U03L24SetASetBMissingNumberEquationsAreActuallyGraded()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CountOnOrAway;
