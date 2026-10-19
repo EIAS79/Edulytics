@@ -120,6 +120,35 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             var tr=row.Translations.Single(x=>x.CultureCode=="en");
             return tr.Explanation+"\n"+tr.KeyConceptsAndRules+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
         }
+        string earlierUnit4Text(int n)
+        {
+            var row=doc.Lessons.Single(x=>x.LessonCode=$"PED:US-CCSS-MATH:G1:U04:L{n:00}");
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
+            var expectedVersion=n switch
+            {
+                1=>CommonCoreG1FullGradeStartingContentCorrections.UnitFourCollectionSourceContentVersion,
+                2=>CommonCoreG1FullGradeStartingContentCorrections.UnitFourTensMatchSourceContentVersion,
+                4=>CommonCoreG1FullGradeStartingContentCorrections.UnitFourMultipleTensSourceContentVersion,
+                5=>CommonCoreG1FullGradeStartingContentCorrections.UnitFourCenterSourceContentVersion,
+                _=>throw new InvalidOperationException()
+            };
+            Assert.Equal(expectedVersion,CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+                doc,row,CommonCoreG1FullGradeStartingContentCorrections.Version));
+            var tr=row.Translations.Single(x=>x.CultureCode=="en");
+            return tr.Explanation+"\n"+tr.KeyConceptsAndRules+"\n"+tr.WorkedExamples+"\n"+
+                tr.StepByStepSolutions+"\n"+tr.CommonMistakes+"\n"+tr.QuickSummary;
+        }
+        Assert.Contains("physical collection of 40 objects",earlierUnit4Text(1));
+        Assert.Contains("ten-cube towers",earlierUnit4Text(2));
+        Assert.Contains("too-low, about-right, and too-high estimate",earlierUnit4Text(2));
+        Assert.Contains("30+10=40, 40+10=50, 80-10=70 and 70-10=60",earlierUnit4Text(4));
+        Assert.Contains("Jada counts 30 cubes",earlierUnit4Text(4));
+        Assert.Contains("7 towers of ten in Bag C",earlierUnit4Text(4));
+        Assert.Contains("90-70=20",earlierUnit4Text(4));
+        Assert.Contains("Check It Off Stage 2",earlierUnit4Text(5));
+        Assert.DoesNotContain("Check It Off Stage 3",earlierUnit4Text(5));
+        Assert.Contains("90 is already marked",earlierUnit4Text(5));
         Assert.Contains("30+7=37",unit4Text(6));
         Assert.Contains("fifty-eight",unit4Text(7));
         Assert.Contains("50+3 = 53",unit4Text(8));
