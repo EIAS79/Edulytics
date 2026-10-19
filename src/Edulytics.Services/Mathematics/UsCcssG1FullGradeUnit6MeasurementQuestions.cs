@@ -119,8 +119,13 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             12=>mode%3==0?$"Take From: {a} marbles were present; {b} are taken away. Write REMAINING=number.":
                 mode%3==1?$"Take From: {a} marbles were present, {a-b} remain. How many were taken? Write REMOVED=number.":
                 $"Take From: Some marbles were present; {b} leave, {a-b} remain. Write START=number.",
-            13=>mode%2==0?$"Match the equation to a story: {a} cubes, {b} leave, {a-b} remain. Write OP=ADD/SUBTRACT;TOTAL=number.":
-                $"Story: {a-b} cubes, {b} join, {a} in all. Write OP=ADD/SUBTRACT;TOTAL=number.",
+            13=>mode switch
+            {
+                0=>$"Match the equation to a story: {a} cubes, {b} leave, {a-b} remain. Write OP=ADD/SUBTRACT;TOTAL=number.",
+                1=>$"Story: {a-b} cubes, {b} join, {a} in all. Write OP=ADD/SUBTRACT;TOTAL=number.",
+                2=>$"Original source: CIRCLE TWO equations matching this Take From story. There are {a} cubes, {b} are taken away, and {a-b} remain. A: {a}-{b}={a-b}. B: {a}+{b}={a-b}. C: {a-b}+{b}={a}. Write MATCH=A,C;TOTAL=number (correct letters and the whole).",
+                _=>$"Original source: CIRCLE TWO equations matching this Put Together story. There are {a-b} cubes and {b} more join, making {a} in all. A: {a}+{b}={a}. B: {a-b}+{b}={a}. C: {a}-{a-b}={b}. Write MATCH=B,C;TOTAL=number (correct letters and the whole)."
+            },
             14=>mode%2==0?$"Write a true equation for {a} birds, {b} fly away. Write EQUATION=number-number=number.":
                 $"Write an addition equation for {a-b} children, {b} join to make {a}. Write EQUATION=number+number=number.",
             15=>mode%2==0?$"Center addition within 100: {a}+{b}. Write RESULT=number.":
@@ -153,7 +158,13 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             10=>$"DIFFERENCE={Math.Abs(a-b)}",
             11=>$"LENGTH={(mode%2==0?a-b:a+b)};DIFFERENCE={b}",
             12=>mode%3==0?$"REMAINING={a-b}":mode%3==1?$"REMOVED={b}":$"START={a}",
-            13=>mode%2==0?$"OP=SUBTRACT;TOTAL={a-b}":$"OP=ADD;TOTAL={a}",
+            13=>mode switch
+            {
+                0=>$"OP=SUBTRACT;TOTAL={a-b}",
+                1=>$"OP=ADD;TOTAL={a}",
+                2=>$"MATCH=A,C;TOTAL={a}",
+                _=>$"MATCH=B,C;TOTAL={a}"
+            },
             14=>mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
             15=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             16=>$"DIFFERENCE={b}",

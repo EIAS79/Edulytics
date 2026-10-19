@@ -36,7 +36,13 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             11=>$"LENGTH={(mode%2==0?a-b:a+b)};DIFFERENCE={b}",
             12=>mode%3==0?$"REMAINING={a-b}":
                 mode%3==1?$"REMOVED={b}":$"START={a}",
-            13=>mode%2==0?$"OP=SUBTRACT;TOTAL={a-b}":$"OP=ADD;TOTAL={a}",
+            13=>mode switch
+            {
+                0=>$"OP=SUBTRACT;TOTAL={a-b}",
+                1=>$"OP=ADD;TOTAL={a}",
+                2=>$"MATCH=A,C;TOTAL={a}",
+                _=>$"MATCH=B,C;TOTAL={a}"
+            },
             14=>mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
             15=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             16=>$"DIFFERENCE={b}",

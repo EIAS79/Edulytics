@@ -139,6 +139,25 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
             "LENGTH="+difference+";DIFFERENCE="+difference));
     }
+    [Theory]
+    [InlineData(20,9,2,"MATCH=A,C;TOTAL=20")]
+    [InlineData(18,7,3,"MATCH=B,C;TOTAL=18")]
+    public void OriginalSourceU06L14RequiresTwoMatchingEquationsNotOneOperation(
+        int whole,int removed,int mode,string answer)
+    {
+        const string family="usccss.g1.u06.l14.match_story_equation";
+        var p=new Dictionary<string,int>{{"a",whole},{"b",removed},
+            {"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "MATCH=A,B;TOTAL="+whole));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "OP=ADD;TOTAL="+whole));
+        Assert.Equal(whole,whole-removed+removed);
+    }
+
     [Fact]
     public void Original2021ComparisonTaskBoundsCannotCreateNegativeOrOutOfScopeLengths()
     {
