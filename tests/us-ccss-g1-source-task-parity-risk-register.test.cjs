@@ -36,6 +36,6 @@ test('all manually triaged original Student Facing task-risk rows use exact orig
 test('source task parity register tracks original authorship and geometry/measurement risks without certifying pupils',()=>{
  const byOrdinal=o=>ledger.rows.find(x=>x.ordinal===o);
  for(const o of [65,119,146])assert.match(byOrdinal(o).remainingAcademicTaskParityWork,/authentic|actual|learner|child|group|teacher|partner/i);
- for(const o of [103,104,105,114,120,121,123,124,125,126,128,130,132,133,134,135,136,143,145])
+ for(const o of [53,74,85,103,104,105,114,116,120,121,123,124,125,126,128,130,132,133,134,135,136,143,145])
    assert.ok(byOrdinal(o)?.remainingAcademicTaskParityWork,'Missing source task decision for '+o);
 });

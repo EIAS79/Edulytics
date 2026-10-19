@@ -8,7 +8,7 @@
   },
   "purpose": "Record concrete original student-facing activity-to-digital/teacher-task parity discrepancies. Reviewed summaries are an aid to manual A-D acceptance, not academic approval.",
   "provenance": "Read-only original 2021 local teacher/student HTML with matching hashes from full-grade-original-student-facing-task-inventory.json, paired with repository Practice source.",
-  "countActuallyTriaged": 23,
+  "countActuallyTriaged": 27,
   "total96AcademicAcceptedOnThisEvidence": 0,
   "limitations": "Teacher/full Student Facing HTML index is abbreviated; drawings, source PDF artwork, digital UI runtime for exact head, licensed graphics and actual physical pupil work have not been fully audited. Some newly corrected paths are still undergoing GitHub CI. No original 1-50 lesson changes.",
   "rows": [
@@ -37,6 +37,32 @@
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
     },
     {
+      "ordinal": 53,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U03:L16",
+      "original2021FullTeacherLessonHtmlSha256": "b9ab49a85ed1828832e06e03207bc637fc9f97e1708a24350637efedde2b7ecd",
+      "original2021TeacherPreparationSha256": "7c8ab7b11b895c9b5433e5a5a3da95ac11788de4119a10c927f8e7207ad13503",
+      "original2021StudentFacingHtmlSha256": "6697b65d9715cf564a5a964364d390887a3f8bacdf7c1d7c475ff8e235006da2",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Match Expressions (15 minutes)",
+        "Activity 2: Is the Equation True? (10 minutes)",
+        "Activity 3: Write Expressions (10 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Find the value of each expression mentally. \\(7 + 10\\) \\(7 + 2 + 8\\) \\(10 + 9\\) \\(4 + 9 + 6\\) Student Response Teachers with a valid work email address can",
+        "Student Facing Draw a line to match expressions with the same value. expressions with 3 numbers \\(10 + \\boxed{\\phantom{3}}\\) expression \\(4 + 6 + 8\\) \\(3 + 6 + 7\\) \\(9 + ",
+        "Student Facing Determine whether each equation is true or false. Be ready to explain your reasoning in a way that others will understand. \\(7 + 3 + 4 = 10 + 4\\) [visual] "
+      ],
+      "sourceRequiredTaskInterpretation": "Original tasks match THREE-addend expressions to ten-plus forms, identify true/false equalities and write equivalent expressions.",
+      "currentDigitalOrTeacherContentCandidate": "Source-specific Practice now includes true/false equations and actual choice of a matching ten-plus expression, independently oracle-tested.",
+      "remainingAcademicTaskParityWork": "Student drawings, writing independently chosen expressions, full source task figure parity and exact SHA learner view have not been signed off.",
+      "candidateDigitalFamily": "usccss.g1.u03.l16.three_addends.equivalent",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
       "ordinal": 65,
       "lessonCode": "PED:US-CCSS-MATH:G1:U03:L28",
       "original2021FullTeacherLessonHtmlSha256": "cca057a71e8fb653ed6f843b997cf38bba52b62d9b27dcad971fd1629f2ad47e",
@@ -57,6 +83,57 @@
       "remainingAcademicTaskParityWork": "Requires source-backed teaching text, teacher review instructions, real learner rendering; no pre-release child work assumed.",
       "candidateDigitalFamily": null,
       "assessingMode": "SOURCE_AUTHORED_TASK",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 74,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L09",
+      "original2021FullTeacherLessonHtmlSha256": "6a59478b9d44f389da8d65bf82eb25b1a052f3558d7528b8f08463c9d6169f74",
+      "original2021TeacherPreparationSha256": "f76ed415688390b67f89de1e99f52b74962613dcadc2b1197d2c6db462b0e307",
+      "original2021StudentFacingHtmlSha256": "540f368b40f2ed89dae83f6d1356a3588d75a817cd5c1872201031f4ecea0280",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Create a Collection (10 minutes)",
+        "Activity 2: Show Collections In Many Ways (15 minutes)",
+        "Activity 3: Centers: Choice Time (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,1162.5",
+        "Student Facing Show your number in as many ways as you can. Our number: __________ Student Response Teachers with a valid work email address can click here to register or",
+        "Student Facing Show each collection in as many ways as you can. Visit at least 4 collections. Collection 1 Collection 2 Collection 3 Collection 4 Student Response Teacher"
+      ],
+      "sourceRequiredTaskInterpretation": "Students show their OWN number in as many different ways as possible; draw tens bundles, loose ones and equivalent arithmetic representations.",
+      "currentDigitalOrTeacherContentCandidate": "Practice now requires two correct distinct tens/ones representations of the same two-digit number, by exchanging full tens for ones.",
+      "remainingAcademicTaskParityWork": "Does not prove an original student-designed collection or drawing or real gallery-walk explanation; teacher task rubric/UI review remains.",
+      "candidateDigitalFamily": "usccss.g1.u04.l09.show.expanded_form",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 85,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L20",
+      "original2021FullTeacherLessonHtmlSha256": "57008ac700f8814140758da2674b96827731fe205d1f34affdf9da5509b53b09",
+      "original2021TeacherPreparationSha256": "20097467e88523e23a1343d1eed83849ea7be50d2c556fd33e544620e97b550e",
+      "original2021StudentFacingHtmlSha256": "fdb83085d0c895b3b2b5ba1a05873e12a6d5f0fb7b4814c3772e2f2ae5f2052a",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: All The Ways to Make 94 (20 minutes)",
+        "Activity 2: Mystery Bags (15 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing How many do you see? [visual] [visual] <div class=\"im-c-mo",
+        "Student Facing How many ways can you make 94 using tens and ones? Show your thinking using drawings, numbers, or words. Student Response Teachers with a valid work email ",
+        "Student Facing Bag A has 2 ones and 5 tens. How many cubes are in Bag A? Show your thinking using drawings, numbers, or words. Bag B has 4 tens and 25 ones. How many cube"
+      ],
+      "sourceRequiredTaskInterpretation": "Source Student Facing: How many ways can you make 94 using tens and ones? Show thinking using drawings, numbers or words.",
+      "currentDigitalOrTeacherContentCandidate": "Practice tests canonical grouping, a second regrouped model and computes total count of all tens/ones partitions; source teaching updated with 94 examples.",
+      "remainingAcademicTaskParityWork": "Actual written/drawn multiple ways and partner mathematical explanation are not automatically evaluated; independence of full textbook illustrations unverified.",
+      "candidateDigitalFamily": "usccss.g1.u04.l20.equivalent_tens_ones",
+      "assessingMode": "DIGITAL_PRACTICE",
       "sourcePublisherArtworkFullyReviewed": false,
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
@@ -158,6 +235,30 @@
       "currentDigitalOrTeacherContentCandidate": "Digital source stories now require LENGTH as an unknown rather than only computing a stated difference.",
       "remainingAcademicTaskParityWork": "Check text parity of bracelet stories and persistent wrong/correct trials at current SHA.",
       "candidateDigitalFamily": "usccss.g1.u06.l12.compare_measurements",
+      "assessingMode": "DIGITAL_PRACTICE",
+      "sourcePublisherArtworkFullyReviewed": false,
+      "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
+      "internalAcademicApproval": "NOT_CLAIMED",
+      "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED"
+    },
+    {
+      "ordinal": 116,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U06:L14",
+      "original2021FullTeacherLessonHtmlSha256": "40c7df6e1ec09643c59e8a0277086012d596c36021794b9050d31995791f19e6",
+      "original2021TeacherPreparationSha256": "56a828d6f12b2d738b8e6999d9214ec427d2e53ec7702aeab34248d77fb37dbf",
+      "original2021StudentFacingHtmlSha256": "cef5b6900639549d3746043e41d0eec10ad7b2770cf1ab510f0f75eb9e1377c5",
+      "originalTeacherActivityHeadings": [
+        "Activity 1: Sort Story Problems (15 minutes)",
+        "Activity 2: Stories and Equations (20 minutes)"
+      ],
+      "originalStudentFacingTaskExcerpts": [
+        "Student Facing Which one doesn't belong? \\(10 = 6 + 4\\) \\(16 - 5 = 11\\) \\(11 = 6 + 4 + 1\\) \\(3 + \\boxed{\\phantom{8}} = 11\\) [visual] [visual] <div aria-hidden=\"true",
+        "Student Facing For each problem, circle the 2 equations that match the story. You can use objects or drawings to represent the problem, if it helps you. Jada uses 8 pictu"
+      ],
+      "sourceRequiredTaskInterpretation": "For each original story problem, students circle TWO matching equations, not merely label one operation.",
+      "currentDigitalOrTeacherContentCandidate": "Two modes now ask for TWO true inverse equation choices among three concrete alternatives and grade whole plus selected letters; original OP mode retained.",
+      "remainingAcademicTaskParityWork": "Teacher sorting tasks, representation choices, exact problem contexts and all accompanying source visuals still require independent learner-task audit.",
+      "candidateDigitalFamily": "usccss.g1.u06.l14.match_story_equation",
       "assessingMode": "DIGITAL_PRACTICE",
       "sourcePublisherArtworkFullyReviewed": false,
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
