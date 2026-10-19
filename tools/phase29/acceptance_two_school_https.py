@@ -1480,6 +1480,33 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             result["ordinal"] = ordinal
             result["lessonCode"] = code
             b001_e2e_rows.append(result)
+            l51_board_verified=False
+            if ordinal==51:
+                # V1 Stage-D source-task fidelity for the already-authored
+                # original Stage 2 number-card board. The first normal
+                # attempt may have been a numeric arithmetic mode, so
+                # exercise a bounded number of additional disposable,
+                # server-generated modes until the authentic student page
+                # actually renders the TWO-card construction question.
+                l51_board_verified=result.get("numberPuzzleBoardRendered") is True
+                for board_trial in range(16):
+                    if l51_board_verified:
+                        break
+                    retry_form=get_page(grade_student,"/student/practice")
+                    board_attempt=probe_lesson(
+                        grade_student,BASE,lesson_id,
+                        extract_adoption(retry_form),extract_csrf(retry_form),
+                        extract_idempotency_key(retry_form),sql)
+                    assert board_attempt["status"]=="SELF_CONSISTENT_GRADE_PERSISTED", (
+                        code,"stage 2 board attempt failed",board_trial,board_attempt)
+                    assert board_attempt.get("family")==(
+                        "usccss.g1.u03.l14.center.add_subtract"), (
+                        code,"wrong puzzle source family",board_attempt)
+                    l51_board_verified=board_attempt.get("numberPuzzleBoardRendered") is True
+                assert l51_board_verified, (
+                    code,"authentic student card-puzzle SVG was never rendered")
+                print("G1_L51_AUTHENTICATED_TWO_CARD_SOURCE_BOARD_PASS",
+                      flush=True)
             if code in g1_expected:
                 candidate=g1_expected[code]
                 assert candidate["ordinal"] == ordinal, (code, ordinal)
@@ -1556,6 +1583,8 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                         "correctAnswerSelfConsistentAndPersisted":True,
                         "malformedAnswerRejectedAndPersisted":True,
                         "wellFormedIncorrectAnswerRejectedAndPersisted":True,
+                        "l51AuthenticatedTwoCardSourceBoardVerified":(
+                            l51_board_verified if ordinal==51 else None),
                         "authenticStudentAuthorshipNotClaimed":True})
             print("B001_DISPOSABLE_500_REAL_PRACTICE_PROBE",
                   ordinal, code, result["status"], result.get("httpStatus", ""), flush=True)
