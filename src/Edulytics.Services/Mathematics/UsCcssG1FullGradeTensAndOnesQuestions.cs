@@ -97,7 +97,7 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     {
         var fields=new Dictionary<string,string>(StringComparer.Ordinal);
         var pieces=Norm(candidate).Split(';');
-        if(pieces.Length!=6)return false;
+        if(pieces.Length!=5)return false;
         foreach(var piece in pieces)
         {
             var separatorIndex=piece.IndexOf('=');
@@ -105,7 +105,7 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
                !fields.TryAdd(piece[..separatorIndex],piece[(separatorIndex+1)..]))return false;
         }
         int t=p["tens"],o=p["ones"];
-        if(fields.Count!=6||!fields.TryGetValue("EXPANDED",out var expanded)||
+        if(fields.Count!=5||!fields.TryGetValue("EXPANDED",out var expanded)||
             expanded!=$"{t*10}+{o}"||
             !fields.TryGetValue("TENS",out var originalTens)||
             !fields.TryGetValue("ONES",out var originalOnes)||
