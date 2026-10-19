@@ -117,6 +117,32 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Original2021TwelvePencilsMinusSevenStoryIsGeneratedAndGradeable()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;
+        var p=new Dictionary<string,int>{{"a",12},{"b",7},{"c",0},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "DIFFERENCE=5;CHECK=5+7=12"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "DIFFERENCE=6;CHECK=6+7=13"));
+        p["a"]=13;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+        var generated=Enumerable.Range(0,330)
+            .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(67*n+11)))
+            .Where(q=>q.Parameters["mode"]==2).ToArray();
+        Assert.True(generated.Length>40);
+        Assert.All(generated,q=>
+        {
+            Assert.Contains("12 pencils",q.Prompt);
+            Assert.Equal(12,q.Parameters["a"]);
+            Assert.Equal(7,q.Parameters["b"]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void Source2021ElenaSixToEighteenUnknownChangeMustBeReachableAndCorrect()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;

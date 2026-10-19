@@ -61,7 +61,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
            mode<0||mode>5 || c!=0)return false;
         return family switch
         {
-            CountOnOrAway or FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a,
+            CountOnOrAway or FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
+                (family!=FlexibleSubtract||mode!=2||(a==12&&b==7)),
             StoryUnknowns=>((a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
                 (mode==1&&a==6&&b==12))&&
                 (mode!=2||(a==6&&b==9)),
@@ -86,7 +87,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
         int mode=family is StoryUnknowns or CenterTens?random.Next(6):random.Next(4);
         int a=0,b=0;
-        if(family is CountOnOrAway or FlexibleSubtract){a=random.Next(11,21);b=random.Next(1,Math.Min(9,a-1)+1);}
+        if(family is CountOnOrAway or FlexibleSubtract)
+        {
+            if(family==FlexibleSubtract&&mode==2){a=12;b=7;} // Original teacher's pencils story.
+            else{a=random.Next(11,21);b=random.Next(1,Math.Min(9,a-1)+1);}
+        }
         else if(family==StoryUnknowns)
         {
             // Original 2021 U03 L26 learner-authored source problem:
@@ -131,7 +136,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 mode==3?
                 $"Original 2021 Set B: find the missing addend in □ + {b} = {a}. Use counting ON or taking AWAY to justify your choice. Write UNKNOWN=number;EQUATION=number+number=number.":
                 $"Compare counting ON from {b} to {a} with taking AWAY {b} from {a}. Both methods must find the difference. Write DIFFERENCE=number;CHECK=number+number=number.",
-            FlexibleSubtract=>$"Choose a subtraction method for {a}-{b}. Check using related addition. Write DIFFERENCE=number;CHECK=number+number=number.",
+            FlexibleSubtract=>mode==2?
+                "ORIGINAL 2021 STUDENT FACING: There are 12 pencils on the table. The teacher picks up 7 pencils. How many are still on the table? Choose YOUR subtraction method, explain with counters, drawings, numbers or words, and write DIFFERENCE=number;CHECK=number+number=number.":
+                $"Choose a subtraction method for {a}-{b}. Check using related addition. Write DIFFERENCE=number;CHECK=number+number=number.",
             StoryUnknowns=>mode switch
             {
                 0=>$"{a} birds are here and {b} more arrive. How many birds NOW? Write UNKNOWN=number;EQUATION=number+number=number.",

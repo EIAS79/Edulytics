@@ -128,6 +128,32 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void Diego2021FifteenMinusEightIsGeneratedAndTenFrameMethodChecked()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.TenSubtract;
+        var p=new Dictionary<string,int>{{"a",15},{"b",8},{"c",0},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TO10=5;REST=3;DIFFERENCE=7;EQUATION=15-8=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TO10=5;REST=3;DIFFERENCE=8;EQUATION=15-8=8"));
+        p["a"]=16;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        var generated=Enumerable.Range(0,320)
+            .Select(n=>UsCcssG1FullGradeNextQuestions.Build(family,new Random(43*n+31)))
+            .Where(q=>q.Parameters["mode"]==2).ToArray();
+        Assert.True(generated.Length>35);
+        Assert.All(generated,q=>
+        {
+            Assert.Contains("Diego starts Number Card Subtraction with 15",q.Prompt);
+            Assert.Equal(15,q.Parameters["a"]);
+            Assert.Equal(8,q.Parameters["b"]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void Original2021LinHanKiranStrategiesRetainAllThreeEquivalentExpressions()
     {
         const string family=UsCcssG1FullGradeNextQuestions.FlexibleAdd;
