@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 91,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L03",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "7d05b1a514cb3035cd9cf34a82d25d813087295c271d87f9da274d3359cd58af",
+    "teacherPreparationSha256": "39ca0277f4d216517798b2d719f8b5185449841a58cfdedb55056bebdb9b12e7",
+    "studentMirrorSha256": "af5733823e92a313a905e9513208d2c6b1bfcf4fa0e08914d3477844e8a8120b",
+    "teacherActivityHeadings": [
+      "Activity 1: Lin and Han Add (15 minutes)",
+      "Activity 2: I Heard You Say (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(13 + 21\\) \\(13 + 31\\) \\(23 + 31\\) \\(33 + 41\\) Student Response Teachers with a valid work email address can c",
+      "Student Facing Lin and Han are both finding the value of \\(32+ 54\\) . Look at how each student started. What should they do next to find the value? Write equations to rep",
+      "Student Facing Find the value of \\(23 + 74\\) using Lin's or Han's method. Write equations to represent your thinking. \\(23 + 74\\) [visual] [visual] <div aria-describedby="
+    ],
+    "sourceSpecificComparison": "Original 13+21,13+31,23+31,33+41 number talk; Lin/Han 32+54; student-produced 23+74 equations",
+    "classification": "CONTENT_REPAIR"
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+}
