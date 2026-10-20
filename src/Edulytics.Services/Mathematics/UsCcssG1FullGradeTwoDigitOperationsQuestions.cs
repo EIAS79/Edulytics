@@ -46,6 +46,10 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 2=>b==30&&(a==67||a==99),
                 3=>b==20&&a==45,
                 4=>a==46&&b==10,
+                5=>a==67&&b==10,
+                6=>a==39&&b==10,
+                7=>a==52&&b==10,
+                8=>a==75&&b==10,
                 _=>false
             },
             CompareWords=>mode switch
@@ -77,7 +81,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?6:family==CompareSymbols?7:family==TenMoreLess?5:4),a,b;
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?6:family==CompareSymbols?7:family==TenMoreLess?9:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -99,7 +103,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         {
             if(mode==2){a=random.Next(2)==0?67:99;b=30;}
             else if(mode==3){a=45;b=20;}
-            else if(mode==4){a=46;b=10;}
+            else if(mode>=4&&mode<=8){a=mode==4?46:mode==5?67:mode==6?39:mode==7?52:75;b=10;}
             else{a=random.Next(20,90);b=10;}
         }
         else if(family is CompareWords or CompareSymbols)
@@ -149,6 +153,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 $"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
             TenMoreLess=>mode switch
             {
+                5 or 6 or 7 or 8=>$"SOURCE-ALIGNED TWO-WAY TEN CHANGE: Find {a}+10 and {a}-10. Write PLUS=number;MINUS=number. Explain why ones stay fixed to a teacher.",
                 4=>"INDEPENDENT EDULYTICS EXIT (not the protected publisher Cool-down): Find 46+10 and 46-10 mentally. Write PLUS=number;MINUS=number. Explain why the ones digit remains 6 to a teacher.",
                 2=>a==67?
                     "SOURCE-ALIGNED NUMERIC SEQUENCE: Start at 67 and add 10 three times: 67+10+10+10. Write RESULT=number. Explain the tens pattern to a teacher.":
@@ -206,8 +211,8 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==12?
                 "TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4":
                 $"TOTAL={a+b};ONES={(a+b)%10}",
-            TenMoreLess=>mode==4?
-                "PLUS=56;MINUS=36":
+            TenMoreLess=>mode>=4?
+                $"PLUS={a+10};MINUS={a-10}":
                 mode==3?
                 "PLUS=65;MINUS=25;RETURN=45":
                 $"RESULT={(mode==2?(a==67?a+30:a-30):mode==0?a+10:a-10)}",
