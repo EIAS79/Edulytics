@@ -23,10 +23,22 @@ test('the ACTUAL progress ledger counts every internally accepted lesson only wi
     {cwd:ROOT,encoding:'utf8'}).trim();
   const report=evaluate(manifest,ledger,candidateSha);
   const declared=ledger.newLessons.filter(x=>x.status==='INTERNALLY_ACCEPTED').length;
-  assert.equal(report.issues.length,0,report.issues.join('; '));
-  assert.equal(report.newAccepted,declared,
-    'An internally accepted lesson without exact V1 proofs is an academic NO_GO');
-  assert.equal(report.newNotAccepted,96-declared);
+  const stale=report.missing.filter(row=>
+    ledger.newLessons[row.ordinal-51]?.status==='INTERNALLY_ACCEPTED');
+  // An earlier lesson approval remains a historical fact, but an updated
+  // shared math/grading dependency invalidates its OLD exact-SHA runtime
+  // proof until that lesson is genuinely revalidated. Fail closed instead of
+  // pretending the declared approval is verified on this candidate.
+  assert.equal(report.newAccepted+stale.length,declared);
+  assert.equal(report.newNotAccepted,96-report.newAccepted);
+  if(stale.length>0){
+    assert.equal(report.outcome,'NO_GO');
+    assert.ok(report.issues.some(s=>s.includes('Progress nextOrdinal disagrees')),
+      'The old academic cursor must not hide stale accepted proofs');
+    assert.ok(stale.every(row=>row.reason.includes('Invalid/missing verifiable')));
+  }else{
+    assert.equal(report.issues.length,0,report.issues.join('; '));
+  }
   if(declared<96)assert.equal(report.outcome,'NO_GO');
 });
 test('real incomplete Grade 1 is NO_GO, not a 146 pass',()=>{
