@@ -351,12 +351,16 @@ Example 3: 40+50=90, nine groups of ten.
 Example 4: 90-60=30, and 30+60=90.
 Original 2021 story: Jada counts 30 cubes in Bag A and 2 towers of 10 in Bag B, so 30+20=50 cubes.
 Original 2021 story: Tyler has 7 towers of ten in Bag C, removes 40 cubes, and has 70-40=30 cubes.
-Original 2021 student tasks: 4 tens and 5 tens make 9 tens=90; 8 tens take away 3 tens leaves 5 tens=50; 20+60=80; 70-20=50; 90-70=20; 40+40=80.",
+Original 2021 student tasks: 4 tens and 5 tens make 9 tens=90; 8 tens take away 3 tens leaves 5 tens=50; 20+60=80; 70-20=50; 90-70=20; 40+40=80.
+Original Activity 2 also has two pictured 'Add 20' and 'Subtract 20' questions; the original image values are not re-created from assumptions. Learners represent valid tens problems with original Edulytics towers.
+EDULYTICS ORIGINAL EXIT CHECK (not copied from the protected 2021 Cool-down): Solve 50+30=80 and 80-30=50 as related addition/subtraction facts. Digital response ADDITION=80;SUBTRACTION=50, and a teacher checks personal drawings.",
             @"Step 1: Draw a tower for each ten in the starting number.
 Step 2: Model adding or removing the stated multiple of ten, not single ones.
 Step 3: Add or subtract the number of ten-blocks.
 Step 4: Multiply the block count by ten to get the result.
-Step 5: Check the result stays within 0–100 and agrees with a story context.",
+Step 5: Check the result stays within 0–100 and agrees with a story context.
+Step 6: Solve all six visible original tens-equations, including 90-70=20 and 40+40=80; compare tens as units rather than ones.
+Step 7: In the independent Edulytics exit check, use 50+30=80 and 80-30=50 to demonstrate inverse facts; teacher reviews the representations.",
             @"Do not confuse 30+20 with 3+2=5: it is 5 tens=50. Do not reverse subtraction and produce negative bundles; model a nonnegative within-grade context.",
             @"I can add and subtract multiples of ten by reasoning with whole groups of ten."),
         new(@"PED:US-CCSS-MATH:G1:U04:L05",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-5/preparation.html",@"e7cfc5b7e32e9bb81e4fd304bfbf0fcb85259e5e85278ccbdb5f1314f63f34ce",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
