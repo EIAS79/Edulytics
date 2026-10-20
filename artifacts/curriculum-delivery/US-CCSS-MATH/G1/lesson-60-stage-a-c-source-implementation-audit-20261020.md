@@ -1,7 +1,7 @@
 # Grade 1 ordinal 60 — U03 L23 / Use a Ten to Subtract — source and code review
 
 **Lesson code:** `PED:US-CCSS-MATH:G1:U03:L23`  
-**Status:** `A_C_EXPLICIT_GAP` (**not READY_FOR_STAGE_D**, do not jump to lesson 61). A/B/C repairs made; the actual 2021 original five-minute assessment task still requires independent source verification.
+**Status:** `READY_FOR_STAGE_D` for **Edulytics independently authored academic A–C content** under the owner's explicit October 20 approval; **not** a claim of verbatim 2021 publisher Cool-down parity, D validation or 96/96 acceptance.
 
 ## A. Read-only original 2021 source
 
@@ -20,7 +20,7 @@ Reviewed actual student/teacher tasks, mathematical representations and instruct
 - Activity 1: **Number Card Subtraction with 10-frames** is the same teen-number/digit-card game from lesson 22. Select a teen value from 11–19 and a subtractor 0–9; show the starting quantity on a double ten-frame, write an equation, choose a round and explain the strategy. Source permits subtraction equations or equivalent missing-addend equations, uses removal/counting-on/decomposition and is partner- and teacher-facilitated.
 - Activity 2: students complete and compare **Diego** and **Andre** methods for `15−8=7`. Diego crosses out five extra ones, leaving ten, then removes three more. Andre removes eight from the full ten, leaving two, then combines the remaining five ones to make seven. Follow-up `14−5=9` and `13−6=7` allow students to show either method with drawings, numbers, or words; source figures are ten-frame representations and are paraphrased with first-party descriptions.
 - Teacher source warns not to write false equality `13−3=10−3=7`: the intermediate equations must be expressed accurately.
-- The **five-minute original cool-down** is titled **Subtract from 14**, but its actual 2021 student task is hidden behind publisher login in the cached original and public 2021 teacher HTML. A later CKMath guide appears to contain a 14-minus-six problem, but **later-edition coincidence is not sufficient to assert original 2021 task identity**. Do not auto-add the guessed assessment, fake source completeness, or mark A–C closed without valid 2021-edition evidence.
+- The publisher's original **five-minute Cool-down** is titled **Subtract from 14** in the cached 2021 teacher HTML, but its actual authenticated task remains **unavailable and unverified**. Later-edition tasks are NOT treated as 2021 proof. The Edulytics owner expressly authorized designing and accepting an **independent, source-goal-aligned formative assessment** rather than copying the protected publisher question. This approval changes the Edulytics authoring requirement for this one inaccessible assessment; it does NOT establish or claim original protected-question parity.
 
 ## B. Actual learner-source correction already committed
 
@@ -43,8 +43,35 @@ It covers valid original 15−8, 14−5, 13−6, 17−4, 19−0, positive and fa
 
 **Do not claim a test PASS:** .NET/CI/authenticated rendering/saved scores are deliberately deferred to the final grade freeze.
 
-## Open A–C source blocker
+## Owner-authorized independent Cool-down, mathematical and academic review
 
-Resolve the actual **Kendall Hunt 2021, Grade 1 Unit 3 Lesson 23, five-minute `Subtract from 14` cool-down student task**, using an authorized authenticated original 2021 publisher asset, a cached original-edition print copy, or an independent publication explicitly documenting this same **2021 edition**. A later-edition apparent match must remain a source lead, not proof.
+The owner explicitly confirmed on October 20 that **Edulytics is not copying the source curriculum**: when the lesson learning goal and teaching strategy are established, an independently designed assessment that measures the goal can be authored and approved. This is a scoped content choice for the inaccessible original Cool-down, **not** permission to claim we viewed or copied the protected 2021 assessment.
 
-After source verification, independently compare it with first-party teaching/Practice, repair any confirmed missing task, and close A/B/C only if the actual source/task requirement has no open defect. Do not switch to lesson 61 while this lesson is not closed. No CI, merge, or publication has been performed.
+**Edulytics student task** (authored here, not taken from the original publisher): represent **14** counters with two ten-frames, remove **8**, demonstrate the intermediate ten and the remaining removal, report how many remain, and explain a valid ten strategy using drawings, numbers, or words. The independently reviewable numeric response contract is:
+
+- `14−8=6`, verified by `6+8=14`.
+- First remove the **4** loose ones to reach **10**; then remove the remaining **4** to get **6**.
+- Exact numeric machine-checkable answer: `TO10=4;REST=4;DIFFERENCE=6;EQUATION=14-8=6`.
+- This tests **both the correct difference and the intermediate strategy**; a bare `DIFFERENCE=6` does not prove the use of a ten. Hand-drawn explanations or a distinct mathematically valid method are supported for teacher review, not falsely auto-graded as the same structured numeric method.
+- Wrong stage `TO10=5;REST=3`, a wrong difference, a miscopied equation, malformed input and duplicate keys must be rejected.
+- The new `mode=4` is restricted to **this lesson's** existing `usccss.g1.u03.l23.ten.subtract_in_steps` family with `a=14,b=8,c=0`. Other original 2021 lesson modes remain distinct and unchanged. A random lesson practice session can generate this independent formative task without claiming it was the original 2021 question.
+
+**Actual scoped code and test files:**
+
+- `src/Edulytics.Services/Mathematics/UsCcssG1FullGradeNextQuestions.cs`: fifth dedicated mode and arithmetic verifier using the existing exact score contract.
+- `src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs`: learner teaching includes this clearly labelled independent Cool-down; persisted L60 content version moves from `...-v7` to `us-ccss-g1-u03-l23-ten-2021-source-v8`, and allows the guarded L60-only v6/v7 upgrade.
+- `tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs`: independent correct/wrong/strategy and deterministic generated mode-4 assertions; `tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs`: learner-facing independent task and upgrade assertions.
+
+**Stage A academic decision:** The independently reviewed original **public** 2021 warm-up, original Activities 1–2, both Diego/Andre interpretations, actual mathematical scope and grade-standard goals are covered. Verbatim parity for the publisher's **protected assessment is unresolved** and recorded separately; instead the **owner-approved independent Edulytics task** meets the known goal. The replacement is not represented as a source-original student task.
+
+**Stage B academic decision:** Learner teaching and examples include the original public mathematical goal, and a distinct first-party Cool-down under the lesson 60 scope.
+
+**Stage C academic decision:** Practice includes the original public arithmetic families plus the independent numeric Cool-down. The split-to-ten strategy and invalid answers are independently reviewed in code, with xUnit assertions prepared (not executed).
+
+## Closure boundary
+
+**A/B/C content authoring is approved as `READY_FOR_STAGE_D` on the owner-authorized independent Edulytics assessment basis.** The source register must explicitly retain **protectedOriginalCooldownVerbatimVerified=false**. Never claim pixel parity, original publisher test reproduction, child classroom participation, or any licensed publisher assessment extraction.
+
+**Stage D is still PENDING**, including actual .NET tests, exact-SHA CI, authenticated learner rendering, persistent grading/attempt evidence and final grade release gates. These must run **only after the entire grade is frozen**, per the owner's instruction. The academic acceptance ledger remains **`IN_PROGRESS`**, and grade release **`NO_GO`**, until D plus formal E/F gates actually pass.
+
+Now continue A/B/C work sequentially at ordinal 61; reopen ordinal 60 only for a proven defect or relevant changed dependency, not merely because the publisher's copyrighted Cool-down is inaccessible.
