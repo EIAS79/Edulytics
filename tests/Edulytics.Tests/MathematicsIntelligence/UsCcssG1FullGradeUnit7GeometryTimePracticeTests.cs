@@ -183,6 +183,46 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
     }
 
     [Theory]
+    [InlineData(4,"CIRCLE_PART=HALF;CIRCLE_PIECES=2;SQUARE_PART=HALF;SQUARE_PIECES=2")]
+    [InlineData(5,"CIRCLE_PART=FOURTH;CIRCLE_PIECES=4;SQUARE_PART=FOURTH;SQUARE_PIECES=4")]
+    public void OriginalUnit7Lesson9CircleAndSquareRequireEqualHalvesOrFourths(
+        int mode,string correct)
+    {
+        const string f="usccss.g1.u07.l09.equal_halves_fourths";
+        var p=new Dictionary<string,int>{{"a",3},{"b",7},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(f,p));
+        Assert.Equal(correct,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,correct));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+            correct.Replace("SQUARE_PIECES=2","SQUARE_PIECES=4")
+                   .Replace("SQUARE_PIECES=4","SQUARE_PIECES=2")));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            f,p,correct+";PUPIL_FOLDED=YES"));
+    }
+
+    [Fact]
+    public void EqualPiecesPracticeRetainsFourLegacyModesAndBothOriginalShapes()
+    {
+        const string f="usccss.g1.u07.l09.equal_halves_fourths";
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<720;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                f,new Random(seed*137+43));
+            modes.Add(item.Parameters["mode"]);
+            var answer=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(f,item.Parameters,answer));
+            if(item.Parameters["mode"]>=4)
+            {
+                Assert.Contains("circle",item.Prompt);
+                Assert.Contains("square",item.Prompt);
+                Assert.Contains("EQUAL-AREA",item.Prompt);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,6).ToArray(),modes.OrderBy(x=>x));
+    }
+
+    [Theory]
     [InlineData(2,2,"PER_LAYER=4;LAYERS=2;TOTAL_CUBES=8")]
     [InlineData(3,2,"PER_LAYER=6;LAYERS=2;TOTAL_CUBES=12")]
     [InlineData(4,3,"PER_LAYER=12;LAYERS=2;TOTAL_CUBES=24")]
