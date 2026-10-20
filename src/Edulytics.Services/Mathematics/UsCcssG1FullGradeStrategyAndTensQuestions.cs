@@ -96,7 +96,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 mode==5&&(a==6&&b==4&&c==9),
             CountTens=>mode<=3&&a>=1&&a<=6&&b==0&&
                 (mode!=0||a==4),
-            MatchTens=>mode<=3&&a>=1&&a<=9&&b==0,
+            MatchTens=>mode<=4&&a>=1&&a<=9&&b==0&&
+                (mode!=4||a==7),
             AddRemoveTen=>mode<=3&&b==1&&
                 (mode==2?a==9:mode==3?a==1:a>=2&&a<=8),
             AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&
@@ -115,7 +116,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
         int mode=(family==FlexibleSubtract||family==StoryUnknowns)?random.Next(8):
             (family==CountOnOrAway?random.Next(7):
-             (family==CenterTens||family==CenterWithin20?random.Next(6):random.Next(4)));
+             (family==CenterTens||family==CenterWithin20?random.Next(6):
+              (family==MatchTens?random.Next(5):random.Next(4))));
         int a=0,b=0,c=0;
         if(family is CountOnOrAway or FlexibleSubtract)
         {
@@ -194,7 +196,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             else{a=6;b=4;c=9;} // Source four-card hand 6,4,9,8, selected 6+4+9.
         }
         else if(family==CountTens){a=mode==0?4:random.Next(1,7);}
-        else if(family==MatchTens){a=random.Next(1,10);}
+        else if(family==MatchTens){a=mode==4?7:random.Next(1,10);}
         else if(family==AddRemoveTen)
         {
             a=mode==2?9:mode==3?1:random.Next(2,9);
@@ -287,6 +289,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             },
             MatchTens=>mode switch
             {
+                4=>"EDULYTICS ORIGINAL EXIT CHECK (not the protected publisher 2021 Cool-down): Seven ten-cube towers are drawn. How many TENS and CUBES is that, and which English NUMBER WORD names the value? Write TENS=number;NUMBER=number;WORD=word. The optional handwritten tower drawing and spoken explanation need teacher review.",
                 0=>$"Match {a} TOWERS of ten cubes to the numeral for the same amount. Write TENS=number;NUMBER=number.",
                 1=>$"Match {a} FULL ten-frames to the numeral for the same amount. Write TENS=number;NUMBER=number.",
                 2=>$"Match {a} BAGS, each with ten counters, to the numeral for the same amount. Write TENS=number;NUMBER=number.",
@@ -362,7 +365,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 "LEFT=15;RIGHT=13;GREATER=LEFT":
                 $"RESULT={(mode==1?a+b:a-b)}",
             CountTens=>$"GROUPS={a};TOTAL={10*a}",
-            MatchTens=>mode==3
+            MatchTens=>mode==4?"TENS=7;NUMBER=70;WORD=SEVENTY":mode==3
                 ?$"MATCH={TensWordCardLetter(a)};TENS={a};NUMBER={10*a}"
                 :$"TENS={a};NUMBER={10*a}",
             AddRemoveTen=>mode switch
