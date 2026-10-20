@@ -38,6 +38,13 @@ test('entire 96-lesson original teaching cohort retains exactly one existing eff
     assert.equal(matches.length,1,
       'Missing/duplicate source-bound Rich V2 correction owner for '+row.lessonCode+
       ': '+matches.map(x=>x.path).join(', '));
+    // Every source-bound repair must retain the *stored candidate body*
+    // fingerprint and canonical teacher URL. The teacher-preparation SHA
+    // is a DIFFERENT digest: equating the two would wrongly fail all 96.
+    assert.ok(matches[0].text.includes(canonical.storedContentCanonicalBodySha256),
+      'Missing preserved canonical candidate body SHA for '+row.lessonCode);
+    assert.ok(matches[0].text.includes(canonical.sourceTeacherUrl),
+      'Missing unchanged 2021 teacher-source URI for '+row.lessonCode);
   }
 });
 
