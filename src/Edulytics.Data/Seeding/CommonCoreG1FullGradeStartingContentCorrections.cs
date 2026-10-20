@@ -15,7 +15,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string TenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L23";
     public const string CenterSourceContentVersion="us-ccss-g1-u03-l21-centers-2021-source-v7";
     public const string TeenSubtractSourceContentVersion="us-ccss-g1-u03-l22-teen-2021-source-v7";
-    public const string TenSubtractSourceContentVersion="us-ccss-g1-u03-l23-ten-2021-source-v7";
+    public const string TenSubtractSourceContentVersion="us-ccss-g1-u03-l23-ten-2021-source-v8";
     private const string CountRelationLessonCode="PED:US-CCSS-MATH:G1:U03:L24";
     private const string ChooseSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L25";
     private const string StoryLessonCode="PED:US-CCSS-MATH:G1:U03:L26";
@@ -205,7 +205,8 @@ The original Number Card Subtraction with double ten-frames reuses cards from th
 Step 2: Compare the number being subtracted with the available ones. If it fits, remove only those ones; crossing ten is not required.
 Step 3: If it does not fit, remove those extra ones to reach ten, then subtract the remainder from ten.
 Step 4: Show accurate equations for the chosen method, whether counting on, subtracting from the full ten, or splitting at ten; keep every written equality true.
-Step 5: Check with addition: the result plus the removed amount must equal the original teen number.",
+Step 5: Check with addition: the result plus the removed amount must equal the original teen number.
+Step 6: EDULYTICS ORIGINAL COOL-DOWN (independently authored, not a reconstruction of the protected 2021 publisher assessment): You have 14 counters. Remove 8, show how you reach ten and subtract the rest. Write the result and explain your strategy with a ten-frame or accurate intermediate equations. Digital Practice checks the two stages TO10 and REST as well as the difference; handwriting and personal explanations require teacher review.",
             @"Do not write 13-3=10-3=7; 13-3 equals 10, not seven. Instead write 13-6=13-3-3=10-3=7. Do not remove the ten twice or assume a one-digit answer without checking.",
             @"I can use the group of ten to subtract and explain accurate intermediate steps within 20."),
         new(@"PED:US-CCSS-MATH:G1:U03:L24",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-24/preparation.html",@"3fd5d2c854c79d76d2678582f6cf6d3285a8004ed7e608a62fe54d2777be9761",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
@@ -595,7 +596,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==ZooLessonCode&&(previous=="us-ccss-g1-u03-l20-zoo-2021-source-v6"||previous=="us-ccss-g1-u03-l20-zoo-2021-source-v7"))||
          (lesson.LessonCode==CenterLessonCode&&previous=="us-ccss-g1-u03-l21-centers-2021-source-v6")||
          (lesson.LessonCode==TeenSubtractLessonCode&&previous=="us-ccss-g1-u03-l22-teen-2021-source-v6")||
-         (lesson.LessonCode==TenSubtractLessonCode&&previous=="us-ccss-g1-u03-l23-ten-2021-source-v6")||
+         (lesson.LessonCode==TenSubtractLessonCode&&(previous=="us-ccss-g1-u03-l23-ten-2021-source-v6"||previous=="us-ccss-g1-u03-l23-ten-2021-source-v7"))||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
