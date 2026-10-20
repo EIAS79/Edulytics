@@ -23,18 +23,51 @@
       "Student Facing Find the value of \\(23 + 74\\) using Lin's or Han's method. Write equations to represent your thinking. \\(23 + 74\\) [visual] [visual] <div aria-describedby="
     ],
     "sourceSpecificComparison": "Original 13+21,13+31,23+31,33+41 number talk; Lin/Han 32+54; student-produced 23+74 equations",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "studentFacingNumericTaskMatch": [
+      "13+21=34",
+      "13+31=44",
+      "23+31=54",
+      "33+41=74",
+      "32+54=86 with Lin/Han's distinct methods",
+      "23+74=97 with learner-authored equations"
+    ],
+    "actualPublisherDrawingNotReplicated": true
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "existingFirstPartyTeachingReviewed": true,
+    "originalMethodDescriptions": "Lin adds tens 30+50=80 and ones 2+4=6; Han adds 30 to 54 to get 84 then adds two to get 86. 23+74=97 with learner-authored reasoning."
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceModes4To9": [
+      "13+21",
+      "13+31",
+      "23+31",
+      "33+41",
+      "32+54",
+      "23+74"
+    ],
+    "authoredSourceAlignedLinHanMode10": {
+      "parameters": {
+        "a": 32,
+        "b": 54,
+        "mode": 10
+      },
+      "expected": "LIN_TENS=80;LIN_ONES=6;HAN_FIRST=84;HAN_SECOND=86;TOTAL=86",
+      "implementationCommit": "f0c25eda3078c47c78bcde8f96cdbe96ef4716ff",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson91OriginalLinHanEquationTests.cs",
+      "authoredTestsCommit": "70fecb153f8ea829844f6f83a174ab755756be06",
+      "notExecuted": true
+    },
+    "originalSourceArtworkOrStudentFreeWrittenEquationsAutoCertified": false,
+    "testsExecuted": false
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -48,5 +81,17 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal92 in canonical order; full-grade Stage D/CI/acceptance deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "sourceBoundary": "2021 accessible source equations and method outcomes aligned; first-party structured mode tests Lin/Han step values, but teacher-led original drawings, open-ended self-written equations and class explanations are not automatically certified. Images/rights, authenticated learner scoring, exact frozen SHA tests and academic sign-off remain in Stage D."
+  }
 }
