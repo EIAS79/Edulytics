@@ -15,20 +15,35 @@
     ]
   },
   "stageA": {
-    "originalTaskReview": "Existing complete original insertion 1,5,10,50,99 plus 49,8,25,98,13; source extension 25<□ and 25>□ restored",
-    "classification": "CONTENT_REPAIR"
+    "originalTaskReview": "Original 2021 source: Which One Doesn't Belong source visual cards A–D (C 35<20 false), Activity1 four represented number card sets A–D sorted with teacher, Activity2 fixed ten-card insertion plus 25<□ and 25>□ multi-answer extensions. Five-minute Which Numbers Belong Cool-down publisher protected.",
+    "classification": "CONTENT_REPAIR",
+    "original2021TeacherAndStudentFacingTasksIndependentlyReviewed": true,
+    "canonicalSourceSHA256MatchedExistingSourceEvidence": true,
+    "sourceRechecked": "2026-10-20"
   },
   "stageB": {
     "existingTeachingReused": true,
     "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeFinalUnit4Corrections.cs",
     "sourceCorrectionsCommits": [
-      "cde32354e5be2b4fb955930fe04a30672174488c"
+      "cde32354e5be2b4fb955930fe04a30672174488c",
+      "caf0ae5eab014f47f717dfb886a5a5d1f7bbf19e"
     ],
-    "publisherArtworkNotClaimedLicensed": true
+    "publisherArtworkNotClaimedLicensed": true,
+    "lessonSpecificContentVersion": "us-ccss-g1-u04-l17-original-student-activities-v3",
+    "migrationTeachingTestCommit": "aaa24f697de85d637a400021e42bcf7068a3d3f4"
   },
   "stageC": {
     "existingSourceSpecificPracticePreserved": true,
-    "teacherOnlyActivitiesNotNumericallyCertified": true
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "generatorAndVerifierIndependentlyStaticallyReviewed": true,
+    "testsAuthoredButNotExecuted": true,
+    "sourceFixedTenCardInsertionMode": 4,
+    "studentChosen25InequalityModes": [
+      5,
+      6
+    ],
+    "openEndedAnswerVerifierCommit": "f61a09067c6742e8da8e3f427828571cb8a027bb",
+    "authoredTestsCommit": "94b6e1d0cbbe0b1fb634b125a6e661e6b8129034"
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -41,7 +56,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required",
+  "nextAction": "L82 original fixed cards, open number boxes and learner teaching repaired, canonical SHA verified; still A_C_EXPLICIT_GAP from uninspected visual card sets and protected publisher cooldown; do not run Stage D.",
   "sourceFixedTenCardPractice20261020": {
     "sourceGivenSortedCards": [
       1,
@@ -76,5 +91,22 @@
     "frozenExactShaGradingAndRendering": "PENDING",
     "academicAcceptance": "NOT_CLAIMED",
     "release": "NO_GO"
+  },
+  "aToCClosure": {
+    "outcome": "A_C_EXPLICIT_GAP",
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": false,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "openACDefects": [
+      "Activity 1 source visual/card sets A–D independently inspected as text only, original publisher diagrams or precise card quantities still unverified",
+      "Original 2021 protected five-minute Which Numbers Belong Cool-down unavailable; no independently documented lesson-specific substitute authorization"
+    ],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-82-stage-a-c-source-implementation-audit-20261020.md",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
   }
 }
