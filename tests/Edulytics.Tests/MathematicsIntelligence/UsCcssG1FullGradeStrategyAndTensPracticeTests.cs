@@ -500,6 +500,60 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson68Original2021NineTensSequencesCardBoundariesAndHanSixtyQuestion()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveTen;
+        var addSeries=new Dictionary<string,int>{{"a",9},{"b",1},{"c",0},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,addSeries));
+        const string addExpected="TOTALS=20,30,40,50,60,70,80,90;LAST=90";
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,addSeries,addExpected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,addSeries,"TOTALS=20,30,40,50,60,70,80;LAST=90"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,addSeries,"TOTALS=20,30,40,50,60,70,80,100;LAST=100"));
+        var subtractSeries=new Dictionary<string,int>{{"a",1},{"b",1},{"c",0},{"mode",3}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,subtractSeries));
+        const string subtractExpected="TOTALS=80,70,60,50,40,30,20,10;LAST=10";
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,subtractSeries,subtractExpected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,subtractSeries,"TOTALS=90,80,70,60,50,40,30,20;LAST=20"));
+        var cardZero=new Dictionary<string,int>{{"a",0},{"b",1},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,cardZero));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,cardZero,"TENS=1;TOTAL=10"));
+        cardZero["mode"]=1;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,cardZero));
+        var cardNinety=new Dictionary<string,int>{{"a",9},{"b",1},{"c",0},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,cardNinety));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,cardNinety,"TENS=8;TOTAL=80"));
+        cardNinety["mode"]=0; // Cannot assert an unverified 100 gameboard cell.
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,cardNinety));
+        var han=new Dictionary<string,int>{{"a",6},{"b",1},{"c",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,han));
+        Assert.Equal("ADD=70;SUBTRACT=50",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,han));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,han,"ADD=70;SUBTRACT=50"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,han,"SUBTRACT=50;ADD=70"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,han,"ADD=70"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,han,"ADD=70;SUBTRACT=60"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,han,"ADD=70;SUBTRACT=50;FAKE=1"));
+        han["a"]=5;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,han));
+        han["a"]=6;han["c"]=1;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,han));
+        var generated=Enumerable.Range(0,980)
+            .Select(i=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(i*53+17)))
+            .ToArray();
+        for(int mode=0;mode<=4;mode++)
+            Assert.True(generated.Count(q=>q.Parameters["mode"]==mode)>60);
+        Assert.Contains(generated,q=>q.Parameters["mode"]==0&&q.Parameters["a"]==0);
+        Assert.Contains(generated,q=>q.Parameters["mode"]==1&&q.Parameters["a"]==9);
+        Assert.All(generated,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            if(q.Parameters["mode"]==4)Assert.Contains("Han",q.Prompt);
+        });
+    }
+
+    [Fact]
     public void Original2021TwelvePencilsMinusSevenStoryIsGeneratedAndGradeable()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;
