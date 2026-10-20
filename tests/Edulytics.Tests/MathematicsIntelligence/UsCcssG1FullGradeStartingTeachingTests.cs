@@ -207,6 +207,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
                     :n==7?CommonCoreG1FullGradeStartingContentCorrections.UnitFourReadNumberSourceContentVersion
                     :n==8?CommonCoreG1FullGradeStartingContentCorrections.UnitFourRepresentationsSourceContentVersion
                     :n==9?CommonCoreG1FullGradeStartingContentCorrections.UnitFourShowNumberSourceContentVersion
+                    :n==10?CommonCoreG1FullGradeStartingContentCorrections.UnitFourWriteNumeralSourceContentVersion
                     :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
@@ -246,6 +247,17 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("five complete tens and two remaining ones",unit4Text(6));
         Assert.Contains("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",unit4Text(6));
         Assert.Contains("3 full tens and 7 ones",unit4Text(6));
+        Assert.Contains("1 ten and 4 ones=14",unit4Text(10));
+        Assert.Contains("7+40=47",unit4Text(10));
+        Assert.Contains("2 ones and 8 tens=82",unit4Text(10));
+        Assert.Contains("Clare writes 702 for seventy-two",unit4Text(10));
+        Assert.Contains("NUMBER=83 and EXPANDED=80+3",unit4Text(10));
+        Assert.Contains("7, 70, 17 and 71",unit4Text(10));
+        var writeNumbers=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L10");
+        Assert.Equal("us-ccss-g1-u04-l10-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourWriteNumeralSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,writeNumbers,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
         Assert.Contains("partners draw two digit cards",unit4Text(9));
         Assert.Contains("AT LEAST FOUR actual classmates' collections",unit4Text(9));
         Assert.Contains("Collection 1, Collection 2, Collection 3 and Collection 4",unit4Text(9));
