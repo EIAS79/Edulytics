@@ -58,11 +58,15 @@ test('all source-authored original Grade 1 goals are represented in existing rel
   assert.deepEqual(authored,[65,74,119,123,124,125,126,135,142,144,146]);
   const releaseSource=fs.readFileSync(path.join(ROOT,
     'tools/curriculum/us-ccss-full-grade-gate.cjs'),'utf8');
-  const section=releaseSource.match(/if\(\[([\d,]+)\]\.includes\(ordinal\)\)/);
-  assert.ok(section,'Author-authored original-source gate missing');
-  const gateOrdinals=section[1].split(',').map(Number);
-  assert.deepEqual(gateOrdinals,authored,
-    'Numeric-only approval must never bypass a source-authored original lesson');
+  // The release gate must derive authorship from each source-reviewed
+  // candidate, not a brittle independent list of lesson ordinals.
+  assert.match(releaseSource,/const assessmentMode=candidate\.assessmentMode/);
+  assert.match(releaseSource,/const needsAuthorship=assessmentMode!==/);
+  assert.match(releaseSource,/if\(needsAuthorship\)/);
+  assert.match(releaseSource,/const name=candidate\.teacherOnlyRubric/);
+  assert.doesNotMatch(releaseSource,/if\(\[[\d,]+\]\.includes\(ordinal\)\)/);
+  assert.ok(x.records.filter(row=>row.assessmentMode==='DIGITAL_PRACTICE')
+    .every(row=>row.teacherOnlyRubric===undefined));
   for(const ordinal of authored){
     const mapping=x.records[ordinal-51];
     const evidence=matrix.records[ordinal-51];
@@ -71,6 +75,19 @@ test('all source-authored original Grade 1 goals are represented in existing rel
     assert.equal(original.lessonCode,mapping.lessonCode);
     assert.equal(evidence.authoredOriginalWorkRubricRequired,true);
     assert.equal(original.assessingMode,mapping.assessmentMode);
+    assert.equal(typeof mapping.teacherOnlyRubric,'string');
+    assert.match(mapping.teacherOnlyRubric,
+      new RegExp('^lesson-'+ordinal+'-[a-z0-9-]+-rubric\\.json
+    assert.equal(evidence.internalEvidenceBasedAcademicAcceptance,
+      ordinal>=57?false:evidence.internalEvidenceBasedAcademicAcceptance);
+  }
+});
+));
+    const rubric=read(root+mapping.teacherOnlyRubric);
+    assert.equal(rubric.lessonOrdinal,ordinal);
+    assert.equal(rubric.lessonCode,mapping.lessonCode);
+    assert.ok(rubric.teacherRubric.some(z=>z.criterion==='Authorship'||
+       z.criterion==='Two original questions'));
     assert.equal(evidence.internalEvidenceBasedAcademicAcceptance,
       ordinal>=57?false:evidence.internalEvidenceBasedAcademicAcceptance);
   }
