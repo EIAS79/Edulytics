@@ -46,7 +46,18 @@
   "stageC": {
     "digitalSkillFamily": "usccss.g1.u08.l06.compare_difference_story",
     "numericPracticeScope": "Difference word problem grading only; not evidence of new pupil-authored questions",
-    "originalTwoQuestionTask": "Prepared in learner lesson instructions and first-party rubric for future teacher review, no observed child submissions claimed"
+    "originalTwoQuestionTask": "Prepared in learner lesson instructions and first-party rubric for future teacher review, no observed child submissions claimed",
+    "originalDigitalSourceCasesRepaired": "Four original school carnival comparison contexts, preserving teacher-only TWO self-authored rides questions and earlier numeric comparisons",
+    "digitalModeIndices": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "engineCommit": "1581f98f1a36bca9fd6c419cae98abf5b2808e20",
+    "independentOracleCommit": "125f851316fed90d491fc65de7e20ef60704285f",
+    "regressionTestCommit": "c89b17ad9f32f894f2779353dc0b031f03ff68af",
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN"
   },
   "stageD": {
     "sourceAssertions": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -55,9 +66,22 @@
     "authenticatedLearnerRubricTaskRendering": "PENDING_FROZEN_SHA",
     "correctWrongMalformedAndPersistence": "PENDING",
     "sourceMediaRightsAccessibility": "PENDING",
-    "originalV1InternalAcademicSignoff": "NOT_CLAIMED"
+    "originalV1InternalAcademicSignoff": "NOT_CLAIMED",
+    "newSourceSpecificTestsPrepared": true,
+    "newTestsExecutedInThisCheckpoint": false,
+    "finalShaCiExecuted": false,
+    "academicAcceptance": "NOT_CLAIMED"
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "ledgerReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "ledgerReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "sourceSpecificRepair20261020": {
+    "stage": "SOURCE_SPECIFIC_DIGITAL_PRACTICE_REPAIR_NO_A_D_CERTIFICATION",
+    "numberOfSourceCases": 4,
+    "teacherStudentSourceTaskFullFigureAudit": "PENDING",
+    "effectiveAuthenticatedRenderAndPersistedRealAttempt": "PENDING",
+    "sourceRightsAndTeacherOnlyBoundaries": "PENDING",
+    "academicAcceptance": "NOT_CLAIMED",
+    "release": "NO_GO"
+  }
 }
