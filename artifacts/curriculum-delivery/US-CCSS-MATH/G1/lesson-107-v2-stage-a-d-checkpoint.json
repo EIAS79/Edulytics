@@ -23,16 +23,17 @@
       "Activity 3: Centers: Choice Time — How Close?, Target Numbers, Five in a Row"
     ],
     "existingLearnerBasePack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json",
-    "confirmedGap": "Before source-specific repair the lesson workedExamples described comparing a cube and a rectangular prism by their six faces/eight vertices; stepByStepSolutions instead classified 3D shapes rather than measuring length in equal connecting-cube side units.",
+    "confirmedGap": "The generic base-pack 3D geometry error was ALREADY corrected by the historical source-bound V1 correction; no second overlay is allowed. Confirmed remaining gap was missing specific source insect measurement Activity 1/2 wording and activity 3 center choices.",
     "gapCategory": "CONTENT_REPAIR",
-    "realStudentPhysicalAndFigureBoundary": "Source original animal images are not independently licensable from this review; hands-on towers and classroom discussion cannot be inferred from numerical Practice."
+    "realStudentPhysicalAndFigureBoundary": "Source original animal images are not independently licensable from this review; hands-on towers and classroom discussion cannot be inferred from numerical Practice.",
+    "confirmedSourceCorrectionLineage": "Original historical source-guarded learner correction was ALREADY present before this work; only missing original task fidelity was extended. Comparing the uncorrected base content alone cannot prove an effective Rich V2 mismatch."
   },
   "stageB": {
-    "sourceBoundCorrectedTeachingFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
-    "codeCommit": "619410f57d39143f4ff462b82dc9527fe1cd8628",
+    "sourceBoundCorrectedTeachingFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "codeCommit": "7b0aa116f815793e87648dee16b539a51f8c839e",
     "reusedSharedRichV2": true,
-    "originalTaskCoverage": "Restored both original animal measurement activities, endpoint alignment, four-cube caterpillar/five-cube grasshopper teacher examples, no-gap/same-unit steps, and three center choices; removed unrelated solid-geometry step/face-count error through source-bound late materialization.",
-    "sourceScopedExpectedContentVersion": "us-ccss-g1-u06-original-student-source-activities-v2",
+    "originalTaskCoverage": "Existing historic source correction already covered cube endpoints, four-cube caterpillar and extra unit counts; appended original Activity 1/2 names, grasshopper five-unit source teacher example and center choices, preserving old math content.",
+    "sourceScopedExpectedContentVersion": "us-ccss-g1-g1-u06-l05-topic-correction-v2",
     "rights": "No original figures copied"
   },
   "stageC": {
@@ -42,16 +43,19 @@
     "actualCorrectWrongMalformedAndPersistence": "PENDING_FROZEN_HEAD"
   },
   "stageD": {
-    "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
-    "testCommit": "4add18693084d9beb16b8ab0f7b995161f4a0d07",
+    "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "testCommit": "0c6732dbf617613eaa5eb225b4fd85d532c8bb51",
     "testedAtCurrentCodeSha": false,
     "manuallyTriggeredGitHubCi": false,
     "studentRenderAuthenticated": "PENDING",
     "gradingPersistence": "PENDING",
     "sourceMediaRightsAndAccessibility": "PENDING",
-    "academicAcceptance": "NOT_CLAIMED"
+    "academicAcceptance": "NOT_CLAIMED",
+    "githubCiManuallyTriggered": false
   },
   "status": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Preserve corrected source-specific teaching and existing numeric family. Verify complete original figure and learner materialization, math negative controls and runtime scoring on frozen grade SHA; no individual acceptance before real CI evidence."
+  "nextAction": "Preserve corrected source-specific teaching and existing numeric family. Verify complete original figure and learner materialization, math negative controls and runtime scoring on frozen grade SHA; no individual acceptance before real CI evidence.",
+  "singleSourceTeachingPathConfirmed": true,
+  "v1ToV2HistoricalSourceMigrationGuarded": true
 }
