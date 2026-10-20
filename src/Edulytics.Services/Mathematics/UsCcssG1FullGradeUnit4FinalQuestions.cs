@@ -29,7 +29,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[0]?13:family==Families[1]?6:family==Families[2]?7:family==Families[4]?7:family==Families[5]?6:family==Families[6]?6:family==Families[7]?6:3))return false;
+           mode<0||mode>(family==Families[0]?14:family==Families[1]?6:family==Families[2]?7:family==Families[4]?7:family==Families[5]?6:family==Families[6]?6:family==Families[7]?6:3))return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" => mode switch
@@ -43,6 +43,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 10=>a==39&&b==0&&c==0,
                 11=>a==13&&b==0&&c==0,
                 12 or 13=>a==0&&b==0&&c==0,
+                14=>a==63&&b==36&&c==0,
                 _=>a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99
             },
             "usccss.g1.u04.l18.center_count_compare_order" =>
@@ -109,7 +110,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[0]?14:family==Families[1]?7:family==Families[2]?8:family==Families[4]?8:family==Families[5]?7:family==Families[6]?7:family==Families[7]?7:4);
+        int mode=random.Next(family==Families[0]?15:family==Families[1]?7:family==Families[2]?8:family==Families[4]?8:family==Families[5]?7:family==Families[6]?7:family==Families[7]?7:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
         if(family==Families[0]&&mode>=4)
         {
@@ -119,6 +120,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 7=>(92,29,0),8=>(23,23,0),
                 9=>(78,0,0),10=>(39,0,0),11=>(13,0,0),
                 12 or 13=>(0,0,0),
+                14=>(63,36,0), // Independent Edulytics assessment of tens-first comparison; not the publisher Cool-down.
                 _=>throw new InvalidOperationException("Unknown source comparison mode")
             };
         }
@@ -200,6 +202,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 11=>"SOURCE 2021 EQUALITY BOX: Fill in 13=□ with the number that makes this true. Write NUMBER=number.",
                 12=>"SOURCE 2021 TWO OPEN BOXES: Choose TWO two-digit numbers to make □<□ true. Write LEFT=number;RIGHT=number. There are many correct answers.",
                 13=>"SOURCE 2021 TWO OPEN BOXES: Choose TWO two-digit numbers to make □>□ true. Write LEFT=number;RIGHT=number. There are many correct answers.",
+                14=>"EDULYTICS INDEPENDENT FORMATIVE (not the inaccessible publisher Cool-down): Compare 63 and 36 by the value of their tens. Write SYMBOL=sign;TENS_LEFT=number;TENS_RIGHT=number. Explain your place-value reasoning or drawing to a teacher.",
                 _=>$"Write the TRUE comparison for {a} and {b} using one of >, <, =. Answer SYMBOL=sign."
             },
             "usccss.g1.u04.l17.order_three_numbers"=>
@@ -275,6 +278,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 11=>"NUMBER=13",
                 12=>"LEFT=12;RIGHT=21",
                 13=>"LEFT=21;RIGHT=12",
+                14=>"SYMBOL=>;TENS_LEFT=6;TENS_RIGHT=3",
                 _=>$"SYMBOL={Sign(a,b)}"
             },
             "usccss.g1.u04.l17.order_three_numbers"=>
@@ -406,7 +410,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         (family==Families[3]&&p["mode"]==1?
             VerifyStudent37Ways(value):
             family==Families[4]&&p["mode"]<=3?VerifyStudentChosenTensTrade(p,value):
-            family==Families[0]&&p["mode"]>=9?VerifyOpenComparisonSource(p["mode"],value):
+            family==Families[0]&&p["mode"]>=9&&p["mode"]<=13?VerifyOpenComparisonSource(p["mode"],value):
             family==Families[1]&&p["mode"]>=5?VerifySource25OpenNumber(p["mode"],value):
             Normalize(Solve(family!,p))==Normalize(value));
 }
