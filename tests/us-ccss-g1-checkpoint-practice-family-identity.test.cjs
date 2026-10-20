@@ -33,9 +33,14 @@ test('all source-reviewed G1 V1 checkpoint Practice references use the real regi
     assert.ok(official,'Unknown G1 review checkpoint ordinal '+num);
     assert.equal(row.ordinal,num,'Wrong ordinal in '+file);
     assert.equal(row.lessonCode,official.lessonCode,'Wrong canonical code in '+file);
+    const validFamilies=official.candidateFamilies??
+      (official.candidateFamily===null?[]:[official.candidateFamily]);
+    assert.equal(new Set(validFamilies).size,validFamilies.length,
+      'Duplicate mapped Practice family at ordinal '+num);
     for(const candidate of sourceFamilyValues(row.stageC))
-      assert.equal(candidate,official.candidateFamily,
-        'Source-task checkpoint references a nonexistent/wrong Practice family in '+file);
+      assert.ok(validFamilies.includes(candidate),
+        'Source-task checkpoint references a nonexistent/wrong Practice family in '+file+
+        ': '+candidate);
   }
 });
 
