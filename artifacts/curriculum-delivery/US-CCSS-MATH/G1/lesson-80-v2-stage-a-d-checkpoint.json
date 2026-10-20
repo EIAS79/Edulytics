@@ -35,8 +35,19 @@
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
-    "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "mathEngineChangedForThisLesson": true,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "practiceImplementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeTwoDigitOperationsQuestions.cs",
+    "sourceExactCases": [
+      "17 < 27 (versus 27 < 17)",
+      "34 < 36 (versus 36 < 34)",
+      "17 < 47 true/false comparison"
+    ],
+    "mathEngineCommit": "1d3857ca08c93ef50e747314636e6d5e36a739f3",
+    "testImplementationCommit": "f30aab09baeb33234f57eb9d6d28dce8436b013f",
+    "testsAuthoredButNotExecuted": true,
+    "sourceParityStillUnverified": true,
+    "authoringStatus": "A_C_EXPLICIT_GAP"
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
