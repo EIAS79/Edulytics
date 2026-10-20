@@ -29,7 +29,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[0]?13:family==Families[1]?4:family==Families[4]?7:3))return false;
+           mode<0||mode>(family==Families[0]?13:family==Families[1]?6:family==Families[4]?7:3))return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" => mode switch
@@ -49,6 +49,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l22.center_place_value" =>
                 a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
             "usccss.g1.u04.l17.order_three_numbers"=>
+                mode>=5?a==25&&b==0&&c==0:
                 mode>=3?ValidTenCardInsertion(p)&&
                     (mode!=4||OriginalFixedTenCards(p)):
                 a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
@@ -89,7 +90,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[0]?14:family==Families[1]?5:family==Families[4]?8:4);
+        int mode=random.Next(family==Families[0]?14:family==Families[1]?7:family==Families[4]?8:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
         if(family==Families[0]&&mode>=4)
         {
@@ -101,6 +102,10 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 12 or 13=>(0,0,0),
                 _=>throw new InvalidOperationException("Unknown source comparison mode")
             };
+        }
+        if(family==Families[1]&&mode>=5)
+        {
+            a=25;b=0;c=0;
         }
         if(family==Families[3]||family==Families[4])
         {
@@ -153,6 +158,9 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 _=>$"Write the TRUE comparison for {a} and {b} using one of >, <, =. Answer SYMBOL=sign."
             },
             "usccss.g1.u04.l17.order_three_numbers"=>
+                mode>=5?mode==5?
+                    "SOURCE 2021 ORDER-NUMBERS EXTENSION: Write ANY whole number greater than 25 and no more than 99 to make 25<□ true. Write NUMBER=number. There are many correct answers.":
+                    "SOURCE 2021 ORDER-NUMBERS EXTENSION: Write ANY positive whole number smaller than 25 to make 25>□ true. Write NUMBER=number. There are many correct answers.":
                 mode>=3?
                     $"{(mode==4?"ORIGINAL 2021 STUDENT FACING: ":"GENERALIZED PRACTICE: ")}Five cards start in order: {a}, {b}, {c}, {p["d"]}, {p["e"]}. INSERT these five additional cards correctly: {p["f"]}, {p["g"]}, {p["h"]}, {p["i"]}, {p["j"]}. Write ALL ten numbers from least to greatest as ORDER=n1,n2,n3,n4,n5,n6,n7,n8,n9,n10. Explain why two inserted numbers belong where you placed them.":
                 mode%2==0?
@@ -205,6 +213,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 _=>$"SYMBOL={Sign(a,b)}"
             },
             "usccss.g1.u04.l17.order_three_numbers"=>
+                mode>=5?mode==5?"NUMBER=26":"NUMBER=24":
                 mode>=3?"ORDER="+string.Join(",",
                     new[]{"a","b","c","d","e","f","g","h","i","j"}
                         .Select(key=>p[key]).Order()):
@@ -312,11 +321,21 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         return mode==12?left<right:left>right;
     }
 
+    private static bool VerifySource25OpenNumber(int mode,string? value)
+    {
+        string norm=Normalize(value);
+        if(!norm.StartsWith("NUMBER=",StringComparison.Ordinal)||
+           !int.TryParse(norm["NUMBER=".Length..],out int number)||
+           number<1||number>99)return false;
+        return mode==5?number>25:mode==6&&number<25;
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? value)=>
         Valid(family,p)&&!string.IsNullOrWhiteSpace(value)&&
         (family==Families[3]&&p["mode"]==1?
             VerifyStudent37Ways(value):
             family==Families[4]&&p["mode"]<=3?VerifyStudentChosenTensTrade(p,value):
             family==Families[0]&&p["mode"]>=9?VerifyOpenComparisonSource(p["mode"],value):
+            family==Families[1]&&p["mode"]>=5?VerifySource25OpenNumber(p["mode"],value):
             Normalize(Solve(family!,p))==Normalize(value));
 }
