@@ -218,6 +218,43 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,problem.Parameters,"LENGTH=999;DIFFERENCE=999"));
         }
     }
+    [Theory]
+    [InlineData(9,7,0,4,"TOTAL=16")]
+    [InlineData(7,9,4,5,"TOTAL=20")]
+    [InlineData(13,8,0,6,"DIFFERENCE=5")]
+    [InlineData(8,17,0,7,"ELENA=9")]
+    public void Original2021U06L11ShoeStoriesUseFourDifferentCorrectUnknowns(
+        int a,int b,int c,int mode,string expected)
+    {
+        const string family="usccss.g1.u06.l11.compare_shoe_lengths";
+        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"TOTAL=999"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";FAKE=YES"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,""));
+    }
+    [Fact]
+    public void ShoeStoryModesNeverPermitInventedSourceOperandsOrThirdLengthOutsideThreeAddends()
+    {
+        const string family="usccss.g1.u06.l11.compare_shoe_lengths";
+        foreach(var (a,b,c,mode) in new[]{
+            (9,8,0,4),(9,7,4,4),(7,9,0,5),
+            (7,9,5,5),(13,9,0,6),(8,17,1,7),(9,7,0,8)
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
+            Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        }
+        // The pre-existing four hypothetical comparison modes still accept
+        // independently varied shoe lengths and genuine equality.
+        var previous=new Dictionary<string,int>{{"a",10},{"b",10},{"c",0},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,previous));
+        Assert.Equal("DIFFERENCE=0",
+            UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,previous));
+    }
+
     [Fact]
     public void EngineSupportsTenDistinctDigitalPromptsPerSourceSkill()
     {
