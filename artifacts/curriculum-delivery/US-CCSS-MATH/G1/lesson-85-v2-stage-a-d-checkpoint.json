@@ -16,7 +16,17 @@
   },
   "stageA": {
     "originalTaskReview": "Original make 94 all permitted regroupings and source mystery bag A–D task; existing source-corrected content reused",
-    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE"
+    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE",
+    "original2021PublicTeacherPage": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-20/lesson.html",
+    "originalNumberTasks": [
+      "94 tens-and-ones decompositions",
+      "Bag A: five tens, two ones => 52",
+      "Bag B: four tens, twenty-five ones => 65",
+      "Bag C: 49 with 29 ones => 2 tens",
+      "Bag D: 36 with 2 tens => 16 ones"
+    ],
+    "originalWarmupKnownActual": 76,
+    "originalEstimatedFigureAndPartnerDiscussionNotAutoGraded": true
   },
   "stageB": {
     "existingTeachingReused": true,
@@ -26,7 +36,11 @@
   },
   "stageC": {
     "existingSourceSpecificPracticePreserved": true,
-    "teacherOnlyActivitiesNotNumericallyCertified": true
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "allTen94DecompositionsMathOracle": "94 = 10*tens + ones for tens from 0 through 9; 10 possible representations",
+    "originalSourceFourBagStrictCorrectWrongTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson85Original94WaysAndMysteryBagTests.cs",
+    "authoredExactSourceTestsCommit": "0a3cb411c6886f571223a7d0edd0b25aa23e1a1c",
+    "testsExecuted": false
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -39,7 +53,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required",
+  "nextAction": "Continue original ordinal86 without running Stage D or CI. Whole-grade publish remains NO_GO.",
   "originalSourceBagCases20261020": {
     "sourceActivity": "U04 L20 original 2021 mystery bags",
     "exactCases": [
@@ -91,5 +105,20 @@
     "originalFiguresProvenance": "PENDING",
     "teacherAuthoredDrawings": "NOT_CLAIMED",
     "academicAcceptance": "NOT_CLAIMED"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "teacherOnlyBoundaries": "76-cube illustrated estimation before reveal, physical cube drawings, partner-authored mystery bags and oral reasoning not graded as completed by numeric contracts",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "sourceBoundary": "Source-exact 94 ways and four numeric bags in existing engine; independent teacher assessment of drawings/estimates outside auto-grading; original protected 68 Cool-down inaccessible, not represented as copied or verified."
   }
 }
