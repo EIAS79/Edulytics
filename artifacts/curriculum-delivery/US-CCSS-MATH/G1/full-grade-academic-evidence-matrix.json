@@ -4745,8 +4745,8 @@
       "genuineStudentGradingAndPersistenceVerified": false,
       "internalEvidenceBasedAcademicAcceptance": false,
       "ownerUatVerified": false,
-      "potentialNonNumericTeacherEvidence": false,
-      "authoredOriginalWorkRubricRequired": false,
+      "potentialNonNumericTeacherEvidence": true,
+      "authoredOriginalWorkRubricRequired": true,
       "evidenceReferences": [
         {
           "kind": "HISTORIC_EXACT_SHA_CI_TECHNICAL_ONLY",
@@ -4773,8 +4773,11 @@
         "Live learner Practice renders and verifies correct, wrong and malformed submissions",
         "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
         "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence"
-      ]
+        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence",
+        "Real learner-facing instruction asks the child to WRITE and ANSWER TWO original How Many Rides? questions; verify authenticated rendering at frozen SHA and first-party teacher review rubric without inventing classroom work."
+      ],
+      "sourceAuthoredTaskRequirement": "Two original ride-table questions, two mathematical answers and real learner-authored teaching task",
+      "sourceAuthoredTaskRubric": "lesson-142-original-two-ride-questions-authorship-rubric.json"
     },
     {
       "ordinal": 143,
