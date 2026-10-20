@@ -22,15 +22,21 @@
       "Student Facing Find the value of each expression mentally. \\(3 + 10\\) \\(10 + 5\\) \\(13 - 10\\) \\(15 - 10\\) Student Response Teachers with a valid work email address can cli",
       "Student Facing Find the number that makes each equation true. Then tell what you notice. \\(67 + 10 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(67 - 10 = \\boxed{\\phantom{\\fr"
     ],
-    "sourceSpecificFinding": "Original four paired 10-more/-less tasks, multi-ten iterative 67 and 99 sequences and Stage 2 Write Numbers",
-    "classification": "CONTENT_REPAIR"
+    "sourceSpecificFinding": "Independently re-read canonical 2021 full teacher page and student-task sections: warm-up 3+10, 10+5, 13-10, 15-10; four 10-more/less pairs 67,39,52,75; all 67/99/45 intermediate sequences; Stage 2 Write Numbers partner game. All three registered cache file hashes matched exact canonical paths on Our-CS 2026-10-20. Protected Section B Checkpoint (0 minutes) unavailable.",
+    "classification": "CANONICAL_SOURCE_BYTES_RECONCILED_TEACHER_TASKS_REVIEWED_STUDENT_VISUAL_LIMIT_OPEN",
+    "canonicalSourceByteIntegrityRecheckedOn": "2026-10-20",
+    "independentOriginalTeacherMathAndCenterReview": true
   },
   "stageB": {
     "originalRichV2Reused": true,
     "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
-    "publisherAssetsRedistributed": false
+    "publisherAssetsRedistributed": false,
+    "targetedWarmupAndIntermediateRepairCommit": "852e77d8a4a5ee01b13cb38cab399e65c354bc71",
+    "version": "us-ccss-g1-u04-l12-original-student-activities-v7",
+    "canonicalTeacherSourceWarmupAndAllIntermediateStepsRepaired": true,
+    "staticSourceAlignedTextReviewed": true
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
@@ -78,7 +84,29 @@
     "intermediateStepImplementationCommit": "c04427eb23487ae7cd10a8a7a007e7d3a74c8d59",
     "intermediateStepTestsCommit": "df72a44ff85edadded2a63f57a6eb70f5168643c",
     "legacyModeAnswerContractsPreserved": true,
-    "seedRegressionReviewRequired": true
+    "seedRegressionReviewRequired": true,
+    "staticGeneratorVerifierReview": {
+      "sourceModes": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "observations": [
+        "Exact operand and mode guards for all fixed source numbers",
+        "Legacy mode 0-8 answer contracts unchanged",
+        "Modes 9 and 10 require every intermediate STEP field",
+        "Independent formative mode 4 does not represent protected publisher checkpoint",
+        "Existing positive, negative, partial-answer and mutant-operand test source reviewed; xUnit execution deferred until frozen Stage D"
+      ],
+      "testExecution": "NOT_EXECUTED",
+      "knownResidual": "Seeded generator distribution changed with modes 9/10; final candidate regression remains required"
+    }
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -100,31 +128,35 @@
     "allAvailableOriginalStudentTeacherTasksCompared": false,
     "originalProtectedPublisherAssessmentVerified": false,
     "originalPublisherAssessmentNotReproduced": true,
-    "learnerTeachingSourceParityReviewed": false,
-    "practiceGeneratorAndVerifierIndependentlyReviewed": false,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
     "openACDefects": [
-      "Full accessible original teacher/student visual and task-by-task parity still requires independent review",
-      "Learner teaching and generator/verifier independent code review incomplete",
-      "Original protected 2021 publisher Cool-down unavailable; independent Edulytics exit authored but not runtime verified",
-      "Source student/teacher current-cache hashes differ from checkpoint; reconcile edition/build/byte snapshot before any parity approval",
-      "Warm-up task and visual/math equation-by-equation parity still need explicit review",
-      "First-party intermediate-step modes 9/10 and legacy seeded-generator behavior require frozen-candidate verification"
+      "Original teacher tasks re-read, but independent original student-facing page and center gameboard visual/task boundary parity not completely established; student cache SHA match alone is insufficient",
+      "Protected 2021 Section B Checkpoint (0 minutes) remains inaccessible; no lesson-77-specific owner approval for independent substitute was established",
+      "Unexecuted code/test changes and seeded generator compatibility remain for frozen Stage D (not an assertion of passed tests)"
     ],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-77-stage-a-c-source-implementation-audit-20261020.md",
     "ciExecutedDuringAuthoring": false,
     "stageDExecuted": false,
     "testsAuthoredButNotExecuted": true,
     "sourceCacheSnapshotIntegrity": {
-      "status": "SHA_MISMATCH_UNRESOLVED",
-      "observedOn": "2026-10-20",
+      "status": "CANONICAL_BYTES_MATCH_CHECKPOINT",
+      "checkedOn": "2026-10-20",
       "sourceDevice": "Our-CS",
       "accessMode": "READ_ONLY",
-      "originalTeacherCheckpointSha256": "9aeaacd09e4d34c6d7cd9138b3e40c33b79d310bedb0d7abde2360a184ad93c7",
-      "observedTeacherCacheSha256": "3ed6c38a906c3e986ceaa8f0c98224bde0aec784daf976ae56ce3fb23e02a93a",
-      "originalStudentCheckpointSha256": "bc498182c4cdb1c2221310f0abf40469780a0c0f09542b4a4a52b4f59c962b96",
-      "observedStudentCacheSha256": "afdafd80cec2df36be4fbbe0924e77de9834e4186f578dbbb1b483c11749e773",
-      "conclusion": "Current local cache has different bytes; provenance/version and content-parity must be reconciled; mismatch alone does not establish different curriculum content"
-    }
+      "canonicalFullTeacherRelativePath": "unit-4/lesson-12/lesson.html",
+      "fullTeacherSha256": "9aeaacd09e4d34c6d7cd9138b3e40c33b79d310bedb0d7abde2360a184ad93c7",
+      "canonicalTeacherPreparationRelativePath": "Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-4_lesson-12_preparation.html",
+      "teacherPreparationSha256": "f079b91b320cbbdaed28a10e1f5cf41205488205ce56f8966767d3822965c382",
+      "canonicalStudentHtmlRelativePath": "Student_Public_Mirror/unit-4/lesson-12/lesson.html",
+      "studentHtmlSha256": "bc498182c4cdb1c2221310f0abf40469780a0c0f09542b4a4a52b4f59c962b96",
+      "earlierMismatchObservationSuperseded": true,
+      "explanation": "Earlier observed 3ed6... and afdaf... were not SHA-256 of the three registered canonical files. The original canonical files match. Hash identity does NOT establish complete visual/student-task parity."
+    },
+    "authoringEvidenceCommitRefs": [
+      "852e77d8a4a5ee01b13cb38cab399e65c354bc71",
+      "18116954ecbd28f63d82a49cd82ab28c2045681c"
+    ]
   },
-  "nextAction": "Resolve 2021 source-cache snapshot mismatch, complete Lesson 77 source/teaching/Practice/visual and verifier parity; then consider A–C closure. Do not run CI, Stage D, or advance academic approval ledger."
+  "nextAction": "Canonical original source SHA mismatch disproven on registered paths and original teacher math reviewed; warm-up/intermediate learner content repaired. Still A_C_EXPLICIT_GAP pending independent student/center visual parity and inaccessible Section B checkpoint decision. Stage D/CI NOT RUN."
 }
