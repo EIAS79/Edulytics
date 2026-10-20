@@ -29,7 +29,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[0]?13:family==Families[1]?6:family==Families[4]?7:3))return false;
+           mode<0||mode>(family==Families[0]?13:family==Families[1]?6:family==Families[2]?7:family==Families[4]?7:3))return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" => mode switch
@@ -45,7 +45,9 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 12 or 13=>a==0&&b==0&&c==0,
                 _=>a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99
             },
-            "usccss.g1.u04.l18.center_count_compare_order" or
+            "usccss.g1.u04.l18.center_count_compare_order" =>
+                mode>=4?a==32&&b==(mode==4?10:20)&&c==0:
+                a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
             "usccss.g1.u04.l22.center_place_value" =>
                 a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
             "usccss.g1.u04.l17.order_three_numbers"=>
@@ -90,7 +92,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[0]?14:family==Families[1]?7:family==Families[4]?8:4);
+        int mode=random.Next(family==Families[0]?14:family==Families[1]?7:family==Families[2]?8:family==Families[4]?8:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
         if(family==Families[0]&&mode>=4)
         {
@@ -106,6 +108,10 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(family==Families[1]&&mode>=5)
         {
             a=25;b=0;c=0;
+        }
+        if(family==Families[2]&&mode>=4)
+        {
+            a=32;b=mode==4?10:20;c=0;
         }
         if(family==Families[3]||family==Families[4])
         {
@@ -167,6 +173,13 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                     $"Order {a}, {b}, {c} from LEAST to GREATEST. Write ORDER=number,number,number.":
                     $"Order {a}, {b}, {c} from GREATEST to LEAST. Write ORDER=number,number,number.",
             "usccss.g1.u04.l18.center_count_compare_order"=>
+                mode>=4?mode switch
+                {
+                    4=>"SOURCE 2021 NUMBER TALK: Find 32+10. Write RESULT=number. Explain mentally to a teacher.",
+                    5=>"SOURCE 2021 NUMBER TALK: Find 32+10+10. Write RESULT=number. Show the two ten steps to a teacher.",
+                    6=>"SOURCE 2021 NUMBER TALK: Find 32+20. Write RESULT=number. Compare to adding ten twice.",
+                    _=>"SOURCE 2021 NUMBER TALK: Find 32-20. Write RESULT=number. Explain taking away two tens to a teacher."
+                }:
                 mode%2==0?$"Center numeric task: order {a}, {b}, {c} from least to greatest. Write ORDER=number,number,number.":
                     $"Center numeric task: compare {a} and {b}. Write SYMBOL=sign.",
             "usccss.g1.u04.l19.regroup_one_ten"=>
@@ -219,6 +232,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                         .Select(key=>p[key]).Order()):
                     "ORDER="+string.Join(",",mode%2==0?new[]{a,b,c}.Order():new[]{a,b,c}.OrderDescending()),
             "usccss.g1.u04.l18.center_count_compare_order"=>
+                mode>=4?$"RESULT={(mode==4?42:mode==7?12:52)}":
                 mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):$"SYMBOL={Sign(a,b)}",
             "usccss.g1.u04.l19.regroup_one_ten"=>mode==0?
                 "TENS=5;ONES=15":
