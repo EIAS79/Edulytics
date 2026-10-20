@@ -22,18 +22,33 @@
       "Student Facing Choose a center. Number Puzzles [visual] [visual]"
     ],
     "sourceSpecificComparison": "Original Kiran14/Priya23 notice/wonder and Number Puzzles Stage 3 without composing",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "recordedOriginal2021StudentTaskMath": "Kiran 14 marbles, Priya 23 marbles; student Notice/Wonder, choice of Number Puzzles, Five in a Row and Greatest of Them All; actual center activities need classroom facilitation.",
+    "studentTaskArtworkNotCopied": true
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "learnerTeachingSourceParityReviewed": true,
+    "sourceRespectBoundary": "Correct original center choices and no-composing addition preserved; student questions, gameboard and student observation are teacher assessed."
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "firstPartyMathematicalFollowUp": {
+      "sourceQuantities": "Kiran 14 and Priya 23",
+      "question": "sum, who has more, difference",
+      "expected": "SUM=37;MORE=PRIYA;DIFFERENCE=9",
+      "mode": 4,
+      "implementationCommit": "76fcc9069c454db2e00d72406b96425bde6e3a60",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson92SourceMarblesFirstPartyTests.cs",
+      "authoredTestsCommit": "b77fd60860e10ed3fe635adf4113fdd99f44f57d",
+      "boundary": "First-party numeric follow-up; not a publisher-verbatim question or certified real-world center outcome."
+    },
+    "authoredTestsNotExecuted": true
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -47,5 +62,17 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue canonical ordinal 93; Stage D, CI, academic signoff and merge deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "sourceBoundary": "Original Kiran/Priya notice/wonder and center choices reflected; Edulytics mathematically valid first-party follow-up using original quantities, no unauthorized publisher art. Original qualitative and real center play teacher reviewed, not digitally certified. Stage D must check live render, code/tests/seed, grading persistence, rights, full grade."
+  }
 }
