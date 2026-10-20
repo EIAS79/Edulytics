@@ -24,18 +24,53 @@
       "Student Facing Elena and Andre found the value of \\(34 + 9\\) . Elena started with \\(34 + 6 = 40\\) . What does Elena need to do next? Show your thinking using drawings, nu"
     ],
     "sourceSpecificComparison": "Original eight next-ten blank equations, Elena/Andre 34+9, 6+68; Target Numbers start 55 with 95 ceiling",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "originalMathematicalTasksReconciled": {
+      "mentalWarmup": [
+        "8+2=10",
+        "8+5=13",
+        "9+8=17",
+        "7+6=13"
+      ],
+      "nextTen": [
+        "45+5=50",
+        "38+2=40",
+        "63+7=70",
+        "24+6=30",
+        "42+8=50",
+        "57+3=60",
+        "71+9=80",
+        "89+1=90"
+      ],
+      "twoMethodReasoning": "34+9=43 (Elena 34+6+3; Andre 9+1+33)",
+      "separateSourceAddition": "6+68=74",
+      "partnerTargetNumbers": "Starts at 55, aims for 95 or nearest under in six real turns; teacher-led; not numerically certified."
+    },
+    "originalVisualDrawingsAssessedByTeacherNotEngine": true
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "existingOriginalStudentAndTeacherTeachingMathReviewed": true,
+    "sourceSpecificTeaching": "Existing version v2 states eight blanks, both ways for 34+9, 6+68, and actual Target Numbers restrictions; no invention or transfer of publisher artwork."
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceExactEightNextTenModes": "4-11",
+    "originalNumberTalkModes": "12-15",
+    "retainedElenaAndreTwoMethodsMode": 2,
+    "retainedSixPlusSixtyEightMode": 3,
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "f3d0ca275ee945381b8aea06ea1a2b9fd877d296",
+    "sourceModeAnswerContracts": "MISSING=n;TOTAL=target (modes 4-11), TOTAL=sum;NEW_TEN=YES (modes 12-15), existing MOVE/REST/TOTAL + both-strategy expression for mode2",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson94OriginalNextTenAndWarmupTests.cs",
+    "authoredTestsCommit": "e80af886e91155cf934b41896a02cc89f1bf19e8",
+    "testsExecuted": false,
+    "teacherCenterAndOpenExplanationAutoScored": false
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -49,5 +84,17 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal95; defer Stage D/CI/merge/deploy, keep Grade G1 NO_GO.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "protectedPublisherAssetsAndHumanReasoningNotAutoGraded": true,
+    "scope": "Accessible 2021 next-ten blanks, oral warmup numerics, the two 34+9 pupil approaches and 6+68 aligned. Original artwork, pupil-created free-form explanation, real Target Numbers six-turn outcome and protected publisher assessments await authorized human or Stage D evidence."
+  }
 }
