@@ -20,7 +20,11 @@
     ],
     "existingCandidateCompared": true,
     "documentedGap": "Source activities were partially summarized but exact student sets and counting routine missing",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "accessible2021StudentTeacherTaskTextReviewed": true,
+    "sourceCoolDownTitle": "Unit 3, Section D Checkpoint (0 minutes)",
+    "protectedPublisherCheckpointVerified": false
   },
   "stageB": {
     "method": "Unchanged original Five-Lesson V1 A–D source review and minimal teaching repair",
@@ -28,12 +32,15 @@
     "codePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "codeCommit": "c30d0f59c21408f8c56fdd6c7d17809327368036",
     "versionField": "CountRelationSourceContentVersion",
-    "sourceArtworkCopied": false
+    "sourceArtworkCopied": false,
+    "effectiveContentVersion": "us-ccss-g1-u03-l24-original-activities-v7"
   },
   "stageC": {
     "reuseOfExistingPractice": true,
     "existingMathGeneratorAndVerifierPreserved": true,
-    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified"
+    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
+    "reviewedMathCorrections": "Fixed double-digit subtraction; source Set A=5, Set B=3, Diego and Tyler=3 with exact numeric grading; actual drawings require teacher review"
   },
   "stageD": {
     "originalTaskAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
@@ -48,5 +55,17 @@
   "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "academicStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue original V1 review for next ordinal; final frozen-grade evidence required before acceptance"
+  "nextAction": "A-C complete for reviewed accessible original 2021 mathematical tasks; proceed to lesson 62; defer final D, CI and academic acceptance.",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-61-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalPublisherCheckpointVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  }
 }
