@@ -29,7 +29,9 @@
     "sourceGoalAgainstEffectiveAuthenticatedContentApproved": null,
     "coolDownOriginalEditionStatus": "BLOCKED_SOURCE_2021_LOGIN_RESTRICTED_COOLDOWN_SUBTRACT_FROM_14",
     "sourceCoolDownTitleVerifiedInOriginal2021Html": "Subtract from 14 (5 minutes)",
-    "publishedLaterEditionCoolDownNotUsedAs2021Proof": true
+    "publishedLaterEditionCoolDownNotUsedAs2021Proof": true,
+    "original2021CoolDownIndependentConfirmation": "NOT_FOUND_IN_PUBLIC_2021_SOURCES_OR_LOCAL_UNAUTHENTICATED_2021_CACHE",
+    "coolDownLater2024TextRejectedAs2021Proof": true
   },
   "stageB": {
     "existingTeachingReused": true,
@@ -53,7 +55,27 @@
     "reviewedAvailableSourceStudentCardAndDiegoAndreMath": true,
     "zeroAndNoCrossingOriginalCardArithmeticFixed": true,
     "independentCorrectWrongAndMalformedMathTestsAuthored": true,
-    "mathTestsActuallyExecuted": false
+    "mathTestsActuallyExecuted": false,
+    "sourceOriginalFollowUpMode3": {
+      "originalTaskPairs": [
+        {
+          "startingNumber": 14,
+          "subtractedNumber": 5,
+          "difference": 9
+        },
+        {
+          "startingNumber": 13,
+          "subtractedNumber": 6,
+          "difference": 7
+        }
+      ],
+      "generatorGuardedToOriginalPairs": true,
+      "promptReferencesBothDiegoAndAndre": true,
+      "exactMathVerifierCoversBoth": true,
+      "negativeSourcePairAndDeterministicGenerationTestsAuthored": true,
+      "testsExecuted": false,
+      "changeCommit": "2c9a08aa3d79b2e741e535ea3722898ce7b26111"
+    }
   },
   "stageD": {
     "newSourceAndMathAssertionsAuthored": true,
@@ -84,5 +106,5 @@
     "stageDExecuted": false,
     "testsAuthoredButNotExecuted": true
   },
-  "nextAction": "Stay on ordinal 60 until original 2021 protected cool-down independently verified and the lesson A-C gap is closed; do not advance to 61 or claim D readiness."
+  "nextAction": "Remain at ordinal 60. A–C blocked only by original 2021 publisher-authenticated 'Subtract from 14' cool-down source-task verification; all supported numeric teaching and Practice repairs complete. Do not claim READY_FOR_STAGE_D, merge, CI or advance to ordinal 61."
 }
