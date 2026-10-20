@@ -76,14 +76,28 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     public void OriginalHowCloseAndFiveInARowStayDifferentSourceGames()
     {
         const string family=UsCcssG1FullGradeNextQuestions.CenterTwoThree;
-        var five=new Dictionary<string,int>{{"a",11},{"b",9},{"c",0},{"mode",3}};
+        // 2021 original uses number cards 0 through 10, never an 11-card.
+        var five=new Dictionary<string,int>{{"a",10},{"b",9},{"c",0},{"mode",3}};
         Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,five));
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,five,
-            "TOTAL=20;EQUATION=9+11=20"));
+            "TOTAL=19;EQUATION=9+10=19"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(family,five,
-            "TOTAL=20;EQUATION=9+10+1=20"));
-        five["b"]=6;
+            "TOTAL=19;EQUATION=9+9+1=19"));
+        five["a"]=0;five["b"]=7;
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,five));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,five,
+            "TOTAL=7;EQUATION=0+7=7"));
+        five["a"]=11;five["b"]=9;
         Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,five));
+        five["a"]=10;five["b"]=6;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,five));
+        // How Close? removes the 10-cards, but permits a 0- or 9-card.
+        var close=new Dictionary<string,int>{{"a",0},{"b",9},{"c",8},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,close));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,close,
+            "TOTAL=17;EQUATION=8+0+9=17"));
+        close["a"]=10;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,close));
         var triple=new Dictionary<string,int>{{"a",3},{"b",6},{"c",7},{"mode",1}};
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,triple,
             "TOTAL=16;EQUATION=3+7+6=16"));
@@ -93,6 +107,7 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
         Assert.True(modeThree.Length>50);
         Assert.All(modeThree,q=>
         {
+            Assert.InRange(q.Parameters["a"],0,10);
             Assert.InRange(q.Parameters["b"],7,9);
             Assert.Equal(0,q.Parameters["c"]);
             Assert.Contains("FIVE IN A ROW",q.Prompt);
