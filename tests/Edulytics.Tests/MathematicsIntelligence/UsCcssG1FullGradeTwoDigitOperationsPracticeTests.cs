@@ -199,6 +199,26 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
+    public void Lesson77RepeatedTenSequencesRejectWrongOraclesAndParameters()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.TenMoreLess;
+        foreach(var (mode,a,b,answer) in new[]{
+            (2,67,30,"RESULT=97"),
+            (2,99,30,"RESULT=69"),
+            (3,45,20,"PLUS=65;MINUS=25;RETURN=45")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode},{"unused",0}};
+            Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            Assert.Equal(answer,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,answer+";EXTRA=0"));
+            p["b"]=b+10;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        }
+    }
+
+    [Fact]
     public void Lesson77AllFourOriginalTenChangePairsHaveStrictOracles()
     {
         const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.TenMoreLess;
