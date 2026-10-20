@@ -122,7 +122,23 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
                 "EDULYTICS SOURCE-GOAL SYNTHESIS: To match the card numbered 95, how many tens and ones must another representation show? Write TENS=number;ONES=number;NUMBER=number;EXPANDED=number+number. Physical pictures and number names are teacher reviewed.":
                 $"Match {tens} ten-rods and {ones} ones with its numeral and expanded expression {10*tens}+{ones}. Write TENS=number;ONES=number;NUMBER=number.",
             ShowMultipleWays=>$"Original Show Me Your Number: represent {total} in TWO mathematically equivalent ways. First use {tens} tens and {ones} ones (= {10*tens}+{ones}). Then trade {Math.Min(tens,mode+1)} full ten-rods for loose ones. Fill both forms: EXPANDED=ten_value+ones;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number. Drawings and gallery walk require teacher review.",
-            WriteNumeral=>$"Write the TWO-DIGIT numeral for {tens} tens and {ones} ones. Write NUMBER=number.",
+            WriteNumeral=>mode==4?
+                (tens,ones) switch
+                {
+                    (1,4)=>"SOURCE-GOAL NUMERAL WRITING: What two-digit number is 1 ten and 4 ones? Write NUMBER=number.",
+                    (9,0)=>"SOURCE-GOAL NUMERAL WRITING: What two-digit number is 9 tens and no ones? Write NUMBER=number.",
+                    (2,5)=>"SOURCE-GOAL NUMERAL WRITING: What number does 20+5 make? Write NUMBER=number.",
+                    (4,7)=>"SOURCE-GOAL NUMERAL WRITING: What number does 7+40 make? Write NUMBER=number.",
+                    (8,2)=>"SOURCE-GOAL NUMERAL WRITING: What two-digit number has 2 ones and 8 tens? Write NUMBER=number.",
+                    _=>"SOURCE-GOAL NUMERAL WRITING: What number does 1+40 make? Write NUMBER=number."
+                }:
+                mode==5?
+                "EDULYTICS WARM-UP CHECK: Of 7, 70, 17 and 71, which is the one-digit numeral containing ZERO tens and SEVEN ones? Write NUMBER=number;TENS=number;ONES=number.":
+                mode==6?
+                "EDULYTICS SOURCE-GOAL REASONING: Clare wrote 702 to label seventy-two cubes. Do you AGREE? How many tens and ones are there? Write DECISION=AGREE/DISAGREE;CLAIM=number;NUMBER=number;TENS=number;ONES=number.":
+                mode==7?
+                "EDULYTICS ORIGINAL EXIT CHECK (not the inaccessible publisher Cool-down): Show 8 full tens and 3 single cubes. Write the correct numeral and expanded tens-plus-ones expression. Write TENS=number;ONES=number;NUMBER=number;EXPANDED=number+number. Teacher reviews drawings and reading aloud.":
+                $"Write the TWO-DIGIT numeral for {tens} tens and {ones} ones. Write NUMBER=number.",
             _=>throw new InvalidOperationException()
         };
         return new(family,prompt,
@@ -155,7 +171,13 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
                 "TENS=9;ONES=5;NUMBER=95;EXPANDED=90+5":
                 $"TENS={t};ONES={o};NUMBER={n}",
             ShowMultipleWays=>$"EXPANDED={10*t}+{o};TENS={t};ONES={o};ALT_TENS={t-Math.Min(t,mode+1)};ALT_ONES={o+10*Math.Min(t,mode+1)}",
-            WriteNumeral=>$"NUMBER={n}",
+            WriteNumeral=>mode==5?
+                "NUMBER=7;TENS=0;ONES=7":
+                mode==6?
+                "DECISION=DISAGREE;CLAIM=702;NUMBER=72;TENS=7;ONES=2":
+                mode==7?
+                "TENS=8;ONES=3;NUMBER=83;EXPANDED=80+3":
+                $"NUMBER={n}",
             _=>throw new InvalidOperationException()
         };
     }
