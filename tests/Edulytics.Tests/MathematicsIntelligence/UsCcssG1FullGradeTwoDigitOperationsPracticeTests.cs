@@ -222,6 +222,30 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
+    public void Lesson80OriginalSymbolComparisonsAreSourceExact()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.CompareSymbols;
+        foreach(var (mode,a,b,answer) in new[]{
+            (4,17,27,"SYMBOL=<"),
+            (5,34,36,"SYMBOL=<"),
+            (6,17,47,"SYMBOL=<")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode},{"unused",0}};
+            Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            Assert.Equal(answer,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"SYMBOL=>"));
+            p["b"]=b+1;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        }
+        var generated=Enumerable.Range(0,600).Select(i=>
+            UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*37+19))).ToArray();
+        foreach(var mode in new[]{4,5,6})
+            Assert.Contains(generated,q=>q.Parameters["mode"]==mode);
+    }
+
+    [Fact]
     public void WordComparisonPrecedesOfficialSymbols()
     {
         var p=new Dictionary<string,int>{{"a",64},{"b",57},{"mode",1},{"unused",0}};
