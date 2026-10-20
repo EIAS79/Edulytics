@@ -83,10 +83,17 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 (mode!=6||(a==9&&b==6))&&
                 (mode!=7||(a==9&&b==6)),
             CenterWithin20=>mode==0?
-                (a>=1&&a<=10&&b>=1&&b<=10&&c==0&&a+b<=20):
+                (a>=0&&a<=10&&b>=0&&b<=10&&a!=b&&c==0&&a+b<=20):
                 mode==2?
-                (a>=1&&a<=9&&b>=1&&b<=9&&c>=1&&c<=10&&a+b+c<=20):
-                (mode==1||mode==3)&&a>=11&&a<=17&&b>=1&&b<=20-a&&c==0,
+                (a>=0&&a<=10&&b>=0&&b<=10&&c>=0&&c<=10&&
+                 a!=b&&a!=c&&b!=c&&a+b+c<=20):
+                mode==1?
+                (a>=1&&a<=19&&b>=1&&b<=20-a&&c==0):
+                mode==3?
+                (a>=11&&a<=20&&b>=0&&b<=a&&c==0):
+                mode==4?
+                (a==9&&b==6&&c==0):
+                mode==5&&(a==6&&b==4&&c==9),
             CountTens=>mode<=3&&a>=1&&a<=6&&b==0&&
                 (mode!=0||a==4),
             MatchTens=>mode<=3&&a>=1&&a<=9&&b==0,
@@ -108,7 +115,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
         int mode=(family==FlexibleSubtract||family==StoryUnknowns)?random.Next(8):
             (family==CountOnOrAway?random.Next(7):
-             (family==CenterTens?random.Next(6):random.Next(4)));
+             (family==CenterTens||family==CenterWithin20?random.Next(6):random.Next(4)));
         int a=0,b=0,c=0;
         if(family is CountOnOrAway or FlexibleSubtract)
         {
@@ -168,14 +175,23 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         {
             if(mode==0)
             {
-                a=random.Next(1,11);b=random.Next(1,11);
+                a=random.Next(0,11);b=random.Next(0,11);
+                while(b==a)b=random.Next(0,11); // Cards drawn without replacement.
             }
             else if(mode==2)
             {
-                a=random.Next(1,10);b=random.Next(1,10);
-                c=random.Next(1,Math.Min(10,20-a-b)+1);
+                a=random.Next(0,11);b=random.Next(0,11);
+                while(b==a)b=random.Next(0,11);
+                c=random.Next(0,Math.Min(10,20-a-b)+1);
+                while(c==a||c==b)
+                    c=random.Next(0,Math.Min(10,20-a-b)+1);
             }
-            else{a=random.Next(11,18);b=random.Next(1,21-a);}
+            else if(mode==1)
+            {a=random.Next(1,20);b=random.Next(1,21-a);}
+            else if(mode==3)
+            {a=random.Next(11,21);b=random.Next(0,a+1);}
+            else if(mode==4){a=9;b=6;} // Source Compare synthesis: 9+6 vs 19−6.
+            else{a=6;b=4;c=9;} // Source four-card hand 6,4,9,8, selected 6+4+9.
         }
         else if(family==CountTens){a=mode==0?4:random.Next(1,7);}
         else if(family==MatchTens){a=random.Next(1,10);}
@@ -252,9 +268,13 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 _=>$"Some birds are here, {b} fly away, and {a} remain. How many were here at START? Write UNKNOWN=number;EQUATION=number-number=number."
             },
             CenterWithin20=>mode==0?
-                $"ORIGINAL 2021 HOW CLOSE? Subtract from 20: select TWO number cards {a}, {b} from a teacher-led four-card hand. Subtract both from 20 to approach zero. Write RESULT=number;EQUATION=20-number-number=number. Partner comparison and winning points are teacher observed.":
+                $"ORIGINAL 2021 HOW CLOSE? Subtract from 20: select TWO distinct number cards {a}, {b} from a teacher-led four-card hand. Subtract both from 20 to approach zero. The original physical 0–10 numeral deck, cards, partner comparison and points are teacher observed. Write RESULT=number;EQUATION=20-number-number=number.":
                 mode==2?
-                $"ORIGINAL 2021 HOW CLOSE? Subtract from 20: select THREE number cards {a}, {b}, {c} from a teacher-led four-card hand. Subtract all three from 20 to approach zero. Write RESULT=number;EQUATION=20-number-number-number=number. The real card game remains teacher-led.":
+                $"ORIGINAL 2021 HOW CLOSE? Subtract from 20: select THREE distinct numeral cards {a}, {b}, {c} from a teacher-led four-card hand. Subtract all three from 20 without a negative result. Write RESULT=number;EQUATION=20-number-number-number=number. The real card game remains teacher-led.":
+                mode==4?
+                "ORIGINAL 2021 COMPARE SYNTHESIS: One card says 9+6 and another says 19−6. Calculate BOTH results and say which is GREATER. Write LEFT=number;RIGHT=number;GREATER=LEFT/RIGHT. Teacher reviews partner cards and explanation.":
+                mode==5?
+                "ORIGINAL 2021 HOW CLOSE SYNTHESIS: Your four numeral cards show 6, 4, 9 and 8. Select THREE cards 6,4,9 to get close to zero when subtracting from 20. Write RESULT=number;EQUATION=20-number-number-number=number. The unused 8 card remains in your hand; a teacher supervises real gameplay.":
                 mode==1?
                 $"COMPARE center: evaluate the source-style addition expression {a}+{b} within 20, then compare it to another partner's expression under teacher supervision. Write RESULT=number.":
                 $"COMPARE center: evaluate the source-style subtraction expression {a}-{b} within 20, then compare it to another partner's expression under teacher supervision. Write RESULT=number.",
@@ -336,8 +356,10 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             },
             CenterWithin20=>mode==0?
                 $"RESULT={20-a-b};EQUATION=20-{a}-{b}={20-a-b}":
-                mode==2?
+                mode==2||mode==5?
                 $"RESULT={20-a-b-c};EQUATION=20-{a}-{b}-{c}={20-a-b-c}":
+                mode==4?
+                "LEFT=15;RIGHT=13;GREATER=LEFT":
                 $"RESULT={(mode==1?a+b:a-b)}",
             CountTens=>$"GROUPS={a};TOTAL={10*a}",
             MatchTens=>mode==3
