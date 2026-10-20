@@ -53,9 +53,17 @@ function build(){
       proof?.originalProtectedPublisherAssessmentVerified===false&&
       proof?.originalPublisherAssessmentNotReproduced===true&&
       proof?.independentCoolDownScoringReviewed===true;
+    // Ordinal 65 is a source-authored OPTIONAL classroom story/poster/gallery task.
+    // Never pretend a numeric generator/verifier could certify authored writing or real gallery work.
+    const teacherOnlyStory=ordinal===65&&
+      proof?.teacherOnlyAuthoredActivityRubricIndependentlyReviewed===true&&
+      proof?.verifiedNoMachineGradeableStoryAuthorship===true&&
+      proof?.teacherEvidenceIsRequired===true&&
+      proof?.practiceGeneratorAndVerifierIndependentlyReviewed===false;
+    const practiceReviewed=proof?.practiceGeneratorAndVerifierIndependentlyReviewed===true||teacherOnlyStory;
     const complete=(proof?.originalStudentAndTeacherTasksCompared===true||ownerAlternative)&&
       proof?.learnerTeachingSourceParityReviewed===true&&
-      proof?.practiceGeneratorAndVerifierIndependentlyReviewed===true&&
+      practiceReviewed&&
       Array.isArray(proof?.openACDefects)&&proof.openACDefects.length===0&&
       typeof proof?.evidenceReference==='string'&&proof.evidenceReference.length>15;
     check(!complete||!explicitGap,'Contradictory A–C closure at '+ordinal);
@@ -69,20 +77,23 @@ function build(){
     const stageB=proof?.learnerTeachingSourceParityReviewed===true
       ?'REVIEW_EVIDENCED':'NOT_PROVEN';
     const stageC=c.originalSourceTaskToPracticeParity==='PARTIAL_OR_UNPROVEN'
-      ?'EXPLICIT_GAP':proof?.practiceGeneratorAndVerifierIndependentlyReviewed===true
+      ?'EXPLICIT_GAP':practiceReviewed
       ?'REVIEW_EVIDENCED':'NOT_PROVEN';
     return {ordinal,lessonCode:lesson.lessonCode,unit:lesson.unit,
       lessonNumber:lesson.lessonNumber,title:lesson.title,
       status,aToCReady:complete,stageA,stageB,stageC,
-      assessmentBasis:ownerAlternative?'OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN':
+      assessmentBasis:teacherOnlyStory?'TEACHER_ONLY_SOURCE_AUTHORED_STORY_WITH_RUBRIC':
+        ownerAlternative?'OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN':
         proof?.originalStudentAndTeacherTasksCompared===true?'ORIGINAL_SOURCE_TASK_REVIEW':'NOT_PROVEN',
       originalPublisherAssessmentVerified:ownerAlternative?false:
-        proof?.originalStudentAndTeacherTasksCompared===true,
+        teacherOnlyStory?null:proof?.originalStudentAndTeacherTasksCompared===true,
       openACDefects:Array.isArray(proof?.openACDefects)?proof.openACDefects:null,
       evidenceReference:typeof proof?.evidenceReference==='string'?proof.evidenceReference:null,
       sourceTasksFullyAudited:a.allOriginalFigureAndStudentTasksFullyAudited===true,
       originalSourceToPracticeProven:c.originalSourceTaskToPracticeParity==='VERIFIED',
-      evidenceFile:file,reason:complete?(ownerAlternative?
+      evidenceFile:file,reason:complete?(teacherOnlyStory?
+        'A-C reviewed source-authored classroom activity and teacher assessment rubric; digital math DOES NOT certify original pupil storytelling':
+        ownerAlternative?
         'A-C closed on owner-approved Edulytics assessment basis; original protected publisher assessment not verified':
         'Affirmative source/teaching/Practice evidence on file'):
         explicitGap?'Stage A source-task audit or Stage C parity explicitly pending':
