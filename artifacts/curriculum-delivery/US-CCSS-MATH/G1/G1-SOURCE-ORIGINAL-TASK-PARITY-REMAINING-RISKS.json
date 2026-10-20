@@ -1131,7 +1131,7 @@
       ],
       "sourceRequiredTaskInterpretation": "Compare and order several quantities and their matching numbers, justifying ordering by tens and ones.",
       "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u04.l17.order_three_numbers; this excerpt-level triage does NOT certify full activity coverage.",
-      "remainingAcademicTaskParityWork": "Review whether Practice orders the required number of quantities and preserves original image/count correspondence.",
+      "remainingAcademicTaskParityWork": "The exact 10-number Student Facing insertion is now implemented in digital mode 4; mode 3 retains generalized historical prompts. Still verify learner-visible original collections, explanation, visual-rights/accessibility, independent .NET correctness and real authenticated scoring/persistence at frozen SHA. No original V1 approval claimed.",
       "candidateDigitalFamily": "usccss.g1.u04.l17.order_three_numbers",
       "assessingMode": "DIGITAL_PRACTICE",
       "sourcePublisherArtworkFullyReviewed": false,
@@ -1146,6 +1146,17 @@
         "source": "Our-CS read-only original 2021 Grade 1 teacher book, unit-N/lesson-N/lesson.html",
         "scope": "Cached original source byte-integrity check only; does not certify full academic task fidelity, original visuals rights or lesson acceptance",
         "noLocalSourceChanges": true
+      },
+      "sourceOriginalMathSubsetRestored": {
+        "sourceCase": "Give five ordered: 1 5 10 50 99; insert five: 49 8 25 98 13",
+        "newDigitalMode": 4,
+        "historicalGeneralizedMode": 3,
+        "preserved": true,
+        "expectedAnswer": "1,5,8,10,13,25,49,50,98,99",
+        "code": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit4FinalQuestions.cs",
+        "originalStudentComparisonAndFigureReview": "PENDING",
+        "gradedRuntime": "PENDING",
+        "academicApproval": "NOT_CLAIMED"
       }
     },
     {
@@ -1233,14 +1244,52 @@
       ],
       "sourceRequiredTaskInterpretation": "Source Student Facing: How many ways can you make 94 using tens and ones? Show thinking using drawings, numbers or words.",
       "currentDigitalOrTeacherContentCandidate": "Practice tests canonical grouping, a second regrouped model and computes total count of all tens/ones partitions; source teaching updated with 94 examples.",
-      "remainingAcademicTaskParityWork": "Actual written/drawn multiple ways and partner mathematical explanation are not automatically evaluated; independence of full textbook illustrations unverified.",
+      "remainingAcademicTaskParityWork": "Digital Practice now includes all four original Bag A/B/C/D base-ten numerical tasks and retains open alternative regroupings. Real student drawings, source representations/figures, authentication/grading/persistence, rights/accessibility and teacher observation remain NOT VERIFIED; full V1 academic acceptance is not claimed.",
       "candidateDigitalFamily": "usccss.g1.u04.l20.equivalent_tens_ones",
       "assessingMode": "DIGITAL_PRACTICE",
       "sourcePublisherArtworkFullyReviewed": false,
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
       "evidenceStage": "ORIGINAL_2021_HTML_TITLES_AND_EXCERPTS_REVIEWED_CANDIDATE_AND_GAPS_IDENTIFIED",
-      "initialSourceReviewCohort": "PRIOR_DETAILED_TARGETED_REVIEW"
+      "initialSourceReviewCohort": "PRIOR_DETAILED_TARGETED_REVIEW",
+      "originalFourBagMathSubsetRestored": {
+        "sourceCases": [
+          {
+            "bag": "A",
+            "given": "5 tens + 2 ones",
+            "expected": "NUMBER=52",
+            "mode": 4
+          },
+          {
+            "bag": "B",
+            "given": "4 tens + 25 ones",
+            "expected": "NUMBER=65",
+            "mode": 5
+          },
+          {
+            "bag": "C",
+            "given": "49 total and 29 ones",
+            "expected": "TENS=2",
+            "mode": 6
+          },
+          {
+            "bag": "D",
+            "given": "36 total and 2 tens",
+            "expected": "ONES=16",
+            "mode": 7
+          }
+        ],
+        "historicOpenChoiceRegroupingModes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "code": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit4FinalQuestions.cs",
+        "teacherDrawingsAndOriginalDiagrams": "PENDING",
+        "gradedStudentPersistence": "PENDING",
+        "academicApproval": "NOT_CLAIMED"
+      }
     },
     {
       "ordinal": 86,
