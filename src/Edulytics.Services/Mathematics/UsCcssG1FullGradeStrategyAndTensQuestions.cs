@@ -58,8 +58,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>7 || (mode==7 && family!=FlexibleSubtract) ||
-            (mode==6 && family!=CountOnOrAway && family!=FlexibleSubtract) ||
+           mode<0||mode>7 || (mode==7 && family!=FlexibleSubtract && family!=StoryUnknowns) ||
+            (mode==6 && family!=CountOnOrAway && family!=FlexibleSubtract && family!=StoryUnknowns) ||
             (c!=0 && family!=CenterWithin20))return false;
         return family switch
         {
@@ -75,10 +75,13 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 (mode!=5||(a==15&&b==8))&&
                 (mode!=6||(a==17&&b==9))&&
                 (mode!=7||(a==16&&b==7)),
-            StoryUnknowns=>((a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
+            StoryUnknowns=>mode<=7&&
+                ((a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
                 ((mode==1||mode==4)&&a==6&&b==12))&&
                 (mode!=2||(a==6&&b==9))&&
-                (mode!=4||((a==6&&b==12)||(a==9&&b==6))),
+                (mode!=4||((a==6&&b==12)||(a==9&&b==6)))&&
+                (mode!=6||(a==9&&b==6))&&
+                (mode!=7||(a==9&&b==6)),
             CenterWithin20=>mode==0?
                 (a>=1&&a<=10&&b>=1&&b<=10&&c==0&&a+b<=20):
                 mode==2?
@@ -103,9 +106,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
-        int mode=family==FlexibleSubtract?random.Next(8):
+        int mode=(family==FlexibleSubtract||family==StoryUnknowns)?random.Next(8):
             (family==CountOnOrAway?random.Next(7):
-             (family==StoryUnknowns||family==CenterTens?random.Next(6):random.Next(4)));
+             (family==CenterTens?random.Next(6):random.Next(4)));
         int a=0,b=0,c=0;
         if(family is CountOnOrAway or FlexibleSubtract)
         {
@@ -157,6 +160,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 if(random.Next(2)==0){a=6;b=12;} // Elena: 18 minus missing number leaves 6.
                 else{a=9;b=6;} // Han: 15 minus missing number leaves 9.
             }
+            else if(mode==6||mode==7)
+            {a=9;b=6;} // Original Han: 9+□=15; or 15−9=□.
             else{a=random.Next(1,11);b=random.Next(1,11);}
         }
         else if(family==CenterWithin20)
@@ -242,6 +247,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 4=>a==6&&b==12?
                     "ORIGINAL 2021 STORY: Elena has 18 counters. She gets rid of SOME and now has 6 counters. How many did Elena get rid of? Show thinking and write UNKNOWN=number;EQUATION=number-number=number.":
                     "ORIGINAL 2021 STORY: Han has 15 pencils, gives SOME pencils to friends and now has 9. How many did he GIVE AWAY? Show thinking and write UNKNOWN=number;EQUATION=number-number=number.",
+                6=>"ORIGINAL 2021 HAN STORY 3: Han has 9 pencils and gets SOME MORE from the art store, ending with 15. How many NEW pencils did he get? Complete 9+□=15. Write UNKNOWN=number;EQUATION=number+number=number. Teacher reviews the explanation and student-created display.",
+                7=>"ORIGINAL 2021 HAN STORY 4: Han has 15 pencils and gives 9 to his friends. How many are left? Complete 15−9=□. Write UNKNOWN=number;EQUATION=number-number=number. Teacher reviews the learner's representation.",
                 _=>$"Some birds are here, {b} fly away, and {a} remain. How many were here at START? Write UNKNOWN=number;EQUATION=number-number=number."
             },
             CenterWithin20=>mode==0?
@@ -323,6 +330,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 2=>$"UNKNOWN={a};EQUATION={a}+{b}={sum}",
                 3=>$"UNKNOWN={a};EQUATION={sum}-{b}={a}",
                 4=>$"UNKNOWN={b};EQUATION={sum}-{b}={a}",
+                6=>"UNKNOWN=6;EQUATION=9+6=15",
+                7=>"UNKNOWN=6;EQUATION=15-9=6",
                 _=>$"UNKNOWN={sum};EQUATION={sum}-{b}={a}"
             },
             CenterWithin20=>mode==0?
