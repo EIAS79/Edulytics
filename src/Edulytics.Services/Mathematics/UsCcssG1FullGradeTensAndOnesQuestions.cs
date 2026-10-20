@@ -26,10 +26,13 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
         p.TryGetValue("tens",out var t)&&t>=1&&t<=9&&
         p.TryGetValue("ones",out var o)&&o>=0&&o<=9&&
         p.TryGetValue("mode",out var m)&&m>=0&&m<=6&&
-        (m<=3||family==MixedCollection)&&
-        (m!=4||(t==5&&o==2))&&
-        (m!=5||(t==4&&o==8))&&
-        (m!=6||(t==3&&o==7))&&
+        (m<=3||family==MixedCollection||family==ReadNumber)&&
+        (family!=MixedCollection||m!=4||(t==5&&o==2))&&
+        (family!=MixedCollection||m!=5||(t==4&&o==8))&&
+        (family!=MixedCollection||m!=6||(t==3&&o==7))&&
+        (family!=ReadNumber||m!=4||(t==3&&o==5))&&
+        (family!=ReadNumber||m!=5||(t==8&&o==6))&&
+        (family!=ReadNumber||m!=6||(t==4&&o==2))&&
         p.TryGetValue("unused",out var z)&&z==0;
     private static readonly string[] TensWords =
         ["","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
@@ -45,13 +48,19 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 tens-and-ones source family");
-        int mode=random.Next(0,family==MixedCollection?7:4);
+        int mode=random.Next(0,family==MixedCollection||family==ReadNumber?7:4);
         int tens=random.Next(2,10),ones=random.Next(0,10);
         if(family==MixedCollection)
         {
             if(mode==4){tens=5;ones=2;} // Source 2021 actual collection of 52 cubes.
             else if(mode==5){tens=4;ones=8;} // Noah's 50 claim for 48 cubes.
             else if(mode==6){tens=3;ones=7;} // Original 37-cube closing representation.
+        }
+        if(family==ReadNumber)
+        {
+            if(mode==4){tens=3;ones=5;} // 3 and 5 number cards: 35 or 53 are both valid.
+            else if(mode==5){tens=8;ones=6;} // Clare 68 / Diego 86 source dialogue.
+            else if(mode==6){tens=4;ones=2;} // Tyler writes 24, but shows 42.
         }
         int total=10*tens+ones;
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
@@ -66,7 +75,13 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
                 mode==6?
                 "EDULYTICS SOURCE-GOAL TASK: Represent the lesson's 3 complete towers of ten and 7 loose cubes. Read the number and write TENS=number;ONES=number;TOTAL=number. Teacher reviews physical representation and reading aloud.":
                 $"Count an organized collection with {tens} FULL groups of ten and {ones} loose objects. No object counted twice. Write TENS=number;ONES=number;TOTAL=number.",
-            ReadNumber=>$"READ this two-digit number: {total}. Express its number NAME (for example 43 = forty-three). Write NAME=word.",
+            ReadNumber=>mode==4?
+                "EDULYTICS TWO-CARD REASONING (source public Make It context): One card shows digit 3, the other digit 5. Form either valid two-digit number, 35 OR 53. Describe tens and ones and its number name. Write DIGITS=3,5;NUMBER=number;TENS=number;ONES=number;NAME=word. Both orderings are accepted; teacher checks the physical cubes and reading aloud.":
+                mode==5?
+                "EDULYTICS SOURCE-GOAL CHECK: A model contains 8 COMPLETE tens and 6 single cubes, including ones shown before the tens. Clare claims 68 and Diego claims 86. Whom do you AGREE with? Write AGREE=CLARE/DIEGO;TENS=number;ONES=number;NUMBER=number;NAME=word. Explain how the numeral places tens first.":
+                mode==6?
+                "EDULYTICS SOURCE-GOAL CHECK: Tyler writes 24 but makes a drawing of FOUR complete tens and TWO loose ones. Do you agree? Write DECISION=AGREE/DISAGREE;DRAWN=number;CLAIM=number;TENS=number;ONES=number. Drawings require teacher review.":
+                $"READ this two-digit number: {total}. Express its number NAME (for example 43 = forty-three). Write NAME=word.",
             MatchRepresentations=>$"Match {tens} ten-rods and {ones} ones with its numeral and expanded expression {10*tens}+{ones}. Write TENS=number;ONES=number;NUMBER=number.",
             ShowMultipleWays=>$"Original Show Me Your Number: represent {total} in TWO mathematically equivalent ways. First use {tens} tens and {ones} ones (= {10*tens}+{ones}). Then trade {Math.Min(tens,mode+1)} full ten-rods for loose ones. Fill both forms: EXPANDED=ten_value+ones;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number. Drawings and gallery walk require teacher review.",
             WriteNumeral=>$"Write the TWO-DIGIT numeral for {tens} tens and {ones} ones. Write NUMBER=number.",
@@ -85,7 +100,13 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
             MixedCollection=>mode==5?
                 "DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50":
                 $"TENS={t};ONES={o};TOTAL={n}",
-            ReadNumber=>$"NAME={NumberWords(t,o)}",
+            ReadNumber=>mode==4?
+                "DIGITS=3,5;NUMBER=35;TENS=3;ONES=5;NAME=thirty-five":
+                mode==5?
+                "AGREE=DIEGO;TENS=8;ONES=6;NUMBER=86;NAME=eighty-six":
+                mode==6?
+                "DECISION=DISAGREE;DRAWN=42;CLAIM=24;TENS=4;ONES=2":
+                $"NAME={NumberWords(t,o)}",
             MatchRepresentations=>$"TENS={t};ONES={o};NUMBER={n}",
             ShowMultipleWays=>$"EXPANDED={10*t}+{o};TENS={t};ONES={o};ALT_TENS={t-Math.Min(t,mode+1)};ALT_ONES={o+10*Math.Min(t,mode+1)}",
             WriteNumeral=>$"NUMBER={n}",
@@ -141,5 +162,9 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? candidate)=>
         Valid(family,p)&&
         (family==ShowMultipleWays?VerifyStudentChosenRegrouping(p,candidate):
+         family==ReadNumber&&p["mode"]==4?
+            GradePersistedAnswer(family,Solve(family,p),candidate)||
+            GradePersistedAnswer(family,
+                "DIGITS=3,5;NUMBER=53;TENS=5;ONES=3;NAME=fifty-three",candidate):
             GradePersistedAnswer(family,Solve(family!,p),candidate));
 }
