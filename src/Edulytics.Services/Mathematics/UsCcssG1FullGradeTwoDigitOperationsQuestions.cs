@@ -211,15 +211,15 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==6?
                 "SOURCE TRUE/FALSE: Is 17 < 47 correct? Write SYMBOL=<, > or = for 17 compared with 47. Explain to a teacher.":
                 mode==7?
-                "SOURCE 2021 TRUE/FALSE: 17<47. Is this true? Write TRUE=YES/NO;CORRECT=number<or>or=number. Explain why to a teacher.":
+                "SOURCE 2021 TRUE/FALSE: 17<47. Is this true? Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
                 mode==8?
-                "SOURCE 2021 TRUE/FALSE: 58=53. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=number<or>or=number. Explain why to a teacher.":
+                "SOURCE 2021 TRUE/FALSE: 58=53. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
                 mode==9?
-                "SOURCE 2021 TRUE/FALSE: 45>63. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=number<or>or=number. Explain why to a teacher.":
+                "SOURCE 2021 TRUE/FALSE: 45>63. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
                 mode==10?
-                "SOURCE 2021 TRUE/FALSE: 39<93. Is this true? Write TRUE=YES/NO;CORRECT=number<or>or=number. Explain why to a teacher.":
+                "SOURCE 2021 TRUE/FALSE: 39<93. Is this true? Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
                 mode==11?
-                "SOURCE 2021 TRUE/FALSE: 4=46. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=number<or>or=number. Explain why to a teacher.":
+                "SOURCE 2021 TRUE/FALSE: 4=46. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
                 mode==12?
                 "SOURCE 2021 PAIR: Circle the true comparison between 21 and 12 (21<12 or 21>12). Write SYMBOL=<, > or = for 21 compared with 12. Explain the greater tens value to a teacher.":
                 $"Compare {a} and {b}. Write the mathematical comparison SYMBOL between the two numbers, one of >, < or =. Write SYMBOL=sign.",
