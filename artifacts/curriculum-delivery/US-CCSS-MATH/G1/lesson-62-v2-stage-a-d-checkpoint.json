@@ -20,7 +20,12 @@
     ],
     "existingCandidateCompared": true,
     "documentedGap": "Original source choice expressions and count routine absent from existing examples; stories already present and preserved",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "original2021CoolDownTitle": "Subtraction Methods (5 minutes)",
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalLessonActivitiesReviewed": "Choral 50→100; Activity 1 five exact 20−15,19−3,13−5,18−9,17−15; Activity 2 12−7, Clare 8+□=15, Kiran 17−□=9"
   },
   "stageB": {
     "method": "Unchanged original Five-Lesson V1 A–D source review and minimal teaching repair",
@@ -28,12 +33,18 @@
     "codePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "codeCommit": "c30d0f59c21408f8c56fdd6c7d17809327368036",
     "versionField": "ChooseSubtractSourceContentVersion",
-    "sourceArtworkCopied": false
+    "sourceArtworkCopied": false,
+    "version": "us-ccss-g1-u03-l25-original-activities-v7",
+    "ownerApprovedEdulyticsExitCheck": "16−7=9 checked by 9+7=16; not publisher original",
+    "persistedV6ToV7UpgradeGuarded": true
   },
   "stageC": {
     "reuseOfExistingPractice": true,
     "existingMathGeneratorAndVerifierPreserved": true,
-    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified"
+    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified",
+    "originalSourceTaskToPracticeParity": "VERIFIED_VISIBLE_STUDENT_TASKS_PLUS_OWNED_EXIT_CHECK",
+    "reviewedMathCorrections": "Family now supports two-digit subtractors; five exact originals mode4, Clare unknown-addend mode5, Kiran missing-subtrahend mode6, independently authored formative mode7; exact wrong-answer tests written",
+    "testsAuthoredNotRun": true
   },
   "stageD": {
     "originalTaskAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
@@ -48,5 +59,22 @@
   "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "academicStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue original V1 review for next ordinal; final frozen-grade evidence required before acceptance"
+  "nextAction": "A-C content closed on owner-approved independent first-party assessment basis, original protected 2021 Cool-down text not verified. Continue ordinal63; defer D, CI and original final acceptance.",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-62-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "assessmentBasis": "OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  }
 }
