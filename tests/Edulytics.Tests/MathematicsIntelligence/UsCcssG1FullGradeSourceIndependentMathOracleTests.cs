@@ -92,7 +92,8 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 _=>$"ANSWER={(mode%2==0?"YES":"NO")}"
             },
             6=>mode==4?$"TRIANGLES={2*3};TRAPEZOIDS={6/3};SAME_OUTLINE=YES":"PARTS=2",
-            7=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
+            7=>mode==4?$"BOTTOM={1+1};TOP={1};TOTAL_CUBES={1+1+1}":
+                mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             8=>mode%2==0?"PART=HALF;PIECES=2":"PART=FOURTH;PIECES=4",
             9=>mode<=1?(mode==0?"PARTS=2;WHOLES=1":"PARTS=4;WHOLES=1"):
                 (mode==2?"SORT=UNEQUAL;PIECES=2":"SORT=EQUAL;PIECES=4"),
