@@ -109,8 +109,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 mode<=3&&a>=2&&a<=7&&b>=1&&
                 (mode%2==0?b<=10-a:b<=a)&&
                 (mode==0?a==3&&b==2:mode==1?a==7&&b==4:true),
-            CenterTens=>(mode==0&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,9-a))||
-                        (mode==1&&a>=2&&a<=7&&b>=1&&b<=a)||
+            CenterTens=>(mode==0&&a>=0&&a<=9&&b>=0&&b<=9-a)||
+                        (mode==1&&a>=0&&a<=9&&b>=0&&b<=a)||
                         (mode>=2&&mode<=3&&a>=11&&a<=17&&b>=1&&b<=20-a)||
                         (mode==4&&a==5&&b==4)||
                         (mode==5&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,9-a)),
@@ -232,8 +232,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         }
         else if(family==CenterTens)
         {
-            if(mode==0){a=random.Next(2,8);b=random.Next(1,Math.Min(a,9-a)+1);}
-            else if(mode==1){a=random.Next(2,8);b=random.Next(1,a+1);}
+            if(mode==0){a=random.Next(0,10);b=random.Next(0,10-a);}
+            else if(mode==1){a=random.Next(0,10);b=random.Next(0,a+1);}
             else if(mode<=3){a=random.Next(11,18);b=random.Next(1,21-a);}
             else if(mode==4){a=5;b=4;} // Exact 2021 teacher example, 90 crossed off and 10 free.
             else{a=random.Next(2,8);b=random.Next(1,Math.Min(a,9-a)+1);}
