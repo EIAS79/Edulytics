@@ -386,6 +386,61 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson66Original2021FortyObjectsAndAllSixTensBagsHaveExactMathContracts()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CountTens;
+        var forty=new Dictionary<string,int>{{"a",4},{"b",0},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,forty));
+        Assert.Equal("GROUPS=4;TOTAL=40",UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,forty));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,forty,"GROUPS=4;TOTAL=40"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,forty,"GROUPS=4;TOTAL=4"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,forty,"GROUPS=40;TOTAL=40"));
+        forty["a"]=5;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,forty));
+        var sourceBags=new[]{(letter:"F",tens:1),(letter:"A",tens:2),
+            (letter:"E",tens:3),(letter:"B",tens:4),(letter:"C",tens:5),
+            (letter:"D",tens:6)};
+        foreach(var (letter,tens) in sourceBags)
+        {
+            var parameters=new Dictionary<string,int>{{"a",tens},{"b",0},{"c",0},{"mode",1}};
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,parameters));
+            Assert.Equal($"GROUPS={tens};TOTAL={10*tens}",
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                $"GROUPS={tens};TOTAL={10*tens}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                $"GROUPS={tens};TOTAL={tens}"));
+            var found=Enumerable.Range(0,800).Select(i=>
+                UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(i*43+11)))
+                .First(q=>q.Parameters["mode"]==1&&q.Parameters["a"]==tens);
+            Assert.Contains($"Bag {letter}",found.Prompt);
+            Assert.Contains($"exactly {10*tens} objects",found.Prompt);
+            Assert.DoesNotContain("automatically certified",found.Prompt);
+        }
+        foreach(var invalid in new[]{
+            new Dictionary<string,int>{{"a",0},{"b",0},{"c",0},{"mode",1}},
+            new Dictionary<string,int>{{"a",7},{"b",0},{"c",0},{"mode",1}},
+            new Dictionary<string,int>{{"a",6},{"b",1},{"c",0},{"mode",1}},
+            new Dictionary<string,int>{{"a",6},{"b",0},{"c",1},{"mode",1}},
+            new Dictionary<string,int>{{"a",4},{"b",0},{"c",0},{"mode",4}}
+        })
+            Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,invalid));
+        var generated=Enumerable.Range(0,600).Select(i=>
+            UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(i*67+29)))
+            .ToArray();
+        Assert.Contains(generated,q=>q.Parameters["mode"]==0);
+        Assert.Contains(generated,q=>q.Parameters["mode"]==1);
+        Assert.All(generated,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)+";FABRICATED=1"));
+        });
+    }
+
+    [Fact]
     public void Original2021TwelvePencilsMinusSevenStoryIsGeneratedAndGradeable()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;
