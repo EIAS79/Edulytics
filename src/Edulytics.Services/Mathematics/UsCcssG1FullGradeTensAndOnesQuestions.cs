@@ -23,11 +23,12 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
         string.Concat((s??"").Where(c=>!char.IsWhiteSpace(c))).ToUpperInvariant();
     public static bool Valid(string? family,IReadOnlyDictionary<string,int> p)=>
         Supports(family)&&p.Count==4&&
-        p.TryGetValue("tens",out var t)&&t>=1&&t<=9&&
+        p.TryGetValue("tens",out var t)&&t>=0&&t<=9&&
+        (t>0||(family==WriteNumeral&&p.TryGetValue("mode",out var zeroMode)&&zeroMode==5))&&
         p.TryGetValue("ones",out var o)&&o>=0&&o<=9&&
         p.TryGetValue("mode",out var m)&&m>=0&&m<=7&&
-        (m<=3||family==MixedCollection||family==ReadNumber||family==MatchRepresentations)&&
-        (m!=7||family==MatchRepresentations)&&
+        (m<=3||family==MixedCollection||family==ReadNumber||family==MatchRepresentations||family==WriteNumeral)&&
+        (m!=7||family==MatchRepresentations||family==WriteNumeral)&&
         (family!=MixedCollection||m!=4||(t==5&&o==2))&&
         (family!=MixedCollection||m!=5||(t==4&&o==8))&&
         (family!=MixedCollection||m!=6||(t==3&&o==7))&&
