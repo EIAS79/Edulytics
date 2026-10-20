@@ -72,3 +72,51 @@ test('all-accepted label cannot itself publish the grade or impersonate source e
   assert.equal(w.nextGradeAllowed,false);
   assert.equal(w.implementation.nextUnstartedOrdinal,147);
 });
+
+test('whole-grade resumption preserves existing checkpoints rather than restarting 90 lessons',()=>{
+  const dir=path.join(ROOT,'artifacts/curriculum-delivery/US-CCSS-MATH/G1');
+  const checkpointOrdinals=fs.readdirSync(dir)
+    .filter(name=>/^lesson-\d+-v2-stage-a-d-checkpoint\.json$/.test(name))
+    .map(name=>Number(name.match(/^lesson-(\d+)-/)[1]));
+  const w=buildWorklist(manifest,copy(),{checkpointOrdinals});
+  const pending=w.items.filter(x=>x.needsNewAcademicEvidence);
+  const accepted=w.items.filter(x=>!x.needsNewAcademicEvidence);
+  assert.equal(w.items.length,96);
+  assert.equal(w.academicVerification.pendingCount,pending.length);
+  assert.equal(w.sourceReviewResumption.checkpointFiles,checkpointOrdinals.length);
+  assert.equal(w.sourceReviewResumption.pendingWithCheckpoint,
+    pending.filter(x=>checkpointOrdinals.includes(x.ordinal)).length);
+  assert.equal(w.sourceReviewResumption.pendingWithoutCheckpoint,
+    pending.filter(x=>!checkpointOrdinals.includes(x.ordinal)).length);
+  assert.deepEqual(w.sourceReviewResumption.pendingWithoutCheckpointOrdinals,
+    pending.filter(x=>!checkpointOrdinals.includes(x.ordinal)).map(x=>x.ordinal));
+  assert.equal(w.sourceReviewResumption.acceptedWithCheckpoint,
+    accepted.filter(x=>checkpointOrdinals.includes(x.ordinal)).length);
+  assert.equal(w.sourceReviewResumption.pendingWithCheckpoint+
+    w.sourceReviewResumption.pendingWithoutCheckpoint,pending.length);
+  assert.ok(w.items.every(x=>x.hasV2Checkpoint!==null));
+  assert.ok(w.items.filter(x=>x.hasV2Checkpoint&&x.needsNewAcademicEvidence).every(x=>
+    x.resumptionClass==='CONTINUE_EXISTING_A_D_CHECKPOINT'));
+  assert.ok(w.items.filter(x=>!x.hasV2Checkpoint&&x.needsNewAcademicEvidence).every(x=>
+    x.resumptionClass==='REUSE_INDEXED_SOURCE_AND_EXISTING_CANDIDATE_THEN_COMPLETE_A_D'));
+  assert.match(w.sourceReviewResumption.note,/NOT an academic acceptance/);
+  assert.equal(w.status,'NO_GO');
+});
+
+test('checkpoint presence cannot manufacture acceptance, suppress missing work or silently add historical lessons',()=>{
+  const baseline=buildWorklist(manifest,copy());
+  assert.equal(baseline.sourceReviewResumption,null);
+  assert.ok(baseline.items.every(x=>x.hasV2Checkpoint===null));
+  for(const invalid of [[50],[147],[51,51],['51'],[51.5]]) {
+    assert.throws(()=>buildWorklist(manifest,copy(),{checkpointOrdinals:invalid}),
+      /Checkpoint snapshot/);
+  }
+  const progress=copy();
+  const w=buildWorklist(manifest,progress,{remainingOnly:true,checkpointOrdinals:[57,80,106]});
+  assert.equal(w.academicVerification.pendingCount,
+    progress.newLessons.filter(x=>x.status!=='INTERNALLY_ACCEPTED').length);
+  assert.equal(w.sourceReviewResumption.pendingWithCheckpoint,3);
+  assert.equal(w.sourceReviewResumption.pendingWithoutCheckpoint,
+    w.academicVerification.pendingCount-3);
+  assert.equal(w.nextGradeAllowed,false);
+});
