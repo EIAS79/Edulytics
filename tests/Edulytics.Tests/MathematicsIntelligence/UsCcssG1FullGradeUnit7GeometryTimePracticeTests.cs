@@ -74,6 +74,48 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
     }
 
     [Theory]
+    [InlineData(4,"RECTANGLE=YES;SQUARE=YES")]
+    [InlineData(5,"RECTANGLE=YES;SQUARE=NO")]
+    [InlineData(6,"RECTANGLE=NO;SQUARE=NO")]
+    public void SourceSquareAndRectangleFiguresRequireCorrectDefiningAnglesAndSides(
+        int mode,string answer)
+    {
+        const string f="usccss.g1.u07.l06.square_and_rectangle_properties";
+        var p=new Dictionary<string,int>{
+            ["a"]=4,["b"]=9,["c"]=0,["mode"]=mode
+        };
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(f,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,answer));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+            mode==4?"RECTANGLE=NO;SQUARE=YES":"RECTANGLE=YES;SQUARE=YES"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+            answer+";STUDENT_DREW=YES"));
+    }
+
+    [Fact]
+    public void RectangleClassificationStillGeneratesFourLegacyAndThreeNewSourceModes()
+    {
+        const string f="usccss.g1.u07.l06.square_and_rectangle_properties";
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<800;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                f,new Random(seed*109+17));
+            modes.Add(item.Parameters["mode"]);
+            var answer=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
+                f,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                f,item.Parameters,answer));
+            if(item.Parameters["mode"]==4)
+                Assert.Contains("five rectangles",item.Prompt);
+            if(item.Parameters["mode"]==6)
+                Assert.Contains("RIGHT angle",item.Prompt);
+        }
+        Assert.Equal(Enumerable.Range(0,7).ToArray(),modes.OrderBy(x=>x));
+    }
+
+    [Theory]
     [InlineData(2,2,"PER_LAYER=4;LAYERS=2;TOTAL_CUBES=8")]
     [InlineData(3,2,"PER_LAYER=6;LAYERS=2;TOTAL_CUBES=12")]
     [InlineData(4,3,"PER_LAYER=12;LAYERS=2;TOTAL_CUBES=24")]
