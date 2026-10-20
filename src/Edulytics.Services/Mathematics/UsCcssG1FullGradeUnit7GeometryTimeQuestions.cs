@@ -45,7 +45,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode))return false;
         return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&
-            mode<=(Index(family)==5?6:((Index(family)==1||Index(family)==2||Index(family)==4||Index(family)==6||Index(family)==7)?4:3))&&
+            mode<=(Index(family)==5?6:Index(family)==8?5:((Index(family)==1||Index(family)==2||Index(family)==4||Index(family)==6||Index(family)==7)?4:3))&&
             (Index(family)!=1||mode!=4||(a>=2&&a<=4&&b>=2&&b<=3))&&
             (Index(family)!=12||mode!=3||a!=b);
     }
@@ -53,7 +53,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unsupported G1 Unit7 original-source family");
-        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==1||i==2||i==4||i==6||i==7?5:4);
+        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==1||i==2||i==4||i==6||i==7?5:4);
         if(i==1&&mode==4){a=random.Next(2,5);b=random.Next(2,4);}
         if(i==12&&mode==3&&b==a)b=a==12?1:a+1;
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
@@ -93,7 +93,11 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 $"SOURCE-INSPIRED MATCH MINE (FIRST-PARTY SPATIAL MODEL #{a}): A partner describes a three-dimensional construction made from TWO equal cubes touching face to face on the bottom row, plus ONE equal cube stacked directly on the LEFT cube. Count how many cubes are in the bottom and top layers and in the whole arrangement. Write BOTTOM=number;TOP=number;TOTAL_CUBES=number. Teacher checks actual partner explanations and physical recreation; a numeric result cannot certify it.":
                 mode%2==0?$"Center numerical task {a}+{b} (sum within 24, classroom shape center assessed separately). Write RESULT=number.":
                 $"Center shape naming card #{a}: a CLOSED flat figure with exactly 3 straight sides. Write SHAPE=name.",
-            8=>mode%2==0?$"A rectangle card #{a} is partitioned into 2 EQUAL-area pieces. What is each piece called? Write PART=name;PIECES=number.":
+            8=>mode==4?
+                $"ORIGINAL EQUAL PIECES SOURCE-INSPIRED MATHEMATICS: FIRST-PARTY circle #{a} and square #{b} are BOTH divided into exactly TWO EQUAL-AREA parts. Name the part and the piece count for EACH whole. Write CIRCLE_PART=HALF;CIRCLE_PIECES=number;SQUARE_PART=HALF;SQUARE_PIECES=number. Physical cutting, folding and children's explanations remain teacher-reviewed.":
+                mode==5?
+                $"ORIGINAL EQUAL PIECES SOURCE-INSPIRED MATHEMATICS: FIRST-PARTY circle #{a} and square #{b} are BOTH divided into FOUR EQUAL-AREA parts. Name the part and piece count for EACH whole. Write CIRCLE_PART=FOURTH;CIRCLE_PIECES=number;SQUARE_PART=FOURTH;SQUARE_PIECES=number. Unequal pieces do NOT count as fourths; actual student folding remains teacher-reviewed.":
+                mode%2==0?$"A rectangle card #{a} is partitioned into 2 EQUAL-area pieces. What is each piece called? Write PART=name;PIECES=number.":
                 $"A circle card #{a} is partitioned into 4 EQUAL-area pieces. What is each piece called? Write PART=name;PIECES=number.",
             9=>mode<=1?(mode==0?
                 $"Two equal halves rejoin to make one WHOLE rectangle; card #{a}. Write PARTS=number;WHOLES=number.":
@@ -153,7 +157,9 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             6=>mode==4?"TRIANGLES=6;TRAPEZOIDS=2;SAME_OUTLINE=YES":"PARTS=2",
             7=>mode==4?"BOTTOM=2;TOP=1;TOTAL_CUBES=3":
                 mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
-            8=>mode%2==0?"PART=HALF;PIECES=2":"PART=FOURTH;PIECES=4",
+            8=>mode==4?"CIRCLE_PART=HALF;CIRCLE_PIECES=2;SQUARE_PART=HALF;SQUARE_PIECES=2":
+                mode==5?"CIRCLE_PART=FOURTH;CIRCLE_PIECES=4;SQUARE_PART=FOURTH;SQUARE_PIECES=4":
+                mode%2==0?"PART=HALF;PIECES=2":"PART=FOURTH;PIECES=4",
             9=>mode<=1?(mode==0?"PARTS=2;WHOLES=1":"PARTS=4;WHOLES=1"):
                 (mode==2?"SORT=UNEQUAL;PIECES=2":"SORT=EQUAL;PIECES=4"),
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
