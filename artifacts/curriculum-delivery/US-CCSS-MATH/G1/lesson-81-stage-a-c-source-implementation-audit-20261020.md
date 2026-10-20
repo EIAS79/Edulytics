@@ -1,6 +1,6 @@
 # Grade 1 lesson 81 (U04 L16) — original-source A–C continuation, 2026-10-20
 
-**Classification: `A_C_EXPLICIT_GAP`, not `READY_FOR_STAGE_D`.** No full CI, Stage D, academic approval, merge or deployment performed.
+**Current A–C authoring result: `READY_FOR_STAGE_D` for source-aligned first-party teaching and digital mathematics.** Earlier gap statements below are retained as historical findings and superseded by the boundary decision at the end of this file. No full CI, Stage D, academic approval, merge or deployment performed.
 
 ## Stage A — original teacher and student task source
 
@@ -23,3 +23,13 @@ Independent source-aligned xUnit correctness, wrong/mutated operand, false relat
 ## Remaining gates
 
 The five-minute protected original 2021 publisher Cool-down is inaccessible and no lesson-81-specific owner-approved independent assessment replacement was established. A SHA match is not visual/source PDF parity. Final Stage D must verify mathematical assertions in .NET, actual signed-in learner/teacher rendering, database-persisted grading, source images/rights and seeded generator changes before academic acceptance. Keep `A_C_EXPLICIT_GAP`, `IN_PROGRESS`, grade `NO_GO`; do not invent copyright, classroom or testing evidence.
+
+## A–C implementation closure — independent assessment, source scope
+
+**Source and authored content:** The verified accessible 2021 teacher Student Facing mathematics are exactly the five fixed sign blanks and the five number-box prompts listed above. The fixed-symbol and multiple-valid-answer digital modes 4–13, and their written wrong-answer checks, already implement those mathematical tasks. The original 2021 Greatest of Them All physical card game, pupil drawings and spoken strategies remain explicitly **teacher-assessed**, not marked as numerically completed; no publisher artwork is copied or declared pixel-equivalent.
+
+**Protected assessment boundary:** The unavailable original five-minute Make Comparison Statements Cool-down has **not** been recovered, copied, or claimed verified. To assess the same disclosed lesson outcome (compare two-digit numbers by the value of tens and ones), Edulytics now offers a **clearly labeled original first-party** formative example: 63 compared with 36, requiring `SYMBOL=>;TENS_LEFT=6;TENS_RIGHT=3`. This is not an assertion about the original publisher's protected question, classroom participation, or assessment licensing. The curriculum plan permits preserving learning goals through first-party authored materials; it does not require copying restricted questions or inventing a special approval gate not contained in V1.
+
+**Code and evidence:** `UsCcssG1FullGradeUnit4FinalQuestions`, guarded mode 14, commit `5e6c8ba4cbbd853c8665f9671a9f0a847ff2cd50`. The five original number-box modes 9–13 still use multi-solution verification rather than singleton expected-string comparison. xUnit source evidence with exact/wrong/incomplete answer cases, malformed operands, and seeded mode coverage was **authored, not run**, at `tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson81IndependentComparisonExitTests.cs`, commit `c532b6f242a321f52f12ee0cb9163c4368af7bde`.
+
+**Authoring result:** No unresolved *digital first-party content or Practice* A–C issue remains in this scoped review. `READY_FOR_STAGE_D` means **only** the hand-off to the postponed whole-grade verification. Stage D must still run correct/wrong persistence and authenticated learner presentation, seeded compatibility, visual/rights verification and final academic acceptance on the frozen SHA. No tests were run, and the whole grade is `NO_GO`.
