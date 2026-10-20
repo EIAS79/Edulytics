@@ -107,6 +107,44 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   const diff=spawnSync('git',['diff','--quiet',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT});
   return diff.status===0;
 }
+// Source-specific criteria are independent minimums from the already-reviewed
+// first-party task rubrics. Authorship selection still comes from the candidate
+// map; a generic "Authorship + Math accuracy" rubric cannot silently erase the
+// four-collection gallery, shape-construction or two-question requirements.
+const REQUIRED_SOURCE_RUBRIC_CRITERIA=Object.freeze({
+  65:['Authorship','Sufficient data','Math accuracy'],
+  74:['Authorship','Math accuracy','Different representations','Original four-collection gallery'],
+  119:['Authorship','Math accuracy','Representation','Peer work'],
+  123:['Authorship','Math accuracy','Source task specificity'],
+  124:['Authorship','Math accuracy','Three source nonexamples'],
+  125:['Authorship','Math accuracy','Five source squares and three source non-squares'],
+  126:['Authorship','Math accuracy','Same-outline alternate construction'],
+  135:['Authorship','Math accuracy','Schedule consistency'],
+  142:['Two original questions','Grounded values','Math and answer'],
+  144:['Authorship','Math accuracy','Three distinct expressions'],
+  146:['Authorship','Valid clues','Solution and consistency']
+});
+function validSourceAuthorshipRubric(ordinal,candidate,rubric) {
+  const minimum=REQUIRED_SOURCE_RUBRIC_CRITERIA[ordinal];
+  if(!minimum||!candidate||!rubric||
+     rubric.lessonOrdinal!==ordinal||rubric.lessonCode!==candidate.lessonCode||
+     rubric.status!==(ordinal===142
+       ?'FIRST_PARTY_TEACHER_REVIEW_RUBRIC_PREPARED_NOT_CERTIFIED'
+       :'TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED')||
+     rubric.academicAcceptance==='INTERNALLY_ACCEPTED'||
+     rubric.gradeRelease==='GO'||
+     !Array.isArray(rubric.teacherRubric)||rubric.teacherRubric.length<minimum.length)
+    return false;
+  const criteria=new Map();
+  for(const entry of rubric.teacherRubric) {
+    if(typeof entry?.criterion!=='string'||!entry.criterion.trim()||
+       typeof entry.required!=='string'||entry.required.trim().length<25||
+       criteria.has(entry.criterion))return false;
+    criteria.set(entry.criterion,entry.required);
+  }
+  return minimum.every(name=>criteria.has(name));
+}
+
 // V1 accepts source-grounded lesson readiness, not synthetic human activity.
 function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha) {
   if(!Array.isArray(e.allowedFamilies)||!Number.isInteger(ordinal)||
@@ -151,20 +189,13 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha)
     if(typeof name!=='string' ||
        !/^lesson-\d+-[a-z0-9-]+-rubric\.json$/.test(name) ||
        !name.startsWith('lesson-'+ordinal+'-'))return false;
-    const rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
-    const isTwoAuthoredRideQuestions=ordinal===142;
-    if(rubric.lessonOrdinal!==ordinal ||
-       rubric.lessonCode!==candidate.lessonCode ||
-       rubric.status!==(isTwoAuthoredRideQuestions
-         ?'FIRST_PARTY_TEACHER_REVIEW_RUBRIC_PREPARED_NOT_CERTIFIED'
-         :'TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED') ||
-       !Array.isArray(rubric.teacherRubric) ||
-       !rubric.teacherRubric.some(x=>x.criterion===
-         (isTwoAuthoredRideQuestions?'Two original questions':'Authorship')) ||
-       !rubric.teacherRubric.some(x=>isTwoAuthoredRideQuestions
-         ?x.criterion==='Math and answer'
-         :x.criterion==='Math accuracy'||x.criterion==='Solution and consistency'))
-      return false;
+    let rubric;
+    try {
+      rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
+    } catch {
+      return false; // Missing or invalid rubric is a denial, not an approval.
+    }
+    if(!validSourceAuthorshipRubric(ordinal,candidate,rubric))return false;
   }
   return true;
 }
@@ -252,4 +283,5 @@ function main(args){
 }
 if(require.main===module){try{main(process.argv.slice(2));}catch(e){console.error(e.stack);process.exitCode=2;}}
 module.exports={initial,validLessonAssessment,evaluate,validEvidenceFile,
-  validGitEvidenceReference,sourceGroundedFamilies,sourceUnchangedSinceProof};
+  validGitEvidenceReference,sourceGroundedFamilies,sourceUnchangedSinceProof,
+  validSourceAuthorshipRubric};
