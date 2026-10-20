@@ -84,7 +84,13 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 $"SHAPE={(mode%2==0?"TRIANGLE":"SQUARE")}",
             3=>$"SIDES={(mode%2==0?3:4)};CORNERS={(mode%2==0?3:4)}",
             4=>mode==4?"TRIANGLES=A,B,C;NONTRIANGLES=D,E,F":"SIDES=3",
-            5=>$"ANSWER={(mode%2==0?"YES":"NO")}",
+            5=>mode switch
+            {
+                4=>"RECTANGLE=YES;SQUARE=YES",
+                5=>"RECTANGLE=YES;SQUARE=NO",
+                6=>"RECTANGLE=NO;SQUARE=NO",
+                _=>$"ANSWER={(mode%2==0?"YES":"NO")}"
+            },
             6=>"PARTS=2",
             7=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             8=>mode%2==0?"PART=HALF;PIECES=2":"PART=FOURTH;PIECES=4",
