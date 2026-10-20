@@ -287,3 +287,48 @@ test('V1 code proof can be scoped to explicit impacted files but cannot omit its
   assert.equal(sourceUnchangedSinceProof(head,head,['src/Edulytics.Core']),false);
   assert.equal(sourceUnchangedSinceProof(head,'bad_sha',['src/Edulytics.Core/placeholder.cs']),false);
 });
+
+
+test('all 11 source-authored rubrics preserve each required ORIGINAL task; generic rubrics must fail closed',()=>{
+  const {validSourceAuthorshipRubric}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
+  const dir='artifacts/curriculum-delivery/US-CCSS-MATH/G1/';
+  const mapped=JSON.parse(fs.readFileSync(path.join(ROOT,dir,'full-grade-practice-candidate-map.json'),'utf8'));
+  const authored=mapped.records.filter(row=>row.assessmentMode!=='DIGITAL_PRACTICE');
+  assert.deepEqual(authored.map(row=>row.ordinal),
+    [65,74,119,123,124,125,126,135,142,144,146]);
+  const essential=new Map([
+    [65,'Sufficient data'],[74,'Original four-collection gallery'],
+    [119,'Peer work'],[123,'Source task specificity'],
+    [124,'Three source nonexamples'],
+    [125,'Five source squares and three source non-squares'],
+    [126,'Same-outline alternate construction'],
+    [135,'Schedule consistency'],[142,'Two original questions'],
+    [144,'Three distinct expressions'],[146,'Valid clues']
+  ]);
+  for(const candidate of authored){
+    const ordinal=candidate.ordinal;
+    const rubric=JSON.parse(fs.readFileSync(path.join(ROOT,dir,candidate.teacherOnlyRubric),'utf8'));
+    assert.equal(validSourceAuthorshipRubric(ordinal,candidate,rubric),true,
+      'Current original-task rubric must be usable: '+ordinal);
+    const sourceSpecific=essential.get(ordinal);
+    const reduced=structuredClone(rubric);
+    reduced.teacherRubric=reduced.teacherRubric.filter(x=>x.criterion!==sourceSpecific);
+    assert.equal(validSourceAuthorshipRubric(ordinal,candidate,reduced),false,
+      'Removing original source task must block: '+ordinal);
+    const blank=structuredClone(rubric);
+    blank.teacherRubric[0].required=' ';
+    assert.equal(validSourceAuthorshipRubric(ordinal,candidate,blank),false);
+    const duplicate=structuredClone(rubric);
+    duplicate.teacherRubric.push({...duplicate.teacherRubric[0]});
+    assert.equal(validSourceAuthorshipRubric(ordinal,candidate,duplicate),false);
+    assert.equal(validSourceAuthorshipRubric(ordinal,candidate,
+      {...rubric,academicAcceptance:'INTERNALLY_ACCEPTED'}),false);
+    assert.equal(validSourceAuthorshipRubric(ordinal,candidate,
+      {...rubric,gradeRelease:'GO'}),false);
+    assert.equal(validSourceAuthorshipRubric(ordinal,
+      {...candidate,lessonCode:'PED:FORGED'},rubric),false);
+  }
+  assert.equal(validSourceAuthorshipRubric(74,authored[1],null),false);
+  assert.equal(validSourceAuthorshipRubric(73,authored[1],
+    JSON.parse(fs.readFileSync(path.join(ROOT,dir,authored[1].teacherOnlyRubric),'utf8'))),false);
+});
