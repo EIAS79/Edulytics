@@ -25,14 +25,19 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
         Supports(family)&&p.Count==4&&
         p.TryGetValue("tens",out var t)&&t>=1&&t<=9&&
         p.TryGetValue("ones",out var o)&&o>=0&&o<=9&&
-        p.TryGetValue("mode",out var m)&&m>=0&&m<=6&&
-        (m<=3||family==MixedCollection||family==ReadNumber)&&
+        p.TryGetValue("mode",out var m)&&m>=0&&m<=7&&
+        (m<=3||family==MixedCollection||family==ReadNumber||family==MatchRepresentations)&&
+        (m!=7||family==MatchRepresentations)&&
         (family!=MixedCollection||m!=4||(t==5&&o==2))&&
         (family!=MixedCollection||m!=5||(t==4&&o==8))&&
         (family!=MixedCollection||m!=6||(t==3&&o==7))&&
         (family!=ReadNumber||m!=4||(t==3&&o==5))&&
         (family!=ReadNumber||m!=5||(t==8&&o==6))&&
         (family!=ReadNumber||m!=6||(t==4&&o==2))&&
+        (family!=MatchRepresentations||m!=4||(t==7&&o==3))&&
+        (family!=MatchRepresentations||m!=5||(t==4&&o==1))&&
+        (family!=MatchRepresentations||m!=6||(t==3&&o==2))&&
+        (family!=MatchRepresentations||m!=7||(t==9&&o==5))&&
         p.TryGetValue("unused",out var z)&&z==0;
     private static readonly string[] TensWords =
         ["","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
@@ -48,7 +53,8 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 tens-and-ones source family");
-        int mode=random.Next(0,family==MixedCollection||family==ReadNumber?7:4);
+        int mode=random.Next(0,family==MatchRepresentations?8:
+            (family==MixedCollection||family==ReadNumber?7:4));
         int tens=random.Next(2,10),ones=random.Next(0,10);
         if(family==MixedCollection)
         {
@@ -61,6 +67,13 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
             if(mode==4){tens=3;ones=5;} // 3 and 5 number cards: 35 or 53 are both valid.
             else if(mode==5){tens=8;ones=6;} // Clare 68 / Diego 86 source dialogue.
             else if(mode==6){tens=4;ones=2;} // Tyler writes 24, but shows 42.
+        }
+        if(family==MatchRepresentations)
+        {
+            if(mode==4){tens=7;ones=3;} // Kiran 3 ones + 7 tens; Priya 70+3.
+            else if(mode==5){tens=4;ones=1;} // Source-style 41 versus 14 comparison.
+            else if(mode==6){tens=3;ones=2;} // Source J/S=32, E=23.
+            else if(mode==7){tens=9;ones=5;} // Source V, numeral 95.
         }
         int total=10*tens+ones;
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
@@ -82,7 +95,15 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
                 mode==6?
                 "EDULYTICS SOURCE-GOAL CHECK: Tyler writes 24 but makes a drawing of FOUR complete tens and TWO loose ones. Do you agree? Write DECISION=AGREE/DISAGREE;DRAWN=number;CLAIM=number;TENS=number;ONES=number. Drawings require teacher review.":
                 $"READ this two-digit number: {total}. Express its number NAME (for example 43 = forty-three). Write NAME=word.",
-            MatchRepresentations=>$"Match {tens} ten-rods and {ones} ones with its numeral and expanded expression {10*tens}+{ones}. Write TENS=number;ONES=number;NUMBER=number.",
+            MatchRepresentations=>mode==4?
+                "EDULYTICS SOURCE-GOAL MATCH: Kiran describes 3 ones and 7 tens; Priya describes 70+3. Are these the SAME number? Write MATCH=YES/NO;TENS=number;ONES=number;NUMBER=number;EXPANDED=number+number. The real source diagrams require teacher review.":
+                mode==5?
+                "EDULYTICS MATCHING-CARDS REASONING: Two cards represent FOUR tens and ONE one. A different card represents ONE ten and FOUR ones. Do the two values match? Write MATCH=YES/NO;FIRST=number;OTHER=number. This independently authored comparison models the source category without claiming copied picture cards.":
+                mode==6?
+                "EDULYTICS SOURCE-GOAL SYNTHESIS: Original cards J and S match 3 tens and 2 ones, while card E shows 2 tens and 3 ones. Which cards match? Write MATCH=J,S;NUMBER=number;OTHER=number. Teacher reviews actual physical card discussion.":
+                mode==7?
+                "EDULYTICS SOURCE-GOAL SYNTHESIS: To match the card numbered 95, how many tens and ones must another representation show? Write TENS=number;ONES=number;NUMBER=number;EXPANDED=number+number. Physical pictures and number names are teacher reviewed.":
+                $"Match {tens} ten-rods and {ones} ones with its numeral and expanded expression {10*tens}+{ones}. Write TENS=number;ONES=number;NUMBER=number.",
             ShowMultipleWays=>$"Original Show Me Your Number: represent {total} in TWO mathematically equivalent ways. First use {tens} tens and {ones} ones (= {10*tens}+{ones}). Then trade {Math.Min(tens,mode+1)} full ten-rods for loose ones. Fill both forms: EXPANDED=ten_value+ones;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number. Drawings and gallery walk require teacher review.",
             WriteNumeral=>$"Write the TWO-DIGIT numeral for {tens} tens and {ones} ones. Write NUMBER=number.",
             _=>throw new InvalidOperationException()
@@ -107,7 +128,15 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
                 mode==6?
                 "DECISION=DISAGREE;DRAWN=42;CLAIM=24;TENS=4;ONES=2":
                 $"NAME={NumberWords(t,o)}",
-            MatchRepresentations=>$"TENS={t};ONES={o};NUMBER={n}",
+            MatchRepresentations=>mode==4?
+                "MATCH=YES;TENS=7;ONES=3;NUMBER=73;EXPANDED=70+3":
+                mode==5?
+                "MATCH=NO;FIRST=41;OTHER=14":
+                mode==6?
+                "MATCH=J,S;NUMBER=32;OTHER=23":
+                mode==7?
+                "TENS=9;ONES=5;NUMBER=95;EXPANDED=90+5":
+                $"TENS={t};ONES={o};NUMBER={n}",
             ShowMultipleWays=>$"EXPANDED={10*t}+{o};TENS={t};ONES={o};ALT_TENS={t-Math.Min(t,mode+1)};ALT_ONES={o+10*Math.Min(t,mode+1)}",
             WriteNumeral=>$"NUMBER={n}",
             _=>throw new InvalidOperationException()
