@@ -38,9 +38,10 @@ public static class UsCcssG1FullGradeNextQuestions
                 (a>=0&&a<=10&&b>=7&&b<=9&&c==0&&a+b<=20):
                 (a>=0&&a<=9&&b>=0&&b<=9&&
                  (mode==1?c>=0&&c<=9:c==0)&&a+b+c<=20),
-            TeenSubtract or TenSubtract=>a>=11&&a<=18&&b>=a-9&&b<=9&&c==0&&
-                (family!=TenSubtract||mode!=2||(a==15&&b==8))&&
-                (family!=TeenSubtract||mode!=3||(a==16&&b==7)),
+            TeenSubtract=>a>=11&&a<=19&&b>=0&&b<=9&&c==0&&
+                (mode!=3||(a==16&&b==7)),
+            TenSubtract=>a>=11&&a<=18&&b>=a-9&&b<=9&&c==0&&
+                (mode!=2||(a==15&&b==8)),
             _=>false
         };
     }
@@ -82,10 +83,14 @@ public static class UsCcssG1FullGradeNextQuestions
                 c=mode==1?random.Next(0,Math.Min(9,20-a-b)+1):0;
             }
         }
+        else if(family==TeenSubtract)
+        {
+            if(mode==3){a=16;b=7;} // Original Elena's 16-crayon story.
+            else{a=random.Next(11,20);b=random.Next(0,10);} // 2021 teen cards 11–19; subtraction cards 0–9.
+        }
         else
         {
-            if(family==TenSubtract&&mode==2){a=15;b=8;} // Original Diego's number-card subtraction.
-            else if(family==TeenSubtract&&mode==3){a=16;b=7;} // Original Elena's 16-crayon story.
+            if(mode==2){a=15;b=8;} // Original Diego's number-card subtraction.
             else{a=random.Next(11,19);b=random.Next(a-9,10);}
         }
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
@@ -116,7 +121,9 @@ public static class UsCcssG1FullGradeNextQuestions
                 :$"How Close? Add to 20: choose TWO cards {a} and {b} and find how close their sum is to 20. Write TOTAL=number;EQUATION=number+number=number.",
             TeenSubtract=>mode==3?
                 "ORIGINAL 2021 STUDENT FACING: Elena has 16 crayons and gives 7 crayons to Diego. How many crayons remain? Show your thinking with drawings, numbers, or words. For this digital method, write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Original classroom drawings, posters and alternative strategies require teacher review.":
-                $"Take From: start with {a} counters and remove {b}. To cross ten, remove the ones first, then part of a ten. Write your subtraction EQUATION. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
+                b<a-10?
+                $"Original 2021 NUMBER CARD SUBTRACTION numeric subskill: start with teen number {a} and subtract digit card {b} (0 through 9). Subtract from the ones WITHOUT crossing ten; forcing a cross-ten split would be wrong. Write DIFFERENCE=number;EQUATION=number-number=number. Physical cards and strategy drawings stay teacher-led.":
+                $"Take From: start with {a} counters and remove {b}. First reach ten, then remove the rest. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Original 2021 number cards range from 0 through 9; card draws and drawings stay teacher-led.",
             TenSubtract=>mode==2?
                 "ORIGINAL 2021 STUDENT FACING: Diego starts Number Card Subtraction with 15, then picks an 8. Show 15 on ten-frames, subtract 8 using a ten, and write the matching EQUATION. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Explain your drawing to a teacher.":
                 $"Use ten as a landmark for {a}-{b}. First subtract enough to get to ten, then subtract the rest. Write the original source subtraction EQUATION too. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
@@ -139,7 +146,9 @@ public static class UsCcssG1FullGradeNextQuestions
             CenterTwoThree=>mode==1
                 ?$"TOTAL={a+b+c};EQUATION={a}+{b}+{c}={a+b+c}"
                 :$"TOTAL={a+b};EQUATION={a}+{b}={a+b}",
-            TeenSubtract=>$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
+            TeenSubtract=>b<a-10
+                ?$"DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}"
+                :$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             TenSubtract=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             _=>throw new InvalidOperationException()
         };
