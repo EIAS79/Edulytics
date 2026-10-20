@@ -15,8 +15,9 @@
     ]
   },
   "stageA": {
-    "originalTaskReview": "Original 49>45 and 45<49, source symbol blanks, open comparison choices and Greatest of Them All",
-    "classification": "CONTENT_REPAIR"
+    "originalTaskReview": "Read original teacher+embedded Student Facing: 49>45 and45<49, physical Greatest of Them All fixed digit card placement game, five sign blanks (56/26,72/78,6/55,92/29,23/23) and five number boxes (□>78,39<□,13=□,□<□,□>□). All canonical full teacher/preparation/student cache hashes match. Original five-minute Make Comparison Statements Cool-down remains authenticated/inaccessible.",
+    "classification": "CANONICAL_2021_SOURCE_VERIFIED_ORIGINAL_TEN_TASKS_COMPARED_WITH_PROTECTED_COOLDOWN",
+    "sourceHashesVerifiedOnOurCs": "2026-10-20"
   },
   "stageB": {
     "existingTeachingReused": true,
@@ -24,11 +25,34 @@
     "sourceCorrectionsCommits": [
       "cde32354e5be2b4fb955930fe04a30672174488c"
     ],
-    "publisherArtworkNotClaimedLicensed": true
+    "publisherArtworkNotClaimedLicensed": true,
+    "sourceCodeCommit": "4853c21b3707c2aa1cbe37b84084002bc9111652",
+    "correctedVersion": "us-ccss-g1-u04-l16-original-student-activities-v3",
+    "exactFiveOpenSourceBoxesAndNonuniqueAnswersReviewed": true,
+    "authoredRegressionCommit": "989c19a0896c89082a3c365d0a409b3b4d0de59b"
   },
   "stageC": {
     "existingSourceSpecificPracticePreserved": true,
-    "teacherOnlyActivitiesNotNumericallyCertified": true
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "independentGeneratorVerifierStaticReview": true,
+    "exactSourceSymbolModes": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "originalOpenEndedNumberBoxModes": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "multipleValidOpenAnswersNotConstrainedToSingleSolverValue": true,
+    "implementationCommit": "207d7a0c6e2f0c7ced419ac560ef42cae2e78458",
+    "authoredWrongAnswerTestsCommit": "fcee38c3091446dc4acb92fb6b381b4c0807522e",
+    "testsAuthoredButNotExecuted": true
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -41,5 +65,22 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required"
+  "nextAction": "Math/source teaching and flexible grading repaired; original publisher protected Cool-down requires specific decision/evidence before READY_FOR_STAGE_D. Continue ordinal82; no CI/Stage D now.",
+  "aToCClosure": {
+    "outcome": "A_C_EXPLICIT_GAP",
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "openACDefects": [
+      "Protected original publisher five-minute Make Comparison Statements Cool-down inaccessible; no explicit lesson-81 owner-approved independent replacement assessment documented"
+    ],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-81-stage-a-c-source-implementation-audit-20261020.md",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true,
+    "seedRegressionRequiredAtFrozenCandidate": true
+  }
 }
