@@ -72,7 +72,8 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                     (mode<4||(mode==4&&a==52)||(mode==5&&a==65)||
                                (mode==6&&a==49)||(mode==7&&a==36)))),
             "usccss.g1.u04.l21.compare_nonstandard_forms" =>
-                a>=20&&a<=99&&b>=20&&b<=99&&c==0&&
+                (mode>=10?a>=8&&a<=10&&b>=6&&b<=7:
+                    a>=20&&a<=99&&b>=20&&b<=99)&&c==0&&
                 (mode switch
                 {
                     2=>a==82&&b==72,
