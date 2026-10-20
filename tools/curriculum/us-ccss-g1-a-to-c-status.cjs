@@ -101,6 +101,10 @@ function buildRangeReport(from,to,snapshot=build()){
   const lessons=snapshot.lessons.filter(x=>x.ordinal>=from&&x.ordinal<=to);
   check(lessons.length===to-from+1,'Incomplete canonical Grade 1 range');
   const count=status=>lessons.filter(x=>x.status===status).length;
+  const pendingACOrdinals=lessons.filter(x=>x.status!==STATUS.accepted&&!x.aToCReady)
+    .map(x=>x.ordinal);
+  const skipACReworkOrdinals=lessons.filter(x=>x.status===STATUS.accepted||x.aToCReady)
+    .map(x=>x.ordinal);
   return {
     scope:`G1 ${from}-${to}`,
     summary:{
@@ -109,6 +113,9 @@ function buildRangeReport(from,to,snapshot=build()){
       readyForStageD:count(STATUS.ready),
       knownACGaps:count(STATUS.gap),
       reviewClosureUnproven:count(STATUS.unproven),
+      pendingACOrdinals,
+      skipACReworkOrdinals,
+      nextUnclosedOrdinal:pendingACOrdinals[0]??null,
       ciTriggeredByReport:false,
       releaseDecision:snapshot.summary.releaseDecision
     },
@@ -117,6 +124,7 @@ function buildRangeReport(from,to,snapshot=build()){
       lessonNumber:x.lessonNumber,title:x.title,
       stageA:x.stageA,stageB:x.stageB,stageC:x.stageC,
       aToCStatus:x.status,readyForStageD:x.aToCReady,
+      skipACRework:x.status===STATUS.accepted||x.aToCReady,
       openACDefects:x.openACDefects??null,
       evidenceReference:x.evidenceReference??null,
       evidenceFile:x.evidenceFile??null,
