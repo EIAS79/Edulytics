@@ -25,19 +25,33 @@
       "Student Facing Show each collection in as many ways as you can. Visit at least 4 collections. Collection 1 Collection 2 Collection 3 Collection 4 Student Response Teacher"
     ],
     "sourceSpecificFinding": "Original gallery visits AT LEAST FOUR collections, using multiple equivalent drawings, words and equations",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "accessible2021TeacherAndStudentActivitiesReviewed": true,
+    "sourceRequirements": "Student's own two number cards, actual cube collection, as many equivalent representations as possible, visit at least FOUR real classmates' collections",
+    "sourceExamples": "warm-up C/D 35, Kiran 31, synthesis 73",
+    "originalProtectedPublisherCheckpointVerbatimVerified": false,
+    "allOriginalFigureAndStudentTasksFullyAudited": null
   },
   "stageB": {
     "originalRichV2Reused": true,
     "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
-    "publisherAssetsRedistributed": false
+    "publisherAssetsRedistributed": false,
+    "contentVersion": "us-ccss-g1-u04-l09-original-student-activities-v7",
+    "ownerFirstPartyLearnerAuthoringInstructionsReviewed": true,
+    "teacherOnlyRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-74-original-own-collection-representation-rubric.json",
+    "oldV6ToOnlyL09V7Guarded": true
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
     "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "originalSourceTaskToPracticeParity": "NUMERIC_EQUIVALENCE_SUBSET_PLUS_TEACHER_OBSERVED_AUTHORSHIP",
+    "mathGeneratorAndAlternativeRepresentationVerifierReviewed": true,
+    "originalPhysicalAuthorshipAndFourGalleryVisitsNotAutoGraded": true,
+    "teacherOnlyAuthenticLearnerEvidenceRequired": true,
+    "sourceNumericOraclesAuthoredNotExecuted": true
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -61,5 +75,20 @@
     "authenticLearnerTaskAtFrozenSha": "PENDING",
     "teacherObservation": "NOT_CLAIMED",
     "academicAcceptance": "NOT_CLAIMED"
-  }
+  },
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "sourceAuthoredTeacherRubricReviewed": true,
+    "teacherObservedOriginalTaskEvidenceStillRequiredAtD": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-74-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalPublisherProtectedCheckpointVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "Academic A-C teaching, math subset, and teacher-only authored activity rubric reviewed. Actual child creation/teacher observation/gallery and CI Stage D require frozen grade. Next ordinal 75."
 }
