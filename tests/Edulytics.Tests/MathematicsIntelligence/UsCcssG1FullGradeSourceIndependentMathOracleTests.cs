@@ -102,7 +102,8 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
             11=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             12=>mode<=1?$"TIME={a}:00":$"SAME={(mode==2?"YES":"NO")};TIME={a}:00",
-            13=>mode<=1?$"MINUTES=30;HOUR={a}":
+            13=>mode==4?"ORDER=C,A,B":
+                mode<=1?$"MINUTES=30;HOUR={a}":
                 $"COLOR={(mode==2?"BLUE":"RED")};TIME={a}:{(mode==2?"00":"30")};WORDS={(mode==2?ClockWord(a)+"_oclock":"half_past_"+ClockWord(a))}",
             14=>mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
             15=>$"TIME={a}:{(mode%2==0?"00":"30")}",
