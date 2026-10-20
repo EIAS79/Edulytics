@@ -21,7 +21,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string StoryLessonCode="PED:US-CCSS-MATH:G1:U03:L26";
     private const string CenterFourLessonCode="PED:US-CCSS-MATH:G1:U03:L27";
     public const string CountRelationSourceContentVersion="us-ccss-g1-u03-l24-original-activities-v7";
-    public const string ChooseSubtractSourceContentVersion="us-ccss-g1-u03-l25-original-activities-v6";
+    public const string ChooseSubtractSourceContentVersion="us-ccss-g1-u03-l25-original-activities-v7";
     public const string StorySourceContentVersion="us-ccss-g1-u03-l26-original-activities-v6";
     public const string CenterFourSourceContentVersion="us-ccss-g1-u03-l27-original-activities-v6";
     private const string UnitFourCollectionLessonCode="PED:US-CCSS-MATH:G1:U04:L01";
@@ -242,12 +242,14 @@ Original 2021 pencil story: 12 pencils are on a table; a teacher picks up 7, lea
 Original unknown-change story: Clare starts with 8 glue sticks and finishes with 15; 8+7=15, so the unknown additional amount is 7.
 Original missing-subtrahend story: Kiran has 17 crayons and 9 after sharing; 17-8=9, so he shared 8 crayons.
 Original 2021 student expressions: 20-15=5, 19-3=16, 13-5=8, 18-9=9 and 17-15=2. Select a suitable method for each, explaining why.
-Original 2021 full story trio: 12-7=5 pencils; Clare 8+□=15 glue sticks gives □=7; Kiran 17-□=9 crayons gives □=8. Preserve each unknown's position.",
+Original 2021 full story trio: 12-7=5 pencils; Clare 8+□=15 glue sticks gives □=7; Kiran 17-□=9 crayons gives □=8. Preserve each unknown's position.
+EDULYTICS ORIGINAL EXIT CHECK (first-party, not publisher 2021 Cool-down): Solve 16-7 by a suitable strategy, then check that 9+7=16. The numeric fields verify the difference and addition check; a teacher reviews explanations and drawings.",
             @"Step 1: Read the starting and removed amounts.
 Step 2: Ask whether taking away, counting on or crossing ten will be simplest.
 Step 3: Represent the steps with counters, a ten-frame or a true subtraction/addition equation.
 Step 4: Find the difference without reversing the order.
-Step 5: Check the answer using the related addition fact.",
+Step 5: Check the answer using the related addition fact.
+Step 6: EDULYTICS exit check: choose a valid method for 16-7=9 and confirm 9+7=16. Counting on from 7 by 3 to 10 then 6 more gives nine; taking away seven is also valid. Discuss why your chosen method makes sense instead of claiming an automatic score proves a drawing.",
             @"Do not confuse a short count-on jump with the total number: 20-15 is 5, not 15. Avoid false equality chains: 14-4=10-4=6 is invalid, but 14-8=14-4-4=6 is correct.",
             @"I can select and explain a helpful subtraction method within 20."),
         new(@"PED:US-CCSS-MATH:G1:U03:L26",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-26/preparation.html",@"66dfe676b9c7e8a0d7d9efdda13be6a4dceaa7c8d3108fb6dd9e3d400fe5c4b3",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.6" },
@@ -600,6 +602,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==TeenSubtractLessonCode&&previous=="us-ccss-g1-u03-l22-teen-2021-source-v6")||
          (lesson.LessonCode==TenSubtractLessonCode&&(previous=="us-ccss-g1-u03-l23-ten-2021-source-v6"||previous=="us-ccss-g1-u03-l23-ten-2021-source-v7"))||
          (lesson.LessonCode==CountRelationLessonCode&&previous=="us-ccss-g1-u03-l24-original-activities-v6")||
+         (lesson.LessonCode==ChooseSubtractLessonCode&&previous=="us-ccss-g1-u03-l25-original-activities-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
