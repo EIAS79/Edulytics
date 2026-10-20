@@ -72,6 +72,8 @@ test('ordered ten-lesson range report reads existing evidence without running D 
     assert.equal(item.stageC,original.stageC);
     assert.equal(item.readyForStageD,original.aToCReady);
     assert.equal(item.aToCStatus,original.status);
+    assert.equal(item.skipACRework,
+      item.readyForStageD||item.aToCStatus===STATUS.accepted);
     if(item.readyForStageD){
       assert.equal(item.nextAction,'HOLD_AT_STAGE_D');
       assert.equal(item.stageA,'REVIEW_EVIDENCED');
@@ -85,6 +87,12 @@ test('ordered ten-lesson range report reads existing evidence without running D 
        item.stageC==='EXPLICIT_GAP')
       assert.equal(item.readyForStageD,false);
   }
+  assert.deepEqual(report.summary.pendingACOrdinals,
+    report.lessons.filter(x=>!x.skipACRework).map(x=>x.ordinal));
+  assert.deepEqual(report.summary.skipACReworkOrdinals,
+    report.lessons.filter(x=>x.skipACRework).map(x=>x.ordinal));
+  assert.equal(report.summary.nextUnclosedOrdinal,
+    report.summary.pendingACOrdinals[0]??null);
   assert.equal(report.summary.previouslyInternallyAccepted+
     report.summary.readyForStageD+report.summary.knownACGaps+
     report.summary.reviewClosureUnproven,10);
