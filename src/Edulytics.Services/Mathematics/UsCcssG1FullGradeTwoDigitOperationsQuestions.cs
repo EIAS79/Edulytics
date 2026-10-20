@@ -24,10 +24,18 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
-           z!=0||mode<0||mode>3)return false;
+           z!=0||mode<0||mode>8||(mode>3&&family!=AddTens))return false;
         return family switch
         {
-            AddTens=>a>=20&&a<=79&&b>=10&&b<=30&&b%10==0&&a+b<=99,
+            AddTens=>mode<=3?
+                (a>=20&&a<=79&&b>=10&&b<=30&&b%10==0&&a+b<=99):
+                mode==4?
+                ((a==37&&b==20)||(a==60&&b==23)||(a==48&&b==50)||
+                 (a==54&&b==20)||(a==30&&b==65)):
+                mode==5?(a==80&&b==5):
+                mode==6?(a==70&&b==1):
+                mode==7?(a==20&&b==6):
+                (a==46&&b==30),
             TenMoreLess=>a>=20&&a<=89&&b==10,
             CompareWords or CompareSymbols=>a>=20&&a<=99&&b>=20&&b<=99,
             CenterReview=>mode switch
@@ -43,8 +51,20 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(4),a,b;
-        if(family==AddTens){a=random.Next(20,80);b=random.Next(1,Math.Min(3,(99-a)/10)+1)*10;}
+        int mode=random.Next(family==AddTens?9:4),a,b;
+        if(family==AddTens)
+        {
+            if(mode==4)
+            {
+                var tasks=new[]{(37,20),(60,23),(48,50),(54,20),(30,65)};
+                (a,b)=tasks[random.Next(tasks.Length)];
+            }
+            else if(mode==5){a=80;b=5;}
+            else if(mode==6){a=70;b=1;}
+            else if(mode==7){a=20;b=6;}
+            else if(mode==8){a=46;b=30;}
+            else{a=random.Next(20,80);b=random.Next(1,Math.Min(3,(99-a)/10)+1)*10;}
+        }
         else if(family==TenMoreLess){a=random.Next(20,90);b=10;}
         else if(family is CompareWords or CompareSymbols)
         {
