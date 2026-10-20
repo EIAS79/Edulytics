@@ -25,7 +25,11 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
         Supports(family)&&p.Count==4&&
         p.TryGetValue("tens",out var t)&&t>=1&&t<=9&&
         p.TryGetValue("ones",out var o)&&o>=0&&o<=9&&
-        p.TryGetValue("mode",out var m)&&m>=0&&m<=3&&
+        p.TryGetValue("mode",out var m)&&m>=0&&m<=6&&
+        (m<=3||family==MixedCollection)&&
+        (m!=4||(t==5&&o==2))&&
+        (m!=5||(t==4&&o==8))&&
+        (m!=6||(t==3&&o==7))&&
         p.TryGetValue("unused",out var z)&&z==0;
     private static readonly string[] TensWords =
         ["","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
@@ -41,13 +45,27 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 tens-and-ones source family");
-        int tens=random.Next(2,10),ones=random.Next(0,10),mode=random.Next(0,4),total=10*tens+ones;
+        int mode=random.Next(0,family==MixedCollection?7:4);
+        int tens=random.Next(2,10),ones=random.Next(0,10);
+        if(family==MixedCollection)
+        {
+            if(mode==4){tens=5;ones=2;} // Source 2021 actual collection of 52 cubes.
+            else if(mode==5){tens=4;ones=8;} // Noah's 50 claim for 48 cubes.
+            else if(mode==6){tens=3;ones=7;} // Original 37-cube closing representation.
+        }
+        int total=10*tens+ones;
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
             {["tens"]=tens,["ones"]=ones,["mode"]=mode,["unused"]=0};
         if(!Valid(family,p))throw new InvalidOperationException("Invalid base-ten representation");
         string prompt=family switch
         {
-            MixedCollection=>$"Count an organized collection with {tens} FULL groups of ten and {ones} loose objects. No object counted twice. Write TENS=number;ONES=number;TOTAL=number.",
+            MixedCollection=>mode==4?
+                "EDULYTICS SOURCE-GOAL TASK: A real classroom collection contains 52 separate cubes. Arrange every cube into full groups of ten and leftover ones. How many tens and ones? Write TENS=number;ONES=number;TOTAL=number. Teacher reviews actual grouped objects.":
+                mode==5?
+                "EDULYTICS REASONING TASK based on the public 2021 Noah scenario: Noah says a model with four complete 10-cube towers and a fifth INCOMPLETE 8-cube tower contains 50 cubes. Do you AGREE or DISAGREE? A full ten needs 10 cubes. Write DECISION=AGREE/DISAGREE;TENS=number;ONES=number;TOTAL=number;CLAIM=number. Explain why to your teacher.":
+                mode==6?
+                "EDULYTICS SOURCE-GOAL TASK: Represent the lesson's 3 complete towers of ten and 7 loose cubes. Read the number and write TENS=number;ONES=number;TOTAL=number. Teacher reviews physical representation and reading aloud.":
+                $"Count an organized collection with {tens} FULL groups of ten and {ones} loose objects. No object counted twice. Write TENS=number;ONES=number;TOTAL=number.",
             ReadNumber=>$"READ this two-digit number: {total}. Express its number NAME (for example 43 = forty-three). Write NAME=word.",
             MatchRepresentations=>$"Match {tens} ten-rods and {ones} ones with its numeral and expanded expression {10*tens}+{ones}. Write TENS=number;ONES=number;NUMBER=number.",
             ShowMultipleWays=>$"Original Show Me Your Number: represent {total} in TWO mathematically equivalent ways. First use {tens} tens and {ones} ones (= {10*tens}+{ones}). Then trade {Math.Min(tens,mode+1)} full ten-rods for loose ones. Fill both forms: EXPANDED=ten_value+ones;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number. Drawings and gallery walk require teacher review.",
@@ -64,7 +82,9 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
         int t=p["tens"],o=p["ones"],mode=p["mode"],n=10*t+o;
         return family switch
         {
-            MixedCollection=>$"TENS={t};ONES={o};TOTAL={n}",
+            MixedCollection=>mode==5?
+                "DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50":
+                $"TENS={t};ONES={o};TOTAL={n}",
             ReadNumber=>$"NAME={NumberWords(t,o)}",
             MatchRepresentations=>$"TENS={t};ONES={o};NUMBER={n}",
             ShowMultipleWays=>$"EXPANDED={10*t}+{o};TENS={t};ONES={o};ALT_TENS={t-Math.Min(t,mode+1)};ALT_ONES={o+10*Math.Min(t,mode+1)}",
