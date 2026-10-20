@@ -262,6 +262,13 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("7 towers of ten in Bag C",earlierUnit4Text(4));
         Assert.Contains("90-70=20",earlierUnit4Text(4));
         Assert.Contains("Check It Off Stage 2",earlierUnit4Text(5));
+        Assert.Contains("Source card domain includes ZERO and NINETY",earlierUnit4Text(5));
+        Assert.Contains("90-10=80",earlierUnit4Text(5));
+        Assert.Contains("0 through 90",earlierUnit4Text(5));
+        Assert.Contains("50-40=10",earlierUnit4Text(5));
+        var sourceCenter=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L05");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(doc,sourceCenter,"us-ccss-g1-u04-l05-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u04-l05-original-activities-v7",CommonCoreG1FullGradeStartingContentCorrections.UnitFourCenterSourceContentVersion);
         Assert.DoesNotContain("Check It Off Stage 3",earlierUnit4Text(5));
         Assert.Contains("90 is already marked",earlierUnit4Text(5));
         Assert.Contains("30+7=37",unit4Text(6));
