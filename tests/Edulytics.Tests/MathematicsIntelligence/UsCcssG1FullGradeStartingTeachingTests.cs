@@ -245,8 +245,8 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",unit4Text(6));
         Assert.Contains("3 full tens and 7 ones",unit4Text(6));
         Assert.Contains("35 OR 53",unit4Text(7));
-        Assert.Contains("Clare's 68",unit4Text(7));
-        Assert.Contains("Diego's 86",unit4Text(7));
+        Assert.Contains("Clare claims a shown model is 68",unit4Text(7));
+        Assert.Contains("Diego claims 86",unit4Text(7));
         Assert.Contains("Tyler's drawing of 4 tens and 2 ones is 42",unit4Text(7));
         Assert.Contains("any number from 60 through 69",unit4Text(7));
         var readTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L07");
