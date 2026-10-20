@@ -125,7 +125,12 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha)
   if(!expected||e.allowedFamilies.length!==expected.length||
       e.allowedFamilies.some((family,i)=>family!==expected[i]))
       return false;
-  const needsDigital=ordinal!==65;
+  const assessmentMode=candidate.assessmentMode;
+  if(!['DIGITAL_PRACTICE','DIGITAL_AND_SOURCE_AUTHORED_TASK',
+       'SOURCE_AUTHORED_TASK'].includes(assessmentMode))return false;
+  const needsDigital=assessmentMode!=='SOURCE_AUTHORED_TASK';
+  const needsAuthorship=assessmentMode!=='DIGITAL_PRACTICE';
+  if(!needsAuthorship && candidate.teacherOnlyRubric!=null)return false;
   if(needsDigital && (e.allowedFamilies.length===0 ||
       e.realPracticeGradingPersisted!==true ||
       e.independentCorrectAndWrongAnswersVerified!==true ||
@@ -134,27 +139,20 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha)
       !validProof(e.runtimePracticeProofPath,e.runtimePracticeProofSha256,
         e.runtimePracticeProofReference,releaseSha,checkFile)))return false;
   if(!needsDigital && e.allowedFamilies.length!==0)return false;
-  if([65,74,119,123,124,125,126,135,142,144,146].includes(ordinal)) {
+  if(needsAuthorship) {
     if(e.originalAuthorshipTaskReviewed!==true ||
        e.learnerAuthoredTaskRendered!==true ||
        e.teacherReviewRubricAvailable!==true ||
        e.actualTeacherObservationNotClaimed!==true)return false;
-    const name=ordinal===65?
-      'lesson-65-learner-authored-story-review-rubric.json':
-      ordinal===74?'lesson-74-original-own-collection-representation-rubric.json':
-      ordinal===119?'lesson-119-puppies-tulips-authorship-rubric.json':
-      [123,124,125,126].includes(ordinal)?
-        'lesson-'+ordinal+'-original-shape-creation-rubric.json':
-      ordinal===135?'lesson-135-original-sunday-schedule-authorship-rubric.json':
-      ordinal===142?'lesson-142-original-two-ride-questions-authorship-rubric.json':
-      ordinal===144?'lesson-144-original-class-number-book-authorship-rubric.json':
-      'lesson-146-number-riddle-authorship-rubric.json';
+    // The original source task, not a maintenance list of lesson numbers,
+    // decides whether real learner-authored instructions and a first-party
+    // teacher rubric are mandatory for this lesson.
+    const name=candidate.teacherOnlyRubric;
+    if(typeof name!=='string' ||
+       !/^lesson-\\d+-[a-z0-9-]+-rubric\\.json$/.test(name) ||
+       !name.startsWith('lesson-'+ordinal+'-'))return false;
     const rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
     const isTwoAuthoredRideQuestions=ordinal===142;
-    // The original U08 L06 asks for TWO learner-authored, solved ride-table
-    // questions. Its pre-existing source rubric uses descriptive criterion
-    // names rather than the generic one-question authorship convention.
-    // Never let numeric compare-difference Practice substitute for the task.
     if(rubric.lessonOrdinal!==ordinal ||
        rubric.lessonCode!==candidate.lessonCode ||
        rubric.status!==(isTwoAuthoredRideQuestions
