@@ -441,6 +441,65 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson67MatchesEveryTenThroughNinetyAndGradesOwnedSeventyExit()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.MatchTens;
+        for(int tens=1;tens<=9;tens++)
+        {
+            for(int mode=0;mode<=3;mode++)
+            {
+                var p=new Dictionary<string,int>{{"a",tens},{"b",0},{"c",0},{"mode",mode}};
+                Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+                var solved=UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p);
+                Assert.Contains($"TENS={tens}",solved);
+                Assert.Contains($"NUMBER={tens*10}",solved);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,solved));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    solved.Replace($"NUMBER={tens*10}",$"NUMBER={tens}")));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,solved+";FAKE=1"));
+            }
+        }
+        var exit=new Dictionary<string,int>{{"a",7},{"b",0},{"c",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,exit));
+        const string correct="TENS=7;NUMBER=70;WORD=SEVENTY";
+        Assert.Equal(correct,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,exit));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,exit,correct));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "WORD=seventy;NUMBER=70;TENS=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "TENS=7;NUMBER=70")); // All three representations must be checked.
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "TENS=7;NUMBER=70;WORD=SIXTY"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "TENS=7;NUMBER=7;WORD=SEVENTY"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            correct+";TENS=7"));
+        exit["a"]=8;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,exit));
+        exit["a"]=7;
+        exit["b"]=1;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,exit));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(
+            UsCcssG1FullGradeStrategyAndTensQuestions.CountTens,exit));
+        var generated=Enumerable.Range(0,950).Select(i=>
+            UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(43*i+19)))
+            .ToArray();
+        Assert.True(generated.Count(q=>q.Parameters["mode"]==4)>80);
+        Assert.All(generated,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            if(q.Parameters["mode"]==4)
+            {
+                Assert.Equal(7,q.Parameters["a"]);
+                Assert.Contains("EDULYTICS ORIGINAL EXIT CHECK",q.Prompt);
+                Assert.DoesNotContain("ORIGINAL 2021",q.Prompt);
+            }
+        });
+    }
+
+    [Fact]
     public void Original2021TwelvePencilsMinusSevenStoryIsGeneratedAndGradeable()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;
