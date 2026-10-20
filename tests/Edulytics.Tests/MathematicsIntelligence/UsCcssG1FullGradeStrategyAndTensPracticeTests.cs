@@ -554,6 +554,69 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson69ExactSixSourceTensEquationsAndOriginalEdulyticsInverseExit()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveMultipleTens;
+        var original=new[]{
+            (a:4,b:5,mode:4,total:90,tens:9),
+            (a:2,b:6,mode:4,total:80,tens:8),
+            (a:4,b:4,mode:4,total:80,tens:8),
+            (a:8,b:3,mode:5,total:50,tens:5),
+            (a:7,b:2,mode:5,total:50,tens:5),
+            (a:9,b:7,mode:5,total:20,tens:2)
+        };
+        foreach(var (a,b,mode,total,tens) in original)
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
+            string expected=$"TENS={tens};TOTAL={total}";
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+            Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                $"TENS={tens};TOTAL={tens}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                expected+";EXTRA=1"));
+        }
+        var jada=new Dictionary<string,int>{{"a",3},{"b",2},{"c",0},{"mode",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,jada,"TENS=5;TOTAL=50"));
+        var tyler=new Dictionary<string,int>{{"a",7},{"b",4},{"c",0},{"mode",1}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,tyler,"TENS=3;TOTAL=30"));
+        var exit=new Dictionary<string,int>{{"a",5},{"b",3},{"c",0},{"mode",6}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,exit));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "ADDITION=80;SUBTRACTION=50"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "ADDITION=80"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "ADDITION=80;SUBTRACTION=60"));
+        exit["a"]=6;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,exit));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",8},{"b",4},{"c",0},{"mode",4}}));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",7},{"b",3},{"c",0},{"mode",5}}));
+        var sampled=Enumerable.Range(0,1190).Select(i=>
+            UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(37*i+71)))
+            .ToArray();
+        for(int mode=0;mode<=6;mode++)
+            Assert.True(sampled.Count(q=>q.Parameters["mode"]==mode)>80);
+        foreach(var (a,b,mode,_,_) in original)
+            Assert.Contains(sampled,q=>q.Parameters["mode"]==mode&&
+                q.Parameters["a"]==a&&q.Parameters["b"]==b);
+        Assert.All(sampled,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            if(q.Parameters["mode"]==6)
+            {
+                Assert.Contains("EDULYTICS ORIGINAL EXIT CHECK",q.Prompt);
+                Assert.DoesNotContain("ORIGINAL 2021 ACTIVITY",q.Prompt);
+            }
+        });
+    }
+
+    [Fact]
     public void Original2021TwelvePencilsMinusSevenStoryIsGeneratedAndGradeable()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;
