@@ -9,7 +9,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
 {
     public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5";
     private const string ZooLessonCode="PED:US-CCSS-MATH:G1:U03:L20";
-    public const string ZooSourceContentVersion="us-ccss-g1-u03-l20-zoo-2021-source-v6";
+    public const string ZooSourceContentVersion="us-ccss-g1-u03-l20-zoo-2021-source-v7";
     private const string CenterLessonCode="PED:US-CCSS-MATH:G1:U03:L21";
     private const string TeenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L22";
     private const string TenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L23";
@@ -590,6 +590,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
         CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
+         (lesson.LessonCode==ZooLessonCode&&previous=="us-ccss-g1-u03-l20-zoo-2021-source-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
