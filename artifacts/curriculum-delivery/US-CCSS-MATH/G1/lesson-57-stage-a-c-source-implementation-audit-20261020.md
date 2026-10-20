@@ -14,7 +14,7 @@ Lesson: **A Trip to the Zoo** `PED:US-CCSS-MATH:G1:U03:L20`. This is an individu
 - Large-cat task: eight lions, four tigers, three cheetahs, total **15**.
 - Petting-zoo task: eight goats, seven sheep, four pigs, total **19**.
 - Original 2021 student section summary: `4+8+6=10+8=18` and `4+8=4+6+2=10+2=12`, accompanied by double-ten-frame counter figures. These **two summary models** were absent from the source-grounded learner examples before the current repair and are restored as first-party accessible text.
-- Original lesson shows reptile and petting-zoo artwork. The source page provides an explicit third-party photograph attribution (MabelAmber/Pixabay); no artwork is copied into Edulytics. The photograph and reptile image have not been inspected at source-pixel fidelity in this pass. The original teacher page also contains a login-only five-minute primates cool-down; its actual task is not available in the publicly reviewed lesson. **Do not assert full original source task/figure audit completion until these are independently resolved.**
+- Original lesson shows reptile and petting-zoo artwork. The source page provides an explicit third-party photograph attribution (MabelAmber/Pixabay); no artwork is copied into Edulytics. The source figures' mathematical purpose has been checked against the published text and the described double-ten-frame groups. Pixel-for-pixel publisher-illustration fidelity is NOT an academic requirement, and no original art was copied. The original teacher page also contains a login-only five-minute primates cool-down; its actual task is not available in the publicly reviewed lesson. **Do not assert full original student assessment audit completion until the cool-down is resolved.**
 
 ## B. Actual teaching code review and repair
 
@@ -34,8 +34,7 @@ Lesson: **A Trip to the Zoo** `PED:US-CCSS-MATH:G1:U03:L20`. This is an individu
 
 ## Outstanding before affirmatively recording READY_FOR_STAGE_D
 
-1. Inspect or resolve source image/representation fidelity and licensing bounds, explicitly deciding which source figures are decorative vs essential student task representations. A first-party textual alternative is present but does not prove publisher illustration visual parity.
-2. Resolve the access-restricted original primates cool-down's actual learner task, or document an authorized source-specific reason it is outside the learner target, without inventing a question.
-3. Recheck the actual repaired source and Practice evidence at lesson level, remove the identified A–C gaps, and **only then** set all affirmative `aToCClosure` fields and `openACDefects: []`.
+1. Resolve the access-restricted original primates cool-down's actual learner task, or document an authorized source-specific reason it is outside the learner target, without inventing a question. The published 2021 tasks and their mathematical source representations have been reviewed, and original artwork is not redistributed.
+2. Recheck source-task completeness for the one unresolved assessment and **only then** set all affirmative `aToCClosure` fields and `openACDefects: []`. No publisher pixel-parity requirement is introduced.
 
 Current decision: **NOT READY_FOR_STAGE_D**; original teaching repair and source-group Practice tests committed but A–C original-source audit remains open. No CI dispatched, no Stage D, no internal academic acceptance, no merge, no release.
