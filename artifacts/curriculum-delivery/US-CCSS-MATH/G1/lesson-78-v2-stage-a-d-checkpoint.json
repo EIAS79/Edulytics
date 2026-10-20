@@ -23,15 +23,22 @@
       "Student Facing Choose a center. Grab and Count [visual] [visual] <div class=\"im-c-modal__",
       "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
     ],
-    "sourceSpecificFinding": "Original within-20 number talk, 70 and 20 center card choices, and 8+7+5=20 from source hand",
-    "classification": "CONTENT_REPAIR"
+    "sourceSpecificFinding": "Re-read 2021 original teacher/student-facing Number Talk 10+4,9+4,9+6,15-6; Activity 1 Grab and Count/Five in a Row/Check It Off; Activity 2 How Close/Number Puzzles/Shake and Spill; teacher numeric examples 70 and 20 ->50 or90, 8+7+5=20; no original L13 Cool-down. Canonical teacher, preparation and student HTML hashes matched sourceBasis.",
+    "classification": "CANONICAL_SOURCE_VERIFIED_ACTUAL_TEACHER_STUDENT_FACING_TASKS_REVIEWED",
+    "originalTeacherStudentActivityAndTeacherSynthesisIndependentlyReviewed": true,
+    "originalSourceFullTeacherSha256Rechecked": true,
+    "originalSourceStudentAndPreparationSha256Rechecked": true
   },
   "stageB": {
     "originalRichV2Reused": true,
     "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
-    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "teachingRepairCommit": "5f1285a27fb52dba4b0bad44601ea00c5a9eed52",
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
-    "publisherAssetsRedistributed": false
+    "publisherAssetsRedistributed": false,
+    "version": "us-ccss-g1-u04-l13-original-student-activities-v7",
+    "sixNamedOriginalCentersAndStagesRestored": true,
+    "migrationRegressionTestCommit": "54776c82be98e05f24ba5cc6e15a063785067ce2",
+    "learnerSourceParityStaticReviewPassed": true
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
@@ -47,7 +54,25 @@
       "8+7+5=20 using three distinct cards from 8,4,1,7,5",
       "9+6=15 and 15-6=9"
     ],
-    "testsAuthoredButNotExecuted": true
+    "testsAuthoredButNotExecuted": true,
+    "independentStaticGeneratorVerifierReview": true,
+    "scopedModes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "exactSourceOracles": [
+      "ADD=90;SUBTRACT=50",
+      "TOTAL=20;CARDS=8+7+5",
+      "ADD=15;SUBTRACT=9"
+    ],
+    "negativeAnswerAndOperandTestsAuthoredButNotExecuted": true,
+    "teacherOnlyCenterParticipationNotMachineCertified": true,
+    "testsExecuted": false
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -64,19 +89,24 @@
   "gradeRelease": "NO_GO",
   "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "aToCClosure": {
-    "outcome": "A_C_EXPLICIT_GAP",
-    "allAvailableOriginalStudentTeacherTasksCompared": false,
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
     "originalProtectedPublisherAssessmentVerified": false,
-    "learnerTeachingSourceParityReviewed": false,
-    "practiceGeneratorAndVerifierIndependentlyReviewed": false,
-    "openACDefects": [
-      "Full teacher/student source and original visual center activity parity review pending",
-      "Independent first-party learner teaching and verifier review pending",
-      "Original 2021 protected assessment boundary and first-party scoring review pending"
-    ],
+    "originalPublisherAssessmentNotReproduced": true,
+    "originalLessonCoolDownPresentInAccessibleTeacherSource": false,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "originalCenterMenuAndTeacherOnlyBoundaryReviewed": true,
+    "canonicalSourceSHA256Matched": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-78-stage-a-c-source-implementation-audit-20261020.md",
+    "codeCommit": "5f1285a27fb52dba4b0bad44601ea00c5a9eed52",
+    "teachingTestsCommit": "54776c82be98e05f24ba5cc6e15a063785067ce2",
     "ciExecutedDuringAuthoring": false,
     "stageDExecuted": false,
-    "testsAuthoredButNotExecuted": true
+    "testsAuthoredButNotExecuted": true,
+    "teacherOnlyActivityBoundary": "Original six pupil-choice physical centers, collaboration and explanations require teacher-observed evidence; only specified digital numeric subproblems can be auto-graded"
   },
-  "nextAction": "Complete lesson 78 independent source/teaching/Practice audit before claiming READY_FOR_STAGE_D; preserve physical center and partner-play teacher-only boundary."
+  "nextAction": "A-C evidence and corrections completed for lesson78; READY_FOR_STAGE_D authoring only. Stage D/CI/authenticated grading deferred until frozen whole grade. Continue ordinal79."
 }
