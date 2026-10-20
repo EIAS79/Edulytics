@@ -302,6 +302,59 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
     }
 
     [Theory]
+    [InlineData(101,"TENS=10;ONES=1;TOTAL=101")]
+    [InlineData(110,"TENS=11;ONES=0;TOTAL=110")]
+    [InlineData(120,"TENS=12;ONES=0;TOTAL=120")]
+    public void OriginalU06L16CollectionGroupingIncludesOneHundredTwenty(
+        int count,string answer)
+    {
+        const string family="usccss.g1.u06.l16.center_mixed_math";
+        var p=new Dictionary<string,int>{{"a",count},{"b",0},{"c",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,"TENS=10;ONES=0;TOTAL=100"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,answer+";PUPIL=OBSERVED"));
+        var outside=new Dictionary<string,int>(p){["a"]=121};
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,outside));
+        outside["a"]=100;
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,outside));
+    }
+
+    [Fact]
+    public void OriginalU06L16NumberTalkPreservesEquivalentEightySixExpressions()
+    {
+        const string family="usccss.g1.u06.l16.center_mixed_math";
+        var p=new Dictionary<string,int>{{"a",65},{"b",21},{"c",0},{"mode",5}};
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        const string correct="FIRST=86;SECOND=86;EQUAL=YES";
+        Assert.Equal(correct,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,correct));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,"FIRST=86;SECOND=85;EQUAL=NO"));
+        var illegal=new Dictionary<string,int>(p){["b"]=20};
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,illegal));
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<720;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                family,new Random(seed*107+17));
+            modes.Add(item.Parameters["mode"]);
+            var expected=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,expected));
+            if(item.Parameters["mode"]==4)
+                Assert.InRange(item.Parameters["a"],101,120);
+            if(item.Parameters["mode"]==5)
+                Assert.Contains("65+20+1 and 65+21",item.Prompt);
+        }
+        Assert.Equal(Enumerable.Range(0,6).ToArray(),modes.OrderBy(x=>x));
+    }
+
+    [Theory]
     [InlineData(7,4,9,1,"ORDER=B,A,C")]
     [InlineData(8,20,12,1,"ORDER=A,C,B")]
     [InlineData(17,9,4,1,"ORDER=C,B,A")]
