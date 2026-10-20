@@ -20,7 +20,22 @@
     ],
     "existingCandidateCompared": true,
     "documentedGap": "Existing teaching included first Elena task but did not fully represent opposite story and Han's four original story forms",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "allAccessibleOriginalStudentAndTeacherTasksCompared": true,
+    "originalWarmup": "15−10,15−12,16−10,16−13",
+    "originalElenaPairs": [
+      "6+□=18 =>12",
+      "18−□=6 =>12"
+    ],
+    "originalHanFourPositions": [
+      "□+9=15 =>6",
+      "15−□=9 =>6",
+      "9+□=15 =>6",
+      "15−9=□ =>6"
+    ],
+    "protectedSourceSectionDCheckpointVerified": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": null
   },
   "stageB": {
     "method": "Unchanged original Five-Lesson V1 A–D source review and minimal teaching repair",
@@ -28,12 +43,26 @@
     "codePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "codeCommit": "c30d0f59c21408f8c56fdd6c7d17809327368036",
     "versionField": "StorySourceContentVersion",
-    "sourceArtworkCopied": false
+    "sourceArtworkCopied": false,
+    "contentVersion": "us-ccss-g1-u03-l26-original-activities-v7",
+    "v6ToV7PersistedUpgradeGuarded": true,
+    "allFourOriginalHanUnknownRolesInLearnerText": true
   },
   "stageC": {
     "reuseOfExistingPractice": true,
     "existingMathGeneratorAndVerifierPreserved": true,
-    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified"
+    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
+    "storyGeneratorModesReviewed": [
+      1,
+      2,
+      4,
+      6,
+      7
+    ],
+    "newOriginalHanStory3AndStory4Generated": true,
+    "independentCorrectWrongMalformedAndSeededMathTestsAuthored": true,
+    "testsExecuted": false
   },
   "stageD": {
     "originalTaskAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
@@ -48,5 +77,17 @@
   "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "academicStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue original V1 review for next ordinal; final frozen-grade evidence required before acceptance"
+  "nextAction": "A-C source math and first-party code closed for original publicly accessible 2021 Elena/Han tasks. Hold at D; proceed 64; no CI until grade freeze.",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-63-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalPublisherCheckpointVerbatimVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  }
 }
