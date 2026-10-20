@@ -44,3 +44,33 @@ test('each proposed family maps to one real registered C# contract, never unrela
     assert.deepEqual(planned,actual.get(row.lessonCode)??[],row.lessonCode);
   }
 });
+
+test('all source-authored original Grade 1 goals are represented in existing release gate and academic matrix',()=>{
+  const root='artifacts/curriculum-delivery/US-CCSS-MATH/G1/';
+  const matrix=read(root+'full-grade-academic-evidence-matrix.json');
+  const risks=read(root+'G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json');
+  const authored=x.records
+    .filter(row=>row.assessmentMode==='SOURCE_AUTHORED_TASK'||
+      row.assessmentMode==='DIGITAL_AND_SOURCE_AUTHORED_TASK')
+    .map(row=>row.ordinal);
+  // Eight mixed source-authored tasks plus the original authored-only L65.
+  assert.deepEqual(authored,[65,119,123,124,125,126,135,142,146]);
+  const releaseSource=fs.readFileSync(path.join(ROOT,
+    'tools/curriculum/us-ccss-full-grade-gate.cjs'),'utf8');
+  const section=releaseSource.match(/if\(\[([\d,]+)\]\.includes\(ordinal\)\)/);
+  assert.ok(section,'Author-authored original-source gate missing');
+  const gateOrdinals=section[1].split(',').map(Number);
+  assert.deepEqual(gateOrdinals,authored,
+    'Numeric-only approval must never bypass a source-authored original lesson');
+  for(const ordinal of authored){
+    const mapping=x.records[ordinal-51];
+    const evidence=matrix.records[ordinal-51];
+    const original=risks.rows[ordinal-51];
+    assert.equal(evidence.lessonCode,mapping.lessonCode);
+    assert.equal(original.lessonCode,mapping.lessonCode);
+    assert.equal(evidence.authoredOriginalWorkRubricRequired,true);
+    assert.equal(original.assessingMode,mapping.assessmentMode);
+    assert.equal(evidence.internalEvidenceBasedAcademicAcceptance,
+      ordinal>=57?false:evidence.internalEvidenceBasedAcademicAcceptance);
+  }
+});
