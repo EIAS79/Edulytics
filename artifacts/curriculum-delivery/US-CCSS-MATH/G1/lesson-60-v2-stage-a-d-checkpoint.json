@@ -25,13 +25,17 @@
     "confirmedGap": "Original mental warm-up, explicit Diego/Andre comparison, and 14−5/13−6 student-facing follow-on tasks missing from source-based worked examples",
     "classification": "CONTENT_REPAIR",
     "original2021TeacherStudentActivityAndMethodsCompared": true,
-    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
     "sourceGoalAgainstEffectiveAuthenticatedContentApproved": null,
-    "coolDownOriginalEditionStatus": "BLOCKED_SOURCE_2021_LOGIN_RESTRICTED_COOLDOWN_SUBTRACT_FROM_14",
+    "coolDownOriginalEditionStatus": "2021_PUBLISHER_COOLDOWN_PROTECTED_NOT_VIEWED_OWNER_AUTHORIZED_INDEPENDENT_EDULYTICS_REPLACEMENT",
     "sourceCoolDownTitleVerifiedInOriginal2021Html": "Subtract from 14 (5 minutes)",
     "publishedLaterEditionCoolDownNotUsedAs2021Proof": true,
     "original2021CoolDownIndependentConfirmation": "NOT_FOUND_IN_PUBLIC_2021_SOURCES_OR_LOCAL_UNAUTHENTICATED_2021_CACHE",
-    "coolDownLater2024TextRejectedAs2021Proof": true
+    "coolDownLater2024TextRejectedAs2021Proof": true,
+    "allAccessible2021TeacherAndStudentActivitiesCompared": true,
+    "originalProtectedPublisherAssessmentVerbatimVerified": false,
+    "coolDownNotCopiedOrReconstructed": true,
+    "ownerAuthorizedSourceGoalEquivalentAssessment": true
   },
   "stageB": {
     "existingTeachingReused": true,
@@ -40,9 +44,12 @@
     "teachingCommit": "9afccf0b8680b947ba80b9cf9828cea0a9a78589",
     "method": "Original V1 source comparison and surgical repair; no change in academic procedure",
     "sourceArtworkCopied": false,
-    "newLessonSpecificContentVersion": "us-ccss-g1-u03-l23-ten-2021-source-v7",
+    "newLessonSpecificContentVersion": "us-ccss-g1-u03-l23-ten-2021-source-v8",
     "studentSourceCardAndAlternativeTenFrameMethodsRestored": true,
-    "persistedV6ToV7UpgradeGuarded": true
+    "persistedV6ToV7UpgradeGuarded": true,
+    "independentEdulyticsCoolDownAddedToLearnerLesson": true,
+    "independentCoolDownMath": "14-8=6; TO10=4; REST=4; original publisher task NOT claimed",
+    "persistedV6AndV7ToV8UpgradeGuarded": true
   },
   "stageC": {
     "reusedPracticeFamily": "usccss.g1.u03.l23.ten.subtract_in_steps",
@@ -51,7 +58,7 @@
     "practicePath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeNextQuestions.cs",
     "practiceCommit": null,
     "limitations": "Digital numerics do not prove pupil drawings, physical/partner participation or teacher-observed strategy explanations",
-    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "originalSourceTaskToPracticeParity": "VERIFIED_PUBLIC_SOURCE_AND_OWNER_APPROVED_EDULYTICS_ASSESSMENT_ALTERNATIVE",
     "reviewedAvailableSourceStudentCardAndDiegoAndreMath": true,
     "zeroAndNoCrossingOriginalCardArithmeticFixed": true,
     "independentCorrectWrongAndMalformedMathTestsAuthored": true,
@@ -75,6 +82,15 @@
       "negativeSourcePairAndDeterministicGenerationTestsAuthored": true,
       "testsExecuted": false,
       "changeCommit": "2c9a08aa3d79b2e741e535ea3722898ce7b26111"
+    },
+    "ownerAuthoredIndependentCoolDown": {
+      "mode": 4,
+      "family": "usccss.g1.u03.l23.ten.subtract_in_steps",
+      "a": 14,
+      "b": 8,
+      "answer": "TO10=4;REST=4;DIFFERENCE=6;EQUATION=14-8=6",
+      "strategyAndNumericVerifierReviewed": true,
+      "sourceCopyrightedAssessmentOriginalVerified": false
     }
   },
   "stageD": {
@@ -95,16 +111,21 @@
   "currentAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "aToCClosure": {
     "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
     "learnerTeachingSourceParityReviewed": true,
     "practiceGeneratorAndVerifierIndependentlyReviewed": true,
-    "openACDefects": [
-      "Obtain authoritative original 2021 Kendall Hunt Grade 1 U3 Lesson 23 five-minute Subtract from 14 cool-down student task; compare with first-party content and Practice. 2024 task is not accepted as 2021 proof."
-    ],
+    "openACDefects": [],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-60-stage-a-c-source-implementation-audit-20261020.md",
-    "outcome": "A_C_EXPLICIT_GAP",
-    "ciExecutedDuringAuthoring": false,
+    "outcome": "READY_FOR_STAGE_D",
+    "assessmentBasis": "OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN",
     "stageDExecuted": false,
-    "testsAuthoredButNotExecuted": true
+    "ciExecutedDuringAuthoring": false,
+    "testsAuthoredButNotExecuted": true,
+    "deferredD": "Actual final-SHA .NET xUnit tests, authenticated learner rendering and saved scoring, security/rights/accessibility and original-source assessment provenance disclosed"
   },
-  "nextAction": "Remain at ordinal 60. A–C blocked only by original 2021 publisher-authenticated 'Subtract from 14' cool-down source-task verification; all supported numeric teaching and Practice repairs complete. Do not claim READY_FOR_STAGE_D, merge, CI or advance to ordinal 61."
+  "nextAction": "Stage A/B/C Edulytics authoring closed under owner-approved independent source-goal assessment. HOLD at Stage D, no CI, proceed in canonical order to ordinal 61. Do not claim verbatim publisher assessment parity."
 }
