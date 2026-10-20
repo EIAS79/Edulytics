@@ -41,10 +41,15 @@ public sealed class UsCcssG1FullGradeNinetySixPracticeCoverageTests
                         x.StartsWith("usccss.g1.u03.l28.",StringComparison.Ordinal));
                     continue;
                 }
-                var f=Assert.Single(contract.AllowedQuestionFamilies);
-                Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f),code+" | "+f);
-                Assert.True(LessonPracticeInteractionRegistry.TryResolve(f,out var shape),f);
-                Assert.Equal(LessonPracticeInteractionKind.ContractDriven,shape!.InteractionKind);
+                var families=contract.AllowedQuestionFamilies;
+                Assert.Equal(unit==6&&n==4?2:1,families.Count);
+                Assert.Equal(families.Count,families.Distinct(StringComparer.Ordinal).Count());
+                foreach(var f in families)
+                {
+                    Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f),code+" | "+f);
+                    Assert.True(LessonPracticeInteractionRegistry.TryResolve(f,out var shape),f);
+                    Assert.Equal(LessonPracticeInteractionKind.ContractDriven,shape!.InteractionKind);
+                }
                 checkedDigital++;
             }
         Assert.Equal(96,unique.Count);
@@ -65,17 +70,22 @@ public sealed class UsCcssG1FullGradeNinetySixPracticeCoverageTests
         foreach(var code in gradeNewCodes.Where(x=>x!="PED:US-CCSS-MATH:G1:U03:L28"))
         {
             var contract=LessonPracticeContractRegistry.All.Single(x=>x.LessonCode==code);
-            var f=Assert.Single(contract.AllowedQuestionFamilies);
+            var families=contract.AllowedQuestionFamilies;
+            Assert.Equal(code=="PED:US-CCSS-MATH:G1:U06:L04"?2:1,families.Count);
             var engine=new ExactSkillContractQuestionEngine();
-            var questions=engine.Generate(code,f,[f],
-                ExactSkillQuestionDifficulty.Standard,10,20261019,[]);
-            Assert.Equal(10,questions.Count);
-            Assert.Equal(10,questions.Select(x=>x.Prompt).Distinct(StringComparer.Ordinal).Count());
-            foreach(var item in questions)
+            foreach(var f in families)
             {
-                Assert.True(ExactSkillContractQuestionEngine.Verify(f,item.Parameters,item.CorrectAnswer));
-                Assert.False(ExactSkillContractQuestionEngine.Verify(f,item.Parameters,
-                    item.CorrectAnswer+";UNVERIFIED=1"));
+                var questions=engine.Generate(code,f,[f],
+                    ExactSkillQuestionDifficulty.Standard,10,20261019,[]);
+                Assert.Equal(10,questions.Count);
+                Assert.Equal(10,questions.Select(x=>x.Prompt).Distinct(StringComparer.Ordinal).Count());
+                foreach(var item in questions)
+                {
+                    Assert.True(ExactSkillContractQuestionEngine.Verify(
+                        f,item.Parameters,item.CorrectAnswer));
+                    Assert.False(ExactSkillContractQuestionEngine.Verify(
+                        f,item.Parameters,item.CorrectAnswer+";UNVERIFIED=1"));
+                }
             }
         }
     }
