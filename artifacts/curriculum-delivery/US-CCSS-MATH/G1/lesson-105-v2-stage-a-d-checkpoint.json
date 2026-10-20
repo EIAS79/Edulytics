@@ -34,20 +34,27 @@
       "response": "For EACH of six prompts, show drawings, numbers or words; choose and explain third-object tool; correctly distinguish WIDTH from length and door opening; not automatically inferred from simulated numbers."
     },
     "lessonSynthesis": "Compare objects that cannot be lined up by using a movable intermediary object; classroom choices and genuine measuring remain teacher supervised.",
-    "classification": "ORIGINAL_SOURCE_TEXT_CHECKED_EXISTING_CANDIDATE_REUSE_PENDING_EFFECTIVE_RENDER_AND_FINAL_CI",
-    "sourceVisualsPublisherRights": "NOT_VERIFIED"
+    "classification": "SOURCE_CONFIRMED_CONTENT_REPAIR_PRE_FINAL_VERIFICATION",
+    "sourceVisualsPublisherRights": "NOT_VERIFIED",
+    "matchedOriginalStudentTasksToEffectiveBaseRichV2": true,
+    "actualPreRepairBasePackReference": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json",
+    "verifiedMissingBeforeRepair": "Base learner translation only described generic indirect length and equal-unit counting; it omitted the original Mai/Clare walking route activity and all six precise Student Facing furniture prompts."
   },
   "stageB": {
     "reusedCandidate": true,
     "actualLearnerRichV2ParityIndependentlyConfirmedAtCurrentHead": false,
-    "newTeachingEdit": false,
-    "remaining": "Compare all six original Student Facing prompts with actual effective Rich V2; do not assert a digital numeric example substitutes live classroom measurement."
+    "newTeachingEdit": true,
+    "remaining": "Compare all six original Student Facing prompts with actual effective Rich V2; do not assert a digital numeric example substitutes live classroom measurement.",
+    "repairFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "repairCommit": "514124e4c7eca0314ca4bb240bc52926296f2561",
+    "repairDetails": "Preserved existing learner renderer and digital family; added first-party source-specific goals, the two original activities, all six written/drawing/numeric furniture prompts, shared string comparison, necessary length-vs-width and teacher-only boundaries. Original source figure geometry is not inferred from hypothetical example measurements."
   },
   "stageC": {
     "existingCandidateFamily": "usccss.g1.u06.l03.choose_indirect_comparison",
     "familyReusedFromRiskRegister": true,
     "independentCorrectWrongMalformedAtCurrentHead": "PENDING_FROZEN_SHA",
-    "teacherOnlyBoundary": "Real pupil-selected tool, measured furniture/doors, explanation drawings and source figures cannot be scored as completed by numeric Practice."
+    "teacherOnlyBoundary": "Real pupil-selected tool, measured furniture/doors, explanation drawings and source figures cannot be scored as completed by numeric Practice.",
+    "digitalScope": "Existing 4 numeric modes for indirect longer, Mai/Clare shorter, teacher/student desk width fit; NOT a claim of completing six real classroom tasks."
   },
   "stageD": {
     "githubCiManuallyRunDuringAuthoring": false,
@@ -55,9 +62,11 @@
     "gradingAndPersistedAttempts": "PENDING",
     "visualRightsAccessibility": "PENDING",
     "sourceSpecificTestExecution": "NOT_RUN_BY_POLICY",
-    "internalV1AcademicAcceptance": "NOT_CLAIMED"
+    "internalV1AcademicAcceptance": "NOT_CLAIMED",
+    "teachingRegressionTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "testCommit": "fd115b8f299ace67ad4a5b78add445da3eb71781"
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Preserve the existing source-specific digital practice and teacher-oriented lesson candidate; complete source-vs-effective-render parity for all currently unaccepted lessons in the Stage A cohort, then prepare scoped B/C repairs before full-grade freeze and CI."
+  "nextAction": "No fabricated source-map or classroom measurements; exact frozen-SHA .NET build/unit checks, real learner render, grading/persisted attempts, rights/accessibility and per-lesson V1 approval remain pending. Reuse this repair during whole-cohort A–D progression."
 }
