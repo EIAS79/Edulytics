@@ -30,7 +30,7 @@ public static partial class PracticeMathVisualRenderer
             int min=family switch
             {
                 "usccss.g1.u06.l08.count_to110_cube_groups"=>20,
-                "usccss.g1.u06.l09.write_number_to120"=>100,
+                "usccss.g1.u06.l09.write_number_to120"=>95,
                 "usccss.g1.u08.l08.same_number_tens_ones"=>20,
                 "usccss.g1.u08.l07.count_on_to120"=>20,
                 _=>throw new JsonException("Unrelated source number family")
@@ -39,7 +39,7 @@ public static partial class PracticeMathVisualRenderer
             {
                 "usccss.g1.u06.l08.count_to110_cube_groups"=>110,
                 "usccss.g1.u06.l09.write_number_to120"=>120,
-                "usccss.g1.u08.l08.same_number_tens_ones"=>99,
+                "usccss.g1.u08.l08.same_number_tens_ones"=>100,
                 "usccss.g1.u08.l07.count_on_to120"=>120,
                 _=>throw new JsonException("Unrelated source number family")
             };
