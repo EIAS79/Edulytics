@@ -44,14 +44,17 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
         if(Index(family)<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode))return false;
-        return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&mode<=3&&
+        return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&
+            mode<=(Index(family)==1?4:3)&&
+            (Index(family)!=1||mode!=4||(a>=2&&a<=4&&b>=2&&b<=3))&&
             (Index(family)!=12||mode!=3||a!=b);
     }
     public static Problem Build(string family,Random random)
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unsupported G1 Unit7 original-source family");
-        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(4);
+        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==1?5:4);
+        if(i==1&&mode==4){a=random.Next(2,5);b=random.Next(2,4);}
         if(i==12&&mode==3&&b==a)b=a==12?1:a+1;
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
         string prompt=i switch
@@ -63,7 +66,9 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 2=>$"Classify solid shape for object #{a}: it has two flat circular faces and a curved side. Write SHAPE=name.",
                 _=>$"Classify solid shape for object #{a}: one circular base and one point joined by a curved surface. Write SHAPE=name."
             },
-            1=>$"A model for building contains {a} cube pieces and {b} rectangular-prism pieces. Count ALL pieces before teacher verifies the physical composition. Write PIECES=number.",
+            1=>mode==4?
+                $"SOURCE-INSPIRED COMPOSE A SOLID (FIRST-PARTY MODEL): Build a rectangular prism using TWO identical layers of equal cubes. Each layer has {b} rows, with {a} cubes in EACH row, all touching face to face. How many unit cubes are needed for ONE layer and for BOTH layers together? Write PER_LAYER=number;LAYERS=number;TOTAL_CUBES=number. Real student construction and source-publisher shape figures are teacher-reviewed.":
+                $"A model for building contains {a} cube pieces and {b} rectangular-prism pieces. Count ALL pieces before teacher verifies the physical composition. Write PIECES=number.",
             2=>mode%2==0?$"Sort shape card #{a}: this CLOSED FLAT shape has 3 STRAIGHT sides. Write SHAPE=name.":
                 $"Sort shape card #{a}: this CLOSED FLAT shape has 4 equal straight sides and 4 right angles. Write SHAPE=name.",
             3=>mode%2==0?$"Before DRAWING a triangle for card #{a}, list how many straight sides and corners it MUST have. Write SIDES=number;CORNERS=number.":
@@ -118,7 +123,8 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
         return Index(family) switch
         {
             0=>$"SHAPE={(mode==0?"CUBE":mode==1?"SPHERE":mode==2?"CYLINDER":"CONE")}",
-            1=>$"PIECES={a+b}",
+            1=>mode==4?$"PER_LAYER={a*b};LAYERS=2;TOTAL_CUBES={2*a*b}":
+                $"PIECES={a+b}",
             2=>$"SHAPE={(mode%2==0?"TRIANGLE":"SQUARE")}",
             3=>$"SIDES={(mode%2==0?3:4)};CORNERS={(mode%2==0?3:4)}",
             4=>"SIDES=3",
