@@ -46,6 +46,25 @@ public sealed class UsCcssG1FullGradeAnalogClockSourceVisualTests
     }
 
     [Fact]
+    public void DifferentTimeClockVisualRefusesToDrawAnActuallyMatchingDigitalCard()
+    {
+        const string family="usccss.g1.u07.l13.hour_clock";
+        var invalid=new Dictionary<string,int>{
+            ["a"]=7,["b"]=7,["c"]=0,["mode"]=3
+        };
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(
+            family,invalid));
+        Assert.Null(PracticeMathVisualRenderer.RenderSvg(
+            family,JsonSerializer.Serialize(new{parameters=invalid})));
+        invalid["mode"]=2;
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(
+            family,invalid));
+        var matched=PracticeMathVisualRenderer.RenderSvg(
+            family,JsonSerializer.Serialize(new{parameters=invalid}));
+        Assert.Contains("Digital card: 7:00",Assert.IsType<string>(matched));
+    }
+
+    [Fact]
     public void OriginalHalfClockSortHasWholeHourAndHalfPastDiagrams()
     {
         const string f="usccss.g1.u07.l14.half_hour_clock";
