@@ -273,17 +273,28 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
-    public void Lesson57OriginalFourZooStoriesRejectWrongGroupsAndMalformedResponses()
+    public void Lesson57FourOriginalZooStoriesAndPublishedPrimateCoolDownRejectWrongGroups()
     {
         const string family=UsCcssG1FullGradeNextQuestions.ZooThree;
-        // The four original 2021 student-facing tasks, not just generic zoo sums.
+        // Four original public 2021 tasks plus a matching 2023 published CKMath primate cool-down.
         var stories=new[]
         {
             (a:8,b:7,c:5,mode:2,total:20), // Reptiles: snakes, iguanas, frogs.
             (a:3,b:6,c:7,mode:3,total:16), // Herons, hawks, hummingbirds.
             (a:8,b:4,c:3,mode:0,total:15), // Lions, tigers, cheetahs.
-            (a:8,b:7,c:4,mode:1,total:19)  // Goats, sheep, pigs.
+            (a:8,b:7,c:4,mode:1,total:19), // Goats, sheep, pigs.
+            (a:8,b:4,c:7,mode:4,total:19)  // Public CKMath guide: monkeys, gorillas, orangutans.
         };
+        var sourceBoundPrompts=Enumerable.Range(0,500)
+            .Select(n=>UsCcssG1FullGradeNextQuestions.Build(family,new Random(n*37+13)))
+            .Where(q=>q.Parameters["mode"]==4).ToArray();
+        Assert.True(sourceBoundPrompts.Length>50);
+        Assert.All(sourceBoundPrompts,q=>
+        {
+            Assert.Contains("8 monkeys, 4 gorillas and 7 orangutans",q.Prompt);
+            Assert.Equal("TOTAL=19;EQUATION=8+4+7=19",
+                UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters));
+        });
         foreach(var (a,b,c,mode,total) in stories)
         {
             var parameters=new Dictionary<string,int>
