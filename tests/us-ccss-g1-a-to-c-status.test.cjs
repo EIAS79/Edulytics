@@ -36,7 +36,17 @@ test('exact 96 lesson identities reconcile historic acceptance and A–C evidenc
         assert.equal(checkpoint.aToCClosure?.originalStudentAndTeacherTasksCompared,true);
       }
       assert.equal(checkpoint.aToCClosure?.learnerTeachingSourceParityReviewed,true);
-      assert.equal(checkpoint.aToCClosure?.practiceGeneratorAndVerifierIndependentlyReviewed,true);
+      if(row.assessmentBasis==='TEACHER_ONLY_SOURCE_AUTHORED_STORY_WITH_RUBRIC'){
+        assert.equal(row.ordinal,65);
+        assert.equal(checkpoint.aToCClosure?.practiceGeneratorAndVerifierIndependentlyReviewed,false);
+        assert.equal(checkpoint.aToCClosure?.teacherOnlyAuthoredActivityRubricIndependentlyReviewed,true);
+        assert.equal(checkpoint.aToCClosure?.verifiedNoMachineGradeableStoryAuthorship,true);
+        assert.equal(checkpoint.aToCClosure?.teacherEvidenceIsRequired,true);
+        assert.equal(row.originalPublisherAssessmentVerified,null);
+        assert.equal(row.originalSourceToPracticeProven,false);
+      }else{
+        assert.equal(checkpoint.aToCClosure?.practiceGeneratorAndVerifierIndependentlyReviewed,true);
+      }
       assert.deepEqual(checkpoint.aToCClosure?.openACDefects,[]);
       assert.ok(checkpoint.aToCClosure?.evidenceReference?.length>15);
       assert.notEqual(checkpoint.stageA.allOriginalFigureAndStudentTasksFullyAudited,false);
@@ -155,3 +165,18 @@ test('owner-approved original Edulytics Cool-down is explicitly distinguished fr
   assert.equal(report.summary.releaseDecision,'NO_GO');
 });
 
+
+test('L65 remains an evidenced teacher-reviewed authoring task, not a fabricated digital generator',()=>{
+  const report=buildRemainingReport();
+  const l65=report.lessons.find(x=>x.ordinal===65);
+  assert.ok(l65);
+  assert.equal(l65.readyForStageD,true);
+  assert.equal(l65.skipACRework,true);
+  assert.equal(l65.aToCStatus,STATUS.ready);
+  assert.equal(l65.assessmentBasis,'TEACHER_ONLY_SOURCE_AUTHORED_STORY_WITH_RUBRIC');
+  assert.equal(l65.originalPublisherAssessmentVerified,null);
+  assert.equal(report.summary.pendingACOrdinals.includes(65),false);
+  assert.equal(report.summary.skipACReworkOrdinals.includes(65),true);
+  assert.equal(report.summary.ciTriggeredByReport,false);
+  assert.equal(report.summary.releaseDecision,'NO_GO');
+});
