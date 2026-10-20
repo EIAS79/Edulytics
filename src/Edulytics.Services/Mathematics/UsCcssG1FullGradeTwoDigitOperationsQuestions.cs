@@ -155,7 +155,11 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 2=>$"Teacher-led place value center numeric portion: calculate {a}+{b}. Write RESULT=number.",
                 _=>$"Teacher-led counting center numeric portion: count {a} tens and {b} loose ones. Write RESULT=number."
             },
-            CompareWords=>$"Compare the value of {a} and {b} by tens, then ones. Is the FIRST number GREATER, LESS or EQUAL? Write RELATION=GREATER/LESS/EQUAL.",
+            CompareWords=>mode==4?
+                "ELENA SOURCE CASE: 75 is greater than 65. Compare their tens values. Write RELATION=GREATER/LESS/EQUAL. Explain your reasoning to a teacher.":
+                mode==5?
+                "NOAH SOURCE CASE: Noah says 39 is greater than 41. Compare the numbers correctly. Write RELATION=GREATER/LESS/EQUAL. Explain Noah's error to a teacher.":
+                $"Compare the value of {a} and {b} by tens, then ones. Is the FIRST number GREATER, LESS or EQUAL? Write RELATION=GREATER/LESS/EQUAL.",
             CompareSymbols=>$"Compare {a} and {b}. Write the mathematical comparison SYMBOL between the two numbers, one of >, < or =. Write SYMBOL=sign.",
             _=>throw new InvalidOperationException()
         };
