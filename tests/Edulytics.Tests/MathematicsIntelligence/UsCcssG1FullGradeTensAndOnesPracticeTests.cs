@@ -141,6 +141,28 @@ public sealed class UsCcssG1FullGradeTensAndOnesPracticeTests
     }
 
     [Fact]
+    public void Lesson74SourceSynthesisModelsAcceptOriginalNumericEquivalentsNotFakeGallery()
+    {
+        const string family=UsCcssG1FullGradeTensAndOnesQuestions.ShowMultipleWays;
+        var source73=new Dictionary<string,int>
+            {["tens"]=7,["ones"]=3,["mode"]=0,["unused"]=0};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source73,
+            "EXPANDED=70+3;TENS=7;ONES=3;ALT_TENS=5;ALT_ONES=23"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,source73,
+            "EXPANDED=70+3;TENS=7;ONES=3;ALT_TENS=0;ALT_ONES=73"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source73,
+            "EXPANDED=70+3;TENS=7;ONES=3;ALT_TENS=5;ALT_ONES=24"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,source73,
+            "EXPANDED=70+3;TENS=7;ONES=3;ALT_TENS=7;ALT_ONES=3"));
+        var kiran31=new Dictionary<string,int>
+            {["tens"]=3,["ones"]=1,["mode"]=1,["unused"]=0};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,kiran31,
+            "EXPANDED=30+1;TENS=3;ONES=1;ALT_TENS=2;ALT_ONES=11"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,kiran31,
+            "EXPANDED=30+1;TENS=3;ONES=1;ALT_TENS=2;ALT_ONES=12"));
+    }
+
+    [Fact]
     public void ValidTwoDigitValuesStayWithinGrade1AndWrongResponsesFail()
     {
         foreach(var family in UsCcssG1FullGradeTensAndOnesQuestions.Families)
