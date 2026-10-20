@@ -24,7 +24,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
-           z!=0||mode<0||mode>(family==TenMoreLess?14:12)||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords&&family!=CompareSymbols&&family!=TenMoreLess))return false;
+           z!=0||mode<0||mode>(family==TenMoreLess?14:family==CompareSymbols?13:12)||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords&&family!=CompareSymbols&&family!=TenMoreLess))return false;
         return family switch
         {
             AddTens=>mode<=3?
@@ -77,6 +77,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 10=>a==39&&b==93,
                 11=>a==4&&b==46,
                 12=>a==21&&b==12,
+                13=>a==68&&b==86,
                 0 or 1 or 2 or 3=>a>=20&&a<=99&&b>=20&&b<=99,
                 _=>false
             },
@@ -96,7 +97,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?8:family==CompareSymbols?13:family==TenMoreLess?15:4),a,b;
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?8:family==CompareSymbols?14:family==TenMoreLess?15:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -147,6 +148,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             else if(family==CompareSymbols&&mode==10){a=39;b=93;}
             else if(family==CompareSymbols&&mode==11){a=4;b=46;}
             else if(family==CompareSymbols&&mode==12){a=21;b=12;}
+            else if(family==CompareSymbols&&mode==13){a=68;b=86;}
             else{a=random.Next(20,100);b=mode==0?a:random.Next(20,100);}
         }
         else
@@ -221,7 +223,9 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==7?
                 "SOURCE TEACHER DISCUSSION: Compare 62 and 64 using their matching six tens and different ones. Write RELATION=GREATER/LESS/EQUAL for the FIRST number. Explain the ones comparison to a teacher.":
                 $"Compare the value of {a} and {b} by tens, then ones. Is the FIRST number GREATER, LESS or EQUAL? Write RELATION=GREATER/LESS/EQUAL.",
-            CompareSymbols=>mode==4?
+            CompareSymbols=>mode==13?
+                "INDEPENDENT EDULYTICS FORMATIVE EXIT (not the inaccessible original 2021 publisher Cool-down): Compare 68 and 86. Which number has more tens? Write SYMBOL=sign;TENS_LEFT=number;TENS_RIGHT=number. Explain in words or a base-ten drawing for teacher review.":
+                mode==4?
                 "SOURCE COMPARISON PAIR: Decide whether 17 < 27 or 27 < 17 is true. Write SYMBOL=<, > or = for 17 compared with 27. Explain to a teacher.":
                 mode==5?
                 "SOURCE COMPARISON PAIR: Decide whether 34 < 36 or 36 < 34 is true. Write SYMBOL=<, > or = for 34 compared with 36. Explain to a teacher.":
@@ -288,6 +292,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             CompareWords=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
             CompareSymbols=>mode switch
             {
+                13=>"SYMBOL=<;TENS_LEFT=6;TENS_RIGHT=8",
                 7=>"TRUE=YES;CORRECT=17<47",
                 8=>"TRUE=NO;CORRECT=58>53",
                 9=>"TRUE=NO;CORRECT=45<63",
