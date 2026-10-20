@@ -58,7 +58,12 @@
     "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
     "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
     "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
-    "sourceAuthoredRubric": null
+    "sourceAuthoredRubric": null,
+    "sourceTaskSpecificPracticeExtended": true,
+    "newSourceModes": "A first-party four-flat-shape set tested under two independent category rules (curved vs straight-only and three vs four sides); legacy one-shape question modes preserved.",
+    "mathEngineCommit": "9089358a50677bd4e46cb59c8b4bfd125f1904e1",
+    "independentOracleCommit": "2129514743ce4bb6cbd2b27d1f24f0f33567a671",
+    "regressionTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs"
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -70,9 +75,18 @@
     "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
     "visualAccessibilityAndPublisherRights": "PENDING",
     "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
-    "wholeGradeRelease": "NO_GO"
+    "wholeGradeRelease": "NO_GO",
+    "newSourceSpecificTestsPrepared": true
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint.",
+  "sourceSpecificRepair20261020": {
+    "stage": "C_SCOPE_REPAIR_NOT_A_D_APPROVAL",
+    "lessonsAndScope": "122 / G1 U07 L03, two independent sorts for first-party flat shape cards",
+    "codeCommit": "9089358a50677bd4e46cb59c8b4bfd125f1904e1",
+    "regressionCommit": "d09251c5bf6cf9cb9932d7e7118f53b3431f4a91",
+    "unverified": "Original full source visuals; actual learner sorting choices and explanations; exact frozen SHA .NET and authenticated scoring/persistence",
+    "approval": "NOT_CLAIMED"
+  }
 }
