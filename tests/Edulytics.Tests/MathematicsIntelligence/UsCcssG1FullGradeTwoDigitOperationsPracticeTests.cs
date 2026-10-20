@@ -294,7 +294,9 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
         const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.CompareWords;
         foreach(var (mode,a,b,answer) in new[]{
             (4,75,65,"RELATION=GREATER"),
-            (5,39,41,"RELATION=LESS")
+            (5,39,41,"RELATION=LESS"),
+            (6,93,26,"RELATION=GREATER"),
+            (7,62,64,"RELATION=LESS")
         })
         {
             var p=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode},{"unused",0}};
@@ -309,6 +311,12 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
             UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*37+17))).ToArray();
         Assert.Contains(generated,q=>q.Parameters["mode"]==4&&q.Prompt.Contains("ELENA"));
         Assert.Contains(generated,q=>q.Parameters["mode"]==5&&q.Prompt.Contains("NOAH"));
+        foreach(var mode in new[]{6,7})
+        {
+            var sourceCases=generated.Where(q=>q.Parameters["mode"]==mode).ToArray();
+            Assert.True(sourceCases.Length>70);
+            Assert.All(sourceCases,q=>Assert.Contains("SOURCE TEACHER DISCUSSION",q.Prompt));
+        }
     }
 
     [Fact]
