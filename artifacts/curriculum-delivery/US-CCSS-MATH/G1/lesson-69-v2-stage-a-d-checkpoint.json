@@ -24,18 +24,42 @@
       "Student Facing Add 20: [visual] [visual]"
     ],
     "existingCandidateReused": true,
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "originalPublic2021StudentTeacherTasksCompared": true,
+    "originalTrueSourceTitle": "More Addition and Subtraction with Tens",
+    "originalSixVisibleTensExpressions": [
+      "4+5 tens=9 tens",
+      "8−3 tens=5 tens",
+      "20+60=80",
+      "70-20=50",
+      "90-70=20",
+      "40+40=80"
+    ],
+    "protected2021CoolDownQuestionVerified": false
   },
   "stageB": {
     "reviewAndCorrectionSummary": "Added original number talk, Jada 30+20 bag story, Tyler 70−40 bag story and named student tens equations; original strategies/classroom materials stay teacher-led",
     "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "candidateEditCommit": "344ddaef861be613e97423e8685111ee29f47872",
-    "publisherArtworkCopied": false
+    "publisherArtworkCopied": false,
+    "newContentVersion": "us-ccss-g1-u04-l04-original-activities-v7",
+    "sourceTitleCorrected": true,
+    "v6ToV7UpgradeGuarded": true
   },
   "stageC": {
     "reusedPracticeFamily": "usccss.g1.u04.l04.tens.add_remove_multiples",
     "changedGeneratorCommit": null,
-    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence"
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence",
+    "originalSourceTaskToPracticeParity": "VERIFIED_VISIBLE_AND_INDEPENDENT_COOLDOWN",
+    "sourceExactMathModes": [
+      0,
+      1,
+      4,
+      5
+    ],
+    "independentEdulyticsExitMode": 6,
+    "testsAuthoredNotExecuted": true
   },
   "stageD": {
     "sourceAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
@@ -49,5 +73,21 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-69-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false
+  },
+  "nextAction": "A-C source arithmetic, first-party teaching and independent exit complete; continue lesson 70. Original protected publisher assessment unverified and Stage D/CI deferred."
 }
