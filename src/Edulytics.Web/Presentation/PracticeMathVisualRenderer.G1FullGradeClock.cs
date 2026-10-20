@@ -17,7 +17,8 @@ public static partial class PracticeMathVisualRenderer
         int card=GetInt(p,"b");
         int c=GetInt(p,"c");
         int mode=GetInt(p,"mode");
-        if(hour<1||hour>12||card<1||card>12||c!=0||mode<0||mode>3)
+        if(hour<1||hour>12||card<1||card>12||c!=0||mode<0||mode>3||
+           (family=="usccss.g1.u07.l13.hour_clock"&&mode==3&&hour==card))
             throw new JsonException("Invalid original Grade 1 clock parameters.");
         int minute=family switch
         {
