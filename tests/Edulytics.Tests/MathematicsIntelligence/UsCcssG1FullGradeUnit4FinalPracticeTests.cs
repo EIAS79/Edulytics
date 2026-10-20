@@ -33,6 +33,73 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
             }
     }
     [Fact]
+    public void Lesson81AllOriginalSymbolBlanksHaveStrictSourceOperandsAndWrongAnswerControls()
+    {
+        const string family="usccss.g1.u04.l16.write_comparison";
+        foreach(var (mode,a,b,expected) in new[]{
+            (4,56,26,"SYMBOL=>"),
+            (5,72,78,"SYMBOL=<"),
+            (6,6,55,"SYMBOL=<"),
+            (7,92,29,"SYMBOL=>"),
+            (8,23,23,"SYMBOL==")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
+            Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+            Assert.Equal(expected,UsCcssG1FullGradeUnit4FinalQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"SYMBOL=?"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";FAKE=1"));
+            p["a"]++;
+            Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+        }
+    }
+
+    [Fact]
+    public void Lesson81OriginalOpenNumberBoxesAcceptAllValidChoicesWithoutPredeterminedSingleAnswer()
+    {
+        const string family="usccss.g1.u04.l16.write_comparison";
+        foreach(var (mode,a,validA,validB,invalid) in new[]{
+            (9,78,"NUMBER=79","NUMBER=99","NUMBER=78"),
+            (10,39,"NUMBER=40","NUMBER=98","NUMBER=39"),
+            (11,13,"NUMBER=13","number = 13","NUMBER=14")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",0},{"c",0},{"mode",mode}};
+            Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,validA));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,validB));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,invalid));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"NUMBER=100"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,validA+";EXTRA=1"));
+            p["a"]++;
+            Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+        }
+        foreach(var (mode,valid,wrong) in new[]{
+            (12,"LEFT=12;RIGHT=21","LEFT=21;RIGHT=12"),
+            (13,"LEFT=93;RIGHT=25","LEFT=25;RIGHT=93")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",0},{"b",0},{"c",0},{"mode",mode}};
+            Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,valid));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,wrong));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"LEFT=21;RIGHT=21"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"LEFT=4;RIGHT=46"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,valid+";FAKE=1"));
+        }
+        var generated=Enumerable.Range(0,3600).Select(i=>
+            UsCcssG1FullGradeUnit4FinalQuestions.Build(family,new Random(i*23+20261020))).ToArray();
+        foreach(var mode in Enumerable.Range(4,10))
+        {
+            var sourceCases=generated.Where(x=>x.Parameters["mode"]==mode).ToArray();
+            Assert.True(sourceCases.Length>120);
+            Assert.All(sourceCases,x=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,x.Parameters,UsCcssG1FullGradeUnit4FinalQuestions.Solve(family,x.Parameters))));
+        }
+    }
+
+    [Fact]
     public void ANonstandardRegroupingKeepsTheSameTwoDigitQuantity()
     {
         const string f="usccss.g1.u04.l19.regroup_one_ten";
