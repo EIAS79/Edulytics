@@ -35,9 +35,9 @@ public static class UsCcssG1FullGradeNextQuestions
                 (mode!=3||(a==3&&b==6&&c==7))&&
                 (mode!=4||(a==8&&b==4&&c==7)), 
             CenterTwoThree=>mode==3?
-                (a>=1&&a<=11&&b>=7&&b<=9&&c==0&&a+b<=20):
-                (a>=1&&a<=8&&b>=1&&b<=8&&
-                 (mode==1?c>=1&&c<=8:c==0)&&a+b+c<=20),
+                (a>=0&&a<=10&&b>=7&&b<=9&&c==0&&a+b<=20):
+                (a>=0&&a<=9&&b>=0&&b<=9&&
+                 (mode==1?c>=0&&c<=9:c==0)&&a+b+c<=20),
             TeenSubtract or TenSubtract=>a>=11&&a<=18&&b>=a-9&&b<=9&&c==0&&
                 (family!=TenSubtract||mode!=2||(a==15&&b==8))&&
                 (family!=TeenSubtract||mode!=3||(a==16&&b==7)),
@@ -73,13 +73,13 @@ public static class UsCcssG1FullGradeNextQuestions
             if(mode==3)
             {
                 // Original 2021 Five in a Row: numeral card + 7, 8 or 9.
-                a=random.Next(1,12);b=random.Next(7,10);c=0;
+                a=random.Next(0,11);b=random.Next(7,10);c=0;
             }
             else
             {
                 // How Close? Add to 20: two- or three-card combination.
-                a=random.Next(1,9);b=random.Next(1,9);
-                c=mode==1?random.Next(1,Math.Min(8,20-a-b)+1):0;
+                a=random.Next(0,10);b=random.Next(0,10);
+                c=mode==1?random.Next(0,Math.Min(9,20-a-b)+1):0;
             }
         }
         else
