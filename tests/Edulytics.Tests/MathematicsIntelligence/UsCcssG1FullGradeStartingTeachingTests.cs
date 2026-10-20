@@ -61,6 +61,9 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("4+8=4+6+2=10+2=12",text(20));
         Assert.Contains("four red and six yellow counters",text(20));
         Assert.Contains("not the original publisher artwork",text(20));
+        Assert.Contains("8 monkeys, 4 gorillas, and 7 orangutans",text(20));
+        Assert.Contains("8+4+7=8+2+2+7=10+9=19 primates",text(20));
+        Assert.Contains("2021 login-protected cool-down",text(20));
         Assert.Contains("digital equation check verifies arithmetic",text(20));
         Assert.Contains("What do you know about 20?",text(21));
         Assert.Contains("10+10=13+7=20",text(21));
@@ -75,7 +78,9 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,zoo,CommonCoreG1FullGradeStartingContentCorrections.Version));
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,zoo,"us-ccss-g1-u03-l20-zoo-2021-source-v6"));
-        Assert.Equal("us-ccss-g1-u03-l20-zoo-2021-source-v7",
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,zoo,"us-ccss-g1-u03-l20-zoo-2021-source-v7"));
+        Assert.Equal("us-ccss-g1-u03-l20-zoo-2021-source-v8",
             CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion);
         foreach(var number in new[]{21,22,23,24,25,26,27})
         {
