@@ -16,6 +16,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
     public const string Unit6Lesson4Stage3SourceVersion="us-ccss-g1-u06-l04-how-close-stage3-source-v3";
     public const string Unit6Lesson6MeasurementSourceVersion="us-ccss-g1-u06-l06-paperclip-source-activity-v3";
     public const string Unit6Lesson7ThreeUnitsSourceVersion="us-ccss-g1-u06-l07-three-unit-measurement-v3";
+    public const string Unit6Lesson10EstimateFirstSourceVersion="us-ccss-g1-u06-l10-estimate-measure-compare-v3";
     public const string Unit7Unit8OriginalSourceVersion="us-ccss-g1-u07-u08-original-student-source-activities-v2";
     private static bool IsReviewedUnit7Unit8Lesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U07:L01" or "PED:US-CCSS-MATH:G1:U07:L03" or
@@ -77,9 +78,9 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
         new(@"PED:US-CCSS-MATH:G1:U06:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-10/preparation.html",@"b0392f033a63a72b6eaa5a30d1d1ff78ffbf2ecff6759cbb44b39c2b7ddc88c1",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.C.4",@"CCSS:1.NBT.C.5",@"CCSS:1.OA.C.5",@"CCSS:1.OA.C.6"],
             @"Center Day 2",
             @"Original 2021 Estimate and Measure, Choose Your Unit center: choose object and uniform length unit, ESTIMATE first, then measure to nearest whole unit. Warm-up asks 24+30=44 FALSE,24+40=64 TRUE,30+45=75 TRUE,32+45=76 FALSE. Other centers: How Close?, Target Numbers, Five in a Row. Genuine object measurement and classroom gameplay are teacher-reviewed.",
-            @"Example 1: 36+25=61 using tens and ones. Example 2: A line covered by 9 equal connecting cubes measures 9 cube-length units.",
-            @"Step 1: Read which center task is selected. Step 2: For addition, combine tens/ones and regroup when needed. Step 3: For measurement, tile equal units with no gaps. Step 4: Check the answer and name the units.",
-            @"Do not substitute arithmetic for actual measurement, or count units of mixed sizes as though they are interchangeable.",
+            @"Example 1: 36+25=61 using tens and ones. Example 2: A line covered by 9 equal connecting cubes measures 9 cube-length units. Example 3 (FIRST-PARTY DIGITAL MODEL): BEFORE measuring, estimate a strip as 9 cubes; after checking equal cube units with no gaps, it measures 12 cubes; the estimate is LOW by 3 units. If the estimate were 15, it would be HIGH by 3; if 12, EXACT. These are teaching examples, NOT fabricated observations of the original classroom objects.",
+            @"Step 1: Choose the original Estimate and Measure center task, SELECT a real measuring object and a uniform unit such as same-size cubes. Step 2: BEFORE measuring, WRITE an estimated number of these units and name your chosen unit. Step 3: Align the first unit at the object's endpoint and MEASURE using identical units end to end without gaps or overlaps. Step 4: RECORD the observed count and unit, alongside the estimate, then compare whether the estimate was higher, lower or exact and by how much. Step 5: For other teacher-facilitated centers, solve and explain the assigned arithmetic; do not replace estimating and measuring with arithmetic alone. A first-party numeric Practice estimate-check cannot prove actual pupil measurements.",
+            @"Do not substitute arithmetic for actual measurement, or count units of mixed sizes as though they are interchangeable. An estimate must be made BEFORE looking at the measured count, not copied afterward; one numeric length alone does not complete original Estimate and Measure.",
             @"I can add or measure accurately in an appropriate teacher-led center."),
         new(@"PED:US-CCSS-MATH:G1:U06:L12",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-12/preparation.html",@"363d352cea320e9ccd94af0b40e318eaa9d62365af11578b202ceae7c15df3b1",[@"CCSS:1.NBT.A.1",@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
             @"Compare Measurements",
@@ -281,6 +282,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
             (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"?Unit6Lesson4Stage3SourceVersion:
              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"?Unit6Lesson6MeasurementSourceVersion:
              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07"?Unit6Lesson7ThreeUnitsSourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10"?Unit6Lesson10EstimateFirstSourceVersion:
              IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:
              IsReviewedUnit7Unit8Lesson(lesson.LessonCode)?Unit7Unit8OriginalSourceVersion:
              Version):previous;
@@ -291,7 +293,8 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
          ((IsReviewedUnit6Lesson(lesson.LessonCode)||IsReviewedUnit7Unit8Lesson(lesson.LessonCode))&&previous==Version)||
          ((lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"||
            lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"||
-           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07")&&previous==Unit6OriginalSourceVersion));
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07"||
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10")&&previous==Unit6OriginalSourceVersion));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
