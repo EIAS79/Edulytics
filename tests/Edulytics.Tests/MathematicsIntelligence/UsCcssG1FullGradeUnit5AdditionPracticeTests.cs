@@ -214,6 +214,7 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
     [InlineData(51,40,2,"TOTAL=91;PACK=NO")]
     [InlineData(18,23,3,"TOTAL=54;PACK=YES")]
     [InlineData(51,23,3,"TOTAL=87;PACK=NO")]
+    [InlineData(0,0,4,"MIN_BOXES=4")]
     public void RealOriginal2021FoodDriveStudentAndGradeTablesAreMathematicallyGradeable(
         int first,int second,int mode,string expected)
     {
@@ -231,9 +232,36 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
         const string f="usccss.g1.u05.l14.optional_food_drive_numeric";
         foreach(var (a,b,mode) in new (int,int,int)[]
             {(18,18,0),(18,51,0),(51,51,2),(24,13,2),(13,40,3),
-             (51,40,3),(99,23,2)})
+             (51,40,3),(99,23,2),(1,0,4),(0,1,4),(0,0,5)})
             Assert.False(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(
                 f,new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}}));
+    }
+
+    [Fact]
+    public void FoodDriveMinimumBoxesIsTrueOriginalTaskAndNeverAcceptsUnjustifiedWrongOrMalformedCounts()
+    {
+        const string family = "usccss.g1.u05.l14.optional_food_drive_numeric";
+        var p = new Dictionary<string,int>{{"a",0},{"b",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,p));
+        Assert.Equal("MIN_BOXES=4",UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,"MIN_BOXES=4"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"MIN_BOXES=3"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"MIN_BOXES=5"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"MIN_BOXES=4;UNPROVEN=YES"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,""));
+        // Independently establish minimum: 251 exceeds 3*65 and is covered by 4 actual valid boxes.
+        int[] gradeCans=[18,51,23,13,39,40,8,29,30];
+        int[][] witnessIndices=[[0,4,6],[1,3],[2,5],[7,8]];
+        Assert.True(gradeCans.Sum()>3*65);
+        Assert.Equal(251,gradeCans.Sum());
+        Assert.Equal(9,witnessIndices.SelectMany(x=>x).Distinct().Count());
+        Assert.All(witnessIndices,x=>Assert.InRange(x.Sum(i=>gradeCans[i]),35,65));
+        Assert.Equal(gradeCans.Sum(),witnessIndices.Sum(x=>x.Sum(i=>gradeCans[i])));
+        // Build/solve path is source-scoped, no fabricated classroom work.
+        var prompt=UsCcssG1FullGradeUnit5AdditionQuestions.Build(family,new Random(20261020));
+        Assert.Contains("Food Drive",prompt.Prompt);
+        if(prompt.Parameters["mode"]==4)
+            Assert.Contains("teacher",prompt.Prompt,StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
