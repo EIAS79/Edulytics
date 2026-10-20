@@ -175,6 +175,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG1FullGradeUnit4FinalQuestions.Supports(family.Trim()) ||
          UsCcssG1FullGradeUnit8ReviewQuestions.Supports(family.Trim()) ||
          UsCcssG1FullGradeUnit6MeasurementQuestions.Supports(family.Trim()) ||
+         UsCcssG1HowCloseStage3Questions.Supports(family.Trim()) ||
          UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
@@ -312,6 +313,8 @@ public sealed class ExactSkillContractQuestionEngine
     {
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
+        if (UsCcssG1HowCloseStage3Questions.Supports(family))
+            return UsCcssG1HowCloseStage3Questions.Verify(parameters,answer);
         if (UsCcssG1FullGradeUnit6MeasurementQuestions.Supports(family))
             return UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(family,parameters,answer);
         if (UsCcssG1FullGradeUnit8ReviewQuestions.Supports(family))
@@ -939,6 +942,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
         {
             var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Explanation,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG1HowCloseStage3Questions.Supports(family))
+        {
+            var item=UsCcssG1HowCloseStage3Questions.Build(random);
             return new ExactProblem(item.Family,item.Prompt,item.Explanation,item.ItemType,item.Parameters);
         }
         if (UsCcssG1FullGradeUnit6MeasurementQuestions.Supports(family))
@@ -2859,6 +2867,8 @@ public sealed class ExactSkillContractQuestionEngine
         var p = problem.Parameters;
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
+        if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
+            return UsCcssG1HowCloseStage3Questions.Solve(p);
         if (UsCcssG1FullGradeUnit6MeasurementQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(problem.Family,p);
         if (UsCcssG1FullGradeUnit8ReviewQuestions.Supports(problem.Family))
@@ -3511,6 +3521,7 @@ public sealed class ExactSkillContractQuestionEngine
         UsCcssG1FullGradeUnit4FinalQuestions.Supports(family) ||
         UsCcssG1FullGradeUnit8ReviewQuestions.Supports(family) ||
         UsCcssG1FullGradeUnit6MeasurementQuestions.Supports(family) ||
+        UsCcssG1HowCloseStage3Questions.Supports(family) ||
         UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family) ||
         family is
             "supporting.geometry.shape_dimension" or
