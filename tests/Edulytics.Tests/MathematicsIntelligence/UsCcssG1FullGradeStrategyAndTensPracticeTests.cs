@@ -289,6 +289,81 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson62Exact2021FlexibleSubtractionUnknownStoriesAndOwnedExitCheck()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;
+        var sourceExpressions=new[]{
+            (a:20,b:15,answer:5),(a:19,b:3,answer:16),(a:13,b:5,answer:8),
+            (a:18,b:9,answer:9),(a:17,b:15,answer:2)
+        };
+        foreach(var (a,b,difference) in sourceExpressions)
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",4}};
+            var expected=$"DIFFERENCE={difference};CHECK={difference}+{b}={a}";
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+            Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                $"DIFFERENCE={difference};CHECK={difference}+{b}={a+1}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                $"DIFFERENCE={difference+1};CHECK={difference}+{b}={a}"));
+        }
+        var clare=new Dictionary<string,int>{{"a",15},{"b",8},{"c",0},{"mode",5}};
+        Assert.Equal("UNKNOWN=7;EQUATION=8+7=15",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,clare));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,clare,
+            "UNKNOWN=7;EQUATION=8+7=15"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,clare,
+            "UNKNOWN=8;EQUATION=8+7=15"));
+        var kiran=new Dictionary<string,int>{{"a",17},{"b",9},{"c",0},{"mode",6}};
+        Assert.Equal("UNKNOWN=8;EQUATION=17-8=9",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,kiran));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,kiran,
+            "UNKNOWN=8;EQUATION=17-8=9"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,kiran,
+            "UNKNOWN=9;EQUATION=17-9=8"));
+        var exit=new Dictionary<string,int>{{"a",16},{"b",7},{"c",0},{"mode",7}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,exit));
+        Assert.Equal("DIFFERENCE=9;CHECK=9+7=16",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,exit));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "DIFFERENCE=9;CHECK=9+7=16"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "DIFFERENCE=9")); // Bare result is not the checked numeric contract.
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "DIFFERENCE=9;CHECK=9+7=17"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exit,
+            "DIFFERENCE=9;CHECK=9+7=16;EXTRA=1"));
+        exit["a"]=14;exit["b"]=9;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,exit));
+        var incorrect=new Dictionary<string,int>{{"a",20},{"b",14},{"c",0},{"mode",4}};
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,incorrect));
+        incorrect["mode"]=5;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,incorrect));
+        var generated=Enumerable.Range(0,960)
+            .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(n*59+17)))
+            .ToArray();
+        foreach(var mode in new[]{4,5,6,7})
+            Assert.True(generated.Count(q=>q.Parameters["mode"]==mode)>65);
+        foreach(var (a,b,_) in sourceExpressions)
+            Assert.Contains(generated,q=>q.Parameters["mode"]==4&&
+                q.Parameters["a"]==a&&q.Parameters["b"]==b);
+        Assert.All(generated,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            if(q.Parameters["mode"]==5)Assert.Contains("CLARE STORY",q.Prompt);
+            if(q.Parameters["mode"]==6)Assert.Contains("KIRAN STORY",q.Prompt);
+            if(q.Parameters["mode"]==7)
+            {
+                Assert.Contains("EDULYTICS ORIGINAL EXIT CHECK",q.Prompt);
+                Assert.DoesNotContain("ORIGINAL 2021",q.Prompt);
+            }
+        });
+    }
+
+    [Fact]
     public void Source2021ElenaSixToEighteenUnknownChangeMustBeReachableAndCorrect()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;
