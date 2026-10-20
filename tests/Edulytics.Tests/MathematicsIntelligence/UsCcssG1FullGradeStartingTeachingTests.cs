@@ -73,6 +73,10 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         var zoo=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L20");
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,zoo,CommonCoreG1FullGradeStartingContentCorrections.Version));
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,zoo,"us-ccss-g1-u03-l20-zoo-2021-source-v6"));
+        Assert.Equal("us-ccss-g1-u03-l20-zoo-2021-source-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion);
         foreach(var number in new[]{21,22,23,24,25,26,27})
         {
             var lesson=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U03:L{number:00}");
