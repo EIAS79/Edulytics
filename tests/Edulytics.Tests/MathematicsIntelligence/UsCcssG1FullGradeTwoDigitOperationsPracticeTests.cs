@@ -199,6 +199,29 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
+    public void Lesson77AllFourOriginalTenChangePairsHaveStrictOracles()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.TenMoreLess;
+        foreach(var (mode,a,plus,minus) in new[]{
+            (5,67,77,57),(6,39,49,29),(7,52,62,42),(8,75,85,65)
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",10},{"mode",mode},{"unused",0}};
+            var answer=$"PLUS={plus};MINUS={minus}";
+            Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            Assert.Equal(answer,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,$"PLUS={plus};MINUS={minus+10}"));
+            p["a"]=a+1;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        }
+        var generated=Enumerable.Range(0,700).Select(i=>
+            UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*17+11))).ToArray();
+        foreach(var mode in new[]{5,6,7,8})
+            Assert.Contains(generated,q=>q.Parameters["mode"]==mode);
+    }
+
+    [Fact]
     public void Lesson77IndependentExitAssessesBothDirectionsWithoutPublisherClaim()
     {
         const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.TenMoreLess;
