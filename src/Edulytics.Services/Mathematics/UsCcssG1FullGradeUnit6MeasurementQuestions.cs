@@ -44,7 +44,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(i==10?7:3)||
+           mode<0||mode>(i==10?7:i==12?4:i==13?9:3)||
            (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
         return i switch
         {
@@ -67,7 +67,19 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             6=>a>=2&&a<=14&&b==2,
             7=>a>=20&&a<=110&&b==0,
             8=>a>=95&&a<=120&&b==0,
-            12 or 13 or 14 or 16=>a>=5&&a<=20&&b>=1&&b<=a&&c==0,
+            12=>mode==4?a==20&&b==9&&c==0:
+                a>=5&&a<=20&&b>=1&&b<=a&&c==0,
+            13=>mode switch
+            {
+                4=>a==11&&b==8&&c==0, // Jada: 8 + unknown = 11
+                5=>a==19&&b==11&&c==0, // Kiran: 19 - unknown = 11
+                6=>a==16&&b==10&&c==0, // Han and Lin: 10 fewer
+                7=>a==14&&b==9&&c==0, // Elena and Andre: nine more than five
+                8=>a==16&&b==6&&c==0, // Noah and Tyler: 16 vs 6
+                9=>a==14&&b==9&&c==0, // Clare: nine given, five left
+                _=>a>=5&&a<=20&&b>=1&&b<=a&&c==0
+            },
+            14 or 16=>a>=5&&a<=20&&b>=1&&b<=a&&c==0,
             _=>false
         };
     }
@@ -75,7 +87,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(i==10?8:4),a=0,b=0,c=0;
+        int mode=random.Next(i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -114,6 +126,16 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 _=>throw new InvalidOperationException("Unknown original shoe story")
             };
         }
+        if(i==12&&mode==4)(a,b,c)=(20,9,0);
+        if(i==13&&mode>=4)
+        {
+            (a,b,c)=mode switch
+            {
+                4=>(11,8,0),5=>(19,11,0),6=>(16,10,0),
+                7=>(14,9,0),8=>(16,6,0),9=>(14,9,0),
+                _=>throw new InvalidOperationException("Unreviewed original source story")
+            };
+        }
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
         if(!Valid(family,p))throw new InvalidOperationException("Unreviewed G1 Unit6 source operands");
         string prompt=i switch
@@ -149,7 +171,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             11=>mode%2==0?
                 $"Han's friendship bracelet is {a} connecting cubes long. Priya's bracelet is {b} cubes FEWER than Han's. How long is PRIYA's bracelet? Write LENGTH=number;DIFFERENCE=number.":
                 $"Priya's friendship bracelet is {a} connecting cubes long. Han's bracelet is {b} cubes MORE than Priya's. How long is HAN's bracelet? Write LENGTH=number;DIFFERENCE=number.",
-            12=>mode%3==0?$"Take From: {a} marbles were present; {b} are taken away. Write REMAINING=number.":
+            12=>mode==4?
+                "ORIGINAL ELENA BEADS: Elena took 9 beads OUT of her bracelet and 11 beads are LEFT. How many beads were there TO START? Write START=number.":
+                mode%3==0?$"Take From: {a} marbles were present; {b} are taken away. Write REMAINING=number.":
                 mode%3==1?$"Take From: {a} marbles were present, {a-b} remain. How many were taken? Write REMOVED=number.":
                 $"Take From: Some marbles were present; {b} leave, {a-b} remain. Write START=number.",
             13=>mode switch
@@ -157,7 +181,14 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 0=>$"Match the equation to a story: {a} cubes, {b} leave, {a-b} remain. Write OP=ADD/SUBTRACT;TOTAL=number.",
                 1=>$"Story: {a-b} cubes, {b} join, {a} in all. Write OP=ADD/SUBTRACT;TOTAL=number.",
                 2=>$"Original source: CIRCLE TWO equations matching this Take From story. There are {a} cubes, {b} are taken away, and {a-b} remain. A: {a}-{b}={a-b}. B: {a}+{b}={a-b}. C: {a-b}+{b}={a}. Write MATCH=first_letter,second_letter;TOTAL=number (the TWO correct letters in alphabetical order, followed by the whole).",
-                _=>$"Original source: CIRCLE TWO equations matching this Put Together story. There are {a-b} cubes and {b} more join, making {a} in all. A: {a}+{b}={a}. B: {a-b}+{b}={a}. C: {a}-{a-b}={b}. Write MATCH=first_letter,second_letter;TOTAL=number (the TWO correct letters in alphabetical order, followed by the whole)."
+                3=>$"Original source: CIRCLE TWO equations matching this Put Together story. There are {a-b} cubes and {b} more join, making {a} in all. A: {a}+{b}={a}. B: {a-b}+{b}={a}. C: {a}-{a-b}={b}. Write MATCH=first_letter,second_letter;TOTAL=number (the TWO correct letters in alphabetical order, followed by the whole).",
+                4=>"SOURCE-GROUNDED JADA: Jada has 8 people pictures and 11 total pictures. How many are ANIMAL pictures? Circle TWO matching equations: A: 8+□=11. B: 8+11=□. C: 11-8=□. Write MATCH=first_letter,second_letter;UNKNOWN=number.",
+                5=>"SOURCE-GROUNDED KIRAN: Kiran has 19 pictures and gives some away; 11 remain. How many did he GIVE AWAY? Circle TWO matching equations: A: 19-□=11. B: 19+11=□. C: 19-11=□. Write MATCH=first_letter,second_letter;UNKNOWN=number.",
+                6=>"SOURCE-GROUNDED HAN AND LIN: Han has 16 stamps; Lin has 10 FEWER. How many stamps does Lin have? Circle TWO matching equations: A: 10+□=16. B: 16-10=10. C: 16-10=□. Write MATCH=first_letter,second_letter;UNKNOWN=number.",
+                7=>"SOURCE-GROUNDED ELENA AND ANDRE: Elena has 9 MORE stickers than Andre, who has 5. How many does Elena have? Circle TWO matching equations: A: 9+5=14. B: 9-5=14. C: 5+9=14. Write MATCH=first_letter,second_letter;TOTAL=number.",
+                8=>"SOURCE-GROUNDED NOAH AND TYLER: Noah has 6 stamps and Tyler has 16. How many MORE does Tyler have? Circle TWO matching equations: A: 6+□=16. B: 16-6=16. C: 16-6=□. Write MATCH=first_letter,second_letter;UNKNOWN=number.",
+                9=>"SOURCE-GROUNDED CLARE: Clare gives away 9 stickers and has 5 LEFT. How many did she START with? Circle TWO matching equations: A: 5+9=□. B: 9-5=14. C: □-9=5. Write MATCH=first_letter,second_letter;UNKNOWN=number.",
+                _=>throw new InvalidOperationException("Unreviewed original story mode")
             },
             14=>mode%2==0?$"Write a true equation for {a} birds, {b} fly away. Write EQUATION=number-number=number.":
                 $"Write an addition equation for {a-b} children, {b} join to make {a}. Write EQUATION=number+number=number.",
@@ -206,13 +237,21 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 _=>$"DIFFERENCE={Math.Abs(a-b)}"
             },
             11=>$"LENGTH={(mode%2==0?a-b:a+b)};DIFFERENCE={b}",
-            12=>mode%3==0?$"REMAINING={a-b}":mode%3==1?$"REMOVED={b}":$"START={a}",
+            12=>mode==4?"START=20":mode%3==0?$"REMAINING={a-b}":
+                mode%3==1?$"REMOVED={b}":$"START={a}",
             13=>mode switch
             {
                 0=>$"OP=SUBTRACT;TOTAL={a-b}",
                 1=>$"OP=ADD;TOTAL={a}",
                 2=>$"MATCH=A,C;TOTAL={a}",
-                _=>$"MATCH=B,C;TOTAL={a}"
+                3=>$"MATCH=B,C;TOTAL={a}",
+                4=>"MATCH=A,C;UNKNOWN=3",
+                5=>"MATCH=A,C;UNKNOWN=8",
+                6=>"MATCH=A,C;UNKNOWN=6",
+                7=>"MATCH=A,C;TOTAL=14",
+                8=>"MATCH=A,C;UNKNOWN=10",
+                9=>"MATCH=A,C;UNKNOWN=14",
+                _=>throw new InvalidOperationException("Unreviewed original story mode")
             },
             14=>mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
             15=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
