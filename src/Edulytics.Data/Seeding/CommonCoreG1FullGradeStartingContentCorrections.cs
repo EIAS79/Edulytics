@@ -9,7 +9,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
 {
     public const string Version="us-ccss-g1-full-grade-u03-l14-to-u04-l15-source-v5";
     private const string ZooLessonCode="PED:US-CCSS-MATH:G1:U03:L20";
-    public const string ZooSourceContentVersion="us-ccss-g1-u03-l20-zoo-2021-source-v7";
+    public const string ZooSourceContentVersion="us-ccss-g1-u03-l20-zoo-2021-source-v8";
     private const string CenterLessonCode="PED:US-CCSS-MATH:G1:U03:L21";
     private const string TeenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L22";
     private const string TenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L23";
@@ -145,7 +145,8 @@ Original 2021 reptile story: Jada sees 8 snakes, 7 iguanas and 5 frogs: 8+7+5=20
 Original 2021 zoo bird exhibit: 3 herons, 6 hawks and 7 hummingbirds: 3+7+6=10+6=16 birds.
 Original 2021 large cat exhibit: 8 lions, 4 tigers and 3 cheetahs: 8+4+3=15 large cats.
 Original 2021 petting zoo: 8 goats, 7 sheep and 4 pigs: 8+7+4=19 animals. These original source quantities are represented with first-party teaching text rather than copied publisher illustrations.
-Original 2021 STUDENT SECTION SUMMARY: make ten with THREE addends: 4+8+6=4+6+8=10+8=18. A first-party textual double ten-frame explanation places four red and six yellow counters together in one filled frame, with eight blue counters in the other, representing 18 counters total. Make ten with TWO addends: 4+8=4+6+2=10+2=12. In a first-party textual frame, four and six fill one ten and two remain. These are mathematics descriptions, not the original publisher artwork; a student can draw the counter frames and discuss with a teacher.",
+Original 2021 STUDENT SECTION SUMMARY: make ten with THREE addends: 4+8+6=4+6+8=10+8=18. A first-party textual double ten-frame explanation places four red and six yellow counters together in one filled frame, with eight blue counters in the other, representing 18 counters total. Make ten with TWO addends: 4+8=4+6+2=10+2=12. In a first-party textual frame, four and six fill one ten and two remain. These are mathematics descriptions, not the original publisher artwork; a student can draw the counter frames and discuss with a teacher.
+Primate cool-down (cross-checked with published CKMath Grade 1 Unit 3 Lesson 20 teacher guide): Jada sees 8 monkeys, 4 gorillas, and 7 orangutans. 8+4+7=8+2+2+7=10+9=19 primates. Explain with drawings, numbers, or words. The independently printed CKMath teacher-guide problem corroborates the 2021 lesson\u0027s five-minute primate cool-down title; it is not a claim to have accessed the 2021 login-protected cool-down or copied any source illustration.",
             @"Step 1: Read the zoo story and identify every group named.
 Step 2: Write a three-addend equation, not a two-addend one.
 Step 3: Draw or model the three groups with counters.
@@ -590,7 +591,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
         CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
-         (lesson.LessonCode==ZooLessonCode&&previous=="us-ccss-g1-u03-l20-zoo-2021-source-v6")||
+         (lesson.LessonCode==ZooLessonCode&&(previous=="us-ccss-g1-u03-l20-zoo-2021-source-v6"||previous=="us-ccss-g1-u03-l20-zoo-2021-source-v7"))||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
