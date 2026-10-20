@@ -28,7 +28,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string UnitFourTensMatchLessonCode="PED:US-CCSS-MATH:G1:U04:L02";
     private const string UnitFourMultipleTensLessonCode="PED:US-CCSS-MATH:G1:U04:L04";
     private const string UnitFourCenterLessonCode="PED:US-CCSS-MATH:G1:U04:L05";
-    public const string UnitFourCollectionSourceContentVersion="us-ccss-g1-u04-l01-original-activities-v6";
+    public const string UnitFourCollectionSourceContentVersion="us-ccss-g1-u04-l01-original-activities-v7";
     public const string UnitFourTensMatchSourceContentVersion="us-ccss-g1-u04-l02-original-activities-v6";
     public const string UnitFourMultipleTensSourceContentVersion="us-ccss-g1-u04-l04-original-activities-v6";
     public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v6";
@@ -304,18 +304,20 @@ Digital Compare checks both the addition and subtraction expression values for t
         new(@"PED:US-CCSS-MATH:G1:U04:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-1/preparation.html",@"5f7a4f43ed4319bca795c0b82d6a05acb7fd3bf1e20175f4e57825aa89c9dd16",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
             @"Count Large Collections",
             @"Count large collections by organizing loose counters or classroom objects into groups of TEN. Show the number as a multiple of ten up to sixty, and explain why grouping prevents double counting. Real objects and class discussion are teacher-led.",
-            @"Learning goal: count 10, 20, 30, 40, 50 and 60 objects, and compare strategies for making and recording equal groups of ten. One ten is ten ones; six tens are sixty ones. Zero tens are zero. Original 2021 Activity 1 uses a physical collection of 40 objects; Activity 2 uses several different collections of multiples of ten with groups trading bags. Warm-up: choral count by tens and discuss patterns.",
+            @"Learning goal: count 10, 20, 30, 40, 50 and 60 objects, and compare strategies for making and recording equal groups of ten. One ten is ten ones; six tens are sixty ones. Zero tens are zero. Original 2021 Activity 1 uses a physical collection of 40 objects; Activity 2 uses several different collections of multiples of ten with groups trading bags. Original 2021 warm-up: count by tens to 100, then BACKWARD by tens to 30; notice how the tens digit changes and the ones digit remains 0.",
             @"Example 1: Three equal bags with ten counters each contain 10+10+10=30 counters.
 Example 2: Five bundles of ten pencils contain 5 tens=50 pencils.
 Example 3: Six groups of ten cubes contain 60 cubes. Count 10,20,30,40,50,60.
 Example 4: Two plates each hold ten counters, so 2 tens=20 counters.
 Original 2021 first collection: 40 objects can be arranged as four groups of ten (4 tens=40).
-Original 2021 group activity: pupils count a second bag after trading collections; the teacher checks that physical objects are counted only once.",
+Original 2021 Activity 2 six labeled collection bags: Bag A has 20, B has 40, C has 50, D has 60, E has 30 and F has 10 objects. Learners choose and explain a counting method, each records a representation, and partners trade their bag with another group. The teacher checks that physical objects are counted only once.",
             @"Step 1: Arrange your collection into separate groups of exactly ten objects.
 Step 2: Count the number of complete groups, without recounting an object.
 Step 3: Skip-count by tens, beginning at ten and stopping at the last group.
 Step 4: Write 'n tens = 10n ones' and show a drawing/bundles.
-Step 5: Check each group has ten and the total is at most sixty for this lesson.",
+Step 5: Check each group has ten and the collection total is at most sixty in Activity 1 and 2.
+Step 6: Match all six source bags to their true quantities: A=20, B=40, C=50, D=60, E=30, F=10. For each physical bag, show 1–6 complete tens and record the total; explain how you avoided double-counting.
+Step 7: Teacher-observed center choice follows group collection counting. The center game and physical bag exchange cannot be inferred from a machine-graded GROUPS/TOTAL numeric answer.",
             @"Do not count five groups of ten as five objects or count the same group twice. Six tens is 60, not 6, and the unit 'ten' matters.",
             @"I can count and represent collections of up to six complete groups of ten."),
         new(@"PED:US-CCSS-MATH:G1:U04:L02",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-2/preparation.html",@"f916e5b744814c256800ad18834e648885de72c02121535104d72d46e32ed067",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2" },
@@ -614,6 +616,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==ChooseSubtractLessonCode&&previous=="us-ccss-g1-u03-l25-original-activities-v6")||
          (lesson.LessonCode==StoryLessonCode&&previous=="us-ccss-g1-u03-l26-original-activities-v6")||
          (lesson.LessonCode==CenterFourLessonCode&&previous=="us-ccss-g1-u03-l27-original-activities-v6")||
+         (lesson.LessonCode==UnitFourCollectionLessonCode&&previous=="us-ccss-g1-u04-l01-original-activities-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
