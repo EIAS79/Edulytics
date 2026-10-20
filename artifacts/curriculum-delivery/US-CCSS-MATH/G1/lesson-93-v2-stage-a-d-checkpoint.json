@@ -24,18 +24,51 @@
       "Student Facing Practice Round: Show your thinking using drawings, numbers, or words. Equation: __________________________________ [visual] [visual] <div aria-describedby="
     ],
     "sourceSpecificComparison": "Original 8+47; optional 37+7 dollars and 8+26 students; Add Em Up Partner five turns",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "sourceSpecificStudentArithmeticVerified": [
+      "8+47=55 (47+3+5=55)"
+    ],
+    "sourceSpecificOptionalTeacherStoriesVerified": [
+      "37+7=44 dollars",
+      "8+26=34 students"
+    ],
+    "sourceBoundary": "Original accessible 2021 student task allows learner-chosen strategies for 8+47; the independent make-ten numeric mode is only one such strategy. Original visual flash, oral reasoning, physical partner game (practice plus five turns), and protected assessments are NOT digitally claimed."
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "existingTeachingSourceMathReviewed": true,
+    "preservedExplanation": "Original 8+47, teacher-optional 37+7 and 8+26 plus make-next-ten worked equations are present. Choice of numerical strategy and Add Em Up Partner teacher-led, not numeric-completion proof.",
+    "learnerContentVersion": "us-ccss-g1-full-grade-u04-l22-through-u05-l14-teaching-v2"
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceModes": [
+      {
+        "mode": 1,
+        "operands": "37+7",
+        "expected": "MOVE=3;REST=4;TOTAL=44"
+      },
+      {
+        "mode": 2,
+        "operands": "47+8",
+        "expected": "MOVE=3;REST=5;TOTAL=55"
+      },
+      {
+        "mode": 3,
+        "operands": "26+8",
+        "expected": "MOVE=4;REST=4;TOTAL=34"
+      }
+    ],
+    "independentMathReviewed": true,
+    "openSourceStrategyBoundary": "The digital numeric practice correctly grades a make-ten decomposition. An alternative original student strategy is acceptable in classroom assessment, not treated as a wrong mathematical solution merely because the digital mode requests make-ten.",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson93MakeTenOriginalMathTests.cs",
+    "authoredTestsCommit": "068df5a3f764314803744f1c7c6e83382916075f",
+    "testsExecuted": false
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -49,5 +82,18 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal94; defer Stage D, CI, merge, deployment and original V1 academic signoff.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "teacherLedPartnerGamesAutoCertified": false,
+    "protectedPublisherImagesOrAssessmentsAutoCertified": false,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Accessible original arithmetic and learner teaching reviewed, first-party make-ten practice and negative tests prepared; actual free-strategy writing and partner games teacher assessed. CI/rendering/rights/persistence/signoff Stage D pending."
+  }
 }
