@@ -265,6 +265,29 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
             UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,previous));
     }
 
+    [Theory]
+    [InlineData(95, "NUMBER=95")]
+    [InlineData(99, "NUMBER=99")]
+    [InlineData(100, "NUMBER=100")]
+    [InlineData(120, "NUMBER=120")]
+    public void OriginalAnimalLengthNumeralsIncludeBothNinetyFiveAndOneHundredTwenty(
+        int cubes,string correct)
+    {
+        const string family="usccss.g1.u06.l09.write_number_to120";
+        var parameters=new Dictionary<string,int>{
+            ["a"]=cubes,["b"]=0,["c"]=0,["mode"]=0
+        };
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,parameters));
+        Assert.Equal(correct,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,parameters));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,parameters,correct));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,parameters,"NUMBER="+(cubes-1)));
+        parameters["a"]=94;
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,parameters));
+        parameters["a"]=121;
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,parameters));
+    }
+
     [Fact]
     public void OriginalU06L04SevenCardFamilyGeneratesUniqueGradeableTasks()
     {
