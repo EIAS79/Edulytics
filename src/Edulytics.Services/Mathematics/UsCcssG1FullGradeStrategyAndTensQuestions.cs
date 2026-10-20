@@ -213,6 +213,17 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         {
             if(mode==0){a=3;b=2;} // Original 2021 Jada, Bag A 30 and Bag B 2 ten-towers.
             else if(mode==1){a=7;b=4;} // Original 2021 Tyler, 7 ten-towers minus 40.
+            else if(mode==4)
+            {
+                var sourceAdds=new[]{(4,5),(2,6),(4,4)};
+                (a,b)=sourceAdds[random.Next(sourceAdds.Length)];
+            }
+            else if(mode==5)
+            {
+                var sourceSubtracts=new[]{(8,3),(7,2),(9,7)};
+                (a,b)=sourceSubtracts[random.Next(sourceSubtracts.Length)];
+            }
+            else if(mode==6){a=5;b=3;} // Independent Edulytics inverse check.
             else
             {
                 a=random.Next(2,8);
