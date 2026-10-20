@@ -379,4 +379,54 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
             Assert.Equal(10,rows.Select(x=>x.Prompt).Distinct(StringComparer.Ordinal).Count());
         }
     }
+    [Fact]
+    public void OriginalPaperClipMeasurementRequiresUniformEndToEndUnitsAndRejectsGapOverlap()
+    {
+        const string family="usccss.g1.u06.l06.measure_paperclips";
+        var seenModes=new HashSet<int>();
+        for(int mode=0;mode<=7;mode++)
+        {
+            var p=new Dictionary<string,int>{
+                ["a"]=8,["b"]=0,["c"]=0,["mode"]=mode
+            };
+            Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+            var expected=mode switch
+            {
+                4=>"VALID=YES",
+                5 or 6 or 7=>"VALID=NO",
+                _=>"LENGTH=8"
+            };
+            var rendered=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                family,new Random(mode*1151+73));
+            // Seeded generator may choose a different mode, but each item
+            // must have a mathematically valid and independently gradeable key.
+            var generated=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(
+                family,rendered.Parameters);
+            Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(
+                family,rendered.Parameters,generated));
+            seenModes.Add(rendered.Parameters["mode"]);
+            Assert.Equal(expected,
+                UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family,p,expected=="VALID=YES"?"VALID=NO":
+                    expected=="VALID=NO"?"VALID=YES":"LENGTH=9"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family,p,expected+";UNOBSERVED=1"));
+            if(rendered.Parameters["mode"]>=4)
+                Assert.Contains("PAPER CLIP CHECK",rendered.Prompt);
+        }
+        for(int seed=0;seed<500;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                family,new Random(seed*127+19));
+            seenModes.Add(item.Parameters["mode"]);
+            Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(
+                family,item.Parameters));
+        }
+        Assert.Equal(Enumerable.Range(0,8).ToArray(),seenModes.OrderBy(x=>x));
+        // No paper-clip task can certify student handling of actual
+        // publisher tape-strip drawings or classroom peer explanations.
+    }
+
 }
