@@ -29,7 +29,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[0]?14:family==Families[1]?6:family==Families[2]?7:family==Families[4]?7:family==Families[5]?6:family==Families[6]?6:family==Families[7]?6:3))return false;
+           mode<0||mode>(family==Families[0]?14:family==Families[1]?8:family==Families[2]?7:family==Families[4]?7:family==Families[5]?6:family==Families[6]?6:family==Families[7]?6:3))return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" => mode switch
@@ -57,6 +57,8 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 _=>a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99
             },
             "usccss.g1.u04.l17.order_three_numbers"=>
+                mode==7?a==15&&b==33&&c==51:
+                mode==8?a==43&&b==34&&c==40:
                 mode>=5?a==25&&b==0&&c==0:
                 mode>=3?ValidTenCardInsertion(p)&&
                     (mode!=4||OriginalFixedTenCards(p)):
@@ -110,7 +112,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[0]?15:family==Families[1]?7:family==Families[2]?8:family==Families[4]?8:family==Families[5]?7:family==Families[6]?7:family==Families[7]?7:4);
+        int mode=random.Next(family==Families[0]?15:family==Families[1]?9:family==Families[2]?8:family==Families[4]?8:family==Families[5]?7:family==Families[6]?7:family==Families[7]?7:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
         if(family==Families[0]&&mode>=4)
         {
@@ -126,7 +128,9 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         }
         if(family==Families[1]&&mode>=5)
         {
-            a=25;b=0;c=0;
+            if(mode==7){a=15;b=33;c=51;} // Accessible publisher ALT descriptions, not copied figures.
+            else if(mode==8){a=43;b=34;c=40;} // Independent Edulytics ordering exit.
+            else{a=25;b=0;c=0;}
         }
         if(family==Families[2]&&mode>=4)
         {
@@ -206,9 +210,13 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 _=>$"Write the TRUE comparison for {a} and {b} using one of >, <, =. Answer SYMBOL=sign."
             },
             "usccss.g1.u04.l17.order_three_numbers"=>
+                mode==7?
+                    "SOURCE-ALIGNED ACCESSIBLE NUMBER DESCRIPTIONS (original figure not copied): Arrange 1 ten and 5 ones, 3 tens and 3 ones, the number 51, and 5 tens and 3 ones in ascending numerical order. Write ORDER=n1,n2,n3,n4. Have a teacher review how the groups were represented.":
+                mode==8?
+                    "INDEPENDENT EDULYTICS FORMATIVE (not the inaccessible original publisher Cool-down): Put 43, 34, 40 and 4 in increasing order. Write ORDER=n1,n2,n3,n4. Explain how the tens and ones decide each placement to the teacher.":
                 mode>=5?mode==5?
                     "SOURCE 2021 ORDER-NUMBERS EXTENSION: Write ANY whole number greater than 25 and no more than 99 to make 25<□ true. Write NUMBER=number. There are many correct answers.":
-                    "SOURCE 2021 ORDER-NUMBERS EXTENSION: Write ANY positive whole number smaller than 25 to make 25>□ true. Write NUMBER=number. There are many correct answers.":
+                    "SOURCE 2021 ORDER-NUMBERS EXTENSION: Write ANY whole number from 0 to 24 to make 25>□ true. Write NUMBER=number. There are many correct answers.":
                 mode>=3?
                     $"{(mode==4?"ORIGINAL 2021 STUDENT FACING: ":"GENERALIZED PRACTICE: ")}Five cards start in order: {a}, {b}, {c}, {p["d"]}, {p["e"]}. INSERT these five additional cards correctly: {p["f"]}, {p["g"]}, {p["h"]}, {p["i"]}, {p["j"]}. Write ALL ten numbers from least to greatest as ORDER=n1,n2,n3,n4,n5,n6,n7,n8,n9,n10. Explain why two inserted numbers belong where you placed them.":
                 mode%2==0?
@@ -282,6 +290,8 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 _=>$"SYMBOL={Sign(a,b)}"
             },
             "usccss.g1.u04.l17.order_three_numbers"=>
+                mode==7?"ORDER=15,33,51,53":
+                mode==8?"ORDER=4,34,40,43":
                 mode>=5?mode==5?"NUMBER=26":"NUMBER=24":
                 mode>=3?"ORDER="+string.Join(",",
                     new[]{"a","b","c","d","e","f","g","h","i","j"}
@@ -401,7 +411,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         string norm=Normalize(value);
         if(!norm.StartsWith("NUMBER=",StringComparison.Ordinal)||
            !int.TryParse(norm["NUMBER=".Length..],out int number)||
-           number<1||number>99)return false;
+           number<0||number>99)return false;
         return mode==5?number>25:mode==6&&number<25;
     }
 
@@ -411,6 +421,6 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             VerifyStudent37Ways(value):
             family==Families[4]&&p["mode"]<=3?VerifyStudentChosenTensTrade(p,value):
             family==Families[0]&&p["mode"]>=9&&p["mode"]<=13?VerifyOpenComparisonSource(p["mode"],value):
-            family==Families[1]&&p["mode"]>=5?VerifySource25OpenNumber(p["mode"],value):
+            family==Families[1]&&p["mode"]>=5&&p["mode"]<=6?VerifySource25OpenNumber(p["mode"],value):
             Normalize(Solve(family!,p))==Normalize(value));
 }
