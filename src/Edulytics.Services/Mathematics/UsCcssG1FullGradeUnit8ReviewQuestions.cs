@@ -38,15 +38,39 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         if(n<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>3)return false;
+           mode<0||mode>(n==3?8:n==4?9:n==5?7:3))return false;
         return n switch
         {
             0=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
             1=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
             2=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&a>=b&&c==0,
-            3=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&c==0,
-            4=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&c==0,
-            5=>a>=7&&a<=20&&b>=1&&b<a&&c==0,
+            3=>c==0&&(mode switch
+            {
+                4=>a==8&&b==7,
+                5=>a==17&&b==12,
+                6=>a==20&&b==17,
+                7=>a==6&&b==8,
+                8=>a==16&&b==7,
+                _=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20
+            }),
+            4=>c==0&&(mode switch
+            {
+                4=>a==7&&b==11,
+                5=>a==13&&b==5,
+                6=>a==6&&b==9,
+                7=>a==12&&b==8,
+                8=>a==9&&b==8,
+                9=>a==11&&b==5,
+                _=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20
+            }),
+            5=>c==0&&(mode switch
+            {
+                4=>a==12&&b==7,
+                5=>a==17&&b==7,
+                6=>a==13&&b==9,
+                7=>a==20&&b==14,
+                _=>a>=7&&a<=20&&b>=1&&b<a
+            }),
             6=>c==0&&(mode<=1?
                 a>=1&&a<=119&&b>=1&&b<=120-a:
                 a>=20&&a<=120&&b==0),
@@ -60,7 +84,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
     {
         int n=Index(family);
         if(n<0)throw new InvalidOperationException("Unreviewed Grade1 U08 family");
-        int mode=random.Next(4),a=0,b=0,c=0;
+        int mode=random.Next(n==3?9:n==4?10:n==5?8:4),a=0,b=0,c=0;
         for(int attempts=0;attempts<1000;attempts++)
         {
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
@@ -82,6 +106,21 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             else if(n==9){a=random.Next(1,121);b=random.Next(0,a+1);}
             else if(n==8){a=random.Next(3,8)*10+random.Next(1,10);b=10;}
             else{a=random.Next(20,101);b=n>=8?10:0;}
+            if(n==3&&mode>=4)(a,b)=mode switch
+            {
+                4=>(8,7),5=>(17,12),6=>(20,17),7=>(6,8),8=>(16,7),
+                _=>throw new InvalidOperationException("Unexpected change-unknown story mode")
+            };
+            if(n==4&&mode>=4)(a,b)=mode switch
+            {
+                4=>(7,11),5=>(13,5),6=>(6,9),7=>(12,8),8=>(9,8),9=>(11,5),
+                _=>throw new InvalidOperationException("Unexpected missing-part story mode")
+            };
+            if(n==5&&mode>=4)(a,b)=mode switch
+            {
+                4=>(12,7),5=>(17,7),6=>(13,9),7=>(20,14),
+                _=>throw new InvalidOperationException("Unexpected carnival story mode")
+            };
             var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
             if(!Valid(family,p))continue;
             var whole=a+b;
@@ -95,10 +134,34 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     $"ORIGINAL MISSING NUMBER: Find the TWO unknown values for {a} + □ = {whole} and {whole} - {b} = □. Write MISSING_ADD=number;MISSING_SUB=number.",
                 2=>mode%2==0?$"Add within 20: {a}+{b}. Write RESULT=number.":
                     $"Subtract within 20: {a}-{b}. Write RESULT=number.",
-                3=>mode%2==0?$"There are {a} counters and some JOIN. Now there are {whole}. How many joined? Write CHANGE=number;FINAL=number.":
-                    $"There are {whole} counters. Some LEAVE. Now {a} remain. How many left? Write CHANGE=number;FINAL=number.",
-                4=>$"There are {whole} objects total; one part has {a} objects. How many are in the other part? Write MISSING=number;TOTAL=number.",
-                5=>$"There are {a} blue cubes and {b} red cubes. How many MORE blue cubes than red cubes? Write DIFFERENCE=number.",
+                3=>mode switch
+                {
+                    4=>"ORIGINAL 2021 AQUARIUM: Clare sees 8 sea turtles, then some more join; now 15. How many JOINED? Write CHANGE=number;FINAL=number.",
+                    5=>"ORIGINAL 2021 AQUARIUM: 17 penguins sit on rocks, some swim away, and 5 remain. How many LEFT? Write CHANGE=number;FINAL=number.",
+                    6=>"ORIGINAL 2021 AQUARIUM: Seals eat some of a bucket of 20 fish, leaving 3 fish. How many were EATEN? Write CHANGE=number;FINAL=number.",
+                    7=>"ORIGINAL 2021 AQUARIUM: Tyler feels 6 stingrays, then some sea stars, until there are 14 animals in all. How many SEA STARS? Write CHANGE=number;FINAL=number.",
+                    8=>"ORIGINAL 2021 AQUARIUM ANDRE: 16 bullfrogs at first, then some leave and 9 remain. Explain the missing-change subtraction and check by inverse addition. How many LEFT? Write CHANGE=number;FINAL=number. Real pupil strategy is teacher-reviewed.",
+                    _=>mode%2==0?$"There are {a} counters and some JOIN. Now there are {whole}. How many joined? Write CHANGE=number;FINAL=number.":
+                        $"There are {whole} counters. Some LEAVE. Now {a} remain. How many left? Write CHANGE=number;FINAL=number."
+                },
+                4=>mode switch
+                {
+                    4=>"ORIGINAL PLANETARIUM: 7 first graders and some second graders make 18 altogether. How many second graders? Write MISSING=number;TOTAL=number.",
+                    5=>"ORIGINAL PLANETARIUM: There are 18 stars and 13 are bright; the rest are dim. How many dim stars? Write MISSING=number;TOTAL=number.",
+                    6=>"ORIGINAL PLANETARIUM: Diego saw 6 shooting stars; Diego and Tyler together saw 15. How many did Tyler see? Write MISSING=number;TOTAL=number.",
+                    7=>"ORIGINAL PLANETARIUM: Elena bought 12 star stickers and some planet stickers, 20 total. How many planet stickers? Write MISSING=number;TOTAL=number.",
+                    8=>"ORIGINAL NOAH TWO-EQUATION CHECK: Noah painted 9 white stars in a painting of 17 total stars. Circle TWO matching equations: A: 17-9=box. B: 9+17=box. C: 9+box=17. Write MATCH=first_letter,second_letter;MISSING=number.",
+                    9=>"ORIGINAL KIRAN TWO-EQUATION CHECK: Kiran sees 11 stars among 16 sky objects; the rest are planets. Circle TWO matching equations: A: 11+box=16. B: 16+11=box. C: 16-11=box. Write MATCH=first_letter,second_letter;MISSING=number.",
+                    _=>$"There are {whole} objects total; one part has {a} objects. How many are in the other part? Write MISSING=number;TOTAL=number."
+                },
+                5=>mode switch
+                {
+                    4=>"ORIGINAL SCHOOL CARNIVAL: Lin has 7 ride tickets, Mai has 12. How many MORE tickets does Mai have? Write DIFFERENCE=number.",
+                    5=>"ORIGINAL SCHOOL CARNIVAL: 17 bags of BLUE cotton candy and 7 bags of PINK cotton candy. How many MORE blue? Write DIFFERENCE=number.",
+                    6=>"ORIGINAL SCHOOL CARNIVAL: There are 13 toys and 9 are stuffed animals. How many FEWER stuffed animals than toys? Write DIFFERENCE=number.",
+                    7=>"ORIGINAL SCHOOL CARNIVAL: Ferris wheel holds 20 people and the swings 14. How many FEWER people can ride the swings? Write DIFFERENCE=number. A separate authored task asks learners to write TWO ride questions for teacher review.",
+                    _=>$"There are {a} blue cubes and {b} red cubes. How many MORE blue cubes than red cubes? Write DIFFERENCE=number."
+                },
                 6=>mode<=1?
                     $"Last Number Wins: start at {a} (not at one); count ON {b} hops up to 120. Write LAST=number.":
                     $"Count an organized collection of objects with tens bundles and loose ones. The display has NO double-counted cubes and contains between 20 and 120 objects. How many are there? Write TENS=number;ONES=number;TOTAL=number.",
@@ -128,8 +191,11 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 mode==2?$"ADD={a}+{b}={a+b};SUB={a+b}-{b}={a}":
                 $"MISSING_ADD={b};MISSING_SUB={a}",
             2=>$"RESULT={(mode%2==0?a+b:a-b)}",
-            3=>mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
-            4=>$"MISSING={b};TOTAL={a+b}",
+            3=>mode>=4?
+                $"CHANGE={b};FINAL={(mode==4||mode==7?a+b:a-b)}":
+                mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
+            4=>mode==8||mode==9?$"MATCH=A,C;MISSING={b}":
+                $"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
             7=>mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
