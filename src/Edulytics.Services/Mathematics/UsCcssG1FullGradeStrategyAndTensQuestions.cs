@@ -74,7 +74,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                            (a==18&&b==9)||(a==17&&b==15)))&&
                 (mode!=5||(a==15&&b==8))&&
                 (mode!=6||(a==17&&b==9))&&
-                (mode!=7||(a==14&&b==9)),
+                (mode!=7||(a==16&&b==7)),
             StoryUnknowns=>((a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
                 ((mode==1||mode==4)&&a==6&&b==12))&&
                 (mode!=2||(a==6&&b==9))&&
@@ -138,7 +138,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             else if(family==FlexibleSubtract&&mode==6)
             {a=17;b=9;} // Original Kiran story: 17−□=9.
             else if(family==FlexibleSubtract&&mode==7)
-            {a=14;b=9;} // Original Edulytics exit check, inspired by lesson goal.
+            {a=16;b=7;} // Independently authored Edulytics exit check, not publisher 14-9 synthesis.
             else if(family==FlexibleSubtract&&mode==2){a=12;b=7;} // Original 2021 pencil story: 12−7.
             else
             {
@@ -229,7 +229,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 mode==6?
                 "ORIGINAL 2021 KIRAN STORY: Kiran has 17 crayons, gives some away, and has 9 left. How many did he GIVE AWAY? Complete 17−□=9. Write UNKNOWN=number;EQUATION=number-number=number. Explain your strategy.":
                 mode==7?
-                "EDULYTICS ORIGINAL EXIT CHECK: Show how you could work out 14−9 using any correct strategy. How many remain? Check your answer by addition. Write DIFFERENCE=number;CHECK=number+number=number. If you choose a drawing or words, explain to your teacher: the digital numeric fields do not certify the drawing or your reasoning.":
+                "EDULYTICS ORIGINAL EXIT CHECK: Show how you could work out 16−7 using any correct strategy. How many remain? Check your answer by addition. Write DIFFERENCE=number;CHECK=number+number=number. If you choose a drawing or words, explain to your teacher: the digital numeric fields do not certify the drawing or your reasoning.":
                 $"Choose a subtraction method for {a}-{b}. Check using related addition. Write DIFFERENCE=number;CHECK=number+number=number.",
             StoryUnknowns=>mode switch
             {
