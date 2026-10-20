@@ -44,7 +44,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(i==5?7:i==6?4:i==10?7:i==12?4:i==13?9:3)||
+           mode<0||mode>(i==5?7:i==6?4:i==7?4:i==10?7:i==12?4:i==13?9:3)||
            (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
         return i switch
         {
@@ -65,7 +65,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             3 or 9 or 15=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
             4 or 5=>a>=2&&a<=20&&b==0,
             6=>b==2&&(mode==4?(a==6||a==12):a>=2&&a<=14),
-            7=>a>=20&&a<=110&&b==0,
+            7=>b==0&&(mode==4?a>=101&&a<=110:a>=20&&a<=110),
             8=>a>=95&&a<=120&&b==0,
             12=>mode==4?a==20&&b==9&&c==0:
                 a>=5&&a<=20&&b>=1&&b<=a&&c==0,
@@ -87,7 +87,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(i==5?8:i==6?5:i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
+        int mode=random.Next(i==5?8:i==6||i==7?5:i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -112,7 +112,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         else if(i is 3 or 9 or 15){a=random.Next(11,66);b=random.Next(1,Math.Min(20,100-a)+1);}
         else if(i is 4 or 5){a=random.Next(2,21);}
         else if(i==6){a=mode==4?(random.Next(2)==0?6:12):random.Next(2,15);b=2;}
-        else if(i==7){a=random.Next(20,111);}
+        else if(i==7){a=mode==4?random.Next(101,111):random.Next(20,111);}
         else if(i==8){a=random.Next(95,121);}
         else {a=random.Next(5,21);b=random.Next(1,a+1);}
         if(i==10&&mode>=4)
@@ -165,7 +165,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             6=>mode==4
                 ?$"SOURCE-INSPIRED THREE-UNIT COMPARISON (FIRST-PARTY MODEL): The SAME strip is {a} one-cube-length units. A medium measuring tool spans 2 such units; a long tool spans 3. Without leaving gaps, find ALL THREE correct counts for the same unchanged strip. Write SMALL_UNITS=number;MEDIUM_UNITS=number;LARGE_UNITS=number. This is not a claim to have measured Jeison's real foot."
                 :$"One strip is {a} long units. A small unit is HALF the length of one long unit. How many small units cover the SAME strip? Write SMALL_UNITS=number.",
-            7=>$"A long object measures {a} identical cube units. Organize the count into tens and ones. Write TENS=number;ONES=number;TOTAL=number.",
+            7=>mode==4?
+                $"SOURCE-GROUNDED GROUPS UP TO 110: A FIRST-PARTY equal-unit strip measures {a} unit cubes, MORE THAN 100 cubes. Count full tens and remaining ones, and verify the total without guessing an original source diagram. Write TENS=number;ONES=number;TOTAL=number.":
+                $"A long object measures {a} identical cube units. Organize the count into tens and ones. Write TENS=number;ONES=number;TOTAL=number.",
             8=>$"Write the number represented by {a/10} complete TENS and {a%10} leftover ONES. Grade 1 range is up to 120. Write NUMBER=number.",
             9=>mode%2==0?$"Center arithmetic: add {a}+{b} within 100. Write RESULT=number.":
                 $"Center numeric measuring task: {a} same-sized cubes arranged without gaps. Write LENGTH=number.",
