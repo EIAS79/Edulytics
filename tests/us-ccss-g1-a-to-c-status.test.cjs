@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test');
 const assert=require('node:assert/strict');
-const {build,buildRangeReport,main,STATUS}=require('../tools/curriculum/us-ccss-g1-a-to-c-status.cjs');
+const {build,buildRemainingReport,buildRangeReport,main,STATUS}=require('../tools/curriculum/us-ccss-g1-a-to-c-status.cjs');
 const fs=require('node:fs');
 const path=require('node:path');
 const dir=path.resolve(__dirname,'../artifacts/curriculum-delivery/US-CCSS-MATH/G1');
@@ -106,4 +106,22 @@ test('range report rejects gaps and ranges outside 51–146, without guessed com
     assert.throws(()=>buildRangeReport(from,to,snapshot),/valid Grade 1/);
   for(const option of ['--range=xx','--range=50-66','--range=57-147','--range=57-66-67'])
     assert.throws(()=>main([option]));
+});
+
+test('entire remaining Grade 1 authoring cohort uses canonical order with no 10-lesson cap',()=>{
+  const snapshot=build();
+  const expected=snapshot.lessons.filter(x=>x.status!==STATUS.accepted);
+  const report=buildRemainingReport(snapshot);
+  assert.equal(report.scope,'G1 all remaining candidate lessons');
+  assert.equal(report.lessons.length,expected.length);
+  assert.deepEqual(report.lessons.map(x=>x.ordinal),expected.map(x=>x.ordinal));
+  assert.deepEqual(report.lessons.map(x=>x.lessonCode),expected.map(x=>x.lessonCode));
+  assert.equal(report.summary.total,expected.length);
+  assert.equal(report.summary.previouslyInternallyAccepted,0);
+  assert.equal(report.summary.ciTriggeredByReport,false);
+  assert.deepEqual(report.summary.pendingACOrdinals,expected.filter(x=>!x.aToCReady).map(x=>x.ordinal));
+  assert.deepEqual(report.summary.skipACReworkOrdinals,expected.filter(x=>x.aToCReady).map(x=>x.ordinal));
+  assert.deepEqual(main(['--remaining']),report);
+  assert.deepEqual(main(['--remaining','--summary']),report.summary);
+  assert.throws(()=>main(['--remaining','--range=57-66']),/either/);
 });
