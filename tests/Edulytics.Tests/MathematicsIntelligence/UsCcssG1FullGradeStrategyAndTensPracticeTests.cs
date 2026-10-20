@@ -316,6 +316,76 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson64SourceCenterZeroCardsDistinctHandAndTwoExpressionComparisonAreCorrect()
+    {
+        const string f=UsCcssG1FullGradeStrategyAndTensQuestions.CenterWithin20;
+        var hand=new Dictionary<string,int>{{"a",6},{"b",4},{"c",9},{"mode",5}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,hand));
+        Assert.Equal("RESULT=1;EQUATION=20-6-4-9=1",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(f,hand));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,hand,
+            "RESULT=1;EQUATION=20-6-4-9=1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,hand,
+            "RESULT=1;EQUATION=20-6-4-8=2"));
+        hand["c"]=8;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,hand));
+        var comparison=new Dictionary<string,int>{{"a",9},{"b",6},{"c",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,comparison));
+        Assert.Equal("LEFT=15;RIGHT=13;GREATER=LEFT",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(f,comparison));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,comparison,
+            "LEFT=15;RIGHT=13;GREATER=LEFT"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,comparison,
+            "LEFT=15;RIGHT=13;GREATER=RIGHT"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,comparison,
+            "LEFT=15;RIGHT=13")); // Missing comparison is not complete.
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,comparison,
+            "LEFT=15;RIGHT=13;GREATER=LEFT;FAKE=1"));
+        comparison["a"]=10;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,comparison));
+        var subtraction=new Dictionary<string,int>{{"a",19},{"b",6},{"c",0},{"mode",3}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,subtraction));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,subtraction,"RESULT=13"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,subtraction,"RESULT=15"));
+        var zeroCard=new Dictionary<string,int>{{"a",0},{"b",9},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,zeroCard));
+        Assert.Equal("RESULT=11;EQUATION=20-0-9=11",
+            UsCcssG1FullGradeStrategyAndTensQuestions.Solve(f,zeroCard));
+        zeroCard["b"]=0;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,zeroCard));
+        var zeroThird=new Dictionary<string,int>{{"a",9},{"b",10},{"c",0},{"mode",2}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,zeroThird));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,zeroThird,
+            "RESULT=1;EQUATION=20-9-10-0=1"));
+        zeroThird["c"]=9;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,zeroThird));
+        zeroThird["c"]=8;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,zeroThird)); // Negative result.
+        var generated=Enumerable.Range(0,960)
+            .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(f,new Random(47*n+29)))
+            .ToArray();
+        Assert.True(generated.Count(q=>q.Parameters["mode"]==4)>60);
+        Assert.True(generated.Count(q=>q.Parameters["mode"]==5)>60);
+        Assert.All(generated,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(f,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(f,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(f,q.Parameters)));
+            var p=q.Parameters;
+            if(p["mode"]==0)Assert.NotEqual(p["a"],p["b"]);
+            if(p["mode"]==2)
+            {
+                Assert.NotEqual(p["a"],p["b"]);
+                Assert.NotEqual(p["a"],p["c"]);
+                Assert.NotEqual(p["b"],p["c"]);
+                Assert.InRange(p["a"]+p["b"]+p["c"],0,20);
+            }
+            if(p["mode"]==4)Assert.Contains("9+6",q.Prompt);
+            if(p["mode"]==5)Assert.Contains("6, 4, 9 and 8",q.Prompt);
+        });
+    }
+
+    [Fact]
     public void Original2021TwelvePencilsMinusSevenStoryIsGeneratedAndGradeable()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;
