@@ -617,6 +617,49 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson70CheckItOffZeroAndNinetyRemainWithinOriginalBoardLimits()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CenterTens;
+        var zeroPlus=new Dictionary<string,int>{{"a",0},{"b",3},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,zeroPlus));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,zeroPlus,"RESULT=30"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,zeroPlus,"RESULT=3"));
+        var ninetyPlusZero=new Dictionary<string,int>{{"a",9},{"b",0},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,ninetyPlusZero));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,ninetyPlusZero,"RESULT=90"));
+        var ninetyMinusTen=new Dictionary<string,int>{{"a",9},{"b",1},{"c",0},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,ninetyMinusTen));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,ninetyMinusTen,"RESULT=80"));
+        var impossible=new Dictionary<string,int>{{"a",8},{"b",2},{"c",0},{"mode",0}};
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,impossible));
+        impossible["a"]=0;impossible["b"]=1;impossible["mode"]=1;
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,impossible));
+        var exact=new Dictionary<string,int>{{"a",5},{"b",4},{"c",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,exact));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,exact,
+            "MOVE=SUBTRACT;COVER=10;EQUATION=50-40=10"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,exact,
+            "MOVE=ADD;COVER=90;EQUATION=40+50=90"));
+        var sample=Enumerable.Range(0,840).Select(i=>
+            UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(i*29+19)))
+            .ToArray();
+        Assert.Contains(sample,q=>q.Parameters["mode"]==0&&q.Parameters["a"]==0);
+        Assert.Contains(sample,q=>q.Parameters["mode"]==1&&q.Parameters["a"]==9);
+        Assert.All(sample,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)+";UNKNOWN=1"));
+            if(q.Parameters["mode"]==0)
+                Assert.InRange(q.Parameters["a"]+q.Parameters["b"],0,9);
+            if(q.Parameters["mode"]==1)
+                Assert.InRange(q.Parameters["a"]-q.Parameters["b"],0,9);
+        });
+    }
+
+    [Fact]
     public void Original2021TwelvePencilsMinusSevenStoryIsGeneratedAndGradeable()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract;
