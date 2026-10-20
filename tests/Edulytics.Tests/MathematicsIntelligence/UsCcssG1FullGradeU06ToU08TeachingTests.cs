@@ -24,6 +24,27 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
             Assert.Contains($"PED:US-CCSS-MATH:G1:U08:L{n:00}",ids);
     }
     [Fact]
+    public void HowCloseStage3V3ContentUpgradeIsLimitedToOriginalUnit6Lesson4()
+    {
+        var doc=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Single(d=>d.Lessons.Any(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"));
+        var lesson4=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04");
+        var lesson6=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06");
+        const string previous=CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6OriginalSourceVersion;
+        Assert.True(CommonCoreG1FullGradeUnit6To8ContentCorrections.CanUpgradeExisting(
+            doc,lesson4,previous));
+        Assert.False(CommonCoreG1FullGradeUnit6To8ContentCorrections.CanUpgradeExisting(
+            doc,lesson6,previous));
+        Assert.Equal(
+            CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson4Stage3SourceVersion,
+            CommonCoreG1FullGradeUnit6To8ContentCorrections.GetExpectedContentVersion(
+                doc,lesson4,previous));
+        Assert.Equal(previous,
+            CommonCoreG1FullGradeUnit6To8ContentCorrections.GetExpectedContentVersion(
+                doc,lesson6,previous));
+    }
+
+    [Fact]
     public void OriginalSourceBoundMaterializationPreservesMeasurementGeometryTimeAndRiddleGoals()
     {
         var docs=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
@@ -33,7 +54,9 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         {
             var lesson=doc.Lessons.Single(x=>x.LessonCode==code);
             Assert.True(CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(doc,lesson));
-            var expectedVersion=code.Contains(":U06:",StringComparison.Ordinal)
+            var expectedVersion=code=="PED:US-CCSS-MATH:G1:U06:L04"
+                ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson4Stage3SourceVersion
+                :code.Contains(":U06:",StringComparison.Ordinal)
                 ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6OriginalSourceVersion
                 :code is "PED:US-CCSS-MATH:G1:U07:L01" or
                      "PED:US-CCSS-MATH:G1:U07:L03" or
