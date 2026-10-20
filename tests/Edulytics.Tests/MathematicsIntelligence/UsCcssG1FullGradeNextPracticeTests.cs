@@ -98,6 +98,15 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
             "TOTAL=17;EQUATION=8+0+9=17"));
         close["a"]=10;
         Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,close));
+        close["a"]=0;close["c"]=0; // The chosen third card can be ZERO.
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,close));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,close,
+            "TOTAL=9;EQUATION=9+0+0=9"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,close,
+            "TOTAL=9;EQUATION=9+0=9")); // Cannot drop a selected zero-card.
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,close,
+            "TOTAL=9;EQUATION=9+1+0=9")); // Wrong selected source card.
+
         var triple=new Dictionary<string,int>{{"a",3},{"b",6},{"c",7},{"mode",1}};
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,triple,
             "TOTAL=16;EQUATION=3+7+6=16"));
