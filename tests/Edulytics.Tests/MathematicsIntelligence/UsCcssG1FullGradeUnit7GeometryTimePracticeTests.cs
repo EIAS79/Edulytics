@@ -4,6 +4,39 @@ using Edulytics.Services.Mathematics;
 namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
 {
+    [Fact]
+    public void OriginalUnit7Lesson3ReSortsFlatCardsByTwoDistinctDefiningRules()
+    {
+        const string f="usccss.g1.u07.l03.sort_flat_shapers";
+        const string answer="CURVED=CIRCLE;THREE_SIDES=TRIANGLE;FOUR_SIDES=SQUARE,RECTANGLE";
+        var p=new Dictionary<string,int>{
+            ["a"]=3,["b"]=9,["c"]=0,["mode"]=4
+        };
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(f,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,answer));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+            "CURVED=CIRCLE;THREE_SIDES=RECTANGLE;FOUR_SIDES=SQUARE,TRIANGLE"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+            answer+";CHILD_SORTED=YES"));
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<600;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                f,new Random(seed*97+19));
+            modes.Add(item.Parameters["mode"]);
+            var key=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(f,item.Parameters,key));
+            if(item.Parameters["mode"]==4)
+            {
+                Assert.Contains("FIRST sort",item.Prompt);
+                Assert.Contains("NEXT sort",item.Prompt);
+                Assert.Contains("teacher",item.Prompt,StringComparison.OrdinalIgnoreCase);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
+    }
+
     [Theory]
     [InlineData(2,2,"PER_LAYER=4;LAYERS=2;TOTAL_CUBES=8")]
     [InlineData(3,2,"PER_LAYER=6;LAYERS=2;TOTAL_CUBES=12")]
