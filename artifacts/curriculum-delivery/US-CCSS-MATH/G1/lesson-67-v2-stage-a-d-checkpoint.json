@@ -22,18 +22,29 @@
       "Student Facing Round 1: How many cubes? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-icon--close\" heig"
     ],
     "existingCandidateReused": true,
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "originalAccessibleTeacherAndStudentActivityTasksReviewed": true,
+    "originalWarmUp": "two rounds of estimates: too-low, about-right, too-high",
+    "originalActivities": "three-card match each pupil finds two peers; chart Number / Number of Tens / Drawing; match 10-90 towers/numerals/words",
+    "originalProtected2021CooldownVerbatimVerified": false
   },
   "stageB": {
     "reviewAndCorrectionSummary": "Restored original too-low/about-right/too-high physical estimate and word-card/numeral/tower correspondence; retained reviewed MatchTens family",
     "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "candidateEditCommit": "344ddaef861be613e97423e8685111ee29f47872",
-    "publisherArtworkCopied": false
+    "publisherArtworkCopied": false,
+    "contentVersion": "us-ccss-g1-u04-l02-original-activities-v7",
+    "persistedV6ToV7Guarded": true,
+    "independentlyAuthoredExitCheck": "7 tens / 70 cubes / SEVENTY"
   },
   "stageC": {
     "reusedPracticeFamily": "usccss.g1.u04.l02.match.tens_equivalence",
     "changedGeneratorCommit": null,
-    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence"
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence",
+    "originalSourceTaskToPracticeParity": "VERIFIED_VISIBLE_SOURCE_AND_OWN_EDULYTICS_EXIT",
+    "exactSourceMathAndOwnedExitVerifierReviewed": true,
+    "writtenTestsNotExecuted": true
   },
   "stageD": {
     "sourceAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
@@ -47,5 +58,22 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-67-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "assessmentBasis": "OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN",
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  },
+  "nextAction": "A-C complete for visible source matched tens cards, owner-authored 7-tens assessment. Protected 2021 original cooldown not copied. Continue ordinal 68; final D/CI withheld until entire grade frozen."
 }
