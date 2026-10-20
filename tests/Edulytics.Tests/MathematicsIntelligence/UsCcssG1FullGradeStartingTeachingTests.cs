@@ -206,6 +206,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
                     ?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCountLargerSourceContentVersion
                     :n==7?CommonCoreG1FullGradeStartingContentCorrections.UnitFourReadNumberSourceContentVersion
                     :n==8?CommonCoreG1FullGradeStartingContentCorrections.UnitFourRepresentationsSourceContentVersion
+                    :n==9?CommonCoreG1FullGradeStartingContentCorrections.UnitFourShowNumberSourceContentVersion
                     :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
@@ -245,6 +246,17 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("five complete tens and two remaining ones",unit4Text(6));
         Assert.Contains("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",unit4Text(6));
         Assert.Contains("3 full tens and 7 ones",unit4Text(6));
+        Assert.Contains("partners draw two digit cards",unit4Text(9));
+        Assert.Contains("AT LEAST FOUR actual classmates' collections",unit4Text(9));
+        Assert.Contains("Collection 1, Collection 2, Collection 3 and Collection 4",unit4Text(9));
+        Assert.Contains("7 tens and 3 ones",unit4Text(9));
+        Assert.Contains("TEACHER RUBRIC",unit4Text(9));
+        Assert.Contains("Digitally graded equivalence alone does not certify",unit4Text(9));
+        var showOwnNumber=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L09");
+        Assert.Equal("us-ccss-g1-u04-l09-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourShowNumberSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,showOwnNumber,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
         Assert.Contains("Kiran 3 ones plus 7 tens agrees with Priya 70+3",unit4Text(8));
         Assert.Contains("J and S both represent 32 but E represents 23",unit4Text(8));
         Assert.Contains("9 groups of ten and 5 single ones",unit4Text(8));
