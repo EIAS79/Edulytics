@@ -41,5 +41,40 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required"
+  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required",
+  "sourceFixedTenCardPractice20261020": {
+    "sourceGivenSortedCards": [
+      1,
+      5,
+      10,
+      50,
+      99
+    ],
+    "sourceCardsToInsert": [
+      49,
+      8,
+      25,
+      98,
+      13
+    ],
+    "correctOrderedResult": [
+      1,
+      5,
+      8,
+      10,
+      13,
+      25,
+      49,
+      50,
+      98,
+      99
+    ],
+    "gradeableEngine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit4FinalQuestions.cs",
+    "newSourceMode": 4,
+    "generalizedHistoricalModePreserved": 3,
+    "unitTestsPrepared": true,
+    "frozenExactShaGradingAndRendering": "PENDING",
+    "academicAcceptance": "NOT_CLAIMED",
+    "release": "NO_GO"
+  }
 }
