@@ -15,6 +15,7 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
     public const string Unit4EndSourceVersion="us-ccss-g1-u04-l22-l23-original-activities-v2";
     public const string Unit4Lesson22SourceVersion="us-ccss-g1-u04-l22-exact-three-comparisons-v4";
     public const string Unit5EarlySourceVersion="us-ccss-g1-u05-l01-l07-source-activities-v2";
+    public const string Unit5Lesson01SourceVersion="us-ccss-g1-u05-l01-original-student-and-teacher-math-v3";
     public const string Unit5LaterSourceVersion="us-ccss-g1-u05-l08-l13-source-activities-v2";
     private static bool IsUnit5Later(string code)=>code is
         "PED:US-CCSS-MATH:G1:U05:L08" or "PED:US-CCSS-MATH:G1:U05:L09" or
@@ -47,8 +48,8 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
             @"I can estimate, count, and represent a collection up to 99. A real-life investigation needs real evidence."),
         new(@"PED:US-CCSS-MATH:G1:U05:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-1/preparation.html",@"39aba045753ec23ceacd9c40cbd05dfc4e50f98ce3f39f1fe0f9799e4435f276",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.C.4"],
             @"Add Tens or Ones",
-            @"Add TENS or ONES to a two-digit number without composing a new ten. Draw rods for tens and single dots for ones. Original 2021 What Did I Add? partner activity: spin a starting number; secretly choose a card, decide to add that number of ONES or TENS within 100, then let a partner infer the addition. The original warm-up also uses images of ten-frames; teacher verifies any partner reasoning.",
-            @"Example 1: 43 + 5 = 48; three ones plus five ones makes eight ones. Example 2: 43 + 20 = 63; four tens plus two tens makes six tens, and three ones remain. Original student equations: 43+50=93; 51+3=54; 51+30=81; 2+75=77; 20+75=95; 93+6=99; 60+28=88; 5+74=79. These are no-composing examples with the same original quantities.",
+            @"Add TENS or ONES to a two-digit number without composing a new ten. Draw rods for tens and single dots for ones. Original 2021 What Did I Add? partner activity: spin a starting number; secretly choose a card, decide to add that number of ONES or TENS within 100, then let a partner infer the addition. The original 2021 ten-frame warm-up shows three complete ten-frames (30), three complete tens and five ones (35), and three complete tens and nine ones (39). Partner reasoning, flashes and the real spinner are teacher assessed. For the authentic game, remove number cards 0 and 6 to 10, spin the starting number, then secretly choose 1–5 ones or tens without exceeding 100; partner must infer whether tens or ones were added.",
+            @"Example 1: 43 + 5 = 48; three ones plus five ones makes eight ones. Example 2: 43 + 20 = 63; four tens plus two tens makes six tens, and three ones remain. Original student equations: 43+50=93; 51+3=54; 51+30=81; 2+75=77; 20+75=95; 93+6=99; 60+28=88; 5+74=79. These are no-composing examples with the same original quantities. The original teacher launch uses 43+50=93, Priya compares 34+5=39 with 34+50=84, and the final Mai-versus-Andre synthesis corrects 4+45=49, not 85: four means four ONES, not four tens.",
             @"Step 1: Identify whether the addend contains tens or ones. Step 2: Add like units without combining ten ones. Step 3: Rewrite and check the resulting two-digit number.",
             @"Do not treat +20 as adding two ones. Do not generate a sum with ten or more ones in this no-composing lesson.",
             @"I can add tens or ones to two-digit numbers when no new ten is made."),
@@ -177,6 +178,7 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
        IsTarget(doc,lesson)
            ?(lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L22"?Unit4Lesson22SourceVersion:
+              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U05:L01"?Unit5Lesson01SourceVersion:
              IsUnit4End(lesson.LessonCode)?Unit4EndSourceVersion:
              IsUnit5Early(lesson.LessonCode)?Unit5EarlySourceVersion:
              IsUnit5Later(lesson.LessonCode)?Unit5LaterSourceVersion:Version)
@@ -185,6 +187,7 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
        IsTarget(doc,lesson)&&
        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
         previous==PreviousVersion||
+        (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U05:L01"&&previous==Unit5EarlySourceVersion)||
         (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L22"&&(previous==Unit4EndSourceVersion||previous=="us-ccss-g1-u04-l22-exact-three-comparisons-v3"))||
         (previous==Version&&(IsUnit4End(lesson.LessonCode)||IsUnit5Early(lesson.LessonCode)||
            IsUnit5Later(lesson.LessonCode))));
