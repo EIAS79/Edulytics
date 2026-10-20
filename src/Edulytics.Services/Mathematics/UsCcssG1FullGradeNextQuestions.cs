@@ -165,7 +165,7 @@ public static class UsCcssG1FullGradeNextQuestions
     // Original 2021 three-group zoo and center stories accept regrouping and
     // commutativity, not one arbitrary textual addend order. Check the exact
     // story quantities so an unrelated expression with the same sum fails.
-    private static bool VerifySourceGroupEquation(IReadOnlyDictionary<string,int> p,string? response)
+    private static bool VerifySourceGroupEquation(string family,IReadOnlyDictionary<string,int> p,string? response)
     {
         var parts=Normalize(response).Split(';');
         if(parts.Length!=2)return false;
@@ -185,9 +185,12 @@ public static class UsCcssG1FullGradeNextQuestions
         if(equality.Length!=2||
            !int.TryParse(equality[1],out var result)||result!=requiredTotal)return false;
         var operands=equality[0].Split('+');
-        var sourceOperands=p["c"]==0
-            ?new[]{p["a"],p["b"]}
-            :new[]{p["a"],p["b"],p["c"]};
+        // A selected zero-card is still a third card in the How Close mode=1 task.
+        // Do not infer operand COUNT from its numeric VALUE.
+        var threeGroups=family==ZooThree||(family==CenterTwoThree&&p["mode"]==1);
+        var sourceOperands=threeGroups
+            ?new[]{p["a"],p["b"],p["c"]}
+            :new[]{p["a"],p["b"]};
         if(operands.Length!=sourceOperands.Length)return false;
         var parsed=new int[operands.Length];
         for(int i=0;i<operands.Length;i++)
@@ -200,6 +203,6 @@ public static class UsCcssG1FullGradeNextQuestions
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? response)=>
         Valid(family,p) &&
         (family is ZooThree or CenterTwoThree?
-            VerifySourceGroupEquation(p,response):
+            VerifySourceGroupEquation(family!,p,response):
             GradePersistedAnswer(family,Solve(family!,p),response));
 }
