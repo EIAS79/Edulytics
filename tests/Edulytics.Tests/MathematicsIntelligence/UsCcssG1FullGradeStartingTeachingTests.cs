@@ -209,6 +209,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
                     :n==9?CommonCoreG1FullGradeStartingContentCorrections.UnitFourShowNumberSourceContentVersion
                     :n==10?CommonCoreG1FullGradeStartingContentCorrections.UnitFourWriteNumeralSourceContentVersion
                     :n==11?CommonCoreG1FullGradeStartingContentCorrections.UnitFourAddTensSourceContentVersion
+                    :n==12?CommonCoreG1FullGradeStartingContentCorrections.UnitFourTenMoreLessSourceContentVersion
                     :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
@@ -378,6 +379,15 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("smudged diagram",unit4Text(11));
         Assert.Contains("67+10=77",unit4Text(12));
         Assert.Contains("99-10-10-10=69",unit4Text(12));
+        foreach(var expectedWarmup in new[]{"3+10=13","10+5=15","13-10=3","15-10=5"})
+            Assert.Contains(expectedWarmup,unit4Text(12));
+        foreach(var intermediate in new[]{"67+10+10=87","67+10+10+10=97","99-10=89","99-10-10=79"})
+            Assert.Contains(intermediate,unit4Text(12));
+        var mentalTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L12");
+        Assert.Equal("us-ccss-g1-u04-l12-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourTenMoreLessSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,mentalTens,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
         Assert.Contains("Write Numbers Stage 2 center",unit4Text(12));
         Assert.Contains("8+7+5=20",unit4Text(13));
         Assert.Contains("Elena argues 75>65",unit4Text(14));
