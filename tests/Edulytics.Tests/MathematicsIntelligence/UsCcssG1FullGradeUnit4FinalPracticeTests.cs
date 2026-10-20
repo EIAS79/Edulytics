@@ -185,6 +185,52 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
         Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(f,p));
     }
     [Fact]
+    public void Original2021SourceTenCardsAreActuallyGeneratedAndCannotBeForged()
+    {
+        const string family="usccss.g1.u04.l17.order_three_numbers";
+        var found=0;
+        for(int seed=0;seed<400;seed++)
+        {
+            var problem=UsCcssG1FullGradeUnit4FinalQuestions.Build(
+                family,new Random(20261020+seed*71));
+            if(problem.Parameters["mode"]!=4)continue;
+            found++;
+            Assert.Contains("ORIGINAL 2021 STUDENT FACING",problem.Prompt);
+            var source=problem.Parameters;
+            var sourceCards=new Dictionary<string,int>{
+                ["a"]=1,["b"]=5,["c"]=10,["d"]=50,["e"]=99,
+                ["f"]=49,["g"]=8,["h"]=25,["i"]=98,["j"]=13
+            };
+            foreach(var entry in sourceCards)
+                Assert.Equal(entry.Value,source[entry.Key]);
+            const string correct="ORDER=1,5,8,10,13,25,49,50,98,99";
+            Assert.Equal(correct,UsCcssG1FullGradeUnit4FinalQuestions.Solve(family,source));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,source,correct));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,source,
+                "ORDER=1,5,10,8,13,25,49,50,98,99"));
+            var altered=source.ToDictionary(x=>x.Key,x=>x.Value);
+            altered["f"]=48;
+            Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,altered));
+        }
+        Assert.True(found>=35,
+            "The exact original Student Facing problem must be sampled, not just registered.");
+    }
+    [Fact]
+    public void SourceTenCardsRemainSeparateFromLegacyGeneralizedInsertionMode()
+    {
+        const string family="usccss.g1.u04.l17.order_three_numbers";
+        var source=new Dictionary<string,int>{
+            ["a"]=1,["b"]=5,["c"]=10,["d"]=50,["e"]=99,
+            ["f"]=49,["g"]=8,["h"]=25,["i"]=98,["j"]=13,["mode"]=3
+        };
+        Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,source));
+        source["f"]=48;
+        Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,source));
+        source["mode"]=4;
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,source));
+    }
+
+    [Fact]
     public void NumberInsertionGeneratorProducesTenDistinctSortedAnswers()
     {
         const string f="usccss.g1.u04.l17.order_three_numbers";
