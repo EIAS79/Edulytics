@@ -169,7 +169,10 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
     }
     [Theory]
     [InlineData("usccss.g1.u06.l08.count_to110_cube_groups",110,11,0)]
+    [InlineData("usccss.g1.u06.l09.write_number_to120",95,9,5)]
+    [InlineData("usccss.g1.u06.l09.write_number_to120",99,9,9)]
     [InlineData("usccss.g1.u06.l09.write_number_to120",120,12,0)]
+    [InlineData("usccss.g1.u08.l08.same_number_tens_ones",100,10,0)]
     [InlineData("usccss.g1.u08.l08.same_number_tens_ones",95,9,5)]
     public void UnitSixAndEightRenderUpToOneHundredTwenty(string family,int number,int tens,int ones)
     {
@@ -218,6 +221,10 @@ public sealed class UsCcssG1NewSourcePlaceValueVisualTests
         Assert.Null(Visual("usccss.g1.u04.l10.write.two_digit_numeral",
             new{tens=10,ones=3,mode=0,unused=0}));
         Assert.Null(Visual("usccss.g1.u06.l09.write_number_to120",
+            new{a=94,b=0,c=0,mode=0}));
+        Assert.Null(Visual("usccss.g1.u06.l09.write_number_to120",
             new{a=121,b=0,c=0,mode=0}));
+        Assert.Null(Visual("usccss.g1.u08.l08.same_number_tens_ones",
+            new{a=101,b=0,c=0,mode=0}));
     }
 }
