@@ -29,7 +29,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[1]?4:3))return false;
+           mode<0||mode>(family==Families[1]?4:family==Families[4]?7:3))return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" or
@@ -44,7 +44,10 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l20.equivalent_tens_ones" =>
                 a>=20&&a<=99&&b==0&&c==0&&
                 (family!=Families[3]||((mode!=0||a==65)&&(mode!=1||a==37)))&&
-                (family!=Families[4]||mode!=2||a==94),
+                (family!=Families[4]||(
+                    (mode!=2||a==94)&&
+                    (mode<4||(mode==4&&a==52)||(mode==5&&a==65)||
+                               (mode==6&&a==49)||(mode==7&&a==36)))),
             "usccss.g1.u04.l21.compare_nonstandard_forms" =>
                 a>=20&&a<=99&&b>=20&&b<=99&&c==0&&
                 (mode!=2||(a==82&&b==72)),
@@ -74,7 +77,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[1]?5:4);
+        int mode=random.Next(family==Families[1]?5:family==Families[4]?8:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
         if(family==Families[3]||family==Families[4])
         {
@@ -83,6 +86,9 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             if(family==Families[3]&&mode==1)a=37; // Multiple valid tens/ones ways.
             if(family==Families[4]&&mode==2)
                 a=94; // Original 2021 Student Facing: ways to show 94.
+            if(family==Families[4]&&mode>=4)
+                a=mode switch{4=>52,5=>65,6=>49,7=>36,
+                    _=>throw new InvalidOperationException("Unknown original bag")};
         }
         if(family==Families[5])
         {
@@ -131,6 +137,14 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                     "ORIGINAL 2021 G1 U04 L19 Activity 2: represent 37 in at least TWO different mathematically equivalent tens-and-ones ways. Write TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number. Teacher reviews the pupil's drawings or words.":
                     $"Show {a} in another way: exchange ONE full ten for ten single ones. Write TENS=number;ONES=number.",
             "usccss.g1.u04.l20.equivalent_tens_ones"=>
+                mode==4?
+                    "ORIGINAL 2021 MYSTERY BAG A: There are FIVE full ten-towers and TWO loose ones. Count the entire collection; write NUMBER=number.":
+                mode==5?
+                    "ORIGINAL 2021 MYSTERY BAG B: There are FOUR full ten-towers and TWENTY-FIVE loose ones. How many cubes total? Write NUMBER=number. Twenty-five loose ones must not be mistaken for 5 ones.":
+                mode==6?
+                    "ORIGINAL 2021 MYSTERY BAG C: A bag has 49 cubes, of which 29 are loose ones. How many full TEN-towers are there? Write TENS=number.":
+                mode==7?
+                    "ORIGINAL 2021 MYSTERY BAG D: A bag has 36 cubes, with TWO full ten-towers already inside. How many loose ONE cubes are in the bag? Write ONES=number.":
                 $"Original How Many Ways?: Start with {a/10} ten-rods and {a%10} ones, making {a}. Exchange {Math.Min(a/10,mode+1)} full ten-rods for loose ones; find a SECOND valid regrouping, and calculate how many tens-and-ones regroupings exist when all zero-to-{a/10} complete ten-rods are allowed. Write NUMBER=number;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number;WAYS=number. Teacher reviews original drawings and partner explanations.",
             "usccss.g1.u04.l21.compare_nonstandard_forms"=>
                 $"Compare {a/10-Math.Min(mode+1,a/10)} tens and {a%10+10*Math.Min(mode+1,a/10)} ones with {b/10} tens and {b%10} ones. Write SYMBOL=sign.",
@@ -163,8 +177,14 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 mode==1?
                 "TENS=3;ONES=7;ALT_TENS=2;ALT_ONES=17":
                 $"TENS={a/10-1};ONES={a%10+10}",
-            "usccss.g1.u04.l20.equivalent_tens_ones"=>
-                $"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}",
+            "usccss.g1.u04.l20.equivalent_tens_ones"=>mode switch
+            {
+                4=>"NUMBER=52",
+                5=>"NUMBER=65",
+                6=>"TENS=2",
+                7=>"ONES=16",
+                _=>$"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}"
+            },
             "usccss.g1.u04.l21.compare_nonstandard_forms"=>$"SYMBOL={Sign(a,b)}",
             "usccss.g1.u04.l22.center_place_value"=>
                 mode%2==0?$"SYMBOL={Sign(a,b)}":$"NUMBER={a}",
@@ -229,6 +249,6 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         Valid(family,p)&&!string.IsNullOrWhiteSpace(value)&&
         (family==Families[3]&&p["mode"]==1?
             VerifyStudent37Ways(value):
-            family==Families[4]?VerifyStudentChosenTensTrade(p,value):
+            family==Families[4]&&p["mode"]<=3?VerifyStudentChosenTensTrade(p,value):
             Normalize(Solve(family!,p))==Normalize(value));
 }
