@@ -157,6 +157,10 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     [
         (37,25),(23,68)
     ];
+    private static readonly (int a,int b,int stated)[] Lesson11OriginalTruths =
+    [
+        (24,3,54),(42,5,47),(42,30,45)
+    ];
     private static readonly (int a,int b)[] Lesson12OriginalEquations =
     [
         (48,15),(57,36)
@@ -191,7 +195,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
            !p.TryGetValue("mode",out int mode)||mode<0||
            mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?9:
            spec.LessonCode=="L08"?9:spec.LessonCode=="L09"?8:
-           spec.LessonCode=="L10"?10:spec.LessonCode is "L11" or "L12"?5:
+           spec.LessonCode=="L10"?10:spec.LessonCode=="L11"?9:spec.LessonCode=="L12"?5:
            spec.LessonCode=="L14"?4:3))
             return false;
         if(spec.LessonCode=="L14")return mode==4 ? a==0&&b==0 : FoodDriveValid(a,b,mode);
@@ -227,6 +231,13 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             var source=Lesson10OriginalExtra[mode-6];
             return a==source.a&&b==source.b;
         }
+        if(spec.LessonCode=="L11"&&mode>=6&&mode<=8)
+        {
+            var source=Lesson11OriginalTruths[mode-6];
+            return a==source.a&&b==source.b;
+        }
+        if(spec.LessonCode=="L11"&&mode==9)
+            return a==37&&b==25;
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
         {
             var source=Exact2021Equation(spec.LessonCode,mode);
@@ -263,7 +274,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         int a=0,b=0;
         int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?10:
             spec.LessonCode=="L08"?10:spec.LessonCode=="L09"?9:
-            spec.LessonCode=="L10"?11:spec.LessonCode is "L11" or "L12"?6:
+            spec.LessonCode=="L10"?11:spec.LessonCode=="L11"?10:spec.LessonCode=="L12"?6:
             spec.LessonCode=="L14"?5:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
         if(spec.LessonCode=="L02"&&mode==6)
@@ -397,6 +408,32 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "TENS=number_of_tens;ONES=remaining_ones;TOTAL=number. "+
                 "The source picture and original explanation remain teacher reviewed.",
                 "Combine tens and ones and trade ten ones for one more ten.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L11"&&mode>=6&&mode<=8)
+        {
+            var (first,second,stated)=Lesson11OriginalTruths[mode-6];
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 99 truth task drift");
+            return new(family,
+                $"ORIGINAL 2021 UNIT 5 LESSON 11 STUDENT TRUE/FALSE: Is {first}+{second}={stated} true? "+
+                "Write TRUE=YES/NO;ACTUAL=number;STATED=number. "+
+                "Explain why with a place-value equation; verbal explanation is teacher-assessed.",
+                "Compute the left sum independently, then compare with the written statement.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L11"&&mode==9)
+        {
+            var p=new Dictionary<string,int>{{"a",37},{"b",25},{"mode",9}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 99 methods source drift");
+            return new(family,
+                "EDULYTICS FIRST-PARTY STEPS for original 2021 source litter story 37+25: "+
+                "Jada adds 30+20 then 7+5. Kiran makes a new ten from 37+3+2, "+
+                "then adds 20. Tyler adds 20 to 37, then the remaining 3+2. "+
+                "Write JADA_TENS=number;JADA_ONES=number;KIRAN_FIRST=number;"+
+                "KIRAN_SECOND=number;TYLER_FIRST=number;TYLER_SECOND=number;TOTAL=number. "+
+                "The original drawings and student's free-language reasoning remain teacher-assessed.",
+                "Jada 50+12=62, Kiran 37+3+2=42 and +20=62, Tyler 37+20=57 and +3+2=62.",
                 AssessmentItemType.ShortAnswer,p);
         }
         var original=Exact2021Equation(spec.LessonCode,mode);
@@ -543,6 +580,13 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             return "TENS=5;ONES=3;TOTAL=53";
         if(spec.LessonCode=="L10"&&p["mode"]>=9)
             return $"TENS_PART={(a/10+b/10)*10};ONES_PART={a%10+b%10};NEW_TENS={sum/10};ONES={sum%10};TOTAL={sum}";
+        if(spec.LessonCode=="L11"&&p["mode"]>=6&&p["mode"]<=8)
+        {
+            int stated=Lesson11OriginalTruths[p["mode"]-6].stated;
+            return $"TRUE={(sum==stated?"YES":"NO")};ACTUAL={sum};STATED={stated}";
+        }
+        if(spec.LessonCode=="L11"&&p["mode"]==9)
+            return "JADA_TENS=50;JADA_ONES=12;KIRAN_FIRST=42;KIRAN_SECOND=62;TYLER_FIRST=57;TYLER_SECOND=62;TOTAL=62";
         if(p["mode"]>=4&&(spec.LessonCode is "L08" or "L09"))
             return $"NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L06"&&p["mode"]==2)
