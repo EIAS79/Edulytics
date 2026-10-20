@@ -17,17 +17,31 @@
   },
   "stageA": {
     "originalTaskReview": "Original 65 with five unbroken ten rods and 15 singles; original 37 multiple regroupings; source content reused",
-    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE"
+    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE",
+    "publicOfficialSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-19/lesson.html",
+    "originalWarmupAccessibleMath": [
+      "A: 5 tens 3 ones = 53",
+      "B: thirty plus 5 = 35",
+      "C: 3 plus 50 = 53",
+      "D: 5 tens 3 ones = 53"
+    ],
+    "originalSource37AllowsNonTenAddendExpressions": true
   },
   "stageB": {
     "existingTeachingReused": true,
     "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeFinalUnit4Corrections.cs",
     "sourceCorrectionsCommits": [],
-    "publisherArtworkNotClaimedLicensed": true
+    "publisherArtworkNotClaimedLicensed": true,
+    "originalMathLessonContentVersion": "us-ccss-g1-u04-l19-centers-and-regrouping-v3",
+    "originalWarmupAndFlexible37TeachingCommit": "2ce021e2fbc964381345dce58c133855eba6cee1"
   },
   "stageC": {
     "existingSourceSpecificPracticePreserved": true,
-    "teacherOnlyActivitiesNotNumericallyCertified": true
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "flexible37AddendPairsMode": 4,
+    "source37SumsImplementationCommit": "9421e961e9a3452d98f8361c1e1ce514675acf3d",
+    "testsAuthoredCommit": "efeb25e43ffa5b9e89a4f0d33056c31ac68edd6b",
+    "testsExecuted": false
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -40,5 +54,20 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required"
+  "nextAction": "Continue ordinal85; leave protected CI and Stage D deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "originalSourceGoalLearnerContentReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "teacherOnlyPhysicalAndVisualBoundaries": "Actual 65 bag, 37 drawings, original publisher imagery and classroom center play not electronically certified",
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-84-stage-a-c-source-implementation-20261021.md",
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false
+  }
 }
