@@ -80,6 +80,56 @@ public sealed class UsCcssG1HowCloseStage3MathematicsTests
     }
 
     [Fact]
+    public void All120PossibleSevenCardSetsHaveAtLeastOneNonOvershootingBestPair()
+    {
+        int combinations = 0;
+        // A 7-of-10 set is exactly the complement of 3 excluded cards.
+        for(int firstExcluded=0;firstExcluded<8;firstExcluded++)
+        for(int secondExcluded=firstExcluded+1;secondExcluded<9;secondExcluded++)
+        for(int thirdExcluded=secondExcluded+1;thirdExcluded<10;thirdExcluded++)
+        {
+            var cards = Enumerable.Range(0,10).Where(d =>
+                d!=firstExcluded && d!=secondExcluded && d!=thirdExcluded).ToArray();
+            Assert.True(UsCcssG1HowCloseStage3Mathematics.ValidCards(cards));
+            var optimal = UsCcssG1HowCloseStage3Mathematics.FindOptimalPairs(cards);
+            Assert.NotEmpty(optimal);
+            Assert.All(optimal,p=>
+            {
+                Assert.Equal(100-p.Total,p.Gap);
+                Assert.InRange(p.Total,1,100);
+                Assert.True(UsCcssG1HowCloseStage3Mathematics.GradePair(
+                    cards,p.First,p.Second).Optimal);
+            });
+            combinations++;
+        }
+        Assert.Equal(120,combinations);
+    }
+
+    [Fact]
+    public void VersionedQuestionVerifierAcceptsAlternativeOptimalPairsButRejectsForgedAnswers()
+    {
+        var parameters=new Dictionary<string,int> {
+            ["d0"]=0,["d1"]=1,["d2"]=2,["d3"]=4,
+            ["d4"]=5,["d5"]=7,["d6"]=9
+        };
+        Assert.True(UsCcssG1HowCloseStage3Questions.Valid(parameters));
+        Assert.True(UsCcssG1HowCloseStage3Questions.Verify(parameters,
+            "NUMBERS=49,51;TOTAL=100"));
+        Assert.True(UsCcssG1HowCloseStage3Questions.Verify(parameters,
+            "NUMBERS=41,59;TOTAL=100"));
+        Assert.True(UsCcssG1HowCloseStage3Questions.Verify(parameters,
+            "NUMBERS=59,41;TOTAL=100"));
+        Assert.False(UsCcssG1HowCloseStage3Questions.Verify(parameters,
+            "NUMBERS=92,51;TOTAL=143"));
+        Assert.False(UsCcssG1HowCloseStage3Questions.Verify(parameters,
+            "NUMBERS=20,47;TOTAL=67"));
+        Assert.False(UsCcssG1HowCloseStage3Questions.Verify(parameters,
+            "NUMBERS=41,59;TOTAL=101"));
+        Assert.False(UsCcssG1HowCloseStage3Questions.Verify(parameters,
+            "NUMBERS=41,59;TOTAL=100;EXTRA=1"));
+    }
+
+    [Fact]
     public void InvalidSevenCardPoolsFailClosed()
     {
         Assert.False(UsCcssG1HowCloseStage3Mathematics.ValidCards([0, 0, 1, 2, 3, 4, 5]));
