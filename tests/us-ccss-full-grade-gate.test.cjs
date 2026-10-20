@@ -148,6 +148,36 @@ test('source-drawing original unit 7 lessons 123-126 require both numeric Practi
 });
 
 
+test('ordinal 142 requires BOTH authentic two-question ride authorship and independently graded comparison Practice',()=>{
+  const digital={
+    allowedFamilies:['usccss.g1.u08.l06.compare_difference_story'],
+    realPracticeGradingPersisted:true,
+    independentCorrectAndWrongAnswersVerified:true,
+    independentGradingProofPath:'math',
+    independentGradingProofSha256:'a'.repeat(64),
+    runtimePracticeProofPath:'attempt',
+    runtimePracticeProofSha256:'b'.repeat(64)
+  };
+  // Numerically correct comparison tasks alone never evidence two
+  // personally-authored and solved ride-table questions.
+  assert.equal(validLessonAssessment(142,digital,()=>true),false);
+  const complete={...digital,
+    originalAuthorshipTaskReviewed:true,
+    learnerAuthoredTaskRendered:true,
+    teacherReviewRubricAvailable:true,
+    actualTeacherObservationNotClaimed:true};
+  assert.equal(validLessonAssessment(142,complete,()=>true),true);
+  assert.equal(validLessonAssessment(142,
+    {...complete,learnerAuthoredTaskRendered:false},()=>true),false);
+  assert.equal(validLessonAssessment(142,
+    {...complete,teacherReviewRubricAvailable:false},()=>true),false);
+  assert.equal(validLessonAssessment(142,
+    {...complete,realPracticeGradingPersisted:false},()=>true),false);
+  assert.equal(validLessonAssessment(142,
+    {...complete,actualTeacherObservationNotClaimed:false},()=>true),false);
+  assert.equal(validLessonAssessment(142,complete,()=>false),false);
+});
+
 test('V1 accepts two source-mapped Practice families without permitting arbitrary extras',()=>{
   const {sourceGroundedFamilies}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
   assert.deepEqual(sourceGroundedFamilies({candidateFamily:'source.a'}),['source.a']);
