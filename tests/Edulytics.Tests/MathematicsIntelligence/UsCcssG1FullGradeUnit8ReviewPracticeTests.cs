@@ -118,6 +118,9 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
     [InlineData(68,3,"WAYS=7;ZERO_TENS_ONES=68;TOTAL=68")]
     [InlineData(20,2,"ALT_TENS=0;ALT_ONES=20;TOTAL=20")]
     [InlineData(99,3,"WAYS=10;ZERO_TENS_ONES=99;TOTAL=99")]
+    [InlineData(100,0,"NEW_TENS=9;NEW_ONES=10;TOTAL=100")]
+    [InlineData(100,2,"ALT_TENS=8;ALT_ONES=20;TOTAL=100")]
+    [InlineData(100,3,"WAYS=11;ZERO_TENS_ONES=100;TOTAL=100")]
     public void OriginalShowAllTheWaysNeedsMultipleRegroupingsAndHowManyModels(
         int value,int mode,string correct)
     {
@@ -130,6 +133,22 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
             $"NEW_TENS={value/10-1};NEW_ONES={value%10+10};TOTAL={value}"));
         Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
             correct+";FALSE=1"));
+    }
+
+    [Fact]
+    public void SourceClassBookDomainIncludesOneHundredButNotOneHundredOne()
+    {
+        const string family="usccss.g1.u08.l08.same_number_tens_ones";
+        var p=new Dictionary<string,int>{{"a",100},{"b",0},{"c",0},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
+        Assert.Equal("NEW_TENS=9;NEW_ONES=10;TOTAL=100",
+            UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "NEW_TENS=9;NEW_ONES=10;TOTAL=100"));
+        p["a"]=101;
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
+        p["a"]=19;
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
     }
 
     [Fact]
