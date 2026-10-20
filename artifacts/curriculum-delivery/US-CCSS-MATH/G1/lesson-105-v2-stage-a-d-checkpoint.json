@@ -38,16 +38,18 @@
     "sourceVisualsPublisherRights": "NOT_VERIFIED",
     "matchedOriginalStudentTasksToEffectiveBaseRichV2": true,
     "actualPreRepairBasePackReference": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json",
-    "verifiedMissingBeforeRepair": "Base learner translation only described generic indirect length and equal-unit counting; it omitted the original Mai/Clare walking route activity and all six precise Student Facing furniture prompts."
+    "verifiedMissingBeforeRepair": "The historical effective V1 source correction already correctly explained use of an unchanged third object, but omitted the specific Mai/Clare original route and six exact classroom furniture questions.",
+    "confirmedSourceCorrectionLineage": "Original historical source-guarded learner correction was ALREADY present before this work; only missing original task fidelity was extended. Comparing the uncorrected base content alone cannot prove an effective Rich V2 mismatch."
   },
   "stageB": {
     "reusedCandidate": true,
     "actualLearnerRichV2ParityIndependentlyConfirmedAtCurrentHead": false,
     "newTeachingEdit": true,
     "remaining": "Compare all six original Student Facing prompts with actual effective Rich V2; do not assert a digital numeric example substitutes live classroom measurement.",
-    "repairFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
-    "repairCommit": "514124e4c7eca0314ca4bb240bc52926296f2561",
-    "repairDetails": "Preserved existing learner renderer and digital family; added first-party source-specific goals, the two original activities, all six written/drawing/numeric furniture prompts, shared string comparison, necessary length-vs-width and teacher-only boundaries. Original source figure geometry is not inferred from hypothetical example measurements."
+    "repairFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "repairCommit": "7b0aa116f815793e87648dee16b539a51f8c839e",
+    "repairDetails": "Preserved existing learner renderer and digital family; added first-party source-specific goals, the two original activities, all six written/drawing/numeric furniture prompts, shared string comparison, necessary length-vs-width and teacher-only boundaries. Original source figure geometry is not inferred from hypothetical example measurements.",
+    "sourceScopedContentVersion": "us-ccss-g1-g1-u06-l03-instruction-v2"
   },
   "stageC": {
     "existingCandidateFamily": "usccss.g1.u06.l03.choose_indirect_comparison",
@@ -63,10 +65,13 @@
     "visualRightsAccessibility": "PENDING",
     "sourceSpecificTestExecution": "NOT_RUN_BY_POLICY",
     "internalV1AcademicAcceptance": "NOT_CLAIMED",
-    "teachingRegressionTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
-    "testCommit": "fd115b8f299ace67ad4a5b78add445da3eb71781"
+    "teachingRegressionTests": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "testCommit": "0c6732dbf617613eaa5eb225b4fd85d532c8bb51",
+    "githubCiManuallyTriggered": false
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "No fabricated source-map or classroom measurements; exact frozen-SHA .NET build/unit checks, real learner render, grading/persisted attempts, rights/accessibility and per-lesson V1 approval remain pending. Reuse this repair during whole-cohort A–D progression."
+  "nextAction": "No fabricated source-map or classroom measurements; exact frozen-SHA .NET build/unit checks, real learner render, grading/persisted attempts, rights/accessibility and per-lesson V1 approval remain pending. Reuse this repair during whole-cohort A–D progression.",
+  "singleSourceTeachingPathConfirmed": true,
+  "v1ToV2HistoricalSourceMigrationGuarded": true
 }
