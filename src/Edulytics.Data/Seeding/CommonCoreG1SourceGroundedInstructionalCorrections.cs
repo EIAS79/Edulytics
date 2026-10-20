@@ -185,9 +185,10 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
     public const string PuppiesTulipsCompareMistakes = "Mistake: subtracting the greater count from the smaller and reporting a negative number of models. Correction: difference in this story is 7 - 4 = 3 unmatched objects.\nMistake: treating 'more' as an instruction to add in every story. Correction: if both counts are given, subtract to find how many more.\nMistake: omitting what the number represents. Correction: say '3 more puppy models than tulips' instead of only '3'.";
 
     public const string CompareRepresentedNumbersLessonCode = "PED:US-CCSS-MATH:G1:U04:L21";
-    public const string CompareRepresentedNumbersVersion = "us-ccss-g1-g1-u04-l21-topic-correction-v1";
+    public const string CompareRepresentedNumbersVersionV1 = "us-ccss-g1-g1-u04-l21-topic-correction-v1";
+    public const string CompareRepresentedNumbersVersion = "us-ccss-g1-g1-u04-l21-topic-correction-v2";
     public const string CompareRepresentedNumbersConcepts = "Compare two-digit numbers even when their ten-rods and ones are grouped differently. Exchange ten ones for one ten before using <, >, or =.";
-    public const string CompareRepresentedNumbersExamples = "A has 4 tens and 2 ones: 40 + 2 = 42. B has 3 tens and 12 ones: 30 + 12 = 42. Therefore A = B.\nA model shows 5 tens and 1 one: 51. Another shows 4 tens and 9 ones: 49. Therefore 51 > 49.\nA model shows 2 tens and 16 ones: 36. Another shows 3 tens and 7 ones: 37. Therefore 36 < 37.\nThe original activity compares Elena's 5 tens and 32 ones (82) with Kiran's 7 tens and 2 ones (72): 82 > 72.";
+    public const string CompareRepresentedNumbersExamples = "A has 4 tens and 2 ones: 40 + 2 = 42. B has 3 tens and 12 ones: 30 + 12 = 42. Therefore A = B.\nA model shows 5 tens and 1 one: 51. Another shows 4 tens and 9 ones: 49. Therefore 51 > 49.\nA model shows 2 tens and 16 ones: 36. Another shows 3 tens and 7 ones: 37. Therefore 36 < 37.\nOriginal 2021 number talk: 10+6=16, 9+6=15, 10+7=17, 8+7=15; relate a near-ten sum to the matching ten sum. The original activity compares Elena's 5 tens and 32 ones (82) with Kiran's 7 tens and 2 ones (72): 82 > 72. Original 2021 accessible comparisons: 3 tens 8 ones is greater than 2 tens 8 ones (38>28); 3 tens 2 ones is equal to 2 tens 12 ones (32=32); 2 tens 15 ones is less than 4 tens (35<40); 5 tens 2 ones is greater than 3 tens 12 ones (52>42); 1 ten 25 ones equals 3 tens 5 ones (35=35); 7 tens 29 ones is greater than 50+39 (99>89).";
     public const string CompareRepresentedNumbersSteps = "Step 1: Count tens and individual ones in each model.\nStep 2: Regroup ten ones into a ten when needed.\nStep 3: Calculate each two-digit value, for example 30 + 12 = 42.\nStep 4: Compare the values and write <, >, or =.\nStep 5: Check the inequality against both models.";
     public const string CompareRepresentedNumbersMistakes = "Mistake: deciding the drawing with more individual cubes has the greater value. Correction: each ten-rod stands for ten units. Mistake: reading 3 tens and 12 ones as 312. Correction: 30 + 12 = 42.";
 
@@ -805,7 +806,9 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
             (string concepts,string examples,string steps,string mistakes) oldBody=
                 lesson.LessonCode switch
                 {
-                    ChooseIndirectLengthComparatorLessonCode =>
+                    CompareRepresentedNumbersLessonCode =>
+                 existingVersion == CompareRepresentedNumbersVersionV1,
+             ChooseIndirectLengthComparatorLessonCode =>
                         (ChooseIndirectLengthComparatorConceptsV1,
                          ChooseIndirectLengthComparatorExamplesV1,
                          ChooseIndirectLengthComparatorStepsV1,
