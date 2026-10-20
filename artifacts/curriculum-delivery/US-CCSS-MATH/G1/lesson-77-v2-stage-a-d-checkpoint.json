@@ -40,14 +40,27 @@
       0,
       1,
       2,
-      3
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
     ],
     "sourceAlignedRepeatedTenSequences": [
       "67+10+10+10=97",
       "99-10-10-10=69"
     ],
     "testsAuthoredButNotExecuted": true,
-    "testsExecuted": false
+    "testsExecuted": false,
+    "sourceAlignedPairedTenChanges": [
+      "67±10 → 77,57",
+      "39±10 → 49,29",
+      "52±10 → 62,42",
+      "75±10 → 85,65"
+    ],
+    "independentFirstPartyExit": "46±10 → 56,36 (not original publisher Cool-down)",
+    "testEvidenceCommit": "6d9d57396d659930ce008412db55624f1aaef9b0"
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -72,9 +85,9 @@
     "learnerTeachingSourceParityReviewed": false,
     "practiceGeneratorAndVerifierIndependentlyReviewed": false,
     "openACDefects": [
-      "Full accessible source/task and visual parity review pending",
-      "Independent learner teaching and numeric verifier review pending",
-      "Independent original Edulytics formative scoring and protected 2021 Cool-down boundary pending"
+      "Full accessible original teacher/student visual and task-by-task parity still requires independent review",
+      "Learner teaching and generator/verifier independent code review incomplete",
+      "Original protected 2021 publisher Cool-down unavailable; independent Edulytics exit authored but not runtime verified"
     ],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-77-stage-a-c-source-implementation-audit-20261020.md",
     "ciExecutedDuringAuthoring": false,
