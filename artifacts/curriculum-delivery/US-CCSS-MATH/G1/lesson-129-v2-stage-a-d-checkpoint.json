@@ -60,7 +60,15 @@
     "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
     "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
     "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
-    "sourceAuthoredRubric": null
+    "sourceAuthoredRubric": null,
+    "firstPartyAreaModelRepair": {
+      "mathEngineCommit": "53a994878c82350f0e1106e2bfac31253d68ee5e",
+      "regressionCommit": "8b0fc35dfa0ad61a67a5fa8d178852088187f7e3",
+      "goal": "Remove false impression original shaded publisher diagram was actually rendered. Encode unequal regions areas 2/6 and equal four regions area 2 each in a 4x2 first-party model.",
+      "actualOriginalPictureCardSorting": "PENDING",
+      "sourceRights": "NOT_CLAIMED",
+      "frozenShaCI": "PENDING"
+    }
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -72,7 +80,9 @@
     "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
     "visualAccessibilityAndPublisherRights": "PENDING",
     "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
-    "wholeGradeRelease": "NO_GO"
+    "wholeGradeRelease": "NO_GO",
+    "originalArtworkReviewed": false,
+    "academicAcceptance": "NOT_CLAIMED"
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
