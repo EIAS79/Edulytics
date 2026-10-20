@@ -4848,7 +4848,7 @@
       "internalEvidenceBasedAcademicAcceptance": false,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": true,
-      "authoredOriginalWorkRubricRequired": false,
+      "authoredOriginalWorkRubricRequired": true,
       "evidenceReferences": [
         {
           "kind": "HISTORIC_EXACT_SHA_CI_TECHNICAL_ONLY",
@@ -4876,8 +4876,11 @@
         "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
         "Source graphics licensing/provenance and accessibility of any diagrams checked",
         "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence",
-        "Teacher-led physical, visual, or classroom work correctly documented without fictional pupil outcomes"
-      ]
+        "Teacher-led physical, visual, or classroom work correctly documented without fictional pupil outcomes",
+        "Verify real student-visible class-number-book authoring instructions at exact frozen SHA and the first-party teacher rubric; digital regrouping answers alone cannot prove an original page, gallery walk, classroom work or copyrighted source figures."
+      ],
+      "sourceAuthoredTaskRequirement": "Original student-created class number book page, chosen number 20–100, multiple drawings/tens-and-ones representations and at least THREE distinct valid addition expressions",
+      "sourceAuthoredTaskRubric": "lesson-144-original-class-number-book-authorship-rubric.json"
     },
     {
       "ordinal": 145,
