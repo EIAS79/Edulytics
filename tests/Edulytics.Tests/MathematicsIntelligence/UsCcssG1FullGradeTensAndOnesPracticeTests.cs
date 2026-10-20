@@ -70,6 +70,39 @@ public sealed class UsCcssG1FullGradeTensAndOnesPracticeTests
     }
 
     [Fact]
+    public void Lesson72TwoCardsAcceptBothOrdersAndCheckDiegoTylerMath()
+    {
+        const string family=UsCcssG1FullGradeTensAndOnesQuestions.ReadNumber;
+        var cards=new Dictionary<string,int>{{"tens",3},{"ones",5},{"mode",4},{"unused",0}};
+        const string thirtyFive="DIGITS=3,5;NUMBER=35;TENS=3;ONES=5;NAME=thirty-five";
+        const string fiftyThree="DIGITS=3,5;NUMBER=53;TENS=5;ONES=3;NAME=fifty-three";
+        Assert.True(UsCcssG1FullGradeTensAndOnesQuestions.Valid(family,cards));
+        Assert.Equal(thirtyFive,UsCcssG1FullGradeTensAndOnesQuestions.Solve(family,cards));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,cards,thirtyFive));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,cards,fiftyThree));
+        Assert.True(UsCcssG1FullGradeTensAndOnesQuestions.GradePersistedAnswer(
+            family,thirtyFive,fiftyThree));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,cards,
+            "DIGITS=3,5;NUMBER=53;TENS=3;ONES=5;NAME=fifty-three"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,cards,
+            "DIGITS=3,5;NUMBER=53;TENS=5;ONES=3;NAME=thirty-five"));
+        var diego=new Dictionary<string,int>{{"tens",8},{"ones",6},{"mode",5},{"unused",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,diego,
+            "AGREE=DIEGO;TENS=8;ONES=6;NUMBER=86;NAME=eighty-six"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,diego,
+            "AGREE=CLARE;TENS=8;ONES=6;NUMBER=86;NAME=eighty-six"));
+        var tyler=new Dictionary<string,int>{{"tens",4},{"ones",2},{"mode",6},{"unused",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,tyler,
+            "DECISION=DISAGREE;DRAWN=42;CLAIM=24;TENS=4;ONES=2"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,tyler,
+            "DECISION=AGREE;DRAWN=42;CLAIM=24;TENS=4;ONES=2"));
+        Assert.False(UsCcssG1FullGradeTensAndOnesQuestions.Valid(
+            UsCcssG1FullGradeTensAndOnesQuestions.WriteNumeral,tyler));
+        cards["tens"]=5;cards["ones"]=3;
+        Assert.False(UsCcssG1FullGradeTensAndOnesQuestions.Valid(family,cards));
+    }
+
+    [Fact]
     public void ValidTwoDigitValuesStayWithinGrade1AndWrongResponsesFail()
     {
         foreach(var family in UsCcssG1FullGradeTensAndOnesQuestions.Families)
