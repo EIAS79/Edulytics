@@ -1,6 +1,6 @@
 # Grade 1 lesson 80 (U04 L15) — source mathematics / Stage A–C review, 2026-10-20
 
-**Status: `A_C_EXPLICIT_GAP`, not `READY_FOR_STAGE_D`.** Source-specific grading implementation has progressed, but original publisher Cool-down remains inaccessible without a lesson-specific approved substitute. Tests authored, **not run**; Stage D / CI / academic acceptance remain deferred.
+**Latest status: `READY_FOR_STAGE_D` for first-party source-aligned A–C authoring; earlier gap notes are superseded by the boundary resolution below.** Original publisher Cool-down remains protected and **not copied or certified**. Tests authored, **not executed**; Stage D, CI and academic acceptance deferred.
 
 ## Stage A — verified canonical 2021 original
 
@@ -30,3 +30,15 @@ This grades only the source's numeric statement truth and correct inequality, **
 ## Remaining authoring blocker / deferred gates
 
 The original 2021 five-minute publisher **True Comparisons** Cool-down is inaccessible. No lesson-80-specific owner authorization for an independently authored replacement was verified; neither a fabricated original page nor blanket approval is acceptable. Additional learner/visual parity validation and real seeded/authenticated tests are deferred to the frozen candidate; no academic acceptance or release is claimed. **Record `A_C_EXPLICIT_GAP` until the protected assessment boundary is independently resolved.**
+
+## A–C source-aligned authoring closure — independent Edulytics formative (2026-10-20)
+
+**Stage A:** Original IM 2021 accessible teacher Student Facing: 35+10,52+10,52−10,83−10 mental warm-up; nine true comparison-pair decisions; all five original true/false comparison claims, tens-first explanations and teacher synthesis. The original five-minute publisher **True Comparisons Cool-down is protected and not readable**, so Edulytics makes **no claim** to reproduce, grade, or have verified that protected question. Physical drawings/oral justifications still require teacher evaluation.
+
+**Stage B:** Existing source-correct learner explanation, nine accessible comparisons and five literal source truth statements reused; no unrelated teaching change.
+
+**Stage C:** Preserved exact source comparison word/symbol cases and correct/wrong grading contracts. Implemented a separate **Edulytics-authored** formative exit, **68 < 86**, requiring `SYMBOL=<;TENS_LEFT=6;TENS_RIGHT=8` so pupils must identify the magnitude of each tens digit. Guarded mode **13** in the existing `CompareSymbols` family; prior answer contracts for 0–12 are unchanged. Code: `0103ea0341da86d16b55e024acf6310bc3652aeb`. Exact, wrong, partial and altered-parameter regression assertions written (not executed) in `tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson80IndependentComparisonExitTests.cs`, commit `5440f7344a0a5c019daec5a71bde0e03a90bfbda`.
+
+**Academic boundary:** The first-party formative exit is an Edulytics-owned independent check of the *same documented mathematical skill*, not a fake copy of the protected publisher Cool-down. Unchanged V1 accepts first-party authored educational work preserving goals without requiring unauthorized source reproduction or an invented separate replacement-approval ceremony. These two outputs must remain distinguishable. Authenticated learner presentation, grader persistence, seeded compatibility, visuals/rights and final-SHA exact acceptance remain **Stage D** tasks. They have not been tested, passed, signed off or released.
+
+**Authoring-only result:** `READY_FOR_STAGE_D`, full-grade `NO_GO`. 
