@@ -59,7 +59,7 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 tens-and-ones source family");
-        int mode=random.Next(0,family==MatchRepresentations?8:
+        int mode=random.Next(0,family==MatchRepresentations||family==WriteNumeral?8:
             (family==MixedCollection||family==ReadNumber?7:4));
         int tens=random.Next(2,10),ones=random.Next(0,10);
         if(family==MixedCollection)
@@ -80,6 +80,17 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
             else if(mode==5){tens=4;ones=1;} // Source-style 41 versus 14 comparison.
             else if(mode==6){tens=3;ones=2;} // Source J/S=32, E=23.
             else if(mode==7){tens=9;ones=5;} // Source V, numeral 95.
+        }
+        if(family==WriteNumeral)
+        {
+            if(mode==4)
+            {
+                var pairs=new[]{(1,4),(9,0),(2,5),(4,7),(8,2),(4,1)};
+                (tens,ones)=pairs[random.Next(pairs.Length)];
+            }
+            else if(mode==5){tens=0;ones=7;}
+            else if(mode==6){tens=7;ones=2;}
+            else if(mode==7){tens=8;ones=3;}
         }
         int total=10*tens+ones;
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
