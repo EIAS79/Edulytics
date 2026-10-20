@@ -13,7 +13,7 @@ public static class CommonCoreG1FullGradeFinalUnit4Corrections
     public const string OriginalLesson16SourceContentVersion="us-ccss-g1-u04-l16-original-student-activities-v3";
     public const string OriginalLesson17SourceContentVersion="us-ccss-g1-u04-l17-original-student-activities-v3";
     public const string OriginalLesson18SourceContentVersion="us-ccss-g1-u04-l18-original-student-activities-v3";
-    public const string OriginalLesson19SourceContentVersion="us-ccss-g1-u04-l19-centers-and-regrouping-v2";
+    public const string OriginalLesson19SourceContentVersion="us-ccss-g1-u04-l19-centers-and-regrouping-v3";
     public const string OriginalLesson20SourceContentVersion="us-ccss-g1-u04-l20-estimation-mystery-bags-v2";
     private static bool IsOriginalComparisonLesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U04:L16" or
@@ -51,7 +51,7 @@ Original Activity 2 real center choices: Greatest of Them All, Grab and Count, o
         new(@"PED:US-CCSS-MATH:G1:U04:L19",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-19/preparation.html",@"d74fcda3398cc4843865133bfdbac41151b56c6c46fb0f35a2e1992300b4eeec",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
             @"Make Two-digit Numbers",
             @"Original 2021 Activity 1: make 65 from a bag with FIVE existing ten-towers and FIFTEEN loose ones. You CANNOT break a tower or build a new tower in that task; keep five tens plus fifteen ones. Original Activity 2 then asks for DIFFERENT ways to make 37, where decomposing a ten into ten ones IS allowed. Distinguish the two activities; a nonstandard representation can have more than nine loose ones.",
-            @"Original example 1: 65 = 5 pre-existing ten-towers and 15 loose ones, without breaking or constructing towers. Original example 2: 37 = 3 tens + 7 ones = 2 tens + 17 ones = 1 ten + 27 ones. Further practice: 43 = 4 tens and 3 ones = 3 tens and 13 ones. Original 2021 center choice is Greatest of Them All, Get Your Numbers in Order, or Grab and Count. Actual card placement, cube collections and strategy talks are teacher reviewed.",
+            @"Original 2021 warm-up: A five tens and three ones = 53, B thirty plus five = 35, C three plus fifty = 53, and D a 5-tens 3-ones diagram = 53. B differs in VALUE; A, C and D are equivalent representations of 53. Original example 1: 65 = 5 pre-existing ten-towers and 15 loose ones, without breaking or constructing towers. Original example 2: 37 = 3 tens + 7 ones = 2 tens + 17 ones = 1 ten + 27 ones. The original teaching also accepts distinct 36+1=37 and 35+2=37 pair sums, not only complete tens trades. Further practice: 43 = 4 tens and 3 ones = 3 tens and 13 ones. Original 2021 center choice is Greatest of Them All, Get Your Numbers in Order, or Grab and Count. Actual card placement, cube collections and strategy talks are teacher reviewed.",
             @"Step 1: In the original 65-cube bag task, count the FIVE pre-existing ten-towers and fifteen loose ones; DO NOT break or create towers. Step 2: Write 5 tens + 15 ones = 65. Step 3: For the different original 37 task, start with 3 tens + 7 ones; now you MAY break one complete ten into ten singles. Step 4: Record a different equivalent way such as 2 tens + 17 ones. Step 5: Verify each representation keeps the original total.",
             @"Three tens and thirteen ones is 43, NOT 313. Do not reduce a ten without adding exactly ten ones.",
             @"I can represent two-digit numbers with different tens-and-ones groupings."),
@@ -103,6 +103,7 @@ Original Activity 2 real center choices: Greatest of Them All, Grab and Count, o
          ((lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L19"||lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L20")&&previous==Version)||
          (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L16"&&previous==OriginalComparisonsVersion)||
          (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L17"&&previous==OriginalComparisonsVersion)||
+         (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L19"&&previous=="us-ccss-g1-u04-l19-centers-and-regrouping-v2")||
          (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L18"&&previous==OriginalComparisonsVersion));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
