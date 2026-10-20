@@ -13,7 +13,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string CenterLessonCode="PED:US-CCSS-MATH:G1:U03:L21";
     private const string TeenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L22";
     private const string TenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L23";
-    public const string CenterSourceContentVersion="us-ccss-g1-u03-l21-centers-2021-source-v6";
+    public const string CenterSourceContentVersion="us-ccss-g1-u03-l21-centers-2021-source-v7";
     public const string TeenSubtractSourceContentVersion="us-ccss-g1-u03-l22-teen-2021-source-v6";
     public const string TenSubtractSourceContentVersion="us-ccss-g1-u03-l23-ten-2021-source-v6";
     private const string CountRelationLessonCode="PED:US-CCSS-MATH:G1:U03:L24";
@@ -169,8 +169,8 @@ Step 2: Decide whether to count on, make ten or regroup.
 Step 3: For three groups, write a full equation containing three addends before simplifying.
 Step 4: Solve and check the sum is no more than 20.
 Step 5: Tell a partner which method you used if working in a supervised center.
-Original source HOW CLOSE? center (teacher-led): remove any ten-value cards; display five numeral cards; select two or three cards and write a true addition equation whose sum is nearest to 20. Compare how close the sums are, replenish the hand to five cards, and award a point to the closer result. The game winner has more round points.
-Original source FIVE IN A ROW center (teacher-led): pick a number card, choose to add 7, 8 or 9, calculate the sum, and place a marker on that sum on the gameboard. The first partner with five markers consecutively in a row wins. This digital Practice tests the underlying arithmetic ONLY; it does not claim students physically played a card round, followed partner rules, or won a board.",
+Original source HOW CLOSE? center (teacher-led): the number-card set is 0 through 10; remove any ten-value cards so the permitted cards are 0 through 9; display five numeral cards; select two or three cards and write a true addition equation whose sum is nearest to 20. Compare how close the sums are, replenish the hand to five cards, and award a point to the closer result. The game winner has more round points.
+Original source FIVE IN A ROW center (teacher-led): pick a number card from the actual 2021 0-through-10 set (no 11 card), choose to add 7, 8 or 9, calculate the sum, and place a marker on that sum on the gameboard. The first partner with five markers consecutively in a row wins. This digital Practice tests the underlying arithmetic ONLY; it does not claim students physically played a card round, followed partner rules, or won a board.",
             @"Do not complete a three-addend task with a two-addend equation. For 3+6+7, adding only 3+7 gives ten but is not the final total; add the six to make sixteen.",
             @"I can add two and three numbers within 20 and write complete three-addend equations. Classroom games are teacher-led."),
         new(@"PED:US-CCSS-MATH:G1:U03:L22",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-22/preparation.html",@"ffd4ed62506326b6154d4231afe24476c91c6dd7553bb4840c317d4a43a1710d",new[] { @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
@@ -592,6 +592,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
          (lesson.LessonCode==ZooLessonCode&&(previous=="us-ccss-g1-u03-l20-zoo-2021-source-v6"||previous=="us-ccss-g1-u03-l20-zoo-2021-source-v7"))||
+         (lesson.LessonCode==CenterLessonCode&&previous=="us-ccss-g1-u03-l21-centers-2021-source-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
