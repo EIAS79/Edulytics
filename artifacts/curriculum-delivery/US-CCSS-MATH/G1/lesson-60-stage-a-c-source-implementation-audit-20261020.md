@@ -35,6 +35,8 @@ Reused the registered `usccss.g1.u03.l23.ten.subtract_in_steps` family and exist
 
 Corrected its `mode!=2` card choices to teen values 11–19 and subtrahend digits 0–9. Source Diego `mode=2` remains **exactly** `15−8`. For a legal no-cross case the short-answer output is only `DIFFERENCE;EQUATION`, avoiding fabricated negative `REST` values. When the subtraction reaches/crosses ten, the meaningful `TO10;REST;DIFFERENCE;EQUATION` structure is retained. Digital Practice does **not** pretend the pupil used a physical ten-frame or personally performed Andre's method; the teacher-led source activity preserves those explanations.
 
+The actual `mode=3` generator was separately hardened to select **only** the two source-authored follow-ups `14−5=9` and `13−6=7`. Its prompt now specifically names Diego's and Andre's methods; mode 3 refuses unrelated operands rather than relabelling them as original student tasks. Positive/negative xUnit assertions cover both deterministic seeded source instances and rejection of a mismatched original-student mode. No new runtime test execution is claimed.
+
 Added `Lesson60TenFrameNumberCardSubtractionAcceptsNoCrossAndExactOriginalDiegoTasks` to
 `tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs`.
 It covers valid original 15−8, 14−5, 13−6, 17−4, 19−0, positive and false/malformed responses, impossible card values 20 and 10, original Diego mode guard, and multiple generated source-skill instances.
