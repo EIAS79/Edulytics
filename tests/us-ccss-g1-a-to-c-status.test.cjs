@@ -21,7 +21,20 @@ test('exact 96 lesson identities reconcile historic acceptance and A–C evidenc
     if(row.status===STATUS.ready){
       assert.equal(row.aToCReady,true);
       const checkpoint=JSON.parse(fs.readFileSync(path.join(dir,row.evidenceFile),'utf8'));
-      assert.equal(checkpoint.aToCClosure?.originalStudentAndTeacherTasksCompared,true);
+      if(row.assessmentBasis==='OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN'){
+        assert.equal(row.ordinal,60);
+        assert.equal(checkpoint.aToCClosure?.originalStudentAndTeacherTasksCompared,false);
+        assert.equal(checkpoint.aToCClosure?.allAvailableOriginalStudentTeacherTasksCompared,true);
+        assert.equal(checkpoint.aToCClosure?.ownerApprovedIndependentEdulyticsAssessment,true);
+        assert.equal(checkpoint.aToCClosure?.originalProtectedPublisherAssessmentVerified,false);
+        assert.equal(checkpoint.aToCClosure?.originalPublisherAssessmentNotReproduced,true);
+        assert.equal(checkpoint.aToCClosure?.independentCoolDownScoringReviewed,true);
+        assert.equal(row.originalPublisherAssessmentVerified,false);
+        assert.equal(row.sourceTasksFullyAudited,false);
+        assert.equal(row.originalSourceToPracticeProven,false);
+      }else{
+        assert.equal(checkpoint.aToCClosure?.originalStudentAndTeacherTasksCompared,true);
+      }
       assert.equal(checkpoint.aToCClosure?.learnerTeachingSourceParityReviewed,true);
       assert.equal(checkpoint.aToCClosure?.practiceGeneratorAndVerifierIndependentlyReviewed,true);
       assert.deepEqual(checkpoint.aToCClosure?.openACDefects,[]);
@@ -72,6 +85,8 @@ test('ordered ten-lesson range report reads existing evidence without running D 
     assert.equal(item.stageC,original.stageC);
     assert.equal(item.readyForStageD,original.aToCReady);
     assert.equal(item.aToCStatus,original.status);
+    assert.equal(item.assessmentBasis,original.assessmentBasis??null);
+    assert.equal(item.originalPublisherAssessmentVerified,original.originalPublisherAssessmentVerified??null);
     assert.equal(item.skipACRework,
       item.readyForStageD||item.aToCStatus===STATUS.accepted);
     if(item.readyForStageD){
@@ -125,3 +140,18 @@ test('entire remaining Grade 1 authoring cohort uses canonical order with no 10-
   assert.deepEqual(main(['--remaining','--summary']),report.summary);
   assert.throws(()=>main(['--remaining','--range=57-66']),/either/);
 });
+test('owner-approved original Edulytics Cool-down is explicitly distinguished from unseen publisher content',()=>{
+  const report=buildRemainingReport();
+  const l60=report.lessons.find(x=>x.ordinal===60);
+  assert.ok(l60);
+  assert.equal(l60.readyForStageD,true);
+  assert.equal(l60.skipACRework,true);
+  assert.equal(l60.aToCStatus,STATUS.ready);
+  assert.equal(l60.assessmentBasis,'OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN');
+  assert.equal(l60.originalPublisherAssessmentVerified,false);
+  assert.equal(report.summary.pendingACOrdinals.includes(60),false);
+  assert.equal(report.summary.skipACReworkOrdinals.includes(60),true);
+  assert.equal(report.summary.ciTriggeredByReport,false);
+  assert.equal(report.summary.releaseDecision,'NO_GO');
+});
+
