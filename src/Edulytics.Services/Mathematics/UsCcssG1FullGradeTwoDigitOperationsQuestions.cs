@@ -58,6 +58,8 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             {
                 4=>a==75&&b==65,
                 5=>a==39&&b==41,
+                6=>a==93&&b==26,
+                7=>a==62&&b==64,
                 _=>a>=20&&a<=99&&b>=20&&b<=99
             },
             CompareSymbols=>mode switch
@@ -83,7 +85,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?6:family==CompareSymbols?7:family==TenMoreLess?11:4),a,b;
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?8:family==CompareSymbols?7:family==TenMoreLess?11:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -114,6 +116,8 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         {
             if(family==CompareWords&&mode==4){a=75;b=65;}
             else if(family==CompareWords&&mode==5){a=39;b=41;}
+            else if(family==CompareWords&&mode==6){a=93;b=26;}
+            else if(family==CompareWords&&mode==7){a=62;b=64;}
             else if(family==CompareSymbols&&mode==4){a=17;b=27;}
             else if(family==CompareSymbols&&mode==5){a=34;b=36;}
             else if(family==CompareSymbols&&mode==6){a=17;b=47;}
@@ -182,6 +186,10 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 "ELENA SOURCE CASE: 75 is greater than 65. Compare their tens values. Write RELATION=GREATER/LESS/EQUAL. Explain your reasoning to a teacher.":
                 mode==5?
                 "NOAH SOURCE CASE: Noah says 39 is greater than 41. Compare the numbers correctly. Write RELATION=GREATER/LESS/EQUAL. Explain Noah's error to a teacher.":
+                mode==6?
+                "SOURCE TEACHER DISCUSSION: Compare 93 and 26 using tens. Write RELATION=GREATER/LESS/EQUAL for the FIRST number. Explain the value of nine tens and two tens to a teacher.":
+                mode==7?
+                "SOURCE TEACHER DISCUSSION: Compare 62 and 64 using their matching six tens and different ones. Write RELATION=GREATER/LESS/EQUAL for the FIRST number. Explain the ones comparison to a teacher.":
                 $"Compare the value of {a} and {b} by tens, then ones. Is the FIRST number GREATER, LESS or EQUAL? Write RELATION=GREATER/LESS/EQUAL.",
             CompareSymbols=>mode==4?
                 "SOURCE COMPARISON PAIR: Decide whether 17 < 27 or 27 < 17 is true. Write SYMBOL=<, > or = for 17 compared with 27. Explain to a teacher.":
