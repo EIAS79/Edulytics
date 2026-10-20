@@ -229,7 +229,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
                 tr.StepByStepSolutions+"\n"+tr.CommonMistakes+"\n"+tr.QuickSummary;
         }
         Assert.Contains("physical collection of 40 objects",earlierUnit4Text(1));
-        Assert.Contains("count by tens to 100, then BACKWARD by tens to 30",earlierUnit4Text(1));
+        Assert.Contains("START at 30, count FORWARD by tens through 100, then BACKWARD by tens to 30",earlierUnit4Text(1));
         Assert.Contains("Bag A has 20, B has 40, C has 50, D has 60, E has 30 and F has 10",earlierUnit4Text(1));
         Assert.Contains("A=20, B=40, C=50, D=60, E=30, F=10",earlierUnit4Text(1));
         Assert.Contains("physical bag exchange cannot be inferred",earlierUnit4Text(1));
