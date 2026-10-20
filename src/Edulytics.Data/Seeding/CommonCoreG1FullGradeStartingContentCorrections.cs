@@ -15,7 +15,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string TenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L23";
     public const string CenterSourceContentVersion="us-ccss-g1-u03-l21-centers-2021-source-v7";
     public const string TeenSubtractSourceContentVersion="us-ccss-g1-u03-l22-teen-2021-source-v7";
-    public const string TenSubtractSourceContentVersion="us-ccss-g1-u03-l23-ten-2021-source-v6";
+    public const string TenSubtractSourceContentVersion="us-ccss-g1-u03-l23-ten-2021-source-v7";
     private const string CountRelationLessonCode="PED:US-CCSS-MATH:G1:U03:L24";
     private const string ChooseSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L25";
     private const string StoryLessonCode="PED:US-CCSS-MATH:G1:U03:L26";
@@ -192,18 +192,19 @@ Step 6: For the original Elena story, represent the 16 crayons and 7 given away,
             @"I can subtract from teen numbers by taking away, counting on, or using the structure of ten."),
         new(@"PED:US-CCSS-MATH:G1:U03:L23",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-23/preparation.html",@"56d2765a92f9b568461f2e650752f6cb7b95f275e1d8efe4a11a5e734bf3276f",new[] { @"CCSS:1.OA.C.6" },
             @"Use a Ten to Subtract",
-            @"Use a full ten-frame as a landmark for subtraction within 20. Move down to ten first, then subtract the rest. Show each step with true equations. Compare this method with counting on to verify the difference, and explain why a subtraction across ten needs more than one removal.",
+            @"Use a full ten-frame as a landmark for subtraction within 20. When the amount removed crosses ten, move down to ten first then subtract the rest. When the available extra ones are sufficient, subtract only from the ones without inventing a negative remainder. Show each step with true equations; compare Diego's and Andre's ten-frame methods and counting on.",
             @"Learning goal: use one ten to find differences within 20. For 13-6, split six into three and three, then 13-3-3=7. Another check: 6+7=13. Note the incorrect equality 13-3=10-3=7; 13-3 is 10 and 10-3 is 7, so the chain falsely equates different values. Original 2021 students compare Diego's and Andre's different ten-frame methods for 15-8 and then solve 14-5 and 13-6 by a chosen valid method; drawing and method discussion require teacher review.",
             @"Example 1: 13-6=13-3-3=10-3=7.
 Example 2: 15-8=15-5-3=10-3=7.
 Example 3: 12-7=12-2-5=10-5=5.
 Example 4: 16-9=16-6-3=10-3=7.
 Original 2021 mental warm-up: 17-7=10, 17-7-1=9, 17-8=9, and 17-9=8.
-Original 2021 Diego and Andre task: 15-8=7; a separate correct step chain is 15-5=10, then 10-3=7. Additional student tasks: 14-5=9 and 13-6=7, with drawings, numbers, or words to explain the chosen method.",
+Original 2021 Diego and Andre task: 15-8=7; Diego uses 15-5=10 then 10-3=7. Andre takes 8 from the full ten, leaving 2, then adds the 5 extra ones, making 7. Additional student tasks: 14-5=9 and 13-6=7, with drawings, numbers, or words to explain the chosen method.
+The original Number Card Subtraction with double ten-frames reuses cards from the previous lesson: a chosen teen card 11–19, with a digit subtractor 0–9. For 17-4=13, only loose ones are removed; for 19-0=19, none are removed. These legal source-card rounds must not be forced into a cross-ten calculation.",
             @"Step 1: Show the first number as ten and some ones on a double ten-frame.
-Step 2: Find how many ones to subtract to reach exactly ten.
-Step 3: Split the amount being subtracted into that part and the remaining part.
-Step 4: Subtract the remaining part from ten; keep every written equality true.
+Step 2: Compare the number being subtracted with the available ones. If it fits, remove only those ones; crossing ten is not required.
+Step 3: If it does not fit, remove those extra ones to reach ten, then subtract the remainder from ten.
+Step 4: Show accurate equations for the chosen method, whether counting on, subtracting from the full ten, or splitting at ten; keep every written equality true.
 Step 5: Check with addition: the result plus the removed amount must equal the original teen number.",
             @"Do not write 13-3=10-3=7; 13-3 equals 10, not seven. Instead write 13-6=13-3-3=10-3=7. Do not remove the ten twice or assume a one-digit answer without checking.",
             @"I can use the group of ten to subtract and explain accurate intermediate steps within 20."),
@@ -594,6 +595,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==ZooLessonCode&&(previous=="us-ccss-g1-u03-l20-zoo-2021-source-v6"||previous=="us-ccss-g1-u03-l20-zoo-2021-source-v7"))||
          (lesson.LessonCode==CenterLessonCode&&previous=="us-ccss-g1-u03-l21-centers-2021-source-v6")||
          (lesson.LessonCode==TeenSubtractLessonCode&&previous=="us-ccss-g1-u03-l22-teen-2021-source-v6")||
+         (lesson.LessonCode==TenSubtractLessonCode&&previous=="us-ccss-g1-u03-l23-ten-2021-source-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
