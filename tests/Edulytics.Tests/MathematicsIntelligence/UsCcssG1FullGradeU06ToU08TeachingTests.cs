@@ -64,6 +64,10 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("no gaps or overlaps",text("PED:US-CCSS-MATH:G1:U06:L06"));
         Assert.Contains("SEVEN digit cards",text("PED:US-CCSS-MATH:G1:U06:L04"));
         Assert.Contains("TWO two-digit numbers",text("PED:US-CCSS-MATH:G1:U06:L04"));
+        Assert.Contains("WITHOUT GOING OVER 100",text("PED:US-CCSS-MATH:G1:U06:L04"));
+        Assert.Contains("51+49=100",text("PED:US-CCSS-MATH:G1:U06:L04"));
+        Assert.Contains("Choose four different drawn cards",text("PED:US-CCSS-MATH:G1:U06:L04"));
+        Assert.Contains("reject sums above 100",text("PED:US-CCSS-MATH:G1:U06:L04"));
         Assert.Contains("SIX different tape strips A–F",text("PED:US-CCSS-MATH:G1:U06:L06"));
         Assert.Contains("Jeison's foot",text("PED:US-CCSS-MATH:G1:U06:L07"));
         Assert.Contains("MORE THAN 100 same-size small cubes",text("PED:US-CCSS-MATH:G1:U06:L08"));
