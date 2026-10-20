@@ -82,7 +82,19 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Valid(family,p))throw new InvalidOperationException("Source family generated invalid grade 1 operands");
         string prompt=family switch
         {
-            AddTens=>$"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
+            AddTens=>mode==4?
+                (a==54?
+                    "EDULYTICS ORIGINAL-SOURCE-ALIGNED NUMERIC TASK: Fill the left box in □=54+20. Write TOTAL=number;ONES=number.":
+                    $"EDULYTICS SOURCE-GOAL NUMERIC TASK: Find {a}+{b}, combining complete tens and preserving or identifying leftover ones. Write TOTAL=number;ONES=number. Drawings need teacher review.") :
+                mode==5?
+                "ORIGINAL 2021 TRUE/FALSE WARM-UP: Is 80+5=5+80 true? Evaluate BOTH sides. Write TRUE=YES/NO;LEFT=number;RIGHT=number.":
+                mode==6?
+                "ORIGINAL 2021 TRUE/FALSE WARM-UP: Is 70+1=80+1 true? Evaluate BOTH sides. Write TRUE=YES/NO;LEFT=number;RIGHT=number.":
+                mode==7?
+                "ORIGINAL 2021 TRUE/FALSE WARM-UP: Is 20+6=6+30 true? Evaluate BOTH sides. Write TRUE=YES/NO;LEFT=number;RIGHT=number.":
+                mode==8?
+                "EDULYTICS ORIGINAL EXIT CHECK (not the inaccessible publisher Cool-down): Add 46 and 30 whole ones/tens correctly; 4 tens+3 tens=7 tens, while 6 ones remain. Write TOTAL=number;ONES=number. Teacher reviews the student's visual strategy.":
+                $"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
             TenMoreLess=>mode%2==0?$"What is TEN MORE than {a}? Write RESULT=number.":
                 $"What is TEN LESS than {a}? Write RESULT=number.",
             CenterReview=>mode switch
@@ -106,7 +118,13 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         int a=p["a"],b=p["b"],mode=p["mode"];
         return family switch
         {
-            AddTens=>$"TOTAL={a+b};ONES={a%10}",
+            AddTens=>mode==5?
+                "TRUE=YES;LEFT=85;RIGHT=85":
+                mode==6?
+                "TRUE=NO;LEFT=71;RIGHT=81":
+                mode==7?
+                "TRUE=NO;LEFT=26;RIGHT=36":
+                $"TOTAL={a+b};ONES={(a+b)%10}",
             TenMoreLess=>$"RESULT={(mode%2==0?a+10:a-10)}",
             CenterReview=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}",
             CompareWords=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
