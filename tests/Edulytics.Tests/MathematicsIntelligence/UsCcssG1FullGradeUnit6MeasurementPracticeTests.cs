@@ -288,6 +288,63 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,parameters));
     }
 
+    [Theory]
+    [InlineData("usccss.g1.u06.l13.take_from_unknown",20,9,4,"START=20","ELENA BEADS")]
+    [InlineData("usccss.g1.u06.l14.match_story_equation",11,8,4,"MATCH=A,C;UNKNOWN=3","JADA")]
+    [InlineData("usccss.g1.u06.l14.match_story_equation",19,11,5,"MATCH=A,C;UNKNOWN=8","KIRAN")]
+    [InlineData("usccss.g1.u06.l14.match_story_equation",16,10,6,"MATCH=A,C;UNKNOWN=6","HAN AND LIN")]
+    [InlineData("usccss.g1.u06.l14.match_story_equation",14,9,7,"MATCH=A,C;TOTAL=14","ELENA AND ANDRE")]
+    [InlineData("usccss.g1.u06.l14.match_story_equation",16,6,8,"MATCH=A,C;UNKNOWN=10","NOAH AND TYLER")]
+    [InlineData("usccss.g1.u06.l14.match_story_equation",14,9,9,"MATCH=A,C;UNKNOWN=14","CLARE")]
+    public void OriginalTakeFromAndSixSourceStoriesHaveExactDistinctValidCases(
+        string family,int a,int b,int mode,string answer,string sourceContext)
+    {
+        var p=new Dictionary<string,int>{
+            ["a"]=a,["b"]=b,["c"]=0,["mode"]=mode
+        };
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,answer+";FALSE=1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,"MATCH=B,C;UNKNOWN=999"));
+        p["a"]++;
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        // Context is verified separately from the deterministic answer oracle.
+        var allContexts=new HashSet<string>(StringComparer.Ordinal);
+        for(int seed=0;seed<250;seed++)
+        {
+            var x=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                family,new Random(seed*41+17));
+            if(x.Parameters["mode"]==mode)
+                allContexts.Add(x.Prompt);
+        }
+        Assert.Contains(allContexts,context=>
+            context.Contains(sourceContext,StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void OriginalU06L13AndL14NewSourceModesDoNotInvalidateHistoricalInstances()
+    {
+        foreach(var (family,first,second) in new[]{
+            ("usccss.g1.u06.l13.take_from_unknown",15,5),
+            ("usccss.g1.u06.l14.match_story_equation",15,5)
+        })
+        {
+            for(int mode=0;mode<4;mode++)
+            {
+                var old=new Dictionary<string,int>{
+                    ["a"]=first,["b"]=second,["c"]=0,["mode"]=mode
+                };
+                Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,old));
+                var expected=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,old);
+                Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(
+                    family,old,expected));
+            }
+        }
+    }
+
     [Fact]
     public void OriginalU06L04SevenCardFamilyGeneratesUniqueGradeableTasks()
     {
