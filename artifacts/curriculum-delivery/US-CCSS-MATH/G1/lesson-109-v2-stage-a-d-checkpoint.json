@@ -43,10 +43,12 @@
   "stageB": {
     "existingRichV2CandidateReused": true,
     "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
-    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": true,
     "previousSourceSpecificTeachingCorrectionsPreserved": true,
-    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
-    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_FROZEN_FINAL_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false,
+    "latestSourceScopedContentVersion": "us-ccss-g1-u06-l07-three-unit-measurement-v3",
+    "sourceContentAndPracticeEditSha": "b33d4ec6dffb2dd0740438f97bc3c0bd4a32d6c0"
   },
   "stageC": {
     "existingAssessmentMode": "DIGITAL_PRACTICE",
@@ -59,7 +61,10 @@
     "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
     "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
     "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
-    "sourceAuthoredRubric": null
+    "sourceAuthoredRubric": null,
+    "sourceTaskSpecificPracticeExtended": true,
+    "newSourceModes": "Three unit sizes for one unchanged original-skill length, with 6 and 12 base-unit cases; four prior two-size modes preserved",
+    "independentMathematicsRegressionsPreparedIn": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs"
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -71,9 +76,21 @@
     "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
     "visualAccessibilityAndPublisherRights": "PENDING",
     "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
-    "wholeGradeRelease": "NO_GO"
+    "wholeGradeRelease": "NO_GO",
+    "newSourceSpecificTestsPrepared": true
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint.",
+  "academicReadinessNote": "A/B/C improvements implemented. A is still not fully source-figure audited; C still needs frozen-head verification. No claim of ready-for-D or academic acceptance.",
+  "originalAtoCSourceRepair": {
+    "ordinal": 109,
+    "revisionDate": "2026-10-20",
+    "repairScope": "A/B/C targeted source-specific teaching and digital mathematical Practice; previously valid question modes preserved",
+    "remainingStageA": "Verify exact original source pupil drawings, strip/object representations and source rights; actual pupil physical measurement cannot be fabricated",
+    "remainingStageC": "Verify new and old Practice at frozen code SHA, correct/wrong/malformed grading and authenticated saved attempts; source classroom authored evidence requires real teacher observation",
+    "stageDFinalCiNotRun": true,
+    "academicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  }
 }
