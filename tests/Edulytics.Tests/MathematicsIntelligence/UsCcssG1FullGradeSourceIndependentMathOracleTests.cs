@@ -41,14 +41,21 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             9=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             10=>$"DIFFERENCE={Math.Abs(a-b)}",
             11=>$"LENGTH={(mode%2==0?a-b:a+b)};DIFFERENCE={b}",
-            12=>mode%3==0?$"REMAINING={a-b}":
+            12=>mode==4?$"START={9+11}":
+                mode%3==0?$"REMAINING={a-b}":
                 mode%3==1?$"REMOVED={b}":$"START={a}",
+            // Independently compute the unknowns from each documented 2021
+            // picture/stamp/sticker story rather than invoking the engine.
             13=>mode switch
             {
                 0=>$"OP=SUBTRACT;TOTAL={a-b}",
                 1=>$"OP=ADD;TOTAL={a}",
                 2=>$"MATCH=A,C;TOTAL={a}",
-                _=>$"MATCH=B,C;TOTAL={a}"
+                3=>$"MATCH=B,C;TOTAL={a}",
+                4 or 5 or 6 or 8=>$"MATCH=A,C;UNKNOWN={a-b}",
+                7=>$"MATCH=A,C;TOTAL={b+5}",
+                9=>$"MATCH=A,C;UNKNOWN={b+5}",
+                _=>throw new InvalidOperationException("Invalid source story mode")
             },
             14=>mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
             15=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
