@@ -1794,15 +1794,15 @@
         "Student Facing Student Cans Collected Lin 18 Priya 24 Han 13 Tyler 30 Partner A: Write an equation to represent your thinking. How many cans did Lin and Priya collect alt",
         "Student Facing Room Cans Collected on Day 1 Kindergarten 18 1st grade 51 2nd grade 23 3rd grade 13 4th grade 39 5th grade 40 6th grade 8 7th grade 29 8th grade 30 Find di"
       ],
-      "sourceRequiredTaskInterpretation": "Verified from full read-only original 2021 Student Facing HTML: original four student can counts Lin18 Priya24 Han13 Tyler30, and nine Day1 grade counts Kindergarten18, 1st51, 2nd23, 3rd13, 4th39, 5th40, 6th8, 7th29, 8th30. Calculate named pairs/all four; group TWO distinct grades in 35–65-can boxes, with optional THREE-grade extension.",
-      "currentDigitalOrTeacherContentCandidate": "Replaced unrelated generic numeric food-drive sum with four source-specific digital modes: named student pairs, complementary pairs/full 85, original two-grade 35–65 conditional packing, optional three-grade packing. Exact source Student Facing data, independently oracle-tested.",
-      "remainingAcademicTaskParityWork": "Still assess source figures, independent learner answers and the open-ended task of finding as many qualifying 2-grade combinations as possible; teacher-guided real packing/donations not digitally observed. Check real HTTPS at exact head and third-party figure rights.",
+      "sourceRequiredTaskInterpretation": "Directly reviewed original 2021 full teacher Student Facing: warm-up estimation with source figure (rights not cleared); Activity 1 Partner A Lin18+Priya24=42 and Han13+Tyler30=43, Partner B Tyler30+Priya24=54 and Lin18+Han13=31, both totals 85. Activity 2 Day1 nine grade counts [18,51,23,13,39,40,8,29,30], as many 2-grade pairs making 35–65 per box as possible, optional 3-grade combinations, and original final question: LEAST boxes for all nine grades. Total 251 implies at least four 65-capacity boxes; the optional three-grade grouping makes four attainable with 65,64,63,59 cans in disjoint groups. Strict two-grade-only wording must not be used to claim that four-box grouping.",
+      "currentDigitalOrTeacherContentCandidate": "Existing original source-specific four digital modes and guarded U05:L14 Rich V2 body preserved and extended: restored Partner B named pairings, 251-can whole-grade total and minimum-box lesson task, plus fifth source-specific digital numeric mode MIN_BOXES=4 with four-box witness; real group construction and drawing remain teacher-reviewed. Added independent true/wrong/malformed source math tests; tests NOT YET EXECUTED at final GitHub SHA.",
+      "remainingAcademicTaskParityWork": "Independent full-grade cohort review must still check original warm-up source figures/rights and open-ended enumeration of as many qualifying two-grade pairs as possible; teacher-guided actual packing is not digitally observed. Final authoritative HTTPS learner rendering, true generated right/wrong/malformed grading, saved attempts, security/UI and current frozen-head GitHub CI have NOT RUN. No academic acceptance claimed.",
       "candidateDigitalFamily": "usccss.g1.u05.l14.optional_food_drive_numeric",
       "assessingMode": "DIGITAL_PRACTICE",
       "sourcePublisherArtworkFullyReviewed": false,
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
-      "evidenceStage": "DIRECT_READONLY_ORIGINAL_FULL_STUDENT_FACING_HTML_ACTIVITIES_TRIAGED_WITH_4_DIGITAL_SOURCE_TASK_MODES_NOT_ACADEMICALLY_ACCEPTED",
+      "evidenceStage": "DIRECT_READONLY_ORIGINAL_FULL_STUDENT_FACING_HTML_REVIEW_FIVE_SOURCE_TASK_DIGITAL_MODES_UNTESTED_PENDING_FINAL_SHA_CI",
       "initialSourceReviewCohort": "INITIAL_SOURCE_EXCERPT_TRIAGE",
       "readOnlyOriginalFullTeacherHtmlIntegrity20261019": {
         "algorithm": "SHA-256",
@@ -1811,6 +1811,20 @@
         "source": "Our-CS read-only original 2021 Grade 1 teacher book, unit-N/lesson-N/lesson.html",
         "scope": "Cached original source byte-integrity check only; does not certify full academic task fidelity, original visuals rights or lesson acceptance",
         "noLocalSourceChanges": true
+      },
+      "stageA20261020Resumption": {
+        "source": "Our-CS cached original IM 2021 full teacher lesson unit-5/lesson-14/lesson.html, read-only",
+        "originalSourceSha256Reused": "7a2e3ed4d8e2ccb705f24d97457d2e528bea0510119d46cf2aad2dc446091288",
+        "preciseNewlyResolvedGap": "Original last Student Facing least-number-of-boxes request omitted from learner content / digital modes; both source-bound candidates and independent tests now prepared",
+        "contentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+        "digitalQuestionFile": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+        "testFiles": [
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+          "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5AdditionPracticeTests.cs"
+        ],
+        "ciDuringAuthoring": "NOT_RUN_BY_POLICY",
+        "authenticatedRuntime": "PENDING_FINAL_FROZEN_SHA",
+        "internalAcceptance": "NOT_CLAIMED"
       }
     },
     {
