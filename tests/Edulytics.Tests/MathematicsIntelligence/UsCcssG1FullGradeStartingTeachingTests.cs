@@ -76,6 +76,10 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("17-7-1=9",text(23));
         Assert.Contains("Diego's and Andre's different ten-frame methods",text(23));
         Assert.Contains("14-5=9 and 13-6=7",text(23));
+        Assert.Contains("Andre takes 8 from the full ten",text(23));
+        Assert.Contains("digit subtractor 0–9",text(23));
+        Assert.Contains("17-4=13",text(23));
+        Assert.Contains("19-0=19",text(23));
         var zoo=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L20");
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,zoo,CommonCoreG1FullGradeStartingContentCorrections.Version));
@@ -93,6 +97,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,subtract,"us-ccss-g1-u03-l22-teen-2021-source-v6"));
         Assert.Equal("us-ccss-g1-u03-l22-teen-2021-source-v7",
             CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion);
+        var useTen=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L23");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,useTen,"us-ccss-g1-u03-l23-ten-2021-source-v6"));
+        Assert.Equal("us-ccss-g1-u03-l23-ten-2021-source-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.TenSubtractSourceContentVersion);
         Assert.Equal("us-ccss-g1-u03-l20-zoo-2021-source-v8",
             CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion);
         foreach(var number in new[]{21,22,23,24,25,26,27})
