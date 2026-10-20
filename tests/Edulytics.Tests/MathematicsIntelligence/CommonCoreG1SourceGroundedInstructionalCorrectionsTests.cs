@@ -23,6 +23,103 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
     }
 
     [Theory]
+    [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorLessonCode,
+        CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorVersion)]
+    [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthLessonCode,
+        CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthVersion)]
+    [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesLessonCode,
+        CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesVersion)]
+    public void Original2021Unit6TasksExtendTheSameExistingSourceGuardedTeaching(string code,string version)
+    {
+        var (doc,lesson,en)=Effective(code);
+        Assert.True(CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(doc,lesson));
+        Assert.False(CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(doc,lesson));
+        Assert.Equal(version,CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
+        var all=en.KeyConceptsAndRules+"\n"+en.WorkedExamples+"\n"+
+                en.StepByStepSolutions+"\n"+en.CommonMistakes;
+        if(code==CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorLessonCode)
+        {
+            Assert.Contains("Mai and Clare",all);
+            Assert.Contains("SIX real-classroom questions",all);
+            Assert.Contains("TEACHER desk fit through the DOOR",all);
+            Assert.Contains("STUDENT desk fit through the DOOR",all);
+            Assert.Contains("BOOKSHELF or RUG",all);
+            Assert.Contains("FILE CABINET or BOOKSHELF",all);
+            Assert.Contains("NEXT TO the BOOKSHELF",all);
+            Assert.Contains("drawings, numbers or words",all);
+        }
+        else if(code==CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthLessonCode)
+        {
+            Assert.Contains("Lengths of Creepy, Crawly Things",all);
+            Assert.Contains("Measure More Creepy, Crawly Things",all);
+            Assert.Contains("FOUR cubes long",all);
+            Assert.Contains("FIVE cube units",all);
+            Assert.Contains("How Close?, Target Numbers and Five in a Row",all);
+            Assert.Contains("measure",all,StringComparison.OrdinalIgnoreCase);
+            Assert.DoesNotContain("Both have 6 flat faces and 8 vertices",all);
+        }
+        else
+        {
+            Assert.Contains("TEACHER'S",all);
+            Assert.Contains("PARTNER'S",all);
+            Assert.Contains("Clare9+Han7=16",all);
+            Assert.Contains("Kiran7+older brother9+younger brother4=20",all);
+            Assert.Contains("Diego8 and father13 differ by5",all);
+            Assert.Contains("Jada8 plus unknown Elena",all);
+            Assert.Contains("7+9+4=20",all);
+            Assert.Contains("8+9=17",all);
+        }
+    }
+
+    [Theory]
+    [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorLessonCode,
+        CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorVersionV1)]
+    [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthLessonCode,
+        CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthVersionV1)]
+    [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesLessonCode,
+        CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesVersionV1)]
+    public void PriorUnpublishedOriginalV1SourceTextUpgradesOnlyWhenUnmodified(string code,string priorVersion)
+    {
+        var (doc,lesson,en)=Effective(code);
+        var old=code switch
+        {
+            CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorLessonCode =>
+                (CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorConceptsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorExamplesV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorStepsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.ChooseIndirectLengthComparatorMistakesV1),
+            CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthLessonCode =>
+                (CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthConceptsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthExamplesV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthStepsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthMistakesV1),
+            CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesLessonCode =>
+                (CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesConceptsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesExamplesV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesStepsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesMistakesV1),
+            _=>throw new InvalidOperationException("Unexpected lesson")
+        };
+        var stored=new CurriculumLessonContentTranslation
+        {
+            CultureCode=en.CultureCode,Title=en.Title,Explanation=en.Explanation,
+            KeyConceptsAndRules=old.Item1,WorkedExamples=old.Item2,
+            StepByStepSolutions=old.Item3,CommonMistakes=old.Item4,
+            QuickSummary=en.QuickSummary
+        };
+        CommonCoreG1SourceGroundedInstructionalCorrections.ValidateExistingBodyBeforeUpgrade(
+            doc,lesson,priorVersion,[stored]);
+        Assert.True(CommonCoreG1SourceGroundedInstructionalCorrections.CanUpgradeExisting(
+            doc,lesson,priorVersion));
+        stored.WorkedExamples+=" FABRICATED";
+        Assert.Throws<InvalidOperationException>(()=>
+            CommonCoreG1SourceGroundedInstructionalCorrections.ValidateExistingBodyBeforeUpgrade(
+                doc,lesson,priorVersion,[stored]));
+        Assert.False(CommonCoreG1SourceGroundedInstructionalCorrections.CanUpgradeExisting(
+            doc,lesson,"source-goal-unknown-older-version"));
+    }
+
+    [Theory]
     [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.DataQuestionsLessonCode,
         CommonCoreG1SourceGroundedInstructionalCorrections.DataQuestionsVersion)]
     [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.JungleSurveyLessonCode,
