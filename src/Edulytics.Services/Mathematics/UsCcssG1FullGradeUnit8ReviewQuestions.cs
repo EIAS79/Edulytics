@@ -103,7 +103,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     $"Last Number Wins: start at {a} (not at one); count ON {b} hops up to 120. Write LAST=number.":
                     $"Count an organized collection of objects with tens bundles and loose ones. The display has NO double-counted cubes and contains between 20 and 120 objects. How many are there? Write TENS=number;ONES=number;TOTAL=number.",
                 7=>mode<=1?
-                    $"Show the two-digit number {a} in tens and ones, then exchange ONE full ten-rod for ten loose ones without changing the total. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.":
+                    $"Show the number {a} in tens and ones (the source range includes 100). Then exchange ONE full ten-rod for ten loose ones without changing the total. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.":
                     mode==2?
                     $"ORIGINAL SHOW ME ALL THE WAYS: Start with {a/10} tens and {a%10} ones representing {a}. TRADE TWO full ten-rods for 20 more loose ones to show a SECOND different model. Write ALT_TENS=number;ALT_ONES=number;TOTAL=number.":
                     $"ORIGINAL FAVORITE NUMBER GALLERY: The number is {a}. Exchange any number of complete ten-rods for ten loose ones. How many DISTINCT tens-and-ones models exist when ZERO full tens is allowed, and how many loose ones remain in the all-loose model? Write WAYS=number;ZERO_TENS_ONES=number;TOTAL=number.",
