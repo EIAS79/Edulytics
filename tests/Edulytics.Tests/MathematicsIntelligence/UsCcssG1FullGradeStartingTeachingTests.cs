@@ -69,6 +69,9 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("10+10=13+7=20",text(21));
         Assert.Contains("14-4=10 helps solve 14-5=9",text(22));
         Assert.Contains("Elena has 16 crayons",text(22));
+        Assert.Contains("subtractor cards 0–9",text(22));
+        Assert.Contains("19-0=19",text(22));
+        Assert.Contains("addition equation with a missing addend",text(22));
         Assert.Contains("16-7=9 crayons",text(22));
         Assert.Contains("17-7-1=9",text(23));
         Assert.Contains("Diego's and Andre's different ten-frame methods",text(23));
@@ -85,6 +88,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,center,"us-ccss-g1-u03-l21-centers-2021-source-v6"));
         Assert.Equal("us-ccss-g1-u03-l21-centers-2021-source-v7",
             CommonCoreG1FullGradeStartingContentCorrections.CenterSourceContentVersion);
+        var subtract=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L22");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,subtract,"us-ccss-g1-u03-l22-teen-2021-source-v6"));
+        Assert.Equal("us-ccss-g1-u03-l22-teen-2021-source-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion);
         Assert.Equal("us-ccss-g1-u03-l20-zoo-2021-source-v8",
             CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion);
         foreach(var number in new[]{21,22,23,24,25,26,27})
