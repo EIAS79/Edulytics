@@ -40,7 +40,13 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==10?(a==43&&b==20):
                 mode==11?(a==56&&b==40):
                 (a==3&&b==30),
-            TenMoreLess=>a>=20&&a<=89&&b==10,
+            TenMoreLess=>mode switch
+            {
+                0 or 1=>a>=20&&a<=89&&b==10,
+                2=>a==67&&b==30,
+                3=>a==99&&b==30,
+                _=>false
+            },
             CompareWords or CompareSymbols=>a>=20&&a<=99&&b>=20&&b<=99,
             CenterReview=>mode switch
             {
@@ -73,7 +79,12 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             else if(mode==12){a=3;b=30;} // Public original ALT description: [smudged tens]3 + 30 = 74 is false.
             else{a=random.Next(20,80);b=random.Next(1,Math.Min(3,(99-a)/10)+1)*10;}
         }
-        else if(family==TenMoreLess){a=random.Next(20,90);b=10;}
+        else if(family==TenMoreLess)
+        {
+            if(mode==2){a=67;b=30;}
+            else if(mode==3){a=99;b=30;}
+            else{a=random.Next(20,90);b=10;}
+        }
         else if(family is CompareWords or CompareSymbols)
         {
             a=random.Next(20,100);b=mode==0?a:random.Next(20,100);
@@ -111,8 +122,13 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==12?
                 "SOURCE-ALIGNED FIRST-PARTY FALSE-EQUATION PUZZLE (public 2021 image accessibility text, NOT reused image): □3+30=74 is said to be NOT TRUE. Could ANY TENS digit in □ make the equation true? Explain by comparing ones digits 3 and 4. Write TRUE=YES/NO;ONES_LEFT=number;ONES_RIGHT=number. Teacher reviews words or drawings.":
                 $"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
-            TenMoreLess=>mode%2==0?$"What is TEN MORE than {a}? Write RESULT=number.":
-                $"What is TEN LESS than {a}? Write RESULT=number.",
+            TenMoreLess=>mode switch
+            {
+                2=>"SOURCE-ALIGNED NUMERIC SEQUENCE: Start at 67 and add 10 three times: 67+10+10+10. Write RESULT=number. Explain the tens pattern to a teacher.",
+                3=>"SOURCE-ALIGNED NUMERIC SEQUENCE: Start at 99 and subtract 10 three times: 99-10-10-10. Write RESULT=number. Explain the tens pattern to a teacher.",
+                0=>$"What is TEN MORE than {a}? Write RESULT=number.",
+                _=>$"What is TEN LESS than {a}? Write RESULT=number."
+            },
             CenterReview=>mode switch
             {
                 0=>$"Teacher-led center numeric portion: calculate {a}+{b} within 20. Write RESULT=number.",
@@ -149,7 +165,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==12?
                 "TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4":
                 $"TOTAL={a+b};ONES={(a+b)%10}",
-            TenMoreLess=>$"RESULT={(mode%2==0?a+10:a-10)}",
+            TenMoreLess=>$"RESULT={(mode==2?a+30:mode==3?a-30:mode==0?a+10:a-10)}",
             CenterReview=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}",
             CompareWords=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
             CompareSymbols=>$"SYMBOL={(a>b?">":a<b?"<":"=")}",
