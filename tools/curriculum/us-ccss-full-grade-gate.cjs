@@ -134,7 +134,7 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha)
       !validProof(e.runtimePracticeProofPath,e.runtimePracticeProofSha256,
         e.runtimePracticeProofReference,releaseSha,checkFile)))return false;
   if(!needsDigital && e.allowedFamilies.length!==0)return false;
-  if([65,119,123,124,125,126,135,142,146].includes(ordinal)) {
+  if([65,119,123,124,125,126,135,142,144,146].includes(ordinal)) {
     if(e.originalAuthorshipTaskReviewed!==true ||
        e.learnerAuthoredTaskRendered!==true ||
        e.teacherReviewRubricAvailable!==true ||
@@ -146,6 +146,7 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha)
         'lesson-'+ordinal+'-original-shape-creation-rubric.json':
       ordinal===135?'lesson-135-original-sunday-schedule-authorship-rubric.json':
       ordinal===142?'lesson-142-original-two-ride-questions-authorship-rubric.json':
+      ordinal===144?'lesson-144-original-class-number-book-authorship-rubric.json':
       'lesson-146-number-riddle-authorship-rubric.json';
     const rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
     const isTwoAuthoredRideQuestions=ordinal===142;
