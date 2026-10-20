@@ -9,6 +9,26 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
 {
     [Fact]
+    public void Lesson68SourceSequenceAndHanSixtyAreVisibleInLearnerContent()
+    {
+        const string code=CommonCoreG1SourceGroundedInstructionalCorrections.TensLessonCode;
+        var (doc,lesson,en)=Effective(code);
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.TensVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
+        var all=en.KeyConceptsAndRules+"\n"+en.WorkedExamples+"\n"+
+            en.StepByStepSolutions+"\n"+en.CommonMistakes;
+        Assert.Contains("Addition and Subtraction with Tens",all);
+        Assert.Contains("20,30,40,50,60,70,80,90",all);
+        Assert.Contains("80,70,60,50,40,30,20,10",all);
+        Assert.Contains("0 through 90",all);
+        Assert.Contains("60+10=70",all);
+        Assert.Contains("60-10=50",all);
+        Assert.Contains("0+10=10",all);
+        Assert.Contains("90-10=80",all);
+        Assert.Contains("physical five-in-a-row play remains supervised",all);
+    }
+
+    [Fact]
     public void Lesson65Original2021OptionalAroundRoomRequiresAuthenticLearnerAuthorshipAndGallery()
     {
         const string code=CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsLessonCode;
