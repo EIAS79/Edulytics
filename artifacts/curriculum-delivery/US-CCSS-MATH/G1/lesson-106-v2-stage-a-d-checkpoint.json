@@ -54,7 +54,13 @@
     "knownScope": "Generic add <=100 and within-20 expression comparison; does not grade original four-card selection or optimal non-overshooting total.",
     "originalActivityDigitallyVerified": false,
     "taskParity": "BLOCKED_NEEDS_SEPARATE_VERSIONED_SOURCE_GOAL_MECHANIC_OR_EXPLICIT_TEACHER_ONLY_BOUNDARY",
-    "safetyReason": "Do not modify historical seeded generator behavior without a versioned migration; generic numeric sum does not establish original target."
+    "safetyReason": "Do not modify historical seeded generator behavior without a versioned migration; generic numeric sum does not establish original target.",
+    "versionedSourceMathCandidate": "src/Edulytics.Services/Mathematics/UsCcssG1HowCloseStage3Mathematics.cs",
+    "versionedSourceMathCommit": "21e085c3620c7225949ce8d3d7fac6606eb80f0b",
+    "sourceMathBehavior": "Seven distinct cards from 0–9, all globally closest non-overshooting two-digit pair solutions, accepts multiple optimal pairs and rejects reused, unavailable or over-100 digit selection.",
+    "legacyGeneratorUnchanged": true,
+    "routedToActualPractice": false,
+    "remaining": "Versioned integration with authorized family mapping and authenticated grading/persistence still required. New isolated math class is NOT a completed Practice submission path."
   },
   "stageD": {
     "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -72,7 +78,10 @@
     "authenticatedGradePersistence": "PENDING",
     "legalVisualAndAccessibilityAudit": "PENDING",
     "exactHeadProtectedCi": "NOT_RUN",
-    "academicApproval": "NOT_CLAIMED"
+    "academicApproval": "NOT_CLAIMED",
+    "independentSourceMathTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1HowCloseStage3MathematicsTests.cs",
+    "independentSourceMathTestCommit": "44230c4cff221406e3d2ecfa6e655ff7e5cbe390",
+    "testExecutionStatus": "NOT_RUN"
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
