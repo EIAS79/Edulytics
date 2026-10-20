@@ -107,6 +107,8 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
         CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesVersionV1)]
     [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsLessonCode,
         CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsVersionV1)]
+    [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.TensLessonCode,
+        CommonCoreG1SourceGroundedInstructionalCorrections.TensVersionV1)]
     public void PriorUnpublishedOriginalV1SourceTextUpgradesOnlyWhenUnmodified(string code,string priorVersion)
     {
         var (doc,lesson,en)=Effective(code);
