@@ -149,7 +149,7 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha)
     // teacher rubric are mandatory for this lesson.
     const name=candidate.teacherOnlyRubric;
     if(typeof name!=='string' ||
-       !/^lesson-\\d+-[a-z0-9-]+-rubric\\.json$/.test(name) ||
+       !/^lesson-\d+-[a-z0-9-]+-rubric\.json$/.test(name) ||
        !name.startsWith('lesson-'+ordinal+'-'))return false;
     const rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
     const isTwoAuthoredRideQuestions=ordinal===142;
