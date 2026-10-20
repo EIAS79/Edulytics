@@ -118,7 +118,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             else if(family==CenterReview&&mode==6){a=9;b=6;}
             else if(mode==0){a=random.Next(11,18);b=random.Next(1,21-a);}
             else if(mode==1){a=random.Next(11,21);b=random.Next(1,10);}
-            else if(mode==2){a=random.Next(20,70);b=random.Next(1,4)*10;}
+            else if(mode==2){a=random.Next(20,70);b=random.Next(1,Math.Min(3,(99-a)/10)+1)*10;}
             else {a=random.Next(1,10);b=random.Next(0,10);}
         }
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
