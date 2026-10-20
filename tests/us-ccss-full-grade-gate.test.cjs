@@ -178,6 +178,32 @@ test('ordinal 142 requires BOTH authentic two-question ride authorship and indep
   assert.equal(validLessonAssessment(142,complete,()=>false),false);
 });
 
+test('original class-number-book lesson 144 requires real authored page and three-expression rubric in addition to numeric Practice',()=>{
+  const numeric={
+    allowedFamilies:['usccss.g1.u08.l08.same_number_tens_ones'],
+    realPracticeGradingPersisted:true,
+    independentCorrectAndWrongAnswersVerified:true,
+    independentGradingProofPath:'math',
+    independentGradingProofSha256:'a'.repeat(64),
+    runtimePracticeProofPath:'student',
+    runtimePracticeProofSha256:'b'.repeat(64)
+  };
+  assert.equal(validLessonAssessment(144,numeric,()=>true),false);
+  const authored={...numeric,
+    originalAuthorshipTaskReviewed:true,
+    learnerAuthoredTaskRendered:true,
+    teacherReviewRubricAvailable:true,
+    actualTeacherObservationNotClaimed:true};
+  assert.equal(validLessonAssessment(144,authored,()=>true),true);
+  assert.equal(validLessonAssessment(144,
+    {...authored,learnerAuthoredTaskRendered:false},()=>true),false);
+  assert.equal(validLessonAssessment(144,
+    {...authored,originalAuthorshipTaskReviewed:false},()=>true),false);
+  assert.equal(validLessonAssessment(144,
+    {...authored,teacherReviewRubricAvailable:false},()=>true),false);
+  assert.equal(validLessonAssessment(144,authored,()=>false),false);
+});
+
 test('V1 accepts two source-mapped Practice families without permitting arbitrary extras',()=>{
   const {sourceGroundedFamilies}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
   assert.deepEqual(sourceGroundedFamilies({candidateFamily:'source.a'}),['source.a']);
