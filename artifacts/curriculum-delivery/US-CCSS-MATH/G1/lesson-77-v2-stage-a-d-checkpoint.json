@@ -45,7 +45,9 @@
       5,
       6,
       7,
-      8
+      8,
+      9,
+      10
     ],
     "sourceAlignedRepeatedTenSequences": [
       "67+10+10+10=97",
@@ -60,7 +62,23 @@
       "75±10 → 85,65"
     ],
     "independentFirstPartyExit": "46±10 → 56,36 (not original publisher Cool-down)",
-    "testEvidenceCommit": "6d9d57396d659930ce008412db55624f1aaef9b0"
+    "testEvidenceCommit": "6d9d57396d659930ce008412db55624f1aaef9b0",
+    "firstPartyIntermediateStepModes": [
+      {
+        "mode": 9,
+        "sourceTask": "67 plus three successive tens",
+        "answerContract": "STEP1=77;STEP2=87;STEP3=97"
+      },
+      {
+        "mode": 10,
+        "sourceTask": "99 minus three successive tens",
+        "answerContract": "STEP1=89;STEP2=79;STEP3=69"
+      }
+    ],
+    "intermediateStepImplementationCommit": "c04427eb23487ae7cd10a8a7a007e7d3a74c8d59",
+    "intermediateStepTestsCommit": "df72a44ff85edadded2a63f57a6eb70f5168643c",
+    "legacyModeAnswerContractsPreserved": true,
+    "seedRegressionReviewRequired": true
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -87,12 +105,26 @@
     "openACDefects": [
       "Full accessible original teacher/student visual and task-by-task parity still requires independent review",
       "Learner teaching and generator/verifier independent code review incomplete",
-      "Original protected 2021 publisher Cool-down unavailable; independent Edulytics exit authored but not runtime verified"
+      "Original protected 2021 publisher Cool-down unavailable; independent Edulytics exit authored but not runtime verified",
+      "Source student/teacher current-cache hashes differ from checkpoint; reconcile edition/build/byte snapshot before any parity approval",
+      "Warm-up task and visual/math equation-by-equation parity still need explicit review",
+      "First-party intermediate-step modes 9/10 and legacy seeded-generator behavior require frozen-candidate verification"
     ],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-77-stage-a-c-source-implementation-audit-20261020.md",
     "ciExecutedDuringAuthoring": false,
     "stageDExecuted": false,
-    "testsAuthoredButNotExecuted": true
+    "testsAuthoredButNotExecuted": true,
+    "sourceCacheSnapshotIntegrity": {
+      "status": "SHA_MISMATCH_UNRESOLVED",
+      "observedOn": "2026-10-20",
+      "sourceDevice": "Our-CS",
+      "accessMode": "READ_ONLY",
+      "originalTeacherCheckpointSha256": "9aeaacd09e4d34c6d7cd9138b3e40c33b79d310bedb0d7abde2360a184ad93c7",
+      "observedTeacherCacheSha256": "3ed6c38a906c3e986ceaa8f0c98224bde0aec784daf976ae56ce3fb23e02a93a",
+      "originalStudentCheckpointSha256": "bc498182c4cdb1c2221310f0abf40469780a0c0f09542b4a4a52b4f59c962b96",
+      "observedStudentCacheSha256": "afdafd80cec2df36be4fbbe0924e77de9834e4186f578dbbb1b483c11749e773",
+      "conclusion": "Current local cache has different bytes; provenance/version and content-parity must be reconciled; mismatch alone does not establish different curriculum content"
+    }
   },
-  "nextAction": "Complete independent source/teaching/Practice/assessment audit for lesson 77; only then READY_FOR_STAGE_D. Do not run CI or advance academic approval ledger."
+  "nextAction": "Resolve 2021 source-cache snapshot mismatch, complete Lesson 77 source/teaching/Practice/visual and verifier parity; then consider A–C closure. Do not run CI, Stage D, or advance academic approval ledger."
 }
