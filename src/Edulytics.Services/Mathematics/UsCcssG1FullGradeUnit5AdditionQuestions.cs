@@ -183,7 +183,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             return false;
         int sum=a+b;
         int ones=a%10+b%10;
-        return sum<=100&&mode switch
+        return sum<=100&&(mode switch
         {
             6=>sum==Lesson12PairOptions.Min(p=>p.a+p.b),
             7=>sum==Lesson12PairOptions.Max(p=>p.a+p.b),
@@ -192,7 +192,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             10=>ones>=10&&sum%10==0,
             11=>Math.Abs(sum-95)==Lesson12PairOptions.Min(p=>Math.Abs(p.a+p.b-95)),
             _=>false
-        };
+        });
     }
     private static (int a,int b)? Exact2021Equation(string lesson,int mode)
     {
