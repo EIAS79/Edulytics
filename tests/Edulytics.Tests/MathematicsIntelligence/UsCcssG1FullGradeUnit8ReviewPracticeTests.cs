@@ -34,6 +34,68 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
             }
     }
     [Theory]
+    [InlineData(3,4,8,7,"CHANGE=7;FINAL=15")]
+    [InlineData(3,5,17,12,"CHANGE=12;FINAL=5")]
+    [InlineData(3,6,20,17,"CHANGE=17;FINAL=3")]
+    [InlineData(3,7,6,8,"CHANGE=8;FINAL=14")]
+    [InlineData(3,8,16,7,"CHANGE=7;FINAL=9")]
+    [InlineData(4,4,7,11,"MISSING=11;TOTAL=18")]
+    [InlineData(4,5,13,5,"MISSING=5;TOTAL=18")]
+    [InlineData(4,6,6,9,"MISSING=9;TOTAL=15")]
+    [InlineData(4,7,12,8,"MISSING=8;TOTAL=20")]
+    [InlineData(4,8,9,8,"MATCH=A,C;MISSING=8")]
+    [InlineData(4,9,11,5,"MATCH=A,C;MISSING=5")]
+    [InlineData(5,4,12,7,"DIFFERENCE=5")]
+    [InlineData(5,5,17,7,"DIFFERENCE=10")]
+    [InlineData(5,6,13,9,"DIFFERENCE=4")]
+    [InlineData(5,7,20,14,"DIFFERENCE=6")]
+    public void FifteenOriginalAquariumPlanetariumAndCarnivalProblemsRemainGradeable(
+        int familyIndex,int mode,int a,int b,string expected)
+    {
+        string family=UsCcssG1FullGradeUnit8ReviewQuestions.Families[familyIndex];
+        var p=new Dictionary<string,int>{
+            ["a"]=a,["b"]=b,["c"]=0,["mode"]=mode
+        };
+        Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        var parts=expected.Split(';');
+        var last=parts[^1];
+        int equalsAt=last.LastIndexOf('=');
+        var count=int.Parse(last[(equalsAt+1)..]);
+        parts[^1]=last[..(equalsAt+1)]+(count+1).ToString();
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,string.Join(";",parts)));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected+";PUPIL=OBSERVED"));
+        var drift=new Dictionary<string,int>(p){["a"]=a+1};
+        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,drift));
+    }
+
+    [Theory]
+    [InlineData(3,9)]
+    [InlineData(4,10)]
+    [InlineData(5,8)]
+    public void OriginalStoryVariantsAndLegacyModesAllGenerateWithoutTruncation(
+        int familyIndex,int expectedModeCount)
+    {
+        string family=UsCcssG1FullGradeUnit8ReviewQuestions.Families[familyIndex];
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<750;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit8ReviewQuestions.Build(
+                family,new Random(seed*117+familyIndex*91+31));
+            modes.Add(item.Parameters["mode"]);
+            var key=UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,item.Parameters,key));
+            if(item.Parameters["mode"]>=4)
+                Assert.Contains("ORIGINAL",item.Prompt);
+        }
+        Assert.Equal(Enumerable.Range(0,expectedModeCount).ToArray(),
+            modes.OrderBy(x=>x));
+    }
+
+    [Theory]
     [InlineData(34,0,"CANDIDATES=34,44,54")]
     [InlineData(34,1,"NUMBER=44")]
     [InlineData(51,2,"CANDIDATES=51,61,71")]
