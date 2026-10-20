@@ -34,8 +34,20 @@
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
-    "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "mathEngineChangedForThisLesson": true,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "scopedModes": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sourceAlignedRepeatedTenSequences": [
+      "67+10+10+10=97",
+      "99-10-10-10=69"
+    ],
+    "testsAuthoredButNotExecuted": true,
+    "testsExecuted": false
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -50,5 +62,24 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "A_C_EXPLICIT_GAP",
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": false,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "learnerTeachingSourceParityReviewed": false,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": false,
+    "openACDefects": [
+      "Full accessible source/task and visual parity review pending",
+      "Independent learner teaching and numeric verifier review pending",
+      "Independent original Edulytics formative scoring and protected 2021 Cool-down boundary pending"
+    ],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-77-stage-a-c-source-implementation-audit-20261020.md",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "Complete independent source/teaching/Practice/assessment audit for lesson 77; only then READY_FOR_STAGE_D. Do not run CI or advance academic approval ledger."
 }
