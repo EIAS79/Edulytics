@@ -117,6 +117,51 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(f,p,"SMALL_UNITS=6"));
     }
     [Theory]
+    [InlineData(6,"SMALL_UNITS=6;MEDIUM_UNITS=3;LARGE_UNITS=2")]
+    [InlineData(12,"SMALL_UNITS=12;MEDIUM_UNITS=6;LARGE_UNITS=4")]
+    public void OriginalU06L07RequiresThreeDistinctUnitCountsForOneFixedLength(
+        int length,string expected)
+    {
+        const string family="usccss.g1.u06.l07.unit_length_matters";
+        var p=new Dictionary<string,int>{
+            ["a"]=length,["b"]=2,["c"]=0,["mode"]=4
+        };
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,$"SMALL_UNITS={length};MEDIUM_UNITS={length};LARGE_UNITS={length}"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";EXTRA=1"));
+        var invalid=new Dictionary<string,int>(p){["a"]=9};
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,invalid));
+    }
+
+    [Fact]
+    public void Unit6Lesson7GeneratesAllOriginalAndAdditionalSourceRelevantModes()
+    {
+        const string family="usccss.g1.u06.l07.unit_length_matters";
+        var seen=new HashSet<int>();
+        for(int seed=0;seed<600;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                family,new Random(seed*137+17));
+            int mode=item.Parameters["mode"];
+            seen.Add(mode);
+            if(mode!=4)continue;
+            Assert.Contains("THREE-UNIT COMPARISON",item.Prompt);
+            Assert.Contains("SAME strip",item.Prompt);
+            Assert.Contains("not a claim",item.Prompt);
+            var answer=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,answer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,"SMALL_UNITS=1;MEDIUM_UNITS=1;LARGE_UNITS=1"));
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),seen.OrderBy(x=>x));
+    }
+
+    [Theory]
     [InlineData(7,4,9,1,"ORDER=B,A,C")]
     [InlineData(8,20,12,1,"ORDER=A,C,B")]
     [InlineData(17,9,4,1,"ORDER=C,B,A")]
