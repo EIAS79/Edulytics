@@ -31,6 +31,11 @@ test('the ACTUAL progress ledger counts every internally accepted lesson only wi
   // pretending the declared approval is verified on this candidate.
   assert.equal(report.newAccepted+stale.length,declared);
   assert.equal(report.newNotAccepted,96-report.newAccepted);
+  assert.equal(report.declaredNewAccepted,declared);
+  assert.deepEqual(report.unverifiedDeclaredAcceptances,
+    stale.map(row=>row.ordinal));
+  assert.equal(report.firstVerifiedUnfinishedOrdinal,
+    report.missing[0]?.ordinal??147);
   if(stale.length>0){
     assert.equal(report.outcome,'NO_GO');
     assert.ok(report.issues.some(s=>s.includes('Progress nextOrdinal disagrees')),
