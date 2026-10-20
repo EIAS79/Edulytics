@@ -194,8 +194,8 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
         Assert.Equal(correct,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(f,p));
         Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,correct));
         Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
-            correct.Replace("SQUARE_PIECES=2","SQUARE_PIECES=4")
-                   .Replace("SQUARE_PIECES=4","SQUARE_PIECES=2")));
+            mode==4?correct.Replace("SQUARE_PIECES=2","SQUARE_PIECES=4"):
+                    correct.Replace("SQUARE_PIECES=4","SQUARE_PIECES=2")));
         Assert.False(ExactSkillContractQuestionEngine.Verify(
             f,p,correct+";PUPIL_FOLDED=YES"));
     }
