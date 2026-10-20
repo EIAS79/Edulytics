@@ -295,6 +295,12 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
             Assert.Equal("TOTAL=19;EQUATION=8+4+7=19",
                 UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters));
         });
+        var invalidMode=new Dictionary<string,int>
+        {["a"]=8,["b"]=4,["c"]=7,["mode"]=5};
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,invalidMode));
+        invalidMode["mode"]=4;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(
+            UsCcssG1FullGradeNextQuestions.CenterTwoThree,invalidMode));
         foreach(var (a,b,c,mode,total) in stories)
         {
             var parameters=new Dictionary<string,int>
