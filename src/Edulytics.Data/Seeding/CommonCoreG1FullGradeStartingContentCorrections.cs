@@ -43,7 +43,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string UnitFourWriteNumeralLessonCode="PED:US-CCSS-MATH:G1:U04:L10";
     public const string UnitFourWriteNumeralSourceContentVersion="us-ccss-g1-u04-l10-original-student-activities-v7";
     private const string UnitFourAddTensLessonCode="PED:US-CCSS-MATH:G1:U04:L11";
-    public const string UnitFourAddTensSourceContentVersion="us-ccss-g1-u04-l11-original-student-activities-v7";
+    public const string UnitFourAddTensSourceContentVersion="us-ccss-g1-u04-l11-original-student-activities-v8";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
             .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
@@ -527,10 +527,11 @@ Example 3: 62+10=72, as 6 tens+1 ten=7 tens and two ones.
 Example 4: 51+40=91, with one extra one unchanged.
 Original 2021 student equations: 37+20=57; 60+23=83; 48+50=98; 54+20=74; 30+65=95.
 Original 2021 True/False warm-up: 80+5=5+80 TRUE; 70+1=80+1 FALSE; 20+6=6+30 FALSE.
-The original Missing Digit activity has a smudged diagram that requires visual source inspection; do not certify the missing digit from prose alone.
+Original 2021 The Missing Digit image accessibility descriptions were independently read from the original 2021 cached teacher HTML. The TRUE illustration shows 56+□0=96 (the missing TENS DIGIT is 4, so 56+40=96). The explicitly FALSE illustration shows □3+30=74; ANY digit in the smudged TENS place leaves three ones after adding 30, not four, so NO digit makes that equation true. No publisher artwork is copied.
 Original source student-facing addition list includes 37+20=57, 60+23=83, 48+50=98, □=54+20 giving 74, and 30+65=95. When the two-digit addend is on the RIGHT, determine the ONES of the total from that addend: 60+23=83 has three ones, not zero.
 EDULYTICS INDEPENDENT MISSING-DIGIT examples are NOT claimed to be the unreadable publisher images: 4□+20=65 has □=5 (45+20=65), while no ones digit from 0 to 9 can make 4□+20=75 because the greatest possible total is 49+20=69.
-EDULYTICS ORIGINAL EXIT CHECK is 46+30=76, leaving six ones; not the publisher-protected 2021 Cool-down. Teacher observes student cube drawings and explains place value.",
+EDULYTICS ORIGINAL EXIT CHECK is 46+30=76, leaving six ones; not the publisher-protected 2021 Cool-down. Teacher observes student cube drawings and explains place value.
+Source-aligned first-party puzzle answers: DIGIT=4;EQUATION=56+40=96;TRUE=YES for the publicly described missing tens digit, and TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4 for the equation □3+30=74. These answers assess arithmetic and the place-value invariant, not the original copyrighted picture or a child's explanation.",
             @"Step 1: Break the non-round number into tens and ones.
 Step 2: Count the number of full tens being added.
 Step 3: Add tens to tens; copy the original number of ones.
@@ -540,7 +541,9 @@ Step 6: Check each of the FIVE original source expression blanks; 60+23 and 30+6
 Step 7: Judge all THREE original True/False warm-up equations by evaluating BOTH sides. 80+5=5+80 is TRUE; 70+1=80+1 and 20+6=6+30 are FALSE.
 Step 8: For the independently written missing-digit example 4□+20=65, solve □=5, so 45+20=65; show the source-goal strategy without claiming to have viewed the hidden original image.
 Step 9: For independent false digit challenge 4□+20=75, show 40+20=60 to 49+20=69, making 75 impossible; explain why no single ones digit will work.
-Step 10: In Edulytics original exit check calculate 46+30=76 and retain six ones. Explain the full tens/ones trade to a teacher.",
+Step 10: In Edulytics original exit check calculate 46+30=76 and retain six ones. Explain the full tens/ones trade to a teacher.
+Step 11: Interpret the accessible original image description: 56+□0=96 is TRUE only when □=4; verify 56+40=96 and six ones remain.
+Step 12: Interpret the second image description: □3+30=74 is FALSE for every hidden tens digit, because the left side always has three ones while 74 has four. Do NOT claim a unique digit can repair it. This is a first-party text-based alternative to copying the publisher image.",
             @"Do not add 20 to the ones place in 34+20. The answer is 54, not 36 or 314. Check for totals above 100 rather than silently using out-of-scope operands.",
             @"I can add a multiple of ten to a two-digit number without changing the ones."),
         new(@"PED:US-CCSS-MATH:G1:U04:L12",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-12/preparation.html",@"6d8b12cdd219f0b4ec414c51ecc71740b29e31b04dcbe0fb57e85494df44658d",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.C.5", @"CCSS:1.OA.C.6" },
@@ -700,7 +703,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourRepresentationsLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourShowNumberLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourWriteNumeralLessonCode&&previous==UnitFourLaterSourceContentVersion)||
-         (lesson.LessonCode==UnitFourAddTensLessonCode&&previous==UnitFourLaterSourceContentVersion)||
+         (lesson.LessonCode==UnitFourAddTensLessonCode&&(previous==UnitFourLaterSourceContentVersion||previous=="us-ccss-g1-u04-l11-original-student-activities-v7"))||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
