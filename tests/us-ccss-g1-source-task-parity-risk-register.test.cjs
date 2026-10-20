@@ -74,3 +74,33 @@ test('whole-unaccepted Stage A selection covers exact 90 current unaccepted less
   x.sourceRequiredTaskInterpretation&&x.originalTeacherActivityHeadings?.length&&
   x.originalStudentFacingTaskExcerpts?.length&&x.internalAcademicApproval==='NOT_CLAIMED'));
 });
+
+test('Stage A source reinspection reuses 29 original full teacher files without claiming 29 completed academic lessons',()=>{
+ const cohort=ledger.stageAWholeUnacceptedCohort20261020
+   .fullTeacherTextReinspectionForPreviouslyUncheckpointedRows;
+ assert.ok(cohort);
+ assert.equal(cohort.inspectedCount,29);
+ assert.equal(cohort.expectedShaMatchCount,29);
+ assert.equal(cohort.acceptedByInspectionCount,0);
+ assert.equal(cohort.originalTeacherActivityHeadingsUsed,true);
+ assert.equal(cohort.originalStudentFacingTextSamplesUsed,true);
+ const audited=ledger.rows.filter(x=>x.fullTeacherTextReinspection20261020);
+ assert.deepEqual(audited.map(x=>x.ordinal),cohort.ordinalList);
+ assert.equal(audited.length,29);
+ for(const row of audited){
+   const actual=row.fullTeacherTextReinspection20261020;
+   const match=row.lessonCode.match(/:U(\d+):L(\d+)/);
+   assert.ok(match,'Unexpected source lesson code: '+row.lessonCode);
+   assert.equal(actual.originalFullTeacherRelativePath,
+     'unit-'+Number(match[1])+'/lesson-'+Number(match[2])+'/lesson.html');
+   assert.equal(actual.sha256Expected,row.original2021FullTeacherLessonHtmlSha256);
+   assert.equal(actual.sha256Observed,actual.sha256Expected);
+   assert.equal(actual.hashComparison,'MATCHED_READ_ONLY_LOCAL_FILE_20261020');
+   assert.ok(actual.fullTeacherStudentFacingSegmentsObserved>=1);
+   assert.equal(actual.originalSourceTextInspectedWithoutLocalModification,true);
+   assert.equal(actual.sourceOnlyEvidenceNotAcademicApproval,true);
+   assert.equal(actual.legalPublisherVisualsIndependentlyCleared,false);
+   assert.equal(actual.authenticatedStudentPracticeGradingAndPersistenceAtCurrentHead,false);
+   assert.equal(row.internalAcademicApproval,'NOT_CLAIMED');
+ }
+});
