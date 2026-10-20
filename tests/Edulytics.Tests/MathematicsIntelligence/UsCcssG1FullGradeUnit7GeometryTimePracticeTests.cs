@@ -150,6 +150,38 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
         Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
     }
 
+    [Fact]
+    public void Unit7Lesson8MatchMinePreservesThreeDimensionalPartnerModel()
+    {
+        const string family="usccss.g1.u07.l08.center_shapes_add_subtract";
+        const string expected="BOTTOM=2;TOP=1;TOTAL_CUBES=3";
+        var p=new Dictionary<string,int>{{"a",8},{"b",7},{"c",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,"BOTTOM=2;TOP=2;TOTAL_CUBES=4"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected+";PARTNER_OBSERVED=YES"));
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<625;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                family,new Random(seed*131+41));
+            modes.Add(item.Parameters["mode"]);
+            var answer=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,answer));
+            if(item.Parameters["mode"]==4)
+            {
+                Assert.Contains("three-dimensional construction",item.Prompt);
+                Assert.Contains("ONE equal cube stacked",item.Prompt);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
+    }
+
     [Theory]
     [InlineData(2,2,"PER_LAYER=4;LAYERS=2;TOTAL_CUBES=8")]
     [InlineData(3,2,"PER_LAYER=6;LAYERS=2;TOTAL_CUBES=12")]
