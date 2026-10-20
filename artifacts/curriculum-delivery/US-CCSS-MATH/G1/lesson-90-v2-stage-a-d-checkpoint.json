@@ -23,18 +23,38 @@
       "Student Facing Here are 2 drawings students made for \\(63 + 25\\) . Elena's work [visual] [visual] <div aria-describedby=\"dialog-long-description-ImageFile-43616\" aria-lab"
     ],
     "sourceSpecificComparison": "Original 23+45; Elena and Andre 63+25 methods; choral backward70–20; Five in a Row Stage 5",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "originalPublicTeacherStudentFacingTaskMathReviewed": true,
+    "verifiedAccessible2021StudentTaskMath": [
+      "23+45=68",
+      "63+25=88 with two pupil methods"
+    ],
+    "verificationBoundary": "Reuses recorded canonical 2021 full-teacher Student Facing text and 2026-10-20 extracted original task inventory. Actual copyrighted publisher pupil drawings and teacher-observed gameplay are not visually replicated or machine certified."
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "learnerTeachingSourceParityReviewed": true,
+    "verifiedFirstPartyMethodText": "63+25: combine 60+20=80 with 3+5=8, versus 63+20=83 then +5=88; original text teaching already included both."
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "practiceImplementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "originalSourceMode4": "23+45 -> TENS=60;ONES=8;TOTAL=68",
+    "originalSourceMode5": "63+25 -> TENS=80;ONES=8;TOTAL=88",
+    "firstPartyDualStrategyMode6": {
+      "expected": "ELENA_TENS=80;ELENA_ONES=8;ANDRE_FIRST=83;ANDRE_SECOND=88;TOTAL=88",
+      "implementationCommit": "84dfa5852e64910df709bbf2c1b37247102350ee",
+      "boundary": "Edulytics first-party numeric proxy; not publisher drawing reconstruction; oral reasoning and original partner play teacher-graded."
+    },
+    "authoredTestsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson90TwoAdditionStrategiesTests.cs",
+    "authoredTestsCommit": "040924de1563c59ffc49f2b7b34cb332c5317234",
+    "testsExecuted": false,
+    "independentMathCodeStaticallyReviewed": true
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -48,5 +68,19 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal91 in canonical order; no Stage D/CI/merge/deploy.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "scope": "Accessible 2021 public original maths, correct first-party learner text and answer-verifier aligned. No claim of copied/matched publisher drawings, actual teacher center play, authenticated runtime verification, checked compiler or test pass; deferred until Stage D."
+  }
 }
