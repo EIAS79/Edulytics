@@ -44,7 +44,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(i==5?7:i==6?4:i==7?4:i==9?4:i==10?7:i==12?4:i==13?9:i==14?4:3)||
+           mode<0||mode>(i==5?7:i==6?4:i==7?4:i==9?4:i==10?7:i==12?4:i==13?9:i==14?4:i==15?5:3)||
            (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
         return i switch
         {
@@ -62,7 +62,10 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             // Original U06 L12 targets Compare Bigger Unknown / Smaller Unknown,
             // NOT Difference Unknown from two already known lengths.
             11=>a>=4&&a<=20&&b>=1&&b<=9&&(mode%2==0?b<a:a+b<=20),
-            3 or 15=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
+            3=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
+            15=>mode==4?a>=101&&a<=120&&b==0:
+                mode==5?a==65&&b==21:
+                a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
             9=>mode==4?a>=5&&a<=20&&b>=1&&b<=25&&Math.Abs(a-b)<=4:
                 a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
             4 or 5=>a>=2&&a<=20&&b==0,
@@ -91,7 +94,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(i==5?8:i==6||i==7||i==9||i==14?5:i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
+        int mode=random.Next(i==5?8:i==6||i==7||i==9||i==14?5:i==10?8:i==12?5:i==13?10:i==15?6:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -140,6 +143,8 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         }
         if(i==12&&mode==4)(a,b,c)=(20,9,0);
         if(i==14&&mode==4)(a,b,c)=(19,12,0);
+        if(i==15&&mode==4)(a,b,c)=(random.Next(101,121),0,0);
+        if(i==15&&mode==5)(a,b,c)=(65,21,0);
         if(i==13&&mode>=4)
         {
             (a,b,c)=mode switch
@@ -220,8 +225,13 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 "ORIGINAL CLARE ORIGAMI SOURCE TASK: Clare gave 12 paper cranes AWAY and has 7 LEFT. The START is unknown. WRITE the source story equation with the correct missing-start relationship, then solve it. Write START=number;EQUATION=number-number=number. This tests mathematical equality, not teacher-observed pupil writing or gallery work.":
                 mode%2==0?$"Write a true equation for {a} birds, {b} fly away. Write EQUATION=number-number=number.":
                 $"Write an addition equation for {a-b} children, {b} join to make {a}. Write EQUATION=number+number=number.",
-            15=>mode%2==0?$"Center addition within 100: {a}+{b}. Write RESULT=number.":
-                $"Center hypothetical measurement: {a} equal cubes without gaps. Write LENGTH=number.",
+            15=>mode switch
+            {
+                4=>$"SOURCE-GROUNDED COUNTING COLLECTIONS STAGE 3 (FIRST-PARTY NUMERIC MODEL): A collection has {a/10} complete groups of TEN objects and {a%10} loose objects. Write its total (up to 120) and both components. Write TENS=number;ONES=number;TOTAL=number. This does not claim a pupil estimated or physically counted a real classroom collection.",
+                5=>"ORIGINAL 2021 NUMBER TALK: Mentally compare the results of 65+20+1 and 65+21. Both expressions should equal the same number. Write FIRST=number;SECOND=number;EQUAL=YES/NO.",
+                _=>mode%2==0?$"Center addition within 100: {a}+{b}. Write RESULT=number.":
+                    $"Center hypothetical measurement: {a} equal cubes without gaps. Write LENGTH=number."
+            },
             16=>$"Compare story: one group has {a} tulips and another has {a-b}. How many MORE are in the first? Write DIFFERENCE=number.",
             _=>throw new InvalidOperationException()
         };
@@ -294,7 +304,12 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             14=>mode==4?
                 "START=19;EQUATION=19-12=7":
                 mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
-            15=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
+            15=>mode switch
+            {
+                4=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
+                5=>"FIRST=86;SECOND=86;EQUAL=YES",
+                _=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}"
+            },
             16=>$"DIFFERENCE={b}",
             _=>throw new InvalidOperationException()
         };
