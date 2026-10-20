@@ -48,6 +48,8 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string UnitFourTenMoreLessSourceContentVersion="us-ccss-g1-u04-l12-original-student-activities-v7";
     private const string UnitFourCenterDayTwoLessonCode="PED:US-CCSS-MATH:G1:U04:L13";
     public const string UnitFourCenterDayTwoSourceContentVersion="us-ccss-g1-u04-l13-original-student-activities-v7";
+    private const string UnitFourCompareWordsLessonCode="PED:US-CCSS-MATH:G1:U04:L14";
+    public const string UnitFourCompareWordsSourceContentVersion="us-ccss-g1-u04-l14-original-student-activities-v7";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
             .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
@@ -598,9 +600,13 @@ Step 5: For physical center play, follow the teacher's rules and explain the str
 Example 2: 63 is LESS THAN 68 because both have six tens and three ones are less than eight.
 Example 3: 42 and 42 are EQUAL: four tens and two ones each.
 Example 4: 79 is GREATER THAN 71 because nine ones exceed one when tens are both seven.
+Original 2021 choral count starts at 3 and adds TEN until 93, then subtracts TEN back to 3; each counted number has 3 ones.
+Original teacher comparison 93 is GREATER THAN 26 because nine tens beat two tens; 62 is LESS THAN 64 because both have six tens and 2 ones are fewer than 4.
 Original 2021 Elena argues 75>65 because 7>6; refine the explanation to SEVEN TENS exceeds SIX TENS.
 Original 2021 Noah incorrectly claims 39>41 because 9 is the largest single digit; 39<41 because THREE tens are fewer than FOUR tens. Explain why comparing ones first is wrong.
-The original comparison-spinner and partner discussion are physical teacher-led tasks.",
+Original Activity 3 center choices are Write Numbers, Grab and Count, or Five in a Row. Mai has 4 towers of 10 and 3 ones, and her partner has 2 towers of 10: 43+20=63 cubes. This is a teacher-led center synthesis, NOT proof of physical participation.
+Original lesson synthesis: 64 is GREATER THAN 44 because six tens beat four; 54 is LESS THAN 59 because both have five tens but 4 ones are fewer than 9.
+The original spinner game, partner explanations and center choices are teacher-led; the 2021 Section C Checkpoint (0 minutes) is protected and not copied.",
             @"Step 1: Represent or name the tens and ones in each two-digit number.
 Step 2: Compare the tens counts first.
 Step 3: If the tens match, compare the ones.
@@ -688,6 +694,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
             UnitFourAddTensLessonCode=>UnitFourAddTensSourceContentVersion,
             UnitFourTenMoreLessLessonCode=>UnitFourTenMoreLessSourceContentVersion,
             UnitFourCenterDayTwoLessonCode=>UnitFourCenterDayTwoSourceContentVersion,
+            UnitFourCompareWordsLessonCode=>UnitFourCompareWordsSourceContentVersion,
             var l when UnitFourLaterLessonCodes.Contains(l)=>UnitFourLaterSourceContentVersion,
                 _=>Version
             })
@@ -716,6 +723,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourAddTensLessonCode&&(previous==UnitFourLaterSourceContentVersion||previous=="us-ccss-g1-u04-l11-original-student-activities-v7"))||
          (lesson.LessonCode==UnitFourTenMoreLessLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourCenterDayTwoLessonCode&&previous==UnitFourLaterSourceContentVersion)||
+         (lesson.LessonCode==UnitFourCompareWordsLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
