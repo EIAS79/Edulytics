@@ -66,7 +66,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             4 or 5=>a>=2&&a<=20&&b==0,
             6=>a>=2&&a<=14&&b==2,
             7=>a>=20&&a<=110&&b==0,
-            8=>a>=100&&a<=120&&b==0,
+            8=>a>=95&&a<=120&&b==0,
             12 or 13 or 14 or 16=>a>=5&&a<=20&&b>=1&&b<=a&&c==0,
             _=>false
         };
@@ -101,7 +101,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         else if(i is 4 or 5){a=random.Next(2,21);}
         else if(i==6){a=random.Next(2,15);b=2;}
         else if(i==7){a=random.Next(20,111);}
-        else if(i==8){a=random.Next(100,121);}
+        else if(i==8){a=random.Next(95,121);}
         else {a=random.Next(5,21);b=random.Next(1,a+1);}
         if(i==10&&mode>=4)
         {
