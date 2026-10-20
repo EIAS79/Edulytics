@@ -29,7 +29,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string UnitFourMultipleTensLessonCode="PED:US-CCSS-MATH:G1:U04:L04";
     private const string UnitFourCenterLessonCode="PED:US-CCSS-MATH:G1:U04:L05";
     public const string UnitFourCollectionSourceContentVersion="us-ccss-g1-u04-l01-original-activities-v7";
-    public const string UnitFourTensMatchSourceContentVersion="us-ccss-g1-u04-l02-original-activities-v6";
+    public const string UnitFourTensMatchSourceContentVersion="us-ccss-g1-u04-l02-original-activities-v7";
     public const string UnitFourMultipleTensSourceContentVersion="us-ccss-g1-u04-l04-original-activities-v6";
     public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v6";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
@@ -328,12 +328,17 @@ Step 7: Teacher-observed center choice follows group collection counting. The ce
 Example 2: 7 tens = 7 towers of ten = 70 cubes.
 Example 3: 5 tens = 50 ones: 10+10+10+10+10=50.
 Example 4: 4 towers of ten represent 40, not 14.
-Original 2021 matching tasks pair number words (such as seventy), a numeral (70), and seven ten-cube towers or tens drawings. The classroom movement/matching with two classmates remains teacher-facilitated.",
+Original 2021 matching tasks pair number words (such as seventy), a numeral (70), and seven ten-cube towers or tens drawings. The classroom movement/matching with two classmates remains teacher-facilitated.
+Original 2021 Activity 1: hold ONE numeral/number-of-tens/drawing card, locate the other TWO children with the same value, explain how the card trio matches, and enter the trio in a three-column number / number of tens / drawing chart. Activity 2: individually match tower drawings to number words and numerals from 10 through 90 with partner discussion; a numeric multiple-choice answer alone does not prove real peer matching.
+EDULYTICS ORIGINAL EXIT CHECK (independent, not the publisher-protected five-minute 2021 question): Identify SEVEN towers of ten as seven tens, 70 cubes and the English number word SEVENTY. Digital fields TENS=7;NUMBER=70;WORD=SEVENTY verify names and quantities; teacher checks drawings and spoken reasoning.",
             @"Step 1: Count complete ten-cube towers or drawn bundles.
 Step 2: Write the number of 'tens' in words.
 Step 3: Skip-count by ten to find the total objects.
 Step 4: Match this total to the correct numeral (20,30,...,90).
-Step 5: Explain how the tens digit records the number of towers.",
+Step 5: Explain how the tens digit records the number of towers.
+Step 6: Revisit the original two estimation rounds with the same cubes shown first loose and then grouped in ten towers. Give a too-low, about-right and too-high estimate; revise if your reasoning changes. Only a teacher can evaluate original estimates.
+Step 7: In original Activity 1, compare your card with other classmates until three related representations match; teacher observes the numeral, the number-of-tens phrase and the drawing, then records them in a three-column chart.
+Step 8: In Activity 2 connect English number words, printed numbers 10–90 and towers of ten; independently check the Edulytics 7-tens/70/SEVENTY exit question as a separate first-party assessment.",
             @"Do not confuse the count of towers with the count of loose ones. Four tens means 40, not 4. Avoid matching pictures by their approximate size without counting.",
             @"I can match different representations of a multiple of ten."),
         new(@"PED:US-CCSS-MATH:G1:U04:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-4/preparation.html",@"aea5b61803df4c4b9df6fd46f89e9413a5bb48d0ef33c3e8178327ec9e22b5c7",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6" },
@@ -617,6 +622,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==StoryLessonCode&&previous=="us-ccss-g1-u03-l26-original-activities-v6")||
          (lesson.LessonCode==CenterFourLessonCode&&previous=="us-ccss-g1-u03-l27-original-activities-v6")||
          (lesson.LessonCode==UnitFourCollectionLessonCode&&previous=="us-ccss-g1-u04-l01-original-activities-v6")||
+         (lesson.LessonCode==UnitFourTensMatchLessonCode&&previous=="us-ccss-g1-u04-l02-original-activities-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
