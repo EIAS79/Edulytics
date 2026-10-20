@@ -80,6 +80,10 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
                 ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson7ThreeUnitsSourceVersion
                 :code=="PED:US-CCSS-MATH:G1:U06:L10"
                 ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson10EstimateFirstSourceVersion
+                :code=="PED:US-CCSS-MATH:G1:U06:L12"
+                ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson12SourceVersion
+                :code=="PED:US-CCSS-MATH:G1:U08:L09"
+                ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit8Lesson9SourceVersion
                 :code.Contains(":U06:",StringComparison.Ordinal)
                 ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6OriginalSourceVersion
                 :code is "PED:US-CCSS-MATH:G1:U07:L01" or

@@ -38,11 +38,19 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         if(n<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(n==3?8:n==4?9:n==5?7:n==9?8:3))return false;
+           mode<0||mode>(n==1?7:n==3?8:n==4?9:n==5?7:n==7?4:n==8?9:n==9?8:3))return false;
         return n switch
         {
             0=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
-            1=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
+            1=>mode>=4?c==0&&(mode switch
+                {
+                    4=>a==5&&b==4,
+                    5=>a==4&&b==5,
+                    6=>a==9&&b==4,
+                    7=>a==9&&b==5,
+                    _=>false
+                }):
+                a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
             2=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&a>=b&&c==0,
             3=>c==0&&(mode switch
             {
@@ -74,8 +82,18 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             6=>c==0&&(mode<=1?
                 a>=1&&a<=119&&b>=1&&b<=120-a:
                 a>=20&&a<=120&&b==0),
-            7=>a>=20&&a<=100&&b==0&&c==0,
-            8=>a>=31&&a<=79&&a%10>0&&b==10&&c==0,
+            7=>mode==4?a>=1&&a<=120&&b==0&&c==0:
+                a>=20&&a<=120&&b==0&&c==0,
+            8=>mode switch
+            {
+                4=>a==65&&b==35&&c==0,
+                5=>a==65&&b==65&&c==0,
+                6=>a==65&&b==65&&c==0,
+                7=>a==34&&b==44&&c==0,
+                8=>a==24&&b==20&&c==0,
+                9=>a==51&&b==32&&c==0,
+                _=>a>=31&&a<=79&&a%10>0&&b==10&&c==0
+            },
             9=>mode switch
             {
                 4=>a==60&&b==70&&c==0,
@@ -91,7 +109,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
     {
         int n=Index(family);
         if(n<0)throw new InvalidOperationException("Unreviewed Grade1 U08 family");
-        int mode=random.Next(n==3?9:n==4?10:n==5?8:n==9?9:4),a=0,b=0,c=0;
+        int mode=random.Next(n==1?8:n==3?9:n==4?10:n==5?8:n==7?5:n==8?10:n==9?9:4),a=0,b=0,c=0;
         for(int attempts=0;attempts<1000;attempts++)
         {
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
@@ -111,8 +129,14 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 }
             }
             else if(n==9){a=random.Next(1,121);b=random.Next(0,a+1);}
+            else if(n==7){a=mode==4?random.Next(1,121):random.Next(20,121);b=0;}
             else if(n==8){a=random.Next(3,8)*10+random.Next(1,10);b=10;}
             else{a=random.Next(20,101);b=n>=8?10:0;}
+            if(n==1&&mode>=4)(a,b)=mode switch
+            {
+                4=>(5,4),5=>(4,5),6=>(9,4),7=>(9,5),
+                _=>throw new InvalidOperationException("Unreviewed original related-facts example")
+            };
             if(n==3&&mode>=4)(a,b)=mode switch
             {
                 4=>(8,7),5=>(17,12),6=>(20,17),7=>(6,8),8=>(16,7),
@@ -128,6 +152,12 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 4=>(12,7),5=>(17,7),6=>(13,9),7=>(20,14),
                 _=>throw new InvalidOperationException("Unexpected carnival story mode")
             };
+            if(n==8&&mode>=4)(a,b)=mode switch
+            {
+                4=>(65,35),5=>(65,65),6=>(65,65),
+                7=>(34,44),8=>(24,20),9=>(51,32),
+                _=>throw new InvalidOperationException("Unreviewed original number-riddle source")
+            };
             if(n==9&&(mode is >=4 and <=7))(a,b)=mode switch
             {
                 4=>(60,70),5=>(70,70),6=>(80,69),7=>(47,40),
@@ -139,7 +169,14 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             string prompt=n switch
             {
                 0=>$"Find the sum within ten: {a}+{b}. Write RESULT=number.",
-                1=>mode<=1?
+                1=>mode>=4?mode switch
+                    {
+                        4=>"ORIGINAL 2021 RELATED FACTS: Find 5+4. Write RESULT=number.",
+                        5=>"ORIGINAL 2021 RELATED FACTS: Find 4+5. Write RESULT=number.",
+                        6=>"ORIGINAL 2021 RELATED FACTS: Find 9-4. Write RESULT=number.",
+                        _=>"ORIGINAL 2021 RELATED FACTS: Find 9-5. Write RESULT=number."
+                    }:
+                    mode<=1?
                     $"The two parts are {a} and {b}, with whole {whole}. If {a}+{b}={whole}, remove the {b} part from the whole. Write LEFT=number;WHOLE=number.":
                     mode==2?
                     $"ORIGINAL CUBE TOWERS: Two connecting-cube towers contain {a} and {b} cubes. Write ONE complete addition equation and ONE matching subtraction equation using the same whole, the two parts and the equals sign. Write ADD=number+number=number;SUB=number-number=number.":
@@ -177,12 +214,23 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 6=>mode<=1?
                     $"Last Number Wins: start at {a} (not at one); count ON {b} hops up to 120. Write LAST=number.":
                     $"Count an organized collection of objects with tens bundles and loose ones. The display has NO double-counted cubes and contains between 20 and 120 objects. How many are there? Write TENS=number;ONES=number;TOTAL=number.",
-                7=>mode<=1?
+                7=>mode==4?
+                    $"ORIGINAL 2021 NUMBER BOOK, FIRST-PARTY STRUCTURED RECORD: Choose number {a} from the 1 through 120 range. Write NUMBER=number;TENS=number;ONES=number to show its standard tens-and-ones value. Real pupil book composition and illustrated representations require teacher review.":
+                    mode<=1?
                     $"Show the number {a} in tens and ones (the source range includes 100). Then exchange ONE full ten-rod for ten loose ones without changing the total. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.":
                     mode==2?
                     $"ORIGINAL SHOW ME ALL THE WAYS: Start with {a/10} tens and {a%10} ones representing {a}. TRADE TWO full ten-rods for 20 more loose ones to show a SECOND different model. Write ALT_TENS=number;ALT_ONES=number;TOTAL=number.":
                     $"ORIGINAL FAVORITE NUMBER GALLERY: The number is {a}. Exchange any number of complete ten-rods for ten loose ones. How many DISTINCT tens-and-ones models exist when ZERO full tens is allowed, and how many loose ones remain in the all-loose model? Write WAYS=number;ZERO_TENS_ONES=number;TOTAL=number.",
-                8=>mode%2==0?
+                8=>mode>=4?mode switch
+                    {
+                        4=>"ORIGINAL 2021 TRUE/FALSE: Is 65>35 true? Write TRUE=YES/NO;LEFT=number;RIGHT=number.",
+                        5=>"ORIGINAL 2021 TRUE/FALSE: Is 65=75-10 true? Write TRUE=YES/NO;LEFT=number;RIGHT=number.",
+                        6=>"ORIGINAL 2021 TRUE/FALSE: Is 65>35+30 true? Write TRUE=YES/NO;LEFT=number;RIGHT=number.",
+                        7=>"ORIGINAL 2021 FIRST THREE CLUES: The number is more than 30, less than 60, and has four ones. List ALL three candidates in ascending order as CANDIDATES=n1,n2,n3.",
+                        8=>"ORIGINAL 2021 FINAL CLUE: From possible 34,44,54, choose the one equal to 24+20. Write NUMBER=number.",
+                        _=>"ORIGINAL 2021 LESSON SYNTHESIS: Number has more than six tens, is less than 100, has eight tens, and equals 51+32. Write NUMBER=number."
+                    }:
+                    mode%2==0?
                     $"NUMBER RIDDLE: My secret number has {a%10} ones. It is GREATER than {(a/10)*10} and LESS than {(a/10+3)*10}. List ALL three possible numbers in order from smallest to largest. Write CANDIDATES=n1,n2,n3.":
                     $"NUMBER RIDDLE: My secret number has {a%10} ones. It is GREATER than {(a/10)*10} and LESS than {(a/10+3)*10}. First find the three possible numbers. FINAL clue: it is exactly 10 MORE than {a}. Which one number now satisfies ALL four clues? Write NUMBER=number.",
                 9=>mode switch
@@ -206,7 +254,8 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         return n switch
         {
             0=>$"RESULT={a+b}",
-            1=>mode<=1?$"LEFT={a};WHOLE={a+b}":
+            1=>mode>=4?$"RESULT={(mode==4||mode==5?9:mode==6?5:4)}":
+                mode<=1?$"LEFT={a};WHOLE={a+b}":
                 mode==2?$"ADD={a}+{b}={a+b};SUB={a+b}-{b}={a}":
                 $"MISSING_ADD={b};MISSING_SUB={a}",
             2=>$"RESULT={(mode%2==0?a+b:a-b)}",
@@ -217,10 +266,20 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 $"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
-            7=>mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
+            7=>mode==4?$"NUMBER={a};TENS={a/10};ONES={a%10}":
+                mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
                 mode==2?$"ALT_TENS={a/10-2};ALT_ONES={a%10+20};TOTAL={a}":
                 $"WAYS={a/10+1};ZERO_TENS_ONES={a};TOTAL={a}",
-            8=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}",
+            8=>mode switch
+            {
+                4=>"TRUE=YES;LEFT=65;RIGHT=35",
+                5=>"TRUE=YES;LEFT=65;RIGHT=65",
+                6=>"TRUE=NO;LEFT=65;RIGHT=65",
+                7=>"CANDIDATES=34,44,54",
+                8=>"NUMBER=44",
+                9=>"NUMBER=83",
+                _=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}"
+            },
             9=>mode switch
             {
                 4=>"TRUE=NO;LEFT=60;RIGHT=70",

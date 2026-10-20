@@ -19,6 +19,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
     public const string Unit6Lesson10EstimateFirstSourceVersion="us-ccss-g1-u06-l10-estimate-measure-compare-v3";
     public const string Unit6Lesson12SourceVersion="us-ccss-g1-u06-l12-two-original-bracelet-stories-v3";
     public const string Unit7Unit8OriginalSourceVersion="us-ccss-g1-u07-u08-original-student-source-activities-v2";
+    public const string Unit8Lesson9SourceVersion="us-ccss-g1-u08-l09-original-clues-and-equations-v2";
     private static bool IsReviewedUnit7Unit8Lesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U07:L01" or "PED:US-CCSS-MATH:G1:U07:L03" or
         "PED:US-CCSS-MATH:G1:U07:L09" or "PED:US-CCSS-MATH:G1:U07:L10" or
@@ -233,7 +234,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
         new(@"PED:US-CCSS-MATH:G1:U08:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-9/preparation.html",@"dd74764b87e53b0d6900a35e30a905dfc05d30acab9db978ed2e9ac11626720b",[@"CCSS:1.NBT.B.3"],
             @"Solve Number Riddles",
             @"Solve 2021 place-value NUMBER RIDDLES progressively. The FIRST clues may admit SEVERAL different numbers, and the final clue selects ONE unique number. List all candidates that fit the ones digit and the upper/lower bounds before deciding on the secret number. Then check every proposed clue. Teacher-led partner cards and oral reasoning are not digitally claimed.",
-            @"Example 1 (original source task): The number is MORE than 30, LESS than 60, and has 4 ones. ALL possible numbers are 34, 44, 54; the first three clues do not yet fix one secret number. Example 2: A final clue says the number is ten more than 34, so the unique answer is 44. Example 3: A false clue saying 60=25+45 must be rejected because 25+45=70.",
+            @"Example 1 (original source task): The number is MORE than 30, LESS than 60, and has 4 ones. ALL possible numbers are 34, 44, 54; the first three clues do not yet fix one secret number. Example 2 (ORIGINAL FINAL CLUE): A final clue says the number is the SUM of 24 and 20, so the unique answer is 44. Example 3 (ORIGINAL SOURCE SYNTHESIS): More than six tens, less than 100, eight tens, and the sum of 51+32 gives 83. Original warm-up: 65>35 TRUE, 65=75-10 TRUE, 65>35+30 FALSE since 35+30=65.",
             @"Step 1: Read the lower and upper bounds and identify the ones digit. Step 2: Write ALL possible two-digit numbers meeting these early clues, not just one guess. Step 3: Apply the next/final clue to remove candidates until ONE secret number remains. Step 4: Check every clue and reject contradictions. Step 5: Explain why each excluded number fails at least one clue.",
             @"Do not claim that three initial clues always identify one secret number: 34, 44, and 54 all satisfy greater than 30, less than 60, and four ones. A last clue can select 44. Do not accept a false equality: 60 is not 25+45.",
             @"I can list ALL possible numbers for initial clues, then find a single secret number using the final clue and prove why it fits."),
@@ -286,13 +287,14 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10"?Unit6Lesson10EstimateFirstSourceVersion:
              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L12"?Unit6Lesson12SourceVersion:
              IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U08:L09"?Unit8Lesson9SourceVersion:
              IsReviewedUnit7Unit8Lesson(lesson.LessonCode)?Unit7Unit8OriginalSourceVersion:
              Version):previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
-         ((IsReviewedUnit6Lesson(lesson.LessonCode)||IsReviewedUnit7Unit8Lesson(lesson.LessonCode))&&previous==Version)||
+         ((IsReviewedUnit6Lesson(lesson.LessonCode)||IsReviewedUnit7Unit8Lesson(lesson.LessonCode)||lesson.LessonCode=="PED:US-CCSS-MATH:G1:U08:L09")&&previous==Version)||
          ((lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"||
            lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"||
            lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07"||
