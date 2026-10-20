@@ -39,7 +39,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
             9=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
-            10=>$"DIFFERENCE={Math.Abs(a-b)}",
+            10=>mode switch {4=>$"TOTAL={a+b}",5=>$"TOTAL={a+b+c}",6=>$"DIFFERENCE={a-b}",7=>$"ELENA={b-a}",_=>$"DIFFERENCE={Math.Abs(a-b)}"},
             11=>$"LENGTH={(mode%2==0?a-b:a+b)};DIFFERENCE={b}",
             12=>mode==4?$"START={9+11}":
                 mode%3==0?$"REMAINING={a-b}":
