@@ -499,13 +499,20 @@ Step 10: TEACHER RUBRIC separately observes pupil's own two-digit choice, physic
 Example 2: Four ten-rods and two ones are written 42 (40+2).
 Example 3: Nine tens and zero ones are written 90 (90+0).
 Example 4: 60+5 is written 65; the 6 is in the tens place.
-Original 2021 learner entries: 1 ten and 4 ones=14, 9 tens=90, 20+5=25, 7+40=47, 2 ones and 8 tens=82, and 1+40=41. Blank numeral-writing prompts belong to the student; these are worked answers for instruction.",
+Original 2021 learner entries: 1 ten and 4 ones=14, 9 tens=90, 20+5=25, 7+40=47, 2 ones and 8 tens=82, and 1+40=41. Blank numeral-writing prompts belong to the student; these are worked answers for instruction.
+Original 2021 Notice and Wonder shows 7, 70, 17 and 71: seven ones with NO full tens is the one-digit number 7, whereas seventy is seven complete tens and no single ones. Distinguish a digit's VALUE and its PLACE.
+Original 2021 lesson synthesis: Clare writes 702 for seventy-two; this is INCORRECT because the two-digit number is 72, containing 7 tens and 2 ones. The oral name seventy-two does not require inserting a zero in the middle.
+EDULYTICS ORIGINAL EXIT CHECK, not the publisher's login-protected Cool-down: eight tens and three ones require NUMBER=83 and EXPANDED=80+3. Digital fields must also report TENS=8 and ONES=3; actual physical drawings and oral reading need teacher review.",
             @"Step 1: Read the number of tens in the supplied diagram, words or expression.
 Step 2: Read the number of single ones (0–9).
 Step 3: Write the tens digit in the first position and the ones digit in the second.
 Step 4: Read the finished numeral aloud and match it to the expanded expression.
 Step 5: Check the total of the represented objects and that the digits are not reversed.
-Step 6: In the original Write Numbers Stage 1 center, players take turns writing the next one, two or three numerals on the board, counting forward or backward within 99; the winner and physical board are teacher-observed.",
+Step 6: In the original Write Numbers Stage 1 center, players take turns writing the next one, two or three numerals on the board, counting forward or backward within 99; the winner and physical board are teacher-observed.
+Step 7: First solve all SIX original pupil-visible number-writing tasks in their own notation; examples include 7+40=47 and 2 ones+8 tens=82. Do not force a 0 between the two digits.
+Step 8: Compare warm-up 7, 70, 17 and 71 by place value. The single-digit 7 has 0 tens and 7 ones; 70 has 7 tens and 0 ones.
+Step 9: For Clare's number-label error, REJECT 702 and write the correct 72=7 tens and 2 ones, explaining why a two-digit numeral needs only two digits.
+Step 10: In the independent Edulytics exit check, form 83 using 8 complete tens and 3 singles and confirm 80+3=83. This is not the source 2021 protected 5-minute Cool-down.",
             @"Do not write 3 tens and 7 ones as 73; the first digit is tens. Do not omit the zero in 8 tens and 0 ones: write 80, not 8.",
             @"I can write two-digit numerals from tens-and-ones representations."),
         new(@"PED:US-CCSS-MATH:G1:U04:L11",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-11/preparation.html",@"87d02e4b8c376f99a6d01c847535fa868f7d915d3ffa539930c6905f981d9b96",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4" },
