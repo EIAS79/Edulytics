@@ -23,15 +23,19 @@
       "Student Facing Circle the statement that is true in each pair. Be ready to explain how you know so that others will understand. \\(27 < 17\\) \\(17<27\\) \\(34 < 36\\) \\(36 < 3",
       "Student Facing Read each statement. Determine whether each statement is true or false. Be ready to explain how you know so that others will understand. \\(17 < 47\\) \\(58 ="
     ],
-    "sourceSpecificFinding": "Original comparison-choice pairs, five true/false comparison statements and tens warm-up",
-    "classification": "CONTENT_REPAIR"
+    "sourceSpecificFinding": "Three canonical source hashes matched checkpoint on read-only Our-CS. Full original 2021 teacher Student Facing reviewed: 35±10/52±10/83−10 warmup, 9 ordered two-digit true-comparison choices, five original true/false symbol statements, launch and synthesis. Original 5-min publisher True Comparisons Cool-down protected.",
+    "classification": "CANONICAL_2021_SOURCE_HASH_AND_STUDENT_FACING_MATH_REVIEWED_COOLDOWN_BLOCKED",
+    "originalStudentTeacherVisibleNumericTasksIndependentlyReviewed": true,
+    "canonicalSourceSHA256Rechecked": true
   },
   "stageB": {
     "originalRichV2Reused": true,
     "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
-    "publisherAssetsRedistributed": false
+    "publisherAssetsRedistributed": false,
+    "originalLearnerTeachingAllNinePairsAndFiveLiteralStatementsReviewed": true,
+    "existingTextReusedNoVersionChanged": true
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
@@ -47,7 +51,20 @@
     "testImplementationCommit": "f30aab09baeb33234f57eb9d6d28dce8436b013f",
     "testsAuthoredButNotExecuted": true,
     "sourceParityStillUnverified": true,
-    "authoringStatus": "A_C_EXPLICIT_GAP"
+    "authoringStatus": "A_C_EXPLICIT_GAP",
+    "sourceExactTruthStatementModes": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "extraSourceExactPairMode": 12,
+    "originalMathAndWrongAnswerOraclesAuthored": true,
+    "questionContractImplementationCommit": "0d625632ace34b0aefff4a0f0c0677b7f79f9f88",
+    "promptClarityCommit": "e9418c7259a2a18a5782b96521cdc811aba58d5e",
+    "negativeCorrectnessTestsCommit": "3f9d72b340553b4aa6e0f127cd64986cac32a400",
+    "testsExecuted": false
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -62,5 +79,24 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "A_C_EXPLICIT_GAP",
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "originalAccessibleStudentMathAndTeacherTasksReviewed": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [
+      "Publisher-protected 2021 five-minute True Comparisons Cool-down unavailable and no lesson-80-specific approved first-party assessment replacement established"
+    ],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-80-stage-a-c-source-implementation-audit-20261020.md",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true,
+    "finalSeedRegressionRequired": true
+  },
+  "nextAction": "Accessible original mathematics and current teaching independently reviewed; fixed-source true/false Practice gaps repaired, tests authored. Do not mark READY_FOR_STAGE_D until unavailable protected 5min assessment boundary resolved with evidence or owner decision. Continue ordinal81; Stage D/CI deferred."
 }
