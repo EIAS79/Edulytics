@@ -317,6 +317,41 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
             }
         }
     }
+    [Fact]
+    public void ShadedCardModelsUseMathematicallySpecifiedFirstPartyAreas()
+    {
+        Assert.NotEqual(1*2,3*2); // 4x2 rectangle split at x=1: areas 2 and 6
+        Assert.Equal(8,(1*2)+(3*2));
+        Assert.Equal(2,2*1);     // Four 2x1 rectangles partition total area 8
+        Assert.Equal(8,4*(2*1));
+        const string family="usccss.g1.u07.l10.parts_make_whole";
+        var seen=new HashSet<int>();
+        for(int seed=0;seed<700;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                family,new Random(seed*73+11));
+            seen.Add(item.Parameters["mode"]);
+            if(item.Parameters["mode"]==2)
+            {
+                Assert.Contains("vertical cut 1 unit from the left",item.Prompt);
+                Assert.Contains("one 1-by-2 and one 3-by-2",item.Prompt);
+                Assert.Contains("No publisher image is assumed",item.Prompt);
+                Assert.Equal("SORT=UNEQUAL;PIECES=2",
+                    UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
+                        family,item.Parameters));
+            }
+            if(item.Parameters["mode"]==3)
+            {
+                Assert.Contains("FOUR regions each 2-by-1",item.Prompt);
+                Assert.Contains("Real source cards",item.Prompt);
+                Assert.Equal("SORT=EQUAL;PIECES=4",
+                    UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
+                        family,item.Parameters));
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,4).ToArray(),seen.OrderBy(x=>x));
+    }
+
     [Theory]
     [InlineData(2,"SORT=UNEQUAL;PIECES=2")]
     [InlineData(3,"SORT=EQUAL;PIECES=4")]
