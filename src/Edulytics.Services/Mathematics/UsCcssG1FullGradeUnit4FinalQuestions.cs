@@ -29,7 +29,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[0]?14:family==Families[1]?8:family==Families[2]?7:family==Families[4]?7:family==Families[5]?6:family==Families[6]?6:family==Families[7]?6:3))return false;
+           mode<0||mode>(family==Families[0]?14:family==Families[1]?8:family==Families[2]?7:family==Families[4]?7:family==Families[5]?6:family==Families[6]?6:family==Families[7]?6:family==Families[3]?4:3))return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" => mode switch
@@ -66,7 +66,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l19.regroup_one_ten" or
             "usccss.g1.u04.l20.equivalent_tens_ones" =>
                 a>=20&&a<=99&&b==0&&c==0&&
-                (family!=Families[3]||((mode!=0||a==65)&&(mode!=1||a==37)))&&
+                (family!=Families[3]||((mode!=0||a==65)&&(mode!=1||a==37)&&(mode!=4||a==37)))&&
                 (family!=Families[4]||(
                     (mode!=2||a==94)&&
                     (mode<4||(mode==4&&a==52)||(mode==5&&a==65)||
@@ -112,7 +112,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[0]?15:family==Families[1]?9:family==Families[2]?8:family==Families[4]?8:family==Families[5]?7:family==Families[6]?7:family==Families[7]?7:4);
+        int mode=random.Next(family==Families[0]?15:family==Families[1]?9:family==Families[2]?8:family==Families[4]?8:family==Families[5]?7:family==Families[6]?7:family==Families[7]?7:family==Families[3]?5:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
         if(family==Families[0]&&mode>=4)
         {
@@ -141,6 +141,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             b=0;c=0;
             if(family==Families[3]&&mode==0)a=65; // No breaking or building ten-towers.
             if(family==Families[3]&&mode==1)a=37; // Multiple valid tens/ones ways.
+            if(family==Families[3]&&mode==4)a=37; // Also accept non-base-ten addend pairs from original 2021 narrative.
             if(family==Families[4]&&mode==2)
                 a=94; // Original 2021 Student Facing: ways to show 94.
             if(family==Families[4]&&mode>=4)
@@ -233,6 +234,8 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 mode%2==0?$"Center numeric task: order {a}, {b}, {c} from least to greatest. Write ORDER=number,number,number.":
                     $"Center numeric task: compare {a} and {b}. Write SYMBOL=sign.",
             "usccss.g1.u04.l19.regroup_one_ten"=>
+                mode==4?
+                    "SOURCE-ALIGNED FIRST-PARTY 37 REPRESENTATIONS: Write TWO DIFFERENT addition expressions for 37, for example 36+1 and 35+2. Use PAIR1=a+b;PAIR2=c+d, with two distinct unordered addend pairs summing to 37. Teacher reviews drawings and spoken explanations.":
                 mode==0?
                     "ORIGINAL 2021 G1 U04 L19 Activity 1: create 65 using a physical bag with FIVE existing ten-towers and FIFTEEN loose ones. You may not break existing towers or construct another tower. Write TENS=number;ONES=number to represent the permitted collection. Teacher reviews the actual drawing and physical arrangement.":
                 mode==1?
@@ -300,7 +303,9 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l18.center_count_compare_order"=>
                 mode>=4?$"RESULT={(mode==4?42:mode==7?12:52)}":
                 mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):$"SYMBOL={Sign(a,b)}",
-            "usccss.g1.u04.l19.regroup_one_ten"=>mode==0?
+            "usccss.g1.u04.l19.regroup_one_ten"=>mode==4?
+                "PAIR1=36+1;PAIR2=35+2":
+                mode==0?
                 "TENS=5;ONES=15":
                 mode==1?
                 "TENS=3;ONES=7;ALT_TENS=2;ALT_ONES=17":
@@ -352,6 +357,32 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             !int.TryParse(alternateOnes,out var altO)||altO<10||
             !int.TryParse(ways,out var reportedWays)||reportedWays!=t+1)return false;
         return 10*altT+altO==n;
+    }
+
+    // Original 2021 teacher lesson explicitly permits e.g. 36+1 and 35+2
+    // as independent number decompositions; preserve prior tens/ones contracts.
+    private static bool Verify37AdditionPairs(string? response)
+    {
+        var parts=Normalize(response).Split(';');
+        if(parts.Length!=2||
+           !parts[0].StartsWith("PAIR1=",StringComparison.Ordinal)||
+           !parts[1].StartsWith("PAIR2=",StringComparison.Ordinal))return false;
+        (int Left,int Right)? ParsePair(string part,int prefix)
+        {
+            var values=part[prefix..].Split('+');
+            if(values.Length!=2||
+               !int.TryParse(values[0],out int left)||
+               !int.TryParse(values[1],out int right)||
+               left<0||left>37||right<0||right>37||
+               left+right!=37)return null;
+            return (left,right);
+        }
+        var first=ParsePair(parts[0],"PAIR1=".Length);
+        var second=ParsePair(parts[1],"PAIR2=".Length);
+        if(first is null||second is null)return false;
+        // Reversing the addends is the same representation, not a second way.
+        return Math.Min(first.Value.Left,first.Value.Right)!=
+               Math.Min(second.Value.Left,second.Value.Right);
     }
 
     private static bool VerifyStudent37Ways(string? response)
@@ -417,7 +448,9 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
 
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? value)=>
         Valid(family,p)&&!string.IsNullOrWhiteSpace(value)&&
-        (family==Families[3]&&p["mode"]==1?
+        (family==Families[3]&&p["mode"]==4?
+            Verify37AdditionPairs(value):
+            family==Families[3]&&p["mode"]==1?
             VerifyStudent37Ways(value):
             family==Families[4]&&p["mode"]<=3?VerifyStudentChosenTensTrade(p,value):
             family==Families[0]&&p["mode"]>=9&&p["mode"]<=13?VerifyOpenComparisonSource(p["mode"],value):
