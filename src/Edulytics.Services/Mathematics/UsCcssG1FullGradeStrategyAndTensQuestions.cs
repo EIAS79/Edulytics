@@ -98,8 +98,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 (mode!=0||a==4),
             MatchTens=>mode<=4&&a>=1&&a<=9&&b==0&&
                 (mode!=4||a==7),
-            AddRemoveTen=>mode<=3&&b==1&&
-                (mode==2?a==9:mode==3?a==1:a>=2&&a<=8),
+            AddRemoveTen=>mode<=4&&b==1&&
+                (mode==2?a==9:mode==3?a==1:mode==4?a==6:
+                 mode==0?a>=0&&a<=8:a>=1&&a<=9),
             AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&
                 (mode%2==0?b<=10-a:b<=a)&&
                 (mode==0?a==3&&b==2:mode==1?a==7&&b==4:true),
@@ -117,7 +118,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         int mode=(family==FlexibleSubtract||family==StoryUnknowns)?random.Next(8):
             (family==CountOnOrAway?random.Next(7):
              (family==CenterTens||family==CenterWithin20?random.Next(6):
-              (family==MatchTens?random.Next(5):random.Next(4))));
+              (family==MatchTens||family==AddRemoveTen?random.Next(5):random.Next(4))));
         int a=0,b=0,c=0;
         if(family is CountOnOrAway or FlexibleSubtract)
         {
@@ -199,7 +200,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         else if(family==MatchTens){a=mode==4?7:random.Next(1,10);}
         else if(family==AddRemoveTen)
         {
-            a=mode==2?9:mode==3?1:random.Next(2,9);
+            a=mode==2?9:mode==3?1:mode==4?6:
+                mode==0?random.Next(0,9):random.Next(1,10);
             b=1;
         }
         else if(family==AddRemoveMultipleTens)
@@ -297,6 +299,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             },
             AddRemoveTen=>mode switch
             {
+                4=>"ORIGINAL 2021 HAN FIVE IN A ROW SYNTHESIS: Han draws the number card 60. What TWO board numbers could he cover by adding or subtracting exactly one ten? Write ADD=number;SUBTRACT=number. Teacher observes the actual colored-counter board play.",
                 0=>$"There are {a} ten-cube towers. Add ONE whole tower of ten. Write TENS=number;TOTAL=number.",
                 1=>$"There are {a} ten-cube towers. Remove ONE whole tower of ten. Write TENS=number;TOTAL=number.",
                 2=>"Original 2021 Unit 4 Lesson 3: SHOW 1 TEN then repeatedly ADD exactly one full ten-tower until you SHOW 9 TENS. Record the EIGHT totals in order AFTER each addition (start at 20 and end at 90). Write TOTALS=number,number,...;LAST=number.",
@@ -370,6 +373,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 :$"TENS={a};NUMBER={10*a}",
             AddRemoveTen=>mode switch
             {
+                4=>"ADD=70;SUBTRACT=50",
                 0=>$"TENS={a+1};TOTAL={10*(a+1)}",
                 1=>$"TENS={a-1};TOTAL={10*(a-1)}",
                 2=>"TOTALS=20,30,40,50,60,70,80,90;LAST=90",
