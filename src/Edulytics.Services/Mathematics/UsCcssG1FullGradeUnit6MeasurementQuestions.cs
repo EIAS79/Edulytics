@@ -44,7 +44,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(i==5?7:i==10?7:i==12?4:i==13?9:3)||
+           mode<0||mode>(i==5?7:i==6?4:i==10?7:i==12?4:i==13?9:3)||
            (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
         return i switch
         {
@@ -64,7 +64,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             11=>a>=4&&a<=20&&b>=1&&b<=9&&(mode%2==0?b<a:a+b<=20),
             3 or 9 or 15=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
             4 or 5=>a>=2&&a<=20&&b==0,
-            6=>a>=2&&a<=14&&b==2,
+            6=>b==2&&(mode==4?(a==6||a==12):a>=2&&a<=14),
             7=>a>=20&&a<=110&&b==0,
             8=>a>=95&&a<=120&&b==0,
             12=>mode==4?a==20&&b==9&&c==0:
@@ -87,7 +87,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(i==5?8:i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
+        int mode=random.Next(i==5?8:i==6?5:i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -111,7 +111,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         }
         else if(i is 3 or 9 or 15){a=random.Next(11,66);b=random.Next(1,Math.Min(20,100-a)+1);}
         else if(i is 4 or 5){a=random.Next(2,21);}
-        else if(i==6){a=random.Next(2,15);b=2;}
+        else if(i==6){a=mode==4?(random.Next(2)==0?6:12):random.Next(2,15);b=2;}
         else if(i==7){a=random.Next(20,111);}
         else if(i==8){a=random.Next(95,121);}
         else {a=random.Next(5,21);b=random.Next(1,a+1);}
@@ -162,7 +162,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 7=>$"SOURCE-INSPIRED PAPER CLIP CHECK: {a} paper clips appear end to end on a tape strip, but the clips have MIXED LENGTHS. Can the raw count be reported as a valid measurement in one identical paper-clip unit? Write VALID=YES/NO.",
                 _=>$"A pencil is exactly covered by {a} identical paper clips, end to end, without gaps or overlaps. Record the measurement. Write LENGTH=number."
             },
-            6=>$"One strip is {a} long units. A small unit is HALF the length of one long unit. How many small units cover the SAME strip? Write SMALL_UNITS=number.",
+            6=>mode==4
+                ?$"SOURCE-INSPIRED THREE-UNIT COMPARISON (FIRST-PARTY MODEL): The SAME strip is {a} one-cube-length units. A medium measuring tool spans 2 such units; a long tool spans 3. Without leaving gaps, find ALL THREE correct counts for the same unchanged strip. Write SMALL_UNITS=number;MEDIUM_UNITS=number;LARGE_UNITS=number. This is not a claim to have measured Jeison's real foot."
+                :$"One strip is {a} long units. A small unit is HALF the length of one long unit. How many small units cover the SAME strip? Write SMALL_UNITS=number.",
             7=>$"A long object measures {a} identical cube units. Organize the count into tens and ones. Write TENS=number;ONES=number;TOTAL=number.",
             8=>$"Write the number represented by {a/10} complete TENS and {a%10} leftover ONES. Grade 1 range is up to 120. Write NUMBER=number.",
             9=>mode%2==0?$"Center arithmetic: add {a}+{b} within 100. Write RESULT=number.":
@@ -237,7 +239,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 5 or 6 or 7=>"VALID=NO",
                 _=>$"LENGTH={a}"
             },
-            6=>$"SMALL_UNITS={a*2}",
+            6=>mode==4?
+                $"SMALL_UNITS={a};MEDIUM_UNITS={a/2};LARGE_UNITS={a/3}":
+                $"SMALL_UNITS={a*2}",
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
             9=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
