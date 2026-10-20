@@ -37,6 +37,42 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
         Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
     }
 
+    [Fact]
+    public void SourceTrianglesMustRejectOpenBoundariesSquaresAndCurvedEdges()
+    {
+        const string family="usccss.g1.u07.l05.defining_triangles";
+        const string correct="TRIANGLES=A,B,C;NONTRIANGLES=D,E,F";
+        var p=new Dictionary<string,int>{
+            ["a"]=4,["b"]=3,["c"]=0,["mode"]=4
+        };
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        Assert.Equal(correct,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,correct));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TRIANGLES=A,B,C,D;NONTRIANGLES=E,F"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            correct+";CHILD_DRAWINGS=SUBMITTED"));
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<700;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                family,new Random(seed*113+29));
+            modes.Add(item.Parameters["mode"]);
+            var answer=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,answer));
+            if(item.Parameters["mode"]==4)
+            {
+                Assert.Contains("Card D",item.Prompt);
+                Assert.Contains("does NOT close",item.Prompt);
+                Assert.Contains("CURVED side",item.Prompt);
+                Assert.Contains("student creation",item.Prompt);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
+    }
+
     [Theory]
     [InlineData(2,2,"PER_LAYER=4;LAYERS=2;TOTAL_CUBES=8")]
     [InlineData(3,2,"PER_LAYER=6;LAYERS=2;TOTAL_CUBES=12")]
