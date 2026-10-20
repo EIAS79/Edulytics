@@ -732,13 +732,27 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
         string priorVersion) =>
         IsTarget(document, lesson) ? Repairs[lesson.LessonCode].CorrectedVersion : priorVersion;
 
+    private static bool IsRecognizedPreviousSourceVersion(
+        CanonicalLessonContentPackLesson lesson, string existingVersion) =>
+        lesson.LessonCode switch
+        {
+            ChooseIndirectLengthComparatorLessonCode =>
+                existingVersion == ChooseIndirectLengthComparatorVersionV1,
+            MeasureConnectingCubeLengthLessonCode =>
+                existingVersion == MeasureConnectingCubeLengthVersionV1,
+            MeasuredShoesStoriesLessonCode =>
+                existingVersion == MeasuredShoesStoriesVersionV1,
+            _ => false
+        };
+
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson,
         string existingVersion) =>
         IsTarget(document, lesson) &&
-        string.Equals(existingVersion, CommonCoreRichContentCorrections.CorrectionContentVersion,
-            StringComparison.Ordinal);
+        (string.Equals(existingVersion, CommonCoreRichContentCorrections.CorrectionContentVersion,
+            StringComparison.Ordinal) ||
+         IsRecognizedPreviousSourceVersion(lesson,existingVersion));
 
     public static void ValidateExistingBodyBeforeUpgrade(
         CanonicalLessonContentPackDocument document,
@@ -757,6 +771,45 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
         if (translations.Count != 1 || translations.Single().CultureCode != "en")
             throw new InvalidOperationException(
                 $"Unexpected G1 stored translation cultures: {lesson.LessonCode}");
+
+        // Only these three already source-corrected, unpublished G1 lessons
+        // can upgrade from their exact previous V1 source-teaching content.
+        // Fail closed on partial/manual edits instead of trusting a version label.
+        if (IsRecognizedPreviousSourceVersion(lesson,existingVersion))
+        {
+            var stored=translations.Single();
+            var current=lesson.Translations.Single(x=>x.CultureCode=="en");
+            (string concepts,string examples,string steps,string mistakes) oldBody=
+                lesson.LessonCode switch
+                {
+                    ChooseIndirectLengthComparatorLessonCode =>
+                        (ChooseIndirectLengthComparatorConceptsV1,
+                         ChooseIndirectLengthComparatorExamplesV1,
+                         ChooseIndirectLengthComparatorStepsV1,
+                         ChooseIndirectLengthComparatorMistakesV1),
+                    MeasureConnectingCubeLengthLessonCode =>
+                        (MeasureConnectingCubeLengthConceptsV1,
+                         MeasureConnectingCubeLengthExamplesV1,
+                         MeasureConnectingCubeLengthStepsV1,
+                         MeasureConnectingCubeLengthMistakesV1),
+                    MeasuredShoesStoriesLessonCode =>
+                        (MeasuredShoesStoriesConceptsV1,
+                         MeasuredShoesStoriesExamplesV1,
+                         MeasuredShoesStoriesStepsV1,
+                         MeasuredShoesStoriesMistakesV1),
+                    _=>throw new InvalidOperationException("Unrecognized source correction upgrade")
+                };
+            if(!string.Equals(stored.Title,current.Title,StringComparison.Ordinal)||
+               !string.Equals(stored.Explanation,current.Explanation,StringComparison.Ordinal)||
+               !string.Equals(stored.QuickSummary,current.QuickSummary,StringComparison.Ordinal)||
+               !string.Equals(stored.KeyConceptsAndRules,oldBody.concepts,StringComparison.Ordinal)||
+               !string.Equals(stored.WorkedExamples,oldBody.examples,StringComparison.Ordinal)||
+               !string.Equals(stored.StepByStepSolutions,oldBody.steps,StringComparison.Ordinal)||
+               !string.Equals(stored.CommonMistakes,oldBody.mistakes,StringComparison.Ordinal))
+                throw new InvalidOperationException(
+                    "Refusing unrecognized prior V1 source-teaching body: "+lesson.LessonCode);
+            return;
+        }
 
         var repair = Repairs[lesson.LessonCode];
         var actualSha = ComputeBodySha256(translations.Single());
