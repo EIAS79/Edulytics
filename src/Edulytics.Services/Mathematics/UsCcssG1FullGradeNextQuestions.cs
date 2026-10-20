@@ -50,7 +50,7 @@ public static class UsCcssG1FullGradeNextQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 L56–60 Practice family");
-        int mode=random.Next(family is ZooThree or TenSubtract?5:4),a=0,b=0,c=0;
+        int mode=random.Next((family==ZooThree||family==TenSubtract)?5:4),a=0,b=0,c=0;
         if(family==FlexibleAdd)
         {
             if(mode==2){a=8;b=7;} // Original 2021 Lin/Han/Kiran 8+7 task.
