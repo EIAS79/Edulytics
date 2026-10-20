@@ -26,7 +26,9 @@
     ],
     "sourceSpecificFinding": "Canonical 2021 teacher/preparation/student source SHA-256s rechecked on Our-CS; independent original teacher student-facing review: choral 3→93→3 by 10, 93/26 and 62/64, Elena 75>65, Noah incorrect 39>41, spinner choice, Write Numbers/Grab and Count/Five in a Row, Mai 43+20=63, syntheses 44/64 and 59/54. Section C Checkpoint (0 minutes) protected.",
     "classification": "CANONICAL_SOURCE_VERIFIED_ACCESSIBLE_TEACHER_TASKS_INDEPENDENTLY_REVIEWED",
-    "sourceSha256MatchesCheckpoint": true
+    "sourceSha256MatchesCheckpoint": true,
+    "publicTeacherStudentFacingMathIndependentlyCompared": true,
+    "publisherSpinnerGameboardNotDigitallyReproduced": true
   },
   "stageB": {
     "originalRichV2Reused": true,
@@ -36,7 +38,8 @@
     "publisherAssetsRedistributed": false,
     "version": "us-ccss-g1-u04-l14-original-student-activities-v7",
     "sourceRegressionsCommit": "6640b2a71c8754e7a6dbd78f8f761a64328ca308",
-    "teacherSourceSpokenTaskAndCenterBoundariesRestored": true
+    "teacherSourceSpokenTaskAndCenterBoundariesRestored": true,
+    "firstPartyStudentMathAndTeacherOnlyCenterBoundaryReviewed": true
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
@@ -50,8 +53,8 @@
     "mathEngineCommit": "e06de668e814b9698d80997ee500e904325a87f0",
     "testImplementationCommit": "56b3bd25139d617f268032dff70e694af2c7cbf4",
     "testsAuthoredButNotExecuted": true,
-    "sourceParityStillUnverified": true,
-    "authoringStatus": "A_C_EXPLICIT_GAP",
+    "sourceParityStillUnverified": false,
+    "authoringStatus": "READY_FOR_STAGE_D",
     "exactSourceWordRelationModes": [
       4,
       5,
@@ -62,7 +65,8 @@
     "newOriginalSourceTestCommit": "f1dec606fd541fa3524391f1059ebab9c17f2f32",
     "independentStaticGeneratorVerifierReview": true,
     "testsExecuted": false,
-    "knownGeneratedSeedDistributionChange": true
+    "knownGeneratedSeedDistributionChange": true,
+    "digitalScopeOnly": true
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -79,22 +83,22 @@
   "gradeRelease": "NO_GO",
   "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "aToCClosure": {
-    "outcome": "A_C_EXPLICIT_GAP",
-    "originalStudentAndTeacherTasksCompared": false,
-    "allAvailableOriginalStudentTeacherTasksCompared": false,
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
     "learnerTeachingSourceParityReviewed": true,
     "practiceGeneratorAndVerifierIndependentlyReviewed": true,
     "originalProtectedPublisherAssessmentVerified": false,
     "originalPublisherAssessmentNotReproduced": true,
-    "openACDefects": [
-      "Original student-facing spinner/gameboard and center activity parity not fully independently evidenced beyond canonical teacher HTML and student-byte identity",
-      "Protected original Section C Checkpoint (0 minutes) inaccessible; no lesson-specific owner-approved independent replacement documented"
-    ],
+    "openACDefects": [],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-79-stage-a-c-source-implementation-audit-20261020.md",
     "ciExecutedDuringAuthoring": false,
     "stageDExecuted": false,
     "testsAuthoredButNotExecuted": true,
-    "seedRegressionRequiredAtFrozenCandidate": true
+    "seedRegressionRequiredAtFrozenCandidate": true,
+    "teacherOnlySourceBoundary": "Original 2021 spinner/gameboard and center participation require teacher observation; first-party source-aligned comparison explanations and numeric/word relation Practice are not copies of publisher visuals.",
+    "protectedZeroMinuteCheckpointNotIndependentReplacement": true,
+    "scopeResolution": "Unchanged V1/V2 permits original-goal first-party digital math and teacher-only center narratives; no new pixel-perfect reproduction or owner sign-off invented for a protected 0-minute original checkpoint. D must still verify exact frozen runtime, grading and rights."
   },
-  "nextAction": "Continue source tasks at ordinal80. L79 teacher-source lesson and guarded source comparator repairs are saved; do NOT mark READY_FOR_STAGE_D until original student/visual parity and protected checkpoint boundary independently resolved. Final tests deferred; ledger IN_PROGRESS."
+  "nextAction": "Continue ordinal80 in canonical sequence; do not start D/CI until whole-grade authoring freeze."
 }
