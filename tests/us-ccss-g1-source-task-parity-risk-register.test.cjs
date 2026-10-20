@@ -68,7 +68,7 @@ test('whole-unaccepted Stage A selection covers exact 90 current unaccepted less
  assert.equal(pending.length,90);
  assert.deepEqual(pending.map(x=>x.ordinal),Array.from({length:90},(_,i)=>i+57));
  assert.deepEqual(cohort.assessmentModes,{
-  DIGITAL_PRACTICE:80,DIGITAL_AND_SOURCE_AUTHORED_TASK:9,SOURCE_AUTHORED_TASK:1});
+  DIGITAL_PRACTICE:79,DIGITAL_AND_SOURCE_AUTHORED_TASK:10,SOURCE_AUTHORED_TASK:1});
  assert.match(cohort.notYetProven,/not evidence that all 90 full original/i);
  assert.ok(ledger.rows.filter(x=>x.ordinal>=57).every(x=>
   x.sourceRequiredTaskInterpretation&&x.originalTeacherActivityHeadings?.length&&

@@ -1364,8 +1364,8 @@
       "genuineStudentGradingAndPersistenceVerified": false,
       "internalEvidenceBasedAcademicAcceptance": false,
       "ownerUatVerified": false,
-      "potentialNonNumericTeacherEvidence": false,
-      "authoredOriginalWorkRubricRequired": false,
+      "potentialNonNumericTeacherEvidence": true,
+      "authoredOriginalWorkRubricRequired": true,
       "evidenceReferences": [
         {
           "kind": "HISTORIC_EXACT_SHA_CI_TECHNICAL_ONLY",
@@ -1392,8 +1392,11 @@
         "Live learner Practice renders and verifies correct, wrong and malformed submissions",
         "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
         "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence"
-      ]
+        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence",
+        "Verify first-party learner-facing source task with student-selected collection and at least four original gallery collections, supported by teacher rubric; numerical Practice must not be mistaken for observed drawing or gallery activity."
+      ],
+      "sourceAuthoredTaskRubric": "lesson-74-original-own-collection-representation-rubric.json",
+      "sourceAuthoredTaskRequirement": "Student-authored collection and representations plus four actual gallery collections"
     },
     {
       "ordinal": 75,

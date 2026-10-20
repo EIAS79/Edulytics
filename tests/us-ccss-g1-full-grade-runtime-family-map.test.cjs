@@ -54,8 +54,8 @@ test('all source-authored original Grade 1 goals are represented in existing rel
     .filter(row=>row.assessmentMode==='SOURCE_AUTHORED_TASK'||
       row.assessmentMode==='DIGITAL_AND_SOURCE_AUTHORED_TASK')
     .map(row=>row.ordinal);
-  // Nine mixed source-authored tasks plus the original authored-only L65.
-  assert.deepEqual(authored,[65,119,123,124,125,126,135,142,144,146]);
+  // Ten mixed source-authored tasks plus the original authored-only L65.
+  assert.deepEqual(authored,[65,74,119,123,124,125,126,135,142,144,146]);
   const releaseSource=fs.readFileSync(path.join(ROOT,
     'tools/curriculum/us-ccss-full-grade-gate.cjs'),'utf8');
   const section=releaseSource.match(/if\(\[([\d,]+)\]\.includes\(ordinal\)\)/);

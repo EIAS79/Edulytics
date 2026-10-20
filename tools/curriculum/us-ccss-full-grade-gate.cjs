@@ -134,13 +134,14 @@ function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha)
       !validProof(e.runtimePracticeProofPath,e.runtimePracticeProofSha256,
         e.runtimePracticeProofReference,releaseSha,checkFile)))return false;
   if(!needsDigital && e.allowedFamilies.length!==0)return false;
-  if([65,119,123,124,125,126,135,142,144,146].includes(ordinal)) {
+  if([65,74,119,123,124,125,126,135,142,144,146].includes(ordinal)) {
     if(e.originalAuthorshipTaskReviewed!==true ||
        e.learnerAuthoredTaskRendered!==true ||
        e.teacherReviewRubricAvailable!==true ||
        e.actualTeacherObservationNotClaimed!==true)return false;
     const name=ordinal===65?
       'lesson-65-learner-authored-story-review-rubric.json':
+      ordinal===74?'lesson-74-original-own-collection-representation-rubric.json':
       ordinal===119?'lesson-119-puppies-tulips-authorship-rubric.json':
       [123,124,125,126].includes(ordinal)?
         'lesson-'+ordinal+'-original-shape-creation-rubric.json':
