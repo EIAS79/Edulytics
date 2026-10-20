@@ -13,7 +13,7 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
     public const string Version = "us-ccss-g1-full-grade-u04-l22-through-u05-l14-teaching-v2";
     private const string PreviousVersion = "us-ccss-g1-full-grade-u04-l22-through-u05-l14-teaching-v1";
     public const string Unit4EndSourceVersion="us-ccss-g1-u04-l22-l23-original-activities-v2";
-    public const string Unit4Lesson22SourceVersion="us-ccss-g1-u04-l22-exact-three-comparisons-v3";
+    public const string Unit4Lesson22SourceVersion="us-ccss-g1-u04-l22-exact-three-comparisons-v4";
     public const string Unit5EarlySourceVersion="us-ccss-g1-u05-l01-l07-source-activities-v2";
     public const string Unit5LaterSourceVersion="us-ccss-g1-u05-l08-l13-source-activities-v2";
     private static bool IsUnit5Later(string code)=>code is
@@ -33,9 +33,9 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
     [
         new(@"PED:US-CCSS-MATH:G1:U04:L22",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-22/preparation.html",@"b85aea088222d4e41c7277cd0b59f55d8e177689037f8ba35a6c28b7e1fd7519",[@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
             @"Center Day 4",
-            @"Compare within 99 using place value and describe what a numeral means in tens and ones. Original 2021 warm-up evaluates exactly THREE written place-value statements: 92=90+2 TRUE, 90+2>80+12 FALSE because both sides are 92, and 20+13<30+13 TRUE because 33<43. Original Mystery Number center requires each student to give truthful clues about a two-digit mystery number; a partner guesses after clues and records a score. Physical center games and partner responses are teacher facilitated.",
+            @"Compare within 99 using place value and describe what a numeral means in tens and ones. Original 2021 warm-up evaluates exactly THREE written place-value statements: 92=90+2 TRUE, 90+2>80+12 FALSE because both sides are 92, and 20+13<30+13 TRUE because 33<43. Original Mystery Number Stage 1 uses two number cards to create a two-digit mystery number. Give a truthful tens/ones clue; the partner guesses after each clue, earning one point per clue received. Play five rounds and compare scores: lowest score wins. Original choice-time centers are Mystery Number, Get Your Numbers in Order and Greatest of Them All; actual physical game turns and partner responses are teacher facilitated.",
             @"Example 1: 74 is greater than 68 because seven tens are more than six tens. Example 2: 53 and 59 share five tens; 53 is less because three ones are fewer than nine. Original 2021 warm-up: 92=90+2 TRUE; 90+2>80+12 FALSE (both equal 92); 20+13<30+13 TRUE (33<43).",
-            @"Step 1: Represent each number with tens and ones. Step 2: Compare tens, then ones when tens match. Step 3: Explain which quantity is greater and why. Step 4: In original Mystery Number play, make a two-digit mystery number and give clues about tens and ones; partners make guesses. Digital mathematics cannot assert that pupils played a partner game.",
+            @"Step 1: Represent each number with tens and ones. Step 2: Compare tens, then ones when tens match. Step 3: Explain which quantity is greater and why. Step 4: For original Mystery Number Stage 1, select two number cards to make a two-digit mystery number, give a truthful clue, and allow a partner guess. If incorrect, provide the next clue; each received clue adds one point to the guesser, over five rounds, lowest score wins. Step 5: Offer the three authentic source center choices and record partner explanations; digital mathematics cannot certify physical participation.",
             @"Comparing only ones is wrong: 68 is not greater than 74 simply because 8 exceeds 4.",
             @"I can identify and compare two-digit numbers, including number-card center representations."),
         new(@"PED:US-CCSS-MATH:G1:U04:L23",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-23/preparation.html",@"b64853c6fba2b3fb89c0192538cb6629db49583e2844ce48f4b367e4721b9384",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
@@ -185,7 +185,7 @@ public static class CommonCoreG1FullGradeUnit5ContentCorrections
        IsTarget(doc,lesson)&&
        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
         previous==PreviousVersion||
-        (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L22"&&previous==Unit4EndSourceVersion)||
+        (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L22"&&(previous==Unit4EndSourceVersion||previous=="us-ccss-g1-u04-l22-exact-three-comparisons-v3"))||
         (previous==Version&&(IsUnit4End(lesson.LessonCode)||IsUnit5Early(lesson.LessonCode)||
            IsUnit5Later(lesson.LessonCode))));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
