@@ -69,7 +69,9 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
             (m:7,a:20,b:6,answer:"TRUE=NO;LEFT=26;RIGHT=36"),
             (m:8,a:46,b:30,answer:"TOTAL=76;ONES=6"),
             (m:9,a:45,b:20,answer:"DIGIT=5;EQUATION=45+20=65;TRUE=YES"),
-            (m:10,a:43,b:20,answer:"TRUE=NO;MAX=69;TARGET=75")
+            (m:10,a:43,b:20,answer:"TRUE=NO;MAX=69;TARGET=75"),
+            (m:11,a:56,b:40,answer:"DIGIT=4;EQUATION=56+40=96;TRUE=YES"),
+            (m:12,a:3,b:30,answer:"TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4")
         };
         foreach(var (m,a,b,answer) in tests)
         {
@@ -83,10 +85,60 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
         }
         var generated=Enumerable.Range(0,990).Select(i=>
             UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(f,new Random(i*73+17))).ToArray();
-        foreach(var mode in new[]{4,5,6,7,8,9,10})
+        foreach(var mode in new[]{4,5,6,7,8,9,10,11,12})
             Assert.True(generated.Count(q=>q.Parameters["mode"]==mode)>35);
         Assert.All(generated,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
             f,q.Parameters,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(f,q.Parameters))));
+    }
+
+    [Fact]
+    public void Lesson76SourceImageAccessibilityDescriptionsProveExactMissingTensAndImpossibleOnes()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.AddTens;
+        var truePuzzle=new Dictionary<string,int>
+            {["a"]=56,["b"]=40,["mode"]=11,["unused"]=0};
+        const string actual="DIGIT=4;EQUATION=56+40=96;TRUE=YES";
+        Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,truePuzzle));
+        Assert.Equal(actual,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,truePuzzle));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,truePuzzle,actual));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,truePuzzle,
+            "DIGIT=3;EQUATION=56+30=86;TRUE=YES"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,truePuzzle,
+            "DIGIT=4;EQUATION=56+40=95;TRUE=YES"));
+        truePuzzle["b"]=50;
+        Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,truePuzzle));
+
+        var impossible=new Dictionary<string,int>
+            {["a"]=3,["b"]=30,["mode"]=12,["unused"]=0};
+        const string noDigit="TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4";
+        Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,impossible));
+        Assert.Equal(noDigit,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,impossible));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,impossible,noDigit));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,impossible,
+            "TRUE=YES;ONES_LEFT=3;ONES_RIGHT=4"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,impossible,
+            "TRUE=NO;ONES_LEFT=3;ONES_RIGHT=3"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,impossible,
+            "TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4;DIGIT=4"));
+        impossible["a"]=4;
+        Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,impossible));
+        Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(
+            UsCcssG1FullGradeTwoDigitOperationsQuestions.CompareWords,
+            new Dictionary<string,int>{{"a",56},{"b",40},{"mode",11},{"unused",0}}));
+        var questions=Enumerable.Range(0,1040)
+            .Select(i=>UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(
+                family,new Random(i*47+29))).ToArray();
+        foreach(var mode in new[]{11,12})
+        {
+            var modeQuestions=questions.Where(q=>q.Parameters["mode"]==mode).ToArray();
+            Assert.True(modeQuestions.Length>40);
+            Assert.All(modeQuestions,q=>
+            {
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                    UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,q.Parameters)));
+                Assert.Contains("SOURCE-ALIGNED FIRST-PARTY",q.Prompt);
+            });
+        }
     }
 
     [Fact]
