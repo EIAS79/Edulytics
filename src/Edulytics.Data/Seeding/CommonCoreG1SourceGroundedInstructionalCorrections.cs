@@ -335,11 +335,20 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
     public const string ClassFavoriteSurveyMistakes = "Mistake: one student's answer counted twice. Correction: place one tally for each respondent.\nMistake: changing the counts while switching charts. Correction: keep each category's frequency unchanged.\nMistake: drawing unlabeled symbols. Correction: label each row and define what one mark means.";
 
     public const string AroundRoomStoryProblemsLessonCode = "PED:US-CCSS-MATH:G1:U03:L28";
-    public const string AroundRoomStoryProblemsVersion = "us-ccss-g1-g1-u03-l28-source-goal-v1";
-    public const string AroundRoomStoryProblemsConcepts = "Create and solve addition and subtraction stories using classroom objects. Explain how an equation represents the situation, including three-addend sums within 20 and unknown numbers in different positions.";
-    public const string AroundRoomStoryProblemsExamples = "Example 1: A classroom has 4 red folders, 3 blue folders and 5 green folders. Combine 4 + 3 = 7, then 7 + 5 = 12, so 4 + 3 + 5 = 12 folders.\nExample 2: There are 6 crayons on one desk, 2 on another and 4 on a third. Combine 6 + 4 = 10, then add 2 to make 6 + 2 + 4 = 12 crayons.\nExample 3: A shelf held 15 books and 6 were borrowed. Model the 15 and remove 6: 15 - 6 = 9 books remain.\nExample 4: There are 7 pencils; then some are added and 11 are on the desk. The missing number solves 7 + ? = 11, so 7 + 4 = 11.";
-    public const string AroundRoomStoryProblemsSteps = "Step 1: Notice classroom objects and choose quantities for a solvable story.\nStep 2: Write a question with an unknown part or total and its matching equation.\nStep 3: Draw counters or a number path to represent every quantity.\nStep 4: Solve, for example 4 + 3 + 5 = 12 by combining the first two groups.\nStep 5: Report the answer using units and check it against the story.";
-    public const string AroundRoomStoryProblemsMistakes = "Mistake: listing objects without giving a problem to solve. Correction: include an unknown and a complete solution.\nMistake: ignoring the third group in a three-addend question. Correction: account for all three addends.\nMistake: answering with an unlabeled number. Correction: identify folders, pencils or books.";
+    public const string AroundRoomStoryProblemsVersionV1 = "us-ccss-g1-g1-u03-l28-source-goal-v1";
+    public const string AroundRoomStoryProblemsVersion = "us-ccss-g1-g1-u03-l28-source-goal-v2";
+    public const string AroundRoomStoryProblemsConceptsV1 = "Create and solve addition and subtraction stories using classroom objects. Explain how an equation represents the situation, including three-addend sums within 20 and unknown numbers in different positions.";
+    public const string AroundRoomStoryProblemsConcepts = AroundRoomStoryProblemsConceptsV1 +
+        " ORIGINAL 2021 optional Around the Room tasks are NOT a fixed numerical quiz. WARM-UP: look around the CLASSROOM, notice and wonder about observable quantities; identify more than five and more than ten objects without inventing classmates' actual counts. ACTIVITY 1: notice that the original 8-Noah, 5-Elena, 4-Han pencils description lacks a QUESTION. Create an addition AND a subtraction QUESTION about these quantities (different valid stories are possible), then as a pair select a TARGET ANSWER LESS THAN 20 and write and solve a classroom-objects story whose solution matches it; SWITCH partner roles. ACTIVITY 2: choose an authored story, create a legible POSTER that includes the STORY and QUESTION but DOES NOT REVEAL THE ANSWER. Give another pair a chance to review/revise its clarity. ACTIVITY 3: walk the classroom, read and solve FOUR peers' distinct problems with equations and drawings/numbers/words. A teacher judges genuine authored story, mathematical question, correct matching equation, target consistency and participation; automatic multiple-choice or numeric arithmetic cannot certify authorship, poster clarity, gallery walking, drawing or peer review.";
+    public const string AroundRoomStoryProblemsExamplesV1 = "Example 1: A classroom has 4 red folders, 3 blue folders and 5 green folders. Combine 4 + 3 = 7, then 7 + 5 = 12, so 4 + 3 + 5 = 12 folders.\nExample 2: There are 6 crayons on one desk, 2 on another and 4 on a third. Combine 6 + 4 = 10, then add 2 to make 6 + 2 + 4 = 12 crayons.\nExample 3: A shelf held 15 books and 6 were borrowed. Model the 15 and remove 6: 15 - 6 = 9 books remain.\nExample 4: There are 7 pencils; then some are added and 11 are on the desk. The missing number solves 7 + ? = 11, so 7 + 4 = 11.";
+    public const string AroundRoomStoryProblemsExamples = AroundRoomStoryProblemsExamplesV1 +
+        "\nORIGINAL 2021 source starter (questionless): Noah has 8 pencils, Elena 5 and Han 4. A student could AUTHENTICALLY CREATE the addition question 'How many pencils altogether?' with 8+5+4=17, or a subtraction comparison question 'How many more pencils does Noah have than Elena?' with 8-5=3. These are illustrated possible student-written questions, NOT sentences that were present as complete word problems in the publisher source.\nEDULYTICS classroom-authored task: Partner A picks a target answer, for example 12. Partner B invents a classroom-objects story with a question that genuinely has answer 12; partner A checks the story, equation and answer, then SWAP ROLES. Poster displays the QUESTION without the answer; classmates solve it. A teacher observes all original free-form work.";
+    public const string AroundRoomStoryProblemsStepsV1 = "Step 1: Notice classroom objects and choose quantities for a solvable story.\nStep 2: Write a question with an unknown part or total and its matching equation.\nStep 3: Draw counters or a number path to represent every quantity.\nStep 4: Solve, for example 4 + 3 + 5 = 12 by combining the first two groups.\nStep 5: Report the answer using units and check it against the story.";
+    public const string AroundRoomStoryProblemsSteps = AroundRoomStoryProblemsStepsV1 +
+        "\nStep 6: Source starter: describe Noah's 8, Elena's 5 and Han's 4 pencils. Point out that the STORY HAS NO QUESTION until you write one. Invent and solve both an ADDITION and a SUBTRACTION question, writing the matching equation and explaining the quantity asked.\nStep 7: Original partner task: Partner A chooses a TARGET ANSWER less than 20; Partner B invents a solvable story using actual classroom objects with that answer, writes a clear question and equation; solve together and SWITCH ROLES for another story.\nStep 8: Select a learner-authored story for a POSTER; copy the story and question but HIDE ITS ANSWER, and revise wording with feedback from another pair.\nStep 9: Visit the gallery, solve FOUR classmates' stories using drawings, numbers or words, and record a matching equation for EACH. Discuss alternate solution strategies.\nStep 10: Teacher review rubric: (1) original coherent scenario, (2) answerable explicit question, (3) correct addition/subtraction/three-addend or missing-part equation for the story, (4) accurate result that matches target when specified, (5) reasonable numerical representation, (6) poster without leaked solution and peer-gallery evidence. Teacher must observe or collect pupil artifacts; numeric scoring alone is INSUFFICIENT.";
+    public const string AroundRoomStoryProblemsMistakesV1 = "Mistake: listing objects without giving a problem to solve. Correction: include an unknown and a complete solution.\nMistake: ignoring the third group in a three-addend question. Correction: account for all three addends.\nMistake: answering with an unlabeled number. Correction: identify folders, pencils or books.";
+    public const string AroundRoomStoryProblemsMistakes = AroundRoomStoryProblemsMistakesV1 +
+        "\nMistake: treating the questionless source pencil description 8,5,4 as a finished story problem. Correction: student AUTHORS the addition AND subtraction questions.\nMistake: forgetting to ensure the invented story answer matches Partner A's target (<20). Correction: work backwards from the target and verify the question/equation.\nMistake: revealing the answer on the group poster. Correction: write the question but hide the solution for classmates.\nMistake: claiming that clicking an auto-graded numerical quiz proves the student wrote a story, made a poster or solved FOUR peer stories. Correction: preserve genuine work and request TEACHER REVIEW.";
 
     public const string MeasuredShoesStoriesLessonCode = "PED:US-CCSS-MATH:G1:U06:L11";
     public const string MeasuredShoesStoriesVersionV1 = "us-ccss-g1-g1-u06-l11-source-goal-v1";
@@ -742,6 +751,8 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                 existingVersion == MeasureConnectingCubeLengthVersionV1,
             MeasuredShoesStoriesLessonCode =>
                 existingVersion == MeasuredShoesStoriesVersionV1,
+            AroundRoomStoryProblemsLessonCode =>
+                existingVersion == AroundRoomStoryProblemsVersionV1,
             _ => false
         };
 
@@ -772,7 +783,7 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
             throw new InvalidOperationException(
                 $"Unexpected G1 stored translation cultures: {lesson.LessonCode}");
 
-        // Only these three already source-corrected, unpublished G1 lessons
+        // Only these four already source-corrected, unpublished G1 lessons
         // can upgrade from their exact previous V1 source-teaching content.
         // Fail closed on partial/manual edits instead of trusting a version label.
         if (IsRecognizedPreviousSourceVersion(lesson,existingVersion))
@@ -797,6 +808,11 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                          MeasuredShoesStoriesExamplesV1,
                          MeasuredShoesStoriesStepsV1,
                          MeasuredShoesStoriesMistakesV1),
+                    AroundRoomStoryProblemsLessonCode =>
+                        (AroundRoomStoryProblemsConceptsV1,
+                         AroundRoomStoryProblemsExamplesV1,
+                         AroundRoomStoryProblemsStepsV1,
+                         AroundRoomStoryProblemsMistakesV1),
                     _=>throw new InvalidOperationException("Unrecognized source correction upgrade")
                 };
             if(!string.Equals(stored.Title,current.Title,StringComparison.Ordinal)||
