@@ -91,6 +91,74 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson61Full2021SetASetBAndBothSubtractionMethodsAreSourceAccurateAndGradeable()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CountOnOrAway;
+        var setA=new[]{
+            (a:12,b:7,expected:"UNKNOWN=5;EQUATION=12-7=5"),
+            (a:18,b:5,expected:"UNKNOWN=13;EQUATION=18-5=13"),
+            (a:14,b:6,expected:"UNKNOWN=8;EQUATION=8=14-6"),
+            (a:15,b:12,expected:"UNKNOWN=3;EQUATION=15-12=3"),
+            (a:13,b:4,expected:"UNKNOWN=9;EQUATION=13-4=9")
+        };
+        var setB=new[]{
+            (a:18,b:5,expected:"UNKNOWN=13;EQUATION=5+13=18"),
+            (a:13,b:6,expected:"UNKNOWN=7;EQUATION=13=7+6"),
+            (a:20,b:15,expected:"UNKNOWN=5;EQUATION=20=15+5")
+        };
+        foreach(var (mode,tasks) in new[]{(mode:4,tasks:setA),(mode:5,tasks:setB)})
+            foreach(var (a,b,expected) in tasks)
+            {
+                var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
+                Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+                Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    expected.Replace("UNKNOWN="+(a-b),"UNKNOWN=99")));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                    expected+";FAKE=1"));
+            }
+        var sourceMethods=new[]{(16,3),(17,8),(18,15)};
+        foreach(var (a,b) in sourceMethods)
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",6}};
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+                $"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                $"DIFFERENCE={a-b};CHECK={b}+{b}={a}"));
+        }
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",15},{"b",9},{"c",0},{"mode",4}}));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",19},{"b",15},{"c",0},{"mode",5}}));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",19},{"b",15},{"c",0},{"mode",6}}));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(
+            UsCcssG1FullGradeStrategyAndTensQuestions.FlexibleSubtract,
+            new Dictionary<string,int>{{"a",18},{"b",15},{"c",0},{"mode",6}}));
+        var generated=Enumerable.Range(0,840)
+            .Select(i=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(i*53+19)))
+            .ToArray();
+        foreach(var mode in new[]{4,5,6})Assert.True(generated.Count(q=>q.Parameters["mode"]==mode)>60);
+        foreach(var (a,b,_) in setA)Assert.Contains(generated,
+            q=>q.Parameters["mode"]==4&&q.Parameters["a"]==a&&q.Parameters["b"]==b);
+        foreach(var (a,b,_) in setB)Assert.Contains(generated,
+            q=>q.Parameters["mode"]==5&&q.Parameters["a"]==a&&q.Parameters["b"]==b);
+        foreach(var (a,b) in sourceMethods)Assert.Contains(generated,
+            q=>q.Parameters["mode"]==6&&q.Parameters["a"]==a&&q.Parameters["b"]==b);
+        Assert.All(generated,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            if(q.Parameters["mode"]==4)Assert.Contains("ORIGINAL 2021 SET A",q.Prompt);
+            if(q.Parameters["mode"]==5)Assert.Contains("ORIGINAL 2021 SET B",q.Prompt);
+            if(q.Parameters["mode"]==6)Assert.Contains("DIEGO AND TYLER",q.Prompt);
+        });
+    }
+
+    [Fact]
     public void StoryModeSupportsStartChangeResultAndSubtractionUnknowns()
     {
         // Use source-approved parameter values for the four original fixed
