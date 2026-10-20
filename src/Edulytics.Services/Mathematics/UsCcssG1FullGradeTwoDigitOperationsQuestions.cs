@@ -24,7 +24,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
-           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords&&family!=CompareSymbols&&family!=TenMoreLess))return false;
+           z!=0||mode<0||mode>(family==TenMoreLess?14:12)||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords&&family!=CompareSymbols&&family!=TenMoreLess))return false;
         return family switch
         {
             AddTens=>mode<=3?
@@ -52,6 +52,10 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 8=>a==75&&b==10,
                 9=>a==67&&b==30,
                 10=>a==99&&b==30,
+                11=>a==3&&b==10,
+                12=>a==10&&b==5,
+                13=>a==13&&b==10,
+                14=>a==15&&b==10,
                 _=>false
             },
             CompareWords=>mode switch
@@ -92,7 +96,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?8:family==CompareSymbols?13:family==TenMoreLess?11:4),a,b;
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?8:family==CompareSymbols?13:family==TenMoreLess?15:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -117,6 +121,15 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             else if(mode>=4&&mode<=8){a=mode==4?46:mode==5?67:mode==6?39:mode==7?52:75;b=10;}
             else if(mode==9){a=67;b=30;}
             else if(mode==10){a=99;b=30;}
+            else if(mode>=11)
+            {
+                // Four exact mental number-talk expressions in the accessible 2021 teacher source.
+                (a,b)=mode switch
+                {
+                    11=>(3,10),12=>(10,5),13=>(13,10),14=>(15,10),
+                    _=>throw new InvalidOperationException("Unknown original number talk mode")
+                };
+            }
             else{a=random.Next(20,90);b=10;}
         }
         else if(family is CompareWords or CompareSymbols)
@@ -174,6 +187,10 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 $"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
             TenMoreLess=>mode switch
             {
+                11=>"ORIGINAL 2021 MENTAL WARM-UP: Find 3+10 without drawing first. Write RESULT=number. Explain your mental strategy to the teacher.",
+                12=>"ORIGINAL 2021 MENTAL WARM-UP: Find 10+5 without drawing first. Write RESULT=number. Explain your mental strategy to the teacher.",
+                13=>"ORIGINAL 2021 MENTAL WARM-UP: Find 13-10 without drawing first. Write RESULT=number. Explain your mental strategy to the teacher.",
+                14=>"ORIGINAL 2021 MENTAL WARM-UP: Find 15-10 without drawing first. Write RESULT=number. Explain your mental strategy to the teacher.",
                 9=>"EDULYTICS FIRST-PARTY THREE-STEP CHECK: Start at 67. Find 67+10, then 67+10+10, then 67+10+10+10. Write STEP1=number;STEP2=number;STEP3=number. Explain the increasing tens to a teacher.",
                 10=>"EDULYTICS FIRST-PARTY THREE-STEP CHECK: Start at 99. Find 99-10, then 99-10-10, then 99-10-10-10. Write STEP1=number;STEP2=number;STEP3=number. Explain the decreasing tens to a teacher.",
                 5 or 6 or 7 or 8=>$"SOURCE-ALIGNED TWO-WAY TEN CHANGE: Find {a}+10 and {a}-10. Write PLUS=number;MINUS=number. Explain why ones stay fixed to a teacher.",
@@ -250,7 +267,9 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==12?
                 "TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4":
                 $"TOTAL={a+b};ONES={(a+b)%10}",
-            TenMoreLess=>mode==9?
+            TenMoreLess=>mode>=11?
+                $"RESULT={(mode<=12?a+b:a-b)}":
+                mode==9?
                 "STEP1=77;STEP2=87;STEP3=97":
                 mode==10?
                 "STEP1=89;STEP2=79;STEP3=69":
