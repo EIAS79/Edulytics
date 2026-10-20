@@ -57,6 +57,10 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("8+2+5+5=20",text(20));
         Assert.Contains("8 lions, 4 tigers and 3 cheetahs",text(20));
         Assert.Contains("8 goats, 7 sheep and 4 pigs",text(20));
+        Assert.Contains("4+8+6=4+6+8=10+8=18",text(20));
+        Assert.Contains("4+8=4+6+2=10+2=12",text(20));
+        Assert.Contains("four red and six yellow counters",text(20));
+        Assert.Contains("not the original publisher artwork",text(20));
         Assert.Contains("digital equation check verifies arithmetic",text(20));
         Assert.Contains("What do you know about 20?",text(21));
         Assert.Contains("10+10=13+7=20",text(21));
