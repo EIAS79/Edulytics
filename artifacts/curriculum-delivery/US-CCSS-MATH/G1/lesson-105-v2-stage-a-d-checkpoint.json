@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Retain a verified per-lesson original V1 A-D review trace during whole-unaccepted-cohort Stage A; not academic approval",
+  "grade": "G1",
+  "ordinal": 105,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U06:L03",
+  "title": "Choose Objects to Compare Length Indirectly",
+  "sourceBasis": {
+    "publisher": "Illustrative Mathematics / Kendall Hunt Grade 1 (2021)",
+    "device": "Our-CS",
+    "access": "READ_ONLY",
+    "fullTeacherHtmlRelativePath": "unit-6/lesson-3/lesson.html",
+    "originalFullTeacherHtmlSha256FromExistingVerifiedInventory": "b27cb37ee22383dd9489f3c4de9d64e3ebce6fff02d3ca5ab79d95a33e95dda5",
+    "originalStudentHtmlSha256FromExistingVerifiedInventory": "8a1308bdb975c5c64caae1a10b0d7bc03e4f9805a9b56d87d369f840c7293a1a",
+    "sourceAuditReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "note": "Previously registered SHA values reused; no new SHA computed or publisher figures licensed/redistributed."
+  },
+  "stageA": {
+    "realFullTeacherActivityTextRevisited": true,
+    "originalStandard": "1.MD.A.1",
+    "warmup": "Compare A and C pencil lengths indirectly from reference B and explain the relation; source visual not independently cleared.",
+    "activity1": "Mai and Clare Walk to School: determine the shorter path using one movable third comparison tool (string/connecting-cube tower/pencil); student independently explains method; original map's exact graphics not independently cleared.",
+    "activity2": {
+      "name": "Will It Fit?",
+      "originalStudentFacingQuestions": [
+        "Will the teacher's desk fit through the door?",
+        "Will a student desk fit through the door?",
+        "Which is longer, the bookshelf or the rug?",
+        "Which is longer, the file cabinet or the bookshelf?",
+        "Which is shorter, the bookshelf or the teacher's desk?",
+        "Will the teacher's desk fit next to the bookshelf?"
+      ],
+      "response": "For EACH of six prompts, show drawings, numbers or words; choose and explain third-object tool; correctly distinguish WIDTH from length and door opening; not automatically inferred from simulated numbers."
+    },
+    "lessonSynthesis": "Compare objects that cannot be lined up by using a movable intermediary object; classroom choices and genuine measuring remain teacher supervised.",
+    "classification": "ORIGINAL_SOURCE_TEXT_CHECKED_EXISTING_CANDIDATE_REUSE_PENDING_EFFECTIVE_RENDER_AND_FINAL_CI",
+    "sourceVisualsPublisherRights": "NOT_VERIFIED"
+  },
+  "stageB": {
+    "reusedCandidate": true,
+    "actualLearnerRichV2ParityIndependentlyConfirmedAtCurrentHead": false,
+    "newTeachingEdit": false,
+    "remaining": "Compare all six original Student Facing prompts with actual effective Rich V2; do not assert a digital numeric example substitutes live classroom measurement."
+  },
+  "stageC": {
+    "existingCandidateFamily": "usccss.g1.u06.l03.choose_indirect_comparison",
+    "familyReusedFromRiskRegister": true,
+    "independentCorrectWrongMalformedAtCurrentHead": "PENDING_FROZEN_SHA",
+    "teacherOnlyBoundary": "Real pupil-selected tool, measured furniture/doors, explanation drawings and source figures cannot be scored as completed by numeric Practice."
+  },
+  "stageD": {
+    "githubCiManuallyRunDuringAuthoring": false,
+    "authenticStudentRender": "PENDING",
+    "gradingAndPersistedAttempts": "PENDING",
+    "visualRightsAccessibility": "PENDING",
+    "sourceSpecificTestExecution": "NOT_RUN_BY_POLICY",
+    "internalV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Preserve the existing source-specific digital practice and teacher-oriented lesson candidate; complete source-vs-effective-render parity for all currently unaccepted lessons in the Stage A cohort, then prepare scoped B/C repairs before full-grade freeze and CI."
+}
