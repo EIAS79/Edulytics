@@ -22,7 +22,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string CenterFourLessonCode="PED:US-CCSS-MATH:G1:U03:L27";
     public const string CountRelationSourceContentVersion="us-ccss-g1-u03-l24-original-activities-v7";
     public const string ChooseSubtractSourceContentVersion="us-ccss-g1-u03-l25-original-activities-v7";
-    public const string StorySourceContentVersion="us-ccss-g1-u03-l26-original-activities-v6";
+    public const string StorySourceContentVersion="us-ccss-g1-u03-l26-original-activities-v7";
     public const string CenterFourSourceContentVersion="us-ccss-g1-u03-l27-original-activities-v6";
     private const string UnitFourCollectionLessonCode="PED:US-CCSS-MATH:G1:U04:L01";
     private const string UnitFourTensMatchLessonCode="PED:US-CCSS-MATH:G1:U04:L02";
@@ -267,12 +267,15 @@ Original 2021 Han story 1: □+9=15, so Han began with 6 pencils.
 Original 2021 Han story 2: 15-□=9, so Han gave away 6 pencils.
 Original 2021 Han story 3: 9+□=15, so Han received 6 pencils.
 Original 2021 Han story 4: 15-9=6, so Han has 6 pencils left.
-Teacher-facilitated classroom posters and original pupil representations are not electronically certified.",
+Teacher-facilitated classroom posters and original pupil representations are not electronically certified.
+For the four original Han stories the total is 15 in every case, but the UNKNOWN changes: 6+9=15 (missing start), 15-6=9 (missing removed amount), 9+6=15 (missing new amount), and 15-9=6 (missing result). Edulytics checks both the missing value and the equation with the unknown in the source-appropriate position.
+Original 2021 unit 3 Section D Checkpoint is identified as a 0-minute teacher checkpoint; its protected publisher text has NOT been inspected or copied.",
             @"Step 1: Identify the story event: join, leave, compare or change.
 Step 2: Draw a bar, counters or a change diagram and mark what is UNKNOWN.
 Step 3: Write an equation with the box in the correct position.
 Step 4: Use related addition/subtraction or counting to find the box.
-Step 5: Substitute into the original equation and check with the story.",
+Step 5: Substitute into the original equation and check with the story.
+Step 6: Compare all four Han situations: unknown start □+9=15, unknown removed 15-□=9, unknown joining 9+□=15, and unknown result 15-9=□. State which quantity is missing BEFORE computing it; explain with counters, drawings, numbers, or words to a teacher.",
             @"Do not change a start-unknown or change-unknown story into result-unknown without justification. A missing number in 7+□=12 is 5, not 19. The equal sign must be true after substitution.",
             @"I can identify and solve addition/subtraction stories with start, change or result unknown."),
         new(@"PED:US-CCSS-MATH:G1:U03:L27",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-27/preparation.html",@"19d5c3db8365d26e5ada5e0b8e59344a6c8132a8707eac7bb0e9d787e47ad854",new[] { @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
@@ -603,6 +606,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==TenSubtractLessonCode&&(previous=="us-ccss-g1-u03-l23-ten-2021-source-v6"||previous=="us-ccss-g1-u03-l23-ten-2021-source-v7"))||
          (lesson.LessonCode==CountRelationLessonCode&&previous=="us-ccss-g1-u03-l24-original-activities-v6")||
          (lesson.LessonCode==ChooseSubtractLessonCode&&previous=="us-ccss-g1-u03-l25-original-activities-v6")||
+         (lesson.LessonCode==StoryLessonCode&&previous=="us-ccss-g1-u03-l26-original-activities-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
