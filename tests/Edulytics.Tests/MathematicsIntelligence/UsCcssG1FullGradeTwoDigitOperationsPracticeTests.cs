@@ -199,6 +199,23 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
+    public void Lesson77IndependentExitAssessesBothDirectionsWithoutPublisherClaim()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.TenMoreLess;
+        var p=new Dictionary<string,int>{{"a",46},{"b",10},{"mode",4},{"unused",0}};
+        Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        Assert.Equal("PLUS=56;MINUS=36",UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,"PLUS=56;MINUS=36"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"PLUS=56;MINUS=46"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"PLUS=56"));
+        p["a"]=47;
+        Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        var generated=Enumerable.Range(0,200).Select(i=>
+            UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*31+3))).ToArray();
+        Assert.Contains(generated,q=>q.Parameters["mode"]==4&&q.Prompt.Contains("INDEPENDENT EDULYTICS EXIT"));
+    }
+
+    [Fact]
     public void Lesson79OriginalElenaAndNoahCasesHaveStrictMathOracles()
     {
         const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.CompareWords;
