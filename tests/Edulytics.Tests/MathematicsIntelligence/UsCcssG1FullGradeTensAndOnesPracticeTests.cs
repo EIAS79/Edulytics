@@ -163,6 +163,45 @@ public sealed class UsCcssG1FullGradeTensAndOnesPracticeTests
     }
 
     [Fact]
+    public void Lesson75OriginalSixWrittenNumbersAndClare702AreChecked()
+    {
+        const string f=UsCcssG1FullGradeTensAndOnesQuestions.WriteNumeral;
+        var original=new[]{(t:1,o:4,n:14),(t:9,o:0,n:90),
+            (t:2,o:5,n:25),(t:4,o:7,n:47),(t:8,o:2,n:82),(t:4,o:1,n:41)};
+        foreach(var (t,o,n) in original)
+        {
+            var p=new Dictionary<string,int>{{"tens",t},{"ones",o},{"mode",4},{"unused",0}};
+            Assert.True(UsCcssG1FullGradeTensAndOnesQuestions.Valid(f,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,$"NUMBER={n}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,$"NUMBER={n+1}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,$"NUMBER={n};EXTRA=1"));
+        }
+        var seven=new Dictionary<string,int>{{"tens",0},{"ones",7},{"mode",5},{"unused",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,seven,
+            "NUMBER=7;TENS=0;ONES=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,seven,
+            "NUMBER=70;TENS=7;ONES=0"));
+        var clare=new Dictionary<string,int>{{"tens",7},{"ones",2},{"mode",6},{"unused",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,clare,
+            "DECISION=DISAGREE;CLAIM=702;NUMBER=72;TENS=7;ONES=2"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,clare,
+            "DECISION=AGREE;CLAIM=702;NUMBER=72;TENS=7;ONES=2"));
+        var exit=new Dictionary<string,int>{{"tens",8},{"ones",3},{"mode",7},{"unused",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,exit,
+            "TENS=8;ONES=3;NUMBER=83;EXPANDED=80+3"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,exit,
+            "TENS=8;ONES=3;NUMBER=83;EXPANDED=8+3"));
+        Assert.False(UsCcssG1FullGradeTensAndOnesQuestions.Valid(
+            UsCcssG1FullGradeTensAndOnesQuestions.ReadNumber,exit));
+        var generated=Enumerable.Range(0,800).Select(i=>
+            UsCcssG1FullGradeTensAndOnesQuestions.Build(f,new Random(i*43+13))).ToArray();
+        foreach(var mode in new[]{4,5,6,7})
+            Assert.True(generated.Count(q=>q.Parameters["mode"]==mode)>40);
+        Assert.All(generated,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+            f,q.Parameters,UsCcssG1FullGradeTensAndOnesQuestions.Solve(f,q.Parameters))));
+    }
+
+    [Fact]
     public void ValidTwoDigitValuesStayWithinGrade1AndWrongResponsesFail()
     {
         foreach(var family in UsCcssG1FullGradeTensAndOnesQuestions.Families)
