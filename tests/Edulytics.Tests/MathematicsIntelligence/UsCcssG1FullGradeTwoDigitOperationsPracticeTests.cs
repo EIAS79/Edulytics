@@ -199,6 +199,29 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
+    public void Lesson79OriginalElenaAndNoahCasesHaveStrictMathOracles()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.CompareWords;
+        foreach(var (mode,a,b,answer) in new[]{
+            (4,75,65,"RELATION=GREATER"),
+            (5,39,41,"RELATION=LESS")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode},{"unused",0}};
+            Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            Assert.Equal(answer,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"RELATION=EQUAL"));
+            p["a"]=a+1;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        }
+        var generated=Enumerable.Range(0,1200).Select(i=>
+            UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*37+17))).ToArray();
+        Assert.Contains(generated,q=>q.Parameters["mode"]==4&&q.Prompt.Contains("ELENA"));
+        Assert.Contains(generated,q=>q.Parameters["mode"]==5&&q.Prompt.Contains("NOAH"));
+    }
+
+    [Fact]
     public void WordComparisonPrecedesOfficialSymbols()
     {
         var p=new Dictionary<string,int>{{"a",64},{"b",57},{"mode",1},{"unused",0}};
