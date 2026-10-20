@@ -50,6 +50,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("reversed equality □=14-6",text(24));
         Assert.Contains("5+□=18, 13=□+6, 20=15+□",text(24));
         Assert.Contains("Section D Checkpoint",text(24));
+        Assert.Contains("EDULYTICS ORIGINAL EXIT CHECK",text(25));
+        Assert.Contains("Solve 16-7",text(25));
+        Assert.Contains("9+7=16",text(25));
+        Assert.Contains("Clare 8+□=15",text(25));
+        Assert.Contains("Kiran 17-□=9",text(25));
         Assert.Contains("How Close? Subtract from 20, Stage 2",text(27));
         Assert.Contains("selects TWO or THREE cards",text(27));
         Assert.Contains("ORIGINAL Set A: fill 12-7=□, 18-5=□",text(24));
@@ -105,6 +110,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,subtract,"us-ccss-g1-u03-l22-teen-2021-source-v6"));
         Assert.Equal("us-ccss-g1-u03-l22-teen-2021-source-v7",
             CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion);
+        var chooseSubtract=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L25");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,chooseSubtract,"us-ccss-g1-u03-l25-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u03-l25-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.ChooseSubtractSourceContentVersion);
         var useCount=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L24");
         Assert.Equal("Relate Counting to Addition and Subtraction",
             useCount.Translations.Single(x=>x.CultureCode=="en").Title);
