@@ -14,6 +14,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
     public const string Version = "us-ccss-g1-full-grade-u06-u08-source-teaching-v1";
     public const string Unit6OriginalSourceVersion="us-ccss-g1-u06-original-student-source-activities-v2";
     public const string Unit6Lesson4Stage3SourceVersion="us-ccss-g1-u06-l04-how-close-stage3-source-v3";
+    public const string Unit6Lesson6MeasurementSourceVersion="us-ccss-g1-u06-l06-paperclip-source-activity-v3";
     public const string Unit7Unit8OriginalSourceVersion="us-ccss-g1-u07-u08-original-student-source-activities-v2";
     private static bool IsReviewedUnit7Unit8Lesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U07:L01" or "PED:US-CCSS-MATH:G1:U07:L03" or
@@ -46,10 +47,10 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
             @"I can select four of seven digit cards, form two two-digit numbers, add without going over 100, and compare how close valid sums are to 100; physical partner play is teacher-facilitated."),
         new(@"PED:US-CCSS-MATH:G1:U06:L06",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-6/preparation.html",@"d2f09da62e97e4c09ef87f1d9f12b196f0739758ac79e86127959e2e8a2b449e",[@"CCSS:1.MD.A.2"],
             @"Measure with Paper Clips",
-            @"Original 2021 source asks pupils to critique Andre, Tyler and Clare workbook measurements for gaps or overlap, using the ACTUAL drawings. Pupils also measure SIX different tape strips A–F in equal paper clip units. Paper clips must be same size, end to end and leave no gaps or overlaps; record the count and unit. Diagram-specific true/false verdicts cannot be certified from text alone.",
-            @"Example 1: A pencil spans 8 equally sized paper clips in a continuous row, so it is 8 paper clips long. Example 2: Four short clips cannot be compared directly with four long clips as equal lengths.",
-            @"Step 1: Choose same-size paper clips. Step 2: Put first clip at the object's start. Step 3: Place others end-to-end with no gaps or overlap. Step 4: Count the clips and record the unit.",
-            @"Do not leave spaces, overlap clips, or mix clip lengths and then trust the count as a length.",
+            @"Original 2021 source asks pupils to critique Andre, Tyler and Clare workbook measurements for gaps or overlap, using the ACTUAL drawings. Pupils also measure SIX different tape strips A–F in equal paper clip units. Paper clips must be same size, end to end and leave no gaps or overlaps; record the count and unit. Source-first lesson tasks: (1) look carefully at EACH classmate's workbook diagram and tell the teacher whether the clips form a continuous row of identical units, quoting the visible gap or overlap as evidence; (2) take paper clips of ONE size and measure original tape strips A, B, C, D, E and F separately; (3) record a length AND the unit for EACH of the SIX strips; (4) explain why one missing space, overlap or mixed clip size invalidates a measurement. Actual source diagrams and physical measurement are teacher-reviewed, not certified by synthetic digital prompts.",
+            @"Example 1: A pencil spans 8 equally sized paper clips in a continuous row, so it is 8 paper clips long. Example 2: Four short clips cannot be compared directly with four long clips as equal lengths. Example 3 (FIRST-PARTY, NOT A PUBLISHER IMAGE): Eight same-size clips with their edges touching and endpoints aligned give a valid count of eight; if a gap appears between the fourth and fifth, the raw count no longer measures the entire object; if two overlap, the raw count overstates covered length.",
+            @"Step 1: Examine Andre, Tyler and Clare workbook diagrams with the teacher; do NOT guess which student is correct without checking the actual diagrams. Step 2: Choose paper clips of exactly one size, start at the endpoint and align them consecutively with no gaps or overlap. Step 3: Measure TAPE A, TAPE B, TAPE C, TAPE D, TAPE E and TAPE F separately from the original classroom/student sheet. Step 4: For EACH of the six tape strips, write the observed count AND 'paper clips'; compare counts only when the unit size is the same. Step 5: Explain and correct one gap, one overlap and one mixed-unit example. First-party numeric Practice tests valid or invalid arrangements; it does not measure the actual source strips or grade teacher-observed work.",
+            @"Do not leave spaces, overlap clips, or mix clip lengths and then trust the count as a length. Do not declare an actual Andre/Tyler/Clare diagram correct from a fabricated digital image, and do not record invented source-strip lengths A–F.",
             @"I can measure an object accurately with repeated identical paper clips."),
         new(@"PED:US-CCSS-MATH:G1:U06:L07",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-7/preparation.html",@"f7456562f66997352ad3572adcfa3f9f579d7f1d8e07c82e52925a3ae523fc3d",[@"CCSS:1.MD.A.2"],
             @"Measure Length with Different Length Units",
@@ -277,6 +278,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
         CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)?
             (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"?Unit6Lesson4Stage3SourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"?Unit6Lesson6MeasurementSourceVersion:
              IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:
              IsReviewedUnit7Unit8Lesson(lesson.LessonCode)?Unit7Unit8OriginalSourceVersion:
              Version):previous;
@@ -285,7 +287,8 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
          ((IsReviewedUnit6Lesson(lesson.LessonCode)||IsReviewedUnit7Unit8Lesson(lesson.LessonCode))&&previous==Version)||
-         (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"&&previous==Unit6OriginalSourceVersion));
+         ((lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"||
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06")&&previous==Unit6OriginalSourceVersion));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
