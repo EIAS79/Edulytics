@@ -184,7 +184,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||
            mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?9:
-           spec.LessonCode=="L08"?9:spec.LessonCode=="L09"?7:
+           spec.LessonCode=="L08"?9:spec.LessonCode=="L09"?8:
            spec.LessonCode is "L10" or "L11" or "L12"?5:
            spec.LessonCode=="L14"?4:3))
             return false;
@@ -214,6 +214,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             var source=Lesson8OriginalOptionalFootball[mode-8];
             return a==source.a&&b==source.b;
         }
+        if(spec.LessonCode=="L09"&&mode==8)
+            return a==17&&b==36;
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
         {
             var source=Exact2021Equation(spec.LessonCode,mode);
@@ -249,7 +251,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
         int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?10:
-            spec.LessonCode=="L08"?10:spec.LessonCode=="L09"?8:
+            spec.LessonCode=="L08"?10:spec.LessonCode=="L09"?9:
             spec.LessonCode is "L10" or "L11" or "L12"?6:
             spec.LessonCode=="L14"?5:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
@@ -344,6 +346,19 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "Write NEW_TEN=YES/NO;TOTAL=number. "+
                 "This is a numeric story; student reasoning remains teacher assessed.",
                 "Find the true total and determine whether the ones compose a new ten.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L09"&&mode==8)
+        {
+            var p=new Dictionary<string,int>{{"a",17},{"b",36},{"mode",8}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 97 source 17+36 drift");
+            return new(family,
+                "ORIGINAL 2021 GRADE 1 UNIT 5 LESSON 9 STUDENT-FACING: Find 17+36. "+
+                "Use a tens-and-ones model and exchange ten of the thirteen ones for "+
+                "one ten. Write TENS=number_of_tens;ONES=remaining_ones;TOTAL=number. "+
+                "Show your chosen equations, drawing or words to the teacher. "+
+                "Real Grab and Add rounds with cubes and partners are not digitally certified.",
+                "17+36=(10+30)+(7+6)=40+13=53: five tens and three ones.",
                 AssessmentItemType.ShortAnswer,p);
         }
         var original=Exact2021Equation(spec.LessonCode,mode);
@@ -486,6 +501,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             return $"TOTAL={sum};NEW_TEN={(a%10+b%10>=10?"YES":"NO")}";
         if(p["mode"]>=4&&(spec.LessonCode is "L02" or "L03"))
             return $"TENS={(a/10+b/10)*10};ONES={a%10+b%10};TOTAL={sum}";
+        if(spec.LessonCode=="L09"&&p["mode"]==8)
+            return "TENS=5;ONES=3;TOTAL=53";
         if(p["mode"]>=4&&(spec.LessonCode is "L08" or "L09"))
             return $"NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L06"&&p["mode"]==2)
