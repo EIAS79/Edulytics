@@ -23,7 +23,14 @@ const knownStates=new Set([
 
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),'utf8'));
 
-function buildWorklist(manifest,ledger,{remainingOnly=false,newOnly=false}={}) {
+function buildWorklist(manifest,ledger,{remainingOnly=false,newOnly=false,checkpointOrdinals=null}={}) {
+  // Checkpoint presence is source-review RESUMPTION data, never academic approval.
+  // Null means not inspected, not "missing"; CLI passes real filenames on disk.
+  if(checkpointOrdinals!==null && (!Array.isArray(checkpointOrdinals) ||
+      checkpointOrdinals.some(n=>!Number.isInteger(n)||n<51||n>146) ||
+      new Set(checkpointOrdinals).size!==checkpointOrdinals.length))
+    throw new Error('Checkpoint snapshot must contain unique Grade 1 new ordinals 51-146');
+  const checkpointSet=checkpointOrdinals===null?null:new Set(checkpointOrdinals);
   if(remainingOnly&&newOnly)throw new Error('Use either academic --remaining or implementation --new, never both');
   const all=manifest?.lessons;
   if(!Array.isArray(all)||all.length!==146||
@@ -48,12 +55,21 @@ function buildWorklist(manifest,ledger,{remainingOnly=false,newOnly=false}={}) {
        !knownStates.has(row.status))
       throw new Error('Lesson missing, reordered, identity changed, or unknown state at ordinal '+ordinal);
     const accepted=row.status===APPROVED;
+    const hasV2Checkpoint=checkpointSet===null?null:checkpointSet.has(ordinal);
     return {
       ordinal,lessonCode:canonical.lessonCode,
       unitNumber:canonical.unitNumber,lessonNumber:canonical.lessonNumber,
       title:canonical.title,sourceTeacherUrl:canonical.sourceTeacherUrl,
       sourceEdition:canonical.sourceEdition,
       status:row.status,needsNewAcademicEvidence:!accepted,
+      // 62 existing checkpoints represent preserved authored A-D work, NOT 62
+      // complete lessons; non-checkpoint rows still have prior source indexes,
+      // implementations and Practice candidates. Never reauthor them by default.
+      hasV2Checkpoint,
+      resumptionClass:accepted?'PRESERVE_VERIFIED_ACCEPTANCE':
+        hasV2Checkpoint===null?'CHECKPOINT_INVENTORY_NOT_SUPPLIED':
+        hasV2Checkpoint?'CONTINUE_EXISTING_A_D_CHECKPOINT':
+        'REUSE_INDEXED_SOURCE_AND_EXISTING_CANDIDATE_THEN_COMPLETE_A_D',
       nextAction:accepted?'PRESERVE_ACCEPTANCE_AND_SOURCE_EVIDENCE':
         row.status==='BLOCKED_SOURCE'?'RESOLVE_SOURCE_RIGHTS_OR_PROVENANCE':
         row.status==='BLOCKED'?'RESOLVE_VERIFIED_BLOCKER':
@@ -62,6 +78,15 @@ function buildWorklist(manifest,ledger,{remainingOnly=false,newOnly=false}={}) {
     };
   });
   const unfinished=workItems.filter(x=>x.needsNewAcademicEvidence);
+  const sourceReviewResumption=checkpointSet===null?null:{
+    checkpointFiles:checkpointSet.size,
+    acceptedWithCheckpoint:workItems.filter(x=>!x.needsNewAcademicEvidence&&x.hasV2Checkpoint).length,
+    pendingWithCheckpoint:unfinished.filter(x=>x.hasV2Checkpoint).length,
+    pendingWithoutCheckpoint:unfinished.filter(x=>!x.hasV2Checkpoint).length,
+    pendingWithoutCheckpointOrdinals:unfinished.filter(x=>!x.hasV2Checkpoint)
+      .map(x=>x.ordinal),
+    note:'Checkpoint presence is progress, NOT an academic acceptance or proof that original V1 Stage D passed. Missing checkpoint does not mean no source, candidate teaching, tests or Practice exist.'
+  };
   const firstUnfinished=unfinished[0]?.ordinal??147;
   if(ledger.nextOrdinal!==firstUnfinished)
     throw new Error('Resume cursor disagrees with actual pending work; expected '+firstUnfinished);
@@ -91,6 +116,7 @@ function buildWorklist(manifest,ledger,{remainingOnly=false,newOnly=false}={}) {
     academicVerification:{firstPendingOrdinal:firstUnfinished,pendingCount:unfinished.length},
     queueSelection:newOnly?'NOT_STARTED_IMPLEMENTATION_ONLY':remainingOnly?'PENDING_ACADEMIC_EVIDENCE':'ALL_96_GRADE_ITEMS',
     acceptedNew:96-unfinished.length,
+    sourceReviewResumption,
     firstUnfinishedOrdinal:firstUnfinished,
     nextGradeAllowed:false,
     status:unfinished.length?'NO_GO':'ELIGIBLE_FOR_SEPARATE_FULL_GRADE_EVIDENCE_GATE',
@@ -99,10 +125,17 @@ function buildWorklist(manifest,ledger,{remainingOnly=false,newOnly=false}={}) {
   };
 }
 
+const checkpointFiles=()=>fs.readdirSync(path.join(ROOT,
+  'artifacts/curriculum-delivery/US-CCSS-MATH/G1'))
+  .filter(name=>/^lesson-\d+-v2-stage-a-d-checkpoint\.json$/.test(name))
+  .map(name=>Number(name.match(/^lesson-(\d+)-/)[1]));
+
 if(require.main===module){
   try {
     const worklist=buildWorklist(read(MANIFEST),read(LEDGER),
-      {remainingOnly:process.argv.includes('--remaining'),newOnly:process.argv.includes('--new')});
+      {remainingOnly:process.argv.includes('--remaining'),
+       newOnly:process.argv.includes('--new'),
+       checkpointOrdinals:checkpointFiles()});
     console.log(JSON.stringify(worklist,null,2));
   }catch(e){console.error(e.stack||String(e));process.exitCode=1;}
 }
