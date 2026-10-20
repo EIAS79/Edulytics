@@ -23,18 +23,30 @@
       "Student Facing Choose a center. Five in a Row [visual] [visual] <div class=\"im-c-"
     ],
     "existingCandidateReused": true,
-    "classification": "CONTENT_AND_PRACTICE_REPAIR"
+    "classification": "CONTENT_AND_PRACTICE_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "original2021AccessibleTeacherStudentTasksCompared": true,
+    "originalLessonActivityStage": 2,
+    "originalCardNumberRange": "0,10,...,90",
+    "originalBoardNumberRange": "0..90",
+    "actualTeacherLedWarmupAndCentersNotObserved": true
   },
   "stageB": {
     "reviewAndCorrectionSummary": "Corrected Check It Off to original Stage 2, reinforced source board range 0–90 and classroom picture discussion; bounded existing generator so add-card sum 100 cannot be treated as on-board",
     "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "candidateEditCommit": "344ddaef861be613e97423e8685111ee29f47872",
-    "publisherArtworkCopied": false
+    "publisherArtworkCopied": false,
+    "contentVersion": "us-ccss-g1-u04-l05-original-activities-v7",
+    "v6ToV7UpgradeGuarded": true
   },
   "stageC": {
     "reusedPracticeFamily": "usccss.g1.u04.l05.center.tens_and_within20",
     "changedGeneratorCommit": "19cd211e2f9bf0a57e7185f116efa7b5f654b6cd",
-    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence"
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
+    "mode0Mode1ZeroNinetyBoundsReviewed": true,
+    "original400500CardChoiceReviewed": true,
+    "sourceMathTestsAuthoredButNotExecuted": true
   },
   "stageD": {
     "sourceAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
@@ -48,5 +60,16 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-70-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false
+  },
+  "nextAction": "A-C source-visible mathematical Center Stage2 reviewed; teacher-only play and Stage D final CI pending. Continue ordinal 71."
 }
