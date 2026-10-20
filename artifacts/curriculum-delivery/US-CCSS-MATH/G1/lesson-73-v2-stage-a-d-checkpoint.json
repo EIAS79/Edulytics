@@ -25,19 +25,36 @@
       "Student Facing Your teacher will give you a set of cards that show different representations of a two-digit number. Find the cards that match. Be ready to explain your re"
     ],
     "sourceSpecificFinding": "Kiran 3 ones+7 tens and Priya 70+3 both 73; original estimation and teacher card sort",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "originalAccessibleSourceActivitiesIndependentlyReviewed": true,
+    "originalSourceTitle": "Different Representations of Tens and Ones",
+    "sourceMath": "Kiran 3 ones+7 tens=73 and Priya70+3=73; original matching card example 41 versus 14; J/S match 32 but E shows 23; V=95",
+    "teacherOnlyObservation": "Physical estimation, original diagrams, actual three-card groups and Grab and Count",
+    "originalPublisherSectionBCheckpointVerbatimVerified": false,
+    "allOriginalFigureAndStudentTasksFullyAudited": null
   },
   "stageB": {
     "originalRichV2Reused": true,
     "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
-    "publisherAssetsRedistributed": false
+    "publisherAssetsRedistributed": false,
+    "independentFirstPartyVersion": "us-ccss-g1-u04-l08-original-student-activities-v7",
+    "originalTitleRestored": true,
+    "v6ToV7OnlyThisLesson": true
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
     "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "sourceTaskToDigitalMathParity": "VERIFIED_SOURCE_GOAL_WITH_INDEPENDENT_EDULYTICS_REPRESENTATION",
+    "modesAdded": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "numericMatchingAndNegativeTestsAuthoredNotExecuted": true
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -52,5 +69,18 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-73-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalPublisherProtectedCheckpointVerified": false,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "A-C source goal and digital matching/math independently reviewed. Original physical estimation and card sort teacher-observed; final CI/D frozen. Continue ordinal 74."
 }
