@@ -24,7 +24,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
-           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens&&family!=CenterReview))return false;
+           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords))return false;
         return family switch
         {
             AddTens=>mode<=3?
