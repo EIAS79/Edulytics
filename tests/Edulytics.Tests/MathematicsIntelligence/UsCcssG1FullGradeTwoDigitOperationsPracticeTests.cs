@@ -142,26 +142,32 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
-    public void Lesson77OriginalRepeatedTenSequencesHaveExactAnswersAndFailClosedParameters()
+    public void Lesson77SourceRepeatedTenSequencesAndMixedOperationsRejectWrongAnswers()
     {
         const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.TenMoreLess;
-        foreach(var (mode,start,expected) in new[]{(2,67,"RESULT=97"),(3,99,"RESULT=69")})
+        foreach(var (mode,start,increment,expected) in new[]{
+            (2,67,30,"RESULT=97"),
+            (2,99,30,"RESULT=69"),
+            (3,45,20,"PLUS=65;MINUS=25;RETURN=45")
+        })
         {
-            var p=new Dictionary<string,int>{{"a",start},{"b",30},{"mode",mode},{"unused",0}};
+            var p=new Dictionary<string,int>{{"a",start},{"b",increment},{"mode",mode},{"unused",0}};
             Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
             Assert.Equal(expected,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
             Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";EXTRA=0"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"RESULT=87"));
             p["b"]=10;
             Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
-            p["b"]=30;
+            p["b"]=increment;
             p["a"]=start-1;
             Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
         }
-        var generated=Enumerable.Range(0,800).Select(i=>
+        var generated=Enumerable.Range(0,1200).Select(i=>
             UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*31+19))).ToArray();
         Assert.Contains(generated,q=>q.Parameters["mode"]==2&&q.Prompt.Contains("67+10+10+10"));
-        Assert.Contains(generated,q=>q.Parameters["mode"]==3&&q.Prompt.Contains("99-10-10-10"));
+        Assert.Contains(generated,q=>q.Parameters["mode"]==2&&q.Prompt.Contains("99-10-10-10"));
+        Assert.Contains(generated,q=>q.Parameters["mode"]==3&&q.Prompt.Contains("45+10+10"));
         Assert.All(generated,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
             family,q.Parameters,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,q.Parameters))));
     }
