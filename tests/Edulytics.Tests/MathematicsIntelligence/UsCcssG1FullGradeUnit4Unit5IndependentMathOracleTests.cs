@@ -17,7 +17,7 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
         switch(index)
         {
             case 0:return "SYMBOL="+Symbol(a,b);
-            case 1:return mode==3?"ORDER="+string.Join(",",
+            case 1:return mode>=3?"ORDER="+string.Join(",",
                 new[]{"a","b","c","d","e","f","g","h","i","j"}
                     .Select(key=>sourceParams[key]).Order()):
                 "ORDER="+string.Join(",",mode%2==0?
