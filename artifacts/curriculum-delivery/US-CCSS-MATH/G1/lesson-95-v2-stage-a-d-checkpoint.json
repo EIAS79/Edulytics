@@ -23,13 +23,29 @@
       "Student Facing Lin's brother spilled water on her math work! Figure out what number Lin wrote before it got smudged. Lin wrote a one-digit number with which you can make "
     ],
     "sourceSpecificComparison": "Original compose-ten choices 45+5,9+63,26+3,8+47; four valid-open missing-number conditions, visual pending",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "exactAccessibleOriginalStudentJadaTask": [
+      "45+5=50 — NEW_TEN=YES",
+      "9+63=72 — NEW_TEN=YES",
+      "26+3=29 — NEW_TEN=NO",
+      "8+47=55 — NEW_TEN=YES"
+    ],
+    "fourOpenLinSmudgeSourceDomains": [
+      "32+□ with ONE-DIGIT choice, new ten",
+      "16+□ with ONE-DIGIT choice, no new ten",
+      "8+□ with TWO-DIGIT choice, new ten",
+      "8+□ with TWO-DIGIT choice, no new ten"
+    ],
+    "unverifiedOriginalSourceVisualArtwork": true
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a"
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "existingFirstPartyExplanationsAndOriginalMathReviewed": true,
+    "originalJadaAndSmudgeTaskExplanationsReused": true,
+    "teacherReviewOfStudentSelfWrittenJustificationRequired": true
   },
   "stageC": {
     "existingPracticeReused": true,
@@ -42,7 +58,32 @@
       "mathResolution": "Derived NEW_TEN from (a%10+b%10>=10), consistent with existing independently computed verifier; no change to source-permitted domains or teacher-only boundaries",
       "relevantHistoricCi": "https://github.com/EIAS79/Edulytics/actions/runs/39310776955",
       "independentlyRunOnNewCommit": false
-    }
+    },
+    "jadaSourceSpecificModeRange": [
+      6,
+      9
+    ],
+    "jadaSourceSpecificContracts": [
+      "NEW_TEN=YES;TOTAL=50",
+      "NEW_TEN=YES;TOTAL=72",
+      "NEW_TEN=NO;TOTAL=29",
+      "NEW_TEN=YES;TOTAL=55"
+    ],
+    "originalFourOpenSmudgeModeRange": [
+      2,
+      5
+    ],
+    "alternativeValidOpenChoicesStillAccepted": true,
+    "originalGeneratorModesPreserved": [
+      0,
+      1
+    ],
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "2f98c40ebccffa7508af335bd20fde5860f5f46c",
+    "openAnswerVerifierRangeFixCommit": "4f572ad329e83f0b79df43a0104c90f69b1067df",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson95OriginalJadaNewTenTests.cs",
+    "authoredTestsCommit": "6c24cc80ccff310532f3e1b85668e94f75d00d68",
+    "testsExecuted": false
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -60,7 +101,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required",
+  "nextAction": "Continue ordinal96; do not run deferred Stage D/CI, merge or deploy.",
   "crossLessonSourcePracticeResumption20261020": {
     "sourceSpecificSubset": {
       "existingEngine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
@@ -81,5 +122,17 @@
     "notASubstituteForAuthenticatedGradingOrLegalVisualInspection": true,
     "originalV1Approval": "NOT_CLAIMED",
     "release": "NO_GO"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "accessibleOriginalStudentAndTeacherNumericTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "numericPracticeGeneratorAndExactOrOpenVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalPublisherImagesAndFreeFormWrittenExplanationsAutoGraded": false,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "sourceBoundary": "Source Jada numeric carry decisions and four alternate-valid Lin smudge cases are covered separately. Original image contents and open pupil-constructed explanations remain teacher-reviewed; legal images, live grading/persistence, CI and approval require Stage D."
   }
 }
