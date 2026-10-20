@@ -62,6 +62,12 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("Clare 8+□=15",text(25));
         Assert.Contains("Kiran 17-□=9",text(25));
         Assert.Contains("How Close? Subtract from 20, Stage 2",text(27));
+        Assert.Contains("four numeral cards",text(27));
+        Assert.Contains("6,4,9,8",text(27));
+        Assert.Contains("20-6-4-9=1",text(27));
+        Assert.Contains("zero is a valid card",text(27));
+        Assert.Contains("0 through 10",text(27));
+        Assert.Contains("9+6 and 19-6",text(27));
         Assert.Contains("selects TWO or THREE cards",text(27));
         Assert.Contains("ORIGINAL Set A: fill 12-7=□, 18-5=□",text(24));
         Assert.Contains("ORIGINAL Set B: fill 5+□=18, 13=□+6, 20=15+□",text(24));
@@ -116,6 +122,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,subtract,"us-ccss-g1-u03-l22-teen-2021-source-v6"));
         Assert.Equal("us-ccss-g1-u03-l22-teen-2021-source-v7",
             CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion);
+        var centerFourth=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L27");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,centerFourth,"us-ccss-g1-u03-l27-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u03-l27-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.CenterFourSourceContentVersion);
         var storyUnknown=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L26");
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,storyUnknown,"us-ccss-g1-u03-l26-original-activities-v6"));
