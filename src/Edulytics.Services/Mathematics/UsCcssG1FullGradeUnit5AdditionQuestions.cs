@@ -113,6 +113,18 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     [
         (13,21),(13,31),(23,31),(33,41),(32,54),(23,74)
     ];
+    // Exact public 2021 U05 L06 next-ten missing addends and number-talk sums.
+    // First-party digital proxy: original diagrams, explanations and partner
+    // Target Numbers (55 toward 95 within six turns) stay teacher assessed.
+    private static readonly (int start,int missing)[] Lesson6OriginalNextTen =
+    [
+        (45,5),(38,2),(63,7),(24,6),
+        (42,8),(57,3),(71,9),(89,1)
+    ];
+    private static readonly (int a,int b)[] Lesson6OriginalWarmup =
+    [
+        (8,2),(8,5),(9,8),(7,6)
+    ];
     private static readonly (int a,int b)[] Lesson8OriginalWarmup =
     [
         (68,2),(3,68),(5,45),(45,7)
@@ -161,7 +173,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec==null||p.Count!=3||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||
-           mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L07"?5:
+           mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?5:
            spec.LessonCode is "L08" or "L09"?7:
            spec.LessonCode is "L10" or "L11" or "L12"?5:
            spec.LessonCode=="L14"?4:3))
@@ -172,6 +184,16 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec.LessonCode=="L02"&&mode==6)return a==63&&b==25;
         if(spec.LessonCode=="L03"&&mode==10)return a==32&&b==54;
         if(spec.LessonCode=="L04"&&mode==4)return a==14&&b==23;
+        if(spec.LessonCode=="L06"&&mode>=4&&mode<=11)
+        {
+            var source=Lesson6OriginalNextTen[mode-4];
+            return a==source.start&&b==source.missing;
+        }
+        if(spec.LessonCode=="L06"&&mode>=12)
+        {
+            var source=Lesson6OriginalWarmup[mode-12];
+            return a==source.a&&b==source.b;
+        }
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
         {
             var source=Exact2021Equation(spec.LessonCode,mode);
@@ -206,7 +228,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     {
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
-        int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L07"?6:
+        int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?6:
             spec.LessonCode is "L08" or "L09"?8:
             spec.LessonCode is "L10" or "L11" or "L12"?6:
             spec.LessonCode=="L14"?5:4);
@@ -249,6 +271,29 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "Greatest of Them All center play are teacher-assessed and not auto-certified.",
                 "14+23=37; 23>14 and 23-14=9. The independent sum and comparison use only " +
                 "real source-visible quantities; the source does not require this exact follow-up question.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L06"&&mode>=4&&mode<=11)
+        {
+            var (start,missing)=Lesson6OriginalNextTen[mode-4];
+            var p=new Dictionary<string,int>{{"a",start},{"b",missing},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 94 original next-ten domain drift");
+            return new(family,
+                $"ORIGINAL 2021 UNIT 5 LESSON 6 STUDENT EQUATION: {start} + □ = {start+missing}. "+
+                "Find the missing number which completes the next ten. "+
+                "Write MISSING=number;TOTAL=number; show your reasoning to a teacher.",
+                "Add enough ones to reach the next multiple of ten, preserving the original equality.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L06"&&mode>=12&&mode<=15)
+        {
+            var (first,second)=Lesson6OriginalWarmup[mode-12];
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 94 warm-up source drift");
+            return new(family,
+                $"ORIGINAL 2021 UNIT 5 LESSON 6 WARM-UP: Mentally find {first}+{second}. "+
+                "Write TOTAL=number;NEW_TEN=YES/NO. Explain a possible make-ten method.",
+                "The addends' ones compose a new ten; teacher assesses oral mental strategies.",
                 AssessmentItemType.ShortAnswer,p);
         }
         var original=Exact2021Equation(spec.LessonCode,mode);
@@ -385,6 +430,10 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             return "LIN_TENS=80;LIN_ONES=6;HAN_FIRST=84;HAN_SECOND=86;TOTAL=86";
         if(spec.LessonCode=="L04"&&p["mode"]==4)
             return "SUM=37;MORE=PRIYA;DIFFERENCE=9";
+        if(spec.LessonCode=="L06"&&p["mode"]>=4&&p["mode"]<=11)
+            return $"MISSING={b};TOTAL={sum}";
+        if(spec.LessonCode=="L06"&&p["mode"]>=12)
+            return $"TOTAL={sum};NEW_TEN={(a%10+b%10>=10?"YES":"NO")}";
         if(p["mode"]>=4&&(spec.LessonCode is "L02" or "L03"))
             return $"TENS={(a/10+b/10)*10};ONES={a%10+b%10};TOTAL={sum}";
         if(p["mode"]>=4&&(spec.LessonCode is "L08" or "L09"))
