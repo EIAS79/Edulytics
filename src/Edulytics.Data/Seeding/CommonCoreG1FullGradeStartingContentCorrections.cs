@@ -42,6 +42,8 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string UnitFourShowNumberSourceContentVersion="us-ccss-g1-u04-l09-original-student-activities-v7";
     private const string UnitFourWriteNumeralLessonCode="PED:US-CCSS-MATH:G1:U04:L10";
     public const string UnitFourWriteNumeralSourceContentVersion="us-ccss-g1-u04-l10-original-student-activities-v7";
+    private const string UnitFourAddTensLessonCode="PED:US-CCSS-MATH:G1:U04:L11";
+    public const string UnitFourAddTensSourceContentVersion="us-ccss-g1-u04-l11-original-student-activities-v7";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
             .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
@@ -664,6 +666,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
             UnitFourRepresentationsLessonCode=>UnitFourRepresentationsSourceContentVersion,
             UnitFourShowNumberLessonCode=>UnitFourShowNumberSourceContentVersion,
             UnitFourWriteNumeralLessonCode=>UnitFourWriteNumeralSourceContentVersion,
+            UnitFourAddTensLessonCode=>UnitFourAddTensSourceContentVersion,
             var l when UnitFourLaterLessonCodes.Contains(l)=>UnitFourLaterSourceContentVersion,
                 _=>Version
             })
@@ -689,6 +692,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourRepresentationsLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourShowNumberLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourWriteNumeralLessonCode&&previous==UnitFourLaterSourceContentVersion)||
+         (lesson.LessonCode==UnitFourAddTensLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
