@@ -25,7 +25,7 @@ public static class UsCcssG1FullGradeNextQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out var a)||!p.TryGetValue("b",out var b)||
            !p.TryGetValue("c",out var c)||!p.TryGetValue("mode",out var mode)||
-           mode<0||(mode>3&&(family!=ZooThree||mode!=4)))return false;
+           mode<0||mode>4||(mode==4&&family!=ZooThree&&family!=TenSubtract))return false;
         return family switch
         {
             FlexibleAdd=>a>=6&&a<=9&&b>=11-a&&b<=10&&c==0&&
@@ -42,14 +42,15 @@ public static class UsCcssG1FullGradeNextQuestions
                 (mode!=3||(a==16&&b==7)),
             TenSubtract=>a>=11&&a<=19&&b>=0&&b<=9&&c==0&&
                 (mode!=2||(a==15&&b==8))&&
-                (mode!=3||((a==14&&b==5)||(a==13&&b==6))),
+                (mode!=3||((a==14&&b==5)||(a==13&&b==6)))&&
+                (mode!=4||(a==14&&b==8)), // Independent Edulytics cool-down, not publisher verbatim.
             _=>false
         };
     }
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 L56–60 Practice family");
-        int mode=random.Next(family==ZooThree?5:4),a=0,b=0,c=0;
+        int mode=random.Next(family is ZooThree or TenSubtract?5:4),a=0,b=0,c=0;
         if(family==FlexibleAdd)
         {
             if(mode==2){a=8;b=7;} // Original 2021 Lin/Han/Kiran 8+7 task.
@@ -94,6 +95,7 @@ public static class UsCcssG1FullGradeNextQuestions
             if(mode==2){a=15;b=8;} // Original Diego 15−8 ten-frame task.
             else if(mode==3)
             { if(random.Next(2)==0){a=14;b=5;}else{a=13;b=6;} } // Original 2021 student follow-ups.
+            else if(mode==4){a=14;b=8;} // Edulytics-authored make-ten Cool-down, not copied original.
             else{a=random.Next(11,20);b=random.Next(0,10);} // Source 2021 digit cards 0–9 (same card game as prior lesson).
         }
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
@@ -127,7 +129,9 @@ public static class UsCcssG1FullGradeNextQuestions
                 b<a-10?
                 $"Original 2021 NUMBER CARD SUBTRACTION numeric subskill: start with teen number {a} and subtract digit card {b} (0 through 9). Subtract from the ones WITHOUT crossing ten; forcing a cross-ten split would be wrong. Write DIFFERENCE=number;EQUATION=number-number=number. Physical cards and strategy drawings stay teacher-led.":
                 $"Take From: start with {a} counters and remove {b}. First reach ten, then remove the rest. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Original 2021 number cards range from 0 through 9; card draws and drawings stay teacher-led.",
-            TenSubtract=>mode==2?
+            TenSubtract=>mode==4?
+                "EDULYTICS ORIGINAL COOL-DOWN — Use a ten to subtract: You have 14 counters on two ten-frames. Remove 8 counters. How many counters are left? Show how you get from 14 to 10 and then subtract the rest. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. You may explain your thinking with drawings, numbers, or words to a teacher. Hand-drawn explanations require teacher review.":
+                mode==2?
                 "ORIGINAL 2021 STUDENT FACING: Diego starts Number Card Subtraction with 15, then picks an 8. Show 15 on ten-frames, subtract 8 using a ten, and write the matching EQUATION. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Explain your drawing to a teacher.":
                 mode==3?
                 $"ORIGINAL 2021 STUDENT FACING: Find {a}-{b} using Diego\u0027s way (remove to ten, then subtract) OR Andre\u0027s way (remove the full-ten counters first, then combine with extra ones). Use drawings, numbers or words to explain both valid methods to a teacher. Numeric grading checks TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number; other representations require teacher review.":
