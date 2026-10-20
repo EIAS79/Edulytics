@@ -106,7 +106,22 @@
       ],
       "testExecution": "NOT_EXECUTED",
       "knownResidual": "Seeded generator distribution changed with modes 9/10; final candidate regression remains required"
-    }
+    },
+    "original2021NumberTalkModes": [
+      11,
+      12,
+      13,
+      14
+    ],
+    "original2021NumberTalkExpected": [
+      "3+10=13",
+      "10+5=15",
+      "13-10=3",
+      "15-10=5"
+    ],
+    "warmupSourceTestsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson77Original2021WarmupTests.cs",
+    "warmupImplementationCommit": "1a40991da7377bb34518fde1d62b095c2935fe68",
+    "warmupTestsAuthoredCommit": "1c11329438e2ffd79b74b9ee41aba590cb01cd18"
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -156,7 +171,8 @@
     "authoringEvidenceCommitRefs": [
       "852e77d8a4a5ee01b13cb38cab399e65c354bc71",
       "18116954ecbd28f63d82a49cd82ab28c2045681c"
-    ]
+    ],
+    "latestImplementationNote": "Four 2021 number-talk source tasks implemented as strict mode 11-14 with correct/wrong answer tests. Source/student visual parity and protected source boundary remain explicitly open; no Stage D or CI was run."
   },
-  "nextAction": "Canonical original source SHA mismatch disproven on registered paths and original teacher math reviewed; warm-up/intermediate learner content repaired. Still A_C_EXPLICIT_GAP pending independent student/center visual parity and inaccessible Section B checkpoint decision. Stage D/CI NOT RUN."
+  "nextAction": "Do not claim READY_FOR_STAGE_D from original teacher text or authored tests alone. Resolve remaining original student-facing/gameboard visual parity and publisher boundary under A-C before final closure. Stage D/CI deferred."
 }
