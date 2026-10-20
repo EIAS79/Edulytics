@@ -239,6 +239,10 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Equal("us-ccss-g1-u04-l01-original-activities-v7",
             CommonCoreG1FullGradeStartingContentCorrections.UnitFourCollectionSourceContentVersion);
         Assert.Contains("ten-cube towers",earlierUnit4Text(2));
+        Assert.Contains("other TWO children",earlierUnit4Text(2));
+        Assert.Contains("three-column number / number of tens / drawing chart",earlierUnit4Text(2));
+        Assert.Contains("10 through 90",earlierUnit4Text(2));
+        Assert.Contains("TENS=7;NUMBER=70;WORD=SEVENTY",earlierUnit4Text(2));
         Assert.Contains("too-low, about-right, and too-high estimate",earlierUnit4Text(2));
         Assert.Contains("30+10=40, 40+10=50, 80-10=70 and 70-10=60",earlierUnit4Text(4));
         Assert.Contains("Jada counts 30 cubes",earlierUnit4Text(4));
