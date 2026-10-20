@@ -23,7 +23,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string CountRelationSourceContentVersion="us-ccss-g1-u03-l24-original-activities-v7";
     public const string ChooseSubtractSourceContentVersion="us-ccss-g1-u03-l25-original-activities-v7";
     public const string StorySourceContentVersion="us-ccss-g1-u03-l26-original-activities-v7";
-    public const string CenterFourSourceContentVersion="us-ccss-g1-u03-l27-original-activities-v6";
+    public const string CenterFourSourceContentVersion="us-ccss-g1-u03-l27-original-activities-v7";
     private const string UnitFourCollectionLessonCode="PED:US-CCSS-MATH:G1:U04:L01";
     private const string UnitFourTensMatchLessonCode="PED:US-CCSS-MATH:G1:U04:L02";
     private const string UnitFourMultipleTensLessonCode="PED:US-CCSS-MATH:G1:U04:L04";
@@ -285,14 +285,20 @@ Step 6: Compare all four Han situations: unknown start □+9=15, unknown removed
             @"Example 1: 8+7=15 by making ten: 8+2+5=15.
 Example 2: 16-9=7 by subtracting 6 to ten and 3 more.
 Example 3: 12+6=18 using a ten and eight ones.
-Example 4: 20-8=12 because 12+8=20.",
+Example 4: 20-8=12 because 12+8=20.
+Example 5: Original How Close? hand has 6,4,9,8. Choose three DISTINCT cards 6,4,9. Since 20-6-4-9=1, the result is one away from zero. The 8 card remains unused. No negative differences are needed.
+Example 6: Original Compare synthesis displays 9+6 and 19-6. Compute 15 and 13; 15 is GREATER. Mathematically grading the values is different from observing partner card turns.",
             @"Step 1: Identify the operation chosen by the center card/game task.
 Step 2: Use counters, a ten-frame or a trusted fact.
 Step 3: Calculate a sum or a nonnegative difference within 20.
 Step 4: Verify the result with an opposite operation or second strategy.
 Step 5: If in classroom play, explain and compare strategies with your partner.
+Step 6: For source How Close? cards 6,4,9,8, select 6,4,9, compute 20-6-4-9=1, and recognize that 8 was not selected.
+Step 7: For original Compare cards 9+6 and 19-6, evaluate BOTH to get 15 and 13 and determine that the addition card is greater. Teacher checks real center turn-taking.
 Original 2021 How Close? Subtract from 20, Stage 2: a student starts with four numeral cards from 0 to 10, selects TWO or THREE cards, subtracts their combined amounts from 20, and records a correct equation; a result closer to ZERO wins a round. This requires an actual teacher-led card game, so Edulytics grades only the chosen-card subtraction and its equation, not partner competition or winning.
-Original 2021 Compare, Add and Subtract Within 20: compare the values of addition or subtraction expression cards; explain strategies in a teacher-led center.",
+Original 2021 Compare, Add and Subtract Within 20: compare the values of addition or subtraction expression cards; explain strategies in a teacher-led center.
+The physical How Close? number-card deck includes 0 through 10; zero is a valid card, and selected cards from one physical hand are distinct. Two or three selected cards must leave a nonnegative difference; the four-card dealing, points, wins and peer comparison are not simulated as auto-certified classroom work.
+Digital Compare checks both the addition and subtraction expression values for the specific original 9+6 versus 19-6 synthesis, including which expression is greater. A single unrelated RESULT score cannot verify that comparison.",
             @"Do not subtract a larger card from a smaller card and claim a negative difference is in the reviewed first-grade center scope. Partner center participation cannot be automatically certified by a multiple-choice quiz.",
             @"I can add and subtract within 20 and explain a strategy while following the teacher's center rules. Original 2021 warm-up: 20-10=10, 20-10-1=9, 18-10-4=4, and 18-14=4. During the teacher-led Compare center, 9+6=15 is greater than 19-6=13."),
         new(@"PED:US-CCSS-MATH:G1:U04:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-1/preparation.html",@"5f7a4f43ed4319bca795c0b82d6a05acb7fd3bf1e20175f4e57825aa89c9dd16",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
@@ -607,6 +613,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==CountRelationLessonCode&&previous=="us-ccss-g1-u03-l24-original-activities-v6")||
          (lesson.LessonCode==ChooseSubtractLessonCode&&previous=="us-ccss-g1-u03-l25-original-activities-v6")||
          (lesson.LessonCode==StoryLessonCode&&previous=="us-ccss-g1-u03-l26-original-activities-v6")||
+         (lesson.LessonCode==CenterFourLessonCode&&previous=="us-ccss-g1-u03-l27-original-activities-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
