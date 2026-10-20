@@ -32,6 +32,8 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string UnitFourTensMatchSourceContentVersion="us-ccss-g1-u04-l02-original-activities-v7";
     public const string UnitFourMultipleTensSourceContentVersion="us-ccss-g1-u04-l04-original-activities-v7";
     public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v7";
+    private const string UnitFourCountLargerLessonCode="PED:US-CCSS-MATH:G1:U04:L06";
+    public const string UnitFourCountLargerSourceContentVersion="us-ccss-g1-u04-l06-original-student-activities-v7";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
             .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
@@ -393,12 +395,17 @@ Example 3: Fifty-four buttons can be counted as five tens and four ones: 50+4=54
 Example 4: Six bundles of ten and zero loose ones represent 60 objects.
 Original 2021 collection task: group 52 objects into five complete tens and two ones, 50+2=52.
 Original 2021 Noah discussion: he claims his tower collection shows 50; it actually has four complete tens and eight ones, 40+8=48. A tower with eight objects is NOT another ten.
+EDULYTICS INDEPENDENT REASONING CHECK: The Noah-style model has four COMPLETE tens and one INCOMPLETE tower with 8 cubes; a student should DISAGREE that this is 50, because 40+8=48. Machine-checkable DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50. This numeric response checks factual judgement and counts; original drawing and explanation require human review.
+Original public closing example: 3 full tens and 7 ones make 37. Learners should say thirty-seven; live reading aloud needs teacher review.
 Original choral warm-up: count by ones from 50 to 81 and notice the change across 59, 60 and 69, 70.",
             @"Step 1: Touch or move each object exactly once while making complete groups of ten.
 Step 2: Count whole bundles first by tens.
 Step 3: Count remaining loose objects by ones (0–9).
 Step 4: Record both the groups-of-ten count and the leftover ones, then calculate the total.
-Step 5: Check by recounting or another arrangement and explain how the representations match.",
+Step 5: Check by recounting or another arrangement and explain how the representations match.
+Step 6: For the original 52-cube bag, count exactly five complete tens and two remaining ones and show 50+2=52; teacher observes real sorting and drawing.
+Step 7: For the Noah reasoning check, identify that his extra tower has only eight cubes. Respond DISAGREE and compute 4 tens + 8 ones = 48, not 50; explain with a drawing or teacher-guided conversation.
+Step 8: Read the source lesson synthesis, three complete tens and seven loose ones, as 37 (thirty-seven). Original Check It Off center games and recorded partner performance require teacher facilitation.",
             @"Do not leave ten or more loose objects after claiming grouping is complete; exchange ten ones for one ten. Four tens and seven ones is 47, not 11 or 74. Do not count a cube twice.",
             @"I can count a larger mixed collection using complete tens and leftover ones and explain my arrangement."),
         new(@"PED:US-CCSS-MATH:G1:U04:L07",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-7/preparation.html",@"ed75036a11c93eb282fbaeb8df00eb8591b49297eb7eb9528ed79e95d90ea5a5",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
@@ -613,6 +620,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
             UnitFourTensMatchLessonCode=>UnitFourTensMatchSourceContentVersion,
             UnitFourMultipleTensLessonCode=>UnitFourMultipleTensSourceContentVersion,
             UnitFourCenterLessonCode=>UnitFourCenterSourceContentVersion,
+            UnitFourCountLargerLessonCode=>UnitFourCountLargerSourceContentVersion,
             var l when UnitFourLaterLessonCodes.Contains(l)=>UnitFourLaterSourceContentVersion,
                 _=>Version
             })
@@ -633,6 +641,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourTensMatchLessonCode&&previous=="us-ccss-g1-u04-l02-original-activities-v6")||
          (lesson.LessonCode==UnitFourMultipleTensLessonCode&&previous=="us-ccss-g1-u04-l04-original-activities-v6")||
          (lesson.LessonCode==UnitFourCenterLessonCode&&previous=="us-ccss-g1-u04-l05-original-activities-v6")||
+         (lesson.LessonCode==UnitFourCountLargerLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
