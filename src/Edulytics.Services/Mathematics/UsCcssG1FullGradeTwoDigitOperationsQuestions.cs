@@ -169,7 +169,13 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==5?
                 "NOAH SOURCE CASE: Noah says 39 is greater than 41. Compare the numbers correctly. Write RELATION=GREATER/LESS/EQUAL. Explain Noah's error to a teacher.":
                 $"Compare the value of {a} and {b} by tens, then ones. Is the FIRST number GREATER, LESS or EQUAL? Write RELATION=GREATER/LESS/EQUAL.",
-            CompareSymbols=>$"Compare {a} and {b}. Write the mathematical comparison SYMBOL between the two numbers, one of >, < or =. Write SYMBOL=sign.",
+            CompareSymbols=>mode==4?
+                "SOURCE COMPARISON PAIR: Decide whether 17 < 27 or 27 < 17 is true. Write SYMBOL=<, > or = for 17 compared with 27. Explain to a teacher.":
+                mode==5?
+                "SOURCE COMPARISON PAIR: Decide whether 34 < 36 or 36 < 34 is true. Write SYMBOL=<, > or = for 34 compared with 36. Explain to a teacher.":
+                mode==6?
+                "SOURCE TRUE/FALSE: Is 17 < 47 correct? Write SYMBOL=<, > or = for 17 compared with 47. Explain to a teacher.":
+                $"Compare {a} and {b}. Write the mathematical comparison SYMBOL between the two numbers, one of >, < or =. Write SYMBOL=sign.",
             _=>throw new InvalidOperationException()
         };
         return new(family,prompt,
