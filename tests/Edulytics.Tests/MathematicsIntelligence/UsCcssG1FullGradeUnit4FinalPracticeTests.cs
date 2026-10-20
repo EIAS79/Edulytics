@@ -61,6 +61,52 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
             expected.Replace("WAYS="+(total/10+1),"WAYS="+(total/10))));
     }
 
+    [Theory]
+    [InlineData(4,52,"NUMBER=52","BAG A")]
+    [InlineData(5,65,"NUMBER=65","BAG B")]
+    [InlineData(6,49,"TENS=2","BAG C")]
+    [InlineData(7,36,"ONES=16","BAG D")]
+    public void EachOriginal2021MysteryBagHasTheCorrectSourceMathAndRejectsSpoofedValues(
+        int mode,int total,string answer,string bag)
+    {
+        const string family="usccss.g1.u04.l20.equivalent_tens_ones";
+        var p=new Dictionary<string,int>{
+            ["a"]=total,["b"]=0,["c"]=0,["mode"]=mode
+        };
+        Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+        Assert.Equal(answer,UsCcssG1FullGradeUnit4FinalQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,answer+";FALSE=1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            mode==6?"TENS=4":mode==7?"ONES=6":"NUMBER=99"));
+        p["a"]++;
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+        var found=false;
+        for(int seed=0;seed<360;seed++)
+        {
+            var q=UsCcssG1FullGradeUnit4FinalQuestions.Build(
+                family,new Random(seed*41+20261020));
+            if(q.Parameters["mode"]!=mode)continue;
+            found=true;
+            Assert.Contains(bag,q.Prompt);
+            Assert.Equal(total,q.Parameters["a"]);
+        }
+        Assert.True(found,"Original source bag case never generated");
+    }
+
+    [Fact]
+    public void SourceBagAlternativesDoNotBreakEarlierOpenEndedRegroupingValidation()
+    {
+        const string family="usccss.g1.u04.l20.equivalent_tens_ones";
+        var source=new Dictionary<string,int>{
+            ["a"]=94,["b"]=0,["c"]=0,["mode"]=2
+        };
+        Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Verify(
+            family,source,"NUMBER=94;TENS=9;ONES=4;ALT_TENS=2;ALT_ONES=74;WAYS=10"));
+        source["mode"]=6;
+        Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,source));
+    }
+
     [Fact]
     public void Original2021SixtyFiveTowersCannotBeBrokenAndThirtySevenHasDifferentValidForms()
     {
