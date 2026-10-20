@@ -48,7 +48,12 @@ function build(){
     // New affirmative contract: no inference from explanatory prose, hashes,
     // a prepared checklist, or historical CI on a different SHA.
     const proof=cp.aToCClosure;
-    const complete=proof?.originalStudentAndTeacherTasksCompared===true&&
+    const ownerAlternative=proof?.ownerApprovedIndependentEdulyticsAssessment===true&&
+      proof?.allAvailableOriginalStudentTeacherTasksCompared===true&&
+      proof?.originalProtectedPublisherAssessmentVerified===false&&
+      proof?.originalPublisherAssessmentNotReproduced===true&&
+      proof?.independentCoolDownScoringReviewed===true;
+    const complete=(proof?.originalStudentAndTeacherTasksCompared===true||ownerAlternative)&&
       proof?.learnerTeachingSourceParityReviewed===true&&
       proof?.practiceGeneratorAndVerifierIndependentlyReviewed===true&&
       Array.isArray(proof?.openACDefects)&&proof.openACDefects.length===0&&
@@ -59,7 +64,7 @@ function build(){
     // affirmative aToCClosure fields. Stage records or commits alone are not proof.
     const stageA=a.allOriginalFigureAndStudentTasksFullyAudited===false||
         a.sourceGoalAgainstEffectiveAuthenticatedContentApproved===false
-      ?'EXPLICIT_GAP':proof?.originalStudentAndTeacherTasksCompared===true
+      ?'EXPLICIT_GAP':proof?.originalStudentAndTeacherTasksCompared===true||ownerAlternative
       ?'REVIEW_EVIDENCED':'NOT_PROVEN';
     const stageB=proof?.learnerTeachingSourceParityReviewed===true
       ?'REVIEW_EVIDENCED':'NOT_PROVEN';
@@ -69,11 +74,17 @@ function build(){
     return {ordinal,lessonCode:lesson.lessonCode,unit:lesson.unit,
       lessonNumber:lesson.lessonNumber,title:lesson.title,
       status,aToCReady:complete,stageA,stageB,stageC,
+      assessmentBasis:ownerAlternative?'OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN':
+        proof?.originalStudentAndTeacherTasksCompared===true?'ORIGINAL_SOURCE_TASK_REVIEW':'NOT_PROVEN',
+      originalPublisherAssessmentVerified:ownerAlternative?false:
+        proof?.originalStudentAndTeacherTasksCompared===true,
       openACDefects:Array.isArray(proof?.openACDefects)?proof.openACDefects:null,
       evidenceReference:typeof proof?.evidenceReference==='string'?proof.evidenceReference:null,
       sourceTasksFullyAudited:a.allOriginalFigureAndStudentTasksFullyAudited===true,
       originalSourceToPracticeProven:c.originalSourceTaskToPracticeParity==='VERIFIED',
-      evidenceFile:file,reason:complete?'Affirmative source/teaching/Practice evidence on file':
+      evidenceFile:file,reason:complete?(ownerAlternative?
+        'A-C closed on owner-approved Edulytics assessment basis; original protected publisher assessment not verified':
+        'Affirmative source/teaching/Practice evidence on file'):
         explicitGap?'Stage A source-task audit or Stage C parity explicitly pending':
         'A/B/C work exists, but no independently evidenced phase-closure decision'};
   });
@@ -119,6 +130,8 @@ function buildSelectionReport(lessons,snapshot,scope){
       ordinal:x.ordinal,lessonCode:x.lessonCode,unit:x.unit,
       lessonNumber:x.lessonNumber,title:x.title,
       stageA:x.stageA,stageB:x.stageB,stageC:x.stageC,
+      assessmentBasis:x.assessmentBasis??null,
+      originalPublisherAssessmentVerified:x.originalPublisherAssessmentVerified??null,
       aToCStatus:x.status,readyForStageD:x.aToCReady,
       skipACRework:x.status===STATUS.accepted||x.aToCReady,
       openACDefects:x.openACDefects??null,
