@@ -458,6 +458,52 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void Lesson60EdulyticsOwnedCoolDownChecksUseOfTenNotOnlyFinalAnswer()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.TenSubtract;
+        var p=new Dictionary<string,int>
+        {["a"]=14,["b"]=8,["c"]=0,["mode"]=4};
+        const string correct="TO10=4;REST=4;DIFFERENCE=6;EQUATION=14-8=6";
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        Assert.Equal(correct,UsCcssG1FullGradeNextQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,correct));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,
+            "EQUATION=14-8=6;DIFFERENCE=6;REST=4;TO10=4"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "DIFFERENCE=6;EQUATION=14-8=6")); // Correct result ALONE does not prove ten strategy.
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TO10=5;REST=3;DIFFERENCE=6;EQUATION=14-8=6")); // False intermediate split.
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TO10=4;REST=4;DIFFERENCE=8;EQUATION=14-8=8"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TO10=4;REST=4;DIFFERENCE=6;EQUATION=14-7=6"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TO10=4;REST=4;DIFFERENCE=6;EQUATION=14-8=6;REST=4"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TO10=FOUR;REST=4;DIFFERENCE=6;EQUATION=14-8=6"));
+        p["a"]=13;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,p)); // Never misattribute source mode.
+        p["a"]=14;p["b"]=7;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,p));
+        p["b"]=8;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(
+            UsCcssG1FullGradeNextQuestions.TeenSubtract,p)); // Doesn't affect Lesson 59.
+        var generated=Enumerable.Range(0,480)
+            .Select(n=>UsCcssG1FullGradeNextQuestions.Build(family,new Random(71*n+29)))
+            .Where(q=>q.Parameters["mode"]==4).ToArray();
+        Assert.True(generated.Length>45);
+        Assert.All(generated,q=>
+        {
+            Assert.Contains("EDULYTICS ORIGINAL COOL-DOWN",q.Prompt);
+            Assert.DoesNotContain("ORIGINAL 2021",q.Prompt);
+            Assert.Equal(14,q.Parameters["a"]);
+            Assert.Equal(8,q.Parameters["b"]);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters)));
+        });
+    }
+
+    [Fact]
     public void AllFamiliesGenerateDistinctRealPracticeQuestions()
     {
         var engine=new ExactSkillContractQuestionEngine();
