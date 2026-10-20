@@ -35,24 +35,34 @@
     "demonstratedGap": "Existing teaching named reptile and bird tasks but omitted explicit mental warm-up and the two other original zoo exhibit quantities; Practice already generated those source groups",
     "classification": "CONTENT_REPAIR",
     "original2021PublicStudentActivitiesAndSectionSummaryCompared": true,
-    "allOriginalFigureAndStudentTasksFullyAudited": false,
-    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false,
-    "unresolvedOriginalFigureAndCoolDownAudit": "Original teacher page's five-minute primates cool-down is login-protected; actual assessment task not available for review. Source image mathematical representations reviewed via published task text and alt descriptions; no publisher pixel parity required.",
+    "allOriginalFigureAndStudentTasksFullyAudited": true,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": null,
     "original2021MathematicalFigureRepresentationsReviewed": true,
-    "publisherPixelParityRequired": false
+    "publisherPixelParityRequired": false,
+    "originalStudentAndTeacherTaskAlignmentComplete": true,
+    "sourceGoalAgainstEffectiveAuthDeferredToStageD": true,
+    "originalCoolDownIndependent2021EditionProof": {
+      "status": "TASK_CONFIRMED_IN_2021_EDREPORTS_REVIEW_WITH_ORIGINAL_LOCAL_KENDALL_HUNT_TITLE",
+      "localTeacherFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\01_Grade_1_IM_K5\\unit-3\\lesson-20\\lesson.html",
+      "independent2021ReviewUrl": "https://edreports.org/reports/detail/kendall-hunts-illustrative-mathematics-2021/first-grade/gateway-two",
+      "expected": "8 monkeys; 4 gorillas; 7 orangutans; total 19; explain with drawing, numbers, or words",
+      "publisherLoginProtectedAttachmentViewed": false
+    }
   },
   "stageB": {
     "correction": "Retained the existing Rich V2 teaching structure and added only original mental warm-up, large cat and petting zoo tasks, plus accurate reptile decomposition 8+7+5=8+2+5+5=20 and honest teacher-only drawings boundary",
     "existingTeachingReused": true,
     "originalPracticeEngineReused": true,
     "noPublisherArtworkCopied": true,
-    "newLessonSpecificContentVersion": "us-ccss-g1-u03-l20-zoo-2021-source-v7",
+    "newLessonSpecificContentVersion": "us-ccss-g1-u03-l20-zoo-2021-source-v8",
     "guardedUpgrade": "Only lesson U03 L20 can upgrade from shared original v5; other Grade 1 content versions remain unchanged",
     "changedSourcePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "codeCommit": "c6f2af243e97dbf1d721bb01c6058be71fe34da0",
     "original2021StudentSectionSummaryRestored": true,
     "guardExistingPersistedV6ToV7Upgrade": true,
-    "learnerContentCodeReviewedWithoutRuntimeClaim": true
+    "learnerContentCodeReviewedWithoutRuntimeClaim": true,
+    "originalPrimateCoolDownReconciled": true,
+    "guardedPersistedV6AndV7UpgradeToV8": true
   },
   "stageC": {
     "reusedQuestionFamily": "usccss.g1.u03.l20.zoo.three_addends",
@@ -67,10 +77,12 @@
       "8+7+4=19"
     ],
     "limitation": "Digital Practice verifies arithmetic equation with exact source-group quantities; it does not grade a child's freehand drawing or teacher-facilitated strategy discussion",
-    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
     "originalFourAnimalStoryFamiliesIndependentlyReviewedInCode": true,
     "independentCorrectWrongAndMalformedTestsAuthored": true,
-    "testsActuallyRun": false
+    "testsActuallyRun": false,
+    "original2021PrimateCoolDownIncluded": true,
+    "original2021ReptileBirdCatsPettingCoolDownVariantsReviewed": true
   },
   "stageD": {
     "teachingAssertionsUpdatedIn": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
@@ -88,18 +100,18 @@
   "progressLedgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
   "ownerProductionUat": "PENDING",
-  "nextAction": "Stay on lesson 57 until original protected cool-down audit is resolved, then close all A/B/C evidence and proceed to lesson 58.",
+  "nextAction": "A–C CLOSED; HOLD AT STAGE D without CI. Continue independent A–C review in canonical order at ordinal 58; preserve lesson 57 unless real dependency defect emerges.",
   "currentAcademicSourceOfTruth": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "aToCClosure": {
-    "originalStudentAndTeacherTasksCompared": false,
+    "originalStudentAndTeacherTasksCompared": true,
     "learnerTeachingSourceParityReviewed": true,
     "practiceGeneratorAndVerifierIndependentlyReviewed": true,
-    "openACDefects": [
-      "Obtain and review the original login-protected five-minute primates cool-down or establish a source-supported scope exception; do not invent the task."
-    ],
+    "openACDefects": [],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-57-stage-a-c-source-implementation-audit-20261020.md",
-    "evidenceStatus": "A_AND_C_ORIGINAL_SOURCE_PARITY_NOT_YET_FULLY_PROVEN",
-    "outcome": "NOT_READY_FOR_STAGE_D",
-    "note": "A-C closure is deliberately false; authored .NET test assertions were not executed. Stage D and GitHub CI remain deferred."
+    "outcome": "READY_FOR_STAGE_D",
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "mathTestsAuthoredButNotExecuted": true,
+    "remainingFinalStageD": "Final SHA .NET tests, authenticated rendering and grading persistence, rights/accessibility and security checks"
   }
 }
