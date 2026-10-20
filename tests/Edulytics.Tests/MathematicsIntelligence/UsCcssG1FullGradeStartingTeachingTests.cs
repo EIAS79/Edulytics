@@ -208,6 +208,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
                     :n==8?CommonCoreG1FullGradeStartingContentCorrections.UnitFourRepresentationsSourceContentVersion
                     :n==9?CommonCoreG1FullGradeStartingContentCorrections.UnitFourShowNumberSourceContentVersion
                     :n==10?CommonCoreG1FullGradeStartingContentCorrections.UnitFourWriteNumeralSourceContentVersion
+                    :n==11?CommonCoreG1FullGradeStartingContentCorrections.UnitFourAddTensSourceContentVersion
                     :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
@@ -252,6 +253,19 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("2 ones and 8 tens=82",unit4Text(10));
         Assert.Contains("Clare writes 702 for seventy-two",unit4Text(10));
         Assert.Contains("NUMBER=83 and EXPANDED=80+3",unit4Text(10));
+        Assert.Contains("60+23=83",unit4Text(11));
+        Assert.Contains("30+65=95",unit4Text(11));
+        Assert.Contains("EDULYTICS INDEPENDENT MISSING-DIGIT",unit4Text(11));
+        Assert.Contains("4□+20=65",unit4Text(11));
+        Assert.Contains("4□+20=75",unit4Text(11));
+        Assert.Contains("46+30=76",unit4Text(11));
+        Assert.Contains("visual source inspection",unit4Text(11));
+        var addTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L11");
+        Assert.Equal("us-ccss-g1-u04-l11-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourAddTensSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,addTens,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+
         Assert.Contains("7, 70, 17 and 71",unit4Text(10));
         var writeNumbers=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L10");
         Assert.Equal("us-ccss-g1-u04-l10-original-student-activities-v7",
