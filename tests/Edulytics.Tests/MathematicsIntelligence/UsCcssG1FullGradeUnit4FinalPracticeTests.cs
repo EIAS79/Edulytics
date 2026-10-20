@@ -128,6 +128,40 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
     }
 
     [Fact]
+    public void Lesson83SourceFourMentalTensExpressionsAreSeparatelyAndStrictlyVerified()
+    {
+        const string family="usccss.g1.u04.l18.center_count_compare_order";
+        foreach(var (mode,b,expected) in new[]{
+            (4,10,"RESULT=42"),
+            (5,20,"RESULT=52"),
+            (6,20,"RESULT=52"),
+            (7,20,"RESULT=12")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",32},{"b",b},{"c",0},{"mode",mode}};
+            Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+            Assert.Equal(expected,UsCcssG1FullGradeUnit4FinalQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"RESULT=99"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";EXTRA=1"));
+            p["a"]=33;
+            Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+            p["a"]=32;
+            p["b"]=b+10;
+            Assert.False(UsCcssG1FullGradeUnit4FinalQuestions.Valid(family,p));
+        }
+        var generated=Enumerable.Range(0,2000).Select(i=>
+            UsCcssG1FullGradeUnit4FinalQuestions.Build(family,new Random(i*47+19))).ToArray();
+        foreach(var mode in new[]{4,5,6,7})
+        {
+            var modeCases=generated.Where(q=>q.Parameters["mode"]==mode).ToArray();
+            Assert.True(modeCases.Length>100);
+            Assert.All(modeCases,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,UsCcssG1FullGradeUnit4FinalQuestions.Solve(family,q.Parameters))));
+        }
+    }
+
+    [Fact]
     public void ANonstandardRegroupingKeepsTheSameTwoDigitQuantity()
     {
         const string f="usccss.g1.u04.l19.regroup_one_ten";
