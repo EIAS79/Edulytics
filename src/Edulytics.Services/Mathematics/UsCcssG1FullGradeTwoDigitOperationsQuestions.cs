@@ -24,7 +24,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
-           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens))return false;
+           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens&&family!=CenterReview))return false;
         return family switch
         {
             AddTens=>mode<=3?
@@ -50,6 +50,9 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             CompareWords or CompareSymbols=>a>=20&&a<=99&&b>=20&&b<=99,
             CenterReview=>mode switch
             {
+                4=>a==70&&b==20,
+                5=>a==8&&b==7,
+                6=>a==9&&b==6,
                 0=>a>=11&&a<=17&&b>=1&&a+b<=20,
                 1=>a>=11&&a<=20&&b>=1&&b<=9&&b<a,
                 2=>a>=20&&a<=69&&b>=10&&b<=30&&b%10==0&&a+b<=99,
@@ -61,7 +64,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?13:4),a,b;
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -91,7 +94,10 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         }
         else
         {
-            if(mode==0){a=random.Next(11,18);b=random.Next(1,21-a);}
+            if(family==CenterReview&&mode==4){a=70;b=20;}
+            else if(family==CenterReview&&mode==5){a=8;b=7;}
+            else if(family==CenterReview&&mode==6){a=9;b=6;}
+            else if(mode==0){a=random.Next(11,18);b=random.Next(1,21-a);}
             else if(mode==1){a=random.Next(11,21);b=random.Next(1,10);}
             else if(mode==2){a=random.Next(20,70);b=random.Next(1,4)*10;}
             else {a=random.Next(1,10);b=random.Next(0,10);}
@@ -133,6 +139,9 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             },
             CenterReview=>mode switch
             {
+                4=>"SOURCE-ALIGNED CHECK IT OFF CENTER: Starting with 70 and 20, find the addition and subtraction results. Write ADD=number;SUBTRACT=number. Actual partner play needs teacher review.",
+                5=>"SOURCE-ALIGNED HOW CLOSE? CENTER: Select exactly three DISTINCT cards from the hand 8,4,1,7,5 to total 20. One valid selection uses 8,7,5. Write TOTAL=number;CARDS=8+7+5. Real center play needs teacher review.",
+                6=>"SOURCE-ALIGNED NUMBER TALK: Find 9+6 and 15-6; explain how the operations relate. Write ADD=number;SUBTRACT=number. Oral explanation needs teacher review.",
                 0=>$"Teacher-led center numeric portion: calculate {a}+{b} within 20. Write RESULT=number.",
                 1=>$"Teacher-led center numeric portion: calculate {a}-{b} within 20. Write RESULT=number.",
                 2=>$"Teacher-led place value center numeric portion: calculate {a}+{b}. Write RESULT=number.",
@@ -170,7 +179,13 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             TenMoreLess=>mode==3?
                 "PLUS=65;MINUS=25;RETURN=45":
                 $"RESULT={(mode==2?(a==67?a+30:a-30):mode==0?a+10:a-10)}",
-            CenterReview=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}",
+            CenterReview=>mode switch
+            {
+                4=>"ADD=90;SUBTRACT=50",
+                5=>"TOTAL=20;CARDS=8+7+5",
+                6=>"ADD=15;SUBTRACT=9",
+                _=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}"
+            }
             CompareWords=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
             CompareSymbols=>$"SYMBOL={(a>b?">":a<b?"<":"=")}",
             _=>throw new InvalidOperationException()
