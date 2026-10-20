@@ -10,6 +10,7 @@ public static class CommonCoreG1FullGradeFinalUnit4Corrections
 {
     public const string Version="us-ccss-g1-full-grade-u04-l16-l20-source-teaching-v1";
     public const string OriginalComparisonsVersion="us-ccss-g1-u04-l16-l18-original-activities-v2";
+    public const string OriginalLesson16SourceContentVersion="us-ccss-g1-u04-l16-original-student-activities-v3";
     private static bool IsOriginalComparisonLesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U04:L16" or
         "PED:US-CCSS-MATH:G1:U04:L17" or
@@ -21,7 +22,7 @@ public static class CommonCoreG1FullGradeFinalUnit4Corrections
         new(@"PED:US-CCSS-MATH:G1:U04:L16",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-16/preparation.html",@"d764f755ec9e673edcc52916b619fd43ce29871330e55b616c82235b7ec33121",[@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
             @"Write Comparisons with Symbols PLC Activity",
             @"Compare two-digit numbers and WRITE true statements with >, < or =. In the teacher-led PLC discussion, explain the place-value reasoning used to choose a symbol.",
-            @"Example 1: The digits 8 and 5 can form 85 and 58; 85 > 58 because eight tens are more than five tens. Example 2: 42 < 47 because they have equal tens but 2 ones is fewer than 7. Example 3: 63 = 63. Original 2021 warm-up: 49>45 and 45<49 express the SAME comparison with reversed sides. Original symbol blanks: 56>26; 72<78; 6<55; 92>29; 23=23. Original open-ended number boxes require any true choices (e.g. □>78, 39<□, 13=□), not just one preselected answer.",
+            @"Example 1: The digits 8 and 5 can form 85 and 58; 85 > 58 because eight tens are more than five tens. Example 2: 42 < 47 because they have equal tens but 2 ones is fewer than 7. Example 3: 63 = 63. Original 2021 warm-up: 49>45 and 45<49 express the SAME comparison with reversed sides. Original symbol blanks: 56>26; 72<78; 6<55; 92>29; 23=23. Original source number boxes: □>78 accepts ANY two-digit 79 to 99; 39<□ accepts ANY two-digit 40 to 99; 13=□ requires exactly 13; □<□ and □>□ each accept MANY ordered pairs of two-digit numbers. Do not reduce student-choice comparisons to one preselected answer.",
             @"Step 1: Model or identify the tens and ones in each number. Step 2: Compare tens first and then ones if tied. Step 3: Choose and WRITE >, < or =. Step 4: Explain why the statement is true. Step 5: In the original Greatest of Them All classroom game, place drawn digits into a two-digit number without moving a previously placed digit; compare both numbers and award the partner point according to the teacher-led rules.",
             @"Do not compare only the ones digits or reverse the symbol. Rotating a card does not change its place value; 85 is greater than 58.",
             @"I can write true comparisons using two-digit place value and symbols."),
@@ -85,12 +86,13 @@ public static class CommonCoreG1FullGradeFinalUnit4Corrections
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)
-            ?(IsOriginalComparisonLesson(lesson.LessonCode)?OriginalComparisonsVersion:Version)
+            ?(lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L16"?OriginalLesson16SourceContentVersion:IsOriginalComparisonLesson(lesson.LessonCode)?OriginalComparisonsVersion:Version)
             :previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
-         (IsOriginalComparisonLesson(lesson.LessonCode)&&previous==Version));
+         (IsOriginalComparisonLesson(lesson.LessonCode)&&previous==Version)||
+         (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L16"&&previous==OriginalComparisonsVersion));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
