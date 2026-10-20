@@ -80,6 +80,10 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("digit subtractor 0–9",text(23));
         Assert.Contains("17-4=13",text(23));
         Assert.Contains("19-0=19",text(23));
+        Assert.Contains("EDULYTICS ORIGINAL COOL-DOWN",text(23));
+        Assert.Contains("You have 14 counters. Remove 8",text(23));
+        Assert.Contains("independently authored, not a reconstruction",text(23));
+        Assert.Contains("two stages TO10 and REST",text(23));
         var zoo=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L20");
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,zoo,CommonCoreG1FullGradeStartingContentCorrections.Version));
@@ -100,7 +104,9 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         var useTen=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L23");
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,useTen,"us-ccss-g1-u03-l23-ten-2021-source-v6"));
-        Assert.Equal("us-ccss-g1-u03-l23-ten-2021-source-v7",
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,useTen,"us-ccss-g1-u03-l23-ten-2021-source-v7"));
+        Assert.Equal("us-ccss-g1-u03-l23-ten-2021-source-v8",
             CommonCoreG1FullGradeStartingContentCorrections.TenSubtractSourceContentVersion);
         Assert.Equal("us-ccss-g1-u03-l20-zoo-2021-source-v8",
             CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion);
