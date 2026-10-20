@@ -16,6 +16,25 @@ Run `node tools/curriculum/us-ccss-g1-a-to-c-status.cjs --summary` and retain it
 
 The only affirmative `READY_FOR_STAGE_D` classification is a lesson-specific `aToCClosure` with original teacher/student task comparison, actual first-party learner teaching parity review, independently reviewed question generator/verifier, **no open A–C defects**, and a real evidence reference. Contradictory source/Practice gap fields reject closure. Record actual source and code proof before changing those fields; never set them in bulk or infer child classroom participation. Preserve the 50 published lessons, six previously accepted new lessons and existing content repairs. Use `A_C_EXPLICIT_GAP` for documented unfinished source/Practice review and `A_C_WORK_RECORDED_CLOSURE_UNPROVEN` where existing work still needs evidential closure. This accounting never triggers CI or authorizes publication by itself.
 
+**Owner-requested ten-lesson A–C handoff report (without CI):** Run
+`node tools/curriculum/us-ccss-g1-a-to-c-status.cjs --range=57-66` for ordered
+lesson-level A/B/C evidence, source lesson IDs and exact next action; use
+`--range=57-66 --summary` for counts. The report derives from the **existing**
+per-lesson `lesson-N-v2-stage-a-d-checkpoint.json`, progress ledger and evidence
+matrix. It does not add an approval register or automatically change lesson
+statuses. The checkpoint's existing `aToCClosure` must explicitly record
+`originalStudentAndTeacherTasksCompared`,
+`learnerTeachingSourceParityReviewed`,
+`practiceGeneratorAndVerifierIndependentlyReviewed`,
+`openACDefects: []`, and a genuine `evidenceReference` before the result
+can be `READY_FOR_STAGE_D`. The report exposes separately whether Stage A,
+B and C review proof is on file, or whether a gap/absence remains. An A–C
+READY result means **stop at the entrance to D**; it does not run tests, trigger
+GitHub CI, grant academic acceptance, merge, or publish. A lesson already
+closed with valid proof should be reused, not reopened solely because a new
+execution session started; reopen only for a verified source/code/dependency
+change affecting that proof.
+
 ## Whole-grade execution, not five-by-five
 
 Treat `node tools/curriculum/us-ccss-full-grade-worklist.cjs` as the **single Grade 1 scope** containing every ordinal **51–146 (96)**. It must never be partitioned into execution batches of five, ten, twenty, thirty, etc. `--remaining` lists every lesson currently lacking academic evidence (the current live ledger, not this SOP, controls which ordinals remain), and **`--new` reports only records still marked unstarted in the ledger and does not authorize reauthoring candidates already present in code**. There is no size cap. Continue source-and-test work on 51–80; do not rewrite or discard their existing changes. The worklist does not manufacture course content or publish anything; it prevents scope truncation.
