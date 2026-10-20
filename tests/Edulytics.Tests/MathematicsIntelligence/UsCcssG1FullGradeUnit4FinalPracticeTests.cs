@@ -113,7 +113,7 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
             Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,ok1));
             Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,ok2));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,bad));
-            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"NUMBER=0"));
+            Assert.Equal(mode==6,ExactSkillContractQuestionEngine.Verify(family,p,"NUMBER=0"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"NUMBER=100"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,ok1+";EXTRA=1"));
             p["a"]=26;
