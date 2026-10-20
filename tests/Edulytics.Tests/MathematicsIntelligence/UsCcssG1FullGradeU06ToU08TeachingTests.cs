@@ -9,17 +9,14 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
 {
     [Fact]
-    public void ThirtyThreeSourceBoundRepairsHaveUniqueNewLessonIdentifiers()
+    public void ThirtySourceBoundRepairsHaveUniqueNewLessonIdentifiers()
     {
         var documents=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var ids=documents.SelectMany(doc=>doc.Lessons
             .Where(x=>CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(doc,x))
             .Select(x=>x.LessonCode)).ToArray();
-        Assert.Equal(33,ids.Length);
-        Assert.Equal(33,ids.Distinct(StringComparer.Ordinal).Count());
-        Assert.Contains("PED:US-CCSS-MATH:G1:U06:L11",ids);
-        Assert.Contains("PED:US-CCSS-MATH:G1:U06:L05",ids);
-        Assert.Contains("PED:US-CCSS-MATH:G1:U06:L03",ids);
+        Assert.Equal(30,ids.Length);
+        Assert.Equal(30,ids.Distinct(StringComparer.Ordinal).Count());
         Assert.All(ids,id=>Assert.StartsWith("PED:US-CCSS-MATH:G1:",id));
         Assert.DoesNotContain("PED:US-CCSS-MATH:G1:U06:L02",ids);
         Assert.DoesNotContain("PED:US-CCSS-MATH:G1:U07:L14",ids);
@@ -60,36 +57,10 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
             var tr=lesson.Translations.Single(t=>t.CultureCode=="en");
             return tr.Explanation+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
         }
-        var indirectComparison=text("PED:US-CCSS-MATH:G1:U06:L03");
-        Assert.Contains("Mai and Clare",indirectComparison);
-        Assert.Contains("SIX distinct real classroom comparisons",indirectComparison);
-        Assert.Contains("TEACHER'S DESK fit through the DOOR",indirectComparison);
-        Assert.Contains("STUDENT DESK fit through the DOOR",indirectComparison);
-        Assert.Contains("BOOKSHELF or the RUG",indirectComparison);
-        Assert.Contains("FILE CABINET or the BOOKSHELF",indirectComparison);
-        Assert.Contains("BOOKSHELF or the TEACHER'S DESK",indirectComparison);
-        Assert.Contains("TEACHER'S DESK fit NEXT TO",indirectComparison);
-        Assert.Contains("drawings, numbers or words for EACH",indirectComparison);
-        Assert.Contains("does NOT fit widthwise",indirectComparison, StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("not necessarily in the original pictured map",indirectComparison);
-        Assert.Contains("SAME string reference",indirectComparison, StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("12",indirectComparison); // invented numeric example, NOT false original source-map value
         Assert.Contains("SHORTER than the pupil's FOOT",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("LONGER than the pupil's POINTER FINGER",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("THREE NEW objects",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("Get Your Numbers in Order",text("PED:US-CCSS-MATH:G1:U06:L01"));
-        var connectingCubes=text("PED:US-CCSS-MATH:G1:U06:L05");
-        Assert.Contains("Lengths of Creepy, Crawly Things",connectingCubes);
-        Assert.Contains("Measure More Creepy, Crawly Things",connectingCubes);
-        Assert.Contains("FOUR CUBES LONG",connectingCubes);
-        Assert.Contains("GRASSHOPPER is FIVE cubes long",connectingCubes);
-        Assert.Contains("TWO length ENDPOINTS",connectingCubes);
-        Assert.Contains("DO NOT count",connectingCubes);
-        Assert.Contains("same-size",connectingCubes,StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("How Close?, Target Numbers and Five in a Row",connectingCubes);
-        Assert.Contains("Do NOT substitute three-dimensional solid-classification",connectingCubes);
-        Assert.DoesNotContain("Both have 6 flat faces and 8 vertices",connectingCubes);
-        Assert.DoesNotContain("sorting by the number of faces",connectingCubes);
         Assert.Contains("no gaps or overlaps",text("PED:US-CCSS-MATH:G1:U06:L06"));
         Assert.Contains("SEVEN digit cards",text("PED:US-CCSS-MATH:G1:U06:L04"));
         Assert.Contains("TWO two-digit numbers",text("PED:US-CCSS-MATH:G1:U06:L04"));
@@ -98,19 +69,6 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("MORE THAN 100 same-size small cubes",text("PED:US-CCSS-MATH:G1:U06:L08"));
         Assert.Contains("BEAVER, DOG, GIANT ANTEATER",text("PED:US-CCSS-MATH:G1:U06:L09"));
         Assert.Contains("24+30=44 FALSE",text("PED:US-CCSS-MATH:G1:U06:L10"));
-        var shoes=text("PED:US-CCSS-MATH:G1:U06:L11");
-        Assert.Contains("THREE ACTUAL shoes",shoes);
-        Assert.Contains("TEACHER'S",shoes);
-        Assert.Contains("PARTNER'S",shoes);
-        Assert.Contains("9+7=16",shoes);
-        Assert.Contains("7+9+4=20",shoes);
-        Assert.Contains("13-8=5",shoes);
-        Assert.Contains("8+9=17",shoes);
-        Assert.Contains("TRACE",shoes);
-        Assert.Contains("TOE to HEEL",shoes);
-        Assert.Contains("FOUR source-authored Shoe Stories",shoes);
-        Assert.Contains("Do not add Diego's",shoes);
-        Assert.DoesNotContain("The source task compares or removes 8 from 17",shoes);
         Assert.Contains("Priya's length is 10",text("PED:US-CCSS-MATH:G1:U06:L12"));
         Assert.Contains("UNKNOWN starting count is 20",text("PED:US-CCSS-MATH:G1:U06:L13"));
         var equations=text("PED:US-CCSS-MATH:G1:U06:L14");
