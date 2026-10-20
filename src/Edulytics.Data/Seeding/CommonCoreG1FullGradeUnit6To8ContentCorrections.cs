@@ -15,6 +15,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
     public const string Unit6OriginalSourceVersion="us-ccss-g1-u06-original-student-source-activities-v2";
     public const string Unit6Lesson4Stage3SourceVersion="us-ccss-g1-u06-l04-how-close-stage3-source-v3";
     public const string Unit6Lesson6MeasurementSourceVersion="us-ccss-g1-u06-l06-paperclip-source-activity-v3";
+    public const string Unit6Lesson7ThreeUnitsSourceVersion="us-ccss-g1-u06-l07-three-unit-measurement-v3";
     public const string Unit7Unit8OriginalSourceVersion="us-ccss-g1-u07-u08-original-student-source-activities-v2";
     private static bool IsReviewedUnit7Unit8Lesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U07:L01" or "PED:US-CCSS-MATH:G1:U07:L03" or
@@ -54,10 +55,10 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
             @"I can measure an object accurately with repeated identical paper clips."),
         new(@"PED:US-CCSS-MATH:G1:U06:L07",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-7/preparation.html",@"f7456562f66997352ad3572adcfa3f9f579d7f1d8e07c82e52925a3ae523fc3d",[@"CCSS:1.MD.A.2"],
             @"Measure Length with Different Length Units",
-            @"Original 2021 learners measure Jeison's foot using THREE selected unit types among connecting cubes, small cubes, small paper clips and large paper clips. They critique Andre, Jada, Clare and Kiran measurements of the teacher's shoe based on the ACTUAL source drawings. Measure the SAME length using different uniform units; counts vary with unit length, and original diagram judgments remain subject to verified visual evidence.",
-            @"Example 1: A strip measures 6 short blocks but 3 double-length blocks; the strip did not change. Example 2: 4 equal paper clips may cover the same length as 8 half-length units.",
-            @"Step 1: Measure an object with repeated equal small units. Step 2: Repeat with a different unit length. Step 3: Record both numbers AND unit names. Step 4: Compare how unit size affects the count.",
-            @"Do not conclude that the object became longer merely because the count using smaller units increased.",
+            @"Original 2021 learners measure Jeison's foot using THREE selected unit types among connecting cubes, small cubes, small paper clips and large paper clips. For the ORIGINAL class task choose and USE THREE different units, each internally equal in size; record three observed counts and the NAME of every unit, then compare each count for exactly the same foot outline. Learners also critique Andre, Jada, Clare and Kiran measurements of the teacher's shoe based on the ACTUAL source drawings. Check each depicted start, endpoint, gap, overlap and unit length before deciding whether a classmate's method is valid. The first-party digital three-unit mathematical model uses a hypothetical 6- or 12-unit strip, not the true physical lengths of Jeison's foot or the original classmate figures. Diagram judgments and physical measurements require verified teacher observation.",
+            @"Example 1: A strip measures 6 short blocks but 3 double-length blocks; the strip did not change. Example 2: 4 equal paper clips may cover the same length as 8 half-length units. Example 3 (FIRST-PARTY THREE-UNIT MODEL, not an original source measurement): one strip of length 12 unit blocks is covered by 12 one-block units, or 6 two-block units, or 4 three-block units. All THREE descriptions cover the SAME length, 12 unit blocks; smaller units give a larger count.",
+            @"Step 1: Trace the same physical Jeison-foot outline and choose THREE different measuring unit types from the original source choices. Step 2: For the FIRST unit, align ends, use identical copies and record the observed count and unit name. Step 3: Measure the SAME outline again with the SECOND size, then again with the THIRD size; never mix unit lengths within one count. Step 4: Record all THREE counts together with THREE unit names, rather than reporting only two. Step 5: Compare why equal physical length may produce different numbers. Step 6: Examine the original Andre, Jada, Clare and Kiran shoe diagrams with the teacher before judging their measurements; digital Practice validates only first-party mathematical models.",
+            @"Do not conclude that the object became longer merely because the count using smaller units increased. Do not replace the source requirement of THREE different real measuring tools with a single unit-size conversion. Do not guess individual students' original diagram verdicts without inspecting the drawings.",
             @"I can explain how choice of length unit changes the number in a measurement."),
         new(@"PED:US-CCSS-MATH:G1:U06:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-8/preparation.html",@"b625fea9b79d9f98966d0d0859def6ac325d9cf01a6637900d006f2b226018ec",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.A.1"],
             @"Groups Up to 110 PLC Activity",
@@ -279,6 +280,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
         IsTarget(doc,lesson)?
             (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"?Unit6Lesson4Stage3SourceVersion:
              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"?Unit6Lesson6MeasurementSourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07"?Unit6Lesson7ThreeUnitsSourceVersion:
              IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:
              IsReviewedUnit7Unit8Lesson(lesson.LessonCode)?Unit7Unit8OriginalSourceVersion:
              Version):previous;
@@ -288,7 +290,8 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
          ((IsReviewedUnit6Lesson(lesson.LessonCode)||IsReviewedUnit7Unit8Lesson(lesson.LessonCode))&&previous==Version)||
          ((lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"||
-           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06")&&previous==Unit6OriginalSourceVersion));
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"||
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07")&&previous==Unit6OriginalSourceVersion));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
