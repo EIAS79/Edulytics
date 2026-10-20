@@ -52,7 +52,30 @@
     "multipleValidOpenAnswersNotConstrainedToSingleSolverValue": true,
     "implementationCommit": "207d7a0c6e2f0c7ced419ac560ef42cae2e78458",
     "authoredWrongAnswerTestsCommit": "fcee38c3091446dc4acb92fb6b381b4c0807522e",
-    "testsAuthoredButNotExecuted": true
+    "testsAuthoredButNotExecuted": true,
+    "original2021PublicMathModes": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "independentEdulyticsFormativeExit": {
+      "mode": 14,
+      "problem": "Compare 63 and 36 by tens",
+      "answer": "SYMBOL=>;TENS_LEFT=6;TENS_RIGHT=3",
+      "source": "FIRST_PARTY_NOT_PROTECTED_PUBLISHER_COOLDOWN",
+      "implementationCommit": "5e6c8ba4cbbd853c8665f9671a9f0a847ff2cd50",
+      "authoredTestsCommit": "c532b6f242a321f52f12ee0cb9163c4368af7bde",
+      "testsExecuted": false
+    },
+    "testsExecuted": false,
+    "authoringStatus": "READY_FOR_STAGE_D"
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -65,22 +88,22 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Math/source teaching and flexible grading repaired; original publisher protected Cool-down requires specific decision/evidence before READY_FOR_STAGE_D. Continue ordinal82; no CI/Stage D now.",
+  "nextAction": "Continue canonical ordinal82; no CI, Stage D, approval or deployment until grade content freeze.",
   "aToCClosure": {
-    "outcome": "A_C_EXPLICIT_GAP",
-    "originalStudentAndTeacherTasksCompared": false,
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
     "allAvailableOriginalStudentTeacherTasksCompared": true,
     "learnerTeachingSourceParityReviewed": true,
     "practiceGeneratorAndVerifierIndependentlyReviewed": true,
     "originalProtectedPublisherAssessmentVerified": false,
     "originalPublisherAssessmentNotReproduced": true,
-    "openACDefects": [
-      "Protected original publisher five-minute Make Comparison Statements Cool-down inaccessible; no explicit lesson-81 owner-approved independent replacement assessment documented"
-    ],
+    "openACDefects": [],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-81-stage-a-c-source-implementation-audit-20261020.md",
     "ciExecutedDuringAuthoring": false,
     "stageDExecuted": false,
     "testsAuthoredButNotExecuted": true,
-    "seedRegressionRequiredAtFrozenCandidate": true
+    "seedRegressionRequiredAtFrozenCandidate": true,
+    "protectedOriginalCoolDownAccessible": false,
+    "sourceBoundary": "Original 2021 accessible ten math prompts are faithfully represented and original physical center is teacher-assessed; independent Edulytics formative of same skill is NOT the publisher 5-minute Cool-down."
   }
 }
