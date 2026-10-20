@@ -77,18 +77,17 @@ test('all source-authored original Grade 1 goals are represented in existing rel
     assert.equal(original.assessingMode,mapping.assessmentMode);
     assert.equal(typeof mapping.teacherOnlyRubric,'string');
     assert.match(mapping.teacherOnlyRubric,
-      new RegExp('^lesson-'+ordinal+'-[a-z0-9-]+-rubric\\.json
-    assert.equal(evidence.internalEvidenceBasedAcademicAcceptance,
-      ordinal>=57?false:evidence.internalEvidenceBasedAcademicAcceptance);
-  }
-});
-));
+      /^lesson-\d+-[a-z0-9-]+-rubric\.json$/);
+    assert.ok(mapping.teacherOnlyRubric.startsWith('lesson-'+ordinal+'-'));
     const rubric=read(root+mapping.teacherOnlyRubric);
     assert.equal(rubric.lessonOrdinal,ordinal);
     assert.equal(rubric.lessonCode,mapping.lessonCode);
+    assert.ok(Array.isArray(rubric.teacherRubric));
     assert.ok(rubric.teacherRubric.some(z=>z.criterion==='Authorship'||
-       z.criterion==='Two original questions'));
-    assert.equal(evidence.internalEvidenceBasedAcademicAcceptance,
-      ordinal>=57?false:evidence.internalEvidenceBasedAcademicAcceptance);
+      z.criterion==='Two original questions'));
+    assert.ok(rubric.teacherRubric.some(z=>z.criterion==='Math accuracy'||
+      z.criterion==='Math and answer'||z.criterion==='Solution and consistency'));
+    assert.notEqual(rubric.academicAcceptance,'INTERNALLY_ACCEPTED');
+    assert.equal(evidence.internalEvidenceBasedAcademicAcceptance,false);
   }
 });
