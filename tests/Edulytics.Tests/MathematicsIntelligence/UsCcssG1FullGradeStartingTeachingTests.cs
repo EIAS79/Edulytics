@@ -386,10 +386,14 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         foreach(var intermediate in new[]{"67+10+10=87","67+10+10+10=97","99-10=89","99-10-10=79"})
             Assert.Contains(intermediate,unit4Text(12));
         var mentalTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L12");
-        Assert.Equal("us-ccss-g1-u04-l12-original-student-activities-v7",
+        Assert.Equal("us-ccss-g1-u04-l12-original-student-activities-v8",
             CommonCoreG1FullGradeStartingContentCorrections.UnitFourTenMoreLessSourceContentVersion);
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,mentalTens,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,mentalTens,"us-ccss-g1-u04-l12-original-student-activities-v7"));
+        Assert.Contains("teacher supervises real gameplay.\nOriginal teacher lesson synthesis:",unit4Text(12));
+        Assert.DoesNotContain(@"gameplay.\nOriginal",unit4Text(12));
         Assert.Contains("Write Numbers Stage 2 center",unit4Text(12));
         Assert.Contains("8+7+5=20",unit4Text(13));
         foreach(var sourceCenter in new[]{"Grab and Count (Stage 2)","Five in a Row (Stages 1-4)","Check It Off (Stages 1-3)","How Close? (Stages 1-2)","Number Puzzles (Stages 1-2)","Shake and Spill (Stages 3-5)"})
