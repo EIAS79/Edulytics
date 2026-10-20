@@ -46,6 +46,8 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string UnitFourAddTensSourceContentVersion="us-ccss-g1-u04-l11-original-student-activities-v8";
     private const string UnitFourTenMoreLessLessonCode="PED:US-CCSS-MATH:G1:U04:L12";
     public const string UnitFourTenMoreLessSourceContentVersion="us-ccss-g1-u04-l12-original-student-activities-v7";
+    private const string UnitFourCenterDayTwoLessonCode="PED:US-CCSS-MATH:G1:U04:L13";
+    public const string UnitFourCenterDayTwoSourceContentVersion="us-ccss-g1-u04-l13-original-student-activities-v7";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
             .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
@@ -576,7 +578,9 @@ Step 5: Explain mentally why the number is ten more or ten less.",
 Example 2: 17-9=8 using a ten-frame or a known fact.
 Example 3: 43+20=63 because four tens plus two tens makes six tens, and three ones remain.
 Example 4: Four tens and six ones represent 46 objects.
-Original 2021 number talk: 10+4=14, 9+4=13, 9+6=15 and 15-6=9.
+Original 2021 mental Number Talk: 10+4=14, 9+4=13, 9+6=15 and 15-6=9. For 9+6, bridge to ten using 9+1+5, then relate 15-6 to the same fact family.
+Original 2021 Activity 1 center choice menu: Grab and Count (Stage 2), Five in a Row (Stages 1-4), or Check It Off (Stages 1-3). Both partners choose a previously taught center, play with real materials, and may switch centers.
+Original 2021 Activity 2 center choice menu: How Close? (Stages 1-2), Number Puzzles (Stages 1-2), or Shake and Spill (Stages 3-5). These are different physical/partner center activities, NOT all copies of the same numeric test.
 Original 2021 Check It Off center: 70 and 20 produce 90 by addition or 50 by subtraction.
 Original 2021 How Close? source hand 8, 4, 1, 7, 5 can select THREE cards 8+7+5=20, precisely reaching the target. Real center selection and peer gameplay remain teacher-led.",
             @"Step 1: Read the selected center's actual task and quantity representation.
@@ -683,6 +687,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
             UnitFourWriteNumeralLessonCode=>UnitFourWriteNumeralSourceContentVersion,
             UnitFourAddTensLessonCode=>UnitFourAddTensSourceContentVersion,
             UnitFourTenMoreLessLessonCode=>UnitFourTenMoreLessSourceContentVersion,
+            UnitFourCenterDayTwoLessonCode=>UnitFourCenterDayTwoSourceContentVersion,
             var l when UnitFourLaterLessonCodes.Contains(l)=>UnitFourLaterSourceContentVersion,
                 _=>Version
             })
@@ -710,6 +715,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourWriteNumeralLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourAddTensLessonCode&&(previous==UnitFourLaterSourceContentVersion||previous=="us-ccss-g1-u04-l11-original-student-activities-v7"))||
          (lesson.LessonCode==UnitFourTenMoreLessLessonCode&&previous==UnitFourLaterSourceContentVersion)||
+         (lesson.LessonCode==UnitFourCenterDayTwoLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
