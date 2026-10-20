@@ -4223,11 +4223,11 @@
         "Student Facing [visual] [visual]",
         "Student Facing Choose a center. Compare [visual] [visual] <div class=\"im-c-modal__content im-c-c"
       ],
-      "sourceRequiredTaskInterpretation": "Original 2021 Show Me All the Ways asks each learner to choose their favorite two-digit number, independently represent it in several valid ways with tens/ones and expanded expressions, and explain the drawings during a gallery walk.",
+      "sourceRequiredTaskInterpretation": "Choose a favorite number BETWEEN 20 AND 100 and independently AUTHOR a page for the class number book, showing multiple representations (drawings, words, tens/ones) and AT LEAST THREE distinct correct expressions; teacher-organized gallery walk follows.",
       "currentDigitalOrTeacherContentCandidate": "Original source family tests one ten-rod exchange (modes0-1), two ten-rod exchanges into 20 more ones (mode2), and total number of distinct whole-ten exchanges including zero rods (mode3), with independent correct/incorrect math tests.",
-      "remainingAcademicTaskParityWork": "The math engine does not prove the learner chose their favorite number, drew multiple genuine pictures, or participated in a classroom gallery walk. Match all original source Student Facing and teacher tasks with actual authenticated learner instructions and assess physical/creative work through teacher readiness, without child-work claims.",
+      "remainingAcademicTaskParityWork": "Check the original authored class-number-book instruction actually appears in authenticated learner Rich V2 at frozen SHA; verify three distinct true expressions for the SAME chosen number and a legitimate teacher rubric. Numeric generated place-value Practice checks only one subskill; original student page, drawings, physical tens and classroom gallery cannot be inferred.",
       "candidateDigitalFamily": "usccss.g1.u08.l08.same_number_tens_ones",
-      "assessingMode": "DIGITAL_PRACTICE",
+      "assessingMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
       "sourcePublisherArtworkFullyReviewed": false,
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
@@ -4253,6 +4253,16 @@
         "executedCiDuringAuthoring": false,
         "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
         "awaiting": "Review original graphics and authenticated learner tasks where applicable, prove original A-D for each lesson, verify independent correctness/graded persistence and protected final frozen-grade SHA"
+      },
+      "authoredNumberBookReview20261020": {
+        "fullTeacherSourceSHA256": "1891443191e0f5a8299cccdf5ce15b86cacd55f13707c3b4c5bb0118c63a5809",
+        "readOnlySourceFullTeacherShaMatched": true,
+        "sourceTeacherAction": "Original 2021 Activity 1 Represent Our Favorite Numbers: independent first-party class book page with AT LEAST THREE expressions for the same chosen 20–100 number",
+        "teacherRubric": "lesson-144-original-class-number-book-authorship-rubric.json",
+        "numericPracticePartial": true,
+        "sourcePublisherFigureRights": "PENDING",
+        "authenticatedStudentAuthoringTask": "PENDING",
+        "academicAcceptance": "NOT_CLAIMED"
       }
     },
     {
@@ -4400,8 +4410,8 @@
     "practiceFamilyAndAssessmentMapIndexedRows": 90,
     "identityReconciliation": "90/90 source risk register, original student task inventory, practice candidate map and progress lesson codes match; refer to existing source identities rather than duplicating authoritative records",
     "assessmentModes": {
-      "DIGITAL_PRACTICE": 81,
-      "DIGITAL_AND_SOURCE_AUTHORED_TASK": 8,
+      "DIGITAL_PRACTICE": 80,
+      "DIGITAL_AND_SOURCE_AUTHORED_TASK": 9,
       "SOURCE_AUTHORED_TASK": 1
     },
     "notYetProven": "90/90 source indexes are reusable Stage A INPUT, not evidence that all 90 full original teacher and student tasks have been read or verified against current effective learner content. Re-review original activity where excerpt-level only; validate exact Rich V2 and Practice source parity before any READY status.",
@@ -4451,6 +4461,6 @@
       "acceptedByInspectionCount": 0,
       "note": "Stage A source-text and hash resumption only; not 29 completed original V1 A-D reviews, not student-mirror diagram/figure rights clearance, not actual learner rendering/Practice CI. Existing candidate and former source-task triage retained without duplication."
     },
-    "authoredTaskClassificationCorrection20261020": "Ordinal 142 source How Many Rides? requires TWO authored and solved pupil questions plus numeric practice; previous DIGITAL_PRACTICE-only categorization omitted this release criterion."
+    "authoredTaskClassificationCorrection20261020": "Ordinal 142 source How Many Rides? requires TWO authored and solved pupil questions plus numeric practice; previous DIGITAL_PRACTICE-only categorization omitted this release criterion. Also ordinal 144 original class number book page requires independent authored representation and at least THREE distinct expressions; numeric-only categorization corrected."
   }
 }
