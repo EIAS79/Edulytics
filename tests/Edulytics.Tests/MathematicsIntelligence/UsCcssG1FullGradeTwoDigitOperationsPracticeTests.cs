@@ -344,6 +344,42 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
+    public void Lesson80OriginalFiveTruthStatementsAndSmallTensPairHaveStrictIndependentOracles()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.CompareSymbols;
+        foreach(var (mode,a,b,answer) in new[]{
+            (7,17,47,"TRUE=YES;CORRECT=17<47"),
+            (8,58,53,"TRUE=NO;CORRECT=58>53"),
+            (9,45,63,"TRUE=NO;CORRECT=45<63"),
+            (10,39,93,"TRUE=YES;CORRECT=39<93"),
+            (11,4,46,"TRUE=NO;CORRECT=4<46"),
+            (12,21,12,"SYMBOL=>")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode},{"unused",0}};
+            Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            Assert.Equal(answer,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,answer+";EXTRA=1"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"TRUE=YES;CORRECT=58=53"));
+            p["a"]=a+1;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            p["a"]=a;
+            p["b"]=b+1;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        }
+        var generated=Enumerable.Range(0,2600).Select(i=>
+            UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*31+13))).ToArray();
+        foreach(var mode in new[]{7,8,9,10,11,12})
+        {
+            var matching=generated.Where(q=>q.Parameters["mode"]==mode).ToArray();
+            Assert.True(matching.Length>90);
+            Assert.All(matching,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,q.Parameters,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,q.Parameters))));
+        }
+    }
+
+    [Fact]
     public void WordComparisonPrecedesOfficialSymbols()
     {
         var p=new Dictionary<string,int>{{"a",64},{"b",57},{"mode",1},{"unused",0}};
