@@ -46,7 +46,11 @@
     "contentCommit": "c558681ccc3c6f0542a268891892961fac5df49d",
     "repair": "Explicit without-going-over rule, seven-card/four-card non-reuse instructions and first-party illustrative seven-card 51+49=100 solution, correct teacher-facilitated boundaries.",
     "publisherGraphics": "NOT_COPIED",
-    "effectiveAuthenticatedLearnerDisplay": "PENDING_FROZEN_HEAD"
+    "effectiveAuthenticatedLearnerDisplay": "PENDING_FROZEN_HEAD",
+    "newSourceScopedContentVersion": "us-ccss-g1-u06-l04-how-close-stage3-source-v3",
+    "sourceScopedContentUpgradeCommit": "0534a29b912c24cd95ba43b6a59b6447b7209ade",
+    "legacyUnit6VersionPreserved": true,
+    "unrelatedUnit6LessonsContentVersionUnchanged": true
   },
   "stageC": {
     "existingPracticeFamily": "usccss.g1.u06.l04.center_add_compare",
@@ -67,7 +71,8 @@
     "exactEngineRouteCommit": "d9db480dfbe5a69ba430cd296437f196d8e04e27",
     "practiceContractCommit": "6823c1e0985371504d57a00d5e0c4ebab58e03e2",
     "routingSemantics": "Source v2 and historical family coexist in L04 allowlist. New sessions can choose source-goal family; old family remains verifiable without changing its parameters, seeded output or ID.",
-    "integrationStatus": "CODE_WRITTEN_UNTESTED"
+    "integrationStatus": "CODE_WRITTEN_UNTESTED",
+    "sourceGoalMathTestCommit": "271aba3dadecb0a9ec0c4d82ca148fee73aed1c0"
   },
   "stageD": {
     "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -90,9 +95,11 @@
     "independentSourceMathTestCommit": "44230c4cff221406e3d2ecfa6e655ff7e5cbe390",
     "testExecutionStatus": "NOT_RUN",
     "integrationTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
-    "integrationTestCommit": "3c4e921d5324665c74ebf61544e7a4753f06e112"
+    "integrationTestCommit": "3c4e921d5324665c74ebf61544e7a4753f06e112",
+    "contentVersionRegressionTestCommit": "69eb7c9512b4e972216621e94b6160d87036a96f",
+    "originalCardSetsInAuthoredTests": 120
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Source-goal versioned route exists but remains unapproved until frozen-SHA CI, authenticated generation, accepted alternate/right/wrong/malformed persisted answers, visual/accessibility/license audit and individual V1 academic decision."
+  "nextAction": "Final content-frozen SHA CI and authenticated learner Rich V2 + score/persistence verification required; no academic sign-off before proof for ordinal 106 and 89 other pending lessons."
 }
