@@ -9,14 +9,15 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
 {
     [Fact]
-    public void ThirtyTwoSourceBoundRepairsHaveUniqueNewLessonIdentifiers()
+    public void ThirtyThreeSourceBoundRepairsHaveUniqueNewLessonIdentifiers()
     {
         var documents=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var ids=documents.SelectMany(doc=>doc.Lessons
             .Where(x=>CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(doc,x))
             .Select(x=>x.LessonCode)).ToArray();
-        Assert.Equal(32,ids.Length);
-        Assert.Equal(32,ids.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(33,ids.Length);
+        Assert.Equal(33,ids.Distinct(StringComparer.Ordinal).Count());
+        Assert.Contains("PED:US-CCSS-MATH:G1:U06:L11",ids);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L05",ids);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L03",ids);
         Assert.All(ids,id=>Assert.StartsWith("PED:US-CCSS-MATH:G1:",id));
@@ -97,6 +98,19 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("MORE THAN 100 same-size small cubes",text("PED:US-CCSS-MATH:G1:U06:L08"));
         Assert.Contains("BEAVER, DOG, GIANT ANTEATER",text("PED:US-CCSS-MATH:G1:U06:L09"));
         Assert.Contains("24+30=44 FALSE",text("PED:US-CCSS-MATH:G1:U06:L10"));
+        var shoes=text("PED:US-CCSS-MATH:G1:U06:L11");
+        Assert.Contains("THREE ACTUAL shoes",shoes);
+        Assert.Contains("TEACHER'S",shoes);
+        Assert.Contains("PARTNER'S",shoes);
+        Assert.Contains("9+7=16",shoes);
+        Assert.Contains("7+9+4=20",shoes);
+        Assert.Contains("13-8=5",shoes);
+        Assert.Contains("8+9=17",shoes);
+        Assert.Contains("TRACE",shoes);
+        Assert.Contains("TOE to HEEL",shoes);
+        Assert.Contains("FOUR source-authored Shoe Stories",shoes);
+        Assert.Contains("Do not add Diego's",shoes);
+        Assert.DoesNotContain("The source task compares or removes 8 from 17",shoes);
         Assert.Contains("Priya's length is 10",text("PED:US-CCSS-MATH:G1:U06:L12"));
         Assert.Contains("UNKNOWN starting count is 20",text("PED:US-CCSS-MATH:G1:U06:L13"));
         var equations=text("PED:US-CCSS-MATH:G1:U06:L14");
