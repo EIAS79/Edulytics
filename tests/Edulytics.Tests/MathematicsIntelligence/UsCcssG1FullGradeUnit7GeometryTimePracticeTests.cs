@@ -4,6 +4,59 @@ using Edulytics.Services.Mathematics;
 namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
 {
+    [Theory]
+    [InlineData(2,2,"PER_LAYER=4;LAYERS=2;TOTAL_CUBES=8")]
+    [InlineData(3,2,"PER_LAYER=6;LAYERS=2;TOTAL_CUBES=12")]
+    [InlineData(4,3,"PER_LAYER=12;LAYERS=2;TOTAL_CUBES=24")]
+    public void ComposedSolidSourceModeMustCountTwoLayerCubeConstruction(
+        int columns,int rows,string expected)
+    {
+        const string family="usccss.g1.u07.l02.compose_solids_components";
+        var p=new Dictionary<string,int>{
+            ["a"]=columns,["b"]=rows,["c"]=0,["mode"]=4
+        };
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,$"PER_LAYER={columns*rows};LAYERS=2;TOTAL_CUBES={columns*rows}"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected+";REAL_BUILD=CLAIMED"));
+        var bad=new Dictionary<string,int>(p){["a"]=5};
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,bad));
+        bad["a"]=columns;
+        bad["b"]=4;
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,bad));
+    }
+
+    [Fact]
+    public void ComposedSolidSourceAndLegacyModesAllRemainReachable()
+    {
+        const string family="usccss.g1.u07.l02.compose_solids_components";
+        var seen=new HashSet<int>();
+        for(int seed=0;seed<600;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                family,new Random(seed*149+17));
+            int mode=item.Parameters["mode"];
+            seen.Add(mode);
+            Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(
+                family,item.Parameters));
+            var answer=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,answer));
+            if(mode==4)
+            {
+                Assert.Contains("TWO identical layers",item.Prompt);
+                Assert.Contains("face to face",item.Prompt);
+                Assert.InRange(item.Parameters["a"],2,4);
+                Assert.InRange(item.Parameters["b"],2,3);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),seen.OrderBy(x=>x));
+    }
+
     [Fact]
     public void EveryOriginalUnit7LessonHasAnExplicitTextOnlyDigitalContract()
     {
