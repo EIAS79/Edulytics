@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 121,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L02",
+  "unit": 7,
+  "lessonNumber": 2,
+  "title": "Build Shapes from Other Shapes",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-7/lesson-2/lesson.html",
+    "originalFullTeacherSha256": "ff7a9e73620ee8d280af4fad7acbaacb1c0c333b9120bca0f0cebef68698bbc6",
+    "originalTeacherPreparationSha256": "674a753e87083cf85f96db91e2ff929cca74dfc484ef7d3b55859c2a980ac2f4",
+    "originalStudentFacingHtmlSha256": "e431f7556f9da770a8c94c9082a41ddcaf0e4a26e0af22d2210913b7c7f0aa18",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-2/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: Build With Solid Shapes (15 minutes)",
+      "Activity 2: Use Shapes to Make Other Shapes (10 minutes)",
+      "Activity 3: Introduce Geoblocks, Describe and Find (15 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 1,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing What do you notice? What do you wonder? [visual] [visual] <div class=\"i"
+    ],
+    "sourceOriginalTaskInterpretation": "Construct and combine three-dimensional shapes from physical shapes.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "PRIOR_DETAILED_TARGETED_REVIEW",
+    "priorSourceGapStatement": "Counting blocks does not verify building a new three-dimensional object or which 3D structures can be assembled.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_PRACTICE",
+    "existingFamily": "usccss.g1.u07.l02.compose_solids_components",
+    "allowedMappedFamilies": [
+      "usccss.g1.u07.l02.compose_solids_components"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": null
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+}

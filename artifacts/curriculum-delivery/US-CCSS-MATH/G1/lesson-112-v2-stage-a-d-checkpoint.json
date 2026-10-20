@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 112,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U06:L10",
+  "unit": 6,
+  "lessonNumber": 10,
+  "title": "Center Day 2",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-6/lesson-10/lesson.html",
+    "originalFullTeacherSha256": "957716d3b60d94d1ac79ad5925ef681327f7bf125302cc6a79592ce458bed384",
+    "originalTeacherPreparationSha256": "e9ecffd3a504eca764eff0251525c6109ea7687c3fc33b681afda5d074b281a5",
+    "originalStudentFacingHtmlSha256": "e6e5b7b58dd7ed67f94a530986772c42cd32bbf0f263265ddb60b22a55937a5a",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-10/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: Introduce Estimate and Measure, Choose Your Unit (20 minutes)",
+      "Activity 2: Centers: Choice Time (20 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 2,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing Is each statement true or false? Be prepared to explain your reasoning. \\(24 + 30 = 44\\) \\(24 + 40 = 64\\) \\(30 + 45 = 75\\) \\(32 + 45 = 76\\) Student Respons",
+      "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
+    ],
+    "sourceOriginalTaskInterpretation": "Estimate and measure using a chosen unit during How Close? and other centers.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "INITIAL_SOURCE_EXCERPT_TRIAGE",
+    "priorSourceGapStatement": "Verify whether Practice differentiates estimate from measured result and unit selection; real observation cannot be inferred.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_PRACTICE",
+    "existingFamily": "usccss.g1.u06.l10.center_measure_and_add",
+    "allowedMappedFamilies": [
+      "usccss.g1.u06.l10.center_measure_and_add"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": null
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+}

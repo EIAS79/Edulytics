@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 145,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L09",
+  "unit": 8,
+  "lessonNumber": 9,
+  "title": "Solve Number Riddles",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-8/lesson-9/lesson.html",
+    "originalFullTeacherSha256": "1bf9ea00bef926bb33d30558617325e078a38fcc18cbbf93d5dc6497a1e86a8b",
+    "originalTeacherPreparationSha256": "052e36c045fe2c36af09e563fee7e0e54c798cbbe28e908bf376f4bfd310a39e",
+    "originalStudentFacingHtmlSha256": "a214772f2e6a530cd2bfacb172b3a0a089af299786f9d1a596425fb4349c9cd8",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-9/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: A Number Riddle (10 minutes)",
+      "Activity 2: More Number Riddles (25 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 3,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing Decide if each statement is true or false. Be prepared to explain your reasoning. \\(65 > 35\\) \\(65 = 75 - 10\\) \\(65 > 35 + 30\\) Student Response Teachers w",
+      "Student Facing My number is less than 60. My number has 4 ones. My number is more than 30. What numbers fit these clues? Secret number: ___________ Student Response Teach",
+      "Student Facing Secret Numbers A: __________ B: __________ C: __________ D: __________ E: __________ F: __________ G: __________ H: __________ <div c"
+    ],
+    "sourceOriginalTaskInterpretation": "Find all numbers satisfying preliminary place-value clues; final extra clue selects one secret number.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "PRIOR_DETAILED_TARGETED_REVIEW",
+    "priorSourceGapStatement": "Teacher-held riddle cards, justification and groups' reasoning still require authentic activity review.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_PRACTICE",
+    "existingFamily": "usccss.g1.u08.l09.solve_number_riddle",
+    "allowedMappedFamilies": [
+      "usccss.g1.u08.l09.solve_number_riddle"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": null
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+}

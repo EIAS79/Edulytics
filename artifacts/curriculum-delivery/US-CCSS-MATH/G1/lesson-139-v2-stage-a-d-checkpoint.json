@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 139,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L03",
+  "unit": 8,
+  "lessonNumber": 3,
+  "title": "Add and Subtract Within 20 PLC Activity",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-8/lesson-3/lesson.html",
+    "originalFullTeacherSha256": "df5b1c12e3924da9f8b992c7afcbf7cd572d375ed1a30c0a92dc2d0f2efd3a1f",
+    "originalTeacherPreparationSha256": "8fb301904358135b78b1d243afc5b600e9a485e596cff70321e16be4501ab688",
+    "originalStudentFacingHtmlSha256": "8ea7cd0cbb96508e04b9105c64bb6e72806908a3e24f821501eeee8aa2001aad",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-3/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: Many Ways to Add and Subtract (20 minutes)",
+      "Activity 2: Heads Up (20 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 3,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing Find the value of each expression mentally. \\(6 + 7\\) \\(13 - 7\\) \\(7 + 8\\) \\(15 - 7\\) Student Response Teachers with a valid work email address can click h",
+      "Student Facing Circle 1 addition expression and 1 subtraction expression. \\(5+9\\) \\(14-8\\) \\(4 + 7\\) \\(15-9\\) \\(6+ 4 +4\\) \\(13-6\\) Find the valu",
+      "Student Facing Write an equation for each round you play. Round 1: ________________________________ Round 2: ________________________________ Round 3: ___________________"
+    ],
+    "sourceOriginalTaskInterpretation": "Choose one addition and one subtraction expression, calculate both and explain methods to a partner.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "INITIAL_SOURCE_EXCERPT_TRIAGE",
+    "priorSourceGapStatement": "Validate both operation types and source expression choices; no false claim of actual partner exchange.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_PRACTICE",
+    "existingFamily": "usccss.g1.u08.l03.fluency_within20",
+    "allowedMappedFamilies": [
+      "usccss.g1.u08.l03.fluency_within20"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": null
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+}

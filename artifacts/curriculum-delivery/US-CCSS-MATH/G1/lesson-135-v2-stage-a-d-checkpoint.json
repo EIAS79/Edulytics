@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 135,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L16",
+  "unit": 7,
+  "lessonNumber": 16,
+  "title": "Hard Times",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-7/lesson-16/lesson.html",
+    "originalFullTeacherSha256": "7e19459ccd4594daa5ecd4a50269cbdf4a01c7dbd1add9b94776455566db53de",
+    "originalTeacherPreparationSha256": "575d3578a40d2c725fbb0186b868afd1ec65eeee29eaa9ea1159c25336508be1",
+    "originalStudentFacingHtmlSha256": "0caa2fcbb4c472be98e6284ffff93cb73b73783fb68c9ac5f9ab64045a0516be",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-16/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: What's the Time? (15 minutes)",
+      "Activity 2: What's the Time, Again? (10 minutes)",
+      "Activity 3: Sunday Schedule (10 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 4,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing Find the value of each expression mentally. \\(8 + 32\\) \\(8 + 33\\) \\(8 + 38\\) \\(8 + 48\\) Student Response Teachers with a valid work email address can click",
+      "Student Facing [visual] [visual] <button class=\"js-modal-close i",
+      "Student Facing Fill in the blanks to show your ideal Sunday schedule. Time Activity Clock [visual] [visual]"
+    ],
+    "sourceOriginalTaskInterpretation": "Create an ideal Sunday schedule with time/activity/clock and discuss elapsed order.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "PRIOR_DETAILED_TARGETED_REVIEW",
+    "priorSourceGapStatement": "Actual authenticated student view of the authored schedule instructions needs evidence at the exact candidate SHA; teacher review and real pupil-authored clock/schedule entries must not be fabricated or required before classroom teaching.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+    "existingFamily": "usccss.g1.u07.l16.daily_schedule_time",
+    "allowedMappedFamilies": [
+      "usccss.g1.u07.l16.daily_schedule_time"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": "SEE_GRADE_FIRST_SOURCE_RUBRIC_L135"
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+}

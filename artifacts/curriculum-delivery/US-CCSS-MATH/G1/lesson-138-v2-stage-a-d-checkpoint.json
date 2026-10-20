@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 138,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L02",
+  "unit": 8,
+  "lessonNumber": 2,
+  "title": "Relate Addition and Subtraction",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-8/lesson-2/lesson.html",
+    "originalFullTeacherSha256": "da0061db3582b6b3692fee6e2f4bb0066315e6085e690bcba3670e427b00e408",
+    "originalTeacherPreparationSha256": "4abf9188959bde2324d56b7eb5a94ebb511859fc08852ec19810950679014c60",
+    "originalStudentFacingHtmlSha256": "e47751bde211416d665055e1d15b56fb5f405418945f97422f7f0112d3055d1b",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-2/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: Cube Tower Addition and Subtraction (15 minutes)",
+      "Activity 2: Find the Unknown Number (10 minutes)",
+      "Activity 3: Differences I've Got (10 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 4,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing Find the value of each expression mentally. \\(5 + 4\\) \\(4 + 5\\) \\(9 - 4\\) \\(9 - 5\\) Student Response Teachers with a valid work email address can click her",
+      "Student Facing Write an addition and a subtraction equation to match the connecting cubes. [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,3",
+      "Student Facing Find the number that makes each equation true. Explain to your partner how you found it. \\(4 + \\boxed{\\phantom{\\frac{aaai}{aaai}}} = 9\\) \\(9 - 5 = \\boxed{\\"
+    ],
+    "sourceOriginalTaskInterpretation": "Original Student Facing U08 L02 asks pupils to WRITE one addition and one subtraction equation for connecting-cube models and find two missing numbers in related equations; the original lesson also includes fact relationships and explanation.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "INITIAL_SOURCE_EXCERPT_TRIAGE",
+    "priorSourceGapStatement": "Verify corresponding learner content is authenticated and visible for this exact head, and source illustrations and partner explanation fidelity; numeric answers do not prove physical cube towers were built or actual student drawings were assessed. No A-D approval claimed.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_PRACTICE",
+    "existingFamily": "usccss.g1.u08.l02.inverse_add_subtract",
+    "allowedMappedFamilies": [
+      "usccss.g1.u08.l02.inverse_add_subtract"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": null
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+}

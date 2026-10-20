@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 123,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L04",
+  "unit": 7,
+  "lessonNumber": 4,
+  "title": "Draw Flat Shapes PLC Activity",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-7/lesson-4/lesson.html",
+    "originalFullTeacherSha256": "760d36107c20a300e101d29a56e02c962d5e75850018fe449825066c57fba7f4",
+    "originalTeacherPreparationSha256": "6f2dd41a7ce1547bf8651bc32d3fe3cfcfe1496988425376d0852b00e59a0393",
+    "originalStudentFacingHtmlSha256": "b5b81578d2c853a2f42a2557c22d929a8d19b9c14a68d7a9d666e6f49dd1ada0",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-4/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: Draw Shapes on Dot Paper (10 minutes)",
+      "Activity 2: Introduce How Are They the Same, Grade 1 Shapes (15 minutes)",
+      "Activity 3: Centers: Choice Time (15 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 3,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing What do you notice? What do you wonder? [visual] [visual] <d",
+      "Student Facing Pick a shape card. Each partner draws the shape on dot paper. Take turns describing the shape you drew. Student Response Teachers with a valid work email a",
+      "Student Facing Choose a center. Capture Squares [visual] [visual] <div class=\"im-c-modal"
+    ],
+    "sourceOriginalTaskInterpretation": "Draw and describe flat shapes on dot paper; compare with a peer.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "PRIOR_DETAILED_TARGETED_REVIEW",
+    "priorSourceGapStatement": "CI must prove this original learner shape-creation instruction actually renders over authenticated HTTPS at exact head. Teacher-review rubric is preparedness evidence only; real pupil drawings/peer activities cannot be claimed before occurrence. Publisher source figures and source-task correctness still require internal review.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+    "existingFamily": "usccss.g1.u07.l04.draw_shape_attribute_check",
+    "allowedMappedFamilies": [
+      "usccss.g1.u07.l04.draw_shape_attribute_check"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": "SEE_GRADE_FIRST_SOURCE_RUBRIC_L123"
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+}
