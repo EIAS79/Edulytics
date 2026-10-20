@@ -95,18 +95,14 @@ function build(){
 }
 // A report view, not a second ledger: it reads the existing canonical Grade 1
 // progress, evidence matrix and per-lesson A/B/C closure checkpoints unchanged.
-function buildRangeReport(from,to,snapshot=build()){
-  check(Number.isInteger(from)&&Number.isInteger(to)&&from>=51&&to<=146&&from<=to,
-    'Expected a valid Grade 1 new-lesson range within 51-146');
-  const lessons=snapshot.lessons.filter(x=>x.ordinal>=from&&x.ordinal<=to);
-  check(lessons.length===to-from+1,'Incomplete canonical Grade 1 range');
+function buildSelectionReport(lessons,snapshot,scope){
   const count=status=>lessons.filter(x=>x.status===status).length;
   const pendingACOrdinals=lessons.filter(x=>x.status!==STATUS.accepted&&!x.aToCReady)
     .map(x=>x.ordinal);
   const skipACReworkOrdinals=lessons.filter(x=>x.status===STATUS.accepted||x.aToCReady)
     .map(x=>x.ordinal);
   return {
-    scope:`G1 ${from}-${to}`,
+    scope,
     summary:{
       total:lessons.length,
       previouslyInternallyAccepted:count(STATUS.accepted),
@@ -134,10 +130,31 @@ function buildRangeReport(from,to,snapshot=build()){
     }))
   };
 }
+// A–C authoring scope is all current non-accepted candidates in canonical order,
+// not an arbitrary ten-lesson slice. Lessons with authenticated final D acceptance
+// are preserved, not reworked. READY_FOR_STAGE_D entries stay in the report
+// until D is actually run, but are explicitly skipped by the A–C repair queue.
+function buildRemainingReport(snapshot=build()){
+  const pending=snapshot.lessons.filter(x=>x.status!==STATUS.accepted);
+  return buildSelectionReport(pending,snapshot,'G1 all remaining candidate lessons');
+}
+function buildRangeReport(from,to,snapshot=build()){
+  check(Number.isInteger(from)&&Number.isInteger(to)&&from>=51&&to<=146&&from<=to,
+    'Expected a valid Grade 1 new-lesson range within 51-146');
+  const lessons=snapshot.lessons.filter(x=>x.ordinal>=from&&x.ordinal<=to);
+  check(lessons.length===to-from+1,'Incomplete canonical Grade 1 range');
+  return buildSelectionReport(lessons,snapshot,`G1 ${from}-${to}`);
+}
 function main(argv){
   const rangeArguments=argv.filter(arg=>arg.startsWith('--range'));
   check(rangeArguments.length<=1,'Provide at most one --range=FROM-TO');
+  check(!argv.includes('--remaining')||rangeArguments.length===0,
+    'Choose either --remaining (entire unfinished cohort) or --range');
   const snapshot=build();
+  if(argv.includes('--remaining')){
+    const report=buildRemainingReport(snapshot);
+    return argv.includes('--summary')?report.summary:report;
+  }
   if(rangeArguments.length){
     const match=/^--range=(\d+)-(\d+)$/.exec(rangeArguments[0]);
     check(match,'Use --range=FROM-TO, for example --range=57-66');
@@ -150,4 +167,4 @@ if(require.main===module){
   try{process.stdout.write(JSON.stringify(main(process.argv.slice(2)),null,2)+'\n');}
   catch(error){console.error(error.message);process.exitCode=1;}
 }
-module.exports={build,buildRangeReport,main,STATUS};
+module.exports={build,buildSelectionReport,buildRemainingReport,buildRangeReport,main,STATUS};
