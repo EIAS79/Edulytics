@@ -24,18 +24,52 @@
       "Student Facing Priya watched a football game. The home team scored 35 points in the first half. In the second half they scored 6 more points. How many points did they sco"
     ],
     "sourceSpecificComparison": "Original Target Numbers Stage 2 start 25/add tens or ones toward 95; optional football 35+6 and 9+45",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "accessibleOriginalTasksReconciled": {
+      "numberTalk": [
+        "68+2=70",
+        "3+68=71",
+        "5+45=50",
+        "45+7=52"
+      ],
+      "optionalFootball": [
+        "35+6=41 (home team points)",
+        "9+45=54 (fans)"
+      ],
+      "center": "Target Numbers Stage 2 starts at 25, approaches 95 without passing it, six rounds; Number Puzzles and Five in a Row choices; teacher observed."
+    },
+    "sourceArtAndHumanPartnerPlayNotDigitallyCertified": true
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6",
+    "learnerContentOriginalSpecificSourceMathReviewed": true,
+    "sourceTeachingNotes": "First-party original warm-up values and two optional football stories in learner teaching; preserves 25/95/six-turn game as teacher-mediated."
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "exactWarmupModes": [
+      4,
+      7
+    ],
+    "exactOptionalFootballModes": [
+      8,
+      9
+    ],
+    "footballContracts": [
+      "NEW_TEN=YES;TOTAL=41",
+      "NEW_TEN=YES;TOTAL=54"
+    ],
+    "codePath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "4660be571fef4456b3c3702476d4ec70ddf900b6",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson96OriginalWarmupAndOptionalStoriesTests.cs",
+    "authoredTestsCommit": "3f469b0724c81c2b9d9dc3d82cc6aab71ec6327e",
+    "originalCenterPhysicalParticipationVerified": false,
+    "testsExecuted": false
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -49,5 +83,16 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal97 with 17+36 original source maths; Stage D and CI deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherNumericTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Accessible math including four original source warmups and two optional football stories is represented and gradeable. Target Numbers and other partner centers are teacher-led, their actual turns and publisher visuals not inferred. Stage D still required for rendering, CI, signed-in persistence, asset rights and academic acceptance."
+  }
 }
