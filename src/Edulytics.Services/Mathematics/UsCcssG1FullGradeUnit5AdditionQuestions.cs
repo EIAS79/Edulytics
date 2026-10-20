@@ -102,7 +102,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     private static readonly (int a,int b)[] Lesson1OriginalEquations =
     [
         (43,5),(43,50),(51,3),(51,30),(2,75),
-        (20,75),(93,6),(60,28),(5,74)
+        (20,75),(93,6),(60,28),(5,74),
+        (34,5),(34,50),(4,45) // Public 2021 teacher Priya and Mai/Andre comparisons.
     ];
     private static readonly (int a,int b)[] Lesson2OriginalEquations =
     [
@@ -160,7 +161,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec==null||p.Count!=3||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||
-           mode>(spec.LessonCode=="L01"?12:spec.LessonCode=="L02"?5:spec.LessonCode=="L03"?9:spec.LessonCode=="L07"?5:
+           mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?5:spec.LessonCode=="L03"?9:spec.LessonCode=="L07"?5:
            spec.LessonCode is "L08" or "L09"?7:
            spec.LessonCode is "L10" or "L11" or "L12"?5:
            spec.LessonCode=="L14"?4:3))
@@ -200,7 +201,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     {
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
-        int mode=random.Next(spec.LessonCode=="L01"?13:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L07"?6:
+        int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L07"?6:
             spec.LessonCode is "L08" or "L09"?8:
             spec.LessonCode is "L10" or "L11" or "L12"?6:
             spec.LessonCode=="L14"?5:4);
@@ -212,6 +213,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             var sourceP=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}};
             if(!Valid(family,sourceP))throw new InvalidOperationException("Invalid source exact addition operands");
             return new(family,
+                spec.LessonCode=="L01"&&mode>=13?
+                $"ORIGINAL 2021 U05 L01 TEACHER DISCUSSION: Find {a}+{b} by place value; distinguish ones from tens. Write NEW_TEN=NO;TOTAL=number. Oral source discussion remains teacher-assessed.":
                 spec.LessonCode=="L01"?
                 $"ORIGINAL 2021 U05 L01 STUDENT EQUATION: Add {a}+{b} using tens or ones without making a new ten. Write NEW_TEN=NO;TOTAL=number. Teacher reviews the base-ten drawing.":
                 spec.LessonCode is "L08" or "L09"?
