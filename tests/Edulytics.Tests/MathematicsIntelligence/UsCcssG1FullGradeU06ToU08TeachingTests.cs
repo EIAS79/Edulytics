@@ -9,14 +9,15 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
 {
     [Fact]
-    public void ThirtyOneSourceBoundRepairsHaveUniqueNewLessonIdentifiers()
+    public void ThirtyTwoSourceBoundRepairsHaveUniqueNewLessonIdentifiers()
     {
         var documents=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var ids=documents.SelectMany(doc=>doc.Lessons
             .Where(x=>CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(doc,x))
             .Select(x=>x.LessonCode)).ToArray();
-        Assert.Equal(31,ids.Length);
-        Assert.Equal(31,ids.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(32,ids.Length);
+        Assert.Equal(32,ids.Distinct(StringComparer.Ordinal).Count());
+        Assert.Contains("PED:US-CCSS-MATH:G1:U06:L05",ids);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L03",ids);
         Assert.All(ids,id=>Assert.StartsWith("PED:US-CCSS-MATH:G1:",id));
         Assert.DoesNotContain("PED:US-CCSS-MATH:G1:U06:L02",ids);
@@ -76,6 +77,18 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("LONGER than the pupil's POINTER FINGER",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("THREE NEW objects",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("Get Your Numbers in Order",text("PED:US-CCSS-MATH:G1:U06:L01"));
+        var connectingCubes=text("PED:US-CCSS-MATH:G1:U06:L05");
+        Assert.Contains("Lengths of Creepy, Crawly Things",connectingCubes);
+        Assert.Contains("Measure More Creepy, Crawly Things",connectingCubes);
+        Assert.Contains("FOUR CUBES LONG",connectingCubes);
+        Assert.Contains("GRASSHOPPER is FIVE cubes long",connectingCubes);
+        Assert.Contains("TWO length ENDPOINTS",connectingCubes);
+        Assert.Contains("DO NOT count",connectingCubes);
+        Assert.Contains("same-size",connectingCubes,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("How Close?, Target Numbers and Five in a Row",connectingCubes);
+        Assert.Contains("Do NOT substitute three-dimensional solid-classification",connectingCubes);
+        Assert.DoesNotContain("Both have 6 flat faces and 8 vertices",connectingCubes);
+        Assert.DoesNotContain("sorting by the number of faces",connectingCubes);
         Assert.Contains("no gaps or overlaps",text("PED:US-CCSS-MATH:G1:U06:L06"));
         Assert.Contains("SEVEN digit cards",text("PED:US-CCSS-MATH:G1:U06:L04"));
         Assert.Contains("TWO two-digit numbers",text("PED:US-CCSS-MATH:G1:U06:L04"));
