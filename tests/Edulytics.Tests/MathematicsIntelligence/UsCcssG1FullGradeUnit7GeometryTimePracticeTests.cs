@@ -223,6 +223,39 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
     }
 
     [Theory]
+    [InlineData(2,"Clock A shows 2:30","ORDER=C,A,B")]
+    [InlineData(10,"Clock A shows 10:30","ORDER=C,A,B")]
+    public void OriginalU07L14OrdersThreeHourAndHalfHourCardsWithoutWrap(
+        int firstHour,string cue,string expected)
+    {
+        const string family="usccss.g1.u07.l14.half_hour_clock";
+        var p=new Dictionary<string,int>{{"a",firstHour},{"b",3},{"c",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"ORDER=A,B,C"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected+";CLASS_SORT=PROVEN"));
+        var invalid=new Dictionary<string,int>(p){["a"]=11};
+        Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,invalid));
+        var reached=false;
+        for(int seed=0;seed<480;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                family,new Random(seed*107+37));
+            if(item.Parameters["mode"]!=4)continue;
+            reached=true;
+            Assert.InRange(item.Parameters["a"],1,10);
+            Assert.Contains("Clock A shows",item.Prompt);
+            Assert.Contains("Clock B shows",item.Prompt);
+            Assert.Contains("Clock C shows",item.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,"ORDER=C,A,B"));
+        }
+        Assert.True(reached);
+    }
+
+    [Theory]
     [InlineData(2,2,"PER_LAYER=4;LAYERS=2;TOTAL_CUBES=8")]
     [InlineData(3,2,"PER_LAYER=6;LAYERS=2;TOTAL_CUBES=12")]
     [InlineData(4,3,"PER_LAYER=12;LAYERS=2;TOTAL_CUBES=24")]
