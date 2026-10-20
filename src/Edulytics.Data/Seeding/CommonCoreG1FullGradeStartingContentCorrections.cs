@@ -481,7 +481,12 @@ Source center example: Kiran counts 3 tens and 1 one (31). Source closing repres
 Step 2: Organize 10-object bundles and loose ones.
 Step 3: Draw one rod per ten and one dot per remaining one.
 Step 4: State the number of tens and ones and write a matching expanded expression.
-Step 5: Check that all three representations have the same total and explain to a partner if teacher-led.",
+Step 5: Check that all three representations have the same total and explain to a partner if teacher-led.
+Step 6: Original Create a Collection: pick TWO digit cards to form your own valid two-digit number, build that number with actual tens-towers and single cubes, and represent it in as many distinct ways as possible with drawings, words and equations.
+Step 7: A valid mathematical regrouping preserves the total: 73 can be 7 tens and 3 ones, or 5 tens and 23 ones. Numeric Practice can check equivalence, but an original physical model or drawing requires teacher inspection.
+Step 8: Original gallery: visit AT LEAST FOUR classmates' collections. Record representations for Collection 1, Collection 2, Collection 3 and Collection 4; discuss the equivalence with classmates and teacher.
+Step 9: Original source closing model is seven tens and three single cubes, giving 70+3=73; original center synthesis has Kiran's three tens and one one, or 31.
+Step 10: TEACHER RUBRIC separately observes pupil's own two-digit choice, physical model, at least two accurate representations, explanations, and evidence of FOUR genuine peer-gallery visits. Digitally graded equivalence alone does not certify these performances.",
             @"Do not draw six dots when you mean six tens or write 60+4=10. Do not claim to have completed a gallery walk without participating in the real class activity.",
             @"I can create correct drawings, words and an expanded expression for a two-digit number."),
         new(@"PED:US-CCSS-MATH:G1:U04:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-10/preparation.html",@"c124655e43c41ae5360f7e5ca5f49ae8e4a483a583cdd2be74d5266000debe47",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2" },
