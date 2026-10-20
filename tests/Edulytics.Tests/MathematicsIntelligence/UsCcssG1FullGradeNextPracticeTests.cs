@@ -398,6 +398,53 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void Lesson60TenFrameNumberCardSubtractionAcceptsNoCrossAndExactOriginalDiegoTasks()
+    {
+        const string f=UsCcssG1FullGradeNextQuestions.TenSubtract;
+        var withoutCross=new Dictionary<string,int>{{"a",17},{"b",4},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(f,withoutCross));
+        Assert.Equal("DIFFERENCE=13;EQUATION=17-4=13",
+            UsCcssG1FullGradeNextQuestions.Solve(f,withoutCross));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,withoutCross,
+            "DIFFERENCE=13;EQUATION=17-4=13"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,withoutCross,
+            "TO10=7;REST=-3;DIFFERENCE=13;EQUATION=17-4=13"));
+        var zero=new Dictionary<string,int>{{"a",19},{"b",0},{"c",0},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(f,zero));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,zero,
+            "DIFFERENCE=19;EQUATION=19-0=19"));
+        zero["b"]=10;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(f,zero));
+        zero["a"]=20;zero["b"]=0;
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(f,zero));
+        var diego=new Dictionary<string,int>{{"a",15},{"b",8},{"c",0},{"mode",2}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,diego,
+            "TO10=5;REST=3;DIFFERENCE=7;EQUATION=15-8=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,diego,
+            "TO10=5;REST=2;DIFFERENCE=7;EQUATION=15-8=7"));
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(f,
+            new Dictionary<string,int>{{"a",15},{"b",7},{"c",0},{"mode",2}}));
+        var originalFollowUps=new[]{(a:14,b:5,d:9),(a:13,b:6,d:7)};
+        foreach(var (a,b,d) in originalFollowUps)
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",3}};
+            Assert.True(UsCcssG1FullGradeNextQuestions.Valid(f,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,
+                $"TO10={a-10};REST={b-(a-10)};DIFFERENCE={d};EQUATION={a}-{b}={d}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
+                $"TO10={a-10};REST=99;DIFFERENCE={d};EQUATION={a}-{b}={d}"));
+        }
+        var generated=Enumerable.Range(0,400)
+            .Select(n=>UsCcssG1FullGradeNextQuestions.Build(f,new Random(n*61+7)))
+            .ToArray();
+        Assert.Contains(generated,q=>q.Parameters["b"]<q.Parameters["a"]-10);
+        Assert.Contains(generated,q=>q.Parameters["b"]>=q.Parameters["a"]-10);
+        Assert.All(generated,q=>
+            Assert.True(ExactSkillContractQuestionEngine.Verify(f,q.Parameters,
+                UsCcssG1FullGradeNextQuestions.Solve(f,q.Parameters))));
+    }
+
+    [Fact]
     public void AllFamiliesGenerateDistinctRealPracticeQuestions()
     {
         var engine=new ExactSkillContractQuestionEngine();
