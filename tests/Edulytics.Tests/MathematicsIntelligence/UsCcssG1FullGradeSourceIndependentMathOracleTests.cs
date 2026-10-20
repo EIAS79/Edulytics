@@ -83,7 +83,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             2=>mode==4?"CURVED=CIRCLE;THREE_SIDES=TRIANGLE;FOUR_SIDES=SQUARE,RECTANGLE":
                 $"SHAPE={(mode%2==0?"TRIANGLE":"SQUARE")}",
             3=>$"SIDES={(mode%2==0?3:4)};CORNERS={(mode%2==0?3:4)}",
-            4=>"SIDES=3",
+            4=>mode==4?"TRIANGLES=A,B,C;NONTRIANGLES=D,E,F":"SIDES=3",
             5=>$"ANSWER={(mode%2==0?"YES":"NO")}",
             6=>"PARTS=2",
             7=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
