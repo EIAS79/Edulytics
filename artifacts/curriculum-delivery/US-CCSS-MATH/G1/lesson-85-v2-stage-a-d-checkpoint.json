@@ -39,5 +39,57 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required"
+  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required",
+  "originalSourceBagCases20261020": {
+    "sourceActivity": "U04 L20 original 2021 mystery bags",
+    "exactCases": [
+      {
+        "bag": "A",
+        "tens": 5,
+        "ones": 2,
+        "number": 52,
+        "required": "number"
+      },
+      {
+        "bag": "B",
+        "tens": 4,
+        "ones": 25,
+        "number": 65,
+        "required": "number"
+      },
+      {
+        "bag": "C",
+        "ones": 29,
+        "number": 49,
+        "required": "tens=2"
+      },
+      {
+        "bag": "D",
+        "tens": 2,
+        "number": 36,
+        "required": "ones=16"
+      }
+    ],
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit4FinalQuestions.cs",
+    "sourceModes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "priorRegroupingModes": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "independentOracle": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests.cs",
+    "negativeControls": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+    "codeImplemented": true,
+    "testsPassedAtFrozenHead": false,
+    "authRealStudentGradeAndPersist": "PENDING",
+    "originalFiguresProvenance": "PENDING",
+    "teacherAuthoredDrawings": "NOT_CLAIMED",
+    "academicAcceptance": "NOT_CLAIMED"
+  }
 }
