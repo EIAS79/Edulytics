@@ -44,12 +44,21 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>3||(i!=0&&c!=0))return false;
+           mode<0||mode>(i==10?7:3)||
+           (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
         return i switch
         {
             0=>a>=4&&a<=20&&b>=1&&b<=20&&
                 (mode%2==0?c==0:(b>=4&&c>=4&&c<=20&&a!=b&&a!=c&&b!=c)),
-            1 or 2 or 10=>a>=4&&a<=20&&b>=1&&b<=20,
+            1 or 2=>a>=4&&a<=20&&b>=1&&b<=20,
+            10=>mode switch
+            {
+                4=>a==9&&b==7&&c==0,          // Clare + Han: 16
+                5=>a==7&&b==9&&c==4,          // Kiran + brothers: 20
+                6=>a==13&&b==8&&c==0,         // Diego vs father: 5 longer
+                7=>a==8&&b==17&&c==0,         // Jada + Elena: missing 9
+                _=>a>=4&&a<=20&&b>=1&&b<=20&&c==0 // Existing generic comparison stays
+            },
             // Original U06 L12 targets Compare Bigger Unknown / Smaller Unknown,
             // NOT Difference Unknown from two already known lengths.
             11=>a>=4&&a<=20&&b>=1&&b<=9&&(mode%2==0?b<a:a+b<=20),
@@ -66,7 +75,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(4),a=0,b=0,c=0;
+        int mode=random.Next(i==10?8:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -94,6 +103,17 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         else if(i==7){a=random.Next(20,111);}
         else if(i==8){a=random.Next(100,121);}
         else {a=random.Next(5,21);b=random.Next(1,a+1);}
+        if(i==10&&mode>=4)
+        {
+            (a,b,c)=mode switch
+            {
+                4=>(9,7,0),
+                5=>(7,9,4),
+                6=>(13,8,0),
+                7=>(8,17,0),
+                _=>throw new InvalidOperationException("Unknown original shoe story")
+            };
+        }
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
         if(!Valid(family,p))throw new InvalidOperationException("Unreviewed G1 Unit6 source operands");
         string prompt=i switch
@@ -118,7 +138,14 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             8=>$"Write the number represented by {a/10} complete TENS and {a%10} leftover ONES. Grade 1 range is up to 120. Write NUMBER=number.",
             9=>mode%2==0?$"Center arithmetic: add {a}+{b} within 100. Write RESULT=number.":
                 $"Center numeric measuring task: {a} same-sized cubes arranged without gaps. Write LENGTH=number.",
-            10=>$"Two shoes are {a} and {b} identical cube-length units long. How many units longer is the longer shoe? Write DIFFERENCE=number.",
+            10=>mode switch
+            {
+                4=>"ORIGINAL 2021 SHOE STORY: Clare's shoe is 9 equal cubes long, Han's shoe is 7. How long are the TWO shoes TOGETHER? Write TOTAL=number.",
+                5=>"ORIGINAL 2021 SHOE STORY: Kiran's shoe is 7 cubes, his older brother's shoe 9 and younger brother's 4. What is the combined length of ALL THREE? Write TOTAL=number.",
+                6=>"ORIGINAL 2021 SHOE STORY: Diego's shoe is 8 cubes and his father's 13 cubes. How many cubes LONGER is his father's shoe than Diego's? Write DIFFERENCE=number.",
+                7=>"ORIGINAL 2021 SHOE STORY: Jada's shoe is 8 cubes, and Jada's and Elena's shoes TOGETHER measure 17 cubes. How long is Elena's shoe? Write ELENA=number.",
+                _=>$"Hypothetical two shoes are {a} and {b} identical cube-length units long. How many units LONGER is the longer shoe? Write DIFFERENCE=number."
+            },
             11=>mode%2==0?
                 $"Han's friendship bracelet is {a} connecting cubes long. Priya's bracelet is {b} cubes FEWER than Han's. How long is PRIYA's bracelet? Write LENGTH=number;DIFFERENCE=number.":
                 $"Priya's friendship bracelet is {a} connecting cubes long. Han's bracelet is {b} cubes MORE than Priya's. How long is HAN's bracelet? Write LENGTH=number;DIFFERENCE=number.",
@@ -170,7 +197,14 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
             9=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
-            10=>$"DIFFERENCE={Math.Abs(a-b)}",
+            10=>mode switch
+            {
+                4=>$"TOTAL={a+b}",
+                5=>$"TOTAL={a+b+p["c"]}",
+                6=>$"DIFFERENCE={a-b}",
+                7=>$"ELENA={b-a}",
+                _=>$"DIFFERENCE={Math.Abs(a-b)}"
+            },
             11=>$"LENGTH={(mode%2==0?a-b:a+b)};DIFFERENCE={b}",
             12=>mode%3==0?$"REMAINING={a-b}":mode%3==1?$"REMOVED={b}":$"START={a}",
             13=>mode switch
