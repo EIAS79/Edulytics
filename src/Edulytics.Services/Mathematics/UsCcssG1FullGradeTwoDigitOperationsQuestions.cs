@@ -149,6 +149,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 $"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
             TenMoreLess=>mode switch
             {
+                4=>"INDEPENDENT EDULYTICS EXIT (not the protected publisher Cool-down): Find 46+10 and 46-10 mentally. Write PLUS=number;MINUS=number. Explain why the ones digit remains 6 to a teacher.",
                 2=>a==67?
                     "SOURCE-ALIGNED NUMERIC SEQUENCE: Start at 67 and add 10 three times: 67+10+10+10. Write RESULT=number. Explain the tens pattern to a teacher.":
                     "SOURCE-ALIGNED NUMERIC SEQUENCE: Start at 99 and subtract 10 three times: 99-10-10-10. Write RESULT=number. Explain the tens pattern to a teacher.",
