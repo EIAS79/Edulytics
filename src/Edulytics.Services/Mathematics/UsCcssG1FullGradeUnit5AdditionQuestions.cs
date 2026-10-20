@@ -99,6 +99,57 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         throw new InvalidOperationException("Cannot sample source-true Food Drive group combination");
     }
 
+    private static readonly (int a,int b)[] Lesson1OriginalEquations =
+    [
+        (43,5),(43,50),(51,3),(51,30),(2,75),
+        (20,75),(93,6),(60,28),(5,74)
+    ];
+    private static readonly (int a,int b)[] Lesson2OriginalEquations =
+    [
+        (23,45),(63,25)
+    ];
+    private static readonly (int a,int b)[] Lesson3OriginalEquations =
+    [
+        (13,21),(13,31),(23,31),(33,41),(32,54),(23,74)
+    ];
+    private static readonly (int a,int b)[] Lesson8OriginalWarmup =
+    [
+        (68,2),(3,68),(5,45),(45,7)
+    ];
+    private static readonly (int a,int b)[] Lesson9OriginalWarmup =
+    [
+        (38,2),(40,3),(38,5),(38,15)
+    ];
+    private static readonly (int a,int b)[] Lesson10OriginalEquations =
+    [
+        (28,56),(27,44)
+    ];
+    private static readonly (int a,int b)[] Lesson11OriginalStories =
+    [
+        (37,25),(23,68)
+    ];
+    private static readonly (int a,int b)[] Lesson12OriginalEquations =
+    [
+        (48,15),(57,36)
+    ];
+    private static (int a,int b)? Exact2021Equation(string lesson,int mode)
+    {
+        var examples=lesson switch
+        {
+            "L01"=>Lesson1OriginalEquations,
+            "L02"=>Lesson2OriginalEquations,
+            "L03"=>Lesson3OriginalEquations,
+            "L08"=>Lesson8OriginalWarmup,
+            "L09"=>Lesson9OriginalWarmup,
+            "L10"=>Lesson10OriginalEquations,
+            "L11"=>Lesson11OriginalStories,
+            "L12"=>Lesson12OriginalEquations,
+            _=>null
+        };
+        return examples is not null&&mode>=4&&mode<examples.Length+4
+            ?examples[mode-4]:null;
+    }
+
     public sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     private static Family? Get(string? f)=>Specs.SingleOrDefault(x=>x.Code==f);
@@ -109,9 +160,17 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec==null||p.Count!=3||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||
-           mode>(spec.LessonCode=="L07"?5:spec.LessonCode=="L14"?4:3))
+           mode>(spec.LessonCode=="L01"?12:spec.LessonCode=="L02"?5:spec.LessonCode=="L03"?9:spec.LessonCode=="L07"?5:
+           spec.LessonCode is "L08" or "L09"?7:
+           spec.LessonCode is "L10" or "L11" or "L12"?5:
+           spec.LessonCode=="L14"?4:3))
             return false;
         if(spec.LessonCode=="L14")return mode==4 ? a==0&&b==0 : FoodDriveValid(a,b,mode);
+        if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
+        {
+            var source=Exact2021Equation(spec.LessonCode,mode);
+            return source.HasValue&&a==source.Value.a&&b==source.Value.b;
+        }
         int ones=a%10+b%10,sum=a+b;
         return spec.Kind switch
         {
@@ -141,8 +200,28 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     {
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
-        int mode=random.Next(spec.LessonCode=="L07"?6:spec.LessonCode=="L14"?5:4);
+        int mode=random.Next(spec.LessonCode=="L01"?13:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L07"?6:
+            spec.LessonCode is "L08" or "L09"?8:
+            spec.LessonCode is "L10" or "L11" or "L12"?6:
+            spec.LessonCode=="L14"?5:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
+        var original=Exact2021Equation(spec.LessonCode,mode);
+        if(original.HasValue)
+        {
+            (a,b)=original.Value;
+            var sourceP=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}};
+            if(!Valid(family,sourceP))throw new InvalidOperationException("Invalid source exact addition operands");
+            return new(family,
+                spec.LessonCode=="L01"?
+                $"ORIGINAL 2021 U05 L01 STUDENT EQUATION: Add {a}+{b} using tens or ones without making a new ten. Write NEW_TEN=NO;TOTAL=number. Teacher reviews the base-ten drawing.":
+                spec.LessonCode is "L08" or "L09"?
+                $"ORIGINAL 2021 U05 {spec.LessonCode} NUMBER TALK: Add {a}+{b}. Did the ones make a NEW TEN? Write NEW_TEN=YES/NO;TOTAL=number. Teacher reviews the mental explanation.":
+                spec.LessonCode is "L02" or "L03"?
+                $"ORIGINAL 2021 U05 {spec.LessonCode} STUDENT EQUATION: Explain why {a}+{b} is true by adding tens and ones separately. Write TENS=total_tens_value;ONES=ones_value;TOTAL=sum. Partner method explanations and drawings require teacher review.":
+                $"ORIGINAL 2021 U05 {spec.LessonCode} STUDENT EQUATION/STORY: Add {a}+{b} with a new ten. Write TENS=number_of_tens;ONES=remaining_ones;TOTAL=number. Teacher reviews the addition strategy.",
+                "First-party source-aligned numeric comparison; the original publisher picture and pupil oral explanation are separately teacher assessed.",
+                AssessmentItemType.ShortAnswer,sourceP);
+        }
         // Generate genuine operand choices satisfying this source-goal family.
         for(int tries=0;tries<1000;tries++)
         {
@@ -252,6 +331,10 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G1 U05 source-scoped operands");
         var spec=Get(family)!;int a=p["a"],b=p["b"],sum=a+b;
         if(spec.LessonCode=="L14")return FoodDriveSolve(a,b,p["mode"]);
+        if(p["mode"]>=4&&(spec.LessonCode is "L02" or "L03"))
+            return $"TENS={(a/10+b/10)*10};ONES={a%10+b%10};TOTAL={sum}";
+        if(p["mode"]>=4&&(spec.LessonCode is "L08" or "L09"))
+            return $"NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L06"&&p["mode"]==2)
             return "MOVE=6;REST=3;TOTAL=43;ELENA=34+6+3=43;ANDRE=9+1+33=43";
         if(spec.LessonCode=="L07"&&p["mode"]>=2)

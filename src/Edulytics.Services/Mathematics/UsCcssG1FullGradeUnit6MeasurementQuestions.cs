@@ -44,7 +44,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(i==5?7:i==6?4:i==7?4:i==9?4:i==10?7:i==12?4:i==13?9:i==14?4:i==15?5:3)||
+           mode<0||mode>(i==5?7:i==6?4:i==7?4:i==9?8:i==10?7:i==11?5:i==12?4:i==13?9:i==14?4:i==15?9:3)||
            (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
         return i switch
         {
@@ -61,13 +61,31 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             },
             // Original U06 L12 targets Compare Bigger Unknown / Smaller Unknown,
             // NOT Difference Unknown from two already known lengths.
-            11=>a>=4&&a<=20&&b>=1&&b<=9&&(mode%2==0?b<a:a+b<=20),
+            11=>mode switch
+            {
+                4=>a==14&&b==4&&c==0,  // Original Han 14, Priya 4 shorter
+                5=>a==10&&b==4&&c==0,  // Original Priya 10, Han 4 longer
+                _=>a>=4&&a<=20&&b>=1&&b<=9&&(mode%2==0?b<a:a+b<=20)
+            },
             3=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
-            15=>mode==4?a>=101&&a<=120&&b==0:
-                mode==5?a==65&&b==21:
-                a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
-            9=>mode==4?a>=5&&a<=20&&b>=1&&b<=25&&Math.Abs(a-b)<=4:
-                a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
+            15=>mode switch
+            {
+                4=>a>=101&&a<=120&&b==0,
+                5=>a==65&&b==21,
+                6=>a==65&&b==20,
+                7=>a==85&&b==1,
+                8 or 9=>a==65&&b==21,
+                _=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100
+            },
+            9=>mode switch
+            {
+                4=>a>=5&&a<=20&&b>=1&&b<=25&&Math.Abs(a-b)<=4,
+                5=>a==24&&b==54,
+                6=>a==24&&b==64,
+                7=>a==30&&b==75,
+                8=>a==32&&b==77,
+                _=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100
+            },
             4 or 5=>a>=2&&a<=20&&b==0,
             6=>b==2&&(mode==4?(a==6||a==12):a>=2&&a<=14),
             7=>b==0&&(mode==4?a>=101&&a<=110:a>=20&&a<=110),
@@ -94,7 +112,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(i==5?8:i==6||i==7||i==9||i==14?5:i==10?8:i==12?5:i==13?10:i==15?6:4),a=0,b=0,c=0;
+        int mode=random.Next(i==5?8:i==9?9:i==6||i==7||i==14?5:i==10?8:i==11?6:i==12?5:i==13?10:i==15?10:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -145,6 +163,21 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i==14&&mode==4)(a,b,c)=(19,12,0);
         if(i==15&&mode==4)(a,b,c)=(random.Next(101,121),0,0);
         if(i==15&&mode==5)(a,b,c)=(65,21,0);
+        if(i==15&&mode>=6)
+            (a,b,c)=mode switch
+            {
+                6=>(65,20,0),7=>(85,1,0),8=>(65,21,0),9=>(65,21,0),
+                _=>throw new InvalidOperationException("Invalid source number talk")
+            };
+        if(i==9&&mode>=5)
+            (a,b,c)=mode switch
+            {
+                5=>(24,54,0),6=>(24,64,0),
+                7=>(30,75,0),8=>(32,77,0),
+                _=>throw new InvalidOperationException("Invalid original source true/false")
+            };
+        if(i==11&&mode>=4)
+            (a,b,c)=mode==4?(14,4,0):(10,4,0);
         if(i==13&&mode>=4)
         {
             (a,b,c)=mode switch
@@ -187,7 +220,14 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 $"SOURCE-GROUNDED GROUPS UP TO 110: A FIRST-PARTY equal-unit strip measures {a} unit cubes, MORE THAN 100 cubes. Count full tens and remaining ones, and verify the total without guessing an original source diagram. Write TENS=number;ONES=number;TOTAL=number.":
                 $"A long object measures {a} identical cube units. Organize the count into tens and ones. Write TENS=number;ONES=number;TOTAL=number.",
             8=>$"Write the number represented by {a/10} complete TENS and {a%10} leftover ONES. Grade 1 range is up to 120. Write NUMBER=number.",
-            9=>mode==4?
+            9=>mode>=5?mode switch
+                {
+                    5=>"ORIGINAL 2021 NUMBER TALK TRUE/FALSE: Is 24+30=44? Write TRUE=YES/NO;ACTUAL=number.",
+                    6=>"ORIGINAL 2021 NUMBER TALK TRUE/FALSE: Is 24+40=64? Write TRUE=YES/NO;ACTUAL=number.",
+                    7=>"ORIGINAL 2021 NUMBER TALK TRUE/FALSE: Is 30+45=75? Write TRUE=YES/NO;ACTUAL=number.",
+                    _=>"ORIGINAL 2021 NUMBER TALK TRUE/FALSE: Is 32+45=76? Write TRUE=YES/NO;ACTUAL=number."
+                }:
+                mode==4?
                 $"SOURCE-GROUNDED ESTIMATE THEN MEASURE (FIRST-PARTY MODEL): BEFORE counting, a pupil estimated {b} equal cube units. The hypothetical strip actually measures {a} equal cube units without gaps. Record BOTH values, the absolute difference, and whether the estimate was HIGH, LOW or EXACT. Write ACTUAL=number;ESTIMATE=number;DIFFERENCE=number;DIRECTION=HIGH/LOW/EXACT. Real classroom measuring and chosen units remain teacher-observed.":
                 mode%2==0?$"Center arithmetic: add {a}+{b} within 100. Write RESULT=number.":
                 $"Center numeric measuring task: {a} same-sized cubes arranged without gaps. Write LENGTH=number.",
@@ -199,7 +239,11 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 7=>"ORIGINAL 2021 SHOE STORY: Jada's shoe is 8 cubes, and Jada's and Elena's shoes TOGETHER measure 17 cubes. How long is Elena's shoe? Write ELENA=number.",
                 _=>$"Hypothetical two shoes are {a} and {b} identical cube-length units long. How many units LONGER is the longer shoe? Write DIFFERENCE=number."
             },
-            11=>mode%2==0?
+            11=>mode==4?
+                "ORIGINAL 2021 BRACELET: Han's bracelet is 14 equal cube units. Priya's is FOUR units SHORTER. Write LENGTH=number;DIFFERENCE=number. Teacher reviews physical bar model.":
+                mode==5?
+                "ORIGINAL 2021 BRACELET: Priya's bracelet is 10 equal cube units. Han's is FOUR units LONGER. Write LENGTH=number;DIFFERENCE=number. Teacher reviews the comparison diagram.":
+                mode%2==0?
                 $"Han's friendship bracelet is {a} connecting cubes long. Priya's bracelet is {b} cubes FEWER than Han's. How long is PRIYA's bracelet? Write LENGTH=number;DIFFERENCE=number.":
                 $"Priya's friendship bracelet is {a} connecting cubes long. Han's bracelet is {b} cubes MORE than Priya's. How long is HAN's bracelet? Write LENGTH=number;DIFFERENCE=number.",
             12=>mode==4?
@@ -229,6 +273,10 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             {
                 4=>$"SOURCE-GROUNDED COUNTING COLLECTIONS STAGE 3 (FIRST-PARTY NUMERIC MODEL): A collection has {a/10} complete groups of TEN objects and {a%10} loose objects. Write its total (up to 120) and both components. Write TENS=number;ONES=number;TOTAL=number. This does not claim a pupil estimated or physically counted a real classroom collection.",
                 5=>"ORIGINAL 2021 NUMBER TALK: Mentally compare the results of 65+20+1 and 65+21. Both expressions should equal the same number. Write FIRST=number;SECOND=number;EQUAL=YES/NO.",
+                6=>"ORIGINAL 2021 NUMBER TALK: Find 65+20. Write RESULT=number.",
+                7=>"ORIGINAL 2021 NUMBER TALK: Find 85+1. Write RESULT=number.",
+                8=>"ORIGINAL 2021 NUMBER TALK: Find 65+20+1. Write RESULT=number.",
+                9=>"ORIGINAL 2021 NUMBER TALK: Find 65+21. Write RESULT=number.",
                 _=>mode%2==0?$"Center addition within 100: {a}+{b}. Write RESULT=number.":
                     $"Center hypothetical measurement: {a} equal cubes without gaps. Write LENGTH=number."
             },
@@ -273,7 +321,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 $"SMALL_UNITS={a*2}",
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
-            9=>mode==4?
+            9=>mode>=5?
+                $"TRUE={(mode is 6 or 7?"YES":"NO")};ACTUAL={b}":
+                mode==4?
                 $"ACTUAL={a};ESTIMATE={b};DIFFERENCE={Math.Abs(a-b)};DIRECTION={(b==a?"EXACT":b>a?"HIGH":"LOW")}":
                 mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             10=>mode switch
@@ -308,6 +358,8 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             {
                 4=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
                 5=>"FIRST=86;SECOND=86;EQUAL=YES",
+                6=>"RESULT=85",
+                7 or 8 or 9=>"RESULT=86",
                 _=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}"
             },
             16=>$"DIFFERENCE={b}",

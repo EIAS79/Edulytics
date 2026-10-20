@@ -13,6 +13,8 @@ public static class CommonCoreG1FullGradeFinalUnit4Corrections
     public const string OriginalLesson16SourceContentVersion="us-ccss-g1-u04-l16-original-student-activities-v3";
     public const string OriginalLesson17SourceContentVersion="us-ccss-g1-u04-l17-original-student-activities-v3";
     public const string OriginalLesson18SourceContentVersion="us-ccss-g1-u04-l18-original-student-activities-v3";
+    public const string OriginalLesson19SourceContentVersion="us-ccss-g1-u04-l19-centers-and-regrouping-v2";
+    public const string OriginalLesson20SourceContentVersion="us-ccss-g1-u04-l20-estimation-mystery-bags-v2";
     private static bool IsOriginalComparisonLesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U04:L16" or
         "PED:US-CCSS-MATH:G1:U04:L17" or
@@ -49,13 +51,13 @@ Original Activity 2 real center choices: Greatest of Them All, Grab and Count, o
         new(@"PED:US-CCSS-MATH:G1:U04:L19",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-19/preparation.html",@"d74fcda3398cc4843865133bfdbac41151b56c6c46fb0f35a2e1992300b4eeec",[@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.B.2",@"CCSS:1.NBT.B.3"],
             @"Make Two-digit Numbers",
             @"Original 2021 Activity 1: make 65 from a bag with FIVE existing ten-towers and FIFTEEN loose ones. You CANNOT break a tower or build a new tower in that task; keep five tens plus fifteen ones. Original Activity 2 then asks for DIFFERENT ways to make 37, where decomposing a ten into ten ones IS allowed. Distinguish the two activities; a nonstandard representation can have more than nine loose ones.",
-            @"Original example 1: 65 = 5 pre-existing ten-towers and 15 loose ones, without breaking or constructing towers. Original example 2: 37 = 3 tens + 7 ones = 2 tens + 17 ones = 1 ten + 27 ones. Further practice: 43 = 4 tens and 3 ones = 3 tens and 13 ones.",
+            @"Original example 1: 65 = 5 pre-existing ten-towers and 15 loose ones, without breaking or constructing towers. Original example 2: 37 = 3 tens + 7 ones = 2 tens + 17 ones = 1 ten + 27 ones. Further practice: 43 = 4 tens and 3 ones = 3 tens and 13 ones. Original 2021 center choice is Greatest of Them All, Get Your Numbers in Order, or Grab and Count. Actual card placement, cube collections and strategy talks are teacher reviewed.",
             @"Step 1: In the original 65-cube bag task, count the FIVE pre-existing ten-towers and fifteen loose ones; DO NOT break or create towers. Step 2: Write 5 tens + 15 ones = 65. Step 3: For the different original 37 task, start with 3 tens + 7 ones; now you MAY break one complete ten into ten singles. Step 4: Record a different equivalent way such as 2 tens + 17 ones. Step 5: Verify each representation keeps the original total.",
             @"Three tens and thirteen ones is 43, NOT 313. Do not reduce a ten without adding exactly ten ones.",
             @"I can represent two-digit numbers with different tens-and-ones groupings."),
         new(@"PED:US-CCSS-MATH:G1:U04:L20",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-20/preparation.html",@"e144eb9ac5e352e009778971ebfff7333dcd91a7112273c51bf4d2bb7438944c",[@"CCSS:1.NBT.B.2"],
             @"Make Two-Digit Numbers in Different Ways PLC Activity",
-            @"Teacher-led PLC: identify and explain two-digit numbers represented in different tens-and-ones groupings. Original learner activity asks HOW MANY WAYS you can make a number (e.g. 94). Show at least two distinct correct models, exchange whole tens for 10 ones without changing the total, and reason about ALL possibilities from zero full tens up to the usual tens count. Physical cube arrangements, diagrams and partner discussion remain teacher-reviewed.",
+            @"Teacher-led PLC: identify and explain two-digit numbers represented in different tens-and-ones groupings. Original learner activity asks HOW MANY WAYS you can make a number (e.g. 94). Show at least two distinct correct models, exchange whole tens for 10 ones without changing the total, and reason about ALL possibilities from zero full tens up to the usual tens count. Original 2021 warm-up asks for TOO LOW, ABOUT RIGHT and TOO HIGH estimates, first for an unorganized cube picture then for organized tens; the teacher ultimately confirms 76 cubes. Estimation must precede seeing the exact count. Physical cube arrangements, diagrams and partner discussion remain teacher-reviewed.",
             @"Example 1: 62 = 6 tens 2 ones = 5 tens 12 ones = 4 tens 22 ones; with 0 through 6 tens there are seven distinct decompositions. Example 2: 47 = 4 tens 7 ones = 3 tens 17 ones = 2 tens 27 ones. Example 3: 94 = 9 tens 4 ones = 8 tens 14 ones = ... = 0 tens 94 ones, ten different decompositions if loose ones are allowed.",
             @"Step 1: Read a two-digit numeral. Step 2: Show a tens-and-ones model. Step 3: Trade one ten for ten ones. Step 4: Compare the equivalent representations. Step 5: Discuss why they are equal when a teacher or peer is available. ORIGINAL ACTIVITY 2 missing-number bags also require reasoning, not just exchanging full tens: Bag A has five tens and two ones (52). Bag B has four tens and twenty-five ones (65). Bag C has 49 cubes with 29 ones, so it has TWO tens. Bag D has 36 cubes with two tens, so it has SIXTEEN ones. Learners show each bag in drawings, numbers or words; the optional pupil-created mystery bag and partner exchange are teacher-reviewed.",
             @"Do not reject a valid regrouping just because it has 12 loose ones, and do not claim physical PLC discussion was digitally certified.",
@@ -92,12 +94,13 @@ Original Activity 2 real center choices: Greatest of Them All, Grab and Count, o
     }
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)
-            ?(lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L16"?OriginalLesson16SourceContentVersion:lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L17"?OriginalLesson17SourceContentVersion:lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L18"?OriginalLesson18SourceContentVersion:IsOriginalComparisonLesson(lesson.LessonCode)?OriginalComparisonsVersion:Version)
+            ?(lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L16"?OriginalLesson16SourceContentVersion:lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L17"?OriginalLesson17SourceContentVersion:lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L18"?OriginalLesson18SourceContentVersion:lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L19"?OriginalLesson19SourceContentVersion:lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L20"?OriginalLesson20SourceContentVersion:IsOriginalComparisonLesson(lesson.LessonCode)?OriginalComparisonsVersion:Version)
             :previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
          (IsOriginalComparisonLesson(lesson.LessonCode)&&previous==Version)||
+         ((lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L19"||lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L20")&&previous==Version)||
          (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L16"&&previous==OriginalComparisonsVersion)||
          (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L17"&&previous==OriginalComparisonsVersion)||
          (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U04:L18"&&previous==OriginalComparisonsVersion));

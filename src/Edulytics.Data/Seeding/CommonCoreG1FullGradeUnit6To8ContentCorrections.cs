@@ -17,6 +17,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
     public const string Unit6Lesson6MeasurementSourceVersion="us-ccss-g1-u06-l06-paperclip-source-activity-v3";
     public const string Unit6Lesson7ThreeUnitsSourceVersion="us-ccss-g1-u06-l07-three-unit-measurement-v3";
     public const string Unit6Lesson10EstimateFirstSourceVersion="us-ccss-g1-u06-l10-estimate-measure-compare-v3";
+    public const string Unit6Lesson12SourceVersion="us-ccss-g1-u06-l12-two-original-bracelet-stories-v3";
     public const string Unit7Unit8OriginalSourceVersion="us-ccss-g1-u07-u08-original-student-source-activities-v2";
     private static bool IsReviewedUnit7Unit8Lesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U07:L01" or "PED:US-CCSS-MATH:G1:U07:L03" or
@@ -85,7 +86,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
         new(@"PED:US-CCSS-MATH:G1:U06:L12",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-12/preparation.html",@"363d352cea320e9ccd94af0b40e318eaa9d62365af11578b202ceae7c15df3b1",[@"CCSS:1.NBT.A.1",@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
             @"Compare Measurements",
             @"Original 2021: Han's bracelet is 14 cubes; Priya's is FOUR shorter, so Priya's length is 10. In the second story, Priya is 10 cubes and Han is FOUR longer, so Han is 14. Solve Compare Bigger Unknown and Compare Smaller Unknown measurement stories, as in the original 2021 lesson. When one bracelet is four cubes fewer or longer than the other, the UNKNOWN is the second bracelet's LENGTH, not the difference already supplied. Draw or explain a same-unit bar model and solve the missing length.",
-            @"Example 1 (Smaller Unknown): Han's bracelet is 14 cubes long; Priya's is 4 fewer, so Priya measures 14-4=10 cubes. Example 2 (Bigger Unknown): Priya measures 9 cubes; Han is 4 longer, so Han measures 9+4=13 cubes. The given difference is NOT the requested unknown length.",
+            @"Example 1 (Smaller Unknown): Han's bracelet is 14 cubes long; Priya's is 4 fewer, so Priya measures 14-4=10 cubes. Example 2 (Bigger Unknown, ORIGINAL 2021): Priya measures 10 cubes; Han is 4 longer, so Han measures 10+4=14 cubes. The given difference is NOT the requested unknown length.",
             @"Step 1: Read whose length is known and who is longer or shorter; identify the MISSING bracelet length. Step 2: Use identical cube-length units and draw a bar showing the known length plus or minus the stated difference. Step 3: For Smaller Unknown subtract the difference; for Bigger Unknown add the difference. Step 4: Check that the two resulting lengths actually differ by the stated amount, and include cube-length units.",
             @"Do not answer 4 just because the story says one bracelet is four cubes shorter; four is the KNOWN difference, not the unknown length. Use same-sized units, and choose addition for Bigger Unknown or subtraction for Smaller Unknown.",
             @"I can find an unknown bigger or smaller bracelet length using a known length and the stated difference, and verify it with a same-unit bar model."),
@@ -283,6 +284,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"?Unit6Lesson6MeasurementSourceVersion:
              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07"?Unit6Lesson7ThreeUnitsSourceVersion:
              lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10"?Unit6Lesson10EstimateFirstSourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L12"?Unit6Lesson12SourceVersion:
              IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:
              IsReviewedUnit7Unit8Lesson(lesson.LessonCode)?Unit7Unit8OriginalSourceVersion:
              Version):previous;
@@ -294,7 +296,8 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
          ((lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"||
            lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"||
            lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07"||
-           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10")&&previous==Unit6OriginalSourceVersion));
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10"||
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L12")&&previous==Unit6OriginalSourceVersion));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)

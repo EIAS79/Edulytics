@@ -44,6 +44,16 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
         if(Index(family)<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode))return false;
+        if(Index(family)==15&&mode>=4)
+            return c==0&&(mode switch
+            {
+                4=>a==8&&b==32,
+                5=>a==8&&b==33,
+                6=>a==8&&b==38,
+                7=>a==8&&b==48,
+                8=>a==6&&b==12,
+                _=>false
+            });
         return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&
             mode<=(Index(family)==5?6:Index(family)==8?5:((Index(family)==1||Index(family)==2||Index(family)==4||Index(family)==6||Index(family)==7||Index(family)==13)?4:3))&&
             (Index(family)!=1||mode!=4||(a>=2&&a<=4&&b>=2&&b<=3))&&
@@ -54,10 +64,16 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unsupported G1 Unit7 original-source family");
-        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==1||i==2||i==4||i==6||i==7||i==13?5:4);
+        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==15?9:i==1||i==2||i==4||i==6||i==7||i==13?5:4);
         if(i==1&&mode==4){a=random.Next(2,5);b=random.Next(2,4);}
         if(i==13&&mode==4)a=random.Next(1,11);
         if(i==12&&mode==3&&b==a)b=a==12?1:a+1;
+        if(i==15&&mode>=4)(a,b)=mode switch
+        {
+            4=>(8,32),5=>(8,33),6=>(8,38),7=>(8,48),
+            8=>(6,12),
+            _=>throw new InvalidOperationException("Unreviewed source clock/warmup case")
+        };
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
         string prompt=i switch
         {
@@ -126,7 +142,15 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 $"Clock card #{b}: hour hand at {a}, minute hand at 12. Write TIME=hour:minutes.":
                 $"Clock card #{b}: hour hand past {a}, minute hand at SIX. Write TIME=hour:minutes."):
                 $"ORIGINAL COUNT THE MINUTES: Start at 12 on the clock, count clockwise in steps of five until you reach the minute hand on SIX. How many five-minute HOPS and total MINUTES are in half a clock? Write HOPS=number;MINUTES=number;STOP_AT=number.",
-            15=>mode%2==0?
+            15=>mode>=4?mode switch
+                {
+                    4=>"ORIGINAL 2021 NUMBER TALK: Find 8+32. Write RESULT=number.",
+                    5=>"ORIGINAL 2021 NUMBER TALK: Find 8+33. Write RESULT=number.",
+                    6=>"ORIGINAL 2021 NUMBER TALK: Find 8+38. Write RESULT=number.",
+                    7=>"ORIGINAL 2021 NUMBER TALK: Find 8+48. Write RESULT=number.",
+                    _=>"ORIGINAL 2021 DIFFICULT CLOCK: Diego says this clock is 6:00. Priya says it is 12:30. The long minute hand points at 12 and the short hour hand points at 6. Who is correct? Write TIME=hour:minutes;CORRECT=first_name. Teacher reviews the learner's explanation and source figure."
+                }:
+                mode%2==0?
                 $"Read the analog clock face for the hypothetical READING schedule. The short hand is at {a} and the minute hand is at 12. What time do you see? Write TIME=hour:minutes.":
                 $"Read the analog clock face for a hypothetical SNACK time. The short hand is halfway from {a} to the next hour and the long hand points at 6. Write TIME=hour:minutes.",
             16=>mode%2==0?
@@ -173,7 +197,15 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 mode<=1?$"MINUTES=30;HOUR={a}":
                 $"COLOR={(mode==2?"BLUE":"RED")};TIME={a}:{(mode==2?"00":"30")};WORDS={(mode==2?HourName(a)+"_oclock":"half_past_"+HourName(a))}",
             14=>mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
-            15=>$"TIME={a}:{(mode%2==0?"00":"30")}",
+            15=>mode switch
+            {
+                4=>"RESULT=40",
+                5=>"RESULT=41",
+                6=>"RESULT=46",
+                7=>"RESULT=56",
+                8=>"TIME=6:00;CORRECT=DIEGO",
+                _=>$"TIME={a}:{(mode%2==0?"00":"30")}"
+            },
             16=>mode%2==0?$"RESULT={a}":"SHAPE=RECTANGLE",
             _=>throw new InvalidOperationException()
         };

@@ -38,7 +38,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         if(n<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(n==3?8:n==4?9:n==5?7:3))return false;
+           mode<0||mode>(n==3?8:n==4?9:n==5?7:n==9?8:3))return false;
         return n switch
         {
             0=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
@@ -76,7 +76,14 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 a>=20&&a<=120&&b==0),
             7=>a>=20&&a<=100&&b==0&&c==0,
             8=>a>=31&&a<=79&&a%10>0&&b==10&&c==0,
-            9=>a>=1&&a<=120&&b>=0&&b<=a&&c==0,
+            9=>mode switch
+            {
+                4=>a==60&&b==70&&c==0,
+                5=>a==70&&b==70&&c==0,
+                6=>a==80&&b==69&&c==0,
+                7=>a==47&&b==40&&c==0,
+                _=>a>=1&&a<=120&&b>=0&&b<=a&&c==0
+            },
             _=>false
         };
     }
@@ -84,7 +91,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
     {
         int n=Index(family);
         if(n<0)throw new InvalidOperationException("Unreviewed Grade1 U08 family");
-        int mode=random.Next(n==3?9:n==4?10:n==5?8:4),a=0,b=0,c=0;
+        int mode=random.Next(n==3?9:n==4?10:n==5?8:n==9?9:4),a=0,b=0,c=0;
         for(int attempts=0;attempts<1000;attempts++)
         {
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
@@ -120,6 +127,11 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             {
                 4=>(12,7),5=>(17,7),6=>(13,9),7=>(20,14),
                 _=>throw new InvalidOperationException("Unexpected carnival story mode")
+            };
+            if(n==9&&(mode is >=4 and <=7))(a,b)=mode switch
+            {
+                4=>(60,70),5=>(70,70),6=>(80,69),7=>(47,40),
+                _=>throw new InvalidOperationException("Unexpected source number-riddle mode")
             };
             var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
             if(!Valid(family,p))continue;
@@ -173,7 +185,14 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 8=>mode%2==0?
                     $"NUMBER RIDDLE: My secret number has {a%10} ones. It is GREATER than {(a/10)*10} and LESS than {(a/10+3)*10}. List ALL three possible numbers in order from smallest to largest. Write CANDIDATES=n1,n2,n3.":
                     $"NUMBER RIDDLE: My secret number has {a%10} ones. It is GREATER than {(a/10)*10} and LESS than {(a/10+3)*10}. First find the three possible numbers. FINAL clue: it is exactly 10 MORE than {a}. Which one number now satisfies ALL four clues? Write NUMBER=number.",
-                9=>$"Review a proposed FOUR-clue number riddle for a secret number within 1 to 120 (not proof of authorship): Clue 1: My number is more than {a-1}. Clue 2: My number is less than {a+1}. Clue 3: My number has {a/10} tens and {a%10} ones. Clue 4, an addition expression: {b} + {a-b+(mode%2)}. Decide whether ALL four clues are consistent. Write NUMBER=number;VALID=YES/NO.",
+                9=>mode switch
+                {
+                    4=>"ORIGINAL 2021 TRUE/FALSE: Is 60=25+45 true? Write TRUE=YES/NO;LEFT=number;RIGHT=number.",
+                    5=>"ORIGINAL 2021 TRUE/FALSE: Is 70=24+46 true? Write TRUE=YES/NO;LEFT=number;RIGHT=number.",
+                    6=>"ORIGINAL 2021 TRUE/FALSE: Is 80=32+37 true? Write TRUE=YES/NO;LEFT=number;RIGHT=number.",
+                    7 or 8=>$"FIRST-PARTY ORIGINAL-GOAL WRITING SCAFFOLD: Take secret number {a}. Author four CONCRETE clues: (1) choose a LOWER bound strictly smaller than {a}, (2) choose an UPPER bound strictly greater than {a}, (3) state full TENS and ONES for {a}, (4) write an ADDITION expression equal to {a}. Enter NUMBER=n;LOWER=n;UPPER=n;TENS=n;ONES=n;ADD=x+y. All four must be consistent. Student-chosen bounds and addition are accepted; a teacher reviews real written clues and partner riddle discussion.",
+                    _=>$"Review a proposed FOUR-clue number riddle for a secret number within 1 to 120 (not proof of authorship): Clue 1: My number is more than {a-1}. Clue 2: My number is less than {a+1}. Clue 3: My number has {a/10} tens and {a%10} ones. Clue 4, an addition expression: {b} + {a-b+(mode%2)}. Decide whether ALL four clues are consistent. Write NUMBER=number;VALID=YES/NO."
+                },
                 _=>throw new InvalidOperationException()
             };
             return new(family,prompt,"Use first-grade addition, difference, grouping and place value reasoning. Actual student-authored riddles, drawings and PLC explanations require independent teacher evidence.",AssessmentItemType.ShortAnswer,p);
@@ -202,13 +221,53 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 mode==2?$"ALT_TENS={a/10-2};ALT_ONES={a%10+20};TOTAL={a}":
                 $"WAYS={a/10+1};ZERO_TENS_ONES={a};TOTAL={a}",
             8=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}",
-            9=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}",
+            9=>mode switch
+            {
+                4=>"TRUE=NO;LEFT=60;RIGHT=70",
+                5=>"TRUE=YES;LEFT=70;RIGHT=70",
+                6=>"TRUE=NO;LEFT=80;RIGHT=69",
+                7 or 8=>$"NUMBER={a};LOWER={Math.Max(0,a-10)};UPPER={Math.Min(121,a+10)};TENS={a/10};ONES={a%10};ADD={b}+{a-b}",
+                _=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}"
+            },
             _=>throw new InvalidOperationException()
         };
     }
     private static string Normalize(string? s)=>
         string.Concat((s??"").Where(c=>!char.IsWhiteSpace(c))).ToUpperInvariant();
+    private static bool VerifyFourAuthoredClues(IReadOnlyDictionary<string,int> p,string? response)
+    {
+        string normalized=Normalize(response);
+        var parts=normalized.Split(';');
+        if(parts.Length!=6)return false;
+        var fields=new Dictionary<string,string>(StringComparer.Ordinal);
+        foreach(var part in parts)
+        {
+            int pos=part.IndexOf('=');
+            if(pos<=0||pos==part.Length-1||
+               !fields.TryAdd(part[..pos],part[(pos+1)..]))return false;
+        }
+        if(fields.Count!=6||
+           !fields.TryGetValue("NUMBER",out var numberText)||
+           !fields.TryGetValue("LOWER",out var lowerText)||
+           !fields.TryGetValue("UPPER",out var upperText)||
+           !fields.TryGetValue("TENS",out var tensText)||
+           !fields.TryGetValue("ONES",out var onesText)||
+           !fields.TryGetValue("ADD",out var additionText)||
+           !int.TryParse(numberText,out int number)||number!=p["a"]||
+           !int.TryParse(lowerText,out int lower)||lower<0||lower>=number||
+           !int.TryParse(upperText,out int upper)||upper<=number||upper>121||
+           !int.TryParse(tensText,out int tens)||tens!=number/10||
+           !int.TryParse(onesText,out int ones)||ones!=number%10)return false;
+        string[] addends=additionText.Split('+');
+        return addends.Length==2&&
+               int.TryParse(addends[0],out int first)&&first>=0&&
+               int.TryParse(addends[1],out int second)&&second>=0&&
+               first+second==number;
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? response)=>
         Valid(family,p)&&!string.IsNullOrWhiteSpace(response)&&
-        Normalize(Solve(family!,p))==Normalize(response);
+        (Index(family)==9&&(p["mode"] is 7 or 8)?
+            VerifyFourAuthoredClues(p,response):
+            Normalize(Solve(family!,p))==Normalize(response));
 }

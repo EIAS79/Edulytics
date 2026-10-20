@@ -29,7 +29,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[0]?13:family==Families[1]?6:family==Families[2]?7:family==Families[4]?7:3))return false;
+           mode<0||mode>(family==Families[0]?13:family==Families[1]?6:family==Families[2]?7:family==Families[4]?7:family==Families[5]?6:family==Families[6]?6:family==Families[7]?6:3))return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" => mode switch
@@ -48,8 +48,13 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             "usccss.g1.u04.l18.center_count_compare_order" =>
                 mode>=4?a==32&&b==(mode==4?10:20)&&c==0:
                 a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
-            "usccss.g1.u04.l22.center_place_value" =>
-                a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
+            "usccss.g1.u04.l22.center_place_value" => mode switch
+            {
+                4=>a==92&&b==92&&c==0, // 92 = 90+2
+                5=>a==92&&b==92&&c==0, // 90+2 > 80+12 false
+                6=>a==33&&b==43&&c==0, // 20+13 < 30+13 true
+                _=>a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99
+            },
             "usccss.g1.u04.l17.order_three_numbers"=>
                 mode>=5?a==25&&b==0&&c==0:
                 mode>=3?ValidTenCardInsertion(p)&&
@@ -65,9 +70,21 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                                (mode==6&&a==49)||(mode==7&&a==36)))),
             "usccss.g1.u04.l21.compare_nonstandard_forms" =>
                 a>=20&&a<=99&&b>=20&&b<=99&&c==0&&
-                (mode!=2||(a==82&&b==72)),
-            "usccss.g1.u04.l23.estimate_and_count" =>
-                a>=20&&a<=99&&b>=10&&b<=99&&c==0,
+                (mode switch
+                {
+                    2=>a==82&&b==72,
+                    4=>a==52&&b==42,
+                    5=>a==32&&b==32,
+                    6=>a==35&&b==40,
+                    _=>true
+                }),
+            "usccss.g1.u04.l23.estimate_and_count" => mode switch
+            {
+                4=>a>=10&&a<=19&&b>=10&&b<=99&&c==0,
+                5=>a>=20&&a<=50&&b>=10&&b<=99&&c==0,
+                6=>a>=51&&a<=99&&b>=10&&b<=99&&c==0,
+                _=>a>=20&&a<=99&&b>=10&&b<=99&&c==0
+            },
             _=>false
         };
     }
@@ -92,7 +109,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[0]?14:family==Families[1]?7:family==Families[2]?8:family==Families[4]?8:4);
+        int mode=random.Next(family==Families[0]?14:family==Families[1]?7:family==Families[2]?8:family==Families[4]?8:family==Families[5]?7:family==Families[6]?7:family==Families[7]?7:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
         if(family==Families[0]&&mode>=4)
         {
@@ -128,8 +145,30 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         {
             c=0;
             if(mode==2){a=82;b=72;} // Elena 5 tens +32 ones vs Kiran 7 tens +2.
+            if(mode==4){a=52;b=42;} // Original student summary: 5 tens 2 ones > 3 tens 12 ones.
+            if(mode==5){a=32;b=32;} // Original teacher synthesis: 3 tens 2 ones = 2 tens 12 ones.
+            if(mode==6){a=35;b=40;} // Original teacher synthesis: 2 tens 15 ones < 4 tens.
         }
-        if(family==Families[7]){b=Math.Clamp(a+random.Next(-9,10),10,99);c=0;}
+        if(family==Families[6]&&mode>=4)
+        {
+            (a,b,c)=mode switch
+            {
+                4=>(92,92,0),5=>(92,92,0),6=>(33,43,0),
+                _=>throw new InvalidOperationException("Unknown source true/false comparison")
+            };
+        }
+        if(family==Families[7])
+        {
+            b=Math.Clamp(a+random.Next(-9,10),10,99);c=0;
+            if(mode>=4)
+                a=mode switch
+                {
+                    4=>random.Next(10,20),
+                    5=>random.Next(20,51),
+                    6=>random.Next(51,100),
+                    _=>throw new InvalidOperationException("Unknown original-classification proxy")
+                };
+        }
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
         if(family==Families[1]&&mode==4)
         {
@@ -198,12 +237,25 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 mode==7?
                     "ORIGINAL 2021 MYSTERY BAG D: A bag has 36 cubes, with TWO full ten-towers already inside. How many loose ONE cubes are in the bag? Write ONES=number.":
                 $"Original How Many Ways?: Start with {a/10} ten-rods and {a%10} ones, making {a}. Exchange {Math.Min(a/10,mode+1)} full ten-rods for loose ones; find a SECOND valid regrouping, and calculate how many tens-and-ones regroupings exist when all zero-to-{a/10} complete ten-rods are allowed. Write NUMBER=number;TENS=number;ONES=number;ALT_TENS=number;ALT_ONES=number;WAYS=number. Teacher reviews original drawings and partner explanations.",
-            "usccss.g1.u04.l21.compare_nonstandard_forms"=>
-                $"Compare {a/10-Math.Min(mode+1,a/10)} tens and {a%10+10*Math.Min(mode+1,a/10)} ones with {b/10} tens and {b%10} ones. Write SYMBOL=sign.",
+            "usccss.g1.u04.l21.compare_nonstandard_forms"=>mode switch
+                {
+                    4=>"ORIGINAL 2021 LESSON SUMMARY: Compare 5 tens and 2 ones with 3 tens and 12 ones. Write SYMBOL=sign.",
+                    5=>"ORIGINAL 2021 TEACHER SYNTHESIS: Compare 3 tens and 2 ones with 2 tens and 12 ones. Write SYMBOL=sign.",
+                    6=>"ORIGINAL 2021 TEACHER SYNTHESIS: Compare 2 tens and 15 ones with 4 tens. Write SYMBOL=sign.",
+                    _=>$"Compare {a/10-Math.Min(mode+1,a/10)} tens and {a%10+10*Math.Min(mode+1,a/10)} ones with {b/10} tens and {b%10} ones. Write SYMBOL=sign."
+                },
             "usccss.g1.u04.l22.center_place_value"=>
+                mode>=4?mode switch
+                {
+                    4=>"ORIGINAL 2021 NUMBER TALK: Is 92=90+2 true or false? Write TRUE=YES/NO;LEFT=number;RIGHT=number. Explain the tens and ones.",
+                    5=>"ORIGINAL 2021 NUMBER TALK: Is 90+2>80+12 true or false? Write TRUE=YES/NO;LEFT=number;RIGHT=number. Explain the nonstandard 12 ones.",
+                    _=>"ORIGINAL 2021 NUMBER TALK: Is 20+13<30+13 true or false? Write TRUE=YES/NO;LEFT=number;RIGHT=number. Explain why."
+                }:
                 mode%2==0?$"Center numeric task: compare two-digit numbers {a} and {b}. Write SYMBOL=sign.":
                     $"Center numeric task: identify number made of {a/10} tens and {a%10} ones. Write NUMBER=number.",
-            "usccss.g1.u04.l23.estimate_and_count"=>
+            "usccss.g1.u04.l23.estimate_and_count" =>
+                mode>=4?
+                $"EDULYTICS FIRST-PARTY SIMULATED QUANTITY, NOT THE PUBLISHER PICTURE: A teacher has independently counted {a} objects. Choose the source sorting band (LESS_THAN_20, TWENTY_TO_FIFTY, MORE_THAN_50), and write the quantity as tens and ones. Answer COUNT=number;CATEGORY=name;TENS=number;ONES=number. Real two-handful counts and photo estimates remain teacher-assessed.":
                 $"Optional classroom investigation: your provisional estimate was {b}; a picture clearly contains {a/10} FULL tens bundles and {a%10} additional objects. Calculate the exact count and absolute estimation gap. Write COUNT=number;GAP=number. Real estimation behavior requires separate evidence.",
             _=>throw new InvalidOperationException()
         };
@@ -248,9 +300,12 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 _=>$"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}"
             },
             "usccss.g1.u04.l21.compare_nonstandard_forms"=>$"SYMBOL={Sign(a,b)}",
-            "usccss.g1.u04.l22.center_place_value"=>
+            "usccss.g1.u04.l22.center_place_value" =>
+                mode>=4?$"TRUE={(mode==5?"NO":"YES")};LEFT={a};RIGHT={b}":
                 mode%2==0?$"SYMBOL={Sign(a,b)}":$"NUMBER={a}",
-            "usccss.g1.u04.l23.estimate_and_count"=>$"COUNT={a};GAP={Math.Abs(a-b)}",
+            "usccss.g1.u04.l23.estimate_and_count" =>
+                mode>=4?$"COUNT={a};CATEGORY={(a<20?"LESS_THAN_20":a<=50?"TWENTY_TO_FIFTY":"MORE_THAN_50")};TENS={a/10};ONES={a%10}":
+                $"COUNT={a};GAP={Math.Abs(a-b)}",
             _=>throw new InvalidOperationException()
         };
     }
@@ -300,11 +355,13 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
            !map.TryGetValue("ONES",out var ones)||
            !map.TryGetValue("ALT_TENS",out var altTens)||
            !map.TryGetValue("ALT_ONES",out var altOnes)||
-           !int.TryParse(tens,out var t)||t!=3||
-           !int.TryParse(ones,out var o)||o!=7||
-           !int.TryParse(altTens,out var altT)||altT<0||altT>=3||
-           !int.TryParse(altOnes,out var altO)||altO<10)return false;
-        return 10*altT+altO==37;
+           !int.TryParse(tens,out var t)||t<0||t>3||
+           !int.TryParse(ones,out var o)||o<7||
+           !int.TryParse(altTens,out var altT)||altT<0||altT>3||
+           !int.TryParse(altOnes,out var altO)||altO<7||t==altT)return false;
+        // The source asks for any TWO distinct decompositions, not necessarily
+        // the textbook-standard 3 tens + 7 ones as the pupil's first choice.
+        return 10*t+o==37&&10*altT+altO==37;
     }
 
     // 2021 L16 source asks pupils to CHOOSE any true number in a box.
