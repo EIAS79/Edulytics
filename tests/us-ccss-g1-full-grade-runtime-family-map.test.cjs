@@ -17,6 +17,7 @@ test('all 96 source-ordered Grade 1 new candidates have one honest assessment mo
   assert.equal(x.records[14].candidateFamily,null);
   assert.equal(x.records[95].assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
   assert.equal(x.records[119-51].assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
+  assert.equal(x.records[142-51].assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
   assert.equal(x.records[135-51].assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
   for(const ordinal of [123,124,125,126])
     assert.equal(x.records[ordinal-51].assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
