@@ -173,6 +173,32 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
+    public void Lesson78OriginalCenterNumericTasksAndDistinctCardChoiceAreVerified()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.CenterReview;
+        foreach(var (mode,a,b,expected) in new[]{
+            (4,70,20,"ADD=90;SUBTRACT=50"),
+            (5,8,7,"TOTAL=20;CARDS=8+7+5"),
+            (6,9,6,"ADD=15;SUBTRACT=9")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode},{"unused",0}};
+            Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            Assert.Equal(expected,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,expected+";EXTRA=1"));
+            p["a"]=a+1;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        }
+        var questions=Enumerable.Range(0,1400).Select(i=>
+            UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*43+11))).ToArray();
+        foreach(var mode in new[]{4,5,6})
+            Assert.True(questions.Count(q=>q.Parameters["mode"]==mode)>100);
+        Assert.All(questions,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family,q.Parameters,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,q.Parameters))));
+    }
+
+    [Fact]
     public void WordComparisonPrecedesOfficialSymbols()
     {
         var p=new Dictionary<string,int>{{"a",64},{"b",57},{"mode",1},{"unused",0}};
