@@ -31,7 +31,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string UnitFourCollectionSourceContentVersion="us-ccss-g1-u04-l01-original-activities-v7";
     public const string UnitFourTensMatchSourceContentVersion="us-ccss-g1-u04-l02-original-activities-v7";
     public const string UnitFourMultipleTensSourceContentVersion="us-ccss-g1-u04-l04-original-activities-v7";
-    public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v6";
+    public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v7";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
             .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
@@ -371,12 +371,16 @@ Step 7: In the independent Edulytics exit check, use 50+30=80 and 80-30=50 to de
 Example 2: Cards 70 and 20: 70-20=50.
 Example 3: A previous center includes 8+7=15 by making ten.
 Example 4: 16-8=8 because 8+8=16.
-Original 2021 Check It Off example: cards 40 and 50 can produce a 90 sum or 10 difference. If 90 is already marked, subtract 50-40=10 to mark the remaining value; the teacher-led center tracks card and board state.",
+Original 2021 Check It Off example: cards 40 and 50 can produce a 90 sum or 10 difference. If 90 is already marked, subtract 50-40=10 to mark the remaining value; the teacher-led center tracks card and board state.
+Source card domain includes ZERO and NINETY. A 0 card can be paired with a 30 card to produce 30 by addition, and 90-10=80 is a mathematically valid subtraction within the original board range. Digital adapted practice may evaluate such values, but does not assert that those exact cards were physically dealt to any pupil.
+Original Which One Does Not Belong? warm-up shows FOUR picture representations of groups of ten; pupils explain their choice to the teacher. Original Check It Off Stage 2 partner game awards points for numbers checked on the board; a numeric answer cannot establish authentic partner interaction.",
             @"Step 1: Read the number cards and choose a permitted operation.
 Step 2: For tens, combine or remove whole groups of ten.
 Step 3: For within-20 numbers, count on, make ten or use a known fact.
 Step 4: Check that the expression and answer obey the activity's value limits.
-Step 5: If participating in center play, discuss the strategy and turns with the teacher/partner.",
+Step 5: If participating in center play, discuss the strategy and turns with the teacher/partner.
+Step 6: For an Edulytics numeric card exercise, ensure each operand is a multiple of ten from 0 through 90, the sum/difference is between 0 and 90, and the chosen equation matches your answer.
+Step 7: On the original source demonstration 40 and 50, 90 is ALREADY marked and 10 is unmarked: explicitly choose SUBTRACTION, compute 50-40=10 and cover 10. The actual teacher-led board decides which expression is useful.",
             @"Do not treat 40+30 as seven ones. Do not automatically mark center-play requirements met by solving one digital equation. Check that subtraction does not remove more than the starting number.",
             @"I can calculate with tens and with numbers within 20; classroom center games stay teacher-led."),
         new(@"PED:US-CCSS-MATH:G1:U04:L06",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-6/preparation.html",@"c4019c5dfc3093c6cc9a477048c2aaa08c0a29618b5be8034c615c6c1306953d",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
@@ -628,6 +632,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourCollectionLessonCode&&previous=="us-ccss-g1-u04-l01-original-activities-v6")||
          (lesson.LessonCode==UnitFourTensMatchLessonCode&&previous=="us-ccss-g1-u04-l02-original-activities-v6")||
          (lesson.LessonCode==UnitFourMultipleTensLessonCode&&previous=="us-ccss-g1-u04-l04-original-activities-v6")||
+         (lesson.LessonCode==UnitFourCenterLessonCode&&previous=="us-ccss-g1-u04-l05-original-activities-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
