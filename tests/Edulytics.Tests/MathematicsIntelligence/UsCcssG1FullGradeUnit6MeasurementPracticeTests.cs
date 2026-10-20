@@ -255,6 +255,52 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
     }
 
+    [Fact]
+    public void OriginalUnit6Lesson15ClareCranesRequiresMissingStartNotOnlyKnownResult()
+    {
+        const string family="usccss.g1.u06.l15.write_story_equations";
+        var source=new Dictionary<string,int>{
+            ["a"]=19,["b"]=12,["c"]=0,["mode"]=4
+        };
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,source));
+        Assert.Equal("START=19;EQUATION=19-12=7",
+            UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,source));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family,source,"START=19;EQUATION=19-12=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,source,"START=7;EQUATION=19-12=7"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,source,"START=19;EQUATION=19+12=31"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,source,"START=19;EQUATION=19-12=7;GALLERY=PASSED"));
+        var wrongSource=new Dictionary<string,int>(source){["b"]=11};
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(
+            family,wrongSource));
+    }
+
+    [Fact]
+    public void OrigamiPracticeRetainsFourExistingEquationModesAlongsideSource()
+    {
+        const string family="usccss.g1.u06.l15.write_story_equations";
+        var seen=new HashSet<int>();
+        for(int seed=0;seed<600;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                family,new Random(seed*103+71));
+            seen.Add(item.Parameters["mode"]);
+            var answer=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,answer));
+            if(item.Parameters["mode"]==4)
+            {
+                Assert.Contains("Clare gave 12 paper cranes",item.Prompt);
+                Assert.Contains("The START is unknown",item.Prompt);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),seen.OrderBy(x=>x));
+    }
+
     [Theory]
     [InlineData(7,4,9,1,"ORDER=B,A,C")]
     [InlineData(8,20,12,1,"ORDER=A,C,B")]
