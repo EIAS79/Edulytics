@@ -211,6 +211,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
                     :n==11?CommonCoreG1FullGradeStartingContentCorrections.UnitFourAddTensSourceContentVersion
                     :n==12?CommonCoreG1FullGradeStartingContentCorrections.UnitFourTenMoreLessSourceContentVersion
                     :n==13?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCenterDayTwoSourceContentVersion
+                    :n==14?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCompareWordsSourceContentVersion
                     :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
@@ -401,6 +402,13 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,centerDayTwo,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
         Assert.Contains("Elena argues 75>65",unit4Text(14));
+        foreach(var sourcePhrase in new[]{"starts at 3 and adds TEN until 93", "93 is GREATER THAN 26", "62 is LESS THAN 64", "Write Numbers, Grab and Count, or Five in a Row", "43+20=63", "64 is GREATER THAN 44", "54 is LESS THAN 59"})
+            Assert.Contains(sourcePhrase,unit4Text(14));
+        var compareWords=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L14");
+        Assert.Equal("us-ccss-g1-u04-l14-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourCompareWordsSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,compareWords,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
         Assert.Contains("39<41",unit4Text(14));
         Assert.Contains("17<27",unit4Text(15));
         Assert.Contains("58=53 FALSE",unit4Text(15));
