@@ -58,11 +58,17 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>5 || (c!=0 && family!=CenterWithin20))return false;
+           mode<0||mode>6 || (mode==6 && family!=CountOnOrAway) ||
+            (c!=0 && family!=CenterWithin20))return false;
         return family switch
         {
-            CountOnOrAway or FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
-                (family!=FlexibleSubtract||mode!=2||(a==12&&b==7)),
+            CountOnOrAway=>a>=11&&a<=20&&b>=1&&b<a&&mode<=6&&
+                (mode!=4||((a==12&&b==7)||(a==18&&b==5)||
+                           (a==14&&b==6)||(a==15&&b==12)||(a==13&&b==4)))&&
+                (mode!=5||((a==18&&b==5)||(a==13&&b==6)||(a==20&&b==15)))&&
+                (mode!=6||((a==16&&b==3)||(a==17&&b==8)||(a==18&&b==15))),
+            FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
+                (mode!=2||(a==12&&b==7)),
             StoryUnknowns=>((a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
                 ((mode==1||mode==4)&&a==6&&b==12))&&
                 (mode!=2||(a==6&&b==9))&&
@@ -91,12 +97,35 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
-        int mode=family is StoryUnknowns or CenterTens?random.Next(6):random.Next(4);
+        int mode=family==CountOnOrAway?random.Next(7):
+            (family==StoryUnknowns||family==CenterTens?random.Next(6):random.Next(4));
         int a=0,b=0,c=0;
         if(family is CountOnOrAway or FlexibleSubtract)
         {
-            if(family==FlexibleSubtract&&mode==2){a=12;b=7;} // Original teacher's pencils story.
-            else{a=random.Next(11,21);b=random.Next(1,Math.Min(9,a-1)+1);}
+            if(family==CountOnOrAway&&mode==4)
+            {
+                // Original 2021 Unit 3 Lesson 24 Student Facing Set A: ALL five exact equations.
+                var tasks=new[]{(12,7),(18,5),(14,6),(15,12),(13,4)};
+                (a,b)=tasks[random.Next(tasks.Length)];
+            }
+            else if(family==CountOnOrAway&&mode==5)
+            {
+                // Original Set B: 5+□=18; 13=□+6; 20=15+□.
+                var tasks=new[]{(18,5),(13,6),(20,15)};
+                (a,b)=tasks[random.Next(tasks.Length)];
+            }
+            else if(family==CountOnOrAway&&mode==6)
+            {
+                // Original Activity 1 Diego/Tyler: 16−3;17−8;18−15.
+                var tasks=new[]{(16,3),(17,8),(18,15)};
+                (a,b)=tasks[random.Next(tasks.Length)];
+            }
+            else if(family==FlexibleSubtract&&mode==2){a=12;b=7;} // Original teacher's pencils story.
+            else
+            {
+                a=random.Next(11,21);
+                b=random.Next(1,family==FlexibleSubtract?Math.Min(9,a-1)+1:a);
+            }
         }
         else if(family==StoryUnknowns)
         {
@@ -155,10 +184,22 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         var t=a+b;
         string prompt=family switch
         {
-            CountOnOrAway=>mode==2?
-                $"Original 2021 Set A: find the unknown in {a} - {b} = □ and write the full subtraction equation. Write UNKNOWN=number;EQUATION=number-number=number.":
+            CountOnOrAway=>mode==4?
+                (a==14?
+                    "ORIGINAL 2021 SET A, equation 3: Find the value of the BOX in □ = 14-6. Write UNKNOWN=number;EQUATION=number=number-number. Explain a counting-on or taking-away method with your teacher.":
+                    $"ORIGINAL 2021 SET A: Find the number in {a}-{b}=□. Write UNKNOWN=number;EQUATION=number-number=number. Explain your thinking to a teacher.") :
+                mode==5?
+                (a==18?
+                    "ORIGINAL 2021 SET B, equation 1: 5+□=18. Write UNKNOWN=number;EQUATION=number+number=number. Explain how you found the missing addend.":
+                 a==13?
+                    "ORIGINAL 2021 SET B, equation 2: 13=□+6. Write UNKNOWN=number;EQUATION=number=number+number. Explain the missing first addend.":
+                    "ORIGINAL 2021 SET B, equation 3: 20=15+□. Write UNKNOWN=number;EQUATION=number=number+number. Explain how counting on helps.") :
+                mode==6?
+                $"ORIGINAL 2021 DIEGO AND TYLER TASK: Find {a}-{b} using BOTH methods. Diego takes away {b} from {a}; Tyler counts on from {b} to {a}. Write DIFFERENCE=number;CHECK=number+number=number. Show both strategies with a teacher; digital checking cannot verify a drawing.":
+                mode==2?
+                $"EDULYTICS ADAPTED SET A: Find the unknown in {a}-{b}=□. Write UNKNOWN=number;EQUATION=number-number=number.":
                 mode==3?
-                $"Original 2021 Set B: find the missing addend in □ + {b} = {a}. Use counting ON or taking AWAY to justify your choice. Write UNKNOWN=number;EQUATION=number+number=number.":
+                $"EDULYTICS ADAPTED SET B: Find the missing first addend in □+{b}={a}. Write UNKNOWN=number;EQUATION=number+number=number.":
                 $"Compare counting ON from {b} to {a} with taking AWAY {b} from {a}. Both methods must find the difference. Write DIFFERENCE=number;CHECK=number+number=number.",
             FlexibleSubtract=>mode==2?
                 "ORIGINAL 2021 STUDENT FACING: There are 12 pencils on the table. The teacher picks up 7 pencils. How many are still on the table? Choose YOUR subtraction method, explain with counters, drawings, numbers or words, and write DIFFERENCE=number;CHECK=number+number=number.":
@@ -230,7 +271,15 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         int a=p["a"],b=p["b"],c=p["c"],mode=p["mode"],sum=a+b;
         return family switch
         {
-            CountOnOrAway=>mode==2?
+            CountOnOrAway=>mode==4?
+                (a==14?
+                    "UNKNOWN=8;EQUATION=8=14-6":
+                    $"UNKNOWN={a-b};EQUATION={a}-{b}={a-b}") :
+                mode==5?
+                (a==18?"UNKNOWN=13;EQUATION=5+13=18":
+                 a==13?"UNKNOWN=7;EQUATION=13=7+6":
+                 "UNKNOWN=5;EQUATION=20=15+5") :
+                mode==2?
                 $"UNKNOWN={a-b};EQUATION={a}-{b}={a-b}":
                 mode==3?
                 $"UNKNOWN={a-b};EQUATION={a-b}+{b}={a}":
