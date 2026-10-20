@@ -518,7 +518,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
 
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? submitted)=>
         Valid(family,p)&&
-        (family==Specs[6].Code&&p["mode"]>=2?
+        (family==Specs[6].Code&&p["mode"]>=2&&p["mode"]<=5?
             VerifyOpenMissingAddend(p,submitted):
             GradePersistedAnswer(family,Solve(family!,p),submitted));
 }
