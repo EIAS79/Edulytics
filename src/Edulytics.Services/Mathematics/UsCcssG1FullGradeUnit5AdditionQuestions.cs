@@ -161,7 +161,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec==null||p.Count!=3||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||
-           mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?9:spec.LessonCode=="L07"?5:
+           mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L07"?5:
            spec.LessonCode is "L08" or "L09"?7:
            spec.LessonCode is "L10" or "L11" or "L12"?5:
            spec.LessonCode=="L14"?4:3))
@@ -170,6 +170,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         // Independent first-party equation proxy for the two distinct source
         // student strategies (not an automated judgment of publisher drawings).
         if(spec.LessonCode=="L02"&&mode==6)return a==63&&b==25;
+        if(spec.LessonCode=="L03"&&mode==10)return a==32&&b==54;
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
         {
             var source=Exact2021Equation(spec.LessonCode,mode);
@@ -204,7 +205,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     {
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
-        int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?10:spec.LessonCode=="L07"?6:
+        int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L07"?6:
             spec.LessonCode is "L08" or "L09"?8:
             spec.LessonCode is "L10" or "L11" or "L12"?6:
             spec.LessonCode=="L14"?5:4);
@@ -220,6 +221,18 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "ANDRE_FIRST=number;ANDRE_SECOND=number;TOTAL=number. " +
                 "These are authored equations, NOT a claimed reconstruction or automated grading of the publisher drawings.",
                 "Both methods give 88; teacher checks whether the student's drawings or verbal reasoning show place value.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L03"&&mode==10)
+        {
+            var p=new Dictionary<string,int>{{"a",32},{"b",54},{"mode",10}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 91 original math drift");
+            return new(family,
+                "EDULYTICS FIRST-PARTY METHOD WRITING, from original 2021 Lin and Han source example 32+54: " +
+                "Lin combines the tens 30+50, then ones 2+4. Han starts from 54, adds 30, and then adds 2. " +
+                "Write LIN_TENS=number;LIN_ONES=number;HAN_FIRST=number;HAN_SECOND=number;TOTAL=number. " +
+                "The actual pupil-created equations, drawings and explanations need teacher review.",
+                "Lin: 30+50=80 and 2+4=6; Han: 54+30=84 and 84+2=86; both get 86.",
                 AssessmentItemType.ShortAnswer,p);
         }
         var original=Exact2021Equation(spec.LessonCode,mode);
@@ -352,6 +365,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec.LessonCode=="L14")return FoodDriveSolve(a,b,p["mode"]);
         if(spec.LessonCode=="L02"&&p["mode"]==6)
             return "ELENA_TENS=80;ELENA_ONES=8;ANDRE_FIRST=83;ANDRE_SECOND=88;TOTAL=88";
+        if(spec.LessonCode=="L03"&&p["mode"]==10)
+            return "LIN_TENS=80;LIN_ONES=6;HAN_FIRST=84;HAN_SECOND=86;TOTAL=86";
         if(p["mode"]>=4&&(spec.LessonCode is "L02" or "L03"))
             return $"TENS={(a/10+b/10)*10};ONES={a%10+b%10};TOTAL={sum}";
         if(p["mode"]>=4&&(spec.LessonCode is "L08" or "L09"))
