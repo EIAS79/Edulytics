@@ -165,6 +165,35 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     [
         (48,15),(57,36)
     ];
+    private static readonly (int a,int b)[] Lesson12OriginalWarmups =
+    [
+        (7,3),(37,3),(7,8),(57,8)
+    ];
+    private static readonly int[] Lesson12SourceNumbers=[37,22,18,56,41];
+    // Select two different ORIGINAL numbers, without fabricating a sixth card.
+    private static readonly (int a,int b)[] Lesson12PairOptions =
+    [
+        (37,22),(37,18),(37,56),(37,41),
+        (22,18),(22,56),(22,41),
+        (18,56),(18,41),(56,41)
+    ];
+    private static bool Lesson12PairValid(int a,int b,int mode)
+    {
+        if(a==b||!Lesson12SourceNumbers.Contains(a)||!Lesson12SourceNumbers.Contains(b))
+            return false;
+        int sum=a+b;
+        int ones=a%10+b%10;
+        return sum<=100&&mode switch
+        {
+            6=>sum==Lesson12PairOptions.Min(p=>p.a+p.b),
+            7=>sum==Lesson12PairOptions.Max(p=>p.a+p.b),
+            8=>ones<10,
+            9=>ones>=10&&sum%10>0,
+            10=>ones>=10&&sum%10==0,
+            11=>Math.Abs(sum-95)==Lesson12PairOptions.Min(p=>Math.Abs(p.a+p.b-95)),
+            _=>false
+        };
+    }
     private static (int a,int b)? Exact2021Equation(string lesson,int mode)
     {
         var examples=lesson switch
@@ -195,7 +224,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
            !p.TryGetValue("mode",out int mode)||mode<0||
            mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?9:
            spec.LessonCode=="L08"?9:spec.LessonCode=="L09"?8:
-           spec.LessonCode=="L10"?10:spec.LessonCode=="L11"?9:spec.LessonCode=="L12"?5:
+           spec.LessonCode=="L10"?10:spec.LessonCode=="L11"?9:spec.LessonCode=="L12"?15:
            spec.LessonCode=="L14"?4:3))
             return false;
         if(spec.LessonCode=="L14")return mode==4 ? a==0&&b==0 : FoodDriveValid(a,b,mode);
@@ -238,6 +267,13 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         }
         if(spec.LessonCode=="L11"&&mode==9)
             return a==37&&b==25;
+        if(spec.LessonCode=="L12"&&mode>=6&&mode<=11)
+            return Lesson12PairValid(a,b,mode);
+        if(spec.LessonCode=="L12"&&mode>=12)
+        {
+            var source=Lesson12OriginalWarmups[mode-12];
+            return a==source.a&&b==source.b;
+        }
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
         {
             var source=Exact2021Equation(spec.LessonCode,mode);
@@ -274,7 +310,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         int a=0,b=0;
         int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?10:
             spec.LessonCode=="L08"?10:spec.LessonCode=="L09"?9:
-            spec.LessonCode=="L10"?11:spec.LessonCode=="L11"?10:spec.LessonCode=="L12"?6:
+            spec.LessonCode=="L10"?11:spec.LessonCode=="L11"?10:spec.LessonCode=="L12"?16:
             spec.LessonCode=="L14"?5:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
         if(spec.LessonCode=="L02"&&mode==6)
@@ -436,6 +472,44 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "Jada 50+12=62, Kiran 37+3+2=42 and +20=62, Tyler 37+20=57 and +3+2=62.",
                 AssessmentItemType.ShortAnswer,p);
         }
+        if(spec.LessonCode=="L12"&&mode>=6&&mode<=11)
+        {
+            var options=Lesson12PairOptions.Where(pair=>
+                Lesson12PairValid(pair.a,pair.b,mode)).ToArray();
+            if(options.Length==0)throw new InvalidOperationException("Lesson 100 original card conditions unsatisfiable");
+            var (first,second)=options[random.Next(options.Length)];
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 100 original pairs drift");
+            string rule=mode switch
+            {
+                6=>"the SMALLEST possible sum",
+                7=>"the LARGEST possible sum",
+                8=>"NO new ten formed",
+                9=>"a new ten formed WITH SOME ONES LEFT",
+                10=>"a new ten formed WITH NO ONES LEFT",
+                _=>"the sum CLOSEST TO 95 (both 93 and 97 are equally close)"
+            };
+            return new(family,
+                "ORIGINAL 2021 GRADE 1 UNIT 5 LESSON 12 OPEN-CHOICE NUMBER CARDS: "+
+                "37, 22, 18, 56, 41. Choose TWO different cards to make "+rule+". "+
+                "Write A=number;B=number;NEW_TEN=YES/NO;TOTAL=number. "+
+                "ANY mathematically valid pair is accepted, including reversed order. "+
+                "Explain the tens and ones to the teacher; this is first-party digital math, "+
+                "not a grading claim for open original drawings or physical cards.",
+                "Compare possible source-card pair totals and whether ones exchange for a ten.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L12"&&mode>=12&&mode<=15)
+        {
+            var (first,second)=Lesson12OriginalWarmups[mode-12];
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 100 original warmup drift");
+            return new(family,
+                $"ORIGINAL 2021 UNIT 5 LESSON 12 MENTAL WARM-UP: {first}+{second}. "+
+                "Write TOTAL=number;NEW_TEN=YES/NO. Show a mental strategy to the teacher.",
+                "Add the ones and see whether a new ten was made.",
+                AssessmentItemType.ShortAnswer,p);
+        }
         var original=Exact2021Equation(spec.LessonCode,mode);
         if(original.HasValue)
         {
@@ -587,6 +661,10 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         }
         if(spec.LessonCode=="L11"&&p["mode"]==9)
             return "JADA_TENS=50;JADA_ONES=12;KIRAN_FIRST=42;KIRAN_SECOND=62;TYLER_FIRST=57;TYLER_SECOND=62;TOTAL=62";
+        if(spec.LessonCode=="L12"&&p["mode"]>=6&&p["mode"]<=11)
+            return $"A={a};B={b};NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
+        if(spec.LessonCode=="L12"&&p["mode"]>=12)
+            return $"TOTAL={sum};NEW_TEN={(a%10+b%10>=10?"YES":"NO")}";
         if(p["mode"]>=4&&(spec.LessonCode is "L08" or "L09"))
             return $"NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L06"&&p["mode"]==2)
@@ -644,9 +722,39 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                tenText==(makesNewTen?"YES":"NO");
     }
 
+    private static bool VerifyOpenSourcePair(IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        var parts=Norm(answer).Split(';');
+        if(parts.Length!=4)return false;
+        var fields=new Dictionary<string,string>(StringComparer.Ordinal);
+        foreach(var part in parts)
+        {
+            int at=part.IndexOf('=');
+            if(at<=0||at>=part.Length-1||
+                !fields.TryAdd(part[..at],part[(at+1)..]))return false;
+        }
+        if(fields.Count!=4||!fields.TryGetValue("A",out var firstText)||
+            !fields.TryGetValue("B",out var secondText)||
+            !fields.TryGetValue("TOTAL",out var totalText)||
+            !fields.TryGetValue("NEW_TEN",out var tenText)||
+            !int.TryParse(firstText,out var a)||
+            !int.TryParse(secondText,out var b)||
+            !int.TryParse(totalText,out var total))
+            return false;
+        var candidate=new Dictionary<string,int>
+        {
+            ["a"]=a,["b"]=b,["mode"]=p["mode"]
+        };
+        return Lesson12PairValid(a,b,p["mode"])&&a+b==total&&
+            tenText==(a%10+b%10>=10?"YES":"NO")&&
+            Valid(Specs[11].Code,candidate);
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? submitted)=>
         Valid(family,p)&&
         (family==Specs[6].Code&&p["mode"]>=2&&p["mode"]<=5?
             VerifyOpenMissingAddend(p,submitted):
+            family==Specs[11].Code&&p["mode"]>=6&&p["mode"]<=11?
+            VerifyOpenSourcePair(p,submitted):
             GradePersistedAnswer(family,Solve(family!,p),submitted));
 }
