@@ -173,6 +173,36 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
     }
 
     [Fact]
+    public void Lesson77EachRepeatedTenStepRequiresAllThreeSourceAlignedValues()
+    {
+        const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.TenMoreLess;
+        foreach(var (mode,start,answer,wrong) in new[]{
+            (9,67,"STEP1=77;STEP2=87;STEP3=97","STEP1=77;STEP2=97;STEP3=97"),
+            (10,99,"STEP1=89;STEP2=79;STEP3=69","STEP1=89;STEP2=79;STEP3=79")
+        })
+        {
+            var p=new Dictionary<string,int>{{"a",start},{"b",30},{"mode",mode},{"unused",0}};
+            Assert.True(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            Assert.Equal(answer,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,wrong));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"STEP1=77;STEP3=97"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,answer+";EXTRA=0"));
+            p["b"]=20;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+            p["b"]=30;
+            p["a"]=start+1;
+            Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,p));
+        }
+        var generated=Enumerable.Range(0,1000).Select(i=>
+            UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(family,new Random(i*29+31))).ToArray();
+        foreach(var mode in new[]{9,10})
+            Assert.Contains(generated,q=>q.Parameters["mode"]==mode&&q.Prompt.Contains("THREE-STEP CHECK"));
+        Assert.All(generated,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family,q.Parameters,UsCcssG1FullGradeTwoDigitOperationsQuestions.Solve(family,q.Parameters))));
+    }
+
+    [Fact]
     public void Lesson78OriginalCenterNumericTasksAndDistinctCardChoiceAreVerified()
     {
         const string family=UsCcssG1FullGradeTwoDigitOperationsQuestions.CenterReview;
