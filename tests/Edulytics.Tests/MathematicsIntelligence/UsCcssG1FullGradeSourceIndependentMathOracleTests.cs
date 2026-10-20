@@ -91,7 +91,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 6=>"RECTANGLE=NO;SQUARE=NO",
                 _=>$"ANSWER={(mode%2==0?"YES":"NO")}"
             },
-            6=>"PARTS=2",
+            6=>mode==4?$"TRIANGLES={2*3};TRAPEZOIDS={6/3};SAME_OUTLINE=YES":"PARTS=2",
             7=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             8=>mode%2==0?"PART=HALF;PIECES=2":"PART=FOURTH;PIECES=4",
             9=>mode<=1?(mode==0?"PARTS=2;WHOLES=1":"PARTS=4;WHOLES=1"):
