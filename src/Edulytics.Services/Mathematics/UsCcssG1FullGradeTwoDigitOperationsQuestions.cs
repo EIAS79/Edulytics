@@ -47,7 +47,13 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 3=>b==20&&a==45,
                 _=>false
             },
-            CompareWords or CompareSymbols=>a>=20&&a<=99&&b>=20&&b<=99,
+            CompareWords=>mode switch
+            {
+                4=>a==75&&b==65,
+                5=>a==39&&b==41,
+                _=>a>=20&&a<=99&&b>=20&&b<=99
+            },
+            CompareSymbols=>a>=20&&a<=99&&b>=20&&b<=99,
             CenterReview=>mode switch
             {
                 4=>a==70&&b==20,
@@ -64,7 +70,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?13:family==CenterReview?7:4),a,b;
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?6:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -90,7 +96,9 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         }
         else if(family is CompareWords or CompareSymbols)
         {
-            a=random.Next(20,100);b=mode==0?a:random.Next(20,100);
+            if(family==CompareWords&&mode==4){a=75;b=65;}
+            else if(family==CompareWords&&mode==5){a=39;b=41;}
+            else{a=random.Next(20,100);b=mode==0?a:random.Next(20,100);}
         }
         else
         {
