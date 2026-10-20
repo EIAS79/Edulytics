@@ -45,7 +45,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode))return false;
         return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&
-            mode<=((Index(family)==1||Index(family)==2)?4:3)&&
+            mode<=((Index(family)==1||Index(family)==2||Index(family)==4)?4:3)&&
             (Index(family)!=1||mode!=4||(a>=2&&a<=4&&b>=2&&b<=3))&&
             (Index(family)!=12||mode!=3||a!=b);
     }
@@ -53,7 +53,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unsupported G1 Unit7 original-source family");
-        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==1||i==2?5:4);
+        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==1||i==2||i==4?5:4);
         if(i==1&&mode==4){a=random.Next(2,5);b=random.Next(2,4);}
         if(i==12&&mode==3&&b==a)b=a==12?1:a+1;
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
@@ -75,7 +75,9 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 $"Sort shape card #{a}: this CLOSED FLAT shape has 4 equal straight sides and 4 right angles. Write SHAPE=name.",
             3=>mode%2==0?$"Before DRAWING a triangle for card #{a}, list how many straight sides and corners it MUST have. Write SIDES=number;CORNERS=number.":
                 $"Before DRAWING a rectangle for card #{a}, list its straight sides and corners. Write SIDES=number;CORNERS=number.",
-            4=>$"Triangle card #{a}: three line segments form a CLOSED boundary (rotation {b} degrees is not being tested). How many defining straight SIDES? Write SIDES=number.",
+            4=>mode==4?
+                $"SOURCE-INSPIRED TRIANGLE AND NON-TRIANGLE REASONING, FIRST-PARTY CARD SET #{a}: Cards A, B, and C each have exactly three straight segments meeting at endpoints to enclose a region (one is rotated and one has a narrow angle). Card D has three straight segments but does NOT close; E is a four-sided square; F has two straight sides and one CURVED side. Identify the three valid TRIANGLES and all three NONTRIANGLES using the defining CLOSED THREE STRAIGHT SIDES rule. Write TRIANGLES=letters;NONTRIANGLES=letters (alphabetical). Actual student creation of THREE triangles and THREE non-triangles is a separate original teacher-reviewed task.":
+                $"Triangle card #{a}: three line segments form a CLOSED boundary (rotation {b} degrees is not being tested). How many defining straight SIDES? Write SIDES=number.",
             5=>mode%2==0?$"Shape card #{a}: a square has 4 equal sides and 4 right angles. Is every SQUARE also a RECTANGLE? Write ANSWER=YES/NO.":
                 $"Shape card #{a}: a rectangle has 4 right angles but need not have equal sides. Is every RECTANGLE necessarily a SQUARE? Write ANSWER=YES/NO.",
             6=>$"Two equal right triangles can be placed along their diagonal to form a rectangle. Card #{a}, model #{b}. Count the number of triangular COMPONENTS. Write PARTS=number.",
@@ -130,7 +132,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             2=>mode==4?"CURVED=CIRCLE;THREE_SIDES=TRIANGLE;FOUR_SIDES=SQUARE,RECTANGLE":
                 $"SHAPE={(mode%2==0?"TRIANGLE":"SQUARE")}",
             3=>$"SIDES={(mode%2==0?3:4)};CORNERS={(mode%2==0?3:4)}",
-            4=>"SIDES=3",
+            4=>mode==4?"TRIANGLES=A,B,C;NONTRIANGLES=D,E,F":"SIDES=3",
             5=>$"ANSWER={(mode%2==0?"YES":"NO")}",
             6=>"PARTS=2",
             7=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
