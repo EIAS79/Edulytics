@@ -12,11 +12,21 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         {
             var code=$"PED:US-CCSS-MATH:G1:U06:L{n:00}";
             var contract=LessonPracticeContractRegistry.All.Single(x=>x.LessonCode==code);
-            var f=Assert.Single(contract.AllowedQuestionFamilies);
-            Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Supports(f));
-            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f));
-            Assert.True(LessonPracticeInteractionRegistry.TryResolve(f,out var choice));
-            Assert.Equal(LessonPracticeInteractionKind.ContractDriven,choice!.InteractionKind);
+            var families=contract.AllowedQuestionFamilies;
+            Assert.Equal(n==4?2:1,families.Count);
+            foreach(var f in families)
+            {
+                Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f));
+                Assert.True(LessonPracticeInteractionRegistry.TryResolve(f,out var choice));
+                Assert.Equal(LessonPracticeInteractionKind.ContractDriven,choice!.InteractionKind);
+                Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Supports(f) ||
+                    UsCcssG1HowCloseStage3Questions.Supports(f));
+            }
+            if(n==4)
+            {
+                Assert.Contains(UsCcssG1HowCloseStage3Questions.FamilyId,families);
+                Assert.Contains("usccss.g1.u06.l04.center_add_compare",families);
+            }
         }
     }
     [Fact]
@@ -253,6 +263,29 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
         Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,previous));
         Assert.Equal("DIFFERENCE=0",
             UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,previous));
+    }
+
+    [Fact]
+    public void OriginalU06L04SevenCardFamilyGeneratesUniqueGradeableTasks()
+    {
+        const string family=UsCcssG1HowCloseStage3Questions.FamilyId;
+        var engine=new ExactSkillContractQuestionEngine();
+        var results=engine.Generate("grade1-u06-l04-stage3","source-seven-card-v2",
+            [family],ExactSkillQuestionDifficulty.Standard,10,20261020,[]);
+        Assert.Equal(10,results.Count);
+        Assert.Equal(10,results.Select(x=>x.Prompt).Distinct(StringComparer.Ordinal).Count());
+        foreach(var item in results)
+        {
+            Assert.Equal(family,item.Family);
+            Assert.True(UsCcssG1HowCloseStage3Questions.Valid(item.Parameters));
+            Assert.Contains("WITHOUT GOING OVER",item.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,
+                item.Parameters,item.CorrectAnswer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,
+                item.Parameters,item.CorrectAnswer+";UNREVIEWED=1"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,
+                item.Parameters,"NUMBERS=99,99;TOTAL=198"));
+        }
     }
 
     [Fact]
