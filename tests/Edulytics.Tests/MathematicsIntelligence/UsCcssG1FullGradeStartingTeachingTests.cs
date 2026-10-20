@@ -259,12 +259,18 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("4□+20=65",unit4Text(11));
         Assert.Contains("4□+20=75",unit4Text(11));
         Assert.Contains("46+30=76",unit4Text(11));
-        Assert.Contains("visual source inspection",unit4Text(11));
+        Assert.Contains("56+□0=96",unit4Text(11));
+        Assert.Contains("□3+30=74",unit4Text(11));
+        Assert.Contains("missing TENS DIGIT is 4",unit4Text(11));
+        Assert.Contains("ONES_LEFT=3;ONES_RIGHT=4",unit4Text(11));
+        Assert.Contains("source image accessibility descriptions",unit4Text(11),StringComparison.OrdinalIgnoreCase);
         var addTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L11");
-        Assert.Equal("us-ccss-g1-u04-l11-original-student-activities-v7",
+        Assert.Equal("us-ccss-g1-u04-l11-original-student-activities-v8",
             CommonCoreG1FullGradeStartingContentCorrections.UnitFourAddTensSourceContentVersion);
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,addTens,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,addTens,"us-ccss-g1-u04-l11-original-student-activities-v7"));
 
         Assert.Contains("7, 70, 17 and 71",unit4Text(10));
         var writeNumbers=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L10");
