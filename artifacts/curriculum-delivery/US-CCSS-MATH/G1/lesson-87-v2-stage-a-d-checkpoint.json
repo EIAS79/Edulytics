@@ -16,7 +16,18 @@
   },
   "stageA": {
     "originalTaskReview": "Original 92=90+2, 90+2>80+12, 20+13<30+13; Mystery Number Stage 1 teacher-led clues and guesses",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "official2021PublicSource": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-22/lesson.html",
+    "originalWarmup": [
+      "92=90+2 TRUE",
+      "90+2>80+12 FALSE",
+      "20+13<30+13 TRUE"
+    ],
+    "originalTeacherOnlyCenter": [
+      "Mystery Number: two cards and truthful clues; guess after each clue, one point per clue, five rounds, lowest score wins",
+      "Get Your Numbers in Order",
+      "Greatest of Them All"
+    ]
   },
   "stageB": {
     "existingTeachingReused": true,
@@ -24,11 +35,21 @@
     "sourceCorrectionsCommits": [
       "0ea334e8e9b4b6e9bce56e62b8e670e2f8591032"
     ],
-    "publisherArtworkNotClaimedLicensed": true
+    "publisherArtworkNotClaimedLicensed": true,
+    "originalCenterScoringRepairCommit": "4ba154ef69318248aece7111734e48dcdc800b60",
+    "originalSourceContentVersion": "us-ccss-g1-u04-l22-exact-three-comparisons-v4"
   },
   "stageC": {
     "existingSourceSpecificPracticePreserved": true,
-    "teacherOnlyActivitiesNotNumericallyCertified": true
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "scopedWarmupModes": [
+      4,
+      5,
+      6
+    ],
+    "exactSourceTestsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson87MysteryNumberSourceTests.cs",
+    "testsAuthoredCommit": "b9fed9bc67d90337d8c0148b951ce5fdbe474551",
+    "testsExecuted": false
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -41,5 +62,19 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required"
+  "nextAction": "Continue ordinal88 with deferred Stage D/CI.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalLessonCooldownPresentInAccessibleTeacherSource": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "teacherOnlyPhysicalParticipation": "Five-round clue game, actual partner guesses, center cards, scores and choice time require teacher observation; numeric true/false grading does not certify play",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  }
 }
