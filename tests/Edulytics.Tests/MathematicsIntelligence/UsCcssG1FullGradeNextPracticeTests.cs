@@ -273,6 +273,41 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void Lesson57OriginalFourZooStoriesRejectWrongGroupsAndMalformedResponses()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.ZooThree;
+        // The four original 2021 student-facing tasks, not just generic zoo sums.
+        var stories=new[]
+        {
+            (a:8,b:7,c:5,mode:2,total:20), // Reptiles: snakes, iguanas, frogs.
+            (a:3,b:6,c:7,mode:3,total:16), // Herons, hawks, hummingbirds.
+            (a:8,b:4,c:3,mode:0,total:15), // Lions, tigers, cheetahs.
+            (a:8,b:7,c:4,mode:1,total:19)  // Goats, sheep, pigs.
+        };
+        foreach(var (a,b,c,mode,total) in stories)
+        {
+            var parameters=new Dictionary<string,int>
+            {["a"]=a,["b"]=b,["c"]=c,["mode"]=mode};
+            Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,parameters));
+            var expected=$"TOTAL={total};EQUATION={a}+{b}+{c}={total}";
+            Assert.Equal(expected,UsCcssG1FullGradeNextQuestions.Solve(family,parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,parameters,expected));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                $"EQUATION={c}+{a}+{b}={total};TOTAL={total}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                $"TOTAL={a+b};EQUATION={a}+{b}={a+b}")); // Lost third group.
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                $"TOTAL={total};EQUATION={a}+{b+1}+{c-1}={total}")); // Same sum, wrong source.
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                $"TOTAL={total+1};EQUATION={a}+{b}+{c}={total+1}"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                "TOTAL=INVALID;EQUATION=0+0+0=0"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                expected+";TOTAL="+total)); // Duplicate answer key.
+        }
+    }
+
+    [Fact]
     public void AllFamiliesGenerateDistinctRealPracticeQuestions()
     {
         var engine=new ExactSkillContractQuestionEngine();
