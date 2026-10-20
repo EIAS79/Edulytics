@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test');
 const assert=require('node:assert/strict');
-const {build,STATUS}=require('../tools/curriculum/us-ccss-g1-a-to-c-status.cjs');
+const {build,buildRangeReport,main,STATUS}=require('../tools/curriculum/us-ccss-g1-a-to-c-status.cjs');
 const fs=require('node:fs');
 const path=require('node:path');
 const dir=path.resolve(__dirname,'../artifacts/curriculum-delivery/US-CCSS-MATH/G1');
@@ -52,4 +52,50 @@ test('prepared A–D files, source hashes, reused code and technical tests are n
       cp.stageA.sourceGoalAgainstEffectiveAuthenticatedContentApproved===false||
       cp.stageC.originalSourceTaskToPracticeParity==='PARTIAL_OR_UNPROVEN');
   }
+});
+
+test('ordered ten-lesson range report reads existing evidence without running D or inventing A-C closure',()=>{
+  const snapshot=build();
+  const report=buildRangeReport(57,66,snapshot);
+  assert.equal(report.scope,'G1 57-66');
+  assert.equal(report.lessons.length,10);
+  assert.equal(report.summary.total,10);
+  assert.equal(report.summary.ciTriggeredByReport,false);
+  assert.equal(report.summary.releaseDecision,'NO_GO');
+  assert.deepEqual(report.lessons.map(x=>x.ordinal),
+    [57,58,59,60,61,62,63,64,65,66]);
+  for(const item of report.lessons){
+    const original=snapshot.lessons.find(x=>x.ordinal===item.ordinal);
+    assert.equal(item.lessonCode,original.lessonCode);
+    assert.equal(item.stageA,original.stageA);
+    assert.equal(item.stageB,original.stageB);
+    assert.equal(item.stageC,original.stageC);
+    assert.equal(item.readyForStageD,original.aToCReady);
+    assert.equal(item.aToCStatus,original.status);
+    if(item.readyForStageD){
+      assert.equal(item.nextAction,'HOLD_AT_STAGE_D');
+      assert.equal(item.stageA,'REVIEW_EVIDENCED');
+      assert.equal(item.stageB,'REVIEW_EVIDENCED');
+      assert.equal(item.stageC,'REVIEW_EVIDENCED');
+      assert.deepEqual(item.openACDefects,[]);
+      assert.ok(item.evidenceReference?.length>15);
+    }
+    if(item.stageA==='NOT_PROVEN'||item.stageB==='NOT_PROVEN'||
+       item.stageC==='NOT_PROVEN'||item.stageA==='EXPLICIT_GAP'||
+       item.stageC==='EXPLICIT_GAP')
+      assert.equal(item.readyForStageD,false);
+  }
+  assert.equal(report.summary.previouslyInternallyAccepted+
+    report.summary.readyForStageD+report.summary.knownACGaps+
+    report.summary.reviewClosureUnproven,10);
+  assert.deepEqual(main(['--range=57-66']),report);
+  assert.deepEqual(main(['--range=57-66','--summary']),report.summary);
+});
+
+test('range report rejects gaps and ranges outside 51–146, without guessed completion',()=>{
+  const snapshot=build();
+  for(const [from,to] of [[0,66],[50,60],[57,147],[66,57],[58.1,66]])
+    assert.throws(()=>buildRangeReport(from,to,snapshot),/valid Grade 1/);
+  for(const option of ['--range=xx','--range=50-66','--range=57-147','--range=57-66-67'])
+    assert.throws(()=>main([option]));
 });
