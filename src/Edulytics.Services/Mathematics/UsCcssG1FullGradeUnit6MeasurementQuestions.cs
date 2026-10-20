@@ -44,7 +44,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(i==10?7:i==12?4:i==13?9:3)||
+           mode<0||mode>(i==5?7:i==10?7:i==12?4:i==13?9:3)||
            (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
         return i switch
         {
@@ -87,7 +87,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
+        int mode=random.Next(i==5?8:i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -154,7 +154,14 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             3=>mode%2==0?$"Center addition: compute {a}+{b} within 100. Write RESULT=number.":
                 $"Center expression comparison within 20: compare {a%8+1}+{b%8+1} with {a/10%8+1}+{b/10%8+1}. Write RELATION=GREATER/LESS/EQUAL.",
             4=>$"A line is tiled by {a} EQUAL connecting cubes, placed edge to edge with NO gaps or overlap. How many cube-length units? Write LENGTH=number.",
-            5=>$"A pencil is exactly covered by {a} identical paper clips, end to end, without gaps or overlaps. Record the measurement. Write LENGTH=number.",
+            5=>mode switch
+            {
+                4=>$"SOURCE-INSPIRED PAPER CLIP CHECK: {a} equally sized clips cover a tape strip from its starting endpoint to the other endpoint, with no gaps and no overlap. Is this a VALID length measurement? Write VALID=YES/NO.",
+                5=>$"SOURCE-INSPIRED PAPER CLIP CHECK: {a} equally sized clips are arranged along a tape strip, but there is an uncovered GAP between two adjacent clips. Is this a VALID length measurement? Write VALID=YES/NO.",
+                6=>$"SOURCE-INSPIRED PAPER CLIP CHECK: {a} equally sized clips are arranged along a tape strip, but two adjacent clips OVERLAP. Is this a VALID length measurement? Write VALID=YES/NO.",
+                7=>$"SOURCE-INSPIRED PAPER CLIP CHECK: {a} paper clips appear end to end on a tape strip, but the clips have MIXED LENGTHS. Can the raw count be reported as a valid measurement in one identical paper-clip unit? Write VALID=YES/NO.",
+                _=>$"A pencil is exactly covered by {a} identical paper clips, end to end, without gaps or overlaps. Record the measurement. Write LENGTH=number."
+            },
             6=>$"One strip is {a} long units. A small unit is HALF the length of one long unit. How many small units cover the SAME strip? Write SMALL_UNITS=number.",
             7=>$"A long object measures {a} identical cube units. Organize the count into tens and ones. Write TENS=number;ONES=number;TOTAL=number.",
             8=>$"Write the number represented by {a/10} complete TENS and {a%10} leftover ONES. Grade 1 range is up to 120. Write NUMBER=number.",
@@ -223,7 +230,13 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 _=>$"FITS={(b<=a?"YES":"NO")}"
             },
             3=>mode%2==0?$"RESULT={a+b}":$"RELATION={Relation(a%8+b%8+2,a/10%8+b/10%8+2,"GREATER","LESS")}",
-            4 or 5=>$"LENGTH={a}",
+            4=>$"LENGTH={a}",
+            5=>mode switch
+            {
+                4=>"VALID=YES",
+                5 or 6 or 7=>"VALID=NO",
+                _=>$"LENGTH={a}"
+            },
             6=>$"SMALL_UNITS={a*2}",
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
