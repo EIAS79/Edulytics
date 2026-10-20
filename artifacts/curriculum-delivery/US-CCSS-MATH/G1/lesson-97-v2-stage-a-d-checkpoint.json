@@ -23,18 +23,39 @@
       "Student Facing Round 1: Grab a handful of towers of ten and a handful of single cubes. I have ______________ cubes and my partner has ______________ cubes. How many cubes"
     ],
     "sourceSpecificComparison": "Original 17+36=53; Grab and Add physical cubes, repeated partner rounds",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "originalWarmupMath": [
+      "38+2=40",
+      "40+3=43",
+      "38+5=43",
+      "38+15=53"
+    ],
+    "originalStudentTaskMath": "17+36=53; 7+6=13 ones, exchange ten ones to get five tens and three ones.",
+    "humanBoundary": "Grab and Add physical towers/cubes and repeated partner rounds teacher-verified, not reproduced or digitally certified."
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6",
+    "existingLearnerTeachingMathReviewed": true,
+    "sourceSpecificTeaching": "Source 17+36 and four original number-talk warmups, 17+30=47 then +6=53, exchange of ten ones, human-only Grab and Add."
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "originalWarmupModes": [
+      4,
+      7
+    ],
+    "sourceSpecific17Plus36Mode": 8,
+    "originalSourceNumericExpected": "TENS=5;ONES=3;TOTAL=53",
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "d93f39072ca8739a48411104f75503b663b591b4",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson97OriginalSeventeenPlusThirtySixTests.cs",
+    "authoredTestsCommit": "8f31710a87e709d48e73c6d06a4388d3ccc51f4e",
+    "testsExecuted": false
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -48,5 +69,16 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal98; Stage D CI and release still deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "accessibleOriginalSourceMathCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "mathGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "boundary": "Original 17+36 and warmups source-true numeric follow-up. Actual student-created drawings and real handful measurements/partner rounds not digitally certified; Stage D handles compiler/tests, authenticated persistence, rights, rendered site, math approval."
+  }
 }
