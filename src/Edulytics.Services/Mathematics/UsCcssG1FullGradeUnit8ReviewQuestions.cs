@@ -50,7 +50,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             6=>c==0&&(mode<=1?
                 a>=1&&a<=119&&b>=1&&b<=120-a:
                 a>=20&&a<=120&&b==0),
-            7=>a>=20&&a<=99&&b==0&&c==0,
+            7=>a>=20&&a<=100&&b==0&&c==0,
             8=>a>=31&&a<=79&&a%10>0&&b==10&&c==0,
             9=>a>=1&&a<=120&&b>=0&&b<=a&&c==0,
             _=>false
@@ -81,7 +81,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             }
             else if(n==9){a=random.Next(1,121);b=random.Next(0,a+1);}
             else if(n==8){a=random.Next(3,8)*10+random.Next(1,10);b=10;}
-            else{a=random.Next(20,100);b=n>=8?10:0;}
+            else{a=random.Next(20,101);b=n>=8?10:0;}
             var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
             if(!Valid(family,p))continue;
             var whole=a+b;
