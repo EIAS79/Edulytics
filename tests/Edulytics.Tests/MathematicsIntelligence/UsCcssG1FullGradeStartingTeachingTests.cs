@@ -244,6 +244,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("10 through 90",earlierUnit4Text(2));
         Assert.Contains("TENS=7;NUMBER=70;WORD=SEVENTY",earlierUnit4Text(2));
         Assert.Contains("too-low, about-right, and too-high estimate",earlierUnit4Text(2));
+        var tensMatch=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L02");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,tensMatch,"us-ccss-g1-u04-l02-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u04-l02-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourTensMatchSourceContentVersion);
         Assert.Contains("30+10=40, 40+10=50, 80-10=70 and 70-10=60",earlierUnit4Text(4));
         Assert.Contains("Jada counts 30 cubes",earlierUnit4Text(4));
         Assert.Contains("7 towers of ten in Bag C",earlierUnit4Text(4));
