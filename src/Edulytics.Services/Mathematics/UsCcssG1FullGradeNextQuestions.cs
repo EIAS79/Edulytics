@@ -41,7 +41,8 @@ public static class UsCcssG1FullGradeNextQuestions
             TeenSubtract=>a>=11&&a<=19&&b>=0&&b<=9&&c==0&&
                 (mode!=3||(a==16&&b==7)),
             TenSubtract=>a>=11&&a<=19&&b>=0&&b<=9&&c==0&&
-                (mode!=2||(a==15&&b==8)),
+                (mode!=2||(a==15&&b==8))&&
+                (mode!=3||((a==14&&b==5)||(a==13&&b==6))),
             _=>false
         };
     }
@@ -90,7 +91,9 @@ public static class UsCcssG1FullGradeNextQuestions
         }
         else
         {
-            if(mode==2){a=15;b=8;} // Original Diego's number-card subtraction.
+            if(mode==2){a=15;b=8;} // Original Diego 15−8 ten-frame task.
+            else if(mode==3)
+            { if(random.Next(2)==0){a=14;b=5;}else{a=13;b=6;} } // Original 2021 student follow-ups.
             else{a=random.Next(11,20);b=random.Next(0,10);} // Source 2021 digit cards 0–9 (same card game as prior lesson).
         }
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
@@ -126,6 +129,8 @@ public static class UsCcssG1FullGradeNextQuestions
                 $"Take From: start with {a} counters and remove {b}. First reach ten, then remove the rest. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Original 2021 number cards range from 0 through 9; card draws and drawings stay teacher-led.",
             TenSubtract=>mode==2?
                 "ORIGINAL 2021 STUDENT FACING: Diego starts Number Card Subtraction with 15, then picks an 8. Show 15 on ten-frames, subtract 8 using a ten, and write the matching EQUATION. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Explain your drawing to a teacher.":
+                mode==3?
+                $"ORIGINAL 2021 STUDENT FACING: Find {a}-{b} using Diego\u0027s way (remove to ten, then subtract) OR Andre\u0027s way (remove the full-ten counters first, then combine with extra ones). Use drawings, numbers or words to explain both valid methods to a teacher. Numeric grading checks TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number; other representations require teacher review.":
                 b<a-10?
                 $"ORIGINAL NUMBER CARD SUBTRACTION WITH TEN-FRAMES: show teen card {a} and remove digit card {b} (0 through 9), WITHOUT crossing ten. Do not invent a negative remainder. Write DIFFERENCE=number;EQUATION=number-number=number. The physical cards and explanatory drawings remain teacher-led.":
                 $"Use ten as a landmark for {a}-{b}. First remove the extra ones to reach ten, then subtract the rest. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Source 2021 physical cards and teacher-led ten-frame drawings are not auto-assessed.",
