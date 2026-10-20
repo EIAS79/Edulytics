@@ -8,6 +8,33 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
 {
+    [Fact]
+    public void Lesson65Original2021OptionalAroundRoomRequiresAuthenticLearnerAuthorshipAndGallery()
+    {
+        const string code=CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsLessonCode;
+        var (doc,lesson,en)=Effective(code);
+        Assert.True(CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(doc,lesson));
+        Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
+        Assert.Equal("us-ccss-g1-g1-u03-l28-source-goal-v2",
+            CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsVersion);
+        var all=en.KeyConceptsAndRules+"\n"+en.WorkedExamples+"\n"+
+                en.StepByStepSolutions+"\n"+en.CommonMistakes;
+        Assert.Contains("NO QUESTION",all);
+        Assert.Contains("Noah has 8 pencils, Elena 5 and Han 4",all);
+        Assert.Contains("8+5+4=17",all);
+        Assert.Contains("8-5=3",all);
+        Assert.Contains("ADDITION and a SUBTRACTION",all);
+        Assert.Contains("TARGET ANSWER",all);
+        Assert.Contains("LESS THAN 20",all);
+        Assert.Contains("SWITCH ROLES",all);
+        Assert.Contains("POSTER",all);
+        Assert.Contains("HIDE ITS ANSWER",all);
+        Assert.Contains("FOUR classmates",all);
+        Assert.Contains("Teacher review rubric",all);
+        Assert.Contains("numeric scoring alone is INSUFFICIENT",all);
+    }
+
     private static (CanonicalLessonContentPackDocument Doc,
         CanonicalLessonContentPackLesson Lesson,
         CanonicalLessonContentPackTranslation English) Effective(string lessonCode)
@@ -78,6 +105,8 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
         CommonCoreG1SourceGroundedInstructionalCorrections.MeasureConnectingCubeLengthVersionV1)]
     [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesLessonCode,
         CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesVersionV1)]
+    [InlineData(CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsLessonCode,
+        CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsVersionV1)]
     public void PriorUnpublishedOriginalV1SourceTextUpgradesOnlyWhenUnmodified(string code,string priorVersion)
     {
         var (doc,lesson,en)=Effective(code);
@@ -98,6 +127,11 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
                  CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesExamplesV1,
                  CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesStepsV1,
                  CommonCoreG1SourceGroundedInstructionalCorrections.MeasuredShoesStoriesMistakesV1),
+            CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsLessonCode =>
+                (CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsConceptsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsExamplesV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsStepsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsMistakesV1),
             _=>throw new InvalidOperationException("Unexpected lesson")
         };
         var stored=new CurriculumLessonContentTranslation
