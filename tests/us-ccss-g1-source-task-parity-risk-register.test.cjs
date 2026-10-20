@@ -48,3 +48,29 @@ test('source task parity register tracks original authorship and geometry/measur
  for(const o of [53,74,85,103,104,105,114,116,120,121,123,124,125,126,128,130,132,133,134,135,136,143,145])
    assert.ok(byOrdinal(o)?.remainingAcademicTaskParityWork,'Missing source task decision for '+o);
 });
+
+test('whole-unaccepted Stage A selection covers exact 90 current unaccepted lessons without granting academic acceptance',()=>{
+ const progress=read(root+'full-grade-progress.json');
+ const cohort=ledger.stageAWholeUnacceptedCohort20261020;
+ assert.ok(cohort,'Missing current whole-cohort Stage A intake');
+ assert.equal(cohort.selectedCount,90);
+ assert.equal(cohort.sourceIndexCount,90);
+ assert.equal(cohort.originalTeacherActivityHeadingIndexRows,90);
+ assert.equal(cohort.originalStudentFacingExcerptIndexRows,90);
+ assert.equal(cohort.originalSourceSHAIndexedRows,90);
+ assert.equal(cohort.sourceGoalInterpretationIndexedRows,90);
+ assert.equal(cohort.practiceFamilyAndAssessmentMapIndexedRows,90);
+ assert.deepEqual(cohort.alreadyIndividuallyApprovedAndNotReopened,[51,52,53,54,55,56]);
+ assert.equal(cohort.manualGitHubCITriggered,false);
+ assert.equal(cohort.finalRelease,'NO_GO');
+ assert.equal(cohort.noFalseApprovals,true);
+ const pending=progress.newLessons.filter(x=>x.status!=='INTERNALLY_ACCEPTED');
+ assert.equal(pending.length,90);
+ assert.deepEqual(pending.map(x=>x.ordinal),Array.from({length:90},(_,i)=>i+57));
+ assert.deepEqual(cohort.assessmentModes,{
+  DIGITAL_PRACTICE:82,DIGITAL_AND_SOURCE_AUTHORED_TASK:7,SOURCE_AUTHORED_TASK:1});
+ assert.match(cohort.notYetProven,/not evidence that all 90 full original/i);
+ assert.ok(ledger.rows.filter(x=>x.ordinal>=57).every(x=>
+  x.sourceRequiredTaskInterpretation&&x.originalTeacherActivityHeadings?.length&&
+  x.originalStudentFacingTaskExcerpts?.length&&x.internalAcademicApproval==='NOT_CLAIMED'));
+});
