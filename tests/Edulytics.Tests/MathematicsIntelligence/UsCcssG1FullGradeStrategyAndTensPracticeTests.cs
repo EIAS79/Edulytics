@@ -232,6 +232,59 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     }
 
     [Fact]
+    public void Lesson63Original2021HanFourStoryUnknownPositionsAreDistinctAndVerifiable()
+    {
+        const string family=UsCcssG1FullGradeStrategyAndTensQuestions.StoryUnknowns;
+        var sourceHan=new[]{
+            (mode:2,a:6,b:9,unknown:6,expected:"UNKNOWN=6;EQUATION=6+9=15"),
+            (mode:4,a:9,b:6,unknown:6,expected:"UNKNOWN=6;EQUATION=15-6=9"),
+            (mode:6,a:9,b:6,unknown:6,expected:"UNKNOWN=6;EQUATION=9+6=15"),
+            (mode:7,a:9,b:6,unknown:6,expected:"UNKNOWN=6;EQUATION=15-9=6")
+        };
+        foreach(var (mode,a,b,unknown,expected) in sourceHan)
+        {
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
+            Assert.Equal(expected,UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                expected.Replace("UNKNOWN="+unknown,"UNKNOWN=7")));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+                expected+";UNREVIEWED=1"));
+        }
+        var elenaAdd=new Dictionary<string,int>{{"a",6},{"b",12},{"c",0},{"mode",1}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,elenaAdd,
+            "UNKNOWN=12;EQUATION=6+12=18"));
+        elenaAdd["mode"]=4;
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,elenaAdd,
+            "UNKNOWN=12;EQUATION=18-12=6"));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",6},{"b",9},{"c",0},{"mode",6}}));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",10},{"b",5},{"c",0},{"mode",7}}));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",9},{"b",6},{"c",1},{"mode",7}}));
+        Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(
+            UsCcssG1FullGradeStrategyAndTensQuestions.CountOnOrAway,
+            new Dictionary<string,int>{{"a",15},{"b",9},{"c",0},{"mode",7}}));
+        var generated=Enumerable.Range(0,960).Select(n=>
+            UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(n*67+31))).ToArray();
+        foreach(var mode in new[]{2,4,6,7})
+            Assert.True(generated.Count(q=>q.Parameters["mode"]==mode)>60);
+        foreach(var mode in new[]{6,7})
+            Assert.Contains(generated,q=>q.Parameters["mode"]==mode&&
+                q.Parameters["a"]==9&&q.Parameters["b"]==6);
+        Assert.All(generated,q=>
+        {
+            Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
+            if(q.Parameters["mode"]==6)Assert.Contains("HAN STORY 3",q.Prompt);
+            if(q.Parameters["mode"]==7)Assert.Contains("HAN STORY 4",q.Prompt);
+        });
+    }
+
+    [Fact]
     public void OriginalHowCloseSubtractFromTwentyChecksTwoAndThreeChosenCards()
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.CenterWithin20;
