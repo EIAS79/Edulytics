@@ -24,7 +24,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
-           z!=0||mode<0||mode>10||(mode>3&&family!=AddTens))return false;
+           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens))return false;
         return family switch
         {
             AddTens=>mode<=3?
@@ -37,7 +37,9 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==7?(a==20&&b==6):
                 mode==8?(a==46&&b==30):
                 mode==9?(a==45&&b==20):
-                (a==43&&b==20),
+                mode==10?(a==43&&b==20):
+                mode==11?(a==56&&b==40):
+                (a==3&&b==30),
             TenMoreLess=>a>=20&&a<=89&&b==10,
             CompareWords or CompareSymbols=>a>=20&&a<=99&&b>=20&&b<=99,
             CenterReview=>mode switch
@@ -53,7 +55,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?11:4),a,b;
+        int mode=random.Next(family==AddTens?13:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -67,6 +69,8 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
             else if(mode==8){a=46;b=30;}
             else if(mode==9){a=45;b=20;}
             else if(mode==10){a=43;b=20;}
+            else if(mode==11){a=56;b=40;} // Public original illustration ALT description: 56 + [smudged tens]0 = 96.
+            else if(mode==12){a=3;b=30;} // Public original ALT description: [smudged tens]3 + 30 = 74 is false.
             else{a=random.Next(20,80);b=random.Next(1,Math.Min(3,(99-a)/10)+1)*10;}
         }
         else if(family==TenMoreLess){a=random.Next(20,90);b=10;}
@@ -102,6 +106,10 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 "EDULYTICS ORIGINAL MISSING-DIGIT TASK, not reconstructed from the publisher image: 4□+20=65 is true. Which ONES digit belongs in the box? Write DIGIT=number;EQUATION=number+number=number;TRUE=YES/NO.":
                 mode==10?
                 "EDULYTICS ORIGINAL FALSE-EQUATION CHECK, not reconstructed from the publisher image: Could 4□+20=75 ever be true for a single missing ONES digit 0–9? Identify the greatest possible total and judge the claim. Write TRUE=YES/NO;MAX=number;TARGET=number.":
+                mode==11?
+                "SOURCE-ALIGNED FIRST-PARTY DIGIT PUZZLE (public 2021 source image accessibility text, NOT reused image): 56 plus some WHOLE tens equals 96: 56+□0=96. What TENS digit does □ represent? Write DIGIT=number;EQUATION=number+number=number;TRUE=YES/NO. A teacher reviews a drawing.":
+                mode==12?
+                "SOURCE-ALIGNED FIRST-PARTY FALSE-EQUATION PUZZLE (public 2021 image accessibility text, NOT reused image): □3+30=74 is said to be NOT TRUE. Could ANY TENS digit in □ make the equation true? Explain by comparing ones digits 3 and 4. Write TRUE=YES/NO;ONES_LEFT=number;ONES_RIGHT=number. Teacher reviews words or drawings.":
                 $"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
             TenMoreLess=>mode%2==0?$"What is TEN MORE than {a}? Write RESULT=number.":
                 $"What is TEN LESS than {a}? Write RESULT=number.",
@@ -136,6 +144,10 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 "DIGIT=5;EQUATION=45+20=65;TRUE=YES":
                 mode==10?
                 "TRUE=NO;MAX=69;TARGET=75":
+                mode==11?
+                "DIGIT=4;EQUATION=56+40=96;TRUE=YES":
+                mode==12?
+                "TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4":
                 $"TOTAL={a+b};ONES={(a+b)%10}",
             TenMoreLess=>$"RESULT={(mode%2==0?a+10:a-10)}",
             CenterReview=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}",
