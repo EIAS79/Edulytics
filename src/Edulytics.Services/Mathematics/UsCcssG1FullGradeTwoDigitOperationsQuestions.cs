@@ -24,7 +24,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
-           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords&&family!=CompareSymbols))return false;
+           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords&&family!=CompareSymbols&&family!=TenMoreLess))return false;
         return family switch
         {
             AddTens=>mode<=3?
@@ -45,6 +45,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 0 or 1=>a>=20&&a<=89&&b==10,
                 2=>b==30&&(a==67||a==99),
                 3=>b==20&&a==45,
+                4=>a==46&&b==10,
                 _=>false
             },
             CompareWords=>mode switch
@@ -76,7 +77,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?6:family==CompareSymbols?7:4),a,b;
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?6:family==CompareSymbols?7:family==TenMoreLess?5:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -98,6 +99,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         {
             if(mode==2){a=random.Next(2)==0?67:99;b=30;}
             else if(mode==3){a=45;b=20;}
+            else if(mode==4){a=46;b=10;}
             else{a=random.Next(20,90);b=10;}
         }
         else if(family is CompareWords or CompareSymbols)
@@ -203,7 +205,9 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==12?
                 "TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4":
                 $"TOTAL={a+b};ONES={(a+b)%10}",
-            TenMoreLess=>mode==3?
+            TenMoreLess=>mode==4?
+                "PLUS=56;MINUS=36":
+                mode==3?
                 "PLUS=65;MINUS=25;RETURN=45":
                 $"RESULT={(mode==2?(a==67?a+30:a-30):mode==0?a+10:a-10)}",
             CenterReview=>mode switch
