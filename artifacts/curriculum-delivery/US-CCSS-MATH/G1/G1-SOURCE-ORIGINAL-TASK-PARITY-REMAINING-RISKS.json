@@ -2312,15 +2312,15 @@
         "Student Facing My teacher's shoe is ____________ connecting cubes long. My shoe is ____________ connecting cubes long. My partner's shoe is ____________ connecting cubes ",
         "Student Facing Show your thinking using drawings, numbers, words, or equations. Clare's shoe is 9 cubes long. Han's shoe is 7 cubes long. How many cubes long are Clare's "
       ],
-      "sourceRequiredTaskInterpretation": "Measure the teacher's shoe, student's shoe and partner's shoe in equal-size connecting cubes, then solve shoe stories.",
-      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l11.compare_shoe_lengths; this excerpt-level triage does NOT certify full activity coverage.",
-      "remainingAcademicTaskParityWork": "Audit three concrete measurements and comparison stories; no fabricated real-person shoe measurements.",
+      "sourceRequiredTaskInterpretation": "Original full cached 2021 U06 L11 student task re-read: trace teacher's, own and partner shoe and record closest whole equal connecting-cube lengths, answer learner+partner sum and two longer/shorter comparisons. Original Shoe Stories have FOUR specific contexts with independent arithmetic: Clare9+Han7=16, Kiran7+9+4=20, Diego8 vs dad13 -> 5 longer, Jada8+unknown Elena=17 -> Elena9.",
+      "currentDigitalOrTeacherContentCandidate": "Confirmed original base learner mismatch: worked example was generic 17−8=9, without any source shoe contexts. Added source-bound Rich V2 teaching and four source-true digital arithmetic story modes 4–7 to existing unit6 family, retaining variable hypothetical longer-shoe modes 0–3. Independent positive, wrong and malformed answer assertions added; original tracing/measurement tasks remain teacher-reviewed.",
+      "remainingAcademicTaskParityWork": "Need final frozen-SHA CI for .NET compilation, correct/wrong/malformed source story grading and unique generated items; authenticated learner/teacher Practice, saved grades, rights/accessibility, and independent V1 lesson acceptance. None claimed now. Physical measurements of teacher/student/partner shoes and student-authored drawings cannot be proven by synthetic digital scoring.",
       "candidateDigitalFamily": "usccss.g1.u06.l11.compare_shoe_lengths",
       "assessingMode": "DIGITAL_PRACTICE",
       "sourcePublisherArtworkFullyReviewed": false,
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
-      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL",
+      "evidenceStage": "DIRECT_ORIGINAL_2021_FULL_STUDENT_FACING_REVIEW_FOUR_SHOE_STORIES_CONTENT_AND_DIGITAL_MODES_REPAIRED_PENDING_CI",
       "initialSourceReviewCohort": "INITIAL_SOURCE_EXCERPT_TRIAGE",
       "readOnlyOriginalFullTeacherHtmlIntegrity20261019": {
         "algorithm": "SHA-256",
@@ -2342,6 +2342,16 @@
         "executedCiDuringAuthoring": false,
         "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
         "awaiting": "Review original graphics and authenticated learner tasks where applicable, prove original A-D for each lesson, verify independent correctness/graded persistence and protected final frozen-grade SHA"
+      },
+      "sourceRepairReview20261020": {
+        "source": "Our-CS read-only unit-6/lesson-11/lesson.html",
+        "contentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+        "practiceFile": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+        "perLessonCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-113-v2-stage-a-d-checkpoint.json",
+        "contentCommit": "368e98aa4a3b238bc7fd58cfb4ccf2a393850b3a",
+        "practiceCommit": "5884913f6c716dd15cdd9eb54cd79ce6962f921c",
+        "testsNotYetRun": true,
+        "lessonAccepted": false
       }
     },
     {
