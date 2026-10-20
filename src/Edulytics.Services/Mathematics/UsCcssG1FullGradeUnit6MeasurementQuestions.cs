@@ -44,7 +44,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(i==5?7:i==6?4:i==7?4:i==10?7:i==12?4:i==13?9:3)||
+           mode<0||mode>(i==5?7:i==6?4:i==7?4:i==9?4:i==10?7:i==12?4:i==13?9:3)||
            (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
         return i switch
         {
@@ -62,7 +62,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             // Original U06 L12 targets Compare Bigger Unknown / Smaller Unknown,
             // NOT Difference Unknown from two already known lengths.
             11=>a>=4&&a<=20&&b>=1&&b<=9&&(mode%2==0?b<a:a+b<=20),
-            3 or 9 or 15=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
+            3 or 15=>a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
+            9=>mode==4?a>=5&&a<=20&&b>=1&&b<=25&&Math.Abs(a-b)<=4:
+                a>=11&&a<=65&&b>=1&&b<=20&&a+b<=100,
             4 or 5=>a>=2&&a<=20&&b==0,
             6=>b==2&&(mode==4?(a==6||a==12):a>=2&&a<=14),
             7=>b==0&&(mode==4?a>=101&&a<=110:a>=20&&a<=110),
@@ -87,7 +89,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(i==5?8:i==6||i==7?5:i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
+        int mode=random.Next(i==5?8:i==6||i==7||i==9?5:i==10?8:i==12?5:i==13?10:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -109,7 +111,15 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             b=mode%2==0?random.Next(1,Math.Min(10,a)):
                            random.Next(1,Math.Min(10,21-a));
         }
-        else if(i is 3 or 9 or 15){a=random.Next(11,66);b=random.Next(1,Math.Min(20,100-a)+1);}
+        else if(i is 3 or 9 or 15)
+        {
+            if(i==9&&mode==4)
+            {
+                a=random.Next(5,21);
+                b=Math.Clamp(a+random.Next(-4,5),1,25);
+            }
+            else {a=random.Next(11,66);b=random.Next(1,Math.Min(20,100-a)+1);}
+        }
         else if(i is 4 or 5){a=random.Next(2,21);}
         else if(i==6){a=mode==4?(random.Next(2)==0?6:12):random.Next(2,15);b=2;}
         else if(i==7){a=mode==4?random.Next(101,111):random.Next(20,111);}
@@ -169,7 +179,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 $"SOURCE-GROUNDED GROUPS UP TO 110: A FIRST-PARTY equal-unit strip measures {a} unit cubes, MORE THAN 100 cubes. Count full tens and remaining ones, and verify the total without guessing an original source diagram. Write TENS=number;ONES=number;TOTAL=number.":
                 $"A long object measures {a} identical cube units. Organize the count into tens and ones. Write TENS=number;ONES=number;TOTAL=number.",
             8=>$"Write the number represented by {a/10} complete TENS and {a%10} leftover ONES. Grade 1 range is up to 120. Write NUMBER=number.",
-            9=>mode%2==0?$"Center arithmetic: add {a}+{b} within 100. Write RESULT=number.":
+            9=>mode==4?
+                $"SOURCE-GROUNDED ESTIMATE THEN MEASURE (FIRST-PARTY MODEL): BEFORE counting, a pupil estimated {b} equal cube units. The hypothetical strip actually measures {a} equal cube units without gaps. Record BOTH values, the absolute difference, and whether the estimate was HIGH, LOW or EXACT. Write ACTUAL=number;ESTIMATE=number;DIFFERENCE=number;DIRECTION=HIGH/LOW/EXACT. Real classroom measuring and chosen units remain teacher-observed.":
+                mode%2==0?$"Center arithmetic: add {a}+{b} within 100. Write RESULT=number.":
                 $"Center numeric measuring task: {a} same-sized cubes arranged without gaps. Write LENGTH=number.",
             10=>mode switch
             {
@@ -246,7 +258,9 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 $"SMALL_UNITS={a*2}",
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
-            9=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
+            9=>mode==4?
+                $"ACTUAL={a};ESTIMATE={b};DIFFERENCE={Math.Abs(a-b)};DIRECTION={(b==a?"EXACT":b>a?"HIGH":"LOW")}":
+                mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             10=>mode switch
             {
                 4=>$"TOTAL={a+b}",
