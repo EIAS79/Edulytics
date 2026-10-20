@@ -80,6 +80,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,zoo,"us-ccss-g1-u03-l20-zoo-2021-source-v6"));
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,zoo,"us-ccss-g1-u03-l20-zoo-2021-source-v7"));
+        var center=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L21");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,center,"us-ccss-g1-u03-l21-centers-2021-source-v6"));
+        Assert.Equal("us-ccss-g1-u03-l21-centers-2021-source-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.CenterSourceContentVersion);
         Assert.Equal("us-ccss-g1-u03-l20-zoo-2021-source-v8",
             CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion);
         foreach(var number in new[]{21,22,23,24,25,26,27})
@@ -92,6 +97,9 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.False(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,flexible,CommonCoreG1FullGradeStartingContentCorrections.Version));
         Assert.Contains("display five numeral cards",text(21));
+        Assert.Contains("number-card set is 0 through 10",text(21));
+        Assert.Contains("permitted cards are 0 through 9",text(21));
+        Assert.Contains("no 11 card",text(21));
         Assert.Contains("choose to add 7, 8 or 9",text(21));
         Assert.Contains("five markers consecutively in a row",text(21));
         Assert.Contains("12-7=5 pencils",text(25));
