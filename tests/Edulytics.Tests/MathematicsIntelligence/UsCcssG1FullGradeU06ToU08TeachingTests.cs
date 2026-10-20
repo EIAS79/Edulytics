@@ -70,7 +70,7 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("drawings, numbers or words for EACH",indirectComparison);
         Assert.Contains("does NOT fit widthwise",indirectComparison, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("not necessarily in the original pictured map",indirectComparison);
-        Assert.Contains("SAME movable",indirectComparison, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("SAME string reference",indirectComparison, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("12",indirectComparison); // invented numeric example, NOT false original source-map value
         Assert.Contains("SHORTER than the pupil's FOOT",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("LONGER than the pupil's POINTER FINGER",text("PED:US-CCSS-MATH:G1:U06:L01"));
