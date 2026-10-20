@@ -1556,7 +1556,7 @@
       ],
       "sourceRequiredTaskInterpretation": "Original IM/Kendall Hunt 2021 G1 Unit5 Lesson7 Activity 1 'A Ten or Not a Ten?' asks yes/no for new-ten composition in addition expressions such as 45+5, 9+63, 26+3 and 8+47 and asks learners to write equations for their reasoning. Activity 2 'Missing Numbers' asks learners to supply possible missing one-digit and two-digit addends that would/would not create a new ten and explain their choices.",
       "currentDigitalOrTeacherContentCandidate": "Source-specific digital modes 0/1 verify YES/NO new-ten composition and sum. Added modes 2/3 ask the SMALLEST positive single-digit missing addend that WOULD form a new ten or LARGEST that would NOT form one, respectively. These source-inspired extremal variants make a unique digitally gradeable instance while preserving real constraints. Independent threshold/property, negative and impossible-operand tests added, pending exact-head CI.",
-      "remainingAcademicTaskParityWork": "A uniquely determined extremal single-digit fill-in is a source-inspired subset, NOT equivalent to the full original open-ended 'what could the number be?' activities, two-digit unknown cases, learner-selected valid alternatives, equation writing or explanation. Independent exact-head authenticated learner rendering, original figures and V1 pedagogical/source-task review remain required. Classroom participation is not claimed.",
+      "remainingAcademicTaskParityWork": "The generator and persisted verifier ALREADY accept many mathematically valid alternative answers for the 2021 Lin smudged missing-number tasks in both one- and two-digit forms, including both make-new-ten YES/NO outcomes; independent exhaustive mode/digit tests are authored. Still verify four original launch equations 45+5,9+63,26+3,8+47 in effective student teaching; source figure rights, visual/explanation, real authenticated grading/persisted alternate correct answers and original V1 A-D remain PENDING.",
       "candidateDigitalFamily": "usccss.g1.u05.l07.detect_new_ten",
       "assessingMode": "DIGITAL_PRACTICE",
       "sourcePublisherArtworkFullyReviewed": false,
@@ -1571,6 +1571,20 @@
         "source": "Our-CS read-only original 2021 Grade 1 teacher book, unit-N/lesson-N/lesson.html",
         "scope": "Cached original source byte-integrity check only; does not certify full academic task fidelity, original visuals rights or lesson acceptance",
         "noLocalSourceChanges": true
+      },
+      "sourceNumericOpenChoiceRepairEvidence20261020": {
+        "existingEngine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+        "modes": [
+          "32+□ new ten one-digit",
+          "16+□ no new ten one-digit",
+          "8+□ new ten two-digit",
+          "8+□ no new ten two-digit"
+        ],
+        "acceptAnyCorrectAlternate": true,
+        "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5AdditionPracticeTests.cs",
+        "authenticStudentGradeAndPersistAtFrozenSHA": "PENDING",
+        "sourceTeachingFullV1Review": "PENDING",
+        "academicAcceptance": "NOT_CLAIMED"
       }
     },
     {
@@ -2625,6 +2639,18 @@
         "sourceOnlyEvidenceNotAcademicApproval": true,
         "perLessonV1AcademicAcceptance": "NOT_CLAIMED",
         "sourceTaskNext": "Use actual source text, existing Rich V2, technical Practice and per-lesson V1 evidence to complete task-by-task academic parity; do not recreate the candidate"
+      },
+      "sourceStoryNumericParityImprovement20261020": {
+        "sourceTeacherActivityRetained": true,
+        "sourceSubset": "Source Elena's bead bracelet: nine removed, eleven remain, 20 start; new mode 4 and independent gradeable check",
+        "engine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+        "unitTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
+        "independentMathOracle": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeSourceIndependentMathOracleTests.cs",
+        "legacyModesRetained": true,
+        "negativeControlsAuthored": true,
+        "testsAtFrozenSHA": "NOT_RUN",
+        "originalStudentTaskCurrentAuthenticatedRichV2": "NOT_VERIFIED",
+        "academicAcceptance": "NOT_CLAIMED"
       }
     },
     {
@@ -2663,6 +2689,18 @@
         "executedCiDuringAuthoring": false,
         "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
         "awaiting": "Review original graphics and authenticated learner tasks where applicable, prove original A-D for each lesson, verify independent correctness/graded persistence and protected final frozen-grade SHA"
+      },
+      "sourceStoryNumericParityImprovement20261020": {
+        "sourceTeacherActivityRetained": true,
+        "sourceSubset": "All SIX source 2021 picture/stamp/sticker story contexts in modes 4 through 9; source-grounded, first-party two-equation prompts with correct unknowns and intentional invalid distractors",
+        "engine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+        "unitTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
+        "independentMathOracle": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeSourceIndependentMathOracleTests.cs",
+        "legacyModesRetained": true,
+        "negativeControlsAuthored": true,
+        "testsAtFrozenSHA": "NOT_RUN",
+        "originalStudentTaskCurrentAuthenticatedRichV2": "NOT_VERIFIED",
+        "academicAcceptance": "NOT_CLAIMED"
       }
     },
     {

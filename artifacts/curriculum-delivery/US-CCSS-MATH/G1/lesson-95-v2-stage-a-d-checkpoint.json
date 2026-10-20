@@ -60,5 +60,26 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required",
+  "crossLessonSourcePracticeResumption20261020": {
+    "sourceSpecificSubset": {
+      "existingEngine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+      "modes": [
+        "32+□ new ten one-digit",
+        "16+□ no new ten one-digit",
+        "8+□ new ten two-digit",
+        "8+□ no new ten two-digit"
+      ],
+      "acceptAnyCorrectAlternate": true,
+      "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5AdditionPracticeTests.cs",
+      "authenticStudentGradeAndPersistAtFrozenSHA": "PENDING",
+      "sourceTeachingFullV1Review": "PENDING",
+      "academicAcceptance": "NOT_CLAIMED"
+    },
+    "material": "REUSE_ORIGINAL_STUDENT_TASK_AND_GRADED_PRACTICE_CANDIDATE",
+    "notSourceComplete": true,
+    "notASubstituteForAuthenticatedGradingOrLegalVisualInspection": true,
+    "originalV1Approval": "NOT_CLAIMED",
+    "release": "NO_GO"
+  }
 }

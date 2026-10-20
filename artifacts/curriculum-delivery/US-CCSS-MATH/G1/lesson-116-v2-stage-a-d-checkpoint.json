@@ -93,5 +93,24 @@
   },
   "progress": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "crossLessonSourcePracticeResumption20261020": {
+    "sourceSpecificSubset": {
+      "sourceTeacherActivityRetained": true,
+      "sourceSubset": "All SIX source 2021 picture/stamp/sticker story contexts in modes 4 through 9; source-grounded, first-party two-equation prompts with correct unknowns and intentional invalid distractors",
+      "engine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+      "unitTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
+      "independentMathOracle": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeSourceIndependentMathOracleTests.cs",
+      "legacyModesRetained": true,
+      "negativeControlsAuthored": true,
+      "testsAtFrozenSHA": "NOT_RUN",
+      "originalStudentTaskCurrentAuthenticatedRichV2": "NOT_VERIFIED",
+      "academicAcceptance": "NOT_CLAIMED"
+    },
+    "material": "REUSE_ORIGINAL_STUDENT_TASK_AND_GRADED_PRACTICE_CANDIDATE",
+    "notSourceComplete": true,
+    "notASubstituteForAuthenticatedGradingOrLegalVisualInspection": true,
+    "originalV1Approval": "NOT_CLAIMED",
+    "release": "NO_GO"
+  }
 }
