@@ -34,9 +34,11 @@
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
     "publisherAssetsRedistributed": false,
     "targetedWarmupAndIntermediateRepairCommit": "852e77d8a4a5ee01b13cb38cab399e65c354bc71",
-    "version": "us-ccss-g1-u04-l12-original-student-activities-v7",
+    "version": "us-ccss-g1-u04-l12-original-student-activities-v8",
     "canonicalTeacherSourceWarmupAndAllIntermediateStepsRepaired": true,
-    "staticSourceAlignedTextReviewed": true
+    "staticSourceAlignedTextReviewed": true,
+    "lessonSynthesisRenderingRepairCommit": "82781c5b2ad7056b3685cdaa5cdf11c5def71cf4",
+    "migrationAndTeachingAssertionsCommit": "49c00b0166237f2592b36e140c288bd12d9dd8d9"
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
@@ -172,7 +174,7 @@
       "852e77d8a4a5ee01b13cb38cab399e65c354bc71",
       "18116954ecbd28f63d82a49cd82ab28c2045681c"
     ],
-    "latestImplementationNote": "Four 2021 number-talk source tasks implemented as strict mode 11-14 with correct/wrong answer tests. Source/student visual parity and protected source boundary remain explicitly open; no Stage D or CI was run."
+    "latestImplementationNote": "Existing A-C defects remain open; four public 2021 number talk math modes, strict positive/negative tests, fixed teaching paragraph break and v7-to-v8 migration authored directly on GitHub. No CI/Stage D."
   },
   "nextAction": "Do not claim READY_FOR_STAGE_D from original teacher text or authored tests alone. Resolve remaining original student-facing/gameboard visual parity and publisher boundary under A-C before final closure. Stage D/CI deferred."
 }
