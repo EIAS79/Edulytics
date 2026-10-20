@@ -24,7 +24,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
-           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords))return false;
+           z!=0||mode<0||mode>12||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords&&family!=CompareSymbols))return false;
         return family switch
         {
             AddTens=>mode<=3?
@@ -53,7 +53,13 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 5=>a==39&&b==41,
                 _=>a>=20&&a<=99&&b>=20&&b<=99
             },
-            CompareSymbols=>a>=20&&a<=99&&b>=20&&b<=99,
+            CompareSymbols=>mode switch
+            {
+                4=>a==17&&b==27,
+                5=>a==34&&b==36,
+                6=>a==17&&b==47,
+                _=>a>=20&&a<=99&&b>=20&&b<=99
+            },
             CenterReview=>mode switch
             {
                 4=>a==70&&b==20,
@@ -70,7 +76,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
-        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?6:4),a,b;
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?6:family==CompareSymbols?7:4),a,b;
         if(family==AddTens)
         {
             if(mode==4)
@@ -98,6 +104,9 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
         {
             if(family==CompareWords&&mode==4){a=75;b=65;}
             else if(family==CompareWords&&mode==5){a=39;b=41;}
+            else if(family==CompareSymbols&&mode==4){a=17;b=27;}
+            else if(family==CompareSymbols&&mode==5){a=34;b=36;}
+            else if(family==CompareSymbols&&mode==6){a=17;b=47;}
             else{a=random.Next(20,100);b=mode==0?a:random.Next(20,100);}
         }
         else
