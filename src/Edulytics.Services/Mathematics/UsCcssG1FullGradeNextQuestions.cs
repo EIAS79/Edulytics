@@ -57,7 +57,7 @@ public static class UsCcssG1FullGradeNextQuestions
         {
             if(mode==2){a=8;b=7;c=5;} // Original reptile story.
             else if(mode==3){a=3;b=6;c=7;} // Original bird exhibit story.
-            else if(mode==4){a=8;b=4;c=7;} // Primate cool-down as printed in public CKMath Grade 1 U3 L20 2023 teacher guide.
+            else if(mode==4){a=8;b=4;c=7;} // 2021 Kendall Hunt primate cool-down task independently quoted by EdReports' 2021 review.
             else if(mode==0 && random.Next(2)==0)
             {a=8;b=4;c=3;} // Original large cats: lions, tigers, cheetahs.
             else if(mode==1 && random.Next(2)==0)
@@ -97,7 +97,7 @@ public static class UsCcssG1FullGradeNextQuestions
                 "Original 2021 Student Facing: Lin, Han and Kiran each solve 8+7. Compare the THREE mathematically equivalent methods: Lin uses 8+2+5, Han uses 7+7+1, Kiran uses 8+8-1. Write LIN=expression=value;HAN=expression=value;KIRAN=expression=value;TOTAL=number. Draw or explain why each method works with your teacher.":
                 $"Compare addition methods for {a}+{b} within 20. Make a ten by moving counters from the second addend. Write MOVE=number;REST=number;TOTAL=number.",
             ZooThree=>mode==4?
-                "SOURCE-ALIGNED COOL-DOWN (CKMath G1 Unit 3 Lesson 20 publicly available teacher guide): Jada counts 8 monkeys, 4 gorillas and 7 orangutans. How many primates are there? Write TOTAL=number;EQUATION=number+number+number=number. Show drawings, numbers or words to your teacher; digital grading checks only the equation.":
+                "ORIGINAL 2021 COOL-DOWN (corroborated in EdReports' review of Kendall Hunt Grade 1): Jada counts 8 monkeys, 4 gorillas and 7 orangutans. How many primates are there? Write TOTAL=number;EQUATION=number+number+number=number. Show drawings, numbers or words to your teacher; digital grading checks only the equation.":
                 mode==2?
                 $"ORIGINAL 2021 STUDENT STORY: Jada sees 8 snakes, 7 iguanas and 5 frogs at the reptile exhibit. How many reptiles? Count all THREE groups and write the matching equation. Write TOTAL=number;EQUATION=number+number+number=number.":
                 mode==3?
