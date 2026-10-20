@@ -39,6 +39,11 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
         (family!=MatchRepresentations||m!=5||(t==4&&o==1))&&
         (family!=MatchRepresentations||m!=6||(t==3&&o==2))&&
         (family!=MatchRepresentations||m!=7||(t==9&&o==5))&&
+        (family!=WriteNumeral||m!=4||((t==1&&o==4)||(t==9&&o==0)||
+            (t==2&&o==5)||(t==4&&o==7)||(t==8&&o==2)||(t==4&&o==1)))&&
+        (family!=WriteNumeral||m!=5||(t==0&&o==7))&&
+        (family!=WriteNumeral||m!=6||(t==7&&o==2))&&
+        (family!=WriteNumeral||m!=7||(t==8&&o==3))&&
         p.TryGetValue("unused",out var z)&&z==0;
     private static readonly string[] TensWords =
         ["","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
