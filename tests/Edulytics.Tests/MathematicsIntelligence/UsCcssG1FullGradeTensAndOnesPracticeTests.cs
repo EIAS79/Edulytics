@@ -46,6 +46,30 @@ public sealed class UsCcssG1FullGradeTensAndOnesPracticeTests
     }
 
     [Fact]
+    public void Lesson71NoahIncompleteTowerIsNotAFullTen()
+    {
+        const string family=UsCcssG1FullGradeTensAndOnesQuestions.MixedCollection;
+        var noah=new Dictionary<string,int>{{"tens",4},{"ones",8},{"mode",5},{"unused",0}};
+        Assert.True(UsCcssG1FullGradeTensAndOnesQuestions.Valid(family,noah));
+        Assert.Equal("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",
+            UsCcssG1FullGradeTensAndOnesQuestions.Solve(family,noah));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,noah,
+            "DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,noah,
+            "DECISION=AGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,noah,
+            "DECISION=DISAGREE;TENS=5;ONES=0;TOTAL=50;CLAIM=50"));
+        var fiftyTwo=new Dictionary<string,int>{{"tens",5},{"ones",2},{"mode",4},{"unused",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,fiftyTwo,
+            "TENS=5;ONES=2;TOTAL=52"));
+        var thirtySeven=new Dictionary<string,int>{{"tens",3},{"ones",7},{"mode",6},{"unused",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,thirtySeven,
+            "TENS=3;ONES=7;TOTAL=37"));
+        Assert.False(UsCcssG1FullGradeTensAndOnesQuestions.Valid(
+            UsCcssG1FullGradeTensAndOnesQuestions.ReadNumber,noah));
+    }
+
+    [Fact]
     public void ValidTwoDigitValuesStayWithinGrade1AndWrongResponsesFail()
     {
         foreach(var family in UsCcssG1FullGradeTensAndOnesQuestions.Families)
