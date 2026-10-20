@@ -53,14 +53,21 @@
     "reusedLegacyWithoutSilentPromotion": true,
     "knownScope": "Generic add <=100 and within-20 expression comparison; does not grade original four-card selection or optimal non-overshooting total.",
     "originalActivityDigitallyVerified": false,
-    "taskParity": "BLOCKED_NEEDS_SEPARATE_VERSIONED_SOURCE_GOAL_MECHANIC_OR_EXPLICIT_TEACHER_ONLY_BOUNDARY",
+    "taskParity": "ORIGINAL_SEVEN_CARD_DIGITAL_MATH_IMPLEMENTED_IN_SOURCE_NOT_YET_AUTHENTICATED",
     "safetyReason": "Do not modify historical seeded generator behavior without a versioned migration; generic numeric sum does not establish original target.",
     "versionedSourceMathCandidate": "src/Edulytics.Services/Mathematics/UsCcssG1HowCloseStage3Mathematics.cs",
     "versionedSourceMathCommit": "21e085c3620c7225949ce8d3d7fac6606eb80f0b",
     "sourceMathBehavior": "Seven distinct cards from 0–9, all globally closest non-overshooting two-digit pair solutions, accepts multiple optimal pairs and rejects reused, unavailable or over-100 digit selection.",
     "legacyGeneratorUnchanged": true,
-    "routedToActualPractice": false,
-    "remaining": "Versioned integration with authorized family mapping and authenticated grading/persistence still required. New isolated math class is NOT a completed Practice submission path."
+    "routedToActualPractice": true,
+    "remaining": "Run .NET scoped tests, registered family/contract gate, and authenticated original lesson Practice generation + right/wrong/alternate-optimal persisted submissions on frozen SHA. Classroom partner play remains teacher-led.",
+    "sourceV2Family": "usccss.g1.u06.l04.how_close_stage3.v2",
+    "sourceV2GeneratorPath": "src/Edulytics.Services/Mathematics/UsCcssG1HowCloseStage3Questions.cs",
+    "sourceV2GeneratorCommit": "9537245fa60d95f9df244259a590ef676de68238",
+    "exactEngineRouteCommit": "d9db480dfbe5a69ba430cd296437f196d8e04e27",
+    "practiceContractCommit": "6823c1e0985371504d57a00d5e0c4ebab58e03e2",
+    "routingSemantics": "Source v2 and historical family coexist in L04 allowlist. New sessions can choose source-goal family; old family remains verifiable without changing its parameters, seeded output or ID.",
+    "integrationStatus": "CODE_WRITTEN_UNTESTED"
   },
   "stageD": {
     "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -81,9 +88,11 @@
     "academicApproval": "NOT_CLAIMED",
     "independentSourceMathTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1HowCloseStage3MathematicsTests.cs",
     "independentSourceMathTestCommit": "44230c4cff221406e3d2ecfa6e655ff7e5cbe390",
-    "testExecutionStatus": "NOT_RUN"
+    "testExecutionStatus": "NOT_RUN",
+    "integrationTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
+    "integrationTestCommit": "3c4e921d5324665c74ebf61544e7a4753f06e112"
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Keep original V1 Stage A/B evidence, implement/verify source-grounded card-selection Practice without changing reconstructability of historical items; execute final protected test and authenticated persisted attempts at frozen head; do not accept until evidence is complete."
+  "nextAction": "Source-goal versioned route exists but remains unapproved until frozen-SHA CI, authenticated generation, accepted alternate/right/wrong/malformed persisted answers, visual/accessibility/license audit and individual V1 academic decision."
 }
