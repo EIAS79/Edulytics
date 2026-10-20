@@ -29,7 +29,11 @@ function build(){
     check(lesson.status===evidence.contentImplementationStatus,
       'Progress/evidence status conflict at '+ordinal);
     if(lesson.status==='INTERNALLY_ACCEPTED')
-      return {ordinal,lessonCode:lesson.lessonCode,status:STATUS.accepted,aToCReady:true,
+      return {ordinal,lessonCode:lesson.lessonCode,unit:lesson.unit,
+        lessonNumber:lesson.lessonNumber,title:lesson.title,
+        status:STATUS.accepted,aToCReady:true,
+        stageA:'PRESERVED_ACCEPTANCE',stageB:'PRESERVED_ACCEPTANCE',
+        stageC:'PRESERVED_ACCEPTANCE',
         reason:'Already individually accepted; preserve previous independent evidence'};
     const file='lesson-'+ordinal+'-v2-stage-a-d-checkpoint.json';
     const exists=fs.existsSync(path.join(DIR,file));
@@ -51,7 +55,22 @@ function build(){
       typeof proof?.evidenceReference==='string'&&proof.evidenceReference.length>15;
     check(!complete||!explicitGap,'Contradictory A–C closure at '+ordinal);
     const status=complete?STATUS.ready:explicitGap?STATUS.gap:STATUS.unproven;
-    return {ordinal,lessonCode:lesson.lessonCode,status,aToCReady:complete,
+    // Each stage is evidenced ONLY by the existing lesson checkpoint's
+    // affirmative aToCClosure fields. Stage records or commits alone are not proof.
+    const stageA=a.allOriginalFigureAndStudentTasksFullyAudited===false||
+        a.sourceGoalAgainstEffectiveAuthenticatedContentApproved===false
+      ?'EXPLICIT_GAP':proof?.originalStudentAndTeacherTasksCompared===true
+      ?'REVIEW_EVIDENCED':'NOT_PROVEN';
+    const stageB=proof?.learnerTeachingSourceParityReviewed===true
+      ?'REVIEW_EVIDENCED':'NOT_PROVEN';
+    const stageC=c.originalSourceTaskToPracticeParity==='PARTIAL_OR_UNPROVEN'
+      ?'EXPLICIT_GAP':proof?.practiceGeneratorAndVerifierIndependentlyReviewed===true
+      ?'REVIEW_EVIDENCED':'NOT_PROVEN';
+    return {ordinal,lessonCode:lesson.lessonCode,unit:lesson.unit,
+      lessonNumber:lesson.lessonNumber,title:lesson.title,
+      status,aToCReady:complete,stageA,stageB,stageC,
+      openACDefects:Array.isArray(proof?.openACDefects)?proof.openACDefects:null,
+      evidenceReference:typeof proof?.evidenceReference==='string'?proof.evidenceReference:null,
       sourceTasksFullyAudited:a.allOriginalFigureAndStudentTasksFullyAudited===true,
       originalSourceToPracticeProven:c.originalSourceTaskToPracticeParity==='VERIFIED',
       evidenceFile:file,reason:complete?'Affirmative source/teaching/Practice evidence on file':
@@ -74,6 +93,53 @@ function build(){
     'Status counts must reconcile to the 96 new lessons');
   return {schemaVersion:1,scope:'G1 ordinals 51–146',summary,lessons};
 }
-if(require.main===module)
-  process.stdout.write(JSON.stringify(process.argv.includes('--summary')?build().summary:build(),null,2)+'\n');
-module.exports={build,STATUS};
+// A report view, not a second ledger: it reads the existing canonical Grade 1
+// progress, evidence matrix and per-lesson A/B/C closure checkpoints unchanged.
+function buildRangeReport(from,to,snapshot=build()){
+  check(Number.isInteger(from)&&Number.isInteger(to)&&from>=51&&to<=146&&from<=to,
+    'Expected a valid Grade 1 new-lesson range within 51-146');
+  const lessons=snapshot.lessons.filter(x=>x.ordinal>=from&&x.ordinal<=to);
+  check(lessons.length===to-from+1,'Incomplete canonical Grade 1 range');
+  const count=status=>lessons.filter(x=>x.status===status).length;
+  return {
+    scope:`G1 ${from}-${to}`,
+    summary:{
+      total:lessons.length,
+      previouslyInternallyAccepted:count(STATUS.accepted),
+      readyForStageD:count(STATUS.ready),
+      knownACGaps:count(STATUS.gap),
+      reviewClosureUnproven:count(STATUS.unproven),
+      ciTriggeredByReport:false,
+      releaseDecision:snapshot.summary.releaseDecision
+    },
+    lessons:lessons.map(x=>({
+      ordinal:x.ordinal,lessonCode:x.lessonCode,unit:x.unit,
+      lessonNumber:x.lessonNumber,title:x.title,
+      stageA:x.stageA,stageB:x.stageB,stageC:x.stageC,
+      aToCStatus:x.status,readyForStageD:x.aToCReady,
+      openACDefects:x.openACDefects??null,
+      evidenceReference:x.evidenceReference??null,
+      evidenceFile:x.evidenceFile??null,
+      nextAction:x.status===STATUS.accepted?'PRESERVE_PREVIOUS_ACCEPTANCE':
+        x.aToCReady?'HOLD_AT_STAGE_D':
+        'REVIEW_AND_CLOSE_A_TO_C_WITH_SOURCE_AND_PRACTICE_EVIDENCE'
+    }))
+  };
+}
+function main(argv){
+  const rangeArguments=argv.filter(arg=>arg.startsWith('--range'));
+  check(rangeArguments.length<=1,'Provide at most one --range=FROM-TO');
+  const snapshot=build();
+  if(rangeArguments.length){
+    const match=/^--range=(\d+)-(\d+)$/.exec(rangeArguments[0]);
+    check(match,'Use --range=FROM-TO, for example --range=57-66');
+    const report=buildRangeReport(Number(match[1]),Number(match[2]),snapshot);
+    return argv.includes('--summary')?report.summary:report;
+  }
+  return argv.includes('--summary')?snapshot.summary:snapshot;
+}
+if(require.main===module){
+  try{process.stdout.write(JSON.stringify(main(process.argv.slice(2)),null,2)+'\n');}
+  catch(error){console.error(error.message);process.exitCode=1;}
+}
+module.exports={build,buildRangeReport,main,STATUS};
