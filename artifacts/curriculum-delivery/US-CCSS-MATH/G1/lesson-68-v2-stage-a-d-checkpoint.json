@@ -25,18 +25,30 @@
       "Student Facing [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-icon--close\" height"
     ],
     "existingCandidateReused": true,
-    "classification": "REUSE_SOURCE_ACTIVITY_REVIEWED"
+    "classification": "REUSE_SOURCE_ACTIVITY_REVIEWED",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "accessible2021OriginalActivitiesCompared": true,
+    "originalTitle": "Addition and Subtraction with Tens",
+    "originalCardRange": "0..90",
+    "originalHan": "60+10=70 or 60-10=50",
+    "originalCheckpointVerified": false
   },
   "stageB": {
     "reviewAndCorrectionSummary": "Reused existing guarded U04 L03 exact-source correction and its AddRemoveTen activity including repeated 1 ten to 9 tens and Five in a Row ten-card mathematics; original physical board play remains teacher-led",
     "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
     "candidateEditCommit": null,
-    "publisherArtworkCopied": false
+    "publisherArtworkCopied": false,
+    "contentVersion": "us-ccss-g1-u04-l03-tens-strategy-correction-v2",
+    "originalSequencesAndGameRulesRestored": true,
+    "originalV1BodyGuarded": true
   },
   "stageC": {
     "reusedPracticeFamily": "usccss.g1.u04.l03.tens.add_or_remove_one",
     "changedGeneratorCommit": null,
-    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence"
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
+    "hanMathQuestionAndBoundaryModesReviewed": true,
+    "testsAuthoredNotExecuted": true
   },
   "stageD": {
     "sourceAssertionsPrepared": "Existing source-specific tests retained",
@@ -50,5 +62,17 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-68-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalProtectedPublisherCheckpointVerbatimVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false
+  },
+  "nextAction": "Original 2021 visible source and first-party A-C reviewed, final D remains deferred. Proceed ordinal 69."
 }
