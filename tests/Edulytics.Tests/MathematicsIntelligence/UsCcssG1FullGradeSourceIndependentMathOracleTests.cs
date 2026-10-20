@@ -121,8 +121,25 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 mode==2?$"ADD={a}+{b}={a+b};SUB={a+b}-{b}={a}":
                 $"MISSING_ADD={b};MISSING_SUB={a}",
             2=>$"RESULT={(mode%2==0?a+b:a-b)}",
-            3=>mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
-            4=>$"MISSING={b};TOTAL={a+b}",
+            3=>mode switch
+            {
+                4=>$"CHANGE={15-8};FINAL={8+(15-8)}",
+                5=>$"CHANGE={17-5};FINAL={17-(17-5)}",
+                6=>$"CHANGE={20-3};FINAL={20-(20-3)}",
+                7=>$"CHANGE={14-6};FINAL={6+(14-6)}",
+                8=>$"CHANGE={16-9};FINAL={16-(16-9)}",
+                _=>mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}"
+            },
+            4=>mode switch
+            {
+                4=>$"MISSING={18-7};TOTAL={18}",
+                5=>$"MISSING={18-13};TOTAL={18}",
+                6=>$"MISSING={15-6};TOTAL={15}",
+                7=>$"MISSING={20-12};TOTAL={20}",
+                8=>$"MATCH=A,C;MISSING={17-9}",
+                9=>$"MATCH=A,C;MISSING={16-11}",
+                _=>$"MISSING={b};TOTAL={a+b}"
+            },
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
             7=>mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
