@@ -147,6 +147,12 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     [
         (28,56),(27,44)
     ];
+    // Student-facing 2021 U05 L10 Priya example and further sums; the final
+    // two entries are first-step completion exercises with separate contracts.
+    private static readonly (int a,int b)[] Lesson10OriginalExtra =
+    [
+        (37,26),(34,57),(18,55),(28,56),(27,44)
+    ];
     private static readonly (int a,int b)[] Lesson11OriginalStories =
     [
         (37,25),(23,68)
@@ -185,7 +191,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
            !p.TryGetValue("mode",out int mode)||mode<0||
            mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?9:
            spec.LessonCode=="L08"?9:spec.LessonCode=="L09"?8:
-           spec.LessonCode is "L10" or "L11" or "L12"?5:
+           spec.LessonCode=="L10"?10:spec.LessonCode is "L11" or "L12"?5:
            spec.LessonCode=="L14"?4:3))
             return false;
         if(spec.LessonCode=="L14")return mode==4 ? a==0&&b==0 : FoodDriveValid(a,b,mode);
@@ -216,6 +222,11 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         }
         if(spec.LessonCode=="L09"&&mode==8)
             return a==17&&b==36;
+        if(spec.LessonCode=="L10"&&mode>=6)
+        {
+            var source=Lesson10OriginalExtra[mode-6];
+            return a==source.a&&b==source.b;
+        }
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
         {
             var source=Exact2021Equation(spec.LessonCode,mode);
@@ -252,7 +263,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         int a=0,b=0;
         int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?10:
             spec.LessonCode=="L08"?10:spec.LessonCode=="L09"?9:
-            spec.LessonCode is "L10" or "L11" or "L12"?6:
+            spec.LessonCode=="L10"?11:spec.LessonCode is "L11" or "L12"?6:
             spec.LessonCode=="L14"?5:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
         if(spec.LessonCode=="L02"&&mode==6)
@@ -359,6 +370,33 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "Show your chosen equations, drawing or words to the teacher. "+
                 "Real Grab and Add rounds with cubes and partners are not digitally certified.",
                 "17+36=(10+30)+(7+6)=40+13=53: five tens and three ones.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L10"&&mode>=6&&mode<=10)
+        {
+            var (first,second)=Lesson10OriginalExtra[mode-6];
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 98 exact source operand drift");
+            if(mode>=9)
+            {
+                string prompt=mode==9?
+                    "ORIGINAL 2021 UNIT 5 LESSON 10: Finish 28+56 from the given "+
+                    "first step 20+50. Combine tens 20+50, ones 8+6, regroup and "+
+                    "write TENS_PART=number;ONES_PART=number;NEW_TENS=number;ONES=number;TOTAL=number.":
+                    "ORIGINAL 2021 UNIT 5 LESSON 10: Finish 27+44 from the given "+
+                    "first step 7+4. Combine ones 7+4, tens 20+40, regroup and "+
+                    "write TENS_PART=number;ONES_PART=number;NEW_TENS=number;ONES=number;TOTAL=number.";
+                return new(family,prompt+
+                    " These first-party fields assess the quantities, not the publisher drawing or student's spoken proof.",
+                    "Combine tens and ones, exchange ten ones, and keep each intermediate equality true.",
+                    AssessmentItemType.ShortAnswer,p);
+            }
+            return new(family,
+                $"ORIGINAL 2021 UNIT 5 LESSON 10 STUDENT ADDITION: {first}+{second}. "+
+                "Represent the two-digit addends, exchange ten ones, and write "+
+                "TENS=number_of_tens;ONES=remaining_ones;TOTAL=number. "+
+                "The source picture and original explanation remain teacher reviewed.",
+                "Combine tens and ones and trade ten ones for one more ten.",
                 AssessmentItemType.ShortAnswer,p);
         }
         var original=Exact2021Equation(spec.LessonCode,mode);
@@ -503,6 +541,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             return $"TENS={(a/10+b/10)*10};ONES={a%10+b%10};TOTAL={sum}";
         if(spec.LessonCode=="L09"&&p["mode"]==8)
             return "TENS=5;ONES=3;TOTAL=53";
+        if(spec.LessonCode=="L10"&&p["mode"]>=9)
+            return $"TENS_PART={(a/10+b/10)*10};ONES_PART={a%10+b%10};NEW_TENS={sum/10};ONES={sum%10};TOTAL={sum}";
         if(p["mode"]>=4&&(spec.LessonCode is "L08" or "L09"))
             return $"NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L06"&&p["mode"]==2)
