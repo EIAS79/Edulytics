@@ -15,20 +15,36 @@
     ]
   },
   "stageA": {
-    "originalTaskReview": "Original 32+10,32+10+10,32+20,32−20 and source Get Your Numbers in Order physical game",
-    "classification": "CONTENT_REPAIR"
+    "originalTaskReview": "Source original 2021 four mental tens tasks 32+10,32+10+10,32+20,32-20; Get Your Numbers in Order physical center rules with pass penalty; Activity2 choice Greatest of Them All, Grab and Count, Write Numbers; no 2021 lesson cool-down.",
+    "classification": "CONTENT_REPAIR",
+    "original2021TeacherAndStudentFacingTasksIndependentlyReviewed": true,
+    "canonicalSourceSHA256MatchedExistingSourceEvidence": true,
+    "sourceRechecked": "2026-10-20"
   },
   "stageB": {
     "existingTeachingReused": true,
     "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeFinalUnit4Corrections.cs",
     "sourceCorrectionsCommits": [
-      "cde32354e5be2b4fb955930fe04a30672174488c"
+      "cde32354e5be2b4fb955930fe04a30672174488c",
+      "caf0ae5eab014f47f717dfb886a5a5d1f7bbf19e"
     ],
-    "publisherArtworkNotClaimedLicensed": true
+    "publisherArtworkNotClaimedLicensed": true,
+    "lessonSpecificContentVersion": "us-ccss-g1-u04-l18-original-student-activities-v3",
+    "migrationTeachingTestCommit": "aaa24f697de85d637a400021e42bcf7068a3d3f4"
   },
   "stageC": {
     "existingSourceSpecificPracticePreserved": true,
-    "teacherOnlyActivitiesNotNumericallyCertified": true
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "generatorAndVerifierIndependentlyStaticallyReviewed": true,
+    "testsAuthoredButNotExecuted": true,
+    "original2021NumberTalkModes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sourceMathRepairCommit": "de0c20f4bc13c54cb562ccd42e0d75554ee7cb07",
+    "authoredMathTestsCommit": "31a2d0e0370d0d6487e8600cfefa998105ee732c"
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -41,5 +57,21 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required"
+  "nextAction": "L83 original maths and centers source/teaching/Practice reviewed; READY_FOR_STAGE_D authoring only. Final grade CI, visual/authenticated grading and academic acceptance deferred. Continue L84.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "originalLessonCoolDownPresentInAccessibleTeacherSource": false,
+    "teacherOnlyPartnerGameplayCannotBeAutoGraded": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-83-stage-a-c-source-implementation-audit-20261020.md",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  }
 }
