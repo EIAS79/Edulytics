@@ -25,19 +25,39 @@
       "Student Facing [visual] [visual] <div id=\"dialog-long-description-TikzFile-1491"
     ],
     "sourceSpecificFinding": "Original digit comparison; Clare claims 68, Diego claims 86, source model contains 8 tens and 6 ones",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "allAccessibleOriginal2021TeacherAndStudentTasksCompared": true,
+    "originalWarmup": "One-digit Set A 0-9; two-digit Set B 10,23,45,76,89",
+    "originalMakeIt": "Cards 3 and 5 can form 35 OR 53; physical rods and ones teacher-observed",
+    "originalTylerError": "Claim 24 for model 4 tens and 2 ones; correct model is 42",
+    "originalClareDiego": "Clare claims 68, Diego 86; model 8 tens and 6 ones => 86",
+    "originalSynthesis": "Six tens and hidden ones may represent any 60-69",
+    "originalPublisherSectionBCheckpointVerbatimVerified": false,
+    "allOriginalFigureAndStudentTasksFullyAudited": null
   },
   "stageB": {
     "originalRichV2Reused": true,
     "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
-    "publisherAssetsRedistributed": false
+    "publisherAssetsRedistributed": false,
+    "version": "us-ccss-g1-u04-l07-original-student-activities-v7",
+    "sourceTasksAddedToLearnerTeaching": true,
+    "onlyThisLessonV6ToV7UpgradeGuarded": true
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
     "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "originalSourceTaskToPracticeParity": "VERIFIED_ACCESSIBLE_SOURCE_WITH_INDEPENDENT_EDULYTICS_ASSESSMENT",
+    "modes": [
+      4,
+      5,
+      6
+    ],
+    "twoMathematicallyValidNumberCardOrderingsAccepted": true,
+    "bothPersistentAndParameterVerifiersReviewed": true,
+    "xUnitOraclesAuthoredNotExecuted": true
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -52,5 +72,18 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-72-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "original2021ProtectedCheckpointVerbatimVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "Source-aligned A-C review completed; both 35 and 53 scored. Protected publisher checkpoint not reproduced. Final D/CI deferred until whole-grade freeze. Next 73."
 }
