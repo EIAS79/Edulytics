@@ -211,6 +211,51 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
     }
 
     [Theory]
+    [InlineData(12,9,"ACTUAL=12;ESTIMATE=9;DIFFERENCE=3;DIRECTION=LOW")]
+    [InlineData(12,12,"ACTUAL=12;ESTIMATE=12;DIFFERENCE=0;DIRECTION=EXACT")]
+    [InlineData(12,15,"ACTUAL=12;ESTIMATE=15;DIFFERENCE=3;DIRECTION=HIGH")]
+    public void OriginalU06L10RequiresEstimateBeforeMeasurementAndAccurateDifference(
+        int measured,int estimate,string expected)
+    {
+        const string family="usccss.g1.u06.l10.center_measure_and_add";
+        var p=new Dictionary<string,int>{
+            ["a"]=measured,["b"]=estimate,["c"]=0,["mode"]=4
+        };
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "ACTUAL=12;ESTIMATE=9;DIFFERENCE=0;DIRECTION=EXACT"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected+";FABRICATED=1"));
+        var invalid=new Dictionary<string,int>(p){["b"]=measured+5};
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,invalid));
+    }
+
+    [Fact]
+    public void OriginalU06L10GeneratesEstimateModeAndPreservesLegacyCenterTasks()
+    {
+        const string family="usccss.g1.u06.l10.center_measure_and_add";
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<600;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                family,new Random(seed*101+71));
+            modes.Add(item.Parameters["mode"]);
+            var expected=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,expected));
+            if(item.Parameters["mode"]==4)
+            {
+                Assert.Contains("BEFORE counting",item.Prompt);
+                Assert.Contains("estimate was HIGH, LOW or EXACT",item.Prompt);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
+    }
+
+    [Theory]
     [InlineData(7,4,9,1,"ORDER=B,A,C")]
     [InlineData(8,20,12,1,"ORDER=A,C,B")]
     [InlineData(17,9,4,1,"ORDER=C,B,A")]
