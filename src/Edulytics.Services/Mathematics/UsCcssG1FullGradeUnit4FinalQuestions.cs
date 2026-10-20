@@ -29,7 +29,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[0]?14:family==Families[1]?8:family==Families[2]?7:family==Families[4]?7:family==Families[5]?6:family==Families[6]?6:family==Families[7]?6:family==Families[3]?4:3))return false;
+           mode<0||mode>(family==Families[0]?14:family==Families[1]?8:family==Families[2]?7:family==Families[4]?7:family==Families[5]?13:family==Families[6]?6:family==Families[7]?6:family==Families[3]?4:3))return false;
         return family switch
         {
             "usccss.g1.u04.l16.write_comparison" => mode switch
@@ -79,6 +79,13 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                     4=>a==52&&b==42,
                     5=>a==32&&b==32,
                     6=>a==35&&b==40,
+                    7=>a==38&&b==28,
+                    8=>a==35&&b==35,
+                    9=>a==99&&b==89,
+                    10=>a==10&&b==6,
+                    11=>a==9&&b==6,
+                    12=>a==10&&b==7,
+                    13=>a==8&&b==7,
                     _=>true
                 }),
             "usccss.g1.u04.l23.estimate_and_count" => mode switch
@@ -112,7 +119,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[0]?15:family==Families[1]?9:family==Families[2]?8:family==Families[4]?8:family==Families[5]?7:family==Families[6]?7:family==Families[7]?7:family==Families[3]?5:4);
+        int mode=random.Next(family==Families[0]?15:family==Families[1]?9:family==Families[2]?8:family==Families[4]?8:family==Families[5]?14:family==Families[6]?7:family==Families[7]?7:family==Families[3]?5:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
         if(family==Families[0]&&mode>=4)
         {
@@ -155,6 +162,10 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
             if(mode==4){a=52;b=42;} // Original student summary: 5 tens 2 ones > 3 tens 12 ones.
             if(mode==5){a=32;b=32;} // Original teacher synthesis: 3 tens 2 ones = 2 tens 12 ones.
             if(mode==6){a=35;b=40;} // Original teacher synthesis: 2 tens 15 ones < 4 tens.
+            if(mode==7){a=38;b=28;} // Public launch image descriptions.
+            if(mode==8){a=35;b=35;} // Public activity: 1 ten 25 ones = 3 tens 5 ones.
+            if(mode==9){a=99;b=89;} // Public activity: 7 tens 29 ones compared with 50+39.
+            if(mode>=10){(a,b)=mode switch{10=>(10,6),11=>(9,6),12=>(10,7),13=>(8,7),_=>throw new InvalidOperationException("Invalid original mental warmup mode")};}
         }
         if(family==Families[6]&&mode>=4)
         {
@@ -256,6 +267,10 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                     4=>"ORIGINAL 2021 LESSON SUMMARY: Compare 5 tens and 2 ones with 3 tens and 12 ones. Write SYMBOL=sign.",
                     5=>"ORIGINAL 2021 TEACHER SYNTHESIS: Compare 3 tens and 2 ones with 2 tens and 12 ones. Write SYMBOL=sign.",
                     6=>"ORIGINAL 2021 TEACHER SYNTHESIS: Compare 2 tens and 15 ones with 4 tens. Write SYMBOL=sign.",
+                    7=>"ORIGINAL 2021 ACCESSIBLE FIGURES: Compare three tens eight ones (38) with two tens eight ones (28). Write SYMBOL=sign.",
+                    8=>"ORIGINAL 2021 STUDENT FACING: Compare one ten twenty-five ones with three tens five ones: 35 and 35. Write SYMBOL=sign.",
+                    9=>"ORIGINAL 2021 STUDENT FACING: Compare seven tens twenty-nine ones (99) to fifty plus thirty-nine (89). Write SYMBOL=sign.",
+                    10 or 11 or 12 or 13=>$"ORIGINAL 2021 MENTAL NUMBER TALK: Find {a}+{b} mentally. Write RESULT=number. Explain the strategy to a teacher.",
                     _=>$"Compare {a/10-Math.Min(mode+1,a/10)} tens and {a%10+10*Math.Min(mode+1,a/10)} ones with {b/10} tens and {b%10} ones. Write SYMBOL=sign."
                 },
             "usccss.g1.u04.l22.center_place_value"=>
@@ -318,7 +333,7 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
                 7=>"ONES=16",
                 _=>$"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}"
             },
-            "usccss.g1.u04.l21.compare_nonstandard_forms"=>$"SYMBOL={Sign(a,b)}",
+            "usccss.g1.u04.l21.compare_nonstandard_forms"=>mode>=10?$"RESULT={a+b}":$"SYMBOL={Sign(a,b)}",
             "usccss.g1.u04.l22.center_place_value" =>
                 mode>=4?$"TRUE={(mode==5?"NO":"YES")};LEFT={a};RIGHT={b}":
                 mode%2==0?$"SYMBOL={Sign(a,b)}":$"NUMBER={a}",
