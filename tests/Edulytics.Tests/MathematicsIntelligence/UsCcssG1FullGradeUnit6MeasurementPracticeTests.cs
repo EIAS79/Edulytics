@@ -162,6 +162,55 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
     }
 
     [Theory]
+    [InlineData(101,"TENS=10;ONES=1;TOTAL=101")]
+    [InlineData(109,"TENS=10;ONES=9;TOTAL=109")]
+    [InlineData(110,"TENS=11;ONES=0;TOTAL=110")]
+    public void OriginalU06L08IncludesSourceMeasurementCountsOverOneHundred(
+        int count,string expected)
+    {
+        const string family="usccss.g1.u06.l08.count_to110_cube_groups";
+        var p=new Dictionary<string,int>{
+            ["a"]=count,["b"]=0,["c"]=0,["mode"]=4
+        };
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
+        Assert.Equal(expected,UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,$"TENS=10;ONES={count-100};TOTAL=100"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family,p,expected+";EXTRA=1"));
+        var outOfSourceRange=new Dictionary<string,int>(p){["a"]=100};
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(
+            family,outOfSourceRange));
+        var tooLarge=new Dictionary<string,int>(p){["a"]=111};
+        Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(
+            family,tooLarge));
+    }
+
+    [Fact]
+    public void OriginalU06L08GeneratorExercisesEverySourceAndLegacyMode()
+    {
+        const string family="usccss.g1.u06.l08.count_to110_cube_groups";
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<600;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit6MeasurementQuestions.Build(
+                family,new Random(seed*139+23));
+            modes.Add(item.Parameters["mode"]);
+            var expected=UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,expected));
+            if(item.Parameters["mode"]==4)
+            {
+                Assert.InRange(item.Parameters["a"],101,110);
+                Assert.Contains("MORE THAN 100 cubes",item.Prompt);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
+    }
+
+    [Theory]
     [InlineData(7,4,9,1,"ORDER=B,A,C")]
     [InlineData(8,20,12,1,"ORDER=A,C,B")]
     [InlineData(17,9,4,1,"ORDER=C,B,A")]
