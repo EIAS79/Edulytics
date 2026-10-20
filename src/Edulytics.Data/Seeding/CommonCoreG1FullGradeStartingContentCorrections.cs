@@ -36,6 +36,8 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string UnitFourCountLargerSourceContentVersion="us-ccss-g1-u04-l06-original-student-activities-v7";
     private const string UnitFourReadNumberLessonCode="PED:US-CCSS-MATH:G1:U04:L07";
     public const string UnitFourReadNumberSourceContentVersion="us-ccss-g1-u04-l07-original-student-activities-v7";
+    private const string UnitFourRepresentationsLessonCode="PED:US-CCSS-MATH:G1:U04:L08";
+    public const string UnitFourRepresentationsSourceContentVersion="us-ccss-g1-u04-l08-original-student-activities-v7";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
             .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
@@ -435,7 +437,7 @@ Step 9: The hidden-ones puzzle with 6 tens permits any numeral 60 to 69. Do not 
             @"Do not read 46 as 'four six' or treat the 4 as four loose ones; it represents four tens. If there are ten loose ones, make one more ten first.",
             @"I can read and explain a two-digit number using tens and ones."),
         new(@"PED:US-CCSS-MATH:G1:U04:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-8/preparation.html",@"f3fa805d6421b2677b3a20200f257432271cbfee1e3b9c1ec6d34b8ba855d4da",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2" },
-            @"Different Representations of Tens and Ones PLC Activity",
+            @"Different Representations of Tens and Ones",
             @"Interpret multiple representations of the SAME two-digit number: a drawing of ten-rods and one-dots, words such as '4 tens 2 ones', and the addition expression 40+2. Match the representations and explain their equivalence. Teachers manage any physical card or group activity.",
             @"Learning goal: interpret base-ten diagrams, '__ tens __ ones' descriptions and expanded additions for two-digit numbers. In 62 the six denotes six tens and the two denotes two ones. Different pictures and expressions must preserve the same total.",
             @"Example 1: Five ten-rods and three dots = 5 tens 3 ones = 50+3 = 53.
@@ -443,13 +445,21 @@ Example 2: 70+8 corresponds to 7 tens and 8 ones, a total of 78.
 Example 3: Two tens and nine ones = 20+9 = 29.
 Example 4: 4 ten-rods and 0 dots corresponds to 40+0 = 40.
 Original 2021 compare-representations activity: Kiran describes 3 ones and 7 tens, and Priya writes 70+3. Both show 73, regardless of drawing order; Clare's and Han's diagrams must be interpreted in their source context.
-Original estimation warm-up separately asks for a too-low, about-right and too-high estimate before counting; no student's actual estimate is invented by Practice.",
+Original estimation warm-up separately asks for a too-low, about-right and too-high estimate before counting; no student's actual estimate is invented by Practice.
+Original 2021 first activity also asks whether Clare, Han, Kiran and Priya counted the SAME objects in different representations: Kiran has 3 ones plus 7 tens, Priya has 70+3, and both are 73. The actual drawings by Clare and Han need teacher observation, and their physical layout is not automatically certified.
+Original three-card matching source: cards can display diagrams, words, expanded addition and numerals. In the original lesson's example, two cards representing four tens and one one match 41, while a third card representing one ten and four ones would be 14 and does not match 41. Edulytics labels its numeric comparison as its own example, not a reproduction of the copyrighted source cards.
+Original synthesis explicitly says cards J and S both represent 3 tens plus 2 ones, number 32; E has 2 tens plus 3 ones, number 23, so E is NOT a match. The later example number 95 has 9 tens and 5 ones.
+Original Grab and Count center combines real loose cubes with partner estimates and accurate counts, which must remain teacher-observed rather than a fabricated numeric grade.",
             @"Step 1: Count the tens and ones in a diagram.
 Step 2: Translate into words, for example '5 tens and 3 ones'.
 Step 3: Write or recognize the matching expanded expression 50+3.
 Step 4: Calculate or read the numeral and compare all representations.
 Step 5: Explain why all representations show the same quantity.
-Step 6: For the original 2021 card sort, match picture, tens-and-ones description and expanded expression, and explain the match to a teacher; the Grab and Count real cube estimate/count is a classroom task.",
+Step 6: For the original 2021 card sort, match picture, tens-and-ones description and expanded expression, and explain the match to a teacher; the Grab and Count real cube estimate/count is a classroom task.
+Step 7: Verify Kiran 3 ones plus 7 tens agrees with Priya 70+3, giving 73; explain that picture order does not change the total.
+Step 8: Compare 4 tens 1 one = 41 with 1 ten 4 ones = 14; matching digits alone do NOT make equal place values.
+Step 9: Check original J/S/E: J and S both represent 32 but E represents 23; identify which cards match and explain why to the teacher.
+Step 10: For the source 95 card, construct 9 groups of ten and 5 single ones. Original Grab and Count physical counting and estimation are not automatically graded.",
             @"Do not equate 5 tens and 3 ones with 5+3=8; the five tens are fifty. Do not match 50+3 to 35 by reversing the places.",
             @"I can match diagrams, words and addition expressions for two-digit numbers."),
         new(@"PED:US-CCSS-MATH:G1:U04:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-9/preparation.html",@"eecf5776e8b806188c62ba41baf5e045e8b9425ba1d411a1df483e635d1d1688",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.6", @"CCSS:1.OA.A.1", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
@@ -631,6 +641,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
             UnitFourCenterLessonCode=>UnitFourCenterSourceContentVersion,
             UnitFourCountLargerLessonCode=>UnitFourCountLargerSourceContentVersion,
             UnitFourReadNumberLessonCode=>UnitFourReadNumberSourceContentVersion,
+            UnitFourRepresentationsLessonCode=>UnitFourRepresentationsSourceContentVersion,
             var l when UnitFourLaterLessonCodes.Contains(l)=>UnitFourLaterSourceContentVersion,
                 _=>Version
             })
@@ -653,6 +664,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourCenterLessonCode&&previous=="us-ccss-g1-u04-l05-original-activities-v6")||
          (lesson.LessonCode==UnitFourCountLargerLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourReadNumberLessonCode&&previous==UnitFourLaterSourceContentVersion)||
+         (lesson.LessonCode==UnitFourRepresentationsLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
