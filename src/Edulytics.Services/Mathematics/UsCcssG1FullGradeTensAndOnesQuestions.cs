@@ -117,6 +117,14 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     {
         if(!Supports(family)||string.IsNullOrWhiteSpace(expected)||string.IsNullOrWhiteSpace(response))
             return false;
+        // Source card 3/5 task admits either learner-chosen two-digit order.
+        // The persisted-answer route has only the canonical answer text, so
+        // apply the same two-way rule here, not solely in parameterized Verify.
+        if(family==ReadNumber&&
+           Norm(expected)=="DIGITS=3,5;NUMBER=35;TENS=3;ONES=5;NAME=THIRTY-FIVE"&&
+           GradePersistedAnswer(family,
+               "DIGITS=3,5;NUMBER=53;TENS=5;ONES=3;NAME=fifty-three",response))
+            return true;
         var e=Norm(expected).Split(';');var r=Norm(response).Split(';');
         if(e.Length!=r.Length)return false;
         var correct=new Dictionary<string,string>(StringComparer.Ordinal);
@@ -162,9 +170,5 @@ public static class UsCcssG1FullGradeTensAndOnesQuestions
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? candidate)=>
         Valid(family,p)&&
         (family==ShowMultipleWays?VerifyStudentChosenRegrouping(p,candidate):
-         family==ReadNumber&&p["mode"]==4?
-            GradePersistedAnswer(family,Solve(family,p),candidate)||
-            GradePersistedAnswer(family,
-                "DIGITS=3,5;NUMBER=53;TENS=5;ONES=3;NAME=fifty-three",candidate):
             GradePersistedAnswer(family,Solve(family!,p),candidate));
 }
