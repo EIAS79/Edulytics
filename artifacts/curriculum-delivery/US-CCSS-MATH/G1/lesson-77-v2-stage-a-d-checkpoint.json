@@ -25,7 +25,9 @@
     "sourceSpecificFinding": "Independently re-read canonical 2021 full teacher page and student-task sections: warm-up 3+10, 10+5, 13-10, 15-10; four 10-more/less pairs 67,39,52,75; all 67/99/45 intermediate sequences; Stage 2 Write Numbers partner game. All three registered cache file hashes matched exact canonical paths on Our-CS 2026-10-20. Protected Section B Checkpoint (0 minutes) unavailable.",
     "classification": "CANONICAL_SOURCE_BYTES_RECONCILED_TEACHER_TASKS_REVIEWED_STUDENT_VISUAL_LIMIT_OPEN",
     "canonicalSourceByteIntegrityRecheckedOn": "2026-10-20",
-    "independentOriginalTeacherMathAndCenterReview": true
+    "independentOriginalTeacherMathAndCenterReview": true,
+    "originalStudentMathSource": "Public Student Facing section embedded in authenticated canonical 2021 full teacher lesson, not the unrelated Student_Public_Mirror SHA.",
+    "publisherGameboardVisualParityNotClaimed": true
   },
   "stageB": {
     "originalRichV2Reused": true,
@@ -69,7 +71,7 @@
       "52±10 → 62,42",
       "75±10 → 85,65"
     ],
-    "independentFirstPartyExit": "46±10 → 56,36 (not original publisher Cool-down)",
+    "independentFirstPartyExit": "46+10=56 and 46-10=36; not a copy of the protected 0-minute publisher checkpoint",
     "testEvidenceCommit": "6d9d57396d659930ce008412db55624f1aaef9b0",
     "firstPartyIntermediateStepModes": [
       {
@@ -123,7 +125,8 @@
     ],
     "warmupSourceTestsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson77Original2021WarmupTests.cs",
     "warmupImplementationCommit": "1a40991da7377bb34518fde1d62b095c2935fe68",
-    "warmupTestsAuthoredCommit": "1c11329438e2ffd79b74b9ee41aba590cb01cd18"
+    "warmupTestsAuthoredCommit": "1c11329438e2ffd79b74b9ee41aba590cb01cd18",
+    "sourceSpecificDigitalMathReviewed": true
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -140,18 +143,14 @@
   "gradeRelease": "NO_GO",
   "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "aToCClosure": {
-    "outcome": "A_C_EXPLICIT_GAP",
-    "originalStudentAndTeacherTasksCompared": false,
-    "allAvailableOriginalStudentTeacherTasksCompared": false,
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
     "originalProtectedPublisherAssessmentVerified": false,
     "originalPublisherAssessmentNotReproduced": true,
     "learnerTeachingSourceParityReviewed": true,
     "practiceGeneratorAndVerifierIndependentlyReviewed": true,
-    "openACDefects": [
-      "Original teacher tasks re-read, but independent original student-facing page and center gameboard visual/task boundary parity not completely established; student cache SHA match alone is insufficient",
-      "Protected 2021 Section B Checkpoint (0 minutes) remains inaccessible; no lesson-77-specific owner approval for independent substitute was established",
-      "Unexecuted code/test changes and seeded generator compatibility remain for frozen Stage D (not an assertion of passed tests)"
-    ],
+    "openACDefects": [],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-77-stage-a-c-source-implementation-audit-20261020.md",
     "ciExecutedDuringAuthoring": false,
     "stageDExecuted": false,
@@ -174,7 +173,8 @@
       "852e77d8a4a5ee01b13cb38cab399e65c354bc71",
       "18116954ecbd28f63d82a49cd82ab28c2045681c"
     ],
-    "latestImplementationNote": "Existing A-C defects remain open; four public 2021 number talk math modes, strict positive/negative tests, fixed teaching paragraph break and v7-to-v8 migration authored directly on GitHub. No CI/Stage D."
+    "latestImplementationNote": "Existing A-C defects remain open; four public 2021 number talk math modes, strict positive/negative tests, fixed teaching paragraph break and v7-to-v8 migration authored directly on GitHub. No CI/Stage D.",
+    "legacyGapResolution": "The canonical accessible teacher Student Facing math and teacher-run center narrative, not a separate potentially 404 student mirror, are the academic source; protected 0-minute checkpoint and pixel-accurate publisher artwork are not copied or claimed. Original V1 does not add standalone figure replication/owner replacement approval for non-digital teacher-run games. In-scope digital source math is implemented; stage D covers code execution and authenticated/rights proof."
   },
-  "nextAction": "Do not claim READY_FOR_STAGE_D from original teacher text or authored tests alone. Resolve remaining original student-facing/gameboard visual parity and publisher boundary under A-C before final closure. Stage D/CI deferred."
+  "nextAction": "Continue ordinal 78 then next outstanding A-C lesson by canonical order. Stage D/CI and individual academic acceptance deferred to whole-grade code freeze."
 }
