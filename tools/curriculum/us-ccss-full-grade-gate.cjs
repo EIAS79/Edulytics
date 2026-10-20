@@ -187,6 +187,7 @@ function evaluate(manifest,ledger,candidateSha) {
     issues.push('New lesson scope must be exactly 51-146');
   if(candidateSha!==undefined && !isSha(candidateSha)) issues.push('Candidate SHA must be exact 40 hex');
   let accepted=0, firstUnfinished=147;
+  const unverifiedDeclaredAcceptances=[];
   const stableProofCache=new Map();
   const verifiedProof=(sha,paths)=>{
     if(candidateSha===undefined)return true;
@@ -218,13 +219,18 @@ function evaluate(manifest,ledger,candidateSha) {
         e.sourceReviewReference,candidateSha) &&
       Array.isArray(e.tests)&&e.tests.length>0 &&
       e.tests.every(x=>validProof(x.path,x.sha256,x.reference,candidateSha)));
-    if(!valid){missing.push({ordinal:ord,reason:'Invalid/missing verifiable source, grading, runtime, tests or exact-candidate evidence'});firstUnfinished=Math.min(ord,firstUnfinished);continue;}
+    if(!valid){missing.push({ordinal:ord,reason:'Invalid/missing verifiable source, grading, runtime, tests or exact-candidate evidence'});unverifiedDeclaredAcceptances.push(ord);firstUnfinished=Math.min(ord,firstUnfinished);continue;}
     accepted++;
   }
   if(ledger?.nextOrdinal!==firstUnfinished) issues.push('Progress nextOrdinal disagrees with verified acceptance; expected '+firstUnfinished);
   const ready=issues.length===0 && missing.length===0 && accepted===96;
   return {planId:PLAN,grade:'G1',historicReleasedCount:50,historicRetestedCount:0,
     newRequired:96,newAccepted:accepted,newNotAccepted:96-accepted,
+    // Distinguish historical ledger labels from CURRENT exact-SHA acceptance.
+    // Never promote an old label, invalidate its history or relax NO_GO.
+    declaredNewAccepted:rows.filter(x=>x?.status==='INTERNALLY_ACCEPTED').length,
+    unverifiedDeclaredAcceptances,
+    firstVerifiedUnfinishedOrdinal:firstUnfinished,
     gradeCoverageOnSuccess:ready?146:null,
     outcome:ready?'GRADE_READY_FOR_REQUIRED_CI_AND_RELEASE':'NO_GO',
     productionLive:false,ownerUat:'PENDING',
