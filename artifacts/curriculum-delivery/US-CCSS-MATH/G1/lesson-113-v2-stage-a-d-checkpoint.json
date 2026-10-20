@@ -23,14 +23,15 @@
       "Jada8 plus Elena unknown together17, so Elena9"
     ],
     "actualOriginalBaseLearnerSource": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json",
-    "provenGap": "The base English learner pack taught only generic example 17-8=9 rather than three shoe measurement prompts plus original four arithmetic story forms",
-    "classification": "CONTENT_AND_PRACTICE_REPAIR_PRE_FINAL_EVIDENCE"
+    "provenGap": "The effective historical source correction already contained valid general shoe measures; it omitted all four source-named shoe stories and exact actual teacher/learner/partner measurement task.",
+    "classification": "CONTENT_AND_PRACTICE_REPAIR_PRE_FINAL_EVIDENCE",
+    "confirmedSourceCorrectionLineage": "Original historical source-guarded learner correction was ALREADY present before this work; only missing original task fidelity was extended. Comparing the uncorrected base content alone cannot prove an effective Rich V2 mismatch."
   },
   "stageB": {
     "reusedLearnerRenderer": true,
-    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
-    "contentCommit": "368e98aa4a3b238bc7fd58cfb4ccf2a393850b3a",
-    "newContent": "Preserves physical shoe measurement/review boundary and all four independently source-anchored numeric cases",
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "contentCommit": "7b0aa116f815793e87648dee16b539a51f8c839e",
+    "newContent": "Original source-specific FOUR named Shoe Stories, teacher/own/partner real measurements and correct teacher-only boundaries appended to existing single source-guarded teaching repair.",
     "publisherArtworkCopied": false
   },
   "stageC": {
@@ -48,10 +49,10 @@
     "sourceOnlyGradingBoundary": "Digital can grade numbers but cannot claim actual shoe measurements, student tracings or partner work."
   },
   "stageD": {
-    "contentRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "contentRegression": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
     "practiceRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
     "testsCommitted": [
-      "86137e6799ef00303356aad0f4d7f671aac2c597",
+      "0c6732dbf617613eaa5eb225b4fd85d532c8bb51",
       "a9166c3be98f5b676380cb36b52f0f856b3ae916"
     ],
     "testsExecuted": false,
@@ -62,5 +63,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue whole-cohort A comparisons; reuse repaired B and C, with final .NET/actual auth runtime + persistence + rights checks and independent lesson acceptance after exact-grade content freeze only."
+  "nextAction": "Continue whole-cohort A comparisons; reuse repaired B and C, with final .NET/actual auth runtime + persistence + rights checks and independent lesson acceptance after exact-grade content freeze only.",
+  "singleSourceTeachingPathConfirmed": true,
+  "v1ToV2HistoricalSourceMigrationGuarded": true
 }
