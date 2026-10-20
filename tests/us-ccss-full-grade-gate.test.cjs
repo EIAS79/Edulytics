@@ -165,6 +165,28 @@ test('source-drawing original unit 7 lessons 123-126 require both numeric Practi
 });
 
 
+test('original U04 L09 own-collection authorship and four-gallery task cannot be approved from digital place-value grading alone',()=>{
+  const digital={
+    allowedFamilies:['usccss.g1.u04.l09.show.expanded_form'],
+    realPracticeGradingPersisted:true,
+    independentCorrectAndWrongAnswersVerified:true,
+    independentGradingProofPath:'math',
+    independentGradingProofSha256:'a'.repeat(64),
+    runtimePracticeProofPath:'attempt',
+    runtimePracticeProofSha256:'b'.repeat(64)
+  };
+  assert.equal(validLessonAssessment(74,digital,()=>true),false);
+  const both={...digital,originalAuthorshipTaskReviewed:true,
+    learnerAuthoredTaskRendered:true,teacherReviewRubricAvailable:true,
+    actualTeacherObservationNotClaimed:true};
+  assert.equal(validLessonAssessment(74,both,()=>true),true);
+  assert.equal(validLessonAssessment(74,{...both,learnerAuthoredTaskRendered:false},()=>true),false);
+  assert.equal(validLessonAssessment(74,{...both,teacherReviewRubricAvailable:false},()=>true),false);
+  assert.equal(validLessonAssessment(74,{...both,realPracticeGradingPersisted:false},()=>true),false);
+  assert.equal(validLessonAssessment(74,{...both,actualTeacherObservationNotClaimed:false},()=>true),false);
+  assert.equal(validLessonAssessment(74,both,()=>false),false);
+});
+
 test('ordinal 142 requires BOTH authentic two-question ride authorship and independently graded comparison Practice',()=>{
   const digital={
     allowedFamilies:['usccss.g1.u08.l06.compare_difference_story'],
