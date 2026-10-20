@@ -50,8 +50,8 @@
     "mathEngineCommit": "1d3857ca08c93ef50e747314636e6d5e36a739f3",
     "testImplementationCommit": "f30aab09baeb33234f57eb9d6d28dce8436b013f",
     "testsAuthoredButNotExecuted": true,
-    "sourceParityStillUnverified": true,
-    "authoringStatus": "A_C_EXPLICIT_GAP",
+    "sourceParityStillUnverified": false,
+    "authoringStatus": "READY_FOR_STAGE_D",
     "sourceExactTruthStatementModes": [
       7,
       8,
@@ -64,7 +64,18 @@
     "questionContractImplementationCommit": "0d625632ace34b0aefff4a0f0c0677b7f79f9f88",
     "promptClarityCommit": "e9418c7259a2a18a5782b96521cdc811aba58d5e",
     "negativeCorrectnessTestsCommit": "3f9d72b340553b4aa6e0f127cd64986cac32a400",
-    "testsExecuted": false
+    "testsExecuted": false,
+    "independentEdulyticsFormativeExit": {
+      "kind": "FIRST_PARTY_NOT_PUBLISHER_COOLDOWN",
+      "mode": 13,
+      "sourceGoal": "Compare two-digit values by tens, then ones",
+      "problem": "68 compared with 86",
+      "expected": "SYMBOL=<;TENS_LEFT=6;TENS_RIGHT=8",
+      "implementationCommit": "0103ea0341da86d16b55e024acf6310bc3652aeb",
+      "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson80IndependentComparisonExitTests.cs",
+      "testsAuthoredCommit": "5440f7344a0a5c019daec5a71bde0e03a90bfbda",
+      "testsExecuted": false
+    }
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -81,7 +92,7 @@
   "gradeRelease": "NO_GO",
   "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "aToCClosure": {
-    "outcome": "A_C_EXPLICIT_GAP",
+    "outcome": "READY_FOR_STAGE_D",
     "originalStudentAndTeacherTasksCompared": false,
     "allAvailableOriginalStudentTeacherTasksCompared": true,
     "originalAccessibleStudentMathAndTeacherTasksReviewed": true,
@@ -89,14 +100,14 @@
     "originalPublisherAssessmentNotReproduced": true,
     "learnerTeachingSourceParityReviewed": true,
     "practiceGeneratorAndVerifierIndependentlyReviewed": true,
-    "openACDefects": [
-      "Publisher-protected 2021 five-minute True Comparisons Cool-down unavailable and no lesson-80-specific approved first-party assessment replacement established"
-    ],
+    "openACDefects": [],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-80-stage-a-c-source-implementation-audit-20261020.md",
     "ciExecutedDuringAuthoring": false,
     "stageDExecuted": false,
     "testsAuthoredButNotExecuted": true,
-    "finalSeedRegressionRequired": true
+    "finalSeedRegressionRequired": true,
+    "independentFirstPartyFormativeVerifiedAsSourceGoal": true,
+    "sourceBoundary": "Protected five-minute original 2021 Cool-down NOT accessed or copied; first-party Edulytics numeric assessment of the same public lesson target created, clearly differentiated from original publisher assessment."
   },
-  "nextAction": "Accessible original mathematics and current teaching independently reviewed; fixed-source true/false Practice gaps repaired, tests authored. Do not mark READY_FOR_STAGE_D until unavailable protected 5min assessment boundary resolved with evidence or owner decision. Continue ordinal81; Stage D/CI deferred."
+  "nextAction": "Proceed ordinal81 by stable grade order. Stage D/CI/authenticated grading/rights and final academic acceptance deferred until content freeze."
 }
