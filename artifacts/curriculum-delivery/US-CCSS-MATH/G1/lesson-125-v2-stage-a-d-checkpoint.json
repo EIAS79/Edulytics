@@ -44,7 +44,15 @@
     "digitalPracticePartialAssessmentOnly": true,
     "teacherReviewRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-125-original-shape-creation-rubric.json",
     "rubricCorrectionCommit": "691071e06a1aab9b7766fd7fe8a9ef5b04b0cb11",
-    "actualLearnerDrawingsAndTeacherObservation": "NOT_CLAIMED"
+    "actualLearnerDrawingsAndTeacherObservation": "NOT_CLAIMED",
+    "additionalDigitalModeEvidence": {
+      "mathEngineCommit": "a2e27dbdad445ffb183ce0190e0b0faefd9bf95b",
+      "independentOracleCommit": "e945e2f52721483bda022c81d3464e3a7e917422",
+      "regressionCommit": "3c0fd3810c3b3d79befd79bb5f52e370286c8fc1",
+      "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+      "scope": "Three extra shape conditions: square, non-square rectangle, rhombus; do not claim original 16 child drawings",
+      "status": "CODE_AND_TESTS_AUTHORED_NOT_EXECUTED"
+    }
   },
   "stageD": {
     "assertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
@@ -54,7 +62,10 @@
     "authenticatedStudentTaskRendering": "PENDING",
     "independentPracticeGradingAndPersistence": "PENDING",
     "originalStudentVisualCopyrightAccessibility": "PENDING",
-    "individualInternalV1Approval": "NOT_CLAIMED"
+    "individualInternalV1Approval": "NOT_CLAIMED",
+    "frozenShaCIExecuted": false,
+    "authenticLearnerSourceDrawingRubricProven": false,
+    "academicAcceptance": "NOT_CLAIMED"
   },
   "status": "IN_PROGRESS",
   "release": "NO_GO",
