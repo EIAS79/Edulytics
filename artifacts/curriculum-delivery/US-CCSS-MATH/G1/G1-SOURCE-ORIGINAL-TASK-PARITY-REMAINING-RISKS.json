@@ -2020,15 +2020,15 @@
         "Student Facing What do you notice? What do you wonder? [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,1",
         "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
       ],
-      "sourceRequiredTaskInterpretation": "Measure lengths of creepy-crawly creatures with connecting cubes and compare several objects.",
-      "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u06.l05.measure_connecting_cubes; this excerpt-level triage does NOT certify full activity coverage.",
-      "remainingAcademicTaskParityWork": "Review cube adjacency and no-gap unit counts across the source animal pictures; actual tabletop measuring is teacher-led.",
+      "sourceRequiredTaskInterpretation": "Original 2021 full lesson read-only checked: compare pencil picture with cube towers in warm-up. Activity 1 Lengths of Creepy, Crawly Things requires building same-size connecting cube towers to original animal illustrations (source caterpillar example four cubes) with endpoints aligned. Activity 2 Measure More Creepy, Crawly Things requires measuring illustrated animal lengths with cube sides, writing cube counts, comparing solutions with partner; source grasshopper example five cubes. Activity 3 choices How Close?, Target Numbers and Five in a Row. Original figures and physical manipulations remain source/teacher reviewed.",
+      "currentDigitalOrTeacherContentCandidate": "Identified and repaired actual learner base content mismap: unrelated cube-vs-rectangular-prism shape/vertices examples and 3D-solid-classification steps were not length measurement. Restored correct source-specific first-party Rich V2 teaching for all three activities using existing renderer and existing numeric cube-length Practice, with tests asserting content and excluding unrelated 3D example. NOT TESTED in final CI.",
+      "remainingAcademicTaskParityWork": "CI to be run only on final frozen candidate; verify actual materialized learner page, original visual rights/source artwork, correct/wrong/malformed numeric submissions and grade persistence. A digital count does not prove real original insect-figure measurements, pupil's physically built cube tower or teacher classroom observations.",
       "candidateDigitalFamily": "usccss.g1.u06.l05.measure_connecting_cubes",
       "assessingMode": "DIGITAL_PRACTICE",
       "sourcePublisherArtworkFullyReviewed": false,
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
-      "evidenceStage": "2021_STUDENT_FACING_EXCERPT_AND_TEACHER_ACTIVITY_TRIAGE_ONLY_NOT_FULL_SOURCE_ACTIVITY_APPROVAL",
+      "evidenceStage": "DIRECT_2021_ORIGINAL_FULL_TEACHER_SOURCE_VS_EFFECTIVE_BASE_LEARNER_3D_MISMAP_FIXED_UNTESTED_PENDING_FINAL_D",
       "initialSourceReviewCohort": "INITIAL_SOURCE_EXCERPT_TRIAGE",
       "readOnlyOriginalFullTeacherHtmlIntegrity20261019": {
         "algorithm": "SHA-256",
@@ -2050,6 +2050,18 @@
         "executedCiDuringAuthoring": false,
         "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
         "awaiting": "Review original graphics and authenticated learner tasks where applicable, prove original A-D for each lesson, verify independent correctness/graded persistence and protected final frozen-grade SHA"
+      },
+      "sourceRepairReview20261020": {
+        "sourceDevice": "Our-CS (readonly)",
+        "teacherHtmlSha256Reused": "1f9bca82de04d074fa9eb61f4e117a69ddbc3c5c20c9ace7f893cff41782f027",
+        "basePack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json",
+        "correctedCode": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+        "codeCommit": "619410f57d39143f4ff462b82dc9527fe1cd8628",
+        "testCommit": "4add18693084d9beb16b8ab0f7b995161f4a0d07",
+        "checkpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-107-v2-stage-a-d-checkpoint.json",
+        "workingStage": "SOURCE_CONFIRMED_CONTENT_REPAIR",
+        "githubCiManuallyRun": false,
+        "individualInternalApproval": "NOT_CLAIMED"
       }
     },
     {
