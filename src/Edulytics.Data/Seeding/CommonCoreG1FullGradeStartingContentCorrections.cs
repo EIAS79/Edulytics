@@ -30,7 +30,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string UnitFourCenterLessonCode="PED:US-CCSS-MATH:G1:U04:L05";
     public const string UnitFourCollectionSourceContentVersion="us-ccss-g1-u04-l01-original-activities-v7";
     public const string UnitFourTensMatchSourceContentVersion="us-ccss-g1-u04-l02-original-activities-v7";
-    public const string UnitFourMultipleTensSourceContentVersion="us-ccss-g1-u04-l04-original-activities-v6";
+    public const string UnitFourMultipleTensSourceContentVersion="us-ccss-g1-u04-l04-original-activities-v7";
     public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v6";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
@@ -342,7 +342,7 @@ Step 8: In Activity 2 connect English number words, printed numbers 10–90 and 
             @"Do not confuse the count of towers with the count of loose ones. Four tens means 40, not 4. Avoid matching pictures by their approximate size without counting.",
             @"I can match different representations of a multiple of ten."),
         new(@"PED:US-CCSS-MATH:G1:U04:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-4/preparation.html",@"aea5b61803df4c4b9df6fd46f89e9413a5bb48d0ef33c3e8178327ec9e22b5c7",new[] { @"CCSS:1.NBT.B.2", @"CCSS:1.NBT.C.4", @"CCSS:1.NBT.C.5", @"CCSS:1.NBT.C.6" },
-            @"More Addition and Subtraction with Tens PLC Activity",
+            @"More Addition and Subtraction with Tens",
             @"Add and subtract different MULTIPLES of ten by combining or taking away groups of ten. Use drawings, simple story contexts and equations. Unlike the previous lesson, the change can be 20, 30 or more—not always one ten.",
             @"Learning goal: add and subtract multiples of ten from multiples of ten (within 0–100) using tens as a unit. Addition 30+20 joins three tens and two tens; subtraction 70-40 removes four of seven tens. The original 2021 warm-up asks 30+10=40, 40+10=50, 80-10=70 and 70-10=60; pupil strategies may use the number of tens.",
             @"Example 1: 30+20=(3+2) tens=50.
@@ -623,6 +623,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==CenterFourLessonCode&&previous=="us-ccss-g1-u03-l27-original-activities-v6")||
          (lesson.LessonCode==UnitFourCollectionLessonCode&&previous=="us-ccss-g1-u04-l01-original-activities-v6")||
          (lesson.LessonCode==UnitFourTensMatchLessonCode&&previous=="us-ccss-g1-u04-l02-original-activities-v6")||
+         (lesson.LessonCode==UnitFourMultipleTensLessonCode&&previous=="us-ccss-g1-u04-l04-original-activities-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
