@@ -13,6 +13,7 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
 {
     public const string Version = "us-ccss-g1-full-grade-u06-u08-source-teaching-v1";
     public const string Unit6OriginalSourceVersion="us-ccss-g1-u06-original-student-source-activities-v2";
+    public const string Unit6Lesson4Stage3SourceVersion="us-ccss-g1-u06-l04-how-close-stage3-source-v3";
     public const string Unit7Unit8OriginalSourceVersion="us-ccss-g1-u07-u08-original-student-source-activities-v2";
     private static bool IsReviewedUnit7Unit8Lesson(string code)=>code is
         "PED:US-CCSS-MATH:G1:U07:L01" or "PED:US-CCSS-MATH:G1:U07:L03" or
@@ -275,14 +276,16 @@ public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
     public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)?
-            (IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:
+            (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"?Unit6Lesson4Stage3SourceVersion:
+             IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:
              IsReviewedUnit7Unit8Lesson(lesson.LessonCode)?Unit7Unit8OriginalSourceVersion:
              Version):previous;
     public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous)=>
         IsTarget(doc,lesson)&&
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
-         ((IsReviewedUnit6Lesson(lesson.LessonCode)||IsReviewedUnit7Unit8Lesson(lesson.LessonCode))&&previous==Version));
+         ((IsReviewedUnit6Lesson(lesson.LessonCode)||IsReviewedUnit7Unit8Lesson(lesson.LessonCode))&&previous==Version)||
+         (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"&&previous==Unit6OriginalSourceVersion));
     public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson,string previous,
         IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
