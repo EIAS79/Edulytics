@@ -240,7 +240,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,collection,"us-ccss-g1-u04-l01-original-activities-v6"));
         Assert.Equal("us-ccss-g1-u04-l01-original-activities-v7",
             CommonCoreG1FullGradeStartingContentCorrections.UnitFourCollectionSourceContentVersion);
-        Assert.Contains("five COMPLETE tens and two remaining ones",unit4Text(6));
+        Assert.Contains("five complete tens and two remaining ones",unit4Text(6));
         Assert.Contains("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",unit4Text(6));
         Assert.Contains("3 full tens and 7 ones",unit4Text(6));
         Assert.Contains("50 to 81",unit4Text(6));
