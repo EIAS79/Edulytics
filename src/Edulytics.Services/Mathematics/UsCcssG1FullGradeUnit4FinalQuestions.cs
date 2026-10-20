@@ -29,10 +29,22 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Supports(family)||(tenCardTask?p.Count!=11:p.Count!=4)||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(family==Families[1]?4:family==Families[4]?7:3))return false;
+           mode<0||mode>(family==Families[0]?13:family==Families[1]?4:family==Families[4]?7:3))return false;
         return family switch
         {
-            "usccss.g1.u04.l16.write_comparison" or
+            "usccss.g1.u04.l16.write_comparison" => mode switch
+            {
+                4=>a==56&&b==26&&c==0,
+                5=>a==72&&b==78&&c==0,
+                6=>a==6&&b==55&&c==0,
+                7=>a==92&&b==29&&c==0,
+                8=>a==23&&b==23&&c==0,
+                9=>a==78&&b==0&&c==0,
+                10=>a==39&&b==0&&c==0,
+                11=>a==13&&b==0&&c==0,
+                12 or 13=>a==0&&b==0&&c==0,
+                _=>a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99
+            },
             "usccss.g1.u04.l18.center_count_compare_order" or
             "usccss.g1.u04.l22.center_place_value" =>
                 a>=20&&a<=99&&b>=20&&b<=99&&c>=20&&c<=99,
@@ -77,8 +89,19 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed Grade 1 U04 family");
-        int mode=random.Next(family==Families[1]?5:family==Families[4]?8:4);
+        int mode=random.Next(family==Families[0]?14:family==Families[1]?5:family==Families[4]?8:4);
         int a=random.Next(20,100),b=random.Next(20,100),c=random.Next(20,100);
+        if(family==Families[0]&&mode>=4)
+        {
+            (a,b,c)=mode switch
+            {
+                4=>(56,26,0),5=>(72,78,0),6=>(6,55,0),
+                7=>(92,29,0),8=>(23,23,0),
+                9=>(78,0,0),10=>(39,0,0),11=>(13,0,0),
+                12 or 13=>(0,0,0),
+                _=>throw new InvalidOperationException("Unknown source comparison mode")
+            };
+        }
         if(family==Families[3]||family==Families[4])
         {
             b=0;c=0;
@@ -119,8 +142,16 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         if(!Valid(family,p))throw new InvalidOperationException("Invalid Grade 1 tens-and-ones problem");
         string prompt=family switch
         {
-            "usccss.g1.u04.l16.write_comparison"=>
-                $"Write the TRUE comparison for {a} and {b} using one of >, <, =. Answer SYMBOL=sign.",
+            "usccss.g1.u04.l16.write_comparison"=>mode switch
+            {
+                >=4 and <=8=>$"SOURCE 2021 SYMBOL BLANK: Choose the correct comparison sign to make {a} ___ {b} true. Write SYMBOL=sign, using <, >, or =. Explain your reasoning to a teacher.",
+                9=>"SOURCE 2021 OPEN NUMBER BOX: Fill in □>78 with ANY two-digit number greater than 78 (up to 99). Write NUMBER=number. Multiple answers are valid.",
+                10=>"SOURCE 2021 OPEN NUMBER BOX: Fill in 39<□ with ANY two-digit number greater than 39 (up to 99). Write NUMBER=number. Multiple answers are valid.",
+                11=>"SOURCE 2021 EQUALITY BOX: Fill in 13=□ with the number that makes this true. Write NUMBER=number.",
+                12=>"SOURCE 2021 TWO OPEN BOXES: Choose TWO two-digit numbers to make □<□ true. Write LEFT=number;RIGHT=number. There are many correct answers.",
+                13=>"SOURCE 2021 TWO OPEN BOXES: Choose TWO two-digit numbers to make □>□ true. Write LEFT=number;RIGHT=number. There are many correct answers.",
+                _=>$"Write the TRUE comparison for {a} and {b} using one of >, <, =. Answer SYMBOL=sign."
+            },
             "usccss.g1.u04.l17.order_three_numbers"=>
                 mode>=3?
                     $"{(mode==4?"ORIGINAL 2021 STUDENT FACING: ":"GENERALIZED PRACTICE: ")}Five cards start in order: {a}, {b}, {c}, {p["d"]}, {p["e"]}. INSERT these five additional cards correctly: {p["f"]}, {p["g"]}, {p["h"]}, {p["i"]}, {p["j"]}. Write ALL ten numbers from least to greatest as ORDER=n1,n2,n3,n4,n5,n6,n7,n8,n9,n10. Explain why two inserted numbers belong where you placed them.":
@@ -164,7 +195,15 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         int a=p["a"],b=p["b"],c=p["c"],mode=p["mode"];
         return family switch
         {
-            "usccss.g1.u04.l16.write_comparison"=>$"SYMBOL={Sign(a,b)}",
+            "usccss.g1.u04.l16.write_comparison"=>mode switch
+            {
+                9=>"NUMBER=79",
+                10=>"NUMBER=40",
+                11=>"NUMBER=13",
+                12=>"LEFT=12;RIGHT=21",
+                13=>"LEFT=21;RIGHT=12",
+                _=>$"SYMBOL={Sign(a,b)}"
+            },
             "usccss.g1.u04.l17.order_three_numbers"=>
                 mode>=3?"ORDER="+string.Join(",",
                     new[]{"a","b","c","d","e","f","g","h","i","j"}
@@ -245,10 +284,39 @@ public static class UsCcssG1FullGradeUnit4FinalQuestions
         return 10*altT+altO==37;
     }
 
+    // 2021 L16 source asks pupils to CHOOSE any true number in a box.
+    // A reference solution is not the only accepted answer.
+    private static bool VerifyOpenComparisonSource(int mode,string? value)
+    {
+        var norm=Normalize(value);
+        if(mode is 9 or 10 or 11)
+        {
+            if(!norm.StartsWith("NUMBER=",StringComparison.Ordinal)||
+               !int.TryParse(norm["NUMBER=".Length..],out var n))return false;
+            return mode switch
+            {
+                9=>n>=79&&n<=99,
+                10=>n>=40&&n<=99,
+                11=>n==13,
+                _=>false
+            };
+        }
+        if(mode is not (12 or 13))return false;
+        var parts=norm.Split(';');
+        if(parts.Length!=2||
+           !parts[0].StartsWith("LEFT=",StringComparison.Ordinal)||
+           !parts[1].StartsWith("RIGHT=",StringComparison.Ordinal)||
+           !int.TryParse(parts[0]["LEFT=".Length..],out var left)||
+           !int.TryParse(parts[1]["RIGHT=".Length..],out var right)||
+           left<10||left>99||right<10||right>99)return false;
+        return mode==12?left<right:left>right;
+    }
+
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? value)=>
         Valid(family,p)&&!string.IsNullOrWhiteSpace(value)&&
         (family==Families[3]&&p["mode"]==1?
             VerifyStudent37Ways(value):
             family==Families[4]&&p["mode"]<=3?VerifyStudentChosenTensTrade(p,value):
+            family==Families[0]&&p["mode"]>=9?VerifyOpenComparisonSource(p["mode"],value):
             Normalize(Solve(family!,p))==Normalize(value));
 }
