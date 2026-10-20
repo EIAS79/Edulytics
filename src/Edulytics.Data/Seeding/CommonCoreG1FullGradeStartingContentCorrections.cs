@@ -472,7 +472,11 @@ Step 10: For the source 95 card, construct 9 groups of ten and 5 single ones. Or
 Example 2: Represent 35 as three rods and five dots, '3 tens 5 ones', and 30+5.
 Example 3: Represent 80 as eight rods and no leftover ones, and 80+0.
 Example 4: Represent 47 as 4 tens and 7 ones, 40+7=47.
-Original 2021 Show Collections In Many Ways asks students to visit AT LEAST FOUR real collections and show each in several equivalent forms. Teacher/partner gallery participation is not established by solving a generated number.",
+Original 2021 Show Collections In Many Ways asks students to visit AT LEAST FOUR real collections and show each in several equivalent forms. Teacher/partner gallery participation is not established by solving a generated number.
+Original 2021 warm-up compares FOUR representations; C and D both show three tens and five ones (35), even when the ones appear on different sides of the tens.
+Original Create a Collection: partners draw two digit cards to form a two-digit number, personally build the quantity with ten-cube towers and single cubes, then each invents MULTIPLE valid drawings, word descriptions or equations.
+Original gallery: students visit AT LEAST FOUR actual classmates' collections and represent each in a different mathematical way; physical construction, peer visits and drawings are teacher-reviewed.
+Source center example: Kiran counts 3 tens and 1 one (31). Source closing representation shows 7 complete tens and 3 ones (73), also 70+3. Digital Practice evaluates numeric equivalence, not whether a pupil personally assembled those collections.",
             @"Step 1: Pick or read the target two-digit value.
 Step 2: Organize 10-object bundles and loose ones.
 Step 3: Draw one rod per ten and one dot per remaining one.
