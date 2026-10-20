@@ -45,16 +45,18 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode))return false;
         return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&
-            mode<=(Index(family)==5?6:Index(family)==8?5:((Index(family)==1||Index(family)==2||Index(family)==4||Index(family)==6||Index(family)==7)?4:3))&&
+            mode<=(Index(family)==5?6:Index(family)==8?5:((Index(family)==1||Index(family)==2||Index(family)==4||Index(family)==6||Index(family)==7||Index(family)==13)?4:3))&&
             (Index(family)!=1||mode!=4||(a>=2&&a<=4&&b>=2&&b<=3))&&
+            (Index(family)!=13||mode!=4||a<=10)&&
             (Index(family)!=12||mode!=3||a!=b);
     }
     public static Problem Build(string family,Random random)
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unsupported G1 Unit7 original-source family");
-        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==1||i==2||i==4||i==6||i==7?5:4);
+        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==1||i==2||i==4||i==6||i==7||i==13?5:4);
         if(i==1&&mode==4){a=random.Next(2,5);b=random.Next(2,4);}
+        if(i==13&&mode==4)a=random.Next(1,11);
         if(i==12&&mode==3&&b==a)b=a==12?1:a+1;
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
         string prompt=i switch
@@ -113,7 +115,9 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 mode==2?
                 $"ORIGINAL CONNECT CLOCKS: The analog clock shows two hands, and a second digital card displays {a}:00. Do these clocks show the SAME time? Write SAME=YES/NO;TIME=hour:minutes.":
                 $"ORIGINAL CONNECT CLOCKS: The analog clock shows two hands, and a second digital card displays {b}:00. Do these clocks show the SAME time? Write SAME=YES/NO;TIME=hour:minutes.",
-            13=>mode<=1?
+            13=>mode==4?
+                $"SOURCE-INSPIRED ORDER THREE CLOCKS, FIRST-PARTY TEXT MODEL: Clock A shows {a}:30, Clock B shows {a+1}:00 and Clock C shows {a}:00, all within the SAME 12-hour half-day with no clock wrap. Arrange these THREE clocks from earliest to latest, comparing o'clock with half past. Write ORDER=comma-separated clock letters. The teacher verifies original publisher clock cards and real student ordering separately.":
+                mode<=1?
                 $"Half-hour clock #{b}: minute hand at SIX, hour hand halfway between {a} and next hour. Write MINUTES=number;HOUR=number.":
                 mode==2?
                 $"ORIGINAL CARD SORT: Clock #{b} shows the minute hand at 12 and the short hand at {a}. Color it BLUE for o'clock (RED is half past). Write COLOR=BLUE;TIME=hour:minutes;WORDS=hour_oclock. Use a lowercase spelled-out hour word such as seven_oclock, not a digit.":
@@ -165,7 +169,8 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
             11=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             12=>mode<=1?$"TIME={a}:00":$"SAME={(mode==2?"YES":"NO")};TIME={a}:00",
-            13=>mode<=1?$"MINUTES=30;HOUR={a}":
+            13=>mode==4?"ORDER=C,A,B":
+                mode<=1?$"MINUTES=30;HOUR={a}":
                 $"COLOR={(mode==2?"BLUE":"RED")};TIME={a}:{(mode==2?"00":"30")};WORDS={(mode==2?HourName(a)+"_oclock":"half_past_"+HourName(a))}",
             14=>mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
             15=>$"TIME={a}:{(mode%2==0?"00":"30")}",
