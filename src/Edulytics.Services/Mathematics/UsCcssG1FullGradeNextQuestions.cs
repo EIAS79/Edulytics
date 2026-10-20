@@ -40,7 +40,7 @@ public static class UsCcssG1FullGradeNextQuestions
                  (mode==1?c>=0&&c<=9:c==0)&&a+b+c<=20),
             TeenSubtract=>a>=11&&a<=19&&b>=0&&b<=9&&c==0&&
                 (mode!=3||(a==16&&b==7)),
-            TenSubtract=>a>=11&&a<=18&&b>=a-9&&b<=9&&c==0&&
+            TenSubtract=>a>=11&&a<=19&&b>=0&&b<=9&&c==0&&
                 (mode!=2||(a==15&&b==8)),
             _=>false
         };
@@ -91,7 +91,7 @@ public static class UsCcssG1FullGradeNextQuestions
         else
         {
             if(mode==2){a=15;b=8;} // Original Diego's number-card subtraction.
-            else{a=random.Next(11,19);b=random.Next(a-9,10);}
+            else{a=random.Next(11,20);b=random.Next(0,10);} // Source 2021 digit cards 0–9 (same card game as prior lesson).
         }
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
         {["a"]=a,["b"]=b,["c"]=c,["mode"]=mode};
@@ -126,7 +126,9 @@ public static class UsCcssG1FullGradeNextQuestions
                 $"Take From: start with {a} counters and remove {b}. First reach ten, then remove the rest. Write REACH10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Original 2021 number cards range from 0 through 9; card draws and drawings stay teacher-led.",
             TenSubtract=>mode==2?
                 "ORIGINAL 2021 STUDENT FACING: Diego starts Number Card Subtraction with 15, then picks an 8. Show 15 on ten-frames, subtract 8 using a ten, and write the matching EQUATION. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Explain your drawing to a teacher.":
-                $"Use ten as a landmark for {a}-{b}. First subtract enough to get to ten, then subtract the rest. Write the original source subtraction EQUATION too. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number.",
+                b<a-10?
+                $"ORIGINAL NUMBER CARD SUBTRACTION WITH TEN-FRAMES: show teen card {a} and remove digit card {b} (0 through 9), WITHOUT crossing ten. Do not invent a negative remainder. Write DIFFERENCE=number;EQUATION=number-number=number. The physical cards and explanatory drawings remain teacher-led.":
+                $"Use ten as a landmark for {a}-{b}. First remove the extra ones to reach ten, then subtract the rest. Write TO10=number;REST=number;DIFFERENCE=number;EQUATION=number-number=number. Source 2021 physical cards and teacher-led ten-frame drawings are not auto-assessed.",
             _=>throw new InvalidOperationException()
         };
         return new(family,prompt,
@@ -149,7 +151,9 @@ public static class UsCcssG1FullGradeNextQuestions
             TeenSubtract=>b<a-10
                 ?$"DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}"
                 :$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
-            TenSubtract=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
+            TenSubtract=>b<a-10
+                ?$"DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}"
+                :$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             _=>throw new InvalidOperationException()
         };
     }
