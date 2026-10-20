@@ -97,7 +97,11 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 mode==7?
                 "ORIGINAL 2021 TRUE/FALSE WARM-UP: Is 20+6=6+30 true? Evaluate BOTH sides. Write TRUE=YES/NO;LEFT=number;RIGHT=number.":
                 mode==8?
-                "EDULYTICS ORIGINAL EXIT CHECK (not the inaccessible publisher Cool-down): Add 46 and 30 whole ones/tens correctly; 4 tens+3 tens=7 tens, while 6 ones remain. Write TOTAL=number;ONES=number. Teacher reviews the student's visual strategy.":
+                "EDULYTICS ORIGINAL EXIT CHECK (not the inaccessible publisher Cool-down): Add 46 and 30. Four tens plus three tens gives seven tens; six ones remain. Write TOTAL=number;ONES=number. Teacher reviews drawings.":
+                mode==9?
+                "EDULYTICS ORIGINAL MISSING-DIGIT TASK, not reconstructed from the publisher image: 4□+20=65 is true. Which ONES digit belongs in the box? Write DIGIT=number;EQUATION=number+number=number;TRUE=YES/NO.":
+                mode==10?
+                "EDULYTICS ORIGINAL FALSE-EQUATION CHECK, not reconstructed from the publisher image: Could 4□+20=75 ever be true for a single missing ONES digit 0–9? Identify the greatest possible total and judge the claim. Write TRUE=YES/NO;MAX=number;TARGET=number.":
                 $"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
             TenMoreLess=>mode%2==0?$"What is TEN MORE than {a}? Write RESULT=number.":
                 $"What is TEN LESS than {a}? Write RESULT=number.",
@@ -128,6 +132,10 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 "TRUE=NO;LEFT=71;RIGHT=81":
                 mode==7?
                 "TRUE=NO;LEFT=26;RIGHT=36":
+                mode==9?
+                "DIGIT=5;EQUATION=45+20=65;TRUE=YES":
+                mode==10?
+                "TRUE=NO;MAX=69;TARGET=75":
                 $"TOTAL={a+b};ONES={(a+b)%10}",
             TenMoreLess=>$"RESULT={(mode%2==0?a+10:a-10)}",
             CenterReview=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}",
