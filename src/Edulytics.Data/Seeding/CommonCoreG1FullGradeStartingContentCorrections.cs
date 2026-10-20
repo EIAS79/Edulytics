@@ -20,7 +20,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string ChooseSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L25";
     private const string StoryLessonCode="PED:US-CCSS-MATH:G1:U03:L26";
     private const string CenterFourLessonCode="PED:US-CCSS-MATH:G1:U03:L27";
-    public const string CountRelationSourceContentVersion="us-ccss-g1-u03-l24-original-activities-v6";
+    public const string CountRelationSourceContentVersion="us-ccss-g1-u03-l24-original-activities-v7";
     public const string ChooseSubtractSourceContentVersion="us-ccss-g1-u03-l25-original-activities-v6";
     public const string StorySourceContentVersion="us-ccss-g1-u03-l26-original-activities-v6";
     public const string CenterFourSourceContentVersion="us-ccss-g1-u03-l27-original-activities-v6";
@@ -210,22 +210,24 @@ Step 6: EDULYTICS ORIGINAL COOL-DOWN (independently authored, not a reconstructi
             @"Do not write 13-3=10-3=7; 13-3 equals 10, not seven. Instead write 13-6=13-3-3=10-3=7. Do not remove the ten twice or assume a one-digit answer without checking.",
             @"I can use the group of ten to subtract and explain accurate intermediate steps within 20."),
         new(@"PED:US-CCSS-MATH:G1:U03:L24",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-24/preparation.html",@"3fd5d2c854c79d76d2678582f6cf6d3285a8004ed7e608a62fe54d2777be9761",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6", @"CCSS:1.OA.D.8" },
-            @"Relate Counting to Addition and Subtraction PLC Activity",
-            @"Compare subtracting by counting ON from the smaller number and taking AWAY from the larger number; explain which route is shorter. This is an original-source PLC activity and discussion must be teacher-facilitated, not automatically graded.",
+            @"Relate Counting to Addition and Subtraction",
+            @"Compare subtracting by counting ON from the smaller number and taking AWAY from the larger number; explain which route is shorter. Students compare each actual subtraction by counting ON and taking AWAY; the original lesson involves teacher-observed partner discussion and does not automatically grade pupil explanations.",
             @"Learning goal: analyze and use counting-on and taking-away strategies to subtract within 20. For 15-8, one strategy takes away 5 to reach 10, then 3 more; another counts on 2 to reach 10 and 5 more to reach 15. Both produce 7, though their steps differ. Original 2021 choral warm-up counts BACKWARD by one from 50 to 20, noticing place-value patterns. Original Diego-versus-Tyler tasks include 16-3, 17-8 and 18-15 using both count-on and take-away methods.",
             @"Example 1: 15-8=7. Take away: 15-5=10, 10-3=7. Count on: 8+2=10, 10+5=15, and 2+5=7.
 Example 2: 13-9=4. Count on 9+1=10, then 10+3=13, so 1+3=4.
 Example 3: 18-6=12; removing six ones is direct and does not need crossing ten.
 Original 2021 Different Ways to Subtract: 16-3=13, 17-8=9 and 18-15=3. For 18-15, take away fifteen to leave three, or count on 15+3=18.
 Original 2021 Set A missing values: 12-7=5; 18-5=13; 14-6=8; 15-12=3; 13-4=9.
-Original 2021 Set B missing addends: 5+13=18; 13=7+6; 20=15+5. These answers are worked-example explanations; original tasks retain blanks for students.",
+Original 2021 Set B missing addends: 5+13=18; 13=7+6; 20=15+5. These answers are worked-example explanations; original tasks retain blanks for students.
+Original Set A has the larger subtractor 15-12=3 and reversed equality □=14-6; original Set B keeps three DIFFERENT blank positions: 5+□=18, 13=□+6, 20=15+□. Edulytics digitally checks the missing values as well as each full equation.",
             @"Step 1: Identify starting amount, removed amount and difference.
 Step 2: Solve by physically taking away or by subtracting in stages.
 Step 3: Solve again by counting ON from the smaller number until you reach the start.
 Step 4: Check both methods give the same difference; discuss which is easier for these numbers.
 Step 5: Use a true equation and a drawing, not a false chain.
 Step 6: ORIGINAL Set A: fill 12-7=□, 18-5=□, □=14-6, 15-12=□, 13-4=□. ORIGINAL Set B: fill 5+□=18, 13=□+6, 20=15+□. Explain how the selected strategy makes each equation true; do not pre-fill pupil blanks.
-Step 7: Compare Diego's take-away and Tyler's count-on methods for 16-3, 17-8 and 18-15 using teacher-supported drawings, numbers or words.",
+Step 7: Compare Diego's take-away and Tyler's count-on methods for 16-3, 17-8 and 18-15 using teacher-supported drawings, numbers or words.
+Step 8: Review all eight original Set A and Set B equation structures and verify the missing-value position. The original Unit 3 Section D Checkpoint is a teacher observation checklist, not a five-minute copied pupil Cool-down.",
             @"Do not subtract 8-15 for a 15-8 story. Do not count only the jump to ten: 8 to 10 is 2, then to 15 is 5 more, so the difference is 7.",
             @"I can compare counting-on and taking-away subtraction methods and explain my choice; teacher-led PLC discussion remains a class activity."),
         new(@"PED:US-CCSS-MATH:G1:U03:L25",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-25/preparation.html",@"a6cb06045a13078308b3af728d4251a25a747c461a7199d6ca82d9d29e3ab104",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.OA.A.1", @"CCSS:1.OA.B.4", @"CCSS:1.OA.C.5", @"CCSS:1.OA.C.6" },
@@ -597,6 +599,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==CenterLessonCode&&previous=="us-ccss-g1-u03-l21-centers-2021-source-v6")||
          (lesson.LessonCode==TeenSubtractLessonCode&&previous=="us-ccss-g1-u03-l22-teen-2021-source-v6")||
          (lesson.LessonCode==TenSubtractLessonCode&&(previous=="us-ccss-g1-u03-l23-ten-2021-source-v6"||previous=="us-ccss-g1-u03-l23-ten-2021-source-v7"))||
+         (lesson.LessonCode==CountRelationLessonCode&&previous=="us-ccss-g1-u03-l24-original-activities-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
