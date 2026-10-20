@@ -1,0 +1,16 @@
+# Grade 1 lesson 82 / U04 L17 — original source A–C review (2026-10-20)
+
+**Result: `A_C_EXPLICIT_GAP`.** Tests, Stage D, academic signoff and deployment not performed.
+
+## Stage A — independently verified 2021 source
+Exact canonical Our-CS read-only 2021 hashes match the existing checkpoint: full teacher `unit-4/lesson-17/lesson.html` `7d36cff8abddda3544ffd565a83475b54ce07e28d087eba487122d9521a20d35`; canonical student `Student_Public_Mirror/unit-4/lesson-17/lesson.html` `c43998e7c0673eacd725564ce5fdd9bb3e08afb78d9e1c44908863cd7dc5b920`; teacher preparation `Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-4_lesson-17_preparation.html` `0711e8ef8e6dbcd7e32305f5d7c06a1b58a58f34b6ba9bba42a6805eb7ef6789`.
+
+Original 2021 warm-up Which One Doesn't Belong? features four picture cards A–D; original teacher discussion calls statement C `35<20` false. Activity 1 presents four physical groups of pictured/represented number cards A–D to order from least to greatest, optionally mix two groups; source diagram/card image parity and actual peer explanations cannot be certified from indexed teacher text alone. Activity 2 Student Facing gives initial `1,5,10,50,99`, inserts `49,8,25,98,13` to obtain `1,5,8,10,13,25,49,50,98,99`, explains two placements, then chooses any numbers to satisfy `25<□` and `25>□`. Source student section summary includes `17<35`, `35>17` and `35=35`. Original **Which Numbers Belong** five-minute Cool-down is protected; its wording is not claimed.
+
+## Stage B — source-specific reuse and gap repair
+Existing learner content in `CommonCoreG1FullGradeFinalUnit4Corrections.cs` already genuinely teaches the ten-card insertion, explanation and both 25-comparison extensions; no wholesale rewrite. Found missing teacher-source warmth `35<20` false and authentic physical set A–D sorting context. Added both in `caf0ae5eab014f47f717dfb886a5a5d1f7bbf19e`, with lesson-specific v3 content upgrade and a focused new teaching test `aaa24f697de85d637a400021e42bcf7068a3d3f4`; original figure files not copied and tests not run.
+
+## Stage C — nonunique source response independently enforced
+Existing `UsCcssG1FullGradeUnit4FinalQuestions` mode 4 generates and grades the exact ten original cards with a 10-number ordered-answer contract. Modes 0–3 and 3 generalized ordering are reused; teacher-reviewed written reasoning remains outside numeric grading. Previous generator/verifier omitted original `25<□` and `25>□` numeric-response families. Commit `f61a09067c6742e8da8e3f427828571cb8a027bb` adds source-fixed mode 5 (`25<□`, accept **any** `NUMBER=26..99`) and mode 6 (`25>□`, accept positive whole `NUMBER=1..24`) with actual multiple-correct-answer verifier independent from `Solve`'s one exemplar. Fixed source operands required, invalid parameters/extra fields/false inequalities rejected. Seed/wrong-answer/positive answer tests authored in `94b6e1d0cbbe0b1fb634b125a6e661e6b8129034`; not executed.
+
+**Open A–C gates:** original visual four picture-card sets A–D and activity1 student/media parity not independently reviewed, plus original five-minute publisher Cool-down inaccessible with no lesson-specific approved replacement. Therefore `A_C_EXPLICIT_GAP` is retained; `READY_FOR_STAGE_D` would be premature. Protected CI/Stage D, runtime proofs, licensing and academic acceptance are deferred and unclaimed.
