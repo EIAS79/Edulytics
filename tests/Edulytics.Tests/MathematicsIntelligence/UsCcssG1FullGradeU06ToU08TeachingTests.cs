@@ -32,6 +32,7 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         var lesson6=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06");
         var lesson7=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07");
         var lesson8=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U06:L08");
+        var lesson10=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10");
         const string previous=CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6OriginalSourceVersion;
         Assert.True(CommonCoreG1FullGradeUnit6To8ContentCorrections.CanUpgradeExisting(
             doc,lesson4,previous));
@@ -41,6 +42,8 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
             doc,lesson7,previous));
         Assert.False(CommonCoreG1FullGradeUnit6To8ContentCorrections.CanUpgradeExisting(
             doc,lesson8,previous));
+        Assert.True(CommonCoreG1FullGradeUnit6To8ContentCorrections.CanUpgradeExisting(
+            doc,lesson10,previous));
         Assert.Equal(
             CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson4Stage3SourceVersion,
             CommonCoreG1FullGradeUnit6To8ContentCorrections.GetExpectedContentVersion(
@@ -54,6 +57,9 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Equal(previous,
             CommonCoreG1FullGradeUnit6To8ContentCorrections.GetExpectedContentVersion(
                 doc,lesson8,previous));
+        Assert.Equal(CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson10EstimateFirstSourceVersion,
+            CommonCoreG1FullGradeUnit6To8ContentCorrections.GetExpectedContentVersion(
+                doc,lesson10,previous));
     }
 
     [Fact]
@@ -72,6 +78,8 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
                 ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson6MeasurementSourceVersion
                 :code=="PED:US-CCSS-MATH:G1:U06:L07"
                 ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson7ThreeUnitsSourceVersion
+                :code=="PED:US-CCSS-MATH:G1:U06:L10"
+                ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6Lesson10EstimateFirstSourceVersion
                 :code.Contains(":U06:",StringComparison.Ordinal)
                 ?CommonCoreG1FullGradeUnit6To8ContentCorrections.Unit6OriginalSourceVersion
                 :code is "PED:US-CCSS-MATH:G1:U07:L01" or
@@ -125,7 +133,12 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
         Assert.Contains("Andre, Jada, Clare and Kiran",threeUnits);
         Assert.Contains("MORE THAN 100 same-size small cubes",text("PED:US-CCSS-MATH:G1:U06:L08"));
         Assert.Contains("BEAVER, DOG, GIANT ANTEATER",text("PED:US-CCSS-MATH:G1:U06:L09"));
-        Assert.Contains("24+30=44 FALSE",text("PED:US-CCSS-MATH:G1:U06:L10"));
+        var estimate=text("PED:US-CCSS-MATH:G1:U06:L10");
+        Assert.Contains("24+30=44 FALSE",estimate);
+        Assert.Contains("BEFORE measuring",estimate);
+        Assert.Contains("a first-party",estimate,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("estimate is LOW by 3",estimate);
+        Assert.Contains("the estimate was higher, lower or exact",estimate);
         Assert.Contains("Priya's length is 10",text("PED:US-CCSS-MATH:G1:U06:L12"));
         Assert.Contains("UNKNOWN starting count is 20",text("PED:US-CCSS-MATH:G1:U06:L13"));
         var equations=text("PED:US-CCSS-MATH:G1:U06:L14");
