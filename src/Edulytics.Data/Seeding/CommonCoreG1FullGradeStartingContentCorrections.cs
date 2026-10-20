@@ -556,7 +556,7 @@ Example 3: Ten more than 39 is 49; only the tens count increases.
 Example 4: Ten less than 71 is 61.
 Original 2021 source equations: 67+10=77, 67-10=57; 39+10=49, 39-10=29; 52+10=62, 52-10=42; 75+10=85, 75-10=65.
 Further original sequences: 67+10+10+10=97; 99-10-10-10=69; 45+10+10=65, 45-10-10=25, 45+10-10=45.
-The original Write Numbers Stage 2 center counts by TEN forward or backward, writing one, two or three numbers on each turn; teacher supervises real gameplay.",
+The original Write Numbers Stage 2 center counts by TEN forward or backward, writing one, two or three numbers on each turn; teacher supervises real gameplay.\nOriginal teacher lesson synthesis: compare 67 and 77 (10 more/less; both have seven ones), then 82 and 62 (20 more/less; both have two ones). Ask pupils to justify both directions orally; numeric answers do not assess this explanation.",
             @"Step 1: Read the starting two-digit number.
 Step 2: Identify the tens and ones digits.
 Step 3: Add or remove ONE ten, leaving the ones unchanged.
