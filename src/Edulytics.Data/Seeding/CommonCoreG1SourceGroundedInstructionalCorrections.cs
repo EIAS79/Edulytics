@@ -20,7 +20,8 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
 
     public const string DataQuestionsVersion = "us-ccss-g1-u01-l13-data-questions-correction-v1";
     public const string JungleSurveyVersion = "us-ccss-g1-u01-l15-survey-and-tallies-correction-v1";
-    public const string TensVersion = "us-ccss-g1-u04-l03-tens-strategy-correction-v1";
+    public const string TensVersionV1 = "us-ccss-g1-u04-l03-tens-strategy-correction-v1";
+    public const string TensVersion = "us-ccss-g1-u04-l03-tens-strategy-correction-v2";
 
     private sealed record Repair(
         string Code, string ExpectedUrl, string OriginalCanonicalSha,
@@ -118,7 +119,7 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
         "Mistake: making a subtraction story with an impossible negative number of animals. " +
         "Correction: compare the counts using a greater count minus a smaller count.";
 
-    public const string TensConcepts =
+    public const string TensConceptsV1 =
         "Learning goals: Add 10 to and subtract 10 from whole-number multiples of 10, " +
         "using towers of ten, drawings, and skip-counting.\n" +
         "Each tower holds 10 cubes. Adding one tower adds 10 to the number; " +
@@ -126,7 +127,7 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
         "Keep the number of tens and the total number of cubes distinct: " +
         "three tens are 30 cubes, not 3 cubes.";
 
-    public const string TensExamples =
+    public const string TensExamplesV1 =
         "Example 1 — Add a ten. Start with two towers of 10 cubes (20 cubes). " +
         "Add one tower: 20 + 10 = 30 cubes, or three tens.\n" +
         "Example 2 — Subtract a ten. Start with six towers of 10 cubes (60). " +
@@ -136,7 +137,7 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
         "Example 4 — Check by reversing the operation: 40 + 10 = 50, " +
         "so 50 - 10 = 40. Show the result with towers or a number line.";
 
-    public const string TensSteps =
+    public const string TensStepsV1 =
         "Step 1: Read the starting multiple of 10; 60 means six groups of ten cubes.\n" +
         "Step 2: Decide whether the task adds one group of ten or takes one away.\n" +
         "Step 3: Model the action with ten-cube towers or jump forward/backward " +
@@ -145,13 +146,22 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
         "Step 5: Check by the inverse fact 50 + 10 = 60 and describe how " +
         "the number of tens changed.";
 
-    public const string TensMistakes =
+    public const string TensMistakesV1 =
         "Mistake: reading three towers as 3 cubes. Correction: each tower is worth 10, " +
         "so three towers represent 30.\n" +
         "Mistake: subtracting 1 instead of 10 when removing one tower. " +
         "Correction: one tower means one ten.\n" +
         "Mistake: using a negative one-digit subtraction example rather than " +
         "the intended tens relationship. Correction: model 60 - 10 = 50 with towers.";
+
+    public const string TensConcepts = TensConceptsV1 +
+        "\nThe original 2021 Grade 1 Unit 4 Lesson 3 is titled 'Addition and Subtraction with Tens'. Its warm-up models grouped tens. Original Activity 1 starts with ONE TEN, adds one complete tower repeatedly to NINE TENS, then starts with NINE TENS and takes away one tower repeatedly to ONE TEN. Write all EIGHT totals each way, without skipping or repeating a step. Original Activity 2 uses FIVE IN A ROW, Stage 4: draw a multiple-of-ten card from 0 through 90, choose ADD or SUBTRACT exactly 10 if the output is on the classroom gameboard, then aim to cover five spaces in a row. Classroom counters, partners and wins are teacher-evaluated; digital Practice checks arithmetic, not actual play. The original Section A Checkpoint is publisher protected and not reproduced.";
+    public const string TensExamples = TensExamplesV1 +
+        "\nOriginal 2021 repeated addition starting with 10: 20,30,40,50,60,70,80,90. Repeated subtraction starting with 90: 80,70,60,50,40,30,20,10. Each has eight steps. Original Han activity synthesis: draw a 60 card, calculate 60+10=70 and 60-10=50; EITHER 70 or 50 is a candidate board mark if available. Boundary first-party card examples: a 0 card can add ten to reach 10; a 90 card can subtract ten to reach 80. Avoid inventing a 100 result on a board whose original complete cells were not independently verified.";
+    public const string TensSteps = TensStepsV1 +
+        "\nStep 6: Source original Activity 1: show 1 ten; successively add one ten eight times, recording 20 through 90. Show 9 tens; remove one tower eight times, recording 80 through 10. Count the number of physical groups at each stage.\nStep 7: In teacher-led Five in a Row Stage 4, use the correct 0–90 numeral card deck, choose plus or minus ten that yields a valid nonnegative board cell, and explain the corresponding equation. Digital checking is not proof of five winning cells.\nStep 8: Source Han question: for 60 calculate BOTH results, 70 from 60+10 and 50 from 60-10. A teacher can assess the actual board-state-dependent choice; the independently graded question verifies the two true numbers.";
+    public const string TensMistakes = TensMistakesV1 +
+        "\nMistake: stating only the last total 90 for the eight-step addition activity. Correction: include ALL intermediate totals 20,30,40,50,60,70,80,90.\nMistake: treating 0 or 90 as an impossible source card. Correction: both are among the original 0–90 card values, although the chosen operation must make a valid board value; 0+10=10 and 90-10=80.\nMistake: treating a 60 card as having only one answer or claiming a digital answer proves a partner won. Correction: 60+10=70 and 60-10=50; physical five-in-a-row play remains supervised.";
 
     public const string CountBackOneOrTwoLessonCode = "PED:US-CCSS-MATH:G1:U01:L04";
     public const string CountBackOneOrTwoVersion = "us-ccss-g1-u01-l04-count-back-one-two-v1";
@@ -753,6 +763,8 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                 existingVersion == MeasuredShoesStoriesVersionV1,
             AroundRoomStoryProblemsLessonCode =>
                 existingVersion == AroundRoomStoryProblemsVersionV1,
+            TensLessonCode =>
+                existingVersion == TensVersionV1,
             _ => false
         };
 
@@ -783,7 +795,7 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
             throw new InvalidOperationException(
                 $"Unexpected G1 stored translation cultures: {lesson.LessonCode}");
 
-        // Only these four already source-corrected, unpublished G1 lessons
+        // Only source-identified already-corrected unpublished G1 lessons
         // can upgrade from their exact previous V1 source-teaching content.
         // Fail closed on partial/manual edits instead of trusting a version label.
         if (IsRecognizedPreviousSourceVersion(lesson,existingVersion))
@@ -813,6 +825,8 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                          AroundRoomStoryProblemsExamplesV1,
                          AroundRoomStoryProblemsStepsV1,
                          AroundRoomStoryProblemsMistakesV1),
+                    TensLessonCode =>
+                        (TensConceptsV1,TensExamplesV1,TensStepsV1,TensMistakesV1),
                     _=>throw new InvalidOperationException("Unrecognized source correction upgrade")
                 };
             if(!string.Equals(stored.Title,current.Title,StringComparison.Ordinal)||
