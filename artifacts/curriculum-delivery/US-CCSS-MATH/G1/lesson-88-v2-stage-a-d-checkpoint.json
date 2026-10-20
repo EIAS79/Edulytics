@@ -16,7 +16,14 @@
   },
   "stageA": {
     "originalTaskReview": "Original beans estimate, three two-handful experiments and source artwork card sort <20,20–50,>50",
-    "classification": "CONTENT_REPAIR_VISUAL_PENDING"
+    "classification": "CONTENT_REPAIR_VISUAL_PENDING",
+    "official2021PublicSource": "https://im.kendallhunt.com/K5/teachers/grade-1/unit-4/lesson-23/lesson.html",
+    "verifiedOriginal2021Activities": [
+      "Warm-up bean image with a circled group of 10, too-low/about-right/too-high estimates",
+      "Three real two-handful collection estimates then physical exact counts",
+      "Authorized picture cards sorted into <20, 20–50, >50, and one picture from each represented in tens/ones"
+    ],
+    "originalSourceArtworkAndUnseenObjectQuantitiesNotClaimed": true
   },
   "stageB": {
     "existingTeachingReused": true,
@@ -24,11 +31,20 @@
     "sourceCorrectionsCommits": [
       "0ea334e8e9b4b6e9bce56e62b8e670e2f8591032"
     ],
-    "publisherArtworkNotClaimedLicensed": true
+    "publisherArtworkNotClaimedLicensed": true,
+    "verifiedLearnerContentScope": "Existing Unit 4 L23 source-corrected text explicitly retains three real experiments, source quantity bands and teacher-only picture sort. No unlicensed source image copied."
   },
   "stageC": {
     "existingSourceSpecificPracticePreserved": true,
-    "teacherOnlyActivitiesNotNumericallyCertified": true
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "verifiedSourceBandModes": [
+      4,
+      5,
+      6
+    ],
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson88SourceQuantityBandsTests.cs",
+    "testsAuthoredCommit": "f4a65bd053c9764205c0b035845fcb337f79818b",
+    "testsExecuted": false
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -41,5 +57,19 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required"
+  "nextAction": "Continue ordinal89, original Unit 5 Lesson 1, without Stage D or CI.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "teacherOnlyBoundary": "Three real two-handful physical trials, actual picture card sort, original photograph counting and prediction before revelation cannot be verified by simulated numeric Practice; retained as teacher-guided work, not certified as learner performance.",
+    "publisherArtworkCopied": false,
+    "sourceFigureExactReproductionNotClaimed": true,
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "sourceBoundary": "First-party numerical estimation and quantity-band operations gradeable; no fake claim to grading original licensed card photos or experimental behavior."
+  }
 }
