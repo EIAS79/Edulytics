@@ -59,7 +59,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
            mode<0||mode>7 || (mode==7 && family!=FlexibleSubtract && family!=StoryUnknowns) ||
-            (mode==6 && family!=CountOnOrAway && family!=FlexibleSubtract && family!=StoryUnknowns) ||
+            (mode==6 && family!=CountOnOrAway && family!=FlexibleSubtract && family!=StoryUnknowns && family!=AddRemoveMultipleTens) ||
             (c!=0 && family!=CenterWithin20))return false;
         return family switch
         {
@@ -101,7 +101,12 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             AddRemoveTen=>mode<=4&&b==1&&
                 (mode==2?a==9:mode==3?a==1:mode==4?a==6:
                  mode==0?a>=0&&a<=8:a>=1&&a<=9),
-            AddRemoveMultipleTens=>mode<=3&&a>=2&&a<=7&&b>=1&&
+            AddRemoveMultipleTens=>mode==4?
+                ((a==4&&b==5)||(a==2&&b==6)||(a==4&&b==4)):
+                mode==5?
+                ((a==8&&b==3)||(a==7&&b==2)||(a==9&&b==7)):
+                mode==6?(a==5&&b==3):
+                mode<=3&&a>=2&&a<=7&&b>=1&&
                 (mode%2==0?b<=10-a:b<=a)&&
                 (mode==0?a==3&&b==2:mode==1?a==7&&b==4:true),
             CenterTens=>(mode==0&&a>=2&&a<=7&&b>=1&&b<=Math.Min(a,9-a))||
@@ -116,7 +121,7 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
         int mode=(family==FlexibleSubtract||family==StoryUnknowns)?random.Next(8):
-            (family==CountOnOrAway?random.Next(7):
+            (family==CountOnOrAway||family==AddRemoveMultipleTens?random.Next(7):
              (family==CenterTens||family==CenterWithin20?random.Next(6):
               (family==MatchTens||family==AddRemoveTen?random.Next(5):random.Next(4))));
         int a=0,b=0,c=0;
