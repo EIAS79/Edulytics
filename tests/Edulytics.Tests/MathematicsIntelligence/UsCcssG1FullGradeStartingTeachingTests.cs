@@ -202,7 +202,9 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         {
             var row=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U04:L{n:00}");
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
-            Assert.Equal(CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
+            Assert.Equal(n==6
+                    ?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCountLargerSourceContentVersion
+                    :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
                 doc,row,CommonCoreG1FullGradeStartingContentCorrections.Version));
@@ -238,6 +240,17 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,collection,"us-ccss-g1-u04-l01-original-activities-v6"));
         Assert.Equal("us-ccss-g1-u04-l01-original-activities-v7",
             CommonCoreG1FullGradeStartingContentCorrections.UnitFourCollectionSourceContentVersion);
+        Assert.Contains("five COMPLETE tens and two remaining ones",unit4Text(6));
+        Assert.Contains("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",unit4Text(6));
+        Assert.Contains("3 full tens and 7 ones",unit4Text(6));
+        Assert.Contains("50 to 81",unit4Text(6));
+        var countLarge=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L06");
+        Assert.Equal("us-ccss-g1-u04-l06-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourCountLargerSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,countLarge,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.False(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,countLarge,"us-ccss-g1-u04-l06-unrecognized-v3"));
         Assert.Contains("ten-cube towers",earlierUnit4Text(2));
         Assert.Contains("other TWO children",earlierUnit4Text(2));
         Assert.Contains("three-column number / number of tens / drawing chart",earlierUnit4Text(2));
