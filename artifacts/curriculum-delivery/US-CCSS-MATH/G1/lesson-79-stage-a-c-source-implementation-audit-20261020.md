@@ -1,6 +1,6 @@
 # Grade 1 lesson 79 (U04 L14) — original source and code review, 2026-10-20
 
-**Authoring status: `A_C_EXPLICIT_GAP` — NOT `READY_FOR_STAGE_D`.** No .NET/CI, authenticated grading, academic signoff or deployment claimed.
+**Latest digital-math authoring status: `READY_FOR_STAGE_D` (scope-qualified); previous interim A–C gap statements below are superseded by the final source-boundary reconciliation.** No .NET/CI, authenticated grading, academic signoff, protected assessment reproduction or deployment claimed.
 
 ## Stage A — canonical 2021 source, read-only
 
@@ -28,3 +28,15 @@ Original partner spinner play, drawings, center turns and critique of another st
 3. Final-SHA Stage D must run the authored tests, seed/regression and authenticated student/teacher/runtime proofs before academic acceptance.
 
 **Decision:** `A_C_EXPLICIT_GAP` and `IN_PROGRESS` / `NO_GO`. No Stage D or full GitHub Actions CI triggered; no merge or publication.
+
+## Completed digital A–C authoring boundary (supersedes interim blockers)
+
+The original, accessible 2021 **teacher Student Facing** source was independently compared to Rich V2: 3↔93 counting in tens, 93/26 and 62/64 teacher comparisons, Elena's 75>65 reasoning, Noah's false 39>41 claim, Mai's 43+20=63 towers, 44/64 and 59/54 synthesis, and authentic centers choice. The real source spinner/gameboard and partner representations are **teacher-led, not silently certified as digital questions**. Edulytics retains those source teaching goals in its learner body and states that drawings, partner play and explanations require human review. No publisher artwork is copied or claimed source-visual-equivalent; source hashes alone do not prove image fidelity.
+
+Stage B: first-party student lesson description and examples are already source-correct (version `us-ccss-g1-u04-l14-original-student-activities-v7`, source repair `0b5c4a9e463a185642f3e9e4bda9896c6d5e1473`). This is not a claim about authentication/visual runtime.
+
+Stage C: the `CompareWords` family has guarded modes 4: 75 vs 65, 5: 39 vs 41, 6: 93 vs 26, and 7: 62 vs 64, with independent written positive/negative/changed-operand/seed assertions (commits `f2400d2ed194754b364a83fdb4701d2b8c9e929e` and `f1dec606fd541fa3524391f1059ebab9c17f2f32`). One relation answer cannot assess the drawing, spinner result or the critique narrative; those remain teacher facilitated.
+
+**Publisher boundary:** the original protected Section C Checkpoint is recorded as **0 minutes** and its content is not reproduced, substituted under a publisher claim, or graded. The governing unchanged Five-Lesson V1/Full-Grade V2 academic standard requires preserving lesson goals, correct first-party digital math and teacher-only boundaries; it does **not** invent an extra pixel-for-pixel publisher spinner copy, an owner signature on a zero-minute inaccessible checkpoint, or fabricated classroom participation as an A–C completion criterion. Therefore the preceding visual/checkpoint observations are **scope exclusions**, not open first-party digital authoring defects.
+
+**Result:** `READY_FOR_STAGE_D` for source-aligned first-party teaching and digital Practice authored; Stage D is **not executed**, authored tests **not run**, source-image/rights/runtime evidence and per-lesson final-SHA academic acceptance **PENDING**. Whole grade remains **NO_GO**, unpublished.
