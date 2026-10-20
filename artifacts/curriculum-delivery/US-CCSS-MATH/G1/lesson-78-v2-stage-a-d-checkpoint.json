@@ -35,8 +35,19 @@
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
-    "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "mathEngineChangedForThisLesson": true,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "sourceSpecificModesAdded": [
+      4,
+      5,
+      6
+    ],
+    "sourceSpecificNumericTasks": [
+      "70+20=90 and 70-20=50",
+      "8+7+5=20 using three distinct cards from 8,4,1,7,5",
+      "9+6=15 and 15-6=9"
+    ],
+    "testsAuthoredButNotExecuted": true
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -51,5 +62,21 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "A_C_EXPLICIT_GAP",
+    "allAvailableOriginalStudentTeacherTasksCompared": false,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "learnerTeachingSourceParityReviewed": false,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": false,
+    "openACDefects": [
+      "Full teacher/student source and original visual center activity parity review pending",
+      "Independent first-party learner teaching and verifier review pending",
+      "Original 2021 protected assessment boundary and first-party scoring review pending"
+    ],
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "Complete lesson 78 independent source/teaching/Practice audit before claiming READY_FOR_STAGE_D; preserve physical center and partner-play teacher-only boundary."
 }
