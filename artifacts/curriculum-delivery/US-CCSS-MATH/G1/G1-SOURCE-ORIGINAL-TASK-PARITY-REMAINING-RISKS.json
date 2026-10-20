@@ -4108,11 +4108,11 @@
         "Student Facing Solve each problem. Show your thinking using drawings, numbers, or words. Lin has 7 tickets for rides. Mai has 12 tickets. How many more tickets does Mai h",
         "Student Facing Write and answer 2 questions using the information. Use the picture for the first one if it is helpful. Diego went on 7 rides. Priya went on 11 rides. [vis"
       ],
-      "sourceRequiredTaskInterpretation": "Solve carnival comparison stories (Mai has 12 tickets, Lin 7) and identify extra tickets/rides.",
+      "sourceRequiredTaskInterpretation": "Solve FOUR original school carnival comparison stories and then WRITE AND ANSWER TWO original learner-authored questions using the How Many Rides? table (Diego 7, Priya 11, Jada 3, Kiran 6, Noah 9). Numeric comparison alone is insufficient.",
       "currentDigitalOrTeacherContentCandidate": "Registered lesson-specific technical Practice candidate family usccss.g1.u08.l06.compare_difference_story; this excerpt-level triage does NOT certify full activity coverage.",
-      "remainingAcademicTaskParityWork": "Check 12-7 comparison gap as a relationship between persons, rather than subtracting unlabelled digits.",
+      "remainingAcademicTaskParityWork": "Verify original four numeric story contexts and actual learner-facing task requiring TWO original intelligible questions, their two correct mathematical answers and units. Confirm authenticated source-grounded teaching + numeric Practice, preserve the teacher-authorship rubric and original media rights; don't infer real pupil work or peer participation.",
       "candidateDigitalFamily": "usccss.g1.u08.l06.compare_difference_story",
-      "assessingMode": "DIGITAL_PRACTICE",
+      "assessingMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
       "sourcePublisherArtworkFullyReviewed": false,
       "actualAuthenticatedTaskRenderingAtExactHeadConfirmed": false,
       "internalAcademicApproval": "NOT_CLAIMED",
@@ -4138,6 +4138,15 @@
         "executedCiDuringAuthoring": false,
         "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
         "awaiting": "Review original graphics and authenticated learner tasks where applicable, prove original A-D for each lesson, verify independent correctness/graded persistence and protected final frozen-grade SHA"
+      },
+      "authoredRideTaskReview20261020": {
+        "sourceSha256": "c3543159e0b1e5c757e3b171caf6425ae856bd2e86838df886d4aea1637dba08",
+        "authoringRubric": "lesson-142-original-two-ride-questions-authorship-rubric.json",
+        "sourceTeacherTextAlreadyGroundedIn": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+        "gatePreviouslyOmittedTwoOriginalQuestions": true,
+        "gateNowRequiresAuthorshipProof": true,
+        "authenticatedRenderingAndGrading": "PENDING",
+        "academicAcceptance": "NOT_CLAIMED"
       }
     },
     {
@@ -4391,8 +4400,8 @@
     "practiceFamilyAndAssessmentMapIndexedRows": 90,
     "identityReconciliation": "90/90 source risk register, original student task inventory, practice candidate map and progress lesson codes match; refer to existing source identities rather than duplicating authoritative records",
     "assessmentModes": {
-      "DIGITAL_PRACTICE": 82,
-      "DIGITAL_AND_SOURCE_AUTHORED_TASK": 7,
+      "DIGITAL_PRACTICE": 81,
+      "DIGITAL_AND_SOURCE_AUTHORED_TASK": 8,
       "SOURCE_AUTHORED_TASK": 1
     },
     "notYetProven": "90/90 source indexes are reusable Stage A INPUT, not evidence that all 90 full original teacher and student tasks have been read or verified against current effective learner content. Re-review original activity where excerpt-level only; validate exact Rich V2 and Practice source parity before any READY status.",
@@ -4441,6 +4450,7 @@
       ],
       "acceptedByInspectionCount": 0,
       "note": "Stage A source-text and hash resumption only; not 29 completed original V1 A-D reviews, not student-mirror diagram/figure rights clearance, not actual learner rendering/Practice CI. Existing candidate and former source-task triage retained without duplication."
-    }
+    },
+    "authoredTaskClassificationCorrection20261020": "Ordinal 142 source How Many Rides? requires TWO authored and solved pupil questions plus numeric practice; previous DIGITAL_PRACTICE-only categorization omitted this release criterion."
   }
 }
