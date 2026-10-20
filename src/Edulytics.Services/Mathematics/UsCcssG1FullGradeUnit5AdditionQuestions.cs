@@ -135,6 +135,10 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     [
         (68,2),(3,68),(5,45),(45,7)
     ];
+    private static readonly (int a,int b)[] Lesson8OriginalOptionalFootball =
+    [
+        (35,6),(9,45)
+    ];
     private static readonly (int a,int b)[] Lesson9OriginalWarmup =
     [
         (38,2),(40,3),(38,5),(38,15)
@@ -180,7 +184,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||
            mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?9:
-           spec.LessonCode is "L08" or "L09"?7:
+           spec.LessonCode=="L08"?9:spec.LessonCode=="L09"?7:
            spec.LessonCode is "L10" or "L11" or "L12"?5:
            spec.LessonCode=="L14"?4:3))
             return false;
@@ -203,6 +207,11 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec.LessonCode=="L07"&&mode>=6)
         {
             var source=Lesson7OriginalJadaPairs[mode-6];
+            return a==source.a&&b==source.b;
+        }
+        if(spec.LessonCode=="L08"&&mode>=8)
+        {
+            var source=Lesson8OriginalOptionalFootball[mode-8];
             return a==source.a&&b==source.b;
         }
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
@@ -240,7 +249,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
         int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?10:
-            spec.LessonCode is "L08" or "L09"?8:
+            spec.LessonCode=="L08"?10:spec.LessonCode=="L09"?8:
             spec.LessonCode is "L10" or "L11" or "L12"?6:
             spec.LessonCode=="L14"?5:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
@@ -317,6 +326,24 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "would adding make a NEW TEN? Write NEW_TEN=YES/NO;TOTAL=number. "+
                 "Explain using tens and ones; teacher reviews the independent explanation.",
                 "Add the ones. A new ten is formed exactly when the ones sum is 10 or more.",
+                AssessmentItemType.ShortAnswer,p);
+        }
+        if(spec.LessonCode=="L08"&&mode>=8&&mode<=9)
+        {
+            var (first,second)=Lesson8OriginalOptionalFootball[mode-8];
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 96 source football story drift");
+            return new(family,
+                mode==8?
+                "ORIGINAL 2021 UNIT 5 LESSON 8 OPTIONAL FOOTBALL STORY: The home team scores "+
+                "35 points in the first half and 6 more points in the second. "+
+                "How many points in total? Write NEW_TEN=YES/NO;TOTAL=number. "+
+                "This is a numeric story; student reasoning remains teacher assessed.":
+                "ORIGINAL 2021 UNIT 5 LESSON 8 OPTIONAL FOOTBALL STORY: "+
+                "9 visitors and 45 home supporters attend. How many fans in total? "+
+                "Write NEW_TEN=YES/NO;TOTAL=number. "+
+                "This is a numeric story; student reasoning remains teacher assessed.",
+                "Find the true total and determine whether the ones compose a new ten.",
                 AssessmentItemType.ShortAnswer,p);
         }
         var original=Exact2021Equation(spec.LessonCode,mode);
