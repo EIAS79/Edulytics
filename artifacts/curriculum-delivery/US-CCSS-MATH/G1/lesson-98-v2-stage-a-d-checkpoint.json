@@ -24,18 +24,51 @@
       "Student Facing Each expression shows a first step to find the number that makes each equation true. Finish the work to find the number that makes each equation true. Show"
     ],
     "sourceSpecificComparison": "Original Priya 37+26, 28+56,27+44,34+57,18+55; Number Puzzles Stage 4",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "reconciledSourceStudentNumericTasks": [
+      "37+26=63 interpreted from Priya's drawing (teacher reviews original drawing)",
+      "28+56=84 after given first step 20+50=70",
+      "27+44=71 after given first step 7+4=11",
+      "34+57=91",
+      "18+55=73"
+    ],
+    "teacherLedNumberPuzzlesStage4DigitCardsNotDigitallyCertified": true
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6",
+    "learnerTeachingAllFiveOriginalExamplesCompared": true,
+    "sourceTeachingMath": "Existing learner explanatory text includes Priya 37+26, two given-first-step tasks 28+56 and 27+44, and 34+57/18+55 with tens/ones exchange.",
+    "originalCopyrightedDrawingNotReplicated": true
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceOriginalEquationModes": [
+      4,
+      5
+    ],
+    "sourceMissingComposingSumModes": [
+      6,
+      8
+    ],
+    "sourceGivenFirstStepModes": [
+      9,
+      10
+    ],
+    "originalStepExpected": [
+      "28+56: TENS_PART=70;ONES_PART=14;NEW_TENS=8;ONES=4;TOTAL=84",
+      "27+44: TENS_PART=60;ONES_PART=11;NEW_TENS=7;ONES=1;TOTAL=71"
+    ],
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "f8a76bb8c5283664f8ffed9eb1d97af55f34afc1",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson98OriginalTensAndOnesTests.cs",
+    "authoredTestsCommit": "7bf0b902e0e8b26260490567e4bc82d3aa7f98d6",
+    "testsExecuted": false,
+    "originalImagesAndClassGameNotAutoCertified": true
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -49,5 +82,16 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal99; retain Stage D/CI/merge/deploy hold.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "allAccessibleOriginalStudentMathCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "boundary": "Five source-specific additions and two first-step completions covered by numeric first-party fields. Priya source drawing, original pupil-written equations and real Number Puzzles center not certified. Stage D requires build/tests, live learner visuals, signed-in practice persistence, licensed artwork and academic acceptance."
+  }
 }
