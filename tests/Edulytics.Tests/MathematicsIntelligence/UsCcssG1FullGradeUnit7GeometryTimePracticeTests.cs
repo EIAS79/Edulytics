@@ -115,6 +115,41 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
         Assert.Equal(Enumerable.Range(0,7).ToArray(),modes.OrderBy(x=>x));
     }
 
+    [Fact]
+    public void OriginalUnit7Lesson7MustKeepHexagonOutlineAcrossDifferentBlockCounts()
+    {
+        const string family="usccss.g1.u07.l07.compose_flat_shapers";
+        const string correct="TRIANGLES=6;TRAPEZOIDS=2;SAME_OUTLINE=YES";
+        var p=new Dictionary<string,int>{{"a",3},{"b",7},{"c",0},{"mode",4}};
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        Assert.Equal(correct,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(family,p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,correct));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TRIANGLES=6;TRAPEZOIDS=3;SAME_OUTLINE=YES"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            "TRIANGLES=6;TRAPEZOIDS=2;SAME_OUTLINE=NO"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,
+            correct+";STUDENT_TRACED=YES"));
+        var modes=new HashSet<int>();
+        for(int seed=0;seed<650;seed++)
+        {
+            var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
+                family,new Random(seed*131+23));
+            modes.Add(item.Parameters["mode"]);
+            var answer=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(
+                family,item.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family,item.Parameters,answer));
+            if(item.Parameters["mode"]==4)
+            {
+                Assert.Contains("SAME silhouette",item.Prompt);
+                Assert.Contains("SIX equal pattern-block triangles",item.Prompt);
+                Assert.Contains("TWO trapezoid blocks",item.Prompt);
+            }
+        }
+        Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
+    }
+
     [Theory]
     [InlineData(2,2,"PER_LAYER=4;LAYERS=2;TOTAL_CUBES=8")]
     [InlineData(3,2,"PER_LAYER=6;LAYERS=2;TOTAL_CUBES=12")]
