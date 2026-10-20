@@ -125,6 +125,12 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     [
         (8,2),(8,5),(9,8),(7,6)
     ];
+    // Original 2021 U05 L07 Jada's four "make a new ten?" pairs.
+    // Source's multiple-valid missing-number questions remain modes 2-5.
+    private static readonly (int a,int b)[] Lesson7OriginalJadaPairs =
+    [
+        (45,5),(9,63),(26,3),(8,47)
+    ];
     private static readonly (int a,int b)[] Lesson8OriginalWarmup =
     [
         (68,2),(3,68),(5,45),(45,7)
@@ -173,7 +179,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec==null||p.Count!=3||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("mode",out int mode)||mode<0||
-           mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?5:
+           mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?9:
            spec.LessonCode is "L08" or "L09"?7:
            spec.LessonCode is "L10" or "L11" or "L12"?5:
            spec.LessonCode=="L14"?4:3))
@@ -192,6 +198,11 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         if(spec.LessonCode=="L06"&&mode>=12)
         {
             var source=Lesson6OriginalWarmup[mode-12];
+            return a==source.a&&b==source.b;
+        }
+        if(spec.LessonCode=="L07"&&mode>=6)
+        {
+            var source=Lesson7OriginalJadaPairs[mode-6];
             return a==source.a&&b==source.b;
         }
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
@@ -228,7 +239,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
     {
         var spec=Get(family)??throw new InvalidOperationException("Unreviewed G1 Unit 5 Practice family");
         int a=0,b=0;
-        int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?6:
+        int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?10:
             spec.LessonCode is "L08" or "L09"?8:
             spec.LessonCode is "L10" or "L11" or "L12"?6:
             spec.LessonCode=="L14"?5:4);
@@ -296,6 +307,18 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "The addends' ones compose a new ten; teacher assesses oral mental strategies.",
                 AssessmentItemType.ShortAnswer,p);
         }
+        if(spec.LessonCode=="L07"&&mode>=6&&mode<=9)
+        {
+            var (first,second)=Lesson7OriginalJadaPairs[mode-6];
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 95 source Jada pair drift");
+            return new(family,
+                $"ORIGINAL 2021 UNIT 5 LESSON 7 JADA STUDENT TASK: For {first}+{second}, "+
+                "would adding make a NEW TEN? Write NEW_TEN=YES/NO;TOTAL=number. "+
+                "Explain using tens and ones; teacher reviews the independent explanation.",
+                "Add the ones. A new ten is formed exactly when the ones sum is 10 or more.",
+                AssessmentItemType.ShortAnswer,p);
+        }
         var original=Exact2021Equation(spec.LessonCode,mode);
         if(original.HasValue)
         {
@@ -345,7 +368,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 if(mode==2){a=34;b=9;}
                 if(mode==3){a=68;b=6;}
             }
-            if(spec.LessonCode=="L07"&&mode>=2)
+            if(spec.LessonCode=="L07"&&mode>=2&&mode<=5)
             {
                 // Exact 2021 Student Facing image-alt source quantities:
                 // 32 + □ one-digit with new ten, 16 + □ without,
@@ -440,6 +463,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             return $"NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L06"&&p["mode"]==2)
             return "MOVE=6;REST=3;TOTAL=43;ELENA=34+6+3=43;ANDRE=9+1+33=43";
+        if(spec.LessonCode=="L07"&&p["mode"]>=6)
+            return $"NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L07"&&p["mode"]>=2)
             return $"MISSING={b};NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         return spec.Kind switch
