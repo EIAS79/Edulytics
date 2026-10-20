@@ -34,11 +34,15 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             },
             3=>mode%2==0?$"RESULT={a+b}":
                 $"RELATION={Relation((a%8+1)+(b%8+1),(a/10%8+1)+(b/10%8+1),"GREATER","LESS")}",
-            4 or 5=>$"LENGTH={a}",
-            6=>$"SMALL_UNITS={a*2}",
+            4=>$"LENGTH={a}",
+            5=>mode==4?"VALID=YES":mode is 5 or 6 or 7?"VALID=NO":$"LENGTH={a}",
+            6=>mode==4?$"SMALL_UNITS={a};MEDIUM_UNITS={a/2};LARGE_UNITS={a/3}":
+                $"SMALL_UNITS={a*2}",
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
-            9=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
+            9=>mode==4?
+                $"ACTUAL={a};ESTIMATE={b};DIFFERENCE={Math.Abs(a-b)};DIRECTION={(b>a?"HIGH":b<a?"LOW":"EXACT")}":
+                mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             10=>mode switch {4=>$"TOTAL={a+b}",5=>$"TOTAL={a+b+c}",6=>$"DIFFERENCE={a-b}",7=>$"ELENA={b-a}",_=>$"DIFFERENCE={Math.Abs(a-b)}"},
             11=>$"LENGTH={(mode%2==0?a-b:a+b)};DIFFERENCE={b}",
             12=>mode==4?$"START={9+11}":
@@ -57,8 +61,11 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 9=>$"MATCH=A,C;UNKNOWN={b+5}",
                 _=>throw new InvalidOperationException("Invalid source story mode")
             },
-            14=>mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
-            15=>mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
+            14=>mode==4?$"START={12+7};EQUATION={12+7}-12=7":
+                mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
+            15=>mode==4?$"TENS={(a-a%10)/10};ONES={a%10};TOTAL={a}":
+                mode==5?$"FIRST={65+20+1};SECOND={65+21};EQUAL={(65+20+1==65+21?"YES":"NO")}":
+                mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             16=>$"DIFFERENCE={b}",
             _=>throw new InvalidOperationException("Unsupported source measurement family")
         };
