@@ -34,6 +34,8 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     public const string UnitFourCenterSourceContentVersion="us-ccss-g1-u04-l05-original-activities-v7";
     private const string UnitFourCountLargerLessonCode="PED:US-CCSS-MATH:G1:U04:L06";
     public const string UnitFourCountLargerSourceContentVersion="us-ccss-g1-u04-l06-original-student-activities-v7";
+    private const string UnitFourReadNumberLessonCode="PED:US-CCSS-MATH:G1:U04:L07";
+    public const string UnitFourReadNumberSourceContentVersion="us-ccss-g1-u04-l07-original-student-activities-v7";
     private static readonly HashSet<string> UnitFourLaterLessonCodes =
         Enumerable.Range(6,10)
             .Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")
@@ -417,12 +419,19 @@ Example 2: The number 58 is read 'fifty-eight'; it contains five tens and eight 
 Example 3: Seven tens and zero ones represents seventy (70).
 Example 4: A picture with two tens and nine ones shows twenty-nine (29).
 Original 2021 Notice and Wonder uses single digits 0–9 and two-digit numbers 10, 23, 45, 76, 89; compare the number of digits.
-Original 2021 Clare/Diego task: Clare claims a shown model is 68 and Diego claims 86. It has EIGHT tens and SIX ones, so Diego's 86 is correct even if the ones appear before the tens in the drawing. The written numeral still places tens first.",
+Original 2021 Clare/Diego task: Clare claims a shown model is 68 and Diego claims 86. It has EIGHT tens and SIX ones, so Diego's 86 is correct even if the ones appear before the tens in the drawing. The written numeral still places tens first.
+Original source Make It game: two distinct digit cards 3 and 5 can make 35 OR 53; both are valid choices, but the tens and ones and spoken number must match the chosen order. The physical digit set is 0 through 9 after removing 10 cards; the FIRST digit cannot be 0 if the student is to form a two-digit number. Edulytics numeric checking accepts either sound ordering, and the teacher reviews the actual physical number-card choice and reading aloud.
+Original Tyler example: he labels a drawing 24 while he draws FOUR tens and TWO ones. The real value is 42, not 24. Writing order matters for numerals even when loose ones are pictured before tens.
+Source final oral puzzle: a numeral with SIX tens and hidden ones can be any number from 60 through 69; do not invent the hidden single digit.",
             @"Step 1: Identify how many complete groups of ten are represented.
 Step 2: Count loose individual objects, fewer than ten.
 Step 3: Say the number by naming the total number of tens and ones (for example, 'fifty-eight').
 Step 4: Confirm the quantity shown by counting by tens and then by ones.
-Step 5: Explain how the parts make the complete two-digit number.",
+Step 5: Explain how the parts make the complete two-digit number.
+Step 6: Read 35 and 53 from the same two DIFFERENT digit cards 3 and 5; record the tens and ones differently in each, and count or build corresponding cubes with a teacher. Do not insist there is only one valid number.
+Step 7: Explain why Diego's 86, not Clare's 68, matches 8 complete tens and 6 ones, whatever visual side the loose ones appear on.
+Step 8: Explain why Tyler's drawing of 4 tens and 2 ones is 42 even if the label claims 24. Teacher reviews spoken reading, student models and partnership.
+Step 9: The hidden-ones puzzle with 6 tens permits any numeral 60 to 69. Do not claim a unique answer when the ones digit is unknown.",
             @"Do not read 46 as 'four six' or treat the 4 as four loose ones; it represents four tens. If there are ten loose ones, make one more ten first.",
             @"I can read and explain a two-digit number using tens and ones."),
         new(@"PED:US-CCSS-MATH:G1:U04:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-8/preparation.html",@"f3fa805d6421b2677b3a20200f257432271cbfee1e3b9c1ec6d34b8ba855d4da",new[] { @"CCSS:1.NBT.A.1", @"CCSS:1.NBT.B.2" },
@@ -621,6 +630,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
             UnitFourMultipleTensLessonCode=>UnitFourMultipleTensSourceContentVersion,
             UnitFourCenterLessonCode=>UnitFourCenterSourceContentVersion,
             UnitFourCountLargerLessonCode=>UnitFourCountLargerSourceContentVersion,
+            UnitFourReadNumberLessonCode=>UnitFourReadNumberSourceContentVersion,
             var l when UnitFourLaterLessonCodes.Contains(l)=>UnitFourLaterSourceContentVersion,
                 _=>Version
             })
@@ -642,6 +652,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourMultipleTensLessonCode&&previous=="us-ccss-g1-u04-l04-original-activities-v6")||
          (lesson.LessonCode==UnitFourCenterLessonCode&&previous=="us-ccss-g1-u04-l05-original-activities-v6")||
          (lesson.LessonCode==UnitFourCountLargerLessonCode&&previous==UnitFourLaterSourceContentVersion)||
+         (lesson.LessonCode==UnitFourReadNumberLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
