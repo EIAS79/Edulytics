@@ -50,6 +50,12 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("reversed equality □=14-6",text(24));
         Assert.Contains("5+□=18, 13=□+6, 20=15+□",text(24));
         Assert.Contains("Section D Checkpoint",text(24));
+        Assert.Contains("all four Han situations",text(26),StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("6+9=15 (missing start)",text(26));
+        Assert.Contains("15-6=9 (missing removed amount)",text(26));
+        Assert.Contains("9+6=15 (missing new amount)",text(26));
+        Assert.Contains("15-9=6 (missing result)",text(26));
+        Assert.Contains("Section D Checkpoint",text(26));
         Assert.Contains("EDULYTICS ORIGINAL EXIT CHECK",text(25));
         Assert.Contains("Solve 16-7",text(25));
         Assert.Contains("9+7=16",text(25));
@@ -110,6 +116,11 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             doc,subtract,"us-ccss-g1-u03-l22-teen-2021-source-v6"));
         Assert.Equal("us-ccss-g1-u03-l22-teen-2021-source-v7",
             CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion);
+        var storyUnknown=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L26");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,storyUnknown,"us-ccss-g1-u03-l26-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u03-l26-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.StorySourceContentVersion);
         var chooseSubtract=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L25");
         Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
             doc,chooseSubtract,"us-ccss-g1-u03-l25-original-activities-v6"));
