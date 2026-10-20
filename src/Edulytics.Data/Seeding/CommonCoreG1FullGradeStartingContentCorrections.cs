@@ -45,7 +45,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string UnitFourAddTensLessonCode="PED:US-CCSS-MATH:G1:U04:L11";
     public const string UnitFourAddTensSourceContentVersion="us-ccss-g1-u04-l11-original-student-activities-v8";
     private const string UnitFourTenMoreLessLessonCode="PED:US-CCSS-MATH:G1:U04:L12";
-    public const string UnitFourTenMoreLessSourceContentVersion="us-ccss-g1-u04-l12-original-student-activities-v7";
+    public const string UnitFourTenMoreLessSourceContentVersion="us-ccss-g1-u04-l12-original-student-activities-v8";
     private const string UnitFourCenterDayTwoLessonCode="PED:US-CCSS-MATH:G1:U04:L13";
     public const string UnitFourCenterDayTwoSourceContentVersion="us-ccss-g1-u04-l13-original-student-activities-v7";
     private const string UnitFourCompareWordsLessonCode="PED:US-CCSS-MATH:G1:U04:L14";
@@ -564,7 +564,8 @@ Original 2021 mental Number Talk warm-up: 3+10=13, 10+5=15, 13-10=3, 15-10=5. Di
 Original 2021 source equations: 67+10=77, 67-10=57; 39+10=49, 39-10=29; 52+10=62, 52-10=42; 75+10=85, 75-10=65.
 Original successive-ten steps: 67+10=77; 67+10+10=87; 67+10+10+10=97. Starting at 99, 99-10=89; 99-10-10=79; 99-10-10-10=69. Students should identify each intermediate number and what stays unchanged, not just the final total.
 Further original mixed sequences: 45+10+10=65, 45-10-10=25, 45+10-10=45.
-The original Write Numbers Stage 2 center counts by TEN forward or backward, writing one, two or three numbers on each turn; teacher supervises real gameplay.\nOriginal teacher lesson synthesis: compare 67 and 77 (10 more/less; both have seven ones), then 82 and 62 (20 more/less; both have two ones). Ask pupils to justify both directions orally; numeric answers do not assess this explanation.",
+The original Write Numbers Stage 2 center counts by TEN forward or backward, writing one, two or three numbers on each turn; teacher supervises real gameplay.
+Original teacher lesson synthesis: compare 67 and 77 (10 more/less; both have seven ones), then 82 and 62 (20 more/less; both have two ones). Ask pupils to justify both directions orally; numeric answers do not assess this explanation.",
             @"Step 1: Read the starting two-digit number.
 Step 2: Identify the tens and ones digits.
 Step 3: Add or remove ONE ten, leaving the ones unchanged.
@@ -721,7 +722,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
          (lesson.LessonCode==UnitFourShowNumberLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourWriteNumeralLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourAddTensLessonCode&&(previous==UnitFourLaterSourceContentVersion||previous=="us-ccss-g1-u04-l11-original-student-activities-v7"))||
-         (lesson.LessonCode==UnitFourTenMoreLessLessonCode&&previous==UnitFourLaterSourceContentVersion)||
+         (lesson.LessonCode==UnitFourTenMoreLessLessonCode&&(previous==UnitFourLaterSourceContentVersion||previous=="us-ccss-g1-u04-l12-original-student-activities-v7"))||
          (lesson.LessonCode==UnitFourCenterDayTwoLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (lesson.LessonCode==UnitFourCompareWordsLessonCode&&previous==UnitFourLaterSourceContentVersion)||
          (previous==Version&&lesson.LessonCode is
