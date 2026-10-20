@@ -24,18 +24,25 @@
       "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
     ],
     "existingCandidateReused": true,
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "allAccessibleStudentAndTeacherSourceTasksCompared": true,
+    "originalCount": "30,40,50,60,70,80,90,100,90,80,70,60,50,40,30",
+    "publisherCheckpointVerified": false
   },
   "stageB": {
     "reviewAndCorrectionSummary": "Added source original 40-object collection and exchange of multiple tens-bags; retained existing bounded CountTens generator",
     "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "candidateEditCommit": "344ddaef861be613e97423e8685111ee29f47872",
-    "publisherArtworkCopied": false
+    "publisherArtworkCopied": false,
+    "updatedSourceTeachingVersion": "us-ccss-g1-u04-l01-original-activities-v7",
+    "oldV6UpgradeGuarded": true
   },
   "stageC": {
     "reusedPracticeFamily": "usccss.g1.u04.l01.count.groups_of_ten",
     "changedGeneratorCommit": null,
-    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence"
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
+    "originalFortyAndSixBagsMathIndependentlyReviewed": true
   },
   "stageD": {
     "sourceAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
@@ -49,5 +56,17 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-66-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "publisherCheckpointVerbatimVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false
+  },
+  "nextAction": "A-C source mathematical teaching and source original bag math reviewed. Stage D and CI deferred; next ordinal 67."
 }
