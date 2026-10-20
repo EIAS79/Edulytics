@@ -23,18 +23,49 @@
       "Student Facing Find the value of \\(23 + 68\\) . Show your thinking using drawings, numbers, or words. If you have time: Think about a math story this expression could repr"
     ],
     "sourceSpecificComparison": "Original litter story 37+25 with Jada, Kiran, Tyler methods; original 23+68 student problem",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "originalNumericTaskFacts": {
+      "warmup": [
+        "24+3=54 FALSE (27)",
+        "42+5=47 TRUE",
+        "42+30=45 FALSE (72)"
+      ],
+      "originalLitterStory": "37+25=62 (Jada, Kiran and Tyler show different place-value equations)",
+      "originalNextStudentTask": "23+68=91 with learner-chosen written/drawn approach"
+    },
+    "originalSourceDrawingsAndStudentFreeStoryTeacherReviewed": true
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6",
+    "existingLearnerTeachingAllSourceMathReviewed": true,
+    "pupilStrategies": "Jada 30+20=50,7+5=12,50+12=62; Kiran 37+3+2=42 then +20=62; Tyler 37+20=57 then +3+2=62."
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "originalLitterSourceMode": 4,
+    "original23Plus68SourceMode": 5,
+    "originalTruthStatementModeRange": [
+      6,
+      8
+    ],
+    "exactThreeMethodNumericMode": 9,
+    "sourceExactTruthContracts": [
+      "TRUE=NO;ACTUAL=27;STATED=54",
+      "TRUE=YES;ACTUAL=47;STATED=47",
+      "TRUE=NO;ACTUAL=72;STATED=45"
+    ],
+    "threeMethodContract": "JADA_TENS=50;JADA_ONES=12;KIRAN_FIRST=42;KIRAN_SECOND=62;TYLER_FIRST=57;TYLER_SECOND=62;TOTAL=62",
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "d7fce3e5205b0b9c6abb6d26fb633b105207062a",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson99OriginalTruthAndThreeMethodsTests.cs",
+    "authoredTestsCommit": "420850f8c1fbe89d9240045065f9ba49e85db4f9",
+    "testsExecuted": false,
+    "sourcePupilDiagramsAndOwnOpenEndedStoryHumanReviewed": true
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -48,5 +79,16 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal100; keep Stage D, CI, merge and deployment deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceMathAndLearnerTextCompared": true,
+    "originalStudentTasksAndTeacherTasksCompared": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Three true/false statements and original 37+25 with 3 methods, plus 23+68 source addition represented by first-party numeric prompts; pupil-created story/drawings/open justification and copyrighted source images not auto-graded."
+  }
 }
