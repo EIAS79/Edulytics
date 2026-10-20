@@ -250,6 +250,14 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Equal("us-ccss-g1-u04-l02-original-activities-v7",
             CommonCoreG1FullGradeStartingContentCorrections.UnitFourTensMatchSourceContentVersion);
         Assert.Contains("30+10=40, 40+10=50, 80-10=70 and 70-10=60",earlierUnit4Text(4));
+        Assert.Contains("20+60=80; 70-20=50; 90-70=20; 40+40=80",earlierUnit4Text(4));
+        Assert.Contains("EDULYTICS ORIGINAL EXIT CHECK",earlierUnit4Text(4));
+        Assert.Contains("ADDITION=80;SUBTRACTION=50",earlierUnit4Text(4));
+        Assert.Contains("two pictured",earlierUnit4Text(4));
+        var moreTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L04");
+        Assert.Equal("More Addition and Subtraction with Tens",moreTens.Translations.Single(x=>x.CultureCode=="en").Title);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(doc,moreTens,"us-ccss-g1-u04-l04-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u04-l04-original-activities-v7",CommonCoreG1FullGradeStartingContentCorrections.UnitFourMultipleTensSourceContentVersion);
         Assert.Contains("Jada counts 30 cubes",earlierUnit4Text(4));
         Assert.Contains("7 towers of ten in Bag C",earlierUnit4Text(4));
         Assert.Contains("90-70=20",earlierUnit4Text(4));
