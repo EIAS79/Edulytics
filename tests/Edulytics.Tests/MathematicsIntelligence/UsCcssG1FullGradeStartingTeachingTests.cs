@@ -205,6 +205,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             Assert.Equal(n==6
                     ?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCountLargerSourceContentVersion
                     :n==7?CommonCoreG1FullGradeStartingContentCorrections.UnitFourReadNumberSourceContentVersion
+                    :n==8?CommonCoreG1FullGradeStartingContentCorrections.UnitFourRepresentationsSourceContentVersion
                     :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
@@ -244,6 +245,17 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("five complete tens and two remaining ones",unit4Text(6));
         Assert.Contains("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",unit4Text(6));
         Assert.Contains("3 full tens and 7 ones",unit4Text(6));
+        Assert.Contains("Kiran 3 ones plus 7 tens agrees with Priya 70+3",unit4Text(8));
+        Assert.Contains("J and S both represent 32 but E represents 23",unit4Text(8));
+        Assert.Contains("9 groups of ten and 5 single ones",unit4Text(8));
+        Assert.Contains("Grab and Count",unit4Text(8));
+        var matchRepresentations=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L08");
+        Assert.Equal("Different Representations of Tens and Ones",
+            matchRepresentations.Translations.Single(x=>x.CultureCode=="en").Title);
+        Assert.Equal("us-ccss-g1-u04-l08-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourRepresentationsSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,matchRepresentations,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
         Assert.Contains("35 OR 53",unit4Text(7));
         Assert.Contains("Clare claims a shown model is 68",unit4Text(7));
         Assert.Contains("Diego claims 86",unit4Text(7));
