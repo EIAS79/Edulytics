@@ -103,6 +103,44 @@ public sealed class UsCcssG1FullGradeTensAndOnesPracticeTests
     }
 
     [Fact]
+    public void Lesson73DifferentRepresentationsMatchValuesNotReversedDigitOrder()
+    {
+        const string f=UsCcssG1FullGradeTensAndOnesQuestions.MatchRepresentations;
+        var cases=new[]{
+            (m:4,t:7,o:3,expected:"MATCH=YES;TENS=7;ONES=3;NUMBER=73;EXPANDED=70+3"),
+            (m:5,t:4,o:1,expected:"MATCH=NO;FIRST=41;OTHER=14"),
+            (m:6,t:3,o:2,expected:"MATCH=J,S;NUMBER=32;OTHER=23"),
+            (m:7,t:9,o:5,expected:"TENS=9;ONES=5;NUMBER=95;EXPANDED=90+5")
+        };
+        foreach(var (m,t,o,expected) in cases)
+        {
+            var p=new Dictionary<string,int>{{"tens",t},{"ones",o},{"mode",m},{"unused",0}};
+            Assert.True(UsCcssG1FullGradeTensAndOnesQuestions.Valid(f,p));
+            Assert.Equal(expected,UsCcssG1FullGradeTensAndOnesQuestions.Solve(f,p));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,expected));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,expected+";EXTRA=1"));
+            p["ones"]=o+1;
+            Assert.False(UsCcssG1FullGradeTensAndOnesQuestions.Valid(f,p));
+        }
+        var jse=new Dictionary<string,int>{{"tens",3},{"ones",2},{"mode",6},{"unused",0}};
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,jse,
+            "MATCH=J,E;NUMBER=32;OTHER=23"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,jse,
+            "MATCH=J,S;NUMBER=23;OTHER=32"));
+        Assert.False(UsCcssG1FullGradeTensAndOnesQuestions.Valid(
+            UsCcssG1FullGradeTensAndOnesQuestions.ShowMultipleWays,jse));
+        var generated=Enumerable.Range(0,560).Select(i=>
+            UsCcssG1FullGradeTensAndOnesQuestions.Build(f,new Random(i*59+23))).ToArray();
+        foreach(var mode in new[]{4,5,6,7})
+        {
+            var selected=generated.Where(q=>q.Parameters["mode"]==mode).ToArray();
+            Assert.True(selected.Length>25);
+            Assert.All(selected,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+                f,q.Parameters,UsCcssG1FullGradeTensAndOnesQuestions.Solve(f,q.Parameters))));
+        }
+    }
+
+    [Fact]
     public void ValidTwoDigitValuesStayWithinGrade1AndWrongResponsesFail()
     {
         foreach(var family in UsCcssG1FullGradeTensAndOnesQuestions.Families)
