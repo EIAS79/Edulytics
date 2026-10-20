@@ -144,7 +144,8 @@ Original 2021 mental warm-up: 8+2+4=14 and 8+6=14; 7+3+6=16 and 7+9=16. Each pai
 Original 2021 reptile story: Jada sees 8 snakes, 7 iguanas and 5 frogs: 8+7+5=20 animals across THREE groups. One valid method splits 7 into 2 and 5: 8+2+5+5=20. A double ten-frame also shows twenty counters.
 Original 2021 zoo bird exhibit: 3 herons, 6 hawks and 7 hummingbirds: 3+7+6=10+6=16 birds.
 Original 2021 large cat exhibit: 8 lions, 4 tigers and 3 cheetahs: 8+4+3=15 large cats.
-Original 2021 petting zoo: 8 goats, 7 sheep and 4 pigs: 8+7+4=19 animals. These original source quantities are represented with first-party teaching text rather than copied publisher illustrations.",
+Original 2021 petting zoo: 8 goats, 7 sheep and 4 pigs: 8+7+4=19 animals. These original source quantities are represented with first-party teaching text rather than copied publisher illustrations.
+Original 2021 STUDENT SECTION SUMMARY: make ten with THREE addends: 4+8+6=4+6+8=10+8=18. A first-party textual double ten-frame explanation places four red and six yellow counters together in one filled frame, with eight blue counters in the other, representing 18 counters total. Make ten with TWO addends: 4+8=4+6+2=10+2=12. In a first-party textual frame, four and six fill one ten and two remain. These are mathematics descriptions, not the original publisher artwork; a student can draw the counter frames and discuss with a teacher.",
             @"Step 1: Read the zoo story and identify every group named.
 Step 2: Write a three-addend equation, not a two-addend one.
 Step 3: Draw or model the three groups with counters.
