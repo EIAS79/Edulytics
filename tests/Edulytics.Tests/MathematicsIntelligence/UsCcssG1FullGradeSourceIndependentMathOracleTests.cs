@@ -80,7 +80,8 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             0=>$"SHAPE={(mode==0?"CUBE":mode==1?"SPHERE":mode==2?"CYLINDER":"CONE")}",
             1=>mode==4?$"PER_LAYER={a*b};LAYERS={2};TOTAL_CUBES={(a*b)+(a*b)}":
                 $"PIECES={a+b}",
-            2=>$"SHAPE={(mode%2==0?"TRIANGLE":"SQUARE")}",
+            2=>mode==4?"CURVED=CIRCLE;THREE_SIDES=TRIANGLE;FOUR_SIDES=SQUARE,RECTANGLE":
+                $"SHAPE={(mode%2==0?"TRIANGLE":"SQUARE")}",
             3=>$"SIDES={(mode%2==0?3:4)};CORNERS={(mode%2==0?3:4)}",
             4=>"SIDES=3",
             5=>$"ANSWER={(mode%2==0?"YES":"NO")}",
