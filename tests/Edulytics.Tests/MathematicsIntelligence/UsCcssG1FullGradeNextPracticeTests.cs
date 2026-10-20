@@ -349,6 +349,55 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
     }
 
     [Fact]
+    public void Lesson59OriginalTeenSubtractionCoversCrossTenNoCrossAndZeroCardWithoutFalseMethods()
+    {
+        const string family=UsCcssG1FullGradeNextQuestions.TeenSubtract;
+        var noCross=new Dictionary<string,int>{{"a",17},{"b",4},{"c",0},{"mode",0}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,noCross));
+        Assert.Equal("DIFFERENCE=13;EQUATION=17-4=13",
+            UsCcssG1FullGradeNextQuestions.Solve(family,noCross));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,noCross,
+            "EQUATION=17-4=13;DIFFERENCE=13"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,noCross,
+            "REACH10=7;REST=-3;DIFFERENCE=13;EQUATION=17-4=13"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,noCross,
+            "DIFFERENCE=13;EQUATION=17-4=12"));
+
+        var zero=new Dictionary<string,int>{{"a",19},{"b",0},{"c",0},{"mode",1}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,zero));
+        Assert.Equal("DIFFERENCE=19;EQUATION=19-0=19",
+            UsCcssG1FullGradeNextQuestions.Solve(family,zero));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,zero,
+            "DIFFERENCE=19;EQUATION=19-0=19"));
+        zero["b"]=10; // Teacher source explicitly excludes 10 from subtractor cards.
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,zero));
+        zero["a"]=20;zero["b"]=0; // 20 is not a teen number card.
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,zero));
+
+        var cross=new Dictionary<string,int>{{"a",14},{"b",6},{"c",0},{"mode",2}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,cross,
+            "REACH10=4;REST=2;DIFFERENCE=8;EQUATION=14-6=8"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,cross,
+            "DIFFERENCE=8;EQUATION=14-6=8")); // Missing decomposition when needed.
+
+        var sourceElena=new Dictionary<string,int>{{"a",16},{"b",7},{"c",0},{"mode",3}};
+        Assert.True(UsCcssG1FullGradeNextQuestions.Valid(family,sourceElena));
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(family,
+            new Dictionary<string,int>{{"a",16},{"b",6},{"c",0},{"mode",3}}));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,sourceElena,
+            "REACH10=6;REST=1;DIFFERENCE=9;EQUATION=16-7=9"));
+
+        var examples=Enumerable.Range(0,400)
+            .Select(n=>UsCcssG1FullGradeNextQuestions.Build(family,new Random(n*41+23)))
+            .ToArray();
+        Assert.Contains(examples,q=>q.Parameters["b"]<q.Parameters["a"]-10);
+        Assert.Contains(examples,q=>q.Parameters["b"]>=q.Parameters["a"]-10);
+        Assert.All(examples,q=>
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
+                UsCcssG1FullGradeNextQuestions.Solve(family,q.Parameters))));
+    }
+
+    [Fact]
     public void AllFamiliesGenerateDistinctRealPracticeQuestions()
     {
         var engine=new ExactSkillContractQuestionEngine();
