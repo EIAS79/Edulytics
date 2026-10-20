@@ -25,18 +25,35 @@
       "Student Facing Let's solve our classmates' story problems. Solve the story problem using drawings, numbers, or words. Equation: ________________________________ Solve the"
     ],
     "existingCandidateReused": true,
-    "classification": "REUSE_AND_FINAL_AUTHORED_TASK_RENDER_REVIEW"
+    "classification": "REUSE_AND_FINAL_AUTHORED_TASK_RENDER_REVIEW",
+    "publicOriginalTeacherStudentTasksCompared": true,
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": null,
+    "originalTaskRequirements": [
+      "Notice and wonder about real classroom objects",
+      "Questionless Noah8 Elena5 Han4 starter; pupils invent addition AND subtraction questions",
+      "One partner selects a target answer less than 20 and the other authors a matching story and question; swap roles",
+      "Classroom poster states story and question without the solution and receives peer feedback",
+      "Solve FOUR original classmates' problems in gallery with four equations and representations"
+    ]
   },
   "stageB": {
     "reviewAndCorrectionSummary": "Existing first-party learner-authored classroom story correction and teacher review rubric preserved; original source includes notice/wonder, Noah 8/Elena 5/Han 4, creation of addition/subtraction stories, posters and gallery walk",
     "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
     "candidateEditCommit": null,
-    "publisherArtworkCopied": false
+    "publisherArtworkCopied": false,
+    "effectiveVersion": "us-ccss-g1-g1-u03-l28-source-goal-v2",
+    "v1ToV2PersistedTextGuarded": true,
+    "teacherAuthorshipPosterGalleryChecklistWritten": true
   },
   "stageC": {
     "reusedPracticeFamily": "TEACHER_ONLY_SOURCE_AUTHORED_STORY",
     "changedGeneratorCommit": null,
-    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence"
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence",
+    "originalSourceTaskToPracticeParity": "VERIFIED_TEACHER_ONLY_RUBRIC_NOT_NUMERIC",
+    "noDigitallyGradeableAuthorshipFamily": true,
+    "teacherOnlyRubricAuthoredAndReviewed": true,
+    "mathGeneratorNotClaimed": true
   },
   "stageD": {
     "sourceAssertionsPrepared": "Existing source-specific tests retained",
@@ -50,5 +67,21 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": false,
+    "teacherOnlyAuthoredActivityRubricIndependentlyReviewed": true,
+    "verifiedNoMachineGradeableStoryAuthorship": true,
+    "teacherEvidenceIsRequired": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-65-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "assessmentBasis": "TEACHER_ONLY_SOURCE_AUTHORED_STORY_WITH_RUBRIC",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "A-C first-party authored lesson and teacher rubric reviewed. No numeric auto-grade of student authorship; real pupil work, teacher observation and saved artifacts required at D. Continue ordinal 66; no CI until grade freeze."
 }
