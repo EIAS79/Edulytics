@@ -197,7 +197,7 @@ public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
                 5=>"TOTAL=20;CARDS=8+7+5",
                 6=>"ADD=15;SUBTRACT=9",
                 _=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}"
-            }
+            },
             CompareWords=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
             CompareSymbols=>$"SYMBOL={(a>b?">":a<b?"<":"=")}",
             _=>throw new InvalidOperationException()
