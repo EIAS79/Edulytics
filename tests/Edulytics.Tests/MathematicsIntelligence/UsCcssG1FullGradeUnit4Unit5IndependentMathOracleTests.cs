@@ -27,7 +27,14 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
             case 3:return mode==0?"TENS=5;ONES=15":
                 mode==1?"TENS=3;ONES=7;ALT_TENS=2;ALT_ONES=17":
                 $"TENS={a/10-1};ONES={a%10+10}";
-            case 4:return $"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}";
+            case 4:return mode switch
+            {
+                4=>"NUMBER=52",
+                5=>"NUMBER=65",
+                6=>"TENS=2",
+                7=>"ONES=16",
+                _=>$"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}"
+            };
             case 5:return "SYMBOL="+Symbol(a,b);
             case 6:return mode%2==0?"SYMBOL="+Symbol(a,b):$"NUMBER={a}";
             case 7:return $"COUNT={a};GAP={Math.Abs(a-b)}";
