@@ -434,9 +434,22 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
             Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,
                 $"TO10={a-10};REST=99;DIFFERENCE={d};EQUATION={a}-{b}={d}"));
         }
+        Assert.False(UsCcssG1FullGradeNextQuestions.Valid(f,
+            new Dictionary<string,int>{{"a",15},{"b",8},{"c",0},{"mode",3}}));
         var generated=Enumerable.Range(0,400)
             .Select(n=>UsCcssG1FullGradeNextQuestions.Build(f,new Random(n*61+7)))
             .ToArray();
+        var exactFollowUps=generated.Where(q=>q.Parameters["mode"]==3).ToArray();
+        Assert.True(exactFollowUps.Length>30);
+        Assert.Contains(exactFollowUps,q=>q.Parameters["a"]==14&&q.Parameters["b"]==5);
+        Assert.Contains(exactFollowUps,q=>q.Parameters["a"]==13&&q.Parameters["b"]==6);
+        Assert.All(exactFollowUps,q=>
+        {
+            Assert.Contains("Diego",q.Prompt);
+            Assert.Contains("Andre",q.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(f,q.Parameters,
+                UsCcssG1FullGradeNextQuestions.Solve(f,q.Parameters)));
+        });
         Assert.Contains(generated,q=>q.Parameters["b"]<q.Parameters["a"]-10);
         Assert.Contains(generated,q=>q.Parameters["b"]>=q.Parameters["a"]-10);
         Assert.All(generated,q=>
