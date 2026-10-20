@@ -14,7 +14,7 @@ public static class CommonCoreG1FullGradeStartingContentCorrections
     private const string TeenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L22";
     private const string TenSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L23";
     public const string CenterSourceContentVersion="us-ccss-g1-u03-l21-centers-2021-source-v7";
-    public const string TeenSubtractSourceContentVersion="us-ccss-g1-u03-l22-teen-2021-source-v6";
+    public const string TeenSubtractSourceContentVersion="us-ccss-g1-u03-l22-teen-2021-source-v7";
     public const string TenSubtractSourceContentVersion="us-ccss-g1-u03-l23-ten-2021-source-v6";
     private const string CountRelationLessonCode="PED:US-CCSS-MATH:G1:U03:L24";
     private const string ChooseSubtractLessonCode="PED:US-CCSS-MATH:G1:U03:L25";
@@ -181,7 +181,7 @@ Original source FIVE IN A ROW center (teacher-led): pick a number card from the 
 Example 2: 12-5: remove two to reach ten and three more to reach seven, so 12-5=7.
 Example 3: 17-4=13: remove four ones; the full ten stays intact.
 Example 4: 13-8=5 because 8+5=13. Count on to check.
-Original 2021 Student Facing: Elena has 16 crayons and gives 7 to Diego. She has 16-7=9 crayons left. One method uses 16-6=10, then 10-1=9; another counts from 7 up to 16. The classroom poster and explanation are not automatically verified by numeric Practice.",
+Original 2021 Student Facing: Elena has 16 crayons and gives 7 to Diego. She has 16-7=9 crayons left. One method uses 16-6=10, then 10-1=9; another counts from 7 up to 16. The original Number Card Subtraction uses teen cards 11–19 and subtractor cards 0–9 (the material deck includes 11–20, but the teacher expressly instructs students to choose a teen number). Some legal rounds never cross ten, for example 17-4=13 and 19-0=19; never invent a negative remainder for a cross-ten method. A related addition fact, including an addition equation with a missing addend, may be used to explain the result. The classroom poster and explanation are not automatically verified by numeric Practice.",
             @"Step 1: Show the teen starting value as ten and some ones.
 Step 2: Find how many counters to remove and whether the loose ones are enough.
 Step 3: If needed, subtract to ten first, then remove the remaining amount.
@@ -593,6 +593,7 @@ Step 5: Recheck direction by explaining which digit determines the comparison.",
         (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
          (lesson.LessonCode==ZooLessonCode&&(previous=="us-ccss-g1-u03-l20-zoo-2021-source-v6"||previous=="us-ccss-g1-u03-l20-zoo-2021-source-v7"))||
          (lesson.LessonCode==CenterLessonCode&&previous=="us-ccss-g1-u03-l21-centers-2021-source-v6")||
+         (lesson.LessonCode==TeenSubtractLessonCode&&previous=="us-ccss-g1-u03-l22-teen-2021-source-v6")||
          (previous==Version&&lesson.LessonCode is
              ZooLessonCode or CenterLessonCode or TeenSubtractLessonCode or TenSubtractLessonCode or
              CountRelationLessonCode or ChooseSubtractLessonCode or StoryLessonCode or CenterFourLessonCode or
