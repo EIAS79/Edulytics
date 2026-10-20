@@ -58,7 +58,8 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
         if(!Supports(family)||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>6 || (mode==6 && family!=CountOnOrAway) ||
+           mode<0||mode>7 || (mode==7 && family!=FlexibleSubtract) ||
+            (mode==6 && family!=CountOnOrAway && family!=FlexibleSubtract) ||
             (c!=0 && family!=CenterWithin20))return false;
         return family switch
         {
@@ -67,8 +68,13 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                            (a==14&&b==6)||(a==15&&b==12)||(a==13&&b==4)))&&
                 (mode!=5||((a==18&&b==5)||(a==13&&b==6)||(a==20&&b==15)))&&
                 (mode!=6||((a==16&&b==3)||(a==17&&b==8)||(a==18&&b==15))),
-            FlexibleSubtract=>mode<=3&&a>=11&&a<=20&&b>=1&&b<=9&&b<a&&
-                (mode!=2||(a==12&&b==7)),
+            FlexibleSubtract=>mode<=7&&a>=11&&a<=20&&b>=1&&b<a&&
+                (mode!=2||(a==12&&b==7))&&
+                (mode!=4||((a==20&&b==15)||(a==19&&b==3)||(a==13&&b==5)||
+                           (a==18&&b==9)||(a==17&&b==15)))&&
+                (mode!=5||(a==15&&b==8))&&
+                (mode!=6||(a==17&&b==9))&&
+                (mode!=7||(a==14&&b==9)),
             StoryUnknowns=>((a>=1&&a<=10&&b>=1&&b<=10&&a+b<=20)||
                 ((mode==1||mode==4)&&a==6&&b==12))&&
                 (mode!=2||(a==6&&b==9))&&
@@ -97,8 +103,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unreviewed G1 source-activity numeric family");
-        int mode=family==CountOnOrAway?random.Next(7):
-            (family==StoryUnknowns||family==CenterTens?random.Next(6):random.Next(4));
+        int mode=family==FlexibleSubtract?random.Next(8):
+            (family==CountOnOrAway?random.Next(7):
+             (family==StoryUnknowns||family==CenterTens?random.Next(6):random.Next(4)));
         int a=0,b=0,c=0;
         if(family is CountOnOrAway or FlexibleSubtract)
         {
@@ -120,11 +127,23 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 var tasks=new[]{(16,3),(17,8),(18,15)};
                 (a,b)=tasks[random.Next(tasks.Length)];
             }
-            else if(family==FlexibleSubtract&&mode==2){a=12;b=7;} // Original teacher's pencils story.
+            else if(family==FlexibleSubtract&&mode==4)
+            {
+                // Original 2021 Student Facing Activity 1: exactly five subtraction expressions.
+                var tasks=new[]{(20,15),(19,3),(13,5),(18,9),(17,15)};
+                (a,b)=tasks[random.Next(tasks.Length)];
+            }
+            else if(family==FlexibleSubtract&&mode==5)
+            {a=15;b=8;} // Original Clare story: 8+□=15.
+            else if(family==FlexibleSubtract&&mode==6)
+            {a=17;b=9;} // Original Kiran story: 17−□=9.
+            else if(family==FlexibleSubtract&&mode==7)
+            {a=14;b=9;} // Original Edulytics exit check, inspired by lesson goal.
+            else if(family==FlexibleSubtract&&mode==2){a=12;b=7;} // Original 2021 pencil story: 12−7.
             else
             {
                 a=random.Next(11,21);
-                b=random.Next(1,family==FlexibleSubtract?Math.Min(9,a-1)+1:a);
+                b=random.Next(1,a);
             }
         }
         else if(family==StoryUnknowns)
@@ -203,6 +222,14 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 $"Compare counting ON from {b} to {a} with taking AWAY {b} from {a}. Both methods must find the difference. Write DIFFERENCE=number;CHECK=number+number=number.",
             FlexibleSubtract=>mode==2?
                 "ORIGINAL 2021 STUDENT FACING: There are 12 pencils on the table. The teacher picks up 7 pencils. How many are still on the table? Choose YOUR subtraction method, explain with counters, drawings, numbers or words, and write DIFFERENCE=number;CHECK=number+number=number.":
+                mode==4?
+                $"ORIGINAL 2021 STUDENT FACING: For {a}-{b}, choose an efficient method: count on, take away, or use ten. Show thinking with drawings, numbers, or words. Write DIFFERENCE=number;CHECK=number+number=number. Actual method explanation requires teacher review.":
+                mode==5?
+                "ORIGINAL 2021 CLARE STORY: Clare has 8 glue sticks from one table. After she collects more from another table, she has 15. How many MORE did she get? Complete 8+□=15. Write UNKNOWN=number;EQUATION=number+number=number. Explain your method with your teacher.":
+                mode==6?
+                "ORIGINAL 2021 KIRAN STORY: Kiran has 17 crayons, gives some away, and has 9 left. How many did he GIVE AWAY? Complete 17−□=9. Write UNKNOWN=number;EQUATION=number-number=number. Explain your strategy.":
+                mode==7?
+                "EDULYTICS ORIGINAL EXIT CHECK: Show how you could work out 14−9 using any correct strategy. How many remain? Check your answer by addition. Write DIFFERENCE=number;CHECK=number+number=number. If you choose a drawing or words, explain to your teacher: the digital numeric fields do not certify the drawing or your reasoning.":
                 $"Choose a subtraction method for {a}-{b}. Check using related addition. Write DIFFERENCE=number;CHECK=number+number=number.",
             StoryUnknowns=>mode switch
             {
@@ -284,7 +311,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 mode==3?
                 $"UNKNOWN={a-b};EQUATION={a-b}+{b}={a}":
                 $"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
-            FlexibleSubtract=>$"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
+            FlexibleSubtract=>mode==5?
+                "UNKNOWN=7;EQUATION=8+7=15":
+                mode==6?
+                "UNKNOWN=8;EQUATION=17-8=9":
+                $"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
             StoryUnknowns=>mode switch
             {
                 0=>$"UNKNOWN={sum};EQUATION={a}+{b}={sum}",
