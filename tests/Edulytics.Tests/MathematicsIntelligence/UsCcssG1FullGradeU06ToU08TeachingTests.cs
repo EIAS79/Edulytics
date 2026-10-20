@@ -9,14 +9,15 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
 {
     [Fact]
-    public void ThirtySourceBoundRepairsHaveUniqueNewLessonIdentifiers()
+    public void ThirtyOneSourceBoundRepairsHaveUniqueNewLessonIdentifiers()
     {
         var documents=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
         var ids=documents.SelectMany(doc=>doc.Lessons
             .Where(x=>CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(doc,x))
             .Select(x=>x.LessonCode)).ToArray();
-        Assert.Equal(30,ids.Length);
-        Assert.Equal(30,ids.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(31,ids.Length);
+        Assert.Equal(31,ids.Distinct(StringComparer.Ordinal).Count());
+        Assert.Contains("PED:US-CCSS-MATH:G1:U06:L03",ids);
         Assert.All(ids,id=>Assert.StartsWith("PED:US-CCSS-MATH:G1:",id));
         Assert.DoesNotContain("PED:US-CCSS-MATH:G1:U06:L02",ids);
         Assert.DoesNotContain("PED:US-CCSS-MATH:G1:U07:L14",ids);
@@ -57,6 +58,20 @@ public sealed class UsCcssG1FullGradeU06ToU08TeachingTests
             var tr=lesson.Translations.Single(t=>t.CultureCode=="en");
             return tr.Explanation+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
         }
+        var indirectComparison=text("PED:US-CCSS-MATH:G1:U06:L03");
+        Assert.Contains("Mai and Clare",indirectComparison);
+        Assert.Contains("SIX distinct real classroom comparisons",indirectComparison);
+        Assert.Contains("TEACHER'S DESK fit through the DOOR",indirectComparison);
+        Assert.Contains("STUDENT DESK fit through the DOOR",indirectComparison);
+        Assert.Contains("BOOKSHELF or the RUG",indirectComparison);
+        Assert.Contains("FILE CABINET or the BOOKSHELF",indirectComparison);
+        Assert.Contains("BOOKSHELF or the TEACHER'S DESK",indirectComparison);
+        Assert.Contains("TEACHER'S DESK fit NEXT TO",indirectComparison);
+        Assert.Contains("drawings, numbers or words for EACH",indirectComparison);
+        Assert.Contains("does NOT fit widthwise",indirectComparison, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("not necessarily in the original pictured map",indirectComparison);
+        Assert.Contains("SAME movable",indirectComparison, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("12",indirectComparison); // invented numeric example, NOT false original source-map value
         Assert.Contains("SHORTER than the pupil's FOOT",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("LONGER than the pupil's POINTER FINGER",text("PED:US-CCSS-MATH:G1:U06:L01"));
         Assert.Contains("THREE NEW objects",text("PED:US-CCSS-MATH:G1:U06:L01"));
