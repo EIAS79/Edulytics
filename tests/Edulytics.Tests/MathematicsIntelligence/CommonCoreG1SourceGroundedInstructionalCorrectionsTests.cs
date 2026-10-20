@@ -134,6 +134,11 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
                  CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsExamplesV1,
                  CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsStepsV1,
                  CommonCoreG1SourceGroundedInstructionalCorrections.AroundRoomStoryProblemsMistakesV1),
+            CommonCoreG1SourceGroundedInstructionalCorrections.TensLessonCode =>
+                (CommonCoreG1SourceGroundedInstructionalCorrections.TensConceptsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.TensExamplesV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.TensStepsV1,
+                 CommonCoreG1SourceGroundedInstructionalCorrections.TensMistakesV1),
             _=>throw new InvalidOperationException("Unexpected lesson")
         };
         var stored=new CurriculumLessonContentTranslation
