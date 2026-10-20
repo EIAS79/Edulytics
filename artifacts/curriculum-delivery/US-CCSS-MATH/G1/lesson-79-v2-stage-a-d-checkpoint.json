@@ -36,8 +36,18 @@
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
-    "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "mathEngineChangedForThisLesson": true,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "practiceImplementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeTwoDigitOperationsQuestions.cs",
+    "sourceExactCases": [
+      "Elena: 75 > 65; tens reasoning teacher-assessed",
+      "Noah: 39 > 41 is false; 39 < 41; error explanation teacher-assessed"
+    ],
+    "mathEngineCommit": "e06de668e814b9698d80997ee500e904325a87f0",
+    "testImplementationCommit": "56b3bd25139d617f268032dff70e694af2c7cbf4",
+    "testsAuthoredButNotExecuted": true,
+    "sourceParityStillUnverified": true,
+    "authoringStatus": "A_C_EXPLICIT_GAP"
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
