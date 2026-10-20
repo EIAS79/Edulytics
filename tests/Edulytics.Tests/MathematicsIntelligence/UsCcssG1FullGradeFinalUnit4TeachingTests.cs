@@ -44,13 +44,23 @@ public sealed class UsCcssG1FullGradeFinalUnit4TeachingTests
         Assert.Contains("Greatest of Them All",compareText.StepByStepSolutions);
         var order=doc.Lessons.Single(l=>l.LessonCode=="PED:US-CCSS-MATH:G1:U04:L17");
         Assert.Contains("25<□",order.Translations.Single(x=>x.CultureCode=="en").WorkedExamples);
-        Assert.Equal(CommonCoreG1FullGradeFinalUnit4Corrections.OriginalComparisonsVersion,
+        Assert.Equal(CommonCoreG1FullGradeFinalUnit4Corrections.OriginalLesson17SourceContentVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,order));
+        Assert.True(CommonCoreG1FullGradeFinalUnit4Corrections.CanUpgradeExisting(
+            doc,order,CommonCoreG1FullGradeFinalUnit4Corrections.OriginalComparisonsVersion));
+        var orderText=order.Translations.Single(x=>x.CultureCode=="en").WorkedExamples;
+        foreach(var phrase in new[]{"35<20", "physical card sets A, B, C and D", "ANY correct number is valid"})
+            Assert.Contains(phrase,orderText);
         var center=doc.Lessons.Single(l=>l.LessonCode=="PED:US-CCSS-MATH:G1:U04:L18");
         Assert.Contains("32+10+10=52",center.Translations.Single(x=>x.CultureCode=="en").WorkedExamples);
         Assert.Contains("Get Your Numbers in Order",center.Translations.Single(x=>x.CultureCode=="en").StepByStepSolutions);
-        Assert.Equal(CommonCoreG1FullGradeFinalUnit4Corrections.OriginalComparisonsVersion,
+        Assert.Equal(CommonCoreG1FullGradeFinalUnit4Corrections.OriginalLesson18SourceContentVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,center));
+        Assert.True(CommonCoreG1FullGradeFinalUnit4Corrections.CanUpgradeExisting(
+            doc,center,CommonCoreG1FullGradeFinalUnit4Corrections.OriginalComparisonsVersion));
+        var centerBody=center.Translations.Single(x=>x.CultureCode=="en");
+        foreach(var centerPhrase in new[]{"Greatest of Them All, Grab and Count, or Write Numbers", "PASS", "32+10+10=52"})
+            Assert.Contains(centerPhrase,centerBody.WorkedExamples+" "+centerBody.StepByStepSolutions);
         Assert.Equal(CommonCoreG1FullGradeFinalUnit4Corrections.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,representation));
     }
