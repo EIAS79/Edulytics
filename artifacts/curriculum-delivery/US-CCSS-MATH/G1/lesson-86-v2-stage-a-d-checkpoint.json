@@ -16,17 +16,42 @@
   },
   "stageA": {
     "originalTaskReview": "Original 5 tens 32 ones=82 versus 7 tens 2 ones=72; first-party source correction reused, actual source graphics remain final evidence",
-    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE"
+    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE",
+    "officialSourceURL": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-21/lesson.html",
+    "verifiedOriginal2021PublicStudentMath": [
+      "10+6=16",
+      "9+6=15",
+      "10+7=17",
+      "8+7=15",
+      "5 tens+32 ones=82 versus 7 tens+2 ones=72",
+      "38>28",
+      "32=32",
+      "35<40",
+      "52>42",
+      "35=35",
+      "99>89"
+    ],
+    "teacherOnlyRepresentationalDrawingsRemain": true
   },
   "stageB": {
     "existingTeachingReused": true,
     "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
     "sourceCorrectionsCommits": [],
-    "publisherArtworkNotClaimedLicensed": true
+    "publisherArtworkNotClaimedLicensed": true,
+    "original2021SourceMathVersion": "us-ccss-g1-g1-u04-l21-topic-correction-v2",
+    "contentRepairCommit": "d5da7bac8a9a788e9bbcab4742d3027d55ac5041"
   },
   "stageC": {
     "existingSourceSpecificPracticePreserved": true,
-    "teacherOnlyActivitiesNotNumericallyCertified": true
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "sourceMathModeRange": "0-13; modes 7-9 original public comparisons, 10-13 original 2021 warmups",
+    "implementationCommits": [
+      "70370eaf300c5d18b88342adae82325eca598860",
+      "12d6085d1108ce2aefb21bcfb7ff3c40c257918a"
+    ],
+    "authoredSourceTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson86Original2021ComparisonsTests.cs",
+    "testsAuthoredCommit": "69a8b06b9dfd754615cf45a044e10e590e0963bd",
+    "testsExecuted": false
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -39,5 +64,18 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue unchanged original V1 A–D review; final-sha evidence required"
+  "nextAction": "Continue ordinal87, no Stage D, CI, release or academic approval.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "sourceBoundary": "Public original numeric Student Facing activities recreated as first-party word/math modes. Original image cards, pupil drawings and the protected original Cool-down are not claimed verified/copied. Stage D/CI/authenticated scoring/rights proof pending.",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  }
 }
