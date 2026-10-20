@@ -325,8 +325,11 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
             {
                 0=>"Original 2021 U04 L04 How Many Are in the Bag? Jada has 30 cubes in Bag A and two TOWERS OF TEN in Bag B. How many cubes altogether? Write TENS=number;TOTAL=number.",
                 1=>"Original 2021 U04 L04 How Many Are in the Bag? Tyler has SEVEN TOWERS OF TEN in Bag C and takes away 40 cubes. How many cubes remain? Write TENS=number;TOTAL=number.",
-                2=>$"Original 2021 Add and Subtract Tens practice: add {b} tens to {a} tens. Write TENS=number;TOTAL=number.",
-                _=>$"Original 2021 Add and Subtract Tens practice: take away {b} tens from {a} tens. Write TENS=number;TOTAL=number."
+                2=>$"EDULYTICS SOURCE-GOAL PRACTICE: add {b} tens to {a} tens. Write TENS=number;TOTAL=number.",
+                3=>$"EDULYTICS SOURCE-GOAL PRACTICE: take away {b} tens from {a} tens. Write TENS=number;TOTAL=number.",
+                4=>$"ORIGINAL 2021 ACTIVITY 2 ADD TENS TASK: calculate {a*10}+{b*10} by adding {a} tens and {b} tens. Write TENS=number;TOTAL=number.",
+                5=>$"ORIGINAL 2021 ACTIVITY 2 SUBTRACT TENS TASK: calculate {a*10}-{b*10} by subtracting {b} tens from {a} tens. Write TENS=number;TOTAL=number.",
+                _=>"EDULYTICS ORIGINAL EXIT CHECK: Work out 50+30 and 80-30. Show they are related facts in tens. Write ADDITION=number;SUBTRACTION=number. Your teacher reviews drawings and verbal explanations. This is not the protected 2021 publisher Cool-down."
             },
             CenterTens=>mode switch
             {
@@ -395,8 +398,9 @@ public static class UsCcssG1FullGradeStrategyAndTensQuestions
                 2=>"TOTALS=20,30,40,50,60,70,80,90;LAST=90",
                 _=>"TOTALS=80,70,60,50,40,30,20,10;LAST=10"
             },
-            AddRemoveMultipleTens=>mode%2==0
-                ?$"TENS={sum};TOTAL={10*sum}"
+            AddRemoveMultipleTens=>mode==6?
+                "ADDITION=80;SUBTRACTION=50":
+                mode%2==0?$"TENS={sum};TOTAL={10*sum}"
                 :$"TENS={a-b};TOTAL={10*(a-b)}",
             CenterTens=>mode switch
             {
