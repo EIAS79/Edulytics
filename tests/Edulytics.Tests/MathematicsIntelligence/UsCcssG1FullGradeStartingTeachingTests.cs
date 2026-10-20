@@ -204,6 +204,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
             Assert.Equal(n==6
                     ?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCountLargerSourceContentVersion
+                    :n==7?CommonCoreG1FullGradeStartingContentCorrections.UnitFourReadNumberSourceContentVersion
                     :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
             Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
@@ -243,6 +244,17 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("five complete tens and two remaining ones",unit4Text(6));
         Assert.Contains("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",unit4Text(6));
         Assert.Contains("3 full tens and 7 ones",unit4Text(6));
+        Assert.Contains("35 OR 53",unit4Text(7));
+        Assert.Contains("Clare's 68",unit4Text(7));
+        Assert.Contains("Diego's 86",unit4Text(7));
+        Assert.Contains("Tyler's drawing of 4 tens and 2 ones is 42",unit4Text(7));
+        Assert.Contains("any number from 60 through 69",unit4Text(7));
+        var readTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L07");
+        Assert.Equal("us-ccss-g1-u04-l07-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourReadNumberSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,readTens,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+
         Assert.Contains("50 to 81",unit4Text(6));
         var countLarge=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L06");
         Assert.Equal("us-ccss-g1-u04-l06-original-student-activities-v7",
