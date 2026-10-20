@@ -23,19 +23,46 @@
       "Student Facing Write the number that matches each representation. 1 ten 4 ones Number: ____________ [visual] [visual]"
     ],
     "sourceSpecificFinding": "Original blank-number tasks for 14,90,25,47,82,41 and Stage 1 Write Numbers center",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "allAccessibleOriginalTeacherStudentTasksCompared": true,
+    "sourceWarmup": "7,70,17,71 with same digit in different places",
+    "originalTextPromptMath": [
+      14,
+      90,
+      25,
+      47,
+      82,
+      41
+    ],
+    "originalClareClaim": "702 versus 72; real 7 tens+2 ones",
+    "original2021CoolDownTitle": "Write Numbers (5 minutes)",
+    "original2021PublisherCoolDownVerbatimVerified": false,
+    "allOriginalFigureAndStudentTasksFullyAudited": null
   },
   "stageB": {
     "originalRichV2Reused": true,
     "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
-    "publisherAssetsRedistributed": false
+    "publisherAssetsRedistributed": false,
+    "version": "us-ccss-g1-u04-l10-original-student-activities-v7",
+    "ownerEdulyticsIndependentExit": "83=8 tens+3 ones; 80+3",
+    "oldV6OnlyL10ToV7UpgradeGuarded": true
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
     "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "originalSourceTaskToPracticeParity": "VISIBLE_ORIGINAL_SIX_TASKS_PLUS_OWNER_APPROVED_INDEPENDENT_ASSESSMENT",
+    "scopedModes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "noSourceCoolDownClaim": true,
+    "originalMathAndWrongAnswerOraclesAuthored": true,
+    "testsExecuted": false
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -50,5 +77,22 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-75-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "Original visible source tasks and own 83 assessment A-C closed; original protected 2021 Cool-down unverified. Final D/CI frozen. Continue ordinal76."
 }
