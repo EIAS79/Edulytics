@@ -103,8 +103,8 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 $"Two equal halves rejoin to make one WHOLE rectangle; card #{a}. Write PARTS=number;WHOLES=number.":
                 $"Four equal fourths rejoin to make one WHOLE circle; card #{a}. Write PARTS=number;WHOLES=number."):
                 mode==2?
-                $"ORIGINAL SHADED-PIECES CARD SORT: Card #{a} shows a rectangle split by a line into two parts. Judge the area of the two parts from the drawing. Are these true equal halves? Write SORT=EQUAL/UNEQUAL;PIECES=number.":
-                $"ORIGINAL SHADED-PIECES CARD SORT: Card #{a} shows a rectangle partitioned into four regions. Judge the area of the four parts from the drawing. Write SORT=EQUAL/UNEQUAL;PIECES=number.",
+                $"SOURCE-INSPIRED SHADED CARD SORT, FIRST-PARTY MODEL #{a}: A rectangle is 4 unit squares WIDE and 2 unit squares HIGH. A vertical cut 1 unit from the left splits it into two regions, one 1-by-2 and one 3-by-2. Compare their AREAS to decide whether they are equal halves. Write SORT=EQUAL/UNEQUAL;PIECES=number. No publisher image is assumed.":
+                $"SOURCE-INSPIRED SHADED CARD SORT, FIRST-PARTY MODEL #{a}: A rectangle is 4 unit squares WIDE and 2 unit squares HIGH. Cut it into 2 equal-width columns and 2 equal-height rows, giving FOUR regions each 2-by-1 unit squares. Compare their AREAS. Write SORT=EQUAL/UNEQUAL;PIECES=number. Real source cards and pupil sorting are teacher-reviewed.",
             10=>$"In the SAME shape #{a}, compare one HALF and one FOURTH. Which is larger? Write LARGER=part_name;FOURTHS_PER_HALF=number.",
             11=>mode%2==0?$"Center arithmetic: add {a}+{b} (within 24). Write RESULT=number.":
                 $"Center shape card #{a}: 3 straight sides, 3 corners, closed. Write SHAPE=name.",
