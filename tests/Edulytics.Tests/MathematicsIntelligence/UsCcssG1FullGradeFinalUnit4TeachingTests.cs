@@ -61,7 +61,12 @@ public sealed class UsCcssG1FullGradeFinalUnit4TeachingTests
         var centerBody=center.Translations.Single(x=>x.CultureCode=="en");
         foreach(var centerPhrase in new[]{"Greatest of Them All, Grab and Count, or Write Numbers", "PASS", "32+10+10=52"})
             Assert.Contains(centerPhrase,centerBody.WorkedExamples+" "+centerBody.StepByStepSolutions);
-        Assert.Equal(CommonCoreG1FullGradeFinalUnit4Corrections.Version,
+        Assert.Equal(CommonCoreG1FullGradeFinalUnit4Corrections.OriginalLesson19SourceContentVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,representation));
+        Assert.True(CommonCoreG1FullGradeFinalUnit4Corrections.CanUpgradeExisting(
+            doc,representation,"us-ccss-g1-u04-l19-centers-and-regrouping-v2"));
+        foreach(var phrase in new[]{"A five tens and three ones = 53",
+            "B thirty plus five = 35","C three plus fifty = 53","36+1=37","35+2=37"})
+            Assert.Contains(phrase,noBreak.WorkedExamples);
     }
 }
