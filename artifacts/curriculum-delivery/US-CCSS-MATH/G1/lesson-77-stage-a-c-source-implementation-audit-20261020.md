@@ -22,3 +22,10 @@ The generator's `Valid` checks require exact operands for modes 2/3. Negative an
 4. Only after those reviews show zero open A–C defects, record `aToCClosure.outcome=READY_FOR_STAGE_D` with exact evidence. Stage D, final CI, authenticated persistence, visual/rights review and academic approval remain deferred.
 
 **Next lesson to close: 77.** The grade academic-acceptance cursor `nextOrdinal:57` remains unchanged and is not the A–C authoring cursor.
+
+## Follow-up implementation evidence — lesson 77 only
+
+- First-party independent formative exit added as TenMoreLess mode 4: 46+10=56 and 46−10=36, with exact answer `PLUS=56;MINUS=36`. This is explicitly **not** the inaccessible original 2021 publisher Cool-down. Implementation commits `37128e5eccb85c46fc5614d039c692948bc088ba` and `459fafebe8d2422146cef142a6c11824687e8727`.
+- Positive, wrong-answer, incomplete-answer, invalid-parameter, and generator-coverage tests authored in `9f039ec3168427217d63332d4778523d7315e6ee`; not executed.
+- Teaching text in `CommonCoreG1FullGradeStartingContentCorrections.cs` already describes all four source 10-more/less pairs (67, 39, 52, 75), 67 and 99 repeated tens, 45 bidirectional sequences, and teacher-supervised Stage 2 Write Numbers. Independent exit asks for both +10 and −10, while oral reasoning and center gameplay remain teacher-only.
+- Remaining A–C blockers: original accessible teacher/student visual and task-by-task parity has not been independently reconciled beyond indexed excerpts; independently reviewing all authored numeric mode and teaching behavior remains necessary. Consequently `A_C_EXPLICIT_GAP` is retained and lesson 78 must not be declared closed by inference.
