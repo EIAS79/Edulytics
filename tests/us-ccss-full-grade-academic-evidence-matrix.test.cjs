@@ -37,6 +37,7 @@ test('student-authored riddle readiness requires teacher rubric without fake cla
   }
   assert.equal(x.records[95].authoredOriginalWorkRubricRequired,true);
   assert.equal(x.records[142-51].authoredOriginalWorkRubricRequired,true);
+  assert.equal(x.records[144-51].authoredOriginalWorkRubricRequired,true);
   assert.equal(x.records[142-51].potentialNonNumericTeacherEvidence,true);
   assert.equal(x.records[14].authoredOriginalWorkRubricRequired,true);
 });
