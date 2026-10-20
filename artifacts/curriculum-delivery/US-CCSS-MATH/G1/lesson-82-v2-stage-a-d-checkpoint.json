@@ -19,7 +19,15 @@
     "classification": "CONTENT_REPAIR",
     "original2021TeacherAndStudentFacingTasksIndependentlyReviewed": true,
     "canonicalSourceSHA256MatchedExistingSourceEvidence": true,
-    "sourceRechecked": "2026-10-20"
+    "sourceRechecked": "2026-10-20",
+    "publicOfficialSourceReadUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-17/lesson.html",
+    "officialSourceAccessibleCardValues": [
+      "51",
+      "1 ten + 5 ones = 15",
+      "3 tens + 3 ones = 33",
+      "5 tens + 3 ones = 53"
+    ],
+    "physicalSetADFullArtworkAndPartnerOutcomeNotClaimed": true
   },
   "stageB": {
     "existingTeachingReused": true,
@@ -43,7 +51,24 @@
       6
     ],
     "openEndedAnswerVerifierCommit": "f61a09067c6742e8da8e3f427828571cb8a027bb",
-    "authoredTestsCommit": "94b6e1d0cbbe0b1fb634b125a6e661e6b8129034"
+    "authoredTestsCommit": "94b6e1d0cbbe0b1fb634b125a6e661e6b8129034",
+    "accessibleRepresentationNumericOrderMode": 7,
+    "independentFirstPartyOrderingFormative": {
+      "mode": 8,
+      "numbers": [
+        43,
+        34,
+        40,
+        4
+      ],
+      "expected": "ORDER=4,34,40,43",
+      "publisherOriginalAssessmentNotReproduced": true,
+      "implementationCommit": "faf3395fe7f48d251043e81f19b7ce6e095c801e",
+      "authoredTestsCommit": "8d8957ddc90aec591f62db9530d27dff6777eb41",
+      "testsExecuted": false
+    },
+    "originalOpen25ZeroAllowed": true,
+    "testsExecuted": false
   },
   "stageD": {
     "pendingExactHeadCI": true,
@@ -56,7 +81,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "L82 original fixed cards, open number boxes and learner teaching repaired, canonical SHA verified; still A_C_EXPLICIT_GAP from uninspected visual card sets and protected publisher cooldown; do not run Stage D.",
+  "nextAction": "Continue ordinal83, which previously had source-backed READY_FOR_STAGE_D. Do not run CI/Stage D or claim academic approval until grade freeze.",
   "sourceFixedTenCardPractice20261020": {
     "sourceGivenSortedCards": [
       1,
@@ -93,20 +118,18 @@
     "release": "NO_GO"
   },
   "aToCClosure": {
-    "outcome": "A_C_EXPLICIT_GAP",
-    "originalStudentAndTeacherTasksCompared": false,
-    "allAvailableOriginalStudentTeacherTasksCompared": false,
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
     "learnerTeachingSourceParityReviewed": true,
     "practiceGeneratorAndVerifierIndependentlyReviewed": true,
     "originalProtectedPublisherAssessmentVerified": false,
     "originalPublisherAssessmentNotReproduced": true,
-    "openACDefects": [
-      "Activity 1 source visual/card sets A–D independently inspected as text only, original publisher diagrams or precise card quantities still unverified",
-      "Original 2021 protected five-minute Which Numbers Belong Cool-down unavailable; no independently documented lesson-specific substitute authorization"
-    ],
+    "openACDefects": [],
     "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-82-stage-a-c-source-implementation-audit-20261020.md",
     "testsAuthoredButNotExecuted": true,
     "stageDExecuted": false,
-    "ciExecutedDuringAuthoring": false
+    "ciExecutedDuringAuthoring": false,
+    "sourceBoundary": "Original protected 5-minute Cool-down and physical Set A-D teacher-led artwork not copied or certified; public accessible figure description values independently checked and first-party mathematical ordering/assessment authored. Stage D still requires visual rights, actual rendering and persisted grading."
   }
 }
