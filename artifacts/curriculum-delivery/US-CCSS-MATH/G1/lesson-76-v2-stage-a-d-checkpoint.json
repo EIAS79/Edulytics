@@ -23,20 +23,38 @@
       "Student Facing Find the number that makes each equation true. Show your thinking using drawings, numbers, or words. \\(37 + 20 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(60",
       "Student Facing This equation is true. [visual] [visual] <svg aria-"
     ],
-    "sourceSpecificFinding": "Original true/false warm-up and 37+20,60+23,48+50,54+20,30+65; smudged diagram still requires visual evidence",
-    "classification": "CONTENT_REPAIR_VISUAL_REVIEW_PENDING"
+    "sourceSpecificFinding": "Original warm-up and five addition equations verified; accessible Activity 2 image descriptions expose 56+□0=96 and □3+30=74; original protected 2021 Cool-down remains unverified.",
+    "classification": "SOURCE_ACCESSIBLE_TASKS_REVIEWED_PROTECTED_COOLDOWN_UNVERIFIED",
+    "allAccessibleOriginalTeacherStudentTasksCompared": true,
+    "original2021PublisherCoolDownVerbatimVerified": false
   },
   "stageB": {
     "originalRichV2Reused": true,
     "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
     "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
     "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
-    "publisherAssetsRedistributed": false
+    "publisherAssetsRedistributed": false,
+    "version": "us-ccss-g1-u04-l11-original-student-activities-v8",
+    "ownerEdulyticsIndependentExit": "46+30=76"
   },
   "stageC": {
     "existingPracticeFamiliesReused": true,
     "mathEngineChangedForThisLesson": false,
-    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review"
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "scopedModes": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "originalSourceTaskToPracticeParity": "ACCESSIBLE_ORIGINAL_MATH_PLUS_OWNER_APPROVED_INDEPENDENT_ASSESSMENT",
+    "originalMathAndWrongAnswerOraclesAuthored": true,
+    "testsExecuted": false
   },
   "stageD": {
     "newSourceAssertionsPrepared": true,
@@ -51,5 +69,22 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-76-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "Accessible source tasks and independent 46+30 formative A-C closed on source/code review only; original protected Cool-down unverified. Final D/CI frozen. Continue ordinal77."
 }
