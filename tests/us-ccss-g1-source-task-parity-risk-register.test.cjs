@@ -44,7 +44,7 @@ test('all manually triaged original Student Facing task-risk rows use exact orig
 });
 test('source task parity register tracks original authorship and geometry/measurement risks without certifying pupils',()=>{
  const byOrdinal=o=>ledger.rows.find(x=>x.ordinal===o);
- for(const o of [65,119,142,146])assert.match(byOrdinal(o).remainingAcademicTaskParityWork,/authentic|actual|learner|child|group|teacher|partner/i);
+ for(const o of [65,119,142,144,146])assert.match(byOrdinal(o).remainingAcademicTaskParityWork,/authentic|actual|learner|child|group|teacher|partner/i);
  for(const o of [53,74,85,103,104,105,114,116,120,121,123,124,125,126,128,130,132,133,134,135,136,143,145])
    assert.ok(byOrdinal(o)?.remainingAcademicTaskParityWork,'Missing source task decision for '+o);
 });
@@ -68,7 +68,7 @@ test('whole-unaccepted Stage A selection covers exact 90 current unaccepted less
  assert.equal(pending.length,90);
  assert.deepEqual(pending.map(x=>x.ordinal),Array.from({length:90},(_,i)=>i+57));
  assert.deepEqual(cohort.assessmentModes,{
-  DIGITAL_PRACTICE:81,DIGITAL_AND_SOURCE_AUTHORED_TASK:8,SOURCE_AUTHORED_TASK:1});
+  DIGITAL_PRACTICE:80,DIGITAL_AND_SOURCE_AUTHORED_TASK:9,SOURCE_AUTHORED_TASK:1});
  assert.match(cohort.notYetProven,/not evidence that all 90 full original/i);
  assert.ok(ledger.rows.filter(x=>x.ordinal>=57).every(x=>
   x.sourceRequiredTaskInterpretation&&x.originalTeacherActivityHeadings?.length&&
