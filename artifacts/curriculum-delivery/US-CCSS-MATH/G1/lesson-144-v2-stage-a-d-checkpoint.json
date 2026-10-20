@@ -45,5 +45,22 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "crossLessonMathRenderingRepairs20261020": {
+    "evidenceType": "SOURCE_DOMAIN_AND_RENDERING_CODE_REPAIR_NOT_ACADEMIC_APPROVAL",
+    "reviewedSourceMathSubset": "Original learner-authored class book explicitly includes the 100 boundary. Numeric Practice and SVG now support 20–100, with correct 10-tens, zero/ten-trade models; teaching prompt no longer mislabels 100 as two-digit. Authored assignment remains teacher-reviewed, not auto-certified.",
+    "sourceChanges": [
+      "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit8ReviewQuestions.cs",
+      "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1PlaceValue.cs"
+    ],
+    "negativeControlsAuthoredAt": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit8ReviewPracticeTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1NewSourcePlaceValueVisualTests.cs"
+    ],
+    "correctnessOutcome": "SOURCE_BOUNDARY_CODE_REPAIRED_TESTS_AUTHORED_NOT_EXECUTED_AT_FROZEN_SHA",
+    "actualAuthenticatedPracticePersistence": "PENDING",
+    "originalStudentTaskToEffectiveTeachingCompleteParity": "NOT_CLAIMED",
+    "finalDotNetAndProtectedCI": "DEFERRED_UNTIL_WHOLE_GRADE_FREEZE",
+    "internalAcceptance": "NOT_CLAIMED"
+  }
 }

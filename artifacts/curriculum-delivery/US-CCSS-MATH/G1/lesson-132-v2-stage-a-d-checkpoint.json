@@ -46,5 +46,21 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "crossLessonMathRenderingRepairs20261020": {
+    "evidenceType": "SOURCE_DOMAIN_AND_RENDERING_CODE_REPAIR_NOT_ACADEMIC_APPROVAL",
+    "reviewedSourceMathSubset": "Original source SAME/DIFFERENT analog/digital card comparison now rejects contradictory DIFFERENT claims when both hours match; aligns the renderer with the existing engine parameter validator.",
+    "sourceChanges": [
+      "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit7GeometryTimeQuestions.cs",
+      "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1FullGradeClock.cs"
+    ],
+    "negativeControlsAuthoredAt": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeAnalogClockSourceVisualTests.cs"
+    ],
+    "correctnessOutcome": "SOURCE_BOUNDARY_CODE_REPAIRED_TESTS_AUTHORED_NOT_EXECUTED_AT_FROZEN_SHA",
+    "actualAuthenticatedPracticePersistence": "PENDING",
+    "originalStudentTaskToEffectiveTeachingCompleteParity": "NOT_CLAIMED",
+    "finalDotNetAndProtectedCI": "DEFERRED_UNTIL_WHOLE_GRADE_FREEZE",
+    "internalAcceptance": "NOT_CLAIMED"
+  }
 }
