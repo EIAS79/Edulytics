@@ -21,7 +21,10 @@ test('ONE whole-grade queue includes ALL 96 ordinals 51-146 with no five-lesson 
   assert.equal(w.items[95].lessonCode,'PED:US-CCSS-MATH:G1:U08:L10');
   assert.equal(w.historic.count,50);
   assert.equal(w.historic.policy,'REFERENCE_ONLY_NO_RETEST');
-  assert.equal(w.status,ledger.release==='NO_GO'?'NO_GO':w.status);
+  const complete=ledger.newLessons.every(x=>x.status==='INTERNALLY_ACCEPTED');
+  assert.equal(w.status,complete?'ELIGIBLE_FOR_SEPARATE_FULL_GRADE_EVIDENCE_GATE':'NO_GO');
+  assert.equal(w.nextGradeAllowed,false);
+  assert.equal(ledger.release,'NO_GO');
   const start=ledger.newLessons.find(x=>x.status==='NOT_STARTED')?.ordinal??147;
   assert.equal(w.implementation.nextUnstartedOrdinal,start);
   assert.equal(w.academicVerification.firstPendingOrdinal,ledger.nextOrdinal);
@@ -100,7 +103,9 @@ test('whole-grade resumption preserves existing checkpoints rather than restarti
   assert.ok(w.items.filter(x=>!x.hasV2Checkpoint&&x.needsNewAcademicEvidence).every(x=>
     x.resumptionClass==='REUSE_INDEXED_SOURCE_AND_EXISTING_CANDIDATE_THEN_COMPLETE_A_D'));
   assert.match(w.sourceReviewResumption.note,/NOT an academic acceptance/);
-  assert.equal(w.status,'NO_GO');
+  assert.equal(w.status,w.academicVerification.pendingCount===0?
+    'ELIGIBLE_FOR_SEPARATE_FULL_GRADE_EVIDENCE_GATE':'NO_GO');
+  assert.equal(w.nextGradeAllowed,false);
 });
 
 test('checkpoint presence cannot manufacture acceptance, suppress missing work or silently add historical lessons',()=>{
