@@ -189,7 +189,7 @@ jobs:
     name: g1-full-grade-real-acceptance
     # Final Grade 1 release PR is named differently from the generic full-grade family.
     # Include this exact PR branch while preserving the same exact-SHA 96/96 release gate.
-    if: (github.event_name == 'pull_request' && github.event.pull_request.draft == false && (startsWith(github.head_ref, 'curriculum/full-grade-') || github.head_ref == 'curriculum/g1-continuous-authoring-final-ci-20261019')) || (github.event_name == 'workflow_dispatch' && inputs.candidate_sha != '')
+    if: (github.event_name == 'pull_request' && github.event.pull_request.draft == false && (startsWith(github.head_ref, 'curriculum/full-grade-') || github.head_ref == 'curriculum/g1-continuous-authoring-final-ci-20261019' || github.head_ref == 'hotfix/g1-json-metadata-predecessor-u04l21-20261021')) || (github.event_name == 'workflow_dispatch' && inputs.candidate_sha != '')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
