@@ -130,7 +130,7 @@
       "contentPresent": true,
       "isSupporting": false,
       "contentPackBodySha256": "d5112c52440a0b679890f5b03ab1e85ae54eb6f21d1877dfa95ea6215c8749bd",
-      "aCStatus": "A_C_PENDING",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageDStatus": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -149,7 +149,7 @@
       "contentPresent": true,
       "isSupporting": false,
       "contentPackBodySha256": "069597e84a1a66f69940167ea431d2926cf83a2e214872693c6a270938d10720",
-      "aCStatus": "A_C_PENDING",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageDStatus": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -168,7 +168,7 @@
       "contentPresent": true,
       "isSupporting": false,
       "contentPackBodySha256": "f7e2c3f27b641e5ebbb9f33e3a8b5544c51f25e4a4b4e14e1d2cc1d0400fa52e",
-      "aCStatus": "A_C_PENDING",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageDStatus": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -3044,5 +3044,7 @@
     "Embedded content-pack reviewEvidence narrative says 143 canonical included and 3 excluded, but the current JSON arrays contain 146 lessons, all with OutcomeCodes and isSupporting=false; that historical prose is not independent certification and requires reconciliation.",
     "Lesson 1 source-lesson HTML compared; print student-task PDF and Cool-down remain inaccessible."
   ],
-  "existingGrade2HistoricalApprovals": "NOT_AUDITED_NO_CLAIM"
+  "existingGrade2HistoricalApprovals": "NOT_AUDITED_NO_CLAIM",
+  "currentAuthoringCursor": 6,
+  "lessonStatusAuthority": "full-grade-progress.json plus per-lesson checkpoints; this manifest only mirrors A-C status"
 }
