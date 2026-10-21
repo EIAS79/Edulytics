@@ -12,46 +12,67 @@
   ],
   "edition": "IM 2021 1st Edition",
   "stageA": {
-    "status": "ORIGINAL_PUBLIC_TEACHER_HTML_REVIEWED_RESTRICTED_SOURCE_GAPS",
-    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-7/preparation.html",
-    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-7/lesson.html",
-    "originalActivities": [
-      "Warm-up Notice and Wonder on transportation pictures",
-      "Activity 1 genuine classmates report their own way of arriving at school today, initially arranged without imposed grouping",
-      "Activity 2 pupils group and re-represent the same observations with pictures, tallies or symbols, then compare representations"
+    "status": "COMPLETE_2021_PUBLIC_ORIGINAL_TEACHER_STUDENT_ACTIVITIES_AND_INDEPENDENT_COOLDOWN",
+    "originalSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-7/lesson.html",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-7/preparation.html",
+    "lessonTitle": "Collect and Represent Data",
+    "warmup": "Notice and Wonder transport image types: walk/car/train/school bus; pair discussion",
+    "activity1": "Students truthfully identify their own travel mode today, create an initially freely arranged class display; teacher does not enforce grouping at this point",
+    "activity2": "Reorganize SAME actual responses into a clearer student-authored grouped visual, pictures, tally marks, category names; compare two representations",
+    "synthesis": "Teacher facilitates comparison of displays and explaining that grouped labels make counts clearer",
+    "sourceCoolDown": "Publisher Organize Data restricted; independently authored Edulytics real-observation regrouping/interpretation check, not copied",
+    "officialOutcomeCodes": [
+      "CCSS:2.MD.D.10"
     ],
-    "studentPrintPdf": "NOT_VERIFIED",
-    "educatorRestrictedMaterials": "NOT_VERIFIED",
-    "classroomEvidence": "NOT_OBSERVED"
+    "visualRights": "Independent pictograms and CSS response chips only, no publisher images",
+    "authenticDataRule": "Real anonymous classroom data supplied by learners/teacher only; no generated classmates or fabricated categories",
+    "originalPrintLayoutNotReproduced": true
   },
   "stageB": {
-    "status": "STRICT_PRIOR_PROSE_AND_SOURCE_LOCKED_REPAIR_AUTHORED_NOT_EXECUTED",
-    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1CentersAndRealDataCorrections.cs",
-    "dependencies": [
-      "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
-      "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs"
-    ],
-    "guard": "Original canonical body SHA, exact source URL, official standards in original order, original English teaching fields and exact previous content version"
+    "status": "COMPLETE_SOURCE_ID_AND_PREDECESSOR_GUARDED_REAL_DATA_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1CentersAndRealDataCorrections.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentRichV2Reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceAlignment": "Initial unorganized genuine class responses deliberately permitted, authentic dataset not simulated, student's second display reorganizes SAME observations, classroom discussion rubric preserved",
+    "sourceGuard": "original source URL/body SHA, ordered official outcome codes and old learner prose exactly verified before replacing"
   },
   "stageC": {
-    "status": "TEACHER_ASSESSED_ORIGINAL_ACTIVITY_NO_DIGITAL_NUMERIC_OVERRIDE_CLAIMED",
-    "registeredDigitalFamilies": [],
-    "constraints": "Authentic student-reported survey answers, group-created visual representations, collaboration and real classroom observations require teacher evaluation; no invented classmates or mock dataset can prove completion",
+    "status": "COMPLETE_AUTHENTIC_DATA_ENTRY_ORIGINAL_COMPARISON_COOLDOWN_AND_TEACHER_RUBRIC",
+    "firstPartyDataContract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1SeventhLessonClassData.cs",
+    "teacherRubric": "Real classroom survey, child-designed representation and gallery walk explanations require teacher not just numerical marking",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson7ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson7Activities/Index.cshtml",
+    "lessonReaderEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "originalSourceActivityLearning": "Warm-up transport categories, original unorganized responses, grouped pictograph with same counts, visual comparison",
+    "authoredCoolDown": "Real classroom input drives exact group counts, total participants, bus category, absolute car vs train comparison; missing data not silently mocked",
+    "privacy": "No names accepted, only categories and no official mark/response database write by companion activity",
     "testsWritten": [
-      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1CentersAndRealDataCorrectionsTests.cs"
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1CentersAndRealDataCorrectionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1SeventhLessonClassDataTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson7ActivitiesWebContractTests.cs"
     ],
-    "execution": "NOT_EXECUTED"
+    "testExecution": "NOT_EXECUTED_STAGE_D",
+    "independentVisuals": "Emoji pictograms and grouped CSS symbols, no original publisher imagery"
   },
   "closure": {
-    "status": "A_C_EXPLICIT_GAP",
-    "readyForStageD": false,
-    "stageD": "NOT_STARTED",
-    "academicApproval": "NOT_ASSERTED",
-    "outstanding": [
-      "Student task print/download source not independently checked",
-      "Teacher response/Cool-down may be educator-restricted",
-      "Physical student-authored and classroom performance not falsely auto-certified",
-      "Stage D technical test evidence not collected"
-    ]
-  }
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "sourceAccess": "PUBLIC_TEACHER_STUDENT_TEXT_READ_AND_ORIGINAL_EDULYTICS_ASSESSMENT",
+    "actualStudentPerformance": "NOT_CLAIMED_AS_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "humanAcademicApproval": "NOT_ASSERTED",
+    "originalRestrictedCoolDown": "INDEPENDENT_ORIGINAL_EDULYTICS_REPLACEMENT",
+    "release": "NO_GO",
+    "merge": false,
+    "renderDeploy": false,
+    "note": "Authoring complete; Stage D separate verification of compilation, student view, tests, acceptance and release policy."
+  },
+  "nextAction": "BEGIN_GRADE2_U01_L08_STRICTLY_AFTER_ORDINAL7_A_C_COMPLETED"
 }
