@@ -82,6 +82,17 @@ def syntactically_valid_wrong_answer(correct, family=None):
             "ADD":"SUBTRACT","SUBTRACT":"ADD",
         }
         replacement=categories.get(value.upper())
+        if key.upper()=="AGREE" and family=="usccss.g1.u04.l07.read.two_digit":
+            # The original learner-facing question names only Clare and Diego.
+            if value.upper() not in ("CLARE","DIEGO"):
+                raise ValueError("Unexpected original agreement claimant")
+            replacement="CLARE" if value.upper()=="DIEGO" else "DIEGO"
+        if key.upper()=="CURVED" and family=="usccss.g1.u07.l03.sort_flat_shapers":
+            # A triangle is a genuine available source-category shape, but
+            # incorrectly categorizing it as the curved shape must score zero.
+            if value.upper()!="CIRCLE":
+                raise ValueError("Unexpected original curved-shape answer")
+            replacement="TRIANGLE"
         if key.upper()=="SHORTER" and value.upper() in ("MAI","CLARE","EQUAL"):
             # Original U06 L03 compares the two school routes; inventing
             # GREATER is not a well-formed answer to a shorter-walk question.
@@ -115,6 +126,10 @@ def syntactically_valid_wrong_answer(correct, family=None):
                 replacement=",".join(reversed(labels))
             else:
                 raise ValueError("Unexpected source three-strip order format")
+        if key.upper()=="MATCH" and family=="usccss.g1.u04.l08.match.tens_ones_expression" and value.upper()=="J,S":
+            # Real source cards J and S show 32; card E shows 23. Include E
+            # instead of S to form a well-formed two-card but wrong selection.
+            replacement="J,E"
         if key.upper()=="MATCH" and value.upper() in ("A","B","C"):
             # Original U04 L02 asks which one of THREE written number-name
             # cards matches the base-ten representation: a single A/B/C,
@@ -358,6 +373,20 @@ if __name__=="__main__":
                 wrong,
                 "DECISION=AGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50")
             self.assertNotEqual(wrong,correct)
+
+        def test_source_named_clare_diego_and_matching_card_distractors(self):
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "AGREE=DIEGO;TENS=8;ONES=6;NUMBER=86;NAME=eighty-six",
+                "usccss.g1.u04.l07.read.two_digit"),
+                "AGREE=CLARE;TENS=8;ONES=6;NUMBER=86;NAME=eighty-six")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "MATCH=J,S;NUMBER=32;OTHER=23",
+                "usccss.g1.u04.l08.match.tens_ones_expression"),
+                "MATCH=J,E;NUMBER=32;OTHER=23")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "CURVED=CIRCLE;THREE_SIDES=TRIANGLE;FOUR_SIDES=SQUARE,RECTANGLE",
+                "usccss.g1.u07.l03.sort_flat_shapers"),
+                "CURVED=TRIANGLE;THREE_SIDES=TRIANGLE;FOUR_SIDES=SQUARE,RECTANGLE")
 
         def test_original_u07_l05_triangle_cards_keep_three_distinct_source_labels(self):
             family="usccss.g1.u07.l05.defining_triangles"
