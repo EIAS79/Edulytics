@@ -131,6 +131,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics twenty-cube activities">
+            <h2>Edulytics · twenty-cube activities and Cool-down</h2>
+            <p>Work with two groups of ten, find missing parts of twenty,
+            test addition/subtraction equations, and explain your strategy
+            using original Edulytics diagrams.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson3Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open twenty-cube activities and Cool-down
+            </a>
+        </section>
+    }
+
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
@@ -152,7 +169,8 @@
                within-ten strategy teaching. Keep V2 and expose the reviewed
                learner concepts/examples/steps in full before authored activities. *@
             @if (Model.LessonCode is "PED:US-CCSS-MATH:G2:U01:L01" or
-                    "PED:US-CCSS-MATH:G2:U01:L02")
+                    "PED:US-CCSS-MATH:G2:U01:L02" or
+                    "PED:US-CCSS-MATH:G2:U01:L03")
             {
                 <section class="lesson-source-aligned-activities"
                          aria-label="Grade 2 source-aligned mathematical teaching">
