@@ -25,7 +25,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                         ?new[]{(Length:a,Label:"A"),(Length:b,Label:"B"),(Length:c,Label:"C")}.OrderBy(x=>x.Length)
                         :new[]{(Length:a,Label:"A"),(Length:b,Label:"B"),(Length:c,Label:"C")}.OrderByDescending(x=>x.Length))
                     .Select(x=>x.Label)),
-            1=>$"LONGER={Relation(a,b,"A","B")}",
+            1=>mode>=4?$"RESULT={a+b}":$"LONGER={Relation(a,b,"A","B")}",
             2=>mode switch
             {
                 0=>$"LONGER={Relation(a,b,"A","B")}",
@@ -40,7 +40,8 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 $"SMALL_UNITS={a*2}",
             7=>$"TENS={a/10};ONES={a%10};TOTAL={a}",
             8=>$"NUMBER={a}",
-            9=>mode==4?
+            9=>mode>=5?$"TRUE={(mode is 6 or 7?"YES":"NO")};ACTUAL={b}":
+                mode==4?
                 $"ACTUAL={a};ESTIMATE={b};DIFFERENCE={Math.Abs(a-b)};DIRECTION={(b>a?"HIGH":b<a?"LOW":"EXACT")}":
                 mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             10=>mode switch {4=>$"TOTAL={a+b}",5=>$"TOTAL={a+b+c}",6=>$"DIFFERENCE={a-b}",7=>$"ELENA={b-a}",_=>$"DIFFERENCE={Math.Abs(a-b)}"},
@@ -65,6 +66,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 mode%2==0?$"EQUATION={a}-{b}={a-b}":$"EQUATION={a-b}+{b}={a}",
             15=>mode==4?$"TENS={(a-a%10)/10};ONES={a%10};TOTAL={a}":
                 mode==5?$"FIRST={65+20+1};SECOND={65+21};EQUAL={(65+20+1==65+21?"YES":"NO")}":
+                mode>=6?$"RESULT={(mode==6?65+20:mode==7?85+1:mode==8?65+20+1:65+21)}":
                 mode%2==0?$"RESULT={a+b}":$"LENGTH={a}",
             16=>$"DIFFERENCE={b}",
             _=>throw new InvalidOperationException("Unsupported source measurement family")
@@ -92,7 +94,8 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 _=>$"ANSWER={(mode%2==0?"YES":"NO")}"
             },
             6=>mode==4?$"TRIANGLES={2*3};TRAPEZOIDS={6/3};SAME_OUTLINE=YES":"PARTS=2",
-            7=>mode==4?$"BOTTOM={1+1};TOP={1};TOTAL_CUBES={1+1+1}":
+            7=>mode>=5?$"RESULT={a+b+0}":
+                mode==4?$"BOTTOM={1+1};TOP={1};TOTAL_CUBES={1+1+1}":
                 mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             8=>mode==4?$"CIRCLE_PART=HALF;CIRCLE_PIECES={2};SQUARE_PART=HALF;SQUARE_PIECES={2}":
                 mode==5?$"CIRCLE_PART=FOURTH;CIRCLE_PIECES={2*2};SQUARE_PART=FOURTH;SQUARE_PIECES={2*2}":
@@ -101,12 +104,19 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 (mode==2?"SORT=UNEQUAL;PIECES=2":"SORT=EQUAL;PIECES=4"),
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
             11=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
-            12=>mode<=1?$"TIME={a}:00":$"SAME={(mode==2?"YES":"NO")};TIME={a}:00",
+            12=>mode==4?$"TIME={a}:00":
+                mode<=1?$"TIME={a}:00":$"SAME={(mode==2?"YES":"NO")};TIME={a}:00",
             13=>mode==4?"ORDER=C,A,B":
                 mode<=1?$"MINUTES=30;HOUR={a}":
                 $"COLOR={(mode==2?"BLUE":"RED")};TIME={a}:{(mode==2?"00":"30")};WORDS={(mode==2?ClockWord(a)+"_oclock":"half_past_"+ClockWord(a))}",
-            14=>mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
-            15=>$"TIME={a}:{(mode%2==0?"00":"30")}",
+            14=>mode==4?$"TIME={a}:30":
+                mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
+            15=>mode switch
+            {
+                4=>"RESULT=40",5=>"RESULT=41",6=>"RESULT=46",7=>"RESULT=56",
+                8=>"TIME=6:00;CORRECT=DIEGO",
+                _=>$"TIME={a}:{(mode%2==0?"00":"30")}"
+            },
             16=>mode%2==0?$"RESULT={a}":"SHAPE=RECTANGLE",
             _=>throw new InvalidOperationException("Unsupported source geometry/time family")
         };
@@ -117,10 +127,14 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
         return i switch
         {
             0=>$"RESULT={a+b}",
-            1=>mode<=1?$"LEFT={a};WHOLE={a+b}":
+            1=>mode>=9?$"MISSING={(mode==9?3:mode==10?5:mode==11?3:mode==12?6:4)}":
+                mode==8?"MISSING_ADD=5;MISSING_SUB=4":
+                mode>=4?$"RESULT={(mode==4||mode==5?9:mode==6?5:4)}":
+                mode<=1?$"LEFT={a};WHOLE={a+b}":
                 mode==2?$"ADD={a}+{b}={a+b};SUB={a+b}-{b}={a}":
                 $"MISSING_ADD={b};MISSING_SUB={a}",
-            2=>$"RESULT={(mode%2==0?a+b:a-b)}",
+            2=>mode==8?"ADD=5+9=14;SUB=14-8=6":
+                $"RESULT={(mode%2==0?a+b:a-b)}",
             3=>mode switch
             {
                 4=>$"CHANGE={15-8};FINAL={8+(15-8)}",
