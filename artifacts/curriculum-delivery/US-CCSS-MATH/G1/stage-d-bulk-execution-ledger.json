@@ -4,7 +4,7 @@
   "repository": "EIAS79/Edulytics",
   "branch": "curriculum/g1-continuous-authoring-final-ci-20261019",
   "baselineHead": "20ee26c04acce16df3805e0cdd918f9fb19fb425",
-  "lastKnownCodeCandidate": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+  "lastKnownCodeCandidate": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
   "scope": {
     "first": 51,
     "last": 146,
@@ -27,40 +27,40 @@
       }
     ]
   },
-  "phase": "D_SIX_HISTORIC_DIGITAL_LESSONS_REVALIDATED_NEXT_57_90_APPROVAL_PENDING",
-  "lastContiguousDVerifiedOrdinal": 56,
-  "nextOrdinalRequiringDVerification": 57,
+  "phase": "D_SOURCE_SCOPED_AUTHENTICATED_57_64_VERIFIED_NEXT_65_SOURCE_AUTHORED_PENDING",
+  "lastContiguousDVerifiedOrdinal": 64,
+  "nextOrdinalRequiringDVerification": 65,
   "currentBatch": "D1",
   "gradeRelease": "NO_GO",
   "ci": {
-    "candidateSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-    "build": "PASS_LOCAL_FULL_SOLUTION_BUILD_ON_96eb_WITH_ZERO_WARNINGS_AND_ERRORS;PASS_15_GITHUB_PR_WORKFLOWS_ON_SAME_TREE",
-    "unit": "PASS_LOCAL_UNFILTERED_EDULYTICS_TESTS_3324_OF_3324_AT_EXACT_96eb;PASS_GITHUB_ORIGINAL_MATH_433_OF_433_AT_MATCHING_PR_MERGE_TREE",
-    "integration": "PASS_GITHUB_DISPOSABLE_POSTGRES_TWO_SCHOOL_HTTPS",
-    "authenticatedE2e": "PASS_GITHUB_96_HTML_OF_96;95_DIGITAL_CORRECT_MALFORMED_WELLFORMED_WRONG_PERSISTED;1_SOURCE_ONLY",
-    "finalCi": "PASS_PR_TECHNICAL_WORKFLOWS_15_OF_15;REAL_ACADEMIC_RELEASE_GATE_SKIPPED_DRAFT",
+    "candidateSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+    "build": "PASS_LOCAL_FULL_SOLUTION_RELEASE_0_WARNINGS_0_ERRORS_AT_AF1F4F3E_AND_15_GITHUB_CI_WORKFLOWS",
+    "unit": "PASS_LOCAL_UNFILTERED_3324_OF_3324_AT_AF1F4F3E",
+    "integration": "PASS_GITHUB_DISPOSABLE_TWO_SCHOOL_HTTPS_G1_57_64_REAL_RENDER_SOURCE_FRAGMENTS",
+    "authenticatedE2e": "PASS_GITHUB_96_HTML_AND_95_GRADED_PERSISTED_AT_AF1F4F3E;25_SELECTED_SOURCE_TEXT_FRAGMENT_CHECKS_ON_57_64",
+    "finalCi": "PASS_15_PR_TECHNICAL_WORKFLOWS_ON_AF1F4F3E;FULL_ACADEMIC_RELEASE_GATE_SKIPPED_DRAFT;NO_GO",
     "workflowRunIds": [
-      39576590547,
-      39576590682,
-      39576590554,
-      39576590677,
-      39576590704,
-      39576590582,
-      39576590584,
-      39576590719,
-      39576590678,
-      39576590558,
-      39576590723,
-      39576590716,
-      39576590540,
-      39576591130,
-      39576590539
+      39584520294,
+      39584520403,
+      39584520313,
+      39584520371,
+      39584520482,
+      39584520462,
+      39584520544,
+      39584520811,
+      39584520555,
+      39584520932,
+      39584520404,
+      39584520278,
+      39584520516,
+      39584520297,
+      39584520517
     ],
-    "note": "Full solution Release build zero warnings/errors and unfiltered 3324 xUnit pass at exact 96eb. All 15 GitHub PR workflows success on corresponding merge SHA 3b977; git trees identical 9f565b. G1 math Github 433/433. 96/96 HTTPS learner HTML, 95 graded persisted (correct/malformed/well-formed incorrect) including 10 mixed authored; source-only ordinal65 no numeric grade. Stage D scientific math and technical test evidence is complete for tested scope; release gate is SKIPPED and teacher academic rights/UAT signoffs are NOT provided, NO_GO remains.",
+    "note": "Revalidated entire 3324 unfiltered .NET suite and 15/15 real GitHub PR workflows on code head af1f4f3e. E2E 96/96 HTML and 95/95 grading, 25 source-specific original task phrases in 57-64; physical classroom teacher-authoring and license signoff not claimed; academic gate skipped (Draft PR).",
     "localDevice": "Our-CS",
     "localCheckout": "D:\\Edulytics-G1-StageD-20261021",
     "dotnetSdk": "10.0.200",
-    "localTrx": "D:\\Edulytics-G1-StageD-20261021\\artifacts\\stage-d-test-results\\all-edulytics-tests-current-head.trx",
+    "localTrx": "D:\\Edulytics-G1-StageD-20261021\\artifacts\\stage-d-test-results\\g1-all-tests-rich-source-bridge.trx",
     "localCommands": [
       "dotnet build Edulytics.sln --configuration Release --verbosity quiet --maxcpucount:2 --no-restore",
       "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --no-restore --filter 'FullyQualifiedName~UsCcssG1'"
@@ -72,7 +72,7 @@
       "skipped": 0
     },
     "testRunScope": "Unfiltered full Edulytics.Tests project; 3324 xUnit cases passed on exact 96eb head code SHA. Separate 96-row authenticated HTTPS evidence on exact matching PR merge tree; full-grade academic release acceptance skipped due draft and NO_GO.",
-    "testEvidenceCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+    "testEvidenceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
     "knownFixCommits": [
       "a4d1b34020bdc4eca9fee395ce3aefa2e232666c",
       "8727fc80c32d6b6ee162f6f9639183ba6ad86317",
@@ -120,12 +120,12 @@
     "testedPullRequestMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
     "pullRequest": 569,
     "httpEvidence": {
-      "runId": 39576590539,
-      "jobId": 119143509119,
-      "artifactId": 12335181048,
+      "runId": 39584520462,
+      "jobId": 119169988430,
+      "artifactId": 12338748797,
       "artifactName": "g1-96-original-source-practice-https-candidate-not-academic-clearance",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
-      "matchingHeadSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+      "matchingHeadSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
       "identicalTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "validatedRows": 96,
       "uniqueOrdinals": 96,
@@ -152,7 +152,21 @@
         144,
         146
       ],
-      "note": "Authored work is NOT real pupil material; 95 self-consistency+grading proofs are technical, not independent academic math approval."
+      "note": "Authored work is NOT real pupil material; 95 self-consistency+grading proofs are technical, not independent academic math approval.",
+      "sourceScopedLearnerOriginalTaskTextVerified": 8,
+      "sourceScopedFragmentAssertionsVerified": 25,
+      "sourceScopedOrdinals": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "sourceScopedLimit": "Selected source task fragments, not every classroom activity or a real teacher approval",
+      "scope": "DISPOSABLE_HTTPS_STUDENT_AUTHENTICATED"
     },
     "mathEvidence": {
       "runId": 39576590678,
@@ -173,20 +187,19 @@
     "sourceOnlyOrdinal": 65,
     "allDotnetTests": {
       "status": "PASS",
-      "candidateSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+      "candidateSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
       "device": "Our-CS",
       "os": "Windows",
       "dotnetSdk": "10.0.200",
-      "command": "dotnet build Edulytics.sln -c Release -v quiet -m:2 --no-restore && dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --logger 'trx;LogFileName=all-edulytics-tests-current-head.trx' --results-directory artifacts/stage-d-test-results -v quiet",
-      "trxPath": "D:\\Edulytics-G1-StageD-20261021\\artifacts\\stage-d-test-results\\all-edulytics-tests-current-head.trx",
+      "command": "dotnet build Edulytics.sln -c Release --no-restore -v quiet -m:2 && dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --logger 'trx;LogFileName=g1-all-tests-rich-source-bridge.trx' --results-directory artifacts/stage-d-test-results -v quiet",
+      "trxPath": "D:\\Edulytics-G1-StageD-20261021\\artifacts\\stage-d-test-results\\g1-all-tests-rich-source-bridge.trx",
       "total": 3324,
       "passed": 3324,
       "failed": 0,
       "skipped": 0,
       "buildWarnings": 0,
       "buildErrors": 0,
-      "completed": "2026-10-21",
-      "source": "Actual isolated matching git code candidate; full unfiltered .NET suite in one project (Edulytics.Tests)."
+      "source": "Actual full unfiltered test project at exact code HEAD af1f4f3e"
     },
     "currentGradeGateSixValidAt": "13fce8b93801887db7d6e9573fe3d398fd468179",
     "fullGradeGateNewAccepted": 6,
@@ -200,7 +213,7 @@
       "note": "Historical V1 A-D acceptance of exact old candidate; current Stage D verification still unrun at new branch HEAD."
     }
   },
-  "nextAction": "Start lesson 57 original-V1 academic internal acceptance; keep order 57..146. Build/3324/15 github workflows/96 HTTPS rows already passed: reuse exact SHA and source-specific proof; do NOT repeat redundant CI. For 57–64 perform source-specific authenticated learner teaching/rights/accessibility assessment (HTML hashes alone are insufficient) then immutable exact-current source and math proof registration. For 65,74,119,123–126,135,142,144,146 preserve source-authored rubric requirements and never pretend classroom work happened. NO_GO until all acceptance evidence supports 96/96 and owner UAT.",
+  "nextAction": "Lesson65 source-authored pupil-story work cannot be fabricated: mark teacher review pending. Continue 66–82 independently in ordinal order using source-specific authenticated lesson body checks and math CI evidence; keep grade release NO_GO. 57–64 are D_VERIFIED digital-only and academic approvals remain pending.",
   "lessons": [
     {
       "ordinal": 51,
@@ -362,193 +375,281 @@
       "ordinal": 57,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_TESTS_PASSED",
-      "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-      "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
-      "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
-      "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
+      "stageDStatus": "D_VERIFIED",
+      "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+      "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
+      "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
+      "authenticatedE2eResult": "PASS_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG_GRADED_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "academicApproval": "APPROVAL_PENDING_TEACHER_SOURCE_RIGHTS_AND_UAT",
       "workflowRuns": [
         39576590539,
-        39576590678
+        39576590678,
+        39584520462
       ],
       "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "authenticatedHtmlResult": "PASS_SOURCE_SPECIFIC_BODY_AUTHENTICATED_HTTPS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 57,
       "assessmentMode": "DIGITAL_PRACTICE",
-      "furtherSourceSpecificDNeeded": "Authenticated 96-row HTML hash confirms the correct lesson page and first-party Practice family, but it does not independently prove every original 2021 source activity is rendered in the current learner BODY; verify source-specific content and visual/accessibility/rights boundary before internally accepting."
+      "furtherSourceSpecificDNeeded": "Teacher/classroom observed original-source actions, rights and full viewport review remain pending; sampled 2021 task text and math verified technically.",
+      "sourceBodyEvidence": {
+        "runId": 39584520462,
+        "jobId": 119169988430,
+        "artifactId": 12338748797,
+        "originalSourceBodyFragmentsVerified": 4,
+        "artifactRowOrdinal": 57,
+        "evidenceScope": "Full source goal previously authored at A-C; selected genuine source activity strings verified in live authenticated learner rendered HTML while preserving Rich V2 visuals; technical D only, not publisher artwork or pupil work",
+        "testedSourceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262"
+      },
+      "verificationScope": "INTERNAL_DIGITAL_STAGE_D_SCOPED_TECHNICAL_ONLY_NOT_GRADE_RELEASE"
     },
     {
       "ordinal": 58,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_TESTS_PASSED",
-      "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-      "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
-      "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
-      "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
+      "stageDStatus": "D_VERIFIED",
+      "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+      "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
+      "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
+      "authenticatedE2eResult": "PASS_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG_GRADED_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "academicApproval": "APPROVAL_PENDING_TEACHER_SOURCE_RIGHTS_AND_UAT",
       "workflowRuns": [
         39576590539,
-        39576590678
+        39576590678,
+        39584520462
       ],
       "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "authenticatedHtmlResult": "PASS_SOURCE_SPECIFIC_BODY_AUTHENTICATED_HTTPS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 58,
       "assessmentMode": "DIGITAL_PRACTICE",
-      "furtherSourceSpecificDNeeded": "Authenticated 96-row HTML hash confirms the correct lesson page and first-party Practice family, but it does not independently prove every original 2021 source activity is rendered in the current learner BODY; verify source-specific content and visual/accessibility/rights boundary before internally accepting."
+      "furtherSourceSpecificDNeeded": "Teacher/classroom observed original-source actions, rights and full viewport review remain pending; sampled 2021 task text and math verified technically.",
+      "sourceBodyEvidence": {
+        "runId": 39584520462,
+        "jobId": 119169988430,
+        "artifactId": 12338748797,
+        "originalSourceBodyFragmentsVerified": 3,
+        "artifactRowOrdinal": 58,
+        "evidenceScope": "Full source goal previously authored at A-C; selected genuine source activity strings verified in live authenticated learner rendered HTML while preserving Rich V2 visuals; technical D only, not publisher artwork or pupil work",
+        "testedSourceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262"
+      },
+      "verificationScope": "INTERNAL_DIGITAL_STAGE_D_SCOPED_TECHNICAL_ONLY_NOT_GRADE_RELEASE"
     },
     {
       "ordinal": 59,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_TESTS_PASSED",
-      "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-      "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
-      "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
-      "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
+      "stageDStatus": "D_VERIFIED",
+      "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+      "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
+      "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
+      "authenticatedE2eResult": "PASS_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG_GRADED_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "academicApproval": "APPROVAL_PENDING_TEACHER_SOURCE_RIGHTS_AND_UAT",
       "workflowRuns": [
         39576590539,
-        39576590678
+        39576590678,
+        39584520462
       ],
       "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "authenticatedHtmlResult": "PASS_SOURCE_SPECIFIC_BODY_AUTHENTICATED_HTTPS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 59,
       "assessmentMode": "DIGITAL_PRACTICE",
-      "furtherSourceSpecificDNeeded": "Authenticated 96-row HTML hash confirms the correct lesson page and first-party Practice family, but it does not independently prove every original 2021 source activity is rendered in the current learner BODY; verify source-specific content and visual/accessibility/rights boundary before internally accepting."
+      "furtherSourceSpecificDNeeded": "Teacher/classroom observed original-source actions, rights and full viewport review remain pending; sampled 2021 task text and math verified technically.",
+      "sourceBodyEvidence": {
+        "runId": 39584520462,
+        "jobId": 119169988430,
+        "artifactId": 12338748797,
+        "originalSourceBodyFragmentsVerified": 3,
+        "artifactRowOrdinal": 59,
+        "evidenceScope": "Full source goal previously authored at A-C; selected genuine source activity strings verified in live authenticated learner rendered HTML while preserving Rich V2 visuals; technical D only, not publisher artwork or pupil work",
+        "testedSourceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262"
+      },
+      "verificationScope": "INTERNAL_DIGITAL_STAGE_D_SCOPED_TECHNICAL_ONLY_NOT_GRADE_RELEASE"
     },
     {
       "ordinal": 60,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_TESTS_PASSED",
-      "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-      "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
-      "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
-      "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
+      "stageDStatus": "D_VERIFIED",
+      "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+      "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
+      "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
+      "authenticatedE2eResult": "PASS_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG_GRADED_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "academicApproval": "APPROVAL_PENDING_TEACHER_SOURCE_RIGHTS_AND_UAT",
       "workflowRuns": [
         39576590539,
-        39576590678
+        39576590678,
+        39584520462
       ],
       "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "authenticatedHtmlResult": "PASS_SOURCE_SPECIFIC_BODY_AUTHENTICATED_HTTPS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 60,
       "assessmentMode": "DIGITAL_PRACTICE",
-      "furtherSourceSpecificDNeeded": "Authenticated 96-row HTML hash confirms the correct lesson page and first-party Practice family, but it does not independently prove every original 2021 source activity is rendered in the current learner BODY; verify source-specific content and visual/accessibility/rights boundary before internally accepting."
+      "furtherSourceSpecificDNeeded": "Teacher/classroom observed original-source actions, rights and full viewport review remain pending; sampled 2021 task text and math verified technically.",
+      "sourceBodyEvidence": {
+        "runId": 39584520462,
+        "jobId": 119169988430,
+        "artifactId": 12338748797,
+        "originalSourceBodyFragmentsVerified": 3,
+        "artifactRowOrdinal": 60,
+        "evidenceScope": "Full source goal previously authored at A-C; selected genuine source activity strings verified in live authenticated learner rendered HTML while preserving Rich V2 visuals; technical D only, not publisher artwork or pupil work",
+        "testedSourceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262"
+      },
+      "verificationScope": "INTERNAL_DIGITAL_STAGE_D_SCOPED_TECHNICAL_ONLY_NOT_GRADE_RELEASE"
     },
     {
       "ordinal": 61,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_TESTS_PASSED",
-      "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-      "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
-      "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
-      "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
+      "stageDStatus": "D_VERIFIED",
+      "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+      "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
+      "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
+      "authenticatedE2eResult": "PASS_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG_GRADED_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "academicApproval": "APPROVAL_PENDING_TEACHER_SOURCE_RIGHTS_AND_UAT",
       "workflowRuns": [
         39576590539,
-        39576590678
+        39576590678,
+        39584520462
       ],
       "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "authenticatedHtmlResult": "PASS_SOURCE_SPECIFIC_BODY_AUTHENTICATED_HTTPS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 61,
       "assessmentMode": "DIGITAL_PRACTICE",
-      "furtherSourceSpecificDNeeded": "Authenticated 96-row HTML hash confirms the correct lesson page and first-party Practice family, but it does not independently prove every original 2021 source activity is rendered in the current learner BODY; verify source-specific content and visual/accessibility/rights boundary before internally accepting."
+      "furtherSourceSpecificDNeeded": "Teacher/classroom observed original-source actions, rights and full viewport review remain pending; sampled 2021 task text and math verified technically.",
+      "sourceBodyEvidence": {
+        "runId": 39584520462,
+        "jobId": 119169988430,
+        "artifactId": 12338748797,
+        "originalSourceBodyFragmentsVerified": 3,
+        "artifactRowOrdinal": 61,
+        "evidenceScope": "Full source goal previously authored at A-C; selected genuine source activity strings verified in live authenticated learner rendered HTML while preserving Rich V2 visuals; technical D only, not publisher artwork or pupil work",
+        "testedSourceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262"
+      },
+      "verificationScope": "INTERNAL_DIGITAL_STAGE_D_SCOPED_TECHNICAL_ONLY_NOT_GRADE_RELEASE"
     },
     {
       "ordinal": 62,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_TESTS_PASSED",
-      "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-      "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
-      "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
-      "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
+      "stageDStatus": "D_VERIFIED",
+      "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+      "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
+      "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
+      "authenticatedE2eResult": "PASS_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG_GRADED_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "academicApproval": "APPROVAL_PENDING_TEACHER_SOURCE_RIGHTS_AND_UAT",
       "workflowRuns": [
         39576590539,
-        39576590678
+        39576590678,
+        39584520462
       ],
       "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "authenticatedHtmlResult": "PASS_SOURCE_SPECIFIC_BODY_AUTHENTICATED_HTTPS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 62,
       "assessmentMode": "DIGITAL_PRACTICE",
-      "furtherSourceSpecificDNeeded": "Authenticated 96-row HTML hash confirms the correct lesson page and first-party Practice family, but it does not independently prove every original 2021 source activity is rendered in the current learner BODY; verify source-specific content and visual/accessibility/rights boundary before internally accepting."
+      "furtherSourceSpecificDNeeded": "Teacher/classroom observed original-source actions, rights and full viewport review remain pending; sampled 2021 task text and math verified technically.",
+      "sourceBodyEvidence": {
+        "runId": 39584520462,
+        "jobId": 119169988430,
+        "artifactId": 12338748797,
+        "originalSourceBodyFragmentsVerified": 3,
+        "artifactRowOrdinal": 62,
+        "evidenceScope": "Full source goal previously authored at A-C; selected genuine source activity strings verified in live authenticated learner rendered HTML while preserving Rich V2 visuals; technical D only, not publisher artwork or pupil work",
+        "testedSourceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262"
+      },
+      "verificationScope": "INTERNAL_DIGITAL_STAGE_D_SCOPED_TECHNICAL_ONLY_NOT_GRADE_RELEASE"
     },
     {
       "ordinal": 63,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_TESTS_PASSED",
-      "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-      "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
-      "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
-      "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
+      "stageDStatus": "D_VERIFIED",
+      "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+      "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
+      "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
+      "authenticatedE2eResult": "PASS_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG_GRADED_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "academicApproval": "APPROVAL_PENDING_TEACHER_SOURCE_RIGHTS_AND_UAT",
       "workflowRuns": [
         39576590539,
-        39576590678
+        39576590678,
+        39584520462
       ],
       "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "authenticatedHtmlResult": "PASS_SOURCE_SPECIFIC_BODY_AUTHENTICATED_HTTPS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 63,
       "assessmentMode": "DIGITAL_PRACTICE",
-      "furtherSourceSpecificDNeeded": "Authenticated 96-row HTML hash confirms the correct lesson page and first-party Practice family, but it does not independently prove every original 2021 source activity is rendered in the current learner BODY; verify source-specific content and visual/accessibility/rights boundary before internally accepting."
+      "furtherSourceSpecificDNeeded": "Teacher/classroom observed original-source actions, rights and full viewport review remain pending; sampled 2021 task text and math verified technically.",
+      "sourceBodyEvidence": {
+        "runId": 39584520462,
+        "jobId": 119169988430,
+        "artifactId": 12338748797,
+        "originalSourceBodyFragmentsVerified": 3,
+        "artifactRowOrdinal": 63,
+        "evidenceScope": "Full source goal previously authored at A-C; selected genuine source activity strings verified in live authenticated learner rendered HTML while preserving Rich V2 visuals; technical D only, not publisher artwork or pupil work",
+        "testedSourceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262"
+      },
+      "verificationScope": "INTERNAL_DIGITAL_STAGE_D_SCOPED_TECHNICAL_ONLY_NOT_GRADE_RELEASE"
     },
     {
       "ordinal": 64,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_TESTS_PASSED",
-      "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
-      "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
-      "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
-      "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
+      "stageDStatus": "D_VERIFIED",
+      "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
+      "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
+      "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
+      "authenticatedE2eResult": "PASS_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG_GRADED_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "academicApproval": "APPROVAL_PENDING_TEACHER_SOURCE_RIGHTS_AND_UAT",
       "workflowRuns": [
         39576590539,
-        39576590678
+        39576590678,
+        39584520462
       ],
       "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "authenticatedHtmlResult": "PASS_SOURCE_SPECIFIC_BODY_AUTHENTICATED_HTTPS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 64,
       "assessmentMode": "DIGITAL_PRACTICE",
-      "furtherSourceSpecificDNeeded": "Authenticated 96-row HTML hash confirms the correct lesson page and first-party Practice family, but it does not independently prove every original 2021 source activity is rendered in the current learner BODY; verify source-specific content and visual/accessibility/rights boundary before internally accepting."
+      "furtherSourceSpecificDNeeded": "Teacher/classroom observed original-source actions, rights and full viewport review remain pending; sampled 2021 task text and math verified technically.",
+      "sourceBodyEvidence": {
+        "runId": 39584520462,
+        "jobId": 119169988430,
+        "artifactId": 12338748797,
+        "originalSourceBodyFragmentsVerified": 3,
+        "artifactRowOrdinal": 64,
+        "evidenceScope": "Full source goal previously authored at A-C; selected genuine source activity strings verified in live authenticated learner rendered HTML while preserving Rich V2 visuals; technical D only, not publisher artwork or pupil work",
+        "testedSourceCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262"
+      },
+      "verificationScope": "INTERNAL_DIGITAL_STAGE_D_SCOPED_TECHNICAL_ONLY_NOT_GRADE_RELEASE"
     },
     {
       "ordinal": 65,
@@ -559,14 +660,16 @@
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
       "authenticatedE2eResult": "PASS_LEARNER_HTML_ONLY_SOURCE_AUTHORED_QUESTION_NOT_NUMERICALLY_GRADED",
-      "humanSourceTaskApproval": "TEACHER_AUTHORED_STORY_EVIDENCE_REQUIRED",
-      "academicApproval": "PENDING_INDEPENDENT_ACADEMIC_OR_HUMAN_APPROVAL",
+      "humanSourceTaskApproval": "REQUIRES_REAL_PUPIL_WORK_AND_TEACHER_RUBRIC",
+      "academicApproval": "PENDING_REAL_LEARNER_AUTHORED_STORY_AND_TEACHER_OBSERVATION",
       "workflowRuns": [
         39576590539,
         39576590678
       ],
-      "defects": [],
-      "authenticatedHtmlResult": "PASS_AUTHENTICATED_HTTPS_EVIDENCE_ROW",
+      "defects": [
+        "Real learner-authored source story and teacher rubric required; no auto-grader for original optional lesson 65"
+      ],
+      "authenticatedHtmlResult": "PASS_SOURCE_ONLY_IN_96_HTTPS_ROWS",
       "testedCheckoutSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
@@ -579,7 +682,9 @@
         "Math accuracy"
       ],
       "realStudentSourceWorkOrTeacherObservation": "PENDING_NOT_FABRICATED",
-      "authorshipAtoCPreparedDoesNotImplyCompleted": true
+      "authorshipAtoCPreparedDoesNotImplyCompleted": true,
+      "sourceOnlyDigitalTeachingVerified": true,
+      "technicalTestsSource": "GITHUB_RUN_39584520462_TEACHING_ONLY_NOT_GRADED"
     },
     {
       "ordinal": 66,
@@ -2544,6 +2649,8 @@
     "gateContractUnitTests": {
       "passed": 20,
       "failed": 0
-    }
-  }
+    },
+    "note": "Original V1 six grade-gate accepted; Stage D 57-64 digital evidence added without promoting academic acceptance. Grade gate remains 6/96 accepted and NO_GO."
+  },
+  "lastContiguousOriginalStudentGoalHtmlVerifiedOrdinal": 64
 }
