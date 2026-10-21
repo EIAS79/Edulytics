@@ -108,8 +108,6 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
         Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
         Assert.Equal(expected,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
         Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,expected));
-        var prompt=UsCcssG1FullGradeUnit8ReviewQuestions.Build(family,
-            new Random(lowest*23+mode)).Prompt;
         var generated=UsCcssG1FullGradeUnit8ReviewQuestions.Build(family,
             new Random(lowest*23+mode));
         if(generated.Parameters["mode"]<=3)
@@ -257,7 +255,9 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
                 Assert.Contains("addition expression",task.Prompt);
             }
             else if(task.Parameters["mode"] is 7 or 8)
-                Assert.Contains("FOUR CONCRETE clues",task.Prompt);
+                Assert.Contains("four CONCRETE clues",task.Prompt);
+            else if(task.Parameters["mode"]==9)
+                Assert.Contains("ORIGINAL 2021 LESSON SYNTHESIS",task.Prompt);
             else
                 Assert.Contains("ORIGINAL 2021 TRUE/FALSE",task.Prompt);
         }
