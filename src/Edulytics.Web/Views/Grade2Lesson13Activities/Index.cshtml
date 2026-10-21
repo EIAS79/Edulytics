@@ -1,0 +1,170 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson13Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Use bar graphs to compare";
+ var pets=UsCcssG2Unit1ThirteenthLessonBarCompare.SourcePets;
+ var dogs=UsCcssG2Unit1ThirteenthLessonBarCompare.SourceDogs;
+ var exit=UsCcssG2Unit1ThirteenthLessonBarCompare.IndependentCoolDown;
+}
+<style>
+.g2-l13{max-width:970px;margin:auto;padding:20px 18px 45px;color:#1e3b4e}
+.g2-l13 .panel{background:#fff;border:1px solid #d7e4ec;border-radius:16px;padding:22px;margin:17px 0}
+.g2-l13 h1{font-size:1.84rem}.g2-l13 h2{font-size:1.28rem}
+.g2-l13 label{display:block;margin:15px 0 6px;font-weight:730}
+.g2-l13 input,.g2-l13 textarea,.g2-l13 select{font:inherit;border:1px solid #7891a2;border-radius:9px;padding:11px;width:100%;max-width:500px}
+.g2-l13 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px}
+.g2-l13 .muted{color:#526978}.g2-l13 .graph{padding:15px;border:1px solid #bad0d8;background:#f3f9fb;border-radius:11px;margin:13px 0}
+.g2-l13 .barrow{display:flex;align-items:center;gap:11px;margin:11px 0}
+.g2-l13 .barlabel{width:90px;font-size:.9rem;font-weight:700}
+.g2-l13 .bartrack{height:28px;width:min(100%,420px);border-left:2px solid #53697a;display:flex;align-items:center;background:repeating-linear-gradient(to right,transparent 0,transparent 19px,#cadfe6 19px,#cadfe6 20px)}
+.g2-l13 .barfill{height:22px;border:1px solid #13667d;background:#3a9cb0;border-radius:0 4px 4px 0}
+.g2-l13 .value{font-weight:740}
+.g2-l13 .button{font:inherit;font-weight:700;color:white;background:#087a8e;border:0;border-radius:9px;padding:13px 22px;cursor:pointer}
+.g2-l13 .success{border-left:4px solid #247b53;padding-left:12px}
+.g2-l13 .error{border-left:4px solid #ba4353;padding-left:12px}
+.g2-l13 .review{border-left:4px solid #af8439;padding-left:12px}
+</style>
+<main class="g2-l13">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<header>
+<p>EDULYTICS · ORIGINAL SOURCE-ALIGNED ACTIVITIES</p>
+<h1>Use bar graphs to compare</h1>
+<p class="muted">Grade 2 Unit 1 Lesson 13. Learn how much MORE or FEWER
+one bar represents, not just the combined total. Graphs are created
+from scratch for Edulytics using numerical facts in the public 2021 lesson;
+the independent Cool-down is not a copy of the publisher's worksheet.</p>
+</header>
+<section class="panel">
+<h2>1. Make a ten with 9 — true or false?</h2>
+<p>Before calculating everything, decide if these number sentences are
+TRUE (1) or FALSE (0). Discuss how 9 + 1 becomes ten.</p>
+<ul><li>9 + 4 = 9 + 1 + 3</li><li>9 + 4 = 10 + 3</li><li>9 + 5 = 10 + 6</li></ul>
+</section>
+<section class="panel">
+<h2>2. What's the Difference? — Pets graph</h2>
+<p>Start by observing which bar is LONGER. What can you already say
+without a numbered scale? The original source asks for two strategies:
+count ON from the shorter bar, then count BACK from the longer bar.</p>
+<div class="graph">
+<h3>Third grade family pets — first-party redrawing</h3>
+<p class="muted">Unit-one horizontal scale, zero to 20. Every grid step
+represents one student who chose that pet category.</p>
+@foreach(var row in pets){
+<div class="barrow"><span class="barlabel">@row.Key</span>
+<div class="bartrack" role="img" aria-label="@row.Key @row.Value out of twenty">
+<span aria-hidden="true" class="barfill" style="width:@(row.Value*20)px"></span>
+</div><span class="value">@row.Value</span></div>
+}
+</div>
+<p>There were <strong>17 cats</strong> and <strong>8 rabbits</strong>
+reported in the original example. Count UP from 8 to 17 and DOWN from
+17 to 8. Show related addition and subtraction equations, and explain
+why the difference is NOT the sum of 17 and 8.</p>
+</section>
+<section class="panel">
+<h2>3. Dogs in the Park — make two comparison statements</h2>
+<p>Write one mathematically true sentence beginning with MORE and another
+with FEWER. Each should name two different dog categories. Use the bars
+to write an addition equation and a subtraction equation for the gap.
+Compare both counting methods with your partner.</p>
+<div class="graph">
+<h3>Dogs in the park — first-party redrawing</h3>
+<p>Scale 0–20 in steps of 1.</p>
+@foreach(var row in dogs){
+<div class="barrow"><span class="barlabel">@row.Key</span>
+<div class="bartrack" role="img" aria-label="@row.Key @row.Value">
+<span class="barfill" aria-hidden="true" style="width:@(row.Value*20)px"></span>
+</div><span class="value">@row.Value</span></div>
+}
+</div>
+<p>For example, how many MORE bulldogs (20) than huskies (14)?
+What numbers should appear in the related equations?</p>
+<form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<button type="submit" class="button">Practice more unknown differences</button>
+</form>
+</section>
+<form class="panel" asp-controller="Grade2Lesson13Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<h2>4. Independent Edulytics source-skill check</h2>
+<div class="grid">
+<div><label asp-for="Answers.WarmFirst">9+4=9+1+3 — 1=true, 0=false</label><input asp-for="Answers.WarmFirst" type="number" min="0" max="1" required /></div>
+<div><label asp-for="Answers.WarmSecond">9+4=10+3 — 1=true, 0=false</label><input asp-for="Answers.WarmSecond" type="number" min="0" max="1" required /></div>
+<div><label asp-for="Answers.WarmThird">9+5=10+6 — 1=true, 0=false</label><input asp-for="Answers.WarmThird" type="number" min="0" max="1" required /></div>
+</div>
+<label asp-for="Answers.PetsDifference">How many MORE cats than rabbits?</label>
+<input asp-for="Answers.PetsDifference" type="number" min="0" max="20" required />
+<div class="grid">
+<div><label asp-for="Answers.PetsCountingOn">COUNT ON: related addition equation</label>
+<input asp-for="Answers.PetsCountingOn" placeholder="e.g. 8 + 9 = 17" maxlength="50" required /></div>
+<div><label asp-for="Answers.PetsCountingBack">COUNT BACK: related subtraction equation</label>
+<input asp-for="Answers.PetsCountingBack" placeholder="e.g. 17 − 8 = 9" maxlength="50" required /></div>
+</div>
+<h3>Dogs: choose any two different categories, then make related equations</h3>
+<div class="grid">
+<div><label asp-for="Answers.DogsMore">Category with MORE dogs</label>
+<select asp-for="Answers.DogsMore" required><option value="">Choose</option>
+@foreach(var cat in dogs.Keys){<option value="@cat">@cat</option>}
+</select></div>
+<div><label asp-for="Answers.DogsFewer">Category with FEWER dogs</label>
+<select asp-for="Answers.DogsFewer" required><option value="">Choose</option>
+@foreach(var cat in dogs.Keys){<option value="@cat">@cat</option>}
+</select></div>
+<div><label asp-for="Answers.DogsAddition">Smaller count + gap = larger count</label>
+<input asp-for="Answers.DogsAddition" maxlength="50" required /></div>
+<div><label asp-for="Answers.DogsSubtraction">Larger count − smaller count = gap</label>
+<input asp-for="Answers.DogsSubtraction" maxlength="50" required /></div>
+</div>
+<h3>Edulytics Cool-down — independently authored data</h3>
+<p>Our hypothetical playground choice graph has
+<strong>13 climbing</strong>, <strong>7 sliding</strong> and
+<strong>9 cycling</strong> choices. These are invented practice counts,
+not observed classmates. Compare climbing and sliding.</p>
+<div class="graph">
+@foreach(var row in exit){
+<div class="barrow"><span class="barlabel">@row.Key</span>
+<div class="bartrack" role="img" aria-label="@row.Key @row.Value choices">
+<span class="barfill" aria-hidden="true" style="width:@(row.Value*20)px"></span>
+</div><span class="value">@row.Value</span></div>
+}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.CoolDifference">How many FEWER sliding than climbing?</label>
+<input asp-for="Answers.CoolDifference" type="number" min="0" max="20" required /></div>
+<div><label asp-for="Answers.CoolAddition">Write 7 + ? = 13</label>
+<input asp-for="Answers.CoolAddition" maxlength="50" required /></div>
+<div><label asp-for="Answers.CoolSubtraction">Write 13 − 7 = ?</label>
+<input asp-for="Answers.CoolSubtraction" maxlength="50" required /></div>
+</div>
+<label asp-for="Answers.Explain">Explain counting ON and BACK using bars, and what each number in one equation means</label>
+<textarea asp-for="Answers.Explain" rows="3" maxlength="2000"></textarea>
+<p class="muted">A teacher must check written reasoning, drawings and genuine
+partner participation; this form only checks the stated arithmetic.</p>
+<button type="submit" class="button">Check my comparisons and Cool-down</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var item in Model.Feedback){
+<div class="@(item.Correct==true?"success":item.Correct==false?"error":"review")">
+<h3>@item.Task</h3><p>@(item.Correct==true?"Numerically correct":item.Correct==false?"Revise your equation":"Teacher review needed"). @item.Message</p>
+</div>
+}
+<p class="muted">Immediate practice feedback only, not a persisted school grade.</p>
+</section>
+}
+<section class="panel">
+<h2>Teacher observation rubric</h2><ul>
+@foreach(var item in UsCcssG2Unit1ThirteenthLessonBarCompare.TeacherRubric){<li>@item</li>}
+</ul>
+</section>
+<p class="muted">Aligned to IM2021 G2 U01 L13, CCSS 2.MD.D.10 and 2.OA.B.2.
+Numerical source relationships attributed for curricular reference;
+all visual bars and Cool-down authored by Edulytics.</p>
+</main>
