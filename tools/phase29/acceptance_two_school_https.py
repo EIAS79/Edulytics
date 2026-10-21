@@ -1497,6 +1497,11 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 "zero is a valid card",
                 "20-6-4-9=1",
             ),
+            65: (
+                "target answer less than 20",
+                "poster that includes the story and question",
+                "solve four peers",
+            ),
             66: (
                 "original 2021 first collection: 40 objects",
                 "bag a has 20, b has 40, c has 50",
@@ -1741,6 +1746,10 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 "BUILD a new flat figure with pattern blocks",
                 "SAME resulting figure again with DIFFERENT pattern blocks",
             ),
+            127: (
+                "Compose and describe flat and solid shapes",
+                "Join 3 equal cubes face to face",
+            ),
             128: (
                 "Cut out BOTH a CIRCLE and a SQUARE",
                 "FOUR equal pieces",
@@ -1821,7 +1830,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         source_body_fragments_verified = None
         if ordinal in original_g1_source_bodies_stage_d:
             source_unit, source_lesson = (
-                (3, ordinal - 37) if 57 <= ordinal <= 64 else
+                (3, ordinal - 37) if 57 <= ordinal <= 65 else
                 (4, ordinal - 65) if 66 <= ordinal <= 88 else
                 (5, ordinal - 88) if 89 <= ordinal <= 102 else
                 (6, ordinal - 102) if 103 <= ordinal <= 119 else

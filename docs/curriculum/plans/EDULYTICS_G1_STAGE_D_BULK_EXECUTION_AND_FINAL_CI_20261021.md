@@ -1,6 +1,15 @@
 # EDULYTICS — Grade 1 Stage D Bulk Execution and Final CI
 **Authorization:** User authorized saving this plan and beginning Stage D / CI on 2026-10-21. **Not authorized:** automatic merge to `main`, Render deployment, production database changes, bypassing security/release controls.
 
+
+## Owner publication policy amendment — 2026-10-21
+
+The owner explicitly removed **academic certification, teacher approval, school approval, and external institutional signoff as prerequisites for publication of an Edulytics-authored lesson**. The publication standard is internal, reproducible source-goal alignment and technical evidence: correct lesson/SkillContract routing; first-party learner content; deterministic/independent mathematical positive, wrong and malformed grading when digitally gradeable; an actual authenticated learner page and persisted test attempts against a disposable database; accessible rendering, source/licensing compliance and green applicable CI on the candidate SHA. No teacher/learner account participation or actual classroom activity is required to sign off release readiness.
+
+A physical, oral, partner, free-drawing or learner-authored classroom activity remains **instructional content**, not a gate on publication. For these activities, verify that accurate learner-facing instructions and an appropriate first-party task/rubric render; do **not** pretend an actual child authored or completed the activity, that a teacher observed it, or that a numeric proxy assesses the original open-ended task. Rubric metadata may be preserved as instructional guidance but **cannot block publication for lack of a teacher signature, observed pupil work, or academic committee certification**.
+
+This does **not** waive mathematical correctness, honest source/copyright provenance, security, authentic CI evidence, or the requirement for a separate owner merge/deployment decision. The 96-lesson full-grade technical gate stays fail closed until its real required technical and source evidence passes. Previous human/academic waiting labels in Stage D records are historical under the superseded policy; report technical blockers separately from optional classroom facilitation. Historical 51–56 V1 internal acceptance must retain its original traceability.
+
 ## Authoritative state and recovery
 - Repository: `EIAS79/Edulytics`; continue working branch: `curriculum/g1-continuous-authoring-final-ci-20261019`.
 - Last independently verified authoring handoff commit when plan drafted: `4a80de954cd802ddc032d0482b46341b73a46785`. Read the **latest live GitHub HEAD** on every resumption; this SHA is not a pinned instruction to revert newer valid commits.
