@@ -65,8 +65,40 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
                 0=>$"PAIR={total};ALL=85",
                 1=>$"FIRST_PAIR={total};SECOND_PAIR={85-total};ALL=85",
                 2=>$"TOTAL={total};PACK={(total>=35&&total<=65?"YES":"NO")}",
-                _=>$"TOTAL={total+13};PACK={(total+13>=35&&total+13<=65?"YES":"NO")}"
+                3=>$"TOTAL={total+13};PACK={(total+13>=35&&total+13<=65?"YES":"NO")}",
+                4=>"MIN_BOXES=4",
+                _=>throw new InvalidOperationException("Unknown Food Drive source mode")
             };
+        bool carries=a%10+b%10>=10;
+        // Independent arithmetic expectations by original source-mode family.
+        if(index==1&&mode==6)
+            return "ELENA_TENS=80;ELENA_ONES=8;ANDRE_FIRST=83;ANDRE_SECOND=88;TOTAL=88";
+        if(index==2&&mode==10)
+            return "LIN_TENS=80;LIN_ONES=6;HAN_FIRST=84;HAN_SECOND=86;TOTAL=86";
+        if(index==3&&mode==4)return "SUM=37;MORE=PRIYA;DIFFERENCE=9";
+        if(index==5&&mode is >=4 and <=11)return $"MISSING={b};TOTAL={total}";
+        if(index==5&&mode>=12)return $"TOTAL={total};NEW_TEN={(carries?"YES":"NO")}";
+        if(index is 1 or 2 && mode>=4)
+            return $"TENS={(a/10+b/10)*10};ONES={a%10+b%10};TOTAL={total}";
+        if(index==8&&mode==8)return "TENS=5;ONES=3;TOTAL=53";
+        if(index==9&&mode>=9)
+            return $"TENS_PART={(a/10+b/10)*10};ONES_PART={a%10+b%10};NEW_TENS={total/10};ONES={total%10};TOTAL={total}";
+        if(index==10&&mode is >=6 and <=8)
+        {
+            int sourceStated=mode switch{6=>54,7=>47,8=>45,_=>throw new InvalidOperationException()};
+            return $"TRUE={(total==sourceStated?"YES":"NO")};ACTUAL={total};STATED={sourceStated}";
+        }
+        if(index==10&&mode==9)
+            return "JADA_TENS=50;JADA_ONES=12;KIRAN_FIRST=42;KIRAN_SECOND=62;TYLER_FIRST=57;TYLER_SECOND=62;TOTAL=62";
+        if(index==11&&mode is >=6 and <=11)
+            return $"A={a};B={b};NEW_TEN={(carries?"YES":"NO")};TOTAL={total}";
+        if(index==11&&mode>=12)return $"TOTAL={total};NEW_TEN={(carries?"YES":"NO")}";
+        if(index==12&&mode>=4)
+            return $"TENS={total/10};ONES={total%10};NEW_TEN={(carries?"YES":"NO")};TOTAL={total}";
+        if(index is 7 or 8 && mode>=4)
+            return $"NEW_TEN={(carries?"YES":"NO")};TOTAL={total}";
+        if(index==6&&mode>=6)
+            return $"NEW_TEN={(carries?"YES":"NO")};TOTAL={total}";
         // Four original 2021 water-smudged open tasks, preserving the
         // exact pictured bases: 32, 16, 8 and 8, and one/two-digit answer domains.
         if(index==6&&mode>=2)
