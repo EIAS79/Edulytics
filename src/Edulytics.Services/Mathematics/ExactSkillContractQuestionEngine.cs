@@ -166,6 +166,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit1Lesson8PictureGraphQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson9BarGraphQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson11GraphQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -371,6 +372,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit1Lesson9BarGraphQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Supports(family))
             return UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson11GraphQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson11GraphQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1101,6 +1104,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson11GraphQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson11GraphQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -2989,6 +2998,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit1Lesson9BarGraphQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Supports(problem.Family))
             return UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson11GraphQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson11GraphQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))
