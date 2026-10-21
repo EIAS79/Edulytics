@@ -150,33 +150,26 @@ test('entire remaining Grade 1 authoring cohort uses canonical order with no 10-
   assert.deepEqual(main(['--remaining','--summary']),report.summary);
   assert.throws(()=>main(['--remaining','--range=57-66']),/either/);
 });
-test('owner-approved original Edulytics Cool-down is explicitly distinguished from unseen publisher content',()=>{
-  const report=buildRemainingReport();
-  const l60=report.lessons.find(x=>x.ordinal===60);
-  assert.ok(l60);
-  assert.equal(l60.readyForStageD,true);
-  assert.equal(l60.skipACRework,true);
-  assert.equal(l60.aToCStatus,STATUS.ready);
-  assert.equal(l60.assessmentBasis,'OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN');
-  assert.equal(l60.originalPublisherAssessmentVerified,false);
-  assert.equal(report.summary.pendingACOrdinals.includes(60),false);
-  assert.equal(report.summary.skipACReworkOrdinals.includes(60),true);
-  assert.equal(report.summary.ciTriggeredByReport,false);
-  assert.equal(report.summary.releaseDecision,'NO_GO');
+test('L60 approved independent Edulytics Cool-down preserves the unavailable publisher-original distinction',()=>{
+  const current=build().lessons.find(x=>x.ordinal===60);
+  assert.equal(current.status,STATUS.accepted);
+  const cp=JSON.parse(fs.readFileSync(path.join(dir,'lesson-60-v2-stage-a-d-checkpoint.json'),'utf8'));
+  assert.equal(cp.aToCClosure.ownerApprovedIndependentEdulyticsAssessment,true);
+  assert.equal(cp.aToCClosure.allAvailableOriginalStudentTeacherTasksCompared,true);
+  assert.equal(cp.aToCClosure.originalProtectedPublisherAssessmentVerified,false);
+  assert.equal(cp.aToCClosure.originalPublisherAssessmentNotReproduced,true);
+  assert.equal(cp.stageDClosure.status,'D_VERIFIED');
+  assert.equal(cp.stageDClosure.formalInternalV1Acceptance,'INTERNALLY_ACCEPTED');
 });
-
-
-test('L65 remains an evidenced teacher-reviewed authoring task, not a fabricated digital generator',()=>{
-  const report=buildRemainingReport();
-  const l65=report.lessons.find(x=>x.ordinal===65);
-  assert.ok(l65);
-  assert.equal(l65.readyForStageD,true);
-  assert.equal(l65.skipACRework,true);
-  assert.equal(l65.aToCStatus,STATUS.ready);
-  assert.equal(l65.assessmentBasis,'TEACHER_ONLY_SOURCE_AUTHORED_STORY_WITH_RUBRIC');
-  assert.equal(l65.originalPublisherAssessmentVerified,null);
-  assert.equal(report.summary.pendingACOrdinals.includes(65),false);
-  assert.equal(report.summary.skipACReworkOrdinals.includes(65),true);
-  assert.equal(report.summary.ciTriggeredByReport,false);
-  assert.equal(report.summary.releaseDecision,'NO_GO');
+test('L65 internal publication acceptance does not manufacture pupil authorship or automated grading',()=>{
+  const current=build().lessons.find(x=>x.ordinal===65);
+  assert.equal(current.status,STATUS.accepted);
+  const cp=JSON.parse(fs.readFileSync(path.join(dir,'lesson-65-v2-stage-a-d-checkpoint.json'),'utf8'));
+  assert.equal(cp.aToCClosure.teacherOnlyAuthoredActivityRubricIndependentlyReviewed,true);
+  assert.equal(cp.aToCClosure.verifiedNoMachineGradeableStoryAuthorship,true);
+  assert.equal(cp.aToCClosure.practiceGeneratorAndVerifierIndependentlyReviewed,false);
+  assert.equal(cp.stageDClosure.correctWrongMalformedPersisted,false);
+  assert.equal(cp.stageDClosure.digitallyCertifiedPupilAuthorship,false);
+  assert.equal(cp.stageDClosure.approvalFromTeacherAcademicOrExternalBodyRequired,false);
+  assert.equal(cp.stageDClosure.formalInternalV1Acceptance,'INTERNALLY_ACCEPTED');
 });
