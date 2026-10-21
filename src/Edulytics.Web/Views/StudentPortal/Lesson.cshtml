@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L18" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics authentic classroom survey activity">
+            <h2>Edulytics · real class survey and comparisons</h2>
+            <p>Author an original three- or four-category survey, collect genuine
+            anonymous responses, make a picture OR bar graph, trade questions
+            with a partner and compare two facts on an original tape diagram.
+            Numerical checks are not proof of survey participation.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson18Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open classroom survey and first-party Cool-down</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L17" &&
          unifiedPracticeAdoptionId.HasValue)
     {
