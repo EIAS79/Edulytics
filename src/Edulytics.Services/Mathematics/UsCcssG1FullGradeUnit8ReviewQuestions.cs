@@ -457,5 +457,5 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             VerifyOriginalNumberBook(response):
         Index(family)==9&&(p["mode"] is 7 or 8)?
             VerifyFourAuthoredClues(p,response):
-            Normalize(Solve(family!,p))==Normalize(response)));
+            Normalize(Solve(family!,p))==Normalize(response));
 }
