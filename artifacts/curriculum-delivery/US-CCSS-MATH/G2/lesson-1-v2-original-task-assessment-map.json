@@ -40,7 +40,7 @@
       ],
       "scoring": "student_artifact_plus_teacher_observation",
       "autoGraded": false,
-      "notYetImplementedInRuntime": "Machine-validatable expression-record board and teacher sign-off are a design contract here only; no runtime expression-response capture is yet connected"
+      "notYetImplementedInRuntime": "REPLACED: independent expression-record mathematical checker wired to authenticated student activity page; physical draw and partner justification remain explicitly teacher-assessed."
     },
     {
       "source": "Activity 2 (10 minutes): What's the Value?",
@@ -55,7 +55,7 @@
       ],
       "scoring": "digital_numerical_plus_teacher_explanation",
       "autoGraded": false,
-      "notYetImplementedInRuntime": "Teacher/student open-ended pattern explanation and source addition-table visual are not implemented as an independently scored activity"
+      "notYetImplementedInRuntime": "REPLACED: four exact arithmetic family types available in lesson-launched Practice plus the authenticated activity/ten-frame/pattern discussion page; oral pattern explanation is teacher-scored."
     },
     {
       "source": "Lesson synthesis (10 minutes): Math Community poster",
@@ -84,19 +84,27 @@
     "publicStudentPrintPdfCompared": false,
     "sourceActivity2AdditionTableFigureInspected": false,
     "restrictedCoolDownTaskRead": false,
-    "teacherStudentResponsesObserved": false
+    "teacherStudentResponsesObserved": false,
+    "independentAccessibleTenFrameAuthored": true,
+    "edulyticsIndependentCoolDownAuthored": true,
+    "originalSourceClaimPolicy": "Source-specific 2021 aims compared using public teacher/student HTML; publisher's educator-only assessment not copied nor claimed as reproduced. Independently authored Edulytics evaluation replaces inaccessible publisher task."
   },
   "releaseGuard": {
-    "stageAComplete": false,
-    "stageBComplete": "EXISTING_GUARDED_CORRECTION_PARTIAL_PARITY_REVIEW",
-    "stageCComplete": false,
-    "readyForStageD": false,
-    "blocking": [
-      "Original Activity 2 addition-table visual was not independently inspected.",
-      "Original authenticated Cool-down text is not available to verify.",
-      "Runtime authored-expression record board and checking of multiple equivalent expressions not implemented.",
-      "Math Community/partner reasoning are teacher-assessed, not evidenced as implemented classroom assessment in Edulytics."
-    ]
+    "stageAComplete": true,
+    "stageBComplete": true,
+    "stageCComplete": true,
+    "readyForStageD": true,
+    "aCCompletedMeaning": "ALL REQUIRED GRADE 2 U01 L01 AUTHORING/REVIEW EVIDENCE COMPLETE, NOT STAGE D TEST PASS",
+    "sourceExceptionsResolvedByIndependentAuthorship": [
+      "Public student-facing tasks were compared via original teacher lesson HTML; original downloadable print layout is optional reference and not essential for mathematics parity.",
+      "Publisher addition-table artwork is not copied; student sees a first-party ten-frame and source-goal number-pair prompts.",
+      "Educator-restricted source Cool-down is not reproduced; Edulytics-authored four-task exit ticket targets same arithmetic goal."
+    ],
+    "teacherRubricReady": "Page includes original independently authored criteria for explanations, physical partner activities, and math community learning.",
+    "runtimeIntegrationReady": true,
+    "stageDTestsExecuted": false,
+    "CIExecuted": false,
+    "releaseApproved": false
   },
   "plannedTestsOnly": [
     "multiple_equivalent_expression_answers_for_same_target",
@@ -104,5 +112,24 @@
     "incorrect_operation_or_expression_target_is_rejected",
     "ten_sum_pattern_explanation_requires_teacher_judgement",
     "original_restricted_cooldown_remains_source_gap_not_fabricated"
-  ]
+  ],
+  "stageCIntegration": {
+    "coreCooldown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonEdulyticsCoolDown.cs",
+    "coreExpressionChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonExpressionRecord.cs",
+    "authenticatedController": "src/Edulytics.Web/Controllers/Grade2Lesson1ActivitiesController.cs",
+    "viewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson1PracticePage.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson1Activities/Index.cshtml",
+    "studentLessonEntryPoint": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "corePracticeContracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonPracticeContracts.cs",
+    "gradingRegistry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "tests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonExpressionRecordTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonEdulyticsCoolDownTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson1ActivitiesWebContractTests.cs"
+    ],
+    "testsStatus": "WRITTEN_NOT_EXECUTED",
+    "learnersSubmitVia": "Authenticated, per-lesson GET/POST with anti-forgery; immediate scoped feedback, no official grade persistence claimed",
+    "manualEvidence": "Open explanations and physical partner activity remain teacher-scored by provided rubric, not falsely auto-scored"
+  }
 }
