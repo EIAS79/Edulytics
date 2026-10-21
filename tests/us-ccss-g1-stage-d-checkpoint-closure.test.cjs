@@ -56,7 +56,7 @@ test('Every remaining Grade 1 original A-C checkpoint now carries exact-run Stag
  assert.equal(progress.release,'NO_GO');
  assert.equal(progress.newLessons.length,96);
  assert.deepEqual(progress.newLessons.filter(x=>x.status==='INTERNALLY_ACCEPTED').map(x=>x.ordinal),
-   [51,52,53,54,55,56]);
+   [51,52,53,54,55,56,57,58,59]);
  for(let i=0;i<90;i++){
    const n=i+57,violations=validate(c[i],progress.newLessons[n-51],
      ledger.lessons[n-51],map.records[n-51],n);

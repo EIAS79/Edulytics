@@ -398,7 +398,7 @@
       "note": "Historical V1 A-D acceptance of exact old candidate; current Stage D verification still unrun at new branch HEAD."
     }
   },
-  "nextAction": "96 authenticated technical candidate rows now reconciled by same-run CI evidence artifact 12346166910 at 5fb0d378. Existing original V1 gate only has six 51–56 INTERNALLY_ACCEPTED lessons. Continue actual per-lesson first-party source, visual/artwork rights and task-completeness review without requiring academic/teacher/external signoff. Do not convert 90 candidates to original V1 accepted or release GO without matching truthful proofs.",
+  "nextAction": "V1 internally accepted 51–59, next 60; all 96 Stage D technical verifications are complete. Lesson 60 has owner-approved original Edulytics source-goal-equivalent cool-down rather than an unseen publisher-protected original. Verify exact first-party assessment boundary before promoting further lessons; no teacher or external signoff needed.",
   "lessons": [
     {
       "ordinal": 51,
@@ -734,7 +734,7 @@
       "ordinal": 57,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_VERIFIED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
       "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
       "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
@@ -800,13 +800,15 @@
         "persistedCorrectWrongMalformedAnswerIfApplicable": true,
         "humanSignoffRequired": false,
         "originalPublisherArtworkRightsProven": false
-      }
+      },
+      "internalV1AcceptedWithOriginalSourceAndRealPracticeEvidence": true,
+      "internalAcceptanceScope": "Source-reviewed 2021 teacher goal and publicly accessible original mathematical tasks implemented as independent first-party Rich V2 teaching and digital Practice; no original publisher artwork reused, no claim of actual classroom participation. Images are Edulytics original/generated (owner-described), not reproduced source illustrations."
     },
     {
       "ordinal": 58,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_VERIFIED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
       "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
       "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
@@ -872,13 +874,15 @@
         "persistedCorrectWrongMalformedAnswerIfApplicable": true,
         "humanSignoffRequired": false,
         "originalPublisherArtworkRightsProven": false
-      }
+      },
+      "internalV1AcceptedWithOriginalSourceAndRealPracticeEvidence": true,
+      "internalAcceptanceScope": "Source-reviewed 2021 teacher goal and publicly accessible original mathematical tasks implemented as independent first-party Rich V2 teaching and digital Practice; no original publisher artwork reused, no claim of actual classroom participation. Images are Edulytics original/generated (owner-described), not reproduced source illustrations."
     },
     {
       "ordinal": 59,
       "batch": "D1",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_VERIFIED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "af1f4f3e4c56be98d4cb3d949d40251ba9bdf262",
       "unitTestResult": "PASS_UNFILTERED_3324_3324_AT_HEAD",
       "integrationResult": "PASS_ISOLATED_POSTGRES_REAL_HTTPS_AT_HEAD",
@@ -944,7 +948,9 @@
         "persistedCorrectWrongMalformedAnswerIfApplicable": true,
         "humanSignoffRequired": false,
         "originalPublisherArtworkRightsProven": false
-      }
+      },
+      "internalV1AcceptedWithOriginalSourceAndRealPracticeEvidence": true,
+      "internalAcceptanceScope": "Source-reviewed 2021 teacher goal and publicly accessible original mathematical tasks implemented as independent first-party Rich V2 teaching and digital Practice; no original publisher artwork reused, no claim of actual classroom participation. Images are Edulytics original/generated (owner-described), not reproduced source illustrations."
     },
     {
       "ordinal": 60,
@@ -7246,13 +7252,13 @@
     "scope": "Original-source selected learner-facing instruction phrases and rendered first-party materials; NOT evidence that children completed physical, drawing, oral or peer tasks; NO unsupported third-party figure licence claim"
   },
   "technicalStageDStatusCounts": {
-    "historicalInternallyAccepted": 6,
+    "historicalInternallyAccepted": 9,
     "scopedTechnicalDVerifiedNewPreviouslyUnaccepted": 90,
     "scopedTechnicalDVerifiedTotal": 96,
     "authoredOnlyNotDigitallyGraded": 1,
     "digitalCorrectWrongMalformedPersisted": 95,
     "wholeGradeRealInternalReleaseGateSucceeded": false,
-    "fullGradeProgressInternallyAccepted": 6
+    "fullGradeProgressInternallyAccepted": 9
   },
   "technicalEvidenceReconciledAtHeadSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
   "stageDExactRunPerLessonEvidence": {
@@ -7275,7 +7281,7 @@
     "teacherOnlyOriginalTaskOrdinal": 65,
     "applicableCIGatesGreen": 15,
     "externalAcademicTeacherSignoffRequired": false,
-    "originalV1FormalProgressAcceptanceStill": 6,
+    "originalV1FormalProgressAcceptanceStill": 9,
     "release": "NO_GO"
   }
 }
