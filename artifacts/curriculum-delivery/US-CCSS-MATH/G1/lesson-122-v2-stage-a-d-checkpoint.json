@@ -63,7 +63,10 @@
     "newSourceModes": "A first-party four-flat-shape set tested under two independent category rules (curved vs straight-only and three vs four sides); legacy one-shape question modes preserved.",
     "mathEngineCommit": "9089358a50677bd4e46cb59c8b4bfd125f1904e1",
     "independentOracleCommit": "2129514743ce4bb6cbd2b27d1f24f0f33567a671",
-    "regressionTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs"
+    "regressionTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+    "sourceMathRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons121To136SourceMathTests.cs",
+    "sourceMathRegressionCommit": "8891bd6bedca4d0181affb726e111db462eaab15",
+    "testsExecuted": false
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -80,7 +83,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint.",
+  "nextAction": "Continue ordinal123; physical/student-produced work requires human assessment, Stage D/CI deferred.",
   "sourceSpecificRepair20261020": {
     "stage": "C_SCOPE_REPAIR_NOT_A_D_APPROVAL",
     "lessonsAndScope": "122 / G1 U07 L03, two independent sorts for first-party flat shape cards",
@@ -88,5 +91,18 @@
     "regressionCommit": "d09251c5bf6cf9cb9932d7e7118f53b3431f4a91",
     "unverified": "Original full source visuals; actual learner sorting choices and explanations; exact frozen SHA .NET and authenticated scoring/persistence",
     "approval": "NOT_CLAIMED"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceAuthoringBoundary": "Original Card Sort Flat Shapes and three gallery groups classified by independently chosen properties; digital curve/three/four-sides proxy is not student-created gallery.",
+    "existingLearnerTeachingSourceGoalsReviewed": true,
+    "firstPartyPracticeAndVerifierReviewed": true,
+    "originalHumanCreatedArtifactsAutoCertified": false,
+    "originalPublisherImagesNotLicensedOrCopied": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "academicOriginalV1Approval": false
   }
 }
