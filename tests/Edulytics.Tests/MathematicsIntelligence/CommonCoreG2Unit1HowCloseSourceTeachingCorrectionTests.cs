@@ -23,7 +23,7 @@ public sealed class CommonCoreG2Unit1HowCloseSourceTeachingCorrectionTests
         Assert.Contains("absolute distances", english.KeyConceptsAndRules);
         Assert.Contains("17 − 9 = 8", english.KeyConceptsAndRules);
         Assert.Contains("equally close", english.StepByStepSolutions);
-        Assert.Contains("three or four cards", english.CommonMistakes);
+        Assert.Contains("two or four cards", english.CommonMistakes);
         Assert.DoesNotContain("sense to them", english.QuickSummary);
         Assert.Equal(CommonCoreG2Unit1HowCloseSourceTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
