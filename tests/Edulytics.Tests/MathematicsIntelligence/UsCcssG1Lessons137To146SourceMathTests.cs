@@ -46,7 +46,7 @@ public sealed class UsCcssG1Lessons137To146SourceMathTests
     [InlineData(142,20,14,7,"DIFFERENCE=6")]
     [InlineData(143,103,0,2,"TENS=10;ONES=3;TOTAL=103")]
     [InlineData(144,84,0,4,"NUMBER=84;TENS=8;ONES=4")]
-    [InlineData(144,84,0,5,"NUMBER=84;E1=20+64;E2=30+54;E3=40+44")]
+    [InlineData(144,84,0,5,"NUMBER=84;E1=0+84;E2=10+74;E3=20+64")]
     [InlineData(145,65,35,4,"TRUE=YES;LEFT=65;RIGHT=35")]
     [InlineData(145,65,65,5,"TRUE=YES;LEFT=65;RIGHT=65")]
     [InlineData(145,65,65,6,"TRUE=NO;LEFT=65;RIGHT=65")]
@@ -102,6 +102,15 @@ public sealed class UsCcssG1Lessons137To146SourceMathTests
             "NUMBER=85;E1=20+64;E2=30+54;E3=40+44",
             "NUMBER=84;E1=-1+85;E2=30+54;E3=40+44"})
             Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,bad));
+        foreach(int selected in new[]{20,37,84,100})
+        {
+            var chosen=P(selected,0,5);
+            Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,chosen));
+            Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(
+                family,chosen,$"NUMBER={selected};E1=0+{selected};E2=10+{selected-10};E3=20+{selected-20}"));
+            Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(
+                family,chosen,$"NUMBER=84;E1=0+84;E2=10+74;E3=20+64"));
+        }
         Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(
             family,P(119,0,4)));
     }
