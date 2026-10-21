@@ -300,6 +300,24 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original bar graph comparison with counting on and back">
+            <h2>Edulytics · compare bar graphs two ways</h2>
+            <p>Use first-party pet and dog bar graphs to explain the
+                unknown difference by counting ON and counting BACK,
+                then write corresponding addition and subtraction equations.
+                Finish an independently authored Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson13Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open bar comparison activities and Cool-down
+            </a>
+        </section>
+    }
+
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
@@ -331,7 +349,8 @@
                     "PED:US-CCSS-MATH:G2:U01:L09" or
                     "PED:US-CCSS-MATH:G2:U01:L10" or
                     "PED:US-CCSS-MATH:G2:U01:L11" or
-                    "PED:US-CCSS-MATH:G2:U01:L12")
+                    "PED:US-CCSS-MATH:G2:U01:L12" or
+                    "PED:US-CCSS-MATH:G2:U01:L13")
             {
                 <section class="lesson-source-aligned-activities"
                          aria-label="Grade 2 source-aligned mathematical teaching">
