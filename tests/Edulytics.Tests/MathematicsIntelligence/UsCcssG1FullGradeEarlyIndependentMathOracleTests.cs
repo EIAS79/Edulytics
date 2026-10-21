@@ -152,10 +152,35 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
                 12=>"TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4",
                 _=>$"TOTAL={a+b};ONES={(a+b)%10}"
             },
-            1=>$"RESULT={(mode%2==0?a+10:a-10)}",
-            2=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}",
+            1=>mode switch
+            {
+                4 or 5 or 6 or 7 or 8=>$"PLUS={a+10};MINUS={a-10}",
+                9=>"STEP1=77;STEP2=87;STEP3=97",
+                10=>"STEP1=89;STEP2=79;STEP3=69",
+                11 or 12=>$"RESULT={a+b}",
+                13 or 14=>$"RESULT={a-b}",
+                2=>$"RESULT={(a==67?a+30:a-30)}",
+                3=>"PLUS=65;MINUS=25;RETURN=45",
+                _=>$"RESULT={(mode==0?a+10:a-10)}"
+            },
+            2=>mode switch
+            {
+                4=>"ADD=90;SUBTRACT=50",
+                5=>"TOTAL=20;CARDS=8+7+5",
+                6=>"ADD=15;SUBTRACT=9",
+                _=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}"
+            },
             3=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
-            4=>$"SYMBOL={(a>b?">":a<b?"<":"=")}",
+            4=>mode switch
+            {
+                13=>"SYMBOL=<;TENS_LEFT=6;TENS_RIGHT=8",
+                7=>"TRUE=YES;CORRECT=17<47",
+                8=>"TRUE=NO;CORRECT=58>53",
+                9=>"TRUE=NO;CORRECT=45<63",
+                10=>"TRUE=YES;CORRECT=39<93",
+                11=>"TRUE=NO;CORRECT=4<46",
+                _=>$"SYMBOL={(a>b?">":a<b?"<":"=")}"
+            },
             _=>throw new InvalidOperationException()
         };
     }
