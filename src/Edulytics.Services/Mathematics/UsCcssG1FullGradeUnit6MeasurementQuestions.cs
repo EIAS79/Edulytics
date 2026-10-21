@@ -29,6 +29,10 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         "usccss.g1.u06.l16.center_mixed_math",
         "usccss.g1.u06.l17.optional_compare_stories"
     ];
+    private static readonly (int a,int b)[] Lesson2OriginalWarmup =
+    [
+        (35,20),(35,25),(30,45),(37,45)
+    ];
     public sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     private static int Index(string? family)
@@ -44,8 +48,13 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         if(i<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(i==5?7:i==6?4:i==7?4:i==9?8:i==10?7:i==11?5:i==12?4:i==13?9:i==14?4:i==15?9:3)||
+           mode<0||mode>(i==1?7:i==5?7:i==6?4:i==7?4:i==9?8:i==10?7:i==11?5:i==12?4:i==13?9:i==14?4:i==15?9:3)||
            (i!=0&&c!=0&&!(i==10&&mode==5)))return false;
+        if(i==1&&mode>=4)
+        {
+            var source=Lesson2OriginalWarmup[mode-4];
+            return a==source.a&&b==source.b&&c==0;
+        }
         return i switch
         {
             0=>a>=4&&a<=20&&b>=1&&b<=20&&
@@ -112,7 +121,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unreviewed G1 Unit6 source-skill family");
-        int mode=random.Next(i==5?8:i==9?9:i==6||i==7||i==14?5:i==10?8:i==11?6:i==12?5:i==13?10:i==15?10:4),a=0,b=0,c=0;
+        int mode=random.Next(i==1?8:i==5?8:i==9?9:i==6||i==7||i==14?5:i==10?8:i==11?6:i==12?5:i==13?10:i==15?10:4),a=0,b=0,c=0;
         if(i is 0 or 1 or 2 or 10)
         {
             // Preserve independent source-comparison lengths. Previously these
@@ -187,6 +196,11 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                 _=>throw new InvalidOperationException("Unreviewed original source story")
             };
         }
+        if(i==1&&mode>=4)
+        {
+            (a,b)=Lesson2OriginalWarmup[mode-4];
+            c=0;
+        }
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
         if(!Valid(family,p))throw new InvalidOperationException("Unreviewed G1 Unit6 source operands");
         string prompt=i switch
@@ -194,7 +208,14 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
             0=>mode%2==0?
                 $"Draw two FIRST-PARTY equal-unit strips starting at the SAME endpoint: red has {a} cube-length units and blue has {b}. Compare them. Write LONGER=RED/BLUE/EQUAL;DIFFERENCE=number. The learner-made drawing needs teacher review.":
                 $"Three strips A, B, and C share the SAME start line and measure {a}, {b}, and {c} equal cube-length units. Original student Activity 2: order three objects {(mode==1?"from SHORTEST to LONGEST":"from LONGEST to SHORTEST")}. Write ORDER=A,B,C (the letters in their correct order).",
-            1=>$"Without moving two separate strips, a SAME reference strip of {a} cubes matches strip A and another of {b} cubes matches B. Which is longer? Write LONGER=A/B/EQUAL.",
+            1=>mode>=4?
+                $"ORIGINAL 2021 GRADE 1 UNIT 6 LESSON 2 MENTAL WARM-UP: Add {a}+{b}. "+
+                "Write RESULT=number; explain mentally how adding tens/ones changes the value.":
+                $"FIRST-PARTY INDIRECT LENGTH MODEL: Without placing objects side by side, "+
+                $"a single unchanged reference string represents object A as {a} equal "+
+                $"units and object B as {b} of the SAME units. Which is longer? "+
+                "Write LONGER=A/B/EQUAL. Student's actual chosen pencil/objects "+
+                "and real desk side versus leg string comparison are teacher-assessed.",
             2=>mode switch
             {
                 0=>$"Two classroom objects cannot be laid together. One flexible SAME reference unit gives lengths {a} and {b}. Choose the longer one. Write LONGER=A/B/EQUAL.",
@@ -301,7 +322,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
                         ?new[]{(Length:a,Label:"A"),(Length:b,Label:"B"),(Length:p["c"],Label:"C")}.OrderBy(x=>x.Length)
                         :new[]{(Length:a,Label:"A"),(Length:b,Label:"B"),(Length:p["c"],Label:"C")}.OrderByDescending(x=>x.Length))
                     .Select(x=>x.Label)),
-            1=>$"LONGER={Relation(a,b,"A","B")}",
+            1=>mode>=4?$"RESULT={a+b}":$"LONGER={Relation(a,b,"A","B")}",
             2=>mode switch
             {
                 0=>$"LONGER={Relation(a,b,"A","B")}",
