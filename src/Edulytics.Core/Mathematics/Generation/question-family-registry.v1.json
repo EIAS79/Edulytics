@@ -6516,6 +6516,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g2.u01.l05.seven_cards_two_numbers_min_gap",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l05-seven-card-arrangements-or-place-value-check-v1",
+      "representations": [
+        "digit_cards",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u01.l05.add_within50_place_value",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l05-seven-card-arrangements-or-place-value-check-v1",
+      "representations": [
+        "base-ten-bundles",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g2.u02.bar_total_or_difference.no_regroup",
       "version": 1,
       "skillId": "number.whole.add_subtract",
