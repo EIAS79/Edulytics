@@ -953,7 +953,7 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
                     UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
             }
         }
-        Assert.Equal(4,covered.Count);
+        Assert.Equal(5,covered.Count); // Includes original five-in-a-row synthesis mode 4.
     }
 
     [Theory]
