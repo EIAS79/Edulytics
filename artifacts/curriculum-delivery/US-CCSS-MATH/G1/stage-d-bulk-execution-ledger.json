@@ -27,9 +27,9 @@
       }
     ]
   },
-  "phase": "D_TECHNICAL_CI_GREEN_ALL_96_HTTPS_EVIDENCE_RECORDED_INDEPENDENT_ACADEMIC_APPROVAL_PENDING",
-  "lastContiguousDVerifiedOrdinal": 50,
-  "nextOrdinalRequiringDVerification": 51,
+  "phase": "D_SIX_HISTORIC_DIGITAL_LESSONS_REVALIDATED_NEXT_57_90_APPROVAL_PENDING",
+  "lastContiguousDVerifiedOrdinal": 56,
+  "nextOrdinalRequiringDVerification": 57,
   "currentBatch": "D1",
   "gradeRelease": "NO_GO",
   "ci": {
@@ -197,19 +197,19 @@
       "note": "Historical V1 A-D acceptance of exact old candidate; current Stage D verification still unrun at new branch HEAD."
     }
   },
-  "nextAction": "All unfiltered local 3324 .NET tests and all 15 applicable draft PR GitHub workflows GREEN at matching tested HEAD/tree. Next: academic/rights/owner-UAT evidence review and authorized teacher-reviewed artifacts for source-authored lessons 65,74,119,123,124,125,126,135,142,144,146; then validate grade real-release 96/96 approval gate. Do NOT fabricate human observations, change NO_GO, merge, deploy or rerun same stable tests unnecessarily. Keep individual digital D_TESTS_PASSED rather than incorrectly APPROVED.",
+  "nextAction": "Resume sequential ORIGINAL-V1 Stage D internal acceptance at ordinal 57, not 51. All 96 authenticated learner HTML, 95 graded and persisted, all 3324 .NET tests and 15 applicable draft PR GitHub workflows green on matching code tree; do not re-run unchanged tests. Source-specific final rights/accessibility, current teacher/student task rendering and unique per-lesson acceptance proofs must be reviewed before promotion of 57+, especially source-authored ordinals 65,74,119,123–126,135,142,144,146. Grade currently NO_GO and real release gate skipped; don't merge or deploy.",
   "lessons": [
     {
       "ordinal": 51,
       "batch": "D1",
       "authoringBasis": "HISTORICAL_V1_INTERNALLY_ACCEPTED",
-      "stageDStatus": "D_TESTS_PASSED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
       "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "HISTORICAL_V1_ACCEPTANCE_ONLY_CURRENT_RELEASE_PENDING",
+      "academicApproval": "CURRENT_GRADE_GATE_VERIFIED_HISTORIC_V1_FIRST_PARTY_DIGITAL_INTERNAL_ACCEPTANCE",
       "workflowRuns": [
         39576590539,
         39576590678
@@ -220,19 +220,22 @@
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 51,
-      "assessmentMode": "DIGITAL_PRACTICE"
+      "assessmentMode": "DIGITAL_PRACTICE",
+      "approvalScope": "Source-reviewed first-party digital teaching and Practice, current frozen-head .NET and authenticated HTTPS; not original classroom physical participation or publisher artwork reuse",
+      "revalidatedAtGradeProgressCommit": "13fce8b93801887db7d6e9573fe3d398fd468179",
+      "actualTeacherObservationClaimed": false
     },
     {
       "ordinal": 52,
       "batch": "D1",
       "authoringBasis": "HISTORICAL_V1_INTERNALLY_ACCEPTED",
-      "stageDStatus": "D_TESTS_PASSED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
       "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "HISTORICAL_V1_ACCEPTANCE_ONLY_CURRENT_RELEASE_PENDING",
+      "academicApproval": "CURRENT_GRADE_GATE_VERIFIED_HISTORIC_V1_FIRST_PARTY_DIGITAL_INTERNAL_ACCEPTANCE",
       "workflowRuns": [
         39576590539,
         39576590678
@@ -243,19 +246,22 @@
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 52,
-      "assessmentMode": "DIGITAL_PRACTICE"
+      "assessmentMode": "DIGITAL_PRACTICE",
+      "approvalScope": "Source-reviewed first-party digital teaching and Practice, current frozen-head .NET and authenticated HTTPS; not original classroom physical participation or publisher artwork reuse",
+      "revalidatedAtGradeProgressCommit": "13fce8b93801887db7d6e9573fe3d398fd468179",
+      "actualTeacherObservationClaimed": false
     },
     {
       "ordinal": 53,
       "batch": "D1",
       "authoringBasis": "HISTORICAL_V1_INTERNALLY_ACCEPTED",
-      "stageDStatus": "D_TESTS_PASSED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
       "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "HISTORICAL_V1_ACCEPTANCE_ONLY_CURRENT_RELEASE_PENDING",
+      "academicApproval": "CURRENT_GRADE_GATE_VERIFIED_HISTORIC_V1_FIRST_PARTY_DIGITAL_INTERNAL_ACCEPTANCE",
       "workflowRuns": [
         39576590539,
         39576590678
@@ -266,19 +272,22 @@
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 53,
-      "assessmentMode": "DIGITAL_PRACTICE"
+      "assessmentMode": "DIGITAL_PRACTICE",
+      "approvalScope": "Source-reviewed first-party digital teaching and Practice, current frozen-head .NET and authenticated HTTPS; not original classroom physical participation or publisher artwork reuse",
+      "revalidatedAtGradeProgressCommit": "13fce8b93801887db7d6e9573fe3d398fd468179",
+      "actualTeacherObservationClaimed": false
     },
     {
       "ordinal": 54,
       "batch": "D1",
       "authoringBasis": "HISTORICAL_V1_INTERNALLY_ACCEPTED",
-      "stageDStatus": "D_TESTS_PASSED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
       "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "HISTORICAL_V1_ACCEPTANCE_ONLY_CURRENT_RELEASE_PENDING",
+      "academicApproval": "CURRENT_GRADE_GATE_VERIFIED_HISTORIC_V1_FIRST_PARTY_DIGITAL_INTERNAL_ACCEPTANCE",
       "workflowRuns": [
         39576590539,
         39576590678
@@ -289,19 +298,22 @@
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 54,
-      "assessmentMode": "DIGITAL_PRACTICE"
+      "assessmentMode": "DIGITAL_PRACTICE",
+      "approvalScope": "Source-reviewed first-party digital teaching and Practice, current frozen-head .NET and authenticated HTTPS; not original classroom physical participation or publisher artwork reuse",
+      "revalidatedAtGradeProgressCommit": "13fce8b93801887db7d6e9573fe3d398fd468179",
+      "actualTeacherObservationClaimed": false
     },
     {
       "ordinal": 55,
       "batch": "D1",
       "authoringBasis": "HISTORICAL_V1_INTERNALLY_ACCEPTED",
-      "stageDStatus": "D_TESTS_PASSED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
       "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "HISTORICAL_V1_ACCEPTANCE_ONLY_CURRENT_RELEASE_PENDING",
+      "academicApproval": "CURRENT_GRADE_GATE_VERIFIED_HISTORIC_V1_FIRST_PARTY_DIGITAL_INTERNAL_ACCEPTANCE",
       "workflowRuns": [
         39576590539,
         39576590678
@@ -312,19 +324,22 @@
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 55,
-      "assessmentMode": "DIGITAL_PRACTICE"
+      "assessmentMode": "DIGITAL_PRACTICE",
+      "approvalScope": "Source-reviewed first-party digital teaching and Practice, current frozen-head .NET and authenticated HTTPS; not original classroom physical participation or publisher artwork reuse",
+      "revalidatedAtGradeProgressCommit": "13fce8b93801887db7d6e9573fe3d398fd468179",
+      "actualTeacherObservationClaimed": false
     },
     {
       "ordinal": 56,
       "batch": "D1",
       "authoringBasis": "HISTORICAL_V1_INTERNALLY_ACCEPTED",
-      "stageDStatus": "D_TESTS_PASSED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
       "authenticatedE2eResult": "PASS_CORRECT_AND_TWO_INCORRECT_TYPES_GRADED_AND_PERSISTED",
       "humanSourceTaskApproval": "NOT_CLAIMED",
-      "academicApproval": "HISTORICAL_V1_ACCEPTANCE_ONLY_CURRENT_RELEASE_PENDING",
+      "academicApproval": "CURRENT_GRADE_GATE_VERIFIED_HISTORIC_V1_FIRST_PARTY_DIGITAL_INTERNAL_ACCEPTANCE",
       "workflowRuns": [
         39576590539,
         39576590678
@@ -335,7 +350,10 @@
       "testedTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
       "ciEvidenceArtifactId": 12335181048,
       "ciEvidenceOrdinal": 56,
-      "assessmentMode": "DIGITAL_PRACTICE"
+      "assessmentMode": "DIGITAL_PRACTICE",
+      "approvalScope": "Source-reviewed first-party digital teaching and Practice, current frozen-head .NET and authenticated HTTPS; not original classroom physical participation or publisher artwork reuse",
+      "revalidatedAtGradeProgressCommit": "13fce8b93801887db7d6e9573fe3d398fd468179",
+      "actualTeacherObservationClaimed": false
     },
     {
       "ordinal": 57,
@@ -2420,5 +2438,22 @@
     }
   ],
   "lastContiguousAuthenticatedHtmlOrdinal": 146,
-  "lastContiguousCorrectIncorrectAuthenticatedGradingOrdinal": 64
+  "lastContiguousCorrectIncorrectAuthenticatedGradingOrdinal": 64,
+  "currentGradeProgressVerified": {
+    "codeTestedSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+    "gradeProgressCommit": "13fce8b93801887db7d6e9573fe3d398fd468179",
+    "gateCommand": "node tools/curriculum/us-ccss-full-grade-gate.cjs --inspect",
+    "outcome": "NO_GO",
+    "newAccepted": 6,
+    "newNotAccepted": 90,
+    "firstVerifiedUnfinishedOrdinal": 57,
+    "unverifiedDeclaredAcceptances": [],
+    "issues": [],
+    "gradeRelease": "NO_GO",
+    "source": "Actual local repository gate evaluation after SHA-pinned evidence refresh; scope for accepted six is historical digital V1 lesson content only",
+    "gateContractUnitTests": {
+      "passed": 20,
+      "failed": 0
+    }
+  }
 }
