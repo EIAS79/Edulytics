@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 100,
+  "nextOrdinal": 108,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -5226,8 +5226,60 @@
       "outcomeCodes": [
         "CCSS:1.NBT.C.4"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "source-specific-first-party-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "48+15=63,57+36=93, all four number talks, five source cards 37,22,18,56,41 and min/max/carry/tied-near-95 choices Full original 5-card categories, 48+15 and 57+36, four original warmups and tied 93/97 near-95 choice authored and math checked. Stage D must independently verify actual alternative-answer persistence, all runtime renderings, copyright, code/test pass, authenticated learner states, and owner approval.",
+        "allowedFamilies": [
+          "usccss.g1.u05.l12.write_addition_equations"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "48+15=63,57+36=93, all four number talks, five source cards 37,22,18,56,41 and min/max/carry/tied-near-95 choices"
+        ],
+        "sourceSha256": "3eb8ed2b44b6a99f3b7bce3de8deb9b7b5056e66dbfc2f18cb86d56625c1f034",
+        "originalTeacherHtmlSha256": "20df0875849ea1176e8b0eb74c6275e62da72f2d030adcf312482f4c3e9fcfc2",
+        "originalStudentHtmlSha256": "5297408925281f87e2704fce6c4e642ee1c5acae07c07610228024c6f17be089",
+        "effectiveStudentBodySha256": "5aed614c2d3cd1e945cb574f4543c70ae3ffa11105d2f9cd74127683437b2d68",
+        "effectiveStudentBodyHashSemantics": "SHA256 HTML-unescaped real signed-in HTTPS student response with session volatility, artifact 12345398813",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson100SourceOpenCardSelectionTests.cs",
+        "independentGradingProofSha256": "58344c6934446f7b96b191cfa2c9782025d40d7bd5b00f0d6fd4e8aa1f92abc9",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-100-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "5a845dbc59b7e0fad55fe7e72496639cd414d5cdb11be58f4ef5906e649f258b",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson100SourceOpenCardSelectionTests.cs",
+            "sha256": "58344c6934446f7b96b191cfa2c9782025d40d7bd5b00f0d6fd4e8aa1f92abc9"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Full original 5-card categories, 48+15 and 57+36, four original warmups and tied 93/97 near-95 choice authored and math checked. Stage D must independently verify actual alternative-answer persistence, all runtime renderings, copyright, code/test pass, authenticated learner states, and owner approval. First-party source goal only; NO_GO.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 100,
+          "authenticatedLearnerHtmlSha256": "5aed614c2d3cd1e945cb574f4543c70ae3ffa11105d2f9cd74127683437b2d68",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5263,8 +5315,60 @@
         "CCSS:1.OA.C.6",
         "CCSS:1.OA.D.8"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "source-specific-first-party-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Count backwards 100 to 70, two-digit-addition Target Numbers Stage 3 and composing Five in a Row Stage 6; 26+38=64,54+25=79 are independent first-party mathematics First-party numeric proxy covers two-digit addition with and without composing. No assertion that all original 2021 board-game choices, visuals, turns or pupil drawings are digitally emulated. Stage D validates runtime, test pass, rights, teacher workflow and authenticated scoring.",
+        "allowedFamilies": [
+          "usccss.g1.u05.l13.center_add_within100"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Count backwards 100 to 70, two-digit-addition Target Numbers Stage 3 and composing Five in a Row Stage 6; 26+38=64,54+25=79 are independent first-party mathematics"
+        ],
+        "sourceSha256": "98214b672c3a04a2726ac105efa8e99e57b1afe4421cf6302e8c6331cdad7cf4",
+        "originalTeacherHtmlSha256": "e048b84f04ebe8caeb2c5f638b427a56e4e6b7afeac787fb1894a1c7473704fe",
+        "originalStudentHtmlSha256": "90e58fdce2622c7a720dd14ff00d79ecfb29875988351aefa4ec3310edb94d20",
+        "effectiveStudentBodySha256": "c6f6f15bc2dffe50f675354a5faab4fc13f8c9e9902962a9611d13cdfd388614",
+        "effectiveStudentBodyHashSemantics": "SHA256 HTML-unescaped real signed-in HTTPS student response with session volatility, artifact 12345398813",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson101TwoDigitCentersTests.cs",
+        "independentGradingProofSha256": "0a94f940285b74b3f4d3d3ad086fc74c307d17e2b463ebf81e4963d7067a358a",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-101-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "2e53d5cbd9543a351149fb562e0109d7bca0619071a0572be5de84ae35d61773",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson101TwoDigitCentersTests.cs",
+            "sha256": "0a94f940285b74b3f4d3d3ad086fc74c307d17e2b463ebf81e4963d7067a358a"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "First-party numeric proxy covers two-digit addition with and without composing. No assertion that all original 2021 board-game choices, visuals, turns or pupil drawings are digitally emulated. Stage D validates runtime, test pass, rights, teacher workflow and authenticated scoring. First-party source goal only; NO_GO.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 101,
+          "authenticatedLearnerHtmlSha256": "c6f6f15bc2dffe50f675354a5faab4fc13f8c9e9902962a9611d13cdfd388614",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5297,8 +5401,60 @@
         "CCSS:1.NBT.C.5",
         "CCSS:1.NBT.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "source-specific-first-party-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Lin18+Priya24=42, Tyler30+Priya24=54, Lin18+Han13=31, all four=85; nine-grade source 251 cans require 4 capacity-35–65 boxes with disjoint valid witness 65+64+63+59 Original Student Facing class/pupil quantities and grouped-source arithmetic modeled without asserting pupils collected actual cans or completed packing. Full original partner discussion, free-form box packing witness, copyright/source images and authenticated grade persistence require Stage D/human validation.",
+        "allowedFamilies": [
+          "usccss.g1.u05.l14.optional_food_drive_numeric"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Lin18+Priya24=42, Tyler30+Priya24=54, Lin18+Han13=31, all four=85; nine-grade source 251 cans require 4 capacity-35–65 boxes with disjoint valid witness 65+64+63+59"
+        ],
+        "sourceSha256": "aef287abd6682c3b9c5665c66a1800b9424f481a181437f425675fa59b674ac3",
+        "originalTeacherHtmlSha256": "7a2e3ed4d8e2ccb705f24d97457d2e528bea0510119d46cf2aad2dc446091288",
+        "originalStudentHtmlSha256": "2120af8d7f9be1503686809385c13cde90d3e94f5b26e27c677774ec7dff5a22",
+        "effectiveStudentBodySha256": "117edb6a2a3c8c4a258282890113edfabf7cfe17e7e1ae6381b4d8b723da15b5",
+        "effectiveStudentBodyHashSemantics": "SHA256 HTML-unescaped real signed-in HTTPS student response with session volatility, artifact 12345398813",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson102OriginalNamedFoodDrivePairsTests.cs",
+        "independentGradingProofSha256": "6693bb13929a73322e3ffefd38b30e1fce222c45edf482faa64a4f15816ec667",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-102-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "0a7eaca61ef28573afa25d1dc25aec197c090e4f94c57fcde34e5c7c6ba41adb",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson102OriginalNamedFoodDrivePairsTests.cs",
+            "sha256": "6693bb13929a73322e3ffefd38b30e1fce222c45edf482faa64a4f15816ec667"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original Student Facing class/pupil quantities and grouped-source arithmetic modeled without asserting pupils collected actual cans or completed packing. Full original partner discussion, free-form box packing witness, copyright/source images and authenticated grade persistence require Stage D/human validation. First-party source goal only; NO_GO.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 102,
+          "authenticatedLearnerHtmlSha256": "117edb6a2a3c8c4a258282890113edfabf7cfe17e7e1ae6381b4d8b723da15b5",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5334,8 +5490,60 @@
         "CCSS:1.OA.C.5",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "source-specific-first-party-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Classroom object endpoints and length order, exactly three objects, 3/8 cube reference and personal foot/finger comparisons; first-party equal-unit representations do not certify actual objects Original L01 physical measurement tasks remain teacher performed; original publisher art and classroom outcomes not claimed digital. First-party equal-unit modeled strip comparisons are gradeable proxies only. Stage D requires actual learner rendering, grading persistence, source rights and academic acceptance.",
+        "allowedFamilies": [
+          "usccss.g1.u06.l01.compare_lengths"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Classroom object endpoints and length order, exactly three objects, 3/8 cube reference and personal foot/finger comparisons; first-party equal-unit representations do not certify actual objects"
+        ],
+        "sourceSha256": "e282e2ebafd26ad41c6ad436f16963f46019c0d027feac44a9e0fb10f0f64c71",
+        "originalTeacherHtmlSha256": "a8b03480c296b5709f7f400125b538b8bb6441cb38c88561c06f4ee4d3efcf88",
+        "originalStudentHtmlSha256": "109f05b5b842e7e7b2949c2e8955636c62901a2f72535560a530d32e9f39eddd",
+        "effectiveStudentBodySha256": "37feabfae66831f97b22d06cf10b3231ee90142237f6c8bbd9ba8b251e8b316a",
+        "effectiveStudentBodyHashSemantics": "SHA256 HTML-unescaped real signed-in HTTPS student response with session volatility, artifact 12345398813",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson103EqualUnitLengthComparisonTests.cs",
+        "independentGradingProofSha256": "efc2d9ae64d16e9b0a827e137699c9025deafac3ec235970ac00ef1759434de3",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-103-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "578ed3b1e30ca4b7d5d7d2a7724453eb6dc830e95b06c5bb0b04504c7d391a37",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson103EqualUnitLengthComparisonTests.cs",
+            "sha256": "efc2d9ae64d16e9b0a827e137699c9025deafac3ec235970ac00ef1759434de3"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original L01 physical measurement tasks remain teacher performed; original publisher art and classroom outcomes not claimed digital. First-party equal-unit modeled strip comparisons are gradeable proxies only. Stage D requires actual learner rendering, grading persistence, source rights and academic acceptance. First-party source goal only; NO_GO.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 103,
+          "authenticatedLearnerHtmlSha256": "37feabfae66831f97b22d06cf10b3231ee90142237f6c8bbd9ba8b251e8b316a",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5367,8 +5575,60 @@
         "CCSS:1.MD.A.1",
         "CCSS:1.NBT.C.4"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "source-specific-first-party-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Warmup 35+20=55,35+25=60,30+45=75,37+45=82, actual pencil and desk side/leg comparisons with one unchanged string; physical dimensions not fabricated Four original warm-up sums digitally gradeable. No source measurements for classroom pencil/desk invented; same-string math is an authored example, real desk/leg/string/object choice and drawings human-graded. Stage D validates actual learner display, tests, physical lesson acceptance and permissions.",
+        "allowedFamilies": [
+          "usccss.g1.u06.l02.indirect_length_comparison"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Warmup 35+20=55,35+25=60,30+45=75,37+45=82, actual pencil and desk side/leg comparisons with one unchanged string; physical dimensions not fabricated"
+        ],
+        "sourceSha256": "a6f522f5506bd28cc065368f92a242ab905c3b986bacf75df9b6a2da7daf589d",
+        "originalTeacherHtmlSha256": "ea6bc52203032df01439e188edd0fac8c338778df37e39da92f46a278155c14d",
+        "originalStudentHtmlSha256": "ee36738491cb99a2a6a793e261fa6b3104f8aa258787fee6e6e30167c7791247",
+        "effectiveStudentBodySha256": "d14ddb1e481bf6394fb2475dacef9e6054b1d5f9a4e5e7706392541771d043e3",
+        "effectiveStudentBodyHashSemantics": "SHA256 HTML-unescaped real signed-in HTTPS student response with session volatility, artifact 12345398813",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson104SourceWarmupAndStringComparisonTests.cs",
+        "independentGradingProofSha256": "ee3669b8db0b364a546b2c3e8f91a948bb553f3c5424ebd37f93586e459cc8a6",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-104-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "3dda2938b09d97a65410769e0d7e5a9668061ff1745e110e5d93bd16e2d7d961",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson104SourceWarmupAndStringComparisonTests.cs",
+            "sha256": "ee3669b8db0b364a546b2c3e8f91a948bb553f3c5424ebd37f93586e459cc8a6"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Four original warm-up sums digitally gradeable. No source measurements for classroom pencil/desk invented; same-string math is an authored example, real desk/leg/string/object choice and drawings human-graded. Stage D validates actual learner display, tests, physical lesson acceptance and permissions. First-party source goal only; NO_GO.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 104,
+          "authenticatedLearnerHtmlSha256": "d14ddb1e481bf6394fb2475dacef9e6054b1d5f9a4e5e7706392541771d043e3",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5399,8 +5659,60 @@
       "outcomeCodes": [
         "CCSS:1.MD.A.1"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "source-specific-first-party-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Indirect comparison Mai/Clare walk and source desk, rug, bookshelf, door and cabinet examples; hypothetical unit examples are not real measured dimensions Six original furniture prompts and Mai/Clare walk sourced in corrective learner teaching; numeric digital modes explicitly hypothetical. Live chosen classroom measurements, original route-map image, visual copyright, authenticated actual translated Rich V2, real answer persistence and compiler/tests are Stage D evidence.",
+        "allowedFamilies": [
+          "usccss.g1.u06.l03.choose_indirect_comparison"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Indirect comparison Mai/Clare walk and source desk, rug, bookshelf, door and cabinet examples; hypothetical unit examples are not real measured dimensions"
+        ],
+        "sourceSha256": "170ffc52e90c2dbe4763f2a30b095090e2f3ef24b6d20ef0368a2483d427e078",
+        "originalTeacherHtmlSha256": "b27cb37ee22383dd9489f3c4de9d64e3ebce6fff02d3ca5ab79d95a33e95dda5",
+        "originalStudentHtmlSha256": "8a1308bdb975c5c64caae1a10b0d7bc03e4f9805a9b56d87d369f840c7293a1a",
+        "effectiveStudentBodySha256": "d1f07c9c150c61ff7809ebd989f8c1d9857f2b2fa38127ed0817abfc37a70879",
+        "effectiveStudentBodyHashSemantics": "SHA256 HTML-unescaped real signed-in HTTPS student response with session volatility, artifact 12345398813",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson105SourceIndirectMeasurementTests.cs",
+        "independentGradingProofSha256": "a5d07d6f4a1624b3a142c95bc5d1062ee767a518c96ec80e7af8fdab5dd1ef02",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-105-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "cb9fff51df2cab083686befe980710ba04e1df8ed6a400c11f287f812b982657",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson105SourceIndirectMeasurementTests.cs",
+            "sha256": "a5d07d6f4a1624b3a142c95bc5d1062ee767a518c96ec80e7af8fdab5dd1ef02"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Six original furniture prompts and Mai/Clare walk sourced in corrective learner teaching; numeric digital modes explicitly hypothetical. Live chosen classroom measurements, original route-map image, visual copyright, authenticated actual translated Rich V2, real answer persistence and compiler/tests are Stage D evidence. First-party source goal only; NO_GO.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 105,
+          "authenticatedLearnerHtmlSha256": "d1f07c9c150c61ff7809ebd989f8c1d9857f2b2fa38127ed0817abfc37a70879",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5435,8 +5747,61 @@
         "CCSS:1.OA.C.5",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "source-specific-first-party-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Seven distinct 0–9 cards with four used exactly once in two 2-digit addends, maximize result without exceeding 100 and accept tied optimum choices; legacy family compatibility preserved Original seven distinct 0-9 cards, choose exactly four once, form two two-digit addends and maximize <=100 implemented in versioned family. True classroom partner seven-card draws and scoring not certified. At Stage D verify registered routing on live learner page, all right/wrong/alternate-optimal persisted submissions on frozen SHA, tests/CI, visual rights and academic sign-off.",
+        "allowedFamilies": [
+          "usccss.g1.u06.l04.how_close_stage3.v2",
+          "usccss.g1.u06.l04.center_add_compare"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Seven distinct 0–9 cards with four used exactly once in two 2-digit addends, maximize result without exceeding 100 and accept tied optimum choices; legacy family compatibility preserved"
+        ],
+        "sourceSha256": "85ffa8f28e6d374031eaad1b3f8d7c247d64a0817c2828b433a8a1d7b6b01c4c",
+        "originalTeacherHtmlSha256": "b816ef46daff8a9e4940e2155defefb0ffdef95795502cc36580f76e100d7717",
+        "originalStudentHtmlSha256": "3ba209cbb2ceaa661ec74265463d592cf5fc5dc6b4d17b671d93af40987e2f20",
+        "effectiveStudentBodySha256": "c9e710475eacb5b9c39d4c1d6675cb833e6cb7b5127bb70a2e70b91a1cdb16ae",
+        "effectiveStudentBodyHashSemantics": "SHA256 HTML-unescaped real signed-in HTTPS student response with session volatility, artifact 12345398813",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1HowCloseStage3MathematicsTests.cs",
+        "independentGradingProofSha256": "7c6424228cb537c1eb86e48e908f08750dfcbe57db53c888e899346f78a6780b",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-106-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "f716a487acbc58a4dac3870c3df52e78eef9530e1093205bd465bdab2d4df12b",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1HowCloseStage3MathematicsTests.cs",
+            "sha256": "7c6424228cb537c1eb86e48e908f08750dfcbe57db53c888e899346f78a6780b"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original seven distinct 0-9 cards, choose exactly four once, form two two-digit addends and maximize <=100 implemented in versioned family. True classroom partner seven-card draws and scoring not certified. At Stage D verify registered routing on live learner page, all right/wrong/alternate-optimal persisted submissions on frozen SHA, tests/CI, visual rights and academic sign-off. First-party source goal only; NO_GO.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 106,
+          "authenticatedLearnerHtmlSha256": "c9e710475eacb5b9c39d4c1d6675cb833e6cb7b5127bb70a2e70b91a1cdb16ae",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5472,8 +5837,60 @@
         "CCSS:1.OA.C.5",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "source-specific-first-party-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Measure animal/insect lengths with consecutive same-size cubes, source caterpillar 4 and grasshopper 5 cube examples, center choices; source publisher insect pictures not copied Original caterpillar four cubes and grasshopper five cube lengths as teacher examples; full insect figure-based measuring teacher-led.",
+        "allowedFamilies": [
+          "usccss.g1.u06.l05.measure_connecting_cubes"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Measure animal/insect lengths with consecutive same-size cubes, source caterpillar 4 and grasshopper 5 cube examples, center choices; source publisher insect pictures not copied"
+        ],
+        "sourceSha256": "abcd86b8e263753ef168fc185f5bd7d2b8661197d9927543e27fe4ab205b0f84",
+        "originalTeacherHtmlSha256": "1f9bca82de04d074fa9eb61f4e117a69ddbc3c5c20c9ace7f893cff41782f027",
+        "originalStudentHtmlSha256": "84f448581abe068feba13fa3c1c9d485a1c0f33ea3bda6b983d4c102f72dedc1",
+        "effectiveStudentBodySha256": "812cd6ebcbdd389c956ea88cdd543b89567e278623cc2af459402073078aec41",
+        "effectiveStudentBodyHashSemantics": "SHA256 HTML-unescaped real signed-in HTTPS student response with session volatility, artifact 12345398813",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+        "independentGradingProofSha256": "39c2675221e41183ab656d783209c4085d5f455d4cd7c820abb51dbe325ea13f",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-107-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "8ad8da4af9ffdf5aa5790d65c04cc19d67be3b61bb66ae9bde003025f559dd05",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+            "sha256": "39c2675221e41183ab656d783209c4085d5f455d4cd7c820abb51dbe325ea13f"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original caterpillar four cubes and grasshopper five cube lengths as teacher examples; full insect figure-based measuring teacher-led. First-party source goal only; NO_GO.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 107,
+          "authenticatedLearnerHtmlSha256": "812cd6ebcbdd389c956ea88cdd543b89567e278623cc2af459402073078aec41",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -6812,7 +7229,7 @@
     "countAuthoredOnly": 1,
     "countOriginalSourceTextLessons": 90,
     "countSourceFragments": 190,
-    "internallyAcceptedByOriginalV1Gate": 49,
+    "internallyAcceptedByOriginalV1Gate": 57,
     "publisherFigureRightsAndFullTaskParity": "NOT_CERTIFIED_BY_THIS_TECHNICAL_RUN",
     "releaseStatus": "NO_GO"
   }
