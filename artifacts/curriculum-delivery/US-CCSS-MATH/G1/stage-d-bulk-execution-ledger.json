@@ -4,7 +4,7 @@
   "repository": "EIAS79/Edulytics",
   "branch": "curriculum/g1-continuous-authoring-final-ci-20261019",
   "baselineHead": "20ee26c04acce16df3805e0cdd918f9fb19fb425",
-  "lastKnownCodeCandidate": "51a8fb2b778d8cb5d774eaff6b72c88852daf6f9",
+  "lastKnownCodeCandidate": "40275c4a3fd53391f918031dd0957d31e5ac199d",
   "scope": {
     "first": 51,
     "last": 146,
@@ -27,36 +27,36 @@
       }
     ]
   },
-  "phase": "D_IN_PROGRESS_CURRENT_G1_REGRESSION_FAILED",
+  "phase": "D_LOCAL_G1_REGRESSION_PASSED_CI_AND_AUTHENTICATED_E2E_PENDING",
   "lastContiguousDVerifiedOrdinal": 50,
   "nextOrdinalRequiringDVerification": 51,
   "currentBatch": "D1",
   "gradeRelease": "NO_GO",
   "ci": {
-    "candidateSha": "40411b2a97abbc144e40c19837eb8b5908bdf4e1",
-    "build": "PASS_LOCAL_ON_EXACT_CANDIDATE",
-    "unit": "FAIL_LOCAL_G1_FILTER_18_OF_912",
+    "candidateSha": "40275c4a3fd53391f918031dd0957d31e5ac199d",
+    "build": "PASS_LOCAL_ON_EXACT_CANDIDATE_TWO_XUNIT_ANALYZER_WARNINGS",
+    "unit": "PASS_LOCAL_G1_FILTER_912_OF_912",
     "integration": "NOT_RUN",
     "authenticatedE2e": "NOT_RUN",
     "finalCi": "NOT_RUN",
     "workflowRunIds": [],
-    "note": "This is a kickoff ledger only; no tests have run on plan HEAD.",
+    "note": "Actual .NET 10.0.200 build and 912/912 scoped Grade 1 regression success at exact code candidate 40275c4a. Local machine Our-CS isolated checkout. GitHub Actions, independent integration, authenticated HTTPS E2E and teacher-reviewed original source tasks not yet cleared. Changes to ledger alone do not change the tested code candidate.",
     "localDevice": "Our-CS",
     "localCheckout": "D:\\Edulytics-G1-StageD-20261021",
     "dotnetSdk": "10.0.200",
-    "localTrx": "D:\\Edulytics-G1-StageD-20261021\\artifacts\\stage-d-test-results\\g1-source-tests-51-146-rerun.trx",
+    "localTrx": "D:\\Edulytics-G1-StageD-20261021\\artifacts\\stage-d-test-results\\g1-rerun6.trx",
     "localCommands": [
       "dotnet build Edulytics.sln --configuration Release --verbosity quiet --maxcpucount:2 --no-restore",
       "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --no-restore --filter 'FullyQualifiedName~UsCcssG1'"
     ],
     "testCounts": {
       "total": 912,
-      "passed": 894,
-      "failed": 18,
+      "passed": 912,
+      "failed": 0,
       "skipped": 0
     },
     "testRunScope": "All tests whose FullyQualifiedName contains UsCcssG1, not entire Edulytics solution or full authenticated workflow",
-    "testEvidenceCodeSha": "40411b2a97abbc144e40c19837eb8b5908bdf4e1",
+    "testEvidenceCodeSha": "40275c4a3fd53391f918031dd0957d31e5ac199d",
     "knownFixCommits": [
       "a4d1b34020bdc4eca9fee395ce3aefa2e232666c",
       "8727fc80c32d6b6ee162f6f9639183ba6ad86317",
@@ -67,7 +67,39 @@
       "e0cd80e43989bb42b2119242194e8bc8384267e0",
       "9ba58c4c7d83c6b2a2352d50b38b344c24862c1b"
     ],
-    "failureClassCounts": "18 xUnit cases still failing, mainly expanded original source modes versus legacy independent oracle assumptions; no academic status promoted"
+    "failureClassCounts": "No outstanding failures in FullyQualifiedName~UsCcssG1 local filter at pinned candidate; do not infer whole .NET solution or G1 live acceptance",
+    "localEvidenceHistory": [
+      {
+        "candidate": "51a8fb2b778d8cb5d774eaff6b72c88852daf6f9",
+        "passed": 882,
+        "failed": 30,
+        "total": 912
+      },
+      {
+        "candidate": "40411b2a97abbc144e40c19837eb8b5908bdf4e1",
+        "passed": 894,
+        "failed": 18,
+        "total": 912
+      },
+      {
+        "candidate": "2fc3c010cad7fa0b02896385ac8126add984c2d0",
+        "passed": 901,
+        "failed": 11,
+        "total": 912
+      },
+      {
+        "candidate": "bf6fb83f1246fbf88785bd1aaa71cdb08ed9b670",
+        "passed": 908,
+        "failed": 4,
+        "total": 912
+      },
+      {
+        "candidate": "40275c4a3fd53391f918031dd0957d31e5ac199d",
+        "passed": 912,
+        "failed": 0,
+        "total": 912
+      }
+    ]
   },
   "sourceBasis": {
     "handoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lessons-076-146-stage-a-c-authoring-handoff-20261021.md",
@@ -77,7 +109,7 @@
       "note": "Historical V1 A-D acceptance of exact old candidate; current Stage D verification still unrun at new branch HEAD."
     }
   },
-  "nextAction": "Continue targeted corrections for 18 remaining G1 test failures, run local complete G1 filter on exact later commit; open draft CI PR only once stable enough to avoid needless repeated CI. Then isolated authenticated E2E and whole-grade gate. D closure remains ordinal 51 until evidenced.",
+  "nextAction": "Finish full-grade Node negative-control gate, expanded shared-engine .NET tests and official GitHub Actions via draft PR, and isolated real HTTPS student/teacher persistence and visual checks. Keep all lessons D_PENDING and NO_GO until each has scoped evidence.",
   "lessons": [
     {
       "ordinal": 51,
