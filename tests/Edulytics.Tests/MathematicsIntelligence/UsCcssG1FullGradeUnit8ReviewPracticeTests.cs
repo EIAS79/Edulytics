@@ -245,7 +245,6 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
             Assert.Equal(mode==0?$"NUMBER={target};VALID=YES":$"NUMBER={target};VALID=NO",answer);
             Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(f,p,answer));
             Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(f,p,$"NUMBER={target};VALID=MAYBE"));
-            var prompt=UsCcssG1FullGradeUnit8ReviewQuestions.Build(f,new Random(target*17+mode)).Prompt;
             var task=UsCcssG1FullGradeUnit8ReviewQuestions.Build(
                 f,new Random(target*17+mode));
             if(task.Parameters["mode"]<=3)
