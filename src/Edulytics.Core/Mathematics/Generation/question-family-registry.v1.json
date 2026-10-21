@@ -6678,6 +6678,63 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g2.u01.l10.picture_symbol_count",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l10-source-table-graph-parameter-recompute",
+      "representations": [
+        "picture_graph",
+        "bar_graph",
+        "data_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u01.l10.bar_height_for_category",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l10-source-table-graph-parameter-recompute",
+      "representations": [
+        "picture_graph",
+        "bar_graph",
+        "data_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u01.l10.picture_bar_same_data",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l10-source-table-graph-parameter-recompute",
+      "representations": [
+        "picture_graph",
+        "bar_graph",
+        "data_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g2.u02.bar_total_or_difference.no_regroup",
       "version": 1,
       "skillId": "number.whole.add_subtract",
