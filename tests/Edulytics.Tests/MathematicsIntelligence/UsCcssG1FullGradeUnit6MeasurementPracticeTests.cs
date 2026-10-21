@@ -252,7 +252,7 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
                 Assert.Contains("estimate was HIGH, LOW or EXACT",item.Prompt);
             }
         }
-        Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
+        Assert.Equal(Enumerable.Range(0,9).ToArray(),modes.OrderBy(x=>x));
     }
 
     [Fact]
@@ -351,7 +351,7 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
             if(item.Parameters["mode"]==5)
                 Assert.Contains("65+20+1 and 65+21",item.Prompt);
         }
-        Assert.Equal(Enumerable.Range(0,6).ToArray(),modes.OrderBy(x=>x));
+        Assert.Equal(Enumerable.Range(0,10).ToArray(),modes.OrderBy(x=>x));
     }
 
     [Theory]
@@ -448,7 +448,7 @@ public sealed class UsCcssG1FullGradeUnit6MeasurementPracticeTests
     public void Original2021ComparisonTaskBoundsCannotCreateNegativeOrOutOfScopeLengths()
     {
         const string family="usccss.g1.u06.l12.compare_measurements";
-        foreach(var (a,b,mode) in new[]{(4,5,0),(17,5,1),(15,0,0),(14,4,4)})
+        foreach(var (a,b,mode) in new[]{(4,5,0),(17,5,1),(15,0,0),(14,5,4)})
         {
             var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
             Assert.False(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(family,p));
