@@ -22,18 +22,48 @@
       "Student Facing Choose a center. Five in a Row [visual] [visual] <div class=\"im-c-"
     ],
     "sourceSpecificComparison": "Original count down from 100 to70; Target Numbers Stage3 and Five in a Row Stage6 physical centers",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "sourceGoalsReconciled": {
+      "choralCount": "Count backward by ones from 100 to 70",
+      "center1": "Target Numbers Stage 3: add two-digit numbers with cards",
+      "center2": "Five in a Row Stage 6: two-digit addition within 100 WITH composing",
+      "humanAssessment": "Physical center gameplay, student-created drawings, card decisions and actual partner turns remain teacher assessed."
+    }
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6",
+    "learnerTeachingSourceCenterGoalsReviewed": true,
+    "sourceTeachingMathExamples": [
+      "26+38=64 with a composed ten",
+      "54+25=79 without composing"
+    ]
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "previousModes0To3Retained": true,
+    "newSourceGoalTwoDigitModes": [
+      4,
+      7
+    ],
+    "sourceExampleContracts": [
+      "26+38: TENS=6;ONES=4;NEW_TEN=YES;TOTAL=64",
+      "54+25: TENS=7;ONES=9;NEW_TEN=NO;TOTAL=79"
+    ],
+    "additionalComposingAndNonComposingTwoDigitGeneratorModes": [
+      6,
+      7
+    ],
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "5a172cc12a97c243b3fa922a6d83300ef3c75e8b",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson101TwoDigitCentersTests.cs",
+    "authoredTestsCommit": "2806cb34e349a99ce4119a45b6e6bfd37d2ec631",
+    "originalGameBoardAndPhysicalPartnerTurnsDigitallyCertified": false,
+    "testsExecuted": false
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -47,5 +77,18 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal102, independently review existing four source-specific Food Drive modes; do not run Stage D/CI or merge.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "accessibleSourceLearningGoalsCompared": true,
+    "firstPartyTeachingSourceParityReviewed": true,
+    "numericPracticeGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "humanFacilitatedOriginalCenterPlayNotCertified": true,
+    "sourceGraphicsNotCopied": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "First-party numeric proxy covers two-digit addition with and without composing. No assertion that all original 2021 board-game choices, visuals, turns or pupil drawings are digitally emulated. Stage D validates runtime, test pass, rights, teacher workflow and authenticated scoring."
+  }
 }
