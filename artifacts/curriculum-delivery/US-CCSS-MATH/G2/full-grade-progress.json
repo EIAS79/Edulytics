@@ -9,7 +9,7 @@
     "lastConsecutiveACClosed": 0,
     "firstUnclosedLesson": 1,
     "nextSequentialLesson": 1,
-    "currentWork": "GRADE2 U01 L01: source HTML fully reviewed; original Cool-down and Activity2 figure inaccessible; teacher-rubric and expression math checker authored, live record UI and teacher evidence pending. No approval, must stay on L01."
+    "currentWork": "GRADE 2 U01 L01 Stage A+B+C in progress. Independently authored Edulytics cooldown and exact math checker added. Need learner-facing assessment integration and source-alignment review before A_C_COMPLETED/READY_FOR_STAGE_D; do not advance."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -23,7 +23,8 @@
     "G2 U01 L02 source uses a ten-cube hidden-part partner game, related addition/subtraction equations, tower-to-equation matching; current keyConceptsAndRules says 'within 20' and generic steps do not teach the exact target.",
     "G2 content pack reviewEvidence narrative says 143 of 146 included but the live JSON catalogue has 146 lesson records, all isSupporting=false and all with OutcomeCodes. No historical approval inferred.",
     "U01 L02 and L03 now have ten/twenty-cube original-source contracts, actual teaching corrections and unexecuted source-specific tests. Existing published content untouched on main.",
-    "2026-10-21 user corrected workflow: strict lesson by lesson A->B->C, mark A_C completed with READY_FOR_STAGE_D only after full evidence; only then begin next ordinal. Earlier cursor 9 was incorrect."
+    "2026-10-21 user corrected workflow: strict lesson by lesson A->B->C, mark A_C completed with READY_FOR_STAGE_D only after full evidence; only then begin next ordinal. Earlier cursor 9 was incorrect.",
+    "Original publisher Cool-down can be replaced as a pedagogical task by independently authored Edulytics Cool-down matching verified objective, with no claim of verbatim source reproduction. Do not require original restricted content to close authoring Stage A-C."
   ],
   "lessonStatuses": [
     {
@@ -31,9 +32,9 @@
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
       "sourceReview": "TEACHER_AND_STUDENT_HTML_REVIEWED_ORIGINAL_COOLDOWN_AND_ADDITION_FIGURE_MISSING",
       "teaching": "EXISTING_GUARDED_CORRECTION_REUSED",
-      "practice": "FOUR_NUMERICAL_FAMILIES_AND_MATH_EXPRESSION_CHECKER_AUTHORED_UI_NOT_WIRED",
+      "practice": "FOUR_SOURCE_NUMERIC_FAMILIES_EXPRESSION_CHECKER_AND_INDEPENDENT_COOLDOWN_AUTHORED_PENDING_LEARNER_UI_INTEGRATION",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "A_C_EXPLICIT_GAP",
+      "aCStatus": "IN_PROGRESS",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -44,7 +45,7 @@
       "teaching": "GUARDED_SPECIFIC_CORRECTION_AUTHORED",
       "practice": "THREE_EXACT_DIGITAL_FAMILIES_AUTHORED_NOT_TESTED",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "A_C_EXPLICIT_GAP",
+      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -55,7 +56,7 @@
       "teaching": "GUARDED_SPECIFIC_CORRECTION_AUTHORED",
       "practice": "THREE_EXACT_DIGITAL_FAMILIES_AUTHORED_NOT_TESTED",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "A_C_EXPLICIT_GAP",
+      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -66,7 +67,7 @@
       "teaching": "GUARDED_SOURCE_TEACHING_CORRECTION_AUTHORED",
       "practice": "TWO_SOURCE_SPECIFIC_DIGITAL_FAMILIES_AUTHORED_NOT_TESTED",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "A_C_EXPLICIT_GAP",
+      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -77,7 +78,7 @@
       "teaching": "SOURCE_GUARDED_SPECIFIC_CORRECTION_AUTHORED",
       "practice": "TWO_DIGIT_GOAL_FAMILIES_AUTHORED_UNRUN",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "A_C_EXPLICIT_GAP",
+      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -88,7 +89,7 @@
       "teaching": "SOURCE_AND_ORIGINAL_PREVIOUS_PROSE_LOCKED_CORRECTION_AUTHORED",
       "practice": "ONE_EXACT_NUMBER_TALK_FAMILY_PLUS_AUTHORING_TESTS_NO_GAMEBOARD_GRADING",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "A_C_EXPLICIT_GAP",
+      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -99,7 +100,7 @@
       "teaching": "SOURCE_AND_ORIGINAL_PREVIOUS_PROSE_LOCKED_CORRECTION_AUTHORED",
       "practice": "TEACHER_ASSESSED_ORIGINAL_ACTIVITY_NO_DIGITAL_NUMERIC_OVERRIDE_CLAIMED",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "A_C_EXPLICIT_GAP",
+      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -110,7 +111,7 @@
       "teaching": "STRICT_SOURCE_PREDECESSOR_LOCKED_FIX_AUTHORED",
       "practice": "THREE_SOURCE_GOAL_PICTOGRAPH_FAMILIES_AUTHORED_NOT_TESTED",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "A_C_EXPLICIT_GAP",
+      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -1637,8 +1638,8 @@
     {
       "gradeOrdinal": 1,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
-      "reason": "Original educator-only Cool-down and addition-table source visual not inspected; actual expression-record capture not connected; teacher-observed activities not yet verified; Stage A-C cannot be asserted finished.",
-      "nextAction": "Stay on Grade 2 U01 L01, close specific A+B+C source and activity evidence gaps before setting READY_FOR_STAGE_D or moving to lesson 2."
+      "reason": "Edulytics original Cool-down authored, so publisher-login Cool-down no longer blocks authoring. Pending learner-facing integration of expression record and original cooldown, independent lesson source alignment review; do not claim complete early.",
+      "nextAction": "Finish first-lesson student-facing activity/Cool-down and teacher-rubric integration, establish source-proof A+B+C authoring evidence; then mark A_C_COMPLETED and READY_FOR_STAGE_D."
     },
     {
       "gradeOrdinal": 2,
@@ -1684,7 +1685,7 @@
     }
   ],
   "executionPolicy": {
-    "mode": "STRICT_ONE_LESSON_AT_A_TIME",
+    "mode": "STRICT_ONE_LESSON_FULL_A_B_C_THEN_NEXT",
     "startOrdinal": 1,
     "allowedNextOrdinalRule": "A lesson N+1 is eligible only if ALL earlier lessons 1..N have documented READY_FOR_STAGE_D (A_C_COMPLETED) and independent source-aligned Stage A, Stage B, Stage C evidence.",
     "completionLabel": "READY_FOR_STAGE_D",
@@ -1693,6 +1694,11 @@
     "stageDAndCIExecutionAllowed": false,
     "preexistingOutOfOrderDrafts": "L02-L08 edits exist but remain unverified and must be assessed afresh only when reached sequentially; never count as closed.",
     "globalStaticPreflight": "DISCOVERY_ONLY_NOT_A_C_ACCEPTANCE",
-    "haltedAtFirstUnclosedLesson": true
+    "haltedAtFirstUnclosedLesson": true,
+    "blockerState": "IN_PROGRESS_BLOCKED_ONLY_FOR_ACTUAL_UNSOLVABLE_BLOCKER_NO_SKIPPING",
+    "independentCooldownAllowed": true,
+    "publisherRestrictedCooldownNotRequiredWhenIndependentSkillEquivalentAuthored": true,
+    "noLegacyACGapStatus": true,
+    "higherOrdinalsEligible": false
   }
 }
