@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 2",
+  "programme": "US-CCSS-MATH",
+  "gradeOrdinal": 7,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L07",
+  "lessonTitle": "Collect and Represent Data",
+  "unitNumber": 1,
+  "lessonNumber": 7,
+  "officialOutcomeCodes": [
+    "CCSS:2.MD.D.10"
+  ],
+  "edition": "IM 2021 1st Edition",
+  "stageA": {
+    "status": "ORIGINAL_PUBLIC_TEACHER_HTML_REVIEWED_RESTRICTED_SOURCE_GAPS",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-7/preparation.html",
+    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-7/lesson.html",
+    "originalActivities": [
+      "Warm-up Notice and Wonder on transportation pictures",
+      "Activity 1 genuine classmates report their own way of arriving at school today, initially arranged without imposed grouping",
+      "Activity 2 pupils group and re-represent the same observations with pictures, tallies or symbols, then compare representations"
+    ],
+    "studentPrintPdf": "NOT_VERIFIED",
+    "educatorRestrictedMaterials": "NOT_VERIFIED",
+    "classroomEvidence": "NOT_OBSERVED"
+  },
+  "stageB": {
+    "status": "STRICT_PRIOR_PROSE_AND_SOURCE_LOCKED_REPAIR_AUTHORED_NOT_EXECUTED",
+    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1CentersAndRealDataCorrections.cs",
+    "dependencies": [
+      "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+      "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs"
+    ],
+    "guard": "Original canonical body SHA, exact source URL, official standards in original order, original English teaching fields and exact previous content version"
+  },
+  "stageC": {
+    "status": "TEACHER_ASSESSED_ORIGINAL_ACTIVITY_NO_DIGITAL_NUMERIC_OVERRIDE_CLAIMED",
+    "registeredDigitalFamilies": [],
+    "constraints": "Authentic student-reported survey answers, group-created visual representations, collaboration and real classroom observations require teacher evaluation; no invented classmates or mock dataset can prove completion",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1CentersAndRealDataCorrectionsTests.cs"
+    ],
+    "execution": "NOT_EXECUTED"
+  },
+  "closure": {
+    "status": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "stageD": "NOT_STARTED",
+    "academicApproval": "NOT_ASSERTED",
+    "outstanding": [
+      "Student task print/download source not independently checked",
+      "Teacher response/Cool-down may be educator-restricted",
+      "Physical student-authored and classroom performance not falsely auto-certified",
+      "Stage D technical test evidence not collected"
+    ]
+  }
+}
