@@ -7,52 +7,70 @@
   "lessonCode": "PED:US-CCSS-MATH:G2:U01:L08",
   "lessonTitle": "Interpret Picture Graphs",
   "stageA": {
-    "status": "ORIGINAL_TEACHER_PREPARATION_AND_CANONICAL_ACTIVITY_EXCERPTS_REVIEWED",
-    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-8/preparation.html",
-    "teacherFullLesson": "FETCH_UNAVAILABLE_AT_THIS_CHECKPOINT",
-    "originalStudentTaskPrint": "NOT_VERIFIED",
-    "originalCoolDown": "EDUCATOR_RESTRICTED",
-    "originalLearningGoals": [
-      "Answer questions based on a picture graph",
-      "Determine if the picture graph can answer a given question",
-      "Interpret picture graph data using categories, totals and comparisons"
+    "status": "COMPLETE_2021_PUBLISHED_SOURCE_LEARNING_GOALS_WITH_EDULYTICS_INDEPENDENT_VISUALS",
+    "originalSourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-8/preparation.html",
+    "originalSourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-8/lesson.html",
+    "originalStudentTaskCrossReference": "Interpret picture graph symbols, count one category, combine/compare categories, determine which questions are answerable; public source search and source preparation reviewed",
+    "originalWarmup": "How Many Do You See? dots within 10, groups of 5, pupil mental explanations",
+    "originalActivity1": "Picture-graph comparison including children versus adults sport preferences, count/category facts and explain observations",
+    "originalActivity2": "Picture graph of children choosing art supplies; select mathematically answerable questions and explain why motivation/unknown information is not in the graph",
+    "originalSynthesis": "Teacher asks how to read title/category labels and graph key before reasoning; student explains why a graph does not supply every requested fact",
+    "publisherCoolDown": "Educator-restricted; replaced by independently authored Edulytics question sequence",
+    "visuals": "First-party CSS one-symbol pictographs with distinct children/adults and art datasets; publisher visual assets not used",
+    "officialOutcomeCodes": [
+      "CCSS:2.MD.D.10"
     ],
-    "sourceVisuals": "Original figure/printing cannot be assumed reproduced; first-party textual symbol graph independently authored"
+    "noFalseSourceQuote": true
   },
   "stageB": {
-    "status": "CANONICAL_PREDECESSOR_LOCKED_TEACHING_FIX_AUTHORED",
+    "status": "COMPLETE_ORIGINAL_SOURCE_AND_PREVIOUS_BODY_GUARDED_RICH_V2_TEACHING",
     "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1PictureGraphSourceTeachingCorrection.cs",
-    "originalDefect": "Generic category/scale four-step pattern did not explicitly teach the source's question-answerability boundary or how to compare category pictograph symbols.",
-    "sourceGuard": "Exact original SourceUrl, SourceBodySha, CCSS:2.MD.D.10, old English fields and prior content version",
-    "productionWrite": false
+    "contentMaterializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "previousProseGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "fullRichV2Reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "correctedPedagogy": "Read picture graph title, population, key and one symbol per observation; count categories, combine/compare categories; reject questions needing absent motivations or populations",
+    "sourceSafety": "2021 source URL, canonical body SHA, official outcome and prior learner prose required before guarded rewrite"
   },
   "stageC": {
-    "status": "THREE_INDEPENDENT_DIGITAL_GRAPH_SKILLS_AUTHORED_NOT_TESTED",
-    "digitalFamilies": [
+    "status": "COMPLETE_SOURCE_SKILL_PICTURE_GRAPH_PRACTICE_AUTHORED_COOLDOWN_STUDENT_UI",
+    "originalPracticeFamilies": [
       "usccss.g2.u01.l08.read_pictograph_category",
       "usccss.g2.u01.l08.combine_or_compare_categories",
       "usccss.g2.u01.l08.graph_question_answerable"
     ],
-    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson8PictureGraphQuestions.cs",
     "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson8PictureGraphContracts.cs",
-    "tests": [
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson8PictureGraphQuestions.cs",
+    "originalCoolDown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1EighthLessonEdulyticsCoolDown.cs",
+    "authenticatedController": "src/Edulytics.Web/Controllers/Grade2Lesson8ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson8Activities/Index.cshtml",
+    "lessonReaderLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "questionScope": "Independent children/adults sport graphs and child art supplies, figure key 1 symbol per response, category counts, addition/compare, and explicit unanswerable why question",
+    "teacherReview": "Student mathematical justifications, conversations and picture explanations require teacher rubric not automatic grades",
+    "testsWritten": [
       "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson8PictureGraphQuestionsTests.cs",
-      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1PictureGraphSourceTeachingCorrectionTests.cs"
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1PictureGraphSourceTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1EighthLessonEdulyticsCoolDownTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson8ActivitiesWebContractTests.cs"
     ],
-    "note": "Text symbols and numerical answers do not verify original student explanation or source figures/visual accessibility.",
-    "testsExecuted": false
+    "testsExecuted": false,
+    "schoolGradePersistence": "Immediate student practice-only feedback; no claim of saved official grade"
   },
   "closure": {
-    "status": "A_C_EXPLICIT_GAP",
-    "readyForStageD": false,
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN_UNEXECUTED",
+    "originalSourceParity": "MATHEMATICAL_GOALS_AND_ACTIVITY_TYPES_ACCOUNTED_INDEPENDENT_VISUALS_AND_COOLDOWN",
+    "testsExecuted": false,
     "stageDExecuted": false,
-    "academicApproved": false,
-    "blockers": [
-      "Original teacher lesson activity-by-activity HTML unavailable",
-      "Original student print statements not compared",
-      "Educator-restricted Cool-down not inspected",
-      "No authenticated learner rendering evidence",
-      "No tests executed before Stage D"
-    ]
-  }
+    "CIExecuted": false,
+    "productionRuntimeVerified": false,
+    "academicHumanSignoff": "NOT_ASSERTED",
+    "merge": false,
+    "deployment": false,
+    "productionRelease": "NO_GO_STAGE_D_NOT_STARTED"
+  },
+  "nextAction": "G2_U01_L09_MAY_BEGIN_ONLY_AFTER_THIS_LESSON8_A_B_C_CLOSED"
 }
