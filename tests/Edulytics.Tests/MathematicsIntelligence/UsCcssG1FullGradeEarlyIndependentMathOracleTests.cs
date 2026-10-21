@@ -51,10 +51,16 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
         int sum=a+b;
         return index switch
         {
-            0=>mode==2?$"UNKNOWN={a-b};EQUATION={a}-{b}={a-b}":
+            0=>mode==4?(a==14?"UNKNOWN=8;EQUATION=8=14-6":
+                        $"UNKNOWN={a-b};EQUATION={a}-{b}={a-b}"):
+                mode==5?(a==18?"UNKNOWN=13;EQUATION=5+13=18":
+                         a==13?"UNKNOWN=7;EQUATION=13=7+6":"UNKNOWN=5;EQUATION=20=15+5"):
+                mode==2?$"UNKNOWN={a-b};EQUATION={a}-{b}={a-b}":
                 mode==3?$"UNKNOWN={a-b};EQUATION={a-b}+{b}={a}":
                 $"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
-            1=>$"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
+            1=>mode==5?"UNKNOWN=7;EQUATION=8+7=15":
+                mode==6?"UNKNOWN=8;EQUATION=17-8=9":
+                $"DIFFERENCE={a-b};CHECK={a-b}+{b}={a}",
             2=>mode switch
             {
                 0=>$"UNKNOWN={sum};EQUATION={a}+{b}={sum}",
@@ -62,25 +68,29 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
                 2=>$"UNKNOWN={a};EQUATION={a}+{b}={sum}",
                 3=>$"UNKNOWN={a};EQUATION={sum}-{b}={a}",
                 4=>$"UNKNOWN={b};EQUATION={sum}-{b}={a}",
+                6=>"UNKNOWN=6;EQUATION=9+6=15",
+                7=>"UNKNOWN=6;EQUATION=15-9=6",
                 _=>$"UNKNOWN={sum};EQUATION={sum}-{b}={a}"
             },
             3=>mode==0?$"RESULT={20-a-b};EQUATION=20-{a}-{b}={20-a-b}":
-                mode==2?$"RESULT={20-a-b-c};EQUATION=20-{a}-{b}-{c}={20-a-b-c}":
+                mode==2||mode==5?$"RESULT={20-a-b-c};EQUATION=20-{a}-{b}-{c}={20-a-b-c}":
+                mode==4?"LEFT=15;RIGHT=13;GREATER=LEFT":
                 $"RESULT={(mode==1?a+b:a-b)}",
             4=>$"GROUPS={a};TOTAL={a*10}",
-            5=>mode==3
-                // Independent source match: A/B/C corresponds to the
-                // tens-word option at index (number of tens modulo three).
-                ?$"MATCH={(char)('A'+a%3)};TENS={a};NUMBER={10*a}"
+            5=>mode==4?"TENS=7;NUMBER=70;WORD=SEVENTY":
+                mode==3?$"MATCH={(char)('A'+a%3)};TENS={a};NUMBER={10*a}"
                 :$"TENS={a};NUMBER={10*a}",
             6=>mode switch
             {
                 0=>$"TENS={a+1};TOTAL={10*(a+1)}",
                 1=>$"TENS={a-1};TOTAL={10*(a-1)}",
                 2=>$"TOTALS={string.Join(",",Enumerable.Range(2,8).Select(t=>10*t))};LAST=90",
-                _=>$"TOTALS={string.Join(",",Enumerable.Range(1,8).Reverse().Select(t=>10*t))};LAST=10"
+                3=>$"TOTALS={string.Join(",",Enumerable.Range(1,8).Reverse().Select(t=>10*t))};LAST=10",
+                4=>"ADD=70;SUBTRACT=50",
+                _=>throw new InvalidOperationException("Unknown ten tower source mode")
             },
-            7=>$"TENS={(mode%2==0?sum:a-b)};TOTAL={10*(mode%2==0?sum:a-b)}",
+            7=>mode==6?"ADDITION=80;SUBTRACTION=50":
+                $"TENS={(mode%2==0?sum:a-b)};TOTAL={10*(mode%2==0?sum:a-b)}",
             8=>mode switch
             {
                 0=>$"RESULT={10*sum}",
