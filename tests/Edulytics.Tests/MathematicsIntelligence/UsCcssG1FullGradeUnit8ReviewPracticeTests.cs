@@ -196,8 +196,10 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
         Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
         Assert.Equal(correct,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
         Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,correct));
-        Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
-            $"NEW_TENS={value/10-1};NEW_ONES={value%10+10};TOTAL={value}"));
+        // The alternative equals the correct answer for mode 0; rejecting it would reject the true mathematics.
+        if(mode!=0)
+            Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
+                $"NEW_TENS={value/10-1};NEW_ONES={value%10+10};TOTAL={value}"));
         Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
             correct+";FALSE=1"));
     }
