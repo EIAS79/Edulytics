@@ -9,7 +9,7 @@
     "lastConsecutiveACClosed": 0,
     "nextSequentialLesson": 4,
     "firstUnclosedLesson": 1,
-    "currentWork": "Source-ordered Grade 2 U01 L01-L03 have academic gap checkpoints; begin U01 L04 next. Do not mark source unavailable items closed."
+    "currentWork": "G2 U01 L04 needs guarded source-teaching repair before advancing to G2 U01 L05; four lesson checkpoints exist."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -61,11 +61,11 @@
     {
       "gradeOrdinal": 4,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L04",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
+      "sourceReview": "PUBLIC_TEACHER_STUDENT_FACING_HTML_REVIEWED_PRINT_AND_COOLDOWN_PENDING",
+      "teaching": "B_DEFECT_DOCUMENTED_UNFIXED",
+      "practice": "TWO_SOURCE_SPECIFIC_DIGITAL_FAMILIES_AUTHORED_NOT_TESTED",
+      "tests": "WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -1650,6 +1650,12 @@
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L03",
       "reason": "Authorized print student task PDF unavailable; Cool-down login-restricted; physical/student-authored work not digitally graded.",
       "nextAction": "Review obtainable source-task and teacher criteria, verify educator-authored evidence/Practice scope before A-C closure; Stage D tests must run later."
+    },
+    {
+      "gradeOrdinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L04",
+      "reason": "Exact How Close source teaching correction unfinished; print tasks/Cool-down restricted; teacher-scored three-card equations and explanations outside numeric grading.",
+      "nextAction": "Implement guarded Stage B teaching repair and complete source evidence before moving to lesson 5."
     }
   ]
 }
