@@ -1329,6 +1329,29 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         code, lesson_id, title, level = raw.split("|", 3)
         assert code not in by_code, ("duplicate disposable lesson", code)
         by_code[code] = (lesson_id, title, level)
+    # Strictly source-pinned source-title replacements for three G1 catalogue
+    # aliases. A correction must NOT relax any other exact-title check.
+    title_corrections = {
+        "PED:US-CCSS-MATH:G1:U03:L24": (
+            "Relate Counting to Addition and Subtraction PLC Activity",
+            "Relate Counting to Addition and Subtraction",
+            "3fd5d2c854c79d76d2678582f6cf6d3285a8004ed7e608a62fe54d2777be9761",
+            3, 24),
+        "PED:US-CCSS-MATH:G1:U04:L04": (
+            "More Addition and Subtraction with Tens PLC Activity",
+            "More Addition and Subtraction with Tens",
+            "aea5b61803df4c4b9df6fd46f89e9413a5bb48d0ef33c3e8178327ec9e22b5c7",
+            4, 4),
+        "PED:US-CCSS-MATH:G1:U04:L08": (
+            "Different Representations of Tens and Ones PLC Activity",
+            "Different Representations of Tens and Ones",
+            "f3fa805d6421b2677b3a20200f257432271cbfee1e3b9c1ec6d34b8ba855d4da",
+            4, 8),
+    }
+    reviewed_starting_content = Path(
+        "src/Edulytics.Data/Seeding/"
+        "CommonCoreG1FullGradeStartingContentCorrections.cs"
+    ).read_text(encoding="utf-8")
     # The Grade 1 fixture student must never be granted arbitrary cross-grade
     # access. Keep that student intact; re-enrol only the SECOND synthetic
     # primary-school student in a real existing class per grade (CI DB only).
@@ -1398,8 +1421,32 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         assert "rich-lesson-section" in body, (
             code, "missing learner lesson content in authenticated HTML")
         rendered = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
-        expected = re.sub(r"\s+", " ", html.unescape(title)).casefold()
-        assert expected in rendered, (code, "missing exact lesson title", expected)
+        effective_title = title
+        if code in title_corrections:
+            historical, original_heading, source_sha, source_unit, source_lesson = (
+                title_corrections[code])
+            assert title == historical, (
+                code, "unrecognized catalogue title: no alias bypass", title)
+            official_url = (
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-"
+                + str(source_unit) + "/lesson-" + str(source_lesson)
+                + "/preparation.html")
+            exact_record = (
+                'new(@"' + code + '",@"' + official_url
+                + '",@"' + source_sha + '"')
+            at = reviewed_starting_content.find(exact_record)
+            assert at >= 0, (code, "source-pinned title correction missing")
+            boundary = reviewed_starting_content.find(
+                '\n        new(@"', at + len(exact_record))
+            reviewed_row = reviewed_starting_content[
+                at:boundary if boundary >= 0 else None]
+            assert '@"' + original_heading + '"' in reviewed_row, (
+                code, "unrecognized corrected publisher heading")
+            effective_title = original_heading
+        expected = re.sub(
+            r"\s+", " ", html.unescape(effective_title)).casefold()
+        assert expected in rendered, (
+            code, "missing exact source-reviewed lesson title", expected)
         if code == "PED:US-CCSS-MATH:G1:U03:L14":
             # Original 2021 source inspected read-only on Our-CS: Number
             # Puzzles Stage 2 is within 20, both operations and distinct
