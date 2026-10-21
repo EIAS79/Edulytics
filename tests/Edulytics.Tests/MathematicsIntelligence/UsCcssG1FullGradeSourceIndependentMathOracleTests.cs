@@ -122,7 +122,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
         };
     }
 
-    private static string SourceReviewOracle(int i,int a,int b,int mode)
+    private static string SourceReviewOracle(int i,int a,int b,int c,int mode)
     {
         return i switch
         {
@@ -135,7 +135,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 $"MISSING_ADD={b};MISSING_SUB={a}",
             2=>mode==8?"ADD=5+9=14;SUB=14-8=6":
                 $"RESULT={(mode%2==0?a+b:a-b)}",
-            3=>mode switch
+            3=>mode>=9?$"RESULT={a+b+c}":mode switch
             {
                 4=>$"CHANGE={15-8};FINAL={8+(15-8)}",
                 5=>$"CHANGE={17-5};FINAL={17-(17-5)}",
@@ -144,7 +144,9 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 8=>$"CHANGE={16-9};FINAL={16-(16-9)}",
                 _=>mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}"
             },
-            4=>mode switch
+            4=>mode>=10?
+                $"TRUE={(mode==11?"YES":"NO")};ACTUAL={(mode==10?77:mode==11?62:93)};STATED={c}":
+                mode switch
             {
                 4=>$"MISSING={18-7};TOTAL={18}",
                 5=>$"MISSING={18-13};TOTAL={18}",
@@ -156,11 +158,29 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
             },
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
-            7=>mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
+            7=>mode==5?$"NUMBER={a};E1=0+{a};E2=5+{a-5};E3=10+{a-10}":
+                mode==4?$"NUMBER={a};TENS={a/10};ONES={a%10}":
+                mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
                 mode==2?$"ALT_TENS={a/10-2};ALT_ONES={a%10+20};TOTAL={a}":
                 $"WAYS={a/10+1};ZERO_TENS_ONES={a};TOTAL={a}",
-            8=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}",
-            9=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}",
+            8=>mode switch
+            {
+                4=>"TRUE=YES;LEFT=65;RIGHT=35",
+                5=>"TRUE=YES;LEFT=65;RIGHT=65",
+                6=>"TRUE=NO;LEFT=65;RIGHT=65",
+                7=>"CANDIDATES=34,44,54",
+                8=>"NUMBER=44",
+                9=>"NUMBER=83",
+                _=>mode%2==0?$"CANDIDATES={a},{a+10},{a+20}":$"NUMBER={a+10}"
+            },
+            9=>mode switch
+            {
+                4=>"TRUE=NO;LEFT=60;RIGHT=70",
+                5=>"TRUE=YES;LEFT=70;RIGHT=70",
+                6=>"TRUE=YES;LEFT=80;RIGHT=69",
+                7=>"TRUE=YES;LEFT=47;RIGHT=40",
+                _=>$"NUMBER={a};VALID={(mode%2==0?"YES":"NO")}"
+            },
             _=>throw new InvalidOperationException("Unsupported source review family")
         };
     }
@@ -215,7 +235,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 .Build(list[i],new Random(7300+seed*67+i*101)).Parameters;
             int a=p["a"],b=p["b"],mode=p["mode"];
             Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(list[i],p));
-            var expected=SourceReviewOracle(i,a,b,mode);
+            var expected=SourceReviewOracle(i,a,b,p["c"],mode);
             Assert.Equal(expected,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(list[i],p));
             Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(list[i],p,expected));
             Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(list[i],p,expected+";FALSE=1"));
