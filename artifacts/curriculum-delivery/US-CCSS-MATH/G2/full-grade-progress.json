@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 0,
-    "firstUnclosedLesson": 1,
-    "nextSequentialLesson": 1,
-    "currentWork": "GRADE 2 U01 L01 Stage A+B+C in progress. Independently authored Edulytics cooldown and exact math checker added. Need learner-facing assessment integration and source-alignment review before A_C_COMPLETED/READY_FOR_STAGE_D; do not advance."
+    "lastConsecutiveACClosed": 1,
+    "firstUnclosedLesson": 2,
+    "nextSequentialLesson": 2,
+    "currentWork": "Grade 2 U01 L01 closed A_C_COMPLETED/READY_FOR_STAGE_D (authored, Stage D unrun). Next STRICT sequential G2 U01 L02; earlier pre-authored draft requires own source review and independently authored cooldown."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -24,19 +24,20 @@
     "G2 content pack reviewEvidence narrative says 143 of 146 included but the live JSON catalogue has 146 lesson records, all isSupporting=false and all with OutcomeCodes. No historical approval inferred.",
     "U01 L02 and L03 now have ten/twenty-cube original-source contracts, actual teaching corrections and unexecuted source-specific tests. Existing published content untouched on main.",
     "2026-10-21 user corrected workflow: strict lesson by lesson A->B->C, mark A_C completed with READY_FOR_STAGE_D only after full evidence; only then begin next ordinal. Earlier cursor 9 was incorrect.",
-    "Original publisher Cool-down can be replaced as a pedagogical task by independently authored Edulytics Cool-down matching verified objective, with no claim of verbatim source reproduction. Do not require original restricted content to close authoring Stage A-C."
+    "Original publisher Cool-down can be replaced as a pedagogical task by independently authored Edulytics Cool-down matching verified objective, with no claim of verbatim source reproduction. Do not require original restricted content to close authoring Stage A-C.",
+    "Grade 2 ordinal 1 has separate original Edulytics Cool-down, learner-visible expression check and teacher rubric; source public lesson reviewed. No tests, CI, Stage D, merge or release executed."
   ],
   "lessonStatuses": [
     {
       "gradeOrdinal": 1,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
-      "sourceReview": "TEACHER_AND_STUDENT_HTML_REVIEWED_ORIGINAL_COOLDOWN_AND_ADDITION_FIGURE_MISSING",
-      "teaching": "EXISTING_GUARDED_CORRECTION_REUSED",
-      "practice": "FOUR_SOURCE_NUMERIC_FAMILIES_EXPRESSION_CHECKER_AND_INDEPENDENT_COOLDOWN_AUTHORED_PENDING_LEARNER_UI_INTEGRATION",
+      "sourceReview": "GRADE2_2021_PUBLIC_TEACHER_AND_STUDENT_HTML_REVIEWED_AND_FIRST_PARTY_ALTERNATIVES_AUTHORED",
+      "teaching": "COMPLETE_VERIFIED_SOURCE_ALIGNED_PREEXISTING_CORRECTION_AND_RICH_V2_VIEW",
+      "practice": "FOUR_NUMERIC_FAMILIES_EXPRESSION_CHECKER_INDEPENDENT_COOLDOWN_AND_STUDENT_UI_AUTHORED",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "IN_PROGRESS",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 2,
@@ -1636,12 +1637,6 @@
   ],
   "returnQueue": [
     {
-      "gradeOrdinal": 1,
-      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
-      "reason": "Edulytics original Cool-down authored, so publisher-login Cool-down no longer blocks authoring. Pending learner-facing integration of expression record and original cooldown, independent lesson source alignment review; do not claim complete early.",
-      "nextAction": "Finish first-lesson student-facing activity/Cool-down and teacher-rubric integration, establish source-proof A+B+C authoring evidence; then mark A_C_COMPLETED and READY_FOR_STAGE_D."
-    },
-    {
       "gradeOrdinal": 2,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
       "reason": "Authorized print student task PDF unavailable; Cool-down login-restricted; physical/student-authored work not digitally graded.",
@@ -1694,11 +1689,11 @@
     "stageDAndCIExecutionAllowed": false,
     "preexistingOutOfOrderDrafts": "L02-L08 edits exist but remain unverified and must be assessed afresh only when reached sequentially; never count as closed.",
     "globalStaticPreflight": "DISCOVERY_ONLY_NOT_A_C_ACCEPTANCE",
-    "haltedAtFirstUnclosedLesson": true,
+    "haltedAtFirstUnclosedLesson": false,
     "blockerState": "IN_PROGRESS_BLOCKED_ONLY_FOR_ACTUAL_UNSOLVABLE_BLOCKER_NO_SKIPPING",
     "independentCooldownAllowed": true,
     "publisherRestrictedCooldownNotRequiredWhenIndependentSkillEquivalentAuthored": true,
     "noLegacyACGapStatus": true,
-    "higherOrdinalsEligible": false
+    "higherOrdinalsEligible": true
   }
 }
