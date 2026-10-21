@@ -3045,6 +3045,8 @@
     "Lesson 1 source-lesson HTML compared; print student-task PDF and Cool-down remain inaccessible."
   ],
   "existingGrade2HistoricalApprovals": "NOT_AUDITED_NO_CLAIM",
-  "currentAuthoringCursor": 9,
-  "lessonStatusAuthority": "full-grade-progress.json plus per-lesson checkpoints; this manifest only mirrors A-C status"
+  "currentAuthoringCursor": 1,
+  "lessonStatusAuthority": "full-grade-progress.json plus per-lesson checkpoints; this manifest only mirrors A-C status",
+  "executionPolicy": "STRICT_ONE_LESSON_AT_A_TIME_COMPLETE_A_B_C_AND_RECORD_READY_FOR_STAGE_D_BEFORE_NEXT",
+  "outOfOrderPriorWorkPolicy": "LESSONS_2_TO_8_ARE_EARLIER_UNAPPROVED_DRAFTS_REVIEW_ONLY_WHEN_THEIR_TURN_COMES"
 }
