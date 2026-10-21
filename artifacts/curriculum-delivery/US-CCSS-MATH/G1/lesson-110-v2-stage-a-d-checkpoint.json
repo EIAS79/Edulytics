@@ -61,7 +61,9 @@
     "sourceAuthoredRubric": null,
     "sourceTaskSpecificPracticeExtended": true,
     "newSourceModes": "Original source requires over 100 identical units. First-party explicit 101–110 grouping mode added; four existing 20–110 grouping modes retained.",
-    "independentMathematicsRegressionsPreparedIn": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs"
+    "independentMathematicsRegressionsPreparedIn": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0"
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -78,7 +80,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint.",
+  "nextAction": "Continue ordinal 111 in order; D/CI deferred.",
   "originalAtoCSourceRepair": {
     "ordinal": 110,
     "revisionDate": "2026-10-20",
@@ -90,5 +92,17 @@
     "stageDFinalCiNotRun": true,
     "academicAcceptance": "NOT_CLAIMED",
     "gradeRelease": "NO_GO"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Original long strip has more than 100 equal cubes and can be grouped into tens and ones, while physical strip length remains teacher-observed.",
+    "originalStudentAndTeacherTextCompared": true,
+    "firstPartyTeachingAndMathReviewed": true,
+    "originalActualMeasurementTeacherOnly": true,
+    "sourceImagesNotCertified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
   }
 }
