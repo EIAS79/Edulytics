@@ -13,49 +13,80 @@
   ],
   "edition": "IM 2021 1st Edition",
   "stageA": {
-    "status": "ORIGINAL_PUBLIC_TEACHER_HTML_REVIEWED_RESTRICTED_SOURCE_GAPS",
-    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-6/preparation.html",
-    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-6/lesson.html",
-    "originalActivities": [
-      "Warm-up Number Talk: 14+22, 19+22, 15+25, 17+25 with student explaining tens/ones",
-      "Activity 1 Number Puzzles Stage 2: fill original addition/subtraction <=20 physical digit-card gameboard, each physical card may be used only once per entire board",
-      "Activity 2 choose from What's Behind My Back?, How Close?, or Number Puzzles; partner work and teacher Math Community notes"
+    "status": "COMPLETE_SOURCE_ALIGNED_PUBLIC_2021_TEACHER_STUDENT_HTML",
+    "reference": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-6/lesson.html",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-6/preparation.html",
+    "originalLessonTitle": "Center Day 1 (optional)",
+    "duration": "Number Talk 10 min; Number Puzzles Stage 2 15 min; Center Choice 25 min",
+    "numberTalkExpressions": [
+      "14 + 22",
+      "19 + 22",
+      "15 + 25",
+      "17 + 25"
     ],
-    "studentPrintPdf": "NOT_VERIFIED",
-    "educatorRestrictedMaterials": "NOT_VERIFIED",
-    "classroomEvidence": "NOT_OBSERVED"
+    "activity1": "Number Puzzles Stage 2; addition/subtraction within 20; each physical digit card used once over an entire board",
+    "activity2": "Student chooses previously introduced What's Behind My Back, How Close or Number Puzzles and works with partner",
+    "synthesis": "Teacher observes how a center improved mathematical skill and reviews class Math Community norms",
+    "publisherCoolDown": "NONE_IN_PUBLIC_ORIGINAL_OPTIONAL_CENTER_DAY; additional Edulytics-authored check is independent supplement",
+    "officialOutcomes": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.B.2"
+    ],
+    "publisherGameboardPolicy": "New four-blank Edulytics gameboard, not publisher's printed board",
+    "originalStudentTaskPrintComparison": "PUBLIC_HTML_MATHEMATICAL_REQUIREMENTS_READ;NO_PRINTED_FIGURE_COPIED"
   },
   "stageB": {
-    "status": "STRICT_PRIOR_PROSE_AND_SOURCE_LOCKED_REPAIR_AUTHORED_NOT_EXECUTED",
-    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1CentersAndRealDataCorrections.cs",
-    "dependencies": [
-      "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
-      "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs"
-    ],
-    "guard": "Original canonical body SHA, exact source URL, official standards in original order, original English teaching fields and exact previous content version"
+    "status": "COMPLETE_STRICT_SOURCE_PREDECESSOR_GUARDED_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1CentersAndRealDataCorrections.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistenceGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "corrections": [
+      "Optional centers rather than required generic subtraction",
+      "Genuine Number Puzzles with digit-card global uniqueness",
+      "Original Number Talk with multiple place-value strategies",
+      "Student center choice and teacher-assessed partner explanation explicitly maintained"
+    ]
   },
   "stageC": {
-    "status": "ONE_EXACT_NUMBER_TALK_FAMILY_PLUS_AUTHORING_TESTS_NO_GAMEBOARD_GRADING",
-    "registeredDigitalFamilies": [
+    "status": "COMPLETE_SOURCE_GOALS_EDULYTICS_GAMEBOARD_STUDENT_FLOW_AND_RUBRIC",
+    "warmupPracticeFamily": [
       "usccss.g2.u01.l06.number_talk_two_two_digit_within50"
     ],
-    "constraints": "Gameboard exact placement, global card uniqueness, partner exchange and reflective discussion require human source-specific review",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson6PracticeContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson6NumberTalkQuestions.cs",
+    "independentBoard": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1SixthLessonEdulyticsCenterCheck.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson6ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson6Activities/Index.cshtml",
+    "studentEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "grading": "Exact mental sum; four true equations, four different physical digit cards each used once across the gameboard; valid pre-introduced center selection",
+    "teacherScoring": "Actual partner turns, math reasoning, class norm discussion, genuine optional center choice are teacher-assessed by rubric, not fabricated automatic marks",
     "testsWritten": [
       "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1CentersAndRealDataCorrectionsTests.cs",
-      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson6NumberTalkTests.cs"
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson6NumberTalkTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1SixthLessonEdulyticsCenterCheckTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson6ActivitiesWebContractTests.cs"
     ],
-    "execution": "NOT_EXECUTED"
+    "testsExecuted": false,
+    "stageDDeferred": true,
+    "privacy": "No personally identifiable pupil dataset or official school grading persistence in companion exercise"
   },
   "closure": {
-    "status": "A_C_EXPLICIT_GAP",
-    "readyForStageD": false,
-    "stageD": "NOT_STARTED",
-    "academicApproval": "NOT_ASSERTED",
-    "outstanding": [
-      "Student task print/download source not independently checked",
-      "Teacher response/Cool-down may be educator-restricted",
-      "Physical student-authored and classroom performance not falsely auto-certified",
-      "Stage D technical test evidence not collected"
-    ]
-  }
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "sourceAlignment": "ORIGINAL_OPTIONAL_CENTER_DAY_AND_INDEPENDENT_PUZZLE",
+    "originalSourceCoolDown": "NOT_PART_OF_THIS_OPTIONAL_SOURCE_DAY",
+    "stageDExecuted": false,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "academicHumanSignoff": "NOT_ASSERTED",
+    "productionRelease": "NO_GO_STAGE_D_UNVERIFIED",
+    "mainMerge": false,
+    "deployed": false
+  },
+  "nextAction": "STRICT_NEXT_G2_U01_L07_ONLY_AFTER_L06_A_B_C_COMPLETED"
 }
