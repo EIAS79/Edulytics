@@ -1,0 +1,150 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson16Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 — Solve all Compare story problems";
+    var stories=UsCcssG2Unit1SixteenthLessonComparePractice.OriginalSourceStories;
+}
+<style>
+.g2-l16{max-width:990px;margin:auto;padding:22px 18px 44px;color:#213b4d}
+.g2-l16 .panel{padding:22px;margin:18px 0;border:1px solid #d8e5ec;background:#fff;border-radius:14px}
+.g2-l16 .story{background:#f3f9fc;border:1px solid #adcad6;border-radius:12px;padding:17px;margin:15px 0}
+.g2-l16 h1{font-size:1.86rem}.g2-l16 h2{font-size:1.3rem}.g2-l16 h3{font-size:1.12rem}
+.g2-l16 label{display:block;font-weight:720;margin:13px 0 6px}
+.g2-l16 input,.g2-l16 select,.g2-l16 textarea{padding:11px;border:1px solid #7392a3;border-radius:9px;font:inherit;width:100%;max-width:510px}
+.g2-l16 input:focus,.g2-l16 textarea:focus,.g2-l16 select:focus{outline:3px solid #9de0e7}
+.g2-l16 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px}
+.g2-l16 .tape{display:flex;gap:0;margin:8px 0;align-items:stretch}
+.g2-l16 .strip{background:#c5e9ea;border:2px solid #2a8191;min-height:38px;padding:10px 4px;text-align:center}
+.g2-l16 .gap{background:#fff1cf;border:2px dashed #a7882e;min-height:38px;padding:10px 4px;text-align:center}
+.g2-l16 .tape-label{width:85px;flex-shrink:0;font-weight:720}
+.g2-l16 .button{background:#087f91;color:white;border:0;border-radius:9px;padding:13px 24px;font:inherit;font-weight:730;cursor:pointer}
+.g2-l16 .muted{color:#526a7a}
+.g2-l16 .success{border-left:4px solid #2a8654;padding-left:12px}
+.g2-l16 .error{border-left:4px solid #bc4555;padding-left:12px}
+.g2-l16 .review{border-left:4px solid #ad862f;padding-left:12px}
+</style>
+<main class="g2-l16">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to lesson</a>
+<header>
+<p>EDULYTICS · SOURCE-ALIGNED MATHEMATICAL STORY PROBLEMS</p>
+<h1>Solve all kinds of Compare problems</h1>
+<p class="muted">Grade 2 Unit 1 Lesson 16. Read carefully to identify WHO
+has more, WHO has less, and WHETHER the missing part is larger, smaller,
+or the DIFFERENCE. Use a tape diagram, a labeled drawing, or your own
+accurate method. The Cool-down is independently written by Edulytics.</p>
+</header>
+<section class="panel">
+<h2>1. True or False: make a ten</h2>
+<p>Explain whether each equation keeps the same number when addends
+are regrouped: 18+5=18+2+3; 28+5=30+3; and 38+4=40+3.
+Be ready to explain WHY, not simply give true or false.</p>
+</section>
+<section class="panel">
+<h2>2. A Trip to the Library</h2>
+<p>The source gives two original compare contexts. First Priya returns
+29 books and Andre 8 MORE. Second Andre reads 45 pages and Priya reads
+20 FEWER. Draw tape diagrams labeling WHO has more, the known amounts,
+and the question mark. Use a make-ten strategy for 29+8 if helpful.</p>
+<div class="story">
+<h3>Independent Edulytics diagrams showing the missing part</h3>
+<p><strong>Books returned:</strong> Andre's amount is the unknown LARGER strip.</p>
+<div class="tape" role="img" aria-label="Andre's larger number of books unknown, made from Priya's 29 books and 8 extra.">
+<span class="tape-label">Andre</span><span class="strip" style="width:300px">?</span></div>
+<div class="tape"><span class="tape-label">Priya</span><span class="strip" style="width:235px">29</span><span class="gap" style="width:65px">8 more</span></div>
+<p><strong>Pages read:</strong> Andre's larger amount is 45; Priya's smaller amount is unknown with difference20.</p>
+<div class="tape" role="img" aria-label="Andre reads 45 pages. Priya's smaller strip is unknown, and the dashed part is twenty fewer.">
+<span class="tape-label">Andre</span><span class="strip" style="width:300px">45</span></div>
+<div class="tape"><span class="tape-label">Priya</span><span class="strip" style="width:175px">?</span><span class="gap" style="width:125px">20 fewer</span></div>
+</div>
+</section>
+<section class="panel">
+<h2>3. Solve Compare Problems — Three Reads</h2>
+<p>Before answering each problem, read it THREE times: first for what
+happens in the story; second for the quantities that matter; third for
+what the final question asks. You may draw a tape or another
+mathematically correct picture, write equations, or use tens and ones.
+Partners can compare different solution methods.</p>
+<form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<button type="submit" class="button">Practice more place-value comparisons</button>
+</form>
+</section>
+<form class="panel" asp-controller="Grade2Lesson16Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<h2>4. Check the six original source situations</h2>
+<div class="grid">
+<div><label asp-for="Answers.TrueOne">18+5=18+2+3 (1 true / 0 false)</label><input asp-for="Answers.TrueOne" type="number" min="0" max="1" required /></div>
+<div><label asp-for="Answers.TrueTwo">28+5=30+3 (1 true / 0 false)</label><input asp-for="Answers.TrueTwo" type="number" min="0" max="1" required /></div>
+<div><label asp-for="Answers.FalseThree">38+4=40+3 (1 true / 0 false)</label><input asp-for="Answers.FalseThree" type="number" min="0" max="1" required /></div>
+</div>
+@for(var i=0;i<stories.Count;i++){
+    var story=stories[i];
+    var answer=Model.Answers.SourceAnswers.ElementAtOrDefault(i) ?? new Edulytics.Web.ViewModels.LessonContent.Grade2Lesson16StoryAnswer();
+    <section class="story">
+    <h3>@(i<2?"Library activity":"Three Reads activity") — problem @(i+1)</h3>
+    <p>@story.Text</p>
+    <input type="hidden" name="Answers.SourceAnswers[@i].SourceId" value="@story.Id"/>
+    <div class="grid">
+    <div><label for="larger-@i">Who has the LARGER quantity?</label>
+    <select id="larger-@i" name="Answers.SourceAnswers[@i].LargerPerson" required>
+    <option value="">Choose</option>
+    <option value="@story.LargerPerson" selected="@(answer.LargerPerson==story.LargerPerson)">@story.LargerPerson</option>
+    <option value="@story.SmallerPerson" selected="@(answer.LargerPerson==story.SmallerPerson)">@story.SmallerPerson</option>
+    </select></div>
+    <div><label for="unknown-@i">What does ? stand for?</label>
+    <select id="unknown-@i" name="Answers.SourceAnswers[@i].UnknownPosition" required>
+    <option value="">Choose</option>
+    @foreach(var opt in new[]{"Larger","Smaller","Difference"}){
+    <option value="@opt" selected="@(answer.UnknownPosition==opt)">@opt</option>
+    }</select></div>
+    <div><label for="numeric-@i">Answer to the question</label>
+    <input id="numeric-@i" name="Answers.SourceAnswers[@i].NumericalAnswer"
+    value="@answer.NumericalAnswer" type="number" min="0" max="100" required /></div>
+    </div>
+    <label for="equation-@i">A TRUE equation matching the story and your tape</label>
+    <input id="equation-@i" name="Answers.SourceAnswers[@i].Equation"
+        placeholder="e.g. 29+8=37" maxlength="200" value="@answer.Equation" required />
+    </section>
+}
+<h2>5. Independent Edulytics Cool-down</h2>
+<p>These are NEW first-party story questions about the same learning
+goals; they are not the publisher's protected Compare the Pages assessment.</p>
+<div class="grid">
+<div><label asp-for="Answers.CoolLarger">Hannah has 34 stones, Dina has 20 MORE. How many does Dina have?</label>
+<input asp-for="Answers.CoolLarger" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolSmaller">Luca has 52 badges, Mira has 30 FEWER. How many does Mira have?</label>
+<input asp-for="Answers.CoolSmaller" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolDifference">Tami has 63 stickers, Max has 41. How many MORE does Tami have?</label>
+<input asp-for="Answers.CoolDifference" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.RepresentationExplanation">Describe your three reads, place-value strategy, and a correct original tape or different drawing</label>
+<textarea asp-for="Answers.RepresentationExplanation" rows="4" maxlength="2000"></textarea>
+<p class="muted">The numerical checker verifies the missing part and equation.
+Your teacher assesses your story comprehension, own representations,
+place-value explanation and genuine partner work.</p>
+<button type="submit" class="button">Check my six Compare problems and Cool-down</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var row in Model.Feedback){
+<div class="@(row.Correct==true?"success":row.Correct==false?"error":"review")">
+<h3>@row.Activity</h3>
+<p>@(row.Correct==true?"Mathematically correct":row.Correct==false?"Revise your solution":"Teacher review needed"). @row.Message</p>
+</div>
+}
+<p class="muted">Immediate independent Edulytics practice only; no official school grade saved.</p>
+</section>
+}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>
+@foreach(var item in UsCcssG2Unit1SixteenthLessonComparePractice.TeacherRubric){<li>@item</li>}
+</ul></section>
+<p class="muted">Illustrative Mathematics K–5 2021 Grade 2 U01 Lesson 16,
+CCSS 2.OA.A.1 and 2.OA.B.2. First-party tape illustrations and Cool-down.</p>
+</main>
