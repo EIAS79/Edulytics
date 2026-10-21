@@ -6552,6 +6552,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g2.u01.l06.number_talk_two_two_digit_within50",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l06-number-talk-parameter-recompute",
+      "representations": [
+        "symbolic",
+        "base-ten-bundles"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g2.u02.bar_total_or_difference.no_regroup",
       "version": 1,
       "skillId": "number.whole.add_subtract",
