@@ -83,7 +83,7 @@ public sealed class UsCcssG1Lesson86Original2021ComparisonsTests
                 doc,row,
                 CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersionV1,
                 "unrecognized-next-version",verifiedNoPersistedTranslations:true));
-        var unrelated=doc.Lessons.Single(x=>x.LessonCode!=row.LessonCode);
+        var unrelated=doc.Lessons.First(x=>x.LessonCode!=row.LessonCode);
         Assert.False(MathematicsCanonicalLessonContentSeeder
             .IsGuardedG1U04L21JsonMetadataPredecessor(
                 doc,unrelated,
