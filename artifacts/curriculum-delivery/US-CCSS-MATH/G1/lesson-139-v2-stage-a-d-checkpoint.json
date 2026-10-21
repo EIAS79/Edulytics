@@ -59,7 +59,12 @@
     "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
     "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
     "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
-    "sourceAuthoredRubric": null
+    "sourceAuthoredRubric": null,
+    "authoringSourceRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons137To146SourceMathTests.cs",
+    "authoringSourceRegressionCommit": "bd4f898208de7f3e17063afc84f37d9f8319027d",
+    "sourceChoiceModeCommit": "7cd64fe7387c04342fb62d1cf0c4666c44ad7ab1",
+    "alternateMathChoiceVerifierCommit": "f8a04bff87a247bb941b381bc7a450136cd16f01",
+    "testsExecuted": false
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -75,5 +80,19 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+  "nextAction": "Continue ordinal 140 sequentially. Keep Stage D/CI/merge/deploy deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceMathAndLearningGoalBoundary": "Original choose ANY one of three additions and ANY one of three subtractions; four exact mentally computed warmups and six Heads Up partnership rounds (human-only).",
+    "originalAccessibleStudentTaskTextCompared": true,
+    "learnerTeachingSourceBoundReviewed": true,
+    "firstPartyMathGeneratorAndVerifierReviewed": true,
+    "openACDefects": [],
+    "genuinePupilMemoryDrawingsOrPeerPlayRequiresTeacher": true,
+    "sourceImageRightsUnverified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "originalAcademicSignoffNotClaimed": true
+  }
 }
