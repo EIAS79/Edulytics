@@ -40,7 +40,10 @@
     "existingSkillFamily": "usccss.g1.u06.l05.measure_connecting_cubes",
     "numericDigitalFamilyReused": true,
     "mathematicsBoundary": "Digitally graded source-skill numeric counts only; real insect figures, pupil's cube tower and group dialogue remain teacher-reviewed.",
-    "actualCorrectWrongMalformedAndPersistence": "PENDING_FROZEN_HEAD"
+    "actualCorrectWrongMalformedAndPersistence": "PENDING_FROZEN_HEAD",
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0",
+    "authoredNotExecuted": true
   },
   "stageD": {
     "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
@@ -55,7 +58,20 @@
   },
   "status": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Preserve corrected source-specific teaching and existing numeric family. Verify complete original figure and learner materialization, math negative controls and runtime scoring on frozen grade SHA; no individual acceptance before real CI evidence.",
+  "nextAction": "Continue ordinal108; keep Stage D/CI/merge/deploy deferred.",
   "singleSourceTeachingPathConfirmed": true,
-  "v1ToV2HistoricalSourceMigrationGuarded": true
+  "v1ToV2HistoricalSourceMigrationGuarded": true,
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "firstPartyTeachingSourceTaskTextReviewed": true,
+    "sourceSpecificDigitalMathReviewed": true,
+    "originalSourcePhysicalArtworkNotReproduced": true,
+    "publisherImageRightsNotClaimed": true,
+    "originalStudentMeasurementsNotAutoCertified": true,
+    "sourceScope": "Original caterpillar four cubes and grasshopper five cube lengths as teacher examples; full insect figure-based measuring teacher-led.",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
+  }
 }
