@@ -38,7 +38,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         if(n<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(n==1?8:n==2?8:n==3?8:n==4?9:n==5?7:n==7?4:n==8?9:n==9?8:3))return false;
+           mode<0||mode>(n==1?8:n==2?8:n==3?8:n==4?9:n==5?7:n==7?5:n==8?9:n==9?8:3))return false;
         return n switch
         {
             0=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
@@ -91,7 +91,8 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             6=>c==0&&(mode<=1?
                 a>=1&&a<=119&&b>=1&&b<=120-a:
                 a>=20&&a<=120&&b==0),
-            7=>mode==4?a>=1&&a<=120&&b==0&&c==0:
+            7=>mode==5?a==84&&b==0&&c==0:
+                mode==4?a>=20&&a<=100&&b==0&&c==0:
                 a>=20&&a<=120&&b==0&&c==0,
             8=>mode switch
             {
@@ -118,7 +119,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
     {
         int n=Index(family);
         if(n<0)throw new InvalidOperationException("Unreviewed Grade1 U08 family");
-        int mode=random.Next(n==1?9:n==2?9:n==3?9:n==4?10:n==5?8:n==7?5:n==8?10:n==9?9:4),a=0,b=0,c=0;
+        int mode=random.Next(n==1?9:n==2?9:n==3?9:n==4?10:n==5?8:n==7?6:n==8?10:n==9?9:4),a=0,b=0,c=0;
         for(int attempts=0;attempts<1000;attempts++)
         {
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
@@ -138,7 +139,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 }
             }
             else if(n==9){a=random.Next(1,121);b=random.Next(0,a+1);}
-            else if(n==7){a=mode==4?random.Next(1,121):random.Next(20,121);b=0;}
+            else if(n==7){a=mode==5?84:mode==4?random.Next(20,101):random.Next(20,121);b=0;}
             else if(n==8){a=random.Next(3,8)*10+random.Next(1,10);b=10;}
             else{a=random.Next(20,101);b=n>=8?10:0;}
             if(n==1&&mode>=4)(a,b)=mode switch
@@ -241,8 +242,17 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 6=>mode<=1?
                     $"Last Number Wins: start at {a} (not at one); count ON {b} hops up to 120. Write LAST=number.":
                     $"Count an organized collection of objects with tens bundles and loose ones. The display has NO double-counted cubes and contains between 20 and 120 objects. How many are there? Write TENS=number;ONES=number;TOTAL=number.",
-                7=>mode==4?
-                    $"ORIGINAL 2021 NUMBER BOOK, FIRST-PARTY STRUCTURED RECORD: Choose number {a} from the 1 through 120 range. Write NUMBER=number;TENS=number;ONES=number to show its standard tens-and-ones value. Real pupil book composition and illustrated representations require teacher review.":
+                7=>mode==5?
+                    "ORIGINAL 2021 UNIT 8 LESSON 8 NUMBER BOOK: Start from "+
+                    "the teacher's example number 84. Write AT LEAST THREE "+
+                    "DISTINCT correct addition expressions for eighty-four, "+
+                    "such as two addends in each. Enter "+
+                    "NUMBER=84;E1=x+y;E2=x+y;E3=x+y. "+
+                    "Different mathematical decompositions are accepted. "+
+                    "An authentic pupil book PAGE with visual tens/ones models "+
+                    "and the classroom gallery walk must be assessed by a teacher.":
+                    mode==4?
+                    $"ORIGINAL 2021 NUMBER BOOK, FIRST-PARTY STRUCTURED RECORD: Choose number {a} from the source 20 through 100 range. Write NUMBER=number;TENS=number;ONES=number to show its standard tens-and-ones value. Real pupil book composition and illustrated representations require teacher review.":
                     mode<=1?
                     $"Show the number {a} in tens and ones (the source range includes 100). Then exchange ONE full ten-rod for ten loose ones without changing the total. Write NEW_TENS=number;NEW_ONES=number;TOTAL=number.":
                     mode==2?
@@ -295,7 +305,8 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 $"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
-            7=>mode==4?$"NUMBER={a};TENS={a/10};ONES={a%10}":
+            7=>mode==5?"NUMBER=84;E1=20+64;E2=30+54;E3=40+44":
+                mode==4?$"NUMBER={a};TENS={a/10};ONES={a%10}":
                 mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
                 mode==2?$"ALT_TENS={a/10-2};ALT_ONES={a%10+20};TOTAL={a}":
                 $"WAYS={a/10+1};ZERO_TENS_ONES={a};TOTAL={a}",
