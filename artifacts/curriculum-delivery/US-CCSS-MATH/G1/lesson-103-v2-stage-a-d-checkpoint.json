@@ -38,14 +38,33 @@
     "targetedCorrection": "Restored omitted foot/finger reference comparison, different set of three objects, original center choices to existing Unit6 lesson content",
     "existingCandidatePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
     "changedContentCommit": "48541c101d6255f0d2dbe990c498f8a4f334b504",
-    "originalTeachingMaterialCopied": false
+    "originalTeachingMaterialCopied": false,
+    "studentDrawingFalseArtworkClaimCorrected": true,
+    "promptCorrectionCommit": "0856ff6e81fb8cb7118203014bb02a4acfc2a4b9",
+    "originalPhysicalComparisonInstructionsPreserved": true
   },
   "stageC": {
     "existingDigitalFamilyReused": "usccss.g1.u06.l01.compare_lengths",
     "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
     "testedNumericCoverageClaim": false,
     "digitizedSubtask": "Compare same-origin first-party equal-unit strips and three different lengths in either order",
-    "cannotCertify": "Original chosen physical items, student's measured foot/finger references, traced drawings or live center gameplay"
+    "cannotCertify": "Original chosen physical items, student's measured foot/finger references, traced drawings or live center gameplay",
+    "digitalSubtaskModes": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sourceMathModeContracts": [
+      "LONGER=RED/BLUE/EQUAL;DIFFERENCE=n",
+      "ORDER=A,B,C (shortest to longest)",
+      "ORDER=A,B,C (longest to shortest)"
+    ],
+    "sourceMeasurementLimitations": "First-party equal-unit hypothetical strip math cannot prove actual object selection, physical alignment, real object lengths, student's own foot/finger use, tracing or center play.",
+    "implementationPromptCommit": "0856ff6e81fb8cb7118203014bb02a4acfc2a4b9",
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson103EqualUnitLengthComparisonTests.cs",
+    "authoredTestsCommit": "f8a989bb8d60cec6e835821fd1c3cb1344d49a23",
+    "testsExecuted": false
   },
   "stageD": {
     "regressionAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -61,5 +80,16 @@
   "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Complete unchanged original V1 Stage D evidence on final frozen-grade SHA and per-lesson academic acceptance; do not certify classroom actions digitally"
+  "nextAction": "Continue ordinal104 U06 L02, preserving physical unchanged-string comparison teacher boundary.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentFacingTextCompared": true,
+    "firstPartyTeachingOriginalPhysicalRequirementsReconciled": true,
+    "digitalMathComparisonAndOrderingStaticallyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Original L01 physical measurement tasks remain teacher performed; original publisher art and classroom outcomes not claimed digital. First-party equal-unit modeled strip comparisons are gradeable proxies only. Stage D requires actual learner rendering, grading persistence, source rights and academic acceptance."
+  }
 }
