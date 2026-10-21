@@ -7,6 +7,8 @@ on:
       - 'tools/Edulytics.CiFixtures/**'
       - 'tools/phase29/acceptance_two_school_https.py'
       - 'tools/phase29/b001_practice_attempt_probe.py'
+      - 'tools/curriculum/us-ccss-g1-stage-d-technical-reconciliation.cjs'
+      - 'tests/us-ccss-g1-stage-d-technical-reconciliation.test.cjs'
       - 'src/**'
   workflow_dispatch:
 
@@ -230,3 +232,44 @@ jobs:
           print('Verified actual previous-job Practice artifact: 500/500 persisted grades,')
           print('500/500 malformed answers rejected and persisted, NO academic release')
           PY
+
+  g1-stage-d-technical-artifact:
+    name: g1-exact-run-96-lesson-internal-technical-evidence
+    needs: isolated-us-school-https
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Negative control / tampered evidence tests
+        run: node --test tests/us-ccss-g1-stage-d-technical-reconciliation.test.cjs
+      - name: Download original authenticated lesson rows from this SAME CI run and fail closed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/g1-stage-d-exact-run
+          gh run download "$GITHUB_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name g1-96-original-source-practice-https-candidate-not-academic-clearance \
+            --dir /tmp/g1-stage-d-exact-run
+          test -s /tmp/g1-stage-d-exact-run/g1-96-source-family-https-candidate-evidence.json
+          node tools/curriculum/us-ccss-g1-stage-d-technical-reconciliation.cjs \
+            --artifact=/tmp/g1-stage-d-exact-run/g1-96-source-family-https-candidate-evidence.json \
+            --output=/tmp/g1-stage-d-exact-run/g1-96-technical-evidence-reconciliation.json \
+            --run-id="$GITHUB_RUN_ID"
+          node -e "const a=require('/tmp/g1-stage-d-exact-run/g1-96-technical-evidence-reconciliation.json');if(a.rows.length!==96||a.digitalGradingPersisted!==95||a.sourceOriginalSelectedTextVerified!==90||a.selectedSourceTextFragmentsVerified!==190||a.publicationApproval!=='NOT_EVALUATED'||a.gradeRelease!=='NO_GO')process.exit(1)"
+      - name: Retain original source-scoped verified technical report (NOT publication approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-96-per-lesson-internal-technical-evidence-not-publication-approval
+          path: /tmp/g1-stage-d-exact-run/g1-96-technical-evidence-reconciliation.json
+          if-no-files-found: warn
+          retention-days: 14

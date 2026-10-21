@@ -36,8 +36,7 @@ function fixture(){
    if(n>=57)checkpoints[n]={ordinal:n,lessonCode:'L'+n,
      aToCClosure:{outcome:'READY_FOR_STAGE_D',openACDefects:[]}};
  }
- // Our fake source counts are 4 + 7*3 + 82*2 = 189; 58 has one additional source fragment.
- artifact.rows.find(r=>r.ordinal===58).originalSourceBodyFragmentsVerified=4;
+ // Exactly 90 source-body records and 190 sampled original-task phrases.
  return {artifact,manifest,map,source,checkpoints,progress,
    checkoutSha:'a'.repeat(40),runId:1,artifactDigest:'b'.repeat(64)};
 }
