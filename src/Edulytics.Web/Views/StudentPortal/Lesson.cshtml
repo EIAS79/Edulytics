@@ -194,6 +194,24 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original real classroom survey">
+            <h2>Edulytics · collect and organize real classroom data</h2>
+            <p>Record anonymous, authentic travel-to-school observations,
+                compare the unordered classroom display with a grouped
+                pictorial representation, and complete an independently
+                authored Cool-down using those same observations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson7Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open real-class-data activities and Cool-down
+            </a>
+        </section>
+    }
+
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
@@ -219,7 +237,8 @@
                     "PED:US-CCSS-MATH:G2:U01:L03" or
                     "PED:US-CCSS-MATH:G2:U01:L04" or
                     "PED:US-CCSS-MATH:G2:U01:L05" or
-                    "PED:US-CCSS-MATH:G2:U01:L06")
+                    "PED:US-CCSS-MATH:G2:U01:L06" or
+                    "PED:US-CCSS-MATH:G2:U01:L07")
             {
                 <section class="lesson-source-aligned-activities"
                          aria-label="Grade 2 source-aligned mathematical teaching">
