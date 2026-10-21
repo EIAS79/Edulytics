@@ -1,0 +1,174 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson15PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 — Three kinds of Compare problems";
+    var cards=UsCcssG2Unit1FifteenthLessonCompareCards.Cards;
+}
+<style>
+.g2-l15{max-width:1000px;margin:auto;padding:22px 18px 44px;color:#21394d}
+.g2-l15 .panel{border:1px solid #d5e4ed;border-radius:16px;padding:23px;margin:18px 0;background:#fff}
+.g2-l15 h1{font-size:1.85rem}.g2-l15 h2{font-size:1.28rem}
+.g2-l15 h3{font-size:1.08rem}.g2-l15 .muted{color:#4c6b7b}
+.g2-l15 label{display:block;font-weight:730;margin:12px 0 6px}
+.g2-l15 input,.g2-l15 select,.g2-l15 textarea{font:inherit;border:1px solid #7790a2;border-radius:8px;padding:11px;width:100%;max-width:510px}
+.g2-l15 input:focus,.g2-l15 select:focus,.g2-l15 textarea:focus{outline:3px solid #9ddce7}
+.g2-l15 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.g2-l15 .card{background:#f3f9fc;border:1px solid #a8c5d4;border-radius:12px;padding:17px;margin:13px 0}
+.g2-l15 .tapes{display:flex;flex-direction:column;gap:6px;margin:14px 0}
+.g2-l15 .strip{display:flex;min-height:35px;align-items:center;text-align:center;font-size:.86rem}
+.g2-l15 .part{background:#bde2e7;border:2px solid #23758f;padding:8px 5px}
+.g2-l15 .unknown{background:#fff6d9;border:2px dashed #a6832c;padding:8px 5px}
+.g2-l15 .tape-label{font-weight:700;width:95px;flex-shrink:0}
+.g2-l15 .button{background:#087b91;border:0;border-radius:9px;color:white;font-weight:750;font:inherit;padding:13px 24px;cursor:pointer}
+.g2-l15 .success{border-left:4px solid #278455;padding-left:12px}
+.g2-l15 .error{border-left:4px solid #b63d4b;padding-left:12px}
+.g2-l15 .review{border-left:4px solid #b18b30;padding-left:12px}
+</style>
+<main class="g2-l15">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<header>
+<p>EDULYTICS · ORIGINAL MATHEMATICAL CARD SORT</p>
+<h1>Compare problems — which part is unknown?</h1>
+<p class="muted">Grade 2 Unit 1 Lesson 15. You will match stories,
+independently designed tape diagrams and different equations.
+The unknown can be the larger amount, smaller amount, or the gap.
+All diagrams and our Cool-down are authored by Edulytics, not
+publisher card-art reproductions.</p>
+</header>
+<section class="panel">
+<h2>1. Number Talk — make ten</h2>
+<p>Find the sums in your head: 4+8+2, 4+5+3+2, 9+3+1, 9+5.
+Discuss two different ways of grouping addends to make ten.</p>
+</section>
+<section class="panel">
+<h2>2. Shell Collections — first decide who has more</h2>
+<p>Before using numbers: Diego has some shells. Lin has fewer.
+What must be true about the relative sizes of the two rectangular
+strips? Discuss with a partner. Now use the original numerical story:
+Diego has <strong>55 shells</strong>, and Lin has <strong>20 fewer</strong>.</p>
+<div class="card">
+<h3>Original Edulytics tape representation</h3>
+<div class="tapes" role="img" aria-label="Diego has 55 shells, the full longer tape. Lin's smaller tape is unknown, and the remaining dashed difference is 20 shells.">
+<div class="strip"><span class="tape-label">Diego</span><span class="part" style="width:330px">55 shells</span></div>
+<div class="strip"><span class="tape-label">Lin</span><span class="part" style="width:210px">?</span><span class="unknown" style="width:120px">20 fewer</span></div>
+</div>
+<p>The missing smaller amount is not the same as the missing gap.
+Show why 55 − 20 or an equivalent addition equation finds Lin's quantity.</p>
+</div>
+</section>
+<section class="panel">
+<h2>3. Card Sort — all three unknown positions</h2>
+<p>Read each independent story, choose its matching tape card,
+identify WHICH position has the question mark, and write TWO DIFFERENT
+mathematically equivalent equations that match the story. Some cards
+can match more than one correct equation. Discuss the matching choices
+with another learner, and let your teacher review the explanation.</p>
+<div class="grid">
+<div class="card">
+<h3>TapeSmaller</h3>
+<p>LARGER amount is known. SMALLER amount is ?, plus a known dashed difference.</p>
+<div class="strip"><span class="part" style="width:80%">Known bigger</span></div>
+<div class="strip"><span class="part" style="width:54%">?</span><span class="unknown" style="width:26%">Known gap</span></div>
+</div>
+<div class="card">
+<h3>TapeLarger</h3>
+<p>LARGER amount is ?. SMALLER and missing-extra pieces are known.</p>
+<div class="strip"><span class="part" style="width:80%">?</span></div>
+<div class="strip"><span class="part" style="width:54%">Known smaller</span><span class="unknown" style="width:26%">Known gap</span></div>
+</div>
+<div class="card">
+<h3>TapeDifference</h3>
+<p>BOTH quantities are known; dashed EXTRA part is the question mark.</p>
+<div class="strip"><span class="part" style="width:80%">Known bigger</span></div>
+<div class="strip"><span class="part" style="width:65%">Known smaller</span><span class="unknown" style="width:15%">?</span></div>
+</div>
+</div>
+</section>
+<form class="panel" asp-controller="Grade2Lesson15Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<h2>4. Match the stories and equation cards</h2>
+<h3>Record your Number Talk answers</h3>
+<div class="grid">
+<div><label asp-for="Answers.WarmA">4+8+2 = ?</label><input asp-for="Answers.WarmA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.WarmB">4+5+3+2 = ?</label><input asp-for="Answers.WarmB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.WarmC">9+3+1 = ?</label><input asp-for="Answers.WarmC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.WarmD">9+5 = ?</label><input asp-for="Answers.WarmD" type="number" min="0" max="100" required/></div>
+</div>
+@for(var i=0;i<cards.Count;i++){
+var card=cards[i];
+var entered=Model.Answers.CardMatches.ElementAtOrDefault(i) ?? new Edulytics.Web.ViewModels.LessonContent.Grade2Lesson15CardAnswers();
+<section class="card">
+<h3>Story card @card.Id</h3>
+<p>@card.Story</p>
+<input type="hidden" name="Answers.CardMatches[@i].StoryId" value="@card.Id"/>
+<div class="grid">
+<div><label for="diagram-@i">Which diagram card matches?</label>
+<select id="diagram-@i" name="Answers.CardMatches[@i].DiagramKey" required>
+<option value="">Select a tape card</option>
+@foreach(var name in new[]{"TapeSmaller","TapeLarger","TapeDifference"}){
+<option value="@name" selected="@(entered.DiagramKey==name)">@name</option>
+}
+</select></div>
+<div><label for="unknown-@i">What is the unknown position?</label>
+<select id="unknown-@i" name="Answers.CardMatches[@i].UnknownPosition" required>
+<option value="">Select the unknown</option>
+@foreach(var name in new[]{"Larger","Smaller","Difference"}){
+<option value="@name" selected="@(entered.UnknownPosition==name)">@name</option>
+}
+</select></div>
+<div><label for="answer-@i">What number replaces ?</label>
+<input id="answer-@i" name="Answers.CardMatches[@i].Answer"
+value="@entered.Answer" type="number" min="0" max="100" required/></div>
+</div>
+<label for="equation-one-@i">First TRUE equation card (fill in all numbers)</label>
+<input id="equation-one-@i" name="Answers.CardMatches[@i].EquationA" value="@entered.EquationA"
+placeholder="e.g. 35+20=55" maxlength="200" required/>
+<label for="equation-two-@i">A DIFFERENT equivalent equation</label>
+<input id="equation-two-@i" name="Answers.CardMatches[@i].EquationB" value="@entered.EquationB"
+placeholder="e.g. 55-20=35" maxlength="200" required/>
+</section>
+}
+<h2>5. Original Edulytics Cool-down</h2>
+<p>These new story problems assess the same three missing-part positions,
+not a copy of the publisher's restricted At the Beach Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.CoolSmaller">Mira has 67 postcards. Sami has 30 FEWER. How many postcards does Sami have?</label>
+<input asp-for="Answers.CoolSmaller" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CoolLarger">Arin has 46 badges. Sana has 30 MORE. How many does Sana have?</label>
+<input asp-for="Answers.CoolLarger" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CoolDifference">Lina has 84 tickets, Omar has 70. How many MORE tickets does Lina have?</label>
+<input asp-for="Answers.CoolDifference" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.ExplainUnknownPositions">Explain why 'more' and 'fewer' do not by themselves tell you which unknown position to fill, and how your partner checked both equations</label>
+<textarea asp-for="Answers.ExplainUnknownPositions" rows="4" maxlength="2000"></textarea>
+<p class="muted">The checker validates card values, missing-part placement,
+and multiple equivalent equations. Teacher reviews your actual card-sort
+conversation, original diagram construction and explanatory wording.</p>
+<button class="button" type="submit">Check my tape card matches and Cool-down</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var item in Model.Feedback){
+<div class="@(item.Correct==true?"success":item.Correct==false?"error":"review")">
+<h3>@item.Task</h3>
+<p>@(item.Correct==true?"Numerically consistent":item.Correct==false?"Needs revision":"Teacher review required"). @item.Feedback</p>
+</div>
+}
+<p class="muted">Immediate practice-only feedback. No official school grade
+or claim of student physical card sorting has been saved.</p>
+</section>
+}
+<section class="panel"><h2>Teacher evidence rubric</h2>
+<ul>
+@foreach(var criterion in UsCcssG2Unit1FifteenthLessonCompareCards.TeacherRubric){<li>@criterion</li>}
+</ul>
+</section>
+<p class="muted">Curriculum reference: IM K–5 2021 Grade 2 Unit 1 Lesson 15,
+CCSS 2.OA.A.1 and 2.OA.B.2. All tape drawings, story cards
+except publicly described numerical Diego/Lin story, and Cool-down
+are originally authored for Edulytics.</p>
+</main>
