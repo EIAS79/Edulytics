@@ -39,6 +39,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1BarGraphsSourceTeachingCorrection.Apply(document);
         CommonCoreG2Unit1ConstructGraphsTeachingCorrection.Apply(document);
         CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -233,8 +234,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Bar);
         var g2Questions = CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Construct);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Centers2 = CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
             .GetExpectedContentVersion(document, lesson, g2Questions);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Centers2);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -313,6 +316,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1ConstructGraphsTeachingCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
@@ -411,6 +416,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1ConstructGraphsTeachingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
