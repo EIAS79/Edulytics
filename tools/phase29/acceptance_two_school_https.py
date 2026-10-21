@@ -1447,11 +1447,12 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             r"\s+", " ", html.unescape(effective_title)).casefold()
         assert expected in rendered, (
             code, "missing exact source-reviewed lesson title", expected)
-        # Stage D: original-2021 lesson-specific learner BODY assertions for
-        # ordinals 57–64 (Unit 3) and 66–82 (Unit 4), grounded in the
-        # frozen A–C source-goal authoring. These are selective original
-        # activity assertions, not a complete teacher review, visual-art
-        # rights grant, proof of pupil writing, or physical center participation.
+        # Stage D: lesson-specific original 2021 learner BODY evidence for
+        # 57–64 (Unit 3), 66–88 (Unit 4), and 89–102 (Unit 5).
+        # Candidate phrases come from source-verified A–C teaching repairs;
+        # they must appear in real authenticated Student lesson HTML, not just
+        # in a static repository file. Classroom drawings/artwork/partner
+        # participation and teacher academic signoff remain independent.
         original_g1_source_bodies_stage_d = {
             57: (
                 "8 snakes, 7 iguanas and 5 frogs",
@@ -1562,16 +1563,99 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 "insert 49, 8, 25, 98 and 13",
                 "1, 5, 8, 10, 13, 25, 49, 50, 98, 99",
             ),
+            83: (
+                "Original 2021 number talk: 32+10=42",
+                "cards that cannot fit cause a PASS",
+            ),
+            84: (
+                "FIVE existing ten-towers and FIFTEEN loose ones",
+                "36+1=37 and 35+2=37",
+            ),
+            85: (
+                "94 = 9 tens 4 ones",
+                "Bag C has 49 cubes with 29 ones",
+            ),
+            86: (
+                "5 tens and 32 ones (82)",
+                "7 tens and 2 ones (72)",
+            ),
+            87: (
+                "92=90+2 TRUE",
+                "partner guesses after each clue",
+            ),
+            88: (
+                "THREE two-handful estimation/counting experiments",
+                "LESS THAN 20, 20 TO 50, and MORE THAN 50",
+            ),
+            89: (
+                "Original student equations: 43+50=93",
+                "remove number cards 0 and 6 to 10",
+            ),
+            90: (
+                "Original student-facing task asks for 23+45",
+                "Original Elena/Andre task 63+25=88",
+            ),
+            91: (
+                "Original 2021 warm-up sums 13+21, 13+31, 23+31, 33+41",
+                "original 23+74=97",
+            ),
+            92: (
+                "Kiran has 14 marbles, Priya has 23",
+                "Original Number Puzzles Stage 3",
+            ),
+            93: (
+                "Original 2021 Choose a Way to Add uses 8+47",
+                "37+7=44 dollars",
+            ),
+            94: (
+                "34+6=40",
+                "9+1=10",
+            ),
+            95: (
+                "32+□ with a ONE-DIGIT",
+                "16+□ with a ONE-DIGIT",
+            ),
+            96: (
+                "Original Target Numbers Stage 2 STARTS AT 25",
+                "45+7=52",
+            ),
+            97: (
+                "Original 17+36=53",
+                "Activity 2 Grab and Add",
+            ),
+            98: (
+                "Original Priya 37+26",
+                "28+56",
+            ),
+            99: (
+                "37 plastic bottles and 25 paper wrappers",
+                "23+68=91",
+            ),
+            100: (
+                "Original 2021 pupils calculate 48+15 and 57+36",
+                "number cards 37,22,18,56,41",
+            ),
+            101: (
+                "count backward by ONES from 100 to 70",
+                "Five in a Row Stage 6",
+            ),
+            102: (
+                "FOUR-STUDENT Food Drive table",
+                "LEAST NUMBER OF BOXES",
+            ),
         }
         source_body_fragments_verified = None
         if ordinal in original_g1_source_bodies_stage_d:
-            expected_lesson_code = (
-                "PED:US-CCSS-MATH:G1:U03:L"
-                + str(ordinal - 37).zfill(2)
-                if ordinal <= 64 else
-                "PED:US-CCSS-MATH:G1:U04:L"
-                + str(ordinal - 65).zfill(2)
+            source_unit, source_lesson = (
+                (3, ordinal - 37) if 57 <= ordinal <= 64 else
+                (4, ordinal - 65) if 66 <= ordinal <= 88 else
+                (5, ordinal - 88) if 89 <= ordinal <= 102 else
+                (None, None)
             )
+            assert source_unit is not None and source_lesson is not None, (
+                ordinal, "unmapped original lesson code for Stage D")
+            expected_lesson_code = (
+                f"PED:US-CCSS-MATH:G1:U{source_unit:02}:L{source_lesson:02}")
             assert target_grade == 1 and code == expected_lesson_code, (
                 ordinal, code, "misrouted ordered original source review")
             source_fragments = original_g1_source_bodies_stage_d[ordinal]
