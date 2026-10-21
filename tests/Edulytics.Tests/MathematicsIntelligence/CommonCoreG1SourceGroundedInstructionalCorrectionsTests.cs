@@ -353,7 +353,7 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
         Assert.Contains("DRAW the MINUTE HAND",en.KeyConceptsAndRules);
         Assert.Contains("ONLY a minute hand shown",en.KeyConceptsAndRules);
         Assert.Contains("OTHER valid hour choices",en.KeyConceptsAndRules);
-        Assert.Contains("minute hand at the 6",en.WorkedExamples);
+        Assert.Contains("MINUTE hand at the 6",en.WorkedExamples);
         Assert.Contains("2:30",en.WorkedExamples);
         Assert.Contains("7:30",en.WorkedExamples);
         Assert.Contains("POSSIBLE matching hour hand",en.StepByStepSolutions);
