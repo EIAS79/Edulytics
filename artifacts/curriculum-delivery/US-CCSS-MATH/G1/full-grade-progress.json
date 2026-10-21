@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 89,
+  "nextOrdinal": 93,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -4201,8 +4201,69 @@
         "CCSS:1.NBT.B.2",
         "CCSS:1.NBT.C.4"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u05-l01-original-student-and-teacher-math-v3",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Full first-party source-goal tens-or-ones arithmetic; original nine student equations and Priya/Mai teacher cases, verified answer persistence. Physical spinner/ten-frame observation and original publisher pictures remain teacher-directed and not auto-scored.",
+        "allowedFamilies": [
+          "usccss.g1.u05.l01.tens_or_ones_no_compose"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Add tens or ones to two-digit numbers, without composing a ten, in a way that makes sense to them."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.C.4"
+        ],
+        "sourceSha256": "29067a77c0097012cecab4af602665c9b2561c0555154d416b6adb4b06bac97a",
+        "effectiveStudentBodySha256": "73eeb15dd7839d9259cf6f2920e1b010987cabe9a2e08c1e056a789d759af761",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of actual HTML-unescaped authenticated student HTTPS response from same-run CI artifact 12345398813; live response includes volatile session tokens.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson89OriginalOneOrTenSourceTests.cs",
+        "independentGradingProofSha256": "18ffe31cb254c31c56ae7a2df346e7017f0be5d13fd8a5930871cde6ddfd5006",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-89-stage-a-d-source-math-acceptance-20261021.md",
+        "sourceReviewFileSha256": "fc31dbc110fd7f3d3cb47653c2f7e5524286d4230dbb5cefc61ce0b6e648736c",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson89OriginalOneOrTenSourceTests.cs",
+            "sha256": "18ffe31cb254c31c56ae7a2df346e7017f0be5d13fd8a5930871cde6ddfd5006"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Full first-party source-goal tens-or-ones arithmetic; original nine student equations and Priya/Mai teacher cases, verified answer persistence. Physical spinner/ten-frame observation and original publisher pictures remain teacher-directed and not auto-scored. Edulytics original/generated first-party explanatory assets only; source publisher art not copied; no actual physical student work, teacher signoff, publication or owner UAT claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 89,
+          "authenticatedLearnerHtmlSha256": "73eeb15dd7839d9259cf6f2920e1b010987cabe9a2e08c1e056a789d759af761",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39622317973,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -4234,8 +4295,68 @@
         "CCSS:1.NBT.A.1",
         "CCSS:1.NBT.C.4"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u05-l01-l07-source-activities-v2",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original 23+45 and 63+25, both Elena and Andre mathematical strategies taught in first-party explanation; independently verified structured intermediate arithmetic and persisted digital grading. Child's actual original drawings and physical Five in a Row game remain optional teacher activities, not machine-certified.",
+        "allowedFamilies": [
+          "usccss.g1.u05.l02.explain_no_compose_equations"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Add 2 two-digit numbers, without composing a ten, using methods based on place value. Make sense of equations that represent addition methods."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.C.4"
+        ],
+        "sourceSha256": "64e65d8055ab349030dfc4b4faa58bd730a240c72c7f3e919a9356f2be6bd7cc",
+        "effectiveStudentBodySha256": "803f309a35ef65b18c7185e195b47a8d3dc4f47bb5c19c9194a48cbb77ca7c12",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of actual HTML-unescaped authenticated student HTTPS response from same-run CI artifact 12345398813; live response includes volatile session tokens.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson90TwoAdditionStrategiesTests.cs",
+        "independentGradingProofSha256": "41872b08e34bf10060d408dd3be56202ecea37dd9d8ca954d1ea8263311c9f43",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-90-stage-a-d-source-math-acceptance-20261021.md",
+        "sourceReviewFileSha256": "3a0c773c92d811ac92697cbf8a1f63c6d7df90fb14e02801d4700df0f9c7c276",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson90TwoAdditionStrategiesTests.cs",
+            "sha256": "41872b08e34bf10060d408dd3be56202ecea37dd9d8ca954d1ea8263311c9f43"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original 23+45 and 63+25, both Elena and Andre mathematical strategies taught in first-party explanation; independently verified structured intermediate arithmetic and persisted digital grading. Child's actual original drawings and physical Five in a Row game remain optional teacher activities, not machine-certified. Edulytics original/generated first-party explanatory assets only; source publisher art not copied; no actual physical student work, teacher signoff, publication or owner UAT claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 90,
+          "authenticatedLearnerHtmlSha256": "803f309a35ef65b18c7185e195b47a8d3dc4f47bb5c19c9194a48cbb77ca7c12",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39622317973,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -4266,8 +4387,67 @@
       "outcomeCodes": [
         "CCSS:1.NBT.C.4"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u05-l01-l07-source-activities-v2",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original number talks 13+21,13+31,23+31,33+41, Lin/Han 32+54 and 23+74 mathematics taught as first-party source-goal examples; numeric method correctness and grading persisted; no claim child's source handwriting or publisher drawings digitally graded.",
+        "allowedFamilies": [
+          "usccss.g1.u05.l03.write_no_compose_equations"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Add 2 two-digit numbers, without composing a ten, using methods based on place value. Write equations to represent addition methods."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.C.4"
+        ],
+        "sourceSha256": "39ca0277f4d216517798b2d719f8b5185449841a58cfdedb55056bebdb9b12e7",
+        "effectiveStudentBodySha256": "08ff1cf76b11128dc44d4f957857e056c67016db620de1fc40313f2a86609f35",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of actual HTML-unescaped authenticated student HTTPS response from same-run CI artifact 12345398813; live response includes volatile session tokens.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson91OriginalLinHanEquationTests.cs",
+        "independentGradingProofSha256": "4b3dc7e85a39bf4e06bbb35f46bafab80e893bff2fd8d7e50ceefc472470c2a7",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-91-stage-a-d-source-math-acceptance-20261021.md",
+        "sourceReviewFileSha256": "f65de448f67cd8e8e9ed3df6d7c0dbecea9f7b939e1a9d3ca5bef80fb17f6e8d",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson91OriginalLinHanEquationTests.cs",
+            "sha256": "4b3dc7e85a39bf4e06bbb35f46bafab80e893bff2fd8d7e50ceefc472470c2a7"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original number talks 13+21,13+31,23+31,33+41, Lin/Han 32+54 and 23+74 mathematics taught as first-party source-goal examples; numeric method correctness and grading persisted; no claim child's source handwriting or publisher drawings digitally graded. Edulytics original/generated first-party explanatory assets only; source publisher art not copied; no actual physical student work, teacher signoff, publication or owner UAT claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 91,
+          "authenticatedLearnerHtmlSha256": "08ff1cf76b11128dc44d4f957857e056c67016db620de1fc40313f2a86609f35",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39622317973,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -4302,8 +4482,71 @@
         "CCSS:1.OA.C.6",
         "CCSS:1.OA.D.8"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u05-l01-l07-source-activities-v2",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original source Kiran 14/Priya 23 Notice/Wonder and three Center choices taught as first-party instructions; independent Edulytics sum/more/difference numeric follow-up verified against authenticated scoring. Not presented as publisher-original printed question, actual child authorship or real game participation.",
+        "allowedFamilies": [
+          "usccss.g1.u05.l04.center_no_compose"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Add within 100, without composing a ten."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.C.4",
+          "CCSS:1.OA.A.1",
+          "CCSS:1.OA.C.6",
+          "CCSS:1.OA.D.8"
+        ],
+        "sourceSha256": "69351d4a90bf9e86459496b561b7155a0ebb472a045761eaba188ac4d3d5356f",
+        "effectiveStudentBodySha256": "192dadd68175896f1e2ab5417419f378dbe524e04545fd3628bef837609ba244",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of actual HTML-unescaped authenticated student HTTPS response from same-run CI artifact 12345398813; live response includes volatile session tokens.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson92SourceMarblesFirstPartyTests.cs",
+        "independentGradingProofSha256": "5ac5a73aa00d0e7a96059eb40021c6d354c572388d0cd55290c415a2c31f90de",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-92-stage-a-d-source-math-acceptance-20261021.md",
+        "sourceReviewFileSha256": "5f2175b099e9dca0892be593e2f6977eec928b6b66aa3631370b909a84ea1da3",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson92SourceMarblesFirstPartyTests.cs",
+            "sha256": "5ac5a73aa00d0e7a96059eb40021c6d354c572388d0cd55290c415a2c31f90de"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original source Kiran 14/Priya 23 Notice/Wonder and three Center choices taught as first-party instructions; independent Edulytics sum/more/difference numeric follow-up verified against authenticated scoring. Not presented as publisher-original printed question, actual child authorship or real game participation. Edulytics original/generated first-party explanatory assets only; source publisher art not copied; no actual physical student work, teacher signoff, publication or owner UAT claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 92,
+          "authenticatedLearnerHtmlSha256": "192dadd68175896f1e2ab5417419f378dbe524e04545fd3628bef837609ba244",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39622317973,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -6149,7 +6392,7 @@
     "countAuthoredOnly": 1,
     "countOriginalSourceTextLessons": 90,
     "countSourceFragments": 190,
-    "internallyAcceptedByOriginalV1Gate": 38,
+    "internallyAcceptedByOriginalV1Gate": 42,
     "publisherFigureRightsAndFullTaskParity": "NOT_CERTIFIED_BY_THIS_TECHNICAL_RUN",
     "releaseStatus": "NO_GO"
   }
