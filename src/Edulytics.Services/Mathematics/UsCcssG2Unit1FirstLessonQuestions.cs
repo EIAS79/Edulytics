@@ -34,11 +34,12 @@ internal static class UsCcssG2Unit1FirstLessonQuestions
 
         if (family == TwoCardOperation)
         {
-            // The two operations must lead to different values and both remain
-            // within 0..10. Thus a single correct choice is gradeable.
-            var left = random.Next(2, 10);
-            var right = random.Next(1, Math.Min(left, 10 - left) + 1);
-            var operation = random.Next(2);
+            // Permit the original teacher's 10-and-7 example: addition may
+            // exceed ten but the selected subtraction remains within 0..10.
+            // Right > 0 prevents addition/subtraction yielding the same result.
+            var left = random.Next(2, 11);
+            var right = random.Next(1, left + 1);
+            var operation = left + right > 10 ? 1 : random.Next(2);
             var target = operation == 0 ? left + right : left - right;
             p["left"] = left;
             p["right"] = right;
@@ -144,8 +145,9 @@ internal static class UsCcssG2Unit1FirstLessonQuestions
             return false;
 
         if (family == TwoCardOperation)
-            return left is >= 2 and <= 9 &&
-                right >= 1 && right <= Math.Min(left, 10 - left);
+            return left is >= 2 and <= 10 &&
+                right >= 1 && right <= left &&
+                (operation == 1 || left + right <= 10);
 
         if (family == MatchExpression)
             return left is >= 0 and <= 10 && right >= 0 &&
