@@ -30,6 +30,12 @@ test('the ACTUAL progress ledger counts every internally accepted lesson only wi
   // proof until that lesson is genuinely revalidated. Fail closed instead of
   // pretending the declared approval is verified on this candidate.
   assert.equal(report.newAccepted+stale.length,declared);
+  // Current source and authenticated grading evidence must revalidate every
+  // declared approval; historical statuses alone do NOT make the release gate green.
+  assert.equal(stale.length,0,
+    'Approved V1 lesson has stale exact-candidate source/grading evidence');
+  assert.equal(report.newAccepted,declared,
+    'Original V1 acceptance count must be independently verified at candidate SHA');
   assert.equal(report.newNotAccepted,96-report.newAccepted);
   assert.equal(report.declaredNewAccepted,declared);
   assert.deepEqual(report.unverifiedDeclaredAcceptances,
