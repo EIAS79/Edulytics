@@ -82,7 +82,12 @@
     "engineCommit": "1581f98f1a36bca9fd6c419cae98abf5b2808e20",
     "independentOracleCommit": "125f851316fed90d491fc65de7e20ef60704285f",
     "regressionTestCommit": "c89b17ad9f32f894f2779353dc0b031f03ff68af",
-    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN"
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "authoringSourceRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons137To146SourceMathTests.cs",
+    "authoringSourceRegressionCommit": "bd4f898208de7f3e17063afc84f37d9f8319027d",
+    "expandedSourceWarmupCommit": "1a32f8a532a76887135d9a36a66586e8118f3b8c",
+    "expandedWarmupTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1OriginalMissingWarmupEquationsTests.cs",
+    "testsExecuted": false
   },
   "stageD": {
     "sourceAssertionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -107,5 +112,19 @@
     "sourceRightsAndTeacherOnlyBoundaries": "PENDING",
     "academicAcceptance": "NOT_CLAIMED",
     "release": "NO_GO"
-  }
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Four original planetarium missing-part stories and TWO correct-equation selection stories (Noah and Kiran). Three true/false warmups are exact in the generator; original illustrated diagrams/learner choices require human review.",
+    "originalTaskTextCompared": true,
+    "sourceBoundTeachingAndDigitalMathStaticallyReviewed": true,
+    "genuinePupilPageOrStoryTeacherOnly": true,
+    "originalPublisherFiguresNotVerifiedOrCopied": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "individualAcademicApprovalUnclaimed": true
+  },
+  "nextAction": "Continue ordinal 142, retain D/CI hold."
 }
