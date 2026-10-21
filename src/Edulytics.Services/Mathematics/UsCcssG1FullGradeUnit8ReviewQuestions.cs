@@ -419,10 +419,10 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         var parts=Normalize(response).Split(';');
         if(parts.Length!=4)return false;
         var fields=new Dictionary<string,string>(StringComparer.Ordinal);
-        foreach(var p in parts)
+        foreach(var part in parts)
         {
-            int at=p.IndexOf('=');
-            if(at<=0||at==p.Length-1||!fields.TryAdd(p[..at],p[(at+1)..]))
+            int at=part.IndexOf('=');
+            if(at<=0||at==part.Length-1||!fields.TryAdd(part[..at],part[(at+1)..]))
                 return false;
         }
         if(fields.Count!=4||!fields.TryGetValue("NUMBER",out string? number)||
