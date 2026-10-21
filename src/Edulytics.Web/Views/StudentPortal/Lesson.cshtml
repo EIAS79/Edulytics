@@ -336,6 +336,24 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L15" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original compare cards with three unknown positions">
+            <h2>Edulytics · match Compare stories, tapes and equations</h2>
+            <p>Explore unknown smaller, larger and difference in first-party
+                rectangular tape diagrams, match each story to MULTIPLE
+                equivalent equations, discuss your choice with a partner
+                and finish a new Edulytics Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson15Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open compare card sort and Cool-down
+            </a>
+        </section>
+    }
+
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
@@ -369,7 +387,8 @@
                     "PED:US-CCSS-MATH:G2:U01:L11" or
                     "PED:US-CCSS-MATH:G2:U01:L12" or
                     "PED:US-CCSS-MATH:G2:U01:L13" or
-                    "PED:US-CCSS-MATH:G2:U01:L14")
+                    "PED:US-CCSS-MATH:G2:U01:L14" or
+                    "PED:US-CCSS-MATH:G2:U01:L15")
             {
                 <section class="lesson-source-aligned-activities"
                          aria-label="Grade 2 source-aligned mathematical teaching">
