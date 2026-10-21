@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 2,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
+  "unitNumber": 1,
+  "lessonNumber": 2,
+  "lessonTitle": "Relate Addition and Subtraction within 10",
+  "officialOutcomeCodes": [
+    "CCSS:2.OA.B.2"
+  ],
+  "sourceEdition": "Illustrative Mathematics / Kendall Hunt 1st Edition (2021)",
+  "stageA": {
+    "status": "PUBLIC_LESSON_HTML_REVIEWED_PRINT_AND_COOLDOWN_NOT_VERIFIED",
+    "sourceTeacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-2/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-2/lesson.html",
+    "warmUpReviewed": "What Do You Know About 10? Teacher-facilitated contributions and ten representations",
+    "activitiesReviewed": [
+      "10 connecting cubes; show visible part, hide other part; original partner game and learner-recorded unknown-addend and related subtraction equations",
+      "Five two-color ten-cube towers A=5+5 B=4+6 C=3+7 D=2+8 E=1+9; students create multiple equations and match missing-number equations to the correct tower"
+    ],
+    "synthesisReviewed": "Student-authored equations and classroom Math Community conversation",
+    "cooldown": "Represent the Cubes, restricted login, not inspected",
+    "printStudentTask": "Public student task statements PDF link not fetchable from public source at checkpoint",
+    "toolDrawings": "Public HTML includes source descriptions; copyrighted publisher images not copied",
+    "originalTeacherStudentPerformance": "NOT_OBSERVED"
+  },
+  "stageB": {
+    "status": "SOURCE_GUARDED_TEACHING_CORRECTION_AUTHORED",
+    "sourceDefect": "generic subtraction steps + teaching idea 'within 20' where exact lesson is within 10",
+    "guard": "exact original LessonCode + preparation URL + canonical body SHA + CCSS 2.OA.B.2 + original affected field values",
+    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1TenTwentySourceTeachingCorrections.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistedUpgradeGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentWordingRebuild": "not copied; existing original-rich examples retained"
+  },
+  "stageC": {
+    "status": "THREE_EXACT_NUMERIC_FAMILIES_AUTHORED_TESTS_UNRUN",
+    "practiceFamilies": [
+      "usccss.g2.u01.l02.hidden_ten_cubes",
+      "usccss.g2.u01.l02.related_ten_equation",
+      "usccss.g2.u01.l02.match_ten_cube_tower"
+    ],
+    "familyContracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson2And3PracticeContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson2And3Questions.cs",
+    "testPaths": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson2And3QuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1TenTwentySourceTeachingCorrectionsTests.cs"
+    ],
+    "notes": "Digital numeric answers do not independently grade student-authored alternative equations, physical tower drawings, Math Community discussion, peer turns or oral strategy explanations.",
+    "testsWritten": true,
+    "testsExecuted": false
+  },
+  "closure": {
+    "status": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "stageDExecuted": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "release": "NO_GO",
+    "outstanding": [
+      "original student task print-PDF source comparison remains unavailable",
+      "source Cool-down access restricted; no invented task content",
+      "authored equation/physical representation teacher assessment not yet accepted as complete parity",
+      "new teaching code and practice test execution only in Stage D; no CI assertion"
+    ]
+  }
+}
