@@ -1982,7 +1982,8 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                         "assessmentMode":source_mode,
                         "learnerTeachingRendered":True,
                         "unescapedAuthenticatedLearnerHtmlSha256":g1_learner_response_sha,
-                        "authenticStudentAuthorshipNotClaimed":True})
+                        "authenticStudentAuthorshipNotClaimed":True,
+                        "originalSourceBodyFragmentsVerified":source_body_fragments_verified})
                 else:
                     assert source_mode in ("DIGITAL_PRACTICE",
                                            "DIGITAL_AND_SOURCE_AUTHORED_TASK")
@@ -2143,6 +2144,26 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                    for r in g1_e2e_rows)==95
         assert sum(r.get("wellFormedIncorrectAnswerRejectedAndPersisted") is True
                    for r in g1_e2e_rows)==95
+        # Persisted CI artifact must agree with per-lesson authenticated source
+        # assertions. A log-only PASS without an ordinal evidence row is a bug.
+        assert all(isinstance(r.get("unescapedAuthenticatedLearnerHtmlSha256"), str)
+                   and len(r["unescapedAuthenticatedLearnerHtmlSha256"]) == 64
+                   for r in g1_e2e_rows)
+        source_rows=[r for r in g1_e2e_rows
+                     if isinstance(r.get("originalSourceBodyFragmentsVerified"), int)]
+        assert len(source_rows) == 90, (
+            "90 original lesson source-body claims must be persisted",len(source_rows))
+        assert sorted(r["ordinal"] for r in source_rows)==list(range(57,147))
+        assert sum(r["originalSourceBodyFragmentsVerified"] for r in source_rows)==190
+        source_only=next(r for r in g1_e2e_rows if r["ordinal"]==65)
+        assert source_only["assessmentMode"]=="SOURCE_AUTHORED_TASK"
+        assert source_only["learnerTeachingRendered"] is True
+        assert source_only["originalSourceBodyFragmentsVerified"]==3
+        assert source_only["authenticStudentAuthorshipNotClaimed"] is True
+        assert all(r.get("authenticStudentAuthorshipNotClaimed") is True
+                   for r in g1_e2e_rows)
+        print("G1_STAGE_D_96_ARTIFACT_SOURCE_PROVENANCE_COMPLETE",
+              len(source_rows),190,flush=True)
         Path("/tmp/g1-96-source-family-https-candidate-evidence.json").write_text(
             json.dumps({"scope":"G1_51_TO_146_ONLY",
                 "testedCheckoutSha":subprocess.check_output(
