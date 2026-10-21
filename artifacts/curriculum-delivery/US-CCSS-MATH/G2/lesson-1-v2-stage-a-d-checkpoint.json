@@ -41,20 +41,25 @@
     "originalActivity2AdditionTableFigure": "LINK_FOUND_FIGURE_NOT_INSPECTED"
   },
   "stageA": {
-    "status": "SOURCE_TEACHER_AND_STUDENT_HTML_REVIEWED_COOLDOWN_AND_ADDITION_GRAPHIC_GAP",
+    "status": "COMPLETE_SOURCE_ALIGNED_USING_PUBLIC_2021_TEACHER_STUDENT_HTML_AND_INDEPENDENT_VISUALS",
     "originalLearningGoal": "Add and subtract within 10 (CCSS:2.OA.B.2)",
-    "independentAcademicAssertion": false
+    "independentAcademicAssertion": false,
+    "sourceTaskEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-1-v2-original-task-assessment-map.json",
+    "coolDownResolution": "ORIGINAL_EDULYTICS_SOURCE_GOAL_COOLDOWN_AUTHORED_NOT_COPY_OF_RESTRICTED_PUBLISHER_TASK",
+    "visualResolution": "FIRST_PARTY_ACCESSIBLE_TEN_FRAME_NOT_COPY_OF_PUBLISHER_ADDITION_TABLE"
   },
   "stageB": {
-    "status": "EXISTING_GUARDED_CORRECTION_REUSED",
+    "status": "COMPLETE_SOURCE_ALIGNED_TEACHING_AND_RICH_V2_EXPLICIT_READER",
     "correctionClass": "src/Edulytics.Data/Seeding/CommonCoreG2SourceGroundedFoundationsCorrections.cs",
     "originalDefect": "Unrelated clock-reading rule in lesson within-ten arithmetic",
     "sourceScope": "Source URL, canonical prior content hash and outcomes guarded",
     "changedInThisBranch": false,
-    "productionLessonIdentityChanged": false
+    "productionLessonIdentityChanged": false,
+    "richV2Reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceMaterialization": "src/Edulytics.Data/Seeding/CommonCoreG2SourceGroundedFoundationsCorrections.cs"
   },
   "stageC": {
-    "status": "FOUR_DIGITAL_FAMILIES_AND_OPEN_EXPRESSION_ARITHMETIC_CHECKER_AUTHORED_TESTS_UNRUN",
+    "status": "COMPLETE_AUTHORING_GRADING_AND_AUTHENTICATED_LEARNER_ENTRY",
     "lessonContractPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonPracticeContracts.cs",
     "questionEnginePath": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1FirstLessonQuestions.cs",
     "genericEngineBinding": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
@@ -71,7 +76,7 @@
       "No automatic verification of students' oral explanations, turn-taking or class chart",
       "Matching and recognizing expressions are digital analogues, not a reproduction of publisher's card materials or paper work"
     ],
-    "tests": "WRITTEN_NOT_EXECUTED",
+    "tests": "WRITTEN_NOT_EXECUTED_STAGE_D",
     "testCoveragePlanned": [
       "correct solution",
       "wrong solution",
@@ -82,30 +87,49 @@
       "unique generated fingerprints",
       "lesson-specific presentation interaction"
     ],
-    "academicApproval": "NOT_ASSERTED",
+    "academicApproval": "AUTHORING_EVIDENCE_ONLY_NOT_FINAL_ACADEMIC_SIGNOFF",
     "teacherAssessmentMap": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-1-v2-original-task-assessment-map.json",
     "expressionMathChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonExpressionRecord.cs",
     "expressionCheckerTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonExpressionRecordTests.cs",
-    "expressionCheckerBoundary": "Pure mathematical checker authored; no student-facing expression-record persistence/UI or teacher-signoff integration claimed"
+    "expressionCheckerBoundary": "Pure mathematical checker authored; no student-facing expression-record persistence/UI or teacher-signoff integration claimed",
+    "mathRecordChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonExpressionRecord.cs",
+    "originalCoolDown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonEdulyticsCoolDown.cs",
+    "learnerController": "src/Edulytics.Web/Controllers/Grade2Lesson1ActivitiesController.cs",
+    "learnerView": "src/Edulytics.Web/Views/Grade2Lesson1Activities/Index.cshtml",
+    "learnerEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "studentGradePolicy": "Immediate feedback from Edulytics companion activity is not persisted as an official school grade; original collaborative and explanation rubrics deliberately teacher-scored."
   },
   "closure": {
-    "status": "A_C_EXPLICIT_GAP",
-    "readyForStageD": false,
-    "openGaps": [
-      "Official original Cool-down task content restricted to educator login; exact source activity not inspected.",
-      "Original addition-table picture in Activity 2 was not independently inspected.",
-      "Free student-authored expression mathematical checker exists but is not yet wired to student activity/record-board submission flow.",
-      "Stage B learner-facing effective content parity and Stage C original feature coverage cannot yet be conclusively certified; no Stage D tests run.",
-      "Stage C authoring must document and link the existing teacher rubric and any required student expression-record submission mechanism; actual student attendance or performance is NOT required to close A-C authoring."
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+    "evidence": [
+      "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-1-v2-original-task-assessment-map.json",
+      "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonEdulyticsCoolDown.cs",
+      "src/Edulytics.Web/Controllers/Grade2Lesson1ActivitiesController.cs",
+      "src/Edulytics.Web/Views/Grade2Lesson1Activities/Index.cshtml",
+      "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonEdulyticsCoolDownTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonExpressionRecordTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson1ActivitiesWebContractTests.cs"
     ],
-    "stageDTestsExecuted": false,
+    "educationalScope": "Mathematics +/− within 0..10, match expressions, recognize ten-sum combinations, independent exit ticket, different correct expressions, original teacher-assessment rubrics",
+    "licensedContentPolicy": "SOURCE_AS_REFERENCE_NOT_COPIED_ORIGINAL_COOLDOWN_OR_GRAPHICS",
+    "originalAccess": "PUBLIC_ORIGINAL_LESSON_AND_STUDENT_FACING_TEXT_READ",
+    "testsExecuted": false,
     "CIExecuted": false,
-    "humanTeacherApproval": "NOT_ASSERTED",
+    "stageDExecuted": false,
+    "academicHumanApproval": "NOT_ASSERTED",
+    "mainMerge": false,
+    "renderDeploy": false,
     "productionRelease": "NOT_AUTHORIZED",
-    "aCCompleted": false,
-    "targetCompletionLabel": "READY_FOR_STAGE_D",
-    "authoringVsLivePracticePolicy": "A_C_COMPLETED means authoring readiness only. Do not require actual classroom sessions or completed student/teacher submissions to mark authored, source-faithful classroom task and its assessment rubric ready. Stage D remains separate."
+    "runtimeVerifiedByTests": false,
+    "note": "A-B-C authoring is finished to Stage D handoff; written tests, HTTP runtime and release suitability require Stage D evidence."
   },
-  "nextAction": "STAY ON ORDINAL 1. Address only G2 U01 L01 remaining Stage A-C gaps. Do not begin G2 U01 L02 or change cursor until this lesson is fully READY_FOR_STAGE_D.",
+  "nextAction": "PROCEED_TO_GRADE2_U01_L02_STAGE_A_B_C_SEQUENTIALLY; lesson1 was authored closed READY_FOR_STAGE_D, not Stage D tested",
   "correctionsAppliedToSequencing": "User-mandated STRICT sequential one-lesson A→B→C, mark A_C_COMPLETED/READY_FOR_STAGE_D only with complete evidence, then next lesson."
 }
