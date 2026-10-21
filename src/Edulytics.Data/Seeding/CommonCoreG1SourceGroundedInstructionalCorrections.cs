@@ -806,9 +806,7 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
             (string concepts,string examples,string steps,string mistakes) oldBody=
                 lesson.LessonCode switch
                 {
-                    CompareRepresentedNumbersLessonCode =>
-                 existingVersion == CompareRepresentedNumbersVersionV1,
-             ChooseIndirectLengthComparatorLessonCode =>
+ChooseIndirectLengthComparatorLessonCode =>
                         (ChooseIndirectLengthComparatorConceptsV1,
                          ChooseIndirectLengthComparatorExamplesV1,
                          ChooseIndirectLengthComparatorStepsV1,
