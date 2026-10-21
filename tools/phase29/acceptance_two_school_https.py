@@ -1574,9 +1574,19 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                                            "DIGITAL_AND_SOURCE_AUTHORED_TASK")
                     assert result["status"]=="SELF_CONSISTENT_GRADE_PERSISTED", (
                         code,"correct answer persistence failed",result)
-                    assert result.get("family")==candidate["candidateFamily"], (
+                    # The only source-pinned upgraded family (U06 L04) intentionally
+                    # routes NEW student attempts to the versioned How Close?
+                    # contract. Its legacy center family remains supported only
+                    # for older persisted attempts. Do not mistake that explicit
+                    # source-goal upgrade for an unrelated fallback.
+                    expected_family=candidate.get(
+                        "preferredSourceGoalFamily",candidate["candidateFamily"])
+                    if "preferredSourceGoalFamily" in candidate:
+                        assert expected_family in candidate["candidateFamilies"], (
+                            code,"unregistered preferred source-goal family",candidate)
+                    assert result.get("family")==expected_family, (
                         code,"unrelated fallback Practice family",result.get("family"),
-                        candidate["candidateFamily"])
+                        expected_family)
                     assert result.get("negativeStatus")==(
                         "MALFORMED_ANSWER_REJECTED_AND_PERSISTED"), (
                         code,"malformed answer accepted or not saved",result)
@@ -1584,8 +1594,9 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                         "WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED"), (
                         code,"mathematically wrong but well-formed answer accepted or not saved",
                         result)
-                    assert result.get("wellFormedWrongFamily")==candidate["candidateFamily"], (
-                        code,"well-formed wrong answer used different family",result)
+                    assert result.get("wellFormedWrongFamily")==expected_family, (
+                        code,"well-formed wrong answer used different source-goal family",
+                        expected_family,result)
                     if ordinal==102:
                         assert "food drive" in rendered and "35" in rendered and (
                             "65" in rendered or "sixty-five" in rendered), (
