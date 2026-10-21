@@ -1,0 +1,133 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson2PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 · Relating addition and subtraction to ten";
+    var cubes=UsCcssG2Unit1SecondLessonEdulyticsCoolDown.Towers;
+}
+<style>
+.g2-l02{max-width:920px;margin:0 auto;padding:18px 18px 44px;color:#1c3447}
+.g2-l02 .g2-panel{background:#fff;border:1px solid #d8e3ec;border-radius:16px;padding:24px;margin:18px 0}
+.g2-l02 h1{font-size:1.85rem}.g2-l02 h2{font-size:1.32rem}
+.g2-l02 .muted{color:#486478}
+.g2-l02 .g2-towers{display:flex;flex-wrap:wrap;gap:17px;margin:14px 0}
+.g2-l02 .g2-tower{border:1px solid #adbecb;border-radius:12px;padding:10px;text-align:center;min-width:105px}
+.g2-l02 .g2-tower-grid{display:grid;grid-template-columns:repeat(2,24px);gap:4px;justify-content:center}
+.g2-l02 .g2-cube{height:24px;width:24px;background:#2487af;border:1px solid #0c5976;border-radius:4px}
+.g2-l02 .g2-cube--yellow{background:#ffd05c;border-color:#ab7813}
+.g2-l02 input,.g2-l02 textarea{border:1px solid #67869a;border-radius:8px;padding:12px;font:inherit;width:100%;max-width:500px}
+.g2-l02 label{font-weight:700;display:block;margin:16px 0 5px}
+.g2-l02 input:focus,.g2-l02 textarea:focus{outline:3px solid #a8e0ec}
+.g2-l02 .g2-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.g2-l02 .g2-action{background:#087b8d;color:white;font-weight:750;font:inherit;border-radius:9px;border:0;padding:12px 24px;cursor:pointer}
+.g2-l02 .g2-fail{border-left:4px solid #b13a4d;padding-left:12px}
+.g2-l02 .g2-pass{border-left:4px solid #24764d;padding-left:12px}
+.g2-l02 .g2-review{border-left:4px solid #a57e31;padding-left:12px}
+</style>
+<main class="g2-l02">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to Grade 2 lesson</a>
+    <header>
+        <p>EDULYTICS · ORIGINAL LEARNING ACTIVITIES</p>
+        <h1>Ten cubes — find the missing part</h1>
+        <p class="muted">Grade 2, Unit 1, Lesson 2. This companion lesson and
+        exit ticket are original to Edulytics; they teach the published
+        mathematical goal without reproducing the publisher's restricted assessment.</p>
+    </header>
+    <section class="g2-panel">
+        <h2>1. Warm-up: what do you know about ten?</h2>
+        <p>Name different ways to make ten. Can ten counters be split into 2
+        and 8, or 7 and 3? Discuss at least one way you know with a classmate.</p>
+        <p class="muted">Your teacher observes discussion and representation.</p>
+    </section>
+    <section class="g2-panel">
+        <h2>2. What is hiding in a ten-cube tower?</h2>
+        <p>Imagine a tower of exactly ten cubes. A partner shows three and
+        hides the remaining cubes. Find the part you cannot see.</p>
+        <p><strong>3 + ? = 10</strong> and <strong>10 − 3 = ?</strong></p>
+        <p>Build your own tower using blocks, drawings or a ten-frame.
+        Switch roles with a partner and explain a related subtraction equation.</p>
+    </section>
+    <section class="g2-panel">
+        <h2>3. Match a two-color tower with an equation</h2>
+        <p>Every independent Edulytics diagram below shows ten squares:
+        the first part is blue and the second part is yellow.
+        Look closely at the colors and write different addition or subtraction
+        equations representing their relationship.</p>
+        <div class="g2-towers">
+            @foreach(var tower in cubes){
+                <div class="g2-tower">
+                    <strong>Tower @tower.Label</strong>
+                    <div class="g2-tower-grid" role="img"
+                         aria-label="@tower.Blue blue cubes and @tower.Yellow yellow cubes, total ten cubes.">
+                        @for(var i=0;i<10;i++){
+                            <span aria-hidden="true"
+                                  class="g2-cube @(i>=tower.Blue?"g2-cube--yellow":"")"></span>
+                        }
+                    </div>
+                    <small>@tower.Blue blue · @tower.Yellow yellow</small>
+                </div>
+            }
+        </div>
+        <p>Choose the tower matching <strong>10 − 7 = ?</strong> when the seven
+        yellow cubes are removed. Show which color represents the unknown part.</p>
+        <form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+            <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+            <input type="hidden" name="lessonId" value="@Model.LessonId" />
+            <button type="submit" class="g2-action">More ten-cube practice questions</button>
+        </form>
+    </section>
+    <form class="g2-panel" asp-controller="Grade2Lesson2Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <h2>4. Edulytics Cool-down</h2>
+        <p>Five short checks, including a teacher-reviewed explanation.</p>
+        <label for="hidden">Ten cubes altogether. Three are shown. How many are hidden?</label>
+        <input id="hidden" name="hidden" value="@Model.Hidden" type="number" min="0" max="10" required />
+        <label for="removed">Complete the subtraction: 10 − ? = 4. What number is missing?</label>
+        <input id="removed" name="removed" value="@Model.Removed" type="number" min="0" max="10" required />
+        <p><strong>A cube tower contains 6 blue cubes and 4 yellow cubes.</strong>
+        Write an addition equation for the whole tower, then a subtraction
+        equation that finds how many blue cubes remain after removing all four yellow cubes.</p>
+        <div class="g2-pair">
+            <div><label for="addition">Addition equation</label>
+                <input id="addition" name="addition" value="@Model.Addition" placeholder="6 + 4" maxlength="40" required /></div>
+            <div><label for="subtraction">Related subtraction equation</label>
+                <input id="subtraction" name="subtraction" value="@Model.Subtraction" placeholder="10 − 4" maxlength="40" required /></div>
+        </div>
+        <label for="tower">Which color tower A–E matches 10 − 7 = 3 (7 yellow cubes removed)?</label>
+        <input id="tower" name="tower" value="@Model.Tower" maxlength="1" placeholder="A, B, C, D or E" required />
+        <label for="reasoning">Explain with words or a drawing how visible and hidden parts make ten</label>
+        <textarea id="reasoning" name="reasoning" rows="3" maxlength="2000"
+                  placeholder="Describe your parts and the entire ten-cube tower.">@Model.Reasoning</textarea>
+        <p class="muted">The teacher reviews your explanation and physical tower
+        reasoning. An automatic numerical answer does not certify those parts.</p>
+        <button type="submit" class="g2-action">Check the mathematics</button>
+    </form>
+    @if(Model.Submitted){
+        <section class="g2-panel" aria-live="polite">
+            <h2>Results to review</h2>
+            @foreach(var result in Model.Feedback){
+                <div class="@(result.Correct==true?"g2-pass":result.Correct==false?"g2-fail":"g2-review")">
+                    <h3>@result.Task</h3>
+                    <p>@(result.Correct==true?"Mathematically correct":result.Correct==false?"Try again":"Teacher review"). @result.Message</p>
+                    @if(result.TeacherReviewNeeded){<p class="muted">Discuss this work with your teacher.</p>}
+                </div>
+            }
+            <p class="muted">Feedback here is immediate; it does not record a
+            school grade. Your teacher assesses physical games, drawings and collaboration.</p>
+        </section>
+    }
+    <section class="g2-panel">
+        <h2>Teacher evidence rubric</h2>
+        <ul>
+            @foreach(var criterion in UsCcssG2Unit1SecondLessonEdulyticsCoolDown.TeacherRubric){
+                <li>@criterion</li>
+            }
+        </ul>
+    </section>
+    <p class="muted">Curriculum source: IM 2021 Grade 2 Unit 1 Lesson 2,
+    CCSS 2.OA.B.2. All diagrams and questions on this page are Edulytics-authored.</p>
+</main>
