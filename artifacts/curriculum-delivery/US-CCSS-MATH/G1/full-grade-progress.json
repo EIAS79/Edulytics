@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 85,
+  "nextOrdinal": 86,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -3809,8 +3809,71 @@
       "outcomeCodes": [
         "CCSS:1.NBT.B.2"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l20-estimation-mystery-bags-v2",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Read-only checked original 2021 source math (94 regroupings and four mystery bags), independent Edulytics first-party teaching and authenticated digitally scored Practice; source pictures, physical estimating/drawings, optional learner-authored bag and peer conversation are not claimed electronically performed or copied.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l20.equivalent_tens_ones"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Identify two-digit numbers represented in different ways. Represent two-digit numbers in different ways using tens and ones."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.B.2"
+        ],
+        "sourceSha256": "20097467e88523e23a1343d1eed83849ea7be50d2c556fd33e544620e97b550e",
+        "effectiveStudentBodySha256": "7044c739d7e88627fd519e1c267451d0004052e1acf38cdcca0cda255d299571",
+        "effectiveStudentBodyHashSemantics": "Exact unescaped HTTPS authenticated learner HTML from original same-run source artifact 12345398813; dynamic session values not a static canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson85Original94WaysAndMysteryBagTests.cs",
+        "independentGradingProofSha256": "043f1b03434341ffdee0253172a6dacac3c35f1baad7e88ea755ee53301b86ee",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-85-stage-a-c-source-implementation-20261021.md",
+        "sourceReviewFileSha256": "ed4777a4599ffca441d2469d11400994b1934b7656d3c7a4a4fbba81ed752e33",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39619994494",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson85Original94WaysAndMysteryBagTests.cs",
+            "sha256": "043f1b03434341ffdee0253172a6dacac3c35f1baad7e88ea755ee53301b86ee"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+            "sha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Read-only checked original 2021 source math (94 regroupings and four mystery bags), independent Edulytics first-party teaching and authenticated digitally scored Practice; source pictures, physical estimating/drawings, optional learner-authored bag and peer conversation are not claimed electronically performed or copied. Source photos or trademarks not copied; no physical human classroom result, teacher/committee/external signoff or production UAT prerequisite.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 85,
+          "authenticatedLearnerHtmlSha256": "7044c739d7e88627fd519e1c267451d0004052e1acf38cdcca0cda255d299571",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39619994494,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5892,7 +5955,7 @@
     "countAuthoredOnly": 1,
     "countOriginalSourceTextLessons": 90,
     "countSourceFragments": 190,
-    "internallyAcceptedByOriginalV1Gate": 34,
+    "internallyAcceptedByOriginalV1Gate": 35,
     "publisherFigureRightsAndFullTaskParity": "NOT_CERTIFIED_BY_THIS_TECHNICAL_RUN",
     "releaseStatus": "NO_GO"
   }
