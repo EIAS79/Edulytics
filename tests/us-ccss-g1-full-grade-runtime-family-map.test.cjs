@@ -49,6 +49,7 @@ test('each proposed family maps to one real registered C# contract, never unrela
 test('all source-authored original Grade 1 goals are represented in existing release gate and academic matrix',()=>{
   const root='artifacts/curriculum-delivery/US-CCSS-MATH/G1/';
   const matrix=read(root+'full-grade-academic-evidence-matrix.json');
+  const progress=read(root+'full-grade-progress.json');
   const risks=read(root+'G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json');
   const authored=x.records
     .filter(row=>row.assessmentMode==='SOURCE_AUTHORED_TASK'||
@@ -88,6 +89,16 @@ test('all source-authored original Grade 1 goals are represented in existing rel
     assert.ok(rubric.teacherRubric.some(z=>z.criterion==='Math accuracy'||
       z.criterion==='Math and answer'||z.criterion==='Solution and consistency'));
     assert.notEqual(rubric.academicAcceptance,'INTERNALLY_ACCEPTED');
-    assert.equal(evidence.internalEvidenceBasedAcademicAcceptance,false);
+    // Internal first-party activity publication is NOT an actual teacher or
+    // child participation certificate. Original creative rubric still exists.
+    const current=progress.newLessons[ordinal-51];
+    assert.equal(evidence.internalEvidenceBasedAcademicAcceptance,
+      current.status==='INTERNALLY_ACCEPTED');
+    if(current.status==='INTERNALLY_ACCEPTED'){
+      assert.equal(current.evidence.originalAuthorshipTaskReviewed,true);
+      assert.equal(current.evidence.learnerAuthoredTaskRendered,true);
+      assert.equal(current.evidence.actualTeacherObservationNotClaimed,true);
+      assert.equal(current.stageDTechnicalAcceptance.teacherAcademicExternalSignoffRequiredForPublication,false);
+    }
   }
 });
