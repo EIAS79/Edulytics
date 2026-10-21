@@ -32,7 +32,7 @@ public sealed class Grade2Lesson1ActivitiesController(
 
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
         return View(BuildPage(curriculumAdoptionId, lessonId, access.Title!, false,
-            null, null, null, null, null, null, null, null, null, []));
+            null, null, null, null, null, null, null, null, []));
     }
 
     [HttpPost("submit"), ValidateAntiForgeryToken]
