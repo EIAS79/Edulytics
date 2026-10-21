@@ -959,6 +959,14 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G2 U01 L01: reviewed grade-specific source-goal override.
+        foreach (var reviewed in UsCcssG2Unit1FirstLessonPracticeContracts.Reviewed)
+        {
+            if (!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException(
+                    "G2 U01 L01 missing source-scoped lesson registry entry: " + reviewed.LessonCode);
+            byLesson[reviewed.LessonCode] = reviewed;
+        }
         // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
         // V1 G1-010: original 2021 ordinals 46-50 only (U03 L09-L13).
         foreach(var reviewed in UsCcssG1FullGradeUnit7GeometryTimePracticeContracts.Reviewed)
