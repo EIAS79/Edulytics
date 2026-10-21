@@ -179,7 +179,7 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
                 Assert.Contains("ONE equal cube stacked",item.Prompt);
             }
         }
-        Assert.Equal(Enumerable.Range(0,5).ToArray(),modes.OrderBy(x=>x));
+        Assert.Equal(Enumerable.Range(0,8).ToArray(),modes.OrderBy(x=>x));
     }
 
     [Theory]
