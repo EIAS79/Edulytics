@@ -962,9 +962,8 @@ public static class LessonPracticeContractRegistry
         // IM 2021 G2 U01 L01: reviewed grade-specific source-goal override.
         foreach (var reviewed in UsCcssG2Unit1FirstLessonPracticeContracts.Reviewed)
         {
-            if (!byLesson.ContainsKey(reviewed.LessonCode))
-                throw new InvalidOperationException(
-                    "G2 U01 L01 missing source-scoped lesson registry entry: " + reviewed.LessonCode);
+            // G2 L01 may previously have only a broad projected mapping.
+            // Insert this exact source-goal contract without assuming a prior entry.
             byLesson[reviewed.LessonCode] = reviewed;
         }
         // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
