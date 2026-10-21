@@ -239,6 +239,7 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
         var invalid=new Dictionary<string,int>(p){["a"]=11};
         Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,invalid));
         var reached=false;
+        var cueObserved=false;
         for(int seed=0;seed<480;seed++)
         {
             var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(
@@ -247,12 +248,18 @@ public sealed class UsCcssG1FullGradeUnit7GeometryTimePracticeTests
             reached=true;
             Assert.InRange(item.Parameters["a"],1,10);
             Assert.Contains("Clock A shows",item.Prompt);
+            if(item.Parameters["a"]==firstHour)
+            {
+                Assert.Contains(cue,item.Prompt);
+                cueObserved=true;
+            }
             Assert.Contains("Clock B shows",item.Prompt);
             Assert.Contains("Clock C shows",item.Prompt);
             Assert.True(ExactSkillContractQuestionEngine.Verify(
                 family,item.Parameters,"ORDER=C,A,B"));
         }
         Assert.True(reached);
+        Assert.True(cueObserved); // Both supplied source-specific hour card cues were actually generated.
     }
 
     [Theory]
