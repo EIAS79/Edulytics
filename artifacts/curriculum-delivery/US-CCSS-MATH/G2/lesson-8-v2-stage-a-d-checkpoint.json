@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 2",
+  "gradeOrdinal": 8,
+  "unitNumber": 1,
+  "lessonNumber": 8,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L08",
+  "lessonTitle": "Interpret Picture Graphs",
+  "stageA": {
+    "status": "ORIGINAL_TEACHER_PREPARATION_AND_CANONICAL_ACTIVITY_EXCERPTS_REVIEWED",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-8/preparation.html",
+    "teacherFullLesson": "FETCH_UNAVAILABLE_AT_THIS_CHECKPOINT",
+    "originalStudentTaskPrint": "NOT_VERIFIED",
+    "originalCoolDown": "EDUCATOR_RESTRICTED",
+    "originalLearningGoals": [
+      "Answer questions based on a picture graph",
+      "Determine if the picture graph can answer a given question",
+      "Interpret picture graph data using categories, totals and comparisons"
+    ],
+    "sourceVisuals": "Original figure/printing cannot be assumed reproduced; first-party textual symbol graph independently authored"
+  },
+  "stageB": {
+    "status": "CANONICAL_PREDECESSOR_LOCKED_TEACHING_FIX_AUTHORED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1PictureGraphSourceTeachingCorrection.cs",
+    "originalDefect": "Generic category/scale four-step pattern did not explicitly teach the source's question-answerability boundary or how to compare category pictograph symbols.",
+    "sourceGuard": "Exact original SourceUrl, SourceBodySha, CCSS:2.MD.D.10, old English fields and prior content version",
+    "productionWrite": false
+  },
+  "stageC": {
+    "status": "THREE_INDEPENDENT_DIGITAL_GRAPH_SKILLS_AUTHORED_NOT_TESTED",
+    "digitalFamilies": [
+      "usccss.g2.u01.l08.read_pictograph_category",
+      "usccss.g2.u01.l08.combine_or_compare_categories",
+      "usccss.g2.u01.l08.graph_question_answerable"
+    ],
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson8PictureGraphQuestions.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson8PictureGraphContracts.cs",
+    "tests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson8PictureGraphQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1PictureGraphSourceTeachingCorrectionTests.cs"
+    ],
+    "note": "Text symbols and numerical answers do not verify original student explanation or source figures/visual accessibility.",
+    "testsExecuted": false
+  },
+  "closure": {
+    "status": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "stageDExecuted": false,
+    "academicApproved": false,
+    "blockers": [
+      "Original teacher lesson activity-by-activity HTML unavailable",
+      "Original student print statements not compared",
+      "Educator-restricted Cool-down not inspected",
+      "No authenticated learner rendering evidence",
+      "No tests executed before Stage D"
+    ]
+  }
+}
