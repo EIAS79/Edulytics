@@ -43,7 +43,18 @@
       20,
       100
     ],
-    "testsExecuted": false
+    "testsExecuted": false,
+    "studentSelectedNumberBookMode": 5,
+    "studentNumberChoiceInclusive": [
+      20,
+      100
+    ],
+    "teacherSourceModel": 84,
+    "requiresThreeDistinctMathematicallyTrueAdditionExpressions": true,
+    "rejectsCommutativelyIdenticalExpressions": true,
+    "sourceModeValueChoiceAndVerifierCommit": "efe03be62940409506231cdc42b4b5fa6224cd00",
+    "allNumberDomainSolutionsUniqueDecompositionCommit": "976f90dfcb80332e2d67e72b37f75788b9d10b44",
+    "domainRangeRegressionTestCommit": "2bcdb6c852ecf9d372ce9506942ec9a07fad445e"
   },
   "stageD": {
     "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -75,7 +86,7 @@
   },
   "aToCClosure": {
     "outcome": "READY_FOR_STAGE_D",
-    "sourceScope": "Original 20–100 favorite NUMBER BOOK page, requires at least THREE mathematically different addition expressions plus tens/ones drawings; teacher example 84 now in first-party open answer mode, gallery page human assessed.",
+    "sourceScope": "Original student's favorite number 20 through 100, three DISTINCT mathematically correct additive expressions and tens-and-ones models. Digital first-party check accepts alternative student-number decompositions; teacher supervises original child-created class-book page, drawings and gallery.",
     "originalTaskTextCompared": true,
     "sourceBoundTeachingAndDigitalMathStaticallyReviewed": true,
     "genuinePupilPageOrStoryTeacherOnly": true,
@@ -86,5 +97,5 @@
     "stageDExecuted": false,
     "individualAcademicApprovalUnclaimed": true
   },
-  "nextAction": "Continue ordinal 145, retain D/CI hold."
+  "nextAction": "Ordinal145 and146 documented READY_FOR_STAGE_D. Freeze scoped A-C authoring and prepare single cohort handoff after static review. CI/Stage D/merge/deploy remain on hold."
 }
