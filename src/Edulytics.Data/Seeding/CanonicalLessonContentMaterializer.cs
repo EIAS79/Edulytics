@@ -34,6 +34,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1TenTwentySourceTeachingCorrections.Apply(document);
         CommonCoreG2Unit1HowCloseSourceTeachingCorrection.Apply(document);
         CommonCoreG2Unit1AddWithin50SourceTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1CentersAndRealDataCorrections.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -218,8 +219,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2TenTwenty);
         var g2Add50 = CommonCoreG2Unit1AddWithin50SourceTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2HowClose);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Centers = CommonCoreG2Unit1CentersAndRealDataCorrections
             .GetExpectedContentVersion(document, lesson, g2Add50);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Centers);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -288,6 +291,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1HowCloseSourceTeachingCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2Unit1AddWithin50SourceTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1CentersAndRealDataCorrections
             .IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
@@ -376,6 +381,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1HowCloseSourceTeachingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit1AddWithin50SourceTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1CentersAndRealDataCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
