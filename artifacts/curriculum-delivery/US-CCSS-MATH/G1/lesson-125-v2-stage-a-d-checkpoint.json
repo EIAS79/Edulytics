@@ -52,7 +52,10 @@
       "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
       "scope": "Three extra shape conditions: square, non-square rectangle, rhombus; do not claim original 16 child drawings",
       "status": "CODE_AND_TESTS_AUTHORED_NOT_EXECUTED"
-    }
+    },
+    "sourceMathRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons121To136SourceMathTests.cs",
+    "sourceMathRegressionCommit": "8891bd6bedca4d0181affb726e111db462eaab15",
+    "testsExecuted": false
   },
   "stageD": {
     "assertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
@@ -69,5 +72,19 @@
   },
   "status": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceAuthoringBoundary": "Original five rectangles + three nonrectangles and five squares + three nonsquares, total SIXTEEN drawings; first-party square/rectangle/rhombus classifications, all child drawings teacher assessed.",
+    "existingLearnerTeachingSourceGoalsReviewed": true,
+    "firstPartyPracticeAndVerifierReviewed": true,
+    "originalHumanCreatedArtifactsAutoCertified": false,
+    "originalPublisherImagesNotLicensedOrCopied": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "academicOriginalV1Approval": false
+  },
+  "nextAction": "Continue ordinal126; physical/student-produced work requires human assessment, Stage D/CI deferred."
 }
