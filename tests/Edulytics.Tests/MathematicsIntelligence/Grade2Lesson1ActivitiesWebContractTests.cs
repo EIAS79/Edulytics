@@ -1,5 +1,6 @@
 using System.Reflection;
 using Edulytics.Web.Controllers;
+using CoolDown = Edulytics.Core.Mathematics.Practice.UsCcssG2Unit1FirstLessonEdulyticsCoolDown;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,12 +37,10 @@ public sealed class Grade2Lesson1ActivitiesWebContractTests
     [Fact]
     public void ClosedFormRubricCannotClaimAutomaticTeacherApproval()
     {
-        var content = Edulytics.Core.Mathematics.Practice
-            .UsCcssG2Unit1FirstLessonEdulyticsCoolDown;
-        var rubric = content.ExplanationRubric;
+        var rubric = CoolDown.ExplanationRubric;
         Assert.Equal(4, rubric.Count);
         Assert.Contains(rubric, x => x.Contains("representation"));
-        var open = content.AssessInteger("CD-4", "10");
+        var open = CoolDown.AssessInteger("CD-4", "10");
         Assert.False(open.ScorableByMachine);
         Assert.True(open.TeacherReviewRequired);
     }
