@@ -15,7 +15,7 @@ public sealed class CommonCoreG2Unit1BarCompareTeachingCorrectionTests
         Assert.Equal("PED:US-CCSS-MATH:G2:U01:L13",row.Lesson.LessonCode);
         var en=row.Lesson.Translations.Single(x=>x.CultureCode=="en");
         Assert.Contains("count ON",en.Explanation);
-        Assert.Contains("counting BACK",en.StepByStepSolutions);
+        Assert.Contains("COUNTING BACK",en.StepByStepSolutions);
         Assert.Contains("17−8=9",en.WorkedExamples);
         Assert.Contains("20−14=6",en.KeyConceptsAndRules);
         Assert.Equal(CommonCoreG2Unit1BarCompareTeachingCorrection.Version,
