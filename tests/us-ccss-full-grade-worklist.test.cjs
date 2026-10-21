@@ -112,11 +112,13 @@ test('checkpoint presence cannot manufacture acceptance, suppress missing work o
       /Checkpoint snapshot/);
   }
   const progress=copy();
-  const w=buildWorklist(manifest,progress,{remainingOnly:true,checkpointOrdinals:[57,80,106]});
-  assert.equal(w.academicVerification.pendingCount,
-    progress.newLessons.filter(x=>x.status!=='INTERNALLY_ACCEPTED').length);
-  assert.equal(w.sourceReviewResumption.pendingWithCheckpoint,3);
+  const checkpoints=[57,80,106];
+  const w=buildWorklist(manifest,progress,{remainingOnly:true,checkpointOrdinals:checkpoints});
+  const remaining=progress.newLessons.filter(x=>x.status!=='INTERNALLY_ACCEPTED');
+  const pendingWithCheckpoint=remaining.filter(x=>checkpoints.includes(x.ordinal)).length;
+  assert.equal(w.academicVerification.pendingCount,remaining.length);
+  assert.equal(w.sourceReviewResumption.pendingWithCheckpoint,pendingWithCheckpoint);
   assert.equal(w.sourceReviewResumption.pendingWithoutCheckpoint,
-    w.academicVerification.pendingCount-3);
+    w.academicVerification.pendingCount-pendingWithCheckpoint);
   assert.equal(w.nextGradeAllowed,false);
 });
