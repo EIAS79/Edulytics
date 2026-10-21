@@ -18,7 +18,8 @@ function validate(cp,p,l,map,n){
   if(cp?.aToCClosure?.outcome!=='READY_FOR_STAGE_D' ||
      !Array.isArray(cp?.aToCClosure?.openACDefects) ||
      cp.aToCClosure.openACDefects.length)bad('A_C_NOT_CLOSED');
-  if(d?.phase!=='D'||d?.status!=='D_VERIFIED'||l?.stageDStatus!=='D_VERIFIED'||
+  if(d?.phase!=='D'||d?.status!=='D_VERIFIED'||
+     l?.stageDStatus!==(p?.status==='INTERNALLY_ACCEPTED'?'APPROVED':'D_VERIFIED')||
      p?.stageDTechnicalAcceptance?.result!=='VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE')
     bad('STAGE_D_NOT_VERIFIED');
   if(d?.testedCodeSha!==CI_SHA||d?.authenticatedRunId!==RUN_ID||
@@ -46,7 +47,7 @@ function validate(cp,p,l,map,n){
   if(d?.batch!==(n<=82?'D1':n<=114?'D2':'D3'))bad('BATCH');
   return e;
 }
-test('Every remaining Grade 1 original A-C checkpoint now carries exact-run Stage D proof, with 6 existing V1 acceptances unchanged',()=>{
+test('Every remaining Grade 1 original A-C checkpoint now carries exact-run Stage D proof, with 9 immutable V1 acceptances',()=>{
  const c=checkpoints(),progress=load('full-grade-progress.json'),
    ledger=load('stage-d-bulk-execution-ledger.json'),map=load('full-grade-practice-candidate-map.json');
  assert.equal(c.length,90);
