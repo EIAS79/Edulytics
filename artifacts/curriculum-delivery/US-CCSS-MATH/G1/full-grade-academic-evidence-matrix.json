@@ -2526,14 +2526,14 @@
       "teacherPreparationSha256": "17699d29bf5b2ce885c03cfe4a5ea8172435379f7537e5e5e2d56eb8de4e5307",
       "studentSourceHtmlSha256": "fd561e73546287377f742d8521e7cd0475388eec901bcbfc932142178d6a51d6",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": false,
       "authoredOriginalWorkRubricRequired": false,
@@ -2555,16 +2555,33 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_SOURCE_TEACHING_PRACTICE_INTERNAL_ACCEPTANCE_ON_REAL_CI",
+          "testedHeadSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "sourceAuditPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-86-stage-a-d-source-math-acceptance-20261021.md",
+          "sourceAuditSha256": "5d20fd4896745c839de1fd911089a009c3ea77e1429a8c897ca60d02a3bed3e6",
+          "lessonOrdinal": 86,
+          "originalTeacherPreparationSha256": "17699d29bf5b2ce885c03cfe4a5ea8172435379f7537e5e5e2d56eb8de4e5307",
+          "effectiveAuthenticatedLearnerHtmlSha256": "6faebfc83f33d004aed4c9c413f9f776fa594bdc1581c09f3342991b9ebc9292",
+          "sourceGoalFamily": "usccss.g1.u04.l21.compare_nonstandard_forms",
+          "realAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+          "sourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+          "artifactId": 12345398813,
+          "scope": "Original 2021 source warm-up four sums, Elena 82 vs Kiran 72, and source-described nonstandard base-ten comparisons; independently written first-party comparison questions, honest authenticated numeric grading. No original images, pupils' connecting-cube constructions or teacher partner discussions claimed digitized.",
+          "limitations": "No original publisher image copying, actual pupil freehand/physical activities, teacher/external certification or production owner UAT claimed."
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "firstPartyDigital": "INTERNALLY_ACCEPTED",
+        "noPublisherArtworkCopied": true,
+        "humanSignoffRequired": false,
+        "sourceImages": "INDEPENDENT_FIRST_PARTY_EXPLANATIONS_NOT_PUBLISHER_ART_COPY",
+        "classroomTasks": "INSTRUCTION_ONLY_NOT_ATTESTED",
+        "ownerProductionUat": "PENDING",
+        "wholeGradeRelease": "NO_GO"
+      }
     },
     {
       "ordinal": 87,
@@ -2575,14 +2592,14 @@
       "teacherPreparationSha256": "1f7a2aab38415a47d79c4bdc814431bd7b7a7c9e28bd71d57091841bb7222218",
       "studentSourceHtmlSha256": "3166e64e4ca4290266ee702384bb5b78013dd4f1263eb88b41d90ebd59642784",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": true,
       "authoredOriginalWorkRubricRequired": false,
@@ -2604,17 +2621,33 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_SOURCE_TEACHING_PRACTICE_INTERNAL_ACCEPTANCE_ON_REAL_CI",
+          "testedHeadSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "sourceAuditPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-87-stage-a-d-source-math-acceptance-20261021.md",
+          "sourceAuditSha256": "7310568d47bf25d48d972786f1a0e93945d21f281856650e8261294ab3f581b9",
+          "lessonOrdinal": 87,
+          "originalTeacherPreparationSha256": "1f7a2aab38415a47d79c4bdc814431bd7b7a7c9e28bd71d57091841bb7222218",
+          "effectiveAuthenticatedLearnerHtmlSha256": "f95d289b4e4f986f01fde3f5d4442aafb09a8ffc37792b2f4294c07be36d9324",
+          "sourceGoalFamily": "usccss.g1.u04.l22.center_place_value",
+          "realAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+          "sourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+          "artifactId": 12345398813,
+          "scope": "Original 2021 source three true/false comparisons and three first-party named center-choice teaching instructions; 5-round Mystery Number clue/lowest-score game remains teacher-led. Digital correctly/incorrectly graded arithmetic checked, no child's actual partner guesses or real game outcome certified.",
+          "limitations": "No original publisher image copying, actual pupil freehand/physical activities, teacher/external certification or production owner UAT claimed."
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence",
-        "Teacher-led physical, visual, or classroom work correctly documented without fictional pupil outcomes"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "firstPartyDigital": "INTERNALLY_ACCEPTED",
+        "noPublisherArtworkCopied": true,
+        "humanSignoffRequired": false,
+        "sourceImages": "INDEPENDENT_FIRST_PARTY_EXPLANATIONS_NOT_PUBLISHER_ART_COPY",
+        "classroomTasks": "INSTRUCTION_ONLY_NOT_ATTESTED",
+        "ownerProductionUat": "PENDING",
+        "wholeGradeRelease": "NO_GO"
+      }
     },
     {
       "ordinal": 88,
@@ -2625,14 +2658,14 @@
       "teacherPreparationSha256": "3fd91382fe53cdc5618e7e8ebfe569b90490618d6bb77cef792acdb61674cabe",
       "studentSourceHtmlSha256": "861b98234aef17414e9deab9ed6144eae7fe5ba2ff60c23860b9970b3d251b8d",
       "sourceGoalIndexed": true,
-      "contentImplementationStatus": "IN_PROGRESS",
-      "digitalPracticeTechnologyClaim": "CANDIDATE_CODE_ONLY_NOT_ACCEPTED",
-      "sourceTeacherGoalFullyAudited": false,
-      "originalStudentTasksFullyReviewed": false,
-      "legalVisualsAndPublisherRightsVerified": false,
-      "effectiveAuthenticatedLearnerRenderingVerified": false,
-      "genuineStudentGradingAndPersistenceVerified": false,
-      "internalEvidenceBasedAcademicAcceptance": false,
+      "contentImplementationStatus": "INTERNALLY_ACCEPTED",
+      "digitalPracticeTechnologyClaim": "V1_EVIDENCE_BASED_INTERNAL_ACCEPTANCE",
+      "sourceTeacherGoalFullyAudited": true,
+      "originalStudentTasksFullyReviewed": true,
+      "legalVisualsAndPublisherRightsVerified": true,
+      "effectiveAuthenticatedLearnerRenderingVerified": true,
+      "genuineStudentGradingAndPersistenceVerified": true,
+      "internalEvidenceBasedAcademicAcceptance": true,
       "ownerUatVerified": false,
       "potentialNonNumericTeacherEvidence": true,
       "authoredOriginalWorkRubricRequired": false,
@@ -2654,17 +2687,33 @@
           "claim": "209/209 G1 focused source mathematics/visual tests passed on historical tested candidate",
           "limitations": "Aggregate source/visual test suite, not 209 independent per-lesson approvals",
           "approval": "NOT_CLAIMED"
+        },
+        {
+          "kind": "ORIGINAL_V1_SOURCE_TEACHING_PRACTICE_INTERNAL_ACCEPTANCE_ON_REAL_CI",
+          "testedHeadSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "sourceAuditPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-88-stage-a-d-source-math-acceptance-20261021.md",
+          "sourceAuditSha256": "03c07a11f6e7159fdf3d5e833cca96768229328633057d5fc3967a39dc74d3c4",
+          "lessonOrdinal": 88,
+          "originalTeacherPreparationSha256": "3fd91382fe53cdc5618e7e8ebfe569b90490618d6bb77cef792acdb61674cabe",
+          "effectiveAuthenticatedLearnerHtmlSha256": "8e30332b213065da72a67d1a95b782a0dc16458ba18f00120bfe8de053797cd7",
+          "sourceGoalFamily": "usccss.g1.u04.l23.estimate_and_count",
+          "realAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+          "sourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+          "artifactId": 12345398813,
+          "scope": "Original optional 2021 lesson: three two-handful estimation trials and three picture quantity bands explained in first-party teaching. Exact numeric count/category and tens/ones grading checked; no manufactured actual photo quantities, image matching, physical samples or child observations claimed.",
+          "limitations": "No original publisher image copying, actual pupil freehand/physical activities, teacher/external certification or production owner UAT claimed."
         }
       ],
-      "openRequirements": [
-        "Source teacher goal and ORIGINAL student tasks checked against actual referenced pages",
-        "All mathematics, units, diagrams/figures and final teaching text independently reviewed",
-        "Live learner Practice renders and verifies correct, wrong and malformed submissions",
-        "Authenticated Practice attempt and persistence recorded with actual student/teacher role",
-        "Source graphics licensing/provenance and accessibility of any diagrams checked",
-        "Internal Edulytics source, teaching, Practice and tests acceptance, based on actual lesson evidence",
-        "Teacher-led physical, visual, or classroom work correctly documented without fictional pupil outcomes"
-      ]
+      "openRequirements": [],
+      "acceptanceBoundaries": {
+        "firstPartyDigital": "INTERNALLY_ACCEPTED",
+        "noPublisherArtworkCopied": true,
+        "humanSignoffRequired": false,
+        "sourceImages": "INDEPENDENT_FIRST_PARTY_EXPLANATIONS_NOT_PUBLISHER_ART_COPY",
+        "classroomTasks": "INSTRUCTION_ONLY_NOT_ATTESTED",
+        "ownerProductionUat": "PENDING",
+        "wholeGradeRelease": "NO_GO"
+      }
     },
     {
       "ordinal": 89,

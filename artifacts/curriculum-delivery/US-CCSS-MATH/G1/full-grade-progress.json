@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 86,
+  "nextOrdinal": 89,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -3906,8 +3906,73 @@
         "CCSS:1.NBT.B.3",
         "CCSS:1.NBT.C.4"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-g1-u04-l21-topic-correction-v2",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original 2021 source warm-up four sums, Elena 82 vs Kiran 72, and source-described nonstandard base-ten comparisons; independently written first-party comparison questions, honest authenticated numeric grading. No original images, pupils' connecting-cube constructions or teacher partner discussions claimed digitized.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l21.compare_nonstandard_forms"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Compare two-digit numbers represented in different ways."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.B.3",
+          "CCSS:1.NBT.C.4"
+        ],
+        "sourceSha256": "17699d29bf5b2ce885c03cfe4a5ea8172435379f7537e5e5e2d56eb8de4e5307",
+        "effectiveStudentBodySha256": "6faebfc83f33d004aed4c9c413f9f776fa594bdc1581c09f3342991b9ebc9292",
+        "effectiveStudentBodyHashSemantics": "Exact HTML-unescaped authenticated learner HTTPS response SHA-256 in same-run CI artifact 12345398813; dynamic session response not canonical authored source HTML.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson86Original2021ComparisonsTests.cs",
+        "independentGradingProofSha256": "9c55261667d7eeeb396fea8f74c679417447a95f5268fb06affbab0380df441e",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-86-stage-a-d-source-math-acceptance-20261021.md",
+        "sourceReviewFileSha256": "5d20fd4896745c839de1fd911089a009c3ea77e1429a8c897ca60d02a3bed3e6",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson86Original2021ComparisonsTests.cs",
+            "sha256": "9c55261667d7eeeb396fea8f74c679417447a95f5268fb06affbab0380df441e"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+            "sha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original 2021 source warm-up four sums, Elena 82 vs Kiran 72, and source-described nonstandard base-ten comparisons; independently written first-party comparison questions, honest authenticated numeric grading. No original images, pupils' connecting-cube constructions or teacher partner discussions claimed digitized. Edulytics first-party asset/goal scope only; actual pupils' classroom work not certified; no external, teacher or academic signoff; owner production UAT and whole-grade release pending.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 86,
+          "authenticatedLearnerHtmlSha256": "6faebfc83f33d004aed4c9c413f9f776fa594bdc1581c09f3342991b9ebc9292",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39622317973,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3939,8 +4004,72 @@
         "CCSS:1.NBT.B.2",
         "CCSS:1.NBT.B.3"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l22-exact-three-comparisons-v4",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original 2021 source three true/false comparisons and three first-party named center-choice teaching instructions; 5-round Mystery Number clue/lowest-score game remains teacher-led. Digital correctly/incorrectly graded arithmetic checked, no child's actual partner guesses or real game outcome certified.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l22.center_place_value"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Compare numbers within 99. Use place value understanding to identify two-digit numbers."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.B.3"
+        ],
+        "sourceSha256": "1f7a2aab38415a47d79c4bdc814431bd7b7a7c9e28bd71d57091841bb7222218",
+        "effectiveStudentBodySha256": "f95d289b4e4f986f01fde3f5d4442aafb09a8ffc37792b2f4294c07be36d9324",
+        "effectiveStudentBodyHashSemantics": "Exact HTML-unescaped authenticated learner HTTPS response SHA-256 in same-run CI artifact 12345398813; dynamic session response not canonical authored source HTML.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson87MysteryNumberSourceTests.cs",
+        "independentGradingProofSha256": "826db6ac358dd5bfd597c31d259cc00d1c2d61ea3e5c3c528520e1a48980d582",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-87-stage-a-d-source-math-acceptance-20261021.md",
+        "sourceReviewFileSha256": "7310568d47bf25d48d972786f1a0e93945d21f281856650e8261294ab3f581b9",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson87MysteryNumberSourceTests.cs",
+            "sha256": "826db6ac358dd5bfd597c31d259cc00d1c2d61ea3e5c3c528520e1a48980d582"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+            "sha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original 2021 source three true/false comparisons and three first-party named center-choice teaching instructions; 5-round Mystery Number clue/lowest-score game remains teacher-led. Digital correctly/incorrectly graded arithmetic checked, no child's actual partner guesses or real game outcome certified. Edulytics first-party asset/goal scope only; actual pupils' classroom work not certified; no external, teacher or academic signoff; owner production UAT and whole-grade release pending.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 87,
+          "authenticatedLearnerHtmlSha256": "f95d289b4e4f986f01fde3f5d4442aafb09a8ffc37792b2f4294c07be36d9324",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39622317973,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3973,8 +4102,73 @@
         "CCSS:1.NBT.B.2",
         "CCSS:1.NBT.B.3"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l23-quantity-bands-v2",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original optional 2021 lesson: three two-handful estimation trials and three picture quantity bands explained in first-party teaching. Exact numeric count/category and tens/ones grading checked; no manufactured actual photo quantities, image matching, physical samples or child observations claimed.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l23.estimate_and_count"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Estimate, count, and represent collections of up to 99 objects."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.B.3"
+        ],
+        "sourceSha256": "3fd91382fe53cdc5618e7e8ebfe569b90490618d6bb77cef792acdb61674cabe",
+        "effectiveStudentBodySha256": "8e30332b213065da72a67d1a95b782a0dc16458ba18f00120bfe8de053797cd7",
+        "effectiveStudentBodyHashSemantics": "Exact HTML-unescaped authenticated learner HTTPS response SHA-256 in same-run CI artifact 12345398813; dynamic session response not canonical authored source HTML.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson88SourceQuantityBandsTests.cs",
+        "independentGradingProofSha256": "87f43a74b89bbeb5c3895af0947e871fb8459eb88fb772ab0500b5653d3e5229",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-88-stage-a-d-source-math-acceptance-20261021.md",
+        "sourceReviewFileSha256": "03c07a11f6e7159fdf3d5e833cca96768229328633057d5fc3967a39dc74d3c4",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39622317973",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson88SourceQuantityBandsTests.cs",
+            "sha256": "87f43a74b89bbeb5c3895af0947e871fb8459eb88fb772ab0500b5653d3e5229"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+            "sha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original optional 2021 lesson: three two-handful estimation trials and three picture quantity bands explained in first-party teaching. Exact numeric count/category and tens/ones grading checked; no manufactured actual photo quantities, image matching, physical samples or child observations claimed. Edulytics first-party asset/goal scope only; actual pupils' classroom work not certified; no external, teacher or academic signoff; owner production UAT and whole-grade release pending.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 88,
+          "authenticatedLearnerHtmlSha256": "8e30332b213065da72a67d1a95b782a0dc16458ba18f00120bfe8de053797cd7",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39622317973,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5955,7 +6149,7 @@
     "countAuthoredOnly": 1,
     "countOriginalSourceTextLessons": 90,
     "countSourceFragments": 190,
-    "internallyAcceptedByOriginalV1Gate": 35,
+    "internallyAcceptedByOriginalV1Gate": 38,
     "publisherFigureRightsAndFullTaskParity": "NOT_CERTIFIED_BY_THIS_TECHNICAL_RUN",
     "releaseStatus": "NO_GO"
   }
