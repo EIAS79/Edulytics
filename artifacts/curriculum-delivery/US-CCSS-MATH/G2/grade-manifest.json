@@ -92,7 +92,7 @@
       "contentPresent": true,
       "isSupporting": false,
       "contentPackBodySha256": "e44c70959ac06629edd2682e60c4e124614a6875d932628f597dd3a7ddc43dbe",
-      "aCStatus": "A_C_PENDING",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageDStatus": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -111,7 +111,7 @@
       "contentPresent": true,
       "isSupporting": false,
       "contentPackBodySha256": "6ebcd498b5dd493c5d40e1b523e1347aa1686f9a3e0e31894607a931c878e05a",
-      "aCStatus": "A_C_PENDING",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageDStatus": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -3039,5 +3039,9 @@
       "stageDStatus": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     }
+  ],
+  "metadataWarnings": [
+    "Embedded content-pack reviewEvidence narrative says 143 canonical included and 3 excluded, but the current JSON arrays contain 146 lessons, all with OutcomeCodes and isSupporting=false; that historical prose is not independent certification and requires reconciliation.",
+    "Lesson 1 source-lesson HTML compared; print student-task PDF and Cool-down remain inaccessible."
   ]
 }
