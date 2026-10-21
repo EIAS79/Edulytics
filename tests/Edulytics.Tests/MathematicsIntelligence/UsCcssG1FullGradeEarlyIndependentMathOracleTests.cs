@@ -39,8 +39,10 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
             2=>mode==1?
                 $"TOTAL={sum};EQUATION={a}+{b}+{c}={sum}":
                 $"TOTAL={a+b};EQUATION={a}+{b}={a+b}",
-            3=>$"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
-            4=>$"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
+            3=>b<a-10?$"DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}":
+                $"REACH10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
+            4=>b<a-10?$"DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}":
+                $"TO10={a-10};REST={b-(a-10)};DIFFERENCE={a-b};EQUATION={a}-{b}={a-b}",
             _=>throw new InvalidOperationException()
         };
     }
@@ -106,11 +108,22 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
         int total=t*10+o;
         return index switch
         {
-            0=>$"TENS={t};ONES={o};TOTAL={total}",
-            1=>$"NAME={NumberName(t,o)}",
-            2=>$"TENS={t};ONES={o};NUMBER={total}",
+            0=>mode==5?"DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50":
+                $"TENS={t};ONES={o};TOTAL={total}",
+            1=>mode==4?"DIGITS=3,5;NUMBER=35;TENS=3;ONES=5;NAME=thirty-five":
+                mode==5?"AGREE=DIEGO;TENS=8;ONES=6;NUMBER=86;NAME=eighty-six":
+                mode==6?"DECISION=DISAGREE;DRAWN=42;CLAIM=24;TENS=4;ONES=2":
+                $"NAME={NumberName(t,o)}",
+            2=>mode==4?"MATCH=YES;TENS=7;ONES=3;NUMBER=73;EXPANDED=70+3":
+                mode==5?"MATCH=NO;FIRST=41;OTHER=14":
+                mode==6?"MATCH=J,S;NUMBER=32;OTHER=23":
+                mode==7?"TENS=9;ONES=5;NUMBER=95;EXPANDED=90+5":
+                $"TENS={t};ONES={o};NUMBER={total}",
             3=>$"EXPANDED={t*10}+{o};TENS={t};ONES={o};ALT_TENS={t-Math.Min(t,mode+1)};ALT_ONES={o+10*Math.Min(t,mode+1)}",
-            4=>$"NUMBER={total}",
+            4=>mode==5?"NUMBER=7;TENS=0;ONES=7":
+                mode==6?"DECISION=DISAGREE;CLAIM=702;NUMBER=72;TENS=7;ONES=2":
+                mode==7?"TENS=8;ONES=3;NUMBER=83;EXPANDED=80+3":
+                $"NUMBER={total}",
             _=>throw new InvalidOperationException()
         };
     }
@@ -118,7 +131,17 @@ public sealed class UsCcssG1FullGradeEarlyIndependentMathOracleTests
     {
         return index switch
         {
-            0=>$"TOTAL={a+b};ONES={a%10}",
+            0=>mode switch
+            {
+                5=>"TRUE=YES;LEFT=85;RIGHT=85",
+                6=>"TRUE=NO;LEFT=71;RIGHT=81",
+                7=>"TRUE=NO;LEFT=26;RIGHT=36",
+                9=>"DIGIT=5;EQUATION=45+20=65;TRUE=YES",
+                10=>"TRUE=NO;MAX=69;TARGET=75",
+                11=>"DIGIT=4;EQUATION=56+40=96;TRUE=YES",
+                12=>"TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4",
+                _=>$"TOTAL={a+b};ONES={(a+b)%10}"
+            },
             1=>$"RESULT={(mode%2==0?a+10:a-10)}",
             2=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}",
             3=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
