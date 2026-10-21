@@ -69,7 +69,7 @@ public sealed class UsCcssG1Lesson105SourceIndirectMeasurementTests
             Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(Family,q.Parameters));
             Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Verify(Family,q.Parameters,
                 UsCcssG1FullGradeUnit6MeasurementQuestions.Solve(Family,q.Parameters)));
-            Assert.Contains("SOURCE-INSPIRED",q.Prompt);
+            Assert.Contains(q.Parameters["mode"]==0?"Two classroom objects":"SOURCE-INSPIRED",q.Prompt);
         });
     }
 }
