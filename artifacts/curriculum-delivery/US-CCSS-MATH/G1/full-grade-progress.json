@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 124,
+  "nextOrdinal": 132,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -5688,7 +5688,7 @@
         "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
         "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
         "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-105-source-math-v1-acceptance-20261021.md",
-        "sourceReviewFileSha256": "cb9fff51df2cab083686befe980710ba04e1df8ed6a400c11f287f812b982657",
+        "sourceReviewFileSha256": "1af5cfe467fcd8ae50d8bc5795f00536c5d00753db2cef4c3bb96fd57566ee4d",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
         "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
         "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
@@ -7231,8 +7231,65 @@
         "CCSS:1.NBT.C.4",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "g1-first-party-source-goal-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Draw three different triangles and three nontriangles; distinguish closed straight edges and genuine nonexamples. Original learner draws THREE different valid triangles and THREE figures that are NOT triangles with reasons; first-party set uses closed straight boundaries, real six drawings teacher-reviewed.",
+        "allowedFamilies": [
+          "usccss.g1.u07.l05.defining_triangles"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Draw three different triangles and three nontriangles; distinguish closed straight edges and genuine nonexamples."
+        ],
+        "sourceSha256": "e84cbae9a21a158ef0120c909bca9dda8a9c7ce5a33418c1f1e7555529670d05",
+        "originalTeacherHtmlSha256": "d538cf55fee8231e96bc67c1be251233f37b49adce584af222d3434def142083",
+        "originalStudentHtmlSha256": "bc81a8da752545318e065ade80b97621de39d672adf6f240ff27281f53f0c113",
+        "effectiveStudentBodySha256": "a40e55dbb2deada91b93fe21cd57a490e3fa550018cda4de25759d10e4999520",
+        "effectiveStudentBodyHashSemantics": "SHA256 authentic HTML-unescaped signed-in HTTPS response, volatile session content",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-124-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "7f8f7066f883a709f16b590dda976447f61fca8ac08de48041a678d40787c962",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original learner draws THREE different valid triangles and THREE figures that are NOT triangles with reasons; first-party set uses closed straight boundaries, real six drawings teacher-reviewed. Original publisher copyrighted figures and actual classroom pupils not claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 124,
+          "authenticatedLearnerHtmlSha256": "a40e55dbb2deada91b93fe21cd57a490e3fa550018cda4de25759d10e4999520",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "originalAuthorshipTaskReviewed": true,
+        "learnerAuthoredTaskRendered": true,
+        "teacherReviewRubricAvailable": true,
+        "actualTeacherObservationNotClaimed": true,
+        "teacherOnlyRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-124-original-shape-creation-rubric.json"
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7264,8 +7321,65 @@
         "CCSS:1.G.A.1",
         "CCSS:1.NBT.C.4"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "g1-first-party-source-goal-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Draw five rectangles, three nonrectangles, five squares and three nonsquares; justify each geometric classification. Original five rectangles + three nonrectangles and five squares + three nonsquares, total SIXTEEN drawings; first-party square/rectangle/rhombus classifications, all child drawings teacher assessed.",
+        "allowedFamilies": [
+          "usccss.g1.u07.l06.square_and_rectangle_properties"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Draw five rectangles, three nonrectangles, five squares and three nonsquares; justify each geometric classification."
+        ],
+        "sourceSha256": "cd79903f14d4516444eb63543e7695f197431a3a47d6d6312ed0474776479091",
+        "originalTeacherHtmlSha256": "83ca489ce0c19d6715638c4d93e7e785020ea5625e8efdb6b1f8ce31ce41c62d",
+        "originalStudentHtmlSha256": "9feefe3c6ac5e9f3ad9ff25e686890a9087f6bdda3b7b249aee5122cb87a4bdc",
+        "effectiveStudentBodySha256": "53a93b1e2f94a56d187e4e186703ee4cd5efaba6bc5fb0dee8330d48a0c008d3",
+        "effectiveStudentBodyHashSemantics": "SHA256 authentic HTML-unescaped signed-in HTTPS response, volatile session content",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-125-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "84b2c7d0ffadfd4b659612ea39e8ad53aecbadce959c394268aa2107976b6933",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original five rectangles + three nonrectangles and five squares + three nonsquares, total SIXTEEN drawings; first-party square/rectangle/rhombus classifications, all child drawings teacher assessed. Original publisher copyrighted figures and actual classroom pupils not claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 125,
+          "authenticatedLearnerHtmlSha256": "53a93b1e2f94a56d187e4e186703ee4cd5efaba6bc5fb0dee8330d48a0c008d3",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "originalAuthorshipTaskReviewed": true,
+        "learnerAuthoredTaskRendered": true,
+        "teacherReviewRubricAvailable": true,
+        "actualTeacherObservationNotClaimed": true,
+        "teacherOnlyRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-125-original-shape-creation-rubric.json"
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7296,8 +7410,65 @@
       "outcomeCodes": [
         "CCSS:1.G.A.2"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "g1-first-party-source-goal-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Trace a composite pattern-block outline and rebuild exactly the same outline with different pieces, recording both counts. Build SAME pattern-block outline twice from different pieces, trace, and record Picture Books Stage3 observations; first-party hexagon 6 triangles/2 trapezoids model is not original student tracing.",
+        "allowedFamilies": [
+          "usccss.g1.u07.l07.compose_flat_shapers"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Trace a composite pattern-block outline and rebuild exactly the same outline with different pieces, recording both counts."
+        ],
+        "sourceSha256": "374318fadd28cb0b966adf6326416138df14809990c545c41ea70832556231ef",
+        "originalTeacherHtmlSha256": "a118d512bb31f39a8515910dcd23e43c2ede495bd3de236f5d790f2be87d0cd8",
+        "originalStudentHtmlSha256": "29e0f84a3f3e011941875c5f3ee7863d3050f95bed8f695e9f3ff8a34b1387e4",
+        "effectiveStudentBodySha256": "8c534831d09a0c0eeeea42949fccb6da2e8b1d7b48b97a696a5de44ab72ea8d6",
+        "effectiveStudentBodyHashSemantics": "SHA256 authentic HTML-unescaped signed-in HTTPS response, volatile session content",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-126-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "6e1e37682b3c9028e35feeb45a9da79de0bd0b5a2f31b4535c7cf888e19564a7",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Build SAME pattern-block outline twice from different pieces, trace, and record Picture Books Stage3 observations; first-party hexagon 6 triangles/2 trapezoids model is not original student tracing. Original publisher copyrighted figures and actual classroom pupils not claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 126,
+          "authenticatedLearnerHtmlSha256": "8c534831d09a0c0eeeea42949fccb6da2e8b1d7b48b97a696a5de44ab72ea8d6",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "originalAuthorshipTaskReviewed": true,
+        "learnerAuthoredTaskRendered": true,
+        "teacherReviewRubricAvailable": true,
+        "actualTeacherObservationNotClaimed": true,
+        "teacherOnlyRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-126-original-shape-creation-rubric.json"
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7330,8 +7501,60 @@
         "CCSS:1.G.A.2",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "g1-first-party-source-goal-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Play Match Mine using reconstructed 3D shapes; mental warmups 6+4+8=18, 6+8+4=18, 6+8+5=19 and 6+5+9=20. Match Mine 3D shapes recreated by partner and Picture Books, plus four original mental sums 6+4+8=18,6+8+4=18,6+8+5=19,6+5+9=20; new source numeric modes5–8.",
+        "allowedFamilies": [
+          "usccss.g1.u07.l08.center_shapes_add_subtract"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Play Match Mine using reconstructed 3D shapes; mental warmups 6+4+8=18, 6+8+4=18, 6+8+5=19 and 6+5+9=20."
+        ],
+        "sourceSha256": "9da076c4e8eee4655aa4dd2b3ed079394f97364d1d925efa0d144568c468341a",
+        "originalTeacherHtmlSha256": "67220bb3d8d1eb7a99a9c5568a72ee694f4289746e56d5c6f353f135195d531f",
+        "originalStudentHtmlSha256": "e5dae29463831702c8568fe9b648de532353d370749db047707f2aed88f3be36",
+        "effectiveStudentBodySha256": "8c5e19fad0a2dec041b15314b7d7eb389794d18886d71ef451365ca4a4278d77",
+        "effectiveStudentBodyHashSemantics": "SHA256 authentic HTML-unescaped signed-in HTTPS response, volatile session content",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-127-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "2f2b55cc7e1d42b8a94158f490f2e400ace3d845a93992b19eedd1e47d6119ac",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Match Mine 3D shapes recreated by partner and Picture Books, plus four original mental sums 6+4+8=18,6+8+4=18,6+8+5=19,6+5+9=20; new source numeric modes5–8. Original publisher copyrighted figures and actual classroom pupils not claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 127,
+          "authenticatedLearnerHtmlSha256": "8c5e19fad0a2dec041b15314b7d7eb389794d18886d71ef451365ca4a4278d77",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7362,8 +7585,60 @@
       "outcomeCodes": [
         "CCSS:1.G.A.3"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "g1-first-party-source-goal-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Fold a circle and a square into equal halves and fourths, and explain equality of area. Original classroom tasks remain instructional and human-observed",
+        "allowedFamilies": [
+          "usccss.g1.u07.l09.equal_halves_fourths"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Fold a circle and a square into equal halves and fourths, and explain equality of area."
+        ],
+        "sourceSha256": "2312f52d1effd02e6183490004cb0cdad3ef1d4334f8d115dae59239ea2a02e3",
+        "originalTeacherHtmlSha256": "379696977db7eab4c7dfe5b67373e94be92723b5ad5c823e74995ffee477a759",
+        "originalStudentHtmlSha256": "39dec858c7c416286b80be95d5b48b173f507206e5fafab8a1b7d74c26101c23",
+        "effectiveStudentBodySha256": "7f81abfe201972f98672c82bd6ed8f33088ab2ce656edcf410aee2c1978c3108",
+        "effectiveStudentBodyHashSemantics": "SHA256 authentic HTML-unescaped signed-in HTTPS response, volatile session content",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-128-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "3449fb0e49edaf7bd534b2f6358803fbfa7285a74a5da3f2ccdc919681711bc2",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original classroom tasks remain instructional and human-observed Original publisher copyrighted figures and actual classroom pupils not claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 128,
+          "authenticatedLearnerHtmlSha256": "7f81abfe201972f98672c82bd6ed8f33088ab2ce656edcf410aee2c1978c3108",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7394,8 +7669,60 @@
       "outcomeCodes": [
         "CCSS:1.G.A.3"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "g1-first-party-source-goal-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Divide a square into two equal pieces and classify shaded original card representations into valid mathematical groups. Original classroom tasks remain instructional and human-observed",
+        "allowedFamilies": [
+          "usccss.g1.u07.l10.parts_make_whole"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Divide a square into two equal pieces and classify shaded original card representations into valid mathematical groups."
+        ],
+        "sourceSha256": "297266aed8bd4f92d5a5ec832645f645614f1d27ec0cbdd03d70957328b3569d",
+        "originalTeacherHtmlSha256": "a6ba92ee0f724437de42e7e7e2b9bdeb9a96e201fb378b2f33f7e1b71bcec7d7",
+        "originalStudentHtmlSha256": "fcc20f1a75d53ba3ab4b2617540a079696ef73ea5e3759673bb4e76d98de6572",
+        "effectiveStudentBodySha256": "e0fcae9c38c40f44864f0c057c29377a6a6330afc9d02e454580935635f262ed",
+        "effectiveStudentBodyHashSemantics": "SHA256 authentic HTML-unescaped signed-in HTTPS response, volatile session content",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-129-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "4407ee3a1130929ac1055420cc800c7a147d751b3acaee1bf262224516ab17ee",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original classroom tasks remain instructional and human-observed Original publisher copyrighted figures and actual classroom pupils not claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 129,
+          "authenticatedLearnerHtmlSha256": "e0fcae9c38c40f44864f0c057c29377a6a6330afc9d02e454580935635f262ed",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7427,8 +7754,60 @@
         "CCSS:1.G.A.3",
         "CCSS:1.NBT.C.5"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "g1-first-party-source-goal-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Explain why a half of the same whole is greater than a fourth, including original roti-sharing discussion. Original classroom tasks remain instructional and human-observed",
+        "allowedFamilies": [
+          "usccss.g1.u07.l11.bigger_piece_halves_fourths"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Explain why a half of the same whole is greater than a fourth, including original roti-sharing discussion."
+        ],
+        "sourceSha256": "dd086f96aa27fecb2b028621aaafd13d70732e828efe3aa611584d0bda3daa98",
+        "originalTeacherHtmlSha256": "e18e2f818e043f76e2dd961c7756cddeba5b88acb1e0b202957bc2a57efecc83",
+        "originalStudentHtmlSha256": "446d863852f94f0edc15fa0bde5becc57838f1418ccf27435a831344e3c3f97a",
+        "effectiveStudentBodySha256": "31d633148d988f9ef8748b561093caabea0013a72d6685645f725c7596e69457",
+        "effectiveStudentBodyHashSemantics": "SHA256 authentic HTML-unescaped signed-in HTTPS response, volatile session content",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-130-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "5f1f2b7b249e995c39b2bb4c43f8b1be98c6045ce8bd2191ae545eb100775a31",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original classroom tasks remain instructional and human-observed Original publisher copyrighted figures and actual classroom pupils not claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 130,
+          "authenticatedLearnerHtmlSha256": "31d633148d988f9ef8748b561093caabea0013a72d6685645f725c7596e69457",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7462,8 +7841,60 @@
         "CCSS:1.NBT.C.4",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "g1-first-party-source-goal-teaching",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Select centers for drawing and describing flat shapes, preserving human-led Can You Draw It activities. Original classroom tasks remain instructional and human-observed",
+        "allowedFamilies": [
+          "usccss.g1.u07.l12.center_shape_number"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Select centers for drawing and describing flat shapes, preserving human-led Can You Draw It activities."
+        ],
+        "sourceSha256": "2d02f272e19adabdab105d1e99e202f9514ad09f75ea39689bf6f0e9722fe801",
+        "originalTeacherHtmlSha256": "84a063fa1d074552de7b57a56b5e97c0862cb97700dd58c90247f63bd128c01c",
+        "originalStudentHtmlSha256": "cf6be6d33d8f27fb6223655fd5d637c292237c47e33790ec52a850f36c94d1be",
+        "effectiveStudentBodySha256": "ee1203ce81777d0ad05b4398a3031ac06c0af6e8ed37cdbcd8fb9ee46e720510",
+        "effectiveStudentBodyHashSemantics": "SHA256 authentic HTML-unescaped signed-in HTTPS response, volatile session content",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-131-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "8a41a29e8357ca2a3ea70f2bf8994626978823ae17a699380034cf9882e35640",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original classroom tasks remain instructional and human-observed Original publisher copyrighted figures and actual classroom pupils not claimed.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 131,
+          "authenticatedLearnerHtmlSha256": "ee1203ce81777d0ad05b4398a3031ac06c0af6e8ed37cdbcd8fb9ee46e720510",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -8002,7 +8433,7 @@
     "countAuthoredOnly": 1,
     "countOriginalSourceTextLessons": 90,
     "countSourceFragments": 190,
-    "internallyAcceptedByOriginalV1Gate": 73,
+    "internallyAcceptedByOriginalV1Gate": 81,
     "publisherFigureRightsAndFullTaskParity": "NOT_CERTIFIED_BY_THIS_TECHNICAL_RUN",
     "releaseStatus": "NO_GO"
   }
