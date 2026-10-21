@@ -93,6 +93,18 @@ def syntactically_valid_wrong_answer(correct, family=None):
             # G1 U07 L10 physically sorts equally/unequally divided shapes.
             # Both are the only source-valid labels; "GREATER" is not a sort.
             replacement="UNEQUAL" if value.upper()=="EQUAL" else "EQUAL"
+        if replacement is None and key.upper()=="TRIANGLES":
+            # U07 L05 asks for the three triangular cards among six original
+            # labeled drawings. An erroneous three-card selection must still
+            # contain THREE DISTINCT available letters, never an invented
+            # shape label or a malformed list.
+            labels=[part.strip().upper() for part in value.split(",")]
+            if len(labels)!=3 or len(set(labels))!=3 or not set(labels)<=set("ABCDEF"):
+                raise ValueError("Unexpected source triangle-card selection")
+            substitute=next((letter for letter in "ABCDEF" if letter not in labels),None)
+            if substitute is None:
+                raise ValueError("No alternate triangle-card letter")
+            replacement=",".join([labels[0],labels[1],substitute])
         if replacement is None and key.upper()=="ORDER":
             # Original G1 U06 L01 has THREE distinct measured strips; its
             # answer is a comma-separated permutation, not a scalar/category.
@@ -346,6 +358,17 @@ if __name__=="__main__":
                 wrong,
                 "DECISION=AGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50")
             self.assertNotEqual(wrong,correct)
+
+        def test_original_u07_l05_triangle_cards_keep_three_distinct_source_labels(self):
+            family="usccss.g1.u07.l05.defining_triangles"
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "TRIANGLES=A,B,C;NONTRIANGLES=D,E,F",family),
+                "TRIANGLES=A,B,D;NONTRIANGLES=D,E,F")
+            for invalid in ("TRIANGLES=A,A,B;NONTRIANGLES=D,E,F",
+                            "TRIANGLES=A,B;NONTRIANGLES=D,E,F",
+                            "TRIANGLES=X,Y,Z;NONTRIANGLES=D,E,F"):
+                self.assertRaises(ValueError,
+                                  syntactically_valid_wrong_answer,invalid,family)
 
         def test_original_g1_equal_and_unequal_partition_sort_stays_valid(self):
             self.assertEqual(
