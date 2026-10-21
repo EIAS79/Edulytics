@@ -24,18 +24,81 @@
       "Student Facing 37 22 18 56 41 Choose 2 numbers from above and write an addition expression to make each statement true. This sum has the smallest possible value. Expressi"
     ],
     "sourceSpecificComparison": "Original 48+15 and 57+36; 37,22,18,56,41 choose min/max/exact ten/compose categories",
-    "classification": "CONTENT_REPAIR"
+    "classification": "CONTENT_REPAIR",
+    "sourceTextDirectlyRechecked": "Authorized read-only local cached original IM 2021 full teacher HTML unit-5/section-c/lesson-12.html. Student-facing card list and all five condition wordings independently re-extracted; source artwork not copied.",
+    "originalFiveCardSet": [
+      37,
+      22,
+      18,
+      56,
+      41
+    ],
+    "studentTaskConditions": [
+      "The sum has the smallest possible value.",
+      "The sum has the largest possible value.",
+      "You don't need to make a new ten.",
+      "If you make a new ten, you still have some more ones.",
+      "If you make a new ten, you will have no more ones.",
+      "OPTIONAL: Choose two numbers with total closest to 95."
+    ],
+    "originalMath": [
+      "7+3=10",
+      "37+3=40",
+      "7+8=15",
+      "57+8=65",
+      "48+15=63",
+      "57+36=93"
+    ],
+    "closestTo95Tie": [
+      "37+56=93",
+      "56+41=97"
+    ],
+    "legalArtAndSourceStudentDrawingsNotTransferred": true
   },
   "stageB": {
     "existingContentReused": true,
     "sourceGroundedChanges": true,
     "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
-    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6"
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6",
+    "sourceTeachingReviewed": true,
+    "sourceSpecificCardSelectionReconciled": true,
+    "existingTeachingCodePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "sourceBoundary": "Five original cards and choice conditions from source checked. Original open-drawing explanations, optional volunteering activities, and source image rights not inferred from arithmetic."
   },
   "stageC": {
     "existingPracticeReused": true,
     "permittedDigitRangeAndArithmeticUnchanged": true,
-    "teacherFacilitationNotClaimedNumerically": true
+    "teacherFacilitationNotClaimedNumerically": true,
+    "originalSourceEquationModes": [
+      4,
+      5
+    ],
+    "firstPartyOpenCardModeRange": [
+      6,
+      11
+    ],
+    "originalSourceWarmupModeRange": [
+      12,
+      15
+    ],
+    "sourceOpenCardAnswerFields": [
+      "A",
+      "B",
+      "NEW_TEN",
+      "TOTAL"
+    ],
+    "tieClosestTo95ExplicitlyAccepted": true,
+    "alternativeMathematicallyValidSourcePairsAccepted": true,
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommits": [
+      "9421d8bd9ea6aa84d6e6071de9b1505abd94f84b",
+      "e683dd3e86492ea4c92f3bbbb1548ebe8e1cced9"
+    ],
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson100SourceOpenCardSelectionTests.cs",
+    "authoredTestsCommit": "4432ffbba9aecce594527576c50786f086a4ee5a",
+    "testsExecuted": false,
+    "openChoiceAuthenticatedPersistenceAudit": "PENDING_STAGE_D",
+    "teacherAssessedPupilDrawingsAndActualClassDiscussionsNotAutoCertified": true
   },
   "stageD": {
     "sourceSpecificAssertionsPrepared": true,
@@ -49,5 +112,17 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue unchanged V1 A–D review; final protected CI and individual evidence required"
+  "nextAction": "Continue ordinal101; source physical center tasks cannot be claimed completed numerically. Keep stage D/CI/merge/deploy deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherMathCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "generatorAndVerifierIndependentlyReviewed": true,
+    "originalOpenChoicePairDomainTestAuthored": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Full original 5-card categories, 48+15 and 57+36, four original warmups and tied 93/97 near-95 choice authored and math checked. Stage D must independently verify actual alternative-answer persistence, all runtime renderings, copyright, code/test pass, authenticated learner states, and owner approval."
+  }
 }
