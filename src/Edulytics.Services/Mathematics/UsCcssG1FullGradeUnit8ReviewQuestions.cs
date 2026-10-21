@@ -110,7 +110,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 a>=20&&a<=120&&b==0),
             7=>mode==5?a==84&&b==0&&c==0:
                 mode==4?a>=20&&a<=100&&b==0&&c==0:
-                a>=20&&a<=120&&b==0&&c==0,
+                a>=20&&a<=100&&b==0&&c==0,
             8=>mode switch
             {
                 4=>a==65&&b==35&&c==0,
@@ -156,7 +156,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 }
             }
             else if(n==9){a=random.Next(1,121);b=random.Next(0,a+1);}
-            else if(n==7){a=mode==5?84:mode==4?random.Next(20,101):random.Next(20,121);b=0;}
+            else if(n==7){a=mode==5?84:random.Next(20,101);b=0;}
             else if(n==8){a=random.Next(3,8)*10+random.Next(1,10);b=10;}
             else{a=random.Next(20,101);b=n>=8?10:0;}
             if(n==1&&mode>=4)(a,b)=mode switch
