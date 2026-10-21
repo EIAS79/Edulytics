@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 77,
+  "nextOrdinal": 85,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -3013,8 +3013,73 @@
         "CCSS:1.NBT.C.5",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l12-original-student-activities-v8",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l12.mental.ten_more_less"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Mentally find 10 more or 10 less than a number."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.C.5",
+          "CCSS:1.OA.C.6"
+        ],
+        "sourceSha256": "f079b91b320cbbdaed28a10e1f5cf41205488205ce56f8966767d3822965c382",
+        "effectiveStudentBodySha256": "265075f26a65e1c4c91ecd3a4a14cae1eeca23d278228cba9273f8488ce875c7",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of exact unescaped authenticated learner response in GitHub Actions original evidence artifact 12345398813; dynamic page session tokens are not a stored canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeTwoDigitOperationsPracticeTests.cs",
+        "independentGradingProofSha256": "333b64835d86f8efe34eb5054696db04e4a24155043b1598433c604b578c545e",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-77-stage-a-c-source-implementation-audit-20261020.md",
+        "sourceReviewFileSha256": "3ca2d7f40e43a344855e7fb93ab919cd656c802e3002b27aff14f6b15b23b939",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39604666142",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeTwoDigitOperationsPracticeTests.cs",
+            "sha256": "333b64835d86f8efe34eb5054696db04e4a24155043b1598433c604b578c545e"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson77Original2021WarmupTests.cs",
+            "sha256": "ff1be5f4917326e63f72a31c98c335753c5f6549b063fea131787698b86bbc58"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite. No teacher, external committee or academic signature required. Grade release remains NO_GO while original V1 96/96 gate is incomplete.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 77,
+          "authenticatedLearnerHtmlSha256": "265075f26a65e1c4c91ecd3a4a14cae1eeca23d278228cba9273f8488ce875c7",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39604666142,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3052,8 +3117,74 @@
         "CCSS:1.OA.C.6",
         "CCSS:1.OA.D.8"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l13-original-student-activities-v7",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l13.center.place_value_mix"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Add and subtract within 20. Add tens to two-digit numbers. Count and represent a collection."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.C.4",
+          "CCSS:1.NBT.C.5",
+          "CCSS:1.NBT.C.6",
+          "CCSS:1.OA.A.1",
+          "CCSS:1.OA.C.5",
+          "CCSS:1.OA.C.6",
+          "CCSS:1.OA.D.8"
+        ],
+        "sourceSha256": "863dc31852ab4bff585e28839806c52eab34a4ee0705a831aec4293830bc7708",
+        "effectiveStudentBodySha256": "99f301010859b0dd1f597905b604b42a1bdd96fa890f011c24fcc859ca02e316",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of exact unescaped authenticated learner response in GitHub Actions original evidence artifact 12345398813; dynamic page session tokens are not a stored canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeTwoDigitOperationsPracticeTests.cs",
+        "independentGradingProofSha256": "333b64835d86f8efe34eb5054696db04e4a24155043b1598433c604b578c545e",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-78-stage-a-c-source-implementation-audit-20261020.md",
+        "sourceReviewFileSha256": "94cabe21969b70fcc21b7a6dac83de5eb040eff04b12b36cf6d8648c16b17cbd",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39604666142",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeTwoDigitOperationsPracticeTests.cs",
+            "sha256": "333b64835d86f8efe34eb5054696db04e4a24155043b1598433c604b578c545e"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite. No teacher, external committee or academic signature required. Grade release remains NO_GO while original V1 96/96 gate is incomplete.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 78,
+          "authenticatedLearnerHtmlSha256": "99f301010859b0dd1f597905b604b42a1bdd96fa890f011c24fcc859ca02e316",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39604666142,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3089,8 +3220,72 @@
         "CCSS:1.OA.C.5",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l14-original-student-activities-v7",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l14.compare.two_digits_words"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Compare two-digit numbers based on the value of the tens and ones digits. Use \"greater than\" and \"less than\" to describe comparisons."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.B.3",
+          "CCSS:1.NBT.C.5",
+          "CCSS:1.OA.C.5",
+          "CCSS:1.OA.C.6"
+        ],
+        "sourceSha256": "28c110215f8fc9764f408486415ade1af7f5c4d48a1022c00b52d62dfc3ca5e9",
+        "effectiveStudentBodySha256": "85d7844766a4e8793086ab83845b4ab457962722c2fe0bd9128045d1cee9874a",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of exact unescaped authenticated learner response in GitHub Actions original evidence artifact 12345398813; dynamic page session tokens are not a stored canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeTwoDigitOperationsPracticeTests.cs",
+        "independentGradingProofSha256": "333b64835d86f8efe34eb5054696db04e4a24155043b1598433c604b578c545e",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-79-stage-a-c-source-implementation-audit-20261020.md",
+        "sourceReviewFileSha256": "f836c82e43c5ae2a64b4aff155f065004d76e8f281e2af98abf99ca4f4f8449d",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39604666142",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeTwoDigitOperationsPracticeTests.cs",
+            "sha256": "333b64835d86f8efe34eb5054696db04e4a24155043b1598433c604b578c545e"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite. No teacher, external committee or academic signature required. Grade release remains NO_GO while original V1 96/96 gate is incomplete.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 79,
+          "authenticatedLearnerHtmlSha256": "85d7844766a4e8793086ab83845b4ab457962722c2fe0bd9128045d1cee9874a",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39604666142,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3123,8 +3318,73 @@
         "CCSS:1.NBT.C.5",
         "CCSS:1.OA.D.7"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. A separately authored Edulytics formative does NOT reproduce unavailable publisher protected cool-down. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l15.compare.symbols"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Interpret comparison statements that use <, >, or =. Understand that the > symbol means greater than and the < symbol means less than."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.B.3",
+          "CCSS:1.NBT.C.5",
+          "CCSS:1.OA.D.7"
+        ],
+        "sourceSha256": "2f860ae1cd7c3dd963a5ecc39594caaf4c49c25ad67fb9bddcade11a67c1f7c5",
+        "effectiveStudentBodySha256": "ca46abc49cd08a474613dc9a1cf69d6171470c639bfe37e7a0aa64472cf4ee4f",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of exact unescaped authenticated learner response in GitHub Actions original evidence artifact 12345398813; dynamic page session tokens are not a stored canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeTwoDigitOperationsPracticeTests.cs",
+        "independentGradingProofSha256": "333b64835d86f8efe34eb5054696db04e4a24155043b1598433c604b578c545e",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-80-stage-a-c-source-implementation-audit-20261020.md",
+        "sourceReviewFileSha256": "77a193b3234bddb26e7b3386ee38b6a03cd5a740d8d4ebd157ac5b99554c5945",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39604666142",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeTwoDigitOperationsPracticeTests.cs",
+            "sha256": "333b64835d86f8efe34eb5054696db04e4a24155043b1598433c604b578c545e"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson80IndependentComparisonExitTests.cs",
+            "sha256": "d8bf119ae608943a1df85420c6b1095ca01458798fc985832466c9b9e9dbe277"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. A separately authored Edulytics formative does NOT reproduce unavailable publisher protected cool-down. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite. No teacher, external committee or academic signature required. Grade release remains NO_GO while original V1 96/96 gate is incomplete.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 80,
+          "authenticatedLearnerHtmlSha256": "ca46abc49cd08a474613dc9a1cf69d6171470c639bfe37e7a0aa64472cf4ee4f",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39604666142,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3156,8 +3416,72 @@
         "CCSS:1.NBT.B.2",
         "CCSS:1.NBT.B.3"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l16-original-student-activities-v3",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. A separately authored Edulytics formative does NOT reproduce unavailable publisher protected cool-down. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l16.write_comparison"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Read and write comparisons using <, >, or =."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.B.3"
+        ],
+        "sourceSha256": "be018f07997b639f971c5b68899d5694a72cbc94f170fe5a5e3c595af4c145f0",
+        "effectiveStudentBodySha256": "01dff58ceb6f620d1af4c55f942cd5516b4eec3395098e835a822c905a7f6fc3",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of exact unescaped authenticated learner response in GitHub Actions original evidence artifact 12345398813; dynamic page session tokens are not a stored canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+        "independentGradingProofSha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-81-stage-a-c-source-implementation-audit-20261020.md",
+        "sourceReviewFileSha256": "b216ec29fdf101a99a62e43cd7adf30cd7e2a86509e726a31ed94ceaa55743b1",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39604666142",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+            "sha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson81IndependentComparisonExitTests.cs",
+            "sha256": "e29601f572cd613cabb46664387399efba4877a3866e3e7f3d93e2330a617352"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. A separately authored Edulytics formative does NOT reproduce unavailable publisher protected cool-down. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite. No teacher, external committee or academic signature required. Grade release remains NO_GO while original V1 96/96 gate is incomplete.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 81,
+          "authenticatedLearnerHtmlSha256": "01dff58ceb6f620d1af4c55f942cd5516b4eec3395098e835a822c905a7f6fc3",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39604666142,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3189,8 +3513,72 @@
         "CCSS:1.NBT.B.2",
         "CCSS:1.NBT.B.3"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l17-original-student-activities-v3",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. A separately authored Edulytics formative does NOT reproduce unavailable publisher protected cool-down. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l17.order_three_numbers"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Compare and order numbers based on the value of the tens and ones digits."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.B.3"
+        ],
+        "sourceSha256": "0711e8ef8e6dbcd7e32305f5d7c06a1b58a58f34b6ba9bba42a6805eb7ef6789",
+        "effectiveStudentBodySha256": "3f912343fe08d983cc79e566dc335012df8ad34426588faa81783ae57ce5aac0",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of exact unescaped authenticated learner response in GitHub Actions original evidence artifact 12345398813; dynamic page session tokens are not a stored canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+        "independentGradingProofSha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-82-stage-a-c-source-implementation-audit-20261020.md",
+        "sourceReviewFileSha256": "b2c6a9eaa2e3b751334874a958703a8d464a41317081ad18ae552c902ae2bfaa",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39604666142",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+            "sha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson82SourceRepresentationAndIndependentExitTests.cs",
+            "sha256": "7fa9cb2f9a9de77daee3de570af05fc8de86e45c28574a75fffed7b9693520c0"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. A separately authored Edulytics formative does NOT reproduce unavailable publisher protected cool-down. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite. No teacher, external committee or academic signature required. Grade release remains NO_GO while original V1 96/96 gate is incomplete.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 82,
+          "authenticatedLearnerHtmlSha256": "3f912343fe08d983cc79e566dc335012df8ad34426588faa81783ae57ce5aac0",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39604666142,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3226,8 +3614,72 @@
         "CCSS:1.NBT.C.5",
         "CCSS:1.NBT.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l18-original-student-activities-v3",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l18.center_count_compare_order"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Count objects in a collection and record the count. Create, compare, and order two-digit numbers. Write numbers up to 99."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.B.3",
+          "CCSS:1.NBT.C.4",
+          "CCSS:1.NBT.C.5",
+          "CCSS:1.NBT.C.6"
+        ],
+        "sourceSha256": "dac90ffdc5f8c127bb6d8cc1746912e668defcb49269cd2e03249e3437242f83",
+        "effectiveStudentBodySha256": "0a397fd3bfac095628d9bc4fdb661a8876762f05a7d009f5d6ae22994546e02c",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of exact unescaped authenticated learner response in GitHub Actions original evidence artifact 12345398813; dynamic page session tokens are not a stored canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+        "independentGradingProofSha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-83-stage-a-c-source-implementation-audit-20261020.md",
+        "sourceReviewFileSha256": "e536668031d594f2e0073cdc99e32c26b989da3c2209c4702deb9bcb6b48b0a7",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39604666142",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+            "sha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite. No teacher, external committee or academic signature required. Grade release remains NO_GO while original V1 96/96 gate is incomplete.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 83,
+          "authenticatedLearnerHtmlSha256": "0a397fd3bfac095628d9bc4fdb661a8876762f05a7d009f5d6ae22994546e02c",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39604666142,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -3260,8 +3712,73 @@
         "CCSS:1.NBT.B.2",
         "CCSS:1.NBT.B.3"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "us-ccss-g1-u04-l19-centers-and-regrouping-v3",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite.",
+        "allowedFamilies": [
+          "usccss.g1.u04.l19.regroup_one_ten"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Understand that a two-digit number can be represented in different ways using tens and ones."
+        ],
+        "mappedSkills": [
+          "CCSS:1.NBT.A.1",
+          "CCSS:1.NBT.B.2",
+          "CCSS:1.NBT.B.3"
+        ],
+        "sourceSha256": "0375ba6ec2e471055563df42d29a4a9bb6b5c3a44497a7e42ead857290f5eb4c",
+        "effectiveStudentBodySha256": "90b873eec318abc0ad97c665d0308aeb80f93c37a130d9230055c39bce438ede",
+        "effectiveStudentBodyHashSemantics": "SHA-256 of exact unescaped authenticated learner response in GitHub Actions original evidence artifact 12345398813; dynamic page session tokens are not a stored canonical body.",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+        "independentGradingProofSha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-84-stage-a-c-source-implementation-20261021.md",
+        "sourceReviewFileSha256": "54cab48f6e51c9169b9a2b4f22c8969da8879047e05ec3143c0b7595e9783d01",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39604666142",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+            "sha256": "7585d82a36bb5eabdf16665044f39841ec5898903cd2ccffe9317b7739179f15"
+          },
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson84Multiple37RepresentationsTests.cs",
+            "sha256": "42f18de6f30eb1088f453b3c525a502b1e6d08f250eb459267e80f7da34f42a7"
+          },
+          {
+            "path": "tools/phase29/acceptance_two_school_https.py",
+            "sha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66"
+          }
+        ],
+        "acceptanceBoundary": "Original public 2021 mathematical tasks and first-party Edulytics teaching plus digitally graded source-goal Practice. Source imagery and physical partner gameboards are not copied; actual classroom student participation/drawings are not claimed or a publication prerequisite. No teacher, external committee or academic signature required. Grade release remains NO_GO while original V1 96/96 gate is incomplete.",
+        "runtimeEvidenceArtifact": {
+          "artifactId": 12345398813,
+          "technicalReconciliationArtifactId": 12346166910,
+          "lessonOrdinal": 84,
+          "authenticatedLearnerHtmlSha256": "90b873eec318abc0ad97c665d0308aeb80f93c37a130d9230055c39bce438ede",
+          "originalSourceBodyFragmentsVerified": 2,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+          "authenticatedRunId": 39600111939,
+          "sourceMathRunId": 39604666142,
+          "exactCandidateGate": "MUST_BE_REVALIDATED_AGAINST_RELEASE_COMMIT"
+        }
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -5375,7 +5892,7 @@
     "countAuthoredOnly": 1,
     "countOriginalSourceTextLessons": 90,
     "countSourceFragments": 190,
-    "internallyAcceptedByOriginalV1Gate": 26,
+    "internallyAcceptedByOriginalV1Gate": 34,
     "publisherFigureRightsAndFullTaskParity": "NOT_CERTIFIED_BY_THIS_TECHNICAL_RUN",
     "releaseStatus": "NO_GO"
   }
