@@ -16,15 +16,26 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
     {
         switch(index)
         {
-            case 0:return "SYMBOL="+Symbol(a,b);
-            case 1:return mode>=3?"ORDER="+string.Join(",",
+            case 0:return mode switch
+            {
+                9=>"NUMBER=79",10=>"NUMBER=40",11=>"NUMBER=13",
+                12=>"LEFT=12;RIGHT=21",13=>"LEFT=21;RIGHT=12",
+                14=>"SYMBOL=>;TENS_LEFT=6;TENS_RIGHT=3",
+                _=>"SYMBOL="+Symbol(a,b)
+            };
+            case 1:return mode>=5?
+                mode==5?"NUMBER=26":mode==6?"NUMBER=24":
+                mode==7?"ORDER=15,33,51,53":"ORDER=4,34,40,43":
+                mode>=3?"ORDER="+string.Join(",",
                 new[]{"a","b","c","d","e","f","g","h","i","j"}
                     .Select(key=>sourceParams[key]).Order()):
                 "ORDER="+string.Join(",",mode%2==0?
                     new[]{a,b,c}.Order():new[]{a,b,c}.OrderDescending());
-            case 2:return mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):
+            case 2:return mode>=4?$"RESULT={(mode==4?42:mode==7?12:52)}":
+                mode%2==0?"ORDER="+string.Join(",",new[]{a,b,c}.Order()):
                 "SYMBOL="+Symbol(a,b);
-            case 3:return mode==0?"TENS=5;ONES=15":
+            case 3:return mode==4?"PAIR1=36+1;PAIR2=35+2":
+                mode==0?"TENS=5;ONES=15":
                 mode==1?"TENS=3;ONES=7;ALT_TENS=2;ALT_ONES=17":
                 $"TENS={a/10-1};ONES={a%10+10}";
             case 4:return mode switch
@@ -35,9 +46,12 @@ public sealed class UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests
                 7=>"ONES=16",
                 _=>$"NUMBER={a};TENS={a/10};ONES={a%10};ALT_TENS={a/10-Math.Min(a/10,mode+1)};ALT_ONES={a%10+10*Math.Min(a/10,mode+1)};WAYS={a/10+1}"
             };
-            case 5:return "SYMBOL="+Symbol(a,b);
-            case 6:return mode%2==0?"SYMBOL="+Symbol(a,b):$"NUMBER={a}";
-            case 7:return $"COUNT={a};GAP={Math.Abs(a-b)}";
+            case 5:return mode>=10?$"RESULT={a+b}":"SYMBOL="+Symbol(a,b);
+            case 6:return mode>=4?$"TRUE={(mode==5?"NO":"YES")};LEFT={a};RIGHT={b}":
+                mode%2==0?"SYMBOL="+Symbol(a,b):$"NUMBER={a}";
+            case 7:return mode>=4?
+                $"COUNT={a};CATEGORY={(a<20?"LESS_THAN_20":a<=50?"TWENTY_TO_FIFTY":"MORE_THAN_50")};TENS={a/10};ONES={a%10}":
+                $"COUNT={a};GAP={Math.Abs(a-b)}";
             default:throw new InvalidOperationException("Unknown Unit 4 original family");
         }
     }
