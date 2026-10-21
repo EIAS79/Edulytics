@@ -80,7 +80,10 @@
     "existingPracticeFamily": "usccss.g1.u06.l14.match_story_equation",
     "familyReused": true,
     "fullOriginalSixContextDigitalCoverage": "NOT_ESTABLISHED; existing digital practice solves a numerical subset, not proof of the six source paper tasks",
-    "teacherFacilitatedActivities": "Story sorting, original pupil drawings and oral equation rationale remain teacher-observed"
+    "teacherFacilitatedActivities": "Story sorting, original pupil drawings and oral equation rationale remain teacher-observed",
+    "authoredSourceRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredSourceRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0",
+    "sourceSpecificTestsExecuted": false
   },
   "stageD": {
     "sourceAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -112,5 +115,20 @@
     "notASubstituteForAuthenticatedGradingOrLegalVisualInspection": true,
     "originalV1Approval": "NOT_CLAIMED",
     "release": "NO_GO"
-  }
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Six original picture/sticker/stamp story cases each has TWO matching equations with matched unknown; original story sorting and handwriting human-only.",
+    "originalSourceActivityTextCompared": true,
+    "existingFirstPartyTeachingReviewed": true,
+    "mathGeneratorAndVerifierStaticallyReviewed": true,
+    "originalTeacherMediatedTasksNotAutoCertified": true,
+    "sourceCopyrightedImagesUnverified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": [],
+    "boundary": "A-C authoring of source goals and numeric proxy; original source figures and actual creative/physical work teacher assessed, runtime and release evidence Stage D only."
+  },
+  "nextAction": "Continue ordinal 117 in canonical order; D/CI deferred."
 }
