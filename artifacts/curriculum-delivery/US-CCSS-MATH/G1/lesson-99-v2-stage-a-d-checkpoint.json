@@ -79,7 +79,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue ordinal100; keep Stage D, CI, merge and deployment deferred.",
+  "nextAction": "Continue original V1 review at 100; no merge or deployment.",
   "aToCClosure": {
     "outcome": "READY_FOR_STAGE_D",
     "sourceMathAndLearnerTextCompared": true,
@@ -113,8 +113,11 @@
     "approvalFromTeacherAcademicOrExternalBodyRequired": false,
     "sourcePixelParityClaimed": false,
     "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
-    "formalInternalV1Acceptance": "IN_PROGRESS",
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
     "gradeRelease": "NO_GO",
-    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json"
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-99-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original pupil diagrams, oral strategies and open-ended self-authored story are not certified as actual pupil submissions."
   }
 }

@@ -101,7 +101,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "nextAction": "Continue ordinal96; do not run deferred Stage D/CI, merge or deploy.",
+  "nextAction": "Continue original V1 review at 96; no merge or deployment.",
   "crossLessonSourcePracticeResumption20261020": {
     "sourceSpecificSubset": {
       "existingEngine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
@@ -157,8 +157,11 @@
     "approvalFromTeacherAcademicOrExternalBodyRequired": false,
     "sourcePixelParityClaimed": false,
     "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
-    "formalInternalV1Acceptance": "IN_PROGRESS",
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
     "gradeRelease": "NO_GO",
-    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json"
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-95-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original Which One Doesn't Belong illustration and learner self-written justification are not auto-graded or copied."
   }
 }
