@@ -944,7 +944,7 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
             var q=UsCcssG1FullGradeStrategyAndTensQuestions.Build(
                 family,new Random(seed*37+29));
             covered.Add(q.Parameters["mode"]);
-            if(q.Parameters["mode"]>=2)
+            if(q.Parameters["mode"] is 2 or 3)
             {
                 Assert.Contains("EIGHT totals",q.Prompt);
                 Assert.Contains("1 TEN",q.Prompt);
