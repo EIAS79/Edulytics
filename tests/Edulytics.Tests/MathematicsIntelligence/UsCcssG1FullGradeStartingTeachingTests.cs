@@ -266,7 +266,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("□3+30=74",unit4Text(11));
         Assert.Contains("missing TENS DIGIT is 4",unit4Text(11));
         Assert.Contains("ONES_LEFT=3;ONES_RIGHT=4",unit4Text(11));
-        Assert.Contains("source image accessibility descriptions",unit4Text(11),StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("The Missing Digit image accessibility descriptions",unit4Text(11),StringComparison.OrdinalIgnoreCase);
         var addTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L11");
         Assert.Equal("us-ccss-g1-u04-l11-original-student-activities-v8",
             CommonCoreG1FullGradeStartingContentCorrections.UnitFourAddTensSourceContentVersion);
