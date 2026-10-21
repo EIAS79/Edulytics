@@ -966,6 +966,9 @@ public static class LessonPracticeContractRegistry
             // Insert this exact source-goal contract without assuming a prior entry.
             byLesson[reviewed.LessonCode] = reviewed;
         }
+        // IM 2021 G2 U01 L02/L03, exact 10- and 20-cube lesson overrides.
+        foreach (var reviewed in UsCcssG2Unit1Lesson2And3PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
         // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
         // V1 G1-010: original 2021 ordinals 46-50 only (U03 L09-L13).
         foreach(var reviewed in UsCcssG1FullGradeUnit7GeometryTimePracticeContracts.Reviewed)
