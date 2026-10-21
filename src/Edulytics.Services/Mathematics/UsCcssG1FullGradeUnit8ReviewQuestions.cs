@@ -38,7 +38,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         if(n<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(n==1?13:n==2?8:n==3?8:n==4?9:n==5?7:n==7?5:n==8?9:n==9?8:3))return false;
+           mode<0||mode>(n==1?13:n==2?8:n==3?11:n==4?9:n==5?7:n==7?5:n==8?9:n==9?8:3))return false;
         return n switch
         {
             0=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
@@ -66,7 +66,13 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 8=>a==5&&b==9,
                 _=>false
             }):a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&a>=b&&c==0,
-            3=>c==0&&(mode switch
+            3=>mode>=9?(mode switch
+            {
+                9=>a==10&&b==7&&c==0,
+                10=>a==8&&b==2&&c==7,
+                11=>a==10&&b==5&&c==2,
+                _=>false
+            }):c==0&&(mode switch
             {
                 4=>a==8&&b==7,
                 5=>a==17&&b==12,
@@ -124,7 +130,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
     {
         int n=Index(family);
         if(n<0)throw new InvalidOperationException("Unreviewed Grade1 U08 family");
-        int mode=random.Next(n==1?14:n==2?9:n==3?9:n==4?10:n==5?8:n==7?6:n==8?10:n==9?9:4),a=0,b=0,c=0;
+        int mode=random.Next(n==1?14:n==2?9:n==3?12:n==4?10:n==5?8:n==7?6:n==8?10:n==9?9:4),a=0,b=0,c=0;
         for(int attempts=0;attempts<1000;attempts++)
         {
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
@@ -158,10 +164,15 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 4=>(6,7),5=>(13,7),6=>(7,8),7=>(15,7),8=>(5,9),
                 _=>throw new InvalidOperationException("Unreviewed original 2021 L03 mode")
             };
-            if(n==3&&mode>=4)(a,b)=mode switch
+            if(n==3&&mode>=4&&mode<=8)(a,b)=mode switch
             {
                 4=>(8,7),5=>(17,12),6=>(20,17),7=>(6,8),8=>(16,7),
                 _=>throw new InvalidOperationException("Unexpected change-unknown story mode")
+            };
+            if(n==3&&mode>=9)(a,b,c)=mode switch
+            {
+                9=>(10,7,0),10=>(8,2,7),11=>(10,5,2),
+                _=>throw new InvalidOperationException("Unreviewed aquarium mental warm-up")
             };
             if(n==4&&mode>=4)(a,b)=mode switch
             {
@@ -226,7 +237,11 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     $"{a}{(mode%2==0?"+":"-")}{b}. Write RESULT=number.":
                     mode%2==0?$"Add within 20: {a}+{b}. Write RESULT=number.":
                     $"Subtract within 20: {a}-{b}. Write RESULT=number.",
-                3=>mode switch
+                3=>mode>=9?
+                    $"ORIGINAL 2021 AQUARIUM MENTAL WARM-UP: "+
+                    $"{(mode==9?"10+7":mode==10?"8+2+7":"10+5+2")}. "+
+                    "Write RESULT=number and explain how it equals seventeen.":
+                    mode switch
                 {
                     4=>"ORIGINAL 2021 AQUARIUM: Clare sees 8 sea turtles, then some more join; now 15. How many JOINED? Write CHANGE=number;FINAL=number.",
                     5=>"ORIGINAL 2021 AQUARIUM: 17 penguins sit on rocks, some swim away, and 5 remain. How many LEFT? Write CHANGE=number;FINAL=number.",
@@ -314,7 +329,8 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 $"MISSING_ADD={b};MISSING_SUB={a}",
             2=>mode==8?"ADD=5+9=14;SUB=14-8=6":
                 $"RESULT={(mode%2==0?a+b:a-b)}",
-            3=>mode>=4?
+            3=>mode>=9?$"RESULT={a+b+p["c"]}":
+                mode>=4?
                 $"CHANGE={b};FINAL={(mode==4||mode==7?a+b:a-b)}":
                 mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
             4=>mode==8||mode==9?$"MATCH=A,C;MISSING={b}":
