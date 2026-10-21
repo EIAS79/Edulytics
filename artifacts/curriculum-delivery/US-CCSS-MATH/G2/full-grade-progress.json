@@ -7,9 +7,9 @@
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
     "lastConsecutiveACClosed": 0,
-    "nextSequentialLesson": 6,
+    "nextSequentialLesson": 8,
     "firstUnclosedLesson": 1,
-    "currentWork": "Authored Grade 2 U01 L01-L05 source-goal candidates sequentially; next is U01 L06. All five have source access/teacher performance return-queue gaps. Stage D untouched."
+    "currentWork": "Authored Stage A-C source-locked teaching for G2 U01 L01-L07; exact Practice family for L06 warm-up only, L07 original activity teacher-assessed. Next source-ordered U01 L08."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -83,22 +83,22 @@
     {
       "gradeOrdinal": 6,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L06",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
+      "sourceReview": "PUBLIC_TEACHER_LESSON_HTML_REVIEWED_PRINT_AND_RESTRICTED_EVIDENCE_PENDING",
+      "teaching": "SOURCE_AND_ORIGINAL_PREVIOUS_PROSE_LOCKED_CORRECTION_AUTHORED",
+      "practice": "ONE_EXACT_NUMBER_TALK_FAMILY_PLUS_AUTHORING_TESTS_NO_GAMEBOARD_GRADING",
+      "tests": "WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
     {
       "gradeOrdinal": 7,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L07",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
+      "sourceReview": "PUBLIC_TEACHER_LESSON_HTML_REVIEWED_PRINT_AND_RESTRICTED_EVIDENCE_PENDING",
+      "teaching": "SOURCE_AND_ORIGINAL_PREVIOUS_PROSE_LOCKED_CORRECTION_AUTHORED",
+      "practice": "TEACHER_ASSESSED_ORIGINAL_ACTIVITY_NO_DIGITAL_NUMERIC_OVERRIDE_CLAIMED",
+      "tests": "WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -1662,6 +1662,18 @@
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L05",
       "reason": "Print student task and original Cool-down not independently inspected; original seven-card equations and physical teaching discussion cannot be certified by numerical gap alone.",
       "nextAction": "Complete original student print/cool-down source parity and human-authored activity rubric, then establish genuine A-C closure without running Stage D."
+    },
+    {
+      "gradeOrdinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L06",
+      "reason": "Original source print student PDF unavailable, live teacher/student performance unobserved; numerical grading cannot stand in for the source's authentic physical/student-generated activity.",
+      "nextAction": "Complete original student print and educator-restricted source parity; independent human student evidence rubric; Stage D later."
+    },
+    {
+      "gradeOrdinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L07",
+      "reason": "Original source print student PDF unavailable, live teacher/student performance unobserved; numerical grading cannot stand in for the source's authentic physical/student-generated activity.",
+      "nextAction": "Complete original student print and educator-restricted source parity; independent human student evidence rubric; Stage D later."
     }
   ]
 }
