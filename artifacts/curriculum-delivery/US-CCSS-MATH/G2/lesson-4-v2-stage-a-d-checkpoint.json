@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 4,
+  "unitNumber": 1,
+  "lessonNumber": 4,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L04",
+  "lessonTitle": "Add and Subtract Your Way",
+  "officialOutcomeCodes": [
+    "CCSS:2.OA.B.2"
+  ],
+  "sourceEdition": "Illustrative Mathematics / Kendall Hunt IM K-5 2021",
+  "stageA": {
+    "status": "PUBLIC_TEACHER_LESSON_STUDENT_FACING_HTML_REVIEWED_PRINT_COOLDOWN_PENDING",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-4/lesson.html",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-4/preparation.html",
+    "warmUp": "Number Talk: make ten, eg. 8+2, 8+3, 8+5, 7+6 and explanation",
+    "activity1": "Original How Close stage 1: five distinct digit cards 0..9 (tens removed), choose THREE, sum as close to 20 as possible, write equation, compare with partner. Example cards 5 8 2 4 6.",
+    "activity2": "Eight addition and subtraction expressions in 0..20, students show strategy with drawings/numbers/words; discuss multiple ways for 17−9.",
+    "synthesis": "Math Community norms and strategy discussion require human teacher",
+    "cooldown": "Sums and Differences (login-restricted original text not inspected)",
+    "printTaskSource": "PUBLIC_PRINT_PDF_NOT_FETCHED_IN_THIS_RUN",
+    "originalStudentResponses": "NOT_OBSERVED",
+    "originalImageCopyright": "Do not copy digit-card artwork; use authored text prompts"
+  },
+  "stageB": {
+    "status": "SOURCE_MISMATCH_DOCUMENTED_UNREPAIRED",
+    "currentDefect": "Generic subtraction-only explanatory steps do not represent original five-card optimization or student choice and multiple valid within-20 strategies. Also existing explanation contains unnatural learner pronoun 'them'.",
+    "sourceRichPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g2-phase29-v1.lesson-content-pack.json",
+    "nextAction": "Create exact source-guarded teaching correction with prior body and persisted prose guards; do not overwrite original working steps without source-specific review."
+  },
+  "stageC": {
+    "status": "TWO_EXACT_DIGITAL_SUBSKILL_FAMILIES_AUTHORED_UNRUN",
+    "families": [
+      "usccss.g2.u01.l04.five_card_min_distance",
+      "usccss.g2.u01.l04.within20_add_or_sub"
+    ],
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson4PracticeContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson4Questions.cs",
+    "test": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson4QuestionsTests.cs",
+    "originalActivityLimits": "Digit-only minimum absolute distance does not grade selected 3-card equation or multiple equally correct combinations. Original written equation, drawings and explanations need separate teacher rubric.",
+    "testStatus": "WRITTEN_NOT_EXECUTED"
+  },
+  "closure": {
+    "status": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "stageDExecuted": false,
+    "academicAccepted": false,
+    "issues": [
+      "Stage B remains incomplete",
+      "Student printable task PDF not inspected",
+      "Cool-down restricted by educator login",
+      "Original authored multi-solution three-card equation and student reasoning not assessed digitally"
+    ]
+  }
+}
