@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
+  "title": "Add and Subtract Within 10",
+  "unitNumber": 1,
+  "lessonNumber": 1,
+  "sourceEdition": "IM K-5 Math, 1st Edition (2021)",
+  "officialOutcomeCodes": [
+    "CCSS:2.OA.B.2"
+  ],
+  "sourceEvidence": {
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-1/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-1/lesson.html",
+    "blueprintPath": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade2-im-k5-2021.lesson-blueprint.json",
+    "originalStudentPrintPdf": "UNAVAILABLE_FROM_PUBLIC_FETCH_AT_TIME_OF_AUTHORING",
+    "coolDown": "LOGIN_RESTRICTED_NOT_READ",
+    "reviewedSourceComponents": [
+      "warm-up: math community discussion",
+      "activity 1: partner two-card addition-or-subtraction values 0 through 10, record expressions",
+      "activity 2: match addition/subtraction values within 10",
+      "activity 2: recognize and reason about addition expressions with total 10",
+      "lesson synthesis and teacher-recorded community norms",
+      "cool-down title (not restricted task body)"
+    ],
+    "limitations": [
+      "Original student task PDF content not independently compared",
+      "Registered teacher-only Cool-down task statement not inspected",
+      "No original physical student responses or teacher activity/Math Community recordings verified"
+    ]
+  },
+  "stageA": {
+    "status": "SOURCE_HTML_REVIEWED_PRINT_AND_COOLDOWN_GAP",
+    "originalLearningGoal": "Add and subtract within 10 (CCSS:2.OA.B.2)",
+    "independentAcademicAssertion": false
+  },
+  "stageB": {
+    "status": "EXISTING_GUARDED_CORRECTION_REUSED",
+    "correctionClass": "src/Edulytics.Data/Seeding/CommonCoreG2SourceGroundedFoundationsCorrections.cs",
+    "originalDefect": "Unrelated clock-reading rule in lesson within-ten arithmetic",
+    "sourceScope": "Source URL, canonical prior content hash and outcomes guarded",
+    "changedInThisBranch": false,
+    "productionLessonIdentityChanged": false
+  },
+  "stageC": {
+    "status": "EXACT_DIGITAL_FAMILIES_AUTHORED_TESTS_UNRUN",
+    "lessonContractPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonPracticeContracts.cs",
+    "questionEnginePath": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1FirstLessonQuestions.cs",
+    "genericEngineBinding": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "familyRegistryPath": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonQuestionsTests.cs",
+    "digitalFamilies": [
+      "usccss.g2.u01.l01.two_card_operation",
+      "usccss.g2.u01.l01.match_expression_value",
+      "usccss.g2.u01.l01.make_ten_missing_addend",
+      "usccss.g2.u01.l01.recognize_ten_sum"
+    ],
+    "digitalAssessmentLimitations": [
+      "No automatic verification of student-authored expressions recorded during partner play",
+      "No automatic verification of students' oral explanations, turn-taking or class chart",
+      "Matching and recognizing expressions are digital analogues, not a reproduction of publisher's card materials or paper work"
+    ],
+    "tests": "WRITTEN_NOT_EXECUTED",
+    "testCoveragePlanned": [
+      "correct solution",
+      "wrong solution",
+      "malformed answer",
+      "tampered invalid parameter",
+      "boundaries within 0..10",
+      "deterministic seeding",
+      "unique generated fingerprints",
+      "lesson-specific presentation interaction"
+    ],
+    "academicApproval": "NOT_ASSERTED"
+  },
+  "closure": {
+    "status": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "openGaps": [
+      "Check original student task PDF against source lesson activities",
+      "Review restricted Cool-down original task if authorized access becomes available",
+      "Confirm original-expression recording and answer alternative limitations are explicitly acceptable for non-digital teacher assessment",
+      "Confirm all source-facing teaching and authored question code with source review before advancing to READY_FOR_STAGE_D"
+    ],
+    "stageDTestsExecuted": false,
+    "CIExecuted": false,
+    "humanTeacherApproval": "NOT_ASSERTED",
+    "productionRelease": "NOT_AUTHORIZED"
+  },
+  "nextAction": "Continue Grade 2 lesson 2 A–B–C while retaining Grade 2 lesson 1 on the explicit source-return queue; never count lesson 1 as closed."
+}
