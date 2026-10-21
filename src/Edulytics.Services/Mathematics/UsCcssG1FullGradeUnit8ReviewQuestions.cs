@@ -353,9 +353,19 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                first+second==number;
     }
 
+    private static bool VerifySourceOneOfEach(string? response)
+    {
+        var candidate=Normalize(response);
+        string[] add=["5+9=14","4+7=11","6+4+4=14"];
+        string[] subtract=["14-8=6","15-9=6","13-6=7"];
+        return add.Any(a=>subtract.Any(b=>
+            candidate==$"ADD={a};SUB={b}"));
+    }
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? response)=>
         Valid(family,p)&&!string.IsNullOrWhiteSpace(response)&&
-        (Index(family)==9&&(p["mode"] is 7 or 8)?
+        (Index(family)==2&&p["mode"]==8?
+            VerifySourceOneOfEach(response):
+        Index(family)==9&&(p["mode"] is 7 or 8)?
             VerifyFourAuthoredClues(p,response):
-            Normalize(Solve(family!,p))==Normalize(response));
+            Normalize(Solve(family!,p))==Normalize(response)));
 }
