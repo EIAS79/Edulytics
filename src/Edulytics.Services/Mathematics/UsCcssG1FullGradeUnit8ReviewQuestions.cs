@@ -38,7 +38,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         if(n<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(n==1?7:n==3?8:n==4?9:n==5?7:n==7?4:n==8?9:n==9?8:3))return false;
+           mode<0||mode>(n==1?8:n==2?8:n==3?8:n==4?9:n==5?7:n==7?4:n==8?9:n==9?8:3))return false;
         return n switch
         {
             0=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
@@ -48,10 +48,19 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     5=>a==4&&b==5,
                     6=>a==9&&b==4,
                     7=>a==9&&b==5,
+                    8=>a==4&&b==5,
                     _=>false
                 }):
                 a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
-            2=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&a>=b&&c==0,
+            2=>mode>=4?c==0&&(mode switch
+            {
+                4=>a==6&&b==7,
+                5=>a==13&&b==7,
+                6=>a==7&&b==8,
+                7=>a==15&&b==7,
+                8=>a==5&&b==9,
+                _=>false
+            }):a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20&&a>=b&&c==0,
             3=>c==0&&(mode switch
             {
                 4=>a==8&&b==7,
@@ -109,7 +118,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
     {
         int n=Index(family);
         if(n<0)throw new InvalidOperationException("Unreviewed Grade1 U08 family");
-        int mode=random.Next(n==1?8:n==3?9:n==4?10:n==5?8:n==7?5:n==8?10:n==9?9:4),a=0,b=0,c=0;
+        int mode=random.Next(n==1?9:n==2?9:n==3?9:n==4?10:n==5?8:n==7?5:n==8?10:n==9?9:4),a=0,b=0,c=0;
         for(int attempts=0;attempts<1000;attempts++)
         {
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
@@ -134,8 +143,13 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             else{a=random.Next(20,101);b=n>=8?10:0;}
             if(n==1&&mode>=4)(a,b)=mode switch
             {
-                4=>(5,4),5=>(4,5),6=>(9,4),7=>(9,5),
+                4=>(5,4),5=>(4,5),6=>(9,4),7=>(9,5),8=>(4,5),
                 _=>throw new InvalidOperationException("Unreviewed original related-facts example")
+            };
+            if(n==2&&mode>=4)(a,b)=mode switch
+            {
+                4=>(6,7),5=>(13,7),6=>(7,8),7=>(15,7),8=>(5,9),
+                _=>throw new InvalidOperationException("Unreviewed original 2021 L03 mode")
             };
             if(n==3&&mode>=4)(a,b)=mode switch
             {
@@ -169,7 +183,11 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             string prompt=n switch
             {
                 0=>$"Find the sum within ten: {a}+{b}. Write RESULT=number.",
-                1=>mode>=4?mode switch
+                1=>mode==8?
+                    "ORIGINAL 2021 UNIT 8 LESSON 2 STUDENT MISSING NUMBERS: "+
+                    "4+□=9 and 9-5=□. Write MISSING_ADD=number;MISSING_SUB=number. "+
+                    "Teacher reviews connecting cubes and partner explanation.":
+                    mode>=4?mode switch
                     {
                         4=>"ORIGINAL 2021 RELATED FACTS: Find 5+4. Write RESULT=number.",
                         5=>"ORIGINAL 2021 RELATED FACTS: Find 4+5. Write RESULT=number.",
@@ -181,7 +199,16 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     mode==2?
                     $"ORIGINAL CUBE TOWERS: Two connecting-cube towers contain {a} and {b} cubes. Write ONE complete addition equation and ONE matching subtraction equation using the same whole, the two parts and the equals sign. Write ADD=number+number=number;SUB=number-number=number.":
                     $"ORIGINAL MISSING NUMBER: Find the TWO unknown values for {a} + □ = {whole} and {whole} - {b} = □. Write MISSING_ADD=number;MISSING_SUB=number.",
-                2=>mode%2==0?$"Add within 20: {a}+{b}. Write RESULT=number.":
+                2=>mode==8?
+                    "ORIGINAL 2021 UNIT 8 LESSON 3 CHOOSE ONE OF EACH: "+
+                    "ADDITION expressions 5+9, 4+7, 6+4+4; SUBTRACTION expressions "+
+                    "14-8, 15-9, 13-6. Choose ANY one valid addition and ANY "+
+                    "one valid subtraction, find both, and write ADD=equation;SUB=equation. "+
+                    "Source circles, personal methods and partner discussion are teacher-assessed.":
+                    mode>=4?
+                    $"ORIGINAL 2021 UNIT 8 LESSON 3 MENTAL WARM-UP: "+
+                    $"{a}{(mode%2==0?"+":"-")}{b}. Write RESULT=number.":
+                    mode%2==0?$"Add within 20: {a}+{b}. Write RESULT=number.":
                     $"Subtract within 20: {a}-{b}. Write RESULT=number.",
                 3=>mode switch
                 {
@@ -254,11 +281,13 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         return n switch
         {
             0=>$"RESULT={a+b}",
-            1=>mode>=4?$"RESULT={(mode==4||mode==5?9:mode==6?5:4)}":
+            1=>mode==8?"MISSING_ADD=5;MISSING_SUB=4":
+                mode>=4?$"RESULT={(mode==4||mode==5?9:mode==6?5:4)}":
                 mode<=1?$"LEFT={a};WHOLE={a+b}":
                 mode==2?$"ADD={a}+{b}={a+b};SUB={a+b}-{b}={a}":
                 $"MISSING_ADD={b};MISSING_SUB={a}",
-            2=>$"RESULT={(mode%2==0?a+b:a-b)}",
+            2=>mode==8?"ADD=5+9=14;SUB=14-8=6":
+                $"RESULT={(mode%2==0?a+b:a-b)}",
             3=>mode>=4?
                 $"CHANGE={b};FINAL={(mode==4||mode==7?a+b:a-b)}":
                 mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
