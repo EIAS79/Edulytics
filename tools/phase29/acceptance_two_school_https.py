@@ -1575,9 +1575,15 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             assert target_grade == 1 and code == expected_lesson_code, (
                 ordinal, code, "misrouted ordered original source review")
             source_fragments = original_g1_source_bodies_stage_d[ordinal]
+            # Keep the actual source words and their order, while ignoring
+            # typographic commas/hyphens in otherwise identical learner text.
+            # This is not a fuzzy keyword match and still fails closed if
+            # required source activity words are absent.
+            rendered_source_words = re.sub(r"[^\\w]+", " ", rendered).strip()
             absent_fragments = [
                 phrase for phrase in source_fragments
-                if phrase.casefold() not in rendered
+                if re.sub(r"[^\\w]+", " ", phrase.casefold()).strip()
+                not in rendered_source_words
             ]
             assert not absent_fragments, (
                 ordinal, code, "original source learning task missing from "
