@@ -378,7 +378,7 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.Contains("Write Numbers Stage 1 center",unit4Text(10));
         Assert.Contains("37+20=57",unit4Text(11));
         Assert.Contains("30+65=95",unit4Text(11));
-        Assert.Contains("smudged diagram",unit4Text(11));
+        Assert.Contains("The Missing Digit image accessibility descriptions",unit4Text(11));
         Assert.Contains("67+10=77",unit4Text(12));
         Assert.Contains("99-10-10-10=69",unit4Text(12));
         foreach(var expectedWarmup in new[]{"3+10=13","10+5=15","13-10=3","15-10=5"})
