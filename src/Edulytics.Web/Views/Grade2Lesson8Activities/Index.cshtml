@@ -3,11 +3,10 @@
 @{
     Layout="_StudentLayout";
     ViewData["Title"]="Grade 2 · Interpret picture graphs";
-    var data=UsCcssG2Unit1EighthLessonEdulyticsCoolDown;
     var graphs = new[] {
-        new {Title="Sports chosen by children",Values=data.ChildrenSports},
-        new {Title="Sports chosen by adults",Values=data.AdultsSports},
-        new {Title="Favorite art supplies chosen by children",Values=data.ArtSupplies}
+        new {Title="Sports chosen by children",Values=UsCcssG2Unit1EighthLessonEdulyticsCoolDown.ChildrenSports},
+        new {Title="Sports chosen by adults",Values=UsCcssG2Unit1EighthLessonEdulyticsCoolDown.AdultsSports},
+        new {Title="Favorite art supplies chosen by children",Values=UsCcssG2Unit1EighthLessonEdulyticsCoolDown.ArtSupplies}
     };
 }
 <style>
@@ -147,7 +146,7 @@ not an official saved school grade or proof of a classroom discussion.</p>
 <section class="panel">
 <h2>Teacher review rubric</h2>
 <ul>
-@foreach(var item in data.TeacherRubric){<li>@item</li>}
+@foreach(var item in UsCcssG2Unit1EighthLessonEdulyticsCoolDown.TeacherRubric){<li>@item</li>}
 </ul>
 </section>
 <p class="muted">Source alignment: IM 2021 Grade 2 U01 L08, CCSS 2.MD.D.10.
