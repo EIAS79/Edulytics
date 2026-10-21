@@ -7,9 +7,9 @@
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
     "lastConsecutiveACClosed": 0,
-    "nextSequentialLesson": 9,
     "firstUnclosedLesson": 1,
-    "currentWork": "G2 U01 L08 teacher preparation/three picture-graph families and source teaching fix authored. Original full lesson HTML and print/cool-down missing. Next U01 L09."
+    "nextSequentialLesson": 1,
+    "currentWork": "STRICT SEQUENTIAL BLOCK: finish G2 U01 L01 Stage A+B+C and source-grounded checkpoint before any further lesson work. L02-L08 earlier draft changes are not a license to skip L01."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -22,7 +22,8 @@
     "Print student task PDF could not be fetched in the source check; never mark full A source parity based on this text manifest.",
     "G2 U01 L02 source uses a ten-cube hidden-part partner game, related addition/subtraction equations, tower-to-equation matching; current keyConceptsAndRules says 'within 20' and generic steps do not teach the exact target.",
     "G2 content pack reviewEvidence narrative says 143 of 146 included but the live JSON catalogue has 146 lesson records, all isSupporting=false and all with OutcomeCodes. No historical approval inferred.",
-    "U01 L02 and L03 now have ten/twenty-cube original-source contracts, actual teaching corrections and unexecuted source-specific tests. Existing published content untouched on main."
+    "U01 L02 and L03 now have ten/twenty-cube original-source contracts, actual teaching corrections and unexecuted source-specific tests. Existing published content untouched on main.",
+    "2026-10-21 user corrected workflow: strict lesson by lesson A->B->C, mark A_C completed with READY_FOR_STAGE_D only after full evidence; only then begin next ordinal. Earlier cursor 9 was incorrect."
   ],
   "lessonStatuses": [
     {
@@ -1681,5 +1682,17 @@
       "reason": "Full original teacher lesson and printable figures not inspected, restricted cooldown, independent student evidence missing.",
       "nextAction": "Review true original picture graph and source text; do not assert academic acceptance from derived symbol-only analogues."
     }
-  ]
+  ],
+  "executionPolicy": {
+    "mode": "STRICT_ONE_LESSON_AT_A_TIME",
+    "startOrdinal": 1,
+    "allowedNextOrdinalRule": "A lesson N+1 is eligible only if ALL earlier lessons 1..N have documented READY_FOR_STAGE_D (A_C_COMPLETED) and independent source-aligned Stage A, Stage B, Stage C evidence.",
+    "completionLabel": "READY_FOR_STAGE_D",
+    "completionMeaning": "A_B_C_COMPLETED_AUTHORING_ONLY_NOT_STAGE_D_TESTED",
+    "cannotSkipOnExplicitGap": true,
+    "stageDAndCIExecutionAllowed": false,
+    "preexistingOutOfOrderDrafts": "L02-L08 edits exist but remain unverified and must be assessed afresh only when reached sequentially; never count as closed.",
+    "globalStaticPreflight": "DISCOVERY_ONLY_NOT_A_C_ACCEPTANCE",
+    "haltedAtFirstUnclosedLesson": true
+  }
 }
