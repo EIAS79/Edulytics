@@ -109,7 +109,7 @@ public sealed class UsCcssG1Lessons137To146SourceMathTests
             Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(
                 family,chosen,$"NUMBER={selected};E1=0+{selected};E2=10+{selected-10};E3=20+{selected-20}"));
             Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(
-                family,chosen,$"NUMBER=84;E1=0+84;E2=10+74;E3=20+64"));
+                family,chosen,$"NUMBER={selected+1};E1=0+{selected};E2=10+{selected-10};E3=20+{selected-20}"));
         }
         Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(
             family,P(119,0,4)));
