@@ -56,7 +56,9 @@ public sealed class UsCcssG1Lesson86Original2021ComparisonsTests
         CanonicalLessonContentMaterializer.Materialize(doc);
         Assert.Equal(CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
-        Assert.True(CommonCoreG1SourceGroundedInstructionalCorrections.CanUpgradeExisting(
+        // Prior v1 learner body lacks an independently verified exact-body migration signature.
+        // Fail closed instead of treating a version label as permission to overwrite prose.
+        Assert.False(CommonCoreG1SourceGroundedInstructionalCorrections.CanUpgradeExisting(
             doc,row,CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersionV1));
         var body=row.Translations.Single(x=>x.CultureCode=="en").WorkedExamples;
         foreach(var math in new[]{"10+6=16","9+6=15","10+7=17","8+7=15",
