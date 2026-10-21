@@ -108,7 +108,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             6=>c==0&&(mode<=1?
                 a>=1&&a<=119&&b>=1&&b<=120-a:
                 a>=20&&a<=120&&b==0),
-            7=>mode==5?a==84&&b==0&&c==0:
+            7=>mode==5?a>=20&&a<=100&&b==0&&c==0:
                 mode==4?a>=20&&a<=100&&b==0&&c==0:
                 a>=20&&a<=100&&b==0&&c==0,
             8=>mode switch
@@ -156,7 +156,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 }
             }
             else if(n==9){a=random.Next(1,121);b=random.Next(0,a+1);}
-            else if(n==7){a=mode==5?84:random.Next(20,101);b=0;}
+            else if(n==7){a=random.Next(20,101);b=0;}
             else if(n==8){a=random.Next(3,8)*10+random.Next(1,10);b=10;}
             else{a=random.Next(20,101);b=n>=8?10:0;}
             if(n==1&&mode>=4)(a,b)=mode switch
@@ -289,11 +289,11 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     $"Last Number Wins: start at {a} (not at one); count ON {b} hops up to 120. Write LAST=number.":
                     $"Count an organized collection of objects with tens bundles and loose ones. The display has NO double-counted cubes and contains between 20 and 120 objects. How many are there? Write TENS=number;ONES=number;TOTAL=number.",
                 7=>mode==5?
-                    "ORIGINAL 2021 UNIT 8 LESSON 8 NUMBER BOOK: Start from "+
-                    "the teacher's example number 84. Write AT LEAST THREE "+
-                    "DISTINCT correct addition expressions for eighty-four, "+
+                    "ORIGINAL 2021 UNIT 8 LESSON 8 NUMBER BOOK: Choose the pupil's "+
+                    $"number {a} from 20 through 100 (teacher source example 84). Write AT LEAST THREE "+
+                    "DISTINCT correct addition expressions for the selected number, "+
                     "such as two addends in each. Enter "+
-                    "NUMBER=84;E1=x+y;E2=x+y;E3=x+y. "+
+                    "NUMBER=n;E1=x+y;E2=x+y;E3=x+y. "+
                     "Different mathematical decompositions are accepted. "+
                     "An authentic pupil book PAGE with visual tens/ones models "+
                     "and the classroom gallery walk must be assessed by a teacher.":
@@ -355,7 +355,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 $"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
-            7=>mode==5?"NUMBER=84;E1=20+64;E2=30+54;E3=40+44":
+            7=>mode==5?$"NUMBER={a};E1=0+{a};E2=10+{a-10};E3=20+{a-20}":
                 mode==4?$"NUMBER={a};TENS={a/10};ONES={a%10}":
                 mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
                 mode==2?$"ALT_TENS={a/10-2};ALT_ONES={a%10+20};TOTAL={a}":
@@ -414,7 +414,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                first+second==number;
     }
 
-    private static bool VerifyOriginalNumberBook(string? response)
+    private static bool VerifyOriginalNumberBook(IReadOnlyDictionary<string,int> p,string? response)
     {
         var parts=Normalize(response).Split(';');
         if(parts.Length!=4)return false;
@@ -426,14 +426,14 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 return false;
         }
         if(fields.Count!=4||!fields.TryGetValue("NUMBER",out string? number)||
-            number!="84")return false;
+            number!=p["a"].ToString(System.Globalization.CultureInfo.InvariantCulture))return false;
         var distinct=new HashSet<string>(StringComparer.Ordinal);
         foreach(var key in new[]{"E1","E2","E3"})
         {
             if(!fields.TryGetValue(key,out var expression))return false;
             var x=expression.Split('+');
             if(x.Length!=2||!int.TryParse(x[0],out int a)||
-                !int.TryParse(x[1],out int b)||a<0||b<0||a+b!=84)
+                !int.TryParse(x[1],out int b)||a<0||b<0||a+b!=p["a"])
                 return false;
             if(!distinct.Add($"{Math.Min(a,b)},{Math.Max(a,b)}"))
                 return false;
@@ -454,7 +454,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         (Index(family)==2&&p["mode"]==8?
             VerifySourceOneOfEach(response):
         Index(family)==7&&p["mode"]==5?
-            VerifyOriginalNumberBook(response):
+            VerifyOriginalNumberBook(p,response):
         Index(family)==9&&(p["mode"] is 7 or 8)?
             VerifyFourAuthoredClues(p,response):
             Normalize(Solve(family!,p))==Normalize(response));
