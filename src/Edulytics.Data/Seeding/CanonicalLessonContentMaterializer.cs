@@ -31,6 +31,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document);
         CommonCoreG1CountAndAddPilotCorrection.Apply(document);
         CommonCoreG2SourceGroundedFoundationsCorrections.Apply(document);
+        CommonCoreG2Unit1TenTwentySourceTeachingCorrections.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -209,8 +210,10 @@ public static class CanonicalLessonContentMaterializer
         var g2 = CommonCoreG2SourceGroundedFoundationsCorrections
             .GetExpectedContentVersion(document, lesson, g1Pilot);
 
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2TenTwenty = CommonCoreG2Unit1TenTwentySourceTeachingCorrections
             .GetExpectedContentVersion(document, lesson, g2);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2TenTwenty);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -273,6 +276,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1CountAndAddPilotCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2SourceGroundedFoundationsCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1TenTwentySourceTeachingCorrections
             .IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
@@ -356,6 +361,8 @@ public static class CanonicalLessonContentMaterializer
                 document,
                 lesson,
                 existingContentVersion) ||
+        CommonCoreG2Unit1TenTwentySourceTeachingCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections
