@@ -1,0 +1,169 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson11PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 — Write questions about your graphs";
+    var source=UsCcssG2Unit1EleventhLessonGraphQuestions.PictureTable;
+    var bars=UsCcssG2Unit1EleventhLessonGraphQuestions.BarTable;
+    var ops=new[]{"Count","Combine","Compare"};
+}
+<style>
+.g2-l11{max-width:970px;margin:0 auto;padding:20px 18px 50px;color:#1e3b4d}
+.g2-l11 .panel{border:1px solid #d5e4ec;background:#fff;border-radius:15px;padding:23px;margin:18px 0}
+.g2-l11 h1{font-size:1.85rem}.g2-l11 h2{font-size:1.3rem}
+.g2-l11 .muted{color:#516878}.g2-l11 .tables{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px}
+.g2-l11 table{border-collapse:collapse;width:100%}.g2-l11 th,.g2-l11 td{border:1px solid #a7bec9;padding:9px}.g2-l11 th{background:#eaf3f6}
+.g2-l11 label{display:block;font-weight:700;margin:14px 0 6px}
+.g2-l11 textarea,.g2-l11 input,.g2-l11 select{font:inherit;border:1px solid #7792a0;border-radius:8px;padding:11px;width:100%;max-width:520px}
+.g2-l11 textarea:focus,.g2-l11 input:focus,.g2-l11 select:focus{outline:3px solid #a5e3e9}
+.g2-l11 .questions{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:15px}
+.g2-l11 .question{background:#f6fafc;border:1px solid #b9cfdb;border-radius:11px;padding:16px}
+.g2-l11 .options{display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:9px}
+.g2-l11 .button{padding:13px 22px;background:#087e8f;color:#fff;border:0;border-radius:8px;font:inherit;font-weight:750;cursor:pointer}
+.g2-l11 .success{border-left:4px solid #1e8455;padding-left:12px}
+.g2-l11 .error{border-left:4px solid #bf4352;padding-left:12px}
+.g2-l11 .review{border-left:4px solid #af8231;padding-left:12px}
+</style>
+<main class="g2-l11">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to lesson</a>
+<header>
+<p>EDULYTICS · SOURCE-GOAL ORIGINAL ACTIVITIES</p>
+<h1>Ask and answer questions about your graphs</h1>
+<p class="muted">Grade 2, Unit 1, Lesson 11. Use the TWO graph displays created
+in the previous lesson. Write FOUR different questions (two about each),
+including at least one question that combines or compares categories.
+Swap with a new partner and check the answers using the correct graph.
+No publisher assessment or picture is copied here.</p>
+</header>
+<section class="panel">
+<h2>1. Number Talk — make ten with three addends</h2>
+<p>Think mentally: 3 + 7, 3 + 7 + 2, 5 + 7, and 2 + 4 + 8.
+Explain how regrouping two addends to make ten helps you add within twenty.</p>
+</section>
+<section class="panel">
+<h2>2. Revisit the graphs from our previous lesson</h2>
+<p>Keep your previous original pupil-made drawings beside this activity.
+The independent Edulytics tables below let you reconstruct the same
+category counts from Lesson 10. The form does NOT pretend that earlier
+student sketches were automatically saved or that a fictional table
+represents actual classmates.</p>
+<div class="tables">
+<div>
+<h3>Picture graph — Book choices (Lesson 10 Table A)</h3>
+<table><thead><tr><th>Category</th><th>One-symbol picture count</th></tr></thead><tbody>
+@foreach(var row in source){<tr><th>@row.Key</th><td>@row.Value</td></tr>}
+</tbody></table>
+<p>Picture key: one original symbol means one response.</p>
+</div>
+<div>
+<h3>Bar graph — Club choices (Lesson 10 Table B)</h3>
+<table><thead><tr><th>Category</th><th>Unit-one bar height</th></tr></thead><tbody>
+@foreach(var row in bars){<tr><th>@row.Key</th><td>@row.Value</td></tr>}
+</tbody></table>
+<p>Numbered axis: start at zero; one person per tick.</p>
+</div>
+</div>
+</section>
+<form class="panel" asp-controller="Grade2Lesson11Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<h2>3. Make FOUR different questions</h2>
+<p>Write your own question in words and label the graph it comes from.
+Choose the type of calculation, category names, and record your partner's
+answer. At least one question must combine or compare TWO categories.
+Do not simply write four one-category questions.</p>
+<div class="questions">
+@for(var i=0;i<4;i++){
+    var q=Model.Answers.Questions.ElementAtOrDefault(i) ?? new UsCcssG2Unit1EleventhLessonGraphQuestions.Draft();
+    <section class="question">
+    <h3>My question @(i+1)</h3>
+    <label for="graph-@i">Which of your earlier graphs supplies the data?</label>
+    <select id="graph-@i" name="Answers.Questions[@i].Graph" required>
+    <option value="">Choose a graph</option>
+    <option value="Picture" selected="@(q.Graph=="Picture")">Picture graph — books</option>
+    <option value="Bar" selected="@(q.Graph=="Bar")">Bar graph — clubs</option>
+    </select>
+    <label for="question-@i">Write a unique, answerable mathematical question</label>
+    <textarea id="question-@i" name="Answers.Questions[@i].Question"
+      rows="2" maxlength="500" required>@q.Question</textarea>
+    <label for="operation-@i">What do you have to calculate?</label>
+    <select id="operation-@i" name="Answers.Questions[@i].Operation" required>
+    <option value="">Choose</option>
+    @foreach(var op in ops){<option value="@op" selected="@(q.Operation==op)">@op</option>}
+    </select>
+    <div class="options">
+    <div>
+    <label for="category-a-@i">First category in your question</label>
+    <select id="category-a-@i" name="Answers.Questions[@i].CategoryOne" required>
+    <option value="">Choose</option>
+    @foreach(var cat in source.Keys.Concat(bars.Keys)){
+      <option value="@cat" selected="@(q.CategoryOne==cat)">@cat</option>
+    }
+    </select>
+    </div>
+    <div>
+    <label for="category-b-@i">Second category (only for combine/compare)</label>
+    <select id="category-b-@i" name="Answers.Questions[@i].CategoryTwo">
+    <option value="">Not used for count</option>
+    @foreach(var cat in source.Keys.Concat(bars.Keys)){
+      <option value="@cat" selected="@(q.CategoryTwo==cat)">@cat</option>
+    }
+    </select>
+    </div>
+    </div>
+    <label for="partner-answer-@i">Partner's whole-number answer</label>
+    <input id="partner-answer-@i" name="Answers.Questions[@i].PartnerAnswer"
+       value="@q.PartnerAnswer" type="number" min="0" max="50" required />
+    </section>
+}
+</div>
+<h2>4. Independent Edulytics Cool-down</h2>
+<p>This check is authored from the published mathematical objective,
+not copied from the restricted publisher Cool-down.</p>
+<div class="options">
+<div>
+<label asp-for="Answers.CoolPictureDifference">Picture graph: how many more selected Comics (6) than Poetry (2)?</label>
+<input asp-for="Answers.CoolPictureDifference" type="number" min="0" max="50" required />
+</div>
+<div>
+<label asp-for="Answers.CoolBarCombined">Bar graph: how many selected Music (4) and Reading (7) altogether?</label>
+<input asp-for="Answers.CoolBarCombined" type="number" min="0" max="50" required />
+</div>
+<div>
+<label asp-for="Answers.CoolNumberTalk">Number Talk: 3 + 7 + 2 = ?</label>
+<input asp-for="Answers.CoolNumberTalk" type="number" min="0" max="50" required />
+</div>
+</div>
+<label asp-for="Answers.PartnerReflection">How did your partner decide which graph to use? What did you change after discussing your questions?</label>
+<textarea asp-for="Answers.PartnerReflection" rows="4" maxlength="2000"></textarea>
+<p class="muted">The numeric checker can verify that a recorded answer
+fits the selected operation and graph data. A teacher assesses whether
+your words genuinely ask that question and whether partner exchange
+really occurred.</p>
+<button class="button" type="submit">Check the graph mathematics and review my questions</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var item in Model.Feedback){
+<div class="@(item.Correct==true?"success":item.Correct==false?"error":"review")">
+<h3>@item.Task</h3>
+<p>@(item.Correct==true?"Mathematics consistent":item.Correct==false?"Revise the question":"Teacher review needed"). @item.Feedback</p>
+</div>
+}
+<p class="muted">Immediate practice feedback only; no official school
+grade, historical student graph persistence, or partner participation
+is inferred from this form.</p>
+</section>
+}
+<section class="panel">
+<h2>Teacher review rubric</h2>
+<ul>
+@foreach(var criterion in UsCcssG2Unit1EleventhLessonGraphQuestions.TeacherRubric){<li>@criterion</li>}
+</ul>
+</section>
+<p class="muted">Curriculum alignment: Illustrative Mathematics K–5 2021
+Grade 2 U01 L11, CCSS 2.MD.D.10 and 2.OA.B.2. Independently authored
+Edulytics tables, prompts and Cool-down.</p>
+</main>
