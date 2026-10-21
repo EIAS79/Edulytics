@@ -46,12 +46,11 @@ public sealed class Grade2Lesson2ActivitiesController(
             .Any(x=>x?.Length>2000))
             return BadRequest("An activity answer exceeded the limit.");
 
-        var cd=UsCcssG2Unit1SecondLessonEdulyticsCoolDown;
         var tasks=new[]{
-            ("Hidden ten-cubes",cd.VerifyHiddenTen(hidden)),
-            ("Removed cubes",cd.VerifySubtractionBlank(removed)),
-            ("Two related equations",cd.VerifyRelatedEquations(addition,subtraction)),
-            ("Matching two-color tower",cd.VerifyTowerForTenMinusSeven(tower))
+            ("Hidden ten-cubes",UsCcssG2Unit1SecondLessonEdulyticsCoolDown.VerifyHiddenTen(hidden)),
+            ("Removed cubes",UsCcssG2Unit1SecondLessonEdulyticsCoolDown.VerifySubtractionBlank(removed)),
+            ("Two related equations",UsCcssG2Unit1SecondLessonEdulyticsCoolDown.VerifyRelatedEquations(addition,subtraction)),
+            ("Matching two-color tower",UsCcssG2Unit1SecondLessonEdulyticsCoolDown.VerifyTowerForTenMinusSeven(tower))
         };
         var feedback=tasks.Select(x=>new Grade2Lesson2Feedback(
             x.Item1,x.Item2.Correct,x.Item2.TeacherReviewNeeded,x.Item2.Message))
