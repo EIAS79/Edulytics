@@ -1448,7 +1448,9 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         assert expected in rendered, (
             code, "missing exact source-reviewed lesson title", expected)
         # Stage D: lesson-specific original 2021 learner BODY evidence for
-        # 57–64 (Unit 3), 66–88 (Unit 4), and 89–102 (Unit 5).
+        # 57–64 (Unit 3), 66–88 (Unit 4), 89–102 (Unit 5), and
+        # 103–146 except 127 (Units 6–8; 127 Match Mine source-specific
+        # learner text is unverified and must remain D_TESTS_PASSED).
         # Candidate phrases come from source-verified A–C teaching repairs;
         # they must appear in real authenticated Student lesson HTML, not just
         # in a static repository file. Classroom drawings/artwork/partner
@@ -1643,6 +1645,178 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 "FOUR-STUDENT Food Drive table",
                 "LEAST NUMBER OF BOXES",
             ),
+            103: (
+                "3-cube and 8-cube towers",
+                "THREE NEW objects to order longest-to-shortest",
+            ),
+            104: (
+                "TWO classroom objects longer than an unsharpened pencil",
+                "desk side with one desk leg",
+            ),
+            105: (
+                "Mai and Clare walk different school routes",
+                "teacher desk fit through the DOOR",
+            ),
+            106: (
+                "pick SEVEN digit cards and choose FOUR",
+                "WITHOUT GOING OVER 100",
+            ),
+            107: (
+                "caterpillar teacher example is FOUR cubes long",
+                "grasshopper teacher example is FIVE cube units long",
+            ),
+            108: (
+                "critique Andre, Tyler and Clare workbook measurements",
+                "measure SIX different tape strips A–F",
+            ),
+            109: (
+                "Jeison's foot using THREE selected unit types",
+                "connecting cubes, small cubes, small paper clips and large paper clips",
+            ),
+            110: (
+                "choral count goes from 80 to 110",
+                "MORE THAN 100 same-size small cubes",
+            ),
+            111: (
+                "choral count runs from 90 through 120",
+                "BEAVER, DOG, GIANT ANTEATER, RACCOON, RED FOX and SNAKE",
+            ),
+            112: (
+                "ESTIMATE first, then measure",
+                "24+30=44 FALSE",
+            ),
+            113: (
+                "TRACE and MEASURE the TEACHER'S, their OWN and a PARTNER'S shoes",
+                "Clare's shoe 9 cubes plus Han's 7",
+            ),
+            114: (
+                "Han's bracelet is 14 cubes",
+                "Han is FOUR longer",
+            ),
+            115: (
+                "Elena bracelet-bead story",
+                "she takes out 9 beads and has 11 left",
+            ),
+            116: (
+                "SIX separate story contexts",
+                "CIRCLE TWO matching equations for EACH",
+            ),
+            117: (
+                "Clare gives 12 paper cranes away",
+                "STARTED with 19",
+            ),
+            118: (
+                "65+20=85,85+1=86,65+20+1=86,65+21=86",
+                "Counting Collections Stage 3",
+            ),
+            119: (
+                "Compare story problems about puppies and origami tulips",
+                "Lina makes 7 puppy models and 4 tulips",
+            ),
+            120: (
+                "sort SOLID three-dimensional shapes into their OWN categories",
+                "partner FEELS an object hidden in a bag",
+            ),
+            121: (
+                "Construct a larger three-dimensional solid",
+                "Join 2 identical cubes face to face",
+            ),
+            122: (
+                "flat-shape Card Sort",
+                "GROUP 1, GROUP 2 and GROUP 3",
+            ),
+            123: (
+                "EACH partner must DRAW the given flat shape on dot paper",
+                "take turns DESCRIBING the drawn shape",
+            ),
+            124: (
+                "DRAW THREE DIFFERENT TRIANGLES",
+                "DRAW THREE other closed or open figures",
+            ),
+            125: (
+                "DRAW FIVE rectangles and THREE shapes that are NOT rectangles",
+                "DRAW FIVE squares and THREE shapes that are NOT squares",
+            ),
+            126: (
+                "BUILD a new flat figure with pattern blocks",
+                "SAME resulting figure again with DIFFERENT pattern blocks",
+            ),
+            128: (
+                "Cut out BOTH a CIRCLE and a SQUARE",
+                "FOUR equal pieces",
+            ),
+            129: (
+                "ONE FOURTH/QUARTER shaded",
+                "NOT EQUAL PIECES",
+            ),
+            130: (
+                "Priya says she wants HALF of the roti",
+                "Han incorrectly claims a FOURTH is bigger",
+            ),
+            131: (
+                "Can You Draw It? Grade 1 Shapes STAGE 1",
+                "Capture Squares",
+            ),
+            132: (
+                "ONLY THE HOUR HAND",
+                "NINE scheduled",
+            ),
+            133: (
+                "SORT the clock cards into O'CLOCK",
+                "HALF PAST (color RED)",
+            ),
+            134: (
+                "START at 12, COUNT",
+                "CIRCLE where you stop",
+            ),
+            135: (
+                "create your OWN ideal Sunday schedule",
+                "teacher reviews each authored entry",
+            ),
+            136: (
+                "Which One? Grade 1 Shapes STAGE 2",
+                "Capture Squares and Target Numbers",
+            ),
+            137: (
+                "COLOR sums WITHIN TEN they ALREADY know",
+                "PERSONAL index card",
+            ),
+            138: (
+                "4+□=9,9-5=□",
+                "PERSONAL fact cards",
+            ),
+            139: (
+                "CIRCLE ONE addition expression and ONE subtraction expression",
+                "5+9,14-8,4+7,15-9,6+4+4,13-6",
+            ),
+            140: (
+                "FOUR distinct CHANGE-UNKNOWN stories",
+                "Clare saw 8 sea turtles",
+            ),
+            141: (
+                "FOUR different missing-part stories",
+                "7 first graders plus second graders total 18",
+            ),
+            142: (
+                "FOUR comparison stories",
+                "Lin has 7 ride tickets and Mai 12",
+            ),
+            143: (
+                "REPRESENT the number 103",
+                "How Many Cats? source image",
+            ),
+            144: (
+                "BETWEEN 20 AND 100",
+                "CLASS NUMBER BOOK",
+            ),
+            145: (
+                "ALL possible numbers are 34, 44, 54",
+                "MORE than 30, LESS than 60",
+            ),
+            146: (
+                "FOUR index cards",
+                "LAST clue an addition expression",
+            ),
         }
         source_body_fragments_verified = None
         if ordinal in original_g1_source_bodies_stage_d:
@@ -1650,6 +1824,9 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 (3, ordinal - 37) if 57 <= ordinal <= 64 else
                 (4, ordinal - 65) if 66 <= ordinal <= 88 else
                 (5, ordinal - 88) if 89 <= ordinal <= 102 else
+                (6, ordinal - 102) if 103 <= ordinal <= 119 else
+                (7, ordinal - 119) if 120 <= ordinal <= 136 else
+                (8, ordinal - 136) if 137 <= ordinal <= 146 else
                 (None, None)
             )
             assert source_unit is not None and source_lesson is not None, (
