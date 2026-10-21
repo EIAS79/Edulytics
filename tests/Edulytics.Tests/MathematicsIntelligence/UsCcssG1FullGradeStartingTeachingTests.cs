@@ -396,8 +396,8 @@ public sealed class UsCcssG1FullGradeStartingTeachingTests
         Assert.DoesNotContain(@"gameplay.\nOriginal",unit4Text(12));
         Assert.Contains("Write Numbers Stage 2 center",unit4Text(12));
         Assert.Contains("8+7+5=20",unit4Text(13));
-        foreach(var sourceCenter in new[]{"Grab and Count (Stage 2)","Five in a Row (Stages 1-4)","Check It Off (Stages 1-3)","How Close? (Stages 1-2)","Number Puzzles (Stages 1-2)","Shake and Spill (Stages 3-5)"})
-            Assert.Contains(sourceCenter,unit4Text(13));
+        foreach(var sourceCenterLabel in new[]{"Grab and Count (Stage 2)","Five in a Row (Stages 1-4)","Check It Off (Stages 1-3)","How Close? (Stages 1-2)","Number Puzzles (Stages 1-2)","Shake and Spill (Stages 3-5)"})
+            Assert.Contains(sourceCenterLabel,unit4Text(13));
         foreach(var warmup in new[]{"10+4=14","9+4=13","9+6=15","15-6=9"})
             Assert.Contains(warmup,unit4Text(13));
         var centerDayTwo=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L13");
