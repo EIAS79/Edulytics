@@ -75,7 +75,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
 
     private static string ClockWord(int h)=>new[]
     {"","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"}[h];
-    private static string SourceGeometryOracle(int i,int a,int b,int mode)
+    private static string SourceGeometryOracle(int i,int a,int b,int c,int mode)
     {
         return i switch
         {
@@ -94,7 +94,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 _=>$"ANSWER={(mode%2==0?"YES":"NO")}"
             },
             6=>mode==4?$"TRIANGLES={2*3};TRAPEZOIDS={6/3};SAME_OUTLINE=YES":"PARTS=2",
-            7=>mode>=5?$"RESULT={a+b+0}":
+            7=>mode>=5?$"RESULT={a+b+c}":
                 mode==4?$"BOTTOM={1+1};TOP={1};TOTAL_CUBES={1+1+1}":
                 mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             8=>mode==4?$"CIRCLE_PART=HALF;CIRCLE_PIECES={2};SQUARE_PART=HALF;SQUARE_PIECES={2}":
@@ -196,7 +196,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
                 .Build(list[i],new Random(7200+seed*67+i*101)).Parameters;
             int a=p["a"],b=p["b"],mode=p["mode"];
             Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(list[i],p));
-            var expected=SourceGeometryOracle(i,a,b,mode);
+            var expected=SourceGeometryOracle(i,a,b,p["c"],mode);
             Assert.Equal(expected,UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(list[i],p));
             Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(list[i],p,expected));
             Assert.False(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(list[i],p,expected+";FALSE=1"));
