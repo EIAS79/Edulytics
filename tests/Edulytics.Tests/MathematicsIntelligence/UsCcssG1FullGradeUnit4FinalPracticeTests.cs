@@ -291,7 +291,7 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
         const string ways="usccss.g1.u04.l20.equivalent_tens_ones";
         const string compare="usccss.g1.u04.l21.compare_nonstandard_forms";
         int actual94=0,actualElena=0;
-        for(var seed=0;seed<350;seed++)
+        for(var seed=0;seed<1000;seed++)
         {
             var q=UsCcssG1FullGradeUnit4FinalQuestions.Build(ways,new Random(101*seed+3));
             if(q.Parameters["mode"]==2)
@@ -410,7 +410,7 @@ public sealed class UsCcssG1FullGradeUnit4FinalPracticeTests
     {
         const string f="usccss.g1.u04.l17.order_three_numbers";
         int checkedInserted=0;
-        for(int seed=0;seed<250;seed++)
+        for(int seed=0;seed<700;seed++)
         {
             var q=UsCcssG1FullGradeUnit4FinalQuestions.Build(f,new Random(seed*53+9));
             if(q.Parameters["mode"]!=3)continue;
