@@ -25,7 +25,19 @@
       "Compare the length of a desk SIDE and one LEG with an unchanged string, explaining which is longer with drawing or words"
     ],
     "existingCandidate": "CommonCoreG1SourceGroundedInstructionalCorrections already supplied the indirect-comparison method but omitted these exact source task demands",
-    "finding": "CONTENT_REPAIR, not a new generator or a new academic standard"
+    "finding": "CONTENT_REPAIR, not a new generator or a new academic standard",
+    "sourceSpecificWarmupMath": [
+      "35+20=55",
+      "35+25=60",
+      "30+45=75",
+      "37+45=82"
+    ],
+    "originalPhysicalTaskBoundaries": [
+      "Choose and compare two objects LONGER than the actual pencil.",
+      "Choose and compare two different objects SHORTER than the actual pencil.",
+      "Reuse one unchanged string to compare real desk side and leg.",
+      "Draw or write the four comparison sentences and the desk reasoning for teacher review."
+    ]
   },
   "stageB": {
     "existingContentReused": true,
@@ -34,13 +46,36 @@
     "newlinePreservationCommit": "55a53aa83befffe9333f0efacd3ae81e3292cc1e",
     "correction": "Restored both original learner activities and entire four-expression warm-up while retaining existing indirect-comparison worked method",
     "publisherArtworkCopied": false,
-    "teacherFacilitatedActivityAsDigitalCompletionClaimed": false
+    "teacherFacilitatedActivityAsDigitalCompletionClaimed": false,
+    "originalPencilDeskTeachingRepairPreviouslySaved": true,
+    "numericWarmupTeachingSourceMathRevisited": true,
+    "originalPencilAndDeskDimensionsNotInvented": true
   },
   "stageC": {
     "existingCandidatePracticeReused": true,
     "digitalFamily": "usccss.g1.u06.l02.indirect_length_comparison",
     "numericEvidenceMayDemonstrate": "Some comparative reasoning on first-party representation",
-    "teacherOnlyBoundary": "Actual selected objects, unchanged string, measured desk and student drawings require genuine teacher review, not inferred graded completion"
+    "teacherOnlyBoundary": "Actual selected objects, unchanged string, measured desk and student drawings require genuine teacher review, not inferred graded completion",
+    "originalSourceWarmupModes": [
+      4,
+      7
+    ],
+    "originalSourceWarmupContracts": [
+      "RESULT=55",
+      "RESULT=60",
+      "RESULT=75",
+      "RESULT=82"
+    ],
+    "sameStringDigitalProxyModes": [
+      0,
+      3
+    ],
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+    "sourceWarmupAndHonestyCommit": "fb418d7b4ac3b74eccaaf50ae298268d3d5cd2b7",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson104SourceWarmupAndStringComparisonTests.cs",
+    "authoredTestsCommit": "fddeed93abcfddbcbf08083427606d2e735af4e4",
+    "testsExecuted": false,
+    "physicallyMeasuredPencilObjectsDeskStringTeacherOnly": true
   },
   "stageD": {
     "addedSourceRegressionTest": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
@@ -54,5 +89,17 @@
   },
   "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
   "ledgerStatus": "IN_PROGRESS",
-  "release": "NO_GO"
+  "release": "NO_GO",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentTextAndWarmupCompared": true,
+    "firstPartyTeachingSourceTaskFidelityReviewed": true,
+    "mathematicsGeneratorAndVerifierStaticallyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "boundary": "Four original warm-up sums digitally gradeable. No source measurements for classroom pencil/desk invented; same-string math is an authored example, real desk/leg/string/object choice and drawings human-graded. Stage D validates actual learner display, tests, physical lesson acceptance and permissions."
+  },
+  "nextAction": "Continue ordinal105, separate real furniture/route measurement from first-party indirect comparison."
 }
