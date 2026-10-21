@@ -1447,6 +1447,71 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             r"\s+", " ", html.unescape(effective_title)).casefold()
         assert expected in rendered, (
             code, "missing exact source-reviewed lesson title", expected)
+        # Stage D: original-2021 lesson-specific learner BODY assertions for
+        # ordinals 57–64, grounded in their frozen A–C teacher/student-source
+        # checkpoints. This goes beyond matching a title or an HTML hash.
+        # The check is digital content fidelity only: original publisher art,
+        # peer discourse, manipulatives, pupil work and rights stay separate.
+        original_g1_source_bodies_57_64 = {
+            57: (
+                "8 snakes, 7 iguanas and 5 frogs",
+                "8 lions, 4 tigers and 3 cheetahs",
+                "8 goats, 7 sheep and 4 pigs",
+                "8 monkeys, 4 gorillas, and 7 orangutans",
+            ),
+            58: (
+                "display five numeral cards",
+                "number-card set is 0 through 10",
+                "no 11 card",
+            ),
+            59: (
+                "14-4=10 helps solve 14-5=9",
+                "elena has 16 crayons",
+                "subtractor cards 0–9",
+            ),
+            60: (
+                "diego's and andre's different ten-frame methods",
+                "edulytics original cool-down",
+                "you have 14 counters. remove 8",
+            ),
+            61: (
+                "8 to 10 is 2",
+                "larger subtractor 15-12=3",
+                "section d checkpoint",
+            ),
+            62: (
+                "solve 16-7",
+                "12-7=5 pencils",
+                "17-8=9",
+            ),
+            63: (
+                "all four han situations",
+                "6+9=15 (missing start)",
+                "15-6=9 (missing removed amount)",
+            ),
+            64: (
+                "how close? subtract from 20, stage 2",
+                "zero is a valid card",
+                "20-6-4-9=1",
+            ),
+        }
+        source_body_fragments_verified = None
+        if ordinal in original_g1_source_bodies_57_64:
+            assert target_grade == 1 and code == (
+                "PED:US-CCSS-MATH:G1:U03:L"
+                + str(ordinal - 37).zfill(2)), (
+                ordinal, code, "misrouted exact U03 source review")
+            source_fragments = original_g1_source_bodies_57_64[ordinal]
+            absent_fragments = [
+                phrase for phrase in source_fragments
+                if phrase.casefold() not in rendered
+            ]
+            assert not absent_fragments, (
+                ordinal, code, "original source learning task missing from "
+                "actual authenticated learner body", absent_fragments)
+            source_body_fragments_verified = len(source_fragments)
+            print("G1_STAGE_D_AUTHENTICATED_SOURCE_BODY_57_64_PASS",
+                  ordinal, code, source_body_fragments_verified, flush=True)
         if code == "PED:US-CCSS-MATH:G1:U03:L14":
             # Original 2021 source inspected read-only on Our-CS: Number
             # Puzzles Stage 2 is within 20, both operations and distinct
@@ -1675,7 +1740,8 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                         "wellFormedIncorrectAnswerRejectedAndPersisted":True,
                         "l51AuthenticatedTwoCardSourceBoardVerified":(
                             l51_board_verified if ordinal==51 else None),
-                        "authenticStudentAuthorshipNotClaimed":True})
+                        "authenticStudentAuthorshipNotClaimed":True,
+                        "originalSourceBodyFragmentsVerified":source_body_fragments_verified})
             print("B001_DISPOSABLE_500_REAL_PRACTICE_PROBE",
                   ordinal, code, result["status"], result.get("httpStatus", ""), flush=True)
 
