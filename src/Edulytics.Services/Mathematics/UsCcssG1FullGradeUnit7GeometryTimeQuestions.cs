@@ -65,7 +65,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 _=>false
             });
         return a>=1&&a<=12&&b>=1&&b<=12&&c==0&&mode>=0&&
-            mode<=(Index(family)==5?6:Index(family)==8?5:((Index(family)==1||Index(family)==2||Index(family)==4||Index(family)==6||Index(family)==7||Index(family)==13)?4:3))&&
+            mode<=(Index(family)==5?6:Index(family)==8?5:Index(family)==12||Index(family)==14?4:((Index(family)==1||Index(family)==2||Index(family)==4||Index(family)==6||Index(family)==7||Index(family)==13)?4:3))&&
             (Index(family)!=1||mode!=4||(a>=2&&a<=4&&b>=2&&b<=3))&&
             (Index(family)!=13||mode!=4||a<=10)&&
             (Index(family)!=12||mode!=3||a!=b);
@@ -74,7 +74,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unsupported G1 Unit7 original-source family");
-        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==7?9:i==15?9:i==1||i==2||i==4||i==6||i==7||i==13?5:4);
+        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==7?9:i==12||i==14?5:i==15?9:i==1||i==2||i==4||i==6||i==7||i==13?5:4);
         if(i==1&&mode==4){a=random.Next(2,5);b=random.Next(2,4);}
         if(i==13&&mode==4)a=random.Next(1,11);
         if(i==12&&mode==3&&b==a)b=a==12?1:a+1;
@@ -142,7 +142,12 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             10=>$"In the SAME shape #{a}, compare one HALF and one FOURTH. Which is larger? Write LARGER=part_name;FOURTHS_PER_HALF=number.",
             11=>mode%2==0?$"Center arithmetic: add {a}+{b} (within 24). Write RESULT=number.":
                 $"Center shape card #{a}: 3 straight sides, 3 corners, closed. Write SHAPE=name.",
-            12=>mode<=1?
+            12=>mode==4?
+                $"ORIGINAL 2021 HOUR-ONLY INTRODUCTORY CLOCK CARD: The HOUR hand points to {a}. "+
+                "There is intentionally NO minute hand in this first clock card. "+
+                "Name the whole hour with TIME=hour:00. Real card sorting and nine "+
+                "school-day event clock drawings remain teacher-reviewed.":
+                mode<=1?
                 $"Clock card #{b}: the MINUTE hand points at 12, and the HOUR hand points at {a}. Tell the time. Write TIME=hour:minutes.":
                 mode==2?
                 $"ORIGINAL CONNECT CLOCKS: The analog clock shows two hands, and a second digital card displays {a}:00. Do these clocks show the SAME time? Write SAME=YES/NO;TIME=hour:minutes.":
@@ -154,7 +159,13 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 mode==2?
                 $"ORIGINAL CARD SORT: Clock #{b} shows the minute hand at 12 and the short hand at {a}. Color it BLUE for o'clock (RED is half past). Write COLOR=BLUE;TIME=hour:minutes;WORDS=hour_oclock. Use a lowercase spelled-out hour word such as seven_oclock, not a digit.":
                 $"ORIGINAL CARD SORT: Clock #{b} shows the minute hand at SIX and the short hand halfway past {a}. Color it RED for half past (BLUE is o'clock). Write COLOR=RED;TIME=hour:minutes;WORDS=half_past_hour (e.g. half_past_seven).",
-            14=>mode<=1?(mode==0?
+            14=>mode==4?
+                "ORIGINAL 2021 OPEN CLOCK HAND DRAWING: Only the MINUTE hand at SIX "+
+                "is given. Draw ANY possible hour hand halfway between two hours "+
+                "to show a legitimate half-past time. Write TIME=hour:30 "+
+                "(hour 1-12). All twelve possible hours are mathematically valid. "+
+                "Student's actual drawing and explanation require teacher review.":
+                mode<=1?(mode==0?
                 $"Clock card #{b}: hour hand at {a}, minute hand at 12. Write TIME=hour:minutes.":
                 $"Clock card #{b}: hour hand past {a}, minute hand at SIX. Write TIME=hour:minutes."):
                 $"ORIGINAL COUNT THE MINUTES: Start at 12 on the clock, count clockwise in steps of five until you reach the minute hand on SIX. How many five-minute HOPS and total MINUTES are in half a clock? Write HOPS=number;MINUTES=number;STOP_AT=number.",
@@ -209,11 +220,11 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 (mode==2?"SORT=UNEQUAL;PIECES=2":"SORT=EQUAL;PIECES=4"),
             10=>"LARGER=HALF;FOURTHS_PER_HALF=2",
             11=>mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
-            12=>mode<=1?$"TIME={a}:00":$"SAME={(mode==2?"YES":"NO")};TIME={a}:00",
+            12=>mode==4?$"TIME={a}:00":mode<=1?$"TIME={a}:00":$"SAME={(mode==2?"YES":"NO")};TIME={a}:00",
             13=>mode==4?"ORDER=C,A,B":
                 mode<=1?$"MINUTES=30;HOUR={a}":
                 $"COLOR={(mode==2?"BLUE":"RED")};TIME={a}:{(mode==2?"00":"30")};WORDS={(mode==2?HourName(a)+"_oclock":"half_past_"+HourName(a))}",
-            14=>mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
+            14=>mode==4?$"TIME={a}:30":mode<=1?$"TIME={a}:{(mode==0?"00":"30")}":"HOPS=6;MINUTES=30;STOP_AT=6",
             15=>mode switch
             {
                 4=>"RESULT=40",
@@ -234,6 +245,18 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
         _=>throw new InvalidOperationException("Clock hour outside one through twelve")
     };
     private static string Norm(string? s)=>string.Concat((s??"").Where(c=>!char.IsWhiteSpace(c))).ToUpperInvariant();
+    private static bool VerifyAnyHalfPastClock(string? response)
+    {
+        if(string.IsNullOrWhiteSpace(response)||response.Length>32)return false;
+        var answer=Norm(response);
+        if(!answer.StartsWith("TIME=",StringComparison.Ordinal))return false;
+        var parts=answer[5..].Split(':');
+        return parts.Length==2&&parts[1]=="30"&&
+            int.TryParse(parts[0],out var hour)&&hour>=1&&hour<=12;
+    }
     public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? response)=>
-        Valid(family,p)&&!string.IsNullOrWhiteSpace(response)&&Norm(Solve(family!,p))==Norm(response);
+        Valid(family,p)&&!string.IsNullOrWhiteSpace(response)&&
+        (Index(family)==14&&p["mode"]==4?
+            VerifyAnyHalfPastClock(response):
+            Norm(Solve(family!,p))==Norm(response));
 }
