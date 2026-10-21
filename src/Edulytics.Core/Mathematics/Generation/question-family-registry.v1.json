@@ -9627,6 +9627,79 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u01.l18.read_category_count",
+      "version": 1,
+      "skillId": "statistics.read_bar_graph",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l18-fictional-survey-category-tape-recompute",
+      "representations": [
+        "picture_graph",
+        "bar_graph"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u01.l18.combine_two_categories",
+      "version": 1,
+      "skillId": "statistics.read_bar_graph",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l18-fictional-survey-category-tape-recompute",
+      "representations": [
+        "bar_graph",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u01.l18.compare_two_categories",
+      "version": 1,
+      "skillId": "statistics.read_bar_graph",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l18-fictional-survey-category-tape-recompute",
+      "representations": [
+        "bar_graph",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u01.l18.tape_difference_from_graph",
+      "version": 1,
+      "skillId": "statistics.read_bar_graph",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l18-fictional-survey-category-tape-recompute",
+      "representations": [
+        "bar_graph",
+        "tape_diagram",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
