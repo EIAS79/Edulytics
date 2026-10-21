@@ -311,7 +311,7 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
             Assert.True(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,q.Parameters));
             Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,
                 UsCcssG1FullGradeStrategyAndTensQuestions.Solve(family,q.Parameters)));
-            if(q.Parameters["mode"]==2)Assert.Contains("THREE number cards",q.Prompt);
+            if(q.Parameters["mode"]==2)Assert.Contains("THREE distinct numeral cards",q.Prompt);
         });
     }
 
