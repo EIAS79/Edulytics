@@ -124,7 +124,7 @@ public sealed class UsCcssG1FullGradeTwoDigitOperationsPracticeTests
         Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(family,impossible));
         Assert.False(UsCcssG1FullGradeTwoDigitOperationsQuestions.Valid(
             UsCcssG1FullGradeTwoDigitOperationsQuestions.CompareWords,
-            new Dictionary<string,int>{{"a",56},{"b",40},{"mode",11},{"unused",0}}));
+            new Dictionary<string,int>{{"a",3},{"b",30},{"mode",11},{"unused",0}})); // CompareWords requires two two-digit counts.
         var questions=Enumerable.Range(0,1040)
             .Select(i=>UsCcssG1FullGradeTwoDigitOperationsQuestions.Build(
                 family,new Random(i*47+29))).ToArray();
