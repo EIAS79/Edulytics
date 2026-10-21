@@ -195,7 +195,7 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
             Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Valid(family,q.Parameters));
             var correct=UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,q.Parameters);
             Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,correct));
-            if(q.Parameters["mode"]>=2)
+            if(q.Parameters["mode"]>=2 && q.Parameters["mode"]<=5)
             {
                 Assert.Contains("MISSING=",correct);
                 Assert.Contains("□",q.Prompt);
@@ -204,7 +204,7 @@ public sealed class UsCcssG1FullGradeUnit5AdditionPracticeTests
                 Assert.Contains(q.Parameters["mode"]<=3?"ONE-DIGIT":"TWO-DIGIT",q.Prompt);
             }
         }
-        Assert.Equal(6,variants.Count);
+        Assert.Equal(10,variants.Count); // Existing four modes, four missing-digit modes, four original Jada pairs (0..9).
     }
 
     [Theory]
