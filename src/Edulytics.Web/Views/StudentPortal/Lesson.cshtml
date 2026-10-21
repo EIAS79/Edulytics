@@ -131,6 +131,24 @@
                Keep V2 visuals, but show the source-scoped canonical lessons'
                concepts, worked examples and teacher-facilitated directions.
                This DOES NOT claim pupils performed classroom activities. *@
+            @* Grade 2 first-lesson Rich V2 may condense original source-specific
+               within-ten strategy teaching. Keep V2 and expose the reviewed
+               learner concepts/examples/steps in full before authored activities. *@
+            @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01")
+            {
+                <section class="lesson-source-aligned-activities"
+                         aria-label="Grade 2 source-aligned mathematical teaching">
+                    <h2>Adding and subtracting within ten</h2>
+                    <p class="lesson-reader-text">
+                        Examine the sum and difference, use ten-frame counters
+                        or another valid strategy, and explain an expression
+                        that has the required value.
+                    </p>
+                    <partial name="_LessonReaderSection" model="sections[1]" />
+                    <partial name="_LessonReaderSection" model="sections[2]" />
+                    <partial name="_LessonReaderSection" model="sections[3]" />
+                </section>
+            }
             @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G1:U03:L", StringComparison.Ordinal) &&
                  int.TryParse(Model.LessonCode["PED:US-CCSS-MATH:G1:U03:L".Length..], out var sourceLessonNumber) &&
                  sourceLessonNumber is >= 20 and <= 27)
