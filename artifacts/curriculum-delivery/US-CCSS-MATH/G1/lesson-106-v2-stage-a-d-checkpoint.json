@@ -72,7 +72,23 @@
     "practiceContractCommit": "6823c1e0985371504d57a00d5e0c4ebab58e03e2",
     "routingSemantics": "Source v2 and historical family coexist in L04 allowlist. New sessions can choose source-goal family; old family remains verifiable without changing its parameters, seeded output or ID.",
     "integrationStatus": "CODE_WRITTEN_UNTESTED",
-    "sourceGoalMathTestCommit": "271aba3dadecb0a9ec0c4d82ca148fee73aed1c0"
+    "sourceGoalMathTestCommit": "271aba3dadecb0a9ec0c4d82ca148fee73aed1c0",
+    "staticCodeReReview20261021": true,
+    "fullSourceGoalMathEngineVerifiedByInspection": true,
+    "sevenDistinctCards0To9": true,
+    "fourSelectedDigitCardsNoReuse": true,
+    "strictlyTwoDigitAddends": true,
+    "optimalNonOvershootingPairSearch": true,
+    "alternateOptimalPairsAcceptedByVerifier": true,
+    "legacyFamilyUntouched": true,
+    "sourceGoalFamilyRoutedThroughContract": true,
+    "testsPreparedEarlier": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1HowCloseStage3MathematicsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs"
+    ],
+    "currentHeadDotNetTestsExecuted": false,
+    "authenticatedPersistenceOfAlternateOptimalAnswer": "PENDING_STAGE_D",
+    "originalPhysicalCompetitionTeacherOnly": true
   },
   "stageD": {
     "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -101,5 +117,17 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Final content-frozen SHA CI and authenticated learner Rich V2 + score/persistence verification required; no academic sign-off before proof for ordinal 106 and 89 other pending lessons."
+  "nextAction": "Continue ordinal107 measuring with aligned connecting cubes; no Stage D/CI/merge/deploy.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentSourceCardRulesReconciled": true,
+    "firstPartyTeachingSourceParityReviewed": true,
+    "independentPureMathEnumeratorAndStrictVerifierStaticallyReviewed": true,
+    "integratedVersionedQuestionFamilyAndContractReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Original seven distinct 0-9 cards, choose exactly four once, form two two-digit addends and maximize <=100 implemented in versioned family. True classroom partner seven-card draws and scoring not certified. At Stage D verify registered routing on live learner page, all right/wrong/alternate-optimal persisted submissions on frozen SHA, tests/CI, visual rights and academic sign-off."
+  }
 }
