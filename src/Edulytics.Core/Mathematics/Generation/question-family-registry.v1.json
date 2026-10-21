@@ -6789,6 +6789,44 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g2.u01.l12.sort_three_category_count",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l12-bounded-sample-three-category-recompute",
+      "representations": [
+        "picture_graph",
+        "bar_graph",
+        "real_object_count"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u01.l12.sort_three_category_combine",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u01-l12-bounded-sample-three-category-recompute",
+      "representations": [
+        "picture_graph",
+        "bar_graph",
+        "real_object_count"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g2.u02.bar_total_or_difference.no_regroup",
       "version": 1,
       "skillId": "number.whole.add_subtract",
