@@ -38,7 +38,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         if(n<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(n==1?8:n==2?8:n==3?8:n==4?9:n==5?7:n==7?5:n==8?9:n==9?8:3))return false;
+           mode<0||mode>(n==1?13:n==2?8:n==3?8:n==4?9:n==5?7:n==7?5:n==8?9:n==9?8:3))return false;
         return n switch
         {
             0=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
@@ -49,6 +49,11 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     6=>a==9&&b==4,
                     7=>a==9&&b==5,
                     8=>a==4&&b==5,
+                    9=>a==8&&b==5,
+                    10=>a==8&&b==3,
+                    11=>a==7&&b==4,
+                    12=>a==8&&b==2,
+                    13=>a==8&&b==4,
                     _=>false
                 }):
                 a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
@@ -119,7 +124,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
     {
         int n=Index(family);
         if(n<0)throw new InvalidOperationException("Unreviewed Grade1 U08 family");
-        int mode=random.Next(n==1?9:n==2?9:n==3?9:n==4?10:n==5?8:n==7?6:n==8?10:n==9?9:4),a=0,b=0,c=0;
+        int mode=random.Next(n==1?14:n==2?9:n==3?9:n==4?10:n==5?8:n==7?6:n==8?10:n==9?9:4),a=0,b=0,c=0;
         for(int attempts=0;attempts<1000;attempts++)
         {
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
@@ -145,6 +150,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             if(n==1&&mode>=4)(a,b)=mode switch
             {
                 4=>(5,4),5=>(4,5),6=>(9,4),7=>(9,5),8=>(4,5),
+                9=>(8,5),10=>(8,3),11=>(7,4),12=>(8,2),13=>(8,4),
                 _=>throw new InvalidOperationException("Unreviewed original related-facts example")
             };
             if(n==2&&mode>=4)(a,b)=mode switch
@@ -184,7 +190,16 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
             string prompt=n switch
             {
                 0=>$"Find the sum within ten: {a}+{b}. Write RESULT=number.",
-                1=>mode==8?
+                1=>mode>=9?
+                    mode switch
+                    {
+                        9=>"ORIGINAL 2021 RELATED FACTS: □+5=8. Write MISSING=number.",
+                        10=>"ORIGINAL 2021 RELATED FACTS: 8-3=□. Write MISSING=number.",
+                        11=>"ORIGINAL 2021 RELATED FACTS: 7-4=□. Write MISSING=number.",
+                        12=>"ORIGINAL 2021 RELATED FACTS: 8=2+□. Write MISSING=number.",
+                        _=>"ORIGINAL 2021 RELATED FACTS: 8-□=4. Write MISSING=number."
+                    }:
+                    mode==8?
                     "ORIGINAL 2021 UNIT 8 LESSON 2 STUDENT MISSING NUMBERS: "+
                     "4+□=9 and 9-5=□. Write MISSING_ADD=number;MISSING_SUB=number. "+
                     "Teacher reviews connecting cubes and partner explanation.":
@@ -291,7 +306,8 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         return n switch
         {
             0=>$"RESULT={a+b}",
-            1=>mode==8?"MISSING_ADD=5;MISSING_SUB=4":
+            1=>mode>=9?$"MISSING={(mode==9?3:mode==10?5:mode==11?3:mode==12?6:4)}":
+                mode==8?"MISSING_ADD=5;MISSING_SUB=4":
                 mode>=4?$"RESULT={(mode==4||mode==5?9:mode==6?5:4)}":
                 mode<=1?$"LEFT={a};WHOLE={a+b}":
                 mode==2?$"ADD={a}+{b}={a+b};SUB={a+b}-{b}={a}":
