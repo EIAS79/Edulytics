@@ -355,7 +355,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 $"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
-            7=>mode==5?$"NUMBER={a};E1=0+{a};E2=10+{a-10};E3=20+{a-20}":
+            7=>mode==5?$"NUMBER={a};E1=0+{a};E2=5+{a-5};E3=10+{a-10}":
                 mode==4?$"NUMBER={a};TENS={a/10};ONES={a%10}":
                 mode<=1?$"NEW_TENS={a/10-1};NEW_ONES={a%10+10};TOTAL={a}":
                 mode==2?$"ALT_TENS={a/10-2};ALT_ONES={a%10+20};TOTAL={a}":
