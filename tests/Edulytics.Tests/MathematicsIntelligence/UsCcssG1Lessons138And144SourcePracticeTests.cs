@@ -22,22 +22,30 @@ public sealed class UsCcssG1Lessons138And144SourcePracticeTests
     }
 
     [Fact]
-    public void NumberBookPracticeCoversUpTo120AndPreservesHumanAuthorshipBoundary()
+    public void NumberBookSourceRequires20To100AndThreeDistinctValidExpressions()
     {
         const string family="usccss.g1.u08.l08.same_number_tens_ones";
-        foreach(var a in new[]{1,10,25,99,100,110,120})
+        foreach(var a in new[]{20,25,99,100})
         {
             var p=new Dictionary<string,int>{{"a",a},{"b",0},{"c",0},{"mode",4}};
             Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
-            var expected=$"NUMBER={a};TENS={a/10};ONES={a%10}";
+            var expected=$"NUMBER={a};E1=0+{a};E2=5+{a-5};E3=10+{a-10}";
             Assert.Equal(expected,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
             Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,expected));
+            // Teacher-verified authored expressions can differ from the scaffold.
+            Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
+                $"NUMBER={a};E1=1+{a-1};E2=2+{a-2};E3=3+{a-3}"));
+            Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
+                $"NUMBER={a};E1=1+{a-1};E2={a-1}+1;E3=3+{a-3}"));
             Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,expected+";EXTRA=0"));
-            p["a"]=121;
+        }
+        foreach(var invalidNumber in new[]{1,10,19,101,110,120,121})
+        {
+            var p=new Dictionary<string,int>{{"a",invalidNumber},{"b",0},{"c",0},{"mode",4}};
             Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
         }
+        // This automated numerical check does not certify actual student handwriting or a physical number book.
     }
-
     [Fact]
     public void OriginalNewModesAreSeededAndExistingModesStillGenerate()
     {
