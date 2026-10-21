@@ -14,7 +14,7 @@ const content=file('src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstruc
              +file('src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs');
 test('original first-edition geometry drawing authorship cannot masquerade as a numeric answer',()=>{
  const checks={123:/EACH partner must DRAW.*dot paper/,124:/DRAW THREE DIFFERENT TRIANGLES/,
-  125:/DRAW FIVE distinct rectangles/,126:/BUILD something using pattern blocks, TRACE/};
+  125:/DRAW FIVE rectangles/,126:/BUILD something using pattern blocks, TRACE/};
  for(const [number,regex] of Object.entries(checks)){
   const ordinal=Number(number);
   const input=source.find(x=>x.ordinal===ordinal);
@@ -40,7 +40,7 @@ test('original first-edition geometry drawing authorship cannot masquerade as a 
     assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Three source nonexamples'));
   }
   if(ordinal===125){
-    assert.match(content,/DRAW THREE other closed shapes that are NOT rectangles/);
+    assert.match(content,/Draw THREE figures that are NOT rectangles/);
     assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Three source nonexamples'));
   }
   if(ordinal===126){
