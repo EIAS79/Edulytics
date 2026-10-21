@@ -192,7 +192,7 @@ public static class UsCcssG1FullGradeUnit6MeasurementQuestions
         string prompt=i switch
         {
             0=>mode%2==0?
-                $"Two drawn strips start at the SAME line. The red strip has {a} equal cube lengths; blue has {b}. State LONGER=RED/BLUE/EQUAL;DIFFERENCE=number.":
+                $"Draw two FIRST-PARTY equal-unit strips starting at the SAME endpoint: red has {a} cube-length units and blue has {b}. Compare them. Write LONGER=RED/BLUE/EQUAL;DIFFERENCE=number. The learner-made drawing needs teacher review.":
                 $"Three strips A, B, and C share the SAME start line and measure {a}, {b}, and {c} equal cube-length units. Original student Activity 2: order three objects {(mode==1?"from SHORTEST to LONGEST":"from LONGEST to SHORTEST")}. Write ORDER=A,B,C (the letters in their correct order).",
             1=>$"Without moving two separate strips, a SAME reference strip of {a} cubes matches strip A and another of {b} cubes matches B. Which is longer? Write LONGER=A/B/EQUAL.",
             2=>mode switch
