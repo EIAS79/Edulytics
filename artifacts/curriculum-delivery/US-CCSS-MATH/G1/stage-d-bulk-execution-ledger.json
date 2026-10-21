@@ -5375,7 +5375,7 @@
       "ordinal": 120,
       "batch": "D3",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_VERIFIED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
@@ -5435,13 +5435,14 @@
         "persistedCorrectWrongMalformedAnswerIfApplicable": true,
         "humanSignoffRequired": false,
         "originalPublisherArtworkRightsProven": false
-      }
+      },
+      "internalV1AcceptedWithOriginalSourceAndRealPracticeEvidence": true
     },
     {
       "ordinal": 121,
       "batch": "D3",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_VERIFIED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
@@ -5501,13 +5502,14 @@
         "persistedCorrectWrongMalformedAnswerIfApplicable": true,
         "humanSignoffRequired": false,
         "originalPublisherArtworkRightsProven": false
-      }
+      },
+      "internalV1AcceptedWithOriginalSourceAndRealPracticeEvidence": true
     },
     {
       "ordinal": 122,
       "batch": "D3",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_VERIFIED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
@@ -5567,13 +5569,14 @@
         "persistedCorrectWrongMalformedAnswerIfApplicable": true,
         "humanSignoffRequired": false,
         "originalPublisherArtworkRightsProven": false
-      }
+      },
+      "internalV1AcceptedWithOriginalSourceAndRealPracticeEvidence": true
     },
     {
       "ordinal": 123,
       "batch": "D3",
       "authoringBasis": "READY_FOR_STAGE_D",
-      "stageDStatus": "D_VERIFIED",
+      "stageDStatus": "APPROVED",
       "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
       "unitTestResult": "PASS_UNFILTERED_LOCAL_3324_OF_3324_AT_EXACT_CODE_SHA_PLUS_GITHUB_SCOPED_433",
       "integrationResult": "PASS_DISPOSABLE_TWO_SCHOOL_HTTPS",
@@ -5642,7 +5645,8 @@
         "persistedCorrectWrongMalformedAnswerIfApplicable": true,
         "humanSignoffRequired": false,
         "originalPublisherArtworkRightsProven": false
-      }
+      },
+      "internalV1AcceptedWithOriginalSourceAndRealPracticeEvidence": true
     },
     {
       "ordinal": 124,
@@ -7233,9 +7237,9 @@
     "gradeProgressCommit": "b44b93bf0c9e95424e0ae80cc0c90205b360a641",
     "gateCommand": "node tools/curriculum/us-ccss-full-grade-gate.cjs --inspect",
     "outcome": "NO_GO",
-    "newAccepted": 69,
-    "newNotAccepted": 27,
-    "firstVerifiedUnfinishedOrdinal": 120,
+    "newAccepted": 73,
+    "newNotAccepted": 23,
+    "firstVerifiedUnfinishedOrdinal": 124,
     "unverifiedDeclaredAcceptances": [],
     "issues": [],
     "gradeRelease": "NO_GO",

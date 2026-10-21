@@ -19,7 +19,7 @@
     "last": 146,
     "count": 96
   },
-  "nextOrdinal": 120,
+  "nextOrdinal": 124,
   "release": "NO_GO",
   "ownerUat": "PENDING",
   "newLessons": [
@@ -6954,8 +6954,43 @@
       "outcomeCodes": [
         "CCSS:MP.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "edulytics-first-party-geometry-source-goal",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Two different ways to sort actual 3D solids by defining attributes. A-C authoring of source goals and numeric proxy; original source figures and actual creative/physical work teacher assessed, runtime and release evidence Stage D only.",
+        "allowedFamilies": [
+          "usccss.g1.u07.l01.sort_solids_attributes"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Two different ways to sort actual 3D solids by defining attributes."
+        ],
+        "sourceSha256": "dc3f76d9df47fdefff176057e2aefe23d33065fac29222d7016eb21af8634bd5",
+        "effectiveStudentBodySha256": "180fe96ded30d5cd3b4ec6a29f6aa554070066249b531f00afa456bb80d0db29",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-120-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "b07274c06670a048a5624a7ff4c9648063224f7d0cbcafa8239d9bcbdbf73214",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          }
+        ],
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279"
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -6986,8 +7021,43 @@
       "outcomeCodes": [
         "CCSS:1.G.A.2"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "edulytics-first-party-geometry-source-goal",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Compose solids from blocks and count parts; physical constructions remain teacher-led. Original student physical/creative performance not digitally attested",
+        "allowedFamilies": [
+          "usccss.g1.u07.l02.compose_solids_components"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Compose solids from blocks and count parts; physical constructions remain teacher-led."
+        ],
+        "sourceSha256": "674a753e87083cf85f96db91e2ff929cca74dfc484ef7d3b55859c2a980ac2f4",
+        "effectiveStudentBodySha256": "af0197feb0f138d3013444535fb2735f1329dbf2e03530fc6a1d6622c9da2b57",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-121-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "b8afca8e0523915b6f57ce9f97ac9f1a192fa9a0904264bab5ae3c22328b9de8",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          }
+        ],
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279"
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7019,8 +7089,43 @@
         "CCSS:MP.3",
         "CCSS:MP.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "edulytics-first-party-geometry-source-goal",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Classify flat-shape cards by two different defining rules; source cards not copied. Original student physical/creative performance not digitally attested",
+        "allowedFamilies": [
+          "usccss.g1.u07.l03.sort_flat_shapers"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Classify flat-shape cards by two different defining rules; source cards not copied."
+        ],
+        "sourceSha256": "8c90389d4170777cebc04a52323b49aeda59c16323488a0a9d6fd4417f5f3a57",
+        "effectiveStudentBodySha256": "e3eed087fc945a0bbd492ee47aa522eae3b4315f16b6742d6d6ce8029416a0de",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-122-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "c3923f798d5de5765beba1bc349ac859f6fb51fa6de2549a0fdef21ec23a30dc",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          }
+        ],
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279"
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7053,8 +7158,47 @@
         "CCSS:1.NBT.C.4",
         "CCSS:1.OA.C.6"
       ],
-      "status": "IN_PROGRESS",
-      "evidence": null,
+      "status": "INTERNALLY_ACCEPTED",
+      "evidence": {
+        "sourceVersion": "IM-K5-2021-1st-edition",
+        "contentVersion": "edulytics-first-party-geometry-source-goal",
+        "reviewedOriginalTeacherSource": true,
+        "reviewedOriginalStudentTask": true,
+        "licenseVerified": true,
+        "actualLearnerRenderingVerified": true,
+        "originalPublisherArtworkCopied": false,
+        "sourceActivityScope": "Student draws a shape on dot paper and describes it with an original task rubric. Original student physical/creative performance not digitally attested",
+        "allowedFamilies": [
+          "usccss.g1.u07.l04.draw_shape_attribute_check"
+        ],
+        "forbiddenFamilies": [],
+        "sourceObjectives": [
+          "Student draws a shape on dot paper and describes it with an original task rubric."
+        ],
+        "sourceSha256": "6f2dd41a7ce1547bf8651bc32d3fe3cfcfe1496988425376d0852b00e59a0393",
+        "effectiveStudentBodySha256": "0e272cbbb7279cb467738d264bb9a7e821ad7cf6d8fb7bee3f19db447a24f9f2",
+        "independentCorrectAndWrongAnswersVerified": true,
+        "realPracticeGradingPersisted": true,
+        "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+        "independentGradingProofSha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa",
+        "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
+        "runtimePracticeProofSha256": "741ae970dafdef45ab09a2555091a459df7a96dd51b9ff03b871cbfaf4ec8c66",
+        "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-123-source-math-v1-acceptance-20261021.md",
+        "sourceReviewFileSha256": "97db786b2bda943decf71b6ab63cf0c2db361d11db3f2edc2ea82c3a99057b39",
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "tests": [
+          {
+            "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+            "sha256": "05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa"
+          }
+        ],
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39600111939",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39630719279",
+        "originalAuthorshipTaskReviewed": true,
+        "learnerAuthoredTaskRendered": true,
+        "teacherReviewRubricAvailable": true,
+        "actualTeacherObservationNotClaimed": true
+      },
       "stageDTechnicalAcceptance": {
         "result": "VERIFIED_SOURCE_SCOPED_TECHNICAL_CANDIDATE",
         "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
@@ -7858,7 +8002,7 @@
     "countAuthoredOnly": 1,
     "countOriginalSourceTextLessons": 90,
     "countSourceFragments": 190,
-    "internallyAcceptedByOriginalV1Gate": 69,
+    "internallyAcceptedByOriginalV1Gate": 73,
     "publisherFigureRightsAndFullTaskParity": "NOT_CERTIFIED_BY_THIS_TECHNICAL_RUN",
     "releaseStatus": "NO_GO"
   }
