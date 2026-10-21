@@ -74,6 +74,28 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     /// advisory-locked transaction and revalidates outcomes and source hashes.
     /// This is a technical content release, not academic certification.
     /// </summary>
+    /// <summary>
+    /// Production ReadFromJson may contain only the V1 metadata marker for this
+    /// original-source-reviewed lesson.  This exception must never authorize
+    /// overwriting persisted student-visible lesson translations.
+    /// </summary>
+    public static bool IsGuardedG1U04L21JsonMetadataPredecessor(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson,
+        string existingContentVersion,
+        string expectedContentVersion,
+        bool verifiedNoPersistedTranslations) =>
+        verifiedNoPersistedTranslations &&
+        document.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+        document.VersionCode == "CCSSM-2010" &&
+        lesson.LessonCode ==
+            CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersLessonCode &&
+        CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(document, lesson) &&
+        existingContentVersion ==
+            CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersionV1 &&
+        expectedContentVersion ==
+            CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersion;
+
     public async Task SeedSourceBoundJsonMetadataCorrectionsAsync(
         CancellationToken ct = default)
     {
@@ -162,7 +184,10 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 continue;
 
             if (!CanonicalLessonContentMaterializer.CanUpgradeExisting(
-                    target.Document, target.Lesson, content.ContentVersion))
+                    target.Document, target.Lesson, content.ContentVersion) &&
+                !IsGuardedG1U04L21JsonMetadataPredecessor(
+                    target.Document, target.Lesson, content.ContentVersion,
+                    expectedVersion, verifiedNoPersistedTranslations: true))
                 throw new InvalidOperationException(
                     "CCSS lesson content version is not the guarded predecessor: " +
                     target.Lesson.LessonCode);
@@ -794,6 +819,21 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         expectedContentVersion,
                         StringComparison.Ordinal))
                 {
+                    // Permit exactly the previously released U04:L21 V1 marker
+                    // to become its V2 marker ONLY for JSON-backed metadata
+                    // with no saved prose.  Other unknown predecessors still
+                    // fail closed; never relax CanUpgradeExisting.
+                    var guardedU04L21JsonMetadata =
+                        metadataOnly &&
+                        IsGuardedG1U04L21JsonMetadataPredecessor(
+                            document, sourceLesson, content.ContentVersion,
+                            expectedContentVersion,
+                            verifiedNoPersistedTranslations: true) &&
+                        !await _db.CurriculumLessonContentTranslations
+                            .AsNoTracking()
+                            .AnyAsync(row =>
+                                row.CurriculumLessonContentId == content.Id, ct);
+
                     if (CambridgeReviewedExampleContentCorrections
                         .IsTarget(document, sourceLesson))
                     {
@@ -1042,7 +1082,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                     }
 
                     if (CommonCoreG1SourceGroundedInstructionalCorrections
-                        .IsTarget(document, sourceLesson))
+                        .IsTarget(document, sourceLesson) &&
+                        !guardedU04L21JsonMetadata)
                     {
                         CommonCoreG1SourceGroundedInstructionalCorrections
                             .ValidateExistingBodyBeforeUpgrade(
@@ -1095,7 +1136,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
                     if (!isApprovedCommonCoreReplacement &&
                         !isApprovedUaeOfficialRebuildReplacement &&
-                        !canUpgradeReviewedCorrection)
+                        !canUpgradeReviewedCorrection &&
+                        !guardedU04L21JsonMetadata)
                     {
                         throw new InvalidOperationException(
                             $"Refusing silent canonical content-version replacement for " +
