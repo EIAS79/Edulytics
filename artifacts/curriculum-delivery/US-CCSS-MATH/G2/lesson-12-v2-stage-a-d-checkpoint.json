@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 12,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L12",
+  "unitNumber": 1,
+  "lessonNumber": 12,
+  "lessonTitle": "Center Day 2 (optional)",
+  "officialOutcomeCodes": [
+    "CCSS:2.MD.D.10",
+    "CCSS:2.NBT.B.5",
+    "CCSS:2.OA.B.2"
+  ],
+  "sourceEdition": "Illustrative Mathematics K–5 2021, first edition",
+  "stageA": {
+    "status": "COMPLETE_2021_PUBLIC_TEACHER_AND_STUDENT_SOURCE_ACTIVITIES",
+    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-12/lesson.html",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-12/preparation.html",
+    "warmup": "Number talk 17−7;17−9;15−5;15−8, subtract to ten and use an earlier fact to find another.",
+    "activity1": "Sort and Display Stage 2: genuinely sort 20–30 physical objects into THREE categories, draw picture OR bar graph, ask partner TWO answerable questions about it.",
+    "activity2": "Choose previously taught arithmetic center from What's Behind My Back?, How Close?, or Number Puzzles and practise with partner.",
+    "synthesis": "Discuss why sorting representation and center choice worked; teacher reviews group participation/Math Community norms.",
+    "originalSourceCoolDown": "Original optional center day has no separate Cool-down in public lesson; Edulytics-authored optional mini-assessment, not claimed publisher material.",
+    "sourceMaterials": "Original 20–30 object collection and center sheet described publicly; independent Edulytics forms/CSS representation avoid publisher artwork.",
+    "sourceLearningGoals": "Represent data using picture/bar graphs; addition within 50, subtraction within ten/twenty.",
+    "sourcePolicy": "Only teacher or learner can attest physical objects truly existed; hypothetical numeric Practice clearly labeled, not fabricated source evidence."
+  },
+  "stageB": {
+    "status": "COMPLETE_EXACT_ORIGINAL_2021_SOURCE_LOCKED_OPTIONAL_CENTERS_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistenceGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentRichV2Entry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceLocks": "Original source URL, canonical SHA, ordered outcome codes 2.MD.D.10, 2.NBT.B.5, 2.OA.B.2 and exact prior English fields/version.",
+    "corrections": "Explicit real 20–30 objects and THREE disjoint categories; correct picture key/bar unit-one scale; two questions; mental subtract-to-ten; optional previously introduced center choice."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTIC_PHYSICAL_SORT_BOUNDED_NUMERIC_UI_TEACHER_RUBRIC",
+    "exactPracticeFamilies": [
+      "usccss.g2.u01.l12.sort_three_category_count",
+      "usccss.g2.u01.l12.sort_three_category_combine"
+    ],
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson12SortAndDisplayContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson12SortAndDisplayQuestions.cs",
+    "genuineStudentCollectionChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1TwelfthLessonSortAndDisplay.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson12ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson12Activities/Index.cshtml",
+    "readerLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "evaluation": "Three uniquely named nonempty categories totaling 20–30 items; source picture OR bar graph format and key/axis; two learner questions and numerical answers; Number Talk 17−7,17−9,15−5,15−8; arithmetic center choice.",
+    "teacherRubric": "Actual collection existence, correct physical sorting, original student graph drawing and partner conversation are teacher observed and NOT auto-certified.",
+    "originalCoolDown": "First-party additional mathematical mini-check, no claim of nonexistent publisher source cool-down.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1TwelfthLessonSortAndDisplayTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson12SortAndDisplayQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson12ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "schoolGrade": "Immediate teacher-review-required feedback, not persisted as official student grade."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "humanAcademicApproval": "NOT_ASSERTED",
+    "productionRuntimeVerified": false,
+    "mainMerge": false,
+    "renderDeploy": false,
+    "release": "NO_GO_STAGE_D_UNRUN",
+    "note": "Authoring-only completion; Stage D must separately verify compilation, integration, security, real rendering and formal release suitability."
+  },
+  "nextAction": "BEGIN STRICTLY G2 U01 L13 ONLY AFTER L12 A+B+C_CLOSURE"
+}
