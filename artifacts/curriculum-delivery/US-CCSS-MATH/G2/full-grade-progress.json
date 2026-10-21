@@ -7,9 +7,9 @@
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
     "lastConsecutiveACClosed": 0,
-    "nextSequentialLesson": 2,
+    "nextSequentialLesson": 4,
     "firstUnclosedLesson": 1,
-    "currentWork": "U01 L02 source reviewed; repair its within-20 drift and represent the ten-cube hidden-part equation accurately before authoring Practice"
+    "currentWork": "Source-ordered Grade 2 U01 L01-L03 have academic gap checkpoints; begin U01 L04 next. Do not mark source unavailable items closed."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -21,7 +21,8 @@
     "Original partner game expression authorship, oral reasoning, classroom math community chart, and registered-only Cool-down are not certified by numerical grading.",
     "Print student task PDF could not be fetched in the source check; never mark full A source parity based on this text manifest.",
     "G2 U01 L02 source uses a ten-cube hidden-part partner game, related addition/subtraction equations, tower-to-equation matching; current keyConceptsAndRules says 'within 20' and generic steps do not teach the exact target.",
-    "G2 content pack reviewEvidence narrative says 143 of 146 included but the live JSON catalogue has 146 lesson records, all isSupporting=false and all with OutcomeCodes. No historical approval inferred."
+    "G2 content pack reviewEvidence narrative says 143 of 146 included but the live JSON catalogue has 146 lesson records, all isSupporting=false and all with OutcomeCodes. No historical approval inferred.",
+    "U01 L02 and L03 now have ten/twenty-cube original-source contracts, actual teaching corrections and unexecuted source-specific tests. Existing published content untouched on main."
   ],
   "lessonStatuses": [
     {
@@ -38,10 +39,10 @@
     {
       "gradeOrdinal": 2,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
-      "sourceReview": "SOURCE_LESSON_HTML_REVIEWED_PRINT_PDF_AND_COOLDOWN_PENDING",
-      "teaching": "B_REPAIR_REQUIRED_WITHIN20_DRIFT_AND_GENERIC_SUBTRACTION_STEPS",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
+      "sourceReview": "PUBLIC_TEACHER_STUDENT_FACING_HTML_VERIFIED_PRINT_AND_COOLDOWN_PENDING",
+      "teaching": "GUARDED_SPECIFIC_CORRECTION_AUTHORED",
+      "practice": "THREE_EXACT_DIGITAL_FAMILIES_AUTHORED_NOT_TESTED",
+      "tests": "WRITTEN_NOT_EXECUTED",
       "aCStatus": "A_C_EXPLICIT_GAP",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
@@ -49,11 +50,11 @@
     {
       "gradeOrdinal": 3,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L03",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
+      "sourceReview": "PUBLIC_TEACHER_STUDENT_FACING_HTML_VERIFIED_PRINT_AND_COOLDOWN_PENDING",
+      "teaching": "GUARDED_SPECIFIC_CORRECTION_AUTHORED",
+      "practice": "THREE_EXACT_DIGITAL_FAMILIES_AUTHORED_NOT_TESTED",
+      "tests": "WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -1641,8 +1642,14 @@
     {
       "gradeOrdinal": 2,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
-      "reason": "Exact original ten-cube/hidden-part source teaching is not fully reflected by existing generic subtraction steps; printed tasks/Cool-down unreviewed, Grade 2 lesson 2 Practice source-specific gap.",
-      "nextAction": "Fix guarded Rich V2 teaching for ten-cube unknown-addend and related equations, then author exact source-goal Practice and tests without running them."
+      "reason": "Authorized print student task PDF unavailable; Cool-down login-restricted; physical/student-authored work not digitally graded.",
+      "nextAction": "Review obtainable source-task and teacher criteria, verify educator-authored evidence/Practice scope before A-C closure; Stage D tests must run later."
+    },
+    {
+      "gradeOrdinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L03",
+      "reason": "Authorized print student task PDF unavailable; Cool-down login-restricted; physical/student-authored work not digitally graded.",
+      "nextAction": "Review obtainable source-task and teacher criteria, verify educator-authored evidence/Practice scope before A-C closure; Stage D tests must run later."
     }
   ]
 }
