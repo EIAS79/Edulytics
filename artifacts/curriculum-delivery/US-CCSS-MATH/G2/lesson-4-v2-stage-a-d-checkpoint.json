@@ -25,10 +25,15 @@
     "originalImageCopyright": "Do not copy digit-card artwork; use authored text prompts"
   },
   "stageB": {
-    "status": "SOURCE_MISMATCH_DOCUMENTED_UNREPAIRED",
-    "currentDefect": "Generic subtraction-only explanatory steps do not represent original five-card optimization or student choice and multiple valid within-20 strategies. Also existing explanation contains unnatural learner pronoun 'them'.",
-    "sourceRichPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g2-phase29-v1.lesson-content-pack.json",
-    "nextAction": "Create exact source-guarded teaching correction with prior body and persisted prose guards; do not overwrite original working steps without source-specific review."
+    "status": "SOURCE_GUARDED_TEACHING_CORRECTION_AUTHORED",
+    "sourceDefect": "Previous explanation and generic subtraction-only steps did not reflect five-card three-of-five optimization, making ten, flexible within-20 strategies and teacher-led explanations.",
+    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1HowCloseSourceTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seederGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "exactOriginalLessonIdentity": "G2 U01 L04 + 2021 preparation URL + canonical original body SHA + official 2.OA.B.2",
+    "persistedPreviousBodyValidation": "Pre-existing English fields, source and version guarded. Different or partial translation refused.",
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1HowCloseSourceTeachingCorrectionTests.cs",
+    "testState": "WRITTEN_NOT_EXECUTED"
   },
   "stageC": {
     "status": "TWO_EXACT_DIGITAL_SUBSKILL_FAMILIES_AUTHORED_UNRUN",
@@ -48,7 +53,6 @@
     "stageDExecuted": false,
     "academicAccepted": false,
     "issues": [
-      "Stage B remains incomplete",
       "Student printable task PDF not inspected",
       "Cool-down restricted by educator login",
       "Original authored multi-solution three-card equation and student reasoning not assessed digitally"
