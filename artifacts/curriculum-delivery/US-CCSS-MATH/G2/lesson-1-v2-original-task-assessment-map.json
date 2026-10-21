@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
+  "title": "Independent teacher-assessed evidence rubric — Add and Subtract Within 10",
+  "sourceEdition": "Illustrative Mathematics K-5 2021, 1st edition",
+  "sourceUrls": {
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-1/preparation.html",
+    "lesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-1/lesson.html"
+  },
+  "scope": "Independent educator assessment design, not original copyrighted worksheet or claim about actual class completion",
+  "sourceTaskMap": [
+    {
+      "source": "Warm-up (15 minutes): What Do You Know About Math?",
+      "assessmentType": "teacher_observed_discussion",
+      "evidence": [
+        "Learner contributes a math-related idea or responds to another student's reasoning",
+        "Teacher records participation/ideas without enforcing one correct sentence"
+      ],
+      "scoring": "teacher_observation",
+      "autoGraded": false
+    },
+    {
+      "source": "Activity 1 (20 minutes): Check It Off",
+      "assessmentType": "recorded_student_authored_expressions_and_partner_turns",
+      "evidence": [
+        "Number cards are drawn two at a time and represented by an addition or subtraction expression",
+        "Student records the resulting target within 0..10 and writes the expression against it",
+        "Multiple distinct expressions for one target are admissible",
+        "Reaching 0 is possible through equal-value subtraction such as 9 - 9",
+        "Partner explains or demonstrates how the expression produces the checked value",
+        "Number Cards (0–10) and connecting cubes/counters are optional tools, not mandatory for every fact"
+      ],
+      "partialMachineChecks": [
+        "Parse student-authored expression with exactly two integer operands between 0 and 10 and one + or - operation",
+        "Check arithmetic result equals the indicated board target in 0..10",
+        "Record all equivalent valid expressions rather than requiring a single string match",
+        "Store student choice of cards / expression / outcome in a reviewable record"
+      ],
+      "scoring": "student_artifact_plus_teacher_observation",
+      "autoGraded": false,
+      "notYetImplementedInRuntime": "Machine-validatable expression-record board and teacher sign-off are a design contract here only; no runtime expression-response capture is yet connected"
+    },
+    {
+      "source": "Activity 2 (10 minutes): What's the Value?",
+      "assessmentType": "math_matching_and_pattern_explanation",
+      "evidence": [
+        "Correctly match addition/subtraction expressions with numerical values",
+        "Identify every displayed addition expression whose sum is 10",
+        "Describe at least one meaningful numerical pattern in sums of 10 rather than only answering yes/no"
+      ],
+      "partialMachineChecks": [
+        "Numerical expression matching and recognize-ten question families"
+      ],
+      "scoring": "digital_numerical_plus_teacher_explanation",
+      "autoGraded": false,
+      "notYetImplementedInRuntime": "Teacher/student open-ended pattern explanation and source addition-table visual are not implemented as an independently scored activity"
+    },
+    {
+      "source": "Lesson synthesis (10 minutes): Math Community poster",
+      "assessmentType": "teacher_facilitated_classroom_norms",
+      "evidence": [
+        "Class discusses mathematical ideas and records them in a joint chart",
+        "Teacher facilitates rather than claims an auto-generated quiz demonstrates community norms"
+      ],
+      "scoring": "teacher_observation",
+      "autoGraded": false
+    },
+    {
+      "source": "Cool-down (5 minutes): Sums and Differences",
+      "assessmentType": "restricted_source_not_reproduced",
+      "evidence": [
+        "Official cool-down requires educator login; content has not been accessed or invented"
+      ],
+      "scoring": "cannot_complete_source_parity_without_authorized_text",
+      "autoGraded": false
+    }
+  ],
+  "sourceCompleteness": {
+    "teacherPreparationRead": true,
+    "fullTeacherLessonHtmlRead": true,
+    "studentFacingTaskTextReadInOriginalHtml": true,
+    "publicStudentPrintPdfCompared": false,
+    "sourceActivity2AdditionTableFigureInspected": false,
+    "restrictedCoolDownTaskRead": false,
+    "teacherStudentResponsesObserved": false
+  },
+  "releaseGuard": {
+    "stageAComplete": false,
+    "stageBComplete": "EXISTING_GUARDED_CORRECTION_PARTIAL_PARITY_REVIEW",
+    "stageCComplete": false,
+    "readyForStageD": false,
+    "blocking": [
+      "Original Activity 2 addition-table visual was not independently inspected.",
+      "Original authenticated Cool-down text is not available to verify.",
+      "Runtime authored-expression record board and checking of multiple equivalent expressions not implemented.",
+      "Math Community/partner reasoning are teacher-assessed, not evidenced as implemented classroom assessment in Edulytics."
+    ]
+  },
+  "plannedTestsOnly": [
+    "multiple_equivalent_expression_answers_for_same_target",
+    "correct_expression_record_matches_board_target_0_through_10",
+    "incorrect_operation_or_expression_target_is_rejected",
+    "ten_sum_pattern_explanation_requires_teacher_judgement",
+    "original_restricted_cooldown_remains_source_gap_not_fabricated"
+  ]
+}
