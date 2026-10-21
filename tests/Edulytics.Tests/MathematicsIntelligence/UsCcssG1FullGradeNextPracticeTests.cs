@@ -337,8 +337,11 @@ public sealed class UsCcssG1FullGradeNextPracticeTests
                 $"EQUATION={c}+{a}+{b}={total};TOTAL={total}"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
                 $"TOTAL={a+b};EQUATION={a}+{b}={a+b}")); // Lost third group.
-            Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
-                $"TOTAL={total};EQUATION={a}+{b+1}+{c-1}={total}")); // Same sum, wrong source.
+            // If c == b+1, this expression simply swaps the two original group counts
+            // and is valid under commutativity. Reject only genuinely altered groups.
+            if(c!=b+1)
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
+                    $"TOTAL={total};EQUATION={a}+{b+1}+{c-1}={total}"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
                 $"TOTAL={total+1};EQUATION={a}+{b}+{c}={total+1}"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,parameters,
