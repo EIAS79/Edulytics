@@ -33,7 +33,12 @@
   "stageC": {
     "existingNumericPracticeReused": true,
     "digitalCoverage": "Reading and matching whole-hour times",
-    "remainingStudentTaskBoundary": "Original physical sorting of cards and nine student-drawn clock faces require real review; do not treat one digital clock answer as covering all"
+    "remainingStudentTaskBoundary": "Original physical sorting of cards and nine student-drawn clock faces require real review; do not treat one digital clock answer as covering all",
+    "sourceMathRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons121To136SourceMathTests.cs",
+    "sourceMathRegressionCommit": "8891bd6bedca4d0181affb726e111db462eaab15",
+    "sourceClockVariantCommit": "2a315430a4c3d6f27be61e360adc1557406616e0",
+    "openClockAlternativesAccepted": false,
+    "testsExecuted": false
   },
   "stageD": {
     "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
@@ -62,5 +67,19 @@
     "originalStudentTaskToEffectiveTeachingCompleteParity": "NOT_CLAIMED",
     "finalDotNetAndProtectedCI": "DEFERRED_UNTIL_WHOLE_GRADE_FREEZE",
     "internalAcceptance": "NOT_CLAIMED"
-  }
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceBoundary": "Original first cards show HOUR hand alone, pair with digital hour; nine school-day clock drawings source time diagram unverified. Source hour-only digital mode4.",
+    "accessibleOriginalTaskTextReviewed": true,
+    "numericTeachingAndVerifierReviewed": true,
+    "originalIllustratedTimesNotGuessed": true,
+    "originalPupilDrawingsAndGameplayTeacherOnly": true,
+    "originalPublisherClockFiguresNotLicensed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  },
+  "nextAction": "Continue ordinal 133 in order; D and CI deferred."
 }
