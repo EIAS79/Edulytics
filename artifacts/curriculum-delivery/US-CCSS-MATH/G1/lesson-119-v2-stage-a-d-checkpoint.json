@@ -61,7 +61,10 @@
     "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
     "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
     "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
-    "sourceAuthoredRubric": "SEE_GRADE_FIRST_SOURCE_RUBRIC_L119"
+    "sourceAuthoredRubric": "SEE_GRADE_FIRST_SOURCE_RUBRIC_L119",
+    "authoredSourceRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredSourceRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0",
+    "sourceSpecificTestsExecuted": false
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -77,5 +80,19 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+  "nextAction": "Continue ordinal 120 in canonical order; D/CI deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Optional puppies/tulips pupil-written comparison stories and partners acting them out; existing teacher-review rubric required, numeric difference is proxy.",
+    "originalSourceActivityTextCompared": true,
+    "existingFirstPartyTeachingReviewed": true,
+    "mathGeneratorAndVerifierStaticallyReviewed": true,
+    "originalTeacherMediatedTasksNotAutoCertified": true,
+    "sourceCopyrightedImagesUnverified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": [],
+    "boundary": "A-C authoring of source goals and numeric proxy; original source figures and actual creative/physical work teacher assessed, runtime and release evidence Stage D only."
+  }
 }
