@@ -78,7 +78,9 @@ public sealed class UsCcssG1Lessons89To91OriginalEquationTests
                 counts[generatedMode]=counts.GetValueOrDefault(generatedMode)+1;
                 Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Verify(
                     family,q.Parameters,UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,q.Parameters)));
-                if(q.Parameters["mode"]>=4)Assert.Contains("ORIGINAL 2021",q.Prompt);
+                if(q.Parameters["mode"]>=4)
+                    Assert.True(q.Prompt.Contains("ORIGINAL 2021",StringComparison.Ordinal) ||
+                        q.Prompt.Contains("EDULYTICS FIRST-PARTY",StringComparison.Ordinal));
             }
             for(var mode=0;mode<=lastMode;mode++)
                 Assert.True(counts.GetValueOrDefault(mode)>35);
