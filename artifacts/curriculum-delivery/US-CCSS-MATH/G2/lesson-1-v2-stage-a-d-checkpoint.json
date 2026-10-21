@@ -15,8 +15,8 @@
     "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-1/preparation.html",
     "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-1/lesson.html",
     "blueprintPath": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade2-im-k5-2021.lesson-blueprint.json",
-    "originalStudentPrintPdf": "UNAVAILABLE_FROM_PUBLIC_FETCH_AT_TIME_OF_AUTHORING",
-    "coolDown": "LOGIN_RESTRICTED_NOT_READ",
+    "originalStudentPrintPdf": "NOT_FETCHED_BUT_PUBLIC_ORIGINAL_HTML_STUDENT_FACING_READ",
+    "coolDown": "LOGIN_RESTRICTED_BODY_NOT_READ_DO_NOT_INVENT",
     "reviewedSourceComponents": [
       "warm-up: math community discussion",
       "activity 1: partner two-card addition-or-subtraction values 0 through 10, record expressions",
@@ -29,10 +29,19 @@
       "Original student task PDF content not independently compared",
       "Registered teacher-only Cool-down task statement not inspected",
       "No original physical student responses or teacher activity/Math Community recordings verified"
-    ]
+    ],
+    "studentFacingFullLessonHtml": "VERIFIED_FROM_ORIGINAL_2021_TEACHER_LESSON_PAGE",
+    "studentFacingActivitiesRead": [
+      "Warm-up: student asked what they know about math",
+      "Activity 1: choose two cards, write matching addition/subtraction expression, mark result 0..10, compare targets with partner",
+      "Activity 2: match numerical expression values, identify ten-valued sums, explain pattern in pairs",
+      "Synthesis: partner strategies and teacher Math Community poster",
+      "Cool-down: Sums and Differences title found, body requires authorized educator login"
+    ],
+    "originalActivity2AdditionTableFigure": "LINK_FOUND_FIGURE_NOT_INSPECTED"
   },
   "stageA": {
-    "status": "SOURCE_HTML_REVIEWED_PRINT_AND_COOLDOWN_GAP",
+    "status": "SOURCE_TEACHER_AND_STUDENT_HTML_REVIEWED_COOLDOWN_AND_ADDITION_GRAPHIC_GAP",
     "originalLearningGoal": "Add and subtract within 10 (CCSS:2.OA.B.2)",
     "independentAcademicAssertion": false
   },
@@ -45,7 +54,7 @@
     "productionLessonIdentityChanged": false
   },
   "stageC": {
-    "status": "EXACT_DIGITAL_FAMILIES_AUTHORED_TESTS_UNRUN",
+    "status": "FOUR_DIGITAL_FAMILIES_AND_OPEN_EXPRESSION_ARITHMETIC_CHECKER_AUTHORED_TESTS_UNRUN",
     "lessonContractPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonPracticeContracts.cs",
     "questionEnginePath": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1FirstLessonQuestions.cs",
     "genericEngineBinding": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
@@ -73,21 +82,29 @@
       "unique generated fingerprints",
       "lesson-specific presentation interaction"
     ],
-    "academicApproval": "NOT_ASSERTED"
+    "academicApproval": "NOT_ASSERTED",
+    "teacherAssessmentMap": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-1-v2-original-task-assessment-map.json",
+    "expressionMathChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FirstLessonExpressionRecord.cs",
+    "expressionCheckerTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FirstLessonExpressionRecordTests.cs",
+    "expressionCheckerBoundary": "Pure mathematical checker authored; no student-facing expression-record persistence/UI or teacher-signoff integration claimed"
   },
   "closure": {
     "status": "A_C_EXPLICIT_GAP",
     "readyForStageD": false,
     "openGaps": [
-      "Check original student task PDF against source lesson activities",
-      "Review restricted Cool-down original task if authorized access becomes available",
-      "Confirm original-expression recording and answer alternative limitations are explicitly acceptable for non-digital teacher assessment",
-      "Confirm all source-facing teaching and authored question code with source review before advancing to READY_FOR_STAGE_D"
+      "Official original Cool-down task content restricted to educator login; exact source activity not inspected.",
+      "Original addition-table picture in Activity 2 was not independently inspected.",
+      "Free student-authored expression mathematical checker exists but is not yet wired to student activity/record-board submission flow.",
+      "Teacher-assessed oral pattern reasoning, partner game and Math Community remain a rubric, not captured student performance.",
+      "Stage B learner-facing effective content parity and Stage C original feature coverage cannot yet be conclusively certified; no Stage D tests run."
     ],
     "stageDTestsExecuted": false,
     "CIExecuted": false,
     "humanTeacherApproval": "NOT_ASSERTED",
-    "productionRelease": "NOT_AUTHORIZED"
+    "productionRelease": "NOT_AUTHORIZED",
+    "aCCompleted": false,
+    "targetCompletionLabel": "READY_FOR_STAGE_D"
   },
-  "nextAction": "Continue Grade 2 lesson 2 A–B–C while retaining Grade 2 lesson 1 on the explicit source-return queue; never count lesson 1 as closed."
+  "nextAction": "STAY ON ORDINAL 1. Address only G2 U01 L01 remaining Stage A-C gaps. Do not begin G2 U01 L02 or change cursor until this lesson is fully READY_FOR_STAGE_D.",
+  "correctionsAppliedToSequencing": "User-mandated STRICT sequential one-lesson A→B→C, mark A_C_COMPLETED/READY_FOR_STAGE_D only with complete evidence, then next lesson."
 }
