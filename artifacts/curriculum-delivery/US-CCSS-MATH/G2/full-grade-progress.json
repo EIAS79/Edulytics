@@ -9,7 +9,7 @@
     "lastConsecutiveACClosed": 0,
     "nextSequentialLesson": 2,
     "firstUnclosedLesson": 1,
-    "currentWork": "U01 L01 source restrictions logged; continue U01 L02 authoring, retain L01 for source gap"
+    "currentWork": "U01 L02 source reviewed; repair its within-20 drift and represent the ten-cube hidden-part equation accurately before authoring Practice"
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -19,7 +19,9 @@
     "A source-grounded teaching fix for G2 U01 L01 existed before this branch; reused unchanged.",
     "Four newly authored exact digital families for G2 U01 L01 require Stage D execution before any technical approval.",
     "Original partner game expression authorship, oral reasoning, classroom math community chart, and registered-only Cool-down are not certified by numerical grading.",
-    "Print student task PDF could not be fetched in the source check; never mark full A source parity based on this text manifest."
+    "Print student task PDF could not be fetched in the source check; never mark full A source parity based on this text manifest.",
+    "G2 U01 L02 source uses a ten-cube hidden-part partner game, related addition/subtraction equations, tower-to-equation matching; current keyConceptsAndRules says 'within 20' and generic steps do not teach the exact target.",
+    "G2 content pack reviewEvidence narrative says 143 of 146 included but the live JSON catalogue has 146 lesson records, all isSupporting=false and all with OutcomeCodes. No historical approval inferred."
   ],
   "lessonStatuses": [
     {
@@ -36,11 +38,11 @@
     {
       "gradeOrdinal": 2,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
+      "sourceReview": "SOURCE_LESSON_HTML_REVIEWED_PRINT_PDF_AND_COOLDOWN_PENDING",
+      "teaching": "B_REPAIR_REQUIRED_WITHIN20_DRIFT_AND_GENERIC_SUBTRACTION_STEPS",
       "practice": "PENDING",
       "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
+      "aCStatus": "A_C_EXPLICIT_GAP",
       "stageD": "NOT_STARTED",
       "acceptance": "NOT_ASSERTED"
     },
@@ -1635,6 +1637,12 @@
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
       "reason": "Original student-task print PDF and restricted Cool-down not read; dynamic learner view and original authored-expression record still unverified.",
       "nextAction": "Obtain authorized source task statements/cool-down and review expression authoring boundary; do not assert source-complete A-C without their parity evidence."
+    },
+    {
+      "gradeOrdinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
+      "reason": "Exact original ten-cube/hidden-part source teaching is not fully reflected by existing generic subtraction steps; printed tasks/Cool-down unreviewed, Grade 2 lesson 2 Practice source-specific gap.",
+      "nextAction": "Fix guarded Rich V2 teaching for ten-cube unknown-addend and related equations, then author exact source-goal Practice and tests without running them."
     }
   ]
 }
