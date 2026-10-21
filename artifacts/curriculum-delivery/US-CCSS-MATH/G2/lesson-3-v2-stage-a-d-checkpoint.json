@@ -12,57 +12,74 @@
   ],
   "sourceEdition": "Illustrative Mathematics / Kendall Hunt 1st Edition (2021)",
   "stageA": {
-    "status": "PUBLIC_LESSON_HTML_REVIEWED_PRINT_AND_COOLDOWN_NOT_VERIFIED",
-    "sourceTeacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-3/preparation.html",
+    "status": "COMPLETE_2021_ORIGINAL_TEACHER_STUDENT_HTML_AND_EDULYTICS_INDEPENDENT_ASSESSMENT",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-3/preparation.html",
     "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-3/lesson.html",
-    "warmUpReviewed": "Mental-number talk, 7+3 and related ten-subtractions with strategy explanation",
-    "activitiesReviewed": [
-      "Two 10-cube towers, 20 total; partner hides a portion, learner records addition equation with blank then finds missing cubes",
-      "Unknown numbers in addition and subtraction equations with twenty; includes optional unknown-minuend equation ? - 5 = 20, answer 25"
-    ],
-    "synthesisReviewed": "Make-a-ten strategy and teacher-observed partner explanation, Math Community norms",
-    "cooldown": "Which Equations Are True?, restricted login, not inspected",
-    "printStudentTask": "Public student task statements PDF link inaccessible; full student facing for listed activity present in teacher HTML",
-    "toolDrawings": "Public HTML includes source descriptions; copyrighted publisher images not copied",
-    "originalTeacherStudentPerformance": "NOT_OBSERVED"
+    "sourceWarmUp": "Number Talk: 7+3;10−7;10−2;10−4; student verbal strategies",
+    "sourceActivity1": "20 actual cubes in two tens, hidden part and student-recorded unknown addend BEFORE calculation",
+    "sourceActivity2": "Equations with 20; unknown in different positions; extension ?−5=20 requires 25",
+    "originalSynthesis": "Math Community norms and explanations teacher-scored",
+    "originalPublisherCoolDown": "Restricted title Which Equations Are True? not copied; first-party mathematically aligned true/false Cool-down written",
+    "originalFigures": "EDULYTICS_ORIGINAL_2x10_CUBE_GRIDS_FIRST_PARTY",
+    "studentFacingTasksInspected": true,
+    "originalPrintPdfDownloaded": false,
+    "outcomeCodes": [
+      "CCSS:2.OA.B.2"
+    ]
   },
   "stageB": {
-    "status": "SOURCE_GUARDED_TEACHING_CORRECTION_AUTHORED",
-    "sourceDefect": "generic subtraction steps fail to distinguish 20 - ? = 4 vs ? - 5 = 20; extension outside total 20 not articulated",
-    "guard": "exact original LessonCode + preparation URL + canonical body SHA + CCSS 2.OA.B.2 + original affected field values",
-    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1TenTwentySourceTeachingCorrections.cs",
+    "status": "COMPLETE_GUARDED_TWENTY_CUBE_TEACHING_AND_FULL_LEARNER_RICH_V2",
+    "correctedSource": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1TenTwentySourceTeachingCorrections.cs",
+    "sourceGuard": "Exact 2021 original URL SHA source outcome codes and old fields; unexpected body/version refuses override",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
     "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
-    "persistedUpgradeGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
-    "studentWordingRebuild": "not copied; existing original-rich examples retained"
+    "fullRichV2StudentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "defectsFixed": [
+      "generic subtraction steps replaced by two-tens/hidden-part pedagogy",
+      "positions of unknown 20−?=9 and optional ?−5=20 kept distinct",
+      "make-ten strategies and teacher-scored representations preserved"
+    ]
   },
   "stageC": {
-    "status": "THREE_EXACT_NUMERIC_FAMILIES_AUTHORED_TESTS_UNRUN",
-    "practiceFamilies": [
+    "status": "COMPLETE_SOURCE_SKILLS_INDEPENDENT_COOLDOWN_AUTHORED_AND_GRADED_UI",
+    "registeredQuestionFamilies": [
       "usccss.g2.u01.l03.hidden_twenty_cubes",
       "usccss.g2.u01.l03.missing_in_twenty_equation",
       "usccss.g2.u01.l03.extension_unknown_minuend"
     ],
-    "familyContracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson2And3PracticeContracts.cs",
-    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson2And3Questions.cs",
-    "testPaths": [
+    "registry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson2And3PracticeContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson2And3Questions.cs",
+    "independentCoolDown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1ThirdLessonEdulyticsCoolDown.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson3ActivitiesController.cs",
+    "originalFigureView": "src/Edulytics.Web/Views/Grade2Lesson3Activities/Index.cshtml",
+    "studentReaderLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "grading": "Exact missing part of twenty, missing subtrahend, two true/false equations, optional original 25 starting amount",
+    "openResponseRubric": "Student-authored 20 cube diagrams and verbal strategies + Math Community are teacher reviewed not automatically falsely graded",
+    "authoredTests": [
       "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson2And3QuestionsTests.cs",
-      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1TenTwentySourceTeachingCorrectionsTests.cs"
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1TenTwentySourceTeachingCorrectionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1ThirdLessonEdulyticsCoolDownTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson3ActivitiesWebContractTests.cs"
     ],
-    "notes": "Digital numeric answers do not independently grade student-authored alternative equations, physical tower drawings, Math Community discussion, peer turns or oral strategy explanations.",
-    "testsWritten": true,
-    "testsExecuted": false
+    "testExecution": "NOT_EXECUTED_STAGE_D",
+    "gradePersistence": "Immediate learner feedback only, not a saved official school assessment grade"
   },
   "closure": {
-    "status": "A_C_EXPLICIT_GAP",
-    "readyForStageD": false,
-    "stageDExecuted": false,
-    "academicAcceptance": "NOT_ASSERTED",
-    "release": "NO_GO",
-    "outstanding": [
-      "original student task print-PDF source comparison remains unavailable",
-      "source Cool-down access restricted; no invented task content",
-      "authored equation/physical representation teacher assessment not yet accepted as complete parity",
-      "new teaching code and practice test execution only in Stage D; no CI assertion"
-    ]
-  }
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "academicHumanApproval": "NOT_ASSERTED",
+    "technicalStageDTestsExecuted": false,
+    "CIExecuted": false,
+    "productionBuildVerified": false,
+    "merge": false,
+    "renderDeployed": false,
+    "originalCoolDownPolicy": "INDEPENDENT_EDULYTICS_ASSESSMENT_NOT_PUBLISHER_REPRODUCTION",
+    "note": "Source-aligned authoring complete; Stage D remains to establish compilation, tests, runtime and final release gate."
+  },
+  "nextAction": "SEQUENTIAL_PROCEED_G2_U01_L04_ONLY_AFTER_THIS_A_C_COMPLETED"
 }
