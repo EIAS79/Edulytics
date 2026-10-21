@@ -1448,11 +1448,11 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         assert expected in rendered, (
             code, "missing exact source-reviewed lesson title", expected)
         # Stage D: original-2021 lesson-specific learner BODY assertions for
-        # ordinals 57–64, grounded in their frozen A–C teacher/student-source
-        # checkpoints. This goes beyond matching a title or an HTML hash.
-        # The check is digital content fidelity only: original publisher art,
-        # peer discourse, manipulatives, pupil work and rights stay separate.
-        original_g1_source_bodies_57_64 = {
+        # ordinals 57–64 (Unit 3) and 66–82 (Unit 4), grounded in the
+        # frozen A–C source-goal authoring. These are selective original
+        # activity assertions, not a complete teacher review, visual-art
+        # rights grant, proof of pupil writing, or physical center participation.
+        original_g1_source_bodies_stage_d = {
             57: (
                 "8 snakes, 7 iguanas and 5 frogs",
                 "8 lions, 4 tigers and 3 cheetahs",
@@ -1494,14 +1494,87 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 "zero is a valid card",
                 "20-6-4-9=1",
             ),
+            66: (
+                "original 2021 first collection: 40 objects",
+                "bag a has 20, b has 40, c has 50",
+            ),
+            67: (
+                "seven towers of ten",
+                "too-low, about-right and too-high estimate",
+            ),
+            68: (
+                "one ten",
+                "eight totals each way",
+            ),
+            69: (
+                "jada counts 30 cubes in bag a",
+                "tyler has 7 towers of ten in bag c",
+            ),
+            70: (
+                "check it off stage 2",
+                "90 is already marked",
+            ),
+            71: (
+                "noah discussion",
+                "40+8=48",
+            ),
+            72: (
+                "clare claims a shown model is 68 and diego claims 86",
+                "eight tens and six ones",
+            ),
+            73: (
+                "kiran describes 3 ones and 7 tens",
+                "cards j and s both represent",
+            ),
+            74: (
+                "at least four actual classmates' collections",
+                "create a collection",
+            ),
+            75: (
+                "clare writes 702",
+                "80+3=83",
+            ),
+            76: (
+                "56+40=96",
+                "37+20=57",
+            ),
+            77: (
+                "99-10-10-10=69",
+                "67+10+10+10=97",
+            ),
+            78: (
+                "grab and count (stage 2)",
+                "8+7+5=20",
+            ),
+            79: (
+                "noah incorrectly claims 39>41",
+                "seven tens exceeds six tens",
+            ),
+            80: (
+                "17<47 true",
+                "35+10=45",
+            ),
+            81: (
+                "49>45 and 45<49",
+                "56>26",
+            ),
+            82: (
+                "insert 49, 8, 25, 98 and 13",
+                "1, 5, 8, 10, 13, 25, 49, 50, 98, 99",
+            ),
         }
         source_body_fragments_verified = None
-        if ordinal in original_g1_source_bodies_57_64:
-            assert target_grade == 1 and code == (
+        if ordinal in original_g1_source_bodies_stage_d:
+            expected_lesson_code = (
                 "PED:US-CCSS-MATH:G1:U03:L"
-                + str(ordinal - 37).zfill(2)), (
-                ordinal, code, "misrouted exact U03 source review")
-            source_fragments = original_g1_source_bodies_57_64[ordinal]
+                + str(ordinal - 37).zfill(2)
+                if ordinal <= 64 else
+                "PED:US-CCSS-MATH:G1:U04:L"
+                + str(ordinal - 65).zfill(2)
+            )
+            assert target_grade == 1 and code == expected_lesson_code, (
+                ordinal, code, "misrouted ordered original source review")
+            source_fragments = original_g1_source_bodies_stage_d[ordinal]
             absent_fragments = [
                 phrase for phrase in source_fragments
                 if phrase.casefold() not in rendered
@@ -1510,7 +1583,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                 ordinal, code, "original source learning task missing from "
                 "actual authenticated learner body", absent_fragments)
             source_body_fragments_verified = len(source_fragments)
-            print("G1_STAGE_D_AUTHENTICATED_SOURCE_BODY_57_64_PASS",
+            print("G1_STAGE_D_AUTHENTICATED_SOURCE_BODY_PASS",
                   ordinal, code, source_body_fragments_verified, flush=True)
         if code == "PED:US-CCSS-MATH:G1:U03:L14":
             # Original 2021 source inspected read-only on Our-CS: Number
