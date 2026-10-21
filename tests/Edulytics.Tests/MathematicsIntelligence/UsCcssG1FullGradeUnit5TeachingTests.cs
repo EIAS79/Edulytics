@@ -34,7 +34,9 @@ public sealed class UsCcssG1FullGradeUnit5TeachingTests
             var row=doc.Lessons.Single(x=>x.LessonCode==code);
             Assert.True(CommonCoreG1FullGradeUnit5ContentCorrections.IsTarget(doc,row));
             Assert.Equal(unit==4
-                    ?CommonCoreG1FullGradeUnit5ContentCorrections.Unit4EndSourceVersion
+                    ?(lesson==22?CommonCoreG1FullGradeUnit5ContentCorrections.Unit4Lesson22SourceVersion
+                                 :CommonCoreG1FullGradeUnit5ContentCorrections.Unit4EndSourceVersion)
+                    :lesson==1?CommonCoreG1FullGradeUnit5ContentCorrections.Unit5Lesson01SourceVersion
                     :lesson<=7?CommonCoreG1FullGradeUnit5ContentCorrections.Unit5EarlySourceVersion
                     :lesson<=13?CommonCoreG1FullGradeUnit5ContentCorrections.Unit5LaterSourceVersion
                     :CommonCoreG1FullGradeUnit5ContentCorrections.Version,
