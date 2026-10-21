@@ -69,6 +69,7 @@ def syntactically_valid_wrong_answer(correct, family=None):
         # answers. Do NOT send the generic malformed-answer sentinel here.
         categories={
             "YES":"NO","NO":"YES",
+            "AGREE":"DISAGREE","DISAGREE":"AGREE",
             ">":"<","<":">","=":">",
             "RED":"BLUE","BLUE":"RED",
             "A":"B","B":"A",
@@ -336,6 +337,15 @@ if __name__=="__main__":
                 ("MATCH=B;TENS=4;NUMBER=40","MATCH=C;TENS=4;NUMBER=40"),
                 ("MATCH=C;TENS=5;NUMBER=50","MATCH=A;TENS=5;NUMBER=50")):
                 self.assertEqual(syntactically_valid_wrong_answer(original),wrong)
+
+        def test_u04_l06_source_collection_claim_uses_well_formed_wrong_agreement(self):
+            family="usccss.g1.u04.l06.collection.tens_ones"
+            correct="DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50"
+            wrong=syntactically_valid_wrong_answer(correct,family)
+            self.assertEqual(
+                wrong,
+                "DECISION=AGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50")
+            self.assertNotEqual(wrong,correct)
 
         def test_original_g1_equal_and_unequal_partition_sort_stays_valid(self):
             self.assertEqual(
