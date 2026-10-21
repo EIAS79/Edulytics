@@ -671,7 +671,7 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
             "DIFFERENCE=6;CHECK=6+7=13"));
         p["a"]=13;
         Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,p));
-        var generated=Enumerable.Range(0,330)
+        var generated=Enumerable.Range(0,800)
             .Select(n=>UsCcssG1FullGradeStrategyAndTensQuestions.Build(family,new Random(67*n+11)))
             .Where(q=>q.Parameters["mode"]==2).ToArray();
         Assert.True(generated.Length>40);
@@ -933,7 +933,7 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
     {
         const string family=UsCcssG1FullGradeStrategyAndTensQuestions.AddRemoveTen;
         foreach(var (a,mode) in new[]{
-            (8,2),(1,2),(9,3),(2,3),(0,3),(9,0),(1,1)
+            (8,2),(1,2),(9,3),(2,3),(0,3),(9,0),(0,1)
         })
             Assert.False(UsCcssG1FullGradeStrategyAndTensQuestions.Valid(family,
                 new Dictionary<string,int>{
@@ -1042,7 +1042,7 @@ public sealed class UsCcssG1FullGradeStrategyAndTensPracticeTests
                 Assert.Contains("40 cubes",problem.Prompt);
             }
         }
-        Assert.Equal(4,seen.Count);
+        Assert.Equal(7,seen.Count); // modes 4–6 extend the original four-mode generator.
     }
 
     [Fact]
