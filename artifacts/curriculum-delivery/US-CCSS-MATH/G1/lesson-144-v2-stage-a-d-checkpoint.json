@@ -33,7 +33,17 @@
   "stageC": {
     "originalDigitalPracticeFamily": "usccss.g1.u08.l08.same_number_tens_ones",
     "digitalScope": "Conservation of value under tens/ones exchanges, not certification of original learner-created number-book page",
-    "teacherAuthorshipBoundary": "Original class number book drawing, self-created expressions, physical card centers and gallery presentations require real student/teacher observation"
+    "teacherAuthorshipBoundary": "Original class number book drawing, self-created expressions, physical card centers and gallery presentations require real student/teacher observation",
+    "authoringSourceRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons137To146SourceMathTests.cs",
+    "authoringSourceRegressionCommit": "bd4f898208de7f3e17063afc84f37d9f8319027d",
+    "openNumberBookMathCommit": "57fbe3abf639374bded82852048e4883a60aaf57",
+    "alternateExpressionsVerifierCommit": "9768a63930531852d87cf25fc7f35fcdc623c82e",
+    "acceptsAlternativeThreeTrueExpressions": true,
+    "sourceFavouriteNumberRange": [
+      20,
+      100
+    ],
+    "testsExecuted": false
   },
   "stageD": {
     "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
@@ -62,5 +72,19 @@
     "originalStudentTaskToEffectiveTeachingCompleteParity": "NOT_CLAIMED",
     "finalDotNetAndProtectedCI": "DEFERRED_UNTIL_WHOLE_GRADE_FREEZE",
     "internalAcceptance": "NOT_CLAIMED"
-  }
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Original 20–100 favorite NUMBER BOOK page, requires at least THREE mathematically different addition expressions plus tens/ones drawings; teacher example 84 now in first-party open answer mode, gallery page human assessed.",
+    "originalTaskTextCompared": true,
+    "sourceBoundTeachingAndDigitalMathStaticallyReviewed": true,
+    "genuinePupilPageOrStoryTeacherOnly": true,
+    "originalPublisherFiguresNotVerifiedOrCopied": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "individualAcademicApprovalUnclaimed": true
+  },
+  "nextAction": "Continue ordinal 145, retain D/CI hold."
 }
