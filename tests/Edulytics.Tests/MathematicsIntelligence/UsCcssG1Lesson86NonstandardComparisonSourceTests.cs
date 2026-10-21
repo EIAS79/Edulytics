@@ -30,12 +30,13 @@ public sealed class UsCcssG1Lesson86NonstandardComparisonSourceTests
     public void SourceAlignedNewCasesAreActuallyGeneratedAndRetainPriorCase()
     {
         const string family="usccss.g1.u04.l21.compare_nonstandard_forms";
-        var counts=new int[7];
+        var counts=new Dictionary<int,int>();
         for(int seed=0;seed<700;seed++)
         {
             var q=UsCcssG1FullGradeUnit4FinalQuestions.Build(
                 family,new Random(seed*47+20261020));
-            counts[q.Parameters["mode"]]++;
+            var generatedMode=q.Parameters["mode"];
+            counts[generatedMode]=counts.GetValueOrDefault(generatedMode)+1;
             var answer=UsCcssG1FullGradeUnit4FinalQuestions.Solve(family,q.Parameters);
             Assert.True(UsCcssG1FullGradeUnit4FinalQuestions.Verify(family,q.Parameters,answer));
             if(q.Parameters["mode"]==4)Assert.Contains("5 tens and 2 ones",q.Prompt);
@@ -43,6 +44,6 @@ public sealed class UsCcssG1Lesson86NonstandardComparisonSourceTests
             if(q.Parameters["mode"]==6)Assert.Contains("2 tens and 15 ones",q.Prompt);
         }
         foreach(var mode in new[]{2,4,5,6})
-            Assert.True(counts[mode]>40);
+            Assert.True(counts.GetValueOrDefault(mode)>40);
     }
 }
