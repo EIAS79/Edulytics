@@ -35,6 +35,22 @@ public sealed class UsCcssG2Unit1FirstLessonQuestionsTests
     }
 
     [Fact]
+    public void SourceDemonstrationTenAndSevenRequiresSubtraction()
+    {
+        var example = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            ["left"] = 10, ["right"] = 7, ["operation"] = 1
+        };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            Families[0], example, "2"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            Families[0], example, "1"));
+        example["operation"] = 0;
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            Families[0], example, "1")); // 10 + 7 is outside the within-ten task.
+    }
+
+    [Fact]
     public void EachFamilyHasSourceBoundsCorrectWrongInvalidAndTamperingCases()
     {
         var engine = new ExactSkillContractQuestionEngine();
@@ -69,8 +85,10 @@ public sealed class UsCcssG2Unit1FirstLessonQuestionsTests
 
                 if (family == Families[0])
                 {
-                    Assert.InRange(item.Parameters["left"] + item.Parameters["right"], 0, 10);
                     Assert.InRange(item.Parameters["left"] - item.Parameters["right"], 0, 10);
+                    if (expected == 1)
+                        Assert.InRange(item.Parameters["left"] + item.Parameters["right"], 0, 10);
+                    Assert.InRange(item.Parameters["left"], 2, 10);
                     Assert.InRange(expected, 1, 2);
                     Assert.Contains("Which operation", item.Prompt);
                 }
