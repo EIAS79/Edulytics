@@ -13,7 +13,7 @@ public sealed class CommonCoreG2Unit1ClassSurveysTeachingCorrectionTests
                 CommonCoreG2Unit1ClassSurveysTeachingCorrection.IsTarget(d,l))
                 .Select(l=>(Doc:d,Lesson:l))).Single();
         var t=row.Lesson.Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("THREE or FOUR",t.StepByStepSolutions);
+        Assert.Contains("3 or 4",t.StepByStepSolutions);
         Assert.Contains("FICTIONAL",t.WorkedExamples);
         Assert.Contains("tape diagram",t.Explanation);
         Assert.Contains("classmates",t.Explanation);
