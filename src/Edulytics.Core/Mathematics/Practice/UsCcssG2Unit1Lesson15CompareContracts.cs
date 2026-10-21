@@ -7,7 +7,7 @@ internal static class UsCcssG2Unit1Lesson15CompareContracts
     public static readonly IReadOnlyList<LessonPracticeContract> Reviewed=
     [
         new("PED:US-CCSS-MATH:G2:U01:L15",
-            "operations.compare.unknown_positions",
+            "number.whole.add_subtract",
             "COMPARE_UNKNOWN_LARGER_SMALLER_DIFFERENCE_WITH_TAPE",
             [
                 "usccss.g2.u01.l15.compare_unknown_smaller",
