@@ -25,16 +25,16 @@ public sealed class UsCcssG1Lessons87To101LaterOriginalSourcesTests
     }
 
     [Theory]
-    [InlineData("usccss.g1.u05.l08.center_add_within100",4,68,2,false)]
-    [InlineData("usccss.g1.u05.l08.center_add_within100",5,3,68,false)]
-    [InlineData("usccss.g1.u05.l08.center_add_within100",6,5,45,false)]
-    [InlineData("usccss.g1.u05.l08.center_add_within100",7,45,7,false)]
-    [InlineData("usccss.g1.u05.l09.two_digit_composing",4,38,2,false)]
-    [InlineData("usccss.g1.u05.l09.two_digit_composing",5,40,3,false)]
-    [InlineData("usccss.g1.u05.l09.two_digit_composing",6,38,5,false)]
-    [InlineData("usccss.g1.u05.l09.two_digit_composing",7,38,15,false)]
+    [InlineData("usccss.g1.u05.l08.center_add_within100",4,68,2)]
+    [InlineData("usccss.g1.u05.l08.center_add_within100",5,3,68)]
+    [InlineData("usccss.g1.u05.l08.center_add_within100",6,5,45)]
+    [InlineData("usccss.g1.u05.l08.center_add_within100",7,45,7)]
+    [InlineData("usccss.g1.u05.l09.two_digit_composing",4,38,2)]
+    [InlineData("usccss.g1.u05.l09.two_digit_composing",5,40,3)]
+    [InlineData("usccss.g1.u05.l09.two_digit_composing",6,38,5)]
+    [InlineData("usccss.g1.u05.l09.two_digit_composing",7,38,15)]
     public void Lesson96And97SourceMentalArithmeticHasRealNumericAnswers(
-        string family,int mode,int a,int b,bool unused)
+        string family,int mode,int a,int b)
     {
         var p=new Dictionary<string,int>{{"a",a},{"b",b},{"mode",mode}};
         var yes=a%10+b%10>=10?"YES":"NO";
