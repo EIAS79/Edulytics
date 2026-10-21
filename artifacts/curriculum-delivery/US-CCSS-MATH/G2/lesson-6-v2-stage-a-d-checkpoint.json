@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 2",
+  "programme": "US-CCSS-MATH",
+  "gradeOrdinal": 6,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L06",
+  "lessonTitle": "Center Day 1 (optional)",
+  "unitNumber": 1,
+  "lessonNumber": 6,
+  "officialOutcomeCodes": [
+    "CCSS:2.NBT.B.5",
+    "CCSS:2.OA.B.2"
+  ],
+  "edition": "IM 2021 1st Edition",
+  "stageA": {
+    "status": "ORIGINAL_PUBLIC_TEACHER_HTML_REVIEWED_RESTRICTED_SOURCE_GAPS",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-6/preparation.html",
+    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-6/lesson.html",
+    "originalActivities": [
+      "Warm-up Number Talk: 14+22, 19+22, 15+25, 17+25 with student explaining tens/ones",
+      "Activity 1 Number Puzzles Stage 2: fill original addition/subtraction <=20 physical digit-card gameboard, each physical card may be used only once per entire board",
+      "Activity 2 choose from What's Behind My Back?, How Close?, or Number Puzzles; partner work and teacher Math Community notes"
+    ],
+    "studentPrintPdf": "NOT_VERIFIED",
+    "educatorRestrictedMaterials": "NOT_VERIFIED",
+    "classroomEvidence": "NOT_OBSERVED"
+  },
+  "stageB": {
+    "status": "STRICT_PRIOR_PROSE_AND_SOURCE_LOCKED_REPAIR_AUTHORED_NOT_EXECUTED",
+    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1CentersAndRealDataCorrections.cs",
+    "dependencies": [
+      "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+      "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs"
+    ],
+    "guard": "Original canonical body SHA, exact source URL, official standards in original order, original English teaching fields and exact previous content version"
+  },
+  "stageC": {
+    "status": "ONE_EXACT_NUMBER_TALK_FAMILY_PLUS_AUTHORING_TESTS_NO_GAMEBOARD_GRADING",
+    "registeredDigitalFamilies": [
+      "usccss.g2.u01.l06.number_talk_two_two_digit_within50"
+    ],
+    "constraints": "Gameboard exact placement, global card uniqueness, partner exchange and reflective discussion require human source-specific review",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1CentersAndRealDataCorrectionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson6NumberTalkTests.cs"
+    ],
+    "execution": "NOT_EXECUTED"
+  },
+  "closure": {
+    "status": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "stageD": "NOT_STARTED",
+    "academicApproval": "NOT_ASSERTED",
+    "outstanding": [
+      "Student task print/download source not independently checked",
+      "Teacher response/Cool-down may be educator-restricted",
+      "Physical student-authored and classroom performance not falsely auto-certified",
+      "Stage D technical test evidence not collected"
+    ]
+  }
+}
