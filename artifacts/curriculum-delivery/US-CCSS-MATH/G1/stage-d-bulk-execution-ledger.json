@@ -33,12 +33,12 @@
   "currentBatch": "D3_TECHNICAL_COMPLETE",
   "gradeRelease": "NO_GO",
   "ci": {
-    "candidateSha": "2eaf34de1cfe52924eb0f2d4b4277caa5ec9447e",
+    "candidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
     "build": "PASS_15_GITHUB_PR_WORKFLOWS_ON_EXACT_CANDIDATE_2EAF34DE_DISPOSABLE_BUILD_INCLUDED",
     "unit": "PASS_G1_SCOPED_INDEPENDENT_SOURCE_MATH_TEST_JOB_39596965166_AND_HISTORIC_LOCAL_3324_3324_AT_EARLIER_CODE_SHA",
     "integration": "PASS_DISPOSABLE_HTTPS_96_AUTHENTICATED_HTML_95_GRADED_AND_PERSISTED_90_SOURCE_BODIES",
     "authenticatedE2e": "PASS_SOURCE_BODY_90_OF_90_190_FRAGMENTS_AND_96_LESSON_HTML_95_DIGITAL_CORRECT_MALFORMED_AND_WELL_FORMED_WRONG",
-    "finalCi": "15_OF_15_APPLICABLE_PR_WORKFLOWS_GREEN_ON_2EAF34DE; G1_FULL_GRADE_REAL_ACCEPTANCE_SKIPPED_ON_DRAFT_WITH_ONLY_6_OF_96_INTERNAL_GRADE_ACCEPTANCES",
+    "finalCi": "15_OF_15_APPLICABLE_PR_WORKFLOWS_SUCCESS_ON_5FB0D378; REAL_GRADE_RELEASE_GATE_SKIPPED_DRAFT; PREVIOUS_ORIGINAL_V1_6_ACCEPTED_ONLY",
     "workflowRunIds": [
       39596966182,
       39596965331,
@@ -120,12 +120,12 @@
     "testedPullRequestMergeSha": "09bc92158a7d4b7e92722199f4719608049667dc",
     "pullRequest": 569,
     "httpEvidence": {
-      "runId": 39596965158,
-      "jobId": 119211551776,
-      "artifactId": 12344666075,
+      "runId": 39600111939,
+      "jobId": 119223497504,
+      "artifactId": 12345398813,
       "artifactName": "g1-96-original-source-practice-https-candidate-not-academic-clearance",
-      "testedCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
-      "matchingHeadSha": "2eaf34de1cfe52924eb0f2d4b4277caa5ec9447e",
+      "testedCheckoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+      "matchingHeadSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
       "identicalTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
       "validatedRows": 96,
       "uniqueOrdinals": 96,
@@ -377,7 +377,17 @@
       "scope": "DISPOSABLE_AUTHENTICATED_HTTPS_ORIGINAL_SOURCE_BODY_SELECTED_TEXT_AND_PRACTICE_GRADE"
     },
     "currentTechnicalVerificationEvidenceCodeSha": "2eaf34de1cfe52924eb0f2d4b4277caa5ec9447e",
-    "currentTechnicalVerificationTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f"
+    "currentTechnicalVerificationTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
+    "newIndependentTechnicalReconciler": {
+      "runId": 39600111939,
+      "artifactId": 12346166910,
+      "sha256": "8adec866010523fcd20f194713453f9f076e3a6926c6c888b37480f2274efff9",
+      "status": "SUCCESS_96_PER_LESSON_AUTHENTICATED_TECHNICAL_SCOPED_PROOF",
+      "tests": "TAMPERED_SOURCE_AND_GRADING_NEGATIVE_CONTROLS_PASS",
+      "noHumanAcademicSignoff": true,
+      "publisherRightsUnclaimed": true,
+      "realReleaseGate": "NOT_EXECUTED_DRAFT_PR"
+    }
   },
   "sourceBasis": {
     "handoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lessons-076-146-stage-a-c-authoring-handoff-20261021.md",
@@ -387,7 +397,7 @@
       "note": "Historical V1 A-D acceptance of exact old candidate; current Stage D verification still unrun at new branch HEAD."
     }
   },
-  "nextAction": "Stage D source-scoped technical validation is complete for 51–146 on exact candidate 2eaf34de; the 96 authenticated rows, 95 graded and persisted rows, and 90 source-scoped instructional checks were successful. Apply the user's NO-human-approval policy to the actual per-lesson original V1 internal acceptance records without inventing proof; reconcile full-grade-progress and source/rights evidence against exact tested SHA, then run the genuine 96/96 real-release gate. NO_GO until this check succeeds; leave main, Render and production database unchanged.",
+  "nextAction": "96 authenticated technical candidate rows now reconciled by same-run CI evidence artifact 12346166910 at 5fb0d378. Existing original V1 gate only has six 51–56 INTERNALLY_ACCEPTED lessons. Continue actual per-lesson first-party source, visual/artwork rights and task-completeness review without requiring academic/teacher/external signoff. Do not convert 90 candidates to original V1 accepted or release GO without matching truthful proofs.",
   "lessons": [
     {
       "ordinal": 51,
@@ -430,6 +440,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 51,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": false,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -473,6 +495,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 52,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": false,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -516,6 +550,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 53,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": false,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -559,6 +605,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 54,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": false,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -602,6 +660,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 55,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": false,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -645,6 +715,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 56,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": false,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -705,6 +787,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 57,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -765,6 +859,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 58,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -825,6 +931,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 59,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -885,6 +1003,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 60,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -945,6 +1075,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 61,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1005,6 +1147,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 62,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1065,6 +1219,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 63,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1125,6 +1291,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 64,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1193,6 +1371,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 65,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 65,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": false,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1255,6 +1445,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 66,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1317,6 +1519,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 67,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1379,6 +1593,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 68,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1441,6 +1667,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 69,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1503,6 +1741,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 70,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1565,6 +1815,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 71,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1627,6 +1889,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 72,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1689,6 +1963,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 73,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1760,6 +2046,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 74,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1822,6 +2120,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 75,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1884,6 +2194,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 76,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -1946,6 +2268,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 77,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2008,6 +2342,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 78,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2070,6 +2416,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 79,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2132,6 +2490,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 80,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2194,6 +2564,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 81,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2256,6 +2638,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 82,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2317,6 +2711,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 83,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2378,6 +2784,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 84,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2439,6 +2857,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 85,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2500,6 +2930,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 86,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2561,6 +3003,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 87,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2622,6 +3076,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 88,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2683,6 +3149,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 89,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2744,6 +3222,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 90,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2805,6 +3295,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 91,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2866,6 +3368,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 92,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2927,6 +3441,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 93,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -2988,6 +3514,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 94,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3049,6 +3587,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 95,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3110,6 +3660,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 96,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3171,6 +3733,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 97,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3232,6 +3806,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 98,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3293,6 +3879,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 99,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3354,6 +3952,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 100,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3415,6 +4025,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 101,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3476,6 +4098,18 @@
         "testedPullRequestCheckoutSha": "09bc92158a7d4b7e92722199f4719608049667dc",
         "candidateTreeSha": "fc59ef32eecebff7c6de9265d3ed71050230ac6f",
         "realLearnerTaskCompletionClaimed": false
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 102,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3530,6 +4164,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 103,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 103,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3584,6 +4230,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 104,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 104,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3638,6 +4296,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 105,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 105,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3692,6 +4362,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 106,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 106,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3746,6 +4428,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 107,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 107,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3800,6 +4494,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 108,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 108,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3854,6 +4560,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 109,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 109,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3908,6 +4626,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 110,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 110,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -3962,6 +4692,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 111,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 111,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4016,6 +4758,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 112,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 112,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4070,6 +4824,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 113,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 113,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4124,6 +4890,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 114,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 114,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4178,6 +4956,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 115,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 115,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4232,6 +5022,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 116,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 116,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4286,6 +5088,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 117,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 117,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4340,6 +5154,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 118,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 118,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4404,6 +5230,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 119,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 119,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4458,6 +5296,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 120,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 120,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4512,6 +5362,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 121,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 121,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4566,6 +5428,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 122,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 122,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4629,6 +5503,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 123,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 123,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4692,6 +5578,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 124,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 124,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4755,6 +5653,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 125,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 125,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4818,6 +5728,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 126,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 126,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4872,6 +5794,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 127,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 127,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4926,6 +5860,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 128,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 128,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -4980,6 +5926,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 129,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 129,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5034,6 +5992,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 130,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 130,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5088,6 +6058,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 131,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 131,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5142,6 +6124,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 132,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 132,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5196,6 +6190,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 133,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 133,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5250,6 +6256,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 134,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 134,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5313,6 +6331,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 135,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 135,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5367,6 +6397,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 136,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 136,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5421,6 +6463,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 137,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 137,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5475,6 +6529,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 138,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 138,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5529,6 +6595,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 139,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 139,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5583,6 +6661,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 140,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 140,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5637,6 +6727,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 141,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 141,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5700,6 +6802,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 142,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 142,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5754,6 +6868,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 143,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 143,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5817,6 +6943,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 144,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 144,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5871,6 +7009,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 145,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 145,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_PRACTICE",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     },
     {
@@ -5934,6 +7084,18 @@
         "status": "PASS_ORIGINAL_SOURCE_BODY_SELECTED_PHRASES",
         "ordinal": 146,
         "evidenceScope": "Selected source lesson instructions in authenticated real learner page, not human observation or publisher artwork licence"
+      },
+      "technicalReconciliationProof": {
+        "workflowRunId": 39600111939,
+        "reportArtifactId": 12346166910,
+        "recordOrdinal": 146,
+        "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+        "checkoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+        "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+        "selectedSourceTaskTextVerified": true,
+        "persistedCorrectWrongMalformedAnswerIfApplicable": true,
+        "humanSignoffRequired": false,
+        "originalPublisherArtworkRightsProven": false
       }
     }
   ],
@@ -6090,5 +7252,29 @@
     "digitalCorrectWrongMalformedPersisted": 95,
     "wholeGradeRealInternalReleaseGateSucceeded": false,
     "fullGradeProgressInternallyAccepted": 6
+  },
+  "technicalEvidenceReconciledAtHeadSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+  "stageDExactRunPerLessonEvidence": {
+    "codeHeadSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedPrCheckoutSha": "0e177780613f0a943a48673954187e33bc36e922",
+    "runId": 39600111939,
+    "authenticatedRowsArtifactId": 12345398813,
+    "technicalReconciliationArtifactId": 12346166910,
+    "authenticatedRowsContentSha256": "61fab260a45883cbc058a4deb176160c0e425ae564cb9698ff55572f2567b6bf",
+    "technicalReconciliationContentSha256": "8adec866010523fcd20f194713453f9f076e3a6926c6c888b37480f2274efff9",
+    "verificationScope": "96 authenticated first-party learner pages; selected source task text in 90; 95 digital attempts with correct, malformed, well-formed wrong grading persisted; 65 source-authored without numeric auto-grade",
+    "humanAcademicTeacherApprovalRequired": false,
+    "copyrightAndFullOriginalVisualTaskParityCertified": false,
+    "wholeGradeFullInternalV1AcceptanceCertified": false,
+    "runCompletedSuccessfully": true,
+    "lessonCount": 96,
+    "originalSourceBodyLessons": 90,
+    "selectedFragments": 190,
+    "gradesPersisted": 95,
+    "teacherOnlyOriginalTaskOrdinal": 65,
+    "applicableCIGatesGreen": 15,
+    "externalAcademicTeacherSignoffRequired": false,
+    "originalV1FormalProgressAcceptanceStill": 6,
+    "release": "NO_GO"
   }
 }
