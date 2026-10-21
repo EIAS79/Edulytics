@@ -23,11 +23,15 @@ internal static class UsCcssG2Unit1Lesson9BarGraphQuestions
         if(!Supports(family))throw new InvalidOperationException("Unsupported G2 U01 L09 bar graph");
         var p=new Dictionary<string,int>(StringComparer.Ordinal);
         for(var i=0;i<4;i++)p[$"bar{i}"]=random.Next(0,15);
+        var museum=p["bar0"];
+        var zoo=p["bar1"];
+        var park=p["bar2"];
+        var library=p["bar3"];
         var title="Bar graph: favorite school-trip locations. " +
             "Horizontal categories Museum, Zoo, Park, Library. " +
             "Vertical NUMBERED SCALE from 0 to 14, one student per tick. " +
-            $"Museum height {p["bar0"]}; Zoo height {p["bar1"]}; " +
-            $"Park height {p["bar2"]}; Library height {p["bar3"]}. ";
+            $"Museum height {museum}; Zoo height {zoo}; " +
+            $"Park height {park}; Library height {library}. ";
         var explanation="Read the tick-marked vertical scale and find the correct bar height; " +
             "then add, compare or total categories as the question asks. " +
             "A numeric answer does not replace original student-written graph statements.";
@@ -35,7 +39,8 @@ internal static class UsCcssG2Unit1Lesson9BarGraphQuestions
         {
             var target=random.Next(4);
             p["target"]=target;
-            title+=$"How many students selected {new[]{"Museum","Zoo","Park","Library"}[target]}? Enter the exact bar height.";
+            var name=new[]{"Museum","Zoo","Park","Library"}[target];
+            title+=$"How many students selected {name}? Enter the exact bar height.";
         }
         else if(family==Combine)
         {
