@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 5,
+  "unitNumber": 1,
+  "lessonNumber": 5,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L05",
+  "lessonTitle": "Add Within 50",
+  "officialOutcomeCodes": [
+    "CCSS:2.NBT.B.5"
+  ],
+  "sourceEdition": "Illustrative Mathematics / Kendall Hunt IM K-5 1st Edition 2021",
+  "stageA": {
+    "status": "PUBLIC_TEACHER_LESSON_STUDENT_FACING_HTML_REVIEWED_PRINT_COOLDOWN_PENDING",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-5/preparation.html",
+    "originalLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-5/lesson.html",
+    "warmUp": "Two-digit + one-digit sums, 16+3,16+5,26+5,38+6, with make-ten mental strategies",
+    "activity1": "How Close Stage 3: seven digit cards, choose FOUR physical cards to construct TWO two-digit numbers; original source suggests 50 target at start of Grade 2, 100 later. Source example cards 3 8 4 6 6 2 1: duplicate printed 6 allowed on two physical cards.",
+    "activity2": "Add within 50 including tens/ones regrouping; student shows reasoning by words, drawings, or cubes. Source tasks include 37+8,24+23,16+30,39+11,27+15.",
+    "synthesis": "Partner comparison/explanation and Math Community norms require authentic teacher observation",
+    "cooldown": "What's the Value of the Sum? requires educator login; body unverified",
+    "printTask": "Source has publicly linked print statements but bytes have not been inspected, not marked complete."
+  },
+  "stageB": {
+    "status": "SOURCE_GUARDED_TEACHING_CORRECTION_AUTHORED",
+    "originalDefect": "Generic addition steps did not cover 7 cards, two two-digit addends, target 50, ten regrouping or multi-strategy explanation; awkward pronouns in learner wording.",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1AddWithin50SourceTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "sourceGuard": "Exact original source URL, previous canonical body SHA, 2.NBT.B.5, original English fields and old content version"
+  },
+  "stageC": {
+    "status": "TWO_EXACT_DIGITAL_SUBSKILL_FAMILIES_AUTHORED_UNRUN",
+    "families": [
+      "usccss.g2.u01.l05.seven_cards_two_numbers_min_gap",
+      "usccss.g2.u01.l05.add_within50_place_value"
+    ],
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson5Questions.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson5PracticeContracts.cs",
+    "tests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson5QuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1AddWithin50SourceTeachingCorrectionTests.cs"
+    ],
+    "digitTaskLimits": "Minimum numerical distance cannot grade chosen pair of two-digit addends or accept multiple independently authored correct equations, which require teacher rubric. Card positions and repeated digits are not confused.",
+    "testsExecuted": false
+  },
+  "closure": {
+    "status": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "stageDExecuted": false,
+    "academicApproved": false,
+    "issues": [
+      "Print student task PDF not independently reviewed",
+      "Original Cool-down restricted by teacher login",
+      "Teacher-observed original authored equation, drawings and partner explanations not evidenced",
+      "No Stage D tests/CI were executed"
+    ]
+  }
+}
