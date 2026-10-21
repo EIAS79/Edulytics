@@ -49,7 +49,7 @@ test('source task parity register tracks original authorship and geometry/measur
    assert.ok(byOrdinal(o)?.remainingAcademicTaskParityWork,'Missing source task decision for '+o);
 });
 
-test('whole-unaccepted Stage A selection covers exact 90 current unaccepted lessons without granting academic acceptance',()=>{
+test('original 90-lesson 2026-10-20 Stage A cohort is preserved without denying later verifiable internal acceptances',()=>{
  const progress=read(root+'full-grade-progress.json');
  const cohort=ledger.stageAWholeUnacceptedCohort20261020;
  assert.ok(cohort,'Missing current whole-cohort Stage A intake');
@@ -64,9 +64,20 @@ test('whole-unaccepted Stage A selection covers exact 90 current unaccepted less
  assert.equal(cohort.manualGitHubCITriggered,false);
  assert.equal(cohort.finalRelease,'NO_GO');
  assert.equal(cohort.noFalseApprovals,true);
+ // stageAWholeUnacceptedCohort20261020 is a HISTORICAL snapshot at the
+ // moment the earlier six (51-56) were the only internal V1 acceptances.
+ // New, independently evidenced V1 approvals must reduce the live worklist,
+ // not rewrite the already-hashed original teacher/student source inventory.
+ const nowAccepted=progress.newLessons.filter(x=>x.status==='INTERNALLY_ACCEPTED');
  const pending=progress.newLessons.filter(x=>x.status!=='INTERNALLY_ACCEPTED');
- assert.equal(pending.length,90);
- assert.deepEqual(pending.map(x=>x.ordinal),Array.from({length:90},(_,i)=>i+57));
+ assert.equal(nowAccepted.length+pending.length,96);
+ assert.ok(nowAccepted.length>=6);
+ assert.deepEqual(nowAccepted.map(x=>x.ordinal),
+   Array.from({length:nowAccepted.length},(_,i)=>i+51));
+ assert.deepEqual(pending.map(x=>x.ordinal),
+   Array.from({length:pending.length},(_,i)=>i+51+nowAccepted.length));
+ assert.equal(progress.nextOrdinal,pending[0]?.ordinal??147);
+ assert.ok(pending.length<=90);
  assert.deepEqual(cohort.assessmentModes,{
   DIGITAL_PRACTICE:79,DIGITAL_AND_SOURCE_AUTHORED_TASK:10,SOURCE_AUTHORED_TASK:1});
  assert.match(cohort.notYetProven,/not evidence that all 90 full original/i);
