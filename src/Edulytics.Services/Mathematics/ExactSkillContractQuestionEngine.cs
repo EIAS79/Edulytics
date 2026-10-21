@@ -158,6 +158,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssT001RepresentationChoices.Supports(family.Trim()) ||
          UsCcssG1Batch03DataQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1FirstLessonQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -347,6 +348,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG1Unit2NextFiveQuestions.Verify(family,parameters,answer);
         if (UsCcssG1Unit2Part2Questions.Supports(family))
             return UsCcssG1Unit2Part2Questions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
+            return UsCcssG2Unit1FirstLessonQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1031,6 +1034,12 @@ public sealed class ExactSkillContractQuestionEngine
             var story=UsCcssG1Unit2Part2Questions.Build(family,random);
             return new ExactProblem(story.Family,story.Prompt,story.Solution,
                 story.ItemType,story.Parameters);
+        }
+        if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1FirstLessonQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
         }
         if (UsCcssB001SourceGoalQuestions.Supports(family))
         {
@@ -2901,6 +2910,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG1Unit2NextFiveQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2Part2Questions.Supports(problem.Family))
             return UsCcssG1Unit2Part2Questions.Solve(problem.Family,p);
+        if (UsCcssG2Unit1FirstLessonQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1FirstLessonQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))
