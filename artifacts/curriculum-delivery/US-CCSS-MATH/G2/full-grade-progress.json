@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 7,
-    "firstUnclosedLesson": 8,
-    "nextSequentialLesson": 8,
-    "currentWork": "Grade 2 ordinals 1–7 sequentially A-B-C authored and READY_FOR_STAGE_D. Next strictly U01 L08 original picture graphs; earlier draft teacher-source guarded, learner-facing graph task and new Cool-down to finish."
+    "lastConsecutiveACClosed": 8,
+    "firstUnclosedLesson": 9,
+    "nextSequentialLesson": 9,
+    "currentWork": "Grade 2 ordinals 1–8 sequentially A-B-C authored and READY_FOR_STAGE_D. Next original U01 L09 Interpret Bar Graphs; Stage A source review then original graph visuals, practice and Cool-down before next."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -110,13 +110,13 @@
     {
       "gradeOrdinal": 8,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L08",
-      "sourceReview": "PUBLIC_TEACHER_PREPARATION_AND_CANONICAL_EXCERPTS_REVIEWED_FULL_HTML_PRINT_COOLDOWN_PENDING",
-      "teaching": "STRICT_SOURCE_PREDECESSOR_LOCKED_FIX_AUTHORED",
-      "practice": "THREE_SOURCE_GOAL_PICTOGRAPH_FAMILIES_AUTHORED_NOT_TESTED",
+      "sourceReview": "IM2021_PUBLIC_TEACHER_PREPARATION_STUDENT_PICTOGRAPH_ACTIVITY_GOALS_REVIEWED",
+      "teaching": "SOURCE_ORIGINAL_PICTURE_GRAPH_KEY_CATEGORY_POPULATION_TEACHING_READY",
+      "practice": "THREE_EXACT_GRAPH_FAMILIES_PLUS_ORIGINAL_FIRST_PARTY_COOLDOWN_STUDENT_ENTRY_READY",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 9,
@@ -1637,14 +1637,7 @@
       "acceptance": "NOT_ASSERTED"
     }
   ],
-  "returnQueue": [
-    {
-      "gradeOrdinal": 8,
-      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L08",
-      "reason": "Full original teacher lesson and printable figures not inspected, restricted cooldown, independent student evidence missing.",
-      "nextAction": "Review true original picture graph and source text; do not assert academic acceptance from derived symbol-only analogues."
-    }
-  ],
+  "returnQueue": [],
   "executionPolicy": {
     "mode": "STRICT_ONE_LESSON_FULL_A_B_C_THEN_NEXT",
     "startOrdinal": 1,
