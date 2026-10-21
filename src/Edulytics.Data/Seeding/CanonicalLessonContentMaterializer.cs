@@ -41,6 +41,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection.Apply(document);
         CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection.Apply(document);
         CommonCoreG2Unit1BarCompareTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1TapeDiagramTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -239,8 +240,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Questions);
         var g2Compare = CommonCoreG2Unit1BarCompareTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Centers2);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Tape = CommonCoreG2Unit1TapeDiagramTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Compare);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Tape);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -323,6 +326,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2Unit1BarCompareTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1TapeDiagramTeachingCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
@@ -425,6 +430,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit1BarCompareTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1TapeDiagramTeachingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
