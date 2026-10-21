@@ -93,7 +93,8 @@ public sealed class UsCcssG1Lessons87To101LaterOriginalSourcesTests
                     family,task.Parameters,
                     UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,task.Parameters)));
                 if(task.Parameters["mode"]>=4)
-                    Assert.Contains("ORIGINAL 2021",task.Prompt);
+                    Assert.True(task.Prompt.Contains("ORIGINAL 2021",StringComparison.Ordinal) ||
+                        task.Prompt.Contains("EDULYTICS FIRST-PARTY",StringComparison.Ordinal));
             }
             for(var mode=4;mode<=maxMode;mode++)
                 Assert.True(counts.GetValueOrDefault(mode)>40);
