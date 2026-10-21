@@ -12,50 +12,72 @@
   ],
   "sourceEdition": "Illustrative Mathematics / Kendall Hunt IM K-5 2021",
   "stageA": {
-    "status": "PUBLIC_TEACHER_LESSON_STUDENT_FACING_HTML_REVIEWED_PRINT_COOLDOWN_PENDING",
-    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-4/lesson.html",
-    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-4/preparation.html",
-    "warmUp": "Number Talk: make ten, eg. 8+2, 8+3, 8+5, 7+6 and explanation",
-    "activity1": "Original How Close stage 1: five distinct digit cards 0..9 (tens removed), choose THREE, sum as close to 20 as possible, write equation, compare with partner. Example cards 5 8 2 4 6.",
-    "activity2": "Eight addition and subtraction expressions in 0..20, students show strategy with drawings/numbers/words; discuss multiple ways for 17−9.",
-    "synthesis": "Math Community norms and strategy discussion require human teacher",
-    "cooldown": "Sums and Differences (login-restricted original text not inspected)",
-    "printTaskSource": "PUBLIC_PRINT_PDF_NOT_FETCHED_IN_THIS_RUN",
-    "originalStudentResponses": "NOT_OBSERVED",
-    "originalImageCopyright": "Do not copy digit-card artwork; use authored text prompts"
+    "status": "COMPLETE_ORIGINAL_TEACHER_STUDENT_2021_HTML_AND_INDEPENDENT_CARD_ASSESSMENT",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-4/preparation.html",
+    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-4/lesson.html",
+    "warmUp": "Make ten number talk: 8+2, 8+3, 8+5, 7+6",
+    "activity1": "Five digit cards 0–9, remove 10, select exactly three cards, add and record equation closest to target 20; compare with partner",
+    "activity2": "Add/subtract within 20 with any correct strategy using student words or drawings; original 17-9 reasoning covers multiple ways",
+    "synthesis": "Update Math Community and compare partner strategy, teacher assessed",
+    "publisherCoolDown": "Teacher-login-only; Edulytics independently authored mathematical equivalent, not copied",
+    "publisherFigures": "not copied; Edulytics original digit cards rendered",
+    "studentFacingTaskReadFromPublicLesson": true,
+    "officialOutcomeCodes": [
+      "CCSS:2.OA.B.2"
+    ]
   },
   "stageB": {
-    "status": "SOURCE_GUARDED_TEACHING_CORRECTION_AUTHORED",
-    "sourceDefect": "Previous explanation and generic subtraction-only steps did not reflect five-card three-of-five optimization, making ten, flexible within-20 strategies and teacher-led explanations.",
-    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1HowCloseSourceTeachingCorrection.cs",
+    "status": "COMPLETE_GUARDED_HOW_CLOSE_SPECIFIC_RICH_V2_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1HowCloseSourceTeachingCorrection.cs",
     "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
-    "seederGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
-    "exactOriginalLessonIdentity": "G2 U01 L04 + 2021 preparation URL + canonical original body SHA + official 2.OA.B.2",
-    "persistedPreviousBodyValidation": "Pre-existing English fields, source and version guarded. Different or partial translation refused.",
-    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1HowCloseSourceTeachingCorrectionTests.cs",
-    "testState": "WRITTEN_NOT_EXECUTED"
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "corrections": [
+      "Source-specific five-card three-of-five optimum and no leading ten card",
+      "make-ten and flexible within20 add/subtract",
+      "multiple valid arrangements and teacher-scored explanation",
+      "guarded previous edition+source SHA/URL/official standard/prose, refusal on unexpected drift"
+    ]
   },
   "stageC": {
-    "status": "TWO_EXACT_DIGITAL_SUBSKILL_FAMILIES_AUTHORED_UNRUN",
-    "families": [
+    "status": "COMPLETE_SOURCE_SPECIFIC_PRACTICE_AND_FIRST_PARTY_AUTHENTICATED_COOLDOWN",
+    "questionFamilies": [
       "usccss.g2.u01.l04.five_card_min_distance",
       "usccss.g2.u01.l04.within20_add_or_sub"
     ],
-    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson4PracticeContracts.cs",
-    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson4Questions.cs",
-    "test": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson4QuestionsTests.cs",
-    "originalActivityLimits": "Digit-only minimum absolute distance does not grade selected 3-card equation or multiple equally correct combinations. Original written equation, drawings and explanations need separate teacher rubric.",
-    "testStatus": "WRITTEN_NOT_EXECUTED"
+    "originalPracticeContracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson4PracticeContracts.cs",
+    "exactEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson4Questions.cs",
+    "independentCoolDown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FourthLessonEdulyticsCoolDown.cs",
+    "authenticatedController": "src/Edulytics.Web/Controllers/Grade2Lesson4ActivitiesController.cs",
+    "originalCardView": "src/Edulytics.Web/Views/Grade2Lesson4Activities/Index.cshtml",
+    "readerLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "correction": "Exact 3-of-5 expression parsed, original available physical card uniqueness, closest-sum checked; two within-20 outcomes; alternative student strategy teacher rubric",
+    "studentGradingLimits": "Original partner card rounds and visual strategy remain teacher assessed; immediate companion response is not persisted official school grade.",
+    "authoredTests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson4QuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1HowCloseSourceTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FourthLessonEdulyticsCoolDownTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson4ActivitiesWebContractTests.cs"
+    ],
+    "tests": "WRITTEN_NOT_EXECUTED"
   },
   "closure": {
-    "status": "A_C_EXPLICIT_GAP",
-    "readyForStageD": false,
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_ONLY",
+    "legalApproach": "INDEPENDENT_EDULYTICS_CARD_VISUALS_AND_COOLDOWN_NOT_PUBLISHER_REPRODUCTION",
     "stageDExecuted": false,
-    "academicAccepted": false,
-    "issues": [
-      "Student printable task PDF not inspected",
-      "Cool-down restricted by educator login",
-      "Original authored multi-solution three-card equation and student reasoning not assessed digitally"
-    ]
-  }
+    "CIExecuted": false,
+    "testsExecuted": false,
+    "academicHumanApproval": "NOT_ASSERTED",
+    "mainMerge": false,
+    "productionDeploy": false,
+    "productionRelease": "NO_GO",
+    "runtimeObserved": "NOT_TESTED",
+    "note": "Authoring complete; original IM skills preserved with separate physical/explanation rubric. All runtime tests await Stage D."
+  },
+  "nextAction": "NOW_SEQUENTIALLY_PROCEED_TO_GRADE2_U01_L05"
 }
