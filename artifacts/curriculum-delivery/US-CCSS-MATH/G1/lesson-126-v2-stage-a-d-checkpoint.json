@@ -44,7 +44,10 @@
       "originalPupilConstructionAndTracing": "TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED",
       "finalExactShaTests": "NOT_YET_EXECUTED",
       "newAcademicApproval": "NOT_CLAIMED"
-    }
+    },
+    "sourceMathRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons121To136SourceMathTests.cs",
+    "sourceMathRegressionCommit": "8891bd6bedca4d0181affb726e111db462eaab15",
+    "testsExecuted": false
   },
   "stageD": {
     "sourceAssertionFile": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
@@ -60,5 +63,20 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "release": "NO_GO",
-  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json"
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceAuthoringBoundary": "Build SAME pattern-block outline twice from different pieces, trace, and record Picture Books Stage3 observations; first-party hexagon 6 triangles/2 trapezoids model is not original student tracing.",
+    "originalTextualStudentTasksReviewed": true,
+    "existingFirstPartyTeachingReused": true,
+    "numericOrAttributeProxyVerifiedStatically": true,
+    "physicalDrawingAndPartnerWorkRequiresTeacher": true,
+    "originalSourceArtworkNotAutoCertified": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "originalV1AcademicApproval": false
+  },
+  "nextAction": "Continue ordinal127 sequentially; defer Stage D and CI."
 }
