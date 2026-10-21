@@ -30,6 +30,10 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
         "usccss.g1.u07.l16.daily_schedule_time",
         "usccss.g1.u07.l17.center_geometry_and_time"
     ];
+    private static readonly (int a,int b,int c)[] Lesson8OriginalWarmups =
+    [
+        (6,4,8),(6,8,4),(6,8,5),(6,5,9)
+    ];
     public sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     private static int Index(string? family)
@@ -44,6 +48,12 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
         if(Index(family)<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode))return false;
+        if(Index(family)==7&&mode>=5)
+        {
+            if(mode>8)return false;
+            var original=Lesson8OriginalWarmups[mode-5];
+            return a==original.a&&b==original.b&&c==original.c;
+        }
         if(Index(family)==15&&mode>=4)
             return c==0&&(mode switch
             {
@@ -64,7 +74,7 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
     {
         int i=Index(family);
         if(i<0)throw new InvalidOperationException("Unsupported G1 Unit7 original-source family");
-        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==15?9:i==1||i==2||i==4||i==6||i==7||i==13?5:4);
+        int a=random.Next(1,13),b=random.Next(1,13),mode=random.Next(i==5?7:i==8?6:i==7?9:i==15?9:i==1||i==2||i==4||i==6||i==7||i==13?5:4);
         if(i==1&&mode==4){a=random.Next(2,5);b=random.Next(2,4);}
         if(i==13&&mode==4)a=random.Next(1,11);
         if(i==12&&mode==3&&b==a)b=a==12?1:a+1;
@@ -74,7 +84,10 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             8=>(6,12),
             _=>throw new InvalidOperationException("Unreviewed source clock/warmup case")
         };
-        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}};
+        int c=0;
+        if(i==7&&mode>=5)
+            (a,b,c)=Lesson8OriginalWarmups[mode-5];
+        var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"mode",mode}};
         string prompt=i switch
         {
             0=>mode switch
@@ -107,7 +120,10 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
             6=>mode==4?
                 $"SOURCE-INSPIRED SAME-OUTLINE REBUILD (FIRST-PARTY MODEL #{a}): An identical regular HEXAGON silhouette is covered completely by SIX equal pattern-block triangles with no gaps. Rebuild the SAME silhouette using TWO trapezoid blocks; each trapezoid equals THREE of the small unit triangles. Report the TWO different block counts and whether the covered AREA and OUTLINE are unchanged. Write TRIANGLES=number;TRAPEZOIDS=number;SAME_OUTLINE=YES/NO. Students' original actual block construction, tracing and teacher checks cannot be inferred from this arithmetic model.":
                 $"Two equal right triangles can be placed along their diagonal to form a rectangle. Card #{a}, model #{b}. Count the number of triangular COMPONENTS. Write PARTS=number.",
-            7=>mode==4?
+            7=>mode>=5?
+                $"ORIGINAL 2021 MENTAL WARM-UP: {a}+{b}+{c}. Write RESULT=number. "+
+                "Student Match Mine construction remains teacher-reviewed.":
+                mode==4?
                 $"SOURCE-INSPIRED MATCH MINE (FIRST-PARTY SPATIAL MODEL #{a}): A partner describes a three-dimensional construction made from TWO equal cubes touching face to face on the bottom row, plus ONE equal cube stacked directly on the LEFT cube. Count how many cubes are in the bottom and top layers and in the whole arrangement. Write BOTTOM=number;TOP=number;TOTAL_CUBES=number. Teacher checks actual partner explanations and physical recreation; a numeric result cannot certify it.":
                 mode%2==0?$"Center numerical task {a}+{b} (sum within 24, classroom shape center assessed separately). Write RESULT=number.":
                 $"Center shape naming card #{a}: a CLOSED flat figure with exactly 3 straight sides. Write SHAPE=name.",
@@ -183,7 +199,8 @@ public static class UsCcssG1FullGradeUnit7GeometryTimeQuestions
                 _=>$"ANSWER={(mode%2==0?"YES":"NO")}"
             },
             6=>mode==4?"TRIANGLES=6;TRAPEZOIDS=2;SAME_OUTLINE=YES":"PARTS=2",
-            7=>mode==4?"BOTTOM=2;TOP=1;TOTAL_CUBES=3":
+            7=>mode>=5?$"RESULT={a+b+p["c"]}":
+                mode==4?"BOTTOM=2;TOP=1;TOTAL_CUBES=3":
                 mode%2==0?$"RESULT={a+b}":"SHAPE=TRIANGLE",
             8=>mode==4?"CIRCLE_PART=HALF;CIRCLE_PIECES=2;SQUARE_PART=HALF;SQUARE_PIECES=2":
                 mode==5?"CIRCLE_PART=FOURTH;CIRCLE_PIECES=4;SQUARE_PART=FOURTH;SQUARE_PIECES=4":
