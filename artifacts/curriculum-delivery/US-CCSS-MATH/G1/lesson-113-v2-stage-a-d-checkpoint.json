@@ -46,7 +46,9 @@
     ],
     "changedPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
     "codeCommit": "5884913f6c716dd15cdd9eb54cd79ce6962f921c",
-    "sourceOnlyGradingBoundary": "Digital can grade numbers but cannot claim actual shoe measurements, student tracings or partner work."
+    "sourceOnlyGradingBoundary": "Digital can grade numbers but cannot claim actual shoe measurements, student tracings or partner work.",
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0"
   },
   "stageD": {
     "contentRegression": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
@@ -63,7 +65,19 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue whole-cohort A comparisons; reuse repaired B and C, with final .NET/actual auth runtime + persistence + rights checks and independent lesson acceptance after exact-grade content freeze only.",
+  "nextAction": "Continue ordinal 114 in order; D/CI deferred.",
   "singleSourceTeachingPathConfirmed": true,
-  "v1ToV2HistoricalSourceMigrationGuarded": true
+  "v1ToV2HistoricalSourceMigrationGuarded": true,
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Four named shoe source stories (16,20,5,9) represented, real student/teacher shoe tracing and peer work teacher-only.",
+    "originalStudentAndTeacherTextCompared": true,
+    "firstPartyTeachingAndMathReviewed": true,
+    "originalActualMeasurementTeacherOnly": true,
+    "sourceImagesNotCertified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
+  }
 }
