@@ -47,7 +47,7 @@ function validate(cp,p,l,map,n){
   if(d?.batch!==(n<=82?'D1':n<=114?'D2':'D3'))bad('BATCH');
   return e;
 }
-test('Every remaining Grade 1 original A-C checkpoint now carries exact-run Stage D proof, with 16 separately verified V1 acceptances',()=>{
+test('Every remaining Grade 1 original A-C checkpoint now carries exact-run Stage D proof, with 26 independently evidenced V1 acceptances',()=>{
  const c=checkpoints(),progress=load('full-grade-progress.json'),
    ledger=load('stage-d-bulk-execution-ledger.json'),map=load('full-grade-practice-candidate-map.json');
  assert.equal(c.length,90);
@@ -57,7 +57,7 @@ test('Every remaining Grade 1 original A-C checkpoint now carries exact-run Stag
  assert.equal(progress.release,'NO_GO');
  assert.equal(progress.newLessons.length,96);
  assert.deepEqual(progress.newLessons.filter(x=>x.status==='INTERNALLY_ACCEPTED').map(x=>x.ordinal),
-   Array.from({length:16},(_,i)=>i+51));
+   Array.from({length:26},(_,i)=>i+51));
  for(let i=0;i<90;i++){
    const n=i+57,violations=validate(c[i],progress.newLessons[n-51],
      ledger.lessons[n-51],map.records[n-51],n);
