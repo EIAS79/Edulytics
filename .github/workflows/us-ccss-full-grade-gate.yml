@@ -37,6 +37,8 @@ on:
       - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
       - 'tests/us-ccss-full-grade-worklist.test.cjs'
       - 'tests/us-ccss-full-grade-gate.test.cjs'
+      - 'tests/us-ccss-g1-stage-d-checkpoint-closure.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-*-v2-stage-a-d-checkpoint.json'
       - '.github/workflows/us-ccss-full-grade-gate.yml'
   push:
     branches: [main]
@@ -74,6 +76,8 @@ on:
       - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
       - 'tests/us-ccss-full-grade-worklist.test.cjs'
       - 'tests/us-ccss-full-grade-gate.test.cjs'
+      - 'tests/us-ccss-g1-stage-d-checkpoint-closure.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-*-v2-stage-a-d-checkpoint.json'
       - '.github/workflows/us-ccss-full-grade-gate.yml'
   workflow_dispatch:
     inputs:
@@ -102,6 +106,7 @@ jobs:
       - name: Test honest 96-lesson source triage and fail-closed grade control
         run: |
           node --test tests/us-ccss-full-grade-gate.test.cjs
+          node --test tests/us-ccss-g1-stage-d-checkpoint-closure.test.cjs
           node --test tests/us-ccss-g1-full-grade-runtime-family-map.test.cjs
           node --test tests/us-ccss-g1-targeted-original-source-review.test.cjs
           node --test tests/us-ccss-g1-119-original-authoring-task.test.cjs

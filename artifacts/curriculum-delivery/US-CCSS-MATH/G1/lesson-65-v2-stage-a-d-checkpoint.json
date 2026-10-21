@@ -83,5 +83,31 @@
     "stageDExecuted": false,
     "testsAuthoredButNotExecuted": true
   },
-  "nextAction": "A-C first-party authored lesson and teacher rubric reviewed. No numeric auto-grade of student authorship; real pupil work, teacher observation and saved artifacts required at D. Continue ordinal 66; no CI until grade freeze."
+  "nextAction": "A-C first-party authored lesson and teacher rubric reviewed. No numeric auto-grade of student authorship; real pupil work, teacher observation and saved artifacts required at D. Continue ordinal 66; no CI until grade freeze.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 65,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U03:L28",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "SOURCE_AUTHORED_TASK",
+    "correctWrongMalformedPersisted": false,
+    "authoredOnlyInstructionsRendered": true,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "IN_PROGRESS",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Stage D code/runtime tested in the exact-run GitHub artifact; full original-V1 internal acceptance separately governed by full-grade-progress.json"
+  }
 }
