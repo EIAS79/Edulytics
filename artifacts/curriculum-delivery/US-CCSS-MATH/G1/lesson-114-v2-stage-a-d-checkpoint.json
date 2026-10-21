@@ -60,7 +60,9 @@
     "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
     "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
     "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
-    "sourceAuthoredRubric": null
+    "sourceAuthoredRubric": null,
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0"
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -76,5 +78,17 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint."
+  "nextAction": "Continue ordinal 115 in order; D/CI deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Original Han/Priya four-unit comparison: missing bracelet length 10 or 14, not the difference already supplied.",
+    "originalStudentAndTeacherTextCompared": true,
+    "firstPartyTeachingAndMathReviewed": true,
+    "originalActualMeasurementTeacherOnly": true,
+    "sourceImagesNotCertified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
+  }
 }
