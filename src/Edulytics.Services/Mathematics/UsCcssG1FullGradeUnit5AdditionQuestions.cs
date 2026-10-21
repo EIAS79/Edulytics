@@ -224,7 +224,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
            !p.TryGetValue("mode",out int mode)||mode<0||
            mode>(spec.LessonCode=="L01"?15:spec.LessonCode=="L02"?6:spec.LessonCode=="L03"?10:spec.LessonCode=="L04"?4:spec.LessonCode=="L06"?15:spec.LessonCode=="L07"?9:
            spec.LessonCode=="L08"?9:spec.LessonCode=="L09"?8:
-           spec.LessonCode=="L10"?10:spec.LessonCode=="L11"?9:spec.LessonCode=="L12"?15:
+           spec.LessonCode=="L10"?10:spec.LessonCode=="L11"?9:spec.LessonCode=="L12"?15:spec.LessonCode=="L13"?7:
            spec.LessonCode=="L14"?4:3))
             return false;
         if(spec.LessonCode=="L14")return mode==4 ? a==0&&b==0 : FoodDriveValid(a,b,mode);
@@ -274,6 +274,11 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             var source=Lesson12OriginalWarmups[mode-12];
             return a==source.a&&b==source.b;
         }
+        if(spec.LessonCode=="L13"&&mode==4)return a==26&&b==38;
+        if(spec.LessonCode=="L13"&&mode==5)return a==54&&b==25;
+        if(spec.LessonCode=="L13"&&mode>=6)
+            return a>=10&&a<=89&&b>=10&&b<=89&&a+b<=100&&
+                   (a%10+b%10>=10)==(mode==6);
         if(mode>=4&&(spec.LessonCode is "L01" or "L02" or "L03" or "L08" or "L09" or "L10" or "L11" or "L12"))
         {
             var source=Exact2021Equation(spec.LessonCode,mode);
@@ -310,7 +315,7 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
         int a=0,b=0;
         int mode=random.Next(spec.LessonCode=="L01"?16:spec.LessonCode=="L02"?7:spec.LessonCode=="L03"?11:spec.LessonCode=="L04"?5:spec.LessonCode=="L06"?16:spec.LessonCode=="L07"?10:
             spec.LessonCode=="L08"?10:spec.LessonCode=="L09"?9:
-            spec.LessonCode=="L10"?11:spec.LessonCode=="L11"?10:spec.LessonCode=="L12"?16:
+            spec.LessonCode=="L10"?11:spec.LessonCode=="L11"?10:spec.LessonCode=="L12"?16:spec.LessonCode=="L13"?8:
             spec.LessonCode=="L14"?5:4);
         if(spec.LessonCode=="L14")return FoodDriveBuild(family,random,mode);
         if(spec.LessonCode=="L02"&&mode==6)
@@ -510,6 +515,36 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
                 "Add the ones and see whether a new ten was made.",
                 AssessmentItemType.ShortAnswer,p);
         }
+        if(spec.LessonCode=="L13"&&mode>=4&&mode<=7)
+        {
+            int first=0,second=0;
+            if(mode==4){first=26;second=38;}
+            else if(mode==5){first=54;second=25;}
+            else
+            {
+                for(int attempt=0;attempt<2000;attempt++)
+                {
+                    first=random.Next(10,90);
+                    second=random.Next(10,90);
+                    var candidate=new Dictionary<string,int>
+                    {
+                        ["a"]=first,["b"]=second,["mode"]=mode
+                    };
+                    if(Valid(family,candidate))break;
+                }
+            }
+            var p=new Dictionary<string,int>{{"a",first},{"b",second},{"mode",mode}};
+            if(!Valid(family,p))throw new InvalidOperationException("Lesson 101 two-digit source skill drift");
+            return new(family,
+                $"EDULYTICS FIRST-PARTY TWO-DIGIT ADDITION for 2021 Unit 5 Lesson 13 centers: "+
+                $"Add {first}+{second} within 100 using tens and ones. "+
+                "Write TENS=number_of_tens;ONES=remaining_ones;NEW_TEN=YES/NO;TOTAL=number. "+
+                "This checks addition only: actual Target Numbers Stage 3 number cards, "+
+                "Five in a Row Stage 6 partner/board turns, and pupils' drawings "+
+                "remain teacher-supervised and are NOT auto-certified.",
+                "Combine tens and ones; if ten or more ones occur, exchange ten ones for an additional ten.",
+                AssessmentItemType.ShortAnswer,p);
+        }
         var original=Exact2021Equation(spec.LessonCode,mode);
         if(original.HasValue)
         {
@@ -665,6 +700,8 @@ public static class UsCcssG1FullGradeUnit5AdditionQuestions
             return $"A={a};B={b};NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L12"&&p["mode"]>=12)
             return $"TOTAL={sum};NEW_TEN={(a%10+b%10>=10?"YES":"NO")}";
+        if(spec.LessonCode=="L13"&&p["mode"]>=4)
+            return $"TENS={sum/10};ONES={sum%10};NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(p["mode"]>=4&&(spec.LessonCode is "L08" or "L09"))
             return $"NEW_TEN={(a%10+b%10>=10?"YES":"NO")};TOTAL={sum}";
         if(spec.LessonCode=="L06"&&p["mode"]==2)
