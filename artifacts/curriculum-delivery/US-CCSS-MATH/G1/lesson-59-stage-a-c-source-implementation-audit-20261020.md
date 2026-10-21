@@ -1,6 +1,6 @@
 # Grade 1 ordinal 59 — U03 L22 / Subtract from Teen Numbers — original 2021 A–C closure
 
-**Lesson:** `PED:US-CCSS-MATH:G1:U03:L22`  
+**Lesson:** `PED:US-CCSS-MATH:G1:U03:L22`
 **A–C outcome:** `READY_FOR_STAGE_D`; not an academic acceptance or any assertion of a passing CI/.NET run.
 
 ## A — local read-only 2021 original source

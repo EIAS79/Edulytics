@@ -33,7 +33,7 @@ public static class UsCcssG1FullGradeNextQuestions
             ZooThree=>a>=1&&a<=8&&b>=1&&b<=8&&c>=1&&c<=8&&a+b+c<=20&&
                 (mode!=2||(a==8&&b==7&&c==5))&&
                 (mode!=3||(a==3&&b==6&&c==7))&&
-                (mode!=4||(a==8&&b==4&&c==7)), 
+                (mode!=4||(a==8&&b==4&&c==7)),
             CenterTwoThree=>mode==3?
                 (a>=0&&a<=10&&b>=7&&b<=9&&c==0&&a+b<=20):
                 (a>=0&&a<=9&&b>=0&&b<=9&&

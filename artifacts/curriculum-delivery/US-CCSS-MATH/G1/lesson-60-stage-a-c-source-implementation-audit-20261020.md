@@ -1,6 +1,6 @@
 # Grade 1 ordinal 60 — U03 L23 / Use a Ten to Subtract — source and code review
 
-**Lesson code:** `PED:US-CCSS-MATH:G1:U03:L23`  
+**Lesson code:** `PED:US-CCSS-MATH:G1:U03:L23`
 **Status:** `READY_FOR_STAGE_D` for **Edulytics independently authored academic A–C content** under the owner's explicit October 20 approval; **not** a claim of verbatim 2021 publisher Cool-down parity, D validation or 96/96 acceptance.
 
 ## A. Read-only original 2021 source

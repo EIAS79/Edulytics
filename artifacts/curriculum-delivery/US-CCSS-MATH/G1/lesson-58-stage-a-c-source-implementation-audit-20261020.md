@@ -1,6 +1,6 @@
 # Grade 1 ordinal 58 — U03 L21 / Center Day 3 — A–C closure evidence
 
-**Lesson:** `PED:US-CCSS-MATH:G1:U03:L21`; original 2021 Kendall Hunt Unit 3 Lesson 21.  
+**Lesson:** `PED:US-CCSS-MATH:G1:U03:L21`; original 2021 Kendall Hunt Unit 3 Lesson 21.
 **Authoring status:** `READY_FOR_STAGE_D`, not an assertion that deferred Stage D/.NET/CI passed.
 
 ## A — original teacher/student material, center rules and boundaries
@@ -10,7 +10,7 @@ Our-CS original source was read-only inspected at
 Previously recorded original full teacher HTML SHA-256: `26cd4b1a20f8958d83c62453efc87429f3244e3f7a8b61a4a8e7039ac5bfffe4`; it is not newly rehashed in this authoring pass. The original cached center source files were also read:
 `center--how-close-1-5\center.html` and `center--five-in-a-row-addition-and-subtraction-1-2\center.html`, in the same Grade 1 root directory.
 
-Original source preparation: https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-21/preparation.html  
+Original source preparation: https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-21/preparation.html
 Original public lesson: https://im.kendallhunt.com/k5/teachers/grade-1/unit-3/lesson-21/lesson.html
 
 - Warm-up (10 min): open-ended **What do you know about 20?** The teacher asks students for representations, not a single auto-graded predetermined answer. Existing Rich V2 already preserves examples `10+10=20`, `13+7=20` and two filled ten-frames.

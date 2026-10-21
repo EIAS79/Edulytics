@@ -1,6 +1,6 @@
 # Grade 1 ordinal 57 — U03 L20 / A Trip to the Zoo: A–C closure evidence
 
-**Lesson code:** `PED:US-CCSS-MATH:G1:U03:L20`  
+**Lesson code:** `PED:US-CCSS-MATH:G1:U03:L20`
 **Authoring decision:** `READY_FOR_STAGE_D` (**A/B/C teaching + Practice repair complete; D, CI, and final academic acceptance NOT executed**).
 
 ## Stage A — original 2021 source independently reconciled

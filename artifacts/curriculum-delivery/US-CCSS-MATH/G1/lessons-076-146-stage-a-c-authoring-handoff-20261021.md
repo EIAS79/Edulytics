@@ -1,8 +1,8 @@
 # Edulytics Grade 1 US-CCSS Mathematics: Lessons 076–146 A–C authoring handoff
 
-**Recorded:** 2026-10-21 · **Repository:** `EIAS79/Edulytics` · **Authoring branch:** `curriculum/g1-continuous-authoring-final-ci-20261019`  
-**Pre-handoff commit:** `287df4ce4d806d38a06ede02096bb9e91a7dd3f0`  
-**Scope:** Strict chronological lessons **76 through 146 inclusive (71 lessons)**, not all of Grade 1.  
+**Recorded:** 2026-10-21 · **Repository:** `EIAS79/Edulytics` · **Authoring branch:** `curriculum/g1-continuous-authoring-final-ci-20261019`
+**Pre-handoff commit:** `287df4ce4d806d38a06ede02096bb9e91a7dd3f0`
+**Scope:** Strict chronological lessons **76 through 146 inclusive (71 lessons)**, not all of Grade 1.
 **Checkpoint inspection:** Each of the 71 existing files `lesson-{N}-v2-stage-a-d-checkpoint.json` was checked for `aToCClosure.outcome`. All 71 currently report **`READY_FOR_STAGE_D`**, with `openACDefects: []`. This is the **authoring checkpoint state**, not verified live academic acceptance.
 
 ## What was implemented or rechecked
@@ -32,5 +32,5 @@ The 2021 curriculum source has **teacher-facilitated physical activities, real s
 
 Only the connected **GitHub repository/authoring branch** is used for writes; do not edit/read a Windows `Our-CS` project clone as a substitute for GitHub. Respect canonical ordinal order. Do not restart the already authored 76–146 sequence or claim `Stage D` without explicit authorization. If an error is found during a future validation, record the **specific regression** and fix it on a controlled follow-up; never silently assert tests passed. Keep source-derived numeric facts separate from first-party invented examples, teacher-only tasks and unverified original images.
 
-**Verified checkpoint outcome:** 71 / 71 authoring checkpoints recorded `READY_FOR_STAGE_D`.  
+**Verified checkpoint outcome:** 71 / 71 authoring checkpoints recorded `READY_FOR_STAGE_D`.
 **Execution verification:** NOT RUN. **Release:** `NO_GO`. **Stage D:** ON HOLD.

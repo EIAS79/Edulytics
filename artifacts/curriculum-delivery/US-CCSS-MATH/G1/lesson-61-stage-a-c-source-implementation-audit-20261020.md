@@ -1,6 +1,6 @@
 # Grade 1 ordinal 61 — U03 Lesson 24 — A–C source / first-party content / math audit (2026-10-20)
 
-**Lesson code:** `PED:US-CCSS-MATH:G1:U03:L24`  
+**Lesson code:** `PED:US-CCSS-MATH:G1:U03:L24`
 **Status:** `READY_FOR_STAGE_D` **for Edulytics lesson authoring and accessible 2021 original mathematical tasks only**. This is **not** an executed xUnit/CI pass, Stage D acceptance, or verbatim protected publisher Section D checkpoint verification.
 
 ## A. Authorized read-only original edition and exact student tasks
