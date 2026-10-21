@@ -45,18 +45,35 @@
     "reusedCandidate": true,
     "actualLearnerRichV2ParityIndependentlyConfirmedAtCurrentHead": false,
     "newTeachingEdit": true,
-    "remaining": "Compare all six original Student Facing prompts with actual effective Rich V2; do not assert a digital numeric example substitutes live classroom measurement.",
+    "remaining": "Actual rendered learner text, exact configured database content, visual/copyright and authorized real-classroom measures deferred to Stage D, not claimed here.",
     "repairFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
     "repairCommit": "7b0aa116f815793e87648dee16b539a51f8c839e",
     "repairDetails": "Preserved existing learner renderer and digital family; added first-party source-specific goals, the two original activities, all six written/drawing/numeric furniture prompts, shared string comparison, necessary length-vs-width and teacher-only boundaries. Original source figure geometry is not inferred from hypothetical example measurements.",
-    "sourceScopedContentVersion": "us-ccss-g1-g1-u06-l03-instruction-v2"
+    "sourceScopedContentVersion": "us-ccss-g1-g1-u06-l03-instruction-v2",
+    "currentHeadSourceRepairConstantsStaticallyRechecked": true,
+    "currentHeadCorrectedVersion": "us-ccss-g1-g1-u06-l03-instruction-v2",
+    "effectiveCanonicalMaterializerRegressionTestAuthoredEarlier": true,
+    "existingTest": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "existingTestEvidence": "Effective(lessonCode) loads embedded documents and asserts six original source furniture activities in the English translation and effective content version; NOT executed on this new branch head."
   },
   "stageC": {
     "existingCandidateFamily": "usccss.g1.u06.l03.choose_indirect_comparison",
     "familyReusedFromRiskRegister": true,
     "independentCorrectWrongMalformedAtCurrentHead": "PENDING_FROZEN_SHA",
     "teacherOnlyBoundary": "Real pupil-selected tool, measured furniture/doors, explanation drawings and source figures cannot be scored as completed by numeric Practice.",
-    "digitalScope": "Existing 4 numeric modes for indirect longer, Mai/Clare shorter, teacher/student desk width fit; NOT a claim of completing six real classroom tasks."
+    "digitalScope": "Existing 4 numeric modes for indirect longer, Mai/Clare shorter, teacher/student desk width fit; NOT a claim of completing six real classroom tasks.",
+    "firstPartyNumericModes": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sourceGoalDigitalProxy": "Same unmodified intermediate reference for comparing indirect lengths, Mai/Clare route, teacher/student desk width-vs-door fit. Hypothetical quantities, not original source graphics.",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson105SourceIndirectMeasurementTests.cs",
+    "authoredTestsCommit": "598d06449eca95cc4b12ff8ba4791fe3bde8748a",
+    "followupTestCorrectionCommit": "01669b5dbf0eaf32a0f4806ca4db2b135ab2d818",
+    "testsExecuted": false,
+    "allSixOriginalPhysicalFurnitureAnswersAutoGraded": false
   },
   "stageD": {
     "githubCiManuallyRunDuringAuthoring": false,
@@ -71,7 +88,19 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "No fabricated source-map or classroom measurements; exact frozen-SHA .NET build/unit checks, real learner render, grading/persisted attempts, rights/accessibility and per-lesson V1 approval remain pending. Reuse this repair during whole-cohort A–D progression.",
+  "nextAction": "Continue ordinal106; versioned seven-card How Close candidate exists, investigate source family routing before closure.",
   "singleSourceTeachingPathConfirmed": true,
-  "v1ToV2HistoricalSourceMigrationGuarded": true
+  "v1ToV2HistoricalSourceMigrationGuarded": true,
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "accessibleOriginalSourceTaskTextCompared": true,
+    "firstPartyTeachingSourceRepairStaticallyReviewed": true,
+    "effectiveCanonicalLessonMaterializerTestAuthoredNotRun": true,
+    "numericIndirectComparisonProxyAndVerifierStaticallyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Six original furniture prompts and Mai/Clare walk sourced in corrective learner teaching; numeric digital modes explicitly hypothetical. Live chosen classroom measurements, original route-map image, visual copyright, authenticated actual translated Rich V2, real answer persistence and compiler/tests are Stage D evidence."
+  }
 }
