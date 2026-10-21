@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 2,
-    "firstUnclosedLesson": 3,
-    "nextSequentialLesson": 3,
-    "currentWork": "G2 U01 L01-L02 A-B-C authored/closed to READY_FOR_STAGE_D; all tests unrun. Next strictly G2 U01 L03. Older L03 code draft needs fresh original-source and cooldown assessment."
+    "lastConsecutiveACClosed": 3,
+    "firstUnclosedLesson": 4,
+    "nextSequentialLesson": 4,
+    "currentWork": "G2 U01 lessons 1–3 A-B-C authored sequentially and READY_FOR_STAGE_D. Next G2 U01 L04 (pre-authored draft must be source rechecked and independent Cool-down completed). Stage D unrun."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -26,7 +26,8 @@
     "2026-10-21 user corrected workflow: strict lesson by lesson A->B->C, mark A_C completed with READY_FOR_STAGE_D only after full evidence; only then begin next ordinal. Earlier cursor 9 was incorrect.",
     "Original publisher Cool-down can be replaced as a pedagogical task by independently authored Edulytics Cool-down matching verified objective, with no claim of verbatim source reproduction. Do not require original restricted content to close authoring Stage A-C.",
     "Grade 2 ordinal 1 has separate original Edulytics Cool-down, learner-visible expression check and teacher rubric; source public lesson reviewed. No tests, CI, Stage D, merge or release executed.",
-    "Sequential Grade 2 lesson2 closed after independent Cool-down, color-cube teacher rubric and authenticated student page completed."
+    "Sequential Grade 2 lesson2 closed after independent Cool-down, color-cube teacher rubric and authenticated student page completed.",
+    "Sequential G2 U01 L03 closure: first-party twenty-cube representations, independent assessment, teacher rubric, exact graded scope."
   ],
   "lessonStatuses": [
     {
@@ -54,13 +55,13 @@
     {
       "gradeOrdinal": 3,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L03",
-      "sourceReview": "PUBLIC_TEACHER_STUDENT_FACING_HTML_VERIFIED_PRINT_AND_COOLDOWN_PENDING",
-      "teaching": "GUARDED_SPECIFIC_CORRECTION_AUTHORED",
-      "practice": "THREE_EXACT_DIGITAL_FAMILIES_AUTHORED_NOT_TESTED",
+      "sourceReview": "ORIGINAL_TEACHER_STUDENT_TASKS_HTML_READ_INDEPENDENT_2021_MATH_GOAL_ASSESSMENT",
+      "teaching": "SOURCE_GUARDED_TWENTY_CUBE_RICH_V2_READER_COMPLETE",
+      "practice": "THREE_TWENTY_CUBE_FAMILIES_ORIGINAL_COOLDOWN_AND_STUDENT_VIEW_READY",
       "tests": "WRITTEN_NOT_EXECUTED",
-      "aCStatus": "PREPARED_DRAFT_AWAITING_ORDINAL",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 4,
@@ -1637,12 +1638,6 @@
     }
   ],
   "returnQueue": [
-    {
-      "gradeOrdinal": 3,
-      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L03",
-      "reason": "Authorized print student task PDF unavailable; Cool-down login-restricted; physical/student-authored work not digitally graded.",
-      "nextAction": "Review obtainable source-task and teacher criteria, verify educator-authored evidence/Practice scope before A-C closure; Stage D tests must run later."
-    },
     {
       "gradeOrdinal": 4,
       "lessonCode": "PED:US-CCSS-MATH:G2:U01:L04",
