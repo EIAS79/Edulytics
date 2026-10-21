@@ -82,12 +82,13 @@ public sealed class UsCcssG1Lessons87To101LaterOriginalSourcesTests
             ("usccss.g1.u05.l12.write_addition_equations",5)
         })
         {
-            var counts=new int[maxMode+1];
+            var counts=new Dictionary<int,int>();
             for(int seed=0;seed<1300;seed++)
             {
                 var task=UsCcssG1FullGradeUnit5AdditionQuestions.Build(
                     family,new Random(seed*41+17));
-                counts[task.Parameters["mode"]]++;
+                var generatedMode=task.Parameters["mode"];
+                counts[generatedMode]=counts.GetValueOrDefault(generatedMode)+1;
                 Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Verify(
                     family,task.Parameters,
                     UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,task.Parameters)));
@@ -95,7 +96,7 @@ public sealed class UsCcssG1Lessons87To101LaterOriginalSourcesTests
                     Assert.Contains("ORIGINAL 2021",task.Prompt);
             }
             for(var mode=4;mode<=maxMode;mode++)
-                Assert.True(counts[mode]>40);
+                Assert.True(counts.GetValueOrDefault(mode)>40);
         }
     }
 }
