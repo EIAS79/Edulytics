@@ -44,6 +44,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1TapeDiagramTeachingCorrection.Apply(document);
         CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection.Apply(document);
         CommonCoreG2Unit1AllCompareProblemsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -248,8 +249,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Tape);
         var g2AllPositions = CommonCoreG2Unit1AllCompareProblemsTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Positions);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Collections = CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2AllPositions);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Collections);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -339,6 +342,7 @@ public static class CanonicalLessonContentMaterializer
             .IsTarget(document, lesson) ||
         CommonCoreG2Unit1AllCompareProblemsTeachingCorrection
             .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -446,6 +450,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit1AllCompareProblemsTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||

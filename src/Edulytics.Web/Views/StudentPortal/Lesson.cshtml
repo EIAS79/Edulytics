@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L17" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics optional counting collection and centers">
+            <h2>Edulytics · optional 100–120 counting and centers</h2>
+            <p>Estimate a real collection, count physical objects by fives
+            or tens with a partner, explain a drawing, select two previously
+            taught centers, practise on a separate virtual model and complete
+            the independently authored Cool-down. The teacher reviews your
+            real collection and partner work.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson17Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open counting collections and centers</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L16" &&
          unifiedPracticeAdoptionId.HasValue)
     {
