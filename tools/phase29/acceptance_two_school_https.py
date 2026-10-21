@@ -1594,10 +1594,42 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
                         if ordinal==146:
                             assert "riddle" in rendered and "write" in rendered, (
                                 code,"learner riddle-authorship teaching missing")
+                        elif ordinal==74:
+                            # Source: student creates their own collection and
+                            # represents AT LEAST FOUR classmates' collections
+                            # in the real gallery. This validates the delivered
+                            # lesson teaching, not physical pupil participation.
+                            assert "collection" in rendered and (
+                                "show" in rendered or "represent" in rendered), (
+                                code,"original learner-chosen collection task missing")
+                            assert ("at least four" in rendered or
+                                    "at least 4" in rendered), (
+                                code,"original four-collection gallery target missing")
                         elif ordinal==119:
                             assert "puppi" in rendered and "tulip" in rendered and (
                                 "write" in rendered or "create" in rendered), (
                                 code,"learner comparison-story-authorship teaching missing")
+                        elif ordinal==142:
+                            # A learner writes AND answers two actual questions
+                            # using named ride counts; checking one generated
+                            # numeric comparison cannot claim that authorship.
+                            assert ("how many rides" in rendered or
+                                    "rides" in rendered) and (
+                                "write" in rendered or "create" in rendered), (
+                                code,"authored ride-question teaching missing")
+                            assert ("two" in rendered or "2" in rendered) and (
+                                "answer" in rendered), (
+                                code,"two original ride questions and answers missing")
+                        elif ordinal==144:
+                            # Student chooses 20–100, creates an original page
+                            # and shows at least three distinct expressions.
+                            # This does not claim a real teacher-reviewed page.
+                            assert ("number book" in rendered or
+                                    "favorite number" in rendered), (
+                                code,"class number-book source task missing")
+                            assert ("three" in rendered or "3" in rendered) and (
+                                "expression" in rendered), (
+                                code,"three authentic addition expressions missing")
                         elif ordinal in (123,124,125,126):
                             assert "draw" in rendered or "trace" in rendered, (
                                 code,"original learner-drawn or composed shape teaching missing")
