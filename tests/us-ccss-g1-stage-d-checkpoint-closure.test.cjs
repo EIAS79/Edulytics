@@ -77,7 +77,7 @@ test('Tampered CI IDs, incomplete A-C tasks, invented digital authoring and fake
    ['correctWrongMalformedPersisted',true,'FALSE_GRADING_CLAIM'],
    ['digitallyCertifiedPupilAuthorship',true,'FALSE_HUMAN_OR_IMAGE_APPROVAL_CLAIM'],
    ['approvalFromTeacherAcademicOrExternalBodyRequired',true,'FALSE_HUMAN_OR_IMAGE_APPROVAL_CLAIM'],
-   ['formalInternalV1Acceptance','INTERNALLY_ACCEPTED','WRONG_FINAL_ACCEPTANCE_OR_HISTORIC_RECORD']
+   ['formalInternalV1Acceptance',p.status==='INTERNALLY_ACCEPTED'?'IN_PROGRESS':'INTERNALLY_ACCEPTED','WRONG_FINAL_ACCEPTANCE_OR_HISTORIC_RECORD']
  ]){
    const cp=structuredClone(original);cp.stageDClosure[field]=value;
    assert.ok(validate(cp,p,l,m,65).includes(expected),field);
