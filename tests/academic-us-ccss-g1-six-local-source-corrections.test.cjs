@@ -65,5 +65,8 @@ test('content matches six actual task types rather than teacher guidance fragmen
  assert.match(constants('ChooseIndirectLengthComparatorSteps'),/Step 6:/);
  assert.match(constants('ClockHourIntroductionExamples'),/5:00/);
  assert.match(constants('DrawFlatShapesOnDotsExamples'),/non-collinear dots/);
- assert.match(constants('ComposeFlatPatternShapesExamples'),/two identical square tiles/i);
+ assert.match(constants('ComposeFlatPatternShapesExamples'),/two small squares sharing a full edge/i);
+ assert.match(constants('ComposeFlatPatternShapesExamples'),/SIX small equal equilateral triangles/);
+ assert.match(constants('ComposeFlatPatternShapesExamples'),/TWO matching pattern-block trapezoids/);
+ assert.match(constants('ComposeFlatPatternShapesExamples'),/Picture Books Stage 3/);
 });
