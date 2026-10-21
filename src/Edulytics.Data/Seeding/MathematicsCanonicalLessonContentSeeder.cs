@@ -1014,6 +1014,18 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                     : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
+                    if (CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document, sourceLesson, content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g2OptionalExistingRows)
+                                    ? g2OptionalExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
                     if (CommonCoreG2HundredsPlaceValueSourceCorrections
                         .IsTarget(document, sourceLesson))
                     {
