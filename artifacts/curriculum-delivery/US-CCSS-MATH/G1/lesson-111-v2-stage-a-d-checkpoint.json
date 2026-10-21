@@ -58,7 +58,9 @@
     "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
     "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
     "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
-    "sourceAuthoredRubric": null
+    "sourceAuthoredRubric": null,
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0"
   },
   "stageD": {
     "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
@@ -74,7 +76,7 @@
   },
   "ledgerStatus": "IN_PROGRESS",
   "gradeRelease": "NO_GO",
-  "nextAction": "Continue original V1 A-D source task parity in the WHOLE-GRADE cohort. Reuse existing Rich V2 and Practice, fix only proven gaps, then verify frozen SHA with actual learner/authenticated grading/rights and individual evidence-based acceptance. Do not infer completed V1 review or published release from this checkpoint.",
+  "nextAction": "Continue ordinal 112 in order; D/CI deferred.",
   "crossLessonMathRenderingRepairs20261020": {
     "evidenceType": "SOURCE_DOMAIN_AND_RENDERING_CODE_REPAIR_NOT_ACADEMIC_APPROVAL",
     "reviewedSourceMathSubset": "Original 2021 animal measuring source 95–120 range now accepted by both numeric validator/generator and SVG renderer, including 95–99. Historical 100–120 parameter acceptance preserved.",
@@ -91,5 +93,17 @@
     "originalStudentTaskToEffectiveTeachingCompleteParity": "NOT_CLAIMED",
     "finalDotNetAndProtectedCI": "DEFERRED_UNTIL_WHOLE_GRADE_FREEZE",
     "internalAcceptance": "NOT_CLAIMED"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Original beaver, dog, giant anteater, raccoon, red fox and snake lengths need publisher diagram or real measurement; numeric 95–120 representations are first-party only.",
+    "originalStudentAndTeacherTextCompared": true,
+    "firstPartyTeachingAndMathReviewed": true,
+    "originalActualMeasurementTeacherOnly": true,
+    "sourceImagesNotCertified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
   }
 }
