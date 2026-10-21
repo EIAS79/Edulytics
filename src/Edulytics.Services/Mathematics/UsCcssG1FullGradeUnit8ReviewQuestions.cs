@@ -364,6 +364,33 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                first+second==number;
     }
 
+    private static bool VerifyOriginalNumberBook(string? response)
+    {
+        var parts=Normalize(response).Split(';');
+        if(parts.Length!=4)return false;
+        var fields=new Dictionary<string,string>(StringComparer.Ordinal);
+        foreach(var p in parts)
+        {
+            int at=p.IndexOf('=');
+            if(at<=0||at==p.Length-1||!fields.TryAdd(p[..at],p[(at+1)..]))
+                return false;
+        }
+        if(fields.Count!=4||!fields.TryGetValue("NUMBER",out string? number)||
+            number!="84")return false;
+        var distinct=new HashSet<string>(StringComparer.Ordinal);
+        foreach(var key in new[]{"E1","E2","E3"})
+        {
+            if(!fields.TryGetValue(key,out var expression))return false;
+            var x=expression.Split('+');
+            if(x.Length!=2||!int.TryParse(x[0],out int a)||
+                !int.TryParse(x[1],out int b)||a<0||b<0||a+b!=84)
+                return false;
+            if(!distinct.Add($"{Math.Min(a,b)},{Math.Max(a,b)}"))
+                return false;
+        }
+        return true;
+    }
+
     private static bool VerifySourceOneOfEach(string? response)
     {
         var candidate=Normalize(response);
@@ -376,6 +403,8 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         Valid(family,p)&&!string.IsNullOrWhiteSpace(response)&&
         (Index(family)==2&&p["mode"]==8?
             VerifySourceOneOfEach(response):
+        Index(family)==7&&p["mode"]==5?
+            VerifyOriginalNumberBook(response):
         Index(family)==9&&(p["mode"] is 7 or 8)?
             VerifyFourAuthoredClues(p,response):
             Normalize(Solve(family!,p))==Normalize(response)));
