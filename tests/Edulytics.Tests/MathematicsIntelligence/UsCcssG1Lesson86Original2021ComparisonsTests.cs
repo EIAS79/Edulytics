@@ -60,6 +60,36 @@ public sealed class UsCcssG1Lesson86Original2021ComparisonsTests
         // Fail closed instead of treating a version label as permission to overwrite prose.
         Assert.False(CommonCoreG1SourceGroundedInstructionalCorrections.CanUpgradeExisting(
             doc,row,CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersionV1));
+        // Explicitly safe ONLY for metadata without persisted translations.
+        Assert.True(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG1U04L21JsonMetadataPredecessor(
+                doc,row,
+                CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersionV1,
+                CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersion,
+                verifiedNoPersistedTranslations:true));
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG1U04L21JsonMetadataPredecessor(
+                doc,row,
+                CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersionV1,
+                CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersion,
+                verifiedNoPersistedTranslations:false));
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG1U04L21JsonMetadataPredecessor(
+                doc,row,"unrecognized-production-version",
+                CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersion,
+                verifiedNoPersistedTranslations:true));
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG1U04L21JsonMetadataPredecessor(
+                doc,row,
+                CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersionV1,
+                "unrecognized-next-version",verifiedNoPersistedTranslations:true));
+        var unrelated=doc.Lessons.Single(x=>x.LessonCode!=row.LessonCode);
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG1U04L21JsonMetadataPredecessor(
+                doc,unrelated,
+                CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersionV1,
+                CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersion,
+                verifiedNoPersistedTranslations:true));
         var body=row.Translations.Single(x=>x.CultureCode=="en").WorkedExamples;
         foreach(var math in new[]{"10+6=16","9+6=15","10+7=17","8+7=15",
             "38>28","32=32","35<40","52>42","35=35","99>89"})
