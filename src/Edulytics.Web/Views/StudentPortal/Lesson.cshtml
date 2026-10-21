@@ -282,6 +282,24 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics Sort and Display optional center">
+            <h2>Edulytics · sort real objects and create a graph</h2>
+            <p>Sort 20–30 real objects into three categories, represent the
+                actual counts with an original picture OR bar graph,
+                ask a partner two questions, and choose a previously
+                learned arithmetic center.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson12Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Sort and Display Stage 2
+            </a>
+        </section>
+    }
+
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
@@ -312,7 +330,8 @@
                     "PED:US-CCSS-MATH:G2:U01:L08" or
                     "PED:US-CCSS-MATH:G2:U01:L09" or
                     "PED:US-CCSS-MATH:G2:U01:L10" or
-                    "PED:US-CCSS-MATH:G2:U01:L11")
+                    "PED:US-CCSS-MATH:G2:U01:L11" or
+                    "PED:US-CCSS-MATH:G2:U01:L12")
             {
                 <section class="lesson-source-aligned-activities"
                          aria-label="Grade 2 source-aligned mathematical teaching">
