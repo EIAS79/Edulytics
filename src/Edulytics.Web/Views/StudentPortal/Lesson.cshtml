@@ -165,6 +165,21 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics How Close with seven cards and sums to 50">
+            <h2>Edulytics · How Close to 50 and Cool-down</h2>
+            <p>Choose four of seven digit cards, build two two-digit
+            numbers, and practice composing tens while adding within 50.
+            Use our original Edulytics assessment and teacher rubric.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson5Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open seven-card game and Cool-down</a>
+        </section>
+    }
+
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
@@ -188,7 +203,8 @@
             @if (Model.LessonCode is "PED:US-CCSS-MATH:G2:U01:L01" or
                     "PED:US-CCSS-MATH:G2:U01:L02" or
                     "PED:US-CCSS-MATH:G2:U01:L03" or
-                    "PED:US-CCSS-MATH:G2:U01:L04")
+                    "PED:US-CCSS-MATH:G2:U01:L04" or
+                    "PED:US-CCSS-MATH:G2:U01:L05")
             {
                 <section class="lesson-source-aligned-activities"
                          aria-label="Grade 2 source-aligned mathematical teaching">
