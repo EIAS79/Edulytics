@@ -69,18 +69,19 @@ public sealed class UsCcssG1Lessons89To91OriginalEquationTests
             ("usccss.g1.u05.l03.write_no_compose_equations",9)
         })
         {
-            var counts=new int[lastMode+1];
+            var counts=new Dictionary<int,int>();
             for(var seed=0;seed<2600;seed++)
             {
                 var q=UsCcssG1FullGradeUnit5AdditionQuestions.Build(
                     family,new Random(seed*17+31));
-                counts[q.Parameters["mode"]]++;
+                var generatedMode=q.Parameters["mode"];
+                counts[generatedMode]=counts.GetValueOrDefault(generatedMode)+1;
                 Assert.True(UsCcssG1FullGradeUnit5AdditionQuestions.Verify(
                     family,q.Parameters,UsCcssG1FullGradeUnit5AdditionQuestions.Solve(family,q.Parameters)));
                 if(q.Parameters["mode"]>=4)Assert.Contains("ORIGINAL 2021",q.Prompt);
             }
             for(var mode=0;mode<=lastMode;mode++)
-                Assert.True(counts[mode]>35);
+                Assert.True(counts.GetValueOrDefault(mode)>35);
         }
     }
 }
