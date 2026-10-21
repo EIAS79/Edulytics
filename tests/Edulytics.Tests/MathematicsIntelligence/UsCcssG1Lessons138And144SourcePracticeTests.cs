@@ -27,7 +27,7 @@ public sealed class UsCcssG1Lessons138And144SourcePracticeTests
         const string family="usccss.g1.u08.l08.same_number_tens_ones";
         foreach(var a in new[]{20,25,99,100})
         {
-            var p=new Dictionary<string,int>{{"a",a},{"b",0},{"c",0},{"mode",4}};
+            var p=new Dictionary<string,int>{{"a",a},{"b",0},{"c",0},{"mode",5}};
             Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
             var expected=$"NUMBER={a};E1=0+{a};E2=5+{a-5};E3=10+{a-10}";
             Assert.Equal(expected,UsCcssG1FullGradeUnit8ReviewQuestions.Solve(family,p));
@@ -41,7 +41,7 @@ public sealed class UsCcssG1Lessons138And144SourcePracticeTests
         }
         foreach(var invalidNumber in new[]{1,10,19,101,110,120,121})
         {
-            var p=new Dictionary<string,int>{{"a",invalidNumber},{"b",0},{"c",0},{"mode",4}};
+            var p=new Dictionary<string,int>{{"a",invalidNumber},{"b",0},{"c",0},{"mode",5}};
             Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Valid(family,p));
         }
         // This automated numerical check does not certify actual student handwriting or a physical number book.
