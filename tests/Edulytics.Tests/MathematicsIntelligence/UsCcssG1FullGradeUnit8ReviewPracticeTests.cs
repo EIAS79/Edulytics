@@ -73,8 +73,8 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
     }
 
     [Theory]
-    [InlineData(3,9)]
-    [InlineData(4,10)]
+    [InlineData(3,12)]
+    [InlineData(4,13)]
     [InlineData(5,8)]
     public void OriginalStoryVariantsAndLegacyModesAllGenerateWithoutTruncation(
         int familyIndex,int expectedModeCount)
@@ -110,8 +110,15 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
         Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,expected));
         var prompt=UsCcssG1FullGradeUnit8ReviewQuestions.Build(family,
             new Random(lowest*23+mode)).Prompt;
-        Assert.Contains("NUMBER RIDDLE",prompt);
-        Assert.Contains("ones",prompt);
+        var generated=UsCcssG1FullGradeUnit8ReviewQuestions.Build(family,
+            new Random(lowest*23+mode));
+        if(generated.Parameters["mode"]<=3)
+        {
+            Assert.Contains("NUMBER RIDDLE",generated.Prompt);
+            Assert.Contains("ones",generated.Prompt);
+        }
+        else
+            Assert.Contains("ORIGINAL 2021",generated.Prompt);
         Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(family,p,
             mode%2==0?"CANDIDATES="+lowest:"NUMBER="+lowest));
     }
@@ -241,9 +248,18 @@ public sealed class UsCcssG1FullGradeUnit8ReviewPracticeTests
             Assert.True(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(f,p,answer));
             Assert.False(UsCcssG1FullGradeUnit8ReviewQuestions.Verify(f,p,$"NUMBER={target};VALID=MAYBE"));
             var prompt=UsCcssG1FullGradeUnit8ReviewQuestions.Build(f,new Random(target*17+mode)).Prompt;
-            Assert.Contains("FOUR-clue",prompt);
-            Assert.Contains("1 to 120",prompt);
-            Assert.Contains("addition expression",prompt);
+            var task=UsCcssG1FullGradeUnit8ReviewQuestions.Build(
+                f,new Random(target*17+mode));
+            if(task.Parameters["mode"]<=3)
+            {
+                Assert.Contains("FOUR-clue",task.Prompt);
+                Assert.Contains("1 to 120",task.Prompt);
+                Assert.Contains("addition expression",task.Prompt);
+            }
+            else if(task.Parameters["mode"] is 7 or 8)
+                Assert.Contains("FOUR CONCRETE clues",task.Prompt);
+            else
+                Assert.Contains("ORIGINAL 2021 TRUE/FALSE",task.Prompt);
         }
     }
     [Fact]
