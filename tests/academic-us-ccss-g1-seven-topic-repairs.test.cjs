@@ -87,7 +87,7 @@ test('new Grade 1 text is learner-facing with worked applications and mathematic
   assert.ok(mistakes.length>100,short);
   assert.ok(!/<(?:svg|path)\b/i.test(examples),short);
   assert.ok(!/Step 1: Represent the quantities or objects/i.test(steps),short);
-  for(const m of (examples+'\n'+steps).matchAll(/(\d+)\s*([+-])\s*(\d+)\s*=\s*(\d+)(?!\d)/g)){
+  for(const m of (examples+'\n'+steps).matchAll(/(\d+)\s*([+-])\s*(\d+)\s*=\s*(\d+)(?!\d|\s*[+\-*/])/g)){
    const left=Number(m[1]),right=Number(m[3]),expected=Number(m[4]);
    assert.equal(m[2]==='+'?left+right:left-right,expected,short+': '+m[0]);equations++;
   }
@@ -100,6 +100,9 @@ test('new Grade 1 text is learner-facing with worked applications and mathematic
  assert.match(constant('ComposeThreeDimensionalShapesExamples'),/stack|join/i);
  assert.match(constant('ComposeThreeDimensionalShapesExamples'),/rectangular-prism shape/i);
  assert.match(constant('ComposeThreeDimensionalShapesExamples'),/sketch the two layers/i);
+ // One complete commutative equality, not a false partial left-hand prefix.
+ assert.match(constant('WriteClockTimesExamples'),/10\+15=15\+10/);
+ assert.equal(10+15,15+10);
  for(const key of ['ReadHalfPastClock','WriteClockTimes','ReadClockDailySchedule']){
   assert.match(constant(key+'Examples'),/\d+:30/);
   assert.match(constant(key+'Examples'),/minute hand/i);
