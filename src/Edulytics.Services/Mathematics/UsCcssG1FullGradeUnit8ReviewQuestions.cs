@@ -38,7 +38,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
         if(n<0||p.Count!=4||
            !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
            !p.TryGetValue("c",out int c)||!p.TryGetValue("mode",out int mode)||
-           mode<0||mode>(n==1?13:n==2?8:n==3?11:n==4?9:n==5?7:n==7?5:n==8?9:n==9?8:3))return false;
+           mode<0||mode>(n==1?13:n==2?8:n==3?11:n==4?12:n==5?7:n==7?5:n==8?9:n==9?8:3))return false;
         return n switch
         {
             0=>a>=1&&a<=9&&b>=1&&b<=9&&a+b<=10&&c==0,
@@ -81,7 +81,13 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 8=>a==16&&b==7,
                 _=>a>=2&&a<=19&&b>=1&&b<=9&&a+b<=20
             }),
-            4=>c==0&&(mode switch
+            4=>mode>=10?(mode switch
+            {
+                10=>a==57&&b==20&&c==59,
+                11=>a==66&&b==4&&c==62,
+                12=>a==17&&b==76&&c==59,
+                _=>false
+            }):c==0&&(mode switch
             {
                 4=>a==7&&b==11,
                 5=>a==13&&b==5,
@@ -130,7 +136,7 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
     {
         int n=Index(family);
         if(n<0)throw new InvalidOperationException("Unreviewed Grade1 U08 family");
-        int mode=random.Next(n==1?14:n==2?9:n==3?12:n==4?10:n==5?8:n==7?6:n==8?10:n==9?9:4),a=0,b=0,c=0;
+        int mode=random.Next(n==1?14:n==2?9:n==3?12:n==4?13:n==5?8:n==7?6:n==8?10:n==9?9:4),a=0,b=0,c=0;
         for(int attempts=0;attempts<1000;attempts++)
         {
             if(n<=1){a=random.Next(1,10);b=random.Next(1,10);}
@@ -174,10 +180,15 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 9=>(10,7,0),10=>(8,2,7),11=>(10,5,2),
                 _=>throw new InvalidOperationException("Unreviewed aquarium mental warm-up")
             };
-            if(n==4&&mode>=4)(a,b)=mode switch
+            if(n==4&&mode>=4&&mode<=9)(a,b)=mode switch
             {
                 4=>(7,11),5=>(13,5),6=>(6,9),7=>(12,8),8=>(9,8),9=>(11,5),
                 _=>throw new InvalidOperationException("Unexpected missing-part story mode")
+            };
+            if(n==4&&mode>=10)(a,b,c)=mode switch
+            {
+                10=>(57,20,59),11=>(66,4,62),12=>(17,76,59),
+                _=>throw new InvalidOperationException("Unreviewed original planetarium number talk")
             };
             if(n==5&&mode>=4)(a,b)=mode switch
             {
@@ -251,7 +262,12 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                     _=>mode%2==0?$"There are {a} counters and some JOIN. Now there are {whole}. How many joined? Write CHANGE=number;FINAL=number.":
                         $"There are {whole} counters. Some LEAVE. Now {a} remain. How many left? Write CHANGE=number;FINAL=number."
                 },
-                4=>mode switch
+                4=>mode>=10?
+                    $"ORIGINAL 2021 UNIT 8 LESSON 5 TRUE/FALSE WARM-UP: "+
+                    (mode==10?"57+20=59":mode==11?"66-4=62":"17+76=59")+
+                    ". Write TRUE=YES/NO;ACTUAL=number;STATED=number; "+
+                    "explain why the equality holds or fails.":
+                    mode switch
                 {
                     4=>"ORIGINAL PLANETARIUM: 7 first graders and some second graders make 18 altogether. How many second graders? Write MISSING=number;TOTAL=number.",
                     5=>"ORIGINAL PLANETARIUM: There are 18 stars and 13 are bright; the rest are dim. How many dim stars? Write MISSING=number;TOTAL=number.",
@@ -333,7 +349,9 @@ public static class UsCcssG1FullGradeUnit8ReviewQuestions
                 mode>=4?
                 $"CHANGE={b};FINAL={(mode==4||mode==7?a+b:a-b)}":
                 mode%2==0?$"CHANGE={b};FINAL={a+b}":$"CHANGE={b};FINAL={a}",
-            4=>mode==8||mode==9?$"MATCH=A,C;MISSING={b}":
+            4=>mode>=10?
+                $"TRUE={(mode==11?"YES":"NO")};ACTUAL={(mode==10?77:mode==11?62:93)};STATED={p["c"]}":
+                mode==8||mode==9?$"MATCH=A,C;MISSING={b}":
                 $"MISSING={b};TOTAL={a+b}",
             5=>$"DIFFERENCE={a-b}",
             6=>mode<=1?$"LAST={a+b}":$"TENS={a/10};ONES={a%10};TOTAL={a}",
