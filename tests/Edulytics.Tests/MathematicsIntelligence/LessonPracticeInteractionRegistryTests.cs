@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            502, // 464 existing + thirty-eight Grade 2 U01 L01-L15 exact interactions.
+            505, // 464 existing + forty-one Grade 2 U01 L01-L16 exact interactions.
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
