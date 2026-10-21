@@ -39,6 +39,46 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
     private static bool IsVerified2021PublisherTitleCorrection(
         string root, string code, string historicalTitle, string effectiveTitle, string sourceUrl)
     {
+        // Three further Grade 1 catalogue aliases have exact, source-SHA-pinned
+        // first-party corrections. Keep the historic B001 labels unchanged.
+        // Accept only these precise old/new titles, official lesson URLs,
+        // and the matching reviewed correction entry, not arbitrary title drift.
+        (string Old, string New, string TeacherSha, int Unit, int Lesson)? extra = code switch
+        {
+            "PED:US-CCSS-MATH:G1:U03:L24" =>
+                ("Relate Counting to Addition and Subtraction PLC Activity",
+                 "Relate Counting to Addition and Subtraction",
+                 "3fd5d2c854c79d76d2678582f6cf6d3285a8004ed7e608a62fe54d2777be9761",3,24),
+            "PED:US-CCSS-MATH:G1:U04:L04" =>
+                ("More Addition and Subtraction with Tens PLC Activity",
+                 "More Addition and Subtraction with Tens",
+                 "aea5b61803df4c4b9df6fd46f89e9413a5bb48d0ef33c3e8178327ec9e22b5c7",4,4),
+            "PED:US-CCSS-MATH:G1:U04:L08" =>
+                ("Different Representations of Tens and Ones PLC Activity",
+                 "Different Representations of Tens and Ones",
+                 "f3fa805d6421b2677b3a20200f257432271cbfee1e3b9c1ec6d34b8ba855d4da",4,8),
+            _ => null
+        };
+        if(extra.HasValue)
+        {
+            var expected = extra.Value;
+            var correctUrl = "https://im.kendallhunt.com/k5/teachers/grade-1/unit-" +
+                expected.Unit + "/lesson-" + expected.Lesson + "/preparation.html";
+            if(historicalTitle!=expected.Old || effectiveTitle!=expected.New ||
+               sourceUrl!=correctUrl)return false;
+            var correctionPath=Path.Combine(root,"src","Edulytics.Data","Seeding",
+                "CommonCoreG1FullGradeStartingContentCorrections.cs");
+            var reviewed=File.ReadAllText(correctionPath);
+            var recordStart="new(@\"" + code + "\",@\"" + sourceUrl + "\",@\"" +
+                expected.TeacherSha + "\"";
+            var at=reviewed.IndexOf(recordStart,StringComparison.Ordinal);
+            if(at<0)return false;
+            var next=reviewed.IndexOf("\n        new(@\"",at+recordStart.Length,
+                StringComparison.Ordinal);
+            var sourceRow=reviewed[at..(next<0?reviewed.Length:next)];
+            return sourceRow.Contains("@\""+effectiveTitle+"\"",
+                StringComparison.Ordinal);
+        }
         (string Old, string New, string Number)? verified = code switch
         {
             "PED:US-CCSS-MATH:G1:U02:L07" =>
