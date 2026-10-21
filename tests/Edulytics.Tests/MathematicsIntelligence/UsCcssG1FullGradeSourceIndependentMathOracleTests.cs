@@ -227,7 +227,7 @@ public sealed class UsCcssG1FullGradeSourceIndependentMathOracleTests
     {
         // Clock face: hour 12 at noon/midnight and correct 12:30.
         var clock=new Dictionary<string,int>{{"a",12},{"b",2},{"c",0},{"mode",1}};
-        Assert.Equal("TIME=12:30",SourceGeometryOracle(14,clock["a"],clock["b"],clock["mode"]));
+        Assert.Equal("TIME=12:30",SourceGeometryOracle(14,clock["a"],clock["b"],clock["c"],clock["mode"]));
         Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(
             UsCcssG1FullGradeUnit7GeometryTimeQuestions.Families[14],clock,"TIME=12:30"));
         // IM 2021 authoring: secret number may be 120, and last addition
