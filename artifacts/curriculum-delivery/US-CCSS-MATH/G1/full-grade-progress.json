@@ -61,8 +61,8 @@
           "CCSS:1.OA.D.8"
         ],
         "sourceSha256": "fe19d293e214a19212ee74fa2cd634e0381a77916645fa6b600f40d9c9c5eef2",
-        "effectiveStudentBodySha256": "113d72dcb84531004eacba476a5032987915e038581a2a31a509e8c7f69c01a5",
-        "effectiveStudentBodyHashSemantics": "Authenticated HTML-unescaped response SHA-256 captured from disposable CI school at tested GitHub merge checkout ac6afc... (includes volatile tokens; not canonical authored content identity)",
+        "effectiveStudentBodySha256": "a9bd25b288a34f6b90e22f7685a4e2641ada38386267af2c72ed035ef3baa5c5",
+        "effectiveStudentBodyHashSemantics": "Unescaped learner HTML SHA-256, exact row from disposable 96-lesson HTTPS GitHub artifact ID 12335181048; GitHub PR merge and head have identical tree 9f565b95026ba11b4696bedbd62e0dba099e72a0; volatile response tokens not canonical authored body",
         "independentCorrectAndWrongAnswersVerified": true,
         "realPracticeGradingPersisted": true,
         "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
@@ -71,15 +71,15 @@
           "kind": "GIT_FILE",
           "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
           "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
-        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofSha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
         "runtimePracticeProofReference": {
           "kind": "GIT_FILE",
           "path": "tools/phase29/acceptance_two_school_https.py",
-          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-          "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+          "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-51-original-v1-a-d-source-practice-acceptance.json",
         "sourceReviewFileSha256": "f107d9fa3c6dee2550142d7c287ded3ca8a4503f633d28dfc013e2e31d88c742",
@@ -87,12 +87,12 @@
           "kind": "GIT_FILE",
           "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-51-original-v1-a-d-source-practice-acceptance.json",
           "sha256": "f107d9fa3c6dee2550142d7c287ded3ca8a4503f633d28dfc013e2e31d88c742",
-          "commitSha": "a99633d99e2141cd19784ec39f89fe5192f61814"
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
-        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
-        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
-        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
-        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
+        "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590539",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590678",
+        "testingCheckoutMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
         "affectedCodePaths": [
           "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
           "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1NumberPuzzle.cs",
@@ -110,7 +110,7 @@
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
               "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
@@ -120,26 +120,39 @@
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNumberPuzzleBoardVisualTests.cs",
               "sha256": "8d177b86fc0aed2f022ab2486ce7b7290b73d06e0fedd93da57d25cb29f0e786",
-              "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tools/phase29/acceptance_two_school_https.py",
-            "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+            "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tools/phase29/acceptance_two_school_https.py",
-              "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-              "commitSha": "e5ee6331a546dbfdb1f02957b1e3037462240e48"
+              "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           }
         ],
         "acceptanceBoundary": "Edulytics internal evidence-based academic acceptance only; not actual classroom participation, copied publisher board artwork, production deployment or owner UAT",
         "runtimeEvidenceArtifact": {
-          "runId": 39299597728,
-          "artifactId": 12211766120,
-          "scope": "G1 all 96 candidate technical samples; 95 real graded trials; NOT academic signoff",
-          "originalLesson51BoardRendered": true
+          "artifactId": 12335181048,
+          "lessonOrdinal": 51,
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticatedLearnerHtmlSha256": "a9bd25b288a34f6b90e22f7685a4e2641ada38386267af2c72ed035ef3baa5c5",
+          "academicStatus": "HISTORIC_V1_INTERNAL_ACCEPTANCE_REVALIDATED_ON_CURRENT_FIRST_PARTY_DIGITAL_SCOPE",
+          "authenticStudentAuthorshipNotClaimed": true
+        },
+        "currentCodeRevalidation": {
+          "previousTestedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "fullDotnetCandidateSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+          "fullDotnetTestPassed": 3324,
+          "fullDotnetTestFailed": 0,
+          "g1SourceMathGithubPassed": 433,
+          "authenticated96EvidenceRunId": 39576590539,
+          "matchingGithubMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+          "matchingGitTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
+          "acceptedScope": "Original source-reviewed V1 first-party digital subset only; no physical partner, copied publisher artwork rights, or production UAT"
         }
       }
     },
@@ -183,8 +196,8 @@
         ],
         "sourceSha256": "88d1748438c4fadc21bf4538457f105b7606047d4a6103073450dafd8810d8dd",
         "originalStudentHtmlSha256": "3c413000e5aa316afe9d4bb956ae1676bba1264431fa606a28749d369de56eaf",
-        "effectiveStudentBodySha256": "752f3d4a8093080bcdc70761666b394ff4e6f682736a1239ec629f5c3f6fa204",
-        "effectiveStudentBodyHashSemantics": "Authenticated, HTML-unescaped disposable CI lesson response SHA-256 on GitHub merge checkout ac6afc686b2d18c44abd21699d138e33bfdc8a1e (volatile tokens; not canonical authored body identity)",
+        "effectiveStudentBodySha256": "9b8721837f7cdc0b24d4bb9dca6ff69665b61b40280c037eaff5a922230cfa65",
+        "effectiveStudentBodyHashSemantics": "Unescaped learner HTML SHA-256, exact row from disposable 96-lesson HTTPS GitHub artifact ID 12335181048; GitHub PR merge and head have identical tree 9f565b95026ba11b4696bedbd62e0dba099e72a0; volatile response tokens not canonical authored body",
         "independentCorrectAndWrongAnswersVerified": true,
         "realPracticeGradingPersisted": true,
         "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
@@ -193,15 +206,15 @@
           "kind": "GIT_FILE",
           "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
           "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
-        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofSha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
         "runtimePracticeProofReference": {
           "kind": "GIT_FILE",
           "path": "tools/phase29/acceptance_two_school_https.py",
-          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-STUDENT-TASK-AUDIT-51-52-53-65-146.json",
         "sourceReviewFileSha256": "fe796ae3ee6a8e60ac5131c56b790e41d7a6b3d689612c8cb02551307b4a48fa",
@@ -209,19 +222,19 @@
           "kind": "GIT_FILE",
           "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-STUDENT-TASK-AUDIT-51-52-53-65-146.json",
           "sha256": "fe796ae3ee6a8e60ac5131c56b790e41d7a6b3d689612c8cb02551307b4a48fa",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
-        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
-        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
-        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
-        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+        "testingCheckoutMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590539",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590678",
         "runtimeEvidenceArtifact": {
-          "artifactId": 12211766120,
-          "gradeRows": 96,
-          "correctMalformedAndWrongGradingSamples": 95,
+          "artifactId": 12335181048,
           "lessonOrdinal": 52,
-          "expectedFamily": "usccss.g1.u03.l15.story.three_addends_ten",
-          "authoredStudentResponseNotClaimed": true
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticatedLearnerHtmlSha256": "9b8721837f7cdc0b24d4bb9dca6ff69665b61b40280c037eaff5a922230cfa65",
+          "academicStatus": "HISTORIC_V1_INTERNAL_ACCEPTANCE_REVALIDATED_ON_CURRENT_FIRST_PARTY_DIGITAL_SCOPE",
+          "authenticStudentAuthorshipNotClaimed": true
         },
         "affectedCodePaths": [
           "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
@@ -239,31 +252,42 @@
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
               "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
-            "sha256": "f17f9f11854c0290bd6ff81a88f35561a43f761ca8cb6403e78cb31ecb934777",
+            "sha256": "1cca3ddefb1a8bb00b65cebbfce30a466d00b7a535f7a435107a03f59ea73ec3",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
-              "sha256": "f17f9f11854c0290bd6ff81a88f35561a43f761ca8cb6403e78cb31ecb934777",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "1cca3ddefb1a8bb00b65cebbfce30a466d00b7a535f7a435107a03f59ea73ec3",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-            "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+            "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           }
         ],
-        "acceptanceBoundary": "Original Five-Lesson V1 A-D INTERNAL academic acceptance of source-goal digital lesson and actual graded Practice only. Teacher-observed drawings, card-sorting, child-authored stories and external publisher art are not certified or distributed. Grade release and owner UAT remain pending."
+        "acceptanceBoundary": "Original Five-Lesson V1 A-D INTERNAL academic acceptance of source-goal digital lesson and actual graded Practice only. Teacher-observed drawings, card-sorting, child-authored stories and external publisher art are not certified or distributed. Grade release and owner UAT remain pending.",
+        "currentCodeRevalidation": {
+          "previousTestedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "fullDotnetCandidateSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+          "fullDotnetTestPassed": 3324,
+          "fullDotnetTestFailed": 0,
+          "g1SourceMathGithubPassed": 433,
+          "authenticated96EvidenceRunId": 39576590539,
+          "matchingGithubMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+          "matchingGitTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
+          "acceptedScope": "Original source-reviewed V1 first-party digital subset only; no physical partner, copied publisher artwork rights, or production UAT"
+        }
       }
     },
     {
@@ -305,8 +329,8 @@
         ],
         "sourceSha256": "7c8ab7b11b895c9b5433e5a5a3da95ac11788de4119a10c927f8e7207ad13503",
         "originalStudentHtmlSha256": "6697b65d9715cf564a5a964364d390887a3f8bacdf7c1d7c475ff8e235006da2",
-        "effectiveStudentBodySha256": "d6753f9f6964b49ad806e7937818d7ad1e55c8f8b1a3035ca80d291d153d0ff2",
-        "effectiveStudentBodyHashSemantics": "Authenticated, HTML-unescaped disposable CI lesson response SHA-256 on GitHub merge checkout ac6afc686b2d18c44abd21699d138e33bfdc8a1e (volatile tokens; not canonical authored body identity)",
+        "effectiveStudentBodySha256": "3d2164da8ef4776cfd286d2604262f12885becf3717a9691bf4a69d0db8c89fd",
+        "effectiveStudentBodyHashSemantics": "Unescaped learner HTML SHA-256, exact row from disposable 96-lesson HTTPS GitHub artifact ID 12335181048; GitHub PR merge and head have identical tree 9f565b95026ba11b4696bedbd62e0dba099e72a0; volatile response tokens not canonical authored body",
         "independentCorrectAndWrongAnswersVerified": true,
         "realPracticeGradingPersisted": true,
         "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
@@ -315,35 +339,35 @@
           "kind": "GIT_FILE",
           "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
           "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
-        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofSha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
         "runtimePracticeProofReference": {
           "kind": "GIT_FILE",
           "path": "tools/phase29/acceptance_two_school_https.py",
-          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
-        "sourceReviewFileSha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+        "sourceReviewFileSha256": "9162ff02789aeea934291606edd2ddd0849ee2ba9a10e8c3ce801eb36017239f",
         "sourceReviewReference": {
           "kind": "GIT_FILE",
           "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
-          "sha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "9162ff02789aeea934291606edd2ddd0849ee2ba9a10e8c3ce801eb36017239f",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
-        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
-        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
-        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
-        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+        "testingCheckoutMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590539",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590678",
         "runtimeEvidenceArtifact": {
-          "artifactId": 12211766120,
-          "gradeRows": 96,
-          "correctMalformedAndWrongGradingSamples": 95,
+          "artifactId": 12335181048,
           "lessonOrdinal": 53,
-          "expectedFamily": "usccss.g1.u03.l16.three_addends.equivalent",
-          "authoredStudentResponseNotClaimed": true
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticatedLearnerHtmlSha256": "3d2164da8ef4776cfd286d2604262f12885becf3717a9691bf4a69d0db8c89fd",
+          "academicStatus": "HISTORIC_V1_INTERNAL_ACCEPTANCE_REVALIDATED_ON_CURRENT_FIRST_PARTY_DIGITAL_SCOPE",
+          "authenticStudentAuthorshipNotClaimed": true
         },
         "affectedCodePaths": [
           "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
@@ -361,31 +385,42 @@
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
               "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
-            "sha256": "f17f9f11854c0290bd6ff81a88f35561a43f761ca8cb6403e78cb31ecb934777",
+            "sha256": "1cca3ddefb1a8bb00b65cebbfce30a466d00b7a535f7a435107a03f59ea73ec3",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
-              "sha256": "f17f9f11854c0290bd6ff81a88f35561a43f761ca8cb6403e78cb31ecb934777",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "1cca3ddefb1a8bb00b65cebbfce30a466d00b7a535f7a435107a03f59ea73ec3",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-            "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+            "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           }
         ],
-        "acceptanceBoundary": "Original Five-Lesson V1 A-D INTERNAL academic acceptance of source-goal digital lesson and actual graded Practice only. Teacher-observed drawings, card-sorting, child-authored stories and external publisher art are not certified or distributed. Grade release and owner UAT remain pending."
+        "acceptanceBoundary": "Original Five-Lesson V1 A-D INTERNAL academic acceptance of source-goal digital lesson and actual graded Practice only. Teacher-observed drawings, card-sorting, child-authored stories and external publisher art are not certified or distributed. Grade release and owner UAT remain pending.",
+        "currentCodeRevalidation": {
+          "previousTestedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "fullDotnetCandidateSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+          "fullDotnetTestPassed": 3324,
+          "fullDotnetTestFailed": 0,
+          "g1SourceMathGithubPassed": 433,
+          "authenticated96EvidenceRunId": 39576590539,
+          "matchingGithubMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+          "matchingGitTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
+          "acceptedScope": "Original source-reviewed V1 first-party digital subset only; no physical partner, copied publisher artwork rights, or production UAT"
+        }
       }
     },
     {
@@ -425,8 +460,8 @@
         "forbiddenFamilies": [],
         "sourceSha256": "e1e90ee62cdd6aa0b2bfd4d06620a4717aeee7ae78981cefcdc2baf117bfa38e",
         "originalStudentHtmlSha256": "6ae6929bda1e501f7331da8ee17a9debd0a248f5d8a7b6bb54cd47b8793aa066",
-        "effectiveStudentBodySha256": "e55b0eb1b9a0164e447481d848e085187e187ac2488617e8381efa1d5248bef4",
-        "effectiveStudentBodyHashSemantics": "SHA-256 of volatile, HTML-unescaped authenticated disposable-school learner response from original 2026-10-19 test checkout ac6afc686b2d18c44abd21699d138e33bfdc8a1e; not the canonical Rich V2 source text digest",
+        "effectiveStudentBodySha256": "6f9d614faf13e8a13910018396891fe3e84fcf572a7573b03d309474faa254cf",
+        "effectiveStudentBodyHashSemantics": "Unescaped learner HTML SHA-256, exact row from disposable 96-lesson HTTPS GitHub artifact ID 12335181048; GitHub PR merge and head have identical tree 9f565b95026ba11b4696bedbd62e0dba099e72a0; volatile response tokens not canonical authored body",
         "independentCorrectAndWrongAnswersVerified": true,
         "realPracticeGradingPersisted": true,
         "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
@@ -435,35 +470,35 @@
           "kind": "GIT_FILE",
           "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
           "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
-        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofSha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
         "runtimePracticeProofReference": {
           "kind": "GIT_FILE",
           "path": "tools/phase29/acceptance_two_school_https.py",
-          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
-        "sourceReviewFileSha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+        "sourceReviewFileSha256": "9162ff02789aeea934291606edd2ddd0849ee2ba9a10e8c3ce801eb36017239f",
         "sourceReviewReference": {
           "kind": "GIT_FILE",
           "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
-          "sha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "9162ff02789aeea934291606edd2ddd0849ee2ba9a10e8c3ce801eb36017239f",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
-        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
-        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
-        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
-        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+        "testingCheckoutMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590539",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590678",
         "runtimeEvidenceArtifact": {
-          "artifactId": 12211766120,
-          "academicStatus": "SOURCE_TASK_REVIEWED_SEPARATELY",
-          "matchedSourceFamily": "usccss.g1.u03.l17.make_ten.decompose",
+          "artifactId": 12335181048,
           "lessonOrdinal": 54,
-          "correctWrongMalformedPersisted": true,
-          "originalAuthoredClassroomParticipationNotClaimed": true
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticatedLearnerHtmlSha256": "6f9d614faf13e8a13910018396891fe3e84fcf572a7573b03d309474faa254cf",
+          "academicStatus": "HISTORIC_V1_INTERNAL_ACCEPTANCE_REVALIDATED_ON_CURRENT_FIRST_PARTY_DIGITAL_SCOPE",
+          "authenticStudentAuthorshipNotClaimed": true
         },
         "affectedCodePaths": [
           "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
@@ -480,31 +515,42 @@
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
               "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-            "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+            "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tools/phase29/acceptance_two_school_https.py",
-            "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+            "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tools/phase29/acceptance_two_school_https.py",
-              "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           }
         ],
-        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO."
+        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO.",
+        "currentCodeRevalidation": {
+          "previousTestedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "fullDotnetCandidateSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+          "fullDotnetTestPassed": 3324,
+          "fullDotnetTestFailed": 0,
+          "g1SourceMathGithubPassed": 433,
+          "authenticated96EvidenceRunId": 39576590539,
+          "matchingGithubMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+          "matchingGitTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
+          "acceptedScope": "Original source-reviewed V1 first-party digital subset only; no physical partner, copied publisher artwork rights, or production UAT"
+        }
       }
     },
     {
@@ -543,8 +589,8 @@
         "forbiddenFamilies": [],
         "sourceSha256": "70e2af6f2e87e459a3f5ec65f95ae2bdbcc841e924633f1c59e28c52cc631d03",
         "originalStudentHtmlSha256": "05714c201c07151ce72f07b68dbe92e4cb47c6a8fa009679301d7c29663cf143",
-        "effectiveStudentBodySha256": "5f7bc6c13132b18360c6de8b44036e6377a4000c46a9482a9bd2f87f298211e8",
-        "effectiveStudentBodyHashSemantics": "SHA-256 of volatile, HTML-unescaped authenticated disposable-school learner response from original 2026-10-19 test checkout ac6afc686b2d18c44abd21699d138e33bfdc8a1e; not the canonical Rich V2 source text digest",
+        "effectiveStudentBodySha256": "b898e2477a0307c2e0b82e9d2ffe950a0660582239ca7673fe1b4ed7f1164b66",
+        "effectiveStudentBodyHashSemantics": "Unescaped learner HTML SHA-256, exact row from disposable 96-lesson HTTPS GitHub artifact ID 12335181048; GitHub PR merge and head have identical tree 9f565b95026ba11b4696bedbd62e0dba099e72a0; volatile response tokens not canonical authored body",
         "independentCorrectAndWrongAnswersVerified": true,
         "realPracticeGradingPersisted": true,
         "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
@@ -553,35 +599,35 @@
           "kind": "GIT_FILE",
           "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
           "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
-        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofSha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
         "runtimePracticeProofReference": {
           "kind": "GIT_FILE",
           "path": "tools/phase29/acceptance_two_school_https.py",
-          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
-        "sourceReviewFileSha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+        "sourceReviewFileSha256": "9162ff02789aeea934291606edd2ddd0849ee2ba9a10e8c3ce801eb36017239f",
         "sourceReviewReference": {
           "kind": "GIT_FILE",
           "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
-          "sha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "9162ff02789aeea934291606edd2ddd0849ee2ba9a10e8c3ce801eb36017239f",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
-        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
-        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
-        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
-        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+        "testingCheckoutMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590539",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590678",
         "runtimeEvidenceArtifact": {
-          "artifactId": 12211766120,
-          "academicStatus": "SOURCE_TASK_REVIEWED_SEPARATELY",
-          "matchedSourceFamily": "usccss.g1.u03.l18.addition.pattern",
+          "artifactId": 12335181048,
           "lessonOrdinal": 55,
-          "correctWrongMalformedPersisted": true,
-          "originalAuthoredClassroomParticipationNotClaimed": true
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticatedLearnerHtmlSha256": "b898e2477a0307c2e0b82e9d2ffe950a0660582239ca7673fe1b4ed7f1164b66",
+          "academicStatus": "HISTORIC_V1_INTERNAL_ACCEPTANCE_REVALIDATED_ON_CURRENT_FIRST_PARTY_DIGITAL_SCOPE",
+          "authenticStudentAuthorshipNotClaimed": true
         },
         "affectedCodePaths": [
           "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeStartQuestions.cs",
@@ -598,31 +644,42 @@
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingPracticeTests.cs",
               "sha256": "b58055acc32af84a3c05144b5b63edcbc69299d4c6e88796b52782b4883f35f8",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-            "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+            "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tools/phase29/acceptance_two_school_https.py",
-            "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+            "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tools/phase29/acceptance_two_school_https.py",
-              "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           }
         ],
-        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO."
+        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO.",
+        "currentCodeRevalidation": {
+          "previousTestedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "fullDotnetCandidateSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+          "fullDotnetTestPassed": 3324,
+          "fullDotnetTestFailed": 0,
+          "g1SourceMathGithubPassed": 433,
+          "authenticated96EvidenceRunId": 39576590539,
+          "matchingGithubMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+          "matchingGitTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
+          "acceptedScope": "Original source-reviewed V1 first-party digital subset only; no physical partner, copied publisher artwork rights, or production UAT"
+        }
       }
     },
     {
@@ -661,45 +718,45 @@
         "forbiddenFamilies": [],
         "sourceSha256": "6ffedee9b6724bf1330eab70de05b0634941a860db7e07acd00d8e4af4d1e857",
         "originalStudentHtmlSha256": "7e639068e7092da29ad29ca83e80a24ab4089a2a8b82c5af053504169500dac9",
-        "effectiveStudentBodySha256": "959847872b90844638509bfaef8bdd89a5868d0117b2d047bba55873e532eaea",
-        "effectiveStudentBodyHashSemantics": "SHA-256 of volatile, HTML-unescaped authenticated disposable-school learner response from original 2026-10-19 test checkout ac6afc686b2d18c44abd21699d138e33bfdc8a1e; not the canonical Rich V2 source text digest",
+        "effectiveStudentBodySha256": "9d3881ee7f9317e4aa61c0cb5eddd3d75dad7650f056520d6322d377e5b8ed6d",
+        "effectiveStudentBodyHashSemantics": "Unescaped learner HTML SHA-256, exact row from disposable 96-lesson HTTPS GitHub artifact ID 12335181048; GitHub PR merge and head have identical tree 9f565b95026ba11b4696bedbd62e0dba099e72a0; volatile response tokens not canonical authored body",
         "independentCorrectAndWrongAnswersVerified": true,
         "realPracticeGradingPersisted": true,
         "independentGradingProofPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
-        "independentGradingProofSha256": "fb74538c787c8549f0656c5e2b45d2f0514bc353a1c05477c986f31195cee5e0",
+        "independentGradingProofSha256": "852e554aa8fb7ab7ae9f0b70a964810cc8638292281730d7c479b3b427a82394",
         "independentGradingProofReference": {
           "kind": "GIT_FILE",
           "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
-          "sha256": "fb74538c787c8549f0656c5e2b45d2f0514bc353a1c05477c986f31195cee5e0",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "852e554aa8fb7ab7ae9f0b70a964810cc8638292281730d7c479b3b427a82394",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "runtimePracticeProofPath": "tools/phase29/acceptance_two_school_https.py",
-        "runtimePracticeProofSha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+        "runtimePracticeProofSha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
         "runtimePracticeProofReference": {
           "kind": "GIT_FILE",
           "path": "tools/phase29/acceptance_two_school_https.py",
-          "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
         "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
-        "sourceReviewFileSha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
+        "sourceReviewFileSha256": "9162ff02789aeea934291606edd2ddd0849ee2ba9a10e8c3ce801eb36017239f",
         "sourceReviewReference": {
           "kind": "GIT_FILE",
           "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
-          "sha256": "09ff6a28eada9a012e940da724fb47aef30ea83a325448150fb97055466237fc",
-          "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+          "sha256": "9162ff02789aeea934291606edd2ddd0849ee2ba9a10e8c3ce801eb36017239f",
+          "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
         },
-        "testedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
-        "testingCheckoutMergeSha": "ac6afc686b2d18c44abd21699d138e33bfdc8a1e",
-        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299597728",
-        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39299598040",
+        "testedCodeSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+        "testingCheckoutMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+        "CIAuthenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590539",
+        "CISourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39576590678",
         "runtimeEvidenceArtifact": {
-          "artifactId": 12211766120,
-          "academicStatus": "SOURCE_TASK_REVIEWED_SEPARATELY",
-          "matchedSourceFamily": "usccss.g1.u03.l19.flexible.make_ten",
+          "artifactId": 12335181048,
           "lessonOrdinal": 56,
-          "correctWrongMalformedPersisted": true,
-          "originalAuthoredClassroomParticipationNotClaimed": true
+          "gradedAndPersistedCorrectMalformedWellFormedWrong": true,
+          "authenticatedLearnerHtmlSha256": "9d3881ee7f9317e4aa61c0cb5eddd3d75dad7650f056520d6322d377e5b8ed6d",
+          "academicStatus": "HISTORIC_V1_INTERNAL_ACCEPTANCE_REVALIDATED_ON_CURRENT_FIRST_PARTY_DIGITAL_SCOPE",
+          "authenticStudentAuthorshipNotClaimed": true
         },
         "affectedCodePaths": [
           "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeNextQuestions.cs",
@@ -711,36 +768,47 @@
         "tests": [
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
-            "sha256": "fb74538c787c8549f0656c5e2b45d2f0514bc353a1c05477c986f31195cee5e0",
+            "sha256": "852e554aa8fb7ab7ae9f0b70a964810cc8638292281730d7c479b3b427a82394",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeNextPracticeTests.cs",
-              "sha256": "fb74538c787c8549f0656c5e2b45d2f0514bc353a1c05477c986f31195cee5e0",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "852e554aa8fb7ab7ae9f0b70a964810cc8638292281730d7c479b3b427a82394",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-            "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
+            "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeEarlyIndependentMathOracleTests.cs",
-              "sha256": "3c8dddcff6e6e2ad4182f450e8995a4d6d77f0ebb81f760afb0494cba0b9dd20",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "730d16ad957059859a9090267e6a7d714e3001eee29558064346ee4cf99ab152",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           },
           {
             "path": "tools/phase29/acceptance_two_school_https.py",
-            "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
+            "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
             "reference": {
               "kind": "GIT_FILE",
               "path": "tools/phase29/acceptance_two_school_https.py",
-              "sha256": "3379b0fee803131f8a367678309821d86b54f4b1379fbf592a66a3a68adf6d59",
-              "commitSha": "0268b2d4c4b2877429b0122c2753074b41db71ba"
+              "sha256": "010d936a7ecd1748b60eb6732b5d68340e6043adae72de69d4d0dbcdfb12b075",
+              "commitSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc"
             }
           }
         ],
-        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO."
+        "acceptanceBoundary": "Original V1 academic source-goal, first-party digital teaching/Practice and scoped independent source tests only. Teacher-led source cards, classroom actions, child authorship or rights to publisher figures not certified; complete grade release NO_GO.",
+        "currentCodeRevalidation": {
+          "previousTestedCodeSha": "0268b2d4c4b2877429b0122c2753074b41db71ba",
+          "fullDotnetCandidateSha": "96eb22b5633c374d1c8bfc27d4ae6bc85398b5bc",
+          "fullDotnetTestPassed": 3324,
+          "fullDotnetTestFailed": 0,
+          "g1SourceMathGithubPassed": 433,
+          "authenticated96EvidenceRunId": 39576590539,
+          "matchingGithubMergeSha": "3b977ed7fcfe29aeeb57818bb6e166fd090cf339",
+          "matchingGitTreeSha": "9f565b95026ba11b4696bedbd62e0dba099e72a0",
+          "acceptedScope": "Original source-reviewed V1 first-party digital subset only; no physical partner, copied publisher artwork rights, or production UAT"
+        }
       }
     },
     {
