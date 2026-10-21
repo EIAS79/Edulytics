@@ -37,6 +37,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1CentersAndRealDataCorrections.Apply(document);
         CommonCoreG2Unit1PictureGraphSourceTeachingCorrection.Apply(document);
         CommonCoreG2Unit1BarGraphsSourceTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1ConstructGraphsTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -227,8 +228,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Centers);
         var g2Bar = CommonCoreG2Unit1BarGraphsSourceTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Picture);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Construct = CommonCoreG2Unit1ConstructGraphsTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Bar);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Construct);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -303,6 +306,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1PictureGraphSourceTeachingCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2Unit1BarGraphsSourceTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1ConstructGraphsTeachingCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
@@ -397,6 +402,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1PictureGraphSourceTeachingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit1BarGraphsSourceTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1ConstructGraphsTeachingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
