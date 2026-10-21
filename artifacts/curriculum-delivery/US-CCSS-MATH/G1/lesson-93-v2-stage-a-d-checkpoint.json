@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 93,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L05",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "73710b4c1ef184266111f990dd490865957c411ad149c3e65e972ac91bb42469",
+    "teacherPreparationSha256": "45805b8e86c9a780fa36f371f354a43735b95394c593eea480d70e77f5dcf265",
+    "studentMirrorSha256": "5348f2bb4da8bf1ddeb690fbf56843e95b1d099900a4644f12eb0784322ce44c",
+    "teacherActivityHeadings": [
+      "Activity 1: Choose a Way to Add (20 minutes)",
+      "Activity 2: Add `Em Up Partner (20 minutes)",
+      "Activity 3: Tyler's Teacher [OPTIONAL] (15 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing How many do you see? How do you see them? [visual] [visual] <path",
+      "Student Facing Find the value of \\(8 + 47\\) . Show your thinking using drawings, numbers, or words. Student Response Teachers with a valid work email address can click he",
+      "Student Facing Practice Round: Show your thinking using drawings, numbers, or words. Equation: __________________________________ [visual] [visual] <div aria-describedby="
+    ],
+    "sourceSpecificComparison": "Original 8+47; optional 37+7 dollars and 8+26 students; Add Em Up Partner five turns",
+    "classification": "CONTENT_REPAIR",
+    "sourceSpecificStudentArithmeticVerified": [
+      "8+47=55 (47+3+5=55)"
+    ],
+    "sourceSpecificOptionalTeacherStoriesVerified": [
+      "37+7=44 dollars",
+      "8+26=34 students"
+    ],
+    "sourceBoundary": "Original accessible 2021 student task allows learner-chosen strategies for 8+47; the independent make-ten numeric mode is only one such strategy. Original visual flash, oral reasoning, physical partner game (practice plus five turns), and protected assessments are NOT digitally claimed."
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "existingTeachingSourceMathReviewed": true,
+    "preservedExplanation": "Original 8+47, teacher-optional 37+7 and 8+26 plus make-next-ten worked equations are present. Choice of numerical strategy and Add Em Up Partner teacher-led, not numeric-completion proof.",
+    "learnerContentVersion": "us-ccss-g1-full-grade-u04-l22-through-u05-l14-teaching-v2"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceModes": [
+      {
+        "mode": 1,
+        "operands": "37+7",
+        "expected": "MOVE=3;REST=4;TOTAL=44"
+      },
+      {
+        "mode": 2,
+        "operands": "47+8",
+        "expected": "MOVE=3;REST=5;TOTAL=55"
+      },
+      {
+        "mode": 3,
+        "operands": "26+8",
+        "expected": "MOVE=4;REST=4;TOTAL=34"
+      }
+    ],
+    "independentMathReviewed": true,
+    "openSourceStrategyBoundary": "The digital numeric practice correctly grades a make-ten decomposition. An alternative original student strategy is acceptable in classroom assessment, not treated as a wrong mathematical solution merely because the digital mode requests make-ten.",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson93MakeTenOriginalMathTests.cs",
+    "authoredTestsCommit": "068df5a3f764314803744f1c7c6e83382916075f",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue original V1 review at 94; no merge or deployment.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "teacherLedPartnerGamesAutoCertified": false,
+    "protectedPublisherImagesOrAssessmentsAutoCertified": false,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Accessible original arithmetic and learner teaching reviewed, first-party make-ten practice and negative tests prepared; actual free-strategy writing and partner games teacher assessed. CI/rendering/rights/persistence/signoff Stage D pending."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 93,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U05:L05",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-93-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original quick-look pictures, free-choice pupil strategy explanations, five actual partner rounds are not digitally verified."
+  }
+}

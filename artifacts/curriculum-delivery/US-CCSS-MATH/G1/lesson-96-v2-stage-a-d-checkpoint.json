@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 96,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L08",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "38e9b69a54b2cd0443d1fffe300237f8470152fa24ae92867b319f534efb1870",
+    "teacherPreparationSha256": "ac0a5c1e267857fd3f3e3249669f293969d3966332aea43690b46512c6081338",
+    "studentMirrorSha256": "1929e21623faff7459d5811a907986488932b7e137f569ef16dd5ff69d13607c",
+    "teacherActivityHeadings": [
+      "Activity 1: Introduce Target Numbers, Add Tens or Ones (15 minutes)",
+      "Activity 2: Centers: Choice Time (25 minutes)",
+      "Activity 3: Addition Stories [OPTIONAL] (10 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(68 + 2\\) \\(3 + 68\\) \\(5 + 45\\) \\(45 + 7\\) Student Response Teachers with a valid work email address can click",
+      "Student Facing Choose a center. Target Numbers [visual] [visual] <div class=\"im-c-modal__",
+      "Student Facing Priya watched a football game. The home team scored 35 points in the first half. In the second half they scored 6 more points. How many points did they sco"
+    ],
+    "sourceSpecificComparison": "Original Target Numbers Stage 2 start 25/add tens or ones toward 95; optional football 35+6 and 9+45",
+    "classification": "CONTENT_REPAIR",
+    "accessibleOriginalTasksReconciled": {
+      "numberTalk": [
+        "68+2=70",
+        "3+68=71",
+        "5+45=50",
+        "45+7=52"
+      ],
+      "optionalFootball": [
+        "35+6=41 (home team points)",
+        "9+45=54 (fans)"
+      ],
+      "center": "Target Numbers Stage 2 starts at 25, approaches 95 without passing it, six rounds; Number Puzzles and Five in a Row choices; teacher observed."
+    },
+    "sourceArtAndHumanPartnerPlayNotDigitallyCertified": true
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6",
+    "learnerContentOriginalSpecificSourceMathReviewed": true,
+    "sourceTeachingNotes": "First-party original warm-up values and two optional football stories in learner teaching; preserves 25/95/six-turn game as teacher-mediated."
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "exactWarmupModes": [
+      4,
+      7
+    ],
+    "exactOptionalFootballModes": [
+      8,
+      9
+    ],
+    "footballContracts": [
+      "NEW_TEN=YES;TOTAL=41",
+      "NEW_TEN=YES;TOTAL=54"
+    ],
+    "codePath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "4660be571fef4456b3c3702476d4ec70ddf900b6",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson96OriginalWarmupAndOptionalStoriesTests.cs",
+    "authoredTestsCommit": "3f469b0724c81c2b9d9dc3d82cc6aab71ec6327e",
+    "originalCenterPhysicalParticipationVerified": false,
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue original V1 review at 97; no merge or deployment.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherNumericTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Accessible math including four original source warmups and two optional football stories is represented and gradeable. Target Numbers and other partner centers are teacher-led, their actual turns and publisher visuals not inferred. Stage D still required for rendering, CI, signed-in persistence, asset rights and academic acceptance."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 96,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U05:L08",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-96-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original Target Numbers start25/ceiling95, Number Puzzles and Five in a Row actual physical play not certified."
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 114,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U06:L12",
+  "unit": 6,
+  "lessonNumber": 12,
+  "title": "Compare Measurements",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-6/lesson-12/lesson.html",
+    "originalFullTeacherSha256": "66b1985b33e5fff962e7586e95c4a8ad933faba867c1f522353e6bd31e31910e",
+    "originalTeacherPreparationSha256": "93d68add0b23995acb8d3f14bcbefc490c4730634b1400fd54d7d41e4b6c451a",
+    "originalStudentFacingHtmlSha256": "3f4d4b21999d615054fb6a217827b8d6ba3a20b9fe55b72f9aea4fd753536b2f",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-12/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: Friendship Bracelets (15 minutes)",
+      "Activity 2: Same Bracelets, Different Story (10 minutes)",
+      "Activity 3: Introduce Write Numbers, Numbers to 120 by 1 (15 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 3,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing What do you notice? What do you wonder? \\(6 + 8 = 14\\) \\(8 + 6 = 14\\) \\(14 - 6 = 8\\) \\(14 - 8 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) Student Response Teac",
+      "Student Facing Priya and Han are comparing the lengths of their friendship bracelets. Han's bracelet is 14 cubes long. The length of Priya's bracelet is 4 cubes fewer tha",
+      "Student Facing Han's bracelet is 4 cubes longer than Priya's bracelet. Priya's bracelet is 10 cubes long. How long is Han's bracelet? Show your thinking using drawings, n"
+    ],
+    "sourceOriginalTaskInterpretation": "Find unknown smaller/larger friendship bracelet length when a difference is given.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "PRIOR_DETAILED_TARGETED_REVIEW",
+    "priorSourceGapStatement": "Check text parity of bracelet stories and persistent wrong/correct trials at current SHA.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_PRACTICE",
+    "existingFamily": "usccss.g1.u06.l12.compare_measurements",
+    "allowedMappedFamilies": [
+      "usccss.g1.u06.l12.compare_measurements"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": null,
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0"
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue ordinal 115 in order; D/CI deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Original Han/Priya four-unit comparison: missing bracelet length 10 or 14, not the difference already supplied.",
+    "originalStudentAndTeacherTextCompared": true,
+    "firstPartyTeachingAndMathReviewed": true,
+    "originalActualMeasurementTeacherOnly": true,
+    "sourceImagesNotCertified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 114,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U06:L12",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-114-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original Han/Priya four-unit comparison: missing bracelet length 10 or 14, not the difference already supplied."
+  }
+}

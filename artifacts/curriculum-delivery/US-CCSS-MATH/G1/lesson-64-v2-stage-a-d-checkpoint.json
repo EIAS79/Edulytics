@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 64,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L27",
+  "title": "Center Day 4",
+  "sourceBasis": {
+    "device": "Our-CS original 2021 Grade 1 cached textbook (READ ONLY)",
+    "teacherLessonRelativePath": "unit-3/lesson-27/lesson.html",
+    "indexedSourceTaskEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json",
+    "reusedExistingSourceAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json"
+  },
+  "stageA": {
+    "originalStudentTeacherActivitiesRead": [
+      "Number Talk 20−10,20−10−1,18−10−4,18−14",
+      "How Close? Stage 2 subtract two or three from 20 to approach zero",
+      "Compare 9+6 vs19−6 and maintain physical game teacher facilitation"
+    ],
+    "existingCandidateCompared": true,
+    "documentedGap": "Original warm-up and exact expression comparison absent; existing How Close and Compare rules retained",
+    "classification": "CONTENT_REPAIR",
+    "original2021WarmupVerified": [
+      "20-10=10",
+      "20-10-1=9",
+      "18-10-4=4",
+      "18-14=4"
+    ],
+    "originalHowCloseFourCardExample": [
+      "6",
+      "4",
+      "9",
+      "8"
+    ],
+    "originalCompareSynthesis": "9+6=15 > 19-6=13",
+    "allVisibleOriginalTeacherAndStudentTasksReviewed": true,
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "noOriginalCoolDownStudentFacingRequirement": true,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": null
+  },
+  "stageB": {
+    "method": "Unchanged original Five-Lesson V1 A–D source review and minimal teaching repair",
+    "existingRichV2Reused": true,
+    "codePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "codeCommit": "c30d0f59c21408f8c56fdd6c7d17809327368036",
+    "versionField": "CenterFourSourceContentVersion",
+    "sourceArtworkCopied": false,
+    "persistedLessonVersion": "us-ccss-g1-u03-l27-original-activities-v7",
+    "guardV6ToV7": true,
+    "originalHowCloseAndCompareSynthesisInTeaching": true
+  },
+  "stageC": {
+    "reuseOfExistingPractice": true,
+    "existingMathGeneratorAndVerifierPreserved": true,
+    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
+    "sourceModesVerified": "mode0/2 original two/three distinct cards including 0-10, mode3 original 19-6, mode4 compares 9+6 vs19-6, mode5 four-card 6,4,9,8 source hand",
+    "digitalScopeHonestAboutGamePlay": true,
+    "mathWrongAnswerAndSourceCasesTestsAuthored": true,
+    "mathTestsExecuted": false
+  },
+  "stageD": {
+    "originalTaskAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "assertionCommit": "89b32ac0e91fe9505d632467a0a8f6362d163095",
+    "CIExecutedDuringAuthoring": false,
+    "targetedTestPassClaimed": false,
+    "authenticatedGradeRendering": "PENDING_FINAL_CI",
+    "realPracticeScorePersistence": "PENDING_FINAL_CI",
+    "rightsAndVisualEvidence": "PENDING",
+    "lessonAcceptance": "NOT_CLAIMED"
+  },
+  "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "academicStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "A-C source/learner/numeric Practice review complete. Physical center gameplay and child drawings teacher-only; proceed ordinal 65; CI/D final freeze only.",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-64-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 64,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U03:L27",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Stage D code/runtime tested in the exact-run GitHub artifact; full original-V1 internal acceptance separately governed by full-grade-progress.json",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-64-stage-a-c-source-implementation-audit-20261020.md",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721"
+  }
+}

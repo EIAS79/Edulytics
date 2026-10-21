@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 87,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L22",
+  "sourceEvidence": {
+    "OurCsReadOnly2021": true,
+    "fullTeacherSha256": "2a56a19b52f47b36b1faffcf9e56ea5c0c0ba2838a4544c77a2c1862b50986a5",
+    "studentSha256": "3166e64e4ca4290266ee702384bb5b78013dd4f1263eb88b41d90ebd59642784",
+    "teacherPreparationSha256": "1f7a2aab38415a47d79c4bdc814431bd7b7a7c9e28bd71d57091841bb7222218",
+    "teacherActivityHeadings": [
+      "Activity 1: Introduce Mystery Number, Two-digit Numbers (15 minutes)",
+      "Activity 2: Center: Choice Time (25 minutes)"
+    ]
+  },
+  "stageA": {
+    "originalTaskReview": "Original 92=90+2, 90+2>80+12, 20+13<30+13; Mystery Number Stage 1 teacher-led clues and guesses",
+    "classification": "CONTENT_REPAIR",
+    "official2021PublicSource": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-22/lesson.html",
+    "originalWarmup": [
+      "92=90+2 TRUE",
+      "90+2>80+12 FALSE",
+      "20+13<30+13 TRUE"
+    ],
+    "originalTeacherOnlyCenter": [
+      "Mystery Number: two cards and truthful clues; guess after each clue, one point per clue, five rounds, lowest score wins",
+      "Get Your Numbers in Order",
+      "Greatest of Them All"
+    ]
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "sourceCorrectionsCommits": [
+      "0ea334e8e9b4b6e9bce56e62b8e670e2f8591032"
+    ],
+    "publisherArtworkNotClaimedLicensed": true,
+    "originalCenterScoringRepairCommit": "4ba154ef69318248aece7111734e48dcdc800b60",
+    "originalSourceContentVersion": "us-ccss-g1-u04-l22-exact-three-comparisons-v4"
+  },
+  "stageC": {
+    "existingSourceSpecificPracticePreserved": true,
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "scopedWarmupModes": [
+      4,
+      5,
+      6
+    ],
+    "exactSourceTestsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson87MysteryNumberSourceTests.cs",
+    "testsAuthoredCommit": "b9fed9bc67d90337d8c0148b951ce5fdbe474551",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "pendingExactHeadCI": true,
+    "CIExecutedDuringAuthoring": false,
+    "sourceTaskTestsAdded": true,
+    "authenticatedRealPracticeRendering": "PENDING",
+    "correctWrongPersistence": "PENDING",
+    "originalVisualAndRightsEvidence": "PENDING",
+    "perLessonV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue ordinal88 with deferred Stage D/CI.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalLessonCooldownPresentInAccessibleTeacherSource": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "teacherOnlyPhysicalParticipation": "Five-round clue game, actual partner guesses, center cards, scores and choice time require teacher observation; numeric true/false grading does not certify play",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 87,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L22",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-87-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original 2021 source three true/false comparisons and three first-party named center-choice teaching instructions; 5-round Mystery Number clue/lowest-score game remains teacher-led. Digital correctly/incorrectly graded arithmetic checked, no child's actual partner guesses or real game outcome certified."
+  }
+}

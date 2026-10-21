@@ -138,6 +138,34 @@ public static class LessonPracticeInteractionRegistry
         string familyId,
         string answerType)
     {
+        // U06 responses are keyed LONGER/DIFFERENCE/RESULT/EQUATION,
+        // never bare <,>,= choice; center/manual measurement needs a teacher.
+        if(familyId.StartsWith("usccss.g1.u06.l",StringComparison.Ordinal) &&
+           answerType=="contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
+        // G1 U08 has a keyed DIFFERENCE=number Compare story, not
+        // the generic symbol-only relation choice interface.
+        if (familyId=="usccss.g1.u08.l06.compare_difference_story" &&
+            answerType=="contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
+        // G1 U04 L16-L23 answers are keyed strings (SYMBOL, ORDER, TENS,
+        // ONES, COUNT/GAP), not the bare relation-choice widget. Keep the
+        // original exact answer contract for the source-goal digital tasks.
+        if (familyId.StartsWith("usccss.g1.u04.l",StringComparison.Ordinal) &&
+            int.TryParse(familyId.AsSpan("usccss.g1.u04.l".Length,2),out var u04Number) &&
+            u04Number>=16&&u04Number<=23&&answerType=="contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
+        // Source-specific G1 two-digit comparison prompts use structured
+        // RELATION=GREATER/LESS/EQUAL or SYMBOL=<,>,= entries, not a single
+        // RelationChoice response. Preserve that real grading contract.
+        if ((familyId.StartsWith("usccss.g1.u04.l14.",StringComparison.Ordinal) ||
+             familyId.StartsWith("usccss.g1.u04.l15.",StringComparison.Ordinal)) &&
+            answerType == "contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
         // Structured comparison families may share a ".compare" family prefix
         // without using the < = > response shape. Resolve their declared answer
         // contract before the generic comparison fallback.

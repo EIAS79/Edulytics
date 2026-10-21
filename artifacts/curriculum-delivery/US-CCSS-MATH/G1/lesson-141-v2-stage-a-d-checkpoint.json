@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A–D source-task parity checkpoint and target repair, not signoff",
+  "grade": "G1",
+  "ordinal": 141,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L05",
+  "title": "Put Together and Take Apart Story Problems",
+  "sourceBasis": {
+    "originalSourceEdition": "Illustrative Mathematics Grade 1 (2021)",
+    "sourceRelativePath": "unit-8/lesson-5/lesson.html",
+    "originalTeacherHtmlSha256": "319e05d2d15992b41580bb454092aacaca5d9133c084a45fd5063ebff52aebba",
+    "sourceHashMatchesIndexedRegistry": true,
+    "sourceInspection": "Read-only original 2021 Student Facing lesson HTML; original photographs not copied"
+  },
+  "stageA": {
+    "originalSourceTasksDirectlyInspected": true,
+    "originalWarmup": "57+20=59 FALSE;66-4=62 TRUE;17+76=59 FALSE",
+    "sourceMainStoryContexts": [
+      {
+        "title": "7 first graders and second graders, total 18",
+        "equation": "7+□=18",
+        "missing": 11
+      },
+      {
+        "title": "13 of 18 stars bright, remainder dim",
+        "equation": "13+□=18",
+        "missing": 5
+      },
+      {
+        "title": "Diego saw six of fifteen shooting stars; Tyler the rest",
+        "equation": "6+□=15",
+        "missing": 9
+      },
+      {
+        "title": "Elena twelve star stickers within twenty total, remainder planets",
+        "equation": "12+□=20",
+        "missing": 8
+      }
+    ],
+    "sourceTwoEquationChoiceStories": [
+      {
+        "title": "Noah nine white stars of seventeen",
+        "valid": [
+          "17-9=□",
+          "9+□=17"
+        ],
+        "invalid": "9+17=□",
+        "missing": 8
+      },
+      {
+        "title": "Kiran eleven stars of sixteen objects",
+        "valid": [
+          "11+□=16",
+          "16-11=□"
+        ],
+        "invalid": "16+11=□",
+        "missing": 5
+      }
+    ],
+    "identifiedGap": "Existing source-bound learner content omitted two of four story contexts and second of two source equation-choice stories, leaving source-distractor reasoning unrepresented."
+  },
+  "stageB": {
+    "existingRichV2SourceRepairReused": true,
+    "sourceFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "repairCommit": "a59bb480df022f147ca9fdb2454a50127e2ff340",
+    "teacherFacilitatedTaskBoundary": "Source pictures, handwriting, chosen equations, partner explanation remain genuine separate student/teacher work; no publisher artwork copied"
+  },
+  "stageC": {
+    "digitalPracticeExisting": true,
+    "existingFamily": "usccss.g1.u08.l05.missing_part_story",
+    "sourceTaskRole": "Numeric missing-part arithmetic plus authored first-party explanation; exact original choice/drawing not auto-certified by numeric score",
+    "originalDigitalSourceCasesRepaired": "Four original planetarium missing-part stories plus Noah and Kiran two-matching-equation choices, all with faithful numbers and negative controls",
+    "digitalModeIndices": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "engineCommit": "1581f98f1a36bca9fd6c419cae98abf5b2808e20",
+    "independentOracleCommit": "125f851316fed90d491fc65de7e20ef60704285f",
+    "regressionTestCommit": "c89b17ad9f32f894f2779353dc0b031f03ff68af",
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "authoringSourceRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons137To146SourceMathTests.cs",
+    "authoringSourceRegressionCommit": "bd4f898208de7f3e17063afc84f37d9f8319027d",
+    "expandedSourceWarmupCommit": "1a32f8a532a76887135d9a36a66586e8118f3b8c",
+    "expandedWarmupTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1OriginalMissingWarmupEquationsTests.cs",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceAssertionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "testCommit": "b2ad3adf65308bfe3599c516eef9dd1ab9e67868",
+    "dotNetTestsAtCurrentSha": "NOT_RUN",
+    "authenticatedLearnerAndCorrectWrongMalformedGradingPersistence": "PENDING",
+    "rightsAccessibility": "PENDING",
+    "perLessonAcademicSignoff": "NOT_CLAIMED",
+    "newSourceSpecificTestsPrepared": true,
+    "newTestsExecutedInThisCheckpoint": false,
+    "finalShaCiExecuted": false,
+    "academicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "sourceOfTruth": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "sourceSpecificRepair20261020": {
+    "stage": "SOURCE_SPECIFIC_DIGITAL_PRACTICE_REPAIR_NO_A_D_CERTIFICATION",
+    "numberOfSourceCases": 6,
+    "teacherStudentSourceTaskFullFigureAudit": "PENDING",
+    "effectiveAuthenticatedRenderAndPersistedRealAttempt": "PENDING",
+    "sourceRightsAndTeacherOnlyBoundaries": "PENDING",
+    "academicAcceptance": "NOT_CLAIMED",
+    "release": "NO_GO"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Four original planetarium missing-part stories and TWO correct-equation selection stories (Noah and Kiran). Three true/false warmups are exact in the generator; original illustrated diagrams/learner choices require human review.",
+    "originalTaskTextCompared": true,
+    "sourceBoundTeachingAndDigitalMathStaticallyReviewed": true,
+    "genuinePupilPageOrStoryTeacherOnly": true,
+    "originalPublisherFiguresNotVerifiedOrCopied": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "individualAcademicApprovalUnclaimed": true
+  },
+  "nextAction": "Original V1 internal acceptance documented; continue next ordinal, do not repeat technical Stage D or deploy.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D3",
+    "ordinal": 141,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U08:L05",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-141-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Four original planetarium missing-part stories and TWO correct-equation selection stories (Noah and Kiran). Three true/false warmups are exact in the generator; original illustrated diagrams/learner choices require human review."
+  }
+}

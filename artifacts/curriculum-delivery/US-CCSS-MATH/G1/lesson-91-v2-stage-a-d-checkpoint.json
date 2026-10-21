@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 91,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L03",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "7d05b1a514cb3035cd9cf34a82d25d813087295c271d87f9da274d3359cd58af",
+    "teacherPreparationSha256": "39ca0277f4d216517798b2d719f8b5185449841a58cfdedb55056bebdb9b12e7",
+    "studentMirrorSha256": "af5733823e92a313a905e9513208d2c6b1bfcf4fa0e08914d3477844e8a8120b",
+    "teacherActivityHeadings": [
+      "Activity 1: Lin and Han Add (15 minutes)",
+      "Activity 2: I Heard You Say (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(13 + 21\\) \\(13 + 31\\) \\(23 + 31\\) \\(33 + 41\\) Student Response Teachers with a valid work email address can c",
+      "Student Facing Lin and Han are both finding the value of \\(32+ 54\\) . Look at how each student started. What should they do next to find the value? Write equations to rep",
+      "Student Facing Find the value of \\(23 + 74\\) using Lin's or Han's method. Write equations to represent your thinking. \\(23 + 74\\) [visual] [visual] <div aria-describedby="
+    ],
+    "sourceSpecificComparison": "Original 13+21,13+31,23+31,33+41 number talk; Lin/Han 32+54; student-produced 23+74 equations",
+    "classification": "CONTENT_REPAIR",
+    "studentFacingNumericTaskMatch": [
+      "13+21=34",
+      "13+31=44",
+      "23+31=54",
+      "33+41=74",
+      "32+54=86 with Lin/Han's distinct methods",
+      "23+74=97 with learner-authored equations"
+    ],
+    "actualPublisherDrawingNotReplicated": true
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "existingFirstPartyTeachingReviewed": true,
+    "originalMethodDescriptions": "Lin adds tens 30+50=80 and ones 2+4=6; Han adds 30 to 54 to get 84 then adds two to get 86. 23+74=97 with learner-authored reasoning."
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceModes4To9": [
+      "13+21",
+      "13+31",
+      "23+31",
+      "33+41",
+      "32+54",
+      "23+74"
+    ],
+    "authoredSourceAlignedLinHanMode10": {
+      "parameters": {
+        "a": 32,
+        "b": 54,
+        "mode": 10
+      },
+      "expected": "LIN_TENS=80;LIN_ONES=6;HAN_FIRST=84;HAN_SECOND=86;TOTAL=86",
+      "implementationCommit": "f0c25eda3078c47c78bcde8f96cdbe96ef4716ff",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson91OriginalLinHanEquationTests.cs",
+      "authoredTestsCommit": "70fecb153f8ea829844f6f83a174ab755756be06",
+      "notExecuted": true
+    },
+    "originalSourceArtworkOrStudentFreeWrittenEquationsAutoCertified": false,
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue ordinal92 in canonical order; full-grade Stage D/CI/acceptance deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "sourceBoundary": "2021 accessible source equations and method outcomes aligned; first-party structured mode tests Lin/Han step values, but teacher-led original drawings, open-ended self-written equations and class explanations are not automatically certified. Images/rights, authenticated learner scoring, exact frozen SHA tests and academic sign-off remain in Stage D."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 91,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U05:L03",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-91-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original number talks 13+21,13+31,23+31,33+41, Lin/Han 32+54 and 23+74 mathematics taught as first-party source-goal examples; numeric method correctness and grading persisted; no claim child's source handwriting or publisher drawings digitally graded."
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 71,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L06",
+  "title": "Count Larger Collections",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "8210b93ef8034620be513eb55889b1f509b267f285ed999e9606423c7849dbe3",
+    "teacherPreparationSha256": "d85b5ac0d3fe04e57710daf4637d19f5a34e5746a25642008acc220abb63ecfd",
+    "studentHtmlSha256": "7dfd4f10f12ae3ba75bdddedab7551984dfde04fb8c66511ea93a1992963a348",
+    "teacherHeadings": [
+      "Activity 1: Count Another Collection (15 minutes)",
+      "Activity 2: Noah Counts a Collection (10 minutes)",
+      "Activity 3: Centers: Choice Time (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Noah organized his collection of connecting cubes. [visual] [visual] <div class=\"im-c-mo",
+      "Student Facing Choose a center. Check It Off [visual] [visual] <div class=\"im-c-modal__cont"
+    ],
+    "sourceSpecificFinding": "Original 52-object grouping and Noah's incomplete ten tower: 4 tens+8 ones=48, not 50",
+    "classification": "CONTENT_REPAIR",
+    "publicTeacherStudentActivitiesIndependentlyReviewed": true,
+    "original2021Warmup": "Count by ones 50 to 81",
+    "original2021Collection": "52 objects: five complete tens and two loose ones",
+    "original2021NoahAssessment": "Noah says 50; four full tens and 8 ones are 48; DISAGREE",
+    "original2021Synthesis": "3 complete tens plus 7 ones = 37",
+    "originalPublisherSectionBCheckpointVerbatimVerified": false,
+    "allOriginalFigureAndStudentTasksFullyAudited": null
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false,
+    "sourceVersion": "us-ccss-g1-u04-l06-original-student-activities-v7",
+    "existingV6ToL06OnlyV7UpgradeGuarded": true,
+    "sourceMathAndLearnerStrategyCorrected": true
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "sourceOriginalNumericTaskParity": "VERIFIED_ACCESSIBLE_ORIGINAL_FIRST_PARTY_REPRESENTATION",
+    "noahJudgmentAndDifferenceContractIndependentlyReviewed": true,
+    "sourceSpecificDigitalModes": [
+      4,
+      5,
+      6
+    ],
+    "mathTestsWrittenNotRun": true
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-71-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "source2021ProtectedCheckpointVerbatimVerified": false,
+    "teacherObservedRepresentationsNotDigitallyCertified": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "A-C original publicly visible source mathematics and Edulytics learner/practice repaired. Stage D/CI frozen-grade deferred. Next ordinal 72.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 71,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L06",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-71-stage-a-c-source-implementation-audit-20261020.md",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721"
+  }
+}

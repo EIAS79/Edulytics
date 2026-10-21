@@ -106,7 +106,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -220,6 +220,10 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG1NextSourceFiveCorrections.IsTarget(document, lesson) ||
          CommonCoreG1SourceFiveNextCorrections.IsTarget(document, lesson) ||
          CommonCoreG1TenAndTeenSourceFiveCorrections.IsTarget(document, lesson) ||
+         CommonCoreG1FullGradeStartingContentCorrections.IsTarget(document, lesson) ||
+         CommonCoreG1FullGradeFinalUnit4Corrections.IsTarget(document, lesson) ||
+         CommonCoreG1FullGradeUnit5ContentCorrections.IsTarget(document, lesson) ||
+         CommonCoreG1FullGradeUnit6To8ContentCorrections.IsTarget(document, lesson) ||
          CommonCoreSourceBoundHtmlEntityCorrections.IsTarget(document, lesson) ||
          CommonCoreT001MixedAddSubtractContentCorrection.IsTarget(document, lesson) ||
          CommonCoreT001FindThePairContentCorrection.IsTarget(document, lesson));
@@ -900,6 +904,50 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                     : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
+                    if (CommonCoreG1FullGradeFinalUnit4Corrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG1FullGradeFinalUnit4Corrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,sourceLesson,content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id,out var g1FinalU04Rows)
+                                    ? g1FinalU04Rows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+                    if (CommonCoreG1FullGradeUnit6To8ContentCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG1FullGradeUnit6To8ContentCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,sourceLesson,content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id,out var fullGradeU06ToU08Rows)
+                                    ? fullGradeU06ToU08Rows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+                    if (CommonCoreG1FullGradeUnit5ContentCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG1FullGradeUnit5ContentCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,sourceLesson,content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id,out var fullGradeUnit5Rows)
+                                    ? fullGradeUnit5Rows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+                    if (CommonCoreG1FullGradeStartingContentCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG1FullGradeStartingContentCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document, sourceLesson, content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g1FullGradeRows)
+                                    ? g1FullGradeRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
                     if (CommonCoreG1TenAndTeenSourceFiveCorrections
                         .IsTarget(document, sourceLesson))
                     {

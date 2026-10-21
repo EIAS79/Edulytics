@@ -1,33 +1,18 @@
-# Edulytics — instructions for curriculum executors
+# Edulytics — active curriculum executor instructions
 
-Before any curriculum changes, read the **entire** authoritative
-[`EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md`](docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md)
-and the [executor SOP](docs/curriculum/GRADE_FIRST_FIVE_EXECUTOR_SOP.md).
+**Single active delivery plan:** [Full-Grade V2](docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md), `EDULYTICS-GRADE-FIRST-FULL-GRADE-V2`.
+**Execution SOP:** [Full-Grade executor SOP](docs/curriculum/plans/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md).
+**Owner-requested throughput mode:** [Continuous grade authoring with final-only expensive CI](docs/curriculum/plans/EDULYTICS_FULL_GRADE_CONTINUOUS_AUTHORING_FINAL_CI_PROTOCOL_V1.md) — work on isolated non-PR branch until freeze, then promote safely to original Draft PR #567 for existing mandatory gates.
+**Unchanged, controlling *per-lesson quality* specification:** [original Five-Lesson V1](docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md), `EDULYTICS-GRADE-FIRST-5-V1` §4–§5 A–D. Its historical five-lesson **publishing schedule is not active**. Superseded Full-Grade V1 is archived at [its original content](docs/curriculum/plans/archive/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md); it is **not** an active execution instruction.
 
-**The plan `EDULYTICS-GRADE-FIRST-5-V1` is authoritative and unchanged.**
-The SOP only makes existing execution steps repeatable between human or AI sessions.
-Neither this file nor the SOP creates new academic accreditation, CI requirements,
-source-edition bans, or permission to change GitHub/Render protections.
+Before any curriculum work, read V2 and its SOP, the original V1 acceptance rules, actual `main` and current candidate history. Preserve the old Grade 1 1–50 historical evidence and all source/Practice/visual work in candidate [PR #567](https://github.com/EIAS79/Edulytics/pull/567). **Never reset, delete, force push, mass-rewrite or reapprove historic content by assertion.**
 
-- Take **at most five consecutive canonical lessons** within one grade/course
-  from its stable manifest. Read last completed chunk and its source crosswalk,
-  the actual effective student-facing Rich V2 and Practice code, and current repo
-  and deployment status before changing anything.
-- Verify source contents and provenance on the **actual authorized local files**;
-  compare activities, learning objectives, representations, standards and real
-  student responses. Source chronology alone does NOT establish incompatibility:
-  older retained official resources may be valid; newer material may be equivalent,
-  partly revised or substantively different. Judge actual academic content.
-- Reuse correct content, contracts and shared math components first. Repair only
-  a documented mismatch with evidence and scoped regression tests. Never copy
-  publisher artwork without checking rights.
-- Execute existing V1 stages **A→B→C→D→E→F**. Record per-lesson evidence, exact
-  source hashes, applicable Addressing vs Building Towards standards, known
-  limitations, and actual Git SHA. No invented test result or student-book parity
-  if only teacher-page Student Facing tasks were inspected.
-- Keep source-based internal acceptance, PR/CI, `main` merge, Render LIVE and
-  **owner's actual production UAT** separate. Never claim the final stage on the
-  strength of an earlier one. Existing protections stay in force.
-- Do not modify the authoritative V1 plan, historical release evidence, lesson
-  identities, curriculum outcome IDs, teacher/school adoptions or prior student
-  grades as a side effect of ordinary lesson authoring.
+- Work on **one complete grade/course as the release unit**; **each lesson is still independently compared, repaired if needed and evidenced under original V1 A–D**. During continuous authoring use cheap affected checks as needed; bind the final internal acceptance to genuine **frozen-code authenticated evidence** in the consolidated end-of-grade CI phase. No intermediate full-PR-CI ceremony. No five-, ten-, twenty- or 500-lesson cutoffs, acceptance waves or partial-grade release.
+- Grade 1 snapshot: **146 canonical lessons**, original **1–50 historically released**; **51–146 (96)** are candidate new lessons requiring independently recorded internal acceptance. Inspect/reuse existing PR #567 implementations and proofs; start academic-evidence review at the live `full-grade-progress.json` `nextOrdinal` (the 2026-10-19 initial cursor was 51; after that lesson's evidenced V1 acceptance it advanced to 52). Do not follow an outdated hard-coded document cursor. **Do not begin lesson authoring from scratch for candidates that already exist.**
+- On each new lesson, compare the original source's actual teacher/student goals and tasks, content, standards' Addressing vs Building Towards scope, representations, rights, the actual learner-visible Rich V2 and Practice families; classify `READY_REUSE`, proven content/Practice defect, missing shared capability or genuine source blocker. The source edition alone is not a blocker. Do not invent PDF/image parity or classroom participation evidence.
+- Reuse passing teaching content, mathematics solvers, skill contracts, Practice families and existing valid test evidence. Fix only documented defects and run affected tests, plus all still-required CI/security/branch protections. Check appropriate correct, wrong and malformed answers, real authenticated behavior and saved scores where applicable. No unlicensed publisher artwork.
+- Record each new lesson's original-V1 internal acceptance with its true source/task alignment, actual content/Practice, relevant tests and SHA. A lesson missing proof stays `IN_PROGRESS`/`BLOCKED`; do not count it as accepted. Do not re-review accepted lessons absent a source/content/shared-dependency change that affects their proof.
+- Only after **96/96 new lessons genuinely accepted**, with **50 historical references preserved**, is the **single full-grade release** eligible for exact-SHA final gate and existing protected GitHub checks. Merge, confirmed Render LIVE/health/student attempt persistence, and owner's *actual* production UAT are distinct later states. No external teacher/accreditation or new academic gate is introduced.
+- **Our-CS is source-reading-only**; no development branch, worktree, code edits or deployment there. No production/student/tenant/school data changes as a side effect of changing the curriculum plan.
+
+The historical original Five-Lesson V1 and superseded Full-Grade V1 remain audit references only for the intended contexts. The latter must never be selected as the governing execution plan.

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original source V1 A–D teaching/task repair checkpoint, NOT internal academic approval",
+  "grade": "G1",
+  "ordinal": 144,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L08",
+  "title": "Show Me All the Ways PLC Activity",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics Grade 1 2021",
+    "originalFullTeacherSource": "unit-8/lesson-8/lesson.html",
+    "readOnlyObservedOriginalSha256": "1891443191e0f5a8299cccdf5ce15b86cacd55f13707c3b4c5bb0118c63a5809",
+    "matchesSourceRegistry": true,
+    "artRights": "Source photo/individual images have not been approved for redistribution; use first-party representations"
+  },
+  "stageA": {
+    "sourceTeacherActivityRead": true,
+    "sourceGoal": "Original teacher launch says choose a favorite number BETWEEN 20 AND 100 and create a classroom number-book PAGE with AT LEAST THREE addition EXPRESSIONS and many other tens-and-ones models; original 84 example; gallery walk reviews classmates' page",
+    "sourceTeacherWarmup": "Too low, about right and too high estimates from original pictured objects; imagery not imported",
+    "sourceCenters": [
+      "Compare",
+      "How Close?",
+      "Write Numbers"
+    ],
+    "identifiedGap": "Existing candidate limited the source to two-digit numbers, omitted the at-least-three-expressions requirement, original 84 model, page authoring and listed center objectives"
+  },
+  "stageB": {
+    "reusedExistingLessonRenderer": true,
+    "sourceCorrection": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "repairCommit": "343371dde0ff79479390828996739fd9899080db",
+    "publisherImagesCopied": false
+  },
+  "stageC": {
+    "originalDigitalPracticeFamily": "usccss.g1.u08.l08.same_number_tens_ones",
+    "digitalScope": "Conservation of value under tens/ones exchanges, not certification of original learner-created number-book page",
+    "teacherAuthorshipBoundary": "Original class number book drawing, self-created expressions, physical card centers and gallery presentations require real student/teacher observation",
+    "authoringSourceRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons137To146SourceMathTests.cs",
+    "authoringSourceRegressionCommit": "bd4f898208de7f3e17063afc84f37d9f8319027d",
+    "openNumberBookMathCommit": "57fbe3abf639374bded82852048e4883a60aaf57",
+    "alternateExpressionsVerifierCommit": "9768a63930531852d87cf25fc7f35fcdc623c82e",
+    "acceptsAlternativeThreeTrueExpressions": true,
+    "sourceFavouriteNumberRange": [
+      20,
+      100
+    ],
+    "testsExecuted": false,
+    "studentSelectedNumberBookMode": 5,
+    "studentNumberChoiceInclusive": [
+      20,
+      100
+    ],
+    "teacherSourceModel": 84,
+    "requiresThreeDistinctMathematicallyTrueAdditionExpressions": true,
+    "rejectsCommutativelyIdenticalExpressions": true,
+    "sourceModeValueChoiceAndVerifierCommit": "efe03be62940409506231cdc42b4b5fa6224cd00",
+    "allNumberDomainSolutionsUniqueDecompositionCommit": "976f90dfcb80332e2d67e72b37f75788b9d10b44",
+    "domainRangeRegressionTestCommit": "2bcdb6c852ecf9d372ce9506942ec9a07fad445e"
+  },
+  "stageD": {
+    "regressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "testCommit": "f3362ad8296eccf6122642f8a3464770c8fc32ea",
+    "currentHeadDotNet": "NOT_RUN",
+    "authenticatedStudentRenderAndGrading": "PENDING_FROZEN_HEAD",
+    "licensingVisualAccessibility": "PENDING",
+    "perLessonOriginalV1AcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "crossLessonMathRenderingRepairs20261020": {
+    "evidenceType": "SOURCE_DOMAIN_AND_RENDERING_CODE_REPAIR_NOT_ACADEMIC_APPROVAL",
+    "reviewedSourceMathSubset": "Original learner-authored class book explicitly includes the 100 boundary. Numeric Practice and SVG now support 20–100, with correct 10-tens, zero/ten-trade models; teaching prompt no longer mislabels 100 as two-digit. Authored assignment remains teacher-reviewed, not auto-certified.",
+    "sourceChanges": [
+      "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit8ReviewQuestions.cs",
+      "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1PlaceValue.cs"
+    ],
+    "negativeControlsAuthoredAt": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit8ReviewPracticeTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1NewSourcePlaceValueVisualTests.cs"
+    ],
+    "correctnessOutcome": "SOURCE_BOUNDARY_CODE_REPAIRED_TESTS_AUTHORED_NOT_EXECUTED_AT_FROZEN_SHA",
+    "actualAuthenticatedPracticePersistence": "PENDING",
+    "originalStudentTaskToEffectiveTeachingCompleteParity": "NOT_CLAIMED",
+    "finalDotNetAndProtectedCI": "DEFERRED_UNTIL_WHOLE_GRADE_FREEZE",
+    "internalAcceptance": "NOT_CLAIMED"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Original student's favorite number 20 through 100, three DISTINCT mathematically correct additive expressions and tens-and-ones models. Digital first-party check accepts alternative student-number decompositions; teacher supervises original child-created class-book page, drawings and gallery.",
+    "originalTaskTextCompared": true,
+    "sourceBoundTeachingAndDigitalMathStaticallyReviewed": true,
+    "genuinePupilPageOrStoryTeacherOnly": true,
+    "originalPublisherFiguresNotVerifiedOrCopied": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "individualAcademicApprovalUnclaimed": true
+  },
+  "nextAction": "Original V1 internal acceptance documented; continue next ordinal, do not repeat technical Stage D or deploy.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D3",
+    "ordinal": 144,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U08:L08",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-144-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original student's favorite number 20 through 100, three DISTINCT mathematically correct additive expressions and tens-and-ones models. Digital first-party check accepts alternative student-number decompositions; teacher supervises original child-created class-book page, drawings and gallery."
+  }
+}

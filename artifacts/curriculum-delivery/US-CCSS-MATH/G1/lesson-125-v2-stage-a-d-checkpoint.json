@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A-D per-lesson source/task parity checkpoint; not an academic approval",
+  "grade": "G1",
+  "ordinal": 125,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L06",
+  "title": "Rectangles and Squares",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics Grade 1, 2021",
+    "teacherFullLessonPath": "unit-7/lesson-6/lesson.html",
+    "observedFullSourceSha256": "83ca489ce0c19d6715638c4d93e7e785020ea5625e8efdb6b1f8ce31ce41c62d",
+    "observedHashMatchesIndexedRegistry": true,
+    "originalStudentFacingArtwork": "NOT_VERIFIED_TO_FULL_VISUAL_AND_RIGHTS_STANDARD"
+  },
+  "stageA": {
+    "originalStudentTasksReadDirectly": true,
+    "sourceWarmup": "57+10,57+11,57+21,57+42",
+    "requiredAuthoredSets": [
+      {
+        "validShape": "rectangles",
+        "draw": 5,
+        "drawNonexamples": 3
+      },
+      {
+        "validShape": "squares",
+        "draw": 5,
+        "drawNonexamples": 3
+      }
+    ],
+    "originalSourceTotalDrawings": 16,
+    "sourceDefiningAttributeNote": "Every square is also a rectangle, but not every rectangle is a square. A non-square rectangle may be a square nonexample, but does not qualify as a rectangle nonexample.",
+    "identifiedGap": "Previous source-specific correction and teacher rubric tracked the five rectangles and three nonrectangles only, omitting the separate five squares and three nonsquares."
+  },
+  "stageB": {
+    "existingSourceSpecificContentReused": true,
+    "sourceCorrection": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "repairCommit": "b425148499b2401ba2986b8f451dccf6344dbaaf",
+    "correctedOriginalAssignments": "Both independent eight-drawing tasks with source-faithful right-angle and equal-side reasoning",
+    "originalPublisherArtworkCopied": false
+  },
+  "stageC": {
+    "existingDigitalFamily": "usccss.g1.u07.l06.square_and_rectangle_properties",
+    "digitalPracticePartialAssessmentOnly": true,
+    "teacherReviewRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-125-original-shape-creation-rubric.json",
+    "rubricCorrectionCommit": "691071e06a1aab9b7766fd7fe8a9ef5b04b0cb11",
+    "actualLearnerDrawingsAndTeacherObservation": "NOT_CLAIMED",
+    "additionalDigitalModeEvidence": {
+      "mathEngineCommit": "a2e27dbdad445ffb183ce0190e0b0faefd9bf95b",
+      "independentOracleCommit": "e945e2f52721483bda022c81d3464e3a7e917422",
+      "regressionCommit": "3c0fd3810c3b3d79befd79bb5f52e370286c8fc1",
+      "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs",
+      "scope": "Three extra shape conditions: square, non-square rectangle, rhombus; do not claim original 16 child drawings",
+      "status": "CODE_AND_TESTS_AUTHORED_NOT_EXECUTED"
+    },
+    "sourceMathRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons121To136SourceMathTests.cs",
+    "sourceMathRegressionCommit": "8891bd6bedca4d0181affb726e111db462eaab15",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "assertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "testCommit": "4c8d7fce0d951d3864d912dc65c577699f9eb7ce",
+    "staticSourceTestStringCrossCheck": "PASSED_NO_GITHUB_CI",
+    "dotNetTestsAtCurrentSha": "NOT_RUN",
+    "authenticatedStudentTaskRendering": "PENDING",
+    "independentPracticeGradingAndPersistence": "PENDING",
+    "originalStudentVisualCopyrightAccessibility": "PENDING",
+    "individualInternalV1Approval": "NOT_CLAIMED",
+    "frozenShaCIExecuted": false,
+    "authenticLearnerSourceDrawingRubricProven": false,
+    "academicAcceptance": "NOT_CLAIMED"
+  },
+  "status": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceAuthoringBoundary": "Original five rectangles + three nonrectangles and five squares + three nonsquares, total SIXTEEN drawings; first-party square/rectangle/rhombus classifications, all child drawings teacher assessed.",
+    "existingLearnerTeachingSourceGoalsReviewed": true,
+    "firstPartyPracticeAndVerifierReviewed": true,
+    "originalHumanCreatedArtifactsAutoCertified": false,
+    "originalPublisherImagesNotLicensedOrCopied": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "academicOriginalV1Approval": false
+  },
+  "nextAction": "Individually accepted; continue 126; no release",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D3",
+    "ordinal": 125,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U07:L06",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-125-source-math-v1-acceptance-20261021.md"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 88,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L23",
+  "sourceEvidence": {
+    "OurCsReadOnly2021": true,
+    "fullTeacherSha256": "49a4abdbfc72a974394661f746a84c411fa5478f8babf090e21cd4e2d041e0b6",
+    "studentSha256": "861b98234aef17414e9deab9ed6144eae7fe5ba2ff60c23860b9970b3d251b8d",
+    "teacherPreparationSha256": "3fd91382fe53cdc5618e7e8ebfe569b90490618d6bb77cef792acdb61674cabe",
+    "teacherActivityHeadings": [
+      "Activity 1: Count the Objects (15 minutes)",
+      "Activity 2: Quantities Card Sort (20 minutes)"
+    ]
+  },
+  "stageA": {
+    "originalTaskReview": "Original beans estimate, three two-handful experiments and source artwork card sort <20,20–50,>50",
+    "classification": "CONTENT_REPAIR_VISUAL_PENDING",
+    "official2021PublicSource": "https://im.kendallhunt.com/K5/teachers/grade-1/unit-4/lesson-23/lesson.html",
+    "verifiedOriginal2021Activities": [
+      "Warm-up bean image with a circled group of 10, too-low/about-right/too-high estimates",
+      "Three real two-handful collection estimates then physical exact counts",
+      "Authorized picture cards sorted into <20, 20–50, >50, and one picture from each represented in tens/ones"
+    ],
+    "originalSourceArtworkAndUnseenObjectQuantitiesNotClaimed": true
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "sourceCorrectionsCommits": [
+      "0ea334e8e9b4b6e9bce56e62b8e670e2f8591032"
+    ],
+    "publisherArtworkNotClaimedLicensed": true,
+    "verifiedLearnerContentScope": "Existing Unit 4 L23 source-corrected text explicitly retains three real experiments, source quantity bands and teacher-only picture sort. No unlicensed source image copied."
+  },
+  "stageC": {
+    "existingSourceSpecificPracticePreserved": true,
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "verifiedSourceBandModes": [
+      4,
+      5,
+      6
+    ],
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson88SourceQuantityBandsTests.cs",
+    "testsAuthoredCommit": "f4a65bd053c9764205c0b035845fcb337f79818b",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "pendingExactHeadCI": true,
+    "CIExecutedDuringAuthoring": false,
+    "sourceTaskTestsAdded": true,
+    "authenticatedRealPracticeRendering": "PENDING",
+    "correctWrongPersistence": "PENDING",
+    "originalVisualAndRightsEvidence": "PENDING",
+    "perLessonV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue ordinal89, original Unit 5 Lesson 1, without Stage D or CI.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "teacherOnlyBoundary": "Three real two-handful physical trials, actual picture card sort, original photograph counting and prediction before revelation cannot be verified by simulated numeric Practice; retained as teacher-guided work, not certified as learner performance.",
+    "publisherArtworkCopied": false,
+    "sourceFigureExactReproductionNotClaimed": true,
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "sourceBoundary": "First-party numerical estimation and quantity-band operations gradeable; no fake claim to grading original licensed card photos or experimental behavior."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 88,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L23",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-88-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original optional 2021 lesson: three two-handful estimation trials and three picture quantity bands explained in first-party teaching. Exact numeric count/category and tens/ones grading checked; no manufactured actual photo quantities, image matching, physical samples or child observations claimed."
+  }
+}

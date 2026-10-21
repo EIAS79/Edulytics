@@ -21,9 +21,15 @@ const mapping={
  'G1:U07:L16':'ReadClockDailySchedule'
 };
 function constant(key) {
- const match=source.match(new RegExp('public const string '+key+' = ("(?:[^"\\\\]|\\\\.)*");'));
- assert.ok(match,'Missing Edulytics-authored constant '+key);
- return JSON.parse(match[1]);
+  const declaration='public const string '+key+' = ';
+  const start=source.indexOf(declaration);
+  assert.ok(start>=0,'Missing Edulytics-authored constant '+key);
+  const rhs=source.slice(start+declaration.length);
+  const direct=rhs.match(/^("(?:[^"\\]|\\.)*")/);
+  if(direct)return JSON.parse(direct[1]);
+  const composed=rhs.match(/^([A-Za-z_]\w*)\s*\+\s*("(?:[^"\\]|\\.)*")/);
+  assert.ok(composed,'Unrecognized source-guarded constant composition '+key);
+  return constant(composed[1])+JSON.parse(composed[2]);
 }
 function originalSha(en) {
  return createHash('sha256').update([
@@ -55,7 +61,13 @@ test('the seven new Grade 1 repairs are exactly bounded and fully source/SHA gua
    assert.equal(r.oldCanonicalBodySha256,lesson.canonicalBodySha256);
    assert.equal(r.oldFullEnglishBodySha256,originalSha(en));
    assert.equal(constant(key+'LessonCode'),r.lessonCode);
-   assert.equal(constant(key+'Version'),r.newContentVersion);
+   const historicalKey=['CompareRepresentedNumbers','MeasureConnectingCubeLength'].includes(key)
+    ?key+'VersionV1':key+'Version';
+  assert.equal(constant(historicalKey),r.newContentVersion);
+  if(historicalKey!==key+'Version'){
+    assert.match(constant(key+'Version'),/-v2$/);
+    assert.notEqual(constant(key+'Version'),r.newContentVersion);
+  }
    assert.ok(source.includes('['+key+'LessonCode] = new Repair('));
    for(const str of [lesson.sourceUrl,lesson.canonicalBodySha256,r.oldFullEnglishBodySha256,en.stepByStepSolutions]){
     assert.ok(source.includes(JSON.stringify(str)),r.lessonCode+': missing strict pin');
@@ -69,11 +81,13 @@ test('new Grade 1 text is learner-facing with worked applications and mathematic
   const concepts=constant(key+'Concepts'),examples=constant(key+'Examples'),steps=constant(key+'Steps'),mistakes=constant(key+'Mistakes');
   assert.ok(concepts.length>100,short);
   assert.ok(examples.length>200,short);
-  assert.ok(steps.length>180 && (steps.match(/Step \d:/g)||[]).length===5,short);
+  const stepNumbers=[...steps.matchAll(/Step (\d+):/g)].map(match=>Number(match[1]));
+  assert.ok(steps.length>180 && stepNumbers.length>=5,short);
+  assert.deepEqual(stepNumbers,stepNumbers.map((_,i)=>i+1),short+': sequential teaching steps');
   assert.ok(mistakes.length>100,short);
   assert.ok(!/<(?:svg|path)\b/i.test(examples),short);
   assert.ok(!/Step 1: Represent the quantities or objects/i.test(steps),short);
-  for(const m of (examples+'\n'+steps).matchAll(/(\d+)\s*([+-])\s*(\d+)\s*=\s*(\d+)(?!\d)/g)){
+  for(const m of (examples+'\n'+steps).matchAll(/(?<![\d+\-])(\d+)\s*([+-])\s*(\d+)\s*=\s*(\d+)(?!\d|\s*[+\-*/])/g)){
    const left=Number(m[1]),right=Number(m[3]),expected=Number(m[4]);
    assert.equal(m[2]==='+'?left+right:left-right,expected,short+': '+m[0]);equations++;
   }
@@ -86,6 +100,11 @@ test('new Grade 1 text is learner-facing with worked applications and mathematic
  assert.match(constant('ComposeThreeDimensionalShapesExamples'),/stack|join/i);
  assert.match(constant('ComposeThreeDimensionalShapesExamples'),/rectangular-prism shape/i);
  assert.match(constant('ComposeThreeDimensionalShapesExamples'),/sketch the two layers/i);
+ // One complete commutative equality, not a false partial left-hand prefix.
+ assert.match(constant('WriteClockTimesExamples'),/10\+15=15\+10/);
+ assert.equal(10+15,15+10);
+ assert.match(constant('WriteClockTimesExamples'),/10\+10\+10=3 is FALSE/);
+ assert.notEqual(10+10+10,3);
  for(const key of ['ReadHalfPastClock','WriteClockTimes','ReadClockDailySchedule']){
   assert.match(constant(key+'Examples'),/\d+:30/);
   assert.match(constant(key+'Examples'),/minute hand/i);

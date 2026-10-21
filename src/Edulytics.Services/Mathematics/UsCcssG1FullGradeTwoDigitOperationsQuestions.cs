@@ -1,0 +1,313 @@
+using Edulytics.Core.Enums;
+
+namespace Edulytics.Services.Mathematics;
+
+/// <summary>
+/// G1 new U04 L11-L15, ordinals 76-80. These are gradeable parts only.
+/// Partner centers, concrete base-ten models and oral reasoning remain teacher-assessed.
+/// L14 uses comparison WORDS; L15 introduces the formal symbols.
+/// </summary>
+public static class UsCcssG1FullGradeTwoDigitOperationsQuestions
+{
+    public const string AddTens="usccss.g1.u04.l11.add_tens.two_digit";
+    public const string TenMoreLess="usccss.g1.u04.l12.mental.ten_more_less";
+    public const string CenterReview="usccss.g1.u04.l13.center.place_value_mix";
+    public const string CompareWords="usccss.g1.u04.l14.compare.two_digits_words";
+    public const string CompareSymbols="usccss.g1.u04.l15.compare.symbols";
+    public static readonly IReadOnlyList<string> Families=
+        [AddTens,TenMoreLess,CenterReview,CompareWords,CompareSymbols];
+    public sealed record Problem(string Family,string Prompt,string Explanation,
+        AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
+    public static bool Supports(string? family)=>family is not null&&Families.Contains(family,StringComparer.Ordinal);
+    public static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!Supports(family)||p.Count!=4||
+           !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+           !p.TryGetValue("mode",out int mode)||!p.TryGetValue("unused",out int z)||
+           z!=0||mode<0||mode>(family==TenMoreLess?14:family==CompareSymbols?13:12)||(mode>3&&family!=AddTens&&family!=CenterReview&&family!=CompareWords&&family!=CompareSymbols&&family!=TenMoreLess))return false;
+        return family switch
+        {
+            AddTens=>mode<=3?
+                (a>=20&&a<=79&&b>=10&&b<=30&&b%10==0&&a+b<=99):
+                mode==4?
+                ((a==37&&b==20)||(a==60&&b==23)||(a==48&&b==50)||
+                 (a==54&&b==20)||(a==30&&b==65)):
+                mode==5?(a==80&&b==5):
+                mode==6?(a==70&&b==1):
+                mode==7?(a==20&&b==6):
+                mode==8?(a==46&&b==30):
+                mode==9?(a==45&&b==20):
+                mode==10?(a==43&&b==20):
+                mode==11?(a==56&&b==40):
+                (a==3&&b==30),
+            TenMoreLess=>mode switch
+            {
+                0 or 1=>a>=20&&a<=89&&b==10,
+                2=>b==30&&(a==67||a==99),
+                3=>b==20&&a==45,
+                4=>a==46&&b==10,
+                5=>a==67&&b==10,
+                6=>a==39&&b==10,
+                7=>a==52&&b==10,
+                8=>a==75&&b==10,
+                9=>a==67&&b==30,
+                10=>a==99&&b==30,
+                11=>a==3&&b==10,
+                12=>a==10&&b==5,
+                13=>a==13&&b==10,
+                14=>a==15&&b==10,
+                _=>false
+            },
+            CompareWords=>mode switch
+            {
+                4=>a==75&&b==65,
+                5=>a==39&&b==41,
+                6=>a==93&&b==26,
+                7=>a==62&&b==64,
+                _=>a>=20&&a<=99&&b>=20&&b<=99
+            },
+            CompareSymbols=>mode switch
+            {
+                4=>a==17&&b==27,
+                5=>a==34&&b==36,
+                6=>a==17&&b==47,
+                7=>a==17&&b==47,
+                8=>a==58&&b==53,
+                9=>a==45&&b==63,
+                10=>a==39&&b==93,
+                11=>a==4&&b==46,
+                12=>a==21&&b==12,
+                13=>a==68&&b==86,
+                0 or 1 or 2 or 3=>a>=20&&a<=99&&b>=20&&b<=99,
+                _=>false
+            },
+            CenterReview=>mode switch
+            {
+                4=>a==70&&b==20,
+                5=>a==8&&b==7,
+                6=>a==9&&b==6,
+                0=>a>=11&&a<=17&&b>=1&&a+b<=20,
+                1=>a>=11&&a<=20&&b>=1&&b<=9&&b<a,
+                2=>a>=20&&a<=69&&b>=10&&b<=30&&b%10==0&&a+b<=99,
+                _=>a>=1&&a<=9&&b>=0&&b<=9
+            },
+            _=>false
+        };
+    }
+    public static Problem Build(string family,Random random)
+    {
+        if(!Supports(family))throw new InvalidOperationException("Unsupported G1 two-digit source family");
+        int mode=random.Next(family==AddTens?13:family==CenterReview?7:family==CompareWords?8:family==CompareSymbols?14:family==TenMoreLess?15:4),a,b;
+        if(family==AddTens)
+        {
+            if(mode==4)
+            {
+                var tasks=new[]{(37,20),(60,23),(48,50),(54,20),(30,65)};
+                (a,b)=tasks[random.Next(tasks.Length)];
+            }
+            else if(mode==5){a=80;b=5;}
+            else if(mode==6){a=70;b=1;}
+            else if(mode==7){a=20;b=6;}
+            else if(mode==8){a=46;b=30;}
+            else if(mode==9){a=45;b=20;}
+            else if(mode==10){a=43;b=20;}
+            else if(mode==11){a=56;b=40;} // Public original illustration ALT description: 56 + [smudged tens]0 = 96.
+            else if(mode==12){a=3;b=30;} // Public original ALT description: [smudged tens]3 + 30 = 74 is false.
+            else{a=random.Next(20,80);b=random.Next(1,Math.Min(3,(99-a)/10)+1)*10;}
+        }
+        else if(family==TenMoreLess)
+        {
+            if(mode==2){a=random.Next(2)==0?67:99;b=30;}
+            else if(mode==3){a=45;b=20;}
+            else if(mode>=4&&mode<=8){a=mode==4?46:mode==5?67:mode==6?39:mode==7?52:75;b=10;}
+            else if(mode==9){a=67;b=30;}
+            else if(mode==10){a=99;b=30;}
+            else if(mode>=11)
+            {
+                // Four exact mental number-talk expressions in the accessible 2021 teacher source.
+                (a,b)=mode switch
+                {
+                    11=>(3,10),12=>(10,5),13=>(13,10),14=>(15,10),
+                    _=>throw new InvalidOperationException("Unknown original number talk mode")
+                };
+            }
+            else{a=random.Next(20,90);b=10;}
+        }
+        else if(family is CompareWords or CompareSymbols)
+        {
+            if(family==CompareWords&&mode==4){a=75;b=65;}
+            else if(family==CompareWords&&mode==5){a=39;b=41;}
+            else if(family==CompareWords&&mode==6){a=93;b=26;}
+            else if(family==CompareWords&&mode==7){a=62;b=64;}
+            else if(family==CompareSymbols&&mode==4){a=17;b=27;}
+            else if(family==CompareSymbols&&mode==5){a=34;b=36;}
+            else if(family==CompareSymbols&&mode==6){a=17;b=47;}
+            else if(family==CompareSymbols&&mode==7){a=17;b=47;}
+            else if(family==CompareSymbols&&mode==8){a=58;b=53;}
+            else if(family==CompareSymbols&&mode==9){a=45;b=63;}
+            else if(family==CompareSymbols&&mode==10){a=39;b=93;}
+            else if(family==CompareSymbols&&mode==11){a=4;b=46;}
+            else if(family==CompareSymbols&&mode==12){a=21;b=12;}
+            else if(family==CompareSymbols&&mode==13){a=68;b=86;}
+            else{a=random.Next(20,100);b=mode==0?a:random.Next(20,100);}
+        }
+        else
+        {
+            if(family==CenterReview&&mode==4){a=70;b=20;}
+            else if(family==CenterReview&&mode==5){a=8;b=7;}
+            else if(family==CenterReview&&mode==6){a=9;b=6;}
+            else if(mode==0){a=random.Next(11,18);b=random.Next(1,21-a);}
+            else if(mode==1){a=random.Next(11,21);b=random.Next(1,10);}
+            else if(mode==2){a=random.Next(20,70);b=random.Next(1,Math.Min(3,(99-a)/10)+1)*10;}
+            else {a=random.Next(1,10);b=random.Next(0,10);}
+        }
+        var p=new Dictionary<string,int>(StringComparer.Ordinal)
+            {["a"]=a,["b"]=b,["mode"]=mode,["unused"]=0};
+        if(!Valid(family,p))throw new InvalidOperationException("Source family generated invalid grade 1 operands");
+        string prompt=family switch
+        {
+            AddTens=>mode==4?
+                (a==54?
+                    "EDULYTICS ORIGINAL-SOURCE-ALIGNED NUMERIC TASK: Fill the left box in □=54+20. Write TOTAL=number;ONES=number.":
+                    $"EDULYTICS SOURCE-GOAL NUMERIC TASK: Find {a}+{b}, combining complete tens and preserving or identifying leftover ones. Write TOTAL=number;ONES=number. Drawings need teacher review.") :
+                mode==5?
+                "ORIGINAL 2021 TRUE/FALSE WARM-UP: Is 80+5=5+80 true? Evaluate BOTH sides. Write TRUE=YES/NO;LEFT=number;RIGHT=number.":
+                mode==6?
+                "ORIGINAL 2021 TRUE/FALSE WARM-UP: Is 70+1=80+1 true? Evaluate BOTH sides. Write TRUE=YES/NO;LEFT=number;RIGHT=number.":
+                mode==7?
+                "ORIGINAL 2021 TRUE/FALSE WARM-UP: Is 20+6=6+30 true? Evaluate BOTH sides. Write TRUE=YES/NO;LEFT=number;RIGHT=number.":
+                mode==8?
+                "EDULYTICS ORIGINAL EXIT CHECK (not the inaccessible publisher Cool-down): Add 46 and 30. Four tens plus three tens gives seven tens; six ones remain. Write TOTAL=number;ONES=number. Teacher reviews drawings.":
+                mode==9?
+                "EDULYTICS ORIGINAL MISSING-DIGIT TASK, not reconstructed from the publisher image: 4□+20=65 is true. Which ONES digit belongs in the box? Write DIGIT=number;EQUATION=number+number=number;TRUE=YES/NO.":
+                mode==10?
+                "EDULYTICS ORIGINAL FALSE-EQUATION CHECK, not reconstructed from the publisher image: Could 4□+20=75 ever be true for a single missing ONES digit 0–9? Identify the greatest possible total and judge the claim. Write TRUE=YES/NO;MAX=number;TARGET=number.":
+                mode==11?
+                "SOURCE-ALIGNED FIRST-PARTY DIGIT PUZZLE (public 2021 source image accessibility text, NOT reused image): 56 plus some WHOLE tens equals 96: 56+□0=96. What TENS digit does □ represent? Write DIGIT=number;EQUATION=number+number=number;TRUE=YES/NO. A teacher reviews a drawing.":
+                mode==12?
+                "SOURCE-ALIGNED FIRST-PARTY FALSE-EQUATION PUZZLE (public 2021 image accessibility text, NOT reused image): □3+30=74 is said to be NOT TRUE. Could ANY TENS digit in □ make the equation true? Explain by comparing ones digits 3 and 4. Write TRUE=YES/NO;ONES_LEFT=number;ONES_RIGHT=number. Teacher reviews words or drawings.":
+                $"Add a multiple of ten to a two-digit number: {a}+{b}. Tens join tens and ONES stay the same. Write TOTAL=number;ONES=number.",
+            TenMoreLess=>mode switch
+            {
+                11=>"ORIGINAL 2021 MENTAL WARM-UP: Find 3+10 without drawing first. Write RESULT=number. Explain your mental strategy to the teacher.",
+                12=>"ORIGINAL 2021 MENTAL WARM-UP: Find 10+5 without drawing first. Write RESULT=number. Explain your mental strategy to the teacher.",
+                13=>"ORIGINAL 2021 MENTAL WARM-UP: Find 13-10 without drawing first. Write RESULT=number. Explain your mental strategy to the teacher.",
+                14=>"ORIGINAL 2021 MENTAL WARM-UP: Find 15-10 without drawing first. Write RESULT=number. Explain your mental strategy to the teacher.",
+                9=>"EDULYTICS FIRST-PARTY THREE-STEP CHECK: Start at 67. Find 67+10, then 67+10+10, then 67+10+10+10. Write STEP1=number;STEP2=number;STEP3=number. Explain the increasing tens to a teacher.",
+                10=>"EDULYTICS FIRST-PARTY THREE-STEP CHECK: Start at 99. Find 99-10, then 99-10-10, then 99-10-10-10. Write STEP1=number;STEP2=number;STEP3=number. Explain the decreasing tens to a teacher.",
+                5 or 6 or 7 or 8=>$"SOURCE-ALIGNED TWO-WAY TEN CHANGE: Find {a}+10 and {a}-10. Write PLUS=number;MINUS=number. Explain why ones stay fixed to a teacher.",
+                4=>"INDEPENDENT EDULYTICS EXIT (not the protected publisher Cool-down): Find 46+10 and 46-10 mentally. Write PLUS=number;MINUS=number. Explain why the ones digit remains 6 to a teacher.",
+                2=>a==67?
+                    "SOURCE-ALIGNED NUMERIC SEQUENCE: Start at 67 and add 10 three times: 67+10+10+10. Write RESULT=number. Explain the tens pattern to a teacher.":
+                    "SOURCE-ALIGNED NUMERIC SEQUENCE: Start at 99 and subtract 10 three times: 99-10-10-10. Write RESULT=number. Explain the tens pattern to a teacher.",
+                3=>"SOURCE-ALIGNED NUMERIC SEQUENCE: Start at 45. Find 45+10+10, 45-10-10, and 45+10-10. Write PLUS=number;MINUS=number;RETURN=number. Explain why the last sequence returns to 45.",
+                0=>$"What is TEN MORE than {a}? Write RESULT=number.",
+                _=>$"What is TEN LESS than {a}? Write RESULT=number."
+            },
+            CenterReview=>mode switch
+            {
+                4=>"SOURCE-ALIGNED CHECK IT OFF CENTER: Starting with 70 and 20, find the addition and subtraction results. Write ADD=number;SUBTRACT=number. Actual partner play needs teacher review.",
+                5=>"SOURCE-ALIGNED HOW CLOSE? CENTER: Select exactly three DISTINCT cards from the hand 8,4,1,7,5 to total 20. One valid selection uses 8,7,5. Write TOTAL=number;CARDS=8+7+5. Real center play needs teacher review.",
+                6=>"SOURCE-ALIGNED NUMBER TALK: Find 9+6 and 15-6; explain how the operations relate. Write ADD=number;SUBTRACT=number. Oral explanation needs teacher review.",
+                0=>$"Teacher-led center numeric portion: calculate {a}+{b} within 20. Write RESULT=number.",
+                1=>$"Teacher-led center numeric portion: calculate {a}-{b} within 20. Write RESULT=number.",
+                2=>$"Teacher-led place value center numeric portion: calculate {a}+{b}. Write RESULT=number.",
+                _=>$"Teacher-led counting center numeric portion: count {a} tens and {b} loose ones. Write RESULT=number."
+            },
+            CompareWords=>mode==4?
+                "ELENA SOURCE CASE: 75 is greater than 65. Compare their tens values. Write RELATION=GREATER/LESS/EQUAL. Explain your reasoning to a teacher.":
+                mode==5?
+                "NOAH SOURCE CASE: Noah says 39 is greater than 41. Compare the numbers correctly. Write RELATION=GREATER/LESS/EQUAL. Explain Noah's error to a teacher.":
+                mode==6?
+                "SOURCE TEACHER DISCUSSION: Compare 93 and 26 using tens. Write RELATION=GREATER/LESS/EQUAL for the FIRST number. Explain the value of nine tens and two tens to a teacher.":
+                mode==7?
+                "SOURCE TEACHER DISCUSSION: Compare 62 and 64 using their matching six tens and different ones. Write RELATION=GREATER/LESS/EQUAL for the FIRST number. Explain the ones comparison to a teacher.":
+                $"Compare the value of {a} and {b} by tens, then ones. Is the FIRST number GREATER, LESS or EQUAL? Write RELATION=GREATER/LESS/EQUAL.",
+            CompareSymbols=>mode==13?
+                "INDEPENDENT EDULYTICS FORMATIVE EXIT (not the inaccessible original 2021 publisher Cool-down): Compare 68 and 86. Which number has more tens? Write SYMBOL=sign;TENS_LEFT=number;TENS_RIGHT=number. Explain in words or a base-ten drawing for teacher review.":
+                mode==4?
+                "SOURCE COMPARISON PAIR: Decide whether 17 < 27 or 27 < 17 is true. Write SYMBOL=<, > or = for 17 compared with 27. Explain to a teacher.":
+                mode==5?
+                "SOURCE COMPARISON PAIR: Decide whether 34 < 36 or 36 < 34 is true. Write SYMBOL=<, > or = for 34 compared with 36. Explain to a teacher.":
+                mode==6?
+                "SOURCE TRUE/FALSE: Is 17 < 47 correct? Write SYMBOL=<, > or = for 17 compared with 47. Explain to a teacher.":
+                mode==7?
+                "SOURCE 2021 TRUE/FALSE: 17<47. Is this true? Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
+                mode==8?
+                "SOURCE 2021 TRUE/FALSE: 58=53. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
+                mode==9?
+                "SOURCE 2021 TRUE/FALSE: 45>63. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
+                mode==10?
+                "SOURCE 2021 TRUE/FALSE: 39<93. Is this true? Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
+                mode==11?
+                "SOURCE 2021 TRUE/FALSE: 4=46. Is this true? If false, rewrite it correctly. Write TRUE=YES/NO;CORRECT=the full correct comparison with <, > or = (no spaces needed). Explain why to a teacher.":
+                mode==12?
+                "SOURCE 2021 PAIR: Circle the true comparison between 21 and 12 (21<12 or 21>12). Write SYMBOL=<, > or = for 21 compared with 12. Explain the greater tens value to a teacher.":
+                $"Compare {a} and {b}. Write the mathematical comparison SYMBOL between the two numbers, one of >, < or =. Write SYMBOL=sign.",
+            _=>throw new InvalidOperationException()
+        };
+        return new(family,prompt,
+          "Show tens/ones reasoning. Oral responses and real classroom center participation cannot be certified through one numeric answer.",
+          AssessmentItemType.ShortAnswer,p);
+    }
+    public static string Solve(string family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!Valid(family,p))throw new InvalidOperationException("Source family parameters out of range");
+        int a=p["a"],b=p["b"],mode=p["mode"];
+        return family switch
+        {
+            AddTens=>mode==5?
+                "TRUE=YES;LEFT=85;RIGHT=85":
+                mode==6?
+                "TRUE=NO;LEFT=71;RIGHT=81":
+                mode==7?
+                "TRUE=NO;LEFT=26;RIGHT=36":
+                mode==9?
+                "DIGIT=5;EQUATION=45+20=65;TRUE=YES":
+                mode==10?
+                "TRUE=NO;MAX=69;TARGET=75":
+                mode==11?
+                "DIGIT=4;EQUATION=56+40=96;TRUE=YES":
+                mode==12?
+                "TRUE=NO;ONES_LEFT=3;ONES_RIGHT=4":
+                $"TOTAL={a+b};ONES={(a+b)%10}",
+            TenMoreLess=>mode>=11?
+                $"RESULT={(mode<=12?a+b:a-b)}":
+                mode==9?
+                "STEP1=77;STEP2=87;STEP3=97":
+                mode==10?
+                "STEP1=89;STEP2=79;STEP3=69":
+                mode>=4?
+                $"PLUS={a+10};MINUS={a-10}":
+                mode==3?
+                "PLUS=65;MINUS=25;RETURN=45":
+                $"RESULT={(mode==2?(a==67?a+30:a-30):mode==0?a+10:a-10)}",
+            CenterReview=>mode switch
+            {
+                4=>"ADD=90;SUBTRACT=50",
+                5=>"TOTAL=20;CARDS=8+7+5",
+                6=>"ADD=15;SUBTRACT=9",
+                _=>$"RESULT={(mode==0?a+b:mode==1?a-b:mode==2?a+b:10*a+b)}"
+            },
+            CompareWords=>$"RELATION={(a>b?"GREATER":a<b?"LESS":"EQUAL")}",
+            CompareSymbols=>mode switch
+            {
+                13=>"SYMBOL=<;TENS_LEFT=6;TENS_RIGHT=8",
+                7=>"TRUE=YES;CORRECT=17<47",
+                8=>"TRUE=NO;CORRECT=58>53",
+                9=>"TRUE=NO;CORRECT=45<63",
+                10=>"TRUE=YES;CORRECT=39<93",
+                11=>"TRUE=NO;CORRECT=4<46",
+                _=>$"SYMBOL={(a>b?">":a<b?"<":"=")}"
+            },
+            _=>throw new InvalidOperationException()
+        };
+    }
+    private static string Norm(string? s)=>
+        string.Concat((s??"").Where(c=>!char.IsWhiteSpace(c))).ToUpperInvariant();
+    public static bool GradePersistedAnswer(string? family,string? expected,string? submitted)=>
+        Supports(family)&&!string.IsNullOrWhiteSpace(expected)&&!string.IsNullOrWhiteSpace(submitted)&&
+        Norm(expected)==Norm(submitted);
+    public static bool Verify(string? family,IReadOnlyDictionary<string,int> p,string? answer)=>
+        Valid(family,p)&&GradePersistedAnswer(family,Solve(family!,p),answer);
+}

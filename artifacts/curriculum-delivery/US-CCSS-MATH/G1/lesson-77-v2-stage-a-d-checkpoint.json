@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 77,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L12",
+  "title": "Mentally Add and Subtract Tens (optional)",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "9aeaacd09e4d34c6d7cd9138b3e40c33b79d310bedb0d7abde2360a184ad93c7",
+    "teacherPreparationSha256": "f079b91b320cbbdaed28a10e1f5cf41205488205ce56f8966767d3822965c382",
+    "studentHtmlSha256": "bc498182c4cdb1c2221310f0abf40469780a0c0f09542b4a4a52b4f59c962b96",
+    "teacherHeadings": [
+      "Activity 1: Introduce Write Numbers, Numbers to 99 by 10 (20 minutes)",
+      "Activity 2: Add and Subtract 10 (20 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(3 + 10\\) \\(10 + 5\\) \\(13 - 10\\) \\(15 - 10\\) Student Response Teachers with a valid work email address can cli",
+      "Student Facing Find the number that makes each equation true. Then tell what you notice. \\(67 + 10 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(67 - 10 = \\boxed{\\phantom{\\fr"
+    ],
+    "sourceSpecificFinding": "Independently re-read canonical 2021 full teacher page and student-task sections: warm-up 3+10, 10+5, 13-10, 15-10; four 10-more/less pairs 67,39,52,75; all 67/99/45 intermediate sequences; Stage 2 Write Numbers partner game. All three registered cache file hashes matched exact canonical paths on Our-CS 2026-10-20. Protected Section B Checkpoint (0 minutes) unavailable.",
+    "classification": "CANONICAL_SOURCE_BYTES_RECONCILED_TEACHER_TASKS_REVIEWED_STUDENT_VISUAL_LIMIT_OPEN",
+    "canonicalSourceByteIntegrityRecheckedOn": "2026-10-20",
+    "independentOriginalTeacherMathAndCenterReview": true,
+    "originalStudentMathSource": "Public Student Facing section embedded in authenticated canonical 2021 full teacher lesson, not the unrelated Student_Public_Mirror SHA.",
+    "publisherGameboardVisualParityNotClaimed": true
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false,
+    "targetedWarmupAndIntermediateRepairCommit": "852e77d8a4a5ee01b13cb38cab399e65c354bc71",
+    "version": "us-ccss-g1-u04-l12-original-student-activities-v8",
+    "canonicalTeacherSourceWarmupAndAllIntermediateStepsRepaired": true,
+    "staticSourceAlignedTextReviewed": true,
+    "lessonSynthesisRenderingRepairCommit": "82781c5b2ad7056b3685cdaa5cdf11c5def71cf4",
+    "migrationAndTeachingAssertionsCommit": "49c00b0166237f2592b36e140c288bd12d9dd8d9"
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": true,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "scopedModes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "sourceAlignedRepeatedTenSequences": [
+      "67+10+10+10=97",
+      "99-10-10-10=69"
+    ],
+    "testsAuthoredButNotExecuted": true,
+    "testsExecuted": false,
+    "sourceAlignedPairedTenChanges": [
+      "67±10 → 77,57",
+      "39±10 → 49,29",
+      "52±10 → 62,42",
+      "75±10 → 85,65"
+    ],
+    "independentFirstPartyExit": "46+10=56 and 46-10=36; not a copy of the protected 0-minute publisher checkpoint",
+    "testEvidenceCommit": "6d9d57396d659930ce008412db55624f1aaef9b0",
+    "firstPartyIntermediateStepModes": [
+      {
+        "mode": 9,
+        "sourceTask": "67 plus three successive tens",
+        "answerContract": "STEP1=77;STEP2=87;STEP3=97"
+      },
+      {
+        "mode": 10,
+        "sourceTask": "99 minus three successive tens",
+        "answerContract": "STEP1=89;STEP2=79;STEP3=69"
+      }
+    ],
+    "intermediateStepImplementationCommit": "c04427eb23487ae7cd10a8a7a007e7d3a74c8d59",
+    "intermediateStepTestsCommit": "df72a44ff85edadded2a63f57a6eb70f5168643c",
+    "legacyModeAnswerContractsPreserved": true,
+    "seedRegressionReviewRequired": true,
+    "staticGeneratorVerifierReview": {
+      "sourceModes": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "observations": [
+        "Exact operand and mode guards for all fixed source numbers",
+        "Legacy mode 0-8 answer contracts unchanged",
+        "Modes 9 and 10 require every intermediate STEP field",
+        "Independent formative mode 4 does not represent protected publisher checkpoint",
+        "Existing positive, negative, partial-answer and mutant-operand test source reviewed; xUnit execution deferred until frozen Stage D"
+      ],
+      "testExecution": "NOT_EXECUTED",
+      "knownResidual": "Seeded generator distribution changed with modes 9/10; final candidate regression remains required"
+    },
+    "original2021NumberTalkModes": [
+      11,
+      12,
+      13,
+      14
+    ],
+    "original2021NumberTalkExpected": [
+      "3+10=13",
+      "10+5=15",
+      "13-10=3",
+      "15-10=5"
+    ],
+    "warmupSourceTestsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson77Original2021WarmupTests.cs",
+    "warmupImplementationCommit": "1a40991da7377bb34518fde1d62b095c2935fe68",
+    "warmupTestsAuthoredCommit": "1c11329438e2ffd79b74b9ee41aba590cb01cd18",
+    "sourceSpecificDigitalMathReviewed": true
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-77-stage-a-c-source-implementation-audit-20261020.md",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true,
+    "sourceCacheSnapshotIntegrity": {
+      "status": "CANONICAL_BYTES_MATCH_CHECKPOINT",
+      "checkedOn": "2026-10-20",
+      "sourceDevice": "Our-CS",
+      "accessMode": "READ_ONLY",
+      "canonicalFullTeacherRelativePath": "unit-4/lesson-12/lesson.html",
+      "fullTeacherSha256": "9aeaacd09e4d34c6d7cd9138b3e40c33b79d310bedb0d7abde2360a184ad93c7",
+      "canonicalTeacherPreparationRelativePath": "Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-4_lesson-12_preparation.html",
+      "teacherPreparationSha256": "f079b91b320cbbdaed28a10e1f5cf41205488205ce56f8966767d3822965c382",
+      "canonicalStudentHtmlRelativePath": "Student_Public_Mirror/unit-4/lesson-12/lesson.html",
+      "studentHtmlSha256": "bc498182c4cdb1c2221310f0abf40469780a0c0f09542b4a4a52b4f59c962b96",
+      "earlierMismatchObservationSuperseded": true,
+      "explanation": "Earlier observed 3ed6... and afdaf... were not SHA-256 of the three registered canonical files. The original canonical files match. Hash identity does NOT establish complete visual/student-task parity."
+    },
+    "authoringEvidenceCommitRefs": [
+      "852e77d8a4a5ee01b13cb38cab399e65c354bc71",
+      "18116954ecbd28f63d82a49cd82ab28c2045681c"
+    ],
+    "latestImplementationNote": "Existing A-C defects remain open; four public 2021 number talk math modes, strict positive/negative tests, fixed teaching paragraph break and v7-to-v8 migration authored directly on GitHub. No CI/Stage D.",
+    "legacyGapResolution": "The canonical accessible teacher Student Facing math and teacher-run center narrative, not a separate potentially 404 student mirror, are the academic source; protected 0-minute checkpoint and pixel-accurate publisher artwork are not copied or claimed. Original V1 does not add standalone figure replication/owner replacement approval for non-digital teacher-run games. In-scope digital source math is implemented; stage D covers code execution and authenticated/rights proof."
+  },
+  "nextAction": "Continue ordinal 78 then next outstanding A-C lesson by canonical order. Stage D/CI and individual academic acceptance deferred to whole-grade code freeze.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 77,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L12",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-77-stage-a-c-source-implementation-audit-20261020.md",
+    "exactRunProofBoundary": "Verified first-party digital 2021 source math, authentic grade persistence; no copied publisher art or authentic classroom participation"
+  }
+}

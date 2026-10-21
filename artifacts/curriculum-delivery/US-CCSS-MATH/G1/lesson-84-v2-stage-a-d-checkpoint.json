@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 84,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L19",
+  "sourceEvidence": {
+    "OurCsReadOnly2021": true,
+    "fullTeacherSha256": "21d9425b22f8c46ba79ace4cb20deebba25a684bdd33140454c31fabeefbdd9f",
+    "studentSha256": "965b8d9c7530e37d807848f76da259a631c5c623aadf45f4521525af10a07cb0",
+    "teacherPreparationSha256": "0375ba6ec2e471055563df42d29a4a9bb6b5c3a44497a7e42ead857290f5eb4c",
+    "teacherActivityHeadings": [
+      "Activity 1: Make 65 Using Tens and Ones (15 minutes)",
+      "Activity 2: Make 37 in Different Ways (10 minutes)",
+      "Activity 3: Centers: Choice Time (15 minutes)"
+    ]
+  },
+  "stageA": {
+    "originalTaskReview": "Original 65 with five unbroken ten rods and 15 singles; original 37 multiple regroupings; source content reused",
+    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE",
+    "publicOfficialSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-19/lesson.html",
+    "originalWarmupAccessibleMath": [
+      "A: 5 tens 3 ones = 53",
+      "B: thirty plus 5 = 35",
+      "C: 3 plus 50 = 53",
+      "D: 5 tens 3 ones = 53"
+    ],
+    "originalSource37AllowsNonTenAddendExpressions": true
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeFinalUnit4Corrections.cs",
+    "sourceCorrectionsCommits": [],
+    "publisherArtworkNotClaimedLicensed": true,
+    "originalMathLessonContentVersion": "us-ccss-g1-u04-l19-centers-and-regrouping-v3",
+    "originalWarmupAndFlexible37TeachingCommit": "2ce021e2fbc964381345dce58c133855eba6cee1"
+  },
+  "stageC": {
+    "existingSourceSpecificPracticePreserved": true,
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "flexible37AddendPairsMode": 4,
+    "source37SumsImplementationCommit": "9421e961e9a3452d98f8361c1e1ce514675acf3d",
+    "testsAuthoredCommit": "efeb25e43ffa5b9e89a4f0d33056c31ac68edd6b",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "pendingExactHeadCI": true,
+    "CIExecutedDuringAuthoring": false,
+    "sourceTaskTestsAdded": false,
+    "authenticatedRealPracticeRendering": "PENDING",
+    "correctWrongPersistence": "PENDING",
+    "originalVisualAndRightsEvidence": "PENDING",
+    "perLessonV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue ordinal85; leave protected CI and Stage D deferred.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "originalSourceGoalLearnerContentReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "teacherOnlyPhysicalAndVisualBoundaries": "Actual 65 bag, 37 drawings, original publisher imagery and classroom center play not electronically certified",
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-84-stage-a-c-source-implementation-20261021.md",
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 84,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L19",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-84-stage-a-c-source-implementation-20261021.md",
+    "exactRunProofBoundary": "Verified first-party digital 2021 source math, authentic grade persistence; no copied publisher art or authentic classroom participation"
+  }
+}

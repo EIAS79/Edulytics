@@ -961,6 +961,62 @@ public static class LessonPracticeContractRegistry
         }
         // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
         // V1 G1-010: original 2021 ordinals 46-50 only (U03 L09-L13).
+        foreach(var reviewed in UsCcssG1FullGradeUnit7GeometryTimePracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("G1 U07 source lesson missing: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeUnit6MeasurementPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("G1 U06 original lesson missing: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeUnit8ReviewPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("Missing G1 U08 source lesson: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeUnit4FinalPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("Missing original G1 U04 L16–23 practice base lesson: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeUnit5AdditionPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException("G1 Unit 5 original lesson missing base Practice contract: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeTwoDigitOperationsPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException("Missing canonical new G1 U04 L11-15 Practice lesson: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeTensAndOnesPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException("Missing canonical G1 U04 L06–10 source lesson Practice contract: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeStrategyAndTensPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException("Original Grade 1 base lesson Practice identity missing: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeNextPracticeContracts.Reviewed)
+        {
+            if(!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException("Grade-1 full-grade lesson 56-60 missing canonical contract: "+reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
+        foreach(var reviewed in UsCcssG1FullGradeStartPracticeContracts.Reviewed)
+        {
+            if (!byLesson.ContainsKey(reviewed.LessonCode))
+                throw new InvalidOperationException("Missing canonical G1 L51-L55 base contract: " + reviewed.LessonCode);
+            byLesson[reviewed.LessonCode]=reviewed;
+        }
         foreach(var reviewed in UsCcssG1TeenFivePracticeContracts.Reviewed)
         {
             if(!byLesson.ContainsKey(reviewed.LessonCode))

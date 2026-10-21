@@ -1,0 +1,153 @@
+using System.Text.Json;
+using Edulytics.Web.Presentation;
+using Edulytics.Services.Mathematics;
+
+namespace Edulytics.Tests.MathematicsIntelligence;
+
+/// <summary>First-party source-grounded U06 measurement/U07 partition visuals.
+/// Independently checks SVG geometry from the prompt operands rather than
+/// treating the visual as proof of teacher-led physical activities.</summary>
+public sealed class UsCcssG1FullGradeMeasurementFractionVisualTests
+{
+    private static string? Draw(string family,int a,int b,int mode)
+    {
+        var json=JsonSerializer.Serialize(new{parameters=new{a,b,c=0,mode}});
+        return PracticeMathVisualRenderer.RenderSvg(family,json);
+    }
+
+    [Theory]
+    [InlineData("usccss.g1.u06.l01.compare_lengths",14,9,0)]
+    [InlineData("usccss.g1.u06.l02.indirect_length_comparison",8,12,1)]
+    [InlineData("usccss.g1.u06.l03.choose_indirect_comparison",8,8,2)]
+    [InlineData("usccss.g1.u06.l05.measure_connecting_cubes",12,0,0)]
+    [InlineData("usccss.g1.u06.l06.measure_paperclips",11,0,2)]
+    [InlineData("usccss.g1.u06.l07.unit_length_matters",6,2,1)]
+    public void SourceMeasurementRepresentationsUseAlignedIdenticalUnits(string family,int a,int b,int mode)
+    {
+        Assert.True(UsCcssG1FullGradeUnit6MeasurementQuestions.Valid(
+            family,new Dictionary<string,int>{{"a",a},{"b",b},{"c",0},{"mode",mode}}));
+        var svg=Assert.IsType<string>(Draw(family,a,b,mode));
+        Assert.Contains("<svg ",svg);
+        Assert.Contains("role='img'",svg);
+        Assert.Contains("Equal-size units",svg,StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("<image ",svg);
+        Assert.DoesNotContain("LENGTH=",svg);
+    }
+
+    [Theory]
+    [InlineData("usccss.g1.u06.l02.indirect_length_comparison",9,14)]
+    [InlineData("usccss.g1.u06.l03.choose_indirect_comparison",14,9)]
+    public void OriginalIndirectComparisonShowsTwoSeparateReferenceUnitMeasurements(
+        string family,int first,int second)
+    {
+        var svg=Assert.IsType<string>(Draw(family,first,second,0));
+        Assert.Equal(first,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='indirect-unit-0'").Count);
+        Assert.Equal(second,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='indirect-unit-1'").Count);
+        Assert.Contains("class='indirect-reference-0'",svg);
+        Assert.Contains("class='indirect-reference-1'",svg);
+        Assert.Contains("Compare through the SAME reference unit",svg);
+        Assert.DoesNotContain("common starting line",svg);
+        Assert.DoesNotContain("Compare the aligned starting endpoints",svg);
+        Assert.DoesNotContain("LONGER=",svg);
+        Assert.DoesNotContain("<image ",svg);
+    }
+
+    [Fact]
+    public void OriginalU06L01ThreeLengthsAreDrawnFromTheSameStartingLine()
+    {
+        const string family="usccss.g1.u06.l01.compare_lengths";
+        var json=JsonSerializer.Serialize(new{parameters=new{a=7,b=4,c=9,mode=1}});
+        var svg=Assert.IsType<string>(PracticeMathVisualRenderer.RenderSvg(family,json));
+        Assert.Equal(7,System.Text.RegularExpressions.Regex.Matches(svg,"class='length-0'").Count);
+        Assert.Equal(4,System.Text.RegularExpressions.Regex.Matches(svg,"class='length-1'").Count);
+        Assert.Equal(9,System.Text.RegularExpressions.Regex.Matches(svg,"class='length-2'").Count);
+    }
+
+    [Fact]
+    public void OriginalSourceLengthOrderDiagramSupportsBothTeacherTaskDirections()
+    {
+        const string family="usccss.g1.u06.l01.compare_lengths";
+        var asc=JsonSerializer.Serialize(new{parameters=new{a=7,b=4,c=9,mode=1}});
+        var desc=JsonSerializer.Serialize(new{parameters=new{a=7,b=4,c=9,mode=3}});
+        var a=Assert.IsType<string>(PracticeMathVisualRenderer.RenderSvg(family,asc));
+        var d=Assert.IsType<string>(PracticeMathVisualRenderer.RenderSvg(family,desc));
+        Assert.Contains("shortest to longest",a);
+        Assert.Contains("longest to shortest",d);
+        Assert.Contains("class='length-0'",a);
+        Assert.Contains("class='length-1'",a);
+        Assert.Contains("class='length-2'",a);
+        Assert.DoesNotContain("ORDER=",d);
+    }
+
+    [Theory]
+    [InlineData(1,"Mai route","Clare route")]
+    [InlineData(2,"Door opening","Teacher desk width")]
+    [InlineData(3,"Door opening","Student desk width")]
+    public void OriginalIndirectStudentSourceTasksExposeTheActualComparedDimensions(
+        int mode,string firstLabel,string secondLabel)
+    {
+        const string family="usccss.g1.u06.l03.choose_indirect_comparison";
+        var svg=Assert.IsType<string>(Draw(family,8,9,mode));
+        Assert.Contains(firstLabel,svg);
+        Assert.Contains(secondLabel,svg);
+        Assert.Equal(8,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='indirect-unit-0'").Count);
+        Assert.Equal(9,System.Text.RegularExpressions.Regex.Matches(
+            svg,"class='indirect-unit-1'").Count);
+        Assert.DoesNotContain("SHORTER=",svg);
+        Assert.DoesNotContain("FITS=",svg);
+        Assert.DoesNotContain("<image ",svg);
+    }
+
+    [Fact]
+    public void UnitSizesChangePhysicalUnitCountButNotMeasuredBarLength()
+    {
+        var svg=Assert.IsType<string>(Draw("usccss.g1.u06.l07.unit_length_matters",6,2,0));
+        Assert.Equal(6,System.Text.RegularExpressions.Regex.Matches(svg,"class='long-unit'").Count);
+        Assert.Equal(12,System.Text.RegularExpressions.Regex.Matches(svg,"class='short-unit'").Count);
+        Assert.Contains("Same length, different unit sizes",svg);
+    }
+
+    [Theory]
+    [InlineData("usccss.g1.u07.l09.equal_halves_fourths",0)]
+    [InlineData("usccss.g1.u07.l09.equal_halves_fourths",1)]
+    [InlineData("usccss.g1.u07.l10.parts_make_whole",0)]
+    [InlineData("usccss.g1.u07.l10.parts_make_whole",1)]
+    [InlineData("usccss.g1.u07.l11.bigger_piece_halves_fourths",0)]
+    [InlineData("usccss.g1.u07.l11.bigger_piece_halves_fourths",1)]
+    public void OriginalEqualAreaTasksHaveAccuratePartWholeDiagrams(string family,int mode)
+    {
+        var p=new Dictionary<string,int>{{"a",4},{"b",8},{"c",0},{"mode",mode}};
+        Assert.True(UsCcssG1FullGradeUnit7GeometryTimeQuestions.Valid(family,p));
+        var svg=Assert.IsType<string>(Draw(family,4,8,mode));
+        Assert.Contains("equal",svg,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("<svg ",svg);
+        Assert.DoesNotContain("PART=HALF",svg);
+        Assert.DoesNotContain("PART=FOURTH",svg);
+    }
+
+    [Fact]
+    public void SourceShadedCardSortActuallyDrawsUnequalVsFourEqualRegions()
+    {
+        const string family="usccss.g1.u07.l10.parts_make_whole";
+        var unequal=Assert.IsType<string>(Draw(family,4,3,2));
+        var equal=Assert.IsType<string>(Draw(family,4,3,3));
+        Assert.Contains("class='partition-unequal'",unequal);
+        Assert.DoesNotContain("class='partition-equal'",unequal);
+        Assert.Equal(2,System.Text.RegularExpressions.Regex.Matches(
+            equal,"class='partition-equal'").Count);
+        Assert.DoesNotContain("class='partition-unequal'",equal);
+        Assert.DoesNotContain("SORT=EQUAL",equal);
+        Assert.DoesNotContain("SORT=UNEQUAL",unequal);
+    }
+
+    [Fact]
+    public void OnlySourceGuardedVisualFamiliesProduceDiagrams()
+    {
+        Assert.Null(Draw("usccss.g1.u06.l12.compare_measurements",14,4,0));
+        Assert.Null(Draw("usccss.g1.u07.l17.center_geometry_and_time",6,5,0));
+        Assert.Null(Draw("usccss.g1.u06.l01.compare_lengths",100,3,0));
+    }
+}

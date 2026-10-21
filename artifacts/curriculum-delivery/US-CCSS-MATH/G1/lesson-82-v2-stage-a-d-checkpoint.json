@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 82,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L17",
+  "sourceEvidence": {
+    "OurCsReadOnly2021": true,
+    "fullTeacherSha256": "7d36cff8abddda3544ffd565a83475b54ce07e28d087eba487122d9521a20d35",
+    "studentSha256": "c43998e7c0673eacd725564ce5fdd9bb3e08afb78d9e1c44908863cd7dc5b920",
+    "teacherPreparationSha256": "0711e8ef8e6dbcd7e32305f5d7c06a1b58a58f34b6ba9bba42a6805eb7ef6789",
+    "teacherActivityHeadings": [
+      "Activity 1: Compare and Order Quantities (20 minutes)",
+      "Activity 2: Order Numbers (15 minutes)"
+    ]
+  },
+  "stageA": {
+    "originalTaskReview": "Original 2021 source: Which One Doesn't Belong source visual cards A–D (C 35<20 false), Activity1 four represented number card sets A–D sorted with teacher, Activity2 fixed ten-card insertion plus 25<□ and 25>□ multi-answer extensions. Five-minute Which Numbers Belong Cool-down publisher protected.",
+    "classification": "CONTENT_REPAIR",
+    "original2021TeacherAndStudentFacingTasksIndependentlyReviewed": true,
+    "canonicalSourceSHA256MatchedExistingSourceEvidence": true,
+    "sourceRechecked": "2026-10-20",
+    "publicOfficialSourceReadUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-17/lesson.html",
+    "officialSourceAccessibleCardValues": [
+      "51",
+      "1 ten + 5 ones = 15",
+      "3 tens + 3 ones = 33",
+      "5 tens + 3 ones = 53"
+    ],
+    "physicalSetADFullArtworkAndPartnerOutcomeNotClaimed": true
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeFinalUnit4Corrections.cs",
+    "sourceCorrectionsCommits": [
+      "cde32354e5be2b4fb955930fe04a30672174488c",
+      "caf0ae5eab014f47f717dfb886a5a5d1f7bbf19e"
+    ],
+    "publisherArtworkNotClaimedLicensed": true,
+    "lessonSpecificContentVersion": "us-ccss-g1-u04-l17-original-student-activities-v3",
+    "migrationTeachingTestCommit": "aaa24f697de85d637a400021e42bcf7068a3d3f4"
+  },
+  "stageC": {
+    "existingSourceSpecificPracticePreserved": true,
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "generatorAndVerifierIndependentlyStaticallyReviewed": true,
+    "testsAuthoredButNotExecuted": true,
+    "sourceFixedTenCardInsertionMode": 4,
+    "studentChosen25InequalityModes": [
+      5,
+      6
+    ],
+    "openEndedAnswerVerifierCommit": "f61a09067c6742e8da8e3f427828571cb8a027bb",
+    "authoredTestsCommit": "94b6e1d0cbbe0b1fb634b125a6e661e6b8129034",
+    "accessibleRepresentationNumericOrderMode": 7,
+    "independentFirstPartyOrderingFormative": {
+      "mode": 8,
+      "numbers": [
+        43,
+        34,
+        40,
+        4
+      ],
+      "expected": "ORDER=4,34,40,43",
+      "publisherOriginalAssessmentNotReproduced": true,
+      "implementationCommit": "faf3395fe7f48d251043e81f19b7ce6e095c801e",
+      "authoredTestsCommit": "8d8957ddc90aec591f62db9530d27dff6777eb41",
+      "testsExecuted": false
+    },
+    "originalOpen25ZeroAllowed": true,
+    "testsExecuted": false
+  },
+  "stageD": {
+    "pendingExactHeadCI": true,
+    "CIExecutedDuringAuthoring": false,
+    "sourceTaskTestsAdded": true,
+    "authenticatedRealPracticeRendering": "PENDING",
+    "correctWrongPersistence": "PENDING",
+    "originalVisualAndRightsEvidence": "PENDING",
+    "perLessonV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue ordinal83, which previously had source-backed READY_FOR_STAGE_D. Do not run CI/Stage D or claim academic approval until grade freeze.",
+  "sourceFixedTenCardPractice20261020": {
+    "sourceGivenSortedCards": [
+      1,
+      5,
+      10,
+      50,
+      99
+    ],
+    "sourceCardsToInsert": [
+      49,
+      8,
+      25,
+      98,
+      13
+    ],
+    "correctOrderedResult": [
+      1,
+      5,
+      8,
+      10,
+      13,
+      25,
+      49,
+      50,
+      98,
+      99
+    ],
+    "gradeableEngine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit4FinalQuestions.cs",
+    "newSourceMode": 4,
+    "generalizedHistoricalModePreserved": 3,
+    "unitTestsPrepared": true,
+    "frozenExactShaGradingAndRendering": "PENDING",
+    "academicAcceptance": "NOT_CLAIMED",
+    "release": "NO_GO"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-82-stage-a-c-source-implementation-audit-20261020.md",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "sourceBoundary": "Original protected 5-minute Cool-down and physical Set A-D teacher-led artwork not copied or certified; public accessible figure description values independently checked and first-party mathematical ordering/assessment authored. Stage D still requires visual rights, actual rendering and persisted grading."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 82,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L17",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-82-stage-a-c-source-implementation-audit-20261020.md",
+    "exactRunProofBoundary": "Verified first-party digital 2021 source math, authentic grade persistence; no copied publisher art or authentic classroom participation"
+  }
+}

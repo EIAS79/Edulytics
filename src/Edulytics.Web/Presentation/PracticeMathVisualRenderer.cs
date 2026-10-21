@@ -93,6 +93,58 @@ public static partial class PracticeMathVisualRenderer
                 "usccss.hs.rational_branch_limit_sign" => UsRationalGraph(parameters, hasHole: false),
                 "usccss.vector.head_tail_endpoint_y" => UsVectorHeadTailDiagram(parameters),
                 "usccss.vector.scalar_direction_class" => UsVectorScalarDiagram(parameters),
+                "usccss.g1.u06.l01.compare_lengths" or
+                "usccss.g1.u06.l02.indirect_length_comparison" or
+                "usccss.g1.u06.l03.choose_indirect_comparison" or
+                "usccss.g1.u06.l05.measure_connecting_cubes" or
+                "usccss.g1.u06.l06.measure_paperclips" or
+                "usccss.g1.u06.l07.unit_length_matters"
+                    => GradeOneSourceMeasurementVisual(family,parameters),
+                "usccss.g1.u04.l05.center.tens_and_within20"
+                    => GetInt(parameters,"mode")>=4
+                        ? GradeOneOriginalCheckItOffBoard(parameters)
+                        : null,
+                "usccss.g1.u04.l01.count.groups_of_ten"
+                    => GradeOneOriginalSourceCountCollectionsVisual(parameters),
+                "usccss.g1.u04.l03.tens.add_or_remove_one"
+                    => GetInt(parameters,"mode")>=2
+                        ? GradeOneOriginalTenTowerSequenceVisual(parameters)
+                        : null,
+                "usccss.g1.u04.l04.tens.add_remove_multiples"
+                    => GradeOneOriginalBagsOfTenVisual(parameters),
+                "usccss.g1.u04.l06.collection.tens_ones" or
+                "usccss.g1.u04.l07.read.two_digit" or
+                "usccss.g1.u04.l08.match.tens_ones_expression" or
+                "usccss.g1.u04.l09.show.expanded_form" or
+                "usccss.g1.u04.l10.write.two_digit_numeral" or
+                "usccss.g1.u06.l08.count_to110_cube_groups" or
+                "usccss.g1.u06.l09.write_number_to120" or
+                "usccss.g1.u08.l08.same_number_tens_ones"
+                    => GradeOneNewTensOnesVisual(family,parameters),
+                "usccss.g1.u08.l07.count_on_to120"
+                    => GradeOneNewCountOnPath(parameters),
+                "usccss.g1.u03.l14.center.add_subtract"
+                    => GradeOneFullGradeNumberPuzzleBoard(parameters),
+                "usccss.g1.u07.l01.sort_solids_attributes" or
+                "usccss.g1.u07.l02.compose_solids_components" or
+                "usccss.g1.u07.l03.sort_flat_shapers" or
+                "usccss.g1.u07.l04.draw_shape_attribute_check" or
+                "usccss.g1.u07.l05.defining_triangles" or
+                "usccss.g1.u07.l06.square_and_rectangle_properties" or
+                "usccss.g1.u07.l07.compose_flat_shapers" or
+                "usccss.g1.u07.l08.center_shapes_add_subtract" or
+                "usccss.g1.u07.l12.center_shape_number" or
+                "usccss.g1.u07.l17.center_geometry_and_time"
+                    => GradeOneSourceShapeVisual(family,parameters),
+                "usccss.g1.u07.l09.equal_halves_fourths" or
+                "usccss.g1.u07.l10.parts_make_whole" or
+                "usccss.g1.u07.l11.bigger_piece_halves_fourths"
+                    => GradeOneSourceEqualAreaVisual(family,parameters),
+                "usccss.g1.u07.l13.hour_clock" or
+                "usccss.g1.u07.l14.half_hour_clock" or
+                "usccss.g1.u07.l15.write_hours_halfhours" or
+                "usccss.g1.u07.l16.daily_schedule_time"
+                    => GradeOneFullGradeClockFace(family,parameters),
                 "usccss.g1.u02.pets.write_two_equations" or
                 "usccss.g1.u02.shake_spill.enumerate_partitions" or
                 "usccss.g1.u02.shake_cover.write_missing_addend" or

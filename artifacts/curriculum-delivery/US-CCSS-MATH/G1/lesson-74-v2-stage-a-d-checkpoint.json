@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 74,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L09",
+  "title": "Show Me Your Number",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "6a59478b9d44f389da8d65bf82eb25b1a052f3558d7528b8f08463c9d6169f74",
+    "teacherPreparationSha256": "f76ed415688390b67f89de1e99f52b74962613dcadc2b1197d2c6db462b0e307",
+    "studentHtmlSha256": "540f368b40f2ed89dae83f6d1356a3588d75a817cd5c1872201031f4ecea0280",
+    "teacherHeadings": [
+      "Activity 1: Create a Collection (10 minutes)",
+      "Activity 2: Show Collections In Many Ways (15 minutes)",
+      "Activity 3: Centers: Choice Time (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,1162.5",
+      "Student Facing Show your number in as many ways as you can. Our number: __________ Student Response Teachers with a valid work email address can click here to register or",
+      "Student Facing Show each collection in as many ways as you can. Visit at least 4 collections. Collection 1 Collection 2 Collection 3 Collection 4 Student Response Teacher"
+    ],
+    "sourceSpecificFinding": "Original gallery visits AT LEAST FOUR collections, using multiple equivalent drawings, words and equations",
+    "classification": "CONTENT_REPAIR",
+    "accessible2021TeacherAndStudentActivitiesReviewed": true,
+    "sourceRequirements": "Student's own two number cards, actual cube collection, as many equivalent representations as possible, visit at least FOUR real classmates' collections",
+    "sourceExamples": "warm-up C/D 35, Kiran 31, synthesis 73",
+    "originalProtectedPublisherCheckpointVerbatimVerified": false,
+    "allOriginalFigureAndStudentTasksFullyAudited": null
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false,
+    "contentVersion": "us-ccss-g1-u04-l09-original-student-activities-v7",
+    "ownerFirstPartyLearnerAuthoringInstructionsReviewed": true,
+    "teacherOnlyRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-74-original-own-collection-representation-rubric.json",
+    "oldV6ToOnlyL09V7Guarded": true
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "originalSourceTaskToPracticeParity": "NUMERIC_EQUIVALENCE_SUBSET_PLUS_TEACHER_OBSERVED_AUTHORSHIP",
+    "mathGeneratorAndAlternativeRepresentationVerifierReviewed": true,
+    "originalPhysicalAuthorshipAndFourGalleryVisitsNotAutoGraded": true,
+    "teacherOnlyAuthenticLearnerEvidenceRequired": true,
+    "sourceNumericOraclesAuthoredNotExecuted": true
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "sourceAuthoredCollectionTask20261020": {
+    "rubric": "lesson-74-original-own-collection-representation-rubric.json",
+    "originalTask": "Own selected collection, many representations, minimum four gallery collections",
+    "authoredTeachingExisting": true,
+    "numericPracticeOnlyPartial": true,
+    "authenticLearnerTaskAtFrozenSha": "PENDING",
+    "teacherObservation": "NOT_CLAIMED",
+    "academicAcceptance": "NOT_CLAIMED"
+  },
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "sourceAuthoredTeacherRubricReviewed": true,
+    "teacherObservedOriginalTaskEvidenceStillRequiredAtD": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-74-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalPublisherProtectedCheckpointVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "Academic A-C teaching, math subset, and teacher-only authored activity rubric reviewed. Actual child creation/teacher observation/gallery and CI Stage D require frozen grade. Next ordinal 75.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 74,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L09",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-74-stage-a-c-source-implementation-audit-20261020.md",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721"
+  }
+}

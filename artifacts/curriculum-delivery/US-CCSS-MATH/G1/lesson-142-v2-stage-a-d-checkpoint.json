@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A-D source task comparison, first-party learner content correction and teacher-authorship rubric checkpoint — NOT an approval",
+  "grade": "G1",
+  "ordinal": 142,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U08:L06",
+  "title": "Compare Story Problems",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics Grade 1 (2021)",
+    "sourceFullHtml": "unit-8/lesson-6/lesson.html",
+    "readOnlyOriginalHtmlSha256": "c3543159e0b1e5c757e3b171caf6425ae856bd2e86838df886d4aea1637dba08",
+    "matchesExistingOriginalSourceIndex": true
+  },
+  "stageA": {
+    "reviewedStudentFacingText": true,
+    "originalFourCarnivalComparisons": [
+      {
+        "context": "Mai 12 vs Lin 7 ride tickets",
+        "difference": 5
+      },
+      {
+        "context": "17 blue vs 7 pink cotton-candy bags",
+        "difference": 10
+      },
+      {
+        "context": "13 toys vs 9 stuffed animals",
+        "difference": 4
+      },
+      {
+        "context": "Ferris wheel capacity 20 vs swings 14",
+        "difference": 6
+      }
+    ],
+    "originalSourceAuthoredTask": "Using rides Diego7, Priya11, Jada3, Kiran6, Noah9, student must WRITE and ANSWER TWO distinct questions",
+    "discoveredGap": "Existing authored teaching omitted Ferris wheel context and instructed only generic computation instead of clearly requiring two student-authored source questions"
+  },
+  "stageB": {
+    "existingSourceSpecificContentReused": true,
+    "repairFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "repairCommit": "19a8c3387bbb936fbee8a1ad23ef06b89293f687",
+    "firstPartyTeacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-142-original-two-ride-questions-authorship-rubric.json",
+    "rubricCommit": "442c39e0eca19b73c8911c2dc5216969642e9c97",
+    "sourcePhotoCopied": false
+  },
+  "stageC": {
+    "digitalSkillFamily": "usccss.g1.u08.l06.compare_difference_story",
+    "numericPracticeScope": "Difference word problem grading only; not evidence of new pupil-authored questions",
+    "originalTwoQuestionTask": "Prepared in learner lesson instructions and first-party rubric for future teacher review, no observed child submissions claimed",
+    "originalDigitalSourceCasesRepaired": "Four original school carnival comparison contexts, preserving teacher-only TWO self-authored rides questions and earlier numeric comparisons",
+    "digitalModeIndices": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "engineCommit": "1581f98f1a36bca9fd6c419cae98abf5b2808e20",
+    "independentOracleCommit": "125f851316fed90d491fc65de7e20ef60704285f",
+    "regressionTestCommit": "c89b17ad9f32f894f2779353dc0b031f03ff68af",
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "authoringSourceRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons137To146SourceMathTests.cs",
+    "authoringSourceRegressionCommit": "bd4f898208de7f3e17063afc84f37d9f8319027d",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceAssertions": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeU06ToU08TeachingTests.cs",
+    "regressionTestCommit": "4be0606a17521dec8a668877bf9920df01d13497",
+    "dotNetBuildAndTests": "NOT_RUN_AUTHORING_POLICY",
+    "authenticatedLearnerRubricTaskRendering": "PENDING_FROZEN_SHA",
+    "correctWrongMalformedAndPersistence": "PENDING",
+    "sourceMediaRightsAccessibility": "PENDING",
+    "originalV1InternalAcademicSignoff": "NOT_CLAIMED",
+    "newSourceSpecificTestsPrepared": true,
+    "newTestsExecutedInThisCheckpoint": false,
+    "finalShaCiExecuted": false,
+    "academicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "ledgerReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "sourceSpecificRepair20261020": {
+    "stage": "SOURCE_SPECIFIC_DIGITAL_PRACTICE_REPAIR_NO_A_D_CERTIFICATION",
+    "numberOfSourceCases": 4,
+    "teacherStudentSourceTaskFullFigureAudit": "PENDING",
+    "effectiveAuthenticatedRenderAndPersistedRealAttempt": "PENDING",
+    "sourceRightsAndTeacherOnlyBoundaries": "PENDING",
+    "academicAcceptance": "NOT_CLAIMED",
+    "release": "NO_GO"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Four original carnival comparisons with numerical differences 5,10,4,6 and separate learner-authored TWO ride questions from Diego/Priya/Jada/Kiran/Noah ride totals; teacher-authored rubric covers actual original questions.",
+    "originalTaskTextCompared": true,
+    "sourceBoundTeachingAndDigitalMathStaticallyReviewed": true,
+    "genuinePupilPageOrStoryTeacherOnly": true,
+    "originalPublisherFiguresNotVerifiedOrCopied": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "individualAcademicApprovalUnclaimed": true
+  },
+  "nextAction": "Original V1 internal acceptance documented; continue next ordinal, do not repeat technical Stage D or deploy.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D3",
+    "ordinal": 142,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U08:L06",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-142-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Four original carnival comparisons with numerical differences 5,10,4,6 and separate learner-authored TWO ride questions from Diego/Priya/Jada/Kiran/Noah ride totals; teacher-authored rubric covers actual original questions."
+  }
+}

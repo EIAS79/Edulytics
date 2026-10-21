@@ -22,7 +22,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             .ToArray();
 
         // Previous 56 source-bound lessons plus exact source-SHA-guarded Grade 1 B03 L12/L14.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5;
+        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30;
         // Exact next five source-bound IM2021 G1 Unit 2 lesson rows, not a broad catalogue expansion.
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
@@ -48,6 +48,18 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
         // V1 G1-007: strict source-bound five lessons with unchanged grade inventory.
         for(var n=16;n<=20;n++)
             Assert.Contains($"PED:US-CCSS-MATH:G1:U02:L{n:00}",selected);
+        // Grade-wide source-goal remediation: all active U05 lessons,
+        // plus G1 U04 L22–23 (L21 already repaired by original V1 source audit).
+        foreach(var n in new[]{16,17,18,19,20,22,23})
+            Assert.Contains($"PED:US-CCSS-MATH:G1:U04:L{n:00}",selected);
+        for(var n=1;n<=14;n++)
+            Assert.Contains($"PED:US-CCSS-MATH:G1:U05:L{n:00}",selected);
+        foreach(var n in new[]{1,4,6,7,8,9,10,12,13,14,15,16})
+            Assert.Contains($"PED:US-CCSS-MATH:G1:U06:L{n:00}",selected);
+        foreach(var n in new[]{1,3,5,9,10,11,12,17})
+            Assert.Contains($"PED:US-CCSS-MATH:G1:U07:L{n:00}",selected);
+        for(var n=1;n<=10;n++)
+            Assert.Contains($"PED:US-CCSS-MATH:G1:U08:L{n:00}",selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U04:L21", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L02", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L05", selected);
@@ -57,6 +69,10 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
         Assert.Contains("PED:US-CCSS-MATH:G1:U07:L16", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L08", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U01:L09", selected);
+        for (var n=14;n<=27;n++)
+            Assert.Contains($"PED:US-CCSS-MATH:G1:U03:L{n:00}",selected);
+        foreach(var n in new[]{1,2,4,5,6,7,8,9,10,11,12,13,14,15})
+            Assert.Contains($"PED:US-CCSS-MATH:G1:U04:L{n:00}",selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U03:L28", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U06:L11", selected);
         Assert.Contains("PED:US-CCSS-MATH:G1:U07:L06", selected);

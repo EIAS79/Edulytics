@@ -65,7 +65,12 @@ test('corrected learning bodies are topic-specific and all numeric equalities ar
     const concepts = constant(name + 'Concepts');
     const mistakes = constant(name + 'Mistakes');
     assert.equal((examples.match(/Example \d+/g) || []).length, 4, name);
-    assert.equal((steps.match(/Step \d+/g) || []).length, 5, name);
+    const requiredSteps = name === 'PuppiesTulipsCompare' ? 6 : 5;
+    assert.equal((steps.match(/Step \d+/g) || []).length, requiredSteps, name);
+    if (name === 'PuppiesTulipsCompare') {
+      assert.match(steps, /Step 6: Write an original puppies-and-tulips Compare story/);
+      assert.match(steps, /partner group/);
+    }
     assert.ok(concepts.length > 130 && mistakes.length > 150, name);
     assert.ok(!/<(?:path|svg)\b/i.test(examples), name);
     assert.ok(!/=-\d+/.test(examples), name);

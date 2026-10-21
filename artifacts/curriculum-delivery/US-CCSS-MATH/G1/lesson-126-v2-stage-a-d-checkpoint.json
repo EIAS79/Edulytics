@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A–D source task review and code correction checkpoint; not a lesson approval",
+  "grade": "G1",
+  "ordinal": 126,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L07",
+  "title": "Put Together Flat Shapes",
+  "sourceBasis": {
+    "originalEdition": "Illustrative Mathematics Grade 1 (2021)",
+    "originalFullLessonRelativePath": "unit-7/lesson-7/lesson.html",
+    "observedOriginalHtmlSha256": "a118d512bb31f39a8515910dcd23e43c2ede495bd3de236f5d790f2be87d0cd8",
+    "observedSourceHashMatchedInventory": true,
+    "mode": "READ_ONLY original full teacher HTML, Student Facing tasks"
+  },
+  "stageA": {
+    "sourceTaskInspected": true,
+    "originalTasks": [
+      "Build a pattern-block object, TRACE its outside and count components",
+      "Rebuild the SAME outline using DIFFERENT pattern blocks, recount and compare",
+      "Optionally rebuild that SAME outline with the MOST possible pieces",
+      "Picture Books Stage 3: find and RECORD observed shapes in book pictures using drawing or words"
+    ],
+    "sourceGap": "Existing concepts mentioned same-shape task but instruction steps incorrectly suggested composing a DIFFERENT final shape from the same pieces; source Picture Books Stage 3 absent"
+  },
+  "stageB": {
+    "existingSourceRepairReused": true,
+    "correctionFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "commit": "c26a8ab9098125df229ea8e17d0c0485f06f9a85",
+    "example": "Same hexagon exterior covered with six equilateral small pattern triangles or two matching trapezoids",
+    "thirdPartyPublisherGraphicsCopied": false
+  },
+  "stageC": {
+    "existingPracticeFamily": "usccss.g1.u07.l07.compose_flat_shapers",
+    "existingRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-126-original-shape-creation-rubric.json",
+    "digitalMathCoverageOnlyPartial": true,
+    "teacherReviewBoundary": "Original tracing, student-created design, alternate physical block decompositions and picture books are not certified by arithmetic or virtual shape count",
+    "sourceGoalMathModeAdded": {
+      "mode": "SAME_OUTLINE_HEXAGON",
+      "originalMath": "six triangles vs two trapezoids, each trapezoid equals three unit triangles",
+      "digitalPracticeCommit": "4b633cb7d60253f8b62a7c1b5b0b8e4db555ee7e",
+      "independentOracleCommit": "457a583959a057d8754d94d2dc5f50324ad940e8",
+      "testCommit": "54a88006837d5367e6c5bdf0825360887a5ae5b6",
+      "originalPupilConstructionAndTracing": "TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED",
+      "finalExactShaTests": "NOT_YET_EXECUTED",
+      "newAcademicApproval": "NOT_CLAIMED"
+    },
+    "sourceMathRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons121To136SourceMathTests.cs",
+    "sourceMathRegressionCommit": "8891bd6bedca4d0181affb726e111db462eaab15",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceAssertionFile": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "assertionCommit": "1f41c882844fad0fa97a15ef12db72fc533a1d55",
+    "dotNetBuildAndTestsOnCurrentHead": "NOT_RUN",
+    "authenticatedStudentTeachingAndScoring": "PENDING",
+    "sourceGraphicsRightsAccessibility": "PENDING",
+    "individualOriginalV1AtoDSignoff": "NOT_CLAIMED",
+    "frozenShaCiExecuted": false,
+    "sourceOriginalFigureReview": "PENDING",
+    "sourceAuthoredLearnerTaskAuthenticity": "PENDING",
+    "academicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceAuthoringBoundary": "Build SAME pattern-block outline twice from different pieces, trace, and record Picture Books Stage3 observations; first-party hexagon 6 triangles/2 trapezoids model is not original student tracing.",
+    "originalTextualStudentTasksReviewed": true,
+    "existingFirstPartyTeachingReused": true,
+    "numericOrAttributeProxyVerifiedStatically": true,
+    "physicalDrawingAndPartnerWorkRequiresTeacher": true,
+    "originalSourceArtworkNotAutoCertified": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "originalV1AcademicApproval": false
+  },
+  "nextAction": "Individually accepted; continue 127; no release",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D3",
+    "ordinal": 126,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U07:L07",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_AND_SOURCE_AUTHORED_TASK",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-126-source-math-v1-acceptance-20261021.md"
+  }
+}

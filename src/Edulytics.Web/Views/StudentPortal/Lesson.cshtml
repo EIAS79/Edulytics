@@ -106,6 +106,28 @@
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />
+            @* A-C source-corrected original U03 L20-L27 teaching lives in the
+               canonical translation. The V2 runtime composer compresses the
+               worked examples/steps and can otherwise hide essential original
+               first-party activity directions from the authenticated learner.
+               Keep V2 visuals, but show the source-scoped canonical lessons'
+               concepts, worked examples and teacher-facilitated directions.
+               This DOES NOT claim pupils performed classroom activities. *@
+            @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G1:U03:L", StringComparison.Ordinal) &&
+                 int.TryParse(Model.LessonCode["PED:US-CCSS-MATH:G1:U03:L".Length..], out var sourceLessonNumber) &&
+                 sourceLessonNumber is >= 20 and <= 27)
+            {
+                <div class="lesson-source-aligned-activities" aria-label="Source-aligned original lesson teaching">
+                    <h2>Source-aligned activities and teaching</h2>
+                    <p class="lesson-reader-text">
+                        Edulytics-authored instructions for this lesson's original mathematical goals.
+                        Physical game rounds, drawings and partner explanations still require teacher review.
+                    </p>
+                    <partial name="_LessonReaderSection" model="sections[1]" />
+                    <partial name="_LessonReaderSection" model="sections[2]" />
+                    <partial name="_LessonReaderSection" model="sections[3]" />
+                </div>
+            }
         }
         else
         {

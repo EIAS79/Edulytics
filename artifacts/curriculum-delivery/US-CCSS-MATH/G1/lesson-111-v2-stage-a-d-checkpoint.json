@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 111,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U06:L09",
+  "unit": 6,
+  "lessonNumber": 9,
+  "title": "Write Numbers to 120",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-6/lesson-9/lesson.html",
+    "originalFullTeacherSha256": "1bee642ee0a01a82060d33f0004d751f801ebb88e93a6cfb6ed866f02a3648f2",
+    "originalTeacherPreparationSha256": "3c4098931483131fce3921bc3fb9d69abf8691917a4291793c752b1098ed3fc9",
+    "originalStudentFacingHtmlSha256": "7a1bbaa3ac755cb79ebd8429add0346f41990079b99ab4031457cfa9a60c8495",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-9/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: Measure Animal Lengths (15 minutes)",
+      "Activity 2: Write Numbers to Represent Animal Lengths (20 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 2,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing Animal:________________________________ Length: _______________________ Show your thinking using drawings, numbers, or words. Student Response Teachers wit",
+      "Student Facing For each animal, write the number of cubes that represent its length. The beaver is ______________________ long. The dog is ______________________ long. Th"
+    ],
+    "sourceOriginalTaskInterpretation": "Write the cube-count numerals for original beaver, dog and other animal lengths up to 120.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "INITIAL_SOURCE_EXCERPT_TRIAGE",
+    "priorSourceGapStatement": "Review picture-to-number mapping and source animal labels; image-based quantities require verified actual graphics.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_PRACTICE",
+    "existingFamily": "usccss.g1.u06.l09.write_number_to120",
+    "allowedMappedFamilies": [
+      "usccss.g1.u06.l09.write_number_to120"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": null,
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0"
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue ordinal 112 in order; D/CI deferred.",
+  "crossLessonMathRenderingRepairs20261020": {
+    "evidenceType": "SOURCE_DOMAIN_AND_RENDERING_CODE_REPAIR_NOT_ACADEMIC_APPROVAL",
+    "reviewedSourceMathSubset": "Original 2021 animal measuring source 95–120 range now accepted by both numeric validator/generator and SVG renderer, including 95–99. Historical 100–120 parameter acceptance preserved.",
+    "sourceChanges": [
+      "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+      "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1PlaceValue.cs"
+    ],
+    "negativeControlsAuthoredAt": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1NewSourcePlaceValueVisualTests.cs"
+    ],
+    "correctnessOutcome": "SOURCE_BOUNDARY_CODE_REPAIRED_TESTS_AUTHORED_NOT_EXECUTED_AT_FROZEN_SHA",
+    "actualAuthenticatedPracticePersistence": "PENDING",
+    "originalStudentTaskToEffectiveTeachingCompleteParity": "NOT_CLAIMED",
+    "finalDotNetAndProtectedCI": "DEFERRED_UNTIL_WHOLE_GRADE_FREEZE",
+    "internalAcceptance": "NOT_CLAIMED"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Original beaver, dog, giant anteater, raccoon, red fox and snake lengths need publisher diagram or real measurement; numeric 95–120 representations are first-party only.",
+    "originalStudentAndTeacherTextCompared": true,
+    "firstPartyTeachingAndMathReviewed": true,
+    "originalActualMeasurementTeacherOnly": true,
+    "sourceImagesNotCertified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 111,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U06:L09",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-111-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original beaver, dog, giant anteater, raccoon, red fox and snake lengths need publisher diagram or real measurement; numeric 95–120 representations are first-party only."
+  }
+}

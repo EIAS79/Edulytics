@@ -67,9 +67,9 @@ jobs:
       - name: V1 source policy identity - legacy V2 cohort inactive
         if: github.event_name != 'workflow_dispatch'
         run: |
-          test -s docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md
-          grep -Fq 'EDULYTICS-GRADE-FIRST-5-V1' docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md
-          grep -Fq 'SUPERSEDED / INACTIVE' docs/curriculum/EDULYTICS_500_LESSON_BATCH_EXECUTION_PLAN_V2.md
+          test -s docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md
+          grep -Fq 'EDULYTICS-GRADE-FIRST-5-V1' docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md
+          grep -Fq 'SUPERSEDED / INACTIVE' docs/curriculum/plans/EDULYTICS_500_LESSON_BATCH_EXECUTION_PLAN_V2.md
           echo 'LEGACY_V2_INACTIVE_FOR_V1: 20-lesson reapproval not run; V1 academic evidence is separate.'
       - uses: actions/setup-node@v4
         if: github.event_name == 'workflow_dispatch'

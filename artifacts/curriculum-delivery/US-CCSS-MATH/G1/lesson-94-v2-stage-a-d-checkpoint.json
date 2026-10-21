@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 94,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L06",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "a58ee11a551f51771aca99deb4319b5a0f40f8366b217ef575971abdfbb2d436",
+    "teacherPreparationSha256": "1bbe707720ab3370c673dccbd84c4016c7609a5bb47e508e502bc8a74e20655b",
+    "studentMirrorSha256": "90c3cb131f71170c022705ad5e676cfd900131c207a925a771ad91d2622723ef",
+    "teacherActivityHeadings": [
+      "Activity 1: How Many to the Next Ten? (10 minutes)",
+      "Activity 2: Elena and Andre Add (15 minutes)",
+      "Activity 3: Introduce Target Numbers, Add Ones (15 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(8 + 2\\) \\(8 + 5\\) \\(9 + 8\\) \\(7 + 6\\) Student Response Teachers with a valid work email address can click her",
+      "Student Facing Find the number that makes each equation true. Be ready to explain your thinking in a way that others will understand. [visual] [visual] <button class=\"js-",
+      "Student Facing Elena and Andre found the value of \\(34 + 9\\) . Elena started with \\(34 + 6 = 40\\) . What does Elena need to do next? Show your thinking using drawings, nu"
+    ],
+    "sourceSpecificComparison": "Original eight next-ten blank equations, Elena/Andre 34+9, 6+68; Target Numbers start 55 with 95 ceiling",
+    "classification": "CONTENT_REPAIR",
+    "originalMathematicalTasksReconciled": {
+      "mentalWarmup": [
+        "8+2=10",
+        "8+5=13",
+        "9+8=17",
+        "7+6=13"
+      ],
+      "nextTen": [
+        "45+5=50",
+        "38+2=40",
+        "63+7=70",
+        "24+6=30",
+        "42+8=50",
+        "57+3=60",
+        "71+9=80",
+        "89+1=90"
+      ],
+      "twoMethodReasoning": "34+9=43 (Elena 34+6+3; Andre 9+1+33)",
+      "separateSourceAddition": "6+68=74",
+      "partnerTargetNumbers": "Starts at 55, aims for 95 or nearest under in six real turns; teacher-led; not numerically certified."
+    },
+    "originalVisualDrawingsAssessedByTeacherNotEngine": true
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "existingOriginalStudentAndTeacherTeachingMathReviewed": true,
+    "sourceSpecificTeaching": "Existing version v2 states eight blanks, both ways for 34+9, 6+68, and actual Target Numbers restrictions; no invention or transfer of publisher artwork."
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceExactEightNextTenModes": "4-11",
+    "originalNumberTalkModes": "12-15",
+    "retainedElenaAndreTwoMethodsMode": 2,
+    "retainedSixPlusSixtyEightMode": 3,
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "f3d0ca275ee945381b8aea06ea1a2b9fd877d296",
+    "sourceModeAnswerContracts": "MISSING=n;TOTAL=target (modes 4-11), TOTAL=sum;NEW_TEN=YES (modes 12-15), existing MOVE/REST/TOTAL + both-strategy expression for mode2",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson94OriginalNextTenAndWarmupTests.cs",
+    "authoredTestsCommit": "e80af886e91155cf934b41896a02cc89f1bf19e8",
+    "testsExecuted": false,
+    "teacherCenterAndOpenExplanationAutoScored": false
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue original V1 review at 95; no merge or deployment.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "protectedPublisherAssetsAndHumanReasoningNotAutoGraded": true,
+    "scope": "Accessible 2021 next-ten blanks, oral warmup numerics, the two 34+9 pupil approaches and 6+68 aligned. Original artwork, pupil-created free-form explanation, real Target Numbers six-turn outcome and protected publisher assessments await authorized human or Stage D evidence."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 94,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U05:L06",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-94-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original teacher/student diagrams and six-turn Target Numbers physical center game are instructional only."
+  }
+}

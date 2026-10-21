@@ -1,0 +1,225 @@
+name: Full Grade Curriculum Gate - Fail Closed Contract
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md'
+      - 'docs/curriculum/plans/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L51-L146-SOURCE-GOAL-TRIAGE.json'
+      - 'tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs'
+      - 'tests/us-ccss-g1-full-grade-authorship-review.test.cjs'
+      - 'tests/us-ccss-g1-static-remaining-triage.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-65-learner-authored-story-review-rubric.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-academic-evidence-matrix.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-146-number-riddle-authorship-rubric.json'
+      - 'tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs'
+      - 'tests/us-ccss-g1-readonly-source-cache-integrity.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/readonly-source-cache-integrity-20261019.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L71-L146-STATIC-SOURCE-CONTENT-TRIAGE.json'
+      - 'src/Edulytics.Services/Mathematics/UsCcssG1FullGrade*.cs'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreG1FullGrade*.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/UsCcssG1FullGrade*.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
+      - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Source*.cs'
+      - 'src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1*.cs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-119-puppies-tulips-authorship-rubric.json'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1IndependentNumericalOracleTests.cs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json'
+      - 'tests/us-ccss-g1-full-grade-runtime-family-map.test.cjs'
+      - 'tools/curriculum/us-ccss-full-grade-gate.cjs'
+      - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
+      - 'tests/us-ccss-full-grade-worklist.test.cjs'
+      - 'tests/us-ccss-full-grade-gate.test.cjs'
+      - 'tests/us-ccss-g1-stage-d-checkpoint-closure.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-*-v2-stage-a-d-checkpoint.json'
+      - '.github/workflows/us-ccss-full-grade-gate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md'
+      - 'docs/curriculum/plans/GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L51-L146-SOURCE-GOAL-TRIAGE.json'
+      - 'tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs'
+      - 'tests/us-ccss-g1-full-grade-authorship-review.test.cjs'
+      - 'tests/us-ccss-g1-static-remaining-triage.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-65-learner-authored-story-review-rubric.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-academic-evidence-matrix.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-146-number-riddle-authorship-rubric.json'
+      - 'tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs'
+      - 'tests/us-ccss-g1-readonly-source-cache-integrity.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/readonly-source-cache-integrity-20261019.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-L71-L146-STATIC-SOURCE-CONTENT-TRIAGE.json'
+      - 'src/Edulytics.Services/Mathematics/UsCcssG1FullGrade*.cs'
+      - 'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'
+      - 'src/Edulytics.Data/Seeding/CommonCoreG1FullGrade*.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/UsCcssG1FullGrade*.cs'
+      - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
+      - 'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGrade*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Source*.cs'
+      - 'src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1*.cs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-119-puppies-tulips-authorship-rubric.json'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1IndependentNumericalOracleTests.cs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json'
+      - 'tests/us-ccss-g1-full-grade-runtime-family-map.test.cjs'
+      - 'tools/curriculum/us-ccss-full-grade-gate.cjs'
+      - 'tools/curriculum/us-ccss-full-grade-worklist.cjs'
+      - 'tests/us-ccss-full-grade-worklist.test.cjs'
+      - 'tests/us-ccss-full-grade-gate.test.cjs'
+      - 'tests/us-ccss-g1-stage-d-checkpoint-closure.test.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-*-v2-stage-a-d-checkpoint.json'
+      - '.github/workflows/us-ccss-full-grade-gate.yml'
+  workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: 'Exact commit for final full-grade 96-new-lesson acceptance (leave empty for negative control)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  grade-gate-contract:
+    name: g1-full-grade-negative-control
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Evidence SHA references require git merge-base and git show of older verified commits.
+          # Shallow checkouts can falsely reject valid original V1 lesson acceptances.
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test honest 96-lesson source triage and fail-closed grade control
+        run: |
+          node --test tests/us-ccss-full-grade-gate.test.cjs
+          node --test tests/us-ccss-g1-stage-d-checkpoint-closure.test.cjs
+          node --test tests/us-ccss-g1-full-grade-runtime-family-map.test.cjs
+          node --test tests/us-ccss-g1-targeted-original-source-review.test.cjs
+          node --test tests/us-ccss-g1-119-original-authoring-task.test.cjs
+          node --test tests/us-ccss-g1-135-original-sunday-schedule.test.cjs
+          node --test tests/us-ccss-g1-123-126-original-shape-authorship.test.cjs
+          node --test tests/academic-us-ccss-license-edition.test.cjs
+          node --test tests/us-ccss-g1-source-task-parity-risk-register.test.cjs
+          node --test tests/us-ccss-g1-full-grade-original-activity-inventory.test.cjs
+          node --test tests/us-ccss-full-grade-worklist.test.cjs
+          node --test tests/us-ccss-g1-full-grade-source-goal-triage.test.cjs
+          node --test tests/us-ccss-g1-full-grade-authorship-review.test.cjs
+          node --test tests/us-ccss-full-grade-academic-evidence-matrix.test.cjs
+          node --test tests/us-ccss-g1-readonly-source-cache-integrity.test.cjs
+          node --test tests/us-ccss-g1-static-remaining-triage.test.cjs
+      - name: Prove full-grade work scope includes all 96 consecutive lessons (never five)
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/curriculum/us-ccss-full-grade-worklist.cjs > /tmp/g1-full-grade-worklist.json
+          node -e "const x=require('/tmp/g1-full-grade-worklist.json');if(x.executionUnit!=='ONE_WHOLE_GRADE'||x.items.length!==96||x.fixedChunkSize!==null||x.items[0].ordinal!==51||x.items[95].ordinal!==146||x.historic.count!==50)process.exit(1)"
+      - name: Negative control on freshly built, deliberately incomplete 146-row grade ledger
+        shell: bash
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const {initial,evaluate}=require('./tools/curriculum/us-ccss-full-grade-gate.cjs');
+          const m=JSON.parse(fs.readFileSync('artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json','utf8'));
+          const result=evaluate(m,initial(m));
+          fs.writeFileSync('/tmp/grade-gate-decision.json',JSON.stringify(result,null,2));
+          if(result.outcome!=='NO_GO'||result.newAccepted!==0||result.newNotAccepted!==96||
+             result.historicRetestedCount!==0||result.productionLive!==false)process.exit(1);
+          console.log('Negative control correctly NO_GO; does not certify current lesson progress.');
+          NODE
+      - name: Save grade-wide 96-lesson execution worklist (not approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-full-grade-96-lessons-worklist
+          path: /tmp/g1-full-grade-worklist.json
+          if-no-files-found: warn
+      - name: Save blocked release decision, not an academic certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade-full-gate-no-go-initial
+          path: /tmp/grade-gate-decision.json
+          if-no-files-found: warn
+
+  grade-new-original-practice-math:
+    name: g1-full-grade-source-practice-math
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Independently verify candidate mathematics for 95 new digital original Grade 1 lessons
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          mkdir -p /tmp/g1-new-original-math-trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release --no-restore \
+            --filter 'FullyQualifiedName~UsCcssG1FullGrade|FullyQualifiedName~UsCcssG1Lesson|FullyQualifiedName~UsCcssG1SourceShapesAndHardTimesVisualTests|FullyQualifiedName~UsCcssG1NewSourcePlaceValueVisualTests|FullyQualifiedName~UsCcssG1IndependentNumericalOracleTests' \
+            --logger 'trx;LogFileName=g1-original-math-and-visuals.trx' \
+            --results-directory /tmp/g1-new-original-math-trx
+      - name: Archive math tests and authentic run result; not source academic approval
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g1-95-digital-independent-math-and-diagrams-not-academic-acceptance
+          path: /tmp/g1-new-original-math-trx/*.trx
+          if-no-files-found: warn
+          retention-days: 14
+
+  grade-real-release-gate:
+    name: g1-full-grade-real-acceptance
+    # Final Grade 1 release PR is named differently from the generic full-grade family.
+    # Include this exact PR branch while preserving the same exact-SHA 96/96 release gate.
+    if: (github.event_name == 'pull_request' && github.event.pull_request.draft == false && (startsWith(github.head_ref, 'curriculum/full-grade-') || github.head_ref == 'curriculum/g1-continuous-authoring-final-ci-20261019')) || (github.event_name == 'workflow_dispatch' && inputs.candidate_sha != '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || inputs.candidate_sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify exact checked-out candidate SHA before any acceptance
+        shell: bash
+        env:
+          CANDIDATE: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || inputs.candidate_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$CANDIDATE" =~ ^[0-9a-fA-F]{40}$ ]]
+          test "$(git rev-parse HEAD)" = "$CANDIDATE"
+      - name: Require real 96/96 source and Practice evidence
+        shell: bash
+        env:
+          CANDIDATE: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || inputs.candidate_sha }}
+        run: |
+          set -euo pipefail
+          node tools/curriculum/us-ccss-full-grade-gate.cjs --release --sha="$CANDIDATE" > /tmp/grade-real-release.json
+          node -e "const x=require('/tmp/grade-real-release.json');if(x.outcome!=='GRADE_READY_FOR_REQUIRED_CI_AND_RELEASE'||x.newAccepted!==96||x.historicRetestedCount!==0||x.productionLive!==false)process.exit(1)"
+      - name: Publish grade evidence decision (not Render / owner-UAT signoff)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade-g1-real-release-eligibility
+          path: /tmp/grade-real-release.json
+          if-no-files-found: warn

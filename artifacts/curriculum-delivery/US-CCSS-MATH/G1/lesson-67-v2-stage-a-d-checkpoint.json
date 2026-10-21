@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 67,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L02",
+  "title": "Match Representations of Tens",
+  "sourceBasis": {
+    "readOnlyOurCsSource": true,
+    "edition": "IM K–5 2021",
+    "fullTeacherLessonRelativePath": "unit-4/lesson-2/lesson.html",
+    "teacherPreparationSha256": "8156c3ea178cd7f22ba5bc695db71a23d33078a1a2abd18e7ff292931dde7020",
+    "fullTeacherHtmlSha256": "022c3477ec7ce5b3395fdf95f65b099d05056d321dca3cef1b70de5ff562901e",
+    "studentMirrorSha256": "c0b31de9b3e6515000b6eca5962dd7b16756a4bd57912a9cee82e7b92f254002",
+    "originalTeacherActivityHeadings": [
+      "Activity 1: Representations of Tens (20 minutes)",
+      "Activity 2: It's a Match! (15 minutes)"
+    ]
+  },
+  "stageA": {
+    "reviewedSourceTaskExcerpts": [
+      "Student Facing Round 1: How many cubes? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-icon--close\" heig"
+    ],
+    "existingCandidateReused": true,
+    "classification": "CONTENT_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "originalAccessibleTeacherAndStudentActivityTasksReviewed": true,
+    "originalWarmUp": "two rounds of estimates: too-low, about-right, too-high",
+    "originalActivities": "three-card match each pupil finds two peers; chart Number / Number of Tens / Drawing; match 10-90 towers/numerals/words",
+    "originalProtected2021CooldownVerbatimVerified": false
+  },
+  "stageB": {
+    "reviewAndCorrectionSummary": "Restored original too-low/about-right/too-high physical estimate and word-card/numeral/tower correspondence; retained reviewed MatchTens family",
+    "sourceContentFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "candidateEditCommit": "344ddaef861be613e97423e8685111ee29f47872",
+    "publisherArtworkCopied": false,
+    "contentVersion": "us-ccss-g1-u04-l02-original-activities-v7",
+    "persistedV6ToV7Guarded": true,
+    "independentlyAuthoredExitCheck": "7 tens / 70 cubes / SEVENTY"
+  },
+  "stageC": {
+    "reusedPracticeFamily": "usccss.g1.u04.l02.match.tens_equivalence",
+    "changedGeneratorCommit": null,
+    "teacherOnlyBoundary": "Real freehand authoring, physical cards/objects, pupil estimates, peer discussion and classroom observations cannot be inferred from digital arithmetic evidence",
+    "originalSourceTaskToPracticeParity": "VERIFIED_VISIBLE_SOURCE_AND_OWN_EDULYTICS_EXIT",
+    "exactSourceMathAndOwnedExitVerifierReviewed": true,
+    "writtenTestsNotExecuted": true
+  },
+  "stageD": {
+    "sourceAssertionsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "practiceBoundsAssertions": null,
+    "ciRunDuringAuthoring": false,
+    "CIResult": "NOT_RUN_AUTHORING_POLICY",
+    "originalV1AuthenticatedStudentRendering": "PENDING_FINAL_SHA",
+    "originalV1MathAndPersistence": "PENDING_FINAL_SHA",
+    "copyrightAccessibilityAndTeacherOnlyBoundaries": "PENDING_REQUIRED_EVIDENCE",
+    "originalV1InternalAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-67-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "assessmentBasis": "OWNER_APPROVED_INDEPENDENT_EDULYTICS_COOL_DOWN",
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  },
+  "nextAction": "A-C complete for visible source matched tens cards, owner-authored 7-tens assessment. Protected 2021 original cooldown not copied. Continue ordinal 68; final D/CI withheld until entire grade frozen.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 67,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L02",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-67-stage-a-c-source-implementation-audit-20261020.md",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721"
+  }
+}

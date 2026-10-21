@@ -1,0 +1,287 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const {spawnSync} = require('node:child_process');
+const ROOT = path.resolve(__dirname,'../..');
+const PLAN = 'EDULYTICS-GRADE-FIRST-FULL-GRADE-V2';
+const HISTORIC_SHA = '2c7c43a8f3af7151d422acc6e8e9e8fa5348833c';
+const MANIFEST = 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/grade-manifest.json';
+const LEDGER = 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json';
+const CANDIDATE_FAMILY_MAP = 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json';
+const isSha = s => typeof s === 'string' && /^[0-9a-f]{40}$/i.test(s);
+const isHash = s => typeof s === 'string' && /^[0-9a-f]{64}$/i.test(s);
+// An immutable, unchanged Git file is valid V1 source/test evidence;
+// do not mandate duplicating every proof into a separate per-lesson JSON.
+const isSafeGitFile = p => typeof p==='string' && p.length>0 &&
+  !p.startsWith('/') && !p.includes('\\') &&
+  !p.split('/').some(x=>x==='.'||x==='..'||x==='') &&
+  /^(docs\/curriculum\/|artifacts\/curriculum-delivery\/|tests\/|src\/|tools\/)/.test(p) &&
+  /\.(?:md|json|cs|cjs|js|py|html|yml|yaml|trx)$/.test(p);
+function validGitEvidenceReference(ref,releaseSha) {
+  if(!ref||ref.kind!=='GIT_FILE'||!isSha(ref.commitSha)||
+     !isSafeGitFile(ref.path)||!isHash(ref.sha256)||!isSha(releaseSha))return false;
+  if(spawnSync('git',['merge-base','--is-ancestor',ref.commitSha,releaseSha],{cwd:ROOT}).status!==0)
+    return false;
+  if(spawnSync('git',['diff','--quiet',ref.commitSha,releaseSha,'--',ref.path],{cwd:ROOT}).status!==0)
+    return false;
+  const original=spawnSync('git',['show',ref.commitSha+':'+ref.path],
+    {cwd:ROOT,maxBuffer:8*1024*1024});
+  return original.status===0 &&
+    crypto.createHash('sha256').update(original.stdout).digest('hex').toLowerCase()===
+      ref.sha256.toLowerCase();
+}
+function validProof(file,hash,ref,sha,checkFile=validEvidenceFile) {
+  return checkFile(file,hash) || validGitEvidenceReference(ref,sha);
+}
+function sourceGroundedFamilies(candidate) {
+  // No arbitrary one-family limit: old V1 G1-010 used two per lesson.
+  // Every allowed family must first appear in the source-reviewed mapping.
+  const families=Array.isArray(candidate?.candidateFamilies)
+    ?candidate.candidateFamilies
+    :(candidate?.candidateFamily==null?[]:[candidate.candidateFamily]);
+  if(families.some(x=>typeof x!=='string'||!x.trim()) ||
+     new Set(families).size!==families.length)return null;
+  return families;
+}
+const load = p => JSON.parse(fs.readFileSync(path.resolve(ROOT,p),'utf8'));
+
+function initial(manifest) {
+  if (!Array.isArray(manifest?.lessons) || manifest.lessons.length !== 146 ||
+    manifest.lessons.some((x,i)=>x.gradeOrdinal!==i+1) ||
+    new Set(manifest.lessons.map(x=>x.lessonCode)).size!==146)
+    throw new Error('Grade 1 canonical inventory not 146 unique ordered lessons');
+  return {
+    schemaVersion:1, planId:PLAN, programme:'US-CCSS-MATH', grade:'G1',
+    gradeCount:146,
+    historical:{first:1,last:50,count:50,status:'HISTORICALLY_RELEASED_NO_RETEST',
+      lastBatch:'US-CCSS-G1-010',mainSha:HISTORIC_SHA,
+      sourceEvidence:'https://github.com/EIAS79/Edulytics/pull/566#issuecomment-6253349510',
+      note:'Evidence is historical; do not redo academic approval of ordinals 1-50.'},
+    newScope:{first:51,last:146,count:96},
+    nextOrdinal:51,
+    release:'NO_GO',
+    ownerUat:'PENDING',
+    newLessons:manifest.lessons.slice(50).map(x=>({
+      ordinal:x.gradeOrdinal,lessonCode:x.lessonCode,
+      unit:x.unitNumber,lessonNumber:x.lessonNumber,
+      title:x.title,sourceTeacherUrl:x.sourceTeacherUrl,
+      outcomeCodes:x.officialOutcomeCodes,status:'NOT_STARTED',evidence:null
+    }))
+  };
+}
+function validEvidenceFile(rel, hash) {
+  if (typeof rel!=='string'||!rel||path.isAbsolute(rel)||!isHash(hash)) return false;
+  const abs=path.resolve(ROOT,rel);
+  if (!abs.startsWith(ROOT+path.sep)||!fs.existsSync(abs)||!fs.statSync(abs).isFile()) return false;
+  const actual=crypto.createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
+  return actual.toLowerCase()===hash.toLowerCase();
+}
+function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
+  if(!isSha(proofSha)||!isSha(releaseSha))return false;
+  // Evidence rows cannot embed their own future commit SHA: commit hashes
+  // change whenever the signed/attested ledger is committed. Verify that
+  // the independently TESTED source revision is an ancestor and that its
+  // academic/runtime code is byte-for-byte unchanged at release.
+  const ancestor=spawnSync('git',['merge-base','--is-ancestor',proofSha,releaseSha],{cwd:ROOT});
+  if(ancestor.status!==0)return false;
+  // V1 changes invalidate only the affected lesson/capability proof.
+  // No supplied scope retains the conservative old all-shared-code check.
+  const scope=affectedPaths===undefined
+    ?['src/Edulytics.Core','src/Edulytics.Services','src/Edulytics.Data',
+      'src/Edulytics.Web','tests/Edulytics.Tests','tools/phase29']
+    :affectedPaths;
+  if(!Array.isArray(scope)||scope.length===0||new Set(scope).size!==scope.length||
+     (affectedPaths!==undefined && scope.some(p=>!isSafeGitFile(p) ||
+       !/^(src\/|tests\/|tools\/)/.test(p))))return false;
+  // Narrow lesson scope never waives revalidation when the shared math,
+  // lesson-contract or authenticated grading path changed after the proof.
+  const sharedCritical=[
+    'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
+    'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
+    'src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
+    'tools/phase29/b001_practice_attempt_probe.py',
+    'tools/phase29/acceptance_two_school_https.py'
+  ];
+  const verifiedScope=[...new Set([...scope,...sharedCritical])];
+  const diff=spawnSync('git',['diff','--quiet',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT});
+  return diff.status===0;
+}
+// Source-specific criteria are independent minimums from the already-reviewed
+// first-party task rubrics. Authorship selection still comes from the candidate
+// map; a generic "Authorship + Math accuracy" rubric cannot silently erase the
+// four-collection gallery, shape-construction or two-question requirements.
+const REQUIRED_SOURCE_RUBRIC_CRITERIA=Object.freeze({
+  65:['Authorship','Sufficient data','Math accuracy'],
+  74:['Authorship','Math accuracy','Different representations','Original four-collection gallery'],
+  119:['Authorship','Math accuracy','Representation','Peer work'],
+  123:['Authorship','Math accuracy','Source task specificity'],
+  124:['Authorship','Math accuracy','Three source nonexamples'],
+  125:['Authorship','Math accuracy','Five source squares and three source non-squares'],
+  126:['Authorship','Math accuracy','Same-outline alternate construction'],
+  135:['Authorship','Math accuracy','Schedule consistency'],
+  142:['Two original questions','Grounded values','Math and answer'],
+  144:['Authorship','Math accuracy','Three distinct expressions'],
+  146:['Authorship','Valid clues','Solution and consistency']
+});
+function validSourceAuthorshipRubric(ordinal,candidate,rubric) {
+  const minimum=REQUIRED_SOURCE_RUBRIC_CRITERIA[ordinal];
+  if(!minimum||!candidate||!rubric||
+     rubric.lessonOrdinal!==ordinal||rubric.lessonCode!==candidate.lessonCode||
+     rubric.status!==(ordinal===142
+       ?'FIRST_PARTY_TEACHER_REVIEW_RUBRIC_PREPARED_NOT_CERTIFIED'
+       :'TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED')||
+     rubric.academicAcceptance==='INTERNALLY_ACCEPTED'||
+     rubric.gradeRelease==='GO'||
+     !Array.isArray(rubric.teacherRubric)||rubric.teacherRubric.length<minimum.length)
+    return false;
+  const criteria=new Map();
+  for(const entry of rubric.teacherRubric) {
+    if(typeof entry?.criterion!=='string'||!entry.criterion.trim()||
+       typeof entry.required!=='string'||entry.required.trim().length<25||
+       criteria.has(entry.criterion))return false;
+    criteria.set(entry.criterion,entry.required);
+  }
+  return minimum.every(name=>criteria.has(name));
+}
+
+// V1 accepts source-grounded lesson readiness, not synthetic human activity.
+function validLessonAssessment(ordinal,e,checkFile=validEvidenceFile,releaseSha) {
+  if(!Array.isArray(e.allowedFamilies)||!Number.isInteger(ordinal)||
+     ordinal<51||ordinal>146)return false;
+  // The original five-lesson V1 requires lesson-specific Practice selected
+  // from ORIGINAL source goals. Merely naming any gradeable family is NOT
+  // evidence that the learner's actual lesson task was assessed.
+  // The map itself is separately cross-checked against the real registered
+  // C# lesson contract and authenticated HTTPS family in this PR.
+  const mapping=load(CANDIDATE_FAMILY_MAP);
+  const candidate=mapping.records?.[ordinal-51];
+  if(mapping.academicAcceptance!=='NOT_CLAIMED'||!candidate||
+      candidate.ordinal!==ordinal || typeof candidate.lessonCode!=='string')
+      return false;
+  const expected=sourceGroundedFamilies(candidate);
+  if(!expected||e.allowedFamilies.length!==expected.length||
+      e.allowedFamilies.some((family,i)=>family!==expected[i]))
+      return false;
+  const assessmentMode=candidate.assessmentMode;
+  if(!['DIGITAL_PRACTICE','DIGITAL_AND_SOURCE_AUTHORED_TASK',
+       'SOURCE_AUTHORED_TASK'].includes(assessmentMode))return false;
+  const needsDigital=assessmentMode!=='SOURCE_AUTHORED_TASK';
+  const needsAuthorship=assessmentMode!=='DIGITAL_PRACTICE';
+  if(!needsAuthorship && candidate.teacherOnlyRubric!=null)return false;
+  if(needsDigital && (e.allowedFamilies.length===0 ||
+      e.realPracticeGradingPersisted!==true ||
+      e.independentCorrectAndWrongAnswersVerified!==true ||
+      !validProof(e.independentGradingProofPath,e.independentGradingProofSha256,
+        e.independentGradingProofReference,releaseSha,checkFile) ||
+      !validProof(e.runtimePracticeProofPath,e.runtimePracticeProofSha256,
+        e.runtimePracticeProofReference,releaseSha,checkFile)))return false;
+  if(!needsDigital && e.allowedFamilies.length!==0)return false;
+  if(needsAuthorship) {
+    if(e.originalAuthorshipTaskReviewed!==true ||
+       e.learnerAuthoredTaskRendered!==true ||
+       e.teacherReviewRubricAvailable!==true ||
+       e.actualTeacherObservationNotClaimed!==true)return false;
+    // The original source task, not a maintenance list of lesson numbers,
+    // decides whether real learner-authored instructions and a first-party
+    // teacher rubric are mandatory for this lesson.
+    const name=candidate.teacherOnlyRubric;
+    if(typeof name!=='string' ||
+       !/^lesson-\d+-[a-z0-9-]+-rubric\.json$/.test(name) ||
+       !name.startsWith('lesson-'+ordinal+'-'))return false;
+    let rubric;
+    try {
+      rubric=load('artifacts/curriculum-delivery/US-CCSS-MATH/G1/'+name);
+    } catch {
+      return false; // Missing or invalid rubric is a denial, not an approval.
+    }
+    if(!validSourceAuthorshipRubric(ordinal,candidate,rubric))return false;
+  }
+  return true;
+}
+
+function evaluate(manifest,ledger,candidateSha) {
+  const issues=[],missing=[];
+  if(!Array.isArray(manifest?.lessons)) return {outcome:'NO_GO',issues:['No valid grade manifest']};
+  const source=manifest.lessons,rows=ledger?.newLessons||[];
+  if(source.length!==146 || source.some((x,i)=>x.gradeOrdinal!==i+1) ||
+     new Set(source.map(x=>x.lessonCode)).size!==146) issues.push('Canonical inventory is not unique/ordered 146');
+  if(ledger?.schemaVersion!==1||ledger?.planId!==PLAN||ledger?.programme!=='US-CCSS-MATH'||ledger?.grade!=='G1'||ledger?.gradeCount!==146)
+    issues.push('Incorrect plan, grade or grade count');
+  const h=ledger?.historical;
+  if(h?.first!==1||h?.last!==50||h?.count!==50||h?.status!=='HISTORICALLY_RELEASED_NO_RETEST'||
+     h?.lastBatch!=='US-CCSS-G1-010'||h?.mainSha!==HISTORIC_SHA||
+     h?.sourceEvidence!=='https://github.com/EIAS79/Edulytics/pull/566#issuecomment-6253349510')
+    issues.push('Historical 50-lesson snapshot tampered/missing');
+  if(ledger?.newScope?.first!==51||ledger?.newScope?.last!==146||ledger?.newScope?.count!==96||rows.length!==96)
+    issues.push('New lesson scope must be exactly 51-146');
+  if(candidateSha!==undefined && !isSha(candidateSha)) issues.push('Candidate SHA must be exact 40 hex');
+  let accepted=0, firstUnfinished=147;
+  const unverifiedDeclaredAcceptances=[];
+  const stableProofCache=new Map();
+  const verifiedProof=(sha,paths)=>{
+    if(candidateSha===undefined)return true;
+    const key=sha+':'+JSON.stringify(paths);
+    if(!stableProofCache.has(key))
+      stableProofCache.set(key,sourceUnchangedSinceProof(sha,candidateSha,paths));
+    return stableProofCache.get(key);
+  };
+  for(let i=0;i<96;i++){
+    const ord=i+51,original=source[i+50],r=rows[i];
+    if(!r||!original){missing.push({ordinal:ord,reason:'Missing canonical/new lesson'});firstUnfinished=Math.min(ord,firstUnfinished);continue;}
+    if(r.ordinal!==ord||r.lessonCode!==original.lessonCode||
+       r.unit!==original.unitNumber||r.lessonNumber!==original.lessonNumber||
+       r.title!==original.title||r.sourceTeacherUrl!==original.sourceTeacherUrl||
+       JSON.stringify(r.outcomeCodes)!==JSON.stringify(original.officialOutcomeCodes)) {
+       issues.push('Lesson identity mismatch at '+ord);firstUnfinished=Math.min(ord,firstUnfinished);continue;
+    }
+    if(r.status!=='INTERNALLY_ACCEPTED'){missing.push({ordinal:ord,reason:'Not accepted: '+r.status});firstUnfinished=Math.min(ord,firstUnfinished);continue;}
+    const e=r.evidence||{};
+    const valid = (e.reviewedOriginalTeacherSource===true && e.reviewedOriginalStudentTask===true &&
+      e.licenseVerified===true && e.actualLearnerRenderingVerified===true &&
+      validLessonAssessment(ord,e,validEvidenceFile,candidateSha) &&
+      Array.isArray(e.forbiddenFamilies)&&
+      Array.isArray(e.sourceObjectives)&&e.sourceObjectives.length>0 &&
+      isHash(e.sourceSha256)&&isHash(e.effectiveStudentBodySha256)&&
+      e.sourceSha256===original.teacherPreparationSha256 &&
+      isSha(e.testedCodeSha) && verifiedProof(e.testedCodeSha,e.affectedCodePaths) &&
+      validProof(e.sourceReviewPath,e.sourceReviewFileSha256,
+        e.sourceReviewReference,candidateSha) &&
+      Array.isArray(e.tests)&&e.tests.length>0 &&
+      e.tests.every(x=>validProof(x.path,x.sha256,x.reference,candidateSha)));
+    if(!valid){missing.push({ordinal:ord,reason:'Invalid/missing verifiable source, grading, runtime, tests or exact-candidate evidence'});unverifiedDeclaredAcceptances.push(ord);firstUnfinished=Math.min(ord,firstUnfinished);continue;}
+    accepted++;
+  }
+  if(ledger?.nextOrdinal!==firstUnfinished) issues.push('Progress nextOrdinal disagrees with verified acceptance; expected '+firstUnfinished);
+  const ready=issues.length===0 && missing.length===0 && accepted===96;
+  return {planId:PLAN,grade:'G1',historicReleasedCount:50,historicRetestedCount:0,
+    newRequired:96,newAccepted:accepted,newNotAccepted:96-accepted,
+    // Distinguish historical ledger labels from CURRENT exact-SHA acceptance.
+    // Never promote an old label, invalidate its history or relax NO_GO.
+    declaredNewAccepted:rows.filter(x=>x?.status==='INTERNALLY_ACCEPTED').length,
+    unverifiedDeclaredAcceptances,
+    firstVerifiedUnfinishedOrdinal:firstUnfinished,
+    gradeCoverageOnSuccess:ready?146:null,
+    outcome:ready?'GRADE_READY_FOR_REQUIRED_CI_AND_RELEASE':'NO_GO',
+    productionLive:false,ownerUat:'PENDING',
+    issues,missing};
+}
+function main(args){
+  const manifest=load(MANIFEST),ledger=load(LEDGER);
+  const shaArg=args.find(x=>x.startsWith('--sha='));
+  const sha=shaArg?.slice(6);
+  if(args.includes('--release')&&!sha) throw new Error('Use --release --sha=<exact-commit-sha>');
+  if(args.includes('--release')){
+    const actual=spawnSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'});
+    if(actual.status!==0||actual.stdout.trim()!==sha)
+      throw new Error('Refusing academic decision on a different code SHA than the checked-out candidate');
+  }
+  const report=evaluate(manifest,ledger,args.includes('--release')?sha:undefined);
+  if(args.includes('--inspect')) report.missing=report.missing.slice(0,5);
+  console.log(JSON.stringify(report,null,2));
+  if(report.issues.length || (args.includes('--release') && report.outcome==='NO_GO'))process.exitCode=1;
+}
+if(require.main===module){try{main(process.argv.slice(2));}catch(e){console.error(e.stack);process.exitCode=2;}}
+module.exports={initial,validLessonAssessment,evaluate,validEvidenceFile,
+  validGitEvidenceReference,sourceGroundedFamilies,sourceUnchangedSinceProof,
+  validSourceAuthorshipRubric};

@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 89,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L01",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "1c40b187f1cbdea17e257d172727fd116547806b3605bb6030a08fae6aee0fcf",
+    "teacherPreparationSha256": "29067a77c0097012cecab4af602665c9b2561c0555154d416b6adb4b06bac97a",
+    "studentMirrorSha256": "27d6ff967f51c53900199bcfc7e357c38ec912bf365d7f31a50dda63d4d97f9c",
+    "teacherActivityHeadings": [
+      "Activity 1: What Did I Add? (20 minutes)",
+      "Activity 2: Add Tens or Ones (15 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing How many do you see? How do you see them? [visual] [visual] <div class=\"im-c-modal__c",
+      "Student Facing Partner A: Spin to get a starting number. [visual] [visual] <div cl",
+      "Student Facing Find the number that makes each equation true. \\(43 + 5 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(43 + 50 = \\boxed{\\phantom{\\frac{aaai}{aaai}}}\\) \\(51 + 3 "
+    ],
+    "sourceSpecificComparison": "Original 43+5,43+50,51+3,51+30,2+75,20+75,93+6,60+28,5+74; secret adding-tens versus ones partner routine",
+    "classification": "CONTENT_REPAIR",
+    "publicOriginal2021TeacherPage": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-5/lesson-1/lesson.html",
+    "verifiedStudentMath": [
+      "43+5",
+      "43+50",
+      "51+3",
+      "51+30",
+      "2+75",
+      "20+75",
+      "93+6",
+      "60+28",
+      "5+74"
+    ],
+    "verifiedOriginalTeacherDiscussion": [
+      "Three full ten frames 30, then plus five ones 35, then plus nine ones 39",
+      "43+50=93 partner launch",
+      "34+5=39 and 34+50=84 Priya discussion",
+      "4+45=49 not 85 Mai/Andre synthesis"
+    ]
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "sourceSpecificVersion": "us-ccss-g1-u05-l01-original-student-and-teacher-math-v3",
+    "implementationCommit": "db031339c2a2660ed514263a418dc4411940ac25"
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "originalStudentExactModes": "4-12",
+    "originalTeacherSourceModeRange": [
+      13,
+      14,
+      15
+    ],
+    "sourceModeCommit": "7b6ee73be583724784133b3d72aa37cb022bd140",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson89OriginalOneOrTenSourceTests.cs",
+    "authoredTestsCommit": "878e20db05c455a0f98a38e3f91c54e0f36d6e7f",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue ordinal90 without running deferred Stage D/CI.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "sourceBoundary": "Source-first-party exact numeric equations/synthesis authored; original paper spinner, face-to-face guessing and ten-frame image flashes require teacher observations or rights verification, not automatically verified by digital answers.",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  },
+  "gradeRelease": "NO_GO",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 89,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U05:L01",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-89-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Full first-party source-goal tens-or-ones arithmetic; original nine student equations and Priya/Mai teacher cases, verified answer persistence. Physical spinner/ten-frame observation and original publisher pictures remain teacher-directed and not auto-scored."
+  }
+}

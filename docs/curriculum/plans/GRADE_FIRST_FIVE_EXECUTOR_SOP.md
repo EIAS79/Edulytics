@@ -47,7 +47,7 @@ Report exactly per V1 §10: `Prepared: x/5`, real internal evidence, classificat
 
 ## Non-regression
 
-- Preserve `docs/curriculum/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md` byte-for-byte.
+- Preserve `docs/curriculum/plans/EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md` byte-for-byte.
 - No changes to five-lesson limit, source standard identity, required GitHub workflows, Render auto-deploy, production data, grading history or cross-tenant controls.
 - If a comparison identifies a real mathematical bug, correct it in the smallest shared component and add a failing-before/passing-after test. Do not rework unrelated lessons.
 - No automated test can independently certify real classroom discussion, teacher signoff or copyrighted graphic parity.
