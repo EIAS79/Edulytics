@@ -1,0 +1,2273 @@
+{
+  "schemaVersion": 1,
+  "title": "Grade 2 Stage D Execution Ledger",
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "evidenceAsOf": "2026-10-22",
+  "sourceHeadSHA": "69a4af1ccee8aa54514885fa542b165eea292a68",
+  "caution": "This ledger records passed named digital tests on the referenced source SHA. It is NOT academic approval, full authenticated per-lesson E2E, CI certification of the ledger commit, or release authorization.",
+  "academicReleaseDecision": "NO_GO_UNVERIFIED",
+  "stageDStatus": "TARGETED_NAMED_DIGITAL_TESTS_PASSED__FULL_STAGE_D_NOT_VERIFIED",
+  "aggregate": {
+    "authoringABCClosed": 146,
+    "lessonsWithPassingNamedTests": 146,
+    "lessonsDVerified": 0,
+    "newAcademicApprovals": 0,
+    "merged": false,
+    "deployed": false
+  },
+  "candidateEvidence": {
+    "local": {
+      "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68",
+      "machine": "Our-CS",
+      "sdk": "10.0.200",
+      "project": "tests/Edulytics.Tests/Edulytics.Tests.csproj",
+      "configuration": "Release",
+      "filter": "FullyQualifiedName~UsCcssG2|FullyQualifiedName~Grade2|FullyQualifiedName~CommonCoreG2|FullyQualifiedName~G2Ordinal",
+      "totalTests": 1068,
+      "passed": 1068,
+      "failed": 0,
+      "skipped": 0,
+      "trx": "Our-CS:%TEMP%/edulytics-stage-d-g2-test-results/g2-69a4af1-all-named-grade2-20261022.trx",
+      "trxSha256": "ca237ac964397a542394395e5a0ae9c07d70d310993fe85f2b49774b9ca5c623",
+      "proofBoundary": "TRX contains one or more named passing test cases for each Grade 2 lesson ordinal; this does not establish a complete per-lesson authenticated runtime acceptance."
+    },
+    "gitHubActions": {
+      "candidate": "69a4af1ccee8aa54514885fa542b165eea292a68",
+      "workflowsCompleted": 15,
+      "success": 14,
+      "failure": 1,
+      "failedJob": "g1-full-grade-negative-control",
+      "failedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39856666067",
+      "mathFoundation": "https://github.com/EIAS79/Edulytics/actions/runs/39856666026",
+      "authenticatedAcceptance": "https://github.com/EIAS79/Edulytics/actions/runs/39856666145",
+      "warning": "The authenticated acceptance workflow is B001/G1-scoped. It is not proof of all 146 Grade 2 lessons."
+    }
+  },
+  "batches": [
+    {
+      "id": "D1",
+      "first": 1,
+      "last": 49,
+      "namedLessonTestsPassed": 49,
+      "stageDVerified": 0
+    },
+    {
+      "id": "D2",
+      "first": 50,
+      "last": 98,
+      "namedLessonTestsPassed": 49,
+      "stageDVerified": 0
+    },
+    {
+      "id": "D3",
+      "first": 99,
+      "last": 146,
+      "namedLessonTestsPassed": 48,
+      "stageDVerified": 0
+    }
+  ],
+  "sequentialCursor": {
+    "lastNamedTestPassedOrdinal": 146,
+    "lastFullyVerifiedOrdinal": null,
+    "firstPendingFullVerificationOrdinal": 1
+  },
+  "outstandingGates": [
+    "G1 independent fail-closed gate: 96 previously approved V1 lessons have stale source/grading exact-candidate proof; must be genuinely revalidated, not re-stamped",
+    "Grade 2: lesson-by-lesson authenticated student/teacher integration E2E with isolated test database and persisted grading evidence not yet proved",
+    "Grade 2: teacher/source checks of original images, measurements, student authored work, classroom activities, source permissions and academic sufficiency required",
+    "Final required Actions matrix must be green for the release candidate commit and production approval must be recorded before merge/deployment"
+  ],
+  "lessons": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 2,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 2,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L03",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L04",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L05",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L06",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L07",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 2,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L08",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 2,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L09",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L10",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 2,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 11,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L11",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 12,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L12",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 2,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 13,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L13",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 14,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L14",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 15,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L15",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 16,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L16",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 17,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L17",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 18,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L18",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 19,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L01",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 20,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L02",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 21,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L03",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 22,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L04",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 23,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L05",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 24,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L06",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 25,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L07",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 26,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L08",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 27,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L09",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 28,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L10",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 29,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L11",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 30,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L12",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 31,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L13",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 32,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L14",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 33,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L15",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 34,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L16",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 35,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L01",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 36,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L02",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 37,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L03",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 38,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L04",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 39,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L05",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 40,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L06",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 41,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L07",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 42,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L08",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 43,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L09",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 44,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L10",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 45,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L11",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 46,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L12",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 47,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L13",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 48,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L14",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 49,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L15",
+      "batch": "D1",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 50,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L16",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 51,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L17",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 52,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L18",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 53,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L01",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 54,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L02",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 55,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L03",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 1,
+        "failed": 0,
+        "scope": "Grade2LessonNActivitiesWebContract named tests; additional common Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 56,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L04",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 57,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L05",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 58,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L06",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 59,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L07",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 60,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L08",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 61,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L09",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 62,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L10",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 63,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L11",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 64,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L12",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 65,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L13",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 66,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L14",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 67,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L15",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 68,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L01",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 69,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L02",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 70,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L03",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 71,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L04",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 72,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L05",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 73,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L06",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 74,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L07",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 75,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L08",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 76,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L09",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 77,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L10",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 78,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L11",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 79,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L12",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 80,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L13",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 81,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L14",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 82,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L01",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 83,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L02",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 84,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L03",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 85,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L04",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 86,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L05",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 87,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L06",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 88,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L07",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 89,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L08",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 90,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L09",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 91,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L10",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 92,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L11",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 93,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L12",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 94,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L13",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 95,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L14",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 96,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L15",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 97,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L16",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 98,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L17",
+      "batch": "D2",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 99,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L18",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 100,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L19",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 101,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L20",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 102,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L21",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 103,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L01",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 104,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L02",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 7,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 105,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L03",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 106,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L04",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 107,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L05",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 108,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L06",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 109,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L07",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 110,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L08",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 111,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L09",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 112,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L10",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 113,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L11",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 114,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L12",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 115,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L13",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 116,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L14",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 117,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L15",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 118,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L16",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 119,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L17",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 120,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L18",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 121,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L01",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 122,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L02",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 123,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L03",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 124,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L04",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 125,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L05",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 126,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L06",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 127,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L07",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 128,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L08",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 129,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L09",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 130,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L10",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 131,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L11",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 132,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L12",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 133,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L13",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 134,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L01",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 135,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L02",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 136,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L03",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 137,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L04",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 138,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L05",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 139,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L06",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 140,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L07",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 141,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L08",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 142,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L09",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 143,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L10",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 144,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L11",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 145,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L12",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    },
+    {
+      "ordinal": 146,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L13",
+      "batch": "D3",
+      "namedDigitalTests": {
+        "passed": 5,
+        "failed": 0,
+        "scope": "G2Ordinal/Grade2Ordinal named lesson tests; broader Grade 2 mathematics suite passed",
+        "testedSourceSHA": "69a4af1ccee8aa54514885fa542b165eea292a68"
+      },
+      "stageD": "D_TESTS_PASSED",
+      "integrationE2E": "NOT_YET_PROVED",
+      "humanAcademicReview": "APPROVAL_PENDING",
+      "finalAcceptance": "NOT_APPROVED"
+    }
+  ]
+}
