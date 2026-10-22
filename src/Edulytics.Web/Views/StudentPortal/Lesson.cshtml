@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 2 optional Target Measurements and Number Puzzles centers">
+            <h2>Edulytics · Target Measurements &amp; Number Puzzles</h2>
+            <p>Make a ten in the original Number Talk.
+            Use real rulers and straightedges in the authentic
+            Target Measurements Stage1 pair game, and printed
+            digit cards for Number Puzzles Stage4. Online numerical
+            checks never certify real center scores or participation.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson47Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open measurement and puzzles activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L12" &&
          unifiedPracticeAdoptionId.HasValue)
     {
