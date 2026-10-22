@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 32,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L14",
+  "title": "Solve It Your Way",
+  "unitNumber": 2,
+  "lessonNumber": 14,
+  "sourceEdition": "IM K–5 2021",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_TEACHER_PREPARATION_AND_LESSON_SOURCE_REVIEW",
+    "source": "Local read-only original Grade2 Unit2 Lesson14 teacher lesson and preparation HTML",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-14/preparation.html",
+    "originalBodySha256": "46ac29d0509475f2bb714dea783027593ff9013d26db5755917320303ec40ce5",
+    "sourceSemanticSha256": "28b2657cb685e62ed538e12da8a5129efd43776cb1a45d944877034f691bb506",
+    "sourceStandards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ],
+    "warmup": "5+9+5=19,25+9+5=39,25+15+19=59,25+30+15+19=89.",
+    "activity1": "Original Andre seeds two-part story25+17=42 then+35=77, one-line25+17+35=77.",
+    "activity2": "Source real group of3: Priya53−24=29, Mai61−39=22, Kiran24+17=41, and combined29+22+41=92.",
+    "sectionSummary": "Source public Jada start unknown?+28=65 gives37.",
+    "sourceAssessment": "Original Jada's Seeds Cool-down restricted, not copied; separate Edulytics exit.",
+    "teacherOnly": "Authentic independent/group work, partner diagrams, real blocks and MLR7 gallery walk require educator."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_AND_SIX_PREDECESSOR_FIELDS_GUARDED_SOURCE_TRUE_RICH_CONTENT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Original exact source URL, SHA, ordered outcomes, six predecessor fields, allowable persisted rich version."
+  },
+  "stageC": {
+    "status": "COMPLETE_NUMERIC_PROTECTED_STUDENT_COMPANION_FOUR_EXACT_FAMILIES_TESTS_WRITTEN",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2FourteenthLessonTwoStepSeeds.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson14TwoStepSeedsContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson32ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson32Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l14.three_addends_total",
+      "usccss.g2.u02.l14.compare_smaller_unknown",
+      "usccss.g2.u02.l14.part_missing_unknown",
+      "usccss.g2.u02.l14.add_to_result_unknown"
+    ],
+    "firstPartyExit": "25+18+31=74,67−17=50,58−26=32,29+14=43",
+    "teacherOnly": "Genuine paper group work and visual displays are teacher reviewed.",
+    "studentSecurity": "StudentPortal authorization, adoption and published content, CSRF, bounded text, no official grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2FourteenthLessonTwoStepSeedsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson14TwoStepSeedsQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson32ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "stageDExecuted": false,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U02_L15_GRADE_ORDINAL33_SOURCE_A_THEN_B_C"
+}

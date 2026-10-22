@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 31,
-    "firstUnclosedLesson": 32,
-    "nextSequentialLesson": 32,
-    "currentWork": "Grade2 source-consecutive original IM2021 ordinals1–31 A-B-C closed, latest L31 four original equations and student-owned tape diagrams plus four exact source-structure variants, tests written not run. Next ordinal32 G2 U02 L14. StageD no build/tests/CI, no merge/deploy."
+    "lastConsecutiveACClosed": 32,
+    "firstUnclosedLesson": 33,
+    "nextSequentialLesson": 33,
+    "currentWork": "G2 ordinals1–32 sequential 2021-source A-B-C authoring closed, latest ordinal32 Andre25+17+35 and group Priya29 Mai22 Kiran41 total92, four exact story families, four tests authored unrun. Next ordinal33 U02 L15. StageD/CI/merge/deploy not executed."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -42,7 +42,8 @@
     "G2 ordinal28 source read from desktop books ONLY, writes GitHub ONLY; real Stage5 3-cube rules and conflicting end-conditions preserved; four unrun tests.",
     "G2 ordinal29 source archived teacher HTML read ONLY from local books; all project edits committed GitHub; independent numeric exit and four source story structures, no D run.",
     "G2 ordinal30 source files read only from desktop books, GitHub branch only edited; match-diagrams-only source activity preserved, no protected card images invented.",
-    "G2 ordinal31 locally archived teacher sources read-only; source 4 seeds equations, four exact question families and four unrun tests committed only GitHub."
+    "G2 ordinal31 locally archived teacher sources read-only; source 4 seeds equations, four exact question families and four unrun tests committed only GitHub.",
+    "Grade2 ordinal32 source locally reviewed read-only, authoring writes only GitHub, source grouped two-step story, tests written not executed."
   ],
   "lessonStatuses": [
     {
@@ -389,13 +390,13 @@
     {
       "gradeOrdinal": 32,
       "lessonCode": "PED:US-CCSS-MATH:G2:U02:L14",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "ORIGINAL_LOCAL_2021_TWO_STEP_ANDRE_PRIYA_MAI_KIRAN_SEEDS_REVIEWED",
+      "teaching": "SHA_PREDECESSOR_GUARDED_SOURCE_TRUE_TWO_STEP_STORIES_RICH_V2",
+      "practice": "FOUR_EXACT_THREE_ADDENDS_COMPARE_MISSING_PART_ADD_RESULT_STUDENT_ACTIVITIES",
+      "tests": "FOUR_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 33,
