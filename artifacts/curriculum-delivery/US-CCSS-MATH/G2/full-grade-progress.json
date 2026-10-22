@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 61,
-    "firstUnclosedLesson": 62,
-    "nextSequentialLesson": 62,
-    "currentWork": "G2 original IM2021 ordinals1–61 A–B–C sequential authoring only; G2 ordinals59-61 correct source directional arrows, choral back tens, two subtraction approaches and original stories. Three source SHA guards, 12 first-party exact question families, 12 test files WRITTEN UNRUN. Next ordinal62 G2 U04 L10; tests/CI/StageD not executed, no merge/deploy."
+    "lastConsecutiveACClosed": 62,
+    "firstUnclosedLesson": 63,
+    "nextSequentialLesson": 63,
+    "currentWork": "Grade2 IM2021 original ordinals1-62 A-C source-bound authoring closed sequentially; ordinal62 source+teaching+four exact first-party families, four tests written UNRUN. Next ordinal63. Tests/CI/StageD/merge/deploy NOT executed."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -68,7 +68,8 @@
     "Grade2 ordinal54 2.4.2 count-by5 and original 0..30 yarn + original 3 student image error analysis Stage A-C authored; image-specific Andre/Elena exact faults withheld from digital guesses; four exact families and four UNRUN test files; no StageD.",
     "G2 ordinal55 IM2021 original U04 L03 unlabeled tick marks on number line upto100, SHAs guarded, true unit-distance from zero, some source diagrams image-only teacher, four exact families and four test files unrun; tests/CI/StageD NOT EXECUTED.",
     "2026-10-22: strict consecutive Grade2 ordinals56–58 Stage A-B-C authored as a batch with independent first-party arithmetic; restricted original images, source player data, and physical outcomes teacher-only. 12 regression test files written UNRUN; no StageD/CI/production claim.",
-    "G2 original IM2021 ordinal59-61 batch complete A-B-C authored: source-number-line original direction and two models, protected student activities, 12 independent exact families/12 UNRUN tests, stageD NOT STARTED."
+    "G2 original IM2021 ordinal59-61 batch complete A-B-C authored: source-number-line original direction and two models, protected student activities, 12 independent exact families/12 UNRUN tests, stageD NOT STARTED.",
+    "G2 ordinal62 U04 L10: A-C source-SHA-guarded, real-source teacher-only visuals/physical work; four exact shared-engine practice families and four regression files written UNRUN. No academic acceptance or Stage D."
   ],
   "lessonStatuses": [
     {
@@ -745,13 +746,13 @@
     {
       "gradeOrdinal": 62,
       "lessonCode": "PED:US-CCSS-MATH:G2:U04:L10",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "IM2021_G2_U04_L10_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_SIX_FIELD_GUARDED_ORIGINAL_TEACHING",
+      "practice": "SHARED_ENGINE_FOUR_EXACT_FIRST_PARTY_FAMILIES_G2_U04_L10",
+      "tests": "FOUR_TEST_FILES_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 63,
