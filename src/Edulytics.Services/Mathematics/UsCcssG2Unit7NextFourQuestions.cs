@@ -43,7 +43,7 @@ internal static class UsCcssG2Unit7NextFourQuestions
    61=>$"FIRST-PARTY — Find the missing ones-digit partner that makes {c}+?=10.",
    62=>$"FIRST-PARTY — Complete a ten: {x}+{ten}=?",
    63=>$"FIRST-PARTY — {x}+{20+ten}=? Use tens and ones.",
-   70=>$"FIRST-PARTY — Compose a TEN from ones: {300+10*b+c}+{20+ten}=?",
+   70=>$"FIRST-PARTY — Compose a TEN from ones: {300+10*b+c}+{ten}=?",
    71=>$"FIRST-PARTY — Compose a HUNDRED from tens: {300+10*(b+1)+c}+{makeHundred}=?",
    72=>$"FIRST-PARTY — {c} ones plus {ten} ones make how many new tens?",
    73=>$"FIRST-PARTY — {b+1} tens plus {9-b} tens make how many new hundreds?",
@@ -61,7 +61,7 @@ internal static class UsCcssG2Unit7NextFourQuestions
   int v=m switch{
    50=>x+10*(8-b)+(9-c),51=>x,52=>x-10*b,53=>1,
    60=>x+10*(8-b)+ten,61=>ten,62=>x+ten,63=>x+20+ten,
-   70=>300+10*b+c+20+ten,71=>300+10*(b+1)+c+hundred,72=>1,73=>1,
+   70=>300+10*b+c+ten,71=>300+10*(b+1)+c+hundred,72=>1,73=>1,
    80=>x+ten,81=>100*a+10*(b+1)+c+hundred,
    82=>100*a+10*(b+1)+c+hundred+ten,83=>ten,
    _=>throw new InvalidOperationException("Unknown G2 U07 mode")};

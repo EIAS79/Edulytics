@@ -32,16 +32,16 @@ public static class UsCcssG2Unit7OriginalActivities
  [6]=new string[]{"28 + 2","28 + 12","67 + 3","67 + 23"},
  [7]=new string[]{"Three base-ten diagrams total","364 + 28","364 + 82","428 + 42"},
  [8]=new string[]{"273 + 18","273 + 81","273 + 88","(273+88) − (273+81)"}};
- public static readonly IReadOnlyDictionary<int,string[]> NextIndependentNumericExamples=new Dictionary<int,string[]>{[5]=new string[]{"Independent no-carry sum 423+45","Independent place number 3 tens 5 ones","Independent no-carry 503+101","Independent place comparison difference"},
- [6]=new string[]{"Independent make ten 124+6","Independent partner 273+7","Independent 512+8","Independent ten complement from 3"},
- [7]=new string[]{"Independent one ten sum 357+8","Independent one hundred sum 370+80","Independent ten ones make how many tens","Independent ten tens make how many hundreds"},
+ public static readonly IReadOnlyDictionary<int,string[]> NextIndependentNumericExamples=new Dictionary<int,string[]>{[5]=new string[]{"Independent no-carry sum 423+45","Independent place number 3 tens 5 ones","Independent no-carry 503+101","Independent place difference 512−500"},
+ [6]=new string[]{"Independent make ten 124+6","Independent partner 273+7","Independent 512+8","Independent: how many ones complete 3 to 10?"},
+ [7]=new string[]{"Independent one ten sum 357+8","Independent one hundred sum 370+80","Independent: 10 ones become how many tens?","Independent: 10 tens become how many hundreds?"},
  [8]=new string[]{"Independent 274+36","Independent 372+78","Independent 473+87","Independent (473+87)−(372+78)"}};
  private static readonly IReadOnlyDictionary<int,int[]> SourceKeys=new Dictionary<int,int[]>
  {
  [1]=new int[]{2,5,7,2},
  [2]=new int[]{623,228,182,958},
  [3]=new int[]{351,116,601,460},
- [4]=new int[]{113,124,266,778}
+ [4]=new int[]{113,124,266,778},
  [5]=new int[]{254,474,676,5},
  [6]=new int[]{30,40,70,90},
  [7]=new int[]{353,392,446,470},
@@ -52,10 +52,10 @@ public static class UsCcssG2Unit7OriginalActivities
  [1]=new int[]{5,534,434,383},
  [2]=new int[]{500,492,548,528},
  [3]=new int[]{101,130,340,70},
- [4]=new int[]{50,250,120,300}
+ [4]=new int[]{50,250,120,300},
  [5]=new int[]{468,35,604,12},
- [6]=new int[]{130,280,520,70},
- [7]=new int[]{365,450,10,100},
+ [6]=new int[]{130,280,520,7},
+ [7]=new int[]{365,450,1,1},
  [8]=new int[]{310,450,560,110}
  };
  private static Review Check(int n,IReadOnlyDictionary<int,int[]> keys,string? x,string? y,string? z,string? w,bool original)
