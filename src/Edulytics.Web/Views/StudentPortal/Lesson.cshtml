@@ -354,6 +354,24 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source-aligned Grade2 subtract with a decomposed ten">
+            <h2>Edulytics · subtract your way, decomposing a ten</h2>
+            <p>Use the original Number Talk, compare valid strategies
+            for 82−9, follow Diego's 55−20−8 using tens and ones,
+            and finish an independently authored Cool-down.
+            Teacher checks real blocks and original explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson23Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open subtract-by-exchanging-a-ten activities
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L04" &&
          unifiedPracticeAdoptionId.HasValue)
     {
