@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 46,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L12",
+  "title": "Saree Silk Stories: Friendship Bracelets",
+  "unitNumber": 3,
+  "lessonNumber": 12,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_TEACHER_PREPARATION_AND_LESSON_REVIEW",
+    "sourceReadOnly": "Local Grade2 Unit3 Lesson12 teacher preparation and lesson HTML, no local project edits",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-12/preparation.html",
+    "canonicalBodySha256": "d72cead79fd5a191a191af5bf4801296111b55633bfe608ddb195b27fb4b7adb",
+    "sourceSemanticSha256": "3e667f0076c106a5aef22a5e295ad5e5da8508fb82a3bbb6a3fd747ce24e5306",
+    "orderedOutcomes": [
+      "CCSS:2.MD.B.5",
+      "CCSS:2.NBT.B.5"
+    ],
+    "warmup": "Original True/False24=10+14 T,15+12=27 T,26=10+6+10 T,58=20+20+8 F because48.",
+    "activity1": "Original MLR6 Three Reads two-step Lin ribbon92cm, gives Noah35cm (57cm remaining), gives Jada28cm (29cm remaining), real students compare diagrams.",
+    "activity2": "Original Han82in needs48in gives spare34in to Clare whose27 becomes61in. Andre28in needs50in, missing22in from Mai who now has49in: Mai starts71in.",
+    "coolDown": "Sharing Saree Silk Ribbon source Cool-down teacher-login restricted, first-party independent alternative not copied.",
+    "teacherOnly": "Genuine physical ribbon, original student diagrams and class MLR6 peer work require teacher observation.",
+    "units": "Lin story uses cm; other source stories inch, never merge or convert those unrelated quantities."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_SIX_FIELD_PREDECESSOR_SOURCE_TRUE_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistedSeeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact original source preparation URL, body SHA, ordered outcomes, six original English rich fields, and predecessor persisted version."
+  },
+  "stageC": {
+    "status": "COMPLETE_TWO_STEP_RIBBON_PROTECTED_STUDENT_AND_FOUR_EXACT_FAMILIES_UNRUN_TESTS",
+    "numeric": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3TwelfthLessonFriendship.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson12FriendshipContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson12FriendshipQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson46ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson46Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l12.two_step_take_from",
+      "usccss.g2.u03.l12.extra_piece_given_to_friend",
+      "usccss.g2.u03.l12.missing_length_then_start_unknown",
+      "usccss.g2.u03.l12.two_step_change_then_add"
+    ],
+    "independentExit": "Iris86−26−19=41 cm; Noor75−46=29 inch; Omar24+29=53 inch. Independently authored and not source protected assessment.",
+    "teacherOnly": "MLR6 original tape diagrams, physical blocks and student explanations not digitally certified.",
+    "security": "StudentPortal policy, selected adoption/published lesson, CSRF POST, bounded strings, no official grades.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3FriendshipBraceletsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3TwelfthLessonFriendshipTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson12FriendshipQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson46ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L13_GRADE_ORDINAL47_SOURCE_A_B_C"
+}

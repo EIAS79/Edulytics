@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 45,
-    "firstUnclosedLesson": 46,
-    "nextSequentialLesson": 46,
-    "currentWork": "Grade2 IM2021 consecutive ordinals1–45 A–B–C authored; L45 original Priya44−18=26, Elena58−27=31, Han64−28=36, Priya START25+38=63; four exact story families, tests written not executed. Next ordinal46 U03 L12. Stage D/CI/merge/deploy withheld."
+    "lastConsecutiveACClosed": 46,
+    "firstUnclosedLesson": 47,
+    "nextSequentialLesson": 47,
+    "currentWork": "Grade2 IM2021 ordinals1–46 consecutive A–B–C authored. L46 source Lin92−35=57−28=29cm; Han82−48=34→Clare27+34=61in; Andre50−28=22→Mai49+22=71in, four exact 2-step families, four tests written not executed. Next47 G2 U03 L13, no StageD/CI/merge/deploy."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -56,7 +56,8 @@
     "Ordinal42 local original lesson source read-only, all code writing on GitHub; triangle side between5 and6 with true physical endpoint not assumed, tests unrun.",
     "G2 ordinal43 IM2021 original fish tape classroom measurements and Grade2 no formal abstract conversion constraint source reviewed; GitHub-only authoring closure, tests not run.",
     "Grade2 ordinal44 local original teacher lesson read only, source true torn tape two original examples and four exact virtual practice families GitHub-only; tests written unrun.",
-    "G2 ordinal45 local original source ribbon start-unknown math validated by authoring and GitHub-only changes, tests written not executed."
+    "G2 ordinal45 local original source ribbon start-unknown math validated by authoring and GitHub-only changes, tests written not executed.",
+    "G2 ordinal46 two-step sources read-only from local books, authoring GitHub-only, unit-specific chained equations plus 4 tests unrun."
   ],
   "lessonStatuses": [
     {
@@ -557,13 +558,13 @@
     {
       "gradeOrdinal": 46,
       "lessonCode": "PED:US-CCSS-MATH:G2:U03:L12",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "LOCAL_ORIGINAL_G2_U03_L12_92_35_28_TWO_STEP_HAN_CLARE_ANDRE_MAI_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_FRIENDSHIP_TWO_STEP_RIBBON_RICH_V2",
+      "practice": "FOUR_EXACT_TWO_STEP_RIBBON_VARIANTS_AUTH_STUDENT_PAGE_INDEPENDENT_EXIT_TEACHER_RUBRIC",
+      "tests": "FOUR_FILES_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 47,
