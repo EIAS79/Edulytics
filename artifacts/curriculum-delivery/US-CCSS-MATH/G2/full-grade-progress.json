@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 120,
-    "firstUnclosedLesson": 121,
-    "nextSequentialLesson": 121,
-    "currentWork": "Grade2 ordinals1-120 A-C authoring completed; next ordinal 121, original public publisher source human boundaries explicit; no tests CI merge deploy."
+    "lastConsecutiveACClosed": 121,
+    "firstUnclosedLesson": 122,
+    "nextSequentialLesson": 122,
+    "currentWork": "Grade2 ordinals1-121 A-C authored with source checkpoint; next122; tests unrun, StageD/CI/merge/deploy not started."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -1415,13 +1415,13 @@
     {
       "gradeOrdinal": 121,
       "lessonCode": "PED:US-CCSS-MATH:G2:U08:L01",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "IM2021_G2_U08_L01_PUBLISHER_SOURCE_ORIGINAL_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "FOUR_TEST_FILES_WRITTEN_UNRUN",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 122,
