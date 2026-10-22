@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L10" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional Grade2 Target Numbers Stage5 three-cube center">
+            <h2>Edulytics · optional Target Numbers Stage5</h2>
+            <p>Notice66−28 decomposing one ten, then practise
+            selecting two different dice from a roll of three
+            to subtract a two-digit number from100. Center-choice
+            partner play and the disputed published winner rule
+            require teacher review.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson28Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open Stage5 three-dice mathematics</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L09" &&
          unifiedPracticeAdoptionId.HasValue)
     {

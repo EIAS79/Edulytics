@@ -183,6 +183,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson8DifferentWaysQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -422,6 +423,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson8DifferentWaysQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(family))
             return UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(family))
+            return UsCcssG2Unit2Lesson10TargetStage5Questions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1254,6 +1257,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson10TargetStage5Questions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3176,6 +3185,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson8DifferentWaysQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(problem.Family))
             return UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson10TargetStage5Questions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))
