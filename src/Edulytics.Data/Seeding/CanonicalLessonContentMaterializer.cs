@@ -58,6 +58,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrection.Apply(document);
         CommonCoreG2Unit2SeedsStoryTypesTeachingCorrection.Apply(document);
         CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2StoryEquationsTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -290,8 +291,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Center2);
         var g2Mancala = CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Seeds);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Equations = CommonCoreG2Unit2StoryEquationsTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Mancala);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Equations);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -395,6 +398,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit2SeedsStoryTypesTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2StoryEquationsTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -518,6 +522,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit2SeedsStoryTypesTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2StoryEquationsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections

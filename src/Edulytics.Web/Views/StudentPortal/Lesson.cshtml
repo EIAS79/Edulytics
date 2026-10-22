@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 story problems with matched equations">
+            <h2>Edulytics · seed stories and equations</h2>
+            <p>Original Lin, Andre, Diego, Noah and Kiran story
+            quantities, unknown addends and real card sorting.
+            A story may match several equations; teacher checks
+            authentic diagrams and MLR8 group explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson31Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open story equation practice</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L12" &&
          unifiedPracticeAdoptionId.HasValue)
     {
