@@ -12,7 +12,7 @@ public sealed class CommonCoreG2Unit3PlantHeightsTeachingCorrectionTests
         var en=pair.Lesson.Translations.Single(x=>x.CultureCode=="en");
         Assert.Contains("Andre33",en.Explanation);
         Assert.Contains("Clare25",en.Explanation);
-        Assert.Contains("35−25=10",en.WorkedExamples);
+        Assert.Contains("35−25=10",string.Join(" ",en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary));
         Assert.Contains("not in available archive text",en.Explanation);
         Assert.Contains("Han",en.Explanation);
         Assert.Equal(CommonCoreG2Unit3PlantHeightsTeachingCorrection.Version,

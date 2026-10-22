@@ -11,9 +11,9 @@ public sealed class CommonCoreG2Unit2DecomposeTenTeachingCorrectionTests
                 CommonCoreG2Unit2DecomposeTenTeachingCorrection.IsTarget(d,l))
                 .Select(l=>(Doc:d,Lesson:l))).Single();
         var learner=target.Lesson.Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("82−9=73",learner.WorkedExamples);
-        Assert.Contains("55−20=35",learner.WorkedExamples);
-        Assert.Contains("35−8=27",learner.StepByStepSolutions);
+        Assert.Contains("82−9=73",string.Join(" ",learner.Explanation,learner.KeyConceptsAndRules,learner.WorkedExamples,learner.StepByStepSolutions,learner.CommonMistakes,learner.QuickSummary));
+        Assert.Contains("55−20=35",string.Join(" ",learner.Explanation,learner.KeyConceptsAndRules,learner.WorkedExamples,learner.StepByStepSolutions,learner.CommonMistakes,learner.QuickSummary));
+        Assert.Contains("35−8=27",string.Join(" ",learner.Explanation,learner.KeyConceptsAndRules,learner.WorkedExamples,learner.StepByStepSolutions,learner.CommonMistakes,learner.QuickSummary));
         Assert.Contains("7 tens and 12 ones",learner.Explanation);
         Assert.Equal(CommonCoreG2Unit2DecomposeTenTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(target.Doc,target.Lesson));

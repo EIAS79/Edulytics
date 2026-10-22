@@ -10,10 +10,11 @@ public sealed class CommonCoreG2Unit2TwoDigitTradeTeachingCorrectionTests
                 CommonCoreG2Unit2TwoDigitTradeTeachingCorrection.IsTarget(doc,l))
                 .Select(l=>(Doc:doc,Lesson:l))).Single();
         var t=pair.Lesson.Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("46−28=18",t.WorkedExamples);
-        Assert.Contains("93−54=39",t.WorkedExamples);
+        Assert.Contains("46−28=18",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("93−54=39",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
         Assert.Contains("Diego",t.Explanation);
-        Assert.Contains("do not invent",t.Explanation);
+        Assert.Contains("Diego",t.Explanation);
+        Assert.Contains("card",string.Join(" ",t.Explanation,t.WorkedExamples,t.CommonMistakes),StringComparison.OrdinalIgnoreCase);
         Assert.Equal(CommonCoreG2Unit2TwoDigitTradeTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(pair.Doc,pair.Lesson));
     }

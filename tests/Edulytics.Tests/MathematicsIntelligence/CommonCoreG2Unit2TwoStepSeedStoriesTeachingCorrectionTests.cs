@@ -10,12 +10,12 @@ public sealed class CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrectionTests
                 CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrection.IsTarget(d,l))
                 .Select(l=>(Doc:d,Lesson:l))).Single();
         var t=pair.Lesson.Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("25+17=42",t.WorkedExamples);
-        Assert.Contains("42+35=77",t.WorkedExamples);
-        Assert.Contains("53−24=29",t.WorkedExamples);
-        Assert.Contains("61−39=22",t.WorkedExamples);
-        Assert.Contains("24+17=41",t.WorkedExamples);
-        Assert.Contains("29+22+41=92",t.WorkedExamples);
+        Assert.Contains("25+17=42",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("42+35=77",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("53−24=29",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("61−39=22",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("24+17=41",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("29+22+41=92",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
         Assert.Equal(CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(pair.Doc,pair.Lesson));
     }

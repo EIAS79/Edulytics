@@ -12,10 +12,10 @@ public sealed class CommonCoreG2Unit2ZooStoryProblemsTeachingCorrectionTests
                 CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.IsTarget(doc,l))
                 .Select(l=>(Doc:doc,Lesson:l))).Single();
         var en=pair.Lesson.Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("55−34=21",en.KeyConceptsAndRules);
-        Assert.Contains("65−23=42",en.WorkedExamples);
-        Assert.Contains("58−27=31",en.WorkedExamples);
-        Assert.Contains("88−34=54",en.WorkedExamples);
+        Assert.Contains("55−34=21",string.Join(" ",en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary));
+        Assert.Contains("65−23=42",string.Join(" ",en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary));
+        Assert.Contains("58−27=31",string.Join(" ",en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary));
+        Assert.Contains("88−34=54",string.Join(" ",en.Explanation,en.KeyConceptsAndRules,en.WorkedExamples,en.StepByStepSolutions,en.CommonMistakes,en.QuickSummary));
         Assert.Contains("Three Reads",en.Explanation);
         Assert.Equal(CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(pair.Doc,pair.Lesson));

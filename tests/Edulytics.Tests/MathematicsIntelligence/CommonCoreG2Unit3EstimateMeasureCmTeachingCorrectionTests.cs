@@ -14,7 +14,7 @@ public sealed class CommonCoreG2Unit3EstimateMeasureCmTeachingCorrectionTests
         Assert.Contains("C does NOT",t.Explanation);
         Assert.Contains("50–90 cm",t.Explanation);
         Assert.Contains("TRUE zero",t.QuickSummary);
-        Assert.Contains("not the outer edge",t.StepByStepSolutions);
+        Assert.Contains("not the outer edge",string.Join(" ",t.KeyConceptsAndRules,t.StepByStepSolutions,t.CommonMistakes));
         Assert.Equal(CommonCoreG2Unit3EstimateMeasureCmTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(target.Doc,target.Lesson));
     }

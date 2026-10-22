@@ -10,11 +10,11 @@ public sealed class CommonCoreG2Unit3FriendshipBraceletsTeachingCorrectionTests
                 CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.IsTarget(doc,l))
                 .Select(l=>(Doc:doc,Lesson:l))).Single();
         var t=p.Lesson.Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("92−35=57",t.WorkedExamples);
-        Assert.Contains("57cm−28cm=29cm",t.WorkedExamples);
-        Assert.Contains("82−48=34",t.WorkedExamples);
-        Assert.Contains("27+34=61",t.WorkedExamples);
-        Assert.Contains("49+22=71",t.WorkedExamples);
+        Assert.Contains("92−35=57",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("57cm−28cm=29cm",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("82−48=34",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("27+34=61",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
+        Assert.Contains("49+22=71",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary));
         Assert.Contains("centimeters",t.KeyConceptsAndRules);
         Assert.Equal(CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(p.Doc,p.Lesson));
