@@ -12250,6 +12250,78 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u04.l02.count_by_five",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u04-l02-exact-count-by5-yarn-unit-maths",
+      "representations": [
+        "skip_counting",
+        "number_sequence"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u04.l02.yarn_card_position",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u04-l02-exact-count-by5-yarn-unit-maths",
+      "representations": [
+        "number_line",
+        "whole_number_points"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u04.l02.equal_interval_gap",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u04-l02-exact-count-by5-yarn-unit-maths",
+      "representations": [
+        "number_line",
+        "unit_interval_distance"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u04.l02.repair_missing_tick",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u04-l02-exact-count-by5-yarn-unit-maths",
+      "representations": [
+        "number_line",
+        "missing_ticks"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
