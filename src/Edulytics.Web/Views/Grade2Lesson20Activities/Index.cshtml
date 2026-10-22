@@ -1,0 +1,95 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson20Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 — Find the Unknown Addend";
+}
+<style>
+.g2-u2l2{max-width:940px;margin:0 auto;padding:24px 16px 48px;color:#243949}
+.g2-u2l2 .panel{border:1px solid #cbdce4;border-radius:14px;background:#fff;padding:22px;margin:17px 0}
+.g2-u2l2 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:12px}
+.g2-u2l2 label{display:block;font-weight:700;margin:12px 0 5px}
+.g2-u2l2 input,.g2-u2l2 textarea{width:100%;max-width:530px;padding:11px;border-radius:8px;border:1px solid #7792a2;font:inherit}
+.g2-u2l2 input:focus,.g2-u2l2 textarea:focus{outline:3px solid #a3dce4}
+.g2-u2l2 .rod{display:inline-flex;min-width:40px;height:55px;margin:3px;align-items:center;justify-content:center;border:2px solid #287c92;border-radius:6px;background:#c7e9ef;font-weight:700}
+.g2-u2l2 .one{display:inline-flex;width:24px;height:24px;justify-content:center;align-items:center;border:2px dashed #ad862f;background:#ffedc8;margin:3px}
+.g2-u2l2 .action{background:#087e92;color:white;padding:13px 23px;border:0;border-radius:9px;font-weight:bold;cursor:pointer}
+.g2-u2l2 .muted{color:#526c7b}.g2-u2l2 .ok{border-left:4px solid #2f8656;padding-left:12px}
+.g2-u2l2 .bad{border-left:4px solid #b94456;padding-left:12px}
+.g2-u2l2 .review{border-left:4px solid #b58d2a;padding-left:12px}
+</style>
+<main class="g2-u2l2">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to lesson</a>
+<h1>Find the Unknown Addend</h1>
+<p>Grade 2 Unit 2 Lesson 2. We count by tens and find missing parts of
+addition equations. Use base-ten rods, real connecting cubes or a mathematically
+accurate drawing. Both adding on and taking away can find the same missing value.</p>
+<form asp-controller="Grade2Lesson20Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Choral Count — count back by 10</h2>
+<p>Start at 97. Say every number aloud with a partner. What stays the same in the ones place?</p>
+<p><strong>97, 87, __, 67, 57, 47, __, 27, 17, __</strong></p>
+<div class="grid">
+<div><label asp-for="Answers.Warm77">First missing number</label><input asp-for="Answers.Warm77" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.Warm37">Second missing number</label><input asp-for="Answers.Warm37" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.Warm7">Last missing number</label><input asp-for="Answers.Warm7" type="number" min="0" max="100" required/></div>
+</div>
+</section>
+<section class="panel">
+<h2>2. How Did You Find It? — compare the actual tools</h2>
+<p>Look at real base-ten rods and connecting cubes with your partner.
+A blue Edulytics rod represents EXACTLY TEN objects, a gold single represents ONE.
+Unlike fixed base-ten rods, connecting-cube towers can be taken apart.
+The following symbols are a FIRST-PARTY drawing, not evidence that you touched real tools.</p>
+<div role="img" aria-label="Four ten-rod groups and one loose one represent the number forty-one.">
+@for(var i=0;i<4;i++){<span class="rod" aria-label="ten">10</span>}<span class="one" aria-label="one">1</span>
+<p>Four tens and one single = 41.</p>
+</div>
+<label asp-for="Answers.ToolObservation">How are connecting cubes and base-ten blocks similar and different?</label>
+<textarea asp-for="Answers.ToolObservation" rows="3" maxlength="2000"></textarea>
+<p><strong>41 + ? = 84</strong>. How many tens and ones must be added to 41? How else can you find it by subtraction?</p>
+<label asp-for="Answers.Source41">The missing addend</label><input asp-for="Answers.Source41" type="number" min="0" max="100" required/>
+</section>
+<section class="panel">
+<h2>3. You Go This Way, I'll Go That Way</h2>
+<p>Han begins with 17 and adds on to reach 48. Mai starts with 48 and takes away 17.
+Work with a partner using REAL base-ten blocks or cubes, then explain how both methods agree.</p>
+<div class="grid">
+<div><label asp-for="Answers.Source17">17 + ? = 48</label><input asp-for="Answers.Source17" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.HanAddition">Han's adding-on equation</label><input asp-for="Answers.HanAddition" maxlength="100" placeholder="17+31=48" required/></div>
+<div><label asp-for="Answers.MaiSubtraction">Mai's take-away equation</label><input asp-for="Answers.MaiSubtraction" maxlength="100" placeholder="48-17=31" required/></div>
+<div><label asp-for="Answers.Source21">Try yourself: 21 + ? = 96</label><input asp-for="Answers.Source21" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceInverse">Synthesis: 67−55= ? and 55+?=67</label><input asp-for="Answers.SourceInverse" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.DrawingExplanation">Describe your original blocks or place-value drawing and why you selected that tool</label>
+<textarea asp-for="Answers.DrawingExplanation" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>4. Independently authored Edulytics Cool-down</h2>
+<p>These NEW problems target the original mathematical goal without copying the educator-login publisher assessment. No problem needs ten regrouping.</p>
+<div class="grid">
+<div><label asp-for="Answers.CoolFirst">34 + ? = 78</label><input asp-for="Answers.CoolFirst" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CoolSecond">62 + ? = 85</label><input asp-for="Answers.CoolSecond" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CoolThird">76 − 54 = ?</label><input asp-for="Answers.CoolThird" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.PartnerReflection">Explain how your partner's strategy agreed with yours or differed</label>
+<textarea asp-for="Answers.PartnerReflection" rows="3" maxlength="2000"></textarea>
+<button type="submit" class="action">Check the arithmetic and show teacher-review tasks</button>
+</section>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var row in Model.Feedback){
+<div class="@(row.Correct==true?"ok":row.Correct==false?"bad":"review")">
+<h3>@row.Activity</h3><p>@(row.Correct==true?"Mathematics correct":row.Correct==false?"Review this step":"Teacher review required"). @row.Explanation</p>
+</div>}
+</section>}
+<section class="panel"><h2>Teacher rubric for authentic physical work</h2>
+<ul>@foreach(var statement in UsCcssG2Unit2SecondLessonUnknownAddends.TeacherRubric){<li>@statement</li>}</ul>
+<p class="muted">A correct digital answer cannot certify original connecting-cube construction, student drawings or genuine pair dialogue. No official school grade is saved.</p>
+</section>
+<p class="muted">Aligned to original IM K–5 2021 G2 U02 L02; addressing CCSS 2.NBT.A.2,2.NBT.B.5 and2.NBT.B.9. All virtual groups and assessment questions independently authored by Edulytics.</p>
+</main>
