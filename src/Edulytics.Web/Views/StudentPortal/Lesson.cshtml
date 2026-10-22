@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 mixed addition and subtraction within 100">
+            <h2>Edulytics · add and subtract within 100</h2>
+            <p>Match actual source cards with tens-and-ones diagrams,
+            then solve original27+47,55−27,36+38,82−39.
+            Gallery-walk and authentic cards are teacher-reviewed;
+            original independent Cool-down is explicitly separate.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson27Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open addition and subtraction</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L08" &&
          unifiedPracticeAdoptionId.HasValue)
     {
