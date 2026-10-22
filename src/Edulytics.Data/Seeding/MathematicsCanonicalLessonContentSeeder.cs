@@ -128,7 +128,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30 + 9; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30 + 15; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -281,6 +281,12 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2Unit4DirectionalJumpCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit4EquationArrowCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit4DifferenceStrategiesCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4PlaceValueLineCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4MakeTenStrategiesCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4UnknownArrowRiddlesCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4StoryRepresentationCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4JumpTheLineCenterCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4AgeRiddlesCorrection.IsTarget(document, lesson) ||
          CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
          CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
@@ -1500,6 +1506,48 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             translationsByContentId.TryGetValue(content.Id,out var g2NextContent1)
                                 ? g2NextContent1
                                 : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4PlaceValueLineCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4PlaceValueLineCorrection.ValidateExistingBodyBeforeUpgrade(document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NextSourceRows0)?
+                                g2NextSourceRows0:Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4MakeTenStrategiesCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4MakeTenStrategiesCorrection.ValidateExistingBodyBeforeUpgrade(document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NextSourceRows1)?
+                                g2NextSourceRows1:Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4UnknownArrowRiddlesCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4UnknownArrowRiddlesCorrection.ValidateExistingBodyBeforeUpgrade(document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NextSourceRows2)?
+                                g2NextSourceRows2:Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4StoryRepresentationCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4StoryRepresentationCorrection.ValidateExistingBodyBeforeUpgrade(document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NextSourceRows3)?
+                                g2NextSourceRows3:Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4JumpTheLineCenterCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4JumpTheLineCenterCorrection.ValidateExistingBodyBeforeUpgrade(document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NextSourceRows4)?
+                                g2NextSourceRows4:Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4AgeRiddlesCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4AgeRiddlesCorrection.ValidateExistingBodyBeforeUpgrade(document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NextSourceRows5)?
+                                g2NextSourceRows5:Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     if (CommonCoreG2Unit4DifferenceStrategiesCorrection.IsTarget(document, sourceLesson))

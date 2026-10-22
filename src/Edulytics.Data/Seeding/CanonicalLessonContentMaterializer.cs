@@ -89,6 +89,12 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit4DirectionalJumpCorrection.Apply(document);
         CommonCoreG2Unit4EquationArrowCorrection.Apply(document);
         CommonCoreG2Unit4DifferenceStrategiesCorrection.Apply(document);
+        CommonCoreG2Unit4PlaceValueLineCorrection.Apply(document);
+        CommonCoreG2Unit4MakeTenStrategiesCorrection.Apply(document);
+        CommonCoreG2Unit4UnknownArrowRiddlesCorrection.Apply(document);
+        CommonCoreG2Unit4StoryRepresentationCorrection.Apply(document);
+        CommonCoreG2Unit4JumpTheLineCenterCorrection.Apply(document);
+        CommonCoreG2Unit4AgeRiddlesCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -383,8 +389,20 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Jump1);
         var g2Jump3 = CommonCoreG2Unit4DifferenceStrategiesCorrection
             .GetExpectedContentVersion(document, lesson, g2Jump2);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2NextG4_0 = CommonCoreG2Unit4PlaceValueLineCorrection
             .GetExpectedContentVersion(document, lesson, g2Jump3);
+        var g2NextG4_1 = CommonCoreG2Unit4MakeTenStrategiesCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_0);
+        var g2NextG4_2 = CommonCoreG2Unit4UnknownArrowRiddlesCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_1);
+        var g2NextG4_3 = CommonCoreG2Unit4StoryRepresentationCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_2);
+        var g2NextG4_4 = CommonCoreG2Unit4JumpTheLineCenterCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_3);
+        var g2NextG4_5 = CommonCoreG2Unit4AgeRiddlesCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_4);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2NextG4_5);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -519,6 +537,12 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit4DirectionalJumpCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit4EquationArrowCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit4DifferenceStrategiesCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4PlaceValueLineCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4MakeTenStrategiesCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4UnknownArrowRiddlesCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4StoryRepresentationCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4JumpTheLineCenterCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4AgeRiddlesCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -673,6 +697,12 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit4DirectionalJumpCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit4EquationArrowCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit4DifferenceStrategiesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4PlaceValueLineCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4MakeTenStrategiesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4UnknownArrowRiddlesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4StoryRepresentationCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4JumpTheLineCenterCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4AgeRiddlesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections
