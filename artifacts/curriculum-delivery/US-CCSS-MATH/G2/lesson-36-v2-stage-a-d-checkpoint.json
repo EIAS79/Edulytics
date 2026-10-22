@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 36,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L02",
+  "title": "Measure in Centimeters PLC Activity",
+  "unitNumber": 3,
+  "lessonNumber": 2,
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_IM2021_TEACHER_PREP_LESSON",
+    "sourceReadOnly": "Grade2 U03 L02 local archived original teacher preparation and lesson files",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-2/preparation.html",
+    "sourceSemanticSha256": "986b801e2c278050c94d00f3bcdae961c15e5c9433f87d34340ce2f5e77d0283",
+    "canonicalBodySha256": "19079895438ac31d574e8a5169b2a4c872b7352af5cc93ab7a5b3823e02547c5",
+    "originalOutcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.4"
+    ],
+    "warmup": "Notice and Wonder original labeled images centimeter vs cm; 1cm cube edge versus 10cm long rod.",
+    "activity1": "Original bearded dragon measured24cm, 24 cube edges or two full ten-cm rods+four more centimeter edges.",
+    "activity2": "Measure authentic Reptile Length printed images, choose cm cubes or ten-cm rods, compare day gecko to threadsnake; actual printed numeric lengths not in public lesson body.",
+    "sourceGap": "No invented numerical real gecko/threadsnake lengths. Protected reptile artwork and teacher-only Cool-down not copied.",
+    "teacherOnly": "Actual reptile print sheet, physical measuring accuracy, zero placement, and MLR8 peer explanations.",
+    "rights": "Source mathematical facts attributed, original first-party schematic/exit separate from publisher artwork."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_EXACT_SHA_PREDECESSOR_GUARD_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3BeardedDragonCmTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Original URL, exact canonical SHA, original outcomes, previous six lesson fields and approved persisted predecessor rich-content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_FOUR_EXACT_FIRST_PARTY_CM_FAMILIES_PROTECTED_STUDENT_AND_UNRUN_TESTS",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3SecondLessonMeasureCm.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson2MeasureCmContracts.cs",
+    "questions": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson2MeasureCmQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson36ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson36Activities/Index.cshtml",
+    "viewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson36Page.cs",
+    "families": [
+      "usccss.g2.u03.l02.count_cm_cube_edges",
+      "usccss.g2.u03.l02.count_full_ten_cm_rods",
+      "usccss.g2.u03.l02.count_extra_cm_edges",
+      "usccss.g2.u03.l02.compare_reptile_length_difference"
+    ],
+    "firstPartyExit": "28cm=2 rods+8 unit cubes; invented29−14=15cm difference;36cm=3 rods+6 cubes; not source original image values.",
+    "humanOnly": "Real printed dragon/reptile lengths and accurate physical unit placement require teacher; cannot certify with typed answers.",
+    "security": "StudentPortal policy, adoption and published lesson guard, CSRF submit, bounded strings, no official grade stored.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3BeardedDragonCmTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3SecondLessonMeasureCmTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson2MeasureCmQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson36ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L03_ORDINAL37_A_B_C_SEQUENTIAL"
+}
