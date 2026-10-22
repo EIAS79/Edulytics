@@ -32,7 +32,10 @@ public sealed class UsCcssG2Unit3Lesson9FishFeetQuestionsTests
             {
                 Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,q.CorrectAnswer));
                 Assert.False(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,"-1"));
-                Assert.InRange(q.Parameters["spans"],1,4);
+                Assert.InRange(q.Parameters["spans"],1,10);
+                Assert.InRange(q.Parameters["coveredTiles"],0,11);
+                if(!family.EndsWith("one_foot_twelve_tiles",StringComparison.Ordinal))
+                    Assert.Equal(0,q.Parameters["coveredTiles"]);
                 if(!family.EndsWith("repeat_and_extra_inch_tiles",StringComparison.Ordinal))
                     Assert.Equal(0,q.Parameters["extraTiles"]);
                 var wrong=new Dictionary<string,int>(q.Parameters,StringComparer.Ordinal)
