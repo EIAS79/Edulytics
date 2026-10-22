@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 108,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U07:L06",
+  "title": "Use a Ten to Add Within 1,000",
+  "stageA": {
+    "status": "ORIGINAL_PUBLIC_SOURCE_TEXT_REVIEWED_MEDIA_HUMAN_ONLY",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-108-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-7/lesson-6/preparation.html",
+    "sourceSha256": "a5db512e710043d2b8dd898d5fc0309e10c51379aef59bbfe5a1f267839cac2a",
+    "standards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.NBT.B.7"
+    ]
+  },
+  "stageB": {
+    "status": "SIX_FIELD_GUARDED_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit7NextFourCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-108-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_FIRSTPARTY_EXACT_MATH_FAMILIES_UNRUN_TESTS",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit7NextFourQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit7ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit7Activities/Index.cshtml",
+    "teacherOnly": "Original publisher Perfect10 physical sorting cards, real student pair matches and block drawings, oral justifications and restricted publisher Cool-down require teacher.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal108OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal108SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal108ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal108StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 109
+}
