@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 130,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U08:L10",
+  "title": "Write Expressions and Equations to Represent Arrays",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_TEXT_REVIEWED_MEDIA_HUMAN",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-130-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-8/lesson-10/preparation.html",
+    "sourceSha256": "3e31c5d65eba1e6839a052f2d5e823e6e0d0229ae979fbcd8b7aec49c78615ed",
+    "standards": [
+      "CCSS:2.NBT.A.2",
+      "CCSS:2.OA.B.2",
+      "CCSS:2.OA.C.3",
+      "CCSS:2.OA.C.4"
+    ]
+  },
+  "stageB": {
+    "status": "GUARDED_SOURCE_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit8SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-130-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_FIRSTPARTY_FAMILIES_FOUR_TESTS_WRITTEN_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit8ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit8ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit8Activities/Index.cshtml",
+    "teacherOnly": "Original source printed visuals, real student-built arrays, class activities and drawings are assessed by teacher, not by new independent numeric family.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal130OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal130SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal130ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal130StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 131
+}
