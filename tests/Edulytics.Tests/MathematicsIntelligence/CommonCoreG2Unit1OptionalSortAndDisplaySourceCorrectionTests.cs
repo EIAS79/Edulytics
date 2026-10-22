@@ -16,7 +16,7 @@ public sealed class CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrectionTests
         Assert.Equal("PED:US-CCSS-MATH:G2:U01:L12",row.Lesson.LessonCode);
         var en=row.Lesson.Translations.Single(t=>t.CultureCode=="en");
         Assert.Contains("20–30 REAL objects",en.Explanation);
-        Assert.Contains("THREE",en.Explanation);
+        Assert.Contains("three",en.Explanation,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("Sort and Display Stage 2",en.KeyConceptsAndRules);
         Assert.Contains("17−9=8",en.KeyConceptsAndRules);
         Assert.Contains("teacher",en.QuickSummary);

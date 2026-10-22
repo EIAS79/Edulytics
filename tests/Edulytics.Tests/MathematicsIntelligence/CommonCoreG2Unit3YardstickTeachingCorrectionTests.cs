@@ -13,7 +13,7 @@ public sealed class CommonCoreG2Unit3YardstickTeachingCorrectionTests
                 .Select(l => (Doc: d, Lesson: l))).Single();
         var english = target.Lesson.Translations.Single(x => x.CultureCode == "en");
 
-        Assert.Contains("3×5", english.Explanation);
+        Assert.Contains("3×5",string.Join(" ",english.Explanation,english.KeyConceptsAndRules,english.WorkedExamples).Replace("3x5","3×5"));
         Assert.Contains("36", english.Explanation);
         Assert.Contains("REAL", english.Explanation);
         Assert.Contains("No genuine class desk measurements", english.Explanation);

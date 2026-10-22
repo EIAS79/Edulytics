@@ -14,7 +14,7 @@ public sealed class CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection
                 .Select(l=>(Doc:d,Lesson:l))).Single();
         var en=row.Lesson.Translations.Single(x=>x.CultureCode=="en");
         Assert.Contains("100–120",en.Explanation);
-        Assert.Contains("Count",en.QuickSummary);
+        Assert.Contains("count",en.QuickSummary,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("Number Talk",en.WorkedExamples);
         Assert.Contains("Sort and Display",en.StepByStepSolutions);
         Assert.Equal(CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.Version,

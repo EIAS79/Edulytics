@@ -19,7 +19,7 @@ public sealed class CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrectionTest
         Assert.Contains("UNKNOWN SMALLER",en.KeyConceptsAndRules);
         Assert.Contains("UNKNOWN DIFFERENCE",en.KeyConceptsAndRules);
         Assert.Contains("55−20=35",en.WorkedExamples);
-        Assert.Contains("multiple equations",en.StepByStepSolutions,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("multiple equations",en.CommonMistakes,StringComparison.OrdinalIgnoreCase);
         Assert.Equal(CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(row.Doc,row.Lesson));
     }

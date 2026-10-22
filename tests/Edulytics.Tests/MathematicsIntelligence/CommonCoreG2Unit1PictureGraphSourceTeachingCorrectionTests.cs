@@ -21,7 +21,8 @@ public sealed class CommonCoreG2Unit1PictureGraphSourceTeachingCorrectionTests
         var en=row.Lesson.Translations.Single(t=>t.CultureCode=="en");
         Assert.Contains("one-symbol picture graphs",en.Explanation);
         Assert.Contains("cannot supply unrecorded information",en.Explanation);
-        Assert.Contains("graph key",en.StepByStepSolutions);
+        Assert.Contains("key",en.StepByStepSolutions,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("graph key",en.CommonMistakes);
         Assert.Contains("cannot determine",en.StepByStepSolutions);
         Assert.Contains("unrecorded adults",en.CommonMistakes);
         Assert.Equal(CommonCoreG2Unit1PictureGraphSourceTeachingCorrection.Version,

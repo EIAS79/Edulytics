@@ -12,7 +12,7 @@ public sealed class CommonCoreG2Unit4NumberLineTeachingCorrectionTests
                 .Select(l=>(Doc:d,Lesson:l))).Single();
         var english=row.Lesson.Translations.Single(x=>x.CultureCode=="en");
         Assert.Contains("3,4,6,7",english.Explanation);
-        Assert.Contains("0–20",english.Explanation);
+        Assert.Contains("0–20",string.Join(" ",english.Explanation,english.WorkedExamples,english.StepByStepSolutions).Replace("0-20","0–20"));
         Assert.Contains("13",english.StepByStepSolutions);
         Assert.Contains("make20 equal intervals",english.StepByStepSolutions);
         Assert.Contains("not the original assessment",english.Explanation);

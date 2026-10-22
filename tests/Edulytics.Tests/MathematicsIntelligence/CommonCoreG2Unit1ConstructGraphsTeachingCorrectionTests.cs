@@ -16,7 +16,7 @@ public sealed class CommonCoreG2Unit1ConstructGraphsTeachingCorrectionTests
         Assert.Equal("PED:US-CCSS-MATH:G2:U01:L10",row.Lesson.LessonCode);
         var en=row.Lesson.Translations.Single(x=>x.CultureCode=="en");
         Assert.Contains("picture graph",en.Explanation);
-        Assert.Contains("Table A",en.WorkedExamples);
+        Assert.Contains("assigned data table",en.StepByStepSolutions,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("bar graph",en.StepByStepSolutions);
         Assert.DoesNotContain("Table # ___",en.WorkedExamples);
         Assert.DoesNotContain("Caption: A",en.WorkedExamples);

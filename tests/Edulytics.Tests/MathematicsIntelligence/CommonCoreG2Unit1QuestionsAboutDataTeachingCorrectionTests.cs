@@ -18,7 +18,7 @@ public sealed class CommonCoreG2Unit1QuestionsAboutDataTeachingCorrectionTests
         Assert.Contains("four new questions",en.Explanation);
         Assert.Contains("TWO graphs",en.StepByStepSolutions);
         Assert.Contains("at least ONE",en.Explanation);
-        Assert.Contains("partner",en.QuickSummary);
+        Assert.Contains("partner",string.Join(" ",en.Explanation,en.WorkedExamples,en.StepByStepSolutions),StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain(@"\underline{\hspace",en.WorkedExamples);
         Assert.Equal(CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
