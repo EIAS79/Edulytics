@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L15" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source pencil lengths line plot with nonzero axis">
+            <h2>Edulytics · Create Line Plots</h2>
+            <p>Measure real pencils in centimeters with two
+            measurers each. Plot original Group C pencil-length
+            measurements, including labels for empty 11 and 15
+            centimeter ticks. A numeric line plot need not start
+            at zero; real class work remains teacher-reviewed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson49Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source pencil line plots</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L14" &&
          unifiedPracticeAdoptionId.HasValue)
     {

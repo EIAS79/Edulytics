@@ -204,6 +204,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit3Lesson12FriendshipQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit3Lesson13CenterDay2Questions.Supports(family.Trim()) ||
          UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -485,6 +486,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit3Lesson13CenterDay2Questions.Verify(family, parameters, answer);
         if (UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Supports(family))
             return UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1443,6 +1446,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3407,6 +3416,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit3Lesson13CenterDay2Questions.Solve(problem.Family, p);
         if (UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Supports(problem.Family))
             return UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))
