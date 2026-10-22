@@ -11956,6 +11956,81 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l16.plant_plot_frequency",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l16-fictional-five-tick-data-recompute",
+      "representations": [
+        "line_plot",
+        "number_line",
+        "measurement"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l16.plant_plot_total",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l16-fictional-five-tick-data-recompute",
+      "representations": [
+        "line_plot",
+        "measurement"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l16.plant_plot_greater_than",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l16-fictional-five-tick-data-recompute",
+      "representations": [
+        "line_plot",
+        "measurement",
+        "comparison"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l16.plant_plot_range",
+      "version": 1,
+      "skillId": "data.categorical.represent_interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l16-fictional-five-tick-data-recompute",
+      "representations": [
+        "line_plot",
+        "measurement",
+        "subtraction"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

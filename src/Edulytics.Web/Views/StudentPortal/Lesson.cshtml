@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L16" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 plant-height numerical line plots">
+            <h2>Edulytics · interpret Group B plant heights</h2>
+            <p>Use the original source centimeter table to plot values25
+            through35, including empty whole-centimeter ticks.
+            Compare shortest, tallest, total, mode and the four plants
+            above30 cm. Read Han's separate image with your teacher.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson50Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open plant height line-plot activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L15" &&
          unifiedPracticeAdoptionId.HasValue)
     {
