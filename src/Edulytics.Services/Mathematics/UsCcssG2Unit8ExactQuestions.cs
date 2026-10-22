@@ -37,49 +37,83 @@ internal static class UsCcssG2Unit8ExactQuestions
  }
  private static string Prompt(int mode,int a,int b,int c)
  {
-  int lesson=mode/10,kind=mode%10;
-  if(lesson<=5)
-  {
-   int total=2*a+1;
-   return kind switch{
-    0=>$"FIRST-PARTY — {total} objects: how many complete PAIRS?",
-    1=>$"FIRST-PARTY — {total} objects shared between TWO: how many LEFT OVER?",
-    2=>$"FIRST-PARTY — {2*a} objects shared evenly with TWO: how many EACH?",
-    _=>$"FIRST-PARTY — {a}+{a} objects in two equal groups: total?"};
-  }
-  if(lesson==6)return kind switch{
-   0=>$"FIRST-PARTY — Next when counting by 2 from {2*a}?",
-   1=>$"FIRST-PARTY — Next when counting by 5 from {5*a}?",
-   2=>$"FIRST-PARTY — Next when counting by 10 from {10*a}?",
-   _=>$"FIRST-PARTY — Three jumps of 2 from {2*a}, what number?"};
-  if(lesson==7)return kind switch{
-   0=>"FIRST-PARTY — 2 rows with 3 columns: how many dots?",
-   1=>"FIRST-PARTY — 3 rows with 3 columns: how many dots?",
-   2=>"FIRST-PARTY — Can 7 dots form a true rectangular array with MORE THAN 1 row and MORE THAN 1 column? Answer 1=yes 0=no.",
-   _=>"FIRST-PARTY — Array 3 rows and 4 columns: total dots?"};
-  if(lesson<=12)return kind switch{
-   0=>$"FIRST-PARTY — Rectangular array {a} equal rows of {b} objects: total?",
-   1=>$"FIRST-PARTY — A rectangle has {a} rows of equal tiles: how many rows?",
-   2=>$"FIRST-PARTY — A rectangle has {b} columns of equal tiles: how many columns?",
-   _=>lesson==12?$"FIRST-PARTY — {a} equally spaced rows of square tiles need how many INTERNAL horizontal dividing lines?"
-                  :$"FIRST-PARTY — {b} equal columns of {a} objects: total?"};
-  return kind switch{
-    0=>"FIRST-PARTY — Four 2s equal 4+4. What common total?",
-    1=>"FIRST-PARTY — Three 2s equal 3+3. What common total?",
-    2=>"FIRST-PARTY — Six 2s compared to 5+5. What is the difference?",
-    _=>$"FIRST-PARTY — Add 2 to the even number {2*a}: new value?"};
+  return mode switch{
+   10=>$"FIRST-PARTY: {2*a} objects divided equally between two students. How many each?",
+   11=>$"FIRST-PARTY: {2*a+1} objects divided equally into TWO groups. How many LEFT OVER?",
+   12=>$"FIRST-PARTY: {2*a} objects in equal pairs. How many LEFT OVER?",
+   13=>$"FIRST-PARTY: {2*a} objects make how many complete pairs?",
+   20=>$"FIRST-PARTY: {2*a+1} objects. How many complete two-object pairs can be made?",
+   21=>"FIRST-PARTY: How many student pairs can 18 pupils form?",
+   22=>"FIRST-PARTY: How many student pairs can 20 pupils form?",
+   23=>"FIRST-PARTY: 19 pupils form pairs; how many are unpaired?",
+   30=>$"FIRST-PARTY: {2*a} objects are paired. How many leftover?",
+   31=>$"FIRST-PARTY: {2*a+1} objects are paired. How many leftover?",
+   32=>$"FIRST-PARTY: {2*a} split in TWO equal groups. How many per group?",
+   33=>$"FIRST-PARTY: {2*a+1} objects form how many pairs?",
+   40=>$"FIRST-PARTY: Two equal addends {a}+{a} give what EVEN number?",
+   41=>$"FIRST-PARTY: Two equal addends plus ONE, {a}+{a}+1. Total?",
+   42=>$"FIRST-PARTY: {2*a}={a}+{a}. What is one equal addend?",
+   43=>$"FIRST-PARTY: {2*a+1} objects cannot split into two equal integer shares. Number leftover?",
+   50=>$"FIRST-PARTY: Add 1 to {2*a} even objects; how many remain unpaired?",
+   51=>$"FIRST-PARTY: Add 2 to {2*a} even objects; how many remain unpaired?",
+   52=>$"FIRST-PARTY: What EVEN number follows {2*a} when adding 2?",
+   53=>$"FIRST-PARTY: What ODD number follows {2*a-1} when adding 2?",
+   60=>$"FIRST-PARTY: Skip count by2 after {2*a}; next value?",
+   61=>$"FIRST-PARTY: Skip count by5 after {5*a}; next value?",
+   62=>$"FIRST-PARTY: Skip count by10 after {10*a}; next value?",
+   63=>$"FIRST-PARTY: Three +2 jumps after {2*a}; what value?",
+   70=>"FIRST-PARTY: True array 2 rows by3 columns: total?",
+   71=>"FIRST-PARTY: True array 3 rows by3 columns: total?",
+   72=>"FIRST-PARTY: Can 7 dots form a rectangle of MORE THAN ONE row and column, no extras? Answer 1 yes,0 no.",
+   73=>"FIRST-PARTY: True array 3 rows by4 columns: total?",
+   80=>$"FIRST-PARTY: Array with {a} rows and {b} columns. Number objects?",
+   81=>$"FIRST-PARTY: Array {a} rows by {b} columns. How many COLUMNS?",
+   82=>$"FIRST-PARTY: Array {a} rows by {b} columns. How many ROWS?",
+   83=>$"FIRST-PARTY: {b} columns with {a} counters each. What is the total?",
+   90=>"FIRST-PARTY: Full waffle tray 5 rows by4 columns: spaces?",
+   91=>$"FIRST-PARTY: {a} rows of {b}. Find equal-addends total?",
+   92=>$"FIRST-PARTY: {a} rows of {b}. Number row addends?",
+   93=>$"FIRST-PARTY: {a} rows of {b}. Number column addends?",
+   100=>$"FIRST-PARTY: {a} equal row groups with {b} dots each. Total?",
+   101=>$"FIRST-PARTY: {b} equal column groups with {a} dots each. Total?",
+   102=>$"FIRST-PARTY: {a} rows. How many addends in repeated row-addition?",
+   103=>$"FIRST-PARTY: {b} columns. How many addends in repeated column-addition?",
+   110=>$"FIRST-PARTY: Rectangular tiles {a} rows, {b} columns. Total equal squares?",
+   111=>$"FIRST-PARTY: Rectangle has {b} tile columns. How many columns?",
+   112=>$"FIRST-PARTY: Rectangle has {a} tile rows. How many rows?",
+   113=>$"FIRST-PARTY: {a} by {b} square tiles; ONE tile removed. How many remain?",
+   120=>$"FIRST-PARTY: Partition an invented rectangle into {a} equal rows and {b} equal square columns. Total?",
+   121=>$"FIRST-PARTY: {a} rows of equal squares need how many INTERIOR horizontal boundaries?",
+   122=>$"FIRST-PARTY: {b} columns need how many INTERIOR vertical boundaries?",
+   123=>$"FIRST-PARTY: {a} rows by {b} columns equal squares. Total?",
+   130=>"FIRST-PARTY: Four 2s =4+4. What is their common total?",
+   131=>"FIRST-PARTY: Three 2s =3+3. What is their common total?",
+   132=>"FIRST-PARTY: Six 2s compared with5+5. What DIFFERENCE?",
+   133=>$"FIRST-PARTY: Add2 to {2*a}. New number?",
+   _=>throw new InvalidOperationException("Unknown grade2 U08 mode")
+  };
  }
  public static string Solve(string family,IReadOnlyDictionary<string,int> p)
  {
-  if(!Valid(family,p))throw new InvalidOperationException("Invalid Grade2 Unit8 exact family parameters");
-  int a=p["a"],b=p["b"],lesson=p["lesson"],kind=p["mode"]%10;
-  int v;
-  if(lesson<=5)v=kind switch{0=>a,1=>1,2=>a,_=>2*a};
-  else if(lesson==6)v=kind switch{0=>2*a+2,1=>5*a+5,2=>10*a+10,_=>2*a+6};
-  else if(lesson==7)v=kind switch{0=>6,1=>9,2=>0,_=>12};
-  else if(lesson<=12)v=kind switch{0=>a*b,1=>a,2=>b,_=>lesson==12?a-1:a*b};
-  else v=kind switch{0=>8,1=>6,2=>2,_=>2*a+2};
-  return v.ToString(CultureInfo.InvariantCulture);
+  if(!Valid(family,p))throw new InvalidOperationException("Invalid Grade2 Unit8 exact parameters");
+  int a=p["a"],b=p["b"],m=p["mode"];
+  int result=m switch{
+   10=>a,11=>1,12=>0,13=>a,
+   20=>a,21=>9,22=>10,23=>1,
+   30=>0,31=>1,32=>a,33=>a,
+   40=>2*a,41=>2*a+1,42=>a,43=>1,
+   50=>1,51=>0,52=>2*a+2,53=>2*a+1,
+   60=>2*a+2,61=>5*a+5,62=>10*a+10,63=>2*a+6,
+   70=>6,71=>9,72=>0,73=>12,
+   80=>a*b,81=>b,82=>a,83=>a*b,
+   90=>20,91=>a*b,92=>a,93=>b,
+   100=>a*b,101=>a*b,102=>a,103=>b,
+   110=>a*b,111=>b,112=>a,113=>a*b-1,
+   120=>a*b,121=>a-1,122=>b-1,123=>a*b,
+   130=>8,131=>6,132=>2,133=>2*a+2,
+   _=>throw new InvalidOperationException("Unknown grade2 U08 numeric mode")
+  };
+  return result.ToString(CultureInfo.InvariantCulture);
  }
  private static bool Valid(string? f,IReadOnlyDictionary<string,int> p)=>
    f is not null&&Modes.TryGetValue(f,out var mode)&&p.Count==5&&
