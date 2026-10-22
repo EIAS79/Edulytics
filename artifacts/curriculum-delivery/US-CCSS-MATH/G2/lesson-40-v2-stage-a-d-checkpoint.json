@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 40,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L06",
+  "unitNumber": 3,
+  "lessonNumber": 6,
+  "title": "Compare Reptile Lengths in Story Problems",
+  "sourceEdition": "IM K–5 2021",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_TEACHER_LESSON_PREPARATION",
+    "sourceRead": "Read-only local archived book Grade2 Unit3 Lesson6 preparation.html and lesson.html",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-6/preparation.html",
+    "sourceSemanticSha256": "b8e829eb694ccfd88aaa0ffb0cfa923376e18c39583b0d9fd9d9e34ff2ce7516",
+    "canonicalBodySha256": "aa47e81f4f8817f05e7dc5ca81227d40f4585d7e20618e6af4d18e91515dddf2",
+    "outcomes": [
+      "CCSS:2.MD.B.5",
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1",
+      "CCSS:2.OA.B.2"
+    ],
+    "warmup": "5+5=10;15+5=20;15+15=30;15+25=40.",
+    "activity1": "Whose Pet Is Longer? MLR6 Three Reads: Lin62 is19 shorter than Jada, Jada81 = bigger unknown addition; Mai71 is17 longer than Diego, Diego54=smaller unknown subtraction.",
+    "activity2": "Guess My Reptiles source A list day gecko28, komodo98, baby cobra46, iguana65; source B ribbon83, gila55, baby alligator71, ringneck38; true secret pair choices, difference-unknown clue, bigger/smaller partner reconstruction.",
+    "synthesis": "Tape diagram aligns larger/smaller, difference quantity and choice of operation. MLR8 peer language and real paper diagram teacher-observed.",
+    "coolDown": "Kiran and Han Compare Pets is educator login restricted, not copied; original Edulytics 48+16,92−27,73−39 separately authored.",
+    "rights": "Public source numbers CC BY4.0 attributed, publisher images and protected sheets not copied, numeric checks don't infer real partner participation."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_URL_SHA_SIX_FIELD_PREDECESSOR_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Original URL, SHA, four ordered outcomes, six predecessor fields, persisted approved rich-content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_PROTECTED_NUMERIC_STUDENT_AND_FOUR_EXACT_FAMILIES_WRITTEN_TESTS_NOT_RUN",
+    "sourceMath": "5+5=10,15+5=20,15+15=30,15+25=40; Jada81, Diego54; eight source A/B lists.",
+    "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson40Page.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson40ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson40Activities/Index.cshtml",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3SixthLessonReptileStories.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson6ReptileStoriesContracts.cs",
+    "exactEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson6ReptileStoriesQuestions.cs",
+    "families": [
+      "usccss.g2.u03.l06.bigger_unknown_shorter_word",
+      "usccss.g2.u03.l06.smaller_unknown_longer_word",
+      "usccss.g2.u03.l06.difference_unknown_cm",
+      "usccss.g2.u03.l06.opposite_reptile_lists_gap"
+    ],
+    "independentCoolDown": "64 cm bigger from48+16;65 cm smaller from92−27;34 cm difference73−39. Not original publisher sheet.",
+    "teacherOnly": "Real MLR6/MLR8, secret choices, pair clues, authentic tape diagrams and learner explanations.",
+    "security": "StudentPortal, bound adoption and published lesson, anti-forgery POST, limited input length, no grade saved.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3ReptileCompareStoryTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3SixthLessonReptileStoriesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson6ReptileStoriesQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson40ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "readyForStageD": true,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L07_GRADE_ORDINAL41_STAGE_A_B_C"
+}
