@@ -1,61 +1,88 @@
 @model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson34Page
 @using Edulytics.Core.Mathematics.Practice
-@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Standard Units of Measure";}
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Our Market's Inventory";}
 <style>
-.g2l34{max-width:960px;margin:auto;padding:20px;color:#264255}.g2l34 .panel{background:#fff;border:1px solid #cadae5;border-radius:12px;padding:20px;margin:16px 0}.g2l34 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.g2l34 label{display:block;font-weight:700;margin:12px 0 5px}.g2l34 input,.g2l34 textarea{font:inherit;width:100%;max-width:550px;border:1px solid #8197a3;border-radius:8px;padding:10px}.g2l34 .action{background:#0a7f95;border:0;border-radius:8px;color:white;padding:13px 20px;font-weight:bold}.g2l34 .bar{display:flex;height:32px;border:1px solid #6296a6;border-radius:3px;background:#e8f2f5;width:100%;max-width:460px}.g2l34 .bar span{flex:1;border-right:1px solid #468296;display:flex;align-items:center;justify-content:center;font-size:13px}.g2l34 .ok{border-left:4px solid #30845b;padding-left:12px}.g2l34 .bad{border-left:4px solid #b64759;padding-left:12px}.g2l34 .review{border-left:4px solid #ac8c31;padding-left:12px}
+.market34{max-width:1000px;margin:auto;padding:24px 16px;color:#284456}
+.market34 .panel{background:#fff;border:1px solid #cbdde6;border-radius:12px;padding:20px;margin:15px 0}
+.market34 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.market34 label{display:block;font-weight:700;margin:11px 0 4px}
+.market34 input,.market34 textarea{font:inherit;border:1px solid #7e97a5;padding:10px;width:100%;max-width:580px;border-radius:7px}
+.market34 .go{background:#09829c;color:#fff;border:0;border-radius:8px;padding:12px 20px;font-weight:700}
+.market34 .ok{border-left:4px solid #258660;padding-left:12px}
+.market34 .bad{border-left:4px solid #b94b5c;padding-left:12px}
+.market34 .review{border-left:4px solid #b88e33;padding-left:12px}
 </style>
-<main class="g2l34">
+<main class="market34">
 <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
-<h1>Standard Units of Measure</h1>
-<p>Measure the SAME length with different equal-size units. The numerical count changes when the unit's LENGTH changes. You must use REAL teacher-provided materials for the original activities.</p>
+<h1>Our Market's Inventory — optional</h1>
+<p>Be a real buyer or seller in a classroom market. Keep exactly <strong>100</strong> items of three kinds, with <strong>one stock below10</strong> and <strong>two stocks above10</strong>. The teacher checks actual transactions; digital sample numbers are separate.</p>
 <form asp-controller="Grade2Lesson34Activities" asp-action="Submit" method="post">
 @Html.AntiForgeryToken()
 <input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
 <input type="hidden" name="lessonId" value="@Model.LessonId"/>
-<section class="panel"><h2>1. What do you know about measuring?</h2>
-<p>Where should a length measurement begin and end? What happens if we leave gaps or overlap units?</p>
-<label asp-for="Answers.MeasuringIdeas">Describe how to measure length using equal-size units</label>
-<textarea asp-for="Answers.MeasuringIdeas" rows="2" maxlength="2000"></textarea></section>
 <section class="panel">
-<h2>2. Priya's Pet — REAL original string and straws</h2>
-<p>Your teacher prepared a <strong>40-cm string</strong> to model Priya's iguana. Half of source groups use10-cm straws, half use5-cm straws. These are different units for the same physical length. Lay real pieces with no gaps, overlaps or shifted start.</p>
-<p>First-party numerical schematic of a 40-cm interval in FOUR 10-cm pieces, not a real measurement instrument:</p>
-<div class="bar" role="img" aria-label="Illustration of one forty-centimeter span divided into four equal ten-centimeter segments">
-@for(var i=0;i<4;i++){<span>10 cm</span>}
-</div>
-<div class="grid">
-<div><label asp-for="Answers.RealLongStraws">40 cm: count 10-cm straws</label><input asp-for="Answers.RealLongStraws" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.RealShortStraws">40 cm: count 5-cm straws</label><input asp-for="Answers.RealShortStraws" type="number" min="0" max="100" required/></div>
-</div>
-<label asp-for="Answers.RealPhysicalAlignment">Describe how your group actually positioned the real straws without gaps or overlaps</label>
-<textarea asp-for="Answers.RealPhysicalAlignment" rows="3" maxlength="2000"></textarea>
+<h2>1. Notice and Wonder — Han's shopping cart</h2>
+<p>Your teacher displays the REAL source shopping-cart image. Speak with a partner about the groceries; the original image is not reproduced here.</p>
+<label asp-for="Answers.CartObservation">What did you notice or wonder about the original cart?</label>
+<textarea asp-for="Answers.CartObservation" maxlength="2000" rows="2"></textarea>
 </section>
 <section class="panel">
-<h2>3. Use a Standard Unit — 1-centimeter cubes</h2>
-<p>All real source groups use uniform centimeter cubes measuring exactly1 cm along one edge. These are NOT necessarily the same size as ordinary connecting cubes. Each careful group should reach the same count.</p>
-<label asp-for="Answers.RealCentimeterCubes">40-cm prepared string: how many true one-centimeter cube edges?</label>
-<input asp-for="Answers.RealCentimeterCubes" type="number" min="0" max="100" required/>
-<label asp-for="Answers.CentimeterDefinition">What is exactly ONE centimeter in your real classroom cubes?</label>
-<textarea asp-for="Answers.CentimeterDefinition" rows="2" maxlength="2000"></textarea>
-<label asp-for="Answers.UnitChoiceExplanation">Why do4 long pieces,8 short pieces and40 cube edges describe the SAME string length?</label>
-<textarea asp-for="Answers.UnitChoiceExplanation" rows="3" maxlength="2000"></textarea>
-</section>
-<section class="panel"><h2>4. Independent Edulytics first-party numeric practice</h2>
-<p>We invented a separate <strong>30-cm line</strong>. How many equal-size pieces fit, assuming no gaps? This is NOT evidence you measured a real 30-cm object.</p>
+<h2>2. Stock 100 items in your store</h2>
+<p>Choose three kinds of goods and your own quantities. Check all the strict constraints.</p>
 <div class="grid">
-<div><label asp-for="Answers.FirstPartyLong">30 cm in ten-cm pieces</label><input asp-for="Answers.FirstPartyLong" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.FirstPartyShort">30 cm in five-cm pieces</label><input asp-for="Answers.FirstPartyShort" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.FirstPartyCubes">30 cm in one-cm cube edges</label><input asp-for="Answers.FirstPartyCubes" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ProductA">Product 1</label><input asp-for="Answers.ProductA" maxlength="100"/></div>
+<div><label asp-for="Answers.StockA">Starting count 1</label><input asp-for="Answers.StockA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ProductB">Product 2</label><input asp-for="Answers.ProductB" maxlength="100"/></div>
+<div><label asp-for="Answers.StockB">Starting count 2</label><input asp-for="Answers.StockB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ProductC">Product 3</label><input asp-for="Answers.ProductC" maxlength="100"/></div>
+<div><label asp-for="Answers.StockC">Starting count 3</label><input asp-for="Answers.StockC" type="number" min="0" max="100" required/></div>
 </div>
-<label asp-for="Answers.PartnerReflection">What did another REAL group measure and why was their count different?</label>
-<textarea asp-for="Answers.PartnerReflection" rows="2" maxlength="2000"></textarea>
-<button class="action" type="submit">Check unit counts and teacher observation guidance</button></section>
-</form>
+<label asp-for="Answers.ModelExplanation">Prove that exactly one category has fewer than 10 and that the sum is exactly 100</label>
+<textarea asp-for="Answers.ModelExplanation" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel">
+<h2>3. Actual buyers and sellers</h2>
+<p>With a real partner, roll ONE physical number cube THREE TIMES, recording each result. Strategically create one- and two-digit purchasing quantities, but only buy amounts the seller has in stock. Update each original paper inventory sheet.</p>
+<div class="grid">
+<div><label asp-for="Answers.ActualRoll1">Real roll 1</label><input asp-for="Answers.ActualRoll1" type="number" min="1" max="6"/></div>
+<div><label asp-for="Answers.ActualRoll2">Real roll 2</label><input asp-for="Answers.ActualRoll2" type="number" min="1" max="6"/></div>
+<div><label asp-for="Answers.ActualRoll3">Real roll 3</label><input asp-for="Answers.ActualRoll3" type="number" min="1" max="6"/></div>
+</div>
+<label asp-for="Answers.RealSalesDescription">Describe true partner orders and how you avoided overselling</label>
+<textarea asp-for="Answers.RealSalesDescription" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel">
+<h2>4. Independent Edulytics model of sales and restocking</h2>
+<p><strong>First-party example only:</strong> fruit 7, cards 42, books 51. Illustrative sales are 3, 23 and 25. These are NOT claimed to be actual publisher transactions.</p>
+<div class="grid">
+<div><label asp-for="Answers.ExampleStockA">Example fruit stock</label><input asp-for="Answers.ExampleStockA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleStockB">Example card stock</label><input asp-for="Answers.ExampleStockB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleStockC">Example book stock</label><input asp-for="Answers.ExampleStockC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleSaleA">Example fruit sales</label><input asp-for="Answers.ExampleSaleA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleSaleB">Example card sales</label><input asp-for="Answers.ExampleSaleB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleSaleC">Example book sales</label><input asp-for="Answers.ExampleSaleC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleLeftA">Fruit left</label><input asp-for="Answers.ExampleLeftA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleLeftB">Cards left</label><input asp-for="Answers.ExampleLeftB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleLeftC">Books left</label><input asp-for="Answers.ExampleLeftC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleTotalSold">Total sold</label><input asp-for="Answers.ExampleTotalSold" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleTotalLeft">Total left</label><input asp-for="Answers.ExampleTotalLeft" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleRestock">Total restock needed</label><input asp-for="Answers.ExampleRestock" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.RealSalesReport">Optional: summarize your REAL sales report, as checked by teacher</label>
+<textarea asp-for="Answers.RealSalesReport" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel"><h2>5. Independent exit</h2>
+<p>A different store begins with36 items of one kind and sells19. What remains, and how many must be restocked to return to36?</p>
+<div class="grid">
+<div><label asp-for="Answers.ExitLeft">Remaining</label><input asp-for="Answers.ExitLeft" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExitRestock">Restock</label><input asp-for="Answers.ExitRestock" type="number" min="0" max="100" required/></div>
+</div><button type="submit" class="go">Check numbers and teacher-review tasks</button>
+</section></form>
 @if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
-@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
-<h3>@r.Section</h3><p>@(r.Correct==true?"Numerical counts correct":r.Correct==false?"Recheck the unit length":"Teacher observation required"). @r.Feedback</p></div>}
+@foreach(var result in Model.Feedback){<div class="@(result.Correct==true?"ok":result.Correct==false?"bad":"review")">
+<h3>@result.Section</h3><p>@(result.Correct==true?"Numerically correct":result.Correct==false?"Recheck constraints or math":"Teacher review required"). @result.Message</p></div>}
 </section>}
-<section class="panel"><h2>Teacher rubric</h2><ul>@foreach(var item in UsCcssG2Unit3FirstLessonStandardUnits.TeacherRubric){<li>@item</li>}</ul>
-<p>Source IM K–5 2021 G2 Unit3 Lesson1, CCSS2.MD.A.1 and2.MD.A.2. Protected 'Measure a Rectangle' source assessment not copied; no official grade stored.</p>
-</section>
-</main>
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2SixteenthLessonMarketInventory.TeacherRubric){<li>@item</li>}</ul>
+<p>Source IM K–5 2021 G2 U02 L16 optional; CCSS 2.NBT.B.5, 2.NBT.B.6 and 2.OA.A.1. No official school grade or actual transaction recorded by this numerical companion.</p>
+</section></main>
