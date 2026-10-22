@@ -1,0 +1,57 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson41Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Optional Center Estimate and Measure Stage 2";}
+<style>
+.g2l41{max-width:960px;margin:auto;padding:20px;color:#234254}.g2l41 .panel{background:#fff;border:1px solid #cadbe5;border-radius:12px;padding:20px;margin:16px 0}.g2l41 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.g2l41 label{display:block;font-weight:700;margin:12px 0 5px}.g2l41 input,.g2l41 textarea,.g2l41 select{font:inherit;width:100%;max-width:550px;padding:10px;border:1px solid #7c94a4;border-radius:8px}.g2l41 .action{background:#0e7f91;color:#fff;border:0;border-radius:8px;padding:12px 20px;font-weight:bold}.g2l41 .ok{border-left:4px solid #2b845c;padding-left:12px}.g2l41 .bad{border-left:4px solid #b7475c;padding-left:12px}.g2l41 .review{border-left:4px solid #b18a30;padding-left:12px}
+</style>
+<main class="g2l41">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Optional Center Day 1 — Estimate and Measure Stage 2</h1>
+<p>First <strong>estimate</strong> a REAL object's length. Then use a real zero-aligned ruler or meterstick in <strong>centimeters only</strong>. Record what you actually observed with your partner. Numeric example checks below are not evidence of physical measurement.</p>
+<form asp-controller="Grade2Lesson41Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Number Talk — Subtract from 37</h2>
+<div class="grid">
+<div><label asp-for="Answers.TalkA">37−20</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkB">37−21</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkC">37−17</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkD">37−16</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.NumberTalkStrategy">Explain why subtracting one MORE makes the result one LESS</label>
+<textarea asp-for="Answers.NumberTalkStrategy" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>2. Publisher's ILLUSTRATIVE notebook record</h2>
+<p>Source synthesis gives a hypothetical notebook row: estimate20 cm, actual31 cm, difference11 cm. These are NOT expected measurements for the notebook in your room.</p>
+<div class="grid">
+<div><label asp-for="Answers.SourceEstimate">Published example estimate cm</label><input asp-for="Answers.SourceEstimate" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceActual">Published example actual cm</label><input asp-for="Answers.SourceActual" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceDifference">Positive gap cm</label><input asp-for="Answers.SourceDifference" type="number" min="0" max="100" required/></div>
+</div></section>
+<section class="panel"><h2>3. REAL pair Estimate and Measure Stage2 work</h2>
+<p>Pick an object like a marker, book, shoe or desk side. Choose a centimeter ruler or meter stick, make an individual estimate BEFORE measuring, then use a real tool and record what you observed. Your partner's estimate may be different. Teacher validates this work; no fixed expected answer is supplied.</p>
+<label asp-for="Answers.RealObject">Actual classroom object</label><input asp-for="Answers.RealObject" maxlength="2000"/>
+<div class="grid">
+<div><label asp-for="Answers.RealEstimateBefore">My estimate made BEFORE measurement (cm)</label><input asp-for="Answers.RealEstimateBefore" type="number" min="0" max="500"/></div>
+<div><label asp-for="Answers.RealPartnerEstimate">Partner's original estimate (cm)</label><input asp-for="Answers.RealPartnerEstimate" type="number" min="0" max="500"/></div>
+<div><label asp-for="Answers.RealMeasurementCm">Actual observed measurement (cm)</label><input asp-for="Answers.RealMeasurementCm" type="number" min="0" max="500"/></div>
+</div>
+<label asp-for="Answers.RealToolAndZero">Which genuine tool, zero position, and endpoints did you use?</label><textarea asp-for="Answers.RealToolAndZero" rows="2" maxlength="2000"></textarea>
+<p>Source Stage2 offers centimeters, inches and feet in its larger center pack; in THIS lesson use ONLY centimeters.</p></section>
+<section class="panel"><h2>4. Authentic choice time — two centers</h2>
+<label asp-for="Answers.RealCenterChoice">Choose the real center in class</label>
+<select asp-for="Answers.RealCenterChoice"><option value="">Teacher-observed choice</option><option>Estimate and Measure Stage 2</option><option>Math Stories Stage 5</option></select>
+<p>A typed selection isn't proof you took part; your teacher checks your classroom work.</p></section>
+<section class="panel"><h2>5. Independently authored Edulytics math illustrations</h2>
+<p>NOT actual student measurements: estimates versus illustrated actual lengths (all in cm).</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyA">Estimate45, illustration38: difference?</label><input asp-for="Answers.FirstPartyA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyB">Estimate24, illustration29: difference?</label><input asp-for="Answers.FirstPartyB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyC">Estimate34, illustration32: difference?</label><input asp-for="Answers.FirstPartyC" type="number" min="0" max="100" required/></div>
+</div><button class="action" type="submit">Check numbers and see real measurement rubric</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Check the difference":"Teacher must review"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var r in UsCcssG2Unit3SeventhLessonEstimateMeasureStage2.TeacherRubric){<li>@r</li>}</ul><p>IM K–5 2021 G2 Unit3 Lesson7, CCSS 2.MD.A.1, 2.MD.A.3, 2.NBT.B.5, 2.OA.A.1. No official grade.</p></section>
+</main>
