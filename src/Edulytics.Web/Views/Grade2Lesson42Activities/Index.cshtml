@@ -1,0 +1,70 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson42Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — What Is an Inch?";}
+<style>
+.g2l42{max-width:970px;margin:auto;padding:20px;color:#234456}
+.g2l42 .panel{background:white;border:1px solid #c8dbe5;border-radius:12px;padding:20px;margin:16px 0}
+.g2l42 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.g2l42 label{display:block;font-weight:700;margin:12px 0 5px}
+.g2l42 input,.g2l42 textarea{width:100%;max-width:550px;border:1px solid #7d95a6;border-radius:8px;padding:10px;font:inherit}
+.g2l42 .ok{border-left:4px solid #2c865b;padding-left:12px}
+.g2l42 .bad{border-left:4px solid #b94660;padding-left:12px}
+.g2l42 .review{border-left:4px solid #ad8a36;padding-left:12px}
+.g2l42 .action{background:#09809b;color:white;border:0;border-radius:8px;padding:13px 20px;font-weight:bold}
+.g2l42 .tick{display:inline-flex;width:36px;height:42px;justify-content:center;align-items:center;border-left:2px solid #267589;border-bottom:2px solid #267589;background:#e2f3f6;font-weight:700}
+</style>
+<main class="g2l42">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>What is an Inch?</h1>
+<p>Use real inch tiles and a 12-inch ruler. An inch is longer than a centimeter; the distance between the 0 and1 marks on the INCH ruler equals one tile's side. Real measured lengths differ by object and need teacher review.</p>
+<form asp-controller="Grade2Lesson42Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Notice and Wonder: Inches and Centimeters</h2>
+<p>Teacher displays authentic TWO source rulers. Each counts0,1,2,... but the 0–1 interval is longer on the INCH ruler than the centimeter ruler.</p>
+<label asp-for="Answers.WarmupRulers">What is alike or different about the real source ruler pictures?</label><textarea asp-for="Answers.WarmupRulers" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>2. What is an Inch? — real tiles and real classroom objects</h2>
+<p>Use actual inch tiles in a group of four. Align a tile's SIDE with the0-to1 interval of a real inch ruler. Find TWO real objects close to one inch long.</p>
+<div class="grid">
+<div><label asp-for="Answers.InchTileSide">Length of one real inch tile SIDE (inches)</label><input asp-for="Answers.InchTileSide" type="number" min="0" max="12" required/></div>
+<div><label asp-for="Answers.InchRulerZeroOne">Inch ruler interval0→1 (inches)</label><input asp-for="Answers.InchRulerZeroOne" type="number" min="0" max="12" required/></div>
+<div><label asp-for="Answers.FirstRealOneInchItem">Real item about one inch #1</label><input asp-for="Answers.FirstRealOneInchItem" maxlength="2000"/></div>
+<div><label asp-for="Answers.SecondRealOneInchItem">Real item about one inch #2</label><input asp-for="Answers.SecondRealOneInchItem" maxlength="2000"/></div>
+</div>
+<p>Measure your group's genuine marker, colored pencil,11 connected cubes, book and any two items of choice. Do not copy virtual readings into the real measurement rows.</p>
+<div class="grid">
+<div><label asp-for="Answers.MarkerRealInches">Marker actual inches (about whole number)</label><input asp-for="Answers.MarkerRealInches" maxlength="2000"/></div>
+<div><label asp-for="Answers.ColoredPencilRealInches">Colored pencil real inches</label><input asp-for="Answers.ColoredPencilRealInches" maxlength="2000"/></div>
+<div><label asp-for="Answers.ElevenCubesRealInches">11 cubes real inches</label><input asp-for="Answers.ElevenCubesRealInches" maxlength="2000"/></div>
+<div><label asp-for="Answers.BookRealInches">Book real inches</label><input asp-for="Answers.BookRealInches" maxlength="2000"/></div>
+</div>
+<label asp-for="Answers.ActualZeroEnd">Describe actual zero alignment, endpoint and why the reading is about a whole inch if between marks</label><textarea asp-for="Answers.ActualZeroEnd" rows="3" maxlength="2000"></textarea></section>
+<section class="panel"><h2>3. Measure the Sides of Shapes — original printed geometry</h2>
+<p>First ESTIMATE, then measure the authentic student-book printed rectangle's long side, square side and triangle's LONGEST side using physical inch ruler. The source says the triangle's side lies between5 and6 inches, but no exact ruler endpoint is supplied in the public text.</p>
+<div class="grid">
+<div><label asp-for="Answers.RectangleEstimateReal">Rectangle long side estimated inches</label><input asp-for="Answers.RectangleEstimateReal" maxlength="2000"/></div>
+<div><label asp-for="Answers.RectangleMeasuredReal">Rectangle actually measured inches</label><input asp-for="Answers.RectangleMeasuredReal" maxlength="2000"/></div>
+<div><label asp-for="Answers.SquareEstimateReal">Square side estimated inches</label><input asp-for="Answers.SquareEstimateReal" maxlength="2000"/></div>
+<div><label asp-for="Answers.SquareMeasuredReal">Square side actually measured inches</label><input asp-for="Answers.SquareMeasuredReal" maxlength="2000"/></div>
+<div><label asp-for="Answers.TriangleEstimateReal">Triangle longest side estimated inches</label><input asp-for="Answers.TriangleEstimateReal" maxlength="2000"/></div>
+<div><label asp-for="Answers.TriangleMeasuredReal">Triangle actually measured inches (nearest whole, 'about')</label><input asp-for="Answers.TriangleMeasuredReal" maxlength="2000"/></div>
+</div>
+<label asp-for="Answers.MLR8RealReflection">What did an actual partner notice about lengths between whole-inch marks?</label><textarea asp-for="Answers.MLR8RealReflection" rows="3" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. Original Edulytics virtual measurement maths</h2>
+<p>The following are independently invented examples, NOT printed source geometry or real object measurements.</p>
+<div role="img" aria-label="Original Edulytics virtual inch ruler counting four whole one-inch intervals from zero">
+@for(var i=0;i<=4;i++){<span class="tick">@i</span>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.VirtualTiles">Seven adjacent one-inch tiles: total inches?</label><input asp-for="Answers.VirtualTiles" type="number" min="0" max="12" required/></div>
+<div><label asp-for="Answers.VirtualTicks">Virtual ruler0 to4: inches?</label><input asp-for="Answers.VirtualTicks" type="number" min="0" max="12" required/></div>
+<div><label asp-for="Answers.VirtualBelow">FIRST-PARTY virtual endpoint5.2 inches: about what WHOLE inch?</label><input asp-for="Answers.VirtualBelow" type="number" min="0" max="12" required/></div>
+<div><label asp-for="Answers.VirtualAbove">FIRST-PARTY virtual endpoint5.8 inches: about what WHOLE inch?</label><input asp-for="Answers.VirtualAbove" type="number" min="0" max="12" required/></div>
+</div>
+<button type="submit" class="action">Check virtual maths and see real teacher rubric</button></section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3><p>@(r.Correct==true?"Correct numeric answer":r.Correct==false?"Recheck the numeric example":"Teacher review needed"). @r.Feedback</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var row in UsCcssG2Unit3EighthLessonWhatIsAnInch.TeacherRubric){<li>@row</li>}</ul><p>IM K–5 2021 G2 Unit3 Lesson8, CCSS2.MD.A.1,2.MD.A.3. Teacher-only publisher Measure a Rectangle assessment not copied. No official grade.</p></section>
+</main>
