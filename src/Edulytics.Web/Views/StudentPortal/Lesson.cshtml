@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional Grade2 Stage2 real estimate and measure in centimeters">
+            <h2>Edulytics · optional real Estimate and Measure Stage 2</h2>
+            <p>Practise original subtract-from37 Number Talk,
+            source notebook20/31 example and mathematically
+            separate numerical gaps. Genuine object estimate-before-
+            measuring in centimeters and center choice require teacher.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson41Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open optional estimation center</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L06" &&
          unifiedPracticeAdoptionId.HasValue)
     {
