@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 45,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L11",
+  "title": "Saree Silk Stories: Necklaces and Bracelets PLC Activity",
+  "unitNumber": 3,
+  "lessonNumber": 11,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_TEACHER_PREPARATION_AND_LESSON_REVIEW",
+    "sourceReadOnly": "Local Grade2 Unit3 Lesson11 preparation/lesson HTML only",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-11/preparation.html",
+    "canonicalBodySha256": "688008add1a6ab8d22f8a0d5e88f99fa7cfbf5bc6f5ff86f5b984abb09279910",
+    "sourceSemanticSha256": "96a1496033c53af04c466bbcf66fd03deae8bc851f2d6def4b38ba4f422c7cab",
+    "orderedOutcomes": [
+      "CCSS:2.MD.B.5",
+      "CCSS:2.NBT.B.5"
+    ],
+    "warmup": "Original54−16=38 interpreted as ribbon piece remaining in tape diagram and physical picture.",
+    "activity1": "Priya original ribbon44 inches cuts18, remains26, Andre original ribbon tape dotted line divides parts.",
+    "activity2": "Elena starts58 gives27 remains31; Han starts64 cuts28 remains36; Priya cut25 and kept38, START unknown63=25+38.",
+    "sourcePedagogy": "MLR8 and Three Reads to identify story situation, known/unknown and label authentic ribbon diagram before choosing operation. Tape diagram start unknown MUST use addition.",
+    "sourceCooldown": "More Saree Ribbon official Cool-down is restricted; independently authored first-party practice not passed off as publisher.",
+    "teacherOnly": "Real saree source illustrations, printed diagrams, manipulatives and oral paired activity teacher-reviewed."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_SIX_FIELD_PREDECESSOR_GUARDED_SOURCE_TRUE_RICH_BODY",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Original source URL, exact body sha, approved CCSS ordered outcomes, prior six English learner fields and previous persisted rich content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTICATED_STUDENT_RIBBON_STORIES_FOUR_EXACT_FAMILIES_WRITTEN_UNRUN_TESTS",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3EleventhLessonSareeRibbon.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson11SareeRibbonContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson11SareeRibbonQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson45ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson45Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l11.ribbon_take_from_decompose",
+      "usccss.g2.u03.l11.ribbon_take_from_no_decompose",
+      "usccss.g2.u03.l11.ribbon_start_unknown",
+      "usccss.g2.u03.l11.ribbon_missing_cut_amount"
+    ],
+    "firstPartyExamples": "72−36=36,29+47=76 START,80−25=55; no protected publisher Cool-down or images claimed.",
+    "teacherOnly": "True printed source diagrams, real base-ten blocks, MLR8 partner discourse not digitally certified.",
+    "studentSecurity": "StudentPortal policy, verified adoption/published lesson access, anti-forgery POST, bounded form inputs, no grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3EleventhLessonSareeRibbonTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson11SareeRibbonQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson45ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L12_GRADE_ORDINAL46_SOURCE_A_B_C"
+}
