@@ -704,6 +704,23 @@
         </section>
     }
 
+    @{
+        var lateGrade2Companion = Grade2LateUnitCompanionNavigation.Resolve(Model.LessonCode);
+    }
+    @if (lateGrade2Companion is not null && unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 2 source-aligned activity companion">
+            <h2>Grade 2 Unit @lateGrade2Companion.UnitNumber Lesson @lateGrade2Companion.LessonNumber</h2>
+            <p>Open original-source-aligned, independently authored mathematical exercises.
+                Student-created stories, diagrams, measurement activities and classroom work
+                still require an authenticated teacher review.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="@lateGrade2Companion.Controller" asp-action="Index"
+               asp-route-lessonNumber="@lateGrade2Companion.LessonNumber"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L07" &&
          unifiedPracticeAdoptionId.HasValue)
     {
