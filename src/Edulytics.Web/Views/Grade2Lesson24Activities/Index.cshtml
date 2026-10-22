@@ -1,0 +1,73 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson24Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Compare Methods for Subtraction";
+}
+<style>
+.g2l24{max-width:970px;margin:auto;padding:20px;color:#264252}.g2l24 .panel{background:#fff;border:1px solid #cddae4;border-radius:12px;padding:20px;margin:16px 0}.g2l24 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.g2l24 label{display:block;font-weight:700;margin:12px 0 5px}.g2l24 input,.g2l24 textarea,.g2l24 select{width:100%;max-width:540px;border:1px solid #7a929d;border-radius:8px;padding:10px;font:inherit}.g2l24 .rod{display:inline-flex;justify-content:center;align-items:center;background:#c9eaf1;border:2px solid #30849a;margin:3px;width:50px;height:45px;border-radius:5px}.g2l24 .one{display:inline-flex;justify-content:center;align-items:center;background:#fce9b9;border:1px solid #a17f32;padding:7px;margin:2px}.g2l24 .action{background:#087f94;color:#fff;border:0;border-radius:8px;padding:12px 20px;font-weight:700}.g2l24 .ok{border-left:4px solid #2e8655;padding-left:12px}.g2l24 .err{border-left:4px solid #b6495d;padding-left:12px}.g2l24 .review{border-left:4px solid #b3872d;padding-left:12px}
+</style>
+<main class="g2l24">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Compare Methods for Subtraction</h1>
+<p>Compare diagrams where a ten is exchanged for ten ones and play authentic Target Numbers Stage4 with a partner. The online numeric checks are NOT the actual game or an official grade.</p>
+<form asp-controller="Grade2Lesson24Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<section class="panel">
+<h2>1. True or False? How many tens and ones?</h2>
+<p>For each statement, decide if both sides have the SAME value.</p>
+<div class="grid">
+<div><label asp-for="Answers.True1">64 = 60 + 4</label><select asp-for="Answers.True1"><option value="True">True</option><option value="False">False</option></select></div>
+<div><label asp-for="Answers.True2">64 = 50 + 14</label><select asp-for="Answers.True2"><option value="True">True</option><option value="False">False</option></select></div>
+<div><label asp-for="Answers.True3">64 = 30 + 24</label><select asp-for="Answers.True3"><option value="True">True</option><option value="False">False</option></select></div>
+</div>
+<label asp-for="Answers.TrueFalseExplain">Explain exactly why the third equality differs from the second</label>
+<textarea asp-for="Answers.TrueFalseExplain" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>2. Diego, Elena and Tyler — same 82−9</h2>
+<p>Compare diagrams: one student draws 8 tens+2 ones and crosses out a ten to draw10 ones; another starts with7 tens+12 ones. Both can match Tyler's 82=70+12, 12−9=3 and70+3=73. A teacher reviews the actual different drawings.</p>
+<div role="img" aria-label="Original Edulytics image with seven groups of ten and twelve singles equals eighty-two">
+@for(var i=0;i<7;i++){<span class="rod">10</span>}@for(var i=0;i<12;i++){<span class="one">1</span>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.DiagramTens">Tens after exchange</label><input asp-for="Answers.DiagramTens" type="number" min="0" max="9" required /></div>
+<div><label asp-for="Answers.DiagramOnes">Ones after exchange before subtracting9</label><input asp-for="Answers.DiagramOnes" type="number" min="0" max="19" required /></div>
+<div><label asp-for="Answers.DiagramAnswer">82−9</label><input asp-for="Answers.DiagramAnswer" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.DiagramExplain">Why can BOTH students' diagrams correspond to Tyler's equations?</label>
+<textarea asp-for="Answers.DiagramExplain" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Target Numbers Stage4 — REAL game plus digital example</h2>
+<p>On your REAL classroom game, start99, draw a card1–9 (remove0 and10 cards), choose either that many ONES or TENS, subtract without becoming negative, then record and repeat up to six turns or until zero. Partner closer to zero after six rounds wins.</p>
+<p>The two turns below are independently authored arithmetic illustrations, NOT a replica of the publisher recording sheet or evidence of six actual rounds.</p>
+<div class="grid">
+<div><label asp-for="Answers.TargetStart">Start (99)</label><input asp-for="Answers.TargetStart" type="number" min="99" max="99" required /></div>
+<div><label asp-for="Answers.TargetCard1">Card1 (1–9)</label><input asp-for="Answers.TargetCard1" type="number" min="1" max="9" required /></div>
+<div><label asp-for="Answers.TargetMode1">Subtract first card as</label><select asp-for="Answers.TargetMode1"><option value="Ones">Ones</option><option value="Tens">Tens</option></select></div>
+<div><label asp-for="Answers.TargetAfter1">Remaining number after turn1</label><input asp-for="Answers.TargetAfter1" type="number" min="0" max="99" required /></div>
+<div><label asp-for="Answers.TargetCard2">Next card (1–9)</label><input asp-for="Answers.TargetCard2" type="number" min="1" max="9" required /></div>
+<div><label asp-for="Answers.TargetMode2">Subtract second card as</label><select asp-for="Answers.TargetMode2"><option value="Ones">Ones</option><option value="Tens">Tens</option></select></div>
+<div><label asp-for="Answers.TargetAfter2">Remaining number after turn2</label><input asp-for="Answers.TargetAfter2" type="number" min="0" max="99" required /></div>
+</div>
+<label asp-for="Answers.TargetOriginalRealGameExplanation">Describe an actual six-round strategy and the true winning result (teacher checks)</label>
+<textarea asp-for="Answers.TargetOriginalRealGameExplanation" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Independent Edulytics exit</h2>
+<p>These first-party tasks require decomposing a ten, but are not the publisher's restricted Mai's Method Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.Cool1">71−8</label><input asp-for="Answers.Cool1" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.Cool2">60−7</label><input asp-for="Answers.Cool2" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.Cool3">92−8</label><input asp-for="Answers.Cool3" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.Reflection">Compare a subtraction method that trades a ten to one that uses counting back</label>
+<textarea asp-for="Answers.Reflection" rows="3" maxlength="2000"></textarea>
+<button type="submit" class="action">Check mathematical answers and show teacher-review rubric</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"err":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically correct":r.Correct==false?"Review calculation":"Teacher observation required"). @r.Explanation</p>
+</div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var x in UsCcssG2Unit2SixthLessonCompareMethods.TeacherRubric){<li>@x</li>}</ul>
+<p>IM K–5 2021 Grade2 Unit2 Lesson6, CCSS 2.NBT.B.5; source lesson on local book, no original protected assets copied and no official mark stored.</p></section></main>
