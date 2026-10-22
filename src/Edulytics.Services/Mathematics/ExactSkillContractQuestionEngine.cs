@@ -207,6 +207,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit3Lesson16PlantHeightsQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit3Lesson17CenterPlotQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson18YardstickQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -494,6 +495,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit3Lesson16PlantHeightsQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit3Lesson17CenterPlotQuestions.Supports(family))
             return UsCcssG2Unit3Lesson17CenterPlotQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson18YardstickQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson18YardstickQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1470,6 +1473,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit3Lesson17CenterPlotQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit3Lesson17CenterPlotQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson18YardstickQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson18YardstickQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3440,6 +3449,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit3Lesson16PlantHeightsQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit3Lesson17CenterPlotQuestions.Supports(problem.Family))
             return UsCcssG2Unit3Lesson17CenterPlotQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson18YardstickQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson18YardstickQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))

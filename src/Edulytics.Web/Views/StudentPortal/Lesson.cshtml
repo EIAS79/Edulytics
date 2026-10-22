@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L18" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional three by five inch card to make 36 inch yardstick">
+            <h2>Edulytics · make a REAL yardstick with a 3×5-inch card</h2>
+            <p>In pairs use genuine paper and a 3×5-inch index card
+            to construct all inch marks from1 to36. Compare actual
+            classroom desk-height line-plot measurements, revise inaccurate
+            sticks and optionally measure hands and forearms.
+            Independent online arithmetic is not real measurement.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson52Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open optional yardstick center</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L17" &&
          unifiedPracticeAdoptionId.HasValue)
     {

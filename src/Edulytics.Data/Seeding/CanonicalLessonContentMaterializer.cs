@@ -79,6 +79,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3PencilLinePlotTeachingCorrection.Apply(document);
         CommonCoreG2Unit3PlantHeightsTeachingCorrection.Apply(document);
         CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3YardstickTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -353,8 +354,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2PencilPlot);
         var g2OptionalPlot = CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Plants);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Yardstick = CommonCoreG2Unit3YardstickTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2OptionalPlot);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Yardstick);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -479,6 +482,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3PencilLinePlotTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit3PlantHeightsTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3YardstickTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -623,6 +627,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3PencilLinePlotTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit3PlantHeightsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3YardstickTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections
