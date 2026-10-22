@@ -1,0 +1,61 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson34Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Standard Units of Measure";}
+<style>
+.g2l34{max-width:960px;margin:auto;padding:20px;color:#264255}.g2l34 .panel{background:#fff;border:1px solid #cadae5;border-radius:12px;padding:20px;margin:16px 0}.g2l34 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.g2l34 label{display:block;font-weight:700;margin:12px 0 5px}.g2l34 input,.g2l34 textarea{font:inherit;width:100%;max-width:550px;border:1px solid #8197a3;border-radius:8px;padding:10px}.g2l34 .action{background:#0a7f95;border:0;border-radius:8px;color:white;padding:13px 20px;font-weight:bold}.g2l34 .bar{display:flex;height:32px;border:1px solid #6296a6;border-radius:3px;background:#e8f2f5;width:100%;max-width:460px}.g2l34 .bar span{flex:1;border-right:1px solid #468296;display:flex;align-items:center;justify-content:center;font-size:13px}.g2l34 .ok{border-left:4px solid #30845b;padding-left:12px}.g2l34 .bad{border-left:4px solid #b64759;padding-left:12px}.g2l34 .review{border-left:4px solid #ac8c31;padding-left:12px}
+</style>
+<main class="g2l34">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Standard Units of Measure</h1>
+<p>Measure the SAME length with different equal-size units. The numerical count changes when the unit's LENGTH changes. You must use REAL teacher-provided materials for the original activities.</p>
+<form asp-controller="Grade2Lesson34Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. What do you know about measuring?</h2>
+<p>Where should a length measurement begin and end? What happens if we leave gaps or overlap units?</p>
+<label asp-for="Answers.MeasuringIdeas">Describe how to measure length using equal-size units</label>
+<textarea asp-for="Answers.MeasuringIdeas" rows="2" maxlength="2000"></textarea></section>
+<section class="panel">
+<h2>2. Priya's Pet — REAL original string and straws</h2>
+<p>Your teacher prepared a <strong>40-cm string</strong> to model Priya's iguana. Half of source groups use10-cm straws, half use5-cm straws. These are different units for the same physical length. Lay real pieces with no gaps, overlaps or shifted start.</p>
+<p>First-party numerical schematic of a 40-cm interval in FOUR 10-cm pieces, not a real measurement instrument:</p>
+<div class="bar" role="img" aria-label="Illustration of one forty-centimeter span divided into four equal ten-centimeter segments">
+@for(var i=0;i<4;i++){<span>10 cm</span>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.RealLongStraws">40 cm: count 10-cm straws</label><input asp-for="Answers.RealLongStraws" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.RealShortStraws">40 cm: count 5-cm straws</label><input asp-for="Answers.RealShortStraws" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.RealPhysicalAlignment">Describe how your group actually positioned the real straws without gaps or overlaps</label>
+<textarea asp-for="Answers.RealPhysicalAlignment" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>3. Use a Standard Unit — 1-centimeter cubes</h2>
+<p>All real source groups use uniform centimeter cubes measuring exactly1 cm along one edge. These are NOT necessarily the same size as ordinary connecting cubes. Each careful group should reach the same count.</p>
+<label asp-for="Answers.RealCentimeterCubes">40-cm prepared string: how many true one-centimeter cube edges?</label>
+<input asp-for="Answers.RealCentimeterCubes" type="number" min="0" max="100" required/>
+<label asp-for="Answers.CentimeterDefinition">What is exactly ONE centimeter in your real classroom cubes?</label>
+<textarea asp-for="Answers.CentimeterDefinition" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.UnitChoiceExplanation">Why do4 long pieces,8 short pieces and40 cube edges describe the SAME string length?</label>
+<textarea asp-for="Answers.UnitChoiceExplanation" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Independent Edulytics first-party numeric practice</h2>
+<p>We invented a separate <strong>30-cm line</strong>. How many equal-size pieces fit, assuming no gaps? This is NOT evidence you measured a real 30-cm object.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyLong">30 cm in ten-cm pieces</label><input asp-for="Answers.FirstPartyLong" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyShort">30 cm in five-cm pieces</label><input asp-for="Answers.FirstPartyShort" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyCubes">30 cm in one-cm cube edges</label><input asp-for="Answers.FirstPartyCubes" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.PartnerReflection">What did another REAL group measure and why was their count different?</label>
+<textarea asp-for="Answers.PartnerReflection" rows="2" maxlength="2000"></textarea>
+<button class="action" type="submit">Check unit counts and teacher observation guidance</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerical counts correct":r.Correct==false?"Recheck the unit length":"Teacher observation required"). @r.Feedback</p></div>}
+</section>}
+<section class="panel"><h2>Teacher rubric</h2><ul>@foreach(var item in UsCcssG2Unit3FirstLessonStandardUnits.TeacherRubric){<li>@item</li>}</ul>
+<p>Source IM K–5 2021 G2 Unit3 Lesson1, CCSS2.MD.A.1 and2.MD.A.2. Protected 'Measure a Rectangle' source assessment not copied; no official grade stored.</p>
+</section>
+</main>
