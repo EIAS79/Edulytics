@@ -40,7 +40,7 @@ internal static class UsCcssG2Unit4FinalSixQuestions
     {
         if(!Supports(family))throw new InvalidOperationException("Unknown Grade2 original source-restricted numeric family");
         int lesson=Lesson(family),a=random.Next(10,51),b=random.Next(5,41),step=random.Next(1,11);
-        int tens=random.Next(1,6)*10,ones=random.Next(1,10);
+        int tens=random.Next(1,4)*10,ones=random.Next(1,10);
         int whole=random.Next(50,101),part=random.Next(11,41);
         int goal=random.Next(20,91),marker=random.Next(0,91),collected=random.Next(0,2);
         int less=random.Next(1,9),older=random.Next(5,30);
