@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original reptile length compare-story problems">
+            <h2>Edulytics · compare reptiles using centimeter tape diagrams</h2>
+            <p>Solve source Lin/Jada62 and19 longer-unknown, and
+            Mai/Diego71 and17 smaller-unknown; check genuine
+            secret partner choices from two source reptile lists,
+            and independently authored digital arithmetic.
+            Teacher verifies real tape diagrams and partner MLR8.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson40Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original reptile comparisons</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L05" &&
          unifiedPracticeAdoptionId.HasValue)
     {
