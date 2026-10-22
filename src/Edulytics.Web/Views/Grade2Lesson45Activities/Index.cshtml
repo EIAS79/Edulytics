@@ -1,0 +1,48 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson45Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Saree Silk Ribbon Stories";}
+<style>.g2l45{max-width:960px;margin:auto;padding:22px 16px;color:#244558}.g2l45 .panel{background:white;border:1px solid #ccdae3;border-radius:12px;padding:18px;margin:16px 0}.g2l45 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.g2l45 label{display:block;font-weight:700;margin:10px 0 4px}.g2l45 input,.g2l45 textarea{font:inherit;border:1px solid #849aa5;border-radius:7px;padding:10px;width:100%;max-width:540px}.g2l45 .action{background:#067f98;color:white;border:0;border-radius:8px;padding:13px 20px;font-weight:700}.g2l45 .good{border-left:4px solid #2d855b;padding-left:12px}.g2l45 .bad{border-left:4px solid #bb495e;padding-left:12px}.g2l45 .review{border-left:4px solid #b38c32;padding-left:12px}.g2l45 .tape{display:flex;max-width:540px;margin:10px 0}.g2l45 .tape span{border:2px solid #4c8195;background:#e3f0f5;padding:14px;text-align:center}</style>
+<main class="g2l45">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Saree Silk Stories — Necklaces and Bracelets</h1><p>Make sense of ribbon-length take-from stories using tape diagrams. Find out whether the unknown is the <strong>remaining part</strong> or the <strong>original whole</strong>. Not every story about cutting uses subtraction.</p>
+<form asp-controller="Grade2Lesson45Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Notice and Wonder</h2><p>Original ribbon picture has 54 as whole and16 cut off. What is the unknown remaining length?</p>
+<div class="tape" role="img" aria-label="Original Edulytics tape-style labels: ribbon total 54, cut part 16, unknown remaining part">
+<span style="flex:2">Whole 54 in</span><span>Cut 16 in</span><span>Left ?</span>
+</div><label asp-for="Answers.WarmupRemain">54−16 = ?</label>
+<input asp-for="Answers.WarmupRemain" type="number" min="0" max="100" required/></section>
+<section class="panel"><h2>2. Priya's Saree Silk Ribbon Necklace</h2>
+<p>Priya had44 inches of ribbon and cut off18 inches. Andre's actual tape diagram shows whole44, removed18, dotted divider and unknown remaining. What does the question mark mean?</p>
+<label asp-for="Answers.SourcePriyaAfter">44−18: ribbon remaining (inches)</label>
+<input asp-for="Answers.SourcePriyaAfter" type="number" min="0" max="100" required/></section>
+<section class="panel"><h2>3. Projects — Three Reads</h2>
+<p>First read: what happens? Second: what's known? Third: put the numbers and '?' on your own tape diagram. Discuss with a genuine partner before computing.</p>
+<div class="grid">
+<div><p>Elena starts58 inches, gives Clare27. How much does Elena KEEP?</p>
+<label asp-for="Answers.SourceElenaAfter">58−27</label><input asp-for="Answers.SourceElenaAfter" type="number" min="0" max="100" required/></div>
+<div><p>Han has64 inches, cuts28. How many inches are LEFT?</p>
+<label asp-for="Answers.SourceHanAfter">64−28</label><input asp-for="Answers.SourceHanAfter" type="number" min="0" max="100" required/></div>
+<div><p>Priya cuts off25 inches and still has38 left. How many inches did she have to START?</p>
+<label asp-for="Answers.SourcePriyaOriginal">25+38 (whole UNKNOWN)</label><input asp-for="Answers.SourcePriyaOriginal" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.ThreeReadsAndDiagram">Explain on your own original tape diagram why the last story ADDS while the others subtract</label>
+<textarea asp-for="Answers.ThreeReadsAndDiagram" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.ActualBlockAndPartner">What original physical base-ten model did you use with your partner?</label>
+<textarea asp-for="Answers.ActualBlockAndPartner" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. Independent Edulytics maths</h2>
+<p>These questions were written independently. They're not the protected publisher More Saree Ribbon Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyRemaining">Maya starts72 in, cuts36. What remains?</label><input asp-for="Answers.FirstPartyRemaining" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyStarting">Ali cuts29 in and keeps47. What did Ali start with?</label><input asp-for="Answers.FirstPartyStarting" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyExtra">Leah has80 in and cuts25. What remains?</label><input asp-for="Answers.FirstPartyExtra" type="number" min="0" max="100" required/></div>
+</div><button type="submit" class="action">Check story arithmetic and teacher-review tasks</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"good":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numeric check passed":r.Correct==false?"Revise your story equation":"Teacher review required"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher rubric</h2><ul>@foreach(var x in UsCcssG2Unit3EleventhLessonSareeRibbon.TeacherRubric){<li>@x</li>}</ul>
+<p>IM K–5 2021 Grade2 Unit3 Lesson11; Addressing 2.MD.B.5 and2.NBT.B.5. Digital practice does not reproduce original publisher images or official grades.</p></section>
+</main>
