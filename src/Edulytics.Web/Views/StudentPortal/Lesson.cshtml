@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L17" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional source Stage1 real ruler measurements">
+            <h2>Edulytics · optional Creating Line Plots Stage1</h2>
+            <p>Measure up to eight REAL objects with cm or inch rulers,
+            make your own labeled plot and ask your partner TWO questions.
+            Source choice time is observed by your teacher. Original
+            Edulytics fictional numerical questions are separate.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson51Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open optional line-plot center</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L16" &&
          unifiedPracticeAdoptionId.HasValue)
     {
