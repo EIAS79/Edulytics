@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 126,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U08:L06",
+  "title": "Center Day 1 (optional)",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_TEXT_REVIEWED_MEDIA_HUMAN",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-126-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-8/lesson-6/preparation.html",
+    "sourceSha256": "8d9364b14eb31836990d3a40a3c7b39ace0d8c673daac769868da9560221c5da",
+    "standards": [
+      "CCSS:2.NBT.A.2",
+      "CCSS:2.NBT.B.7",
+      "CCSS:2.NBT.B.8",
+      "CCSS:2.OA.B.2"
+    ]
+  },
+  "stageB": {
+    "status": "GUARDED_SIX_FIELDS",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit8SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-126-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_FIRSTPARTY_EXACT_NUMERIC_FAMILIES_TESTS_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit8ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit8ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit8Activities/Index.cshtml",
+    "teacherOnly": "Original publisher media, actual source games and student-produced physical/drawn work require educator judgment. The Edulytics companion checks only independently-authored mathematics.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal126OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal126SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal126ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal126StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 127
+}
