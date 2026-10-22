@@ -29,23 +29,62 @@
     "factualLimits": "No authenticated physical classroom survey or publisher's restricted responses observed. No student PII should be stored in publicly visible activity."
   },
   "stageB": {
-    "status": "PENDING",
-    "notes": "Requires guarded source-specific learner Rich V2, safe materialization and actual reader."
+    "status": "COMPLETE_SOURCE_AND_PREDECESSOR_GUARDED_CLASS_SURVEY_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1ClassSurveysTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "sourceGuard": "Original IM 2021 teacher preparation URL, canonical lesson body SHA and ordered 2.MD.D.10, 2.OA.A.1, 2.OA.B.2 outcome identity; exact predecessor six learner fields and materialized content version required",
+    "repair": "Replaces generic graph-reading instructions with original optional student-authored real survey and 3–4 categories, picture OR bar graphs, genuine peer questioning, two-category tape diagram and source-correct separation of fictional models.",
+    "studentEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "lastHumanReview": "SOURCE_CONTENT_GUARDED_AUTHORING_ONLY_NOT_STAGE_D"
   },
   "stageC": {
-    "status": "PENDING",
-    "notes": "Requires actual learner survey question/category/data entry and graph, question authorship, tape comparisons, independent Cool-down, teacher rubric, source-aligned numeric checking and unrun tests."
+    "status": "COMPLETE_STUDENT_AUTHORED_SURVEY_UI_4_EXACT_FAMILIES_INDEPENDENT_COOLDOWN",
+    "studentModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson18Page.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson18ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson18Activities/Index.cshtml",
+    "classSurveyChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1EighteenthLessonClassSurveys.cs",
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson18ClassSurveysContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson18ClassSurveyQuestions.cs",
+    "skillContract": "data.categorical.represent_interpret",
+    "families": [
+      "usccss.g2.u01.l18.read_category_count",
+      "usccss.g2.u01.l18.combine_two_categories",
+      "usccss.g2.u01.l18.compare_two_categories",
+      "usccss.g2.u01.l18.tape_difference_from_graph"
+    ],
+    "firstPartyIllustration": "FICTIONAL reading choices Stories9, Comics6, Poetry4, Nonfiction3; one picture symbol per response.",
+    "independentCooldown": "22 total, Comics6+Poetry4=10, Stories9−Nonfiction3=6, Stories9−Comics6=3, each checked exactly; original teacher-authored Cool-down not claimed.",
+    "teacherScored": "Authentic pupil-generated question, real anonymous survey collection, original graph drawing, genuine peer exchange, authored questions and tape explanation remain teacher reviewed, NOT auto-attested.",
+    "numericalCheck": "Genuine entered category numbers/axis keys, 2 distinct selected categories, correctly recomputed combine and compare equations and tape difference; separate fictional assessment and randomized exact families, negative/malformed protections authored.",
+    "access": "StudentPortal permission, selected adoption and published lesson, antiforgery on submission, no official school grade saved, no storage of pupil identities.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1ClassSurveysTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1EighteenthLessonClassSurveysTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson18ClassSurveyQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson18ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "productionPracticeVerified": false
   },
   "closure": {
-    "status": "IN_PROGRESS",
-    "aCStatus": "A_C_PENDING",
-    "readyForStageD": false,
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
     "testsExecuted": false,
     "CIExecuted": false,
     "stageDExecuted": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
     "mainMerge": false,
     "deployed": false,
-    "productionRelease": "NO_GO"
+    "productionRelease": "NO_GO",
+    "note": "A–C editorial/source/code authoring only; tests/CI/final frozen SHA not run. Real participation/response data and teacher marks cannot be inferred from first-party mathematical checks."
   },
-  "nextAction": "CONTINUE_G2_U01_L18_STAGE_B_THEN_C_SEQUENTIALLY"
+  "nextAction": "BEGIN_G2_U02_L01_GRADE_ORDINAL_19_AFTER_A_C_CLOSURE"
 }
