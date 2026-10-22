@@ -382,6 +382,48 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source-aligned arrow and subtraction teaching">
+            <h2>Edulytics · Grade2 Unit4 Lesson7</h2>
+            <p>Original printed arrow direction and genuine A–H matching require real teacher-reviewed representations. Separate digital arithmetic is original Edulytics.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4ArrowActivities" asp-action="Index"
+               asp-route-lessonNumber="7"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original-source number-line activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source-aligned arrow and subtraction teaching">
+            <h2>Edulytics · Grade2 Unit4 Lesson8</h2>
+            <p>Original choral count and four addition/subtraction arrow drawings require real teacher-reviewed representations. Separate digital arithmetic is original Edulytics.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4ArrowActivities" asp-action="Index"
+               asp-route-lessonNumber="8"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original-source number-line activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source-aligned arrow and subtraction teaching">
+            <h2>Edulytics · Grade2 Unit4 Lesson9</h2>
+            <p>Two subtraction number-line methods and genuine source string stories require real teacher-reviewed representations. Separate digital arithmetic is original Edulytics.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4ArrowActivities" asp-action="Index"
+               asp-route-lessonNumber="9"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original-source number-line activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L06" &&
          unifiedPracticeAdoptionId.HasValue)
     {
