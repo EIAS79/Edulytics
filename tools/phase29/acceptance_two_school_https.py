@@ -1369,6 +1369,7 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
         "secondary fixture must have one original class enrollment")
     from b001_practice_form_coverage import has_lesson_start_form, has_lesson_start_nonce, coverage_report
     b001_practice_forms = []
+    g2_late_source_companion_e2e = []
     b001_e2e_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_ATTEMPTS") == "1"
     b001_negative_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_MALFORMED_ANSWERS") == "1"
     b001_e2e_rows = []
@@ -1447,6 +1448,61 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             r"\s+", " ", html.unescape(effective_title)).casefold()
         assert expected in rendered, (
             code, "missing exact source-reviewed lesson title", expected)
+        # Grade 2 Units 7-9 original source-companion links must be
+        # genuinely reachable by their authenticated, enrolled school student.
+        # This does NOT constitute teacher approval of hands-on source tasks.
+        g2_late_match = re.fullmatch(
+            r"PED:US-CCSS-MATH:G2:U(07|08|09):L(0[1-9]|1[0-9])", code)
+        if g2_late_match:
+            g2_unit = int(g2_late_match.group(1))
+            g2_lesson = int(g2_late_match.group(2))
+            if g2_lesson <= (18 if g2_unit == 7 else 13):
+                expected_path = (
+                    f"/student/practice/grade2-u{g2_unit:02d}/l{g2_lesson}")
+                hrefs = re.findall(r'href="([^"]+)"', body)
+                matched_hrefs = [
+                    href for href in hrefs
+                    if urllib.parse.urlsplit(href).path.casefold()
+                    == expected_path.casefold()]
+                assert len(matched_hrefs) == 1, (
+                    code, "exact source companion link missing or duplicated",
+                    matched_hrefs)
+                companion_href = matched_hrefs[0]
+                assert companion_href.startswith("/"), (
+                    code, "companion link must be a same-origin path")
+                parameters = urllib.parse.parse_qs(
+                    urllib.parse.urlsplit(companion_href).query)
+                assert parameters.get("lessonId") == [lesson_id], (
+                    code, "source companion routes to wrong lesson")
+                adoption_ids = parameters.get("curriculumAdoptionId", [])
+                assert len(adoption_ids) == 1 and re.fullmatch(
+                    r"[0-9a-fA-F-]{36}", adoption_ids[0]), (
+                    code, "missing enrollment-scoped curriculum adoption")
+                companion_html = html.unescape(
+                    get_page(grade_student, companion_href))
+                assert "Publisher source-specific original task" in companion_html, (
+                    code, "student original companion not rendered")
+                assert "Edulytics first-party independent numerical examples" in companion_html, (
+                    code, "independent numerical examples missing")
+                assert 'name="__RequestVerificationToken"' in companion_html, (
+                    code, "companion form missing anti-forgery token")
+                assert 'name="lessonId"' in companion_html and (
+                    'name="curriculumAdoptionId"' in companion_html), (
+                    code, "companion form missing student lesson scope")
+                # A student from the other school must never see this
+                # real primary-school student's source-companion content.
+                deny(students["commoncore-secondary"], companion_href)
+                g2_late_source_companion_e2e.append({
+                    "lessonCode": code,
+                    "gradeOrdinal": ordinal - 146,
+                    "unit": g2_unit,
+                    "lesson": g2_lesson,
+                    "authenticatedStudentGetPassed": True,
+                    "crossSchoolGetDenied": True,
+                    "sourceTaskHumanApproval": "NOT_CLAIMED",
+                })
+                print("G2_LATE_SOURCE_COMPANION_HTTPS_PASS",
+                      code, flush=True)
         # Stage D: lesson-specific original 2021 learner BODY evidence for
         # 57–64 (Unit 3), 66–88 (Unit 4), 89–102 (Unit 5), and
         # 103–146 except 127 (Units 6–8; 127 Match Mine source-specific
@@ -2099,6 +2155,27 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
               ordinal, code, flush=True)
     print("B001_500_DISPOSABLE_AUTHENTICATED_HTML_COMPLETE",
           len(source_lessons), grade_counts, flush=True)
+    assert len(g2_late_source_companion_e2e) == 44, (
+        "Expected all 44 G2 Unit 7-9 original companions via HTTPS",
+        len(g2_late_source_companion_e2e))
+    assert len({row["lessonCode"] for row in g2_late_source_companion_e2e}) == 44
+    companion_proof = {
+        "programme": "US-CCSS-MATH",
+        "grade": "G2",
+        "checked": 44,
+        "allAuthenticatedStudentGetsPassed": True,
+        "allCrossSchoolGetsDenied": True,
+        "teacherAcademicAcceptance": "NOT_CLAIMED",
+        "gradeRelease": "NO_GO_UNVERIFIED",
+        "rows": g2_late_source_companion_e2e,
+    }
+    Path("/tmp/g2-44-source-companions-authenticated-https-no-academic-approval.json"
+         ).write_text(
+             json.dumps(companion_proof, indent=2, ensure_ascii=False) + "\n",
+             encoding="utf-8")
+    print("G2_LATE_SOURCE_COMPANION_HTTPS_COMPLETE",
+          len(g2_late_source_companion_e2e), flush=True)
+
 
     practice_matrix = coverage_report(b001_practice_forms)
     Path("/tmp/b001-500-lesson-practice-form-preflight.json").write_text(

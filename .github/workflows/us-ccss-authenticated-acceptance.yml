@@ -183,6 +183,14 @@ jobs:
           path: /tmp/b001-500-lesson-practice-form-preflight.json
           if-no-files-found: warn
           retention-days: 14
+      - name: Preserve G2 44 exact source-companion authenticated and cross-school denial evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-44-source-companions-https-not-academic-approval
+          path: /tmp/g2-44-source-companions-authenticated-https-no-academic-approval.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Preserve G1 lesson desktop/mobile visual evidence
         if: always()
         uses: actions/upload-artifact@v4
