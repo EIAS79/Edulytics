@@ -13,9 +13,11 @@ internal static class UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions
     public static Problem Build(string family,Random rng)
     {
         if(!Supports(family))throw new InvalidOperationException("Not G2 U03 L07");
-        var actual=rng.Next(25,91),distance=rng.Next(3,Math.Min(16,actual)+1);
+        var actual=rng.Next(25,91);
+        var distance=family==Above
+            ? rng.Next(1,Math.Min(16,100-actual)+1)
+            : rng.Next(3,Math.Min(16,actual)+1);
         int estimate=family==Above?actual+distance:actual-distance;
-        if(estimate>100)estimate=actual-distance;
         var p=new Dictionary<string,int>(StringComparer.Ordinal){{"actual",actual},{"estimate",estimate}};
         string prompt,solution;
         if(family==Closest)
