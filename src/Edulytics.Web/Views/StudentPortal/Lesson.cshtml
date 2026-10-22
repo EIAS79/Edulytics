@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 real fish tape lengths in feet and inches">
+            <h2>Edulytics · measuring fish floor tapes in feet and inches</h2>
+            <p>Use teacher-built source fish tape A2ft B4ft C3ft
+            and D2ft6in, repeat genuine12-inch ruler spans,
+            compare physical unit counts, and choose the
+            right tool for real object length. Grade2 does not
+            require abstract unit conversion algorithms.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson43Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open fish measurement center</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L08" &&
          unifiedPracticeAdoptionId.HasValue)
     {

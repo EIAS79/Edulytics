@@ -70,6 +70,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection.Apply(document);
         CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection.Apply(document);
         CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3FeetFishTapeTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -326,8 +327,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Reptiles);
         var g2Inch = CommonCoreG2Unit3WhatIsAnInchTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Stage2);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Feet = CommonCoreG2Unit3FeetFishTapeTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Inch);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Feet);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -443,6 +446,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3FeetFishTapeTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -578,6 +582,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3FeetFishTapeTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections
