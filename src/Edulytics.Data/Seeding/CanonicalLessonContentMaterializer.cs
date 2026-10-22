@@ -97,6 +97,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit4AgeRiddlesCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG2Unit5OriginalRichContentCorrections.Apply(document);
+        CommonCoreG2Unit5ComparisonSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
         CommonCoreG1Unit2Part2SourceTeachingCorrections.Apply(document);
@@ -406,8 +407,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2NextG4_5);
         var g2Unit5Original = CommonCoreG2Unit5OriginalRichContentCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
-        var g1Stories = CommonCoreG1Unit2StorySourceCorrections
+        var g2Unit5More = CommonCoreG2Unit5ComparisonSourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Unit5Original);
+        var g1Stories = CommonCoreG1Unit2StorySourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Unit5More);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
             .GetExpectedContentVersion(document, lesson, g1Stories);
         var g1Part2 = CommonCoreG1Unit2Part2SourceTeachingCorrections
@@ -548,6 +551,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit4AgeRiddlesCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG2Unit5OriginalRichContentCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit5ComparisonSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
