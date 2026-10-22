@@ -77,4 +77,3 @@ public static void Apply(CanonicalLessonContentPackDocument d)
    throw new InvalidOperationException($"G2 U07 ordinal{e.Ordinal} saved original rich content drift");
  }
 }
-

@@ -88,7 +88,7 @@ public static class UsCcssG2Unit7OriginalActivities
  [17]=new int[]{275,400,710,480},
  [18]=new int[]{15,255,15,2}
  };
- public static readonly IReadOnlyDictionary<int,string[]> LastSourceNumericExamples=new Dictionary<int,string[]> { 
+ public static readonly IReadOnlyDictionary<int,string[]> LastSourceNumericExamples=new Dictionary<int,string[]> {
  [9]=new string[]{"384+409","757+152","262+438","575+166"},
  [10]=new string[]{"199+23","?+430=1000","?85+615=1000","429+387"},
  [11]=new string[]{"80+20+37 cents","80+20+37+42 cents","75+37+25 cents","75+80+25+20 cents"},

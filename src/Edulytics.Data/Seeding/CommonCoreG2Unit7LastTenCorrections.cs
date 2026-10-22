@@ -62,4 +62,3 @@ public static class CommonCoreG2Unit7LastTenCorrections
    throw new InvalidOperationException($"G2 U07 ordinal{e.Ordinal} saved original rich content drift");
  }
 }
-
