@@ -10202,6 +10202,77 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u02.l08.tens_first_then_exchange",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u02-l08-lin-clare-andre-parameters",
+      "representations": [
+        "base_ten",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u02.l08.exchange_first_then_tens",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u02-l08-lin-clare-andre-parameters",
+      "representations": [
+        "base_ten",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u02.l08.count_residual_after_tens",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u02-l08-lin-clare-andre-parameters",
+      "representations": [
+        "base_ten",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u02.l08.inverse_check_two_digit",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u02-l08-lin-clare-andre-parameters",
+      "representations": [
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

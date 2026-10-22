@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 source comparative subtraction, Lin Clare Andre">
+            <h2>Edulytics · compare different ways to decompose</h2>
+            <p>Original Number Talk, Lin and Clare's two ways to
+            solve 71−56, Andre's65−28, and the three source
+            two-digit differences. Teacher checks real drawings
+            and MLR8 partner explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson26Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open comparative subtraction</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L07" &&
          unifiedPracticeAdoptionId.HasValue)
     {
