@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L10" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 torn tape nonzero ruler measurement">
+            <h2>Edulytics · measure with a torn tape</h2>
+            <p>Use true/false constant differences, Han and Jada's
+            same8-inch notebook from different ruler starts, and
+            Lin's desktop16→34 short side. Measure genuine objects
+            with a partner; teacher checks source long-side image.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson44Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open torn-tape source activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L09" &&
          unifiedPracticeAdoptionId.HasValue)
     {
