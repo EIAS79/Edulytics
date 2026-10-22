@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Edulytics.Web.Controllers;
-/// <summary>Private authentic Grade2 Unit7 source companion; original open responses never auto-certified.</summary>
+/// <summary>Private authentic Grade2 Unit8 source companion; original open responses never auto-certified.</summary>
 [Authorize(Policy="StudentPortal")]
 [Route("student/practice/grade2-u08/l{lessonNumber:int}")]
 public sealed class Grade2Unit8ActivitiesController(IStudentPrivatePracticeService privatePractice,
@@ -35,6 +35,8 @@ public sealed class Grade2Unit8ActivitiesController(IStudentPrivatePracticeServi
         var(title,error)=await Access(lessonNumber,curriculumAdoptionId,lessonId,ct);
         if(error is not null)return error;
         if(a is null)return BadRequest("Missing source answers");
+        // Student-authored submissions must never impersonate authenticated teacher feedback.
+        a.TeacherComments = null;
         if(typeof(Grade2Unit8Answers).GetProperties().Where(p=>p.PropertyType==typeof(string))
             .Select(p=>p.GetValue(a) as string).Any(x=>x?.Length>2000))
             return BadRequest("Input length exceeds source companion limit");

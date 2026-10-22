@@ -14,7 +14,8 @@
     "lessonsDVerified": 0,
     "newAcademicApprovals": 0,
     "merged": false,
-    "deployed": false
+    "deployed": false,
+    "lessonsWithAuthenticatedB001PracticeProof": 146
   },
   "candidateEvidence": {
     "local": {
@@ -33,15 +34,27 @@
       "proofBoundary": "TRX contains one or more named passing test cases for each Grade 2 lesson ordinal; this does not establish a complete per-lesson authenticated runtime acceptance."
     },
     "gitHubActions": {
-      "candidate": "69a4af1ccee8aa54514885fa542b165eea292a68",
+      "candidate": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
       "workflowsCompleted": 15,
       "success": 14,
       "failure": 1,
       "failedJob": "g1-full-grade-negative-control",
-      "failedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39856666067",
+      "failedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39859786277",
       "mathFoundation": "https://github.com/EIAS79/Edulytics/actions/runs/39856666026",
-      "authenticatedAcceptance": "https://github.com/EIAS79/Edulytics/actions/runs/39856666145",
-      "warning": "The authenticated acceptance workflow is B001/G1-scoped. It is not proof of all 146 Grade 2 lessons."
+      "authenticatedAcceptance": "https://github.com/EIAS79/Edulytics/actions/runs/39859786163",
+      "warning": "14/15 official workflows passed; G1 full-grade negative-control failed due stale exact-candidate technical metadata; evidence-only revalidation candidate is being separately tested. Passing B001 authenticated flow proves only generic lesson Practice, not source-original authoring work."
+    },
+    "authenticatedB001Grade2": {
+      "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+      "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39859786163",
+      "jobId": 120107198251,
+      "artifactId": 12462196999,
+      "path": "Disposable database, authenticated student session, original Grade 2 course item",
+      "lessonCount": 146,
+      "authenticatedPagePassed": 146,
+      "generatedAnswerSelfConsistentGradedAndPersisted": 146,
+      "malformedAnswersRejectedAndPersisted": 146,
+      "scopeLimitation": "First-party B001 generic Practice and student page; not all source-specific Grade 2 companion tasks, teacher observation or independent human-reviewed academic parity."
     }
   },
   "batches": [
@@ -73,10 +86,11 @@
     "firstPendingFullVerificationOrdinal": 1
   },
   "outstandingGates": [
-    "G1 independent fail-closed gate: 96 previously approved V1 lessons have stale source/grading exact-candidate proof; must be genuinely revalidated, not re-stamped",
-    "Grade 2: lesson-by-lesson authenticated student/teacher integration E2E with isolated test database and persisted grading evidence not yet proved",
+    "Revalidate published Grade 1 technical compatibility evidence for shared math/grading source on final candidate; this is regression proof, not new Grade 1 academic approval.",
     "Grade 2: teacher/source checks of original images, measurements, student authored work, classroom activities, source permissions and academic sufficiency required",
-    "Final required Actions matrix must be green for the release candidate commit and production approval must be recorded before merge/deployment"
+    "Final required Actions matrix must be green for the release candidate commit and production approval must be recorded before merge/deployment",
+    "Grade 2 original source-specific student companion pages, correctness and cross-school isolation require separate real authenticated E2E beyond generic B001 Practice.",
+    "Grade 2 source-specific learner UI fixes for Unit 9 displayed prompts and Units 6-9 student teacher-comment isolation require exact new-commit CI."
   ],
   "lessons": [
     {
@@ -92,7 +106,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 2,
@@ -107,7 +129,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 3,
@@ -122,7 +152,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 4,
@@ -137,7 +175,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 5,
@@ -152,7 +198,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 6,
@@ -167,7 +221,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 7,
@@ -182,7 +244,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 8,
@@ -197,7 +267,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 9,
@@ -212,7 +290,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 10,
@@ -227,7 +313,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 11,
@@ -242,7 +336,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 12,
@@ -257,7 +359,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 13,
@@ -272,7 +382,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 14,
@@ -287,7 +405,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 15,
@@ -302,7 +428,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 16,
@@ -317,7 +451,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 17,
@@ -332,7 +474,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 18,
@@ -347,7 +497,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 19,
@@ -362,7 +520,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 20,
@@ -377,7 +543,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 21,
@@ -392,7 +566,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 22,
@@ -407,7 +589,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 23,
@@ -422,7 +612,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 24,
@@ -437,7 +635,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 25,
@@ -452,7 +658,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 26,
@@ -467,7 +681,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 27,
@@ -482,7 +704,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 28,
@@ -497,7 +727,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 29,
@@ -512,7 +750,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 30,
@@ -527,7 +773,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 31,
@@ -542,7 +796,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 32,
@@ -557,7 +819,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 33,
@@ -572,7 +842,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 34,
@@ -587,7 +865,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 35,
@@ -602,7 +888,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 36,
@@ -617,7 +911,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 37,
@@ -632,7 +934,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 38,
@@ -647,7 +957,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 39,
@@ -662,7 +980,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 40,
@@ -677,7 +1003,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 41,
@@ -692,7 +1026,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 42,
@@ -707,7 +1049,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 43,
@@ -722,7 +1072,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 44,
@@ -737,7 +1095,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 45,
@@ -752,7 +1118,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 46,
@@ -767,7 +1141,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 47,
@@ -782,7 +1164,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 48,
@@ -797,7 +1187,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 49,
@@ -812,7 +1210,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 50,
@@ -827,7 +1233,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 51,
@@ -842,7 +1256,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 52,
@@ -857,7 +1279,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 53,
@@ -872,7 +1302,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 54,
@@ -887,7 +1325,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 55,
@@ -902,7 +1348,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 56,
@@ -917,7 +1371,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 57,
@@ -932,7 +1394,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 58,
@@ -947,7 +1417,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 59,
@@ -962,7 +1440,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 60,
@@ -977,7 +1463,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 61,
@@ -992,7 +1486,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 62,
@@ -1007,7 +1509,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 63,
@@ -1022,7 +1532,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 64,
@@ -1037,7 +1555,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 65,
@@ -1052,7 +1578,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 66,
@@ -1067,7 +1601,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 67,
@@ -1082,7 +1624,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 68,
@@ -1097,7 +1647,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 69,
@@ -1112,7 +1670,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 70,
@@ -1127,7 +1693,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 71,
@@ -1142,7 +1716,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 72,
@@ -1157,7 +1739,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 73,
@@ -1172,7 +1762,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 74,
@@ -1187,7 +1785,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 75,
@@ -1202,7 +1808,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 76,
@@ -1217,7 +1831,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 77,
@@ -1232,7 +1854,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 78,
@@ -1247,7 +1877,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 79,
@@ -1262,7 +1900,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 80,
@@ -1277,7 +1923,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 81,
@@ -1292,7 +1946,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 82,
@@ -1307,7 +1969,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 83,
@@ -1322,7 +1992,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 84,
@@ -1337,7 +2015,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 85,
@@ -1352,7 +2038,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 86,
@@ -1367,7 +2061,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 87,
@@ -1382,7 +2084,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 88,
@@ -1397,7 +2107,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 89,
@@ -1412,7 +2130,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 90,
@@ -1427,7 +2153,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 91,
@@ -1442,7 +2176,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 92,
@@ -1457,7 +2199,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 93,
@@ -1472,7 +2222,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 94,
@@ -1487,7 +2245,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 95,
@@ -1502,7 +2268,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 96,
@@ -1517,7 +2291,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 97,
@@ -1532,7 +2314,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 98,
@@ -1547,7 +2337,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 99,
@@ -1562,7 +2360,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 100,
@@ -1577,7 +2383,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 101,
@@ -1592,7 +2406,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 102,
@@ -1607,7 +2429,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 103,
@@ -1622,7 +2452,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 104,
@@ -1637,7 +2475,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 105,
@@ -1652,7 +2498,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 106,
@@ -1667,7 +2521,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 107,
@@ -1682,7 +2544,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 108,
@@ -1697,7 +2567,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 109,
@@ -1712,7 +2590,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 110,
@@ -1727,7 +2613,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 111,
@@ -1742,7 +2636,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 112,
@@ -1757,7 +2659,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 113,
@@ -1772,7 +2682,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 114,
@@ -1787,7 +2705,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 115,
@@ -1802,7 +2728,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 116,
@@ -1817,7 +2751,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 117,
@@ -1832,7 +2774,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 118,
@@ -1847,7 +2797,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 119,
@@ -1862,7 +2820,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 120,
@@ -1877,7 +2843,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 121,
@@ -1892,7 +2866,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 122,
@@ -1907,7 +2889,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 123,
@@ -1922,7 +2912,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 124,
@@ -1937,7 +2935,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 125,
@@ -1952,7 +2958,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 126,
@@ -1967,7 +2981,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 127,
@@ -1982,7 +3004,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 128,
@@ -1997,7 +3027,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 129,
@@ -2012,7 +3050,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 130,
@@ -2027,7 +3073,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 131,
@@ -2042,7 +3096,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 132,
@@ -2057,7 +3119,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 133,
@@ -2072,7 +3142,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 134,
@@ -2087,7 +3165,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 135,
@@ -2102,7 +3188,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 136,
@@ -2117,7 +3211,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 137,
@@ -2132,7 +3234,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 138,
@@ -2147,7 +3257,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 139,
@@ -2162,7 +3280,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 140,
@@ -2177,7 +3303,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 141,
@@ -2192,7 +3326,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 142,
@@ -2207,7 +3349,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 143,
@@ -2222,7 +3372,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 144,
@@ -2237,7 +3395,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 145,
@@ -2252,7 +3418,15 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
     },
     {
       "ordinal": 146,
@@ -2267,7 +3441,34 @@
       "stageD": "D_TESTS_PASSED",
       "integrationE2E": "NOT_YET_PROVED",
       "humanAcademicReview": "APPROVAL_PENDING",
-      "finalAcceptance": "NOT_APPROVED"
+      "finalAcceptance": "NOT_APPROVED",
+      "genericAuthenticatedPractice": {
+        "status": "B001_DISPOSABLE_AUTHENTICATED_PAGE_AND_SELF_CONSISTENT_GRADE_PERSISTED",
+        "testedSourceSHA": "e702b36328ff90cbb01e7ac81a4a90c06e165989",
+        "runId": 39859786163,
+        "jobId": 120107198251,
+        "malformedAnswerRejectedAndPersisted": true,
+        "sourceSpecificCompanionVerified": false
+      }
+    }
+  ],
+  "fixesUnderValidation": [
+    {
+      "kind": "BUGFIX",
+      "paths": [
+        "src/Edulytics.Web/Views/Grade2Unit9Activities/Index.cshtml"
+      ],
+      "note": "Displayed independent arithmetic from Grade 2 Unit 8 despite grading with Unit 9. Correct to Unit 9 source of truth."
+    },
+    {
+      "kind": "AUTH_TRUST_BOUNDARY",
+      "paths": [
+        "src/Edulytics.Web/Views/Grade2Unit6Activities/Index.cshtml",
+        "src/Edulytics.Web/Views/Grade2Unit7Activities/Index.cshtml",
+        "src/Edulytics.Web/Views/Grade2Unit8Activities/Index.cshtml",
+        "src/Edulytics.Web/Views/Grade2Unit9Activities/Index.cshtml"
+      ],
+      "note": "Remove teacher observation fields from student input and discard submitted TeacherComments on the server."
     }
   ]
 }

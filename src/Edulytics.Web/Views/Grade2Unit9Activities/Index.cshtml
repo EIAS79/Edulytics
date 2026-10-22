@@ -21,13 +21,13 @@
 <label asp-for="Answers.ActualSourceShapeOrImage">Describe the actual original number line, base-ten model, or student strategy you observed.</label><textarea asp-for="Answers.ActualSourceShapeOrImage" maxlength="2000" rows="3"></textarea>
 <label asp-for="Answers.StudentCreatedDrawingOrWords">Show your own original number line, base-ten drawing or justification in words.</label><textarea asp-for="Answers.StudentCreatedDrawingOrWords" maxlength="2000" rows="3"></textarea>
 <label asp-for="Answers.RealPhysicalGameOrCoins">Actual dice, physical blocks, partner comparisons and student-selected solution method</label><textarea asp-for="Answers.RealPhysicalGameOrCoins" maxlength="2000" rows="3"></textarea>
-<label asp-for="Answers.TeacherComments">Teacher observation on actual original source work</label><textarea asp-for="Answers.TeacherComments" maxlength="2000" rows="2"></textarea></section>
+<p>Teacher observations and approval must be recorded by an authenticated teacher, not entered by the student.</p></section>
 <section><h2>3. Edulytics first-party independent numerical examples</h2>
 <p>These independently authored Edulytics expressions are NOT the publisher Cool-down. They do not certify original pictures, student representations, or classroom discussions.</p><div class="grid">
-<div><label asp-for="Answers.OwnA">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit8OriginalActivities.IndependentNumericExamples[Model.LessonNumber][0])</label><input asp-for="Answers.OwnA" type="number" min="0" max="1000"/></div>
-<div><label asp-for="Answers.OwnB">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit8OriginalActivities.IndependentNumericExamples[Model.LessonNumber][1])</label><input asp-for="Answers.OwnB" type="number" min="0" max="1000"/></div>
-<div><label asp-for="Answers.OwnC">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit8OriginalActivities.IndependentNumericExamples[Model.LessonNumber][2])</label><input asp-for="Answers.OwnC" type="number" min="0" max="1000"/></div>
-<div><label asp-for="Answers.OwnD">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit8OriginalActivities.IndependentNumericExamples[Model.LessonNumber][3])</label><input asp-for="Answers.OwnD" type="number" min="0" max="1000"/></div>
+<div><label asp-for="Answers.OwnA">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit9OriginalActivities.IndependentNumericExamples[Model.LessonNumber][0])</label><input asp-for="Answers.OwnA" type="number" min="0" max="1000"/></div>
+<div><label asp-for="Answers.OwnB">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit9OriginalActivities.IndependentNumericExamples[Model.LessonNumber][1])</label><input asp-for="Answers.OwnB" type="number" min="0" max="1000"/></div>
+<div><label asp-for="Answers.OwnC">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit9OriginalActivities.IndependentNumericExamples[Model.LessonNumber][2])</label><input asp-for="Answers.OwnC" type="number" min="0" max="1000"/></div>
+<div><label asp-for="Answers.OwnD">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit9OriginalActivities.IndependentNumericExamples[Model.LessonNumber][3])</label><input asp-for="Answers.OwnD" type="number" min="0" max="1000"/></div>
 </div><button type="submit">Check numeric results</button></section></form>
 @if(Model.Submitted){<section aria-live="polite"><h2>Results — numeric checks are not original teacher acceptance</h2>
 @foreach(var f in Model.Feedback){<h3>@f.Section</h3><p>@f.Comment</p>}</section>}

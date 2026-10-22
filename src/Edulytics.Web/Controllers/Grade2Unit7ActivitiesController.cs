@@ -35,6 +35,8 @@ public sealed class Grade2Unit7ActivitiesController(IStudentPrivatePracticeServi
         var(title,error)=await Access(lessonNumber,curriculumAdoptionId,lessonId,ct);
         if(error is not null)return error;
         if(a is null)return BadRequest("Missing source answers");
+        // Student-authored submissions must never impersonate authenticated teacher feedback.
+        a.TeacherComments = null;
         if(typeof(Grade2Unit7Answers).GetProperties().Where(p=>p.PropertyType==typeof(string))
             .Select(p=>p.GetValue(a) as string).Any(x=>x?.Length>2000))
             return BadRequest("Input length exceeds source companion limit");
