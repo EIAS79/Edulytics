@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original physical inch tiles and whole inch ruler">
+            <h2>Edulytics · what is an inch?</h2>
+            <p>Compare actual inch and centimeter rulers,
+            estimate and measure classroom objects using real
+            inch tiles and rulers, then estimate and measure original
+            rectangle/square/triangle sides. First-party numeric
+            illustrations never replace teacher-observed measurements.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson42Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open inch measurement</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L07" &&
          unifiedPracticeAdoptionId.HasValue)
     {

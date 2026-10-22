@@ -261,6 +261,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2Unit3MetersReptileTapeTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
          CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
@@ -1343,6 +1344,16 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             translationsByContentId.TryGetValue(
                                 content.Id,out var g2Stage2PreviousRows)
                                 ? g2Stage2PreviousRows
+                                : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(
+                                content.Id,out var g2InchPreviousRows)
+                                ? g2InchPreviousRows
                                 : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
