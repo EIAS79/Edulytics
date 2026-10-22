@@ -1,0 +1,34 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Unit4NextThreePage
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]=Model.Title;}
+<style>.g2u04{max-width:990px;margin:auto;padding:22px;color:#234452}.g2u04 section{background:#fff;border:1px solid #c8dce5;border-radius:12px;padding:18px;margin:16px 0}
+.g2u04 label{display:block;font-weight:700;margin:14px 0 4px}.g2u04 input,.g2u04 textarea{font:inherit;width:100%;max-width:620px;border:1px solid #8197a4;border-radius:8px;padding:10px}
+.g2u04 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px}
+.g2u04 button{padding:12px 20px;background:#117d94;color:#fff;font-weight:700;border:0;border-radius:8px}.g2u04 .correct{border-left:4px solid #29845b;padding-left:12px}.g2u04 .incorrect{border-left:4px solid #b34653;padding-left:12px}.g2u04 .teacher{border-left:4px solid #b09339;padding-left:12px}</style>
+<main class="g2u04">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>@Model.Title</h1><p>Grade 2, Unit 4, Lesson @Model.LessonNumber — source-grounded lessons 4–6, with teacher-only physical and image tasks.</p>
+<form asp-controller="Grade2Unit4NextThreeActivities" asp-action="Submit" asp-route-lessonNumber="@Model.LessonNumber" method="post">
+@Html.AntiForgeryToken()<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section><h2>1. Original source warm-up</h2>
+@if(Model.LessonNumber==5){<p>The publisher does NOT reveal one exact original dot value; the estimate needs teacher review. Values entered are hypotheses, not automatically graded.</p>}
+@{var names=new[]{"SourceA","SourceB","SourceC","SourceD"};}
+<div class="grid">
+@for(var i=0;i<4;i++){<div><label for="source-@i">@Model.SourceQuestions[i]</label><input id="source-@i" name="@names[i]" type="number" min="0" max="100" required/></div>}
+</div></section>
+<section><h2>2. ORIGINAL classroom task</h2><p>@Model.SourceActivity1</p><p>@Model.SourceActivity2</p>
+<label asp-for="Answers.SourceRealWork">Describe only your ACTUAL source paper, dice, chart, spinner or image evidence</label>
+<textarea asp-for="Answers.SourceRealWork" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.SourceDiscussion">What did your REAL partner or class discuss and revise?</label><textarea asp-for="Answers.SourceDiscussion" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.SourceTeacherObservation">What did the teacher examine on the physical source materials?</label>
+<textarea asp-for="Answers.SourceTeacherObservation" rows="2" maxlength="2000"></textarea></section>
+<section><h2>3. First-party Edulytics numerical exercises</h2><p>These invented examples are not the published cool-down or recorded source classroom results.</p>
+@{var independent=new[]{"IndependentA","IndependentB","IndependentC","IndependentD"};}
+<div class="grid">
+@for(var i=0;i<4;i++){<div><label for="independent-@i">@Model.IndependentQuestions[i]</label><input id="independent-@i" name="@independent[i]" type="number" min="0" max="100" required/></div>}
+</div><button type="submit">Check arithmetic, show teacher review status</button></section>
+</form>
+@if(Model.Submitted){<section aria-live="polite"><h2>Feedback</h2>@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"correct":r.Correct==false?"incorrect":"teacher")"><h3>@r.Section</h3><p>@r.Feedback</p></div>}</section>}
+<section><h2>Authentic teacher-only review</h2><p>@Model.TeacherBoundary</p>
+<ul>@foreach(var point in UsCcssG2Unit4NextThreeActivities.TeacherRubrics[Model.LessonNumber]){<li>@point</li>}</ul><p>No official grades, compilation claims or publisher restricted image reproduction.</p></section>
+</main>

@@ -354,6 +354,48 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit4 Lesson4</h2>
+            <p>Source real dice comparisons and three- or two-cube number-line placements. Educator must review actual class evidence; online numeric questions are first-party.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4NextThreeActivities" asp-action="Index"
+               asp-route-lessonNumber="4"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit4 Lesson5</h2>
+            <p>Source open-ended estimation and authentic ten-card class gallery. Educator must review actual class evidence; online numeric questions are first-party.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4NextThreeActivities" asp-action="Index"
+               asp-route-lessonNumber="5"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit4 Lesson6</h2>
+            <p>Optional real Number Line Scoot center and subtraction/decomposition. Educator must review actual class evidence; online numeric questions are first-party.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4NextThreeActivities" asp-action="Index"
+               asp-route-lessonNumber="6"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L03" &&
          unifiedPracticeAdoptionId.HasValue)
     {
