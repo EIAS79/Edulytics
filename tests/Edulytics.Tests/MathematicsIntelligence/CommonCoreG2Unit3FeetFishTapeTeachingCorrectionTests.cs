@@ -15,7 +15,7 @@ public sealed class CommonCoreG2Unit3FeetFishTapeTeachingCorrectionTests
         Assert.Contains("C catfish3 feet",t.Explanation);
         Assert.Contains("D koi2 feet6 inches",t.Explanation);
         Assert.Contains("NOT EXPECTED TO CONVERT",t.Explanation);
-        Assert.Contains("fish length is not given",t.CommonMistakes);
+        Assert.Contains("no actual measurement provided",t.CommonMistakes);
         Assert.Equal(CommonCoreG2Unit3FeetFishTapeTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(p.Doc,p.Lesson));
     }
