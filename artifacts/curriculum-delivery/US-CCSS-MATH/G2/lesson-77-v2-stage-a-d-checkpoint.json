@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 2,
+  "gradeOrdinal": 77,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U05:L10",
+  "title": "Place Value Comparisons (Part 1)",
+  "stageA": {
+    "status": "PUBLISHER_IM2021_ORIGINAL_LESSON_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-10/preparation.html",
+    "lessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-10/lesson.html",
+    "sourceBodySha256": "166e9f20aa6a54030497e7b3d522889aaa575857ff11fb98aaf7403f520c3ac8",
+    "sourceSemanticSha256": "fec350daf90666711ed5d1b9ed4092b889bc5a5f27c5c4103a625d52a0a2ea8b",
+    "officialOutcomeCodes": [
+      "CCSS:2.NBT.A.4",
+      "CCSS:2.NBT.B.8"
+    ],
+    "activityEvidence": "Original warmup and BOTH student-facing activities source-specific, including any optional real-center tasks; authentic figures and subjective response human-only",
+    "restricted": "Teacher-only source Cool-down inaccessible and never reconstructed"
+  },
+  "stageB": {
+    "status": "SHA_GUARDED_EXACT_SIX_FIELD_SOURCE_LESSON_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit5ComparisonSourceCorrections.cs",
+    "sourceVersion": "usccss-g2-u05-original-ordinal77-v2",
+    "originalAllFieldsAndOrderedStandardsGuarded": true
+  },
+  "stageC": {
+    "status": "SOURCE_LIMITED_FOUR_FIRST_PARTY_EXACT_SKILL_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "sourceRubric": "Original figures/number lines, deliberate multiple-solution estimates, card games and physical object counts reserved for educator",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit5ComparisonActivitiesController.cs",
+    "studentPage": "src/Edulytics.Web/Views/Grade2Unit5ComparisonActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit5ComparisonQuestions.cs",
+    "families": [
+      "usccss.g2.u05.l10.mental_add_tens",
+      "usccss.g2.u05.l10.compare_hundreds_first",
+      "usccss.g2.u05.l10.base_ten_equivalence",
+      "usccss.g2.u05.l10.greater_base_ten_quantity"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal77OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal77SourceMathematicsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal77IndependentExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal77WebStudentContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 78
+}
