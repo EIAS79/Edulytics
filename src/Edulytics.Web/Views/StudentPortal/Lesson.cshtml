@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original Compare Methods and Target Numbers Stage4">
+            <h2>Edulytics · compare base-ten subtraction and Target Numbers</h2>
+            <p>Identify true and false64 equivalences, compare
+            Diego, Elena and Tyler's methods of82−9, then use legal
+            subtraction of tens or ones in the Target Numbers Stage4
+            partner game. Genuine six-round gameplay is teacher-assessed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson24Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open target-number activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L05" &&
          unifiedPracticeAdoptionId.HasValue)
     {

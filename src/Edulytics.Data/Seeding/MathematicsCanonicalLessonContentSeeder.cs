@@ -243,6 +243,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit2DecomposeTenTeachingCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
          CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
@@ -1148,6 +1149,16 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             translationsByContentId.TryGetValue(
                                 content.Id,out var grade2FifthPreviousRows)
                                 ? grade2FifthPreviousRows
+                                : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(
+                                content.Id,out var g2TargetPreviousRows)
+                                ? g2TargetPreviousRows
                                 : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 

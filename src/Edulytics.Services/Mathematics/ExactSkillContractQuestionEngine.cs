@@ -179,6 +179,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson5DecomposeTenQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson6TargetNumbersQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -410,6 +411,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson4OptionalCenterQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit2Lesson5DecomposeTenQuestions.Supports(family))
             return UsCcssG2Unit2Lesson5DecomposeTenQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson6TargetNumbersQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson6TargetNumbersQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1218,6 +1221,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit2Lesson5DecomposeTenQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit2Lesson5DecomposeTenQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson6TargetNumbersQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson6TargetNumbersQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3132,6 +3141,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson4OptionalCenterQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit2Lesson5DecomposeTenQuestions.Supports(problem.Family))
             return UsCcssG2Unit2Lesson5DecomposeTenQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson6TargetNumbersQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson6TargetNumbersQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))
