@@ -10,7 +10,7 @@ public sealed class G2Ordinal62OriginalSourceGuardTests
             .Select(l=>(Document:d,Lesson:l))).Single();
         var en=x.Lesson.Translations.Single(t=>t.CultureCode=="en");
         Assert.Contains("Source-accurate IM K",en.Explanation);
-        Assert.Contains("First-party",en.StepByStepSolutions);
+        Assert.Contains("FIRST-PARTY",en.StepByStepSolutions);
         Assert.Equal(CommonCoreG2Unit4PlaceValueLineCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(x.Document,x.Lesson));
     }
