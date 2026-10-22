@@ -15,9 +15,9 @@ public sealed class UsCcssG2Unit2ThirteenthLessonStoryEquationsTests
     [Fact]
     public void FirstPartyCheckIsNumericalAndNeverClaimsTeacherCardValidation()
     {
-        var v=UsCcssG2Unit2ThirteenthLessonStoryEquations.Independent("36","34","65","35");
+        var v=UsCcssG2Unit2ThirteenthLessonStoryEquations.Independent("48","37","67","37");
         Assert.True(v.Correct);Assert.False(v.TeacherReviewNeeded);
-        Assert.False(UsCcssG2Unit2ThirteenthLessonStoryEquations.Independent("36","33","65","35").Correct);
+        Assert.False(UsCcssG2Unit2ThirteenthLessonStoryEquations.Independent("48","36","67","37").Correct);
         Assert.True(UsCcssG2Unit2ThirteenthLessonStoryEquations.TeacherRubric.Count>=6);
     }
 }

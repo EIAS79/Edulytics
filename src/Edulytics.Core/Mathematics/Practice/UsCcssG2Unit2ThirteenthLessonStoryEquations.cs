@@ -20,6 +20,16 @@ public static class UsCcssG2Unit2ThirteenthLessonStoryEquations
         int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out x)&&x>=min&&x<=max;
     private static string Normalize(string? s)=>
         Regex.Replace(s??"",@"\s+","").Replace('−','-');
+    public static Review Warmup(string? missing)
+    {
+        var ok=N(missing,0,100,out var value)&&value==13; // 27 + ? = 40.
+        return new(ok,true,ok
+            ?"27+13=40. Teacher checks the source tape diagram and explanation."
+            :"From 27+?=40, count 13 more. Original diagram interpretation is teacher-reviewed.");
+    }
+    // Historical test/client alias; the authoritative teacher/source boundary is SourceAnswers.
+    public static Review SourceFour(string? lin,string? andre,string? diego,string? kiran)=>
+        SourceAnswers(lin,andre,diego,kiran);
     public static Review SourceAnswers(string? lin,string? andre,string? diego,string? kiran)
     {
         var ok=N(lin,0,100,out var a)&&a==28&&N(andre,0,100,out var b)&&b==25&&
