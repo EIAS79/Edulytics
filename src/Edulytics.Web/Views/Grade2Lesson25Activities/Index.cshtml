@@ -1,0 +1,91 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson25Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Subtract Two Digits";
+}
+<style>
+.g2l25{max-width:950px;margin:auto;padding:20px;color:#234557}
+.g2l25 .panel{background:#fff;border:1px solid #cbdae3;border-radius:12px;padding:18px;margin:16px 0}
+.g2l25 label{display:block;margin:12px 0 5px;font-weight:700}
+.g2l25 input,.g2l25 textarea,.g2l25 select{font:inherit;width:100%;max-width:540px;border:1px solid #8197a4;border-radius:8px;padding:10px}
+.g2l25 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.g2l25 .action{background:#087e93;color:white;padding:13px 18px;border:0;border-radius:8px;font-weight:bold}
+.g2l25 .ok{border-left:4px solid #26885d;padding-left:12px}
+.g2l25 .bad{border-left:4px solid #b34459;padding-left:12px}
+.g2l25 .review{border-left:4px solid #aa8526;padding-left:12px}
+</style>
+<main class="g2l25">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Subtract Two Digits</h1>
+<p>Use genuine base-ten blocks or connecting cubes and explain your approach. These digital checks cannot verify real card play or physical models.</p>
+<form asp-controller="Grade2Lesson25Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<section class="panel">
+<h2>1. How Many Do You See? Compose a Ten</h2>
+<p>Look at the original teacher's two different 55 diagrams with a partner. Five tens and five ones equals 55. A pair of groups with five ones each can combine to make a ten.</p>
+<label asp-for="Answers.WarmupGrouping">Explain why two groupings have the same value</label>
+<textarea asp-for="Answers.WarmupGrouping" maxlength="2000" rows="2"></textarea>
+</section>
+<section class="panel">
+<h2>2. What's the Difference? — source numbers</h2>
+<p>Subtract with base-ten blocks or an alternate correct method, then use an inverse addition check. If subtracting by place, exchange one ten for ten ones.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstDifference">46−28 = ?</label><input asp-for="Answers.FirstDifference" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.FirstTradedTens">Tens in 46 after exchange</label><input asp-for="Answers.FirstTradedTens" type="number" min="0" max="9" required /></div>
+<div><label asp-for="Answers.FirstTradedOnes">Ones in 46 after exchange</label><input asp-for="Answers.FirstTradedOnes" type="number" min="0" max="19" required /></div>
+<div><label asp-for="Answers.SecondDifference">93−54 = ?</label><input asp-for="Answers.SecondDifference" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.SecondTradedTens">Tens in 93 after exchange</label><input asp-for="Answers.SecondTradedTens" type="number" min="0" max="9" required /></div>
+<div><label asp-for="Answers.SecondTradedOnes">Ones in 93 after exchange</label><input asp-for="Answers.SecondTradedOnes" type="number" min="0" max="19" required /></div>
+</div>
+<label asp-for="Answers.PartnerExplanation">How does a classmate's method differ from yours?</label>
+<textarea asp-for="Answers.PartnerExplanation" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel">
+<h2>3. Use Blocks to Take Away — real four-person card game</h2>
+<p>In a group of four, select original Diego, Lin, Jada or Han PLAYER cards. Use genuine printed action cards; each player changes their starting number twice. Explain your equations, then add four actual ending totals. The publisher card numbers are not available in the archived public page and are not invented here.</p>
+<label asp-for="Answers.RealPlayerCard">Your player from the printed card</label>
+<select asp-for="Answers.RealPlayerCard">
+<option value="">Select from your real card</option><option>Diego</option><option>Lin</option><option>Jada</option><option>Han</option>
+</select>
+<div class="grid">
+<div><label asp-for="Answers.RealStartingNumber">Printed initial value</label><input asp-for="Answers.RealStartingNumber" type="number" min="0" max="100" /></div>
+<div><label asp-for="Answers.RealCardActionOne">First real card action, in your own words</label><input asp-for="Answers.RealCardActionOne" maxlength="2000" /></div>
+<div><label asp-for="Answers.RealCardActionTwo">Second real card action, in your own words</label><input asp-for="Answers.RealCardActionTwo" maxlength="2000" /></div>
+<div><label asp-for="Answers.RealEndingNumber">Real ending number</label><input asp-for="Answers.RealEndingNumber" type="number" min="0" max="100" /></div>
+<div><label asp-for="Answers.RealGroupTotal">Real sum of four ending numbers</label><input asp-for="Answers.RealGroupTotal" type="number" min="0" max="400" /></div>
+</div>
+<p><strong>Independent Edulytics maths examples — NOT publisher game-card quantities:</strong></p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyA">64−27 = ?</label><input asp-for="Answers.FirstPartyA" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.FirstPartyB">72−35 = ?</label><input asp-for="Answers.FirstPartyB" type="number" min="0" max="100" required /></div>
+</div>
+</section>
+<section class="panel">
+<h2>4. Independent Edulytics Cool-down</h2>
+<div class="grid">
+<div><label asp-for="Answers.CoolA">73−46 = ?</label><input asp-for="Answers.CoolA" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolB">85−57 = ?</label><input asp-for="Answers.CoolB" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolC">62−34 = ?</label><input asp-for="Answers.CoolC" type="number" min="0" max="100" required /></div>
+</div>
+<button type="submit" class="action">Check arithmetic and show teacher rubric</button>
+</section>
+</form>
+@if(Model.Submitted)
+{
+<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var f in Model.Feedback)
+{
+<div class="@(f.Correct==true?"ok":f.Correct==false?"bad":"review")">
+<h3>@f.Section</h3><p>@(f.Correct==true?"Numerically correct":f.Correct==false?"Check the numbers":"Teacher review required"). @f.Feedback</p>
+</div>
+}
+</section>
+}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var rule in UsCcssG2Unit2SeventhLessonSubtractTwoDigits.TeacherRubric){<li>@rule</li>}</ul>
+<p>Source: IM K–5 2021 G2 Unit2 Lesson7. CCSS 2.NBT.B.5, 2.NBT.B.6, 2.NBT.B.9. No official grade or evidence of source card completion is saved.</p>
+</section></main>
