@@ -37,9 +37,10 @@ public static class UsCcssG2Unit2FourthLessonOptionalCenters
     public static Review CheckFiveTwoTurns(string? topFirst,string? lowerFirst,string? firstSum,
         string? topSecond,string? lowerSecond,string? secondSum)
     {
-        var parsed=N(topFirst,0,99,out var a)&&N(lowerFirst,0,99,out var b)&&
-            N(firstSum,0,100,out var sum1)&&N(topSecond,0,99,out var c)&&
-            N(lowerSecond,0,99,out var d)&&N(secondSum,0,100,out var sum2);
+        // Evaluate every parse so all out values are definitely assigned, even when an earlier input is invalid.
+        var parsed=N(topFirst,0,99,out var a) & N(lowerFirst,0,99,out var b) &
+            N(firstSum,0,100,out var sum1) & N(topSecond,0,99,out var c) &
+            N(lowerSecond,0,99,out var d) & N(secondSum,0,100,out var sum2);
         var changed=parsed&&((a==c&&b!=d)||(a!=c&&b==d));
         var ok=parsed&&a+b==sum1&&c+d==sum2&&sum1<=100&&sum2<=100&&changed;
         return new(ok,true,ok?"Two legal FIRST-PARTY arithmetic turns with exactly one clip moved. Teacher verifies the actual gameboard, player counters and five-in-row."

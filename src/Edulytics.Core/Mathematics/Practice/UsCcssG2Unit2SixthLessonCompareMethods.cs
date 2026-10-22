@@ -33,9 +33,11 @@ public static class UsCcssG2Unit2SixthLessonCompareMethods
     public static Review Target(string? first,string? card1,string? mode1,string? after1,
         string? card2,string? mode2,string? after2)
     {
-        var valid=N(first,99,99,out var start)&&N(card1,1,9,out var c1)&&
-            N(after1,0,99,out var next)&&N(card2,1,9,out var c2)&&
-            N(after2,0,99,out var finish)&&
+        // Bitwise Boolean AND intentionally evaluates each pure validation call so out variables are assigned.
+        var allNumbers=N(first,99,99,out var start) & N(card1,1,9,out var c1) &
+            N(after1,0,99,out var next) & N(card2,1,9,out var c2) &
+            N(after2,0,99,out var finish);
+        var valid=allNumbers &&
             (mode1 is "Ones" or "Tens")&&(mode2 is "Ones" or "Tens");
         var correct=valid&&start-(mode1=="Ones"?c1:10*c1)==next&&
             next-(mode2=="Ones"?c2:10*c2)==finish;
