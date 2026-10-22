@@ -14,7 +14,7 @@ public sealed class CommonCoreG2Unit2UnknownAddendTeachingCorrectionTests
         var t=pair.Lesson.Translations.Single(x=>x.CultureCode=="en");
         Assert.Contains("97,87,77",t.WorkedExamples);
         Assert.Contains("41+43=84",t.KeyConceptsAndRules);
-        Assert.Contains("17+31=48",t.WorkedExamples);
+        Assert.Contains("17+31=48",t.KeyConceptsAndRules);
         Assert.Contains("21+75=96",t.QuickSummary);
         Assert.Contains("base-ten blocks",t.Explanation);
         Assert.Equal(CommonCoreG2Unit2UnknownAddendTeachingCorrection.Version,
