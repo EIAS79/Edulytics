@@ -19,7 +19,7 @@ internal static class UsCcssG2Unit2Lesson6TargetNumbersQuestions
         string prompt,solution;
         if(family==Equivalent)
         {
-            var tens=r.Next(3,10),ones=r.Next(0,10),removedTens=r.Next(1,tens);
+            var tens=r.Next(3,10); var ones=r.Next(0,10); var removedTens=r.Next(1,tens);
             var whole=10*tens+ones;
             p["whole"]=whole;p["tens"]=tens;p["ones"]=ones;p["removedTens"]=removedTens;
             prompt=$"Start with {whole} ({tens} tens and {ones} ones). Exchange {removedTens} tens for ones without changing the value. How many ONES are in the new representation?";
@@ -27,7 +27,7 @@ internal static class UsCcssG2Unit2Lesson6TargetNumbersQuestions
         }
         else if(family==Diagram)
         {
-            var tens=r.Next(2,10),ones=r.Next(0,9),subtract=r.Next(ones+1,10);
+            var tens=r.Next(2,10); var ones=r.Next(0,9); var subtract=r.Next(ones+1,10);
             var whole=10*tens+ones;
             p["whole"]=whole;p["tens"]=tens;p["ones"]=ones;p["subtract"]=subtract;
             prompt=$"Source-style comparative diagrams: {whole}−{subtract}. Trade 1 ten and take away {subtract} ones. What is the final number?";
@@ -35,7 +35,7 @@ internal static class UsCcssG2Unit2Lesson6TargetNumbersQuestions
         }
         else
         {
-            var card=r.Next(1,10),current=r.Next(family==Tens?card*10:card,100);
+            var card=r.Next(1,10); var current=r.Next(family==Tens?card*10:card,100);
             p["card"]=card;p["current"]=current;
             prompt=$"FIRST-PARTY Target Numbers Stage4 arithmetic turn: current {current}, card {card}. Choose subtract "+
                 (family==Tens?"TENS (ten times the card).":"ONES (exactly the card).")+

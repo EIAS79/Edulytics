@@ -23,7 +23,7 @@ internal static class UsCcssG2Unit2Lesson3ZooStoryQuestions
         {
             var aTens=rng.Next(1,6);var bTens=rng.Next(1,10-aTens);
             var aOnes=rng.Next(0,9);var bOnes=rng.Next(0,10-aOnes);
-            var part=aTens*10+aOnes,other=bTens*10+bOnes,total=part+other;
+            var part=aTens*10+aOnes; var other=bTens*10+bOnes; var total=part+other;
             p["part"]=part;p["other"]=other;p["total"]=total;
             prompt=family==Bus
                 ?$"Original Edulytics NEW zoo-bus story: Some children were already on the bus. Then {other} got on, making {total}. How many were on FIRST?"
@@ -36,7 +36,7 @@ internal static class UsCcssG2Unit2Lesson3ZooStoryQuestions
             var smallerTens=rng.Next(1,largerTens);
             var smallerOnes=rng.Next(0,9);
             var largerOnes=rng.Next(smallerOnes,10);
-            var bigger=largerTens*10+largerOnes,smaller=smallerTens*10+smallerOnes;
+            var bigger=largerTens*10+largerOnes; var smaller=smallerTens*10+smallerOnes;
             p["bigger"]=bigger;p["smaller"]=smaller;
             prompt=family==Monkey
                 ?$"Original Edulytics NEW monkey-house story: {bigger} students visited; then {smaller} LEFT. How many remain?"

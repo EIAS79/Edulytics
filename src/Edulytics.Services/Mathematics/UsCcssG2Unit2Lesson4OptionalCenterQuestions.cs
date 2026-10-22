@@ -33,18 +33,18 @@ internal static class UsCcssG2Unit2Lesson4OptionalCenterQuestions
         }
         else if(family==Capture)
         {
-            var spin=random.Next(6,11),card=random.Next(0,11);
+            var spin=random.Next(6,11); var card=random.Next(0,11);
             p["spinner"]=spin;p["card"]=card;
             prompt=$"FIRST-PARTY Capture Squares numeric turn: spinner {spin}, card {card}. What board TARGET sum would you look for? This does not capture a square.";
             solution=$"{spin}+{card}={spin+card}. An adjacent-dot edge must still be drawn on a real board.";
         }
         else
         {
-            var hiTen=random.Next(1,6),loTen=random.Next(1,9-hiTen);
-            var hiOne=random.Next(1,10),loOne=family==Compose
+            var hiTen=random.Next(1,6); var loTen=random.Next(1,9-hiTen);
+            var hiOne=random.Next(1,10);var loOne=family==Compose
                 ?random.Next(10-hiOne,10)
                 :random.Next(0,10-hiOne);
-            var top=hiTen*10+hiOne,bottom=loTen*10+loOne;
+            var top=hiTen*10+hiOne; var bottom=loTen*10+loOne;
             p["top"]=top;p["bottom"]=bottom;
             prompt=$"FIRST-PARTY Five in a Row numeric turn: top clip {top}, bottom clip {bottom}. Find sum within100"+
                 (family==Compose?" by making a new ten.":" without making a new ten.")+

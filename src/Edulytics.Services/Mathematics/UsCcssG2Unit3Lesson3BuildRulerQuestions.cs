@@ -30,7 +30,7 @@ internal static class UsCcssG2Unit3Lesson3BuildRulerQuestions
     public static string Solve(string f,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid ruler interval parameters");
-        var n=p["end"]-p["start"],other=p["other"];
+        var n=p["end"]-p["start"]; var other=p["other"];
         var v=f switch{Tick or Shifted=>n,Compare=>n-other,Join=>n+other,_=>throw new InvalidOperationException()};
         return v.ToString(CultureInfo.InvariantCulture);
     }

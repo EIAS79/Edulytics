@@ -59,7 +59,7 @@ public static class CommonCoreG2Unit4MakeTenStrategiesCorrection
        if(!CanUpgradeExisting(d,l,prior))throw new InvalidOperationException("G2 U04 L11 unknown predecessor version");
        if(persisted.Count==0)return;
        if(persisted.Count!=1||persisted.Single().CultureCode!="en")throw new InvalidOperationException("G2 U04 L11 saved language drift");
-       var old=persisted.Single(),incoming=l.Translations.Single(x=>x.CultureCode=="en");
+       var old=persisted.Single(); var incoming=l.Translations.Single(x=>x.CultureCode=="en");
        if(old.Title!=incoming.Title||!(Has(old,false)||Has(old,true)))
           throw new InvalidOperationException("G2 U04 L11 saved prose is not an approved predecessor");
     }

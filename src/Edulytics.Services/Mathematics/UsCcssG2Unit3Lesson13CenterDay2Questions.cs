@@ -28,14 +28,14 @@ internal static class UsCcssG2Unit3Lesson13CenterDay2Questions
             var missing=rng.Next(11,36);
             if(family==Add)
             {
-                var known=rng.Next(26,101-missing),sum=known+missing;
+                var known=rng.Next(26,101-missing); var sum=known+missing;
                 p["known"]=known;p["total"]=sum;
                 prompt=$"FIRST-PARTY Number Puzzles-style missing addend: {known}+?={sum}. What number makes the equation true?";
                 explain=$"{sum}−{known}={missing}.";
             }
             else
             {
-                var result=rng.Next(12,51),start=result+missing;
+                var result=rng.Next(12,51); var start=result+missing;
                 p["start"]=start;p["result"]=result;
                 prompt=$"FIRST-PARTY missing subtrahend: {start}−?={result}. What number makes the equation true?";
                 explain=$"{start}−{result}={missing}.";

@@ -13,9 +13,9 @@ internal static class UsCcssG2Unit2Lesson13StoryEquationsQuestions
     public static Problem Build(string family,Random r)
     {
         if(!Supports(family))throw new InvalidOperationException("Not G2 U02 L13 exact question");
-        var aTens=r.Next(2,8),bTens=r.Next(1,9-aTens);
-        var aOnes=r.Next(1,10),bOnes=r.Next(10-aOnes,10);
-        var start=10*aTens+aOnes,change=10*bTens+bOnes,total=start+change;
+        var aTens=r.Next(2,8); var bTens=r.Next(1,9-aTens);
+        var aOnes=r.Next(1,10); var bOnes=r.Next(10-aOnes,10);
+        var start=10*aTens+aOnes; var change=10*bTens+bOnes; var total=start+change;
         var p=new Dictionary<string,int>(StringComparer.Ordinal){
             ["start"]=start,["change"]=change,["total"]=total,["aTens"]=aTens,
             ["bTens"]=bTens,["aOnes"]=aOnes,["bOnes"]=bOnes};

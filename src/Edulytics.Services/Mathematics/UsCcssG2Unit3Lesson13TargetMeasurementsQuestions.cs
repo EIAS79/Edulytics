@@ -27,9 +27,9 @@ internal static class UsCcssG2Unit3Lesson13TargetMeasurementsQuestions
         }
         else
         {
-            var tenA=r.Next(1,5),tenB=r.Next(1,5),oneA=r.Next(5,10);
+            var tenA=r.Next(1,5); var tenB=r.Next(1,5); var oneA=r.Next(5,10);
             var oneB=r.Next(10-oneA,10);
-            var a=10*tenA+oneA,b=10*tenB+oneB;
+            var a=10*tenA+oneA; var b=10*tenB+oneB;
             if(a+b>100)throw new InvalidOperationException("Generated >100");
             p["a"]=a;p["b"]=b;
             if(family==Compose)

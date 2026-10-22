@@ -301,10 +301,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Questions);
         var g2Compare = CommonCoreG2Unit1BarCompareTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Centers2);
-        var g2Tape = CommonCoreG2Unit1TapeDiagramTeachingCorrection
+        var g2Unit1Tape = CommonCoreG2Unit1TapeDiagramTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Compare);
         var g2Positions = CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection
-            .GetExpectedContentVersion(document, lesson, g2Tape);
+            .GetExpectedContentVersion(document, lesson, g2Unit1Tape);
         var g2AllPositions = CommonCoreG2Unit1AllCompareProblemsTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Positions);
         var g2Collections = CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection

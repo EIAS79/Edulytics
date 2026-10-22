@@ -60,7 +60,7 @@ public static class CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection
         if(!CanUpgradeExisting(d,l,prior))throw new InvalidOperationException("G2 U03 L06 unapproved persisted predecessor version");
         if(rows.Count==0)return;
         if(rows.Count!=1||rows.Single().CultureCode!="en")throw new InvalidOperationException("G2 U03 L06 previous rows changed");
-        var stored=rows.Single(),incoming=l.Translations.Single(x=>x.CultureCode=="en");
+        var stored=rows.Single(); var incoming=l.Translations.Single(x=>x.CultureCode=="en");
         if(stored.Title!=incoming.Title||!(Equal(stored,false)||Equal(stored,true)))
             throw new InvalidOperationException("G2 U03 L06 persisted six fields changed");
     }
