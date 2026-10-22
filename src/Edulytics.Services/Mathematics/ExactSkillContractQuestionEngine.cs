@@ -213,6 +213,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit4NextThreeQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit4ArrowLessonsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit4FinalSixQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -512,6 +513,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit4NextThreeQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit4ArrowLessonsQuestions.Supports(family))
             return UsCcssG2Unit4ArrowLessonsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit4FinalSixQuestions.Supports(family))
+            return UsCcssG2Unit4FinalSixQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1524,6 +1527,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit4ArrowLessonsQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit4ArrowLessonsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit4FinalSixQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit4FinalSixQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3506,6 +3515,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit4NextThreeQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit4ArrowLessonsQuestions.Supports(problem.Family))
             return UsCcssG2Unit4ArrowLessonsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit4FinalSixQuestions.Supports(problem.Family))
+            return UsCcssG2Unit4FinalSixQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))
