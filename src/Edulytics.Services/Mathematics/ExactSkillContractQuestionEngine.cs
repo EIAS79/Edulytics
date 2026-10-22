@@ -192,6 +192,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit2Lesson16MarketInventoryQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit3Lesson1StandardUnitsQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit3Lesson2MeasureCmQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson3BuildRulerQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -449,6 +450,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit3Lesson1StandardUnitsQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit3Lesson2MeasureCmQuestions.Supports(family))
             return UsCcssG2Unit3Lesson2MeasureCmQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson3BuildRulerQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson3BuildRulerQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1335,6 +1338,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit3Lesson2MeasureCmQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit3Lesson2MeasureCmQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson3BuildRulerQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson3BuildRulerQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3275,6 +3284,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit3Lesson1StandardUnitsQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit3Lesson2MeasureCmQuestions.Supports(problem.Family))
             return UsCcssG2Unit3Lesson2MeasureCmQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson3BuildRulerQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson3BuildRulerQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))

@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source Grade2 create ruler and compare lengths">
+            <h2>Edulytics · create and use a ruler</h2>
+            <p>Draw a real 0–25 centimeter ruler using authentic
+            one-centimeter cubes to space tick marks. Measure the
+            original A–F rectangles with your teacher; the online
+            interval and comparison examples are independently authored.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson37Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open centimeter ruler activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L02" &&
          unifiedPracticeAdoptionId.HasValue)
     {

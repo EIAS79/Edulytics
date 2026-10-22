@@ -1033,6 +1033,8 @@ public static class LessonPracticeContractRegistry
             byLesson[reviewed.LessonCode] = reviewed;
         foreach (var reviewed in UsCcssG2Unit3Lesson2MeasureCmContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson3BuildRulerContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
         // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
         // V1 G1-010: original 2021 ordinals 46-50 only (U03 L09-L13).
         foreach(var reviewed in UsCcssG1FullGradeUnit7GeometryTimePracticeContracts.Reviewed)
