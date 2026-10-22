@@ -58,7 +58,7 @@ public sealed class CommonCoreG2TapeDiagramAndStoryResolutionTests
             Assert.Contains("38+7=45",english.WorkedExamples);
             Assert.Contains("gallery walk",english.WorkedExamples,StringComparison.OrdinalIgnoreCase);
             Assert.Contains("poster",english.WorkedExamples,StringComparison.OrdinalIgnoreCase);
-            Assert.Contains("story",english.KeyConceptsAndRules,StringComparison.OrdinalIgnoreCase);
+            Assert.Contains("stories",english.KeyConceptsAndRules,StringComparison.OrdinalIgnoreCase);
         }
     }
 

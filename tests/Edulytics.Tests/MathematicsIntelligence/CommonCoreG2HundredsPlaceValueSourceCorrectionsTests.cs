@@ -50,20 +50,20 @@ public sealed class CommonCoreG2HundredsPlaceValueSourceCorrectionsTests
         });
 
         var first = targets[0];
-        Assert.Contains("10 tens = 100 ones = 1 hundred", first.English.StepByStepSolutions);
-        Assert.Contains("90 + 10 = 100", first.English.WorkedExamples);
+        Assert.Contains("10 tens=100 ones=1 hundred",first.English.KeyConceptsAndRules);
+        Assert.Contains("source100=8×10+20",first.English.WorkedExamples);
         Assert.Equal(new[] { "CCSS:2.NBT.A.1", "CCSS:2.NBT.A.2" }, first.Lesson.OutcomeCodes);
         Assert.Equal(100, 10 * 10);
 
         var second = targets[1];
-        Assert.Contains("20 tens = 2 hundreds = 200", second.English.WorkedExamples);
-        Assert.Contains("80 × 10 = 800", second.English.WorkedExamples);
+        Assert.Contains("200=20 tens",second.English.WorkedExamples);
+        Assert.Contains("700=70 tens",second.English.WorkedExamples);
         Assert.Equal(800, 80 * 10);
         Assert.Equal(110, 11 * 10);
 
         var third = targets[2];
-        Assert.Contains("200 + 280 + 15 = 495", third.English.WorkedExamples);
-        Assert.Contains("400 + 90 + 5 = 495", third.English.StepByStepSolutions);
+        Assert.Contains("source2h+28t+15o=495",third.English.WorkedExamples);
+        Assert.Contains("=4h+9t+5o",third.English.WorkedExamples);
         Assert.Equal(new[] {"CCSS:2.NBT.A.1", "CCSS:2.NBT.A.2", "CCSS:2.NBT.B.5"},
             third.Lesson.OutcomeCodes);
         Assert.Equal(495, 2*100 + 28*10 + 15);
