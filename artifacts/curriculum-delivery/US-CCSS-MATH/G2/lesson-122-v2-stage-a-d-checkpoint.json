@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 122,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U08:L02",
+  "title": "Partners Make Pairs",
+  "stageA": {
+    "status": "PUBLIC_SOURCE_ORIGINAL_TEXT_REVIEWED_MEDIA_TEACHER",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-122-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-8/lesson-2/preparation.html",
+    "sourceSha256": "660fafd839d002c655c9495a460b037892e07cea3cc2a907d0bd7ba17246a28a",
+    "standards": [
+      "CCSS:2.OA.C.3"
+    ]
+  },
+  "stageB": {
+    "status": "SIX_FIELD_SHA_GUARDED_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit8SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-122-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_EXACT_FIRSTPARTY_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit8ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit8ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit8Activities/Index.cshtml",
+    "teacherOnly": "Pair real red/yellow counters from source bags 4–15; determine 18,20 students paired exactly,19 one unpaired. Original source sock images and T-chart teacher.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal122OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal122SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal122ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal122StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 123
+}
