@@ -1,11 +1,26 @@
 namespace Edulytics.Web.ViewModels.LessonContent;
 public sealed class Grade2Lesson47Answers
 {
- public string? Talk1{get;set;}public string? Talk2{get;set;}public string? Talk3{get;set;}public string? Talk4{get;set;}
- public string? Target{get;set;}="8";public string? Actual{get;set;}="10";public string? Unit{get;set;}="cm";public string? Score{get;set;}
- public string? PartnerLineReflection{get;set;}public string? RealEightRoundRecord{get;set;}
- public string? PuzzleAdd{get;set;}public string? PuzzleSub{get;set;}public string? RealDigitCardReflection{get;set;}
- public string? ExitMeasure{get;set;}public string? ExitAdd{get;set;}
+    public string? TalkA{get;set;}
+    public string? TalkB{get;set;}
+    public string? TalkC{get;set;}
+    public string? TalkD{get;set;}
+    public string? MakeTenExplanation{get;set;}
+    public string? Unit{get;set;}="cm";
+    public string? TargetLength{get;set;}="7";
+    public string? ActualLength{get;set;}="9";
+    public string? AbsoluteError{get;set;}
+    public string? SourceRealDrawnLine{get;set;}
+    public string? SourceEightRounds{get;set;}
+    public string? PuzzleSum{get;set;}
+    public string? PuzzleUnknownAddend{get;set;}
+    public string? PuzzleDifference{get;set;}
+    public string? PuzzleUnknownSubtrahend{get;set;}
+    public string? OriginalPuzzleCardExplanation{get;set;}
+    public string? ExitA{get;set;}
+    public string? ExitB{get;set;}
+    public string? ExitC{get;set;}
 }
-public sealed record Grade2Lesson47Page(Guid AdoptionId,Guid LessonId,string Title,bool Submitted,Grade2Lesson47Answers Answers,IReadOnlyList<Grade2Lesson47Feedback> Feedback);
+public sealed record Grade2Lesson47Page(Guid AdoptionId,Guid LessonId,string Title,
+    bool Submitted,Grade2Lesson47Answers Answers,IReadOnlyList<Grade2Lesson47Feedback> Feedback);
 public sealed record Grade2Lesson47Feedback(string Section,bool? Correct,bool TeacherReviewNeeded,string Explanation);
