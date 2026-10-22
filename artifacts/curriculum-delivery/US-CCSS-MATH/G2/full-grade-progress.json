@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 52,
-    "firstUnclosedLesson": 53,
-    "nextSequentialLesson": 53,
-    "currentWork": "G2 original IM2021 ordinals1-52 A-B-C authored sequentially; L52 optional real 3x5 card 36-inch homemade yardstick, real same-desk line plot and two-person teacher checks, four first-party exact families, four regression files written UNRUN. Next G2 U04 L01 ordinal53. Stage D/tests/CI not run; no main merge or deploy."
+    "lastConsecutiveACClosed": 53,
+    "firstUnclosedLesson": 54,
+    "nextSequentialLesson": 54,
+    "currentWork": "G2 original IM2021 ordinals1-53 A-B-C authored consecutively; L53 original source zero-anchored equal-interval 0..10 and physically built 0..20 with points3/13, four first-party exact families and four test files written UNRUN. Next ordinal54 G2 U04 L02; no tests, CI, Stage D, main merge or deployment."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -63,7 +63,8 @@
     "G2 ordinal49 local book read-only, preserved original Group C 10cm mode vs 16cm longest and empty 11,15cm ticks; GitHub-only A–C, StageD unrun.",
     "Ordinal50 original GroupB plant height data source reviewed local read-only, line plots25..35, four exact families, independent fictional data, four unrun test files GitHub-only.",
     "G2 ordinal51 locally archived teacher source read-only, optional Stage1 creating plots, 8-item first-party not source dataset, four unexecuted regression files; GitHub writes only.",
-    "G2 ordinal52 2021 optional physical 36in yardstick with REAL 3x5in card, zero-aligned equal1in intervals, same physical desk, revised ruler and optional hand/forearm actual equations preserved; four tests written NOT EXECUTED, digital fictional calculations never certify physical measurements."
+    "G2 ordinal52 2021 optional physical 36in yardstick with REAL 3x5in card, zero-aligned equal1in intervals, same physical desk, revised ruler and optional hand/forearm actual equations preserved; four tests written NOT EXECUTED, digital fictional calculations never certify physical measurements.",
+    "G2 ordinal53 CCSS2.MD.B.6 first source 0..10 missing labels3,4,6,7 and open-choice point tasks, second real 0..20 student line with dots3 and13 and teacher pair discussion. Four numeric exact families plus test files written, tests NOT EXECUTED, Stage D NOT STARTED."
   ],
   "lessonStatuses": [
     {
@@ -641,13 +642,13 @@
     {
       "gradeOrdinal": 53,
       "lessonCode": "PED:US-CCSS-MATH:G2:U04:L01",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "LOCAL_IM2021_G2_U04_L01_NUMBER_LINE_SOURCE_0_10_0_20_REVIEWED",
+      "teaching": "SHA_GUARDED_ORIGINAL_NUMBER_LINE_ZERO_UNIT_INTERVAL_TEACHING_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_NUMBER_LINE_FAMILIES_SOURCE_POINT_OPEN_CHOICE_AND_PHYSICAL_TEACHER_ONLY",
+      "tests": "FOUR_TEST_FILES_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 54,
