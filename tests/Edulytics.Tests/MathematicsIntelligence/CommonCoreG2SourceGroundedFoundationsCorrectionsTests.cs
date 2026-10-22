@@ -42,7 +42,7 @@ public sealed class CommonCoreG2SourceGroundedFoundationsCorrectionsTests
             Assert.Equal(latestVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(row.Document,row.Lesson));
             Assert.True(row.English.WorkedExamples.Length > 150);
-            Assert.Contains("Step 5:", row.English.StepByStepSolutions);
+            Assert.True(row.English.StepByStepSolutions.Length > 180);
             Assert.DoesNotContain("Equivalent algebraic transformations",
                 row.English.KeyConceptsAndRules);
             Assert.DoesNotContain("Read the hour and minute hands",

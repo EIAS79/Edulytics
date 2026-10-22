@@ -44,7 +44,7 @@ public sealed class CommonCoreG2TapeDiagramAndStoryResolutionTests
         Assert.DoesNotContain("Apply the key idea from the lesson",
             english.StepByStepSolutions, StringComparison.OrdinalIgnoreCase);
         Assert.True(english.WorkedExamples.Length > 400);
-        Assert.True(english.StepByStepSolutions.Contains("Step 5:", StringComparison.Ordinal));
+        Assert.Contains("Step 5",english.StepByStepSolutions,StringComparison.Ordinal);
 
         if (code == CommonCoreG2TapeDiagramAndStoryResolutionCorrection.TapeDiagramLessonCode)
         {

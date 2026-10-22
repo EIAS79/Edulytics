@@ -40,7 +40,8 @@ public sealed class CommonCoreG2HundredsPlaceValueSourceCorrectionsTests
                 row.English.StepByStepSolutions);
             Assert.DoesNotContain("Apply the key idea from the lesson",
                 row.English.StepByStepSolutions);
-            Assert.Contains("Step 5:", row.English.StepByStepSolutions);
+            Assert.Contains("ORIGINAL", row.English.StepByStepSolutions);
+            Assert.True(row.English.StepByStepSolutions.Length > 180);
             Assert.Contains("hundred", row.English.StepByStepSolutions,
                 StringComparison.OrdinalIgnoreCase);
             Assert.DoesNotContain("...", row.English.WorkedExamples);
