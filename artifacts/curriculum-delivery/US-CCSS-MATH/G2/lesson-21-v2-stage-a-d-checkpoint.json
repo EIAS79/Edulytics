@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 21,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L03",
+  "title": "Add or Subtract to Solve Story Problems",
+  "sourceEdition": "IM K-5 2021 first edition",
+  "unitNumber": 2,
+  "lessonNumber": 3,
+  "officialOutcomeCodes": [
+    "CCSS:2.NBT.B.5",
+    "CCSS:2.OA.A.1"
+  ],
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_PUBLIC_SOURCE_TEACHER_LESSON",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-3/lesson.html",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-3/preparation.html",
+    "sourceSemanticSha256": "3fe8c3d126f1b5104f8cb6877338dd30b3a75f366048f517b873f416c75e6361",
+    "canonicalBodySha256": "e2401085452e7a9be779a7c680b620424b66ad46fca6810c5ac4300d883467e5",
+    "warmup": "How Many Do You See? base-ten diagram visual, partner count by tens and ones, regroup 10 drawn ones into a ten as a representation choice only.",
+    "activity1": "MLR6 Three Reads: Some students on zoo bus,34 more board,55 now on bus, unknown START21; start+34=55.",
+    "activity2": "More Fun at the Zoo: monkey house65−23=42; bears58−lions27=31 MORE; birds inside34 and total88 -> outdoors54.",
+    "lessonSynthesis": "Tens/ones diagrams and equations show 88−34=54 and the inverse; student work and real discussions reviewed by teacher.",
+    "coolDown": "Source educator-login 'Time to Leave' restricted; independent Edulytics alternative must not be represented as publisher original.",
+    "constraints": "Original all tasks within100 without composing or decomposing ten; choose mathematical structures first; no physical participation inference.",
+    "rights": "Source maths facts attributed; original publisher artwork and protected response sheets not copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_PREDECESSOR_SHA_SOURCE_GUARDED_RICH_LEARNER_BODY",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gate": "Original pack URL, exact body SHA, ordered standards, previous six fields and rich-content version required",
+    "repair": "Full authentic warmup + two zoo activities + four different problem structures + no regrouping + learner strategy explanations instead of generic subtract-only steps."
+  },
+  "stageC": {
+    "status": "COMPLETE_STUDENT_AND_FOUR_EXACT_FAMILIES_WITH_WRITTEN_UNRUN_TESTS",
+    "practiceContracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson3ZooStoryContracts.cs",
+    "practiceEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson3ZooStoryQuestions.cs",
+    "families": [
+      "usccss.g2.u02.l03.zoo_bus_start_unknown",
+      "usccss.g2.u02.l03.zoo_monkey_result_unknown",
+      "usccss.g2.u02.l03.zoo_bears_compare_gap",
+      "usccss.g2.u02.l03.zoo_birds_part_unknown"
+    ],
+    "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson21Page.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson21ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson21Activities/Index.cshtml",
+    "mathVerifier": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2ThirdLessonZooStories.cs",
+    "coolDown": "Independent Edulytics 74−32=42,67−25=42,86−43=43; original protected Cool-down not copied.",
+    "studentChecks": "Exact original zoo source problems, missing starting bus addend and matching equation, three other distinct source numeric answers, independently authored cool-down.",
+    "teacherOnly": "Original warm-up images, MLR6 oral Three Reads, actual blocks, hand-drawn representations and partner methods teacher-reviewed; correct digital answers do not certify these actions.",
+    "security": "StudentPortal authorization, adoption and published student content guard, anti-forgery POST, bounded form inputs, no official grade saved.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2ZooStoryProblemsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2ThirdLessonZooStoriesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson3ZooStoryQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson21ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "ciExecuted": false,
+    "productionValidated": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "runtimeCompilationVerified": false,
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U02_L04_ORDINAL22_STAGE_A_ONLY_AFTER_L21_AC_CLOSURE"
+}
