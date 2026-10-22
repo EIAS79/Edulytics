@@ -86,6 +86,9 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit4CompareNumberLinesCorrection.Apply(document);
         CommonCoreG2Unit4EstimateNumberLineCorrection.Apply(document);
         CommonCoreG2Unit4CenterDay1NumberLineCorrection.Apply(document);
+        CommonCoreG2Unit4DirectionalJumpCorrection.Apply(document);
+        CommonCoreG2Unit4EquationArrowCorrection.Apply(document);
+        CommonCoreG2Unit4DifferenceStrategiesCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -374,8 +377,14 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Batch);
         var g2Batch3 = CommonCoreG2Unit4CenterDay1NumberLineCorrection
             .GetExpectedContentVersion(document, lesson, g2Batch2);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Jump1 = CommonCoreG2Unit4DirectionalJumpCorrection
             .GetExpectedContentVersion(document, lesson, g2Batch3);
+        var g2Jump2 = CommonCoreG2Unit4EquationArrowCorrection
+            .GetExpectedContentVersion(document, lesson, g2Jump1);
+        var g2Jump3 = CommonCoreG2Unit4DifferenceStrategiesCorrection
+            .GetExpectedContentVersion(document, lesson, g2Jump2);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Jump3);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -507,6 +516,9 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit4CompareNumberLinesCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit4EstimateNumberLineCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit4CenterDay1NumberLineCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4DirectionalJumpCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4EquationArrowCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4DifferenceStrategiesCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -658,6 +670,9 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit4CompareNumberLinesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit4EstimateNumberLineCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit4CenterDay1NumberLineCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4DirectionalJumpCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4EquationArrowCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4DifferenceStrategiesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections
