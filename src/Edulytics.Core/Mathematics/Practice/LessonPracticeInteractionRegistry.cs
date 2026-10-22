@@ -205,6 +205,11 @@ public static class LessonPracticeInteractionRegistry
             answerType=="exact_integer")
             return LessonPracticeInteractionKind.IntegerKeypad;
 
+        // G2 U02 L03 compare-gap answers are integers, not bare <,=,>.
+        if(familyId.StartsWith("usccss.g2.u02.l03.",StringComparison.Ordinal) &&
+           answerType=="exact_integer")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+
         if (answerType is "side_label" or "boolean" or "ordered_labels")
             return LessonPracticeInteractionKind.StructuredEntry;
 

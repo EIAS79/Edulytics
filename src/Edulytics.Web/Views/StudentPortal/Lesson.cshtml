@@ -354,6 +354,25 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics zoo stories, start unknown, compare and remaining quantity">
+            <h2>Edulytics · original zoo problem stories and explanations</h2>
+            <p>Start with MLR6 Three Reads to interpret the unknown
+            first students on a zoo bus, then solve original monkey,
+            bear/lion and bird stories. Use drawings or base-ten blocks,
+            discuss authentic methods with a partner, and finish the
+            independently authored Edulytics Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson21Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open the four source zoo stories
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L02" &&
          unifiedPracticeAdoptionId.HasValue)
     {
