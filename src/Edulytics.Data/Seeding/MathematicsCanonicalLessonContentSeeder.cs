@@ -128,7 +128,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30 + 29; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30 + 50; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -238,6 +238,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
          CommonCoreG2Unit5OriginalRichContentCorrections.IsTarget(document, lesson) ||
          CommonCoreG2Unit5ComparisonSourceCorrections.IsTarget(document, lesson) ||
+         CommonCoreG2Unit6SourceCorrections.IsTarget(document, lesson) ||
          CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit1ClassSurveysTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.IsTarget(document, lesson) ||
@@ -1543,6 +1544,13 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         CommonCoreG2Unit4JumpTheLineCenterCorrection.ValidateExistingBodyBeforeUpgrade(document,sourceLesson,content.ContentVersion,
                             translationsByContentId.TryGetValue(content.Id,out var g2NextSourceRows4)?
                                 g2NextSourceRows4:Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit6SourceCorrections.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit6SourceCorrections.ValidateExistingBodyBeforeUpgrade(document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2U6OriginalStoredRows)
+                              ?g2U6OriginalStoredRows:Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
                     if (CommonCoreG2Unit5ComparisonSourceCorrections.IsTarget(document, sourceLesson))
