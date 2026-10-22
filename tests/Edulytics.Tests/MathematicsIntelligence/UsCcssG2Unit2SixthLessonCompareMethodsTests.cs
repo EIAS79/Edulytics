@@ -22,7 +22,7 @@ public sealed class UsCcssG2Unit2SixthLessonCompareMethodsTests
         Assert.False(UsCcssG2Unit2SixthLessonCompareMethods.Target(
             "99","4","Tens","95","7","Tens","25").Correct);
         Assert.False(UsCcssG2Unit2SixthLessonCompareMethods.Target(
-            "99","4","Ones","95","9","Tens","5").Correct);
+            "99","4","Ones","95","9","Tens","4").Correct);
         Assert.True(UsCcssG2Unit2SixthLessonCompareMethods.Cooldown("63","53","84").Correct);
         Assert.False(UsCcssG2Unit2SixthLessonCompareMethods.Cooldown("63","54","84").Correct);
     }

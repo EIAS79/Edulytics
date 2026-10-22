@@ -15,7 +15,7 @@ public sealed class CommonCoreG2Unit2TargetNumbersStage4TeachingCorrectionTests
         Assert.Contains("FALSE",en.Explanation);
         Assert.Contains("Tyler",en.WorkedExamples);
         Assert.Contains("Target Numbers Stage4",en.Explanation);
-        Assert.Contains("number cards1–9",en.KeyConceptsAndRules,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("valid cards are integers1..9",en.KeyConceptsAndRules,StringComparison.OrdinalIgnoreCase);
         Assert.Equal(CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(pair.Doc,pair.Lesson));
     }
