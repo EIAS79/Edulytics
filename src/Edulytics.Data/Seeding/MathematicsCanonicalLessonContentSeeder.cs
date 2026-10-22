@@ -267,6 +267,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit3TargetMeasurementsTeachingCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
          CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
@@ -1389,6 +1390,16 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             translationsByContentId.TryGetValue(
                                 content.Id,out var g2RibbonPreviousRows)
                                 ? g2RibbonPreviousRows
+                                : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(
+                                content.Id,out var g2HandSpanPriorRows)
+                                ? g2HandSpanPriorRows
                                 : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 

@@ -75,6 +75,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection.Apply(document);
         CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.Apply(document);
         CommonCoreG2Unit3TargetMeasurementsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -341,8 +342,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Ribbon);
         var g2TargetMeasure = CommonCoreG2Unit3TargetMeasurementsTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Bracelets);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2HandSpan = CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2TargetMeasure);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2HandSpan);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -463,6 +466,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit3TargetMeasurementsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -603,6 +607,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit3TargetMeasurementsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections

@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L14" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 numerical hand-span line plot">
+            <h2>Edulytics · What is a Line Plot?</h2>
+            <p>Compare category and numerical graphs, trace your
+            own hand and measure your span to the nearest inch,
+            then place ONE X per student on the authentic class
+            line plot. Independent Edulytics fictional data has
+            a separate interactive numerical check.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson48Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open hand-span line plot</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L13" &&
          unifiedPracticeAdoptionId.HasValue)
     {
