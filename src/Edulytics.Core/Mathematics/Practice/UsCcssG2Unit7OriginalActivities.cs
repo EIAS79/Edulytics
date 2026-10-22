@@ -11,6 +11,18 @@ public static class UsCcssG2Unit7OriginalActivities
  [3]="Warm-up 120+20,120+200,124+30,124+300. Activity 1 compare Jada base-ten and Andre number-line solutions 375−24=351; try 189−73 and 647−46. Activity 2 paint-splatter unknowns include ?+540=1,000; 250+?=1,000; 600−440=?; 680+?=900; ?+590=1,000; 900−370=?. Publisher splatter artwork is not copied; student number-line drawings and discussions are human-reviewed; Cool-down login required.",
  [4]="Warm-up 586−100,486−20,457−200,257−30. Activity 1 compare Mai counting up and Lin decomposing 500−387=113; solve 600−476 and 400−134. Activity 2 compare 427+351=778 as expanded-form and place-by-place calculation; solve 725+243,863−432,163+326,692−571 using choice of valid strategies. Original worked-method images, partner discussions and students' selected method explanations require teacher review; only numerical checks are automatically marked."
  };
+ public static readonly IReadOnlyDictionary<int,string[]> SourceNumericExamples=new Dictionary<int,string[]>{
+ [1]=new string[]{"81 − 79","203 − 198","680 − 673","501 − 499"},
+ [2]=new string[]{"223 + 400","428 − 200","482 − 300","658 + 300"},
+ [3]=new string[]{"375 − 24","189 − 73","647 − 46","? + 540 = 1000"},
+ [4]=new string[]{"500 − 387","600 − 476","400 − 134","427 + 351"}
+ };
+ public static readonly IReadOnlyDictionary<int,string[]> IndependentNumericExamples=new Dictionary<int,string[]>{
+ [1]=new string[]{"312 − 307","334 + 200","374 + 60","423 − 40"},
+ [2]=new string[]{"300 + 200","462 + 30","648 − 100","568 − 40"},
+ [3]=new string[]{"400 − 299","250 − 120","540 − 200","570 + ? = 640"},
+ [4]=new string[]{"450 − 400","700 − 450","520 − 400","640 − 340"}
+ };
  private static readonly IReadOnlyDictionary<int,int[]> SourceKeys=new Dictionary<int,int[]>
  {
  [1]=new int[]{2,5,7,2},
