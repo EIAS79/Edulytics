@@ -128,7 +128,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30 + 3; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30 + 6; // three G2 U05 and three G1 U02 original-source repairs; all source-SHA-guarded
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
@@ -275,6 +275,9 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2Unit4NumberLineTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit4NumberLineFeaturesTeachingCorrection.IsTarget(document, lesson) ||
          CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4CompareNumberLinesCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4EstimateNumberLineCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2Unit4CenterDay1NumberLineCorrection.IsTarget(document, lesson) ||
          CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
          CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
@@ -1457,6 +1460,33 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             translationsByContentId.TryGetValue(
                                 content.Id,out var optionalLinePlotPreviousRows)
                                 ? optionalLinePlotPreviousRows
+                                : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4CompareNumberLinesCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4CompareNumberLinesCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NewSourceRows0)
+                                ? g2NewSourceRows0
+                                : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4EstimateNumberLineCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4EstimateNumberLineCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NewSourceRows1)
+                                ? g2NewSourceRows1
+                                : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2Unit4CenterDay1NumberLineCorrection.IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2Unit4CenterDay1NumberLineCorrection.ValidateExistingBodyBeforeUpgrade(
+                            document,sourceLesson,content.ContentVersion,
+                            translationsByContentId.TryGetValue(content.Id,out var g2NewSourceRows2)
+                                ? g2NewSourceRows2
                                 : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
