@@ -354,6 +354,24 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 unknown-addend and tens tools">
+            <h2>Edulytics · missing addends, count back and base-ten tools</h2>
+            <p>Count back by tens from 97, work with real blocks to find
+            41+?=84, compare Han's add-on with Mai's subtract-away
+            method, find the missing number in 21+?=96 and finish a
+            new independent Edulytics assessment.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson20Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open source unknown-addend activities
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {
