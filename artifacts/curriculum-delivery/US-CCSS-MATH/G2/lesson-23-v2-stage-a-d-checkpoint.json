@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 23,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L05",
+  "title": "Subtract Your Way",
+  "unitNumber": 2,
+  "lessonNumber": 5,
+  "stageA": {
+    "status": "COMPLETE_LOCAL_ARCHIVE_TEACHER_LESSON_AND_PREPARATION_REVIEW",
+    "localReadOnlySource": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\02_Grade_2_IM_K5\\unit-2\\lesson-5",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-5/lesson.html",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-5/preparation.html",
+    "canonicalBodySha256": "6a15a2ca3d216848fde68e654d824e9f4babd0bfef66cb6ca08557292a10d0a5",
+    "sourceSemanticSha256": "e0257b4f5b0033e2cf59bd000eaa6ed2fdbc72018dd4bca810258693c2468553",
+    "sourceOutcomes": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.B.2"
+    ],
+    "warmup": "17−7=10,17−8=9,26−6=20,26−8=18; use known fact to subtract a little more.",
+    "activity1": "How Do You Find the Value?: 82−9=73; count-back strategy, connecting cubes or exchange 82=7 tens+12 ones.",
+    "activity2": "Diego begins55, removes2 tens=>35; then removes8 ones by exchange35=2 tens+15 ones=>27.",
+    "synthesis": "35−8=27 because35=20+15. Discuss fixed base-ten rods vs detachable cubes and no double-counting traded ten.",
+    "coolDown": "Publisher Find the Difference educator-login only; original independent Edulytics exit written and distinguished.",
+    "humanOnly": "Authentic cubes, diagrams, and MLR8/5 Practices student oral explanation require teacher observation.",
+    "rights": "Original teacher numbers/goals attributed; first-party diagrams and original assessment, no protected asset reproduced."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_PREDECESSOR_SHA_GUARDED_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2DecomposeTenTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gate": "Exact source URL, canonical body SHA, original outcomes order, unchanged six predecessor student fields and previous rich-content persisted version, unrelated lessons untouched."
+  },
+  "stageC": {
+    "status": "COMPLETE_SOURCE_NUMERIC_STUDENT_ACTIVITY_4_EXACT_FAMILIES_AND_UNRUN_TESTS",
+    "sourceNumeric": "17−7=10,17−8=9,26−6=20,26−8=18;82−9=73;55−20−8=27;35=20+15.",
+    "firstPartyExit": "63−7=56;74−8=66;42−6=36",
+    "studentPage": "src/Edulytics.Web/Views/Grade2Lesson23Activities/Index.cshtml",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson23ActivitiesController.cs",
+    "viewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson23Page.cs",
+    "machineValidator": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2FifthLessonDecomposeTen.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson5DecomposeTenContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson5DecomposeTenQuestions.cs",
+    "families": [
+      "usccss.g2.u02.l05.trade_ten_subtract_ones",
+      "usccss.g2.u02.l05.count_back_to_ten",
+      "usccss.g2.u02.l05.tens_after_exchange",
+      "usccss.g2.u02.l05.diego_two_step_subtract"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2DecomposeTenTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2FifthLessonDecomposeTenTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson5DecomposeTenQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson23ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "security": "Authorised StudentPortal, selected lesson and published content, CSRF submission, bounded strings, no school grade.",
+    "teacherReview": "Actual partner manipulation and own explanations are not digitally certified."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO",
+    "humanAcademicSignoff": "NOT_ASSERTED"
+  },
+  "nextAction": "BEGIN_G2_U02_L06_GRADE_ORDINAL24_A_THEN_B_C_NO_SKIP"
+}
