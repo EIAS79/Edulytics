@@ -7,7 +7,7 @@ internal static class UsCcssG2Unit1Lesson18ClassSurveysContracts
     public const string Version="usccss-g2-u01-l18-class-surveys-combine-compare-tape-v1";
     public static readonly IReadOnlyList<LessonPracticeContract> Reviewed=[
         new("PED:US-CCSS-MATH:G2:U01:L18",
-            "statistics.read_bar_graph",
+            "data.categorical.represent_interpret",
             "AUTHOR_REAL_SURVEY_GRAPH_COMBINE_COMPARE_AND_COMPARE_TAPES",
             [
                 "usccss.g2.u01.l18.read_category_count",
