@@ -10,7 +10,8 @@ public sealed class G2Ordinal69OriginalSourceGuardTests
         l.LessonCode=="PED:US-CCSS-MATH:G2:U05:L02").Select(l=>(D:d,L:l))).Single();
   var en=target.L.Translations.Single(x=>x.CultureCode=="en");
   Assert.Contains("700",en.Explanation);
-  Assert.Contains("FIRST-PARTY",en.StepByStepSolutions);
+  Assert.Contains("FIRST-PARTY",en.Explanation+en.KeyConceptsAndRules+en.WorkedExamples+en.StepByStepSolutions+en.QuickSummary);
+  Assert.Contains("ORIGINAL",en.StepByStepSolutions);
   Assert.Equal(CommonCoreG2Unit5OriginalRichContentCorrections.VersionFor(69),
       CanonicalLessonContentMaterializer.GetEffectiveContentVersion(target.D,target.L));
   Assert.False(CommonCoreG2Unit5OriginalRichContentCorrections
