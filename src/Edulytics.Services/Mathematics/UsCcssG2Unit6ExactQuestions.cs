@@ -544,7 +544,7 @@ internal static class UsCcssG2Unit6ExactQuestions
         Valid(family,data)&&string.Equals(actual,Solve(family,data),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> data)
     {
-        if(!Supports(family)||data.Count!=10||
+        if(family is null||!Supports(family)||data.Count!=10||
             !data.TryGetValue("lesson",out var l)||l!=Lesson(family)||
             !data.TryGetValue("a",out var a)||a<1||a>6||
             !data.TryGetValue("b",out var b)||b<2||b>8||

@@ -154,7 +154,7 @@ internal static class UsCcssG2Unit5FirstSixQuestions
         Valid(family,p)&&string.Equals(a,Solve(family,p),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
     {
-        if(!Supports(family)||p.Count!=14||
+        if(family is null||!Supports(family)||p.Count!=14||
            !p.TryGetValue("lesson",out var n)||n!=Lesson(family)||
            !p.TryGetValue("h",out var h)||h<1||h>6||
            !p.TryGetValue("t",out var t)||t<0||t>9||

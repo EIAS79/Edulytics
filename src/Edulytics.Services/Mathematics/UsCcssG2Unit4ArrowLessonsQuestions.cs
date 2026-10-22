@@ -75,7 +75,7 @@ internal static class UsCcssG2Unit4ArrowLessonsQuestions
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)=>
         Valid(family,p)&&string.Equals(answer,Solve(family,p),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)=>
-        Supports(family)&&p.Count==8&&
+        family is not null&&Supports(family)&&p.Count==8&&
         p.TryGetValue("lesson",out var l)&&l==Lesson(family)&&
         p.TryGetValue("start",out var s)&&s>=0&&s<=80&&
         p.TryGetValue("jump",out var jump)&&jump>=1&&jump<=20&&

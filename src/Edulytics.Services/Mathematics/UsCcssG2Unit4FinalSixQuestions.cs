@@ -132,7 +132,7 @@ internal static class UsCcssG2Unit4FinalSixQuestions
         Valid(family,p)&&string.Equals(response,Solve(family,p),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
     {
-        if(!Supports(family)||p.Count!=13||
+        if(family is null||!Supports(family)||p.Count!=13||
            !p.TryGetValue("lesson",out var l)||l!=Lesson(family)||
            !p.TryGetValue("a",out var a)||a<10||a>50||
            !p.TryGetValue("b",out var b)||b<5||b>40||

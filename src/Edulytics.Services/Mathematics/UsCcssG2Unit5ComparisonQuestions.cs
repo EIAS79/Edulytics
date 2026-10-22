@@ -175,7 +175,7 @@ internal static class UsCcssG2Unit5ComparisonQuestions
         Valid(family,p)&&string.Equals(answer,Solve(family,p),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
     {
-        if(!Supports(family)||p.Count!=17||
+        if(family is null||!Supports(family)||p.Count!=17||
            !p.TryGetValue("lesson",out var l)||l!=Lesson(family)||
            !p.TryGetValue("h",out var h)||h<1||h>9||
            !p.TryGetValue("t",out var t)||t<0||t>9||
