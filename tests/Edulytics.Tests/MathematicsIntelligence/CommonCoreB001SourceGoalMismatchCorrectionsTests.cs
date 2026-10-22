@@ -71,8 +71,14 @@ public sealed class CommonCoreB001SourceGoalMismatchCorrectionsTests
         Assert.Contains("46",g2CompareMath);
         Assert.Contains("34",g2CompareMath);
         var g2RibbonMath=string.Join(" ",g2[1].En.Explanation,g2[1].En.WorkedExamples,g2[1].En.StepByStepSolutions);
-        Assert.Contains("86",g2RibbonMath);
-        Assert.Contains("62",g2RibbonMath);
+        // U03 L12 Friendship Bracelets: Lin's ACTUAL 92 cm, 35 cm and 28 cm
+        // produce 29 cm remaining. The historic B001 86−24=62 is not the
+        // publisher original; 86 belongs to separately authored first-party work.
+        Assert.Contains("92",g2RibbonMath);
+        Assert.Contains("35",g2RibbonMath);
+        Assert.Contains("28",g2RibbonMath);
+        Assert.Contains("29",g2RibbonMath);
+        Assert.Contains("FIRST-PARTY",g2RibbonMath);
         var represent=ts[0].En;
         Assert.Contains("4 × 3 = 12",represent.WorkedExamples);
         Assert.Contains("group",represent.StepByStepSolutions,StringComparison.OrdinalIgnoreCase);

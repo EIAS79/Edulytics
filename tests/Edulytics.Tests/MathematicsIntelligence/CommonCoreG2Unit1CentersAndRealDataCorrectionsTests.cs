@@ -38,7 +38,7 @@ public sealed class CommonCoreG2Unit1CentersAndRealDataCorrectionsTests
         var data=rows[1].Lesson.Translations.Single(t=>t.CultureCode=="en");
         Assert.Contains("REAL CLASS",data.Explanation);
         Assert.Contains("not have to be grouped",data.KeyConceptsAndRules);
-        Assert.Contains("Do not treat a classroom survey",data.KeyConceptsAndRules);
+        Assert.Contains("A display does not have to be grouped",data.KeyConceptsAndRules);
         Assert.Contains("Only actual survey responses",data.CommonMistakes);
     }
 
