@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 34,
-    "firstUnclosedLesson": 35,
-    "nextSequentialLesson": 35,
-    "currentWork": "Grade2 original source ordinals1–34 A–B–C consecutively authored, including previously unclosed U02 L16 optional market. Next ordinal35 G2 U03 L01 Standard Units of Measure. No tests/CI/Stage D/merge/deploy."
+    "lastConsecutiveACClosed": 35,
+    "firstUnclosedLesson": 36,
+    "nextSequentialLesson": 36,
+    "currentWork": "G2 2021 source original consecutive ordinals1–35 A-B-C authored. L35 original Priya40cm/10cm &5cm straws and1cm cubes; 4 exact numeric families, unrun tests. Next U03 L02 ordinal36. StageD/CI/merge/deploy not executed."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -45,7 +45,8 @@
     "G2 ordinal31 locally archived teacher sources read-only; source 4 seeds equations, four exact question families and four unrun tests committed only GitHub.",
     "Grade2 ordinal32 source locally reviewed read-only, authoring writes only GitHub, source grouped two-step story, tests written not executed.",
     "G2 ordinal33 local teacher lesson source read-only and GitHub-only authorship, optional tape-diagram Stage5, four tests written but unrun.",
-    "G2 ordinal34 optional Our Market's Inventory locally read from books only and authored on GitHub only; strict inventory constraints, real classroom roles and independent sample separated; four tests not run."
+    "G2 ordinal34 optional Our Market's Inventory locally read from books only and authored on GitHub only; strict inventory constraints, real classroom roles and independent sample separated; four tests not run.",
+    "G2 ordinal35 2021 source reviewed read-only local, physical Priya40cm units and teacher-only manipulation distinguished, all GitHub-only writes; StageD tests not run."
   ],
   "lessonStatuses": [
     {
@@ -425,13 +426,13 @@
     {
       "gradeOrdinal": 35,
       "lessonCode": "PED:US-CCSS-MATH:G2:U03:L01",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_G2_U03_L01_40CM_RIBBON_STRAWS5_AND10_CM_CUBES",
+      "teaching": "ORIGINAL_SOURCE_SHA_PREDECESSOR_GUARDED_STANDARD_CM_UNITS_RICH_V2",
+      "practice": "FOUR_EXACT_CM_ITERATION_FAMILIES_PROTECTED_STUDENT_PHYSICAL_TEACHER_RUBRIC",
+      "tests": "FOUR_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 36,
