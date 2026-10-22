@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 49,
-    "firstUnclosedLesson": 50,
-    "nextSequentialLesson": 50,
-    "currentWork": "G2 IM2021 ordinals1–49 consecutively Stage A–B–C authoring completed; latest G2 U03 L15 pencil source GroupC data, authentic group measurements and nonzero line plot labels, four exact families/test files unrun. Next 50 G2 U03 L16. StageD/CI/merge/deploy not done."
+    "lastConsecutiveACClosed": 50,
+    "firstUnclosedLesson": 51,
+    "nextSequentialLesson": 51,
+    "currentWork": "G2 consecutive original IM2021 ordinals1–50 A–B–C authored. L50 GroupB plant measurements real source plot/independent exact generator and teacher-only Han image. Next G2 U03 L17 ordinal51. Stage D/tests/CI not run, no merge/deploy."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -60,7 +60,8 @@
     "G2 ordinal46 two-step sources read-only from local books, authoring GitHub-only, unit-specific chained equations plus 4 tests unrun.",
     "G2 ordinal47 local book read-only, GitHub-only source guard and optional ruler/number puzzle features authored, StageD not executed.",
     "Ordinal48 locally read teacher source; distinct original class data vs first-party numerical line plot, all GitHub writes, tests unrun.",
-    "G2 ordinal49 local book read-only, preserved original Group C 10cm mode vs 16cm longest and empty 11,15cm ticks; GitHub-only A–C, StageD unrun."
+    "G2 ordinal49 local book read-only, preserved original Group C 10cm mode vs 16cm longest and empty 11,15cm ticks; GitHub-only A–C, StageD unrun.",
+    "Ordinal50 original GroupB plant height data source reviewed local read-only, line plots25..35, four exact families, independent fictional data, four unrun test files GitHub-only."
   ],
   "lessonStatuses": [
     {
@@ -605,13 +606,13 @@
     {
       "gradeOrdinal": 50,
       "lessonCode": "PED:US-CCSS-MATH:G2:U03:L16",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "LOCAL_IM2021_G2_U03_L16_SOURCE_GROUPB_HEIGHTS_25_TO35_AND_HAN_IMAGE_BOUNDARY_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_GROUPB_NONZERO_LINE_PLOT_RICH_V2",
+      "practice": "FOUR_EXACT_FIRST_PARTY_PLOT_FAMILIES_AUTHENTICATED_STUDENT_SOURCE_GROUPB_TEACHER_RUBRIC",
+      "tests": "FOUR_TEST_FILES_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 51,
