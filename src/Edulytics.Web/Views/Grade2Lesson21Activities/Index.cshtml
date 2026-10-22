@@ -1,0 +1,89 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson21Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Add or Subtract to Solve Story Problems";
+}
+<style>
+.g2-u2l3{max-width:960px;margin:auto;padding:24px 18px 45px;color:#233e4e}
+.g2-u2l3 .panel{background:#fff;border:1px solid #ccdae3;border-radius:13px;margin:16px 0;padding:20px}
+.g2-u2l3 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.g2-u2l3 label{display:block;font-weight:700;margin:13px 0 5px}
+.g2-u2l3 input,.g2-u2l3 textarea{border:1px solid #7c919e;padding:11px;border-radius:8px;font:inherit;width:100%;max-width:550px}
+.g2-u2l3 input:focus,.g2-u2l3 textarea:focus{outline:3px solid #a0dce3}
+.g2-u2l3 .tens{display:inline-flex;padding:10px;background:#d1eef2;border:2px solid #32778b;margin:2px;border-radius:6px}
+.g2-u2l3 .one{display:inline-flex;padding:7px;background:#ffe8b6;border:1px solid #aa8229;margin:2px}
+.g2-u2l3 .action{background:#087d90;color:white;border:0;border-radius:8px;padding:13px 20px;cursor:pointer;font-weight:700}
+.g2-u2l3 .ok{border-left:4px solid #298257;padding-left:12px}
+.g2-u2l3 .bad{border-left:4px solid #b64755;padding-left:12px}
+.g2-u2l3 .review{border-left:4px solid #a98228;padding-left:12px}
+.g2-u2l3 .muted{color:#566e7c}
+</style>
+<main class="g2-u2l3">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Add or Subtract to Solve Story Problems</h1>
+<p>Read the story before computing. Find unknown starts, quantities left, comparisons and missing parts. Today's original story problems need NO tens exchange.</p>
+<section class="panel">
+<h2>1. How Many Do You See? — base-ten discussion</h2>
+<p>Observe your teacher's base-ten representations and compare how many TEN groups and loose ones you see. The Edulytics example below is 2 tens and 4 ones, not an original publisher image. Can you show the same number another way?</p>
+<div role="img" aria-label="Two rods of ten and four single units. Total twenty-four."><span class="tens">10</span><span class="tens">10</span>
+@for(var i=0;i<4;i++){<span class="one">1</span>}</div>
+<p>With a partner, explain how ten loose ones can become a single tens group. Your explanation and physical manipulation are teacher-reviewed.</p>
+</section>
+<form asp-controller="Grade2Lesson21Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<label asp-for="Answers.WarmupReason">My original base-ten comparison (teacher review)</label>
+<textarea asp-for="Answers.WarmupReason" rows="2" maxlength="2000"></textarea>
+<section class="panel">
+<h2>2. Fun at the Zoo — MLR6 Three Reads</h2>
+<p>Read with a partner three times. First understand WHO is on the bus and WHAT happens; second identify the known counts; third identify what is being asked.</p>
+<p><strong>Some students were on a bus. Then 34 more students got on. Now 55 students are on the bus. How many were there at first?</strong></p>
+<label asp-for="Answers.ThreeReadsContext">First read: what is happening?</label><textarea asp-for="Answers.ThreeReadsContext" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.ThreeReadsQuantities">Second read: what do 34 and 55 represent?</label><textarea asp-for="Answers.ThreeReadsQuantities" rows="2" maxlength="2000"></textarea>
+<div class="grid">
+<div><label asp-for="Answers.BusStart">Third read: unknown starting number</label><input asp-for="Answers.BusStart" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.BusEquation">Matching complete equation</label><input asp-for="Answers.BusEquation" maxlength="100" placeholder="?+34=55" required /></div>
+</div>
+<label asp-for="Answers.BusDrawing">Describe your own tape/base-ten/number-line model</label>
+<textarea asp-for="Answers.BusDrawing" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>3. More Fun at the Zoo — three different unknown positions</h2>
+<p>Choose blocks or a drawing, show tens with tens and ones with ones, then discuss methods with your partner.</p>
+<div class="grid">
+<div><label asp-for="Answers.Monkey">65 students in monkey house,23 leave. How many remain?</label><input asp-for="Answers.Monkey" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.BearsGap">58 saw bears,27 saw lions. How many MORE saw bears?</label><input asp-for="Answers.BearsGap" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.BirdsOutside">34 birds inside,88 birds altogether. How many OUTSIDE?</label><input asp-for="Answers.BirdsOutside" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.OtherRepresentations">Describe at least two of your OWN base-ten diagrams/equations</label>
+<textarea asp-for="Answers.OtherRepresentations" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>4. Independent Edulytics Cool-down</h2>
+<p>These are NEW fictional assessment tasks, not the publisher's restricted “Time to Leave” questions. No regrouping required.</p>
+<div class="grid">
+<div><label asp-for="Answers.CoolTake">74 guests start,32 leave. How many remain?</label><input asp-for="Answers.CoolTake" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolCompare">67 at bears,25 at lions. How many more bears?</label><input asp-for="Answers.CoolCompare" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolPart">86 birds total,43 inside. How many outside?</label><input asp-for="Answers.CoolPart" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.PartnerReasoning">Which story was hardest to interpret, and how did a partner's method help?</label>
+<textarea asp-for="Answers.PartnerReasoning" rows="2" maxlength="2000"></textarea>
+<button class="action" type="submit">Check numerical maths and show teacher rubric</button>
+</section>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var row in Model.Feedback){
+<div class="@(row.Correct==true?"ok":row.Correct==false?"bad":"review")">
+<h3>@row.Activity</h3><p>@(row.Correct==true?"Numerically consistent":row.Correct==false?"Please revise":"Teacher review required"). @row.Feedback</p>
+</div>}
+</section>}
+<section class="panel">
+<h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2ThirdLessonZooStories.TeacherRubric){<li>@item</li>}</ul>
+<p class="muted">All source stories and original maths attributed to IM K–5 2021 Grade2 Unit2 Lesson3. Source CCSS 2.NBT.B.5 and2.OA.A.1. Digital checking is not an official grade or evidence of classroom collaboration.</p>
+</section>
+</main>
