@@ -16,7 +16,7 @@ public sealed class CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection
         Assert.Contains("100–120",en.Explanation);
         Assert.Contains("count",en.QuickSummary,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("Number Talk",en.WorkedExamples);
-        Assert.Contains("Sort and Display",en.StepByStepSolutions);
+        Assert.Contains("Sort and Display",en.Explanation);
         Assert.Equal(CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(row.Doc,row.Lesson));
     }

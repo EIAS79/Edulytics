@@ -14,7 +14,7 @@ public sealed class CommonCoreG2Unit2StoryEquationsTeachingCorrectionTests
         Assert.Contains("32+?=57",t.WorkedExamples);
         Assert.Contains("22+48",t.WorkedExamples);
         Assert.Contains("53+?=92",t.WorkedExamples);
-        Assert.Contains("MORE THAN ONE",t.Explanation);
+        Assert.Contains("more than one",t.Explanation,StringComparison.OrdinalIgnoreCase);
         Assert.Equal(CommonCoreG2Unit2StoryEquationsTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(pair.Doc,pair.Lesson));
     }

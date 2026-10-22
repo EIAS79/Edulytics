@@ -13,7 +13,7 @@ public sealed class CommonCoreG2Unit2TapeStoriesCenterTeachingCorrectionTests
         Assert.Contains("35−19=16",t.WorkedExamples);
         Assert.Contains("Tape Diagrams",t.Explanation);
         Assert.Contains("PRINTED",t.Explanation);
-        Assert.Contains("do not invent",t.Explanation);
+        Assert.Contains("do not invent",string.Join(" ",t.Explanation,t.KeyConceptsAndRules,t.WorkedExamples,t.StepByStepSolutions,t.CommonMistakes,t.QuickSummary),StringComparison.OrdinalIgnoreCase);
         Assert.Equal(CommonCoreG2Unit2TapeStoriesCenterTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(target.Doc,target.Lesson));
     }

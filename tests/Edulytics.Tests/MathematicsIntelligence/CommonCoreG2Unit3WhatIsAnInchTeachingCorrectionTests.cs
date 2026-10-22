@@ -13,7 +13,7 @@ public sealed class CommonCoreG2Unit3WhatIsAnInchTeachingCorrectionTests
         Assert.Contains("INCH",t.Explanation);
         Assert.Contains("inch tiles",t.Explanation);
         Assert.Contains("triangle",t.Explanation);
-        Assert.Contains("between5 and6",t.WorkedExamples);
+        Assert.Contains("between5 and6",t.Explanation);
         Assert.Contains("do not record halves",t.Explanation);
         Assert.Equal(CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(p.Doc,p.Lesson));

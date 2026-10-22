@@ -10,7 +10,7 @@ public sealed class CommonCoreG2Unit3HandSpanLinePlotTeachingCorrectionTests
                 CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.IsTarget(d,l))
                 .Select(l=>(Doc:d,Lesson:l))).Single();
         var t=target.Lesson.Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("ONE measurement",t.KeyConceptsAndRules);
+        Assert.Contains("ONE measurement",t.Explanation);
         Assert.Contains("thumb",t.Explanation);
         Assert.Contains("FICTIONAL",t.Explanation);
         Assert.Contains("0 to 10 inches",t.Explanation);

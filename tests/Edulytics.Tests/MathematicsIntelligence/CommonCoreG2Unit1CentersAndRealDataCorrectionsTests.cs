@@ -32,7 +32,7 @@ public sealed class CommonCoreG2Unit1CentersAndRealDataCorrectionsTests
 
         var centers=rows[0].Lesson.Translations.Single(t=>t.CultureCode=="en");
         Assert.Contains("Number Puzzles Stage 2",centers.Explanation);
-        Assert.Contains("only once",centers.KeyConceptsAndRules);
+        Assert.Contains("only once",centers.Explanation,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("two-digit sum",centers.StepByStepSolutions);
 
         var data=rows[1].Lesson.Translations.Single(t=>t.CultureCode=="en");

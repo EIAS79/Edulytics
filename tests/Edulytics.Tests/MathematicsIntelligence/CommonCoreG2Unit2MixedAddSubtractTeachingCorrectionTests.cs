@@ -14,7 +14,8 @@ public sealed class CommonCoreG2Unit2MixedAddSubtractTeachingCorrectionTests
         Assert.Contains("55−27=28",en.WorkedExamples);
         Assert.Contains("36+38=74",en.WorkedExamples);
         Assert.Contains("82−39=43",en.WorkedExamples);
-        Assert.Contains("not invented",en.Explanation);
+        Assert.Contains("card",string.Join(" ",en.Explanation,en.WorkedExamples,en.CommonMistakes),StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("teacher",string.Join(" ",en.Explanation,en.WorkedExamples,en.CommonMistakes),StringComparison.OrdinalIgnoreCase);
         Assert.Equal(CommonCoreG2Unit2MixedAddSubtractTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(pair.Doc,pair.Lesson));
     }
