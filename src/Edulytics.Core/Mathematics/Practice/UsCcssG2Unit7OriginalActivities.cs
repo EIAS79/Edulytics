@@ -13,7 +13,17 @@ public static class UsCcssG2Unit7OriginalActivities
  [5]="OPTIONAL original number grouping images: first base-ten diagram 2 hundreds 5 tens 4 ones = 254; public warmup figures include 474 and 676. Center Five in a Row Stage7 adds within 1000 WITHOUT composing; students move a paper clip on each turn, add chosen board numbers, cover the sum and get five in a row. Second activity lets students choose Get Your Numbers in Order, Mystery Number or The Greatest of Them All. Original pictured diagram, game board values, paperclip moves, five-in-a-row win, actual student partner strategy and optional center choices are not reconstructed or auto-graded.",
  [6]="Original warm-up 28+2=30,28+12=40,67+3=70,67+23=90; first activity sum table 245+15=260,247+23=270,249+31=280;134+26=160,133+37=170,138+42=180;351+19=370,356+24=380,355+35=390. Original Perfect10 Card Sort: match three-digit and two-digit cards so ones add to exactly ten. Publisher printed Perfect 10 card graphics, students' free card pairings, blocks and explanations require human review. Source protected Cool-down unavailable.",
  [7]="Source base-ten diagrams 3 hundreds 5 tens 3 ones,3 hundreds 4 tens 13 ones and 2 hundreds 15 tens 3 ones ALL represent 353. Activity1 364+28=392 composes a ten; 364+82=446 composes a hundred. Activity2 Walk About and Add requires actual A three-digit/B two-digit cards and partner predictions of composing ten or hundred; synthesis 428+42=470. Actual source diagrams, physical place value blocks, card partner pairing and student explanations are teacher-only; no invented official card values.",
- [8]="Original Activity1 three related sums 273+18=291 (compose one ten),273+81=354 (compose one hundred),273+88=361 (compose both a ten and a hundred); students compare how carrying differs, represent valid base-ten strategies and interpret peers' methods. Original publisher images, drawings, actual student work, pairwise explanations and unavailable protected Cool-down are educator-reviewed."
+ [8]="Original Activity1 three related sums 273+18=291 (compose one ten),273+81=354 (compose one hundred),273+88=361 (compose both a ten and a hundred); students compare how carrying differs, represent valid base-ten strategies and interpret peers' methods. Original publisher images, drawings, actual student work, pairwise explanations and unavailable protected Cool-down are educator-reviewed.",
+ [9]="Warmup 528+2,528+7,487+3,487+8. Activity1 384+409,757+152,262+438,575+166. Activity2 interpret Noah’s invalid diagram and Kiran’s correct 267+338=605, including missed regrouping.",
+ [10]="Warm-up 199+23,198+24,297+25,395+27. Authentic card-sort of difficult/easier sums; hidden 1000 addends ?+430 and ?85+615, source graphics human only.",
+ [11]="Optional money warmup sum cents; How Close Stage4 digit cards (8 picked, 5/6 create two 3-digit numbers), score difference to 1000; Five in a Row Stage8 composes units.",
+ [12]="Source 354−7,−36,−48 and base-ten partner 264−38,274−41,336−115,343−127,485−266,451−315; decompose ten.",
+ [13]="Source diagrams Mai 336−52 and matching 244−28,256−64,244−64 plus 245−28,352−71,364−182,293−147; ten/hundred.",
+ [14]="Source Tyler and Clare 244−67 diagrams; sort 15 actual subtraction expressions by 0/1/2 decompositions before solving.",
+ [15]="Source Elena 726−558=168 shown in diagrams, optional partner Walk About numbers NOT fixed; counting back from590; number 733−198=535 is source example.",
+ [16]="Source Lin/Jada 582−145; Jada 402−298 count-on valid but claim cannot decompose is false; choose strategy for 535−214,700−589,683−398,918−608,735−457,602−487.",
+ [17]="Optional Stage6 Target Numbers add hundreds/tens/ones to approach 1000, Stage7 subtract to approach zero with three dice; warmup 34−9,434−99,367−98,635−298.",
+ [18]="Optional original publisher partly-obscured bar graph: identify which questions answerable, author and exchange; no source values available and original photo never reconstructed."
  };
  public static readonly IReadOnlyDictionary<int,string[]> SourceNumericExamples=new Dictionary<int,string[]>{
  [1]=new string[]{"81 − 79","203 − 198","680 − 673","501 − 499"},
@@ -45,7 +55,17 @@ public static class UsCcssG2Unit7OriginalActivities
  [5]=new int[]{254,474,676,5},
  [6]=new int[]{30,40,70,90},
  [7]=new int[]{353,392,446,470},
- [8]=new int[]{291,354,361,7}
+ [8]=new int[]{291,354,361,7},,
+ [9]=new int[]{793,909,700,741},
+ [10]=new int[]{222,570,385,816},
+ [11]=new int[]{137,179,137,200},
+ [12]=new int[]{347,318,306,226},
+ [13]=new int[]{284,216,192,180},
+ [14]=new int[]{177,533,361,268},
+ [15]=new int[]{168,535,580,200},
+ [16]=new int[]{437,104,321,111},
+ [17]=new int[]{25,335,269,337},
+ [18]=new int[]{0,0,0,0}
  };
  private static readonly IReadOnlyDictionary<int,int[]> IndependentKeys=new Dictionary<int,int[]>
  {
@@ -57,6 +77,40 @@ public static class UsCcssG2Unit7OriginalActivities
  [6]=new int[]{130,280,520,7},
  [7]=new int[]{365,450,1,1},
  [8]=new int[]{310,450,560,110}
+ [9]=new int[]{559,700,783,400},
+ [10]=new int[]{242,525,601,333},
+ [11]=new int[]{140,150,125,790},
+ [12]=new int[]{346,225,216,136},
+ [13]=new int[]{284,216,192,217},
+ [14]=new int[]{412,361,273,177},
+ [15]=new int[]{168,115,104,111},
+ [16]=new int[]{104,321,278,102},
+ [17]=new int[]{275,400,710,480},
+ [18]=new int[]{15,255,15,2}
+ };
+ public static readonly IReadOnlyDictionary<int,string[]> LastSourceNumericExamples=new Dictionary<int,string[]> { 
+ [9]=new string[]{"384+409","757+152","262+438","575+166"},
+ [10]=new string[]{"199+23","?+430=1000","?85+615=1000","429+387"},
+ [11]=new string[]{"80+20+37 cents","80+20+37+42 cents","75+37+25 cents","75+80+25+20 cents"},
+ [12]=new string[]{"354−7","354−36","354−48","264−38"},
+ [13]=new string[]{"336−52","244−28","256−64","244−64"},
+ [14]=new string[]{"244−67","599−66","449−88","346−78"},
+ [15]=new string[]{"726−558","733−198","590 then −10","590−390"},
+ [16]=new string[]{"582−145","402−298","535−214","700−589"},
+ [17]=new string[]{"34−9","434−99","367−98","635−298"},
+ [18]=new string[]{"Original obscured source bar value: educator only","Original original bar question: educator only","Original author-your-question: educator only","Original partner question exchange: educator only"}
+ };
+ public static readonly IReadOnlyDictionary<int,string[]> LastIndependentNumericExamples=new Dictionary<int,string[]> {
+ [9]=new string[]{"234+325","568+132","427+356","299+101"},
+ [10]=new string[]{"199+43","1000−475","345+256","298+35"},
+ [11]=new string[]{"80+20+40 cents","75+25+30+20 cents","1000−875","412+378"},
+ [12]=new string[]{"354−8","264−39","343−127","451−315"},
+ [13]=new string[]{"336−52","244−28","256−64","245−28"},
+ [14]=new string[]{"457−45","449−88","341−68","244−67"},
+ [15]=new string[]{"726−558","602−487","402−298","700−589"},
+ [16]=new string[]{"402−298","535−214","735−457","701−599"},
+ [17]=new string[]{"1000−725","725−325","430+280","930−450"},
+ [18]=new string[]{"Fictional bars B−A: A120 B135","Fictional bars A+B:120+135","Fictional bars B−A:135−120","Fictional A/B known; C hidden: count known"}
  };
  private static Review Check(int n,IReadOnlyDictionary<int,int[]> keys,string? x,string? y,string? z,string? w,bool original)
  {
@@ -68,6 +122,7 @@ public static class UsCcssG2Unit7OriginalActivities
    ?original?"Source numeric results only: original diagrams, number-line labels, partner choices, dice rolls and explanations need educator review.":"First-party independent answers correct. This is not certification of original source media."
    :"Recalculate the source-specific numbers. Open student work requires teacher review.");
  }
- public static Review Source(int n,string? a,string? b,string? c,string? d)=>Check(n,SourceKeys,a,b,c,d,true);
+ public static Review Source(int n,string? a,string? b,string? c,string? d)=>
+  n==18?new(null,true,"Original paint-obscured publisher chart and student-authored questions require educator. No answer inferred."):Check(n,SourceKeys,a,b,c,d,true);
  public static Review NewMath(int n,string? a,string? b,string? c,string? d)=>Check(n,IndependentKeys,a,b,c,d,false);
 }

@@ -13,7 +13,7 @@ namespace Edulytics.Web.Controllers;
 public sealed class Grade2Unit7ActivitiesController(IStudentPrivatePracticeService privatePractice,
     ILessonContentService contentService):Controller
 {
-    private static bool Allowed(int n)=>n>=1&&n<=8;
+    private static bool Allowed(int n)=>n>=1&&n<=18;
     private static string Code(int n)=>$"PED:US-CCSS-MATH:G2:U07:L{n:D2}";
     private static Grade2Unit7Page Page(int n,Guid adoption,Guid lesson,string title,bool posted,
         Grade2Unit7Answers answers,IReadOnlyList<Grade2Unit7Feedback> feedback)=>
