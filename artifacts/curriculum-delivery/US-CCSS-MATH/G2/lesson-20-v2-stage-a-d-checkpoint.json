@@ -19,7 +19,7 @@
     "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-2/preparation.html",
     "studentTeacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-2/lesson.html",
     "canonicalBodySha256": "99e8a4aa53fc2789aa45a718dca857b4d20be5c669cd5807ec2d6585433032f0",
-    "sourceSemanticSha256": "",
+    "sourceSemanticSha256": "c835f6852625bbaa8dc1c69fed5ce6cbbcd4209f748d71dc39022c3fda9bf5fa",
     "addressing": [
       "2.NBT.A.2",
       "2.NBT.B.5",
@@ -36,24 +36,61 @@
     "sourceNamingCaveat": "Canonical includes 'PLC Activity' suffix, public source page simply titles it 'Find the Unknown Addend'."
   },
   "stageB": {
-    "status": "PENDING",
-    "notes": "Must author a predecessor/source-SHA guarded student Rich V2 that replaces generic steps with true warm-up and original 41/84,17/48,21/96,67/55 tool-based strategies, plus protected persisted seeder."
+    "status": "COMPLETE_EXACT_SOURCE_GUARDED_RICH_V2_UNKNOWN_ADDEND",
+    "guardedCorrection": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2UnknownAddendTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceGuard": "Exact original 2021 source URL, canonical content SHA, three ordered Addressing 2.NBT outcomes, prior six learner fields, exact prior materialized rich content version required.",
+    "repairs": "Explains choral count backwards97 to7 by10, real connecting cubes versus base-ten blocks, 41+43=84, Han/Mai17+31=48 inverse methods,21+75=96 and67−55=12/55+12=67.",
+    "rights": "Mathematical facts and source goals attributed; visual rods/number symbols independently authored; protected original Cool-down not copied."
   },
   "stageC": {
-    "status": "PENDING",
-    "notes": "Must author exact numeric unknown-addend families, independent Cool-down, authenticated student tool-choice/drawing/teacher rubric, independent correct/wrong/malformed tests written, NOT run."
+    "status": "COMPLETE_EXACT_UNKNOWN_ADDEND_NUMERIC_FAMILIES_AND_STUDENT_TOOL_RUBRIC",
+    "sourceProblems": "41+?=84=>43;17+?=48=>31;21+?=96=>75;67−55=12 checked by55+12=67.",
+    "sourceWarmup": "97,87,77,67,57,47,37,27,17,7; original countdown number gaps digitally checked, oral pattern teacher reviewed.",
+    "originalFirstPartyCooldown": "34+?=78 ->44,62+?=85 ->23,76−54=22, each without regrouping.",
+    "numericVerifier": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2SecondLessonUnknownAddends.cs",
+    "practiceContracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson2UnknownAddendContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson2UnknownAddendQuestions.cs",
+    "families": [
+      "usccss.g2.u02.l02.count_back_tens",
+      "usccss.g2.u02.l02.unknown_addend_add_on",
+      "usccss.g2.u02.l02.unknown_addend_take_away"
+    ],
+    "randomizedNoRegroup": "Every generated unknown addend satisfies known+missing=total<=99 with ones sum under10, complete integer recompute; each countdown subtracts full tens, preserves ones.",
+    "studentModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson20Page.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson20ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson20Activities/Index.cshtml",
+    "teacherRubric": "Teacher evaluates actual 90–100 connecting cubes / base-ten manipulations, student-selected tools, originals drawings, MLR8 partner conversations and oral counts; integers alone never attest to participation.",
+    "security": "StudentPortal role, checked adoption/lesson and published content, anti-forgery submission, no official grade or production data changes.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2UnknownAddendTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2SecondLessonUnknownAddendsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson2UnknownAddendQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson20ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "officialSchoolGradeSaved": false
   },
   "closure": {
-    "status": "IN_PROGRESS",
-    "aCStatus": "A_C_PENDING",
-    "readyForStageD": false,
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
     "testsExecuted": false,
     "CIExecuted": false,
     "stageDExecuted": false,
+    "productionRuntimeVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
     "academicAcceptance": "NOT_ASSERTED",
     "mainMerge": false,
     "deployed": false,
-    "productionRelease": "NO_GO"
+    "productionRelease": "NO_GO",
+    "note": "Source-specific A–C authoring only; no Stage D or actual tests/CI, authenticated runtime persistence, classroom evidence or official academic score asserted."
   },
-  "nextAction": "CONTINUE_G2_U02_L02_STAGE_B_THEN_C_ONLY"
+  "nextAction": "BEGIN_G2_U02_L03_GRADE_ORDINAL_21_ONLY_AFTER_20_CLOSED"
 }

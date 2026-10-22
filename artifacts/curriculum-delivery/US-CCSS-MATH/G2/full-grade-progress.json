@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 19,
-    "firstUnclosedLesson": 20,
-    "nextSequentialLesson": 20,
-    "currentWork": "G2 ordinal19 A-C closed; G2 U02 L02 ordinal20 original source Stage A reviewed, stage B/C pending. Next same lesson20, no skip; tests/CI Stage D not run."
+    "lastConsecutiveACClosed": 20,
+    "firstUnclosedLesson": 21,
+    "nextSequentialLesson": 21,
+    "currentWork": "Grade2 ordinals1–20 sequential A-B-C authored. Grade2 U02 L02 source original choral count, tools, Han/Mai unknown-addend numbers and independent Edulytics Cool-down complete; tests authored, Stage D not executed. Next exact ordinal21 U02 L03 only; no merge/deploy."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -30,7 +30,8 @@
     "Sequential G2 U01 L03 closure: first-party twenty-cube representations, independent assessment, teacher rubric, exact graded scope.",
     "G2 U01 L17 optional Center Day 3 A-C source reviewed and source-locked; real objects and partner game cannot be automatically verified. Four new tests written NOT EXECUTED; digital counting groups and first-party Cool-down are distinct from classroom evidence.",
     "G2 U01 L18 source-guarded optional class survey/peer question/tape authoring A–C complete; four unexecuted tests; real survey/peer work remains teacher-scored, no official grades or production verification.",
-    "G2 U02 L01/grade ordinal19 source mismatch found 32−18 and27+15 wrongly require ten regrouping; guarded correction restores source graph32/16/21 and trains46/22 without borrowing/carrying; 4 tests authored unrun."
+    "G2 U02 L01/grade ordinal19 source mismatch found 32−18 and27+15 wrongly require ten regrouping; guarded correction restores source graph32/16/21 and trains46/22 without borrowing/carrying; 4 tests authored unrun.",
+    "G2 U02 L02 (ordinal20) source/cube tools and three unknown-addend exact families authored with 4 unexecuted tests. Source restricted Cool-down replaced, real classroom collaboration teacher-only."
   ],
   "lessonStatuses": [
     {
@@ -245,13 +246,13 @@
     {
       "gradeOrdinal": 20,
       "lessonCode": "PED:US-CCSS-MATH:G2:U02:L02",
-      "sourceReview": "IM2021_CHORAL97_BY_TEN_TO7_UNKNOWN_ADDENDS_41_TO84_17_TO48_21_TO96_AND_INVERSE67_55_SOURCE_REVIEWED",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "ORIGINAL_IM2021_CHORAL97_BY_TEN_UNKNOWNS41_84_17_48_21_96_HAN_MAI_TOOLS_REVIEWED",
+      "teaching": "EXACT_SOURCE_SHA_PREDECESSOR_GUARDED_PLACE_VALUE_BLOCKS_AND_INVERSE_ADDENDS_RICH_V2_COMPLETE",
+      "practice": "THREE_EXACT_COUNT_TENS_INVERSE_ADDEND_FAMILIES_AUTHENTICATED_STUDENT_UI_FIRST_PARTY_COOLDOWN_TEACHER_RUBRIC",
+      "tests": "FOUR_TEST_FILES_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 21,
