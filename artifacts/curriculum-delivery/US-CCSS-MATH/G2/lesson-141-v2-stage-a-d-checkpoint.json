@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 141,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U09:L08",
+  "title": "Add and Subtract Within 100",
+  "stageA": {
+    "status": "PUBLIC_SOURCE_TEXT_REVIEWED_MEDIA_HUMAN",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-141-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-9/lesson-8/preparation.html",
+    "sourceSha256": "5f6d35dffa7a83a1c0a93391728e75fe2d46806f0e7b2fda7c551bbc02f3c416",
+    "standards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.NBT.B.7"
+    ]
+  },
+  "stageB": {
+    "status": "SOURCE_GUARDED_SIX_FIELDS",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit9SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-141-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_FIRSTPARTY_EXACT_FAMILIES_TESTS_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit9ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit9ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit9Activities/Index.cshtml",
+    "teacherOnly": "True original publisher source figure/card, original random physical manipulatives, student invented expressions and strategies are human-reviewed. Exact math family is independent first-party numeric practice.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal141OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal141SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal141ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal141StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 142
+}
