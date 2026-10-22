@@ -55,7 +55,7 @@ public static class UsCcssG2Unit7OriginalActivities
  [5]=new int[]{254,474,676,5},
  [6]=new int[]{30,40,70,90},
  [7]=new int[]{353,392,446,470},
- [8]=new int[]{291,354,361,7},,
+ [8]=new int[]{291,354,361,7},
  [9]=new int[]{793,909,700,741},
  [10]=new int[]{222,570,385,816},
  [11]=new int[]{137,179,137,200},
@@ -76,7 +76,7 @@ public static class UsCcssG2Unit7OriginalActivities
  [5]=new int[]{468,35,604,12},
  [6]=new int[]{130,280,520,7},
  [7]=new int[]{365,450,1,1},
- [8]=new int[]{310,450,560,110}
+ [8]=new int[]{310,450,560,110},
  [9]=new int[]{559,700,783,400},
  [10]=new int[]{242,525,601,333},
  [11]=new int[]{140,150,125,790},
