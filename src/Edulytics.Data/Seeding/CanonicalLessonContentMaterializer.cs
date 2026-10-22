@@ -46,6 +46,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1AllCompareProblemsTeachingCorrection.Apply(document);
         CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.Apply(document);
         CommonCoreG2Unit1ClassSurveysTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -254,8 +255,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2AllPositions);
         var g2Survey = CommonCoreG2Unit1ClassSurveysTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Collections);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2U02Compare = CommonCoreG2Unit2AddSubtractCompareTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Survey);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2U02Compare);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -347,6 +350,7 @@ public static class CanonicalLessonContentMaterializer
             .IsTarget(document, lesson) ||
         CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit1ClassSurveysTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -458,6 +462,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit1ClassSurveysTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections

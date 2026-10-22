@@ -354,6 +354,24 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics Grade 2 movie snacks and ten-tower compare activity">
+            <h2>Edulytics · place-value compare without trading a ten</h2>
+            <p>Read the original Movie Snacks bar values, solve two
+            category problems without ten regrouping, build 46 and 22
+            physical cubes, compare partner strategies, and finish an
+            independently authored no-regroup Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson19Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 2 Unit 2 comparison activities
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L18" &&
          unifiedPracticeAdoptionId.HasValue)
     {
