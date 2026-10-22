@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 18,
-    "firstUnclosedLesson": 19,
-    "nextSequentialLesson": 19,
-    "currentWork": "Grade2 ordinal19 U02 L01 A reviewed; incorrect regrouping examples found in current raw content. Source-guarded B correction authored; integration and Stage C pending."
+    "lastConsecutiveACClosed": 19,
+    "firstUnclosedLesson": 20,
+    "nextSequentialLesson": 20,
+    "currentWork": "Grade2 ordinals1–19 sequential A-B-C authored. G2 U02 L01 lesson19 fixed two erroneous regrouping source examples; exact Movie Snacks and physical cube tasks, independent Cool-down, 4 exact families, unrun tests. Next U02 L02 only. No CI/merge/deploy."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -29,7 +29,8 @@
     "Sequential Grade 2 lesson2 closed after independent Cool-down, color-cube teacher rubric and authenticated student page completed.",
     "Sequential G2 U01 L03 closure: first-party twenty-cube representations, independent assessment, teacher rubric, exact graded scope.",
     "G2 U01 L17 optional Center Day 3 A-C source reviewed and source-locked; real objects and partner game cannot be automatically verified. Four new tests written NOT EXECUTED; digital counting groups and first-party Cool-down are distinct from classroom evidence.",
-    "G2 U01 L18 source-guarded optional class survey/peer question/tape authoring A–C complete; four unexecuted tests; real survey/peer work remains teacher-scored, no official grades or production verification."
+    "G2 U01 L18 source-guarded optional class survey/peer question/tape authoring A–C complete; four unexecuted tests; real survey/peer work remains teacher-scored, no official grades or production verification.",
+    "G2 U02 L01/grade ordinal19 source mismatch found 32−18 and27+15 wrongly require ten regrouping; guarded correction restores source graph32/16/21 and trains46/22 without borrowing/carrying; 4 tests authored unrun."
   ],
   "lessonStatuses": [
     {
@@ -233,13 +234,13 @@
     {
       "gradeOrdinal": 19,
       "lessonCode": "PED:US-CCSS-MATH:G2:U02:L01",
-      "sourceReview": "ORIGINAL_IM2021_NO_REGROUP_SOURCE_REVIEWED_SNACK32_16_21_TRAINS46_22_OLD_SOURCE_MISMATCH_FOUND",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "ORIGINAL_IM2021_SNACKS32_16_21_TRAIN46_22_PLACE_VALUE_NO_REGROUP_SOURCE_AND_MISMATCH_REVIEWED",
+      "teaching": "SHA_PREDECESSOR_GUARDED_SOURCE_EXACT_STUDENT_RICH_V2_WITH_CORRECT_NO_REGROUP_MATH",
+      "practice": "FOUR_EXACT_NO_REGROUP_SNACK_GRAPH_AND_CUBE_TRAIN_FAMILIES_STUDENT_UI_INDEPENDENT_COOLDOWN",
+      "tests": "FOUR_TEST_FILES_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 20,
