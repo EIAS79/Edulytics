@@ -14,7 +14,7 @@
 @if(Model.LessonNumber==5){<p>The publisher does NOT reveal one exact original dot value; the estimate needs teacher review. Values entered are hypotheses, not automatically graded.</p>}
 @{var names=new[]{"SourceA","SourceB","SourceC","SourceD"};}
 <div class="grid">
-@for(var i=0;i<4;i++){<div><label for="source-@i">@Model.SourceQuestions[i]</label><input id="source-@i" name="@names[i]" type="number" min="0" max="100" required/></div>}
+@for(var i=0;i<4;i++){<div><label for="source-@i">@Model.SourceQuestions[i]</label><input id="source-@i" name="@("Answers."+names[i])" type="number" min="0" max="100" required/></div>}
 </div></section>
 <section><h2>2. ORIGINAL classroom task</h2><p>@Model.SourceActivity1</p><p>@Model.SourceActivity2</p>
 <label asp-for="Answers.SourceRealWork">Describe only your ACTUAL source paper, dice, chart, spinner or image evidence</label>
@@ -25,7 +25,7 @@
 <section><h2>3. First-party Edulytics numerical exercises</h2><p>These invented examples are not the published cool-down or recorded source classroom results.</p>
 @{var independent=new[]{"IndependentA","IndependentB","IndependentC","IndependentD"};}
 <div class="grid">
-@for(var i=0;i<4;i++){<div><label for="independent-@i">@Model.IndependentQuestions[i]</label><input id="independent-@i" name="@independent[i]" type="number" min="0" max="100" required/></div>}
+@for(var i=0;i<4;i++){<div><label for="independent-@i">@Model.IndependentQuestions[i]</label><input id="independent-@i" name="@("Answers."+independent[i])" type="number" min="0" max="100" required/></div>}
 </div><button type="submit">Check arithmetic, show teacher review status</button></section>
 </form>
 @if(Model.Submitted){<section aria-live="polite"><h2>Feedback</h2>@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"correct":r.Correct==false?"incorrect":"teacher")"><h3>@r.Section</h3><p>@r.Feedback</p></div>}</section>}
