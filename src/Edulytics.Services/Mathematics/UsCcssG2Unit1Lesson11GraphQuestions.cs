@@ -20,18 +20,20 @@ internal static class UsCcssG2Unit1Lesson11GraphQuestions
     private static readonly string[][] Categories=
     [
         ["Comics","Science","Animals","Poetry"],
-        ["Music","Drawing","Soccer","Reading"]
+        ["Music","Drawing","Soccer","Reading"],
+        ["Painting","Chess","Gardening","Drama"]
     ];
     private static readonly int[][] Counts=
     [
         [6,3,5,2],
-        [4,6,3,7]
+        [4,6,3,7],
+        [2,5,7,4]
     ];
 
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unknown G2 U01 L11 question family");
-        var graph=random.Next(2);
+        var graph=random.Next(3);
         var first=random.Next(4);
         var second=random.Next(4);
         if(second==first)second=(second+1)%4;
@@ -73,7 +75,7 @@ internal static class UsCcssG2Unit1Lesson11GraphQuestions
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)
     {
         if(!Supports(family) || p.Count!=(family==Count?2:3))return false;
-        if(!p.TryGetValue("graph",out var graph) || graph is <0 or >1 ||
+        if(!p.TryGetValue("graph",out var graph) || graph is <0 or >2 ||
             !p.TryGetValue("first",out var first) || first is <0 or >3)
             return false;
         return family==Count || p.TryGetValue("second",out var second) &&

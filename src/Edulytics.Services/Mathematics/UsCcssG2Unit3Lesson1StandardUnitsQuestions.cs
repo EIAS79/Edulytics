@@ -13,7 +13,7 @@ internal static class UsCcssG2Unit3Lesson1StandardUnitsQuestions
     public static Problem Build(string family,Random r)
     {
         if(!Supports(family))throw new InvalidOperationException("Not G2 Unit3 Lesson1");
-        int length=10*r.Next(1,10);
+        int length=10*r.Next(1,11);
         var p=new Dictionary<string,int>(StringComparer.Ordinal){{"lengthCm",length}};
         string prompt=family switch{
             Fives=>$"FIRST-PARTY numerical diagram: a line is marked {length} centimeters long. How many equal 5-cm units fit end to end with no gaps?",
@@ -35,5 +35,5 @@ internal static class UsCcssG2Unit3Lesson1StandardUnitsQuestions
         Valid(family,p)&&string.Equals(answer,Solve(family,p),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)=>
         Supports(family)&&p.Count==1&&p.TryGetValue("lengthCm",out var len)&&
-        len is >=10 and <=90&&len%10==0;
+        len is >=10 and <=100&&len%10==0;
 }

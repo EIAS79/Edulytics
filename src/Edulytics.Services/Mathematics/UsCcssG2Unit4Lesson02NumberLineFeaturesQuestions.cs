@@ -14,7 +14,7 @@ internal static class UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported G2 U04 L02");
-        int end=family switch{Fives=>100,Missing=>10,_=>30};
+        int end=family switch{Fives=>100,Missing=>20,_=>30};
         int step=family==Fives?5:1;
         int first,second,target;
         if(family==Fives)
@@ -25,7 +25,7 @@ internal static class UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions
         }
         else if(family==Missing)
         {
-            target=random.Next(1,10);
+            target=random.Next(1,20);
             first=target-1;second=target+1;
         }
         else
@@ -42,7 +42,7 @@ internal static class UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions
             Fives=>$"Independently authored Choral Count by5 from zero: after {first}, which number is next? Stay within0..100.",
             Card=>$"First-party abstract equally spaced 0..30 number line: a number card marked {target} is placed correctly. How many ONE-unit spaces from0 to its location?",
             Gap=>$"First-party 0..30 number line has abstract cards at {first} and {second}. What is the count of one-unit intervals BETWEEN the two cards?",
-            _=>$"First-party 0..10 equal-unit line has an unlabeled tick after {first} and before {second}. What number belongs on that middle tick? NOT an original Jada/Andre/Elena image."
+            _=>$"First-party 0..20 equal-unit line has an unlabeled tick after {first} and before {second}. What number belongs on that middle tick? NOT an original Jada/Andre/Elena image."
         };
         int answer=family switch{Fives=>second,Card=>target,Gap=>second-first,_=>target};
         return new(family,prompt,$"Exact independently authored answer {answer}; teacher-only original pictures and class string are not verified.",AssessmentItemType.Numeric,parameters);
@@ -67,7 +67,7 @@ internal static class UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions
            !p.TryGetValue("target",out var target)||target<1||target>end)
             return false;
         if(family==Fives)return first%5==0&&second==first+5&&target==second;
-        if(family==Missing)return first==target-1&&second==target+1&&target<10;
+        if(family==Missing)return first==target-1&&second==target+1&&target<20;
         return target<end;
     }
 }
