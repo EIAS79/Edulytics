@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L11" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original grade2 saree silk ribbon length take-from and start unknown">
+            <h2>Edulytics · saree silk ribbon stories</h2>
+            <p>Original Priya, Elena and Han take-from ribbon tasks
+            with tape diagrams, including Priya's START unknown
+            from25 inches cut and38 inches left. Teacher reviews
+            source pictures and genuine partner MLR8 explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson45Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original ribbon stories</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L10" &&
          unifiedPracticeAdoptionId.HasValue)
     {
