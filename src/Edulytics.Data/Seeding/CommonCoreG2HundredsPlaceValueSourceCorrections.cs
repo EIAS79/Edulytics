@@ -169,6 +169,10 @@ public static class CommonCoreG2HundredsPlaceValueSourceCorrections
             GuardIdentity(lesson, repair);
             var english = lesson.Translations.Single(t => t.CultureCode == "en");
             if (MatchesCorrection(english, repair)) continue;
+            // A later fully source-guarded, six-field correction supersedes the
+            // legacy hundreds teaching after its approved predecessor transition.
+            if (CommonCoreG2Unit5OriginalRichContentCorrections.IsFinalApplied(document,lesson))
+                continue;
             if (!string.Equals(english.StepByStepSolutions,
                     repair.PreviousSteps, StringComparison.Ordinal) ||
                 !english.KeyConceptsAndRules.Contains(

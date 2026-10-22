@@ -117,6 +117,14 @@ public static class CommonCoreG2Unit5OriginalRichContentCorrections
         e.Legacy&&t.Explanation==e.Before[0]&&t.QuickSummary==e.Before[5]&&
         t.KeyConceptsAndRules.Contains("hundred",StringComparison.OrdinalIgnoreCase)&&
         t.StepByStepSolutions.StartsWith("Step 1:",StringComparison.Ordinal);
+    /// <summary>Check only the fully reviewed newer Unit5 six-field body and original source identity.</summary>
+    public static bool IsFinalApplied(CanonicalLessonContentPackDocument d,CanonicalLessonContentPackLesson l)
+    {
+        var e=Find(d,l);
+        if(e is null)return false;
+        Guard(d,l,e);
+        return Fields(l.Translations.Single(x=>x.CultureCode=="en")).SequenceEqual(e.After);
+    }
     public static void Apply(CanonicalLessonContentPackDocument d)
     {
         foreach(var l in d.Lessons)
