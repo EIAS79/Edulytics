@@ -1,0 +1,49 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson46Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Friendship Bracelets";}
+<style>.g2l46{max-width:970px;margin:auto;padding:22px 16px;color:#244657}.g2l46 .panel{background:#fff;border:1px solid #cadbe5;border-radius:12px;margin:15px 0;padding:18px}.g2l46 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.g2l46 label{display:block;margin:12px 0 5px;font-weight:bold}.g2l46 input,.g2l46 select,.g2l46 textarea{width:100%;max-width:550px;border:1px solid #8599a6;border-radius:8px;padding:10px;font:inherit}.g2l46 .action{background:#0d7e94;color:#fff;border:0;border-radius:8px;padding:12px 20px;font-weight:bold}.g2l46 .good{border-left:4px solid #2d855b;padding-left:12px}.g2l46 .bad{border-left:4px solid #b94a5f;padding-left:12px}.g2l46 .review{border-left:4px solid #b08b36;padding-left:12px}</style>
+<main class="g2l46">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Saree Silk Stories — Friendship Bracelets</h1><p>These original source stories have TWO linked parts. Use the first answer in the second story question, and always keep the correct unit: <strong>centimeters</strong> for Lin, <strong>inches</strong> for the others.</p>
+<form asp-controller="Grade2Lesson46Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. True or False? Place Value Comparisons</h2>
+<div class="grid">
+<div><label asp-for="Answers.WarmA">24 = 10+14</label><select asp-for="Answers.WarmA"><option>True</option><option>False</option></select></div>
+<div><label asp-for="Answers.WarmB">15+12 = 27</label><select asp-for="Answers.WarmB"><option>True</option><option>False</option></select></div>
+<div><label asp-for="Answers.WarmC">26 = 10+6+10</label><select asp-for="Answers.WarmC"><option>True</option><option>False</option></select></div>
+<div><label asp-for="Answers.WarmD">58 = 20+20+8</label><select asp-for="Answers.WarmD"><option>True</option><option>False</option></select></div>
+</div><p>Discuss: the last right-hand side has four tens plus eight ones, or48.</p></section>
+<section class="panel"><h2>2. Share Ribbon with Friends — Lin</h2>
+<p>Lin has92 <strong>centimeters</strong> of ribbon. She cuts35cm for Noah. Then she cuts28cm MORE for Jada. Use MLR6 Three Reads and write TWO related equations; start the second equation with the first result.</p>
+<div class="grid">
+<div><label asp-for="Answers.LinAfterNoah">92−35 = ? cm after Noah</label><input asp-for="Answers.LinAfterNoah" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.LinAfterJada">After cutting another28, cm remaining?</label><input asp-for="Answers.LinAfterJada" type="number" min="0" max="100" required/></div>
+</div></section>
+<section class="panel"><h2>3. Friendship Bracelets and Gifts</h2>
+<p>Han has82 <strong>inches</strong> of ribbon but needs only48. He gives the extra to Clare; Clare already has27 inches. Andre needs50 inches but has28. Mai gives Andre exactly what he needs; Mai has49 inches LEFT. How much did she start with?</p>
+<div class="grid">
+<div><label asp-for="Answers.HanExtra">Han:82−48 extra to Clare (in)</label><input asp-for="Answers.HanExtra" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ClareFinal">Clare:27+extra (in)</label><input asp-for="Answers.ClareFinal" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.AndreMissing">Andre:50−28 missing (in)</label><input asp-for="Answers.AndreMissing" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.MaiOriginal">Mai:49 remains PLUS amount given (starting inches)</label><input asp-for="Answers.MaiOriginal" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.ActualThreeReadsAndDiagrams">Describe the actual original two-step tape diagrams you made using Three Reads</label>
+<textarea asp-for="Answers.ActualThreeReadsAndDiagrams" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPartnerDiscussion">What difference did you notice between cm and inch story labels and your partner's method?</label>
+<textarea asp-for="Answers.RealPartnerDiscussion" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. Independent Edulytics practice</h2>
+<p>These invented numbers are NOT the publisher's restricted Sharing Saree Silk Ribbon Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.IndependentA">Iris86cm, gives26cm then19cm. Left?</label><input asp-for="Answers.IndependentA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.IndependentB">Noor75in but needs46in. Extra?</label><input asp-for="Answers.IndependentB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.IndependentC">Omar24in, receives Noor's extra. Now?</label><input asp-for="Answers.IndependentC" type="number" min="0" max="100" required/></div>
+</div><button type="submit" class="action">Check both steps and show teacher observations</button></section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"good":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numbers correct":r.Correct==false?"Review the two-step calculation":"Teacher review needed"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher rubric</h2><ul>@foreach(var r in UsCcssG2Unit3TwelfthLessonFriendship.TeacherRubric){<li>@r</li>}</ul>
+<p>IM K–5 2021 Grade2 Unit3 Lesson12, Addressing 2.MD.B.5 and2.NBT.B.5. No official grade or publisher Cool-down copied.</p></section>
+</main>
