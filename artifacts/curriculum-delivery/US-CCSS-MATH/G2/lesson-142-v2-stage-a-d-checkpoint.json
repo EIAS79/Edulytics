@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 142,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U09:L09",
+  "title": "Sort the Story Problems",
+  "stageA": {
+    "status": "PUBLIC_SOURCE_TEXT_REVIEWED_HUMAN_MEDIA",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-142-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-9/lesson-9/preparation.html",
+    "sourceSha256": "f98057f3c3fa8bf15d987df9251191a0d6ac5d962b08fcdf91d4139ef2581c4b",
+    "standards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.NBT.B.9",
+      "CCSS:2.OA.A.1"
+    ]
+  },
+  "stageB": {
+    "status": "ALL_SIX_FIELDS_SOURCE_SHA_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit9SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-142-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_EXACT_FIRSTPARTY_FAMILIES_FOUR_TEST_FILES_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit9ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit9ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit9Activities/Index.cshtml",
+    "teacherOnly": "Original real paper story cards, student-created questions and sorting rules, original printed diagram or uncountable picture and student-generated explanations require human evaluation; first-party numeric result never certifies original authoring.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal142OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal142SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal142ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal142StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 143
+}
