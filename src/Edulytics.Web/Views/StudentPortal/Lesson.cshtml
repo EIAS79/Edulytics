@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 two step original saree silk friendship ribbon stories">
+            <h2>Edulytics · friendship bracelets</h2>
+            <p>Original Lin two cuts in centimeters and Han/Clare
+            then Andre/Mai two-step stories in inches. Use the
+            FIRST answer for the SECOND step; different missing
+            quantities may require subtract then ADD.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson46Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open friendship ribbon problems</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L11" &&
          unifiedPracticeAdoptionId.HasValue)
     {
