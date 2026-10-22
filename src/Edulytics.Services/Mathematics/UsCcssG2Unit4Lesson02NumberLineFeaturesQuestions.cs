@@ -60,7 +60,7 @@ internal static class UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions
     {
         if(!Supports(family)||p.Count!=6||
            !p.TryGetValue("start",out var start)||start!=0||
-           !p.TryGetValue("end",out var end)||end!=(family switch{Fives=>100,Missing=>10,_=>30})||
+           !p.TryGetValue("end",out var end)||end!=(family switch{Fives=>100,Missing=>20,_=>30})||
            !p.TryGetValue("step",out var step)||step!=(family==Fives?5:1)||
            !p.TryGetValue("first",out var first)||first<0||first>=end||
            !p.TryGetValue("second",out var second)||second<=first||second>end||
