@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 60,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L08",
+  "title": "Equations on a Number Line PLC Activity",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "ORIGINAL_PUBLISHER_SOURCE_REVIEWED",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-8/preparation.html",
+    "sourceBodySha256": "300866021d022b74d6721c9528d53aa5684d915b9f192b6f20946436047def6d",
+    "sourceSemanticSha256": "2ed984f7c251f1f7921307ee7d6b3d9a94e102d1c96eb5b217d4c03701446932",
+    "officialOutcomes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.A.2"
+    ],
+    "teacherOnly": "Original publisher diagrams, physical arrow drawings, partner discourse, formal source Cool-down not invented"
+  },
+  "stageB": {
+    "status": "SHA_GUARDED_SIX_FIELD_INSTRUCTIONAL_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4EquationArrowCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "persistedGuard": "Exact original source URL/SHA, ordered CCSS outcomes, original six learner fields and approved predecessor content version"
+  },
+  "stageC": {
+    "status": "PROTECTED_STUDENT_SOURCE_ACTIVITIES_AND_FOUR_INDEPENDENT_EXACT_FAMILIES_WRITTEN",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit4ArrowActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4ArrowActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4ArrowLessonsQuestions.cs",
+    "registry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "familyIDs": [
+      "usccss.g2.u04.l08.addition_endpoint",
+      "usccss.g2.u04.l08.subtraction_endpoint",
+      "usccss.g2.u04.l08.arrow_span",
+      "usccss.g2.u04.l08.count_back_tens"
+    ],
+    "sourceBoundary": "True four arrows and choral counts, original source drawing human review",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal60OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal60DirectionalMathTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal60ExactArrowFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal60ArrowRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "runtimeCompilationVerified": false,
+    "stageDExecuted": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO_UNVERIFIED"
+  },
+  "nextSequentialLesson": 61
+}
