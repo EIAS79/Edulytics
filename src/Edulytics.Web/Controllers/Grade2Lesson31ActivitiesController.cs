@@ -30,18 +30,19 @@ public sealed class Grade2Lesson31ActivitiesController(
         if(error is not null)return error;
         if(answers is null)return BadRequest("Missing answers");
         if(typeof(Grade2Lesson31Answers).GetProperties().Where(p=>p.PropertyType==typeof(string))
-           .Select(p=>p.GetValue(answers) as string).Any(v=>v?.Length>2000))
+          .Select(p=>p.GetValue(answers) as string).Any(x=>x?.Length>2000))
             return BadRequest("Answer too long");
         var rows=new List<Grade2Lesson31Feedback>();
-        void Add(string name,UsCcssG2Unit2ThirteenthLessonStoryEquations.Review r)=>
-            rows.Add(new(name,r.Correct,r.TeacherReviewNeeded,r.Feedback));
-        Add("Warm-up27+?=40",UsCcssG2Unit2ThirteenthLessonStoryEquations.Warmup(answers.WarmupMissing));
-        Add("Original four source seeds stories",UsCcssG2Unit2ThirteenthLessonStoryEquations.SourceFour(
-            answers.LinStart,answers.AndreWon,answers.DiegoTotal,answers.KiranPart));
-        Add("Independent Edulytics four unknown types",UsCcssG2Unit2ThirteenthLessonStoryEquations.Independent(
+        void Add(string label,UsCcssG2Unit2ThirteenthLessonStoryEquations.Review result)=>
+            rows.Add(new(label,result.Correct,result.TeacherReviewNeeded,result.Feedback));
+        Add("Original four story numeric unknowns",UsCcssG2Unit2ThirteenthLessonStoryEquations.SourceAnswers(
+            answers.LinStart,answers.AndreGained,answers.DiegoTotal,answers.KiranPart));
+        Add("Four original question-mark positions",UsCcssG2Unit2ThirteenthLessonStoryEquations.SourceQuestionMarks(
+            answers.LinEquation,answers.AndreEquation,answers.DiegoEquation,answers.KiranEquation));
+        Add("Independently authored Edulytics exit",UsCcssG2Unit2ThirteenthLessonStoryEquations.Independent(
             answers.FirstPartyStart,answers.FirstPartyChange,answers.FirstPartyTotal,answers.FirstPartyPart));
-        rows.Add(new("Authentic A–I story cards, equation cards, tape diagrams and MLR8 conversation",null,true,
-            "Teacher checks actual printed card matching, possibly multiple valid equations, original tape diagrams and student discussion. Numeric answers cannot certify source participation."));
+        rows.Add(new("Actual source diagrams, original Cards A–I/F–I and peer explanation",null,true,
+            "Teacher checks genuine previous-lesson story cards, equation-card matches, TWO real solved F–I problems and self-created question-mark diagrams. These are not verified by a correct numeric result."));
         Response.Headers["X-Robots-Tag"]="noindex,nofollow,noarchive";
         return View("Index",new Grade2Lesson31Page(curriculumAdoptionId,lessonId,title!,true,answers,rows));
     }
@@ -53,10 +54,10 @@ public sealed class Grade2Lesson31ActivitiesController(
         if(w.SelectedCurriculumAdoptionId!=adoptionId)return (null,NotFound());
         var row=w.Lessons.SingleOrDefault(x=>x.LessonId==lessonId);
         if(row is null||row.LessonCode!=Code)return (null,NotFound());
-        var content=await lessonContent.GetPublishedForStudentAsync(
+        var c=await lessonContent.GetPublishedForStudentAsync(
             actor,lessonId,System.Globalization.CultureInfo.CurrentUICulture.Name,ct);
-        if(content.Value is null)return (null,content.Error==LessonContentErrorCode.AccessDenied?Forbid():NotFound());
-        if(content.Value.LessonCode!=Code)return (null,NotFound());
-        return (content.Value.Title,null);
+        if(c.Value is null)return (null,c.Error==LessonContentErrorCode.AccessDenied?Forbid():NotFound());
+        if(c.Value.LessonCode!=Code)return (null,NotFound());
+        return (c.Value.Title,null);
     }
 }

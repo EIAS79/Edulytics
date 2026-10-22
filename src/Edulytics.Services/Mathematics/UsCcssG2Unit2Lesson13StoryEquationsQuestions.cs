@@ -1,7 +1,7 @@
 using System.Globalization;
 using Edulytics.Core.Enums;
 namespace Edulytics.Services.Mathematics;
-/// <summary>Original randomized seed-equation stories; source task structure, not publisher cards.</summary>
+/// <summary>Numerical source-type variants with four different unknown positions.</summary>
 internal static class UsCcssG2Unit2Lesson13StoryEquationsQuestions
 {
     public const string Start="usccss.g2.u02.l13.add_to_start_unknown";
@@ -12,28 +12,36 @@ internal static class UsCcssG2Unit2Lesson13StoryEquationsQuestions
     public static bool Supports(string? f)=>f is Start or Change or Total or Part;
     public static Problem Build(string family,Random r)
     {
-        if(!Supports(family))throw new InvalidOperationException("Not G2 U02 L13 exact story");
-        int a=r.Next(20,51),b=r.Next(11,Math.Min(101-a,45));
-        int total=a+b;
-        var p=new Dictionary<string,int>(StringComparer.Ordinal){{"a",a},{"b",b},{"total",total}};
+        if(!Supports(family))throw new InvalidOperationException("Not G2 U02 L13 exact question");
+        var aTens=r.Next(2,8),bTens=r.Next(1,9-aTens);
+        var aOnes=r.Next(1,10),bOnes=r.Next(10-aOnes,10);
+        var start=10*aTens+aOnes,change=10*bTens+bOnes,total=start+change;
+        var p=new Dictionary<string,int>(StringComparer.Ordinal){
+            ["start"]=start,["change"]=change,["total"]=total,["aTens"]=aTens,
+            ["bTens"]=bTens,["aOnes"]=aOnes,["bOnes"]=bOnes};
         string prompt=family switch{
-            Start=>$"First-party Lin-style start-unknown story: a student started with ? seeds, WON {b}, now has {total}. How many seeds were at the START? Equation ?+{b}={total}.",
-            Change=>$"First-party Andre-style change-unknown story: a student started with {a} seeds, WON ?, now has {total}. How many were WON? Equation {a}+?={total}.",
-            Total=>$"First-party Diego-style total-unknown story: a student gathered {a} yellow seeds and {b} blue seeds. How many IN ALL? Equation {a}+{b}=?",
-            _=>$"First-party Noah/Kiran-style part-unknown story: two students gathered {total} seeds, one gathered {a}, and the other gathered ?. How many did the OTHER gather? Equation {a}+?={total}."
+            Start=>$"First-party Add To START unknown: Some seeds were in a bowl; {change} more were added and there are {total} now. How many were there FIRST? Equation ?+{change}={total}.",
+            Change=>$"First-party Add To CHANGE unknown: start with {start} seeds, add some, and finish with {total}. How many were ADDED? Equation {start}+?={total}.",
+            Total=>$"First-party Put Together TOTAL unknown: {start} blue seeds and {change} yellow seeds. How many altogether? Equation {start}+{change}=?",
+            _=>$"First-party Put Together PART unknown: {total} seeds in all, {start} blue, rest yellow. How many yellow? Equation {start}+?={total}."
         };
-        return new Problem(family,prompt,$"{a}+{b}={total}, so the named unknown is "+(family==Start?a:family==Total?total:b)+".",AssessmentItemType.Numeric,p);
+        var answer=family==Start?start:family==Total?total:change;
+        return new Problem(family,prompt,$"{start}+{change}={total}, unknown value {answer}. Two parts and total must be labeled accurately.",AssessmentItemType.Numeric,p);
     }
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
-        if(!Valid(family,p))throw new InvalidOperationException("Invalid G2 U02 L13 unknown parameters");
-        return (family==Start?p["a"]:family==Total?p["total"]:p["b"])
-            .ToString(CultureInfo.InvariantCulture);
+        if(!Valid(family,p))throw new InvalidOperationException("Invalid four unknown positions");
+        var value=family switch{Start=>p["start"],Change or Part=>p["change"],Total=>p["total"],_=>throw new InvalidOperationException("No such source type")};
+        return value.ToString(CultureInfo.InvariantCulture);
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string answer)=>
         Valid(family,p)&&string.Equals(answer,Solve(family,p),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int> p)=>
-        Supports(family)&&p.Count==3&&p.TryGetValue("a",out var a)&&a is >=20 and <=50&&
-        p.TryGetValue("b",out var b)&&b is >=11 and <=44&&p.TryGetValue("total",out var t)&&
-        t==a+b&&t<=100;
+        Supports(family)&&p.Count==7&&p.TryGetValue("start",out var start)&&
+        p.TryGetValue("change",out var change)&&p.TryGetValue("total",out var total)&&
+        p.TryGetValue("aTens",out var at)&&at is >=2 and <=7&&
+        p.TryGetValue("bTens",out var bt)&&bt>=1&&at+bt<=8&&
+        p.TryGetValue("aOnes",out var ao)&&ao is >=1 and <=9&&
+        p.TryGetValue("bOnes",out var bo)&&bo is >=1 and <=9&&ao+bo>=10&&
+        start==10*at+ao&&change==10*bt+bo&&total==start+change&&total<=100;
 }
