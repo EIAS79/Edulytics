@@ -11,7 +11,7 @@ namespace Edulytics.Web.Controllers;
 public sealed class Grade2Lesson50ActivitiesController(
     IStudentPrivatePracticeService privatePractice,ILessonContentService lessonContent):Controller
 {
-    private const string Code=UsCcssG2Unit3SixteenthLessonPlantData.LessonCode;
+    private const string Code=UsCcssG2Unit3SixteenthLessonPlantPlot.LessonCode;
     [HttpGet("")]
     [ResponseCache(NoStore=true,Location=ResponseCacheLocation.None)]
     public async Task<IActionResult> Index(Guid curriculumAdoptionId,Guid lessonId,CancellationToken ct)
@@ -31,19 +31,22 @@ public sealed class Grade2Lesson50ActivitiesController(
         if(error is not null)return error;
         if(answers is null)return BadRequest("Missing answers");
         if(typeof(Grade2Lesson50Answers).GetProperties().Where(p=>p.PropertyType==typeof(string))
-            .Select(p=>p.GetValue(answers) as string).Any(v=>v?.Length>2000))return BadRequest("Answer too long");
+            .Select(p=>p.GetValue(answers) as string).Any(x=>x?.Length>2000))
+            return BadRequest("Input too long");
         var rows=new List<Grade2Lesson50Feedback>();
-        void Add(string label,UsCcssG2Unit3SixteenthLessonPlantData.Review r)=>
-            rows.Add(new(label,r.Correct,r.TeacherReviewNeeded,r.Feedback));
-        Add("Original four make-ten sums",UsCcssG2Unit3SixteenthLessonPlantData.Warmup(
+        void Add(string label,UsCcssG2Unit3SixteenthLessonPlantPlot.Review v)=>
+            rows.Add(new(label,v.Correct,v.TeacherReviewNeeded,v.Feedback));
+        Add("Original four-expression addition Number Talk",UsCcssG2Unit3SixteenthLessonPlantPlot.Warmup(
             answers.TalkA,answers.TalkB,answers.TalkC,answers.TalkD));
-        Add("Published Group B plant data, not Han's image",UsCcssG2Unit3SixteenthLessonPlantData.GroupB(
-            answers.GroupBShortest,answers.GroupBTallest,answers.GroupBDifference,
-            answers.GroupBMode,answers.GroupBMore30,answers.GroupBTotal));
-        Add("Independent Edulytics fictional plant plot",UsCcssG2Unit3SixteenthLessonPlantData.Fictional(
-            answers.FirstPartyTotal,answers.FirstPartyMode,answers.FirstPartyRange,answers.FirstPartyOver24));
-        rows.Add(new("Authentic separate Han plant line plot image and MLR8 discussion",null,true,
-            "Teacher must display real Han line plot, check whether tallest is29cm from its rightmost X and count its actual Xs. The public text lacks the image's numerical distribution, so no numeric claim is made."));
+        Add("Published Group B plant data (centimeters)",UsCcssG2Unit3SixteenthLessonPlantPlot.Source(
+            answers.SourceMin,answers.SourceMax,answers.SourceDifference,
+            answers.SourceAbove30,answers.SourceTotal,answers.SourceMode));
+        Add("Equal-spaced source plot ticks and stack heights",UsCcssG2Unit3SixteenthLessonPlantPlot.TickCounts(
+            answers.At25,answers.At33,answers.Empty28,answers.Empty34));
+        Add("First-party fictional plant data, not source Group B",UsCcssG2Unit3SixteenthLessonPlantPlot.Fictional(
+            answers.FictionMin,answers.FictionMax,answers.FictionMode,answers.FictionAbove26));
+        rows.Add(new("Actual Han line-plot IMAGE and authentic classroom work",null,true,
+            "Original Han plot figure is necessary to answer whether29cm is tallest, its true total, and a valid statement. Teacher checks that IMAGE, real paper plot, student partner comparison and MLR8 speech; none of these is inferred from numeric Group B answers."));
         Response.Headers["X-Robots-Tag"]="noindex,nofollow,noarchive";
         return View("Index",new Grade2Lesson50Page(curriculumAdoptionId,lessonId,title!,true,answers,rows));
     }

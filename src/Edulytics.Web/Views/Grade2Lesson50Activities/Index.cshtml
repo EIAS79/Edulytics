@@ -1,54 +1,61 @@
 @model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson50Page
 @using Edulytics.Core.Mathematics.Practice
-@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Interpret Measurement Data"; }
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Interpret Measurement Data";}
 <style>
-.g2l50{max-width:980px;margin:auto;padding:20px;color:#234455}.g2l50 .panel{background:#fff;border:1px solid #ccdae3;border-radius:12px;margin:15px 0;padding:20px}.g2l50 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.g2l50 label{display:block;font-weight:700;margin:10px 0 5px}.g2l50 input,.g2l50 textarea{width:100%;max-width:560px;font:inherit;border:1px solid #8196a3;border-radius:8px;padding:10px}.g2l50 .action{background:#087f94;color:white;border:0;border-radius:8px;padding:12px 20px;font-weight:bold}.g2l50 .plot{display:grid;grid-template-columns:repeat(11,1fr);max-width:810px;gap:1px}.g2l50 .plot div{min-height:104px;text-align:center;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:3px solid #4e7d92}.g2l50 .plot span{font-weight:900;color:#25839b}.g2l50 .plot strong{margin-top:6px}.g2l50 .ok{border-left:4px solid #29865b;padding-left:12px}.g2l50 .bad{border-left:4px solid #bc4e5a;padding-left:12px}.g2l50 .review{border-left:4px solid #b48930;padding-left:12px}
+.g2l50{max-width:990px;margin:auto;padding:20px;color:#254453}.g2l50 .panel{background:#fff;border:1px solid #cedee5;border-radius:12px;margin:16px 0;padding:18px}.g2l50 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.g2l50 label{display:block;margin:10px 0 5px;font-weight:700}.g2l50 input,.g2l50 textarea{font:inherit;width:100%;max-width:570px;border:1px solid #8299a4;border-radius:7px;padding:10px}.g2l50 .action{background:#0c8294;color:white;padding:13px 19px;border-radius:8px;border:0;font-weight:700}.g2l50 .plot{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:2px}.g2l50 .plot .cell{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-height:98px;text-align:center;border-bottom:3px solid #5e95a8;font-size:13px}.g2l50 .plot .xs{white-space:pre-line;color:#15819a;font-weight:bold}.g2l50 .plot .tick{padding-top:8px;font-weight:700}.g2l50 .ok{border-left:4px solid #2f865b;padding-left:11px}.g2l50 .bad{border-left:4px solid #b74b5f;padding-left:11px}.g2l50 .review{border-left:4px solid #ac8b31;padding-left:11px}
 </style>
 <main class="g2l50">
 <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
 <h1>Interpret Measurement Data</h1>
-<p>Make a plot of plant heights in centimeters and use its numerical lengths—not just the height of the X stacks—to compare plants. A nonzero start is permitted if labels and intervals remain accurate.</p>
+<p>Represent source <strong>Group B plant heights in centimeters</strong> and interpret the line plot. A numerical scale may start at25 rather than0 while preserving equal whole-centimeter intervals.</p>
 <form asp-controller="Grade2Lesson50Activities" asp-action="Submit" method="post">
 @Html.AntiForgeryToken()
 <input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
-<section class="panel"><h2>1. Number Talk — Add within 50</h2><div class="grid">
+<section class="panel"><h2>1. Number Talk — add within 50</h2><div class="grid">
 <div><label asp-for="Answers.TalkA">15+5+1</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required/></div>
 <div><label asp-for="Answers.TalkB">25+6</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required/></div>
 <div><label asp-for="Answers.TalkC">16+7</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required/></div>
 <div><label asp-for="Answers.TalkD">37+6</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required/></div>
 </div></section>
-<section class="panel"><h2>2. The Plant Project — ORIGINAL Group B table</h2>
-<p>Published plant heights in centimeters: Andre33, Clare25, Diego27, Elena25, Han35, Jada33, Kiran26, Noah30, Priya26, Tyler33. Chart starts at25 and includes zero-count ticks.</p>
-<div class="plot" role="img" aria-label="Original public Group B plant heights cm, 25 two X,26 two,27 one,28 zero,29 zero,30 one,31 zero,32 zero,33 three,34 zero,35 one">
-@foreach(var item in new[]{(25,2),(26,2),(27,1),(28,0),(29,0),(30,1),(31,0),(32,0),(33,3),(34,0),(35,1)}){
-<div>@for(var j=0;j<item.Item2;j++){<span>X</span>}<strong>@item.Item1</strong></div>}
-</div><p>Plant height (cm); ONE X per plant, ordered and equally spaced tick marks.</p>
-<div class="grid">
-<div><label asp-for="Answers.GroupBShortest">Shortest plant (cm)</label><input asp-for="Answers.GroupBShortest" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.GroupBTallest">Tallest plant (cm)</label><input asp-for="Answers.GroupBTallest" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.GroupBDifference">Tallest−shortest (cm)</label><input asp-for="Answers.GroupBDifference" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.GroupBMode">Most common plant height (cm)</label><input asp-for="Answers.GroupBMode" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.GroupBMore30">Plants taller than 30cm</label><input asp-for="Answers.GroupBMore30" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.GroupBTotal">Total number of plants</label><input asp-for="Answers.GroupBTotal" type="number" min="0" max="100" required/></div>
+<section class="panel"><h2>2. The Plant Project — Group B authentic published table</h2>
+<p>Andre33, Clare25, Diego27, Elena25, Han35, Jada33, Kiran26, Noah30, Priya26, Tyler33 <strong>(all cm)</strong>.</p>
+<p>Original Edulytics numerical rendering of the public Group B data, NOT a publisher image. An empty tick has no X but still needs a printed label.</p>
+<div class="plot" role="img" aria-label="Group B centimeter line plot:25 two,26 two,27 one,28 zero,29 zero,30 one,31 zero,32 zero,33 three,34 zero,35 one">
+@foreach(var c in new[]{2,2,1,0,0,1,0,0,3,0,1}.Select((n,i)=>(n,i))){
+<div class="cell"><span class="xs">@string.Join(" ",Enumerable.Repeat("X",c.n))</span><span class="tick">@(c.i+25)</span></div>}
 </div>
-<label asp-for="Answers.GroupBDiagramExplanation">Explain how you used a true ruler-like numbered scale to see height differences</label><textarea asp-for="Answers.GroupBDiagramExplanation" rows="3" maxlength="2000"></textarea>
-</section>
-<section class="panel"><h2>3. Han's DIFFERENT line plot — teacher-displayed original</h2>
-<p>Han claims the tallest plant is 29cm. Do you agree? Count the plots' Xs and justify from the actual chart. This source image was not supplied as readable measurements in our text archive, so this answer is <strong>not automatically scored or guessed</strong>.</p>
-<label asp-for="Answers.HanPlotImageObservation">What do the rightmost X and all Xs tell you on the REAL Han image?</label><textarea asp-for="Answers.HanPlotImageObservation" rows="3" maxlength="2000"></textarea>
-<label asp-for="Answers.HanPlotTeacherFeedback">How did your partner and teacher check that evidence?</label><textarea asp-for="Answers.HanPlotTeacherFeedback" rows="2" maxlength="2000"></textarea>
-</section>
-<section class="panel"><h2>4. Original Edulytics independent fictional heights</h2>
-<p>First-party (NOT source plant group) heights:21,21,22,24,24,24,26,27 cm.</p>
 <div class="grid">
-<div><label asp-for="Answers.FirstPartyTotal">Fictional total plants</label><input asp-for="Answers.FirstPartyTotal" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.FirstPartyMode">Fictional most common height (cm)</label><input asp-for="Answers.FirstPartyMode" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.FirstPartyRange">Fictional tallest−shortest (cm)</label><input asp-for="Answers.FirstPartyRange" type="number" min="0" max="100" required/></div>
-<div><label asp-for="Answers.FirstPartyOver24">Fictional count taller than24cm</label><input asp-for="Answers.FirstPartyOver24" type="number" min="0" max="100" required/></div>
-</div><button class="action" type="submit">Check arithmetic and show source-observation tasks</button>
-</section></form>
+<div><label asp-for="Answers.SourceMin">Shortest (cm)</label><input asp-for="Answers.SourceMin" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceMax">Tallest (cm)</label><input asp-for="Answers.SourceMax" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceDifference">Difference tallest−shortest</label><input asp-for="Answers.SourceDifference" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceAbove30">Number STRICTLY above30cm</label><input asp-for="Answers.SourceAbove30" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceTotal">Total plants</label><input asp-for="Answers.SourceTotal" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceMode">Most common height (cm)</label><input asp-for="Answers.SourceMode" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.At25">Count at25cm</label><input asp-for="Answers.At25" type="number" min="0" max="20" required/></div>
+<div><label asp-for="Answers.At33">Count at33cm</label><input asp-for="Answers.At33" type="number" min="0" max="20" required/></div>
+<div><label asp-for="Answers.Empty28">Count at28cm</label><input asp-for="Answers.Empty28" type="number" min="0" max="20" required/></div>
+<div><label asp-for="Answers.Empty34">Count at34cm</label><input asp-for="Answers.Empty34" type="number" min="0" max="20" required/></div>
+</div>
+<label asp-for="Answers.RealOwnPlot">Describe your OWN titled paper plot, ticks, unit and equal Xs</label><textarea asp-for="Answers.RealOwnPlot" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPartnerCompare">What did your actual partner notice, and how did you choose the start tick?</label><textarea asp-for="Answers.RealPartnerCompare" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Han's different source image plot — teacher reviewed</h2>
+<p>Han said the tallest plant in HIS separate plot was29 centimeters. Do you agree? Why? How many plants were measured? What other statement is supported? You must LOOK at that actual published image to answer. The source text does not list its X positions or counts, so Edulytics does not guess.</p>
+<label asp-for="Answers.RealHanImageObservation">Your observation of the REAL published Han plot</label>
+<textarea asp-for="Answers.RealHanImageObservation" rows="3" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. Original Edulytics fictional practice data</h2>
+<p>FICTIONAL, NOT Group B: nine plant heights24,25,25,26,26,26,27,28,28cm.</p>
+<div class="grid">
+<div><label asp-for="Answers.FictionMin">Minimum (cm)</label><input asp-for="Answers.FictionMin" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FictionMax">Maximum (cm)</label><input asp-for="Answers.FictionMax" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FictionMode">Most common height</label><input asp-for="Answers.FictionMode" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FictionAbove26">Number taller than26cm</label><input asp-for="Answers.FictionAbove26" type="number" min="0" max="100" required/></div>
+</div>
+<button class="action" type="submit">Check numeric interpretation and show teacher rubric</button></section>
+</form>
 @if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
-@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3><p>@(r.Correct==true?"Numerically correct":r.Correct==false?"Check the data":"Teacher review required"). @r.Message</p></div>}
-</section>}
-<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var s in UsCcssG2Unit3SixteenthLessonPlantData.TeacherRubric){<li>@s</li>}</ul>
-<p>Original mathematical data IM K–5 2021 G2 U03 L16, CCSS 2.MD.D.9 and 2.NBT.B.5; Han source plot and original protected Diego’s Art Project Cool-down require educator access. No official grade.</p></section></main>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3>
+<p>@(r.Correct==true?"Correct numbers":r.Correct==false?"Check the chart":"Teacher observation required"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var x in UsCcssG2Unit3SixteenthLessonPlantPlot.TeacherRubric){<li>@x</li>}</ul>
+<p>IM K–5 2021 G2 U03 L16, CCSS2.MD.D.9 and2.NBT.B.5. Restricted Diego's Art Project Cool-down not copied; no official grade stored.</p></section>
+</main>
