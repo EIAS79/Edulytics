@@ -99,6 +99,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit5OriginalRichContentCorrections.Apply(document);
         CommonCoreG2Unit5ComparisonSourceCorrections.Apply(document);
         CommonCoreG2Unit6SourceCorrections.Apply(document);
+        CommonCoreG2Unit7FirstFourCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
         CommonCoreG1Unit2Part2SourceTeachingCorrections.Apply(document);
@@ -412,8 +413,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Unit5Original);
         var g2Unit6 = CommonCoreG2Unit6SourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Unit5More);
-        var g1Stories = CommonCoreG1Unit2StorySourceCorrections
+        var g2Unit7 = CommonCoreG2Unit7FirstFourCorrections
             .GetExpectedContentVersion(document, lesson, g2Unit6);
+        var g1Stories = CommonCoreG1Unit2StorySourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Unit7);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
             .GetExpectedContentVersion(document, lesson, g1Stories);
         var g1Part2 = CommonCoreG1Unit2Part2SourceTeachingCorrections
@@ -556,6 +559,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit5OriginalRichContentCorrections.IsTarget(document, lesson) ||
         CommonCoreG2Unit5ComparisonSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG2Unit6SourceCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit7FirstFourCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
@@ -578,6 +582,7 @@ public static class CanonicalLessonContentMaterializer
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson,
         string existingContentVersion) =>
+        CommonCoreG2Unit7FirstFourCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CambridgePrimaryStage6LessonContentCorrections
             .CanUpgradeExisting(
                 document,
