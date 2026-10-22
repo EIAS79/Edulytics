@@ -12178,6 +12178,78 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u04.l01.missing_tick_label",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u04-l01-zero-equal-unit-number-line-recompute",
+      "representations": [
+        "number_line",
+        "missing_ticks"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u04.l01.point_from_zero",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u04-l01-zero-equal-unit-number-line-recompute",
+      "representations": [
+        "number_line",
+        "whole_number_points"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u04.l01.greater_point",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u04-l01-zero-equal-unit-number-line-recompute",
+      "representations": [
+        "number_line",
+        "number_comparison"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u04.l01.unit_interval_gap",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u04-l01-zero-equal-unit-number-line-recompute",
+      "representations": [
+        "number_line",
+        "unit_interval_distance"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

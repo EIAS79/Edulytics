@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original number line zero to twenty and equal-length unit intervals">
+            <h2>Edulytics · whole numbers on a number line</h2>
+            <p>Complete genuine source 0-to-10 missing labels and point choices.
+            Then build your own real paper 0-to-20 line with 20 equal intervals,
+            mark points at 3 and 13 and compare with a classmate.
+            Independent digital practice cannot certify drawn intervals.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson53Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open number-line activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L18" &&
          unifiedPracticeAdoptionId.HasValue)
     {
