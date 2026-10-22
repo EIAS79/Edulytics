@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L15" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional original Math Stories Stage5 tape diagram partner center">
+            <h2>Edulytics · original Math Stories tape center</h2>
+            <p>Study printed tape-diagram cards, invent a fitting
+            story and equation for a real partner and solve it.
+            Number Talk compensation and first-party numeric
+            practice are separate from actual source gameplay.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson33Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open tape diagram center</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L14" &&
          unifiedPracticeAdoptionId.HasValue)
     {
