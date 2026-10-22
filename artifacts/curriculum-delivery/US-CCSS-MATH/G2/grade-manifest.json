@@ -72,7 +72,7 @@
     "content": 146,
     "supporting": 0,
     "officialMapped": 146,
-    "lessonACClosed": 50,
+    "lessonACClosed": 51,
     "stageDVerified": 0,
     "academicAcceptancesEstablishedByThisNewWorkflow": 0
   },
@@ -1103,9 +1103,9 @@
       "contentPresent": true,
       "isSupporting": false,
       "contentPackBodySha256": "6325945a7675a6b84e32f9b97b7d3da28669a09cd10a70266b31a04df607cd92",
-      "aCStatus": "A_C_PENDING",
-      "stageDStatus": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "aCStatus": "A_C_COMPLETED",
+      "stageDStatus": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_STAGE_D_NOT_TESTED"
     },
     {
       "gradeOrdinal": 52,
@@ -3045,7 +3045,7 @@
     "Lesson 1 source-lesson HTML compared; print student-task PDF and Cool-down remain inaccessible."
   ],
   "existingGrade2HistoricalApprovals": "NOT_AUDITED_NO_CLAIM",
-  "currentAuthoringCursor": 51,
+  "currentAuthoringCursor": 52,
   "lessonStatusAuthority": "full-grade-progress.json plus per-lesson checkpoints; this manifest only mirrors A-C status",
   "executionPolicy": "STRICT_A_B_C_COMPLETE_WITH_PROVEN_CHECKPOINT_BEFORE_NEXT_ORDINAL;AUTHOR_ORIGINAL_EDULYTICS_COOLDOWN_IF_PUBLISHER_RESTRICTED",
   "outOfOrderPriorWorkPolicy": "LESSONS_2_TO_8_ARE_EARLIER_UNAPPROVED_DRAFTS_REVIEW_ONLY_WHEN_THEIR_TURN_COMES",
@@ -3099,6 +3099,7 @@
     47,
     48,
     49,
-    50
+    50,
+    51
   ]
 }

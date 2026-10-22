@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 51,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L17",
+  "title": "Center Day 3 (optional)",
+  "unitNumber": 3,
+  "lessonNumber": 17,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_IM2021_ORIGINAL_TEACHER_PREPARATION_AND_LESSON_REVIEW",
+    "localSource": "Read-only local G2 Unit3 Lesson17 teacher preparation and lesson HTML, project remained GitHub-only",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-17/preparation.html",
+    "sourceBodySha256": "6325945a7675a6b84e32f9b97b7d3da28669a09cd10a70266b31a04df607cd92",
+    "sourceSemanticSha256": "0647e028a91f35ae3af0e59ec8508f02cafa4be60a7b64ba834311b4277192a2",
+    "orderedOutcomeCodes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.3",
+      "CCSS:2.MD.A.4",
+      "CCSS:2.MD.D.9",
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.B.2"
+    ],
+    "optional": true,
+    "warmup": "Number Talk60−10=50,60−11=49,60−21=39,70−32=38.",
+    "activity1": "Stage1 Creating Line Plots Inches and Centimeters: pair measures UP TO8 genuine physical objects to nearest cm OR inch, makes truthful line plot, asks partner TWO answerable graph questions.",
+    "activity2": "Choice Time authentic Estimate and Measure Stage2, Number Puzzles Stages2–4, Target Measurements Stage1; reuse genuine measured values in plot if desired.",
+    "synthesis": "Tell real partner what they did well. Genuine student discussion must be teacher-observed.",
+    "rights": "Real original measured object lengths never given; no invented data attributed. First-party demonstration separate.",
+    "sourceCoolDown": "No public publisher cool-down in source; independently written Edulytics exit."
+  },
+  "stageB": {
+    "status": "COMPLETE_ORIGINAL_SOURCE_SHA_AND_SIX_PREDECESSOR_FIELDS_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Original URI, source body hash, six ordered standards, six learner predecessor fields, approved persisted predecessor version."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTH_STUDENT_SOURCE_NUMERIC_AND_FOUR_EXACT_FAMILIES_UNRUN_TESTS",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3SeventeenthLessonLinePlotCenter.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson17CenterPlotContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson17CenterPlotQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson51ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson51Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l17.fictional_plot_frequency",
+      "usccss.g2.u03.l17.fictional_plot_total",
+      "usccss.g2.u03.l17.fictional_plot_range",
+      "usccss.g2.u03.l17.fictional_plot_above_threshold"
+    ],
+    "independentFictional": "8 fictional objects9,10,10,11,12,12,13,14cm, count8, at10=2 at12=2, min9 max14, above11 four. Source true measurements teacher-only.",
+    "independentExit": "80−23=57;91−35=56.",
+    "teacherOnly": "Real source measurements, cm/in unit choice, plot title and actual partner TWO question-and-answer rounds, center choice and authentic peer praise.",
+    "security": "Authorized StudentPortal only, adoption/published content check, anti-forgery and bounded text fields; no official marks.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3SeventeenthLessonLinePlotCenterTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson17CenterPlotQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson51ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "CONTINUE_G2_U03_L18_ORDINAL52_STAGE_A_B_C"
+}
