@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source Grade 2 bearded dragon and centimeter measurement">
+            <h2>Edulytics · measure in centimeters</h2>
+            <p>Compare centimeter cubes with ten-centimeter
+            tools for the original 24cm bearded-dragon drawing.
+            Authentic reptile printouts and day-gecko/threadsnake
+            difference require teacher measurement; the digital
+            extra numbers are original Edulytics examples.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson36Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open centimeter measurement work</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {
