@@ -10783,6 +10783,78 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l01.count_five_cm_straws",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l01-equal-units-exact-recompute",
+      "representations": [
+        "length_segments",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l01.count_ten_cm_straws",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l01-equal-units-exact-recompute",
+      "representations": [
+        "length_segments",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l01.count_one_cm_cubes",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l01-equal-units-exact-recompute",
+      "representations": [
+        "length_segments",
+        "metric_units"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l01.compare_straw_unit_counts",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l01-equal-units-exact-recompute",
+      "representations": [
+        "length_segments",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

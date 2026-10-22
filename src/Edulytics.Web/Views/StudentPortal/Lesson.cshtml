@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 actual standard units of length source activity">
+            <h2>Edulytics · Priya's Pet and standard centimeter units</h2>
+            <p>Compare a source forty-centimeter string measured
+            in five- and ten-centimeter straws, then with
+            uniform one-centimeter cubes. Real physical alignment,
+            no gaps or overlaps, and original partner discussion
+            remain teacher-observed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson34Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open standard-unit measurement</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L15" &&
          unifiedPracticeAdoptionId.HasValue)
     {
