@@ -53,7 +53,9 @@ public static void Apply(CanonicalLessonContentPackDocument d)
    var t=l.Translations.Single(x=>x.CultureCode=="en");
    if(Fields(t).SequenceEqual(e.After))continue;
    if(!Fields(t).SequenceEqual(e.Before) &&
-               !CommonCoreG2SourceGroundedFoundationsCorrections.MatchesApprovedFirstPassPredecessor(d,l,e.Before,Fields(t)))throw new InvalidOperationException($"G2 U07 ordinal{e.Ordinal} rich predecessor text drift");
+               !CommonCoreG2SourceGroundedFoundationsCorrections.MatchesApprovedFirstPassPredecessor(d,l,e.Before,Fields(t)) &&
+               !CommonCoreG2TapeDiagramAndStoryResolutionCorrection.MatchesApprovedFirstPassPredecessor(d,l,e.Before,Fields(t)) &&
+               !CommonCoreG2StoryProblemsSourceCorrection.MatchesApprovedFirstPassPredecessor(d,l,e.Before,Fields(t)))throw new InvalidOperationException($"G2 U07 ordinal{e.Ordinal} rich predecessor text drift");
    t.Explanation=e.After[0];t.KeyConceptsAndRules=e.After[1];t.WorkedExamples=e.After[2];
    t.StepByStepSolutions=e.After[3];t.CommonMistakes=e.After[4];t.QuickSummary=e.After[5];
   }
