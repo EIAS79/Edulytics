@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 30,
+  "unitNumber": 2,
+  "lessonNumber": 12,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L12",
+  "title": "Story Problems and Diagrams PLC Activity",
+  "stageA": {
+    "status": "COMPLETE_READ_ONLY_SOURCE_TEACHER_LESSON_PREPARATION_REVIEW",
+    "sourceBook": "Local archived IM2021 Grade2 Unit2 Lesson12 preparation and lesson HTML",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-12/preparation.html",
+    "sourceSemanticSha256": "f4dfabe5104ca50ee13d7e42fa59c68b284749b0c3bdb967ff3d842ccaa4fd3b",
+    "canonicalBodySha256": "31d6608bc608d3c38a28f381de76a5f6d5d7b0f4f31db5dea198eb7ee4dddf86",
+    "officialStandards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ],
+    "warmup": "Mancala Notice and Wonder authentic teacher image; introduce seed positions, not presumed game rules.",
+    "activity1": "Interpret the Diagram MLR6 Three Reads: four Clare/Han54 and16 Mancala-like stories, match genuine source tape diagrams ONLY; do not solve original Activity1.",
+    "sourceMathematicalRelationsSupplement": "Compare smaller unknown54−16=38, put together total54+16=70, missing on board54−16=38, missing other side54−16=38; Edulytics optional supplemental arithmetic only.",
+    "activity2": "Real source blackline-master story/diagram card sort pairs; choose exactly two authentic original A–D cards to solve. Synthesis compare true published Cards L/N. Hidden card texts/letter diagrams not fabricated.",
+    "sourceCooldown": "Find the Match educator-only, not reproduced.",
+    "rights": "Original numerical contexts attributed; publisher printed cards and images not invented or copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_PREDECESSOR_EXACT_SOURCE_HASH_RICH_BODY",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gate": "Exact original URL, SHA, outcomes, six old learner fields and previous persisted approved content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_PROTECTED_STUDENT_DIAGRAM_WORKFLOW_OPTIONAL_MATH_4_FAMILIES_TESTS_WRITTEN",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2TwelfthLessonMancalaDiagrams.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson12MancalaContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson12MancalaQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson30ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson30Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l12.compare_smaller_unknown",
+      "usccss.g2.u02.l12.put_together_total_unknown",
+      "usccss.g2.u02.l12.take_apart_remaining_unknown",
+      "usccss.g2.u02.l12.put_together_missing_side"
+    ],
+    "firstPartyMath": "63−27=36 for smaller/remaining/side,63+27=90 for total; invented first-party numbers not represented as original printed cards.",
+    "humanOnly": "Actual MLR6 three readings, genuine tape diagrams/letter matching, source card pairs, solved two authentic card problems and source synthesis cards L/N, teacher reviews.",
+    "studentSecurity": "Authorised StudentPortal adoption and published content, antiforgery POST, limited form field length and no official grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2TwelfthLessonMancalaDiagramsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson12MancalaQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson30ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U02_L13_GRADE_ORDINAL31_A_B_C"
+}
