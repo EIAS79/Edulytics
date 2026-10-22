@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 2 two-digit subtraction source activities">
+            <h2>Edulytics · subtract two digits with regrouping</h2>
+            <p>Work on original 46−28 and 93−54, compare actual
+            block strategies, and participate in the teacher-observed
+            Diego/Lin/Jada/Han four-person card center. Numerical
+            companion examples are Edulytics-authored, not source cards.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson25Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open two-digit subtraction activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L06" &&
          unifiedPracticeAdoptionId.HasValue)
     {
