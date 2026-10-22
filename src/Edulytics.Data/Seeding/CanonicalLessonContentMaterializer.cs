@@ -49,6 +49,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.Apply(document);
         CommonCoreG2Unit2UnknownAddendTeachingCorrection.Apply(document);
         CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
@@ -263,8 +264,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2U02Compare);
         var g2Zoo = CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2U02Missing);
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2Center = CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection
             .GetExpectedContentVersion(document, lesson, g2Zoo);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Center);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
@@ -359,6 +362,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit2UnknownAddendTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
@@ -473,6 +477,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit2UnknownAddendTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections

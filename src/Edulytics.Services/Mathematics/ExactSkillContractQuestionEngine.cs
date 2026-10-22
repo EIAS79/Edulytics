@@ -177,6 +177,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit2Lesson1NoRegroupQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson2UnknownAddendQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -404,6 +405,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson2UnknownAddendQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(family))
             return UsCcssG2Unit2Lesson3ZooStoryQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson4OptionalCenterQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1200,6 +1203,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit2Lesson3ZooStoryQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson4OptionalCenterQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3110,6 +3119,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson2UnknownAddendQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(problem.Family))
             return UsCcssG2Unit2Lesson3ZooStoryQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson4OptionalCenterQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))

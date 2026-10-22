@@ -354,6 +354,24 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional Capture Squares and Five in a Row Stage6 source centers">
+            <h2>Edulytics · optional Capture Squares and Five in a Row</h2>
+            <p>Mentally subtract by tens and ones. Practise source
+            Capture Squares Stage3 within20 and Five in a Row Stage6
+            within100 INCLUDING new ten composition, with separately
+            teacher-observed authentic board and partner gameplay.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson22Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open optional source-center math checks
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L03" &&
          unifiedPracticeAdoptionId.HasValue)
     {
