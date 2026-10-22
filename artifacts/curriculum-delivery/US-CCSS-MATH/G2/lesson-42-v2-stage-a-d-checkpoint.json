@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 42,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L08",
+  "title": "What is an Inch?",
+  "unitNumber": 3,
+  "lessonNumber": 8,
+  "sourceEdition": "IM K5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_TEACHER_PREPARATION_AND_ORIGINAL_LESSON_REVIEW",
+    "sourceReadOnly": "Local original Grade2 Unit3 Lesson8 preparation/lesson HTML, never used to edit project on device",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-8/preparation.html",
+    "canonicalBodySha256": "c1891c5171ac4d25f4188c110885e8c17c777e017830a8b0269261b2bd6ef5f5",
+    "sourceSemanticSha256": "1e1a3c6396e8afd1bf6eeb533a634eb1431897ef2fe0c09ffd60aefa68754a5d",
+    "orderedOutcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.3"
+    ],
+    "warmup": "Notice and Wonder two authentic ruler images with unequal centimeter/inch intervals; no publisher images copied.",
+    "activity1": "Original What Is an Inch: inch TILE SIDE matches inch ruler0→1; four-person physically finds2 objects about1 inch and measures real marker/pencil/11 cubes/book/2 extra with12-inch ruler.",
+    "activity2": "Original rectangle long side, square side, triangle longest side: estimate FIRST, then real inch measure, report approximately nearest WHOLE inch; public teacher says source triangle lies between5 and6 but does not supply exact endpoint.",
+    "coolDown": "Source Measure a Rectangle educator-login restricted, independently authored virtual examples instead.",
+    "teacherOnly": "Teacher observes genuine rulers, physical inch-tile, correct zero, real endpoints, MLR8 partner talk.",
+    "rights": "Attribution source, not copying original shapes or protected copyrighted printed measurements."
+  },
+  "stageB": {
+    "status": "COMPLETE_GUARDED_SIX_FIELD_SOURCE_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact original source URL, canonical body SHA, ordered CCSS standards, previous six English fields and persisted rich-content predecessor."
+  },
+  "stageC": {
+    "status": "COMPLETE_STUDENT_INCH_NUMERIC_COMPANION_FOUR_EXACT_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3EighthLessonWhatIsAnInch.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson8WhatIsAnInchContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson8WhatIsAnInchQuestions.cs",
+    "viewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson42Page.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson42ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson42Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l08.count_full_inch_tiles",
+      "usccss.g2.u03.l08.ruler_zero_to_end_ticks",
+      "usccss.g2.u03.l08.nearest_whole_below_half",
+      "usccss.g2.u03.l08.nearest_whole_above_half"
+    ],
+    "virtualMath": "Seven tile units ->7in; ruler0→4 ->4in; virtual5.2 about5,5.8 about6 whole inches; original illustrative not source geometry.",
+    "teacherOnly": "Unasserted physical source rectangle, square and triangle lengths and class objects, actual peers.",
+    "security": "StudentPortal role, selected adoption and published lesson guard, antiforgery POST, bounded fields, no official grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3WhatIsAnInchTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3EighthLessonWhatIsAnInchTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson8WhatIsAnInchQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson42ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L09_GRADE_ORDINAL43_STAGE_A_B_C"
+}
