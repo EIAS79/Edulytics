@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original reptile tape meters and centimeters">
+            <h2>Edulytics · measure in meters</h2>
+            <p>Practice the original floor tape models for seven
+            reptiles, convert centimeters to meterstick lengths and
+            explain why a longer tool helps. Source A–G exact tape
+            lengths are available; real physical measuring, zero
+            alignment and MLR2 discussion need teacher review.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson39Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open reptile-tape meter activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L04" &&
          unifiedPracticeAdoptionId.HasValue)
     {
