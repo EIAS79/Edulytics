@@ -34,7 +34,13 @@ public static class CommonCoreB001SourceGoalMismatchCorrections
         doc.PackCode==MathematicsCurriculumPackRegistry.CommonCoreCode &&
         doc.VersionCode=="CCSSM-2010" &&
         doc.ContentVersion=="phase30-common-core-rich-content-v1" ?
-            Repairs.SingleOrDefault(x=>x.Code==lesson.LessonCode) : null;
+            // Later, separately SHA-guarded original-source repairs for these two
+            // lessons supersede the older B001 generic corrections. Keep the
+            // original B001 candidates for all other genuinely targeted lessons.
+            (CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.IsTarget(doc,lesson) ||
+             CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.IsTarget(doc,lesson)
+               ? null
+               : Repairs.SingleOrDefault(x=>x.Code==lesson.LessonCode)) : null;
 
     public static bool IsTarget(CanonicalLessonContentPackDocument doc,
         CanonicalLessonContentPackLesson lesson) => Find(doc,lesson)!=null;
