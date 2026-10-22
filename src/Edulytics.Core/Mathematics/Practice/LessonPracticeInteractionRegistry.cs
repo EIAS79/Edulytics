@@ -210,6 +210,11 @@ public static class LessonPracticeInteractionRegistry
            answerType=="exact_integer")
             return LessonPracticeInteractionKind.IntegerKeypad;
 
+        // Declared numeric answer type is authoritative. Families named compare*
+        // may ask for a numerical gap, not a <, =, > relation.
+        if (answerType=="exact_integer")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+
         if (answerType is "side_label" or "boolean" or "ordered_labels")
             return LessonPracticeInteractionKind.StructuredEntry;
 

@@ -30,7 +30,7 @@ public sealed class UsCcssG2Unit2Lesson13StoryEquationsQuestionsTests
             Assert.Equal(4,qs.Count);
             foreach(var q in qs)
             {
-                Assert.Equal(q.Parameters["a"]+q.Parameters["b"],q.Parameters["total"]);
+                Assert.Equal(q.Parameters["start"]+q.Parameters["change"],q.Parameters["total"]);
                 Assert.True(ExactSkillContractQuestionEngine.Verify(f,q.Parameters,q.CorrectAnswer));
                 Assert.False(ExactSkillContractQuestionEngine.Verify(f,q.Parameters,"-1"));
                 var bad=new Dictionary<string,int>(q.Parameters,StringComparer.Ordinal){["total"]=101};

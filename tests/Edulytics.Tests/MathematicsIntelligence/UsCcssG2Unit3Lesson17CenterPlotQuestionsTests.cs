@@ -35,7 +35,7 @@ public sealed class UsCcssG2Unit3Lesson17CenterPlotQuestionsTests
                 Assert.InRange(p["unit"],0,1);
                 Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,q.CorrectAnswer));
                 Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"-1"));
-                var altered=new Dictionary<string,int>(p,StringComparer.Ordinal){{"unit",2}};
+                var altered=new Dictionary<string,int>(p,StringComparer.Ordinal); altered["unit"]=2;
                 Assert.False(ExactSkillContractQuestionEngine.Verify(family,altered,q.CorrectAnswer));
             }
         }

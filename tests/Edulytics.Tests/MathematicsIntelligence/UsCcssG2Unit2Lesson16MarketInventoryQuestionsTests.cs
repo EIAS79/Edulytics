@@ -40,7 +40,7 @@ public sealed class UsCcssG2Unit2Lesson16MarketInventoryQuestionsTests
                 Assert.InRange(p["saleThird"],0,p["third"]);
                 Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,item.CorrectAnswer));
                 Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,"-1"));
-                var altered=new Dictionary<string,int>(p,StringComparer.Ordinal){{"third",1000}};
+                var altered=new Dictionary<string,int>(p,StringComparer.Ordinal); altered["third"]=1000;
                 Assert.False(ExactSkillContractQuestionEngine.Verify(f,altered,item.CorrectAnswer));
             }
         }

@@ -13,7 +13,7 @@ internal static class UsCcssG2Unit2Lesson12MancalaQuestions
     public static Problem Build(string family,Random rng)
     {
         if(!Supports(family))throw new InvalidOperationException("Not G2 U02 L12 exact supplement");
-        int aTens=rng.Next(3,8),bTens=rng.Next(1,9-aTens);
+        int aTens=rng.Next(3,8),bTens=rng.Next(1,Math.Min(aTens,9-aTens));
         int aOnes=rng.Next(0,9),bOnes=rng.Next(aOnes+1,10);
         int a=10*aTens+aOnes,b=10*bTens+bOnes;
         var p=new Dictionary<string,int>(StringComparer.Ordinal){
