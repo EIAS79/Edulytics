@@ -36,14 +36,24 @@ new(146,"PED:US-CCSS-MATH:G2:U09:L13","https://im.kendallhunt.com/k5/teachers/gr
     !l.OutcomeCodes.SequenceEqual(e.Outcomes))
    throw new InvalidOperationException($"G2 U07 ordinal{e.Ordinal} official original identity mismatch");
  }
- public static void Apply(CanonicalLessonContentPackDocument d)
+     /// <summary>Exact original-source identified later-stage body; not an approval of arbitrary changes.</summary>
+    public static bool IsFinalApplied(CanonicalLessonContentPackDocument d,CanonicalLessonContentPackLesson l)
+    {
+        var e=Find(d,l);
+        if(e is null)return false;
+        Guard(l,e);
+        var t=l.Translations.Single(x=>x.CultureCode=="en");
+        return Fields(t).SequenceEqual(e.After);
+    }
+public static void Apply(CanonicalLessonContentPackDocument d)
  {
   foreach(var l in d.Lessons)
   {
    var e=Find(d,l);if(e is null)continue;Guard(l,e);
    var t=l.Translations.Single(x=>x.CultureCode=="en");
    if(Fields(t).SequenceEqual(e.After))continue;
-   if(!Fields(t).SequenceEqual(e.Before))throw new InvalidOperationException($"G2 U07 ordinal{e.Ordinal} rich predecessor text drift");
+   if(!Fields(t).SequenceEqual(e.Before) &&
+               !CommonCoreG2SourceGroundedFoundationsCorrections.MatchesApprovedFirstPassPredecessor(d,l,e.Before,Fields(t)))throw new InvalidOperationException($"G2 U07 ordinal{e.Ordinal} rich predecessor text drift");
    t.Explanation=e.After[0];t.KeyConceptsAndRules=e.After[1];t.WorkedExamples=e.After[2];
    t.StepByStepSolutions=e.After[3];t.CommonMistakes=e.After[4];t.QuickSummary=e.After[5];
   }

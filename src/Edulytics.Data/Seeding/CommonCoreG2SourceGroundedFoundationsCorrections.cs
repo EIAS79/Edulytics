@@ -117,6 +117,28 @@ public static class CommonCoreG2SourceGroundedFoundationsCorrections
                 $"Grade 2 source / outcome identity drift for {lesson.LessonCode}.");
     }
 
+    /// <summary>
+    /// Permit ONLY the exact already approved foundation first-pass learner body as
+    /// the predecessor of a later source/SHA guarded, lesson-specific rich repair.
+    /// Explanation and summary must still equal the original edition snapshots.
+    /// </summary>
+    public static bool MatchesApprovedFirstPassPredecessor(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson,
+        IReadOnlyList<string> original,
+        IReadOnlyList<string> current)
+    {
+        var repair=Find(document,lesson);
+        if(repair is null || original.Count!=6 || current.Count!=6)return false;
+        AssertIdentity(lesson,repair);
+        return current[0]==original[0] &&
+               current[1]==repair.Concepts &&
+               current[2]==repair.Examples &&
+               current[3]==repair.Steps &&
+               current[4]==repair.Mistakes &&
+               current[5]==original[5];
+    }
+
     public static void Apply(CanonicalLessonContentPackDocument document)
     {
         if (!string.Equals(document.PackCode, MathematicsCurriculumPackRegistry.CommonCoreCode,
@@ -139,6 +161,11 @@ public static class CommonCoreG2SourceGroundedFoundationsCorrections
                 english.StepByStepSolutions, english.CommonMistakes, english.QuickSummary);
 
             if (MatchesCorrection(english, repair))
+                continue;
+            // A previously materialized document may already hold an EXACT, source-
+            // pinned downstream repair. Preserve idempotency without weakening drift guards.
+            if (CommonCoreG2Unit6SourceCorrections.IsFinalApplied(document, lesson) ||
+                CommonCoreG2Unit9SourceCorrections.IsFinalApplied(document, lesson))
                 continue;
 
             if (!string.Equals(existingSha, repair.OriginalEnglishBodySha,
