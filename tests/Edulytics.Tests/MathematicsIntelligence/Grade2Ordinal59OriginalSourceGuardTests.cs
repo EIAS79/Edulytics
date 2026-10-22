@@ -9,7 +9,7 @@ public sealed class Grade2Ordinal59OriginalSourceGuardTests
             .SelectMany(d=>d.Lessons.Where(l=>CommonCoreG2Unit4DirectionalJumpCorrection.IsTarget(d,l))
             .Select(l=>(Doc:d,Lesson:l))).Single();
         var en=target.Lesson.Translations.Single(x=>x.CultureCode=="en");
-        Assert.Contains("SOURCE",en.Explanation);
+        Assert.Contains("Original Activity1",en.Explanation);
         Assert.NotEmpty(en.StepByStepSolutions);
         Assert.Equal(CommonCoreG2Unit4DirectionalJumpCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(target.Doc,target.Lesson));
