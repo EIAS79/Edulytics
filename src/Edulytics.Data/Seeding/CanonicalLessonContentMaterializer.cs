@@ -102,6 +102,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit7FirstFourCorrections.Apply(document);
         CommonCoreG2Unit7NextFourCorrections.Apply(document);
         CommonCoreG2Unit7LastTenCorrections.Apply(document);
+        CommonCoreG2Unit8SourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
         CommonCoreG1Unit2Part2SourceTeachingCorrections.Apply(document);
@@ -421,8 +422,9 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g2Unit7);
         var g2Unit7Last = CommonCoreG2Unit7LastTenCorrections
             .GetExpectedContentVersion(document, lesson, g2Unit7Next);
+        var g2Unit8 = CommonCoreG2Unit8SourceCorrections.GetExpectedContentVersion(document,lesson,g2Unit7Last);
         var g1Stories = CommonCoreG1Unit2StorySourceCorrections
-            .GetExpectedContentVersion(document, lesson, g2Unit7Last);
+            .GetExpectedContentVersion(document, lesson, g2Unit8);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
             .GetExpectedContentVersion(document, lesson, g1Stories);
         var g1Part2 = CommonCoreG1Unit2Part2SourceTeachingCorrections
@@ -568,6 +570,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit7FirstFourCorrections.IsTarget(document, lesson) ||
         CommonCoreG2Unit7NextFourCorrections.IsTarget(document, lesson) ||
         CommonCoreG2Unit7LastTenCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit8SourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
@@ -593,6 +596,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2Unit7FirstFourCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit7NextFourCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2Unit7LastTenCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit8SourceCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CambridgePrimaryStage6LessonContentCorrections
             .CanUpgradeExisting(
                 document,
