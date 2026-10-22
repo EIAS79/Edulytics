@@ -187,6 +187,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson12MancalaQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson13StoryEquationsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -434,6 +435,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson12MancalaQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit2Lesson13StoryEquationsQuestions.Supports(family))
             return UsCcssG2Unit2Lesson13StoryEquationsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1290,6 +1293,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit2Lesson13StoryEquationsQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit2Lesson13StoryEquationsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3220,6 +3229,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson12MancalaQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit2Lesson13StoryEquationsQuestions.Supports(problem.Family))
             return UsCcssG2Unit2Lesson13StoryEquationsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))

@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L14" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 source one and two-step seed stories">
+            <h2>Edulytics · solve one- and two-step stories</h2>
+            <p>Original Andre's two parts, Priya/Mai/Kiran group
+            seed stories, the second-step 92 total, and student
+            Jada summary. Real partner work and MLR7 gallery
+            displays are teacher-observed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson32Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open two-step seed stories</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L13" &&
          unifiedPracticeAdoptionId.HasValue)
     {
