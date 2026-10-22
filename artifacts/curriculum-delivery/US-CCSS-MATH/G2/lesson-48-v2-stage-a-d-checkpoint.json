@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 48,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L14",
+  "unitNumber": 3,
+  "lessonNumber": 14,
+  "title": "What is a Line Plot?",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_IM2021_LOCAL_TEACHER_PREPARATION_AND_LESSON_REVIEW",
+    "sourceReadOnly": "Local G2 U03 L14 teacher original HTML, no project access",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-14/preparation.html",
+    "originalBodySha256": "45ef6983eab08969e03c2238a1d8b9fc742779b1ac784ac47f56f0ea0801b060",
+    "sourceSemanticSha256": "ff9356260434dcd6bcb9e9a70e95212df508376bd5984530fce59d6bef637919",
+    "orderedOutcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.D.9"
+    ],
+    "warmup": "Original Handy Graphs compare categorical glove-size bar graph with numeric line plot of hand spans.",
+    "activity1": "Students spread thumb/pinky, trace, measure nearest whole inch with real ruler/partner check; teacher-prepared evenly spaced 0–10 inch scale; one X per measurement from class.",
+    "activity2": "Line plot title and inch axis label; longest/shortest by x-axis numerical values, most common by highest X frequency, total Xs total recorded hand spans.",
+    "sourceCoolDown": "Hand Spans educator login restricted; first-party fictional data never claimed as original class or restricted source assessment.",
+    "teacherOnly": "Authentic class counts cannot be deduced; real measurement, class shared X notes and MLR8 discourse need teacher.",
+    "rights": "Original source maths attributed, fictional display independently authored, no source graphic or protected cool-down copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_SIX_FIELD_PREDECESSOR_LOCKED_TRUE_NUMERIC_LINE_PLOT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact source URI, original body SHA, ordered addressing outcomes, previous six rich learner fields, accepted persisted predecessor version."
+  },
+  "stageC": {
+    "status": "COMPLETE_STUDENT_SOURCE_COMPANION_FOUR_EXACT_FICTIONAL_LINE_PLOT_FAMILIES_TESTS_UNRUN",
+    "numeric": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3FourteenthLessonHandSpanLinePlot.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson14HandSpanLinePlotContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson48ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson48Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l14.line_plot_frequency",
+      "usccss.g2.u03.l14.line_plot_total_measurements",
+      "usccss.g2.u03.l14.line_plot_most_common_length",
+      "usccss.g2.u03.l14.line_plot_length_range"
+    ],
+    "firstPartyData": "4in:1X,5in:2X,6in:3X,7in:2X,8in:1X (9 synthetic records, range4in and mode6in); never source class values.",
+    "teacherOnly": "Authentic class data and original measured hand span, peer check and students' plotted sticky notes are not automatically marked.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3HandSpanLinePlotTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3FourteenthLessonHandSpanLinePlotTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson14HandSpanLinePlotQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson48ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "security": "StudentPortal, selected adoption, verified published lesson, antiforgery and bounded input. No official grade."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L15_ORDINAL49_STAGE_A_B_C"
+}
