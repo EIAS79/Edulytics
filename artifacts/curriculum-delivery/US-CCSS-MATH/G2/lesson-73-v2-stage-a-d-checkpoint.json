@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 2,
+  "gradeOrdinal": 73,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U05:L06",
+  "title": "Represent Numbers in Different Ways",
+  "stageA": {
+    "status": "ORIGINAL_PUBLIC_TEACHER_SOURCE_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-6/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-6/lesson.html",
+    "originalCanonicalBodySha256": "9d63ab9c21dc75ff605e8defc2f51386bd99ed8b3bce8c1f25af0319cd0f5e5e",
+    "officialOutcomes": [
+      "CCSS:2.NBT.A.3"
+    ],
+    "observedOriginalActivities": "Original U05 L6 teacher lesson: all authentic student-facing mathematical examples and warm-up reviewed against editorial Rich V2.",
+    "originalImages": "Authentic diagrams and peer gallery/number words or physical blocks require real teacher. Restricted Cool-down not reproduced."
+  },
+  "stageB": {
+    "status": "ORIGINAL_SHA_GUARDED_RICH_6_FIELD_CORRECTION",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit5OriginalRichContentCorrections.cs",
+    "note": "Strong exact six-predecessor field validation for unmodified original 4–6; Source SHA+official outcome guarded"
+  },
+  "stageC": {
+    "status": "FOUR_INDEPENDENT_EXACT_FAMILIES_AND_SOURCE_TEACHER_COMPANION_WRITTEN",
+    "sourceMath": "Original source numerical quantities checked, open images and actual writing reserved for teacher",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Unit5FirstSixActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Unit5FirstSixActivities/Index.cshtml",
+    "exactGenerator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit5FirstSixQuestions.cs",
+    "exactFamilies": [
+      "usccss.g2.u05.l06.name_to_three_digit",
+      "usccss.g2.u05.l06.worded_place_value",
+      "usccss.g2.u05.l06.expanded_to_number",
+      "usccss.g2.u05.l06.name_unit_component"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal73OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal73MathAndTeacherBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal73ExactQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal73PrivateStudentRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 74
+}
