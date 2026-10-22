@@ -218,6 +218,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit5ComparisonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit6ExactQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit7FirstFourQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit7NextFourQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -523,6 +524,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit5FirstSixQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit5ComparisonQuestions.Supports(family))
             return UsCcssG2Unit5ComparisonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit7NextFourQuestions.Supports(family))
+            return UsCcssG2Unit7NextFourQuestions.Verify(family,parameters,answer);
         if (UsCcssG2Unit7FirstFourQuestions.Supports(family))
             return UsCcssG2Unit7FirstFourQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit6ExactQuestions.Supports(family))
@@ -1559,6 +1562,11 @@ public sealed class ExactSkillContractQuestionEngine
             var goal = UsCcssG2Unit5ComparisonQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit7NextFourQuestions.Supports(family))
+        {
+           var item=UsCcssG2Unit7NextFourQuestions.Build(family,random);
+           return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
         }
         if (UsCcssG2Unit7FirstFourQuestions.Supports(family))
         {
@@ -3556,6 +3564,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit5FirstSixQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit5ComparisonQuestions.Supports(problem.Family))
             return UsCcssG2Unit5ComparisonQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit7NextFourQuestions.Supports(problem.Family))
+            return UsCcssG2Unit7NextFourQuestions.Solve(problem.Family,p);
         if (UsCcssG2Unit7FirstFourQuestions.Supports(problem.Family))
             return UsCcssG2Unit7FirstFourQuestions.Solve(problem.Family,p);
         if (UsCcssG2Unit6ExactQuestions.Supports(problem.Family))
