@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 36,
-    "firstUnclosedLesson": 37,
-    "nextSequentialLesson": 37,
-    "currentWork": "G2 original 2021 ordinals1–36 sequentially authored A-B-C; latest U03 L02 bearded dragon24cm with genuine 1cm/10cm measurements, four exact first-party families and unrun tests. Next U03 L03 ordinal37. StageD/CI/merge/deploy not executed."
+    "lastConsecutiveACClosed": 37,
+    "firstUnclosedLesson": 38,
+    "nextSequentialLesson": 38,
+    "currentWork": "Grade2 original source 2021 ordinals1–37 consecutive StageA–B–C authored. L37 genuine handmade ruler0–25 and teacher-only A–F printed rectangle measurement, 4 exact first-party families and tests written unrun; next ordinal38 U03 L04. No StageD/merge/deploy."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -47,7 +47,8 @@
     "G2 ordinal33 local teacher lesson source read-only and GitHub-only authorship, optional tape-diagram Stage5, four tests written but unrun.",
     "G2 ordinal34 optional Our Market's Inventory locally read from books only and authored on GitHub only; strict inventory constraints, real classroom roles and independent sample separated; four tests not run.",
     "G2 ordinal35 2021 source reviewed read-only local, physical Priya40cm units and teacher-only manipulation distinguished, all GitHub-only writes; StageD tests not run.",
-    "G2 ordinal36 source read only from local original, GitHub-only updates; original printed reptile lengths left for teacher and first-party numerical answers clearly distinguished. No StageD."
+    "G2 ordinal36 source read only from local original, GitHub-only updates; original printed reptile lengths left for teacher and first-party numerical answers clearly distinguished. No StageD.",
+    "G2 ordinal37 read local original teacher HTML only, GitHub-only authoring, no invented published A-F rectangle lengths, four test files not executed."
   ],
   "lessonStatuses": [
     {
@@ -449,13 +450,13 @@
     {
       "gradeOrdinal": 37,
       "lessonCode": "PED:US-CCSS-MATH:G2:U03:L03",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "ORIGINAL_IM2021_LOCAL_G2_U03_L03_RULER_MARKS0_25_SOURCE_RECTANGLES_A_F",
+      "teaching": "SHA_PREDECESSOR_GUARDED_RULER_TICK_0_TO25_SOURCE_RICH_V2",
+      "practice": "FOUR_EXACT_RULER_INTERVAL_COMPARE_JOIN_FAMILIES_PROTECTED_STUDENT_TEACHER_RUBRIC",
+      "tests": "FOUR_WRITTEN_NOT_EXECUTED",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     },
     {
       "gradeOrdinal": 38,
