@@ -14,8 +14,8 @@ public sealed class CommonCoreG2Unit4NumberLineTeachingCorrectionTests
         Assert.Contains("3,4,6,7",english.Explanation);
         Assert.Contains("0–20",english.Explanation);
         Assert.Contains("13",english.StepByStepSolutions);
-        Assert.Contains("20 equal intervals",english.StepByStepSolutions);
-        Assert.Contains("DOES NOT",english.Explanation.ToUpperInvariant());
+        Assert.Contains("make20 equal intervals",english.StepByStepSolutions);
+        Assert.Contains("not the original assessment",english.Explanation);
         Assert.Equal(CommonCoreG2Unit4NumberLineTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(row.Doc,row.Lesson));
     }
