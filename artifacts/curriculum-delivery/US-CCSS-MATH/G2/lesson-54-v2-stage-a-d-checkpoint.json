@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 54,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L02",
+  "title": "Features of a Number Line PLC Activity",
+  "unitNumber": 4,
+  "lessonNumber": 2,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_PUBLIC_ORIGINAL_LESSON_PREPARATION_AND_TEXT_IMAGE_BOUNDARIES",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-2/preparation.html",
+    "lessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-2/lesson.html",
+    "sourceSemanticSha256": "d9d1d4e49d5b020930b7b544a87fe1a0010354e0edd9147685e8fe96e818e080",
+    "sourceBodySha256": "de2373a2185d359f59a63fa2b36550e169e6591f27c90026c7fadeb39ca45cb1",
+    "orderedOutcomes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.A.2"
+    ],
+    "warmup": "Original orally count by5 from0 through100",
+    "activity1": "Original actual class taut yarn0..30 cards in random pupil order with real physical location revisions",
+    "activity2": "Original 3 student number-line image assessments Jada, Andre, Elena. Jada alt mentions blank tick between1/2 and5/6; Andre/Elena visual details teacher-only and not invented. Final independent source blank0..10 11 tick diagram",
+    "teacherOnly": "Choral speaking, real classroom card arrangement and revision, actual original 3 source images and peer MLR8 discussion",
+    "sourceTitleNote": "Publisher title Features of a Number Line; canonical manifest contains PLC Activity suffix, not auto-corrected here.",
+    "copyright": "Open public original lesson mathematics paraphrased; no reproduced restricted publisher Cool-down or source images"
+  },
+  "stageB": {
+    "status": "COMPLETE_ORIGINAL_SHA_AND_SIX_FIELD_SOURCE_GUARD_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4NumberLineFeaturesTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact source URL, original canonical source SHA, ordered2.MD.B.6+2.NBT.A.2, exact old six fields, approved content predecessor and persisted-language safe validation"
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTIC_NUMERICAL_EXERCISES_PHYSICAL_AND_IMAGE_RUBRIC_TESTS_WRITTEN_UNRUN",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4SecondLessonNumberLineFeatures.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4Lesson02NumberLineFeaturesContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson54ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson54Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u04.l02.count_by_five",
+      "usccss.g2.u04.l02.yarn_card_position",
+      "usccss.g2.u04.l02.equal_interval_gap",
+      "usccss.g2.u04.l02.repair_missing_tick"
+    ],
+    "firstPartyBoundary": "Independent example0..30 cards18 and12 produce gap6; 0..100 by5 contains21 labels, none are observed class measurements. Publisher original 3 picture faults not invented.",
+    "security": "Authorized StudentPortal, selected adoption+published lesson, CSRF, bounded inputs, no academic mark.",
+    "teacherOnly": "Physical real class yarn, random source number cards, teacher observation and original figure image checks, MLR8 group discussion",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit4NumberLineFeaturesTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit4SecondLessonNumberLineFeaturesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit4Lesson02NumberLineFeaturesQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson54ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "CONTINUE_G2_U04_L03_ORDINAL55_STAGE_A_B_C_NO_SKIP"
+}
