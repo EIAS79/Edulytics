@@ -8,7 +8,7 @@ namespace Edulytics.Core.Mathematics.Practice;
 /// reasoning, checked-sheet provenance and teacher approval remain human tasks.
 /// A correct result here does not mean the original activity is completed.
 /// </summary>
-internal static class UsCcssG2Unit1FirstLessonExpressionRecord
+public static class UsCcssG2Unit1FirstLessonExpressionRecord
 {
     private static readonly Regex ExpressionPattern = new(
         @"^\s*(10|[0-9])\s*([+\-−])\s*(10|[0-9])\s*$",

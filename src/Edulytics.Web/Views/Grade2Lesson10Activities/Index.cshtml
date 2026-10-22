@@ -88,7 +88,7 @@ number of symbols in every named category.</p>
 <input id="pic-@aIndex" name="Answers.PictureCounts[@aIndex]"
  value="@(Model.Answers.PictureCounts?.ElementAtOrDefault(aIndex))"
  type="number" min="0" max="10" required /></div>
-@{ aIndex++; }
+aIndex++;
 }
 </div>
 <h2>4. My partner's bar graph — Table B</h2>
@@ -110,7 +110,7 @@ and increases in steps of one.</p>
 <input id="bar-@bIndex" name="Answers.BarCounts[@bIndex]"
  value="@(Model.Answers.BarCounts?.ElementAtOrDefault(bIndex))"
  type="number" min="0" max="10" required /></div>
-@{ bIndex++; }
+bIndex++;
 }
 </div>
 <h2>5. Independent Edulytics Cool-down: same data in two graphs</h2>
@@ -139,7 +139,7 @@ Explain how they show the same total even though the pictures look different.</p
 <input id="exit-b-@cIndex" name="Answers.ExitBarCounts[@cIndex]"
  value="@(Model.Answers.ExitBarCounts?.ElementAtOrDefault(cIndex))"
  type="number" min="0" max="10" required /></div>
-@{ cIndex++; }
+cIndex++;
 }
 </div>
 <label asp-for="Answers.WhichDoesNotBelong">Explain which one of four data displays doesn't belong, using a mathematical reason</label>
