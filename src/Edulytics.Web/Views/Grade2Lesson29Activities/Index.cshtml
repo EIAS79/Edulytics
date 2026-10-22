@@ -1,53 +1,66 @@
 @model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson29Page
 @using Edulytics.Core.Mathematics.Practice
-@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Solve Seed Story Problems";}
+@{
+ Layout="_StudentLayout";ViewData["Title"]="Grade2 — How Do You Solve Story Problems?";
+}
 <style>
-.g2l29{max-width:960px;margin:auto;padding:20px;color:#234254}.g2l29 .panel{background:#fff;border:1px solid #ccdae3;border-radius:12px;margin:16px 0;padding:20px}.g2l29 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px}.g2l29 label{display:block;font-weight:700;margin:10px 0 4px}.g2l29 input,.g2l29 textarea{width:100%;max-width:550px;font:inherit;border:1px solid #8496a3;border-radius:8px;padding:10px}.g2l29 .action{background:#07839b;color:#fff;padding:13px 20px;font-weight:bold;border:0;border-radius:8px}.g2l29 .ok{border-left:4px solid #298259;padding-left:12px}.g2l29 .bad{border-left:4px solid #b8485b;padding-left:12px}.g2l29 .review{border-left:4px solid #b18832;padding-left:12px}
+.g2l29{max-width:970px;margin:auto;padding:20px;color:#244254}
+.g2l29 .panel{background:#fff;border:1px solid #c8dae3;border-radius:12px;margin:15px 0;padding:20px}
+.g2l29 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.g2l29 label{display:block;margin:12px 0 5px;font-weight:bold}
+.g2l29 input,.g2l29 textarea{width:100%;max-width:570px;font:inherit;border:1px solid #8298a3;padding:10px;border-radius:8px}
+.g2l29 .action{background:#0d7e94;color:#fff;border:0;padding:13px 20px;border-radius:8px;font-weight:bold}
+.g2l29 .ok{border-left:4px solid #268456;padding-left:12px}
+.g2l29 .bad{border-left:4px solid #b84555;padding-left:12px}
+.g2l29 .review{border-left:4px solid #ad8a30;padding-left:12px}
 </style>
 <main class="g2l29">
 <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
 <h1>How Do You Solve Story Problems?</h1>
-<p>Decide what the question asks <strong>before</strong> selecting an equation. Each source story has a DIFFERENT structure. The teacher checks original diagrams, blocks and real partner explanations.</p>
+<p>Read carefully to distinguish MORE, REMAINING, MISSING PART and SMALLER UNKNOWN. Model the story first, then use base-ten blocks, an original tape diagram, or equations to calculate.</p>
 <form asp-controller="Grade2Lesson29Activities" asp-action="Submit" method="post">
 @Html.AntiForgeryToken()
 <input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
 <input type="hidden" name="lessonId" value="@Model.LessonId"/>
-<section class="panel"><h2>1. What do you know about story problems?</h2>
-<p>Are you trying to find a combined total, a missing part, what's left, or a comparison?</p>
-<label asp-for="Answers.WarmupStoryStructures">Describe two different kinds of unknown quantities and a way to draw them</label>
-<textarea asp-for="Answers.WarmupStoryStructures" rows="2" maxlength="2000"></textarea></section>
-<section class="panel"><h2>2. How Many Seeds? — difference unknown</h2>
-<p>Diego gathered 42 orange seeds and Jada gathered16 apple seeds. How many MORE seeds did Diego gather? Note: the question does NOT ask how many seeds they gathered together.</p>
-<label asp-for="Answers.DiegoDifference">42−16 = ? (more)</label><input asp-for="Answers.DiegoDifference" type="number" min="0" max="50" required/>
+<section class="panel"><h2>1. What Do You Know About Story Problems?</h2>
+<p>How can the diagram show which quantity is unknown? Discuss the different structures with your teacher.</p>
+<label asp-for="Answers.WarmupStoryKnowledge">My explanation of story problems and their representations</label>
+<textarea asp-for="Answers.WarmupStoryKnowledge" rows="2" maxlength="2000"></textarea>
 </section>
-<section class="panel"><h2>3. The Seeds of Greatness — three more story types</h2>
+<section class="panel"><h2>2. How Many Seeds? — Compare Difference Unknown</h2>
+<p>Diego gathered <strong>42 orange seeds</strong>. Jada gathered <strong>16 apple seeds</strong>. How many MORE did Diego gather? Show two lines or tape bars with a shared section16 and remaining gap.</p>
+<label asp-for="Answers.DiegoJadaDifference">Difference (not total)</label>
+<input asp-for="Answers.DiegoJadaDifference" type="number" min="0" max="50" required/>
+<label asp-for="Answers.DiegoJadaDiagram">Describe your own real block or tape diagram</label>
+<textarea asp-for="Answers.DiegoJadaDiagram" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. The Seeds of Greatness — three story structures</h2>
 <div class="grid">
-<div><p>Lin has31 sunflower seeds and gave15 to Priya. How many does Lin have LEFT?</p>
-<label asp-for="Answers.LinRemaining">31−15 = ?</label><input asp-for="Answers.LinRemaining" type="number" min="0" max="50" required/></div>
-<div><p>Noah made a design with37 total seeds;28 are yellow. How many BLUE seeds did he use?</p>
-<label asp-for="Answers.NoahBlue">28+?=37</label><input asp-for="Answers.NoahBlue" type="number" min="0" max="50" required/></div>
-<div><p>Elena gathered50 pumpkin seeds. Andre gathered23 FEWER than Elena. How many did Andre gather?</p>
-<label asp-for="Answers.AndreSmaller">50−23 = ?</label><input asp-for="Answers.AndreSmaller" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.LinRemaining">Lin has31 sunflower seeds and gives15 to Priya. How many remain?</label><input asp-for="Answers.LinRemaining" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.NoahBlue">Noah has37 corn seeds total,28 yellow and the rest blue. How many blue?</label><input asp-for="Answers.NoahBlue" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.AndrePumpkin">Elena has50 pumpkins, Andre has23 FEWER. How many does Andre have?</label><input asp-for="Answers.AndrePumpkin" type="number" min="0" max="50" required/></div>
 </div>
-<label asp-for="Answers.DiagramComparison">Describe a REAL tape diagram that shows the question, and a base-ten diagram that shows how you calculated</label>
-<textarea asp-for="Answers.DiagramComparison" rows="3" maxlength="2000"></textarea>
-<label asp-for="Answers.TeacherCubeWork">What did you show your partner using actual connecting cubes or base-ten blocks?</label>
-<textarea asp-for="Answers.TeacherCubeWork" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.MyOtherThreeDiagrams">Explain original tape, cube or base-ten representations of all three questions</label>
+<textarea asp-for="Answers.MyOtherThreeDiagrams" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.PartnerStrategy">What did a real partner help you understand about an unknown?</label>
+<textarea asp-for="Answers.PartnerStrategy" rows="2" maxlength="2000"></textarea>
 </section>
-<section class="panel"><h2>4. Independently written Edulytics story checks</h2>
-<p>These aren't publisher seeds stories or the restricted Tyler's Seeds Cool-down.</p>
+<section class="panel"><h2>4. Independently authored Edulytics exit</h2>
+<p>These are first-party extra seed-story numbers, not the publisher's restricted Tyler's Seeds Cool-down.</p>
 <div class="grid">
-<div><p>Rita has44 stones and Eli18. How many MORE stones does Rita have?</p><label asp-for="Answers.ExtraCompare">Difference</label><input asp-for="Answers.ExtraCompare" type="number" min="0" max="50" required/></div>
-<div><p>Sara has33 leaves and gives17 away. How many LEFT?</p><label asp-for="Answers.ExtraTakeFrom">Remaining</label><input asp-for="Answers.ExtraTakeFrom" type="number" min="0" max="50" required/></div>
-<div><p>A collage has45 shapes in total, including27 circles. How many are OTHER shapes?</p><label asp-for="Answers.ExtraPart">Missing part</label><input asp-for="Answers.ExtraPart" type="number" min="0" max="50" required/></div>
-<div><label asp-for="Answers.ExitA">Extra46−19</label><input asp-for="Answers.ExitA" type="number" min="0" max="50" required/></div>
-<div><label asp-for="Answers.ExitB">Extra40−16</label><input asp-for="Answers.ExitB" type="number" min="0" max="50" required/></div>
-</div><button type="submit" class="action">Check source maths and original extra tasks</button></section>
-</form>
-@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+<div><label asp-for="Answers.FirstPartyCompare">44 against18: how many MORE?</label><input asp-for="Answers.FirstPartyCompare" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.FirstPartyTake">32−17: how many REMAIN?</label><input asp-for="Answers.FirstPartyTake" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.FirstPartyPart">41 total−26 known: MISSING part?</label><input asp-for="Answers.FirstPartyPart" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.FirstPartySmaller">50 with28 fewer: SMALLER quantity?</label><input asp-for="Answers.FirstPartySmaller" type="number" min="0" max="50" required/></div>
+</div>
+<button type="submit" class="action">Check answers and show teacher rubric</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
 @foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
-<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically correct":r.Correct==false?"Recheck the story equation":"Teacher review required"). @r.Feedback</p></div>}
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically correct":r.Correct==false?"Recheck story structure":"Teacher review needed"). @r.Feedback</p></div>}
 </section>}
-<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var x in UsCcssG2Unit2EleventhLessonSeedsStories.TeacherRubric){<li>@x</li>}</ul>
-<p>IM K–5 2021 Grade2 Unit2 Lesson11. CCSS 2.NBT.B.5, 2.OA.A.1. Original protected cool-down not reproduced; no official grade.</p>
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2EleventhLessonSeeds.TeacherRubric){<li>@item</li>}</ul>
+<p>IM K–5 2021 G2 U02 L11, standards 2.NBT.B.5 and2.OA.A.1. No source assessment or actual class participation digitally certified.</p>
 </section></main>
