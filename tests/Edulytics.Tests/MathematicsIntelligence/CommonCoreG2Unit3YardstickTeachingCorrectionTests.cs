@@ -18,7 +18,7 @@ public sealed class CommonCoreG2Unit3YardstickTeachingCorrectionTests
         Assert.Contains("REAL", english.Explanation);
         Assert.Contains("No genuine class desk measurements", english.Explanation);
         Assert.Contains("3+3−5", english.KeyConceptsAndRules);
-        Assert.Contains("FICTIONAL", english.WorkedExamples);
+        Assert.Contains("fictional desk measurements", english.WorkedExamples);
         Assert.Equal(CommonCoreG2Unit3YardstickTeachingCorrection.Version,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(target.Doc, target.Lesson));
     }
