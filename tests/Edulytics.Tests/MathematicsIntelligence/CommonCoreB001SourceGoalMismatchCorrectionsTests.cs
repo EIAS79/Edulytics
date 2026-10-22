@@ -30,7 +30,7 @@ public sealed class CommonCoreB001SourceGoalMismatchCorrectionsTests
     public void ExactFourSourceGoalRepairsAreEffectiveAndRenderAsRichLessons()
     {
         var ts=Targets();
-        Assert.Equal(new[]{G2Compare,G2Ribbon,G3Represent,G3Factors},
+        Assert.Equal(new[]{G3Represent,G3Factors},
             ts.Select(x=>x.Lesson.LessonCode).ToArray());
         foreach(var t in ts)
         {
@@ -52,19 +52,31 @@ public sealed class CommonCoreB001SourceGoalMismatchCorrectionsTests
             Assert.NotNull(rich);
             Assert.NotEmpty(rich!.WorkedExamples);
         }
-        var cmp=ts[0].En;
-        Assert.Contains("without making or breaking a ten",cmp.Explanation);
-        Assert.Contains("46 − 22",cmp.WorkedExamples);
-        Assert.Contains("34 + 23",cmp.WorkedExamples);
-        Assert.DoesNotContain("32-18",cmp.WorkedExamples);
-        var ribbon=ts[1].En;
-        Assert.Contains("86 − 24 = 62 cm",ribbon.WorkedExamples);
-        Assert.Contains("62 − 18 = 44 cm",ribbon.WorkedExamples);
-        Assert.Contains("tape diagram",ribbon.StepByStepSolutions);
-        var represent=ts[2].En;
+        // The two Grade2 B001 identities were superseded by later SHA-guarded
+        // original-source corrections. Preserve the actual source math while
+        // asserting they no longer route through this legacy B001 compatibility layer.
+        var g2=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .SelectMany(doc=>doc.Lessons.Where(l=>l.LessonCode==G2Compare||l.LessonCode==G2Ribbon)
+                .Select(l=>(Doc:doc,Lesson:l,En:l.Translations.Single(t=>t.CultureCode=="en"))))
+            .OrderBy(x=>x.Lesson.LessonCode,StringComparer.Ordinal).ToArray();
+        Assert.Equal(new[]{G2Compare,G2Ribbon},g2.Select(x=>x.Lesson.LessonCode));
+        foreach(var row in g2)
+        {
+            Assert.False(CommonCoreB001SourceGoalMismatchCorrections.IsTarget(row.Doc,row.Lesson));
+            Assert.NotEqual(CommonCoreB001SourceGoalMismatchCorrections.CorrectedContentVersion,
+                CanonicalLessonContentMaterializer.GetEffectiveContentVersion(row.Doc,row.Lesson));
+            Assert.StartsWith("https://im.kendallhunt.com/k5/teachers/grade-",row.Lesson.SourceUrl);
+        }
+        var g2CompareMath=string.Join(" ",g2[0].En.Explanation,g2[0].En.WorkedExamples,g2[0].En.KeyConceptsAndRules);
+        Assert.Contains("46",g2CompareMath);
+        Assert.Contains("34",g2CompareMath);
+        var g2RibbonMath=string.Join(" ",g2[1].En.Explanation,g2[1].En.WorkedExamples,g2[1].En.StepByStepSolutions);
+        Assert.Contains("86",g2RibbonMath);
+        Assert.Contains("62",g2RibbonMath);
+        var represent=ts[0].En;
         Assert.Contains("4 × 3 = 12",represent.WorkedExamples);
         Assert.Contains("group",represent.StepByStepSolutions,StringComparison.OrdinalIgnoreCase);
-        var factors=ts[3].En;
+        var factors=ts[1].En;
         Assert.Contains("4 × [ ] = 20",factors.WorkedExamples);
         Assert.Contains("[ ] × 6 = 18",factors.WorkedExamples);
         Assert.Contains("multiplication equation",factors.StepByStepSolutions);
@@ -102,9 +114,11 @@ public sealed class CommonCoreB001SourceGoalMismatchCorrectionsTests
             CanonicalLessonContentMaterializer.Materialize(t.Doc);
             Assert.Equal(sha,CanonicalLessonContentMaterializer.ComputeLessonFingerprint(t.Doc,t.Lesson));
         }
-        var other=Assert.Single(ts[0].Doc.Lessons,
+        var gradeTwo=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Single(doc=>doc.Lessons.Any(l=>l.LessonCode==G2Compare));
+        var other=Assert.Single(gradeTwo.Lessons,
             l=>l.LessonCode=="PED:US-CCSS-MATH:G2:U02:L02");
-        Assert.False(CommonCoreB001SourceGoalMismatchCorrections.IsTarget(ts[0].Doc,other));
+        Assert.False(CommonCoreB001SourceGoalMismatchCorrections.IsTarget(gradeTwo,other));
     }
 
     [Fact]
