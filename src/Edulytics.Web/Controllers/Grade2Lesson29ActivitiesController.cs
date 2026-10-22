@@ -11,7 +11,7 @@ namespace Edulytics.Web.Controllers;
 public sealed class Grade2Lesson29ActivitiesController(
     IStudentPrivatePracticeService privatePractice,ILessonContentService lessonContent):Controller
 {
-    private const string Code=UsCcssG2Unit2EleventhLessonSeeds.LessonCode;
+    private const string Code=UsCcssG2Unit2EleventhLessonSeedsStories.LessonCode;
     [HttpGet("")]
     [ResponseCache(NoStore=true,Location=ResponseCacheLocation.None)]
     public async Task<IActionResult> Index(Guid curriculumAdoptionId,Guid lessonId,CancellationToken ct)
@@ -30,19 +30,18 @@ public sealed class Grade2Lesson29ActivitiesController(
         if(error is not null)return error;
         if(answers is null)return BadRequest("Missing answers");
         if(typeof(Grade2Lesson29Answers).GetProperties().Where(p=>p.PropertyType==typeof(string))
-           .Select(p=>p.GetValue(answers) as string).Any(s=>s?.Length>2000))
-           return BadRequest("Answers too long");
+           .Select(p=>p.GetValue(answers) as string).Any(v=>v?.Length>2000))
+            return BadRequest("Answer too long");
         var rows=new List<Grade2Lesson29Feedback>();
-        void Add(string section,UsCcssG2Unit2EleventhLessonSeeds.Review r)=>
-            rows.Add(new(section,r.Correct,r.TeacherReviewNeeded,r.Feedback));
-        Add("Source Diego42 versus Jada16 comparison",UsCcssG2Unit2EleventhLessonSeeds.CompareGap(
-            answers.DiegoJadaDifference));
-        Add("Source Lin, Noah and Andre three distinct unknowns",UsCcssG2Unit2EleventhLessonSeeds.OtherThree(
-            answers.LinRemaining,answers.NoahBlue,answers.AndrePumpkin));
-        Add("Independent Edulytics original four story types",UsCcssG2Unit2EleventhLessonSeeds.Independent(
-            answers.FirstPartyCompare,answers.FirstPartyTake,answers.FirstPartyPart,answers.FirstPartySmaller));
-        rows.Add(new("Story diagrams, authentic blocks and genuine MLR2 partner observations",null,true,
-            "Teacher must evaluate which story structure each diagram models, actual manipulatives and real partner reasoning. Typed correct numbers do not prove these."));
+        void Add(string name,UsCcssG2Unit2EleventhLessonSeedsStories.Review r)=>
+            rows.Add(new(name,r.Correct,r.TeacherReviewNeeded,r.Feedback));
+        Add("Four original seeds stories",UsCcssG2Unit2EleventhLessonSeedsStories.SourceStories(
+            answers.DiegoDifference,answers.LinRemaining,answers.NoahBlue,answers.AndreSmaller));
+        Add("Three distinct first-party story structures",UsCcssG2Unit2EleventhLessonSeedsStories.FirstParty(
+            answers.ExtraCompare,answers.ExtraTakeFrom,answers.ExtraPart));
+        Add("Independent Edulytics exit",UsCcssG2Unit2EleventhLessonSeedsStories.Exit(answers.ExitA,answers.ExitB));
+        rows.Add(new("Authentic tape diagrams and partner problem interpretations",null,true,
+            "Teacher must review physical cubes, labels on original tape and base-ten diagrams, MLR2 student discussion and whether each chosen equation represents the story."));
         Response.Headers["X-Robots-Tag"]="noindex,nofollow,noarchive";
         return View("Index",new Grade2Lesson29Page(curriculumAdoptionId,lessonId,title!,true,answers,rows));
     }
