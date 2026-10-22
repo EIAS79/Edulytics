@@ -354,6 +354,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source Mancala story diagram matching, four story types">
+            <h2>Edulytics · story problems and tape diagrams</h2>
+            <p>Original Mancala stories Clare54 and Han16:
+            match true source tape diagrams without numerical solving
+            in Activity1, then solve TWO genuine published cards
+            in Activity2. Optional independently authored maths
+            checks remain separate and never certify diagram matches.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson30Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open Mancala diagram activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L11" &&
          unifiedPracticeAdoptionId.HasValue)
     {

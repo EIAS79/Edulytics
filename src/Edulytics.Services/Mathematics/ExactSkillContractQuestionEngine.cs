@@ -185,6 +185,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(family.Trim()) ||
          UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson12MancalaQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -428,6 +429,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson10TargetStage5Questions.Verify(family, parameters, answer);
         if (UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(family))
             return UsCcssG2Unit2Lesson11SeedsStoryQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson12MancalaQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson12MancalaQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1272,6 +1275,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(family))
         {
             var goal = UsCcssG2Unit2Lesson11SeedsStoryQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson12MancalaQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson12MancalaQuestions.Build(family, random);
             return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
                 goal.ItemType, goal.Parameters);
         }
@@ -3198,6 +3207,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG2Unit2Lesson10TargetStage5Questions.Solve(problem.Family, p);
         if (UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(problem.Family))
             return UsCcssG2Unit2Lesson11SeedsStoryQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson12MancalaQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson12MancalaQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))
