@@ -39,8 +39,8 @@ public sealed class UsCcssG2Unit3Lesson18YardstickQuestionsTests
                 Assert.InRange(parameters["marked"], 8, 36);
                 Assert.True(ExactSkillContractQuestionEngine.Verify(family, parameters, question.CorrectAnswer));
                 Assert.False(ExactSkillContractQuestionEngine.Verify(family, parameters, "-1"));
-                var invalid = new Dictionary<string, int>(parameters, StringComparer.Ordinal)
-                { ["count3"] = 5 };
+                var invalid = parameters.ToDictionary(x => x.Key, x => x.Value, StringComparer.Ordinal);
+                invalid["count3"] = 5;
                 Assert.False(ExactSkillContractQuestionEngine.Verify(family, invalid, question.CorrectAnswer));
                 if (family.EndsWith(".fictional_measurement_gap", StringComparison.Ordinal))
                     Assert.Contains("FICTIONAL", question.Prompt);
