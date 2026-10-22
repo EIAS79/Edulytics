@@ -1027,6 +1027,8 @@ public static class LessonPracticeContractRegistry
             byLesson[reviewed.LessonCode] = reviewed;
         foreach (var reviewed in UsCcssG2Unit2Lesson15TapeStoriesCenterContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson16MarketInventoryContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
         foreach (var reviewed in UsCcssG2Unit3Lesson1StandardUnitsContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
         // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).

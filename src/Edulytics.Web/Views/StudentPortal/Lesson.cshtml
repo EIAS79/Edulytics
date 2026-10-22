@@ -371,6 +371,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L16" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="G2 optional source market inventory">
+            <h2>Edulytics · Our Market's Inventory</h2>
+            <p>Set up exactly 100 products across three categories,
+            role-play real buying and selling, then make an optional
+            sales and restocking report. Student-generated quantities
+            and actual transactions are teacher-observed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson34Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open market inventory activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L15" &&
          unifiedPracticeAdoptionId.HasValue)
     {
