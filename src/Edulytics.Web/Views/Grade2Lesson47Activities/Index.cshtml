@@ -1,73 +1,68 @@
 @model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson47Page
 @using Edulytics.Core.Mathematics.Practice
-@{Layout="_StudentLayout"; ViewData["Title"]="Grade 2 — Target Measurements";}
+@{ Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Center Day 2 (optional)"; }
 <style>
-.g2l47{max-width:970px;margin:auto;padding:20px;color:#263f4c}
-.g2l47 .panel{background:#fff;border:1px solid #cbdce5;border-radius:12px;padding:19px;margin:16px 0}
-.g2l47 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.g2l47 label{font-weight:700;display:block;margin:12px 0 5px}
-.g2l47 input,.g2l47 textarea,.g2l47 select{width:100%;max-width:570px;border:1px solid #7895a1;border-radius:8px;font:inherit;padding:10px}
-.g2l47 .action{background:#117f94;color:white;border:0;border-radius:8px;padding:13px 20px;font-weight:700}
-.g2l47 .ok{border-left:4px solid #328858;padding-left:12px}
-.g2l47 .bad{border-left:4px solid #b6475e;padding-left:12px}
-.g2l47 .review{border-left:4px solid #af8b30;padding-left:12px}
+.g2l47{max-width:950px;margin:auto;padding:20px;color:#244254}.g2l47 .panel{background:#fff;border:1px solid #ccdae4;border-radius:12px;margin:16px 0;padding:20px}.g2l47 label{display:block;font-weight:700;margin:10px 0 5px}.g2l47 input,.g2l47 textarea,.g2l47 select{width:100%;max-width:540px;font:inherit;border:1px solid #8196a4;border-radius:8px;padding:10px}.g2l47 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.g2l47 .action{background:#087c93;color:white;padding:12px 20px;border:0;border-radius:8px;font-weight:bold}.g2l47 .ok{border-left:4px solid #278356;padding-left:12px}.g2l47 .bad{border-left:4px solid #b64c60;padding-left:12px}.g2l47 .review{border-left:4px solid #ad8730;padding-left:12px}
 </style>
 <main class="g2l47">
 <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
-<h1>Center Day 2 (optional) — Target Measurements</h1>
-<p>Use real rulers, a straightedge and a classmate. Digital numbers below are first-party illustrations, not evidence that a physical line was drawn or an eight-round game played.</p>
+<h1>Center Day 2 — Target Measurements & Number Puzzles</h1>
+<p>Optional source activities. The real target-length contest needs rulers, straightedges and TWO partners; printed Number Puzzles Stage4 needs genuine digit cards. Digital checks test arithmetic only.</p>
 <form asp-controller="Grade2Lesson47Activities" asp-action="Submit" method="post">
 @Html.AntiForgeryToken()
-<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
-<input type="hidden" name="lessonId" value="@Model.LessonId" />
-<section class="panel"><h2>1. Source Number Talk — Use Ten to Add</h2>
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Number Talk — Use Ten to Add</h2>
 <div class="grid">
-<div><label asp-for="Answers.TalkA">58 + 10</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required /></div>
-<div><label asp-for="Answers.TalkB">58 + 12</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required /></div>
-<div><label asp-for="Answers.TalkC">58 + 13</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required /></div>
-<div><label asp-for="Answers.TalkD">67 + 14</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkA">58 + 10</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkB">58 + 12</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkC">58 + 13</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkD">67 + 14</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required/></div>
 </div>
-<label asp-for="Answers.MakeTenExplanation">How does 67 use three more ones to make a ten?</label>
-<textarea asp-for="Answers.MakeTenExplanation" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.OriginalMentalReasoning">Explain how 67 + 3 = 70 helps find 67 + 14</label>
+<textarea asp-for="Answers.OriginalMentalReasoning" rows="2" maxlength="2000"></textarea>
 </section>
-<section class="panel"><h2>2. Target Measurements Stage 1 — real partner game</h2>
-<p>Choose a target in WHOLE inches (maximum 10) or centimeters (maximum 30). One student draws a line with a straightedge; the other says STOP. Use a real ruler aligned at zero. The STOP partner earns the absolute difference between target and actual length as points. Take turns; after <strong>eight rounds</strong> the partner with the <strong>lowest</strong> total wins.</p>
-<p><strong>First-party mathematical example only</strong> — choose one unit, enter target, actual length and their nonnegative difference. Do not convert units by subtracting their printed numbers.</p>
+<section class="panel">
+<h2>2. Target Measurements Stage 1 — physical partner activity</h2>
+<p>Draw toward a target of <strong>no more than 10 inches OR 30 centimeters</strong>. The OTHER partner says STOP. Both measure from ruler zero, record actual and target in the SAME unit, and score the absolute difference for the partner who said STOP. Swap roles for EIGHT real rounds. The partner with the lowest total score wins.</p>
+<p>Below is a FIRST-PARTY example calculation only. It does not prove you drew or measured anything.</p>
 <div class="grid">
-<div><label asp-for="Answers.Unit">Unit for both lengths</label><select asp-for="Answers.Unit"><option value="cm">centimeters (cm)</option><option value="in">inches (in)</option></select></div>
-<div><label asp-for="Answers.TargetLength">Target length (whole units)</label><input asp-for="Answers.TargetLength" type="number" min="1" max="30" required /></div>
-<div><label asp-for="Answers.ActualLength">Illustrative measured length (same unit)</label><input asp-for="Answers.ActualLength" type="number" min="0" max="40" required /></div>
-<div><label asp-for="Answers.AbsoluteError">Absolute error / STOP partner score</label><input asp-for="Answers.AbsoluteError" type="number" min="0" max="40" required /></div>
+<div><label asp-for="Answers.MeasurementUnit">Unit for both lengths</label><select asp-for="Answers.MeasurementUnit"><option value="cm">centimeters</option><option value="in">inches</option></select></div>
+<div><label asp-for="Answers.MeasurementTarget">Target (e.g.12cm)</label><input asp-for="Answers.MeasurementTarget" type="number" min="1" max="30" required/></div>
+<div><label asp-for="Answers.MeasurementActual">Actual illustrated length (e.g.15cm)</label><input asp-for="Answers.MeasurementActual" type="number" min="0" max="40" required/></div>
+<div><label asp-for="Answers.MeasurementScore">Absolute difference/stop-caller score</label><input asp-for="Answers.MeasurementScore" type="number" min="0" max="40" required/></div>
 </div>
-<label asp-for="Answers.SourceRealDrawnLine">Describe the line you REALLY drew and the ruler's zero alignment (teacher checks)</label>
-<textarea asp-for="Answers.SourceRealDrawnLine" rows="2" maxlength="2000"></textarea>
-<label asp-for="Answers.SourceEightRounds">Which real partner scored the lowest total across eight completed rounds?</label>
-<textarea asp-for="Answers.SourceEightRounds" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPartnerRounds">Describe the REAL turns and who called stop (teacher checks the physical record)</label>
+<textarea asp-for="Answers.RealPartnerRounds" rows="3" maxlength="2000"></textarea>
 </section>
-<section class="panel"><h2>3. Number Puzzles Stage 4 — complete equations</h2>
-<p>With a partner, use the ACTUAL original gameboard and digit cards, composing or decomposing a ten as needed. The examples below are invented by Edulytics; they are NOT transcriptions of the publisher's printed board.</p>
+<section class="panel">
+<h2>3. Number Puzzles — Stage 4, within 100 with composing</h2>
+<p>In genuine partner play, use printed digit cards and Stage4 gameboard to fill BOTH addition and subtraction equations. Exchanges of tens may be needed. This first-party digital practice uses different numbers and is not copied from the publisher's board.</p>
 <div class="grid">
-<div><label asp-for="Answers.PuzzleSum">38 + 27 = ?</label><input asp-for="Answers.PuzzleSum" type="number" min="0" max="100" required /></div>
-<div><label asp-for="Answers.PuzzleUnknownAddend">38 + ? = 65</label><input asp-for="Answers.PuzzleUnknownAddend" type="number" min="0" max="100" required /></div>
-<div><label asp-for="Answers.PuzzleDifference">65 − 27 = ?</label><input asp-for="Answers.PuzzleDifference" type="number" min="0" max="100" required /></div>
-<div><label asp-for="Answers.PuzzleUnknownSubtrahend">65 − ? = 38</label><input asp-for="Answers.PuzzleUnknownSubtrahend" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.PuzzleAddUnknown">48 + ? = 73</label><input asp-for="Answers.PuzzleAddUnknown" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.PuzzleSubtractUnknown">64 − ? = 38</label><input asp-for="Answers.PuzzleSubtractUnknown" type="number" min="0" max="100" required/></div>
 </div>
-<label asp-for="Answers.OriginalPuzzleCardExplanation">Describe a true equation from the ACTUAL digit cards you used</label>
-<textarea asp-for="Answers.OriginalPuzzleCardExplanation" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.ActualPrintedPuzzle">Explain an equation you ACTUALLY solved with the printed source cards</label>
+<textarea asp-for="Answers.ActualPrintedPuzzle" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.ChoiceCenter">Real center choice</label><select asp-for="Answers.ChoiceCenter">
+<option value="">Teacher-observed choice</option><option>Number Puzzles Stage 4</option><option>Estimate and Measure Stage 2</option><option>Target Measurements Stage 1</option></select>
 </section>
-<section class="panel"><h2>4. Independent Edulytics exit</h2>
+<section class="panel">
+<h2>4. Independently authored Edulytics Cool-down</h2>
+<p>This is original extra arithmetic, not a protected publisher assessment.</p>
 <div class="grid">
-<div><label asp-for="Answers.ExitA">67 + 14</label><input asp-for="Answers.ExitA" type="number" min="0" max="100" required /></div>
-<div><label asp-for="Answers.ExitB">Target 8 cm, length 6 cm: error in cm?</label><input asp-for="Answers.ExitB" type="number" min="0" max="30" required /></div>
-<div><label asp-for="Answers.ExitC">63 − 27</label><input asp-for="Answers.ExitC" type="number" min="0" max="100" required /></div>
-</div>
-<button class="action" type="submit">Check arithmetic, error and teacher-review items</button></section>
+<div><label asp-for="Answers.ExitCm">Target 18cm, actual 21cm: difference?</label><input asp-for="Answers.ExitCm" type="number" min="0" max="40" required/></div>
+<div><label asp-for="Answers.ExitInch">Target 7in, actual 5in: difference?</label><input asp-for="Answers.ExitInch" type="number" min="0" max="40" required/></div>
+<div><label asp-for="Answers.ExitAdd">67+14</label><input asp-for="Answers.ExitAdd" type="number" min="0" max="100" required/></div>
+</div><button class="action" type="submit">Check numerical examples and display teacher rubric</button>
+</section>
 </form>
 @if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
 @foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
-<h3>@r.Section</h3><p>@(r.Correct==true?"Numerical check correct":r.Correct==false?"Revise the answer":"Teacher observation required"). @r.Explanation</p></div>}
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numeric response correct":r.Correct==false?"Revise the arithmetic":"Teacher review required"). @r.Message</p></div>}
 </section>}
-<section class="panel"><h2>Teacher observation rubric</h2>
-<ul>@foreach(var rule in UsCcssG2Unit3ThirteenthLessonTargetMeasurement.TeacherRubric){<li>@rule</li>}</ul>
-<p>IM K–5 2021 Grade2 Unit3 Lesson13. Measurement units and real play remain teacher verified. No school grade saved, and no protected original board artwork reproduced.</p></section>
-</main>
+<section class="panel"><h2>Teacher observation rubric</h2><ul>
+@foreach(var item in UsCcssG2Unit3ThirteenthLessonCenterDay2.TeacherRubric){<li>@item</li>}</ul>
+<p>IM K–5 2021 Grade2 Unit3 Lesson13. Source outcome codes 2.MD.A.1,2.MD.A.3,2.MD.A.4,2.NBT.B.5,2.OA.B.2. No official student grade recorded.</p>
+</section></main>
