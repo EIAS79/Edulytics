@@ -6,10 +6,10 @@
   "baseBranch": "main",
   "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
   "cursor": {
-    "lastConsecutiveACClosed": 145,
-    "firstUnclosedLesson": 146,
-    "nextSequentialLesson": 146,
-    "currentWork": "G2 consecutive ordinals 1-145 A-C authored; next 146, no StageD/tests/CI/merge/deploy."
+    "lastConsecutiveACClosed": 146,
+    "firstUnclosedLesson": null,
+    "nextSequentialLesson": null,
+    "currentWork": "All Grade2 original ordinals 1-146 have A-C authoring checkpoints; no remaining sequential A-C ordinal. Stage D, test execution, CI, merge, deploy and academic acceptance remain unverified/disabled."
   },
   "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
   "stageD": "NOT_STARTED",
@@ -89,7 +89,8 @@
     "Grade2 original ordinal79 Unit5 lesson12 source guard and first-party separate 4 families, tests authored but NOT executed.",
     "Grade2 original ordinal80 Unit5 lesson13 source guard and first-party separate 4 families, tests authored but NOT executed.",
     "Grade2 original ordinal81 Unit5 lesson14 source guard and first-party separate 4 families, tests authored but NOT executed.",
-    "Ordinal82 Grade2 original U06 L1 A-C authoring with authentic human-visual boundary, 4 independent exact question families and 4 written UNRUN test files."
+    "Ordinal82 Grade2 original U06 L1 A-C authoring with authentic human-visual boundary, 4 independent exact question families and 4 written UNRUN test files.",
+    "Ordinal146 IM2021 U09 L13 A-C authoring documented with 4 first-party exact questions, original student posters human-only and 4 UNRUN xUnit test files. Grade2 146/146 A-C authoring closed; NO StageD, CI, test execution, merge, deploy or academic acceptance."
   ],
   "lessonStatuses": [
     {
@@ -1690,13 +1691,13 @@
     {
       "gradeOrdinal": 146,
       "lessonCode": "PED:US-CCSS-MATH:G2:U09:L13",
-      "sourceReview": "PENDING",
-      "teaching": "PENDING",
-      "practice": "PENDING",
-      "tests": "NOT_WRITTEN",
-      "aCStatus": "A_C_PENDING",
-      "stageD": "NOT_STARTED",
-      "acceptance": "NOT_ASSERTED"
+      "sourceReview": "IM2021_G2_U09_L13_ORIGINAL_PERSONAL_STORY_POSTER_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_STUDENT_ORIGINAL_HUMAN",
+      "tests": "FOUR_TEST_FILES_WRITTEN_UNRUN",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "READY_FOR_STAGE_D",
+      "acceptance": "AUTHORING_COMPLETED_ONLY"
     }
   ],
   "returnQueue": [],
@@ -1711,10 +1712,10 @@
     "preexistingOutOfOrderDrafts": "L02-L08 edits exist but remain unverified and must be assessed afresh only when reached sequentially; never count as closed.",
     "globalStaticPreflight": "DISCOVERY_ONLY_NOT_A_C_ACCEPTANCE",
     "haltedAtFirstUnclosedLesson": false,
-    "blockerState": "IN_PROGRESS_BLOCKED_ONLY_FOR_ACTUAL_UNSOLVABLE_BLOCKER_NO_SKIPPING",
+    "blockerState": "GRADE2_A_C_AUTHORING_COMPLETED_STAGE_D_UNVERIFIED",
     "independentCooldownAllowed": true,
     "publisherRestrictedCooldownNotRequiredWhenIndependentSkillEquivalentAuthored": true,
     "noLegacyACGapStatus": true,
-    "higherOrdinalsEligible": true
+    "higherOrdinalsEligible": false
   }
 }
