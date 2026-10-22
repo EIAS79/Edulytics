@@ -11078,6 +11078,78 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l04.cm_segment_zero_offset",
+      "version": 1,
+      "skillId": "measurement.length.centimeter",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l04-true-zero-tick-cm-param-recompute",
+      "representations": [
+        "centimeter_ruler",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l04.cm_segment_shifted_mark",
+      "version": 1,
+      "skillId": "measurement.length.centimeter",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l04-true-zero-tick-cm-param-recompute",
+      "representations": [
+        "centimeter_ruler",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l04.cm_ruler_iteration",
+      "version": 1,
+      "skillId": "measurement.length.centimeter",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l04-true-zero-tick-cm-param-recompute",
+      "representations": [
+        "centimeter_ruler",
+        "measurement_equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.u03.l04.cm_estimate_about_right",
+      "version": 1,
+      "skillId": "measurement.length.centimeter",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g2-u03-l04-true-zero-tick-cm-param-recompute",
+      "representations": [
+        "estimation",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

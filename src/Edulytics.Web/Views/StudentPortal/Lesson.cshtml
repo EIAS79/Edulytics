@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 source centimeter estimates and ruler measurement">
+            <h2>Edulytics · estimate and measure in centimeters</h2>
+            <p>Study original A–D centimeter-ruler images with your teacher,
+            estimate real classroom objects, measure from the TRUE zero tick,
+            compare estimates, and iterate the ruler on a long object.
+            First-party numeric examples are separate from real measurement.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson38Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open centimeter estimation activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L03" &&
          unifiedPracticeAdoptionId.HasValue)
     {
