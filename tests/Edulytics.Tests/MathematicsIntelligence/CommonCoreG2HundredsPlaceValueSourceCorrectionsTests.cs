@@ -30,7 +30,8 @@ public sealed class CommonCoreG2HundredsPlaceValueSourceCorrectionsTests
         Assert.Equal(ExpectedCodes, targets.Select(x => x.Lesson.LessonCode).ToArray());
         Assert.All(targets, row =>
         {
-            Assert.Equal(CommonCoreG2HundredsPlaceValueSourceCorrections.CorrectedContentVersion,
+            Assert.Equal(CommonCoreG2Unit5OriginalRichContentCorrections.VersionFor(
+                    68 + Array.IndexOf(ExpectedCodes,row.Lesson.LessonCode)),
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
                     row.Document, row.Lesson));
             Assert.DoesNotContain("Measurement units must be equal in size",

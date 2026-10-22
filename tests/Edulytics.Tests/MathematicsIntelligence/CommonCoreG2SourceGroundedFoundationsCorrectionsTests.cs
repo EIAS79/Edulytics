@@ -31,11 +31,16 @@ public sealed class CommonCoreG2SourceGroundedFoundationsCorrectionsTests
 
         foreach (var row in rows)
         {
-            Assert.Equal(
-                CommonCoreG2SourceGroundedFoundationsCorrections
-                    .CorrectedContentVersion,
-                CanonicalLessonContentMaterializer
-                    .GetEffectiveContentVersion(row.Document, row.Lesson));
+            var latestVersion = row.Lesson.LessonCode switch
+            {
+                "PED:US-CCSS-MATH:G2:U06:L07" => CommonCoreG2Unit6SourceCorrections.VersionFor(88),
+                "PED:US-CCSS-MATH:G2:U06:L08" => CommonCoreG2Unit6SourceCorrections.VersionFor(89),
+                "PED:US-CCSS-MATH:G2:U06:L09" => CommonCoreG2Unit6SourceCorrections.VersionFor(90),
+                "PED:US-CCSS-MATH:G2:U09:L05" => CommonCoreG2Unit9SourceCorrections.VersionFor(138),
+                _ => CommonCoreG2SourceGroundedFoundationsCorrections.CorrectedContentVersion
+            };
+            Assert.Equal(latestVersion,
+                CanonicalLessonContentMaterializer.GetEffectiveContentVersion(row.Document,row.Lesson));
             Assert.True(row.English.WorkedExamples.Length > 150);
             Assert.Contains("Step 5:", row.English.StepByStepSolutions);
             Assert.DoesNotContain("Equivalent algebraic transformations",
