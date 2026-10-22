@@ -354,6 +354,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original unlabeled number lines, points to 100">
+            <h2>Edulytics · unlabeled tick marks</h2>
+            <p>Use actual IM2021 original publisher diagrams to mark source points
+            24,37,48,83 and 17,59,43,35. Compare number lines with 5- and 10-unit
+            labels without losing ONE-unit intervals; only the teacher can verify
+            original image-specific point placement and partner explanation.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson55Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original number-line activities</a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L02" &&
          unifiedPracticeAdoptionId.HasValue)
     {
