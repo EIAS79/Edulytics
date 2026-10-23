@@ -162,4 +162,58 @@ public sealed class UsCcssG3Unit1Lesson2ClassSurveyCandidateTests
         Assert.True(two);
     }
 
+    [Fact]
+    public void Original2021ReadingCoolDownHasSeparateActualSourceNumbers()
+    {
+        var rows = UsCcssG3Unit1Lesson2SourceCoolDown.Values;
+        Assert.Equal(new[] { "Park", "Home", "School", "Library" },
+            rows.Select(x => x.Category));
+        Assert.Equal(new[] { 8, 5, 4, 2 }, rows.Select(x => x.Students));
+        Assert.Equal(19, UsCcssG3Unit1Lesson2SourceCoolDown.Total);
+        Assert.Equal(3, UsCcssG3Unit1Lesson2SourceCoolDown.ParkMinusHome);
+        Assert.False(UsCcssG3Unit1Lesson2SourceCoolDown.SchoolOrLibraryExceedsPark);
+        Assert.Equal(0, UsCcssG3Unit1Lesson2SourceCoolDown.AxisMin);
+        Assert.Equal(10, UsCcssG3Unit1Lesson2SourceCoolDown.AxisMax);
+        Assert.Equal(1, UsCcssG3Unit1Lesson2SourceCoolDown.AxisStep);
+    }
+
+    [Fact]
+    public void FirstEditionTeacherChoiceAndSourceCoolDownHaveDistinctAnswerFields()
+    {
+        var answers = typeof(Edulytics.Web.ViewModels.LessonContent.Grade3Lesson2Answers);
+        foreach (var property in new[] { "SourceCoolDownParkHome",
+            "SourceCoolDownSchoolLibraryVsPark", "SourceCoolDownExplanation",
+            "TeacherChosenOneStepQuestion", "TeacherChosenTwoStepQuestion",
+            "SynthesisReasoning" })
+            Assert.NotNull(answers.GetProperty(property));
+    }
+
+    [Fact]
+    public void The2021SourceChronologyAndSourceIndependentReadingGraphAreAuthored()
+    {
+        // Source-only contract authored for Stage D; NEVER run here.
+        DirectoryInfo? root = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (root is not null)
+        {
+            var candidate = Path.Combine(root.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson2Activities", "Index.cshtml");
+            if (File.Exists(candidate)) { path = candidate; break; }
+            root = root.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        var synth = view.IndexOf("4. Lesson synthesis", StringComparison.Ordinal);
+        var cool = view.IndexOf("5. Source-aligned 2021 Cool-down", StringComparison.Ordinal);
+        var community = view.IndexOf("6. Math Community", StringComparison.Ordinal);
+        Assert.True(synth >= 0 && cool > synth && community > cool);
+        Assert.Contains("name=\"SourceCoolDownParkHome\"", view);
+        Assert.Contains("name=\"SourceCoolDownSchoolLibraryVsPark\"", view);
+        Assert.Contains("name=\"TeacherChosenOneStepQuestion\"", view);
+        Assert.Contains("name=\"TeacherChosenTwoStepQuestion\"", view);
+        Assert.Contains("source-reading-bars", view);
+        Assert.Contains("Park 8, Home 5, School 4 and Library 2", view);
+        Assert.Contains("30 seconds of quiet thinking", view);
+    }
+
 }
