@@ -87,6 +87,12 @@ public sealed class Grade3Lesson1ActivitiesController(
                 "Source activity 2c: create two graph questions", answers.TwoGraphQuestions,
                 "Find TWO distinct questions answerable from the same graph data; check the requested quantities can be determined."),
             Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "2021 source-aligned Cool-down: one fact from its four-category travel graph", answers.SourceCoolDownFact,
+                "Use the separate source Cool-down travel graph: Bike 6, Walk 4, Bus 8, Car 2; teacher checks the fact and graph evidence. No auto-pass."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "2021 source-aligned Cool-down: one answerable graph question", answers.SourceCoolDownQuestion,
+                "Use the separate source Cool-down travel graph; teacher checks that one new question can be answered from the four shown values. No auto-pass."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
                 "Edulytics independent Cool-down: one supported graph fact", answers.CoolDownFact,
                 "Give ONE true fact explicitly supported by the separate library survey; teacher checks graph evidence. This independent task measures the first source Cool-down skill and is not its original data or grading."),
             Grade3Lesson1TeacherReviewPolicy.AssessForReview(

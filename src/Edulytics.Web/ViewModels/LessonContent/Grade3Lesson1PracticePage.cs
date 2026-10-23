@@ -19,6 +19,10 @@ public sealed class Grade3Lesson1Answers
     public string? CoolDownDifference { get; set; }
     // Separate authoring evidence: the 2021 teacher-guide Cool-down asks for one
     // fact AND one question; our independent graph preserves both skill families.
+    // Two distinct student-facing 2021 source Cool-down open-response tasks.
+    public string? SourceCoolDownFact { get; set; }
+    public string? SourceCoolDownQuestion { get; set; }
+    // Independent Edulytics library-survey skill check (different dataset).
     public string? CoolDownFact { get; set; }
     public string? CoolDownOriginalQuestion { get; set; }
     public string? SynthesisReflection { get; set; }
