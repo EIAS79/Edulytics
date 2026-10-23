@@ -36,6 +36,27 @@ public static class UsCcssG3Unit1Lesson5ScaledBarGraph
         return true;
     }
 
+    // 2021 first-edition G3 U01 L05 source teacher-guide Cool-down:
+    // Elephant 17, Tiger 10, Giraffe 14, Otter 4. Student completes missing
+    // Tiger and Otter bars; actual bar drawing still requires teacher review.
+    public static IReadOnlyList<Bar> OriginalSourceZooCoolDown { get; } =
+        Array.AsReadOnly(new[] {
+            new Bar("Elephant", 17), new Bar("Tiger", 10),
+            new Bar("Giraffe", 14), new Bar("Otter", 4)
+        });
+    public static bool TryGradeSourceCoolDown(string? id, int answer, out bool correct)
+    {
+        correct = false;
+        int? expected = id switch {
+            "L05-SOURCE-CD-TIGER" => 10,
+            "L05-SOURCE-CD-OTTER" => 4,
+            _ => null
+        };
+        if (expected is null) return false;
+        correct = answer == expected;
+        return true;
+    }
+
     public static bool TryGradeCoolDown(string? id,int answer,out bool correct)
     {
         correct=false;
@@ -65,5 +86,5 @@ public static class UsCcssG3Unit1Lesson5ScaledBarGraph
     public static bool RequiresTeacherReview(string type) => type is
         "actual-class-survey" or "prior-lesson-continuity" or "student-bar-graph"
             or "scale-choice-justification" or "partner-comparison"
-            or "cool-down-drawing" or "math-community";
+            or "cool-down-drawing" or "source-zoo-drawing" or "math-community";
 }

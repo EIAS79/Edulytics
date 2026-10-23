@@ -52,9 +52,18 @@ public sealed class Grade3Lesson5ActivitiesController(
         items.Add(Source("L05-SOURCE-BUS-VAN","Original bus or van bar",answers.OriginalBusVanCount));
         items.Add(Source("L05-SOURCE-TOTAL","Original total students",answers.OriginalTotal));
         items.Add(Source("L05-SOURCE-BIKE-MINUS-CAR","Original bike minus car",answers.OriginalBikeCarDifference));
-        items.Add(Cool("L05-EDU-CD-ART","Independent Cool-down Art Club",answers.CoolDownArt));
-        items.Add(Cool("L05-EDU-CD-SCIENCE-MINUS-MUSIC","Independent Cool-down Science minus Music",answers.CoolDownDifference));
-        items.Add(Cool("L05-EDU-CD-TOTAL","Independent Cool-down grand total",answers.CoolDownTotal));
+        items.Add(SourceZoo("L05-SOURCE-CD-TIGER", "Original 2021 missing Tiger bar", answers.SourceCoolDownTiger));
+        items.Add(SourceZoo("L05-SOURCE-CD-OTTER", "Original 2021 missing Otter bar", answers.SourceCoolDownOtter));
+        items.Add(new("Original zoo graph drawing", null, true,
+            string.IsNullOrWhiteSpace(answers.SourceCoolDownDrawing)
+                ? "Missing drawing explanation; teacher checks full zoo graph with accurate bars at 17, 10, 14, 4."
+                : "Teacher checks the actual graph of Elephant17, Tiger10, Giraffe14, Otter4 and correctly scaled labelled axes."));
+        if (!string.IsNullOrWhiteSpace(answers.CoolDownArt))
+            items.Add(Cool("L05-EDU-CD-ART","Optional independent Art Club",answers.CoolDownArt));
+        if (!string.IsNullOrWhiteSpace(answers.CoolDownDifference))
+            items.Add(Cool("L05-EDU-CD-SCIENCE-MINUS-MUSIC","Optional independent Science minus Music",answers.CoolDownDifference));
+        if (!string.IsNullOrWhiteSpace(answers.CoolDownTotal))
+            items.Add(Cool("L05-EDU-CD-TOTAL","Optional independent grand total",answers.CoolDownTotal));
         items.Add(new("Scale selection and accurate personal bar graph",null,true,
             "Teacher reviews bar lengths and whether 2 or 5 is an effective tick step for the original class survey, including nonmultiples of the step."));
         items.Add(new("Compare two original bar graphs and discuss",null,true,
@@ -90,6 +99,17 @@ public sealed class Grade3Lesson5ActivitiesController(
         return new(title,eligible?correct:null,!eligible,
             eligible?(correct?"Correct for the source graph.":"Read both bar graphs and use the actual category values.")
                 :"No numeric rubric registered.");
+    }
+
+    private static Grade3Lesson5Feedback SourceZoo(string id, string label, string? input)
+    {
+        if(!int.TryParse(input,NumberStyles.Integer,CultureInfo.InvariantCulture,out var n))
+            return new(label,false,false,"Enter a whole-number bar height.");
+        var ok=UsCcssG3Unit1Lesson5ScaledBarGraph.TryGradeSourceCoolDown(id,n,out var correct);
+        return new(label,ok?correct:null,!ok,
+            !ok?"No source numeric grader.":
+                correct?"Numerically correct, but the original bar graph drawing needs teacher review."
+                :"Use the 2021 zoo table; Tiger 10 and Otter 4.");
     }
 
     private static Grade3Lesson5Feedback Cool(string id,string title,string? value)

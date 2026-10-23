@@ -20,6 +20,9 @@ public sealed class Grade3Lesson5Answers
     public string? ReusedClassDataEvidence { get; set; }
     public string? ScaleExplanation { get; set; }
     public string? MathCommunity { get; set; }
+    public string? SourceCoolDownTiger { get; set; }
+    public string? SourceCoolDownOtter { get; set; }
+    public string? SourceCoolDownDrawing { get; set; }
     public string? CoolDownArt { get; set; }
     public string? CoolDownDifference { get; set; }
     public string? CoolDownTotal { get; set; }

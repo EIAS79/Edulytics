@@ -43,6 +43,26 @@ public sealed class UsCcssG3Unit1Lesson5ScaledBarGraphTests
         Assert.False(UsCcssG3Unit1Lesson5ScaledBarGraph.TryGradeCoolDown(id+"-DRAW",expected,out _));
     }
 
+    [Theory]
+    [InlineData("L05-SOURCE-CD-TIGER", 10)]
+    [InlineData("L05-SOURCE-CD-OTTER", 4)]
+    public void OriginalSource2021ZooCooldownCorrectAndIncorrectBarHeight(string id, int expected)
+    {
+        Assert.True(UsCcssG3Unit1Lesson5ScaledBarGraph.TryGradeSourceCoolDown(id, expected, out var yes));
+        Assert.True(yes);
+        Assert.True(UsCcssG3Unit1Lesson5ScaledBarGraph.TryGradeSourceCoolDown(id, expected + 1, out var no));
+        Assert.False(no);
+    }
+
+    [Fact]
+    public void OriginalSourceZooGraphRetainsAllFourSourceCounts()
+    {
+        var zoo = UsCcssG3Unit1Lesson5ScaledBarGraph.OriginalSourceZooCoolDown;
+        Assert.Equal(new [] { "Elephant", "Tiger", "Giraffe", "Otter" }, zoo.Select(x => x.Category));
+        Assert.Equal(new [] { 17, 10, 14, 4 }, zoo.Select(x => x.Students));
+        Assert.True(UsCcssG3Unit1Lesson5ScaledBarGraph.RequiresTeacherReview("source-zoo-drawing"));
+    }
+
     [Fact]
     public void BothSourceAndClassBarGraphLabelsRemainOutsideThe200PixelPlot()
     {
