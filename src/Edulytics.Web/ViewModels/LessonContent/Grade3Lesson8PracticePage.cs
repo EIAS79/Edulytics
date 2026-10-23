@@ -13,6 +13,10 @@ public sealed class Grade3Lesson8Answers
     public string? PineOak{get;set;}
     public string? FirOakMaple{get;set;}
     public string? TreeWork{get;set;}
+    public string? LessonSynthesis{get;set;}
+    public string? CoolMorningAfternoon{get;set;}
+    public string? CoolEveningMinusMorningLunch{get;set;}
+    public string? CoolSourceEquations{get;set;}
     public string? CoolAdventureScience{get;set;}
     public string? CoolAdventureVsTwo{get;set;}
     public string? CoolTotal{get;set;}

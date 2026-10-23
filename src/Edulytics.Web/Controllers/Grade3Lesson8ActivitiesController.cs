@@ -60,6 +60,19 @@ public sealed class Grade3Lesson8ActivitiesController(
             "Teacher checks first read context, second read quantities and third read chosen operations."));
         feedback.Add(new("Two valid solution methods and equations",null,true,
             "Teacher checks distinct correct methods, not just the final numerical answer."));
+        foreach(var task in new[]{
+            ("L08-SOURCE-CD-MORNING-VS-AFTERNOON","2021 Reading Time: Morning fewer than Afternoon",answers.CoolMorningAfternoon),
+            ("L08-SOURCE-CD-EVENING-VS-MORNING-LUNCH","2021 Reading Time: Evening more than Morning or Lunch",answers.CoolEveningMinusMorningLunch)
+        })
+        {
+            var parse=int.TryParse(task.Item3,NumberStyles.Integer,CultureInfo.InvariantCulture,out var n);
+            var plaus=parse&&UsCcssG3Unit1Lesson8TwoStepDataProblems.TryCheckSourceReadingTimeEstimate(task.Item1,n,out var near)&&near;
+            feedback.Add(new(task.Item2,null,true,plaus
+                ? "Near the first-edition source example. Teacher reviews visually reasonable estimates and both equations; never auto-pass."
+                : "Teacher checks your estimate against the 0..50 by-five graph and written reasoning; a different sensible estimate may be accepted."));
+        }
+        feedback.Add(new("Original Reading Time source Cool-down work and lesson synthesis",null,true,
+            "The two original Cool-down questions and separate mathematics are human-reviewed; three reads, two methods, source section summary and optional centers remain teacher-led."));
         feedback.Add(new("Drawing and explanation for original Edulytics Cool-down",null,true,
             "Teacher reviews labelled axes, exact values, equation and explanation."));
         Response.Headers["X-Robots-Tag"]="noindex, nofollow, noarchive";

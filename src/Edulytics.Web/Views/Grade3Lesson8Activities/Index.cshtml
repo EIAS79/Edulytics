@@ -6,6 +6,7 @@
     var feelings=UsCcssG3Unit1Lesson8TwoStepDataProblems.Feelings;
     var trees=UsCcssG3Unit1Lesson8TwoStepDataProblems.Trees;
     var cooldown=UsCcssG3Unit1Lesson8TwoStepDataProblems.OriginalEdulyticsCoolDown;
+    var sourceReading=UsCcssG3Unit1Lesson8TwoStepDataProblems.OriginalSourceReadingTime;
 }
 <style>
 .g3-l08{max-width:980px;padding:20px;margin:auto;color:#193b55}
@@ -114,7 +115,39 @@
             <textarea id="tree-work" name="TreeWork" rows="4" maxlength="2000">@Model.Answers.TreeWork</textarea>
         </section>
         <section class="panel">
-            <h2>4. New, original Edulytics Cool-down</h2>
+            <h2>4. Lesson synthesis (10 minutes) — before Cool-down</h2>
+            <p>Compare two-step strategies with tens/ones and the Three Reads routine. How did counting by tens, adding two groups, or subtracting one group at a time help with the exact school feeling and tree data?</p>
+            <label for="summary">What helps you read and solve scaled-bar problems, and how can you use Three Reads by yourself?</label>
+            <textarea id="summary" name="LessonSynthesis" rows="3" maxlength="2000">@Model.Answers.LessonSynthesis</textarea>
+            <p>Section summary: scaled picture and bar graphs can show categorical data; they support answerable questions about more and fewer, including a comparison with TWO other categories combined. Teacher-led optional centers: Sort and Display Stage 3 and Five in a Row Stage 6.</p>
+        </section>
+        <section class="panel">
+            <h2>5. ORIGINAL 2021 source Cool-down: Reading Time (5 minutes)</h2>
+            <p>The original graph shows Favorite Time to Read, with a vertical 0–50 by-five scale and categories Morning, Lunchtime, Afternoon, Evenings. Approximate visual heights: Morning about 11–12, Lunchtime 25, Afternoon 23, Evenings 44. The original public teacher guide's worked examples use slightly different visual readings for Morning. Answer sensibly from the graph, justify both problems, and have a teacher review; NO automatic exact pass.</p>
+            <div class="source-vertical-frame">
+                <div class="source-vertical-chart" style="--source-columns:4" role="img" aria-label="Favorite Time to Read, 0 to 50 in fives; approximate bars Morning 12, Lunchtime 25, Afternoon 23, Evenings 44. Original image is not copied.">
+                    <div class="source-y-ticks" aria-hidden="true">@for(var tick=50;tick>=0;tick-=5){<span>@tick</span>}</div>
+                    <div class="source-v-bars" aria-hidden="true">
+                        @foreach(var item in sourceReading){<div class="source-v-column"><div class="source-v-bar" style="height:@(item.Value*300/50)px"></div></div>}
+                    </div>
+                    <div class="source-v-labels" aria-hidden="true">@foreach(var item in sourceReading){<span class="source-v-label">@item.Category</span>}</div>
+                    <p class="source-x-title">Time of day</p>
+                </div>
+            </div>
+            <div class="two">
+                <div><label for="read-a">1. About how many FEWER chose Morning than Afternoon?</label><input id="read-a" name="CoolMorningAfternoon" value="@Model.Answers.CoolMorningAfternoon" inputmode="numeric" required /></div>
+                <div><label for="read-b">2. About how many MORE chose Evening than Morning OR Lunchtime combined?</label><input id="read-b" name="CoolEveningMinusMorningLunch" value="@Model.Answers.CoolEveningMinusMorningLunch" inputmode="numeric" required /></div>
+            </div>
+            <label for="read-equations">Write an expression or equation for EACH question; explain your visual estimate</label>
+            <textarea id="read-equations" name="CoolSourceEquations" rows="3" maxlength="2000" required>@Model.Answers.CoolSourceEquations</textarea>
+            <p>Source teacher model responses are approximately 12 fewer Morning and 7 more Evening, but the plot is not numbered to single units. Do not reject another reasonable visual estimate automatically.</p>
+        </section>
+        <section class="panel">
+            <h2>6. Teacher review and next-day correction</h2>
+            <p>Teacher checks two mathematically distinct strategies for the original New School Year activity and the four tree questions, followed by source Cool-down answers. In the next lesson, pupils may revisit and correct the written assessment with a small group.</p>
+        </section>
+        <section class="panel">
+            <h2>7. Optional original Edulytics extra arithmetic — NOT source Cool-down</h2>
             <p>A fictional school book-interest survey. These are NOT the publisher's original teacher-only assessment numbers.</p>
             @foreach(var item in cooldown){
                 <div class="bar-row"><strong>@item.Category</strong>
