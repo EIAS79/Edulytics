@@ -79,7 +79,10 @@
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
-      "sourceGraphCountsChecked": true
+      "sourceGraphCountsChecked": true,
+      "sourceBookTaskAdditionalPrompt": "Public 2021 Student Facing, Favorite Type of Books: 'How many students liked each type of book? How do you know?'",
+      "booksExplanationDistinctTeacherReviewedField": "BooksHowYouKnow",
+      "bookExplanationCodeAuthoredButNotRenderedOrAcademicallyVerified": true
     },
     {
       "id": "G3-U01-L03-synthesis",
@@ -193,7 +196,9 @@
     "sourceTitleCorrectedInAuthoringCandidate": false,
     "currentContentStatus": "GRADE3_2021_L03_SOURCE_SPECIFIC_RICH_V2_PROPOSED_NOT_DEPLOYED",
     "effectiveLearnerBodyCompared": false,
-    "canonicalTitleRetentionReason": "Official 2021 unit index and Edulytics main catalogue both include PLC Activity; source individual lesson heading omits suffix. Identity ambiguity documented, not silently changed."
+    "canonicalTitleRetentionReason": "Official 2021 unit index and Edulytics main catalogue both include PLC Activity; source individual lesson heading omits suffix. Identity ambiguity documented, not silently changed.",
+    "booksWhyCountsExplanationPreviouslyOmitted": true,
+    "booksWhyCountsExplanationAuthoredAtRazorViewAndModel": true
   },
   "stageC": {
     "status": "INDEPENDENT_NUMERIC_AND_HUMAN_REVIEW_QUESTION_CONTRACTS_AUTHORED_NOT_RUN",
@@ -209,7 +214,9 @@
       "Partner interpretation",
       "Cool-down explanation"
     ],
-    "sourceCategoryQuestionsWritten": true
+    "sourceCategoryQuestionsWritten": true,
+    "booksHumanResponseRemainsUnscored": true,
+    "booksExplanationStaticRegressionWrittenNotRun": true
   },
   "openGaps": [
     "First-party Rich V2 source title/scale repair authored but source PDF and original publisher graphics inaccessible; no verified original figure pixel, student task sheet or current published Rich V2 parity.",

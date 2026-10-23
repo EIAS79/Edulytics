@@ -23,6 +23,9 @@ public sealed class Grade3Lesson3Answers
     public string? BooksMystery { get; set; }
     public string? BooksTotal { get; set; }
     public string? SecondOriginalQuestion { get; set; }
+    // The public 2021 books activity asks students to explain how they know
+    // the counts, not just compute numbers or invent new questions.
+    public string? BooksHowYouKnow { get; set; }
     public string? CoolNature { get; set; }
     public string? CoolDifference { get; set; }
 }

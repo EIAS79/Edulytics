@@ -101,6 +101,9 @@
                 <div><label for="mystery-books">How many chose mystery books?</label><input id="mystery-books" name="BooksMystery" value="@Model.Answers.BooksMystery" inputmode="numeric" required /></div>
                 <div><label for="books-total">How many students chose one of these books?</label><input id="books-total" name="BooksTotal" value="@Model.Answers.BooksTotal" inputmode="numeric" required /></div>
             </div>
+            <label for="book-reasoning">How do you know the number of students for each type of book? Explain how the two-students-per-symbol key supports your answers.</label>
+            <textarea id="book-reasoning" name="BooksHowYouKnow" rows="3" maxlength="2000">@Model.Answers.BooksHowYouKnow</textarea>
+            <p>Reasoning about the graph is reviewed by your teacher, not automatically passed when a number is correct.</p>
             <label for="book-questions">Write two questions answerable from the favorite books graph</label>
             <textarea id="book-questions" name="SecondOriginalQuestion" rows="3" maxlength="2000">@Model.Answers.SecondOriginalQuestion</textarea>
         </section>

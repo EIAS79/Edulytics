@@ -54,6 +54,30 @@ public sealed class UsCcssG3Unit1Lesson3ScaledPictureGraphTests
         Assert.False(incorrect);
     }
     [Fact]
+    public void OriginalBookGraphHowDoYouKnowHasSeparateHumanOnlyResponse()
+    {
+        // This is an authored-only Stage C source contract, not a run or a pass.
+        Assert.NotNull(typeof(Edulytics.Web.ViewModels.LessonContent.Grade3Lesson3Answers)
+            .GetProperty("BooksHowYouKnow"));
+        DirectoryInfo? dir = new(AppContext.BaseDirectory);
+        string? viewFile = null;
+        while (dir is not null)
+        {
+            var p = Path.Combine(dir.FullName, "src", "Edulytics.Web", "Views",
+                "Grade3Lesson3Activities", "Index.cshtml");
+            if (File.Exists(p)) { viewFile = p; break; }
+            dir = dir.Parent;
+        }
+        Assert.NotNull(viewFile);
+        var razor = File.ReadAllText(viewFile!);
+        Assert.Contains("name=\"BooksHowYouKnow\"", razor);
+        Assert.Contains("How do you know the number", razor);
+        Assert.Contains("reviewed by your teacher", razor);
+        Assert.False(UsCcssG3Unit1Lesson3ScaledPictureGraph.TryGradeNumeric(
+            Code, "BOOKS-HOW-YOU-KNOW", 24, out _));
+    }
+
+    [Fact]
     public void NoCrossLessonOrTeacherReviewedNumericCertification()
     {
         Assert.False(UsCcssG3Unit1Lesson3ScaledPictureGraph.TryGradeNumeric(

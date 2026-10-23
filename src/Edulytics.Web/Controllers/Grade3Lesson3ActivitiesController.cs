@@ -72,6 +72,10 @@ public sealed class Grade3Lesson3ActivitiesController(
             null, true, "Teacher judges the strategy and conversation."));
         feedback.Add(new("Explain why both sports graphs represent the same 65 students",
             null, true, "Teacher reviews use of the key and explanation."));
+        feedback.Add(new("Books: explain how the category counts follow the scaled key", null, true,
+            string.IsNullOrWhiteSpace(answers.BooksHowYouKnow)
+                ? "No explanation submitted: teacher review of the key and the four category counts is still required."
+                : "Teacher checks how each symbol represents two students and whether the explained counts agree with the graph. No numeric pass certifies this response."));
         feedback.Add(new("Student-created flower and books questions", null, true,
             "Teacher checks two answerable questions about each dataset."));
         feedback.Add(new("Independent Cool-down invented question and explanation",
