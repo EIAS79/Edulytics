@@ -203,7 +203,20 @@
     "coolDownPolicy": "FIRST_PARTY_EQUIVALENT_AUTHORIZED; publisher login not required; original publisher Cool-down not claimed verified.",
     "originalTeacherPublicLessonRechecked": true,
     "sourcePublicLessonTeachingSequenceReverified": true,
-    "graphGeometrySourceDescription": "Six bottom-aligned upright columns, key one figure/student; first unnamed without title; second titled How We Get Home but unnamed; third titled and named, followed by a corresponding 0..8 by-one bar chart."
+    "graphGeometrySourceDescription": "Six bottom-aligned upright columns, key one figure/student; first unnamed without title; second titled How We Get Home but unnamed; third titled and named, followed by a corresponding 0..8 by-one bar chart.",
+    "directLocal2021SourceGate": {
+      "requiredPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5",
+      "requiredFiles": [
+        "unit-1/lesson-1/lesson.html",
+        "unit-1/lesson-1/preparation.html",
+        "associated original 2021 student task sheets, graphs, image assets when present"
+      ],
+      "device": "Our-CS",
+      "connectionObserved": "ONLINE",
+      "readAttempt": "BLOCKED_MONTHLY_DESKTOP_COMMANDER_USAGE_LIMIT",
+      "evidenceStatus": "NOT_DIRECTLY_READ_IN_THIS_EXECUTION",
+      "policy": "Do not substitute a GitHub text/alt index for direct original source material and figure checks; no A-C source closure claimed."
+    }
   },
   "stageB": {
     "status": "FIRST_PARTY_STUDENT_COMPANION_AUTHORED_RICH_V2_NOT_FULLY_VERIFIED",
@@ -214,7 +227,7 @@
       "Invite open questions based only on available data; do not grade ambiguous labels or learner-authored questions as numeric right/wrong."
     ],
     "effectiveLearnerBodyCompared": false,
-    "currentContentStatus": "FIELDS_PRESENT_NOT_REVIEWED",
+    "currentContentStatus": "AUTHORING_DRAFT_LOCAL_SOURCE_AND_PUBLISHED_BODY_UNVERIFIED",
     "firstPartyCompanion": {
       "controller": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
       "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson1PracticePage.cs",
@@ -235,7 +248,19 @@
     "firstPartyVisualGeometryErrorFound": "Previous independently drawn pictograph had six horizontal rows instead of six vertical columns.",
     "firstPartyVisualGeometryCorrection": "Three vertical column displays with sequential label/title disclosure; six source values unchanged.",
     "richV2AuthoringCorrectionPath": "src/Edulytics.Data/Seeding/Grade3/g3-2021-provisional-rich-v2-corrections.json",
-    "richV2CorrectionType": "Versioned authoring migration rule (not database-applied or pixel-verified)"
+    "richV2CorrectionType": "Versioned authoring migration rule (not database-applied or pixel-verified)",
+    "currentCodeOnlyAuthoringUpdate": {
+      "status": "DRAFT_NOT_LOCALLY_SOURCE_REVALIDATED",
+      "commit": "1dc52255f8e7059660c50b325099e8e9ca4482f8",
+      "changedFile": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+      "change": "Explicitly author the three-step anonymous graph -> titled graph -> labelled graph sequence in L01 Rich V2 explanation, worked examples and summary.",
+      "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG3SourceTeachingCorrectionsTests.cs",
+      "testsWritten": true,
+      "testsExecuted": false,
+      "publishedDatabaseCompared": false,
+      "teacherSourceAndOriginalFiguresVerified": false,
+      "note": "This does not change production Neon, mark source parity, approve A-C or promote readiness."
+    }
   },
   "stageC": {
     "status": "STUDENT_COMPANION_NUMERIC_AND_AUTHORED_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -280,6 +305,7 @@
     "routedPath": "student/practice/grade3-u01-l01"
   },
   "openGaps": [
+    "2026-10-23: Direct read of authoritative Our-CS local 2021 Grade 3 source blocked by Desktop Commander monthly usage limit despite device ONLINE. Source parity cannot be certified in this execution.",
     "Original 2021 publisher student task PDF could not be downloaded/accessed, and complete figure pixels (including two unlabelled local SVG references) have not been visually inspected; no source-perfect claim.",
     "Versioned source teaching corrections and independent student Razor columns authored, but actual Rich V2 stored database rendering, teacher access control and unit-scale pixels remain unverified.",
     "One-to-one closure of each original activity subpart, accessibility adaptations and open teacher rubric still requires complete figure/material evidence.",
@@ -287,7 +313,7 @@
     "Source imagery rights must be checked independently; this changes only first-party glyph rendering, not protected publisher art.",
     "Grade 3 Lesson 1 typed .NET/Razor tests intentionally NOT RUN until Stage D; no CI, merge, deployment or academic approval"
   ],
-  "nextAction": "Inspect effective database Rich V2 and existing exact Practice contract, then finish 1:1 teacher/learner parity and code-level review for L01. Do not mark READY_FOR_STAGE_D until remaining A-C evidence is demonstrable; do not run tests or CI.",
+  "nextAction": "Resume L01 first: directly read 2021 teacher lesson and preparation plus student source figures/tasks from the owner's C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5 device folder after Desktop Commander usage is restored; check original diagrams and every question against L01 Rich V2/Companion, make corrections, record per-element evidence. Stage D tests remain deferred. Do not proceed to L02 or claim closure.",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",
