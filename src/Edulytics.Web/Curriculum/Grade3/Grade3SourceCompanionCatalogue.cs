@@ -145,9 +145,17 @@ public sealed class Grade3CompanionLesson
     public Grade3OriginalQuestion? OriginalEdulyticsCoolDown { get; set; }
     public string OpenTeacherTask { get; set; } = "";
     public string TeacherReviewNote { get; set; } = "";
+    public Grade3TeachingGuidance? IndependentTeachingGuidance { get; set; }
     public bool ReadyForStageD { get; set; }
 }
 
+public sealed class Grade3TeachingGuidance
+{
+    public string SourceGoal { get; set; } = "";
+    public string SourceLearningGoals { get; set; } = "";
+    public List<string> TeachingSteps { get; set; } = [];
+    public string Caution { get; set; } = "";
+}
 public sealed class Grade3OriginalQuestion
 {
     public string Prompt { get; set; } = "";

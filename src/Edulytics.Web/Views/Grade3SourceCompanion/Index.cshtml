@@ -25,6 +25,19 @@
         @Html.AntiForgeryToken()
         <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
         <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        @if(l.IndependentTeachingGuidance is not null) {
+            <section class="panel">
+                <h2>How to approach this lesson</h2>
+                <ol>
+                @foreach(var step in l.IndependentTeachingGuidance.TeachingSteps) {
+                    <li>@step</li>
+                }
+                </ol>
+                <p><strong>Check carefully:</strong> @l.IndependentTeachingGuidance.Caution</p>
+                <p>These independently written learning notes supplement the 2021 source goal;
+                    they do not replace teacher materials or certify the published Rich V2 content.</p>
+            </section>
+        }
         <section class="panel">
             <h2>1. Source activity context and teacher work</h2>
             <p>Read, discuss, or construct the named original 2021 lesson activities under your teacher's guidance. Their original figures and materials are not reproduced by this supplemental page.</p>
