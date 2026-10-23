@@ -70,7 +70,6 @@
                         <tr>
                             <th scope="col">Category</th>
                             <th scope="col">Picture symbols</th>
-                            <th scope="col">Total signs</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,12 +80,11 @@
                                     <span class="source-bar" style="width:@(category.SymbolCount * 20)%" aria-hidden="true"></span>
                                     <span>@category.SymbolCount symbols</span>
                                 </td>
-                                <td>@category.TotalSigns</td>
-                            </tr>
+                                    </tr>
                         }
                     </tbody>
                 </table>
-                <p>Symbol-count scale (not total signs): 0, 1, 2, 3, 4, 5.
+                <p>Count the picture symbols and use the key to work out the total. Symbol-count scale: 0, 1, 2, 3, 4, 5.
                     To count signs, multiply each category's symbol count by two.</p>
                 <p><strong>Think and draw:</strong> Show the speed-limit signs as three
                     equal groups of two. Make a diagram for a different category and
