@@ -92,9 +92,65 @@ public static class CommonCoreG3SourceTeachingCorrections
                 "\nApproach: " + rule.TeachingSteps[0] +
                 " Show the mathematical representation and explain the meaning.";
 
-            // Retain previously authored Explanation/WorkedExamples pending
-            // exact item-by-item source verification and provenance review.
-            // No restricted publisher Cool-down prompt or art is embedded.
+            if (string.Equals(lesson.LessonCode,
+                "PED:US-CCSS-MATH:G3:U01:L01", StringComparison.Ordinal))
+            {
+                // U01 L01 is the first sequential A-B-C lesson. The baseline
+                // generic examples do not teach the 2021 reveal sequence.
+                // Authored from the public lesson/preparation and independent
+                // Edulytics student companion; NOT an original-art reproduction.
+                en.Explanation =
+                    "We are learning to read picture and bar graphs and to ask " +
+                    "questions that the data can answer. A picture-graph key tells " +
+                    "how many people each symbol represents; a bar graph uses a " +
+                    "numbered axis. First, study six upright picture columns " +
+                    "without a title or category names. The numbers of symbols " +
+                    "from left to right are 4, 3, 1, 2, 7 and 6, with one symbol " +
+                    "representing one learner. We cannot know what the columns " +
+                    "represent from their heights alone. Next, reveal the title " +
+                    "'How We Get Home'; it narrows the possible context but still " +
+                    "does not identify the six categories. Finally, read the " +
+                    "fully labelled picture graph together with a bar graph " +
+                    "showing the SAME data. Walk 4, Bike 3, Skateboard 1, Car 2, " +
+                    "Bus 7, Train 6; the bar axis runs from 0 to 8 in steps of 1. " +
+                    "Compare the displays and propose two different questions " +
+                    "that can actually be answered. Discuss the reasons with a " +
+                    "partner. The discussion and student-authored questions need " +
+                    "teacher review and are not auto-graded.";
+
+                en.WorkedExamples =
+                    "Example 1 - Notice and wonder: a six-column picture graph " +
+                    "has 4, 3, 1, 2, 7, 6 symbols, but no title or labels. " +
+                    "Describe the visible counts without guessing a proven " +
+                    "category name.\n" +
+                    "Example 2 - Picture time: add only the title 'How We Get " +
+                    "Home'. Suggest possible ways of getting home, explaining " +
+                    "why they are hypotheses and not labelled facts.\n" +
+                    "Example 3 - Compare representations: the categories are " +
+                    "Walk 4, Bike 3, Skateboard 1, Car 2, Bus 7, Train 6. " +
+                    "On a picture graph one symbol means one learner; on the " +
+                    "bar graph use a vertical 0-to-8 axis in steps of 1. " +
+                    "Explain what is the same and different, then write two " +
+                    "answerable questions. A teacher checks the reasoning.";
+
+                en.QuickSummary =
+                    "The same six category counts can be shown as a picture " +
+                    "graph or a vertical bar graph. First examine the six " +
+                    "unlabelled columns, then the titled but unlabelled graph, " +
+                    "and only then the fully labelled pair. A title provides " +
+                    "context, a picture key defines one symbol, and the bar " +
+                    "axis shows the numerical scale. Good graph questions " +
+                    "must be answerable from the shown data; oral reasoning, " +
+                    "partner work and invented questions require teacher review.";
+            }
+            else
+            {
+                // Keep other lessons untouched pending exact source review:
+                // generic base explanations must not be certified as parity.
+            }
+
+            // Never embed restricted publisher Cool-down prompts or artwork.
+            // No database migration, publication or A-C approval occurs here.
         }
     }
 
