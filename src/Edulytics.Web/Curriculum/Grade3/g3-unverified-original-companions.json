@@ -12,7 +12,7 @@
   "total": {
     "lessons": 135,
     "scoredPractice": 112,
-    "scoredCoolDown": 118,
+    "scoredCoolDown": 117,
     "teacherOnlyPractice": 23,
     "families": [
       "addition-within-1000",
@@ -5048,17 +5048,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-situations",
       "independentPractice": {
-        "prompt": "There are 12 items. Put 4 items into each equal group. How many groups will there be?",
+        "prompt": "Thirty-six apples are packed nine per box. How many boxes?",
         "answerType": "integer",
-        "expected": "3"
+        "expected": "4"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "12 items are shared equally among 4 children. How many items does each child receive?",
+        "prompt": "Forty apples are packed in eight-apple boxes. How many boxes?",
         "answerType": "integer",
-        "expected": "3"
+        "expected": "5"
       },
       "openTeacherTask": "Work through the original lesson's activity How Many Apples? with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve problems.",
-      "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+      "teacherReviewNote": "Teacher distinguishes how-many-groups from how-many-in-each-group and reviews object diagrams.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5073,7 +5073,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve problems.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source: 24 apples, eight in each box. How many boxes?",
+        "answerType": "integer",
+        "expected": "3"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-1/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 59,
@@ -5140,17 +5151,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-situations",
       "independentPractice": {
-        "prompt": "There are 20 items. Put 5 items into each equal group. How many groups will there be?",
+        "prompt": "Thirty-two apples are in four equal boxes. How many per box?",
         "answerType": "integer",
-        "expected": "4"
+        "expected": "8"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "20 items are shared equally among 5 children. How many items does each child receive?",
+        "prompt": "Thirty-six apples are in six equal boxes. How many in one box?",
         "answerType": "integer",
-        "expected": "4"
+        "expected": "6"
       },
       "openTeacherTask": "Work through the original lesson's activity How Many Apples? with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve more problems.",
-      "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+      "teacherReviewNote": "Teacher checks sharing among known groups, contrasting source L01 unknown-group-count problem.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5165,7 +5176,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve more problems.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source: 20 apples are shared among four equal boxes. How many apples per box?",
+        "answerType": "integer",
+        "expected": "5"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-2/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 60,
@@ -5238,17 +5260,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-representations",
       "independentPractice": {
-        "prompt": "There are 15 items. Put 3 items into each equal group. How many groups will there be?",
+        "prompt": "Eight crayons are put in two equal bags. How many in a bag?",
         "answerType": "integer",
-        "expected": "5"
+        "expected": "4"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "15 items are shared equally among 3 children. How many items does each child receive?",
+        "prompt": "Fifteen pencils are placed equally on three tables. How many per table?",
         "answerType": "integer",
         "expected": "5"
       },
       "openTeacherTask": "Work through the original lesson's activity Groups of Students with your teacher. Show the representation and explain how it meets the goal: Let’s represent division situations with drawings. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher",
-      "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+      "teacherReviewNote": "Match diagrams to equal sharing and grouping stories; no numeric shortcut certifies the match.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5263,7 +5285,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent division situations with drawings. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Elena has 12 pencils equally in two boxes. How many pencils in each?",
+        "answerType": "integer",
+        "expected": "6"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-3/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 61,
@@ -5337,17 +5370,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-representations",
       "independentPractice": {
-        "prompt": "There are 8 items. Put 4 items into each equal group. How many groups will there be?",
-        "answerType": "integer",
-        "expected": "2"
-      },
-      "originalEdulyticsCoolDown": {
-        "prompt": "24 items are shared equally among 4 children. How many items does each child receive?",
+        "prompt": "Twenty-four tops are split equally into four colours. How many of each colour?",
         "answerType": "integer",
         "expected": "6"
       },
+      "originalEdulyticsCoolDown": {
+        "prompt": "Twenty-one cars go into groups of three. How many groups?",
+        "answerType": "integer",
+        "expected": "7"
+      },
       "openTeacherTask": "Work through the original lesson's activity Spinning Tops with your teacher. Show the representation and explain how it meets the goal: Let’s make sense of division expressions. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflecti",
-      "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+      "teacherReviewNote": "The same 21÷3 represents two contexts with different interpretations. Explicitly check what 7 counts.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5362,7 +5395,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make sense of division expressions. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflecti",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Han has 21 toy cars and three equal boxes. How many cars per box?",
+        "answerType": "integer",
+        "expected": "7"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-4/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 62,
@@ -5430,17 +5474,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-representations",
       "independentPractice": {
-        "prompt": "There are 15 items. Put 5 items into each equal group. How many groups will there be?",
+        "prompt": "Thirty ant legs come from five ants. How many legs on each ant?",
         "answerType": "integer",
-        "expected": "3"
+        "expected": "6"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "10 items are shared equally among 5 children. How many items does each child receive?",
+        "prompt": "Sixteen antennae come in pairs. How many insects?",
         "answerType": "integer",
-        "expected": "2"
+        "expected": "8"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: All about Bugs with your teacher. Show the representation and explain how it meets the goal: Let’s write division expressions and solve “how many groups?” and “how many in each group?” problems.",
-      "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+      "teacherReviewNote": "Card-sort tasks must distinguish number of groups from size of equal groups and retain insect context.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5455,7 +5499,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s write division expressions and solve “how many groups?” and “how many in each group?” problems.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source: eight beetle antennae means two antennae per beetle. How many beetles?",
+        "answerType": "integer",
+        "expected": "4"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-5/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 63,
@@ -5516,17 +5571,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fact-family-division",
       "independentPractice": {
-        "prompt": "Complete 4 × ? = 12. What is the missing factor?",
+        "prompt": "If 25 tomatoes are in five equal bunches, how many per bunch?",
         "answerType": "integer",
-        "expected": "3"
+        "expected": "5"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "If 3 × 3 = 9, then 9 ÷ 3 = ?",
+        "prompt": "A farmer divides 30 potatoes into six equal bags. How many per bag?",
         "answerType": "integer",
-        "expected": "3"
+        "expected": "5"
       },
       "openTeacherTask": "Work through the original lesson's activity Equations about Onions with your teacher. Show the representation and explain how it meets the goal: Let’s connect division equations to multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.2 3.OA.B.6 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflect",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Connect multiplication unknown-factor and division equations representing exactly the same context.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5541,7 +5596,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s connect division equations to multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.2 3.OA.B.6 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflect",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source: fourteen onions equally divided into two bags. How many onions per bag?",
+        "answerType": "integer",
+        "expected": "7"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-6/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 64,
@@ -5602,17 +5668,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fact-family-division",
       "independentPractice": {
-        "prompt": "Complete 5 × ? = 20. What is the missing factor?",
+        "prompt": "Twenty-eight books are divided into four equal stacks. How many per stack?",
         "answerType": "integer",
-        "expected": "4"
+        "expected": "7"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "If 4 × 4 = 16, then 16 ÷ 4 = ?",
+        "prompt": "Six boxes of eight erasers contain how many erasers?",
         "answerType": "integer",
-        "expected": "4"
+        "expected": "48"
       },
       "openTeacherTask": "Work through the original lesson's activity Division Round Table with your teacher. Show the representation and explain how it meets the goal: Let’s make more connections between multiplication and division.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Teacher reviews four-box collaborative matching of one situation, equal-group diagram, multiplication and division equations.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5627,7 +5693,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make more connections between multiplication and division.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source: 32 paper clips are given four per student. How many students receive them?",
+        "answerType": "integer",
+        "expected": "8"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-7/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 65,
@@ -5687,17 +5764,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fact-family-division",
       "independentPractice": {
-        "prompt": "Complete 2 × ? = 10. What is the missing factor?",
+        "prompt": "From 7 × 6 = 42, find 42 ÷ 7.",
         "answerType": "integer",
-        "expected": "5"
+        "expected": "6"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "If 5 × 5 = 25, then 25 ÷ 5 = ?",
+        "prompt": "If 8 × 4 = 32, what is 32 ÷ 8?",
         "answerType": "integer",
-        "expected": "5"
+        "expected": "4"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Multiplication with your teacher. Show the representation and explain how it meets the goal: Let’s consider the products and quotients we know right away or can find quickly.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Verify related fact family, orientation of factors and the learner's fluency card classification.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5712,7 +5789,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s consider the products and quotients we know right away or can find quickly.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "If 4 × 5 = 20, then source-related 20 ÷ 5 equals what?",
+        "answerType": "integer",
+        "expected": "4"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-8/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 66,
@@ -5773,17 +5861,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fact-family-division",
       "independentPractice": {
-        "prompt": "Complete 3 × ? = 9. What is the missing factor?",
+        "prompt": "Knowing 3 × 5 = 15, what is 6 × 5?",
         "answerType": "integer",
-        "expected": "3"
+        "expected": "30"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "If 6 × 3 = 18, then 18 ÷ 3 = ?",
+        "prompt": "If 7 × 2 = 14, what is 7 × 4?",
         "answerType": "integer",
-        "expected": "6"
+        "expected": "28"
       },
       "openTeacherTask": "Work through the original lesson's activity Products in the Table with your teacher. Show the representation and explain how it meets the goal: Let’s find patterns in the multiplication table and use them to multiply. Required Preparation CCSS Standards Addressing 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Tea",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Classify multiplicative-table patterns; learners must explain how familiar products lead to unknown facts.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5798,7 +5886,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find patterns in the multiplication table and use them to multiply. Required Preparation CCSS Standards Addressing 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Tea",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source known fact 2 × 4 = 8, what is 4 × 4?",
+        "answerType": "integer",
+        "expected": "16"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-9/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 67,
@@ -5867,17 +5966,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "distributive-property",
       "independentPractice": {
-        "prompt": "Break 4 × 6 into 4 × 4 + 4 × 2. What is the total?",
+        "prompt": "A rectangular area with 4 rows of 9 tiles has what area?",
         "answerType": "integer",
-        "expected": "24"
+        "expected": "36"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find 4 × 6 using two smaller equal groups.",
+        "prompt": "Use (4 × 5) + (4 × 4) for a 4×9 rectangle. What is the result?",
         "answerType": "integer",
-        "expected": "24"
+        "expected": "36"
       },
       "openTeacherTask": "Work through the original lesson's activity From Diagrams to Expressions with your teacher. Show the representation and explain how it meets the goal: Let’s use rectangles to explore multiplication strategies.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source connects distributive splits and associative grouping to the original 6×3 and 4×9 diagrams.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5892,7 +5991,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use rectangles to explore multiplication strategies.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source rectangle area: 6 × 3 equals what?",
+        "answerType": "integer",
+        "expected": "18"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-10/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 68,
@@ -5966,17 +6076,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "distributive-property",
       "independentPractice": {
-        "prompt": "Break 5 × 8 into 5 × 5 + 5 × 3. What is the total?",
+        "prompt": "A rectangle is divided into a 5×3 portion and a 2×3 portion. What total area?",
         "answerType": "integer",
-        "expected": "40"
+        "expected": "21"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find 5 × 8 using two smaller equal groups.",
+        "prompt": "Split a 4×8 rectangle into 4×5 and 4×3. What area?",
         "answerType": "integer",
-        "expected": "40"
+        "expected": "32"
       },
       "openTeacherTask": "Work through the original lesson's activity Mark, then Express with your teacher. Show the representation and explain how it meets the goal: Let’s use different strategies to find the area of ungridded rectangles.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Without authentic source rectangle drawings, do not claim a correct partition or card-sort match.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -5991,7 +6101,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use different strategies to find the area of ungridded rectangles.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "For the original source's ungridded rectangles, shade or partition each figure and explain why different expressions have equal area.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-11/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 69,
@@ -6052,17 +6173,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiply-multiples-of-ten",
       "independentPractice": {
-        "prompt": "Use place value to find 4 × 30.",
+        "prompt": "Find 5 × 60 using groups of tens.",
         "answerType": "integer",
-        "expected": "120"
+        "expected": "300"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Use groups of tens to find 3 × 20.",
+        "prompt": "Calculate 7 × 40 using the tens place.",
         "answerType": "integer",
-        "expected": "60"
+        "expected": "280"
       },
       "openTeacherTask": "Work through the original lesson's activity A Whole Lot of Dollars with your teacher. Show the representation and explain how it meets the goal: Let’s multiply one-digit numbers times multiples of 10.",
-      "teacherReviewNote": "Teacher checks place-value-based reasoning for one-digit multiplication by multiples of ten, not just rote products.",
+      "teacherReviewNote": "Show how ×10 scales a familiar multiplication fact; the source has multiple base-ten models.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6077,7 +6198,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s multiply one-digit numbers times multiples of 10.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source, 8 × 30 is represented with base-ten blocks. What is its product?",
+        "answerType": "integer",
+        "expected": "240"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-12/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 70,
@@ -6137,17 +6269,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-place-value",
       "independentPractice": {
-        "prompt": "Find 4 × 15; show place-value groups.",
+        "prompt": "Five rows with 15 chairs each have how many chairs?",
         "answerType": "integer",
-        "expected": "60"
+        "expected": "75"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find 3 × 15; show a rectangular area model.",
+        "prompt": "What area is 4 feet by 16 feet in square feet?",
         "answerType": "integer",
-        "expected": "45"
+        "expected": "64"
       },
       "openTeacherTask": "Work through the original lesson's activity Problems with Teen Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s multiply some teen numbers.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source asks for teen-number factors and context, as well as estimation and presentations.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6162,7 +6294,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s multiply some teen numbers.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Seven dozen eggs contain how many eggs?",
+        "answerType": "integer",
+        "expected": "84"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-13/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 71,
@@ -6228,17 +6371,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-place-value",
       "independentPractice": {
-        "prompt": "Find 5 × 16; show place-value groups.",
+        "prompt": "Use 3 × (10 + 4) to find 3 × 14.",
         "answerType": "integer",
-        "expected": "80"
+        "expected": "42"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find 4 × 16; show a rectangular area model.",
+        "prompt": "Use 6 × (10 + 3) to find 6 × 13.",
         "answerType": "integer",
-        "expected": "64"
+        "expected": "78"
       },
       "openTeacherTask": "Work through the original lesson's activity A Factor Greater than Ten with your teacher. Show the representation and explain how it meets the goal: Let’s make sense of some ways to represent the multiplication of teen numbers.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Check 10+3 place-value split and whether factor distributivity appears in each diagram.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6253,7 +6396,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make sense of some ways to represent the multiplication of teen numbers.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Tyler's source decomposition 7 × 13 is how much?",
+        "answerType": "integer",
+        "expected": "91"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-14/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 72,
@@ -6317,17 +6471,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-place-value",
       "independentPractice": {
-        "prompt": "Find 3 × 17; show place-value groups.",
+        "prompt": "A mosaic has 12 rows of eight 1-inch tiles. What is its area in square inches?",
         "answerType": "integer",
-        "expected": "51"
+        "expected": "96"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find 5 × 17; show a rectangular area model.",
+        "prompt": "Sixteen stickers are on each of five sheets. How many stickers?",
         "answerType": "integer",
-        "expected": "85"
+        "expected": "80"
       },
       "openTeacherTask": "Work through the original lesson's activity Equal Groups, Larger Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s solve some problems with equal groups that have larger numbers.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Students should use area diagrams for teen factors, not confuse squares with linear feet.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6342,7 +6496,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve some problems with equal groups that have larger numbers.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source mural is 15 feet by four feet. What area in square feet?",
+        "answerType": "integer",
+        "expected": "60"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-15/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 73,
@@ -6415,17 +6580,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-place-value",
       "independentPractice": {
-        "prompt": "Find 4 × 14; show place-value groups.",
+        "prompt": "Use tens and ones to find 3 × 28.",
         "answerType": "integer",
-        "expected": "56"
+        "expected": "84"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find 2 × 14; show a rectangular area model.",
+        "prompt": "Show 2 × (30 + 7) for a product of 2 × 37.",
         "answerType": "integer",
-        "expected": "28"
+        "expected": "74"
       },
       "openTeacherTask": "Work through the original lesson's activity $4 \\times 23$, Represented with your teacher. Show the representation and explain how it meets the goal: Let’s multiply numbers that are larger than 20.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Check different valid partitions of one two-digit factor, and keep game Close to 100 teacher-led.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6440,7 +6605,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s multiply numbers that are larger than 20.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source diagrams model 4 × 23. Find the product.",
+        "answerType": "integer",
+        "expected": "92"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-16/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 74,
@@ -6510,17 +6686,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "four-operations-problems",
       "independentPractice": {
-        "prompt": "A teacher gives 3 classrooms 5 pencils each and 4 extra pencils. How many pencils are needed?",
+        "prompt": "A source situation has 168 muffins, 104 in a basket, and eight equal boxes. How many per box?",
         "answerType": "integer",
-        "expected": "19"
+        "expected": "8"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "60 counters are packed in 3 equal boxes. How many counters in each box?",
+        "prompt": "A table holds 184 cups, and three groups of eight use one each. How many remain?",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "160"
       },
       "openTeacherTask": "Work through the original lesson's activity Questions about a Situation with your teacher. Show the representation and explain how it meets the goal: Let’s use the four operations to solve problems.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Two-step addition/multiplication and subtraction/division require equations with a letter unknown.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6535,7 +6711,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use the four operations to solve problems.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "A source party starts with 156 rings and three people each add nine. How many rings total?",
+        "answerType": "integer",
+        "expected": "183"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-17/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 75,
@@ -6595,17 +6782,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "larger-number-division",
       "independentPractice": {
-        "prompt": "27 objects are divided into equal groups of 3. How many groups are there?",
+        "prompt": "72 people ride equally on three buses. How many per bus?",
         "answerType": "integer",
-        "expected": "9"
+        "expected": "24"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "52 objects are shared equally by 4 children. How many objects each?",
+        "prompt": "A trip has 84 students and groups of seven. How many groups?",
         "answerType": "integer",
-        "expected": "13"
+        "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Groups on a Field Trip with your teacher. Show the representation and explain how it meets the goal: Let’s divide with larger numbers.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Read how many groups versus how many per group; show a grouping drawing for larger quotients.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6620,7 +6807,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s divide with larger numbers.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source aquarium trip: 48 pupils in groups of four. How many groups?",
+        "answerType": "integer",
+        "expected": "12"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-18/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 76,
@@ -6682,17 +6880,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "larger-number-division",
       "independentPractice": {
-        "prompt": "40 objects are divided into equal groups of 4. How many groups are there?",
+        "prompt": "Divide 63 into three equal groups.",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "21"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "70 objects are shared equally by 5 children. How many objects each?",
+        "prompt": "Share 84 into seven equal groups.",
         "answerType": "integer",
-        "expected": "14"
+        "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Divide with Base-Ten Blocks with your teacher. Show the representation and explain how it meets the goal: Let’s make sense of representations of division.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Use base-ten regrouping and check why Jada/Han's division models represent the same quotient.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6707,7 +6905,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make sense of representations of division.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source base-ten problem 55 ÷ 5 has which quotient?",
+        "answerType": "integer",
+        "expected": "11"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-19/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 77,
@@ -6774,17 +6983,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "larger-number-division",
       "independentPractice": {
-        "prompt": "35 objects are divided into equal groups of 5. How many groups are there?",
+        "prompt": "Find 68 ÷ 4 with a place-value grouping strategy.",
         "answerType": "integer",
-        "expected": "7"
+        "expected": "17"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "20 objects are shared equally by 2 children. How many objects each?",
+        "prompt": "Find 91 ÷ 7 and explain grouping tens and ones.",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "13"
       },
       "openTeacherTask": "Work through the original lesson's activity Ways to Divide with your teacher. Show the representation and explain how it meets the goal: Let’s use different strategies to divide.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source compares Lin, Priya and Tyler's tens/ones decompositions and plays a separate card game.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6799,7 +7008,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use different strategies to divide.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source models decompose 78 ÷ 3. What quotient?",
+        "answerType": "integer",
+        "expected": "26"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-20/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 78,
@@ -6868,17 +7088,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "four-operations-problems",
       "independentPractice": {
-        "prompt": "A teacher gives 3 classrooms 3 pencils each and 3 extra pencils. How many pencils are needed?",
+        "prompt": "Eight brownies at $3 each add money to a cash box now containing $125. How much was there before?",
         "answerType": "integer",
-        "expected": "12"
+        "expected": "101"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "27 counters are packed in 3 equal boxes. How many counters in each box?",
+        "prompt": "A stall has 96 apples. Four rows of twelve are stacked. How many remain?",
         "answerType": "integer",
-        "expected": "9"
+        "expected": "48"
       },
       "openTeacherTask": "Work through the original lesson's activity Apple Adventure with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve problems using all four operations. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Quest",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Open orchard context mixes multi-operation arithmetic and unknown money balances; show equations.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6893,7 +7113,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve problems using all four operations. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Quest",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "At the orchard 85 apples are displayed, and five rows of ten were stacked. How many remain?",
+        "answerType": "integer",
+        "expected": "35"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-21/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 79,
@@ -6950,17 +7181,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "four-operations-problems",
       "independentPractice": {
-        "prompt": "A teacher gives 4 classrooms 4 pencils each and 4 extra pencils. How many pencils are needed?",
+        "prompt": "Twelve strawberries grow per plant; eight plants in one row produce how many?",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "96"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "64 counters are packed in 4 equal boxes. How many counters in each box?",
-        "answerType": "integer",
-        "expected": "16"
+        "prompt": "Design a school garden with two crops whose harvests meet constraints and explain spacing and data.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Produce with your teacher. Show the representation and explain how it meets the goal: Let’s plan a school garden.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Garden design is optional collaborative project: validate growing requirements and original source physical spacing, not only a product.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -6975,7 +7206,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s plan a school garden.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "A strawberry patch has seven rows of eight plants. How many plants?",
+        "answerType": "integer",
+        "expected": "56"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-4/lesson-22/lesson.html",
+        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 80,
