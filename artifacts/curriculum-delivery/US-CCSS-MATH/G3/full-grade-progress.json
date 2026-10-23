@@ -57,6 +57,7 @@
       "ordinal": 1,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L01",
       "reasons": [
+        "Direct authoritative local original source on Our-CS cannot yet be opened: Desktop Commander monthly usage limit. Must review C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5 before L01 A-C source closure.",
         "Database-backed Rich V2 lesson body and teacher-facing original element mapping not yet verified",
         "New linked student companion is authored but its integration and markup have not been built or exercised; Stage D still pending",
         "Teacher-led discussion/question-authoring must be reviewed, original graphics licensing and attribution confirmed"
@@ -1640,7 +1641,7 @@
       "lessonNumber": 1,
       "title": "Make Sense of Data",
       "stageA": "PUBLIC_2021_STUDENT_FACING_AND_TEACHER_SEQUENCE_REVIEWED_PDF_AND_FIGURE_PIXELS_OPEN",
-      "stageB": "FIXED_VERTICAL_SOURCE_GRAPH_SEQUENCE_VERSIONED_RICH_V2_CORRECTION_DRAFT_RUNTIME_UNVERIFIED",
+      "stageB": "FIRST_PARTY_COMPANION_AND_RICH_V2_L01_SOURCE_REVEAL_CORRECTION_DRAFT_LOCAL_SOURCE_NOT_RECHECKED",
       "stageC": "SOURCE_NUMERIC_AND_FIRST_PARTY_COOL_DOWN_WRITTEN_TEACHER_REVIEW_BOUNDARY_UNRUN",
       "authoringClosure": "A_C_EXPLICIT_GAP",
       "sourceElementsIdentified": 11,
@@ -5336,7 +5337,8 @@
     "Ordinal 2 source inspected and 11 components logged. Authentic classroom-variable survey values intentionally not replaced with fixed L01 data; numeric candidate and unrun regressions authored but not wired.",
     "No Stage D, CI, .NET compilation, preproduction UAT, merge, Neon mutation or Render deploy intentionally executed as required by A–B–C plan.",
     "2026-10-23: Owner reiterates Grade1/Grade2 precedent: write Edulytics first-party Cool-down from lesson objective, content and skill instead of requiring inaccessible publisher teacher-only Cool-down. Applies to all 143 G3 lessons; do not claim literal original item parity.",
-    "G3 U01 L01/L02: authored six first-party Cool-down tasks (four numeric, two teacher-reviewed drawing/explanation), with unrun xUnit cases. Not yet integrated; real authoring gaps remain and 0/143 READY_FOR_STAGE_D."
+    "G3 U01 L01/L02: authored six first-party Cool-down tasks (four numeric, two teacher-reviewed drawing/explanation), with unrun xUnit cases. Not yet integrated; real authoring gaps remain and 0/143 READY_FOR_STAGE_D.",
+    "2026-10-23 L01 sequential restart: Rich V2 explicit anonymous/titled/labelled graph teaching sequence and unrun xUnit check authored in PR #575 [skip ci]. Our-CS device ONLINE but Desktop Commander monthly usage cap blocks direct C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5 read. Keep ordinal 1 OPEN; no source parity certification or Stage D; DO NOT advance to L02 until direct source check is done or a separately documented authorized source alternative is inspected."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -5875,5 +5877,19 @@
     "sampleCdnReachable": true,
     "sampleRelativeTikzUnavailable": true,
     "unverifiedOriginalImages": 796
+  },
+  "sourceDeviceExecutionGate": {
+    "date": "2026-10-23",
+    "device": "Our-CS",
+    "localRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core",
+    "grade3Root": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5",
+    "deviceStatus": "ONLINE",
+    "directSourceAccess": "BLOCKED_DESKTOP_COMMANDER_MONTHLY_USAGE_EXHAUSTED",
+    "verifiedLocalOriginal2021ElementsThisExecution": 0,
+    "currentOrdinal": 1,
+    "noSkipToNextLesson": true,
+    "provisionalRichV2FixCommit": "1dc52255f8e7059660c50b325099e8e9ca4482f8",
+    "checkpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-1-v2-stage-a-c-checkpoint.json",
+    "note": "Code candidate and unrun regression authored; original local lessons, student sheets and graphics were not accessible on the online authorized desktop. No academic/source-ready claims, Stage D tests, CI manually started, merge, deploy or Neon mutation."
   }
 }
