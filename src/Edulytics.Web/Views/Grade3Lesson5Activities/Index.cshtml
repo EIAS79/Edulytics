@@ -37,7 +37,7 @@
         <input type="hidden" name="lessonId" value="@Model.LessonId" />
         <section class="panel">
             <h2>1. Mental counting by twos and fives</h2>
-            <p>Count by 2: 2, 4, 6, 8, 10, 12. Count by 5: 5, 10, 15, 20. How can skip counting help someone label a bar graph?</p>
+            <p>Original 2021 Number Talk (10 minutes): compute mentally 2+2+2+2 = 8; eight 2s = 16; 5+5+5+5 = 20; eight 5s = 40. Discuss how doubling four equal addends produces eight equal addends. Give 1 minute quiet think and invite partner explanations.</p>
             <label for="warmup">My counting strategy</label>
             <textarea id="warmup" name="Warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
         </section>
@@ -116,7 +116,31 @@
             <textarea id="scale-explain" name="ScaleExplanation" rows="3" maxlength="2000">@Model.Answers.ScaleExplanation</textarea>
         </section>
         <section class="panel">
-            <h2>4. Edulytics first-party Cool-down</h2>
+            <h2>4. Lesson synthesis (10 minutes, BEFORE Cool-down)</h2>
+            <p>Help a friend choose a bar-graph scale. Explain how you can read precise counts that are not exact multiples of the scale. Math Community reflections occur after the five-minute Cool-down.</p>
+            <p>Ask a partner for advice on accurate scale 2 or 5 and how to represent counts between marked ticks; teacher checks the explanation and self-drawn graphs.</p>
+            <p>Teacher rubric: compare both source graphs faithfully, check actual L04 survey provenance, use one scale throughout, label title and categories, retain odd/nonmultiple data precisely, and assess partner conversation.</p>
+        </section>
+        <section class="panel">
+            <h2>5. Original-source-aligned Cool-down (5 minutes) — Complete a Scaled Bar Graph</h2>
+            <p>2021 first-edition Teacher Guide, Grade 3 Unit 1 Lesson 5: a fictional zoo survey lists Elephant 17, Tiger 10, Giraffe 14 and Otter 4. The original task asks pupils to complete the bar graph; the teacher guide specifically checks the missing Tiger and Otter bars.</p>
+            <p>This is a newly authored Edulytics mathematical representation, not a copy of the publisher's pre-filled graph or figures. Use one consistent scale, exact bar heights and category labels; the teacher checks the actual drawing.</p>
+            <table class="table"><thead><tr><th>Zoo animal</th><th>Number of students</th></tr></thead><tbody><tr><td>Elephant</td><td>17</td></tr><tr><td>Tiger</td><td>10</td></tr><tr><td>Giraffe</td><td>14</td></tr><tr><td>Otter</td><td>4</td></tr></tbody></table>
+            <div class="two">
+                <div><label for="source-tiger">Height of missing Tiger bar, in students</label><input id="source-tiger" name="SourceCoolDownTiger" inputmode="numeric" value="@Model.Answers.SourceCoolDownTiger" required /></div>
+                <div><label for="source-otter">Height of missing Otter bar, in students</label><input id="source-otter" name="SourceCoolDownOtter" inputmode="numeric" value="@Model.Answers.SourceCoolDownOtter" required /></div>
+            </div>
+            <label for="source-drawing">Describe or draw your complete four-bar graph with an accurate zero-based axis. A teacher must check the independent graph drawing.</label>
+            <textarea id="source-drawing" name="SourceCoolDownDrawing" rows="3" maxlength="2000">@Model.Answers.SourceCoolDownDrawing</textarea>
+        </section>
+        <section class="panel">
+            <h2>6. Math Community (after the Cool-down)</h2>
+            <p>In groups, reflect for 2–3 minutes on changes needed in the class mathematical norms. Teacher records revisions; this is not automatically graded.</p>
+            <label for="community">My advice and a mathematical-community norm</label>
+            <textarea id="community" name="MathCommunity" rows="3" maxlength="2000">@Model.Answers.MathCommunity</textarea>
+        </section>
+        <section class="panel">
+            <h2>7. Optional independent Edulytics practice (not the source Cool-down)</h2>
             <p>These are fictional club preferences, not your class data and not the publisher's teacher-only Cool-down.</p>
             <div class="two">
                 @foreach(var item in cool){
@@ -125,19 +149,12 @@
             </div>
             <p>Make your OWN scaled bar graph with a 5-unit scale. An exact value of 9 falls between 5 and 10 — do not round it.</p>
             <div class="two">
-                <div><label for="cd-art">How many chose Art Club?</label><input id="cd-art" name="CoolDownArt" value="@Model.Answers.CoolDownArt" inputmode="numeric" required /></div>
-                <div><label for="cd-diff">How many more chose Science than Music?</label><input id="cd-diff" name="CoolDownDifference" value="@Model.Answers.CoolDownDifference" inputmode="numeric" required /></div>
-                <div><label for="cd-total">Total students?</label><input id="cd-total" name="CoolDownTotal" value="@Model.Answers.CoolDownTotal" inputmode="numeric" required /></div>
+                <div><label for="cd-art">How many chose Art Club?</label><input id="cd-art" name="CoolDownArt" value="@Model.Answers.CoolDownArt" inputmode="numeric" /></div>
+                <div><label for="cd-diff">How many more chose Science than Music?</label><input id="cd-diff" name="CoolDownDifference" value="@Model.Answers.CoolDownDifference" inputmode="numeric" /></div>
+                <div><label for="cd-total">Total students?</label><input id="cd-total" name="CoolDownTotal" value="@Model.Answers.CoolDownTotal" inputmode="numeric" /></div>
             </div>
             <label for="cd-explain">Describe/draw the bar graph with title, labels, tick marks and exact heights</label>
             <textarea id="cd-explain" name="CoolDownDrawingExplanation" rows="3" maxlength="2000">@Model.Answers.CoolDownDrawingExplanation</textarea>
-        </section>
-        <section class="panel">
-            <h2>5. Lesson synthesis</h2>
-            <p>Help a friend choose a bar-graph scale. Explain how you can read precise counts that are not exact multiples of the scale. Discuss a class rule for sharing mathematical reasoning.</p>
-            <label for="community">My advice and a mathematical-community norm</label>
-            <textarea id="community" name="MathCommunity" rows="3" maxlength="2000">@Model.Answers.MathCommunity</textarea>
-            <p>Teacher rubric: compare both source graphs faithfully, check actual L04 survey provenance, use one scale throughout, label title and categories, retain odd/nonmultiple data precisely, and assess partner conversation.</p>
         </section>
         <button type="submit">Check the numbers (not an official grade)</button>
     </form>
