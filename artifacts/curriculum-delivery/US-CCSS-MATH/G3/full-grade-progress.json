@@ -18,23 +18,23 @@
     "catalogueLessons": 143,
     "units": 8,
     "lessonsFullyReadyForStageD": 0,
-    "lessonsWithFirstEditionPublicSourceIndexed": 3,
-    "lessonsWithACExplicitGap": 3,
-    "remainingWithoutOriginalReview": 140,
-    "numericCandidateCodeFilesAuthored": 3,
-    "stageCRegressionFilesWrittenNotRun": 3,
-    "sourceElementsIndexed": 30,
+    "lessonsWithFirstEditionPublicSourceIndexed": 4,
+    "lessonsWithACExplicitGap": 4,
+    "remainingWithoutOriginalReview": 139,
+    "numericCandidateCodeFilesAuthored": 4,
+    "stageCRegressionFilesWrittenNotRun": 4,
+    "sourceElementsIndexed": 38,
     "sourceElementsFullyComparedToEffectiveProduct": 0,
-    "firstPartyOriginalCoolDownLessonsAuthored": 3,
-    "firstPartyOriginalCoolDownNumericQuestions": 6,
-    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 3,
+    "firstPartyOriginalCoolDownLessonsAuthored": 4,
+    "firstPartyOriginalCoolDownNumericQuestions": 10,
+    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 4,
     "firstPartyOriginalCoolDownTestFilesWrittenNotRun": 1
   },
   "cursor": {
     "lastConsecutiveReadyForStageDOrdinal": 0,
     "firstUnclosedOrdinal": 1,
-    "highestSequentiallySourceIndexedOrdinal": 3,
-    "nextAfterExternalGapOrdinal": 4
+    "highestSequentiallySourceIndexedOrdinal": 4,
+    "nextAfterExternalGapOrdinal": 5
   },
   "returnQueue": [
     {
@@ -66,6 +66,18 @@
         "Full 2021 figures/Student Task PDF and teacher pedagogical details not comprehensively verified",
         "Effective published Rich V2 body not checked against authoritative local source",
         "Written tests and authorized student page have not been executed or rendered"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L04",
+      "status": "A_C_EXPLICIT_GAP",
+      "reasons": [
+        "Original 2021 warm-up dot diagrams and student task-sheet PDF visual details not fully inspected",
+        "Actual survey counts are class-specific; no verified class roster or submitted drawing exists",
+        "Published Edulytics Rich V2 body not inspected against local source",
+        "Dedicated Razor student form and route written but have not been built or exercised",
+        "Teacher graph rubric, other classroom activities and licensing/assets remain open"
       ]
     }
   ],
@@ -134,16 +146,17 @@
       "unitNumber": 1,
       "lessonNumber": 4,
       "title": "Create Scaled Picture Graphs",
-      "stageA": "NOT_STARTED",
-      "stageB": "NOT_STARTED",
-      "stageC": "NOT_STARTED",
-      "authoringClosure": "NOT_STARTED",
-      "sourceElementsIdentified": 0,
+      "stageA": "LOCAL_TEACHER_2021_SOURCE_READ_KEY_2_SURVEY",
+      "stageB": "DYNAMIC_CLASS_SURVEY_AND_ODD_HALF_SYMBOL_COMPANION_AUTHORED",
+      "stageC": "FIRST_PARTY_NUMERIC_COOL_DOWN_WIRED_TESTS_NOT_RUN",
+      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "sourceElementsIdentified": 8,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
-      "checkpointPath": null,
+      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-4-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
-      "academicApproval": "NOT_CLAIMED"
+      "academicApproval": "NOT_CLAIMED",
+      "coolDownState": "FIRST_PARTY_ORIGINAL_COOL_DOWN_AUTHORED_NOT_VERIFIED"
     },
     {
       "gradeOrdinal": 5,

@@ -150,6 +150,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L04" &&
+         grade3AuthoredActivityAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 3 original scaled survey companion">
+            <h2>Edulytics · create a scaled picture graph</h2>
+            <p>Collect genuine class travel preferences, plot each two classmates as a full mark
+                and each odd leftover as a half mark, and try an independently authored Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade3Lesson4Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@grade3AuthoredActivityAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 3 scaled graph activities and Cool-down
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {

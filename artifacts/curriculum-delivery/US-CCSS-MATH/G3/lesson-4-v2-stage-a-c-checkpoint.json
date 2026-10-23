@@ -1,0 +1,128 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 4,
+  "unitNumber": 1,
+  "lessonNumber": 4,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L04",
+  "title": "Create Scaled Picture Graphs",
+  "sourceEdition": "Illustrative Mathematics K–5 First Edition (2021)",
+  "localTeacherLessonHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-1\\lesson-4\\lesson.html",
+  "localTeacherPreparationHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-1\\lesson-4\\preparation.html",
+  "sourcePacketPath": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
+  "sourceReferenceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-4/lesson.html",
+  "targetSourceParityPercent": 100,
+  "claimedSourceParityPercent": null,
+  "readyForStageD": false,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "sourceInventory": {
+    "identifiedElements": 8,
+    "fullyMappedAndVerified": 0,
+    "localTeacherLessonHtmlInspected": true,
+    "localPreparationHtmlInspected": true,
+    "studentTaskPdfInspected": false,
+    "sourceFiguresFullyVerified": false
+  },
+  "sourceElements": [
+    {
+      "id": "goal",
+      "evidence": "Represent data using scaled picture graphs",
+      "part": "Teacher preparation and learning goal",
+      "parity": "PARTIAL"
+    },
+    {
+      "id": "warmup",
+      "evidence": "How Many Do You See: More Groups of Dots; source diagrams not numerically transcribed",
+      "parity": "OPEN_VISUAL"
+    },
+    {
+      "id": "survey",
+      "evidence": "Actual class preference survey, car/train/boat/balloon/plane/helicopter",
+      "parity": "AUTHORED_TEACHER_PROVENANCE_REQUIRED"
+    },
+    {
+      "id": "graph",
+      "evidence": "Picture graph of same class responses where each picture represents 2 pupils; odd category may require half mark",
+      "parity": "AUTHORED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "synthesis",
+      "evidence": "What if 2 more students chose balloon? Answer: add one full symbol",
+      "parity": "AUTHORED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "math_community",
+      "evidence": "Partner discussions, student/drawn graphs, revise norms",
+      "parity": "TEACHER_JUDGMENT"
+    },
+    {
+      "id": "cooldown",
+      "evidence": "Publisher 'Complete the Picture Graph' teacher-login only; independent first-party numeric/open graph substitute authorized",
+      "parity": "ORIGINAL_EQUIVALENT_UNRUN"
+    },
+    {
+      "id": "rights",
+      "evidence": "Publisher dot image, balloon photo and blank grid not copied; independent marks employed",
+      "parity": "ASSET_REVIEW_REQUIRED"
+    }
+  ],
+  "stageA": {
+    "status": "LOCAL_SOURCE_LESSON_PREPARATION_AND_STUDENT_FACING_HTML_INSPECTED",
+    "sourceGoal": "Represent data using scaled picture graphs",
+    "scale": 2,
+    "categories": [
+      "car",
+      "train",
+      "boat",
+      "balloon",
+      "plane",
+      "helicopter"
+    ],
+    "sampleClassCountsFromSource": null,
+    "sourceWarning": "Counts are classroom responses and cannot be assumed; teacher must review data and odd-number half symbols."
+  },
+  "stageB": {
+    "status": "FIRST_PARTY_DYNAMIC_SCALED_SURVEY_ACTIVITY_AUTHORED_RICH_V2_OPEN",
+    "files": {
+      "core": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson4ScaledTravelSurvey.cs",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson4ActivitiesController.cs",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson4PracticePage.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "studentLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "featureNotes": [
+      "Classroom 6-category survey, input counts not invented",
+      "Scale 2 with exact fractional one-student half mark",
+      "Two teacher-bound numeric conditional questions",
+      "Fictional first-party Cool-down with numeric and open rubric",
+      "Math Community and new warm-up diagram"
+    ]
+  },
+  "stageC": {
+    "status": "NUMERIC_CANDIDATE_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_NOT_RUN",
+    "routes": [
+      "student/practice/grade3-u01-l04"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4ScaledTravelSurveyTests.cs",
+    "testsRun": false,
+    "teacherReviewTasks": [
+      "real class survey",
+      "student-drawn graph",
+      "partner dialogue",
+      "Cool-down open graph/explanation"
+    ]
+  },
+  "originalCoolDownPolicy": "FIRST_PARTY_EDULYTICS_EQUIVALENT_AUTHORIZED",
+  "openGaps": [
+    "Original 2021 warm-up dot diagrams and student task-sheet PDF visual details not fully inspected",
+    "Actual survey counts are class-specific; no verified class roster or submitted drawing exists",
+    "Published Edulytics Rich V2 body not inspected against local source",
+    "Dedicated Razor student form and route written but have not been built or exercised",
+    "Teacher graph rubric, other classroom activities and licensing/assets remain open"
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "academicApproval": "NOT_CLAIMED",
+  "merged": false,
+  "deployed": false
+}
