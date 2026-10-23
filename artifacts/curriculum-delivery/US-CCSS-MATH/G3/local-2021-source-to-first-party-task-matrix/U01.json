@@ -30,7 +30,10 @@
           "mappedCode": {
             "learnerView": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
             "submissionController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
-            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
+            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs",
+            "teacherReviewPolicy": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson1PracticePage.cs:Grade3Lesson1TeacherReviewPolicy",
+            "submitController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs:Submit",
+            "unrunReviewRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
           },
           "mappedSubparts": [
             {
@@ -62,7 +65,10 @@
           "mappedCode": {
             "learnerView": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
             "submissionController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
-            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
+            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs",
+            "teacherReviewPolicy": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson1PracticePage.cs:Grade3Lesson1TeacherReviewPolicy",
+            "submitController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs:Submit",
+            "unrunReviewRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
           },
           "mappedSubparts": [
             {
@@ -94,18 +100,28 @@
           "mappedCode": {
             "learnerView": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
             "submissionController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
-            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
+            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs",
+            "teacherReviewPolicy": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson1PracticePage.cs:Grade3Lesson1TeacherReviewPolicy",
+            "submitController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs:Submit",
+            "unrunReviewRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
           },
           "mappedSubparts": [
             {
               "type": "TEACHER_LED_COMPARE_REPRESENTATIONS",
               "formField": "GraphComparison",
-              "review": "Human review of similarities/differences and information graph can support"
+              "review": "Teacher checks an accurate similarity AND a difference in representation (one-picture-per-learner vs numerical bar axis); do not conflate this with source subpart 2"
+            },
+            {
+              "type": "TEACHER_LED_INFER_FACTS_FROM_DATA",
+              "formField": "GraphLearnings",
+              "review": "Teacher checks at least one true conclusion explicitly supported by the displayed six named categories and counts. This is its OWN source task: what can we learn from the graphs?",
+              "machineGradeable": false,
+              "newInBranch": true
             },
             {
               "type": "TEACHER_LED_AUTHOR_TWO_QUESTIONS",
               "formField": "TwoGraphQuestions",
-              "review": "Two genuinely different answerable questions are required; no numeric surrogate passes this task"
+              "review": "Teacher verifies two separate questions both answerable from visible data; cannot treat optional bus-count, bus-skateboard-difference, or total check as substitutions"
             },
             {
               "type": "EDULYTICS_ADDITIONAL_NUMERIC_PRACTICE",
@@ -129,9 +145,67 @@
           ]
         }
       ],
-      "sourceToOriginalEdulyticsTaskMapping": "PARTIAL_CODE_AND_TEACHER_REVIEW_MAP_RECORDED_NOT_SOURCE_PIXEL_OR_RUNTIME_CERTIFIED",
+      "sourceToOriginalEdulyticsTaskMapping": "FIVE_OF_FIVE_SOURCE_STUDENT_FACING_SUBPARTS_CODE_MAPPED_TEACHER_LED_NOT_VERIFIED_OR_CLOSED",
       "firstPartyTaskMappingDate": "2026-10-23",
-      "mappingMethod": "Direct official 2021 Kendall Hunt teacher lesson and preparation HTML + current learner View/Controller code on PR #575, without Our-CS, with original figure/PDF access openly gated"
+      "mappingMethod": "Direct official 2021 Kendall Hunt teacher lesson and preparation HTML + current learner View/Controller code on PR #575, without Our-CS, with original figure/PDF access openly gated",
+      "originalStudentFacingSourceRows": 3,
+      "originalStudentFacingOriginalSubparts": 5,
+      "originalStudentFacingCodeMappedSubparts": 5,
+      "originalStudentFacingAcademicallyVerifiedSubparts": 0,
+      "studentTaskSubpartMap": [
+        {
+          "number": 1,
+          "sourceSection": "Warm-up Student Facing",
+          "learnerField": "WarmupObservations",
+          "review": "Teacher-led",
+          "sourceStatus": "MISMATCH_BLOCKED",
+          "why": "Original figure pixels and teacher classroom observation not evidenced"
+        },
+        {
+          "number": 2,
+          "sourceSection": "Activity 1 Student Facing",
+          "learnerField": "PlausibleCategories",
+          "review": "Teacher-led",
+          "sourceStatus": "MISMATCH_BLOCKED",
+          "why": "Original figure pixels and teacher category reasoning not evidenced"
+        },
+        {
+          "number": 3,
+          "sourceSection": "Activity 2 Student Facing, item 1",
+          "learnerField": "GraphComparison",
+          "review": "Teacher-led",
+          "sourceStatus": "MISMATCH_BLOCKED",
+          "why": "Original picture/bar image pixels and teacher rubric not validated"
+        },
+        {
+          "number": 4,
+          "sourceSection": "Activity 2 Student Facing, item 2",
+          "learnerField": "GraphLearnings",
+          "review": "Teacher-led",
+          "sourceStatus": "MISMATCH_BLOCKED",
+          "why": "Requires observed accurate interpretation; cannot infer teacher assessment from writing alone"
+        },
+        {
+          "number": 5,
+          "sourceSection": "Activity 2 Student Facing, item 3",
+          "learnerField": "TwoGraphQuestions",
+          "review": "Teacher-led",
+          "sourceStatus": "MISMATCH_BLOCKED",
+          "why": "Requires two valid distinct questions and teacher examination"
+        }
+      ],
+      "mappingVersion": "2026-10-23-L01-five-source-subparts-v2",
+      "academicClosureClaim": false,
+      "remainingExternalSourceEvidence": [
+        "Original publisher Student Task Statements PDF image/page confirmation unavailable",
+        "Original publisher graph artwork pixels unavailable",
+        "Teacher-only publisher Cool-down cannot be inspected; a separate first-party equivalent is permitted"
+      ],
+      "remainingInternalVerification": [
+        "Actual published effective Rich V2 teaching content unverified",
+        "Code-level changes/tests not compiled or executed (Stage D intentionally deferred)",
+        "Teacher-observed oral and partner task execution cannot be certified by unsaved form"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L02",
