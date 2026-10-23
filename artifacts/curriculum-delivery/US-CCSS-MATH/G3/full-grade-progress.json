@@ -50,7 +50,7 @@
     "lastConsecutiveReadyForStageDOrdinal": 0,
     "firstUnclosedOrdinal": 1,
     "highestSequentiallySourceIndexedOrdinal": 143,
-    "nextAfterExternalGapOrdinal": 6
+    "nextAfterExternalGapOrdinal": null
   },
   "returnQueue": [
     {
@@ -5351,7 +5351,8 @@
     "2026-10-23 L01 sequential restart: Rich V2 explicit anonymous/titled/labelled graph teaching sequence and unrun xUnit check authored in PR #575 [skip ci]. Our-CS device ONLINE but Desktop Commander monthly usage cap blocks direct C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5 read. Keep ordinal 1 OPEN; no source parity certification or Stage D; DO NOT advance to L02 until direct source check is done or a separately documented authorized source alternative is inspected.",
     "2026-10-23 Our-CS connection fixed with new device ID; Grade 3 original unit-1/lesson-1/lesson.html and preparation.html directly opened. Confirmed original A1-A2 warm-up, picture-time, graphs, 5-min gated Cool-down structure. Still original artwork and published Rich V2 unchecked; stay L01 0/143 READY_FOR_STAGE_D.",
     "2026-10-23 latest owner plan (4): NO Our-CS. Confirmed main Grade3=143 source positions. Public first-edition source teacher lessons + preparations U01 L01-L04 read; authored source-specific English Rich V2 revisions to graph sequence, variable real-class survey, scale 1/5/2 graphs (including corrected L03 synthetic title), and scale-2 odd-count half symbols; tests written only; original task PDFs and image pixels failed publisher fetch; maintain A_C_EXPLICIT_GAP for each, 0/143 READY_FOR_STAGE_D, queued source return; next permitted ordinal 5 after true external source asset boundary.",
-    "2026-10-23 source-only sequential L05: teacher public 2021 source counts fixed 12/4/6/3 graph shown with axis 0..12 by1 and 0..24 by2; exact real L04 preferences to be carried into pupils' new graph with scale2/5. Authored English Rich V2 fix and unrun tests; still no verified publisher Student PDF/image pixels, no real L04 data persistence/teacher attestation, no A-C closure. Source L03 title variant reconciled: retained official indexed PLC Activity rather than incorrectly renaming learner title."
+    "2026-10-23 source-only sequential L05: teacher public 2021 source counts fixed 12/4/6/3 graph shown with axis 0..12 by1 and 0..24 by2; exact real L04 preferences to be carried into pupils' new graph with scale2/5. Authored English Rich V2 fix and unrun tests; still no verified publisher Student PDF/image pixels, no real L04 data persistence/teacher attestation, no A-C closure. Source L03 title variant reconciled: retained official indexed PLC Activity rather than incorrectly renaming learner title.",
+    "2026-10-23 owner correction: previous handling of L01–L05 as consecutively advanceable was premature. All five have repairable internal A-B-C gaps, not only external publisher assets. Restore active cursor to L01 and disable 'nextAfterExternalGapOrdinal=6'. No later lesson promotion until L01 internal mapping, Rich V2, Practice and teacher-rubric authoring are repaired and evidence logged. Keep prior work, preserve 0/143 READY_FOR_STAGE_D; no test runs, CI, merge or deployment."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -5925,13 +5926,14 @@
       4,
       5
     ],
-    "nextOrdinalAfterDocumentedExternalAssetGaps": 6,
+    "nextOrdinalAfterDocumentedExternalAssetGaps": null,
     "sourceAssetAccessLimits": [
       "First-edition original Student Task Statements PDFs not fetchable through available source tool",
       "Publisher image pixel resources returned fetch cache miss",
       "Publisher original Cool-down educator gated; approved independent first-party substitute is distinct, not a source-parity claim"
     ],
     "note": "This is a truthful authoring-stage handoff: the four source-specific Rich V2 proposals and unrun written regressions do not mean any full A-C closure or that all 143 have been individually product-verified.",
-    "authorityTitleVariantNote": "G3 U01 L03 official unit index and main catalogue title includes PLC Activity, but individual lesson-page heading omits it; kept indexed title, no unsupported rename."
+    "authorityTitleVariantNote": "G3 U01 L03 official unit index and main catalogue title includes PLC Activity, but individual lesson-page heading omits it; kept indexed title, no unsupported rename.",
+    "sequentialExecutionCorrection": "Return to U01 L01 and finish every repairable A/B/C mismatch before accepting an external-only blocking reason. Earlier L01–L05 drafts are NOT completed lessons, nor evidence authorizing a jump to L06."
   }
 }
