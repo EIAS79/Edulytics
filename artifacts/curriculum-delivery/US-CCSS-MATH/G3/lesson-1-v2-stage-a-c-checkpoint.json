@@ -259,7 +259,7 @@
     "practiceIntegratedIntoStudentFlow": true,
     "numericCandidateCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson1GraphCandidate.cs",
     "numericCandidateScope": "independent exact labeled category-count, total and comparison anchors only",
-    "testStatus": "WRITTEN_NOT_EXECUTED",
+    "testStatus": "TESTS_AUTHORED_UNEXECUTED_MANUALLY; UNREQUESTED_GITHUB_CI_AUTO_RUNS_EXIST",
     "coolDownOriginalAuthored": true,
     "coolDownIntegrated": true,
     "coolDownTestsWrittenNotRun": true,
@@ -272,11 +272,12 @@
     "Dedicated authorized student link is now independent of generic READY_VERIFIED Practice routing; its HTTP rendering remains untested.",
     "Verify teacher-led partner participation, student-authored questions and optional centres with rubric/lesson evidence; no automatic certification.",
     "Confirm asset-level licensing/attribution and independently drawn representations in effective rendered view.",
-    "2021 publisher-gated original Cool-down remains uninspected by design, but independent first-party equivalent is allowed and authored."
+    "2021 publisher-gated original Cool-down remains uninspected by design, but independent first-party equivalent is allowed and authored.",
+    "Automated GitHub CI started unexpectedly on first push; these runs are not requested Stage D academic verification and cannot be treated as such."
   ],
   "nextAction": "Inspect effective database Rich V2 and existing exact Practice contract, then finish 1:1 teacher/learner parity and code-level review for L01. Do not mark READY_FOR_STAGE_D until remaining A-C evidence is demonstrable; do not run tests or CI.",
   "stageD": "NOT_STARTED",
-  "ci": "NOT_RUN",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",
   "merged": false,
   "deployed": false,
@@ -298,5 +299,19 @@
     ],
     "eligibility": "SOURCE_EDUCATOR_LOGIN_NOT_BLOCKING_OTHER_A_B_C_PARITY_OPEN"
   },
-  "originalCoolDownSourceAccessIsABlocker": false
+  "originalCoolDownSourceAccessIsABlocker": false,
+  "unrequestedCiEvent": {
+    "origin": "GitHub auto-trigger following commit 02581a2d844a74c5dc3eaebd9f26a53b57bbc5c8",
+    "manuallyTriggeredByThisExecution": false,
+    "requestedByUser": false,
+    "discoveredRunNames": [
+      "US CCSS Authenticated Academic Acceptance",
+      "Mathematics Intelligence Foundation",
+      "V2 Phase 2-3-6-8-11-12 Acceptance",
+      "Evaluation Production Gate",
+      "US CCSS B001 Mathematics Capability Triage",
+      "B001 Real 500 Lesson Engine Sampling"
+    ],
+    "note": "Two had completed successfully and four were in progress at the status check; do not count any auto-run result as academic acceptance or approval. Subsequent authoring commits use [skip ci]."
+  }
 }

@@ -481,7 +481,7 @@ public sealed class StudentPortalController : Controller
                 ref gameAdoptionId,
                 ref exactPracticeAdoptionId,
                 ref pilotAdoptionId,
-            ref grade3AuthoredActivityAdoptionId);
+                ref grade3AuthoredActivityAdoptionId);
 
             // Exact Practice is the primary launch path and a legacy pilot is
             // sufficient on its own. Neither requires scanning unrelated

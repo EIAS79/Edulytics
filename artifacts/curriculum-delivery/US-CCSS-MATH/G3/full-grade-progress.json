@@ -9,8 +9,8 @@
   "sourceParityProvenPercent": null,
   "authoringStage": "A_B_C_IN_PROGRESS_WITH_EXPLICIT_GAPS",
   "stageD": "NOT_STARTED",
-  "ci": "NOT_RUN",
-  "runtimeTests": "NOT_RUN",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "runtimeTests": "NOT_MANUALLY_RUN; GITHUB_AUTOMATED_WORKFLOWS_STARTED",
   "merged": false,
   "deployed": false,
   "newAcademicApprovals": 0,
@@ -2520,5 +2520,19 @@
     "authoredUnrunTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3OriginalCoolDownCandidatesTests.cs",
     "publisherQuestionWasReviewed": false,
     "currentStage": "CANDIDATES_WRITTEN_NOT_WIRED_OR_VERIFIED"
+  },
+  "unrequestedCiEvent": {
+    "origin": "GitHub auto-trigger following commit 02581a2d844a74c5dc3eaebd9f26a53b57bbc5c8",
+    "manuallyTriggeredByThisExecution": false,
+    "requestedByUser": false,
+    "discoveredRunNames": [
+      "US CCSS Authenticated Academic Acceptance",
+      "Mathematics Intelligence Foundation",
+      "V2 Phase 2-3-6-8-11-12 Acceptance",
+      "Evaluation Production Gate",
+      "US CCSS B001 Mathematics Capability Triage",
+      "B001 Real 500 Lesson Engine Sampling"
+    ],
+    "note": "Two had completed successfully and four were in progress at the status check; do not count any auto-run result as academic acceptance or approval. Subsequent authoring commits use [skip ci]."
   }
 }
