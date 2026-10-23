@@ -44,6 +44,30 @@ public sealed class UsCcssG3Unit1Lesson5ScaledBarGraphTests
     }
 
     [Fact]
+    public void BothSourceAndClassBarGraphLabelsRemainOutsideThe200PixelPlot()
+    {
+        // Deferred Stage D visual contract, authored only and never executed here.
+        DirectoryInfo? dir = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (dir is not null)
+        {
+            var p = Path.Combine(dir.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson5Activities", "Index.cshtml");
+            if (File.Exists(p)) { path = p; break; }
+            dir = dir.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        Assert.Contains("grid-template-columns:repeat(var(--label-columns)", view);
+        Assert.Contains("--label-columns:@fixedData.Count", view);
+        Assert.Contains("--label-columns:@Model.EnteredClassSurvey.Count", view);
+        Assert.Contains("Bar graph horizontal categories", view);
+        Assert.Contains("Class bar graph horizontal categories", view);
+        Assert.DoesNotContain(
+            "<span class=\"xlabel\">@row.Category</span>\n                        </div>", view);
+    }
+
+    [Fact]
     public void PriorClassValuesRequireHumanProvenanceAndAllowNonMultiples()
     {
         UsCcssG3Unit1Lesson4ScaledTravelSurvey.TravelCount[] values=[
