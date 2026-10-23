@@ -118,7 +118,7 @@
     {
       "id": "G3-U01-L01-06",
       "sourcePart": "Activity 2 bar graph",
-      "observed": "Same six labeled categories and counts; vertical axis 0..8 in increments of 1; learners contrast bar and picture graphs.",
+      "observed": "Same six labeled categories and counts; vertical axis 0..8 in increments of 1; learners contrast bar and picture graphs. Original first-edition public source image alternative text explicitly labels the horizontal axis 'ways to get home'.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
       "originalSourceInspected": true,
       "parityStatus": "MISMATCH_BLOCKED",
@@ -129,7 +129,7 @@
       "teacherReviewRequired": false,
       "firstPartyVerticalGeometryCorrected": true,
       "codeLevelMappedPart": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
-      "codeLevelEvidence": "Zero-to-eight vertical bar axis by ones, source numeric data, accessible labels",
+      "codeLevelEvidence": "Zero-to-eight vertical bar axis by ones, source numeric data, accessible labels; independently authored bar graph now visibly labels the horizontal axis 'Ways to get home'.",
       "codeOnlyStatus": "MATCHED_DIGITAL_DRAFT_ONLY",
       "sourceAcademicMatchClaimed": false
     },
@@ -288,7 +288,11 @@
     "standaloneEdulyticsAdditionalNumericChecks": 3,
     "originalFigurePixelVerificationComplete": false,
     "originalStudentTaskStatementsPdfVerified": false,
-    "originalCoolDownAccess": "EDUCATOR_LOGIN_GATED_ALLOWED_INDEPENDENT_COOL_DOWN"
+    "originalCoolDownAccess": "EDUCATOR_LOGIN_GATED_ALLOWED_INDEPENDENT_COOL_DOWN",
+    "sourceBarHorizontalAxisTitleFromPublicAlt": "ways to get home",
+    "sourceBarHorizontalAxisPixelInspected": false,
+    "firstPartyAxisCaptionAuthoring": "ADDED_NOT_RENDERED_OR_ACADEMICALLY_APPROVED",
+    "axisTitleProofNotFullSourceParity": true
   },
   "stageB": {
     "status": "FIRST_PARTY_STUDENT_COMPANION_AUTHORED_RICH_V2_NOT_FULLY_VERIFIED",

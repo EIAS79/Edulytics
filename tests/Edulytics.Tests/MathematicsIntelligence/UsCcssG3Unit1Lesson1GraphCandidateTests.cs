@@ -41,6 +41,7 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         Assert.Equal(0, UsCcssG3Unit1Lesson1GraphCandidate.BarYAxisMinimum);
         Assert.Equal(8, UsCcssG3Unit1Lesson1GraphCandidate.BarYAxisMaximum);
         Assert.Equal(1, UsCcssG3Unit1Lesson1GraphCandidate.BarYAxisStep);
+        Assert.Equal("Ways to get home", UsCcssG3Unit1Lesson1GraphCandidate.BarXAxisTitle);
         Assert.True(UsCcssG3Unit1Lesson1GraphCandidate.TryGradeNumeric(
             "all-category-total", null, null, 23, out var correct));
         Assert.True(correct);
@@ -78,6 +79,7 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
     [InlineData("notice-and-wonder")]
     [InlineData("infer-unlabeled-graph-categories")]
     [InlineData("explain-graph-similarities")]
+    [InlineData("explain-graph-learnings")]
     [InlineData("author-two-graph-questions")]
     [InlineData("partner-discussion")]
     [InlineData("math-community-norms")]
@@ -199,6 +201,8 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         Assert.Contains("teacher observation", view);
         Assert.Contains("Sort and Display", view);
         Assert.Contains("Capture Squares", view);
+        Assert.Contains("Horizontal axis: Ways to get home", view);
+        Assert.Contains("bar-x-axis-title", view);
         Assert.DoesNotContain("src=\"https://cms-assets.illustrativemathematics.org/", view);
     }
 

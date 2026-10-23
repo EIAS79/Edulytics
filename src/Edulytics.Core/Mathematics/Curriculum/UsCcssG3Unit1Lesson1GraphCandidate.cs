@@ -18,6 +18,8 @@ public static class UsCcssG3Unit1Lesson1GraphCandidate
     public const int BarYAxisMinimum = 0;
     public const int BarYAxisMaximum = 8;
     public const int BarYAxisStep = 1;
+    // The original 2021 Lesson page describes this horizontal-axis caption.
+    public const string BarXAxisTitle = "Ways to get home";
 
     public sealed record TravelCategory(string Label, int NumberOfStudents);
 
@@ -102,6 +104,7 @@ public static class UsCcssG3Unit1Lesson1GraphCandidate
         sourceTaskKind is "notice-and-wonder"
             or "infer-unlabeled-graph-categories"
             or "explain-graph-similarities"
+            or "explain-graph-learnings"
             or "author-two-graph-questions"
             or "partner-discussion"
             or "math-community-norms"

@@ -98,7 +98,7 @@
       "id": "G3-U01-L01-06",
       "sourcePart": "Activity 2 bar graph",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
-      "sourceEvidence": "Same six labeled categories and counts; vertical axis 0..8 in increments of 1; learners contrast bar and picture graphs.",
+      "sourceEvidence": "Same six labeled categories and counts; vertical axis 0..8 in increments of 1; learners contrast bar and picture graphs. Public original image alt additionally says: horizontal axis labelled 'ways to get home'.",
       "status": "MISMATCH_BLOCKED",
       "candidateFirstPartyView": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
       "candidatePracticeImplementation": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
@@ -108,7 +108,9 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified.",
+      "firstPartyHorizontalAxisLabel": "Ways to get home",
+      "firstPartyXAxisLabelAuthoredNotRuntimeVerified": true
     },
     {
       "id": "G3-U01-L01-07",
