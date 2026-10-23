@@ -17,7 +17,28 @@
     "originalImageDescriptionsCount": 1,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "direct2021OriginalSourceWarmupProducts": [
+      20,
+      18,
+      16,
+      14
+    ],
+    "sourceActivity1CrayonSevenByFiveAndQuestionCoCrafting": {
+      "integerTotal": 35,
+      "firstPartialContext": "7 rows",
+      "coCraftTeacherOnly": true
+    },
+    "sourceActivity2TwoTreeContexts": [
+      {
+        "expression": "5x9",
+        "expected": 45
+      },
+      {
+        "expression": "2x4",
+        "expected": 8
+      }
+    ]
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +50,8 @@
     "existingSourceBodyHash": "30519fb62f1a25a3cfeeb147e8fb170bc1a8426fd845c6806a9ee01bda55ca6c",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "unknownSymbolThenFullEquationAndArraySourceInstructionsAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +64,11 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Array of Colors with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems involving arrays. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
-    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array."
+    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+    "independentPracticeNowRequiresCompleteEquation": true,
+    "twoTreeSourceSubtasksRequireCompleteEquation": true,
+    "sourceTotalNineIndividualTasks": true,
+    "testsAuthoredNotRun": true
   },
   "sourceElements": [
     {
@@ -132,7 +158,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Original 2021 coconut-tree photograph/task PDFs and live Rich V2 unverified. Physical drawings, unknown-symbol first version and co-crafted oral questions are teacher-reviewed; only numeric/equation subsets are automatically checked."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

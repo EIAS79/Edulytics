@@ -1627,9 +1627,9 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "array-problems",
       "independentPractice": {
-        "prompt": "A grove has five rows of nine trees. How many trees? Write an equation.",
-        "answerType": "integer",
-        "expected": "45"
+        "prompt": "A grove has five rows of nine trees. Write a complete multiplication equation that gives the total; show the array separately.",
+        "answerType": "multiplication-equation",
+        "expected": "5x9=45"
       },
       "originalEdulyticsCoolDown": {
         "prompt": "Three rows have eight seedlings per row. How many seedlings?",
@@ -1646,11 +1646,13 @@
         "sourceGoal": "Let’s solve problems involving arrays. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
         "sourceLearningGoals": "Represent an array situation with an equation with a symbol for the unknown number. Solve multiplication problems involving arrays.",
         "teachingSteps": [
-          "Draw rows and columns with equal spacing.",
-          "Count rows and columns; relate the array to equal groups.",
-          "Compare rotated or reorganized arrays while preserving the total."
+          "Calculate the four 10×2 through 7×2 Number Talk expressions, explaining the reduction by one equal group.",
+          "Before revealing the full 7-row crayon story, let pupils pose questions about the missing contents and group size.",
+          "Solve and represent 7 rows of 5 crayons with an array, ? product equation and completed equation.",
+          "Individually represent 5 rows of 9 coconut trees and 2 rows of 4 trees, with complete equations and diagrams.",
+          "Discuss how the initial unknown sign is substituted by the finished product and which factors denote rows and per-row counts."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems involving arrays. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
+        "caution": "Co-crafted questions and the source's two forms of each equation cannot be certified by an integer-only answer. Independent Practice now expects a FULL multiplication equation; partner questions and arrays still require teacher assessment.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1664,7 +1666,72 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L19-WU-01",
+          "sourceActivity": "Warm-up: One Less Group",
+          "prompt": "Calculate 10 × 2 and explain the count of groups.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U01-L19-WU-02",
+          "sourceActivity": "Warm-up: One Less Group",
+          "prompt": "Calculate 9 × 2. Why is it two less than the first term?",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U01-L19-WU-03",
+          "sourceActivity": "Warm-up: One Less Group",
+          "prompt": "Calculate 8 × 2 and compare with the previous group count.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U01-L19-WU-04",
+          "sourceActivity": "Warm-up: One Less Group",
+          "prompt": "Calculate 7 × 2. State and explain the pattern.",
+          "answerType": "integer",
+          "expected": "14"
+        },
+        {
+          "id": "G3-U01-L19-A1-COCRAFT",
+          "sourceActivity": "Activity 1: Array of Colors",
+          "prompt": "Before learning what is in the rows, invent mathematical questions from the partial statement that there are seven rows. Discuss which details are missing, then check with the full task.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L19-A1-01",
+          "sourceActivity": "Activity 1: Array of Colors",
+          "prompt": "An art supply array has seven rows of five crayons. Find the total and also draw a 7×5 array and an equation initially containing an unknown symbol.",
+          "answerType": "integer",
+          "expected": "35"
+        },
+        {
+          "id": "G3-U01-L19-A2-01",
+          "sourceActivity": "Activity 2: Tyler's Trees",
+          "prompt": "A Mexican coconut grove has five rows with nine trees per row. Write a COMPLETE multiplication equation showing the total.",
+          "answerType": "multiplication-equation",
+          "expected": "5x9=45"
+        },
+        {
+          "id": "G3-U01-L19-A2-02",
+          "sourceActivity": "Activity 2: Tyler's Trees",
+          "prompt": "Tyler may plant two rows of four trees. Write a complete multiplication equation including the total.",
+          "answerType": "multiplication-equation",
+          "expected": "2x4=8"
+        },
+        {
+          "id": "G3-U01-L19-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Show one equation with the unknown represented by a box or question mark and another with that box replaced by the solved total; explain both arrays.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 20,

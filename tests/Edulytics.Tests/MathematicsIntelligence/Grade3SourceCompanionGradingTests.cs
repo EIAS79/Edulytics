@@ -249,6 +249,24 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void LessonNineteenRequiresCompleteEquationsForTreeArrays()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L19",out var lesson));
+        Assert.Equal(9,lesson!.SourceSubtasks.Count);
+        Assert.Equal("multiplication-equation",lesson.IndependentPractice!.AnswerType);
+        var originalTree=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A2-01");
+        var backyardTree=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A2-02");
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(originalTree,"5 × 9 = 45").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(backyardTree,"8 = 2 × 4").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(originalTree,"45").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(backyardTree,"8").NumericCorrect);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(
+            lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A1-COCRAFT"),"35").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);
