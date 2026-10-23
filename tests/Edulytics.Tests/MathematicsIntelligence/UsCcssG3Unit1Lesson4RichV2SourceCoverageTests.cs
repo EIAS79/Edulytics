@@ -43,5 +43,8 @@ public sealed class UsCcssG3Unit1Lesson4RichV2SourceCoverageTests
         Assert.Contains(rich.SummaryPoints,x=>x.Contains("Student Task Statements PDF remain",StringComparison.Ordinal));
         Assert.Empty(rich.Visuals);
         Assert.Empty(rich.Videos);
+        Assert.Contains(rich.ExplanationParagraphs, p => p.Contains("FOUR absent Plane learners", StringComparison.Ordinal));
+        Assert.Contains(rich.WorkedExamples, x => x.Check.Contains("4 additional Plane pupils", StringComparison.Ordinal));
+        Assert.Contains(rich.WorkedExamples, x => x.Check.Contains("3 × 5 = 15; 5 × 5 = 25", StringComparison.Ordinal));
     }
 }
