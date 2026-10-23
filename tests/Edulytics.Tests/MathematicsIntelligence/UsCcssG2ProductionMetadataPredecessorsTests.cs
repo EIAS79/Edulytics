@@ -27,6 +27,35 @@ public sealed class UsCcssG2ProductionMetadataPredecessorsTests
         ("PED:US-CCSS-MATH:G2:U09:L13", "us-ccss-g2-u09-l13-solve-represent-story-correction-v1"),
     ];
 
+    // Four other non-generic stored versions were observed in the same
+    // SELECT-only production inventory. They must already be current or
+    // supported by their existing source-specific migration contracts.
+    private static readonly (string Code, string OldVersion)[] ExistingPriorRows =
+    [
+        ("PED:US-CCSS-MATH:G2:U01:L01", "us-ccss-g2-source-grounded-foundations-v1"),
+        ("PED:US-CCSS-MATH:G2:U05:L01", "us-ccss-g2-u05-hundreds-source-goal-v1"),
+        ("PED:US-CCSS-MATH:G2:U05:L02", "us-ccss-g2-u05-hundreds-source-goal-v1"),
+        ("PED:US-CCSS-MATH:G2:U05:L03", "us-ccss-g2-u05-hundreds-source-goal-v1"),
+    ];
+
+    [Fact]
+    public void RemainingObservedNonGenericG2MetadataIsAlreadyCurrentOrSourceGuarded()
+    {
+        var docs = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        foreach (var (code, before) in ExistingPriorRows)
+        {
+            var (document, lesson) = docs
+                .SelectMany(d => d.Lessons.Select(l => (Document: d, Lesson: l)))
+                .Single(x => x.Lesson.LessonCode == code);
+            var after = CanonicalLessonContentMaterializer
+                .GetEffectiveContentVersion(document, lesson);
+            Assert.True(after == before ||
+                CanonicalLessonContentMaterializer.CanUpgradeExisting(
+                    document, lesson, before),
+                $"Unrecognized non-generic production metadata predecessor for {code}: {before} -> {after}");
+        }
+    }
+
     [Fact]
     public void OnlyExactPriorSourceMetadataOnDocumentedG2LessonsMayAdvance()
     {
