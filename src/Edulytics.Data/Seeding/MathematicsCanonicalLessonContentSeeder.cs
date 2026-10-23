@@ -123,6 +123,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         const string oldB001 = "us-ccss-b001-original-source-goals-repaired-v1";
         const string oldDisplay = "us-ccss-source-bound-nbsp-display-v1";
         const string oldFoundation = "us-ccss-g2-source-grounded-foundations-v1";
+        const string oldHundreds = "us-ccss-g2-u05-hundreds-source-goal-v1";
         const string oldStory11 =
             "us-ccss-g2-u09-l11-tape-diagram-relationships-correction-v1";
         const string oldStory12 =
@@ -138,6 +139,9 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             "PED:US-CCSS-MATH:G2:U02:L01" => oldB001,
             "PED:US-CCSS-MATH:G2:U03:L12" => oldB001,
             "PED:US-CCSS-MATH:G2:U04:L03" => oldDisplay,
+            "PED:US-CCSS-MATH:G2:U05:L01" => oldHundreds,
+            "PED:US-CCSS-MATH:G2:U05:L02" => oldHundreds,
+            "PED:US-CCSS-MATH:G2:U05:L03" => oldHundreds,
             "PED:US-CCSS-MATH:G2:U06:L07" => oldFoundation,
             "PED:US-CCSS-MATH:G2:U06:L08" => oldFoundation,
             "PED:US-CCSS-MATH:G2:U06:L09" => oldFoundation,
@@ -168,6 +172,11 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.IsTarget(
                     document, lesson) =>
                 CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.Version,
+            "PED:US-CCSS-MATH:G2:U05:L01" or
+            "PED:US-CCSS-MATH:G2:U05:L02" or
+            "PED:US-CCSS-MATH:G2:U05:L03" =>
+                CommonCoreG2Unit5OriginalRichContentCorrections.GetExpectedContentVersion(
+                    document, lesson, noMatchedSourceTarget),
             "PED:US-CCSS-MATH:G2:U06:L07" or
             "PED:US-CCSS-MATH:G2:U06:L08" or
             "PED:US-CCSS-MATH:G2:U06:L09" or

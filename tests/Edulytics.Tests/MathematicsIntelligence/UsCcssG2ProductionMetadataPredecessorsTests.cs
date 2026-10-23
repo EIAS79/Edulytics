@@ -16,6 +16,9 @@ public sealed class UsCcssG2ProductionMetadataPredecessorsTests
         ("PED:US-CCSS-MATH:G2:U02:L01", "us-ccss-b001-original-source-goals-repaired-v1"),
         ("PED:US-CCSS-MATH:G2:U03:L12", "us-ccss-b001-original-source-goals-repaired-v1"),
         ("PED:US-CCSS-MATH:G2:U04:L03", "us-ccss-source-bound-nbsp-display-v1"),
+        ("PED:US-CCSS-MATH:G2:U05:L01", "us-ccss-g2-u05-hundreds-source-goal-v1"),
+        ("PED:US-CCSS-MATH:G2:U05:L02", "us-ccss-g2-u05-hundreds-source-goal-v1"),
+        ("PED:US-CCSS-MATH:G2:U05:L03", "us-ccss-g2-u05-hundreds-source-goal-v1"),
         ("PED:US-CCSS-MATH:G2:U06:L07", "us-ccss-g2-source-grounded-foundations-v1"),
         ("PED:US-CCSS-MATH:G2:U06:L08", "us-ccss-g2-source-grounded-foundations-v1"),
         ("PED:US-CCSS-MATH:G2:U06:L09", "us-ccss-g2-source-grounded-foundations-v1"),
@@ -27,15 +30,13 @@ public sealed class UsCcssG2ProductionMetadataPredecessorsTests
         ("PED:US-CCSS-MATH:G2:U09:L13", "us-ccss-g2-u09-l13-solve-represent-story-correction-v1"),
     ];
 
-    // Four other non-generic stored versions were observed in the same
+    // One other non-generic stored version was observed in the same
     // SELECT-only production inventory. They must already be current or
     // supported by their existing source-specific migration contracts.
     private static readonly (string Code, string OldVersion)[] ExistingPriorRows =
     [
         ("PED:US-CCSS-MATH:G2:U01:L01", "us-ccss-g2-source-grounded-foundations-v1"),
-        ("PED:US-CCSS-MATH:G2:U05:L01", "us-ccss-g2-u05-hundreds-source-goal-v1"),
-        ("PED:US-CCSS-MATH:G2:U05:L02", "us-ccss-g2-u05-hundreds-source-goal-v1"),
-        ("PED:US-CCSS-MATH:G2:U05:L03", "us-ccss-g2-u05-hundreds-source-goal-v1"),
+
     ];
 
     [Fact]
