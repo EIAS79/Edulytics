@@ -1,0 +1,57 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson39Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade2 — Measure in Meters";}
+<style>
+.g2l39{max-width:960px;margin:auto;padding:20px;color:#224253}.g2l39 .panel{background:white;border:1px solid #cbdbe3;border-radius:12px;margin:15px 0;padding:20px}.g2l39 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:12px}.g2l39 label{display:block;font-weight:700;margin:12px 0 5px}.g2l39 input,.g2l39 textarea{font:inherit;width:100%;max-width:550px;padding:10px;border:1px solid #8299a5;border-radius:8px}.g2l39 .action{background:#0b7f91;color:white;border:0;border-radius:8px;padding:13px 20px;font-weight:700}.g2l39 .ok{border-left:4px solid #31805a;padding-left:12px}.g2l39 .bad{border-left:4px solid #b7475b;padding-left:12px}.g2l39 .review{border-left:4px solid #ad8a32;padding-left:12px}
+</style>
+<main class="g2l39"><a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Measure in Meters — our reptile tape models</h1>
+<p><strong>1 meter = 100 centimeters.</strong> A long meterstick lets you measure a longer floor TAPE strip with fewer placements. These strips represent reptile lengths; no live reptiles are measured. Teacher verifies the physical tape and actual student measuring.</p>
+<form asp-controller="Grade2Lesson39Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Choral Count — count beyond 100</h2>
+<p>Count by ones from20 through30, then120 through130. What stays the same about the ending digits, and how much larger is every lower-row number?</p>
+<label asp-for="Answers.ChoralCount">Explain the 100 difference in your OWN words</label><textarea asp-for="Answers.ChoralCount" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>2. Reptiles to Measure — original teacher floor strips A to D</h2>
+<p>Teacher has laid exactly measured masking-tape strips. In groups of3–4, measure their actual lengths using centimeter rulers, blocks or10-cm tools, including the long komodo strip. Record numerical centimeters, then compare with the source preparation lengths below.</p>
+<div class="grid">
+<div><label asp-for="Answers.TapeA">A · gila monster (cm)</label><input asp-for="Answers.TapeA" type="number" min="0" max="500" required/></div>
+<div><label asp-for="Answers.TapeB">B · baby alligator (cm)</label><input asp-for="Answers.TapeB" type="number" min="0" max="500" required/></div>
+<div><label asp-for="Answers.TapeC">C · baby cobra (cm)</label><input asp-for="Answers.TapeC" type="number" min="0" max="500" required/></div>
+<div><label asp-for="Answers.TapeD">D · komodo dragon (cm)</label><input asp-for="Answers.TapeD" type="number" min="0" max="500" required/></div>
+</div>
+<p>Teacher preparation target lengths: A58cm, B72cm, C44cm, D180cm. These are not guarantees that a group's physically placed tape is exact.</p>
+</section>
+<section class="panel"><h2>3. Measure with a meter stick — strips D–G</h2>
+<p>Now measure D AGAIN using a real meter stick. Compare exact180cm with one meter and 80 centimeters; teacher may say about2 meters, but exact2 meters would be200cm.</p>
+<div class="grid">
+<div><label asp-for="Answers.KomodoMeters">D complete meters</label><input asp-for="Answers.KomodoMeters" type="number" min="0" max="5" required/></div>
+<div><label asp-for="Answers.KomodoExtraCm">D remaining centimeters</label><input asp-for="Answers.KomodoExtraCm" type="number" min="0" max="99" required/></div>
+<div><label asp-for="Answers.TapeE">E · adult alligator (cm), source3m36cm</label><input asp-for="Answers.TapeE" type="number" min="0" max="500" required/></div>
+<div><label asp-for="Answers.TapeF">F · adult cobra (cm), source1m90cm</label><input asp-for="Answers.TapeF" type="number" min="0" max="500" required/></div>
+<div><label asp-for="Answers.TapeG">G · ribbon snake (cm), source2m82cm</label><input asp-for="Answers.TapeG" type="number" min="0" max="500" required/></div>
+</div>
+<label asp-for="Answers.PhysicalTapeAndTools">What actual tools did your group use, and how did you avoid ruler gaps or overlaps?</label>
+<textarea asp-for="Answers.PhysicalTapeAndTools" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.PartnerCompare">How did the komodo measurement change from many rulers to meterstick?</label>
+<textarea asp-for="Answers.PartnerCompare" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Independent first-party Edulytics exit</h2>
+<p>Not the restricted publisher Cool-down Measure in Meters.</p>
+<div class="grid">
+<div><label asp-for="Answers.ExitTotal247">2m47cm = how many cm?</label><input asp-for="Answers.ExitTotal247" type="number" min="0" max="500" required/></div>
+<div><label asp-for="Answers.ExitRemainder365">365cm =3m and how many MORE cm?</label><input asp-for="Answers.ExitRemainder365" type="number" min="0" max="99" required/></div>
+<div><label asp-for="Answers.ExitFull412">4 full metersticks plus12cm = how many cm?</label><input asp-for="Answers.ExitFull412" type="number" min="0" max="500" required/></div>
+</div>
+<button class="action" type="submit">Check source tape values and independent conversions</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Review the tape measurement or conversion":"Teacher review required"). @r.Feedback</p>
+</div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>
+@foreach(var item in UsCcssG2Unit3FifthLessonMeters.TeacherRubric){<li>@item</li>}</ul>
+<p>Source IM K–5 2021 G2 U03 L05, addressing CCSS2.MD.A.1 and2.NBT.A.2; 2.MD.A.2 building towards only. Physical classroom tape, real partner play and official grading not certified digitally.</p>
+</section></main>

@@ -1,0 +1,62 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson33Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Optional Tape Diagrams";}
+<style>
+.g2l33{max-width:960px;margin:auto;padding:20px;color:#244050}.g2l33 .panel{background:#fff;border:1px solid #cad8e1;border-radius:12px;padding:20px;margin:16px 0}.g2l33 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.g2l33 label{display:block;font-weight:700;margin:12px 0 5px}.g2l33 input,.g2l33 textarea,.g2l33 select{font:inherit;width:100%;max-width:550px;padding:10px;border:1px solid #8699a2;border-radius:8px}.g2l33 .action{background:#0b8297;color:white;border:0;border-radius:8px;padding:12px 20px;font-weight:bold}.g2l33 .bar{display:flex;max-width:420px;background:#f0f6f7;border:2px solid #6b95a3;border-radius:4px}.g2l33 .bar span{display:inline-block;padding:13px;text-align:center;border-right:1px solid #6b95a3}.g2l33 .ok{border-left:4px solid #26865b;padding-left:12px}.g2l33 .bad{border-left:4px solid #ba495c;padding-left:12px}.g2l33 .review{border-left:4px solid #b18b36;padding-left:12px}
+</style>
+<main class="g2l33">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Center Day 3 — optional Tape Diagrams</h1>
+<p>With a real partner choose ORIGINAL Math Stories Stage5 printed tape-diagram cards. Create a story and equation that actually fit the selected diagram. The invented online bar below is ONLY Edulytics practice, not publisher source artwork.</p>
+<form asp-controller="Grade2Lesson33Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Number Talk — compensation</h2>
+<div class="grid">
+<div><label asp-for="Answers.TalkA">25−10</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkB">35−10</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkC">35−20</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkD">35−19</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.CompensationExplain">Why is35−19 equal to35−20+1, not35−20−1?</label>
+<textarea asp-for="Answers.CompensationExplain" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>2. Math Stories Stage5 — genuine printed source tape diagrams</h2>
+<p>Choose one of your school's ORIGINAL diagram cards; identify its printed values, write a story in your OWN words, write a matching equation and give it to your partner to solve. The teacher verifies authentic printed numbers and live collaboration.</p>
+<label asp-for="Answers.RealSourceCardDescription">Actual printed bar description and its quantities</label>
+<textarea asp-for="Answers.RealSourceCardDescription" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.StudentAuthoredStory">Your own story inspired by that REAL diagram</label>
+<textarea asp-for="Answers.StudentAuthoredStory" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.StudentAuthoredEquation">Matching equation, mark the unknown</label>
+<input asp-for="Answers.StudentAuthoredEquation" maxlength="2000"/>
+<label asp-for="Answers.ActualPartnerSolution">Your real partner's answer and method</label>
+<textarea asp-for="Answers.ActualPartnerSolution" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Centers: Choice Time</h2>
+<p>Use actual Target Numbers Stage4/5, Capture Squares Stage3/4, or Five in a Row Stage6 and follow the relevant stage's real rules.</p>
+<label asp-for="Answers.ChoiceCenter">Actual chosen source center</label>
+<select asp-for="Answers.ChoiceCenter"><option value="">Teacher-observed choice</option><option>Target Numbers Stage4/5</option><option>Capture Squares Stage3/4</option><option>Five in a Row Stage6</option></select>
+<label asp-for="Answers.ChoiceReflection">Describe your real partner's strategy or turn</label>
+<textarea asp-for="Answers.ChoiceReflection" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. First-party Edulytics numerical tape diagram examples</h2>
+<p>These bars and values were CREATED by Edulytics, not copied from the publisher.</p>
+<div class="bar" role="img" aria-label="Original Edulytics tape, parts32 and17"><span style="flex:32">32</span><span style="flex:17">17</span></div>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyTotal">32+17, whole?</label><input asp-for="Answers.FirstPartyTotal" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyPart">72−45, missing part?</label><input asp-for="Answers.FirstPartyPart" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyGap">64−39, compare gap?</label><input asp-for="Answers.FirstPartyGap" type="number" min="0" max="100" required/></div>
+</div></section>
+<section class="panel"><h2>5. First-party Edulytics independent exit</h2>
+<div class="grid">
+<div><label asp-for="Answers.ExitCompensate">45−19</label><input asp-for="Answers.ExitCompensate" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExitAdd">57+18</label><input asp-for="Answers.ExitAdd" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExitSubtract">80−36</label><input asp-for="Answers.ExitSubtract" type="number" min="0" max="100" required/></div>
+</div><button type="submit" class="action">Check arithmetic and teacher-review guidance</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite">
+<h2>Feedback</h2>@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numbers valid":r.Correct==false?"Review the maths":"Teacher review required"). @r.Feedback</p></div>}
+</section>}
+<section class="panel"><h2>Teacher rubric</h2><ul>@foreach(var s in UsCcssG2Unit2FifteenthLessonTapeStoriesCenter.TeacherRubric){<li>@s</li>}</ul>
+<p>IM K–5 2021 G2 U02 L15, optional, CCSS2.NBT.B.5, 2.OA.A.1 and2.OA.B.2. No genuine publisher tape card was fabricated and no official grade stored.</p>
+</section></main>

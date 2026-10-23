@@ -5,9 +5,9 @@ using Edulytics.Data.Seeding;
 namespace Edulytics.Tests.Phase29;
 
 /// <summary>
-/// Guards the previous release's seven source-bound corrections plus the five
-/// new Grade 2 candidates, without claiming human certification. Only these
-/// lessons may have JSON production metadata versions reconciled on startup.
+/// Guards every explicitly source-SHA-reviewed canonical lesson eligible for
+/// metadata-only version synchronization. This does not grant academic approval
+/// or permission to alter unreviewed lesson content.
 /// </summary>
 public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
 {
@@ -21,9 +21,10 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
                 .Select(l => (Doc: d, Lesson: l)))
             .ToArray();
 
-        // Previous 56 source-bound lessons plus exact source-SHA-guarded Grade 1 B03 L12/L14.
-        const int expectedSourceBoundCount = 31 + 3 + 7 + 6 + 6 + 1 + 2 + 2 + 3 + 3 + 4 + 2 + 5 + 5 + 5 + 5 + 5 + 5 + 28 + 5 + 16 + 30;
-        // Exact next five source-bound IM2021 G1 Unit 2 lesson rows, not a broad catalogue expansion.
+        // Earlier explicitly source-bound set: 179. Source-guarded Grade2 curriculum
+        // expansions from original publisher corrections add 115 reviewed identities.
+        // This is an EXACT selector inventory guard, not an academic acceptance count.
+        const int expectedSourceBoundCount = 294;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
@@ -122,8 +123,16 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
     {
         var index = new EmbeddedCanonicalLessonContentIndex();
         Assert.True(index.TryGet("PED:US-CCSS-MATH:G2:U06:L08", out var content));
+        // G2 U06 L08 is grade ordinal 89. The currently reviewed source-SHA
+        // correction supersedes the older foundational metadata version.
+        const string code = "PED:US-CCSS-MATH:G2:U06:L08";
+        var target=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .SelectMany(d=>d.Lessons.Where(l=>l.LessonCode==code).Select(l=>(Doc:d,Lesson:l)))
+            .Single();
+        Assert.True(CommonCoreG2Unit6SourceCorrections.IsTarget(target.Doc,target.Lesson));
+        Assert.Equal(CommonCoreG2Unit6SourceCorrections.VersionFor(89),content.ContentVersion);
         Assert.Equal(
-            CommonCoreG2SourceGroundedFoundationsCorrections.CorrectedContentVersion,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(target.Doc,target.Lesson),
             content.ContentVersion);
     }
 }

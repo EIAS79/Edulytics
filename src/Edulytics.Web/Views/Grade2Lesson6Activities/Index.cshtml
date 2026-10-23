@@ -1,0 +1,100 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson6PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 · Optional number puzzles center";
+ var cards=UsCcssG2Unit1SixthLessonEdulyticsCenterCheck.PuzzleDigitCards;
+ var choices=UsCcssG2Unit1SixthLessonEdulyticsCenterCheck.SourceAlignedCenterChoices;
+}
+<style>
+.g2-l06{max-width:920px;margin:auto;padding:22px 18px 40px;color:#21394a}
+.g2-l06 .panel{background:#fff;border:1px solid #d6e3ec;border-radius:15px;padding:22px;margin:18px 0}
+.g2-l06 .cards{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.g2-l06 .card{border:2px solid #167b90;background:#e4f5f8;border-radius:8px;width:60px;height:73px;font-size:1.6rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.g2-l06 .puzzles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.g2-l06 label{font-weight:700;display:block;margin:13px 0 5px}
+.g2-l06 input,.g2-l06 select,.g2-l06 textarea{padding:12px;border:1px solid #70889b;border-radius:7px;width:100%;max-width:500px;font:inherit}
+.g2-l06 .button{padding:12px 22px;background:#087b8f;border:0;border-radius:8px;color:#fff;font:inherit;font-weight:750;cursor:pointer}
+.g2-l06 .muted{color:#50697b}
+.g2-l06 .success{border-left:4px solid #288154;padding-left:12px}
+.g2-l06 .error{border-left:4px solid #b03a4d;padding-left:12px}
+.g2-l06 .review{border-left:4px solid #b88b32;padding-left:12px}
+</style>
+<main class="g2-l06">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<header>
+  <p>EDULYTICS · OPTIONAL CENTER DAY</p>
+  <h1>Number Puzzles — within 20</h1>
+  <p class="muted">An independently authored digit-card puzzle and teacher-scored
+  center choice for Grade 2 Unit 1 Lesson 6. The original optional lesson has
+  no published Cool-down in its open lesson text; this short check is our own.</p>
+</header>
+<section class="panel">
+<h2>1. Number Talk: two-digit sums</h2>
+<p>Use tens and ones to mentally calculate 14 + 22, 19 + 22, 15 + 25,
+and 17 + 25. Describe your method to your teacher.</p>
+</section>
+<section class="panel">
+<h2>2. Number Puzzles</h2>
+<p>Use each <strong>physical digit card at most ONCE across the entire
+gameboard</strong>. Fill every missing number. The same card can't solve
+two different blanks; one printed-digit card is one usable item.</p>
+<div class="cards" role="img" aria-label="Available puzzle digit cards: five, nine, three, two, and four.">
+  @foreach(var card in cards){<span class="card" aria-hidden="true">@card</span>}
+</div>
+<p>This is a new Edulytics mini-puzzle based on the original center's
+mathematical goal; it is not a reproduction of its publisher gameboard.</p>
+</section>
+<section class="panel">
+<h2>3. Centers — choice time</h2>
+<p>Choose a stage already taught: What's Behind My Back?,
+How Close?, or Number Puzzles. Practise with a partner.
+What improved during the activity? Your teacher observes the real game.</p>
+</section>
+<form class="panel" asp-controller="Grade2Lesson6Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<h2>4. Edulytics center check</h2>
+<label for="warm-up">Warm-up: 14 + 22 = ?</label>
+<input id="warm-up" name="warmUp" value="@Model.WarmUp" type="number" min="0" max="50" required />
+<p>Fill the four board blanks with four different physical digit cards:</p>
+<div class="puzzles">
+ <div><label for="first">12 + ? = 17</label><input id="first" name="first" value="@Model.First" type="number" min="0" max="9" required /></div>
+ <div><label for="second">? + 7 = 16</label><input id="second" name="second" value="@Model.Second" type="number" min="0" max="9" required /></div>
+ <div><label for="third">14 − ? = 11</label><input id="third" name="third" value="@Model.Third" type="number" min="0" max="9" required /></div>
+ <div><label for="fourth">? + 6 = 8</label><input id="fourth" name="fourth" value="@Model.Fourth" type="number" min="0" max="9" required /></div>
+</div>
+<label for="choice">Which original center did you choose?</label>
+<select id="choice" name="centerChoice" required>
+ <option value="">Select your center</option>
+ @foreach(var choice in choices){<option selected="@(Model.CenterChoice==choice)" value="@choice">@choice</option>}
+</select>
+<label for="explain">What did you get better at? Explain one equation and how you worked with a partner</label>
+<textarea id="explain" name="explanation" rows="3" maxlength="2000">@Model.Explanation</textarea>
+<p class="muted">A numerical checker cannot verify that physical partner
+turns, explanations or Math Community routines actually occurred.</p>
+<button class="button" type="submit">Check my puzzle mathematics</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var result in Model.Feedback){
+<div class="@(result.Correct==true?"success":result.Correct==false?"error":"review")">
+<h3>@result.Task</h3>
+<p>@(result.Correct==true?"Mathematically correct":result.Correct==false?"Try again":"Teacher review required"). @result.Text</p>
+</div>
+}
+<p class="muted">The form provides immediate feedback, not a persisted
+official school grade or automatic classroom attendance record.</p>
+</section>
+}
+<section class="panel">
+<h2>Teacher evidence rubric</h2>
+<ul>
+@foreach(var criterion in UsCcssG2Unit1SixthLessonEdulyticsCenterCheck.TeacherRubric){<li>@criterion</li>}
+</ul>
+</section>
+<p class="muted">Source alignment: IM K-5 2021 Grade 2 U01 Lesson 6,
+CCSS 2.NBT.B.5 and 2.OA.B.2. Gameboard and examples originally authored by Edulytics.</p>
+</main>

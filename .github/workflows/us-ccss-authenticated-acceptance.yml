@@ -67,6 +67,7 @@ jobs:
           python3 -m py_compile tools/phase29/acceptance_two_school_https.py tools/phase29/b001_practice_form_coverage.py
           python3 tools/phase29/b001_practice_form_coverage.py
           python3 -m py_compile tools/phase29/b001_practice_attempt_probe.py
+          python3 -m py_compile tools/phase29/g2_late_companion_https.py
           python3 tools/phase29/b001_practice_attempt_probe.py
       - name: Prove embedded content is unchanged
         run: python3 tools/phase29/verify_main_content_parity.py
@@ -159,6 +160,7 @@ jobs:
           done
           test "$ready" = true
           python3 tools/phase29/acceptance_two_school_https.py
+          python3 tools/phase29/g2_late_companion_https.py
       - name: Preserve exact 500 lesson disposable real Practice generation and grading evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -181,6 +183,14 @@ jobs:
         with:
           name: b001-500-practice-entry-preflight-no-academic-approval
           path: /tmp/b001-500-lesson-practice-form-preflight.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Preserve G2 44 exact source-companion authenticated and cross-school denial evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-44-source-companions-https-not-academic-approval
+          path: /tmp/g2-44-source-companions-authenticated-https-no-academic-approval.json
           if-no-files-found: warn
           retention-days: 14
       - name: Preserve G1 lesson desktop/mobile visual evidence

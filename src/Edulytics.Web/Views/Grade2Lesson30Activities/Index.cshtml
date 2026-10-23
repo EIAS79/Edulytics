@@ -1,0 +1,86 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson30Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Story Problems and Diagrams";
+}
+<style>
+.g2l30{max-width:960px;margin:auto;padding:20px;color:#234353}
+.g2l30 .panel{background:#fff;border:1px solid #cadce5;border-radius:12px;margin:16px 0;padding:20px}
+.g2l30 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(176px,1fr));gap:12px}
+.g2l30 label{display:block;margin:12px 0 5px;font-weight:bold}
+.g2l30 input,.g2l30 textarea{font:inherit;width:100%;max-width:550px;border:1px solid #8095a2;border-radius:8px;padding:10px}
+.g2l30 .action{background:#087e94;color:white;border:0;border-radius:8px;padding:13px 20px;font-weight:bold}
+.g2l30 .ok{border-left:4px solid #28865b;padding-left:12px}
+.g2l30 .bad{border-left:4px solid #b54356;padding-left:12px}
+.g2l30 .review{border-left:4px solid #b1872f;padding-left:12px}
+</style>
+<main class="g2l30">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Story Problems and Diagrams — PLC Activity</h1>
+<p>Compare the actual publisher tape diagrams with each story's WHOLE, PART, GAP and unknown. <strong>Original Activity1 asks for diagram matches only — do not solve its stories in that phase.</strong></p>
+<form asp-controller="Grade2Lesson30Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Notice and Wonder — Mancala</h2>
+<p>Study the real teacher-provided Mancala image. What do you notice about its pits, seeds, players or possible mathematical questions?</p>
+<label asp-for="Answers.MancalaNotice">Questions and observations about the actual picture</label>
+<textarea asp-for="Answers.MancalaNotice" maxlength="2000" rows="2"></textarea>
+</section>
+<section class="panel">
+<h2>2. Interpret the Diagram — match, DO NOT solve in the real source phase</h2>
+<p>The four source stories use Clare54 and Han16 in different roles. Circle actual printed matching tape diagrams; never choose merely because both numbers appear. The image/diagram LETTERS from the original are not invented here.</p>
+<p><strong>Source story A:</strong> Clare captured54 seeds, Han captured16 FEWER. How many did Han capture?</p>
+<p><strong>Source story B:</strong> Clare has54, Han has16. How many seeds are on the board in ALL?</p>
+<p><strong>Source story C:</strong> Clare has54 in all,16 are in her hand. How many remain on board?</p>
+<p><strong>Source story D:</strong> Board contains54, Clare's side16. How many on Han's side?</p>
+<label asp-for="Answers.Mlr6FirstRead">MLR6 first read — what happens in the Mancala story?</label>
+<textarea asp-for="Answers.Mlr6FirstRead" maxlength="2000" rows="2"></textarea>
+<label asp-for="Answers.Mlr6SecondRead">Second read — what counts are known and what do they represent?</label>
+<textarea asp-for="Answers.Mlr6SecondRead" maxlength="2000" rows="2"></textarea>
+<label asp-for="Answers.Mlr6ThirdRead">Third read — what exactly does the question ask you to find?</label>
+<textarea asp-for="Answers.Mlr6ThirdRead" maxlength="2000" rows="2"></textarea>
+<label asp-for="Answers.OriginalSourceDiagramMatches">Describe ACTUAL diagram letters you circled for each story</label>
+<textarea asp-for="Answers.OriginalSourceDiagramMatches" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.DiagramExplanation">Why do the unknown and the parts match your choices?</label>
+<textarea asp-for="Answers.DiagramExplanation" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel">
+<h2>3. Original Card Sort — now solve TWO chosen real card stories</h2>
+<p>With a real partner, use the authentic source story/diagram cards; match every card and explain. Choose exactly TWO publisher story cards from A–D to solve. Their precise printed text and diagrams are not reconstructed from the public HTML.</p>
+<label asp-for="Answers.OriginalCardPairMatches">My true pairs of original story/diagram cards</label>
+<textarea asp-for="Answers.OriginalCardPairMatches" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.OriginalChosenTwoCards">Which TWO source A–D problems did we solve, and how?</label>
+<textarea asp-for="Answers.OriginalChosenTwoCards" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.SourceSynthesisCardsLAndN">Teacher's actual Cards L and N: how were their diagrams alike or different?</label>
+<textarea asp-for="Answers.SourceSynthesisCardsLAndN" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel">
+<h2>4. Optional Edulytics numerical companion — after Activity1</h2>
+<p>These four numbers are OPTIONAL numerical interpretations of source stories, <strong>not the original Activity1 diagram-match requirement</strong>.</p>
+<div class="grid">
+<div><label asp-for="Answers.OptionalSourceSmaller">54 and16 FEWER: smaller?</label><input asp-for="Answers.OptionalSourceSmaller" type="number" min="0" max="100"/></div>
+<div><label asp-for="Answers.OptionalSourceTotal">Clare54 and Han16: total?</label><input asp-for="Answers.OptionalSourceTotal" type="number" min="0" max="100"/></div>
+<div><label asp-for="Answers.OptionalSourceBoard">Clare54,16 in hand: on board?</label><input asp-for="Answers.OptionalSourceBoard" type="number" min="0" max="100"/></div>
+<div><label asp-for="Answers.OptionalSourceSide">Board54, Clare16: Han side?</label><input asp-for="Answers.OptionalSourceSide" type="number" min="0" max="100"/></div>
+</div>
+</section>
+<section class="panel"><h2>5. First-party independent Edulytics arithmetic</h2>
+<p>These numbers are not source printed cards or the restricted publisher Find the Match Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartySmaller">63 with27 fewer: smaller?</label><input asp-for="Answers.FirstPartySmaller" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyTotal">Clare63, Han27: total?</label><input asp-for="Answers.FirstPartyTotal" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyBoard">Of63,27 in hand: board?</label><input asp-for="Answers.FirstPartyBoard" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartySide">Board63, Clare27: other side?</label><input asp-for="Answers.FirstPartySide" type="number" min="0" max="100" required/></div>
+</div>
+<button type="submit" class="action">Check independent numbers and display teacher review</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerical relationship valid":r.Correct==false?"Check story relationship":"Teacher review required"). @r.Feedback</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2TwelfthLessonMancalaDiagrams.TeacherRubric){<li>@item</li>}</ul>
+<p>Original IM K–5 2021 Grade2 Unit2 Lesson12, Addressing 2.NBT.B.5 and 2.OA.A.1. No real source card match, classroom activity or official grade auto-certified.</p>
+</section></main>

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 47,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L13",
+  "title": "Center Day 2 (optional)",
+  "unitNumber": 3,
+  "lessonNumber": 13,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_TEACHER_SOURCE_REVIEW",
+    "sourceReadOnly": "Local G2 Unit3 Lesson13 original teacher preparation and lesson HTML; no local project access",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-13/preparation.html",
+    "originalBodySha256": "5fbacc4927f2d2e2ed57f65965b4ffd2503752d6bd762d2cc24759a0ae14cfa6",
+    "sourceSemanticSha256": "2851f2d582ae826ae39136c9b0370eb8511b47da749e233aab9194182edd3a29",
+    "orderedOutcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.3",
+      "CCSS:2.MD.A.4",
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.B.2"
+    ],
+    "numberTalk": "58+10=68,58+12=70,58+13=71,67+14=81",
+    "activity1": "Target Measurements Stage1: two real partners and physical inch/cm rulers, target <=10in or<=30cm, partner says stop, measure, difference score to stop caller; swap roles; 8 rounds and lowest total wins",
+    "activity2": "Number Puzzles Stage4: actual printed digit cards to make add/subtract equations within100 true with ten composition/decomposition; genuine choice Estimate and Measure/Target Measurements.",
+    "rights": "Original public mathematical rules attributed, publisher recording sheet and cards not reproduced; original first-party digital variants.",
+    "teacherOnly": "Authentic physical measurements and eight-round winner/printed digit-card play remain teacher-observed."
+  },
+  "stageB": {
+    "status": "COMPLETE_PREDECESSOR_SHA_AND_SIX_FIELDS_GUARDED_SOURCE_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3TargetMeasurementsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Pack identity, source URL, original body SHA, ordered five standards and unchanged six original learner fields / persisted predecessor version required."
+  },
+  "stageC": {
+    "status": "COMPLETE_FOUR_EXACT_FAMILIES_STUDENT_COMPANION_TESTS_WRITTEN_NOT_EXECUTED",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3ThirteenthLessonCenterDay2.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson13CenterDay2Contracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson13CenterDay2Questions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson47ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson47Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l13.measurement_absolute_difference_cm",
+      "usccss.g2.u03.l13.measurement_absolute_difference_in",
+      "usccss.g2.u03.l13.number_puzzle_add_missing",
+      "usccss.g2.u03.l13.number_puzzle_sub_missing"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3TargetMeasurementsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3ThirteenthLessonCenterDay2Tests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson13CenterDay2QuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson47ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "security": "Protected StudentPortal, adoption/published lesson checks, antiforgery, bounded strings, no actual-grade entry.",
+    "teacherOnly": "Actual partner drawing, ruler zero, physical cards and eight-round winner not inferred digitally."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L14_ORDINAL48_STAGE_A_B_C"
+}

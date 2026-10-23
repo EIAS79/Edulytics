@@ -1,0 +1,76 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson26Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Different Ways to Decompose";
+}
+<style>
+.g2l26{max-width:960px;margin:auto;padding:20px;color:#223f4f}
+.g2l26 .panel{background:#fff;border:1px solid #c8d9e3;border-radius:12px;padding:19px;margin:15px 0}
+.g2l26 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.g2l26 label{display:block;margin:12px 0 5px;font-weight:700}
+.g2l26 input,.g2l26 textarea{font:inherit;width:100%;max-width:540px;border:1px solid #8499a3;border-radius:8px;padding:10px}
+.g2l26 .action{background:#117e91;color:white;border:0;border-radius:8px;padding:13px 21px;font-weight:700}
+.g2l26 .ok{border-left:4px solid #288055;padding-left:12px}
+.g2l26 .bad{border-left:4px solid #bf495d;padding-left:12px}
+.g2l26 .review{border-left:4px solid #b18b33;padding-left:12px}
+</style>
+<main class="g2l26">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Different Ways to Decompose</h1>
+<p>Some people subtract tens first, others exchange a ten before subtraction. Compare both ways with original source calculations and your teacher's real diagrams.</p>
+<form asp-controller="Grade2Lesson26Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Number Talk — Multiples of Ten</h2>
+<div class="grid">
+<div><label asp-for="Answers.TalkA">18+10+10</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkB">18+20+10</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkC">38−20</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkD">48−30</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.TalkReasoning">How does 18+20 help with 38−20?</label><textarea asp-for="Answers.TalkReasoning" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>2. Aren't You Missing Something? — Lin versus Clare</h2>
+<p><strong>Lin</strong> starts with71=60+11 (trade first), removes6 ones and5 tens. <strong>Clare</strong> starts71−50=21 (remove tens first), exchanges21=10+11, then subtracts6 ones. Explain why Clare does not need to draw the five tens she already removed.</p>
+<div class="grid">
+<div><label asp-for="Answers.LinClareDifference">71−56</label><input asp-for="Answers.LinClareDifference" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ClareResidual">Clare: 71−50</label><input asp-for="Answers.ClareResidual" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ClareAfterExchangeOnes">Clare's singles after trading one ten</label><input asp-for="Answers.ClareAfterExchangeOnes" type="number" min="0" max="19" required/></div>
+</div>
+<label asp-for="Answers.CompareMethods">Compare SOURCE Lin and Clare diagrams; why is the same 15 reached in different order?</label><textarea asp-for="Answers.CompareMethods" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>3. Different Ways to Decompose — Andre and independent source tasks</h2>
+<p>Andre:65−28. He subtracts20 to get45, exchanges45=30+15, subtracts8 ones and gets37. Is that more like Lin or Clare? Explain your reasoning to a partner; the teacher checks this part.</p>
+<div class="grid">
+<div><label asp-for="Answers.Andre">Andre: 65−28</label><input asp-for="Answers.Andre" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.Source34">34−18</label><input asp-for="Answers.Source34" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.Source82">82−37</label><input asp-for="Answers.Source82" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.Source71">71−53</label><input asp-for="Answers.Source71" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.StudentDiagram">Describe the base-ten diagrams that you actually made</label><textarea asp-for="Answers.StudentDiagram" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>4. Independently authored Edulytics Cool-down</h2>
+<p>These aren't the publisher's restricted “Whose Method is it Anyway?” assessment tasks.</p>
+<div class="grid">
+<div><label asp-for="Answers.ExitA">72−46</label><input asp-for="Answers.ExitA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExitB">83−57</label><input asp-for="Answers.ExitB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExitC">61−25</label><input asp-for="Answers.ExitC" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.PartnerReasoning">Which real classmate explanation was most useful, and why?</label><textarea asp-for="Answers.PartnerReasoning" rows="2" maxlength="2000"></textarea>
+<button type="submit" class="action">Check numeric mathematics and show teacher observations</button>
+</section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numbers valid":r.Correct==false?"Recheck your arithmetic":"Teacher review required"). @r.Message</p>
+</div>}</section>}
+<section class="panel"><h2>Teacher rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2EighthLessonDifferentWays.TeacherRubric){<li>@item</li>}</ul>
+<p>Original lesson maths: IM K–5 2021 G2 U02 L08, CCSS 2.NBT.B.5 and 2.NBT.B.9. No publisher restricted cool-down copied, no official grades stored.</p>
+</section></main>

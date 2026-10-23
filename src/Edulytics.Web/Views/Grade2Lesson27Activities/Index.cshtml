@@ -1,0 +1,76 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson27Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Add and Subtract Within 100";
+}
+<style>
+.g2l27{max-width:960px;margin:auto;padding:20px;color:#244353}
+.g2l27 .panel{background:#fff;border:1px solid #ccdae3;border-radius:12px;margin:16px 0;padding:20px}
+.g2l27 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.g2l27 label{display:block;font-weight:700;margin:12px 0 5px}
+.g2l27 input,.g2l27 textarea{border:1px solid #8096a3;border-radius:7px;padding:10px;font:inherit;width:100%;max-width:540px}
+.g2l27 .action{border:0;border-radius:8px;background:#0c8097;color:white;padding:12px 20px;font-weight:bold}
+.g2l27 .ok{border-left:4px solid #2b865b;padding-left:12px}
+.g2l27 .bad{border-left:4px solid #b74858;padding-left:12px}
+.g2l27 .review{border-left:4px solid #ab892f;padding-left:12px}
+</style>
+<main class="g2l27">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Add and Subtract Within 100</h1>
+<p>Choose your own correct methods. For addition, you may need to <strong>compose</strong> a ten; for subtraction, <strong>decompose</strong> a ten. A teacher must review your actual diagrams and discussion.</p>
+<form asp-controller="Grade2Lesson27Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<section class="panel">
+<h2>1. Which One Doesn't Belong? — authentic A–D diagrams</h2>
+<p>Examine the FOUR authentic teacher-displayed source diagrams A, B, C, D; explain one reason EACH might be the odd one out. The original visual information is not reproduced here.</p>
+<label asp-for="Answers.WarmupRealImages">Which original diagram did you select, and what tens/ones fact distinguishes it?</label>
+<textarea asp-for="Answers.WarmupRealImages" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel">
+<h2>2. Sort and Find the Value — real source card center</h2>
+<p>With 2–3 partners, use the REAL publisher print cards to match arithmetic expressions to base-ten drawings. Explain each match and choose ONE addition and ONE subtraction from the authentic cards. Their exact card values were not available in the archived public lesson text and are not fabricated here.</p>
+<label asp-for="Answers.RealCardMatches">Describe the matches using actual cards</label><textarea asp-for="Answers.RealCardMatches" rows="2" maxlength="2000"></textarea>
+<div class="grid">
+<div><label asp-for="Answers.RealAdditionCard">Chosen real addition expression</label><input asp-for="Answers.RealAdditionCard" maxlength="2000"/></div>
+<div><label asp-for="Answers.RealSubtractionCard">Chosen real subtraction expression</label><input asp-for="Answers.RealSubtractionCard" maxlength="2000"/></div>
+</div>
+<label asp-for="Answers.RealGroupExplanation">Why do the real images fit? (teacher checks)</label><textarea asp-for="Answers.RealGroupExplanation" rows="2" maxlength="2000"></textarea>
+<p>Public teacher synthesis example:35+42=77 (no composing needed).</p>
+</section>
+<section class="panel">
+<h2>3. Add or Subtract — original four arithmetic problems</h2>
+<p>Use actual base-ten blocks, your own drawings or equations; compare different strategies on the SAME expression during the MLR7 gallery walk.</p>
+<div class="grid">
+<div><label asp-for="Answers.SourceAddOne">27+47 = ?</label><input asp-for="Answers.SourceAddOne" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceSubtractOne">55−27 = ?</label><input asp-for="Answers.SourceSubtractOne" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceAddTwo">36+38 = ?</label><input asp-for="Answers.SourceAddTwo" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceSubtractTwo">82−39 = ?</label><input asp-for="Answers.SourceSubtractTwo" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.MyDiagramAndGallery">Describe your original drawing and something learned from a real gallery partner</label>
+<textarea asp-for="Answers.MyDiagramAndGallery" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.SectionSummary">Source student section summary:63−18 = ?</label><input asp-for="Answers.SectionSummary" type="number" min="0" max="100" required/>
+</section>
+<section class="panel">
+<h2>4. Independently authored Edulytics exit</h2>
+<p>These are NOT the publisher's restricted “Find the Value Your Way” assessment prompts.</p>
+<div class="grid">
+<div><label asp-for="Answers.ExtraAdd">46+27 = ?</label><input asp-for="Answers.ExtraAdd" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExtraSubtract">75−48 = ?</label><input asp-for="Answers.ExtraSubtract" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExtraSecondAdd">58+26 = ?</label><input asp-for="Answers.ExtraSecondAdd" type="number" min="0" max="100" required/></div>
+</div>
+<button class="action" type="submit">Check numeric maths and show teacher observations</button>
+</section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numbers correct":r.Correct==false?"Revise the answer":"Teacher review required"). @r.Feedback</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2NinthLessonAddSubtract100.TeacherRubric){<li>@item</li>}</ul>
+<p>IM K–5 2021 G2 U02 L09, Addressing CCSS2.NBT.B.5. No authentic print-card data or official grade invented.</p>
+</section>
+</main>

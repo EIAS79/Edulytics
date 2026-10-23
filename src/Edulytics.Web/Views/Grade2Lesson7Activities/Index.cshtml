@@ -1,0 +1,145 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson7PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 · Collect and represent our class data";
+    var categories=UsCcssG2Unit1SeventhLessonClassData.Categories;
+    string CategoryIcon(string category)=>category switch {
+        "Walk"=>"🚶", "Car"=>"🚗", "Train"=>"🚆", _=>"🚌"
+    };
+}
+<style>
+.g2-l07{max-width:930px;margin:0 auto;padding:22px 18px 42px;color:#21384e}
+.g2-l07 .panel{background:white;border:1px solid #d9e5ee;border-radius:16px;padding:22px;margin:18px 0}
+.g2-l07 h1{font-size:1.85rem}.g2-l07 h2{font-size:1.3rem}
+.g2-l07 .options{display:flex;gap:13px;flex-wrap:wrap;margin:15px 0}
+.g2-l07 .transport{min-width:95px;text-align:center;border:1px solid #8faab8;border-radius:10px;padding:12px;background:#f1f8fb}
+.g2-l07 .transport span{display:block;font-size:2rem}
+.g2-l07 label{font-weight:750;display:block;margin:14px 0 6px}
+.g2-l07 textarea,.g2-l07 input{font:inherit;width:100%;max-width:540px;border:1px solid #728a9a;border-radius:9px;padding:12px}
+.g2-l07 textarea:focus,.g2-l07 input:focus{outline:3px solid #9fdde8}
+.g2-l07 .four{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px}
+.g2-l07 .button{padding:13px 25px;border:0;border-radius:9px;background:#087d8e;color:white;font:inherit;font-weight:750;cursor:pointer}
+.g2-l07 .muted{color:#536b7a}
+.g2-l07 .display{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}
+.g2-l07 .response{padding:9px;border:1px solid #a3b3c0;border-radius:10px;background:#eef6fa}
+.g2-l07 .category-row{margin:14px 0;border-bottom:1px solid #e3eaef;padding-bottom:9px}
+.g2-l07 .symbols{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.g2-l07 .symbol{border:1px solid #8ca2b2;border-radius:6px;background:#f3f8fb;padding:3px;font-size:1.3rem}
+.g2-l07 .success{border-left:4px solid #258452;padding-left:12px}
+.g2-l07 .error{border-left:4px solid #b94555;padding-left:12px}
+.g2-l07 .review{border-left:4px solid #a88435;padding-left:12px}
+</style>
+<main class="g2-l07">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to your lesson</a>
+<header>
+ <p>EDULYTICS · GRADE 2 ORIGINAL CLASS ACTIVITY</p>
+ <h1>How did our class get to school today?</h1>
+ <p class="muted">Collect data from REAL classmates, first display the
+ responses freely, then organize the same observations in a clearer visual.
+ The pictures and Cool-down are independently authored by Edulytics.</p>
+</header>
+<section class="panel">
+ <h2>1. Notice and wonder</h2>
+ <p>What do these different ways of getting to school have in common?
+ How are they different? Discuss your ideas with a partner.</p>
+ <div class="options">
+ @foreach(var name in categories){
+  <div class="transport"><span aria-hidden="true">@CategoryIcon(name)</span><strong>@name</strong></div>
+ }
+ </div>
+</section>
+<section class="panel">
+ <h2>2. Collect a real class display</h2>
+ <p>Each participating student reports exactly one true way they arrived
+ today. A teacher collects the actual answers. Record one anonymous
+ category per pupil, separated by commas or lines, in the order they were
+ collected. <strong>Do not type classmates' names or create imaginary data.</strong></p>
+ <p class="muted">The original class display can initially look messy.
+ This is allowed: do not reorder the observations until your next activity.
+ No student names or official school grades are stored by this form.</p>
+</section>
+<section class="panel">
+ <h2>3. Organize and explain</h2>
+ <p>Organize the SAME observed responses into labeled groups: Walk, Car,
+ Train and School bus. Make a tally, sketch your own category display,
+ or write the number in each group. Check that nobody's choice was lost
+ or counted twice.</p>
+ <p>Use a second representation: pictures, tally marks or grouped symbols.
+ What changes visually, and what stays mathematically the same? Talk to a
+ partner and share your display with your teacher.</p>
+</section>
+<form class="panel" asp-controller="Grade2Lesson7Activities" asp-action="Submit" method="post">
+ @Html.AntiForgeryToken()
+ <input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+ <input type="hidden" name="lessonId" value="@Model.LessonId" />
+ <h2>4. Edulytics class-data check and Cool-down</h2>
+ <label for="raw">Actual anonymous class travel responses — one per classmate</label>
+ <textarea id="raw" name="rawResponses" rows="4" maxlength="2000" required
+ placeholder="Enter real responses in order. Use only Walk, Car, Train, School bus.">@Model.RawResponses</textarea>
+ <h3>My first organized representation</h3>
+ <p>How many actual responses are in each group? Zero is a valid count.</p>
+ <div class="four">
+ <div><label for="walk">Walk</label><input id="walk" type="number" name="walkCount" min="0" max="60" required value="@Model.WalkCount" /></div>
+ <div><label for="car">Car</label><input id="car" type="number" name="carCount" min="0" max="60" required value="@Model.CarCount" /></div>
+ <div><label for="train">Train</label><input id="train" type="number" name="trainCount" min="0" max="60" required value="@Model.TrainCount" /></div>
+ <div><label for="bus">School bus</label><input id="bus" type="number" name="busCount" min="0" max="60" required value="@Model.BusCount" /></div>
+ </div>
+ <h3>Cool-down: questions about our REAL data</h3>
+ <div class="four">
+ <div><label for="total">How many classmates answered?</label><input id="total" name="totalAnswer" type="number" min="0" max="60" value="@Model.TotalAnswer" required /></div>
+ <div><label for="bus-answer">How many chose School bus?</label><input id="bus-answer" name="busAnswer" type="number" min="0" max="60" value="@Model.BusAnswer" required /></div>
+ <div><label for="difference">How many MORE chose Car than Train, or Train than Car? (absolute difference)</label><input id="difference" name="comparisonAnswer" type="number" min="0" max="60" value="@Model.ComparisonAnswer" required /></div>
+ </div>
+ <label for="explain">Explain how your grouping makes the real data easier to understand</label>
+ <textarea id="explain" name="explanation" rows="3" maxlength="2000">@Model.Explanation</textarea>
+ <p class="muted">A teacher reviews your original visual organization, actual
+ survey collection, labels, gallery walk and explanation.</p>
+ <button type="submit" class="button">Check my collected data</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+ <h2>5. Two representations of the submitted responses</h2>
+ @if(Model.HasValidSurvey){
+  <h3>Original observation order, before organizing</h3>
+  <div class="display" aria-label="Real classroom travel responses in their originally submitted order">
+   @foreach(var item in Model.OriginalSequence){
+    <span class="response" title="@item">@CategoryIcon(item) <span class="visually-hidden">@item</span></span>
+   }
+  </div>
+  <h3>Same data — new grouped symbol display</h3>
+  @foreach(var group in categories){
+   var n=Model.GroupedCounts[group];
+   <div class="category-row">
+    <strong>@CategoryIcon(group) @group — @n</strong>
+    <div class="symbols" role="img" aria-label="@n observations of category @group; one symbol means one classmate.">
+    @for(var i=0;i<n;i++){
+     <span aria-hidden="true" class="symbol">@CategoryIcon(group)</span>
+    }
+    </div>
+   </div>
+  }
+  <p class="muted">Key: one symbol means one anonymous observed classmate.
+  The order and totals come only from the submitted responses. Edulytics
+  did not generate any pupils, and no names are displayed.</p>
+ }
+ <h3>Assessment feedback</h3>
+ @foreach(var result in Model.Feedback){
+  <div class="@(result.Correct==true?"success":result.Correct==false?"error":"review")">
+   <h3>@result.Task</h3>
+   <p>@(result.Correct==true?"Numerically correct":result.Correct==false?"Needs correction":"Teacher review required"). @result.Explanation</p>
+  </div>
+ }
+ <p class="muted">This page produces immediate practice feedback only,
+ not an official school assessment record.</p>
+</section>
+}
+<section class="panel">
+ <h2>Teacher evidence criteria</h2>
+ <ul>
+ @foreach(var criterion in UsCcssG2Unit1SeventhLessonClassData.TeacherRubric){<li>@criterion</li>}
+ </ul>
+</section>
+<p class="muted">Curriculum reference: IM 2021 Grade 2 Unit 1 Lesson 7,
+ CCSS 2.MD.D.10. Independent illustrations and assessment by Edulytics.</p>
+</main>

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 2,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
+  "unitNumber": 1,
+  "lessonNumber": 2,
+  "lessonTitle": "Relate Addition and Subtraction within 10",
+  "officialOutcomeCodes": [
+    "CCSS:2.OA.B.2"
+  ],
+  "sourceEdition": "Illustrative Mathematics / Kendall Hunt 1st Edition (2021)",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_TEACHER_AND_STUDENT_TASKS_REVIEWED_WITH_FIRST_PARTY_ASSESSMENT_ALTERNATIVE",
+    "referenceEdition": "IM K-5 2021, Grade 2 Unit 1 Lesson 2",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-2/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-2/lesson.html",
+    "originalWarmup": "What Do You Know About 10? Teacher observes student ideas and representations",
+    "activity1": "Revisit What's Behind My Back (10 cubes): make visible/hidden parts and related addition and subtraction equations",
+    "activity2": "Sums of 10: two-color ten-cube towers; author several related equations and match the unknown equation to corresponding color tower",
+    "classroomSynthesis": "Students explain their color parts and related expressions, update Math Community discussion",
+    "originalCoolDown": "Original restricted publisher assessment NOT copied; independent Edulytics Cool-down independently authored from verified skill and objective",
+    "originalPublisherVisuals": "SOURCE_FIGURE_DESCRIBED_IN_PUBLIC_TEACHER_STUDENT_HTML; independently rendered first-party 10-block/blue-yellow towers",
+    "publicStudentTaskVerified": true,
+    "requiredOriginalMathScope": "CCSS 2.OA.B.2; hidden addend and related subtraction with whole 10",
+    "originalPublisherPrintPdfDownloaded": false,
+    "academicParaphraseOnly": true
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_GUARDED_RICH_TEACHING_AUTHORING",
+    "correctionPath": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1TenTwentySourceTeachingCorrections.cs",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "protectedSeeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "G2 U01 L02 original source URL, canonical SHA, exact outcome codes and old learner fields, guarded previous version",
+    "keyCorrections": [
+      "ten-cube hidden part, not generic subtraction",
+      "addition to ten and inverse subtraction with the SAME two cube parts",
+      "color-coded tower representations and multiple correct related equation forms",
+      "teacher assessment of physical partner game and mathematical reasoning"
+    ]
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHORING_THREE_SOURCE_FAMILIES_AUTHORED_COOLDOWN_UI_AND_RUBRIC",
+    "questionFamilies": [
+      "usccss.g2.u01.l02.hidden_ten_cubes",
+      "usccss.g2.u01.l02.related_ten_equation",
+      "usccss.g2.u01.l02.match_ten_cube_tower"
+    ],
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson2And3PracticeContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson2And3Questions.cs",
+    "independentCoolDown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1SecondLessonEdulyticsCoolDown.cs",
+    "learnerController": "src/Edulytics.Web/Controllers/Grade2Lesson2ActivitiesController.cs",
+    "learnerView": "src/Edulytics.Web/Views/Grade2Lesson2Activities/Index.cshtml",
+    "entryPoint": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "originalFiguresPolicy": "first-party CSS ten-cube diagrams not publisher artwork",
+    "grading": [
+      "hidden part integer",
+      "unknown subtraction part integer",
+      "related addition/subtraction equations parsed with actual matching tower counts",
+      "tower label matches authentic two-color number-part description"
+    ],
+    "teacherScoring": "learner reasoning, physical cube handling, partner math discourse and Math Community require teacher, explicit rubric included",
+    "authoredTests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson2And3QuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1TenTwentySourceTeachingCorrectionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1SecondLessonEdulyticsCoolDownTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson2ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "studentAnswersPersistence": "immediate feedback in authenticated companion practice, not claimed persisted as official school assessment grade"
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING",
+    "readyForStageD": true,
+    "tests": "WRITTEN_NOT_EXECUTED",
+    "stageDExecuted": false,
+    "CIExecuted": false,
+    "academicHumanSignoff": "NOT_ASSERTED",
+    "originalRestrictedCoolDown": "REPLACED_BY_INDEPENDENT_ORIGINAL_EDULYTICS_ASSESSMENT",
+    "originalPublisherFigures": "NO_COPY_FIRST_PARTY_SQUARES",
+    "sourceRights": "PUBLIC_MATH_OBJECTIVES_AS_REFERENCE;NO_PUBLISHER_RESTRICTED_ASSESSMENT_REPRODUCTION",
+    "mainMerge": false,
+    "productionDeployment": false,
+    "release": "NO_GO",
+    "runtimeExecutionResults": "NOT_VERIFIED_UNTIL_STAGE_D",
+    "note": "Stage A-C authoring complete and ready for later Stage D verification, not a passed test, academic release approval or real classroom participation claim."
+  },
+  "nextAction": "PROCEED_STRICT_NEXT_ORDINAL_G2_U01_L03_AFTER_LESSON2_A_C_CLOSURE"
+}

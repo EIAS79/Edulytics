@@ -199,6 +199,22 @@ public static class LessonPracticeInteractionRegistry
             answerType == "contract_defined")
             return LessonPracticeInteractionKind.ContractDriven;
 
+        // G2 U01 L18 category comparisons ask for an exact count/gap,
+        // not a <, = or > relation. Numeric answerType takes precedence.
+        if (familyId.StartsWith("usccss.g2.u01.l18.",StringComparison.Ordinal) &&
+            answerType=="exact_integer")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+
+        // G2 U02 L03 compare-gap answers are integers, not bare <,=,>.
+        if(familyId.StartsWith("usccss.g2.u02.l03.",StringComparison.Ordinal) &&
+           answerType=="exact_integer")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+
+        // Declared numeric answer type is authoritative. Families named compare*
+        // may ask for a numerical gap, not a <, =, > relation.
+        if (answerType=="exact_integer")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+
         if (answerType is "side_label" or "boolean" or "ordered_labels")
             return LessonPracticeInteractionKind.StructuredEntry;
 

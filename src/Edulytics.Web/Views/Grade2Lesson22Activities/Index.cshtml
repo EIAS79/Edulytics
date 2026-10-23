@@ -1,0 +1,101 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson22Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Center Day 1 (optional)";
+}
+<style>
+.g2u2l4{max-width:980px;margin:auto;padding:24px 16px 46px;color:#243d4b}
+.g2u2l4 .panel{background:#fff;padding:19px;border:1px solid #cbdae2;border-radius:12px;margin:16px 0}
+.g2u2l4 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(164px,1fr));gap:12px}
+.g2u2l4 label{display:block;margin:12px 0 5px;font-weight:700}
+.g2u2l4 input,.g2u2l4 select,.g2u2l4 textarea{font:inherit;border:1px solid #7a929e;border-radius:8px;padding:10px;width:100%;max-width:540px}
+.g2u2l4 input:focus,.g2u2l4 select:focus,.g2u2l4 textarea:focus{outline:3px solid #a0dde4}
+.g2u2l4 .ok{border-left:4px solid #288353;padding-left:12px}
+.g2u2l4 .bad{border-left:4px solid #b64256;padding-left:12px}
+.g2u2l4 .review{border-left:4px solid #ac872a;padding-left:12px}
+.g2u2l4 .muted{color:#546b79}
+.g2u2l4 .action{background:#09829a;color:white;border:0;border-radius:8px;padding:13px 20px;font-weight:bold;cursor:pointer}
+.g2u2l4 .track{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;max-width:470px}
+.g2u2l4 .track span{display:flex;justify-content:center;align-items:center;min-height:38px;background:#e4f1f5;border:1px solid #7fa6b6;border-radius:5px}
+.g2u2l4 .small-board{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;max-width:380px}
+.g2u2l4 .small-board span{display:flex;align-items:center;justify-content:center;min-height:52px;border:3px dotted #87b8c2;background:#edf7f9}
+</style>
+<main class="g2u2l4">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Center Day 1 — optional</h1>
+<p>This lesson has <strong>two different centers</strong>. Capture Squares uses addition within20; Five in a Row Stage6 allows addition within100, INCLUDING making a new ten. Partner gameplay and actual board completion require a teacher; the digital tasks here check only the maths.</p>
+<form asp-controller="Grade2Lesson22Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<section class="panel">
+<h2>1. Number Talk — Subtract 2 Digits</h2>
+<p>Mentally use 6−3 to explain how six ONES differ from six TENS.</p>
+<div class="grid">
+<div><label asp-for="Answers.TalkOne">6 − 3</label><input asp-for="Answers.TalkOne" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkTwo">66 − 3</label><input asp-for="Answers.TalkTwo" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkThree">66 − 30</label><input asp-for="Answers.TalkThree" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkFour">66 − 33</label><input asp-for="Answers.TalkFour" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.MentalStrategy">Explain why subtracting30 differs from subtracting3</label>
+<textarea asp-for="Answers.MentalStrategy" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>2. Capture Squares — Stage 3 (real partner center)</h2>
+<p>With a partner, spin a number from6 to10, or choose6–10 when WILD appears. Flip a card numbered0–10, add, and find a square carrying your sum. Connect exactly two ADJACENT dots on its boundary. Complete the fourth edge to capture the square. First player to capture3 squares wins.</p>
+<p><strong>Independent first-party demonstration only:</strong> the following practice targets are not the publisher game board and show NO earned or captured squares.</p>
+<div class="small-board" aria-label="First-party sample sum targets, not an interactive publisher board">
+@foreach(var value in new[]{9,12,15,10,13,16,11,14,17}){<span>@value</span>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.CaptureWild">Spinner WILD?</label><select asp-for="Answers.CaptureWild"><option value="No">No</option><option value="Yes">Yes — chose a legal number</option></select></div>
+<div><label asp-for="Answers.CaptureSpinner">Spinner number (6–10)</label><input asp-for="Answers.CaptureSpinner" type="number" min="6" max="10" required /></div>
+<div><label asp-for="Answers.CaptureCard">Card (0–10)</label><input asp-for="Answers.CaptureCard" type="number" min="0" max="10" required /></div>
+<div><label asp-for="Answers.CaptureSum">Sum on a square</label><input asp-for="Answers.CaptureSum" type="number" min="6" max="20" required /></div>
+</div>
+<label asp-for="Answers.CaptureBoardExplanation">Which two adjacent dots did you join on your REAL board? How many sides does it have now?</label>
+<textarea asp-for="Answers.CaptureBoardExplanation" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>3. Five in a Row — Stage 6 (real partner center)</h2>
+<p>Place one paper clip on a top-row number and another on a bottom-row number on the real Stage6 board. Add and cover the answer. Partner may move exactly ONE paper clip on their next turn. First player with five same-color counters in a horizontal, vertical or diagonal row wins.</p>
+<p>Example from the source: <strong>25 + 8 = 33</strong>. The ones 5+8 make 13, so we need to COMPOSE a ten.</p>
+<p class="muted">This 5×5 grid is an original Edulytics number-display illustration, not an authentic gameboard; totals entered below are not marked as an achieved five-in-a-row win.</p>
+<div class="track" aria-label="Original invented five by five practice number-display grid">
+@foreach(var n in new[]{21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45}){<span>@n</span>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.FiveTopFirst">First turn top-row clip</label><input asp-for="Answers.FiveTopFirst" type="number" min="0" max="99" required /></div>
+<div><label asp-for="Answers.FiveBottomFirst">First turn bottom-row clip</label><input asp-for="Answers.FiveBottomFirst" type="number" min="0" max="99" required /></div>
+<div><label asp-for="Answers.FiveSumFirst">First sum (e.g. 25+8)</label><input asp-for="Answers.FiveSumFirst" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.FiveTopSecond">Next turn top-row clip</label><input asp-for="Answers.FiveTopSecond" type="number" min="0" max="99" required /></div>
+<div><label asp-for="Answers.FiveBottomSecond">Next turn bottom-row clip</label><input asp-for="Answers.FiveBottomSecond" type="number" min="0" max="99" required /></div>
+<div><label asp-for="Answers.FiveSumSecond">Next turn sum (one clip moves)</label><input asp-for="Answers.FiveSumSecond" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.FiveBoardExplanation">How did your partner move one paper clip? When did you have to compose a ten?</label>
+<textarea asp-for="Answers.FiveBoardExplanation" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>4. Original Edulytics independent Cool-down</h2>
+<p>These questions are independently authored maths checks, not copied center gameboards.</p>
+<div class="grid">
+<div><label asp-for="Answers.CoolCapture">Capture Squares: spinner7, card6. Sum?</label><input asp-for="Answers.CoolCapture" type="number" min="0" max="20" required /></div>
+<div><label asp-for="Answers.CoolCompose">Five in a Row:26+7, composing a ten?</label><input asp-for="Answers.CoolCompose" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolSubtract">Number Talk:75−30</label><input asp-for="Answers.CoolSubtract" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.PartnerReflection">What improved in your partner's arithmetic or fair turn-taking?</label>
+<textarea asp-for="Answers.PartnerReflection" rows="2" maxlength="2000"></textarea>
+<button type="submit" class="action">Check numbers and show what a teacher must observe</button>
+</section>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var result in Model.Feedback){<div class="@(result.Correct==true?"ok":result.Correct==false?"bad":"review")">
+<h3>@result.Activity</h3><p>@(result.Correct==true?"Numerically valid":result.Correct==false?"Revise the calculation":"Teacher must review"). @result.Feedback</p></div>}
+</section>
+}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2FourthLessonOptionalCenters.TeacherRubric){<li>@item</li>}</ul>
+<p class="muted">Original source mathematics: IM K–5 2021, G2 U02 L04. CCSS 2.OA.B.2 and 2.NBT.B.5; original game structures referenced, first-party practice figures, not copied publisher board artwork.</p></section>
+</main>

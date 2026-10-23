@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 5,
+  "unitNumber": 1,
+  "lessonNumber": 5,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L05",
+  "lessonTitle": "Add Within 50",
+  "officialOutcomeCodes": [
+    "CCSS:2.NBT.B.5"
+  ],
+  "sourceEdition": "Illustrative Mathematics / Kendall Hunt IM K-5 1st Edition 2021",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_2021_TEACHER_STUDENT_HTML_REVIEW_AND_FIRST_PARTY_TASKS",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-5/preparation.html",
+    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-5/lesson.html",
+    "officialOutcomeCodes": [
+      "CCSS:2.NBT.B.5"
+    ],
+    "sourceWarmUp": "Two-digit plus one-digit number talk; 16+3,16+5,26+5,38+6",
+    "activity1": "Original How Close stage 3 starts with 7 digit cards, picks exactly 4 to form two two-digit addends. Source originally stage name mentions target 100, but teacher explicitly recommends target 50 at this point.",
+    "originalCardValues": [
+      3,
+      8,
+      4,
+      6,
+      6,
+      2,
+      1
+    ],
+    "importantPhysicalRule": "Two distinct cards labeled 6 can both be used, but the same physical card cannot be used twice.",
+    "activity2": "Addition within 50 using place value, compose a ten, original 37+8,24+23,16+30,39+11,27+15 with drawings or words.",
+    "lessonSynthesis": "Teacher evaluates partner card play, add50 strategies and Math Community norms.",
+    "sourceCoolDown": "Publisher Cool-down restricted; original Edulytics-authored mathematically equivalent sum/strategy exit ticket substituted, not copied",
+    "copyrightedPublisherArtwork": "None reproduced; first-party digit cards and base-ten blocks",
+    "originalPublicStudentFacingRead": true,
+    "originalPrintPdfDownloaded": false
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_PROVENANCE_GUARDED_RICH_V2_LEARNER_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1AddWithin50SourceTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seederGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "richReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "originalDefectResolved": "Generic addition omitted 7 physical cards, four-card two two-digit addends, target50 choice, composing tens and several valid strategies; prior body/source SHA/outcome guarded."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHORING_SOURCE_SPECIFIC_GENERATORS_COOLDOWN_AND_STUDENT_EXPRESSION_INPUT",
+    "practiceFamilies": [
+      "usccss.g2.u01.l05.seven_cards_two_numbers_min_gap",
+      "usccss.g2.u01.l05.add_within50_place_value"
+    ],
+    "sourceContracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson5PracticeContracts.cs",
+    "exactGenerator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson5Questions.cs",
+    "authoredCoolDown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FifthLessonEdulyticsCoolDown.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson5ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson5Activities/Index.cshtml",
+    "entryPoint": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "scoring": "Validate four physical cards from seven including duplicate 6, two valid two-digit numbers and all equally optimal choices relative to50, plus exact add50 sums",
+    "teacherRubric": "Student-authored mathematical reasoning, models, partner choices and community norms teacher-scored not falsely automated.",
+    "authoredTests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson5QuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1AddWithin50SourceTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FifthLessonEdulyticsCoolDownTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson5ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "schoolGradePersistence": "No official grade claimed; immediate practice feedback plus teacher review"
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stages": {
+      "A": "COMPLETE",
+      "B": "COMPLETE",
+      "C": "COMPLETE_AUTHORING_TESTS_UNRUN"
+    },
+    "sourceRights": "PUBLIC_MATH_GOALS_REFERENCED_WITH_INDEPENDENT_EDULYTICS_ASSESSMENT_AND_VISUALS",
+    "stageDTestsExecuted": false,
+    "CIExecuted": false,
+    "academicHumanApproval": "NOT_ASSERTED",
+    "productionRuntimeTested": false,
+    "mainMerge": false,
+    "deploy": false,
+    "release": "NO_GO",
+    "note": "All source-aligned A-C authoring evidence completed; technical runtime and tests withheld for Stage D."
+  },
+  "nextAction": "SEQUENTIALLY_MOVE_TO_GRADE2_U01_L06_AFTER_THIS_STAGE_A_C_AUTHORING_CLOSURE"
+}

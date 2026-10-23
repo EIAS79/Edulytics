@@ -34,37 +34,31 @@ public sealed class CommonCoreG2TapeDiagramAndStoryResolutionTests
         var (doc, lesson, english) = Effective(code);
         Assert.Equal(new[] { "CCSS:2.NBT.B.5", "CCSS:2.OA.A.1" },
             lesson.OutcomeCodes);
-        Assert.Equal(version,
+        var ordinal = code == CommonCoreG2TapeDiagramAndStoryResolutionCorrection.TapeDiagramLessonCode ? 144 : 146;
+        Assert.Equal(CommonCoreG2Unit9SourceCorrections.VersionFor(ordinal),
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, lesson));
+        Assert.NotEqual(version,CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,lesson));
 
         Assert.DoesNotContain("Equivalent algebraic transformations",
             english.KeyConceptsAndRules, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("Apply the key idea from the lesson",
             english.StepByStepSolutions, StringComparison.OrdinalIgnoreCase);
         Assert.True(english.WorkedExamples.Length > 400);
-        Assert.True(english.StepByStepSolutions.Contains("Step 5:", StringComparison.Ordinal));
+        Assert.Contains("Step 5",english.StepByStepSolutions,StringComparison.Ordinal);
 
         if (code == CommonCoreG2TapeDiagramAndStoryResolutionCorrection.TapeDiagramLessonCode)
         {
-            Assert.Contains("part-whole", english.KeyConceptsAndRules,
-                StringComparison.OrdinalIgnoreCase);
-            Assert.Contains("47 - 19 = 28", english.WorkedExamples);
-            Assert.Contains("23 + 17 + 50 = 90", english.WorkedExamples);
-            Assert.Contains("63 - 26 = 37", english.WorkedExamples);
-            Assert.Equal(28, 47 - 19);
-            Assert.Equal(90, 23 + 17 + 50);
-            Assert.Equal(37, 63 - 26);
+            Assert.Contains("53 as known whole",english.WorkedExamples);
+            Assert.Contains("25 as quantity removed",english.WorkedExamples);
+            Assert.Contains("tape diagrams",english.WorkedExamples,StringComparison.OrdinalIgnoreCase);
+            Assert.Contains("part",english.KeyConceptsAndRules,StringComparison.OrdinalIgnoreCase);
         }
         else
         {
-            Assert.Contains("number lines", english.KeyConceptsAndRules,
-                StringComparison.OrdinalIgnoreCase);
-            Assert.Contains("38 - 14 = 24", english.WorkedExamples);
-            Assert.Contains("72 - 20 = 52", english.WorkedExamples);
-            Assert.Contains("43 + 18 = 61", english.WorkedExamples);
-            Assert.Equal(24, 38 - 14);
-            Assert.Equal(46, 72 - 26);
-            Assert.Equal(61, 43 + 18);
+            Assert.Contains("38+7=45",english.WorkedExamples);
+            Assert.Contains("gallery walk",english.WorkedExamples,StringComparison.OrdinalIgnoreCase);
+            Assert.Contains("poster",english.WorkedExamples,StringComparison.OrdinalIgnoreCase);
+            Assert.Contains("stories",english.KeyConceptsAndRules,StringComparison.OrdinalIgnoreCase);
         }
     }
 
@@ -139,7 +133,7 @@ public sealed class CommonCoreG2TapeDiagramAndStoryResolutionTests
                 english.StepByStepSolutions, english.CommonMistakes,
                 english.QuickSummary));
         Assert.NotNull(rich);
-        Assert.Contains("Example 1", rich!.KeyConcepts[0].Example,
+        Assert.Contains("Actual public publisher activity", rich!.KeyConcepts[0].Example,
             StringComparison.Ordinal);
         Assert.DoesNotContain("Equivalent algebraic transformations",
             rich.KeyConcepts[0].Rule, StringComparison.OrdinalIgnoreCase);
@@ -154,13 +148,13 @@ public sealed class CommonCoreG2TapeDiagramAndStoryResolutionTests
         var lesson12 = Assert.Single(doc.Lessons,
             x => x.LessonCode == CommonCoreG2StoryProblemsSourceCorrection.LessonCode);
 
-        Assert.Equal(CommonCoreG2StoryProblemsSourceCorrection.CorrectedContentVersion,
+        Assert.Equal(CommonCoreG2Unit9SourceCorrections.VersionFor(145),
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, lesson12));
 
         var lesson10 = Assert.Single(doc.Lessons,
             x => x.LessonCode == "PED:US-CCSS-MATH:G2:U09:L10");
 
-        Assert.Equal(CommonCoreRichContentCorrections.CorrectionContentVersion,
+        Assert.Equal(CommonCoreG2Unit9SourceCorrections.VersionFor(143),
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, lesson10));
     }
 }

@@ -76,6 +76,19 @@ public static class CommonCoreG2StoryProblemsSourceCorrection
             StringComparison.Ordinal) &&
         string.Equals(lesson.LessonCode, LessonCode, StringComparison.Ordinal);
 
+    /// <summary>Exact source-pinned first-pass story-writing repair, never an arbitrary state.</summary>
+    public static bool MatchesApprovedFirstPassPredecessor(CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson,IReadOnlyList<string> original,IReadOnlyList<string> current)
+    {
+        if(!IsTarget(document,lesson) || original.Count!=6 || current.Count!=6)return false;
+        if(lesson.SourceUrl!=ExpectedSourceUrl ||
+           !string.Equals(lesson.CanonicalBodySha256,OriginalCanonicalBodySha256,StringComparison.OrdinalIgnoreCase) ||
+           !lesson.OutcomeCodes.SequenceEqual(["CCSS:2.OA.A.1"]))return false;
+        return current[0]==original[0]&&current[1]==NewKeyConcepts &&
+               current[2]==NewWorkedExamples&&current[3]==NewSteps&&
+               current[4]==NewMistakes&&current[5]==original[5];
+    }
+
     public static void Apply(CanonicalLessonContentPackDocument document)
     {
         if (!string.Equals(document.PackCode, MathematicsCurriculumPackRegistry.CommonCoreCode,
@@ -96,6 +109,9 @@ public static class CommonCoreG2StoryProblemsSourceCorrection
                 string.Equals(t.CultureCode, "en", StringComparison.Ordinal))
                 ?? throw new InvalidOperationException(
                     "G2 story-writing source lacks English translation.");
+
+            if(CommonCoreG2Unit9SourceCorrections.IsFinalApplied(document,lesson))
+                return;
 
             if (string.Equals(english.StepByStepSolutions, NewSteps, StringComparison.Ordinal))
             {

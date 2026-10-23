@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 79,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U05:L12",
+  "title": "Order Numbers",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "PUBLIC_ORIGINAL_SOURCE_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-12/preparation.html",
+    "lessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-12/lesson.html",
+    "sourceCanonicalSha256": "d9f984f116a632952be392c86686a9edd194a880c1123e119b6b744927163872",
+    "sourceSemanticSha256": "4342050d861173d1bb6d94dab84741a4bd199af3a0a07a6766d80ca6a8525e44",
+    "orderedOutcomes": [
+      "CCSS:2.NBT.A.1",
+      "CCSS:2.NBT.A.4",
+      "CCSS:2.NBT.B.8"
+    ],
+    "originalWarmUpAndActivities": "Source-bound teacher/public original examples and optional human activities documented in lesson source review",
+    "humanOnly": "Actual diagrams, number-line points, word explanations, source card games and material counts educator only. No restricted source Cool-down."
+  },
+  "stageB": {
+    "status": "SIX_FIELD_EXACT_SOURCE_SHA_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit5ComparisonSourceCorrections.cs",
+    "correctedContentVersion": "usccss-g2-u05-original-ordinal79-v2",
+    "sourceShaAndStandardsGuard": true
+  },
+  "stageC": {
+    "status": "SOURCE_SPECIFIC_FOUR_FAMILIES_AUTHORING_AND_TESTS_WRITTEN_UNRUN",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit5ComparisonActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit5ComparisonActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit5ComparisonQuestions.cs",
+    "exactFamilies": [
+      "usccss.g2.u05.l12.lowest_three_digit",
+      "usccss.g2.u05.l12.highest_three_digit",
+      "usccss.g2.u05.l12.next_in_sorted_order",
+      "usccss.g2.u05.l12.distance_between_ranked"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal79OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal79SourceMathematicsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal79IndependentExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal79WebStudentContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "boundary": "First-party exact numeric variants are not actual source student pictures, multi-solution explanations or classroom games."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "stageDExecuted": false,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 80
+}

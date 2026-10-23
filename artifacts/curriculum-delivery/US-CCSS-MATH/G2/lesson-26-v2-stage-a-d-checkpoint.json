@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 26,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L08",
+  "title": "Different Ways to Decompose",
+  "unitNumber": 2,
+  "lessonNumber": 8,
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_IM2021_TEACHER_PREPARATION_AND_LESSON_REVIEW",
+    "sourceBook": "Local read-only archived G2 Unit2 Lesson8 preparation and lesson HTML",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-8/preparation.html",
+    "sourceSemanticSha256": "14e1122d2b962b81d3490b320ff651fee1769c542327229ea00f07c3a8c81ed9",
+    "originalBodySha256": "7c801d163176ecc570aeaaaed398a4ebd1dbd55fafea6102c5bb35c1e50858d4",
+    "standards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.NBT.B.9"
+    ],
+    "warmup": "18+10+10=38,18+20+10=48,38−20=18,48−30=18.",
+    "activity1": "Lin/Clare diagrams of71−56=15. Lin regroup-first:71=60+11,11−6=5,60−50=10, result15. Clare tens-first:71−50=21=10+11,11−6=5, result15.",
+    "activity2": "Andre65−28=37 using65−20=45,45=30+15; student34−18=16,82−37=45,71−53=18.",
+    "sourceInconsistency": "Teacher preparation single-digit learning-goal bullet conflicts with explicitly two-digit lesson purpose and original student task examples. Original two-digit task mathematics preserved.",
+    "sourceAssessment": "Whose Method is it Anyway? restricted educator access, not reproduced; Edulytics standalone exit authored separately.",
+    "authenticTeacherObservations": "MLR8 speaking/listening, physical blocks and personally drawn Lin/Clare/Andre comparisons need teacher.",
+    "rights": "Source numbers and goals attributed; no protected original diagrams or assessment copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_ORIGINAL_SHA_AND_PREDECESSOR_GUARDED_PEDAGOGICAL_BODY",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2DifferentWaysDecomposeTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentView": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gate": "Exact URL, SHA and ordered standards; six prior learner fields and approved predecessor rich content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_FOUR_EXACT_GENERATOR_FAMILIES_STUDENT_COMPANION_AND_WRITTEN_UNRUN_TESTS",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2EighthLessonDifferentWays.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson8DifferentWaysContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson8DifferentWaysQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson26ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson26Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l08.tens_first_then_exchange",
+      "usccss.g2.u02.l08.exchange_first_then_tens",
+      "usccss.g2.u02.l08.count_residual_after_tens",
+      "usccss.g2.u02.l08.inverse_check_two_digit"
+    ],
+    "firstPartyExit": "72−46=26,83−57=26,61−25=36, not publisher restricted cool-down.",
+    "security": "StudentPortal authorization, adoption and published lesson check, antiforgery POST, max input field length, no official grade.",
+    "teacherOnly": "Real source diagrams, partner discussion, blocks and teacher marks not certified by digital numeric answer.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2DifferentWaysDecomposeTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2EighthLessonDifferentWaysTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson8DifferentWaysQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson26ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "readyForStageD": true,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO",
+    "academicAcceptance": "NOT_ASSERTED"
+  },
+  "nextAction": "BEGIN_G2_U02_L09_GRADE_ORDINAL27_STAGE_A_B_C"
+}

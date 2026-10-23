@@ -1,0 +1,79 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson31Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";ViewData["Title"]="Grade2 — Story Problems and Equations";
+}
+<style>
+.g2l31{max-width:960px;margin:auto;padding:20px;color:#254354}
+.g2l31 .panel{background:#fff;border:1px solid #c8dae5;border-radius:12px;margin:16px 0;padding:20px}
+.g2l31 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(177px,1fr));gap:12px}
+.g2l31 label{display:block;margin:12px 0 5px;font-weight:700}
+.g2l31 input,.g2l31 textarea{width:100%;max-width:570px;border:1px solid #8296a3;border-radius:8px;font:inherit;padding:10px}
+.g2l31 .action{border:0;border-radius:8px;background:#117e94;color:white;padding:13px 19px;font-weight:bold}
+.g2l31 .ok{border-left:4px solid #2e8259;padding-left:12px}
+.g2l31 .bad{border-left:4px solid #b5485c;padding-left:12px}
+.g2l31 .review{border-left:4px solid #ae8929;padding-left:12px}
+</style>
+<main class="g2l31">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Story Problems and Equations</h1>
+<p>The question mark shows WHERE the unknown is in the story. Sometimes the story describes adding but subtraction is useful to find the missing addend.</p>
+<form asp-controller="Grade2Lesson31Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Which One Doesn't Belong? — source diagram discussion</h2>
+<p>The original teacher shows several tape diagrams and <strong>27 + ? = 40</strong>. Use true displayed source pictures, not invented labels.</p>
+<label asp-for="Answers.WarmupMissing">Number missing from27+?=40</label>
+<input asp-for="Answers.WarmupMissing" type="number" min="0" max="100"/>
+<label asp-for="Answers.WarmupRealDiagrams">Why does a REAL source diagram match the question mark?</label>
+<textarea asp-for="Answers.WarmupRealDiagrams" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>2. Card Sort — Story Problems and Equations</h2>
+<p>With an actual group of2–4, use genuine story Cards A–I from the previous lesson and the new printed Equation Cards. Some stories can match more than one equivalent equation. Choose TWO REAL Cards F, G, H or I and solve them. Source printed card text is not fabricated in Edulytics.</p>
+<label asp-for="Answers.RealSourceCardMatches">My genuine story-to-equation matches (teacher checks)</label>
+<textarea asp-for="Answers.RealSourceCardMatches" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.RealSourceSolvedTwo">The TWO actual F–I stories I solved, with diagrams and answers</label>
+<textarea asp-for="Answers.RealSourceSolvedTwo" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>3. Represent and Solve Story Problems — four public source tasks</h2>
+<div class="grid">
+<div><p>Lin had an unknown start, WON36, and now has64.</p>
+<label asp-for="Answers.LinEquation">Equation with ?</label><input asp-for="Answers.LinEquation" maxlength="100" placeholder="?+36=64" required/>
+<label asp-for="Answers.LinStart">Original starting number</label><input asp-for="Answers.LinStart" type="number" min="0" max="100" required/></div>
+<div><p>Andre STARTED32, WON some, and now has57.</p>
+<label asp-for="Answers.AndreEquation">Equation with ?</label><input asp-for="Answers.AndreEquation" maxlength="100" placeholder="32+?=57" required/>
+<label asp-for="Answers.AndreGained">Number WON</label><input asp-for="Answers.AndreGained" type="number" min="0" max="100" required/></div>
+<div><p>Diego gathered22 yellow seeds and48 blue seeds.</p>
+<label asp-for="Answers.DiegoEquation">Equation with ?</label><input asp-for="Answers.DiegoEquation" maxlength="100" placeholder="22+48=?" required/>
+<label asp-for="Answers.DiegoTotal">Seeds TOTAL</label><input asp-for="Answers.DiegoTotal" type="number" min="0" max="100" required/></div>
+<div><p>Noah and Kiran have92 altogether; Noah gathered53.</p>
+<label asp-for="Answers.KiranEquation">Equation with ?</label><input asp-for="Answers.KiranEquation" maxlength="100" placeholder="53+?=92" required/>
+<label asp-for="Answers.KiranPart">Kiran's seeds</label><input asp-for="Answers.KiranPart" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.AuthenticDrawings">Explain the genuine tape or base-ten diagrams you drew for each unknown</label>
+<textarea asp-for="Answers.AuthenticDrawings" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPartnerMethod">Explain why Andre's ADDING story can be solved using subtraction</label>
+<textarea asp-for="Answers.RealPartnerMethod" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Independently authored Edulytics exit</h2>
+<p>Not the publisher's protected Match the Equation Cool-down and not from the actual printed source cards.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyStart">?+27=75</label><input asp-for="Answers.FirstPartyStart" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyChange">46+?=83</label><input asp-for="Answers.FirstPartyChange" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyTotal">29+38=?</label><input asp-for="Answers.FirstPartyTotal" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyPart">54+?=91</label><input asp-for="Answers.FirstPartyPart" type="number" min="0" max="100" required/></div>
+</div><button class="action" type="submit">Check source mathematics and teacher review</button>
+</section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numbers or unknown placement valid":r.Correct==false?"Review story/equation":"Teacher review required"). @r.Feedback</p>
+</div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var rule in UsCcssG2Unit2ThirteenthLessonStoryEquations.TeacherRubric){<li>@rule</li>}</ul>
+<p>IM K–5 2021 Grade2 Unit2 Lesson13, CCSS2.NBT.B.5 and2.OA.A.1. Original source diagram labels and equation cards are not fabricated; no official grades.</p>
+</section></main>

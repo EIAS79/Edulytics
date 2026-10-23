@@ -1,0 +1,150 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson18Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 — Class Surveys (optional)";
+}
+<style>
+.g2-l18{max-width:1000px;margin:auto;padding:24px 16px 48px;color:#243746}
+.g2-l18 .panel{border:1px solid #cbdae2;border-radius:13px;background:#fff;margin:18px 0;padding:21px}
+.g2-l18 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.g2-l18 label{display:block;font-weight:700;margin:13px 0 5px}
+.g2-l18 input,.g2-l18 select,.g2-l18 textarea{padding:10px;border:1px solid #7891a1;border-radius:8px;width:100%;max-width:540px;font:inherit}
+.g2-l18 input:focus,.g2-l18 textarea:focus,.g2-l18 select:focus{outline:3px solid #96d7d9}
+.g2-l18 .action{background:#0a7f92;color:white;border:0;border-radius:9px;padding:12px 22px;font-weight:bold;cursor:pointer}
+.g2-l18 .muted{color:#536b7b}.g2-l18 .success{border-left:4px solid #238553;padding-left:12px}
+.g2-l18 .wrong{border-left:4px solid #b7475b;padding-left:12px}
+.g2-l18 .review{border-left:4px solid #b08932;padding-left:12px}
+.g2-l18 .bar-track{width:100%;border-left:2px solid #4e6d7d;border-bottom:2px solid #4e6d7d;background:#f1f7fa}
+.g2-l18 .bar-fill{min-height:30px;background:#5cabc3;border:1px solid #2b6e8b}
+.g2-l18 .graph-row{display:grid;grid-template-columns:minmax(80px,160px) 1fr 42px;gap:10px;align-items:center;margin:8px 0}
+.g2-l18 .dot{display:inline-block;background:#d8eaf2;border:1px solid #406c83;padding:3px;border-radius:4px;margin:1px}
+.g2-l18 table{width:100%;border-collapse:collapse}
+.g2-l18 td,.g2-l18 th{border:1px solid #bed0dc;text-align:left;padding:9px}
+</style>
+<main class="g2-l18">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to lesson</a>
+<h1>Class Surveys — optional</h1>
+<p>This source-aligned lesson asks you to INVENT a class survey, gather genuine anonymous classmates' responses, make an original graph, exchange questions, and compare two real facts using a tape diagram. Do not enter classmates' names. The independent Edulytics Cool-down uses FICTIONAL responses, never presented as real class results.</p>
+<section class="panel">
+<h2>Warm-up — What do you know about bar graphs?</h2>
+<p>Think quietly; tell your partner how a bar graph shows a category count, why bars need a common numbered scale, and one question a graph could answer.</p>
+</section>
+<form asp-controller="Grade2Lesson18Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Create your own CLASSROOM survey</h2>
+<p>Work in pairs. Write a question that gives exactly THREE or FOUR distinct answer choices. Ask actual classmates; record one anonymous response per person. You cannot substitute the fictional assessment numbers below.</p>
+<label asp-for="Answers.WarmUp">My warm-up idea to explain to a partner</label>
+<textarea asp-for="Answers.WarmUp" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.SurveyQuestion">My original survey question</label>
+<input asp-for="Answers.SurveyQuestion" maxlength="160" required/>
+<div class="grid">
+<div><label asp-for="Answers.NumberCategories">Number of options</label>
+<select asp-for="Answers.NumberCategories"><option value="3">3 categories</option><option value="4">4 categories</option></select></div>
+<div><label asp-for="Answers.GraphType">Graph I created</label>
+<select asp-for="Answers.GraphType"><option value="Bar">Bar graph</option><option value="Picture">Picture graph</option></select></div>
+<div><label asp-for="Answers.GraphTitle">Meaningful graph title</label><input asp-for="Answers.GraphTitle" maxlength="120" required/></div>
+</div>
+<p>Category four should be LEFT EMPTY for a three-category survey.</p>
+<div class="grid">
+@for(var i=0;i<4;i++){
+<div>
+<label for="category-@i">Category @(i+1) — my own response label</label>
+<input id="category-@i" name="Answers.Categories[@i]" value="@(Model.Answers.Categories.ElementAtOrDefault(i))" maxlength="60"/>
+<label for="count-@i">Anonymous actual class responses</label>
+<input id="count-@i" name="Answers.Counts[@i]" value="@(Model.Answers.Counts.ElementAtOrDefault(i))" type="number" min="0" max="60"/>
+</div>
+}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.PictureKey">Picture key: responses per symbol (use 1)</label><input asp-for="Answers.PictureKey" type="number" min="1" max="10"/></div>
+<div><label asp-for="Answers.AxisStart">Bar axis starts at (use 0)</label><input asp-for="Answers.AxisStart" type="number" min="0" max="10"/></div>
+<div><label asp-for="Answers.AxisStep">Bar axis rises by (use 1)</label><input asp-for="Answers.AxisStep" type="number" min="1" max="10"/></div>
+</div>
+</section>
+<section class="panel">
+<h2>2. I Ask, then You Ask — compare two REAL category counts</h2>
+<p>Exchange your genuine graph with another pair. Each student must author mathematical questions about their partner's graph. The checks here use the TWO categories you selected from your own entered data and do not prove that a peer exchange occurred.</p>
+<div class="grid">
+<div><label asp-for="Answers.CategoryOne">First category number</label>
+<select asp-for="Answers.CategoryOne"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+<div><label asp-for="Answers.CategoryTwo">Second DIFFERENT category</label>
+<select asp-for="Answers.CategoryTwo"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+</div>
+<label asp-for="Answers.PartnerQuestionCombine">My own “How many altogether?” question (teacher-reviewed wording)</label><input asp-for="Answers.PartnerQuestionCombine" maxlength="2000"/>
+<div class="grid">
+<div><label asp-for="Answers.CombineAnswer">Sum of those 2 categories</label><input asp-for="Answers.CombineAnswer" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.CombineEquation">Exact addition equation, e.g. 6+9=15</label><input asp-for="Answers.CombineEquation" maxlength="80" required/></div>
+</div>
+<label asp-for="Answers.PartnerQuestionCompare">My own “How many more?” question</label><input asp-for="Answers.PartnerQuestionCompare" maxlength="2000"/>
+<div class="grid">
+<div><label asp-for="Answers.CompareAnswer">How many MORE in larger category?</label><input asp-for="Answers.CompareAnswer" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.CompareEquation">Compare equation, e.g. 9-6=3</label><input asp-for="Answers.CompareEquation" maxlength="80" required/></div>
+</div>
+</section>
+<section class="panel">
+<h2>3. Analyze two REAL facts using your own tape diagram</h2>
+<p>Draw or describe aligned tapes labeled with your two chosen real categories. Show the extra segment of the larger quantity, and label the gap with a question mark before finding it.</p>
+<div class="grid">
+<div><label asp-for="Answers.TapeDifference">Missing difference between the two</label><input asp-for="Answers.TapeDifference" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.TapeEquation">Matching equation</label><input asp-for="Answers.TapeEquation" maxlength="80" required/></div>
+</div>
+<label asp-for="Answers.TapeDrawingExplanation">My own drawing labels and explanation — teacher review</label>
+<textarea asp-for="Answers.TapeDrawingExplanation" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.GraphVersusTapeReflection">What does my whole graph show that my 2-fact tape doesn't? What does the tape show more clearly?</label>
+<textarea asp-for="Answers.GraphVersusTapeReflection" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>4. Independent Edulytics Cool-down — FICTIONAL survey</h2>
+<p>The following invented data are NOT results of a classroom survey. Picture graph key: ● = 1 fictional response. All bars use the same zero baseline and scale of one.</p>
+<table><thead><tr><th>Reading choice</th><th>Fictional responses</th><th>Picture symbols</th></tr></thead><tbody>
+<tr><th>Stories</th><td>9</td><td>● ● ● ● ● ● ● ● ●</td></tr>
+<tr><th>Comics</th><td>6</td><td>● ● ● ● ● ●</td></tr>
+<tr><th>Poetry</th><td>4</td><td>● ● ● ●</td></tr>
+<tr><th>Nonfiction</th><td>3</td><td>● ● ●</td></tr>
+</tbody></table>
+<div class="grid">
+<div><label asp-for="Answers.CoolTotal">All fictional responses total?</label><input asp-for="Answers.CoolTotal" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.CoolCombine">Comics and Poetry combined?</label><input asp-for="Answers.CoolCombine" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.CoolCompare">Stories compared to Nonfiction gap?</label><input asp-for="Answers.CoolCompare" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.CoolTape">Tape comparing Stories9 and Comics6: missing gap?</label><input asp-for="Answers.CoolTape" type="number" min="0" max="60" required/></div>
+</div>
+<button class="action" type="submit">Check numerical representations &amp; show teacher-review checklist</button>
+</section>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>My entered class data: graph representation, NOT verified as real</h2>
+@if(Model.EnteredSurvey is not null){
+<p><strong>@Model.EnteredSurvey.Title</strong> — @Model.EnteredSurvey.Question. Entered total: @Model.EnteredSurvey.Total anonymous responses.</p>
+@if(Model.EnteredSurvey.GraphType=="Bar"){
+<p class="muted">All bars share a zero baseline; scale is one response per unit. The adjacent numbers are exact counts.</p>
+@for(var i=0;i<Model.EnteredSurvey.Counts.Length;i++){
+var count=Model.EnteredSurvey.Counts[i];
+<div class="graph-row"><span>@Model.EnteredSurvey.Labels[i]</span>
+<div class="bar-track"><div class="bar-fill" style="width:@(count*100.0/60)%"></div></div><span>@count</span></div>
+}
+}else{
+<p>Key: ● = 1 ENTERED response; no actual respondents certified.</p>
+@for(var i=0;i<Model.EnteredSurvey.Counts.Length;i++){
+<div><strong>@Model.EnteredSurvey.Labels[i]:</strong>
+@for(var n=0;n<Model.EnteredSurvey.Counts[i];n++){<span class="dot" aria-label="one response">●</span>}
+</div>
+}
+}
+}else{<p>Survey inputs could not be represented; revise 3–4 distinct categories and numeric totals.</p>}
+<h2>Feedback</h2>
+@foreach(var row in Model.Feedback){
+<div class="@(row.Correct==true?"success":row.Correct==false?"wrong":"review")">
+<h3>@row.Activity</h3><p>@(row.Correct==true?"Numerically/structurally consistent":row.Correct==false?"Revise the input":"Teacher observation needed"). @row.Message</p>
+</div>}
+</section>
+}
+<section class="panel"><h2>Teacher-observation rubric for real source tasks</h2>
+<ul>@foreach(var criterion in UsCcssG2Unit1EighteenthLessonClassSurveys.TeacherRubric){<li>@criterion</li>}</ul>
+<p>Student/partner survey and peer question-authorship are separate from numerical checking and no official grade is saved.</p></section>
+<p class="muted">Original activity reference: Illustrative Mathematics K-5 2021 Grade2 U01 L18; CCSS 2.MD.D.10, 2.OA.A.1, 2.OA.B.2. All Edulytics Cool-down wording and diagrams are original.</p>
+</main>

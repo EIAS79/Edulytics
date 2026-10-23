@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 19,
+  "unitNumber": 2,
+  "lessonNumber": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L01",
+  "title": "Add and Subtract to Compare",
+  "sourceEdition": "IM K-5 2021 first edition",
+  "officialOutcomeCodes": [
+    "CCSS:2.MD.D.10",
+    "CCSS:2.NBT.B.5"
+  ],
+  "stageA": {
+    "status": "COMPLETE_SOURCE_TEACHER_AND_STUDENT_HTML_REVIEW",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-1/preparation.html",
+    "lesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-1/lesson.html",
+    "canonicalBodySha256": "8e445fd79a998d2d470388219246bf782699e3f09f9f109c3ca3d633de7e3139",
+    "sourceSemanticSha256": "5f59c7f5beefb2967bc765e1c90c61b7c8da46091a78f8f6ccc781",
+    "officialAddressing": [
+      "CCSS:2.MD.D.10",
+      "CCSS:2.NBT.B.5"
+    ],
+    "buildingTowardsNotOfficialMapped": "CCSS:2.OA.A.1",
+    "warmup": "Which One Doesn't Belong: multiple visual representations of two digit amounts, graph, tape, tens/ones and cube train; open discussion.",
+    "activity1": "Movie Snacks original source graph nachos32 pretzels16 popcorn21, total popcorn+pretzels=37 and gap nachos−popcorn=11, no ten regrouping.",
+    "activity2": "Build and Compare original physical connecting-cube trains Lin25 vs Clare15 model, partner A46 and partner B22; sum68 gap24, equation 46−22=24 ↔ 22+24=46.",
+    "sourceErrorFound": "Existing learner examples 32−18=14 and27+15=42 require regrouping contrary to original no-compose/no-decompose-tens objective, and incorrect snack values.",
+    "sourceCoolDown": "Compare the Trains restricted educator-login resource, replace with independent first-party numeric check targeting same mathematical goal.",
+    "synthesis": "Compare and connect counting on, subtraction by tens and ones, missing addend, labeled drawings and genuine gallery discussions.",
+    "teacherOnly": "Physical cubes, partner mathematical discussion, original warm-up reasoning and MLR7 gallery cannot be certified by numeric checking.",
+    "rights": "Public arithmetic facts and objectives attributed, all generated diagrams/Cool-down first-party; no publisher protected art reused."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_LOCKED_RICH_V2_NO_REGROUP_COMPARE",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "safeSeeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceGuard": "Original preparation URL, SHA 8e445fd79a998d2d470388219246bf782699e3f09f9f109c3ca3d633de7e3139, ordered official Addressing outcome codes only, previous six learner fields and previous rich content version",
+    "originalDefectRepaired": "Old generic graph arithmetic 32−18 and27+15 both require composing/decomposing a ten, contradicting this lesson's exact source goal. Replaced with actual Movie Snacks 32/16/21, pair train46/22 and mathematically correct no-regroup place value.",
+    "rights": "Publisher mathematical source facts accurately attributed; all diagrams and assessment text first party; no original restricted graphic or Cool-down reproduction."
+  },
+  "stageC": {
+    "status": "COMPLETE_SOURCE_TASK_NUMERIC_INTERACTIVE_AND_FIRST_PARTY_NO_REGROUP_ASSESSMENT",
+    "sourceGraphFacts": "Nachos32, pretzels16, popcorn21; 21+16=37 and 32−21=11",
+    "sourceCubes": "Partner A46 and Partner B22; total68, difference24, inverse22+24=46",
+    "firstPartyCoolDown": "34+23=57;74−31=43; imaginary two-bar graph43 vs22 gap21; no ten regrouping.",
+    "studentPage": "src/Edulytics.Web/Views/Grade2Lesson19Activities/Index.cshtml",
+    "studentViewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson19Page.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson19ActivitiesController.cs",
+    "sourceExactNumericChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2FirstLessonCompareActivities.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson1NoRegroupContracts.cs",
+    "exactEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson1NoRegroupQuestions.cs",
+    "familyRegistry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "families": [
+      "usccss.g2.u02.l01.movie_snacks_combine",
+      "usccss.g2.u02.l01.movie_snacks_difference",
+      "usccss.g2.u02.l01.cube_trains_total",
+      "usccss.g2.u02.l01.cube_trains_difference"
+    ],
+    "familyConstraints": "Generated base-ten ones for addition sum under10, and larger one's digit >= smaller for no subtraction borrow. Within100 and independently recomputed from exact parameters, wrong/malformed/parameter drift rejected.",
+    "teacherOnly": "Which One Doesn't Belong open argument, original physical 46/22 cube-trains, drawn visualizations, MLR7 Compare and Connect gallery-walk and partner discussion cannot be machine graded. Teacher rubric attached.",
+    "security": "StudentPortal authorization, selected course lesson and published content guard, CSRF POST, input-length bound, no official grades and no production writes.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2AddSubtractCompareTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2FirstLessonCompareActivitiesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson1NoRegroupQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson19ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "gradeSaved": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "productionRuntimeVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO",
+    "note": "Only source-specific academic/technical A–C authoring. No actual test, CI, verified production scoring, or authentic classroom participation claim."
+  },
+  "nextAction": "BEGIN_G2_U02_L02_GRADE_ORDINAL_20_SEQUENTIALLY"
+}

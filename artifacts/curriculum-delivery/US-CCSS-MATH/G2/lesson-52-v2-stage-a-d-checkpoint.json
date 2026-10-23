@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 52,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L18",
+  "title": "Make a Yard Stick (optional)",
+  "unitNumber": 3,
+  "lessonNumber": 18,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_IM2021_SOURCE_BOUND_AUTHORING_REVIEW",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-18/preparation.html",
+    "sourceBodySha256": "19028c1fad43d97892d7bc067214e8abcf7110e68d0130f550975d96235c5588",
+    "sourceSemanticSha256": "5e86fe2208ea628be8d2e42c7a570f5d32d07da8f3f1c089d269cbe4ac48da40",
+    "orderedOutcomeCodes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.4",
+      "CCSS:2.MD.B.5",
+      "CCSS:2.MD.B.6",
+      "CCSS:2.MD.D.9",
+      "CCSS:2.OA.B.2"
+    ],
+    "optional": true,
+    "warmup": "3+5=8; 5-3=2; 5-3+5=7; 3+5+3+3=14",
+    "activity1": "With real 3-by-5 inch index card and at least 36 inch paper strip, two students make every 1..36 inch mark, swap physical roles, check equal unit lengths and zero anchor",
+    "activity2": "Measure the SAME desk in inches, add genuine class sticky-note X measurements to line plot, compare actual rulers and revise inaccuracies; actual values not supplied",
+    "activity3": "Optional measure actual hand and forearm lengths for two partners, write TWO contextual equations; teacher observes",
+    "sourceBoundary": "No actual class desk or pupil body measurements invented; separate Edulytics arithmetic explicitly fictional. Original student Cool-down not copied"
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_GUARDED_SOURCE_AND_SIX_PREDECESSOR_FIELDS",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3YardstickTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact original source URL, original content body SHA, six ordered official standards, exact six previous learner fields, approved prior content version"
+  },
+  "stageC": {
+    "status": "COMPLETE_SOURCE_BOUND_PROTECTED_STUDENT_PAGE_FOUR_EXACT_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3EighteenthLessonYardstick.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson18YardstickContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson18YardstickQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson52ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson52Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l18.card_three_five_mark",
+      "usccss.g2.u03.l18.card_edge_difference",
+      "usccss.g2.u03.l18.fictional_measurement_gap",
+      "usccss.g2.u03.l18.remaining_to_yard"
+    ],
+    "firstPartyFictional": "Fictional desk 28/30 inch heights have 2 inch difference, remaining 36-17=19, fictional forearm16 minus hand7=9; none presented as real class source",
+    "teacherOnly": "Physical 0..36 inch ruler precision, real partner roles, class desk measurements, revision, original class plot, optional hand/forearm measurements and two actual contextual equations",
+    "security": "StudentPortal role, authorized adoption and published content lookup, CSRF protection, 2000-character text bounds, no official grades",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3YardstickTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3EighteenthLessonYardstickTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson18YardstickQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson52ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "CONTINUE_G2_U04_L01_ORDINAL53_STAGE_A_B_C_NO_SKIP"
+}

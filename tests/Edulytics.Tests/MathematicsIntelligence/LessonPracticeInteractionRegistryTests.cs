@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            464, // Full current registered interaction catalogue; all runtime families are independently checked above.
+            1025, // Source-reviewed authoring added 520 distinct lesson-routable families since the original 505-family count.
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(

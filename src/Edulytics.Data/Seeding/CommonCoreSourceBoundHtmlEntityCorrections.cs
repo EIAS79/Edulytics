@@ -93,7 +93,14 @@ public static class CommonCoreSourceBoundHtmlEntityCorrections
         document.ContentVersion == "phase30-common-core-rich-content-v1" &&
         document.AcademicLanguage == "en" &&
         !document.CurriculumTranslationRequired
-            ? Repairs.SingleOrDefault(x => x.Code == lesson.LessonCode)
+            ? // Source-specific later revisions supersede the old display-only
+              // HTML normalization for these exactly identified original lessons.
+              // Their newer rich examples do not reproduce the original &nbsp;
+              // string, and each replacement is separately source-SHA guarded.
+              (CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.IsTarget(document,lesson) ||
+               CommonCoreG2Unit6SourceCorrections.IsTarget(document,lesson) ||
+               CommonCoreG2Unit9SourceCorrections.IsTarget(document,lesson)
+                  ? null : Repairs.SingleOrDefault(x => x.Code == lesson.LessonCode))
             : null;
 
     public static bool IsTarget(

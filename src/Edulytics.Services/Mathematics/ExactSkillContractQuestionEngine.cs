@@ -158,6 +158,70 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssT001RepresentationChoices.Supports(family.Trim()) ||
          UsCcssG1Batch03DataQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1FirstLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson2And3Questions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson4Questions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson5Questions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson6NumberTalkQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson8PictureGraphQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson9BarGraphQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson11GraphQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson12SortAndDisplayQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson13BarCompareQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson14TapeDiagramQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson15CompareQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson16CompareQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson17CenterQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit1Lesson18ClassSurveyQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson1NoRegroupQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson2UnknownAddendQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson5DecomposeTenQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson6TargetNumbersQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson8DifferentWaysQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson12MancalaQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson13StoryEquationsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson15TapeStoriesQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit2Lesson16MarketInventoryQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson1StandardUnitsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson2MeasureCmQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson3BuildRulerQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson4EstimateMeasureCmQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson5MetersQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson6ReptileStoriesQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson8WhatIsAnInchQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson9FishFeetQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson10TornTapeQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson11SareeRibbonQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson12FriendshipQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson13CenterDay2Questions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson16PlantHeightsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson17CenterPlotQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit3Lesson18YardstickQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit4Lesson01NumberLineQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit4NextThreeQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit4ArrowLessonsQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit4FinalSixQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit5FirstSixQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit5ComparisonQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit6ExactQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit7FirstFourQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit7NextFourQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit7LastTenQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit8ExactQuestions.Supports(family.Trim()) ||
+         UsCcssG2Unit9ExactQuestions.Supports(family.Trim()) ||
          UsCcssB001SourceGoalQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2Part2Questions.Supports(family.Trim()) ||
          UsCcssG1Unit2NextFiveQuestions.Supports(family.Trim()) ||
@@ -347,6 +411,134 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG1Unit2NextFiveQuestions.Verify(family,parameters,answer);
         if (UsCcssG1Unit2Part2Questions.Supports(family))
             return UsCcssG1Unit2Part2Questions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
+            return UsCcssG2Unit1FirstLessonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson2And3Questions.Supports(family))
+            return UsCcssG2Unit1Lesson2And3Questions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson4Questions.Supports(family))
+            return UsCcssG2Unit1Lesson4Questions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson5Questions.Supports(family))
+            return UsCcssG2Unit1Lesson5Questions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson6NumberTalkQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson6NumberTalkQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson8PictureGraphQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson8PictureGraphQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson9BarGraphQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson9BarGraphQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson11GraphQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson11GraphQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson12SortAndDisplayQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson12SortAndDisplayQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson13BarCompareQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson13BarCompareQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson14TapeDiagramQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson14TapeDiagramQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson15CompareQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson15CompareQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson16CompareQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson16CompareQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson17CenterQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson17CenterQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit1Lesson18ClassSurveyQuestions.Supports(family))
+            return UsCcssG2Unit1Lesson18ClassSurveyQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson1NoRegroupQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson1NoRegroupQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson2UnknownAddendQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson2UnknownAddendQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson3ZooStoryQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson4OptionalCenterQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson5DecomposeTenQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson5DecomposeTenQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson6TargetNumbersQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson6TargetNumbersQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson8DifferentWaysQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson8DifferentWaysQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(family))
+            return UsCcssG2Unit2Lesson10TargetStage5Questions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson11SeedsStoryQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson12MancalaQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson12MancalaQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson13StoryEquationsQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson13StoryEquationsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson15TapeStoriesQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson15TapeStoriesQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit2Lesson16MarketInventoryQuestions.Supports(family))
+            return UsCcssG2Unit2Lesson16MarketInventoryQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson1StandardUnitsQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson1StandardUnitsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson2MeasureCmQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson2MeasureCmQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson3BuildRulerQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson3BuildRulerQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson4EstimateMeasureCmQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson4EstimateMeasureCmQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson5MetersQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson5MetersQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson6ReptileStoriesQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson6ReptileStoriesQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions.Supports(family))
+            return UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson8WhatIsAnInchQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson8WhatIsAnInchQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson9FishFeetQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson9FishFeetQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson10TornTapeQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson10TornTapeQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson11SareeRibbonQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson11SareeRibbonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson12FriendshipQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson12FriendshipQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson13CenterDay2Questions.Supports(family))
+            return UsCcssG2Unit3Lesson13CenterDay2Questions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson16PlantHeightsQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson16PlantHeightsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson17CenterPlotQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson17CenterPlotQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit3Lesson18YardstickQuestions.Supports(family))
+            return UsCcssG2Unit3Lesson18YardstickQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit4Lesson01NumberLineQuestions.Supports(family))
+            return UsCcssG2Unit4Lesson01NumberLineQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions.Supports(family))
+            return UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.Supports(family))
+            return UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit4NextThreeQuestions.Supports(family))
+            return UsCcssG2Unit4NextThreeQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit4ArrowLessonsQuestions.Supports(family))
+            return UsCcssG2Unit4ArrowLessonsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit4FinalSixQuestions.Supports(family))
+            return UsCcssG2Unit4FinalSixQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit5FirstSixQuestions.Supports(family))
+            return UsCcssG2Unit5FirstSixQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit5ComparisonQuestions.Supports(family))
+            return UsCcssG2Unit5ComparisonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit9ExactQuestions.Supports(family))
+            return UsCcssG2Unit9ExactQuestions.Verify(family,parameters,answer);
+        if (UsCcssG2Unit8ExactQuestions.Supports(family))
+            return UsCcssG2Unit8ExactQuestions.Verify(family,parameters,answer);
+        if (UsCcssG2Unit7LastTenQuestions.Supports(family))
+            return UsCcssG2Unit7LastTenQuestions.Verify(family,parameters,answer);
+        if (UsCcssG2Unit7NextFourQuestions.Supports(family))
+            return UsCcssG2Unit7NextFourQuestions.Verify(family,parameters,answer);
+        if (UsCcssG2Unit7FirstFourQuestions.Supports(family))
+            return UsCcssG2Unit7FirstFourQuestions.Verify(family, parameters, answer);
+        if (UsCcssG2Unit6ExactQuestions.Supports(family))
+            return UsCcssG2Unit6ExactQuestions.Verify(family, parameters, answer);
         if (UsCcssB001SourceGoalQuestions.Supports(family))
             return UsCcssB001SourceGoalQuestions.Verify(family, parameters, answer);
         if (UsCcssG1Unit2StoryQuestions.Supports(family))
@@ -1031,6 +1223,385 @@ public sealed class ExactSkillContractQuestionEngine
             var story=UsCcssG1Unit2Part2Questions.Build(family,random);
             return new ExactProblem(story.Family,story.Prompt,story.Solution,
                 story.ItemType,story.Parameters);
+        }
+        if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1FirstLessonQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson2And3Questions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson2And3Questions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson4Questions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson4Questions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson5Questions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson5Questions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson6NumberTalkQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson6NumberTalkQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson8PictureGraphQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson8PictureGraphQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson9BarGraphQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson9BarGraphQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson11GraphQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson11GraphQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson12SortAndDisplayQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson12SortAndDisplayQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson13BarCompareQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson13BarCompareQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson14TapeDiagramQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson14TapeDiagramQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson15CompareQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson15CompareQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson16CompareQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson16CompareQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson17CenterQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson17CenterQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit1Lesson18ClassSurveyQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit1Lesson18ClassSurveyQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson1NoRegroupQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson1NoRegroupQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson2UnknownAddendQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson2UnknownAddendQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson3ZooStoryQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson4OptionalCenterQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson5DecomposeTenQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson5DecomposeTenQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson6TargetNumbersQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson6TargetNumbersQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson8DifferentWaysQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson8DifferentWaysQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson10TargetStage5Questions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson11SeedsStoryQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson12MancalaQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson12MancalaQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson13StoryEquationsQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson13StoryEquationsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson15TapeStoriesQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson15TapeStoriesQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit2Lesson16MarketInventoryQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit2Lesson16MarketInventoryQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson1StandardUnitsQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson1StandardUnitsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson2MeasureCmQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson2MeasureCmQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson3BuildRulerQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson3BuildRulerQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson4EstimateMeasureCmQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson4EstimateMeasureCmQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson5MetersQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson5MetersQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson6ReptileStoriesQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson6ReptileStoriesQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson8WhatIsAnInchQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson8WhatIsAnInchQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson9FishFeetQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson9FishFeetQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson10TornTapeQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson10TornTapeQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson11SareeRibbonQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson11SareeRibbonQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson12FriendshipQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson12FriendshipQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson13CenterDay2Questions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson13CenterDay2Questions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson16PlantHeightsQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson16PlantHeightsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson17CenterPlotQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson17CenterPlotQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit3Lesson18YardstickQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit3Lesson18YardstickQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit4Lesson01NumberLineQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit4Lesson01NumberLineQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit4NextThreeQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit4NextThreeQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit4ArrowLessonsQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit4ArrowLessonsQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit4FinalSixQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit4FinalSixQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit5FirstSixQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit5FirstSixQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit5ComparisonQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit5ComparisonQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
+        }
+        if (UsCcssG2Unit9ExactQuestions.Supports(family))
+        {
+          var item=UsCcssG2Unit9ExactQuestions.Build(family,random);
+          return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG2Unit8ExactQuestions.Supports(family))
+        {
+          var x=UsCcssG2Unit8ExactQuestions.Build(family,random);
+          return new ExactProblem(x.Family,x.Prompt,x.Solution,x.ItemType,x.Parameters);
+        }
+        if (UsCcssG2Unit7LastTenQuestions.Supports(family))
+        {
+          var item=UsCcssG2Unit7LastTenQuestions.Build(family,random);
+          return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG2Unit7NextFourQuestions.Supports(family))
+        {
+           var item=UsCcssG2Unit7NextFourQuestions.Build(family,random);
+           return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG2Unit7FirstFourQuestions.Supports(family))
+        {
+            var goal=UsCcssG2Unit7FirstFourQuestions.Build(family,random);
+            return new ExactProblem(goal.Family,goal.Prompt,goal.Solution,goal.ItemType,goal.Parameters);
+        }
+        if (UsCcssG2Unit6ExactQuestions.Supports(family))
+        {
+            var goal = UsCcssG2Unit6ExactQuestions.Build(family, random);
+            return new ExactProblem(goal.Family, goal.Prompt, goal.Solution,
+                goal.ItemType, goal.Parameters);
         }
         if (UsCcssB001SourceGoalQuestions.Supports(family))
         {
@@ -2901,6 +3472,134 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG1Unit2NextFiveQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2Part2Questions.Supports(problem.Family))
             return UsCcssG1Unit2Part2Questions.Solve(problem.Family,p);
+        if (UsCcssG2Unit1FirstLessonQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1FirstLessonQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson2And3Questions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson2And3Questions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson4Questions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson4Questions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson5Questions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson5Questions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson6NumberTalkQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson6NumberTalkQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson8PictureGraphQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson8PictureGraphQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson9BarGraphQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson9BarGraphQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson10ConstructGraphsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson11GraphQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson11GraphQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson12SortAndDisplayQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson12SortAndDisplayQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson13BarCompareQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson13BarCompareQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson14TapeDiagramQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson14TapeDiagramQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson15CompareQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson15CompareQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson16CompareQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson16CompareQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson17CenterQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson17CenterQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit1Lesson18ClassSurveyQuestions.Supports(problem.Family))
+            return UsCcssG2Unit1Lesson18ClassSurveyQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson1NoRegroupQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson1NoRegroupQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson2UnknownAddendQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson2UnknownAddendQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson3ZooStoryQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson3ZooStoryQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson4OptionalCenterQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson4OptionalCenterQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson5DecomposeTenQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson5DecomposeTenQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson6TargetNumbersQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson6TargetNumbersQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson8DifferentWaysQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson8DifferentWaysQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson10TargetStage5Questions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson10TargetStage5Questions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson11SeedsStoryQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson11SeedsStoryQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson12MancalaQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson12MancalaQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson13StoryEquationsQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson13StoryEquationsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson14TwoStepSeedsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson15TapeStoriesQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson15TapeStoriesQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit2Lesson16MarketInventoryQuestions.Supports(problem.Family))
+            return UsCcssG2Unit2Lesson16MarketInventoryQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson1StandardUnitsQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson1StandardUnitsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson2MeasureCmQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson2MeasureCmQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson3BuildRulerQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson3BuildRulerQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson4EstimateMeasureCmQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson4EstimateMeasureCmQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson5MetersQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson5MetersQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson6ReptileStoriesQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson6ReptileStoriesQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson8WhatIsAnInchQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson8WhatIsAnInchQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson9FishFeetQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson9FishFeetQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson10TornTapeQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson10TornTapeQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson11SareeRibbonQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson11SareeRibbonQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson12FriendshipQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson12FriendshipQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson13CenterDay2Questions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson13CenterDay2Questions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson14HandSpanLinePlotQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson15PencilLinePlotQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson16PlantHeightsQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson16PlantHeightsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson17CenterPlotQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson17CenterPlotQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit3Lesson18YardstickQuestions.Supports(problem.Family))
+            return UsCcssG2Unit3Lesson18YardstickQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit4Lesson01NumberLineQuestions.Supports(problem.Family))
+            return UsCcssG2Unit4Lesson01NumberLineQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions.Supports(problem.Family))
+            return UsCcssG2Unit4Lesson02NumberLineFeaturesQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.Supports(problem.Family))
+            return UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit4NextThreeQuestions.Supports(problem.Family))
+            return UsCcssG2Unit4NextThreeQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit4ArrowLessonsQuestions.Supports(problem.Family))
+            return UsCcssG2Unit4ArrowLessonsQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit4FinalSixQuestions.Supports(problem.Family))
+            return UsCcssG2Unit4FinalSixQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit5FirstSixQuestions.Supports(problem.Family))
+            return UsCcssG2Unit5FirstSixQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit5ComparisonQuestions.Supports(problem.Family))
+            return UsCcssG2Unit5ComparisonQuestions.Solve(problem.Family, p);
+        if (UsCcssG2Unit9ExactQuestions.Supports(problem.Family))
+            return UsCcssG2Unit9ExactQuestions.Solve(problem.Family,p);
+        if (UsCcssG2Unit8ExactQuestions.Supports(problem.Family))
+            return UsCcssG2Unit8ExactQuestions.Solve(problem.Family,p);
+        if (UsCcssG2Unit7LastTenQuestions.Supports(problem.Family))
+            return UsCcssG2Unit7LastTenQuestions.Solve(problem.Family,p);
+        if (UsCcssG2Unit7NextFourQuestions.Supports(problem.Family))
+            return UsCcssG2Unit7NextFourQuestions.Solve(problem.Family,p);
+        if (UsCcssG2Unit7FirstFourQuestions.Supports(problem.Family))
+            return UsCcssG2Unit7FirstFourQuestions.Solve(problem.Family,p);
+        if (UsCcssG2Unit6ExactQuestions.Supports(problem.Family))
+            return UsCcssG2Unit6ExactQuestions.Solve(problem.Family, p);
         if (UsCcssB001SourceGoalQuestions.Supports(problem.Family))
             return UsCcssB001SourceGoalQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2StoryQuestions.Supports(problem.Family))

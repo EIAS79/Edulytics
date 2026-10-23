@@ -1,0 +1,88 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson38Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade2 — Estimate and Measure Centimeters";}
+<style>
+.g2l38{max-width:980px;margin:auto;padding:22px;color:#244453}
+.g2l38 .panel{padding:20px;margin:16px 0;border:1px solid #c9d9e2;border-radius:12px;background:#fff}
+.g2l38 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.g2l38 label{display:block;font-weight:700;margin:12px 0 5px}
+.g2l38 input,.g2l38 textarea{width:100%;max-width:550px;padding:10px;font:inherit;border:1px solid #8297a3;border-radius:8px}
+.g2l38 .ruler{display:flex;max-width:680px;width:100%;gap:0;overflow:hidden;align-items:stretch;border-top:3px solid #347c91;margin:18px 0}
+.g2l38 .ruler span{display:flex;flex:1;justify-content:flex-start;align-items:flex-start;border-left:2px solid #347c91;min-width:0;height:48px;font-size:.75rem;padding-left:3px}
+.g2l38 .ruler span:last-child{border-right:2px solid #347c91}
+.g2l38 .action{padding:13px 20px;border:0;border-radius:8px;background:#117c94;color:#fff;font-weight:700}
+.g2l38 .ok{border-left:4px solid #32845d;padding-left:12px}
+.g2l38 .bad{border-left:4px solid #b74758;padding-left:12px}
+.g2l38 .review{border-left:4px solid #b08b32;padding-left:12px}
+</style>
+<main class="g2l38">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Estimate and Measure in Centimeters</h1>
+<p>Today you move from a handmade ruler to a STANDARD centimeter ruler. The actual classroom objects, original A–D diagrams and physical tool must be inspected with your teacher.</p>
+<form asp-controller="Grade2Lesson38Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Which One Doesn't Belong? — 4 cm ruler illustrations</h2>
+<p>Teacher displays original images A–D. A, B and D represent four true centimeters, while C has incorrect centimeter intervals. In D the shape is from mark1 to mark5, so its length is four intervals.</p>
+<div class="grid">
+<div><label asp-for="Answers.ValidSourceRulers">Letters showing 4 real centimeters (e.g. ABD)</label><input asp-for="Answers.ValidSourceRulers" maxlength="10" required/></div>
+<div><label asp-for="Answers.LengthFromOneToFive">How many cm from mark1 to mark5?</label><input asp-for="Answers.LengthFromOneToFive" type="number" min="0" max="30" required/></div>
+</div>
+<label asp-for="Answers.ExplanationOfImageC">Explain the invalid centimeter spacing in C, using the original teacher image</label>
+<textarea asp-for="Answers.ExplanationOfImageC" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>2. Estimate Length in Centimeters BEFORE measuring</h2>
+<p>With a real partner use mostly objects about5–30 cm long, and one object about50–90 cm long. First guess the notebook's length, then use a genuine 10-cm tool to revise your thinking. Do NOT copy a fixed invented notebook length: measure your actual notebook.</p>
+<div class="grid">
+<div><label asp-for="Answers.ThreeEstimatesLow">A too-low first-party numerical estimate (cm)</label><input asp-for="Answers.ThreeEstimatesLow" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ThreeEstimatesAbout">An about-right first-party estimate (cm)</label><input asp-for="Answers.ThreeEstimatesAbout" type="number" min="5" max="90" required/></div>
+<div><label asp-for="Answers.ThreeEstimatesHigh">A too-high first-party estimate (cm)</label><input asp-for="Answers.ThreeEstimatesHigh" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.RealObjectsAndEstimates">List authentic object names and original estimates from your classroom</label>
+<textarea asp-for="Answers.RealObjectsAndEstimates" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.RealBeforeAfterEstimate">How did a real10-cm reference change your notebook estimate?</label>
+<textarea asp-for="Answers.RealBeforeAfterEstimate" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Measure and Compare — REAL ruler then first-party virtual ruler</h2>
+<p>If the physical ruler has a space before the printed zero, align the object with that zero TICK, not the outer edge. If the edge is the actual unlabelled zero, align with that edge. Compare real measurements with your earlier estimates and write units.</p>
+<label asp-for="Answers.RealMeasuredLengths">Record real lengths in centimeters (including one50–90 cm object), and compare with the guesses</label>
+<textarea asp-for="Answers.RealMeasuredLengths" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.ZeroTickExplanation">How did you align the actual ruler's zero, and how did you repeat it for a long object?</label>
+<textarea asp-for="Answers.ZeroTickExplanation" rows="2" maxlength="2000"></textarea>
+<p><strong>Independent original Edulytics calibrated scale</strong> — unit numbers, not a photo of a real ruler or a promise that a drawn CSS interval is physically1 cm:</p>
+<div class="ruler" role="img" aria-label="First-party simulated ruler tick marks numbered zero to twenty; virtual visual only">
+@for(var i=0;i<=20;i++){<span>@i</span>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.VirtualStart">Virtual ruler start tick</label><input asp-for="Answers.VirtualStart" type="number" min="0" max="29" required/></div>
+<div><label asp-for="Answers.VirtualEnd">Virtual ruler end tick</label><input asp-for="Answers.VirtualEnd" type="number" min="1" max="30" required/></div>
+<div><label asp-for="Answers.VirtualLength">Virtual length (cm)</label><input asp-for="Answers.VirtualLength" type="number" min="1" max="30" required/></div>
+</div>
+<p>First-party long-object model: how much is two full30-cm placements PLUS8 cm, with no overlap?</p>
+<div class="grid">
+<div><label asp-for="Answers.LongFullRulers">Number of full30-cm ruler placements</label><input asp-for="Answers.LongFullRulers" type="number" min="1" max="2" required/></div>
+<div><label asp-for="Answers.LongRemaining">Last piece (cm)</label><input asp-for="Answers.LongRemaining" type="number" min="0" max="29" required/></div>
+<div><label asp-for="Answers.LongTotal">Total (cm)</label><input asp-for="Answers.LongTotal" type="number" min="50" max="90" required/></div>
+</div>
+</section>
+<section class="panel"><h2>4. Original Edulytics independent exit</h2>
+<p>Source Cool-down The Pencil is restricted and is NOT reproduced here.</p>
+<div class="grid">
+<div><label asp-for="Answers.IndependentTickStart">Virtual start label</label><input asp-for="Answers.IndependentTickStart" type="number" min="0" max="29" required/></div>
+<div><label asp-for="Answers.IndependentTickEnd">Virtual end label</label><input asp-for="Answers.IndependentTickEnd" type="number" min="1" max="30" required/></div>
+<div><label asp-for="Answers.IndependentTickAnswer">Length (cm)</label><input asp-for="Answers.IndependentTickAnswer" type="number" min="1" max="30" required/></div>
+</div>
+<label asp-for="Answers.PartnerReflection">Why do real rulers sometimes have a space before the zero tick?</label>
+<textarea asp-for="Answers.PartnerReflection" rows="2" maxlength="2000"></textarea>
+<button class="action" type="submit">Check first-party numbers and show authentic teacher review</button>
+</section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Results</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Recheck the number or ruler labels":"Teacher review required"). @r.Feedback</p>
+</div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>
+@foreach(var rule in UsCcssG2Unit3FourthLessonEstimateCm.TeacherRubric){<li>@rule</li>}
+</ul><p>IM K–5 2021 G2 U03 L04, CCSS 2.MD.A.1 and 2.MD.A.3. No real object measurement, official score or protected publisher Cool-down verified digitally.</p>
+</section></main>

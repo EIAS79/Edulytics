@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 50,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L16",
+  "title": "Interpret Measurement Data",
+  "unitNumber": 3,
+  "lessonNumber": 16,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_TEACHER_PREPARATION_AND_LESSON_SOURCE_REVIEW",
+    "sourceReadOnly": "Local archived Grade2 Unit3 lesson16 preparation and teacher lesson HTML; desktop project untouched",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-16/preparation.html",
+    "sourceSemanticSha256": "e0686077dcc5860f699460fe81634e0ba7cbaeffcad2965497ac939269bb0bda",
+    "sourceBodySha256": "0f959a4fa8961fbaa8ecee7e105bb6a71b9cc631563ff637c2f39a25c9fad9b8",
+    "orderedOutcomes": [
+      "CCSS:2.MD.D.9",
+      "CCSS:2.NBT.B.5"
+    ],
+    "warmup": "15+5+1=21,25+6=31,16+7=23,37+6=43.",
+    "activity1": "The Plant Project SOURCE Group B ten measurements: Andre33,Clare25,Diego27,Elena25,Han35,Jada33,Kiran26,Noah30,Priya26,Tyler33 cm. Construct equal whole-centimeter nonzero-start plot25..35.",
+    "activity2": "Interpret Group B plot minimum25 maximum35 difference10cm, four lengths GREATER than30, ten plants; also interpret Han's DIFFERENT original plot.",
+    "imageOnlyEvidence": "Han's separate public plot graphic has no image marks embedded in the local plain-text lesson read; questions 'is tallest29?', 'how many?' require original image. The numerical answers are NOT invented.",
+    "sourceCoolDown": "Diego's Art Project requires educator login; original Edulytics separate fictional exit.",
+    "rights": "No copied protected image or publisher assessment; source student table and mathematical questions attributed."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_PREDECESSOR_SIX_FIELDS_GUARDED_SOURCE_TRUE_PLANT_PLOT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3PlantHeightsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact publisher URL, original canonical SHA, ordered2.MD.D.9 and2.NBT.B.5, six predecessor fields, approved persisted rich version."
+  },
+  "stageC": {
+    "status": "COMPLETE_SOURCE_GROUP_B_NUMERIC_STUDENT_COMPANION_FOUR_EXACT_FAMILIES_UNRUN_TESTS",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3SixteenthLessonPlantPlot.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson16PlantHeightsContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson16PlantHeightsQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson50ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson50Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l16.plant_plot_frequency",
+      "usccss.g2.u03.l16.plant_plot_total",
+      "usccss.g2.u03.l16.plant_plot_greater_than",
+      "usccss.g2.u03.l16.plant_plot_range"
+    ],
+    "sourceNumeric": "GroupB sorted25,25,26,26,27,30,33,33,33,35; source plots empty ticks28,29,31,32,34; total10, mode33, shortest25, tallest35, spread10, over30 four.",
+    "independentFictional": "nine fictional plants24,25,25,26,26,26,27,28,28; min24 max28 mode26, above26 three.",
+    "teacherOnly": "Student-created real paper plot, Han separate image reading, MLR8 partner speech and classroom educator review cannot be inferred digitally.",
+    "security": "StudentPortal policy, selected adoption/published content, CSRF, bounded input, no official mark.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3PlantHeightsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3SixteenthLessonPlantPlotTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson16PlantHeightsQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson50ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "CONTINUE_G2_U03_L17_GRADE_ORDINAL51_STAGE_A_B_C_NO_SKIP"
+}

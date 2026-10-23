@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 44,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L10",
+  "title": "Measure with a Torn Tape",
+  "unitNumber": 3,
+  "lessonNumber": 10,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_TEACHER_PREPARATION_AND_ORIGINAL_LESSON_REVIEW",
+    "sourceReadOnly": "Local Grade2 Unit3 Lesson10 preparation and lesson HTML, no project inspection on computer",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-10/preparation.html",
+    "originalBodySha256": "6ca8d276669032508fc1394ce25af9047aefb865dc9bc6d321699290513823dd",
+    "sourceSemanticSha256": "e0a2939042b94dcfa9dbeb0ba4f2d3844033cef2d63dc451a280b51737bc04c1",
+    "orderedOutcomes": [
+      "CCSS:2.OA.B.2"
+    ],
+    "warmup": "Four true or false expressions:10−0=12−2 true,8−4=10−6 true,12−4=10−3 false,15−2=13−0 true.",
+    "activity1": "Source Notebook: Han and Jada both measure8 inches; nonzero ruler2 to10 yields10−2=8 and2+?=10. Real partner ruler measurements with objects2–10 inches.",
+    "activity2": "Source Lin tangled desktop starts16; public short-side synthesis34−16=18 and16+?=34. Original long-side endpoint not available in accessible written lesson text; teacher checks real source image.",
+    "sourceCooldown": "Original Torn Tape Cool-down educator-login only; not copied.",
+    "sourceStandardNuance": "Addressing2.OA.B.2. Building Towards2.MD.B.6 and Cool-down2.MD.B.5 distinct and not silently substituted.",
+    "teacherOnly": "Actual ruler, original long-side drawing, real objects and MLR2 partner talk teacher validated."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_SHA_PREDECESSOR_SIX_FIELD_GUARDED_RICH_LEARNER_BODY",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3TornTapeTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact source preparation URL, 64-digit original body SHA, ordered official standards, six previous English rich fields and approved persisted predecessor content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_PROTECTED_ORIGINAL_TORN_TAPE_COMPANION_FOUR_EXACT_FAMILIES_WITH_UNRUN_TESTS",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3TenthLessonTornTape.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson10TornTapeContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson10TornTapeQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson44ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson44Activities/Index.cshtml",
+    "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson44Page.cs",
+    "families": [
+      "usccss.g2.u03.l10.subtract_nonzero_ticks",
+      "usccss.g2.u03.l10.count_on_to_endpoint",
+      "usccss.g2.u03.l10.shifted_start_equal_length",
+      "usccss.g2.u03.l10.missing_endpoint_for_length"
+    ],
+    "firstPartyVirtualRulers": "Virtual invented3→11=8,4→13=9,6→18=12; separate independent7→16=9 and13→26=13; not publisher art.",
+    "teacherOnly": "Authentic original long-side endpoint not asserted; physical classroom task and MLR2 discussion not digitally attested.",
+    "security": "Protected StudentPortal, selected adoption and published lesson, anti-CSRF POST, bounded text, no grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3TornTapeTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3TenthLessonTornTapeTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson10TornTapeQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson44ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L11_GRADE_ORDINAL45_STAGE_A_B_C"
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 85,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U06:L04",
+  "title": "Solid Shapes",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_TEXT_REVIEWED_TEACHER_ONLY_MEDIA",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-85-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-6/lesson-4/preparation.html",
+    "sourceSha256": "0851052ae38319d0326047b827c73c4d6748404be87292e2f70bde612ea0088e",
+    "standards": [
+      "CCSS:2.G.A.1"
+    ]
+  },
+  "stageB": {
+    "status": "SOURCE_GUARDED_ALL_SIX_FIELDS",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit6SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-85-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "AUTHORING_CLOSED_FIRST_PARTY_FOUR_EXACT_FAMILIES_TESTS_WRITTEN_NOT_RUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit6ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit6ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit6Activities/Index.cshtml",
+    "teacherOnly": "Publisher source images, shape/partition drawings and real pupil physical work remain human-reviewed, not reduced to numeric certification",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal85OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal85SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal85ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal85StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 86
+}

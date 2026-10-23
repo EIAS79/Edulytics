@@ -96,6 +96,1607 @@
         </nav>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original Grade 2 lesson activities">
+            <h2>Edulytics · original lesson activities and Cool-down</h2>
+            <p>Explore addition and subtraction within 10, create your own
+                number-card expressions, and complete an independently authored
+                four-task exit ticket. Teacher-reviewed explanations remain
+                separate from automatically checked mathematics.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson1Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 2 lesson activities &amp; Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Edulytics ten-cube activities">
+            <h2>Edulytics · ten-cube activities and Cool-down</h2>
+            <p>Build two-color towers of ten, find hidden cube parts, connect
+                addition and subtraction, and answer the independently
+                authored end-of-lesson questions.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson2Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open ten-cube activities and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics twenty-cube activities">
+            <h2>Edulytics · twenty-cube activities and Cool-down</h2>
+            <p>Work with two groups of ten, find missing parts of twenty,
+            test addition/subtraction equations, and explain your strategy
+            using original Edulytics diagrams.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson3Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open twenty-cube activities and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics How Close and Cool-down">
+            <h2>Edulytics · How Close and Cool-down</h2>
+            <p>Use three of five digit cards to get close to twenty,
+            solve addition and subtraction problems, and explain a make-ten
+            or other valid strategy. Exercises use original Edulytics cards.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson4Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open How Close and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics How Close with seven cards and sums to 50">
+            <h2>Edulytics · How Close to 50 and Cool-down</h2>
+            <p>Choose four of seven digit cards, build two two-digit
+            numbers, and practice composing tens while adding within 50.
+            Use our original Edulytics assessment and teacher rubric.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson5Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open seven-card game and Cool-down</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics optional Number Puzzles">
+            <h2>Edulytics · Number Puzzles center</h2>
+            <p>Place digit cards exactly once across a four-equation board,
+                practise two-digit sums, and reflect on your choice of center.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson6Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open Number Puzzles and reflection</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original real classroom survey">
+            <h2>Edulytics · collect and organize real classroom data</h2>
+            <p>Record anonymous, authentic travel-to-school observations,
+                compare the unordered classroom display with a grouped
+                pictorial representation, and complete an independently
+                authored Cool-down using those same observations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson7Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open real-class-data activities and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Edulytics picture graphs and Cool-down">
+            <h2>Edulytics · interpreting picture graphs and Cool-down</h2>
+            <p>Read first-party child, adult and art-supply pictographs,
+                use the one-symbol key to compare categories, and explain
+                which questions the graph can and cannot answer.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson8Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open picture graphs and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original numbered-scale bar graph activities">
+            <h2>Edulytics · bar graphs and Cool-down</h2>
+            <p>Compare a picture graph to numbered-scale bar graphs,
+                write original true class-choice statements, read season
+                totals and complete a first-party bar-graph exit ticket.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson9Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open bar-graph activities and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L10" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original picture and bar graph authoring">
+            <h2>Edulytics · make your own picture graph and bar graph</h2>
+            <p>Create a picture graph with an original symbol and a key,
+                exchange your data table with a partner, draw a correctly
+                scaled bar graph, and complete an independently authored
+                same-data exit ticket.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson10Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open graph-making activities and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L11" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics learner-written questions about previous graphs">
+            <h2>Edulytics · create and exchange graph questions</h2>
+            <p>Revisit the two graphs made in Lesson 10, write four
+                original questions (two for each graph), include a
+                category-combine or comparison question, and exchange
+                answers with a partner. Finish our independent Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson11Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Write my graph questions and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics Sort and Display optional center">
+            <h2>Edulytics · sort real objects and create a graph</h2>
+            <p>Sort 20–30 real objects into three categories, represent the
+                actual counts with an original picture OR bar graph,
+                ask a partner two questions, and choose a previously
+                learned arithmetic center.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson12Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Sort and Display Stage 2
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original bar graph comparison with counting on and back">
+            <h2>Edulytics · compare bar graphs two ways</h2>
+            <p>Use first-party pet and dog bar graphs to explain the
+                unknown difference by counting ON and counting BACK,
+                then write corresponding addition and subtraction equations.
+                Finish an independently authored Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson13Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open bar comparison activities and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L14" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics bar graph to tape diagrams">
+            <h2>Edulytics · draw tape diagrams to compare</h2>
+            <p>Translate source bar-graph comparisons into two labelled,
+                aligned rectangular strips. Mark the dashed missing part,
+                write inverse equations for both Party Time comparisons,
+                and complete a new first-party Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson14Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open tape diagram lessons and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L15" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original compare cards with three unknown positions">
+            <h2>Edulytics · match Compare stories, tapes and equations</h2>
+            <p>Explore unknown smaller, larger and difference in first-party
+                rectangular tape diagrams, match each story to MULTIPLE
+                equivalent equations, discuss your choice with a partner
+                and finish a new Edulytics Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson15Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open compare card sort and Cool-down
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit4 Lesson4</h2>
+            <p>Source real dice comparisons and three- or two-cube number-line placements. Educator must review actual class evidence; online numeric questions are first-party.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4NextThreeActivities" asp-action="Index"
+               asp-route-lessonNumber="4"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit4 Lesson5</h2>
+            <p>Source open-ended estimation and authentic ten-card class gallery. Educator must review actual class evidence; online numeric questions are first-party.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4NextThreeActivities" asp-action="Index"
+               asp-route-lessonNumber="5"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source-aligned arrow and subtraction teaching">
+            <h2>Edulytics · Grade2 Unit4 Lesson7</h2>
+            <p>Original printed arrow direction and genuine A–H matching require real teacher-reviewed representations. Separate digital arithmetic is original Edulytics.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4ArrowActivities" asp-action="Index"
+               asp-route-lessonNumber="7"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original-source number-line activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source-aligned arrow and subtraction teaching">
+            <h2>Edulytics · Grade2 Unit4 Lesson8</h2>
+            <p>Original choral count and four addition/subtraction arrow drawings require real teacher-reviewed representations. Separate digital arithmetic is original Edulytics.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4ArrowActivities" asp-action="Index"
+               asp-route-lessonNumber="8"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original-source number-line activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson1</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="1"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson2</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="2"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson3</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="3"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson4</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="4"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson5</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="5"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson6</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="6"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson7</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="7"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson8</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="8"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson9</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="9"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L10" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson10</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="10"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L11" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson11</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="11"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson12</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="12"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson13</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="13"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L14" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson14</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="14"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L15" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson15</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="15"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L16" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson16</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="16"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L17" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson17</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="17"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L18" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson18</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="18"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L19" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson19</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="19"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L20" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson20</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="20"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U06:L21" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit6 Lesson21</h2>
+            <p>Original source hands-on activity with teacher-only assessment, plus exact first-party skill-specific numeric practice.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit6Activities" asp-action="Index"
+               asp-route-lessonNumber="21"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source activity companion</a>
+        </section>
+    }
+
+    @{
+        var lateGrade2Companion = Grade2LateUnitCompanionNavigation.Resolve(Model.LessonCode);
+    }
+    @if (lateGrade2Companion is not null && unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 2 source-aligned activity companion">
+            <h2>Grade 2 Unit @lateGrade2Companion.UnitNumber Lesson @lateGrade2Companion.LessonNumber</h2>
+            <p>Open original-source-aligned, independently authored mathematical exercises.
+                Student-created stories, diagrams, measurement activities and classroom work
+                still require an authenticated teacher review.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="@lateGrade2Companion.Controller" asp-action="Index"
+               asp-route-lessonNumber="@lateGrade2Companion.LessonNumber"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 Unit5 Lesson7 original publisher source context">
+            <h2>Edulytics · G2 Unit5 Lesson7</h2>
+            <p>Source authentic number-line or place-value mathematics; original figures, games and expressive work remain teacher-only.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5ComparisonActivities" asp-action="Index"
+               asp-route-lessonNumber="7"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 Unit5 Lesson8 original publisher source context">
+            <h2>Edulytics · G2 Unit5 Lesson8</h2>
+            <p>Source authentic number-line or place-value mathematics; original figures, games and expressive work remain teacher-only.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5ComparisonActivities" asp-action="Index"
+               asp-route-lessonNumber="8"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 Unit5 Lesson9 original publisher source context">
+            <h2>Edulytics · G2 Unit5 Lesson9</h2>
+            <p>Source authentic number-line or place-value mathematics; original figures, games and expressive work remain teacher-only.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5ComparisonActivities" asp-action="Index"
+               asp-route-lessonNumber="9"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L10" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 Unit5 Lesson10 original publisher source context">
+            <h2>Edulytics · G2 Unit5 Lesson10</h2>
+            <p>Source authentic number-line or place-value mathematics; original figures, games and expressive work remain teacher-only.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5ComparisonActivities" asp-action="Index"
+               asp-route-lessonNumber="10"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L11" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 Unit5 Lesson11 original publisher source context">
+            <h2>Edulytics · G2 Unit5 Lesson11</h2>
+            <p>Source authentic number-line or place-value mathematics; original figures, games and expressive work remain teacher-only.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5ComparisonActivities" asp-action="Index"
+               asp-route-lessonNumber="11"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 Unit5 Lesson12 original publisher source context">
+            <h2>Edulytics · G2 Unit5 Lesson12</h2>
+            <p>Source authentic number-line or place-value mathematics; original figures, games and expressive work remain teacher-only.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5ComparisonActivities" asp-action="Index"
+               asp-route-lessonNumber="12"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 Unit5 Lesson13 original publisher source context">
+            <h2>Edulytics · G2 Unit5 Lesson13</h2>
+            <p>Source authentic number-line or place-value mathematics; original figures, games and expressive work remain teacher-only.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5ComparisonActivities" asp-action="Index"
+               asp-route-lessonNumber="13"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L14" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 Unit5 Lesson14 original publisher source context">
+            <h2>Edulytics · G2 Unit5 Lesson14</h2>
+            <p>Source authentic number-line or place-value mathematics; original figures, games and expressive work remain teacher-only.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5ComparisonActivities" asp-action="Index"
+               asp-route-lessonNumber="14"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original IM Grade2 Unit5 lesson1 place-value activities">
+            <h2>Edulytics · Unit5 Lesson1 place-value source companion</h2>
+            <p>Original source quantities and authentic classroom material review plus four independently verified numeric families.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5FirstSixActivities" asp-action="Index"
+               asp-route-lessonNumber="1"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned place-value activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original IM Grade2 Unit5 lesson2 place-value activities">
+            <h2>Edulytics · Unit5 Lesson2 place-value source companion</h2>
+            <p>Original source quantities and authentic classroom material review plus four independently verified numeric families.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5FirstSixActivities" asp-action="Index"
+               asp-route-lessonNumber="2"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned place-value activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original IM Grade2 Unit5 lesson3 place-value activities">
+            <h2>Edulytics · Unit5 Lesson3 place-value source companion</h2>
+            <p>Original source quantities and authentic classroom material review plus four independently verified numeric families.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5FirstSixActivities" asp-action="Index"
+               asp-route-lessonNumber="3"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned place-value activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original IM Grade2 Unit5 lesson4 place-value activities">
+            <h2>Edulytics · Unit5 Lesson4 place-value source companion</h2>
+            <p>Original source quantities and authentic classroom material review plus four independently verified numeric families.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5FirstSixActivities" asp-action="Index"
+               asp-route-lessonNumber="4"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned place-value activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original IM Grade2 Unit5 lesson5 place-value activities">
+            <h2>Edulytics · Unit5 Lesson5 place-value source companion</h2>
+            <p>Original source quantities and authentic classroom material review plus four independently verified numeric families.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5FirstSixActivities" asp-action="Index"
+               asp-route-lessonNumber="5"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned place-value activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U05:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original IM Grade2 Unit5 lesson6 place-value activities">
+            <h2>Edulytics · Unit5 Lesson6 place-value source companion</h2>
+            <p>Original source quantities and authentic classroom material review plus four independently verified numeric families.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit5FirstSixActivities" asp-action="Index"
+               asp-route-lessonNumber="6"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned place-value activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L10" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 source-aligned lesson10 practice">
+            <h2>Edulytics · Grade2 Unit4 Lesson10</h2>
+            <p>Source-grounded lesson mathematics with human-only original paper, figure and partner evidence, plus independent exact student exercises.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4FinalSixActivities" asp-action="Index"
+               asp-route-lessonNumber="10"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L11" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 source-aligned lesson11 practice">
+            <h2>Edulytics · Grade2 Unit4 Lesson11</h2>
+            <p>Source-grounded lesson mathematics with human-only original paper, figure and partner evidence, plus independent exact student exercises.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4FinalSixActivities" asp-action="Index"
+               asp-route-lessonNumber="11"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 source-aligned lesson12 practice">
+            <h2>Edulytics · Grade2 Unit4 Lesson12</h2>
+            <p>Source-grounded lesson mathematics with human-only original paper, figure and partner evidence, plus independent exact student exercises.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4FinalSixActivities" asp-action="Index"
+               asp-route-lessonNumber="12"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 source-aligned lesson13 practice">
+            <h2>Edulytics · Grade2 Unit4 Lesson13</h2>
+            <p>Source-grounded lesson mathematics with human-only original paper, figure and partner evidence, plus independent exact student exercises.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4FinalSixActivities" asp-action="Index"
+               asp-route-lessonNumber="13"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L14" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 source-aligned lesson14 practice">
+            <h2>Edulytics · Grade2 Unit4 Lesson14</h2>
+            <p>Source-grounded lesson mathematics with human-only original paper, figure and partner evidence, plus independent exact student exercises.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4FinalSixActivities" asp-action="Index"
+               asp-route-lessonNumber="14"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L15" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 source-aligned lesson15 practice">
+            <h2>Edulytics · Grade2 Unit4 Lesson15</h2>
+            <p>Source-grounded lesson mathematics with human-only original paper, figure and partner evidence, plus independent exact student exercises.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4FinalSixActivities" asp-action="Index"
+               asp-route-lessonNumber="15"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open lesson activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source-aligned arrow and subtraction teaching">
+            <h2>Edulytics · Grade2 Unit4 Lesson9</h2>
+            <p>Two subtraction number-line methods and genuine source string stories require real teacher-reviewed representations. Separate digital arithmetic is original Edulytics.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4ArrowActivities" asp-action="Index"
+               asp-route-lessonNumber="9"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original-source number-line activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card">
+            <h2>Edulytics · Grade2 Unit4 Lesson6</h2>
+            <p>Optional real Number Line Scoot center and subtraction/decomposition. Educator must review actual class evidence; online numeric questions are first-party.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Unit4NextThreeActivities" asp-action="Index"
+               asp-route-lessonNumber="6"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source-aligned activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original unlabeled number lines, points to 100">
+            <h2>Edulytics · unlabeled tick marks</h2>
+            <p>Use actual IM2021 original publisher diagrams to mark source points
+            24,37,48,83 and 17,59,43,35. Compare number lines with 5- and 10-unit
+            labels without losing ONE-unit intervals; only the teacher can verify
+            original image-specific point placement and partner explanation.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson55Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original number-line activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 choral count and number line source art analysis">
+            <h2>Edulytics · features of a number line</h2>
+            <p>Choral count by5 to100, arrange REAL yarn number cards from0 to30,
+            inspect original Jada, Andre, Elena figures with teacher,
+            and label eleven equal ticks0..10. The image-specific work
+            and classroom participation require teacher review.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson54Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open number-line features</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U04:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original number line zero to twenty and equal-length unit intervals">
+            <h2>Edulytics · whole numbers on a number line</h2>
+            <p>Complete genuine source 0-to-10 missing labels and point choices.
+            Then build your own real paper 0-to-20 line with 20 equal intervals,
+            mark points at 3 and 13 and compare with a classmate.
+            Independent digital practice cannot certify drawn intervals.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson53Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open number-line activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L18" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional three by five inch card to make 36 inch yardstick">
+            <h2>Edulytics · make a REAL yardstick with a 3×5-inch card</h2>
+            <p>In pairs use genuine paper and a 3×5-inch index card
+            to construct all inch marks from1 to36. Compare actual
+            classroom desk-height line-plot measurements, revise inaccurate
+            sticks and optionally measure hands and forearms.
+            Independent online arithmetic is not real measurement.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson52Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open optional yardstick center</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L17" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional source Stage1 real ruler measurements">
+            <h2>Edulytics · optional Creating Line Plots Stage1</h2>
+            <p>Measure up to eight REAL objects with cm or inch rulers,
+            make your own labeled plot and ask your partner TWO questions.
+            Source choice time is observed by your teacher. Original
+            Edulytics fictional numerical questions are separate.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson51Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open optional line-plot center</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L16" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 plant-height numerical line plots">
+            <h2>Edulytics · interpret Group B plant heights</h2>
+            <p>Use the original source centimeter table to plot values25
+            through35, including empty whole-centimeter ticks.
+            Compare shortest, tallest, total, mode and the four plants
+            above30 cm. Read Han's separate image with your teacher.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson50Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open plant height line-plot activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L15" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source pencil lengths line plot with nonzero axis">
+            <h2>Edulytics · Create Line Plots</h2>
+            <p>Measure real pencils in centimeters with two
+            measurers each. Plot original Group C pencil-length
+            measurements, including labels for empty 11 and 15
+            centimeter ticks. A numeric line plot need not start
+            at zero; real class work remains teacher-reviewed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson49Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open source pencil line plots</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L14" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 numerical hand-span line plot">
+            <h2>Edulytics · What is a Line Plot?</h2>
+            <p>Compare category and numerical graphs, trace your
+            own hand and measure your span to the nearest inch,
+            then place ONE X per student on the authentic class
+            line plot. Independent Edulytics fictional data has
+            a separate interactive numerical check.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson48Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open hand-span line plot</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 2 optional Target Measurements and Number Puzzles centers">
+            <h2>Edulytics · Target Measurements &amp; Number Puzzles</h2>
+            <p>Make a ten in the original Number Talk.
+            Use real rulers and straightedges in the authentic
+            Target Measurements Stage1 pair game, and printed
+            digit cards for Number Puzzles Stage4. Online numerical
+            checks never certify real center scores or participation.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson47Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open measurement and puzzles activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 two step original saree silk friendship ribbon stories">
+            <h2>Edulytics · friendship bracelets</h2>
+            <p>Original Lin two cuts in centimeters and Han/Clare
+            then Andre/Mai two-step stories in inches. Use the
+            FIRST answer for the SECOND step; different missing
+            quantities may require subtract then ADD.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson46Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open friendship ribbon problems</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L11" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original grade2 saree silk ribbon length take-from and start unknown">
+            <h2>Edulytics · saree silk ribbon stories</h2>
+            <p>Original Priya, Elena and Han take-from ribbon tasks
+            with tape diagrams, including Priya's START unknown
+            from25 inches cut and38 inches left. Teacher reviews
+            source pictures and genuine partner MLR8 explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson45Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original ribbon stories</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L10" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 torn tape nonzero ruler measurement">
+            <h2>Edulytics · measure with a torn tape</h2>
+            <p>Use true/false constant differences, Han and Jada's
+            same8-inch notebook from different ruler starts, and
+            Lin's desktop16→34 short side. Measure genuine objects
+            with a partner; teacher checks source long-side image.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson44Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open torn-tape source activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 real fish tape lengths in feet and inches">
+            <h2>Edulytics · measuring fish floor tapes in feet and inches</h2>
+            <p>Use teacher-built source fish tape A2ft B4ft C3ft
+            and D2ft6in, repeat genuine12-inch ruler spans,
+            compare physical unit counts, and choose the
+            right tool for real object length. Grade2 does not
+            require abstract unit conversion algorithms.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson43Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open fish measurement center</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original physical inch tiles and whole inch ruler">
+            <h2>Edulytics · what is an inch?</h2>
+            <p>Compare actual inch and centimeter rulers,
+            estimate and measure classroom objects using real
+            inch tiles and rulers, then estimate and measure original
+            rectangle/square/triangle sides. First-party numeric
+            illustrations never replace teacher-observed measurements.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson42Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open inch measurement</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional Grade2 Stage2 real estimate and measure in centimeters">
+            <h2>Edulytics · optional real Estimate and Measure Stage 2</h2>
+            <p>Practise original subtract-from37 Number Talk,
+            source notebook20/31 example and mathematically
+            separate numerical gaps. Genuine object estimate-before-
+            measuring in centimeters and center choice require teacher.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson41Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open optional estimation center</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original reptile length compare-story problems">
+            <h2>Edulytics · compare reptiles using centimeter tape diagrams</h2>
+            <p>Solve source Lin/Jada62 and19 longer-unknown, and
+            Mai/Diego71 and17 smaller-unknown; check genuine
+            secret partner choices from two source reptile lists,
+            and independently authored digital arithmetic.
+            Teacher verifies real tape diagrams and partner MLR8.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson40Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open original reptile comparisons</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original reptile tape meters and centimeters">
+            <h2>Edulytics · measure in meters</h2>
+            <p>Practice the original floor tape models for seven
+            reptiles, convert centimeters to meterstick lengths and
+            explain why a longer tool helps. Source A–G exact tape
+            lengths are available; real physical measuring, zero
+            alignment and MLR2 discussion need teacher review.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson39Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open reptile-tape meter activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 source centimeter estimates and ruler measurement">
+            <h2>Edulytics · estimate and measure in centimeters</h2>
+            <p>Study original A–D centimeter-ruler images with your teacher,
+            estimate real classroom objects, measure from the TRUE zero tick,
+            compare estimates, and iterate the ruler on a long object.
+            First-party numeric examples are separate from real measurement.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson38Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open centimeter estimation activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source Grade2 create ruler and compare lengths">
+            <h2>Edulytics · create and use a ruler</h2>
+            <p>Draw a real 0–25 centimeter ruler using authentic
+            one-centimeter cubes to space tick marks. Measure the
+            original A–F rectangles with your teacher; the online
+            interval and comparison examples are independently authored.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson37Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open centimeter ruler activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source Grade 2 bearded dragon and centimeter measurement">
+            <h2>Edulytics · measure in centimeters</h2>
+            <p>Compare centimeter cubes with ten-centimeter
+            tools for the original 24cm bearded-dragon drawing.
+            Authentic reptile printouts and day-gecko/threadsnake
+            difference require teacher measurement; the digital
+            extra numbers are original Edulytics examples.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson36Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open centimeter measurement work</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U03:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 actual standard units of length source activity">
+            <h2>Edulytics · Priya's Pet and standard centimeter units</h2>
+            <p>Compare a source forty-centimeter string measured
+            in five- and ten-centimeter straws, then with
+            uniform one-centimeter cubes. Real physical alignment,
+            no gaps or overlaps, and original partner discussion
+            remain teacher-observed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson34Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open standard-unit measurement</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L16" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="G2 optional source market inventory">
+            <h2>Edulytics · Our Market's Inventory</h2>
+            <p>Set up exactly 100 products across three categories,
+            role-play real buying and selling, then make an optional
+            sales and restocking report. Student-generated quantities
+            and actual transactions are teacher-observed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson34Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open market inventory activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L15" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional original Math Stories Stage5 tape diagram partner center">
+            <h2>Edulytics · original Math Stories tape center</h2>
+            <p>Study printed tape-diagram cards, invent a fitting
+            story and equation for a real partner and solve it.
+            Number Talk compensation and first-party numeric
+            practice are separate from actual source gameplay.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson33Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open tape diagram center</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L14" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 source one and two-step seed stories">
+            <h2>Edulytics · solve one- and two-step stories</h2>
+            <p>Original Andre's two parts, Priya/Mai/Kiran group
+            seed stories, the second-step 92 total, and student
+            Jada summary. Real partner work and MLR7 gallery
+            displays are teacher-observed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson32Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open two-step seed stories</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L13" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 story problems with matched equations">
+            <h2>Edulytics · seed stories and equations</h2>
+            <p>Original Lin, Andre, Diego, Noah and Kiran story
+            quantities, unknown addends and real card sorting.
+            A story may match several equations; teacher checks
+            authentic diagrams and MLR8 group explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson31Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open story equation practice</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L12" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source Mancala story diagram matching, four story types">
+            <h2>Edulytics · story problems and tape diagrams</h2>
+            <p>Original Mancala stories Clare54 and Han16:
+            match true source tape diagrams without numerical solving
+            in Activity1, then solve TWO genuine published cards
+            in Activity2. Optional independently authored maths
+            checks remain separate and never certify diagram matches.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson30Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open Mancala diagram activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L11" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 seed story four unknown positions">
+            <h2>Edulytics · seed stories: four different unknowns</h2>
+            <p>Original Diego/Jada compare42−16, Lin31−15,
+            Noah37−28 missing part and Elena/Andre50−23
+            smaller unknown. Choose correct tape diagrams and
+            model subtraction with a ten exchange. Teacher
+            evaluates real diagrams and partner explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson29Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open seed story maths</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L10" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional Grade2 Target Numbers Stage5 three-cube center">
+            <h2>Edulytics · optional Target Numbers Stage5</h2>
+            <p>Notice66−28 decomposing one ten, then practise
+            selecting two different dice from a roll of three
+            to subtract a two-digit number from100. Center-choice
+            partner play and the disputed published winner rule
+            require teacher review.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson28Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open Stage5 three-dice mathematics</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L09" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 mixed addition and subtraction within 100">
+            <h2>Edulytics · add and subtract within 100</h2>
+            <p>Match actual source cards with tens-and-ones diagrams,
+            then solve original27+47,55−27,36+38,82−39.
+            Gallery-walk and authentic cards are teacher-reviewed;
+            original independent Cool-down is explicitly separate.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson27Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open addition and subtraction</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L08" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 source comparative subtraction, Lin Clare Andre">
+            <h2>Edulytics · compare different ways to decompose</h2>
+            <p>Original Number Talk, Lin and Clare's two ways to
+            solve 71−56, Andre's65−28, and the three source
+            two-digit differences. Teacher checks real drawings
+            and MLR8 partner explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson26Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open comparative subtraction</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L07" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 2 two-digit subtraction source activities">
+            <h2>Edulytics · subtract two digits with regrouping</h2>
+            <p>Work on original 46−28 and 93−54, compare actual
+            block strategies, and participate in the teacher-observed
+            Diego/Lin/Jada/Han four-person card center. Numerical
+            companion examples are Edulytics-authored, not source cards.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson25Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open two-digit subtraction activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L06" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade2 original Compare Methods and Target Numbers Stage4">
+            <h2>Edulytics · compare base-ten subtraction and Target Numbers</h2>
+            <p>Identify true and false64 equivalences, compare
+            Diego, Elena and Tyler's methods of82−9, then use legal
+            subtraction of tens or ones in the Target Numbers Stage4
+            partner game. Genuine six-round gameplay is teacher-assessed.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson24Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open target-number activities</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L05" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Source-aligned Grade2 subtract with a decomposed ten">
+            <h2>Edulytics · subtract your way, decomposing a ten</h2>
+            <p>Use the original Number Talk, compare valid strategies
+            for 82−9, follow Diego's 55−20−8 using tens and ones,
+            and finish an independently authored Cool-down.
+            Teacher checks real blocks and original explanations.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson23Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open subtract-by-exchanging-a-ten activities
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L04" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Optional Capture Squares and Five in a Row Stage6 source centers">
+            <h2>Edulytics · optional Capture Squares and Five in a Row</h2>
+            <p>Mentally subtract by tens and ones. Practise source
+            Capture Squares Stage3 within20 and Five in a Row Stage6
+            within100 INCLUDING new ten composition, with separately
+            teacher-observed authentic board and partner gameplay.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson22Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open optional source-center math checks
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L03" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics zoo stories, start unknown, compare and remaining quantity">
+            <h2>Edulytics · original zoo problem stories and explanations</h2>
+            <p>Start with MLR6 Three Reads to interpret the unknown
+            first students on a zoo bus, then solve original monkey,
+            bear/lion and bird stories. Use drawings or base-ten blocks,
+            discuss authentic methods with a partner, and finish the
+            independently authored Edulytics Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson21Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open the four source zoo stories
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Original Grade2 unknown-addend and tens tools">
+            <h2>Edulytics · missing addends, count back and base-ten tools</h2>
+            <p>Count back by tens from 97, work with real blocks to find
+            41+?=84, compare Han's add-on with Mai's subtract-away
+            method, find the missing number in 21+?=96 and finish a
+            new independent Edulytics assessment.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson20Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open source unknown-addend activities
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U02:L01" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics Grade 2 movie snacks and ten-tower compare activity">
+            <h2>Edulytics · place-value compare without trading a ten</h2>
+            <p>Read the original Movie Snacks bar values, solve two
+            category problems without ten regrouping, build 46 and 22
+            physical cubes, compare partner strategies, and finish an
+            independently authored no-regroup Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson19Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 2 Unit 2 comparison activities
+            </a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L18" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics authentic classroom survey activity">
+            <h2>Edulytics · real class survey and comparisons</h2>
+            <p>Author an original three- or four-category survey, collect genuine
+            anonymous responses, make a picture OR bar graph, trade questions
+            with a partner and compare two facts on an original tape diagram.
+            Numerical checks are not proof of survey participation.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson18Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open classroom survey and first-party Cool-down</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L17" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics optional counting collection and centers">
+            <h2>Edulytics · optional 100–120 counting and centers</h2>
+            <p>Estimate a real collection, count physical objects by fives
+            or tens with a partner, explain a drawing, select two previously
+            taught centers, practise on a separate virtual model and complete
+            the independently authored Cool-down. The teacher reviews your
+            real collection and partner work.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson17Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">Open counting collections and centers</a>
+        </section>
+    }
+
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L16" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Edulytics original compare story solutions in all unknown positions">
+            <h2>Edulytics · solve every kind of Compare problem</h2>
+            <p>Apply make-ten and place-value strategies to the six source
+                library and Three Reads stories, distinguish unknown larger,
+                smaller and difference, choose correct tapes or other valid
+                representations, and finish our independently authored
+                Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade2Lesson16Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Solve library and Three Reads stories
+            </a>
+        </section>
+    }
+
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
@@ -113,6 +1714,39 @@
                Keep V2 visuals, but show the source-scoped canonical lessons'
                concepts, worked examples and teacher-facilitated directions.
                This DOES NOT claim pupils performed classroom activities. *@
+            @* Grade 2 first-lesson Rich V2 may condense original source-specific
+               within-ten strategy teaching. Keep V2 and expose the reviewed
+               learner concepts/examples/steps in full before authored activities. *@
+            @if (Model.LessonCode is "PED:US-CCSS-MATH:G2:U01:L01" or
+                    "PED:US-CCSS-MATH:G2:U01:L02" or
+                    "PED:US-CCSS-MATH:G2:U01:L03" or
+                    "PED:US-CCSS-MATH:G2:U01:L04" or
+                    "PED:US-CCSS-MATH:G2:U01:L05" or
+                    "PED:US-CCSS-MATH:G2:U01:L06" or
+                    "PED:US-CCSS-MATH:G2:U01:L07" or
+                    "PED:US-CCSS-MATH:G2:U01:L08" or
+                    "PED:US-CCSS-MATH:G2:U01:L09" or
+                    "PED:US-CCSS-MATH:G2:U01:L10" or
+                    "PED:US-CCSS-MATH:G2:U01:L11" or
+                    "PED:US-CCSS-MATH:G2:U01:L12" or
+                    "PED:US-CCSS-MATH:G2:U01:L13" or
+                    "PED:US-CCSS-MATH:G2:U01:L14" or
+                    "PED:US-CCSS-MATH:G2:U01:L15" or
+                    "PED:US-CCSS-MATH:G2:U01:L16")
+            {
+                <section class="lesson-source-aligned-activities"
+                         aria-label="Grade 2 source-aligned mathematical teaching">
+                    <h2>Adding and subtracting within ten</h2>
+                    <p class="lesson-reader-text">
+                        Examine the sum and difference, use ten-frame counters
+                        or another valid strategy, and explain an expression
+                        that has the required value.
+                    </p>
+                    <partial name="_LessonReaderSection" model="sections[1]" />
+                    <partial name="_LessonReaderSection" model="sections[2]" />
+                    <partial name="_LessonReaderSection" model="sections[3]" />
+                </section>
+            }
             @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G1:U03:L", StringComparison.Ordinal) &&
                  int.TryParse(Model.LessonCode["PED:US-CCSS-MATH:G1:U03:L".Length..], out var sourceLessonNumber) &&
                  sourceLessonNumber is >= 20 and <= 27)

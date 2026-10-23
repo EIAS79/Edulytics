@@ -28,25 +28,17 @@ public sealed class CommonCoreG2StoryProblemsSourceCorrectionTests
     {
         var (doc, lesson, english) = GetEffectiveLesson();
         Assert.Equal("CCSS:2.OA.A.1", Assert.Single(lesson.OutcomeCodes));
-        Assert.Equal(CommonCoreG2StoryProblemsSourceCorrection.CorrectedContentVersion,
+        Assert.Equal(CommonCoreG2Unit9SourceCorrections.VersionFor(145),
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, lesson));
 
         Assert.Contains("story problem", english.KeyConceptsAndRules,
             StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("18 + 13 = 31", english.WorkedExamples);
-        Assert.Contains("18 + 7 = 25", english.WorkedExamples);
-        Assert.Contains("64 - 35 = 29", english.WorkedExamples);
-        Assert.Contains("31 - 12 = 19", english.WorkedExamples);
-        Assert.Contains("Re-read the story", english.StepByStepSolutions);
-        Assert.DoesNotContain("algebraic transformations", english.KeyConceptsAndRules,
-            StringComparison.OrdinalIgnoreCase);
-        Assert.DoesNotContain("graphs, or tables", english.StepByStepSolutions,
-            StringComparison.OrdinalIgnoreCase);
-
-        Assert.Equal(31, 18 + 13);
-        Assert.Equal(25, 18 + 7);
-        Assert.Equal(29, 64 - 35);
-        Assert.Equal(19, 31 - 12);
+        Assert.Contains("5K runners",english.WorkedExamples);
+        Assert.Contains("math walk",english.WorkedExamples,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("unknown",english.WorkedExamples,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Step 3 For stories",english.StepByStepSolutions);
+        Assert.DoesNotContain("algebraic transformations",english.KeyConceptsAndRules,StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("graphs, or tables",english.StepByStepSolutions,StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
@@ -61,7 +53,7 @@ public sealed class CommonCoreG2StoryProblemsSourceCorrectionTests
 
         var sibling = Assert.Single(doc.Lessons,
             x => x.LessonCode == "PED:US-CCSS-MATH:G2:U09:L10");
-        Assert.Equal(CommonCoreRichContentCorrections.CorrectionContentVersion,
+        Assert.Equal(CommonCoreG2Unit9SourceCorrections.VersionFor(143),
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, sibling));
         Assert.False(CommonCoreG2StoryProblemsSourceCorrection.IsTarget(doc, sibling));
 
@@ -127,7 +119,7 @@ public sealed class CommonCoreG2StoryProblemsSourceCorrectionTests
                 english.KeyConceptsAndRules, english.WorkedExamples,
                 english.StepByStepSolutions, english.CommonMistakes, english.QuickSummary));
         Assert.NotNull(rich);
-        Assert.Contains("18 + 13 = 31",
+        Assert.Contains("5K runners",
             rich!.KeyConcepts[0].Example, StringComparison.Ordinal);
         Assert.DoesNotContain("Equivalent algebraic transformations",
             rich.KeyConcepts[0].Rule, StringComparison.OrdinalIgnoreCase);

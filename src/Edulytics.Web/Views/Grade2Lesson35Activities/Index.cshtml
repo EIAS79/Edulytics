@@ -1,0 +1,70 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson35Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade2 — Standard Units of Measure";}
+<style>
+.g2m35{max-width:940px;margin:auto;padding:20px;color:#284452}
+.g2m35 .panel{background:#fff;border:1px solid #cbdbe5;border-radius:12px;margin:16px 0;padding:20px}
+.g2m35 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.g2m35 label{display:block;font-weight:700;margin:12px 0 4px}
+.g2m35 input,.g2m35 textarea{width:100%;max-width:560px;padding:10px;border:1px solid #8297a5;border-radius:8px;font:inherit}
+.g2m35 .bar{background:#d1ecf4;border:1px solid #5089a0;height:30px;display:flex;align-items:center;justify-content:center;border-radius:4px}
+.g2m35 .blocks{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.g2m35 .blocks10{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.g2m35 .button{background:#117f98;color:white;border:0;border-radius:8px;padding:12px 20px;font-weight:700}
+.g2m35 .ok{border-left:4px solid #31845d;padding-left:12px}
+.g2m35 .bad{border-left:4px solid #b54458;padding-left:12px}
+.g2m35 .review{border-left:4px solid #b88b33;padding-left:12px}
+</style>
+<main class="g2m35">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Standard Units of Measure</h1>
+<p>In this source lesson you physically measure the same <strong>40-centimeter string</strong> first with different-length straws, then with true <strong>1-centimeter cubes</strong>. These illustrated segments are first-party mathematical diagrams, not photographs or evidence of actual measurement.</p>
+<form asp-controller="Grade2Lesson35Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. What do you know about measuring?</h2>
+<label asp-for="Answers.WhatIsMeasurement">Describe how to place one end of the measuring unit at the start and repeat without gaps or overlaps</label>
+<textarea asp-for="Answers.WhatIsMeasurement" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>2. Priya's Pet — two kinds of straws</h2>
+<p>Priya uses a piece of string cut to the length of her iguana. The teacher prepares a real 40cm length for every group. HALF the groups use 10cm straws; the other half use 5cm straws. Compare the numerical counts. Their physical string is the SAME length.</p>
+<p><strong>Original Edulytics schematic: four equal 10cm units</strong></p>
+<div class="blocks10" aria-label="Four original illustrated 10 centimeter segments add to 40cm">
+@for(var i=0;i<4;i++){<span class="bar">10 cm</span>}</div>
+<p><strong>Same length as eight equal 5cm units:</strong></p>
+<div class="blocks" aria-label="Eight original illustrated 5 centimeter segments add to 40cm">
+@for(var i=0;i<8;i++){<span class="bar">5 cm</span>}</div>
+<div class="grid">
+<div><label asp-for="Answers.SourceTenCmStraws">How many 10cm straws?</label><input asp-for="Answers.SourceTenCmStraws" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceFiveCmStraws">How many 5cm straws?</label><input asp-for="Answers.SourceFiveCmStraws" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.ActualStrawComparison">What did your REAL group measure? Why do groups report different straw counts?</label>
+<textarea asp-for="Answers.ActualStrawComparison" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Use a standard unit — centimeter cubes</h2>
+<p>Use genuine centimeter cubes, each one with an edge precisely 1cm. Line them up end-to-end on the same prepared40cm string. A connecting cube is NOT necessarily a 1cm cube.</p>
+<label asp-for="Answers.SourceCubes">How many true 1cm centimeter cubes in the 40cm source string?</label>
+<input asp-for="Answers.SourceCubes" type="number" min="0" max="100" required/>
+<label asp-for="Answers.ActualCubeMeasurement">How did your partner align the actual cubes without gaps or overlap?</label>
+<textarea asp-for="Answers.ActualCubeMeasurement" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Independently authored Edulytics math check</h2>
+<p>A new numerical diagram shows a straight 30cm line. How many equal 10cm lengths, 5cm lengths or 1cm cube edges fit? This is not the publisher's restricted Measure a Rectangle Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.IndependentTenCm">Pieces 10cm long</label><input asp-for="Answers.IndependentTenCm" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.IndependentFiveCm">Pieces 5cm long</label><input asp-for="Answers.IndependentFiveCm" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.IndependentCubes">1cm cube edges</label><input asp-for="Answers.IndependentCubes" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.UnitReflection">Why is the centimeter a better way for different groups to compare their answers?</label>
+<textarea asp-for="Answers.UnitReflection" rows="2" maxlength="2000"></textarea>
+<button type="submit" class="button">Check number of units and teacher-review tasks</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically correct":r.Correct==false?"Check the unit length":"Teacher review only"). @r.Message</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var rule in UsCcssG2Unit3FirstLessonStandardUnits.TeacherRubric){<li>@rule</li>}</ul>
+<p>IM K–5 2021 G2 Unit3 Lesson1, 2.MD.A.1 and 2.MD.A.2 in registered source pack. No physical source measurement or official mark digitally certified.</p></section>
+</main>

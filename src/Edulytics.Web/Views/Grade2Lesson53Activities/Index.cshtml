@@ -1,0 +1,67 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson53Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Whole Numbers on the Number Line";}
+<style>
+.g2l53{max-width:990px;margin:auto;padding:20px;color:#234257}
+.g2l53 .panel{background:#fff;border:1px solid #c9dce4;border-radius:12px;padding:18px;margin:15px 0}
+.g2l53 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.g2l53 label{display:block;margin:10px 0 5px;font-weight:700}
+.g2l53 input,.g2l53 textarea{font:inherit;max-width:550px;width:100%;padding:9px;border:1px solid #869bab;border-radius:8px}
+.g2l53 .ticks{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));font-size:.88rem;text-align:center;padding:15px 4px;border-top:2px solid #526e85;margin-top:18px}
+.g2l53 .ticks span{border-left:1px solid #526e85;padding-top:7px}
+.g2l53 .ticks span:last-child{border-right:1px solid #526e85}
+.g2l53 .action{padding:12px 20px;background:#137f91;color:white;font-weight:700;border:0;border-radius:9px}
+.g2l53 .ok{border-left:4px solid #2b865d;padding-left:12px}
+.g2l53 .bad{border-left:4px solid #c24d54;padding-left:12px}
+.g2l53 .review{border-left:4px solid #b58a2e;padding-left:12px}
+</style>
+<main class="g2l53">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Whole Numbers on the Number Line</h1>
+<p>Every equally spaced tick is ONE length unit from the next. Read each number as its distance from zero, and mark a POINT directly over its tick. A number line can use any consistent-sized unit interval, unlike an inch or centimeter ruler.</p>
+<form asp-controller="Grade2Lesson53Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Notice and Wonder — ruler versus number line</h2>
+<p>Look at the publisher's real ruler and number-line examples with your teacher. Notice the same spacing and numbers in increasing order. Describe aloud what makes a number line different from a centimeter ruler.</p>
+<p>The diagram below is a separately authored numerical aid; it is NOT the publisher's original image.</p>
+<div class="ticks" aria-label="Illustrative whole-number line from 0 through 10 with equal ticks">
+<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+</div>
+</section>
+<section class="panel"><h2>2. Source Activity 1: complete original 0–10 labels</h2>
+<p>On the FIRST original line, publisher labels are 0, 1, 2, 5, 8, 9, 10, with four evenly spaced ticks missing their number labels. Write them in order. Your teacher also has the original diagram.</p>
+<div class="grid">
+<div><label asp-for="Answers.MissingThree">First blank after 2</label><input asp-for="Answers.MissingThree" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.MissingFour">Next blank before 5</label><input asp-for="Answers.MissingFour" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.MissingSix">First blank after 5</label><input asp-for="Answers.MissingSix" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.MissingSeven">Next blank before 8</label><input asp-for="Answers.MissingSeven" type="number" min="0" max="10" required/></div>
+</div>
+<p>On the SECOND source line only 0, 5 and 10 are written, but all other ticks are still present. Fill their labels on your physical worksheet.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPointSix">First line: locate 6 and draw a dot</label><input asp-for="Answers.FirstPointSix" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.GreaterThanSix">Another FIRST-line dot: choose ANY number greater than 6</label><input asp-for="Answers.GreaterThanSix" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.SecondPointNine">Second line: locate 9 and draw a dot</label><input asp-for="Answers.SecondPointNine" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.LessThanNine">Another SECOND-line dot: choose ANY number less than 9</label><input asp-for="Answers.LessThanNine" type="number" min="0" max="10" required/></div>
+</div></section>
+<section class="panel"><h2>3. Source Activity 2: construct your REAL 0–20 paper number line</h2>
+<p>Use a 24–30 inch strip of actual paper. Choose an object as your repeatable ONE-unit measure, mark 0 through 20 with 20 equal spaces, and put physical dots at 3 and 13. Compare your real line with your partner's; the physical unit size can differ from theirs.</p>
+<label asp-for="Answers.RealChosenUnit">What REAL repeated object did you choose as one unit interval?</label><textarea asp-for="Answers.RealChosenUnit" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealLineZeroToTwenty">How did you actually mark every 0–20 tick with equal spaces and zero anchored?</label><textarea asp-for="Answers.RealLineZeroToTwenty" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPointsThreeThirteen">Where are your actual point marks at 3 and 13 on your paper?</label><textarea asp-for="Answers.RealPointsThreeThirteen" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPartnerComparison">Compare with your REAL partner. What is the same and different?</label><textarea asp-for="Answers.RealPartnerComparison" rows="2" maxlength="2000"></textarea>
+<p>Only your teacher can verify these real-world actions, paper intervals and actual discussion.</p></section>
+<section class="panel"><h2>4. Independent Edulytics mathematics — not publisher Cool-down</h2>
+<div class="grid">
+<div><label asp-for="Answers.NewGapThreeThirteen">How many one-unit intervals from 3 to 13?</label><input asp-for="Answers.NewGapThreeThirteen" type="number" min="0" max="20" required/></div>
+<div><label asp-for="Answers.NewFromZeroThirteen">How many unit intervals from zero to 13?</label><input asp-for="Answers.NewFromZeroThirteen" type="number" min="0" max="20" required/></div>
+<div><label asp-for="Answers.NewTotalTickMarks">How many labeled ticks, including 0 and 20, on a complete 0–20 line?</label><input asp-for="Answers.NewTotalTickMarks" type="number" min="0" max="21" required/></div>
+</div><button class="action" type="submit">Check number-line mathematics</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback — physical tasks require teacher</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Check the number":"Teacher review required"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher's actual-work rubric</h2><ul>@foreach(var item in UsCcssG2Unit4FirstLessonNumberLine.TeacherRubric){<li>@item</li>}</ul>
+<p>IM K–5 2021 Grade 2 Unit 4 Lesson 1, CCSS 2.MD.B.6. Publisher images and restricted Cool-down are not reproduced. No official grades.</p></section>
+</main>

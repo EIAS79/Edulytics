@@ -1,0 +1,45 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Unit4FinalSixPage
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]=Model.Title;}
+<style>
+.g2u4l10{max-width:960px;margin:auto;padding:20px;color:#234557}
+.g2u4l10 section{background:white;border:1px solid #cbdce4;padding:18px;border-radius:10px;margin:15px 0}
+.g2u4l10 label{display:block;font-weight:700;margin:12px 0 4px}
+.g2u4l10 input,.g2u4l10 textarea{font:inherit;width:100%;max-width:540px;border:1px solid #849da9;border-radius:8px;padding:10px}
+.g2u4l10 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.g2u4l10 button{padding:12px 20px;background:#177f91;color:white;border:0;border-radius:9px;font-weight:700}
+</style>
+<main class="g2u4l10"><a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>@Model.Title</h1><p>Original IM2021 Grade2 U04 L@Model.LessonNumber — the authentic drawings, games and peer tasks are reviewed by the teacher.</p>
+<form asp-controller="Grade2Unit4FinalSixActivities" asp-action="Submit" asp-route-lessonNumber="@Model.LessonNumber" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section><h2>1. Source mathematics</h2><p>@Model.AuthenticSourceTasks</p>
+<div class="grid">
+<div><label asp-for="Answers.SourceA">@Model.SourceQuestions[0]</label><input asp-for="Answers.SourceA" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.SourceB">@Model.SourceQuestions[1]</label><input asp-for="Answers.SourceB" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.SourceC">@Model.SourceQuestions[2]</label><input asp-for="Answers.SourceC" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.SourceD">@Model.SourceQuestions[3]</label><input asp-for="Answers.SourceD" type="number" min="0" max="1000" required/></div>
+</div></section>
+<section><h2>2. Real student work — educator only</h2>
+<label asp-for="Answers.OriginalDiagramOrGame">What physical original source diagram/game/number-line representation did you complete?</label>
+<textarea asp-for="Answers.OriginalDiagramOrGame" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.OriginalPartnerEvidence">What did your actual partner say, explain or revise?</label>
+<textarea asp-for="Answers.OriginalPartnerEvidence" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.ActualOriginalTeacherObservation">Teacher feedback on authentic original publisher activity</label>
+<textarea asp-for="Answers.ActualOriginalTeacherObservation" maxlength="2000" rows="3"></textarea>
+<p>@Model.TeacherOnlyBoundary</p></section>
+<section><h2>3. Independent Edulytics numerical questions — not original publisher assessment</h2>
+<div class="grid">
+<div><label asp-for="Answers.IndependentA">@Model.FirstPartyQuestions[0]</label><input asp-for="Answers.IndependentA" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.IndependentB">@Model.FirstPartyQuestions[1]</label><input asp-for="Answers.IndependentB" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.IndependentC">@Model.FirstPartyQuestions[2]</label><input asp-for="Answers.IndependentC" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.IndependentD">@Model.FirstPartyQuestions[3]</label><input asp-for="Answers.IndependentD" type="number" min="0" max="1000" required/></div>
+</div><button type="submit">Check mathematics</button></section>
+</form>
+@if(Model.Submitted){<section aria-live="polite"><h2>Results</h2>@foreach(var feedback in Model.Feedback){<h3>@feedback.Section</h3><p>@feedback.Message</p>}</section>}
+<section><h2>Teacher-only academic check</h2><ul>
+@foreach(var item in UsCcssG2Unit4FinalSixSourcePractice.TeacherRubrics[Model.LessonNumber]){<li>@item</li>}</ul>
+<p>No official grades, original publisher image certification, Stage D or restricted Cool-down reproduction.</p></section>
+</main>

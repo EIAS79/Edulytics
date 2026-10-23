@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 53,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L01",
+  "title": "Whole Numbers on the Number Line",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "SOURCE_REVIEWED_PUBLIC_ORIGINAL_NO_AC_CLOSURE",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-1/preparation.html",
+    "lessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-1/lesson.html",
+    "originalContentBodySha256": "b9bf1f4c584581c4eda97feb0f144dcf4d2d8d07fafa0cb35e86673a88a0e120",
+    "sourceSemanticSha256": "cb781aa1c388f4c20fbdc54bab10b52dd3a12e0e1775ccc17b9e26771001904c",
+    "orderedOfficialOutcomes": [
+      "CCSS:2.MD.B.6"
+    ],
+    "sourceCopyright": "Illustrative Mathematics/Kendall Hunt 2021, CC BY 4.0; branded marks excluded",
+    "goal": "Use points and ticks on an equally spaced number line to show whole numbers as lengths from zero; 2.MD.B.6",
+    "warmup": "Original Notice and Wonder compares a number line with ruler marked 0..12; students discuss how same-spaced ticks and position from zero work",
+    "activity1": "Original ten-unit number lines: fill blank ticks with consecutive whole numbers, locate point 6, a point greater than 6, locate point 9 and one less than 9. Source first line labeled 0,1,2,5,8,9,10; second line labels 0,5,10.",
+    "activity2": "Original make-your-own 0..20 number line on a 24–30 inch strip using a repeated physical length unit; mark 3 and 13, compare with partner, ensure uniform adjacent intervals; different unit lengths across students are allowed",
+    "representation": "Within a given line tick intervals are equal, sequential, anchored at zero; a marked point identifies a number. Length interval chosen by pupil need not be inches/cm.",
+    "teacherOnly": "Notice/wonder oral discourse, physically accurate drawn/constructed number line, 0..20 ticks, partner comparison, teacher evaluation of actual student ruler analogue",
+    "originalCoolDown": "Publisher original Cool-down access is restricted; independently authored Edulytics exercise only, no verbatim copyrighted restricted test",
+    "sourceReviewedVia": "Live public lesson and preparation pages, not private teacher-login-only materials",
+    "stageAOriginalityBoundary": "Use source facts and mathematically original generated exercises; do not invent source images, student discussions, or physical work"
+  },
+  "baselineAudit": {
+    "existingFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g2-phase29-v1.lesson-content-pack.json",
+    "originalExplanation": "Identifies number-line structure and earlier rulers, but does not fully teach how units and tick marks represent numbers from zero.",
+    "originalKeyConcepts": "Generic locate numbers and broad measurement wording; needs explicit number line versus standard unit distinction.",
+    "originalWorkedExamples": "Starts true original tasks but contains truncated ellipsis, and should not be treated as a complete worked solution.",
+    "originalStepByStepSolutions": "Five generic steps not grounded in 0..10 equal ticks, 0..20 student construction, 3 and 13 point placement.",
+    "originalCommonMistakes": "Generic rather than identifying unequal spacing, shifted zero and incorrect point alignment.",
+    "recommendation": "Stage B: source SHA and exact six-field guarded content correction; Stage C: reviewed exact 0..10 missing-tick/point/greater-less and 0..20 equal-unit families, protected student UI, authored tests. Preserve human-only physical modeling. Do not auto-close without B/C.",
+    "evidenceLimit": "No compilation, runtime test, CI, Stage D, teacher academic acceptance, merge, or deployment attempted."
+  },
+  "closure": {
+    "aCStatus": "A_C_PENDING",
+    "stageA": "SOURCE_REVIEWED",
+    "stageB": "NOT_STARTED",
+    "stageC": "NOT_STARTED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "release": "NO_GO"
+  },
+  "nextAction": "GRADE2_ORDINAL53_STAGE_B_SOURCE_GUARDED_CORRECTION_THEN_STAGE_C_EXACT_PRACTICE_NO_SKIP"
+}

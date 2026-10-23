@@ -18,14 +18,35 @@ public sealed class UsCcssB001SourceGoalPracticeQuestionsTests
     ];
 
     [Fact]
-    public void FourCanonicalLessonsUseOnlyTheirReviewedExactSourceGoalFamily()
+    public void FourCanonicalLessonsRespectLaterSourceSpecificPracticeFamilySupersessions()
     {
         foreach(var (code,family) in Cases)
         {
             Assert.True(LessonPracticeCapabilityResolver.TryResolve(code,out var contract),code);
             Assert.NotNull(contract);
             Assert.Equal("READY_VERIFIED",contract!.Readiness);
-            Assert.Equal(new[]{family},contract.AllowedQuestionFamilies);
+            // Original B001 mathematical generators remain available for their
+            // source-goal proof, but the later source-specific G2 lessons route
+            // through four independently reviewed families, not an obsolete single.
+            var expected=code switch
+            {
+                G2Compare=>new[]{
+                    "usccss.g2.u02.l01.movie_snacks_combine",
+                    "usccss.g2.u02.l01.movie_snacks_difference",
+                    "usccss.g2.u02.l01.cube_trains_total",
+                    "usccss.g2.u02.l01.cube_trains_difference"
+                },
+                G2Length=>new[]{
+                    "usccss.g2.u03.l12.two_step_take_from",
+                    "usccss.g2.u03.l12.extra_piece_given_to_friend",
+                    "usccss.g2.u03.l12.missing_length_then_start_unknown",
+                    "usccss.g2.u03.l12.two_step_change_then_add"
+                },
+                _=>new[]{family}
+            };
+            Assert.Equal(expected,contract.AllowedQuestionFamilies);
+            Assert.All(contract.AllowedQuestionFamilies, f =>
+                Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f)));
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
             Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var interaction));
             Assert.NotNull(interaction);

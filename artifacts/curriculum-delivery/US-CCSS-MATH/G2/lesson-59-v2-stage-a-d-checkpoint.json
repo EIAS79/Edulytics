@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 59,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L07",
+  "title": "Addition and Subtraction on the Number Line",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "ORIGINAL_PUBLISHER_SOURCE_REVIEWED",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-7/preparation.html",
+    "sourceBodySha256": "a9cac619384b144ba8ff64fbb9ae61f0d306568b1afa47bc1a8dd9799ced3d0e",
+    "sourceSemanticSha256": "da6057120755bad95d2ead7c1863608d8f31e1fafda5093532059c28adbcf9fb",
+    "officialOutcomes": [
+      "CCSS:2.MD.B.6"
+    ],
+    "teacherOnly": "Original publisher diagrams, physical arrow drawings, partner discourse, formal source Cool-down not invented"
+  },
+  "stageB": {
+    "status": "SHA_GUARDED_SIX_FIELD_INSTRUCTIONAL_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4DirectionalJumpCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "persistedGuard": "Exact original source URL/SHA, ordered CCSS outcomes, original six learner fields and approved predecessor content version"
+  },
+  "stageC": {
+    "status": "PROTECTED_STUDENT_SOURCE_ACTIVITIES_AND_FOUR_INDEPENDENT_EXACT_FAMILIES_WRITTEN",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit4ArrowActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4ArrowActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4ArrowLessonsQuestions.cs",
+    "registry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "familyIDs": [
+      "usccss.g2.u04.l07.right_jump_destination",
+      "usccss.g2.u04.l07.left_jump_destination",
+      "usccss.g2.u04.l07.directed_jump_length",
+      "usccss.g2.u04.l07.start_end_comparison"
+    ],
+    "sourceBoundary": "Original A-H match and one unmatched equation true teacher images",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal59OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal59DirectionalMathTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal59ExactArrowFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal59ArrowRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "runtimeCompilationVerified": false,
+    "stageDExecuted": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO_UNVERIFIED"
+  },
+  "nextSequentialLesson": 60
+}

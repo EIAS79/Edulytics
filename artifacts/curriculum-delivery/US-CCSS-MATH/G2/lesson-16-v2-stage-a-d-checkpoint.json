@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 16,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L16",
+  "unitNumber": 1,
+  "lessonNumber": 16,
+  "title": "Solve All Kinds of Compare Problems",
+  "officialOutcomeCodes": [
+    "CCSS:2.OA.A.1",
+    "CCSS:2.OA.B.2"
+  ],
+  "sourceEdition": "IM K-5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_2021_SOURCE_REVIEW_AND_INDEPENDENT_EDULYTICS_COOLDOWN",
+    "teacherSource": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-16/lesson.html",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-16/preparation.html",
+    "warmup": "True/False:18+5=18+2+3 true;28+5=30+3 true;38+4=40+3 false, source make-ten and decompositions.",
+    "activity1": "Library: Priya29 books returned Andre8 more =>37 unknown larger; Andre45 pages read Priya20 fewer =>25 unknown smaller; tape labels and number talk.",
+    "activity2": "Original MLR6 Three Reads: Jada read10 fewer than Noah27 =>17; Noah25 minutes Jada30 more=>55; Jada47 pages Noah20 =>diff27; Jada28 books Noah14 more =>Noah42. Teacher permits labeled tape diagram or other mathematically valid representation.",
+    "lessonSynthesis": "Who had more, less, gap and how making tens and place value help, real partner explanation.",
+    "publisherCoolDown": "Compare the Pages restricted behind teacher login; replace with independent Edulytics larger54, smaller22, gap22 numerical check plus teacher rubric. No publisher restricted text copied.",
+    "publicOriginalStudentTaskReviewed": true,
+    "art": "New CSS tapes, no publisher diagram asset reuse",
+    "noFalseLearnerActivityAttestation": true
+  },
+  "stageB": {
+    "status": "COMPLETE_PREDECESSOR_GUARDED_SOURCE_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1AllCompareProblemsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceGuard": "Original URL and canonical SHA, official two ordered outcomes, previous six English content fields, prior rich-content version.",
+    "repairs": "Replace generic compare steps with exact source six stories, make-ten 29+8 and 28+14, tens subtraction, MLR6 Three Reads and alternative valid visual models."
+  },
+  "stageC": {
+    "status": "COMPLETE_SOURCE_EXACT_THREE_UNKNOWN_NUMERIC_FAMILIES_STUDENT_UI",
+    "families": [
+      "usccss.g2.u01.l16.solve_compare_larger",
+      "usccss.g2.u01.l16.solve_compare_smaller",
+      "usccss.g2.u01.l16.solve_compare_difference"
+    ],
+    "registry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson16CompareContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson16CompareQuestions.cs",
+    "sourceAllSixProblems": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1SixteenthLessonComparePractice.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson16ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson16Activities/Index.cshtml",
+    "studentReaderEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "numericGrading": "Exact source six known-values/story position/related arithmetic equation; generated practice includes larger/smaller/difference within100; Edulytics independent three-position exit ticket.",
+    "teacherRubric": "Three Reads actual student cognitive sequence, own tape or alternative drawing, student and partner explanation, number-place strategy are teacher reviewed, not auto-certified.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1AllCompareProblemsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1SixteenthLessonComparePracticeTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson16CompareQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson16ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "security": "Student policy, current adoption and published content permission, CSRF; no official grades saved."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "academicHumanSignoff": "NOT_ASSERTED",
+    "productionRuntimeVerified": false,
+    "mainMerge": false,
+    "deploy": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_GRADE2_U01_L17_STRICTLY_AFTER_16_CLOSE"
+}

@@ -162,6 +162,20 @@ public static class CommonCoreG2TapeDiagramAndStoryResolutionCorrection
             StringComparison.Ordinal) &&
         Repairs.ContainsKey(lesson.LessonCode);
 
+    /// <summary>Only the exact prior tape-diagram/story solution with pinned original fields.</summary>
+    public static bool MatchesApprovedFirstPassPredecessor(CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson,IReadOnlyList<string> original,IReadOnlyList<string> current)
+    {
+        if(!IsTarget(document,lesson) || original.Count!=6 || current.Count!=6)return false;
+        var repair=Repairs[lesson.LessonCode];
+        if(lesson.SourceUrl!=repair.SourceUrl ||
+           !string.Equals(lesson.CanonicalBodySha256,repair.CanonicalSha256,StringComparison.OrdinalIgnoreCase) ||
+           !lesson.OutcomeCodes.SequenceEqual(repair.Outcomes))return false;
+        return current[0]==original[0]&&current[1]==repair.Concepts &&
+               current[2]==repair.Examples&&current[3]==repair.Steps &&
+               current[4]==repair.Mistakes&&current[5]==original[5];
+    }
+
     public static void Apply(CanonicalLessonContentPackDocument document)
     {
         if (!string.Equals(document.PackCode,
@@ -183,6 +197,11 @@ public static class CommonCoreG2TapeDiagramAndStoryResolutionCorrection
                 string.Equals(x.CultureCode, "en", StringComparison.Ordinal))
                 ?? throw new InvalidOperationException(
                     $"Missing G2 Unit 9 English translation: {lesson.LessonCode}");
+
+            // Later reviewed Unit9 Rich V2 exact learner body supersedes this first-pass
+            // correction; it may be encountered again when Materialize is idempotently called.
+            if(CommonCoreG2Unit9SourceCorrections.IsFinalApplied(document,lesson))
+                continue;
 
             if (string.Equals(english.StepByStepSolutions, repair.Steps,
                     StringComparison.Ordinal))

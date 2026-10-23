@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 37,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L03",
+  "title": "Create and Use a Ruler",
+  "unitNumber": 3,
+  "lessonNumber": 3,
+  "stageA": {
+    "status": "COMPLETE_LOCAL_ORIGINAL_2021_TEACHER_PREP_AND_LESSON_REVIEW",
+    "bookSource": "Local read-only Grade2 U03 L03 teacher preparation and lesson HTML",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-3/preparation.html",
+    "sourceSemanticSha256": "cff202c39fef2863d2b7f76bb84ea021a5774614cacf7c9aa67a6cfac8ec6312",
+    "canonicalBodySha256": "26e47ae63c5720a631ebca53fffdd3edcc2cb1e371960b8da8868fb53010bc70",
+    "orderedOutcomeCodes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.4",
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.B.5"
+    ],
+    "warmup": "Original Number Talk63−3=60,63−20=43,63−23=40,63−24=39.",
+    "activity1": "Create homemade ruler0–25cm from authentic template, scissors and centimeter cubes; label equal-spaced TICK MARKS, not spaces, origin0 essential.",
+    "activity2": "Measure source rectangle pictures A–F with actual student ruler; difference A−B, F−D, find longest two and joined length.",
+    "sourceGap": "Public lesson text does not give authoritative absolute numeric lengths of original A–F pictures; do not fabricate.",
+    "synthesis": "Source says longest rectangle10cm longer than shortest; no invented identities or total absolute lengths.",
+    "coolDown": "Original Use a Ruler restricted teacher-login, independent Edulytics exit distinct.",
+    "teacherOnly": "Actual homemade ticks, original printed A–F measurements, peer MLR8 talk and ruler precision.",
+    "rights": "Source mathematical facts attributed; teacher-only print media not duplicated."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_URL_PREDECESSOR_GUARDED_RICH_LEARNER_TEXT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3BuildRulerTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guards": "Exact original teacher URL, canonical SHA, ordered source standards, six old learner fields, approved persisted version."
+  },
+  "stageC": {
+    "status": "COMPLETE_FOUR_EXACT_CM_FAMILIES_PROTECTED_PAGE_UNRUN_TEST_FILES",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3ThirdLessonBuildRuler.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson3BuildRulerContracts.cs",
+    "questionGenerator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson3BuildRulerQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson37ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson37Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l03.ruler_tick_interval",
+      "usccss.g2.u03.l03.ruler_from_nonzero_start",
+      "usccss.g2.u03.l03.compare_two_lengths",
+      "usccss.g2.u03.l03.join_two_lengths"
+    ],
+    "firstPartyMath": "3→18=15cm,23−17=6cm,11+8=19cm,4→21=17cm; NOT source rectangle actual lengths.",
+    "teacherOnly": "Authentic printed A–F rectangle lengths and actual ruler tick drawing, student measurement and MLR8 discourse.",
+    "security": "StudentPortal policy, adoption and published lesson check, antiforgery POST, bounded input, no real grade stored.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3BuildRulerTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3ThirdLessonBuildRulerTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson3BuildRulerQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson37ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L04_ORDINAL38_SOURCE_A_B_C_SEQUENTIAL"
+}

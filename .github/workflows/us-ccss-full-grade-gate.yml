@@ -39,6 +39,10 @@ on:
       - 'tests/us-ccss-full-grade-gate.test.cjs'
       - 'tests/us-ccss-g1-stage-d-checkpoint-closure.test.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-*-v2-stage-a-d-checkpoint.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G2/full-grade-progress.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G2/stage-d-execution-ledger.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G2/grade-manifest.json'
+      - 'tests/us-ccss-g2-stage-d-evidence-contract.test.cjs'
       - '.github/workflows/us-ccss-full-grade-gate.yml'
   push:
     branches: [main]
@@ -78,6 +82,10 @@ on:
       - 'tests/us-ccss-full-grade-gate.test.cjs'
       - 'tests/us-ccss-g1-stage-d-checkpoint-closure.test.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-*-v2-stage-a-d-checkpoint.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G2/full-grade-progress.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G2/stage-d-execution-ledger.json'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G2/grade-manifest.json'
+      - 'tests/us-ccss-g2-stage-d-evidence-contract.test.cjs'
       - '.github/workflows/us-ccss-full-grade-gate.yml'
   workflow_dispatch:
     inputs:
@@ -223,3 +231,22 @@ jobs:
           name: grade-g1-real-release-eligibility
           path: /tmp/grade-real-release.json
           if-no-files-found: warn
+
+  g2-stage-d-evidence-contract:
+    name: g2-full-grade-146-technical-evidence-only
+    if: github.event_name == 'pull_request' && startsWith(github.head_ref, 'curriculum/g2')
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Confirm all 146 canonical Grade 2 evidence rows; never grant academic approval
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test tests/us-ccss-g2-stage-d-evidence-contract.test.cjs
+          echo 'G2_FULL_GRADE_146_DIGITAL_LEDGER_CONTRACT_PASS_NO_ACADEMIC_APPROVAL'

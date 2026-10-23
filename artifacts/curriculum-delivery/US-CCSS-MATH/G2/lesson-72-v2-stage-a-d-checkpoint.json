@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 2,
+  "gradeOrdinal": 72,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U05:L05",
+  "title": "Expanded Form of Numbers",
+  "stageA": {
+    "status": "ORIGINAL_PUBLIC_TEACHER_SOURCE_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-5/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-5/lesson.html",
+    "originalCanonicalBodySha256": "0e7aa16652f3cd69fd74424460a333ed95dbfc52a44f9a9a207a73fc53ca3e81",
+    "officialOutcomes": [
+      "CCSS:2.NBT.A.1",
+      "CCSS:2.NBT.A.3"
+    ],
+    "observedOriginalActivities": "Original U05 L5 teacher lesson: all authentic student-facing mathematical examples and warm-up reviewed against editorial Rich V2.",
+    "originalImages": "Authentic diagrams and peer gallery/number words or physical blocks require real teacher. Restricted Cool-down not reproduced."
+  },
+  "stageB": {
+    "status": "ORIGINAL_SHA_GUARDED_RICH_6_FIELD_CORRECTION",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit5OriginalRichContentCorrections.cs",
+    "note": "Strong exact six-predecessor field validation for unmodified original 4–6; Source SHA+official outcome guarded"
+  },
+  "stageC": {
+    "status": "FOUR_INDEPENDENT_EXACT_FAMILIES_AND_SOURCE_TEACHER_COMPANION_WRITTEN",
+    "sourceMath": "Original source numerical quantities checked, open images and actual writing reserved for teacher",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Unit5FirstSixActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Unit5FirstSixActivities/Index.cshtml",
+    "exactGenerator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit5FirstSixQuestions.cs",
+    "exactFamilies": [
+      "usccss.g2.u05.l05.expanded_form_total",
+      "usccss.g2.u05.l05.hundreds_place_component",
+      "usccss.g2.u05.l05.max_digit_arrangement",
+      "usccss.g2.u05.l05.min_digit_arrangement"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal72OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal72MathAndTeacherBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal72ExactQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal72PrivateStudentRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 73
+}

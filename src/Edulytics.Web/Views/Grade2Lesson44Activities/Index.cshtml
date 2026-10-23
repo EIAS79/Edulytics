@@ -1,0 +1,64 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson44Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Measure with a Torn Tape";}
+<style>
+.g2l44{max-width:960px;margin:auto;padding:22px 15px;color:#27475b}.g2l44 .panel{background:#fff;border:1px solid #c8d9e2;border-radius:11px;padding:20px;margin:14px 0}
+.g2l44 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.g2l44 label{display:block;font-weight:700;margin:10px 0 4px}
+.g2l44 input,.g2l44 textarea,.g2l44 select{font:inherit;padding:10px;border:1px solid #8498a8;border-radius:7px;width:100%;max-width:540px}
+.g2l44 .action{color:#fff;background:#047b91;border:0;border-radius:8px;padding:13px 21px;font-weight:bold}
+.g2l44 .good{border-left:4px solid #2f8559;padding-left:12px}.g2l44 .bad{border-left:4px solid #b34a5c;padding-left:12px}.g2l44 .review{border-left:4px solid #b08934;padding-left:12px}
+.g2l44 .scale{display:flex;justify-content:space-between;max-width:620px;gap:0;flex-wrap:nowrap}
+.g2l44 .scale span{flex:1;text-align:center;font-size:12px;border-left:1px solid #718e9c;padding:8px 0}
+</style>
+<main class="g2l44">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Measure with a Torn Tape</h1><p>You do NOT have to start measuring at 0 on a ruler. Count the <strong>equal spaces between the start and end marks</strong>.</p>
+<form asp-controller="Grade2Lesson44Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. True or False? Constant Difference</h2>
+<div class="grid">
+<div><label asp-for="Answers.TrueA">10−0 = 12−2</label><select asp-for="Answers.TrueA"><option>True</option><option>False</option></select></div>
+<div><label asp-for="Answers.TrueB">8−4 = 10−6</label><select asp-for="Answers.TrueB"><option>True</option><option>False</option></select></div>
+<div><label asp-for="Answers.TrueC">12−4 = 10−3</label><select asp-for="Answers.TrueC"><option>True</option><option>False</option></select></div>
+<div><label asp-for="Answers.TrueD">15−2 = 13−0</label><select asp-for="Answers.TrueD"><option>True</option><option>False</option></select></div>
+</div><label asp-for="Answers.CorrectFalseReason">Correct the FALSE statement and explain why the difference stays unchanged when both labels shift the same amount</label>
+<textarea asp-for="Answers.CorrectFalseReason" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>2. The Notebook Problem — Han and Jada</h2>
+<p>Original task: Han says notebook short side is 8 inches. Jada has a TORN tape but also gets 8 inches. Count from Jada's mark2 to mark10. The rightmost mark is10, but the LENGTH is8!</p>
+<div class="scale" role="img" aria-label="First-party ruler labels from 2 through10, eight equal inch intervals">
+@for(var x=2;x<=10;x++){<span>@x</span>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.JadaStart">Jada starts at mark</label><input asp-for="Answers.JadaStart" type="number" min="0" max="30" required/></div>
+<div><label asp-for="Answers.JadaEnd">Jada ends at mark</label><input asp-for="Answers.JadaEnd" type="number" min="0" max="30" required/></div>
+<div><label asp-for="Answers.JadaNotebookLength">Notebook length (inches)</label><input asp-for="Answers.JadaNotebookLength" type="number" min="0" max="30" required/></div>
+</div><p>Write on your paper: <strong>10−2=?</strong> and <strong>2+?=10</strong>. The teacher reviews your genuine measurement with a partner.</p></section>
+<section class="panel"><h2>3. Lin's Desktop — authentic teacher image required</h2>
+<p>Lin's tangled tape starts at16 inches. The SOURCE classroom discussion gives the SHORT SIDE's endpoint34, so short length18 inches. The long side needs the ORIGINAL drawing; we do not invent its endpoint.</p>
+<div class="grid">
+<div><label asp-for="Answers.LinDeskStart">Starting mark of Lin's tape</label><input asp-for="Answers.LinDeskStart" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.LinDeskShortEnd">Short side ending mark</label><input asp-for="Answers.LinDeskShortEnd" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.LinDeskShortLength">Short side actual length in inches</label><input asp-for="Answers.LinDeskShortLength" type="number" min="0" max="50" required/></div>
+</div>
+<label asp-for="Answers.LinLongSideActualImageNotes">Describe the real teacher image's long-side start and end marks (teacher checks)</label>
+<textarea asp-for="Answers.LinLongSideActualImageNotes" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealObjectAndPartner">Which REAL 2–10in object did you and a partner measure from different nonzero ruler marks?</label>
+<textarea asp-for="Answers.RealObjectAndPartner" rows="3" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. Original Edulytics virtual torn rulers</h2>
+<p>These are independently invented demonstrations, not the source notebook, desk art or protected Torn Tape Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.VirtualA">Virtual from3 to11: inches?</label><input asp-for="Answers.VirtualA" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.VirtualB">Virtual from4 to13: inches?</label><input asp-for="Answers.VirtualB" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.VirtualC">Virtual from6 to18: inches?</label><input asp-for="Answers.VirtualC" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.ExitA">Exit from7 to16: inches?</label><input asp-for="Answers.ExitA" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.ExitB">Exit from13 to26: inches?</label><input asp-for="Answers.ExitB" type="number" min="0" max="50" required/></div>
+</div><button class="action" type="submit">Check arithmetic, then show what a teacher must observe</button></section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"good":r.Correct==false?"bad":"review")"><h3>@r.Section</h3>
+<p>@(r.Correct==true?"Numeric check passed":r.Correct==false?"Recheck the calculation":"Teacher review needed"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var x in UsCcssG2Unit3TenthLessonTornTape.TeacherRubric){<li>@x</li>}</ul>
+<p>Original IM K–5 2021 Grade2 Unit3 Lesson10; Addressing2.OA.B.2, distinct Building Towards2.MD.B.6. Original Torn Tape cooldown restricted, not copied; official grades never stored.</p></section>
+</main>

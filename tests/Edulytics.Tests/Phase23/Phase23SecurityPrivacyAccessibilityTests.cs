@@ -267,8 +267,13 @@ public sealed class
 
         var eventHandler =
             new Regex(
-                @"\son[a-z]+\s*=",
+                @"<[^>]*\son[a-z]+\s*=",
                 RegexOptions.IgnoreCase);
+
+        // Detect DOM event-handler ATTRIBUTES in opening tags, not
+        // innocent educational text such as '5 tens,5 ones = ?'.
+        Assert.DoesNotMatch(eventHandler, "<label>Original 5 tens,5 ones = ?</label>");
+        Assert.Matches(eventHandler, "<button onclick=\"unsafe()\">Click</button>");
 
         foreach (var file in
                  Directory.EnumerateFiles(

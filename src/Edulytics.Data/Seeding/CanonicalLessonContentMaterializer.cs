@@ -31,7 +31,79 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document);
         CommonCoreG1CountAndAddPilotCorrection.Apply(document);
         CommonCoreG2SourceGroundedFoundationsCorrections.Apply(document);
+        CommonCoreG2Unit1TenTwentySourceTeachingCorrections.Apply(document);
+        CommonCoreG2Unit1HowCloseSourceTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1AddWithin50SourceTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1CentersAndRealDataCorrections.Apply(document);
+        CommonCoreG2Unit1PictureGraphSourceTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1BarGraphsSourceTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1ConstructGraphsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection.Apply(document);
+        CommonCoreG2Unit1BarCompareTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1TapeDiagramTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1AllCompareProblemsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.Apply(document);
+        CommonCoreG2Unit1ClassSurveysTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2UnknownAddendTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2DecomposeTenTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection.Apply(document);
+        CommonCoreG2Unit2TwoDigitTradeTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2DifferentWaysDecomposeTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2MixedAddSubtractTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrection.Apply(document);
+        CommonCoreG2Unit2SeedsStoryTypesTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2StoryEquationsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2TapeStoriesCenterTeachingCorrection.Apply(document);
+        CommonCoreG2Unit2MarketInventoryTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3StandardUnitsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3BeardedDragonCmTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3BuildRulerTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3EstimateMeasureCmTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3MetersReptileTapeTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection.Apply(document);
+        CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3FeetFishTapeTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3TornTapeTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3TargetMeasurementsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3PencilLinePlotTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3PlantHeightsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection.Apply(document);
+        CommonCoreG2Unit3YardstickTeachingCorrection.Apply(document);
+        CommonCoreG2Unit4NumberLineTeachingCorrection.Apply(document);
+        CommonCoreG2Unit4NumberLineFeaturesTeachingCorrection.Apply(document);
+        CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.Apply(document);
+        CommonCoreG2Unit4CompareNumberLinesCorrection.Apply(document);
+        CommonCoreG2Unit4EstimateNumberLineCorrection.Apply(document);
+        CommonCoreG2Unit4CenterDay1NumberLineCorrection.Apply(document);
+        CommonCoreG2Unit4DirectionalJumpCorrection.Apply(document);
+        CommonCoreG2Unit4EquationArrowCorrection.Apply(document);
+        CommonCoreG2Unit4DifferenceStrategiesCorrection.Apply(document);
+        CommonCoreG2Unit4PlaceValueLineCorrection.Apply(document);
+        CommonCoreG2Unit4MakeTenStrategiesCorrection.Apply(document);
+        CommonCoreG2Unit4UnknownArrowRiddlesCorrection.Apply(document);
+        CommonCoreG2Unit4StoryRepresentationCorrection.Apply(document);
+        CommonCoreG2Unit4JumpTheLineCenterCorrection.Apply(document);
+        CommonCoreG2Unit4AgeRiddlesCorrection.Apply(document);
         CommonCoreG2HundredsPlaceValueSourceCorrections.Apply(document);
+        CommonCoreG2Unit5OriginalRichContentCorrections.Apply(document);
+        CommonCoreG2Unit5ComparisonSourceCorrections.Apply(document);
+        CommonCoreG2Unit6SourceCorrections.Apply(document);
+        CommonCoreG2Unit7FirstFourCorrections.Apply(document);
+        CommonCoreG2Unit7NextFourCorrections.Apply(document);
+        CommonCoreG2Unit7LastTenCorrections.Apply(document);
+        CommonCoreG2Unit8SourceCorrections.Apply(document);
+        CommonCoreG2Unit9SourceCorrections.Apply(document);
         CommonCoreG1Unit2StorySourceCorrections.Apply(document);
         CommonCoreB001SourceGoalMismatchCorrections.Apply(document);
         CommonCoreG1Unit2Part2SourceTeachingCorrections.Apply(document);
@@ -209,10 +281,152 @@ public static class CanonicalLessonContentMaterializer
         var g2 = CommonCoreG2SourceGroundedFoundationsCorrections
             .GetExpectedContentVersion(document, lesson, g1Pilot);
 
-        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+        var g2TenTwenty = CommonCoreG2Unit1TenTwentySourceTeachingCorrections
             .GetExpectedContentVersion(document, lesson, g2);
-        var g1Stories = CommonCoreG1Unit2StorySourceCorrections
+        var g2HowClose = CommonCoreG2Unit1HowCloseSourceTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2TenTwenty);
+        var g2Add50 = CommonCoreG2Unit1AddWithin50SourceTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2HowClose);
+        var g2Centers = CommonCoreG2Unit1CentersAndRealDataCorrections
+            .GetExpectedContentVersion(document, lesson, g2Add50);
+        var g2Picture = CommonCoreG2Unit1PictureGraphSourceTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Centers);
+        var g2Bar = CommonCoreG2Unit1BarGraphsSourceTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Picture);
+        var g2Construct = CommonCoreG2Unit1ConstructGraphsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Bar);
+        var g2Questions = CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Construct);
+        var g2Centers2 = CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
+            .GetExpectedContentVersion(document, lesson, g2Questions);
+        var g2Compare = CommonCoreG2Unit1BarCompareTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Centers2);
+        var g2Unit1Tape = CommonCoreG2Unit1TapeDiagramTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Compare);
+        var g2Positions = CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Unit1Tape);
+        var g2AllPositions = CommonCoreG2Unit1AllCompareProblemsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Positions);
+        var g2Collections = CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2AllPositions);
+        var g2Survey = CommonCoreG2Unit1ClassSurveysTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Collections);
+        var g2U02Compare = CommonCoreG2Unit2AddSubtractCompareTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Survey);
+        var g2U02Missing = CommonCoreG2Unit2UnknownAddendTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2U02Compare);
+        var g2Zoo = CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2U02Missing);
+        var g2Center = CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Zoo);
+        var g2Decompose = CommonCoreG2Unit2DecomposeTenTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Center);
+        var g2Target = CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Decompose);
+        var g2TwoDigits = CommonCoreG2Unit2TwoDigitTradeTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Target);
+        var g2Different = CommonCoreG2Unit2DifferentWaysDecomposeTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2TwoDigits);
+        var g2Mixed = CommonCoreG2Unit2MixedAddSubtractTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Different);
+        var g2Center2 = CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Mixed);
+        var g2Seeds = CommonCoreG2Unit2SeedsStoryTypesTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Center2);
+        var g2Mancala = CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Seeds);
+        var g2Equations = CommonCoreG2Unit2StoryEquationsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Mancala);
+        var g2TwoStep = CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Equations);
+        var g2TapeCenter = CommonCoreG2Unit2TapeStoriesCenterTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2TwoStep);
+        var g2Market = CommonCoreG2Unit2MarketInventoryTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2TapeCenter);
+        var g2MeasureUnits = CommonCoreG2Unit3StandardUnitsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Market);
+        var g2Bearded = CommonCoreG2Unit3BeardedDragonCmTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2MeasureUnits);
+        var g2Ruler = CommonCoreG2Unit3BuildRulerTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Bearded);
+        var g2EstimateCm = CommonCoreG2Unit3EstimateMeasureCmTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Ruler);
+        var g2Meters = CommonCoreG2Unit3MetersReptileTapeTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2EstimateCm);
+        var g2Reptiles = CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Meters);
+        var g2Stage2 = CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Reptiles);
+        var g2Inch = CommonCoreG2Unit3WhatIsAnInchTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Stage2);
+        var g2Feet = CommonCoreG2Unit3FeetFishTapeTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Inch);
+        var g2Torn = CommonCoreG2Unit3TornTapeTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Feet);
+        var g2Ribbon = CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Torn);
+        var g2Bracelets = CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Ribbon);
+        var g2TargetMeasure = CommonCoreG2Unit3TargetMeasurementsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Bracelets);
+        var g2HandSpan = CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2TargetMeasure);
+        var g2PencilPlot = CommonCoreG2Unit3PencilLinePlotTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2HandSpan);
+        var g2Plants = CommonCoreG2Unit3PlantHeightsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2PencilPlot);
+        var g2OptionalPlot = CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Plants);
+        var g2Yardstick = CommonCoreG2Unit3YardstickTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2OptionalPlot);
+        var g2NumberLine = CommonCoreG2Unit4NumberLineTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2Yardstick);
+        var g2NumberLineFeatures = CommonCoreG2Unit4NumberLineFeaturesTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2NumberLine);
+        var g2Unlabeled = CommonCoreG2Unit4UnlabeledTicksTeachingCorrection
+            .GetExpectedContentVersion(document, lesson, g2NumberLineFeatures);
+        var g2Batch = CommonCoreG2Unit4CompareNumberLinesCorrection
+            .GetExpectedContentVersion(document, lesson, g2Unlabeled);
+        var g2Batch2 = CommonCoreG2Unit4EstimateNumberLineCorrection
+            .GetExpectedContentVersion(document, lesson, g2Batch);
+        var g2Batch3 = CommonCoreG2Unit4CenterDay1NumberLineCorrection
+            .GetExpectedContentVersion(document, lesson, g2Batch2);
+        var g2Jump1 = CommonCoreG2Unit4DirectionalJumpCorrection
+            .GetExpectedContentVersion(document, lesson, g2Batch3);
+        var g2Jump2 = CommonCoreG2Unit4EquationArrowCorrection
+            .GetExpectedContentVersion(document, lesson, g2Jump1);
+        var g2Jump3 = CommonCoreG2Unit4DifferenceStrategiesCorrection
+            .GetExpectedContentVersion(document, lesson, g2Jump2);
+        var g2NextG4_0 = CommonCoreG2Unit4PlaceValueLineCorrection
+            .GetExpectedContentVersion(document, lesson, g2Jump3);
+        var g2NextG4_1 = CommonCoreG2Unit4MakeTenStrategiesCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_0);
+        var g2NextG4_2 = CommonCoreG2Unit4UnknownArrowRiddlesCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_1);
+        var g2NextG4_3 = CommonCoreG2Unit4StoryRepresentationCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_2);
+        var g2NextG4_4 = CommonCoreG2Unit4JumpTheLineCenterCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_3);
+        var g2NextG4_5 = CommonCoreG2Unit4AgeRiddlesCorrection
+            .GetExpectedContentVersion(document, lesson, g2NextG4_4);
+        var g2Hundreds = CommonCoreG2HundredsPlaceValueSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2NextG4_5);
+        var g2Unit5Original = CommonCoreG2Unit5OriginalRichContentCorrections
             .GetExpectedContentVersion(document, lesson, g2Hundreds);
+        var g2Unit5More = CommonCoreG2Unit5ComparisonSourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Unit5Original);
+        var g2Unit6 = CommonCoreG2Unit6SourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Unit5More);
+        var g2Unit7 = CommonCoreG2Unit7FirstFourCorrections
+            .GetExpectedContentVersion(document, lesson, g2Unit6);
+        var g2Unit7Next = CommonCoreG2Unit7NextFourCorrections
+            .GetExpectedContentVersion(document, lesson, g2Unit7);
+        var g2Unit7Last = CommonCoreG2Unit7LastTenCorrections
+            .GetExpectedContentVersion(document, lesson, g2Unit7Next);
+        var g2Unit8 = CommonCoreG2Unit8SourceCorrections.GetExpectedContentVersion(document,lesson,g2Unit7Last);
+        var g2Unit9 = CommonCoreG2Unit9SourceCorrections.GetExpectedContentVersion(document,lesson,g2Unit8);
+        var g1Stories = CommonCoreG1Unit2StorySourceCorrections
+            .GetExpectedContentVersion(document, lesson, g2Unit9);
         var b001Goals = CommonCoreB001SourceGoalMismatchCorrections
             .GetExpectedContentVersion(document, lesson, g1Stories);
         var g1Part2 = CommonCoreG1Unit2Part2SourceTeachingCorrections
@@ -274,7 +488,92 @@ public static class CanonicalLessonContentMaterializer
             .IsTarget(document, lesson) ||
         CommonCoreG2SourceGroundedFoundationsCorrections
             .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1TenTwentySourceTeachingCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1HowCloseSourceTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1AddWithin50SourceTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1CentersAndRealDataCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1PictureGraphSourceTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1BarGraphsSourceTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1ConstructGraphsTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1BarCompareTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1TapeDiagramTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1AllCompareProblemsTeachingCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit1ClassSurveysTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2UnknownAddendTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2DecomposeTenTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2TwoDigitTradeTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2DifferentWaysDecomposeTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2MixedAddSubtractTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2SeedsStoryTypesTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2StoryEquationsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2TapeStoriesCenterTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit2MarketInventoryTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3StandardUnitsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3BeardedDragonCmTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3BuildRulerTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3EstimateMeasureCmTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3MetersReptileTapeTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3FeetFishTapeTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3TornTapeTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3TargetMeasurementsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3PencilLinePlotTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3PlantHeightsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit3YardstickTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4NumberLineTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4NumberLineFeaturesTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4CompareNumberLinesCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4EstimateNumberLineCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4CenterDay1NumberLineCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4DirectionalJumpCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4EquationArrowCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4DifferenceStrategiesCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4PlaceValueLineCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4MakeTenStrategiesCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4UnknownArrowRiddlesCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4StoryRepresentationCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4JumpTheLineCenterCorrection.IsTarget(document, lesson) ||
+        CommonCoreG2Unit4AgeRiddlesCorrection.IsTarget(document, lesson) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit5OriginalRichContentCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit5ComparisonSourceCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit6SourceCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit7FirstFourCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit7NextFourCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit7LastTenCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit8SourceCorrections.IsTarget(document, lesson) ||
+        CommonCoreG2Unit9SourceCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
         CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
         CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
@@ -297,6 +596,11 @@ public static class CanonicalLessonContentMaterializer
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson,
         string existingContentVersion) =>
+        CommonCoreG2Unit7FirstFourCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit7NextFourCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit7LastTenCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit8SourceCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit9SourceCorrections.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CambridgePrimaryStage6LessonContentCorrections
             .CanUpgradeExisting(
                 document,
@@ -356,6 +660,84 @@ public static class CanonicalLessonContentMaterializer
                 document,
                 lesson,
                 existingContentVersion) ||
+        CommonCoreG2Unit1TenTwentySourceTeachingCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1HowCloseSourceTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1AddWithin50SourceTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1CentersAndRealDataCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1PictureGraphSourceTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1BarGraphsSourceTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1ConstructGraphsTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1OptionalSortAndDisplaySourceCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1BarCompareTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1TapeDiagramTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1AllCompareProblemsTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit1ClassSurveysTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2UnknownAddendTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2ZooStoryProblemsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2DecomposeTenTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2TwoDigitTradeTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2DifferentWaysDecomposeTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2MixedAddSubtractTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2SeedsStoryTypesTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2MancalaTapeDiagramsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2StoryEquationsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2TwoStepSeedStoriesTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2TapeStoriesCenterTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit2MarketInventoryTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3StandardUnitsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3BeardedDragonCmTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3BuildRulerTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3EstimateMeasureCmTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3MetersReptileTapeTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3ReptileCompareStoryTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3WhatIsAnInchTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3FeetFishTapeTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3TornTapeTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3SareeRibbonStoriesTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3TargetMeasurementsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3HandSpanLinePlotTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3PencilLinePlotTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3PlantHeightsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3CenterDay3LinePlotsTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit3YardstickTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4NumberLineTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4NumberLineFeaturesTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4CompareNumberLinesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4EstimateNumberLineCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4CenterDay1NumberLineCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4DirectionalJumpCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4EquationArrowCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4DifferenceStrategiesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4PlaceValueLineCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4MakeTenStrategiesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4UnknownArrowRiddlesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4StoryRepresentationCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4JumpTheLineCenterCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG2Unit4AgeRiddlesCorrection.CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG2HundredsPlaceValueSourceCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreG1Unit2StorySourceCorrections

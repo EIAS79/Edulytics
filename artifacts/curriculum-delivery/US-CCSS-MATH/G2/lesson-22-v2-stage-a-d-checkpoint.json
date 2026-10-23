@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 22,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L04",
+  "unitNumber": 2,
+  "lessonNumber": 4,
+  "title": "Center Day 1 (optional)",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "officialOutcomeCodes": [
+    "CCSS:2.NBT.B.5",
+    "CCSS:2.OA.B.2"
+  ],
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_PUBLIC_TEACHER_SOURCE_REVIEW",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-4/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-4/lesson.html",
+    "sourceSemanticSha256": "df8a6e72f222c6395a63daba4f5f142d473dbef1a31f0c09699d11401d1986a4",
+    "canonicalBodySha256": "c8632e338fa6a97750d30545dc4af757c9598194029df02864cd6754dcf755e5",
+    "warmup": "Number Talk:6−3=3,66−3=63,66−30=36,66−33=33; mental tens/ones reasons.",
+    "captureSquares": "Source Center Stage3: spinner6–10 or WILD choose6–10, card0–10, sum within20; mark one edge between adjacent dots at target number; claim square only upon fourth side; first3 squares wins.",
+    "fiveInRow": "Source Center Stage6: clip one top-row and one bottom-row number; compute sum within100 INCLUDING composing a ten; partner moves ONE clip, marks sum. Five same-color contiguous counters horizontal/vertical/diagonal wins.",
+    "importantSourceContradiction": "Raw learner overview incorrectly implies all optional lesson maths avoid composing/decomposing ten; original Five in a Row Stage6 explicitly includes composing a ten. The authoritative activity description is preserved rather than flattening the source.",
+    "sourceReferenceExample": "Original synthesis paper clip on8, choose25 as other,25+8=33 requires composing a ten.",
+    "rights": "Publisher actual game boards and spinner copy sheets not downloaded or reproduced. Original independently authored number grids are illustrative only and not certified games.",
+    "teacherReviewOnly": "Authentic partner turns, paper clips, closed square edges, five-in-row and winning status not established from numeric inputs.",
+    "sourceCoolDown": "No original publisher Cool-down on public lesson page; Edulytics independent exit not presented as source cool-down."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_BODY_PREDECESSOR_LOCKED_OPTIONAL_TWO_CENTERS_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceGuard": "Exact URL, original body SHA, ordered outcomes, prior six learner fields, previous rich-content version all required.",
+    "coverage": "Number Talk, exact Capture Squares Stage3 rules, exact Five in a Row Stage6 including composing-ten addition, explicit independent activity/teacher rubric and teacher-only game state."
+  },
+  "stageC": {
+    "status": "COMPLETE_NUMERIC_CENTER_COMPANION_FOUR_EXACT_FAMILIES_AND_UNRUN_TESTS",
+    "mathematicalChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2FourthLessonOptionalCenters.cs",
+    "authenticatedPage": "src/Edulytics.Web/Views/Grade2Lesson22Activities/Index.cshtml",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson22ActivitiesController.cs",
+    "viewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson22Page.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson4OptionalCentersContracts.cs",
+    "exactEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson4OptionalCenterQuestions.cs",
+    "families": [
+      "usccss.g2.u02.l04.subtract_place_value",
+      "usccss.g2.u02.l04.capture_squares_add_within20",
+      "usccss.g2.u02.l04.five_in_row_composing_ten",
+      "usccss.g2.u02.l04.five_in_row_no_compose"
+    ],
+    "firstPartyNumericActivities": "Number Talk four numbers; valid spinner and card plus one arithmetic sum; original Edulytics first turn25+8=33 and next turn25+9=34 with one clip moved; independent Cool-down7+6=13,26+7=33,75−30=45.",
+    "exactMathematicalGuard": "Capture addition valid spinner6..10 and card0..10; FiveInRow composing-ten family requires ones sum≥10 whereas non-composing requires ones sum<10; result <=100; answer verified by parameters.",
+    "notDigitallyClaimed": "No interactive replicated copyright game board, actual colored four-edge capture, or five-in-row winner detection; these source gameplay actions are explicitly teacher-observed.",
+    "authorization": "StudentPortal role, adoption and published lesson guard, anti-forgery, bounded form fields, no official grade saved.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2CaptureAndFiveCentersTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2FourthLessonOptionalCentersTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson4OptionalCenterQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson22ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "runtimeCompilationVerified": false,
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U02_L05_ORDINAL23_SOURCE_A_THEN_B_C"
+}

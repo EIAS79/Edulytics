@@ -959,6 +959,140 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G2 U01 L01: reviewed grade-specific source-goal override.
+        foreach (var reviewed in UsCcssG2Unit1FirstLessonPracticeContracts.Reviewed)
+        {
+            // G2 L01 may previously have only a broad projected mapping.
+            // Insert this exact source-goal contract without assuming a prior entry.
+            byLesson[reviewed.LessonCode] = reviewed;
+        }
+        // IM 2021 G2 U01 L02/L03, exact 10- and 20-cube lesson overrides.
+        foreach (var reviewed in UsCcssG2Unit1Lesson2And3PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson4PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson5PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson6PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson8PictureGraphContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson9BarGraphContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson10ConstructGraphsContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson11GraphQuestionsContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson12SortAndDisplayContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson13BarCompareContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson14TapeDiagramContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson15CompareContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson16CompareContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson17CentersContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit1Lesson18ClassSurveysContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson1NoRegroupContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson2UnknownAddendContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson3ZooStoryContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson4OptionalCentersContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson5DecomposeTenContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson6TargetNumbersContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson7SubtractTwoDigitsContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson8DifferentWaysContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson9MixedAddSubtractContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson10TargetStage5Contracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson11SeedsStoryContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson12MancalaContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson13StoryEquationsContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson14TwoStepSeedsContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson15TapeStoriesCenterContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit2Lesson16MarketInventoryContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson1StandardUnitsContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson2MeasureCmContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson3BuildRulerContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson4EstimateMeasureCmContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson5MetersContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson6ReptileStoriesContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson7EstimateMeasureStage2Contracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson8WhatIsAnInchContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson9FishFeetContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson10TornTapeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson11SareeRibbonContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson12FriendshipContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson13CenterDay2Contracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson14HandSpanLinePlotContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson15PencilLinePlotContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson16PlantHeightsContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson17CenterPlotContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit3Lesson18YardstickContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit4Lesson01NumberLineContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit4Lesson02NumberLineFeaturesContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit4Lesson03UnlabeledTicksContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit4NextThreePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit4ArrowLessonContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit4FinalSixContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit5FirstSixContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit5ComparisonContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit6LessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit7FirstFourContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit7NextFourContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit7LastTenContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit8LessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        foreach (var reviewed in UsCcssG2Unit9LessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
         // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
         // V1 G1-010: original 2021 ordinals 46-50 only (U03 L09-L13).
         foreach(var reviewed in UsCcssG1FullGradeUnit7GeometryTimePracticeContracts.Reviewed)

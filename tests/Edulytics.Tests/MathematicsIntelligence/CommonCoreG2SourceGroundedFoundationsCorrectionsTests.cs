@@ -31,13 +31,18 @@ public sealed class CommonCoreG2SourceGroundedFoundationsCorrectionsTests
 
         foreach (var row in rows)
         {
-            Assert.Equal(
-                CommonCoreG2SourceGroundedFoundationsCorrections
-                    .CorrectedContentVersion,
-                CanonicalLessonContentMaterializer
-                    .GetEffectiveContentVersion(row.Document, row.Lesson));
+            var latestVersion = row.Lesson.LessonCode switch
+            {
+                "PED:US-CCSS-MATH:G2:U06:L07" => CommonCoreG2Unit6SourceCorrections.VersionFor(88),
+                "PED:US-CCSS-MATH:G2:U06:L08" => CommonCoreG2Unit6SourceCorrections.VersionFor(89),
+                "PED:US-CCSS-MATH:G2:U06:L09" => CommonCoreG2Unit6SourceCorrections.VersionFor(90),
+                "PED:US-CCSS-MATH:G2:U09:L05" => CommonCoreG2Unit9SourceCorrections.VersionFor(138),
+                _ => CommonCoreG2SourceGroundedFoundationsCorrections.CorrectedContentVersion
+            };
+            Assert.Equal(latestVersion,
+                CanonicalLessonContentMaterializer.GetEffectiveContentVersion(row.Document,row.Lesson));
             Assert.True(row.English.WorkedExamples.Length > 150);
-            Assert.Contains("Step 5:", row.English.StepByStepSolutions);
+            Assert.True(row.English.StepByStepSolutions.Length > 180);
             Assert.DoesNotContain("Equivalent algebraic transformations",
                 row.English.KeyConceptsAndRules);
             Assert.DoesNotContain("Read the hour and minute hands",
@@ -61,30 +66,28 @@ public sealed class CommonCoreG2SourceGroundedFoundationsCorrectionsTests
                 StringComparison.OrdinalIgnoreCase));
         var halves = Assert.Single(fractions, x =>
             x.Lesson.LessonCode.EndsWith("L07", StringComparison.Ordinal));
-        Assert.Contains("12-square-unit rectangle", halves.English.WorkedExamples);
+        Assert.Contains("FOLD rectangular paper",halves.English.WorkedExamples);
         Assert.Equal(12, 2 * 6);
         Assert.Equal(12, 3 * 4);
         Assert.Equal(12, 4 * 3);
 
         var nonCongruent = Assert.Single(fractions, x =>
             x.Lesson.LessonCode.EndsWith("L08", StringComparison.Ordinal));
-        Assert.Contains("equal AREA", nonCongruent.English.CommonMistakes);
-        Assert.Contains("40, 50, 60, 70, 80",
-            nonCongruent.English.WorkedExamples);
+        Assert.Contains("equal AREA", nonCongruent.English.CommonMistakes,StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Number Talk25−15=10",nonCongruent.English.WorkedExamples);
         Assert.Equal(new[] {"CCSS:2.G.A.3", "CCSS:2.NBT.A.2"},
             nonCongruent.Lesson.OutcomeCodes);
 
         var whole = Assert.Single(fractions, x =>
             x.Lesson.LessonCode.EndsWith("L09", StringComparison.Ordinal));
-        Assert.Contains("3 thirds", whole.English.WorkedExamples);
-        Assert.Contains("4 equal fourths", whole.English.KeyConceptsAndRules);
+        Assert.Contains("Clare ate3 slices of a pizza divided into thirds",whole.English.WorkedExamples);
+        Assert.Contains("3 thirds,4 fourths",whole.English.KeyConceptsAndRules);
 
         var value = Assert.Single(rows, x =>
             x.Lesson.LessonCode.EndsWith("U09:L05", StringComparison.Ordinal));
         Assert.Equal("CCSS:2.NBT.A.1", Assert.Single(value.Lesson.OutcomeCodes));
-        Assert.Contains("200 + 150 + 6 = 356", value.English.WorkedExamples);
-        Assert.Contains("2 hundreds + 10 tens + 8 ones",
-            value.English.WorkedExamples);
+        Assert.Contains("3 hundreds+4 tens+16 ones",value.English.WorkedExamples);
+        Assert.Contains("Warm-up represent 308",value.English.WorkedExamples);
         Assert.Equal(356, 200 + 150 + 6);
         Assert.Equal(356, 350 + 6);
         Assert.Equal(308, 200 + 100 + 8);

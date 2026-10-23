@@ -1,0 +1,68 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson36Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade2 — Measure in Centimeters";}
+<style>
+.g2cm36{max-width:940px;margin:auto;padding:20px;color:#244453}
+.g2cm36 .panel{background:#fff;border:1px solid #cbdbe5;border-radius:12px;margin:16px 0;padding:20px}
+.g2cm36 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.g2cm36 label{display:block;font-weight:700;margin:12px 0 4px}
+.g2cm36 input,.g2cm36 textarea{width:100%;max-width:560px;padding:10px;border:1px solid #8398a5;border-radius:8px;font:inherit}
+.g2cm36 .button{background:#087f97;color:#fff;border:0;border-radius:8px;padding:13px 20px;font-weight:700}
+.g2cm36 .rod{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;border:2px solid #4984a3;background:#ccecf3;width:120px;height:35px;margin:4px}
+.g2cm36 .cube{display:inline-flex;align-items:center;justify-content:center;border-radius:4px;border:1px solid #a88a41;background:#ffe5b2;width:32px;height:32px;margin:3px}
+.g2cm36 .ok{border-left:4px solid #25855b;padding-left:12px}
+.g2cm36 .bad{border-left:4px solid #b64959;padding-left:12px}
+.g2cm36 .review{border-left:4px solid #b48a33;padding-left:12px}
+</style>
+<main class="g2cm36">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Measure in Centimeters</h1>
+<p><strong>1 centimeter = 1 cm.</strong> A genuine centimeter cube edge measures1cm; a base-ten long rod measures10cm. Use actual teacher-supplied reptile worksheets for real lengths. The schematic below is an independently drawn Edulytics calculation, not a publisher image.</p>
+<form asp-controller="Grade2Lesson36Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Notice and Wonder — Centimeters</h2>
+<p>Discuss teacher's original picture A and B. Both labels 'centimeter' and 'cm' represent equal length.</p>
+<label asp-for="Answers.WarmupCmMeaning">Why do 1 centimeter and 1 cm describe the same measure?</label>
+<textarea asp-for="Answers.WarmupCmMeaning" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>2. Source bearded dragon — 24 centimeters</h2>
+<p>Measure original bearded-dragon drawing using REAL one-cm cubes. Then show the same length using two complete10cm rods PLUS four centimeter cubes, because20+4=24.</p>
+<div role="img" aria-label="Original Edulytics twenty-four centimeter representation with two 10cm rods and four 1cm cubes">
+<span class="rod">10 cm</span><span class="rod">10 cm</span>
+@for(var i=0;i<4;i++){<span class="cube">1</span>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.SourceDragonCubes">How many one-cm cube edges total?</label><input asp-for="Answers.SourceDragonCubes" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceDragonRods">Number of COMPLETE ten-cm rods</label><input asp-for="Answers.SourceDragonRods" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.SourceDragonExtraCm">Extra one-cm cubes needed</label><input asp-for="Answers.SourceDragonExtraCm" type="number" min="0" max="9" required/></div>
+<div><label asp-for="Answers.SourceDragonLength">Whole length in centimeters</label><input asp-for="Answers.SourceDragonLength" type="number" min="0" max="100" required/></div>
+</div>
+</section>
+<section class="panel">
+<h2>3. Measure with 10-centimeter tools — authentic reptile sheet</h2>
+<p>Use REAL teacher-issued Reptile Length pictures, including a day gecko and threadsnake, and record actual measurements in cm. Public source lesson does not give their numerical picture lengths, so the digital checker will not invent answers for them.</p>
+<label asp-for="Answers.RealReptileLengthTable">Report your actual measured reptile lengths, each with a unit and aligned tool</label>
+<textarea asp-for="Answers.RealReptileLengthTable" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.RealDayGeckoDifference">What real difference did you observe between the original day gecko and threadsnake?</label>
+<input asp-for="Answers.RealDayGeckoDifference" maxlength="500"/>
+<label asp-for="Answers.PartnerExplanation">Describe how you and your real partner compared and confirmed measurements</label>
+<textarea asp-for="Answers.PartnerExplanation" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Edulytics original first-party virtual practice</h2>
+<p>A new imagined line measures28cm. Fictional lizards29cm and14cm are invented for independent arithmetic, NOT measurements of source reptile worksheets. The independent exit uses36cm.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyRods">For28cm: complete ten-cm rods</label><input asp-for="Answers.FirstPartyRods" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.FirstPartyExtra">For28cm: extra centimeter cubes</label><input asp-for="Answers.FirstPartyExtra" type="number" min="0" max="9" required/></div>
+<div><label asp-for="Answers.FirstPartyDifference">Fictional29cm minus14cm difference</label><input asp-for="Answers.FirstPartyDifference" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExitRods">For36cm: full ten-cm rods</label><input asp-for="Answers.ExitRods" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.ExitExtra">For36cm: additional one-cm cubes</label><input asp-for="Answers.ExitExtra" type="number" min="0" max="9" required/></div>
+</div>
+<button type="submit" class="button">Check integer measurements and see teacher rubric</button></section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Math correct":r.Correct==false?"Recheck unit counts":"Teacher review only"). @r.Feedback</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var item in UsCcssG2Unit3SecondLessonMeasureCm.TeacherRubric){<li>@item</li>}</ul>
+<p>IM K–5 2021 G2 U03 L02, CCSS2.MD.A.1 and2.MD.A.4. Real source printed diagrams and protected teacher Cool-down not reproduced; no official grade.</p></section></main>

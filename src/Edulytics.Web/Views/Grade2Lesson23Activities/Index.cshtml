@@ -1,0 +1,67 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson23Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Subtract Your Way";
+}
+<style>
+.g2l23{max-width:960px;margin:auto;padding:20px;color:#264253}.g2l23 .panel{background:#fff;border:1px solid #cadbe3;border-radius:12px;margin:15px 0;padding:20px}.g2l23 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.g2l23 label{display:block;margin:12px 0 5px;font-weight:700}.g2l23 input,.g2l23 textarea{width:100%;max-width:550px;font:inherit;padding:10px;border:1px solid #78909d;border-radius:8px}.g2l23 .rod{display:inline-flex;justify-content:center;align-items:center;background:#cbe9ef;border:2px solid #34839a;width:50px;height:45px;margin:3px;border-radius:6px;font-weight:700}.g2l23 .ones{display:inline-flex;justify-content:center;align-items:center;background:#ffebc0;border:1px solid #a57b29;padding:9px;margin:3px;border-radius:5px}.g2l23 .action{background:#107f8e;color:white;border:0;padding:12px 20px;border-radius:8px;font-weight:bold}.g2l23 .ok{border-left:4px solid #32875b;padding-left:12px}.g2l23 .no{border-left:4px solid #bc4857;padding-left:12px}.g2l23 .review{border-left:4px solid #b18b34;padding-left:12px}
+</style>
+<main class="g2l23">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Subtract Your Way — exchanging one ten</h1>
+<p>Use real connecting cubes or base-ten blocks to understand subtraction with regrouping. These digital symbols are original Edulytics illustrations, not evidence of actual classroom work.</p>
+<form asp-controller="Grade2Lesson23Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<section class="panel"><h2>1. Number Talk — Subtract a Little More</h2>
+<p>Subtract to a ten, then subtract the rest.</p>
+<div class="grid">
+<div><label asp-for="Answers.TalkA">17−7</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkB">17−8</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkC">26−6</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkD">26−8</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required /></div>
+</div><label asp-for="Answers.Reasoning">Explain how one known answer helps find another</label><textarea asp-for="Answers.Reasoning" maxlength="2000" rows="2"></textarea></section>
+<section class="panel"><h2>2. How Do You Find the Value? — 82−9</h2>
+<p>Show 82 as 8 tens and 2 singles with REAL blocks. To subtract9 ones by place, REPLACE one tens rod with 10 singles; never keep both!</p>
+<div role="img" aria-label="Edulytics 8 groups of ten and 2 loose ones, eighty-two, before trading">
+@for(var i=0;i<8;i++){<span class="rod">10</span>}<span class="ones">1</span><span class="ones">1</span>
+</div>
+<p>After the exchange, 82 is represented by 7 tens and 12 ones. Take away nine ones. Count the difference or use the valid number-line route82→80→73.</p>
+<div class="grid">
+<div><label asp-for="Answers.EightyTwoTens">Tens AFTER trading</label><input asp-for="Answers.EightyTwoTens" type="number" min="0" max="9" required /></div>
+<div><label asp-for="Answers.EightyTwoOnes">Ones AFTER trading, BEFORE removing9</label><input asp-for="Answers.EightyTwoOnes" type="number" min="0" max="19" required /></div>
+<div><label asp-for="Answers.EightyTwoAnswer">82−9 = ?</label><input asp-for="Answers.EightyTwoAnswer" type="number" min="0" max="100" required /></div>
+</div><label asp-for="Answers.EightyTwoDrawing">Describe your ORIGINAL real-block drawing or number-line method</label><textarea asp-for="Answers.EightyTwoDrawing" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel"><h2>3. Diego's base-ten blocks — 55−20−8</h2>
+<p>With a partner, use REAL base-ten blocks to show five tens and five ones. First remove TWO tens. Now you have 35; to remove EIGHT ones, trade one remaining ten for ten singles.</p>
+<div class="grid">
+<div><label asp-for="Answers.DiegoStart">Original 5 tens,5 ones = ?</label><input asp-for="Answers.DiegoStart" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.DiegoAfterTens">After removing2 tens?</label><input asp-for="Answers.DiegoAfterTens" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.DiegoTradeTens">How many tens AFTER exchange?</label><input asp-for="Answers.DiegoTradeTens" type="number" min="0" max="9" required /></div>
+<div><label asp-for="Answers.DiegoTradeOnes">How many ones BEFORE removing8?</label><input asp-for="Answers.DiegoTradeOnes" type="number" min="0" max="19" required /></div>
+<div><label asp-for="Answers.DiegoEnd">After removing8 ones, what remains?</label><input asp-for="Answers.DiegoEnd" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.DiegoDrawing">Explain why 35=20+15 and what happens to the rod that was exchanged</label><textarea asp-for="Answers.DiegoDrawing" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel"><h2>4. Independent original Edulytics Cool-down</h2>
+<p>Use one ten-for-ten-ones exchange. These original tasks do NOT reproduce the publisher's restricted assessment.</p>
+<div class="grid">
+<div><label asp-for="Answers.CoolA">63−7</label><input asp-for="Answers.CoolA" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolB">74−8</label><input asp-for="Answers.CoolB" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.CoolC">42−6</label><input asp-for="Answers.CoolC" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.Reflection">How did a partner's block method compare with yours?</label><textarea asp-for="Answers.Reflection" maxlength="2000" rows="2"></textarea>
+<button class="action" type="submit">Check arithmetic and view teacher-review steps</button></section>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"no":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numbers correct":r.Correct==false?"Review the numbers":"Teacher review needed"). @r.Message</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var rule in UsCcssG2Unit2FifthLessonDecomposeTen.TeacherRubric){<li>@rule</li>}</ul>
+<p>IM K–5 2021 Grade2 Unit2 Lesson5 mathematical tasks attributed; CCSS 2.NBT.B.5 and 2.OA.B.2. No official grade saved.</p>
+</section></main>
