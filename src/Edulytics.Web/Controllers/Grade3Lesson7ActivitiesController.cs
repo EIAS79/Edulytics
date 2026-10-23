@@ -36,6 +36,8 @@ public sealed class Grade3Lesson7ActivitiesController(
             .Select(x=>x.GetValue(answers) as string).Any(x=>x?.Length>2000))
             return BadRequest("Lesson answer is missing or too long.");
         var exact=new[]{
+            ("L07-SOURCE-CD-SOCCER-MINUS-FOOTBALL","Original Cool-down: Soccer minus Football",answers.SourceSportSoccerFootball),
+            ("L07-SOURCE-CD-BASKETBALL-MINUS-HOCKEY","Original Cool-down: Basketball minus Hockey",answers.SourceSportBasketballHockey),
             ("L07-SEASONS-TOTAL","Seasons total",answers.SeasonsTotal),
             ("L07-SEASONS-SPRING-OR-FALL","Spring or Fall",answers.SpringOrFall),
             ("L07-SEASONS-SUMMER-MINUS-WINTER","Summer more than Winter",answers.SummerWinter),
@@ -71,6 +73,10 @@ public sealed class Grade3Lesson7ActivitiesController(
             string.IsNullOrWhiteSpace(answers.PartnerQuestionExchange)
                 ? "No peer-question answer recorded; actual exchange and reasoning require teacher observation."
                 : "Teacher checks both exchanged questions, answers and the observed partner conversation; text alone cannot certify participation."));
+        feedback.Add(new("Original 2021 Favorite Sports graph equations",null,true,
+            "Source number comparisons are checked; teacher must review both displayed expressions/equations and graph-reading methods."));
+        feedback.Add(new("Lesson synthesis — scaled bar graph strategies",null,true,
+            "Teacher reviews which bar graph and addition/subtraction strategies helped today."));
         feedback.Add(new("Question writing, explanation, Math Community",null,true,
             "A teacher must review two learner-authored bug questions, one-step equations, the number talk and partner reasoning."));
         Response.Headers["X-Robots-Tag"]="noindex, nofollow, noarchive";

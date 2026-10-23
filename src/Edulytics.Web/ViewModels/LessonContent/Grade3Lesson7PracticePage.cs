@@ -14,6 +14,10 @@ public sealed class Grade3Lesson7Answers
     public string? BugGraphQuestions{get;set;}
     public string? BugEstimateReasoning{get;set;}
     public string? PartnerQuestionExchange{get;set;}
+    public string? LessonSynthesis{get;set;}
+    public string? SourceSportSoccerFootball{get;set;}
+    public string? SourceSportBasketballHockey{get;set;}
+    public string? SourceSportEquations{get;set;}
     public string? CoolSoccerTennis{get;set;}
     public string? CoolSwimBasket{get;set;}
     public string? CoolTotal{get;set;}

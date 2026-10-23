@@ -6,6 +6,7 @@
     var seasons=UsCcssG3Unit1Lesson6ChooseScale.SourceSeasons;
     var bugs=UsCcssG3Unit1Lesson7GraphDifferences.Bugs;
     var cool=UsCcssG3Unit1Lesson7GraphDifferences.IndependentCoolDown;
+    var originalCool=UsCcssG3Unit1Lesson7GraphDifferences.OriginalSourceCoolDown;
 }
 <style>
 .g3-l07{max-width:940px;margin:auto;padding:18px;color:#1e3e58}
@@ -40,9 +41,9 @@
         <input type="hidden" name="lessonId" value="@Model.LessonId" />
         <section class="panel">
             <h2>1. Warm-up: groups of dots</h2>
-            <p>Find the total without counting one by one: three groups of five; then five groups of four. Explain a grouping method to a partner. The original dot image layouts require separate image-level review.</p>
-            <p aria-label="Three groups of five dots">●●●●● &nbsp; ●●●●● &nbsp; ●●●●●</p>
-            <p aria-label="Five groups of four dots">●●●● &nbsp; ●●●● &nbsp; ●●●● &nbsp; ●●●● &nbsp; ●●●●</p>
+            <p>The 2021 original warm-up dot images contain SEVEN and TWENTY-TWO dots. They may be grouped as three pairs plus one (7) and four groups of five plus two (22). These first-party dots do not duplicate the publisher's image positions. Explain your grouping to a partner.</p>
+            <p aria-label="Seven dots: three pairs and one">●● &nbsp; ●● &nbsp; ●● &nbsp; ●</p>
+            <p aria-label="Twenty-two dots: four groups of five and two">●●●●● &nbsp; ●●●●● &nbsp; ●●●●● &nbsp; ●●●●● &nbsp; ●●</p>
             <label for="warmup">How do you see and count the groups?</label>
             <textarea id="warmup" name="Warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
         </section>
@@ -102,7 +103,35 @@
             <textarea id="bug-reasoning" name="BugEstimateReasoning" rows="3" maxlength="2000">@Model.Answers.BugEstimateReasoning</textarea>
         </section>
         <section class="panel">
-            <h2>4. New Edulytics Cool-down: sports club survey</h2>
+            <h2>4. Lesson synthesis (10 minutes) — BEFORE source Cool-down</h2>
+            <p>Compare strategies for finding one-step more/fewer differences from scaled bars. Discuss how tens and ones and counting on help when a category is between tens.</p>
+            <label for="synthesis">Which graph-reading or subtraction strategies helped you today?</label>
+            <textarea id="synthesis" name="LessonSynthesis" rows="3" maxlength="2000">@Model.Answers.LessonSynthesis</textarea>
+            <p>Teacher-led optional centers: Sort and Display Stage 3 and Five in a Row Stage 6. Learning in groups requires the teacher's observation.</p>
+        </section>
+        <section class="panel">
+            <h2>5. ORIGINAL 2021 source Cool-down — Favorite Sports (5 minutes)</h2>
+            <p>The first-edition teacher guide's graph contains Football 28, Soccer 61, Basketball 35, Hockey 22, with scale 0 to 70 by fives. Independently authored vertical bars reproduce the mathematical values, not the publisher's art.</p>
+            <div class="bug-graph-frame">
+                <div class="bug-source-chart" role="img" aria-label="Favorite Sports; bar graph from 0 to 70 in steps of five; Football 28, Soccer 61, Basketball 35, Hockey 22">
+                    <div class="bug-graph-ticks" aria-hidden="true">@for(var tick=70;tick>=0;tick-=5){<span>@tick</span>}</div>
+                    <div class="bug-graph-bars" aria-hidden="true">
+                        @foreach(var item in originalCool){<div class="bug-graph-column"><div class="bug-graph-bar" style="height:@(item.Count*300/70)px"></div></div>}
+                    </div>
+                    <div class="bug-labels" aria-hidden="true">@foreach(var item in originalCool){<strong class="bug-label">@item.Category</strong>}</div>
+                    <p class="bug-x-title">Type of sport</p>
+                </div>
+            </div>
+            <div class="two">
+                <div><label for="sport-1">How many MORE students chose Soccer than Football?</label><input id="sport-1" name="SourceSportSoccerFootball" value="@Model.Answers.SourceSportSoccerFootball" inputmode="numeric" required /></div>
+                <div><label for="sport-2">How many FEWER students chose Hockey than Basketball?</label><input id="sport-2" name="SourceSportBasketballHockey" value="@Model.Answers.SourceSportBasketballHockey" inputmode="numeric" required /></div>
+            </div>
+            <label for="sport-work">Write expressions/equations and justify BOTH comparisons</label>
+            <textarea id="sport-work" name="SourceSportEquations" rows="3" maxlength="2000" required>@Model.Answers.SourceSportEquations</textarea>
+            <p>Numeric answers are machine-checked; expression and strategy are independently teacher-reviewed.</p>
+        </section>
+        <section class="panel">
+            <h2>6. Optional independent Edulytics sports-club practice — NOT source Cool-down</h2>
             <p>Separate fictional graph, with Edulytics-authored values rather than the publisher's gated Cool-down. Scale by tens, and do not round raw data.</p>
             @foreach(var item in cool){
                 <div class="bar-row"><strong>@item.Category</strong>

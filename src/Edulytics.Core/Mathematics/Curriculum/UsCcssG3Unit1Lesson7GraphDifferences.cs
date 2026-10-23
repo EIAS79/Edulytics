@@ -13,6 +13,12 @@ public static class UsCcssG3Unit1Lesson7GraphDifferences
         new Bar("Ants",62),new Bar("Ladybugs",11),
         new Bar("Beetles",19),new Bar("Spiders",7)
     });
+    // 2021 first-edition original Favorite Sports 5-minute Cool-down,
+    // not Edulytics-authored extra club practice. Axis 0–70, step 5.
+    public static IReadOnlyList<Bar> OriginalSourceCoolDown {get;}=Array.AsReadOnly(new[]{
+        new Bar("Football",28),new Bar("Soccer",61),
+        new Bar("Basketball",35),new Bar("Hockey",22)
+    });
     public static IReadOnlyList<Bar> IndependentCoolDown {get;}=Array.AsReadOnly(new[]{
         new Bar("Soccer",32),new Bar("Basketball",17),
         new Bar("Swimming",21),new Bar("Tennis",10)
@@ -22,6 +28,8 @@ public static class UsCcssG3Unit1Lesson7GraphDifferences
     {
         correct=false;
         int? expected=id switch{
+            "L07-SOURCE-CD-SOCCER-MINUS-FOOTBALL"=>33,
+            "L07-SOURCE-CD-BASKETBALL-MINUS-HOCKEY"=>13,
             "L07-SEASONS-TOTAL"=>99,
             "L07-SEASONS-SPRING-OR-FALL"=>35,
             "L07-SEASONS-SUMMER-MINUS-WINTER"=>16,
