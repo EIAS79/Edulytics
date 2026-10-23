@@ -204,7 +204,11 @@
       "Car",
       "Train"
     ],
-    "teachingNote": "Teacher may adapt original six suggested categories; comparisons use teacher-chosen labels in the same source slot order."
+    "teachingNote": "Teacher may adapt original six suggested categories; comparisons use teacher-chosen labels in the same source slot order.",
+    "richV2AuthoringUpdatedCode": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "richV2CodeScopeSpecific": "L02 6/8/10 dot warm-up, real class-dependent survey, source true-false, one/two-step within-20, teacher review, time sequence",
+    "currentContentStatus": "GRADE3_2021_SOURCE_SPECIFIC_RICH_V2_AUTHORING_PROPOSAL_DB_EFFECTIVE_RUNTIME_UNVERIFIED",
+    "effectiveLearnerBodyCompared": false
   },
   "stageC": {
     "status": "GRADE3_LESSON2_AUTHORIZED_COMPANION_AND_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -229,8 +233,9 @@
     "testsRun": false
   },
   "openGaps": [
+    "Source-specific Rich V2 correction is authored in GitHub, but effective displayed/published content and each task's student/teacher review evidence are not certified; this is not READY_FOR_STAGE_D.",
+    "External original-source evidence boundary: first-edition Student Task Statements PDF and original figure/image pixels were not retrievable from publisher links in available tooling; original-per-figure verification and any third-party licenses remain OPEN.",
     "Teacher may choose a different number than six categories; the current first-party activity still offers six editable slots and cannot attest actual class survey provenance.",
-    "Original student task PDF and complete figure geometry remain unverified. Publisher Cool-down is gated but independent agreed Edulytics alternative exists.",
     "Rich V2 effective published teaching body and student runtime Razor display have not been compared or exercised; Stage D testing intentionally deferred.",
     "Teacher must attest actual sticky-note class survey, graph drawing, source comparison choices, Math Community work and source figure/material rights.",
     "Automatic within-20 families avoid certifying comparisons outside scope; teacher adjusts when total counts exceed permitted arithmetic range."
@@ -258,5 +263,18 @@
     ],
     "eligibility": "NOT_YET_READY_FOR_STAGE_D_BUT_ORIGINAL_SOURCE_ACCESS_NOT_A_BLOCKER"
   },
-  "originalCoolDownSourceAccessIsABlocker": false
+  "originalCoolDownSourceAccessIsABlocker": false,
+  "source2021GitHubOnlyExecution": {
+    "executionDate": "2026-10-23",
+    "policy": "NO_OUR_CS_NO_DESKTOP_ONLY_GITHUB_PLUS_ORIGINAL_PUBLISHER_URLS",
+    "authoritativeTeacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
+    "authoritativePreparation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/preparation.html",
+    "officialPublicTeacherAndPrepReviewed": true,
+    "sourceStudentTaskPdfAccess": "PUBLISHER_LINK_EXISTS_FETCH_CACHE_MISS_NO_PDF_RENDER_INSPECTED",
+    "sourceGraphicPixelsAccess": "PUBLISHER_ASSET_FETCH_CACHE_MISS_ORIGINAL_IMAGE_PIXELS_NOT_INSPECTED",
+    "originalPublisherCoolDown": "EDUCATOR_LOGIN_GATED_FIRST_PARTY_EQUIVALENT_ALLOWED_NOT_VERBATIM",
+    "externalSourceGateReal": true,
+    "notes": "Original published teacher lesson and preparation are readable; original student-task PDF and original figure raster/vector pixels could not be retrieved with available source access. These cannot count as source-perfect. This records a genuine source-asset boundary, not Stage D tests as A-C defect."
+  },
+  "nextAction": "Return to Grade 3 U01 L02: obtain and compare original first-edition Student Task Statements PDF and graphic pixel source; finish one-to-one original part-to-effective Rich V2 and learner Practice checks. Tests written but NOT RUN. Until then A_C_EXPLICIT_GAP / no readiness."
 }
