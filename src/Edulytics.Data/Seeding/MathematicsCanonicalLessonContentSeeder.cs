@@ -990,6 +990,36 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             .AnyAsync(row =>
                                 row.CurriculumLessonContentId == content.Id, ct);
 
+                    // Exact-source G2 predecessors from the observed production
+                    // ReadFromJson metadata inventory can be reconciled ONLY
+                    // on the metadata-only path and ONLY when no persisted
+                    // translation exists. The outer full-grade preflight has
+                    // already verified all content identities/statuses and
+                    // checked zero persisted translations across 294 targets.
+                    // This targeted path cannot rewrite student-visible prose.
+                    var guardedG2JsonMetadata =
+                        metadataOnly &&
+                        IsGuardedG2KnownProductionJsonMetadataPredecessor(
+                            document, sourceLesson, content.ContentVersion,
+                            expectedContentVersion,
+                            verifiedNoPersistedTranslations: true) &&
+                        !await _db.CurriculumLessonContentTranslations
+                            .AsNoTracking()
+                            .AnyAsync(row =>
+                                row.CurriculumLessonContentId == content.Id, ct);
+
+                    if (guardedG2JsonMetadata)
+                    {
+                        if (content.Status != document.Status)
+                            throw new InvalidOperationException(
+                                "G2 metadata-only publication status drift: " +
+                                sourceLesson.LessonCode);
+                        content.ContentVersion = expectedContentVersion;
+                        content.UpdatedAtUtc = now;
+                        ApplyStatusMetadata(content, document.Status, now);
+                        continue;
+                    }
+
                     if (CambridgeReviewedExampleContentCorrections
                         .IsTarget(document, sourceLesson))
                     {
