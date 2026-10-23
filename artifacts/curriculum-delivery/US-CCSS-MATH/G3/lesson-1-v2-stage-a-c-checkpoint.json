@@ -398,13 +398,19 @@
     "independentEdulyticsCoolDownNumericQuestions": 2,
     "openResponseSubmittedOralObservationPolicy": "NO WRITING means NOT SUBMITTED, WITH WRITING remains UNSCORED pending actual teacher review; no automatic pass",
     "teacherReviewPolicyPath": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson1PracticePage.cs:Grade3Lesson1TeacherReviewPolicy",
-    "sourceStudentTaskMap": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-source-to-first-party-task-matrix/U01.json"
+    "sourceStudentTaskMap": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-source-to-first-party-task-matrix/U01.json",
+    "supplementalNumericItemsRequiredForSourceSubmission": false,
+    "supplementalNumericBlankBehavior": "NO ATTEMPT / MachineCorrect null, never marked wrong, never blocks five source open responses",
+    "supplementalNumericMalformedBehavior": "WRONG INPUT / MachineCorrect false, no silent grading as correct",
+    "coolDownNumericRequiredForSourceSubmission": false,
+    "humanReviewRubricTasks": 5,
+    "teacherReviewEvidenceHandoff": "Student may print/save unsaved response page; human review and oral participation remain independently unverified; no in-app persisted teacher decision"
   },
   "openGaps": [
     "SOURCE EXTERNAL: Original 2021 Student Task Statements PDF / DOCX not accessible through official asset URLs; source graphic pixel and any third-party license checks not completed. Official teacher/Student Facing HTML descriptions available but not image-perfect.",
     "A/B INTERNAL: Source-aligned Rich V2 teaching candidate and student Razor source-order fixes exist in GitHub; effective stored/published Rich V2 learner body has not been compared and source runtime/Razor rendering not verified.",
-    "C INTERNAL: Original five source student-facing open tasks now each have their own code field and fail-closed teacher review feedback, but actual classroom oral/partner performance and submitted teacher approval remain unrecorded; the learner form does not persist them.",
-    "C BOUNDARY: Three supplemental Edulytics numeric checks and a separate first-party Cool-down must not count as completion of the original teacher-led source tasks. Original publisher Cool-down remains teacher-login gated (independent equivalent owner-approved).",
+    "C INTERNAL: All five original Student Facing prompts have distinct fields, fail-closed review responses, and individual teacher rubric rows; teacher may print/save completed work, but there is still no actual authenticated teacher decision or durable app submission, and classroom/partner performance is unverified.",
+    "C BOUNDARY: Three OPTIONAL Edulytics numeric exercises and two OPTIONAL first-party Cool-down numerics do not block submitting original source teacher-led tasks; blank is unattempted, not wrong. Publisher original Cool-down remains educator-gated and an independent equivalent is allowed.",
     "STAGE D DEFERRED BY OWNER: xUnit/Razor/.NET tests written but must NOT be run now. Nonexecution is not itself an A–C defect."
   ],
   "nextAction": "Finish all repairable L01 gaps before moving to L02: compare actual effective Grade3 Rich V2 with source-specific code, implement durable teacher review/handoff evidence for source oral/partner activities, verify original official image/PDF assets and licensing if accessible. Only then assess A-C closure; never run tests until Stage D.",
@@ -466,7 +472,9 @@
       "Separate the five original teacher-led source student prompt subparts from three supplementary Edulytics source-dataset numeric practice questions",
       "Restore publisher teaching timeline so synthesis precedes independently authored Cool-down",
       "Add Representation picture-key language prompt, MLR8 partner restatement, named suggested centers, teacher lived-experience reflection",
-      "Write unrun regressions for five original source fields, missing/written review boundaries and markup source sequencing"
+      "Write unrun regressions for five original source fields, missing/written review boundaries and markup source sequencing",
+      "Added source five-subpart item-specific teacher rubric, with optional user-initiated print/save of the learner page for teacher handoff; this does not persist official judgments.",
+      "Removed blocking required constraints from three supplementary numeric items and two first-party Cool-down numbers, and differentiated untouched from incorrect numeric answers in source code with authored, unrun regressions."
     ],
     "codeChangesMostRecent": [
       "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson1PracticePage.cs",
