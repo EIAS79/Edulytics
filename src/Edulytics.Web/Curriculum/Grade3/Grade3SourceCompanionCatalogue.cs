@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Text.Json;
 
 namespace Edulytics.Web.Curriculum.Grade3;
@@ -103,6 +104,19 @@ public static class Grade3SourceCompanionCatalogue
                     : "Review the context and quantities. Drawing or reasoning still requires a teacher.");
         }
 
+        if (q.AnswerType == "clock-time")
+        {
+            if (!TryClockTime(submitted, out var actual) ||
+                !TryClockTime(q.Expected, out var expected))
+                return new(false, true,
+                    "Write a valid 12-hour clock time such as 3:51 p.m.; include a.m. or p.m.");
+
+            var correct = actual == expected;
+            return new(correct, true,
+                correct ? "The complete time is mathematically correct. Clock drawing and strategy still require a teacher."
+                        : "Recheck both the hour and minute values; crossing an hour changes the hour hand.");
+        }
+
         if (q.AnswerType == "rational")
         {
             if (!TryFraction(submitted, out var an, out var ad) ||
@@ -121,6 +135,23 @@ public static class Grade3SourceCompanionCatalogue
         }
 
         return new(null, true, "Unknown task type. Teacher review only.");
+    }
+
+    private static bool TryClockTime(string? text, out int minutesSinceMidnight)
+    {
+        minutesSinceMidnight = 0;
+        if (string.IsNullOrWhiteSpace(text) || text.Length > 24) return false;
+        // 12-hour digital notation only. Without context, an analogue dial
+        // alone cannot distinguish a.m. from p.m., so the prompt supplies it.
+        var match = Regex.Match(text.Trim(),
+            @"^(0?[1-9]|1[0-2]):([0-5][0-9])\s*([ap])\.?m\.?$",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        if (!match.Success) return false;
+        var hour = int.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
+        var minute = int.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
+        var pm = string.Equals(match.Groups[3].Value, "p", StringComparison.OrdinalIgnoreCase);
+        minutesSinceMidnight = (hour % 12 + (pm ? 12 : 0)) * 60 + minute;
+        return true;
     }
 
     private static bool TryFraction(string? text, out int numerator, out int denominator)

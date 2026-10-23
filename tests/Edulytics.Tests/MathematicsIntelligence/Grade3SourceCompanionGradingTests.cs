@@ -105,7 +105,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -128,6 +128,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "integer" => (int.Parse(question.Expected!) + 1).ToString(),
                     "rational" => "1/0",
                     "comparison" => question.Expected == ">" ? "<" : ">",
+                    "clock-time" => "13:99 pm",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);
@@ -240,6 +241,39 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.True(Grade3SourceCompanionCatalogue.Grade(q,"1 3/4").NumericCorrect);
         Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"1 1/2").NumericCorrect);
         Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"1 6/8").NumericCorrect);
+    }
+
+    [Theory]
+    [InlineData("3:51 PM", "3:51 pm", true)]
+    [InlineData("3:51 PM", "03:51 p.m.", true)]
+    [InlineData("3:51 PM", "3:51 AM", false)]
+    [InlineData("3:51 PM", "15:51", false)]
+    [InlineData("3:51 PM", "3:61 p.m.", false)]
+    [InlineData("5:18 PM", "5:18 p.m.", true)]
+    [InlineData("2:36 PM", "2:36 pm", true)]
+    public void FullClockTimeCheckerHonorsHoursMinutesAndMeridiem(
+        string expected,string answer,bool correct)
+    {
+        var question=new Grade3OriginalQuestion{
+            Prompt="Read the complete time.",AnswerType="clock-time",Expected=expected};
+        var result=Grade3SourceCompanionCatalogue.Grade(question,answer);
+        Assert.Equal(correct,result.NumericCorrect);
+        Assert.True(result.TeacherReview);
+    }
+
+    [Fact]
+    public void SourceTimeTasksCannotPassOnMinuteComponentAlone()
+    {
+        foreach(var pair in new[] {
+            ("PED:US-CCSS-MATH:G3:U06:L09", "2:36 PM"),
+            ("PED:US-CCSS-MATH:G3:U06:L10", "3:51 PM")
+        }) {
+            Assert.True(Grade3SourceCompanionCatalogue.TryGet(pair.Item1,out var lesson));
+            Assert.Equal("clock-time",lesson!.SourceBasedCheck!.AnswerType);
+            Assert.Equal(pair.Item2,lesson.SourceBasedCheck.Expected);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(
+                lesson.SourceBasedCheck,"51").NumericCorrect);
+        }
     }
 
 }

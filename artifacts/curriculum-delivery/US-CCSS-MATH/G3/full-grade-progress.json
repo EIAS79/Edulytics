@@ -5853,5 +5853,20 @@
     "evidenceFolder": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-figure-url-intake/",
     "sourceIsReadOnlyLocalHtml": true,
     "importantCaveat": "Remote mathematical SVG figures are not locally stored. The 119 missing-alt references, including tikz diagrams, require direct visual/source-geometry review. Source URLs/alt evidence is not a license or semantic parity pass."
+  },
+  "stageCClockTimeRepair": {
+    "lessonCodes": [
+      "PED:US-CCSS-MATH:G3:U06:L09",
+      "PED:US-CCSS-MATH:G3:U06:L10",
+      "PED:US-CCSS-MATH:G3:U06:L11"
+    ],
+    "reason": "Source goal requires full times and nearest-minute clock reading, not numeric minute-of-hour only.",
+    "sourceClockOriginalArtworkCopied": false,
+    "edulyticsClockDiagram": "Independent analogue SVG with 60 marks in G3 learner companion",
+    "learnerClockMeridiemContextProvided": true,
+    "typedClockAnswers": "12-hour h:mm am/pm with strict minute and meridiem checks",
+    "writtenTests": "FullClockTimeCheckerHonorsHoursMinutesAndMeridiem; SourceTimeTasksCannotPassOnMinuteComponentAlone",
+    "testsExecuted": false,
+    "parity": false
   }
 }

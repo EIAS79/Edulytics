@@ -5,6 +5,7 @@
     var l = Model.Lesson;
     var roadSigns = Edulytics.Web.Curriculum.Grade3.Grade3SourceCompanionCatalogue.Local2021RoadSignGraph;
     var showRoadSigns = l.UnitNumber == 1 && (l.LessonNumber == 9 || l.LessonNumber == 10);
+    var showMinuteClock = l.UnitNumber == 6 && l.LessonNumber == 9;
 }
 <style>
 .g3-original{max-width:940px;margin:0 auto;padding:20px;color:#1e3d54}
@@ -89,6 +90,42 @@
                 <p><strong>Think and draw:</strong> Show the speed-limit signs as three
                     equal groups of two. Make a diagram for a different category and
                     compare your representation with your teacher or partner.</p>
+            </section>
+        }
+        @if(showMinuteClock) {
+            <section class="panel" aria-label="Edulytics original analogue clock reading">
+                <h2>Read an original analogue clock</h2>
+                <p>The time is in the afternoon. Read the hour and minute hands,
+                    then enter the complete time. This diagram is independently
+                    drawn for this lesson's skill and is not copied publisher artwork.</p>
+                <svg viewBox="0 0 240 240" width="240" height="240"
+                     role="img" aria-label="An analogue dial showing the hour hand a little past two and the minute hand one tick past the seven; count the minute marks accurately">
+                    <title>Read the hour and minute hands</title>
+                    <circle cx="120" cy="120" r="94" stroke="#244860"
+                            stroke-width="3" fill="#ffffff" />
+                    @for(var tick=0;tick<60;tick++) {
+                        var theta=tick*Math.PI/30.0;
+                        var outer=87;
+                        var inner=tick%5==0?75:82;
+                        var x1=(120+inner*Math.Sin(theta)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        var y1=(120-inner*Math.Cos(theta)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        var x2=(120+outer*Math.Sin(theta)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        var y2=(120-outer*Math.Cos(theta)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        <line x1="@x1" y1="@y1" x2="@x2" y2="@y2"
+                              stroke="#244860" stroke-width="@(tick%5==0?2.5:1)" />
+                    }
+                    <text x="120" y="48" text-anchor="middle" font-size="18">12</text>
+                    <text x="192" y="126" text-anchor="middle" font-size="18">3</text>
+                    <text x="120" y="197" text-anchor="middle" font-size="18">6</text>
+                    <text x="48" y="126" text-anchor="middle" font-size="18">9</text>
+                    <line x1="120" y1="120" x2="164" y2="111"
+                          stroke="#22445b" stroke-width="7" stroke-linecap="round" />
+                    <line x1="120" y1="120" x2="82" y2="173"
+                          stroke="#167b91" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="120" cy="120" r="5" fill="#22445b" />
+                </svg>
+                <p>Use the small marks for individual minutes, not only the
+                    5-minute numbers. The clock alone cannot tell a.m. from p.m.</p>
             </section>
         }
         @if(l.SourceBasedCheck is not null) {
