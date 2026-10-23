@@ -5,6 +5,12 @@ namespace Edulytics.Web.ViewModels.LessonContent;
 /// <summary>Grade 3 U01 L02 unsaved class-survey response form.</summary>
 public sealed class Grade3Lesson2Answers
 {
+    public string? LabelBike { get; set; }
+    public string? LabelWalk { get; set; }
+    public string? LabelVan { get; set; }
+    public string? LabelBus { get; set; }
+    public string? LabelCar { get; set; }
+    public string? LabelTrain { get; set; }
     public string? Bike { get; set; }
     public string? Walk { get; set; }
     public string? Van { get; set; }

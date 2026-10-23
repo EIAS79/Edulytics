@@ -119,4 +119,22 @@ public sealed class UsCcssG3Unit1Lesson2ClassSurveyCandidateTests
             impossible, out _));
     }
 
+    [Fact]
+    public void AdaptedTeacherCategoriesCanBeUsedInsteadOfFixedSourceWords()
+    {
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] rows =
+        [
+            new("Bicycle",5), new("Walk",6), new("Scooter",2),
+            new("Bus",4), new("Car",3), new("Train",1)
+        ];
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(rows,out var counts));
+        Assert.Equal(21,counts!.Values.Sum());
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
+            rows,"Scooter","Bus",2,out var one));
+        Assert.True(one);
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
+            rows,"Scooter","Bus","Walk",0,out var two));
+        Assert.True(two);
+    }
+
 }

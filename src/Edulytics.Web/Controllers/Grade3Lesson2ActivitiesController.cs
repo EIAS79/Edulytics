@@ -21,7 +21,7 @@ public sealed class Grade3Lesson2ActivitiesController(
     ILessonContentService lessonContent) : Controller
 {
     private const string Code = UsCcssG3Unit1Lesson2ClassSurveyCandidate.LessonCode;
-    private static readonly string[] Categories = ["Bike", "Walk", "Van", "Bus", "Car", "Train"];
+    private static readonly string[] DefaultCategories = ["Bike", "Walk", "Van", "Bus", "Car", "Train"];
 
     [HttpGet("")]
     [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
@@ -61,18 +61,19 @@ public sealed class Grade3Lesson2ActivitiesController(
 
         if (valid)
         {
-            feedback.Add(CompareDifference(survey, answers.BusCarDifference));
-            feedback.Add(CompareTwoStep(survey, answers.WalkBikeVanDifference));
+            var categoryLabels = survey!.Select(x => x.Category).ToArray();
+            feedback.Add(CompareDifference(survey, categoryLabels[3], categoryLabels[4], answers.BusCarDifference));
+            feedback.Add(CompareTwoStep(survey, categoryLabels[1], categoryLabels[0], categoryLabels[2], answers.WalkBikeVanDifference));
             feedback.Add(CheckStatement("Walk exceeds each other category",
                 answers.WalkMost,
-                counts!["Walk"] > counts.Where(x => x.Key != "Walk").Max(x => x.Value)));
+                counts![categoryLabels[1]] > counts.Where(x => x.Key != categoryLabels[1]).Max(x => x.Value)));
             feedback.Add(CheckStatement("Bus exceeds Car", answers.BusMoreThanCar,
-                counts!["Bus"] > counts["Car"]));
+                counts![categoryLabels[3]] > counts[categoryLabels[4]]));
             feedback.Add(CheckStatement("Walk is fewer than Bike", answers.WalkFewerThanBike,
-                counts!["Walk"] < counts["Bike"]));
+                counts![categoryLabels[1]] < counts[categoryLabels[0]]));
             feedback.Add(CheckStatement("Walk plus Bike exceeds Van",
                 answers.WalkBikeMoreThanVan,
-                counts!["Walk"] + counts["Bike"] > counts["Van"]));
+                counts![categoryLabels[1]] + counts[categoryLabels[0]] > counts[categoryLabels[2]]));
         }
 
         feedback.Add(CheckCoolDown("G3-U01-L02-EDU-CD-ONE-STEP",
@@ -95,25 +96,30 @@ public sealed class Grade3Lesson2ActivitiesController(
         Grade3Lesson2Answers a)
     {
         var values = new[] { a.Bike, a.Walk, a.Van, a.Bus, a.Car, a.Train };
+        var customLabels = new[] { a.LabelBike, a.LabelWalk, a.LabelVan,
+            a.LabelBus, a.LabelCar, a.LabelTrain };
         var result = new List<UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount>();
-        for (var i = 0; i < Categories.Length; ++i)
+        for (var i = 0; i < DefaultCategories.Length; ++i)
         {
             if (!int.TryParse(values[i], NumberStyles.Integer,
                     CultureInfo.InvariantCulture, out var count))
                 return null;
-            result.Add(new(Categories[i], count));
+            var label = string.IsNullOrWhiteSpace(customLabels[i])
+                ? DefaultCategories[i] : customLabels[i]!.Trim();
+            if (label.Length is 0 or > 40) return null;
+            result.Add(new(label, count));
         }
         return result;
     }
 
     private static Grade3Lesson2Feedback CompareDifference(
-        IReadOnlyList<UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount>? data, string? submitted)
+        IReadOnlyList<UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount>? data, string firstCategory, string secondCategory, string? submitted)
     {
         if (!int.TryParse(submitted, NumberStyles.Integer,
                 CultureInfo.InvariantCulture, out var response))
             return new("Bus/Car absolute difference", false, false, "Enter a whole number.");
         if (!UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
-                data, "Bus", "Car", response, out var correct))
+                data, firstCategory, secondCategory, response, out var correct))
             return new("Bus/Car absolute difference", null, true,
                 "Invalid class data: teacher must choose an in-scope comparison.");
         return new("Bus/Car absolute difference", correct, false,
@@ -121,13 +127,14 @@ public sealed class Grade3Lesson2ActivitiesController(
     }
 
     private static Grade3Lesson2Feedback CompareTwoStep(
-        IReadOnlyList<UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount>? data, string? submitted)
+        IReadOnlyList<UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount>? data,
+        string firstCategory, string secondCategory, string comparisonCategory, string? submitted)
     {
         if (!int.TryParse(submitted, NumberStyles.Integer,
                 CultureInfo.InvariantCulture, out var response))
             return new("Walk + Bike versus Van", false, false, "Enter a whole number.");
         if (!UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
-                data, "Walk", "Bike", "Van", response, out var correct))
+                data, firstCategory, secondCategory, comparisonCategory, response, out var correct))
             return new("Walk + Bike versus Van", null, true,
                 "The selected comparison exceeds the current within-20 family or its data are invalid. Teacher review needed.");
         return new("Walk + Bike versus Van", correct, false,

@@ -194,7 +194,17 @@
     "sourceChartVisualDefectFound": "Originally six horizontal glyph rows and unscaled horizontal bars, not the source's vertical picture graph and bar graph.",
     "sourceChartVisualCorrection": "Vertical six-column first-party glyph pictograph, vertical bars sharing data/axis, maximum up to 40 authentic responses.",
     "categoryNamesConfigurable": false,
-    "richV2ProposedCorrectionFile": "src/Edulytics.Data/Seeding/Grade3/g3-2021-provisional-rich-v2-corrections.json"
+    "richV2ProposedCorrectionFile": "src/Edulytics.Data/Seeding/Grade3/g3-2021-provisional-rich-v2-corrections.json",
+    "teacherCategoryLabelsEditable": true,
+    "classroomCategoryDefaults": [
+      "Bike",
+      "Walk",
+      "Van",
+      "Bus",
+      "Car",
+      "Train"
+    ],
+    "teachingNote": "Teacher may adapt original six suggested categories; comparisons use teacher-chosen labels in the same source slot order."
   },
   "stageC": {
     "status": "GRADE3_LESSON2_AUTHORIZED_COMPANION_AND_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -219,8 +229,8 @@
     "testsRun": false
   },
   "openGaps": [
+    "Teacher may choose a different number than six categories; the current first-party activity still offers six editable slots and cannot attest actual class survey provenance.",
     "Original student task PDF and complete figure geometry remain unverified. Publisher Cool-down is gated but independent agreed Edulytics alternative exists.",
-    "Actual teacher-specified category names might differ from six default source examples; editable names and generalized dynamically reworded source comparisons not implemented.",
     "Rich V2 effective published teaching body and student runtime Razor display have not been compared or exercised; Stage D testing intentionally deferred.",
     "Teacher must attest actual sticky-note class survey, graph drawing, source comparison choices, Math Community work and source figure/material rights.",
     "Automatic within-20 families avoid certifying comparisons outside scope; teacher adjusts when total counts exceed permitted arithmetic range."
