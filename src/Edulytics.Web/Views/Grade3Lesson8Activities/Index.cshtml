@@ -1,0 +1,114 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3Lesson8PracticePage
+@using Edulytics.Core.Mathematics.Curriculum
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 3 · More Questions About Scaled Bar Graphs";
+    var feelings=UsCcssG3Unit1Lesson8TwoStepDataProblems.Feelings;
+    var trees=UsCcssG3Unit1Lesson8TwoStepDataProblems.Trees;
+    var cooldown=UsCcssG3Unit1Lesson8TwoStepDataProblems.OriginalEdulyticsCoolDown;
+}
+<style>
+.g3-l08{max-width:980px;padding:20px;margin:auto;color:#193b55}
+.g3-l08 .panel{background:#fff;border:1px solid #d8e4ed;border-radius:15px;padding:22px;margin:15px 0}
+.g3-l08 label{display:block;font-weight:700;margin:11px 0 5px}
+.g3-l08 textarea,.g3-l08 input{max-width:680px;width:100%;padding:10px;border-radius:8px;border:1px solid #8296a7;font:inherit}
+.g3-l08 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.g3-l08 .bar-row{display:flex;align-items:center;gap:12px;margin:11px 0}
+.g3-l08 .bar-row strong{width:100px;flex:none}
+.g3-l08 .bar{height:26px;background:#188399}
+.g3-l08 .ok{border-left:4px solid #198455;padding-left:10px}
+.g3-l08 .no{border-left:4px solid #b13547;padding-left:10px}
+.g3-l08 .review{border-left:4px solid #a87919;padding-left:10px}
+.g3-l08 button{padding:12px 18px;border:0;border-radius:8px;background:#097887;color:#fff;font:inherit;cursor:pointer}
+</style>
+<main class="g3-l08">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <h1>More Questions About Scaled Bar Graphs</h1>
+    <p>Read a data situation three times, identify all quantities, solve a comparison of one group to the sum of two others, and justify two methods. These source values match the locally archived 2021 lesson; graphs are independently redrawn.</p>
+    <form asp-controller="Grade3Lesson8Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <section class="panel">
+            <h2>1. Warm-up — repeated addition by 2 and 5</h2>
+            <p>Find 2 + 2 + 2 + 2 + 2 and 5 + 5 + 5 + 5 in your head. Explain how skip-counting uses equal groups.</p>
+            <label for="warmup">My strategy</label>
+            <textarea id="warmup" name="Warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
+            <p>Teacher checks whether the warm-up reasoning meets the source goal; original exact sequence may differ from these first-party examples.</p>
+        </section>
+        <section class="panel">
+            <h2>2. Source-aligned New School Year graph — scale 0–60 by 5</h2>
+            <p>How are the students feeling about the new school year?</p>
+            @foreach(var item in feelings){
+                <div class="bar-row"><strong>@item.Category</strong>
+                    <span class="bar" style="width:@(item.Value*100/60)%" aria-hidden="true"></span>
+                    <span>@item.Value students</span>
+                </div>
+            }
+            <p>Axis tick marks: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60. Exact counts remain displayed for accessibility.</p>
+            <h3>Three Reads</h3>
+            <label for="read1">First read — what is this situation about?</label>
+            <textarea id="read1" name="FirstRead" rows="2" maxlength="2000">@Model.Answers.FirstRead</textarea>
+            <label for="read2">Second read — what quantities are given?</label>
+            <textarea id="read2" name="SecondRead" rows="2" maxlength="2000">@Model.Answers.SecondRead</textarea>
+            <label for="read3">Third read — what operations and steps would you use?</label>
+            <textarea id="read3" name="ThirdRead" rows="2" maxlength="2000">@Model.Answers.ThirdRead</textarea>
+            <label for="feelings-answer">How many MORE are Excited than Nervous OR Curious combined?</label>
+            <input id="feelings-answer" name="FeelingsTwoStep" value="@Model.Answers.FeelingsTwoStep" inputmode="numeric" required />
+            <p>Think about two mathematical approaches: add the two comparison categories first, or subtract them from Excited one at a time.</p>
+            <label for="other-way">Explain TWO methods with equations and why they give the same result</label>
+            <textarea id="other-way" name="FeelingsOtherMethod" rows="4" maxlength="2000">@Model.Answers.FeelingsOtherMethod</textarea>
+        </section>
+        <section class="panel">
+            <h2>3. Source-aligned trees graph — axis 0–100 by 10</h2>
+            <p>Clare counted trees on the way home. Read carefully: “Oak OR Maple” means both categories together in these questions.</p>
+            @foreach(var item in trees){
+                <div class="bar-row"><strong>@item.Category</strong>
+                    <span class="bar" style="width:@(item.Value)%" aria-hidden="true"></span>
+                    <span>@item.Value trees</span>
+                </div>
+            }
+            <p>Axis tick marks: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100.</p>
+            <div class="two">
+                <div><label for="pine-fir">How many MORE Pine than Fir?</label><input id="pine-fir" name="PineFir" value="@Model.Answers.PineFir" inputmode="numeric" required /></div>
+                <div><label for="pine-two">How many MORE Pine than Oak OR Maple together?</label><input id="pine-two" name="PineOakMaple" value="@Model.Answers.PineOakMaple" inputmode="numeric" required /></div>
+                <div><label for="pine-oak">How many FEWER Oak than Pine?</label><input id="pine-oak" name="PineOak" value="@Model.Answers.PineOak" inputmode="numeric" required /></div>
+                <div><label for="fir-two">How many FEWER Oak OR Maple combined than Fir?</label><input id="fir-two" name="FirOakMaple" value="@Model.Answers.FirOakMaple" inputmode="numeric" required /></div>
+            </div>
+            <label for="tree-work">Show two ways to solve a two-step problem using tens and ones</label>
+            <textarea id="tree-work" name="TreeWork" rows="4" maxlength="2000">@Model.Answers.TreeWork</textarea>
+        </section>
+        <section class="panel">
+            <h2>4. New, original Edulytics Cool-down</h2>
+            <p>A fictional school book-interest survey. These are NOT the publisher's original teacher-only assessment numbers.</p>
+            @foreach(var item in cooldown){
+                <div class="bar-row"><strong>@item.Category</strong>
+                    <span class="bar" style="width:@(item.Value*100/70)%" aria-hidden="true"></span>
+                    <span>@item.Value</span>
+                </div>
+            }
+            <p>Vertical scale for a drawing: 0–70 by 10. Draw a separate bar graph with precise heights.</p>
+            <div class="two">
+                <div><label for="cd-first">How many MORE prefer Adventure than Science?</label><input id="cd-first" name="CoolAdventureScience" value="@Model.Answers.CoolAdventureScience" inputmode="numeric" required /></div>
+                <div><label for="cd-two">How many MORE Adventure than Science OR Comics combined?</label><input id="cd-two" name="CoolAdventureVsTwo" value="@Model.Answers.CoolAdventureVsTwo" inputmode="numeric" required /></div>
+                <div><label for="cd-total">Total preferences recorded?</label><input id="cd-total" name="CoolTotal" value="@Model.Answers.CoolTotal" inputmode="numeric" required /></div>
+            </div>
+            <label for="cool-explain">Draw a new scaled graph and explain two different correct methods for the second question</label>
+            <textarea id="cool-explain" name="CoolExplanation" rows="4" maxlength="2000">@Model.Answers.CoolExplanation</textarea>
+        </section>
+        <button type="submit">Check arithmetic only</button>
+    </form>
+    @if(Model.Submitted){
+        <section class="panel" aria-live="polite">
+            <h2>Answer feedback</h2>
+            @foreach(var f in Model.Feedback){
+                <div class="@(f.NumericCorrect==true?"ok":f.NumericCorrect==false?"no":"review")">
+                    <h3>@f.Label</h3>
+                    <p>@(f.NumericCorrect==true?"Correct number.":f.NumericCorrect==false?"Recheck the arithmetic.":"Teacher review required.") @f.Explanation</p>
+                </div>
+            }
+            <p>This form does not certify oral reasoning, two solution methods, classroom participation or official assessment.</p>
+        </section>
+    }
+    <p>Source alignment: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-8/lesson.html" rel="noopener noreferrer">Illustrative Mathematics Grade 3 Unit 1 Lesson 8 (2021)</a> locally archived; original graphics not reproduced and independent first-party Cool-down.</p>
+</main>

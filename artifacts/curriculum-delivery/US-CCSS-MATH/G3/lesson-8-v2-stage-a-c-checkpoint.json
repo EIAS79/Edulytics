@@ -1,0 +1,128 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 8,
+  "unitNumber": 1,
+  "lessonNumber": 8,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L08",
+  "title": "More Questions about Scaled Bar Graphs",
+  "edition": "IM K–5 First Edition (2021)",
+  "localSourceHtml": "03_Grade_3_IM_K5/unit-1/lesson-8/lesson.html",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-8/lesson.html",
+  "targetParityPercent": 100,
+  "verifiedParityPercent": null,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "stageA": {
+    "status": "LOCAL_2021_SOURCE_STUDENT_FACING_CHARTS_AND_QUESTION_OPERATIONS_REVIEWED",
+    "warmup": "Repeated addition, groups of 2 and 5; original exact warmup expressions not independently matched",
+    "sourceFeelings": {
+      "Excited": 55,
+      "Nervous": 23,
+      "Curious": 25
+    },
+    "sourceFeelingsAxis": {
+      "min": 0,
+      "max": 60,
+      "step": 5
+    },
+    "sourceTrees": {
+      "Oak": 29,
+      "Pine": 82,
+      "Maple": 15,
+      "Fir": 58
+    },
+    "sourceTreesAxis": {
+      "min": 0,
+      "max": 100,
+      "step": 10
+    },
+    "sourceQuestions": [
+      "Excited compared to nervous AND curious",
+      "Pine-fir",
+      "Pine compared with oak or maple together",
+      "Oak fewer than pine",
+      "Oak or maple fewer than fir"
+    ],
+    "threeReadsRoutine": "Read problem context, then quantities, then mathematical strategies",
+    "sourceOriginalCoolDown": "Reading Time, owner-approved independent replacement",
+    "pdfRead": false
+  },
+  "stageB": {
+    "status": "SOURCE_CHART_COUNTS_AND_TWO_STEP_COMPANION_AUTHORED_RICH_V2_OPEN",
+    "files": {
+      "math": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson8TwoStepDataProblems.cs",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson8ActivitiesController.cs",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson8PracticePage.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+      "lessonLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "coolDown": {
+      "source": "Edulytics original fictional book survey",
+      "counts": {
+        "Adventure": 60,
+        "Science": 23,
+        "Comics": 18
+      }
+    },
+    "sourceArtworkCopied": false
+  },
+  "stageC": {
+    "status": "NUMERIC_TWO_STEP_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_UNRUN",
+    "numericQuestions": 8,
+    "teacherTasks": [
+      "Three Reads explanation",
+      "Two valid solution methods",
+      "Student drawing of a scaled bar graph",
+      "Cool-down explanation"
+    ],
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+    "testsRun": false,
+    "route": "student/practice/grade3-u01-l08"
+  },
+  "sourceElements": [
+    {
+      "id": "warmup",
+      "status": "ALIGNED_EXCERPT_NOT_EXACT_ORIGINAL_TASK_PARITY"
+    },
+    {
+      "id": "activity1",
+      "status": "SOURCE_CHART_COUNTS_AND_EQUATIONS_ALIGNED"
+    },
+    {
+      "id": "activity2",
+      "status": "SOURCE_CHART_COUNTS_AND_EQUATIONS_ALIGNED"
+    },
+    {
+      "id": "synthesis",
+      "status": "TEACHER_METHOD_COMPARISON_REQUIRED"
+    },
+    {
+      "id": "cooldown",
+      "status": "INDEPENDENT_FIRST_PARTY"
+    },
+    {
+      "id": "visual",
+      "status": "SOURCE_GRAPH_ARTWORK_NOT_COPIED"
+    }
+  ],
+  "sourceInventory": {
+    "identifiedElements": 6,
+    "fullyVerified": 0,
+    "effectiveRichV2Inspected": false,
+    "originalStudentTaskPdfRead": false
+  },
+  "openGaps": [
+    "Original exact warmup expression sequence and source student task PDF not fully compared.",
+    "Teacher-facing instructional nuances and full source visual parity remain open.",
+    "Published Rich V2 body not verified against the local 2021 source.",
+    "Razor page, authorization, arithmetic tests and graphical pixel-scale rendering unrun under deferred Stage D.",
+    "Student explanations, Three Reads work and multiple solution methods must receive teacher review."
+  ],
+  "coolDownPolicy": "OWNER_APPROVED_INDEPENDENT_EDULYTICS_EQUIVALENT",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "merged": false,
+  "deployed": false
+}
