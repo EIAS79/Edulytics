@@ -442,6 +442,11 @@ public sealed class StudentPortalController : Controller
         Guid? exactPracticeAdoptionId = null;
         Guid? pilotAdoptionId = null;
         Guid? grade3AuthoredActivityAdoptionId = null;
+        var requiresGrade3Companion =
+            lessonDetail.LessonCode is
+                "PED:US-CCSS-MATH:G3:U01:L01" or
+                "PED:US-CCSS-MATH:G3:U01:L02" or
+                "PED:US-CCSS-MATH:G3:U01:L03";
 
         // Resolve exact Practice independently from optional game presentation.
         var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
@@ -456,7 +461,8 @@ public sealed class StudentPortalController : Controller
 
         if (HasResolvedPracticeAvailability(
                 exactPracticeAdoptionId,
-                pilotAdoptionId))
+                pilotAdoptionId) &&
+            (!requiresGrade3Companion || grade3AuthoredActivityAdoptionId.HasValue))
         {
             return (
                 gameAdoptionId,
@@ -483,12 +489,12 @@ public sealed class StudentPortalController : Controller
                 ref pilotAdoptionId,
                 ref grade3AuthoredActivityAdoptionId);
 
-            // Exact Practice is the primary launch path and a legacy pilot is
-            // sufficient on its own. Neither requires scanning unrelated
-            // curriculum workspaces for a third optional presentation mode.
+            // Continue scanning authorized curricula for a Grade 3
+            // authored companion, even if another course has Practice.
             if (HasResolvedPracticeAvailability(
-                    exactPracticeAdoptionId,
-                    pilotAdoptionId))
+                exactPracticeAdoptionId,
+                pilotAdoptionId) &&
+            (!requiresGrade3Companion || grade3AuthoredActivityAdoptionId.HasValue))
             {
                 break;
             }
