@@ -337,6 +337,21 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void UnitTwoLessonTwoKeepsSixPublisherFiguresUnscoredWithoutOriginalImages()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U02:L02",out var lesson));
+        Assert.Equal(13,lesson!.SourceSubtasks.Count);
+        Assert.Equal(6,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A2-")));
+        Assert.All(lesson.SourceSubtasks,q=>Assert.Equal("teacher",q.AnswerType));
+        Assert.All(lesson.SourceSubtasks,q=>
+            Assert.Null(Grade3SourceCompanionCatalogue.Grade(q,"20").NumericCorrect));
+        Assert.Equal("integer",lesson.IndependentPractice!.AnswerType);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"12").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);

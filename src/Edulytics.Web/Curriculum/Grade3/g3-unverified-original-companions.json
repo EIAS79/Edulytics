@@ -2303,11 +2303,13 @@
         "sourceGoal": "Let’s use square tiles to measure area.",
         "sourceLearningGoals": "Explore area by building shapes with unit squares. Use unit squares to measure area.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Compare original warm-up figures A (one square), B (3×3 alternately shaded), C (2×2 shaded), and D (blue-and-white tiled rectangle), each with more than one plausible comparison rationale.",
+          "Give each group of four 80 uniform inch tiles; each pupil builds one shape, then group members order them by covered space/square-unit count.",
+          "Introduce square unit as the area of one unit tile; separate area from perimeter and arrangement.",
+          "Provide six ORIGINAL source handout figures. Pupils cover each fully without gaps or overlap and count equal squares for each of the six areas.",
+          "Teacher reviews figure-specific area and each learner's tiling, explanations, and collaboration. The readable source text alone cannot verify exact printed figure geometry."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use square tiles to measure area.",
+        "caution": "The six source handout figures and their dimensions are not independently visually inspected; DO NOT fabricate expected numerical areas for them. First-party independently written 3×4 and 5×4 examples may be machine-graded but do not replace the original six student tasks.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -2321,7 +2323,100 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L02-WU-A",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong",
+          "prompt": "Source image A is a single untiled small square. Give a valid reason it differs from B, C or D.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-WU-B",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong",
+          "prompt": "Source image B is a 3×3 grid of equal squares with alternating shading. Give a mathematically defensible comparison.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-WU-C",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong",
+          "prompt": "Source image C is 2×2 equal squares, with two shaded. Compare structure and area units to B.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-WU-D",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong",
+          "prompt": "Source image D has blue and white same-sized squares in a rectangle. Explain how shading, number or arrangement could distinguish it.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-A1-01",
+          "sourceActivity": "Activity 1: Create and Compare",
+          "prompt": "Build one original shape from a handful of equal-sized inch square tiles. Explain its area and why edge-to-edge tiling is essential.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-A1-02",
+          "sourceActivity": "Activity 1: Create and Compare",
+          "prompt": "With your group, order all of your individually built tile shapes by number of equal-sized tiles, from smallest covered area to largest. Record the comparison method.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-A2-01",
+          "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
+          "prompt": "With teacher-provided FIGURE 1 from the source handout, tile it completely using equal-sized squares. Record square-unit count and explain. Source figure measurements not visually verified.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-A2-02",
+          "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
+          "prompt": "Repeat for original handout FIGURE 2 using no gaps and overlaps; verify tiles are consistent size before giving area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-A2-03",
+          "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
+          "prompt": "Repeat for original handout FIGURE 3, describing the completed tiled region and square-unit count.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-A2-04",
+          "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
+          "prompt": "Repeat for original handout FIGURE 4 (a rectangle according to the source image description) and explain how rows and columns aid tile counting.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-A2-05",
+          "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
+          "prompt": "Repeat for original handout FIGURE 5. Do not infer shape geometry or exact area from a text-only image description.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-A2-06",
+          "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
+          "prompt": "Repeat for original handout FIGURE 6 (six-step outline by source alt text) and show how you filled all interior square units.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L02-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain why one uniform square tile covers one square unit, why gaps or overlaps invalidate area measurement, and why choosing differently sized tiles changes the numerical count.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 24,

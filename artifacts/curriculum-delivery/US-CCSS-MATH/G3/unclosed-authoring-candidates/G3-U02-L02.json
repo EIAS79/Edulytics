@@ -17,7 +17,16 @@
     "originalImageDescriptionsCount": 11,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicTeacherAndStudentFacingPageDirectlyRead": true,
+    "warmupFourOriginalTiledFigures": [
+      "A single square",
+      "B 3x3 alternating shaded grid",
+      "C 2x2 half shaded grid",
+      "D blue white tiled rectangle"
+    ],
+    "sourceActivity1": "Groups of four with 80 square tiles; each makes shape and group orders four shapes by area",
+    "sourceActivity2": "Six source handout figures need physical tiling and square unit counts; actual images/unverified expected numbers"
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +38,8 @@
     "existingSourceBodyHash": "2ef0ee20e4479b40b243a8aabaac1b73006d8e25110019fbb0fb6b467268278b",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificNoGapsNoOverlapsLessonSemanticsAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +52,11 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Create and Compare with your teacher. Show the representation and explain how it meets the goal: Let’s use square tiles to measure area.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "originalSourceTasksIndividualHumanRows": 13,
+    "originalSixAreasNotDigitallyGradedWithoutSourceFigures": true,
+    "firstPartyKnownArrayNumbersStillMachineChecked": true,
+    "newContractsWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -222,7 +236,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "The printed six original geometric figures, tile alignment and exact square-unit counts not verified; no source numeric expected values fabricated. Original handout/figures, effective Rich V2 and .NET/Razor tests remain blocked."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
