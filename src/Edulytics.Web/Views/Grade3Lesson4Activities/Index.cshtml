@@ -98,8 +98,8 @@
             <p>Teacher-only rubric: verify actual survey provenance, category title/key, exact counts, odd-category half marks, partner comparison, and classroom mathematical norms. Never infer that these occurred from numeric correctness.</p>
         </section>
         <section class="panel">
-            <h2>5. Independent Edulytics Cool-down (5 minutes): fictional travel preferences</h2>
-            <p>This is a separate, invented assessment. It is not the publisher's teacher-login item and does not claim to describe your class.</p>
+            <h2>5. Source-aligned Cool-down (5 minutes): four more Plane students</h2>
+            <p>Original 2021 Teacher Guide source mathematics: FOUR absent students also choose Plane. Under key 2, add TWO full picture marks to Plane. This is a first-party Edulytics illustration, not the original publisher diagram.</p>
             <div class="rows">
                 @foreach(var category in demo){
                     <strong>@category.Category</strong>
@@ -110,12 +110,13 @@
             <div class="two">
                 <div><label for="cd-train-full">How many WHOLE marks for Train?</label><input id="cd-train-full" name="CoolDownTrainWhole" inputmode="numeric" value="@Model.Answers.CoolDownTrainWhole" required /></div>
                 <div><label for="cd-train-half">How many HALF marks for Train?</label><input id="cd-train-half" name="CoolDownTrainHalf" inputmode="numeric" value="@Model.Answers.CoolDownTrainHalf" required /></div>
-                <div><label for="cd-plane">If two more choose Plane, how many WHOLE marks now?</label><input id="cd-plane" name="CoolDownPlanePlusTwoWhole" inputmode="numeric" value="@Model.Answers.CoolDownPlanePlusTwoWhole" required /></div>
+                <div><label for="plane-plus-four">If FOUR absent pupils choose Plane, how many ADDITIONAL whole marks are required?</label><input id="plane-plus-four" name="SourcePlaneExtraWhole" inputmode="numeric" value="@Model.Answers.SourcePlaneExtraWhole" required /></div><div><label for="plane-final">Fictional Edulytics Plane shows 3 pupils. After FOUR more, how many whole Plane marks are there?</label><input id="plane-final" name="SourcePlaneWholeAfterFour" inputmode="numeric" value="@Model.Answers.SourcePlaneWholeAfterFour" required /></div>
                 <div><label for="cd-total">How many students are shown across all six categories?</label><input id="cd-total" name="CoolDownTotal" inputmode="numeric" value="@Model.Answers.CoolDownTotal" required /></div>
             </div>
-            <label for="cool-explain">Create your own labelled pictograph and explain odd numbers or changes of two</label>
+            <label for="source-plane-drawing">Draw the TWO additional Plane picture symbols on your own graph, and explain the key (teacher review required)</label><textarea name="SourcePlaneDrawing" id="source-plane-drawing" rows="3" maxlength="2000">@Model.Answers.SourcePlaneDrawing</textarea><label for="cool-explain">Explain your independently drawn pictograph and its odd-category halves</label>
             <textarea id="cool-explain" name="CoolDownExplanation" rows="4" maxlength="2000">@Model.Answers.CoolDownExplanation</textarea>
         </section>
+<section class="panel"><h2>6. Optional Edulytics extension — not the 2021 source Cool-down</h2><label for="cd-plane">If TWO extra pupils, rather than four, chose Plane, how many whole marks would the fictional Edulytics Plane group have?</label><input name="CoolDownPlanePlusTwoWhole" id="cd-plane" inputmode="numeric" value="@Model.Answers.CoolDownPlanePlusTwoWhole" /></section>
         <button type="submit">Check my numeric representations</button>
     </form>
     @if(Model.Submitted) {

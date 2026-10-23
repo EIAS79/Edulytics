@@ -53,13 +53,19 @@ public sealed class Grade3Lesson4ActivitiesController(
             feedback.Add(Conditional("Full symbols for Car", answers.CarWholeSymbols, car / 2));
             feedback.Add(Conditional("Half symbols for Train", answers.TrainHalfSymbol, train % 2));
         }
+        feedback.Add(GradeSourcePlaneExtra(answers.SourcePlaneExtraWhole));
+        feedback.Add(GradeSourcePlaneWholeAfter(answers.SourcePlaneWholeAfterFour));
+        feedback.Add(new("Original source Cool-down graph drawing", null, true,
+            string.IsNullOrWhiteSpace(answers.SourcePlaneDrawing)
+                ? "Missing drawing explanation; teacher reviews student sketch of TWO added full Plane marks."
+                : "Teacher checks that the student actually drew TWO new full Plane marks. Numeric correctness alone does not certify the drawing."));
         feedback.Add(CoolDown("G3-U01-L04-CD-TRAIN-WHOLE",
             "Cool-down: full train marks", answers.CoolDownTrainWhole));
         feedback.Add(CoolDown("G3-U01-L04-CD-TRAIN-HALF",
             "Cool-down: half train mark", answers.CoolDownTrainHalf));
-        feedback.Add(CoolDown("G3-U01-L04-CD-PLANE-PLUS-TWO-WHOLE",
-            "Cool-down: plane full marks after 2 more learners",
-            answers.CoolDownPlanePlusTwoWhole));
+        if (!string.IsNullOrWhiteSpace(answers.CoolDownPlanePlusTwoWhole))
+            feedback.Add(CoolDown("G3-U01-L04-CD-PLANE-PLUS-TWO-WHOLE",
+                "Optional Edulytics extension: Plane +2", answers.CoolDownPlanePlusTwoWhole));
         feedback.Add(CoolDown("G3-U01-L04-CD-TOTAL",
             "Cool-down: total survey respondents", answers.CoolDownTotal));
         feedback.Add(new("Student-drawn graph, evidence and own explanations", null, true,
@@ -107,6 +113,24 @@ public sealed class Grade3Lesson4ActivitiesController(
             answer == expected
                 ? "Matches the supplied counts, but the class survey is not independently certified."
                 : "For each two pupils draw one full mark; one left over requires a half mark.");
+    }
+
+    private static Grade3Lesson4Feedback GradeSourcePlaneExtra(string? input)
+    {
+        if (!int.TryParse(input, NumberStyles.Integer, CultureInfo.InvariantCulture, out var n))
+            return new("Original four Plane pupils: extra whole marks", false, false, "Enter an integer.");
+        UsCcssG3Unit1Lesson4ScaledTravelSurvey.TryGradeSourcePlaneExtraWhole(n, out var correct);
+        return new("Original four Plane pupils: extra whole marks", correct, false,
+            correct ? "Two new whole marks represent four people." : "Four divided by key two gives two new symbols.");
+    }
+
+    private static Grade3Lesson4Feedback GradeSourcePlaneWholeAfter(string? input)
+    {
+        if (!int.TryParse(input, NumberStyles.Integer, CultureInfo.InvariantCulture, out var n))
+            return new("Fictional Plane after four: whole marks", false, false, "Enter an integer.");
+        UsCcssG3Unit1Lesson4ScaledTravelSurvey.TryGradeSourcePlaneWholeAfter(3, n, out var correct);
+        return new("Fictional Plane after four: whole marks", correct, false,
+            correct ? "3 + 4 = 7 pupils, three full symbols and one half." : "Seven pupils require three whole marks plus one half.");
     }
 
     private static Grade3Lesson4Feedback CoolDown(string id, string label, string? input)

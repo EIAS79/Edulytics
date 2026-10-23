@@ -79,8 +79,24 @@ public static class UsCcssG3Unit1Lesson4ScaledTravelSurvey
         correct = answer == expected;
         return true;
     }
+    // Original 2021 first-edition G3 U1 Lesson 4 Cool-down: 4 absent pupils
+    // choose Plane, so add 2 full pictures with key 1 whole = 2 pupils.
+    public const int SourceAbsentPlanePupils = 4;
+    public static bool TryGradeSourcePlaneExtraWhole(int submitted, out bool correct)
+    {
+        correct = submitted == 2;
+        return true;
+    }
+    public static bool TryGradeSourcePlaneWholeAfter(int original, int submitted, out bool correct)
+    {
+        correct = false;
+        if (original < 0 || original > 40) return false;
+        correct = submitted == (original + SourceAbsentPlanePupils) / 2;
+        return true;
+    }
+
     public static bool RequiresHumanReview(string task) => task is
         "actual-survey-provenance" or "student-named-records" or
         "partner-collaboration" or "student-drawn-graph" or
-        "open-justification" or "cool-down-own-graph";
+        "open-justification" or "cool-down-own-graph" or "source-plane-drawing";
 }

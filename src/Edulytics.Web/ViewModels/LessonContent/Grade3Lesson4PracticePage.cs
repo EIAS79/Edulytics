@@ -20,6 +20,9 @@ public sealed class Grade3Lesson4Answers
     // about the current class pictograph rather than a fixed numeric answer.
     public string? BalloonPlusTwoGraphChange { get; set; }
     public string? CarPlusOneGraphChange { get; set; }
+    public string? SourcePlaneExtraWhole { get; set; }
+    public string? SourcePlaneWholeAfterFour { get; set; }
+    public string? SourcePlaneDrawing { get; set; }
     public string? CoolDownTrainWhole { get; set; }
     public string? CoolDownTrainHalf { get; set; }
     public string? CoolDownPlanePlusTwoWhole { get; set; }

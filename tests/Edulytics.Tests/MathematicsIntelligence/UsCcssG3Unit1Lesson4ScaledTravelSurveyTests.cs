@@ -74,6 +74,24 @@ public sealed class UsCcssG3Unit1Lesson4ScaledTravelSurveyTests
             "Grade3Lesson4ActivitiesController.cs")));
     }
 
+    [Theory]
+    [InlineData(2, true)]
+    [InlineData(1, false)]
+    [InlineData(4, false)]
+    public void SourceCoolDownFourPlanePupilsMeanTwoNewWholeMarks(int n, bool expected)
+    {
+        Assert.True(UsCcssG3Unit1Lesson4ScaledTravelSurvey.TryGradeSourcePlaneExtraWhole(n, out var correct));
+        Assert.Equal(expected, correct);
+    }
+
+    [Fact]
+    public void OriginalSourceDrawingIsNotNumericCertification()
+    {
+        Assert.True(UsCcssG3Unit1Lesson4ScaledTravelSurvey.TryGradeSourcePlaneWholeAfter(3, 3, out var correct));
+        Assert.True(correct);
+        Assert.True(UsCcssG3Unit1Lesson4ScaledTravelSurvey.RequiresHumanReview("source-plane-drawing"));
+    }
+
     [Fact]
     public void OpenReasoningIsNeverCertifiedByNumberOnly()
     {
