@@ -11,9 +11,9 @@
   "status": "FIRST_PASS_ORIGINAL_COMPANIONS_SOURCE_ITEM_REVIEW_REQUIRED",
   "total": {
     "lessons": 135,
-    "scoredPractice": 112,
-    "scoredCoolDown": 115,
-    "teacherOnlyPractice": 23,
+    "scoredPractice": 111,
+    "scoredCoolDown": 112,
+    "teacherOnlyPractice": 24,
     "families": [
       "addition-within-1000",
       "analog-time-nearest-minute",
@@ -12237,17 +12237,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-review",
       "independentPractice": {
-        "prompt": "Look at a teacher-provided fraction diagram and estimate what fraction is shaded. Explain the equal parts and why the estimate is reasonable.",
+        "prompt": "Create an original shading diagram and invite too-high, about-right and too-low estimates.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "For the same whole, compare 2/4 and 1/2 using >, < or =.",
-        "answerType": "comparison",
-        "expected": "="
+        "prompt": "A whole with 8 equal parts has 3 parts shaded. What fraction is shaded?",
+        "answerType": "rational",
+        "expected": "3/8"
       },
       "openTeacherTask": "Work through the original lesson's activity Estimation Exploration: Diagram with your teacher. Show the representation and explain how it meets the goal: Let’s explore estimations with fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 10 min Activity 3 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflectio",
-      "teacherReviewNote": "An estimation exploration requires a teacher-provided diagram and defensible estimate; a bare numerical answer cannot certify it.",
+      "teacherReviewNote": "Without original figure pixels and marked area, exact fractions cannot be inferred from the source.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12262,7 +12262,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore estimations with fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 10 min Activity 3 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflectio",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Inspect the source shaded square and strip and produce three fraction estimates for each: too low, reasonable, and too high, justifying the comparison.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-1/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 130,
@@ -12320,17 +12331,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-review",
       "independentPractice": {
-        "prompt": "Mark a point 4 quarter-steps from 0 on a number line. Name it as a fraction.",
+        "prompt": "Locate 15/8 on a 0–2 number line. What fraction labels its position?",
         "answerType": "rational",
-        "expected": "4/4"
+        "expected": "15/8"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "For the same whole, compare 2/4 and 1/2 using >, < or =.",
-        "answerType": "comparison",
-        "expected": "="
+        "prompt": "On a compatible line, 2/8 is equal to which fraction in fourths?",
+        "answerType": "rational",
+        "expected": "1/4"
       },
       "openTeacherTask": "Work through the original lesson's activity Create Your Own Number Line with your teacher. Show the representation and explain how it meets the goal: Let’s create number lines and compare fractions.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source asks to construct six comparison statements (two each >, =, <) and verify spacing, not one number.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12345,7 +12356,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s create number lines and compare fractions.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source floor number line includes 6/2. What whole number does it represent?",
+        "answerType": "rational",
+        "expected": "3"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-2/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 131,
@@ -12396,17 +12418,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-review",
       "independentPractice": {
-        "prompt": "Mark a point 5 quarter-steps from 0 on a number line. Name it as a fraction.",
-        "answerType": "rational",
-        "expected": "5/4"
+        "prompt": "Create a true or false claim about fraction equivalence, then defend or revise it using a diagram.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "For the same whole, compare 2/4 and 1/2 using >, < or =.",
-        "answerType": "comparison",
-        "expected": "="
+        "prompt": "Propose a discussion statement involving fractions and whole-number relationships, including a counterexample.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Fractions Round Table with your teacher. Show the representation and explain how it meets the goal: Let’s discuss fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 3.NF.A.3 Lesson Timeline Warm-up 10 min Activity 1 35 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What was the best question you a",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Group discussions and changing opinions are observable outcomes, not machine-gradable fractions.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12421,7 +12443,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s discuss fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 3.NF.A.3 Lesson Timeline Warm-up 10 min Activity 1 35 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What was the best question you a",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source fraction round table requires three discussion rounds. Choose one claim about what fractions mean, and record how your justified position changes through discussion.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-3/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 132,
@@ -12481,17 +12514,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "tiny-house-project",
       "independentPractice": {
-        "prompt": "A rectangular room is 2 m long and 4 m wide. What is its floor area in square metres?",
+        "prompt": "A school bus tiny-house floor is 7 ft by 14 ft. Find its area.",
         "answerType": "integer",
-        "expected": "8"
+        "expected": "98"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Flooring costs 5 units per square metre for 8 square metres. Find the total cost.",
-        "answerType": "integer",
-        "expected": "40"
+        "prompt": "Design a separate tiny-house floor plan with at least two rooms and validate area and perimeter constraints.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Design a Tiny House with your teacher. Show the representation and explain how it meets the goal: Let’s design a tiny house.",
-      "teacherReviewNote": "Teacher checks design constraints, currency context and drawings.",
+      "teacherReviewNote": "Source requires comparing cabin, bus, and container, producing design and original area/perimeter questions.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12506,7 +12539,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s design a tiny house.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "One optional source tiny-house model uses an 8-foot by 20-foot shipping container. How much floor area in square feet?",
+        "answerType": "integer",
+        "expected": "160"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-4/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 133,
@@ -12557,17 +12601,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "tiny-house-project",
       "independentPractice": {
-        "prompt": "A rectangular room is 3 m long and 5 m wide. What is its floor area in square metres?",
+        "prompt": "A floor covers 30 square feet with carpet costing $2 per square foot. Find the carpeting cost.",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "60"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Flooring costs 5 units per square metre for 15 square metres. Find the total cost.",
+        "prompt": "A room has 40 square feet of wood flooring at $4 per square foot. What is the cost?",
         "answerType": "integer",
-        "expected": "75"
+        "expected": "160"
       },
       "openTeacherTask": "Work through the original lesson's activity What’s the Cost? with your teacher. Show the representation and explain how it meets the goal: Let’s calculate the cost of finishing a room in a tiny house.",
-      "teacherReviewNote": "Teacher checks design constraints, currency context and drawings.",
+      "teacherReviewNote": "Source has a total $1000 budget and varying fixtures; a one-item price calculation does not certify the whole design budget.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12582,7 +12626,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s calculate the cost of finishing a room in a tiny house.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source tile flooring costs $5 for each square foot. How much for 20 square feet of tile flooring?",
+        "answerType": "integer",
+        "expected": "100"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-5/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 134,
@@ -12642,17 +12697,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "survey-scaled-bar-graphs",
       "independentPractice": {
-        "prompt": "Collect an original categorical class survey, represent a scaled graph with title, key and categories, and justify the scale.",
+        "prompt": "Write a school survey question with four options and an impartial counting method.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Fictional data: 20 students chose club A and 15 club B. How many MORE chose the larger club?",
-        "answerType": "integer",
-        "expected": "5"
+        "prompt": "Design a different class survey with six or fewer options and a way to check unique responses.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Create a Survey with your teacher. Show the representation and explain how it meets the goal: Let’s survey a large group.",
-      "teacherReviewNote": "Data authenticity and graphical fidelity are teacher reviewed. Numerical Cool-down uses separate fictional data.",
+      "teacherReviewNote": "Student-collected responses are variable and involve privacy and teacher oversight. Never fabricate survey results.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12667,7 +12722,18 @@
         ],
         "caution": "A visually plausible dataset is not evidence of authentic class responses.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Design the original survey question with no more than six categorical answer options; explain how to avoid recording a student twice.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-6/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 135,
@@ -12725,17 +12791,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "survey-scaled-bar-graphs",
       "independentPractice": {
-        "prompt": "Collect an original categorical class survey, represent a scaled graph with title, key and categories, and justify the scale.",
+        "prompt": "Draw and explain a scaled bar graph from teacher-approved observed survey counts.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Fictional data: 25 students chose club A and 20 club B. How many MORE chose the larger club?",
+        "prompt": "In a fictional Edulytics poll, 35 pupils chose A and 20 chose B. How many more chose A?",
         "answerType": "integer",
-        "expected": "5"
+        "expected": "15"
       },
       "openTeacherTask": "Work through the original lesson's activity Draw a Scaled Bar Graph with your teacher. Show the representation and explain how it meets the goal: Let’s represent our data on scaled bar graphs and answer questions about the data.",
-      "teacherReviewNote": "Data authenticity and graphical fidelity are teacher reviewed. Numerical Cool-down uses separate fictional data.",
+      "teacherReviewNote": "Source L07 depends on the authentic U08 L06 survey and partner graphs; no fixed fake source values.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12750,7 +12816,18 @@
         ],
         "caution": "A visually plausible dataset is not evidence of authentic class responses.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Use the class's genuine survey to draw a scaled bar graph with title, labels and suitable scale. Create and answer one- and two-step comparisons based on actual categories.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-7/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 136,
@@ -12808,17 +12885,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-fluency-games",
       "independentPractice": {
-        "prompt": "How many objects are there in 2 equal groups with 5 objects in each group? Show your groups in a drawing.",
+        "prompt": "Find 8 × 7 without counting one by one.",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "56"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 5 equal groups with 5 objects in each group? Show your groups in a drawing.",
+        "prompt": "How many objects in 9 groups of six?",
         "answerType": "integer",
-        "expected": "25"
+        "expected": "54"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Multiplication with your teacher. Show the representation and explain how it meets the goal: Let’s sort multiplication facts and play a multiplication game.",
-      "teacherReviewNote": "Teacher witnesses the game interaction and checks multiple strategies.",
+      "teacherReviewNote": "The center day is based on peer fact fluency and game strategy, which require teacher observation.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12833,7 +12910,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s sort multiplication facts and play a multiplication game.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source mental math includes 17 × 4. Find the product.",
+        "answerType": "integer",
+        "expected": "68"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-8/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 137,
@@ -12891,17 +12979,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-fluency-games",
       "independentPractice": {
-        "prompt": "How many objects are there in 3 equal groups with 3 objects in each group? Show your groups in a drawing.",
+        "prompt": "To get near 100 in Rectangle Rumble, how many squares are in an 8 × 9 rectangle?",
         "answerType": "integer",
-        "expected": "9"
+        "expected": "72"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 3 equal groups with 6 objects in each group? Show your groups in a drawing.",
+        "prompt": "Six groups of twelve equal objects contain how many objects?",
         "answerType": "integer",
-        "expected": "18"
+        "expected": "72"
       },
       "openTeacherTask": "Work through the original lesson's activity Introduce Rectangle Rumble and How Close? with your teacher. Show the representation and explain how it meets the goal: Let’s play multiplication games.",
-      "teacherReviewNote": "Teacher witnesses the game interaction and checks multiple strategies.",
+      "teacherReviewNote": "Spinners, cards, array drawing and winning condition are human-supervised game skills.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12916,7 +13004,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s play multiplication games.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source number talk, 4 × 24 equals what?",
+        "answerType": "integer",
+        "expected": "96"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-9/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 138,
@@ -12981,17 +13080,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-fluency",
       "independentPractice": {
-        "prompt": "Share 16 tokens equally among 4 participants. How many each?",
+        "prompt": "If 6 × 7 = 42, what is 42 ÷ 6?",
         "answerType": "integer",
-        "expected": "4"
+        "expected": "7"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Place 8 tokens into groups of 2. How many groups?",
+        "prompt": "If 8 × 5 = 40, how many groups of five make forty?",
         "answerType": "integer",
-        "expected": "4"
+        "expected": "8"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Find the Match with your teacher. Show the representation and explain how it meets the goal: Let’s represent equal groups and write equal groups situations.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Equivalence of multiplication and division representations must be checked on diagrams, not just arithmetic.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -13006,7 +13105,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent equal groups and write equal groups situations.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Use the source division/multiplication matching cards, explain why an equation matches its diagram, and give a different equal-group situation for the same quotient.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-10/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 139,
@@ -13064,17 +13174,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-fluency",
       "independentPractice": {
-        "prompt": "Share 25 tokens equally among 5 participants. How many each?",
+        "prompt": "Find 48 ÷ 3 and explain with equal groups.",
         "answerType": "integer",
-        "expected": "5"
+        "expected": "16"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Place 15 tokens into groups of 3. How many groups?",
+        "prompt": "Find 48 ÷ 4, checking the related multiplication fact.",
         "answerType": "integer",
-        "expected": "5"
+        "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Play Race to 1 with your teacher. Show the representation and explain how it meets the goal: Let’s play division games.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Race to 1 uses unpredictable dice and a series of quotients; teacher supervises fair play and evidence.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -13089,7 +13199,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s play division games.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source number talk asks for 48 ÷ 6. What is the quotient?",
+        "answerType": "integer",
+        "expected": "8"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-11/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 140,
@@ -13147,17 +13268,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "equal-group-activity-design",
       "independentPractice": {
-        "prompt": "Invent a Notice and Wonder or How Many Do You See activity with equal groups, without giving away the answer.",
+        "prompt": "Draw an original picture with equal groups to elicit several Notice questions and Wonder questions.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Write a fresh equal-group observation prompt and explain multiple ways classmates could see it.",
+        "prompt": "Create a new Notice and Wonder prompt that could support more than one mathematical observation.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Design Your Notice and Wonder with your teacher. Show the representation and explain how it meets the goal: Let’s create a Notice and Wonder activity.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "A generated picture is not evidence of successful peer discussion; source images are subject to rights.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -13172,7 +13293,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s create a Notice and Wonder activity.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Create and present a Notice and Wonder task about equal groups using your own image, and record classmates' real ideas.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-12/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 141,
@@ -13232,17 +13364,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "equal-group-activity-design",
       "independentPractice": {
-        "prompt": "Invent a Notice and Wonder or How Many Do You See activity with equal groups, without giving away the answer.",
+        "prompt": "Draw an array of dots that can be counted at least two ways without changing the total.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Write a fresh equal-group observation prompt and explain multiple ways classmates could see it.",
+        "prompt": "Create your own 'How Many Do You See' image with groups of objects and explain two counting strategies.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Design Your How Many Do You See with your teacher. Show the representation and explain how it meets the goal: Let’s create a How Many Do You See activity.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Timed flash, silent thinking and peer dialogue are activities requiring teacher validation.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -13257,7 +13389,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s create a How Many Do You See activity.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Create and flash an original dot arrangement that supports multiple ways to count equal groups, and collect explanations from classmates.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-13/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 142,
@@ -13315,17 +13458,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "measurement-estimation-design",
       "independentPractice": {
-        "prompt": "Design an Estimation Exploration for an object whose length can be measured to the nearest quarter inch.",
+        "prompt": "Design an estimate-and-measure prompt using a ruler that shows quarter-inch marks.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A paper strip covers 7 quarter-inch steps from zero. State its length in inches.",
+        "prompt": "A 7-quarter-inch-long paper strip measures how many inches?",
         "answerType": "rational",
         "expected": "7/4"
       },
       "openTeacherTask": "Work through the original lesson's activity Design Your Estimation Exploration with your teacher. Show the representation and explain how it meets the goal: Let’s create an Estimation Exploration activity.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "The source asks for genuine object/image measurement and discussion, not a fixed earthworm photo or guessed length.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -13340,7 +13483,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s create an Estimation Exploration activity.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Make an original estimation exploration of a length to the nearest half or quarter inch; estimate low, high and reasonable, then physically measure to check.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-14/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 143,
@@ -13412,17 +13566,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "number-talk-design",
       "independentPractice": {
-        "prompt": "Calculate 285 + 141 mentally; show your strategies.",
+        "prompt": "Calculate 500 + 199 using two mental strategies.",
         "answerType": "integer",
-        "expected": "426"
+        "expected": "699"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 575 − 147 mentally; explain regrouping.",
+        "prompt": "Compute 504 + 199 and explain compensation.",
         "answerType": "integer",
-        "expected": "428"
+        "expected": "703"
       },
       "openTeacherTask": "Work through the original lesson's activity Number Talk Design 1 with your teacher. Show the representation and explain how it meets the goal: Let’s create a Number Talk activity. Required Preparation CCSS Standards Building On 3.NBT.A.2 Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 15 min Activity 3 15 min Activity 4 15 min Lesson Synthesis 10 min Cool-d",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Student-written related expressions and two distinct mental strategies must be judged, not only the result.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -13437,7 +13591,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s create a Number Talk activity. Required Preparation CCSS Standards Building On 3.NBT.A.2 Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 15 min Activity 3 15 min Activity 4 15 min Lesson Synthesis 10 min Cool-d",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source subtraction talk: what is 600 − 399?",
+        "answerType": "integer",
+        "expected": "201"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-8/lesson-15/lesson.html",
+        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     }
   ]
 }
