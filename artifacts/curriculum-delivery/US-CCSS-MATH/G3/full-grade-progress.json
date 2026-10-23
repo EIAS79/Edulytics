@@ -7,7 +7,7 @@
   "authoringBranch": "curriculum/g3-continuous-authoring-20261023",
   "sourceParityGoalPercent": 100,
   "sourceParityProvenPercent": null,
-  "authoringStage": "A_B_C_IN_PROGRESS_ONE_SEMANTICALLY_AUTHORING_CLOSED",
+  "authoringStage": "A_B_C_IN_PROGRESS",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "runtimeTests": "NOT_MANUALLY_RUN; GITHUB_AUTOMATED_WORKFLOWS_STARTED",
@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 3,
+    "lessonsFullyReadyForStageD": 4,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 140,
+    "lessonsWithACExplicitGap": 139,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,42 +32,28 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 3,
+    "lessonsIndividuallyComparedToAllOriginalElements": 4,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 3,
+    "lessonsWithActualRichV2SourcePerfect": 4,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 0,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 30
+    "sourceElementsSemanticallyVerifiedForAuthoring": 41
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 3,
-    "firstUnclosedOrdinal": 4,
+    "lastConsecutiveReadyForStageDOrdinal": 4,
+    "firstUnclosedOrdinal": 5,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
   "returnQueue": [
-    {
-      "ordinal": 4,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L04",
-      "status": "A_C_EXPLICIT_GAP",
-      "reasons": [
-        "Exact lesson-specific Rich V2 teaching candidate repaired in branch; effective displayed lesson, total source-to-student subpart mapping and complete teacher review evidence are still unverified.",
-        "Original 2021 first-edition task PDF and source graphic pixel verification incomplete due publisher asset fetching limitation; source-perfect 100% not proven.",
-        "Original 2021 warm-up dot diagrams and student task-sheet PDF visual details not fully inspected",
-        "Actual survey counts are class-specific; no verified class roster or submitted drawing exists",
-        "Published Edulytics Rich V2 body not inspected against local source",
-        "Dedicated Razor student form and route written but have not been built or exercised",
-        "Teacher graph rubric, other classroom activities and licensing/assets remain open"
-      ]
-    },
     {
       "ordinal": 5,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L05",
@@ -1713,10 +1699,10 @@
       "unitNumber": 1,
       "lessonNumber": 4,
       "title": "Create Scaled Picture Graphs",
-      "stageA": "ORIGINAL_2021_TEACHER_AND_PREPARATION_TEXT_CHECKED_SOURCE_PDF_FIGURE_PIXEL_GAP",
-      "stageB": "EMBEDDED_SOURCE_SPECIFIC_RICH_V2_PLUS_PAPER_SURVEY_TEMPLATE_AND_RAZOR_SEQUENCE_AUTHORED_NOT_EXECUTED",
-      "stageC": "FIRST_PARTY_PRACTICE_REMAIN_HUMAN_NUMERIC_SPLIT_REGRESSIONS_WRITTEN_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_TEACHER_GUIDE_11_OF_11_SEMANTIC_AUTHORING_MATCH",
+      "stageB": "RICH_V2_AND_FIRST_PARTY_STUDENT_SOURCE_GRAPH_AND_COOlDOWN_AUTHORED",
+      "stageC": "SOURCE_PLUS4_PLANE_NUMERIC_AND_TEACHER_GRAPH_RUBRIC_AUTHORED_TESTS_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 8,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -1729,7 +1715,11 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "richV2EmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json"
+      "richV2EmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "readyForStageD": true,
+      "sourceElementCount": 11,
+      "sourceElementsSemanticallyVerifiedForAuthoring": 11,
+      "closureEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-4-stage-a-b-c-authoring-closure-evidence-20261024.json"
     },
     {
       "gradeOrdinal": 5,
