@@ -450,7 +450,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.False(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U01:L08", out _));
         Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U01:L09", out var l));
         Assert.Equal(9,l!.Ordinal);
-        Assert.False(l.ReadyForStageD);
+        Assert.True(l.ReadyForStageD);
     }
 
     [Theory]

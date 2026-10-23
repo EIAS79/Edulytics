@@ -11,11 +11,11 @@
   "originalTeacherHtml": "unit-1/lesson-9/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-9/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "SOURCE_2021_ALL_14_SEMANTIC_ELEMENTS_MAPPED",
     "goals": "Build an understanding of multiplication as equal groups. Represent a situation involving equal groups in a way that makes sense to students.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 2,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
     "teacherFacingSourceExtractedNotFullyRead": true,
     "sourcePublic2021IndividualWarmupExpressions": [
@@ -33,10 +33,11 @@
       "4 people with 2 shoes each",
       "2 boxes with 10 markers each",
       "3 basketball teams with 5 players each"
-    ]
+    ],
+    "sourceTeacherGuideOriginalCoolDownRead": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_RICH_V2_AND_TWELVE_SEPARATE_SOURCE_TASKS_AUTHORED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -47,10 +48,16 @@
     "genericTeachingTemplateReviewRequired": true,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "discretePictureSymbolsNowDrawn": "Uses original Edulytics plain squares rather than proportional horizontal strips in common Grade 3 source-companion view. Original publisher art untouched.",
-    "lesson9SourceSpecificTaskPromptsAuthored": true
+    "lesson9SourceSpecificTaskPromptsAuthored": true,
+    "richV2Embedded": {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "version": "g3-u01-l09-first-edition-rich-v2-20261024-v1",
+      "authoringSemanticScope": true,
+      "runtimeDeferred": true
+    }
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TEN_NUMERIC_SOURCE_SUBTASKS_TWO_TEACHER_ONLY_SOURCE_TASKS_TESTS_UNRUN",
     "family": "equal-group-representation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -66,59 +73,168 @@
   },
   "sourceElements": [
     {
-      "id": "G3-U01-L09-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: More Addition (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-1/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U01-L09-W01",
+      "sourcePart": "Warm-up: More Addition",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "40 + 35 (mental sum): give your answer, then explain tens-and-ones reasoning",
+      "expectedNumeric": "75",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
     },
     {
-      "id": "G3-U01-L09-HEADING-02",
-      "sourceSection": "Activity 1: From Scaled Graphs to Equal Groups (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-1/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U01-L09-W02",
+      "sourcePart": "Warm-up: More Addition",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "45 + 35 (mental sum): compare with 40 + 35 and explain the change",
+      "expectedNumeric": "80",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
     },
     {
-      "id": "G3-U01-L09-HEADING-03",
-      "sourceSection": "Activity 2: Equal Group Situations (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-1/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U01-L09-W03",
+      "sourcePart": "Warm-up: More Addition",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "45 + 36 (mental sum): how did the previous value change?",
+      "expectedNumeric": "81",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
     },
     {
-      "id": "G3-U01-L09-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-1/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U01-L09-W04",
+      "sourcePart": "Warm-up: More Addition",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "34 + 58 (mental sum): use a valid strategy for composing ten",
+      "expectedNumeric": "92",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
     },
     {
-      "id": "G3-U01-L09-HEADING-05",
-      "sourceSection": "Cool-down: Represent Equal Groups (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-1/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U01-L09-A1-01",
+      "sourcePart": "Activity 1: Scaled Sign Graph",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "Represent speed-limit signs as THREE equal groups with TWO signs each: what total do your physical/drawn three groups show?",
+      "expectedNumeric": "6",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-A1-02",
+      "sourcePart": "Activity 1: Scaled Sign Graph",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "Choose the correct original statement number (1, 2 or 3) about the three SPEED-LIMIT picture symbols, and explain WHY. The correct statement is three pictures each worth two signs, NOT three pictures worth one or two pictures worth two.",
+      "expectedNumeric": "2",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-A1-03",
+      "sourcePart": "Activity 1: Scaled Sign Graph",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "How many STREET SIGNS do FIVE groups of TWO dots represent? Draw the five equal groups and connect to the picture graph.",
+      "expectedNumeric": "10",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-A2-01",
+      "sourcePart": "Activity 2: Equal Group Situations",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "Show FOUR people each wearing TWO shoes, with four separately drawn equal groups. How many shoes altogether?",
+      "expectedNumeric": "8",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-A2-02",
+      "sourcePart": "Activity 2: Equal Group Situations",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "Show TWO boxes, TEN markers in each box, with two equal groups. How many markers altogether?",
+      "expectedNumeric": "20",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-A2-03",
+      "sourcePart": "Activity 2: Equal Group Situations",
+      "status": "MATCHED_DIGITAL",
+      "firstPartyTask": "Show THREE basketball teams each containing FIVE players, with three equal groups. How many players altogether?",
+      "expectedNumeric": "15",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-S01",
+      "sourcePart": "Lesson Synthesis",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyTask": "Compare all original sign, shoe, marker and basketball group drawings: explain what makes their groups EQUAL and what a two-per-picture key does. The source has not yet introduced multiplication expressions; teacher reviews, not a numeric mark.",
+      "expectedNumeric": null,
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-CD01",
+      "sourcePart": "Original 2021 source Cool-down: Represent Equal Groups",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyTask": "Jada has THREE bags with FIVE bracelets in EACH bag. Draw or model THREE DISTINCT EQUAL GROUPS of FIVE with counters or marks and explain the representation. This is the original source assessment, teacher-reviewed rather than an integer auto-pass.",
+      "expectedNumeric": null,
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "teacherReviewNeeded": true,
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-ORIGINAL-IMAGE-SCALED-ROAD-SIGN",
+      "sourcePart": "Activity1 original picture graph source SVG",
+      "status": "MATCHED_DIGITAL",
+      "evidence": "4 graph categories with squares counts 2,1,3,5 and key one square = 2 actual signs. Rendered as independent first-party picture squares.",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L09-ORIGINAL-IMAGE-FIVE-GROUPS-OF-TWO",
+      "sourcePart": "Activity1 original 5-group dot diagram",
+      "status": "MATCHED_TEACHER_LED",
+      "evidence": "5 distinct groups containing 2 dots each represent 10 street signs, with teacher-reviewed first-party drawing.",
+      "firstPartyCodePath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l09-2021.rich-lesson-v2.json",
+      "semanticSourceAuthoringVerified": true,
+      "originalPublisherArtCopied": false
     }
   ],
   "images": [
@@ -142,9 +258,8 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 2,
-    "fullyVerified": 0
+    "identified": 14,
+    "sourceSemanticAuthoringVerified": 14
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "How many objects are there in 3 equal groups with 6 objects in each group? Show your groups in a drawing.",
@@ -152,21 +267,15 @@
     "expected": "18"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Source-specific warm-up additions and all three concrete contexts are now visibly prompted, but not individually machine graded or captured in separate auditable source-task rows; teacher reviews written original-work response."
-  ],
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-9-stage-a-b-c-authoring-closure-evidence-20261024.json",
+  "sourceSemanticAuthoringCoveragePercent": 100
 }
