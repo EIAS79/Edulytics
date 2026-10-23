@@ -166,6 +166,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L05" &&
+         grade3AuthoredActivityAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 3 original scaled bar graph student lesson">
+            <h2>Edulytics · scaled bar graphs</h2>
+            <p>Compare two source-aligned original graphs and make new bar graphs
+                using the previous real class survey at scale 2 or 5.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade3Lesson5Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@grade3AuthoredActivityAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 3 bar graph activities and Cool-down
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {

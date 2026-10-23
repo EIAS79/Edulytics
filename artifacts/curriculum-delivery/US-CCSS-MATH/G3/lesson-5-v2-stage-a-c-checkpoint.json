@@ -1,0 +1,118 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 5,
+  "unitNumber": 1,
+  "lessonNumber": 5,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L05",
+  "title": "Represent Data in Scaled Bar Graphs",
+  "sourceEdition": "Illustrative Mathematics K–5 First Edition (2021)",
+  "localSourceHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-1\\lesson-5\\lesson.html",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-5/lesson.html",
+  "targetSourceParityPercent": 100,
+  "claimedSourceParityPercent": null,
+  "readyForStageD": false,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "stageA": {
+    "status": "LOCAL_TEACHER_STUDENT_FACING_HTML_READ_COMPARISON_GRAPHS_SOURCE_MATCHED",
+    "sourceGraphOne": {
+      "key": 1,
+      "axisMin": 0,
+      "axisMax": 12,
+      "counts": {
+        "Bike": 12,
+        "Walk": 4,
+        "Bus or Van": 6,
+        "Car": 3
+      }
+    },
+    "sourceGraphTwo": {
+      "key": 2,
+      "axisMin": 0,
+      "axisMax": 24,
+      "counts": {
+        "Bike": 12,
+        "Walk": 4,
+        "Bus or Van": 6,
+        "Car": 3
+      }
+    },
+    "secondActivity": "Teacher reuses authentic L04 travel preference counts, student chooses ticks 2 or 5; diagrams by 2 source grid maximum16 and by5 maximum40.",
+    "sourceTaskPdfReviewed": false,
+    "rights": "Graph graphics redrawn independently, not copied."
+  },
+  "stageB": {
+    "status": "SOURCE_COUNT_ALIGNED_BAR_GRAPH_COMPANION_AUTHORED_RICH_V2_OPEN",
+    "codePaths": {
+      "core": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson5ScaledBarGraph.cs",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson5ActivitiesController.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson5PracticePage.cs",
+      "studentLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "activities": [
+      "Number Talk counting 2s and 5s",
+      "Two source-matched How We Get Home bar graphs with different tick sizes",
+      "L04 class data reused via manual re-entry; check teacher provenance",
+      "Either chosen scale2 or5 renders same values accurately",
+      "Teacher-reviewed partner scale selection",
+      "New original fictional Edulytics Cool-down"
+    ]
+  },
+  "stageC": {
+    "status": "SOURCE_NUMERIC_AND_FIRST_PARTY_COOL_DOWN_WIRED_TESTS_UNRUN",
+    "testsWritten": true,
+    "testsRun": false,
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson5ScaledBarGraphTests.cs",
+    "route": "student/practice/grade3-u01-l05",
+    "sourceQuestions": 4,
+    "originalCoolDownNumericQuestions": 3,
+    "teacherGradedTasks": 5
+  },
+  "sourceElements": [
+    {
+      "id": "warmup",
+      "status": "AUTHOR_CONTEXT_WRITTEN_ORIGINAL_IMAGE_NOT_REVIEWED"
+    },
+    {
+      "id": "activity1",
+      "status": "NUMERIC_SOURCE_CHARTS_AND_KEYS_MATCHED_RUNTIME_NOT_TESTED"
+    },
+    {
+      "id": "activity2",
+      "status": "ORIGINAL_CLASS_SURVEY_REQUIRED_DEPENDENT_ON_L04"
+    },
+    {
+      "id": "synthesis",
+      "status": "STUDENT_TEACHER_RUBRIC_AUTHORED"
+    },
+    {
+      "id": "cooldown",
+      "status": "FIRST_PARTY_ORIGINAL_AUTHORED_NOT_PUBLISHER_COPY"
+    },
+    {
+      "id": "images_rights",
+      "status": "ORIGINAL_ARTWORK_NOT_COPIED_VISUALS_UNTESTED"
+    }
+  ],
+  "sourceInventory": {
+    "identifiedElements": 6,
+    "fullyMappedAndVerified": 0,
+    "localTeacherHtmlInspected": true,
+    "studentTaskPdfRead": false,
+    "publishedRichV2BodyCompared": false
+  },
+  "openGaps": [
+    "Original Number Talk exact numeric expression sequence and visual student task PDF have not been fully checked.",
+    "Teacher-verified L04 real survey dataset is NOT stored or automatically rehydrated; learner must re-enter and teacher verify consistency.",
+    "Effective database-backed Rich V2 content not source-compared.",
+    "Razor drawing and controller mathematics test suite written but not executed at Stage D.",
+    "Teacher discussion, full pedagogical source parity, official assets and original student graph drawing remain unverified."
+  ],
+  "originalCoolDownPolicy": "INDEPENDENT_FIRST_PARTY_EQUIVALENT_AS_APPROVED",
+  "stageD": "NOT_STARTED",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "academicApproval": "NOT_CLAIMED",
+  "merged": false,
+  "deployed": false
+}

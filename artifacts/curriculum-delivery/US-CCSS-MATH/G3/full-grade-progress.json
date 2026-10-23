@@ -18,23 +18,23 @@
     "catalogueLessons": 143,
     "units": 8,
     "lessonsFullyReadyForStageD": 0,
-    "lessonsWithFirstEditionPublicSourceIndexed": 4,
-    "lessonsWithACExplicitGap": 4,
-    "remainingWithoutOriginalReview": 139,
-    "numericCandidateCodeFilesAuthored": 4,
-    "stageCRegressionFilesWrittenNotRun": 4,
-    "sourceElementsIndexed": 38,
+    "lessonsWithFirstEditionPublicSourceIndexed": 5,
+    "lessonsWithACExplicitGap": 5,
+    "remainingWithoutOriginalReview": 138,
+    "numericCandidateCodeFilesAuthored": 5,
+    "stageCRegressionFilesWrittenNotRun": 5,
+    "sourceElementsIndexed": 44,
     "sourceElementsFullyComparedToEffectiveProduct": 0,
-    "firstPartyOriginalCoolDownLessonsAuthored": 4,
-    "firstPartyOriginalCoolDownNumericQuestions": 10,
-    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 4,
+    "firstPartyOriginalCoolDownLessonsAuthored": 5,
+    "firstPartyOriginalCoolDownNumericQuestions": 13,
+    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 5,
     "firstPartyOriginalCoolDownTestFilesWrittenNotRun": 1
   },
   "cursor": {
     "lastConsecutiveReadyForStageDOrdinal": 0,
     "firstUnclosedOrdinal": 1,
-    "highestSequentiallySourceIndexedOrdinal": 4,
-    "nextAfterExternalGapOrdinal": 5
+    "highestSequentiallySourceIndexedOrdinal": 5,
+    "nextAfterExternalGapOrdinal": 6
   },
   "returnQueue": [
     {
@@ -78,6 +78,18 @@
         "Published Edulytics Rich V2 body not inspected against local source",
         "Dedicated Razor student form and route written but have not been built or exercised",
         "Teacher graph rubric, other classroom activities and licensing/assets remain open"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L05",
+      "status": "A_C_EXPLICIT_GAP",
+      "reasons": [
+        "Original Number Talk exact numeric expression sequence and visual student task PDF have not been fully checked.",
+        "Teacher-verified L04 real survey dataset is NOT stored or automatically rehydrated; learner must re-enter and teacher verify consistency.",
+        "Effective database-backed Rich V2 content not source-compared.",
+        "Razor drawing and controller mathematics test suite written but not executed at Stage D.",
+        "Teacher discussion, full pedagogical source parity, official assets and original student graph drawing remain unverified."
       ]
     }
   ],
@@ -164,16 +176,17 @@
       "unitNumber": 1,
       "lessonNumber": 5,
       "title": "Represent Data in Scaled Bar Graphs",
-      "stageA": "NOT_STARTED",
-      "stageB": "NOT_STARTED",
-      "stageC": "NOT_STARTED",
-      "authoringClosure": "NOT_STARTED",
-      "sourceElementsIdentified": 0,
+      "stageA": "LOCAL_2021_SOURCE_BAR_GRAPHS_READ_1_VS_2_AXES",
+      "stageB": "SOURCE_CHART_AND_DYNAMIC_PRIOR_CLASS_GRAPH_COMPANION_AUTHORED",
+      "stageC": "BAR_GRAPH_NUMERIC_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_UNRUN",
+      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "sourceElementsIdentified": 6,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
-      "checkpointPath": null,
+      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-5-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
-      "academicApproval": "NOT_CLAIMED"
+      "academicApproval": "NOT_CLAIMED",
+      "coolDownState": "FIRST_PARTY_COOL_DOWN_AUTHORED_UNRUN"
     },
     {
       "gradeOrdinal": 6,
