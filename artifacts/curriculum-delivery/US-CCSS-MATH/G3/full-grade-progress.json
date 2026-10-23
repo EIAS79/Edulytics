@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 4,
+    "lessonsFullyReadyForStageD": 5,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 139,
+    "lessonsWithACExplicitGap": 138,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,42 +32,28 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 4,
+    "lessonsIndividuallyComparedToAllOriginalElements": 5,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 4,
+    "lessonsWithActualRichV2SourcePerfect": 5,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 0,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 41
+    "sourceElementsSemanticallyVerifiedForAuthoring": 51
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 4,
-    "firstUnclosedOrdinal": 5,
+    "lastConsecutiveReadyForStageDOrdinal": 5,
+    "firstUnclosedOrdinal": 6,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
   "returnQueue": [
-    {
-      "ordinal": 5,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L05",
-      "status": "A_C_EXPLICIT_GAP",
-      "reasons": [
-        "Reuse of teacher-attested L04 class preference data is not proven by durable app storage; current L05 reentry requires teacher comparison. A-C code correction exists but no certified integration.",
-        "Official 2021 Student Task PDF and bar graph source pixel images not inspected; exact first-edition source-to-effective Rich V2 parity remains incomplete.",
-        "Original Number Talk exact numeric expression sequence and visual student task PDF have not been fully checked.",
-        "Teacher-verified L04 real survey dataset is NOT stored or automatically rehydrated; learner must re-enter and teacher verify consistency.",
-        "Effective database-backed Rich V2 content not source-compared.",
-        "Razor drawing and controller mathematics test suite written but not executed at Stage D.",
-        "Teacher discussion, full pedagogical source parity, official assets and original student graph drawing remain unverified."
-      ]
-    },
     {
       "ordinal": 6,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L06",
@@ -1727,10 +1713,10 @@
       "unitNumber": 1,
       "lessonNumber": 5,
       "title": "Represent Data in Scaled Bar Graphs",
-      "stageA": "2021_SOURCE_TEACHER_PREP_PUBLIC_HTML_REVIEWED_ORIGINAL_PDF_FIGURE_PIXEL_UNVERIFIED",
-      "stageB": "SOURCE_REAL_L04_SURVEY_CARRYOVER_AND_EXACT_AXIS_1_2_RICH_V2_CORRECTION_AUTHORED_NOT_RUNTIME_VERIFIED",
-      "stageC": "FIRST_PARTY_LEARNER_ACTIVITY_AND_UNRUN_SOURCE_REGRESSION_DRAFT",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_SOURCE_10_OF_10_SEMANTIC_AUTHORING",
+      "stageB": "RICH_V2_AUTHORED_SOURCE_L04_SURVEY_ZOO_COOLDOWN",
+      "stageC": "SOURCE_ZOO_TIGER_OTTER_NUMERIC_AND_TEACHER_RUBRIC_TESTS_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 6,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -1742,7 +1728,11 @@
       "original2021FigureUrlCount": 4,
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": true,
+      "sourceElementCount": 10,
+      "sourceElementsSemanticallyVerifiedForAuthoring": 10,
+      "closureEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-5-stage-a-b-c-authoring-closure-evidence-20261024.json"
     },
     {
       "gradeOrdinal": 6,
