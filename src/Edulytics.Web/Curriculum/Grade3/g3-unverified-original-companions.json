@@ -11,11 +11,12 @@
   "status": "FIRST_PASS_ORIGINAL_COMPANIONS_SOURCE_ITEM_REVIEW_REQUIRED",
   "total": {
     "lessons": 135,
-    "scoredPractice": 118,
+    "scoredPractice": 117,
     "scoredCoolDown": 120,
-    "teacherOnlyPractice": 17,
+    "teacherOnlyPractice": 18,
     "families": [
       "addition-within-1000",
+      "analog-time-nearest-minute",
       "area-comparison",
       "area-multiplication-table",
       "arrays-commutative",
@@ -39,7 +40,10 @@
       "fractions-equal-partition",
       "fractions-number-line",
       "geometry-application",
+      "grams-and-kilograms",
+      "intro-liquid-volume",
       "larger-number-division",
+      "litre-estimation",
       "measurement-estimation-design",
       "measurement-line-plot",
       "measurement-word-problems",
@@ -59,8 +63,7 @@
       "time-minutes",
       "tiny-house-project",
       "two-step-add-subtract",
-      "unit-squares-area",
-      "weight-volume"
+      "unit-squares-area"
     ]
   },
   "lessons": [
@@ -5723,14 +5726,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-equal-partition",
       "independentPractice": {
-        "prompt": "A whole is partitioned into 4 equal parts and 3 parts are shaded. Write the fraction shaded.",
-        "answerType": "rational",
-        "expected": "3/4"
-      },
-      "originalEdulyticsCoolDown": {
-        "prompt": "A whole is cut into 3 equal parts; 1 part is chosen. Write the unit fraction.",
+        "prompt": "A rectangle is partitioned into 3 equal-area parts and 1 parts are shaded. Write the fraction shaded.",
         "answerType": "rational",
         "expected": "1/3"
+      },
+      "originalEdulyticsCoolDown": {
+        "prompt": "An equal-area whole has 4 parts; exactly one part is selected. Write its unit fraction.",
+        "answerType": "rational",
+        "expected": "1/4"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Partitions with your teacher. Show the representation and explain how it meets the goal: Let’s name parts of a whole.",
       "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram.",
@@ -5800,14 +5803,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-equal-partition",
       "independentPractice": {
-        "prompt": "A whole is partitioned into 5 equal parts and 4 parts are shaded. Write the fraction shaded.",
+        "prompt": "A rectangle is partitioned into 4 equal-area parts and 2 parts are shaded. Write the fraction shaded.",
         "answerType": "rational",
-        "expected": "4/5"
+        "expected": "2/4"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A whole is cut into 4 equal parts; 1 part is chosen. Write the unit fraction.",
+        "prompt": "An equal-area whole has 6 parts; exactly one part is selected. Write its unit fraction.",
         "answerType": "rational",
-        "expected": "1/4"
+        "expected": "1/6"
       },
       "openTeacherTask": "Work through the original lesson's activity Partition the Strips with your teacher. Show the representation and explain how it meets the goal: Let’s use fractions to describe parts.",
       "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram.",
@@ -5876,14 +5879,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-equal-partition",
       "independentPractice": {
-        "prompt": "A whole is partitioned into 3 equal parts and 2 parts are shaded. Write the fraction shaded.",
+        "prompt": "A rectangle is partitioned into 6 equal-area parts and 3 parts are shaded. Write the fraction shaded.",
         "answerType": "rational",
-        "expected": "2/3"
+        "expected": "3/6"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A whole is cut into 5 equal parts; 1 part is chosen. Write the unit fraction.",
+        "prompt": "An equal-area whole has 8 parts; exactly one part is selected. Write its unit fraction.",
         "answerType": "rational",
-        "expected": "1/5"
+        "expected": "1/8"
       },
       "openTeacherTask": "Work through the original lesson's activity Write and Read Fractions with your teacher. Show the representation and explain how it meets the goal: Let’s learn about non-unit fractions.",
       "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram.",
@@ -5967,14 +5970,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-equal-partition",
       "independentPractice": {
-        "prompt": "A whole is partitioned into 4 equal parts and 2 parts are shaded. Write the fraction shaded.",
+        "prompt": "A rectangle is partitioned into 8 equal-area parts and 4 parts are shaded. Write the fraction shaded.",
         "answerType": "rational",
-        "expected": "2/4"
+        "expected": "4/8"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A whole is cut into 6 equal parts; 1 part is chosen. Write the unit fraction.",
+        "prompt": "An equal-area whole has 2 parts; exactly one part is selected. Write its unit fraction.",
         "answerType": "rational",
-        "expected": "1/6"
+        "expected": "1/2"
       },
       "openTeacherTask": "Work through the original lesson's activity Introduce Secret Fractions with your teacher. Show the representation and explain how it meets the goal: Let’s build other fractions from unit fractions.",
       "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram.",
@@ -6054,14 +6057,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-number-line",
       "independentPractice": {
-        "prompt": "A line from 0 to 1 is divided into 5 equal intervals. What fraction is at the second tick after zero?",
+        "prompt": "Draw a number line from zero to one with 2 equal intervals. Which fraction is located at the 2th tick after zero?",
         "answerType": "rational",
-        "expected": "2/5"
+        "expected": "2/2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "From 0 to 1, divide the interval into 2 equal lengths. What fraction is at the first tick?",
+        "prompt": "Divide the zero-to-one number line into 3 equal intervals. Write the fraction at the first tick after zero.",
         "answerType": "rational",
-        "expected": "1/2"
+        "expected": "1/3"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Number Lines with your teacher. Show the representation and explain how it meets the goal: Let’s learn about fractions on the number line.",
       "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
@@ -6145,14 +6148,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-number-line",
       "independentPractice": {
-        "prompt": "A line from 0 to 1 is divided into 3 equal intervals. What fraction is at the second tick after zero?",
+        "prompt": "Draw a number line from zero to one with 3 equal intervals. Which fraction is located at the 2th tick after zero?",
         "answerType": "rational",
         "expected": "2/3"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "From 0 to 1, divide the interval into 3 equal lengths. What fraction is at the first tick?",
+        "prompt": "Divide the zero-to-one number line into 4 equal intervals. Write the fraction at the first tick after zero.",
         "answerType": "rational",
-        "expected": "1/3"
+        "expected": "1/4"
       },
       "openTeacherTask": "Work through the original lesson's activity Partition Fourths with your teacher. Show the representation and explain how it meets the goal: Let’s partition the number line to locate unit fractions. Required Preparation CCSS Standards Addressing 3.NF.A.2 3.NF.A.2.a Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflectio",
       "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
@@ -6230,14 +6233,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-number-line",
       "independentPractice": {
-        "prompt": "A line from 0 to 1 is divided into 4 equal intervals. What fraction is at the second tick after zero?",
+        "prompt": "Draw a number line from zero to one with 4 equal intervals. Which fraction is located at the 2th tick after zero?",
         "answerType": "rational",
         "expected": "2/4"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "From 0 to 1, divide the interval into 4 equal lengths. What fraction is at the first tick?",
+        "prompt": "Divide the zero-to-one number line into 6 equal intervals. Write the fraction at the first tick after zero.",
         "answerType": "rational",
-        "expected": "1/4"
+        "expected": "1/6"
       },
       "openTeacherTask": "Work through the original lesson's activity Number Line Scoot with your teacher. Show the representation and explain how it meets the goal: Let’s locate non-unit fractions on the number line.",
       "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
@@ -6309,14 +6312,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-number-line",
       "independentPractice": {
-        "prompt": "A line from 0 to 1 is divided into 5 equal intervals. What fraction is at the second tick after zero?",
+        "prompt": "Draw a number line from zero to one with 6 equal intervals. Which fraction is located at the 2th tick after zero?",
         "answerType": "rational",
-        "expected": "2/5"
+        "expected": "2/6"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "From 0 to 1, divide the interval into 5 equal lengths. What fraction is at the first tick?",
+        "prompt": "Divide the zero-to-one number line into 8 equal intervals. Write the fraction at the first tick after zero.",
         "answerType": "rational",
-        "expected": "1/5"
+        "expected": "1/8"
       },
       "openTeacherTask": "Work through the original lesson's activity Fractions Located at Whole Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s work with fractions and whole numbers on the number line. Required Preparation CCSS Standards Addressing 3.NF.A.2 3.NF.A.3.c 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Te",
       "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
@@ -6401,14 +6404,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractions-number-line",
       "independentPractice": {
-        "prompt": "A line from 0 to 1 is divided into 3 equal intervals. What fraction is at the second tick after zero?",
+        "prompt": "Draw a number line from zero to one with 8 equal intervals. Which fraction is located at the 2th tick after zero?",
         "answerType": "rational",
-        "expected": "2/3"
+        "expected": "2/8"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "From 0 to 1, divide the interval into 6 equal lengths. What fraction is at the first tick?",
+        "prompt": "Divide the zero-to-one number line into 2 equal intervals. Write the fraction at the first tick after zero.",
         "answerType": "rational",
-        "expected": "1/6"
+        "expected": "1/2"
       },
       "openTeacherTask": "Work through the original lesson's activity Locate 1 Again with your teacher. Show the representation and explain how it meets the goal: Let’s locate numbers on the number line when we are given the location of one fraction. Required Preparation CCSS Standards Addressing 3.NF.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 mi",
       "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
@@ -6479,12 +6482,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "equivalent-fractions",
       "independentPractice": {
-        "prompt": "Write a fraction equivalent to 1/2 using a denominator of 10. Give the equivalent amount.",
+        "prompt": "Write the value of 3/6 as a fraction equivalent to one half.",
         "answerType": "rational",
         "expected": "1/2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "What fraction equals 4/4 of a whole?",
+        "prompt": "A whole has 6 equal parts and all 6 are shaded. What fraction of the whole is shaded?",
         "answerType": "rational",
         "expected": "1/1"
       },
@@ -6561,12 +6564,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "equivalent-fractions",
       "independentPractice": {
-        "prompt": "Write a fraction equivalent to 1/2 using a denominator of 12. Give the equivalent amount.",
+        "prompt": "Write the value of 4/8 as a fraction equivalent to one half.",
         "answerType": "rational",
         "expected": "1/2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "What fraction equals 5/5 of a whole?",
+        "prompt": "A whole has 8 equal parts and all 8 are shaded. What fraction of the whole is shaded?",
         "answerType": "rational",
         "expected": "1/1"
       },
@@ -6644,12 +6647,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "equivalent-fractions",
       "independentPractice": {
-        "prompt": "Write a fraction equivalent to 1/2 using a denominator of 6. Give the equivalent amount.",
+        "prompt": "Write the value of 1/2 as a fraction equivalent to one half.",
         "answerType": "rational",
         "expected": "1/2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "What fraction equals 3/3 of a whole?",
+        "prompt": "A whole has 2 equal parts and all 2 are shaded. What fraction of the whole is shaded?",
         "answerType": "rational",
         "expected": "1/1"
       },
@@ -6732,12 +6735,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "equivalent-fractions",
       "independentPractice": {
-        "prompt": "Write a fraction equivalent to 1/2 using a denominator of 8. Give the equivalent amount.",
+        "prompt": "Write the value of 2/4 as a fraction equivalent to one half.",
         "answerType": "rational",
         "expected": "1/2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "What fraction equals 4/4 of a whole?",
+        "prompt": "A whole has 4 equal parts and all 4 are shaded. What fraction of the whole is shaded?",
         "answerType": "rational",
         "expected": "1/1"
       },
@@ -6807,12 +6810,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-comparison",
       "independentPractice": {
-        "prompt": "Using the same whole, compare 4/9 and 5/9. Type >, < or =.",
+        "prompt": "Compare 4/6 and 5/6 using >, < or =. Assume the same-sized whole.",
         "answerType": "comparison",
         "expected": "<"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Compare 1/5 and 1/6 using equal-sized wholes. Type >, < or =.",
+        "prompt": "Compare 1/2 and 1/3. The wholes have equal size; type >, < or =.",
         "answerType": "comparison",
         "expected": ">"
       },
@@ -6881,12 +6884,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-comparison",
       "independentPractice": {
-        "prompt": "Using the same whole, compare 5/7 and 6/7. Type >, < or =.",
+        "prompt": "Compare 6/8 and 7/8 using >, < or =. Assume the same-sized whole.",
         "answerType": "comparison",
         "expected": "<"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Compare 1/3 and 1/4 using equal-sized wholes. Type >, < or =.",
+        "prompt": "Compare 1/3 and 1/4. The wholes have equal size; type >, < or =.",
         "answerType": "comparison",
         "expected": ">"
       },
@@ -6956,12 +6959,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-comparison",
       "independentPractice": {
-        "prompt": "Using the same whole, compare 2/8 and 3/8. Type >, < or =.",
+        "prompt": "Compare 1/3 and 2/3 using >, < or =. Assume the same-sized whole.",
         "answerType": "comparison",
         "expected": "<"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Compare 1/4 and 1/5 using equal-sized wholes. Type >, < or =.",
+        "prompt": "Compare 1/4 and 1/6. The wholes have equal size; type >, < or =.",
         "answerType": "comparison",
         "expected": ">"
       },
@@ -7049,12 +7052,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-comparison",
       "independentPractice": {
-        "prompt": "Using the same whole, compare 3/9 and 4/9. Type >, < or =.",
+        "prompt": "Compare 2/4 and 3/4 using >, < or =. Assume the same-sized whole.",
         "answerType": "comparison",
         "expected": "<"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Compare 1/5 and 1/6 using equal-sized wholes. Type >, < or =.",
+        "prompt": "Compare 1/6 and 1/8. The wholes have equal size; type >, < or =.",
         "answerType": "comparison",
         "expected": ">"
       },
@@ -7579,19 +7582,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "weight-volume",
+      "firstPartyFamily": "grams-and-kilograms",
       "independentPractice": {
-        "prompt": "A container holds 4 litres of water. Another holds 3 litres. How many litres in both?",
+        "prompt": "A parcel weighs 450 grams and another 320 grams. How many grams in total?",
         "answerType": "integer",
-        "expected": "7"
+        "expected": "770"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A package weighs 400 grams. Another weighs 300 grams. Find the combined weight in grams.",
+        "prompt": "A bag of rice weighs 2 kilograms. How many kilograms do two identical bags weigh?",
         "answerType": "integer",
-        "expected": "700"
+        "expected": "4"
       },
       "openTeacherTask": "Work through the original lesson's activity Estimate Weight with your teacher. Show the representation and explain how it meets the goal: Let’s measure and estimate weight.",
-      "teacherReviewNote": "Teacher must validate measurement instruments and the unit; no gram/litre confusion.",
+      "teacherReviewNote": "Teacher verifies sensible estimates and use of balance instruments; do not combine grams and kilograms without valid conversion.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -7654,19 +7657,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "weight-volume",
+      "firstPartyFamily": "intro-liquid-volume",
       "independentPractice": {
-        "prompt": "A container holds 5 litres of water. Another holds 4 litres. How many litres in both?",
-        "answerType": "integer",
-        "expected": "9"
+        "prompt": "Fill two different containers with the same small cup and compare how many full cupfuls fit in each. Explain whether their capacities are equal.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A package weighs 500 grams. Another weighs 400 grams. Find the combined weight in grams.",
+        "prompt": "A bottle holds 1 litre of water. How many litres fit in 3 identical bottles?",
         "answerType": "integer",
-        "expected": "900"
+        "expected": "3"
       },
       "openTeacherTask": "Work through the original lesson's activity Liquid Volume Estimation Exploration with your teacher. Show the representation and explain how it meets the goal: Let’s learn about liquid volume.",
-      "teacherReviewNote": "Teacher must validate measurement instruments and the unit; no gram/litre confusion.",
+      "teacherReviewNote": "Teacher checks actual equal-sized informal measures, capacity comparison and meaning of one litre; do not assume fixed container volumes.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -7747,19 +7750,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "weight-volume",
+      "firstPartyFamily": "litre-estimation",
       "independentPractice": {
-        "prompt": "A container holds 2 litres of water. Another holds 5 litres. How many litres in both?",
+        "prompt": "A measuring jug holds 2 litres. How much water fits in three full jugs, in litres?",
         "answerType": "integer",
-        "expected": "7"
+        "expected": "6"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A package weighs 200 grams. Another weighs 500 grams. Find the combined weight in grams.",
+        "prompt": "A tank contains 8 litres. After pouring out 3 litres, how many litres remain?",
         "answerType": "integer",
-        "expected": "700"
+        "expected": "5"
       },
       "openTeacherTask": "Work through the original lesson's activity Estimate Liquid Volume with your teacher. Show the representation and explain how it meets the goal: Let’s measure and estimate liquid volume. Required Preparation CCSS Standards Addressing 3.MD.A.2 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What i",
-      "teacherReviewNote": "Teacher must validate measurement instruments and the unit; no gram/litre confusion.",
+      "teacherReviewNote": "Teacher checks actual estimation and measurement of litres, not merely arithmetic.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -7824,19 +7827,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "time-minutes",
+      "firstPartyFamily": "analog-time-nearest-minute",
       "independentPractice": {
-        "prompt": "A class starts at 9:30 and lasts 15 minutes. How many minutes pass?",
+        "prompt": "On an analog clock, the minute hand points to the 17th minute mark after 12. How many minutes past the hour?",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "17"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A walk lasts 30 minutes then another 15 minutes. What is the total elapsed time in minutes?",
+        "prompt": "The minute hand points to the 43rd minute mark after 12. How many minutes past the hour?",
         "answerType": "integer",
-        "expected": "45"
+        "expected": "43"
       },
       "openTeacherTask": "Work through the original lesson's activity Just a Clock on the Wall with your teacher. Show the representation and explain how it meets the goal: Let’s tell and write time to the nearest minute. Required Preparation CCSS Standards Addressing 3.MD.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How did",
-      "teacherReviewNote": "Clock minute-hand positioning and the actual end time need teacher review, not just elapsed duration.",
+      "teacherReviewNote": "Teacher must assess reading both hands and writing the actual hour:minute time, to the nearest minute. Counting marks alone is not full competency.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
