@@ -176,8 +176,10 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
             l.LessonCode == "PED:US-CCSS-MATH:G3:U01:L03")
             .Translations.Single(t => t.CultureCode == "en");
 
-        Assert.Equal("Scaled Picture Graphs", en.Title);
-        Assert.DoesNotContain("PLC Activity", en.Title);
+        // The original unit index uses "PLC Activity"; the individual
+        // public teacher lesson heading shortens this. Do not discard
+        // the official indexed identity to match a page heading alone.
+        Assert.Equal("Scaled Picture Graphs PLC Activity", en.Title);
         Assert.Contains("50+10=60", en.WorkedExamples);
         Assert.Contains("65+13=78", en.WorkedExamples);
         Assert.Contains("13x5=65", en.WorkedExamples);
