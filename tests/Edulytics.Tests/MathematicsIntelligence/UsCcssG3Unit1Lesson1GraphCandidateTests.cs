@@ -261,4 +261,29 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         }
     }
 
+    [Fact]
+    public void OriginalTeacherLaunchTimingsAndWarmupMathCommunityAreWritten()
+    {
+        // Contract written for Stage D, deliberately not run at A–C.
+        DirectoryInfo? directory = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (directory is not null)
+        {
+            var candidate = Path.Combine(directory.FullName, "src",
+                "Edulytics.Web", "Views", "Grade3Lesson1Activities", "Index.cshtml");
+            if (File.Exists(candidate)) { path = candidate; break; }
+            directory = directory.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        Assert.Contains("Think quietly for 1 minute", view);
+        Assert.Contains("discuss with a partner for 1 minute", view);
+        Assert.Contains("30 seconds of quiet thinking", view);
+        Assert.Contains("2–3 minutes", view);
+        Assert.Contains("7–10 minutes", view);
+        var chart = view.IndexOf("Math Community warm-up teacher-led T-chart", StringComparison.Ordinal);
+        var activity = view.IndexOf("2. Picture Time", StringComparison.Ordinal);
+        Assert.True(chart >= 0 && chart < activity);
+    }
+
 }

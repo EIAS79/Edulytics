@@ -52,7 +52,7 @@
 
         <section class="panel" aria-labelledby="warmup">
             <h2 id="warmup">1. Notice and wonder — picture graph (15 minutes)</h2>
-            <p>A mark stands for one student. Before seeing category labels, look at these six columns. Explain what you notice and what you wonder. Discuss your ideas with a partner.</p>
+            <p>A mark stands for one student. Before seeing category labels, look at these six columns. Explain what you notice and what you wonder. Think quietly for 1 minute, then discuss with a partner for 1 minute. The teacher records different observations and questions before revealing the context.</p>
             <div class="picture-columns" role="group" aria-label="Unlabelled picture graph with six upright columns, left to right: 4, 3, 1, 2, 7 and 6 symbols; each symbol represents one student">
                 @for (var i = 0; i < source.Count; i++)
                 {
@@ -70,12 +70,17 @@
             <p class="note">Key: ● = 1 student. The numbered column placeholders are not category names.</p>
             <label for="warmup-observations">What do you notice? What do you wonder?</label>
             <textarea id="warmup-observations" name="WarmupObservations" rows="3" maxlength="2000">@Model.Answers.WarmupObservations</textarea>
+            <p class="note">Teacher-led warm-up synthesis: suggest situations the anonymous graph could represent. After the partner exchange, create the Math Community T-chart NOW (Doing Math / Norms; Students / Teacher), and record examples under Doing Math. Do not auto-grade teacher observations.</p>
+            <table class="table" aria-label="Math Community warm-up teacher-led T-chart template">
+                <thead><tr><th scope="col">Role</th><th scope="col">Doing Math</th><th scope="col">Norms</th></tr></thead>
+                <tbody><tr><th scope="row">Students</th><td>____________</td><td>____________</td></tr><tr><th scope="row">Teacher</th><td>____________</td><td>____________</td></tr></tbody>
+            </table>
             <p class="note">Teacher discussion: no invented context is automatically marked correct or wrong.</p>
         </section>
 
         <section class="panel" aria-labelledby="picture">
             <h2 id="picture">2. Picture Time — understand the context (10 minutes)</h2>
-            <p>The same six columns now have the title <strong>How We Get Home</strong>, but category names are still hidden. Suggest six possible labels. Explain how the title changes what you can infer and why no particular category name can be proved without more data.</p>
+            <p>The same six columns now have the title <strong>How We Get Home</strong>, but category names are still hidden. After 30 seconds of quiet thinking, suggest possible travel labels with a partner for 2–3 minutes. Explain how the title changes what you can infer and why no particular category name can be proved without more data.</p>
             <h3>How We Get Home — columns still unlabelled</h3>
             <div class="picture-columns" role="group" aria-label="Six unlabelled vertical picture graph categories under title How We Get Home; symbol key one pupil; counts 4, 3, 1, 2, 7 and 6">
                 @for (var i = 0; i < source.Count; i++)
@@ -99,7 +104,7 @@
 
         <section class="panel" aria-labelledby="graphs">
             <h2 id="graphs">3. Two graphs, one dataset (20 minutes)</h2>
-            <p>Now read the real category names from the lesson. Both original-format diagrams below are created directly from the same numerical data.</p>
+            <p>Now read the category names given by the 2021 lesson. Both diagrams are independently authored Edulytics representations of the same numeric data, not copies of publisher figures. Discuss similarities with a partner for 2 minutes, then spend 7–10 minutes on the three source questions.</p>
             <h3>How We Get Home — picture graph</h3>
             <div class="picture-columns" role="group" aria-label="How We Get Home: 6 upright columns, one symbol per student, Walk 4, Bike 3, Skateboard 1, Car 2, Bus 7, Train 6">
                 @foreach (var item in source)
