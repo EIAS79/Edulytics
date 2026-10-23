@@ -97,7 +97,8 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
         Assert.Contains("Finally, read", english.Explanation);
         Assert.Contains("Walk 4, Bike 3, Skateboard 1, Car 2", english.Explanation);
         Assert.Contains("from 0 to 8 in steps of 1", english.Explanation);
-        Assert.Contains("two different questions", english.WorkedExamples);
+        Assert.Contains("two " +
+            "answerable questions", english.WorkedExamples);
         Assert.Contains("teacher review", english.Explanation);
         Assert.Contains("context", english.QuickSummary);
         Assert.Equal(
