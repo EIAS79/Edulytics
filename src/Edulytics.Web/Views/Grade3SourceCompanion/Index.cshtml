@@ -448,6 +448,14 @@
                 <textarea id="source-check-reason" name="SourceCheckReasoning" rows="3" maxlength="2000">@Model.Answers.SourceCheckReasoning</textarea>
             </section>
         }
+        @if(l.UnitNumber==1 && l.LessonNumber==9) {
+            <section class="panel">
+                <h2>2021 source lesson 9 — original Cool-down boundary</h2>
+                <p>The last individually mapped source subtask above is the real 2021 "Represent Equal Groups" Cool-down: Jada has 3 bags, 5 bracelets in each. Build three groups of five and explain how your picture or counters show the bags. Teacher reviews this task. The optional Edulytics stickers exercise below does NOT replace it.</p>
+                <p>Do NOT require multiplication expressions at this stage. In the original 2021 sequence those expressions are introduced in a later lesson; only equal-group representations and reasoning are required here.</p>
+                <p>Teacher supplies 20 connecting cubes or counters per student for both original activities and records partner/MLR8 oral work separately.</p>
+            </section>
+        }
         <section class="panel">
             <h2>2. New Edulytics skill practice</h2>
             <p>@l.IndependentPractice!.Prompt</p>
@@ -461,7 +469,7 @@
             <textarea id="practice-reasoning" name="PracticeReasoning" rows="4" maxlength="2000">@Model.Answers.PracticeReasoning</textarea>
         </section>
         <section class="panel">
-            <h2>3. New Edulytics Cool-down</h2>
+            <h2>@(l.UnitNumber==1 && l.LessonNumber==9 ? "3. OPTIONAL first-party Edulytics practice Cool-down (not publisher source)" : "3. New Edulytics Cool-down")</h2>
             <p>@l.OriginalEdulyticsCoolDown!.Prompt</p>
             @if(l.OriginalEdulyticsCoolDown.AnswerType != "teacher") {
                 <label for="cool-answer">My answer</label>

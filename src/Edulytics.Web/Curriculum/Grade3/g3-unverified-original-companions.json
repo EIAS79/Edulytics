@@ -136,8 +136,8 @@
         "answerType": "integer",
         "expected": "12"
       },
-      "openTeacherTask": "Work through the original lesson's activity From Scaled Graphs to Equal Groups with your teacher. Show the representation and explain how it meets the goal: You will use scaled picture graphs as an introduction to multiplication as equal groups.",
-      "teacherReviewNote": "Introduce groups before multiplication expressions; teacher checks each drawn group and the graph key.",
+      "openTeacherTask": "Work through 2021 first edition Number Talk, Activity1 source sign graph, Activity2 equal group situations, then source Jada's 3 bags of 5 bracelets Cool-down. The teacher observes and checks all original group representations and the oral synthesis.",
+      "teacherReviewNote": "Teacher checks three speed-limit pairs, five street-sign pairs, 4×2 shoes, 2×10 markers, 3×5 players and Jada's 3 bags of 5 bracelets as CONCRETE equal groups, not just totals. Original Cool-down is Jada's bracelets and is teacher-only; independent Edulytics stickers are optional and not the source Cool-down. No symbolic multiplication expression required in the 2021 Lesson 9.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -146,11 +146,14 @@
         "sourceGoal": "Let’s work with equal groups of things.",
         "sourceLearningGoals": "Build an understanding of multiplication as equal groups. Represent a situation involving equal groups in a way that makes sense to students.",
         "teachingSteps": [
-          "Build equal-sized groups with objects or dots.",
-          "Count the groups and how many are in each.",
-          "Explain the total with a drawing before introducing symbolic multiplication."
+          "Warm-up: mentally calculate the original four sums 40+35,45+35,45+36,34+58; explain how composing or adding a new 1 or 5 affects the result.",
+          "Activity 1: key one picture means two road signs. Represent three speed-limit symbols as three physically/drawn equal groups of two, choose original statement 2 and explain why statement 1 and 3 misread the source.",
+          "Compare five groups of two dots to the STREET SIGNS category and describe exactly how the ten signs are grouped.",
+          "Activity 2: represent four people each with two shoes; two boxes with ten markers each; and three basketball teams of five players each. Show physical groups or a drawing for each.",
+          "Finish with source synthesis of equal group meaning BEFORE Jada's original three-bags-five-bracelets source Cool-down; teacher observes grouping accuracy.",
+          "Only after completing the original source tasks may students optionally try the separate Edulytics practice and separately authored extra Cool-down."
         ],
-        "caution": "A lesson about concrete groups should not force multiplication symbols before they have been formally introduced.",
+        "caution": "2021 FIRST EDITION Lesson 9 introduces CONCRETE equal groups, NOT symbolic multiplication expressions. Product totals are supporting numeric checks; source drawings, manipulatives and Jada's original Cool-down remain human-reviewed.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -164,7 +167,117 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L09-W01",
+          "sourceActivity": "Warm-up: More Addition",
+          "prompt": "40 + 35 (mental sum): give your answer, then explain tens-and-ones reasoning",
+          "answerType": "integer",
+          "expected": "75"
+        },
+        {
+          "id": "G3-U01-L09-W02",
+          "sourceActivity": "Warm-up: More Addition",
+          "prompt": "45 + 35 (mental sum): compare with 40 + 35 and explain the change",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U01-L09-W03",
+          "sourceActivity": "Warm-up: More Addition",
+          "prompt": "45 + 36 (mental sum): how did the previous value change?",
+          "answerType": "integer",
+          "expected": "81"
+        },
+        {
+          "id": "G3-U01-L09-W04",
+          "sourceActivity": "Warm-up: More Addition",
+          "prompt": "34 + 58 (mental sum): use a valid strategy for composing ten",
+          "answerType": "integer",
+          "expected": "92"
+        },
+        {
+          "id": "G3-U01-L09-A1-01",
+          "sourceActivity": "Activity 1: Scaled Sign Graph",
+          "prompt": "Represent speed-limit signs as THREE equal groups with TWO signs each: what total do your physical/drawn three groups show?",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U01-L09-A1-02",
+          "sourceActivity": "Activity 1: Scaled Sign Graph",
+          "prompt": "Choose the correct original statement number (1, 2 or 3) about the three SPEED-LIMIT picture symbols, and explain WHY. The correct statement is three pictures each worth two signs, NOT three pictures worth one or two pictures worth two.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U01-L09-A1-03",
+          "sourceActivity": "Activity 1: Scaled Sign Graph",
+          "prompt": "How many STREET SIGNS do FIVE groups of TWO dots represent? Draw the five equal groups and connect to the picture graph.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U01-L09-A2-01",
+          "sourceActivity": "Activity 2: Equal Group Situations",
+          "prompt": "Show FOUR people each wearing TWO shoes, with four separately drawn equal groups. How many shoes altogether?",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U01-L09-A2-02",
+          "sourceActivity": "Activity 2: Equal Group Situations",
+          "prompt": "Show TWO boxes, TEN markers in each box, with two equal groups. How many markers altogether?",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U01-L09-A2-03",
+          "sourceActivity": "Activity 2: Equal Group Situations",
+          "prompt": "Show THREE basketball teams each containing FIVE players, with three equal groups. How many players altogether?",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U01-L09-S01",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare all original sign, shoe, marker and basketball group drawings: explain what makes their groups EQUAL and what a two-per-picture key does. The source has not yet introduced multiplication expressions; teacher reviews, not a numeric mark.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L09-CD01",
+          "sourceActivity": "Original 2021 source Cool-down: Represent Equal Groups",
+          "prompt": "Jada has THREE bags with FIVE bracelets in EACH bag. Draw or model THREE DISTINCT EQUAL GROUPS of FIVE with counters or marks and explain the representation. This is the original source assessment, teacher-reviewed rather than an integer auto-pass.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ],
+      "sourceOriginalCoolDown": {
+        "title": "Represent Equal Groups",
+        "prompt": "Jada has 3 bags. Each bag has 5 bracelets in it. Represent the situation.",
+        "answerType": "teacher",
+        "expectedGroups": 3,
+        "expectedGroupSize": 5,
+        "requiredRepresentation": "three drawn or physical groups of five; a numeric answer 15 alone is insufficient",
+        "source": "2021 IM G3 U1 L09 Teacher Guide p109"
+      },
+      "sourceSemanticTaskCoverage": {
+        "originalWarmupTasks": 4,
+        "originalActivity1Subparts": 3,
+        "originalActivity2Contexts": 3,
+        "originalSynthesisTeacherReviewTasks": 1,
+        "originalCoolDownTeacherReviewTasks": 1,
+        "totalSubtasks": 12,
+        "sourceImageAltCounts": [
+          2,
+          1,
+          3,
+          5
+        ],
+        "sourceImagesDrawnFirstParty": true
+      }
     },
     {
       "ordinal": 10,
