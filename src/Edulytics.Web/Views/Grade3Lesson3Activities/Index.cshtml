@@ -8,6 +8,7 @@
     var books = UsCcssG3Unit1Lesson3ScaledPictureGraph.Books;
     var flowers = UsCcssG3Unit1Lesson3ScaledPictureGraph.Flowers;
     var cool = UsCcssG3Unit1Lesson3ScaledPictureGraph.IndependentCoolDown;
+    var sourceBirds = UsCcssG3Unit1Lesson3SourceCoolDown.Values;
 }
 <style>
 .g3-scale{max-width:920px;margin:0 auto;padding:20px;color:#17344e}
@@ -114,8 +115,24 @@
             <p>Teacher rubric: use keys 1, 2 and 5 correctly; both sports graphs total 65; flowers 10/5/25/15; book genres 8/2/8/6; write two different answerable questions for EACH flower and book graph, and explain how the book-key multiplication gives each value. Oral reasoning is not auto-graded.</p>
         </section>
         <section class="panel">
-            <h2>6. Independent Edulytics Cool-down (5 minutes)</h2>
-            <p>This independent fictional library survey is NOT the publisher's educator-only Birds in the Park task.</p>
+            <h2>6. Source-aligned 2021 Cool-down: Birds in the Park (5 minutes)</h2>
+            <p>This uses the mathematical data verified in the public 2021 first-edition Teacher Guide: Cardinals 4, Blue Jays 6, Pigeons 8 and Sparrows 10. The independent symbols below each stand for TWO birds; publisher chart artwork is not copied.</p>
+            <h3>@UsCcssG3Unit1Lesson3SourceCoolDown.GraphTitle — independent Edulytics depiction</h3>
+            <p class="note">Key: ● = @UsCcssG3Unit1Lesson3SourceCoolDown.BirdsPerSymbol birds.</p>
+            <div class="rows" role="img" aria-label="2021 source math: Cardinals two symbols=4, Blue Jays three=6, Pigeons four=8, Sparrows five=10, independently drawn">
+                @foreach (var bird in sourceBirds)
+                {
+                    <strong>@bird.Category</strong>
+                    <span class="dots" aria-label="@bird.Symbols symbols for @bird.Category, each worth 2 birds">@(string.Concat(Enumerable.Repeat("● ", bird.Symbols)))</span>
+                }
+            </div>
+            <label for="source-sparrows">Source Cool-down part 1: How many sparrows were seen?</label>
+            <input id="source-sparrows" name="SourceCoolDownSparrows" value="@Model.Answers.SourceCoolDownSparrows" inputmode="numeric" maxlength="12" />
+            <label for="source-bird-question">Source Cool-down part 2: Write ONE question that this bird graph can answer</label>
+            <textarea id="source-bird-question" name="SourceCoolDownBirdQuestion" rows="3" maxlength="2000">@Model.Answers.SourceCoolDownBirdQuestion</textarea>
+            <p class="note">The source number can be checked from the key; the invented question requires a teacher's review.</p>
+            <h3>Additional independent Edulytics Cool-down — optional fictional library survey</h3>
+            <p>This independent fictional library survey has different numerical data. It does not replace either original source Cool-down subpart.</p>
             <p><strong>@cool.Title</strong> — key: ● = @cool.StudentsPerSymbol learners.</p>
             <div class="rows">
             @foreach(var item in cool.Rows){
@@ -134,7 +151,8 @@
             <p>Which “Doing Math” action was most important in your work today, and why? The teacher reviews your response after class. This follows the 2021 teacher source's sequence and does not mean that a live observation has been recorded.</p>
             <label for="community">My most important Doing Math action and reason</label>
             <textarea name="MathCommunity" id="community" rows="3" maxlength="2000">@Model.Answers.MathCommunity</textarea>
-            <p>Optional teacher-directed centers remain Sort and Display Stage 2 and Capture Squares Stage 3. Neither center is automatically certified through numeric responses.</p>
+            <p>Optional teacher-directed center Sort and Display Stage 2: gather 20–30 objects, sort into 3 categories, draw a picture or bar graph, and ask a partner TWO answerable questions. Use the teacher-provided source recording sheet or independently authored equivalent; the actual sorting remains teacher-led.</p>
+            <p>Optional teacher-directed center Capture Squares Stage 3: a partner spins 6–10 (including a wild choice), flips a 0–10 card and adds within 20 using a gameboard, paper clip and colored pencils. This is not numerically certified by answering the other source tasks.</p>
         </section>
         <button class="button" type="submit">Check the numerical graph questions</button>
     </form>

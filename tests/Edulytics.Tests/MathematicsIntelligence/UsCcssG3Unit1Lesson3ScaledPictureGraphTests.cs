@@ -89,4 +89,27 @@ public sealed class UsCcssG3Unit1Lesson3ScaledPictureGraphTests
         Assert.True(UsCcssG3Unit1Lesson3ScaledPictureGraph.RequiresTeacherReview(
             "original-cool-down-explanation"));
     }
+    [Fact]
+    public void Original2021BirdsCoolDownKeyAndCountsAreSourceGrounded()
+    {
+        var rows = UsCcssG3Unit1Lesson3SourceCoolDown.Values;
+        Assert.Equal(new[] { "Cardinals", "Blue Jays", "Pigeons", "Sparrows" },
+            rows.Select(x => x.Category));
+        Assert.Equal(new[] { 2, 3, 4, 5 }, rows.Select(x => x.Symbols));
+        Assert.Equal(2, UsCcssG3Unit1Lesson3SourceCoolDown.BirdsPerSymbol);
+        Assert.Equal(4, UsCcssG3Unit1Lesson3SourceCoolDown.Count("Cardinals"));
+        Assert.Equal(6, UsCcssG3Unit1Lesson3SourceCoolDown.Count("Blue Jays"));
+        Assert.Equal(8, UsCcssG3Unit1Lesson3SourceCoolDown.Count("Pigeons"));
+        Assert.Equal(10, UsCcssG3Unit1Lesson3SourceCoolDown.Count("Sparrows"));
+        Assert.Equal(28, UsCcssG3Unit1Lesson3SourceCoolDown.Total);
+    }
+
+    [Fact]
+    public void OriginalBirdCoolDownUsesSeparateNumericAndHumanQuestionFields()
+    {
+        var answers = typeof(Edulytics.Web.ViewModels.LessonContent.Grade3Lesson3Answers);
+        Assert.NotNull(answers.GetProperty("SourceCoolDownSparrows"));
+        Assert.NotNull(answers.GetProperty("SourceCoolDownBirdQuestion"));
+    }
+
 }
