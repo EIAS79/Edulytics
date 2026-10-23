@@ -17,7 +17,18 @@
     "originalImageDescriptionsCount": 1,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "public2021OptionalStudentSourceRead": true,
+    "originalWarmup": "Six groups of four dots around six square tables. Source artwork not copied.",
+    "originalGamePlayerRequirements": {
+      "A": 2,
+      "B": 4,
+      "C": 5,
+      "D": 10
+    },
+    "originalTotalTables": 16,
+    "originalSeatingRule": "One person can sit on each exposed side of each square table; joined sides are blocked",
+    "originalActivity2": "Individually draw scaled bar chart of guests participating in games A/B/C/D; include title and labels; scale jumps other than 1"
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +40,8 @@
     "existingSourceBodyHash": "8f30af56d84ce0d04500f12e0bd8dae4513c3765df8d339cf1cde346637d64aa",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "firstPartyFeasibleSample": "Two simultaneous games each of A,B,C,D; table allocations 2+2+4+8=16; guests 4+8+10+20=42. EXAMPLE ONLY, not official source answer."
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +54,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Game Night with your teacher. Show the representation and explain how it meets the goal: Let’s plan a game night.",
-    "teacherReviewNote": "Optional multi-step project; no numeric automatic grade."
+    "teacherReviewNote": "Optional multi-step project; no numeric automatic grade.",
+    "allFiveProjectItemsTeacherOnly": true,
+    "noUniqueCorrectNumericGrade": true,
+    "newDeferredVisualContractTestWritten": true
   },
   "sourceElements": [
     {
@@ -121,7 +136,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Publisher image and task PDF are not pixel/print-compared; student-chosen constraints, physically valid table joins, genuine classroom group planning and authored graphs must be verified by teacher. Database-backed Rich V2 and deferred tests remain unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

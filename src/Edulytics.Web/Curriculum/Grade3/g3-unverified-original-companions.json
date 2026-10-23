@@ -1957,12 +1957,12 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "design-project",
       "independentPractice": {
-        "prompt": "Invent another valid game-night seating arrangement and explain how many guests can play each game.",
+        "prompt": "With the original 16 square-table constraint, make your OWN feasible plan allocating games A (2), B (4), C (5), D (10) with 1 guest maximum per available table side. Explain joins and show a labelled layout.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "With 16 tables that each seat 4 around the sides before joining, sketch and explain the maximum seating for your chosen table layout; do not assume joined sides are usable.",
+        "prompt": "Create a second independently designed 16-table room arrangement and a scaled bar graph of the player counts. Explain why shared table edges cannot seat players and why your bar-graph interval is not 1.",
         "answerType": "teacher",
         "expected": null
       },
@@ -1976,11 +1976,14 @@
         "sourceGoal": "Let’s plan a game night.",
         "sourceLearningGoals": "Make choices and assumptions. Represent data using scaled bar graphs to communicate results. Solve real-world problems involving equal groups.",
         "teachingSteps": [
-          "Read the source lesson's mathematical situation carefully.",
-          "Represent quantities with equal groups, diagrams or arrays as appropriate.",
-          "Explain the total or relationship and compare methods with a partner."
+          "Warm-up on the original picture: six square tables drawn with four surrounding seating positions each. Discuss what extra constraints a room planner needs.",
+          "State and keep the four original player requirements A=2, B=4, C=5, D=10, and exactly 16 available square tables, with one person per usable outer side.",
+          "Let learners choose game counts, adjacent table joins, assumptions and whether any tables are left unused; all mathematically consistent answers are eligible.",
+          "Have students sketch a seating poster, label occupied guests and explain where joined table edges become inaccessible.",
+          "Graph the number of participants in each of A, B, C and D, with a title, correct category labels and a scale larger than one.",
+          "Teacher reviews seating geometry, assumptions, graph-to-poster consistency and group presentation; no single scalar answer is sufficient."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s plan a game night.",
+        "caution": "This is an OPTIONAL source modelling lesson without one unique numerical answer. The first-party worked example must not be mistaken for the publisher's fixed plan or used as a required result.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1994,7 +1997,44 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L21-WU",
+          "sourceActivity": "Warm-up: Notice and Wonder",
+          "prompt": "Examine the original seating arrangement figure with six square tables and four spots shown around each. What do you notice or wonder? Which unknowns need decisions? Teacher reviews spoken observations.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L21-A1-ASSUMPTIONS",
+          "sourceActivity": "Activity 1: Game Night",
+          "prompt": "Using 16 identical square tables and games requiring 2, 4, 5 or 10 people, state your assumptions (which games, how many simultaneous groups, occupied seats, joins and unused chairs). Teachers judge feasibility.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L21-A1-POSTER",
+          "sourceActivity": "Activity 1: Game Night",
+          "prompt": "Design and explain an original seating plan or poster. Label all 16 available tables, their orientation, which adjacent sides are blocked by joins, and how many guests can participate in each selected game.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L21-A2-01",
+          "sourceActivity": "Activity 2: Game Night on a Graph",
+          "prompt": "Make your own scaled bar graph showing guests playing games A, B, C and D under your plan. Add a title, four labels and an interval step GREATER than 1. Justify the scale and verify agreement with the seating poster.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L21-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare which design assumptions changed seating capacity and explain why differently scaled graphs can communicate the same numbers.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 22,

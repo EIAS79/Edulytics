@@ -271,6 +271,27 @@
                 <p>The original lesson synthesis also compares 3 × 4 = 12 and 4 × 3 = 12 before writing 3 × 4 = 4 × 3. The inverse order of factors does not change the product.</p>
             </section>
         }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 21) {
+            <section class="panel" aria-label="Original optional source modelling project with independent illustration">
+                <h2>Optional source project: plan a game night</h2>
+                <p>Original constraints: 16 identical SQUARE tables, one person per available side, and four games: A needs 2 players, B 4, C 5, D 10. Decide which games run concurrently and how joined tables share edges. No single room layout is required.</p>
+                <p>Here is ONE independently constructed valid example for discussion, not an original publisher solution: run two games of EACH type. Games A and B use one table apiece per game, C uses two side-by-side tables per game, and D uses four tables in a straight row per game. This uses 2 + 2 + 4 + 8 = 16 tables, serving 4 + 8 + 10 + 20 = 42 guests.</p>
+                <table class="source-chart">
+                    <caption>First-party illustrative example — NOT the mandatory answer</caption>
+                    <thead><tr><th scope="col">Game</th><th scope="col">Players per game</th><th scope="col">Games</th><th scope="col">Tables per game</th><th scope="col">Guests</th></tr></thead>
+                    <tbody>
+                        <tr><td>A</td><td>2</td><td>2</td><td>1</td><td>4</td></tr>
+                        <tr><td>B</td><td>4</td><td>2</td><td>1</td><td>8</td></tr>
+                        <tr><td>C</td><td>5</td><td>2</td><td>2</td><td>10</td></tr>
+                        <tr><td>D</td><td>10</td><td>2</td><td>4</td><td>20</td></tr>
+                    </tbody>
+                </table>
+                <p>A straight row of <em>n</em> identical joined square tables has 2n + 2 exposed sides, not 4n: two sides per shared edge disappear. That allows six players around two joined tables, and ten around four in a row. An A table may have two deliberately unused seats.</p>
+                <h2>Source Activity 2: each learner draws a scaled bar graph</h2>
+                <p>For this illustrative example only, draw bars with heights A=4, B=8, C=10, D=20. Choose a scale counting by 2 rather than 1. Your ACTUAL own plan may have very different valid counts and require a different suitable scale. Every bar's height must match the number of playing guests in your own seating poster.</p>
+                <p>Record your distinct decisions, seating map, labelled axes and reasoned trade-offs in the source task fields. The classroom teacher judges your physical layout, game compatibility, graph precision and assumptions; neither the illustration nor a typed numerical result is an automatic pass.</p>
+            </section>
+        }
         @if(showMinuteClock) {
             <section class="panel" aria-label="Edulytics original analogue clock reading">
                 <h2>Read an original analogue clock</h2>

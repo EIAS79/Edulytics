@@ -301,6 +301,24 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void OptionalGameNightProjectNeverTreatsIllustrativeFortyTwoAsTheRequiredAnswer()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L21",out var lesson));
+        Assert.Equal(5,lesson!.SourceSubtasks.Count);
+        Assert.All(lesson.SourceSubtasks,q=>Assert.Equal("teacher",q.AnswerType));
+        Assert.Equal("teacher",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"42").NumericCorrect);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.SourceSubtasks[3],"42").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
+        Assert.Equal(16,2*1+2*1+2*2+2*4);
+        Assert.Equal(42,2*2+2*4+2*5+2*10);
+        Assert.Equal(6,2*2+2);
+        Assert.Equal(10,2*4+2);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);
