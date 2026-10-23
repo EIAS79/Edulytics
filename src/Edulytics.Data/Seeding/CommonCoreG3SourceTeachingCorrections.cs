@@ -155,26 +155,26 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "the 4, 3, 1, 2, 7, 6 anonymous picture columns. " +
                     "Record an observation and a question without " +
                     "guessing a fixed category label. Think quietly, " +
-                    "then discuss with a partner.\\n" +
+                    "then discuss with a partner.\n" +
                     "Step 2 (10-minute Picture Time): show the " +
                     "title How We Get Home, retain the six values " +
                     "and one-symbol key, and suggest possible " +
                     "categories with reasons. Explain why the " +
-                    "labels cannot be determined from the title.\\n" +
+                    "labels cannot be determined from the title.\n" +
                     "Step 3 (20-minute paired graph analysis): " +
                     "reveal Walk 4, Bike 3, Skateboard 1, Car 2, " +
                     "Bus 7, Train 6 in the picture graph and in " +
                     "a bar graph with y-axis 0..8 in ones. Check " +
-                    "every bar/column against its category and key.\\n" +
+                    "every bar/column against its category and key.\n" +
                     "Step 4: describe how the picture and bar " +
                     "graphs are alike and different, then say " +
                     "what the graphs tell us. Write two distinct " +
                     "questions whose answers can be read from " +
-                    "these graphs. Teacher reviews explanations.\\n" +
+                    "these graphs. Teacher reviews explanations.\n" +
                     "Step 5 (10-minute synthesis): explain the " +
                     "role of labels, title, picture key, and bar " +
                     "scale. Invite learners to restate a peer's " +
-                    "reasoning and discuss Doing Math / Norms.\\n" +
+                    "reasoning and discuss Doing Math / Norms.\n" +
                     "Step 6 (5-minute independent Edulytics " +
                     "Cool-down): read a NEW graph and respond. " +
                     "Numeric responses can be checked; invented " +
@@ -185,16 +185,16 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "Mistake: interpreting the unnamed first " +
                     "and second graphs as if their category " +
                     "names were supplied. Repair: distinguish " +
-                    "a plausible guess from a shown label.\\n" +
+                    "a plausible guess from a shown label.\n" +
                     "Mistake: treating one picture as more " +
                     "than one learner or misreading the bar " +
                     "scale. Repair: verify one symbol equals " +
                     "one student and the axis advances by " +
-                    "exactly one, starting at zero.\\n" +
+                    "exactly one, starting at zero.\n" +
                     "Mistake: confusing columns or comparing " +
                     "different categories. Repair: match Walk " +
                     "4, Bike 3, Skateboard 1, Car 2, Bus 7 " +
-                    "and Train 6 in BOTH representations.\\n" +
+                    "and Train 6 in BOTH representations.\n" +
                     "Mistake: offering a question that the " +
                     "graph cannot answer or treating partner " +
                     "reasoning as a numeric grade. Repair: " +
