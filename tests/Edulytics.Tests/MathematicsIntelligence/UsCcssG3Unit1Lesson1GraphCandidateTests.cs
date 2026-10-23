@@ -157,6 +157,50 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
     }
 
     [Fact]
+    public void LearnerViewKeepsOfficial2021PedagogicalOrderAndDistinctHumanTasks()
+    {
+        // Authored for Stage D only, intentionally NOT RUN during A-B-C.
+        DirectoryInfo? directory = new(AppContext.BaseDirectory);
+        string? viewPath = null;
+        while (directory is not null)
+        {
+            var candidate = Path.Combine(directory.FullName, "src",
+                "Edulytics.Web", "Views", "Grade3Lesson1Activities", "Index.cshtml");
+            if (File.Exists(candidate))
+            {
+                viewPath = candidate;
+                break;
+            }
+            directory = directory.Parent;
+        }
+        Assert.NotNull(viewPath);
+        var view = File.ReadAllText(viewPath!);
+
+        var warmup = view.IndexOf("1. Notice and wonder", StringComparison.Ordinal);
+        var picture = view.IndexOf("2. Picture Time", StringComparison.Ordinal);
+        var activity = view.IndexOf("3. Two graphs", StringComparison.Ordinal);
+        var synthesis = view.IndexOf("4. Lesson synthesis", StringComparison.Ordinal);
+        var cooldown = view.IndexOf("5. Edulytics-authored Cool-down", StringComparison.Ordinal);
+        Assert.True(warmup >= 0 && warmup < picture &&
+                    picture < activity && activity < synthesis && synthesis < cooldown);
+
+        foreach (var distinctField in new[]
+        {
+            "WarmupObservations", "PlausibleCategories", "GraphComparison",
+            "GraphLearnings", "TwoGraphQuestions"
+        })
+        {
+            Assert.Contains("name=\\"" + distinctField + "\\"", view);
+        }
+
+        Assert.Contains("Additional Edulytics numeric practice", view);
+        Assert.Contains("teacher observation", view);
+        Assert.Contains("Sort and Display", view);
+        Assert.Contains("Capture Squares", view);
+        Assert.DoesNotContain("src=\\"https://cms-assets.illustrativemathematics.org/", view);
+    }
+
+    [Fact]
     public void UnlabelledSourceGraphNeverAssignsAnAutomaticallyCertifiedCategory()
     {
         foreach(var mode in new [] { "notice-and-wonder", "infer-unlabeled-graph-categories",
