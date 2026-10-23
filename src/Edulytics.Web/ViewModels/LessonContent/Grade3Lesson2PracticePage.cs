@@ -27,6 +27,12 @@ public sealed class Grade3Lesson2Answers
     public string? GraphExplanation { get; set; }
     public string? TrueFalseExplanation { get; set; }
     public string? CommunityRevisions { get; set; }
+    public string? SourceCoolDownParkHome { get; set; }
+    public string? SourceCoolDownSchoolLibraryVsPark { get; set; }
+    public string? SourceCoolDownExplanation { get; set; }
+    public string? TeacherChosenOneStepQuestion { get; set; }
+    public string? TeacherChosenTwoStepQuestion { get; set; }
+    public string? SynthesisReasoning { get; set; }
     public string? CoolDownOne { get; set; }
     public string? CoolDownTwo { get; set; }
     public string? CoolDownGraphExplanation { get; set; }

@@ -76,6 +76,32 @@ public sealed class Grade3Lesson2ActivitiesController(
                 counts![categoryLabels[1]] + counts[categoryLabels[0]] > counts[categoryLabels[2]]));
         }
 
+        // The 2021 original Cool-down uses a DISTINCT, teacher-guide 4-category
+        // book-reading bar graph. It is not this class's survey and not the
+        // optional independently authored club-survey quiz.
+        var sourceDiffValid = int.TryParse(answers.SourceCoolDownParkHome,
+            NumberStyles.Integer, CultureInfo.InvariantCulture, out var sourceDifference);
+        feedback.Add(new Grade3Lesson2Feedback(
+            "2021 source Cool-down: park minus home",
+            sourceDiffValid ? sourceDifference == UsCcssG3Unit1Lesson2SourceCoolDown.ParkMinusHome : false,
+            false, "Read Park 8 and Home 5 on the separate source-aligned graph; their difference is 3."));
+        var sourceTFValid = bool.TryParse(answers.SourceCoolDownSchoolLibraryVsPark, out var sourceTF);
+        feedback.Add(new Grade3Lesson2Feedback(
+            "2021 source Cool-down: school or library more than park?",
+            sourceTFValid ? sourceTF == UsCcssG3Unit1Lesson2SourceCoolDown.SchoolOrLibraryExceedsPark : false,
+            true, "School 4 plus Library 2 gives 6, fewer than Park 8; a teacher also reviews the student's explanation."));
+        feedback.Add(new Grade3Lesson2Feedback(
+            "2021 source Cool-down: justify true/false", null, true,
+            "Read the source graph and justify 4 + 2 = 6, compared with 8; no reasoning auto-pass."));
+        feedback.Add(new Grade3Lesson2Feedback(
+            "2021 teacher-selected one-step how-many-more question", null, true,
+            "Teacher fills category names from the actual class bar graph; check the written question, signed comparison, computation within 20 and source provenance."));
+        feedback.Add(new Grade3Lesson2Feedback(
+            "2021 teacher-selected two-step combined categories comparison", null, true,
+            "Teacher fills any appropriate two groups and comparison group; verify the written question, equation and classroom data without restricting to preselected pairings."));
+        feedback.Add(new Grade3Lesson2Feedback(
+            "2021 source lesson synthesis questions", null, true,
+            "Teacher checks one-step how many MORE, one-step how many FEWER, and two-step how many A or B than C, using a real student graph."));
         feedback.Add(CheckCoolDown("G3-U01-L02-EDU-CD-ONE-STEP",
             "Fictional club survey: one-step comparison", answers.CoolDownOne));
         feedback.Add(CheckCoolDown("G3-U01-L02-EDU-CD-TWO-STEP",
