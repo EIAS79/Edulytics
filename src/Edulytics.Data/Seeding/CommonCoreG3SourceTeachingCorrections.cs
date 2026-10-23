@@ -212,6 +212,122 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "must be answerable from the shown data; oral reasoning, " +
                     "partner work and invented questions require teacher review.";
             }
+            else if (string.Equals(lesson.LessonCode,
+                "PED:US-CCSS-MATH:G3:U01:L02", StringComparison.Ordinal))
+            {
+                // Preserve real classroom survey provenance: NO fixed L01
+                // travel graph or invented class-wide answers. First-party
+                // wording follows 2021 public teacher lesson/preparation.
+                en.Explanation =
+                    "Our goal is to represent real class-collected categorical " +
+                    "data using a picture graph and a bar graph, then solve " +
+                    "one- and two-step more/fewer questions within 20. Start " +
+                    "with 3 brief dot images (6, 8 and 10 dots) and compare " +
+                    "the second and third arrangements: 8 + 2 = 10. Next, " +
+                    "every learner places one response in a teacher-prepared " +
+                    "class survey about how they travel home. The teacher " +
+                    "may change the category labels to fit the pupils. " +
+                    "Give the picture graph a title and key, then draw a " +
+                    "vertical bar graph of the SAME collected dataset, " +
+                    "with a labelled number axis beginning at zero. " +
+                    "Use the recorded category values, not fixed answers " +
+                    "from another class. Evaluate four true/false statements " +
+                    "against the actual graph; the teacher chooses labels " +
+                    "for one-step and two-step comparison questions. " +
+                    "Students must explain equations and conclusions to " +
+                    "partners; teacher reviews the collection, drawing, " +
+                    "justification and Math Community participation.";
+
+                en.KeyConceptsAndRules =
+                    "A picture graph and a bar graph must show the SAME " +
+                    "survey counts. Each pupil contributes exactly one " +
+                    "real response; one picture stands for one learner. " +
+                    "The bar height equals the category count on a " +
+                    "common number axis. First learn the numbers from " +
+                    "the real class; only then ask 'how many more/fewer'. " +
+                    "For an arithmetic task that combines two categories, " +
+                    "add those two counts and compare with a third. " +
+                    "Use addition/subtraction within 20 for automatically " +
+                    "graded arithmetic; a larger class size does not " +
+                    "prove any particular numerical solution. " +
+                    "Categories and one/two-step question choices are " +
+                    "teacher-set and need not have fictional source values.";
+
+                en.WorkedExamples =
+                    "Warm-up grouping: 8 dots become 10 with 2 more, " +
+                    "so 8 + 2 = 10. Describe a grouping strategy rather " +
+                    "than simply naming the result.\n" +
+                    "Graph construction: place one marked note for " +
+                    "each real pupil in one teacher-selected travel " +
+                    "category; give the picture graph a title and " +
+                    "one-response key. Count each category; transfer " +
+                    "those SAME counts to a bar graph with a consistent " +
+                    "scale. The values depend on the actual class.\n" +
+                    "One-step comparison example: if the class counts " +
+                    "for two teacher-selected categories are a and b, " +
+                    "compute the difference between them and explain " +
+                    "which category is greater. Only generate an " +
+                    "auto-gradable item when the actual within-20 " +
+                    "arithmetic scope has been checked.\n" +
+                    "Two-step comparison example: if two distinct " +
+                    "teacher-selected categories contain a and b " +
+                    "learners and a third contains c, compare (a+b) " +
+                    "with c. Use the classroom counts; do not supply " +
+                    "made-up values as if they were collected.";
+
+                en.StepByStepSolutions =
+                    "Step 1 (10-minute dot warm-up): notice dot " +
+                    "groups and explain 8+2=10 orally with a peer.\n" +
+                    "Step 2 (15-minute class-survey activity): " +
+                    "collect actual sticky-note responses, choose " +
+                    "contextually accurate labels, then construct " +
+                    "a titled picture graph with a one-pupil key.\n" +
+                    "Step 3: transfer exactly the same observed " +
+                    "class values to a bar graph with a numbered " +
+                    "vertical axis and category labels. Have " +
+                    "students justify equivalent representations.\n" +
+                    "Step 4 (20-minute graph questions): decide " +
+                    "the four source-style true/false comparison " +
+                    "claims using the real categories, then let the " +
+                    "teacher fill the category blanks for a one-step " +
+                    "and a two-step how-many-more question.\n" +
+                    "Step 5 (10-minute synthesis): share a true " +
+                    "equation, explain bar-versus-picture scale " +
+                    "and revise the Math Community norms.\n" +
+                    "Step 6 (5-minute independent Edulytics " +
+                    "Cool-down): solve an original separate " +
+                    "graph-reading problem. Hand-drawn graphs " +
+                    "and explanations require teacher review.";
+
+                en.CommonMistakes =
+                    "Mistake: using the fixed data from Lesson 1 " +
+                    "or another fictional survey in place of " +
+                    "actual class responses. Repair: collect " +
+                    "and verify the present class counts.\n" +
+                    "Mistake: using different numbers in the " +
+                    "picture graph and bar graph, or omitting " +
+                    "the title, key, or axis. Repair: verify " +
+                    "each count before comparing.\n" +
+                    "Mistake: grading a class-dependent true/false " +
+                    "statement against hard-coded correct/incorrect " +
+                    "answers. Repair: calculate each statement " +
+                    "from a validated supplied dataset.\n" +
+                    "Mistake: grading oral reasoning, graph " +
+                    "drawing or invented questions as a binary " +
+                    "numeric pass. Repair: use teacher review; " +
+                    "reject out-of-scope numeric items rather " +
+                    "than guessing an answer.";
+
+                en.QuickSummary =
+                    "Read the real data from your class, draw " +
+                    "matching picture and bar graphs with a title, " +
+                    "one-pupil key and common axis, and use those " +
+                    "same data to solve one- and two-step " +
+                    "more/fewer problems within 20. Discuss " +
+                    "your equations and improve the community " +
+                    "discussion norms. The independently authored " +
+                    "Edulytics Cool-down is not the publisher item.";
+            }
             // Never embed restricted publisher Cool-down prompts or artwork.
             // No database migration, publication or A-C approval occurs here.
         }
