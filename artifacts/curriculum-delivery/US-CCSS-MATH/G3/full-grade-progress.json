@@ -1667,7 +1667,14 @@
       "original2021FigurePixelParityApproved": false,
       "studentFacingSourceSubparts": 5,
       "studentFacingCodeMappedSubparts": 5,
-      "studentFacingAcademicVerifiedSubparts": 0
+      "studentFacingAcademicVerifiedSubparts": 0,
+      "sourceStudentFacingRows": 3,
+      "sourceStudentFacingOriginalSubparts": 5,
+      "sourceStudentFacingMappedSubparts": 5,
+      "sourceStudentFacingAcademicVerifiedSubparts": 0,
+      "sourceTeacherRubricWritten": true,
+      "sourceOpenTasksNeedNumericSupplementCompletion": false,
+      "sourceTeacherReviewPersistentSignoff": false
     },
     {
       "gradeOrdinal": 2,
@@ -5354,7 +5361,8 @@
     "2026-10-23 latest owner plan (4): NO Our-CS. Confirmed main Grade3=143 source positions. Public first-edition source teacher lessons + preparations U01 L01-L04 read; authored source-specific English Rich V2 revisions to graph sequence, variable real-class survey, scale 1/5/2 graphs (including corrected L03 synthetic title), and scale-2 odd-count half symbols; tests written only; original task PDFs and image pixels failed publisher fetch; maintain A_C_EXPLICIT_GAP for each, 0/143 READY_FOR_STAGE_D, queued source return; next permitted ordinal 5 after true external source asset boundary.",
     "2026-10-23 source-only sequential L05: teacher public 2021 source counts fixed 12/4/6/3 graph shown with axis 0..12 by1 and 0..24 by2; exact real L04 preferences to be carried into pupils' new graph with scale2/5. Authored English Rich V2 fix and unrun tests; still no verified publisher Student PDF/image pixels, no real L04 data persistence/teacher attestation, no A-C closure. Source L03 title variant reconciled: retained official indexed PLC Activity rather than incorrectly renaming learner title.",
     "2026-10-23 owner correction: previous handling of L01–L05 as consecutively advanceable was premature. All five have repairable internal A-B-C gaps, not only external publisher assets. Restore active cursor to L01 and disable 'nextAfterExternalGapOrdinal=6'. No later lesson promotion until L01 internal mapping, Rich V2, Practice and teacher-rubric authoring are repaired and evidence logged. Keep prior work, preserve 0/143 READY_FOR_STAGE_D; no test runs, CI, merge or deployment.",
-    "2026-10-23 L01-only sequential A-B-C repair: fixed 2021 student-facing activity 2 separation into graph comparison, data inference, two invented questions; implemented fail-closed teacher review feedback for all source open tasks; distinguished 3 Edulytics supplementary machine-gradeable items and 2 independent Cool-down numerics; fixed Razor order to official 15/10/20/10/5 (Synthesis before Cool-down), MLR8 partner restatement, picture key vocabulary, named original centers and teacher reflection. Updated one-to-one matrix and authored regressions without running tests. Original image/PDF and effective published body not verified. Active ordinal stays 1, 0/143 READY_FOR_STAGE_D."
+    "2026-10-23 L01-only sequential A-B-C repair: fixed 2021 student-facing activity 2 separation into graph comparison, data inference, two invented questions; implemented fail-closed teacher review feedback for all source open tasks; distinguished 3 Edulytics supplementary machine-gradeable items and 2 independent Cool-down numerics; fixed Razor order to official 15/10/20/10/5 (Synthesis before Cool-down), MLR8 partner restatement, picture key vocabulary, named original centers and teacher reflection. Updated one-to-one matrix and authored regressions without running tests. Original image/PDF and effective published body not verified. Active ordinal stays 1, 0/143 READY_FOR_STAGE_D.",
+    "2026-10-23 L01 only: Additional independently authored numeric and Cool-down fields no longer gate original 2021 student open response task submission; blank scores use null (not attempted) and malformed answers false; five original source prompt subparts have five separate fields and teacher rubric with a print/save option. Student evidence not persisted or academically signed off; source PDF/image pixels and live Rich V2 unverified. Draft PR unchanged, no .NET/CI/Stage D or deployment; remain ordinal 1, 0/143 READY_FOR_STAGE_D."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
