@@ -331,10 +331,11 @@ public static class CommonCoreG3SourceTeachingCorrections
             else if (string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L03", StringComparison.Ordinal))
             {
-                // Baseline title includes a synthetic "PLC Activity" suffix,
-                // absent from the public 2021 lesson. Correct only this
-                // already-present Grade 3 canonical authoring candidate.
-                en.Title = "Scaled Picture Graphs";
+                // The official 2021 unit lesson index and canonical catalogue
+                // both use "Scaled Picture Graphs PLC Activity", while the
+                // individual lesson page heading abbreviates to
+                // "Scaled Picture Graphs". Keep the canonical indexed title;
+                // do NOT silently rename an officially indexed lesson.
                 en.Explanation =
                     "A scaled picture graph uses a key such as one symbol " +
                     "for 2 or for 5 objects, rather than one object. " +
