@@ -12,10 +12,15 @@ public sealed class Grade3Lesson3Answers
     public string? SportsBasketball { get; set; }
     public string? SportsCompare { get; set; }
     public string? FlowersRoses { get; set; }
+    public string? FlowersTulips { get; set; }
+    public string? FlowersDaisies { get; set; }
     public string? FlowersTotal { get; set; }
     public string? FlowersCompare { get; set; }
     public string? FlowersViolets { get; set; }
+    public string? BooksJokes { get; set; }
     public string? BooksComics { get; set; }
+    public string? BooksScience { get; set; }
+    public string? BooksMystery { get; set; }
     public string? BooksTotal { get; set; }
     public string? SecondOriginalQuestion { get; set; }
     public string? CoolNature { get; set; }

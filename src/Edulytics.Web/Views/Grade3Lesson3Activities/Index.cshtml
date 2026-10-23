@@ -41,14 +41,14 @@
         </section>
         <section class="panel">
             <h2>2. Two source-aligned sports graphs, identical data</h2>
-            <p>Key 1: ● = one student. Count each mark once.</p>
+            <p>Key 1: ● = one student. Count each mark once. This graph intentionally uses 65 symbols; grouping them by 5 or 10 is a strategy to make counting faster.</p>
             <div class="rows">
             @foreach(var item in sportsUnscaled.Rows) {
                 <strong>@item.Category</strong>
                 <span class="dots" aria-label="@item.Symbols learners choosing @item.Category">@(string.Concat(Enumerable.Repeat("● ", item.Symbols)))</span>
             }
             </div>
-            <h3>Same dataset with a scale of five</h3>
+            <h3>Same 65 responses, but each symbol now represents five students</h3>
             <p><strong>@sports.Title</strong> — key: ● = @sports.StudentsPerSymbol students.</p>
             <div class="rows">
             @foreach(var item in sports.Rows){
@@ -56,7 +56,7 @@
                 <span class="dots" aria-label="@item.Symbols symbols for @item.Category; each is worth @sports.StudentsPerSymbol students">@(string.Concat(Enumerable.Repeat("● ", item.Symbols)))</span>
             }
             </div>
-            <p>Example: three soccer symbols mean 3 × 5 = 15 students. Counting only the symbols would give the wrong answer.</p>
+            <p>Example: three soccer symbols mean 3 × 5 = 15 students. This second pictograph requires just 13 marks instead of 65, but both represent the SAME number of students. Counting only the symbols would give the wrong answer.</p>
             <div class="number-questions">
                 <div><label for="sport-total">How many students in total?</label><input id="sport-total" name="SportsTotal" value="@Model.Answers.SportsTotal" inputmode="numeric" required /></div>
                 <div><label for="basketball">How many chose basketball?</label><input id="basketball" name="SportsBasketball" value="@Model.Answers.SportsBasketball" inputmode="numeric" required /></div>
@@ -73,6 +73,8 @@
             </div>
             <div class="number-questions">
                 <div><label for="roses">How many roses?</label><input id="roses" name="FlowersRoses" value="@Model.Answers.FlowersRoses" inputmode="numeric" required /></div>
+                <div><label for="tulips">How many tulips?</label><input id="tulips" name="FlowersTulips" value="@Model.Answers.FlowersTulips" inputmode="numeric" required /></div>
+                <div><label for="daisies">How many daisies?</label><input id="daisies" name="FlowersDaisies" value="@Model.Answers.FlowersDaisies" inputmode="numeric" required /></div>
                 <div><label for="flower-total">How many flowers in all?</label><input id="flower-total" name="FlowersTotal" value="@Model.Answers.FlowersTotal" inputmode="numeric" required /></div>
                 <div><label for="flower-compare">How many more daisies than tulips?</label><input id="flower-compare" name="FlowersCompare" value="@Model.Answers.FlowersCompare" inputmode="numeric" required /></div>
             </div>
@@ -93,7 +95,10 @@
             }
             </div>
             <div class="number-questions">
+                <div><label for="joke-books">How many students chose joke books?</label><input id="joke-books" name="BooksJokes" value="@Model.Answers.BooksJokes" inputmode="numeric" required /></div>
                 <div><label for="comics">How many students chose comic books?</label><input id="comics" name="BooksComics" value="@Model.Answers.BooksComics" inputmode="numeric" required /></div>
+                <div><label for="science-books">How many chose science books?</label><input id="science-books" name="BooksScience" value="@Model.Answers.BooksScience" inputmode="numeric" required /></div>
+                <div><label for="mystery-books">How many chose mystery books?</label><input id="mystery-books" name="BooksMystery" value="@Model.Answers.BooksMystery" inputmode="numeric" required /></div>
                 <div><label for="books-total">How many students chose one of these books?</label><input id="books-total" name="BooksTotal" value="@Model.Answers.BooksTotal" inputmode="numeric" required /></div>
             </div>
             <label for="book-questions">Write two questions answerable from the favorite books graph</label>

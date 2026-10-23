@@ -126,7 +126,7 @@
     "status": "SOURCE_PACKET_INDEXED_FULL_ORIGINAL_FIGURE_COMPARISON_OPEN",
     "observedLearningGoal": "Interpret scaled picture graphs to generate questions (orally and in writing) about the data.",
     "rightsBoundary": "No original publisher charts, figures or teacher-only Cool-down copied.",
-    "exactPublisherNumericValuesVerified": false,
+    "exactPublisherNumericValuesVerified": true,
     "sourceTeacherStudentFacingHtmlLocallyInspected": true,
     "localSourceHtmlPath": "03_Grade_3_IM_K5/unit-1/lesson-3/lesson.html",
     "originalSourceNumbersRead": {
@@ -166,7 +166,11 @@
           "Mystery Books": 3
         }
       }
-    }
+    },
+    "publicSourceTaskStudentFacingReadAndMatched": true,
+    "sourceFlowerFourCategoryQuestionVerifiedInHtml": true,
+    "sourceBooksFourCategoryQuestionVerifiedInHtml": true,
+    "originalFigurePixelsVerified": false
   },
   "stageB": {
     "status": "INDEPENDENT_STUDENT_COMPANION_AUTHORED_EFFECTIVE_RICH_V2_OPEN",
@@ -183,7 +187,8 @@
     "studentPortalLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
     "richV2PublishedDatabaseBodyVerified": false,
     "sourceGraphNumericalValuesReconciled": true,
-    "publisherArtworkReproduced": false
+    "publisherArtworkReproduced": false,
+    "individualCategoryQuestionCoverage": "All 4 flower counts and all 4 book category counts plus original first-party open question authoring"
   },
   "stageC": {
     "status": "INDEPENDENT_NUMERIC_AND_HUMAN_REVIEW_QUESTION_CONTRACTS_AUTHORED_NOT_RUN",
@@ -192,20 +197,20 @@
     "testsWritten": true,
     "testsRun": false,
     "learnerAuthorizedRoute": "student/practice/grade3-u01-l03",
-    "numericQuestions": 11,
+    "numericQuestions": 16,
     "humanReviewTasks": [
       "Create own question",
       "Compare pictograph keys",
       "Partner interpretation",
       "Cool-down explanation"
-    ]
+    ],
+    "sourceCategoryQuestionsWritten": true
   },
   "openGaps": [
-    "Local teacher Student Facing source graph alt descriptions and quantities now matched, but actual raster figures/Student Task PDF and complete teacher activity fidelity still require comparison.",
-    "Effective Edulytics published Rich V2 Grade 3 lesson body and source mapping not verified.",
-    "Student webpage, controller, rendering and mathematical test execution not validated (Stage D intentionally deferred).",
-    "Teacher-led activities, original diagrams, third-party images and optional centres need 1:1 review.",
-    "New student companion uses independently-authored examples, not claims of exact publisher visual equivalence."
+    "Official 2021 teacher Student Facing graph ALT descriptions and all source category numerals reconciled. Actual raster pixels/Student Task PDF not visually audited.",
+    "Published Rich V2 Grade 3 content not validated against source teaching notes, current student route not rendered, and tests intentionally not executed.",
+    "Original source teacher exercises, image licensing and Math Community work still require item-by-item evidence including human tasks.",
+    "Publisher Birds in the Park Cool-down behind teacher login; agreed independent first-party assessment is authored but does not prove publisher image/item parity."
   ],
   "originalCoolDownPolicy": "EDULYTICS_ORIGINAL_GOAL_EQUIVALENT_PER_USER_APPROVAL",
   "stageD": "NOT_STARTED",
