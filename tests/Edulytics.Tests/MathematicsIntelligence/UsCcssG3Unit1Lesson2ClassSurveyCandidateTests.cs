@@ -92,4 +92,31 @@ public sealed class UsCcssG3Unit1Lesson2ClassSurveyCandidateTests
     {
         Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.RequiresTeacherJudgment(task));
     }
+    [Fact]
+    public void ARealClassMayHaveThirtyLearnersButNumericProblemsRemainWithinTwenty()
+    {
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] classOfThirty =
+        [
+            new("Bike", 3), new("Walk", 14), new("Van", 2),
+            new("Bus", 5), new("Car", 4), new("Train", 2)
+        ];
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(
+            classOfThirty, out var values));
+        Assert.Equal(30, values!.Values.Sum());
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
+            classOfThirty, "Bus", "Car", 1, out var correct));
+        Assert.True(correct);
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
+            classOfThirty, "Walk", "Bus", "Bike", 16, out _));
+    }
+
+    [Fact]
+    public void AnOverFortySurveyDoesNotProduceAnAutomaticNumericPass()
+    {
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] impossible =
+            [new("Walk", 21), new("Bike", 21)];
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(
+            impossible, out _));
+    }
+
 }

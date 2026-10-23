@@ -56,7 +56,7 @@ public sealed class Grade3Lesson2ActivitiesController(
             new("Actual classroom survey", null, true,
                 valid
                     ? "The entered numeric dataset is well formed; only your teacher can establish whether it was collected in class."
-                    : "Supply six nonnegative counts up to 20 and at least one recorded response. No classroom comparison is machine-graded on invalid data.")
+                    : "Supply six nonnegative counts, at most 40 in total, and at least one recorded response. Numeric comparisons are not graded for invalid class data.")
         };
 
         if (valid)

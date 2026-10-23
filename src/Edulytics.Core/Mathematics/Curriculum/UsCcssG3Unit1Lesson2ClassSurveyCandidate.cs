@@ -33,13 +33,13 @@ public static class UsCcssG3Unit1Lesson2ClassSurveyCandidate
                 string.IsNullOrWhiteSpace(entry.Category) ||
                 entry.Category != entry.Category.Trim() ||
                 entry.Students < 0 ||
-                entry.Students > 20 ||
+                entry.Students > 40 ||
                 !map.TryAdd(entry.Category, entry.Students))
                 return false;
         }
 
-        if (map.Values.Sum() == 0)
-            return false;
+        if (map.Values.Sum() is < 1 or > 40)
+            return false; // A classroom may exceed 20 pupils, but avoid unbounded data.
 
         counts = map;
         return true;
@@ -66,7 +66,10 @@ public static class UsCcssG3Unit1Lesson2ClassSurveyCandidate
             string.Equals(firstCategory, secondCategory, StringComparison.OrdinalIgnoreCase))
             return false;
 
-        correct = Math.Abs(first - second) == answer;
+        var difference = Math.Abs(first - second);
+        if (difference > 20)
+            return false; // Source arithmetic scope is addition/subtraction within 20.
+        correct = difference == answer;
         return true;
     }
 
@@ -94,8 +97,8 @@ public static class UsCcssG3Unit1Lesson2ClassSurveyCandidate
             return false;
 
         var combined = first + second;
-        if (combined > 20)
-            return false; // This candidate covers only CCSS within-20 prompts.
+        if (combined > 20 || Math.Abs(combined - compare) > 20)
+            return false; // Teacher selects an in-scope comparison for this classroom.
         correct = Math.Abs(combined - compare) == answer;
         return true;
     }

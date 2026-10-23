@@ -117,7 +117,7 @@
       "observed": "5 min original Cool-down behind teacher-login gate, not independently inspected.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": false,
-      "parityStatus": "FIRST_PARTY_AUTHORED_EQUIVALENT_LINKED_UNRUN",
+      "parityStatus": "SOURCE_UNAVAILABLE",
       "reason": "Independent graph task is implemented in authorized learner route, not verbatim publisher material. Full source parity and runtime verification unproven.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
@@ -161,7 +161,10 @@
       "Math Community",
       "original teacher-only Cool-down"
     ],
-    "coolDownPolicy": "FIRST_PARTY_EQUIVALENT_AUTHORIZED; publisher login not required; original publisher Cool-down not claimed verified."
+    "coolDownPolicy": "FIRST_PARTY_EQUIVALENT_AUTHORIZED; publisher login not required; original publisher Cool-down not claimed verified.",
+    "officialPublicTeacherAndStudentTextReinspected": true,
+    "classSizeIsNotArithmeticLimit": true,
+    "actualTeacherCategoryChoicesMayVary": true
   },
   "stageB": {
     "status": "FIRST_PARTY_CLASS_SURVEY_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -187,7 +190,11 @@
       "Four actual-data true/false comparisons, one-step and two-step difference questions with typed data",
       "Teacher rubric covering synthesis, partner interaction and mathematical community norms",
       "Separate original fictional-club graph Cool-down with human-scored graph drawing"
-    ]
+    ],
+    "sourceChartVisualDefectFound": "Originally six horizontal glyph rows and unscaled horizontal bars, not the source's vertical picture graph and bar graph.",
+    "sourceChartVisualCorrection": "Vertical six-column first-party glyph pictograph, vertical bars sharing data/axis, maximum up to 40 authentic responses.",
+    "categoryNamesConfigurable": false,
+    "richV2ProposedCorrectionFile": "src/Edulytics.Data/Seeding/Grade3/g3-2021-provisional-rich-v2-corrections.json"
   },
   "stageC": {
     "status": "GRADE3_LESSON2_AUTHORIZED_COMPANION_AND_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -206,15 +213,17 @@
     "coolDownTestsWrittenNotRun": true,
     "integrationScope": "DEDICATED_AUTHORIZED_LEARNER_COMPANION_NOT_UNIFIED_ADAPTIVE_PRACTICE",
     "numericSource": "UsCcssG3Unit1Lesson2ClassSurveyCandidate",
-    "trueFalsePolicy": "Calculated only from validated learner-supplied classroom category counts; teacher verifies authenticity."
+    "trueFalsePolicy": "Calculated only from validated learner-supplied classroom category counts; teacher verifies authenticity.",
+    "datasetMaxClassSize": 40,
+    "numericWithinTwentyGuard": true,
+    "testsRun": false
   },
   "openGaps": [
-    "Database-backed effective Rich V2 lesson text is not available in the read-only GitHub curriculum blueprints; source-to-live-body parity remains unchecked.",
-    "Class response provenance and paper graph construction are human-verified only; electronic numeric checks do not establish authentic original-class activities.",
-    "Original dot images and third-party artwork are not copied; visual task-level parity with source figures and licensing still needs review.",
-    "Controller, ViewModel, student link, graph render and source-data grading written but no build, Razor render or runtime verification performed under Stage D deferral.",
-    "Teacher-chosen arbitrary category compare blanks and class datasets with category counts above 20 are not supported by the numeric candidate; these require remediation before A–C closure.",
-    "Cool-down is independently written and student-linked; no claim of original teacher-login Cool-down inspection."
+    "Original student task PDF and complete figure geometry remain unverified. Publisher Cool-down is gated but independent agreed Edulytics alternative exists.",
+    "Actual teacher-specified category names might differ from six default source examples; editable names and generalized dynamically reworded source comparisons not implemented.",
+    "Rich V2 effective published teaching body and student runtime Razor display have not been compared or exercised; Stage D testing intentionally deferred.",
+    "Teacher must attest actual sticky-note class survey, graph drawing, source comparison choices, Math Community work and source figure/material rights.",
+    "Automatic within-20 families avoid certifying comparisons outside scope; teacher adjusts when total counts exceed permitted arithmetic range."
   ],
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
