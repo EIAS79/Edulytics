@@ -78,6 +78,19 @@ public sealed class Grade3Lesson3ActivitiesController(
                 : "Teacher checks how each symbol represents two students and whether the explained counts agree with the graph. No numeric pass certifies this response."));
         feedback.Add(new("Student-created flower and books questions", null, true,
             "Teacher checks two answerable questions about each dataset."));
+        // Exact separate 2021 Cool-down source data: Cardinals4, Blue Jays6,
+        // Pigeons8, Sparrows10; first-party drawing, no copyrighted art reused.
+        var sourceNumberValid = int.TryParse(answers.SourceCoolDownSparrows,
+            NumberStyles.Integer, CultureInfo.InvariantCulture, out var sourceBirds);
+        feedback.Add(new Grade3Lesson3Feedback(
+            "2021 source Cool-down: how many sparrows?",
+            sourceNumberValid ? sourceBirds == UsCcssG3Unit1Lesson3SourceCoolDown.Count("Sparrows") : false,
+            false,
+            "Count 5 symbols with a key of 2 birds per symbol, giving 10 sparrows."));
+        feedback.Add(new Grade3Lesson3Feedback(
+            "2021 source Cool-down: author one answerable bird-graph question",
+            null, true,
+            "Teacher checks the question can be answered with the independent 2021 source birds graph; do not machine-grade the invented question."));
         feedback.Add(new("Independent Cool-down invented question and explanation",
             null, true, "Teacher checks that the question is answerable, math is correct, and the key is applied."));
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
