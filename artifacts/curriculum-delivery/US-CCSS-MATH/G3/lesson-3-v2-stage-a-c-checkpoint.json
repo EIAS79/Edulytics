@@ -190,9 +190,10 @@
     "publisherArtworkReproduced": false,
     "individualCategoryQuestionCoverage": "All 4 flower counts and all 4 book category counts plus original first-party open question authoring",
     "richV2ProposedSourceSpecificCorrection": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
-    "sourceTitleCorrectedInAuthoringCandidate": true,
+    "sourceTitleCorrectedInAuthoringCandidate": false,
     "currentContentStatus": "GRADE3_2021_L03_SOURCE_SPECIFIC_RICH_V2_PROPOSED_NOT_DEPLOYED",
-    "effectiveLearnerBodyCompared": false
+    "effectiveLearnerBodyCompared": false,
+    "canonicalTitleRetentionReason": "Official 2021 unit index and Edulytics main catalogue both include PLC Activity; source individual lesson heading omits suffix. Identity ambiguity documented, not silently changed."
   },
   "stageC": {
     "status": "INDEPENDENT_NUMERIC_AND_HUMAN_REVIEW_QUESTION_CONTRACTS_AUTHORED_NOT_RUN",
@@ -276,8 +277,8 @@
       ],
       "booksTotal": 24
     },
-    "stageBSourceTitleErrorFound": "Baseline Rich V2 title 'Scaled Picture Graphs PLC Activity' does not match original 2021 'Scaled Picture Graphs'",
-    "stageBSourceTitleRepair": "CommonCoreG3SourceTeachingCorrections.cs sets canonical English Title to 'Scaled Picture Graphs'",
+    "stageBSourceTitleErrorFound": "OFFICIAL_TITLE_VARIANT_NOT_DEFECT: official unit index and main catalogue show 'Scaled Picture Graphs PLC Activity', while 2021 individual lesson page heading is 'Scaled Picture Graphs'.",
+    "stageBSourceTitleRepair": "RECONCILED: do NOT rename; preserve 'Scaled Picture Graphs PLC Activity' from authoritative canonical catalogue and official unit listing; lesson-page shorter heading noted as valid source variant.",
     "note": "Source is official publisher HTML and original preparation; no Our-CS used per 2026-10-23 uploaded plan. Original figure rasters and student PDF still unavailable for pixel parity. No 100% claim."
   },
   "nextAction": "Return to L03 source asset images and original Student Task PDF for pixel/item verification; reconcile each subpart to effective Rich V2, code, and teacher rubric. Remain A_C_EXPLICIT_GAP and test NOT RUN."
