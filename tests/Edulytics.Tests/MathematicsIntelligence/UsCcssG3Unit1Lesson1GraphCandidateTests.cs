@@ -1,4 +1,5 @@
 using Edulytics.Core.Mathematics.Curriculum;
+using Edulytics.Web.ViewModels.LessonContent;
 using Xunit;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -109,6 +110,50 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         Assert.All(values, row => Assert.InRange(
             row.NumberOfStudents, 0, UsCcssG3Unit1Lesson1GraphCandidate.BarYAxisMaximum));
         Assert.Equal(1, UsCcssG3Unit1Lesson1GraphCandidate.PictographStudentsPerSymbol);
+    }
+
+    [Fact]
+    public void EveryOriginalStudentFacingSubpartKeepsItsOwnLearnerField()
+    {
+        // Original lesson 2021: warm-up, picture time, and three distinct
+        // Activity 2 subparts. Written only; Stage D tests not run.
+        var names = new[]
+        {
+            nameof(Grade3Lesson1Answers.WarmupObservations),
+            nameof(Grade3Lesson1Answers.PlausibleCategories),
+            nameof(Grade3Lesson1Answers.GraphComparison),
+            nameof(Grade3Lesson1Answers.GraphLearnings),
+            nameof(Grade3Lesson1Answers.TwoGraphQuestions)
+        };
+        Assert.Equal(5, names.Distinct().Count());
+        foreach (var field in names)
+            Assert.NotNull(typeof(Grade3Lesson1Answers).GetProperty(field));
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void MissingOriginalHumanResponseNeverCountsAsCompletedOrPassed(string? response)
+    {
+        var result = Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+            "Source activity 2b", response, "Explain a supported claim");
+        Assert.Null(result.MachineCorrect);
+        Assert.True(result.TeacherReviewRequired);
+        Assert.Contains("No written response was submitted", result.Reason);
+        Assert.Contains("teacher observation", result.Reason);
+    }
+
+    [Fact]
+    public void WrittenOriginalHumanResponseIsStillUnscoredUntilTeacherReview()
+    {
+        var result = Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+            "Source activity 2c", "How many travel by bus? How many by train?",
+            "Check that two different questions are answerable");
+        Assert.Null(result.MachineCorrect);
+        Assert.True(result.TeacherReviewRequired);
+        Assert.Contains("NOT an automatic pass", result.Reason);
+        Assert.Contains("two different questions", result.Reason);
     }
 
     [Fact]
