@@ -17,7 +17,46 @@
     "originalImageDescriptionsCount": 3,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "directPublicSourceRead": "Original 2021 online teacher+student-facing lesson 20 inspected: warmup and both activities",
+    "originalWarmupEquations": [
+      [
+        "70-10",
+        60
+      ],
+      [
+        "68-10",
+        58
+      ],
+      [
+        "70-12",
+        58
+      ],
+      [
+        "68-12",
+        56
+      ]
+    ],
+    "sourceActivity1": {
+      "images": [
+        "2 groups of 5",
+        "5 groups of 2"
+      ],
+      "required": [
+        "different real-world situation for each array",
+        "write full equations for both",
+        "explain same and different"
+      ]
+    },
+    "sourceActivity2": {
+      "imageAlt": "An array; individual source pixels not independently inspected",
+      "teacherSynthesisEquations": [
+        "3x6=18",
+        "6x3=18"
+      ],
+      "peerRevision": true
+    },
+    "originalTeacherCoolDownGated": true
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +68,8 @@
     "existingSourceBodyHash": "813246162e7b516edeb423490c70b5f9180d5a7f3a532ff49bbe5aef8858ad3e",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificCommutativePairUIAndIllustrationsAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +82,12 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Learn More About Multiplication with your teacher. Show the representation and explain how it meets the goal: Let’s learn about the commutative property. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.OA.B.5 Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down",
-    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array."
+    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+    "newAnswerFamily": "commutative-equation-pair",
+    "sourceNumericSubtasks": 6,
+    "sourceHumanSubtasks": 3,
+    "commutativePairsRequireBothTrueFullEquations": true,
+    "testsWrittenNotExecuted": true
   },
   "sourceElements": [
     {
@@ -161,7 +206,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Direct public 2021 source text now inspected, but graphics at original pixel level, teacher-only original Cool-down, student's PDF, actual peer discussions and effective published Rich V2 remain unverified; Stage D and test compilation remain deferred."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

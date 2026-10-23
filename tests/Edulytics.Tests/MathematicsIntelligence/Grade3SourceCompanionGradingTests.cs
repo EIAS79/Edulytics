@@ -266,6 +266,40 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.False(lesson.ReadyForStageD);
     }
 
+    [Theory]
+    [InlineData("2x5=10;5x2=10",true)]
+    [InlineData("5 × 2 = 10; 2 × 5 = 10",true)]
+    [InlineData("2x5=10,5x2=10",true)]
+    [InlineData("10",false)]
+    [InlineData("2x5=10",false)]
+    [InlineData("2x5=10;2x5=10",false)]
+    [InlineData("2x5=10;5x2=11",false)]
+    [InlineData("2x5=10;5x3=15",false)]
+    public void CommutativeSourceRequiresTwoSwappedEquationsNotOneProduct(
+        string response,bool correct)
+    {
+        var q=new Grade3OriginalQuestion {
+            AnswerType="commutative-equation-pair",Expected="2x5=10;5x2=10"
+        };
+        var result=Grade3SourceCompanionCatalogue.Grade(q,response);
+        Assert.Equal(correct,result.NumericCorrect);
+        Assert.True(result.TeacherReview);
+    }
+
+    [Fact]
+    public void LessonTwentyMapsFourSubtractionsTwoSwapsAndTeacherDiscussion()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L20",out var lesson));
+        Assert.Equal(9,lesson!.SourceSubtasks.Count);
+        Assert.Equal(4,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-WU-")));
+        Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.AnswerType=="commutative-equation-pair"));
+        Assert.Equal("commutative-equation-pair",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal("commutative-equation-pair",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"21").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
     [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
@@ -356,7 +390,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -382,6 +416,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "clock-time" => "13:99 pm",
                     "multiplication-expression" => "1x1",
                     "multiplication-equation" => "1x1=1",
+                    "commutative-equation-pair" => "1x2=2;2x1=2",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);

@@ -1799,14 +1799,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "commutative-property",
       "independentPractice": {
-        "prompt": "Compare arrays 3×7 and 7×3. How many dots in either one?",
-        "answerType": "integer",
-        "expected": "21"
+        "prompt": "Describe 3 rows of 7 dots and 7 rows of 3. Write two COMPLETE equations, separated by a semicolon, showing how switching factor order leaves the product unchanged.",
+        "answerType": "commutative-equation-pair",
+        "expected": "3x7=21;7x3=21"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Compare 4×6 and 6×4. What is the shared total?",
-        "answerType": "integer",
-        "expected": "24"
+        "prompt": "For first-party arrays of 4 rows of 6 and 6 rows of 4, write both COMPLETE multiplication equations with the same total. Explain your array reasoning to your teacher.",
+        "answerType": "commutative-equation-pair",
+        "expected": "4x6=24;6x4=24"
       },
       "openTeacherTask": "Work through the original lesson's activity Learn More About Multiplication with your teacher. Show the representation and explain how it meets the goal: You will describe the commutative property of multiplication using arrays.",
       "teacherReviewNote": "Explain why rotation changes the factor order but not the product.",
@@ -1818,11 +1818,13 @@
         "sourceGoal": "Let’s learn about the commutative property. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.OA.B.5 Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down",
         "sourceLearningGoals": "Describe the commutative property of multiplication using arrays.",
         "teachingSteps": [
-          "Draw rows and columns with equal spacing.",
-          "Count rows and columns; relate the array to equal groups.",
-          "Compare rotated or reorganized arrays while preserving the total."
+          "Begin with four public 2021 mental subtractions: 70−10, 68−10, 70−12, 68−12; discuss place-value relationships.",
+          "Compare an array of 2 groups of 5 and an array of 5 groups of 2. Invent a DIFFERENT mathematical story for each array.",
+          "Write both 2×5=10 and 5×2=10 and identify which factor counts groups and which counts objects per group in each situation.",
+          "Revisit the published 3×6 array. Record complete equations 3×6=18 and 6×3=18; justify each orientation using rows or columns.",
+          "Ask several partners for feedback, revise the written explanation, and synthesize 3×4=4×3 as a new equality of products."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about the commutative property. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.OA.B.5 Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down",
+        "caution": "The source asks students to construct array SITUATIONS and TWO separate full equations, not just state a total. The second array drawing, partner feedback and original teacher-only Cool-down require human confirmation.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1836,7 +1838,72 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L20-WU-01",
+          "sourceActivity": "Warm-up: Number Talk Subtraction",
+          "prompt": "Mentally calculate 70 − 10. Explain a place-value method.",
+          "answerType": "integer",
+          "expected": "60"
+        },
+        {
+          "id": "G3-U01-L20-WU-02",
+          "sourceActivity": "Warm-up: Number Talk Subtraction",
+          "prompt": "Mentally calculate 68 − 10. Compare to the preceding difference.",
+          "answerType": "integer",
+          "expected": "58"
+        },
+        {
+          "id": "G3-U01-L20-WU-03",
+          "sourceActivity": "Warm-up: Number Talk Subtraction",
+          "prompt": "Mentally calculate 70 − 12, separating tens and ones.",
+          "answerType": "integer",
+          "expected": "58"
+        },
+        {
+          "id": "G3-U01-L20-WU-04",
+          "sourceActivity": "Warm-up: Number Talk Subtraction",
+          "prompt": "Mentally calculate 68 − 12 and explain your mental steps.",
+          "answerType": "integer",
+          "expected": "56"
+        },
+        {
+          "id": "G3-U01-L20-A1-01",
+          "sourceActivity": "Activity 1: Learn More About Multiplication",
+          "prompt": "For the two independently redrawn 10-dot arrays, enter a pair of COMPLETE equations representing 2 groups of 5 and 5 groups of 2.",
+          "answerType": "commutative-equation-pair",
+          "expected": "2x5=10;5x2=10"
+        },
+        {
+          "id": "G3-U01-L20-A1-02",
+          "sourceActivity": "Activity 1: Learn More About Multiplication",
+          "prompt": "Invent distinct array situations for Image A (2 groups of 5) and Image B (5 groups of 2). Explain how row and column grouping changes while the total of 10 stays the same.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L20-A2-01",
+          "sourceActivity": "Activity 2: Revisit Arrays",
+          "prompt": "Write TWO complete multiplication equations for the original array with 3 by 6 groupings, using the two opposite orientations.",
+          "answerType": "commutative-equation-pair",
+          "expected": "3x6=18;6x3=18"
+        },
+        {
+          "id": "G3-U01-L20-A2-02",
+          "sourceActivity": "Activity 2: Revisit Arrays",
+          "prompt": "Explain in writing why 3×6=18 and 6×3=18 both represent the source array. Ask partners for feedback and revise your first explanation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L20-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain how the equality 3×4 = 4×3 follows from the two complete equations and how 3 and 4 map to rows and columns.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 21,

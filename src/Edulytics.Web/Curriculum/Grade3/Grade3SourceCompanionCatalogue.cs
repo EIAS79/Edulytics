@@ -129,6 +129,32 @@ public static class Grade3SourceCompanionCatalogue
                 : "The product or factor roles differ from the expected model. A teacher can examine mathematically valid alternative representations.");
         }
 
+        if (q.AnswerType == "commutative-equation-pair")
+        {
+            // Two COMPLETE true equations, one for each orientation. A bare
+            // shared product does not demonstrate the commutative relationship.
+            // Either ordering of the two equations is allowed.
+            var actual = Regex.Split(submitted.Trim(), @"\s*[;,\r\n]+\s*");
+            var required = Regex.Split(q.Expected ?? "", @"\s*[;,\r\n]+\s*");
+            if (actual.Length != 2 || required.Length != 2 ||
+                !TryReadProductEquation(actual[0], out var ag1, out var ae1, out var ap1) ||
+                !TryReadProductEquation(actual[1], out var ag2, out var ae2, out var ap2) ||
+                !TryReadProductEquation(required[0], out var rg1, out var re1, out var rp1) ||
+                !TryReadProductEquation(required[1], out var rg2, out var re2, out var rp2))
+                return new(false, true,
+                    "Write BOTH multiplication equations, separated by a semicolon. Include each product.");
+
+            var genuineSwap = ag1 == ae2 && ae1 == ag2 && ap1 == ap2;
+            var ordered = ag1 == rg1 && ae1 == re1 && ap1 == rp1 &&
+                          ag2 == rg2 && ae2 == re2 && ap2 == rp2;
+            var reversed = ag1 == rg2 && ae1 == re2 && ap1 == rp2 &&
+                           ag2 == rg1 && ae2 == re1 && ap2 == rp1;
+            var correct = genuineSwap && (ordered || reversed);
+            return new(correct, true, correct
+                ? "The two full equations have reversed factors and an unchanged product. Teacher reviews the drawings and explanation."
+                : "Check both equations: reversed group factors should keep the same total.");
+        }
+
         if (q.AnswerType == "integer")
         {
             if (!int.TryParse(submitted.Trim(), NumberStyles.Integer,
