@@ -17,7 +17,19 @@
     "originalImageDescriptionsCount": 3,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicOriginalWarmup4Products": [
+      5,
+      10,
+      15,
+      20
+    ],
+    "publicOriginalCardSortTextReadNotArtwork": true,
+    "publicOriginalActivity2Rows": 5,
+    "ambiguousOriginalFiguresExplicitlyUnscored": [
+      "G3-U01-L14-A2-01",
+      "G3-U01-L14-A2-04"
+    ]
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +41,9 @@
     "existingSourceBodyHash": "3072463be8a49863fb6aea4d54c133c07b46902ca36c4f0627b9bbceb35449f7",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "correctedPreviouslyMisdirectedUnknownFactorPrompt": "□ × 5 = 35 is now written with unknown first-factor pack count, not 5 × □ = 35 (which implies unknown group size).",
+    "sourceSpecificUnknownFactorAndProductExplanationAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +56,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Card Sort: Unknown Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s work with equations with unknown numbers.",
-    "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram."
+    "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
+    "originalNumericQuestionIDs": 7,
+    "originalTeacherOnlySubtasks": 3,
+    "newUnknownRoleTestsWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -150,7 +167,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Original unknown-number card deck and two source diagrams are uninspected; symbolic unknown equation writing and partner model matching are teacher-reviewed, and live Rich V2 plus Student Task PDF parity remain unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

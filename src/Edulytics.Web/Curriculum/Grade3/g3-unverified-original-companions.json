@@ -798,7 +798,7 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-unknowns",
       "independentPractice": {
-        "prompt": "35 cards go into packs of 5. How many packs? Write 5 × □ = 35.",
+        "prompt": "Thirty-five cards are placed into packs of five. How many packs? Show □ × 5 = 35; the box is the UNKNOWN NUMBER OF PACKS.",
         "answerType": "integer",
         "expected": "7"
       },
@@ -817,11 +817,13 @@
         "sourceGoal": "Let’s work with equations with unknown numbers.",
         "sourceLearningGoals": "Relate equations to multiplication situations and diagrams using a symbol for the unknown number. Write equations for multiplication situations and diagrams using a symbol for the unknown number.",
         "teachingSteps": [
-          "Represent each identical group or equal row in a drawing.",
-          "Explain how group count and group size relate.",
-          "Use a multiplication expression or equation when introduced in this lesson, then explain the result."
+          "Work through 1×5, 2×5, 3×5, 4×5 as a sequential Number Talk; explain why each added group changes the product by five.",
+          "Use the exact teacher-prepared Card Sort: Unknown Numbers; match original situation, equation and diagrams with your partner, and justify unknown factors/products.",
+          "Distinguish a missing product (5×2=□) from a missing number of groups (□×5=45).",
+          "Write an equation containing a symbol for the missing amount, then replace that symbol with the number found.",
+          "Use the originally printed tape diagrams for the other two source rows; their text alternatives do not establish the missing factors confidently."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s work with equations with unknown numbers.",
+        "caution": "The original source diagram alt for two items is ambiguous. Those source rows remain teacher-only; never infer factor count or grant a numeric pass from their accessible descriptions. Unknown factors and products are different mathematical targets.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -835,7 +837,79 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L14-WU-01",
+          "sourceActivity": "Warm-up: Number Talk Fives",
+          "prompt": "1 × 5: calculate the product mentally, and explain your pattern.",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U01-L14-WU-02",
+          "sourceActivity": "Warm-up: Number Talk Fives",
+          "prompt": "2 × 5: calculate the product mentally, and compare to the prior term.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U01-L14-WU-03",
+          "sourceActivity": "Warm-up: Number Talk Fives",
+          "prompt": "3 × 5: calculate the product mentally, and explain the added group.",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U01-L14-WU-04",
+          "sourceActivity": "Warm-up: Number Talk Fives",
+          "prompt": "4 × 5: calculate the product mentally, and identify the pattern.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U01-L14-A1-CARDS",
+          "sourceActivity": "Activity 1: Card Sort Unknown Numbers",
+          "prompt": "With a partner, match the publisher's original equation, diagram and situation cards and explain what each unknown symbol represents. The source card set is not independently inspected here.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A2-01",
+          "sourceActivity": "Activity 2: Write Equations with an Unknown",
+          "prompt": "The original source's first diagram is described as two parts, one labelled five and one blank, with total 35; its mathematical representation must be inspected by the teacher before assigning an answer. Record an equation with an unknown symbol based on the actual printed figure.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A2-02",
+          "sourceActivity": "Activity 2: Write Equations with an Unknown",
+          "prompt": "Jada has 45 sports cards in packs of 5. Find the number of packs, and write □ × 5 = 45.",
+          "answerType": "integer",
+          "expected": "9"
+        },
+        {
+          "id": "G3-U01-L14-A2-03",
+          "sourceActivity": "Activity 2: Write Equations with an Unknown",
+          "prompt": "Five equal tape sections each represent two objects. Find the unknown total in 5 × 2 = □.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U01-L14-A2-04",
+          "sourceActivity": "Activity 2: Write Equations with an Unknown",
+          "prompt": "A second unread source diagram is described as two parts, one five and one blank, total 30. Have the teacher verify the original model before writing an unknown-number equation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A2-05",
+          "sourceActivity": "Activity 2: Write Equations with an Unknown",
+          "prompt": "Six bags each have ten basketballs. Find the unknown total in 6 × 10 = □.",
+          "answerType": "integer",
+          "expected": "60"
+        }
+      ]
     },
     {
       "ordinal": 15,

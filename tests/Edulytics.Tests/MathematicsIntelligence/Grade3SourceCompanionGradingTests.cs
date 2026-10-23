@@ -160,6 +160,25 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void LessonFourteenDistinguishesUnknownGroupCountFromProductAndBlocksUnreadDiagrams()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L14",out var lesson));
+        Assert.Equal(10,lesson!.SourceSubtasks.Count);
+        Assert.Equal(3,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        Assert.Contains("□ × 5 = 35",lesson.IndependentPractice!.Prompt);
+        Assert.DoesNotContain("5 × □ = 35",lesson.IndependentPractice.Prompt);
+        var packs=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-02");
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(packs,"9").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(packs,"5").NumericCorrect);
+        var unknownProduct=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-03");
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(unknownProduct,"10").NumericCorrect);
+        var incompletePicture=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-01");
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(incompletePicture,"30").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);
