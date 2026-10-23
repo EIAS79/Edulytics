@@ -23,7 +23,7 @@
     "remainingWithoutOriginalReview": 135,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
-    "sourceElementsIndexed": 1328,
+    "sourceElementsIndexed": 1758,
     "sourceElementsFullyComparedToEffectiveProduct": 0,
     "firstPartyOriginalCoolDownLessonsAuthored": 143,
     "firstPartyOriginalCoolDownNumericQuestions": 142,
@@ -32,7 +32,10 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 0
+    "lessonsIndividuallyComparedToAllOriginalElements": 0,
+    "lessonsWithAllStudentFacingTextExtracted": 143,
+    "localStudentFacingTaskSectionsExtracted": 430,
+    "localStudentFacingTaskSectionsIndividuallyMapped": 0
   },
   "cursor": {
     "lastConsecutiveReadyForStageDOrdinal": 0,
@@ -4276,5 +4279,24 @@
     "closedSourceElements": 0,
     "rights": "No copyrighted third-party source images embedded in product. Original student task PDFs and teacher-gated resources not read.",
     "warning": "Full student-facing textual fragments are source references, not proof all figures, table geometry or subitems were individually matched. Academic parity remains unverified."
+  },
+  "stageAStudentTaskSignals": {
+    "sections": 430,
+    "potentialOpen": 296,
+    "potentialNumeric": 148,
+    "visualDependent": 147,
+    "classificationNote": "Lexical flags only. Not a verified source task taxonomy, proficiency judgement or verified answer key."
+  },
+  "stageBDatabaseReadOnlyCheck": {
+    "provider": "Khalid connected Neon project Edulytiks",
+    "branch": "production",
+    "observationDate": "2026-10-23",
+    "grade3PedagogicalLessons": 143,
+    "grade3CanonicalContentRows": 143,
+    "allCanonicalContents": 5110,
+    "allCanonicalTranslationRows": 0,
+    "grade3EnglishTranslationRowsObserved": 0,
+    "queryType": "SELECT only; no student records accessed",
+    "caveat": "Connected project snapshot is not a guarantee of the deployed app database or API runtime. Published Rich V2 actual body remains unverified."
   }
 }
