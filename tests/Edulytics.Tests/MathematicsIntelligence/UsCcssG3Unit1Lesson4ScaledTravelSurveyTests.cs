@@ -49,6 +49,32 @@ public sealed class UsCcssG3Unit1Lesson4ScaledTravelSurveyTests
     }
 
     [Fact]
+    public void SourceSynthesisRetainsDistinctBalloonAndCarGraphReasoning()
+    {
+        // Authoring-only contract; this test is NOT RUN before Stage D.
+        Assert.NotNull(typeof(Edulytics.Web.ViewModels.LessonContent.Grade3Lesson4Answers)
+            .GetProperty("BalloonPlusTwoGraphChange"));
+        Assert.NotNull(typeof(Edulytics.Web.ViewModels.LessonContent.Grade3Lesson4Answers)
+            .GetProperty("CarPlusOneGraphChange"));
+        DirectoryInfo? dir = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (dir is not null)
+        {
+            var candidate = Path.Combine(dir.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson4Activities", "Index.cshtml");
+            if (File.Exists(candidate)) { path = candidate; break; }
+            dir = dir.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        Assert.Contains("name=\"BalloonPlusTwoGraphChange\"", view);
+        Assert.Contains("name=\"CarPlusOneGraphChange\"", view);
+        Assert.Contains("when Car was", File.ReadAllText(Path.Combine(
+            Path.GetDirectoryName(path!)!, "..", "..", "Controllers",
+            "Grade3Lesson4ActivitiesController.cs")));
+    }
+
+    [Fact]
     public void OpenReasoningIsNeverCertifiedByNumberOnly()
     {
         Assert.False(UsCcssG3Unit1Lesson4ScaledTravelSurvey.TryGradeCoolDown(

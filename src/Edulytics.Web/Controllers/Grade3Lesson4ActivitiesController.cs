@@ -64,6 +64,14 @@ public sealed class Grade3Lesson4ActivitiesController(
             "Cool-down: total survey respondents", answers.CoolDownTotal));
         feedback.Add(new("Student-drawn graph, evidence and own explanations", null, true,
             "Teacher checks authentic data collection, title, category labels, a symbol key worth two students, half-symbol for odd counts, and written reasoning."));
+        feedback.Add(new("Source synthesis: two more Balloon students", null, true,
+            string.IsNullOrWhiteSpace(answers.BalloonPlusTwoGraphChange)
+                ? "Missing explanation: teacher checks one additional whole picture in the entered Balloon row."
+                : "Teacher checks one new whole symbol, category count and an accurate drawing or explanation. No automatic certification."));
+        feedback.Add(new("Source synthesis: one more Car student", null, true,
+            string.IsNullOrWhiteSpace(answers.CarPlusOneGraphChange)
+                ? "Missing explanation: teacher checks the initial Car parity and the half-picture change."
+                : "Teacher checks one new half-picture when Car was even, or completion of an existing half-picture when Car was odd. No numeric pass."));
         feedback.Add(new("Class discussion and mathematical-community norms", null, true,
             "Teacher documents partner explanation, how questions were addressed and Math Community norms."));
         feedback.Add(new("Original Edulytics Cool-down drawing and reasoning", null, true,

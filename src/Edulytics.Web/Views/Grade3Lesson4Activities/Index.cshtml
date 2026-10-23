@@ -95,6 +95,11 @@
         <section class="panel">
             <h2>5. Lesson synthesis and Math Community</h2>
             <p>Revisit the actual class picture graph from Activity 2. The source asks TWO separate changes: if 2 more students chose Balloon, add one whole picture (key 2); if 1 more student chose Car, represent the extra learner with half of a picture, or complete an existing half if the old count was odd. Explain your reasoning with the graph rather than assuming either new survey result is real.</p>
+            <label for="balloon-plus-two">What would change in the Balloon row if two MORE students chose Balloon? Show or describe the symbols.</label>
+            <textarea id="balloon-plus-two" name="BalloonPlusTwoGraphChange" rows="3" maxlength="2000">@Model.Answers.BalloonPlusTwoGraphChange</textarea>
+            <label for="car-plus-one">What would change in the Car row if ONE MORE student chose Car? Explain how the existing odd or even number affects the half symbol.</label>
+            <textarea id="car-plus-one" name="CarPlusOneGraphChange" rows="3" maxlength="2000">@Model.Answers.CarPlusOneGraphChange</textarea>
+            <p class="note">These are two different student graph-construction questions. The teacher checks both against the current class values; neither is certified by numeric input.</p>
             <p>Math Community: discuss when a class norm helped your group collect, represent or interpret data. Decide whether to add or revise a norm.</p>
             <label for="reflection">My explanation and a helpful classroom norm</label>
             <textarea id="reflection" name="TeacherReflection" rows="3" maxlength="2000">@Model.Answers.TeacherReflection</textarea>

@@ -16,6 +16,10 @@ public sealed class Grade3Lesson4Answers
     public string? CarWholeSymbols { get; set; }
     public string? TrainHalfSymbol { get; set; }
     public string? TeacherReflection { get; set; }
+    // Two distinct source synthesis constructions; the student must reason
+    // about the current class pictograph rather than a fixed numeric answer.
+    public string? BalloonPlusTwoGraphChange { get; set; }
+    public string? CarPlusOneGraphChange { get; set; }
     public string? CoolDownTrainWhole { get; set; }
     public string? CoolDownTrainHalf { get; set; }
     public string? CoolDownPlanePlusTwoWhole { get; set; }

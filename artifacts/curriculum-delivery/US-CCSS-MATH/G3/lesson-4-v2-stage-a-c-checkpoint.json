@@ -48,7 +48,12 @@
     {
       "id": "synthesis",
       "evidence": "What if 2 more students chose balloon? Answer: add one full symbol",
-      "parity": "AUTHORED_RUNTIME_UNVERIFIED"
+      "parity": "AUTHORED_RUNTIME_UNVERIFIED",
+      "distinctSourceSynthesisPromptsAuthored": {
+        "balloonPlusTwo": "BalloonPlusTwoGraphChange",
+        "carPlusOne": "CarPlusOneGraphChange",
+        "status": "UNRUN_UNRENDERED_UNVERIFIED"
+      }
     },
     {
       "id": "math_community",
@@ -116,7 +121,8 @@
     "synthesisCorrection": "Specified both original balloon +2 and car +1 situations, with parity-aware half marks.",
     "richV2ProposedSourceSpecificCorrection": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
     "effectiveLearnerBodyCompared": false,
-    "currentContentStatus": "SOURCE_CORRECTED_AUTHORING_NOT_RUNTIME_VERIFIED"
+    "currentContentStatus": "SOURCE_CORRECTED_AUTHORING_NOT_RUNTIME_VERIFIED",
+    "twoSourceGraphChangeReasoningFieldsSeparatelyAuthored": true
   },
   "stageC": {
     "status": "NUMERIC_CANDIDATE_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -130,7 +136,9 @@
       "student-drawn graph",
       "partner dialogue",
       "Cool-down open graph/explanation"
-    ]
+    ],
+    "teacherOnlyBalloonAndCarGraphChangeResponsesNotAutoGraded": true,
+    "unrunStaticSourceSynthesisContractWritten": true
   },
   "originalCoolDownPolicy": "FIRST_PARTY_EDULYTICS_EQUIVALENT_AUTHORIZED",
   "openGaps": [
