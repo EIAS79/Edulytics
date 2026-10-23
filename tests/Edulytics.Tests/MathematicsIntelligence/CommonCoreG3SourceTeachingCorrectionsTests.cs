@@ -125,6 +125,39 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
     }
 
     [Fact]
+    public void Lesson2PublishedCandidateRetainsRealSurveyAndWithinTwentyScope()
+    {
+        // Authored regression only: no test invocation is authorized in A-C.
+        var assembly = typeof(CanonicalLessonContentPackDocument).Assembly;
+        var resource = assembly.GetManifestResourceNames().Single(name =>
+            name.EndsWith("us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+                StringComparison.Ordinal));
+        using var stream = assembly.GetManifestResourceStream(resource)
+            ?? throw new InvalidOperationException("Missing Grade 3 source pack.");
+        var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+        options.Converters.Add(new JsonStringEnumConverter());
+        var document = JsonSerializer.Deserialize<CanonicalLessonContentPackDocument>(
+            stream, options) ?? throw new InvalidOperationException("Invalid pack.");
+        CommonCoreG3SourceTeachingCorrections.Apply(document);
+        var lesson = document.Lessons.Single(l =>
+            l.LessonCode == "PED:US-CCSS-MATH:G3:U01:L02");
+        var en = lesson.Translations.Single(t => t.CultureCode == "en");
+
+        Assert.Contains("real class-collected", en.Explanation);
+        Assert.Contains("8 + 2 = 10", en.Explanation);
+        Assert.Contains("actual class", en.KeyConceptsAndRules);
+        Assert.Contains("within 20", en.KeyConceptsAndRules);
+        Assert.Contains("same observed", en.StepByStepSolutions);
+        Assert.Contains("four source-style true/false", en.StepByStepSolutions);
+        Assert.Contains("two-step", en.WorkedExamples);
+        Assert.Contains("hard-coded", en.CommonMistakes);
+        Assert.Contains("teacher review", en.CommonMistakes);
+        Assert.DoesNotContain("Walk 4, Bike 3, Skateboard 1", en.Explanation);
+        Assert.DoesNotContain("Bus 7, Train 6", en.WorkedExamples);
+        Assert.DoesNotContain("G3-U01-L02-EDU-CD-ONE-STEP", en.QuickSummary);
+    }
+
+    [Fact]
     public void SeparateGrade1AndGrade2DocumentsBypassTheGrade3FullSetGuard()
     {
         var document=Grade3Document();
