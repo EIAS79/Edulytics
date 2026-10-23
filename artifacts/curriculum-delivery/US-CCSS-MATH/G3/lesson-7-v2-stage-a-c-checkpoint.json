@@ -1,0 +1,105 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 7,
+  "unitNumber": 1,
+  "lessonNumber": 7,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L07",
+  "title": "Answer Questions about Scaled Bar Graphs",
+  "edition": "IM K–5 First Edition (2021)",
+  "localSourceHtml": "03_Grade_3_IM_K5/unit-1/lesson-7/lesson.html",
+  "teacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-7/lesson.html",
+  "targetParityPercent": 100,
+  "verifiedParityPercent": null,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "stageA": {
+    "status": "SOURCE_LOCAL_2021_STUDENT_FACING_HTML_READ",
+    "sourceActivities": [
+      "Favorite Time of the Year one-step graph problems from previous L06",
+      "New Bugs in Garden bar graph, 0–80 by tens; accept reasonable estimates",
+      "Warm-up dot grouping",
+      "Partner writes two new questions"
+    ],
+    "fixedSeasons": {
+      "Winter": 24,
+      "Spring": 13,
+      "Summer": 40,
+      "Fall": 22
+    },
+    "fixedBugs": {
+      "Ants": 62,
+      "Ladybugs": 11,
+      "Beetles": 19,
+      "Spiders": 7
+    },
+    "originalApproximateResponseRule": "Source teacher accepts all reasonable estimates, may vary. Auto-pass prohibited.",
+    "sourceStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "status": "SOURCE_DATA_ONE_STEP_COMPANION_AUTHORED_RICH_V2_OPEN",
+    "files": {
+      "core": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson7GraphDifferences.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson7Activities/Index.cshtml",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson7ActivitiesController.cs",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson7PracticePage.cs",
+      "link": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "newCooldown": "Original Edulytics fictional sports club data 32/17/21/10",
+    "visual": "Original independently drawn bars, not source images"
+  },
+  "stageC": {
+    "status": "NUMERIC_PRACTICE_AND_FIRST_PARTY_COOL_DOWN_WIRED_TESTS_NOT_RUN",
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+    "testsExecuted": false,
+    "route": "student/practice/grade3-u01-l07",
+    "numericExactItems": 7,
+    "teacherReviewedApproximateItems": 3,
+    "teacherReview": "Teacher judges plausible estimates, own questions, explanations"
+  },
+  "sourceElements": [
+    {
+      "id": "warmup",
+      "status": "ALIGNED_NEW_DOT_REPRESENTATIONS_NOT_SOURCE_IMAGE_VERIFIED"
+    },
+    {
+      "id": "seasons",
+      "status": "NUMERICAL_DATA_AND_QUESTIONS_ALIGNED_UNRUN"
+    },
+    {
+      "id": "bugs",
+      "status": "NUMERIC_DATA_AND_ESTIMATES_ALIGNED_HUMAN_REVIEW"
+    },
+    {
+      "id": "synthesis",
+      "status": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "cooldown",
+      "status": "FIRST_PARTY_AUTHORIGINAL_AUTHORIZED_NOT_SOURCE_ITEM"
+    },
+    {
+      "id": "artwork",
+      "status": "PUBLISHER_ART_NOT_COPIED"
+    }
+  ],
+  "sourceInventory": {
+    "identifiedElements": 6,
+    "fullyVerified": 0,
+    "sourceFiguresPersonallyInspected": false,
+    "RichV2PublishedBodyReviewed": false
+  },
+  "openGaps": [
+    "Exact source warm-up dots figure not visually replicated/verified.",
+    "Rich V2 published learner body not compared against original 2021 teaching source.",
+    "Approximation acceptance has teacher nuance beyond provisional ±5 numerical guidance; teacher must judge all estimates.",
+    "First-party controller, Razor graph page and tests authored but not compiled or exercised.",
+    "Original student's task PDF, rights and teacher oral participation evidence still need review."
+  ],
+  "cooldownPolicy": "OWNER_APPROVED_ORIGINAL_EQUIVALENT",
+  "stageD": "NOT_STARTED",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED"
+}

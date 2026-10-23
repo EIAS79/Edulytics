@@ -198,6 +198,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L07" &&
+         grade3AuthoredActivityAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 3 scaled bar graph comparison problems">
+            <h2>Edulytics · data comparison problems</h2>
+            <p>Use the previously created seasonal graph, interpret scaled bug bars with
+                reasonable estimates, and complete an original Edulytics Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade3Lesson7Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@grade3AuthoredActivityAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 3 scaled graph questions and Cool-down
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {

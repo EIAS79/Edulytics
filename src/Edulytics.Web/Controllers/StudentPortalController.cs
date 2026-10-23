@@ -449,7 +449,8 @@ public sealed class StudentPortalController : Controller
                 "PED:US-CCSS-MATH:G3:U01:L03" or
                 "PED:US-CCSS-MATH:G3:U01:L04" or
                 "PED:US-CCSS-MATH:G3:U01:L05" or
-                "PED:US-CCSS-MATH:G3:U01:L06";
+                "PED:US-CCSS-MATH:G3:U01:L06" or
+                "PED:US-CCSS-MATH:G3:U01:L07";
 
         // Resolve exact Practice independently from optional game presentation.
         var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
@@ -546,6 +547,9 @@ public sealed class StudentPortalController : Controller
                 StringComparison.Ordinal) ||
             string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L06",
+                StringComparison.Ordinal) ||
+            string.Equals(lesson.LessonCode,
+                "PED:US-CCSS-MATH:G3:U01:L07",
                 StringComparison.Ordinal))
         {
             grade3AuthoredActivityAdoptionId = workspace.SelectedCurriculumAdoptionId;
