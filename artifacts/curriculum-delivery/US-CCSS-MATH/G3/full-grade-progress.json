@@ -24,7 +24,11 @@
     "numericCandidateCodeFilesAuthored": 2,
     "stageCRegressionFilesWrittenNotRun": 2,
     "sourceElementsIndexed": 22,
-    "sourceElementsFullyComparedToEffectiveProduct": 0
+    "sourceElementsFullyComparedToEffectiveProduct": 0,
+    "firstPartyOriginalCoolDownLessonsAuthored": 2,
+    "firstPartyOriginalCoolDownNumericQuestions": 4,
+    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 2,
+    "firstPartyOriginalCoolDownTestFilesWrittenNotRun": 1
   },
   "cursor": {
     "lastConsecutiveReadyForStageDOrdinal": 0,
@@ -37,9 +41,9 @@
       "ordinal": 1,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L01",
       "reasons": [
-        "Educator-only source Cool-down not retrieved",
         "Original artwork/third-party asset rights not resolved",
-        "Effective Edulytics Rich V2/Practice integration not compared or remediated"
+        "Effective Edulytics Rich V2/Practice integration not compared or remediated",
+        "First-party independently authored Cool-down now needs student route integration; publisher teacher-only original no longer a blocker"
       ],
       "status": "A_C_EXPLICIT_GAP"
     },
@@ -47,9 +51,9 @@
       "ordinal": 2,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L02",
       "reasons": [
-        "Educator-only source Cool-down not retrieved",
         "Authentic class data and partner/graph grading not linked to production",
-        "Effective Edulytics Rich V2 not matched; figures rights pending"
+        "Effective Edulytics Rich V2 not matched; figures rights pending",
+        "Independent Cool-down requires learner routing and teacher-review boundary; original teacher-only prompt no longer a blocker"
       ],
       "status": "A_C_EXPLICIT_GAP"
     }
@@ -72,7 +76,9 @@
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-1-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
-      "academicApproval": "NOT_CLAIMED"
+      "academicApproval": "NOT_CLAIMED",
+      "coolDownState": "FIRST_PARTY_AUTHORED_TESTS_WRITTEN_UNRUN_NOT_INTEGRATED",
+      "publisherOriginalCoolDownAccessBlocks": false
     },
     {
       "gradeOrdinal": 2,
@@ -89,7 +95,9 @@
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-2-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
-      "academicApproval": "NOT_CLAIMED"
+      "academicApproval": "NOT_CLAIMED",
+      "coolDownState": "FIRST_PARTY_AUTHORED_TESTS_WRITTEN_UNRUN_NOT_INTEGRATED",
+      "publisherOriginalCoolDownAccessBlocks": false
     },
     {
       "gradeOrdinal": 3,
@@ -2493,6 +2501,24 @@
     "2026-10-23: new G3 source-only 143 lesson manifest committed on separate authoring branch; 8 units, no assumed A–C historical closures.",
     "Ordinal 1 first-edition original teacher lesson+preparation inspected and 11 source components logged. Original cool-down access-restricted. Numeric independent candidate and unrun regressions authored but not wired.",
     "Ordinal 2 source inspected and 11 components logged. Authentic classroom-variable survey values intentionally not replaced with fixed L01 data; numeric candidate and unrun regressions authored but not wired.",
-    "No Stage D, CI, .NET compilation, preproduction UAT, merge, Neon mutation or Render deploy intentionally executed as required by A–B–C plan."
-  ]
+    "No Stage D, CI, .NET compilation, preproduction UAT, merge, Neon mutation or Render deploy intentionally executed as required by A–B–C plan.",
+    "2026-10-23: Owner reiterates Grade1/Grade2 precedent: write Edulytics first-party Cool-down from lesson objective, content and skill instead of requiring inaccessible publisher teacher-only Cool-down. Applies to all 143 G3 lessons; do not claim literal original item parity.",
+    "G3 U01 L01/L02: authored six first-party Cool-down tasks (four numeric, two teacher-reviewed drawing/explanation), with unrun xUnit cases. Not yet integrated; real authoring gaps remain and 0/143 READY_FOR_STAGE_D."
+  ],
+  "coolDownPolicy": {
+    "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
+    "ownerPreviouslyAgreed": true,
+    "treatment": "Original Cool-down behind publisher teacher login DOES NOT BLOCK A–B–C, if Edulytics independently authors its own assessment covering the same known learning goal and mathematical skills. Do not claim to have inspected or reproduced the publisher question.",
+    "required": [
+      "Identify the learning target and graph representation skills of the source lesson.",
+      "Author independent assessable task with original context/numbers/artwork.",
+      "Define numeric answer and invalid/incorrect behavior; record teacher-scored graph and explanation separately.",
+      "Write tests in Stage C but do not run them until Stage D.",
+      "Wire to effective learner Practice and finish source-goal parity, before marking READY_FOR_STAGE_D."
+    ],
+    "firstPartyCode": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3OriginalCoolDownCandidates.cs",
+    "authoredUnrunTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3OriginalCoolDownCandidatesTests.cs",
+    "publisherQuestionWasReviewed": false,
+    "currentStage": "CANDIDATES_WRITTEN_NOT_WIRED_OR_VERIFIED"
+  }
 }
