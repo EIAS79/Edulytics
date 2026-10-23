@@ -199,6 +199,21 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void LessonSixteenConstructionCannotPassAsAnUnrelatedInteger()
+    {
+        // Authored-only, never run here.
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L16",out var lesson));
+        Assert.Equal(7,lesson!.SourceSubtasks.Count);
+        Assert.All(lesson.SourceSubtasks,q=>Assert.Equal("teacher",q.AnswerType));
+        Assert.Equal("teacher",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"20").NumericCorrect);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown,"24").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);

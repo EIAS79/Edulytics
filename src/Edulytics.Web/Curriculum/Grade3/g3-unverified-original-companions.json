@@ -1161,14 +1161,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "arrays-with-objects",
       "independentPractice": {
-        "prompt": "Arrange 20 tiles into four rows of five. How many tiles?",
-        "answerType": "integer",
-        "expected": "20"
+        "prompt": "Physically build 20 blocks as at least two distinct rectangular arrays; draw each with equally spaced rows and columns and explain how every block was used. A numeric total by itself is insufficient.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Arrange 24 counters into six rows of four. How many counters?",
-        "answerType": "integer",
-        "expected": "24"
+        "prompt": "Use 24 counters to make two different rectangular arrays and explain the rows, columns, equal groups and total in each. Teacher checks each construction.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Compare Equal Groups and Arrays with your teacher. Show the representation and explain how it meets the goal: You will describe arrays and arrange objects into arrays.",
       "teacherReviewNote": "Teacher checks actual alternative array arrangements for 20 and 24 objects.",
@@ -1180,11 +1180,13 @@
         "sourceGoal": "Let’s make some arrays.",
         "sourceLearningGoals": "Build arrays with physical objects and describe them in terms of multiplication. Describe an array as an arrangement of objects into rows with an equal number of objects in each row and into columns with an equal number in each column.",
         "teachingSteps": [
-          "Draw rows and columns with equal spacing.",
-          "Count rows and columns; relate the array to equal groups.",
-          "Compare rotated or reorganized arrays while preserving the total."
+          "Discuss an original 12-egg carton image; describe rows and columns before any calculation.",
+          "Compare four circles of five dots to a twenty-dot array, critique Noah's assertion that arrays do not have equal groups.",
+          "Construct six groups of five with cubes and rearrange into a six-row, five-column first-party model.",
+          "Physically build and sketch different arrays of 20 and 24 cubes; do not require exhaustive divisor enumeration.",
+          "Teacher validates row/column uniformity and students' original drawings and explanations."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make some arrays.",
+        "caution": "Original L16 aims at BUILDING arrays with physical cubes; arithmetic answers and multiplication expression drills alone are not acceptable evidence of this source target. Practice and Cool-down are therefore teacher-only, and the first-party diagrams on the page are labelled examples.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1198,7 +1200,58 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L16-WU-EGGS",
+          "sourceActivity": "Warm-up: Notice and Wonder Eggs",
+          "prompt": "Examine the original pictured carton of twelve eggs; explain what arrangements of rows and columns you notice. The image itself must be shown by the teacher.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L16-A1-COMPARE",
+          "sourceActivity": "Activity 1: Compare Equal Groups and Arrays",
+          "prompt": "Compare four groups of five objects drawn in circles with twenty objects arranged as an array. Explain what stays constant and which grouping relationships become more visible.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L16-A1-NOAH",
+          "sourceActivity": "Activity 1: Critique Noah's Thinking",
+          "prompt": "Evaluate the claim that equal groups exist in the four five-dot circles but not in the matching array. Explain that array rows and columns can also contain equal-sized groups.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L16-A2-01",
+          "sourceActivity": "Activity 2: Arrange Into Arrays",
+          "prompt": "Build six groups of five with thirty real cubes and reorganize them as a rectangular array. Sketch rows and columns and justify equal groups.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L16-A2-02",
+          "sourceActivity": "Activity 2: Arrange Into Arrays",
+          "prompt": "Use all twenty cubes to build different rectangular arrays. Draw each arrangement and explain why every row and column has consistent group sizes.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L16-A2-03",
+          "sourceActivity": "Activity 2: Arrange Into Arrays",
+          "prompt": "Use all twenty-four cubes to build more than one rectangular array and explain the grouping. Finding every mathematically possible array is NOT required by this grade-3 source.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L16-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Discuss how an array can be interpreted as equal rows and equal columns and how physical rearrangement preserves the number of cubes.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 17,

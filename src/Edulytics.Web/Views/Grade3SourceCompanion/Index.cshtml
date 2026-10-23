@@ -22,6 +22,8 @@
 .g3-original .source-pictogram{font-size:1.3rem;display:inline-block;margin-right:.35rem;color:#147b96}
 .g3-original .source-scale{display:flex;justify-content:space-between;max-width:360px;font-variant-numeric:tabular-nums}
 .g3-original .source-key{font-weight:700}
+.g3-original .first-party-array{display:grid;gap:7px;width:max-content;max-width:100%;margin:12px 0;padding:12px;border:2px solid #8daeb7;border-radius:8px}
+.g3-original .first-party-dot{display:block;background:#147b96;border-radius:50%;width:17px;height:17px}
 
 </style>
 <main class="g3-original">
@@ -193,6 +195,18 @@
                 <h2>Source Activity 2: multiplication mashup</h2>
                 <p>Find all five answers in the individual source items below. The sequence of sixteen socks in piles of two, eight piles of two, and sixteen socks divided into eight same-sized groups deliberately changes what is unknown: number of groups, total number of objects, and number in each group. Do NOT mark all three as the same question family. Teachers review the model and missing-variable meaning, not merely the correct number.</p>
                 <p>In the lesson's comparison discussion, explain when drawings, tape diagrams, skip-counting or equations help. Repeated addition may be a calculation method but should not be presented as the complete meaning of multiplication.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 16) {
+            <section class="panel" aria-label="Original Edulytics array representation, not publisher artwork">
+                <h2>Source activity guidance: build arrays with actual cubes</h2>
+                <p>For the original activity, groups use actual connecting cubes: six groups of five, then twenty cubes, then twenty-four cubes. The teacher checks arrangement, groups and the explanations. A correct product alone cannot approve an array drawing.</p>
+                <p>The following 6-row by 5-column diagram is independently created for Edulytics and is an EXAMPLE, not the publisher's source image.</p>
+                <div class="first-party-array" style="grid-template-columns:repeat(5,17px)" role="img" aria-label="A first-party illustration of 6 equal rows containing 5 dots each">
+                    @for(var i=0;i<30;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                </div>
+                <p>Compare these six equal rows to six equal groups of five. You can also read five equal columns of six. For 20 cubes, try more than one rectangular arrangement. For 24 cubes, find several — do not insist on finding every factor pair.</p>
+                <p>The warm-up original carton image and Noah's two drawings still require a teacher to inspect the source visual. Discuss whether both circles and rectangular arrays can show the same equal groups.</p>
             </section>
         }
         @if(showMinuteClock) {

@@ -17,7 +17,17 @@
     "originalImageDescriptionsCount": 2,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "originalArraySourceTaskInventory": [
+      "carton twelve eggs teacher discussion",
+      "compare 4 circles x5 to 20-dot array",
+      "Noah's claim evaluated verbally",
+      "6x5 physically constructed",
+      "20-cube multiple arrays",
+      "24-cube multiple arrays",
+      "array synthesis"
+    ],
+    "publishedOriginalArtworkInspected": false
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +39,9 @@
     "existingSourceBodyHash": "0501fe5868d621685eb899908d2699073dfc210ef9f3dec264138acdebcf16a9",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "firstPartyDotsSixRowsByFiveColumnsAuthored": true,
+    "sourceOriginalVisualNotDuplicated": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +54,12 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Compare Equal Groups and Arrays with your teacher. Show the representation and explain how it meets the goal: Let’s make some arrays.",
-    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array."
+    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+    "independentPracticeNowTeacherOnly": true,
+    "edulyticsCoolDownNowTeacherOnly": true,
+    "all7SourceHumanRepresentationSubtasksSeparated": true,
+    "regressionWrittenButNotRun": true,
+    "originalSourceNumericCoverageClaimed": false
   },
   "sourceElements": [
     {
@@ -141,7 +158,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "The seven original public L16 tasks rely on physical constructions and source drawings, which cannot be certified by numeric grading; first-party six-row by five-dot example is authored but no rendering, original images, student task PDFs or published Rich V2 were verified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
