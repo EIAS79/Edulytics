@@ -15,6 +15,35 @@ public sealed class UsCcssG3Unit1Lesson6ChooseScaleTests
         Assert.Equal(40,UsCcssG3Unit1Lesson6ChooseScale.GraphMaximum(40,10));
         Assert.Equal(42,UsCcssG3Unit1Lesson6ChooseScale.GraphMaximum(41,2));
     }
+    [Fact]
+    public void AllThreeOriginalVerticalPetGraphsKeepThirtyOneTicksAndUnchangedHeights()
+    {
+        // Authoring-only: no tests or Razor render are executed before Stage D.
+        var pets = UsCcssG3Unit1Lesson6ChooseScale.SourcePets;
+        Assert.Equal(new[] { 16, 13, 6, 10, 30 }, pets.Select(p => p.Count));
+        foreach (var (maximum, step) in new[] { (30, 1), (60, 2), (300, 10) })
+        {
+            Assert.Equal(31, maximum / step + 1);
+            Assert.Equal(pets.Count, pets.Count(p => p.Count <= maximum));
+        }
+        DirectoryInfo? dir = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (dir is not null)
+        {
+            var p = Path.Combine(dir.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson6Activities", "Index.cshtml");
+            if (File.Exists(p)) { path = p; break; }
+            dir = dir.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        Assert.Contains("pet-vertical-bar", view);
+        Assert.Contains("height:@(row.Count*372/max)px", view);
+        Assert.Contains("tick=max;tick>=0;tick-=setting", view);
+        Assert.Contains("Type of pets", view);
+        Assert.Contains("Lifespan of Pets vertical bar graph", view);
+    }
+
     [Theory]
     [InlineData("L06-SOURCE-PET-CAT",16)]
     [InlineData("L06-SOURCE-PET-PYTHON",30)]

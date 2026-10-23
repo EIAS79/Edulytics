@@ -16,6 +16,15 @@
 .g3-l06 .bar-row{display:flex;align-items:center;gap:10px;margin:9px 0}
 .g3-l06 .label{width:120px;flex:none}
 .g3-l06 .bar{height:26px;background:#197e92}
+.g3-l06 .pet-graph-frame{overflow-x:auto}
+.g3-l06 .pet-graph{display:grid;grid-template-columns:36px minmax(440px,1fr);column-gap:9px;max-width:740px;min-width:490px}
+.g3-l06 .pet-ticks{height:372px;display:flex;flex-direction:column;justify-content:space-between;font-size:.65rem;line-height:1;color:#305168}
+.g3-l06 .pet-bars{height:372px;display:grid;grid-template-columns:repeat(5,minmax(70px,1fr));gap:10px;align-items:end;border-left:2px solid #678596;border-bottom:2px solid #678596;padding:0 7px}
+.g3-l06 .pet-column{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:372px}
+.g3-l06 .pet-vertical-bar{background:#197e92;width:68%;max-width:58px;border-radius:4px 4px 0 0}
+.g3-l06 .pet-category-labels{grid-column:2;display:grid;grid-template-columns:repeat(5,minmax(70px,1fr));gap:10px;padding:0 7px}
+.g3-l06 .pet-category-label{text-align:center;font-size:.78rem;overflow-wrap:anywhere}
+.g3-l06 .pet-x-title{grid-column:2;text-align:center;font-weight:700;margin:6px 0}
 .g3-l06 .good{border-left:4px solid #148356;padding-left:10px}
 .g3-l06 .bad{border-left:4px solid #b53045;padding-left:10px}
 .g3-l06 .review{border-left:4px solid #b48022;padding-left:10px}
@@ -35,16 +44,25 @@
             @foreach(var setting in new[]{1,2,10}){
                 var max=setting==1?30:setting==2?60:300;
                 <h3>Axis from 0 to @max, with increments of @setting</h3>
-                <div role="group" aria-label="Pet lifespan comparison. Category values stay the same.">
-                    @foreach(var row in pets){
-                        <div class="bar-row">
-                            <strong class="label">@row.Category</strong>
-                            <span class="bar" style="width:@(row.Count*100/max)%" aria-hidden="true"></span>
-                            <span>@row.Count years</span>
+                <div class="pet-graph-frame">
+                    <div class="pet-graph" role="img" aria-label="Lifespan of Pets vertical bar graph: cat 16, dog 13, guinea pig 6, goldfish 10, python 30 years. Vertical axis from zero to @max with increments of @setting.">
+                        <div class="pet-ticks" aria-hidden="true">
+                            @for(var tick=max;tick>=0;tick-=setting){<span>@tick</span>}
                         </div>
-                    }
+                        <div class="pet-bars" aria-hidden="true">
+                            @foreach(var row in pets){
+                                <div class="pet-column">
+                                    <div class="pet-vertical-bar" style="height:@(row.Count*372/max)px"></div>
+                                </div>
+                            }
+                        </div>
+                        <div class="pet-category-labels" aria-hidden="true">
+                            @foreach(var row in pets){<span class="pet-category-label">@row.Category: @row.Count years</span>}
+                        </div>
+                        <p class="pet-x-title">Type of pets</p>
+                    </div>
                 </div>
-                <p>Shared horizontal zero; @setting unit(s) per tick. Bars are redrawn here rather than copied from publisher artwork.</p>
+                <p>Vertical axes use @setting year(s) per tick, with a shared zero baseline. The same five quantities are redrawn without publisher artwork.</p>
             }
             <label for="warmup">What do you notice and wonder about these three scales?</label>
             <textarea id="warmup" name="Warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>

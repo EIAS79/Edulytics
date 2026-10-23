@@ -102,7 +102,8 @@
       "Choose from scales 2,5,10 and explain",
       "Student mathematical reflection",
       "Independent first-party Cool-down"
-    ]
+    ],
+    "petWarmupOriginalOrientationAndScaleAuthored": "Corrected earlier HORIZONTAL progress bars into vertical bar graphs, 372px baseline; 31 ticks each. Original image still inaccessible for pixel parity."
   },
   "stageC": {
     "status": "SOURCE_NUMERICS_AND_INDEPENDENT_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -110,12 +111,15 @@
     "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
     "numericQuestions": 9,
     "testsRun": false,
-    "teacherReviewRequired": true
+    "teacherReviewRequired": true,
+    "newVerticalPetScaleRegressionWrittenUnrun": true
   },
   "sourceElements": [
     {
       "id": "warmup",
-      "state": "SOURCE_NUMERIC_AND_AXIS_PARITY_AWAITING_RENDER"
+      "state": "SOURCE_NUMERIC_AND_AXIS_PARITY_AWAITING_RENDER",
+      "currentFirstPartyVerticalScaleRepair": "Three independent CSS vertical pet graphs now use source axes 0–30 by 1, 0–60 by 2, and 0–300 by 10, each with category values 16/13/6/10/30 and explicit tick markings. Compiled rendering and original figure pixel parity not verified.",
+      "firstPartyVerticalAxisAuthoredButUnrendered": true
     },
     {
       "id": "pattern_activity",
