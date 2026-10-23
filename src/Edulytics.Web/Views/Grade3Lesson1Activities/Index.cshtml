@@ -14,9 +14,12 @@
 .g3-data .note {color:#405e73;max-width:80ch}
 .g3-data .picture-rows {display:grid;grid-template-columns:minmax(110px,160px) 1fr;gap:9px;align-items:center}
 .g3-data .dots {font-size:1.2rem;letter-spacing:.28rem;overflow-wrap:anywhere}
-.g3-data .bar-chart {display:grid;grid-template-columns:repeat(6,minmax(40px,1fr));gap:8px;max-width:650px;align-items:end;border-left:2px solid #658097;border-bottom:2px solid #658097;padding:12px 12px 0}
-.g3-data .bar-col {display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
-.g3-data .bar {width:68%;max-width:60px;background:#158398;border-radius:4px 4px 0 0}
+.g3-data .bar-graph {max-width:670px;display:grid;grid-template-columns:30px 1fr;column-gap:7px}
+.g3-data .axis-ticks {height:160px;display:flex;flex-direction:column;justify-content:space-between;font-size:.85rem;color:#39576b}
+.g3-data .bar-chart {display:grid;grid-template-columns:repeat(6,minmax(32px,1fr));gap:8px;align-items:end;height:160px;border-left:2px solid #658097;border-bottom:2px solid #658097;padding:0 9px}
+.g3-data .bar-col {height:160px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
+.g3-data .bar {width:72%;max-width:64px;background:#158398;border-radius:4px 4px 0 0;color:#fff;text-align:center;font-weight:700}
+.g3-data .bar-labels {grid-column:2;display:grid;grid-template-columns:repeat(6,minmax(32px,1fr));gap:8px;padding:0 9px}
 .g3-data .bar-label {font-size:.8rem;text-align:center;overflow-wrap:anywhere;margin-top:5px}
 .g3-data .scale {font-weight:600;color:#4a6476}
 .g3-data label {display:block;font-weight:700;margin:12px 0 5px}
@@ -48,7 +51,7 @@
                 @for (var i = 0; i < source.Count; i++)
                 {
                     <strong>Column @(i + 1)</strong>
-                    <span class="dots" aria-label="@(source[i].NumberOfStudents) students">@string.Concat(Enumerable.Repeat("● ", source[i].NumberOfStudents))</span>
+                    <span class="dots" aria-label="@(source[i].NumberOfStudents) students">@(string.Concat(Enumerable.Repeat("● ", source[i].NumberOfStudents)))</span>
                 }
             </div>
             <p class="note">Key: ● = 1 student. The numbered column placeholders are not category names.</p>
@@ -67,26 +70,32 @@
         <section class="panel" aria-labelledby="graphs">
             <h2 id="graphs">3. Two graphs, one dataset</h2>
             <p>Now read the real category names from the lesson. Both original-format diagrams below are created directly from the same numerical data.</p>
-            <h3>Picture graph</h3>
+            <h3>How We Get Home — picture graph</h3>
             <div class="picture-rows">
                 @foreach (var item in source)
                 {
                     <strong>@item.Label</strong>
-                    <span class="dots" aria-label="@item.NumberOfStudents students choosing @item.Label">@string.Concat(Enumerable.Repeat("● ", item.NumberOfStudents))</span>
+                    <span class="dots" aria-label="@item.NumberOfStudents students choosing @item.Label">@(string.Concat(Enumerable.Repeat("● ", item.NumberOfStudents)))</span>
                 }
             </div>
             <p class="note">Key: ● = 1 student.</p>
-            <h3>Bar graph</h3>
-            <p class="scale">Vertical scale: 0 to 8, one student per unit.</p>
-            <div class="bar-chart" role="img" aria-label="Ways students get home. Walk 4, bike 3, skateboard 1, car 2, bus 7, train 6. Scale zero to eight by ones.">
-                @foreach (var item in source)
-                {
-                    <div class="bar-col">
-                        <strong>@item.NumberOfStudents</strong>
-                        <div class="bar" style="height:@(item.NumberOfStudents * 23)px" aria-hidden="true"></div>
-                        <span class="bar-label">@item.Label</span>
-                    </div>
-                }
+            <h3>How We Get Home — bar graph</h3>
+            <p class="scale">Vertical scale: 0 to 8, increasing in steps of 1 student.</p>
+            <div class="bar-graph" role="img" aria-label="How We Get Home bar graph. Axis zero to eight in ones. Walk four, bike three, skateboard one, car two, bus seven, train six.">
+                <div class="axis-ticks" aria-hidden="true">
+                    @for (var tick = 8; tick >= 0; tick--) { <span>@tick</span> }
+                </div>
+                <div class="bar-chart" aria-hidden="true">
+                    @foreach (var item in source)
+                    {
+                        <div class="bar-col">
+                            <div class="bar" style="height:@(item.NumberOfStudents * 20)px">@item.NumberOfStudents</div>
+                        </div>
+                    }
+                </div>
+                <div class="bar-labels" aria-hidden="true">
+                    @foreach (var item in source) { <span class="bar-label">@item.Label</span> }
+                </div>
             </div>
             <p class="note">Both representations have the same categories and quantities. One uses a symbol per student; the other uses bar height. For scale accessibility, read the explicit counts on each bar.</p>
             <label for="graph-comparison">How are the two graphs alike and different? What can you learn?</label>
@@ -116,7 +125,7 @@
                 @foreach (var item in library)
                 {
                     <strong>@item.Category</strong>
-                    <span class="dots" aria-label="@item.Students learners chose @item.Category">@string.Concat(Enumerable.Repeat("● ", item.Students))</span>
+                    <span class="dots" aria-label="@item.Students learners chose @item.Category">@(string.Concat(Enumerable.Repeat("● ", item.Students)))</span>
                 }
             </div>
             <p class="note">Key: ● = 1 student.</p>
@@ -160,6 +169,13 @@
     <section class="panel">
         <h2>Teacher discussion and optional centres</h2>
         <p>In pairs, check whether each graph question has enough information; compare title, key, labels and the unit scale. Discuss what respectful mathematical discussion looks like, and have pupils reflect on their thinking.</p>
+        <table class="table" aria-label="Independently authored Math Community discussion guide">
+            <thead><tr><th scope="col">Who?</th><th scope="col">Doing mathematics</th><th scope="col">Discussion norms</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">Students</th><td>Make an observation, ask a data question, justify an answer.</td><td>Think quietly first; listen and respond to partners.</td></tr>
+                <tr><th scope="row">Teacher</th><td>Display the data and invite multiple interpretations.</td><td>Give wait time; record and invite reasoning from every learner.</td></tr>
+            </tbody>
+        </table>
         <p>Optional teacher-directed reinforcement: create and sort another picture/bar display from safe classroom objects, or play an addition-within-20 square-capture game. These teacher-led activities are not represented as automatically graded here.</p>
         <p class="note">Teacher rubric: check correct category references; one mark per pupil; identical counts across both graph types; a plausible explanation of key versus scale; two genuinely answerable student-authored questions; and partner discussion evidence.</p>
     </section>
