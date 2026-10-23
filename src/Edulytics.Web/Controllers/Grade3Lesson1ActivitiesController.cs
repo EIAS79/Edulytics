@@ -71,14 +71,30 @@ public sealed class Grade3Lesson1ActivitiesController(
                 "G3-U01-L01-EDU-CD-COUNT", answers.CoolDownCount),
             CheckCoolDown("Edulytics Cool-down: compare categories",
                 "G3-U01-L01-EDU-CD-COMPARE", answers.CoolDownDifference),
-            new("Warm-up, invented labels and graph comparison", null, true,
-                "A teacher must evaluate observations, plausible labels, shared explanations and how the two graphs show the same dataset."),
-            new("Student-authored graph questions", null, true,
-                "A teacher must check that both questions can actually be answered from the displayed categories and values."),
-            new("Edulytics Cool-down: author a new question", null, true,
-                "A teacher must review the learner's original question and reasoning; an entered explanation is not an automatic pass."),
-            new("Lesson synthesis and Math Community norms", null, true,
-                "Teacher reviews the learner's graph synthesis, limits of available categorical data, partner language and collaborative discussion norms. No numeric automatic certification.")
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Source warm-up: Notice and Wonder", answers.WarmupObservations,
+                "Identify a grounded observation and a distinct wonder about the first six unlabelled columns; the teacher observes the partner talk."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Source activity 1: possible picture-graph categories", answers.PlausibleCategories,
+                "Explain plausible categories from the revealed title without pretending that missing labels are known; the teacher observes group reasoning."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Source activity 2a: compare two graphs", answers.GraphComparison,
+                "Explain at least one supported similarity and one difference between the labelled picture and bar graphs."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Source activity 2b: interpret what graphs tell us", answers.GraphLearnings,
+                "Describe a true, supported statement about getting home from the shown categories and counts."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Source activity 2c: create two graph questions", answers.TwoGraphQuestions,
+                "Find TWO distinct questions answerable from the same graph data; check the requested quantities can be determined."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Edulytics independent Cool-down: new question and reason", answers.CoolDownOriginalQuestion,
+                "Assess the new library-survey question and its justification; this is NOT the publisher's educator-gated task."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Source lesson synthesis: graph meaning", answers.SynthesisReflection,
+                "Check title, picture key, category labels, bar axis and which questions the dataset cannot answer."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Source Math Community: Doing Math / Norms", answers.MathCommunityReflection,
+                "Confirm reflection on student and teacher participation; peer restatement, wait time and collaboration require actual teacher observation.")
         };
 
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
