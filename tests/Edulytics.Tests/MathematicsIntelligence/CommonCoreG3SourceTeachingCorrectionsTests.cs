@@ -1,3 +1,5 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Edulytics.Core.Curriculum;
 using Edulytics.Data.Seeding;
 using Xunit;
@@ -66,6 +68,48 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
         document.PackCode="CAMBRIDGE-INTL-MATH";
         Assert.False(CommonCoreG3SourceTeachingCorrections.IsTarget(document,lesson));
     }
+    [Fact]
+    public void Lesson1CanonicalAuthoringExplainsEveryGraphRevealBeforeGrading()
+    {
+        // The full embedded 2021 G3 pack is the guarded baseline. This test
+        // checks the authored A-B-C candidate only; it is NOT Stage D success
+        // and must not be executed during source-authoring.
+        var assembly = typeof(CanonicalLessonContentPackDocument).Assembly;
+        var resource = assembly.GetManifestResourceNames().Single(name =>
+            name.EndsWith("us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+                StringComparison.Ordinal));
+        using var stream = assembly.GetManifestResourceStream(resource)
+            ?? throw new InvalidOperationException("Missing Grade 3 source pack.");
+        var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+        options.Converters.Add(new JsonStringEnumConverter());
+        var document = JsonSerializer.Deserialize<CanonicalLessonContentPackDocument>(
+            stream, options) ?? throw new InvalidOperationException("Invalid pack.");
+        Assert.Equal(143, document.Lessons.Count);
+
+        CommonCoreG3SourceTeachingCorrections.Apply(document);
+        var lesson = document.Lessons.Single(l =>
+            l.LessonCode == "PED:US-CCSS-MATH:G3:U01:L01");
+        var english = lesson.Translations.Single(t => t.CultureCode == "en");
+
+        Assert.Contains("4, 3, 1, 2, 7 and 6", english.Explanation);
+        Assert.Contains("First, study", english.Explanation);
+        Assert.Contains("Next, reveal the title", english.Explanation);
+        Assert.Contains("Finally, read", english.Explanation);
+        Assert.Contains("Walk 4, Bike 3, Skateboard 1, Car 2", english.Explanation);
+        Assert.Contains("from 0 to 8 in steps of 1", english.Explanation);
+        Assert.Contains("two different questions", english.WorkedExamples);
+        Assert.Contains("teacher review", english.Explanation);
+        Assert.Contains("context", english.QuickSummary);
+        Assert.Equal(
+            CommonCoreG3SourceTeachingCorrections.CorrectionContentVersion,
+            CommonCoreG3SourceTeachingCorrections.GetExpectedContentVersion(
+                document, lesson, document.ContentVersion));
+
+        // A public equivalent is allowed, but original restricted assessment
+        // prompts and first-party numeric answer keys must not be introduced.
+        Assert.DoesNotContain("G3-U01-L01-EDU-CD-COUNT", english.WorkedExamples);
+    }
+
     [Fact]
     public void SeparateGrade1AndGrade2DocumentsBypassTheGrade3FullSetGuard()
     {
