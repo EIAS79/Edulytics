@@ -17,7 +17,17 @@
     "originalImageDescriptionsCount": 4,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicSourceActivity1Checked": [
+      "6 pairs socks = 12, teacher Notice and Wonder",
+      "3 tape sections labelled 2 correspond to 3 symbol road signs worth two each",
+      "pupil makes a separate drawing for another sign category"
+    ],
+    "publicSourceActivity2Checked": [
+      "original teacher supplied card sort not inspected",
+      "four bags each 2 strawberries = 8",
+      "four hands each 5 fingers = 20"
+    ]
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +39,9 @@
     "existingSourceBodyHash": "3d3266868dd51d7118c7a6b14d4c12f232655597dd6b4adc10eca3114ba42c8a",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "lesson10SpecificWarmupAndSourceActivityPromptsAuthored": true,
+    "originalCardSortUnverifiedNotReplacedWithFalsePublisherParity": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +54,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Scaled Picture Graph to Diagram with your teacher. Show the representation and explain how it meets the goal: Let’s represent equal groups.",
-    "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced."
+    "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced.",
+    "originalCardSortCannotBeMachineGraded": true,
+    "extraOriginalHandGroupTaskPromptRequiresTeacherReview": true,
+    "unrunRazorSourceTaskRegressionAdded": true
   },
   "sourceElements": [
     {
@@ -159,7 +174,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Public student-facing original source tasks now separately named and modelled in companion prose, but original publisher card deck/images, structured user response per source element and effective Rich V2 remain unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

@@ -42,6 +42,29 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void LessonTenPreservesDistinctTapeGraphAndTeacherOnlyOriginalCardSort()
+    {
+        // Authored-only Stage C static contract.
+        DirectoryInfo? dir = new(AppContext.BaseDirectory);
+        string? file = null;
+        while (dir is not null)
+        {
+            var candidate = Path.Combine(dir.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3SourceCompanion", "Index.cshtml");
+            if (File.Exists(candidate)) { file = candidate; break; }
+            dir = dir.Parent;
+        }
+        Assert.NotNull(file);
+        var view = File.ReadAllText(file!);
+        Assert.Contains("six pairs of socks", view);
+        Assert.Contains("three equal tape-diagram sections labelled 2", view);
+        Assert.Contains("four equal groups of two strawberries", view);
+        Assert.Contains("four equal groups of five fingers", view);
+        Assert.Contains("original card-sort blackline materials", view);
+        Assert.Contains("not been independently inspected here", view);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);
