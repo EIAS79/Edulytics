@@ -101,6 +101,19 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
             "answerable questions", english.WorkedExamples);
         Assert.Contains("teacher review", english.Explanation);
         Assert.Contains("context", english.QuickSummary);
+        // Each original activity remains distinct, never collapsed to a
+        // fabricated numeric surrogate. Source text is the 2021 teacher lesson.
+        Assert.Contains("one symbol means one student", english.KeyConceptsAndRules);
+        Assert.Contains("23 students in all", english.KeyConceptsAndRules);
+        Assert.Contains("Step 1 (15-minute Notice and Wonder)", english.StepByStepSolutions);
+        Assert.Contains("Step 2 (10-minute Picture Time)", english.StepByStepSolutions);
+        Assert.Contains("Step 3 (20-minute paired graph analysis)", english.StepByStepSolutions);
+        Assert.Contains("Step 5 (10-minute synthesis)", english.StepByStepSolutions);
+        Assert.Contains("Step 6 (5-minute independent Edulytics", english.StepByStepSolutions);
+        Assert.Contains("0..8 in ones", english.StepByStepSolutions);
+        Assert.Contains("a plausible guess from a shown label", english.CommonMistakes);
+        Assert.Contains("teacher rubric", english.CommonMistakes);
+        Assert.DoesNotContain("G3-U01-L01-EDU-CD-COUNT", english.Explanation);
         Assert.Equal(
             CommonCoreG3SourceTeachingCorrections.CorrectionContentVersion,
             CommonCoreG3SourceTeachingCorrections.GetExpectedContentVersion(
