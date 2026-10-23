@@ -50,7 +50,7 @@
     "lastConsecutiveReadyForStageDOrdinal": 0,
     "firstUnclosedOrdinal": 1,
     "highestSequentiallySourceIndexedOrdinal": 143,
-    "nextAfterExternalGapOrdinal": 5
+    "nextAfterExternalGapOrdinal": 6
   },
   "returnQueue": [
     {
@@ -110,6 +110,8 @@
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L05",
       "status": "A_C_EXPLICIT_GAP",
       "reasons": [
+        "Reuse of teacher-attested L04 class preference data is not proven by durable app storage; current L05 reentry requires teacher comparison. A-C code correction exists but no certified integration.",
+        "Official 2021 Student Task PDF and bar graph source pixel images not inspected; exact first-edition source-to-effective Rich V2 parity remains incomplete.",
         "Original Number Talk exact numeric expression sequence and visual student task PDF have not been fully checked.",
         "Teacher-verified L04 real survey dataset is NOT stored or automatically rehydrated; learner must re-enter and teacher verify consistency.",
         "Effective database-backed Rich V2 content not source-compared.",
@@ -1742,9 +1744,9 @@
       "unitNumber": 1,
       "lessonNumber": 5,
       "title": "Represent Data in Scaled Bar Graphs",
-      "stageA": "LOCAL_2021_SOURCE_BAR_GRAPHS_READ_1_VS_2_AXES",
-      "stageB": "SOURCE_CHART_AND_DYNAMIC_PRIOR_CLASS_GRAPH_COMPANION_AUTHORED",
-      "stageC": "BAR_GRAPH_NUMERIC_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_UNRUN",
+      "stageA": "2021_SOURCE_TEACHER_PREP_PUBLIC_HTML_REVIEWED_ORIGINAL_PDF_FIGURE_PIXEL_UNVERIFIED",
+      "stageB": "SOURCE_REAL_L04_SURVEY_CARRYOVER_AND_EXACT_AXIS_1_2_RICH_V2_CORRECTION_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "stageC": "FIRST_PARTY_LEARNER_ACTIVITY_AND_UNRUN_SOURCE_REGRESSION_DRAFT",
       "authoringClosure": "A_C_EXPLICIT_GAP",
       "sourceElementsIdentified": 6,
       "fullyVerifiedSourceElements": 0,
@@ -5348,7 +5350,8 @@
     "G3 U01 L01/L02: authored six first-party Cool-down tasks (four numeric, two teacher-reviewed drawing/explanation), with unrun xUnit cases. Not yet integrated; real authoring gaps remain and 0/143 READY_FOR_STAGE_D.",
     "2026-10-23 L01 sequential restart: Rich V2 explicit anonymous/titled/labelled graph teaching sequence and unrun xUnit check authored in PR #575 [skip ci]. Our-CS device ONLINE but Desktop Commander monthly usage cap blocks direct C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5 read. Keep ordinal 1 OPEN; no source parity certification or Stage D; DO NOT advance to L02 until direct source check is done or a separately documented authorized source alternative is inspected.",
     "2026-10-23 Our-CS connection fixed with new device ID; Grade 3 original unit-1/lesson-1/lesson.html and preparation.html directly opened. Confirmed original A1-A2 warm-up, picture-time, graphs, 5-min gated Cool-down structure. Still original artwork and published Rich V2 unchecked; stay L01 0/143 READY_FOR_STAGE_D.",
-    "2026-10-23 latest owner plan (4): NO Our-CS. Confirmed main Grade3=143 source positions. Public first-edition source teacher lessons + preparations U01 L01-L04 read; authored source-specific English Rich V2 revisions to graph sequence, variable real-class survey, scale 1/5/2 graphs (including corrected L03 synthetic title), and scale-2 odd-count half symbols; tests written only; original task PDFs and image pixels failed publisher fetch; maintain A_C_EXPLICIT_GAP for each, 0/143 READY_FOR_STAGE_D, queued source return; next permitted ordinal 5 after true external source asset boundary."
+    "2026-10-23 latest owner plan (4): NO Our-CS. Confirmed main Grade3=143 source positions. Public first-edition source teacher lessons + preparations U01 L01-L04 read; authored source-specific English Rich V2 revisions to graph sequence, variable real-class survey, scale 1/5/2 graphs (including corrected L03 synthetic title), and scale-2 odd-count half symbols; tests written only; original task PDFs and image pixels failed publisher fetch; maintain A_C_EXPLICIT_GAP for each, 0/143 READY_FOR_STAGE_D, queued source return; next permitted ordinal 5 after true external source asset boundary.",
+    "2026-10-23 source-only sequential L05: teacher public 2021 source counts fixed 12/4/6/3 graph shown with axis 0..12 by1 and 0..24 by2; exact real L04 preferences to be carried into pupils' new graph with scale2/5. Authored English Rich V2 fix and unrun tests; still no verified publisher Student PDF/image pixels, no real L04 data persistence/teacher attestation, no A-C closure. Source L03 title variant reconciled: retained official indexed PLC Activity rather than incorrectly renaming learner title."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -5919,14 +5922,16 @@
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
-    "nextOrdinalAfterDocumentedExternalAssetGaps": 5,
+    "nextOrdinalAfterDocumentedExternalAssetGaps": 6,
     "sourceAssetAccessLimits": [
       "First-edition original Student Task Statements PDFs not fetchable through available source tool",
       "Publisher image pixel resources returned fetch cache miss",
       "Publisher original Cool-down educator gated; approved independent first-party substitute is distinct, not a source-parity claim"
     ],
-    "note": "This is a truthful authoring-stage handoff: the four source-specific Rich V2 proposals and unrun written regressions do not mean any full A-C closure or that all 143 have been individually product-verified."
+    "note": "This is a truthful authoring-stage handoff: the four source-specific Rich V2 proposals and unrun written regressions do not mean any full A-C closure or that all 143 have been individually product-verified.",
+    "authorityTitleVariantNote": "G3 U01 L03 official unit index and main catalogue title includes PLC Activity, but individual lesson-page heading omits it; kept indexed title, no unsupported rename."
   }
 }
