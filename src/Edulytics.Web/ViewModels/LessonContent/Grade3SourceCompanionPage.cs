@@ -4,6 +4,8 @@ namespace Edulytics.Web.ViewModels.LessonContent;
 
 public sealed class Grade3SourceCompanionAnswers
 {
+    public string? SourceCheckAnswer { get; set; }
+    public string? SourceCheckReasoning { get; set; }
     public string? PracticeAnswer { get; set; }
     public string? PracticeReasoning { get; set; }
     public string? SourceWorkReflection { get; set; }
@@ -18,4 +20,5 @@ public sealed record Grade3SourceCompanionPage(
     Grade3SourceCompanionAnswers Answers,
     bool Submitted,
     Grade3CompanionFeedback? PracticeFeedback,
-    Grade3CompanionFeedback? CoolDownFeedback);
+    Grade3CompanionFeedback? CoolDownFeedback,
+    Grade3CompanionFeedback? SourceCheckFeedback = null);

@@ -50,6 +50,17 @@
             <label for="original-work">How did you represent and explain the original source activity?</label>
             <textarea id="original-work" name="SourceWorkReflection" rows="4" maxlength="2000">@Model.Answers.SourceWorkReflection</textarea>
         </section>
+        @if(l.SourceBasedCheck is not null) {
+            <section class="panel">
+                <h2>Source-aligned skill check — locally reviewed text</h2>
+                <p>@l.SourceBasedCheck.Prompt</p>
+                <p>The mathematical situation is adapted from the original public 2021 Student Facing HTML. Publisher figures and teacher-only Cool-downs are not reproduced.</p>
+                <label for="source-check-answer">My numerical answer</label>
+                <input id="source-check-answer" name="SourceCheckAnswer" value="@Model.Answers.SourceCheckAnswer" maxlength="100" inputmode="numeric" required />
+                <label for="source-check-reason">My drawing, equation and explanation</label>
+                <textarea id="source-check-reason" name="SourceCheckReasoning" rows="3" maxlength="2000">@Model.Answers.SourceCheckReasoning</textarea>
+            </section>
+        }
         <section class="panel">
             <h2>2. New Edulytics skill practice</h2>
             <p>@l.IndependentPractice!.Prompt</p>
@@ -85,14 +96,17 @@
         <section class="panel" aria-live="polite">
             <h2>Mathematical feedback (not a school grade)</h2>
             @foreach(var item in new[] {
+                (Name:"Source-aligned numerical check",Feedback:Model.SourceCheckFeedback),
                 (Name:"Original skill practice",Feedback:Model.PracticeFeedback),
                 (Name:"Edulytics Cool-down",Feedback:Model.CoolDownFeedback)
             }) {
-                <div class="@(item.Feedback!.NumericCorrect==true?"ok":item.Feedback.NumericCorrect==false?"no":"human")">
+                @if(item.Feedback is not null) {
+                <div class="@(item.Feedback.NumericCorrect==true?"ok":item.Feedback.NumericCorrect==false?"no":"human")">
                     <h3>@item.Name</h3>
                     <p>@(item.Feedback.NumericCorrect==true?"Numerical result correct.":item.Feedback.NumericCorrect==false?"Numerical result needs revision.":"Requires teacher judgment.") @item.Feedback.Message</p>
                     <p><em>Reasoning, drawings, representations and human tasks remain teacher-reviewed.</em></p>
                 </div>
+                }
             }
         </section>
     }

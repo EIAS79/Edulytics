@@ -46,13 +46,15 @@ public sealed class Grade3SourceCompanionController(
                 .Any(x => x?.Length > 2000))
             return BadRequest("Invalid lesson answer.");
 
+        var sourceCheck = lesson!.SourceBasedCheck is null ? null :
+            Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck, answers.SourceCheckAnswer);
         var p = Grade3SourceCompanionCatalogue.Grade(
             lesson!.IndependentPractice!, answers.PracticeAnswer);
         var cool = Grade3SourceCompanionCatalogue.Grade(
             lesson.OriginalEdulyticsCoolDown!, answers.CoolDownAnswer);
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
         return View("Index", new Grade3SourceCompanionPage(
-            curriculumAdoptionId, lessonId, lesson, answers, true, p, cool));
+            curriculumAdoptionId, lessonId, lesson, answers, true, p, cool, sourceCheck));
     }
 
     private async Task<(Grade3CompanionLesson? Lesson, IActionResult? Failure)> AuthorizeLesson(

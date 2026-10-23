@@ -47,4 +47,31 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"1/0").NumericCorrect);
         Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"100000000/4").NumericCorrect);
     }
+    [Theory]
+    [InlineData(9,6)]
+    [InlineData(10,6)]
+    [InlineData(11,12)]
+    [InlineData(12,15)]
+    [InlineData(13,10)]
+    [InlineData(14,9)]
+    [InlineData(15,3)]
+    [InlineData(16,30)]
+    [InlineData(17,15)]
+    [InlineData(18,15)]
+    [InlineData(19,35)]
+    [InlineData(20,10)]
+    public void SourceAlignedNumericalCheckDoesNotProveOriginalDiagramParity(int number, int expected)
+    {
+        var lessonCode=$"PED:US-CCSS-MATH:G3:U01:L{number:00}";
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(lessonCode,out var entry));
+        Assert.NotNull(entry!.SourceBasedCheck);
+        Assert.True(entry.ReviewedStudentFacingText);
+        Assert.False(entry.SourceBasedCheckProvenance!.FigurePixelsInspected);
+        var yes=Grade3SourceCompanionCatalogue.Grade(entry.SourceBasedCheck!, expected.ToString());
+        var no=Grade3SourceCompanionCatalogue.Grade(entry.SourceBasedCheck!, (expected+1).ToString());
+        Assert.True(yes.NumericCorrect);
+        Assert.False(no.NumericCorrect);
+        Assert.True(yes.TeacherReview);
+    }
+
 }

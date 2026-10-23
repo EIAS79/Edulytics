@@ -141,6 +141,9 @@ public sealed class Grade3CompanionLesson
     public string StudentFacingGoal { get; set; } = "";
     public List<string> SourceActivityNames { get; set; } = [];
     public string FirstPartyFamily { get; set; } = "";
+    public Grade3OriginalQuestion? SourceBasedCheck { get; set; }
+    public Grade3SourceCheckProvenance? SourceBasedCheckProvenance { get; set; }
+    public bool ReviewedStudentFacingText { get; set; }
     public Grade3OriginalQuestion? IndependentPractice { get; set; }
     public Grade3OriginalQuestion? OriginalEdulyticsCoolDown { get; set; }
     public string OpenTeacherTask { get; set; } = "";
@@ -155,6 +158,12 @@ public sealed class Grade3TeachingGuidance
     public string SourceLearningGoals { get; set; } = "";
     public List<string> TeachingSteps { get; set; } = [];
     public string Caution { get; set; } = "";
+}
+public sealed class Grade3SourceCheckProvenance
+{
+    public string LocalHtml { get; set; } = "";
+    public string Verified { get; set; } = "";
+    public bool FigurePixelsInspected { get; set; }
 }
 public sealed class Grade3OriginalQuestion
 {
