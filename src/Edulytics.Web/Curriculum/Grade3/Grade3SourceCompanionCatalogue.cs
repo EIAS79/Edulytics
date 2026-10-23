@@ -11,6 +11,23 @@ namespace Edulytics.Web.Curriculum.Grade3;
 public static class Grade3SourceCompanionCatalogue
 {
     public const string ResourceName = "Edulytics.Web.Grade3.UnverifiedOriginalCompanions";
+
+    /// <summary>
+    /// Mathematically redrawn data from the text and alternative-text description
+    /// of the 2021 U01 L09/L10 scaled picture graph (not publisher artwork).
+    /// Visual appearance, image rights and full 2021 diagram parity are not certified.
+    /// </summary>
+    public static IReadOnlyList<Grade3RoadSignCategory> Local2021RoadSignGraph { get; } =
+        Array.AsReadOnly(new[]
+        {
+            new Grade3RoadSignCategory("Stop signs", 2),
+            new Grade3RoadSignCategory("Yield signs", 1),
+            new Grade3RoadSignCategory("Speed limit signs", 3),
+            new Grade3RoadSignCategory("Street signs", 5)
+        });
+
+    public const int SourceGraphSignsPerSymbol = 2;
+
     private static readonly Lazy<IReadOnlyDictionary<string, Grade3CompanionLesson>> Values =
         new(Load, LazyThreadSafetyMode.ExecutionAndPublication);
 
@@ -126,6 +143,11 @@ public static class Grade3SourceCompanionCatalogue
 
         return numerator is >= 0 and <= 10000 && denominator is > 0 and <= 10000;
     }
+}
+
+public sealed record Grade3RoadSignCategory(string Category, int SymbolCount)
+{
+    public int TotalSigns => SymbolCount * Grade3SourceCompanionCatalogue.SourceGraphSignsPerSymbol;
 }
 
 public sealed record Grade3CompanionFeedback(bool? NumericCorrect, bool TeacherReview, string Message);

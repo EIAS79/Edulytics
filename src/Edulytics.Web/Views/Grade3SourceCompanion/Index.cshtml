@@ -3,6 +3,8 @@
     Layout = "_StudentLayout";
     ViewData["Title"] = "Grade 3 · First-party lesson companion";
     var l = Model.Lesson;
+    var roadSigns = Edulytics.Web.Curriculum.Grade3.Grade3SourceCompanionCatalogue.Local2021RoadSignGraph;
+    var showRoadSigns = l.UnitNumber == 1 && (l.LessonNumber == 9 || l.LessonNumber == 10);
 }
 <style>
 .g3-original{max-width:940px;margin:0 auto;padding:20px;color:#1e3d54}
@@ -14,6 +16,12 @@
 .g3-original .ok{border-left:4px solid #21805a;padding-left:10px}
 .g3-original .no{border-left:4px solid #ad3b45;padding-left:10px}
 .g3-original .human{border-left:4px solid #b08b24;padding-left:10px}
+.g3-original .source-chart{border-collapse:collapse;width:100%;margin:14px 0}
+.g3-original .source-chart th,.g3-original .source-chart td{padding:9px;text-align:left;border-bottom:1px solid #d4e1e8}
+.g3-original .source-bar{height:24px;background:#147b96;border-radius:3px;display:inline-block}
+.g3-original .source-scale{display:flex;justify-content:space-between;max-width:360px;font-variant-numeric:tabular-nums}
+.g3-original .source-key{font-weight:700}
+
 </style>
 <main class="g3-original">
     <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
@@ -50,6 +58,41 @@
             <label for="original-work">How did you represent and explain the original source activity?</label>
             <textarea id="original-work" name="SourceWorkReflection" rows="4" maxlength="2000">@Model.Answers.SourceWorkReflection</textarea>
         </section>
+        @if(showRoadSigns) {
+            <section class="panel" aria-label="Independently reconstructed 2021 road-sign data">
+                <h2>Road signs as equal groups</h2>
+                <p class="source-key">Key: one picture symbol represents two road signs.</p>
+                <p>The numerical values below come from the local 2021 source description.
+                    This is an original Edulytics data representation, not publisher artwork.</p>
+                <table class="source-chart">
+                    <caption>Signs observed on the way home</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Picture symbols</th>
+                            <th scope="col">Total signs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var category in roadSigns) {
+                            <tr>
+                                <th scope="row">@category.Category</th>
+                                <td>
+                                    <span class="source-bar" style="width:@(category.SymbolCount * 20)%" aria-hidden="true"></span>
+                                    <span>@category.SymbolCount symbols</span>
+                                </td>
+                                <td>@category.TotalSigns</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <p>Symbol-count scale (not total signs): 0, 1, 2, 3, 4, 5.
+                    To count signs, multiply each category's symbol count by two.</p>
+                <p><strong>Think and draw:</strong> Show the speed-limit signs as three
+                    equal groups of two. Make a diagram for a different category and
+                    compare your representation with your teacher or partner.</p>
+            </section>
+        }
         @if(l.SourceBasedCheck is not null) {
             <section class="panel">
                 <h2>Source-aligned skill check — locally reviewed text</h2>

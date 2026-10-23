@@ -6,6 +6,16 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class Grade3SourceCompanionGradingTests
 {
     [Fact]
+    public void OriginalRoadSignDataHasExact2021SourceCountsAndIndependentRenderingKey()
+    {
+        var signs=Grade3SourceCompanionCatalogue.Local2021RoadSignGraph;
+        Assert.Equal(new[] {2,1,3,5},signs.Select(x=>x.SymbolCount));
+        Assert.Equal(new[] {4,2,6,10},signs.Select(x=>x.TotalSigns));
+        Assert.Equal(2,Grade3SourceCompanionCatalogue.SourceGraphSignsPerSymbol);
+        Assert.Equal(22,signs.Sum(x=>x.TotalSigns));
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);

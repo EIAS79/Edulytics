@@ -5101,5 +5101,26 @@
         "attributionContextFlags": 0
       }
     ]
+  },
+  "stageASourceVisualImplementation": {
+    "source": "Local 2021 U01 L09/L10 picture-graph image alt/HTML",
+    "verifiedSourceValues": {
+      "stopSigns": 4,
+      "yieldSigns": 2,
+      "speedLimitSigns": 6,
+      "streetSigns": 10,
+      "keySignsPerSymbol": 2
+    },
+    "implementation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "typedData": "src/Edulytics.Web/Curriculum/Grade3/Grade3SourceCompanionCatalogue.cs",
+    "studentLessons": [
+      "PED:US-CCSS-MATH:G3:U01:L09",
+      "PED:US-CCSS-MATH:G3:U01:L10"
+    ],
+    "originalPublisherArtCopied": false,
+    "originalPixelParityVerified": false,
+    "perLessonSourceItemOneToOneApproval": false,
+    "writtenRegressionTest": "OriginalRoadSignDataHasExact2021SourceCountsAndIndependentRenderingKey",
+    "testRun": false
   }
 }
