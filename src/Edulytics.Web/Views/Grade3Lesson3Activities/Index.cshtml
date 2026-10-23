@@ -108,7 +108,14 @@
             <textarea id="book-questions" name="SecondOriginalQuestion" rows="3" maxlength="2000">@Model.Answers.SecondOriginalQuestion</textarea>
         </section>
         <section class="panel">
-            <h2>5. New Edulytics Cool-down</h2>
+            <h2>5. Lesson synthesis (10 minutes) — before the Cool-down</h2>
+            <p>Compare the two Favorite Sports graphs: each shows 65 student responses, but the unit-key picture graph uses 65 symbols while the five-students-per-symbol graph uses just 13. Explain how the key changes the counting strategy and why a scaled picture graph can save space.</p>
+            <p>Teacher questions: What makes a question answerable from the graph? How can you use counting by 2 or by 5 to justify the flower and book totals? Ask a partner to respond to one question you wrote; the teacher checks the explanation.</p>
+            <p>Teacher rubric: use keys 1, 2 and 5 correctly; both sports graphs total 65; flowers 10/5/25/15; book genres 8/2/8/6; write two different answerable questions for EACH flower and book graph, and explain how the book-key multiplication gives each value. Oral reasoning is not auto-graded.</p>
+        </section>
+        <section class="panel">
+            <h2>6. Independent Edulytics Cool-down (5 minutes)</h2>
+            <p>This independent fictional library survey is NOT the publisher's educator-only Birds in the Park task.</p>
             <p><strong>@cool.Title</strong> — key: ● = @cool.StudentsPerSymbol learners.</p>
             <div class="rows">
             @foreach(var item in cool.Rows){
@@ -123,10 +130,11 @@
             <textarea name="CoolExplanation" id="cool-explain" rows="3" maxlength="2000">@Model.Answers.CoolExplanation</textarea>
         </section>
         <section class="panel">
-            <h2>6. Teacher review and lesson synthesis</h2>
-            <p>Discuss which graph has the larger key, what the symbols really count, and why the key must be read before answering. Ask a partner to solve your independently written question.</p>
-            <label for="community">Our classroom norm for explaining scaled graphs</label><textarea name="MathCommunity" id="community" rows="3" maxlength="2000">@Model.Answers.MathCommunity</textarea>
-            <p>Teacher rubric: correct use of keys 1, 2 and 5; two sports graphs that both show 65 learners; correctly labelled flower and books graphs; two learner-authored questions per graph; oral/partner reasoning. These cannot be passed by a number-only result.</p>
+            <h2>7. Math Community — individual reflection after the Cool-down</h2>
+            <p>Which “Doing Math” action was most important in your work today, and why? The teacher reviews your response after class. This follows the 2021 teacher source's sequence and does not mean that a live observation has been recorded.</p>
+            <label for="community">My most important Doing Math action and reason</label>
+            <textarea name="MathCommunity" id="community" rows="3" maxlength="2000">@Model.Answers.MathCommunity</textarea>
+            <p>Optional teacher-directed centers remain Sort and Display Stage 2 and Capture Squares Stage 3. Neither center is automatically certified through numeric responses.</p>
         </section>
         <button class="button" type="submit">Check the numerical graph questions</button>
     </form>
