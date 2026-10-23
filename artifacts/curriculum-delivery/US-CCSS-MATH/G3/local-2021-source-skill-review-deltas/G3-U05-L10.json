@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 89,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L10",
+  "title": "Equivalent Fractions",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-5/lesson-10/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U05.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U05.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L10.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "A fraction equal in size to 1/2 is written using four equal parts. What fraction?",
+      "answerType": "rational",
+      "expected": "2/4"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-5/lesson-10/lesson.html",
+      "verified": "STUDENT_FACING_SOURCE_TEXT_REVIEWED",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Choral Count: One-halves (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-5/lesson-10/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Equivalent to $\\frac{1}{2}$ (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-5/lesson-10/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Find Equivalent Fractions (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-5/lesson-10/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-5/lesson-10/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Find the Equivalent Fractions (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-5/lesson-10/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Diagram. Square partitioned into 4 equal parts, 2 of them shaded.",
+      "Diagram. Square partitioned into 4 equal parts, 3 parts shaded.",
+      "Diagram. Square partitioned into 2 equal parts, 1 part shaded.",
+      "Diagram. Square partitioned into 4 parts, 2 shaded.",
+      "Diagram. Square partitioned into 2 parts, 1 part shaded."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "A fraction equal in size to 1/2 is written using four equal parts. What fraction?",
+      "answerType": "rational",
+      "expected": "2/4"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s identify equivalent fractions.",
+      "sourceLearningGoals": "Identify equivalent fractions. Understand two fractions as equivalent if they are the same size and the parts refer to the same whole.",
+      "teachingSteps": [
+        "Identify the whole and divide it into equal parts.",
+        "Represent the fraction with a number line or equal-area drawing.",
+        "Explain the unit fractions, position, equality or comparison."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s identify equivalent fractions.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Which fraction with denominator eight represents the same amount as one half?",
+      "answerType": "rational",
+      "expected": "4/8"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "A whole is split into six equal pieces. All are shaded. What fraction represents the whole?",
+      "answerType": "rational",
+      "expected": "6/6"
+    },
+    "humanRubric": "Source uses fraction strips; preserve the same whole when checking equivalence.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

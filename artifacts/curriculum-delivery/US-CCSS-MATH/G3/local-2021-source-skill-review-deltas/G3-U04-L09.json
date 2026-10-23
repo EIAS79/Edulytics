@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 66,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U04:L09",
+  "title": "Patterns in the Multiplication Table",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-4/lesson-9/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U04.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U04.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L09.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "In the source known fact 2 × 4 = 8, what is 4 × 4?",
+      "answerType": "integer",
+      "expected": "16"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-4/lesson-9/lesson.html",
+      "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Notice and Wonder: Multiplication Table (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-4/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Products in the Table (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-4/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: If I Know, Then I Know: Multiplication (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-4/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-4/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Find the Missing Product (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-4/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Multiplication table.",
+      "Multiplication table with missing products."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "In the source known fact 2 × 4 = 8, what is 4 × 4?",
+      "answerType": "integer",
+      "expected": "16"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s find patterns in the multiplication table and use them to multiply. Required Preparation CCSS Standards Addressing 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Tea",
+      "sourceLearningGoals": "Identify arithmetic patterns in the multiplication table and use them to find unknown multiplication facts. Recognize that multiplication is commutative.",
+      "teachingSteps": [
+        "Represent each equal group, array, multiplication or division situation.",
+        "Identify which factor, quotient or relationship is unknown.",
+        "Check that the number and explanation answer the original context."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find patterns in the multiplication table and use them to multiply. Required Preparation CCSS Standards Addressing 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Tea",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Knowing 3 × 5 = 15, what is 6 × 5?",
+      "answerType": "integer",
+      "expected": "30"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "If 7 × 2 = 14, what is 7 × 4?",
+      "answerType": "integer",
+      "expected": "28"
+    },
+    "humanRubric": "Classify multiplicative-table patterns; learners must explain how familiar products lead to unknown facts.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

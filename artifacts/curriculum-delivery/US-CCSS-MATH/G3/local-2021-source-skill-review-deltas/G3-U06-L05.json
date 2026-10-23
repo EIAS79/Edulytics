@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 102,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U06:L05",
+  "title": "Represent Measurement Data on Line Plots",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-6/lesson-5/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U06.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U06.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U06-L05.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Measure actual classroom objects to the nearest half or quarter inch, enter the observations and construct an original line plot with a correctly divided axis.",
+      "answerType": "teacher",
+      "expected": null
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-6/lesson-5/lesson.html",
+      "verified": "SOURCE_STUDENT_FACING_TEXT",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Number Talk: Multiply Teen Numbers (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-6/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Go for a Measurement Walk (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-6/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Let's Make a Line Plot (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-6/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-6/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Complete the Line Plot (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-6/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-6",
+        "heading": "Student Section Summary",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-6/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "blank line plot",
+      "A ruler. 0 to 6 in inches with hash marks at fourths.",
+      "Line plot from 0 to 8 by ones. Horizontal axis, length of twigs in inches. Hash marks at fourths."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "Measure actual classroom objects to the nearest half or quarter inch, enter the observations and construct an original line plot with a correctly divided axis.",
+      "answerType": "teacher",
+      "expected": null
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s collect measurement data and show them on a line plot.",
+      "sourceLearningGoals": "Create a line plot where the horizontal scale is marked off in appropriate units— whole numbers, halves, or quarters—to represent measurement data. Generate measurement data by measuring lengths using a ruler marked with halves and fourths of an inch.",
+      "teachingSteps": [
+        "Read the fractional inch unit and tick marks first.",
+        "Place one mark for each measurement at the correct location.",
+        "Count or compare the marks, keeping fractional units consistent."
+      ],
+      "caution": "Marks on a line plot represent observations, not units to be accumulated across different scales.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "A first-party line plot shows 6 measures at one-half inch and 4 measures at one inch. How many samples?",
+      "answerType": "integer",
+      "expected": "10"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "Create a new line plot using genuinely measured objects, including title and correct fractional ruler marks.",
+      "answerType": "teacher",
+      "expected": null
+    },
+    "humanRubric": "Student-generated source data are variable. Drawn line plots and provenance require teacher checking.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}
