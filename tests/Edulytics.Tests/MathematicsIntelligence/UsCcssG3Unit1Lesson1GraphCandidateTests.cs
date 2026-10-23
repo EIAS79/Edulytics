@@ -1,5 +1,7 @@
 using Edulytics.Core.Mathematics.Curriculum;
 using Edulytics.Web.ViewModels.LessonContent;
+using Edulytics.Web.Controllers;
+using System.Reflection;
 using Xunit;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -198,6 +200,49 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         Assert.Contains("Sort and Display", view);
         Assert.Contains("Capture Squares", view);
         Assert.DoesNotContain("src=\"https://cms-assets.illustrativemathematics.org/", view);
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void SkippingOptionalNumericPracticeNeverMarksTheAnswerWrong(string? blank)
+    {
+        // Stage D regression WRITTEN but intentionally NOT RUN.
+        var method = typeof(Grade3Lesson1ActivitiesController)
+            .GetMethod("CheckSource", BindingFlags.NonPublic | BindingFlags.Static);
+        Assert.NotNull(method);
+        var feedback = (Grade3Lesson1Feedback)method!.Invoke(null,
+            new object?[] { "Bus count", "named-category-count", "Bus", null, blank })!;
+        Assert.Null(feedback.MachineCorrect);
+        Assert.False(feedback.TeacherReviewRequired);
+        Assert.Contains("was not attempted", feedback.Reason);
+    }
+
+    [Fact]
+    public void SkippingIndependentCooldownDoesNotCreatePublisherAssessmentScore()
+    {
+        var method = typeof(Grade3Lesson1ActivitiesController)
+            .GetMethod("CheckCoolDown", BindingFlags.NonPublic | BindingFlags.Static);
+        Assert.NotNull(method);
+        var feedback = (Grade3Lesson1Feedback)method!.Invoke(null,
+            new object?[] { "Optional first-party assessment",
+                "G3-U01-L01-EDU-CD-COUNT", "" })!;
+        Assert.Null(feedback.MachineCorrect);
+        Assert.False(feedback.TeacherReviewRequired);
+        Assert.Contains("No original publisher Cool-down score", feedback.Reason);
+    }
+
+    [Fact]
+    public void MalformedAttemptedSupplementalNumberStillRejectsBadInput()
+    {
+        var method = typeof(Grade3Lesson1ActivitiesController)
+            .GetMethod("CheckSource", BindingFlags.NonPublic | BindingFlags.Static);
+        Assert.NotNull(method);
+        var feedback = (Grade3Lesson1Feedback)method!.Invoke(null,
+            new object?[] { "Bus count", "named-category-count", "Bus", null, "not-a-number" })!;
+        Assert.False(feedback.MachineCorrect);
+        Assert.False(feedback.TeacherReviewRequired);
     }
 
     [Fact]
