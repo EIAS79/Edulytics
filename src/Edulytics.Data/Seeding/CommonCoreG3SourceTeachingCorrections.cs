@@ -540,6 +540,119 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "Teachers validate the real data and " +
                     "students' independent graph drawings.";
             }
+            else if (string.Equals(lesson.LessonCode,
+                "PED:US-CCSS-MATH:G3:U01:L05", StringComparison.Ordinal))
+            {
+                // Students must reuse their REAL L04 travel-preference data,
+                // not the fixed teacher comparison dataset or invented class
+                // answers. Original teacher graph scales 1 and 2 differ.
+                en.Explanation =
+                    "We learn to draw scaled bar graphs and explain " +
+                    "a choice of scale. Mental warm-up: four twos " +
+                    "make 8 and eight twos make 16; four fives " +
+                    "make 20 and eight fives make 40. Compare " +
+                    "two provided bar graphs of the SAME travel-" +
+                    "home data: Bike 12, Walk 4, Bus or Van 6, " +
+                    "Car 3. One graph has a vertical axis " +
+                    "0..12 by ones; the second axis goes 0..24 " +
+                    "by twos. The data do not change when the " +
+                    "axis changes. Next use your actual class " +
+                    "travel-PREFERENCE survey graph from L04 " +
+                    "to draw a NEW scaled bar graph; choose " +
+                    "increments of 2 or 5 and explain why. " +
+                    "The chart must show precise class counts " +
+                    "even if a bar ends between the numbered " +
+                    "ticks. Partners discuss and teachers check " +
+                    "the L04 survey provenance and actual " +
+                    "pupil-created graphs.";
+
+                en.KeyConceptsAndRules =
+                    "The axis scale is the difference between " +
+                    "adjacent labelled ticks, not a multiplier " +
+                    "to apply again to a bar's data count. " +
+                    "Both provided source graphs have the " +
+                    "same Bike 12, Walk 4, Bus/Van 6, Car 3 " +
+                    "(25 learners), although their axes " +
+                    "count by ones and twos respectively. " +
+                    "For the L04 class preference dataset, " +
+                    "choose a common tick interval of 2 or " +
+                    "5 and place every bar at its ACTUAL " +
+                    "height. An odd count on a scale-two " +
+                    "axis lies between tick lines, not at a " +
+                    "rounded integer multiple of two.";
+
+                en.WorkedExamples =
+                    "Four 2s = 8, eight 2s = 16; four " +
+                    "5s = 20, eight 5s = 40. The second " +
+                    "expression of each pair doubles the " +
+                    "first result.\n" +
+                    "Original bar-graph comparison: Bike 12, " +
+                    "Walk 4, Bus or Van 6, Car 3. Total " +
+                    "12+4+6+3=25. The first graph uses " +
+                    "0..12 in ones and the second 0..24 " +
+                    "in twos; neither changes the data.\n" +
+                    "Independent student bar graph: " +
+                    "retrieve the SAME six category totals " +
+                    "from your actual L04 travel preference " +
+                    "survey. Represent every real value " +
+                    "using chosen scale 2 or 5. Explain " +
+                    "any bar ending between ticks. Never " +
+                    "substitute this fixed 25-person example " +
+                    "for your own class survey.";
+
+                en.StepByStepSolutions =
+                    "Step 1 (10-minute Number Talk): " +
+                    "count by 2 and 5; show how doubling " +
+                    "four equal addends gives eight.\n" +
+                    "Step 2 (10-minute graph comparison): " +
+                    "read the SAME Bike 12, Walk 4, " +
+                    "Bus/Van 6, Car 3 categories from " +
+                    "the axis-by-1 and axis-by-2 displays.\n" +
+                    "Step 3 (25-minute graph creation): " +
+                    "reuse the original L04 class travel " +
+                    "preferences and make a bar graph " +
+                    "using tick interval 2 or 5 with " +
+                    "a title and clear category labels.\n" +
+                    "Step 4: preserve non-multiple counts " +
+                    "exactly, explain between-tick bar " +
+                    "ends, compare partner graphs and " +
+                    "defend your scale choice.\n" +
+                    "Step 5 (10-minute lesson synthesis): " +
+                    "advise a friend on choosing the scale " +
+                    "while preserving original values.\n" +
+                    "Step 6 (5-minute independent Edulytics " +
+                    "Cool-down): practise a new graph and " +
+                    "submit drawings/reasoning for teacher review.";
+
+                en.CommonMistakes =
+                    "Mistake: multiply the reported bar " +
+                    "height by its axis tick interval " +
+                    "again. Repair: read the height " +
+                    "directly from the numbered axis.\n" +
+                    "Mistake: change the category counts " +
+                    "when replotting the SAME survey " +
+                    "with a different tick interval. " +
+                    "Repair: compare all four data values.\n" +
+                    "Mistake: round 3 learners to 2 or " +
+                    "4 when the chosen axis counts by 2. " +
+                    "Repair: show the bar top halfway " +
+                    "between 2 and 4.\n" +
+                    "Mistake: substitute the publisher's " +
+                    "25-person demonstration graph for " +
+                    "the separate L04 class survey. " +
+                    "Repair: verify actual prior lesson " +
+                    "records with the teacher.";
+
+                en.QuickSummary =
+                    "Change the bar-axis interval, not the " +
+                    "data. The 2021 source's 12/4/6/3 " +
+                    "example uses axis increments 1 and " +
+                    "2; the pupil then reuses authentic " +
+                    "L04 preferred-travel counts to create " +
+                    "a bar graph with scale 2 or 5. Place " +
+                    "non-multiple heights accurately and " +
+                    "explain choices with a partner.";
+            }
             // Never embed restricted publisher Cool-down prompts or artwork.
             // No database migration, publication or A-C approval occurs here.
         }
