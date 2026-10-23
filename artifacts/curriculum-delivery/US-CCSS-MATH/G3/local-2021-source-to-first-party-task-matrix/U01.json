@@ -135,7 +135,13 @@
                 "6",
                 "23"
               ],
-              "review": "These supplementary questions are correctly gradeable after categories become visible; they are NOT original-publisher task replacements"
+              "review": "These supplementary questions are correctly gradeable after categories become visible; they are NOT original-publisher task replacements",
+              "optional": true,
+              "requiredBeforeSourceTeacherHandoff": false,
+              "noAnswerTreatment": "MachineCorrect=null / Not attempted; empty answer is not a wrong response",
+              "malformedAnswerTreatment": "MachineCorrect=false / invalid whole-number response",
+              "gradeableOnlyAfterLabelsShown": true,
+              "teacherLedParityReplacement": false
             }
           ],
           "gatingReasons": [
@@ -194,7 +200,7 @@
           "why": "Requires two valid distinct questions and teacher examination"
         }
       ],
-      "mappingVersion": "2026-10-23-L01-five-source-subparts-v2",
+      "mappingVersion": "2026-10-23-L01-five-source-subparts-v3",
       "academicClosureClaim": false,
       "remainingExternalSourceEvidence": [
         "Original publisher Student Task Statements PDF image/page confirmation unavailable",
@@ -205,7 +211,10 @@
         "Actual published effective Rich V2 teaching content unverified",
         "Code-level changes/tests not compiled or executed (Stage D intentionally deferred)",
         "Teacher-observed oral and partner task execution cannot be certified by unsaved form"
-      ]
+      ],
+      "additionalCoolDownNumericAlsoOptional": true,
+      "teacherHandoffOption": "Learner may click Print or save a copy; no automatic teacher signoff or persisted learner work",
+      "handoffIsInstitutionalApproval": false
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L02",
