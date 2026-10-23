@@ -17,6 +17,9 @@ public sealed class Grade3Lesson1Answers
     public string? TotalStudents { get; set; }
     public string? CoolDownCount { get; set; }
     public string? CoolDownDifference { get; set; }
+    // Separate authoring evidence: the 2021 teacher-guide Cool-down asks for one
+    // fact AND one question; our independent graph preserves both skill families.
+    public string? CoolDownFact { get; set; }
     public string? CoolDownOriginalQuestion { get; set; }
     public string? SynthesisReflection { get; set; }
     public string? MathCommunityReflection { get; set; }

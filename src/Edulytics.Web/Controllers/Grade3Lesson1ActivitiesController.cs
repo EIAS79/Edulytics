@@ -87,6 +87,9 @@ public sealed class Grade3Lesson1ActivitiesController(
                 "Source activity 2c: create two graph questions", answers.TwoGraphQuestions,
                 "Find TWO distinct questions answerable from the same graph data; check the requested quantities can be determined."),
             Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+                "Edulytics independent Cool-down: one supported graph fact", answers.CoolDownFact,
+                "Give ONE true fact explicitly supported by the separate library survey; teacher checks graph evidence. This independent task measures the first source Cool-down skill and is not its original data or grading."),
+            Grade3Lesson1TeacherReviewPolicy.AssessForReview(
                 "Edulytics independent Cool-down: new question and reason", answers.CoolDownOriginalQuestion,
                 "Assess the new library-survey question and its justification; this is NOT the publisher's educator-gated task."),
             Grade3Lesson1TeacherReviewPolicy.AssessForReview(

@@ -196,9 +196,11 @@
                     <input id="cool-diff" name="CoolDownDifference" value="@Model.Answers.CoolDownDifference" maxlength="12" inputmode="numeric" />
                 </div>
             </div>
-            <label for="cool-question">Write a different question answerable from the library graph and explain its answer</label>
+            <label for="cool-fact">Write ONE fact that the library graph supports</label>
+            <textarea id="cool-fact" name="CoolDownFact" rows="3" maxlength="2000">@Model.Answers.CoolDownFact</textarea>
+            <label for="cool-question">Write ONE different question answerable from the library graph and explain its answer</label>
             <textarea id="cool-question" name="CoolDownOriginalQuestion" rows="3" maxlength="2000">@Model.Answers.CoolDownOriginalQuestion</textarea>
-            <p class="note">Your teacher reviews the explanation and the questions you create. This page checks numbers only.</p>
+            <p class="note">The two original 2021 Cool-down skill types (state one graph fact; author one graph question) are offered separately using NEW Edulytics survey data; the teacher reviews both, and this page checks numbers only.</p>
         </section>
 
         <button class="submit" type="submit">Check my numeric answers</button>
