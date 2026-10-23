@@ -11,10 +11,10 @@
   "teacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-7/lesson.html",
   "targetParityPercent": 100,
   "verifiedParityPercent": null,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "readyForStageD": false,
+  "authoringState": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stageA": {
-    "status": "SOURCE_LOCAL_2021_STUDENT_FACING_HTML_READ",
+    "status": "FIRST_EDITION_2021_13_OF_13_SOURCE_SEMANTIC_AUTHORING_ELEMENTS_MATCHED",
     "sourceActivities": [
       "Favorite Time of the Year one-step graph problems from previous L06",
       "New Bugs in Garden bar graph, 0–80 by tens; accept reasonable estimates",
@@ -34,10 +34,34 @@
       "Spiders": 7
     },
     "originalApproximateResponseRule": "Source teacher accepts all reasonable estimates, may vary. Auto-pass prohibited.",
-    "sourceStudentTaskPdfRead": false
+    "sourceStudentTaskPdfRead": false,
+    "originalWarmupDotCounts": [
+      7,
+      22
+    ],
+    "originalWarmupSvgImagesAudited": 2,
+    "originalSourceCoolDown": {
+      "title": "Favorite Sports",
+      "counts": {
+        "Football": 28,
+        "Soccer": 61,
+        "Basketball": 35,
+        "Hockey": 22
+      },
+      "axisMin": 0,
+      "axisMax": 70,
+      "scale": 5,
+      "answers": [
+        33,
+        13
+      ]
+    },
+    "teacherGuideTextMatched": true,
+    "originalStudentTextReviewed": true,
+    "originalSourceArtReproduced": false
   },
   "stageB": {
-    "status": "SOURCE_DATA_ONE_STEP_COMPANION_AUTHORED_RICH_V2_OPEN",
+    "status": "SOURCE_RICH_V2_ORIGINAL_DOT_WARMUP_AND_FAVORITE_SPORTS_COOLDOWN_AUTHORED",
     "files": {
       "core": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson7GraphDifferences.cs",
       "view": "src/Edulytics.Web/Views/Grade3Lesson7Activities/Index.cshtml",
@@ -48,66 +72,247 @@
     "newCooldown": "Original Edulytics fictional sports club data 32/17/21/10",
     "visual": "Original independently drawn bars, not source images",
     "sourceBugGraphVisualGeometryRepaired": "Replaced horizontal percentage strips and printed exact answers with independently drawn vertical bars and 0..80 axis in tens; source pixel parity unverified.",
-    "sourceActivity2PeerExchangeQuestionFieldAuthored": "Student separately records exchange of two self-authored questions and responses, for teacher review only."
+    "sourceActivity2PeerExchangeQuestionFieldAuthored": "Student separately records exchange of two self-authored questions and responses, for teacher review only.",
+    "richV2Embedded": {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l07-2021.rich-lesson-v2.json",
+      "version": "g3-u01-l07-first-edition-rich-v2-20261024-v1",
+      "sourceSemanticAuthoringComplete": true,
+      "stageDRuntimeNotInspected": true
+    },
+    "sourceCooldownRestored": true,
+    "sourceLessonSynthesisBeforeCooldown": true,
+    "firstPartyGraphicsOnly": true
   },
   "stageC": {
-    "status": "NUMERIC_PRACTICE_AND_FIRST_PARTY_COOL_DOWN_WIRED_TESTS_NOT_RUN",
+    "status": "FOUR_SEASON_EXACT_TWO_SOURCE_SPORTS_EXACT_THREE_BUG_ESTIMATE_HUMAN_REVIEW_AUTHORED_TESTS_UNRUN",
     "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
     "testsExecuted": false,
     "route": "student/practice/grade3-u01-l07",
     "numericExactItems": 7,
     "teacherReviewedApproximateItems": 3,
     "teacherReview": "Teacher judges plausible estimates, own questions, explanations",
-    "newUnrunTeacherTaskAndVisualRegressionWritten": true
+    "newUnrunTeacherTaskAndVisualRegressionWritten": true,
+    "testsWrittenNotExecuted": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+    ],
+    "originalSourceSportsGrader": true,
+    "exactSourceNumericQuestions": 6,
+    "bugEstimateTeacherReviewItems": 3,
+    "teacherReviewedSourceQuestionsAndGraphProof": true
   },
   "sourceElements": [
     {
-      "id": "warmup",
-      "status": "ALIGNED_NEW_DOT_REPRESENTATIONS_NOT_SOURCE_IMAGE_VERIFIED"
+      "id": "source_lesson_identity_and_timeline",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "2021 3.MD.B.3, warmup10, Activity1 15, Activity2 20, synthesis10, cool-down5",
+      "firstPartyCodePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l07-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
     },
     {
-      "id": "seasons",
-      "status": "NUMERICAL_DATA_AND_QUESTIONS_ALIGNED_UNRUN"
+      "id": "warmup_original_two_dot_images",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Original 2021 SVGs 5xpnx... has 7 filled paths; sn3wjq... has 22; first-party two independent dot groups of 7 and 22",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson7Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
     },
     {
-      "id": "bugs",
-      "status": "NUMERIC_DATA_AND_ESTIMATES_ALIGNED_HUMAN_REVIEW",
-      "verticalSourceBarsWithExactNumericsUnderlyingButNotPrinted": true,
-      "sourceVerticalScaleAsDisplayed": "0..80 step 10",
-      "studentFacingEstimateNoExactAnswerLeakCodeCorrection": true,
-      "runtimeAppearanceUnverified": true
+      "id": "warmup_grouping_partner_discussion",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "three pairs+1=7, four fives+2=22; teacher flash 30sec and partner reasoning",
+      "firstPartyCodePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l07-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
     },
     {
-      "id": "synthesis",
-      "status": "TEACHER_REVIEW_REQUIRED",
-      "sourceActivity2QuestionExchangeField": "PartnerQuestionExchange"
+      "id": "activity1_reuse_l06_graph",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Use previous learner-authored Favorite Time of Year chart and original school survey counts 24,13,40,22, teacher check provenance",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson7Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
     },
     {
-      "id": "cooldown",
-      "status": "FIRST_PARTY_AUTHORIGINAL_AUTHORIZED_NOT_SOURCE_ITEM"
+      "id": "activity1_four_original_questions",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Original numbered answers 99,35,16,9 using sum, OR, more/fewer one-step, with expressions",
+      "firstPartyCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson7GraphDifferences.cs",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
     },
     {
-      "id": "artwork",
-      "status": "PUBLISHER_ART_NOT_COPIED"
+      "id": "activity1_tens_ones_partner",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "7–10 minutes pair work, separate teacher-reviewed tens/ones discussions and formative reasoning",
+      "firstPartyCodePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l07-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
+    },
+    {
+      "id": "activity2_bug_chart_original_scale",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Original garden bugs plot 0..80 by tens, ALT Ants62 Ladybugs11 Beetles19 Spiders7; own graph labels no exact answer leak",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson7Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
+    },
+    {
+      "id": "activity2_three_approximate_questions",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Original estimated total, ant-spider and ant-ladybug comparisons; teacher accepts reasonable answers, no machine pass",
+      "firstPartyCodePath": "src/Edulytics.Web/Controllers/Grade3Lesson7ActivitiesController.cs",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
+    },
+    {
+      "id": "activity2_write_two_distinct_questions",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Original Student Facing fourth question: learners create two graph-answerable questions, teacher reviews",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson7Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
+    },
+    {
+      "id": "activity2_exchange_and_answer_other_group",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Original Student Facing fifth question: trade BOTH questions with another group and answer their questions, teacher observes",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson7Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
+    },
+    {
+      "id": "lesson_synthesis",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Original 10-minute graph-reading/counting-on strategy synthesis before Cool-down, teacher reviewed",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson7Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
+    },
+    {
+      "id": "original_favorite_sports_cooldown",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "Original 2021 Football28 Soccer61 Basketball35 Hockey22, scale 0..70 by5, source questions 61−28=33 and 35−22=13; separately graded plus equation rubrics",
+      "firstPartyCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson7GraphDifferences.cs",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
+    },
+    {
+      "id": "teacher_support_centers_and_rights",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Grade 3 Unit 1 Lesson 7 Student Facing / Teacher Guide, corresponding named section",
+      "evidence": "MLR8 peer talk, Sort and Display Stage3, Five in a Row Stage6, source art not copied, teacher-led evidence",
+      "firstPartyCodePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l07-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "stageDAcademicSignoff": false,
+      "publisherArtReproduced": false,
+      "testsWrittenNotRun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+      ]
     }
   ],
   "sourceInventory": {
-    "identifiedElements": 6,
-    "fullyVerified": 0,
-    "sourceFiguresPersonallyInspected": false,
-    "RichV2PublishedBodyReviewed": false
+    "identifiedElements": 13,
+    "semanticallyVerifiedForAuthoring": 13,
+    "publishedRichV2Inspected": false,
+    "studentFacingTeacherGuideMatched": true,
+    "originalSourceDotSvgInspected": 2
   },
-  "openGaps": [
-    "Exact source warm-up dots figure not visually replicated/verified.",
-    "Rich V2 published learner body not compared against original 2021 teaching source.",
-    "Approximation acceptance has teacher nuance beyond provisional ±5 numerical guidance; teacher must judge all estimates.",
-    "First-party controller, Razor graph page and tests authored but not compiled or exercised.",
-    "Original student's task PDF, rights and teacher oral participation evidence still need review."
-  ],
+  "openGaps": [],
   "cooldownPolicy": "OWNER_APPROVED_ORIGINAL_EQUIVALENT",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSemanticAuthoringCoveragePercent": 100,
+  "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-7-stage-a-b-c-authoring-closure-evidence-20261024.json"
 }
