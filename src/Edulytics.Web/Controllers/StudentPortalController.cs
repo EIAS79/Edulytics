@@ -443,15 +443,8 @@ public sealed class StudentPortalController : Controller
         Guid? pilotAdoptionId = null;
         Guid? grade3AuthoredActivityAdoptionId = null;
         var requiresGrade3Companion =
-            lessonDetail.LessonCode is
-                "PED:US-CCSS-MATH:G3:U01:L01" or
-                "PED:US-CCSS-MATH:G3:U01:L02" or
-                "PED:US-CCSS-MATH:G3:U01:L03" or
-                "PED:US-CCSS-MATH:G3:U01:L04" or
-                "PED:US-CCSS-MATH:G3:U01:L05" or
-                "PED:US-CCSS-MATH:G3:U01:L06" or
-                "PED:US-CCSS-MATH:G3:U01:L07" or
-                "PED:US-CCSS-MATH:G3:U01:L08";
+            lessonDetail.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal);
 
         // Resolve exact Practice independently from optional game presentation.
         var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
@@ -531,30 +524,8 @@ public sealed class StudentPortalController : Controller
         // Owner-authorized Grade 3 activities are not generic Practice.
         // An enrolled learner may open them before exact Practice rollout.
         if (!grade3AuthoredActivityAdoptionId.HasValue &&
-            string.Equals(lesson.LessonCode,
-                "PED:US-CCSS-MATH:G3:U01:L01",
-                StringComparison.Ordinal) ||
-            string.Equals(lesson.LessonCode,
-                "PED:US-CCSS-MATH:G3:U01:L02",
-                StringComparison.Ordinal) ||
-            string.Equals(lesson.LessonCode,
-                "PED:US-CCSS-MATH:G3:U01:L03",
-                StringComparison.Ordinal) ||
-            string.Equals(lesson.LessonCode,
-                "PED:US-CCSS-MATH:G3:U01:L04",
-                StringComparison.Ordinal) ||
-            string.Equals(lesson.LessonCode,
-                "PED:US-CCSS-MATH:G3:U01:L05",
-                StringComparison.Ordinal) ||
-            string.Equals(lesson.LessonCode,
-                "PED:US-CCSS-MATH:G3:U01:L06",
-                StringComparison.Ordinal) ||
-            string.Equals(lesson.LessonCode,
-                "PED:US-CCSS-MATH:G3:U01:L07",
-                StringComparison.Ordinal) ||
-            string.Equals(lesson.LessonCode,
-                "PED:US-CCSS-MATH:G3:U01:L08",
-                StringComparison.Ordinal))
+            lesson.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal))
         {
             grade3AuthoredActivityAdoptionId = workspace.SelectedCurriculumAdoptionId;
         }

@@ -230,6 +230,31 @@
         </section>
     }
 
+    @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G3:", StringComparison.Ordinal) &&
+         Model.LessonCode != "PED:US-CCSS-MATH:G3:U01:L01" &&
+         Model.LessonCode != "PED:US-CCSS-MATH:G3:U01:L02" &&
+         Model.LessonCode != "PED:US-CCSS-MATH:G3:U01:L03" &&
+         Model.LessonCode != "PED:US-CCSS-MATH:G3:U01:L04" &&
+         Model.LessonCode != "PED:US-CCSS-MATH:G3:U01:L05" &&
+         Model.LessonCode != "PED:US-CCSS-MATH:G3:U01:L06" &&
+         Model.LessonCode != "PED:US-CCSS-MATH:G3:U01:L07" &&
+         Model.LessonCode != "PED:US-CCSS-MATH:G3:U01:L08" &&
+         grade3AuthoredActivityAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 3 Edulytics original candidate companion">
+            <h2>Edulytics · original skill companion and Cool-down</h2>
+            <p>Independently authored first-pass activity and Cool-down, with
+               source activity reminders, numeric checking where valid,
+               and teacher-reviewed drawing and reasoning.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade3SourceCompanion" asp-action="Index"
+               asp-route-curriculumAdoptionId="@grade3AuthoredActivityAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 3 skill companion and Cool-down
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {

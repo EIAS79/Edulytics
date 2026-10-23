@@ -1,0 +1,87 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3SourceCompanionPage
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Grade 3 · First-party lesson companion";
+    var l = Model.Lesson;
+}
+<style>
+.g3-original{max-width:940px;margin:0 auto;padding:20px;color:#1e3d54}
+.g3-original .panel{background:#fff;border:1px solid #d9e4ec;border-radius:14px;padding:22px;margin:16px 0}
+.g3-original label{display:block;font-weight:700;margin:12px 0 5px}
+.g3-original textarea,.g3-original input{padding:10px;width:100%;max-width:700px;border:1px solid #7d93a8;border-radius:8px;font:inherit}
+.g3-original textarea:focus,.g3-original input:focus{outline:3px solid #b5dce8}
+.g3-original button{padding:12px 20px;border:0;border-radius:8px;background:#167789;color:white;font:inherit;cursor:pointer}
+.g3-original .ok{border-left:4px solid #21805a;padding-left:10px}
+.g3-original .no{border-left:4px solid #ad3b45;padding-left:10px}
+.g3-original .human{border-left:4px solid #b08b24;padding-left:10px}
+</style>
+<main class="g3-original">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <p>EDULYTICS · ORIGINAL COMPANION · GRADE 3 UNIT @l.UnitNumber LESSON @l.LessonNumber</p>
+    <h1>@l.Title</h1>
+    <p><strong>Learning goal:</strong> @l.StudentFacingGoal</p>
+    <p>This is a separately authored skill practice supplement, not the original publisher worksheet or an approved school assessment. Teacher-led activities and original images must be studied with the teacher.</p>
+    <form asp-controller="Grade3SourceCompanion" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <section class="panel">
+            <h2>1. Source activity context and teacher work</h2>
+            <p>Read, discuss, or construct the named original 2021 lesson activities under your teacher's guidance. Their original figures and materials are not reproduced by this supplemental page.</p>
+            <ul>
+            @foreach(var name in l.SourceActivityNames) {
+                <li>@name</li>
+            }
+            </ul>
+            <p>@l.OpenTeacherTask</p>
+            <label for="original-work">How did you represent and explain the original source activity?</label>
+            <textarea id="original-work" name="SourceWorkReflection" rows="4" maxlength="2000">@Model.Answers.SourceWorkReflection</textarea>
+        </section>
+        <section class="panel">
+            <h2>2. New Edulytics skill practice</h2>
+            <p>@l.IndependentPractice!.Prompt</p>
+            @if(l.IndependentPractice.AnswerType != "teacher") {
+                <label for="practice">My answer</label>
+                <input id="practice" name="PracticeAnswer" value="@Model.Answers.PracticeAnswer" maxlength="100" inputmode="text" required />
+            } else {
+                <p>This task requires a teacher to evaluate your design or original reasoning. There is no numeric pass.</p>
+            }
+            <label for="practice-reasoning">Drawing, equation or explanation</label>
+            <textarea id="practice-reasoning" name="PracticeReasoning" rows="4" maxlength="2000">@Model.Answers.PracticeReasoning</textarea>
+        </section>
+        <section class="panel">
+            <h2>3. New Edulytics Cool-down</h2>
+            <p>@l.OriginalEdulyticsCoolDown!.Prompt</p>
+            @if(l.OriginalEdulyticsCoolDown.AnswerType != "teacher") {
+                <label for="cool-answer">My answer</label>
+                <input id="cool-answer" name="CoolDownAnswer" value="@Model.Answers.CoolDownAnswer" maxlength="100" inputmode="text" required />
+            } else {
+                <p>Your teacher reviews the response or constructed work; no automated grade is possible.</p>
+            }
+            <label for="cool-reasoning">Explain my strategy with a representation</label>
+            <textarea id="cool-reasoning" name="CoolDownReasoning" rows="4" maxlength="2000">@Model.Answers.CoolDownReasoning</textarea>
+        </section>
+        <section class="panel">
+            <h2>4. Teacher-only evaluation rubric</h2>
+            <p>@l.TeacherReviewNote</p>
+            <p>Correct numeric values are only mathematical checks. They do not prove source task parity, actual classroom participation, a correct diagram, or completion of this lesson.</p>
+        </section>
+        <button type="submit">Check eligible numeric answers</button>
+    </form>
+    @if(Model.Submitted) {
+        <section class="panel" aria-live="polite">
+            <h2>Mathematical feedback (not a school grade)</h2>
+            @foreach(var item in new[] {
+                (Name:"Original skill practice",Feedback:Model.PracticeFeedback),
+                (Name:"Edulytics Cool-down",Feedback:Model.CoolDownFeedback)
+            }) {
+                <div class="@(item.Feedback!.NumericCorrect==true?"ok":item.Feedback.NumericCorrect==false?"no":"human")">
+                    <h3>@item.Name</h3>
+                    <p>@(item.Feedback.NumericCorrect==true?"Numerical result correct.":item.Feedback.NumericCorrect==false?"Numerical result needs revision.":"Requires teacher judgment.") @item.Feedback.Message</p>
+                    <p><em>Reasoning, drawings, representations and human tasks remain teacher-reviewed.</em></p>
+                </div>
+            }
+        </section>
+    }
+    <p>Academic alignment reference: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-@l.UnitNumber/lesson-@l.LessonNumber/lesson.html" rel="noopener noreferrer">Illustrative Mathematics K–5 Grade 3, First Edition (2021)</a> (CC BY 4.0 where applicable). This independently written companion is an authoring candidate and has not passed source-perfect acceptance or CI.</p>
+</main>
