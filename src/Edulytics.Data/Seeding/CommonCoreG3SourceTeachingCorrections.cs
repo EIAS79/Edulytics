@@ -446,6 +446,100 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "need teacher evaluation; no publisher " +
                     "assessment prompt is copied.";
             }
+            else if (string.Equals(lesson.LessonCode,
+                "PED:US-CCSS-MATH:G3:U01:L04", StringComparison.Ordinal))
+            {
+                // Numbers must come from the real classroom preference survey.
+                // An odd quantity requires a half-symbol when the key is two.
+                en.Explanation =
+                    "Create a scaled picture graph from a real class survey " +
+                    "about how classmates WOULD LIKE to travel (not their " +
+                    "actual journey home). The official 2021 response " +
+                    "choices are Car, Train, Boat, Balloon, Plane, " +
+                    "and Helicopter. Collect one response per pupil, " +
+                    "record and count every category, then represent " +
+                    "THOSE observed totals with a student-chosen symbol. " +
+                    "A whole symbol represents two people and a half " +
+                    "symbol represents one. An odd count needs a half " +
+                    "mark, not a rounded whole. Use a meaningful " +
+                    "title, a key and exact category labels. " +
+                    "Compare student-created graphs and discuss " +
+                    "class Math Community norms. Teachers review " +
+                    "real data provenance, drawing and explanations.";
+
+                en.KeyConceptsAndRules =
+                    "With a key of two students per full symbol, " +
+                    "an even category count n requires n/2 " +
+                    "whole pictures. An odd n requires (n-1)/2 " +
+                    "whole pictures and ONE half picture. " +
+                    "For example five learners need two whole " +
+                    "and one half pictures; this is a hypothetical " +
+                    "number, not a claim about the actual class. " +
+                    "Adding two to any count adds one whole symbol. " +
+                    "Adding one to an EVEN count adds a half; " +
+                    "adding one to an ODD count turns an " +
+                    "existing half into a whole symbol.";
+
+                en.WorkedExamples =
+                    "Dot warm-up: identify groups of five and " +
+                    "explain how skip-counting finds a total.\n" +
+                    "Actual classroom survey: record preferred " +
+                    "Car/Train/Boat/Balloon/Plane/Helicopter " +
+                    "choices. Each collected preference is one " +
+                    "pupil; use actual tally totals when drawing.\n" +
+                    "For a hypothetical count of 5 students " +
+                    "at key two, draw 2 whole and 1 half mark.\n" +
+                    "Original source synthesis: when TWO more " +
+                    "pupils prefer Balloon, ADD one whole mark. " +
+                    "When ONE more prefers Car, add a half " +
+                    "mark if its old count is even or complete " +
+                    "the existing half if its old count is odd.";
+
+                en.StepByStepSolutions =
+                    "Step 1 (10-minute warm-up): group dots " +
+                    "by fives; describe and compare strategies.\n" +
+                    "Step 2 (15-minute class survey): pupils " +
+                    "choose preferred means of travel; collect " +
+                    "individual responses using the original " +
+                    "six category names and compute the tallies.\n" +
+                    "Step 3 (20-minute picture graph): choose " +
+                    "a simple symbol and a key of two students; " +
+                    "draw whole and half symbols accurately, " +
+                    "including for odd-number categories.\n" +
+                    "Step 4: compare your labelled, titled " +
+                    "graph with a partner, checking the counts.\n" +
+                    "Step 5 (10-minute synthesis): reason about " +
+                    "Balloon plus two and Car plus one; " +
+                    "revisit Math Community norms.\n" +
+                    "Step 6 (5-minute independent Edulytics " +
+                    "Cool-down): answer new scale-two questions; " +
+                    "teacher reviews open drawings/explanations.";
+
+                en.CommonMistakes =
+                    "An odd pupil count cannot be rounded " +
+                    "to whole pictures; half of the two-unit " +
+                    "symbol represents the final student.\n" +
+                    "When one new pupil joins an ODD category, " +
+                    "complete its existing half mark instead " +
+                    "of always adding another unpaired half.\n" +
+                    "Do not recycle the fixed L01 graph or " +
+                    "the L02 class travel-home survey, because " +
+                    "the L04 question asks how pupils WOULD " +
+                    "LIKE to travel. Only teacher-attested " +
+                    "classroom responses can establish the " +
+                    "actual values. Pair work and graph " +
+                    "drawing are not machine-certified.";
+
+                en.QuickSummary =
+                    "The original survey uses six preferred " +
+                    "travel categories and a scale of two. " +
+                    "A whole mark means two students, a " +
+                    "half means one. Balloon plus two adds " +
+                    "one full mark; Car plus one depends " +
+                    "on whether Car already has a half mark. " +
+                    "Teachers validate the real data and " +
+                    "students' independent graph drawings.";
+            }
             // Never embed restricted publisher Cool-down prompts or artwork.
             // No database migration, publication or A-C approval occurs here.
         }
