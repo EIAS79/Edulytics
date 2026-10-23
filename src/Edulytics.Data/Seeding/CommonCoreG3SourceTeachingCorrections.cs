@@ -119,6 +119,9 @@ public static class CommonCoreG3SourceTeachingCorrections
                 .Select(s => s.GetString()?.Trim() ?? "").ToArray();
             if (!code.StartsWith(Prefix, StringComparison.Ordinal) || hash.Length != 64 ||
                 goal.Length < 15 || caution.Length < 15 || steps.Length < 2 ||
+                goal.Contains("Required Preparation", StringComparison.OrdinalIgnoreCase) ||
+                goal.Contains("Lesson Timeline", StringComparison.OrdinalIgnoreCase) ||
+                goal.Contains("Teacher Reflection", StringComparison.OrdinalIgnoreCase) ||
                 steps.Any(string.IsNullOrWhiteSpace) || !map.TryAdd(code,
                     new Correction(hash, goal, activities, caution, steps)))
                 throw new InvalidOperationException("Invalid or duplicate Grade 3 teaching rule: " + code);

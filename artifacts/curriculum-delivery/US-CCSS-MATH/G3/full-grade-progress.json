@@ -4908,9 +4908,15 @@
     "baseContentVersion": "phase30-common-core-rich-content-v1",
     "proposedEffectiveContentVersion": "g3-2021-source-skill-rich-v2-authoring-v1",
     "sourceProofBoundary": "Every learner correction grounded in original lesson goal plus individually reviewed public Student Facing text; original art/subquestions and published DB still require verification.",
-    "status": "RESOURCE_AUTHORED_MATERIALIZER_NOT_YET_WIRED",
+    "status": "VERSIONED_GRADE3_AUTHORING_CORRECTION_WIRED_PENDING_STAGE_D",
     "dataWritten": false,
     "testsExecuted": false,
-    "grades1And2Untouched": true
+    "grades1And2Untouched": true,
+    "studentGoalLeakageFix": {
+      "teacherPageMetadataRemovedFromResources": 42,
+      "teacherPageMetadataRemovedFromStudentCompanions": 42,
+      "source": "Existing Grade 3 2021 source-bound canonical pack goal sentences",
+      "otherGradesUnchanged": true
+    }
   }
 }
