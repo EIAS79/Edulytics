@@ -9,6 +9,8 @@ public sealed class Grade3Lesson1Answers
     public string? WarmupObservations { get; set; }
     public string? PlausibleCategories { get; set; }
     public string? GraphComparison { get; set; }
+    // Source Student Facing activity 2, part 2 is separate from comparison.
+    public string? GraphLearnings { get; set; }
     public string? TwoGraphQuestions { get; set; }
     public string? BusCount { get; set; }
     public string? BusSkateboardDifference { get; set; }
