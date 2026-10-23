@@ -108,15 +108,21 @@
             </div>
             <p>Key: ● = 2 students; ◐ = 1 student.</p>
             <div class="two">
-                <div><label for="cd-train-full">How many WHOLE marks for Train?</label><input id="cd-train-full" name="CoolDownTrainWhole" inputmode="numeric" value="@Model.Answers.CoolDownTrainWhole" required /></div>
-                <div><label for="cd-train-half">How many HALF marks for Train?</label><input id="cd-train-half" name="CoolDownTrainHalf" inputmode="numeric" value="@Model.Answers.CoolDownTrainHalf" required /></div>
+                
+                
                 <div><label for="plane-plus-four">If FOUR absent pupils choose Plane, how many ADDITIONAL whole marks are required?</label><input id="plane-plus-four" name="SourcePlaneExtraWhole" inputmode="numeric" value="@Model.Answers.SourcePlaneExtraWhole" required /></div><div><label for="plane-final">Fictional Edulytics Plane shows 3 pupils. After FOUR more, how many whole Plane marks are there?</label><input id="plane-final" name="SourcePlaneWholeAfterFour" inputmode="numeric" value="@Model.Answers.SourcePlaneWholeAfterFour" required /></div>
-                <div><label for="cd-total">How many students are shown across all six categories?</label><input id="cd-total" name="CoolDownTotal" inputmode="numeric" value="@Model.Answers.CoolDownTotal" required /></div>
+                
             </div>
             <label for="source-plane-drawing">Draw the TWO additional Plane picture symbols on your own graph, and explain the key (teacher review required)</label><textarea name="SourcePlaneDrawing" id="source-plane-drawing" rows="3" maxlength="2000">@Model.Answers.SourcePlaneDrawing</textarea><label for="cool-explain">Explain your independently drawn pictograph and its odd-category halves</label>
             <textarea id="cool-explain" name="CoolDownExplanation" rows="4" maxlength="2000">@Model.Answers.CoolDownExplanation</textarea>
         </section>
-<section class="panel"><h2>6. Optional Edulytics extension — not the 2021 source Cool-down</h2><label for="cd-plane">If TWO extra pupils, rather than four, chose Plane, how many whole marks would the fictional Edulytics Plane group have?</label><input name="CoolDownPlanePlusTwoWhole" id="cd-plane" inputmode="numeric" value="@Model.Answers.CoolDownPlanePlusTwoWhole" /></section>
+<section class="panel"><h2>6. Optional Edulytics extension — not the 2021 source Cool-down</h2>
+            <p>These extra independent number checks are not required for the five-minute original-source-aligned Plane task.</p>
+            <div class="two">
+                <div><label for="cd-train-full">Optional whole Train marks</label><input id="cd-train-full" name="CoolDownTrainWhole" inputmode="numeric" value="@Model.Answers.CoolDownTrainWhole" /></div>
+                <div><label for="cd-train-half">Optional half Train mark</label><input id="cd-train-half" name="CoolDownTrainHalf" inputmode="numeric" value="@Model.Answers.CoolDownTrainHalf" /></div>
+                <div><label for="cd-total">Optional total across six fictional categories</label><input id="cd-total" name="CoolDownTotal" inputmode="numeric" value="@Model.Answers.CoolDownTotal" /></div>
+            </div><label for="cd-plane">If TWO extra pupils, rather than four, chose Plane, how many whole marks would the fictional Edulytics Plane group have?</label><input name="CoolDownPlanePlusTwoWhole" id="cd-plane" inputmode="numeric" value="@Model.Answers.CoolDownPlanePlusTwoWhole" /></section>
         <button type="submit">Check my numeric representations</button>
     </form>
     @if(Model.Submitted) {

@@ -59,15 +59,18 @@ public sealed class Grade3Lesson4ActivitiesController(
             string.IsNullOrWhiteSpace(answers.SourcePlaneDrawing)
                 ? "Missing drawing explanation; teacher reviews student sketch of TWO added full Plane marks."
                 : "Teacher checks that the student actually drew TWO new full Plane marks. Numeric correctness alone does not certify the drawing."));
-        feedback.Add(CoolDown("G3-U01-L04-CD-TRAIN-WHOLE",
-            "Cool-down: full train marks", answers.CoolDownTrainWhole));
-        feedback.Add(CoolDown("G3-U01-L04-CD-TRAIN-HALF",
-            "Cool-down: half train mark", answers.CoolDownTrainHalf));
+        if (!string.IsNullOrWhiteSpace(answers.CoolDownTrainWhole))
+            feedback.Add(CoolDown("G3-U01-L04-CD-TRAIN-WHOLE",
+                "Optional first-party check: cool-down: full train marks", answers.CoolDownTrainWhole));
+        if (!string.IsNullOrWhiteSpace(answers.CoolDownTrainHalf))
+            feedback.Add(CoolDown("G3-U01-L04-CD-TRAIN-HALF",
+                "Optional first-party check: cool-down: half train mark", answers.CoolDownTrainHalf));
         if (!string.IsNullOrWhiteSpace(answers.CoolDownPlanePlusTwoWhole))
             feedback.Add(CoolDown("G3-U01-L04-CD-PLANE-PLUS-TWO-WHOLE",
                 "Optional Edulytics extension: Plane +2", answers.CoolDownPlanePlusTwoWhole));
-        feedback.Add(CoolDown("G3-U01-L04-CD-TOTAL",
-            "Cool-down: total survey respondents", answers.CoolDownTotal));
+        if (!string.IsNullOrWhiteSpace(answers.CoolDownTotal))
+            feedback.Add(CoolDown("G3-U01-L04-CD-TOTAL",
+                "Optional first-party check: cool-down: total survey respondents", answers.CoolDownTotal));
         feedback.Add(new("Student-drawn graph, evidence and own explanations", null, true,
             "Teacher checks authentic data collection, title, category labels, a symbol key worth two students, half-symbol for odd counts, and written reasoning."));
         feedback.Add(new("Source synthesis: two more Balloon students", null, true,
