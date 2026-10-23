@@ -46,7 +46,9 @@
       "link": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
     },
     "newCooldown": "Original Edulytics fictional sports club data 32/17/21/10",
-    "visual": "Original independently drawn bars, not source images"
+    "visual": "Original independently drawn bars, not source images",
+    "sourceBugGraphVisualGeometryRepaired": "Replaced horizontal percentage strips and printed exact answers with independently drawn vertical bars and 0..80 axis in tens; source pixel parity unverified.",
+    "sourceActivity2PeerExchangeQuestionFieldAuthored": "Student separately records exchange of two self-authored questions and responses, for teacher review only."
   },
   "stageC": {
     "status": "NUMERIC_PRACTICE_AND_FIRST_PARTY_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -55,7 +57,8 @@
     "route": "student/practice/grade3-u01-l07",
     "numericExactItems": 7,
     "teacherReviewedApproximateItems": 3,
-    "teacherReview": "Teacher judges plausible estimates, own questions, explanations"
+    "teacherReview": "Teacher judges plausible estimates, own questions, explanations",
+    "newUnrunTeacherTaskAndVisualRegressionWritten": true
   },
   "sourceElements": [
     {
@@ -68,11 +71,16 @@
     },
     {
       "id": "bugs",
-      "status": "NUMERIC_DATA_AND_ESTIMATES_ALIGNED_HUMAN_REVIEW"
+      "status": "NUMERIC_DATA_AND_ESTIMATES_ALIGNED_HUMAN_REVIEW",
+      "verticalSourceBarsWithExactNumericsUnderlyingButNotPrinted": true,
+      "sourceVerticalScaleAsDisplayed": "0..80 step 10",
+      "studentFacingEstimateNoExactAnswerLeakCodeCorrection": true,
+      "runtimeAppearanceUnverified": true
     },
     {
       "id": "synthesis",
-      "status": "TEACHER_REVIEW_REQUIRED"
+      "status": "TEACHER_REVIEW_REQUIRED",
+      "sourceActivity2QuestionExchangeField": "PartnerQuestionExchange"
     },
     {
       "id": "cooldown",

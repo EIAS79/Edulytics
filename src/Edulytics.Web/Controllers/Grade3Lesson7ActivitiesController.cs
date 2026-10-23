@@ -67,6 +67,10 @@ public sealed class Grade3Lesson7ActivitiesController(
                 ? "This falls within a provisional near-value band. Teacher must decide if the estimate is reasonable given the scale of ten."
                 : "This may be outside a simple near-value band. Ask the teacher to inspect graph reading and justification before assessing."));
         }
+        feedback.Add(new("Source Activity 2, part 5: exchange questions with another group",null,true,
+            string.IsNullOrWhiteSpace(answers.PartnerQuestionExchange)
+                ? "No peer-question answer recorded; actual exchange and reasoning require teacher observation."
+                : "Teacher checks both exchanged questions, answers and the observed partner conversation; text alone cannot certify participation."));
         feedback.Add(new("Question writing, explanation, Math Community",null,true,
             "A teacher must review two learner-authored bug questions, one-step equations, the number talk and partner reasoning."));
         Response.Headers["X-Robots-Tag"]="noindex, nofollow, noarchive";

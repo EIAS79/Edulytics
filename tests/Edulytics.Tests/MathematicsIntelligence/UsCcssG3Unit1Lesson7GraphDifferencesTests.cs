@@ -27,6 +27,31 @@ public sealed class UsCcssG3Unit1Lesson7GraphDifferencesTests
         Assert.False(wrong);
     }
     [Fact]
+    public void BugGraphIsVerticallyScaledWithoutRevealingExactUnderlyingNumbers()
+    {
+        // Authored source-contract test: do not run until Stage D.
+        Assert.NotNull(typeof(Edulytics.Web.ViewModels.LessonContent.Grade3Lesson7Answers)
+            .GetProperty("PartnerQuestionExchange"));
+        DirectoryInfo? dir = new(AppContext.BaseDirectory);
+        string? file = null;
+        while (dir is not null)
+        {
+            var candidate = Path.Combine(dir.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson7Activities", "Index.cshtml");
+            if (File.Exists(candidate)) { file = candidate; break; }
+            dir = dir.Parent;
+        }
+        Assert.NotNull(file);
+        var razor = File.ReadAllText(file!);
+        Assert.Contains("name=\"PartnerQuestionExchange\"", razor);
+        Assert.Contains("bug-source-chart", razor);
+        Assert.Contains("height:@(item.Count*300/80)px", razor);
+        Assert.Contains("tick=80;tick>=0;tick-=10", razor);
+        Assert.DoesNotContain("Exact underlying count @item.Count", razor);
+        Assert.Contains("Exchange your two questions with another group", razor);
+    }
+
+    [Fact]
     public void BugChartEstimatesNeverAutoGradeAsExact()
     {
         Assert.True(UsCcssG3Unit1Lesson7GraphDifferences.TryCheckApproximateBugAnswer(

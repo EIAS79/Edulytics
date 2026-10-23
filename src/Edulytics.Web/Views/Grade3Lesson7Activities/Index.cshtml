@@ -16,6 +16,15 @@
 .g3-l07 .bar-row{display:flex;align-items:center;gap:12px;margin:12px 0}
 .g3-l07 .bar-row strong{width:102px;flex:none}
 .g3-l07 .bar{height:26px;background:#16839a}
+.g3-l07 .bug-graph-frame{overflow-x:auto}
+.g3-l07 .bug-source-chart{display:grid;grid-template-columns:38px minmax(340px,1fr);gap:8px;max-width:660px;min-width:400px}
+.g3-l07 .bug-graph-ticks{height:300px;display:flex;flex-direction:column;justify-content:space-between;font-size:.82rem}
+.g3-l07 .bug-graph-bars{height:300px;display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:9px;align-items:end;border-left:2px solid #688298;border-bottom:2px solid #688298;padding:0 8px}
+.g3-l07 .bug-graph-column{height:300px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.g3-l07 .bug-graph-bar{background:#16839a;width:66%;max-width:75px;border-radius:4px 4px 0 0}
+.g3-l07 .bug-labels{grid-column:2;display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:9px;padding:0 8px}
+.g3-l07 .bug-label{text-align:center;font-size:.85rem;overflow-wrap:anywhere}
+.g3-l07 .bug-x-title{grid-column:2;text-align:center;font-weight:700;margin:5px 0}
 .g3-l07 .good{border-left:4px solid #258052;padding-left:10px}
 .g3-l07 .bad{border-left:4px solid #b62f42;padding-left:10px}
 .g3-l07 .review{border-left:4px solid #a77411;padding-left:10px}
@@ -58,14 +67,26 @@
         </section>
         <section class="panel">
             <h2>3. Source-aligned Bugs in the Garden graph</h2>
-            <p>Scale: 0–80 by tens. Exact bar data from archived source's accessible description (the drawn original can be hard to read to the ones place):</p>
-            @foreach(var item in bugs){
-                <div class="bar-row"><strong>@item.Category</strong>
-                    <span class="bar" style="width:@(item.Count*100/80)%" aria-hidden="true"></span>
-                    <span aria-label="Exact underlying count @item.Count">@item.Count</span>
+            <p>Read the picture graph using its 0–80 vertical scale in tens. Bars can fall BETWEEN labelled tens. Estimate instead of reading off an exact hidden table.</p>
+            <div class="bug-graph-frame">
+                <div class="bug-source-chart" role="img" aria-label="Types of Bugs in the Garden: vertical axis 0 to 80 in tens. Ant bar a little above 60; Ladybugs just above 10; Beetles just below 20; Spiders just below 10.">
+                    <div class="bug-graph-ticks" aria-hidden="true">
+                        @for(var tick=80;tick>=0;tick-=10){<span>@tick</span>}
+                    </div>
+                    <div class="bug-graph-bars" aria-hidden="true">
+                        @foreach(var item in bugs){
+                            <div class="bug-graph-column">
+                                <div class="bug-graph-bar" style="height:@(item.Count*300/80)px"></div>
+                            </div>
+                        }
+                    </div>
+                    <div class="bug-labels" aria-hidden="true">
+                        @foreach(var item in bugs){<strong class="bug-label">@item.Category</strong>}
+                    </div>
+                    <p class="bug-x-title">Type of bug</p>
                 </div>
-            }
-            <p>Guide scale: 0, 10, 20, 30, 40, 50, 60, 70, 80.</p>
+            </div>
+            <p>Guide scale: 0, 10, 20, 30, 40, 50, 60, 70, 80. The source chart does not print each exact underlying category count beside its bar.</p>
             <p>Give REASONABLE estimates from the scaled graph. The teacher reviews the estimate, not an exact automated pass/fail.</p>
             <div class="two">
                 <div><label for="bugs-total">About how many bugs altogether?</label><input id="bugs-total" name="BugTotalEstimate" value="@Model.Answers.BugTotalEstimate" inputmode="numeric" required /></div>
@@ -74,6 +95,9 @@
             </div>
             <label for="bug-questions">Write TWO different questions answerable from the bug graph, and share with a partner</label>
             <textarea id="bug-questions" name="BugGraphQuestions" rows="3" maxlength="2000">@Model.Answers.BugGraphQuestions</textarea>
+            <label for="peer-exchange">Exchange your two questions with another group. What were their questions, and how did you answer them?</label>
+            <textarea id="peer-exchange" name="PartnerQuestionExchange" rows="3" maxlength="2000">@Model.Answers.PartnerQuestionExchange</textarea>
+            <p>Only the classroom teacher can verify whether you actually exchanged questions and discussed the solutions with another group.</p>
             <label for="bug-reasoning">Explain how your graph estimates and equations make sense</label>
             <textarea id="bug-reasoning" name="BugEstimateReasoning" rows="3" maxlength="2000">@Model.Answers.BugEstimateReasoning</textarea>
         </section>
