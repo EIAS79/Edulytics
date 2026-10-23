@@ -18,23 +18,23 @@
     "catalogueLessons": 143,
     "units": 8,
     "lessonsFullyReadyForStageD": 0,
-    "lessonsWithFirstEditionPublicSourceIndexed": 5,
-    "lessonsWithACExplicitGap": 5,
-    "remainingWithoutOriginalReview": 138,
-    "numericCandidateCodeFilesAuthored": 5,
-    "stageCRegressionFilesWrittenNotRun": 5,
-    "sourceElementsIndexed": 44,
+    "lessonsWithFirstEditionPublicSourceIndexed": 6,
+    "lessonsWithACExplicitGap": 6,
+    "remainingWithoutOriginalReview": 137,
+    "numericCandidateCodeFilesAuthored": 6,
+    "stageCRegressionFilesWrittenNotRun": 6,
+    "sourceElementsIndexed": 50,
     "sourceElementsFullyComparedToEffectiveProduct": 0,
-    "firstPartyOriginalCoolDownLessonsAuthored": 5,
-    "firstPartyOriginalCoolDownNumericQuestions": 13,
-    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 5,
+    "firstPartyOriginalCoolDownLessonsAuthored": 6,
+    "firstPartyOriginalCoolDownNumericQuestions": 16,
+    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 6,
     "firstPartyOriginalCoolDownTestFilesWrittenNotRun": 1
   },
   "cursor": {
     "lastConsecutiveReadyForStageDOrdinal": 0,
     "firstUnclosedOrdinal": 1,
-    "highestSequentiallySourceIndexedOrdinal": 5,
-    "nextAfterExternalGapOrdinal": 6
+    "highestSequentiallySourceIndexedOrdinal": 6,
+    "nextAfterExternalGapOrdinal": 7
   },
   "returnQueue": [
     {
@@ -90,6 +90,18 @@
         "Effective database-backed Rich V2 content not source-compared.",
         "Razor drawing and controller mathematics test suite written but not executed at Stage D.",
         "Teacher discussion, full pedagogical source parity, official assets and original student graph drawing remain unverified."
+      ]
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L06",
+      "status": "A_C_EXPLICIT_GAP",
+      "reasons": [
+        "Original pattern-block picture numerical counts have not been read; learner must enter teacher-confirmed values rather than fabricated source values.",
+        "Actual original Student Task PDF, optional visuals and teacher instructional fidelity not fully compared.",
+        "Current effective database Rich V2 content not compared with the local source.",
+        "Razor graph fidelity and student integration not built or tested under deferred Stage D.",
+        "Human mathematical reasoning, peer comparisons, and original teacher reflection rubrics require school validation."
       ]
     }
   ],
@@ -194,16 +206,17 @@
       "unitNumber": 1,
       "lessonNumber": 6,
       "title": "Choose a Scale",
-      "stageA": "NOT_STARTED",
-      "stageB": "NOT_STARTED",
-      "stageC": "NOT_STARTED",
-      "authoringClosure": "NOT_STARTED",
-      "sourceElementsIdentified": 0,
+      "stageA": "LOCAL_SOURCE_PETS_SEASON_COUNTS_VERIFIED_PATTERN_IMAGE_OPEN",
+      "stageB": "FIRST_PARTY_SOURCE_SCALE_CHOICE_ACTIVITY_AUTHORED",
+      "stageC": "NUMERIC_AND_FIRST_PARTY_COOL_DOWN_LINKED_TESTS_UNRUN",
+      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "sourceElementsIdentified": 6,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
-      "checkpointPath": null,
+      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-6-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
-      "academicApproval": "NOT_CLAIMED"
+      "academicApproval": "NOT_CLAIMED",
+      "coolDownState": "FIRST_PARTY_COOL_DOWN_AUTHORED_NOT_VERIFIED"
     },
     {
       "gradeOrdinal": 7,

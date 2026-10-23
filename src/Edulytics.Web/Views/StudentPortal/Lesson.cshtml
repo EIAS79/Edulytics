@@ -182,6 +182,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L06" &&
+         grade3AuthoredActivityAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 3 scale choice and bar graph companion">
+            <h2>Edulytics · choose a bar graph scale</h2>
+            <p>Compare pet graphs with three scales, choose an accurate scale for pattern blocks
+                and source seasonal data, and complete a new Edulytics Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade3Lesson6Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@grade3AuthoredActivityAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 3 Choose a Scale activities and Cool-down
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {

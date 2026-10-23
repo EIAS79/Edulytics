@@ -1,0 +1,160 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 6,
+  "unitNumber": 1,
+  "lessonNumber": 6,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L06",
+  "title": "Choose a Scale",
+  "sourceEdition": "IM K–5 First Edition (2021)",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-6/lesson.html",
+  "localTeacherSourceHtml": "03_Grade_3_IM_K5/unit-1/lesson-6/lesson.html",
+  "targetSourceParityPercent": 100,
+  "claimedSourceParityPercent": null,
+  "readyForStageD": false,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "stageA": {
+    "status": "LOCAL_TEACHER_HTML_SOURCE_STUDENT_FACING_READ_SOURCE_VALUES_PARTIALLY_MATCHED",
+    "sourceLifespanOfPets": [
+      [
+        "Cat",
+        16
+      ],
+      [
+        "Dog",
+        13
+      ],
+      [
+        "Guinea Pig",
+        6
+      ],
+      [
+        "Goldfish",
+        10
+      ],
+      [
+        "Python",
+        30
+      ]
+    ],
+    "sourceWarmupAxes": [
+      {
+        "min": 0,
+        "max": 30,
+        "step": 1
+      },
+      {
+        "min": 0,
+        "max": 60,
+        "step": 2
+      },
+      {
+        "min": 0,
+        "max": 300,
+        "step": 10
+      }
+    ],
+    "sourcePatternBlockCategories": [
+      "Triangle",
+      "Square",
+      "Trapezoid",
+      "Hexagon"
+    ],
+    "sourcePatternBlockPictureCountsNotAudited": true,
+    "sourceScaleOptions": [
+      2,
+      5,
+      10
+    ],
+    "sourceSeasons": [
+      [
+        "Winter",
+        24
+      ],
+      [
+        "Spring",
+        13
+      ],
+      [
+        "Summer",
+        40
+      ],
+      [
+        "Fall",
+        22
+      ]
+    ],
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "status": "FIRST_PARTY_LEARNER_SCALE_CHOICE_EXPERIENCE_AUTHORED_RICH_V2_OPEN",
+    "files": {
+      "math": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson6ChooseScale.cs",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson6ActivitiesController.cs",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson6PracticePage.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson6Activities/Index.cshtml",
+      "studentLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "sourceActivities": [
+      "Pets warm-up three original numerical axis ranges, new drawn bars",
+      "Pattern blocks category input, no source image count invention",
+      "Favorite seasons exact 24/13/40/22 table and graph",
+      "Choose from scales 2,5,10 and explain",
+      "Student mathematical reflection",
+      "Independent first-party Cool-down"
+    ]
+  },
+  "stageC": {
+    "status": "SOURCE_NUMERICS_AND_INDEPENDENT_COOL_DOWN_WIRED_TESTS_NOT_RUN",
+    "studentRoute": "student/practice/grade3-u01-l06",
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+    "numericQuestions": 9,
+    "testsRun": false,
+    "teacherReviewRequired": true
+  },
+  "sourceElements": [
+    {
+      "id": "warmup",
+      "state": "SOURCE_NUMERIC_AND_AXIS_PARITY_AWAITING_RENDER"
+    },
+    {
+      "id": "pattern_activity",
+      "state": "SOURCE_IMAGE_CATEGORY_COUNTS_UNVERIFIED"
+    },
+    {
+      "id": "seasons_activity",
+      "state": "SOURCE_TABLE_VALUES_MATCHED"
+    },
+    {
+      "id": "synthesis",
+      "state": "TEACHER_REFLECTION_AUTHORED"
+    },
+    {
+      "id": "cooldown",
+      "state": "INDEPENDENT_FIRST_PARTY_EQUIVALENT"
+    },
+    {
+      "id": "rights",
+      "state": "ORIGINAL_PUBLISHER_GRAPHICS_NOT_COPIED"
+    }
+  ],
+  "sourceInventory": {
+    "identifiedElements": 6,
+    "fullyMappedAndVerified": 0,
+    "publishedRichV2Inspected": false,
+    "sourceStudentTaskPdfRead": false
+  },
+  "openGaps": [
+    "Original pattern-block picture numerical counts have not been read; learner must enter teacher-confirmed values rather than fabricated source values.",
+    "Actual original Student Task PDF, optional visuals and teacher instructional fidelity not fully compared.",
+    "Current effective database Rich V2 content not compared with the local source.",
+    "Razor graph fidelity and student integration not built or tested under deferred Stage D.",
+    "Human mathematical reasoning, peer comparisons, and original teacher reflection rubrics require school validation."
+  ],
+  "originalCoolDownPolicy": "OWNER_APPROVED_EDULYTICS_ORIGINAL_EQUIVALENT",
+  "stageD": "NOT_STARTED",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED"
+}
