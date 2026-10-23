@@ -295,7 +295,7 @@
     "axisTitleProofNotFullSourceParity": true
   },
   "stageB": {
-    "status": "FIRST_PARTY_STUDENT_COMPANION_AUTHORED_RICH_V2_NOT_FULLY_VERIFIED",
+    "status": "SOURCE_SPECIFIC_RICH_V2_SIDECAR_AUTHORED_EFFECTIVE_PRODUCT_NOT_VERIFIED",
     "independentOutline": [
       "Start by asking learners what they observe in the unlabeled 6-column unit-key picture graph, without imposing labels.",
       "Add travel-to-home context, discuss which labels would be plausible and why title/key constrain interpretation.",
@@ -354,7 +354,31 @@
     ],
     "authoringViewPath": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
     "authoringControllerPath": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
-    "publishRuntimeOnlyDeferredToStageD": true
+    "publishRuntimeOnlyDeferredToStageD": true,
+    "richV2SourceSpecificEmbeddedSidecar": {
+      "status": "AUTHORED_NOT_EXECUTED",
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "contentVersion": "g3-u01-l01-first-edition-rich-v2-authoring-20261023-v1",
+      "lookup": "RichLessonContentV2Registry.Find(PED:US-CCSS-MATH:G3:U01:L01,en) runs before runtime composition",
+      "authoredExplanationSections": 5,
+      "workedExamples": 3,
+      "keyConcepts": 4,
+      "commonMistakes": 4,
+      "sourceOriginalArtworkReplicated": false,
+      "verifiedEffectiveDatabase": false,
+      "stageDRuntimeExecuted": false
+    },
+    "databaseReadOnlyEvidence": {
+      "project": "Edulytiks",
+      "branch": "production",
+      "inspection": "READ_ONLY_ONLY",
+      "queryFindings": [
+        "CurriculumLessonContentTranslations contains 0 rows in inspected Neon project; cannot certify active translated Rich V2 body.",
+        "CurriculumPedagogicalLessons row exists for lesson code, but OfficialLessonNodeId is null, so cannot join legacy content table by this identity."
+      ],
+      "publishedLessonParityConfirmed": false,
+      "writeAttempted": false
+    }
   },
   "stageC": {
     "status": "STUDENT_COMPANION_NUMERIC_AND_AUTHORED_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -412,16 +436,22 @@
     "teacherReviewEvidenceHandoff": "Student may print/save unsaved response page; human review and oral participation remain independently unverified; no in-app persisted teacher decision",
     "academicHumanSignoffRequiredBeforeReadyForStageD": false,
     "teacherRubricNeedsTeacherObservedExecutionBeforeAuthoringClosure": false,
-    "manualDotnetExecutionRequiredBeforeReadyForStageD": false
+    "manualDotnetExecutionRequiredBeforeReadyForStageD": false,
+    "richV2SourceCoverageTest": {
+      "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "written": true,
+      "executed": false
+    }
   },
   "openGaps": [
     "AC REAL — Full 2021 original source Student Task PDF and original graph artwork image asset cannot be fetched through accessible publisher links (Cache miss); no source-image/paper-task 100% equality can be certified without inspecting them, under the explicit Grade 3 target.",
-    "AC REAL — Source item coverage matrix and effective versioned Rich V2 teacher/student task and grading scope still require complete 1:1 proof, particularly original graph drawing fidelity beyond source ALT text; current authored candidates alone are not full proof.",
     "AC RIGHTS — Original artwork may contain separate rights; use first-party drawn glyphs, retain explicit source material non-parity until image rights and mathematics represented are verified.",
     "NOT AC BLOCK — Stage D tests/CI/HTTPS/runtime/Neon deployment, live pupil performance, and human academic signoff are intentionally deferred and do not prevent A-C authoring when the required authored evidence is complete.",
-    "NOT AC BLOCK — Original publisher educator-only Cool-down is replaced by approved independent Edulytics equivalent, with honesty that this is source skill equivalence only, not original assessment material parity."
+    "NOT AC BLOCK — Original publisher educator-only Cool-down is replaced by approved independent Edulytics equivalent, with honesty that this is source skill equivalence only, not original assessment material parity.",
+    "AC REAL — Embedded first-party L01 Rich V2 sidecar now authored and structurally mapped, but no deployed/effective learner body or pixel-exact source-material verification exists; authored assertions have NOT been executed.",
+    "AC VERIFIED READ-ONLY — Inspected Neon Edulytiks production branch: CurriculumLessonContentTranslations had 0 rows and the L01 pedagogical record had no OfficialLessonNodeId; this read-only result cannot establish an effective published L01 translation. No database writes, seeding or deployment attempted."
   ],
-  "nextAction": "L01 ONLY: use publicly accessible 2021 official source HTML and available first-party source graph evidence to finish 1:1 pedagogical/mathematical map and actual versioned Rich V2 code paths; retain original PDF/artwork separately SOURCE_UNAVAILABLE on cache miss and never claim 100% figure/material parity. Do not require Stage D tests or teacher signatures to mark A-C authoring ready if verified A-C coverage evidence and exact plan's source conditions are eventually fulfilled. Keep cursor at 1.",
+  "nextAction": "L01 ONLY: obtain and inspect official 2021 student task PDF + graph pixels via authorized publisher access (public text/ALT already reviewed); resolve third-party image rights or document lawful equivalent; verify actual L01 Rich V2 and student companion effective delivery in authorized Stage D later, reconcile A–C original-element map without claiming 100% before inspection. Keep cursor at 1; no Stage D/tests/CI/deploy.",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",

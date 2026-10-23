@@ -57,10 +57,10 @@
       "ordinal": 1,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L01",
       "reasons": [
-        "Original 2021 publisher student task PDF and graph-image assets return cache miss; per latest Grade3 100% original-element requirement cannot claim source-material parity for uninspected assets.",
-        "Complete one-to-one, original-element-to-effective Rich V2 + actual learner Practice/teacher-rubric source evidence not signed off on code-authoring review yet.",
-        "Do not list Stage D tests/CI/runtime, real pupils' task performance or teacher human academic signature as a pre-Stage-D A-C blocker; these are deferred.",
-        "First-party independently authored Cool-down is approved and not itself blocking; label original publisher assessment material unavailable and do not claim original artwork parity."
+        "2021 official Student Task Statements PDF and original graph-image pixels inaccessible (publisher asset URL fetch Cache miss); no 100% source-material parity claimed.",
+        "First-party Grade 3 L01 Rich V2 sidecar now authored and registry-contract tests written, but not executed; effective deployed learner translation not proven.",
+        "Read-only Neon inspection: CurriculumLessonContentTranslations returned zero rows; official L01 pedagogical node pointer is null. Cannot verify actual published L01 teaching translation or graph rendering.",
+        "First-party independent Cool-down explicitly replaces publisher teacher-gated original; publisher item parity is NOT claimed, and Stage D/human school observations remain deferred."
       ],
       "status": "A_C_EXPLICIT_GAP"
     },
@@ -1649,7 +1649,7 @@
       "lessonNumber": 1,
       "title": "Make Sense of Data",
       "stageA": "ORIGINAL_2021_TEACHER_AND_PREP_PUBLIC_SOURCE_TEXT_REVIEWED_FIVE_STUDENT_SUBPARTS_MAPPED_ORIGINAL_PDF_PIXELS_PENDING",
-      "stageB": "RICH_V2_SOURCE_SPECIFIC_AUTHORING_AND_RAZOR_PEDAGOGICAL_SEQUENCE_FIXED_EFFECTIVE_STORED_BODY_UNVERIFIED",
+      "stageB": "SOURCE_SPECIFIC_EMBEDDED_RICH_V2_SIDECAR_AUTHORED_UNEXECUTED_EFFECTIVE_LEARNER_DB_UNVERIFIED",
       "stageC": "FIVE_OPEN_SOURCE_TASKS_TEACHER_REVIEW_ONLY_THREE_SEPARATE_NUMERIC_PRACTICE_AND_TWO_COOLDOWN_CHECKS_WRITTEN_UNRUN",
       "authoringClosure": "A_C_EXPLICIT_GAP",
       "sourceElementsIdentified": 11,
@@ -1680,7 +1680,10 @@
       "teacherRubricAuthoredDoesNotProveStudentCompletion": true,
       "originalPublicHtmlSourceReviewed": true,
       "publisherPdfAndImagesAccess": "SOURCE_ASSET_CACHE_MISS_NOT_INSPECTED",
-      "sourceMaterialParityProofComplete": false
+      "sourceMaterialParityProofComplete": false,
+      "richV2SourceSpecificEmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2SourceSpecificRegistryTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2CodeOnlyAuthored": true
     },
     {
       "gradeOrdinal": 2,
@@ -5924,35 +5927,12 @@
     "note": "Directly accessed owner local Grade 3 unit-1 lesson-1 teacher lesson.html and preparation.html on Our-CS, plus Student_Public_Mirror/lesson.html. Identified 5 top-level teacher lesson structure portions and student-facing activity prompts. Original graphic image pixels/student PDFs and individual task-to-product evidence not yet verified. No Stage D, CI, merge, deploy or Neon mutations."
   },
   "executionPolicyLatest": {
-    "sourceOfTruth": "Official 2021 Illustrative Mathematics K-5 first-edition teacher lesson + preparation public publisher links, GitHub pack, per-lesson source parity evidence",
-    "forbiddenSourceDevice": "Our-CS; latest 2026-10-23 plan explicitly prohibits device usage in this execution",
-    "editingScope": "GitHub working branch curriculum/g3-continuous-authoring-20261023 only",
-    "stageD": false,
-    "testsExecuted": false,
-    "ciStartedManually": false,
-    "merge": false,
-    "deploy": false,
-    "academicApproval": false,
-    "mainCatalogueRef": "docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json@main",
-    "mainCatalogueSha": "2896d655ad1df8b714b8ece4889913180bc3d1d7",
-    "confirmedCataloguedGrade3Lessons": 143,
-    "codeAuthoringOrdinalsNewlyRepaired": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "nextOrdinalAfterDocumentedExternalAssetGaps": null,
-    "sourceAssetAccessLimits": [
-      "First-edition original Student Task Statements PDFs not fetchable through available source tool",
-      "Publisher image pixel resources returned fetch cache miss",
-      "Publisher original Cool-down educator gated; approved independent first-party substitute is distinct, not a source-parity claim"
-    ],
-    "note": "This is a truthful authoring-stage handoff: the four source-specific Rich V2 proposals and unrun written regressions do not mean any full A-C closure or that all 143 have been individually product-verified.",
-    "authorityTitleVariantNote": "G3 U01 L03 official unit index and main catalogue title includes PLC Activity, but individual lesson-page heading omits it; kept indexed title, no unsupported rename.",
-    "sequentialExecutionCorrection": "Return to U01 L01 and finish every repairable A/B/C mismatch before accepting an external-only blocking reason. Earlier L01–L05 drafts are NOT completed lessons, nor evidence authorizing a jump to L06.",
-    "currentWorkingOrdinal": 1,
-    "noAdvanceWhileRepairableSourceACGaps": true
+    "lessonCode": "PED:US-CCSS-MATH:G3:U01:L01",
+    "headAtWorkStart": "7e66a1dbfd53c08750bc0afa5d2a66e2524c50bd",
+    "rule": "One lesson at a time, no Stage D or CI or DB write/deployment",
+    "status": "L01_A_C_EXPLICIT_GAP_SOURCE_ASSETS_UNAVAILABLE_RICH_V2_REGISTRY_AUTHORED",
+    "richV2SidecarPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+    "checks": "AUTHORED_NOT_EXECUTED",
+    "noReadinessPromotion": true
   }
 }
