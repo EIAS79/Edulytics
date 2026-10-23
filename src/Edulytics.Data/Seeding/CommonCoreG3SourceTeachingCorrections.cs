@@ -133,6 +133,75 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "Explain what is the same and different, then write two " +
                     "answerable questions. A teacher checks the reasoning.";
 
+                en.KeyConceptsAndRules =
+                    "Lesson 3.1.1 learning target: read a categorical " +
+                    "picture graph and a bar graph, and ask questions that " +
+                    "the graphs can answer. The picture graph's key says " +
+                    "one symbol means one student; the bar graph uses a " +
+                    "vertical number axis from 0 through 8 in ones. " +
+                    "Do not give anonymous columns invented category " +
+                    "labels as though they are known. A title provides " +
+                    "context, not all missing labels. Once categories " +
+                    "are revealed, both graphs must preserve Walk 4, " +
+                    "Bike 3, Skateboard 1, Car 2, Bus 7 and Train 6 " +
+                    "(23 students in all). Discuss two learner-authored " +
+                    "questions, and verify that the displayed data " +
+                    "actually answer them. Teacher-led explanation, " +
+                    "Math Community norms and graph comparison are " +
+                    "not digitally auto-graded.";
+
+                en.StepByStepSolutions =
+                    "Step 1 (15-minute Notice and Wonder): look at " +
+                    "the 4, 3, 1, 2, 7, 6 anonymous picture columns. " +
+                    "Record an observation and a question without " +
+                    "guessing a fixed category label. Think quietly, " +
+                    "then discuss with a partner.\\n" +
+                    "Step 2 (10-minute Picture Time): show the " +
+                    "title How We Get Home, retain the six values " +
+                    "and one-symbol key, and suggest possible " +
+                    "categories with reasons. Explain why the " +
+                    "labels cannot be determined from the title.\\n" +
+                    "Step 3 (20-minute paired graph analysis): " +
+                    "reveal Walk 4, Bike 3, Skateboard 1, Car 2, " +
+                    "Bus 7, Train 6 in the picture graph and in " +
+                    "a bar graph with y-axis 0..8 in ones. Check " +
+                    "every bar/column against its category and key.\\n" +
+                    "Step 4: describe how the picture and bar " +
+                    "graphs are alike and different, then say " +
+                    "what the graphs tell us. Write two distinct " +
+                    "questions whose answers can be read from " +
+                    "these graphs. Teacher reviews explanations.\\n" +
+                    "Step 5 (10-minute synthesis): explain the " +
+                    "role of labels, title, picture key, and bar " +
+                    "scale. Invite learners to restate a peer's " +
+                    "reasoning and discuss Doing Math / Norms.\\n" +
+                    "Step 6 (5-minute independent Edulytics " +
+                    "Cool-down): read a NEW graph and respond. " +
+                    "Numeric responses can be checked; invented " +
+                    "questions and explanations require review. " +
+                    "This is not the restricted publisher item.";
+
+                en.CommonMistakes =
+                    "Mistake: interpreting the unnamed first " +
+                    "and second graphs as if their category " +
+                    "names were supplied. Repair: distinguish " +
+                    "a plausible guess from a shown label.\\n" +
+                    "Mistake: treating one picture as more " +
+                    "than one learner or misreading the bar " +
+                    "scale. Repair: verify one symbol equals " +
+                    "one student and the axis advances by " +
+                    "exactly one, starting at zero.\\n" +
+                    "Mistake: confusing columns or comparing " +
+                    "different categories. Repair: match Walk " +
+                    "4, Bike 3, Skateboard 1, Car 2, Bus 7 " +
+                    "and Train 6 in BOTH representations.\\n" +
+                    "Mistake: offering a question that the " +
+                    "graph cannot answer or treating partner " +
+                    "reasoning as a numeric grade. Repair: " +
+                    "require source-visible evidence and a " +
+                    "teacher rubric; open questions are not " +
+                    "automatic passes.";
+
                 en.QuickSummary =
                     "The same six category counts can be shown as a picture " +
                     "graph or a vertical bar graph. First examine the six " +
