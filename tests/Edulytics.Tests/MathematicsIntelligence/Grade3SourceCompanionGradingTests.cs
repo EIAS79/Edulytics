@@ -74,4 +74,67 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.True(yes.TeacherReview);
     }
 
+    [Fact]
+    public void EverySourceReviewedCompanionRetainsThreeScopedContractsAndTeacherBoundary()
+    {
+        Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);
+        foreach (var code in Grade3SourceCompanionCatalogue.Codes)
+        {
+            Assert.True(Grade3SourceCompanionCatalogue.TryGet(code, out var lesson));
+            Assert.NotNull(lesson);
+            Assert.NotNull(lesson!.SourceBasedCheck);
+            Assert.NotNull(lesson.IndependentPractice);
+            Assert.NotNull(lesson.OriginalEdulyticsCoolDown);
+            Assert.NotNull(lesson.SourceBasedCheckProvenance);
+            Assert.False(lesson.SourceBasedCheckProvenance!.FigurePixelsInspected);
+            Assert.True(lesson.ReviewedStudentFacingText);
+            Assert.False(lesson.ReadyForStageD);
+
+            foreach (var question in new[] { lesson.SourceBasedCheck!,
+                       lesson.IndependentPractice!, lesson.OriginalEdulyticsCoolDown! })
+            {
+                Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
+                Assert.Contains(question.AnswerType, new[]
+                    { "teacher", "integer", "rational", "comparison" });
+                if (question.AnswerType == "teacher")
+                {
+                    Assert.Null(question.Expected);
+                    var review = Grade3SourceCompanionCatalogue.Grade(question, "42");
+                    Assert.Null(review.NumericCorrect);
+                    Assert.True(review.TeacherReview);
+                    continue;
+                }
+
+                Assert.False(string.IsNullOrWhiteSpace(question.Expected));
+                var valid=Grade3SourceCompanionCatalogue.Grade(question,question.Expected);
+                Assert.True(valid.NumericCorrect);
+                Assert.True(valid.TeacherReview);
+                var malformed=Grade3SourceCompanionCatalogue.Grade(question,"not-an-answer");
+                Assert.False(malformed.NumericCorrect);
+                Assert.True(malformed.TeacherReview);
+
+                string wrong=question.AnswerType switch
+                {
+                    "integer" => (int.Parse(question.Expected!) + 1).ToString(),
+                    "rational" => "1/0",
+                    "comparison" => question.Expected == ">" ? "<" : ">",
+                    _ => throw new InvalidOperationException("Unexpected type")
+                };
+                var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);
+                Assert.False(rejected.NumericCorrect);
+                Assert.True(rejected.TeacherReview);
+            }
+        }
+    }
+
+    [Fact]
+    public void NoSourceAlignedQuestionForEarlierDedicatedLessonsIsDuplicatedInGenericBank()
+    {
+        for (var lessonNumber=1; lessonNumber<=8; lessonNumber++)
+        {
+            Assert.False(Grade3SourceCompanionCatalogue.TryGet(
+                $"PED:US-CCSS-MATH:G3:U01:L{lessonNumber:00}",out _));
+        }
+    }
+
 }
