@@ -18,10 +18,32 @@
           "sourceStudentFacingText": "What do you notice? What do you wonder? |",
           "humanTaskPossible": true,
           "numericQuestionPossible": false,
-          "visualDependencyPossible": false,
+          "visualDependencyPossible": true,
           "sourceFigurePixelsVerified": false,
-          "firstPartyMatching": "NOT_SOURCE_ITEM_VERIFIED",
-          "fullAcademicMatch": false
+          "firstPartyMatching": "CODE_LEVEL_SOURCE_SUBPART_MAPPING_NOT_FIGURE_PDF_OR_RUNTIME_VERIFIED",
+          "fullAcademicMatch": false,
+          "parityStatus": "MISMATCH_BLOCKED",
+          "originalTeacherLessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
+          "originalSection": "Warm-up: Notice and Wonder: Graphs — Student Facing",
+          "originalPromptAnchor": "What do you notice? What do you wonder?",
+          "sourceValuesAndVisualContext": "Six unnamed vertical pictograph columns, left to right 4/3/1/2/7/6; one figure stands for one learner",
+          "mappedCode": {
+            "learnerView": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
+            "submissionController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
+            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
+          },
+          "mappedSubparts": [
+            {
+              "type": "TEACHER_LED_OPEN_RESPONSE",
+              "formField": "WarmupObservations",
+              "review": "Teacher checks an observation grounded in shown counts and a valid wonder; partner discussion cannot be auto-certified"
+            }
+          ],
+          "gatingReasons": [
+            "Publisher 2021 Student Task PDF graphic pixels and visual parity not independently verified",
+            "Published effective Rich V2 and learner runtime not independently compared",
+            "Teacher-mediated source task completion cannot be inferred from submitted text alone"
+          ]
         },
         {
           "ordinal": 2,
@@ -30,21 +52,86 @@
           "numericQuestionPossible": false,
           "visualDependencyPossible": true,
           "sourceFigurePixelsVerified": false,
-          "firstPartyMatching": "NOT_SOURCE_ITEM_VERIFIED",
-          "fullAcademicMatch": false
+          "firstPartyMatching": "CODE_LEVEL_SOURCE_SUBPART_MAPPING_NOT_FIGURE_PDF_OR_RUNTIME_VERIFIED",
+          "fullAcademicMatch": false,
+          "parityStatus": "MISMATCH_BLOCKED",
+          "originalTeacherLessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
+          "originalSection": "Activity 1: Picture Time — Student Facing",
+          "originalPromptAnchor": "What could the categories be for this picture graph? Be prepared to explain your reasoning.",
+          "sourceValuesAndVisualContext": "Same six single-unit vertical picture columns with the additional title How We Get Home, still no category labels",
+          "mappedCode": {
+            "learnerView": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
+            "submissionController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
+            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
+          },
+          "mappedSubparts": [
+            {
+              "type": "TEACHER_LED_CATEGORY_HYPOTHESIS",
+              "formField": "PlausibleCategories",
+              "review": "Teacher accepts multiple plausible interpretations; title does not prove exact labels"
+            }
+          ],
+          "gatingReasons": [
+            "Publisher 2021 Student Task PDF graphic pixels and visual parity not independently verified",
+            "Published effective Rich V2 and learner runtime not independently compared",
+            "Teacher-mediated source task completion cannot be inferred from submitted text alone"
+          ]
         },
         {
           "ordinal": 3,
           "sourceStudentFacingText": "A group of students were asked, \"How do you get home?\" Their responses are shown in a picture graph and a bar graph. |  |  | How are the graphs the same? How are they different? |  What can we learn about how students get home based on the graphs? |  Write two questions you could ask about how students get home based on the graphs.",
-          "humanTaskPossible": false,
+          "humanTaskPossible": true,
           "numericQuestionPossible": false,
           "visualDependencyPossible": true,
           "sourceFigurePixelsVerified": false,
-          "firstPartyMatching": "NOT_SOURCE_ITEM_VERIFIED",
-          "fullAcademicMatch": false
+          "firstPartyMatching": "CODE_LEVEL_SOURCE_SUBPART_MAPPING_NOT_FIGURE_PDF_OR_RUNTIME_VERIFIED",
+          "fullAcademicMatch": false,
+          "parityStatus": "MISMATCH_BLOCKED",
+          "originalTeacherLessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
+          "originalSection": "Activity 2: Picture Graphs and Bar Graphs — Student Facing",
+          "originalPromptAnchor": "How are the graphs the same? How are they different? What can we learn about how students get home based on the graphs? Write two questions ...",
+          "sourceValuesAndVisualContext": "Both graphs: Walk 4, Bike 3, Skateboard 1, Car 2, Bus 7, Train 6; picture key 1:1, bar axis 0–8 by 1",
+          "mappedCode": {
+            "learnerView": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
+            "submissionController": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
+            "unrunNumericRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs"
+          },
+          "mappedSubparts": [
+            {
+              "type": "TEACHER_LED_COMPARE_REPRESENTATIONS",
+              "formField": "GraphComparison",
+              "review": "Human review of similarities/differences and information graph can support"
+            },
+            {
+              "type": "TEACHER_LED_AUTHOR_TWO_QUESTIONS",
+              "formField": "TwoGraphQuestions",
+              "review": "Two genuinely different answerable questions are required; no numeric surrogate passes this task"
+            },
+            {
+              "type": "EDULYTICS_ADDITIONAL_NUMERIC_PRACTICE",
+              "formFields": [
+                "BusCount",
+                "BusSkateboardDifference",
+                "TotalStudents"
+              ],
+              "answers": [
+                "7",
+                "6",
+                "23"
+              ],
+              "review": "These supplementary questions are correctly gradeable after categories become visible; they are NOT original-publisher task replacements"
+            }
+          ],
+          "gatingReasons": [
+            "Publisher 2021 Student Task PDF graphic pixels and visual parity not independently verified",
+            "Published effective Rich V2 and learner runtime not independently compared",
+            "Teacher-mediated source task completion cannot be inferred from submitted text alone"
+          ]
         }
       ],
-      "sourceToOriginalEdulyticsTaskMapping": "EXPLICIT_GAP"
+      "sourceToOriginalEdulyticsTaskMapping": "PARTIAL_CODE_AND_TEACHER_REVIEW_MAP_RECORDED_NOT_SOURCE_PIXEL_OR_RUNTIME_CERTIFIED",
+      "firstPartyTaskMappingDate": "2026-10-23",
+      "mappingMethod": "Direct official 2021 Kendall Hunt teacher lesson and preparation HTML + current learner View/Controller code on PR #575, without Our-CS, with original figure/PDF access openly gated"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L02",
