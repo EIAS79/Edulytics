@@ -286,4 +286,36 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         Assert.True(chart >= 0 && chart < activity);
     }
 
+    [Fact]
+    public void FirstPartyCooldownKeepsTheTwoOriginal2021SkillTypesDistinctAndTeacherReviewed()
+    {
+        Assert.NotNull(typeof(Grade3Lesson1Answers).GetProperty(
+            nameof(Grade3Lesson1Answers.CoolDownFact)));
+        Assert.NotNull(typeof(Grade3Lesson1Answers).GetProperty(
+            nameof(Grade3Lesson1Answers.CoolDownOriginalQuestion)));
+        var fact = Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+            "Independent library graph fact", "The Space bar is tallest.",
+            "Support the fact with independent survey data.");
+        var question = Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+            "Independent library graph question", "How many chose Comics?",
+            "Check it is answerable from the independent graph.");
+        Assert.Null(fact.MachineCorrect);
+        Assert.Null(question.MachineCorrect);
+        Assert.True(fact.TeacherReviewRequired);
+        Assert.True(question.TeacherReviewRequired);
+    }
+
+    [Fact]
+    public void CooldownFactFieldIsRoutedThroughStudentPostFeedback()
+    {
+        // Stage C written-only contract, never run here.
+        var source = typeof(Grade3Lesson1ActivitiesController)
+            .GetMethod("Submit", BindingFlags.Instance | BindingFlags.Public);
+        Assert.NotNull(source);
+        var body = typeof(Grade3Lesson1Answers).GetProperty(
+            nameof(Grade3Lesson1Answers.CoolDownFact));
+        Assert.NotNull(body);
+        Assert.NotEqual(nameof(Grade3Lesson1Answers.CoolDownOriginalQuestion), body!.Name);
+    }
+
 }
