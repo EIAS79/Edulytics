@@ -55,8 +55,12 @@
                 <h2>Source-aligned skill check — locally reviewed text</h2>
                 <p>@l.SourceBasedCheck.Prompt</p>
                 <p>The mathematical situation is adapted from the original public 2021 Student Facing HTML. Publisher figures and teacher-only Cool-downs are not reproduced.</p>
-                <label for="source-check-answer">My numerical answer</label>
-                <input id="source-check-answer" name="SourceCheckAnswer" value="@Model.Answers.SourceCheckAnswer" maxlength="100" inputmode="numeric" required />
+                @if(l.SourceBasedCheck.AnswerType != "teacher") {
+                    <label for="source-check-answer">My answer</label>
+                    <input id="source-check-answer" name="SourceCheckAnswer" value="@Model.Answers.SourceCheckAnswer" maxlength="100" inputmode="text" required />
+                } else {
+                    <p>This source-based problem requires a drawing, measurement, reasoning or project. A teacher must evaluate it; the numeric grader cannot approve it.</p>
+                }
                 <label for="source-check-reason">My drawing, equation and explanation</label>
                 <textarea id="source-check-reason" name="SourceCheckReasoning" rows="3" maxlength="2000">@Model.Answers.SourceCheckReasoning</textarea>
             </section>
