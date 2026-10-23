@@ -50,7 +50,7 @@
         <input type="hidden" name="lessonId" value="@Model.LessonId" />
 
         <section class="panel" aria-labelledby="warmup">
-            <h2 id="warmup">1. Notice and wonder — picture graph</h2>
+            <h2 id="warmup">1. Notice and wonder — picture graph (15 minutes)</h2>
             <p>A mark stands for one student. Before seeing category labels, look at these six columns. Explain what you notice and what you wonder. Discuss your ideas with a partner.</p>
             <div class="picture-columns" role="group" aria-label="Unlabelled picture graph with six upright columns, left to right: 4, 3, 1, 2, 7 and 6 symbols; each symbol represents one student">
                 @for (var i = 0; i < source.Count; i++)
@@ -73,7 +73,7 @@
         </section>
 
         <section class="panel" aria-labelledby="picture">
-            <h2 id="picture">2. Picture Time — understand the context</h2>
+            <h2 id="picture">2. Picture Time — understand the context (10 minutes)</h2>
             <p>The same six columns now have the title <strong>How We Get Home</strong>, but category names are still hidden. Suggest six possible labels. Explain how the title changes what you can infer and why no particular category name can be proved without more data.</p>
             <h3>How We Get Home — columns still unlabelled</h3>
             <div class="picture-columns" role="group" aria-label="Six unlabelled vertical picture graph categories under title How We Get Home; symbol key one pupil; counts 4, 3, 1, 2, 7 and 6">
@@ -91,12 +91,13 @@
                 }
             </div>
             <p>Key: ● = 1 student. A graph title gives context, not missing category names.</p>
+            <p class="note">Teacher language-support prompt (Representation): Why is this a picture graph? What information does the key provide? Give pupils quiet thinking time before partners justify different possible categories.</p>
             <label for="plausible-categories">Your possible labels and explanation</label>
             <textarea id="plausible-categories" name="PlausibleCategories" rows="3" maxlength="2000">@Model.Answers.PlausibleCategories</textarea>
         </section>
 
         <section class="panel" aria-labelledby="graphs">
-            <h2 id="graphs">3. Two graphs, one dataset</h2>
+            <h2 id="graphs">3. Two graphs, one dataset (20 minutes)</h2>
             <p>Now read the real category names from the lesson. Both original-format diagrams below are created directly from the same numerical data.</p>
             <h3>How We Get Home — picture graph</h3>
             <div class="picture-columns" role="group" aria-label="How We Get Home: 6 upright columns, one symbol per student, Walk 4, Bike 3, Skateboard 1, Car 2, Bus 7, Train 6">
@@ -133,6 +134,7 @@
                 </div>
             </div>
             <p class="note">Both representations have the same categories and quantities. One uses a symbol per student; the other uses bar height. For scale accessibility, read the explicit counts on each bar.</p>
+            <p class="note">MLR8 discussion support: after a student shares a comparison, ask a partner to restate it in precise mathematical language before offering another idea. This oral task requires teacher observation.</p>
             <label for="graph-comparison">Source activity 2, part 1: How are the two graphs the same, and how are they different?</label>
             <textarea id="graph-comparison" name="GraphComparison" rows="3" maxlength="2000">@Model.Answers.GraphComparison</textarea>
             <label for="graph-learnings">Source activity 2, part 2: What can we learn about how students get home from these graphs?</label>
@@ -157,8 +159,17 @@
             </div>
         </section>
 
+        <section class="panel" aria-label="Lesson synthesis and Math Community reasoning">
+            <h2>4. Lesson synthesis (10 minutes) — how can a graph communicate information?</h2>
+            <p>Explain how the title, key, labelled categories and one-unit bar axis let you read and compare the same responses. Can you ask a question that the graph cannot answer?</p>
+            <label for="synthesis-reflection">My synthesis and an example of an unanswerable question</label>
+            <textarea id="synthesis-reflection" name="SynthesisReflection" rows="3" maxlength="2000">@Model.Answers.SynthesisReflection</textarea>
+            <label for="math-community-reflection">What does respectful mathematical discussion look and sound like for students and the teacher?</label>
+            <textarea id="math-community-reflection" name="MathCommunityReflection" rows="3" maxlength="2000">@Model.Answers.MathCommunityReflection</textarea>
+            <p class="note">Teacher-only observation: 1-minute independent warm-up, partner dialogue, justified category suggestions, precise restating of a peer's observation (MLR8), and reflection on norms. Numeric checks do not assess these activities.</p>
+        </section>
         <section class="panel" aria-labelledby="cooldown">
-            <h2 id="cooldown">4. Edulytics-authored Cool-down</h2>
+            <h2 id="cooldown">5. Edulytics-authored Cool-down (5 minutes)</h2>
             <p>This is a NEW fictional library survey. It checks the same graph-reading skills, but it is not the publisher's teacher-only Cool-down and not the school-travel dataset.</p>
             <div class="picture-rows">
                 @foreach (var item in library)
@@ -183,15 +194,6 @@
             <p class="note">Your teacher reviews the explanation and the questions you create. This page checks numbers only.</p>
         </section>
 
-        <section class="panel" aria-label="Lesson synthesis and Math Community reasoning">
-            <h2>5. Lesson synthesis — how can a graph communicate information?</h2>
-            <p>Explain how the title, key, labelled categories and one-unit bar axis let you read and compare the same responses. Can you ask a question that the graph cannot answer?</p>
-            <label for="synthesis-reflection">My synthesis and an example of an unanswerable question</label>
-            <textarea id="synthesis-reflection" name="SynthesisReflection" rows="3" maxlength="2000">@Model.Answers.SynthesisReflection</textarea>
-            <label for="math-community-reflection">What does respectful mathematical discussion look and sound like for students and the teacher?</label>
-            <textarea id="math-community-reflection" name="MathCommunityReflection" rows="3" maxlength="2000">@Model.Answers.MathCommunityReflection</textarea>
-            <p class="note">Teacher-only observation: 1-minute independent warm-up, partner dialogue, justified category suggestions, precise restating of a peer's observation (MLR8), and reflection on norms. Numeric checks do not assess these activities.</p>
-        </section>
         <button class="submit" type="submit">Check my numeric answers</button>
     </form>
 
@@ -224,7 +226,8 @@
                 <tr><th scope="row">Teacher</th><td>Display the data and invite multiple interpretations.</td><td>Give wait time; record and invite reasoning from every learner.</td></tr>
             </tbody>
         </table>
-        <p>Optional teacher-directed reinforcement: create and sort another picture/bar display from safe classroom objects, or play an addition-within-20 square-capture game. These teacher-led activities are not represented as automatically graded here.</p>
+        <p>Optional teacher-directed centers from the 2021 preparation: <strong>Sort and Display (Grades 1–3), Stage 2 — Picture or Bar Graphs</strong>; and <strong>Capture Squares (Grades 1–3), Stage 3 — Add Within 20</strong>. These are separate teacher-led activities, not numeric items certified by this page.</p>
+        <p class="note">Post-lesson teacher reflection from the original preparation: how did the students' lived experiences shape the discussion of interpreting category graphs? Classroom evidence and teacher observation must be recorded outside this unsaved learner companion.</p>
         <p class="note">Teacher rubric: check correct category references; one mark per pupil; identical counts across both graph types; a plausible explanation of key versus scale; two genuinely answerable student-authored questions; and partner discussion evidence.</p>
     </section>
     <p class="note">Curriculum source: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html" rel="noopener noreferrer">Illustrative Mathematics K–5, Grade 3 Unit 1 Lesson 1 (2021)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer">CC BY 4.0</a>. Attribution is for alignment of objectives and data; Edulytics graphics, wording and Cool-down are independently authored. No publisher logos or original artwork are reproduced.</p>
