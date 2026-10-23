@@ -151,6 +151,17 @@
                 <p>The diagrams, explanation, partner card sorting and teacher-only original Cool-down require independent teacher review. Enter your drawings and reasoning in the source-work field above.</p>
             </section>
         }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 12) {
+            <section class="panel" aria-label="Source lesson twelve teacher-led visual and problem posing tasks">
+                <h2>Source warm-up: groups of dots</h2>
+                <p>The first published description has four groups, each formed by two rows of five dots (40 dots altogether). The second picture's precise dot arrangement is not independently verified here. With your teacher, explain different grouping methods without replacing the unread figure by a guessed one.</p>
+                <h2>Source Activity 1: co-craft a question before solving</h2>
+                <p>The teacher first displays ONLY the statement that Tyler has three boxes. Partners invent plausible mathematical questions before the teacher reveals the full five-baseballs-per-box problem. A machine-graded answer to 3 × 5 does not demonstrate question posing.</p>
+                <h2>Source Activity 2: five original story settings</h2>
+                <p>In each of the six numeric tasks above, write an equation and create a matching diagram or model; compare one strategy with a partner. The five contexts involve teams, panes of glass, earrings, pencils and carrots. The teacher checks group count, group size, correct units and reasoning individually.</p>
+                <p>Only a teacher can verify the original problem-posing dialogue, drawing validity, dot-image interpretation and which method you found useful. The publisher's Cool-down is teacher-access controlled; the other Cool-down here is independently written by Edulytics.</p>
+            </section>
+        }
         @if(showMinuteClock) {
             <section class="panel" aria-label="Edulytics original analogue clock reading">
                 <h2>Read an original analogue clock</h2>
@@ -185,6 +196,30 @@
                 </svg>
                 <p>Use the small marks for individual minutes, not only the
                     5-minute numbers. The clock alone cannot tell a.m. from p.m.</p>
+            </section>
+        }
+        @if(l.SourceSubtasks.Count > 0) {
+            <section class="panel" aria-label="Individual published source-aligned mathematical subtasks">
+                <h2>Original public source: individually checked numerical tasks</h2>
+                <p>These short independently worded prompts preserve the source contexts and numerical constraints. For every answer, construct a drawing, tape diagram or expression and explain why it matches. The teacher evaluates the representation; a number alone never completes this activity.</p>
+                @for(var i=0;i<l.SourceSubtasks.Count;i++){
+                    var task=l.SourceSubtasks[i];
+                    <div class="panel">
+                        <h3>@task.SourceActivity — task @(i+1)</h3>
+                        <p>@task.Prompt</p>
+                        <label for="source-sub-answer-@i">My calculated response</label>
+                        @if(task.AnswerType!="teacher"){
+                            <input id="source-sub-answer-@i" name="SourceSubtaskAnswers[@i]" maxlength="100"
+                                value="@Model.Answers.SourceSubtaskAnswers.ElementAtOrDefault(i)" inputmode="text" />
+                        } else {
+                            <input type="hidden" name="SourceSubtaskAnswers[@i]" value="" />
+                        }
+                        <label for="source-sub-explain-@i">My matching diagram, equation or explanation</label>
+                        <textarea id="source-sub-explain-@i" name="SourceSubtaskReasoning[@i]"
+                            rows="3" maxlength="2000">@Model.Answers.SourceSubtaskReasoning.ElementAtOrDefault(i)</textarea>
+                    </div>
+                }
+                <p>Source task PDF figures, co-crafted oral questions and the publisher Cool-down are NOT automatically certified by these entries.</p>
             </section>
         }
         @if(l.SourceBasedCheck is not null) {
@@ -236,6 +271,16 @@
     @if(Model.Submitted) {
         <section class="panel" aria-live="polite">
             <h2>Mathematical feedback (not a school grade)</h2>
+            @if(Model.SourceSubtaskFeedback is not null) {
+                @for(var i=0;i<Model.SourceSubtaskFeedback.Count;i++){
+                    var feedback=Model.SourceSubtaskFeedback[i];
+                    <div class="@(feedback.NumericCorrect==true?"ok":feedback.NumericCorrect==false?"no":"human")">
+                        <h3>Source subtask @(i+1): @l.SourceSubtasks[i].SourceActivity</h3>
+                        <p>@(feedback.NumericCorrect==true?"Numerical result correct.":feedback.NumericCorrect==false?"Numerical answer needs revision.":"Requires teacher judgment.") @feedback.Message</p>
+                        <p><em>Individual drawings and reasoning remain teacher-reviewed, even if the integer is correct.</em></p>
+                    </div>
+                }
+            }
             @foreach(var item in new[] {
                 (Name:"Source-aligned numerical check",Feedback:Model.SourceCheckFeedback),
                 (Name:"Original skill practice",Feedback:Model.PracticeFeedback),

@@ -9,6 +9,8 @@ public sealed class Grade3SourceCompanionAnswers
     public string? PracticeAnswer { get; set; }
     public string? PracticeReasoning { get; set; }
     public string? SourceWorkReflection { get; set; }
+    public List<string?> SourceSubtaskAnswers { get; set; } = [];
+    public List<string?> SourceSubtaskReasoning { get; set; } = [];
     public string? CoolDownAnswer { get; set; }
     public string? CoolDownReasoning { get; set; }
 }
@@ -21,4 +23,5 @@ public sealed record Grade3SourceCompanionPage(
     bool Submitted,
     Grade3CompanionFeedback? PracticeFeedback,
     Grade3CompanionFeedback? CoolDownFeedback,
-    Grade3CompanionFeedback? SourceCheckFeedback = null);
+    Grade3CompanionFeedback? SourceCheckFeedback = null,
+    IReadOnlyList<Grade3CompanionFeedback>? SourceSubtaskFeedback = null);

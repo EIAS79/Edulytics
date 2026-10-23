@@ -46,7 +46,18 @@ public sealed class Grade3SourceCompanionController(
                 .Any(x => x?.Length > 2000))
             return BadRequest("Invalid lesson answer.");
 
-        var sourceCheck = lesson!.SourceBasedCheck is null ? null :
+        answers.SourceSubtaskAnswers ??= [];
+        answers.SourceSubtaskReasoning ??= [];
+        if (lesson!.SourceSubtasks.Count > 30 ||
+            answers.SourceSubtaskAnswers.Count > lesson.SourceSubtasks.Count ||
+            answers.SourceSubtaskReasoning.Count > lesson.SourceSubtasks.Count ||
+            answers.SourceSubtaskAnswers.Any(x => x?.Length > 100) ||
+            answers.SourceSubtaskReasoning.Any(x => x?.Length > 2000))
+            return BadRequest("Invalid lesson subtask answers.");
+        var sourceSubtaskFeedback = lesson.SourceSubtasks.Count == 0 ? null :
+            lesson.SourceSubtasks.Select((q, i) => Grade3SourceCompanionCatalogue.Grade(
+                q, answers.SourceSubtaskAnswers.ElementAtOrDefault(i))).ToArray();
+        var sourceCheck = lesson.SourceBasedCheck is null ? null :
             Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck, answers.SourceCheckAnswer);
         var p = Grade3SourceCompanionCatalogue.Grade(
             lesson!.IndependentPractice!, answers.PracticeAnswer);
@@ -54,7 +65,8 @@ public sealed class Grade3SourceCompanionController(
             lesson.OriginalEdulyticsCoolDown!, answers.CoolDownAnswer);
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
         return View("Index", new Grade3SourceCompanionPage(
-            curriculumAdoptionId, lessonId, lesson, answers, true, p, cool, sourceCheck));
+            curriculumAdoptionId, lessonId, lesson, answers, true, p, cool,
+            sourceCheck, sourceSubtaskFeedback));
     }
 
     private async Task<(Grade3CompanionLesson? Lesson, IActionResult? Failure)> AuthorizeLesson(

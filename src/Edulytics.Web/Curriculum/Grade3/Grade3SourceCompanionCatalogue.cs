@@ -241,6 +241,9 @@ public sealed class Grade3CompanionLesson
     public string TeacherLearningGoals { get; set; } = "";
     public string StudentFacingGoal { get; set; } = "";
     public List<string> SourceActivityNames { get; set; } = [];
+    // An optional, independently mapped 1:1 set of publicly verifiable
+    // source numeric questions. Still separate from teacher-only components.
+    public List<Grade3OriginalQuestion> SourceSubtasks { get; set; } = [];
     public string FirstPartyFamily { get; set; } = "";
     public Grade3OriginalQuestion? SourceBasedCheck { get; set; }
     public Grade3SourceCheckProvenance? SourceBasedCheckProvenance { get; set; }
@@ -268,6 +271,8 @@ public sealed class Grade3SourceCheckProvenance
 }
 public sealed class Grade3OriginalQuestion
 {
+    public string Id { get; set; } = "";
+    public string SourceActivity { get; set; } = "";
     public string Prompt { get; set; } = "";
     public string AnswerType { get; set; } = "";
     public string? Expected { get; set; }

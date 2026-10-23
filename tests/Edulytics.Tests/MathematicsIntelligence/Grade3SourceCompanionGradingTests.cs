@@ -103,6 +103,27 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void LessonTwelveContainsAllSixPublicSourceNumericContextsAndKeepsModelsHuman()
+    {
+        // Authoring-only Stage C tests, not run.
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L12",out var lesson));
+        Assert.Equal(6,lesson!.SourceSubtasks.Count);
+        var expected=new[]{15,8,14,50,20,30};
+        for(var i=0;i<expected.Length;i++){
+            var q=lesson.SourceSubtasks[i];
+            Assert.Equal("integer",q.AnswerType);
+            Assert.False(string.IsNullOrWhiteSpace(q.Id));
+            var good=Grade3SourceCompanionCatalogue.Grade(q,expected[i].ToString());
+            var wrong=Grade3SourceCompanionCatalogue.Grade(q,(expected[i]+1).ToString());
+            Assert.True(good.NumericCorrect);
+            Assert.False(wrong.NumericCorrect);
+            Assert.True(good.TeacherReview);
+        }
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);
