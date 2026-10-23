@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 2,
+    "lessonsFullyReadyForStageD": 3,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 141,
+    "lessonsWithACExplicitGap": 140,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,40 +32,28 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 2,
+    "lessonsIndividuallyComparedToAllOriginalElements": 3,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 2,
+    "lessonsWithActualRichV2SourcePerfect": 3,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 0,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 22
+    "sourceElementsSemanticallyVerifiedForAuthoring": 30
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 2,
-    "firstUnclosedOrdinal": 3,
+    "lastConsecutiveReadyForStageDOrdinal": 3,
+    "firstUnclosedOrdinal": 4,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
   "returnQueue": [
-    {
-      "ordinal": 3,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L03",
-      "status": "A_C_EXPLICIT_GAP",
-      "reasons": [
-        "Exact lesson-specific Rich V2 teaching candidate repaired in branch; effective displayed lesson, total source-to-student subpart mapping and complete teacher review evidence are still unverified.",
-        "Original 2021 first-edition task PDF and source graphic pixel verification incomplete due publisher asset fetching limitation; source-perfect 100% not proven.",
-        "Full 2021 figures/Student Task PDF and teacher pedagogical details not comprehensively verified",
-        "Effective published Rich V2 body not checked against authoritative local source",
-        "Written tests and authorized student page have not been executed or rendered"
-      ]
-    },
     {
       "ordinal": 4,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L04",
@@ -1698,13 +1686,13 @@
       "unitNumber": 1,
       "lessonNumber": 3,
       "title": "Scaled Picture Graphs PLC Activity",
-      "stageA": "ORIGINAL_2021_TEACHER_AND_PREPARATION_TEXT_CHECKED_SOURCE_PDF_FIGURE_PIXEL_GAP",
-      "stageB": "SPECIFIC_RICH_V2_AND_RAZOR_SEQUENCE_REPAIRED_NOT_RUNTIME_VERIFIED",
-      "stageC": "FIRST_PARTY_PRACTICE_REMAIN_HUMAN_NUMERIC_SPLIT_REGRESSIONS_WRITTEN_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "FIRST_EDITION_2021_SOURCE_SEMANTIC_8_OF_8_AUTHORING",
+      "stageB": "RICH_V2_EXACT_SOURCE_SCALED_CHARTS_AND_BIRDS_COOLDOWN_AUTHORED",
+      "stageC": "SCALED_GRADER_AND_TEACHER_OPEN_TASKS_TESTS_WRITTEN_NOT_EXECUTED",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 8,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "fullyVerifiedSourceElements": 8,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-3-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -1715,7 +1703,9 @@
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
       "richV2EmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
-      "richV2AuthoredTestsUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs"
+      "richV2AuthoredTestsUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
+      "readyForStageD": true,
+      "verifiedParityScope": "FIRST_PARTY_ACADEMIC_SEMANTIC_AUTHORING_ONLY"
     },
     {
       "gradeOrdinal": 4,

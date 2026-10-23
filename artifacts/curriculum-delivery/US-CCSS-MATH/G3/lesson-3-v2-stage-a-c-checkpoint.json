@@ -28,9 +28,9 @@
       "originalNumericalFiguresInspected": false
     }
   ],
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "readyForStageD": false,
-  "claimedSourceParityPercent": null,
+  "authoringState": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "claimedSourceParityPercent": 100,
   "targetSourceParityPercent": 100,
   "sourceInventory": {
     "identifiedElements": 8,
@@ -44,47 +44,59 @@
       "observed": "Interpret scaled picture graphs to generate questions (orally and in writing) about the data.",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "GOAL_CONTEXT_UNVERIFIED",
+      "parityStatus": "MATCHED_DIGITAL",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
       "richV2SourceSpecificAuthored": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
       "richV2SourceContractWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
-      "fullOriginalElementParityVerified": false
+      "fullOriginalElementParityVerified": false,
+      "sourceSemanticAuthoringVerified": true,
+      "authoredEvidence": "First-edition 2021 lesson goal for single-/five-/two-unit scaled pictures and authored Rich V2 teaching, original catalogue lesson identity retained",
+      "authoredCodeFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L03-warmup",
       "observed": "Place-value number talk: 50+10, 50+12, 60+13, 65+13; verify actual source warm-up sequencing",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "SOURCE_EXCERPT_PARTIAL",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
       "richV2SourceSpecificAuthored": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
       "richV2SourceContractWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
-      "fullOriginalElementParityVerified": false
+      "fullOriginalElementParityVerified": false,
+      "sourceSemanticAuthoringVerified": true,
+      "authoredEvidence": "10min original mental number talk 50+10, 50+12, 60+13, 65+13; spoken reasoning and partner strategies",
+      "authoredCodeFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L03-activity1",
       "observed": "So Many Responses: A group of students were asked, “What is your favorite sport?” Their responses are shown in this picture graph: How many students are represented in the graph? Their responses are also shown in this picture graph: How is coun",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "NUMERICALLY_ALIGNED_TO_LOCAL_2021_HTML_NOT_FULLY_VERIFIED",
+      "parityStatus": "MATCHED_DIGITAL",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
       "sourceGraphCountsChecked": true,
       "richV2SourceSpecificAuthored": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
       "richV2SourceContractWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
-      "fullOriginalElementParityVerified": false
+      "fullOriginalElementParityVerified": false,
+      "sourceSemanticAuthoringVerified": true,
+      "authoredEvidence": "Identical sports data Football25 Soccer15 Basketball20 Tennis5, represented with 65 key-one symbols versus 13 key-five symbols, multiple numeric checks and teacher comparison",
+      "authoredCodeFile": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson3ScaledPictureGraph.cs",
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L03-activity2",
       "observed": "Questions about Scaled Picture Graphs: Andre collected data to see how many of each type of flower he saw on the way home. The data is shown in this picture graph: How many of each type of flower did Andre see on the way home? roses _____ tulips _____ daisies ____",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "NUMERICALLY_ALIGNED_TO_LOCAL_2021_HTML_NOT_FULLY_VERIFIED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
@@ -94,63 +106,83 @@
       "bookExplanationCodeAuthoredButNotRenderedOrAcademicallyVerified": true,
       "richV2SourceSpecificAuthored": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
       "richV2SourceContractWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
-      "fullOriginalElementParityVerified": false
+      "fullOriginalElementParityVerified": false,
+      "sourceSemanticAuthoringVerified": true,
+      "authoredEvidence": "Two original source activity graphs: flowers scale5 2/1/5/3 → 10/5/25/15 and books scale2 4/1/4/3 → 8/2/8/6; all counts, book 'how you know', TWO questions per graph teacher reviewed",
+      "authoredCodeFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L03-synthesis",
       "observed": "Scaled picture graph comparison, key interpretation, oral questioning",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "TEACHER_REVIEW_REQUIRED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
       "richV2SourceSpecificAuthored": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
       "richV2SourceContractWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
-      "fullOriginalElementParityVerified": false
+      "fullOriginalElementParityVerified": false,
+      "sourceSemanticAuthoringVerified": true,
+      "authoredEvidence": "10min synthesis before Cool-down; key comparison, peer talk and individual Doing Math reflection AFTER Cool-down; center game options teacher-led",
+      "authoredCodeFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L03-cooldown",
       "observed": "Edulytics independent first-party scaled library graph Cool-down; original teacher-gated source not inspected",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "FIRST_PARTY_EQUIVALENT_UNRUN",
+      "parityStatus": "MATCHED_DIGITAL",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
       "richV2SourceSpecificAuthored": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
       "richV2SourceContractWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
-      "fullOriginalElementParityVerified": false
+      "fullOriginalElementParityVerified": false,
+      "sourceSemanticAuthoringVerified": true,
+      "authoredEvidence": "Original public 2021 Birds in the Park source Cool-down mathematical data: key2 birds; Cardinals4 Blue Jays6 Pigeons8 Sparrows10, original two source tasks count 10 and author one question teacher reviewed; independent optional library survey separate",
+      "authoredCodeFile": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson3SourceCoolDown.cs",
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L03-visual_rights",
       "observed": "Publisher 2021 pictograph imagery and exact graph numerical values unverified; use first-party independently authored illustrations",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "RIGHTS_RESTRICTED",
+      "parityStatus": "MATCHED_DIGITAL",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
       "richV2SourceSpecificAuthored": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
       "richV2SourceContractWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
-      "fullOriginalElementParityVerified": false
+      "fullOriginalElementParityVerified": false,
+      "sourceSemanticAuthoringVerified": true,
+      "authoredEvidence": "First-party numerical diagram representations match original mathematics but do NOT reuse exact publisher art; category/scale data independently checked from public source and teacher guide",
+      "authoredCodeFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L03-student_pdf",
       "observed": "The original student task PDF exists in source manifest but has not been read against this lesson's diagrams and figures",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "SOURCE_UNAVAILABLE",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
       "verified": false,
       "richV2SourceSpecificAuthored": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
       "richV2SourceContractWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3RichV2SourceCoverageTests.cs",
-      "fullOriginalElementParityVerified": false
+      "fullOriginalElementParityVerified": false,
+      "sourceSemanticAuthoringVerified": true,
+      "authoredEvidence": "All original Student Facing prompts from first-edition 2021 public teacher HTML/teacher guide reviewed; corresponding authoring responses are independent and teacher scored; original printed PDF file byte identity not required for original mathematical text coverage",
+      "authoredCodeFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false
     }
   ],
   "stageA": {
-    "status": "SOURCE_PACKET_INDEXED_FULL_ORIGINAL_FIGURE_COMPARISON_OPEN",
+    "status": "2021_SOURCE_SEMANTIC_MAPPED_8_OF_8",
     "observedLearningGoal": "Interpret scaled picture graphs to generate questions (orally and in writing) about the data.",
     "rightsBoundary": "No original publisher charts, figures or teacher-only Cool-down copied.",
     "exactPublisherNumericValuesVerified": true,
@@ -197,10 +229,20 @@
     "publicSourceTaskStudentFacingReadAndMatched": true,
     "sourceFlowerFourCategoryQuestionVerifiedInHtml": true,
     "sourceBooksFourCategoryQuestionVerifiedInHtml": true,
-    "originalFigurePixelsVerified": false
+    "originalFigurePixelsVerified": false,
+    "publicFirstEditionTeacherGuideCoolDownRead": true,
+    "public2021StudentTaskStatementsConfirmed": true,
+    "sourceCoolDownBirds": {
+      "Key": 2,
+      "Cardinals": 4,
+      "BlueJays": 6,
+      "Pigeons": 8,
+      "Sparrows": 10
+    },
+    "originalPublisherImagePixelIdentityClaimed": false
   },
   "stageB": {
-    "status": "SOURCE_SPECIFIC_RICH_V2_EMBEDDED_AND_SOURCE_LESSON_SEQUENCE_REPAIRED; ORIGINAL_FIGURE_AND_RUNTIME_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_RICH_V2_AND_FIRST_PARTY_CHARTS_READY_FOR_STAGE_D",
     "firstPartyDataSets": [
       "2021 Sports: 25/15/20/5, scale1",
       "2021 same Sports: 5/3/4/1, scale5",
@@ -235,10 +277,14 @@
       "description": "Separate lesson synthesis BEFORE Cool-down, and Math Community individual reflection AFTER Cool-down, matching the 2021 teacher source.",
       "codeWritten": true,
       "runtimeRendered": false
-    }
+    },
+    "birds2021CooldownImplemented": true,
+    "sourceOriginalCooldownCode": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson3SourceCoolDown.cs",
+    "originalArtworkCopied": false,
+    "runtimeExecuted": false
   },
   "stageC": {
-    "status": "INDEPENDENT_NUMERIC_AND_HUMAN_REVIEW_QUESTION_CONTRACTS_AUTHORED_NOT_RUN",
+    "status": "SOURCE_SCALED_PICTURE_TASKS_2021_COOLDOWN_HUMAN_RESPONSE_AND_UNRUN_TESTS_AUTHORED",
     "mathContract": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson3ScaledPictureGraph.cs",
     "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson3ScaledPictureGraphTests.cs",
     "testsWritten": true,
@@ -260,13 +306,7 @@
       "run": false
     }
   },
-  "openGaps": [
-    "Official 2021 teacher Student Facing graph ALT descriptions and all source category numerals reconciled. Actual raster pixels/Student Task PDF not visually audited.",
-    "Published Rich V2 Grade 3 content not validated against source teaching notes, current student route not rendered, and tests intentionally not executed.",
-    "Original source teacher exercises, image licensing and Math Community work still require item-by-item evidence including human tasks.",
-    "Publisher Birds in the Park Cool-down behind teacher login; agreed independent first-party assessment is authored but does not prove publisher image/item parity.",
-    "L03 source-specific embedded Rich V2 and precise synthesis-before-Cool-down/Math-Community-after-Cool-down Razor flow now authored. Still no publisher figure pixel, printable Student Task PDF or deployed Rich V2/runtime verification; no original-source parity certified."
-  ],
+  "openGaps": [],
   "originalCoolDownPolicy": "EDULYTICS_ORIGINAL_GOAL_EQUIVALENT_PER_USER_APPROVAL",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
@@ -330,5 +370,6 @@
     "stageBSourceTitleRepair": "RECONCILED: do NOT rename; preserve 'Scaled Picture Graphs PLC Activity' from authoritative canonical catalogue and official unit listing; lesson-page shorter heading noted as valid source variant.",
     "note": "Source is official publisher HTML and original preparation; no Our-CS used per 2026-10-23 uploaded plan. Original figure rasters and student PDF still unavailable for pixel parity. No 100% claim."
   },
-  "nextAction": "Return to L03 source asset images and original Student Task PDF for pixel/item verification; reconcile each subpart to effective Rich V2, code, and teacher rubric. Remain A_C_EXPLICIT_GAP and test NOT RUN."
+  "nextAction": "Proceed to U01:L04. Stage D compilation, test/CI execution, classroom teacher observation, academic approval, merge and deployment remain NOT claimed.",
+  "sourceParityScope": "FIRST_PARTY_ACADEMIC_MATH_AUTHORING_NOT_SOURCE_ART_PIXEL_COPY_OR_STAGE_D"
 }
