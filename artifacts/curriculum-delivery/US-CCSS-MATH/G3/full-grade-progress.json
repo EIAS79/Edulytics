@@ -4908,7 +4908,7 @@
     "baseContentVersion": "phase30-common-core-rich-content-v1",
     "proposedEffectiveContentVersion": "g3-2021-source-skill-rich-v2-authoring-v1",
     "sourceProofBoundary": "Every learner correction grounded in original lesson goal plus individually reviewed public Student Facing text; original art/subquestions and published DB still require verification.",
-    "status": "VERSIONED_GRADE3_AUTHORING_CORRECTION_WIRED_PENDING_STAGE_D",
+    "status": "SOURCE_GOAL_RECONCILED_MATERIALIZER_WIRED_TESTS_WRITTEN_NOT_RUN",
     "dataWritten": false,
     "testsExecuted": false,
     "grades1And2Untouched": true,
@@ -4917,6 +4917,16 @@
       "teacherPageMetadataRemovedFromStudentCompanions": 42,
       "source": "Existing Grade 3 2021 source-bound canonical pack goal sentences",
       "otherGradesUnchanged": true
+    },
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG3SourceTeachingCorrectionsTests.cs",
+    "validationBoundaries": {
+      "oldCanonicalPackUntouched": true,
+      "sourceEditionRequired": "1st Edition (2021)",
+      "minimumExactBaselineHashLength": 64,
+      "scopedTo": "PED:US-CCSS-MATH:G3:",
+      "reconciliationAppliedInMemoryOnlyUntilAuthorizedSeed": true,
+      "testing": "AUTHORED_UNRUN",
+      "publishedRichV2NotVerified": true
     }
   }
 }
