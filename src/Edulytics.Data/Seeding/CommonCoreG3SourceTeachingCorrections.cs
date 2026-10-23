@@ -143,12 +143,6 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "must be answerable from the shown data; oral reasoning, " +
                     "partner work and invented questions require teacher review.";
             }
-            else
-            {
-                // Keep other lessons untouched pending exact source review:
-                // generic base explanations must not be certified as parity.
-            }
-
             // Never embed restricted publisher Cool-down prompts or artwork.
             // No database migration, publication or A-C approval occurs here.
         }
