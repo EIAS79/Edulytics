@@ -40,6 +40,44 @@ public sealed class UsCcssG2ProductionMetadataPredecessorsTests
     ];
 
     [Fact]
+    public void FullProductionGrade2VersionInventoryAll146IsGuardedBeforeAnyRuntimeDeploy()
+    {
+        var docs = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        var rows = docs.SelectMany(d =>
+            d.Lessons.Select(l => (Document: d, Lesson: l)))
+            .Where(x => x.Lesson.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G2:", StringComparison.Ordinal))
+            .ToArray();
+
+        Assert.Equal(146, rows.Length);
+        Assert.Equal(146, rows.Select(x => x.Lesson.LessonCode).Distinct().Count());
+        var nonGeneric = LegacyRows.Concat(ExistingPriorRows)
+            .ToDictionary(x => x.Code, x => x.OldVersion, StringComparer.Ordinal);
+        Assert.Equal(16, nonGeneric.Count);
+        var genericCount = 0;
+        foreach (var (document, lesson) in rows)
+        {
+            var code = lesson.LessonCode;
+            var previouslyStoredVersion = nonGeneric.TryGetValue(code, out var stored)
+                ? stored : "common-core-rich-content-v1";
+            if (!nonGeneric.ContainsKey(code))
+                genericCount++;
+            var target = CanonicalLessonContentMaterializer
+                .GetEffectiveContentVersion(document, lesson);
+            bool alreadyCurrent = target == previouslyStoredVersion;
+            bool normalReviewedUpgrade = CanonicalLessonContentMaterializer
+                .CanUpgradeExisting(document, lesson, previouslyStoredVersion);
+            bool specificallyGuarded = MathematicsCanonicalLessonContentSeeder
+                .IsGuardedG2KnownProductionJsonMetadataPredecessor(
+                    document, lesson, previouslyStoredVersion, target,
+                    verifiedNoPersistedTranslations: true);
+            Assert.True(alreadyCurrent || normalReviewedUpgrade || specificallyGuarded,
+                $"Unsupported Grade 2 production metadata predecessor at {code}: {previouslyStoredVersion} -> {target}");
+        }
+        Assert.Equal(130, genericCount);
+    }
+
+    [Fact]
     public void RemainingObservedNonGenericG2MetadataIsAlreadyCurrentOrSourceGuarded()
     {
         var docs = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
