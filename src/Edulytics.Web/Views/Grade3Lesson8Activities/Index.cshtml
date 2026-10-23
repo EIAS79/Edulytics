@@ -16,6 +16,15 @@
 .g3-l08 .bar-row{display:flex;align-items:center;gap:12px;margin:11px 0}
 .g3-l08 .bar-row strong{width:100px;flex:none}
 .g3-l08 .bar{height:26px;background:#188399}
+.g3-l08 .source-vertical-frame{overflow-x:auto}
+.g3-l08 .source-vertical-chart{display:grid;grid-template-columns:36px minmax(340px,1fr);gap:9px;max-width:740px;min-width:410px}
+.g3-l08 .source-y-ticks{height:300px;display:flex;flex-direction:column;justify-content:space-between;font-size:.78rem;line-height:1}
+.g3-l08 .source-v-bars{height:300px;display:grid;grid-template-columns:repeat(var(--source-columns),minmax(70px,1fr));gap:10px;align-items:end;border-left:2px solid #648399;border-bottom:2px solid #648399;padding:0 8px}
+.g3-l08 .source-v-column{height:300px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.g3-l08 .source-v-bar{background:#188399;width:70%;max-width:82px;border-radius:4px 4px 0 0}
+.g3-l08 .source-v-labels{grid-column:2;display:grid;grid-template-columns:repeat(var(--source-columns),minmax(70px,1fr));gap:10px;padding:0 8px}
+.g3-l08 .source-v-label{text-align:center;font-size:.82rem;overflow-wrap:anywhere}
+.g3-l08 .source-x-title{grid-column:2;text-align:center;font-weight:700;margin:5px 0}
 .g3-l08 .ok{border-left:4px solid #198455;padding-left:10px}
 .g3-l08 .no{border-left:4px solid #b13547;padding-left:10px}
 .g3-l08 .review{border-left:4px solid #a87919;padding-left:10px}
@@ -31,21 +40,37 @@
         <input type="hidden" name="lessonId" value="@Model.LessonId" />
         <section class="panel">
             <h2>1. Warm-up — repeated addition by 2 and 5</h2>
-            <p>Find 2 + 2 + 2 + 2 + 2 and 5 + 5 + 5 + 5 in your head. Explain how skip-counting uses equal groups.</p>
+            <p>Find the value of each of the four public 2021 mental-math expressions, in this sequence. Use the previous result to reason about one more equal group:</p>
+            <ol>
+                <li>2 + 2 + 2 + 2 + 2</li>
+                <li>2 + 2 + 2 + 2 + 2 + 2</li>
+                <li>5 + 5 + 5 + 5 + 5 + 5</li>
+                <li>5 + 5 + 5 + 5 + 5 + 5 + 5</li>
+            </ol>
             <label for="warmup">My strategy</label>
             <textarea id="warmup" name="Warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
-            <p>Teacher checks whether the warm-up reasoning meets the source goal; original exact sequence may differ from these first-party examples.</p>
+            <p>Teacher checks how adding one more equal group changes the total and whether the original four-expression sequence was reasoned about, not merely recalled.</p>
         </section>
         <section class="panel">
             <h2>2. Source-aligned New School Year graph — scale 0–60 by 5</h2>
             <p>How are the students feeling about the new school year?</p>
-            @foreach(var item in feelings){
-                <div class="bar-row"><strong>@item.Category</strong>
-                    <span class="bar" style="width:@(item.Value*100/60)%" aria-hidden="true"></span>
-                    <span>@item.Value students</span>
+            <div class="source-vertical-frame">
+                <div class="source-vertical-chart" style="--source-columns:3" role="img" aria-label="Feelings About the New School Year: vertical axis 0 to 60 in fives; excited 55, nervous 23, curious 25 students.">
+                    <div class="source-y-ticks" aria-hidden="true">
+                        @for(var tick=60;tick>=0;tick-=5){<span>@tick</span>}
+                    </div>
+                    <div class="source-v-bars" aria-hidden="true">
+                        @foreach(var item in feelings){
+                            <div class="source-v-column"><div class="source-v-bar" style="height:@(item.Value*300/60)px"></div></div>
+                        }
+                    </div>
+                    <div class="source-v-labels" aria-hidden="true">
+                        @foreach(var item in feelings){<span class="source-v-label">@item.Category</span>}
+                    </div>
+                    <p class="source-x-title">Feelings</p>
                 </div>
-            }
-            <p>Axis tick marks: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60. Exact counts remain displayed for accessibility.</p>
+            </div>
+            <p>Axis tick marks: 0–60 by fives. Read heights from the scaled vertical bars before discussing the comparison.</p>
             <h3>Three Reads</h3>
             <label for="read1">First read — what is this situation about?</label>
             <textarea id="read1" name="FirstRead" rows="2" maxlength="2000">@Model.Answers.FirstRead</textarea>
@@ -62,13 +87,23 @@
         <section class="panel">
             <h2>3. Source-aligned trees graph — axis 0–100 by 10</h2>
             <p>Clare counted trees on the way home. Read carefully: “Oak OR Maple” means both categories together in these questions.</p>
-            @foreach(var item in trees){
-                <div class="bar-row"><strong>@item.Category</strong>
-                    <span class="bar" style="width:@(item.Value)%" aria-hidden="true"></span>
-                    <span>@item.Value trees</span>
+            <div class="source-vertical-frame">
+                <div class="source-vertical-chart" style="--source-columns:4" role="img" aria-label="Trees I Saw on the Way Home: vertical axis 0 to 100 in tens; oak 29, pine 82, maple 15, fir 58 trees.">
+                    <div class="source-y-ticks" aria-hidden="true">
+                        @for(var tick=100;tick>=0;tick-=10){<span>@tick</span>}
+                    </div>
+                    <div class="source-v-bars" aria-hidden="true">
+                        @foreach(var item in trees){
+                            <div class="source-v-column"><div class="source-v-bar" style="height:@(item.Value*300/100)px"></div></div>
+                        }
+                    </div>
+                    <div class="source-v-labels" aria-hidden="true">
+                        @foreach(var item in trees){<span class="source-v-label">@item.Category</span>}
+                    </div>
+                    <p class="source-x-title">Type of tree</p>
                 </div>
-            }
-            <p>Axis tick marks: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100.</p>
+            </div>
+            <p>Axis tick marks: 0–100 by tens. Use the scaled bars to derive exact addition and subtraction relationships.</p>
             <div class="two">
                 <div><label for="pine-fir">How many MORE Pine than Fir?</label><input id="pine-fir" name="PineFir" value="@Model.Answers.PineFir" inputmode="numeric" required /></div>
                 <div><label for="pine-two">How many MORE Pine than Oak OR Maple together?</label><input id="pine-two" name="PineOakMaple" value="@Model.Answers.PineOakMaple" inputmode="numeric" required /></div>

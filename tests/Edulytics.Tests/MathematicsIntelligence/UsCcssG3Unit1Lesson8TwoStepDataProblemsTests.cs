@@ -14,6 +14,32 @@ public sealed class UsCcssG3Unit1Lesson8TwoStepDataProblemsTests
         Assert.Equal(14,58-(29+15));
     }
 
+    [Fact]
+    public void FourOriginalRepeatedAdditionPromptsAndBothVerticalSourceAxesAreAuthored()
+    {
+        // Regression contract written; Stage D/CI have NOT been run.
+        DirectoryInfo? dir = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (dir is not null)
+        {
+            var p = Path.Combine(dir.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson8Activities", "Index.cshtml");
+            if (File.Exists(p)) { path = p; break; }
+            dir = dir.Parent;
+        }
+        Assert.NotNull(path);
+        var razor = File.ReadAllText(path!);
+        Assert.Contains("<li>2 + 2 + 2 + 2 + 2</li>", razor);
+        Assert.Contains("<li>2 + 2 + 2 + 2 + 2 + 2</li>", razor);
+        Assert.Contains("<li>5 + 5 + 5 + 5 + 5 + 5</li>", razor);
+        Assert.Contains("<li>5 + 5 + 5 + 5 + 5 + 5 + 5</li>", razor);
+        Assert.Contains("tick=60;tick>=0;tick-=5", razor);
+        Assert.Contains("tick=100;tick>=0;tick-=10", razor);
+        Assert.Contains("height:@(item.Value*300/60)px", razor);
+        Assert.Contains("height:@(item.Value*300/100)px", razor);
+        Assert.Contains("source-v-bars", razor);
+    }
+
     [Theory]
     [InlineData("L08-FEELINGS-TWO-STEP",7)]
     [InlineData("L08-TREES-PINE-FIR",24)]

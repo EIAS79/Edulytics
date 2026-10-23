@@ -15,7 +15,7 @@
   "readyForStageD": false,
   "stageA": {
     "status": "LOCAL_2021_SOURCE_STUDENT_FACING_CHARTS_AND_QUESTION_OPERATIONS_REVIEWED",
-    "warmup": "Repeated addition, groups of 2 and 5; original exact warmup expressions not independently matched",
+    "warmup": "Publisher's public 2021 warm-up explicitly has four sequential expressions: 2×5, 2×6, 5×6, 5×7 written as repeated addition.",
     "sourceFeelings": {
       "Excited": 55,
       "Nervous": 23,
@@ -65,7 +65,8 @@
         "Comics": 18
       }
     },
-    "sourceArtworkCopied": false
+    "sourceArtworkCopied": false,
+    "sourceVerticalChartAndNumberTalkCorrection": "Replaced horizontal percentage strips with first-party vertical bar charts, correct tick marks and category captions; exact source warm-up repeated addition sequence restored."
   },
   "stageC": {
     "status": "NUMERIC_TWO_STEP_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_UNRUN",
@@ -78,20 +79,24 @@
     ],
     "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
     "testsRun": false,
-    "route": "student/practice/grade3-u01-l08"
+    "route": "student/practice/grade3-u01-l08",
+    "unrunVerticalBarAndFourExpressionContractWritten": true
   },
   "sourceElements": [
     {
       "id": "warmup",
-      "status": "ALIGNED_EXCERPT_NOT_EXACT_ORIGINAL_TASK_PARITY"
+      "status": "ALIGNED_EXCERPT_NOT_EXACT_ORIGINAL_TASK_PARITY",
+      "sequenceRestoredAsFourOriginalPublicSourceExpressions": true
     },
     {
       "id": "activity1",
-      "status": "SOURCE_CHART_COUNTS_AND_EQUATIONS_ALIGNED"
+      "status": "SOURCE_CHART_COUNTS_AND_EQUATIONS_ALIGNED",
+      "sourceScaledBarGraphVerticalAxisRepaired": "0..60 step 5; no pixel parity claimed"
     },
     {
       "id": "activity2",
-      "status": "SOURCE_CHART_COUNTS_AND_EQUATIONS_ALIGNED"
+      "status": "SOURCE_CHART_COUNTS_AND_EQUATIONS_ALIGNED",
+      "sourceScaledBarGraphVerticalAxisRepaired": "0..100 step 10; no pixel parity claimed"
     },
     {
       "id": "synthesis",
