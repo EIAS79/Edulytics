@@ -39,7 +39,10 @@
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 0
+    "lessonsWithActualRichV2SourcePerfect": 0,
+    "remainingWithoutIndividualStudentFacingTextReview": 0,
+    "lessonsWithUnverifiedSourceToProductMapping": 143,
+    "lessonsWithAllOriginalFiguresVerified": 0
   },
   "cursor": {
     "lastConsecutiveReadyForStageDOrdinal": 0,
@@ -5004,5 +5007,16 @@
       "lastVerifiedReadyForStageD": 0,
       "qualification": "Static comparison of authoring records only: no .NET execution, no live Rich V2 parity, source figures not 1:1 verified"
     }
+  },
+  "localSourceAnchoring": {
+    "status": "LEXICAL_CANDIDATE_LOCATORS_AWAITING_SEMANTIC_AND_FIGURE_REVIEW",
+    "file": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/g3-2021-source-skill-check-section-anchors.json",
+    "metrics": {
+      "total": 135,
+      "exactNumberOverlap": 87,
+      "noNumericOverlap": 48,
+      "teacherOnly": 44
+    },
+    "verifiedOriginalSourceSubitems": 0
   }
 }
