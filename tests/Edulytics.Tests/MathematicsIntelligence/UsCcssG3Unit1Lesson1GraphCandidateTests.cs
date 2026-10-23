@@ -318,4 +318,42 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         Assert.NotEqual(nameof(Grade3Lesson1Answers.CoolDownOriginalQuestion), body!.Name);
     }
 
+    [Fact]
+    public void FirstEditionCoolDownSourceGraphIsADistinctFourCategoryDataset()
+    {
+        var values = UsCcssG3Unit1Lesson1SourceCoolDown.Values;
+        Assert.Equal(new[] { "Bike", "Walk", "Bus", "Car" },
+            values.Select(row => row.Label));
+        Assert.Equal(new[] { 6, 4, 8, 2 },
+            values.Select(row => row.Count));
+        Assert.Equal(20, UsCcssG3Unit1Lesson1SourceCoolDown.TotalResponses);
+        Assert.Equal(0, UsCcssG3Unit1Lesson1SourceCoolDown.YAxisMin);
+        Assert.Equal(10, UsCcssG3Unit1Lesson1SourceCoolDown.YAxisMax);
+        Assert.Equal(1, UsCcssG3Unit1Lesson1SourceCoolDown.YAxisStep);
+        Assert.NotEqual(UsCcssG3Unit1Lesson1GraphCandidate.TotalStudents,
+            UsCcssG3Unit1Lesson1SourceCoolDown.TotalResponses);
+    }
+
+    [Theory]
+    [InlineData("2021-cooldown-one-fact")]
+    [InlineData("2021-cooldown-one-question")]
+    public void OriginalCoolDownRequiresHumanReviewRatherThanNumericPass(string id)
+    {
+        Assert.True(UsCcssG3Unit1Lesson1SourceCoolDown.IsTeacherReviewedPrompt(id));
+        Assert.False(UsCcssG3Unit1Lesson1SourceCoolDown.MayAwardAutomaticSourceScore(id));
+        Assert.Null(Grade3Lesson1TeacherReviewPolicy.AssessForReview(
+            id, "An answer", "Check original source graph data").MachineCorrect);
+    }
+
+    [Fact]
+    public void SourceCoolDownHasTwoIndependentlyNamedLearnerTextFields()
+    {
+        Assert.NotNull(typeof(Grade3Lesson1Answers).GetProperty(
+            nameof(Grade3Lesson1Answers.SourceCoolDownFact)));
+        Assert.NotNull(typeof(Grade3Lesson1Answers).GetProperty(
+            nameof(Grade3Lesson1Answers.SourceCoolDownQuestion)));
+        Assert.NotEqual(nameof(Grade3Lesson1Answers.SourceCoolDownFact),
+            nameof(Grade3Lesson1Answers.SourceCoolDownQuestion));
+    }
+
 }

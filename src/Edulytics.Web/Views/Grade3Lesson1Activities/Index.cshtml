@@ -5,6 +5,7 @@
     ViewData["Title"] = "Grade 3 · Make Sense of Data";
     var source = UsCcssG3Unit1Lesson1GraphCandidate.Values;
     var library = UsCcssG3OriginalCoolDownCandidates.Lesson1LibraryGraph;
+    var sourceCoolDown = UsCcssG3Unit1Lesson1SourceCoolDown.Values;
 }
 <style>
 .g3-data {max-width:1000px;margin:0 auto 30px;padding:20px;color:#17344d}
@@ -26,6 +27,10 @@
 .g3-data .bar {width:72%;max-width:64px;background:#158398;border-radius:4px 4px 0 0;color:#fff;text-align:center;font-weight:700}
 .g3-data .bar-labels {grid-column:2;display:grid;grid-template-columns:repeat(6,minmax(32px,1fr));gap:8px;padding:0 9px}
 .g3-data .bar-label {font-size:.8rem;text-align:center;overflow-wrap:anywhere;margin-top:5px}
+.g3-data .source-cooldown-bars {grid-template-columns:repeat(4,minmax(32px,1fr));height:200px}
+.g3-data .source-cooldown-bar-col {height:200px}
+.g3-data .source-cooldown-ticks {height:200px}
+.g3-data .source-cooldown-labels {grid-template-columns:repeat(4,minmax(32px,1fr))}
 .g3-data .bar-x-axis-title {grid-column:2;margin:7px 0 0;text-align:center;font-weight:700;font-size:.9rem;color:#17344d}
 .g3-data .scale {font-weight:600;color:#4a6476}
 .g3-data label {display:block;font-weight:700;margin:12px 0 5px}
@@ -176,8 +181,42 @@
             <p class="note">Teacher-only observation: 1-minute independent warm-up, partner dialogue, justified category suggestions, precise restating of a peer's observation (MLR8), and reflection on norms. Numeric checks do not assess these activities.</p>
         </section>
         <section class="panel" aria-labelledby="cooldown">
-            <h2 id="cooldown">5. Edulytics-authored Cool-down (5 minutes)</h2>
-            <p>This is a NEW fictional library survey. It checks the same graph-reading skills, but it is not the publisher's teacher-only Cool-down and not the school-travel dataset.</p>
+            <h2 id="cooldown">5. Source-aligned 2021 Cool-down: Describe and Ask (5 minutes)</h2>
+            <p>The following <strong>four-category travel graph</strong> uses the mathematical data in the first-edition 2021 teacher guide: Bike 6, Walk 4, Bus 8 and Car 2. Edulytics independently draws the bars and does not reproduce the publisher's images, names or logo. This is a source-aligned classroom response, not an automatically graded numeric problem.</p>
+            <h3>@UsCcssG3Unit1Lesson1SourceCoolDown.GraphTitle — source dataset, independent Edulytics drawing</h3>
+            <p class="scale">Four categories; vertical scale from 0 to 10, increasing in steps of 1 student. Read the category names and vertical tick marks before answering.</p>
+            <div class="bar-graph" role="img" aria-label="2021 lesson 1 Cool-down mathematics: How We Get Home. Vertical scale 0 to 10 by ones. Bike 6, Walk 4, Bus 8, Car 2; independently drawn by Edulytics.">
+                <div class="axis-ticks source-cooldown-ticks" aria-hidden="true">
+                    @for (var tick = UsCcssG3Unit1Lesson1SourceCoolDown.YAxisMax;
+                        tick >= UsCcssG3Unit1Lesson1SourceCoolDown.YAxisMin;
+                        tick -= UsCcssG3Unit1Lesson1SourceCoolDown.YAxisStep)
+                    {
+                        <span>@tick</span>
+                    }
+                </div>
+                <div class="bar-chart source-cooldown-bars" aria-hidden="true">
+                    @foreach (var item in sourceCoolDown)
+                    {
+                        <div class="bar-col source-cooldown-bar-col">
+                            <div class="bar" style="height:@(item.Count * 20)px"></div>
+                        </div>
+                    }
+                </div>
+                <div class="bar-labels source-cooldown-labels" aria-hidden="true">
+                    @foreach (var item in sourceCoolDown)
+                    {
+                        <span class="bar-label">@item.Label</span>
+                    }
+                </div>
+                <p class="bar-x-axis-title">Travel home from school</p>
+            </div>
+            <label for="source-cool-fact">Source Cool-down part 1: Write ONE fact the travel graph supports</label>
+            <textarea id="source-cool-fact" name="SourceCoolDownFact" rows="3" maxlength="2000">@Model.Answers.SourceCoolDownFact</textarea>
+            <label for="source-cool-question">Source Cool-down part 2: Write ONE question that the travel graph can answer</label>
+            <textarea id="source-cool-question" name="SourceCoolDownQuestion" rows="3" maxlength="2000">@Model.Answers.SourceCoolDownQuestion</textarea>
+            <p class="note">Both source Cool-down open responses are for the teacher to assess; no automatic pass is issued. The source bar graph and the earlier six-category lesson graph are DIFFERENT datasets.</p>
+            <h3>Additional, independent Edulytics Cool-down practice (optional)</h3>
+            <p>This is a NEW fictional library survey with its own separate categories. It checks related graph-reading skills and is not the publisher's original travel dataset or a replacement for the two source questions above.</p>
             <div class="picture-rows">
                 @foreach (var item in library)
                 {
