@@ -191,6 +191,38 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
     }
 
     [Fact]
+    public void Lesson4ScaleTwoUsesHalfSymbolsForOddPreferenceCounts()
+    {
+        // Written regression only. Do NOT execute while Stage D is blocked.
+        var assembly = typeof(CanonicalLessonContentPackDocument).Assembly;
+        var resource = assembly.GetManifestResourceNames().Single(name =>
+            name.EndsWith("us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+                StringComparison.Ordinal));
+        using var stream = assembly.GetManifestResourceStream(resource)
+            ?? throw new InvalidOperationException("Missing Grade 3 source pack.");
+        var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+        options.Converters.Add(new JsonStringEnumConverter());
+        var document = JsonSerializer.Deserialize<CanonicalLessonContentPackDocument>(
+            stream, options) ?? throw new InvalidOperationException("Invalid pack.");
+        CommonCoreG3SourceTeachingCorrections.Apply(document);
+        var en = document.Lessons.Single(l =>
+            l.LessonCode == "PED:US-CCSS-MATH:G3:U01:L04")
+            .Translations.Single(t => t.CultureCode == "en");
+
+        Assert.Contains("Car, Train, Boat, Balloon, Plane", en.Explanation);
+        Assert.Contains("WOULD LIKE to travel", en.Explanation);
+        Assert.Contains("ONE half picture", en.KeyConceptsAndRules);
+        Assert.Contains("2 whole and 1 half", en.WorkedExamples);
+        Assert.Contains("TWO more", en.WorkedExamples);
+        Assert.Contains("ONE more", en.WorkedExamples);
+        Assert.Contains("Balloon plus two", en.StepByStepSolutions);
+        Assert.Contains("Car plus one", en.StepByStepSolutions);
+        Assert.Contains("teacher-attested", en.CommonMistakes);
+        Assert.DoesNotContain("Walk 4, Bike 3, Skateboard 1", en.Explanation);
+        Assert.DoesNotContain("publisher original", en.QuickSummary);
+    }
+
+    [Fact]
     public void SeparateGrade1AndGrade2DocumentsBypassTheGrade3FullSetGuard()
     {
         var document=Grade3Document();
