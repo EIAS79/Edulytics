@@ -228,6 +228,27 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void LessonEighteenSeparatesWrittenExpressionsFromTeacherObservedArrayDrawings()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L18",out var lesson));
+        Assert.Equal(10,lesson!.SourceSubtasks.Count);
+        var expected=new[]{"3x5","4x5","2x6","2x10"};
+        var expressionTasks=lesson.SourceSubtasks.Where(q=>q.AnswerType=="multiplication-expression").ToArray();
+        Assert.Equal(4,expressionTasks.Length);
+        for(var i=0;i<expressionTasks.Length;i++){
+            Assert.Equal(expected[i],expressionTasks[i].Expected);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(expressionTasks[i],expected[i]).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(expressionTasks[i],
+                (i+1==3?"12":"15")).NumericCorrect);
+        }
+        Assert.Equal("multiplication-expression",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown,"28").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);

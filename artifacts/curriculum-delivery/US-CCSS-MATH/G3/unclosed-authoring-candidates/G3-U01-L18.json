@@ -17,7 +17,22 @@
     "originalImageDescriptionsCount": 1,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicTeacher2021Tasks": {
+      "warmup": "5x4 triangle arrays 20",
+      "activity1": [
+        "3x5 chairs",
+        "4x5 cars",
+        "2x6 eggs",
+        "2x10 pupils"
+      ],
+      "activity2": [
+        "class human 4x6 optional adaptation",
+        "draw 2x3",
+        "draw 5x2",
+        "draw 4x4"
+      ]
+    }
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +44,9 @@
     "existingSourceBodyHash": "2e76e5c86b62c84693b4dd40c47377db99cf7e892d54f2f999afb4ffa1251070",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "firstPartyThreeByFiveDotsOnlyExample": true,
+    "sourceFourExpressionWritingTargetsExplicitlyRestored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +59,13 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Represent Array Situations with your teacher. Show the representation and explain how it meets the goal: Let’s represent situations with arrays and expressions.",
-    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array."
+    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+    "fourOrderedMultiplicationExpressionFamiliesCreated": true,
+    "sourceSubtaskCount": 10,
+    "sourceTeacherOnlyClassAndThreeDrawings": 5,
+    "independentPracticeNowExpressionNotScalar": true,
+    "cooldownNowHumanOnlyIfDrawn": true,
+    "testsAuthoredNotRun": true
   },
   "sourceElements": [
     {
@@ -132,7 +155,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "All public source array/expression prompts individually recorded but drawings and actual human class array require teacher review, original figures/PDFs and Rich V2 unverified. Stage D/tests not run."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

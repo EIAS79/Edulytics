@@ -1456,14 +1456,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "arrays-expressions",
       "independentPractice": {
-        "prompt": "Draw two rows of six eggs. How many eggs? Write an expression.",
-        "answerType": "integer",
-        "expected": "12"
+        "prompt": "Create TWO rows each containing SIX eggs. Write the multiplication expression using number of rows first and eggs per row second; also draw the array.",
+        "answerType": "multiplication-expression",
+        "expected": "2x6"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Draw four rows of seven dots and find the product.",
-        "answerType": "integer",
-        "expected": "28"
+        "prompt": "Independently draw four rows of seven counters, label your rows and columns, record the expression and total. Teacher checks the drawing rather than accepting 28 alone.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Represent Array Situations with your teacher. Show the representation and explain how it meets the goal: You will represent multiplication situations with arrays and multiplication expressions.",
       "teacherReviewNote": "The student should explain row/column factors and show a correct array.",
@@ -1475,11 +1475,13 @@
         "sourceGoal": "Let’s represent situations with arrays and expressions.",
         "sourceLearningGoals": "Represent multiplication situations with arrays and multiplication expressions.",
         "teachingSteps": [
-          "Draw rows and columns with equal spacing.",
-          "Count rows and columns; relate the array to equal groups.",
-          "Compare rotated or reorganized arrays while preserving the total."
+          "Use five rows of four original source triangles as a 20-object array and invite different grouping explanations.",
+          "For four separate source scenarios, construct arrays of 3×5 chairs, 4×5 cars, 2×6 eggs and 2×10 students.",
+          "Record multiplication expressions using number of rows as the first factor and objects per row as the second.",
+          "Use a full-class human array of 4×6 where practicable (the source permits size adjustments).",
+          "Draw arrays for 2×3, 5×2 and 4×4, checking visual rows, columns and equivalence."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent situations with arrays and expressions.",
+        "caution": "L18 introduces multiplication EXPRESSIONS for arrays. A student must actually enter both ordered factors: only the product is not adequate. Array drawings and the human class arrangement require teacher review.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1493,7 +1495,79 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L18-WU-01",
+          "sourceActivity": "Warm-up: Array of Shapes",
+          "prompt": "The source first figure contains five rows of four triangles. How many triangles altogether? Explain the visual groups.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U01-L18-A1-01",
+          "sourceActivity": "Activity 1: Represent Array Situations",
+          "prompt": "Three rows each hold five chairs. Write the row-count × chairs-per-row expression and draw a matching array.",
+          "answerType": "multiplication-expression",
+          "expected": "3x5"
+        },
+        {
+          "id": "G3-U01-L18-A1-02",
+          "sourceActivity": "Activity 1: Represent Array Situations",
+          "prompt": "Four rows each hold five cars. Write the multiplication expression, and draw the array.",
+          "answerType": "multiplication-expression",
+          "expected": "4x5"
+        },
+        {
+          "id": "G3-U01-L18-A1-03",
+          "sourceActivity": "Activity 1: Represent Array Situations",
+          "prompt": "Two rows each hold six eggs. Write the corresponding expression, and draw the array.",
+          "answerType": "multiplication-expression",
+          "expected": "2x6"
+        },
+        {
+          "id": "G3-U01-L18-A1-04",
+          "sourceActivity": "Activity 1: Represent Array Situations",
+          "prompt": "Two equal lines of ten students each. Write the matching expression, and make a diagram.",
+          "answerType": "multiplication-expression",
+          "expected": "2x10"
+        },
+        {
+          "id": "G3-U01-L18-A2-BODIES",
+          "sourceActivity": "Activity 2: Connect Arrays to Expressions",
+          "prompt": "With the class, form a rectangular array of pupils representing 4×6 (or adapt to actual class size). Teacher verifies row/column model and discussion.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L18-A2-01",
+          "sourceActivity": "Activity 2: Connect Arrays to Expressions",
+          "prompt": "Draw an array for 2×3, with two equal rows of three, and explain how factors describe it.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L18-A2-02",
+          "sourceActivity": "Activity 2: Connect Arrays to Expressions",
+          "prompt": "Draw an array for 5×2, with five equal rows of two, and explain how factors describe it.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L18-A2-03",
+          "sourceActivity": "Activity 2: Connect Arrays to Expressions",
+          "prompt": "Draw an array for 4×4, with four equal rows of four, and explain how factors describe it.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L18-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare oral explanations of how each row/column corresponds to an expression and how an array can represent equal-sized groups.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 19,

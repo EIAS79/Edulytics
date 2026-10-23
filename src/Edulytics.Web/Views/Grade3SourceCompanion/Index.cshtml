@@ -222,6 +222,20 @@
                 <p>Show why all rows and columns form valid equal-sized groupings. Teacher evaluates your own drawings and actual peer explanation revision.</p>
             </section>
         }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 18) {
+            <section class="panel" aria-label="Source arrays, expressions and human arrays">
+                <h2>Warm-up: a five-by-four triangle array</h2>
+                <p>Observe five rows of four triangles (20 in total), and explain how equal-size rows or columns help you count. The publisher's actual figure has not been copied.</p>
+                <h2>Source Activity 1: draw a separate array and write a multiplication expression</h2>
+                <p>The four original array contexts are three rows of five chairs, four rows of five cars, two rows of six eggs, and two lines of ten pupils. Use objects or diagrams for each; enter the ROW count × GROUP size in the appropriate individual source task. Entering the total alone cannot demonstrate writing the expression.</p>
+                <p>Here is an independently authored three-row by five-column array illustration (not original publisher artwork):</p>
+                <div class="first-party-array" style="grid-template-columns:repeat(5,17px)" role="img" aria-label="Three rows with five dots each">
+                    @for(var i=0;i<15;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                </div>
+                <h2>Source Activity 2: arrays from an expression</h2>
+                <p>Work as a class to form a human 4 × 6 array (adjustable for actual class size), then individually draw arrays for 2 × 3, 5 × 2 and 4 × 4. Teacher checks whether each array actually consists of equal rows and columns, rather than merely a set of isolated dots.</p>
+            </section>
+        }
         @if(showMinuteClock) {
             <section class="panel" aria-label="Edulytics original analogue clock reading">
                 <h2>Read an original analogue clock</h2>
