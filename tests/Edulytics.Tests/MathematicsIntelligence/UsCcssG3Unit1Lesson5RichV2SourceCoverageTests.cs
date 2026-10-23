@@ -18,7 +18,7 @@ public sealed class UsCcssG3Unit1Lesson5RichV2SourceCoverageTests
         Assert.Contains("5+5+5+5 = 20", text);
         Assert.Contains("5+5+5+5+5+5+5+5 = 40", text);
         Assert.Contains("Bike 12, Walk 4, Bus or Van 6, Car 3", text);
-        Assert.Contains("SAME", rich.KeyConcepts[0].Definition.ToUpperInvariant());
+        Assert.Contains("UNCHANGED", rich.KeyConcepts[0].Definition.ToUpperInvariant());
     }
 
     [Fact]
@@ -33,6 +33,7 @@ public sealed class UsCcssG3Unit1Lesson5RichV2SourceCoverageTests
         Assert.Contains(rich.WorkedExamples, x => x.Answer.Contains("Tiger bar = 10", StringComparison.Ordinal));
         Assert.Contains(rich.WorkedExamples, x => x.Check.Contains("Tiger 10 and Otter 4", StringComparison.Ordinal));
         Assert.Empty(rich.Visuals);
+        Assert.Contains(rich.CommonMistakes, x => x.Correction.Contains("0,5,10,15,20", StringComparison.Ordinal));
     }
 
     [Fact]
