@@ -4876,6 +4876,30 @@
     "unrestrictedEquivalentValueQuestionsRemain": 11,
     "meaning": "If exact denominators/equal divisions are demanded, equivalent values with other denominators do not receive a numeric pass. General equivalence tasks still accept equivalent rational responses.",
     "testStatus": "WRITTEN_UNRUN",
-    "sourceParity": "UNVERIFIED"
+    "sourceParity": "UNVERIFIED",
+    "correctedRepresentationSemantics": {
+      "changes": [
+        "87:sourceBasedCheck:integer",
+        "87:independentPractice:integer",
+        "87:originalEdulyticsCoolDown:integer",
+        "88:sourceBasedCheck:explicit-fourths",
+        "90:sourceBasedCheck:explicit-thirds",
+        "92:sourceBasedCheck:integer",
+        "92:independentPractice:integer",
+        "98:originalEdulyticsCoolDown:allow-equivalent-length",
+        "99:independentPractice:allow-equivalent-length",
+        "99:originalEdulyticsCoolDown:allow-equivalent-length",
+        "100:sourceBasedCheck:allow-equivalent-length",
+        "130:sourceBasedCheck:integer",
+        "142:originalEdulyticsCoolDown:allow-equivalent-length"
+      ],
+      "classes": [
+        "Named-part fraction answer requires the requested denominator",
+        "Whole-number answers graded as integers",
+        "Fractional-inch length may accept equivalent fractions unless named units requested"
+      ],
+      "regressionStatus": "WRITTEN_NOT_RUN",
+      "changedCount": 13
+    }
   }
 }

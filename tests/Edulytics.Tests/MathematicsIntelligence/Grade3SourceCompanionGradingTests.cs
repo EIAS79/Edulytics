@@ -168,4 +168,27 @@ public sealed class Grade3SourceCompanionGradingTests
         }
     }
 
+    [Fact]
+    public void WholeNumberRequestsRejectFractionSyntaxEvenWhenNumericallyEquivalent()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U05:L08",out var l));
+        var q=l!.SourceBasedCheck!;
+        Assert.Equal("integer",q.AnswerType);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"5/1").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(q,"5").NumericCorrect);
+    }
+
+    [Fact]
+    public void FractionalInchLengthsAcceptEquivalentFormsUnlessNamedPartsRequested()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U06:L03",out var l));
+        var q=l!.SourceBasedCheck!;
+        Assert.Equal("rational",q.AnswerType);
+        Assert.Null(q.RequiredDenominator);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(q,"18/4").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(q,"9/2").NumericCorrect);
+    }
+
 }

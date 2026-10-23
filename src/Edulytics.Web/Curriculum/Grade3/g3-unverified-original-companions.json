@@ -8050,12 +8050,12 @@
       "firstPartyFamily": "fractions-number-line",
       "independentPractice": {
         "prompt": "Locate 8/4 as a whole number on the number line.",
-        "answerType": "rational",
+        "answerType": "integer",
         "expected": "2"
       },
       "originalEdulyticsCoolDown": {
         "prompt": "Locate 9/3 as a whole number using thirds.",
-        "answerType": "rational",
+        "answerType": "integer",
         "expected": "3"
       },
       "openTeacherTask": "Work through the original lesson's activity Fractions Located at Whole Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s work with fractions and whole numbers on the number line. Required Preparation CCSS Standards Addressing 3.NF.A.2 3.NF.A.3.c 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Te",
@@ -8077,7 +8077,7 @@
       },
       "sourceBasedCheck": {
         "prompt": "The source number lines mark 10/2. What whole number does the fraction represent?",
-        "answerType": "rational",
+        "answerType": "integer",
         "expected": "5"
       },
       "sourceBasedCheckProvenance": {
@@ -8194,7 +8194,8 @@
       "sourceBasedCheck": {
         "prompt": "The source asks for the location 3/4. Give that fractional value.",
         "answerType": "rational",
-        "expected": "3/4"
+        "expected": "3/4",
+        "requiredDenominator": 4
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-5/lesson-9/lesson.html",
@@ -8403,7 +8404,8 @@
       "sourceBasedCheck": {
         "prompt": "The source diagram shows the same amount as 1/3 and 2/6. Enter one third.",
         "answerType": "rational",
-        "expected": "1/3"
+        "expected": "1/3",
+        "requiredDenominator": 3
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-5/lesson-11/lesson.html",
@@ -8592,7 +8594,7 @@
       "firstPartyFamily": "equivalent-fractions",
       "independentPractice": {
         "prompt": "What whole number is equal to 16/4?",
-        "answerType": "rational",
+        "answerType": "integer",
         "expected": "4"
       },
       "originalEdulyticsCoolDown": {
@@ -8620,7 +8622,7 @@
       },
       "sourceBasedCheck": {
         "prompt": "In the source list, 12/6 is equivalent to which whole number?",
-        "answerType": "rational",
+        "answerType": "integer",
         "expected": "2"
       },
       "sourceBasedCheckProvenance": {
@@ -9191,8 +9193,7 @@
       "originalEdulyticsCoolDown": {
         "prompt": "A strip covers three half-inch steps. Name its length in inches.",
         "answerType": "rational",
-        "expected": "3/2",
-        "requiredDenominator": 2
+        "expected": "3/2"
       },
       "openTeacherTask": "Work through the original lesson's activity Measure Around the Room with your teacher. Show the representation and explain how it meets the goal: Let’s measure the length of objects around the room.",
       "teacherReviewNote": "The original 2021 task requires real rulers and objects; no numeric response can certify instrument accuracy.",
@@ -9284,14 +9285,12 @@
       "independentPractice": {
         "prompt": "A line segment covers seven quarter-inch intervals. What length in inches?",
         "answerType": "rational",
-        "expected": "7/4",
-        "requiredDenominator": 4
+        "expected": "7/4"
       },
       "originalEdulyticsCoolDown": {
         "prompt": "A ribbon measures three and one-quarter inches. Write its length as an improper fraction of inches.",
         "answerType": "rational",
-        "expected": "13/4",
-        "requiredDenominator": 4
+        "expected": "13/4"
       },
       "openTeacherTask": "Work through the original lesson's activity Partition Inches into Fourths with your teacher. Show the representation and explain how it meets the goal: Let’s measure lengths in quarters of an inch.",
       "teacherReviewNote": "Teacher verifies object measurements, physical rulers and mixed-number equivalents.",
@@ -9411,8 +9410,7 @@
       "sourceBasedCheck": {
         "prompt": "The source worm is described as 4 2/4 or 4 1/2 inches. State its length in fractional inches.",
         "answerType": "rational",
-        "expected": "9/2",
-        "requiredDenominator": 2
+        "expected": "9/2"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-6/lesson-3/lesson.html",
@@ -12397,7 +12395,7 @@
       },
       "sourceBasedCheck": {
         "prompt": "The source floor number line includes 6/2. What whole number does it represent?",
-        "answerType": "rational",
+        "answerType": "integer",
         "expected": "3"
       },
       "sourceBasedCheckProvenance": {
@@ -13503,8 +13501,7 @@
       "originalEdulyticsCoolDown": {
         "prompt": "A 7-quarter-inch-long paper strip measures how many inches?",
         "answerType": "rational",
-        "expected": "7/4",
-        "requiredDenominator": 4
+        "expected": "7/4"
       },
       "openTeacherTask": "Work through the original lesson's activity Design Your Estimation Exploration with your teacher. Show the representation and explain how it meets the goal: Let’s create an Estimation Exploration activity.",
       "teacherReviewNote": "The source asks for genuine object/image measurement and discussion, not a fixed earthworm photo or guessed length.",
