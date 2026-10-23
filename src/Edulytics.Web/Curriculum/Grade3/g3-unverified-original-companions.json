@@ -2512,11 +2512,13 @@
         "sourceGoal": "Let’s count square tiles.",
         "sourceLearningGoals": "Explain that rectangles that can be covered by the same number of unit squares without gaps or overlaps have the same area. Find the area of rectangles (within 24 square units) by counting unit squares.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Warm-up from original A–D tiled drawings: A/C have 4x6=24 squares; D uses 6x4 squares but gaps/overlaps. Identical tile counts do not prove valid coverage until adjusted.",
+          "Each pair receives the original Time to Tile handout and 24 equal square tiles. Move and rearrange tiles across four original partially tiled pictures, then calculate area from finished coverage.",
+          "Use peer feedback to revise WHY complete square-unit coverage (no gaps/overlaps) measures area.",
+          "Observe three distinct original representations of a rectangle with area 12 square units, and draw a rectangle with area 8 unit squares.",
+          "Use the original physical Card Sort Rectangles cards: first any justified grouping, then group by area and create a new distinct rectangle for each area family."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s count square tiles.",
+        "caution": "The source's four source handout figures and original card-sort set are NOT visually inspected at the pixel level. Even if a source alt mentions three or seven already placed tiles, its FULL area cannot be guessed from that partial placement. Student grid drawing and card-sorting are teacher-reviewed.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -2530,7 +2532,107 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L03-WU-A",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong Tiles",
+          "prompt": "Image A: 4×6 equal squares, alternating shaded and white. Identify a distinctive property or valid reason it could differ.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-WU-B",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong Tiles",
+          "prompt": "Image B: partially tiled rectangle. Explain what needs to be tiled to cover the whole region.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-WU-C",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong Tiles",
+          "prompt": "Image C: 4×6 array of equal squares with clear tile boundaries. Explain why tile count can measure area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-WU-D",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong Tiles",
+          "prompt": "Image D: a 6×4 collection of squares with GAPS and OVERLAPS. Explain why it is not yet a valid tiled measurement despite having 24 tiles.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A1-01",
+          "sourceActivity": "Activity 1: Time to Tile",
+          "prompt": "Original handout picture 1 has four equal tiles in a square that may need rearranging before coverage. Move tiles to fill region and document square-unit area only after confirming geometry.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A1-02",
+          "sourceActivity": "Activity 1: Time to Tile",
+          "prompt": "Original source handout picture 2 shows three tiles inside a rectangle. Add equal-size tiles to cover region with no uncovered gaps and measure its total area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A1-03",
+          "sourceActivity": "Activity 1: Time to Tile",
+          "prompt": "Original handout picture 3 shows seven tiles in a larger rectangle. Correct row alignment and finish tiling before recording area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A1-04",
+          "sourceActivity": "Activity 1: Time to Tile",
+          "prompt": "Original handout picture 4 is partially tiled. Straighten or move overlapping tiles and complete the coverage. Explain your adjustment to a partner.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A1-RULE",
+          "sourceActivity": "Activity 1: Time to Tile",
+          "prompt": "Explain why counting the square tiles in a plane region without gaps or overlaps is the area of that region, and revise a draft after partner feedback.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A2-NOTICE",
+          "sourceActivity": "Activity 2: Card Sort Rectangles",
+          "prompt": "Observe three original area-12 rectangle representations: physical square tiles, a shaded 4×3 area and a 4×3 grid. Explain why these depict the SAME area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A2-EIGHT",
+          "sourceActivity": "Activity 2: Card Sort Rectangles",
+          "prompt": "On the teacher-provided GRID, draw a rectangle of exactly eight unit squares. Accept different correct 1×8 or 2×4 shapes when drawn properly; do not pass a mere integer as the drawing.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A2-SORT",
+          "sourceActivity": "Activity 2: Card Sort Rectangles",
+          "prompt": "Use the ORIGINAL publisher Card Sort: Rectangles cards. First sort by any defensible rule, then regroup the printed cards by AREA. The original cards have not been visually audited.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-A2-CREATE",
+          "sourceActivity": "Activity 2: Card Sort Rectangles",
+          "prompt": "For each original sorted area category, draw at least one DIFFERENT rectangular arrangement containing the same number of square units, and justify the membership.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L03-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare gaps vs overlaps, show how area is invariant across differently shaped tiled rectangles, and defend why identical square units are needed.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 25,

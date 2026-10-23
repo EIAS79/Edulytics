@@ -17,7 +17,25 @@
     "originalImageDescriptionsCount": 18,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "directOfficial2021TeacherStudentPageRead": true,
+    "warmupImages": [
+      "A 4x6 tiles alternate shading",
+      "B partial rectangle",
+      "C 4x6 grid",
+      "D 6x4 tiled with gaps and overlaps"
+    ],
+    "activity1FourHandoutFigures": {
+      "initialTilesMentioned": [
+        4,
+        3,
+        7,
+        null
+      ],
+      "fullSourceFigureGeometryInspected": false,
+      "areasNotGuessed": true
+    },
+    "activity2": "Source three same-area 12-unit rectangle representations, rectangle drawing of area 8, original uninspected cards to sort by area and redesign"
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +47,8 @@
     "existingSourceBodyHash": "b97b925be05925c9c69eccee2795afa0d44dcd03ee3e67702022b17c3f0502a6",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "firstPartyEightSquareExampleDrawnNotSourceArtwork": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +61,11 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Time to Tile with your teacher. Show the representation and explain how it meets the goal: Let’s count square tiles.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "originalStudentFacingSeparateHumanTasks": 14,
+    "eightUnitDrawingRequiresTeacherNoAutomaticNumericPass": true,
+    "firstPartyKnownRectangleNumberPracticeRetained": true,
+    "testsWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -285,7 +308,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Physical original four rectangles, original Card Sort Rectangles pack and 2021 Student Task PDF not visually audited. Thus their exact area calculations remain HUMAN review, and Stage D/Rich V2 remain unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
