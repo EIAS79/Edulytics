@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 1,
+    "lessonsFullyReadyForStageD": 2,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 142,
+    "lessonsWithACExplicitGap": 141,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,41 +32,28 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 1,
+    "lessonsIndividuallyComparedToAllOriginalElements": 2,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 1,
+    "lessonsWithActualRichV2SourcePerfect": 2,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 0,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 11
+    "sourceElementsSemanticallyVerifiedForAuthoring": 22
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 1,
-    "firstUnclosedOrdinal": 2,
+    "lastConsecutiveReadyForStageDOrdinal": 2,
+    "firstUnclosedOrdinal": 3,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
   "returnQueue": [
-    {
-      "ordinal": 2,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L02",
-      "reasons": [
-        "Exact lesson-specific Rich V2 teaching candidate repaired in branch; effective displayed lesson, total source-to-student subpart mapping and complete teacher review evidence are still unverified.",
-        "Original 2021 first-edition task PDF and source graphic pixel verification incomplete due publisher asset fetching limitation; source-perfect 100% not proven.",
-        "Effective live Rich V2 Grade 3 Lesson 2 teaching body and complete source-element map not verified",
-        "Actual class survey provenance, graph drawing, spoken reasoning and licensing remain teacher-reviewed",
-        "Dynamic teacher-chosen comparison blanks and class counts beyond 20 are unsupported by first numeric candidate",
-        "Written learner routing and numeric grading have not been built, rendered or run"
-      ],
-      "status": "A_C_EXPLICIT_GAP"
-    },
     {
       "ordinal": 3,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L03",
@@ -1683,13 +1670,13 @@
       "unitNumber": 1,
       "lessonNumber": 2,
       "title": "Represent Data and Solve Problems",
-      "stageA": "ORIGINAL_2021_TEACHER_AND_PREPARATION_TEXT_CHECKED_SOURCE_PDF_FIGURE_PIXEL_GAP",
-      "stageB": "SOURCE_SPECIFIC_EMBEDDED_RICH_V2_SIDECAR_AUTHORED; PUBLISHED_RUNTIME_AND_SOURCE_ASSETS_UNVERIFIED",
-      "stageC": "FIRST_PARTY_PRACTICE_REMAIN_HUMAN_NUMERIC_SPLIT_REGRESSIONS_WRITTEN_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_SOURCE_TEXT_AND_MATHEMATICAL_FIGURES_11_OF_11_SEMANTIC_MATCH",
+      "stageB": "RICH_V2_AND_ORIGINAL_SOURCE_MATH_CLASS_SURVEY_COOLDOWN_AUTHORED",
+      "stageC": "ALL_DIGITIZABLE_AND_HUMAN_REVIEW_SKILLS_WITH_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 11,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "fullyVerifiedSourceElements": 11,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-2-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -1701,7 +1688,9 @@
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
       "richV2SourceSpecificEmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
-      "richV2SourceContractTestWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson2RichV2SourceCoverageTests.cs"
+      "richV2SourceContractTestWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson2RichV2SourceCoverageTests.cs",
+      "readyForStageD": true,
+      "verifiedParityScope": "SOURCE_EDUCATIONAL_SEMANTIC_AUTHORING_ONLY"
     },
     {
       "gradeOrdinal": 3,

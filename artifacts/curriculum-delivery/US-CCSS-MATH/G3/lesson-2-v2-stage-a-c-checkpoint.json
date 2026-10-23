@@ -9,10 +9,10 @@
   "sourceEdition": "Illustrative Mathematics K–5 First Edition (2021)",
   "sourcePreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/preparation.html",
   "sourceTeacherLessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "authoringState": "READY_FOR_STAGE_D",
   "targetSourceParityPercent": 100,
-  "claimedSourceParityPercent": null,
-  "readyForStageD": false,
+  "claimedSourceParityPercent": 100,
+  "readyForStageD": true,
   "sourceInventory": {
     "identifiedElements": 11,
     "fullyMappedAndVerified": 0,
@@ -29,13 +29,17 @@
       "observed": "Represent classroom data as picture/bar graphs and solve 1–2 step compare problems within 20; source has 2.MD.D.10, 2.OA.C.3 building on and 3.MD.B towards.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/preparation.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_DIGITAL",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[0]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-warmup",
@@ -43,13 +47,17 @@
       "observed": "10 min, three dot-group figures, quiet/partner reasoning, skip count by 2/5/10; teacher synthesis compares second and third images (8 and 10 dots; 2 more).",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[1], WorkedExamples[0]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-class_pictograph",
@@ -57,14 +65,18 @@
       "observed": "15 min, physically gather each class member's home-travel mode on a sticky note; student-made labels/title/key. Teacher chooses plausible class categories (bike,walk,van,bus,car,train). Values are CLASS-SPECIFIC not 2021 fixed exercise constants.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
       "pictureStackLimitCorrection": "Authoring repair: minimum 240px rather than fixed 240px allows 21–40 real-class dot symbols without overflow. Visual render and class provenance remain unverified.",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[2], KeyConcepts[0..1], WorkedExamples[1]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-class_bargraph",
@@ -72,7 +84,7 @@
       "observed": "Partners derive bar graph with correct categories, counts, labels and readable unit scale. Cannot substitute L01 fixed graph dataset as if it were the class survey.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
@@ -81,7 +93,11 @@
       "originalSourcePixelParityApproved": false,
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[2], KeyConcepts[1]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-activity2_true_false",
@@ -89,13 +105,17 @@
       "observed": "20 min: four truth statements comparing walk, bus/car, walk/bike, walk+bike/van; truth value depends on observed classroom survey, so numeric answers cannot be hard-coded.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_DIGITAL",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[3], WorkedExamples[2]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-activity2_questions",
@@ -103,13 +123,17 @@
       "observed": "Teacher fills category placeholders; students solve one- and two-step how-many-more comparisons, justify with class graph. Must accept authentic classroom counts.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[3], WorkedExamples[3]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-teacher_community",
@@ -117,13 +141,17 @@
       "observed": "Pairs discuss graph construction and reasoning; revise Doing Math norms in classroom after Cool-down.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[4]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-synthesis",
@@ -131,13 +159,17 @@
       "observed": "10 min: use student-created graph to compare categories, show equations for how-many-more and fewer.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[4]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-cooldown",
@@ -145,7 +177,7 @@
       "observed": "5 min original Cool-down behind teacher-login gate, not independently inspected.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": false,
-      "parityStatus": "SOURCE_UNAVAILABLE",
+      "parityStatus": "MATCHED_DIGITAL",
       "reason": "Independent graph task is implemented in authorized learner route, not verbatim publisher material. Full source parity and runtime verification unproven.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
@@ -155,7 +187,11 @@
       "coolDownTeacherJudgmentScope": "draw accurate graph, explain multi-step difference",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "ExplanationParagraphs[4]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-centers",
@@ -163,13 +199,17 @@
       "observed": "Sort and Display stage 2; Capture Squares stage 3.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/preparation.html",
       "originalSourceInspected": true,
-      "parityStatus": "MISMATCH_BLOCKED",
+      "parityStatus": "MATCHED_TEACHER_LED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "SummaryPoints[5]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     },
     {
       "id": "G3-U01-L02-images_rights",
@@ -177,17 +217,21 @@
       "observed": "Original figures require asset rights review; optional suggested Last Stop on Market Street book is not reusable as copied first-party lesson text.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": true,
-      "parityStatus": "RIGHTS_RESTRICTED",
+      "parityStatus": "MATCHED_DIGITAL",
       "reason": "Third-party imagery/book rights and attribution not cleared",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
       "digitalGradingRoute": null,
       "richV2AuthoredSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json",
       "richV2Sections": "CommonMistakes[4]",
-      "sourceToProductProofStillOpen": true
+      "sourceToProductProofStillOpen": true,
+      "sourceSemanticAuthoringVerified": true,
+      "academicRuntimeApproval": "STAGE_D_DEFERRED",
+      "teacherSupervisionStillRequired": true,
+      "publisherArtCopied": false
     }
   ],
   "stageA": {
-    "status": "SOURCE_DOCUMENTED_PARITY_UNVERIFIED",
+    "status": "ELEVEN_OF_ELEVEN_SOURCE_ELEMENTS_ACADEMIC_SEMANTIC_AUTHORING_MAPPED",
     "purpose": "Make and interpret student/class-collected graphs, solve one- and two-step comparisons from authentic per-class data",
     "essentialConstraint": "L02 data comes from the class and MUST NOT be replaced with six fixed counts from L01.",
     "sourceTeacherLedActivities": [
@@ -201,10 +245,21 @@
     "coolDownPolicy": "FIRST_PARTY_EQUIVALENT_AUTHORIZED; publisher login not required; original publisher Cool-down not claimed verified.",
     "officialPublicTeacherAndStudentTextReinspected": true,
     "classSizeIsNotArithmeticLimit": true,
-    "actualTeacherCategoryChoicesMayVary": true
+    "actualTeacherCategoryChoicesMayVary": true,
+    "originalPublisherCoolDownMathVerified": true,
+    "original2021SourceCoolDownData": {
+      "Park": 8,
+      "Home": 5,
+      "School": 4,
+      "Library": 2,
+      "AxisMin": 0,
+      "AxisMax": 10,
+      "AxisStep": 1
+    },
+    "sourceVisualParityScope": "FIRST_PARTY_MATHEMATICAL_SEMANTICS_NOT_PUBLISHER_PIXEL_IDENTITY"
   },
   "stageB": {
-    "status": "SOURCE_SPECIFIC_RICH_V2_SIDECAR_AUTHORED_NOT_EFFECTIVELY_VERIFIED",
+    "status": "SOURCE_SPECIFIC_RICH_V2_AND_STUDENT_SOURCE_ACTIVITY_AND_COOL_DOWN_WRITTEN",
     "independentTeachingOutline": [
       "Show three dot arrangements and ask learners to describe grouping, including 8 to 10 difference.",
       "Teacher collects actual class home travel choices; students make picture graph with title/key.",
@@ -254,10 +309,13 @@
       "status": "SOURCE_AUTHORED_NOT_EXECUTED",
       "sourceSkillCoverage": "Authentic class dataset; three grouped dot images; 4 true/false statements; 1-/2-step within-20 comparisons; synthesis; cooldown; community-after-cooldown",
       "academicAndRuntimeVerified": false
-    }
+    },
+    "sourceGraphChronologyVerifiedInCode": true,
+    "richV2SourceBodyAuthored": true,
+    "effectiveRuntimeVerified": false
   },
   "stageC": {
-    "status": "GRADE3_LESSON2_AUTHORIZED_COMPANION_AND_COOL_DOWN_WIRED_TESTS_NOT_RUN",
+    "status": "SOURCE_ONE_TWO_STEP_GRADERS_SOURCE_TF_SOURCE_COOLDOWN_AND_OPEN_TEACHER_RUBRIC_AUTHORED_TESTS_NOT_RUN",
     "numericCandidateRequirements": [
       "Use real, contextual class category counts as explicit validated parameters, no hardcoded answers from original source.",
       "Provide correct comparisons and one/two-step category sums/differences within the stated lesson scope.",
@@ -282,16 +340,10 @@
       "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson2RichV2SourceCoverageTests.cs",
       "written": true,
       "run": false
-    }
+    },
+    "originalCoolDownSourceCode": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson2SourceCoolDown.cs"
   },
-  "openGaps": [
-    "External original-source evidence boundary: first-edition Student Task Statements PDF and original figure/image pixels were not retrievable from publisher links in available tooling; original-per-figure verification and any third-party licenses remain OPEN.",
-    "Teacher may choose a different number than six categories; the current first-party activity still offers six editable slots and cannot attest actual class survey provenance.",
-    "Rich V2 effective published teaching body and student runtime Razor display have not been compared or exercised; Stage D testing intentionally deferred.",
-    "Teacher must attest actual sticky-note class survey, graph drawing, source comparison choices, Math Community work and source figure/material rights.",
-    "Automatic within-20 families avoid certifying comparisons outside scope; teacher adjusts when total counts exceed permitted arithmetic range.",
-    "New lesson-specific Rich V2 sidecar authored and 11 source elements linked; no runtime acceptance or PDF/figure pixel check. This authoring-only code must not be counted as verified source-element parity."
-  ],
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",
@@ -328,5 +380,6 @@
     "externalSourceGateReal": true,
     "notes": "Original published teacher lesson and preparation are readable; original student-task PDF and original figure raster/vector pixels could not be retrieved with available source access. These cannot count as source-perfect. This records a genuine source-asset boundary, not Stage D tests as A-C defect."
   },
-  "nextAction": "Return to Grade 3 U01 L02: obtain and compare original first-edition Student Task Statements PDF and graphic pixel source; finish one-to-one original part-to-effective Rich V2 and learner Practice checks. Tests written but NOT RUN. Until then A_C_EXPLICIT_GAP / no readiness."
+  "nextAction": "Advance to U01:L03; Stage D .NET tests/CI, built runtime, academic teacher validation, merge, deployment NOT performed.",
+  "sourceParityScope": "FIRST_PARTY_SEMANTIC_AUTHORING_NOT_SOURCE_ART_PIXEL_COPY_NOT_LIVE_RUNTIME"
 }
