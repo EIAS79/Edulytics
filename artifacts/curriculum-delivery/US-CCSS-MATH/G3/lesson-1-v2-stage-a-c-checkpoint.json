@@ -60,11 +60,12 @@
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
       "originalSourceInspected": true,
       "parityStatus": "MISMATCH_BLOCKED",
-      "reason": "Source mathematical activity represented in new independently authored learner companion, but effective database Rich V2 comparison, implementation verification and classroom rubric confirmation are still open.",
+      "reason": "First-party representation corrected to bottom-aligned six-column graph, but original image pixels/Rich V2 runtime remain unverified.",
       "edulyticsEffectiveTeachingFile": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
       "digitalPracticeImplementation": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
       "assessmentTestFile": null,
-      "teacherReviewRequired": false
+      "teacherReviewRequired": false,
+      "firstPartyVerticalGeometryCorrected": true
     },
     {
       "id": "G3-U01-L01-04",
@@ -73,11 +74,12 @@
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
       "originalSourceInspected": true,
       "parityStatus": "MISMATCH_BLOCKED",
-      "reason": "Source mathematical activity represented in new independently authored learner companion, but effective database Rich V2 comparison, implementation verification and classroom rubric confirmation are still open.",
+      "reason": "First-party representation corrected to bottom-aligned six-column graph, but original image pixels/Rich V2 runtime remain unverified.",
       "edulyticsEffectiveTeachingFile": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
       "digitalPracticeImplementation": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
       "assessmentTestFile": null,
-      "teacherReviewRequired": true
+      "teacherReviewRequired": true,
+      "firstPartyVerticalGeometryCorrected": true
     },
     {
       "id": "G3-U01-L01-05",
@@ -86,11 +88,12 @@
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
       "originalSourceInspected": true,
       "parityStatus": "MISMATCH_BLOCKED",
-      "reason": "Source mathematical activity represented in new independently authored learner companion, but effective database Rich V2 comparison, implementation verification and classroom rubric confirmation are still open.",
+      "reason": "First-party representation corrected to bottom-aligned six-column graph, but original image pixels/Rich V2 runtime remain unverified.",
       "edulyticsEffectiveTeachingFile": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
       "digitalPracticeImplementation": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
       "assessmentTestFile": null,
-      "teacherReviewRequired": false
+      "teacherReviewRequired": false,
+      "firstPartyVerticalGeometryCorrected": true
     },
     {
       "id": "G3-U01-L01-06",
@@ -99,11 +102,12 @@
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
       "originalSourceInspected": true,
       "parityStatus": "MISMATCH_BLOCKED",
-      "reason": "Source mathematical activity represented in new independently authored learner companion, but effective database Rich V2 comparison, implementation verification and classroom rubric confirmation are still open.",
+      "reason": "First-party representation corrected to bottom-aligned six-column graph, but original image pixels/Rich V2 runtime remain unverified.",
       "edulyticsEffectiveTeachingFile": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
       "digitalPracticeImplementation": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
       "assessmentTestFile": null,
-      "teacherReviewRequired": false
+      "teacherReviewRequired": false,
+      "firstPartyVerticalGeometryCorrected": true
     },
     {
       "id": "G3-U01-L01-07",
@@ -137,7 +141,7 @@
       "observed": "5 min, explicitly present in official Lesson page but full task statement behind teacher-login gate.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
       "originalSourceInspected": false,
-      "parityStatus": "FIRST_PARTY_EDULYTICS_EQUIVALENT_AUTHORED_IN_LEARNER_COMPANION_UNRUN",
+      "parityStatus": "SOURCE_UNAVAILABLE",
       "reason": "Owner-approved independent equivalent assessment is wired to an authorized learner activity. Original publisher Cool-down not inspected or reproduced. Runtime route and full Rich V2 parity not validated.",
       "edulyticsEffectiveTeachingFile": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
       "digitalPracticeImplementation": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
@@ -196,7 +200,10 @@
       "Original Cool-down behind educator-login gate",
       "Original images asset rights and precise Edulytics diagrams still to verify"
     ],
-    "coolDownPolicy": "FIRST_PARTY_EQUIVALENT_AUTHORIZED; publisher login not required; original publisher Cool-down not claimed verified."
+    "coolDownPolicy": "FIRST_PARTY_EQUIVALENT_AUTHORIZED; publisher login not required; original publisher Cool-down not claimed verified.",
+    "originalTeacherPublicLessonRechecked": true,
+    "sourcePublicLessonTeachingSequenceReverified": true,
+    "graphGeometrySourceDescription": "Six bottom-aligned upright columns, key one figure/student; first unnamed without title; second titled How We Get Home but unnamed; third titled and named, followed by a corresponding 0..8 by-one bar chart."
   },
   "stageB": {
     "status": "FIRST_PARTY_STUDENT_COMPANION_AUTHORED_RICH_V2_NOT_FULLY_VERIFIED",
@@ -224,7 +231,11 @@
     "studentLinkResolvedWithoutGenericPracticeContract": true,
     "authoredActivityAdoptionResolutionFile": "src/Edulytics.Web/Controllers/StudentPortalController.cs",
     "visualScaleEvidence": "First-party bar graph explicitly renders 0..8 axis ticks at one-unit equal spacing; six heights use 20 px per student, corresponding picture marks use one glyph per student.",
-    "teacherMathCommunityTChart": "Independent student/teacher Doing Math versus Norms table embedded in learner companion, not source artwork."
+    "teacherMathCommunityTChart": "Independent student/teacher Doing Math versus Norms table embedded in learner companion, not source artwork.",
+    "firstPartyVisualGeometryErrorFound": "Previous independently drawn pictograph had six horizontal rows instead of six vertical columns.",
+    "firstPartyVisualGeometryCorrection": "Three vertical column displays with sequential label/title disclosure; six source values unchanged.",
+    "richV2AuthoringCorrectionPath": "src/Edulytics.Data/Seeding/Grade3/g3-2021-provisional-rich-v2-corrections.json",
+    "richV2CorrectionType": "Versioned authoring migration rule (not database-applied or pixel-verified)"
   },
   "stageC": {
     "status": "STUDENT_COMPANION_NUMERIC_AND_AUTHORED_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -251,7 +262,9 @@
       "Plausible missing category inference",
       "Compare graphs verbally/in writing",
       "Write two own answerable graph questions",
-      "Teacher Math Community norms and lesson synthesis"
+      "Teacher Math Community norms and lesson synthesis",
+      "Student lesson-synthesis written reflection",
+      "Teacher and student Math Community written norm reflection"
     ],
     "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs",
     "testsWritten": true,
@@ -267,13 +280,12 @@
     "routedPath": "student/practice/grade3-u01-l01"
   },
   "openGaps": [
-    "Effective database-backed Rich V2 G3 lesson body has not been read or compared to source and new companion; complete teacher and learner parity proof before closure.",
-    "New dedicated learner controller/view/link are authored on PR branch but no Razor build, HTTP flow or grading tests have been run (Stage D intentionally deferred).",
-    "Dedicated authorized student link is now independent of generic READY_VERIFIED Practice routing; its HTTP rendering remains untested.",
-    "Verify teacher-led partner participation, student-authored questions and optional centres with rubric/lesson evidence; no automatic certification.",
-    "Confirm asset-level licensing/attribution and independently drawn representations in effective rendered view.",
-    "2021 publisher-gated original Cool-down remains uninspected by design, but independent first-party equivalent is allowed and authored.",
-    "Automated GitHub CI started unexpectedly on first push; these runs are not requested Stage D academic verification and cannot be treated as such."
+    "Original 2021 publisher student task PDF could not be downloaded/accessed, and complete figure pixels (including two unlabelled local SVG references) have not been visually inspected; no source-perfect claim.",
+    "Versioned source teaching corrections and independent student Razor columns authored, but actual Rich V2 stored database rendering, teacher access control and unit-scale pixels remain unverified.",
+    "One-to-one closure of each original activity subpart, accessibility adaptations and open teacher rubric still requires complete figure/material evidence.",
+    "Original publisher Cool-down remains teacher-login gated; the agreed independently authored equivalent is permitted but cannot prove the original assessment's verbatim parity.",
+    "Source imagery rights must be checked independently; this changes only first-party glyph rendering, not protected publisher art.",
+    "Grade 3 Lesson 1 typed .NET/Razor tests intentionally NOT RUN until Stage D; no CI, merge, deployment or academic approval"
   ],
   "nextAction": "Inspect effective database Rich V2 and existing exact Practice contract, then finish 1:1 teacher/learner parity and code-level review for L01. Do not mark READY_FOR_STAGE_D until remaining A-C evidence is demonstrable; do not run tests or CI.",
   "stageD": "NOT_STARTED",

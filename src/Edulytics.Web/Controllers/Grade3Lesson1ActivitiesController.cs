@@ -76,7 +76,9 @@ public sealed class Grade3Lesson1ActivitiesController(
             new("Student-authored graph questions", null, true,
                 "A teacher must check that both questions can actually be answered from the displayed categories and values."),
             new("Edulytics Cool-down: author a new question", null, true,
-                "A teacher must review the learner's original question and reasoning; an entered explanation is not an automatic pass.")
+                "A teacher must review the learner's original question and reasoning; an entered explanation is not an automatic pass."),
+            new("Lesson synthesis and Math Community norms", null, true,
+                "Teacher reviews the learner's graph synthesis, limits of available categorical data, partner language and collaborative discussion norms. No numeric automatic certification.")
         };
 
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";

@@ -12,6 +12,11 @@
 .g3-data h1 {font-size:1.9rem;line-height:1.25}
 .g3-data h2 {font-size:1.3rem}
 .g3-data .note {color:#405e73;max-width:80ch}
+.g3-data .picture-columns {display:grid;grid-template-columns:repeat(6,minmax(54px,1fr));gap:10px;max-width:680px;overflow-x:auto;border-bottom:2px solid #587e91;padding:8px}
+.g3-data .picture-column {display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:54px}
+.g3-data .picture-stack {height:192px;display:flex;flex-direction:column-reverse;align-items:center;justify-content:flex-start;gap:3px}
+.g3-data .picture-mark {display:block;color:#127b91;font-size:1.2rem;line-height:21px}
+.g3-data .picture-column-label {margin-top:7px;font-size:.78rem;text-align:center;overflow-wrap:anywhere}
 .g3-data .picture-rows {display:grid;grid-template-columns:minmax(110px,160px) 1fr;gap:9px;align-items:center}
 .g3-data .dots {font-size:1.2rem;letter-spacing:.28rem;overflow-wrap:anywhere}
 .g3-data .bar-graph {max-width:670px;display:grid;grid-template-columns:30px 1fr;column-gap:7px}
@@ -47,11 +52,18 @@
         <section class="panel" aria-labelledby="warmup">
             <h2 id="warmup">1. Notice and wonder — picture graph</h2>
             <p>A mark stands for one student. Before seeing category labels, look at these six columns. Explain what you notice and what you wonder. Discuss your ideas with a partner.</p>
-            <div class="picture-rows" aria-label="Unlabelled graph columns with counts four, three, one, two, seven and six">
+            <div class="picture-columns" role="group" aria-label="Unlabelled picture graph with six upright columns, left to right: 4, 3, 1, 2, 7 and 6 symbols; each symbol represents one student">
                 @for (var i = 0; i < source.Count; i++)
                 {
-                    <strong>Column @(i + 1)</strong>
-                    <span class="dots" aria-label="@(source[i].NumberOfStudents) students">@(string.Concat(Enumerable.Repeat("● ", source[i].NumberOfStudents)))</span>
+                    <div class="picture-column">
+                        <div class="picture-stack" aria-label="Column @(i + 1): @source[i].NumberOfStudents students">
+                            @for (var mark = 0; mark < source[i].NumberOfStudents; mark++)
+                            {
+                                <span class="picture-mark" aria-hidden="true">●</span>
+                            }
+                        </div>
+                        <strong class="picture-column-label">Column @(i + 1)</strong>
+                    </div>
                 }
             </div>
             <p class="note">Key: ● = 1 student. The numbered column placeholders are not category names.</p>
@@ -62,7 +74,23 @@
 
         <section class="panel" aria-labelledby="picture">
             <h2 id="picture">2. Picture Time — understand the context</h2>
-            <p>Suppose these six columns are ways that students travel home. Before the names are shown, suggest six sensible category labels. What does the title help you work out? Explain your idea to a partner.</p>
+            <p>The same six columns now have the title <strong>How We Get Home</strong>, but category names are still hidden. Suggest six possible labels. Explain how the title changes what you can infer and why no particular category name can be proved without more data.</p>
+            <h3>How We Get Home — columns still unlabelled</h3>
+            <div class="picture-columns" role="group" aria-label="Six unlabelled vertical picture graph categories under title How We Get Home; symbol key one pupil; counts 4, 3, 1, 2, 7 and 6">
+                @for (var i = 0; i < source.Count; i++)
+                {
+                    <div class="picture-column">
+                        <div class="picture-stack" aria-label="Column @(i + 1): @source[i].NumberOfStudents students">
+                            @for (var mark = 0; mark < source[i].NumberOfStudents; mark++)
+                            {
+                                <span class="picture-mark" aria-hidden="true">●</span>
+                            }
+                        </div>
+                        <strong class="picture-column-label">Column @(i + 1)</strong>
+                    </div>
+                }
+            </div>
+            <p>Key: ● = 1 student. A graph title gives context, not missing category names.</p>
             <label for="plausible-categories">Your possible labels and explanation</label>
             <textarea id="plausible-categories" name="PlausibleCategories" rows="3" maxlength="2000">@Model.Answers.PlausibleCategories</textarea>
         </section>
@@ -71,11 +99,18 @@
             <h2 id="graphs">3. Two graphs, one dataset</h2>
             <p>Now read the real category names from the lesson. Both original-format diagrams below are created directly from the same numerical data.</p>
             <h3>How We Get Home — picture graph</h3>
-            <div class="picture-rows">
+            <div class="picture-columns" role="group" aria-label="How We Get Home: 6 upright columns, one symbol per student, Walk 4, Bike 3, Skateboard 1, Car 2, Bus 7, Train 6">
                 @foreach (var item in source)
                 {
-                    <strong>@item.Label</strong>
-                    <span class="dots" aria-label="@item.NumberOfStudents students choosing @item.Label">@(string.Concat(Enumerable.Repeat("● ", item.NumberOfStudents)))</span>
+                    <div class="picture-column">
+                        <div class="picture-stack" aria-label="@item.Label: @item.NumberOfStudents students">
+                            @for (var mark = 0; mark < item.NumberOfStudents; mark++)
+                            {
+                                <span class="picture-mark" aria-hidden="true">●</span>
+                            }
+                        </div>
+                        <strong class="picture-column-label">@item.Label</strong>
+                    </div>
                 }
             </div>
             <p class="note">Key: ● = 1 student.</p>
@@ -144,6 +179,15 @@
             <p class="note">Your teacher reviews the explanation and the questions you create. This page checks numbers only.</p>
         </section>
 
+        <section class="panel" aria-label="Lesson synthesis and Math Community reasoning">
+            <h2>5. Lesson synthesis — how can a graph communicate information?</h2>
+            <p>Explain how the title, key, labelled categories and one-unit bar axis let you read and compare the same responses. Can you ask a question that the graph cannot answer?</p>
+            <label for="synthesis-reflection">My synthesis and an example of an unanswerable question</label>
+            <textarea id="synthesis-reflection" name="SynthesisReflection" rows="3" maxlength="2000">@Model.Answers.SynthesisReflection</textarea>
+            <label for="math-community-reflection">What does respectful mathematical discussion look and sound like for students and the teacher?</label>
+            <textarea id="math-community-reflection" name="MathCommunityReflection" rows="3" maxlength="2000">@Model.Answers.MathCommunityReflection</textarea>
+            <p class="note">Teacher-only observation: 1-minute independent warm-up, partner dialogue, justified category suggestions, precise restating of a peer's observation (MLR8), and reflection on norms. Numeric checks do not assess these activities.</p>
+        </section>
         <button class="submit" type="submit">Check my numeric answers</button>
     </form>
 

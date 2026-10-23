@@ -99,4 +99,28 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         Assert.False(UsCcssG3Unit1Lesson1GraphCandidate.TryGradeNumeric(
             "unsupported-task", "Bus", null, 7, out _));
     }
+    [Fact]
+    public void SequentialPictureGraphMustPreserveBottomAlignedSixColumnsWithTheSameTwentyThreeStudents()
+    {
+        var values = UsCcssG3Unit1Lesson1GraphCandidate.Values;
+        Assert.Equal(new[] { 4, 3, 1, 2, 7, 6 },
+            values.Select(v => v.NumberOfStudents));
+        Assert.Equal(23, values.Sum(v => v.NumberOfStudents));
+        Assert.All(values, row => Assert.InRange(
+            row.NumberOfStudents, 0, UsCcssG3Unit1Lesson1GraphCandidate.BarYAxisMaximum));
+        Assert.Equal(1, UsCcssG3Unit1Lesson1GraphCandidate.PictographStudentsPerSymbol);
+    }
+
+    [Fact]
+    public void UnlabelledSourceGraphNeverAssignsAnAutomaticallyCertifiedCategory()
+    {
+        foreach(var mode in new [] { "notice-and-wonder", "infer-unlabeled-graph-categories",
+                                     "oral-synthesis", "math-community-norms" })
+        {
+            Assert.True(UsCcssG3Unit1Lesson1GraphCandidate.RequiresTeacherJudgment(mode));
+            Assert.False(UsCcssG3Unit1Lesson1GraphCandidate.TryGradeNumeric(
+                mode, "Bus", null, 7, out _));
+        }
+    }
+
 }

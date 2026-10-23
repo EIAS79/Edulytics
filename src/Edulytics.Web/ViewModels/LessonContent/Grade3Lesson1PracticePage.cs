@@ -16,6 +16,8 @@ public sealed class Grade3Lesson1Answers
     public string? CoolDownCount { get; set; }
     public string? CoolDownDifference { get; set; }
     public string? CoolDownOriginalQuestion { get; set; }
+    public string? SynthesisReflection { get; set; }
+    public string? MathCommunityReflection { get; set; }
 }
 
 public sealed record Grade3Lesson1Feedback(
