@@ -18,23 +18,23 @@
     "catalogueLessons": 143,
     "units": 8,
     "lessonsFullyReadyForStageD": 0,
-    "lessonsWithFirstEditionPublicSourceIndexed": 2,
-    "lessonsWithACExplicitGap": 2,
-    "remainingWithoutOriginalReview": 141,
-    "numericCandidateCodeFilesAuthored": 2,
-    "stageCRegressionFilesWrittenNotRun": 2,
-    "sourceElementsIndexed": 22,
+    "lessonsWithFirstEditionPublicSourceIndexed": 3,
+    "lessonsWithACExplicitGap": 3,
+    "remainingWithoutOriginalReview": 140,
+    "numericCandidateCodeFilesAuthored": 3,
+    "stageCRegressionFilesWrittenNotRun": 3,
+    "sourceElementsIndexed": 30,
     "sourceElementsFullyComparedToEffectiveProduct": 0,
-    "firstPartyOriginalCoolDownLessonsAuthored": 2,
-    "firstPartyOriginalCoolDownNumericQuestions": 4,
-    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 2,
+    "firstPartyOriginalCoolDownLessonsAuthored": 3,
+    "firstPartyOriginalCoolDownNumericQuestions": 6,
+    "firstPartyOriginalCoolDownTeacherReviewedQuestions": 3,
     "firstPartyOriginalCoolDownTestFilesWrittenNotRun": 1
   },
   "cursor": {
     "lastConsecutiveReadyForStageDOrdinal": 0,
     "firstUnclosedOrdinal": 1,
-    "highestSequentiallySourceIndexedOrdinal": 2,
-    "nextAfterExternalGapOrdinal": 3
+    "highestSequentiallySourceIndexedOrdinal": 3,
+    "nextAfterExternalGapOrdinal": 4
   },
   "returnQueue": [
     {
@@ -57,6 +57,17 @@
         "Written learner routing and numeric grading have not been built, rendered or run"
       ],
       "status": "A_C_EXPLICIT_GAP"
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L03",
+      "status": "A_C_EXPLICIT_GAP",
+      "reasons": [
+        "Original 2021 image numerical data and Student Facing PDF not verified",
+        "Published Rich V2 content not source-compared",
+        "Authoring-only original numeric candidate and learner route not executed",
+        "Teacher-led questions, exact visual parity and licensing remain open"
+      ]
     }
   ],
   "sourceElementCoverageRule": "100% requires each original source element directly compared to effective Edulytics lesson/Practice or honestly designated teacher-led and rights cleared; no counts from the catalogue hash alone.",
@@ -106,16 +117,17 @@
       "unitNumber": 1,
       "lessonNumber": 3,
       "title": "Scaled Picture Graphs PLC Activity",
-      "stageA": "NOT_STARTED",
-      "stageB": "NOT_STARTED",
-      "stageC": "NOT_STARTED",
-      "authoringClosure": "NOT_STARTED",
-      "sourceElementsIdentified": 0,
+      "stageA": "SOURCE_PACKETS_PARTIALLY_INDEXED_ORIGINAL_FIGURES_UNVERIFIED",
+      "stageB": "INDEPENDENT_SCALED_GRAPH_COMPANION_AUTHORED_RICH_V2_OPEN",
+      "stageC": "AUTHORED_NUMERIC_AND_COOL_DOWN_WIRED_TESTS_NOT_RUN",
+      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "sourceElementsIdentified": 8,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
-      "checkpointPath": null,
+      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-3-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
-      "academicApproval": "NOT_CLAIMED"
+      "academicApproval": "NOT_CLAIMED",
+      "coolDownState": "INDEPENDENT_ORIGINAL_COOL_DOWN_AUTHORED_NOT_STAGE_D_VERIFIED"
     },
     {
       "gradeOrdinal": 4,

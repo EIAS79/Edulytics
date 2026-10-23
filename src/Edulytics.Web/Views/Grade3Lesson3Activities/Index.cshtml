@@ -1,0 +1,110 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3Lesson3PracticePage
+@using Edulytics.Core.Mathematics.Curriculum
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Grade 3 · Scaled Picture Graphs";
+    var sports = UsCcssG3Unit1Lesson3ScaledPictureGraph.Sports;
+    var flowers = UsCcssG3Unit1Lesson3ScaledPictureGraph.Flowers;
+    var cool = UsCcssG3Unit1Lesson3ScaledPictureGraph.IndependentCoolDown;
+}
+<style>
+.g3-scale{max-width:920px;margin:0 auto;padding:20px;color:#17344e}
+.g3-scale .panel{border:1px solid #d7e4ef;border-radius:15px;background:#fff;padding:23px;margin:17px 0}
+.g3-scale .rows{display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:center}
+.g3-scale .dots{font-size:1.35rem;letter-spacing:.3rem}
+.g3-scale label{display:block;margin:14px 0 5px;font-weight:700}
+.g3-scale input,.g3-scale textarea{padding:10px;width:100%;max-width:650px;border:1px solid #69829a;border-radius:8px;font:inherit}
+.g3-scale input:focus,.g3-scale textarea:focus{outline:3px solid #b3ddec}
+.g3-scale .number-questions{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.g3-scale .button{background:#077c8e;color:white;border:0;border-radius:8px;padding:13px 20px;cursor:pointer;font:inherit;font-weight:700}
+.g3-scale .ok{border-left:4px solid #197452;padding-left:10px}.g3-scale .no{border-left:4px solid #b32f43;padding-left:10px}
+.g3-scale .review{border-left:4px solid #a57517;padding-left:10px}
+</style>
+<main class="g3-scale">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <header>
+        <p>EDULYTICS · NEW ORIGINAL TASKS</p>
+        <h1>Read and ask questions about scaled picture graphs</h1>
+        <p>One symbol can represent more than one person or object. Always use the displayed key. All charts and Cool-down questions below were independently designed by Edulytics; they are not copies of publisher artwork or the restricted original Cool-down.</p>
+    </header>
+    <form asp-controller="Grade3Lesson3Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <section class="panel">
+            <h2>1. Mental maths and partner discussion</h2>
+            <p>Work mentally: 50 + 10, 50 + 12, 60 + 13, 65 + 13. What strategy helps you combine tens and ones? Why is 65 + 13 = 78?</p>
+            <label for="warmup">My strategy</label>
+            <textarea name="Warmup" id="warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
+        </section>
+        <section class="panel">
+            <h2>2. Read an original scaled picture graph about sports</h2>
+            <p><strong>@sports.Title</strong> — key: ● = @sports.StudentsPerSymbol students.</p>
+            <div class="rows">
+            @foreach(var item in sports.Rows){
+                <strong>@item.Category</strong>
+                <span class="dots" aria-label="@item.Symbols symbols for @item.Category; each is worth @sports.StudentsPerSymbol students">@(string.Concat(Enumerable.Repeat("● ", item.Symbols)))</span>
+            }
+            </div>
+            <p>Example: three soccer symbols mean 3 × 5 = 15 students. Counting only the symbols would give the wrong answer.</p>
+            <div class="number-questions">
+                <div><label for="sport-total">How many students in total?</label><input id="sport-total" name="SportsTotal" value="@Model.Answers.SportsTotal" inputmode="numeric" required /></div>
+                <div><label for="basketball">How many chose basketball?</label><input id="basketball" name="SportsBasketball" value="@Model.Answers.SportsBasketball" inputmode="numeric" required /></div>
+                <div><label for="sport-compare">How many more chose basketball than tennis?</label><input id="sport-compare" name="SportsCompare" value="@Model.Answers.SportsCompare" inputmode="numeric" required /></div>
+            </div>
+        </section>
+        <section class="panel">
+            <h2>3. Read an original scaled flower graph</h2>
+            <p><strong>@flowers.Title</strong> — key: ● = @flowers.StudentsPerSymbol flowers.</p>
+            <div class="rows">
+            @foreach(var item in flowers.Rows){
+                <strong>@item.Category</strong><span class="dots" aria-label="@item.Symbols symbols for @item.Category; each worth @flowers.StudentsPerSymbol flowers">@(string.Concat(Enumerable.Repeat("● ", item.Symbols)))</span>
+            }
+            </div>
+            <div class="number-questions">
+                <div><label for="roses">How many roses?</label><input id="roses" name="FlowersRoses" value="@Model.Answers.FlowersRoses" inputmode="numeric" required /></div>
+                <div><label for="flower-total">How many flowers in all?</label><input id="flower-total" name="FlowersTotal" value="@Model.Answers.FlowersTotal" inputmode="numeric" required /></div>
+                <div><label for="flower-compare">How many more daisies than tulips?</label><input id="flower-compare" name="FlowersCompare" value="@Model.Answers.FlowersCompare" inputmode="numeric" required /></div>
+            </div>
+            <label for="key-explain">Explain how the key 2 and key 5 change what each symbol means</label>
+            <textarea name="DifferenceInKeys" id="key-explain" rows="3" maxlength="2000">@Model.Answers.DifferenceInKeys</textarea>
+            <label for="original-question">Create another question that can be answered using one of these graphs</label>
+            <textarea name="OriginalQuestion" id="original-question" rows="3" maxlength="2000">@Model.Answers.OriginalQuestion</textarea>
+        </section>
+        <section class="panel">
+            <h2>4. New Edulytics Cool-down</h2>
+            <p><strong>@cool.Title</strong> — key: ● = @cool.StudentsPerSymbol learners.</p>
+            <div class="rows">
+            @foreach(var item in cool.Rows){
+                <strong>@item.Category</strong><span class="dots" aria-label="@item.Symbols symbols for @item.Category, each represents @cool.StudentsPerSymbol students">@(string.Concat(Enumerable.Repeat("● ", item.Symbols)))</span>
+            }
+            </div>
+            <div class="number-questions">
+                <div><label for="cool-nature">How many chose Nature?</label><input name="CoolNature" id="cool-nature" value="@Model.Answers.CoolNature" inputmode="numeric" required /></div>
+                <div><label for="cool-difference">How many more chose Nature than Mystery?</label><input name="CoolDifference" id="cool-difference" value="@Model.Answers.CoolDifference" inputmode="numeric" required /></div>
+            </div>
+            <label for="cool-explain">Invent another valid question from this graph and explain its answer</label>
+            <textarea name="CoolExplanation" id="cool-explain" rows="3" maxlength="2000">@Model.Answers.CoolExplanation</textarea>
+        </section>
+        <section class="panel">
+            <h2>5. Teacher review and lesson synthesis</h2>
+            <p>Discuss which graph has the larger key, what the symbols really count, and why the key must be read before answering. Ask a partner to solve your independently written question.</p>
+            <label for="community">Our classroom norm for explaining scaled graphs</label><textarea name="MathCommunity" id="community" rows="3" maxlength="2000">@Model.Answers.MathCommunity</textarea>
+            <p>Teacher rubric: correct use of scales 2 and 5, sensible question, correct units, explanation of symbols versus represented counts, and oral/partner reasoning. These cannot be passed by a number-only result.</p>
+        </section>
+        <button class="button" type="submit">Check the numerical graph questions</button>
+    </form>
+    @if(Model.Submitted){
+        <section class="panel" aria-live="polite">
+            <h2>Learning feedback</h2>
+            @foreach(var item in Model.Feedback){
+                <div class="@(item.MachineCorrect == true?"ok":item.MachineCorrect == false?"no":"review")">
+                    <strong>@item.Name</strong>
+                    <p>@(item.MachineCorrect == true?"Mathematically correct.":item.MachineCorrect == false?"Recheck the calculation.":"Teacher review required.") @item.Message</p>
+                </div>
+            }
+            <p>These responses are not an official school grade or proof of classroom participation.</p>
+        </section>
+    }
+    <p>Academic reference: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-3/preparation.html" rel="noopener noreferrer">Illustrative Mathematics Grade 3 Unit 1 Lesson 3, first edition (2021)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer">CC BY 4.0</a>. No original publisher graphics or protected Cool-down were copied.</p>
+</main>

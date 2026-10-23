@@ -525,6 +525,9 @@ public sealed class StudentPortalController : Controller
                 StringComparison.Ordinal) ||
             string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L02",
+                StringComparison.Ordinal) ||
+            string.Equals(lesson.LessonCode,
+                "PED:US-CCSS-MATH:G3:U01:L03",
                 StringComparison.Ordinal))
         {
             grade3AuthoredActivityAdoptionId = workspace.SelectedCurriculumAdoptionId;

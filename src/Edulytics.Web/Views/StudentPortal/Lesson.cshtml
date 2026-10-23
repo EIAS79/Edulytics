@@ -134,6 +134,22 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L03" &&
+         grade3AuthoredActivityAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 3 scaled graph lesson companion">
+            <h2>Edulytics · scaled picture graph activities</h2>
+            <p>Read new scale-two and scale-five pictographs, work out totals and comparisons,
+                invent questions, and complete an independent original Cool-down.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade3Lesson3Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@grade3AuthoredActivityAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open scaled picture graph activities and Cool-down
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {
