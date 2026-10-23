@@ -63,6 +63,66 @@ public sealed class UsCcssG3Unit1Lesson6ChooseScaleTests
         Assert.False(UsCcssG3Unit1Lesson6ChooseScale.TryGradeNumeric(id+"-DRAW",correct,out _));
     }
     [Fact]
+    public void Original2021ImageGeometriesAndIndependentSymbolCountsStayExact()
+    {
+        // Original SVG 7053kvgtyqg9pibtx7gto33ajaea: one exactly duplicated
+        // green path = 27 green path occurrences but 26 visible triangles.
+        Assert.Equal(new[]{26,5,15,10},
+            UsCcssG3Unit1Lesson6ChooseScale.SourcePatternBlocks.Select(x=>x.Count));
+        var symbols=UsCcssG3Unit1Lesson6ChooseScale.FirstPartyPatternShapeOrder;
+        Assert.Equal(56,symbols.Count);
+        foreach(var row in UsCcssG3Unit1Lesson6ChooseScale.SourcePatternBlocks)
+        {
+            Assert.Equal(row.Count,symbols.Count(x=>x==row.Category));
+            Assert.True(UsCcssG3Unit1Lesson6ChooseScale.TryGradePatternCount(row.Category,row.Count,out var pass));
+            Assert.True(pass);
+            Assert.True(UsCcssG3Unit1Lesson6ChooseScale.TryGradePatternCount(row.Category,row.Count+1,out var wrong));
+            Assert.False(wrong);
+        }
+    }
+
+    [Theory]
+    [InlineData("L06-SOURCE-PATTERN-TRIANGLE",26)]
+    [InlineData("L06-SOURCE-PATTERN-SQUARE",5)]
+    [InlineData("L06-SOURCE-PATTERN-TRAPEZOID",15)]
+    [InlineData("L06-SOURCE-PATTERN-HEXAGON",10)]
+    [InlineData("L06-SOURCE-SEASON-BAR-WINTER",24)]
+    [InlineData("L06-SOURCE-SEASON-BAR-SPRING",13)]
+    [InlineData("L06-SOURCE-SEASON-BAR-SUMMER",40)]
+    [InlineData("L06-SOURCE-SEASON-BAR-FALL",22)]
+    public void StudentAuthoredGraphCategoryTalliesAreCheckedWithoutRounding(string id,int answer)
+    {
+        Assert.True(UsCcssG3Unit1Lesson6ChooseScale.TryGradeNumeric(id,answer,out var right));
+        Assert.True(right);
+        Assert.True(UsCcssG3Unit1Lesson6ChooseScale.TryGradeNumeric(id,answer+1,out var wrong));
+        Assert.False(wrong);
+    }
+
+    [Fact]
+    public void SourceCooldownChronologyAndTwoDistinctOpenQuestionsAreWrittenNotRun()
+    {
+        DirectoryInfo? dir=new(AppContext.BaseDirectory);
+        string? path=null;
+        while(dir is not null)
+        {
+            var check=Path.Combine(dir.FullName,"src","Edulytics.Web","Views",
+                "Grade3Lesson6Activities","Index.cshtml");
+            if(File.Exists(check)){path=check;break;}
+            dir=dir.Parent;
+        }
+        Assert.NotNull(path);
+        var view=File.ReadAllText(path!);
+        Assert.Contains("SourceCoolDownScale",view);
+        Assert.Contains("SourceCoolDownLearning",view);
+        Assert.Contains("MathCommunityNorm",view);
+        Assert.Contains("FirstPartyPatternShapeOrder",view);
+        Assert.Contains("SeasonWinterBar",view);
+        Assert.True(view.IndexOf("4. Lesson synthesis",StringComparison.Ordinal)
+            <view.IndexOf("5. Source-aligned Cool-down",StringComparison.Ordinal));
+        Assert.True(view.IndexOf("5. Source-aligned Cool-down",StringComparison.Ordinal)
+            <view.IndexOf("6. Math Community",StringComparison.Ordinal));
+    }
+    [Fact]
     public void ImageCountsRemainTeacherVerifiedAndScaleJudgmentIsNotMachinePassed()
     {
         UsCcssG3Unit1Lesson6ChooseScale.CategoryCount[] input=[

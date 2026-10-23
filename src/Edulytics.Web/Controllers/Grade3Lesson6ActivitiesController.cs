@@ -39,7 +39,18 @@ public sealed class Grade3Lesson6ActivitiesController(
         var seasonScale=int.TryParse(answers.SeasonScale,out var s) && s is 2 or 5 or 10?s:5;
         var pattern=Parse(answers);
         var valid=UsCcssG3Unit1Lesson6ChooseScale.TryValidatePatternCounts(pattern,out var reason);
+        var enteredSeasons=ParseSeasonBars(answers);
+        var validSeasons=enteredSeasons is { Count:4 } &&
+            enteredSeasons.All(row=>row.Count>=0 && row.Count<=100);
         var questions=new[]{
+            ("L06-SOURCE-PATTERN-TRIANGLE","Pattern-block source: triangles",answers.Triangle),
+            ("L06-SOURCE-PATTERN-SQUARE","Pattern-block source: squares",answers.Square),
+            ("L06-SOURCE-PATTERN-TRAPEZOID","Pattern-block source: trapezoids",answers.Trapezoid),
+            ("L06-SOURCE-PATTERN-HEXAGON","Pattern-block source: hexagons",answers.Hexagon),
+            ("L06-SOURCE-SEASON-BAR-WINTER","Student bar: Winter 24",answers.SeasonWinterBar),
+            ("L06-SOURCE-SEASON-BAR-SPRING","Student bar: Spring 13",answers.SeasonSpringBar),
+            ("L06-SOURCE-SEASON-BAR-SUMMER","Student bar: Summer 40",answers.SeasonSummerBar),
+            ("L06-SOURCE-SEASON-BAR-FALL","Student bar: Fall 22",answers.SeasonFallBar),
             ("L06-SOURCE-PET-CAT","Pet lifespan: Cat",answers.PetCat),
             ("L06-SOURCE-PET-PYTHON","Pet lifespan: Python",answers.PetPython),
             ("L06-SOURCE-PET-TOTAL","Pet lifespan: Sum of all values",answers.PetTotal),
@@ -58,16 +69,24 @@ public sealed class Grade3Lesson6ActivitiesController(
                 correct?"The number matches the relevant supplied graph/table."
                 :"Read the category and units again; a graph's scale does not change the raw count.");
         }).ToList();
-        feedback.Add(new("Pattern-block image observation",null,true,valid
-            ? "Your four entered counts are structurally valid. Teacher must compare them with the original source image."
+        feedback.Add(new("Original 2021 pattern-block image count",null,true,valid
+            ? "The counts are compared with the geometric audit of the actual source SVG; the teacher reviews visual counting strategy and your graph."
             : reason));
+        feedback.Add(new("Drawn seasonal graph and four bar heights",null,true,validSeasons
+            ? "Four bar values are recorded; numeric checks appear above. Teacher reviews placement, labels, title, zero baseline and scale choice."
+            : "Enter valid nonnegative bar heights (0 to 100) for all four seasons."));
+        feedback.Add(new("Source 2021 Cool-down: two separate reflection responses",null,true,
+            "Teacher reviews why you chose your scale and what you learned for future scaled bar graphs. Do not replace these with fictional club arithmetic."));
+        feedback.Add(new("Source lesson synthesis and Math Community",null,true,
+            "Teacher reviews explanation before the Cool-down and the classroom-norm reflection after it."));
         feedback.Add(new("Justify a scale of 2, 5 or 10",null,true,
             "Teacher judges whether the selected step is readable, represents every count exactly, and is explained mathematically."));
         feedback.Add(new("Created graph and Edulytics Cool-down reflection",null,true,
             "Teacher must review bar lengths, title, categories, exact intermediate values, mathematical explanations and collaboration."));
         Response.Headers["X-Robots-Tag"]="noindex, nofollow, noarchive";
         return View("Index",new Grade3Lesson6PracticePage(curriculumAdoptionId,lessonId,
-            true,answers,valid?pattern:null,patternScale,seasonScale,feedback));
+            true,answers,valid?pattern:null,patternScale,seasonScale,feedback,
+            validSeasons?enteredSeasons:null));
     }
     private static List<UsCcssG3Unit1Lesson6ChooseScale.CategoryCount>? Parse(Grade3Lesson6Answers a)
     {
@@ -78,6 +97,19 @@ public sealed class Grade3Lesson6ActivitiesController(
             if(!int.TryParse(vals[i],NumberStyles.Integer,CultureInfo.InvariantCulture,out var value))
                 return null;
             rows.Add(new(names[i],value));
+        }
+        return rows;
+    }
+    private static List<UsCcssG3Unit1Lesson6ChooseScale.CategoryCount>? ParseSeasonBars(Grade3Lesson6Answers a)
+    {
+        var inputs=new[]{a.SeasonWinterBar,a.SeasonSpringBar,a.SeasonSummerBar,a.SeasonFallBar};
+        var source=UsCcssG3Unit1Lesson6ChooseScale.SourceSeasons;
+        var rows=new List<UsCcssG3Unit1Lesson6ChooseScale.CategoryCount>();
+        for(var i=0;i<source.Count;i++)
+        {
+            if(!int.TryParse(inputs[i],NumberStyles.Integer,CultureInfo.InvariantCulture,out var count))
+                return null;
+            rows.Add(new(source[i].Category,count));
         }
         return rows;
     }

@@ -16,6 +16,18 @@
 .g3-l06 .bar-row{display:flex;align-items:center;gap:10px;margin:9px 0}
 .g3-l06 .label{width:120px;flex:none}
 .g3-l06 .bar{height:26px;background:#197e92}
+.g3-l06 .source-pattern{display:grid;grid-template-columns:repeat(8,minmax(32px,1fr));gap:13px;padding:18px;max-width:530px;margin:auto;background:#f3f7fa;border:1px solid #b3cbd6;border-radius:12px}
+.g3-l06 .source-shape{display:block;width:38px;height:38px;margin:auto;background:#a3cd3c}
+.g3-l06 .source-shape.triangle{background:#56a57b;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.g3-l06 .source-shape.square{background:#e49b38}
+.g3-l06 .source-shape.trapezoid{background:#c86c70;clip-path:polygon(25% 0,75% 0,100% 100%,0 100%)}
+.g3-l06 .source-shape.hexagon{background:#d1bb35;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.g3-l06 .graph-plot{height:280px;display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));align-items:end;border-left:2px solid #577890;border-bottom:2px solid #577890;gap:16px;padding:0 16px}
+.g3-l06 .graph-cell{height:280px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.g3-l06 .graph-bar{width:58%;min-width:30px;background:#197e92;border-radius:3px 3px 0 0}
+.g3-l06 .graph-labels{display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:16px;padding:6px 16px;text-align:center;font-size:.78rem}
+.g3-l06 .graph-key{font-weight:700}
+.g3-l06 .pupil-graph{margin:16px 0;overflow-x:auto}
 .g3-l06 .pet-graph-frame{overflow-x:auto}
 .g3-l06 .pet-graph{display:grid;grid-template-columns:36px minmax(440px,1fr);column-gap:9px;max-width:740px;min-width:490px}
 .g3-l06 .pet-ticks{height:372px;display:flex;flex-direction:column;justify-content:space-between;font-size:.65rem;line-height:1;color:#305168}
@@ -76,7 +88,14 @@
         </section>
         <section class="panel">
             <h2>2. Pattern-block collection: choose 2, 5 or 10</h2>
-            <p>The original figure contains triangles, squares, trapezoids and hexagons. Copy actual shape counts from the teacher's source figure or teacher-verified classroom blocks; DO NOT invent them. This form cannot establish the original count from an image.</p>
+            <p>Study this independently drawn Edulytics collection. It uses the same FOUR shape types and verified quantities as the original 2021 illustration, but a different layout and graphical artwork. Count the visible blocks before typing values.</p>
+            <div class="source-pattern" role="group" aria-label="Count the independently illustrated triangles, squares, trapezoids and hexagons. Each colored outline is one block.">
+                @foreach (var shape in UsCcssG3Unit1Lesson6ChooseScale.FirstPartyPatternShapeOrder)
+                {
+                    <span class="source-shape @shape.ToLowerInvariant()" aria-label="@shape" role="img"></span>
+                }
+            </div>
+            <p>Mai proposes scale 2, Noah scale 5, and Priya scale 10. Who do you agree with? Explain your choice, then construct a graph of your four tallies.</p>
             <div class="two">
                 <div><label for="tri">Triangles</label><input id="tri" name="Triangle" type="number" min="0" max="100" value="@Model.Answers.Triangle" required /></div>
                 <div><label for="square">Squares</label><input id="square" name="Square" type="number" min="0" max="100" value="@Model.Answers.Square" required /></div>
@@ -89,13 +108,16 @@
             </select>
             @if(Model.EnteredPatternBlocks is not null){
                 var max=UsCcssG3Unit1Lesson6ChooseScale.GraphMaximum(Model.EnteredPatternBlocks.Max(x=>x.Count),Model.PatternScale);
-                <h3>Entered pattern-block bar graph; axis 0 to @max in @Model.PatternScale steps</h3>
-                @foreach(var row in Model.EnteredPatternBlocks){
-                    <div class="bar-row"><strong class="label">@row.Category</strong>
-                        <span class="bar" style="width:@(row.Count*100/max)%" aria-hidden="true"></span>
-                        <span>@row.Count blocks</span>
+                <h3>My pattern-block bar graph</h3>
+                <div class="pupil-graph" role="img" aria-label="Your pattern block bar graph, from zero to @max in @Model.PatternScale steps, using the counts you entered.">
+                    <p class="graph-key">YOUR chosen scale: 0–@max in steps of @Model.PatternScale blocks (bars preserve exact in-between values).</p>
+                    <div class="graph-plot" aria-hidden="true">
+                    @foreach(var row in Model.EnteredPatternBlocks){
+                        <div class="graph-cell"><div class="graph-bar" style="height:@(row.Count*280/max)px"></div></div>
+                    }
                     </div>
-                }
+                    <div class="graph-labels" aria-hidden="true">@foreach(var row in Model.EnteredPatternBlocks){<span>@row.Category: @row.Count</span>}</div>
+                </div>
                 <p>Exact bars retain nonmultiples of the tick step, with teacher verification required.</p>
             }
             <label for="pattern-explain">Explain why 2, 5 or 10 makes a useful scale here</label>
@@ -109,16 +131,26 @@
             <select id="season-scale" name="SeasonScale">
                 @foreach(var n in new[]{2,5,10}){<option value="@n" selected="@(Model.SeasonScale==n)">@n students per tick</option>}
             </select>
-            @{
-                var seasonMax=UsCcssG3Unit1Lesson6ChooseScale.GraphMaximum(40,Model.SeasonScale);
-            }
-            <h3>Values on an axis from 0 to @seasonMax by @Model.SeasonScale</h3>
-            @foreach(var row in seasons){
-                <div class="bar-row">
-                    <strong class="label">@row.Category</strong>
-                    <span class="bar" style="width:@(row.Count*100/seasonMax)%" aria-hidden="true"></span>
-                    <span>@row.Count</span>
+            <p>CREATE your own scaled bar graph by entering the four bar heights from the original source table. Do not round 13, 24 or 22 to the nearest tick. The graph will be drawn using YOUR entered data after submission, not pre-completed for you.</p>
+            <div class="two">
+                <div><label for="season-winter-bar">Drawn Winter bar height</label><input id="season-winter-bar" name="SeasonWinterBar" type="number" min="0" max="100" value="@Model.Answers.SeasonWinterBar" required /></div>
+                <div><label for="season-spring-bar">Drawn Spring bar height</label><input id="season-spring-bar" name="SeasonSpringBar" type="number" min="0" max="100" value="@Model.Answers.SeasonSpringBar" required /></div>
+                <div><label for="season-summer-bar">Drawn Summer bar height</label><input id="season-summer-bar" name="SeasonSummerBar" type="number" min="0" max="100" value="@Model.Answers.SeasonSummerBar" required /></div>
+                <div><label for="season-fall-bar">Drawn Fall bar height</label><input id="season-fall-bar" name="SeasonFallBar" type="number" min="0" max="100" value="@Model.Answers.SeasonFallBar" required /></div>
+            </div>
+            @if(Model.EnteredSeasonBars is not null)
+            {
+                var seasonMax=UsCcssG3Unit1Lesson6ChooseScale.GraphMaximum(Math.Max(40,Model.EnteredSeasonBars.Max(x=>x.Count)),Model.SeasonScale);
+                <div class="pupil-graph" role="img" aria-label="Student-created seasonal bar graph, scale @Model.SeasonScale, 0 to @seasonMax, from four student entered bar heights.">
+                    <p class="graph-key">Your Favorite Season bar graph: axis 0–@seasonMax, increments of @Model.SeasonScale</p>
+                    <div class="graph-plot" aria-hidden="true">
+                    @foreach(var row in Model.EnteredSeasonBars){
+                        <div class="graph-cell"><div class="graph-bar" style="height:@(row.Count*280/seasonMax)px"></div></div>
+                    }
+                    </div>
+                    <div class="graph-labels" aria-hidden="true">@foreach(var row in Model.EnteredSeasonBars){<span>@row.Category: @row.Count</span>}</div>
                 </div>
+                <p>The teacher evaluates title, category labels, choice of scale and precision on the bar plot.</p>
             }
             <div class="two">
                 <div><label for="spring">How many chose Spring?</label><input id="spring" name="Spring" value="@Model.Answers.Spring" inputmode="numeric" required /></div>
@@ -129,7 +161,29 @@
             <textarea id="seasons-explain" name="SeasonsExplanation" rows="3" maxlength="2000">@Model.Answers.SeasonsExplanation</textarea>
         </section>
         <section class="panel">
-            <h2>4. First-party Edulytics Cool-down</h2>
+            <h2>4. Lesson synthesis (10 minutes) — before Cool-down</h2>
+            <p>Explain how the 2, 5 and 10 interval choices change readability without changing counts. What would you consider before making a new scaled bar graph? Bring your seasonal graph to the next lesson for one-step and two-step comparison problems.</p>
+            <label for="lesson-synthesis">What did you learn today that will help you choose graph scales?</label>
+            <textarea id="lesson-synthesis" name="LessonSynthesis" rows="3" maxlength="2000">@Model.Answers.LessonSynthesis</textarea>
+            <p>Teacher-led: compare three different students' graphs and ask partners to restate one another's mathematical justifications (MLR8). Suggested centers: Sort and Display Stage 3 and Five in a Row Stage 6; teacher facilitates any hands-on work.</p>
+        </section>
+        <section class="panel">
+            <h2>5. Source-aligned Cool-down — Reflection on Bar Graphs and Scale (5 minutes)</h2>
+            <p>Two distinct written source prompts from the original 2021 teacher guide. There is no single numeric answer: the teacher reviews both explanations separately.</p>
+            <label for="source-cd-scale">1. How did you decide on the scale for your graph in the last activity?</label>
+            <textarea id="source-cd-scale" name="SourceCoolDownScale" rows="3" maxlength="2000" required>@Model.Answers.SourceCoolDownScale</textarea>
+            <label for="source-cd-future">2. What is the most important idea you learned today for your next scaled bar graph?</label>
+            <textarea id="source-cd-future" name="SourceCoolDownLearning" rows="3" maxlength="2000" required>@Model.Answers.SourceCoolDownLearning</textarea>
+            <p>Teacher rubric: scale fits the largest category; bars start at zero and use the learner's chosen intervals; 13 and 22 or 24 are placed EXACTLY between ticks if required; no altered category counts or unjustified rounding. Explanations are open, not auto-passed.</p>
+        </section>
+        <section class="panel">
+            <h2>6. Math Community — after Cool-down</h2>
+            <p>Reflect on the norm that mattered most today, with a reason. Teacher reviews independently; norms may be revised during class.</p>
+            <label for="community-norm">Which Doing Math or classroom norm was most important in your work today, and why?</label>
+            <textarea id="community-norm" name="MathCommunityNorm" rows="3" maxlength="2000">@Model.Answers.MathCommunityNorm</textarea>
+        </section>
+        <section class="panel">
+            <h2>7. Optional extra Edulytics practice (not the source Cool-down)</h2>
             <p>Fictional school clubs, not the publisher's teacher-only reflection item:</p>
             @foreach(var row in cool){<p><strong>@row.Category</strong>: @row.Count students</p>}
             <div class="two">

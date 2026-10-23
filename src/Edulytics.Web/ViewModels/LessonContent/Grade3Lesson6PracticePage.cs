@@ -14,6 +14,14 @@ public sealed class Grade3Lesson6Answers
     public string? Hexagon {get;set;}
     public string? PatternScale {get;set;}
     public string? PatternExplanation {get;set;}
+    public string? SeasonWinterBar {get;set;}
+    public string? SeasonSpringBar {get;set;}
+    public string? SeasonSummerBar {get;set;}
+    public string? SeasonFallBar {get;set;}
+    public string? LessonSynthesis {get;set;}
+    public string? SourceCoolDownScale {get;set;}
+    public string? SourceCoolDownLearning {get;set;}
+    public string? MathCommunityNorm {get;set;}
     public string? Spring {get;set;}
     public string? SeasonTotal {get;set;}
     public string? SeasonDifference {get;set;}
@@ -28,4 +36,5 @@ public sealed record Grade3Lesson6Feedback(string Label,bool? Correct,bool Human
 public sealed record Grade3Lesson6PracticePage(Guid AdoptionId,Guid LessonId,bool Submitted,
     Grade3Lesson6Answers Answers,
     IReadOnlyList<UsCcssG3Unit1Lesson6ChooseScale.CategoryCount>? EnteredPatternBlocks,
-    int PatternScale,int SeasonScale,IReadOnlyList<Grade3Lesson6Feedback> Feedback);
+    int PatternScale,int SeasonScale,IReadOnlyList<Grade3Lesson6Feedback> Feedback,
+    IReadOnlyList<UsCcssG3Unit1Lesson6ChooseScale.CategoryCount>? EnteredSeasonBars=null);
