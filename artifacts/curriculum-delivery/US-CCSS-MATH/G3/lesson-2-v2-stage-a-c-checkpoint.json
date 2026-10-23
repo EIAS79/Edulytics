@@ -18,7 +18,9 @@
     "fullyMappedAndVerified": 0,
     "sourceElementsPubliclyInspected": 10,
     "sourceUnavailable": 1,
-    "rightsPending": 1
+    "rightsPending": 1,
+    "teacherGatedPublisherCoolDownStillUnavailable": 1,
+    "teacherGatedPublisherCoolDownBlocking": 0
   },
   "sourceElements": [
     {
@@ -115,10 +117,12 @@
       "observed": "5 min original Cool-down behind teacher-login gate, not independently inspected.",
       "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html",
       "originalSourceInspected": false,
-      "parityStatus": "SOURCE_UNAVAILABLE",
-      "reason": "Exact 2021 Cool-down unavailable without teacher login",
+      "parityStatus": "FIRST_PARTY_EDULYTICS_EQUIVALENT_AUTHORED_UNINTEGRATED",
+      "reason": "Original publisher Cool-down remains teacher-login-only and was not copied. Owner-approved first-party assessment now authored; goal/skill equivalence pending actual learner-flow wiring and Stage A–C evidence, not access to publisher item.",
       "edulyticsFile": null,
-      "digitalGradingRoute": null
+      "digitalGradingRoute": null,
+      "authoringPolicy": "No original-prompt replication; verify skill/learning goal and exact task correctness instead.",
+      "originalEquivalentCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3OriginalCoolDownCandidates.cs"
     },
     {
       "id": "G3-U01-L02-centers",
@@ -154,7 +158,8 @@
       "open reasoning",
       "Math Community",
       "original teacher-only Cool-down"
-    ]
+    ],
+    "coolDownPolicy": "FIRST_PARTY_EQUIVALENT_AUTHORIZED; publisher login not required; original publisher Cool-down not claimed verified."
   },
   "stageB": {
     "status": "ORIGINAL_STRUCTURE_DOCUMENTED_NOT_IMPLEMENTED",
@@ -178,18 +183,40 @@
     "testStatus": "WRITTEN_NOT_EXECUTED",
     "practiceIntegrated": false,
     "numericCandidateCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson2ClassSurveyCandidate.cs",
-    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson2ClassSurveyCandidateTests.cs"
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson2ClassSurveyCandidateTests.cs",
+    "coolDownOriginalAuthored": true,
+    "coolDownIntegrated": false,
+    "coolDownTestsWrittenNotRun": true
   },
   "openGaps": [
-    "2021 Cool-down prompt unavailable without educator access",
     "Exact original dot images, grid details and third-party rights unverified",
     "Existing effective G3 learner teaching code and digital Practice generators not compared",
     "Numeric Practice must be bound to actual per-class survey context; no fixed answer assumptions",
-    "One/two-step grading and open response teacher boundary tests to be written and routed"
+    "One/two-step grading and open response teacher boundary tests to be written and routed",
+    "Wire and verify authored Edulytics Cool-down in the effective learner/teacher lesson flow; no automatic grading of drawing or open explanation."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_RUN",
   "academicApproval": "NOT_CLAIMED",
   "merged": false,
-  "deployed": false
+  "deployed": false,
+  "edulyticsOriginalCoolDown": {
+    "policy": "AUTHORIGINAL_EQUIVALENT_NO_PUBLISHER_LOGIN_REQUIRED",
+    "acceptanceRule": "Publisher-login-only original Cool-down is NOT a blocker. Edulytics writes its own independently-authored goal- and skill-aligned Cool-down. Original publisher wording is neither required nor falsely claimed to have been inspected. Require completeness and proper grading evidence for Edulytics task; teacher-observed tasks stay teacher reviewed.",
+    "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3OriginalCoolDownCandidates.cs",
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3OriginalCoolDownCandidatesTests.cs",
+    "testExecution": "NOT_RUN_STAGE_D",
+    "studentIntegration": "NOT_YET_WIRED",
+    "publisherOriginalInspected": false,
+    "originalWorksCopied": false,
+    "numericQuestionIds": [
+      "G3-U01-L02-EDU-CD-ONE-STEP",
+      "G3-U01-L02-EDU-CD-TWO-STEP"
+    ],
+    "teacherReviewQuestionIds": [
+      "G3-U01-L02-EDU-CD-DRAW-EXPLAIN"
+    ],
+    "eligibility": "NOT_YET_READY_FOR_STAGE_D_BUT_ORIGINAL_SOURCE_ACCESS_NOT_A_BLOCKER"
+  },
+  "originalCoolDownSourceAccessIsABlocker": false
 }
