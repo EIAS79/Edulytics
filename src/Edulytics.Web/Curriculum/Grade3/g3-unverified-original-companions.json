@@ -11,9 +11,9 @@
   "status": "FIRST_PASS_ORIGINAL_COMPANIONS_SOURCE_ITEM_REVIEW_REQUIRED",
   "total": {
     "lessons": 135,
-    "scoredPractice": 114,
+    "scoredPractice": 112,
     "scoredCoolDown": 118,
-    "teacherOnlyPractice": 21,
+    "teacherOnlyPractice": 23,
     "families": [
       "addition-within-1000",
       "analog-time-nearest-minute",
@@ -2957,17 +2957,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "place-value",
       "independentPractice": {
-        "prompt": "Three hundreds, 3 tens, and 4 ones represent what number?",
+        "prompt": "Write 600 + 20 + 5 as a number.",
         "answerType": "integer",
-        "expected": "334"
+        "expected": "625"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Write the number for four hundreds, 4 tens and 3 ones.",
+        "prompt": "Express 478 as a three-digit number after decomposing it into hundreds, tens and ones.",
         "answerType": "integer",
-        "expected": "443"
+        "expected": "478"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Numbers in Their Different Forms with your teacher. Show the representation and explain how it meets the goal: Let’s represent numbers in different ways.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source cards require matching and multiple decompositions of the same whole, not a single arithmetic result.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2982,7 +2982,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent numbers in different ways.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source number representations, 300 + 60 + 10 equals what three-digit number?",
+        "answerType": "integer",
+        "expected": "370"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-1/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 38,
@@ -3045,17 +3056,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "addition-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 355 + 155 using place value.",
+        "prompt": "A waterfall drops 127 feet, then 154 feet. How far did it fall altogether?",
         "answerType": "integer",
-        "expected": "510"
+        "expected": "281"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 375 + 161. Explain any regrouping.",
+        "prompt": "A tower 624 ft tall stands beside one 215 ft tall. How much taller is the first?",
         "answerType": "integer",
-        "expected": "536"
+        "expected": "409"
       },
       "openTeacherTask": "Work through the original lesson's activity Monuments and Falls with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems involving addition and subtraction.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Check source word problems, units, choice of addition/subtraction and journal reflection.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3070,7 +3081,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems involving addition and subtraction.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source Iguazu Falls problem has drops of 115 feet and 131 feet. Find the total drop in feet.",
+        "answerType": "integer",
+        "expected": "246"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-2/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 39,
@@ -3130,17 +3152,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "addition-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 363 + 165 using place value.",
+        "prompt": "Find 325 + 102 using a place-value drawing or algorithm.",
         "answerType": "integer",
-        "expected": "528"
+        "expected": "427"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 383 + 171. Explain any regrouping.",
+        "prompt": "Compute 279 + 136 and explain how to regroup ones into a ten.",
         "answerType": "integer",
-        "expected": "554"
+        "expected": "415"
       },
       "openTeacherTask": "Work through the original lesson's activity Strategies to Add with your teacher. Show the representation and explain how it meets the goal: Let’s add numbers within 1,000.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Teacher checks named mental methods and comparison of Andre/Clare rearranged partial sums.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3155,7 +3177,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s add numbers within 1,000.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source methods give 276 + 118. What is the correct sum?",
+        "answerType": "integer",
+        "expected": "394"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-3/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 40,
@@ -3219,17 +3252,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "addition-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 334 + 175 using place value.",
+        "prompt": "Add 475 + 231 using a written algorithm.",
         "answerType": "integer",
-        "expected": "509"
+        "expected": "706"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 354 + 181. Explain any regrouping.",
+        "prompt": "Compute 168 + 397 using hundreds/tens/ones and show regrouping.",
         "answerType": "integer",
-        "expected": "535"
+        "expected": "565"
       },
       "openTeacherTask": "Work through the original lesson's activity What is an Algorithm? with your teacher. Show the representation and explain how it meets the goal: Let’s learn new ways to add.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Explain distinct recorded algorithms and the relationship between expanded base-ten diagrams and digits.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3244,7 +3277,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn new ways to add.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source gives three ways of calculating 362 + 354. What is the sum?",
+        "answerType": "integer",
+        "expected": "716"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-4/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 41,
@@ -3311,17 +3355,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "addition-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 345 + 135 using place value.",
+        "prompt": "Compute 365 + 182 and explain the fourteen tens before regrouping.",
         "answerType": "integer",
-        "expected": "480"
+        "expected": "547"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 365 + 141. Explain any regrouping.",
+        "prompt": "Find 273 + 619 using a place-value algorithm.",
         "answerType": "integer",
-        "expected": "506"
+        "expected": "892"
       },
       "openTeacherTask": "Work through the original lesson's activity A New Addition Algorithm with your teacher. Show the representation and explain how it meets the goal: Let’s learn another algorithm to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Think abo",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Teacher verifies how both recorded algorithms handle tens, not just equal totals.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3336,7 +3380,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn another algorithm to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Think abo",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source compares algorithms for 367 + 231. Find that sum.",
+        "answerType": "integer",
+        "expected": "598"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-5/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 42,
@@ -3406,17 +3461,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "addition-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 353 + 145 using place value.",
+        "prompt": "Compute 602 + 179 showing regrouping.",
         "answerType": "integer",
-        "expected": "498"
+        "expected": "781"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 373 + 151. Explain any regrouping.",
+        "prompt": "Compute 399 + 499 by an efficient strategy.",
         "answerType": "integer",
-        "expected": "524"
+        "expected": "898"
       },
       "openTeacherTask": "Work through the original lesson's activity Just Ones with your teacher. Show the representation and explain how it meets the goal: Let’s consider when to use algorithms and when to use other strategies to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teache",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source includes new tens/hundreds recorded differently and deliberate choice of algorithms.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3431,7 +3486,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s consider when to use algorithms and when to use other strategies to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teache",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Two source methods add 657 + 286. What sum do they represent?",
+        "answerType": "integer",
+        "expected": "943"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-6/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 43,
@@ -3495,17 +3561,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 364 − 155. Show a place-value method.",
+        "prompt": "Calculate 428 − 213 using an appropriate decomposition.",
         "answerType": "integer",
-        "expected": "209"
+        "expected": "215"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 438 − 176. Show regrouping or another strategy.",
+        "prompt": "Subtract 505 − 398 and check with addition.",
         "answerType": "integer",
-        "expected": "262"
+        "expected": "107"
       },
       "openTeacherTask": "Work through the original lesson's activity Strategies to Subtract with your teacher. Show the representation and explain how it meets the goal: Let’s subtract numbers within 1,000.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Teacher checks correct tens/ones decomposition in Jada and Han's distinct drawings.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3520,7 +3586,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s subtract numbers within 1,000.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source asks students to subtract 135 from 262 with base-ten drawings. What difference?",
+        "answerType": "integer",
+        "expected": "127"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-7/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 44,
@@ -3583,17 +3660,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 335 − 165. Show a place-value method.",
+        "prompt": "Use regrouping to solve 391 − 215.",
         "answerType": "integer",
-        "expected": "170"
+        "expected": "176"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 409 − 186. Show regrouping or another strategy.",
+        "prompt": "Solve 204 − 98 using a decomposition.",
         "answerType": "integer",
-        "expected": "223"
+        "expected": "106"
       },
       "openTeacherTask": "Work through the original lesson's activity From Drawings to an Algorithm with your teacher. Show the representation and explain how it meets the goal: Let’s learn a new way to subtract.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "The numeric result alone does not prove the tens-regrouping mechanism or card matching.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3608,7 +3685,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn a new way to subtract.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source subtraction algorithms solve 391 − 215. What is the difference?",
+        "answerType": "integer",
+        "expected": "176"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-8/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 45,
@@ -3670,17 +3758,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 343 − 175. Show a place-value method.",
+        "prompt": "Compute 283 − 159 using a place-value algorithm.",
         "answerType": "integer",
-        "expected": "168"
+        "expected": "124"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 417 − 196. Show regrouping or another strategy.",
+        "prompt": "Find 832 − 575 using any accurate recorded subtraction algorithm.",
         "answerType": "integer",
-        "expected": "221"
+        "expected": "257"
       },
       "openTeacherTask": "Work through the original lesson's activity Revise Subtraction Work with your teacher. Show the representation and explain how it meets the goal: Let’s learn more about our first subtraction algorithm.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Student must diagnose the source algorithm error and distinguish subtraction from commutative addition.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3695,7 +3783,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn more about our first subtraction algorithm.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Lin's source subtraction example is 428 − 156. What is its correct value?",
+        "answerType": "integer",
+        "expected": "272"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-9/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 46,
@@ -3759,17 +3858,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 354 − 135. Show a place-value method.",
+        "prompt": "Compute 691 − 358 using Clare's algorithm.",
         "answerType": "integer",
-        "expected": "219"
+        "expected": "333"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 428 − 156. Show regrouping or another strategy.",
+        "prompt": "Compute 492 − 325 and explain decomposing hundreds or tens.",
         "answerType": "integer",
-        "expected": "272"
+        "expected": "167"
       },
       "openTeacherTask": "Work through the original lesson's activity A New Subtraction Algorithm with your teacher. Show the representation and explain how it meets the goal: Let’s learn another algorithm to subtract.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Compare valid starting points of the source subtraction algorithms, not just one answer.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3784,7 +3883,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn another algorithm to subtract.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Andre and Clare each calculate 528 − 271. What difference must both obtain?",
+        "answerType": "integer",
+        "expected": "257"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-10/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 47,
@@ -3846,17 +3956,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 365 − 145. Show a place-value method.",
+        "prompt": "Calculate 824 − 541 with a place-value strategy.",
         "answerType": "integer",
-        "expected": "220"
+        "expected": "283"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 439 − 166. Show regrouping or another strategy.",
+        "prompt": "Compute 301 − 167 and explain borrowing across a zero in tens.",
         "answerType": "integer",
-        "expected": "273"
+        "expected": "134"
       },
       "openTeacherTask": "Work through the original lesson's activity Compare Two Subtraction Algorithms with your teacher. Show the representation and explain how it meets the goal: Let’s think about subtraction algorithms in more detail. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source requires reasoning about how to regroup when tens digit is zero.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3871,7 +3981,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s think about subtraction algorithms in more detail. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source asks how to subtract 167 from 301. What is the answer?",
+        "answerType": "integer",
+        "expected": "134"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-11/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 48,
@@ -3943,17 +4064,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
-        "prompt": "Calculate 333 − 155. Show a place-value method.",
+        "prompt": "Solve 451 − 329 by a sensible strategy or algorithm.",
         "answerType": "integer",
-        "expected": "178"
+        "expected": "122"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Calculate 407 − 176. Show regrouping or another strategy.",
+        "prompt": "Compute 505 − 417, explaining how to regroup across a zero.",
         "answerType": "integer",
-        "expected": "231"
+        "expected": "88"
       },
       "openTeacherTask": "Work through the original lesson's activity How Would You Subtract? with your teacher. Show the representation and explain how it meets the goal: Let’s consider when to use algorithms and when to use other strategies to subtract.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "The student game with spun digits and greater/smaller differences remains teacher-observed.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3968,7 +4089,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s consider when to use algorithms and when to use other strategies to subtract.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The original source contains 600 − 478. Find the difference.",
+        "answerType": "integer",
+        "expected": "122"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-12/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 49,
@@ -4033,17 +4165,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rounding-estimation",
       "independentPractice": {
-        "prompt": "Round 325 to the nearest ten (five rounds up).",
+        "prompt": "Which multiple of 100 is closer to 229: 200 or 300? Write it.",
         "answerType": "integer",
-        "expected": "330"
+        "expected": "200"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Round 325 to the nearest hundred (fifty rounds up).",
+        "prompt": "Round 481 to the nearest hundred.",
         "answerType": "integer",
-        "expected": "300"
+        "expected": "500"
       },
       "openTeacherTask": "Work through the original lesson's activity About 100? Close to 100? with your teacher. Show the representation and explain how it meets the goal: Let’s explore multiples of 100 and how other numbers relate to them. Required Preparation CCSS Standards Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-",
-      "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+      "teacherReviewNote": "Teacher checks benchmark distances and source number-line grouping; photographs may not be reused.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4058,7 +4190,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore multiples of 100 and how other numbers relate to them. Required Preparation CCSS Standards Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source asks which hundred is closer to 364. Write that nearest hundred.",
+        "answerType": "integer",
+        "expected": "400"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-13/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 50,
@@ -4123,17 +4266,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rounding-estimation",
       "independentPractice": {
-        "prompt": "Round 332 to the nearest ten (five rounds up).",
+        "prompt": "Find the nearest multiple of 10 to 351.",
         "answerType": "integer",
-        "expected": "330"
+        "expected": "350"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Round 332 to the nearest hundred (fifty rounds up).",
+        "prompt": "Find the closest hundred to 568.",
         "answerType": "integer",
-        "expected": "300"
+        "expected": "600"
       },
       "openTeacherTask": "Work through the original lesson's activity Close to Multiples of 10 with your teacher. Show the representation and explain how it meets the goal: For a given number, let’s find the closest multiple of 100 and the closest multiple of 10. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Act",
-      "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+      "teacherReviewNote": "Rounding is developed from number-line distances, not just procedural last-digit rules.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4148,7 +4291,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: For a given number, let’s find the closest multiple of 100 and the closest multiple of 10. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Act",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source asks for the nearest multiple of 100 to 128. What is it?",
+        "answerType": "integer",
+        "expected": "100"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-14/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 51,
@@ -4206,17 +4360,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rounding-estimation",
       "independentPractice": {
-        "prompt": "Round 339 to the nearest ten (five rounds up).",
+        "prompt": "Round 750 to the nearest hundred using halves-round-up.",
         "answerType": "integer",
-        "expected": "340"
+        "expected": "800"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Round 339 to the nearest hundred (fifty rounds up).",
+        "prompt": "Round 439 to the nearest ten, with the nearest-hundred choice explained.",
         "answerType": "integer",
-        "expected": "300"
+        "expected": "440"
       },
       "openTeacherTask": "Work through the original lesson's activity Can the Nearest Ten and Hundred be the Same? with your teacher. Show the representation and explain how it meets the goal: Let’s round to the nearest ten and hundred. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-dow",
-      "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+      "teacherReviewNote": "Source explicitly examines halfway points and two school-wide estimates; teacher checks the comparison.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4231,7 +4385,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s round to the nearest ten and hundred. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-dow",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source rounding task: round 415 to its nearest multiple of 10 using the midpoint convention.",
+        "answerType": "integer",
+        "expected": "420"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-15/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 52,
@@ -4299,17 +4464,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rounding-estimation",
       "independentPractice": {
-        "prompt": "Round 346 to the nearest ten (five rounds up).",
+        "prompt": "How many whole numbers from 45 through 54 inclusive round to 50 to the nearest ten?",
         "answerType": "integer",
-        "expected": "350"
+        "expected": "10"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Round 346 to the nearest hundred (fifty rounds up).",
+        "prompt": "Find the least whole number rounding to 600 to the nearest hundred, given usual midpoint conventions.",
         "answerType": "integer",
-        "expected": "300"
+        "expected": "550"
       },
       "openTeacherTask": "Work through the original lesson's activity All the Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s look for patterns in rounding.",
-      "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+      "teacherReviewNote": "Pattern ranges and mystery-number game need teacher comparison of whole sets and their endpoints.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4324,7 +4489,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s look for patterns in rounding.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "List every whole number that rounds to 50 to the nearest ten. Explain why the list begins and ends where it does.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-16/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 53,
@@ -4384,17 +4560,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rounding-estimation",
       "independentPractice": {
-        "prompt": "Round 353 to the nearest ten (five rounds up).",
+        "prompt": "There are 252 beads. Remove 92 and add 203. What is the exact resulting number?",
         "answerType": "integer",
-        "expected": "350"
+        "expected": "363"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Round 353 to the nearest hundred (fifty rounds up).",
+        "prompt": "A collection has 326 beads and gives away 32 then 84. What remains?",
         "answerType": "integer",
-        "expected": "400"
+        "expected": "210"
       },
       "openTeacherTask": "Work through the original lesson's activity Quick Estimates with your teacher. Show the representation and explain how it meets the goal: Let’s decide if our answers make sense. Required Preparation CCSS Standards Addressing 3.OA.D.8 Building Towards 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
-      "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+      "teacherReviewNote": "The source primarily assesses reasonableness of estimates, not exact 422 automatic pass.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4409,7 +4585,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s decide if our answers make sense. Required Preparation CCSS Standards Addressing 3.OA.D.8 Building Towards 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source Priya estimates around 400 beads after starting with 212, using 98, and adding 308. Explain whether 400 is a reasonable estimate.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-17/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 54,
@@ -4474,17 +4661,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "two-step-add-subtract",
       "independentPractice": {
-        "prompt": "A school has 138 pencils, buys 40 more, and uses 21. How many pencils remain?",
+        "prompt": "A group starts with 225 markers, gets 60 more, then uses 35. How many are left?",
         "answerType": "integer",
-        "expected": "157"
+        "expected": "250"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A group collects 168 items, gives away 40, then receives 20. How many remain?",
+        "prompt": "A class begins with 180 pencils, adds 40, and gives away 65. What is left?",
         "answerType": "integer",
-        "expected": "148"
+        "expected": "155"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Situations, Equations, and Diagrams with your teacher. Show the representation and explain how it meets the goal: Let’s connect diagrams and equations to situations.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Original card sort matches real situations with multiple diagrams and equations; teacher checks symbolic relationships.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4499,7 +4686,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s connect diagrams and equations to situations.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Clare starts with 225 beads, receives 48, and uses 70. How many remain?",
+        "answerType": "integer",
+        "expected": "203"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-18/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 55,
@@ -4564,17 +4762,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "two-step-add-subtract",
       "independentPractice": {
-        "prompt": "A school has 139 pencils, buys 50 more, and uses 28. How many pencils remain?",
+        "prompt": "Mai has 104 beads and two equal packs bring her to 124. How many beads per pack?",
         "answerType": "integer",
-        "expected": "161"
+        "expected": "10"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A group collects 169 items, gives away 48, then receives 25. How many remain?",
+        "prompt": "A jar contains 104 stones and six pits receive three stones each. How many remain?",
         "answerType": "integer",
-        "expected": "146"
+        "expected": "86"
       },
       "openTeacherTask": "Work through the original lesson's activity Mai’s Beads with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve problems. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Who has been sharing",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Different source equations place the unknown in different locations; students must explain equation alignment.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4589,7 +4787,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve problems. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Who has been sharing",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Mai has 104 beads and receives two packs of 10. How many beads now?",
+        "answerType": "integer",
+        "expected": "124"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-19/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 56,
@@ -4657,17 +4866,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "two-step-add-subtract",
       "independentPractice": {
-        "prompt": "A school has 140 pencils, buys 20 more, and uses 35. How many pencils remain?",
-        "answerType": "integer",
-        "expected": "125"
+        "prompt": "Invent a two-step information-gap problem and separate its problem card from its data card.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A group collects 170 items, gives away 16, then receives 10. How many remain?",
+        "prompt": "A class has 99 beads and adds eight groups of three beads. How many beads?",
         "answerType": "integer",
-        "expected": "164"
+        "expected": "123"
       },
       "openTeacherTask": "Work through the original lesson's activity Info Gap: Introduction with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve more problems.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "This is an oral information-gap routine: do not invent data or machine certify information requests.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4682,7 +4891,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve more problems.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "For the source information-gap activity, specify which facts a partner needs to provide, why, and when there is enough information to solve.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-20/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 57,
@@ -4734,17 +4954,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "classroom-supplies-project",
       "independentPractice": {
-        "prompt": "A class has 235 crayons, receives 120 and uses 89. How many remain?",
-        "answerType": "integer",
-        "expected": "266"
+        "prompt": "Design a valid classroom-spending plan under a $1,000 cap and explain the exact total and remaining balance.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Design a two-step supplies problem within 1,000 and explain a sensible rounding estimate.",
+        "prompt": "Create a different $1,000 class-supplies purchase plan with clear quantities, prices and a justified total.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Make a Wish List with your teacher. Show the representation and explain how it meets the goal: Let’s make a wish list for class supplies. Required Preparation CCSS Standards Addressing 3.NBT.A.1 3.NBT.A.2 Building Towards 3.NBT.A.1 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 15 min Lesson Synthesis 10 min Teacher Ref",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Optional project needs price-sheet provenance and precise budgeting. Source has inconsistent aquarium price in warm-up versus main table; main exercise uses $150.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -4759,7 +4979,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make a wish list for class supplies. Required Preparation CCSS Standards Addressing 3.NBT.A.1 3.NBT.A.2 Building Towards 3.NBT.A.1 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 15 min Lesson Synthesis 10 min Teacher Ref",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Create a spending plan no greater than $1,000 using source classroom-supplies prices; explain why it benefits the class.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-3/lesson-21/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 58,
