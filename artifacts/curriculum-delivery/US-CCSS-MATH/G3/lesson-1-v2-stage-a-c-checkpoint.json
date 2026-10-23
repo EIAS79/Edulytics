@@ -287,12 +287,42 @@
     "publicOriginalNumericAutoGradeablePromptsCount": 0,
     "standaloneEdulyticsAdditionalNumericChecks": 3,
     "originalFigurePixelVerificationComplete": false,
-    "originalStudentTaskStatementsPdfVerified": false,
+    "originalStudentTaskStatementsPdfVerified": true,
     "originalCoolDownAccess": "EDUCATOR_LOGIN_GATED_ALLOWED_INDEPENDENT_COOL_DOWN",
     "sourceBarHorizontalAxisTitleFromPublicAlt": "ways to get home",
     "sourceBarHorizontalAxisPixelInspected": false,
     "firstPartyAxisCaptionAuthoring": "ADDED_NOT_RENDERED_OR_ACADEMICALLY_APPROVED",
-    "axisTitleProofNotFullSourceParity": true
+    "axisTitleProofNotFullSourceParity": true,
+    "originalStudentTaskStatementsPdfTextVerified": true,
+    "originalStudentTaskStatementsPdfFiguresVerified": false,
+    "studentTaskStatementPdfUrl": "https://cms-assets.illustrativemathematics.org/jnjmmz0zztvuwpty53y7ouwfghx3",
+    "studentTaskPdfOriginalPagesReviewed": 3,
+    "studentTaskPdfOriginalSubpartsMatchedToFirstPartyFields": 5,
+    "publicGraphVisualReview": {
+      "method": "LIVE_BROWSER_AGENT_REVIEW_OF_4_PUBLIC_PUBLISHER_FIGURES_2026-10-24",
+      "graphOrder": [
+        "untitled and unlabeled pictograph",
+        "titled but unlabeled pictograph",
+        "fully labeled pictograph",
+        "0–8, ones, fully labeled bar graph"
+      ],
+      "sourceConfirmedCounts": [
+        4,
+        3,
+        1,
+        2,
+        7,
+        6
+      ],
+      "symbolKeyOneStudent": true,
+      "sourceBarYAxisMaximum": 8,
+      "sourceBarYAxisStep": 1,
+      "figurePixelsSavedToRepo": false,
+      "uncertainties": [
+        "Visual browser summary referred to an unconfirmed fish-shaped figure, not corroborated by original alt text; not considered verified.",
+        "Browser summary contained an inconsistent impression of y-axis ticks, so publisher alt remains authoritative for 0–8 by one."
+      ]
+    }
   },
   "stageB": {
     "status": "SOURCE_SPECIFIC_RICH_V2_SIDECAR_AUTHORED_EFFECTIVE_PRODUCT_NOT_VERIFIED",
@@ -381,7 +411,15 @@
     },
     "sourceElementToRichV2ReferencesAdded": true,
     "sourceElementRichV2MapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-1-2021-source-element-to-first-party-map.json",
-    "sourceElementMappingStatus": "11_OF_11_SOURCE_ROWS_LINKED_TO_SOURCE_SPECIFIC_RICH_V2_AUTHORING; ZERO_SOURCE_ELEMENTS_ACADEMICALLY_VERIFIED"
+    "sourceElementMappingStatus": "11_OF_11_SOURCE_ROWS_LINKED_TO_SOURCE_SPECIFIC_RICH_V2_AUTHORING; ZERO_SOURCE_ELEMENTS_ACADEMICALLY_VERIFIED",
+    "firstEditionTeacherLaunchTimingsFixed": {
+      "commit": "9386d751d7be38e8759e9f4fa005bd5972ca1651",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
+      "correctTiming": "1min quiet+1min pair at warm-up; Math Community chart at warm-up synthesis; 30sec quiet+2-3min partner at Activity1; 2min partner+7-10min open tasks at Activity2",
+      "richV2Updated": true,
+      "testWritten": true,
+      "testRun": false
+    }
   },
   "stageC": {
     "status": "STUDENT_COMPANION_NUMERIC_AND_AUTHORED_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -447,14 +485,15 @@
     }
   },
   "openGaps": [
-    "AC REAL — Full 2021 original source Student Task PDF and original graph artwork image asset cannot be fetched through accessible publisher links (Cache miss); no source-image/paper-task 100% equality can be certified without inspecting them, under the explicit Grade 3 target.",
     "AC RIGHTS — Original artwork may contain separate rights; use first-party drawn glyphs, retain explicit source material non-parity until image rights and mathematics represented are verified.",
     "NOT AC BLOCK — Stage D tests/CI/HTTPS/runtime/Neon deployment, live pupil performance, and human academic signoff are intentionally deferred and do not prevent A-C authoring when the required authored evidence is complete.",
     "NOT AC BLOCK — Original publisher educator-only Cool-down is replaced by approved independent Edulytics equivalent, with honesty that this is source skill equivalence only, not original assessment material parity.",
     "AC REAL — Embedded first-party L01 Rich V2 sidecar now authored and structurally mapped, but no deployed/effective learner body or pixel-exact source-material verification exists; authored assertions have NOT been executed.",
-    "AC VERIFIED READ-ONLY — Inspected Neon Edulytiks production branch: CurriculumLessonContentTranslations had 0 rows and the L01 pedagogical record had no OfficialLessonNodeId; this read-only result cannot establish an effective published L01 translation. No database writes, seeding or deployment attempted."
+    "AC VERIFIED READ-ONLY — Inspected Neon Edulytiks production branch: CurriculumLessonContentTranslations had 0 rows and the L01 pedagogical record had no OfficialLessonNodeId; this read-only result cannot establish an effective published L01 translation. No database writes, seeding or deployment attempted.",
+    "AC SOURCE BOUNDARY — 2021 publisher Student Task Statements PDF text (3 pages and 5 Student Facing subtasks) recovered successfully; original PDF figure-pixel/layout identity remains unproven and original publisher Cool-down remains teacher-login gated.",
+    "AC SPECIFIC — Public linked graph assets were visually reviewed with a live browser, but no source image bytes were exported or independently cross-compared to learner-rendered figures. No source-material 100% claim."
   ],
-  "nextAction": "L01 ONLY: obtain and inspect official 2021 student task PDF + graph pixels via authorized publisher access (public text/ALT already reviewed); resolve third-party image rights or document lawful equivalent; verify actual L01 Rich V2 and student companion effective delivery in authorized Stage D later, reconcile A–C original-element map without claiming 100% before inspection. Keep cursor at 1; no Stage D/tests/CI/deploy.",
+  "nextAction": "Remain at U01:L01. All public publisher Student Task Statements text now reviewed. Original linked image pixel/right provenance and publisher teacher-credential Cool-down still not verified; authorize work-email educator login if original Cool-down source-item identity needs verification. Compiled/running learner version and Stage D tests intentionally not executed. No automatic progress to L02.",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",
