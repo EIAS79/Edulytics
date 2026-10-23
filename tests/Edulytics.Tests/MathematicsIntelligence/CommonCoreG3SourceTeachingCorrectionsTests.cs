@@ -158,6 +158,39 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
     }
 
     [Fact]
+    public void Lesson3SourceKeysAndCanonicalTitleStayMathematicallyDistinct()
+    {
+        // Written ONLY for later Stage D; no xUnit execution in A-C.
+        var assembly = typeof(CanonicalLessonContentPackDocument).Assembly;
+        var resource = assembly.GetManifestResourceNames().Single(name =>
+            name.EndsWith("us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+                StringComparison.Ordinal));
+        using var stream = assembly.GetManifestResourceStream(resource)
+            ?? throw new InvalidOperationException("Missing Grade 3 source pack.");
+        var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+        options.Converters.Add(new JsonStringEnumConverter());
+        var document = JsonSerializer.Deserialize<CanonicalLessonContentPackDocument>(
+            stream, options) ?? throw new InvalidOperationException("Invalid pack.");
+        CommonCoreG3SourceTeachingCorrections.Apply(document);
+        var en = document.Lessons.Single(l =>
+            l.LessonCode == "PED:US-CCSS-MATH:G3:U01:L03")
+            .Translations.Single(t => t.CultureCode == "en");
+
+        Assert.Equal("Scaled Picture Graphs", en.Title);
+        Assert.DoesNotContain("PLC Activity", en.Title);
+        Assert.Contains("50+10=60", en.WorkedExamples);
+        Assert.Contains("65+13=78", en.WorkedExamples);
+        Assert.Contains("13x5=65", en.WorkedExamples);
+        Assert.Contains("total 55 flowers", en.WorkedExamples);
+        Assert.Contains("total 24 learners", en.WorkedExamples);
+        Assert.Contains("Flowers: 10 roses, 5 tulips", en.KeyConceptsAndRules);
+        Assert.Contains("Books: 8 joke-book, 2 comic-book", en.KeyConceptsAndRules);
+        Assert.Contains("two about the books", en.StepByStepSolutions);
+        Assert.Contains("key is two", en.CommonMistakes);
+        Assert.DoesNotContain("G3-U01-L03-EDU-CD", en.QuickSummary);
+    }
+
+    [Fact]
     public void SeparateGrade1AndGrade2DocumentsBypassTheGrade3FullSetGuard()
     {
         var document=Grade3Document();
