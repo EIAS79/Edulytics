@@ -223,6 +223,36 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
     }
 
     [Fact]
+    public void Lesson5ScaledBarGraphsNeverChangeUnderlyingValuesOrL04Source()
+    {
+        // Written source-alignment candidate ONLY; tests are NOT run now.
+        var assembly = typeof(CanonicalLessonContentPackDocument).Assembly;
+        var resource = assembly.GetManifestResourceNames().Single(name =>
+            name.EndsWith("us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+                StringComparison.Ordinal));
+        using var stream = assembly.GetManifestResourceStream(resource)
+            ?? throw new InvalidOperationException("Missing Grade 3 source pack.");
+        var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+        options.Converters.Add(new JsonStringEnumConverter());
+        var document = JsonSerializer.Deserialize<CanonicalLessonContentPackDocument>(
+            stream, options) ?? throw new InvalidOperationException("Invalid pack.");
+        CommonCoreG3SourceTeachingCorrections.Apply(document);
+        var en = document.Lessons.Single(l =>
+            l.LessonCode == "PED:US-CCSS-MATH:G3:U01:L05")
+            .Translations.Single(t => t.CultureCode == "en");
+
+        Assert.Contains("Bike 12, Walk 4, Bus or Van 6", en.Explanation);
+        Assert.Contains("0..12 by ones", en.Explanation);
+        Assert.Contains("0..24 by twos", en.Explanation);
+        Assert.Contains("Total 12+4+6+3=25", en.WorkedExamples);
+        Assert.Contains("true", en.Explanation.ToLowerInvariant());
+        Assert.Contains("scale 2 or 5", en.StepByStepSolutions);
+        Assert.Contains("25-person demonstration", en.CommonMistakes);
+        Assert.Contains("halfway between 2 and 4", en.CommonMistakes);
+        Assert.DoesNotContain("fixed 25-person example for your own", en.Explanation);
+    }
+
+    [Fact]
     public void SeparateGrade1AndGrade2DocumentsBypassTheGrade3FullSetGuard()
     {
         var document=Grade3Document();
