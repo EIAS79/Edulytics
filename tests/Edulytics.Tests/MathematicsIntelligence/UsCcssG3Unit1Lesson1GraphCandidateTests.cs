@@ -190,14 +190,14 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
             "GraphLearnings", "TwoGraphQuestions"
         })
         {
-            Assert.Contains("name=\\"" + distinctField + "\\"", view);
+            Assert.Contains("name=\"" + distinctField + "\"", view);
         }
 
         Assert.Contains("Additional Edulytics numeric practice", view);
         Assert.Contains("teacher observation", view);
         Assert.Contains("Sort and Display", view);
         Assert.Contains("Capture Squares", view);
-        Assert.DoesNotContain("src=\\"https://cms-assets.illustrativemathematics.org/", view);
+        Assert.DoesNotContain("src=\"https://cms-assets.illustrativemathematics.org/", view);
     }
 
     [Fact]
