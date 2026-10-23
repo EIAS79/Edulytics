@@ -17,7 +17,57 @@
     "originalImageDescriptionsCount": 1,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicWarmupProducts": [
+      10,
+      20,
+      30,
+      40
+    ],
+    "activity1ExactUnknowns": [
+      {
+        "equation": "□×5=15",
+        "unknown": "GROUP_COUNT",
+        "answer": 3
+      },
+      {
+        "equation": "6×2=□",
+        "unknown": "PRODUCT",
+        "answer": 12
+      },
+      {
+        "equation": "□×10=60",
+        "unknown": "GROUP_COUNT",
+        "answer": 6
+      }
+    ],
+    "activity2ExactUnknowns": [
+      {
+        "context": "16 socks, 2 per group",
+        "unknown": "GROUP_COUNT",
+        "answer": 8
+      },
+      {
+        "context": "8 groups of 2",
+        "unknown": "PRODUCT",
+        "answer": 16
+      },
+      {
+        "context": "16 socks in 8 groups",
+        "unknown": "GROUP_SIZE",
+        "answer": 2
+      },
+      {
+        "context": "9 boxes each 5 shirts",
+        "unknown": "PRODUCT",
+        "answer": 45
+      },
+      {
+        "context": "80 sweaters in piles of 8",
+        "unknown": "GROUP_COUNT",
+        "answer": 10
+      }
+    ]
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +79,8 @@
     "existingSourceBodyHash": "aac738c55f6a91abc87d7a65ca0c7daef877875a719e3ca398e2725691b8fd7f",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificMissingGroupsVsGroupSizeVsProductTeachingAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +93,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Represent Situations with Equations with your teacher. Show the representation and explain how it meets the goal: Let’s solve more multiplication problems. Required Preparation CCSS Standards Addressing 3.OA.A.3 3.OA.A.4 3.OA.D.9 Building Towards 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
-    "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram."
+    "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
+    "all12SourceNumericPromptsIndividuallyMapped": true,
+    "unknownRoleNotAutomaticallyCertified": true,
+    "newTestsWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -143,7 +197,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "12 source numeric tasks indexed and authored with individual human review, but full equation syntax and missing-value reasoning not machine-assessed. Original 2021 figures/task PDF and deployed Rich V2 still unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

@@ -994,11 +994,13 @@
         "sourceGoal": "Let’s solve more multiplication problems. Required Preparation CCSS Standards Addressing 3.OA.A.3 3.OA.A.4 3.OA.D.9 Building Towards 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
         "sourceLearningGoals": "Solve multiplication problems.",
         "teachingSteps": [
-          "Represent each identical group or equal row in a drawing.",
-          "Explain how group count and group size relate.",
-          "Use a multiplication expression or equation when introduced in this lesson, then explain the result."
+          "Use the original four-step 1×10 to 4×10 Number Talk to explain multiplication-by-ten patterns.",
+          "Model three meal-related stories separately and write equations with symbols for their different missing quantities.",
+          "In the original five story mashup, identify whether the missing amount is number of groups, group size, or total; use models and equations.",
+          "For the 16 socks / 8 groups situation, explain why the missing group size is two rather than eight.",
+          "Compare student drawings, tape diagrams and equations, preserving the conceptual distinction between multiplication and repeated-addition strategies."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve more multiplication problems. Required Preparation CCSS Standards Addressing 3.OA.A.3 3.OA.A.4 3.OA.D.9 Building Towards 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
+        "caution": "The original five-story mashup deliberately tests missing groups, missing group size and missing total. Correct products alone cannot demonstrate recognizing the unknown role. The actual 2021 task PDF and drawings remain unverified.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1012,7 +1014,93 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L15-WU-01",
+          "sourceActivity": "Warm-up: Number Talk Tens",
+          "prompt": "1 × 10: find the product mentally and explain how ten is one equal group.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U01-L15-WU-02",
+          "sourceActivity": "Warm-up: Number Talk Tens",
+          "prompt": "2 × 10: mentally calculate and explain one more group of ten.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U01-L15-WU-03",
+          "sourceActivity": "Warm-up: Number Talk Tens",
+          "prompt": "3 × 10: mentally calculate and compare the product to the previous term.",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U01-L15-WU-04",
+          "sourceActivity": "Warm-up: Number Talk Tens",
+          "prompt": "4 × 10: mentally calculate and explain how the pattern grows.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U01-L15-A1-01",
+          "sourceActivity": "Activity 1: Represent Situations with Equations",
+          "prompt": "Fifteen plates, five on each table: how many tables have plates? Draw □ × 5 = 15.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U01-L15-A1-02",
+          "sourceActivity": "Activity 1: Represent Situations with Equations",
+          "prompt": "Six sandwiches require two pieces of bread apiece. Find the total bread slices in 6 × 2 = □.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U01-L15-A1-03",
+          "sourceActivity": "Activity 1: Represent Situations with Equations",
+          "prompt": "Sixty ice cubes, ten in each tray. Find the number of trays in □ × 10 = 60.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U01-L15-A2-01",
+          "sourceActivity": "Activity 2: Multiplication Mashup",
+          "prompt": "Clare sorts sixteen socks into piles of two: how many piles?",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U01-L15-A2-02",
+          "sourceActivity": "Activity 2: Multiplication Mashup",
+          "prompt": "Diego has eight two-sock piles: how many socks in all?",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U01-L15-A2-03",
+          "sourceActivity": "Activity 2: Multiplication Mashup",
+          "prompt": "Andre makes eight equal piles from sixteen socks: how many socks in each pile?",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U01-L15-A2-04",
+          "sourceActivity": "Activity 2: Multiplication Mashup",
+          "prompt": "Nine shirt boxes hold five shirts each: how many shirts altogether?",
+          "answerType": "integer",
+          "expected": "45"
+        },
+        {
+          "id": "G3-U01-L15-A2-05",
+          "sourceActivity": "Activity 2: Multiplication Mashup",
+          "prompt": "Eighty sweaters, eight sweaters per pile: how many piles?",
+          "answerType": "integer",
+          "expected": "10"
+        }
+      ]
     },
     {
       "ordinal": 16,

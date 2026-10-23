@@ -179,6 +179,26 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void LessonFifteenKeepsAllTwelveSourceProblemsAndThreeUnknownRoles()
+    {
+        // Unexecuted Stage C source contracts.
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L15",out var lesson));
+        Assert.Equal(12,lesson!.SourceSubtasks.Count);
+        var expected=new[]{10,20,30,40,3,12,6,8,16,2,45,10};
+        for(var i=0;i<expected.Length;i++){
+            var q=lesson.SourceSubtasks[i];
+            Assert.Equal("integer",q.AnswerType);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,expected[i].ToString()).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(q,(expected[i]+1).ToString()).NumericCorrect);
+        }
+        Assert.Equal("8",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-01").Expected);
+        Assert.Equal("16",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-02").Expected);
+        Assert.Equal("2",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-03").Expected);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);
