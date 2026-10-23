@@ -11,9 +11,9 @@
   "status": "FIRST_PASS_ORIGINAL_COMPANIONS_SOURCE_ITEM_REVIEW_REQUIRED",
   "total": {
     "lessons": 135,
-    "scoredPractice": 112,
-    "scoredCoolDown": 117,
-    "teacherOnlyPractice": 23,
+    "scoredPractice": 111,
+    "scoredCoolDown": 115,
+    "teacherOnlyPractice": 24,
     "families": [
       "addition-within-1000",
       "analog-time-nearest-minute",
@@ -9154,17 +9154,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractional-inch-measurement",
       "independentPractice": {
-        "prompt": "A length reaches the fifth half-inch mark from zero on a ruler. How many inches is that?",
+        "prompt": "A length covers five half-inch intervals from zero. How many inches?",
         "answerType": "rational",
         "expected": "5/2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A ribbon is three half-inch intervals long. State its length in inches.",
+        "prompt": "A strip covers three half-inch steps. Name its length in inches.",
         "answerType": "rational",
         "expected": "3/2"
       },
       "openTeacherTask": "Work through the original lesson's activity Measure Around the Room with your teacher. Show the representation and explain how it meets the goal: Let’s measure the length of objects around the room.",
-      "teacherReviewNote": "Read ruler tick marks as halves of an inch, not quarter-inch marks, and verify starting at zero.",
+      "teacherReviewNote": "The original 2021 task requires real rulers and objects; no numeric response can certify instrument accuracy.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9179,7 +9179,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s measure the length of objects around the room.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Partition each full inch of a classroom ruler into two equal halves, then measure at least three objects and record exact lengths.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-1/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 99,
@@ -9240,17 +9251,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractional-inch-measurement",
       "independentPractice": {
-        "prompt": "A length reaches the seventh quarter-inch mark from zero. State its length in inches.",
+        "prompt": "A line segment covers seven quarter-inch intervals. What length in inches?",
         "answerType": "rational",
         "expected": "7/4"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A segment reaches the third quarter-inch mark after zero. What is its length in inches?",
+        "prompt": "A ribbon measures three and one-quarter inches. Write its length as an improper fraction of inches.",
         "answerType": "rational",
-        "expected": "3/4"
+        "expected": "13/4"
       },
       "openTeacherTask": "Work through the original lesson's activity Partition Inches into Fourths with your teacher. Show the representation and explain how it meets the goal: Let’s measure lengths in quarters of an inch.",
-      "teacherReviewNote": "Read rulers marked in fourths of an inch; teacher checks interval count, end point, start at zero.",
+      "teacherReviewNote": "Teacher verifies object measurements, physical rulers and mixed-number equivalents.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9265,7 +9276,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s measure lengths in quarters of an inch.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source asks pupils to partition inches into fourths and find classroom objects measuring 2½, 1¼, 3¾ and 8½ inches. Measure and name actual objects.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-2/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 100,
@@ -9326,17 +9348,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fractional-inch-measurement",
       "independentPractice": {
-        "prompt": "On a ruler marked with halves and quarters, seven quarter-inch intervals measure what length in inches?",
+        "prompt": "A worm measures 3 2/4 inches. Express its length as an improper fraction.",
         "answerType": "rational",
-        "expected": "7/4"
+        "expected": "7/2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "On a ruler, four quarter-inch intervals cover what length in inches?",
+        "prompt": "A string is 5 1/2 inches long. Give its length as quarters of an inch.",
         "answerType": "rational",
-        "expected": "4/4"
+        "expected": "22/4"
       },
       "openTeacherTask": "Work through the original lesson's activity Halves and Quarters with your teacher. Show the representation and explain how it meets the goal: Let’s measure lengths in halves of an inch and quarters of an inch.",
-      "teacherReviewNote": "Teacher checks equivalence of two fourths and one half and the physical alignment of ruler end points.",
+      "teacherReviewNote": "Measure worms shown on real ruler images and accept equivalent fractions; original picture geometry not yet verified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9351,7 +9373,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s measure lengths in halves of an inch and quarters of an inch.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source worm is described as 4 2/4 or 4 1/2 inches. State its length in fractional inches.",
+        "answerType": "rational",
+        "expected": "9/2"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-3/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 101,
@@ -9414,17 +9447,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "measurement-line-plot",
       "independentPractice": {
-        "prompt": "A line plot shows 2 marks at 1/2 inch and 4 marks at 3/4 inch. How many measurements are shown altogether?",
+        "prompt": "A line plot has four X marks at 2 inches, three at 3 inches, and two at 4 inches. How many recorded measurements?",
         "answerType": "integer",
-        "expected": "6"
+        "expected": "9"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "There are 4 marks at 1/4 inch and 6 at 1/2 inch. How many total measurements?",
+        "prompt": "A line plot shows 5 marks at 1/2 inch and 7 marks at 3/4 inch. How many marks altogether?",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity A Set of Seedlings with your teacher. Show the representation and explain how it meets the goal: Let’s make sense of line plots with lengths in half inches and quarter inches. Required Preparation CCSS Standards Building On 2.MD.D.9 Addressing 3.MD.B.4 Building Towards 3.MD.B.4 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min",
-      "teacherReviewNote": "Teacher checks the line plot uses the correct fractional scale and symbols.",
+      "teacherReviewNote": "Source twig line plot uses fourths and a separate seedling plot in halves; verify locations before scoring.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9439,7 +9472,18 @@
         ],
         "caution": "Marks on a line plot represent observations, not units to be accumulated across different scales.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Inspect the source twig line plot with quarter-inch marks. Answer its shortest, longest, count and most common measurement questions from the actual plot.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-4/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 102,
@@ -9507,17 +9551,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "measurement-line-plot",
       "independentPractice": {
-        "prompt": "A line plot shows 3 marks at 1/2 inch and 5 marks at 3/4 inch. How many measurements are shown altogether?",
+        "prompt": "A first-party line plot shows 6 measures at one-half inch and 4 measures at one inch. How many samples?",
         "answerType": "integer",
-        "expected": "8"
+        "expected": "10"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "There are 5 marks at 1/4 inch and 2 at 1/2 inch. How many total measurements?",
-        "answerType": "integer",
-        "expected": "7"
+        "prompt": "Create a new line plot using genuinely measured objects, including title and correct fractional ruler marks.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Go for a Measurement Walk with your teacher. Show the representation and explain how it meets the goal: Let’s collect measurement data and show them on a line plot.",
-      "teacherReviewNote": "Teacher checks the line plot uses the correct fractional scale and symbols.",
+      "teacherReviewNote": "Student-generated source data are variable. Drawn line plots and provenance require teacher checking.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9532,7 +9576,18 @@
         ],
         "caution": "Marks on a line plot represent observations, not units to be accumulated across different scales.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Measure actual classroom objects to the nearest half or quarter inch, enter the observations and construct an original line plot with a correctly divided axis.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-5/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 103,
@@ -9598,17 +9653,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "grams-and-kilograms",
       "independentPractice": {
-        "prompt": "A parcel weighs 450 grams and another 320 grams. How many grams in total?",
+        "prompt": "A group of items weighs 450 grams and 320 grams. How many grams altogether?",
         "answerType": "integer",
         "expected": "770"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A bag of rice weighs 2 kilograms. How many kilograms do two identical bags weigh?",
+        "prompt": "A parcel weighs two kilograms and another three kilograms. How many kilograms together?",
         "answerType": "integer",
-        "expected": "4"
+        "expected": "5"
       },
       "openTeacherTask": "Work through the original lesson's activity Estimate Weight with your teacher. Show the representation and explain how it meets the goal: Let’s measure and estimate weight.",
-      "teacherReviewNote": "Teacher verifies sensible estimates and use of balance instruments; do not combine grams and kilograms without valid conversion.",
+      "teacherReviewNote": "Source is about choosing sensible weights and mass units; pictures and scales need teacher review.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9623,7 +9678,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s measure and estimate weight.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Estimate and sort real objects by whether they are lighter than 1 gram, between gram and kilogram, or heavier than a kilogram.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-6/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 104,
@@ -9684,17 +9750,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "intro-liquid-volume",
       "independentPractice": {
-        "prompt": "Fill two different containers with the same small cup and compare how many full cupfuls fit in each. Explain whether their capacities are equal.",
+        "prompt": "Compare two containers using the same small cup as an informal measure, describing your counting and unit consistency.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A bottle holds 1 litre of water. How many litres fit in 3 identical bottles?",
+        "prompt": "A bottle holds 2 litres and three identical bottles are filled. How many litres altogether?",
         "answerType": "integer",
-        "expected": "3"
+        "expected": "6"
       },
       "openTeacherTask": "Work through the original lesson's activity Liquid Volume Estimation Exploration with your teacher. Show the representation and explain how it meets the goal: Let’s learn about liquid volume.",
-      "teacherReviewNote": "Teacher checks actual equal-sized informal measures, capacity comparison and meaning of one litre; do not assume fixed container volumes.",
+      "teacherReviewNote": "Liquid measurement and unit-container evidence cannot be inferred from numeric values or pictures.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9709,7 +9775,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about liquid volume.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Use the actual unit container and containers A and B to estimate, measure and compare capacity. Explain why equal units are necessary.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-7/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 105,
@@ -9788,17 +9865,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "litre-estimation",
       "independentPractice": {
-        "prompt": "A measuring jug holds 2 litres. How much water fits in three full jugs, in litres?",
+        "prompt": "A vessel holds 8 litres and another holds 5 litres. How many litres together?",
         "answerType": "integer",
-        "expected": "6"
+        "expected": "13"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A tank contains 8 litres. After pouring out 3 litres, how many litres remain?",
+        "prompt": "A jug has 6 litres. After pouring 2 litres, how much remains?",
         "answerType": "integer",
-        "expected": "5"
+        "expected": "4"
       },
       "openTeacherTask": "Work through the original lesson's activity Estimate Liquid Volume with your teacher. Show the representation and explain how it meets the goal: Let’s measure and estimate liquid volume. Required Preparation CCSS Standards Addressing 3.MD.A.2 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What i",
-      "teacherReviewNote": "Teacher checks actual estimation and measurement of litres, not merely arithmetic.",
+      "teacherReviewNote": "The source bathtub capacity asks for estimates (2, 20, 200 L), not exact fixed measurements.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9813,7 +9890,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s measure and estimate liquid volume. Required Preparation CCSS Standards Addressing 3.MD.A.2 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What i",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Choose and justify a plausible litre capacity for the source bathtub, bucket, sink and bottle, then verify using classroom containers when possible.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-8/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 106,
@@ -9876,17 +9964,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "analog-time-nearest-minute",
       "independentPractice": {
-        "prompt": "On an analog clock, the minute hand points to the 17th minute mark after 12. How many minutes past the hour?",
+        "prompt": "At 3:18, what is the number of elapsed minutes after 3 o'clock?",
         "answerType": "integer",
-        "expected": "17"
+        "expected": "18"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "The minute hand points to the 43rd minute mark after 12. How many minutes past the hour?",
+        "prompt": "For a time of 9:02, how many minute marks beyond 12 does the minute hand point?",
         "answerType": "integer",
-        "expected": "43"
+        "expected": "2"
       },
       "openTeacherTask": "Work through the original lesson's activity Just a Clock on the Wall with your teacher. Show the representation and explain how it meets the goal: Let’s tell and write time to the nearest minute. Required Preparation CCSS Standards Addressing 3.MD.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How did",
-      "teacherReviewNote": "Teacher must assess reading both hands and writing the actual hour:minute time, to the nearest minute. Counting marks alone is not full competency.",
+      "teacherReviewNote": "Reading time nearest minute requires matching both hands and a correct clock drawing.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9901,7 +9989,18 @@
         ],
         "caution": "Hour and minute hands must both agree with the claimed time.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source, a clock is to be drawn at 2:36 p.m. How many minute marks after 12 must its minute hand indicate?",
+        "answerType": "integer",
+        "expected": "36"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-9/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 107,
@@ -9962,17 +10061,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "time-minutes",
       "independentPractice": {
-        "prompt": "A class starts at 10:40 and lasts 20 minutes. How many minutes pass?",
+        "prompt": "Elena gets on a bus at 6:32 and off at 7:10. How many minutes is the ride?",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "38"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A walk lasts 40 minutes then another 20 minutes. What is the total elapsed time in minutes?",
+        "prompt": "A visit starts at 4:43 and ends at 5:07. How many minutes elapse?",
         "answerType": "integer",
-        "expected": "60"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Time at the Bus Stop with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems involving time. Required Preparation CCSS Standards Addressing 3.MD.A.1 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How did you see stud",
-      "teacherReviewNote": "Clock minute-hand positioning and the actual end time need teacher review, not just elapsed duration.",
+      "teacherReviewNote": "Crossing the hour requires legitimate elapsed-time representation. Full answers include a clock hour, not only minutes.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -9987,7 +10086,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems involving time. Required Preparation CCSS Standards Addressing 3.MD.A.1 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How did you see stud",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Kiran reaches the bus stop at 3:27 p.m. and waits 24 min. What minute value follows the hour on the arrival clock?",
+        "answerType": "integer",
+        "expected": "51"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-10/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 108,
@@ -10055,17 +10165,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "time-minutes",
       "independentPractice": {
-        "prompt": "A class starts at 11:50 and lasts 25 minutes. How many minutes pass?",
+        "prompt": "A task starts at 10:45 and ends at 11:18. How many minutes pass?",
         "answerType": "integer",
-        "expected": "25"
+        "expected": "33"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A walk lasts 50 minutes then another 25 minutes. What is the total elapsed time in minutes?",
+        "prompt": "A class ends at 5:38 p.m. after 20 minutes. How many minutes after 5 was its start?",
         "answerType": "integer",
-        "expected": "75"
+        "expected": "18"
       },
       "openTeacherTask": "Work through the original lesson's activity On the Bus Again with your teacher. Show the representation and explain how it meets the goal: Let’s solve more problems involving time.",
-      "teacherReviewNote": "Clock minute-hand positioning and the actual end time need teacher review, not just elapsed duration.",
+      "teacherReviewNote": "Original teacher must inspect clock-hand drawings and time-line representations.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10080,7 +10190,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve more problems involving time.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "A source activity starts at 8:25 a.m. and ends at 8:50 a.m. How many minutes pass?",
+        "answerType": "integer",
+        "expected": "25"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-11/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 109,
@@ -10143,17 +10264,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "measurement-word-problems",
       "independentPractice": {
-        "prompt": "A cord is 116 cm long. 18 cm are cut off. What length remains?",
+        "prompt": "Three stalls sell 8 tickets each. How many tickets altogether?",
         "answerType": "integer",
-        "expected": "98"
+        "expected": "24"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Two paths measure 94 m and 27 m. How far together?",
-        "answerType": "integer",
-        "expected": "121"
+        "prompt": "Invent a fair measurement problem and show a matching diagram and explanation.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Giant Pumpkin Event with your teacher. Show the representation and explain how it meets the goal: Let’s make sense of and represent measurement situations at the fair.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source images, questions and card matching demand actual visual and teacher assessment.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10168,7 +10289,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make sense of and represent measurement situations at the fair.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the fair source, develop questions about a teacher-provided photograph, then match original situation cards with diagrams. Record the reasoning.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-12/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 110,
@@ -10231,17 +10363,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "measurement-word-problems",
       "independentPractice": {
-        "prompt": "A cord is 124 cm long. 24 cm are cut off. What length remains?",
-        "answerType": "integer",
-        "expected": "100"
+        "prompt": "Write an original information-gap task about a festival with separate problem and data cards.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Two paths measure 101 m and 36 m. How far together?",
+        "prompt": "Three jars each hold 5 litres. How many litres?",
         "answerType": "integer",
-        "expected": "137"
+        "expected": "15"
       },
       "openTeacherTask": "Work through the original lesson's activity Info Gap: Pumpkin Weigh-Off with your teacher. Show the representation and explain how it meets the goal: Let’s find out what information is needed to solve problems about measurements at the fair.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Do not invent teacher card data or machine-grade whether the correct questions were asked.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10256,7 +10388,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find out what information is needed to solve problems about measurements at the fair.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The fair Information Gap activity with separate problem/data cards requires asking the partner for relevant measurement facts, justifying each request and comparing solutions.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-13/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 111,
@@ -10317,17 +10460,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "measurement-word-problems",
       "independentPractice": {
-        "prompt": "A cord is 132 cm long. 30 cm are cut off. What length remains?",
+        "prompt": "A fair stand sells 34 litres from 96 litres. How much is left?",
         "answerType": "integer",
-        "expected": "102"
+        "expected": "62"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Two paths measure 108 m and 45 m. How far together?",
+        "prompt": "A shop has 56 litres after sales and pours them into 4-litre jugs. How many full jugs?",
         "answerType": "integer",
-        "expected": "153"
+        "expected": "14"
       },
       "openTeacherTask": "Work through the original lesson's activity Carnival Time Number Choice with your teacher. Show the representation and explain how it meets the goal: Let’s think about what numbers and questions make sense in problems. Required Preparation CCSS Standards Addressing 3.MD.A.1 3.MD.A.2 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 mi",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source asks students to create questions corresponding to different mathematical work, including 132−90 and sale of 56 L in 4-L jugs.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10342,7 +10485,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s think about what numbers and questions make sense in problems. Required Preparation CCSS Standards Addressing 3.MD.A.1 3.MD.A.2 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 mi",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "A lemonade stand starts with 132 litres and has 90 litres remaining. How many litres were served?",
+        "answerType": "integer",
+        "expected": "42"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-14/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 112,
@@ -10413,17 +10567,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "measurement-word-problems",
       "independentPractice": {
-        "prompt": "A cord is 140 cm long. 18 cm are cut off. What length remains?",
+        "prompt": "You stay at an event from 11:12 a.m. to 12:25 p.m. How many minutes pass?",
         "answerType": "integer",
-        "expected": "122"
+        "expected": "73"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Two paths measure 115 m and 27 m. How far together?",
+        "prompt": "Six tickets costing $8 each have what total cost?",
         "answerType": "integer",
-        "expected": "142"
+        "expected": "48"
       },
       "openTeacherTask": "Work through the original lesson's activity A Day at the Fair with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems about spending a day at the fair and think about how to best show our solutions.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "The source asks a multi-problem chosen-path poster across operations, time and measurement; review poster, not just arithmetic.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10438,7 +10592,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems about spending a day at the fair and think about how to best show our solutions.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Fair entry costs $9 per person, and you went with six other people. What is the total entry cost?",
+        "answerType": "integer",
+        "expected": "63"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-15/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 113,
@@ -10483,17 +10648,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "carnival-project",
       "independentPractice": {
-        "prompt": "Design a carnival game that measures length, weight, capacity or time. Write the rules and units.",
+        "prompt": "Write fair game instructions and simulate a complete turn; list units and an understandable winning condition.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Explain how to test a new carnival-game measurement and justify the scoring system.",
+        "prompt": "Redesign the game to add a second mathematical skill, then describe evidence from play-testing.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Create Your Own Carnival Game with your teacher. Show the representation and explain how it meets the goal: Let’s design a carnival game.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Optional open design cannot be reduced to a single number. Teacher must witness demonstration and iteration.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10508,7 +10673,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s design a carnival game.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Design, trial and improve an original carnival game involving at least two of length, elapsed time, multiplication/division or addition/subtraction.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-6/lesson-16/lesson.html",
+        "verified": "SOURCE_STUDENT_FACING_TEXT",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 114,
