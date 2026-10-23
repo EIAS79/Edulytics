@@ -96,6 +96,108 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         expectedContentVersion ==
             CommonCoreG1SourceGroundedInstructionalCorrections.CompareRepresentedNumbersVersion;
 
+    /// <summary>
+    /// Accept only the 2026-10-23 read-only-verified Khalid production JSON
+    /// metadata predecessors for source-aligned Grade 2 lessons. All candidates
+    /// still require the canonical pack's pinned 2021 lesson identity, source
+    /// materializer version, exact stored predecessor, status and absence of
+    /// persisted translations. This does not approve human classroom work.
+    /// </summary>
+    public static bool IsGuardedG2KnownProductionJsonMetadataPredecessor(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson,
+        string existingContentVersion,
+        string expectedContentVersion,
+        bool verifiedNoPersistedTranslations)
+    {
+        if (!verifiedNoPersistedTranslations ||
+            document.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
+            document.VersionCode != "CCSSM-2010" ||
+            document.ContentVersion != "phase30-common-core-rich-content-v1" ||
+            !lesson.SourceUrl.StartsWith(
+                "https://im.kendallhunt.com/k5/teachers/grade-2/",
+                StringComparison.Ordinal) ||
+            lesson.CanonicalBodySha256.Length != 64)
+            return false;
+
+        const string oldB001 = "us-ccss-b001-original-source-goals-repaired-v1";
+        const string oldDisplay = "us-ccss-source-bound-nbsp-display-v1";
+        const string oldFoundation = "us-ccss-g2-source-grounded-foundations-v1";
+        const string oldHundreds = "us-ccss-g2-u05-hundreds-source-goal-v1";
+        const string oldStory11 =
+            "us-ccss-g2-u09-l11-tape-diagram-relationships-correction-v1";
+        const string oldStory12 =
+            "us-ccss-g2-u09-l12-story-writing-source-correction-v1";
+        const string oldStory13 =
+            "us-ccss-g2-u09-l13-solve-represent-story-correction-v1";
+
+        // These exact lesson-code/old-version combinations were observed by a
+        // SELECT-only inventory. No unknown, duplicate, or generic predecessor
+        // is eligible for this exception.
+        var documentedPredecessor = lesson.LessonCode switch
+        {
+            "PED:US-CCSS-MATH:G2:U02:L01" => oldB001,
+            "PED:US-CCSS-MATH:G2:U03:L12" => oldB001,
+            "PED:US-CCSS-MATH:G2:U04:L03" => oldDisplay,
+            "PED:US-CCSS-MATH:G2:U05:L01" => oldHundreds,
+            "PED:US-CCSS-MATH:G2:U05:L02" => oldHundreds,
+            "PED:US-CCSS-MATH:G2:U05:L03" => oldHundreds,
+            "PED:US-CCSS-MATH:G2:U06:L07" => oldFoundation,
+            "PED:US-CCSS-MATH:G2:U06:L08" => oldFoundation,
+            "PED:US-CCSS-MATH:G2:U06:L09" => oldFoundation,
+            "PED:US-CCSS-MATH:G2:U06:L19" => oldDisplay,
+            "PED:US-CCSS-MATH:G2:U09:L04" => oldDisplay,
+            "PED:US-CCSS-MATH:G2:U09:L05" => oldFoundation,
+            "PED:US-CCSS-MATH:G2:U09:L11" => oldStory11,
+            "PED:US-CCSS-MATH:G2:U09:L12" => oldStory12,
+            "PED:US-CCSS-MATH:G2:U09:L13" => oldStory13,
+            _ => null
+        };
+        if (documentedPredecessor is null ||
+            existingContentVersion != documentedPredecessor)
+            return false;
+
+        const string noMatchedSourceTarget = "__g2-no-source-target__";
+        var sourceBoundExpected = lesson.LessonCode switch
+        {
+            "PED:US-CCSS-MATH:G2:U02:L01" when
+                CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.IsTarget(
+                    document, lesson) =>
+                CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.Version,
+            "PED:US-CCSS-MATH:G2:U03:L12" when
+                CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.IsTarget(
+                    document, lesson) =>
+                CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.Version,
+            "PED:US-CCSS-MATH:G2:U04:L03" when
+                CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.IsTarget(
+                    document, lesson) =>
+                CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.Version,
+            "PED:US-CCSS-MATH:G2:U05:L01" or
+            "PED:US-CCSS-MATH:G2:U05:L02" or
+            "PED:US-CCSS-MATH:G2:U05:L03" =>
+                CommonCoreG2Unit5OriginalRichContentCorrections.GetExpectedContentVersion(
+                    document, lesson, noMatchedSourceTarget),
+            "PED:US-CCSS-MATH:G2:U06:L07" or
+            "PED:US-CCSS-MATH:G2:U06:L08" or
+            "PED:US-CCSS-MATH:G2:U06:L09" or
+            "PED:US-CCSS-MATH:G2:U06:L19" =>
+                CommonCoreG2Unit6SourceCorrections.GetExpectedContentVersion(
+                    document, lesson, noMatchedSourceTarget),
+            "PED:US-CCSS-MATH:G2:U09:L04" or
+            "PED:US-CCSS-MATH:G2:U09:L05" or
+            "PED:US-CCSS-MATH:G2:U09:L11" or
+            "PED:US-CCSS-MATH:G2:U09:L12" or
+            "PED:US-CCSS-MATH:G2:U09:L13" =>
+                CommonCoreG2Unit9SourceCorrections.GetExpectedContentVersion(
+                    document, lesson, noMatchedSourceTarget),
+            _ => noMatchedSourceTarget
+        };
+
+        return sourceBoundExpected != noMatchedSourceTarget &&
+            sourceBoundExpected != existingContentVersion &&
+            sourceBoundExpected == expectedContentVersion;
+    }
+
     public async Task SeedSourceBoundJsonMetadataCorrectionsAsync(
         CancellationToken ct = default)
     {
@@ -187,6 +289,9 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             if (!CanonicalLessonContentMaterializer.CanUpgradeExisting(
                     target.Document, target.Lesson, content.ContentVersion) &&
                 !IsGuardedG1U04L21JsonMetadataPredecessor(
+                    target.Document, target.Lesson, content.ContentVersion,
+                    expectedVersion, verifiedNoPersistedTranslations: true) &&
+                !IsGuardedG2KnownProductionJsonMetadataPredecessor(
                     target.Document, target.Lesson, content.ContentVersion,
                     expectedVersion, verifiedNoPersistedTranslations: true))
                 throw new InvalidOperationException(
@@ -893,6 +998,36 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                             .AsNoTracking()
                             .AnyAsync(row =>
                                 row.CurriculumLessonContentId == content.Id, ct);
+
+                    // Exact-source G2 predecessors from the observed production
+                    // ReadFromJson metadata inventory can be reconciled ONLY
+                    // on the metadata-only path and ONLY when no persisted
+                    // translation exists. The outer full-grade preflight has
+                    // already verified all content identities/statuses and
+                    // checked zero persisted translations across 294 targets.
+                    // This targeted path cannot rewrite student-visible prose.
+                    var guardedG2JsonMetadata =
+                        metadataOnly &&
+                        IsGuardedG2KnownProductionJsonMetadataPredecessor(
+                            document, sourceLesson, content.ContentVersion,
+                            expectedContentVersion,
+                            verifiedNoPersistedTranslations: true) &&
+                        !await _db.CurriculumLessonContentTranslations
+                            .AsNoTracking()
+                            .AnyAsync(row =>
+                                row.CurriculumLessonContentId == content.Id, ct);
+
+                    if (guardedG2JsonMetadata)
+                    {
+                        if (content.Status != document.Status)
+                            throw new InvalidOperationException(
+                                "G2 metadata-only publication status drift: " +
+                                sourceLesson.LessonCode);
+                        content.ContentVersion = expectedContentVersion;
+                        content.UpdatedAtUtc = now;
+                        ApplyStatusMetadata(content, document.Status, now);
+                        continue;
+                    }
 
                     if (CambridgeReviewedExampleContentCorrections
                         .IsTarget(document, sourceLesson))
