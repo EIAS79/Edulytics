@@ -91,6 +91,11 @@ public static class Grade3SourceCompanionCatalogue
             if (!TryFraction(submitted, out var an, out var ad) ||
                 !TryFraction(q.Expected, out var en, out var ed))
                 return new(false, true, "Write a valid fraction such as 3/4.");
+            // Value equivalence alone is not sufficient when the question specifies
+            // how to represent the partition (e.g. "in eighths").
+            if (q.RequiredDenominator is int denominator && ad != denominator)
+                return new(false, true,
+                    $"Write the answer in {denominator}ths as requested; an equivalent value with a different denominator does not demonstrate the specified partition.");
             // Long arithmetic avoids overflow with bounded fractions.
             var correct = (long)an * ed == (long)en * ad;
             return new(correct, true, correct
@@ -170,4 +175,6 @@ public sealed class Grade3OriginalQuestion
     public string Prompt { get; set; } = "";
     public string AnswerType { get; set; } = "";
     public string? Expected { get; set; }
+    /// <summary>When a representation in named equal parts is demanded, its denominator must match.</summary>
+    public int? RequiredDenominator { get; set; }
 }

@@ -127,6 +127,37 @@ public sealed class Grade3SourceCompanionGradingTests
         }
     }
 
+    [Theory]
+    [InlineData("4/8",8,"4/8",true)]
+    [InlineData("4/8",8,"1/2",false)]
+    [InlineData("6/4",4,"3/2",false)]
+    [InlineData("6/4",4,"6/4",true)]
+    [InlineData("10/2",2,"5",false)]
+    [InlineData("10/2",2,"10/2",true)]
+    public void RequiredDenominatorRequiresSpecificOriginalRepresentation(
+        string expected,int denominator,string answer,bool correct)
+    {
+        var question=new Grade3OriginalQuestion {
+            Prompt="Write a fraction in the specified unit parts.",
+            AnswerType="rational",
+            Expected=expected,
+            RequiredDenominator=denominator
+        };
+        var result=Grade3SourceCompanionCatalogue.Grade(question,answer);
+        Assert.Equal(correct,result.NumericCorrect);
+        Assert.True(result.TeacherReview);
+    }
+
+    [Fact]
+    public void EquivalentFractionWithoutSpecifiedDenominatorRemainsAccepted()
+    {
+        var question=new Grade3OriginalQuestion {
+            Prompt="Write any equivalent fraction.",
+            AnswerType="rational",Expected="1/2"
+        };
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(question,"3/6").NumericCorrect);
+    }
+
     [Fact]
     public void NoSourceAlignedQuestionForEarlierDedicatedLessonsIsDuplicatedInGenericBank()
     {
