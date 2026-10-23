@@ -328,6 +328,124 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "discussion norms. The independently authored " +
                     "Edulytics Cool-down is not the publisher item.";
             }
+            else if (string.Equals(lesson.LessonCode,
+                "PED:US-CCSS-MATH:G3:U01:L03", StringComparison.Ordinal))
+            {
+                // Baseline title includes a synthetic "PLC Activity" suffix,
+                // absent from the public 2021 lesson. Correct only this
+                // already-present Grade 3 canonical authoring candidate.
+                en.Title = "Scaled Picture Graphs";
+                en.Explanation =
+                    "A scaled picture graph uses a key such as one symbol " +
+                    "for 2 or for 5 objects, rather than one object. " +
+                    "Begin with the mental calculations 50+10, 50+12, " +
+                    "60+13, and 65+13 to revisit addition and tens. " +
+                    "Compare two Favorite Sports picture graphs with " +
+                    "EXACTLY the same survey: Football 25, Soccer 15, " +
+                    "Basketball 20, Tennis 5, or 65 students in all. " +
+                    "The first graph has one face per student; the " +
+                    "second has one face per five students (5, 3, 4 " +
+                    "and 1 symbols respectively). Next read scaled " +
+                    "flower and book graphs with DIFFERENT keys. " +
+                    "Flowers: each picture means 5 flowers, with " +
+                    "Roses 2 symbols, Tulips 1, Daisies 5, Violets 3. " +
+                    "Books: each picture means 2 students, with " +
+                    "Joke 4, Comic 1, Science 4 and Mystery 3 symbols. " +
+                    "Explain totals, check what the graph can actually " +
+                    "answer and create two original questions about " +
+                    "each graph. Teachers evaluate question design, " +
+                    "mental strategies and group discussion.";
+
+                en.KeyConceptsAndRules =
+                    "Multiply symbol count by the displayed picture " +
+                    "key before reporting category quantities. Sports " +
+                    "have 65 respondents whether drawn using 65 unit " +
+                    "pictures or 13 pictures with a key of five. " +
+                    "Flowers: 10 roses, 5 tulips, 25 daisies and 15 " +
+                    "violets; total 55 flowers. Books: 8 joke-book, " +
+                    "2 comic-book, 8 science-book and 6 mystery-book " +
+                    "respondents; total 24. Graph questions must " +
+                    "be answerable from the shown category data. " +
+                    "Do not use the flowers' key of 5 to read the " +
+                    "books' key of 2, or count pictures as people.";
+
+                en.WorkedExamples =
+                    "Mental warm-up: 50+10=60; 50+12=62; " +
+                    "60+13=73; 65+13=78. Explain the tens/ones " +
+                    "strategy orally.\n" +
+                    "Sports comparison: 25+15+20+5=65 " +
+                    "learners. For key 5, the symbols are " +
+                    "5+3+4+1=13 and 13x5=65; the two graphs " +
+                    "must represent identical data.\n" +
+                    "Flowers graph: 2 roses-symbols x5=10 " +
+                    "roses; 1 tulips-symbol x5=5; 5 daisies-" +
+                    "symbols x5=25; 3 violets-symbols x5=15. " +
+                    "The four categories total 55 flowers.\n" +
+                    "Books graph: 4 joke-symbols x2=8; " +
+                    "1 comic-symbol x2=2; 4 science-symbols " +
+                    "x2=8; 3 mystery-symbols x2=6, total " +
+                    "24 learners. Learners author two " +
+                    "answerable questions for EACH of the " +
+                    "flowers and books displays.";
+
+                en.StepByStepSolutions =
+                    "Step 1 (10-minute Number Talk): answer " +
+                    "50+10, 50+12, 60+13 and 65+13 mentally; " +
+                    "share a tens-and-ones explanation.\n" +
+                    "Step 2 (15-minute So Many Responses): " +
+                    "count 25,15,20,5 in a key-one sports " +
+                    "graph, then use groups of five to " +
+                    "interpret its equivalent key-five graph.\n" +
+                    "Step 3 (20-minute scaled questions): " +
+                    "count roses/tulips/daisies/violets using " +
+                    "key 5, then jokes/comics/science/mysteries " +
+                    "using key 2. Record correct values " +
+                    "for all four categories in each graph.\n" +
+                    "Step 4: write two distinct questions " +
+                    "about the flowers and two about the " +
+                    "books that the data can answer. Compare " +
+                    "interpretations with a partner; teacher " +
+                    "reviews the question quality.\n" +
+                    "Step 5 (10-minute synthesis): explain " +
+                    "why a key above one compresses a larger " +
+                    "dataset and what an answerable graph " +
+                    "question requires. Reflect on a helpful " +
+                    "Doing Math class norm.\n" +
+                    "Step 6 (5-minute independent Edulytics " +
+                    "Cool-down): answer a new source-skill " +
+                    "equivalent graph, not the restricted " +
+                    "publisher Birds in the Park assessment.";
+
+                en.CommonMistakes =
+                    "Mistake: reading one picture as one " +
+                    "flower/student when its key is 5 or 2. " +
+                    "Repair: multiply the number of pictures " +
+                    "by the stated key for EACH graph.\n" +
+                    "Mistake: concluding the sports two " +
+                    "graphs show different class sizes " +
+                    "because one has fewer drawings. " +
+                    "Repair: compare category quantities: " +
+                    "65 students in either representation.\n" +
+                    "Mistake: assigning a flowers key of " +
+                    "five to the books graph whose key is " +
+                    "two. Repair: read every separate key.\n" +
+                    "Mistake: automatically accepting a " +
+                    "question with unavailable data, or " +
+                    "auto-grading oral reasoning. Repair: " +
+                    "ask which specific graph values support " +
+                    "the question and use teacher review.";
+
+                en.QuickSummary =
+                    "The same sports data may use 65 one-unit " +
+                    "pictures or 13 pictures with key five. " +
+                    "Scale-five flower and scale-two book " +
+                    "graphs need different multiplication " +
+                    "and each answerable question needs " +
+                    "a shown data value. Open questions, " +
+                    "paired reasoning and community norms " +
+                    "need teacher evaluation; no publisher " +
+                    "assessment prompt is copied.";
+            }
             // Never embed restricted publisher Cool-down prompts or artwork.
             // No database migration, publication or A-C approval occurs here.
         }
