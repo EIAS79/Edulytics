@@ -42,7 +42,9 @@
     "lessonsWithActualRichV2SourcePerfect": 0,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
-    "lessonsWithAllOriginalFiguresVerified": 0
+    "lessonsWithAllOriginalFiguresVerified": 0,
+    "lessonsWithLocalHtmlFigureUrlsAudited": 143,
+    "originalImagePixelFilesInspected": 0
   },
   "cursor": {
     "lastConsecutiveReadyForStageDOrdinal": 0,
@@ -5018,5 +5020,86 @@
       "teacherOnly": 44
     },
     "verifiedOriginalSourceSubitems": 0
+  },
+  "stageASourceImageUrlIntake": {
+    "status": "EXACT_IMAGE_REFERENCES_EXTRACTED_FROM_LOCAL_2021_HTML",
+    "folder": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-figure-url-intake/",
+    "sourceMachine": "Authorized local Windows HTML read-only",
+    "scope": "Image asset URLs and descriptions only, no source pixel decoding or license verification",
+    "totals": {
+      "lessonsWithLocalHtmlFigureUrlScan": 143,
+      "uniqueFigureUrlsByUnitSummed": 779,
+      "figureReferencesByLessonSummed": 796,
+      "emptyAltCount": 119,
+      "figurePixelInspections": 0,
+      "sourceAssetUsageRightsConfirmed": 0,
+      "externalFigureFilesSavedLocally": 0
+    },
+    "byUnit": [
+      {
+        "unit": 1,
+        "lessons": 21,
+        "referenceOccurrences": 88,
+        "distinctUrlsWithinUnit": 84,
+        "emptyAlt": 15,
+        "attributionContextFlags": 0
+      },
+      {
+        "unit": 2,
+        "lessons": 15,
+        "referenceOccurrences": 119,
+        "distinctUrlsWithinUnit": 119,
+        "emptyAlt": 6,
+        "attributionContextFlags": 0
+      },
+      {
+        "unit": 3,
+        "lessons": 21,
+        "referenceOccurrences": 101,
+        "distinctUrlsWithinUnit": 96,
+        "emptyAlt": 16,
+        "attributionContextFlags": 0
+      },
+      {
+        "unit": 4,
+        "lessons": 22,
+        "referenceOccurrences": 103,
+        "distinctUrlsWithinUnit": 102,
+        "emptyAlt": 14,
+        "attributionContextFlags": 0
+      },
+      {
+        "unit": 5,
+        "lessons": 18,
+        "referenceOccurrences": 164,
+        "distinctUrlsWithinUnit": 164,
+        "emptyAlt": 11,
+        "attributionContextFlags": 0
+      },
+      {
+        "unit": 6,
+        "lessons": 16,
+        "referenceOccurrences": 102,
+        "distinctUrlsWithinUnit": 99,
+        "emptyAlt": 18,
+        "attributionContextFlags": 0
+      },
+      {
+        "unit": 7,
+        "lessons": 15,
+        "referenceOccurrences": 82,
+        "distinctUrlsWithinUnit": 78,
+        "emptyAlt": 15,
+        "attributionContextFlags": 0
+      },
+      {
+        "unit": 8,
+        "lessons": 15,
+        "referenceOccurrences": 37,
+        "distinctUrlsWithinUnit": 37,
+        "emptyAlt": 24,
+        "attributionContextFlags": 0
+      }
+    ]
   }
 }
