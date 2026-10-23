@@ -17,7 +17,40 @@
     "originalImageDescriptionsCount": 11,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicOriginal2021TeacherStudentPageRead": true,
+    "sourceWarmupCounts": {
+      "A": 20,
+      "B": 24,
+      "C": 20,
+      "D": 20
+    },
+    "sourceActivity1": "Partner A hidden picture, describes row and column arrangement without disclosing square count; B recreates, compare, switch roles.",
+    "sourceAreaFigures": [
+      {
+        "ordinal": 1,
+        "rows": 2,
+        "columns": 9,
+        "area": 18
+      },
+      {
+        "ordinal": 2,
+        "rows": 6,
+        "columns": 5,
+        "area": 30
+      },
+      {
+        "ordinal": 3,
+        "verified": false,
+        "area": null
+      },
+      {
+        "ordinal": 4,
+        "rows": 5,
+        "columns": 9,
+        "area": 45
+      }
+    ]
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +62,9 @@
     "existingSourceBodyHash": "88cfe9429d98f2f882ff19325128c2c8c64c85fb1939eb8e36dbe17b66a32231",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificHiddenPartnerRectangleTaskAuthored": true,
+    "numericSourceAreaItemsRequireTeacherReviewedUnits": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +77,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity What Did I Create? with your teacher. Show the representation and explain how it meets the goal: Let’s find the area of more rectangles.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceElevenIndividualSubtasksWritten": true,
+    "originalAreaFigure3TeacherOnly": true,
+    "authoringRegressionWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -233,7 +271,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Source figure 3's area is unreadable in public alt, original figure pixel dimensions and Student Task PDF/teacher partner observations unverified; live Rich V2 and deferred tests not checked."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

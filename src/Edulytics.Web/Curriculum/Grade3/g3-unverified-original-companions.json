@@ -2727,11 +2727,13 @@
         "sourceGoal": "Let’s find the area of more rectangles.",
         "sourceLearningGoals": "Describe and represent the area of a rectangle as the total number of unit squares arranged in equal groups of rows and columns. Find the area of rectangles (within 60 square units) by counting unit squares.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Use original WODB: three warm-up drawings correspond to 20 grouped objects/tiles, while image B has 24; compare grouping language and image type.",
+          "In Activity 1, partners use the original 12×12 square grid, an opaque folder, and two roles: A DRAW and DESCRIBE with rows/columns, B DRAW without seeing A or being told the total, then switch.",
+          "Activity 2 has four source rectangles. Independently visible values are 2×9=18, 6×5=30 and 5×9=45 square units. Third image remains unverified until opened.",
+          "Ask students to explain the counting strategies, ensuring results explicitly state SQUARE units, not perimeter units.",
+          "Contrast arrays as collections of objects with tiled rectangles as covered flat area; partner language and actual drawings remain teacher evaluated."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the area of more rectangles.",
+        "caution": "The hidden-copy rectangle task must not reveal total area to partner B. The third original source area diagram lacks verified dimensions; never invent its expected count. First-party numeric area drills are not evidence of original drawing fidelity.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -2745,7 +2747,86 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L04-WU-A",
+          "sourceActivity": "Warm-up: Area and Arrays",
+          "prompt": "How many unit squares make the original warm-up image A, a 4×5 tiled rectangle? Explain row or column counting.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U02-L04-WU-B",
+          "sourceActivity": "Warm-up: Area and Arrays",
+          "prompt": "Source image B contains 24 square cells with a dot in each. How many objects/squares? Describe why this differs from 20.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U02-L04-WU-C",
+          "sourceActivity": "Warm-up: Area and Arrays",
+          "prompt": "Image C has 4 rows of 5 dots. Count the dots and compare the array to square regions.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U02-L04-WU-D",
+          "sourceActivity": "Warm-up: Area and Arrays",
+          "prompt": "Image D shows five groups of four dots. Find the total while explaining the grouping.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U02-L04-A1-FIRST",
+          "sourceActivity": "Activity 1: What Did I Create",
+          "prompt": "Without seeing partner A's grid and WITHOUT being told the TOTAL tiles, reconstruct A's rectangle from its row/column description. Draw and compare the two rectangles.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L04-A1-SWAP",
+          "sourceActivity": "Activity 1: What Did I Create",
+          "prompt": "Swap partners' roles and repeat. Reflect on useful language such as rows, columns, number of squares per row, and differences between two sketches.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L04-A2-01",
+          "sourceActivity": "Activity 2: Find the Area",
+          "prompt": "Original source rectangle 1 has two rows of nine equal square units. Find its area and explain your count in square units.",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U02-L04-A2-02",
+          "sourceActivity": "Activity 2: Find the Area",
+          "prompt": "Source rectangle 2 has six rows of five equal unit squares. Find the area in square units.",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U02-L04-A2-03",
+          "sourceActivity": "Activity 2: Find the Area",
+          "prompt": "Source rectangle 3 is described as equal square tiles but its row/column count is not present in the accessible source description. Read the ORIGINAL image with the teacher, then find its area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L04-A2-04",
+          "sourceActivity": "Activity 2: Find the Area",
+          "prompt": "Original rectangle 4 has five rows of nine equal square units. Find its area and show one grouping method.",
+          "answerType": "integer",
+          "expected": "45"
+        },
+        {
+          "id": "G3-U02-L04-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare a 3×2 dot array and a 3×2 tiled region. Explain that area measures covered SPACE in square units, while an object array counts separate objects.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 26,
