@@ -241,8 +241,8 @@
     "numericTotal": 23,
     "hasPartnerAndOralActivities": true,
     "sourceGaps": [
-      "Original Cool-down behind educator-login gate",
-      "Original images asset rights and precise Edulytics diagrams still to verify"
+      "Source official lesson/preparation public HTML tasks numerically/textually inspected; original separate publisher Student Task PDF and graph pixel artwork fetched links returned Cache miss.",
+      "Third-party original-figure rights/visual details not independently verified; keep SOURCE_UNAVAILABLE/RIGHTS_RESTRICTED statuses instead of inventing match."
     ],
     "coolDownPolicy": "FIRST_PARTY_EQUIVALENT_AUTHORIZED; publisher login not required; original publisher Cool-down not claimed verified.",
     "originalTeacherPublicLessonRechecked": true,
@@ -349,7 +349,8 @@
       "MLR8: student peer restatement"
     ],
     "authoringViewPath": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml",
-    "authoringControllerPath": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs"
+    "authoringControllerPath": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
+    "publishRuntimeOnlyDeferredToStageD": true
   },
   "stageC": {
     "status": "STUDENT_COMPANION_NUMERIC_AND_AUTHORED_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -404,16 +405,19 @@
     "supplementalNumericMalformedBehavior": "WRONG INPUT / MachineCorrect false, no silent grading as correct",
     "coolDownNumericRequiredForSourceSubmission": false,
     "humanReviewRubricTasks": 5,
-    "teacherReviewEvidenceHandoff": "Student may print/save unsaved response page; human review and oral participation remain independently unverified; no in-app persisted teacher decision"
+    "teacherReviewEvidenceHandoff": "Student may print/save unsaved response page; human review and oral participation remain independently unverified; no in-app persisted teacher decision",
+    "academicHumanSignoffRequiredBeforeReadyForStageD": false,
+    "teacherRubricNeedsTeacherObservedExecutionBeforeAuthoringClosure": false,
+    "manualDotnetExecutionRequiredBeforeReadyForStageD": false
   },
   "openGaps": [
-    "SOURCE EXTERNAL: Original 2021 Student Task Statements PDF / DOCX not accessible through official asset URLs; source graphic pixel and any third-party license checks not completed. Official teacher/Student Facing HTML descriptions available but not image-perfect.",
-    "A/B INTERNAL: Source-aligned Rich V2 teaching candidate and student Razor source-order fixes exist in GitHub; effective stored/published Rich V2 learner body has not been compared and source runtime/Razor rendering not verified.",
-    "C INTERNAL: All five original Student Facing prompts have distinct fields, fail-closed review responses, and individual teacher rubric rows; teacher may print/save completed work, but there is still no actual authenticated teacher decision or durable app submission, and classroom/partner performance is unverified.",
-    "C BOUNDARY: Three OPTIONAL Edulytics numeric exercises and two OPTIONAL first-party Cool-down numerics do not block submitting original source teacher-led tasks; blank is unattempted, not wrong. Publisher original Cool-down remains educator-gated and an independent equivalent is allowed.",
-    "STAGE D DEFERRED BY OWNER: xUnit/Razor/.NET tests written but must NOT be run now. Nonexecution is not itself an A–C defect."
+    "AC REAL — Full 2021 original source Student Task PDF and original graph artwork image asset cannot be fetched through accessible publisher links (Cache miss); no source-image/paper-task 100% equality can be certified without inspecting them, under the explicit Grade 3 target.",
+    "AC REAL — Source item coverage matrix and effective versioned Rich V2 teacher/student task and grading scope still require complete 1:1 proof, particularly original graph drawing fidelity beyond source ALT text; current authored candidates alone are not full proof.",
+    "AC RIGHTS — Original artwork may contain separate rights; use first-party drawn glyphs, retain explicit source material non-parity until image rights and mathematics represented are verified.",
+    "NOT AC BLOCK — Stage D tests/CI/HTTPS/runtime/Neon deployment, live pupil performance, and human academic signoff are intentionally deferred and do not prevent A-C authoring when the required authored evidence is complete.",
+    "NOT AC BLOCK — Original publisher educator-only Cool-down is replaced by approved independent Edulytics equivalent, with honesty that this is source skill equivalence only, not original assessment material parity."
   ],
-  "nextAction": "Finish all repairable L01 gaps before moving to L02: compare actual effective Grade3 Rich V2 with source-specific code, implement durable teacher review/handoff evidence for source oral/partner activities, verify original official image/PDF assets and licensing if accessible. Only then assess A-C closure; never run tests until Stage D.",
+  "nextAction": "L01 ONLY: use publicly accessible 2021 official source HTML and available first-party source graph evidence to finish 1:1 pedagogical/mathematical map and actual versioned Rich V2 code paths; retain original PDF/artwork separately SOURCE_UNAVAILABLE on cache miss and never claim 100% figure/material parity. Do not require Stage D tests or teacher signatures to mark A-C authoring ready if verified A-C coverage evidence and exact plan's source conditions are eventually fulfilled. Keep cursor at 1.",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",
@@ -493,5 +497,34 @@
     "deploy": false,
     "sourcePerfectAcademicApproval": false,
     "readyForStageD": false
+  },
+  "authoringVsValidationGateCorrection20261023": {
+    "basis": "Same staged authoring distinction as main Grade 2 L01/L14 A-C closure and owner's latest Grade 3 100%-source-proof plan.",
+    "legitimateACBlocks": [
+      "Stage A source-to-product element-by-element parity not independently proven for original publisher picture/bar graph image details and independently fetched student task PDFs; source evidence remains incomplete under latest Grade3 plan's 100% original-element rule.",
+      "Stage B compare the actual effective versioned Rich V2 content authoring code and every source mathematical subtask; source-specific authoring alone does not prove full 1:1 alignment.",
+      "Stage C verify all genuine digital source skills and teacher-led source task coverage in code plus authored regression tests, without numeric replacement for open tasks."
+    ],
+    "explicitlyNOTPreStageDBlocks": [
+      "Manually executing xUnit, compiling .NET, CI, staging HTTPS, or exercising the Razor runtime: owner's plan prohibits this until Stage D.",
+      "Obtaining a real classroom teacher signature or actual student/partner work execution: authoring-stage teacher rubric and honest teacher-led classification suffice; live performance is not a curriculum authoring prerequisite.",
+      "Obtaining the publisher's educator-gated original Cool-down verbatim when first-party independently authored equivalent is approved; do not assert material parity of inaccessible item.",
+      "Running Render/Neon publication or academic human approval: no deploy and no final signoff at Stage A-B-C."
+    ],
+    "publisherSourceLinks": {
+      "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
+      "preparation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/preparation.html",
+      "studentTaskStatements": "https://cms-assets.illustrativemathematics.org/jnjmmz0zztvuwpty53y7ouwfghx3",
+      "firstGraphAsset": "https://cms-assets.illustrativemathematics.org/v2i0ouxrwm72y8itd7q68jsnx02c"
+    },
+    "lastFetchOutcome": "PUBLISHER_ASSET_CACHE_MISS_FOR_BOTH_PDF_AND_SOURCE_IMAGE",
+    "grade2Reference": {
+      "lesson1Checkpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-1-v2-stage-a-d-checkpoint.json",
+      "lesson14Checkpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-14-v2-stage-a-d-checkpoint.json",
+      "method": "Grade2 READY_FOR_STAGE_D historically used public source HTML, independently drawn visuals, first-party Cool-down, teacher rubric and written unrun tests, with final human academic approval and tests explicitly deferred."
+    },
+    "differenceFromGrade2": "Owner's later Grade3 100%-source-element plan explicitly requires disclosing each original figure/student task asset not inspected; cannot retroactively accept unavailable source assets as 100% verified by following a less strict historical Grade2 declaration.",
+    "currentClosure": "A_C_EXPLICIT_GAP_NOT_PROVEN_READY_FOR_STAGE_D",
+    "testStatus": "WRITTEN_NOT_RUN"
   }
 }
