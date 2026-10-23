@@ -117,6 +117,18 @@ public static class Grade3SourceCompanionCatalogue
                 : "Check which number describes the groups and which describes the members in each group. Teacher reviews alternative justifications.");
         }
 
+        if (q.AnswerType == "multiplication-equation")
+        {
+            if (!TryReadProductEquation(submitted, out var ag, out var ap, out var at) ||
+                !TryReadProductEquation(q.Expected, out var eg, out var ep, out var et))
+                return new(false, true, "Write a complete true multiplication equation, such as 3 × 5 = 15. A numerical total alone is insufficient.");
+
+            var correct = ag == eg && ap == ep && at == et;
+            return new(correct, true, correct
+                ? "Both factors and product match the intended source groups. The drawing still needs teacher review."
+                : "The product or factor roles differ from the expected model. A teacher can examine mathematically valid alternative representations.");
+        }
+
         if (q.AnswerType == "integer")
         {
             if (!int.TryParse(submitted.Trim(), NumberStyles.Integer,
@@ -161,6 +173,40 @@ public static class Grade3SourceCompanionCatalogue
         }
 
         return new(null, true, "Unknown task type. Teacher review only.");
+    }
+
+    // The sides of an equality may be reversed, but a mere scalar total is
+    // not a multiplication equation. Group/factor order is part of the
+    // task-specific representation; alternatives remain human-reviewable.
+    private static bool TryReadProductEquation(
+        string? submitted, out int groups, out int each, out int product)
+    {
+        groups = each = product = 0;
+        if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
+            return false;
+        const string multiplication = @"([0-9]{1,3})\s*[xX×*]\s*([0-9]{1,3})";
+        const string number = @"([0-9]{1,5})";
+        var text = submitted.Trim();
+        var forward = Regex.Match(text,
+            "^" + multiplication + @"\s*=\s*" + number + "$",
+            RegexOptions.CultureInvariant);
+        var reversed = Regex.Match(text,
+            "^" + number + @"\s*=\s*" + multiplication + "$",
+            RegexOptions.CultureInvariant);
+        if (forward.Success)
+        {
+            groups = int.Parse(forward.Groups[1].Value, CultureInfo.InvariantCulture);
+            each = int.Parse(forward.Groups[2].Value, CultureInfo.InvariantCulture);
+            product = int.Parse(forward.Groups[3].Value, CultureInfo.InvariantCulture);
+        }
+        else if (reversed.Success)
+        {
+            product = int.Parse(reversed.Groups[1].Value, CultureInfo.InvariantCulture);
+            groups = int.Parse(reversed.Groups[2].Value, CultureInfo.InvariantCulture);
+            each = int.Parse(reversed.Groups[3].Value, CultureInfo.InvariantCulture);
+        }
+        else return false;
+        return groups > 0 && each > 0 && groups * each == product;
     }
 
     private static bool TryClockTime(string? text, out int minutesSinceMidnight)

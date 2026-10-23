@@ -123,6 +123,42 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.False(lesson.ReadyForStageD);
     }
 
+    [Theory]
+    [InlineData("2x10=20",true)]
+    [InlineData("20 = 2 × 10",true)]
+    [InlineData("2*10 = 20",true)]
+    [InlineData("20",false)]
+    [InlineData("2x10",false)]
+    [InlineData("2x10=21",false)]
+    [InlineData("10x2=20",false)]
+    [InlineData("2+10=20",false)]
+    public void MultiplicationEquationsRequireFactorsEqualityAndCorrectProduct(
+        string answer,bool correct)
+    {
+        var q=new Grade3OriginalQuestion {
+            AnswerType="multiplication-equation", Expected="2x10=20"
+        };
+        var result=Grade3SourceCompanionCatalogue.Grade(q,answer);
+        Assert.Equal(correct,result.NumericCorrect);
+        Assert.True(result.TeacherReview);
+    }
+
+    [Fact]
+    public void LessonThirteenCapturesNineMatchesAndSevenEquationWritingContexts()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L13",out var lesson));
+        Assert.Equal(16,lesson!.SourceSubtasks.Count);
+        Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        foreach(var q in lesson.SourceSubtasks.Where(q=>q.AnswerType=="multiplication-equation")){
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"999").NumericCorrect);
+        }
+        Assert.Equal("multiplication-equation",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal("multiplication-equation",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
     [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
@@ -213,7 +249,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -238,6 +274,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "comparison" => question.Expected == ">" ? "<" : ">",
                     "clock-time" => "13:99 pm",
                     "multiplication-expression" => "1x1",
+                    "multiplication-equation" => "1x1=1",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);

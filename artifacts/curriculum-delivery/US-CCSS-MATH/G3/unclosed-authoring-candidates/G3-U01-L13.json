@@ -17,7 +17,20 @@
     "originalImageDescriptionsCount": 9,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "direct2021PublicTeacherPageRead": true,
+    "originalNineEquationMatchRowsMapped": 9,
+    "originalSevenExpressionToEquationRowsMapped": 7,
+    "unreadImagesExplicitTeacherOnly": [
+      "G3-U01-L13-A1-03",
+      "G3-U01-L13-A1-08"
+    ],
+    "warmupFourRepresentations": [
+      "3 groups of five",
+      "3x5 expression",
+      "2x5=10 equation",
+      "7+8=15 addition equation"
+    ]
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +42,8 @@
     "existingSourceBodyHash": "a40fe9f1fc7899129b8febba5c78f5f4790f956ddcb88e61492a0e9d953d2b99",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificIntroToEquationsAndAll16StudentFacingPromptsAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +56,13 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Multiplication Equation Match with your teacher. Show the representation and explain how it meets the goal: Let’s learn about multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How",
-    "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram."
+    "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
+    "firstPartyPracticeRequiresFullEquation": true,
+    "independentCooldownRequiresFullEquation": true,
+    "sourceNumericEquationContracts": 14,
+    "teacherOnlyUninspectedSourcePictures": 2,
+    "testsWrittenNotRun": true,
+    "allOriginalSourceImageParityVerified": false
   },
   "sourceElements": [
     {
@@ -204,7 +224,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Two of nine source Activity 1 images not inspected, 2021 diagrams/student PDF and live Rich V2 unverified; source warm-up judgment, model comparison and partner dialogue remain human assessment. New grader/test code not run."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
