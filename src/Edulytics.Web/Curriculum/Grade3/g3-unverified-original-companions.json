@@ -125,19 +125,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "equal-group-representation",
+      "firstPartyFamily": "concrete-equal-groups",
       "independentPractice": {
-        "prompt": "How many objects are there in 3 equal groups with 3 objects in each group? Show your groups in a drawing.",
+        "prompt": "There are 5 groups of 2 street signs. How many signs altogether?",
         "answerType": "integer",
-        "expected": "9"
+        "expected": "10"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 3 equal groups with 6 objects in each group? Show your groups in a drawing.",
+        "prompt": "Draw 4 groups of 3 stickers and find the total.",
         "answerType": "integer",
-        "expected": "18"
+        "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity From Scaled Graphs to Equal Groups with your teacher. Show the representation and explain how it meets the goal: Let’s work with equal groups of things.",
-      "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced.",
+      "teacherReviewNote": "Introduce groups before multiplication expressions; teacher checks each drawn group and the graph key.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -152,7 +152,18 @@
         ],
         "caution": "A lesson about concrete groups should not force multiplication symbols before they have been formally introduced.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Elena's graph has 3 speed-limit symbols, with 2 signs per symbol. How many signs?",
+        "answerType": "integer",
+        "expected": "6"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-9/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 10,
@@ -213,19 +224,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "equal-group-representation",
+      "firstPartyFamily": "equal-groups-tape-diagram",
       "independentPractice": {
-        "prompt": "How many objects are there in 4 equal groups with 4 objects in each group? Show your groups in a drawing.",
-        "answerType": "integer",
-        "expected": "16"
-      },
-      "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 4 equal groups with 2 objects in each group? Show your groups in a drawing.",
+        "prompt": "Draw a four-part tape representing 2 strawberries per bag. How many strawberries?",
         "answerType": "integer",
         "expected": "8"
       },
+      "originalEdulyticsCoolDown": {
+        "prompt": "Draw a tape of five parts, each showing three pencils. How many pencils?",
+        "answerType": "integer",
+        "expected": "15"
+      },
       "openTeacherTask": "Work through the original lesson's activity Scaled Picture Graph to Diagram with your teacher. Show the representation and explain how it meets the goal: Let’s represent equal groups.",
-      "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced.",
+      "teacherReviewNote": "Check equal tape parts and correspondence to situations and diagrams; number alone does not certify the drawing.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -240,7 +251,18 @@
         ],
         "caution": "A lesson about concrete groups should not force multiplication symbols before they have been formally introduced.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "A tape diagram has three equal parts each labelled 2. What is the total?",
+        "answerType": "integer",
+        "expected": "6"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-10/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 11,
@@ -306,19 +328,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "equal-group-representation",
+      "firstPartyFamily": "multiplication-expressions",
       "independentPractice": {
-        "prompt": "How many objects are there in 5 equal groups with 5 objects in each group? Show your groups in a drawing.",
+        "prompt": "Three packs contain 10 pencils each. What is the total? Write the multiplication expression.",
         "answerType": "integer",
-        "expected": "25"
+        "expected": "30"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 5 equal groups with 3 objects in each group? Show your groups in a drawing.",
+        "prompt": "Four packs have six beads each. Find the total and write the expression.",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Multiplication Expression Match with your teacher. Show the representation and explain how it meets the goal: Let’s write multiplication expressions.",
-      "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced.",
+      "teacherReviewNote": "The expression must correctly identify groups and objects per group; the source introduces expressions here.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -333,7 +355,18 @@
         ],
         "caution": "A lesson about concrete groups should not force multiplication symbols before they have been formally introduced.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "What does the source expression 3 × 4 represent as a total?",
+        "answerType": "integer",
+        "expected": "12"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-11/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 12,
@@ -393,19 +426,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiplication-expression-equation",
+      "firstPartyFamily": "multiplication-word-problems",
       "independentPractice": {
-        "prompt": "How many objects are there in 2 equal groups with 3 objects in each group? Show your groups in a drawing.",
+        "prompt": "There are 4 fields with 2 teams on each field. How many teams?",
         "answerType": "integer",
-        "expected": "6"
+        "expected": "8"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 3 equal groups with 4 objects in each group? Show your groups in a drawing.",
+        "prompt": "There are 3 groups of 8 flags. Find the number of flags.",
         "answerType": "integer",
-        "expected": "12"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Tyler’s Boxes with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve problems involving equal groups. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection",
-      "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
+      "teacherReviewNote": "Connect each contextual quantity to an accurate diagram, not merely the product.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -420,7 +453,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve problems involving equal groups. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Tyler has 3 boxes of 5 baseballs each. How many baseballs?",
+        "answerType": "integer",
+        "expected": "15"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-12/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 13,
@@ -486,19 +530,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiplication-expression-equation",
+      "firstPartyFamily": "multiplication-equations",
       "independentPractice": {
-        "prompt": "How many objects are there in 3 equal groups with 4 objects in each group? Show your groups in a drawing.",
+        "prompt": "Four packs of 10 markers contain how many markers? Write an equation.",
         "answerType": "integer",
-        "expected": "12"
+        "expected": "40"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 4 equal groups with 5 objects in each group? Show your groups in a drawing.",
+        "prompt": "Six groups of five objects are represented by an equation. Find their total.",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "30"
       },
       "openTeacherTask": "Work through the original lesson's activity Multiplication Equation Match with your teacher. Show the representation and explain how it meets the goal: Let’s learn about multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How",
-      "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
+      "teacherReviewNote": "An equation requires equality and factors that agree with the situation.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -513,7 +557,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Five pairs of socks have how many individual socks?",
+        "answerType": "integer",
+        "expected": "10"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-13/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 14,
@@ -573,19 +628,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiplication-expression-equation",
+      "firstPartyFamily": "multiplication-unknowns",
       "independentPractice": {
-        "prompt": "How many objects are there in 4 equal groups with 5 objects in each group? Show your groups in a drawing.",
+        "prompt": "35 cards go into packs of 5. How many packs? Write 5 × □ = 35.",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "7"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 5 equal groups with 6 objects in each group? Show your groups in a drawing.",
+        "prompt": "Find the missing factor in 7 × □ = 42.",
         "answerType": "integer",
-        "expected": "30"
+        "expected": "6"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Unknown Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s work with equations with unknown numbers.",
-      "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
+      "teacherReviewNote": "Check unknown-factor equations with a symbol and interpret what it counts.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -600,7 +655,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s work with equations with unknown numbers.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Jada has 45 cards in packs of 5. How many packs?",
+        "answerType": "integer",
+        "expected": "9"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-14/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 15,
@@ -664,19 +730,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiplication-expression-equation",
+      "firstPartyFamily": "multiplication-mixed-unknowns",
       "independentPractice": {
-        "prompt": "How many objects are there in 5 equal groups with 3 objects in each group? Show your groups in a drawing.",
-        "answerType": "integer",
-        "expected": "15"
-      },
-      "originalEdulyticsCoolDown": {
-        "prompt": "How many objects are there in 3 equal groups with 2 objects in each group? Show your groups in a drawing.",
+        "prompt": "Han has 60 ice cubes and trays of 10. How many trays?",
         "answerType": "integer",
         "expected": "6"
       },
+      "originalEdulyticsCoolDown": {
+        "prompt": "24 socks are grouped into piles of 2. How many piles?",
+        "answerType": "integer",
+        "expected": "12"
+      },
       "openTeacherTask": "Work through the original lesson's activity Represent Situations with Equations with your teacher. Show the representation and explain how it meets the goal: Let’s solve more multiplication problems. Required Preparation CCSS Standards Addressing 3.OA.A.3 3.OA.A.4 3.OA.D.9 Building Towards 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
-      "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
+      "teacherReviewNote": "Distinguish total, unknown group count and unknown group size, as in the original situations.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -691,7 +757,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve more multiplication problems. Required Preparation CCSS Standards Addressing 3.OA.A.3 3.OA.A.4 3.OA.D.9 Building Towards 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "15 plates are arranged 5 per table. How many tables?",
+        "answerType": "integer",
+        "expected": "3"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-15/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 16,
@@ -750,19 +827,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "arrays-commutative",
+      "firstPartyFamily": "arrays-with-objects",
       "independentPractice": {
-        "prompt": "Draw an array of 2 rows of 4 equal columns. How many objects does it contain?",
+        "prompt": "Arrange 20 tiles into four rows of five. How many tiles?",
         "answerType": "integer",
-        "expected": "8"
+        "expected": "20"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle has 3 rows with 4 tiles each. How many tiles? Explain what changes when rows and columns are swapped.",
+        "prompt": "Arrange 24 counters into six rows of four. How many counters?",
         "answerType": "integer",
-        "expected": "12"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Compare Equal Groups and Arrays with your teacher. Show the representation and explain how it meets the goal: Let’s make some arrays.",
-      "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+      "teacherReviewNote": "Teacher checks actual alternative array arrangements for 20 and 24 objects.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -777,7 +854,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make some arrays.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Six groups of five cubes make an array of how many cubes?",
+        "answerType": "integer",
+        "expected": "30"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-16/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 17,
@@ -837,19 +925,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "arrays-commutative",
+      "firstPartyFamily": "match-arrays-equal-groups",
       "independentPractice": {
-        "prompt": "Draw an array of 3 rows of 5 equal columns. How many objects does it contain?",
+        "prompt": "Rearrange four groups of three dots as a rectangular array. How many dots?",
+        "answerType": "integer",
+        "expected": "12"
+      },
+      "originalEdulyticsCoolDown": {
+        "prompt": "Create a three-row, five-column array of counters. How many counters?",
         "answerType": "integer",
         "expected": "15"
       },
-      "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle has 4 rows with 5 tiles each. How many tiles? Explain what changes when rows and columns are swapped.",
-        "answerType": "integer",
-        "expected": "20"
-      },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Arrays with your teacher. Show the representation and explain how it meets the goal: Let’s match arrays to equal groups and draw arrays.",
-      "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+      "teacherReviewNote": "Matching groups with arrays requires teacher review of actual diagrams and card sorting.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -864,7 +952,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s match arrays to equal groups and draw arrays.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The original dot group contains 15 dots. How many are in the matching 3×5 array?",
+        "answerType": "integer",
+        "expected": "15"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-17/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 18,
@@ -922,19 +1021,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "arrays-commutative",
+      "firstPartyFamily": "arrays-expressions",
       "independentPractice": {
-        "prompt": "Draw an array of 4 rows of 3 equal columns. How many objects does it contain?",
+        "prompt": "Draw two rows of six eggs. How many eggs? Write an expression.",
         "answerType": "integer",
         "expected": "12"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle has 5 rows with 3 tiles each. How many tiles? Explain what changes when rows and columns are swapped.",
+        "prompt": "Draw four rows of seven dots and find the product.",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "28"
       },
       "openTeacherTask": "Work through the original lesson's activity Represent Array Situations with your teacher. Show the representation and explain how it meets the goal: Let’s represent situations with arrays and expressions.",
-      "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+      "teacherReviewNote": "The student should explain row/column factors and show a correct array.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -949,7 +1048,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent situations with arrays and expressions.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "An array has three rows of five chairs. How many chairs?",
+        "answerType": "integer",
+        "expected": "15"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-18/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 19,
@@ -1007,19 +1117,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "arrays-commutative",
+      "firstPartyFamily": "array-problems",
       "independentPractice": {
-        "prompt": "Draw an array of 5 rows of 4 equal columns. How many objects does it contain?",
+        "prompt": "A grove has five rows of nine trees. How many trees? Write an equation.",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "45"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle has 6 rows with 4 tiles each. How many tiles? Explain what changes when rows and columns are swapped.",
+        "prompt": "Three rows have eight seedlings per row. How many seedlings?",
         "answerType": "integer",
         "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Array of Colors with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems involving arrays. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
-      "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+      "teacherReviewNote": "Source expects array and equation with unknown, not simply product recall.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1034,7 +1144,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems involving arrays. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Seven rows have five crayons per row. How many crayons?",
+        "answerType": "integer",
+        "expected": "35"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-19/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 20,
@@ -1100,19 +1221,19 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "arrays-commutative",
+      "firstPartyFamily": "commutative-property",
       "independentPractice": {
-        "prompt": "Draw an array of 2 rows of 5 equal columns. How many objects does it contain?",
+        "prompt": "Compare arrays 3×7 and 7×3. How many dots in either one?",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "21"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle has 2 rows with 5 tiles each. How many tiles? Explain what changes when rows and columns are swapped.",
+        "prompt": "Compare 4×6 and 6×4. What is the shared total?",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Learn More About Multiplication with your teacher. Show the representation and explain how it meets the goal: Let’s learn about the commutative property. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.OA.B.5 Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down",
-      "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+      "teacherReviewNote": "Explain why rotation changes the factor order but not the product.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1127,7 +1248,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about the commutative property. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.OA.B.5 Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Source arrays show 2 groups of 5 and 5 groups of 2. What is their shared total?",
+        "answerType": "integer",
+        "expected": "10"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-20/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 21,
