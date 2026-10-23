@@ -57,7 +57,10 @@
       "Either chosen scale2 or5 renders same values accurately",
       "Teacher-reviewed partner scale selection",
       "New original fictional Edulytics Cool-down"
-    ]
+    ],
+    "richV2SourceSpecificCorrection": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "effectiveLearnerBodyCompared": false,
+    "currentContentStatus": "AUTHORING_SOURCE_REPAIRED_NO_RUNTIME_PARITY_CERTIFIED"
   },
   "stageC": {
     "status": "SOURCE_NUMERIC_AND_FIRST_PARTY_COOL_DOWN_WIRED_TESTS_UNRUN",
@@ -103,6 +106,8 @@
     "publishedRichV2BodyCompared": false
   },
   "openGaps": [
+    "Original 2021 publisher Student Task PDF and exact bar-graph source image pixels have not been independently inspected; do not claim 100% graphic parity.",
+    "The effective stored Rich V2 and authentic teacher-attested carryover of L04 classroom preferences remain unverified. New source-specific correction and regression are only authored, NOT executed.",
     "Original Number Talk exact numeric expression sequence and visual student task PDF have not been fully checked.",
     "Teacher-verified L04 real survey dataset is NOT stored or automatically rehydrated; learner must re-enter and teacher verify consistency.",
     "Effective database-backed Rich V2 content not source-compared.",
@@ -114,5 +119,53 @@
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",
   "merged": false,
-  "deployed": false
+  "deployed": false,
+  "source2021GitHubOnlyExecution": {
+    "date": "2026-10-23",
+    "publisherLesson": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-5/lesson.html",
+    "publisherPrep": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-5/preparation.html",
+    "originalHtmlTextInspected": true,
+    "originalPdfPixelsOrImagesInspected": false,
+    "source2021NumericVerification": {
+      "mentalRepeatedAddition": [
+        8,
+        16,
+        20,
+        40
+      ],
+      "fixedComparisonCounts": {
+        "Bike": 12,
+        "Walk": 4,
+        "BusOrVan": 6,
+        "Car": 3
+      },
+      "fixedComparisonTotal": 25,
+      "firstBarAxis": {
+        "min": 0,
+        "max": 12,
+        "tick": 1
+      },
+      "secondBarAxis": {
+        "min": 0,
+        "max": 24,
+        "tick": 2
+      },
+      "authenticStudentSurvey": "L04 actual preferred-travel counts: NOT fixed demo 25",
+      "studentScaleOptions": [
+        2,
+        5
+      ],
+      "sourceBlankAxes": [
+        "0..16 by 2",
+        "0..40 by 5"
+      ]
+    },
+    "RichV2NewCode": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "newUnrunSourceRegression": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG3SourceTeachingCorrectionsTests.cs",
+    "sourceStudentPdfAccess": "UNVERIFIED_NOT_INSPECTED",
+    "originalCoolDown": "GATED_BY_PUBLISHER_FIRST_PARTY_EQUIVALENT_NOT_VERBATIM",
+    "teacherAttestedL04ClassContinuity": "NOT_VERIFIED_NO_SOURCE_PERSISTENCE",
+    "policy": "GITHUB_AND_PUBLISHER_ONLY_NOT_OUR_CS"
+  },
+  "nextAction": "Return to L05: obtain original PDF/image pixels; reconcile actual L04 survey provenance and persistence with authorized learner route, each original task subpart and effective Rich V2. Keep A_C_EXPLICIT_GAP and source return queue."
 }
