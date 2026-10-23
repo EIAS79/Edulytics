@@ -20,13 +20,17 @@
 .g3-survey .submit{padding:13px 20px;background:#087b88;color:#fff;border:0;border-radius:9px;font:inherit;font-weight:700;cursor:pointer}
 .g3-survey .class-graph{display:grid;grid-template-columns:repeat(6,minmax(52px,1fr));gap:9px;max-width:710px;overflow-x:auto}
 .g3-survey .class-graph-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:52px}
-.g3-survey .class-graph-symbols{display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:240px;justify-content:flex-start}
+.g3-survey .class-graph-symbols{display:flex;flex-direction:column-reverse;align-items:center;gap:2px;min-height:240px;height:auto;justify-content:flex-start}
 .g3-survey .class-graph-symbols span{font-size:12px;line-height:12px;color:#107c94}
 .g3-survey .class-graph-label{font-size:.78rem;text-align:center;margin-top:4px}
 .g3-survey .class-chart{display:grid;grid-template-columns:38px 1fr;max-width:750px;gap:8px}
 .g3-survey .chart-ticks{height:240px;display:flex;flex-direction:column;justify-content:space-between;font-size:.78rem}
 .g3-survey .class-graph-bars{display:grid;grid-template-columns:repeat(6,minmax(52px,1fr));gap:8px;align-items:end;height:240px;border-left:2px solid #648091;border-bottom:2px solid #648091}
 .g3-survey .class-bar{background:#18869a;width:76%;max-width:68px;align-self:end}
+.g3-survey .class-chart-bar-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:52px;height:240px}
+.g3-survey .class-chart-labels{grid-column:2;display:grid;grid-template-columns:repeat(6,minmax(52px,1fr));gap:8px}
+.g3-survey .class-chart-category{font-size:.78rem;text-align:center;overflow-wrap:anywhere}
+.g3-survey .class-chart-x-axis{grid-column:2;text-align:center;margin:5px 0 0;font-size:.9rem;font-weight:700}
 .g3-survey .bar-row{display:flex;align-items:center;gap:12px;margin:7px 0}
 .g3-survey .bar-label{width:90px;flex:none}
 .g3-survey .bar-length{height:24px;background:#18869a;min-width:0}
@@ -102,12 +106,18 @@
                     <div class="class-graph-bars">
                         @foreach (var item in Model.ValidatedShapeOnlySurvey)
                         {
-                            <div class="class-graph-col" aria-label="@item.Category: @item.Students">
+                            <div class="class-chart-bar-col" aria-label="@item.Category: @item.Students; bar from zero">
                                 <div class="class-bar" style="height:@(item.Students * 240 / graphMax)px" aria-hidden="true"></div>
-                                <span class="class-graph-label">@item.Category: @item.Students</span>
                             </div>
                         }
                     </div>
+                    <div class="class-chart-labels" aria-label="Horizontal axis category labels">
+                        @foreach (var item in Model.ValidatedShapeOnlySurvey)
+                        {
+                            <span class="class-chart-category">@item.Category: @item.Students</span>
+                        }
+                    </div>
+                    <p class="class-chart-x-axis">Ways to get home</p>
                 </div>
                 <p class="note">Title, category order and quantities match between the two independently drawn graphs. A teacher must still check that the entered numbers came from real classmates.</p>
             </section>

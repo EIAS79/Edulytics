@@ -111,6 +111,31 @@ public sealed class UsCcssG3Unit1Lesson2ClassSurveyCandidateTests
     }
 
     [Fact]
+    public void FirstPartyClassSurveyGraphsKeepBarsAnchoredToZeroAndFortyLearnerPictureDataVisible()
+    {
+        // Razor source guard written for deferred Stage D, NOT executed in Stage A-B-C.
+        DirectoryInfo? directory = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (directory is not null)
+        {
+            var candidate = Path.Combine(directory.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson2Activities", "Index.cshtml");
+            if (File.Exists(candidate)) { path = candidate; break; }
+            directory = directory.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        Assert.Contains("min-height:240px;height:auto", view);
+        Assert.Contains("class-chart-bar-col", view);
+        Assert.Contains("class-chart-labels", view);
+        Assert.Contains("Horizontal axis category labels", view);
+        Assert.Contains("Ways to get home", view);
+        Assert.DoesNotContain(
+            "<span class=\"class-graph-label\">@item.Category: @item.Students</span>", view);
+        Assert.Contains("height:@(item.Students * 240 / graphMax)px", view);
+    }
+
+    [Fact]
     public void AnOverFortySurveyDoesNotProduceAnAutomaticNumericPass()
     {
         UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] impossible =

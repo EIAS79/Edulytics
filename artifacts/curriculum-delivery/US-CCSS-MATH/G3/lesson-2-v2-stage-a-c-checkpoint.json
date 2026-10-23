@@ -54,7 +54,8 @@
       "parityStatus": "MISMATCH_BLOCKED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
-      "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs"
+      "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
+      "pictureStackLimitCorrection": "Authoring repair: minimum 240px rather than fixed 240px allows 21–40 real-class dot symbols without overflow. Visual render and class provenance remain unverified."
     },
     {
       "id": "G3-U01-L02-class_bargraph",
@@ -65,7 +66,10 @@
       "parityStatus": "MISMATCH_BLOCKED",
       "reason": "Independently authored learner companion now maps this instructional component; teacher source and effective Rich V2 comparison, arbitrary teacher comparison choices, and runtime verification not complete.",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml",
-      "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs"
+      "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs",
+      "visualBaselineCorrection": "Authoring repair: bar height is now anchored to the zero baseline; category captions are outside the 240px plot and the teacher-adjustable six-category title is shown beneath the horizontal axis. Existing numeric input is not independently verified class data.",
+      "firstPartyVisualNotRendered": true,
+      "originalSourcePixelParityApproved": false
     },
     {
       "id": "G3-U01-L02-activity2_true_false",
@@ -208,7 +212,9 @@
     "richV2AuthoringUpdatedCode": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
     "richV2CodeScopeSpecific": "L02 6/8/10 dot warm-up, real class-dependent survey, source true-false, one/two-step within-20, teacher review, time sequence",
     "currentContentStatus": "GRADE3_2021_SOURCE_SPECIFIC_RICH_V2_AUTHORING_PROPOSAL_DB_EFFECTIVE_RUNTIME_UNVERIFIED",
-    "effectiveLearnerBodyCompared": false
+    "effectiveLearnerBodyCompared": false,
+    "chartZeroBaselineAndFortyResponseOverflowCodeCorrected": true,
+    "chartVisualRendered": false
   },
   "stageC": {
     "status": "GRADE3_LESSON2_AUTHORIZED_COMPANION_AND_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -230,7 +236,8 @@
     "trueFalsePolicy": "Calculated only from validated learner-supplied classroom category counts; teacher verifies authenticity.",
     "datasetMaxClassSize": 40,
     "numericWithinTwentyGuard": true,
-    "testsRun": false
+    "testsRun": false,
+    "newUnrunRazorVisualContract": true
   },
   "openGaps": [
     "Source-specific Rich V2 correction is authored in GitHub, but effective displayed/published content and each task's student/teacher review evidence are not certified; this is not READY_FOR_STAGE_D.",
