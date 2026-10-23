@@ -57,10 +57,10 @@
       "ordinal": 1,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L01",
       "reasons": [
-        "Source original first-edition Student Task Statements PDF/DOCX and exact image pixels unavailable through official publisher asset links; source artwork third-party rights not resolved.",
-        "Effective stored/published Rich V2 learner body not compared to code-level authoring and native Razor runtime not inspected (Stage D intentionally deferred).",
-        "Five source student subparts now have separate answers and explicit unscored teacher review; teacher/class oral task and partner evidence are not persisted or academically signed off. Independent numeric practice cannot replace these.",
-        "Original publisher teacher-only Cool-down is separately gated; owner-permitted Edulytics first-party equivalent is authored, not literal source item verification."
+        "Original 2021 publisher student task PDF and graph-image assets return cache miss; per latest Grade3 100% original-element requirement cannot claim source-material parity for uninspected assets.",
+        "Complete one-to-one, original-element-to-effective Rich V2 + actual learner Practice/teacher-rubric source evidence not signed off on code-authoring review yet.",
+        "Do not list Stage D tests/CI/runtime, real pupils' task performance or teacher human academic signature as a pre-Stage-D A-C blocker; these are deferred.",
+        "First-party independently authored Cool-down is approved and not itself blocking; label original publisher assessment material unavailable and do not claim original artwork parity."
       ],
       "status": "A_C_EXPLICIT_GAP"
     },
@@ -1674,7 +1674,13 @@
       "sourceStudentFacingAcademicVerifiedSubparts": 0,
       "sourceTeacherRubricWritten": true,
       "sourceOpenTasksNeedNumericSupplementCompletion": false,
-      "sourceTeacherReviewPersistentSignoff": false
+      "sourceTeacherReviewPersistentSignoff": false,
+      "stageDRequirementsDoNotBlockAuthoring": true,
+      "humanAcademicSignoffNotRequiredToAuthorAC": true,
+      "teacherRubricAuthoredDoesNotProveStudentCompletion": true,
+      "originalPublicHtmlSourceReviewed": true,
+      "publisherPdfAndImagesAccess": "SOURCE_ASSET_CACHE_MISS_NOT_INSPECTED",
+      "sourceMaterialParityProofComplete": false
     },
     {
       "gradeOrdinal": 2,
@@ -5362,7 +5368,8 @@
     "2026-10-23 source-only sequential L05: teacher public 2021 source counts fixed 12/4/6/3 graph shown with axis 0..12 by1 and 0..24 by2; exact real L04 preferences to be carried into pupils' new graph with scale2/5. Authored English Rich V2 fix and unrun tests; still no verified publisher Student PDF/image pixels, no real L04 data persistence/teacher attestation, no A-C closure. Source L03 title variant reconciled: retained official indexed PLC Activity rather than incorrectly renaming learner title.",
     "2026-10-23 owner correction: previous handling of L01–L05 as consecutively advanceable was premature. All five have repairable internal A-B-C gaps, not only external publisher assets. Restore active cursor to L01 and disable 'nextAfterExternalGapOrdinal=6'. No later lesson promotion until L01 internal mapping, Rich V2, Practice and teacher-rubric authoring are repaired and evidence logged. Keep prior work, preserve 0/143 READY_FOR_STAGE_D; no test runs, CI, merge or deployment.",
     "2026-10-23 L01-only sequential A-B-C repair: fixed 2021 student-facing activity 2 separation into graph comparison, data inference, two invented questions; implemented fail-closed teacher review feedback for all source open tasks; distinguished 3 Edulytics supplementary machine-gradeable items and 2 independent Cool-down numerics; fixed Razor order to official 15/10/20/10/5 (Synthesis before Cool-down), MLR8 partner restatement, picture key vocabulary, named original centers and teacher reflection. Updated one-to-one matrix and authored regressions without running tests. Original image/PDF and effective published body not verified. Active ordinal stays 1, 0/143 READY_FOR_STAGE_D.",
-    "2026-10-23 L01 only: Additional independently authored numeric and Cool-down fields no longer gate original 2021 student open response task submission; blank scores use null (not attempted) and malformed answers false; five original source prompt subparts have five separate fields and teacher rubric with a print/save option. Student evidence not persisted or academically signed off; source PDF/image pixels and live Rich V2 unverified. Draft PR unchanged, no .NET/CI/Stage D or deployment; remain ordinal 1, 0/143 READY_FOR_STAGE_D."
+    "2026-10-23 L01 only: Additional independently authored numeric and Cool-down fields no longer gate original 2021 student open response task submission; blank scores use null (not attempted) and malformed answers false; five original source prompt subparts have five separate fields and teacher rubric with a print/save option. Student evidence not persisted or academically signed off; source PDF/image pixels and live Rich V2 unverified. Draft PR unchanged, no .NET/CI/Stage D or deployment; remain ordinal 1, 0/143 READY_FOR_STAGE_D.",
+    "2026-10-23 compared G2 L01/L14 Stage A-C precedent from main: original public teacher/student HTML + original first-party visuals and independent Cool-down with written unrun tests, teacher-led rubric but no human academic signature were sufficient for G2 authoring handoff. Current L01 G3 checkpoint corrected to distinguish deferred Stage D / classroom approval from genuine source-material (PDF/image) and 1:1 effective Rich V2 authoring coverage gaps. Latest G3 plan additionally explicitly requires 100% verification of original source elements before calling source perfect; original asset fetch links still returned cache miss. L01 remains A_C_EXPLICIT_GAP, cursor1, 0/143 READY_FOR_STAGE_D."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
