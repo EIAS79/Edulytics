@@ -79,7 +79,21 @@
       "helicopter"
     ],
     "sampleClassCountsFromSource": null,
-    "sourceWarning": "Counts are classroom responses and cannot be assumed; teacher must review data and odd-number half symbols."
+    "sourceWarning": "Counts are classroom responses and cannot be assumed; teacher must review data and odd-number half symbols.",
+    "teacherPublic2021TextRechecked": true,
+    "sourceActivity2Key": "1 full independently drawn picture = 2 students; a half picture represents 1 student",
+    "sourceSynthesisChanges": [
+      {
+        "category": "Balloon",
+        "additionalStudents": 2,
+        "representation": "one full pictograph mark"
+      },
+      {
+        "category": "Car",
+        "additionalStudents": 1,
+        "representation": "half pictograph mark, or completion of prior half mark"
+      }
+    ]
   },
   "stageB": {
     "status": "FIRST_PARTY_DYNAMIC_SCALED_SURVEY_ACTIVITY_AUTHORED_RICH_V2_OPEN",
@@ -96,7 +110,10 @@
       "Two teacher-bound numeric conditional questions",
       "Fictional first-party Cool-down with numeric and open rubric",
       "Math Community and new warm-up diagram"
-    ]
+    ],
+    "synthesisAccurateToSource": true,
+    "synthesisOldMistake": "Generic one-more change did not name source Car category",
+    "synthesisCorrection": "Specified both original balloon +2 and car +1 situations, with parity-aware half marks."
   },
   "stageC": {
     "status": "NUMERIC_CANDIDATE_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -114,11 +131,10 @@
   },
   "originalCoolDownPolicy": "FIRST_PARTY_EDULYTICS_EQUIVALENT_AUTHORIZED",
   "openGaps": [
-    "Original 2021 warm-up dot diagrams and student task-sheet PDF visual details not fully inspected",
-    "Actual survey counts are class-specific; no verified class roster or submitted drawing exists",
-    "Published Edulytics Rich V2 body not inspected against local source",
-    "Dedicated Razor student form and route written but have not been built or exercised",
-    "Teacher graph rubric, other classroom activities and licensing/assets remain open"
+    "Original dot flash images and student blank grid not pixel-verified; read-only 2021 teacher/student source confirms task text only.",
+    "Student survey provenance, source collection of classmates' preferences and teacher-observed partner/Math Community work cannot be certified from entered counts.",
+    "Published Rich V2 body and linked student Razor execution not inspected/compiled; Stage D explicitly deferred.",
+    "Source lesson uses actual class survey and nonfixed observations; first-party authored Cool-down is permitted but not an inspected publisher Cool-down."
   ],
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
