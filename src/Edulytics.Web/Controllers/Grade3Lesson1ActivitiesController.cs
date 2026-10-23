@@ -105,6 +105,10 @@ public sealed class Grade3Lesson1ActivitiesController(
     private static Grade3Lesson1Feedback CheckSource(
         string title, string taskKind, string? first, string? second, string? rawAnswer)
     {
+        if (string.IsNullOrWhiteSpace(rawAnswer))
+            return new(title, null, false,
+                "Optional Edulytics source-dataset numeric practice was not attempted. " +
+                "It does not replace the original teacher-reviewed source tasks.");
         if (!TryAnswer(rawAnswer, out var answer))
             return new(title, false, false, "Enter a whole-number answer.");
 
@@ -120,6 +124,10 @@ public sealed class Grade3Lesson1ActivitiesController(
     private static Grade3Lesson1Feedback CheckCoolDown(
         string title, string questionId, string? rawAnswer)
     {
+        if (string.IsNullOrWhiteSpace(rawAnswer))
+            return new(title, null, false,
+                "Optional independent Edulytics Cool-down numeric item was not attempted. " +
+                "No original publisher Cool-down score is claimed.");
         if (!TryAnswer(rawAnswer, out var answer))
             return new(title, false, false, "Enter a whole-number answer.");
 
