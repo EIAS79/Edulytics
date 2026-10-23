@@ -17,7 +17,16 @@
     "originalImageDescriptionsCount": 5,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "originalPublic2021TeacherAndStudentFacingSourceRead": true,
+    "warmupImages": [
+      "5x10 square divisions",
+      "3x6 square divisions",
+      "2x4 square divisions",
+      "two equal parts not necessarily square units"
+    ],
+    "activity1PairGrids": "source one-inch and one-centimetre units with 2x5,7x3,6x8 rectangles",
+    "activity2OriginalSquare": "Approx 2in × 2in, square inches count 4 but cm² result NOT EXACTLY 25; tracing/cutting overlay needed"
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +38,8 @@
     "existingSourceBodyHash": "dfb747e5d4ec7742221932cdf25098f420b86576970ec2b3b8c31024817726f5",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "distinctionSquareInchVersusSquareCentimetreAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +52,11 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Same Rectangle, Different Units with your teacher. Show the representation and explain how it meets the goal: Let’s learn about different units we can use to measure area.",
-    "teacherReviewNote": "Different square units cannot be treated as interchangeable, compare only within the same unit."
+    "teacherReviewNote": "Different square units cannot be treated as interchangeable, compare only within the same unit.",
+    "originalTeacherOnlyGridAndAreaMeasurements": 10,
+    "newAnswerTypeStrictAreaUnit": "area-with-unit",
+    "firstParty21cmSquaredAnd24inSquaredScoped": true,
+    "newUnitParserTestsWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -168,7 +182,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Original inch/centimetre grid handouts, source square figure placement, empirical square-centimetre measurement and Student Task PDF uninspected. No exact cm² number certified for original source; effective Rich V2, tests/Stage D still unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

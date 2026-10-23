@@ -406,6 +406,43 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.False(lesson.ReadyForStageD);
     }
 
+    [Theory]
+    [InlineData("21 cm²",true)]
+    [InlineData("21 cm^2",true)]
+    [InlineData("21 square centimeters",true)]
+    [InlineData("21 square centimetres",true)]
+    [InlineData("21",false)]
+    [InlineData("21 cm",false)]
+    [InlineData("21 in²",false)]
+    [InlineData("24 cm²",false)]
+    [InlineData("25 cm²",false)]
+    public void FirstPartyAreaAnswerRequiresMatchingSquareUnit(
+        string answer,bool good)
+    {
+        var q=new Grade3OriginalQuestion {
+            AnswerType="area-with-unit",Expected="21 cm²"
+        };
+        var result=Grade3SourceCompanionCatalogue.Grade(q,answer);
+        Assert.Equal(good,result.NumericCorrect);
+        Assert.True(result.TeacherReview);
+    }
+
+    [Fact]
+    public void UnitTwoLessonSixLeavesSourceGridMeasurementsUnderTeacherReview()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U02:L06",out var lesson));
+        Assert.Equal(10,lesson!.SourceSubtasks.Count);
+        Assert.All(lesson.SourceSubtasks,q=>Assert.Equal("teacher",q.AnswerType));
+        Assert.Equal("area-with-unit",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal("area-with-unit",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"21 cm²").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"21 in²").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown,"24 in²").NumericCorrect);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.SourceSubtasks[8],"25").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
     [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
@@ -496,7 +533,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -523,6 +560,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "multiplication-expression" => "1x1",
                     "multiplication-equation" => "1x1=1",
                     "commutative-equation-pair" => "1x2=2;2x1=2",
+                    "area-with-unit" => "999 cm²",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);

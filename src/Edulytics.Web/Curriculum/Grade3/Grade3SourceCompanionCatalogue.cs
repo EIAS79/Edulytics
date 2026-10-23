@@ -155,6 +155,20 @@ public static class Grade3SourceCompanionCatalogue
                 : "Check both equations: reversed group factors should keep the same total.");
         }
 
+        if (q.AnswerType == "area-with-unit")
+        {
+            if (!TryReadAreaWithUnit(submitted, out var actual, out var actualUnit) ||
+                !TryReadAreaWithUnit(q.Expected, out var expected, out var requiredUnit))
+                return new(false, true,
+                    "Include a number AND its square unit, such as 21 cm² or 24 in².");
+
+            var correct = actual == expected &&
+                string.Equals(actualUnit, requiredUnit, StringComparison.Ordinal);
+            return new(correct, true, correct
+                ? "The number and square unit agree with this original Edulytics example. Teacher reviews the tiled drawing."
+                : "Check both the number of units and whether they are square inches or square centimetres.");
+        }
+
         if (q.AnswerType == "integer")
         {
             if (!int.TryParse(submitted.Trim(), NumberStyles.Integer,
@@ -204,6 +218,27 @@ public static class Grade3SourceCompanionCatalogue
     // The sides of an equality may be reversed, but a mere scalar total is
     // not a multiplication equation. Group/factor order is part of the
     // task-specific representation; alternatives remain human-reviewable.
+    private static bool TryReadAreaWithUnit(
+        string? answer, out int amount, out string squareUnit)
+    {
+        amount = 0;
+        squareUnit = "";
+        if (string.IsNullOrWhiteSpace(answer) || answer.Length > 100)
+            return false;
+        var match = Regex.Match(answer.Trim(),
+            @"^([0-9]{1,5})\s*(cm(?:\^?2|²)|in(?:\^?2|²)|square\s+centimet(?:er|re)s?|square\s+inch(?:es)?)$",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        if (!match.Success ||
+            !int.TryParse(match.Groups[1].Value, NumberStyles.None,
+                CultureInfo.InvariantCulture, out amount))
+            return false;
+        var literal = Regex.Replace(match.Groups[2].Value.ToLowerInvariant(), @"\s+", "");
+        squareUnit = literal.StartsWith("cm", StringComparison.Ordinal) ||
+                     literal.StartsWith("squarecentimet", StringComparison.Ordinal)
+            ? "cm²" : "in²";
+        return true;
+    }
+
     private static bool TryReadProductEquation(
         string? submitted, out int groups, out int each, out int product)
     {

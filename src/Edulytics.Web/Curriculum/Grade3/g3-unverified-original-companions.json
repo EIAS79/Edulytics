@@ -3107,14 +3107,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "square-units",
       "independentPractice": {
-        "prompt": "A rectangle on a centimeter grid is 7 by 3 squares. What is its area in cm²?",
-        "answerType": "integer",
-        "expected": "21"
+        "prompt": "A NEW Edulytics rectangle covers seven rows of three SQUARE CENTIMETRES per row. Respond with the area AND the unit (for example: 21 cm²). Draw tiles separately.",
+        "answerType": "area-with-unit",
+        "expected": "21 cm²"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle covers 4 by 6 inch-square units. How many square inches is its area?",
-        "answerType": "integer",
-        "expected": "24"
+        "prompt": "An independently invented rectangular area is covered by four rows of six SQUARE INCHES per row. Give the area WITH its square unit, and explain the drawing.",
+        "answerType": "area-with-unit",
+        "expected": "24 in²"
       },
       "openTeacherTask": "Work through the original lesson's activity Same Rectangle, Different Units with your teacher. Show the representation and explain how it meets the goal: You will learn that there are different units that can be used to measure area, specifically square centimeters and square inches.",
       "teacherReviewNote": "Square inches and square centimetres are different-sized units. Teacher compares source two grid types and estimates.",
@@ -3126,11 +3126,14 @@
         "sourceGoal": "Let’s learn about different units we can use to measure area.",
         "sourceLearningGoals": "Describe square units based on different linear units of measurement. Use square inches and square centimeters to measure the area of a rectangle.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Warm-up: discuss four source illustrations with 5×10, 3×6, 2×4 and a two-part shaded rectangle; notice that number of partitions alone does not establish equal physical area.",
+          "Use the original handout with two different grids: one-inch squares and one-centimetre squares.",
+          "Partners separately draw 2×5, 7×3 and 6×8 gridded rectangles on their assigned paper; compare SAME tile counts but DIFFERENT physical sizes.",
+          "Estimate the size of a publisher-provided approximately two-inch square in square inches and square centimetres, then trace or cut the figure and overlay it on each grid.",
+          "Keep measured centimetre estimates flexible and explain why a 2-inch-by-2-inch square is NOT exactly 25 square centimetres; include units and multiplication expression for each result.",
+          "Discuss why large square inch units give smaller counts than smaller square centimetre units for the same region."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about different units we can use to measure area.",
+        "caution": "Do not auto-grade the original cm² measurement as EXACT 25, or assume different-sized grids represent the same area. Only the NEW first-party rectangle exercises have exact 21 cm² and 24 in². Original source geometry and pupil manipulation require teacher review.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -3144,7 +3147,79 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L06-WU-A",
+          "sourceActivity": "Warm-up: Squares, Squares",
+          "prompt": "Examine source figure A (rectangle partitioned 5 rows × 10 squares). Describe what smaller or larger uniform square units might do to the tile count; original physical dimensions are not proven by number alone.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-WU-B",
+          "sourceActivity": "Warm-up: Squares, Squares",
+          "prompt": "Examine source figure B (3 rows × 6 squares) and contrast its unit size with A when the printed rectangles cover the same region.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-WU-C",
+          "sourceActivity": "Warm-up: Squares, Squares",
+          "prompt": "Examine source figure C (2 rows × 4 squares) and explain how a larger unit square can produce a smaller numerical tile count.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-WU-D",
+          "sourceActivity": "Warm-up: Squares, Squares",
+          "prompt": "Examine figure D (two large equal parts) and consider whether these are exactly square units or a more general partition; teacher must inspect the image.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-A1-01",
+          "sourceActivity": "Activity 1: Same Rectangle, Different Units",
+          "prompt": "On the ORIGINAL inch and centimetre source grids, each partner draws a 2 × 5 unit-square rectangle. Compare actual covered areas; do not claim they are physically the same size.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-A1-02",
+          "sourceActivity": "Activity 1: Same Rectangle, Different Units",
+          "prompt": "Both partners draw a 7 × 3 rectangle on their differently sized grids. Explain why each has 21 SQUARE UNITS but different physical area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-A1-03",
+          "sourceActivity": "Activity 1: Same Rectangle, Different Units",
+          "prompt": "Both partners draw a 6 × 8 rectangle on their differently sized grids. Explain why each has 48 SQUARE UNITS but different physical area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-A2-ESTIMATE",
+          "sourceActivity": "Activity 2: What's the Area",
+          "prompt": "For the publisher's original approximately two-inch-by-two-inch square, ESTIMATE first how many square inches and square centimetres would fit; explain why estimates may vary.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-A2-MEASURE",
+          "sourceActivity": "Activity 2: What's the Area",
+          "prompt": "Trace or cut out the original square and overlay it on BOTH the square-inch and square-centimetre grids. Record observed area and a matching multiplication expression for each. Do not force the measured square centimetres to equal 25 exactly.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L06-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare the smaller square centimetre unit and larger square inch unit. Explain why a fixed region requires more small units than large units and why each reported area must name its unit.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 28,
