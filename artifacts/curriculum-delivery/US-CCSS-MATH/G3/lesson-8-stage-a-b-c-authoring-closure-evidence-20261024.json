@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L08",
+  "date": "2026-10-24",
+  "sources": [
+    "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-8/lesson.html",
+    "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+    "https://www.coreknowledge.org/wp-content/uploads/2023/09/CKMath_G3U1_IntroducingMultiplication_TG_W2.pdf"
+  ],
+  "teacherHtmlLocal": "03_Grade_3_IM_K5/unit-1/lesson-8/lesson.html",
+  "sourceWarmupExpressions": [
+    10,
+    12,
+    30,
+    35
+  ],
+  "sourceGraphFeelings": {
+    "values": [
+      55,
+      23,
+      25
+    ],
+    "axis": [
+      0,
+      60,
+      5
+    ]
+  },
+  "sourceGraphTrees": {
+    "values": [
+      29,
+      82,
+      15,
+      58
+    ],
+    "axis": [
+      0,
+      100,
+      10
+    ]
+  },
+  "sourceExactResponses": {
+    "Feelings": 7,
+    "Trees": [
+      24,
+      38,
+      53,
+      14
+    ]
+  },
+  "sourceOriginalCooldown": {
+    "title": "Reading Time",
+    "barValuesApproximate": [
+      12,
+      25,
+      23,
+      44
+    ],
+    "axis": [
+      0,
+      50,
+      5
+    ],
+    "publishedTeacherSamples": [
+      "23−11=12",
+      "44−(12+25)=7"
+    ],
+    "provenanceNote": "Source exemplar uses 11 or 12 Morning; both are reasonable visual estimates. There is no universal exact answer for these unlabelled-integer bars.",
+    "humanReviewedApproximateAnswers": [
+      12,
+      7
+    ],
+    "teacherReviewsTwoEquations": true
+  },
+  "changes": [
+    "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson8TwoStepDataProblems.cs",
+    "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+    "src/Edulytics.Web/Controllers/Grade3Lesson8ActivitiesController.cs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l08-2021.rich-lesson-v2.json"
+  ],
+  "tests": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+  ],
+  "testsRun": false,
+  "stageD": "NOT_STARTED",
+  "ciNotIntentionallyRun": true,
+  "sourceArtCopied": false,
+  "academicApproval": "NOT_CLAIMED",
+  "semanticCoverageRows": 13,
+  "closure": "READY_FOR_STAGE_D",
+  "runtimeAcceptanceNotClaimed": true
+}
