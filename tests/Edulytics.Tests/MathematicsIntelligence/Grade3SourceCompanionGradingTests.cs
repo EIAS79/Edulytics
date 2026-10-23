@@ -388,6 +388,25 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void UnitTwoLessonFiveKeepsSevenCardMatchesTeacherOnlyAndFiveDrawingAreaChecks()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U02:L05",out var lesson));
+        Assert.Equal(16,lesson!.SourceSubtasks.Count);
+        Assert.Equal(7,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A1-")));
+        Assert.Equal(5,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A2-")));
+        Assert.All(lesson.SourceSubtasks.Where(q=>q.Id.Contains("-A1-")),
+            q=>Assert.Null(Grade3SourceCompanionCatalogue.Grade(q,"20").NumericCorrect));
+        Assert.Equal(new[]{"12","24","18","28","6"},
+            lesson.SourceSubtasks.Where(q=>q.Id.Contains("-A2-")).Select(q=>q.Expected));
+        foreach(var task in lesson.SourceSubtasks.Where(q=>q.Id.Contains("-A2-"))){
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(task,task.Expected).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(task,"999").NumericCorrect);
+        }
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);

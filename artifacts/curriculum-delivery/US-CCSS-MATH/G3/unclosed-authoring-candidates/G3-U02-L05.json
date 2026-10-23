@@ -17,7 +17,30 @@
     "originalImageDescriptionsCount": 5,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicOriginalTeacherPageRead": true,
+    "originalWarmupDotContexts": [
+      "five groups three =15",
+      "six groups three=18",
+      "third figure not fully inspected"
+    ],
+    "originalSevenExpressionMatchingPrompts": [
+      "9x5",
+      "8x2",
+      "7x10",
+      "3x3",
+      "2x6",
+      "8x4",
+      "5x7"
+    ],
+    "originalFiveCreationPrompts": [
+      "3x4",
+      "4x6",
+      "6x3",
+      "7x4",
+      "3x2"
+    ],
+    "sourceAllowsSelectAtLeastThreeFromFive": true
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +52,8 @@
     "existingSourceBodyHash": "f985530650e4188c6c07ba5c3e213573c37e826059a2ac9882d07e87246b3d5d",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "separateSourceIllustrationOf3x4SquareUnitsAndExplicitTeacherMatchAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +66,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Match Expressions and Areas with your teacher. Show the representation and explain how it meets the goal: Let’s connect multiplication expressions to area.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "originalSevenCardMatchesTeacherOnly": true,
+    "originalFiveDrawingQuantitiesNumericButDrawingHuman": true,
+    "testsWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -168,7 +195,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Publisher's actual seven matching rectangles, blank grid and original student task PDF uninspected at image level. Numeric coverage of five area quantities does not certify independently drawn rectangles or correct card matches. Rich V2 and Stage D unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

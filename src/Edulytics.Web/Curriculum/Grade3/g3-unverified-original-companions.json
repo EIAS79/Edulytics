@@ -2909,11 +2909,13 @@
         "sourceGoal": "Let’s connect multiplication expressions to area.",
         "sourceLearningGoals": "Relate multiplication to finding the area of rectangles.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Warm-up with published dot images: five groups of three, six groups of three, and third uninspected arrangement. Use the extra group to reason, not memorization only.",
+          "Match all seven PUBLIC source multiplication expressions 9×5, 8×2, 7×10, 3×3, 2×6, 8×4, 5×7 to the publisher's actual teacher-posted rectangle pictures.",
+          "Emphasize that an area array counts SQUARE UNIT regions, not only marked dots; corresponding factors describe grid rows and columns.",
+          "Activity 2: for 3×4, 4×6, 6×3, 7×4, 3×2, draw labelled gridded rectangles and determine product. Source allows choosing at least three of five for differentiation.",
+          "Compare two different orientations and synthesize a 2×7 rectangular region, explaining why side-length order does not change area."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s connect multiplication expressions to area.",
+        "caution": "Original matching posters are unavailable for image-level comparison, so the seven posted-source match tasks remain teacher-only. Area results for the five drawing tasks can receive numeric feedback but are not evidence of geometrically correct drawings.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -2927,7 +2929,121 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L05-WU-01",
+          "sourceActivity": "Warm-up: How Many Do You See",
+          "prompt": "The original Number Talk's first dot image describes five groups of three; find the total and explain the grouping.",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U02-L05-WU-02",
+          "sourceActivity": "Warm-up: How Many Do You See",
+          "prompt": "The next image has SIX groups of THREE dots; explain how the extra group changes the total.",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U02-L05-WU-03",
+          "sourceActivity": "Warm-up: How Many Do You See",
+          "prompt": "The final source figure is described only as groups of dots in alt text; compare to prior images and explain its grouping with the actual original image. Do not infer the exact picture from text.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L05-A1-01",
+          "sourceActivity": "Activity 1: Match Expressions and Areas",
+          "prompt": "Match the original 9 × 5 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L05-A1-02",
+          "sourceActivity": "Activity 1: Match Expressions and Areas",
+          "prompt": "Match the original 8 × 2 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L05-A1-03",
+          "sourceActivity": "Activity 1: Match Expressions and Areas",
+          "prompt": "Match the original 7 × 10 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L05-A1-04",
+          "sourceActivity": "Activity 1: Match Expressions and Areas",
+          "prompt": "Match the original 3 × 3 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L05-A1-05",
+          "sourceActivity": "Activity 1: Match Expressions and Areas",
+          "prompt": "Match the original 2 × 6 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L05-A1-06",
+          "sourceActivity": "Activity 1: Match Expressions and Areas",
+          "prompt": "Match the original 8 × 4 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L05-A1-07",
+          "sourceActivity": "Activity 1: Match Expressions and Areas",
+          "prompt": "Match the original 5 × 7 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L05-A2-01",
+          "sourceActivity": "Activity 2: Create from Expressions",
+          "prompt": "On the source's blank grid, DRAW and label a 3 by 4 unit-square rectangle. Find its area numerically IN SQUARE UNITS; teacher reviews the actual equal-size tiles and drawing.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U02-L05-A2-02",
+          "sourceActivity": "Activity 2: Create from Expressions",
+          "prompt": "On the source's blank grid, DRAW and label a 4 by 6 unit-square rectangle. Find its area numerically IN SQUARE UNITS; teacher reviews the actual equal-size tiles and drawing.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U02-L05-A2-03",
+          "sourceActivity": "Activity 2: Create from Expressions",
+          "prompt": "On the source's blank grid, DRAW and label a 6 by 3 unit-square rectangle. Find its area numerically IN SQUARE UNITS; teacher reviews the actual equal-size tiles and drawing.",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U02-L05-A2-04",
+          "sourceActivity": "Activity 2: Create from Expressions",
+          "prompt": "On the source's blank grid, DRAW and label a 7 by 4 unit-square rectangle. Find its area numerically IN SQUARE UNITS; teacher reviews the actual equal-size tiles and drawing.",
+          "answerType": "integer",
+          "expected": "28"
+        },
+        {
+          "id": "G3-U02-L05-A2-05",
+          "sourceActivity": "Activity 2: Create from Expressions",
+          "prompt": "On the source's blank grid, DRAW and label a 3 by 2 unit-square rectangle. Find its area numerically IN SQUARE UNITS; teacher reviews the actual equal-size tiles and drawing.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U02-L05-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Sketch two different orientations of a 2×7 rectangle and explain how area differs from counting separated objects, and why switching rows with columns preserves 14 unit squares.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 27,
