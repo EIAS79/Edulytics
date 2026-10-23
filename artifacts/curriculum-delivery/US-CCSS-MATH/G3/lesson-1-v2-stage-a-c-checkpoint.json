@@ -194,7 +194,7 @@
     ]
   },
   "stageB": {
-    "status": "FIRST_PARTY_OUTLINE_PREPARED_NOT_WIRED_TO_RICH_V2",
+    "status": "OUTLINE_PREPARED_EFFECTIVE_RICH_V2_NOT_VERIFIED",
     "independentOutline": [
       "Start by asking learners what they observe in the unlabeled 6-column unit-key picture graph, without imposing labels.",
       "Add travel-to-home context, discuss which labels would be plausible and why title/key constrain interpretation.",
@@ -234,7 +234,10 @@
     "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1GraphCandidateTests.cs",
     "testsWritten": true,
     "testsRun": false,
-    "practiceIntegratedIntoStudentFlow": false
+    "practiceIntegratedIntoStudentFlow": false,
+    "numericCandidateCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson1GraphCandidate.cs",
+    "numericCandidateScope": "independent exact labeled category-count, total and comparison anchors only",
+    "testStatus": "WRITTEN_NOT_EXECUTED"
   },
   "openGaps": [
     "Retrieve educator-only 2021 cool-down and verify every question",
