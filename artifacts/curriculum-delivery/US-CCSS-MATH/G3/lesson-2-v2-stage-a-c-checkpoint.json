@@ -168,15 +168,17 @@
     "effectiveRichV2Compared": false
   },
   "stageC": {
-    "status": "DATA_DEPENDENT_NUMERIC_CONTRACT_DESIGNED_NOT_WIRED",
+    "status": "DATA_DEPENDENT_NUMERIC_CANDIDATE_WRITTEN_NOT_WIRED",
     "numericCandidateRequirements": [
       "Use real, contextual class category counts as explicit validated parameters, no hardcoded answers from original source.",
       "Provide correct comparisons and one/two-step category sums/differences within the stated lesson scope.",
       "Reject missing or inconsistent datasets rather than guessing counts.",
       "Free-form explanation, partner work, invented labels and generated student bar graph require human or explicitly rubric-driven review."
     ],
-    "testStatus": "NOT_WRITTEN_OR_RUN",
-    "practiceIntegrated": false
+    "testStatus": "WRITTEN_NOT_EXECUTED",
+    "practiceIntegrated": false,
+    "numericCandidateCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson2ClassSurveyCandidate.cs",
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson2ClassSurveyCandidateTests.cs"
   },
   "openGaps": [
     "2021 Cool-down prompt unavailable without educator access",
