@@ -1,0 +1,167 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3Lesson1PracticePage
+@using Edulytics.Core.Mathematics.Curriculum
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Grade 3 · Make Sense of Data";
+    var source = UsCcssG3Unit1Lesson1GraphCandidate.Values;
+    var library = UsCcssG3OriginalCoolDownCandidates.Lesson1LibraryGraph;
+}
+<style>
+.g3-data {max-width:1000px;margin:0 auto 30px;padding:20px;color:#17344d}
+.g3-data .panel {background:#fff;border:1px solid #d6e3ec;border-radius:16px;padding:22px;margin:16px 0}
+.g3-data h1 {font-size:1.9rem;line-height:1.25}
+.g3-data h2 {font-size:1.3rem}
+.g3-data .note {color:#405e73;max-width:80ch}
+.g3-data .picture-rows {display:grid;grid-template-columns:minmax(110px,160px) 1fr;gap:9px;align-items:center}
+.g3-data .dots {font-size:1.2rem;letter-spacing:.28rem;overflow-wrap:anywhere}
+.g3-data .bar-chart {display:grid;grid-template-columns:repeat(6,minmax(40px,1fr));gap:8px;max-width:650px;align-items:end;border-left:2px solid #658097;border-bottom:2px solid #658097;padding:12px 12px 0}
+.g3-data .bar-col {display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
+.g3-data .bar {width:68%;max-width:60px;background:#158398;border-radius:4px 4px 0 0}
+.g3-data .bar-label {font-size:.8rem;text-align:center;overflow-wrap:anywhere;margin-top:5px}
+.g3-data .scale {font-weight:600;color:#4a6476}
+.g3-data label {display:block;font-weight:700;margin:12px 0 5px}
+.g3-data input,.g3-data textarea {width:100%;max-width:680px;padding:10px;border:1px solid #69899e;border-radius:8px;font:inherit}
+.g3-data input:focus,.g3-data textarea:focus {outline:3px solid #b2e3ef}
+.g3-data .two {display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.g3-data .submit {background:#08778a;border:0;border-radius:8px;padding:12px 20px;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.g3-data .good {border-left:4px solid #186b4b;padding-left:12px}
+.g3-data .bad {border-left:4px solid #af2f40;padding-left:12px}
+.g3-data .review {border-left:4px solid #aa7416;padding-left:12px}
+</style>
+<main class="g3-data">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <header>
+        <p>EDULYTICS · INDEPENDENT STUDENT ACTIVITIES</p>
+        <h1>Grade 3 · Make Sense of Data</h1>
+        <p class="note">Learning goal: explain what category graphs tell us, compare picture and bar graphs, and invent questions that the data can answer. The drawings and Cool-down here are created by Edulytics, not copied publisher images or restricted exam items.</p>
+    </header>
+
+    <form asp-controller="Grade3Lesson1Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+
+        <section class="panel" aria-labelledby="warmup">
+            <h2 id="warmup">1. Notice and wonder — picture graph</h2>
+            <p>A mark stands for one student. Before seeing category labels, look at these six columns. Explain what you notice and what you wonder. Discuss your ideas with a partner.</p>
+            <div class="picture-rows" aria-label="Unlabelled graph columns with counts four, three, one, two, seven and six">
+                @for (var i = 0; i < source.Count; i++)
+                {
+                    <strong>Column @(i + 1)</strong>
+                    <span class="dots" aria-label="@(source[i].NumberOfStudents) students">@string.Concat(Enumerable.Repeat("● ", source[i].NumberOfStudents))</span>
+                }
+            </div>
+            <p class="note">Key: ● = 1 student. The numbered column placeholders are not category names.</p>
+            <label for="warmup-observations">What do you notice? What do you wonder?</label>
+            <textarea id="warmup-observations" name="WarmupObservations" rows="3" maxlength="2000">@Model.Answers.WarmupObservations</textarea>
+            <p class="note">Teacher discussion: no invented context is automatically marked correct or wrong.</p>
+        </section>
+
+        <section class="panel" aria-labelledby="picture">
+            <h2 id="picture">2. Picture Time — understand the context</h2>
+            <p>Suppose these six columns are ways that students travel home. Before the names are shown, suggest six sensible category labels. What does the title help you work out? Explain your idea to a partner.</p>
+            <label for="plausible-categories">Your possible labels and explanation</label>
+            <textarea id="plausible-categories" name="PlausibleCategories" rows="3" maxlength="2000">@Model.Answers.PlausibleCategories</textarea>
+        </section>
+
+        <section class="panel" aria-labelledby="graphs">
+            <h2 id="graphs">3. Two graphs, one dataset</h2>
+            <p>Now read the real category names from the lesson. Both original-format diagrams below are created directly from the same numerical data.</p>
+            <h3>Picture graph</h3>
+            <div class="picture-rows">
+                @foreach (var item in source)
+                {
+                    <strong>@item.Label</strong>
+                    <span class="dots" aria-label="@item.NumberOfStudents students choosing @item.Label">@string.Concat(Enumerable.Repeat("● ", item.NumberOfStudents))</span>
+                }
+            </div>
+            <p class="note">Key: ● = 1 student.</p>
+            <h3>Bar graph</h3>
+            <p class="scale">Vertical scale: 0 to 8, one student per unit.</p>
+            <div class="bar-chart" role="img" aria-label="Ways students get home. Walk 4, bike 3, skateboard 1, car 2, bus 7, train 6. Scale zero to eight by ones.">
+                @foreach (var item in source)
+                {
+                    <div class="bar-col">
+                        <strong>@item.NumberOfStudents</strong>
+                        <div class="bar" style="height:@(item.NumberOfStudents * 23)px" aria-hidden="true"></div>
+                        <span class="bar-label">@item.Label</span>
+                    </div>
+                }
+            </div>
+            <p class="note">Both representations have the same categories and quantities. One uses a symbol per student; the other uses bar height. For scale accessibility, read the explicit counts on each bar.</p>
+            <label for="graph-comparison">How are the two graphs alike and different? What can you learn?</label>
+            <textarea id="graph-comparison" name="GraphComparison" rows="3" maxlength="2000">@Model.Answers.GraphComparison</textarea>
+            <label for="two-questions">Write TWO different questions the graphs can answer</label>
+            <textarea id="two-questions" name="TwoGraphQuestions" rows="3" maxlength="2000">@Model.Answers.TwoGraphQuestions</textarea>
+            <div class="two">
+                <div>
+                    <label for="bus-count">How many students take the bus?</label>
+                    <input id="bus-count" name="BusCount" value="@Model.Answers.BusCount" inputmode="numeric" maxlength="12" required />
+                </div>
+                <div>
+                    <label for="bus-skate">How many more travel by bus than by skateboard?</label>
+                    <input id="bus-skate" name="BusSkateboardDifference" value="@Model.Answers.BusSkateboardDifference" inputmode="numeric" maxlength="12" required />
+                </div>
+                <div>
+                    <label for="source-total">How many students appear in the six categories together?</label>
+                    <input id="source-total" name="TotalStudents" value="@Model.Answers.TotalStudents" inputmode="numeric" maxlength="12" required />
+                </div>
+            </div>
+        </section>
+
+        <section class="panel" aria-labelledby="cooldown">
+            <h2 id="cooldown">4. Edulytics-authored Cool-down</h2>
+            <p>This is a NEW fictional library survey. It checks the same graph-reading skills, but it is not the publisher's teacher-only Cool-down and not the school-travel dataset.</p>
+            <div class="picture-rows">
+                @foreach (var item in library)
+                {
+                    <strong>@item.Category</strong>
+                    <span class="dots" aria-label="@item.Students learners chose @item.Category">@string.Concat(Enumerable.Repeat("● ", item.Students))</span>
+                }
+            </div>
+            <p class="note">Key: ● = 1 student.</p>
+            <div class="two">
+                <div>
+                    <label for="cool-count">How many chose Space?</label>
+                    <input id="cool-count" name="CoolDownCount" value="@Model.Answers.CoolDownCount" maxlength="12" inputmode="numeric" required />
+                </div>
+                <div>
+                    <label for="cool-diff">How many more chose Comics than Sports?</label>
+                    <input id="cool-diff" name="CoolDownDifference" value="@Model.Answers.CoolDownDifference" maxlength="12" inputmode="numeric" required />
+                </div>
+            </div>
+            <label for="cool-question">Write a different question answerable from the library graph and explain its answer</label>
+            <textarea id="cool-question" name="CoolDownOriginalQuestion" rows="3" maxlength="2000">@Model.Answers.CoolDownOriginalQuestion</textarea>
+            <p class="note">Your teacher reviews the explanation and the questions you create. This page checks numbers only.</p>
+        </section>
+
+        <button class="submit" type="submit">Check my numeric answers</button>
+    </form>
+
+    @if (Model.Submitted)
+    {
+        <section class="panel" aria-live="polite" aria-label="Answer feedback">
+            <h2>Feedback</h2>
+            @foreach (var item in Model.Feedback)
+            {
+                <div class="@(item.MachineCorrect == true ? "good" : item.MachineCorrect == false ? "bad" : "review")">
+                    <h3>@item.Label</h3>
+                    <p>@(item.MachineCorrect == true ? "Correct." : item.MachineCorrect == false ? "Check your answer." : "Teacher review required.") @item.Reason</p>
+                    @if (item.TeacherReviewRequired)
+                    {
+                        <p class="note">Reasoning, original questions and partner discussion are not automatically certified.</p>
+                    }
+                </div>
+            }
+            <p class="note">Feedback exists only in this page response. No official grade or verified classroom participation is saved by this activity.</p>
+        </section>
+    }
+
+    <section class="panel">
+        <h2>Teacher discussion and optional centres</h2>
+        <p>In pairs, check whether each graph question has enough information; compare title, key, labels and the unit scale. Discuss what respectful mathematical discussion looks like, and have pupils reflect on their thinking.</p>
+        <p>Optional teacher-directed reinforcement: create and sort another picture/bar display from safe classroom objects, or play an addition-within-20 square-capture game. These teacher-led activities are not represented as automatically graded here.</p>
+        <p class="note">Teacher rubric: check correct category references; one mark per pupil; identical counts across both graph types; a plausible explanation of key versus scale; two genuinely answerable student-authored questions; and partner discussion evidence.</p>
+    </section>
+    <p class="note">Curriculum source: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html" rel="noopener noreferrer">Illustrative Mathematics K–5, Grade 3 Unit 1 Lesson 1 (2021)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer">CC BY 4.0</a>. Attribution is for alignment of objectives and data; Edulytics graphics, wording and Cool-down are independently authored. No publisher logos or original artwork are reproduced.</p>
+</main>
