@@ -146,15 +146,15 @@
             <div class="two">
                 <div>
                     <label for="bus-count">How many students take the bus?</label>
-                    <input id="bus-count" name="BusCount" value="@Model.Answers.BusCount" inputmode="numeric" maxlength="12" required />
+                    <input id="bus-count" name="BusCount" value="@Model.Answers.BusCount" inputmode="numeric" maxlength="12" />
                 </div>
                 <div>
                     <label for="bus-skate">How many more travel by bus than by skateboard?</label>
-                    <input id="bus-skate" name="BusSkateboardDifference" value="@Model.Answers.BusSkateboardDifference" inputmode="numeric" maxlength="12" required />
+                    <input id="bus-skate" name="BusSkateboardDifference" value="@Model.Answers.BusSkateboardDifference" inputmode="numeric" maxlength="12" />
                 </div>
                 <div>
                     <label for="source-total">How many students appear in the six categories together?</label>
-                    <input id="source-total" name="TotalStudents" value="@Model.Answers.TotalStudents" inputmode="numeric" maxlength="12" required />
+                    <input id="source-total" name="TotalStudents" value="@Model.Answers.TotalStudents" inputmode="numeric" maxlength="12" />
                 </div>
             </div>
         </section>
@@ -182,11 +182,11 @@
             <div class="two">
                 <div>
                     <label for="cool-count">How many chose Space?</label>
-                    <input id="cool-count" name="CoolDownCount" value="@Model.Answers.CoolDownCount" maxlength="12" inputmode="numeric" required />
+                    <input id="cool-count" name="CoolDownCount" value="@Model.Answers.CoolDownCount" maxlength="12" inputmode="numeric" />
                 </div>
                 <div>
                     <label for="cool-diff">How many more chose Comics than Sports?</label>
-                    <input id="cool-diff" name="CoolDownDifference" value="@Model.Answers.CoolDownDifference" maxlength="12" inputmode="numeric" required />
+                    <input id="cool-diff" name="CoolDownDifference" value="@Model.Answers.CoolDownDifference" maxlength="12" inputmode="numeric" />
                 </div>
             </div>
             <label for="cool-question">Write a different question answerable from the library graph and explain its answer</label>
@@ -205,7 +205,7 @@
             {
                 <div class="@(item.MachineCorrect == true ? "good" : item.MachineCorrect == false ? "bad" : "review")">
                     <h3>@item.Label</h3>
-                    <p>@(item.MachineCorrect == true ? "Correct." : item.MachineCorrect == false ? "Check your answer." : "Teacher review required.") @item.Reason</p>
+                    <p>@(item.MachineCorrect == true ? "Correct." : item.MachineCorrect == false ? "Check your answer." : item.TeacherReviewRequired ? "Teacher review required." : "Not attempted.") @item.Reason</p>
                     @if (item.TeacherReviewRequired)
                     {
                         <p class="note">Reasoning, original questions and partner discussion are not automatically certified.</p>
