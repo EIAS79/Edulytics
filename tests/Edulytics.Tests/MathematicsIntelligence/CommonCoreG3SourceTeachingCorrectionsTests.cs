@@ -245,7 +245,7 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
         Assert.Contains("0..12 by ones", en.Explanation);
         Assert.Contains("0..24 by twos", en.Explanation);
         Assert.Contains("Total 12+4+6+3=25", en.WorkedExamples);
-        Assert.Contains("true", en.Explanation.ToLowerInvariant());
+        Assert.Contains("actual class", en.Explanation);
         Assert.Contains("scale 2 or 5", en.StepByStepSolutions);
         Assert.Contains("25-person demonstration", en.CommonMistakes);
         Assert.Contains("halfway between 2 and 4", en.CommonMistakes);
