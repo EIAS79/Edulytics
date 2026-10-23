@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-US-CCSS-20-V2",
+  "batchId": "US-CCSS-B001",
+  "kind": "HISTORIC_SEVEN_CHANGED_LESSON_TECHNICAL_DRIFT_REVIEW_NOT_P5",
+  "sourceBaselineCurrentLiveDeployId": "dep-db9nij61egvs73cuvqk0",
+  "sourceBaselineCurrentLiveMainSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+  "targetCandidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+  "counts": {
+    "changedHistoricalLessonsSourceReviewed": 7,
+    "retainedHistoricalLessonsUnchanged": 8,
+    "first15DirectPracticeAttemptsProductionReadOnly": 0,
+    "first15DirectAdaptiveSessionsProductionReadOnly": 0,
+    "historicalGlobalMasteryRowsPresent": 2950,
+    "independentAcademicSourceActivityAcceptances": 0
+  },
+  "sourceRights": "Original publisher student PDF bytes and images remain outside the Edulytics repository; changes use first-party numerical examples.",
+  "limits": [
+    "This is intentional software-content drift verification, NOT publisher-authorized reproduction or a 20-lesson academic approval.",
+    "No grades have been deleted, updated, or backfilled; production was read only.",
+    "Global StudentOutcomeMasteries and LearningEvidence exist in production, so zero direct lesson-specific attempts does not prove that no historical student learning data exists.",
+    "Every changed lesson still needs genuine original-activity parity and per-lesson academic acceptance before merge."
+  ],
+  "lessons": [
+    {
+      "gradeOrdinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
+      "sourceTeacherGoal": "Write addition expressions within 10 based on images and add in a way that makes sense to them.",
+      "sourceStudentTask": "Match pictured dot groups to expressions and totals, draw missing dots, and author a matching addition expression.",
+      "sourceStudentPdfSha256": "a491060578d728a6e22cf9c57a233c8f21cb77b950d593d19fd862bc3d9fd782",
+      "baselinePublishedMainSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "baselineMainRichModelSha256": "b9b4ee7f896e135e705c89d8928f87f98b33849b99ea606a783b531d74d9c0e2",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "candidateRichModelSha256": "5a1d0b0f5a3c20fb4bac90778734377ebc2d698f97d40df84b6a347192cdd257",
+      "baselineCanonicalVersion": "common-core-rich-content-v1",
+      "candidateCanonicalVersion": "us-ccss-g1-u01-l02-l03-source-story-dot-centers-v1",
+      "allowedPracticeFamiliesUnchanged": true,
+      "candidateWorkedExamples": [
+        {
+          "Title": "Worked model — lesson skill",
+          "Question": "There are four dots on one card and three on a second card. How many in all?",
+          "Answer": "7"
+        },
+        {
+          "Title": "Try another example 1",
+          "Question": "Dot cards: ●●● | ●●. Build YOUR OWN complete addition expression. Write both addends and the total.",
+          "Answer": "3+2=5"
+        },
+        {
+          "Title": "Try another example 2",
+          "Question": "Two dot groups show ● and ●●●●. Write the sum of 1 + 4.",
+          "Answer": "5"
+        },
+        {
+          "Title": "One more worked example",
+          "Question": "A dot card has 2 dots and another card has 5. Write the addition expression and total.",
+          "Answer": "7"
+        }
+      ],
+      "sourceGoalMatchingAcademicMathSpotCheck": "SOURCE_GOAL_AND_RENDERED_MODELS_REVIEWED",
+      "reviewedChangeReason": "Original student dot-card/source narrative correction; student choice/counters learning goal preserved.",
+      "directHistoricalPracticeAttempts": 0,
+      "directHistoricalAdaptiveSessions": 0,
+      "productionGlobalMasteryAndEvidenceRowsExist": true,
+      "noGlobalProgressOverwriteClaim": true,
+      "technicalHistoryDriftReviewed": true,
+      "fullOriginalActivityEquivalenceApproved": false,
+      "independentlyAcademicallyApproved": false,
+      "whyNotAcademicApproval": "This drift review proves scoped, intentional source-aligned changes and absence of direct lesson attempts; it cannot prove complete authored-response activity or production owner UAT."
+    },
+    {
+      "gradeOrdinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L03",
+      "sourceTeacherGoal": "Add within 10, given expressions with an addend of 1 or 2, in a way that makes sense to them.",
+      "sourceStudentTask": "Interpret dot-cube images, practise adding one or two, and choose from several addition/subtraction centres.",
+      "sourceStudentPdfSha256": "319d86f1efb1f8736eef9d02043fd473f25e976cd82081376cec34938a326dba",
+      "baselinePublishedMainSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "baselineMainRichModelSha256": "3ccaa549ea3154fe1fe61d97a045f25e030395f4a88f2a6b83bb6ee87a38ae44",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "candidateRichModelSha256": "c9d891aa32600ba66957f7b2e97496fd19c2d769568e0505fddaa7fefe70ad94",
+      "baselineCanonicalVersion": "common-core-rich-content-v1",
+      "candidateCanonicalVersion": "us-ccss-g1-u01-l02-l03-source-story-dot-centers-v1",
+      "allowedPracticeFamiliesUnchanged": true,
+      "candidateWorkedExamples": [
+        {
+          "Title": "Worked model — lesson skill",
+          "Question": "Start at 5 and add 2. What number do you reach?",
+          "Answer": "7"
+        },
+        {
+          "Title": "Try another example 1",
+          "Question": "Start at 0. Count forward 1 step(s). What is 0+1?",
+          "Answer": "1"
+        },
+        {
+          "Title": "Try another example 2",
+          "Question": "Start at 2. Count forward 1 step(s). What is 2+1?",
+          "Answer": "3"
+        },
+        {
+          "Title": "One more worked example",
+          "Question": "Start with 7 counters. Add one more. What is the new total?",
+          "Answer": "8"
+        }
+      ],
+      "sourceGoalMatchingAcademicMathSpotCheck": "SOURCE_GOAL_AND_RENDERED_MODELS_REVIEWED",
+      "reviewedChangeReason": "Original student dot-card/source narrative correction; student choice/counters learning goal preserved.",
+      "directHistoricalPracticeAttempts": 0,
+      "directHistoricalAdaptiveSessions": 0,
+      "productionGlobalMasteryAndEvidenceRowsExist": true,
+      "noGlobalProgressOverwriteClaim": true,
+      "technicalHistoryDriftReviewed": true,
+      "fullOriginalActivityEquivalenceApproved": false,
+      "independentlyAcademicallyApproved": false,
+      "whyNotAcademicApproval": "This drift review proves scoped, intentional source-aligned changes and absence of direct lesson attempts; it cannot prove complete authored-response activity or production owner UAT."
+    },
+    {
+      "gradeOrdinal": 11,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L11",
+      "sourceTeacherGoal": "Determine whether statements about data are true or false. Write statements about data from a visual representation.",
+      "sourceStudentTask": "Evaluate true/false statements about an illustrated pet-survey tally chart; write three separate observations, then choose a centre.",
+      "sourceStudentPdfSha256": "150ccfe9693684c96e9c77d6b40b762a5923448716cd029c0ce9ca773fc8b45e",
+      "baselinePublishedMainSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "baselineMainRichModelSha256": "592f079cb293a13b57388c5b698c7956d9b9678864cd5faf22931f92216fda7d",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "candidateRichModelSha256": "1d898d0b40cb5c4dcc0be69174e6ec86bb36fd17e080460dac82ed6942994bbe",
+      "baselineCanonicalVersion": "us-ccss-g1-g1-u01-l11-instruction-v1",
+      "candidateCanonicalVersion": "us-ccss-g1-g1-u01-l11-instruction-v1",
+      "allowedPracticeFamiliesUnchanged": true,
+      "candidateWorkedExamples": [
+        {
+          "Title": "Worked model — lesson skill",
+          "Question": "Our sample pet chart shows 6 cats, 4 dogs and 2 fish. Is 'More chose cats than dogs' true?",
+          "Answer": "Yes. Six is greater than four. Twelve children are represented in this fictional chart."
+        },
+        {
+          "Title": "Try one more — a different lesson-skill problem",
+          "Question": "Write two true observations and correct one false observation about the pet chart.",
+          "Answer": "Six children chose cats. Two children chose fish. 'Four chose cats' is false: four chose dogs."
+        },
+        {
+          "Title": "Check with another representation",
+          "Question": "How could you show the same answer using counters or a written calculation?",
+          "Answer": "Use these labeled groups: Cats — 6; Dogs — 4; Fish — 2. Count six cat marks and four dog marks; the difference is two. 6+4+2=12."
+        },
+        {
+          "Title": "Explain the diagram to a partner",
+          "Question": "How can the diagram help you explain this lesson's worked model?",
+          "Answer": "Name which group represents each number and explain the comparison or change. Count six cat marks and four dog marks; the difference is two. 6+4+2=12."
+        }
+      ],
+      "sourceGoalMatchingAcademicMathSpotCheck": "SOURCE_GOAL_AND_RENDERED_MODELS_REVIEWED",
+      "reviewedChangeReason": "First-party Rich V2 illustrative model and visible supporting example improved, existing Practice family routing unchanged. Publisher creative graphics not copied.",
+      "directHistoricalPracticeAttempts": 0,
+      "directHistoricalAdaptiveSessions": 0,
+      "productionGlobalMasteryAndEvidenceRowsExist": true,
+      "noGlobalProgressOverwriteClaim": true,
+      "technicalHistoryDriftReviewed": true,
+      "fullOriginalActivityEquivalenceApproved": false,
+      "independentlyAcademicallyApproved": false,
+      "whyNotAcademicApproval": "This drift review proves scoped, intentional source-aligned changes and absence of direct lesson attempts; it cannot prove complete authored-response activity or production owner UAT."
+    },
+    {
+      "gradeOrdinal": 12,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L12",
+      "sourceTeacherGoal": "Answer “how many in each category” and “how many in all” questions about data represented in different ways.",
+      "sourceStudentTask": "Read tally-mark and numeric category tables, count categories individually, combine two groups, and find the survey total.",
+      "sourceStudentPdfSha256": "56f2ac8d360500e0d789e9c35c8e9107be2a4dcfa9f3cf4709fc4695f1b2f183",
+      "baselinePublishedMainSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "baselineMainRichModelSha256": "8311294d76b9c8c24228009df66cebf40c8328d2fc1aa64fd2c6a64a32b7cad1",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "candidateRichModelSha256": "3456ab6d0ea1e8a6ba436d9ce9ac0dc272d96ecaf563841c7861c721998fa9f7",
+      "baselineCanonicalVersion": "us-ccss-g1-u01-l12-data-tallies-and-totals-v1",
+      "candidateCanonicalVersion": "us-ccss-g1-u01-l12-data-tallies-and-totals-v1",
+      "allowedPracticeFamiliesUnchanged": true,
+      "candidateWorkedExamples": [
+        {
+          "Title": "Worked model — lesson skill",
+          "Question": "Seven apples and three bananas were counted. How many fruits are in all?",
+          "Answer": "10 fruits."
+        },
+        {
+          "Title": "Try one more — a different lesson-skill problem",
+          "Question": "The tally chart has seven apples and three bananas. How many more apples than bananas?",
+          "Answer": "4 more apples."
+        },
+        {
+          "Title": "Check with another representation",
+          "Question": "How could you show the same answer using counters or a written calculation?",
+          "Answer": "Use these labeled groups: Apples: first five; Apples: two more; Bananas: three. Seven equals a group of five plus two; 7+3=10."
+        },
+        {
+          "Title": "Explain the diagram to a partner",
+          "Question": "How can the diagram help you explain this lesson's worked model?",
+          "Answer": "Name which group represents each number and explain the comparison or change. Seven equals a group of five plus two; 7+3=10."
+        }
+      ],
+      "sourceGoalMatchingAcademicMathSpotCheck": "SOURCE_GOAL_AND_RENDERED_MODELS_REVIEWED",
+      "reviewedChangeReason": "First-party Rich V2 illustrative model and visible supporting example improved, existing Practice family routing unchanged. Publisher creative graphics not copied.",
+      "directHistoricalPracticeAttempts": 0,
+      "directHistoricalAdaptiveSessions": 0,
+      "productionGlobalMasteryAndEvidenceRowsExist": true,
+      "noGlobalProgressOverwriteClaim": true,
+      "technicalHistoryDriftReviewed": true,
+      "fullOriginalActivityEquivalenceApproved": false,
+      "independentlyAcademicallyApproved": false,
+      "whyNotAcademicApproval": "This drift review proves scoped, intentional source-aligned changes and absence of direct lesson attempts; it cannot prove complete authored-response activity or production owner UAT."
+    },
+    {
+      "gradeOrdinal": 13,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L13",
+      "sourceTeacherGoal": "Ask and answer questions about data.",
+      "sourceStudentTask": "Determine whether given questions are answerable from an illustrated graph; author answerable questions and investigate home-survey data.",
+      "sourceStudentPdfSha256": "97e3fa26d7e5a502795fb808fa77ae32eeadec82af528d4b79c68b005dea44d5",
+      "baselinePublishedMainSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "baselineMainRichModelSha256": "4419428ca2b0caee5e83cb8221a1de44c7ef173592ca77681d456901c745aa33",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "candidateRichModelSha256": "86bdc09cf30cb4a2a46dde5f53729290046cd7e472a1f2bc9b173b7576800d98",
+      "baselineCanonicalVersion": "us-ccss-g1-u01-l13-data-questions-correction-v1",
+      "candidateCanonicalVersion": "us-ccss-g1-u01-l13-data-questions-correction-v1",
+      "allowedPracticeFamiliesUnchanged": true,
+      "candidateWorkedExamples": [
+        {
+          "Title": "Worked model — lesson skill",
+          "Question": "This picture chart shows art 7, music 5 and sports 3. How many chose music?",
+          "Answer": "5 children."
+        },
+        {
+          "Title": "Try one more — a different lesson-skill problem",
+          "Question": "Write a different question you can answer from the chart about art, music and sports, then answer it.",
+          "Answer": "How many children chose sports? Three children."
+        },
+        {
+          "Title": "Check with another representation",
+          "Question": "How could you show the same answer using counters or a written calculation?",
+          "Answer": "Use these labeled groups: Art — 7; Music — 5; Sports — 3. Count the five marks in the music row. The chart cannot tell you which music they like."
+        },
+        {
+          "Title": "Explain the diagram to a partner",
+          "Question": "How can the diagram help you explain this lesson's worked model?",
+          "Answer": "Name which group represents each number and explain the comparison or change. Count the five marks in the music row. The chart cannot tell you which music they like."
+        }
+      ],
+      "sourceGoalMatchingAcademicMathSpotCheck": "SOURCE_GOAL_AND_RENDERED_MODELS_REVIEWED",
+      "reviewedChangeReason": "First-party Rich V2 illustrative model and visible supporting example improved, existing Practice family routing unchanged. Publisher creative graphics not copied.",
+      "directHistoricalPracticeAttempts": 0,
+      "directHistoricalAdaptiveSessions": 0,
+      "productionGlobalMasteryAndEvidenceRowsExist": true,
+      "noGlobalProgressOverwriteClaim": true,
+      "technicalHistoryDriftReviewed": true,
+      "fullOriginalActivityEquivalenceApproved": false,
+      "independentlyAcademicallyApproved": false,
+      "whyNotAcademicApproval": "This drift review proves scoped, intentional source-aligned changes and absence of direct lesson attempts; it cannot prove complete authored-response activity or production owner UAT."
+    },
+    {
+      "gradeOrdinal": 14,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L14",
+      "sourceTeacherGoal": "Build toward fluency by adding and subtracting within 10 in a way that makes sense to them. Sort objects into categories and represent the sort.",
+      "sourceStudentTask": "Practise counting plus/minus two and select an arithmetic/sort-display centre.",
+      "sourceStudentPdfSha256": "363e1bc7d1b26e74a813af214dff24a80e157b4bd40d6a446effc4ac8e85da0a",
+      "baselinePublishedMainSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "baselineMainRichModelSha256": "546047d9cec6dc6a6c290fc43c04730337642afa533edd8fd08e8857ae010c3a",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "candidateRichModelSha256": "ee1423731cd8204c538ffed43e2226f0ae8418eae731a5ad78293a417c918bec",
+      "baselineCanonicalVersion": "us-ccss-g1-u01-l14-sort-display-centers-v1",
+      "candidateCanonicalVersion": "us-ccss-g1-u01-l14-sort-display-centers-v1",
+      "allowedPracticeFamiliesUnchanged": true,
+      "candidateWorkedExamples": [
+        {
+          "Title": "Worked model — lesson skill",
+          "Question": "Sort 12 classroom objects: 5 counters, 4 tiles and 3 blocks. How many objects are displayed?",
+          "Answer": "12 objects."
+        },
+        {
+          "Title": "Try one more — a different lesson-skill problem",
+          "Question": "In the example sort of five counters, four tiles and three blocks, which category has two more items than blocks?",
+          "Answer": "Counters. Five counters is two more than three blocks."
+        },
+        {
+          "Title": "Check with another representation",
+          "Question": "How could you show the same answer using counters or a written calculation?",
+          "Answer": "Use these labeled groups: Counters — 5; Tiles — 4; Blocks — 3. 5+4+3=12. Every one of the twelve objects belongs to one labeled row."
+        },
+        {
+          "Title": "Explain the diagram to a partner",
+          "Question": "How can the diagram help you explain this lesson's worked model?",
+          "Answer": "Name which group represents each number and explain the comparison or change. 5+4+3=12. Every one of the twelve objects belongs to one labeled row."
+        }
+      ],
+      "sourceGoalMatchingAcademicMathSpotCheck": "SOURCE_GOAL_AND_RENDERED_MODELS_REVIEWED",
+      "reviewedChangeReason": "First-party Rich V2 illustrative model and visible supporting example improved, existing Practice family routing unchanged. Publisher creative graphics not copied.",
+      "directHistoricalPracticeAttempts": 0,
+      "directHistoricalAdaptiveSessions": 0,
+      "productionGlobalMasteryAndEvidenceRowsExist": true,
+      "noGlobalProgressOverwriteClaim": true,
+      "technicalHistoryDriftReviewed": true,
+      "fullOriginalActivityEquivalenceApproved": false,
+      "independentlyAcademicallyApproved": false,
+      "whyNotAcademicApproval": "This drift review proves scoped, intentional source-aligned changes and absence of direct lesson attempts; it cannot prove complete authored-response activity or production owner UAT."
+    },
+    {
+      "gradeOrdinal": 15,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L15",
+      "sourceTeacherGoal": "Collect, organize, and represent data from survey questions. Create questions related to survey data. Interpret data to answer questions.",
+      "sourceStudentTask": "Choose a survey question, collect ten participant responses, author questions about the collected data, and create a poster.",
+      "sourceStudentPdfSha256": "5ac61582db244b6b24cd900af0d0492d0222b1689ed527b041fe34a3d0f389f3",
+      "baselinePublishedMainSha": "7aefaec157ca4a543b22cf061f48a706267d4fab",
+      "baselineMainRichModelSha256": "e7d81bff1ae63642fc1bd91217bf1658744eac9e97b89c680c0a87dbfcfc16fc",
+      "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+      "candidateRichModelSha256": "2f5304e42a3c4ad2949149fd11197ed5dc5d0da7a4eb9b6cdaa285c8e494a85e",
+      "baselineCanonicalVersion": "us-ccss-g1-u01-l15-survey-and-tallies-correction-v1",
+      "candidateCanonicalVersion": "us-ccss-g1-u01-l15-survey-and-tallies-correction-v1",
+      "allowedPracticeFamiliesUnchanged": true,
+      "candidateWorkedExamples": [
+        {
+          "Title": "Worked model — lesson skill",
+          "Question": "A practice survey records 4 votes for monkeys, 3 for lions and 2 for parrots. How many choices are recorded?",
+          "Answer": "9 choices."
+        },
+        {
+          "Title": "Try one more — a different lesson-skill problem",
+          "Question": "Write a survey question with the three animal choices. How would you collect actual replies?",
+          "Answer": "Which jungle animal would you most like to see: monkey, lion or parrot? Ask each person once and tally their one choice."
+        },
+        {
+          "Title": "Check with another representation",
+          "Question": "How could you show the same answer using counters or a written calculation?",
+          "Answer": "Use these labeled groups: Monkey — 4; Lion — 3; Parrot — 2. 4+3+2=9; one mark means one response. This does not claim nine real classmates were asked."
+        },
+        {
+          "Title": "Explain the diagram to a partner",
+          "Question": "How can the diagram help you explain this lesson's worked model?",
+          "Answer": "Name which group represents each number and explain the comparison or change. 4+3+2=9; one mark means one response. This does not claim nine real classmates were asked."
+        }
+      ],
+      "sourceGoalMatchingAcademicMathSpotCheck": "SOURCE_GOAL_AND_RENDERED_MODELS_REVIEWED",
+      "reviewedChangeReason": "First-party Rich V2 illustrative model and visible supporting example improved, existing Practice family routing unchanged. Publisher creative graphics not copied.",
+      "directHistoricalPracticeAttempts": 0,
+      "directHistoricalAdaptiveSessions": 0,
+      "productionGlobalMasteryAndEvidenceRowsExist": true,
+      "noGlobalProgressOverwriteClaim": true,
+      "technicalHistoryDriftReviewed": true,
+      "fullOriginalActivityEquivalenceApproved": false,
+      "independentlyAcademicallyApproved": false,
+      "whyNotAcademicApproval": "This drift review proves scoped, intentional source-aligned changes and absence of direct lesson attempts; it cannot prove complete authored-response activity or production owner UAT."
+    }
+  ]
+}
