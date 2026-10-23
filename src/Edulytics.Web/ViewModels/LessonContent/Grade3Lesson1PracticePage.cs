@@ -32,3 +32,27 @@ public sealed record Grade3Lesson1PracticePage(
     bool Submitted,
     Grade3Lesson1Answers Answers,
     IReadOnlyList<Grade3Lesson1Feedback> Feedback);
+
+
+/// <summary>
+/// A written response is evidence for a teacher to examine, never a machine
+/// pass for original 2021 reasoning, question writing or classroom discussion.
+/// Missing writing is NOT evidence that an oral task was carried out.
+/// </summary>
+public static class Grade3Lesson1TeacherReviewPolicy
+{
+    public static Grade3Lesson1Feedback AssessForReview(
+        string label, string? response, string criteria)
+    {
+        if (string.IsNullOrWhiteSpace(response))
+            return new Grade3Lesson1Feedback(
+                label, null, true,
+                "No written response was submitted. An in-class oral or partner " +
+                "activity cannot be certified without teacher observation. " + criteria);
+
+        return new Grade3Lesson1Feedback(
+            label, null, true,
+            "Written response supplied; it is NOT an automatic pass. " +
+            "A teacher must check the following before accepting it: " + criteria);
+    }
+}
