@@ -209,6 +209,19 @@
                 <p>The warm-up original carton image and Noah's two drawings still require a teacher to inspect the source visual. Discuss whether both circles and rectangular arrays can show the same equal groups.</p>
             </section>
         }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 17) {
+            <section class="panel" aria-label="Source arrays built from original grouped drawings">
+                <h2>Original picture and card-sort work</h2>
+                <p>For the original four warm-up illustrations, images A, B and C each contain 15 dots, and D contains 16. But their arrangements differ: an answer of just “D has more dots” misses other potential valid array/non-array explanations. Examine the original pictures with the teacher.</p>
+                <p>The original Card Sort Arrays is a separate physical matching task: keep and discuss the group sizes as drawings transform into rows or columns, then edit your written explanation after discussing it with a partner.</p>
+                <h2>Source Activity 2: draw, rather than just count</h2>
+                <p>Reorganize 4 groups of 3 into a rectangular array; use 12 dots. Then use all 16 dots of the other source figure in two different arrays. Here is an independently drawn EXAMPLE of three rows of four dots; it does not replace the original source card artwork.</p>
+                <div class="first-party-array" style="grid-template-columns:repeat(4,17px)" role="img" aria-label="Independent example: three complete rows, four dots per row">
+                    @for(var i=0;i<12;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                </div>
+                <p>Show why all rows and columns form valid equal-sized groupings. Teacher evaluates your own drawings and actual peer explanation revision.</p>
+            </section>
+        }
         @if(showMinuteClock) {
             <section class="panel" aria-label="Edulytics original analogue clock reading">
                 <h2>Read an original analogue clock</h2>

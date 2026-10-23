@@ -17,7 +17,19 @@
     "originalImageDescriptionsCount": 3,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "sourceWarmupFourImagesCounts": [
+      15,
+      15,
+      15,
+      16
+    ],
+    "sourceActivity1OriginalCardSortNotInspected": true,
+    "sourceActivity2OriginalDotSets": [
+      12,
+      16
+    ],
+    "sourcePeerRevisionRequired": true
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +41,9 @@
     "existingSourceBodyHash": "fd31091b323ed508c4bc69e9006ce9f72c944de32a7c52f6dbb64fdeb422fbdc",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "firstPartyThreeRowsByFourDotsExampleOnly": true,
+    "originalImagesUncopiedAndUnverified": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +56,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Card Sort: Arrays with your teacher. Show the representation and explain how it meets the goal: Let’s match arrays to equal groups and draw arrays.",
-    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array."
+    "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
+    "sourceArrayTasksIndividualTeacherReviewRows": 6,
+    "independentPracticeAndCoolDownTeacherOnlyNotNumericPass": true,
+    "staticRegressionWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -150,7 +167,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Original source A/B/C/D arrangements and array card set images inaccessible for full visual 1:1; all six source subtasks require drawing/peer review, Rich V2 and task PDF still unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

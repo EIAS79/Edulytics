@@ -1313,14 +1313,14 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "match-arrays-equal-groups",
       "independentPractice": {
-        "prompt": "Rearrange four groups of three dots as a rectangular array. How many dots?",
-        "answerType": "integer",
-        "expected": "12"
+        "prompt": "Reorganize twelve counters originally in four groups of three into a true rectangular array; draw all rows and columns and explain how the rearrangement preserves groups.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Create a three-row, five-column array of counters. How many counters?",
-        "answerType": "integer",
-        "expected": "15"
+        "prompt": "Construct two different arrays of sixteen counters and explain why each is a complete rectangular array of equal-sized rows and columns. Teacher checks sketches.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Arrays with your teacher. Show the representation and explain how it meets the goal: You will relate arrays to drawings of equal groups and describe arrays in terms of multiplication.",
       "teacherReviewNote": "Matching groups with arrays requires teacher review of actual diagrams and card sorting.",
@@ -1332,11 +1332,13 @@
         "sourceGoal": "Let’s match arrays to equal groups and draw arrays.",
         "sourceLearningGoals": "Relate arrays to drawings of equal groups and describe them in terms of multiplication.",
         "teachingSteps": [
-          "Draw rows and columns with equal spacing.",
-          "Count rows and columns; relate the array to equal groups.",
-          "Compare rotated or reorganized arrays while preserving the total."
+          "Present all four original dot-arrangement images and let pupils defend multiple different Which One Doesn't Belong answers.",
+          "Use the publisher's original Card Sort Arrays pictures with pairs or small groups; match grouped drawings to true arrays.",
+          "Have students revise an explanation after partner questions (MLR1), not merely enter the total.",
+          "Rearrange the original four groups of three dots as a 12-dot rectangular array.",
+          "Draw more than one valid array of 16 scattered dots, checking every dot and row/column uniformity."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s match arrays to equal groups and draw arrays.",
+        "caution": "Array shape, complete dot use and peer-revised argument are core source targets; numeric 12 or 16 alone is not evidence. Original source card deck and which-one-doesn't-belong figure arrangements are uninspected.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1350,7 +1352,51 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U01-L17-WU-01",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong",
+          "prompt": "Use the original four dot arrangement images (A, B, C with fifteen dots, and D with sixteen); identify a justified feature by which each image could be the one that doesn't belong. Image arrangements must be inspected.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L17-A1-MATCH",
+          "sourceActivity": "Activity 1: Card Sort Arrays",
+          "prompt": "Match all of the teacher-provided original array and equal-group picture cards; explain the row or column correspondence without assuming a fixed card order.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L17-A1-REVISE",
+          "sourceActivity": "Activity 1: Stronger and Clearer Each Time",
+          "prompt": "Select one matched card pair, write why its group size is preserved by rows or columns, solicit peer feedback and revise your original explanation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L17-A2-01",
+          "sourceActivity": "Activity 2: Draw Arrays",
+          "prompt": "Starting with the source diagram of four groups of three dots, draw a true rectangular array using all twelve dots. Explain matching equal-group size, rows and columns.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L17-A2-02",
+          "sourceActivity": "Activity 2: Draw Arrays",
+          "prompt": "Starting with sixteen irregularly placed dots, draw at least two different rectangular arrays that each use all sixteen dots. Explain your array reasoning to a partner.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L17-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Discuss why a valid rectangular array must have the same number of dots in each row and in each column, and how the original grouped drawings connect to such arrays.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 18,
