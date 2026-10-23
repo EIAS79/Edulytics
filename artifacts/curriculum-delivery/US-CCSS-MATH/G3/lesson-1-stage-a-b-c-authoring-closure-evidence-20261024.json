@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L01",
+  "date": "2026-10-24",
+  "closure": "READY_FOR_STAGE_D",
+  "meaning": "A-C first-party academic-semantic authoring source parity complete; no tests or executable runtime acceptance, merge, release, or teacher academic approval",
+  "sourceElementCount": 11,
+  "sourceElementsMapped": 11,
+  "authoringSemanticCoveragePercent": 100,
+  "publisherArtworkPixelIdentityClaimed": false,
+  "originalArtworkCopied": false,
+  "sourceURLs": {
+    "teacher": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/preparation.html",
+    "studentPdf": "https://cms-assets.illustrativemathematics.org/jnjmmz0zztvuwpty53y7ouwfghx3",
+    "teacherGuideOriginal": "https://cms-assets.illustrativemathematics.org/k6qyojyjw2s7jgle51o53gvczrp3"
+  },
+  "sourcePdfRead": true,
+  "sourceTeacherGuideRead": true,
+  "originalGraphValues": [
+    4,
+    3,
+    1,
+    2,
+    7,
+    6
+  ],
+  "originalCoolDownValues": {
+    "Bike": 6,
+    "Walk": 4,
+    "Bus": 8,
+    "Car": 2
+  },
+  "originalCoolDownAxis": "0 to 10 by 1",
+  "separateCoolDownTeacherOpenTasks": [
+    "SourceCoolDownFact",
+    "SourceCoolDownQuestion"
+  ],
+  "sourceElementEvidence": [
+    {
+      "id": "G3-U01-L01-01",
+      "status": "MATCHED_DIGITAL",
+      "why": "Grade3 L01 authored Rich V2 purpose/standards and source goals; first-edition source teacher and preparation checked",
+      "code": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json"
+    },
+    {
+      "id": "G3-U01-L01-02",
+      "status": "MATCHED_TEACHER_LED",
+      "why": "Math Community T-chart Students/Teacher × Doing Math/Norms placed during warm-up synthesis; teacher records observations",
+      "code": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L01-03",
+      "status": "MATCHED_TEACHER_LED",
+      "why": "Unlabelled 6 vertical stacks key=1, 4/3/1/2/7/6 with Notice/Wonder text and teacher pair review; source 15min routine, 1min quiet and 1min pair",
+      "code": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L01-04",
+      "status": "MATCHED_TEACHER_LED",
+      "why": "Same 6 stacks with added title only, no labels, 30sec quiet and 2–3min teacher-reviewed partner hypotheses",
+      "code": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L01-05",
+      "status": "MATCHED_DIGITAL",
+      "why": "Labeled unit-key vertical pictograph categories Walk4 Bike3 Skateboard1 Car2 Bus7 Train6 shown with original category order and first-party glyphs",
+      "code": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson1GraphCandidate.cs"
+    },
+    {
+      "id": "G3-U01-L01-06",
+      "status": "MATCHED_DIGITAL",
+      "why": "Independent zero-based 0–8 bar chart by ones, horizontal Ways to get home, vertical Number of students, six correct data columns",
+      "code": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L01-07",
+      "status": "MATCHED_TEACHER_LED",
+      "why": "Five distinct original 2021 Student Facing subparts mapped: notice/wonder, possible categories, compare, interpret, author two questions; human rubric not auto-pass",
+      "code": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson1PracticePage.cs"
+    },
+    {
+      "id": "G3-U01-L01-08",
+      "status": "MATCHED_TEACHER_LED",
+      "why": "10min synthesis on graph/key/axes and Math Community norms, teacher-reviewed learner reflection before 5min Cool-down",
+      "code": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L01-09",
+      "status": "MATCHED_TEACHER_LED",
+      "why": "Original 2021 separate Cool-down graph Bike6 Walk4 Bus8 Car2 (axis 0–10 one-unit); independently authored graph plus two original open skill tasks (fact/question), teacher reviewed; independent library assessment remains additional",
+      "code": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson1SourceCoolDown.cs"
+    },
+    {
+      "id": "G3-U01-L01-10",
+      "status": "MATCHED_TEACHER_LED",
+      "why": "Optional teacher centers documented with 2021 teacher guide procedures: Sort and Display Stage2 20–30 objects 3 categories and two graph questions; Capture Squares Stage3 spinner 6–10/wild plus 0–10 card and sum up to 20",
+      "code": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L01-11",
+      "status": "MATCHED_DIGITAL",
+      "why": "All 4 public graphs visually reviewed with first-party mathematical replacement; publisher stick-figure art and trademark not copied; separate original Cool-down data verified against public 2021 guide",
+      "code": "src/Edulytics.Web/Views/Grade3Lesson1Activities/Index.cshtml"
+    }
+  ],
+  "richV2ResourceIncludedBy": "src/Edulytics.Core/Edulytics.Core.csproj EmbeddedResource Curriculum/LessonContent/RichV2/*.rich-lesson-v2.json",
+  "richV2Lookup": "src/Edulytics.Services/LessonContent/LessonContentService.cs uses RichLessonContentV2Registry.Find first when published translation exists",
+  "studentActivityRouting": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml Grade3Lesson1Activities route",
+  "testsAuthoredNotRun": true,
+  "compilerNotRun": true,
+  "ciNotIntentionallyRun": true,
+  "stageD": "NOT_STARTED",
+  "publishedRuntimeNotVerified": true,
+  "teacherStudentActualPerformanceNotClaimed": true,
+  "notSourceArtworkExactIdentity": true,
+  "academicApproval": "NOT_CLAIMED"
+}

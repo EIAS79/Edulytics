@@ -7,7 +7,7 @@
   "authoringBranch": "curriculum/g3-continuous-authoring-20261023",
   "sourceParityGoalPercent": 100,
   "sourceParityProvenPercent": null,
-  "authoringStage": "A_B_C_IN_PROGRESS_WITH_EXPLICIT_GAPS",
+  "authoringStage": "A_B_C_IN_PROGRESS_ONE_SEMANTICALLY_AUTHORING_CLOSED",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "runtimeTests": "NOT_MANUALLY_RUN; GITHUB_AUTOMATED_WORKFLOWS_STARTED",
@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 0,
+    "lessonsFullyReadyForStageD": 1,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 143,
+    "lessonsWithACExplicitGap": 142,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,38 +32,28 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 0,
+    "lessonsIndividuallyComparedToAllOriginalElements": 1,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 0,
+    "lessonsWithActualRichV2SourcePerfect": 1,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
-    "originalImagePixelFilesInspected": 0
+    "originalImagePixelFilesInspected": 0,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 11
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 0,
-    "firstUnclosedOrdinal": 1,
+    "lastConsecutiveReadyForStageDOrdinal": 1,
+    "firstUnclosedOrdinal": 2,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
   "returnQueue": [
-    {
-      "ordinal": 1,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L01",
-      "reasons": [
-        "2021 official Student Task Statements PDF and original graph-image pixels inaccessible (publisher asset URL fetch Cache miss); no 100% source-material parity claimed.",
-        "First-party Grade 3 L01 Rich V2 sidecar now authored and registry-contract tests written, but not executed; effective deployed learner translation not proven.",
-        "Read-only Neon inspection: CurriculumLessonContentTranslations returned zero rows; official L01 pedagogical node pointer is null. Cannot verify actual published L01 teaching translation or graph rendering.",
-        "First-party independent Cool-down explicitly replaces publisher teacher-gated original; publisher item parity is NOT claimed, and Stage D/human school observations remain deferred."
-      ],
-      "status": "A_C_EXPLICIT_GAP"
-    },
     {
       "ordinal": 2,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L02",
@@ -1648,13 +1638,13 @@
       "unitNumber": 1,
       "lessonNumber": 1,
       "title": "Make Sense of Data",
-      "stageA": "ORIGINAL_2021_TEACHER_AND_PREP_PUBLIC_SOURCE_TEXT_REVIEWED_FIVE_STUDENT_SUBPARTS_MAPPED_ORIGINAL_PDF_PIXELS_PENDING",
-      "stageB": "SOURCE_SPECIFIC_EMBEDDED_RICH_V2_SIDECAR_AUTHORED_UNEXECUTED_EFFECTIVE_LEARNER_DB_UNVERIFIED",
-      "stageC": "FIVE_OPEN_SOURCE_TASKS_TEACHER_REVIEW_ONLY_THREE_SEPARATE_NUMERIC_PRACTICE_AND_TWO_COOLDOWN_CHECKS_WRITTEN_UNRUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "11_2021_SOURCE_ELEMENTS_SEMANTICALLY_MATCHED_TO_FIRST_PARTY_AUTHORING",
+      "stageB": "RICH_V2_AND_SOURCE_ACTIVITY_AND_COOLDOWN_AUTHORED",
+      "stageC": "TEACHER_RUBRIC_AND_NUMERIC_GRADERS_AND_UNRUN_TESTS_AUTHORED",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 11,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "fullyVerifiedSourceElements": 11,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-1-v2-stage-a-c-checkpoint.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -1683,7 +1673,9 @@
       "sourceMaterialParityProofComplete": false,
       "richV2SourceSpecificEmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
       "richV2SourceSpecificRegistryTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
-      "richV2CodeOnlyAuthored": true
+      "richV2CodeOnlyAuthored": true,
+      "readyForStageD": true,
+      "verifiedParityScope": "ACADEMIC_SEMANTIC_AUTHORING_ONLY_NOT_ORIGINAL_ART_IDENTITY"
     },
     {
       "gradeOrdinal": 2,
