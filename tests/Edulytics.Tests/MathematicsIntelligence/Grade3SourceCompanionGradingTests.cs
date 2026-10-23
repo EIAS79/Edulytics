@@ -64,6 +64,44 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Contains("not been independently inspected here", view);
     }
 
+    [Theory]
+    [InlineData("3x10",true)]
+    [InlineData("3 × 10",true)]
+    [InlineData("3*10=30",true)]
+    [InlineData("30",false)]
+    [InlineData("10x3",false)]
+    [InlineData("3x10=31",false)]
+    [InlineData("3+10",false)]
+    [InlineData("3x11",false)]
+    public void LessonElevenRequiresActualGroupSizedExpressionNotOnlyProduct(
+        string submission,bool correct)
+    {
+        // Contracts authored for Stage C. Tests intentionally NOT RUN.
+        var q=new Grade3OriginalQuestion {
+            Prompt="Three groups of ten pencils: write the expression.",
+            AnswerType="multiplication-expression",
+            Expected="3x10"
+        };
+        var feedback=Grade3SourceCompanionCatalogue.Grade(q,submission);
+        Assert.Equal(correct,feedback.NumericCorrect);
+        Assert.True(feedback.TeacherReview);
+    }
+
+    [Fact]
+    public void LessonElevenBankTargetsExpressionsAndSourceModels()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L11",out var lesson));
+        Assert.Equal("multiplication-expression",lesson!.IndependentPractice!.AnswerType);
+        Assert.Equal("3x10",lesson.IndependentPractice.Expected);
+        Assert.Equal("multiplication-expression",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.Equal("4x6",lesson.OriginalEdulyticsCoolDown.Expected);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(
+            lesson.IndependentPractice,"3 × 10").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(
+            lesson.IndependentPractice,"30").NumericCorrect);
+    }
+
     [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
@@ -154,7 +192,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -178,6 +216,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "rational" => "1/0",
                     "comparison" => question.Expected == ">" ? "<" : ">",
                     "clock-time" => "13:99 pm",
+                    "multiplication-expression" => "1x1",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);

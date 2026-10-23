@@ -17,7 +17,27 @@
     "originalImageDescriptionsCount": 2,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicTeacher2021Warmup": "5s choral count 0..50 then 2s 0..20, explain patterns",
+    "publicActivity1FiveDisplayExpressions": [
+      "3x5",
+      "4x3",
+      "3x2",
+      "2x10",
+      "3x10"
+    ],
+    "publicActivity2FourDrawingTasks": [
+      "5x2",
+      "3x4",
+      "3x10",
+      "student authored expression and diagram"
+    ],
+    "publicActivity3WritingExpressions": [
+      "3 groups of 3 dots",
+      "2 tape sections labelled 4",
+      "2 water packs of 6 bottles"
+    ],
+    "originalCardSortOriginalsInspected": false
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +49,9 @@
     "existingSourceBodyHash": "98e4ea44d5225f15913066f0b4bae291c2d2e2f10dbffaa52dadaf60f252e0b8",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "lessonSpecificRichV2SourceTasksAddedToCompanion": true,
+    "effectiveDatabaseBackedRichV2Verified": false
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +64,12 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Multiplication Expression Match with your teacher. Show the representation and explain how it meets the goal: Let’s write multiplication expressions.",
-    "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced."
+    "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced.",
+    "firstPartyPracticeNowGradesExpressionNotJustTotal": true,
+    "edulyticsOriginalCooldownNowGradesExpressionNotJustTotal": true,
+    "oldNumericSourceCheckStillNumericScopeOnly": true,
+    "teacherReviewsDrawingsAndAlternativeFactorModels": true,
+    "authoringRegressionTestsWrittenNotRun": true
   },
   "sourceElements": [
     {
@@ -152,7 +179,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "2021 original card sort, diagrams and source student PDF unverified. Source tasks are represented as teacher-reviewed prose rather than complete 1:1 tracked student responses; effective Rich V2 still unverified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",

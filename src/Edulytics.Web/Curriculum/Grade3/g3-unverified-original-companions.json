@@ -333,13 +333,13 @@
       "firstPartyFamily": "multiplication-expressions",
       "independentPractice": {
         "prompt": "Three packs contain 10 pencils each. What is the total? Write the multiplication expression.",
-        "answerType": "integer",
-        "expected": "30"
+        "answerType": "multiplication-expression",
+        "expected": "3x10"
       },
       "originalEdulyticsCoolDown": {
         "prompt": "Four packs have six beads each. Find the total and write the expression.",
-        "answerType": "integer",
-        "expected": "24"
+        "answerType": "multiplication-expression",
+        "expected": "4x6"
       },
       "openTeacherTask": "Work through the original lesson's activity Multiplication Expression Match with your teacher. Show the representation and explain how it meets the goal: You will use multiplication expressions to represent equal groups.",
       "teacherReviewNote": "The expression must correctly identify groups and objects per group; the source introduces expressions here.",
@@ -351,11 +351,12 @@
         "sourceGoal": "Let’s write multiplication expressions.",
         "sourceLearningGoals": "Write multiplication expressions to represent situations involving equal groups and diagrams.",
         "teachingSteps": [
-          "Build equal-sized groups with objects or dots.",
-          "Count the groups and how many are in each.",
-          "Explain the total with a drawing before introducing symbolic multiplication."
+          "Count by 5 from 0 to 50, then by 2 from 0 to 20; identify number patterns.",
+          "Match original teacher-distributed card representations to one of the five displayed expressions.",
+          "Draw groups and tape models for 5×2, 3×4, 3×10, then invent your own expression and matching representation.",
+          "Write ordered multiplication expressions for original dot cubes, a two-part tape diagram and a two-pack water-bottle situation."
         ],
-        "caution": "A lesson about concrete groups should not force multiplication symbols before they have been formally introduced.",
+        "caution": "This lesson INTRODUCES writing multiplication expressions, unlike L09–L10. A numeric total without an expression does not meet that target. Teacher must also evaluate alternative factor-order reasoning and original diagrams.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {

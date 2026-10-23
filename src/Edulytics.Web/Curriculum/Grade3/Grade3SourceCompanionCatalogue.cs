@@ -91,6 +91,32 @@ public static class Grade3SourceCompanionCatalogue
                 : "Compare the quantities using the same whole.");
         }
 
+        if (q.AnswerType == "multiplication-expression")
+        {
+            // In Grade 3 this family assesses a written expression, NOT only
+            // its product. The first factor identifies the equal-group count,
+            // the second the number in each group. Other justified models
+            // are always eligible for human consideration, never auto-certified.
+            const string syntax = @"^([0-9]{1,3})\s*[xX×*]\s*([0-9]{1,3})(?:\s*=\s*([0-9]{1,5}))?$";
+            var actual = Regex.Match(submitted.Trim(), syntax, RegexOptions.CultureInvariant);
+            var expected = Regex.Match(q.Expected ?? "", syntax, RegexOptions.CultureInvariant);
+            if (!actual.Success || !expected.Success)
+                return new(false, true, "Write groups × objects per group; a product alone does not demonstrate the requested expression.");
+
+            var groups = int.Parse(actual.Groups[1].Value, CultureInfo.InvariantCulture);
+            var each = int.Parse(actual.Groups[2].Value, CultureInfo.InvariantCulture);
+            var requiredGroups = int.Parse(expected.Groups[1].Value, CultureInfo.InvariantCulture);
+            var requiredEach = int.Parse(expected.Groups[2].Value, CultureInfo.InvariantCulture);
+            if (actual.Groups[3].Success &&
+                int.Parse(actual.Groups[3].Value, CultureInfo.InvariantCulture) != groups * each)
+                return new(false, true, "The stated total contradicts the factors. Check your expression.");
+
+            var correct = groups == requiredGroups && each == requiredEach;
+            return new(correct, true, correct
+                ? "The expression matches the number and size of the groups; teacher still reviews the drawing."
+                : "Check which number describes the groups and which describes the members in each group. Teacher reviews alternative justifications.");
+        }
+
         if (q.AnswerType == "integer")
         {
             if (!int.TryParse(submitted.Trim(), NumberStyles.Integer,
