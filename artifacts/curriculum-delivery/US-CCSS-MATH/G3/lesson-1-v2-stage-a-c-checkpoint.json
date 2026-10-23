@@ -231,7 +231,10 @@
       ],
       "directLocalSourceReadDate": "2026-10-23",
       "remaining": "Check original picture/svg pixels, per-source subparts and any printable/student-task PDF against the proposed Edulytics body and activities; no source-perfect claim."
-    }
+    },
+    "studentFacingCodeMappedSourceFamilies": 3,
+    "studentFacingMappedSubparts": 6,
+    "studentFacingMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-source-to-first-party-task-matrix/U01.json"
   },
   "stageB": {
     "status": "FIRST_PARTY_STUDENT_COMPANION_AUTHORED_RICH_V2_NOT_FULLY_VERIFIED",
@@ -242,7 +245,7 @@
       "Invite open questions based only on available data; do not grade ambiguous labels or learner-authored questions as numeric right/wrong."
     ],
     "effectiveLearnerBodyCompared": false,
-    "currentContentStatus": "AUTHORING_DRAFT_LOCAL_SOURCE_AND_PUBLISHED_BODY_UNVERIFIED",
+    "currentContentStatus": "GRADE3_2021_SOURCE_SPECIFIC_RICH_V2_AUTHORING_PROPOSAL_DB_EFFECTIVE_RUNTIME_UNVERIFIED",
     "firstPartyCompanion": {
       "controller": "src/Edulytics.Web/Controllers/Grade3Lesson1ActivitiesController.cs",
       "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson1PracticePage.cs",
@@ -275,7 +278,9 @@
       "publishedDatabaseCompared": false,
       "teacherSourceAndOriginalFiguresVerified": false,
       "note": "This does not change production Neon, mark source parity, approve A-C or promote readiness."
-    }
+    },
+    "richV2AuthoringUpdatedCode": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "richV2CodeScopeSpecific": "L01 graph reveal, exact picture/bar values, explicit key/scale, misconceptions, full timed source activity steps"
   },
   "stageC": {
     "status": "STUDENT_COMPANION_NUMERIC_AND_AUTHORED_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -320,14 +325,15 @@
     "routedPath": "student/practice/grade3-u01-l01"
   },
   "openGaps": [
+    "Source-specific Rich V2 correction is authored in GitHub, but effective displayed/published content and each task's student/teacher review evidence are not certified; this is not READY_FOR_STAGE_D.",
+    "External original-source evidence boundary: first-edition Student Task Statements PDF and original figure/image pixels were not retrievable from publisher links in available tooling; original-per-figure verification and any third-party licenses remain OPEN.",
     "Original 2021 publisher student task PDF could not be downloaded/accessed, and complete figure pixels (including two unlabelled local SVG references) have not been visually inspected; no source-perfect claim.",
     "Versioned source teaching corrections and independent student Razor columns authored, but actual Rich V2 stored database rendering, teacher access control and unit-scale pixels remain unverified.",
     "One-to-one closure of each original activity subpart, accessibility adaptations and open teacher rubric still requires complete figure/material evidence.",
     "Original publisher Cool-down remains teacher-login gated; the agreed independently authored equivalent is permitted but cannot prove the original assessment's verbatim parity.",
-    "Source imagery rights must be checked independently; this changes only first-party glyph rendering, not protected publisher art.",
-    "Grade 3 Lesson 1 typed .NET/Razor tests intentionally NOT RUN until Stage D; no CI, merge, deployment or academic approval"
+    "Source imagery rights must be checked independently; this changes only first-party glyph rendering, not protected publisher art."
   ],
-  "nextAction": "Stay at L01. Now that Our-CS local 2021 lesson and preparation HTML can be read, complete item-level source-to-product/figure/task PDF comparison, correct any remaining Rich V2 and grading gaps, then reassess A-C; tests remain written NOT RUN.",
+  "nextAction": "Return to Grade 3 U01 L01: obtain and compare original first-edition Student Task Statements PDF and graphic pixel source; finish one-to-one original part-to-effective Rich V2 and learner Practice checks. Tests written but NOT RUN. Until then A_C_EXPLICIT_GAP / no readiness.",
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",
@@ -365,5 +371,17 @@
       "B001 Real 500 Lesson Engine Sampling"
     ],
     "note": "Two had completed successfully and four were in progress at the status check; do not count any auto-run result as academic acceptance or approval. Subsequent authoring commits use [skip ci]."
+  },
+  "source2021GitHubOnlyExecution": {
+    "executionDate": "2026-10-23",
+    "policy": "NO_OUR_CS_NO_DESKTOP_ONLY_GITHUB_PLUS_ORIGINAL_PUBLISHER_URLS",
+    "authoritativeTeacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
+    "authoritativePreparation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/preparation.html",
+    "officialPublicTeacherAndPrepReviewed": true,
+    "sourceStudentTaskPdfAccess": "PUBLISHER_LINK_EXISTS_FETCH_CACHE_MISS_NO_PDF_RENDER_INSPECTED",
+    "sourceGraphicPixelsAccess": "PUBLISHER_ASSET_FETCH_CACHE_MISS_ORIGINAL_IMAGE_PIXELS_NOT_INSPECTED",
+    "originalPublisherCoolDown": "EDUCATOR_LOGIN_GATED_FIRST_PARTY_EQUIVALENT_ALLOWED_NOT_VERBATIM",
+    "externalSourceGateReal": true,
+    "notes": "Original published teacher lesson and preparation are readable; original student-task PDF and original figure raster/vector pixels could not be retrieved with available source access. These cannot count as source-perfect. This records a genuine source-asset boundary, not Stage D tests as A-C defect."
   }
 }
