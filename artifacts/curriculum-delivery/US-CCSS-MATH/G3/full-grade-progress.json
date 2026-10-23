@@ -5620,7 +5620,16 @@
       ],
       "regressionStatus": "WRITTEN_NOT_RUN",
       "changedCount": 13
-    }
+    },
+    "mixedNumberParsing": "FIRST_PARTY_G3_RATIONAL_GRADER_ACCEPTS_MIXED_INCH_MEASUREMENTS_AS_EQUIVALENT_VALUES",
+    "acceptedExamples": [
+      "1 3/4 = 7/4",
+      "4 1/2 = 9/2",
+      "4 2/4 = 9/2"
+    ],
+    "fixedDenominatorRepresentationPreserved": true,
+    "testAuthoring": "EquivalentMixedInchLengthsMustReceiveNumericCredit / InvalidMixedAnswersCannotReceiveAutomaticCredit",
+    "testsExecuted": false
   },
   "stageBRichV2Draft": {
     "resource": "src/Edulytics.Data/Seeding/Grade3/g3-2021-provisional-rich-v2-corrections.json",

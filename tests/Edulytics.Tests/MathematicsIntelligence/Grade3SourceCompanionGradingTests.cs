@@ -201,4 +201,45 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.True(Grade3SourceCompanionCatalogue.Grade(q,"9/2").NumericCorrect);
     }
 
+    [Theory]
+    [InlineData("7/4", "1 3/4")]
+    [InlineData("9/2", "4 1/2")]
+    [InlineData("9/2", "4 2/4")]
+    [InlineData("22/4", "5 1/2")]
+    [InlineData("5/2", "2 1/2")]
+    public void EquivalentMixedInchLengthsMustReceiveNumericCredit(string fraction, string mixed)
+    {
+        var q=new Grade3OriginalQuestion { Prompt="State the measured length in inches.",
+            AnswerType="rational", Expected=fraction };
+        var result=Grade3SourceCompanionCatalogue.Grade(q,mixed);
+        Assert.True(result.NumericCorrect);
+        Assert.True(result.TeacherReview);
+    }
+
+    [Theory]
+    [InlineData("1 5/4")]
+    [InlineData("1 1/0")]
+    [InlineData("1 2/2")]
+    [InlineData("4 2/3 2/4")]
+    [InlineData("-1 1/2")]
+    [InlineData("10001 1/2")]
+    public void InvalidMixedAnswersCannotReceiveAutomaticCredit(string mixed)
+    {
+        var q=new Grade3OriginalQuestion { Prompt="Measure an inch length.",
+            AnswerType="rational", Expected="3/2" };
+        var result=Grade3SourceCompanionCatalogue.Grade(q,mixed);
+        Assert.False(result.NumericCorrect);
+        Assert.True(result.TeacherReview);
+    }
+
+    [Fact]
+    public void NamedFourthPartsStillRequireFourthDenominatorForMixedAnswers()
+    {
+        var q=new Grade3OriginalQuestion { Prompt="Write it in fourths.",
+            AnswerType="rational", Expected="7/4", RequiredDenominator=4 };
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(q,"1 3/4").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"1 1/2").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"1 6/8").NumericCorrect);
+    }
+
 }

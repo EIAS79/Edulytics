@@ -128,7 +128,24 @@ public static class Grade3SourceCompanionCatalogue
         numerator = 0;
         denominator = 0;
         if (text is null || text.Length > 24) return false;
-        var bits = text.Trim().Split('/');
+        // A legitimate length such as "1 3/4" is the same number as 7/4.
+        // Grade 3 measurement lessons explicitly use mixed inch lengths.
+        var parts = text.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (parts.Length == 2)
+        {
+            if (!int.TryParse(parts[0], NumberStyles.None, CultureInfo.InvariantCulture, out var whole) ||
+                whole is < 0 or > 10000 ||
+                !TryFraction(parts[1], out var fractionalNumerator, out var fractionalDenominator) ||
+                fractionalNumerator < 0 || fractionalNumerator >= fractionalDenominator)
+                return false;
+            var total = (long)whole * fractionalDenominator + fractionalNumerator;
+            if (total > 10000) return false;
+            numerator = (int)total;
+            denominator = fractionalDenominator;
+            return true;
+        }
+        if (parts.Length != 1) return false;
+        var bits = parts[0].Split('/');
         if (bits.Length == 1 &&
             int.TryParse(bits[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out var n))
         {
