@@ -522,6 +522,9 @@ public sealed class StudentPortalController : Controller
         if (!grade3AuthoredActivityAdoptionId.HasValue &&
             string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L01",
+                StringComparison.Ordinal) ||
+            string.Equals(lesson.LessonCode,
+                "PED:US-CCSS-MATH:G3:U01:L02",
                 StringComparison.Ordinal))
         {
             grade3AuthoredActivityAdoptionId = workspace.SelectedCurriculumAdoptionId;

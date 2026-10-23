@@ -117,6 +117,23 @@
         </section>
     }
 
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L02" &&
+         grade3AuthoredActivityAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 3 real-class-data graph companion">
+            <h2>Edulytics · real class survey and data problems</h2>
+            <p>Represent teacher-confirmed class survey counts in two graphs,
+                solve variable-data questions, and complete a separate original Cool-down.
+                Graphs, explanations and classroom activity evidence require teacher review.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade3Lesson2Activities" asp-action="Index"
+               asp-route-curriculumAdoptionId="@grade3AuthoredActivityAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open Grade 3 class-data activities and Cool-down
+            </a>
+        </section>
+    }
+
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G2:U01:L01" &&
          unifiedPracticeAdoptionId.HasValue)
     {

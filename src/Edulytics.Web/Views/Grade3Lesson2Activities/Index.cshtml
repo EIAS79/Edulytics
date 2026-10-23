@@ -1,0 +1,141 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3Lesson2PracticePage
+@using Edulytics.Core.Mathematics.Curriculum
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Grade 3 · Represent Data and Solve Problems";
+    var club = UsCcssG3OriginalCoolDownCandidates.Lesson2ClubGraph;
+}
+<style>
+.g3-survey{max-width:980px;margin:0 auto 30px;padding:20px;color:#1d3851}
+.g3-survey .panel{background:#fff;border:1px solid #d7e4ec;border-radius:16px;margin:17px 0;padding:22px}
+.g3-survey h1{font-size:1.85rem}.g3-survey h2{font-size:1.3rem}
+.g3-survey .note{color:#45627a;max-width:82ch}
+.g3-survey .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.g3-survey label{display:block;font-weight:700;margin:12px 0 5px}
+.g3-survey input,.g3-survey textarea,.g3-survey select{width:100%;max-width:640px;padding:10px;border-radius:8px;border:1px solid #7892a7;font:inherit}
+.g3-survey input:focus,.g3-survey textarea:focus,.g3-survey select:focus{outline:3px solid #a8dce9}
+.g3-survey .submit{padding:13px 20px;background:#087b88;color:#fff;border:0;border-radius:9px;font:inherit;font-weight:700;cursor:pointer}
+.g3-survey .bar-row{display:flex;align-items:center;gap:12px;margin:7px 0}
+.g3-survey .bar-label{width:90px;flex:none}
+.g3-survey .bar-length{height:24px;background:#18869a;min-width:0}
+.g3-survey .dots{letter-spacing:.25rem;overflow-wrap:anywhere}
+.g3-survey .good{border-left:4px solid #1a7854;padding-left:12px}
+.g3-survey .bad{border-left:4px solid #b33341;padding-left:12px}
+.g3-survey .review{border-left:4px solid #a87818;padding-left:12px}
+</style>
+<main class="g3-survey">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <header>
+        <p>EDULYTICS · ORIGINAL LEARNER COMPANION</p>
+        <h1>Grade 3 · Represent Data and Solve Problems</h1>
+        <p class="note">Learning goal: make picture and bar graphs from actual class data, then answer one- and two-step comparison questions. Class surveys, partner explanations and drawings need teacher review.</p>
+    </header>
+    <form asp-controller="Grade3Lesson2Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <section class="panel">
+            <h2>1. How many dots do you see?</h2>
+            <p>Try these three ORIGINAL dot groups; explain how you see their totals. Compare the second and third groups: eight to ten is two more. Think, discuss with a partner, and justify using an equation.</p>
+            <p aria-label="Three pairs, six dots" class="dots">●● &nbsp; ●● &nbsp; ●●</p>
+            <p aria-label="Four pairs, eight dots" class="dots">●● &nbsp; ●● &nbsp; ●● &nbsp; ●●</p>
+            <p aria-label="Five pairs, ten dots" class="dots">●● &nbsp; ●● &nbsp; ●● &nbsp; ●● &nbsp; ●●</p>
+            <label for="warmup">Describe your counting strategy and explain 8 to 10</label>
+            <textarea id="warmup" name="WarmupReasoning" rows="3" maxlength="2000">@Model.Answers.WarmupReasoning</textarea>
+        </section>
+        <section class="panel">
+            <h2>2. Collect and graph your class data</h2>
+            <p>Ask classmates how they travel home, one answer per classmate. Make a title, six categories and a one-mark-per-learner picture graph with your teacher. Use the SAME class numbers to make a bar graph. The student entry here is NOT evidence that a real survey occurred.</p>
+            <div class="two">
+                <div><label for="bike">Bike</label><input id="bike" name="Bike" type="number" min="0" max="20" value="@Model.Answers.Bike" required /></div>
+                <div><label for="walk">Walk</label><input id="walk" name="Walk" type="number" min="0" max="20" value="@Model.Answers.Walk" required /></div>
+                <div><label for="van">Van</label><input id="van" name="Van" type="number" min="0" max="20" value="@Model.Answers.Van" required /></div>
+                <div><label for="bus">Bus</label><input id="bus" name="Bus" type="number" min="0" max="20" value="@Model.Answers.Bus" required /></div>
+                <div><label for="car">Car</label><input id="car" name="Car" type="number" min="0" max="20" value="@Model.Answers.Car" required /></div>
+                <div><label for="train">Train</label><input id="train" name="Train" type="number" min="0" max="20" value="@Model.Answers.Train" required /></div>
+            </div>
+            <label for="graph-explain">What title, picture key and bar scale did you use? What do the graphs show?</label>
+            <textarea id="graph-explain" name="GraphExplanation" rows="3" maxlength="2000">@Model.Answers.GraphExplanation</textarea>
+            <p class="note">Numbers must be teacher-confirmed. The existing numeric checker supports 0–20 per category and comparisons with approved mathematical limits; larger classes require separate teacher-directed work.</p>
+        </section>
+        @if (Model.ValidatedShapeOnlySurvey is not null)
+        {
+            <section class="panel">
+                <h2>Graphs reconstructed from the numbers you entered</h2>
+                <p class="note">These are not independently verified real class survey results. Picture graph key: ● = 1 learner.</p>
+                @foreach (var item in Model.ValidatedShapeOnlySurvey)
+                {
+                    <div class="bar-row">
+                        <strong class="bar-label">@item.Category</strong>
+                        <span class="dots" aria-label="@item.Students learners chose @item.Category">@(string.Concat(Enumerable.Repeat("● ", item.Students)))</span>
+                    </div>
+                }
+                <h3>Bar graph using the same values</h3>
+                @foreach (var item in Model.ValidatedShapeOnlySurvey)
+                {
+                    <div class="bar-row">
+                        <strong class="bar-label">@item.Category</strong>
+                        <span class="bar-length" style="width:@(item.Students * 12)px" aria-hidden="true"></span>
+                        <span>@item.Students</span>
+                    </div>
+                }
+                <p class="note">All bars start from 0, at one shared scale: 12 equal-length pixels = 1 student. Teacher checks each graph's axis, scale and labels.</p>
+            </section>
+        }
+        <section class="panel">
+            <h2>3. Solve problems about YOUR class graph</h2>
+            <p>The truth of these statements depends on your entered values; the same statement could be true in one classroom and false in another.</p>
+            <div class="two">
+                <div><label for="walk-most">More students walk than any other single way.</label><select id="walk-most" name="WalkMost" required><option value="">Select</option><option value="true" selected="@(Model.Answers.WalkMost == "true")">True</option><option value="false" selected="@(Model.Answers.WalkMost == "false")">False</option></select></div>
+                <div><label for="bus-more">More students ride Bus than Car.</label><select id="bus-more" name="BusMoreThanCar" required><option value="">Select</option><option value="true" selected="@(Model.Answers.BusMoreThanCar == "true")">True</option><option value="false" selected="@(Model.Answers.BusMoreThanCar == "false")">False</option></select></div>
+                <div><label for="walk-less">Fewer students walk than ride a Bike.</label><select id="walk-less" name="WalkFewerThanBike" required><option value="">Select</option><option value="true" selected="@(Model.Answers.WalkFewerThanBike == "true")">True</option><option value="false" selected="@(Model.Answers.WalkFewerThanBike == "false")">False</option></select></div>
+                <div><label for="walkbike">More students walk or bike than ride in a Van.</label><select id="walkbike" name="WalkBikeMoreThanVan" required><option value="">Select</option><option value="true" selected="@(Model.Answers.WalkBikeMoreThanVan == "true")">True</option><option value="false" selected="@(Model.Answers.WalkBikeMoreThanVan == "false")">False</option></select></div>
+                <div><label for="bus-car">How far apart are the Bus and Car counts?</label><input id="bus-car" name="BusCarDifference" value="@Model.Answers.BusCarDifference" inputmode="numeric" maxlength="12" required /></div>
+                <div><label for="walkbike-van">How far apart are Walk + Bike and Van?</label><input id="walkbike-van" name="WalkBikeVanDifference" value="@Model.Answers.WalkBikeVanDifference" inputmode="numeric" maxlength="12" required /></div>
+            </div>
+            <label for="explain">Explain true/false decisions and show your equations</label><textarea id="explain" name="TrueFalseExplanation" rows="3" maxlength="2000">@Model.Answers.TrueFalseExplanation</textarea>
+            <p class="note">The two-step automated family requires Walk + Bike ≤20. If it exceeds 20, teacher selects another appropriate in-scope comparison.</p>
+        </section>
+        <section class="panel">
+            <h2>4. Original Edulytics Cool-down — fictional club survey</h2>
+            <p>These NEW questions are unrelated to the actual class poll and are not copied from the publisher's restricted Cool-down.</p>
+            @foreach (var item in club)
+            {
+                <div class="bar-row">
+                    <strong class="bar-label">@item.Category</strong>
+                    <span class="dots" aria-label="@item.Students learners for @item.Category">@(string.Concat(Enumerable.Repeat("● ", item.Students)))</span>
+                </div>
+            }
+            <p class="note">Key: ● = 1 learner.</p>
+            <div class="two">
+                <div><label for="cool-one">Games versus Reading: how many more chose Games?</label><input id="cool-one" name="CoolDownOne" inputmode="numeric" value="@Model.Answers.CoolDownOne" maxlength="12" required /></div>
+                <div><label for="cool-two">How many more chose Games or Puzzles together than Drawing or Reading together?</label><input id="cool-two" name="CoolDownTwo" inputmode="numeric" value="@Model.Answers.CoolDownTwo" maxlength="12" required /></div>
+            </div>
+            <label for="cool-explain">Draw a labelled bar graph for the fictional club and explain the two-step equation</label>
+            <textarea id="cool-explain" name="CoolDownGraphExplanation" rows="3" maxlength="2000">@Model.Answers.CoolDownGraphExplanation</textarea>
+        </section>
+        <section class="panel">
+            <h2>5. Mathematical community and optional centres</h2>
+            <p>Share a solution with a partner, explain where the numbers came from, and update the class Doing Math / Norms chart with one helpful idea.</p>
+            <label for="community">Your suggested revision to the classroom norms</label><textarea id="community" name="CommunityRevisions" rows="3" maxlength="2000">@Model.Answers.CommunityRevisions</textarea>
+            <p class="note">Teacher rubric: verify actual data collection; accurate title/key/axis; matching bar and picture counts; justifiable one- and two-step comparisons; reasoning and partner discussion. Supporting centres: make another graph or practise adding within 20.</p>
+        </section>
+        <button class="submit" type="submit">Check numeric and true/false responses</button>
+    </form>
+    @if (Model.Submitted)
+    {
+        <section class="panel" aria-live="polite">
+            <h2>Feedback — NOT an official mark</h2>
+            @foreach (var item in Model.Feedback)
+            {
+                <div class="@(item.MachineCorrect == true ? "good" : item.MachineCorrect == false ? "bad" : "review")">
+                    <h3>@item.Label</h3>
+                    <p>@(item.MachineCorrect == true ? "Mathematical check correct." : item.MachineCorrect == false ? "Recheck the answer." : "Teacher review required.") @item.Explanation</p>
+                    @if (item.TeacherReviewRequired) { <p class="note">Teacher review remains necessary; a matching choice or numeric value does not certify an oral explanation.</p> }
+                </div>
+            }
+            <p class="note">No official score, lesson completion certification, or classroom survey evidence is saved.</p>
+        </section>
+    }
+    <p class="note">Source alignment: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-2/lesson.html" rel="noopener noreferrer">Illustrative Mathematics K–5, Grade 3 Unit 1 Lesson 2, 2021</a> (<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer">CC BY 4.0</a>). Edulytics drew its own illustrations and wrote its own assessment; original publisher artwork and teacher-only items are not copied.</p>
+</main>
