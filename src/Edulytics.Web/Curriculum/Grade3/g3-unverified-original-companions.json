@@ -2122,11 +2122,13 @@
         "sourceGoal": "Let’s compare the size of shapes.",
         "sourceLearningGoals": "Describe the relative size of plane figures in their own language.",
         "teachingSteps": [
-          "Identify the region covered, not only a side length.",
-          "Compare using equal-area parts, matching shapes or an overlay.",
-          "Explain how you know which covers more or if they cover the same area."
+          "Start with the three original dot figures: the first uninspected figure, four rows of three and four rows of five. Accept multiple correct row/column counting explanations.",
+          "Compare the published low-wide and tall-thin triangles, two ovals, hexagon-versus-triangle and two rectangles using actual images and explanations, not height alone.",
+          "Use paper cutouts, overlays or same-sized reference pieces to compare the 2D region covered.",
+          "With pattern blocks, compare the source hexagon and bent octagon outline, then tiled outlines A (pentagon), B (parallelogram) and C (rectangle).",
+          "Conclude that area is how much two-dimensional space a region covers; review any conflict between shape length and covered space."
         ],
-        "caution": "A larger perimeter, width or visual length alone does not prove a larger area.",
+        "caution": "The available original figures (triangle pairs, rectangles and pattern-block outlines) have NOT been pixel-inspected or compared against student task PDFs. Scalar measurements or guesses from alt text do not prove greater area. All original shape comparisons remain teacher-reviewed.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -2140,7 +2142,79 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L01-WU-ORIGINAL-01",
+          "sourceActivity": "Warm-up: How Many Do You See Arrays",
+          "prompt": "Look at the first original dot figure. Count and explain different groupings; its exact arrangement must be inspected with the teacher.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L01-WU-02",
+          "sourceActivity": "Warm-up: How Many Do You See Arrays",
+          "prompt": "In the teacher's source figure with FOUR rows of THREE dots, how many dots are shown? Explain rows and columns.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U02-L01-WU-03",
+          "sourceActivity": "Warm-up: How Many Do You See Arrays",
+          "prompt": "In the teacher's source figure with FOUR rows of FIVE dots, how many dots are shown? Explain groups.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U02-L01-A1-TRI",
+          "sourceActivity": "Activity 1: Compare Shapes",
+          "prompt": "Original pair of wide-low triangle versus tall-thin triangle: choose which covers MORE space and explain how to verify using cutouts/overlap. No numeric grade without source artwork.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L01-A1-OVAL",
+          "sourceActivity": "Activity 1: Compare Shapes",
+          "prompt": "Use the original small and large oval images to decide which covers more 2D space, and explain.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L01-A1-HEX",
+          "sourceActivity": "Activity 1: Compare Shapes",
+          "prompt": "Use the original hexagon and triangle pair, and justify which occupies more surface. Explain why comparing one side length is insufficient.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L01-A1-RECT",
+          "sourceActivity": "Activity 1: Compare Shapes",
+          "prompt": "Compare the two differently proportioned original rectangles by cut-and-cover or fitting: identify which region covers more space, with actual source images.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L01-A2-PAIR",
+          "sourceActivity": "Activity 2: Pattern Blocks to Compare Shapes",
+          "prompt": "Tile the original hexagon and bent 8-sided outline with the same pattern-block pieces. Explain whether their covered regions have equal area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L01-A2-ABC",
+          "sourceActivity": "Activity 2: Pattern Blocks to Compare Shapes",
+          "prompt": "Use teacher-supplied source outlines A, B and C, and tile or overlay with appropriate pattern blocks. Explain which covers most space and why B/C similar lengths do not prove equal area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L01-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Summarize how to compare area (covered plane region) as distinct from perimeter, height, width or superficial resemblance; describe one piece of original drawing evidence.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 23,

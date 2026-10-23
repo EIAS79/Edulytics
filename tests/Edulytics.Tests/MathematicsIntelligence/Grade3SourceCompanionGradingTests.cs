@@ -319,6 +319,24 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void SecondUnitAreaIntroductionRequiresOriginalGeometryAndTeacherReview()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U02:L01",out var lesson));
+        Assert.Equal(10,lesson!.SourceSubtasks.Count);
+        Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.AnswerType=="integer"));
+        Assert.Equal(8,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(
+            lesson.SourceSubtasks[1],"12").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(
+            lesson.SourceSubtasks[2],"20").NumericCorrect);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(
+            lesson.SourceSubtasks[3],"1").NumericCorrect);
+        Assert.Equal("teacher",lesson.IndependentPractice!.AnswerType);
+        Assert.False(lesson.ReadyForStageD);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);
