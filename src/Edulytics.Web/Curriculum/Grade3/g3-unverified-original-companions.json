@@ -11,9 +11,9 @@
   "status": "FIRST_PASS_ORIGINAL_COMPANIONS_SOURCE_ITEM_REVIEW_REQUIRED",
   "total": {
     "lessons": 135,
-    "scoredPractice": 116,
-    "scoredCoolDown": 120,
-    "teacherOnlyPractice": 19,
+    "scoredPractice": 114,
+    "scoredCoolDown": 118,
+    "teacherOnlyPractice": 21,
     "families": [
       "addition-within-1000",
       "analog-time-nearest-minute",
@@ -1313,17 +1313,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "design-project",
       "independentPractice": {
-        "prompt": "Plan your own game-night seating display, stating assumptions and showing an appropriate scaled graph.",
+        "prompt": "Invent another valid game-night seating arrangement and explain how many guests can play each game.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Create a different seating layout for a game night and justify the scale and how groups fit.",
+        "prompt": "With 16 tables that each seat 4 around the sides before joining, sketch and explain the maximum seating for your chosen table layout; do not assume joined sides are usable.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Game Night with your teacher. Show the representation and explain how it meets the goal: Let’s plan a game night.",
-      "teacherReviewNote": "Optional multi-step project; no numeric automatic grade.",
+      "teacherReviewNote": "This optional design task is not uniquely numeric. Teacher must check physical seating constraints and bar chart for each game.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1338,7 +1338,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s plan a game night.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Make a classroom game-night seating plan using 16 square tables for games needing 2, 4, 5 and 10 players; justify the arrangement and a scaled graph.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-1/lesson-21/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 22,
@@ -1407,17 +1418,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "area-comparison",
       "independentPractice": {
-        "prompt": "Compare two equal-grid shapes by how much plane they cover. Explain why a longer-looking shape does not necessarily have greater area.",
+        "prompt": "Draw two different-looking shapes and explain how you would determine which covers a larger area.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Draw two shapes with different outlines and equal areas using unit squares; explain how you know.",
+        "prompt": "Design two unequal-looking shapes using pattern blocks and justify which covers more space.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Compare Shapes with your teacher. Show the representation and explain how it meets the goal: Let’s compare the size of shapes.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source original triangle drawings and pattern-block handouts require visual or physical verification.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1432,7 +1443,18 @@
         ],
         "caution": "A larger perimeter, width or visual length alone does not prove a larger area.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Compare the source triangles and shape pairs by area rather than apparent height. Explain a method to compare covered space.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-1/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 23,
@@ -1502,17 +1524,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "unit-squares-area",
       "independentPractice": {
-        "prompt": "Make a rectangle with 4 rows and 5 unit squares in each row. How many square units cover it without gaps or overlaps?",
+        "prompt": "A region can be covered by three rows of four equal square tiles without gaps or overlaps. What is its area in square units?",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "12"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle has 5 rows and 4 square tiles per row. Find its area in square units.",
+        "prompt": "A rectangle contains 5 rows of 4 identical square tiles. How many square units does it cover?",
         "answerType": "integer",
         "expected": "20"
       },
       "openTeacherTask": "Work through the original lesson's activity Create and Compare with your teacher. Show the representation and explain how it meets the goal: Let’s use square tiles to measure area.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Student must tile or draw correctly. Original six shapes need their actual illustrations to verify their areas.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1527,7 +1549,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use square tiles to measure area.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source asks students to cover figures with square tiles. Explain how to measure the area without gaps or overlaps.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-2/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 24,
@@ -1604,17 +1637,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "unit-squares-area",
       "independentPractice": {
-        "prompt": "Make a rectangle with 5 rows and 3 unit squares in each row. How many square units cover it without gaps or overlaps?",
+        "prompt": "A rectangle is tiled with 4 rows of 6 unit squares. What is the area?",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "24"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle has 3 rows and 5 square tiles per row. Find its area in square units.",
+        "prompt": "Make a rectangle containing two rows of seven equal unit squares. What is its area?",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "14"
       },
       "openTeacherTask": "Work through the original lesson's activity Time to Tile with your teacher. Show the representation and explain how it meets the goal: Let’s count square tiles.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Check the rectangle shape, same-sized tiles and no gaps/overlap, as well as source card-sort.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1629,7 +1662,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s count square tiles.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source asks learners to draw a rectangle covering 8 square units. How many equal square tiles must cover it?",
+        "answerType": "integer",
+        "expected": "8"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-3/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 25,
@@ -1705,17 +1749,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
-        "prompt": "A rectangle is 2 units long and 4 units wide. What is its area in square units?",
+        "prompt": "If a rectangular tiled area has 5 rows of 4 square units, find its area.",
         "answerType": "integer",
-        "expected": "8"
+        "expected": "20"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find the area of a rectangle with side lengths 4 units and 6 units.",
+        "prompt": "Draw a rectangle with 6 rows of 3 equal square tiles. What is its area?",
         "answerType": "integer",
-        "expected": "24"
+        "expected": "18"
       },
       "openTeacherTask": "Work through the original lesson's activity What Did I Create? with your teacher. Show the representation and explain how it meets the goal: Let’s find the area of more rectangles.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Drawing a rectangle based on your partner's verbal instructions is a human-observed task.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1730,7 +1774,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the area of more rectangles.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source has a rectangular array of 4 rows with 5 dots per row. How many are there?",
+        "answerType": "integer",
+        "expected": "20"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-4/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 26,
@@ -1794,17 +1849,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
-        "prompt": "A rectangle is 3 units long and 5 units wide. What is its area in square units?",
+        "prompt": "A rectangle has 7 rows of 4 unit squares. What is its area?",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "28"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find the area of a rectangle with side lengths 5 units and 2 units.",
+        "prompt": "Find the area of a rectangle represented by 6 × 5 unit squares.",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "30"
       },
       "openTeacherTask": "Work through the original lesson's activity Match Expressions and Areas with your teacher. Show the representation and explain how it meets the goal: Let’s connect multiplication expressions to area.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Multiplication factors correspond to rows and columns of unit squares; match to original wall examples.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1819,7 +1874,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s connect multiplication expressions to area.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source, one rectangle is represented by 3 × 4. What area in square units does this represent?",
+        "answerType": "integer",
+        "expected": "12"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-5/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 27,
@@ -1883,17 +1949,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "square-units",
       "independentPractice": {
-        "prompt": "A rectangle measures 4 cm by 3 cm. How many square centimeters cover it?",
+        "prompt": "A rectangle on a centimeter grid is 7 by 3 squares. What is its area in cm²?",
         "answerType": "integer",
-        "expected": "12"
+        "expected": "21"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangular surface measures 3 ft by 3 ft. How many square feet cover it?",
+        "prompt": "A rectangle covers 4 by 6 inch-square units. How many square inches is its area?",
         "answerType": "integer",
-        "expected": "9"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Same Rectangle, Different Units with your teacher. Show the representation and explain how it meets the goal: Let’s learn about different units we can use to measure area.",
-      "teacherReviewNote": "Different square units cannot be treated as interchangeable, compare only within the same unit.",
+      "teacherReviewNote": "Square inches and square centimetres are different-sized units. Teacher compares source two grid types and estimates.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1908,7 +1974,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about different units we can use to measure area.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source, one grid task asks students to draw 2 × 5 squares. How many equal unit squares are needed?",
+        "answerType": "integer",
+        "expected": "10"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-6/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 28,
@@ -1977,17 +2054,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "square-units",
       "independentPractice": {
-        "prompt": "A rectangle measures 5 cm by 4 cm. How many square centimeters cover it?",
-        "answerType": "integer",
-        "expected": "20"
+        "prompt": "Which square-area units should measure a book cover and a classroom floor? Explain both choices.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangular surface measures 4 ft by 4 ft. How many square feet cover it?",
-        "answerType": "integer",
-        "expected": "16"
+        "prompt": "Find one real object appropriate for cm² and one appropriate for m², and justify your choices.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Square Feet and Square Meters with your teacher. Show the representation and explain how it meets the goal: Let’s learn about larger square units.",
-      "teacherReviewNote": "Different square units cannot be treated as interchangeable, compare only within the same unit.",
+      "teacherReviewNote": "This source lesson is about scale appropriateness, not computing rectangle products. Avoid a numerically graded pass.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2002,7 +2079,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about larger square units.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Select sensible square-centimetre, square-inch, square-foot or square-metre units for the field, classroom, book cover and phone screen; explain choices.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-7/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 29,
@@ -2069,17 +2157,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
-        "prompt": "A rectangle is 2 units long and 5 units wide. What is its area in square units?",
+        "prompt": "A tiled surface has 9 rows with 10 tiles in each row. How many unit tiles cover it?",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "90"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find the area of a rectangle with side lengths 5 units and 5 units.",
+        "prompt": "A rectangular floor is 7 metres long and 4 metres wide. Find its area in square metres.",
         "answerType": "integer",
-        "expected": "25"
+        "expected": "28"
       },
       "openTeacherTask": "Work through the original lesson's activity Partially Tiled with your teacher. Show the representation and explain how it meets the goal: Let’s solve area problems without a grid.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Full figure geometry is necessary for source task, and publisher/photograph rights require asset review.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2094,7 +2182,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve area problems without a grid.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Determine the area of the source partly tiled Portuguese artwork rectangle from its actual image; do not infer its missing side length from alt text alone.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-8/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 30,
@@ -2159,17 +2258,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
-        "prompt": "A rectangle is 3 units long and 3 units wide. What is its area in square units?",
+        "prompt": "A measured rectangle is 7 cm by 4 cm. Find the area in cm².",
         "answerType": "integer",
-        "expected": "9"
+        "expected": "28"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find the area of a rectangle with side lengths 3 units and 6 units.",
+        "prompt": "A rectangular space is 5 ft by 6 ft. Find its area in square feet.",
         "answerType": "integer",
-        "expected": "18"
+        "expected": "30"
       },
       "openTeacherTask": "Work through the original lesson's activity Measure to Find Area with your teacher. Show the representation and explain how it meets the goal: Let’s measure the sides of rectangles and find the area.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Ruler use and zero alignment must be checked visually; creating assigned square-foot areas requires a physical task.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2184,7 +2283,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s measure the sides of rectangles and find the area.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source drawing has 6 equal unit intervals by 3 equal unit intervals. What rectangle area does that show?",
+        "answerType": "integer",
+        "expected": "18"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-9/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 31,
@@ -2257,17 +2367,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
-        "prompt": "A rectangle is 4 units long and 4 units wide. What is its area in square units?",
+        "prompt": "A wall has 18 square metres. Each can of paint covers 10 square metres. What is the minimum number of cans?",
         "answerType": "integer",
-        "expected": "16"
+        "expected": "2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find the area of a rectangle with side lengths 4 units and 2 units.",
+        "prompt": "A planter must be 3 feet wide and at least 24 square feet in area. What minimum whole-foot length can meet that?",
         "answerType": "integer",
         "expected": "8"
       },
       "openTeacherTask": "Work through the original lesson's activity Paint a Wall with your teacher. Show the representation and explain how it meets the goal: Let’s solve area problems.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "The source has 3, 10 and 40 m² container coverages and a 20–30 ft² garden with fixed side 3. Teacher reviews possible choices and physical constraints.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2282,7 +2392,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve area problems.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source Noah paints a wall 6 metres wide and 3 metres high. How many square metres?",
+        "answerType": "integer",
+        "expected": "18"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-10/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 32,
@@ -2351,17 +2472,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "area-multiplication-table",
       "independentPractice": {
-        "prompt": "Using a rectangle of 5 rows and 5 columns, what multiplication-table product gives its area?",
+        "prompt": "A rectangle formed in a multiplication table has 4 rows and 6 columns. What product does it show?",
         "answerType": "integer",
-        "expected": "25"
+        "expected": "24"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle is 3 by 5 unit squares. Find the corresponding product.",
+        "prompt": "Draw a table rectangle representing 8 × 3. What is the product?",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Area and the Multiplication Table with your teacher. Show the representation and explain how it meets the goal: Let’s explore area and the multiplication table. Required Preparation CCSS Standards Building On 3.OA.B.5 Addressing 3.MD.C.7.b 3.OA.B.5 3.OA.D.9 Building Towards 3.MD.C.7.d Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson S",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Teacher must check rows and columns really form a rectangle in the multiplication table; many factor pairs are valid.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2376,7 +2497,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore area and the multiplication table. Required Preparation CCSS Standards Building On 3.OA.B.5 Addressing 3.MD.C.7.b 3.OA.B.5 3.OA.D.9 Building Towards 3.MD.C.7.d Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson S",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source asks you to create a multiplication-table rectangle with area 24 square units. What is its area?",
+        "answerType": "integer",
+        "expected": "24"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-11/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 33,
@@ -2437,17 +2569,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "composite-area",
       "independentPractice": {
-        "prompt": "A figure is made of two nonoverlapping rectangles of areas 2×3 and 4×3 square units. What is its total area?",
+        "prompt": "Two non-overlapping areas in a garden are 5×6 and 2×6 square feet. What is the whole garden area?",
         "answerType": "integer",
-        "expected": "18"
+        "expected": "42"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A composite floor has separate rectangles 3×4 and 2×4 metres. Find the area in square metres.",
+        "prompt": "Two non-overlapping rectangular areas are 3×7 and 4×7. What is the total?",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "49"
       },
       "openTeacherTask": "Work through the original lesson's activity Rectangles in Rectangles with your teacher. Show the representation and explain how it meets the goal: Let's find the area of figures made up of rectangles. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.MD.C.7.d Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 m",
-      "teacherReviewNote": "Teacher verifies no overlap, sensible decomposition and missing side if appropriate.",
+      "teacherReviewNote": "Source figure needs visual verification for shading; teacher checks non-overlapping decomposition and units.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2462,7 +2594,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let's find the area of figures made up of rectangles. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.MD.C.7.d Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 m",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source garden figure is a 7 by 6 unit grid with a 5 by 6 part shaded. What is the total area?",
+        "answerType": "integer",
+        "expected": "42"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-12/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 34,
@@ -2525,17 +2668,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "composite-area",
       "independentPractice": {
-        "prompt": "A figure is made of two nonoverlapping rectangles of areas 3×4 and 5×4 square units. What is its total area?",
+        "prompt": "A patio is formed of 8×3 and 4×2 nonoverlapping square-foot rectangles. How many 1-ft² pavers are needed?",
         "answerType": "integer",
         "expected": "32"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A composite floor has separate rectangles 4×5 and 3×5 metres. Find the area in square metres.",
+        "prompt": "Find the area of separate 5×4 and 3×4 rectangles in square units.",
         "answerType": "integer",
-        "expected": "35"
+        "expected": "32"
       },
       "openTeacherTask": "Work through the original lesson's activity Bye-Bye Squares with your teacher. Show the representation and explain how it meets the goal: Let’s find the area of figures. Required Preparation CCSS Standards Addressing 3.MD.C.7.d 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions This lesson i",
-      "teacherReviewNote": "Teacher verifies no overlap, sensible decomposition and missing side if appropriate.",
+      "teacherReviewNote": "Must validate that the figure is decomposed into the specified non-overlapping rectangles before accepting an area.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2550,7 +2693,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the area of figures. Required Preparation CCSS Standards Addressing 3.MD.C.7.d 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions This lesson i",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "The source T-shaped diagram may be partitioned into an 8×3 rectangle and a 4×2 rectangle. What total area results?",
+        "answerType": "integer",
+        "expected": "32"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-13/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 35,
@@ -2619,17 +2773,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "composite-area",
       "independentPractice": {
-        "prompt": "A figure is made of two nonoverlapping rectangles of areas 4×5 and 6×5 square units. What is its total area?",
+        "prompt": "A right-angle composite has total height 12 m, and one upper vertical segment measures 6 m. Find the remaining vertical length.",
         "answerType": "integer",
-        "expected": "50"
+        "expected": "6"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A composite floor has separate rectangles 5×6 and 4×6 metres. Find the area in square metres.",
+        "prompt": "The total top length is 10 cm and a horizontal portion is 4 cm. Find the remaining horizontal length.",
         "answerType": "integer",
-        "expected": "54"
+        "expected": "6"
       },
       "openTeacherTask": "Work through the original lesson's activity The Mystery Side with your teacher. Show the representation and explain how it meets the goal: Let’s find the area of figures with missing side lengths. Required Preparation CCSS Standards Addressing 3.MD.C.7.d Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questio",
-      "teacherReviewNote": "Teacher verifies no overlap, sensible decomposition and missing side if appropriate.",
+      "teacherReviewNote": "The source shape graphics have multiple versions with inconsistent unit labels; verify the actual specific figure before deriving an exact answer.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2644,7 +2798,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the area of figures with missing side lengths. Required Preparation CCSS Standards Addressing 3.MD.C.7.d Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questio",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Use the source six-sided right-angle figure with missing side lengths. Explain which horizontal and vertical sums determine the missing sides.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-14/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 36,
@@ -2696,17 +2861,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "composite-area",
       "independentPractice": {
-        "prompt": "A figure is made of two nonoverlapping rectangles of areas 5×3 and 2×3 square units. What is its total area?",
-        "answerType": "integer",
-        "expected": "21"
+        "prompt": "Create a scaled bedroom floor plan with desk and bed; show room area minus furniture area and justify the arrangement.",
+        "answerType": "teacher",
+        "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A composite floor has separate rectangles 3×2 and 5×2 metres. Find the area in square metres.",
-        "answerType": "integer",
-        "expected": "16"
+        "prompt": "Create a new furniture plan and explain the uncovered floor area using labelled measurements.",
+        "answerType": "teacher",
+        "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Floor Plans with your teacher. Show the representation and explain how it meets the goal: Let’s fit furniture into a room.",
-      "teacherReviewNote": "Teacher verifies no overlap, sensible decomposition and missing side if appropriate.",
+      "teacherReviewNote": "Optional project. Room diagram dimensions not established from public text; no numeric auto-pass or invented measurements.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2721,7 +2886,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s fit furniture into a room.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Arrange the source room, bed and desk layouts and calculate the uncovered floor area only after measuring the actual labelled furniture diagram.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-2/lesson-15/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 37,
