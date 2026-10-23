@@ -113,7 +113,10 @@
     ],
     "synthesisAccurateToSource": true,
     "synthesisOldMistake": "Generic one-more change did not name source Car category",
-    "synthesisCorrection": "Specified both original balloon +2 and car +1 situations, with parity-aware half marks."
+    "synthesisCorrection": "Specified both original balloon +2 and car +1 situations, with parity-aware half marks.",
+    "richV2ProposedSourceSpecificCorrection": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "effectiveLearnerBodyCompared": false,
+    "currentContentStatus": "SOURCE_CORRECTED_AUTHORING_NOT_RUNTIME_VERIFIED"
   },
   "stageC": {
     "status": "NUMERIC_CANDIDATE_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -131,6 +134,7 @@
   },
   "originalCoolDownPolicy": "FIRST_PARTY_EDULYTICS_EQUIVALENT_AUTHORIZED",
   "openGaps": [
+    "First-party scaled pictograph/half-mark Rich V2 correction authored from 2021 publisher lesson, but original Student Task PDF and dot/blank-grid image pixels cannot be verified from accessible links; effective published Rich V2 still unverified.",
     "Original dot flash images and student blank grid not pixel-verified; read-only 2021 teacher/student source confirms task text only.",
     "Student survey provenance, source collection of classmates' preferences and teacher-observed partner/Math Community work cannot be certified from entered counts.",
     "Published Rich V2 body and linked student Razor execution not inspected/compiled; Stage D explicitly deferred.",
@@ -140,5 +144,20 @@
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
   "academicApproval": "NOT_CLAIMED",
   "merged": false,
-  "deployed": false
+  "deployed": false,
+  "source2021GitHubOnlyExecution": {
+    "date": "2026-10-23",
+    "officialTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-4/lesson.html",
+    "officialPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-4/preparation.html",
+    "publicTextSourceReviewed": true,
+    "sourceStudentTaskPdfAccess": "OFFICIAL_LINK_PRESENT_FETCH_CACHE_MISS",
+    "originalDotImagesAccess": "OFFICIAL_IMAGE_LINK_PRESENT_FETCH_CACHE_MISS",
+    "publisherCoolDown": "ORIGINAL_TEACHER_LOGIN_ONLY_INDEPENDENT_EQUIVALENT_ALLOWED",
+    "authoredRichV2File": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "authoringFix": "Explicit 2021 distinction between preference-survey and actual-travel survey; six original Car/Train/Boat/Balloon/Plane/Helicopter categories; key-2 with odd half marks; correct Balloon plus-two / Car plus-one parity-dependent synthesizing; teacher-led data attestation.",
+    "sourceRightsAndStudentTaskParityCertified": false,
+    "policy": "NO_OUR_CS_GITHUB_AND_OFFICIAL_ORIGIN_ONLY",
+    "note": "No original PDF or publisher image pixels inspected, no final publisher assessment copied, and no effective learner runtime executed."
+  },
+  "nextAction": "Return to L04 after publisher source asset access: inspect original Student Task Statements PDF and actual dot/blank-grid pixels, verify every part against effective Rich V2/teacher-rubric and scale-two Practice. Remain A_C_EXPLICIT_GAP. Tests only WRITTEN."
 }
