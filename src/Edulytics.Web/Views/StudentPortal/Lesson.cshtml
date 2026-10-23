@@ -20,6 +20,10 @@
         exactPracticeAdoptionId ??
         gameAdoptionId ??
         practiceAdoptionId;
+    var grade3AuthoredActivityAdoptionId =
+        ViewData["Grade3AuthoredActivityAdoptionId"] is Guid g3AdoptionId
+            ? g3AdoptionId
+            : (Guid?)null;
     ViewData["UseYouTubeStudioV2"] = true;
 
     var sections = new[]
@@ -97,7 +101,7 @@
     }
 
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L01" &&
-         unifiedPracticeAdoptionId.HasValue)
+         grade3AuthoredActivityAdoptionId.HasValue)
     {
         <section class="student-card" aria-label="Grade 3 source-aligned data activities">
             <h2>Edulytics · picture and bar graphs</h2>
@@ -106,7 +110,7 @@
                 Oral and written reasoning is teacher reviewed.</p>
             <a class="school-button school-button-primary"
                asp-controller="Grade3Lesson1Activities" asp-action="Index"
-               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-curriculumAdoptionId="@grade3AuthoredActivityAdoptionId.Value"
                asp-route-lessonId="@Model.Id">
                 Open Grade 3 graph activities and Cool-down
             </a>
