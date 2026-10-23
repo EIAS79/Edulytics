@@ -28,7 +28,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[0], KeyConcepts[1..3]",
+      "firstPartyCompanionMapping": "Lesson goal/header",
+      "authoringEvidenceType": "REVIEWED_SOURCE_GOAL_DIGITAL_AND_TEACHER",
+      "remainingVerifiedSourceGate": "Deployed body not checked; source-purpose equivalence not independently signed off",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-02",
@@ -44,7 +51,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[1] and [4], SummaryPoints[4]",
+      "firstPartyCompanionMapping": "Math Community Doing Math / Norms T-chart (four teacher/student cells)",
+      "authoringEvidenceType": "TEACHER_LED_DRAFT",
+      "remainingVerifiedSourceGate": "Live Math Community evidence and source T-chart image pixels not checked",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-03",
@@ -60,7 +74,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[1], WorkedExamples[0]",
+      "firstPartyCompanionMapping": "Notice-and-Wonder unnamed six-column view and WarmupObservations",
+      "authoringEvidenceType": "OPEN_TEACHER_REVIEW_WITH_FIRST_PARTY_GRAPH",
+      "remainingVerifiedSourceGate": "2021 unnamed column artwork pixels and deployed graph view not checked",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-04",
@@ -76,7 +97,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[2], WorkedExamples[1]",
+      "firstPartyCompanionMapping": "Picture Time titled-but-unnamed six-column view and PlausibleCategories",
+      "authoringEvidenceType": "OPEN_TEACHER_REVIEW_WITH_FIRST_PARTY_GRAPH",
+      "remainingVerifiedSourceGate": "Original graph artwork pixels and deployed learner view not checked",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-05",
@@ -92,7 +120,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[3], KeyConcepts[1]",
+      "firstPartyCompanionMapping": "Labelled picture graph six categories, unit symbol key",
+      "authoringEvidenceType": "FIRST_PARTY_CODE_AUTHORED",
+      "remainingVerifiedSourceGate": "Original labeled picture figure pixel-level representation not inspected",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-06",
@@ -108,9 +143,16 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified.",
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
       "firstPartyHorizontalAxisLabel": "Ways to get home",
-      "firstPartyXAxisLabelAuthoredNotRuntimeVerified": true
+      "firstPartyXAxisLabelAuthoredNotRuntimeVerified": true,
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[3], KeyConcepts[2], WorkedExamples[2]",
+      "firstPartyCompanionMapping": "Bar graph 0..8 by one with x-axis Ways to get home",
+      "authoringEvidenceType": "FIRST_PARTY_CODE_AUTHORED",
+      "remainingVerifiedSourceGate": "Original source bar figure pixel-level layout not inspected",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-07",
@@ -126,7 +168,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[3], WorkedExamples[2], CommonMistakes[2]",
+      "firstPartyCompanionMapping": "GraphComparison, GraphLearnings, TwoGraphQuestions separate fields; source 3 parts",
+      "authoringEvidenceType": "THREE_OPEN_TEACHER_RUBRIC_TASKS",
+      "remainingVerifiedSourceGate": "Review evidence for five original source subparts and rendered learner interaction not independently checked",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-08",
@@ -142,7 +191,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[4], SummaryPoints[4]",
+      "firstPartyCompanionMapping": "SynthesisReflection and MathCommunityReflection, teacher rubric",
+      "authoringEvidenceType": "TEACHER_LED_DRAFT",
+      "remainingVerifiedSourceGate": "Teacher observation and displayed learner lesson synthesis not established",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-09",
@@ -158,7 +214,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Publisher Cool-down is gated; authorized independent alternative exists, but is not publisher task parity."
+      "blocker": "Publisher Cool-down is gated; authorized independent alternative exists, but is not publisher task parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "ExplanationParagraphs[4], SummaryPoints[4]",
+      "firstPartyCompanionMapping": "Separate five-minute first-party library Cool-down; numeric grading + teacher question",
+      "authoringEvidenceType": "INDEPENDENT_EQUIVALENT_NOT_PUBLISHER_ORIGINAL",
+      "remainingVerifiedSourceGate": "Publisher original Cool-down educator-gated; no task identity parity claimed",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-10",
@@ -174,7 +237,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Razor first-party authoring exists but exact source figure/material and effective Rich V2 learner runtime have not been fully verified."
+      "blocker": "Original 2021 source pixel/PDF and/or effective learner Rich V2 runtime not fully verified. New source-specific Rich V2 code mapped, but authored presence alone is not verified full source-to-product parity.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "SummaryPoints[4]",
+      "firstPartyCompanionMapping": "Optional Sort and Display Stage 2, Capture Squares Stage 3 described teacher-led",
+      "authoringEvidenceType": "OPTIONAL_TEACHER_LED_DRAFT",
+      "remainingVerifiedSourceGate": "Hands-on center implementations/teacher source evidence not independently verified",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     },
     {
       "id": "G3-U01-L01-11",
@@ -190,7 +260,14 @@
       "learnerRuntimeVerified": false,
       "teacherActivityEvidenceVerified": false,
       "fullOneToOneSemanticParityVerified": false,
-      "blocker": "Publisher graphic reuse rights not individually cleared; first-party drawings used instead."
+      "blocker": "Publisher graphic reuse rights not individually cleared; first-party drawings used instead.",
+      "richV2SourceSpecificSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+      "richV2Section": "No publisher visuals reused in V2; first-party graph semantics given in paragraphs",
+      "firstPartyCompanionMapping": "CSS-drawn 6-column pictographs, bars, independent T-chart",
+      "authoringEvidenceType": "FIRST_PARTY_DRAWINGS_NOT_ORIGINAL_IMAGE_PARITY",
+      "remainingVerifiedSourceGate": "Publisher image pixels and third-party asset rights still unresolved",
+      "richV2AuthoredTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+      "richV2AuthoredNotExecuted": true
     }
   ],
   "testing": {
