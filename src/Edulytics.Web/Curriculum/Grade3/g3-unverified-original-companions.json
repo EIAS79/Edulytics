@@ -11,9 +11,9 @@
   "status": "FIRST_PASS_ORIGINAL_COMPANIONS_SOURCE_ITEM_REVIEW_REQUIRED",
   "total": {
     "lessons": 135,
-    "scoredPractice": 111,
+    "scoredPractice": 112,
     "scoredCoolDown": 115,
-    "teacherOnlyPractice": 24,
+    "teacherOnlyPractice": 23,
     "families": [
       "addition-within-1000",
       "analog-time-nearest-minute",
@@ -10739,17 +10739,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "shape-attributes",
       "independentPractice": {
-        "prompt": "Construct or draw two quadrilaterals and identify which has opposite equal sides and four right angles.",
+        "prompt": "Draw a triangle and a quadrilateral and describe two observable attributes of each.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Draw a shape meeting a chosen set of attributes, rotate it and explain why its type does not change.",
+        "prompt": "Design a four-shape sort using side count and another defining feature, then explain the sorting rule.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Shapes with your teacher. Show the representation and explain how it meets the goal: Let’s sort shapes into groups.",
-      "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+      "teacherReviewNote": "Cannot classify particular source shapes without original figures; teacher reviews shape-sort cards and verbal explanation.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10764,7 +10764,18 @@
         ],
         "caution": "Shape type depends on defining properties, not orientation or apparent size.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Sort the original teacher-provided shapes by shared attributes, and explain a different valid grouping that a partner can guess.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-1/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 115,
@@ -10825,17 +10836,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "shape-attributes",
       "independentPractice": {
-        "prompt": "Construct or draw two quadrilaterals and identify which has opposite equal sides and four right angles.",
+        "prompt": "Draw two triangles of different types and explain which side or angle attributes distinguish them.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Draw a shape meeting a chosen set of attributes, rotate it and explain why its type does not change.",
+        "prompt": "Draw a quadrilateral and a triangle and explain how their defining attributes differ.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Triangles with your teacher. Show the representation and explain how it meets the goal: Let’s sort shapes into more specific categories.",
-      "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+      "teacherReviewNote": "Source demands source card images and classification, not arithmetic based on generic dimensions.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10850,7 +10861,18 @@
         ],
         "caution": "Shape type depends on defining properties, not orientation or apparent size.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Sort the source triangles and quadrilaterals into categories; give mathematical reasons using sides and angles.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-2/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 116,
@@ -10910,17 +10932,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "shape-attributes",
       "independentPractice": {
-        "prompt": "Construct or draw two quadrilaterals and identify which has opposite equal sides and four right angles.",
+        "prompt": "Write five yes/no shape-attribute questions that distinguish a rectangle from a general quadrilateral.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Draw a shape meeting a chosen set of attributes, rotate it and explain why its type does not change.",
+        "prompt": "Create a mystery-quadrilateral round with valid defining attributes and a labelled sketch.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Learn How to Play Mystery Quadrilateral with your teacher. Show the representation and explain how it meets the goal: Let’s play Mystery Quadrilateral.",
-      "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+      "teacherReviewNote": "Teacher verifies the mystery shape and the informational adequacy of questions.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -10935,7 +10957,18 @@
         ],
         "caution": "Shape type depends on defining properties, not orientation or apparent size.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Play Mystery Quadrilateral using up to five yes/no questions based on defining geometric attributes, then explain your conclusion.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-3/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 117,
@@ -10998,17 +11031,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "shape-attributes",
       "independentPractice": {
-        "prompt": "Construct or draw two quadrilaterals and identify which has opposite equal sides and four right angles.",
+        "prompt": "Explain by constructing drawings why every square is both a rectangle and a rhombus.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Draw a shape meeting a chosen set of attributes, rotate it and explain why its type does not change.",
+        "prompt": "Draw a tilted square and a nonsquare rhombus, then justify your classification.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity What Makes These Shapes So? with your teacher. Show the representation and explain how it meets the goal: Let’s find out what makes rectangles, rhombuses, and squares what they are. Required Preparation Activity 1: Create a chart with labels showing a rectangle, rhombus, and square for the lesson synthesis. CCSS Standards Addressing 3.G.A.1 Lesson Timel",
-      "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+      "teacherReviewNote": "The source visuals are required for classifying specific options; teacher should verify right angles and equal sides.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11023,7 +11056,18 @@
         ],
         "caution": "Shape type depends on defining properties, not orientation or apparent size.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "With the original shape figures, classify right triangles, rectangles, rhombuses and squares, explaining the defining properties of each.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-4/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 118,
@@ -11095,17 +11139,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "shape-attributes",
       "independentPractice": {
-        "prompt": "Construct or draw two quadrilaterals and identify which has opposite equal sides and four right angles.",
+        "prompt": "Draw a quadrilateral that is not a rectangle or rhombus, and explain why.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Draw a shape meeting a chosen set of attributes, rotate it and explain why its type does not change.",
+        "prompt": "Sketch a pentagon and a quadrilateral; label their defining sides and angles.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity All the Ways with your teacher. Show the representation and explain how it meets the goal: Let’s describe and draw shapes in specific groups. Required Preparation CCSS Standards Addressing 3.G.A.1 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Question",
-      "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+      "teacherReviewNote": "Do not treat general appearance as defining shape class; multiple categories may correctly apply to one figure.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11120,7 +11164,18 @@
         ],
         "caution": "Shape type depends on defining properties, not orientation or apparent size.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Given the original six shape figures, select every description that is mathematically correct, then draw quadrilaterals that are not squares or rectangles.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-5/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 119,
@@ -11185,17 +11240,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter",
       "independentPractice": {
-        "prompt": "A rectangle has sides 4, 3, 4, 3 centimetres. Find its perimeter.",
+        "prompt": "A rectangle is 7 cm long and 4 cm wide. Find its perimeter.",
         "answerType": "integer",
-        "expected": "14"
+        "expected": "22"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A polygon has boundary segments 4, 3, 3, 5 metres. Find its perimeter.",
+        "prompt": "A quadrilateral has side lengths 5, 6, 5 and 6 cm. Find its perimeter.",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "22"
       },
       "openTeacherTask": "Work through the original lesson's activity What Does It Take to Build the Shapes? with your teacher. Show the representation and explain how it meets the goal: Let’s find the distance around shapes.",
-      "teacherReviewNote": "Teacher checks all boundary segments, including missing sides.",
+      "teacherReviewNote": "Source source shapes and side lengths not verified visually; perimeter is boundary length, not area.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11210,7 +11265,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the distance around shapes.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Use the original source paper shapes and paper clips to compare boundary lengths. Then measure every side to calculate perimeter.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-6/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 120,
@@ -11271,17 +11337,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter",
       "independentPractice": {
-        "prompt": "A rectangle has sides 5, 4, 5, 4 centimetres. Find its perimeter.",
+        "prompt": "A rectangle has sides 6 cm and 8 cm. Find its perimeter.",
         "answerType": "integer",
-        "expected": "18"
+        "expected": "28"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A polygon has boundary segments 5, 4, 4, 6 metres. Find its perimeter.",
+        "prompt": "A regular hexagon has six sides of 4 cm. Find its perimeter.",
         "answerType": "integer",
-        "expected": "19"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity All Kinds of Shapes with your teacher. Show the representation and explain how it meets the goal: Let’s learn about shapes with the same perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 3.NBT.A.2 Building Towards 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
-      "teacherReviewNote": "Teacher checks all boundary segments, including missing sides.",
+      "teacherReviewNote": "Shape layout and actual lengths must be checked; students draw two different shapes for a specified perimeter.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11296,7 +11362,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about shapes with the same perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 3.NBT.A.2 Building Towards 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "From source perimeter shapes, select three, measure every boundary and compare whether two can have the same perimeter.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-7/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 121,
@@ -11365,17 +11442,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter",
       "independentPractice": {
-        "prompt": "A rectangle has sides 2, 5, 2, 5 centimetres. Find its perimeter.",
+        "prompt": "A rectangle has length 9 m and width 6 m. How many metres is its perimeter?",
         "answerType": "integer",
-        "expected": "14"
+        "expected": "30"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A polygon has boundary segments 2, 5, 5, 3 metres. Find its perimeter.",
+        "prompt": "An octagon has eight equal sides of 3 cm. What is its perimeter?",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Ways to Find Perimeter with your teacher. Show the representation and explain how it meets the goal: Let’s find the perimeter of more shapes.",
-      "teacherReviewNote": "Teacher checks all boundary segments, including missing sides.",
+      "teacherReviewNote": "Source figures include unlabeled sides. Teacher checks derivation of missing measurements, not just formula substitution.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11390,7 +11467,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the perimeter of more shapes.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Find perimeter for each original source figure, including the right-angle compound shape with equal short sides and the regular octagon. Show full side sums.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-8/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 122,
@@ -11462,17 +11550,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter",
       "independentPractice": {
-        "prompt": "A rectangle has sides 3, 3, 3, 3 centimetres. Find its perimeter.",
+        "prompt": "A square picture has 9-inch sides. How much ribbon frames its border?",
         "answerType": "integer",
-        "expected": "12"
+        "expected": "36"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A polygon has boundary segments 3, 3, 6, 4 metres. Find its perimeter.",
+        "prompt": "A flower bed has a perimeter of 32 feet and one side 12 feet; what is the other side length?",
         "answerType": "integer",
-        "expected": "16"
+        "expected": "4"
       },
       "openTeacherTask": "Work through the original lesson's activity Missing Measurements with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems about perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How are students wo",
-      "teacherReviewNote": "Teacher checks all boundary segments, including missing sides.",
+      "teacherReviewNote": "Source also includes Statue of Liberty estimate and a missing pentagon side. Shape geometry must be inspected.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11487,7 +11575,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems about perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How are students wo",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "A source park is 70 feet wide and 120 feet long. Find the total fencing distance.",
+        "answerType": "integer",
+        "expected": "380"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-9/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 123,
@@ -11548,17 +11647,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter-area-relationship",
       "independentPractice": {
-        "prompt": "A rectangle is 4 cm by 4 cm. What is its perimeter in centimetres?",
+        "prompt": "A garden is 12 metres long and 7 metres wide. Find the perimeter.",
         "answerType": "integer",
-        "expected": "16"
+        "expected": "38"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle is 4 cm by 2 cm. What is its area in square centimetres?",
+        "prompt": "A rectangle measures 9 cm by 5 cm. What is the fencing boundary in cm?",
         "answerType": "integer",
-        "expected": "8"
+        "expected": "28"
       },
       "openTeacherTask": "Work through the original lesson's activity Rope Off the Garden with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems involving perimeter and area.",
-      "teacherReviewNote": "Compare area and perimeter as distinct quantities and units; teacher verifies shape construction.",
+      "teacherReviewNote": "Clare's multiplication and Diego's addition can both produce perimeter; information-gap task remains teacher-led.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11573,7 +11672,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems involving perimeter and area.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Andre's rectangular garden has length 30 feet and width 8 feet. How much rope surrounds it?",
+        "answerType": "integer",
+        "expected": "76"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-10/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 124,
@@ -11631,17 +11741,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter-area-relationship",
       "independentPractice": {
-        "prompt": "A rectangle is 5 cm by 5 cm. What is its perimeter in centimetres?",
+        "prompt": "A rectangle is 5 by 3 units. Find its perimeter.",
         "answerType": "integer",
-        "expected": "20"
+        "expected": "16"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle is 5 cm by 3 cm. What is its area in square centimetres?",
+        "prompt": "A rectangle is 6 by 2 units. Find its area in square units.",
         "answerType": "integer",
-        "expected": "15"
+        "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Perimeter of 16 Units with your teacher. Show the representation and explain how it meets the goal: Let’s explore rectangles with the same perimeter.",
-      "teacherReviewNote": "Compare area and perimeter as distinct quantities and units; teacher verifies shape construction.",
+      "teacherReviewNote": "The original tests same perimeter and different area. Teacher validates the several drawn rectangles and factor pairs.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11656,7 +11766,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore rectangles with the same perimeter.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Draw several different rectangles each with a perimeter of 16 units; calculate and compare each resulting area.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-11/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 125,
@@ -11723,17 +11844,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter-area-relationship",
       "independentPractice": {
-        "prompt": "A rectangle is 2 cm by 3 cm. What is its perimeter in centimetres?",
+        "prompt": "An area-24 rectangle has side lengths 4 and 6 units. Find the perimeter.",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "20"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A rectangle is 3 cm by 4 cm. What is its area in square centimetres?",
+        "prompt": "An area-24 rectangle has sides 3 and 8 units. Find its perimeter.",
         "answerType": "integer",
-        "expected": "12"
+        "expected": "22"
       },
       "openTeacherTask": "Work through the original lesson's activity Area of 24 with your teacher. Show the representation and explain how it meets the goal: Let’s explore rectangles with the same area.",
-      "teacherReviewNote": "Compare area and perimeter as distinct quantities and units; teacher verifies shape construction.",
+      "teacherReviewNote": "The original goal reverses U07 L11: same area, varying perimeter; keep the distinction.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11748,7 +11869,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore rectangles with the same area.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Draw multiple integer-sided rectangles all with area 24 square units, and compare the different perimeters.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-12/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 126,
@@ -11806,17 +11938,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "geometry-application",
       "independentPractice": {
-        "prompt": "Create a labelled geometric design using two kinds of quadrilaterals; explain sides, angles, perimeter or area.",
-        "answerType": "teacher",
-        "expected": null
+        "prompt": "Find the area of a 6-by-14-yard rectangular playground in square yards.",
+        "answerType": "integer",
+        "expected": "84"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Sketch an original park, print, or robot design and justify one shape and measurement choice.",
+        "prompt": "Design a park from dot-paper features and compare two perimeter-equal rectangles of different area.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Design a Park with your teacher. Show the representation and explain how it meets the goal: Let’s design a park.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "The 5-feature park design includes physical dot paper, area and perimeter of three elements.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11831,7 +11963,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s design a park.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "In the source, a playground is 6 yards by 14 yards. How much fencing (yards) encloses it?",
+        "answerType": "integer",
+        "expected": "40"
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-13/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 127,
@@ -11893,17 +12036,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "geometry-application",
       "independentPractice": {
-        "prompt": "Create a labelled geometric design using two kinds of quadrilaterals; explain sides, angles, perimeter or area.",
+        "prompt": "Design a print pattern repeating a square and an irregular quadrilateral at least five times each.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Sketch an original park, print, or robot design and justify one shape and measurement choice.",
+        "prompt": "Create a second original repeated geometric pattern, label shapes and explain how they meet specifications.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Create a Wax Print Pattern with your teacher. Show the representation and explain how it meets the goal: Let’s analyze and make wax prints.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "No fixed numeric answer or source-image substitute can establish creative shape design or source information-gap activity.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -11918,7 +12061,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s analyze and make wax prints.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Design the original wax-print pattern with a repeated rhombus/rectangle/square and a second quadrilateral outside those categories; repeat each at least five times.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-14/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 128,
@@ -11977,17 +12131,17 @@
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "geometry-application",
       "independentPractice": {
-        "prompt": "Create a labelled geometric design using two kinds of quadrilaterals; explain sides, angles, perimeter or area.",
+        "prompt": "Create a robot from rectangles of stated perimeters and calculate the combined nonoverlapping area.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Sketch an original park, print, or robot design and justify one shape and measurement choice.",
+        "prompt": "Design a different robot meeting the same component-perimeter constraints with different part areas.",
         "answerType": "teacher",
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Create Your Own Robot with your teacher. Show the representation and explain how it meets the goal: Let’s use perimeter and area to design robots.",
-      "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+      "teacherReviewNote": "Source robotic design permits multiple dimensions. Teacher checks each constraint, actual layout and overlap.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -12002,7 +12156,18 @@
         ],
         "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use perimeter and area to design robots.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      }
+      },
+      "sourceBasedCheck": {
+        "prompt": "Draw an original robot with rectangles whose head, neck, body, arms and legs have the exact given perimeters 36, 8, 64, 24 and 32 units; calculate each part's area.",
+        "answerType": "teacher",
+        "expected": null
+      },
+      "sourceBasedCheckProvenance": {
+        "localHtml": "unit-7/lesson-15/lesson.html",
+        "verified": "STUDENT_FACING_TEXT_REVIEWED",
+        "figurePixelsInspected": false
+      },
+      "reviewedStudentFacingText": true
     },
     {
       "ordinal": 129,
