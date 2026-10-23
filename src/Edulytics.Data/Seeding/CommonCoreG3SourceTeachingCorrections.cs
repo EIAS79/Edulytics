@@ -53,6 +53,9 @@ public static class CommonCoreG3SourceTeachingCorrections
 
         var grade3 = document.Lessons.Where(
             lesson => lesson.LessonCode.StartsWith(Prefix, StringComparison.Ordinal)).ToArray();
+        // Common Core grade packs share one programme/version identifier.
+        // Documents without Grade 3 must be left completely untouched.
+        if (grade3.Length == 0) return;
         if (grade3.Length != 143)
             throw new InvalidOperationException(
                 $"Expected the full Grade 3 2021 set of 143 lessons, got {grade3.Length}.");

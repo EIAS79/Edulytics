@@ -66,4 +66,18 @@ public sealed class CommonCoreG3SourceTeachingCorrectionsTests
         document.PackCode="CAMBRIDGE-INTL-MATH";
         Assert.False(CommonCoreG3SourceTeachingCorrections.IsTarget(document,lesson));
     }
+    [Fact]
+    public void SeparateGrade1AndGrade2DocumentsBypassTheGrade3FullSetGuard()
+    {
+        var document=Grade3Document();
+        document.Lessons.Add(new CanonicalLessonContentPackLesson {
+            LessonCode="PED:US-CCSS-MATH:G1:U01:L01"
+        });
+        document.Lessons.Add(new CanonicalLessonContentPackLesson {
+            LessonCode="PED:US-CCSS-MATH:G2:U01:L01"
+        });
+        CommonCoreG3SourceTeachingCorrections.Apply(document);
+        Assert.Equal(2,document.Lessons.Count);
+    }
+
 }
