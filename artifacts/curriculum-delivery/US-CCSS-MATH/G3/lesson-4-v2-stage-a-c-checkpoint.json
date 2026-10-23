@@ -28,22 +28,34 @@
       "id": "goal",
       "evidence": "Represent data using scaled picture graphs",
       "part": "Teacher preparation and learning goal",
-      "parity": "PARTIAL"
+      "parity": "PARTIAL",
+      "richV2SourceCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "richV2TestUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "effectiveRichV2ParityVerified": false
     },
     {
       "id": "warmup",
       "evidence": "How Many Do You See: More Groups of Dots; source diagrams not numerically transcribed",
-      "parity": "OPEN_VISUAL"
+      "parity": "OPEN_VISUAL",
+      "richV2SourceCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "richV2TestUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "effectiveRichV2ParityVerified": false
     },
     {
       "id": "survey",
       "evidence": "Actual class preference survey, car/train/boat/balloon/plane/helicopter",
-      "parity": "AUTHORED_TEACHER_PROVENANCE_REQUIRED"
+      "parity": "AUTHORED_TEACHER_PROVENANCE_REQUIRED",
+      "richV2SourceCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "richV2TestUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "effectiveRichV2ParityVerified": false
     },
     {
       "id": "graph",
       "evidence": "Picture graph of same class responses where each picture represents 2 pupils; odd category may require half mark",
-      "parity": "AUTHORED_RUNTIME_UNVERIFIED"
+      "parity": "AUTHORED_RUNTIME_UNVERIFIED",
+      "richV2SourceCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "richV2TestUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "effectiveRichV2ParityVerified": false
     },
     {
       "id": "synthesis",
@@ -53,22 +65,34 @@
         "balloonPlusTwo": "BalloonPlusTwoGraphChange",
         "carPlusOne": "CarPlusOneGraphChange",
         "status": "UNRUN_UNRENDERED_UNVERIFIED"
-      }
+      },
+      "richV2SourceCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "richV2TestUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "effectiveRichV2ParityVerified": false
     },
     {
       "id": "math_community",
       "evidence": "Partner discussions, student/drawn graphs, revise norms",
-      "parity": "TEACHER_JUDGMENT"
+      "parity": "TEACHER_JUDGMENT",
+      "richV2SourceCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "richV2TestUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "effectiveRichV2ParityVerified": false
     },
     {
       "id": "cooldown",
       "evidence": "Publisher 'Complete the Picture Graph' teacher-login only; independent first-party numeric/open graph substitute authorized",
-      "parity": "ORIGINAL_EQUIVALENT_UNRUN"
+      "parity": "ORIGINAL_EQUIVALENT_UNRUN",
+      "richV2SourceCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "richV2TestUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "effectiveRichV2ParityVerified": false
     },
     {
       "id": "rights",
       "evidence": "Publisher dot image, balloon photo and blank grid not copied; independent marks employed",
-      "parity": "ASSET_REVIEW_REQUIRED"
+      "parity": "ASSET_REVIEW_REQUIRED",
+      "richV2SourceCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "richV2TestUnrun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "effectiveRichV2ParityVerified": false
     }
   ],
   "stageA": {
@@ -98,10 +122,16 @@
         "additionalStudents": 1,
         "representation": "half pictograph mark, or completion of prior half mark"
       }
-    ]
+    ],
+    "teacherLedIndividualSurveyCollection": {
+      "status": "PAPER_ONLY_TEMPLATE_AUTHORED_UNVERIFIED_PUPIL_COLLECTION",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "private": false,
+      "onlineStudentNamesStored": false
+    }
   },
   "stageB": {
-    "status": "FIRST_PARTY_DYNAMIC_SCALED_SURVEY_ACTIVITY_AUTHORED_RICH_V2_OPEN",
+    "status": "RICH_V2_EMBEDDED_AND_RAZOR_SEQUENCE_REPAIRED_SOURCE_MATERIAL_AND_EFFECTIVE_RUNTIME_GAPS_OPEN",
     "files": {
       "core": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson4ScaledTravelSurvey.cs",
       "controller": "src/Edulytics.Web/Controllers/Grade3Lesson4ActivitiesController.cs",
@@ -122,7 +152,20 @@
     "richV2ProposedSourceSpecificCorrection": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
     "effectiveLearnerBodyCompared": false,
     "currentContentStatus": "SOURCE_CORRECTED_AUTHORING_NOT_RUNTIME_VERIFIED",
-    "twoSourceGraphChangeReasoningFieldsSeparatelyAuthored": true
+    "twoSourceGraphChangeReasoningFieldsSeparatelyAuthored": true,
+    "richV2Embedded": {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "status": "AUTHORED_NOT_RENDERED",
+      "version": "g3-u01-l04-first-edition-rich-v2-authoring-20261023-v1",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "sourceTeacherPage": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-4/lesson.html"
+    },
+    "studentViewChronologyCorrection": {
+      "path": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "source": "Original 2021 Lesson Synthesis and Math Community before Cool-down",
+      "sourceSynthesisBeforeCooldown": true,
+      "publisherImageCopied": false
+    }
   },
   "stageC": {
     "status": "NUMERIC_CANDIDATE_AND_ORIGINAL_COOL_DOWN_WIRED_TESTS_NOT_RUN",
@@ -138,15 +181,21 @@
       "Cool-down open graph/explanation"
     ],
     "teacherOnlyBalloonAndCarGraphChangeResponsesNotAutoGraded": true,
-    "unrunStaticSourceSynthesisContractWritten": true
+    "unrunStaticSourceSynthesisContractWritten": true,
+    "richV2RegressionFile": {
+      "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "written": true,
+      "executed": false
+    }
   },
   "originalCoolDownPolicy": "FIRST_PARTY_EDULYTICS_EQUIVALENT_AUTHORIZED",
   "openGaps": [
-    "First-party scaled pictograph/half-mark Rich V2 correction authored from 2021 publisher lesson, but original Student Task PDF and dot/blank-grid image pixels cannot be verified from accessible links; effective published Rich V2 still unverified.",
     "Original dot flash images and student blank grid not pixel-verified; read-only 2021 teacher/student source confirms task text only.",
     "Student survey provenance, source collection of classmates' preferences and teacher-observed partner/Math Community work cannot be certified from entered counts.",
     "Published Rich V2 body and linked student Razor execution not inspected/compiled; Stage D explicitly deferred.",
-    "Source lesson uses actual class survey and nonfixed observations; first-party authored Cool-down is permitted but not an inspected publisher Cool-down."
+    "Source lesson uses actual class survey and nonfixed observations; first-party authored Cool-down is permitted but not an inspected publisher Cool-down.",
+    "2021 original publisher Student Task PDF and dot/blank-grid/hot-air-balloon image pixels still return Cache miss; only public source text/ALT verified, so no image/material parity.",
+    "Lesson-specific Rich V2 sidecar, classroom paper survey template and synthesis chronology authored; neither effective browser output nor original classroom response collection verified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",

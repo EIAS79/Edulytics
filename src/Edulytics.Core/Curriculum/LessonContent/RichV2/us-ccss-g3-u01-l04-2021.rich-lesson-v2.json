@@ -1,0 +1,131 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u01-l04-first-edition-rich-v2-authoring-20261023-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U01:L04",
+      "CultureCode": "en",
+      "Title": "Create Scaled Picture Graphs",
+      "ExplanationParagraphs": [
+        "Grade 3 Unit 1 Lesson 4 of Illustrative Mathematics K–5 first edition (2021) asks learners to represent REAL class data using a scaled picture graph. The learning goal is to build a graph where one whole picture represents TWO students; a HALF picture can represent ONE student. No survey quantities are fixed by the publisher and classroom evidence requires teacher review.",
+        "Warm-up — How Many Do You See? More Groups of Dots (10 minutes). Quickly show the 2021 source's grouping-by-five pictures to a pair of pupils, allow silent thought, then compare groupings, including two groups of five. Learners explain totals through skip-counting by 2, 5 and 10. The linked original dot images are not available at authoring, so any Edulytics drawn dot arrangement is an independently authored illustration and not a claim of visual identity.",
+        "Activity 1 — Ways to Travel (15 minutes). Students survey classmates in groups of four and record one response per pupil in a teacher-controlled paper table before class totals are calculated. The six original options are car (C), train (T), boat (B), balloon (Bal), plane (P) and helicopter (H). Discuss advantages and limits of a raw list versus grouped category totals. The student companion collects only six aggregate numeric counts and survey provenance notes; it must NOT store classmates' names or pretend an entered count proves the survey took place. At the first Math Community reflection, the teacher records norms used when collecting data.",
+        "Activity 2 — Create a Scaled Picture Graph (20 minutes). Use those exact authentic totals to make a graph with title, category labels and the key ONE WHOLE SYMBOL = TWO STUDENTS. If a count is odd, represent the final learner by half of the chosen symbol; do not round that learner away. The original Student Facing task includes a blank drawing grid and a partner comparison. The teacher can offer physical cubes in groups of two for accessibility and supports partner statements with MLR8 prompts; neither manipulatives nor teacher assessment is numerically auto-certified.",
+        "Lesson synthesis (10 minutes) BEFORE Cool-down: revisit the actual class scaled picture graph. Ask separately: (1) if TWO more chose Balloon, add ONE full symbol; (2) if ONE more chose Car, add a HALF symbol when old count was even, or complete an existing half to a whole symbol when old count was odd. Discuss the Math Community norms that supported collaboration and revise as needed. The final five-minute independent Edulytics assessment uses new fictional data and is NOT the educator-gated publisher Cool-down."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Teacher-led survey provenance",
+          "Definition": "The values represent one actual answer per learner gathered in the current class.",
+          "Rule": "Use one response per person and count the six original categories accurately; preserve the individual paper record privately and send only aggregates online.",
+          "Example": "A blank classroom paper sheet records 'C', 'T', 'B', 'Bal', 'P' or 'H' for each pupil; it must not be misrepresented as completed before polling."
+        },
+        {
+          "Title": "Scale of 2",
+          "Definition": "One whole picture in the graph stands for exactly two students.",
+          "Rule": "Whole symbol count is floor(students ÷ 2). An odd leftover student requires exactly one half symbol.",
+          "Example": "For a hypothetical 7 students choosing Boat, draw 3 whole pictures and 1 half picture, because 3 × 2 + 1 = 7."
+        },
+        {
+          "Title": "Synthesis — two more for Balloon",
+          "Definition": "A change of two students under a two-to-one key adds one whole graph symbol.",
+          "Rule": "When Balloon count rises by two, add one full mark to that category while keeping other category totals unchanged.",
+          "Example": "If 4 pupils chose Balloon and 2 more hypothetically join, the graph changes from 2 whole marks to 3."
+        },
+        {
+          "Title": "Synthesis — one more for Car",
+          "Definition": "A change of one student changes the fractional half-symbol representation.",
+          "Rule": "For an even starting count, add a new half symbol; for an odd starting count, complete its existing half symbol into a whole.",
+          "Example": "If Car starts with 5 students (2 whole + 1 half), one more gives 6 (3 whole), not 2 whole + 2 halves."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Warm-up — groups of five",
+          "Question": "How many dots are in two groups of five, and how can grouping make counting faster?",
+          "Method": "Use skip-counting or repeated addition without claiming that a first-party drawing copies publisher pixels.",
+          "Steps": [
+            "Identify two distinct groups containing five dots each.",
+            "Count 5, 10 or write 5 + 5.",
+            "Explain why grouping avoids counting each dot separately.",
+            "Compare with a partner's strategy."
+          ],
+          "Answer": "10 dots",
+          "Check": "5 + 5 = 10 and 2 × 5 = 10."
+        },
+        {
+          "Title": "Activity 1 — tally real responses privately",
+          "Question": "What must you collect before the class's six scaled picture-graph counts can be trusted?",
+          "Method": "Create a paper list of one classmate preference per pupil, then produce only six anonymous counts.",
+          "Steps": [
+            "Ask one classmate which original travel option they would like.",
+            "Record the response in the teacher-supervised paper list, once per pupil.",
+            "Tally all individual C/T/B/Bal/P/H responses into six numeric totals.",
+            "Ask the teacher to confirm the totals; do not upload names or invent missing responses."
+          ],
+          "Answer": "Six teacher-checked class totals derived from a real individual-response list.",
+          "Check": "The sum of the six totals equals the number of pupils who actually answered; teacher must confirm the paper provenance."
+        },
+        {
+          "Title": "Activity 2 — odd numbers and half pictures",
+          "Question": "In a FICTIONAL example only, seven students prefer Boat. How can key two show seven exactly?",
+          "Method": "Divide into pairs and one remaining single student.",
+          "Steps": [
+            "Make three pairs from six of the seven pupils.",
+            "Draw three whole pictures, each worth two.",
+            "Represent the remaining pupil by a half picture worth one.",
+            "Check 3 × 2 + 1 = 7."
+          ],
+          "Answer": "Three whole symbols and one half symbol.",
+          "Check": "3 × 2 + 1 = 7, with no rounding or invented real class values."
+        },
+        {
+          "Title": "Synthesis — Balloon plus two and Car plus one",
+          "Question": "A graph uses key two. What if two more students choose Balloon? What if one more chooses Car?",
+          "Method": "Treat these as two SEPARATE hypothetical graph-change questions on the real class survey.",
+          "Steps": [
+            "For Balloon, a plus-two change always adds one whole picture.",
+            "For Car, inspect whether the existing number of students is even or odd.",
+            "If Car is even, add a half mark; if Car is odd, complete an existing half picture into a whole.",
+            "Explain both changes against the teacher's current graph rather than assuming either change actually occurred."
+          ],
+          "Answer": "Balloon gains 1 whole mark; Car gains 1 half mark of value, either by adding a new half or completing the old half.",
+          "Check": "One full picture represents 2; one half picture represents 1, so both hypothetical additions are exact."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Importing fixed counts from an earlier published graph as if they are current class survey responses.",
+          "WhyWrong": "2021 L04 explicitly asks pupils to gather their classmates' own preferences.",
+          "Correction": "Keep a teacher-supervised paper list, tally actual responses and label any illustrative dataset as fictional."
+        },
+        {
+          "Mistake": "Using only full symbols for an odd category count and rounding up or down.",
+          "WhyWrong": "At scale 2, an odd count leaves one individual who must be represented accurately.",
+          "Correction": "Draw floor(n/2) whole symbols and one half symbol for n mod 2 = 1."
+        },
+        {
+          "Mistake": "Treating Balloon +2 and Car +1 as the same graph update.",
+          "WhyWrong": "Two students mean one whole symbol; one student changes the half-symbol parity.",
+          "Correction": "Discuss each source synthesis question separately, considering whether Car already has an odd number."
+        },
+        {
+          "Mistake": "Claiming source task completion merely because six numeric totals were entered.",
+          "WhyWrong": "The source also requires individual survey collection, teacher observation, a learner-drawn scaled graph, partner comparison and Maths Community norms.",
+          "Correction": "Teacher reviews the physical survey and drawing; typed totals and auto-grading do not replace those source activities."
+        }
+      ],
+      "SummaryPoints": [
+        "10-minute warm-up: notice and explain dots in groups of five with partner discussion; source dot image pixels not inspected.",
+        "15-minute activity: privately record ONE real preferred-travel response per classmate using C/T/B/Bal/P/H, then tally six categories without uploading names.",
+        "20-minute activity: draw exact scaled picture graph where a whole symbol = two students and a half symbol = one; include key, title, labels and discuss with partner.",
+        "Lesson synthesis BEFORE Cool-down: two more Balloon => one whole symbol; one more Car => half-symbol change or completing an existing half.",
+        "Math Community discussion and teacher appraisal belong in synthesis; final 5-minute Edulytics independently authored Cool-down is NOT the publisher's restricted item.",
+        "Original dot/balloon/grid images and the Student Task Statements PDF remain external unverified source-material boundaries; do not claim original-artwork parity."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

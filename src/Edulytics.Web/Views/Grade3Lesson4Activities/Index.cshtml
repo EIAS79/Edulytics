@@ -39,6 +39,17 @@
             <h2>2. Ask your classmates: How would you like to travel?</h2>
             <p>Choose one option per student: car (C), train (T), boat (B), balloon (Bal), plane (P) or helicopter (H). Collect the data as directed by your teacher. Do not submit classmates' names or personal identifiers into this activity.</p>
             <p>Enter only the six teacher-confirmed totals. Do not invent survey results or copy the fixed counts from another lesson.</p>
+            <p class="note">Use a paper classroom response table with two columns (classmate identifier and way of travelling) during Activity 1, following your teacher's privacy instructions. The table stays in class; only six aggregate counts belong in this activity. The publisher's Student Facing task requires collecting individual classmate preferences before making the graph.</p>
+            <p class="note">Teacher-only printable collection template (do not submit names online):</p>
+            <table class="table" aria-label="Blank teacher-led classroom collection record; paper only">
+                <thead><tr><th scope="col">Pupil code on paper</th><th scope="col">Preferred travel: C / T / B / Bal / P / H</th></tr></thead>
+                <tbody>
+                    @for (var i = 1; i <= 8; i++)
+                    {
+                        <tr><td>__________</td><td>__________________________</td></tr>
+                    }
+                </tbody>
+            </table>
             <div class="two">
                 <div><label for="car">Car</label><input id="car" type="number" min="0" max="40" name="Car" value="@Model.Answers.Car" required /></div>
                 <div><label for="train">Train</label><input id="train" type="number" min="0" max="40" name="Train" value="@Model.Answers.Train" required /></div>
@@ -74,7 +85,20 @@
             <p>Partner work: exchange graph drawings and check that both children represented the same counts. Teacher reviews title, key, half-symbol construction and source tally.</p>
         </section>
         <section class="panel">
-            <h2>4. Edulytics-authored Cool-down: fictional travel preferences</h2>
+            <h2>4. Lesson synthesis and Math Community — before the Cool-down</h2>
+            <p>Revisit the actual class picture graph from Activity 2. The source asks TWO separate changes: if 2 more students chose Balloon, add one whole picture (key 2); if 1 more student chose Car, represent the extra learner with half of a picture, or complete an existing half if the old count was odd. Explain your reasoning with the graph rather than assuming either new survey result is real.</p>
+            <label for="balloon-plus-two">What would change in the Balloon row if two MORE students chose Balloon? Show or describe the symbols.</label>
+            <textarea id="balloon-plus-two" name="BalloonPlusTwoGraphChange" rows="3" maxlength="2000">@Model.Answers.BalloonPlusTwoGraphChange</textarea>
+            <label for="car-plus-one">What would change in the Car row if ONE MORE student chose Car? Explain how the existing odd or even number affects the half symbol.</label>
+            <textarea id="car-plus-one" name="CarPlusOneGraphChange" rows="3" maxlength="2000">@Model.Answers.CarPlusOneGraphChange</textarea>
+            <p class="note">These are two different student graph-construction questions. The teacher checks both against the current class values; neither is certified by numeric input.</p>
+            <p>Math Community: discuss when a class norm helped your group collect, represent or interpret data. Decide whether to add or revise a norm.</p>
+            <label for="reflection">My explanation and a helpful classroom norm</label>
+            <textarea id="reflection" name="TeacherReflection" rows="3" maxlength="2000">@Model.Answers.TeacherReflection</textarea>
+            <p>Teacher-only rubric: verify actual survey provenance, category title/key, exact counts, odd-category half marks, partner comparison, and classroom mathematical norms. Never infer that these occurred from numeric correctness.</p>
+        </section>
+        <section class="panel">
+            <h2>5. Independent Edulytics Cool-down (5 minutes): fictional travel preferences</h2>
             <p>This is a separate, invented assessment. It is not the publisher's teacher-login item and does not claim to describe your class.</p>
             <div class="rows">
                 @foreach(var category in demo){
@@ -91,19 +115,6 @@
             </div>
             <label for="cool-explain">Create your own labelled pictograph and explain odd numbers or changes of two</label>
             <textarea id="cool-explain" name="CoolDownExplanation" rows="4" maxlength="2000">@Model.Answers.CoolDownExplanation</textarea>
-        </section>
-        <section class="panel">
-            <h2>5. Lesson synthesis and Math Community</h2>
-            <p>Revisit the actual class picture graph from Activity 2. The source asks TWO separate changes: if 2 more students chose Balloon, add one whole picture (key 2); if 1 more student chose Car, represent the extra learner with half of a picture, or complete an existing half if the old count was odd. Explain your reasoning with the graph rather than assuming either new survey result is real.</p>
-            <label for="balloon-plus-two">What would change in the Balloon row if two MORE students chose Balloon? Show or describe the symbols.</label>
-            <textarea id="balloon-plus-two" name="BalloonPlusTwoGraphChange" rows="3" maxlength="2000">@Model.Answers.BalloonPlusTwoGraphChange</textarea>
-            <label for="car-plus-one">What would change in the Car row if ONE MORE student chose Car? Explain how the existing odd or even number affects the half symbol.</label>
-            <textarea id="car-plus-one" name="CarPlusOneGraphChange" rows="3" maxlength="2000">@Model.Answers.CarPlusOneGraphChange</textarea>
-            <p class="note">These are two different student graph-construction questions. The teacher checks both against the current class values; neither is certified by numeric input.</p>
-            <p>Math Community: discuss when a class norm helped your group collect, represent or interpret data. Decide whether to add or revise a norm.</p>
-            <label for="reflection">My explanation and a helpful classroom norm</label>
-            <textarea id="reflection" name="TeacherReflection" rows="3" maxlength="2000">@Model.Answers.TeacherReflection</textarea>
-            <p>Teacher-only rubric: verify actual survey provenance, category title/key, exact counts, odd-category half marks, partner comparison, and classroom mathematical norms. Never infer that these occurred from numeric correctness.</p>
         </section>
         <button type="submit">Check my numeric representations</button>
     </form>
