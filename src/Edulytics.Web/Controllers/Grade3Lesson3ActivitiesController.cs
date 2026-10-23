@@ -46,6 +46,9 @@ public sealed class Grade3Lesson3ActivitiesController(
             ("FLOWERS-ROSES", answers.FlowersRoses),
             ("FLOWERS-TOTAL", answers.FlowersTotal),
             ("FLOWERS-COMPARE", answers.FlowersCompare),
+            ("FLOWERS-VIOLETS", answers.FlowersViolets),
+            ("BOOKS-COMICS", answers.BooksComics),
+            ("BOOKS-TOTAL", answers.BooksTotal),
             ("COOL-NATURE", answers.CoolNature),
             ("COOL-DIFFERENCE", answers.CoolDifference)
         };
@@ -62,8 +65,10 @@ public sealed class Grade3Lesson3ActivitiesController(
         }).ToList();
         feedback.Add(new("Warm-up: tens and ones, questions and partner reasoning",
             null, true, "Teacher judges the strategy and conversation."));
-        feedback.Add(new("Explain why the same number of symbols can represent different totals",
+        feedback.Add(new("Explain why both sports graphs represent the same 65 students",
             null, true, "Teacher reviews use of the key and explanation."));
+        feedback.Add(new("Student-created flower and books questions", null, true,
+            "Teacher checks two answerable questions about each dataset."));
         feedback.Add(new("Independent Cool-down invented question and explanation",
             null, true, "Teacher checks that the question is answerable, math is correct, and the key is applied."));
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";

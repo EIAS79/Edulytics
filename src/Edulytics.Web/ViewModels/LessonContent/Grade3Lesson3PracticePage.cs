@@ -14,6 +14,10 @@ public sealed class Grade3Lesson3Answers
     public string? FlowersRoses { get; set; }
     public string? FlowersTotal { get; set; }
     public string? FlowersCompare { get; set; }
+    public string? FlowersViolets { get; set; }
+    public string? BooksComics { get; set; }
+    public string? BooksTotal { get; set; }
+    public string? SecondOriginalQuestion { get; set; }
     public string? CoolNature { get; set; }
     public string? CoolDifference { get; set; }
 }

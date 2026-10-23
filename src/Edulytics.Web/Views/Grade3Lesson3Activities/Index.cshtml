@@ -3,7 +3,9 @@
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = "Grade 3 · Scaled Picture Graphs";
+    var sportsUnscaled = UsCcssG3Unit1Lesson3ScaledPictureGraph.SportsUnscaled;
     var sports = UsCcssG3Unit1Lesson3ScaledPictureGraph.Sports;
+    var books = UsCcssG3Unit1Lesson3ScaledPictureGraph.Books;
     var flowers = UsCcssG3Unit1Lesson3ScaledPictureGraph.Flowers;
     var cool = UsCcssG3Unit1Lesson3ScaledPictureGraph.IndependentCoolDown;
 }
@@ -25,7 +27,7 @@
     <header>
         <p>EDULYTICS · NEW ORIGINAL TASKS</p>
         <h1>Read and ask questions about scaled picture graphs</h1>
-        <p>One symbol can represent more than one person or object. Always use the displayed key. All charts and Cool-down questions below were independently designed by Edulytics; they are not copies of publisher artwork or the restricted original Cool-down.</p>
+        <p>One symbol can represent more than one person or object. Always use the displayed key. The classroom charts use the actual quantities from the locally archived 2021 lesson, with original Edulytics glyphs rather than copied artwork. The separate Cool-down below is newly authored by Edulytics.</p>
     </header>
     <form asp-controller="Grade3Lesson3Activities" asp-action="Submit" method="post">
         @Html.AntiForgeryToken()
@@ -38,7 +40,15 @@
             <textarea name="Warmup" id="warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
         </section>
         <section class="panel">
-            <h2>2. Read an original scaled picture graph about sports</h2>
+            <h2>2. Two source-aligned sports graphs, identical data</h2>
+            <p>Key 1: ● = one student. Count each mark once.</p>
+            <div class="rows">
+            @foreach(var item in sportsUnscaled.Rows) {
+                <strong>@item.Category</strong>
+                <span class="dots" aria-label="@item.Symbols learners choosing @item.Category">@(string.Concat(Enumerable.Repeat("● ", item.Symbols)))</span>
+            }
+            </div>
+            <h3>Same dataset with a scale of five</h3>
             <p><strong>@sports.Title</strong> — key: ● = @sports.StudentsPerSymbol students.</p>
             <div class="rows">
             @foreach(var item in sports.Rows){
@@ -54,7 +64,7 @@
             </div>
         </section>
         <section class="panel">
-            <h2>3. Read an original scaled flower graph</h2>
+            <h2>3. Source-aligned flower graph: scale five</h2>
             <p><strong>@flowers.Title</strong> — key: ● = @flowers.StudentsPerSymbol flowers.</p>
             <div class="rows">
             @foreach(var item in flowers.Rows){
@@ -66,13 +76,31 @@
                 <div><label for="flower-total">How many flowers in all?</label><input id="flower-total" name="FlowersTotal" value="@Model.Answers.FlowersTotal" inputmode="numeric" required /></div>
                 <div><label for="flower-compare">How many more daisies than tulips?</label><input id="flower-compare" name="FlowersCompare" value="@Model.Answers.FlowersCompare" inputmode="numeric" required /></div>
             </div>
-            <label for="key-explain">Explain how the key 2 and key 5 change what each symbol means</label>
+            <label for="violets">How many violets did Andre see?</label>
+            <input id="violets" name="FlowersViolets" value="@Model.Answers.FlowersViolets" inputmode="numeric" required />
+            <label for="key-explain">Explain the differences between keys 1 and 5 in the two sports graphs</label>
             <textarea name="DifferenceInKeys" id="key-explain" rows="3" maxlength="2000">@Model.Answers.DifferenceInKeys</textarea>
-            <label for="original-question">Create another question that can be answered using one of these graphs</label>
+            <label for="original-question">Write two questions answerable from Andre's flower graph</label>
             <textarea name="OriginalQuestion" id="original-question" rows="3" maxlength="2000">@Model.Answers.OriginalQuestion</textarea>
         </section>
         <section class="panel">
-            <h2>4. New Edulytics Cool-down</h2>
+            <h2>4. Source-aligned Favorite Type of Books graph: key two</h2>
+            <p><strong>@books.Title</strong> — key: ● = @books.StudentsPerSymbol students.</p>
+            <div class="rows">
+            @foreach (var item in books.Rows) {
+                <strong>@item.Category</strong>
+                <span class="dots" aria-label="@item.Symbols symbols; each represents @books.StudentsPerSymbol students">@(string.Concat(Enumerable.Repeat("● ", item.Symbols)))</span>
+            }
+            </div>
+            <div class="number-questions">
+                <div><label for="comics">How many students chose comic books?</label><input id="comics" name="BooksComics" value="@Model.Answers.BooksComics" inputmode="numeric" required /></div>
+                <div><label for="books-total">How many students chose one of these books?</label><input id="books-total" name="BooksTotal" value="@Model.Answers.BooksTotal" inputmode="numeric" required /></div>
+            </div>
+            <label for="book-questions">Write two questions answerable from the favorite books graph</label>
+            <textarea id="book-questions" name="SecondOriginalQuestion" rows="3" maxlength="2000">@Model.Answers.SecondOriginalQuestion</textarea>
+        </section>
+        <section class="panel">
+            <h2>5. New Edulytics Cool-down</h2>
             <p><strong>@cool.Title</strong> — key: ● = @cool.StudentsPerSymbol learners.</p>
             <div class="rows">
             @foreach(var item in cool.Rows){
@@ -87,10 +115,10 @@
             <textarea name="CoolExplanation" id="cool-explain" rows="3" maxlength="2000">@Model.Answers.CoolExplanation</textarea>
         </section>
         <section class="panel">
-            <h2>5. Teacher review and lesson synthesis</h2>
+            <h2>6. Teacher review and lesson synthesis</h2>
             <p>Discuss which graph has the larger key, what the symbols really count, and why the key must be read before answering. Ask a partner to solve your independently written question.</p>
             <label for="community">Our classroom norm for explaining scaled graphs</label><textarea name="MathCommunity" id="community" rows="3" maxlength="2000">@Model.Answers.MathCommunity</textarea>
-            <p>Teacher rubric: correct use of scales 2 and 5, sensible question, correct units, explanation of symbols versus represented counts, and oral/partner reasoning. These cannot be passed by a number-only result.</p>
+            <p>Teacher rubric: correct use of keys 1, 2 and 5; two sports graphs that both show 65 learners; correctly labelled flower and books graphs; two learner-authored questions per graph; oral/partner reasoning. These cannot be passed by a number-only result.</p>
         </section>
         <button class="button" type="submit">Check the numerical graph questions</button>
     </form>

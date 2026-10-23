@@ -64,20 +64,22 @@
       "observed": "So Many Responses: A group of students were asked, “What is your favorite sport?” Their responses are shown in this picture graph: How many students are represented in the graph? Their responses are also shown in this picture graph: How is coun",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "SOURCE_EXCERPT_PARTIAL",
+      "parityStatus": "NUMERICALLY_ALIGNED_TO_LOCAL_2021_HTML_NOT_FULLY_VERIFIED",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
-      "verified": false
+      "verified": false,
+      "sourceGraphCountsChecked": true
     },
     {
       "id": "G3-U01-L03-activity2",
       "observed": "Questions about Scaled Picture Graphs: Andre collected data to see how many of each type of flower he saw on the way home. The data is shown in this picture graph: How many of each type of flower did Andre see on the way home? roses _____ tulips _____ daisies ____",
       "sourceReference": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
       "sourceScope": "EXCERPT_OR_FIRST_PARTY_ACTIVITY_NOT_COMPLETE_SOURCE_READ",
-      "parityStatus": "SOURCE_EXCERPT_PARTIAL",
+      "parityStatus": "NUMERICALLY_ALIGNED_TO_LOCAL_2021_HTML_NOT_FULLY_VERIFIED",
       "edulyticsFile": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
       "digitalGradingRoute": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
-      "verified": false
+      "verified": false,
+      "sourceGraphCountsChecked": true
     },
     {
       "id": "G3-U01-L03-synthesis",
@@ -124,20 +126,64 @@
     "status": "SOURCE_PACKET_INDEXED_FULL_ORIGINAL_FIGURE_COMPARISON_OPEN",
     "observedLearningGoal": "Interpret scaled picture graphs to generate questions (orally and in writing) about the data.",
     "rightsBoundary": "No original publisher charts, figures or teacher-only Cool-down copied.",
-    "exactPublisherNumericValuesVerified": false
+    "exactPublisherNumericValuesVerified": false,
+    "sourceTeacherStudentFacingHtmlLocallyInspected": true,
+    "localSourceHtmlPath": "03_Grade_3_IM_K5/unit-1/lesson-3/lesson.html",
+    "originalSourceNumbersRead": {
+      "sportsUnscaled": {
+        "key": 1,
+        "counts": {
+          "Football": 25,
+          "Soccer": 15,
+          "Basketball": 20,
+          "Tennis": 5
+        }
+      },
+      "sportsScaled": {
+        "key": 5,
+        "symbols": {
+          "Football": 5,
+          "Soccer": 3,
+          "Basketball": 4,
+          "Tennis": 1
+        }
+      },
+      "flowers": {
+        "key": 5,
+        "symbols": {
+          "Roses": 2,
+          "Tulips": 1,
+          "Daisies": 5,
+          "Violets": 3
+        }
+      },
+      "books": {
+        "key": 2,
+        "symbols": {
+          "Joke Books": 4,
+          "Comic Books": 1,
+          "Science Books": 4,
+          "Mystery Books": 3
+        }
+      }
+    }
   },
   "stageB": {
     "status": "INDEPENDENT_STUDENT_COMPANION_AUTHORED_EFFECTIVE_RICH_V2_OPEN",
     "firstPartyDataSets": [
-      "Sports:3,4,2 with key 5",
-      "Flowers:4,3,5 with key 2",
-      "Library:2,4,3 with key 5"
+      "2021 Sports: 25/15/20/5, scale1",
+      "2021 same Sports: 5/3/4/1, scale5",
+      "2021 Flowers: 2/1/5/3, scale5",
+      "2021 Books: 4/1/4/3, scale2",
+      "Independent fictional library Cool-down: 2/4/3, scale5"
     ],
     "controller": "src/Edulytics.Web/Controllers/Grade3Lesson3ActivitiesController.cs",
     "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson3PracticePage.cs",
     "view": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
     "studentPortalLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
-    "richV2PublishedDatabaseBodyVerified": false
+    "richV2PublishedDatabaseBodyVerified": false,
+    "sourceGraphNumericalValuesReconciled": true,
+    "publisherArtworkReproduced": false
   },
   "stageC": {
     "status": "INDEPENDENT_NUMERIC_AND_HUMAN_REVIEW_QUESTION_CONTRACTS_AUTHORED_NOT_RUN",
@@ -146,7 +192,7 @@
     "testsWritten": true,
     "testsRun": false,
     "learnerAuthorizedRoute": "student/practice/grade3-u01-l03",
-    "numericQuestions": 8,
+    "numericQuestions": 11,
     "humanReviewTasks": [
       "Create own question",
       "Compare pictograph keys",
@@ -155,7 +201,7 @@
     ]
   },
   "openGaps": [
-    "Original full Grade 3 Lesson 3 2021 Student Facing sheet and exact numerical values in embedded sports/flower figures not read; independent charts cannot prove original source numerical parity.",
+    "Local teacher Student Facing source graph alt descriptions and quantities now matched, but actual raster figures/Student Task PDF and complete teacher activity fidelity still require comparison.",
     "Effective Edulytics published Rich V2 Grade 3 lesson body and source mapping not verified.",
     "Student webpage, controller, rendering and mathematical test execution not validated (Stage D intentionally deferred).",
     "Teacher-led activities, original diagrams, third-party images and optional centres need 1:1 review.",
