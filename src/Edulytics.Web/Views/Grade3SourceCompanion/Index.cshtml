@@ -19,7 +19,7 @@
 .g3-original .human{border-left:4px solid #b08b24;padding-left:10px}
 .g3-original .source-chart{border-collapse:collapse;width:100%;margin:14px 0}
 .g3-original .source-chart th,.g3-original .source-chart td{padding:9px;text-align:left;border-bottom:1px solid #d4e1e8}
-.g3-original .source-bar{height:24px;background:#147b96;border-radius:3px;display:inline-block}
+.g3-original .source-pictogram{font-size:1.3rem;display:inline-block;margin-right:.35rem;color:#147b96}
 .g3-original .source-scale{display:flex;justify-content:space-between;max-width:360px;font-variant-numeric:tabular-nums}
 .g3-original .source-key{font-weight:700}
 
@@ -78,8 +78,10 @@
                             <tr>
                                 <th scope="row">@category.Category</th>
                                 <td>
-                                    <span class="source-bar" style="width:@(category.SymbolCount * 20)%" aria-hidden="true"></span>
-                                    <span>@category.SymbolCount symbols</span>
+                                    @for(var symbol=0;symbol<category.SymbolCount;symbol++){
+                                        <span class="source-pictogram" aria-hidden="true">■</span>
+                                    }
+                                    <span class="visually-hidden">@category.SymbolCount independently drawn symbols; two road signs per symbol</span>
                                 </td>
                                     </tr>
                         }
@@ -90,6 +92,25 @@
                 <p><strong>Think and draw:</strong> Show the speed-limit signs as three
                     equal groups of two. Make a diagram for a different category and
                     compare your representation with your teacher or partner.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 9) {
+            <section class="panel" aria-label="Source-aligned equal-groups constructions">
+                <h2>Source Number Talk — four addition expressions in order</h2>
+                <p>Mentally calculate 40 + 35, 45 + 35, 45 + 36, and 34 + 58. Discuss where a new ten is composed, and why each related expression changes from the previous one.</p>
+                <h2>Source road-sign graph: three separate tasks</h2>
+                <ol>
+                    <li>Represent speed-limit signs using three groups of two.</li>
+                    <li>Choose and justify the statement: three pictures, with two speed-limit signs per picture. Explain why the alternatives three pictures of one and two pictures of two are false.</li>
+                    <li>Explain how five groups of two dots model the street-sign category.</li>
+                </ol>
+                <h2>Source equal-group situations: three different contexts</h2>
+                <ol>
+                    <li>Four people, each wearing two shoes: model four groups of two and explain the total.</li>
+                    <li>Two boxes containing ten markers each: model two groups of ten and explain the total.</li>
+                    <li>Three basketball teams with five players each: model three groups of five and explain the total.</li>
+                </ol>
+                <p>Use the original-work response field above for your calculations, diagrams and explanations. Draw the groups or use counters with a teacher; an integer-only response does not certify the source representations or partner discussion.</p>
             </section>
         }
         @if(showMinuteClock) {

@@ -16,6 +16,32 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
     [Fact]
+    public void SourceRoadSignFigureHasDiscreteSquaresAndLessonNineKeepsAllPublicTasks()
+    {
+        // Written only: no Stage D test execution here.
+        DirectoryInfo? dir = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (dir is not null)
+        {
+            var p = Path.Combine(dir.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3SourceCompanion", "Index.cshtml");
+            if (File.Exists(p)) { path = p; break; }
+            dir = dir.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        Assert.Contains("symbol<category.SymbolCount", view);
+        Assert.Contains("source-pictogram", view);
+        Assert.DoesNotContain("category.SymbolCount * 20", view);
+        Assert.Contains("40 + 35, 45 + 35, 45 + 36, and 34 + 58", view);
+        Assert.Contains("three groups of two", view);
+        Assert.Contains("five groups of two", view);
+        Assert.Contains("Four people, each wearing two shoes", view);
+        Assert.Contains("Two boxes containing ten markers", view);
+        Assert.Contains("Three basketball teams with five players", view);
+    }
+
+    [Fact]
     public void Only135StageCOriginalCompanionCandidatesRegistered()
     {
         Assert.Equal(135, Grade3SourceCompanionCatalogue.Codes.Count);

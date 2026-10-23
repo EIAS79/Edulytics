@@ -17,7 +17,23 @@
     "originalImageDescriptionsCount": 2,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "sourcePublic2021IndividualWarmupExpressions": [
+      "40+35=75",
+      "45+35=80",
+      "45+36=81",
+      "34+58=92"
+    ],
+    "publicSourceActivity1IndividuallyChecked": [
+      "speed-limit graph three groups of 2",
+      "select statement: 3 pictures each worth 2 signs",
+      "five groups of 2 dots represent street signs"
+    ],
+    "publicSourceActivity2IndividuallyChecked": [
+      "4 people with 2 shoes each",
+      "2 boxes with 10 markers each",
+      "3 basketball teams with 5 players each"
+    ]
   },
   "stageB": {
     "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
@@ -29,7 +45,9 @@
     "existingSourceBodyHash": "6c907b7f1945d2b123f490edb6995a800fe142ee682231097b0f2433cd7eb2d4",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "discretePictureSymbolsNowDrawn": "Uses original Edulytics plain squares rather than proportional horizontal strips in common Grade 3 source-companion view. Original publisher art untouched.",
+    "lesson9SourceSpecificTaskPromptsAuthored": true
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -42,7 +60,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity From Scaled Graphs to Equal Groups with your teacher. Show the representation and explain how it meets the goal: Let’s work with equal groups of things.",
-    "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced."
+    "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced.",
+    "sourceTaskCheckCoverage": "Only existing speed-limit 3x2 integer source check machine-scored; remaining original public numeric subtasks and diagram constructions STILL require further scoped Stage C implementation and evidence; no 100% claim.",
+    "newUnrunRazorSourceCoverageRegression": true
   },
   "sourceElements": [
     {
@@ -141,7 +161,8 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Source-specific warm-up additions and all three concrete contexts are now visibly prompted, but not individually machine graded or captured in separate auditable source-task rows; teacher reviews written original-work response."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
