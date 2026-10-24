@@ -1174,6 +1174,9 @@
                     5-minute numbers. The clock alone cannot tell a.m. from p.m.</p>
             </section>
         }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 11) {
+            @await Html.PartialAsync("_Grade3Unit2Lesson11")
+        }
         @if(l.SourceSubtasks.Count > 0) {
             <section class="panel" aria-label="Individual published source-aligned mathematical subtasks">
                 <h2>@(l.SourceSubtasks.All(q => q.AnswerType=="teacher") ? "Original public source: teacher-reviewed constructions and discussion" : "Original public source: individually checked mathematical subtasks")</h2>

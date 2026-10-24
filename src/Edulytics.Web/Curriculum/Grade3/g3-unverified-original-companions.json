@@ -4984,31 +4984,31 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: How Many Do You See: Arrays that Grow (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Area and the Multiplication Table (15 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: Products in the Multiplication Table (20 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 5,
           "sourceHeading": "Cool-down: What's the Product? (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_ASSESSMENT_COPY"
         }
       ],
       "sourceVisualAltDescriptions": [
@@ -5023,51 +5023,143 @@
         "A multiplication table.",
         "A multiplication table with the column and row for 2 partially filled in."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "area-multiplication-table",
       "independentPractice": {
-        "prompt": "A rectangle formed in a multiplication table has 4 rows and 6 columns. What product does it show?",
+        "prompt": "Independently draw a rectangle from the upper-left DATA square of a multiplication table, covering 4 rows and 6 columns. What product belongs in its lower-right cell? Explain how you checked the area.",
         "answerType": "integer",
         "expected": "24"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Draw a table rectangle representing 8 × 3. What is the product?",
+        "prompt": "New Edulytics task: draw a rectangle covering 7 rows and 4 columns in a ten-by-ten multiplication table. Enter the product in its lower-right cell. Draw or describe the rotated rectangle and explain how it checks your answer.",
         "answerType": "integer",
-        "expected": "24"
+        "expected": "28"
       },
-      "openTeacherTask": "Work through the original lesson's activity Area and the Multiplication Table with your teacher. Show the representation and explain how it meets the goal: You will explore connections between area and the multiplication table.",
-      "teacherReviewNote": "Teacher must check rows and columns really form a rectangle in the multiplication table; many factor pairs are valid.",
+      "openTeacherTask": "Use the companion’s dot arrays and multiplication tables. Draw your own five-by-five-table rectangle, compare 24-square rectangles in the nine-by-nine table, find familiar products in the ten-by-ten table, and write equations that explain a pattern.",
+      "teacherReviewNote": "Check that rectangles start at the upper-left DATA square and exclude headers. The 24-square task accepts 3×8, 8×3, 4×6 and 6×4; 2×12 cannot fit the nine-by-nine table. Inspect drawings, lower-right product placement, factor-header alignment, student-authored pattern equations, notices/questions, partner explanations and optional-center work. Filling every cell is not required. A numeric answer never establishes discussion or completion of these tasks.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s explore area and the multiplication table. Required Preparation CCSS Standards Building On 3.OA.B.5 Addressing 3.MD.C.7.b 3.OA.B.5 3.OA.D.9 Building Towards 3.MD.C.7.d Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson S",
+        "sourceGoal": "Let’s explore area and the multiplication table.",
         "sourceLearningGoals": "Explore connections between area and the multiplication table.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Decompose the growing dot arrays into nonoverlapping blocks.",
+          "Read the four three-row rectangles from factor headers and lower-right product cells.",
+          "Construct your own rectangle in the five-by-five table, then a 24-square rectangle in the nine-by-nine table.",
+          "Use familiar products of 2, 5 and 10 to find more facts; explain row and column patterns with equations.",
+          "Compare strategies and complete the independently authored seven-by-four Cool-down."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore area and the multiplication table. Required Preparation CCSS Standards Building On 3.OA.B.5 Addressing 3.MD.C.7.b 3.OA.B.5 3.OA.D.9 Building Towards 3.MD.C.7.d Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson S",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Exclude header cells; keep each rectangle inside its specified table. Many valid rectangles and explanations are possible; do not require completion of every table cell.",
+        "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson11RichV2"
       },
       "sourceBasedCheck": {
-        "prompt": "The source asks you to create a multiplication-table rectangle with area 24 square units. What is its area?",
-        "answerType": "integer",
-        "expected": "24"
+        "prompt": "Create a rectangle of area 24 square units inside the nine-by-nine multiplication table, starting at its upper-left DATA square. Enter its number of rows and columns as two whole numbers separated by a comma (each from 1 to 9). Show and explain your drawing. More than one answer works.",
+        "answerType": "rectangle-dimensions",
+        "expected": null,
+        "dimensionConstraint": {
+          "targetArea": 24,
+          "maximumSide": 9
+        }
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-11/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_2021_TEACHER_PREPARATION_AND_THREE_STUDENT_PDF_PAGES_SEMANTIC_REVIEW",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L11-WU-1",
+          "sourceActivity": "Warm-up",
+          "prompt": "First dot arrangement: how many dots do you see? Show how you grouped them.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U02-L11-WU-2",
+          "sourceActivity": "Warm-up",
+          "prompt": "Second dot arrangement: how many dots do you see? Show a decomposition.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U02-L11-WU-3",
+          "sourceActivity": "Warm-up",
+          "prompt": "Third dot arrangement: how many dots do you see? Explain how the arrangement grew.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U02-L11-WU-REASON",
+          "sourceActivity": "Warm-up",
+          "prompt": "Compare how you decomposed the three dot arrangements. Restate a partner’s strategy and explain how each dot was counted once.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L11-A1-NOTICE",
+          "sourceActivity": "Area and the Multiplication Table",
+          "prompt": "Look at the four five-by-five demonstration tables. Record a notice and a question; explain the connection between each rectangle, the headers and its lower-right product.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L11-A1-OWN",
+          "sourceActivity": "Area and the Multiplication Table",
+          "prompt": "Create your own rectangle in the blank five-by-five table. Start at the upper-left data square, record the product in its lower-right square, and explain to a partner how the factor headers match the rectangle.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L11-A1-24-DRAW",
+          "sourceActivity": "Area and the Multiplication Table",
+          "prompt": "Draw a rectangle of area 24 square units in the nine-by-nine table, beginning at the upper-left data square. Put the product in its lower-right square. Compare a different valid rectangle with a partner.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L11-A2-NOTICE",
+          "sourceActivity": "Products in the Multiplication Table",
+          "prompt": "Inspect the ten-by-ten table with some products of 2 filled in. Record what you notice and wonder before filling more cells.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L11-A2-FIND",
+          "sourceActivity": "Products in the Multiplication Table",
+          "prompt": "Independently find as many other products as you can, starting with rows and columns for 2, 5 and 10. You do not have to fill every product. Then finish the rows and columns for 2 and 5 with the class.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L11-A2-FIVES",
+          "sourceActivity": "Products in the Multiplication Table",
+          "prompt": "With a partner, describe patterns in the row AND column for 5. Write equations that show one pattern and explain why it works. Rehearse your explanation before sharing.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L11-A2-COMMUTE",
+          "sourceActivity": "Products in the Multiplication Table",
+          "prompt": "Write BOTH multiplication equations for the rectangles at row 3, column 5 and row 5, column 3, separated by a semicolon. Explain why the products agree.",
+          "answerType": "commutative-equation-pair",
+          "expected": "3x5=15;5x3=15"
+        },
+        {
+          "id": "G3-U02-L11-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Explain how a top factor and a left factor locate a product, how a table differs from a multiplication equation or array, and one pattern that helps you find an unfamiliar product.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 33,
@@ -16312,4 +16404,3 @@
     }
   ]
 }
-

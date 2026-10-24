@@ -563,7 +563,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -574,6 +574,16 @@ public sealed class Grade3SourceCompanionGradingTests
                 }
 
                 var validAnswer = question.Expected;
+                if (question.AnswerType == "rectangle-dimensions")
+                {
+                    Assert.NotNull(question.DimensionConstraint);
+                    var rule = question.DimensionConstraint!;
+                    var pair = (from a in Enumerable.Range(1, rule.MaximumSide)
+                                from b in Enumerable.Range(1, rule.MaximumSide)
+                                where a * b == rule.TargetArea
+                                select $"{a},{b}").First();
+                    validAnswer = pair;
+                }
                 if (question.AnswerType == "coverage-combination")
                 {
                     Assert.NotNull(question.CoverageConstraint);
@@ -608,6 +618,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "area-with-unit" => "999 cm²",
                     "coverage-combination" => "0,0,0",
                     "constrained-side-length" => "0 ft",
+                    "rectangle-dimensions" => "0,0",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);

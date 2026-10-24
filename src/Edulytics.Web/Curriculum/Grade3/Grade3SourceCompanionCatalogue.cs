@@ -83,6 +83,27 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
+        if (q.AnswerType == "rectangle-dimensions")
+        {
+            var rule = q.DimensionConstraint;
+            if (rule is null || rule.TargetArea is < 1 or > 1000000 ||
+                rule.MaximumSide is < 1 or > 999)
+                return new(null, true, "Rectangle constraints require teacher review.");
+            // The source table bounds matter: 2 by 12 has area 24 but
+            // cannot be drawn inside its nine-by-nine data-cell region.
+            var match = Regex.Match(submitted.Trim(), @"^([0-9]{1,3})\s*,\s*([0-9]{1,3})$",
+                RegexOptions.CultureInvariant);
+            if (!match.Success)
+                return new(false, true, "Enter two positive whole-number side lengths separated by a comma.");
+            var a = int.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
+            var b = int.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
+            var correct = a > 0 && b > 0 && a <= rule.MaximumSide &&
+                b <= rule.MaximumSide && a * b == rule.TargetArea;
+            return new(correct, true, correct
+                ? "These sides meet the area and table bounds. Other rectangles may work; show your drawing and reasoning."
+                : "Check the product and whether both sides fit inside the stated table.");
+        }
+
         if (q.AnswerType == "coverage-combination")
         {
             var rule = q.CoverageConstraint;
@@ -612,6 +633,13 @@ public sealed class Grade3OriginalQuestion
     public int? RequiredDenominator { get; set; }
     public Grade3CoverageConstraint? CoverageConstraint { get; set; }
     public Grade3RectangleConstraint? RectangleConstraint { get; set; }
+    public Grade3DimensionConstraint? DimensionConstraint { get; set; }
+}
+
+public sealed class Grade3DimensionConstraint
+{
+    public int TargetArea { get; set; }
+    public int MaximumSide { get; set; }
 }
 
 public sealed class Grade3CoverageConstraint
