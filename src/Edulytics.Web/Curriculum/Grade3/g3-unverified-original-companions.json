@@ -1799,11 +1799,11 @@
         "Group of 16 dots.",
         "4 groups of 3 dots."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "match-arrays-equal-groups",
       "independentPractice": {
         "prompt": "Reorganize twelve counters originally in four groups of three into a true rectangular array; draw all rows and columns and explain how the rearrangement preserves groups.",
@@ -1816,10 +1816,10 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Arrays with your teacher. Show the representation and explain how it meets the goal: You will relate arrays to drawings of equal groups and describe arrays in terms of multiplication.",
-      "teacherReviewNote": "Matching groups with arrays requires teacher review of actual diagrams and card sorting.",
+      "teacherReviewNote": "Matching groups with arrays requires teacher review of actual diagrams and card sorting. 2021 Student Task PDF (3 pages), full A-L original card blackline PDF (2 pages) and six original lesson source figure mathematical geometries have now been individually examined; Edulytics first-party twelve-card collection and four warm-up models are original authorings. Six source subtasks and both Edulytics independent open tasks require teacher evaluation; numerical feedback never confers a drawing pass.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s match arrays to equal groups and draw arrays.",
@@ -1831,7 +1831,7 @@
           "Rearrange the original four groups of three dots as a 12-dot rectangular array.",
           "Draw more than one valid array of 16 scattered dots, checking every dot and row/column uniformity."
         ],
-        "caution": "Array shape, complete dot use and peer-revised argument are core source targets; numeric 12 or 16 alone is not evidence. Original source card deck and which-one-doesn't-belong figure arrangements are uninspected.",
+        "caution": "The original 2021 first edition 12-card set was inspected and its six mathematical source matches independently represented. Warm-up A/B/C have 15 dots and D has 16; B has an incomplete column. Teacher, not automatic grading, evaluates card matches, MLR1 explanation revision, complete 12-dot/16-dot new arrays, and learner drawings.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1889,7 +1889,20 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "originalTeacherBlacklineMasterPdfRead": true,
+      "sourceCardCount": 12,
+      "original2021SourceEvidence": {
+        "studentPdfUrl": "https://cms-assets.illustrativemathematics.org/t0s2bzgjuivlnsh6asgz6dhagr04",
+        "studentPdfSHA256": "f1b44ade4538a208b0384d407fb1afe3830f9d3dac7019e993d0e00ca9a77ccb",
+        "studentPdfPages": 3,
+        "originalCardDeckZipUrl": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+        "originalCardDeckPdfSHA256": "730c1ca94f4627925766bb72e4ecec37fd9955a6ac332c2877edc361e29bab6b",
+        "originalCardsReviewed": 12,
+        "originalImageAssetsVisuallyInspected": 6,
+        "originalPublisherImagesCopied": false,
+        "firstPartyCardsAuthored": 12
+      }
     },
     {
       "ordinal": 18,
