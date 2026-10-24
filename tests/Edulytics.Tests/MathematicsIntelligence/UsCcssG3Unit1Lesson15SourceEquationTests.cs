@@ -113,7 +113,7 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.Contains("Capture Squares, Stage 5",razor);
         Assert.Contains("Five in a Row, Stage 8",razor);
         Assert.Contains("MLR8 Discussion Supports",razor);
-        Assert.Contains("g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v2",rich);
+        Assert.Contains("g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v3",rich);
         Assert.Contains("Teacher reflection",rich);
         Assert.Contains("until a future unit",rich);
         Assert.Contains("not the publisher's original picture",razor);
