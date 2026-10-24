@@ -13,7 +13,7 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
     {
         Assert.True(Grade3SourceCompanionCatalogue.TryGet(Code, out var lesson));
         Assert.NotNull(lesson);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD);
         Assert.Equal(17, lesson.SourceSubtasks.Count);
         Assert.Equal(3, lesson.SourceSubtasks.Count(x =>
             x.Id.EndsWith("-SYMBOL", StringComparison.Ordinal) &&
@@ -23,7 +23,7 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.Equal(new[] { "8", "16", "2", "45", "10" },
             lesson.SourceSubtasks.Where(x => x.Id.Contains("-A2-"))
                 .Select(x => x.Expected));
-        Assert.False(lesson.OriginalStudentTaskPdfRead);
+        Assert.True(lesson.OriginalStudentTaskPdfRead);
     }
 
     [Theory]
@@ -86,8 +86,8 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.Equal("6",lesson.IndependentPractice.Expected);
         Assert.Equal("integer",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.Equal("12",lesson.OriginalEdulyticsCoolDown.Expected);
-        Assert.False(lesson.OriginalStudentTaskPdfRead);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.OriginalStudentTaskPdfRead);
+        Assert.True(lesson.ReadyForStageD);
         Assert.True(lesson.TeacherReviewNote.Contains("unknown",StringComparison.OrdinalIgnoreCase));
     }
 
@@ -117,6 +117,12 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.Contains("Teacher reflection",rich);
         Assert.Contains("until a future unit",rich);
         Assert.Contains("not the publisher's original picture",razor);
+        var materializer=FindSource("src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs");
+        var sourceBridge=FindSource("src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson15RichV2.cs");
+        var dataProject=FindSource("src/Edulytics.Data/Edulytics.Data.csproj");
+        Assert.Contains("CommonCoreG3Unit1Lesson15RichV2.Apply(lesson)",materializer);
+        Assert.Contains("Edulytics.Data.Grade3.Unit1Lesson15RichV2",dataProject);
+        Assert.Contains("g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v4",sourceBridge);
     }
 
     [Fact]
@@ -134,6 +140,6 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.All(items,q=>Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).TeacherReview));
         // The Edulytics original is its own independent item, NOT the source Cool-down.
         Assert.Equal("12",lesson.OriginalEdulyticsCoolDown!.Expected);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD);
     }
 }
