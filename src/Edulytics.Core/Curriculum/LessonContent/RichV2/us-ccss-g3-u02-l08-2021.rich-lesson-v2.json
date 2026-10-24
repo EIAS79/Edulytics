@@ -1,0 +1,132 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u02-l08-2021-source-abc-firstparty-20261024-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U02:L08",
+      "CultureCode": "en",
+      "Title": "Area of Rectangles Without a Grid — Visualize Equal Rows and Columns",
+      "ExplanationParagraphs": [
+        "2021 IM K–5 First Edition Grade 3 Unit 2 Lesson 8, CCSS 3.MD.C.7.b. Goal: determine rectangular area when grids are only partial or omitted, by restoring equal rows/columns mentally or with a pencil, and multiplying the side lengths. A source photograph of Portuguese azulejos serves as visual context; no copyrighted photograph is reproduced. Student Task Statements is three pages.",
+        "Warm-up (10 minutes) 'How Many Do You See? One More, One Less' uses THREE source original SVG figures that have been inspected: four groups of FIVE, then four groups of SIX, then four groups of FOUR. Thus totals are 20, 24 and 16. Each of the four visually separated clusters gains one dot in the second figure or loses one in the third, so relationships to the initial 20 are +4 and −4. CAUTION: the original image's alt string for the second figure says '5 groups of 6', but the ACTUAL diagram shows FOUR clusters, each containing six; the teacher narrative also confirms adding four dots. The original pixels, not inconsistent alt text, decide this mathematical count.",
+        "Activity 1 'Partially Tiled' (15 minutes): images of painted Portuguese azulejo tiles (two source photographs) establish the context. Elena's source original partially tiled rectangle has TEN tiles along its top row and NINE rows down its left edge; the remaining positions are blank. Each tile is labelled one inch wide in the represented situation, not physically to scale on student paper. The task is to infer 9×10=90 tiles, so the full rectangle has 90 square inches. Ask learners to see 10 tiles per row and 9 identical rows rather than enumerate only the visible colored tiles. MLR8 Discussion Supports revoices the equal-row explanation; optional engagement support starts with smaller partially tiled models.",
+        "Activity 2 'No More Squares' (20 minutes): the first original untiled 2021 figure is an 8-unit-by-4-unit rectangle with equally spaced one-meter tick marks along its sides, requiring 8×4=32 square meters. The second source rectangle is THREE meters tall and SIX one-meter intervals wide, not merely five because there are five INTERNAL ticks plus both end boundaries, requiring 6×3=18 square meters. Learners may draw the invisible square grid first, then show why length×width gives the covered square-unit count without needing to draw any full grid.",
+        "Source student PDF p3 asks for two separate areas, each in SQUARE METERS, and invites individual reasoning. First-party Edulytics source tasks independently represent these two problems with annotated dimensions and tick marks. A correct numeric quantity lacking 'm²' should not pass a source unit-sensitive answer check. The original printed illustration itself is reference material only; the first-party model uses independently authored CSS/SVG graphics.",
+        "Activity 2 lesson synthesis: what do the visible first and last rows reveal about the missing columns? What must be known to determine any rectangle's area? Recover side lengths, multiply and label square units. Distinguish missing drawing lines from missing physical squares. Original Cool-down 'Where Are the Squares?' is teacher-gated; Edulytics provides independent area-rectangle skill equivalence, not copied wording."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area of an incomplete tiled rectangle",
+          "Definition": "The full region consists of equal square-unit tiles even when only some are drawn.",
+          "Rule": "Determine total number of rows and tiles per row; multiply groups × number per group.",
+          "Example": "Nine rows each with ten square-inch tiles: 90 in²."
+        },
+        {
+          "Title": "Tick marks and hidden unit squares",
+          "Definition": "A tick interval marks a linear side-length unit even if no grid lines divide the interior.",
+          "Rule": "Count intervals, not just internal tick symbols; multiply both side lengths.",
+          "Example": "Five interior tick marks between two boundaries mark SIX intervals; height three meters, area 18 m²."
+        },
+        {
+          "Title": "Area units stay squared",
+          "Definition": "Length and width are in linear meters/inches; the product is in squared meters/inches.",
+          "Rule": "3m × 6m = 18 m², never '18 m'.",
+          "Example": "8m × 4m = 32m²."
+        },
+        {
+          "Title": "One more or less in every group",
+          "Definition": "An extra object in each of four groups adds four to the total.",
+          "Rule": "From 4×5=20, 4×6=24; 4×4=16.",
+          "Example": "Original second source picture contains four 6-dot groups despite a mistaken image alt string."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source warm-up: count the groups",
+          "Question": "Count the three original picture totals.",
+          "Method": "Count visible groups of dots and use equal-group multiplication.",
+          "Steps": [
+            "First picture has 4 groups ×5 =20.",
+            "Second adds one to each of FOUR groups, so 4×6=24.",
+            "Third removes one from each of FOUR groups, so 4×4=16.",
+            "Explain +4/−4 relative to the first figure."
+          ],
+          "Answer": "20, 24, 16",
+          "Check": "Original second-source alt text wrongly says five groups; actual picture and narrative show four."
+        },
+        {
+          "Title": "Portuguese tile project",
+          "Question": "How many one-inch tiles fill a 10-column by 9-row rectangle?",
+          "Method": "Complete every empty row mentally or with a grid sketch.",
+          "Steps": [
+            "Source top row visibly contains 10 unit tiles.",
+            "Source left edge indicates 9 rows.",
+            "Each invisible row matches 10 columns.",
+            "Multiply 9×10=90 and label square inches."
+          ],
+          "Answer": "90 square inches / 90 in²",
+          "Check": "Teacher reviews reasoning and represented physical unit."
+        },
+        {
+          "Title": "Hidden grid with tick marks",
+          "Question": "What area is represented by a source 8-by-4-meter rectangle?",
+          "Method": "Count one-meter intervals on each side.",
+          "Steps": [
+            "Count 8 horizontal intervals.",
+            "Count 4 vertical intervals.",
+            "Imagine an 8×4 grid with equal one-meter squares.",
+            "Multiply 8×4=32m²."
+          ],
+          "Answer": "32 m²",
+          "Check": "Machine checks quantity AND squared unit; teacher checks diagram."
+        },
+        {
+          "Title": "Top ticks and a labelled side",
+          "Question": "A second original diagram shows five interior tick marks, six horizontal meter intervals and 3 meters of height. Find area.",
+          "Method": "Distinguish number of tick marks from number of intervals.",
+          "Steps": [
+            "Five interior marks mean six horizontal intervals.",
+            "Top spans 6 meters.",
+            "Height label is 3 meters.",
+            "6×3=18 square meters."
+          ],
+          "Answer": "18 m²",
+          "Check": "Do not mistakenly use 5×3=15."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reading second warm-up alt '5 groups of 6' literally.",
+          "WhyWrong": "The original SVG actually has FOUR separate clusters of six. Printed teacher narrative supports +4 dots from the first picture.",
+          "Correction": "Use four groups of six = 24 and explicitly record the alt/pixels discrepancy."
+        },
+        {
+          "Mistake": "Counting only existing colored squares in Elena's art.",
+          "WhyWrong": "The task asks to cover the ENTIRE rectangle, including unpainted spaces.",
+          "Correction": "Infer 9 equal rows of 10 tiles, total 90 square inches."
+        },
+        {
+          "Mistake": "Counting the five internal top tick marks as the full side length.",
+          "WhyWrong": "Six spaces lie between the two outer side boundaries with five interior ticks.",
+          "Correction": "Measure intervals; width six meters, not five."
+        },
+        {
+          "Mistake": "Writing 32 meters for an 8-by-4-meter region.",
+          "WhyWrong": "Area is two-dimensional, measured in square meters.",
+          "Correction": "Write 32 m² and 18 m² for the original rectangle problems."
+        }
+      ],
+      "SummaryPoints": [
+        "Original 2021 student task PDF three pages; original eight illustrations (three warm-up dot diagrams, two Portuguese azulejo photos, source partial-tile drawing and two metric tick-mark rectangles) individually reviewed by mathematical role.",
+        "Warm-up correct first-edition image totals 20, 24, 16; the second alt string conflicts with source SVG geometry (four groups, not five).",
+        "Elena's nine-by-ten tile rectangle contains 90 one-square-inch tiles once fully covered.",
+        "No-more-squares source rectangle 1 is 8×4=32 m²; rectangle 2 is 6×3=18 m² (five internal top tick marks means six intervals).",
+        "Independent first-party visuals teach original quantities and arrangement without reproducing original art/photos.",
+        "MLR8 oral restatement and learner grid reasoning require human assessment. All source-equivalent tests authored but deliberately unrun; no CI, Stage D or academic sign-off."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
