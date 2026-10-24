@@ -299,6 +299,50 @@
         }
         @if(l.UnitNumber == 1 && l.LessonNumber == 16) {
             <section class="panel" aria-label="Original Edulytics array representation, not publisher artwork">
+
+                <h2>Three independent Edulytics representations of the 2021 source mathematics</h2>
+                <p>The first-edition source warm-up shows twelve eggs in two equal rows of six.
+                    The first-party diagram below uses counting tokens rather than the publisher photograph.
+                    Notice and wonder, then identify equal rows and columns without changing the total.</p>
+                <div role="img" aria-label="First-party twelve-token egg-carton mathematical model: two rows with six tokens in each row; six columns with two tokens each."
+                     style="display:grid;grid-template-columns:repeat(6,minmax(28px,40px));gap:6px;max-width:300px;margin:12px 0">
+                    @for(var egg=0;egg<12;egg++){
+                        <span aria-hidden="true" style="display:block;height:30px;border-radius:30px;background:#f6d4a4;border:2px solid #845a2c"></span>
+                    }
+                </div>
+                <p>The Activity 1 source drawing compares four groups of five dots,
+                    placed in separate bounded regions, with the same twenty objects in a rectangular
+                    array. Both models below are newly drawn with first-party CSS,
+                    not the original publisher graphics.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:20px;margin:12px 0">
+                    <div>
+                        <strong>Four groups of five</strong>
+                        <div role="img" aria-label="Four independent groups of five dots, for twenty total dots."
+                             style="display:grid;grid-template-columns:repeat(2,minmax(100px,125px));gap:10px;margin-top:8px">
+                            @for(var cluster=0;cluster<4;cluster++){
+                                <div aria-hidden="true" style="display:grid;grid-template-columns:repeat(5,13px);gap:3px;padding:12px;border:2px dashed #35718a;border-radius:24px">
+                                    @for(var dot=0;dot<5;dot++){
+                                        <span style="display:block;width:11px;height:11px;border-radius:50%;background:#147b96"></span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div>
+                        <strong>Rectangular array: four rows of five</strong>
+                        <div role="img" aria-label="Four equal rows, with five dots per row and five equal columns, twenty dots in one rectangular array."
+                             style="display:grid;grid-template-columns:repeat(5,20px);gap:8px;margin-top:8px;padding:12px;border:2px solid #35718a;border-radius:8px">
+                            @for(var dot=0;dot<20;dot++){
+                                <span aria-hidden="true" style="display:block;width:13px;height:13px;border-radius:50%;background:#147b96"></span>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <p>Original 2021 Student Task Statements has three pages: warm-up Notice and Wonder;
+                    Activity 1's two comparison/Noah-reasoning questions; and Activity 2's
+                    three physical-cube tasks (6 groups of 5, multiple arrays with 20 cubes,
+                    and multiple arrays with 24 cubes). Edulytics presents those
+                    source skills through teacher-reviewed prompts, not invented numeric passes.</p>
                 <h2>Source activity guidance: build arrays with actual cubes</h2>
                 <p>For the original activity, groups use actual connecting cubes: six groups of five, then twenty cubes, then twenty-four cubes. The teacher checks arrangement, groups and the explanations. A correct product alone cannot approve an array drawing.</p>
                 <p>The following 6-row by 5-column diagram is independently created for Edulytics and is an EXAMPLE, not the publisher's source image.</p>
