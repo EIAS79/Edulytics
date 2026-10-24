@@ -10,49 +10,49 @@
     {
       "id": "G3-U01-L17-WU",
       "source": "Four original source pictures A/B/C of 15 dots, D of 16, incomplete-column reasoning",
-      "status": "TEACHER_ONLY_SOURCE_IMAGE",
+      "status": "MATCHED_TEACHER_LED",
       "firstParty": "Source Companion and 2021 source-specific Rich V2",
       "autoNumericPass": false
     },
     {
       "id": "G3-U01-L17-A1-1",
       "source": "Physically match original Card Sort Arrays drawings and equal groups",
-      "status": "SOURCE_BLACKLINE_DECK_NOT_FULLY_REVIEWED",
+      "status": "MATCHED_TEACHER_LED",
       "firstParty": "Source Companion and 2021 source-specific Rich V2",
       "autoNumericPass": false
     },
     {
       "id": "G3-U01-L17-A1-2",
       "source": "Write one card-match reason, peer feedback, revise with MLR1",
-      "status": "TEACHER_ONLY",
+      "status": "MATCHED_TEACHER_LED",
       "firstParty": "Source Companion and 2021 source-specific Rich V2",
       "autoNumericPass": false
     },
     {
       "id": "G3-U01-L17-A2-1",
       "source": "Draw one valid rectangular array from 4 groups of 3 (all 12 dots)",
-      "status": "TEACHER_ONLY",
+      "status": "MATCHED_TEACHER_LED",
       "firstParty": "Source Companion and 2021 source-specific Rich V2",
       "autoNumericPass": false
     },
     {
       "id": "G3-U01-L17-A2-2",
       "source": "Draw different arrays from original 16 irregular dots and justify",
-      "status": "TEACHER_ONLY",
+      "status": "MATCHED_TEACHER_LED",
       "firstParty": "Source Companion and 2021 source-specific Rich V2",
       "autoNumericPass": false
     },
     {
       "id": "G3-U01-L17-SYN",
       "source": "Discuss array row/column conditions with peers",
-      "status": "TEACHER_ONLY",
+      "status": "MATCHED_TEACHER_LED",
       "firstParty": "Source Companion and 2021 source-specific Rich V2",
       "autoNumericPass": false
     },
     {
       "id": "G3-U01-L17-CD",
       "source": "Publisher-gated Draw and Describe original vs independent Edulytics equivalent",
-      "status": "SOURCE_GATED",
+      "status": "FIRST_PARTY_EQUIVALENT_TEACHER_ONLY",
       "firstParty": "Source Companion and 2021 source-specific Rich V2",
       "autoNumericPass": false
     }
@@ -62,25 +62,654 @@
     "first": 12,
     "second": 16
   },
-  "originalCardDeckDirectlyReviewed": false,
-  "sourceTaskPdfRead": false,
-  "originalPublisherVisualPixelsCompared": false,
+  "originalCardDeckDirectlyReviewed": true,
+  "sourceTaskPdfRead": true,
+  "originalPublisherVisualPixelsCompared": true,
   "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
   "sourceStageCTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
   "academicSourceMaterialParityClaimed": false,
-  "status": "A_C_EXPLICIT_GAP",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "testsRun": false,
   "stageD": "NOT_STARTED",
   "ciRun": false,
   "academicApproval": false,
   "merged": false,
   "deployed": false,
-  "gaps": [
-    "Exact publisher images A–D, original card deck and drawing figures were not inspected pixel-by-pixel.",
-    "Original student-task PDF could not be certified in source-material review.",
-    "Effective published Rich V2 and 2021 first-party layout were not compiled/rendered.",
-    "Original partner matching, MLR1 revision and drawings require teacher observation; first-party additional tasks are distinct.",
-    "All written tests remain NOT_RUN, so there is no Stage D, CI or academic acceptance."
+  "gaps": [],
+  "detailedSourceElementMap": [
+    {
+      "id": "PREP-PURPOSE",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/preparation.html",
+      "sourceElement": "Relate grouped drawings and arrays via multiplication.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Source first edition teacher preparation."
+    },
+    {
+      "id": "PREP-MATERIAL",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/preparation.html",
+      "sourceElement": "Cards cut one set per group of 2 or 4; connecting cubes or counters accessible.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Source first edition teacher preparation."
+    },
+    {
+      "id": "PREP-ACCESS-ENGAGEMENT",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/preparation.html",
+      "sourceElement": "Chunk source card deck into smaller groups of cards to support attention/organization.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Source first edition teacher preparation."
+    },
+    {
+      "id": "PREP-ACCESS-MLR1",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/preparation.html",
+      "sourceElement": "Read, write, share, and revise one selected card pair after feedback from multiple partners.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Source first edition teacher preparation."
+    },
+    {
+      "id": "PREP-ACCESS-MLR8",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/preparation.html",
+      "sourceElement": "Use language-support sentence frames to explain why an array represents the original dots.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Source first edition teacher preparation."
+    },
+    {
+      "id": "PREP-REFLECTION",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/preparation.html",
+      "sourceElement": "Teacher reflects on what unasked question was needed and at which point.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Source first edition teacher preparation."
+    },
+    {
+      "id": "PREP-CENTER-1",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/preparation.html",
+      "sourceElement": "Suggested Capture Squares Stage 5 multiplication by 2,5,10.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Source first edition teacher preparation."
+    },
+    {
+      "id": "PREP-CENTER-2",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/preparation.html",
+      "sourceElement": "Suggested Five in a Row: Multiplication Stage 1 factors 1–5 and 10.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Source first edition teacher preparation."
+    },
+    {
+      "id": "WU-IMG-A",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/9qbdbhsa9a2ix8vn8ipwdn9clop0",
+      "sourceElement": "Warm-up 15-dot nonrectangular stepped arrangement",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original source SVG visually/geometry-inspected; 15 points; sha256=d7747b3cf9cc5d85bd54c672f4c09fe0a946fe7e767ed2bcfa4a0f68f6574c55. Independent CSS stimulus preserves the mathematical comparison but not source artwork."
+    },
+    {
+      "id": "WU-IMG-B",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/acj3tpru63496m5vguf3g8d3yuym",
+      "sourceElement": "Warm-up 15 dots with one incomplete column",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original source SVG visually/geometry-inspected; 15 points; sha256=4f2e072cc013ce29d2ca668a8bc99b52df4af18d34cf9b9e6d11d14c06d3e574. Independent CSS stimulus preserves the mathematical comparison but not source artwork."
+    },
+    {
+      "id": "WU-IMG-C",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/mlrt6m52zuq4ubtwoyc6lu0sqmvq",
+      "sourceElement": "Warm-up 15 irregular radial dots",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original source SVG visually/geometry-inspected; 15 points; sha256=7ececb4ce19e7a33657a2c41601a83e30b104618233230f18061f23ff0f74098. Independent CSS stimulus preserves the mathematical comparison but not source artwork."
+    },
+    {
+      "id": "WU-IMG-D",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/0ognlh83ni5fypthj5vzhd9nl4sd",
+      "sourceElement": "Warm-up complete 4×4 array 16 dots",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original source SVG visually/geometry-inspected; 16 points; sha256=3ccbab9bc690341924a3f85f791c2d94ac68b18fbdcfed4665421a390e10202a. Independent CSS stimulus preserves the mathematical comparison but not source artwork."
+    },
+    {
+      "id": "WU-DISCUSS",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Allow multiple Which One Doesn't Belong reasons; B has missing column, D different total, mathematical vocabulary in partner dialog.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "A1-CARD-A",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card A: array 5 by 5, total 25; valid equal-group correspondence to J.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-B",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card B: seven independent groups of 2, total 14; valid equal-group correspondence to K.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-C",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card C: array 3 by 4, total 12; valid equal-group correspondence to G.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-D",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card D: four groups of 5, total 20; valid equal-group correspondence to H.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-E",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card E: three groups of 10, total 30; valid equal-group correspondence to F.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-F",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card F: array 10 by 3, total 30; valid equal-group correspondence to E.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-G",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card G: three groups of 4, total 12; valid equal-group correspondence to C.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-H",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card H: array 5 by 4, total 20; valid equal-group correspondence to D.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-I",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card I: array 2 by 6, total 12; valid equal-group correspondence to L.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-J",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card J: five groups of 5, total 25; valid equal-group correspondence to A.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-K",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card K: array 7 by 2, total 14; valid equal-group correspondence to B.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-CARD-L",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+      "sourceElement": "Original blackline card L: six groups of 2, total 12; valid equal-group correspondence to I.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original two-page Card Sort Arrays blackline PDF card physically examined; first-party CSS draws comparable mathematics, NOT source artwork."
+    },
+    {
+      "id": "A1-MATCH",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Arrange 12 cards into 6 legitimate matching pairs by number and equal group size seen as array rows/columns.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "All cards A–L are teacher-scored, no fixed answer order."
+    },
+    {
+      "id": "A1-WRITTEN-REASON",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Select a matched pair and write why its group size matches array row or column.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "A1-REVISION",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "MLR1 feedback with 2–3 partners and independent improvement of original reasoning.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "A1-SYNTH",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Discuss sample matches and mathematical terms row, column, equal groups.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "A2-IMG-12",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/k63jxr7jzbwr5i9nkgqbgzbp65q0",
+      "sourceElement": "Original four clusters each containing three points, 12 total.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original source geometry viewed; source SHA256 3d72d503245d81f82c42d054fd94fdfd2ba4d86d4623f82ed6e672db76c891c8; independent Edulytics token starter; no image copied."
+    },
+    {
+      "id": "A2-IMG-16",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/grnrfw1i2hsl1fc7b6uxwkzekpr3",
+      "sourceElement": "Original scattered point-set containing sixteen geometrically unique points.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Original source geometry viewed; source SHA256 b05d0abdaa361c3ff4497a6e0d9204056969417e32d00e817d79b8406e7af6dd; independent Edulytics token starter; no image copied."
+    },
+    {
+      "id": "A2-1A",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Draw one array from original four clusters of three, using all twelve.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "A2-1B",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Explain with multiplication grouping why the new 12-dot array corresponds to source groups.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "A2-2A",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Draw as many different sixteen-dot rectangular arrays as possible, preserving all dots.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "A2-2B",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Explain why each sixteen-dot rectangle represents multiplication/equal groups.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "A2-MLR8",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Student-facing MLR8 frames: explain why new drawing matches group and shows multiplication.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "LESSON-SYNTH",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "Discuss complete equal-length array rows and columns, using all dots.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": ""
+    },
+    {
+      "id": "COOLDOWN-FIRST-PARTY",
+      "originalSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
+      "sourceElement": "2021 publisher teacher-only Cool-down not copied; distinct Edulytics source-goal equivalent asks for two 16-counter rectangular array drawings and reasons.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "2021 original gated prompt not represented as inspected. Rights boundary and authorized first-party alternative."
+    },
+    {
+      "id": "STUDENT-PDF",
+      "originalSource": "https://cms-assets.illustrativemathematics.org/t0s2bzgjuivlnsh6asgz6dhagr04",
+      "sourceElement": "2021 original three-page Student Task Statements PDF reviewed, pages 1 warm-up, 2 card sort, 3 two drawn-array problems with four subparts.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "grading": "TEACHER_ONLY",
+      "testsWrittenNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs",
+      "mathematicalSemanticVerified": true,
+      "teacherReviewRequired": true,
+      "publisherArtCopied": false,
+      "note": "Official 2021 PDF sha256 f1b44ade4538a208b0384d407fb1afe3830f9d3dac7019e993d0e00ca9a77ccb"
+    }
+  ],
+  "sourceVerifiedElements": 39,
+  "sourceIdentifiedElements": 39,
+  "semanticCoveragePercent": 100,
+  "originalCardDeck": {
+    "sourceZip": "https://cms-assets.illustrativemathematics.org/xy6ap8rk72avdh96755y6cr2e81c",
+    "zipSHA256": "168b2b1a1835f7f40a548758dc7daca159a5f44afce4c9a23588321230bce47b",
+    "blacklineInnerPdfName": "Grade3.1.C17.1-card-sort-arrays-card-sort-arrays.pdf",
+    "blacklinePdfSHA256": "730c1ca94f4627925766bb72e4ecec37fd9955a6ac332c2877edc361e29bab6b",
+    "pages": 2,
+    "originalCardCount": 12,
+    "firstPartyEquivalent": [
+      {
+        "id": "A",
+        "meaning": "array 5 by 5, total 25",
+        "pair": "J"
+      },
+      {
+        "id": "B",
+        "meaning": "seven independent groups of 2, total 14",
+        "pair": "K"
+      },
+      {
+        "id": "C",
+        "meaning": "array 3 by 4, total 12",
+        "pair": "G"
+      },
+      {
+        "id": "D",
+        "meaning": "four groups of 5, total 20",
+        "pair": "H"
+      },
+      {
+        "id": "E",
+        "meaning": "three groups of 10, total 30",
+        "pair": "F"
+      },
+      {
+        "id": "F",
+        "meaning": "array 10 by 3, total 30",
+        "pair": "E"
+      },
+      {
+        "id": "G",
+        "meaning": "three groups of 4, total 12",
+        "pair": "C"
+      },
+      {
+        "id": "H",
+        "meaning": "array 5 by 4, total 20",
+        "pair": "D"
+      },
+      {
+        "id": "I",
+        "meaning": "array 2 by 6, total 12",
+        "pair": "L"
+      },
+      {
+        "id": "J",
+        "meaning": "five groups of 5, total 25",
+        "pair": "A"
+      },
+      {
+        "id": "K",
+        "meaning": "array 7 by 2, total 14",
+        "pair": "B"
+      },
+      {
+        "id": "L",
+        "meaning": "six groups of 2, total 12",
+        "pair": "I"
+      }
+    ],
+    "sourceArtworkCopied": false
+  },
+  "studentPdfOriginal2021": {
+    "url": "https://cms-assets.illustrativemathematics.org/t0s2bzgjuivlnsh6asgz6dhagr04",
+    "sha256": "f1b44ade4538a208b0384d407fb1afe3830f9d3dac7019e993d0e00ca9a77ccb",
+    "pages": 3,
+    "allPagesRead": true
+  },
+  "originalFigures": [
+    {
+      "id": "A",
+      "count": 15,
+      "meaning": "Warm-up 15-dot nonrectangular stepped arrangement",
+      "url": "https://cms-assets.illustrativemathematics.org/9qbdbhsa9a2ix8vn8ipwdn9clop0",
+      "sha256": "d7747b3cf9cc5d85bd54c672f4c09fe0a946fe7e767ed2bcfa4a0f68f6574c55",
+      "sourceFigureInspected": true,
+      "artworkCopied": false
+    },
+    {
+      "id": "B",
+      "count": 15,
+      "meaning": "Warm-up 15 dots with one incomplete column",
+      "url": "https://cms-assets.illustrativemathematics.org/acj3tpru63496m5vguf3g8d3yuym",
+      "sha256": "4f2e072cc013ce29d2ca668a8bc99b52df4af18d34cf9b9e6d11d14c06d3e574",
+      "sourceFigureInspected": true,
+      "artworkCopied": false
+    },
+    {
+      "id": "C",
+      "count": 15,
+      "meaning": "Warm-up 15 irregular radial dots",
+      "url": "https://cms-assets.illustrativemathematics.org/mlrt6m52zuq4ubtwoyc6lu0sqmvq",
+      "sha256": "7ececb4ce19e7a33657a2c41601a83e30b104618233230f18061f23ff0f74098",
+      "sourceFigureInspected": true,
+      "artworkCopied": false
+    },
+    {
+      "id": "D",
+      "count": 16,
+      "meaning": "Warm-up complete 4×4 array 16 dots",
+      "url": "https://cms-assets.illustrativemathematics.org/0ognlh83ni5fypthj5vzhd9nl4sd",
+      "sha256": "3ccbab9bc690341924a3f85f791c2d94ac68b18fbdcfed4665421a390e10202a",
+      "sourceFigureInspected": true,
+      "artworkCopied": false
+    }
+  ],
+  "sourceSpecificRichV2Version": "g3-u01-l17-2021-first-party-abc-authoring-20261024-v2",
+  "sourceSpecificRichV2Bridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson17RichV2.cs",
+  "limitations": [
+    "100% refers to documented 2021 educational semantics and coverage of all identified source tasks, NOT source artwork pixel identity or reusing publisher original pages.",
+    "Every card match, drawing and peer revision is teacher-judged; no academic pass asserted for any student.",
+    "Original educator-gated Cool-down task itself not copied; an approved separate Edulytics goal-equivalent is teacher-reviewed.",
+    "No tests, CI, Stage D, production Rich V2 runtime, academic approval, merge or deployment were executed."
   ]
 }
