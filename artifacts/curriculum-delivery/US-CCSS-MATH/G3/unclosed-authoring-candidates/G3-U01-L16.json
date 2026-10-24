@@ -11,13 +11,13 @@
   "originalTeacherHtml": "unit-1/lesson-16/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/lesson.html",
   "stageA": {
-    "status": "FULL_2021_PUBLIC_TEXT_AND_PHYSICAL_SOURCE_TASKS_MAPPED_ORIGINAL_IMAGE_ASSETS_UNVERIFIED",
+    "status": "2021_ORIGINAL_PUBLIC_STUDENT_TEACHER_TEXT_19_OF_23_SOURCE_ELEMENTS_AUTHORING_MAPPED_FOUR_IMAGE_PDF_GAPS",
     "goals": "Build arrays with physical objects and describe them in terms of multiplication. Describe an array as an arrangement of objects into rows with an equal number of objects in each row and into columns with an equal number in each column.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 2,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "originalArraySourceTaskInventory": [
       "carton twelve eggs teacher discussion",
       "compare 4 circles x5 to 20-dot array",
@@ -27,10 +27,17 @@
       "24-cube multiple arrays",
       "array synthesis"
     ],
-    "publishedOriginalArtworkInspected": false
+    "publishedOriginalArtworkInspected": false,
+    "original2021SourceImageBytesInspected": false,
+    "originalStudentTaskPdfUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/preparation.html",
+    "originalSourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-16-2021-physical-array-source-evidence-20261024.json",
+    "originalSourceElementsIdentified": 23,
+    "elementsSemanticallyVerifiedForAuthoring": 19,
+    "originalElementsUnverified": 4,
+    "sourceElementSemanticCoveragePercent": 82.61
   },
   "stageB": {
-    "status": "L16_SOURCE_SPECIFIC_RICH_V2_2021_PHYSICAL_ARRAYS_AUTHORED_UNVERIFIED_RUNTIME",
+    "status": "FIRST_PARTY_2021_RICHV2_V2_CANONICAL_EMBEDDED_RESOURCE_AND_SHA_EDITION_GUARDED_MATERIALIZER_HOOK_AUTHORED_NOT_EXECUTED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -42,10 +49,14 @@
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "firstPartyDotsSixRowsByFiveColumnsAuthored": true,
     "sourceOriginalVisualNotDuplicated": true,
-    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json"
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+    "sourceSpecificRichV2Version": "g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v2",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson16RichV2.cs",
+    "canonicalHook": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "source20DotImagesCompared": false
   },
   "stageC": {
-    "status": "SEVEN_SOURCE_STUDENT_TASKS_AND_OPTIONAL_COOLDOWN_TEACHER_ONLY_NO_NUMERIC_PASS_UNRUN_TESTS",
+    "status": "ALL_SEVEN_AUTHENTIC_2021_SOURCE_HUMAN_ARRAY_TASKS_TEACHER_ONLY_OPTIONAL_NUMERIC_CHECK_REGRESSION_TESTS_WRITTEN_NOT_RUN",
     "family": "arrays-commutative",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -53,7 +64,7 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Compare Equal Groups and Arrays with your teacher. Show the representation and explain how it meets the goal: Let’s make some arrays.",
     "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
     "independentPracticeNowTeacherOnly": true,
@@ -62,7 +73,9 @@
     "regressionWrittenButNotRun": true,
     "originalSourceNumericCoverageClaimed": false,
     "sourceTaskTeacherOnly": 7,
-    "sourceHumanReviewTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs"
+    "sourceHumanReviewTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+    "numericSupplementOptionalForL16": true,
+    "numericPassCannotCertifyPhysicalArray": true
   },
   "sourceElements": [
     {
@@ -156,12 +169,10 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 warm-up 12-egg and Activity 1 dot-array source image bytes/pixel geometry were not verified.",
-    "Original 2021 Student Task PDF remains unread in this authoring checkpoint.",
-    "Actual student manipulation of physical cubes, multiple correct arrays and oral response require teacher classroom evidence.",
-    "Original publisher 2021 Cool-down access remains restricted; only a first-party equivalent has been authored.",
-    "Rich V2 resource is code-authored but not compiled, rendered or confirmed as the effective published learner body.",
-    "All new .NET tests are written and intentionally NOT_RUN; Stage D and academic sign-off remain outstanding."
+    "Original 2021 publisher egg photo, 4 circles of 5 dots, and 20-dot array image source files/geometry have not been inspected; their actual link fetch returned cache miss via public retrieval. First-party examples cannot be certified as publisher visual matches.",
+    "Original Student Task Statements 2021 PDF has not been visually inspected. Public source student-facing HTML math text was checked.",
+    "Original publisher Cool-down remains educator-gated. A teacher-reviewed Edulytics-created equivalent exists and is explicitly independent.",
+    "No source learner/canonical runtime, .NET tests, CI or Stage D run (authoring-only gate); original physical array construction is teacher-evaluated, not a numeric pass."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
@@ -169,5 +180,12 @@
   "deployed": false,
   "academicApproval": "NOT_CLAIMED",
   "elementLevelEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-16-2021-physical-array-source-evidence-20261024.json",
-  "originalSourceTaskElementCountGranular": 9
+  "originalSourceTaskElementCountGranular": 23,
+  "sourceMatchingPercentageAuthoringOnly": 82.61,
+  "blockingElementIds": [
+    "IMG-EGGS",
+    "IMG-GROUP-CIRCLES",
+    "IMG-ARRAY",
+    "STUDENT-PDF"
+  ]
 }
