@@ -4331,11 +4331,11 @@
         "A rectangle that is 8 by 4 units.",
         "Rectangle. Width, 3 meters. Length, 6 tick marks."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
         "prompt": "A tiled surface has 9 rows with 10 tiles in each row. How many unit tiles cover it?",
@@ -4348,21 +4348,22 @@
         "expected": "28"
       },
       "openTeacherTask": "Work through the original lesson's activity Partially Tiled with your teacher. Show the representation and explain how it meets the goal: You will determine the area of rectangles that are not fully gridded with squares.",
-      "teacherReviewNote": "Full figure geometry is necessary for source task, and publisher/photograph rights require asset review.",
+      "teacherReviewNote": "Grade3 2021 U02L08 original 3-page Student Task Statements reviewed; eight distinct original source visuals inspected from device (three warmup SVGs, two licensed Portuguese contextual photos, one nine-row ten-column partial tiled art, two untiled metric rectangles). Source image alt for middle warmup falsely says five groups of six, while the original SVG VISUALLY has four groups of six =24 and teacher synthesis confirms +4 from 20. Images are NOT copied to Edulytics; independently authored CSS models represent 4×5=20, 4×6=24, 4×4=16, 9×10=90 in², 8×4=32 m² and 6×3=18 m². Open drawings/explanations teacher reviewed; source gated cool-down not reproduced; tests unrun.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s solve area problems without a grid.",
+        "sourceGoal": "Let's solve area problems without a grid.",
         "sourceLearningGoals": "Determine the area of rectangles not displayed on a grid.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Compare three first-party warmup GROUPED dot figures as 20, 24 and 16; reject inconsistent source alt for second figure.",
+          "Explain azulejo tiling context using original source photos as references; no source art copied.",
+          "Infer Elena's missing unit squares: 10 across by 9 down = 90 square inches.",
+          "Draw or imagine grids from one-meter tick marks on two original untiled rectangles (8×4 and 6×3), recording 32m² and 18m².",
+          "Check unit in each written answer and discuss why grid lines are unnecessary for area multiplication."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve area problems without a grid.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original second source image alternative text says 5 groups of 6, but its actual SVG contains FOUR 6-dot groups. Base 24 on the inspected SVG and teacher +4 narrative. Photo pixel reuse not authorized; teacher must review mathematical drawings."
       },
       "sourceBasedCheck": {
         "prompt": "Determine the area of the source partly tiled Portuguese artwork rectangle from its actual image; do not infer its missing side length from alt text alone.",
@@ -4375,7 +4376,97 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L08-WU-01",
+          "sourceActivity": "Warm-up: One More, One Less",
+          "prompt": "Four separate groups of five dots: how many dots in all? Explain group size.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U02-L08-WU-02",
+          "sourceActivity": "Warm-up: One More, One Less",
+          "prompt": "Four separate groups each contain SIX dots in the source figure. How many altogether? Explain the +4 change from the previous figure; the published alt wrongly says five groups.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U02-L08-WU-03",
+          "sourceActivity": "Warm-up: One More, One Less",
+          "prompt": "Four separate groups each contain FOUR dots in the last original figure. How many in all? Explain why this is 4 less than first figure.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U02-L08-A1-CONTEXT",
+          "sourceActivity": "Activity 1: Partially Tiled",
+          "prompt": "Inspect the teacher's 2021 Portuguese azulejo artwork photographs. Discuss tiling and how the art suggests covering an entire rectangular region.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L08-A1-AREA",
+          "sourceActivity": "Activity 1: Partially Tiled",
+          "prompt": "Elena's first-party equivalent rectangle has TEN columns of 1-inch-square tiles and NINE rows. How many square inches would cover the ENTIRE rectangular region? Include your square AREA unit.",
+          "answerType": "area-with-unit",
+          "expected": "90 in²"
+        },
+        {
+          "id": "G3-U02-L08-A1-REASON",
+          "sourceActivity": "Activity 1: Partially Tiled",
+          "prompt": "Explain how the top complete row and partially filled left column show the number of equal unit squares per row and the full number of rows.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L08-A2-01",
+          "sourceActivity": "Activity 2: No More Squares",
+          "prompt": "First original untiled rectangle: eight one-meter divisions across and four down. Calculate the area and enter BOTH quantity and square-meter unit.",
+          "answerType": "area-with-unit",
+          "expected": "32 m²"
+        },
+        {
+          "id": "G3-U02-L08-A2-02",
+          "sourceActivity": "Activity 2: No More Squares",
+          "prompt": "Second original untiled rectangle: FIVE interior top tick marks indicate SIX intervals, while height is three meters. Calculate its area in square meters; include unit.",
+          "answerType": "area-with-unit",
+          "expected": "18 m²"
+        },
+        {
+          "id": "G3-U02-L08-A2-REASON",
+          "sourceActivity": "Activity 2: No More Squares",
+          "prompt": "With a ruler, draw a complete imagined grid through the two original metric rectangles and explain why counting intervals, not interior tick marks, determines dimension.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L08-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain how to find rectangle area when the interior grid is missing or only a few tiles are visible. Describe the roles of two side lengths.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ],
+      "originalStudentTaskPdfEvidence": {
+        "sha256": "b511d6f5cc56b4aca72de94517448b2d51a7d56844420f8f96cec26378cf71b4",
+        "pages": 3,
+        "bytes": 3696744,
+        "read": true
+      },
+      "originalSvgChecksums": {
+        "warmup20": "3884153b47395510be5e3f9232c282a7d0777a4c318727689a2e3106b6349f4a",
+        "warmup24": "da21e8eb10cbec50bc8fc1b9f0220c409867617de8a9cc718b7d0b3f369abc26",
+        "warmup16": "4b1f7db4fd94404742b51fba716310e6374f2dfd140657263d2c2d964c1a6836",
+        "partial90": "a36ba297e32513413524ac696496a6743e87e062a59e3d31f5dec20f38b7f1e3",
+        "rectangle32": "a0e4a33a1401e32bfa01925eb48c9d04e1e2cba8b0792fca28c4895c39b203c2",
+        "rectangle18": "513d447509d726ef65a8eb8414b9126229ef776949b9acc2acc1756e2a88129d"
+      },
+      "originalPhotoChecksums": {
+        "PortugueseAzulejo": "49d52ad207bdd872c70f2cbd994765d39e63e7becf2981c97c5d1fd7732cfe73",
+        "PortugueseBuilding": "7d78ad21ebb4ed1d576db2b3c4b536150bce614564740d036c76a14bf25461fe"
+      }
     },
     {
       "ordinal": 30,
