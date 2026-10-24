@@ -2354,11 +2354,11 @@
         "Array. 5 groups of 2.",
         "An array."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "commutative-property",
       "independentPractice": {
         "prompt": "Describe 3 rows of 7 dots and 7 rows of 3. Write two COMPLETE equations, separated by a semicolon, showing how switching factor order leaves the product unchanged.",
@@ -2371,10 +2371,10 @@
         "expected": "4x6=24;6x4=24"
       },
       "openTeacherTask": "Work through the original lesson's activity Learn More About Multiplication with your teacher. Show the representation and explain how it meets the goal: You will describe the commutative property of multiplication using arrays.",
-      "teacherReviewNote": "Explain why rotation changes the factor order but not the product.",
+      "teacherReviewNote": "Explain why rotation changes the factor order but not the product. 2021 source first edition five-page Student Task Statements PDF and four original SVGs were reviewed by mathematical structure. Image B retains two ROWS of five dot positions but groups FIVE vertical columns of two, while A groups two horizontal rows of five. First-party graphics are independently authored. Three original human tasks need teacher judgment, not a machine correct outcome.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s learn about the commutative property. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.OA.B.5 Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down",
@@ -2464,6 +2464,37 @@
           "prompt": "Explain how the equality 3×4 = 4×3 follows from the two complete equations and how 3 and 4 map to rows and columns.",
           "answerType": "teacher",
           "expected": null
+        }
+      ],
+      "original2021StudentTaskPdfEvidence": {
+        "originalSourceUrl": "https://cms-assets.illustrativemathematics.org/307ujhgddk700vjdpsbhypfe95nj",
+        "sha256": "9fad424bc9c7d744e689eb6286533dd579e01ec8ee4b8556665bec4eeef0c274",
+        "pagesIndividuallyReviewed": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "sourceArtCopied": false,
+        "sourceMathRead": true
+      },
+      "originalSourceFiguresSemantics": [
+        {
+          "role": "Two horizontally enclosed groups of five",
+          "sha256": "36971f727082c73fa1e50b2d228b732ff2daad1c8b9bf656d7339031c6480da9"
+        },
+        {
+          "role": "Five vertically enclosed columns of two",
+          "sha256": "ab39db26ef5473510203174cc799b096e0bef1642fe3ebcb447e9b54f88969bc"
+        },
+        {
+          "role": "Three rows of six",
+          "sha256": "9faa8a3f4b916fa2cd9da9fb25cecfdd0d898b2da2851efe12c86137187dd47a"
+        },
+        {
+          "role": "Three grouped sets of five",
+          "sha256": "8567df01e74a0c8ce33aa4a6908b0d13e212e7c98fe20eaec1ed90491ffbf124"
         }
       ]
     },
