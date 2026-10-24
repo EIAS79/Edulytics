@@ -3852,31 +3852,31 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: Notice and Wonder: Squares, Squares (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTICS_VERIFIED_AUTHORING_ONLY"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Same Rectangle, Different Units (15 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTICS_VERIFIED_AUTHORING_ONLY"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: What's the Area? (20 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTICS_VERIFIED_AUTHORING_ONLY"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTICS_VERIFIED_AUTHORING_ONLY"
         },
         {
           "ordinal": 5,
           "sourceHeading": "Cool-down: Which Square? (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTICS_VERIFIED_AUTHORING_ONLY"
         }
       ],
       "sourceVisualAltDescriptions": [
@@ -3886,11 +3886,11 @@
         "A shaded rectangle divided into 2 equal parts.",
         "an empty square."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "square-units",
       "independentPractice": {
         "prompt": "A NEW Edulytics rectangle covers seven rows of three SQUARE CENTIMETRES per row. Respond with the area AND the unit (for example: 21 cm²). Draw tiles separately.",
@@ -3903,10 +3903,10 @@
         "expected": "24 in²"
       },
       "openTeacherTask": "Work through the original lesson's activity Same Rectangle, Different Units with your teacher. Show the representation and explain how it meets the goal: You will learn that there are different units that can be used to measure area, specifically square centimeters and square inches.",
-      "teacherReviewNote": "Square inches and square centimetres are different-sized units. Teacher compares source two grid types and estimates.",
+      "teacherReviewNote": "Square inches and square centimetres are different-sized units. Teacher compares source two grid types and estimates. 2021 first-edition student three-page PDF, three-page physical inch/cm grid handout and five original SVGs reviewed. Source warmup original A 50, B18, C8, D2 units: SAME physical outer rectangle, different square-unit sizes. The actual original 2-inch-square source centimeter measurement is not an exact 25 cm²; teacher must evaluate estimates, overlay, unit and both row-column expressions. Independent first-party practice 21 cm² and Cool-down 24 in² strictly require units.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s learn about different units we can use to measure area.",
@@ -3929,8 +3929,8 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-6/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_2021_PDF_AND_INCH_CM_GRID_HANDOUT_AND_5_SOURCE_SVGS_INDIVIDUALLY_REVIEWED",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -4005,7 +4005,39 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "original2021SourceEvidence": {
+        "studentPdfSHA256": "ad6062317d3375cee4fd30e552566eeb675417a1f2f31f47552496c0cef6d4b7",
+        "studentPdfPagesReviewed": [
+          1,
+          2,
+          3
+        ],
+        "twoOriginalGridUnitBlacklinePdfSHA256": "a4be953efd2366ce1704867cabdd61ad1035288fee1b667b593e6737078f279d",
+        "gridHandoutPagesReviewed": [
+          1,
+          2,
+          3
+        ],
+        "warmupOriginalSvgCountInspected": 4,
+        "originalPhysicalSquareSvgInspected": true,
+        "sourceOriginalPixelsCopied": false
+      },
+      "originalUnitMathematicalFidelity": {
+        "sameOuterRegionImagesAtoD": true,
+        "sourcePartitionCounts": [
+          50,
+          18,
+          8,
+          2
+        ],
+        "twoPhysicalAreaUnitTypes": [
+          "in²",
+          "cm²"
+        ],
+        "originalSquareInchesExactIfPrintedToScale": 4,
+        "originalCentimeterIntegerAutoCertifiable": false
+      }
     },
     {
       "ordinal": 28,
