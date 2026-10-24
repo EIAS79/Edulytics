@@ -2062,7 +2062,7 @@
         "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Array of Colors with your teacher. Show the representation and explain how it meets the goal: You will represent an array situation using an equation with a symbol for the unknown number and solve.",
-      "teacherReviewNote": "Source expects array and equation with unknown, not simply product recall.",
+      "teacherReviewNote": "Original warm-up is four mentally evaluated x2 products with oral strategies; source MLR5 Co-craft seven-row questions are open teacher tasks. For source crayon array and both coconut tree rows, a symbol-containing multiplication equation AND the correct numeric solution are separate student outputs, and drawings/partner explanations need teacher review. Full numeric equation alone does not certify source symbolic-unknown work.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -2072,12 +2072,13 @@
         "sourceLearningGoals": "Represent an array situation with an equation with a symbol for the unknown number. Solve multiplication problems involving arrays.",
         "teachingSteps": [
           "Calculate the four 10×2 through 7×2 Number Talk expressions, explaining the reduction by one equal group.",
-          "Before revealing the full 7-row crayon story, let pupils pose questions about the missing contents and group size.",
+          "Source Activity 1: start with MLR5 Co-crafting questions about seven unspecified rows BEFORE revealing five crayons per row. Then require drawn 7×5 array, equation 7×5=□ and separately 35. Teacher reviews the source question generation and array.",
+          "Source Activity 2: require an unknown-total equation for each source field: 5×9=□ then 45, and Tyler's backyard 2×4=□ then 8. Source contextual images are not reproduced.",
           "Solve and represent 7 rows of 5 crayons with an array, ? product equation and completed equation.",
           "Individually represent 5 rows of 9 coconut trees and 2 rows of 4 trees, with complete equations and diagrams.",
           "Discuss how the initial unknown sign is substituted by the finished product and which factors denote rows and per-row counts."
         ],
-        "caution": "Co-crafted questions and the source's two forms of each equation cannot be certified by an integer-only answer. Independent Practice now expects a FULL multiplication equation; partner questions and arrays still require teacher assessment.",
+        "caution": "Both Activity 2 source rows and the crayon problem require an unknown-symbol equation and solved amount, as distinct assessed outputs. Source visuals/drawings and the co-crafted original questions are human-only; do not accept numeric total as proof of representation.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -2129,6 +2130,13 @@
           "expected": null
         },
         {
+          "id": "G3-U01-L19-A1-01-SYMBOL",
+          "sourceActivity": "Activity 1: Array of Colors",
+          "prompt": "Seven rows contain five crayons each; write the original source's equation with a symbol for the unknown product. Separately draw a seven-by-five array and explain how it shows 35 crayons.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "7x5=□"
+        },
+        {
           "id": "G3-U01-L19-A1-01",
           "sourceActivity": "Activity 1: Array of Colors",
           "prompt": "An art supply array has seven rows of five crayons. Find the total and also draw a 7×5 array and an equation initially containing an unknown symbol.",
@@ -2136,11 +2144,25 @@
           "expected": "35"
         },
         {
+          "id": "G3-U01-L19-A2-01-SYMBOL",
+          "sourceActivity": "Activity 2: Tyler's Trees",
+          "prompt": "A grove contains five rows of nine coconut trees; write an equation with a symbol for its unknown total. Draw an array and explain the row count.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "5x9=□"
+        },
+        {
           "id": "G3-U01-L19-A2-01",
           "sourceActivity": "Activity 2: Tyler's Trees",
           "prompt": "A Mexican coconut grove has five rows with nine trees per row. Write a COMPLETE multiplication equation showing the total.",
           "answerType": "multiplication-equation",
           "expected": "5x9=45"
+        },
+        {
+          "id": "G3-U01-L19-A2-02-SYMBOL",
+          "sourceActivity": "Activity 2: Tyler's Trees",
+          "prompt": "Tyler may plant two rows of four coconut trees: write the source required equation using a symbol for the total. Draw a valid array and explain the grouping.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "2x4=□"
         },
         {
           "id": "G3-U01-L19-A2-02",
@@ -2156,7 +2178,8 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceSymbolicEquationStageC": "THREE_INDIVIDUALLY_GRADED_ORIGINAL_SOURCE_UNKNOWN_PRODUCT_EQUATIONS"
     },
     {
       "ordinal": 20,
