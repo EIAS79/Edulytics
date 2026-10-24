@@ -1881,7 +1881,7 @@
       "firstPartyFamily": "arrays-expressions",
       "independentPractice": {
         "prompt": "Create TWO rows each containing SIX eggs. Write the multiplication expression using number of rows first and eggs per row second; also draw the array.",
-        "answerType": "multiplication-expression",
+        "answerType": "multiplication-expression-either-order",
         "expected": "2x6"
       },
       "originalEdulyticsCoolDown": {
@@ -1890,7 +1890,7 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Represent Array Situations with your teacher. Show the representation and explain how it meets the goal: You will represent multiplication situations with arrays and multiplication expressions.",
-      "teacherReviewNote": "The student should explain row/column factors and show a correct array.",
+      "teacherReviewNote": "Original 2021 source permits relating factors to rows OR columns. Both mathematically matching factor orientations should be accepted for Activity 1 with required teacher assessment of the array sketch. The 4×6 human array and three Activity 2 drawings remain teacher-only, as does the original source Cool-down. A bare numeric product is not an expression.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1905,7 +1905,7 @@
           "Use a full-class human array of 4×6 where practicable (the source permits size adjustments).",
           "Draw arrays for 2×3, 5×2 and 4×4, checking visual rows, columns and equivalence."
         ],
-        "caution": "L18 introduces multiplication EXPRESSIONS for arrays. A student must actually enter both ordered factors: only the product is not adequate. Array drawings and the human class arrangement require teacher review.",
+        "caution": "2021 source explicitly allows row- or column-based factor interpretations; do not mark reversed factors wrong if the model and pair are correct. Expression entry and teacher-reviewed array drawing are distinct requirements. Publisher visual pixels and teacher-only Cool-down remain separate.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1931,29 +1931,29 @@
         {
           "id": "G3-U01-L18-A1-01",
           "sourceActivity": "Activity 1: Represent Array Situations",
-          "prompt": "Three rows each hold five chairs. Write the row-count × chairs-per-row expression and draw a matching array.",
-          "answerType": "multiplication-expression",
+          "prompt": "Three rows each hold five chairs. Write the two-factor multiplication expression and draw a matching array.",
+          "answerType": "multiplication-expression-either-order",
           "expected": "3x5"
         },
         {
           "id": "G3-U01-L18-A1-02",
           "sourceActivity": "Activity 1: Represent Array Situations",
-          "prompt": "Four rows each hold five cars. Write the multiplication expression, and draw the array.",
-          "answerType": "multiplication-expression",
+          "prompt": "Four rows each hold five cars. Write a mathematically justified multiplication expression, and draw the array.",
+          "answerType": "multiplication-expression-either-order",
           "expected": "4x5"
         },
         {
           "id": "G3-U01-L18-A1-03",
           "sourceActivity": "Activity 1: Represent Array Situations",
           "prompt": "Two rows each hold six eggs. Write the corresponding expression, and draw the array.",
-          "answerType": "multiplication-expression",
+          "answerType": "multiplication-expression-either-order",
           "expected": "2x6"
         },
         {
           "id": "G3-U01-L18-A1-04",
           "sourceActivity": "Activity 1: Represent Array Situations",
           "prompt": "Two equal lines of ten students each. Write the matching expression, and make a diagram.",
-          "answerType": "multiplication-expression",
+          "answerType": "multiplication-expression-either-order",
           "expected": "2x10"
         },
         {
@@ -1991,7 +1991,8 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceExpressionOrientationPolicy": "SOURCE_BOTH_FACTOR_ORDERS_ACCEPTED_WITH_TEACHER_VISUAL_EXPLANATION"
     },
     {
       "ordinal": 19,
