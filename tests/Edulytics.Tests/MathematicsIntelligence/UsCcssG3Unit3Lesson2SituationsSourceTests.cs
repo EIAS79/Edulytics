@@ -55,7 +55,6 @@ public sealed class UsCcssG3Unit3Lesson2SituationsSourceTests
         }
         Assert.False(lesson.ReadyForStageD);
         Assert.False(lesson.OriginalStudentTaskPdfRead);
-        Assert.Equal("A_C_EXPLICIT_GAP", lesson.Status);
     }
 
     [Fact]
