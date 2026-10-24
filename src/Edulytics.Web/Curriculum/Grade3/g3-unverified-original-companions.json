@@ -3555,31 +3555,31 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: How Many Do You See: One More (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SOURCE_2021_EDUCATIONAL_SEMANTICS_MATCHED_AUTHORING_ONLY"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Match Expressions and Areas (15 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SOURCE_2021_EDUCATIONAL_SEMANTICS_MATCHED_AUTHORING_ONLY"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: Create from Expressions (20 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SOURCE_2021_EDUCATIONAL_SEMANTICS_MATCHED_AUTHORING_ONLY"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SOURCE_2021_EDUCATIONAL_SEMANTICS_MATCHED_AUTHORING_ONLY"
         },
         {
           "ordinal": 5,
           "sourceHeading": "Cool-down: Create a Rectangular Area (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SOURCE_2021_EDUCATIONAL_SEMANTICS_MATCHED_AUTHORING_ONLY"
         }
       ],
       "sourceVisualAltDescriptions": [
@@ -3592,8 +3592,8 @@
       "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
         "prompt": "A rectangle has 7 rows of 4 unit squares. What is its area?",
@@ -3606,10 +3606,10 @@
         "expected": "30"
       },
       "openTeacherTask": "Work through the original lesson's activity Match Expressions and Areas with your teacher. Show the representation and explain how it meets the goal: You will connect multiplication expressions to rectangular areas.",
-      "teacherReviewNote": "All seven original first-edition 2021 7-page pattern cards individually source reviewed. Source math-to-letter match: 9×5→F, 8×2→C, 7×10→E, 3×3→D, 2×6→A, 8×4→G, 5×7→B. Edulytics illustrations are independently authored. Third original warm-up is 6 separate groups of 4, twenty-four dots, NOT an unknown count. The 2021 student PDF has four pages. Five 2021 activity2 area quantities require physically drawn and teacher-reviewed rectangles. Numeric or letter feedback cannot alone grade the whole lesson.",
+      "teacherReviewNote": "All seven original first-edition 2021 7-page pattern cards individually source reviewed. Source math-to-letter match: 9×5→F, 8×2→C, 7×10→E, 3×3→D, 2×6→A, 8×4→G, 5×7→B. Edulytics illustrations are independently authored. Third original warm-up is 6 separate groups of 4, twenty-four dots, NOT an unknown count. The 2021 student PDF has four pages. Five 2021 activity2 area quantities require physically drawn and teacher-reviewed rectangles. Numeric or letter feedback cannot alone grade the whole lesson. 48 elements individually mapped to original 2021 academic source semantics; 6 original lesson SVG and 7 card images individually source inspected. A–G first-party cards authored separately. Grade of 7 labels and 5 numeric areas only gives partial feedback; full picture and drawing reasoning requires teacher. Original gated cooldown separate.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s connect multiplication expressions to area.",
@@ -3828,7 +3828,8 @@
         "description": "six groups each four dots arranged as 2x2 mini-squares",
         "expected": 24,
         "sourceSvgSha256": "a66d54fa940382e8fa4d3bc5a099aba11f397b3abf30a09a4b71071a513e69f5"
-      }
+      },
+      "original2021SourceElementMappingEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-26-2021-original-source-abc-evidence-20261024.json"
     },
     {
       "ordinal": 27,
