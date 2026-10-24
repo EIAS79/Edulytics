@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-20/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-20/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "IM_2021_PUBLIC_STUDENT_TEACHER_TEXT_ELEMENTS_MAPPED_ORIGINAL_MEDIA_PDF_UNVERIFIED",
     "goals": "Describe the commutative property of multiplication using arrays.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 3,
@@ -59,7 +59,7 @@
     "originalTeacherCoolDownGated": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRST_PARTY_SOURCE_SPECIFIC_RICH_V2_AUTHORED_RUNTIME_UNVERIFIED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -69,10 +69,11 @@
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
-    "sourceSpecificCommutativePairUIAndIllustrationsAuthored": true
+    "sourceSpecificCommutativePairUIAndIllustrationsAuthored": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l20-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TWO_SOURCE_COMMUTATIVE_FULL_EQUATION_PAIRS_AND_THREE_TEACHER_RUBRICS_WRITTEN_TESTS_UNRUN",
     "family": "arrays-commutative",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -87,7 +88,8 @@
     "sourceNumericSubtasks": 6,
     "sourceHumanSubtasks": 3,
     "commutativePairsRequireBothTrueFullEquations": true,
-    "testsWrittenNotExecuted": true
+    "testsWrittenNotExecuted": true,
+    "sourceTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson20CommutativeSourceTests.cs"
   },
   "sourceElements": [
     {
@@ -201,17 +203,15 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Direct public 2021 source text now inspected, but graphics at original pixel level, teacher-only original Cool-down, student's PDF, actual peer discussions and effective published Rich V2 remain unverified; Stage D and test compilation remain deferred."
+    "Original source dot-array images A and B, Activity 2 and section-summary figures have not been individually pixel compared or reuse-rights audited.",
+    "Publisher educator-gated original Cool-down and original Student Task PDF not inspected as complete original materials.",
+    "Teacher-led distinct source array situations, MLR1 text revision and human model explanations unverified.",
+    "New first-party Rich V2 effective learner render and authored .NET tests have not been run, no Stage D approval."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-20-2021-source-to-first-party-evidence-20261024.json"
 }
