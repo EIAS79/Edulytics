@@ -5750,73 +5750,183 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: Notice and Wonder: Floor Plan (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Floor Plans (10 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: New Bed and Desk (25 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         }
       ],
       "sourceVisualAltDescriptions": [],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "composite-area",
       "independentPractice": {
-        "prompt": "Create a scaled bedroom floor plan with desk and bed; show room area minus furniture area and justify the arrangement.",
+        "prompt": "Separate Edulytics practice: design an 8-ft by 10-ft rectangular bedroom with a 3-ft by 6-ft bed and a 3-ft by 2-ft desk. Specify door/window positions and reasonable access choices. Use a labelled scale, calculate the floor not covered by the two items, and explain your design. Teacher reviews the full plan.",
         "answerType": "teacher",
         "expected": null
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Create a new furniture plan and explain the uncovered floor area using labelled measurements.",
-        "answerType": "teacher",
-        "expected": null
+        "prompt": "New Edulytics exit task: an 8-ft by 10-ft rectangular room contains only a 2-ft by 5-ft bed and a 2-ft by 3-ft desk. Draw a non-overlapping arrangement inside the room, state access assumptions, and find the floor not covered by these two items. Enter the area with ft²; your teacher still reviews the plan and explanation.",
+        "answerType": "area-with-unit",
+        "expected": "64 ft²"
       },
-      "openTeacherTask": "Work through the original lesson's activity Floor Plans with your teacher. Show the representation and explain how it meets the goal: You will use your experience with areas of figures composed of rectangles to solve problems.",
-      "teacherReviewNote": "Optional project. Room diagram dimensions not established from public text; no numeric auto-pass or invented measurements.",
+      "openTeacherTask": "Recognize floor-plan features, critique one liked feature and one change in the furnished design, co-create mathematical questions, then produce a scaled bed-and-desk arrangement for Tyler’s room and explain uncovered floor with explicit assumptions. Create a poster and compare plans in a gallery walk.",
+      "teacherReviewNote": "The original three-page student PDF fixes the room’s 6-ft main width,15-ft full height,4-ft extension width and 5-ft extension height; outer area 110 ft². Bed 3×6=18 ft²; desk 3×2=6 ft². Subtracting only these non-overlapping new items gives 86 ft², explicitly before any unknown closet deduction; the original source question is not graded by that number alone. Closet dimensions are absent. Review scale, fit, rotations, no overlap, door/closet/chair access, walking routes, footprint assumptions, poster, mathematical questions and actual gallery dialogue. Many layouts can work. The source permits an own grid-paper diagram; the publisher cut-out blackline master is not claimed inspected or reproduced.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s fit furniture into a room.",
         "sourceLearningGoals": "Solve problems involving the area of ungridded figures composed of rectangles, including figures with missing side lengths.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Notice the door, windows and undimensioned closet in the room plan.",
+          "Critique the furnished room and co-create mathematical area questions.",
+          "Recover room lengths and calculate the outer area and given furniture footprints.",
+          "Draw room and furniture at one scale; try non-overlapping layouts and explain access choices.",
+          "State footprint assumptions, create a poster, compare plans and complete the separate exit task."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s fit furniture into a room.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not turn an open modeling project into a single layout or unexplained 86-ft² answer. No exact closet area is given; area totals alone do not establish fit or access.",
+        "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson15RichV2"
       },
       "sourceBasedCheck": {
-        "prompt": "Arrange the source room, bed and desk layouts and calculate the uncovered floor area only after measuring the actual labelled furniture diagram.",
+        "prompt": "Solve both original project questions using the given room, bed and desk: choose and justify an arrangement, then explain the floor not covered by furniture with labelled calculations and explicit closet assumptions. Submit your plan/poster for teacher review; no single typed layout or uncovered-area number completes this modeling task.",
         "answerType": "teacher",
         "expected": null
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-15/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_THREE_PAGE_2021_STUDENT_PDF_THREE_FLOOR_PLAN_VISUAL_CONTEXTS_PUBLIC_TEACHER_PREPARATION_SOURCE_ALLOWED_GRID_PAPER_ALTERNATIVE_REVIEW",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L15-WU-NOTICE",
+          "sourceActivity": "Notice and Wonder: Floor Plan",
+          "prompt": "Study the floor plan. Record a notice and a question, then discuss with a partner.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-WU-FEATURES",
+          "sourceActivity": "Notice and Wonder: Floor Plan",
+          "prompt": "Identify the door, windows and closet. Explain how a floor plan is like a map viewed from above and name other bedroom objects it could show.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-A1-LIKE",
+          "sourceActivity": "Floor Plans",
+          "prompt": "Name one thing you like about the furnished bedroom design and explain why.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-A1-CHANGE",
+          "sourceActivity": "Floor Plans",
+          "prompt": "Name one thing you would change and why. Consider plants near the door, walking routes, chair access and usable space; several changes can be reasonable.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-A1-QUESTIONS",
+          "sourceActivity": "Floor Plans",
+          "prompt": "Co-create mathematical questions about the plan, then compare them with a partner. Discuss questions involving rectangle areas or comparisons.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-A2-MISSING-HEIGHT",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Use the source room’s 15-ft full height and 5-ft lower extension to find the upper inside vertical length. Include ft and explain.",
+          "answerType": "length-with-unit",
+          "expected": "10 ft"
+        },
+        {
+          "id": "G3-U02-L15-A2-FULL-WIDTH",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Use the source room’s 6-ft main width and 4-ft extension to find its full bottom width. Include ft and explain.",
+          "answerType": "length-with-unit",
+          "expected": "10 ft"
+        },
+        {
+          "id": "G3-U02-L15-A2-ROOM-AREA",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Find the area inside the OUTER room boundary, before subtracting any furniture or closet footprint. Include ft² and show a non-overlapping rectangle split.",
+          "answerType": "area-with-unit",
+          "expected": "110 ft²"
+        },
+        {
+          "id": "G3-U02-L15-A2-BED",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Find the footprint area of the source 3-ft by 6-ft bed. Include ft².",
+          "answerType": "area-with-unit",
+          "expected": "18 ft²"
+        },
+        {
+          "id": "G3-U02-L15-A2-DESK",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Find the footprint area of the source 3-ft by 2-ft desk. Include ft².",
+          "answerType": "area-with-unit",
+          "expected": "6 ft²"
+        },
+        {
+          "id": "G3-U02-L15-A2-PLAN",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Arrange Tyler’s bed and desk in the given room. Use a consistent labelled scale, keep them inside the room without overlap, and explain door, closet, chair and walking access. More than one layout can work.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-A2-UNCOVERED",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Explain the room area not covered by furniture. State exactly which footprints you subtract and how you treat the closet, whose dimensions are not supplied. Distinguish a two-new-item remainder from usable floor space; do not give an unexplained 86 as the whole answer.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-A2-POSTER",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Create a poster showing the scaled plan, labels, recovered lengths, area calculations, assumptions and reasons for your choices. Organize it so others can follow.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-A2-GALLERY",
+          "sourceActivity": "New Bed and Desk",
+          "prompt": "Half the groups explain their posters while the rest visits and asks questions; switch posters after about two minutes within a five-minute round, then swap group roles and repeat. Describe a different reasonable plan.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L15-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Explain why many arrangements can work. Discuss a choice about walking around the bed, chair space or keeping the door usable, and reflect on an area strategy you used.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ],
+      "originalTeacherBlacklineMasterPdfRead": false
     },
     {
       "ordinal": 37,

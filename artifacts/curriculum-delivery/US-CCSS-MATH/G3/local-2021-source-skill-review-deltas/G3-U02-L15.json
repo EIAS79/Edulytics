@@ -10,18 +10,18 @@
   "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U02.json",
   "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L15.json",
   "stageA": {
-    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
-    "originalAllVisualGeometryVerified": false,
+    "state": "THREE_2021_PDF_PAGES_THREE_FLOOR_PLAN_IMAGE_CONTEXTS_PUBLIC_TEACHER_PREPARATION_SOURCE_GRID_ALTERNATIVE_REVIEWED",
+    "originalAllVisualGeometryVerified": true,
     "teacherManualOrManipulativesFullyReviewed": false,
     "sourceTextSkillAdaptation": {
-      "prompt": "Arrange the source room, bed and desk layouts and calculate the uncovered floor area only after measuring the actual labelled furniture diagram.",
+      "prompt": "Solve both original project questions using the given room, bed and desk: choose and justify an arrangement, then explain the floor not covered by furniture with labelled calculations and explicit closet assumptions. Submit your plan/poster for teacher review; no single typed layout or uncovered-area number completes this modeling task.",
       "answerType": "teacher",
       "expected": null
     },
     "sourceCheckProvenance": {
       "localHtml": "unit-2/lesson-15/lesson.html",
-      "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-      "figurePixelsInspected": false
+      "verified": "ORIGINAL_THREE_PAGE_2021_STUDENT_PDF_THREE_FLOOR_PLAN_VISUAL_CONTEXTS_PUBLIC_TEACHER_PREPARATION_SOURCE_ALLOWED_GRID_PAPER_ALTERNATIVE_REVIEW",
+      "figurePixelsInspected": true
     },
     "originalSourceHeadings": [
       {
@@ -29,42 +29,44 @@
         "heading": "Warm-up: Notice and Wonder: Floor Plan (10 minutes)",
         "kind": "WARM_UP",
         "referenceHtml": "unit-2/lesson-15/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-36-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-2",
         "heading": "Activity 1: Floor Plans (10 minutes)",
         "kind": "ACTIVITY",
         "referenceHtml": "unit-2/lesson-15/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-36-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-3",
         "heading": "Activity 2: New Bed and Desk (25 minutes)",
         "kind": "ACTIVITY",
         "referenceHtml": "unit-2/lesson-15/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-36-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-4",
         "heading": "Lesson Synthesis",
         "kind": "TEACHER_SYNTHESIS",
         "referenceHtml": "unit-2/lesson-15/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-36-2021-source-to-first-party-evidence-20261024.json"
       }
     ],
     "originalSourceVisualAltDescriptions": [],
-    "originalElementsFullyOneToOneVerified": 0,
-    "originalStudentTaskPdfRead": false
+    "originalElementsFullyOneToOneVerified": 25,
+    "originalStudentTaskPdfRead": true,
+    "allAvailablePublicTeacherInstructionsReviewed": true,
+    "protectedTeacherResponsesAndCoolDownRead": false
   },
   "stageB": {
-    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "state": "GUARDED_OPEN_ROOM_MODELING_RICH_V2_FIRST_PARTY_ROOM_DESIGN_AND_FOOTPRINT_MODELS",
     "learnerSourceCheck": {
-      "prompt": "Arrange the source room, bed and desk layouts and calculate the uncovered floor area only after measuring the actual labelled furniture diagram.",
+      "prompt": "Solve both original project questions using the given room, bed and desk: choose and justify an arrangement, then explain the floor not covered by furniture with labelled calculations and explicit closet assumptions. Submit your plan/poster for teacher review; no single typed layout or uncovered-area number completes this modeling task.",
       "answerType": "teacher",
       "expected": null
     },
@@ -72,51 +74,78 @@
       "sourceGoal": "Let’s fit furniture into a room.",
       "sourceLearningGoals": "Solve problems involving the area of ungridded figures composed of rectangles, including figures with missing side lengths.",
       "teachingSteps": [
-        "Identify unit squares and the area being measured.",
-        "Represent the shape or rectangle with equal-area units.",
-        "Calculate or compare area with units and check any decomposition."
+        "Notice the door, windows and undimensioned closet in the room plan.",
+        "Critique the furnished room and co-create mathematical area questions.",
+        "Recover room lengths and calculate the outer area and given furniture footprints.",
+        "Draw room and furniture at one scale; try non-overlapping layouts and explain access choices.",
+        "State footprint assumptions, create a poster, compare plans and complete the separate exit task."
       ],
-      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s fit furniture into a room.",
-      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+      "caution": "Do not turn an open modeling project into a single layout or unexplained 86-ft² answer. No exact closet area is given; area totals alone do not establish fit or access.",
+      "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson15RichV2"
     },
     "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
-    "existingContentReplacedOrPublished": false
+    "existingContentReplacedOrPublished": false,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l15-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "state": "110FT2_18FT2_6FT2_ANCHORS_TEACHER_LAYOUT_CLOSET_POSTER_RUBRIC_DISTINCT_64FT2_EXIT_UNRUN_TESTS",
     "firstPartyPractice": {
-      "prompt": "Create a scaled bedroom floor plan with desk and bed; show room area minus furniture area and justify the arrangement.",
+      "prompt": "Separate Edulytics practice: design an 8-ft by 10-ft rectangular bedroom with a 3-ft by 6-ft bed and a 3-ft by 2-ft desk. Specify door/window positions and reasonable access choices. Use a labelled scale, calculate the floor not covered by the two items, and explain your design. Teacher reviews the full plan.",
       "answerType": "teacher",
       "expected": null
     },
     "independentEdulyticsCoolDown": {
-      "prompt": "Create a new furniture plan and explain the uncovered floor area using labelled measurements.",
-      "answerType": "teacher",
-      "expected": null
+      "prompt": "New Edulytics exit task: an 8-ft by 10-ft rectangular room contains only a 2-ft by 5-ft bed and a 2-ft by 3-ft desk. Draw a non-overlapping arrangement inside the room, state access assumptions, and find the floor not covered by these two items. Enter the area with ft²; your teacher still reviews the plan and explanation.",
+      "answerType": "area-with-unit",
+      "expected": "64 ft²"
     },
-    "humanRubric": "Optional project. Room diagram dimensions not established from public text; no numeric auto-pass or invented measurements.",
-    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "humanRubric": "The original three-page student PDF fixes the room’s 6-ft main width,15-ft full height,4-ft extension width and 5-ft extension height; outer area 110 ft². Bed 3×6=18 ft²; desk 3×2=6 ft². Subtracting only these non-overlapping new items gives 86 ft², explicitly before any unknown closet deduction; the original source question is not graded by that number alone. Closet dimensions are absent. Review scale, fit, rotations, no overlap, door/closet/chair access, walking routes, footprint assumptions, poster, mathematical questions and actual gallery dialogue. Many layouts can work. The source permits an own grid-paper diagram; the publisher cut-out blackline master is not claimed inspected or reproduced.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson15RoomModelingSourceTests.cs",
     "testsExecuted": false,
-    "sourceTaskFullCoverageConfirmed": false
+    "sourceTaskFullCoverageConfirmed": true
   },
   "originalImageRightsAudited": false,
   "originalPublisherCoolDownCopied": false,
   "equivalentFirstPartyCoolDownAuthorized": true,
-  "oneToOneElementParityPercent": null,
-  "authoringClosure": "A_C_EXPLICIT_GAP",
-  "readyForStageD": false,
+  "oneToOneElementParityPercent": 100,
+  "authoringClosure": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "academicApproval": "NOT_CLAIMED",
-  "gaps": [
-    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
-    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
-    "Published Rich V2 rendering and materialized translations not confirmed against source.",
-    "Source-to-digital full skill-family and source item coverage not formally verified.",
-    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
-    "All written .NET and Razor test contracts deliberately not run until Stage D."
-  ],
+  "gaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_INTENTIONALLY",
   "merged": false,
-  "deployed": false
+  "deployed": false,
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "teacherOnlyAuthoredActivityRubricIndependentlyReviewed": true,
+    "teacherEvidenceIsRequired": true,
+    "classroomTeacherEvidenceObserved": false,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-36-2021-source-to-first-party-evidence-20261024.json",
+    "basis": "STATIC_A_B_C_AUTHORING_NOT_EXECUTED_STAGE_D"
+  },
+  "sourcePdf": {
+    "pageCount": 3,
+    "bytes": 978665,
+    "sha256": "b826ee5caaabb25ce2e265c48d95c937e682e31b251682e00c520a410b2ea45f",
+    "unit": 2,
+    "lesson": 15,
+    "url": "https://cms-assets.illustrativemathematics.org/9uz536maprl8csneuca0kdeju08w",
+    "allPagesRead": true,
+    "inspection": "ALL_THREE_ORIGINAL_2021_STUDENT_PDF_RENDERINGS_THREE_ROOM_FURNITURE_IMAGE_CONTEXTS_AND_PUBLIC_TEACHER_PREPARATION_REVIEWED_READ_ONLY; PUBLISHER_CUTOUT_BLM_NOT_INSPECTED_SOURCE_EXPLICIT_OWN_GRID_PAPER_ALTERNATIVE_USED"
+  },
+  "matchingScope": "Only specified room spans and given footprint areas auto-check. Original layout/uncovered-floor project, closet interpretation, fit/access, poster and actual discussion remain teacher-reviewed. Distinct exit task explicitly lists all its two furniture footprints and checks64ft², still requiring design review.",
+  "deferredStageDRequirements": [
+    "Compile .NET/Razor and execute this lesson’s new and affected shared contracts at grade freeze.",
+    "Inspect authenticated canonical teaching/companion rendering, first-party figures, accessibility and responsive behavior.",
+    "Verify valid/wrong/malformed submissions, tenant and anti-forgery boundaries and saved attempts in the existing authenticated flow.",
+    "Actual learner construction, explanations, teacher evaluation and classroom participation remain unobserved."
+  ],
+  "publisherCoolDownStatus": "NOT_LISTED_IN_ORIGINAL_OPTIONAL_LESSON",
+  "originalBlacklineMasterRead": false,
+  "sourceAuthorizedMaterialAlternative": "OWN_GRID_PAPER_DIAGRAM_EXPLICITLY_ALLOWED_IN_ORIGINAL_TEACHER_ACTIVITY"
 }
