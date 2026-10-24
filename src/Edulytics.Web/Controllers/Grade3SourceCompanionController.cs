@@ -57,17 +57,19 @@ public sealed class Grade3SourceCompanionController(
         var sourceSubtaskFeedback = lesson.SourceSubtasks.Count == 0 ? null :
             lesson.SourceSubtasks.Select((q, i) => Grade3SourceCompanionCatalogue.Grade(
                 q, answers.SourceSubtaskAnswers.ElementAtOrDefault(i))).ToArray();
-        // L10's authentic source Cool-down is a teacher-reviewed diagram
-        // with a yes/no choice. Extra Edulytics numeric items are OPTIONAL.
-        var sourceTen = lesson.UnitNumber == 1 && (lesson.LessonNumber == 10 || lesson.LessonNumber == 11);
+        // L10/L11 source diagrams and L16 physical arrays require teacher review.
+        // Numeric supplemental checks are optional: numeric correctness is not
+        // evidence that an L16 array was constructed or explained.
+        var optionalNumericSupplement = lesson.UnitNumber == 1 &&
+            (lesson.LessonNumber == 10 || lesson.LessonNumber == 11 || lesson.LessonNumber == 16);
         var sourceCheck = lesson.SourceBasedCheck is null ? null :
-            sourceTen && string.IsNullOrWhiteSpace(answers.SourceCheckAnswer)
-                ? new Grade3CompanionFeedback(null, true, "Optional numeric supplement not attempted.")
+            optionalNumericSupplement && string.IsNullOrWhiteSpace(answers.SourceCheckAnswer)
+                ? new Grade3CompanionFeedback(null, true, "Optional numeric supplement not attempted; teacher checks the physical model.")
                 : Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck, answers.SourceCheckAnswer);
-        var p = sourceTen && string.IsNullOrWhiteSpace(answers.PracticeAnswer)
+        var p = optionalNumericSupplement && string.IsNullOrWhiteSpace(answers.PracticeAnswer)
             ? new Grade3CompanionFeedback(null, true, "Optional independent practice not attempted.")
             : Grade3SourceCompanionCatalogue.Grade(lesson!.IndependentPractice!, answers.PracticeAnswer);
-        var cool = sourceTen && string.IsNullOrWhiteSpace(answers.CoolDownAnswer)
+        var cool = optionalNumericSupplement && string.IsNullOrWhiteSpace(answers.CoolDownAnswer)
             ? new Grade3CompanionFeedback(null, true, "Optional extra Edulytics Cool-down not attempted.")
             : Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown!, answers.CoolDownAnswer);
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
