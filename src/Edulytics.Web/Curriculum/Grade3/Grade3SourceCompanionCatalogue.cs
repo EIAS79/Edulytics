@@ -83,6 +83,55 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
+        if (q.AnswerType == "coverage-combination")
+        {
+            var rule = q.CoverageConstraint;
+            if (rule is null || rule.ContainerAreas is null || rule.RequiredArea is < 1 or > 1000000 ||
+                rule.ContainerAreas.Count is < 1 or > 8 ||
+                rule.ContainerAreas.Any(area => area is < 1 or > 1000000))
+                return new(null, true, "Coverage constraints are unavailable. Teacher review required.");
+
+            // Counts in the stated container order, not a unique preferred buy.
+            // No unstated price, waste or minimum-can optimization is imposed.
+            var counts = submitted.Trim().Split(',');
+            if (counts.Length != rule.ContainerAreas.Count)
+                return new(false, true, "Enter a whole-number count for every container size, separated by commas.");
+            long coverage = 0;
+            for (var i = 0; i < counts.Length; i++)
+            {
+                var countText = counts[i].Trim();
+                if (!Regex.IsMatch(countText, @"^[0-9]{1,3}$", RegexOptions.CultureInvariant) ||
+                    !int.TryParse(countText, NumberStyles.None, CultureInfo.InvariantCulture, out var count))
+                    return new(false, true, "Container counts must be non-negative whole numbers from 0 to 999.");
+                coverage += (long)count * rule.ContainerAreas[i];
+            }
+            var correct = coverage >= rule.RequiredArea;
+            return new(correct, true, correct
+                ? "This purchase covers the required area. Other purchases may also work; explain your choice to your teacher."
+                : "This purchase does not cover the entire area. Check the coverage of all chosen containers.");
+        }
+
+        if (q.AnswerType == "constrained-side-length")
+        {
+            var rule = q.RectangleConstraint;
+            if (rule is null || rule.FixedSide is < 1 or > 10000 ||
+                rule.MinimumArea is < 1 or > 1000000 ||
+                rule.MaximumArea < rule.MinimumArea || rule.MaximumArea > 1000000 ||
+                rule.LinearUnit != "ft")
+                return new(null, true, "Rectangle constraints are unavailable. Teacher review required.");
+
+            // Exact rational comparison includes both endpoints, without
+            // rounding 20/3 feet or silently demanding whole-foot lengths.
+            if (!TryReadPositiveFeet(submitted, out var numerator, out var denominator))
+                return new(false, true, "Enter the other side in feet, using a whole number, decimal or fraction followed by ft.");
+            var scaledArea = rule.FixedSide * numerator;
+            var correct = scaledArea >= rule.MinimumArea * denominator &&
+                          scaledArea <= rule.MaximumArea * denominator;
+            return new(correct, true, correct
+                ? "This side length meets both area limits. Your teacher reviews the labelled garden and explanation."
+                : "Multiply your side length by the fixed side and check both the minimum and maximum area.");
+        }
+
         if (q.AnswerType == "area-quantity-match")
         {
             // IM K–5 G3 U02 L07 first-edition 2021 student PDF p4:
@@ -354,9 +403,31 @@ public static class Grade3SourceCompanionCatalogue
         return new(null, true, "Unknown task type. Teacher review only.");
     }
 
-    // The sides of an equality may be reversed, but a mere scalar total is
-    // not a multiplication equation. Group/factor order is part of the
-    // task-specific representation; alternatives remain human-reviewable.
+    // Unit-bearing lengths use bounded exact fractions or finite decimals.
+    private static bool TryReadPositiveFeet(string text, out long numerator, out long denominator)
+    {
+        numerator = 0;
+        denominator = 1;
+        var match = Regex.Match(text.Trim(),
+            @"^([0-9]{1,4}(?:\.[0-9]{1,6}|/[0-9]{1,4}| +[0-9]{1,4}/[0-9]{1,4})?)\s*(?:ft|feet|foot)$",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        if (!match.Success) return false;
+        var value = match.Groups[1].Value;
+        var decimalPoint = value.IndexOf('.');
+        if (decimalPoint >= 0)
+        {
+            numerator = long.Parse(value.Remove(decimalPoint, 1), CultureInfo.InvariantCulture);
+            for (var i = decimalPoint + 1; i < value.Length; i++) denominator *= 10;
+        }
+        else
+        {
+            if (!TryFraction(value, out var n, out var d)) return false;
+            numerator = n;
+            denominator = d;
+        }
+        return numerator > 0;
+    }
+
     private static bool TryReadAreaWithUnit(
         string? answer, out int amount, out string squareUnit)
     {
@@ -385,6 +456,9 @@ public static class Grade3SourceCompanionCatalogue
         return true;
     }
 
+    // The sides of an equality may be reversed, but a mere scalar total is
+    // not a multiplication equation. Group/factor order is part of the
+    // task-specific representation; alternatives remain human-reviewable.
     private static bool TryReadProductEquation(
         string? submitted, out int groups, out int each, out int product)
     {
@@ -536,4 +610,21 @@ public sealed class Grade3OriginalQuestion
     public string? Expected { get; set; }
     /// <summary>When a representation in named equal parts is demanded, its denominator must match.</summary>
     public int? RequiredDenominator { get; set; }
+    public Grade3CoverageConstraint? CoverageConstraint { get; set; }
+    public Grade3RectangleConstraint? RectangleConstraint { get; set; }
 }
+
+public sealed class Grade3CoverageConstraint
+{
+    public int RequiredArea { get; set; }
+    public List<int> ContainerAreas { get; set; } = [];
+}
+
+public sealed class Grade3RectangleConstraint
+{
+    public int FixedSide { get; set; }
+    public int MinimumArea { get; set; }
+    public int MaximumArea { get; set; }
+    public string LinearUnit { get; set; } = "";
+}
+

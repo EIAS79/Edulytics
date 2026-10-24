@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 30,
+    "lessonsFullyReadyForStageD": 31,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 113,
+    "lessonsWithACExplicitGap": 112,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,25 +32,25 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 30,
+    "lessonsIndividuallyComparedToAllOriginalElements": 31,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 30,
+    "lessonsWithActualRichV2SourcePerfect": 31,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 14,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 736,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 745,
     "originalSvgGeometriesInspected": 19
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 30,
-    "firstUnclosedOrdinal": 31,
+    "lastConsecutiveReadyForStageDOrdinal": 31,
+    "firstUnclosedOrdinal": 32,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -225,17 +225,6 @@
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L09",
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L09.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
-    },
-    {
-      "ordinal": 31,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L10",
-      "status": "A_C_EXPLICIT_GAP",
-      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L10.json",
       "reasons": [
         "Full local original source tasks/diagrams and Rich V2 not individually compared",
         "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
@@ -2398,13 +2387,13 @@
       "unitNumber": 2,
       "lessonNumber": 10,
       "title": "Solve Area Problems",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_FIGURE_GEOMETRY_PENDING",
-      "stageB": "SOURCE_SKILL_PRACTICE_AND_COOL_DOWN_AUTHORED_RICHV2_OPEN",
-      "stageC": "SKILL_SCORING_AND_TEACHER_BOUNDARY_AUTHORED_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 14,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "stageA": "FIVE_PAGE_2021_STUDENT_PDF_TEACHER_PREPARATION_EIGHT_MEDIA_30_SEMANTIC_ELEMENTS",
+      "stageB": "SOURCE_SPECIFIC_RICH_V2_V1_CANONICAL_GUARDED_BRIDGE_AND_INDEPENDENT_AREA_MODELS",
+      "stageC": "UNIT_AWARE_AREA_MULTI_PURCHASE_EXACT_CONSTRAINED_LENGTH_AND_TEACHER_TASKS_UNRUN_TESTS",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 30,
+      "fullyVerifiedSourceElements": 30,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L10.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -2416,7 +2405,10 @@
       "original2021FigureUrlCount": 8,
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": true,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-31-2021-source-to-first-party-evidence-20261024.json",
+      "sourceMatchingMeasurementScope": "STATIC_SOURCE_SEMANTIC_AUTHORING_NOT_PUBLISHER_ART_OR_RUNTIME_PARITY"
     },
     {
       "gradeOrdinal": 32,
@@ -5345,7 +5337,8 @@
     "2026-10-23 owner correction: previous handling of L01–L05 as consecutively advanceable was premature. All five have repairable internal A-B-C gaps, not only external publisher assets. Restore active cursor to L01 and disable 'nextAfterExternalGapOrdinal=6'. No later lesson promotion until L01 internal mapping, Rich V2, Practice and teacher-rubric authoring are repaired and evidence logged. Keep prior work, preserve 0/143 READY_FOR_STAGE_D; no test runs, CI, merge or deployment.",
     "2026-10-23 L01-only sequential A-B-C repair: fixed 2021 student-facing activity 2 separation into graph comparison, data inference, two invented questions; implemented fail-closed teacher review feedback for all source open tasks; distinguished 3 Edulytics supplementary machine-gradeable items and 2 independent Cool-down numerics; fixed Razor order to official 15/10/20/10/5 (Synthesis before Cool-down), MLR8 partner restatement, picture key vocabulary, named original centers and teacher reflection. Updated one-to-one matrix and authored regressions without running tests. Original image/PDF and effective published body not verified. Active ordinal stays 1, 0/143 READY_FOR_STAGE_D.",
     "2026-10-23 L01 only: Additional independently authored numeric and Cool-down fields no longer gate original 2021 student open response task submission; blank scores use null (not attempted) and malformed answers false; five original source prompt subparts have five separate fields and teacher rubric with a print/save option. Student evidence not persisted or academically signed off; source PDF/image pixels and live Rich V2 unverified. Draft PR unchanged, no .NET/CI/Stage D or deployment; remain ordinal 1, 0/143 READY_FOR_STAGE_D.",
-    "2026-10-23 compared G2 L01/L14 Stage A-C precedent from main: original public teacher/student HTML + original first-party visuals and independent Cool-down with written unrun tests, teacher-led rubric but no human academic signature were sufficient for G2 authoring handoff. Current L01 G3 checkpoint corrected to distinguish deferred Stage D / classroom approval from genuine source-material (PDF/image) and 1:1 effective Rich V2 authoring coverage gaps. Latest G3 plan additionally explicitly requires 100% verification of original source elements before calling source perfect; original asset fetch links still returned cache miss. L01 remains A_C_EXPLICIT_GAP, cursor1, 0/143 READY_FOR_STAGE_D."
+    "2026-10-23 compared G2 L01/L14 Stage A-C precedent from main: original public teacher/student HTML + original first-party visuals and independent Cool-down with written unrun tests, teacher-led rubric but no human academic signature were sufficient for G2 authoring handoff. Current L01 G3 checkpoint corrected to distinguish deferred Stage D / classroom approval from genuine source-material (PDF/image) and 1:1 effective Rich V2 authoring coverage gaps. Latest G3 plan additionally explicitly requires 100% verification of original source elements before calling source perfect; original asset fetch links still returned cache miss. L01 remains A_C_EXPLICIT_GAP, cursor1, 0/143 READY_FOR_STAGE_D.",
+    "2026-10-24 U02 L10 ordinal31: resumed exact PR head 25d500e3 after recorded ordinal30 closure 078a5de3. Read Our-CS cached lesson/preparation HTML and five-page Student Task PDF (SHA398b7e37), original SVG geometry and photo contexts. Repaired canonical off-topic classification steps with guarded source-specific Rich V2; added multi-purchase and exact unit-bearing missing-length feasibility, independent planter Cool-down and teacher poster/gallery/MLR6/MLR8 rubric. Thirty granular elements semantically mapped for A-C only, readiness31/143 and next32. .NET tests/CI/runtime/academic approval/merge/deploy not executed. Semantic element total now derived from existing per-lesson fullyVerifiedSourceElements rows rather than the previously inconsistent cached aggregate; prior lesson records unchanged."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -5920,10 +5913,10 @@
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 30,
-    "firstUnclosedGradeOrdinal": 31,
-    "sourceElementsVerified": 26,
-    "sourceElementsIdentified": 26,
+    "lastClosedGradeOrdinal": 31,
+    "firstUnclosedGradeOrdinal": 32,
+    "sourceElementsVerified": 30,
+    "sourceElementsIdentified": 30,
     "sourceAcademicSemanticPercentageAuthoringOnly": 100,
     "testsRun": false,
     "ciRun": false,

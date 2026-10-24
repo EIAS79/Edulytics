@@ -4735,37 +4735,37 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: Number Talk: One More Group (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTIC_AUTHORING_MAPPED_TO_EVIDENCE"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Paint a Wall (10 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTIC_AUTHORING_MAPPED_TO_EVIDENCE"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: Create a Garden (25 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTIC_AUTHORING_MAPPED_TO_EVIDENCE"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTIC_AUTHORING_MAPPED_TO_EVIDENCE"
         },
         {
           "ordinal": 5,
           "sourceHeading": "Cool-down: How Much Fabric? (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY"
         },
         {
           "ordinal": 6,
           "sourceHeading": "Student Section Summary",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTIC_AUTHORING_MAPPED_TO_EVIDENCE"
         }
       ],
       "sourceVisualAltDescriptions": [
@@ -4782,40 +4782,46 @@
       "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": true,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
-        "prompt": "A wall has 18 square metres. Each can of paint covers 10 square metres. What is the minimum number of cans?",
+        "prompt": "Extra Edulytics question with an added condition: use ONLY containers covering 10 m² each to paint an 18 m² wall. What is the minimum number? This is different from the open source purchase-choice task.",
         "answerType": "integer",
         "expected": "2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A planter must be 3 feet wide and at least 24 square feet in area. What minimum whole-foot length can meet that?",
-        "answerType": "integer",
-        "expected": "8"
+        "prompt": "New Edulytics planter: one side is 2 ft and the area must be at least 12 ft² but no more than 18 ft². Give ONE possible other side, with ft, and explain your choice. Whole numbers, decimals and fractions may be used.",
+        "answerType": "constrained-side-length",
+        "expected": null,
+        "rectangleConstraint": {
+          "fixedSide": 2,
+          "minimumArea": 12,
+          "maximumArea": 18,
+          "linearUnit": "ft"
+        }
       },
-      "openTeacherTask": "Work through the original lesson's activity Paint a Wall with your teacher. Show the representation and explain how it meets the goal: You will solve problems involving area.",
-      "teacherReviewNote": "The source has 3, 10 and 40 m² container coverages and a 20–30 ft² garden with fixed side 3. Teacher reviews possible choices and physical constraints. 2021 original five-page Student Task Statements and eight original source figures inspected. Source Paint a Wall deliberately allows numerous feasible paint buys with 3/10/40m² coverage—an optional first-party minimum-CANS arithmetic question is NOT the source objective. Source garden with width 3ft and 20–30ft² allows 7,8,9,10 whole-foot examples plus other appropriate measured lengths; original MLR6 defers revealing the question. Gallery walk and three written insights teacher-reviewed.",
+      "openTeacherTask": "Discuss different paint purchases for the 6 m by 3 m wall. For the garden, read the situation twice with your group before opening the third-read questions below. Then create a labelled poster, compare another group strategy and record three observations.",
+      "teacherReviewNote": "Source-informed rubric: check equal-group strategies; 6 m × 3 m = 18 m²; accept any non-negative whole-container purchase covering at least 18 m² with sizes 3/10/40 m², without invented prices or a minimum-can restriction. Keep garden side 3 ft and area 20–30 ft² inclusive. Whole-foot other sides 7/8/9/10 ft work; other feasible measured lengths also work. Review units, drawings, coherent explanations, an organized poster, a description of another group strategy and THREE specific gallery observations. MLR8 annotated rows/columns, MLR6 Three Reads, inch tiles, centimeter grid paper as a scale model, visual-display tools and equitable group roles are authored. Numeric feasibility never proves classroom participation or teacher sign-off.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Solve area problems in a community garden",
         "sourceLearningGoals": "Solve real-world and mathematical problems involving area.",
         "teachingSteps": [
-          "Warm-up mental multiplication 5×2, 6×2, 5×6, 6×6; relate each change to one more equal group.",
-          "For a 6m by3m wall, calculate 18m², then choose feasible paint quantities from capacities 3,10,40m², defending one of multiple valid solutions.",
-          "For a garden constrained to 3ft one side and area at least 20ft² but no more than 30ft², find examples of feasible dimensions.",
-          "Build a labelled poster, compare peer strategies and record three observations from the gallery walk."
+          "Calculate each Number Talk expression mentally; explain what one extra group changes.",
+          "Use a labelled wall diagram to find square-meter area, then compare several sufficient paint purchases.",
+          "Garden first read: discuss the situation. Second read: identify the quantities. Keep the questions closed until the third read.",
+          "On the third read, open the garden tasks, create a labelled poster, and compare group strategies in a gallery walk."
         ],
         "caution": "Do not turn the source paint-buying or garden-design tasks into one numeric target; costs/prices are not specified. Square meters and square feet are not interchangeable.",
         "targetRichV2Field": "2021 source-specific canonical Rich V2 bridge authored"
       },
       "sourceBasedCheck": {
         "prompt": "In the source Noah paints a wall 6 metres wide and 3 metres high. How many square metres?",
-        "answerType": "integer",
-        "expected": "18"
+        "answerType": "area-with-unit",
+        "expected": "18 m²"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-10/lesson.html",
@@ -4870,30 +4876,44 @@
         {
           "id": "G3-U02-L10-A1-CANS",
           "sourceActivity": "Activity 1 Paint a Wall",
-          "prompt": "The wall needs coverage of 18 m². Paint containers cover 3, 10, 40 m² respectively. Propose ONE feasible purchase or combination and defend why coverage is at least 18 m²; several solutions are legitimate. A fixed machine answer of '2 cans' is NOT the sole source correct solution.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Choose ONE paint purchase for the 18 m² wall. Small, medium and large containers cover 3, 10 and 40 m² each. Enter counts in that order, separated by commas, including zero for an unused size. Your total must cover the wall; explain your choice below. Several purchases work.",
+          "answerType": "coverage-combination",
+          "expected": null,
+          "coverageConstraint": {
+            "requiredArea": 18,
+            "containerAreas": [
+              3,
+              10,
+              40
+            ]
+          }
         },
         {
           "id": "G3-U02-L10-A1-JUSTIFY",
           "sourceActivity": "Activity 1 Paint a Wall",
-          "prompt": "Compare two valid ways to buy paint (for example, six small=18m², or two medium=20m²) and explain how leftover coverage differs, without claiming unstated prices.",
+          "prompt": "Compare two different sufficient paint purchases. Explain their total and leftover coverage in square meters. No prices are supplied, so do not claim a cheapest purchase.",
           "answerType": "teacher",
           "expected": null
         },
         {
           "id": "G3-U02-L10-A2-READS",
           "sourceActivity": "Activity 2 Create a Garden",
-          "prompt": "Teacher uses original MLR6 Three Reads: reveal only the garden situation first, then known numbers (area at least 20ft², soil at most 30ft², one side 3ft), and ONLY THEN reveal the question.",
+          "prompt": "After two readings of the situation, tell your group what the problem is about and which quantities are known. Your teacher checks the Three Reads discussion and everyone’s participation.",
           "answerType": "teacher",
           "expected": null
         },
         {
           "id": "G3-U02-L10-A2-LENGTHS",
           "sourceActivity": "Activity 2 Create a Garden",
-          "prompt": "Represent at least one possible other side length for a garden 3ft wide and area between 20 and 30ft² inclusive. Whole-foot examples are 7, 8, 9, 10 feet (areas 21,24,27,30ft²). Don't restrict the source to one unique answer or rule out other feasible measured lengths.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Third read: for the garden with one side 3 ft and area at least 20 ft² but at most 30 ft², give ONE possible other side, followed by ft. You may use a whole number, decimal or fraction. Explain how your proposal meets BOTH limits; several lengths work.",
+          "answerType": "constrained-side-length",
+          "expected": null,
+          "rectangleConstraint": {
+            "fixedSide": 3,
+            "minimumArea": 20,
+            "maximumArea": 30,
+            "linearUnit": "ft"
+          }
         },
         {
           "id": "G3-U02-L10-A2-POSTER",
@@ -4939,7 +4959,9 @@
         },
         "originalEightMediaInspected": true,
         "publisherMediaCopied": false
-      }
+      },
+      "sourceSemanticEvidenceMap": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-31-2021-source-to-first-party-evidence-20261024.json",
+      "sourceSemanticMatchingScope": "STATIC_A_B_C_AUTHORING_ONLY_NOT_PIXEL_OR_RUNTIME_PARITY"
     },
     {
       "ordinal": 32,
@@ -16290,3 +16312,4 @@
     }
   ]
 }
+

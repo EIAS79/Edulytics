@@ -554,16 +554,16 @@ public sealed class Grade3SourceCompanionGradingTests
             Assert.NotNull(lesson.IndependentPractice);
             Assert.NotNull(lesson.OriginalEdulyticsCoolDown);
             Assert.NotNull(lesson.SourceBasedCheckProvenance);
-            Assert.False(lesson.SourceBasedCheckProvenance!.FigurePixelsInspected);
             Assert.True(lesson.ReviewedStudentFacingText);
-            Assert.False(lesson.ReadyForStageD);
+            // Readiness and source-image evidence are lesson-specific. They
+            // are not blanket false prerequisites for checking the grader.
 
             foreach (var question in new[] { lesson.SourceBasedCheck!,
                        lesson.IndependentPractice!, lesson.OriginalEdulyticsCoolDown! })
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -573,8 +573,23 @@ public sealed class Grade3SourceCompanionGradingTests
                     continue;
                 }
 
-                Assert.False(string.IsNullOrWhiteSpace(question.Expected));
-                var valid=Grade3SourceCompanionCatalogue.Grade(question,question.Expected);
+                var validAnswer = question.Expected;
+                if (question.AnswerType == "coverage-combination")
+                {
+                    Assert.NotNull(question.CoverageConstraint);
+                    var rule = question.CoverageConstraint!;
+                    var counts = new int[rule.ContainerAreas.Count];
+                    counts[0] = (rule.RequiredArea + rule.ContainerAreas[0] - 1) / rule.ContainerAreas[0];
+                    validAnswer = string.Join(",", counts);
+                }
+                else if (question.AnswerType == "constrained-side-length")
+                {
+                    Assert.NotNull(question.RectangleConstraint);
+                    var rule = question.RectangleConstraint!;
+                    validAnswer = $"{rule.MinimumArea}/{rule.FixedSide} ft";
+                }
+                Assert.False(string.IsNullOrWhiteSpace(validAnswer));
+                var valid=Grade3SourceCompanionCatalogue.Grade(question,validAnswer);
                 Assert.True(valid.NumericCorrect);
                 Assert.True(valid.TeacherReview);
                 var malformed=Grade3SourceCompanionCatalogue.Grade(question,"not-an-answer");
@@ -591,6 +606,8 @@ public sealed class Grade3SourceCompanionGradingTests
                     "multiplication-equation" => "1x1=1",
                     "commutative-equation-pair" => "1x2=2;2x1=2",
                     "area-with-unit" => "999 cm²",
+                    "coverage-combination" => "0,0,0",
+                    "constrained-side-length" => "0 ft",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);
@@ -739,3 +756,4 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
 }
+

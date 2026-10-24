@@ -143,6 +143,9 @@ public static class CommonCoreG3SourceTeachingCorrections
             if (string.Equals(lesson.LessonCode,
                 CommonCoreG3Unit2Lesson9RichV2.LessonCode, StringComparison.Ordinal))
                 CommonCoreG3Unit2Lesson9RichV2.Apply(lesson);
+            if (string.Equals(lesson.LessonCode,
+                CommonCoreG3Unit2Lesson10RichV2.LessonCode, StringComparison.Ordinal))
+                CommonCoreG3Unit2Lesson10RichV2.Apply(lesson);
 
             if (string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L01", StringComparison.Ordinal))
@@ -755,3 +758,4 @@ public static class CommonCoreG3SourceTeachingCorrections
         string MisconceptionCaution,
         IReadOnlyList<string> TeachingSteps);
 }
+

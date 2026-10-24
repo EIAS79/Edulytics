@@ -1070,6 +1070,74 @@
                 <p>Lesson synthesis: compare complete square grids, partial grids and invisible grids; measuring the two side lengths still determines rectangle area when the scale and squared units agree.</p>
             </section>
         }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 10) {
+            <section class="panel" aria-label="Community garden area models">
+                <h2>Paint a wall — choose and explain</h2>
+                <svg viewBox="0 0 300 170" width="300" style="max-width:100%;height:auto" role="img"
+                     aria-label="Rectangle six meters wide and three meters high">
+                    <title>Wall with given side lengths</title>
+                    <rect x="28" y="20" width="216" height="108" fill="#e3f1f5" stroke="#397c98" stroke-width="2" />
+                    <text x="136" y="152" text-anchor="middle">6 m</text>
+                    <text x="252" y="78">3 m</text>
+                </svg>
+                <table class="source-chart">
+                    <caption>Coverage of one container</caption>
+                    <thead><tr><th scope="col">Size</th><th scope="col">Coverage</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Small</th><td>3 m²</td></tr>
+                        <tr><th scope="row">Medium</th><td>10 m²</td></tr>
+                        <tr><th scope="row">Large</th><td>40 m²</td></tr>
+                    </tbody>
+                </table>
+                <p>Choose enough paint and explain why it works. Several purchases are possible.
+                    Prices are not given. This question does not require the fewest containers.</p>
+                <h2>Garden — first and second readings</h2>
+                <p>Elena has a rectangular space in a community garden. Her plants need at least
+                    20 ft². Her soil can fill at most 30 ft². One side of her space is 3 ft.</p>
+                <ol><li>Read the situation and discuss what is happening.</li>
+                    <li>Read it again. Identify the known quantities and their units.</li>
+                    <li>Only then open the garden questions below for the third read.</li></ol>
+                <p>Work in groups of three or four. Agree how everyone will contribute. Use tiles,
+                    grid paper as a scale model, and tools to make a poster. A centimeter on the paper
+                    can represent a foot in your model; it is not the same physical length.</p>
+                <details>
+                    <summary>After solving — compare area representations</summary>
+                    <p>A full grid, side intervals, and two labelled sides can describe the same rectangle.</p>
+                    <div role="img" aria-label="Independent three-row six-column array of eighteen equal square units"
+                         style="display:grid;grid-template-columns:repeat(6,24px);width:max-content;max-width:100%;margin:12px 0">
+                        @for(var cell=0;cell<18;cell++) {
+                            <span aria-hidden="true" style="display:block;width:24px;height:24px;border:1px solid #397c98;box-sizing:border-box;background:#e3f1f5"></span>
+                        }
+                    </div>
+                    <svg viewBox="0 0 220 120" width="220" style="max-width:100%;height:auto" role="img"
+                         aria-label="Independent rectangle with six equal intervals on the top and three on the left">
+                        <title>Six by three unit intervals without a full grid</title>
+                        <rect x="25" y="20" width="144" height="72" fill="none" stroke="#397c98" stroke-width="2" />
+                        @for(var mark=1;mark<6;mark++) {
+                            <line x1="@(25+24*mark)" y1="20" x2="@(25+24*mark)" y2="29" stroke="#397c98" />
+                        }
+                        @for(var mark=1;mark<3;mark++) {
+                            <line x1="25" y1="@(20+24*mark)" x2="34" y2="@(20+24*mark)" stroke="#397c98" />
+                        }
+                    </svg>
+                    <p>A 6-by-3 rectangle covers 18 square units. A square inch has sides of 1 inch;
+                        a square meter has sides of 1 meter. Select a unit suitable for the surface.
+                        These diagrams are conceptual models; screen size is not a physical ruler.</p>
+                    <div style="display:flex;gap:24px;flex-wrap:wrap">
+                        @foreach(var unit in new[] { "in", "m" }) {
+                            <svg viewBox="0 0 150 130" width="150" role="img" aria-label="@($"One square { (unit == "in" ? "inch" : "meter") }, each side one { (unit == "in" ? "inch" : "meter") }; conceptual diagram, not to scale")">
+                                <title>@($"One {unit} by one {unit}")</title>
+                                <rect x="25" y="15" width="80" height="80" fill="#e3f1f5" stroke="#397c98" stroke-width="2" />
+                                <text x="65" y="115" text-anchor="middle">1 @unit</text>
+                                <text x="112" y="58">1 @unit</text>
+                            </svg>
+                        }
+                    </div>
+                    <p>The two unit models are not drawn to a common physical scale. A real square
+                        meter is much larger than a square inch.</p>
+                </details>
+            </section>
+        }
         @if(showMinuteClock) {
             <section class="panel" aria-label="Edulytics original analogue clock reading">
                 <h2>Read an original analogue clock</h2>
@@ -1112,6 +1180,24 @@
                 <p>These independently worded prompts preserve the source contexts. For each one, draw equal groups, explain the representation or discuss as required. A teacher judges the drawings, card matches and explanations; machine-checkable numeric anchors never establish completion of the original source activities.</p>
                 @for(var i=0;i<l.SourceSubtasks.Count;i++){
                     var task=l.SourceSubtasks[i];
+                    @if(l.UnitNumber == 2 && l.LessonNumber == 10 && task.Id.Contains("-A2-", StringComparison.Ordinal)) {
+                        <details class="panel" open="@(Model.Submitted)">
+                            <summary>Third read — garden task @(i+1)</summary>
+                            <p>@task.Prompt</p>
+                            @if(task.AnswerType != "teacher") {
+                                <label for="source-sub-answer-@i">One possible other side, with ft</label>
+                                <input id="source-sub-answer-@i" name="SourceSubtaskAnswers[@i]" maxlength="100"
+                                       value="@Model.Answers.SourceSubtaskAnswers.ElementAtOrDefault(i)" inputmode="text" />
+                            } else {
+                                <input type="hidden" name="SourceSubtaskAnswers[@i]" value="" />
+                                <p>Your teacher reviews this activity; no automatic completion grade applies.</p>
+                            }
+                            <label for="source-sub-explain-@i">My diagram, poster notes or explanation</label>
+                            <textarea id="source-sub-explain-@i" name="SourceSubtaskReasoning[@i]"
+                                      rows="3" maxlength="2000">@Model.Answers.SourceSubtaskReasoning.ElementAtOrDefault(i)</textarea>
+                        </details>
+                        continue;
+                    }
                     <div class="panel">
                         <h3>@task.SourceActivity — task @(i+1)</h3>
                         <p>@task.Prompt</p>
@@ -1215,3 +1301,4 @@
     }
     <p>Academic alignment reference: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-@l.UnitNumber/lesson-@l.LessonNumber/lesson.html" rel="noopener noreferrer">Illustrative Mathematics K–5 Grade 3, First Edition (2021)</a> (CC BY 4.0 where applicable). This independently written companion is an authoring candidate and has not passed source-perfect acceptance or CI.</p>
 </main>
+
