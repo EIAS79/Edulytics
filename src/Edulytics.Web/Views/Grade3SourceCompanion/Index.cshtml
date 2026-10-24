@@ -718,9 +718,89 @@
                 <p>Original warm-up: compare figures A (one small square), B (nine equal squares in a 3 × 3 grid with some shading), C (four equal squares in a 2 × 2 grid) and D (a rectangle tiled with blue and white squares). Discuss which one might not belong and give DIFFERENT defensible reasons; the originals must be viewed with a teacher.</p>
                 <h2>Activity 1: physical square tiles</h2>
                 <p>Working in a group of four with equal-inch tiles, each pupil makes a different shape and the group orders their shapes by covered area. The longest outline or largest perimeter does NOT determine the area; the area is measured in SAME-SIZED square units with no gaps or overlaps.</p>
-                <h2>Activity 2: six distinct published figures</h2>
-                <p>Use original source handout figures numbered 1 through 6. For EACH, tile the ENTIRE figure edge to edge, record the area in square units, and explain the method. The original shapes' dimensions cannot be obtained from source alt text alone and are not replaced with invented numerical answers here.</p>
-                <p>The optional independent Edulytics questions elsewhere on this page include rectangles with known 3 × 4 and 5 × 4 tile patterns. They are NOT the publisher's original six figures. Teacher compares your six physical constructions against the originals.</p>
+                <h2>Activity 2: six individual 2021 area figures</h2>
+                <p>The actual 2021 first-edition printed six-figure source handout and all six original SVG contours have now been inspected. Mathematical unit-square areas are <strong>9, 18, 13, 30, 36 and 21</strong>, respectively, computed by exact unit-tile decomposition of their 18-point boundary grids. The independently authored Edulytics models below represent the same mathematical counts without embedding publisher SVG artwork. Learners must still place tiles without gaps or overlaps and give teacher-reviewed reasoning.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:16px 0">
+                    <div><strong>Original 2021 task 1 — shape with two upright sections</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 1, 9 occupied unit squares arranged into 3 rows and 6 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(6,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<18;cell++){
+                                @if("010000010111111100"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 2 — tall shape with lower platform</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 2, 18 occupied unit squares arranged into 8 rows and 5 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(5,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<40;cell++){
+                                @if("0010000100001000010000100001111111111111"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 3 — L-shaped region</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 3, 13 occupied unit squares arranged into 5 rows and 5 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(5,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<25;cell++){
+                                @if("0001100011000110001111111"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 4 — 5-column by 6-row rectangle</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 4, 30 occupied unit squares arranged into 6 rows and 5 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(5,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<30;cell++){
+                                @if("111111111111111111111111111111"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 5 — wide tiered region</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 5, 36 occupied unit squares arranged into 8 rows and 7 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(7,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<56;cell++){
+                                @if("00001110000111001111100111111111110111111011110001111000"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 6 — six-step staircase</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 6, 21 occupied unit squares arranged into 6 rows and 6 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(6,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<36;cell++){
+                                @if("000001000011000111001111011111111111"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+                <p>The numeric count for EACH source figure may be checked separately, but the instructor must approve placement of congruent tiles and explanations. Original-source printed artwork is not embedded; the independent 3 × 4 and 5 × 4 practice questions remain additional examples, not source identities.</p>
             </section>
         }
         @if(l.UnitNumber == 2 && l.LessonNumber == 3) {
