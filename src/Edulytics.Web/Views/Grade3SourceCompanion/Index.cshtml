@@ -471,6 +471,32 @@
                 <div class="first-party-array" style="grid-template-columns:repeat(4,17px)" role="img" aria-label="Independent example: three complete rows, four dots per row">
                     @for(var i=0;i<12;i++){<span class="first-party-dot" aria-hidden="true"></span>}
                 </div>
+
+                <h3>Independent visual starters for source Activity 2</h3>
+                <p>Four independent clusters of three dots supply twelve objects.
+                    Rearrange all twelve into one complete array, then explain where
+                    the groups of three appear in rows or columns.</p>
+                <div role="img" aria-label="Four small separate clusters, with three dots per cluster and twelve total."
+                     style="display:grid;grid-template-columns:repeat(2,minmax(75px,95px));gap:14px;margin:10px 0">
+                    @for(var group=0;group<4;group++){
+                        <div aria-hidden="true" style="display:flex;gap:4px;padding:10px;border:1px dashed #5a7280;border-radius:12px">
+                            @for(var dot=0;dot<3;dot++){
+                                <span style="width:13px;height:13px;border-radius:50%;background:#b7602e"></span>
+                            }
+                        </div>
+                    }
+                </div>
+                <p>Another original Edulytics starter has sixteen scattered tokens.
+                    It is deliberately <em>not</em> already an array. Students draw
+                    multiple complete rectangular versions using exactly those
+                    sixteen objects; examples are 4×4 and 2×8, but other valid
+                    rectangular orientations must be teacher-checked.</p>
+                <div role="img" aria-label="Sixteen irregularly placed first-party tokens, not originally in equal rectangular rows."
+                     style="display:flex;flex-wrap:wrap;gap:8px;max-width:245px;margin:10px 0;align-items:center">
+                    @for(var dot=0;dot<16;dot++){
+                        <span aria-hidden="true" style="display:block;width:12px;height:12px;border-radius:50%;margin-top:@((dot%4)*3)px;background:#b7602e"></span>
+                    }
+                </div>
                 <p>Show why all rows and columns form valid equal-sized groupings. Teacher evaluates your own drawings and actual peer explanation revision.</p>
             </section>
         }
