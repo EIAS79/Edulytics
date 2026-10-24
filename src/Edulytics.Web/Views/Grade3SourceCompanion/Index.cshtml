@@ -358,6 +358,67 @@
                 <h2>Original picture and card-sort work</h2>
                 <p>For the original four warm-up illustrations, images A, B and C each contain 15 dots, and D contains 16. But their arrangements differ: an answer of just “D has more dots” misses other potential valid array/non-array explanations. Examine the original pictures with the teacher.</p>
                 <p>The original Card Sort Arrays is a separate physical matching task: keep and discuss the group sizes as drawings transform into rows or columns, then edit your written explanation after discussing it with a partner.</p>
+
+                <h2>Independently authored 2021-skill card sort</h2>
+                <p>The original first-edition blackline includes twelve cards (A–L). This new
+                    Edulytics deck shows the verified original mathematical group counts with
+                    independently drawn points and grouped regions. It is NOT an image copy
+                    or a replacement for a teacher's actual card handout. Discuss each
+                    proposed pair; a single total alone does not certify matching group size.</p>
+                @{
+                    var firstPartyCards = new (string Id, bool Separate, int Groups, int Each)[]
+                    {
+                        ("A", false, 5, 5), ("B", true, 7, 2),
+                        ("C", false, 3, 4), ("D", true, 4, 5),
+                        ("E", true, 3, 10), ("F", false, 10, 3),
+                        ("G", true, 3, 4), ("H", false, 5, 4),
+                        ("I", false, 2, 6), ("J", true, 5, 5),
+                        ("K", false, 7, 2), ("L", true, 6, 2)
+                    };
+                }
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+                    @foreach(var card in firstPartyCards) {
+                        <article style="border:2px solid #38758c;border-radius:8px;padding:10px" aria-label="Edulytics first-party visual card @card.Id">
+                            <strong>Card @card.Id</strong>
+                            @if(card.Separate) {
+                                <div role="img" aria-label="@card.Groups separate equal groups, each containing @card.Each dots."
+                                     style="display:flex;flex-wrap:wrap;gap:5px;margin-top:9px">
+                                    @for(var group=0;group<card.Groups;group++) {
+                                        <div aria-hidden="true" style="display:flex;flex-wrap:wrap;gap:2px;padding:5px;border:1px dashed #35718a;border-radius:9px;max-width:128px">
+                                            @for(var dot=0;dot<card.Each;dot++) {
+                                                <span style="width:9px;height:9px;background:#b7602e;border-radius:50%"></span>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            } else {
+                                <div role="img" aria-label="Rectangular array with @card.Groups rows, @card.Each dots per row."
+                                     style="display:grid;grid-template-columns:repeat(@card.Each,11px);gap:4px;margin-top:9px;width:max-content">
+                                    @for(var dot=0;dot<card.Groups*card.Each;dot++) {
+                                        <span aria-hidden="true" style="width:9px;height:9px;background:#307e96;border-radius:50%"></span>
+                                    }
+                                </div>
+                            }
+                        </article>
+                    }
+                </div>
+                <p><strong>Teacher key, not automatic grading:</strong> A–J (25);
+                    B–K (14); C–G (12); D–H (20); E–F (30); I–L (12).
+                    Cards use different group orientations. Partners must match
+                    representations and then explain why a row or column represents
+                    the corresponding equal group; MLR1 requires revising the explanation
+                    after feedback.</p>
+                <h2>Warm-up structure — four original source quantities</h2>
+                <p>Source A, B and C each have fifteen dots in different arrangements,
+                    while D is a complete four-by-four array of sixteen. The published
+                    B source arrangement has an incomplete column despite seemingly
+                    equal-length rows. Discuss different defensible choices, not merely
+                    the letter with the different total. The publisher's exact
+                    warm-up artwork is not copied here.</p>
+                <p>The official first-edition 2021 Student Task Statements PDF has
+                    three pages and source Activity 2 asks for drawing and explaining
+                    both twelve- and sixteen-dot arrays. Teacher reviews card sorting,
+                    student drawings and oral peer revisions.</p>
                 <h2>Source Activity 2: draw, rather than just count</h2>
                 <p>Reorganize 4 groups of 3 into a rectangular array; use 12 dots. Then use all 16 dots of the other source figure in two different arrays. Here is an independently drawn EXAMPLE of three rows of four dots; it does not replace the original source card artwork.</p>
                 <div class="first-party-array" style="grid-template-columns:repeat(4,17px)" role="img" aria-label="Independent example: three complete rows, four dots per row">
