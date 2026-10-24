@@ -1624,11 +1624,11 @@
         "Open carton of 12 eggs.",
         "Drawing showing equal groups."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "arrays-with-objects",
       "independentPractice": {
         "prompt": "Physically build 20 blocks as at least two distinct rectangular arrays; draw each with equally spaced rows and columns and explain how every block was used. A numeric total by itself is insufficient.",
@@ -1641,10 +1641,10 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Compare Equal Groups and Arrays with your teacher. Show the representation and explain how it meets the goal: You will describe arrays and arrange objects into arrays.",
-      "teacherReviewNote": "Teacher checks actual alternative array arrangements for 20 and 24 objects.",
+      "teacherReviewNote": "Teacher checks actual alternative array arrangements for 20 and 24 objects. Original 2021 Student Task Statement PDF (3 pages) and three reference figure assets inspected via read-only source URLs; independently authored 2-by-6, four groups of five, and 4-by-5 models are implemented. Human teacher review is mandatory for original physical array manipulation and mathematical argument; no numeric-only mastery credit.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s make some arrays.",
@@ -1721,7 +1721,30 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "original2021StudentTaskPdf": {
+        "url": "https://cms-assets.illustrativemathematics.org/em9wi1n3z74vgkyzs2anen7kqho1",
+        "sha256": "bc6876ee4678fae7ecf3a2d72afcdb51936e572dfc024307ff3a68f52b5e9e15",
+        "pagesRead": [
+          1,
+          2,
+          3
+        ],
+        "sourceTasksHumanReviewed": true,
+        "publisherArtworkCopied": false
+      },
+      "original2021VisualReview": {
+        "eggImage": "https://cms-assets.illustrativemathematics.org/m1ky45arlzmlnbce30cgk775klid",
+        "groupImage": "https://cms-assets.illustrativemathematics.org/g7piscffyx7nhvxdkxpvrdsnjmuc",
+        "arrayImage": "https://cms-assets.illustrativemathematics.org/hj9a2sxq80ttvubrb3vg0phg1t7e",
+        "originalGeometryReviewed": true,
+        "sourceDescriptions": [
+          "two rows of six egg positions",
+          "four separate equal groups each containing five dots",
+          "4x5 rectangular array of 20 dots"
+        ],
+        "firstPartyRenderedIndependent": true
+      }
     },
     {
       "ordinal": 17,
