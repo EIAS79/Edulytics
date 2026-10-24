@@ -984,6 +984,55 @@
                 <p>The 2021 original online lesson HTML requests examples for cm², in², ft², and m². The actual 2021 five-page Student Task Statements PDF instead requests cm², in², ft², and SQUARE YARDS on its last page. This is a real discrepancy between source editions/formats. Work against the one your teacher assigned; write down which source version you used and justify your area-unit choices.</p>
             </section>
         }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 8) {
+            <section class="panel" aria-label="Source-aligned original first-party models of missing rectangle squares">
+                <h2>Warm-up — one more or one less per equal group</h2>
+                <p>Original 2021 source figures: 4 groups of 5 = 20, then 4 groups of 6 = 24, then 4 groups of 4 = 16. The original second image has FOUR clusters of SIX dots, not 'five groups of six' as its erroneous alt text says. These are independently authored grouped models with the correct mathematics.</p>
+                <div style="display:flex;gap:18px;flex-wrap:wrap;margin:12px 0">
+                    @foreach(var model in new[]{(each:5,total:20),(each:6,total:24),(each:4,total:16)}){
+                        <div><strong>4 × @model.each = @model.total</strong>
+                            <div style="display:flex;flex-wrap:wrap;max-width:205px;gap:8px;margin-top:7px"
+                                 role="img" aria-label="@($"Four separate equal groups of {model.each} dots, total {model.total}")">
+                                @for(var group=0;group<4;group++){
+                                    <div aria-hidden="true" style="width:66px;display:flex;flex-wrap:wrap;justify-content:center;gap:3px;border:1px dashed #426a83;padding:5px;border-radius:9px">
+                                        @for(var dot=0;dot<model.each;dot++){<span class="first-party-dot" style="width:11px;height:11px" aria-hidden="true"></span>}
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <h2>Activity 1 — restore Elena's hidden tile grid</h2>
+                <p>In the original math situation, the source art has TEN inch-square tiles across and NINE rows down. Every blank position is another unit square. The completed region therefore contains 9 × 10 = 90 square inches. This first-party demonstration uses a different palette and layout from the publisher's original diagram.</p>
+                <div style="display:grid;grid-template-columns:repeat(10,21px);grid-template-rows:repeat(9,21px);gap:0;width:max-content;border:1px solid #416b87;margin:12px 0"
+                     role="img" aria-label="Independent nine-row ten-column rectangle with some initial cells colored and blank cells outlined. The entire rectangle holds ninety equal square-inch tiles.">
+                    @for(var i=0;i<90;i++){
+                        var rr=i/10;var cc=i%10;
+                        var shown=rr==0 || cc==0 || (rr==1&&cc<4) || (rr==2&&cc<3);
+                        <span aria-hidden="true" style="@(shown?"background:#8ccee6;":"background:#fff;")border:1px solid #628296;box-sizing:border-box"></span>
+                    }
+                </div>
+                <p>The original real-world photograph represents Portuguese azulejo tiles; the original photos are references only, not reproduced here. Count the area of the whole rectangular surface instead of counting the few visible colored cells.</p>
+                <h2>Activity 2 — metric area without visible squares</h2>
+                <p>Original source rectangle 1 has eight one-meter intervals horizontally and four vertically: 8 m × 4 m = 32 m². Original rectangle 2 has FIVE internal ticks along the top, which means SIX intervals between the outer borders, and height 3 m: 6 m × 3 m = 18 m². These independent rectangles are proportioned according to the original row and column counts; the missing grid is imagined.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:35px;margin:14px 0">
+                    @foreach(var model in new[]{(width:8,height:4),(width:6,height:3)}){
+                        <div><strong>@model.width m × @model.height m = @(model.width*model.height) m²</strong>
+                            <div style="@($"width:{model.width*23}px;height:{model.height*23}px;border:2px solid #477598;position:relative;margin:18px 5px 8px 0")"
+                                 role="img" aria-label="@($"Independent outline showing a {model.width}-meter by {model.height}-meter rectangle, area {model.width*model.height} square meters, with top 1-meter divisions.")">
+                                <div style="position:absolute;left:0;right:0;top:-8px;display:flex">
+                                    @for(var k=0;k<model.width;k++){
+                                        <span aria-hidden="true" style="flex:1;border-right:1px solid #477598;height:8px"></span>
+                                    }
+                                </div>
+                            </div>
+                            <p>Each top space represents 1 meter; teacher checks student multiplication and unit.</p>
+                        </div>
+                    }
+                </div>
+                <p>MLR8 asks pupils to explain why an incomplete first row and left edge still determine the full rectangular area. Rulers or straightedges may be used to complete the grid. The original educator-gated Cool-down remains separate from our first-party skill-equivalent assessment.</p>
+            </section>
+        }
         @if(showMinuteClock) {
             <section class="panel" aria-label="Edulytics original analogue clock reading">
                 <h2>Read an original analogue clock</h2>
