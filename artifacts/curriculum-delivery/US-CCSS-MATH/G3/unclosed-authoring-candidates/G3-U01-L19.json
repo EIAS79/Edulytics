@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-19/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-19/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_FIRST_EDITION_PUBLIC_STUDENT_AND_TEACHER_TASKS_MAPPED_PDF_ORIGINAL_FIGURES_OPEN",
     "goals": "Represent an array situation with an equation with a symbol for the unknown number. Solve multiplication problems involving arrays.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 1,
@@ -41,7 +41,7 @@
     ]
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_RICH_V2_2021_AUTHORING_COMPLETED_NOT_RUNTIME_VERIFIED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -51,10 +51,11 @@
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
-    "unknownSymbolThenFullEquationAndArraySourceInstructionsAuthored": true
+    "unknownSymbolThenFullEquationAndArraySourceInstructionsAuthored": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l19-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "THREE_ORIGINAL_UNKNOWN_SYMBOL_EQUATIONS_PLUS_THREE_SEPARATE_SOURCE_SOLUTIONS_AUTHORED_TESTS_UNRUN",
     "family": "arrays-commutative",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -68,7 +69,8 @@
     "independentPracticeNowRequiresCompleteEquation": true,
     "twoTreeSourceSubtasksRequireCompleteEquation": true,
     "sourceTotalNineIndividualTasks": true,
-    "testsAuthoredNotRun": true
+    "testsAuthoredNotRun": true,
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson19UnknownProductTests.cs"
   },
   "sourceElements": [
     {
@@ -153,17 +155,16 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Original 2021 coconut-tree photograph/task PDFs and live Rich V2 unverified. Physical drawings, unknown-symbol first version and co-crafted oral questions are teacher-reviewed; only numeric/equation subsets are automatically checked."
+    "Original 2021 image assets (coconut trees, any diagrams) and media rights not individually reviewed.",
+    "Original printed student-task PDF and educator-gated Cool-down unavailable for full 1:1 comparison.",
+    "Live Rich V2 learner payload and newly authored Stage C grading are not runtime-tested.",
+    "Human MLR5 co-crafted questioning, source drawings, MLR8 conversation and reasoning cannot be auto-approved.",
+    "No .NET test, CI, Stage D or academic approval executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-19-2021-source-to-first-party-evidence-20261024.json"
 }
