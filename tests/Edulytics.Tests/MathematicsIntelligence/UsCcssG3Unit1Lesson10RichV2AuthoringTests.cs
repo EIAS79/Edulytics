@@ -21,11 +21,11 @@ public sealed class UsCcssG3Unit1Lesson10RichV2AuthoringTests
             x.Contains("4 × 5", StringComparison.Ordinal));
         Assert.Contains(rich.ExplanationParagraphs, x =>
             x.Contains("Boxes of Shirts", StringComparison.Ordinal));
-        Assert.Equal(5, rich.WorkedExamples.Count);
+        Assert.Equal(6, rich.WorkedExamples.Count);
         Assert.True(Grade3SourceCompanionCatalogue.TryGet(Code, out var lesson));
-        Assert.Equal(7, lesson!.SourceSubtasks.Count);
-        Assert.All(lesson.SourceSubtasks, x =>
-            Assert.Equal("teacher", x.AnswerType));
+        Assert.Equal(8, lesson!.SourceSubtasks.Count);
+        Assert.Equal(7, lesson.SourceSubtasks.Count(x=>x.AnswerType=="teacher"));
+        Assert.Equal("yes-no", lesson.SourceSubtasks.Last().AnswerType);
     }
 
     [Fact]
@@ -45,14 +45,14 @@ public sealed class UsCcssG3Unit1Lesson10RichV2AuthoringTests
     }
 
     [Fact]
-    public void OriginalPublisherCoolDownIsNotClaimedAsTheIndependentEdulyticsCoolDown()
+    public void OriginalPublisherCoolDownIsRecoveredAndIndependentExtraRemainsOptional()
     {
         var rich = RichLessonContentV2Registry.Find(Code, "en");
         Assert.NotNull(rich);
         Assert.Contains(rich.CommonMistakes, x =>
             x.Mistake.Contains("Boxes of Shirts", StringComparison.Ordinal));
         Assert.Contains(rich.SummaryPoints, x =>
-            x.Contains("educator-gated", StringComparison.Ordinal));
+            x.Contains("teacher-reviewed", StringComparison.Ordinal));
         Assert.Empty(rich.Visuals);
         Assert.Empty(rich.Videos);
     }

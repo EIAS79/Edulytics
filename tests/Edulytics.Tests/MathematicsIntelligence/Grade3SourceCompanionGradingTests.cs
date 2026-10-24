@@ -70,11 +70,12 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.True(Grade3SourceCompanionCatalogue.TryGet(
             "PED:US-CCSS-MATH:G3:U01:L10", out var lesson));
         Assert.NotNull(lesson);
-        Assert.Equal(7, lesson.SourceSubtasks.Count);
-        Assert.All(lesson.SourceSubtasks, task => Assert.Equal("teacher", task.AnswerType));
+        Assert.Equal(8, lesson.SourceSubtasks.Count);
+        Assert.Equal(7,lesson.SourceSubtasks.Count(task=>task.AnswerType=="teacher"));
+        Assert.Equal("yes-no",lesson.SourceSubtasks.Last().AnswerType);
         Assert.Contains(lesson.SourceSubtasks, task =>
             task.Id=="G3-U01-L10-A2-01" && task.Prompt.Contains("TWELVE cards A–L"));
-        Assert.Contains("4 × 5", lesson.SourceSubtasks.Last().Prompt);
+        Assert.Contains("4 × 5", lesson.SourceSubtasks[6].Prompt);
         Assert.True(lesson.OriginalStudentTaskPdfRead);
         Assert.True(lesson.OriginalTeacherBlacklineMasterPdfRead);
         Assert.Equal(12, lesson.SourceCardCount);
@@ -82,7 +83,13 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck,"6").NumericCorrect);
         Assert.False(Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck,"12").NumericCorrect);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.SourceSubtasks[4],"8").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        var sourceCoolDown=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L10-CD-01");
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(sourceCoolDown,"yes").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(sourceCoolDown," YES ").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(sourceCoolDown,"no").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(sourceCoolDown,"40").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(sourceCoolDown,"yes").TeacherReview);
+        Assert.True(lesson.ReadyForStageD);
     }
 
     [Theory]
