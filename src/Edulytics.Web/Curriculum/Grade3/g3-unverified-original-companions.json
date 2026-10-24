@@ -1358,7 +1358,7 @@
           "ordinal": 5,
           "sourceHeading": "Cool-down: Solve the Problem (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "ORIGINAL_2021_K5_V1_TEACHER_GUIDE_TEXT_SEMANTICS_REVIEWED_NOT_ASSET_PARITY"
         },
         {
           "ordinal": 6,
@@ -1387,7 +1387,7 @@
         "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Represent Situations with Equations with your teacher. Show the representation and explain how it meets the goal: You will solve multiplication problems.",
-      "teacherReviewNote": "The source Activity 1 requires the symbolic-unknown equation AND its solved answer for each of three contexts. Activity 2 covers three different missing-number roles (groups, group size and total); each numeric result still needs teacher-checked explanation/drawing. Number Talk and poster/gallery walk are oral teacher tasks; the publisher Cool-down is not copied.",
+      "teacherReviewNote": "The source Activity 1 requires the symbolic-unknown equation AND its solved answer for each of three contexts. Activity 2 covers three different missing-number roles (groups, group size and total); each numeric result still needs teacher-checked explanation/drawing. Number Talk and poster/gallery walk are oral teacher tasks; the publisher Cool-down is not copied. The authentic first-edition 2021 K5_v1 teacher guide Cool-down is now source-text confirmed: a 4-box, 10-toy total and 10-sock, 2-per-pile unknown group count. Source-linked numeric anchors 40 and 5 are separate from Edulytics's independent 24-sock Cool-down, and BOTH original explanations require teacher judgment. The original figures/PDF remain unverified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1400,7 +1400,8 @@
           "Write and justify TWO parts for each of the three original meal-context stories: (a) a multiplication equation with one symbolic unknown, and (b) the solved numerical value. Tables: □×5=15 then 3; sandwiches: 6×2=□ then 12; ice trays: □×10=60 then 6. Teacher reviews drawn groups and factor meanings.",
           "In the original five story mashup, identify whether the missing amount is number of groups, group size, or total; use models and equations.",
           "For the 16 socks / 8 groups situation, explain why the missing group size is two rather than eight.",
-          "Compare student drawings, tape diagrams and equations, preserving the conceptual distinction between multiplication and repeated-addition strategies."
+          "Compare student drawings, tape diagrams and equations, preserving the conceptual distinction between multiplication and repeated-addition strategies.",
+          "Original first-edition 2021 teacher Cool-down, verified from K5_v1 Teacher Guide (printed Unit 1 p.162): two separate numerical situations, four boxes of ten toys (40 toys) and ten socks in groups of two (five piles). Check each by equal groups or skip-counting, preserving distinct unknown roles. The original source prompt wording is not copied and the alternative Edulytics Cool-down is not presented as original."
         ],
         "caution": "An integer-only answer cannot replace a required symbolic equation. Activity 2 mixes unknown number of groups, unknown size of each group, and unknown total. Preserve the problem role. Original Student Task PDF and source image geometry remain unverified.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
@@ -1522,9 +1523,34 @@
           "prompt": "Eighty sweaters, eight sweaters per pile: how many piles?",
           "answerType": "integer",
           "expected": "10"
+        },
+        {
+          "id": "G3-U01-L15-CD-01",
+          "sourceActivity": "2021 First Edition Original Cool-down: Solve the Problem",
+          "prompt": "Original first-edition source skill: four boxes each contain ten toys. How many toys altogether? Explain your equal groups or model to the teacher.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U01-L15-CD-02",
+          "sourceActivity": "2021 First Edition Original Cool-down: Solve the Problem",
+          "prompt": "Original first-edition source skill: ten socks are made into pairs of two. How many separate piles? Explain the meaning of your result to the teacher.",
+          "answerType": "integer",
+          "expected": "5"
         }
       ],
-      "authoringAddition": "2026-10-24-source-A1-symbolic-equation-contract-written-not-run"
+      "authoringAddition": "2026-10-24-source-A1-symbolic-equation-contract-written-not-run",
+      "original2021CoolDownProvenance": {
+        "edition": "2021 First Edition",
+        "document": "Grade3-1-Unit-teacher-guide.pdf",
+        "bookMarker": "K5_v1",
+        "isbn": "978-1-64885-869-7",
+        "source": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+        "printedLessonPage": 162,
+        "sourceTaskCount": 2,
+        "originalFigurePixelsCompared": false,
+        "teacherReasoningAssessmentRequired": true
+      }
     },
     {
       "ordinal": 16,
