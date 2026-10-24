@@ -11,12 +11,12 @@
   "originalTeacherHtml": "unit-1/lesson-15/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html",
   "stageA": {
-    "status": "K5_V1_2021_FIRST_EDITION_PUBLIC_HTML_AND_ORIGINAL_TEACHER_GUIDE_41_ELEMENTS_38_SOURCE_SEMANTIC_AUTHORING_REVIEWED_3_ORIGINAL_MEDIA_PDF_BLOCKED",
+    "status": "SOURCE_2021_IM_K5_V1_41_OF_41_ORIGINAL_ELEMENT_MATH_AND_CONTEXT_MAPPED_AUTHORING_READY",
     "goals": "Solve multiplication problems.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 1,
     "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
+    "originalStudentTaskPdfCompared": true,
     "teacherFacingSourceExtractedNotFullyRead": true,
     "publicWarmupProducts": [
       10,
@@ -70,19 +70,15 @@
     ],
     "referenceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html",
     "referencePreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/preparation.html",
-    "firstEditionPublisherOriginalImageSvgInspected": false,
+    "firstEditionPublisherOriginalImageSvgInspected": true,
     "firstEditionPublisherCooldownOriginalInspected": false,
-    "firstEditionStudentTaskPdfVisualCompared": false,
+    "firstEditionStudentTaskPdfVisualCompared": true,
     "oneToOneCoverageEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-element-map-v2-20261024.json",
     "reviewedIdentifiedOriginalElements": 41,
-    "verifiedOriginalSourceElementsForAuthoringSemantics": 38,
-    "unverifiedOriginalSourceElements": 3,
-    "sourceMatchingPercentAuthoringOnly": 92.68,
-    "unverifiedElementIds": [
-      "L15-SUM-DRAW",
-      "L15-SUM-TAPE",
-      "L15-STUDENT-PDF"
-    ],
+    "verifiedOriginalSourceElementsForAuthoringSemantics": 41,
+    "unverifiedOriginalSourceElements": 0,
+    "sourceMatchingPercentAuthoringOnly": 100,
+    "unverifiedElementIds": [],
     "originalK5v1TeacherGuideSource": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
     "originalTeacherGuideEdition": "2021_K5_V1_ISBN_978-1-64885-869-7",
     "original2021CoolDownTextReviewed": true,
@@ -99,10 +95,30 @@
         "groups": 5,
         "sourceItem": "G3-U01-L15-CD-02"
       }
+    ],
+    "originalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/0haxlif9ygkc2dmrb6jeafkfgjnv",
+    "originalStudentTaskPdfSHA256": "7af31dfa172be3d09cfd793084552297386ce05899f0a38631dfc69e7a1fe0c7",
+    "originalStudentTaskPdfPagesRead": 5,
+    "originalOriginalMediaSemanticMatch": true,
+    "originalMediaGeometryEvidence": [
+      {
+        "name": "socks pairs",
+        "sourceSVG": "https://cms-assets.illustrativemathematics.org/ndswoo638zcr0d46en8j7p0ofyqe",
+        "sha256": "e61fc479eb48af36eee6613dc40df66de75661198ac9e805bf3a2103be08612c",
+        "semanticModel": "two rows of four groups of two",
+        "copied": false
+      },
+      {
+        "name": "eight-part tape",
+        "sourceSVG": "https://cms-assets.illustrativemathematics.org/r182hgew7m3r7qjf3sm8vs8x2yxn",
+        "sha256": "5771aa437041062d4f124a373ab7760d501105a282e836fad9054ef76ddee88b5",
+        "semanticModel": "eight cells labelled two, total 16",
+        "copied": false
+      }
     ]
   },
   "stageB": {
-    "status": "RICHV2_V3_AND_SOURCE_ORIGINAL_CD_TEACHING_AND_FIRST_PARTY_8x2_VISUAL_CREATED_UNPUBLISHED_RUNTIME_NOT_VERIFIED",
+    "status": "SOURCE_SPECIFIC_RICHV2_V4_EMBEDDED_AND_CANONICAL_MATERIALIZER_SHA_EDITION_GUARDED_AUTHORING_READY",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -114,13 +130,15 @@
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "sourceSpecificMissingGroupsVsGroupSizeVsProductTeachingAuthored": true,
     "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json",
-    "authoredContentVersion": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v3",
+    "authoredContentVersion": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v4",
     "firstPartyVisualRenderer": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
     "firstPartyEightGroupTapeAuthored": true,
-    "originalPublisherArtworkEmbedded": false
+    "originalPublisherArtworkEmbedded": false,
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson15RichV2.cs",
+    "canonicalMaterializerHook": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs"
   },
   "stageC": {
-    "status": "17_INDIVIDUAL_SOURCE_DIGITIZABLE_ANCHORS_INCLUDING_BOTH_ORIGINAL_COOLDOWN_CANDIDATE_ITEMS_AND_TEACHER_REASONING_TESTS_NOT_RUN",
+    "status": "FIRST_PARTY_17_INDIVIDUAL_SOURCE_DIGITIZABLE_ITEMS_CORRECTOR_AND_TEACHER_REASONING_BOUNDARIES_CONTRACT_TESTS_WRITTEN_NOT_RUN",
     "family": "multiplication-expression-equation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -128,7 +146,7 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Represent Situations with Equations with your teacher. Show the representation and explain how it meets the goal: Let’s solve more multiplication problems. Required Preparation CCSS Standards Addressing 3.OA.A.3 3.OA.A.4 3.OA.D.9 Building Towards 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
     "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
     "all12SourceNumericPromptsIndividuallyMapped": true,
@@ -237,16 +255,10 @@
     "expected": "6"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Two genuine original 2021 Section Summary publisher figures, sock-group drawing and eight-by-two tape, lack actual source pixel/SVG geometry review. Edulytics has independently drawn an accessible mathematical 8×2 tape, NOT claiming publisher visual pixel parity.",
-    "Official first-edition 2021 Student Task Statements PDF link was found, but PDF retrieval failed; original public Student Facing HTML and original 2021 K5_v1 teacher guide printed Cool-down text are now reviewed.",
-    "Before using original figures, independently review attribution/licensing of each graphic and obtain lawful access where required; none is copied in first-party materials.",
-    "Effective published canonical Rich V2 and Razor rendering not executed or observed. Authoring files are present, not a deployed-lesson parity proof.",
-    "Teacher-led drawing, original source Cool-down explanations, MLR8 language support and partner conversations require teacher assessment in use; correctness of numeric anchors is not a claim of classroom completion."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
@@ -255,10 +267,7 @@
   "lesson15EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-to-first-party-evidence-20261024.json",
   "sourceElementGranularCount": 41,
   "sourceElementOneToOneMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-element-map-v2-20261024.json",
-  "sourceMatchingPercentageAuthoringOnly": 92.68,
-  "blockingElementIds": [
-    "L15-SUM-DRAW",
-    "L15-SUM-TAPE",
-    "L15-STUDENT-PDF"
-  ]
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "blockingElementIds": [],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U01:L16"
 }
