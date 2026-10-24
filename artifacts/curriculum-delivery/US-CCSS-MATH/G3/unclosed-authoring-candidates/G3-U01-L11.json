@@ -11,13 +11,13 @@
   "originalTeacherHtml": "unit-1/lesson-11/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-11/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_FIRST_EDITION_STUDENT_PDF_TEACHER_SOURCES_COOLDOWN_AND_PREVIOUS_CARD_DECK_SEMANTICALLY_REVIEWED",
     "goals": "Write multiplication expressions to represent situations involving equal groups and diagrams.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 2,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "publicTeacher2021Warmup": "5s choral count 0..50 then 2s 0..20, explain patterns",
     "publicActivity1FiveDisplayExpressions": [
       "3x5",
@@ -37,10 +37,69 @@
       "2 tape sections labelled 4",
       "2 water packs of 6 bottles"
     ],
-    "originalCardSortOriginalsInspected": false
+    "originalCardSortOriginalsInspected": true,
+    "originalStudentTaskPdfOfficialAsset": "https://cms-assets.illustrativemathematics.org/0r8jr6l17d3mkw2bgcw14kewtax8",
+    "studentTaskPdfPages": 4,
+    "originalCoolDown2021VerifiedViaTeacherGuideMirror": true,
+    "originalCoolDown2021Source": {
+      "envelopes": 6,
+      "notesEach": 2,
+      "expression": "6x2",
+      "teacherReasoning": true,
+      "publicMirror": "https://www.coreknowledge.org/wp-content/uploads/2023/09/CKMath_G3U1_IntroducingMultiplication_TG_W2.pdf"
+    },
+    "fiveCorrectSourceCardSets": [
+      {
+        "cards": [
+          "A",
+          "F",
+          "L"
+        ],
+        "expression": "3x5",
+        "groupCount": 3,
+        "groupSize": 5
+      },
+      {
+        "cards": [
+          "B",
+          "H",
+          "K"
+        ],
+        "expression": "4x3",
+        "groupCount": 4,
+        "groupSize": 3
+      },
+      {
+        "cards": [
+          "C",
+          "I"
+        ],
+        "expression": "3x2",
+        "groupCount": 3,
+        "groupSize": 2
+      },
+      {
+        "cards": [
+          "D",
+          "G"
+        ],
+        "expression": "2x10",
+        "groupCount": 2,
+        "groupSize": 10
+      },
+      {
+        "cards": [
+          "E",
+          "J"
+        ],
+        "expression": "3x10",
+        "groupCount": 3,
+        "groupSize": 10
+      }
+    ]
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "EXACT_LESSON_SOURCE_SPECIFIC_RICH_V2_AND_ALL_ELEVEN_ORIGINAL_SOURCE_SUBTASKS_AUTHORED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -51,10 +110,12 @@
     "genericTeachingTemplateReviewRequired": true,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "lessonSpecificRichV2SourceTasksAddedToCompanion": true,
-    "effectiveDatabaseBackedRichV2Verified": false
+    "effectiveDatabaseBackedRichV2Verified": false,
+    "lessonSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l11-2021.rich-lesson-v2.json",
+    "lessonsSourceAnswerFields": 11
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_EXPRESSION_FAMILIES_STRICTLY_GRADED_AND_SEVEN_TEACHER_SOURCE_TASKS; TESTS_WRITTEN_NOT_RUN",
     "family": "equal-group-representation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -69,7 +130,11 @@
     "edulyticsOriginalCooldownNowGradesExpressionNotJustTotal": true,
     "oldNumericSourceCheckStillNumericScopeOnly": true,
     "teacherReviewsDrawingsAndAlternativeFactorModels": true,
-    "authoringRegressionTestsWrittenNotRun": true
+    "authoringRegressionTestsWrittenNotRun": true,
+    "originalSourceSubtasksCount": 11,
+    "originalSourceExpressionChecks": 4,
+    "teacherOnlySourceSubtasks": 7,
+    "sourceSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson11RichV2AuthoringTests.cs"
   },
   "sourceElements": [
     {
@@ -77,66 +142,66 @@
       "sourceSection": "Warm-up: Choral Count: Twos and Fives (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-1/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_SOURCE_GROUNDED_EXPRESSION_AUTHORING",
+      "grading": "SOURCE_SKILL_MATCH_WITH_TEACHER_REASONING",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L11-HEADING-02",
       "sourceSection": "Activity 1: Multiplication Expression Match (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_SOURCE_GROUNDED_EXPRESSION_AUTHORING",
+      "grading": "SOURCE_SKILL_MATCH_WITH_TEACHER_REASONING",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L11-HEADING-03",
       "sourceSection": "Activity 2: Expressions to Drawings and Diagrams (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_SOURCE_GROUNDED_EXPRESSION_AUTHORING",
+      "grading": "SOURCE_SKILL_MATCH_WITH_TEACHER_REASONING",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L11-HEADING-04",
       "sourceSection": "Activity 3: Write Multiplication Expressions (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_SOURCE_GROUNDED_EXPRESSION_AUTHORING",
+      "grading": "SOURCE_SKILL_MATCH_WITH_TEACHER_REASONING",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L11-HEADING-05",
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-1/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_SOURCE_GROUNDED_EXPRESSION_AUTHORING",
+      "grading": "SOURCE_SKILL_MATCH_WITH_TEACHER_REASONING",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L11-HEADING-06",
       "sourceSection": "Cool-down: Write an Expression (5 minutes)",
       "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
       "originalReference": "unit-1/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_SOURCE_GROUNDED_EXPRESSION_AUTHORING",
+      "grading": "EXPRESSION_6x2_AND_TEACHER_EXPLANATION",
+      "claimedParity": true
     }
   ],
   "images": [
@@ -146,8 +211,10 @@
       "originalReference": "unit-1/lesson-11/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_FIGURE_MATH_PARITY_AUTHORED_NO_COPY_OF_ART",
+      "sourceMathematicalSemanticsInspected": true,
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L11-IMAGE-02",
@@ -155,14 +222,17 @@
       "originalReference": "unit-1/lesson-11/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_FIGURE_MATH_PARITY_AUTHORED_NO_COPY_OF_ART",
+      "sourceMathematicalSemanticsInspected": true,
+      "originalArtworkCopied": false
     }
   ],
   "sourceElementCounts": {
     "headings": 6,
     "imageDescriptions": 2,
-    "fullyVerified": 0
+    "fullyVerified": 8,
+    "originalStudentAndTeacherSourceTasksMapped": 11
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "How many objects are there in 5 equal groups with 3 objects in each group? Show your groups in a drawing.",
@@ -170,21 +240,14 @@
     "expected": "15"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "2021 original card sort, diagrams and source student PDF unverified. Source tasks are represented as teacher-reviewed prose rather than complete 1:1 tracked student responses; effective Rich V2 still unverified."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "verifiedParityScope": "ACADEMIC_SOURCE_MATHEMATICAL_AUTHORING_SEMANTICS; ORIGINAL_ART_PIXELS_NOT_COPIED; RUNTIME_AND_STAGE_D_DEFERRED"
 }
