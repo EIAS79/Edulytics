@@ -6810,34 +6810,135 @@
         "expected": "892"
       },
       "openTeacherTask": "Work through the original lesson's activity A New Addition Algorithm with your teacher. Show the representation and explain how it meets the goal: You will use an addition algorithm that records a single digit for the sum for each place value position and a 10 or 100 for a newly composed ten or hundred.",
-      "teacherReviewNote": "Teacher verifies how both recorded algorithms handle tens, not just equal totals.",
+      "teacherReviewNote": "Warmup 100+99=199,100+101=201; Han versus Elena 367+231=598; composed 14 tens in 365+182=547; four source sums 526,892,552,901; teacher reviews representation, carries, open notices and companion discussion; original images, gated Cool-down and PDF not verified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn another algorithm to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Think abo",
+        "sourceGoal": "Let's learn another algorithm to add.",
         "sourceLearningGoals": "Relate written algorithms to each other using place value understanding.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Use the two source missing table values and discuss additive symmetry/constant sums.",
+          "Compare 367+231 in partial sums and compact single-digit recordings.",
+          "Use 365+182 to explain different but equivalent recordings of 14 tens.",
+          "Practice four addition expressions and track both new tens and new hundreds.",
+          "Review reasoning orally with partner / MLR8; grade only numeric anchors digitally."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn another algorithm to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Think abo",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not present uninspected original algorithm pictures as verified, or auto-grade strategy discussion."
       },
       "sourceBasedCheck": {
-        "prompt": "The source compares algorithms for 367 + 231. Find that sum.",
+        "prompt": "The source has 365+182. Find the sum while accounting for 14 tens.",
         "answerType": "integer",
-        "expected": "598"
+        "expected": "547"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-5/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "PUBLIC_2021_SOURCE_TEXT_AND_ALT_REVIEWED_ORIGINAL_ALGORITHM_GRAPHICS_PDF_GAP",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U03-L05-WU-LEFT",
+          "sourceActivity": "Warm-up curious table",
+          "prompt": "At row 100 and column 99, enter the missing sum.",
+          "answerType": "integer",
+          "expected": "199"
+        },
+        {
+          "id": "G3-U03-L05-WU-RIGHT",
+          "sourceActivity": "Warm-up curious table",
+          "prompt": "At row 100 and column 101, enter the missing sum.",
+          "answerType": "integer",
+          "expected": "201"
+        },
+        {
+          "id": "G3-U03-L05-WU-PATTERN",
+          "sourceActivity": "Warm-up curious table",
+          "prompt": "Explain why some diagonal sums stay unchanged and how odd/even pairings work.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L05-A1-SUM",
+          "sourceActivity": "A New Addition Algorithm",
+          "prompt": "Find the value of 367+231.",
+          "answerType": "integer",
+          "expected": "598"
+        },
+        {
+          "id": "G3-U03-L05-A1-COMPARE",
+          "sourceActivity": "A New Addition Algorithm",
+          "prompt": "Compare Han's partial-sum recording with Elena's single-digit-place recording.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L05-A2-SUM",
+          "sourceActivity": "Compose New Units",
+          "prompt": "Find 365+182.",
+          "answerType": "integer",
+          "expected": "547"
+        },
+        {
+          "id": "G3-U03-L05-A2-14-TENS",
+          "sourceActivity": "Compose New Units",
+          "prompt": "Explain two valid ways to represent the 14 tens in 365+182.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L05-A2-1",
+          "sourceActivity": "Compose New Units",
+          "prompt": "Find 174+352 using an explained algorithm.",
+          "answerType": "integer",
+          "expected": "526"
+        },
+        {
+          "id": "G3-U03-L05-A2-2",
+          "sourceActivity": "Compose New Units",
+          "prompt": "Find 273+619 using an explained algorithm.",
+          "answerType": "integer",
+          "expected": "892"
+        },
+        {
+          "id": "G3-U03-L05-A2-3",
+          "sourceActivity": "Compose New Units",
+          "prompt": "Find 354+198 using an explained algorithm.",
+          "answerType": "integer",
+          "expected": "552"
+        },
+        {
+          "id": "G3-U03-L05-A2-4",
+          "sourceActivity": "Compose New Units",
+          "prompt": "Find 525+376 using an explained algorithm.",
+          "answerType": "integer",
+          "expected": "901"
+        },
+        {
+          "id": "G3-U03-L05-A2-2-CARRIES",
+          "sourceActivity": "Compose New Units",
+          "prompt": "Explain the two consecutive compositions in the 354+198 calculation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L05-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Compare how a newly composed ten/hundred is recorded in the two algorithms.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L05-CD",
+          "sourceActivity": "Publisher original gated Cool-down",
+          "prompt": "The teacher-only original Use an Algorithm for Addition Cool-down was not copied; the Edulytics task is independent.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 42,
