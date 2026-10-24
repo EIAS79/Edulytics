@@ -1955,11 +1955,11 @@
       "sourceVisualAltDescriptions": [
         "Array. 5 rows of 4 triangles."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "arrays-expressions",
       "independentPractice": {
         "prompt": "Create TWO rows each containing SIX eggs. Write the multiplication expression using number of rows first and eggs per row second; also draw the array.",
@@ -1972,10 +1972,10 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Represent Array Situations with your teacher. Show the representation and explain how it meets the goal: You will represent multiplication situations with arrays and multiplication expressions.",
-      "teacherReviewNote": "Original 2021 source permits relating factors to rows OR columns. Both mathematically matching factor orientations should be accepted for Activity 1 with required teacher assessment of the array sketch. The 4×6 human array and three Activity 2 drawings remain teacher-only, as does the original source Cool-down. A bare numeric product is not an expression.",
+      "teacherReviewNote": "Original 2021 source permits relating factors to rows OR columns. Both mathematically matching factor orientations should be accepted for Activity 1 with required teacher assessment of the array sketch. The 4×6 human array and three Activity 2 drawings remain teacher-only, as does the original source Cool-down. A bare numeric product is not an expression. Original 2021 three-page Student Task Statements PDF and original 20-triangle source SVG inspected; 4 array contexts each require a rectangular drawing and multiplication expression; 3 A2 array drawings plus teacher-led 4×6 human array require human review. Mathematical factor order may reverse only with justified row/column representation; numeric product alone is not enough.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s represent situations with arrays and expressions.",
@@ -2074,7 +2074,21 @@
           "expected": null
         }
       ],
-      "sourceExpressionOrientationPolicy": "SOURCE_BOTH_FACTOR_ORDERS_ACCEPTED_WITH_TEACHER_VISUAL_EXPLANATION"
+      "sourceExpressionOrientationPolicy": "SOURCE_BOTH_FACTOR_ORDERS_ACCEPTED_WITH_TEACHER_VISUAL_EXPLANATION",
+      "original2021StudentTaskPdf": {
+        "url": "https://cms-assets.illustrativemathematics.org/aqp27yl9ipyv13jpo2cgwslkdz0y",
+        "sha256": "7637381c6930f12445554c26e29a3b47c387005bfb015f6043e718b0bd5a968a",
+        "pagesRead": 3,
+        "mathTaskSourceMappingsReviewed": 10,
+        "originalArtCopied": false
+      },
+      "original2021TriangleFigure": {
+        "url": "https://cms-assets.illustrativemathematics.org/1xzgggwe341crgmnbgjlwnn4mm4b",
+        "sha256": "e20cbef9e71d15140d747f3dae38a680ca17264c78a9555573bf9fef080e5db2",
+        "filledTriangles": 20,
+        "geometry": "five rows of four",
+        "firstPartyIndependentCSS": true
+      }
     },
     {
       "ordinal": 19,
