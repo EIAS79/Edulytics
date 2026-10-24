@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L18",
+  "date": "2026-10-24",
+  "edition": "IM K–5 First Edition 2021",
+  "publicTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-18/lesson.html",
+  "originalElementsIdentified": 11,
+  "originalElementsOneToOneFullyVerified": 0,
+  "sourceElements": [
+    {
+      "id": "WU",
+      "source": "2021 source image: five rows of four triangles; warm-up explanation",
+      "expected": "20",
+      "grading": "NUMERIC_PLUS_TEACHER_IMAGE_REVIEW",
+      "status": "SOURCE_IMAGE_PIXEL_UNVERIFIED",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "A1-01",
+      "source": "3 rows of 5 chairs: sketch array AND write expression",
+      "expected": "3×5 / 5×3",
+      "grading": "SOURCE_EXPRESSION_TWO_FACTOR_PLUS_HUMAN_DRAWING",
+      "status": "AUTHORING_WRITTEN_UNRUN",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "A1-02",
+      "source": "4 rows of 5 cars: sketch array AND write expression",
+      "expected": "4×5 / 5×4",
+      "grading": "SOURCE_EXPRESSION_TWO_FACTOR_PLUS_HUMAN_DRAWING",
+      "status": "AUTHORING_WRITTEN_UNRUN",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "A1-03",
+      "source": "2 rows of 6 eggs: sketch array AND write expression",
+      "expected": "2×6 / 6×2",
+      "grading": "SOURCE_EXPRESSION_TWO_FACTOR_PLUS_HUMAN_DRAWING",
+      "status": "AUTHORING_WRITTEN_UNRUN",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "A1-04",
+      "source": "2 lines of 10 students: sketch array AND write expression",
+      "expected": "2×10 / 10×2",
+      "grading": "SOURCE_EXPRESSION_TWO_FACTOR_PLUS_HUMAN_DRAWING",
+      "status": "AUTHORING_WRITTEN_UNRUN",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "A2-00",
+      "source": "Class physically forms a 4×6 human array or attendance equivalent",
+      "expected": null,
+      "grading": "TEACHER_ONLY",
+      "status": "REQUIRES_ACTUAL_CLASSROOM",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "A2-01",
+      "source": "Draw array for 2×3",
+      "expected": null,
+      "grading": "TEACHER_ONLY",
+      "status": "HUMAN_DRAWING",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "A2-02",
+      "source": "Draw array for 5×2",
+      "expected": null,
+      "grading": "TEACHER_ONLY",
+      "status": "HUMAN_DRAWING",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "A2-03",
+      "source": "Draw array for 4×4",
+      "expected": null,
+      "grading": "TEACHER_ONLY",
+      "status": "HUMAN_DRAWING",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "SYN",
+      "source": "Explain relationship between story, array and expression",
+      "expected": null,
+      "grading": "TEACHER_ONLY",
+      "status": "HUMAN_DISCUSSION",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    },
+    {
+      "id": "CD",
+      "source": "Publisher original restricted Cool-down Array Situation; Edulytics equivalent separate",
+      "expected": null,
+      "grading": "FIRST_PARTY_EQUIVALENT",
+      "status": "SOURCE_RESTRICTED",
+      "sourceTextReviewed": true,
+      "sourceVisualFullyApproved": false
+    }
+  ],
+  "sourceBasedFirstPartyRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l18-2021.rich-lesson-v2.json",
+  "firstPartyCompanion": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+  "sourceCorrector": "src/Edulytics.Web/Curriculum/Grade3/Grade3SourceCompanionCatalogue.cs",
+  "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson18ExpressionOrientationTests.cs",
+  "sourceSkills": "CCSS 3.OA.A.1 plus array to expression and 3-dimensional representation",
+  "status": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "sourceSemanticAuthoringOnly": true,
+  "allOriginalArtVerified": false,
+  "testsExecuted": false,
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original 2021 triangle array pixels/source image reuse rights remain unverified.",
+    "Original first-edition student-task PDF and teacher-gated Cool-down not fully compared or licensed.",
+    "Four array drawings, three new array constructions, whole-class body array and oral reasoning require teacher evidence.",
+    "Live published Rich V2 effective content and model binding have not been exercised, no A–C source-perfect certification.",
+    "New authored .NET tests are NOT_RUN, and neither CI nor Stage D nor academic approval are claimed."
+  ]
+}
