@@ -68,10 +68,10 @@ public sealed class UsCcssG3Unit1Lesson16PhysicalArraysTests
         var bridge=ReadSource("src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson16RichV2.cs");
         var project=ReadSource("src/Edulytics.Data/Edulytics.Data.csproj");
         var controller=ReadSource("src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs");
-        Assert.Contains("g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v2",rich);
+        Assert.Contains("g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v3",rich);
         Assert.Contains("CommonCoreG3Unit1Lesson16RichV2.Apply(lesson)",materializer);
         Assert.Contains("Edulytics.Data.Grade3.Unit1Lesson16RichV2",project);
-        Assert.Contains("g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v2",bridge);
+        Assert.Contains("g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v3",bridge);
         Assert.Contains("lesson.LessonNumber == 16",controller);
         Assert.Contains("numeric correctness is not",controller,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("60 or more connecting cubes for EACH PAIR",rich);
