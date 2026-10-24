@@ -11,16 +11,33 @@
   "originalTeacherHtml": "unit-3/lesson-6/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-6/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "OFFICIAL_PUBLIC_2021_TEACHER_LESSON_AND_PREPARATION_REVIEWED_PDF_RENDER_AND_IMAGE_PIXEL_GAP",
     "goals": "Add within 1,000 using an algorithm or another strategy based on the numbers being added.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 5,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "publicTeacherPageReviewed": true,
+    "sourceNumericAnchors": [
+      456,
+      455,
+      459,
+      580,
+      943,
+      781,
+      654,
+      802,
+      710,
+      547,
+      623,
+      278,
+      514,
+      898
+    ]
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "GUARDED_SOURCE_SPECIFIC_RICH_V2_AND_FIRST_PARTY_COMPANION_AUTHORED_NOT_RUNTIME_VERIFIED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +46,13 @@
     "existingSourceBodyHash": "9a99a83e0448b71f9472a7aaba8127b580efa8e66d0172414b348d348c2a450e",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l06-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson6.cshtml",
+    "publishedOrDeployed": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOURTEEN_SOURCE_NUMERIC_ANCHORS_FOUR_TEACHER_REVIEW_TASKS_AND_UNRUN_REGRESSION",
     "family": "addition-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,73 +62,254 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Just Ones with your teacher. Show the representation and explain how it meets the goal: Let’s consider when to use algorithms and when to use other strategies to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teache",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 18,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson6FlexibleAdditionSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L06-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: Little More, Little Less (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "GOAL",
+      "sourceSection": "Preparation",
+      "coverage": "MATCHED_TEACHER_LED",
+      "originalPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L06-HEADING-02",
-      "sourceSection": "Activity 1: Just Ones (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "WU-0",
+      "sourceSection": "Warmup",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L06-HEADING-03",
-      "sourceSection": "Activity 2: How Would You Add? (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "WU-1",
+      "sourceSection": "Warmup",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L06-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "WU-2",
+      "sourceSection": "Warmup",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L06-HEADING-05",
-      "sourceSection": "Cool-down: Algorithm or Another Strategy? (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "WU-3",
+      "sourceSection": "Warmup",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L06-HEADING-06",
-      "sourceSection": "Student Section Summary",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "WU-STRATEGIES",
+      "sourceSection": "Warmup synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-943",
+      "sourceSection": "Activity1",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-10",
+      "sourceSection": "Activity1",
+      "coverage": "MATCHED_TEACHER_LED",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-100",
+      "sourceSection": "Activity1",
+      "coverage": "MATCHED_TEACHER_LED",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-P0",
+      "sourceSection": "Activity1 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-P1",
+      "sourceSection": "Activity1 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-P2",
+      "sourceSection": "Activity1 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-P3",
+      "sourceSection": "Activity1 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-P0",
+      "sourceSection": "Activity2 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-P1",
+      "sourceSection": "Activity2 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-P2",
+      "sourceSection": "Activity2 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-P3",
+      "sourceSection": "Activity2 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-P4",
+      "sourceSection": "Activity2 source practice",
+      "coverage": "MATCHED_DIGITAL",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-MATCH",
+      "sourceSection": "Activity2 discussion",
+      "coverage": "MATCHED_TEACHER_LED",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-UNLIKE",
+      "sourceSection": "Activity2 discussion",
+      "coverage": "MATCHED_TEACHER_LED",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "SYNTH",
+      "sourceSection": "Lesson synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "SECTION",
+      "sourceSection": "Student section summary",
+      "coverage": "MATCHED_TEACHER_LED",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "CD",
+      "sourceSection": "Gated original Cool-down",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "PHOTO",
+      "sourceSection": "Source partner photograph",
+      "coverage": "RIGHTS_RESTRICTED",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "ART-0",
+      "sourceSection": "Original algorithm/summary images",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "ART-1",
+      "sourceSection": "Original algorithm/summary images",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "ART-2",
+      "sourceSection": "Original algorithm/summary images",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "ART-3",
+      "sourceSection": "Original algorithm/summary images",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "ART-4",
+      "sourceSection": "Original algorithm/summary images",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "ART-5",
+      "sourceSection": "Original algorithm/summary images",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "ART-6",
+      "sourceSection": "Original algorithm/summary images",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "ART-7",
+      "sourceSection": "Original algorithm/summary images",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "GAME-0",
+      "sourceSection": "Optional center boards",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "GAME-1",
+      "sourceSection": "Optional center boards",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "GAME-2",
+      "sourceSection": "Optional center boards",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "originalPdfVerified": false,
       "claimedParity": false
     }
   ],
@@ -160,9 +361,9 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 6,
-    "imageDescriptions": 5,
-    "fullyVerified": 0
+    "identified": 35,
+    "originalPdfPagesRead": 0,
+    "originalArtworkVerified": 0
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 373 + 151. Explain any regrouping.",
@@ -174,16 +375,17 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "The publisher-original Student Task Statements PDF was linked on public preparation but download failed (cache miss), preventing PDF-level layout and artwork review.",
+    "Original method-1 and method-2 algorithm image positions, addition summary diagrams and classroom photograph are not pixel- or rights-verified; independent text representations are not visual-source proof.",
+    "Original gated Algorithm or Another Strategy? Cool-down has not been accessed, so replacement is independent not publisher parity.",
+    "Optional 2021 gameboard documents not individually source inspected.",
+    "MLR8 revoicing, the same/different-strategy partner conversations and method justification require human teacher evidence, not scalar grading.",
+    "New C#, Razor and xUnit contracts are authored but not compiled/tested or approved; Stage D/CI must remain deferred."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-42-2021-source-to-first-party-evidence-20261024.json"
 }

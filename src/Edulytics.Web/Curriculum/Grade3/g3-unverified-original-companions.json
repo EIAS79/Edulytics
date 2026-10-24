@@ -7018,34 +7018,163 @@
         "expected": "898"
       },
       "openTeacherTask": "Work through the original lesson's activity Just Ones with your teacher. Show the representation and explain how it meets the goal: You will record newly composed tens and hundreds with a single digit and to consider when you might use algorithms or other strategies to add.",
-      "teacherReviewNote": "Source includes new tens/hundreds recorded differently and deliberate choice of algorithms.",
+      "teacherReviewNote": "Number Talk answers 456,455,459,580; Han-like and digit-1 composed-unit examples 657+286=943 and 781,654,802,710; strategy-choice activity 547,623,278,514,898; MLR8 carry meaning and partners same/different strategies remain teacher-scored.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s consider when to use algorithms and when to use other strategies to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teache",
+        "sourceGoal": "Let's consider when to use algorithms and when to use other strategies to add.",
         "sourceLearningGoals": "Add within 1,000 using an algorithm or another strategy based on the numbers being added.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Record four number talks sequentially and compare near-hundred adjustments.",
+          "Compare newly composed tens and hundreds as 10/100 versus digit 1 positioned in the relevant column.",
+          "Apply the second method to four within-1,000 source additions.",
+          "Choose a strategy for five independently solved source sums; compare with same- and different-strategy partners.",
+          "Reflect on efficient methods in lesson synthesis."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s consider when to use algorithms and when to use other strategies to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teache",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not mark teacher speech or copied publisher original graphics as numerically certified."
       },
       "sourceBasedCheck": {
-        "prompt": "Two source methods add 657 + 286. What sum do they represent?",
+        "prompt": "The original activity shows 657+286 with carried units. Calculate the sum.",
         "answerType": "integer",
         "expected": "943"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-6/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "OFFICIAL_PUBLIC_2021_TEACHER_STUDENT_HTML_INDVIDUALLY_REVIEWED_PDF_AND_ORIGINAL_FIGURES_BLOCKED",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U03-L06-WU-1",
+          "sourceActivity": "Number Talk",
+          "prompt": "Mentally find 300+156.",
+          "answerType": "integer",
+          "expected": "456"
+        },
+        {
+          "id": "G3-U03-L06-WU-2",
+          "sourceActivity": "Number Talk",
+          "prompt": "Mentally find 299+156.",
+          "answerType": "integer",
+          "expected": "455"
+        },
+        {
+          "id": "G3-U03-L06-WU-3",
+          "sourceActivity": "Number Talk",
+          "prompt": "Mentally find 303+156.",
+          "answerType": "integer",
+          "expected": "459"
+        },
+        {
+          "id": "G3-U03-L06-WU-4",
+          "sourceActivity": "Number Talk",
+          "prompt": "Mentally find 204+376.",
+          "answerType": "integer",
+          "expected": "580"
+        },
+        {
+          "id": "G3-U03-L06-A1-0",
+          "sourceActivity": "Just Ones",
+          "prompt": "Compute 657+286 with its composed units.",
+          "answerType": "integer",
+          "expected": "943"
+        },
+        {
+          "id": "G3-U03-L06-A1-1",
+          "sourceActivity": "Just Ones",
+          "prompt": "Compute 602+179.",
+          "answerType": "integer",
+          "expected": "781"
+        },
+        {
+          "id": "G3-U03-L06-A1-2",
+          "sourceActivity": "Just Ones",
+          "prompt": "Compute 493+161.",
+          "answerType": "integer",
+          "expected": "654"
+        },
+        {
+          "id": "G3-U03-L06-A1-3",
+          "sourceActivity": "Just Ones",
+          "prompt": "Compute 438+364.",
+          "answerType": "integer",
+          "expected": "802"
+        },
+        {
+          "id": "G3-U03-L06-A1-4",
+          "sourceActivity": "Just Ones",
+          "prompt": "Compute 329+381.",
+          "answerType": "integer",
+          "expected": "710"
+        },
+        {
+          "id": "G3-U03-L06-A1-COMPARE",
+          "sourceActivity": "Just Ones",
+          "prompt": "Explain why a carried 1 above tens represents 10 and a carried 1 above hundreds represents 100.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L06-A2-1",
+          "sourceActivity": "How Would You Add?",
+          "prompt": "Find 199+348 with your chosen method.",
+          "answerType": "integer",
+          "expected": "547"
+        },
+        {
+          "id": "G3-U03-L06-A2-2",
+          "sourceActivity": "How Would You Add?",
+          "prompt": "Find 264+359 with your chosen method.",
+          "answerType": "integer",
+          "expected": "623"
+        },
+        {
+          "id": "G3-U03-L06-A2-3",
+          "sourceActivity": "How Would You Add?",
+          "prompt": "Find 203+75 with your chosen method.",
+          "answerType": "integer",
+          "expected": "278"
+        },
+        {
+          "id": "G3-U03-L06-A2-4",
+          "sourceActivity": "How Would You Add?",
+          "prompt": "Find 316+198 with your chosen method.",
+          "answerType": "integer",
+          "expected": "514"
+        },
+        {
+          "id": "G3-U03-L06-A2-5",
+          "sourceActivity": "How Would You Add?",
+          "prompt": "Find 399+499 with your chosen method.",
+          "answerType": "integer",
+          "expected": "898"
+        },
+        {
+          "id": "G3-U03-L06-A2-PEERS",
+          "sourceActivity": "How Would You Add?",
+          "prompt": "Discuss with a partner using the same method, then one using a different method, and compare why both work.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L06-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain when an algorithm or another efficient strategy is your preferred choice.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L06-CD",
+          "sourceActivity": "Original publisher gated Cool-down",
+          "prompt": "The teacher supplies original Algorithm or Another Strategy? separately; Edulytics independently authored Cool-down is not a copy.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 43,

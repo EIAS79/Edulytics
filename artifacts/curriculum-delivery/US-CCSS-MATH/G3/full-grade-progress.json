@@ -297,10 +297,14 @@
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L06.json",
       "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+        "The publisher-original Student Task Statements PDF was linked on public preparation but download failed (cache miss), preventing PDF-level layout and artwork review.",
+        "Original method-1 and method-2 algorithm image positions, addition summary diagrams and classroom photograph are not pixel- or rights-verified; independent text representations are not visual-source proof.",
+        "Original gated Algorithm or Another Strategy? Cool-down has not been accessed, so replacement is independent not publisher parity.",
+        "Optional 2021 gameboard documents not individually source inspected.",
+        "MLR8 revoicing, the same/different-strategy partner conversations and method justification require human teacher evidence, not scalar grading.",
+        "New C#, Razor and xUnit contracts are authored but not compiled/tested or approved; Stage D/CI must remain deferred."
+      ],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-42-2021-source-to-first-party-evidence-20261024.json"
     },
     {
       "ordinal": 43,
@@ -2665,11 +2669,11 @@
       "unitNumber": 3,
       "lessonNumber": 6,
       "title": "Use Strategies and Algorithms to Add",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_SOURCE_IMAGE_PIXEL_OPEN",
-      "stageB": "SOURCE_SKILL_AND_AUTHORIGINAL_FIRST_PARTY_COMPANION_RICHV2_OPEN",
-      "stageC": "NUMERIC_OR_TEACHER_REVIEW_GRADE_CONTRACT_DRAFT_UNRUN",
+      "stageA": "OFFICIAL_PUBLIC_2021_TEACHER_LESSON_AND_PREPARATION_REVIEWED_PDF_RENDER_AND_IMAGE_PIXEL_GAP",
+      "stageB": "GUARDED_SOURCE_SPECIFIC_RICH_V2_AND_FIRST_PARTY_COMPANION_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "stageC": "FOURTEEN_SOURCE_NUMERIC_ANCHORS_FOUR_TEACHER_REVIEW_TASKS_AND_UNRUN_REGRESSION",
       "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 11,
+      "sourceElementsIdentified": 35,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L06.json",
@@ -2683,7 +2687,12 @@
       "original2021FigureUrlCount": 7,
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": false,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-42-2021-source-to-first-party-evidence-20261024.json",
+      "authoredCandidateReviewStatus": "SOURCE_SPECIFIC_A_B_C_AUTHORED_ORIGINAL_PDF_RIGHTS_ARTWORK_AND_COOLDOWN_NOT_VERIFIED",
+      "testsWrittenNotRun": true,
+      "sourceMatchingMeasurementScope": "PUBLIC_2021_HTML_SEMANTIC_AUTHORING_NOT_100_PERCENT_SOURCE_MATERIAL"
     },
     {
       "gradeOrdinal": 43,
@@ -5334,7 +5343,8 @@
     "2026-10-24 sequential ordinal35 U02:L14 A–C:4 original PDF pages,4 SVG references(3distinct), opposite-side spans and Tyler critique, A72m²/B22ft², exact unit-labelled lengths, teacher same/different-method restatement, independent33cm² Cool-down. Tests written not run. Cursor36; no Stage D/CI dispatch/merge/deploy.",
     "2026-10-24 sequential ordinal36 U02:L15 A–C:3 original PDF pages and3 image contexts; outerroom110ft²,bed18ft²,desk6ft²; original open layout/uncovered-floor task retains teacher review and explicit unknown-closet assumptions. Source-authorized own grid-paper alternative; publisher cut-out BLM not claimed inspected. New64ft² first-party exit task; original optional lesson has no listed publisher Cool-down. Tests written not run. Cursor37; no Stage D/CI dispatch/merge/deploy.",
     "2026-10-24 sequential ordinal37 U03:L01 A–C:3 original studentPDFpages and5originalBLMPDFpages,full12-carddeck and4-boxroundtable;multiplevalidWODBchoices,standard/nonstandardexpandedform,exact100h+10t+o grader acceptingexchanges,new572-groupingCool-down replacing478echo. Source device read-only; tests written not run. Cursor38; no Stage D/CI dispatch/merge/deploy.",
-    "2026-10-24 sequential ordinals 38–41 U03:L02–L05: source-specific guarded Rich V2, Razor companions, 14 source subtasks each, source numeric and open teacher contracts, and unrun regression cases committed separately. All four remain A_C_EXPLICIT_GAP because original publisher student PDFs, artwork, gated Cool-down and center documents not fully source-compared; no Stage D/CI/manual test, academic approval, merge, deploy. Verified READY_FOR_STAGE_D remains 37, first unclosed 38."
+    "2026-10-24 sequential ordinals 38–41 U03:L02–L05: source-specific guarded Rich V2, Razor companions, 14 source subtasks each, source numeric and open teacher contracts, and unrun regression cases committed separately. All four remain A_C_EXPLICIT_GAP because original publisher student PDFs, artwork, gated Cool-down and center documents not fully source-compared; no Stage D/CI/manual test, academic approval, merge, deploy. Verified READY_FOR_STAGE_D remains 37, first unclosed 38.",
+    "2026-10-24 sequential ordinal 42 U03:L06 authored guarded Rich V2, Razor partial, 14 official numeric anchors, four teacher-led tasks, original mathematical contexts and unrun tests. Publisher original PDF fetch cache-missed, art/Cool-down/gameboards remain unverified. Remains A_C_EXPLICIT_GAP. Verified A-C closed stays37, first unclosed38, no Stage D manual CI/tests/merge/deploy."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -5919,14 +5929,15 @@
     "stageD": "NOT_STARTED",
     "academicApproval": false
   },
-  "latestAttemptedGradeOrdinal": 41,
-  "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U03:L05",
+  "latestAttemptedGradeOrdinal": 42,
+  "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U03:L06",
   "lastAttemptNotClosure": {
     "ordinals": [
       38,
       39,
       40,
-      41
+      41,
+      42
     ],
     "authoringCorrectionsCommitted": true,
     "areClosed": false,
