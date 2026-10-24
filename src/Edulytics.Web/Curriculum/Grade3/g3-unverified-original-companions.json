@@ -534,8 +534,8 @@
         "answerType": "multiplication-expression",
         "expected": "4x6"
       },
-      "openTeacherTask": "Work through the original lesson's activity Multiplication Expression Match with your teacher. Show the representation and explain how it meets the goal: You will use multiplication expressions to represent equal groups.",
-      "teacherReviewNote": "The expression must correctly identify groups and objects per group; the source introduces expressions here.",
+      "openTeacherTask": "Complete all ELEVEN individually mapped first-edition 2021 tasks above, including one teacher-issued source A–L card, three original student drawings, a personally invented diagram and three source expression responses. Keep the source Cool-down six-envelope expression distinct from Edulytics supplemental 4×6 extra practice.",
+      "teacherReviewNote": "Teacher must personally assess choral-count reasoning, actual 2021 original card match to five posted expressions, source drawing tasks 5×2/3×4/3×10, pupil-created expression and matching diagram, student synthesis and explanation of ALL THREE source Activity 3 expressions (3×3, 2×4, 2×6), plus the ORIGINAL first-edition 6×2 Cool-down explanation. A product-only answer never passes an expression. The first-party 4×6 Edulytics Cool-down is OPTIONAL, not the publisher item.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -563,7 +563,103 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "SourceSubtasks": [
+        {
+          "Id": "G3-U01-L11-WU-01",
+          "SourceActivity": "Warm-up Choral Count (10m)",
+          "Prompt": "Orally count by fives from 0 to 50, explain why units digits end in 0 or 5; then count by twos from 0 to 20 and describe a pattern. Teacher listens to counting, reasoning and a partner's rephrasing.",
+          "AnswerType": "teacher",
+          "Expected": null
+        },
+        {
+          "Id": "G3-U01-L11-A1-01",
+          "SourceActivity": "Activity 1 original card-to-expression match (10m)",
+          "Prompt": "Take ONE of the 2021 original A–L Equal Groups cards per PAIR. Match YOUR card to the five displayed expressions 3 × 5, 4 × 3, 3 × 2, 2 × 10, 3 × 10. Explain both factors; teacher checks the authentic card and why. Reference verified L10 card groups A–F–L, B–H–K, C–I, D–G and E–J.",
+          "AnswerType": "teacher",
+          "Expected": null
+        },
+        {
+          "Id": "G3-U01-L11-A2-01",
+          "SourceActivity": "Activity 2 draw 5 × 2",
+          "Prompt": "Draw FIVE groups of TWO or five tape sections marked 2 for the first expression 5 × 2; explain group count and group size. Teacher inspects physical or drawn representation.",
+          "AnswerType": "teacher",
+          "Expected": null
+        },
+        {
+          "Id": "G3-U01-L11-A2-02",
+          "SourceActivity": "Activity 2 draw 3 × 4",
+          "Prompt": "Make a drawing OR tape showing THREE groups of FOUR. During synthesis compare a pictorial group drawing to a tape, then discuss how a 5 × 4 or 3 × 5 tape would differ.",
+          "AnswerType": "teacher",
+          "Expected": null
+        },
+        {
+          "Id": "G3-U01-L11-A2-03",
+          "SourceActivity": "Activity 2 draw 3 × 10",
+          "Prompt": "Make THREE groups of TEN or a three-section tape with each part marked 10. Teacher checks group size and correspondence.",
+          "AnswerType": "teacher",
+          "Expected": null
+        },
+        {
+          "Id": "G3-U01-L11-A2-04",
+          "SourceActivity": "Activity 2 invent expression and matching model",
+          "Prompt": "Create your OWN valid multiplication expression and a matching equal-group drawing or tape, and explain to your partner; there is no one fixed numeric answer.",
+          "AnswerType": "teacher",
+          "Expected": null
+        },
+        {
+          "Id": "G3-U01-L11-A3-01",
+          "SourceActivity": "Activity 3 express 3 dot cubes",
+          "Prompt": "The original drawing shows THREE dot cubes with THREE dots on EACH. Write groups × dots-per-cube as a multiplication expression; provide a separate explanation.",
+          "AnswerType": "multiplication-expression",
+          "Expected": "3x3"
+        },
+        {
+          "Id": "G3-U01-L11-A3-02",
+          "SourceActivity": "Activity 3 express two-part tape",
+          "Prompt": "The original diagram has TWO equal tape partitions labelled FOUR each. Write the ordered multiplication expression and explain the factors.",
+          "AnswerType": "multiplication-expression",
+          "Expected": "2x4"
+        },
+        {
+          "Id": "G3-U01-L11-A3-03",
+          "SourceActivity": "Activity 3 two water packs",
+          "Prompt": "The source text says TWO packs of water, SIX bottles in each. Write the ordered multiplication expression, not only its total, and explain.",
+          "AnswerType": "multiplication-expression",
+          "Expected": "2x6"
+        },
+        {
+          "Id": "G3-U01-L11-SYN-01",
+          "SourceActivity": "Source lesson synthesis",
+          "Prompt": "Compare a drawing, tape, story and expression for the SAME equal groups. State something learned about multiplication, justify group count vs group size, and explain 4 × 5 as four groups of five with a partner.",
+          "AnswerType": "teacher",
+          "Expected": null
+        },
+        {
+          "Id": "G3-U01-L11-CD-01",
+          "SourceActivity": "Original first-edition 2021 Cool-down Write an Expression",
+          "Prompt": "A student has SIX envelopes, each holding TWO notes. Write the multiplication expression in groups × notes-per-envelope order, and explain WHY the factors match. Optional drawing, but teacher must judge your explanation; a scalar 12 alone is insufficient.",
+          "AnswerType": "multiplication-expression",
+          "Expected": "6x2"
+        }
+      ],
+      "OriginalStudentTaskPdfRead": true,
+      "OriginalPublisherCoolDownSourceVerified": true,
+      "OriginalPublisherCoolDownMirror": "https://www.coreknowledge.org/wp-content/uploads/2023/09/CKMath_G3U1_IntroducingMultiplication_TG_W2.pdf",
+      "SourceCardDeckReusedFromPreviousLesson": true,
+      "SourceSubtaskCount2021": 11,
+      "IndependentTeachingGuidance": {
+        "SourceGoal": "Let’s write multiplication expressions.",
+        "SourceLearningGoals": "Write expressions for existing equal-group drawings, situation cards and tape diagrams, matching groups first and objects per group second.",
+        "TeachingSteps": [
+          "Warm-up 10m: teacher-led choral count from 0 to 50 in fives, then 0 to 20 in twos; discuss numerical patterns.",
+          "Activity 1 10m: use ONE authentic A–L card from L10 per pair, matching its grouping to the five printed expressions 3×5, 4×3, 3×2, 2×10, 3×10. Five verified source card matching sets are A-F-L, B-H-K, C-I, D-G and E-J.",
+          "Activity 2 15m: draw three SEPARATE expressions 5×2, 3×4, 3×10 and invent a fourth expression with a matching drawing; compare 3×4 and variations 5×4 versus 3×5. Use source MLR2/Action-and-Expression supports.",
+          "Activity 3 10m: write 3×3 for three three-dot cubes, 2×4 for two four-labelled tape parts, 2×6 for two six-bottle water packs; provide explanatory drawings/words.",
+          "Source synthesis 10m: contrast equal-group drawing, tape, context and expression; original 5m Cool-down has six envelopes with two notes each and needs 6×2 plus reasoning. Edulytics supplemental practice remains separate and optional."
+        ],
+        "Caution": "Do not mark expression problems correct from their product only. Multiplication notation was introduced at L10 synthesis and is explicitly practised through L11. Source artwork not copied. Human teacher judges drawing groups, peer conversation, creativity, and Cool-down factor meaning."
+      }
     },
     {
       "ordinal": 12,

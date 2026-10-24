@@ -59,7 +59,7 @@ public sealed class Grade3SourceCompanionController(
                 q, answers.SourceSubtaskAnswers.ElementAtOrDefault(i))).ToArray();
         // L10's authentic source Cool-down is a teacher-reviewed diagram
         // with a yes/no choice. Extra Edulytics numeric items are OPTIONAL.
-        var sourceTen = lesson.UnitNumber == 1 && lesson.LessonNumber == 10;
+        var sourceTen = lesson.UnitNumber == 1 && (lesson.LessonNumber == 10 || lesson.LessonNumber == 11);
         var sourceCheck = lesson.SourceBasedCheck is null ? null :
             sourceTen && string.IsNullOrWhiteSpace(answers.SourceCheckAnswer)
                 ? new Grade3CompanionFeedback(null, true, "Optional numeric supplement not attempted.")
