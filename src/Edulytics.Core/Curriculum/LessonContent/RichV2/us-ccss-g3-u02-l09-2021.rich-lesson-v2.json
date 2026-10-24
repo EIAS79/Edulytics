@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g3-u02-l09-2021-source-abc-firstparty-20261024-v1",
+  "ContentVersion": "g3-u02-l09-2021-source-abc-firstparty-20261024-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -10,11 +10,11 @@
       "ExplanationParagraphs": [
         "First edition 2021 IM K–5 Grade 3 Unit 2 Lesson 9, CCSS 3.MD.C.7.b. The lesson moves from invisible gridlines to MEASURING real rectangle sides with a ruler, multiplying side lengths, and physically creating tape-bordered rectangles of prescribed SQUARE-FOOT area. Grade 3 source learner PDF has three pages. Source instructional order: 10-minute Notice and Wonder, 15-minute rectangle measuring, 20-minute hands-on rectangle construction, synthesis, 5-minute gated source Cool-down.",
         "Warm-up: two visually corresponding publisher dot illustrations show SIX groups of THREE dots, with 15 black dots plus three newly added blue dots. In the first diagram the sixth group is separate; in the second the new group is represented as an extra column of the same rectangular array. The math is 5×3+1×3=18=6×3. Notice an additional group of three rather than just recounting isolated dots. Edulytics should draw independent versions of these models, not reproduce source colored pixels.",
-        "Activity 1 'Measure to Find Area': original 2021 learner printed PDF p2 depicts THREE ungridded rectangles marked A, B, C in different proportions. Pupils FIRST predict which covers the largest region and circle the letter, then measure the original physical printed rectangles using a CENTIMETER ruler from zero to actual side ends and multiply the measured dimensions. Teacher may have pupils add centimeter tick marks to imagine a full grid. No exact centimeter side-length answer is asserted in Edulytics because the printed source art dimensions must be measured on the specific correctly-scaled handout, not inferred from scaled website alt text. A/B/C actual PDF outline ratios are approximately square, wide-and-short and narrow-and-tall respectively; area claims require original physical measurement, not visually largest height.",
+        "Activity 1 'Measure to Find Area' (15 min): the source first-edition 2021 Student Task Statements PDF page 2 presents three UNGRIDDED rectangles A, B and C. The original publisher SVG geometry gives exact NOMINAL ruler dimensions using 28.3465 SVG points per centimeter: A 170.08×85.04 points = 6×3 cm, area 18 cm²; B 113.39×141.73 points = 4×5 cm, area 20 cm²; C 283.47×85.04 points = 10×3 cm, area 30 cm². Students must first predict which is largest (C), then use a ruler accurately aligned to 0 on a full-size printed version, measure each SIDE and compute its area with units. Edulytics separately makes original instructional geometry with proportional CSS outlines labelled as conceptual dimensions; do NOT use CSS physical screen length or an arbitrarily scaled printer as a reference centimeter ruler. The 2021 source ruler image has whole centimeter ticks with subdivisions, not one centimeter for every small tick. Teachers validate physically measured source A/B/C on actual paper.",
         "Activity 2 'Create a Rectangle': classroom physical team assignment of ONE of six area targets 4, 6, 9, 10, 12, 16 SQUARE FEET. Teams of four use painter's/masking tape, inch rulers and yardsticks to mark the correct real floor rectangle. Each team explains factor pairs, measures side lengths in FEET, checks every side and interior covered area, and records a diagram and justification. Possible side pairs (not unique answers): 2×2 for 4, 2×3 for 6, 3×3 for 9, 2×5 for 10, 3×4 for 12 and 4×4 for 16. Source teacher preparation requires ONE roll of masking/painter's tape per group of four. No machine result can certify tape placement, side measurement or group collaboration.",
         "MLR8 Discussion Supports: give groups a few minutes to ensure every student can explain the constructed area and have them rehearse explanations before presenting. Engagement: Develop Effort and Persistence uses supportive group questions for equitable collaboration. The original student p2 A/B/C measurement is scored by a teacher who sees the original correctly scaled printed sheet; any optional independent Edulytics rectangles with GIVEN dimensions are separate numeric practice, never falsely labelled the original A/B/C's measurements.",
         "Lesson synthesis compares earlier full grids, partial grids and NO-grid rectangles to argue that ruler-measured side lengths are enough to compute area. Distinguish centimeters from square centimeters in Activity 1, and feet from SQUARE feet in Activity 2. Do not transfer square-inch or square-centimeter area answers across different units without conversion. Publisher original educator-gated 'Find the Area' Cool-down is not reproduced; Edulytics has an independently authored goal-equivalent item.",
-        "Source 2021 PDF p2 geometric outlines may vary with printing scale: original teacher instructions explicitly say use a physical ruler and label answers in cm². The first-party authored diagrams are mathematically representative but should not be regarded as source pixel-identical printable measurement tools. All original measurement and physical tape construction responses require human review."
+        "Source 2021 PDF p2 original shape vector geometry can be verified from actual publisher SVG dimensions independently of printing: A=18 cm², B=20 cm², C=30 cm² at intended print scale, so C is largest. These quantities are grounded source authoring references rather than a claim that an arbitrary viewer/printer shows correct physical centimeters. The first-party digital tasks explicitly label nominal source dimensions, while measuring and drawing are teacher reviewed."
       ],
       "KeyConcepts": [
         {
@@ -25,9 +25,9 @@
         },
         {
           "Title": "Physical scale matters",
-          "Definition": "A PDF or screen may stretch source drawing dimensions; measuring the real printed source sheet differs from guessing dimensions from an HTML image.",
-          "Rule": "Only teacher-verified physical measurements of original A/B/C are source task answers.",
-          "Example": "Different shape proportions do not reveal fixed square-centimeter areas."
+          "Definition": "Original source SVG nominal vector geometry has real intended centimeter scale, while browser CSS and printer scaling may distort physical lengths.",
+          "Rule": "Nominal correct-source measurements A 6×3, B 4×5, C 10×3 cm must be checked against the student's own actual print/ruler alignment; never claim the web display is a physical ruler.",
+          "Example": "The nominal source C rectangle measures 10 cm by 3 cm for area 30 cm², but scaling a printout to 50% would halve its actual measured sides."
         },
         {
           "Title": "Compose an assigned area",
@@ -84,18 +84,18 @@
           "Check": "Only classroom teacher validates physical build."
         },
         {
-          "Title": "Real-printed original rectangles A–C",
-          "Question": "How should a learner determine which printed original rectangle covers most space?",
-          "Method": "Physically measure each original PDF print at correct scale.",
+          "Title": "Three original source rectangles A–C",
+          "Question": "What are the intended centimeter areas of original A, B and C, and which is largest?",
+          "Method": "Read the original SVG geometry and verify via physical centimeters in the full-size 2021 printout.",
           "Steps": [
-            "Preview and record a first guess.",
-            "Align centimeter ruler with A's two sides and record lengths.",
-            "Repeat for B and C, writing all areas in cm².",
-            "Compare the PRODUCTS, not only height or width.",
-            "Teacher reviews measured data and print settings."
+            "Original source A is 6 cm across and 3 cm tall: 6×3=18 cm².",
+            "Original source B is 4 cm across and 5 cm tall: 4×5=20 cm².",
+            "Original source C is 10 cm across and 3 cm tall: 10×3=30 cm².",
+            "Predict and verify that source C covers the most space.",
+            "Students' measured dimensions must be checked by teacher using a correctly scaled printout and ruler zero."
           ],
-          "Answer": "Depends on verified physical measurements of original printed A/B/C; no fabricated exact answer.",
-          "Check": "Digital first-party practice must not claim printed source paper measurement."
+          "Answer": "A = 18 cm²; B = 20 cm²; C = 30 cm²; C is greatest.",
+          "Check": "Check source vector scale and the student's physical ruler setup; optional answer anchors do not certify a ruler measurement."
         }
       ],
       "CommonMistakes": [
@@ -115,18 +115,19 @@
           "Correction": "Check inside region with 3×4 one-square-foot units."
         },
         {
-          "Mistake": "Giving a single fixed square-centimeter key for the original A/B/C when PDF print scaling was not calibrated.",
-          "WhyWrong": "The source specifically instructs physical measurement; reproduced on-screen pixels are not reliable physical centimeters.",
-          "Correction": "Keep the three printed original measurement tasks teacher-scored."
+          "Mistake": "Treating SVG coordinate units or display pixels as physical centimeters without scaling.",
+          "WhyWrong": "The original SVG vectors are drafted at an intended 28.3465pt/cm, but a zoomed browser or rescaled print changes measured physical size.",
+          "Correction": "Source nominal A 6×3 (18 cm²), B 4×5 (20 cm²), C 10×3 (30 cm²); pupils measure with an actual cm ruler on 100% paper or explicitly given dimensions."
         }
       ],
       "SummaryPoints": [
         "Original source three-page PDF; two group/array warm-up diagrams both 18 dots (15 black and 3 blue).",
-        "2021 source p2: physically measure rectangles A, B, C with a centimeter ruler, multiply each pair of side lengths and answer in cm². No fabricated original numeric key.",
+        "2021 source p2: measured intended A=6×3=18 cm², B=4×5=20 cm², C=10×3=30 cm². Original SVG viewBox geometry verified; correct print scale and actual ruler measurement remain teacher observed.",
         "2021 source p3: students form ONE assigned rectangle from 4,6,9,10,12,16 ft² using tape and real foot lengths in teams of four, then explain.",
         "First-party numeric examples with given dimensions remain clearly separate from source print measurement and taped builds.",
         "MLR8 collaborative oral rehearsal and teacher review of measurement and construction remain mandatory.",
-        "No publisher source art re-used; no tests/CI/Stage D/academic approval performed."
+        "No publisher source art re-used; no tests/CI/Stage D/academic approval performed.",
+        "Six source Activity 2 physical assignment alternatives: 4, 6, 9, 10, 12 or 16 ft² — one per group, not one student doing all six. Tape placement and explanation graded only by teacher."
       ],
       "Visuals": [],
       "Videos": []
