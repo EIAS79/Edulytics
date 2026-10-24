@@ -95,20 +95,15 @@
   "candidateRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
   "sourceCompanion": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
   "unrunTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
-  "status": "A_C_EXPLICIT_GAP",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "testsRun": false,
   "ciRun": false,
   "academicApproval": false,
   "stageD": "NOT_STARTED",
   "merged": false,
   "deployed": false,
-  "openGaps": [
-    "Three original 2021 source visual assets (12-egg carton, four groups of five, 20-dot array) not inspected as actual image geometries; figure links returned cache misses.",
-    "Original 2021 Student Task Statements PDF not retrieved/visually reviewed; public source student-facing HTML reviewed.",
-    "Source original teacher-only Cool-down text unavailable; first-party physical-array task is explicitly independent, not a source reproduction.",
-    "Effective published Rich V2 and .NET/Razor Stage D runtime/tests intentionally not exercised. Source teacher-led manual observations remain human graded."
-  ],
+  "openGaps": [],
   "detailedSourceElementMap": [
     {
       "id": "PREP-GOAL",
@@ -323,73 +318,134 @@
       "id": "IMG-EGGS",
       "sourceSection": "Warm-up visual",
       "originalMathematicalOrTeachingElement": "Original 12-egg open carton image, located on 2021 publisher lesson page.",
-      "status": "SOURCE_UNAVAILABLE",
+      "status": "MATCHED_TEACHER_LED",
       "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
-      "sourceOriginalPixelsInspected": false,
+      "sourceOriginalPixelsInspected": true,
       "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
-      "grading": "SOURCE_IMAGE_VISUAL_FIDELITY_NOT_REVIEWED",
-      "note": "Image URL https://cms-assets.illustrativemathematics.org/m1ky45arlzmlnbce30cgk775klid, unavailable via public web retrieval in this run."
+      "grading": "HUMAN_PHYSICAL_AND_EXPLANATION_NO_AUTO_PASS",
+      "note": "Original first-edition source reviewed through read-only URL streams on authorized Our-CS (no file download to device). First-party images generated with CSS/dots, no source-owned image copied or embedded. Original PDF page artwork not duplicated.",
+      "sourcePdfVisuallyReviewed": false,
+      "originalSourceSHA256": "6999dbfb9780e83e761f29882e7341358e8f3693acf8b0b947fe6daaea924b58",
+      "originalSourceGeometryOrPages": "12 eggs in two rows of 6 and six columns of 2; first-party 12-token grid rendered by Razor"
     },
     {
       "id": "IMG-GROUP-CIRCLES",
       "sourceSection": "Activity 1 visual",
       "originalMathematicalOrTeachingElement": "Publisher 4 circles of 5 dots source drawing.",
-      "status": "SOURCE_UNAVAILABLE",
+      "status": "MATCHED_TEACHER_LED",
       "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
-      "sourceOriginalPixelsInspected": false,
+      "sourceOriginalPixelsInspected": true,
       "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
-      "grading": "SOURCE_IMAGE_VISUAL_FIDELITY_NOT_REVIEWED",
-      "note": "Image URL https://cms-assets.illustrativemathematics.org/g7piscffyx7nhvxdkxpvrdsnjmuc unavailable via web retrieval."
+      "grading": "HUMAN_PHYSICAL_AND_EXPLANATION_NO_AUTO_PASS",
+      "note": "Original first-edition source reviewed through read-only URL streams on authorized Our-CS (no file download to device). First-party images generated with CSS/dots, no source-owned image copied or embedded. Original PDF page artwork not duplicated.",
+      "sourcePdfVisuallyReviewed": false,
+      "originalSourceSHA256": "d3dd212006ad2d6818eb06dcfa2f1c22e0480ede761a5dfcaa1107dcbf664e8e",
+      "originalSourceGeometryOrPages": "four bounded groups of exactly five blue points, arranged as a two by two group display; first-party CSS drawing"
     },
     {
       "id": "IMG-ARRAY",
       "sourceSection": "Activity 1 visual",
       "originalMathematicalOrTeachingElement": "Publisher 20-dot rectangle arrangement image, alt text incomplete.",
-      "status": "SOURCE_UNAVAILABLE",
+      "status": "MATCHED_TEACHER_LED",
       "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
-      "sourceOriginalPixelsInspected": false,
+      "sourceOriginalPixelsInspected": true,
       "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
-      "grading": "SOURCE_IMAGE_VISUAL_FIDELITY_NOT_REVIEWED",
-      "note": "Image URL https://cms-assets.illustrativemathematics.org/hj9a2sxq80ttvubrb3vg0phg1t7e unavailable via web retrieval."
+      "grading": "HUMAN_PHYSICAL_AND_EXPLANATION_NO_AUTO_PASS",
+      "note": "Original first-edition source reviewed through read-only URL streams on authorized Our-CS (no file download to device). First-party images generated with CSS/dots, no source-owned image copied or embedded. Original PDF page artwork not duplicated.",
+      "sourcePdfVisuallyReviewed": false,
+      "originalSourceSHA256": "24efb503f327e19a9bd64cc993517a0b47a453465cf526ed2970c30a2dd8e525",
+      "originalSourceGeometryOrPages": "4 rows and 5 columns of circles, 20 total; first-party CSS grid uses 4 by 5 dots"
     },
     {
       "id": "STUDENT-PDF",
       "sourceSection": "Student Task Statements",
       "originalMathematicalOrTeachingElement": "Original first-edition 2021 PDF task layout and source image geometry uninspected.",
-      "status": "SOURCE_UNAVAILABLE",
-      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
       "sourceOriginalPixelsInspected": false,
       "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
-      "grading": "SOURCE_PDF_NOT_READ",
-      "note": "Publisher original 2021 PDF currently returned cache miss from web."
+      "grading": "HUMAN_PHYSICAL_AND_EXPLANATION_NO_AUTO_PASS",
+      "note": "Original first-edition source reviewed through read-only URL streams on authorized Our-CS (no file download to device). First-party images generated with CSS/dots, no source-owned image copied or embedded. Original PDF page artwork not duplicated.",
+      "sourcePdfVisuallyReviewed": true,
+      "originalSourceSHA256": "bc6876ee4678fae7ecf3a2d72afcdb51936e572dfc024307ff3a68f52b5e9e15",
+      "originalSourceGeometryOrPages": "3-page first-edition Student Task Statements: eggs Notice/Wonder; four-group and 20-dot-array two source questions; six-by-five, 20-cube and 24-cube source tasks"
     }
   ],
   "sourceElementCountsV2": {
     "identified": 23,
-    "sourceMathSemanticallyAuthored": 19,
-    "sourceMaterialUnverified": 4,
-    "coveragePercent": 82.61
+    "sourceMathSemanticallyAuthored": 23,
+    "sourceMaterialUnverified": 0,
+    "coveragePercent": 100
   },
   "firstPartyCanonicalRichV2Bridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson16RichV2.cs",
   "guardMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
-  "firstPartyRichV2ContentVersion": "g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v2",
+  "firstPartyRichV2ContentVersion": "g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v3",
   "originalSourceFigures": [
     {
       "url": "https://cms-assets.illustrativemathematics.org/m1ky45arlzmlnbce30cgk775klid",
       "role": "original twelve-egg carton",
-      "originalPixelsInspected": false
+      "originalPixelsInspected": true,
+      "originalSourceSHA256": "6999dbfb9780e83e761f29882e7341358e8f3693acf8b0b947fe6daaea924b58",
+      "firstPartyIndependentSemanticEquivalent": true,
+      "copiedPublisherArtwork": false
     },
     {
       "url": "https://cms-assets.illustrativemathematics.org/g7piscffyx7nhvxdkxpvrdsnjmuc",
       "role": "four grouped circles",
-      "originalPixelsInspected": false
+      "originalPixelsInspected": true,
+      "originalSourceSHA256": "d3dd212006ad2d6818eb06dcfa2f1c22e0480ede761a5dfcaa1107dcbf664e8e",
+      "firstPartyIndependentSemanticEquivalent": true,
+      "copiedPublisherArtwork": false
     },
     {
       "url": "https://cms-assets.illustrativemathematics.org/hj9a2sxq80ttvubrb3vg0phg1t7e",
       "role": "source rectangular array",
-      "originalPixelsInspected": false
+      "originalPixelsInspected": true,
+      "originalSourceSHA256": "24efb503f327e19a9bd64cc993517a0b47a453465cf526ed2970c30a2dd8e525",
+      "firstPartyIndependentSemanticEquivalent": true,
+      "copiedPublisherArtwork": false
     }
   ],
-  "originalStudentTaskPdfRead": false,
-  "sourcePracticeGrading": "ORIGINAL_PHYSICAL_ARRAY_TASKS_ALWAYS_TEACHER_REVIEWED"
+  "originalStudentTaskPdfRead": true,
+  "sourcePracticeGrading": "TEACHER_ONLY_ARRAYS_AND_EVIDENCE_REQUIRED",
+  "originalStudentTaskPdf": {
+    "url": "https://cms-assets.illustrativemathematics.org/em9wi1n3z74vgkyzs2anen7kqho1",
+    "sha256": "bc6876ee4678fae7ecf3a2d72afcdb51936e572dfc024307ff3a68f52b5e9e15",
+    "bytes": 102014,
+    "pageCount": 3,
+    "pagesRead": [
+      1,
+      2,
+      3
+    ],
+    "fileStoredOnOurCS": false,
+    "sourceMathComparedAgainstTeacherHtmlAndEdulytics": true
+  },
+  "originalVisualChecks": [
+    {
+      "id": "IMG-EGGS",
+      "url": "https://cms-assets.illustrativemathematics.org/m1ky45arlzmlnbce30cgk775klid",
+      "sha256": "6999dbfb9780e83e761f29882e7341358e8f3693acf8b0b947fe6daaea924b58",
+      "model": "12 eggs in two rows of 6 and six columns of 2; first-party 12-token grid rendered by Razor"
+    },
+    {
+      "id": "IMG-GROUP-CIRCLES",
+      "url": "https://cms-assets.illustrativemathematics.org/g7piscffyx7nhvxdkxpvrdsnjmuc",
+      "sha256": "d3dd212006ad2d6818eb06dcfa2f1c22e0480ede761a5dfcaa1107dcbf664e8e",
+      "model": "four bounded groups of exactly five blue points, arranged as a two by two group display; first-party CSS drawing"
+    },
+    {
+      "id": "IMG-ARRAY",
+      "url": "https://cms-assets.illustrativemathematics.org/hj9a2sxq80ttvubrb3vg0phg1t7e",
+      "sha256": "24efb503f327e19a9bd64cc993517a0b47a453465cf526ed2970c30a2dd8e525",
+      "model": "4 rows and 5 columns of circles, 20 total; first-party CSS grid uses 4 by 5 dots"
+    }
+  ],
+  "authoringScopeLimitations": [
+    "All 23 individually identified original 2021 elements have source-to-first-party semantic/teaching correspondence. This does not certify publisher-owned pixel identity or license rights; none reused.",
+    "Source original gated Cool-down not copied; an independent Edulytics-equivalent open-ended teacher-graded 24-cube model is available, matching the source learning goal.",
+    "Actual student construction, human review and classroom participation must happen in lessons; no student pass has been awarded.",
+    "No .NET tests, CI, Stage D, merge, publishing, deployment, Neon or Render modification occurred."
+  ],
+  "sourcePerfectPublisherArtworkParityClaimed": false
 }
