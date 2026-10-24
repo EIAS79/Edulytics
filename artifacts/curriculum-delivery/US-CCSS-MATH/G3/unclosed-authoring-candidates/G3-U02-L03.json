@@ -11,13 +11,13 @@
   "originalTeacherHtml": "unit-2/lesson-3/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-3/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "FIRST_EDITION_2021_SIX_PAGE_STUDENT_PDF_19_VISUALS_TWO_PAGE_TILE_MASTER_ONE_PAGE_SIX_CARD_MASTER_SOURCE_REVIEW_COMPLETE",
     "goals": "Explain that rectangles that can be covered by the same number of unit squares without gaps or overlaps have the same area. Find the area of rectangles (within 24 square units) by counting unit squares.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 18,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "directOfficial2021TeacherStudentPageRead": true,
     "warmupImages": [
       "A 4x6 tiles alternate shading",
@@ -35,10 +35,48 @@
       "fullSourceFigureGeometryInspected": false,
       "areasNotGuessed": true
     },
-    "activity2": "Source three same-area 12-unit rectangle representations, rectangle drawing of area 8, original uninspected cards to sort by area and redesign"
+    "activity2": "Source three same-area 12-unit rectangle representations, rectangle drawing of area 8, original uninspected cards to sort by area and redesign",
+    "originalSourceGeometriesPixelVerified": true,
+    "originalStudentPdfSha256": "23137d3374a2e6a07d34eee0297ac49fb167d96a86220769aaf06bfa71574d4c",
+    "originalStudentTaskPdfPages": 6,
+    "originalImageFilesInspected": 19,
+    "originalPrintedTimeToTileMasterPages": 2,
+    "originalPrintedCardSortMasterPages": 1,
+    "originalFourRectangleFullAreas": [
+      25,
+      15,
+      24,
+      12
+    ],
+    "originalSixCardGroups": [
+      {
+        "area": 12,
+        "cards": [
+          "A",
+          "C"
+        ]
+      },
+      {
+        "area": 16,
+        "cards": [
+          "D",
+          "E"
+        ]
+      },
+      {
+        "area": 24,
+        "cards": [
+          "B",
+          "F"
+        ]
+      }
+    ],
+    "sourceAvailableAcademicElements": 50,
+    "sourceMappedAcademicElements": 50,
+    "authoringSemanticCoveragePercent": 100
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "CANONICAL_RICH_V2_V1_EMBEDDED_IN_PACK_WITH_ORIGINAL_MATH_MODEL_FIRST_PARTY_VISUALS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -46,12 +84,16 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "b97b925be05925c9c69eccee2795afa0d44dcd03ee3e67702022b17c3f0502a6",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
+    "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
-    "firstPartyEightSquareExampleDrawnNotSourceArtwork": true
+    "firstPartyEightSquareExampleDrawnNotSourceArtwork": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l03-2021.rich-lesson-v2.json",
+    "contentVersion": "g3-u02-l03-2021-source-abc-firstparty-20261024-v1",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson3RichV2.cs",
+    "originalPublisherArtEmbedded": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_NUMERIC_SOURCE_RECTANGLE_TASKS_AND_TEN_HUMAN_TASKS_PLUS_SIX_CARD_SORTS_REGRESSION_TESTS_WRITTEN_NOT_RUN",
     "family": "unit-squares-area",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -59,13 +101,22 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Time to Tile with your teacher. Show the representation and explain how it meets the goal: Let’s count square tiles.",
     "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
     "originalStudentFacingSeparateHumanTasks": 14,
     "eightUnitDrawingRequiresTeacherNoAutomaticNumericPass": true,
     "firstPartyKnownRectangleNumberPracticeRetained": true,
-    "testsWrittenNotRun": true
+    "testsWrittenNotRun": true,
+    "originalSourceNumericRectangleAreaChecks": 4,
+    "originalSourceHumanTasks": 10,
+    "originalCardSortAreas": [
+      "A,C:12",
+      "D,E:16",
+      "B,F:24"
+    ],
+    "sourceRubricHumanPhysicalWorkRequired": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson3SourceTilingTests.cs"
   },
   "sourceElements": [
     {
@@ -73,54 +124,54 @@
       "sourceSection": "Warm-up: Which One Doesn't Belong: Tiles (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "AUTHORING_MATH_SEMANTICS_MATCHED",
+      "grading": "ORIGINAL_MATH_COUNT_OR_TEACHER_REVIEW",
+      "claimedParity": true
     },
     {
       "id": "G3-U02-L03-HEADING-02",
       "sourceSection": "Activity 1: Time to Tile (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "AUTHORING_MATH_SEMANTICS_MATCHED",
+      "grading": "ORIGINAL_MATH_COUNT_OR_TEACHER_REVIEW",
+      "claimedParity": true
     },
     {
       "id": "G3-U02-L03-HEADING-03",
       "sourceSection": "Activity 2: Card Sort: Rectangles (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "AUTHORING_MATH_SEMANTICS_MATCHED",
+      "grading": "ORIGINAL_MATH_COUNT_OR_TEACHER_REVIEW",
+      "claimedParity": true
     },
     {
       "id": "G3-U02-L03-HEADING-04",
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "AUTHORING_MATH_SEMANTICS_MATCHED",
+      "grading": "ORIGINAL_MATH_COUNT_OR_TEACHER_REVIEW",
+      "claimedParity": true
     },
     {
       "id": "G3-U02-L03-HEADING-05",
       "sourceSection": "Cool-down: Tile a Rectangle (5 minutes)",
       "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "AUTHORING_MATH_SEMANTICS_MATCHED",
+      "grading": "INDEPENDENT_FIRST_PARTY_EQUIVALENT",
       "claimedParity": false
     }
   ],
@@ -129,169 +180,173 @@
       "id": "G3-U02-L03-IMAGE-01",
       "observedAltText": "Rectangle partitioned into 4 rows of 6 of the same size squares, with every other square shaded.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-02",
       "observedAltText": "A partially tiled rectangle.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-03",
       "observedAltText": "Diagram. Rectangle partitioned into 4 rows of 6 of the same size squares.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-04",
       "observedAltText": "Rectangle. 6 rows of 4 square tiles. Tiles have gaps and overlaps.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-05",
       "observedAltText": "A square with 4 of the same size square tiles in it.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-06",
       "observedAltText": "3 square tiles inside a rectangle.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-07",
       "observedAltText": "7 square tiles inside a rectangle.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-08",
       "observedAltText": "Rectangle made of inch tiles.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-09",
       "observedAltText": "Shaded area diagram. Length, 4. Width, 3.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-10",
       "observedAltText": "Area diagram. Length, 4. Width, 3.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-11",
       "observedAltText": "Diagram. Rectangle partitioned into 6 rows of 10 same size squares.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-12",
       "observedAltText": "Rectangle with square units.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-13",
       "observedAltText": "Diagram. Rectangle partitioned into 2 rows of 8 of the same size squares.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-14",
       "observedAltText": "Diagram. Rectangle partitioned into 8 rows of 3 of the same size squares.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-15",
       "observedAltText": "Area diagram. Length, 4. Width, 4.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-16",
       "observedAltText": "Diagram. Rectangle partitioned into one column of 12 of the same size squares.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-17",
       "observedAltText": "Diagram. Rectangle partitioned into 12 rows of 2 of the same size squares.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     },
     {
       "id": "G3-U02-L03-IMAGE-18",
       "observedAltText": "Diagram. Rectangle partitioned into 20 rows of 20 of the same size squares.",
       "originalReference": "unit-2/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_GEOMETRY_READ_INDEPENDENT_FIRST_PARTY_MODEL"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
-    "imageDescriptions": 18,
-    "fullyVerified": 0
+    "figureDescriptions": 18,
+    "originalSourceMediaAssetsInspected": 19,
+    "accessibleElementsIdentified": 50,
+    "accessibleElementsSemanticallyMapped": 50,
+    "semanticCoveragePercent": 100,
+    "sourceArtworkPixelsCopied": false
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "A rectangle has 3 rows and 5 square tiles per row. Find its area in square units.",
@@ -299,21 +354,20 @@
     "expected": "15"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Physical original four rectangles, original Card Sort Rectangles pack and 2021 Student Task PDF not visually audited. Thus their exact area calculations remain HUMAN review, and Stage D/Rich V2 remain unverified."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-24-2021-source-to-first-party-evidence-20261024.json",
+  "sourceMatchingMeasurementScope": "ACADEMIC_SEMANTICS_ACCESSIBLE_2021_MATERIAL_ONLY; NO PUBLISHER_PIXELS",
+  "stageDOnlyDeferrals": [
+    "Source original publisher Cool-down educator-gated: independent first-party goal-equivalent rather than publisher task copy",
+    "Authored .NET regression tests and canonical materialization are deliberately NOT run at A–B–C",
+    "Teacher reviews the student's actual original shapes, tiled square placement, card sorting and explanation"
+  ]
 }
