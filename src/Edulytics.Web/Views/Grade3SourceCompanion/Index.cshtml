@@ -804,27 +804,78 @@
             </section>
         }
         @if(l.UnitNumber == 2 && l.LessonNumber == 3) {
-            <section class="panel" aria-label="Source area tiling with no gaps or overlaps">
-                <h2>Warm-up: tiles can give an invalid area measurement</h2>
-                <p>Original figures A and C show four rows by six square tiles; figure D depicts six rows by four tiles with GAPS and OVERLAPS. Although the count is twenty-four, D does NOT correctly tile the full rectangle. A valid area model covers the region exactly with equal-size square units.</p>
-                <h2>Activity 1: time to tile FOUR original figures</h2>
-                <p>Use the actual 2021 printed handout. For each of four partially tiled rectangles, reposition tiles as necessary, add unit squares until the WHOLE rectangle is filled, and explain the number of square units. Some printed pictures show 4, 3 or 7 tiles already positioned; these are NOT the final totals. Never infer the final area without the source geometry.</p>
-                <h2>Activity 2: rectangles with equal area</h2>
-                <p>Three original illustrations describe equal 12-square-unit rectangles in different ways. Draw a DIFFERENT rectangle with exactly eight unit squares. Then sort the original publisher rectangle cards into categories of your choosing and again by equal area. Build a new rectangular arrangement for each source card group. The original card deck remains an independently unverified physical material.</p>
-                <p>Here are two independently constructed examples of eight unit squares (NOT publisher cards):</p>
-                <div class="two">
-                    <div><strong>Two rows of four</strong>
-                        <div class="first-party-array" style="grid-template-columns:repeat(4,17px)" role="img" aria-label="2 by 4 rectangle with exactly eight unit squares">
-                            @for(var i=0;i<8;i++){<span class="first-party-dot" style="border-radius:1px" aria-hidden="true"></span>}
-                        </div>
-                    </div>
-                    <div><strong>One row of eight</strong>
-                        <div class="first-party-array" style="grid-template-columns:repeat(8,17px)" role="img" aria-label="1 by 8 rectangle with eight equal square units">
-                            @for(var i=0;i<8;i++){<span class="first-party-dot" style="border-radius:1px" aria-hidden="true"></span>}
-                        </div>
-                    </div>
+            <section class="panel" aria-label="2021 Tile Rectangles area, source verified independent squares">
+                <h2>Warm-up — four different ways of tiling a rectangle</h2>
+                <p>First-edition original 2021 images checked: A has 24 uniform squares in four rows of six with alternating shading; B has a partial perimeter tiling; C has a complete 4-by-6 unit grid; D contains twenty-four 6-by-4 tiles arranged with gaps, crooked edges and overlaps. A and C give valid 24-square-unit covered areas, while D cannot be used as an accurate area model until the tiles are fixed.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:16px;margin:12px 0">
+                    <div><strong>A: checkerboard of 24 tiles</strong><div role="img" aria-label="Original skill equivalent A: 4 rows of 6 equal square positions, 24 in total, with alternating two colors" style="display:grid;grid-template-columns:repeat(6,17px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){
+                            @if(((cell/6)+(cell%6))%2==0){<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#8bd1e6;border:1px solid #547080"></span>}
+                            else {<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#fff;border:1px solid #547080"></span>}
+                        }
+                    </div></div>
+                    <div><strong>B: partial tiling (not measured yet)</strong><div role="img" aria-label="Independent six-column by four-row rectangle with some top and left squares covered but other unit cells still uncovered" style="display:grid;grid-template-columns:repeat(6,17px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){
+                            @if(cell/6==0||cell%6==0){<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#8bd1e6;border:1px solid #547080"></span>}
+                            else {<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#fff;border:1px solid #547080"></span>}
+                        }
+                    </div></div>
+                    <div><strong>C: complete, valid 24 tiles</strong><div role="img" aria-label="Independent filled four-row by six-column array, all 24 square cells occupied without gaps or overlaps" style="display:grid;grid-template-columns:repeat(6,17px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#8bd1e6;border:1px solid #547080"></span>}
+                    </div></div>
+                    <div><strong>D: invalid until realigned</strong><div role="img" aria-label="Twenty-four first-party tiles in a six-row, four-column region; deliberately crooked overlapping positions and visible gaps make this an invalid tiling" style="display:grid;grid-template-columns:repeat(4,18px);gap:3px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){
+                            @if(cell%4==1){<span aria-hidden="true" style="width:18px;height:18px;box-sizing:border-box;transform:rotate(10deg) translateX(-5px);background:#8bd1e6;border:1px solid #547080"></span>}
+                            else {<span aria-hidden="true" style="width:18px;height:18px;box-sizing:border-box;background:#8bd1e6;border:1px solid #547080"></span>}
+                        }
+                    </div></div>
                 </div>
-                <p>Teacher must evaluate every original drawing, uniform square units, absence of gaps/overlaps and student explanations. The independently authored integer practice and Cool-down cannot certify publisher-figure parity.</p>
+                <h2>Activity 1 — four separate original 2021 Time to Tile figures</h2>
+                <p>Source printed Time to Tile handout, both pages, has been inspected individually. Each pair receives twenty-four identical inch tiles and can reposition crooked or poorly centered printed pieces. Source outlines and exact verified total areas are: <strong>a: 5×5=25; b: 5×3=15; c: 6×4=24; d: 3×4=12 square units</strong>. The source already shows four, three, seven and several improperly placed tiles; these are NOT the final square-unit areas. Demonstrate correct placement and justify the chosen row and column counts to your teacher before revealing the completed models.</p>
+                <details><summary>Show independently designed complete area models AFTER attempting the source handout</summary>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:16px 0">
+                    <div><strong>Handout a — 5×5</strong><div role="img" aria-label="Independent complete 5 columns by 5 rows; 25 one-square-unit cells. Finish measuring all twenty-five original square units." style="display:grid;grid-template-columns:repeat(5,19px);gap:1px;margin:9px 0">
+                        @for(var i=0;i<25;i++){<span aria-hidden="true" style="width:19px;height:19px;box-sizing:border-box;background:#b6e7e0;border:1px solid #456979"></span>}
+                    </div></div>
+                    <div><strong>Handout b — 5×3</strong><div role="img" aria-label="Independent complete 5 columns by 3 rows; 15 one-square-unit cells. Fifteen square units when each of the three original tiles is aligned." style="display:grid;grid-template-columns:repeat(5,19px);gap:1px;margin:9px 0">
+                        @for(var i=0;i<15;i++){<span aria-hidden="true" style="width:19px;height:19px;box-sizing:border-box;background:#b6e7e0;border:1px solid #456979"></span>}
+                    </div></div>
+                    <div><strong>Handout c — 6×4</strong><div role="img" aria-label="Independent complete 6 columns by 4 rows; 24 one-square-unit cells. Twenty-four unit squares; align the mispositioned original tiles first." style="display:grid;grid-template-columns:repeat(6,19px);gap:1px;margin:9px 0">
+                        @for(var i=0;i<24;i++){<span aria-hidden="true" style="width:19px;height:19px;box-sizing:border-box;background:#b6e7e0;border:1px solid #456979"></span>}
+                    </div></div>
+                    <div><strong>Handout d — 3×4</strong><div role="img" aria-label="Independent complete 3 columns by 4 rows; 12 one-square-unit cells. Twelve unit squares; original rotated/overlapping pieces must be adjusted." style="display:grid;grid-template-columns:repeat(3,19px);gap:1px;margin:9px 0">
+                        @for(var i=0;i<12;i++){<span aria-hidden="true" style="width:19px;height:19px;box-sizing:border-box;background:#b6e7e0;border:1px solid #456979"></span>}
+                    </div></div>
+                    </div>
+                </details>
+                <p>MLR1 Stronger and Clearer Each Time: students explain how to tile an arbitrary rectangle without gaps or overlaps, exchange feedback with partners and revise their own written procedure. The number alone cannot certify this teacher-reviewed reasoning.</p>
+                <h2>Activity 2 — original Card Sort Rectangles: six A–F cards</h2>
+                <p>The actual first-edition 2021 <strong>Card Sort: Rectangles</strong> blackline PDF has been inspected. Use the first-party mathematically equivalent card diagrams below to arrange the cards first by a rule you choose, then by equal area. The original card set contains these six distinct rectangular arrays; each learner then draws a NEW rectangle with a different arrangement for each area family.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:14px;margin:12px 0">
+                    <div><strong>Card A</strong><div role="img" aria-label="Independently drawn source Card A math equivalent: 4 columns by 3 rows, 12 square units" style="display:grid;grid-template-columns:repeat(4,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<12;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card D</strong><div role="img" aria-label="Independently drawn source Card D math equivalent: 8 columns by 2 rows, 16 square units" style="display:grid;grid-template-columns:repeat(8,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<16;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card B</strong><div role="img" aria-label="Independently drawn source Card B math equivalent: 3 columns by 8 rows, 24 square units" style="display:grid;grid-template-columns:repeat(3,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card E</strong><div role="img" aria-label="Independently drawn source Card E math equivalent: 4 columns by 4 rows, 16 square units" style="display:grid;grid-template-columns:repeat(4,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<16;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card C</strong><div role="img" aria-label="Independently drawn source Card C math equivalent: 1 columns by 12 rows, 12 square units" style="display:grid;grid-template-columns:repeat(1,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<12;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card F</strong><div role="img" aria-label="Independently drawn source Card F math equivalent: 2 columns by 12 rows, 24 square units" style="display:grid;grid-template-columns:repeat(2,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                </div>
+                <details><summary>Reveal area-category matches AFTER your own sort</summary>
+                    <p>A and C both cover 12 square units (4×3 and 1×12); D and E both cover 16 square units (8×2 and 4×4); B and F both cover 24 square units (3×8 and 2×12). Matching by same area does not require same perimeter, proportions or orientation. The independent Edulytics card graphics are not copies of the original publisher art.</p>
+                </details>
+                <p>Before sorting, compare the original lesson's three equal-12-square-unit representations and draw a rectangle with area eight (e.g. 1×8 or 2×4) on the supplied grid. Teacher checks drawings, the student's chosen first sort, the SECOND sort by area and creation of at least one different rectangle for each area family.</p>
+                <p>Original 2021 source drawings were read and mathematical dimensions verified, but no publisher image pixels are redistributed. Correct numeric answers alone never certify physical rearrangement, absence of gaps or overlaps, full-card classification or MLR8 discussion.</p>
             </section>
         }
         @if(l.UnitNumber == 2 && l.LessonNumber == 4) {
