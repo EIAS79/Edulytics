@@ -128,6 +128,46 @@ public static class Grade3SourceCompanionCatalogue
                 : "Check which number describes the groups and which describes the members in each group. Teacher reviews alternative justifications.");
         }
 
+        if (q.AnswerType == "multiplication-unknown-equation")
+        {
+            // The source requires an EQUATION with a single missing factor or
+            // product. Accept ? / □ / _ and either factor order or equality side.
+            // Numeric solutions are checked separately; this cannot replace them.
+            static string? Signature(string? raw)
+            {
+                if (string.IsNullOrWhiteSpace(raw)) return null;
+                var s = Regex.Replace(raw, @"\\s+", "")
+                    .Replace("×", "x").Replace("*", "x").Replace("X", "x")
+                    .Replace("□", "?").Replace("▢", "?").Replace("_", "?");
+                var sides = s.Split('=');
+                if (sides.Length != 2) return null;
+                var m = Regex.Match(sides[0], @"^([0-9]{1,3}|\\?)x([0-9]{1,3}|\\?)$",
+                    RegexOptions.CultureInvariant);
+                var product = sides[1];
+                if (!m.Success)
+                {
+                    m = Regex.Match(sides[1], @"^([0-9]{1,3}|\\?)x([0-9]{1,3}|\\?)$",
+                        RegexOptions.CultureInvariant);
+                    product = sides[0];
+                }
+                if (!m.Success || !Regex.IsMatch(product, @"^([0-9]{1,5}|\\?)$"))
+                    return null;
+                var a = m.Groups[1].Value;
+                var b = m.Groups[2].Value;
+                if ((a == "?" ? 1 : 0) + (b == "?" ? 1 : 0) +
+                    (product == "?" ? 1 : 0) != 1)
+                    return null;
+                if (string.CompareOrdinal(a, b) > 0) (a, b) = (b, a);
+                return a + "x" + b + "=" + product;
+            }
+            var required = Signature(q.Expected);
+            var actual = Signature(submitted);
+            var correct = required is not null && actual == required;
+            return new(correct, true, correct
+                ? "The unknown is in the correct factor/product role; solve the number separately and explain."
+                : "Write an equation with exactly one unknown symbol; keep the given factors and total in the correct roles.");
+        }
+
         if (q.AnswerType == "multiplication-equation-either-order")
         {
             // Scoped to lessons opting into the original 2021 rule:

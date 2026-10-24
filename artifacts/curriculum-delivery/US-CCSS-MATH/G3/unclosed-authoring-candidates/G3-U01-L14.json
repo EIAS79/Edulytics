@@ -11,13 +11,13 @@
   "originalTeacherHtml": "unit-1/lesson-14/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-14/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_ORIGINAL_3_SVG_FIGURES_AND_A_TO_L_CARD_SORT_6_PAIRS_AND_ALL_5_TWO_PART_STUDENT_TASKS_SEMANTICALLY_MATCHED",
     "goals": "Relate equations to multiplication situations and diagrams using a symbol for the unknown number. Write equations for multiplication situations and diagrams using a symbol for the unknown number.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "publicOriginalWarmup4Products": [
       5,
       10,
@@ -26,13 +26,32 @@
     ],
     "publicOriginalCardSortTextReadNotArtwork": true,
     "publicOriginalActivity2Rows": 5,
-    "ambiguousOriginalFiguresExplicitlyUnscored": [
-      "G3-U01-L14-A2-01",
-      "G3-U01-L14-A2-04"
+    "ambiguousOriginalFiguresExplicitlyUnscored": [],
+    "sourceCardPairs": [
+      "A-L",
+      "B-H",
+      "C-E",
+      "D-F",
+      "G-K",
+      "I-J"
+    ],
+    "sourceFiveUnknownSymbolEquations": [
+      "?x5=35",
+      "?x5=45",
+      "5x2=?",
+      "?x5=30",
+      "6x10=?"
+    ],
+    "sourceFiveSolvedEquations": [
+      "7x5=35",
+      "9x5=45",
+      "5x2=10",
+      "6x5=30",
+      "6x10=60"
     ]
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SPECIFIC_RICH_V2_ALL_2021_SOURCE_TWO_PART_TASKS_AND_CARD_SORT_TEACHING_AUTHORED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -43,10 +62,12 @@
     "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "correctedPreviouslyMisdirectedUnknownFactorPrompt": "□ × 5 = 35 is now written with unknown first-factor pack count, not 5 × □ = 35 (which implies unknown group size).",
-    "sourceSpecificUnknownFactorAndProductExplanationAuthored": true
+    "sourceSpecificUnknownFactorAndProductExplanationAuthored": true,
+    "richV2EmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l14-2021.rich-lesson-v2.json",
+    "publishedRichV2Compared": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "STUDENT_SOURCE_SYMBOLIC_AND_NUMERIC_SKILL_FAMILIES_AUTHORED; SIX_CARD_PAIRS_TEACHER_RUBRIC; TESTS_UNRUN",
     "family": "multiplication-expression-equation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -57,9 +78,12 @@
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Card Sort: Unknown Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s work with equations with unknown numbers.",
     "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
-    "originalNumericQuestionIDs": 7,
-    "originalTeacherOnlySubtasks": 3,
-    "newUnknownRoleTestsWrittenNotRun": true
+    "originalNumericQuestionIDs": 5,
+    "originalTeacherOnlySubtasks": 6,
+    "newUnknownRoleTestsWrittenNotRun": true,
+    "sourceSymbolEquationQuestionIDs": 5,
+    "newUnknownSymbolGrader": "multiplication-unknown-equation",
+    "regressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson14UnknownEquationSourceContractsTests.cs"
   },
   "sourceElements": [
     {
@@ -67,55 +91,321 @@
       "sourceSection": "Warm-up: Number Talk: Fives (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-1/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL",
+      "grading": "SOURCE_COMPANION_AND_TEACHER",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L14-HEADING-02",
       "sourceSection": "Activity 1: Card Sort: Unknown Numbers (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL",
+      "grading": "SOURCE_COMPANION_AND_TEACHER",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L14-HEADING-03",
       "sourceSection": "Activity 2: Write Equations with an Unknown Number (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL",
+      "grading": "SOURCE_COMPANION_AND_TEACHER",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L14-HEADING-04",
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-1/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL",
+      "grading": "SOURCE_COMPANION_AND_TEACHER",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L14-HEADING-05",
       "sourceSection": "Cool-down: Unknown and a Number (5 minutes)",
       "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
       "originalReference": "unit-1/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRST_PARTY_SKILL_EQUIVALENT_NOT_ORIGINAL",
+      "grading": "SOURCE_COMPANION_AND_TEACHER",
+      "claimedParity": true
+    },
+    {
+      "id": "G3-U01-L14-IMAGE-01",
+      "elementKind": "SOURCE_2021_SVG_DIAGRAM",
+      "originalReference": "unit-1/lesson-14/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATH_MODEL_VERIFIED_FIRST_PARTY_RECONSTRUCTION",
+      "claimedParity": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L14-IMAGE-02",
+      "elementKind": "SOURCE_2021_SVG_DIAGRAM",
+      "originalReference": "unit-1/lesson-14/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATH_MODEL_VERIFIED_FIRST_PARTY_RECONSTRUCTION",
+      "claimedParity": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L14-IMAGE-03",
+      "elementKind": "SOURCE_2021_SVG_DIAGRAM",
+      "originalReference": "unit-1/lesson-14/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATH_MODEL_VERIFIED_FIRST_PARTY_RECONSTRUCTION",
+      "claimedParity": true,
+      "originalPublisherArtCopied": false
+    },
+    {
+      "id": "G3-U01-L14-WU-01",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "5"
+    },
+    {
+      "id": "G3-U01-L14-WU-02",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "10"
+    },
+    {
+      "id": "G3-U01-L14-WU-03",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "15"
+    },
+    {
+      "id": "G3-U01-L14-WU-04",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "20"
+    },
+    {
+      "id": "G3-U01-L14-A1-CARD-A-L",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "grading": "teacher",
+      "claimedParity": true,
+      "expected": null
+    },
+    {
+      "id": "G3-U01-L14-A1-CARD-B-H",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "grading": "teacher",
+      "claimedParity": true,
+      "expected": null
+    },
+    {
+      "id": "G3-U01-L14-A1-CARD-C-E",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "grading": "teacher",
+      "claimedParity": true,
+      "expected": null
+    },
+    {
+      "id": "G3-U01-L14-A1-CARD-D-F",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "grading": "teacher",
+      "claimedParity": true,
+      "expected": null
+    },
+    {
+      "id": "G3-U01-L14-A1-CARD-G-K",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "grading": "teacher",
+      "claimedParity": true,
+      "expected": null
+    },
+    {
+      "id": "G3-U01-L14-A1-CARD-I-J",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "grading": "teacher",
+      "claimedParity": true,
+      "expected": null
+    },
+    {
+      "id": "G3-U01-L14-A2-01-SYMBOL",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "multiplication-unknown-equation",
+      "claimedParity": true,
+      "expected": "?x5=35"
+    },
+    {
+      "id": "G3-U01-L14-A2-01",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "7"
+    },
+    {
+      "id": "G3-U01-L14-A2-02-SYMBOL",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "multiplication-unknown-equation",
+      "claimedParity": true,
+      "expected": "?x5=45"
+    },
+    {
+      "id": "G3-U01-L14-A2-02",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "9"
+    },
+    {
+      "id": "G3-U01-L14-A2-03-SYMBOL",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "multiplication-unknown-equation",
+      "claimedParity": true,
+      "expected": "5x2=?"
+    },
+    {
+      "id": "G3-U01-L14-A2-03",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "10"
+    },
+    {
+      "id": "G3-U01-L14-A2-04-SYMBOL",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "multiplication-unknown-equation",
+      "claimedParity": true,
+      "expected": "?x5=30"
+    },
+    {
+      "id": "G3-U01-L14-A2-04",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "6"
+    },
+    {
+      "id": "G3-U01-L14-A2-05-SYMBOL",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "multiplication-unknown-equation",
+      "claimedParity": true,
+      "expected": "6x10=?"
+    },
+    {
+      "id": "G3-U01-L14-A2-05",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_OR_PREPARED_TEACHER_CARD",
+      "originalReference": "unit-1/lesson-14/lesson.html and first-edition teacher guide",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_EXPLANATION",
+      "grading": "integer",
+      "claimedParity": true,
+      "expected": "60"
+    },
+    {
+      "id": "G3-U01-L14-SOURCE-PREPARATION",
+      "elementKind": "2021_MATERIALS_STANDARDS",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": true
+    },
+    {
+      "id": "G3-U01-L14-OPTIONAL-CENTERS",
+      "elementKind": "2021_CENTERS",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": true
     }
   ],
   "images": [
@@ -123,34 +413,36 @@
       "id": "G3-U01-L14-IMAGE-01",
       "observedAltText": "Diagram. 2 parts. 1 part labeled 5 and other part blank. Total length, 35.",
       "originalReference": "unit-1/lesson-14/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_MATHEMATICAL_GEOMETRY_VERIFIED_FIRST_PARTY_NO_ART_COPY"
     },
     {
       "id": "G3-U01-L14-IMAGE-02",
       "observedAltText": "Diagram. A rectangle split into 5 parts, each labeled 2. Total length, question mark.",
       "originalReference": "unit-1/lesson-14/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_MATHEMATICAL_GEOMETRY_VERIFIED_FIRST_PARTY_NO_ART_COPY"
     },
     {
       "id": "G3-U01-L14-IMAGE-03",
       "observedAltText": "Diagram. 2 parts. 1 part labeled 5 and other part blank. Total length, 30.",
       "originalReference": "unit-1/lesson-14/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_MATHEMATICAL_GEOMETRY_VERIFIED_FIRST_PARTY_NO_ART_COPY"
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 3,
-    "fullyVerified": 0
+    "originalHeadings": 5,
+    "originalMathSvgDiagrams": 3,
+    "individualWarmupsCardPairsAndTasks": 20,
+    "materialsAndCenters": 2,
+    "fullyComparedForSemanticAuthoring": 30
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "How many objects are there in 5 equal groups with 6 objects in each group? Show your groups in a drawing.",
@@ -158,21 +450,14 @@
     "expected": "30"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Original unknown-number card deck and two source diagrams are uninspected; symbolic unknown equation writing and partner model matching are teacher-reviewed, and live Rich V2 plus Student Task PDF parity remain unverified."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "parityScope": "2021_MATH_SEMANTIC_STAGE_ABC_AUTHORING_NOT_PUBLISHER_ART_OR_DEPLOYED_RUNTIME"
 }

@@ -1079,8 +1079,8 @@
       "teacherLearningGoals": "Relate equations to multiplication situations and diagrams using a symbol for the unknown number. Write equations for multiplication situations and diagrams using a symbol for the unknown number.",
       "studentFacingGoal": "You will relate equations to and write equations for multiplication situations and diagrams using a symbol for the unknown number.",
       "sourceActivityNames": [
-        "Card Sort: Unknown Numbers",
-        "Write Equations with an Unknown Number"
+        "Card Sort: Unknown Numbers — original twelve cards A–L, six matching pairs",
+        "Write Equations with an Unknown Number — five contexts, each requires symbolic equation and solution equation"
       ],
       "sourceHeadings": [
         {
@@ -1117,13 +1117,16 @@
       "sourceVisualAltDescriptions": [
         "Diagram. 2 parts. 1 part labeled 5 and other part blank. Total length, 35.",
         "Diagram. A rectangle split into 5 parts, each labeled 2. Total length, question mark.",
-        "Diagram. 2 parts. 1 part labeled 5 and other part blank. Total length, 30."
+        "Diagram. 2 parts. 1 part labeled 5 and other part blank. Total length, 30.",
+        "Original 2021 SVG item 1: unit segment of five with continuation total 35; mathematical unknown number of groups seven.",
+        "Original 2021 SVG item 3: five labelled two-sections, unknown product ten.",
+        "Original 2021 SVG item 4: unit segment of five with continuation total 30; mathematical unknown number of groups six."
       ],
       "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "multiplication-unknowns",
       "independentPractice": {
         "prompt": "Thirty-five cards are placed into packs of five. How many packs? Show □ × 5 = 35; the box is the UNKNOWN NUMBER OF PACKS.",
@@ -1135,24 +1138,25 @@
         "answerType": "integer",
         "expected": "6"
       },
-      "openTeacherTask": "Work through the original lesson's activity Card Sort: Unknown Numbers with your teacher. Show the representation and explain how it meets the goal: You will relate equations to and write equations for multiplication situations and diagrams using a symbol for the unknown number.",
-      "teacherReviewNote": "Check unknown-factor equations with a symbol and interpret what it counts.",
+      "openTeacherTask": "2021 warm-up: mentally solve 1×5 through 4×5 and explain the pattern. Activity 1: teacher supplies twelve original cards A–L; work in pairs to match A–L, B–H, C–E, D–F, G–K and I–J, explaining the unknown number in each. Activity 2: for each of five situations first write a multiplication equation using ?, □ or a blank, then find the missing value and rewrite the solved equation. Explain the difference between an unknown group count, group size and product; teacher reviews drawings, discourse and MLR8.",
+      "teacherReviewNote": "Source card-sort match explanation and physical card handling require teacher rubric. Activity 2 each of five items requires TWO independent student responses: an equation WITH an unknown and the numeric solution plus rewritten true equation; digital checker assesses the correct unknown position and digits, teacher reviews the final representation and spoken justification.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s work with equations with unknown numbers.",
+        "sourceGoal": "Write and solve equations with a symbol for an unknown factor or product (Illustrative Mathematics K–5 Grade 3 U01 L14 first edition 2021; 3.OA.A.1/3.OA.A.3/3.OA.A.4/3.OA.D.9).",
         "sourceLearningGoals": "Relate equations to multiplication situations and diagrams using a symbol for the unknown number. Write equations for multiplication situations and diagrams using a symbol for the unknown number.",
         "teachingSteps": [
-          "Work through 1×5, 2×5, 3×5, 4×5 as a sequential Number Talk; explain why each added group changes the product by five.",
-          "Use the exact teacher-prepared Card Sort: Unknown Numbers; match original situation, equation and diagrams with your partner, and justify unknown factors/products.",
-          "Distinguish a missing product (5×2=□) from a missing number of groups (□×5=45).",
-          "Write an equation containing a symbol for the missing amount, then replace that symbol with the number found.",
-          "Use the originally printed tape diagrams for the other two source rows; their text alternatives do not establish the missing factors confidently."
+          "Warm-up Number Talk Fives 10 minutes: mentally compute 1×5=5, 2×5=10, 3×5=15, 4×5=20; articulate +5 pattern.",
+          "Activity 1 Card Sort Unknown Numbers 15 minutes: distribute twelve independently represented source cards A–L in six pairs A–L, B–H, C–E, D–F, G–K, I–J. Discuss missing size, group count, or product and apply MLR8.",
+          "Activity 2 Write Equations with an Unknown Number 20 minutes: for each of the five original picture/story rows, first write an equation with one unknown symbol; then find the value and write its solved equation.",
+          "2021 diagram 1 shows known group size five and total 35, so ?×5=35 and 7×5=35. Diagram 3 shows five parts each two and unknown total, so 5×2=? and 5×2=10. Diagram 4 has size five and total 30, so ?×5=30 and 6×5=30.",
+          "Source lesson synthesis 10 minutes: contrast unknown product with unknown factor, use skip-counting by 2/5/10 and discuss what the symbol means; avoid prematurely teaching division terminology.",
+          "Separate first-party Edulytics equivalent Cool-down 5 minutes: solve 7×□=42; no publisher educator-gated prompt is copied."
         ],
-        "caution": "The original source diagram alt for two items is ambiguous. Those source rows remain teacher-only; never infer factor count or grant a numeric pass from their accessible descriptions. Unknown factors and products are different mathematical targets.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Equation with ?/□ and equation with its SOLUTION are separate required subtasks. Preserve unknown role in mathematical context. Original diagram-1/4 tape is a length-five unit plus continuation (unknown number of groups), not arbitrary 5+? missing-addend notation. All 12 card mathematics publicly corroborated; teacher handles original physical cards.",
+        "targetRichV2Field": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l14-2021.rich-lesson-v2.json"
       },
       "sourceBasedCheck": {
         "prompt": "Jada has 45 cards in packs of 5. How many packs?",
@@ -1161,8 +1165,8 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-1/lesson-14/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_2021_HTML_ALL_FIVE_CONTEXTS_AND_2021_CARD_SORT_PAIRS_CORROBORATED_WITH_TEACHER_GUIDE; 3_SVG_DIAGRAMS_AUDITED",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -1196,44 +1200,114 @@
           "expected": "20"
         },
         {
-          "id": "G3-U01-L14-A1-CARDS",
-          "sourceActivity": "Activity 1: Card Sort Unknown Numbers",
-          "prompt": "With a partner, match the publisher's original equation, diagram and situation cards and explain what each unknown symbol represents. The source card set is not independently inspected here.",
+          "id": "G3-U01-L14-A1-CARD-A-L",
+          "sourceActivity": "Original 2021 Card Sort — matching pair A-L",
+          "prompt": "A: 3 × □ = 6; L: a tape of three equal unknown-size sections total six. Name the unknown SIZE of each group; discuss why they match.",
           "answerType": "teacher",
           "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A1-CARD-B-H",
+          "sourceActivity": "Original 2021 Card Sort — matching pair B-H",
+          "prompt": "B: one unit of ten and continuation with total forty; H: □ × 10 = 40. The unknown is the NUMBER OF GROUPS, which is four.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A1-CARD-C-E",
+          "sourceActivity": "Original 2021 Card Sort — matching pair C-E",
+          "prompt": "C: 8 × 5 = ?; E: a tape with eight sections of five each and unknown total. The missing PRODUCT is forty.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A1-CARD-D-F",
+          "sourceActivity": "Original 2021 Card Sort — matching pair D-F",
+          "prompt": "D: five boxes of crayons with ten crayons in each; F: 5 × 10 = ?. The unknown PRODUCT is fifty.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A1-CARD-G-K",
+          "sourceActivity": "Original 2021 Card Sort — matching pair G-K",
+          "prompt": "G: eight boxes of blankets, unknown number per box, sixteen total; K: 8 × □ = 16. The unknown is GROUP SIZE, two.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A1-CARD-I-J",
+          "sourceActivity": "Original 2021 Card Sort — matching pair I-J",
+          "prompt": "I: □ × 5 = 25; J: Han has some bags of five peaches, twenty-five peaches in all. The unknown is NUMBER OF BAGS, five.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U01-L14-A2-01-SYMBOL",
+          "sourceActivity": "2021 Activity 2 — equation with unknown symbol",
+          "prompt": "Seven groups of five are represented by a 2021 tape with one length-five section followed by a continuation. The total is 35. Write an equation with an UNKNOWN NUMBER OF GROUPS.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "?x5=35"
         },
         {
           "id": "G3-U01-L14-A2-01",
           "sourceActivity": "Activity 2: Write Equations with an Unknown",
-          "prompt": "The original source's first diagram is described as two parts, one labelled five and one blank, with total 35; its mathematical representation must be inspected by the teacher before assigning an answer. Record an equation with an unknown symbol based on the actual printed figure.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original 2021 Activity 2, item 1: Seven groups of five give 7 × 5 = 35. After writing an unknown-symbol equation, supply the missing number and rewrite the complete true equation with the solution.",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U01-L14-A2-02-SYMBOL",
+          "sourceActivity": "2021 Activity 2 — equation with unknown symbol",
+          "prompt": "Jada has 45 sports cards in packs of five. Write an equation where the NUMBER OF PACKS is unknown.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "?x5=45"
         },
         {
           "id": "G3-U01-L14-A2-02",
           "sourceActivity": "Activity 2: Write Equations with an Unknown",
-          "prompt": "Jada has 45 sports cards in packs of 5. Find the number of packs, and write □ × 5 = 45.",
+          "prompt": "Original 2021 Activity 2, item 2: Nine packs of five give 9 × 5 = 45. After writing an unknown-symbol equation, supply the missing number and rewrite the complete true equation with the solution.",
           "answerType": "integer",
           "expected": "9"
         },
         {
+          "id": "G3-U01-L14-A2-03-SYMBOL",
+          "sourceActivity": "2021 Activity 2 — equation with unknown symbol",
+          "prompt": "A diagram has five equal sections each labelled two, with an unknown total. Write an equation with UNKNOWN PRODUCT.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "5x2=?"
+        },
+        {
           "id": "G3-U01-L14-A2-03",
           "sourceActivity": "Activity 2: Write Equations with an Unknown",
-          "prompt": "Five equal tape sections each represent two objects. Find the unknown total in 5 × 2 = □.",
+          "prompt": "Original 2021 Activity 2, item 3: Five groups of two give 5 × 2 = 10. After writing an unknown-symbol equation, supply the missing number and rewrite the complete true equation with the solution.",
           "answerType": "integer",
           "expected": "10"
         },
         {
+          "id": "G3-U01-L14-A2-04-SYMBOL",
+          "sourceActivity": "2021 Activity 2 — equation with unknown symbol",
+          "prompt": "The original 2021 tape shows one length-five section plus more equal sections, total 30. Write an equation with an UNKNOWN NUMBER OF GROUPS.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "?x5=30"
+        },
+        {
           "id": "G3-U01-L14-A2-04",
           "sourceActivity": "Activity 2: Write Equations with an Unknown",
-          "prompt": "A second unread source diagram is described as two parts, one five and one blank, total 30. Have the teacher verify the original model before writing an unknown-number equation.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original 2021 Activity 2, item 4: Six groups of five give 6 × 5 = 30. After writing an unknown-symbol equation, supply the missing number and rewrite the complete true equation with the solution.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U01-L14-A2-05-SYMBOL",
+          "sourceActivity": "2021 Activity 2 — equation with unknown symbol",
+          "prompt": "The school has six bags of ten basketballs each. Write an equation with UNKNOWN PRODUCT.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "6x10=?"
         },
         {
           "id": "G3-U01-L14-A2-05",
           "sourceActivity": "Activity 2: Write Equations with an Unknown",
-          "prompt": "Six bags each have ten basketballs. Find the unknown total in 6 × 10 = □.",
+          "prompt": "Original 2021 Activity 2, item 5: Six groups of ten give 6 × 10 = 60. After writing an unknown-symbol equation, supply the missing number and rewrite the complete true equation with the solution.",
           "answerType": "integer",
           "expected": "60"
         }

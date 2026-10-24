@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 13,
+    "lessonsFullyReadyForStageD": 14,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 130,
+    "lessonsWithACExplicitGap": 129,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,40 +32,29 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 13,
+    "lessonsIndividuallyComparedToAllOriginalElements": 14,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 13,
+    "lessonsWithActualRichV2SourcePerfect": 14,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
-    "originalImagePixelFilesInspected": 11,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 172,
-    "originalSvgGeometriesInspected": 16
+    "originalImagePixelFilesInspected": 14,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 202,
+    "originalSvgGeometriesInspected": 19
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 13,
-    "firstUnclosedOrdinal": 14,
+    "lastConsecutiveReadyForStageDOrdinal": 14,
+    "firstUnclosedOrdinal": 15,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
   "returnQueue": [
-    {
-      "ordinal": 14,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L14",
-      "status": "A_C_EXPLICIT_GAP",
-      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L14.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
-    },
     {
       "ordinal": 15,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L15",
@@ -1897,13 +1886,13 @@
       "unitNumber": 1,
       "lessonNumber": 14,
       "title": "Write and Solve Equations with Unknowns",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_VISUAL_FIGURES_PENDING",
-      "stageB": "SOURCE_SKILL_AND_FIRST_PARTY_PRACTICE_AUTHORED_RICHV2_OPEN",
-      "stageC": "SOURCE_SKILL_AND_COOLDOWN_NUMERIC_CONTRACTS_PROPOSED_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 8,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "stageA": "2021_ORIGINAL_3_SVG_FIGURES_AND_A_TO_L_CARD_SORT_6_PAIRS_AND_ALL_5_TWO_PART_STUDENT_TASKS_SEMANTICALLY_MATCHED",
+      "stageB": "SPECIFIC_RICH_V2_ALL_2021_SOURCE_TWO_PART_TASKS_AND_CARD_SORT_TEACHING_AUTHORED",
+      "stageC": "STUDENT_SOURCE_SYMBOLIC_AND_NUMERIC_SKILL_FAMILIES_AUTHORED; SIX_CARD_PAIRS_TEACHER_RUBRIC; TESTS_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 30,
+      "fullyVerifiedSourceElements": 30,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L14.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -1915,7 +1904,11 @@
       "original2021FigureUrlCount": 5,
       "original2021FiguresWithoutAlt": 2,
       "original2021RelativeSvgReferences": 1,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "parityScope": "2021_MATH_SEMANTIC_STAGE_ABC_AUTHORING_NOT_PUBLISHER_ART_OR_DEPLOYED_RUNTIME",
+      "readyForStageD": true,
+      "richV2EmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l14-2021.rich-lesson-v2.json",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-14-2021-source-to-first-party-evidence.json"
     },
     {
       "gradeOrdinal": 15,
