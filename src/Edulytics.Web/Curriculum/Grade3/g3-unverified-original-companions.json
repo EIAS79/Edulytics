@@ -4099,11 +4099,11 @@
         "Photograph of girl with square meter. Length, almost full arm length. Width, about head to knees.",
         "Photograph of girl with square foot."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "square-units",
       "independentPractice": {
         "prompt": "Which square-area units should measure a book cover and a classroom floor? Explain both choices.",
@@ -4116,21 +4116,22 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Square Feet and Square Meters with your teacher. Show the representation and explain how it meets the goal: You will learn about square feet and square meters , and consider when these larger units can be helpful to measure area.",
-      "teacherReviewNote": "This source lesson is about scale appropriateness, not computing rectangle products. Avoid a numerically graded pass.",
+      "teacherReviewNote": "2021 first-edition Student Task Statements PDF all FIVE pages reviewed from Our-CS D: source. Teacher HTML optional hunt uses meters, learner PDF p5 prints YARDS. Original three photos of large outdoor square, 1-meter and 1-foot frames have been viewed to verify contextual meaning. Three source images not re-used in the first-party text/drawings. All six contextual selection questions and outdoor activities are teacher-only. Source p4 four exact magnitude AND squared-unit matches have a first-party strict optional checker with teacher review. No runtime, CI, .NET tests, stage D.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn about larger square units.",
+        "sourceGoal": "Let's learn about larger square units.",
         "sourceLearningGoals": "Use square feet and square meters to measure the area of a rectangle.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Display independent outline models of 1 ft² and 1 m², and physically compare a foot or meter along EACH side.",
+          "Review original visually inspected photos and teacher-led Notice and Wonder about the playground.",
+          "Assign the original learner p3 six area-unit recommendations and require explanations; accept defensible alternatives.",
+          "Ask the original p4 four area-quantity matching problems; check exact quantity AND unit, and still require teacher explanation.",
+          "Offer optional school scavenger hunt and explicitly distinguish published HTML 'square meters' from printed PDF 'square yards'."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about larger square units.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Square units measure area, not lengths; PDF vs teacher-HTML page-5 yard/meter discrepancy is an actual source difference and must be preserved. Numeric matching does not automatically assess oral reasoning."
       },
       "sourceBasedCheck": {
         "prompt": "Select sensible square-centimetre, square-inch, square-foot or square-metre units for the field, classroom, book cover and phone screen; explain choices.",
@@ -4139,11 +4140,138 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-7/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "FIRST_EDITION_PDF_5_PAGES_THREE_ORIGINAL_JPEGS_AUTHORING_MATH_AND_CONTEXT",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L07-WU",
+          "sourceActivity": "Warm-up Notice and Wonder",
+          "prompt": "Source photograph shows a large square frame outdoors near a playground. What do you notice about area, and why could a large square be useful? Explain first without naming its unit.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A1-METER",
+          "sourceActivity": "Activity 1 Square Feet and Square Meters",
+          "prompt": "After comparing a 1-meter-by-1-meter square, identify regions you could sensibly measure in square METERS and explain.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A1-FOOT",
+          "sourceActivity": "Activity 1 Square Feet and Square Meters",
+          "prompt": "After comparing a 1-foot-by-1-foot square, identify regions you could sensibly measure in square FEET and explain.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A2-01-BASEBALL",
+          "sourceActivity": "Activity 2 Which Square Unit Q1",
+          "prompt": "Choose from cm²/in²/ft²/m² to measure the area of the baseball field; explain why the unit size fits (human review).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A2-01-BOOK",
+          "sourceActivity": "Activity 2 Which Square Unit Q1",
+          "prompt": "Choose from cm²/in²/ft²/m² to measure the area of the book cover; explain why the unit size fits (human review).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A2-01-CLASSROOM",
+          "sourceActivity": "Activity 2 Which Square Unit Q1",
+          "prompt": "Choose from cm²/in²/ft²/m² to measure the area of the classroom floor; explain why the unit size fits (human review).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A2-01-PAPER",
+          "sourceActivity": "Activity 2 Which Square Unit Q1",
+          "prompt": "Choose from cm²/in²/ft²/m² to measure the area of the sheet of paper; explain why the unit size fits (human review).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A2-01-TABLE",
+          "sourceActivity": "Activity 2 Which Square Unit Q1",
+          "prompt": "Choose from cm²/in²/ft²/m² to measure the area of the tabletop; explain why the unit size fits (human review).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A2-01-PHONE",
+          "sourceActivity": "Activity 2 Which Square Unit Q1",
+          "prompt": "Choose from cm²/in²/ft²/m² to measure the area of the phone screen; explain why the unit size fits (human review).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A2-02-CARD",
+          "sourceActivity": "Activity 2 Which Square Unit Q2",
+          "prompt": "Match the playing card to ONE of the original four amounts: 9 square inches; 3 square feet; 55 square centimeters; 55 square meters. Enter the matching number AND square unit. Explain your comparison to your teacher.",
+          "answerType": "area-quantity-match",
+          "expected": "9 in2"
+        },
+        {
+          "id": "G3-U02-L07-A2-02-DESK",
+          "sourceActivity": "Activity 2 Which Square Unit Q2",
+          "prompt": "Match the top of a student desk to ONE of the original four amounts: 9 square inches; 3 square feet; 55 square centimeters; 55 square meters. Enter the matching number AND square unit. Explain your comparison to your teacher.",
+          "answerType": "area-quantity-match",
+          "expected": "3 ft2"
+        },
+        {
+          "id": "G3-U02-L07-A2-02-NOTE",
+          "sourceActivity": "Activity 2 Which Square Unit Q2",
+          "prompt": "Match the sticky note to ONE of the original four amounts: 9 square inches; 3 square feet; 55 square centimeters; 55 square meters. Enter the matching number AND square unit. Explain your comparison to your teacher.",
+          "answerType": "area-quantity-match",
+          "expected": "55 cm2"
+        },
+        {
+          "id": "G3-U02-L07-A2-02-ROOM",
+          "sourceActivity": "Activity 2 Which Square Unit Q2",
+          "prompt": "Match the classroom floor to ONE of the original four amounts: 9 square inches; 3 square feet; 55 square centimeters; 55 square meters. Enter the matching number AND square unit. Explain your comparison to your teacher.",
+          "answerType": "area-quantity-match",
+          "expected": "55 m2"
+        },
+        {
+          "id": "G3-U02-L07-A3-PDF-YARDS",
+          "sourceActivity": "Activity 3 Area Scavenger Hunt — printed 2021 student PDF p5",
+          "prompt": "The original five-page learner PDF asks you to find nearby surfaces suitable for square inches, centimeters, feet, AND square YARDS. Record an object and a reason for each choice; this is the PRINTED-PDF version.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-A3-HTML-METERS",
+          "sourceActivity": "Activity 3 Area Scavenger Hunt — 2021 teacher HTML",
+          "prompt": "The original teacher web lesson names square meters as the final option instead of printed square yards. Under the HTML variant, find four suitable spaces and explain square inches, centimeters, feet, AND square METERS. Tell your teacher which format you used.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L07-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Why do square inches, centimeters, feet AND meters exist? Explain how changing unit size changes tile count while measuring the same region.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ],
+      "originalStudentTaskPdfEvidence": {
+        "pages": 5,
+        "sha256": "8e1246d9851a9e5880b153fcc7d8a466fe61ad9fb4772ef10bee0bd85a8bd411",
+        "bytes": 10398186,
+        "read": true,
+        "printedOptionalFourthUnit": "square yards",
+        "onlineTeacherOptionalFourthUnit": "square meters"
+      },
+      "originalSourceImageSha256": {
+        "playground": "b5cf4ee40cb209972c9599d45a8f167b3efdf055b8ea4fd4da7807bd70c4f840",
+        "squareMeter": "8dd970652b53c85a711b9098840b048e719011a7459662888f4c2c3657716533",
+        "squareFoot": "0fd0e2a93ece2beabb73c9c4b6e53f1e907d0b57a9bda0d30edbb1947ee987c5"
+      }
     },
     {
       "ordinal": 29,
