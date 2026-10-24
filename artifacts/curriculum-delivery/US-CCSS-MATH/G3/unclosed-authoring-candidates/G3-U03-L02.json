@@ -11,12 +11,12 @@
   "originalTeacherHtml": "unit-3/lesson-2/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-2/lesson.html",
   "stageA": {
-    "status": "PUBLIC_2021_TEACHER_AND_STUDENT_FACING_HTML_REVIEWED_PER_TASK_WITH_PDF_AND_ORIGINAL_MEDIA_BLOCKERS",
+    "status": "ORIGINAL_2021_FOUR_PAGE_STUDENT_PDF_ALL_PAGES_READ_FOUR_PHOTOS_INSPECTED_TEACHER_SOURCE_AND_OPTIONAL_CENTER_HTML_REVIEWED_WITH_GATED_GAPS",
     "goals": "Solve addition and subtraction problems within 1,000 in a way that makes sense to them.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 4,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
     "teacherFacingSourceExtractedNotFullyRead": false,
     "publicTeacherPageReviewed": true,
     "specificNumericAnchors": {
@@ -27,10 +27,37 @@
       "eiffelBetweenFloorsSteps": 346
     },
     "sourceElementCount": 21,
-    "semanticallyMappedExcludingUnavailableOrRights": 13
+    "semanticallyMappedExcludingUnavailableOrRights": 13,
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/r1f5we7npgv95ylyrb16vrkn0vh0",
+      "name": "Grade3-3-2-Lesson-student-task-statements.pdf",
+      "pages": 4,
+      "bytes": 33210584,
+      "sha256": "ce1fa255f1f21511696f0951fabd063a5954b0881b421ff346de19ead64829b1",
+      "allPageTextsRead": true,
+      "sourceImagesInspected": 4,
+      "originalStudentTaskPdfNotEmbeddedInEdulytics": true,
+      "pageContents": [
+        "p1 two partially filled 5x5 addition tables",
+        "p2 Iguazu Falls 115+131 ft and Washington Monument 555 vs Lincoln Memorial 99 ft",
+        "p3 Eiffel Tower steps 674-328",
+        "p4 three alternative journal questions"
+      ]
+    },
+    "originalAllPrintedStudentTextAndSubquestionsVerified": true,
+    "publisherPicturesInspected": 4,
+    "page1VisualGridPixelEquivalenceConfirmed": false,
+    "originalGameboardBlmAssetsInspected": 0,
+    "teacherCoolDownOriginalRead": false,
+    "sourceArchiveEvidence": {
+      "teacherHtmlSha256": "4a6d310f8461f4cb99c29cbf51d7c7b6827140c1a34605675ff71a6691b50aa7",
+      "preparationHtmlSha256": "f27ae1b136e432069142ca58df0503e40c610956ef42983f5844b664cf0a7631",
+      "relativeArchive": "Common Core/03_Grade_3_IM_K5/unit-3/lesson-2",
+      "sourceDeviceReadOnly": true
+    }
   },
   "stageB": {
-    "status": "NEW_FIRST_PARTY_RICH_V2_GUARDED_CANONICAL_MATERIALIZATION_AUTHORED_NOT_RUN",
+    "status": "GUARDED_FIRST_PARTY_RICH_V2_COMPARED_TO_FOUR_PAGE_ORIGINAL_2021_SOURCE_FOR_STUDENT_SEMANTICS_NOT_PUBLISHED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -43,10 +70,13 @@
     "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
     "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
     "sourceMathCorrected": true,
-    "publishedOrDeployed": false
+    "publishedOrDeployed": false,
+    "sourceOriginalStudentPdfMathCompared": true,
+    "teacherLedCentersRulesSourceCompared": true,
+    "publisherPhotosNotEmbedded": true
   },
   "stageC": {
-    "status": "FIVE_SOURCE_NUMERIC_ANCHORS_NINE_OPEN_TEACHER_TASKS_GATED_COOLDOWN_UNVERIFIED_TESTS_WRITTEN_NOT_RUN",
+    "status": "SOURCE_PDF_MATH_ANCHORS_COMPARED_WITH_AUTHORED_TESTS_NOT_EXECUTED_PUBLISHER_COOLDOWN_UNVERIFIED",
     "family": "addition-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -59,7 +89,8 @@
     "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
     "sourceSubtaskCount": 14,
     "digitallyGradableSourceSubtaskCount": 5,
-    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson2SituationsSourceTests.cs"
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson2SituationsSourceTests.cs",
+    "sourcePdfTextNumericOraclesVerified": true
   },
   "sourceElements": [
     {
@@ -75,7 +106,7 @@
       "sourceSection": "Warm-up table 1",
       "coverage": "MATCHED_DIGITAL",
       "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
+      "originalStudentTaskPdfVerified": true,
       "claimedParity": false
     },
     {
@@ -83,7 +114,7 @@
       "sourceSection": "Warm-up table 2",
       "coverage": "MATCHED_DIGITAL",
       "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
+      "originalStudentTaskPdfVerified": true,
       "claimedParity": false
     },
     {
@@ -107,7 +138,7 @@
       "sourceSection": "Activity 1 task 1",
       "coverage": "MATCHED_DIGITAL",
       "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
+      "originalStudentTaskPdfVerified": true,
       "claimedParity": false
     },
     {
@@ -115,7 +146,7 @@
       "sourceSection": "Activity 1 task 2",
       "coverage": "MATCHED_DIGITAL",
       "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
+      "originalStudentTaskPdfVerified": true,
       "claimedParity": false
     },
     {
@@ -123,7 +154,7 @@
       "sourceSection": "Activity 1 task 3",
       "coverage": "MATCHED_DIGITAL",
       "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
+      "originalStudentTaskPdfVerified": true,
       "claimedParity": false
     },
     {
@@ -140,7 +171,8 @@
       "coverage": "RIGHTS_RESTRICTED",
       "sourceFullyCompared": false,
       "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "claimedParity": false,
+      "publisherOriginalPhotoInspected": true
     },
     {
       "id": "PHOTO-2",
@@ -148,7 +180,8 @@
       "coverage": "RIGHTS_RESTRICTED",
       "sourceFullyCompared": false,
       "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "claimedParity": false,
+      "publisherOriginalPhotoInspected": true
     },
     {
       "id": "PHOTO-3",
@@ -156,7 +189,8 @@
       "coverage": "RIGHTS_RESTRICTED",
       "sourceFullyCompared": false,
       "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "claimedParity": false,
+      "publisherOriginalPhotoInspected": true
     },
     {
       "id": "PHOTO-4",
@@ -164,14 +198,15 @@
       "coverage": "RIGHTS_RESTRICTED",
       "sourceFullyCompared": false,
       "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "claimedParity": false,
+      "publisherOriginalPhotoInspected": true
     },
     {
       "id": "A2-JOURNAL-1",
       "sourceSection": "Activity 2 journal",
       "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
+      "originalStudentTaskPdfVerified": true,
       "claimedParity": false
     },
     {
@@ -179,7 +214,7 @@
       "sourceSection": "Activity 2 journal",
       "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
+      "originalStudentTaskPdfVerified": true,
       "claimedParity": false
     },
     {
@@ -187,7 +222,7 @@
       "sourceSection": "Activity 2 journal",
       "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
+      "originalStudentTaskPdfVerified": true,
       "claimedParity": false
     },
     {
@@ -209,26 +244,32 @@
     {
       "id": "CENTER-1",
       "sourceSection": "Suggested optional center",
-      "coverage": "SOURCE_UNAVAILABLE",
+      "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": false,
       "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "claimedParity": false,
+      "originalCenterNarrativeRead": true,
+      "originalCenterGameboardRead": false
     },
     {
       "id": "CENTER-2",
       "sourceSection": "Suggested optional center",
-      "coverage": "SOURCE_UNAVAILABLE",
+      "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": false,
       "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "claimedParity": false,
+      "originalCenterNarrativeRead": true,
+      "originalCenterGameboardRead": false
     },
     {
       "id": "CENTER-3",
       "sourceSection": "Suggested optional center",
-      "coverage": "SOURCE_UNAVAILABLE",
+      "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": false,
       "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "claimedParity": false,
+      "originalCenterNarrativeRead": true,
+      "originalCenterGameboardRead": false
     }
   ],
   "images": [
@@ -271,10 +312,11 @@
   ],
   "sourceElementCounts": {
     "identified": 21,
-    "mathematicalOrTeacherSourceHtmlMapped": 13,
-    "thirdPartyPhotosNotVerified": 4,
-    "unavailableOriginalPublisherCoolDown": 1,
-    "unverifiedOptionalGameBoards": 3
+    "studentOrTeacherSourceElementsSemanticallyMapped": 16,
+    "sourcePhotoPixelsIndividuallyInspected": 4,
+    "sourceCenterHtmlStagesRead": 3,
+    "uninspectedCenterGameboards": 3,
+    "publisherGatedCoolDownUninspected": 1
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 375 + 161. Explain any regrouping.",
@@ -286,17 +328,73 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "The official 2021 three-page Student Task Statements PDF endpoint was visible from teacher preparation but could not be fetched or rendered for verification; HTML mathematical text is independently checked.",
-    "Original third-party contextual photos (Iguazu, Washington Monument, Lincoln Memorial, Eiffel Tower) not retrieved, rights-verified or pixel-compared; no publisher art copied.",
-    "Original gated How Much Taller? Cool-down is not publicly accessible to verify full source equivalence.",
-    "Original center game materials for Target Numbers stage 6, Five in a Row stage 8 and Rectangle Rumble stage 2 are not individually verified.",
-    "Open journal entries, partner strategies and use of physical base-ten blocks require actual teacher review; no such approval recorded.",
-    "New C# source, Razor view and authored xUnit contracts have not been compiled, run, deployed or academic-approved: Stage D deferred."
+    "Publisher-original teacher-login How Much Taller? Cool-down cannot be 1:1 compared; the separately written Edulytics Cool-down is not a reproduction.",
+    "Three optional center blackline-master gameboards/recording sheets have not been visually inspected although their original 2021 public HTML rules are read.",
+    "Four 2021 publisher photos were visually inspected but not copied; third-party license compliance for any embedding is not approved, so physical-art parity remains unclaimed.",
+    "Page1 original PDF tables were text-read and the source arithmetic/structure mapped; precise rendered-grid pixel-equivalence was not established.",
+    "Journal, oral pair discussion and base-ten hands-on source tasks require human teacher observation, not scalar automatic certification.",
+    "Tests and .NET/Razor rendering are only authored, not run; academic approval and Stage D remain deferred."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
   "academicApproval": "NOT_CLAIMED",
-  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json"
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json",
+  "originalStudentTaskPdfRead": true,
+  "originalStudentTaskPdfPageCount": 4,
+  "originalPublisherImagesIndividuallyInspected": 4,
+  "sourceImages": [
+    {
+      "subject": "Iguazu Falls",
+      "page": 2,
+      "originalPictureInspected": true,
+      "originalAttribution": "José Joey / Pixabay",
+      "sourceReuseAuthorized": false
+    },
+    {
+      "subject": "Washington Monument",
+      "page": 2,
+      "originalPictureInspected": true,
+      "originalAttribution": "Alvesgaspar / CC BY-SA 4.0",
+      "sourceReuseAuthorized": false
+    },
+    {
+      "subject": "Lincoln Memorial",
+      "page": 2,
+      "originalPictureInspected": true,
+      "originalAttribution": "Martin Falbisoner / CC BY-SA 3.0",
+      "sourceReuseAuthorized": false
+    },
+    {
+      "subject": "Eiffel Tower",
+      "page": 3,
+      "originalPictureInspected": true,
+      "originalAttribution": "Benh Lieu Song / CC BY 3.0",
+      "sourceReuseAuthorized": false
+    }
+  ],
+  "originalCenterSourceNarratives": [
+    {
+      "title": "Target Numbers Stage 6",
+      "archiveSha256": "7f75dae39dc46761ce77c86c194d5280636e7ad8d7b550135ade0519e74f28fa",
+      "stageTextRead": true,
+      "sourceMechanics": "Three number cubes; six rounds; each digit can be hundreds/tens/ones; nearest to 1000 without exceeding",
+      "blacklineMasterRead": false
+    },
+    {
+      "title": "Five in a Row Addition/Subtraction Stage 8",
+      "archiveSha256": "6288501b7f62660d22beed3e34b059720e315e0d9174375e54f8da413f78e2e4",
+      "stageTextRead": true,
+      "sourceMechanics": "Two clips, 25 counters, move one clip per partner turn and cover obtained sums",
+      "blacklineMasterRead": false
+    },
+    {
+      "title": "Rectangle Rumble Stage 2",
+      "archiveSha256": "2006a35a5a77483aa33b8fb081a045786ef96a23ac6fbf9adbe164ab7e40f0b5",
+      "stageTextRead": true,
+      "sourceMechanics": "1–5 spinner and number cube on 15×15 grid with two marking colors",
+      "blacklineMasterRead": false
+    }
+  ]
 }

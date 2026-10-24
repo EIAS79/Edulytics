@@ -54,7 +54,17 @@ public sealed class UsCcssG3Unit3Lesson2SituationsSourceTests
             Assert.True(Grade3SourceCompanionCatalogue.Grade(task, "I used base-ten blocks").TeacherReview);
         }
         Assert.False(lesson.ReadyForStageD);
-        Assert.False(lesson.OriginalStudentTaskPdfRead);
+        Assert.True(lesson.OriginalStudentTaskPdfRead);
+    }
+
+    [Fact]
+    public void FourPageSourceReadIsNotAcademicApprovalOfGatedPublisherItems()
+    {
+        var lesson = Lesson();
+        Assert.True(lesson.OriginalStudentTaskPdfRead);
+        Assert.False(lesson.ReadyForStageD);
+        Assert.Contains("four-page", lesson.TeacherReviewNote);
+        Assert.Contains("unavailable", lesson.TeacherReviewNote);
     }
 
     [Fact]
