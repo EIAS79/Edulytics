@@ -5368,31 +5368,31 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: Number Talk: Extend Make a Ten (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Bye-Bye Squares (20 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: How Many Pavers Do We Need? (15 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 5,
           "sourceHeading": "Cool-down: Find the Area (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_ASSESSMENT_COPY"
         }
       ],
       "sourceVisualAltDescriptions": [
@@ -5401,51 +5401,139 @@
         "6-sided shape. Straight sides. All side lengths meet at right angles. Bottom, 3 ft. Right side rises 2 ft, then goes right 6 ft, up 4 ft. Top side length, 9 ft. Left side length, 6 ft.",
         "Photograph of patio. Floor paved with square tiles."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "composite-area",
       "independentPractice": {
-        "prompt": "A patio is formed of 8×3 and 4×2 nonoverlapping square-foot rectangles. How many 1-ft² pavers are needed?",
+        "prompt": "A separate first-party patio is made from two non-overlapping rectangles:8 ft by3 ft and4 ft by2 ft. How many pavers covering 1 ft² each are needed? Enter the count. Draw the parts and explain; this is a different patio from Noah’s.",
         "answerType": "integer",
         "expected": "32"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find the area of separate 5×4 and 3×4 rectangles in square units.",
-        "answerType": "integer",
-        "expected": "32"
+        "prompt": "New Edulytics ungridded figure: use the separately labelled Cool-down model above. Find its area, including square units. Show a non-overlapping decomposition and a matching expression, then explain another split.",
+        "answerType": "area-with-unit",
+        "expected": "35 square units"
       },
-      "openTeacherTask": "Work through the original lesson's activity Bye-Bye Squares with your teacher. Show the representation and explain how it meets the goal: You will calculate the area of ungridded figures made of rectangles using multiplication and addition.",
-      "teacherReviewNote": "Must validate that the figure is decomposed into the specified non-overlapping rectangles before accepting an area.",
+      "openTeacherTask": "Discuss what an unlabelled outline is missing, infer lengths from partial grids and intervals, calculate both source figure areas, and make a labelled display explaining Noah’s paver count and patio area. Compare different decompositions with partners.",
+      "teacherReviewNote": "Opening outline has no determined numerical area until a unit/measurements are supplied. Figure 1 has area44 square units; Figure 2 T-shape has32. Count intervals rather than short marks. Noah’s different patio requires42 one-ft² pavers and has42 ft² area, using 36+6 or18+24. Review inferred side lengths, non-overlap, labelled display, measurement choices, explanation and actual MLR7 partner/group comparison. Numeric results do not certify these tasks.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s find the area of figures. Required Preparation CCSS Standards Addressing 3.MD.C.7.d 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions This lesson i",
+        "sourceGoal": "Let’s find the area of figures.",
         "sourceLearningGoals": "Calculate the area of ungridded figures made of rectangles using multiplication and addition.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Use make-ten or place-value reasoning for113,123,243,253.",
+          "Ask what information is missing from an outline with no unit or lengths.",
+          "Infer side lengths from partial grid squares and boundary intervals; multiply non-overlapping rectangle areas.",
+          "Find Noah’s 42-paver count and42 ft² area using two splits.",
+          "Make and compare labelled displays, then solve the distinct ungridded Cool-down."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the area of figures. Required Preparation CCSS Standards Addressing 3.MD.C.7.d 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions This lesson i",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not confuse the44-square partial figure,32-square T-shape and42-ft² patio. Count intervals, exclude overlaps, and distinguish counts from square units.",
+        "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson13RichV2"
       },
       "sourceBasedCheck": {
-        "prompt": "The source T-shaped diagram may be partitioned into an 8×3 rectangle and a 4×2 rectangle. What total area results?",
-        "answerType": "integer",
-        "expected": "32"
+        "prompt": "Find the area of the T-shaped Figure 2 shown above. Count the equal unit intervals to infer its rectangle side lengths, split it without overlap, and enter the area with square units. Explain your reasoning.",
+        "answerType": "area-with-unit",
+        "expected": "32 square units"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-13/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_THREE_PAGE_2021_STUDENT_PDF_FOUR_SVG_GEOMETRIES_PHOTO_CONTEXT_TEACHER_PREPARATION_REVIEW",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L13-WU-1",
+          "sourceActivity": "Extend Make a Ten",
+          "prompt": "Find 109+4 mentally and explain.",
+          "answerType": "integer",
+          "expected": "113"
+        },
+        {
+          "id": "G3-U02-L13-WU-2",
+          "sourceActivity": "Extend Make a Ten",
+          "prompt": "Find 109+14 mentally and explain.",
+          "answerType": "integer",
+          "expected": "123"
+        },
+        {
+          "id": "G3-U02-L13-WU-3",
+          "sourceActivity": "Extend Make a Ten",
+          "prompt": "Find 209+34 mentally and explain.",
+          "answerType": "integer",
+          "expected": "243"
+        },
+        {
+          "id": "G3-U02-L13-WU-4",
+          "sourceActivity": "Extend Make a Ten",
+          "prompt": "Find 219+34 mentally and explain.",
+          "answerType": "integer",
+          "expected": "253"
+        },
+        {
+          "id": "G3-U02-L13-WU-REASON",
+          "sourceActivity": "Extend Make a Ten",
+          "prompt": "Compare the first two sums and the last two. Explain how the changes in addends affect the sums and compare make-ten or place-value strategies.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L13-A1-NOTICE",
+          "sourceActivity": "Bye-Bye Squares",
+          "prompt": "Inspect the opening outline without measurements. Record notices/questions and identify what information would be needed to determine a numerical area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L13-A1-PARTIAL",
+          "sourceActivity": "Bye-Bye Squares",
+          "prompt": "Find the area of Figure 1 with the partial grid. Include square units. Show how the remaining squares and intervals give the lengths in your non-overlapping split.",
+          "answerType": "area-with-unit",
+          "expected": "44 square units"
+        },
+        {
+          "id": "G3-U02-L13-A1-REASON",
+          "sourceActivity": "Bye-Bye Squares",
+          "prompt": "Compare methods for Figures1 and2 with a partner. Explain how to find side lengths without completing every grid square, then show a second valid split.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L13-A2-PAVERS",
+          "sourceActivity": "How Many Pavers Do We Need?",
+          "prompt": "Noah’s labelled patio uses pavers covering 1 square foot each. How many pavers are needed? Enter the count and explain the connection to area.",
+          "answerType": "integer",
+          "expected": "42"
+        },
+        {
+          "id": "G3-U02-L13-A2-AREA",
+          "sourceActivity": "How Many Pavers Do We Need?",
+          "prompt": "What is the area of Noah’s patio? Include ft², draw a non-overlapping decomposition, and write an expression matching the parts.",
+          "answerType": "area-with-unit",
+          "expected": "42 ft²"
+        },
+        {
+          "id": "G3-U02-L13-A2-DISPLAY",
+          "sourceActivity": "How Many Pavers Do We Need?",
+          "prompt": "Prepare a labelled display. Compare(9×4)+(3×2) with(3×6)+(6×4). Explain which measurements each method uses and why some labels are unnecessary; investigate other groups’ work.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L13-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Explain how partial grids, unit intervals and side-length labels let you find area when the squares disappear. Describe how multiplying helps instead of counting every square.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 35,

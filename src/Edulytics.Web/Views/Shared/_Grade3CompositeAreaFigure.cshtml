@@ -1,0 +1,53 @@
+@model Edulytics.Web.Curriculum.Grade3.Grade3CompositeAreaFigure
+@if(Model.TopWidth is >= 1 and <= 20 && Model.TopHeight is >= 1 and <= 20 &&
+    Model.LegWidth > 0 && Model.LegWidth <= Model.TopWidth && Model.LegHeight is >= 1 and <= 20 &&
+    Model.LegOffset >= 0 && Model.LegOffset+Model.LegWidth <= Model.TopWidth &&
+    Model.PartialGridRows >= 0 && Model.PartialGridRows <= Model.TopHeight &&
+    Model.PartialGridStartColumn >= 0 && Model.PartialGridStartColumn <= Model.TopWidth) {
+    var points=new[] { (X:0,Y:0),(X:Model.TopWidth,Y:0),(X:Model.TopWidth,Y:Model.TopHeight),
+        (X:Model.LegOffset+Model.LegWidth,Y:Model.TopHeight),
+        (X:Model.LegOffset+Model.LegWidth,Y:Model.TopHeight+Model.LegHeight),
+        (X:Model.LegOffset,Y:Model.TopHeight+Model.LegHeight),
+        (X:Model.LegOffset,Y:Model.TopHeight),(X:0,Y:Model.TopHeight) };
+    var coordinates=string.Join(" ",points.Select(p=>$"{45+p.X*24},{30+p.Y*24}"));
+    var description=Model.ShowTicks || Model.ShowDimensions
+        ? $"A top rectangle {Model.TopWidth} by {Model.TopHeight}, joined without overlap to a lower rectangle {Model.LegWidth} by {Model.LegHeight}, starting {Model.LegOffset} units from the left."
+        : "An outline made from two joined rectangles, with no marked lengths or unit squares. Ask what further information is needed to determine its area.";
+    <figure><div style="overflow-x:auto">
+        <svg viewBox="0 0 @(Model.TopWidth*24+100) @((Model.TopHeight+Model.LegHeight)*24+85)" width="@(Model.TopWidth*24+100)" height="@((Model.TopHeight+Model.LegHeight)*24+85)" role="img" aria-label="@description">
+            <title>Independent composite-area model</title>
+            <polygon points="@coordinates" fill="#fff" stroke="#183d52" stroke-width="2" />
+            @if(Model.ShowTicks) {
+                @for(var edge=0;edge<points.Length;edge++) {
+                    var a=points[edge];var b=points[(edge+1)%points.Length];
+                    var dx=Math.Sign(b.X-a.X);var dy=Math.Sign(b.Y-a.Y);
+                    var length=Math.Abs(b.X-a.X)+Math.Abs(b.Y-a.Y);
+                    for(var k=1;k<length;k++) {
+                        var x=45+(a.X+k*dx)*24;var y=30+(a.Y+k*dy)*24;
+                        <line x1="@x" y1="@y" x2="@(x-dy*6)" y2="@(y+dx*6)" stroke="#183d52" />
+                    }
+                }
+            }
+            @if(Model.PartialGridRows > 0) {
+                @for(var r=1;r<=Model.PartialGridRows;r++) {
+                    <line x1="@(45+Model.PartialGridStartColumn*24)" y1="@(30+r*24)" x2="@(45+Model.TopWidth*24)" y2="@(30+r*24)" stroke="#183d52" />
+                }
+                @for(var c=Model.PartialGridStartColumn;c<Model.TopWidth;c++) {
+                    <line x1="@(45+c*24)" y1="30" x2="@(45+c*24)" y2="@(30+Model.PartialGridRows*24)" stroke="#183d52" />
+                }
+            }
+            @if(Model.ShowDimensions && Model.LegOffset==0) {
+                <text x="@(45+Model.TopWidth*12)" y="20" text-anchor="middle">@Model.TopWidth @Model.Unit</text>
+                <text x="@(50+Model.TopWidth*24)" y="@(35+Model.TopHeight*12)">@Model.TopHeight @Model.Unit</text>
+                <text x="5" y="@(35+(Model.TopHeight+Model.LegHeight)*12)">@(Model.TopHeight+Model.LegHeight) @Model.Unit</text>
+                <text x="@(45+Model.LegWidth*12)" y="@(50+(Model.TopHeight+Model.LegHeight)*24)" text-anchor="middle">@Model.LegWidth @Model.Unit</text>
+                <text x="@(50+Model.LegWidth*24)" y="@(35+Model.TopHeight*24+Model.LegHeight*12)">@Model.LegHeight @Model.Unit</text>
+                <text x="@(45+Model.LegWidth*24+(Model.TopWidth-Model.LegWidth)*12)" y="@(22+Model.TopHeight*24)" text-anchor="middle">@(Model.TopWidth-Model.LegWidth) @Model.Unit</text>
+            }
+        </svg>
+    </div><figcaption>
+        @if(Model.ShowTicks) { <span>Each gap between neighboring marks represents one unit. Count intervals, including the end intervals.</span> }
+        else if(Model.ShowDimensions) { <span>Use the labelled lengths; the drawing is a mathematical model.</span> }
+        else { <span>No unit length or side measurement is supplied in this opening outline.</span> }
+    </figcaption></figure>
+}
