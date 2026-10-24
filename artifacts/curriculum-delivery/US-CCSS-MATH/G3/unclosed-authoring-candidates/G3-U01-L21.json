@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-21/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-21/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "IM_2021_PUBLIC_STUDENT_TEACHER_TEXT_ELEMENTS_MAPPED_ORIGINAL_MEDIA_PDF_UNVERIFIED",
     "goals": "Make choices and assumptions. Represent data using scaled bar graphs to communicate results. Solve real-world problems involving equal groups.",
     "sourceHeadingsCount": 4,
     "originalImageDescriptionsCount": 1,
@@ -31,7 +31,7 @@
     "originalActivity2": "Individually draw scaled bar chart of guests participating in games A/B/C/D; include title and labels; scale jumps other than 1"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRST_PARTY_SOURCE_SPECIFIC_RICH_V2_AUTHORED_RUNTIME_UNVERIFIED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -41,10 +41,11 @@
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
-    "firstPartyFeasibleSample": "Two simultaneous games each of A,B,C,D; table allocations 2+2+4+8=16; guests 4+8+10+20=42. EXAMPLE ONLY, not official source answer."
+    "firstPartyFeasibleSample": "Two simultaneous games each of A,B,C,D; table allocations 2+2+4+8=16; guests 4+8+10+20=42. EXAMPLE ONLY, not official source answer.",
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l21-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FIVE_ORIGINAL_OPEN_MODELING_TASKS_HUMAN_REVIEW_ONLY_WRITTEN_TESTS_UNRUN",
     "family": "design-project",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
@@ -57,7 +58,8 @@
     "teacherReviewNote": "Optional multi-step project; no numeric automatic grade.",
     "allFiveProjectItemsTeacherOnly": true,
     "noUniqueCorrectNumericGrade": true,
-    "newDeferredVisualContractTestWritten": true
+    "newDeferredVisualContractTestWritten": true,
+    "sourceTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson21SeatingPlanningTests.cs"
   },
   "sourceElements": [
     {
@@ -131,17 +133,16 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Publisher image and task PDF are not pixel/print-compared; student-chosen constraints, physically valid table joins, genuine classroom group planning and authored graphs must be verified by teacher. Database-backed Rich V2 and deferred tests remain unverified."
+    "The original six-table warm-up illustration and any publisher-owned grid/media have not been fully visually and rights inspected.",
+    "Student original graph paper/drawing and source materials not individually matched against original printed task PDF.",
+    "Original 16-table seating feasibility cannot be reduced to a single auto-grade integer; classroom teacher needs to validate joins, assumptions, four game types and capacity.",
+    "Each student's A–D scaled bar chart requires manual comparison against that student's poster, title, labels and scale step greater than one.",
+    "No runtime inspection, Stage D, CI, academic sign-off or .NET test execution."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-21-2021-source-to-first-party-evidence-20261024.json"
 }
