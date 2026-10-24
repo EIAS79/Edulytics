@@ -3141,7 +3141,7 @@
         "expected": "14"
       },
       "openTeacherTask": "Work through the original lesson's activity Time to Tile with your teacher. Show the representation and explain how it meets the goal: You will measure area by counting square tiles and create rectangles with a given area.",
-      "teacherReviewNote": "Check the rectangle shape, same-sized tiles and no gaps/overlap, as well as source card-sort. Original 2021 first-edition public six-page student task PDF; the 2-page Time to Tile and 1-page Card Sort A–F master were inspected. Source original rectangle areas: 25,15,24,12 sq units; original card A,C=12, D,E=16, B,F=24. All 19 source visual assets compared by math. Source subtask numeric marking only tests counts, teacher checks adjusted tiles, gap/overlap, card sorting, newly drawn rectangle and MLR1/8 reasoning.",
+      "teacherReviewNote": "Check the rectangle shape, same-sized tiles and no gaps/overlap, as well as source card-sort. Original 2021 first-edition public six-page student task PDF; the 2-page Time to Tile and 1-page Card Sort A–F master were inspected. Source original rectangle areas: 25,15,24,12 sq units; original card A,C=12, D,E=16, B,F=24. All 19 source visual assets compared by math. Source subtask numeric marking only tests counts, teacher checks adjusted tiles, gap/overlap, card sorting, newly drawn rectangle and MLR1/8 reasoning. Source-specific canonical Rich V2 resource, guarded seed bridge, and independent first-party warm-up figures now authored in GitHub. Original teacher project and areas remain classroom human-assessed; machine source anchors only check arithmetic.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "READY_FOR_STAGE_D",
       "readyForStageD": true,
@@ -3166,8 +3166,8 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-3/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ALL_SOURCE_STUDENT_PDF_6_PAGES_19_LESSON_MEDIA_TWO_TILING_MASTER_PAGES_AND_ONE_CARD_SORT_MASTER_PAGE",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -3252,7 +3252,7 @@
         {
           "id": "G3-U02-L03-A2-SORT",
           "sourceActivity": "Activity 2: Card Sort Rectangles",
-          "prompt": "Use the ORIGINAL publisher Card Sort: Rectangles cards. First sort by any defensible rule, then regroup the printed cards by AREA. The original cards have not been visually audited.",
+          "prompt": "Use the ORIGINAL publisher Card Sort: Rectangles cards. First sort by any defensible rule, then regroup the printed cards by AREA. The original six-card 2021 source master has been individually visually inspected: sort by a defensible rule and also by area A/C=12, D/E=16, B/F=24 square units. Teacher checks the actual sorting and explanations.",
           "answerType": "teacher",
           "expected": null
         },
@@ -3325,7 +3325,10 @@
           12
         ],
         "originalPublisherMediaPixelsCopied": false
-      }
+      },
+      "canonicalRichV2Bridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson3RichV2.cs",
+      "canonicalRichV2ContentVersion": "g3-u02-l03-2021-source-abc-firstparty-20261024-v1",
+      "sourceAcademicCoverageScope": "2021 publisher source-math and teacher goals, not artwork copying or live runtime approval"
     },
     {
       "ordinal": 25,
