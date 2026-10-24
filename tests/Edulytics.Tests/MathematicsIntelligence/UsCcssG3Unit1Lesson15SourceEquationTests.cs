@@ -14,7 +14,7 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.True(Grade3SourceCompanionCatalogue.TryGet(Code, out var lesson));
         Assert.NotNull(lesson);
         Assert.False(lesson.ReadyForStageD);
-        Assert.Equal(15, lesson.SourceSubtasks.Count);
+        Assert.Equal(17, lesson.SourceSubtasks.Count);
         Assert.Equal(3, lesson.SourceSubtasks.Count(x =>
             x.Id.EndsWith("-SYMBOL", StringComparison.Ordinal) &&
             x.AnswerType == "multiplication-unknown-equation"));
@@ -117,5 +117,23 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.Contains("Teacher reflection",rich);
         Assert.Contains("until a future unit",rich);
         Assert.Contains("not the publisher's original picture",razor);
+    }
+
+    [Fact]
+    public void FirstEdition2021SourceCoolDownHasTwoDistinctMathAnchorsWithTeacherReasoning()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(Code,out var lesson));
+        Assert.NotNull(lesson);
+        var items=lesson.SourceSubtasks.Where(q=>q.Id.StartsWith("G3-U01-L15-CD-",StringComparison.Ordinal)).ToArray();
+        Assert.Equal(2,items.Length);
+        Assert.Equal(new[]{"40","5"},items.Select(q=>q.Expected));
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(items[0],"40").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(items[0],"4").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(items[1],"5").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(items[1],"10").NumericCorrect);
+        Assert.All(items,q=>Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).TeacherReview));
+        // The Edulytics original is its own independent item, NOT the source Cool-down.
+        Assert.Equal("12",lesson.OriginalEdulyticsCoolDown!.Expected);
+        Assert.False(lesson.ReadyForStageD);
     }
 }
