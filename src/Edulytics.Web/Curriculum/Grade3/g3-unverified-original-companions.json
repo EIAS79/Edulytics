@@ -4524,11 +4524,11 @@
         "Picture of ruler. Scale, 0 to 8, by 1's. 4 tick marks between each unit.",
         "a rectangle."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
         "prompt": "A measured rectangle is 7 cm by 4 cm. Find the area in cm².",
@@ -4541,10 +4541,10 @@
         "expected": "30"
       },
       "openTeacherTask": "Work through the original lesson's activity Measure to Find Area with your teacher. Show the representation and explain how it meets the goal: You will measure side lengths of rectangles to find your area.",
-      "teacherReviewNote": "Ruler use and zero alignment must be checked visually; creating assigned square-foot areas requires a physical task.",
+      "teacherReviewNote": "Ruler use and zero alignment must be checked visually; creating assigned square-foot areas requires a physical task. All original 2021 Student Task PDF pages (three) and eight original figure/ruler assets reviewed on Our-CS; nominal A=6×3=18 cm², B=4×5=20 cm² and C=10×3=30 cm² directly from publisher vector geometry. Edulytics originals are independent proportional diagrams not source copied artwork. Original printed-page measurements must be checked with ruler zero by teacher; six alternate tape areas are optional assignment targets and real physical build is teacher-only.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s measure the sides of rectangles and find the area.",
@@ -4568,7 +4568,149 @@
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L09-WU-GROUPS",
+          "sourceActivity": "Warm-up: Notice and Wonder",
+          "prompt": "Observe six separate 3-dot groups (five black groups and a differently-colored sixth group). Describe where the extra equal group appears and explain why 15+3=18.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-WU-ARRAY",
+          "sourceActivity": "Warm-up: Notice and Wonder",
+          "prompt": "Observe a 3-row six-column array with one differently-colored last column; explain two mathematical representations: 5×3+3=18 and 6×3=18.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A1-PREDICT",
+          "sourceActivity": "Activity 1: Measure to Find Area",
+          "prompt": "Before measuring, predict which original PDF rectangle A, B or C has greatest area, justify with the whole region and then check the prediction with measurements.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A1-A-NOMINAL",
+          "sourceActivity": "Activity 1: Measure to Find Area",
+          "prompt": "For independently reauthored source-aligned outline A of nominal dimensions SIX centimeters wide and THREE centimeters high, give area WITH the correct square-centimeter unit; teacher separately checks original printed ruler measurement.",
+          "answerType": "area-with-unit",
+          "expected": "18 cm²"
+        },
+        {
+          "id": "G3-U02-L09-A1-B-NOMINAL",
+          "sourceActivity": "Activity 1: Measure to Find Area",
+          "prompt": "For independently reauthored source-aligned outline B of nominal dimensions FOUR centimeters wide and FIVE centimeters high, give area WITH the square-centimeter unit and show your physical measurement to the teacher.",
+          "answerType": "area-with-unit",
+          "expected": "20 cm²"
+        },
+        {
+          "id": "G3-U02-L09-A1-C-NOMINAL",
+          "sourceActivity": "Activity 1: Measure to Find Area",
+          "prompt": "For independently reauthored source-aligned outline C of nominal dimensions TEN centimeters wide and THREE centimeters high, enter area WITH the square-centimeter unit and verify that C covers more than A or B.",
+          "answerType": "area-with-unit",
+          "expected": "30 cm²"
+        },
+        {
+          "id": "G3-U02-L09-A1-RULER",
+          "sourceActivity": "Activity 1: Measure to Find Area",
+          "prompt": "Demonstrate starting your centimetre ruler at ZERO on the correctly printed original source PDF A/B/C, measuring both sides and describing how the side lengths give squares of area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A2-TAPE-4",
+          "sourceActivity": "Activity 2: Create a Rectangle",
+          "prompt": "If your group is ASSIGNED 4 square feet, use real tape and a yardstick to build ONE rectangle of exactly 4 ft². Show two actual adjacent lengths measured in feet, verify their product and explain the physical construction. Do NOT simulate completion by typing 4.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A2-TAPE-6",
+          "sourceActivity": "Activity 2: Create a Rectangle",
+          "prompt": "If your group is ASSIGNED 6 square feet, use real tape and a yardstick to build ONE rectangle of exactly 6 ft². Show two actual adjacent lengths measured in feet, verify their product and explain the physical construction. Do NOT simulate completion by typing 6.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A2-TAPE-9",
+          "sourceActivity": "Activity 2: Create a Rectangle",
+          "prompt": "If your group is ASSIGNED 9 square feet, use real tape and a yardstick to build ONE rectangle of exactly 9 ft². Show two actual adjacent lengths measured in feet, verify their product and explain the physical construction. Do NOT simulate completion by typing 9.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A2-TAPE-10",
+          "sourceActivity": "Activity 2: Create a Rectangle",
+          "prompt": "If your group is ASSIGNED 10 square feet, use real tape and a yardstick to build ONE rectangle of exactly 10 ft². Show two actual adjacent lengths measured in feet, verify their product and explain the physical construction. Do NOT simulate completion by typing 10.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A2-TAPE-12",
+          "sourceActivity": "Activity 2: Create a Rectangle",
+          "prompt": "If your group is ASSIGNED 12 square feet, use real tape and a yardstick to build ONE rectangle of exactly 12 ft². Show two actual adjacent lengths measured in feet, verify their product and explain the physical construction. Do NOT simulate completion by typing 12.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A2-TAPE-16",
+          "sourceActivity": "Activity 2: Create a Rectangle",
+          "prompt": "If your group is ASSIGNED 16 square feet, use real tape and a yardstick to build ONE rectangle of exactly 16 ft². Show two actual adjacent lengths measured in feet, verify their product and explain the physical construction. Do NOT simulate completion by typing 16.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-A2-MLR8",
+          "sourceActivity": "Activity 2: Create a Rectangle",
+          "prompt": "Before presenting, each member of the team explains the assigned-area rectangle; teacher checks contributions and reasoning as source MLR8 requires.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L09-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare a fully drawn grid, a partially filled rectangle and a completely untiled source rectangle. Explain why correctly measured side lengths multiplied together give square units.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ],
+      "source2021Evidence": {
+        "pdf": {
+          "url": "https://cms-assets.illustrativemathematics.org/zn1tmp45gnrpewrp60cnnmdhdrmo",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "sha256": "57661390bd7b0b4e2ad5a1c8ee44463903d8689d60d9cf4d3a35bd1924239f16",
+          "bytes": 111256
+        },
+        "originalSvgAssetsAudited": 8,
+        "originalRulerImageViewed": true,
+        "dimensionsNominal": {
+          "A": [
+            6,
+            3,
+            18
+          ],
+          "B": [
+            4,
+            5,
+            20
+          ],
+          "C": [
+            10,
+            3,
+            30
+          ],
+          "unit": "cm and cm²",
+          "proof": "source SVG 28.3465 pt/cm, A 170.08×85.04pt, B 113.39×141.73pt, C 283.47×85.04pt"
+        },
+        "sourceArtworkCopied": false,
+        "originalMeasurementTeacherReviewed": true
+      }
     },
     {
       "ordinal": 31,
