@@ -14,7 +14,7 @@ internal static class CommonCoreG3Unit1Lesson16RichV2
     internal const string LessonCode = "PED:US-CCSS-MATH:G3:U01:L16";
     private const string ResourceName = "Edulytics.Data.Grade3.Unit1Lesson16RichV2";
     private const string ExpectedContentVersion =
-        "g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v2";
+        "g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v3";
 
     private static readonly Lazy<JsonElement> Source = new(Load);
 
