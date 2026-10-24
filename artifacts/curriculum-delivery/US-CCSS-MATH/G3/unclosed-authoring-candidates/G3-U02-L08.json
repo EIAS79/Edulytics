@@ -11,16 +11,21 @@
   "originalTeacherHtml": "unit-2/lesson-8/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-8/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_THREE_PAGE_STUDENT_PDF_8_SOURCE_MEDIA_REVIEWED_21_OF_21_SEMANTIC_ELEMENTS",
     "goals": "Determine the area of rectangles not displayed on a grid.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 8,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalSourceImagesInspected": 8,
+    "firstEditionStudentTaskPdfSHA256": "b511d6f5cc56b4aca72de94517448b2d51a7d56844420f8f96cec26378cf71b4",
+    "sourceElementsIdentified": 21,
+    "sourceElementsMapped": 21,
+    "sourceSecondWarmupAltError": "Alt says 5 groups of 6; source picture has four 6-dot clusters (24), teacher narrative confirms +4 from 20."
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_RICHV2_V1_CANONICAL_GUARDED_20_24_16_AND_90IN2_32M2_18M2_FIRSTPARTY_DIAGRAMS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +33,13 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "464c7453314acf23967c71454cfacb25e7ed45e63715f937dbdcfe26ad245fd6",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l08-2021.rich-lesson-v2.json",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson8RichV2.cs"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SIX_SEPARATE_SOURCE_NUMERIC_CHECKS_THREE_WITH_SQUARE_UNITS_AND_OPEN_REASONING_TESTS_AUTHORED_NOT_RUN",
     "family": "rectangle-area",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,9 +47,11 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Partially Tiled with your teacher. Show the representation and explain how it meets the goal: Let’s solve area problems without a grid.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceOriginalQuestionCount": 10,
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson8PartialRectangleAreaSourceTests.cs"
   },
   "sourceElements": [
     {
@@ -186,20 +195,23 @@
     "expected": "25"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-29-2021-source-to-first-party-evidence-20261024.json",
+  "sourceElementsIdentified": 21,
+  "sourceElementsSemanticallyMapped": 21,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    "Source middle warmup erroneous alt documented but verified by actual picture and teacher narrative",
+    "Publisher source images and Portuguese tiled artwork not reproduced, independent first-party math models",
+    "Teacher must check source grid drawings and verbal reasons",
+    "No runtime tests, CI, Stage D, deployment, academic approval."
+  ]
 }
