@@ -136,21 +136,21 @@ public static class Grade3SourceCompanionCatalogue
             static string? Signature(string? raw)
             {
                 if (string.IsNullOrWhiteSpace(raw)) return null;
-                var s = Regex.Replace(raw, @"\\s+", "")
+                var s = Regex.Replace(raw, @"\s+", "")
                     .Replace("×", "x").Replace("*", "x").Replace("X", "x")
                     .Replace("□", "?").Replace("▢", "?").Replace("_", "?");
                 var sides = s.Split('=');
                 if (sides.Length != 2) return null;
-                var m = Regex.Match(sides[0], @"^([0-9]{1,3}|\\?)x([0-9]{1,3}|\\?)$",
+                var m = Regex.Match(sides[0], @"^([0-9]{1,3}|\?)x([0-9]{1,3}|\?)$",
                     RegexOptions.CultureInvariant);
                 var product = sides[1];
                 if (!m.Success)
                 {
-                    m = Regex.Match(sides[1], @"^([0-9]{1,3}|\\?)x([0-9]{1,3}|\\?)$",
+                    m = Regex.Match(sides[1], @"^([0-9]{1,3}|\?)x([0-9]{1,3}|\?)$",
                         RegexOptions.CultureInvariant);
                     product = sides[0];
                 }
-                if (!m.Success || !Regex.IsMatch(product, @"^([0-9]{1,5}|\\?)$"))
+                if (!m.Success || !Regex.IsMatch(product, @"^([0-9]{1,5}|\?)$"))
                     return null;
                 var a = m.Groups[1].Value;
                 var b = m.Groups[2].Value;

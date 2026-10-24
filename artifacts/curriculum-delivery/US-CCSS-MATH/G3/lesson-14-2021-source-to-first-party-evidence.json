@@ -201,5 +201,11 @@
   "readyForStageD": true,
   "readyScope": "2021_MATH_SEMANTIC_STAGE_ABC_AUTHORING_NOT_PUBLISHER_ART_OR_DEPLOYED_RUNTIME",
   "sourceCardPhysicalObservationCompleted": false,
-  "liveDeploymentCompared": false
+  "liveDeploymentCompared": false,
+  "staticDefectRepair": {
+    "kind": "REGEX_STRING_ESCAPING",
+    "codePath": "src/Edulytics.Web/Curriculum/Grade3/Grade3SourceCompanionCatalogue.cs",
+    "details": "Changed double slash in verbatim C# regular expressions to single slash for whitespace and literal question mark; no tests executed.",
+    "testsWrittenNotRun": true
+  }
 }
