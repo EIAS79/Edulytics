@@ -3124,11 +3124,11 @@
         "Diagram. Rectangle partitioned into 12 rows of 2 of the same size squares.",
         "Diagram. Rectangle partitioned into 20 rows of 20 of the same size squares."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "unit-squares-area",
       "independentPractice": {
         "prompt": "A rectangle is tiled with 4 rows of 6 unit squares. What is the area?",
@@ -3141,22 +3141,22 @@
         "expected": "14"
       },
       "openTeacherTask": "Work through the original lesson's activity Time to Tile with your teacher. Show the representation and explain how it meets the goal: You will measure area by counting square tiles and create rectangles with a given area.",
-      "teacherReviewNote": "Check the rectangle shape, same-sized tiles and no gaps/overlap, as well as source card-sort.",
+      "teacherReviewNote": "Check the rectangle shape, same-sized tiles and no gaps/overlap, as well as source card-sort. Original 2021 first-edition public six-page student task PDF; the 2-page Time to Tile and 1-page Card Sort A–F master were inspected. Source original rectangle areas: 25,15,24,12 sq units; original card A,C=12, D,E=16, B,F=24. All 19 source visual assets compared by math. Source subtask numeric marking only tests counts, teacher checks adjusted tiles, gap/overlap, card sorting, newly drawn rectangle and MLR1/8 reasoning.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s count square tiles.",
         "sourceLearningGoals": "Explain that rectangles that can be covered by the same number of unit squares without gaps or overlaps have the same area. Find the area of rectangles (within 24 square units) by counting unit squares.",
         "teachingSteps": [
           "Warm-up from original A–D tiled drawings: A/C have 4x6=24 squares; D uses 6x4 squares but gaps/overlaps. Identical tile counts do not prove valid coverage until adjusted.",
-          "Each pair receives the original Time to Tile handout and 24 equal square tiles. Move and rearrange tiles across four original partially tiled pictures, then calculate area from finished coverage.",
+          "First-edition original two-page Time to Tile handout individually read: a is 5×5=25, b is 5×3=15, c is 6×4=24, d is 3×4=12 square units; original incorrectly centered/misaligned/overlapping tiles must be repositioned. Each pair has exactly 24 inch tiles from preparation; the figure a total 25 can be reached by drawing the missing square while reasoning without needing to lay 25 physical tiles simultaneously, if necessary.",
           "Use peer feedback to revise WHY complete square-unit coverage (no gaps/overlaps) measures area.",
           "Observe three distinct original representations of a rectangle with area 12 square units, and draw a rectangle with area 8 unit squares.",
-          "Use the original physical Card Sort Rectangles cards: first any justified grouping, then group by area and create a new distinct rectangle for each area family."
+          "Original Card Sort: Rectangles 2021 print-master inspected: Card A (4×3=12), D (8×2=16), B (3×8=24), E (4×4=16), C (1×12=12), F (2×12=24). First sort by a valid learner-chosen rule, then by AREA (A/C, D/E, B/F), and draw another rectangle for every equal-area family."
         ],
-        "caution": "The source's four source handout figures and original card-sort set are NOT visually inspected at the pixel level. Even if a source alt mentions three or seven already placed tiles, its FULL area cannot be guessed from that partial placement. Student grid drawing and card-sorting are teacher-reviewed.",
+        "caution": "Source original six-page Student Task PDF, both pages of Time to Tile, Card Sort A–F blackline, and 19 original lesson media assets have now been individually inspected. Source drawing, tiling, sorting and student explanation must still be human-reviewed. Source exact numerical areas are known and are NOT guesses.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -3203,30 +3203,30 @@
         {
           "id": "G3-U02-L03-A1-01",
           "sourceActivity": "Activity 1: Time to Tile",
-          "prompt": "Original handout picture 1 has four equal tiles in a square that may need rearranging before coverage. Move tiles to fill region and document square-unit area only after confirming geometry.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Official 2021 Time to Tile original handout rectangle a (FIGURE 1): initially only some tiles are supplied or arranged imperfectly. Shift them as needed and add equal one-inch square tiles without gaps or overlaps to cover the WHOLE rectangle. Record its total area in SQUARE UNITS and explain how the complete rows and columns prove it. A numeric correct answer alone never certifies physical placement.",
+          "answerType": "integer",
+          "expected": "25"
         },
         {
           "id": "G3-U02-L03-A1-02",
           "sourceActivity": "Activity 1: Time to Tile",
-          "prompt": "Original source handout picture 2 shows three tiles inside a rectangle. Add equal-size tiles to cover region with no uncovered gaps and measure its total area.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Official 2021 Time to Tile original handout rectangle b (FIGURE 2): initially only some tiles are supplied or arranged imperfectly. Shift them as needed and add equal one-inch square tiles without gaps or overlaps to cover the WHOLE rectangle. Record its total area in SQUARE UNITS and explain how the complete rows and columns prove it. A numeric correct answer alone never certifies physical placement.",
+          "answerType": "integer",
+          "expected": "15"
         },
         {
           "id": "G3-U02-L03-A1-03",
           "sourceActivity": "Activity 1: Time to Tile",
-          "prompt": "Original handout picture 3 shows seven tiles in a larger rectangle. Correct row alignment and finish tiling before recording area.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Official 2021 Time to Tile original handout rectangle c (FIGURE 3): initially only some tiles are supplied or arranged imperfectly. Shift them as needed and add equal one-inch square tiles without gaps or overlaps to cover the WHOLE rectangle. Record its total area in SQUARE UNITS and explain how the complete rows and columns prove it. A numeric correct answer alone never certifies physical placement.",
+          "answerType": "integer",
+          "expected": "24"
         },
         {
           "id": "G3-U02-L03-A1-04",
           "sourceActivity": "Activity 1: Time to Tile",
-          "prompt": "Original handout picture 4 is partially tiled. Straighten or move overlapping tiles and complete the coverage. Explain your adjustment to a partner.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Official 2021 Time to Tile original handout rectangle d (FIGURE 4): initially only some tiles are supplied or arranged imperfectly. Shift them as needed and add equal one-inch square tiles without gaps or overlaps to cover the WHOLE rectangle. Record its total area in SQUARE UNITS and explain how the complete rows and columns prove it. A numeric correct answer alone never certifies physical placement.",
+          "answerType": "integer",
+          "expected": "12"
         },
         {
           "id": "G3-U02-L03-A1-RULE",
@@ -3270,7 +3270,62 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceCardAreas": [
+        {
+          "card": "A",
+          "columns": 4,
+          "rows": 3,
+          "area": 12
+        },
+        {
+          "card": "D",
+          "columns": 8,
+          "rows": 2,
+          "area": 16
+        },
+        {
+          "card": "B",
+          "columns": 3,
+          "rows": 8,
+          "area": 24
+        },
+        {
+          "card": "E",
+          "columns": 4,
+          "rows": 4,
+          "area": 16
+        },
+        {
+          "card": "C",
+          "columns": 1,
+          "rows": 12,
+          "area": 12
+        },
+        {
+          "card": "F",
+          "columns": 2,
+          "rows": 12,
+          "area": 24
+        }
+      ],
+      "source2021Original": {
+        "studentPdfSha256": "23137d3374a2e6a07d34eee0297ac49fb167d96a86220769aaf06bfa71574d4c",
+        "studentPdfPagesRead": 6,
+        "originalImageAssetsInspected": 19,
+        "blacklineZipSha256": "1467c7325d020722e1b20159241d6fc130eaa375002c9ad6a818ce89716056d5",
+        "timeToTileMasterSHA256": "3c9d388b426f284983b7589ba6f0a060c007285b745893299311cbe7fa60224e",
+        "timeToTileMasterPages": 2,
+        "cardSortMasterSHA256": "6cc458d69225facf3c4e79386bc8b212981d50efa8b90e92ea2a6d21b4b5fdeb",
+        "cardSortMasterPages": 1,
+        "originalFourRectangleAreaSquareUnits": [
+          25,
+          15,
+          24,
+          12
+        ],
+        "originalPublisherMediaPixelsCopied": false
+      }
     },
     {
       "ordinal": 25,
