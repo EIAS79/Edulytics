@@ -415,6 +415,53 @@
                     equal-length rows. Discuss different defensible choices, not merely
                     the letter with the different total. The publisher's exact
                     warm-up artwork is not copied here.</p>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px;margin:12px 0">
+                    @{
+                        var aPositions = new HashSet<int> { 0,5,10,15,20, 1,6,11,16,21, 7,12,17, 13,14 };
+                        var bPositions = new HashSet<int>(Enumerable.Range(0,16).Where(index=>index!=10));
+                    }
+                    <article style="border:1px solid #68838d;padding:10px;border-radius:7px">
+                        <strong>New A — 15</strong>
+                        <div role="img" aria-label="Original Edulytics model A: fifteen dots in an asymmetrical layout with incomplete columns."
+                             style="display:grid;grid-template-columns:repeat(5,15px);gap:6px;margin-top:9px">
+                            @for(var slot=0;slot<25;slot++){
+                                <span aria-hidden="true" style="width:13px;height:13px;border-radius:50%;background:@(aPositions.Contains(slot)?"#a7508f":"transparent")"></span>
+                            }
+                        </div>
+                    </article>
+                    <article style="border:1px solid #68838d;padding:10px;border-radius:7px">
+                        <strong>New B — 15</strong>
+                        <div role="img" aria-label="Original Edulytics model B: three complete rows plus a missing dot, so one column is incomplete."
+                             style="display:grid;grid-template-columns:repeat(4,15px);gap:6px;margin-top:9px">
+                            @for(var slot=0;slot<16;slot++){
+                                <span aria-hidden="true" style="width:13px;height:13px;border-radius:50%;background:@(bPositions.Contains(slot)?"#a7508f":"transparent")"></span>
+                            }
+                        </div>
+                    </article>
+                    <article style="border:1px solid #68838d;padding:10px;border-radius:7px">
+                        <strong>New C — 15</strong>
+                        <div role="img" aria-label="Original Edulytics model C: five scattered mini-clusters of three dots each, not a rectangular array."
+                             style="display:flex;flex-wrap:wrap;gap:9px;margin-top:9px">
+                            @for(var group=0;group<5;group++){
+                                <div aria-hidden="true" style="display:flex;gap:3px;padding:4px;transform:rotate(@(group*13-26)deg)">
+                                    @for(var dot=0;dot<3;dot++){
+                                        <span style="width:10px;height:10px;border-radius:50%;background:#a7508f"></span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </article>
+                    <article style="border:1px solid #68838d;padding:10px;border-radius:7px">
+                        <strong>New D — 16</strong>
+                        <div role="img" aria-label="Original Edulytics model D: complete four by four rectangular array with sixteen dots."
+                             style="display:grid;grid-template-columns:repeat(4,15px);gap:6px;margin-top:9px">
+                            @for(var dot=0;dot<16;dot++){
+                                <span aria-hidden="true" style="width:13px;height:13px;border-radius:50%;background:#a7508f"></span>
+                            }
+                        </div>
+                    </article>
+                </div>
                 <p>The official first-edition 2021 Student Task Statements PDF has
                     three pages and source Activity 2 asks for drawing and explaining
                     both twelve- and sixteen-dot arrays. Teacher reviews card sorting,
