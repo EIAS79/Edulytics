@@ -83,6 +83,37 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
+        if (q.AnswerType == "area-quantity-match")
+        {
+            // IM K–5 G3 U02 L07 first-edition 2021 student PDF p4:
+            // four quantities and four everyday objects. Check BOTH the
+            // numerical magnitude and the unit, never just the number.
+            // The student's rationale stays teacher-reviewed.
+            static string? CanonicalQuantity(string? raw)
+            {
+                if (string.IsNullOrWhiteSpace(raw)) return null;
+                var normalized = Regex.Replace(raw.Trim().ToLowerInvariant()
+                        .Replace("²", "2"), @"\s+", "")
+                    .Replace("^", "")
+                    .Replace("square", "")
+                    .Replace("sq.", "")
+                    .Replace("sq", "")
+                    .Replace("inches", "in").Replace("inch", "in")
+                    .Replace("feet", "ft").Replace("foot", "ft")
+                    .Replace("centimeters", "cm").Replace("centimeter", "cm")
+                    .Replace("meters", "m").Replace("meter", "m");
+                return normalized is "9in2" or "3ft2" or "55cm2" or "55m2"
+                    ? normalized : null;
+            }
+            var actual = CanonicalQuantity(submitted);
+            var required = CanonicalQuantity(q.Expected);
+            var correct = actual is not null && required is not null &&
+                string.Equals(actual, required, StringComparison.Ordinal);
+            return new(correct, true, correct
+                ? "The source quantity and square-area unit match; explain the object-size reasoning to your teacher."
+                : "Select the complete original area quantity WITH its square unit. A number alone or a different unit cannot pass.");
+        }
+
         if (q.AnswerType == "source-card-letter")
         {
             // Grade 3 Unit 2 Lesson 5 — independently drawn first-party
