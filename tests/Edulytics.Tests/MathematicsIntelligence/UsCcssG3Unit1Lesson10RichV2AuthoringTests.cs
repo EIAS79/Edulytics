@@ -24,6 +24,11 @@ public sealed class UsCcssG3Unit1Lesson10RichV2AuthoringTests
         Assert.Equal(6, rich.WorkedExamples.Count);
         Assert.True(Grade3SourceCompanionCatalogue.TryGet(Code, out var lesson));
         Assert.Equal(8, lesson!.SourceSubtasks.Count);
+        Assert.Contains("A–F–L", lesson.SourceSubtasks[3].Prompt);
+        Assert.Contains("B–H–K", lesson.SourceSubtasks[3].Prompt);
+        Assert.Contains("C–I", lesson.SourceSubtasks[3].Prompt);
+        Assert.Contains("D–G", lesson.SourceSubtasks[3].Prompt);
+        Assert.Contains("E–J", lesson.SourceSubtasks[3].Prompt);
         Assert.Equal(7, lesson.SourceSubtasks.Count(x=>x.AnswerType=="teacher"));
         Assert.Equal("yes-no", lesson.SourceSubtasks.Last().AnswerType);
     }
