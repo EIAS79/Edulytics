@@ -92,6 +92,13 @@ public static class CommonCoreG3SourceTeachingCorrections
                 "\nApproach: " + rule.TeachingSteps[0] +
                 " Show the mathematical representation and explain the meaning.";
 
+            // Only after the original edition and canonical SHA gates above:
+            // replace the generic U01 L15 learner body with its individually
+            // source-reviewed 2021 first-party teaching, examples and methods.
+            if (string.Equals(lesson.LessonCode,
+                CommonCoreG3Unit1Lesson15RichV2.LessonCode, StringComparison.Ordinal))
+                CommonCoreG3Unit1Lesson15RichV2.Apply(lesson);
+
             if (string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L01", StringComparison.Ordinal))
             {
