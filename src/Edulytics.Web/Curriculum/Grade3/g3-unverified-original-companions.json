@@ -2706,11 +2706,11 @@
         "3 shapes. Top, 5-sided polygon, labeled A. Middle, parallelogram ,labeled B. Bottom, rectangle, labeled� C.",
         "Picture of pattern blocks."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "area-comparison",
       "independentPractice": {
         "prompt": "Draw two different-looking shapes and explain how you would determine which covers a larger area.",
@@ -2723,22 +2723,22 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Compare Shapes with your teacher. Show the representation and explain how it meets the goal: You will recognize that different shapes cover different amounts of space.",
-      "teacherReviewNote": "Source original triangle drawings and pattern-block handouts require visual or physical verification.",
+      "teacherReviewNote": "Source original triangle drawings and pattern-block handouts require visual or physical verification. All ten original lesson figures inspected individually, including a 2×4 = 8 warm-up; the original official Student Task Statements PDF (three pages) and blackline pattern-block master (two pages) were read. Source B/C and hexagon/bent-octagon tiling remain teacher-reviewed. First-party independent source-aligned graphics do not copy original artwork.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s compare the size of shapes.",
         "sourceLearningGoals": "Describe the relative size of plane figures in their own language.",
         "teachingSteps": [
-          "Start with the three original dot figures: the first uninspected figure, four rows of three and four rows of five. Accept multiple correct row/column counting explanations.",
+          "Three original 2021 warm-up figures inspected: 2 rows of 4 (8), 4 rows of 3 (12), and 4 rows of 5 (20). Write both row/column reasoning where possible.",
           "Compare the published low-wide and tall-thin triangles, two ovals, hexagon-versus-triangle and two rectangles using actual images and explanations, not height alone.",
           "Use paper cutouts, overlays or same-sized reference pieces to compare the 2D region covered.",
           "With pattern blocks, compare the source hexagon and bent octagon outline, then tiled outlines A (pentagon), B (parallelogram) and C (rectangle).",
           "Conclude that area is how much two-dimensional space a region covers; review any conflict between shape length and covered space."
         ],
-        "caution": "The available original figures (triangle pairs, rectangles and pattern-block outlines) have NOT been pixel-inspected or compared against student task PDFs. Scalar measurements or guesses from alt text do not prove greater area. All original shape comparisons remain teacher-reviewed.",
+        "caution": "All ten original source images, 2021 3-page student PDF and 2-page printable pattern-block blackline master were inspected. First-party independent shapes are NOT replicas of publisher artwork, and source shape/cutout comparisons still demand teacher review.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -2748,8 +2748,8 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-1/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_2021_STUDENT_PDF_TEACHER_PREP_10_VISUAL_ASSETS_AND_PATTERN_BLOCK_MASTER",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -2757,9 +2757,9 @@
         {
           "id": "G3-U02-L01-WU-ORIGINAL-01",
           "sourceActivity": "Warm-up: How Many Do You See Arrays",
-          "prompt": "Look at the first original dot figure. Count and explain different groupings; its exact arrangement must be inspected with the teacher.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "The original 2021 first dot array has two horizontal rows of four blue dots. Count all dots, and explain how the SAME original source picture gives 2 × 4 and 4 × 2.",
+          "answerType": "integer",
+          "expected": "8"
         },
         {
           "id": "G3-U02-L01-WU-02",
@@ -2824,7 +2824,17 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "source2021Original": {
+        "studentPdfUrl": "https://cms-assets.illustrativemathematics.org/rcv93oc4vg8eips56bydjcobbyva",
+        "studentPdfPagesRead": 3,
+        "studentPdfSha256": "14848aca1cab6eb2fd68895a8a8a714c23cf5a4e248e25d31e168adcabb1b8e3",
+        "originalFigureCountInspected": 10,
+        "patternBlockBlacklineZipSha256": "ee67cc585778301aaa43a7f6d46c2d7a468a8aeb4b4219d1f73b1fbfa8f1da82",
+        "patternBlockMasterPdfSHA256": "2dc1b8754c1d556df8afa8d6e3307145b5b8b55115cc3844b70a7c40d4b31322",
+        "blacklinePagesRead": 2,
+        "rightsOriginalPixelsReused": false
+      }
     },
     {
       "ordinal": 23,
