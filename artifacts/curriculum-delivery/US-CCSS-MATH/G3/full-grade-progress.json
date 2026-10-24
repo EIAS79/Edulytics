@@ -238,7 +238,7 @@
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L02.json",
       "reasons": [
         "Publisher-original teacher-login How Much Taller? Cool-down cannot be 1:1 compared; the separately written Edulytics Cool-down is not a reproduction.",
-        "Three optional center blackline-master gameboards/recording sheets have not been visually inspected although their original 2021 public HTML rules are read.",
+        "Original teacher-stage center source links resolve to ZIPs containing different stage-labelled PDFs (Target Numbers stage6→stage1; Five in a Row stage8→stages1-2; Rectangle Rumble stage2→stage1). Correct original stage-specific blackline masters cannot be verified from these public links; do not mislabel or copy.",
         "Four 2021 publisher photos were visually inspected but not copied; third-party license compliance for any embedding is not approved, so physical-art parity remains unclaimed.",
         "Page1 original PDF tables were text-read and the source arithmetic/structure mapped; precise rendered-grid pixel-equivalence was not established.",
         "Journal, oral pair discussion and base-ten hands-on source tasks require human teacher observation, not scalar automatic certification.",
@@ -2769,14 +2769,16 @@
       "original2021FigurePixelParityApproved": false,
       "readyForStageD": false,
       "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json",
-      "sourceMatchingMeasurementScope": "OFFICIAL_FOUR_PAGE_2021_SOURCE_PDF_VERIFIED_TEACHER_GATED_COOLDOWN_AND_OPTIONAL_CENTER_GAMEBOARDS_NOT_VERIFIED",
+      "sourceMatchingMeasurementScope": "FOUR_PAGE_STUDENT_PDF_INSPECTED_BUT_3_OFFICIAL_CENTER_STAGE_BLM_ZIPS_MISMATCH_AND_COOLDOWN_GATED",
       "authoredCandidateReviewStatus": "A_B_C_SOURCE_SPECIFIC_CORRECTIONS_COMMITTED_BUT_EXTERNAL_SOURCE_GAPS_REMAIN",
       "testsWrittenNotRun": true,
       "originalStudentTaskPdfRead": true,
       "originalStudentTaskPdfPages": 4,
       "originalStudentTaskPdfSha256": "ce1fa255f1f21511696f0951fabd063a5954b0881b421ff346de19ead64829b1",
       "originalOriginalPublisherPhotosIndividuallyInspected": 4,
-      "sourceElementsSemanticallyMappedForAuthoring": 16
+      "sourceElementsSemanticallyMappedForAuthoring": 16,
+      "originalCenterLinksStageMismatchVerified": true,
+      "original2021CenterExpectedBlmVerified": false
     },
     {
       "gradeOrdinal": 39,
@@ -5858,7 +5860,8 @@
     "2026-10-24 sequential ordinals 38–41 U03:L02–L05: source-specific guarded Rich V2, Razor companions, 14 source subtasks each, source numeric and open teacher contracts, and unrun regression cases committed separately. All four remain A_C_EXPLICIT_GAP because original publisher student PDFs, artwork, gated Cool-down and center documents not fully source-compared; no Stage D/CI/manual test, academic approval, merge, deploy. Verified READY_FOR_STAGE_D remains 37, first unclosed 38.",
     "2026-10-24 sequential ordinal 42 U03:L06 authored guarded Rich V2, Razor partial, 14 official numeric anchors, four teacher-led tasks, original mathematical contexts and unrun tests. Publisher original PDF fetch cache-missed, art/Cool-down/gameboards remain unverified. Remains A_C_EXPLICIT_GAP. Verified A-C closed stays37, first unclosed38, no Stage D manual CI/tests/merge/deploy.",
     "2026-10-24 45-143 sequential source-intake pass (NOT lesson-by-lesson verified A-B-C closure): source-indexed public Student Facing HTML, simple scalar candidates, original-section teacher prompts, per-lesson gap maps and guarded English RichV2 teaching drafts. PDF/media/Cool-down and individual full source parity absent. All 45-143 remain A_C_EXPLICIT_GAP, Stage D/CI/manual runtime tests not dispatched. Verified readiness remains37.",
-    "2026-10-24 L38 source follow-up: authorized local first-edition 2021 preparation revealed official current CMS original four-page student PDF. Verified all 4 pages, 4 original photos and all word problems; previous '3 pages and PDF unavailable' statement corrected. Reviewed Target Numbers stage6, Five-in-a-Row stage8 and Rectangle Rumble stage2 source HTML. Closed NO A-C lesson: original teacher-gated Cool-down and original gameboard masters/rights remain unverified; tests not run."
+    "2026-10-24 L38 source follow-up: authorized local first-edition 2021 preparation revealed official current CMS original four-page student PDF. Verified all 4 pages, 4 original photos and all word problems; previous '3 pages and PDF unavailable' statement corrected. Reviewed Target Numbers stage6, Five-in-a-Row stage8 and Rectangle Rumble stage2 source HTML. Closed NO A-C lesson: original teacher-gated Cool-down and original gameboard masters/rights remain unverified; tests not run.",
+    "2026-10-24 follow-up L38: original 2021 source center public HTML stage6/8/2 ZIP assets downloaded read-only from publisher, SHA recorded. Target Numbers Stage6 ZIP contains a Stage1 sheet; Five-in-a-Row Stage8 ZIP contains stages1-2 board; Rectangle Rumble Stage2 ZIP contains Stage1 grid/spinner. These cannot substantiate original correct-stage BLM parity. Preserve A_C_EXPLICIT_GAP; no jump to L39."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -6447,9 +6450,9 @@
   "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U08:L15",
   "lastAttemptNotClosure": {
     "ordinal": 38,
-    "authoringCorrectionsCommitted": true,
     "areClosed": false,
-    "remainingEvidence": "Publisher teacher-login Cool-down, three original center gameboards, authentic teacher observations and full material parity",
+    "reason": "Publisher 2021 teacher-login Cool-down unavailable; three public source center blackline ZIPs do not contain the requested stage-specific gameboard files",
+    "originalStudentPdfVerified": true,
     "testsRun": false,
     "stageD": "NOT_STARTED"
   },

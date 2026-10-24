@@ -234,40 +234,52 @@
       "id": "CENTER-1",
       "sourceSection": "Suggested optional center",
       "mathematics": null,
-      "coverage": "MATCHED_TEACHER_LED",
+      "coverage": "SOURCE_UNAVAILABLE",
       "firstPartyLocator": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
       "sourceTeacherPublicReviewed": true,
       "originalStudentTaskPdfVerified": false,
       "sourceArtifactOrRights": "UNVERIFIED_ORIGINAL_GAME_MATERIAL",
       "notes": "Referenced for teacher access, no claim the board has been inspected: Target Numbers stage 6",
       "originalCenter2021HtmlTextInspected": true,
-      "originalCenterGameboardOriginalPdfNotInspected": true
+      "originalCenterGameboardOriginalPdfNotInspected": true,
+      "publisherLinkedBlmZipInspected": true,
+      "expectedStageBlmVerified": false,
+      "publisherLinkedBlmZipSha256": "26e04f26984b5c8a41afea86faa45f838065601bcac8ef982e9e0b514525a2e1",
+      "originalGameboardPdfReviewed": false
     },
     {
       "id": "CENTER-2",
       "sourceSection": "Suggested optional center",
       "mathematics": null,
-      "coverage": "MATCHED_TEACHER_LED",
+      "coverage": "SOURCE_UNAVAILABLE",
       "firstPartyLocator": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
       "sourceTeacherPublicReviewed": true,
       "originalStudentTaskPdfVerified": false,
       "sourceArtifactOrRights": "UNVERIFIED_ORIGINAL_GAME_MATERIAL",
       "notes": "Referenced for teacher access, no claim the board has been inspected: Five in a Row stage 8",
       "originalCenter2021HtmlTextInspected": true,
-      "originalCenterGameboardOriginalPdfNotInspected": true
+      "originalCenterGameboardOriginalPdfNotInspected": true,
+      "publisherLinkedBlmZipInspected": true,
+      "expectedStageBlmVerified": false,
+      "publisherLinkedBlmZipSha256": "76e4e2eef0a8fac2f41ab8a86ad0095b9297f3db1958bab909abe604bc6d1605",
+      "originalGameboardPdfReviewed": false
     },
     {
       "id": "CENTER-3",
       "sourceSection": "Suggested optional center",
       "mathematics": null,
-      "coverage": "MATCHED_TEACHER_LED",
+      "coverage": "SOURCE_UNAVAILABLE",
       "firstPartyLocator": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
       "sourceTeacherPublicReviewed": true,
       "originalStudentTaskPdfVerified": false,
       "sourceArtifactOrRights": "UNVERIFIED_ORIGINAL_GAME_MATERIAL",
       "notes": "Referenced for teacher access, no claim the board has been inspected: Rectangle Rumble stage 2",
       "originalCenter2021HtmlTextInspected": true,
-      "originalCenterGameboardOriginalPdfNotInspected": true
+      "originalCenterGameboardOriginalPdfNotInspected": true,
+      "publisherLinkedBlmZipInspected": true,
+      "expectedStageBlmVerified": false,
+      "publisherLinkedBlmZipSha256": "581a4c369e584c923a1ecc1e0a165fbf1e435034e850c8ca28f2f77ce0221a9e",
+      "originalGameboardPdfReviewed": false
     }
   ],
   "sourceElementCounts": {
@@ -305,7 +317,7 @@
   "state": "A_C_EXPLICIT_GAP",
   "openGaps": [
     "Publisher-original teacher-login How Much Taller? Cool-down cannot be 1:1 compared; the separately written Edulytics Cool-down is not a reproduction.",
-    "Three optional center blackline-master gameboards/recording sheets have not been visually inspected although their original 2021 public HTML rules are read.",
+    "Original teacher-stage center source links resolve to ZIPs containing different stage-labelled PDFs (Target Numbers stage6→stage1; Five in a Row stage8→stages1-2; Rectangle Rumble stage2→stage1). Correct original stage-specific blackline masters cannot be verified from these public links; do not mislabel or copy.",
     "Four 2021 publisher photos were visually inspected but not copied; third-party license compliance for any embedding is not approved, so physical-art parity remains unclaimed.",
     "Page1 original PDF tables were text-read and the source arithmetic/structure mapped; precise rendered-grid pixel-equivalence was not established.",
     "Journal, oral pair discussion and base-ten hands-on source tasks require human teacher observation, not scalar automatic certification.",
@@ -389,5 +401,38 @@
   "originalStudentTaskPdfRead": true,
   "originalStudentTaskPdfPageCount": 4,
   "originalPrintedSourceContentRead": true,
-  "authoringClosure": "A_C_EXPLICIT_GAP"
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "sourceOriginalCenterBlacklineMasterZipAudit": [
+    {
+      "requested": "Target Numbers Stage 6 Recording Sheet",
+      "canonicalUrl": "https://cms-assets.illustrativemathematics.org/kg378v63ltca0fzh8bm6ua9m0ig5",
+      "sha256": "26e04f26984b5c8a41afea86faa45f838065601bcac8ef982e9e0b514525a2e1",
+      "zipEntries": [
+        "center-target-numbers-1-5-stage-1-add-ones-target-numbers-stage-1-recording-sheet.pdf",
+        "cover_sheet.pdf"
+      ],
+      "mismatch": "Source stage6 page links a ZIP containing a stage1-labelled recording sheet only; no stage6 sheet verified."
+    },
+    {
+      "requested": "Five in a Row Addition/Subtraction Stage 8 Gameboard",
+      "canonicalUrl": "https://cms-assets.illustrativemathematics.org/a901gxbf73kbjmoqgfx9yesshc1k",
+      "sha256": "76e4e2eef0a8fac2f41ab8a86ad0095b9297f3db1958bab909abe604bc6d1605",
+      "zipEntries": [
+        "center-five-in-a-row-addition-and-subtraction-1-2-stage-1-add-1-or-2-five-in-a-row-addition-and-subtraction-stages-1-and-2-gameboard.pdf",
+        "cover_sheet.pdf"
+      ],
+      "mismatch": "Source stage8 page links a ZIP whose gameboard is labelled stages1-2; no stage8 gameboard verified."
+    },
+    {
+      "requested": "Rectangle Rumble Stage 2 Grid and Spinner",
+      "canonicalUrl": "https://cms-assets.illustrativemathematics.org/yg18aq04asihgbvddz4c8u1cyjim",
+      "sha256": "581a4c369e584c923a1ecc1e0a165fbf1e435034e850c8ca28f2f77ce0221a9e",
+      "zipEntries": [
+        "center-rectangle-rumble-3-5-stage-1-factors-1-2-5-and-10-rectangle-rumble-stage-1-grid.pdf",
+        "center-rectangle-rumble-3-5-stage-1-factors-1-2-5-and-10-rectangle-rumble-stage-1-spinner.pdf",
+        "cover_sheet.pdf"
+      ],
+      "mismatch": "Source stage2 page links a ZIP whose grid/spinner filenames are labelled stage1; no stage2 master verified."
+    }
+  ]
 }
