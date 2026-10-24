@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-16/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "FULL_2021_PUBLIC_TEXT_AND_PHYSICAL_SOURCE_TASKS_MAPPED_ORIGINAL_IMAGE_ASSETS_UNVERIFIED",
     "goals": "Build arrays with physical objects and describe them in terms of multiplication. Describe an array as an arrangement of objects into rows with an equal number of objects in each row and into columns with an equal number in each column.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 2,
@@ -30,7 +30,7 @@
     "publishedOriginalArtworkInspected": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "L16_SOURCE_SPECIFIC_RICH_V2_2021_PHYSICAL_ARRAYS_AUTHORED_UNVERIFIED_RUNTIME",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -41,10 +41,11 @@
     "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "firstPartyDotsSixRowsByFiveColumnsAuthored": true,
-    "sourceOriginalVisualNotDuplicated": true
+    "sourceOriginalVisualNotDuplicated": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SEVEN_SOURCE_STUDENT_TASKS_AND_OPTIONAL_COOLDOWN_TEACHER_ONLY_NO_NUMERIC_PASS_UNRUN_TESTS",
     "family": "arrays-commutative",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -59,7 +60,9 @@
     "edulyticsCoolDownNowTeacherOnly": true,
     "all7SourceHumanRepresentationSubtasksSeparated": true,
     "regressionWrittenButNotRun": true,
-    "originalSourceNumericCoverageClaimed": false
+    "originalSourceNumericCoverageClaimed": false,
+    "sourceTaskTeacherOnly": 7,
+    "sourceHumanReviewTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs"
   },
   "sourceElements": [
     {
@@ -153,17 +156,18 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "The seven original public L16 tasks rely on physical constructions and source drawings, which cannot be certified by numeric grading; first-party six-row by five-dot example is authored but no rendering, original images, student task PDFs or published Rich V2 were verified."
+    "Original 2021 warm-up 12-egg and Activity 1 dot-array source image bytes/pixel geometry were not verified.",
+    "Original 2021 Student Task PDF remains unread in this authoring checkpoint.",
+    "Actual student manipulation of physical cubes, multiple correct arrays and oral response require teacher classroom evidence.",
+    "Original publisher 2021 Cool-down access remains restricted; only a first-party equivalent has been authored.",
+    "Rich V2 resource is code-authored but not compiled, rendered or confirmed as the effective published learner body.",
+    "All new .NET tests are written and intentionally NOT_RUN; Stage D and academic sign-off remain outstanding."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "elementLevelEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-16-2021-physical-array-source-evidence-20261024.json",
+  "originalSourceTaskElementCountGranular": 9
 }
