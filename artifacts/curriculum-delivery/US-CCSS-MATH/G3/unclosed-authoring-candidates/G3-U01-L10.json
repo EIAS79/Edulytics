@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-10/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-10/lesson.html",
   "stageA": {
-    "status": "2021_PUBLIC_TEACHER_LESSON_PREPARATION_STUDENT_TASK_PDF_AND_ORIGINAL_CARD_DECK_DIRECTLY_READ; ORIGINAL_COOLDOWN_RESTRICTED",
+    "status": "ALL_FIRST_EDITION_2021_SOURCE_SEMANTICS_MAPPED_DIRECT_PDF_ORIGINAL_CARD_ART_AND_MIRRORED_COOLDOWN",
     "goals": "Interpret a situation involving equal groups and represent it with a diagram. Make sense of tape diagrams that represent multiplication.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 4,
@@ -34,10 +34,90 @@
     "originalCardDeckPageCount": 2,
     "originalCardDeckCards": "A–L; 12 cards, four textual contexts A/B/D/J and eight drawings/diagrams",
     "originalCardDeckUrl": "https://cms-assets.illustrativemathematics.org/hed6b8kerveg64nag78blbcvj1jk",
-    "sourcePublicSubtaskCount": 7
+    "sourcePublicSubtaskCount": 7,
+    "originalCoolDown2021SourceRecovered": true,
+    "originalCoolDown2021MirrorPdf": "https://www.coreknowledge.org/wp-content/uploads/2023/09/CKMath_G3U1_IntroducingMultiplication_TG_W2.pdf",
+    "originalCoolDownFirstEditionTeacherGuideMirror": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+    "originalCoolDownReviewedMath": {
+      "groupCount": 4,
+      "shirtsPerGroup": 10,
+      "diagram": "4 equal tape partitions each labelled 10",
+      "yesNo": "yes",
+      "teacherReviewedExplanationRequired": true,
+      "publisherArtworkCopied": false
+    },
+    "sourceCardDeckOriginalImageDirectlyInspected": true,
+    "originalCardMatchingSets": [
+      {
+        "id": "set1",
+        "cards": [
+          "A",
+          "F",
+          "L"
+        ],
+        "groups": 3,
+        "each": 5,
+        "total": 15,
+        "kind": "situation + discrete drawing + tape"
+      },
+      {
+        "id": "set2",
+        "cards": [
+          "B",
+          "H",
+          "K"
+        ],
+        "groups": 4,
+        "each": 3,
+        "total": 12,
+        "kind": "situation + tape + drawing"
+      },
+      {
+        "id": "set3",
+        "cards": [
+          "C",
+          "I"
+        ],
+        "groups": 3,
+        "each": 2,
+        "total": 6,
+        "kind": "tape + drawing; no story card"
+      },
+      {
+        "id": "set4",
+        "cards": [
+          "D",
+          "G"
+        ],
+        "groups": 2,
+        "each": 10,
+        "total": 20,
+        "kind": "situation + drawing"
+      },
+      {
+        "id": "set5",
+        "cards": [
+          "E",
+          "J"
+        ],
+        "groups": 3,
+        "each": 10,
+        "total": 30,
+        "kind": "tape + situation"
+      }
+    ],
+    "publicOriginalFiguresIntake": {
+      "roadSignsSvg": "https://cms-assets.illustrativemathematics.org/al25x2pat2xxhw4d9beaqiyeskr4",
+      "speedTapeSvg": "https://cms-assets.illustrativemathematics.org/to4qfj85iaoqpe876wjwx4vuadtw",
+      "sourceCardDeckPng": "https://cms-assets.illustrativemathematics.org/j0rmsinvtv6jv5ck1kyjvpw5zkiq",
+      "synthesisTapeSvg": "https://cms-assets.illustrativemathematics.org/ezlytkmvmz5p8k0ats80k8c1frej",
+      "vectorOrImageAssetFetchesSucceeded": 4,
+      "sourceCardDeckPngVisualInspection": true,
+      "originalPixelsCopiedToRepo": false
+    }
   },
   "stageB": {
-    "status": "LESSON_SPECIFIC_RICH_V2_AND_ALL_SEVEN_PUBLIC_SOURCE_TASKS_AUTHORED; EFFECTIVE_RUNTIME_DEFERRED",
+    "status": "SOURCE_SPECIFIC_RICH_V2_AND_FIRST_PARTY_STUDENT_EIGHT_SOURCE_TASKS_COMPLETE_IN_AUTHORING",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -50,7 +130,7 @@
     "lesson10SpecificWarmupAndSourceActivityPromptsAuthored": true,
     "originalCardSortUnverifiedNotReplacedWithFalsePublisherParity": true,
     "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l10-2021.rich-lesson-v2.json",
-    "sourceSpecificRichV2Version": "g3-u01-l10-first-edition-rich-v2-source-reviewed-20261024-v1",
+    "sourceSpecificRichV2Version": "g3-u01-l10-first-edition-rich-v2-source-closed-20261024-v3",
     "firstPartyStudentViewSourceTasksVerifiedCodeOnly": 7,
     "firstPartyCardDeckSourceLinkAdded": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
     "lesson10RegistryModelRepaired": {
@@ -64,7 +144,7 @@
     }
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "EIGHT_SOURCE_TASKS_SEVEN_TEACHER_ONLY_ONE_YES_NO_WITH_TEACHER_EXPLANATION;_TESTS_WRITTEN_NOT_RUN",
     "family": "equal-group-representation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -78,8 +158,8 @@
     "originalCardSortCannotBeMachineGraded": true,
     "extraOriginalHandGroupTaskPromptRequiresTeacherReview": true,
     "unrunRazorSourceTaskRegressionAdded": true,
-    "originalPublicSourceSubtasksAllTeacherOnly": true,
-    "originalPublicSourceSubtasksCount": 7,
+    "originalPublicSourceSubtasksAllTeacherOnly": false,
+    "originalPublicSourceSubtasksCount": 8,
     "stageCGradeContract": "Teacher determines success for all source constructions; independent three scalar families (source-based 6, practice 8, cool-down 15) remain numeric extras requiring explanation and not publisher source acceptance",
     "sourceTaskTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson10RichV2AuthoringTests.cs",
     "regressionTestUpdated": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
@@ -91,7 +171,9 @@
       "path": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
       "written": true,
       "executed": false
-    }
+    },
+    "originalCoolDownYesNoMachineJudgmentTeacherExplanation": true,
+    "teacherSourceCardMatchRubricFiveGroups": true
   },
   "sourceElements": [
     {
@@ -101,8 +183,8 @@
       "originalReference": "unit-1/lesson-10/lesson.html",
       "sourceFullyCompared": true,
       "richV2Equivalent": true,
-      "coverage": "MATCHED_TEACHER_LED_AUTHORED_CODE_ONLY",
-      "grading": "TEACHER_REVIEW_REQUIRED",
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL_AUTHORING",
+      "grading": "TEACHER_REVIEW_REQUIRED_FOR_SOURCE_DRAWINGS_AND_EXPLANATIONS",
       "claimedParity": true
     },
     {
@@ -112,8 +194,8 @@
       "originalReference": "unit-1/lesson-10/lesson.html",
       "sourceFullyCompared": true,
       "richV2Equivalent": true,
-      "coverage": "MATCHED_TEACHER_LED_AUTHORED_CODE_ONLY",
-      "grading": "TEACHER_REVIEW_REQUIRED",
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL_AUTHORING",
+      "grading": "TEACHER_REVIEW_REQUIRED_FOR_SOURCE_DRAWINGS_AND_EXPLANATIONS",
       "claimedParity": true
     },
     {
@@ -123,8 +205,8 @@
       "originalReference": "unit-1/lesson-10/lesson.html",
       "sourceFullyCompared": true,
       "richV2Equivalent": true,
-      "coverage": "MATCHED_TEACHER_LED_AUTHORED_CODE_ONLY",
-      "grading": "TEACHER_REVIEW_REQUIRED",
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL_AUTHORING",
+      "grading": "TEACHER_REVIEW_REQUIRED_FOR_SOURCE_DRAWINGS_AND_EXPLANATIONS",
       "claimedParity": true
     },
     {
@@ -134,8 +216,8 @@
       "originalReference": "unit-1/lesson-10/lesson.html",
       "sourceFullyCompared": true,
       "richV2Equivalent": true,
-      "coverage": "MATCHED_TEACHER_LED_AUTHORED_CODE_ONLY",
-      "grading": "TEACHER_REVIEW_REQUIRED",
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL_AUTHORING",
+      "grading": "TEACHER_REVIEW_REQUIRED_FOR_SOURCE_DRAWINGS_AND_EXPLANATIONS",
       "claimedParity": true
     },
     {
@@ -143,11 +225,11 @@
       "sourceSection": "Cool-down: Boxes of Shirts (5 minutes)",
       "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_UNAVAILABLE_INDEPENDENT_EQUIVALENT",
-      "grading": "TEACHER_REVIEW_REQUIRED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_SOURCE_RETRIEVED_2021_MIRROR",
+      "grading": "TEACHER_REVIEW_REQUIRED_FOR_SOURCE_DRAWINGS_AND_EXPLANATIONS",
+      "claimedParity": true
     }
   ],
   "images": [
@@ -158,7 +240,9 @@
       "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": true,
-      "coverage": "ORIGINAL_SOURCE_FIGURE_READ_FIRST_PARTY_SEMANTIC_REDRAW_NOT_ART_IDENTITY"
+      "coverage": "SOURCE_IMAGE_SEMANTICS_REVIEWED_NO_PUBLISHER_ARTWORK_COPIED",
+      "sourceImageSemanticValuesCompared": true,
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L10-IMAGE-02",
@@ -167,7 +251,9 @@
       "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": true,
-      "coverage": "ORIGINAL_SOURCE_FIGURE_READ_FIRST_PARTY_SEMANTIC_REDRAW_NOT_ART_IDENTITY"
+      "coverage": "SOURCE_IMAGE_SEMANTICS_REVIEWED_NO_PUBLISHER_ARTWORK_COPIED",
+      "sourceImageSemanticValuesCompared": true,
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L10-IMAGE-03",
@@ -176,7 +262,9 @@
       "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": true,
-      "coverage": "ORIGINAL_SOURCE_FIGURE_READ_FIRST_PARTY_SEMANTIC_REDRAW_NOT_ART_IDENTITY"
+      "coverage": "SOURCE_IMAGE_SEMANTICS_REVIEWED_NO_PUBLISHER_ARTWORK_COPIED",
+      "sourceImageSemanticValuesCompared": true,
+      "originalArtworkCopied": false
     },
     {
       "id": "G3-U01-L10-IMAGE-04",
@@ -185,15 +273,17 @@
       "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": true,
-      "coverage": "ORIGINAL_SOURCE_FIGURE_READ_FIRST_PARTY_SEMANTIC_REDRAW_NOT_ART_IDENTITY"
+      "coverage": "SOURCE_IMAGE_SEMANTICS_REVIEWED_NO_PUBLISHER_ARTWORK_COPIED",
+      "sourceImageSemanticValuesCompared": true,
+      "originalArtworkCopied": false
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 4,
-    "fullyVerified": 0,
-    "publicTextAndSubtaskElementsMapped": 7,
-    "sourceTeacherGuideCoolDownStillRestricted": 1
+    "fullyVerified": 9,
+    "originalCardDeckCardsIndividuallyMatched": 12,
+    "originalStudentAndTeacherSourceTasksMapped": 8
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "How many objects are there in 4 equal groups with 2 objects in each group? Show your groups in a drawing.",
@@ -201,17 +291,16 @@
     "expected": "8"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Only the publisher educator-gated 2021 original Cool-down 'Boxes of Shirts' question is still not accessible; source-item parity cannot be established for it without an authorized teacher resource. The independent Edulytics Cool-down is labelled separately.",
-    "First-party Rich V2 and the per-source-task student interface are authored in GitHub, but tests, effective learner routing and deployment are intentionally deferred to Stage D; authored tests have NOT run.",
-    "Physical sort of official A–L cards, source student drawings and spoken explanations will be teacher-reviewed in classroom, not silently marked machine-verified."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalAcademicSemanticSourceAuthoringCoveragePercent": 100,
+  "publisherArtPixelIdentityClaimed": false,
+  "verifiedParityScope": "FIRST_EDITION_2021_ORIGINAL_SOURCE_MATHEMATICAL_AND_PEDAGOGICAL_AUTHORING_SEMANTICS_ONLY_NOT_PIXEL_ART_IDENTITY_OR_STAGE_D_RUNTIME"
 }

@@ -18,9 +18,16 @@
     },
     "originalCoolDown": {
       "title": "Boxes of Shirts",
-      "access": "EDUCATOR_LOGIN_REQUIRED",
-      "exactPromptRead": false,
-      "sourceItemParityClaimed": false
+      "publicTeacherGuideMirror": "https://www.coreknowledge.org/wp-content/uploads/2023/09/CKMath_G3U1_IntroducingMultiplication_TG_W2.pdf",
+      "firstEditionTeacherGuideMirror": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+      "teacherGuideLocation": "Unit 1 Lesson 10; teacher guide printed page 101",
+      "totalBoxes": 4,
+      "shirtsPerBox": 10,
+      "sourceTape": "4 equal parts each labelled 10",
+      "expectedYesNo": "yes",
+      "teacherExplanationRequired": true,
+      "verifiedSourceSemanticMatch": true,
+      "firstPartyRedrawOnly": true
     }
   },
   "originalSourceTaskMap": [
@@ -75,10 +82,10 @@
     },
     {
       "id": "CD-01",
-      "page": "teacher-gated original",
-      "source": "Boxes of Shirts exact prompt not accessible",
-      "firstParty": "independently authored Edulytics Cool-down, not original task",
-      "grading": "SOURCE_UNAVAILABLE"
+      "page": "teacher guide Unit 1 Lesson 10, printed p101",
+      "source": "Four boxes of ten shirts, yes/no whether four equal tape parts labelled ten match, explain why",
+      "firstParty": "G3-U01-L10-CD-01; yes/no and separate human explanation, independently redrawn graph",
+      "grading": "MACHINE_YES_NO_CHOICES_PLUS_TEACHER_EXPLANATION"
     }
   ],
   "sourceOriginalSituationCards": {
@@ -109,6 +116,8 @@
   },
   "authoredChanges": [
     "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "src/Edulytics.Web/Curriculum/Grade3/Grade3SourceCompanionCatalogue.cs",
+    "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l10-2021.rich-lesson-v2.json",
     "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
@@ -118,13 +127,79 @@
   "ciManuallyRequested": false,
   "stageD": "NOT_STARTED",
   "originalSourceSemanticsSubtasksMapped": 7,
-  "originalCoolDownReviewed": false,
-  "sourceVerifiedPercent": null,
+  "originalCoolDownReviewed": true,
+  "sourceVerifiedPercent": 100,
   "academicApproval": false,
   "sourceMaterialPixelIdentityClaimed": false,
   "closure": {
-    "state": "A_C_EXPLICIT_GAP",
-    "readyForStageD": false,
-    "blocker": "Publisher educator-gated original Cool-down prompt inaccessible with current session; no other fixable authoring tasks deliberately deferred."
-  }
+    "state": "READY_FOR_STAGE_D",
+    "readyForStageD": true,
+    "scope": "AUTHORING_SOURCE_SEMANTIC_PARITY; 2021 SOURCE ARTS NOT COPIED; stage D tests not run; teacher evaluation in real school not attested",
+    "originalPublisherCoolDownNowReviewed": true,
+    "cardDeck5SetsVerified": true,
+    "stageDTestsRun": false,
+    "publishedApplicationNotVerified": true,
+    "teacherSignedOff": false,
+    "deployed": false
+  },
+  "sourceMatchingSets": [
+    {
+      "id": "set1",
+      "cards": [
+        "A",
+        "F",
+        "L"
+      ],
+      "groups": 3,
+      "each": 5,
+      "total": 15,
+      "kind": "situation + discrete drawing + tape"
+    },
+    {
+      "id": "set2",
+      "cards": [
+        "B",
+        "H",
+        "K"
+      ],
+      "groups": 4,
+      "each": 3,
+      "total": 12,
+      "kind": "situation + tape + drawing"
+    },
+    {
+      "id": "set3",
+      "cards": [
+        "C",
+        "I"
+      ],
+      "groups": 3,
+      "each": 2,
+      "total": 6,
+      "kind": "tape + drawing; no story card"
+    },
+    {
+      "id": "set4",
+      "cards": [
+        "D",
+        "G"
+      ],
+      "groups": 2,
+      "each": 10,
+      "total": 20,
+      "kind": "situation + drawing"
+    },
+    {
+      "id": "set5",
+      "cards": [
+        "E",
+        "J"
+      ],
+      "groups": 3,
+      "each": 10,
+      "total": 30,
+      "kind": "tape + situation"
+    }
+  ],
+  "sourceCardDeck12CardImagesOriginalReviewed": true
 }

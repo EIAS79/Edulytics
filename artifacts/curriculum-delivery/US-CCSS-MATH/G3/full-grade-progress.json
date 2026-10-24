@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 9,
+    "lessonsFullyReadyForStageD": 10,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 134,
+    "lessonsWithACExplicitGap": 133,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,40 +32,29 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 9,
+    "lessonsIndividuallyComparedToAllOriginalElements": 10,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 9,
+    "lessonsWithActualRichV2SourcePerfect": 10,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 0,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 104,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 113,
     "originalSvgGeometriesInspected": 3
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 9,
-    "firstUnclosedOrdinal": 10,
+    "lastConsecutiveReadyForStageDOrdinal": 10,
+    "firstUnclosedOrdinal": 11,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
   "returnQueue": [
-    {
-      "ordinal": 10,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L10",
-      "status": "A_C_EXPLICIT_GAP",
-      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L10.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
-    },
     {
       "ordinal": 11,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L11",
@@ -1812,13 +1801,13 @@
       "unitNumber": 1,
       "lessonNumber": 10,
       "title": "Drawings, Situations, and Diagrams, Oh My! PLC Activity",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_VISUAL_FIGURES_PENDING",
-      "stageB": "SOURCE_SKILL_AND_FIRST_PARTY_PRACTICE_AUTHORED_RICHV2_OPEN",
-      "stageC": "SOURCE_SKILL_AND_COOLDOWN_NUMERIC_CONTRACTS_PROPOSED_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "ORIGINAL_2021_SOURCE_TEACHER_STUDENT_TASK_PDF_CARD_DECK_AND_RECOVERED_COOLDOWN_SEMANTICALLY_MAPPED",
+      "stageB": "SOURCE_SPECIFIC_RICH_V2_AND_EIGHT_ORIGINAL_STUDENT_TEACHER_TASKS_AUTHORED",
+      "stageC": "SEVEN_TEACHER_ONLY_ONE_YES_NO_WITH_TEACHER_EXPLANATION_AND_WRITTEN_UNRUN_TESTS",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 9,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "fullyVerifiedSourceElements": 9,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L10.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -1830,7 +1819,19 @@
       "original2021FigureUrlCount": 7,
       "original2021FiguresWithoutAlt": 3,
       "original2021RelativeSvgReferences": 2,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": true,
+      "verifiedParityScope": "ACADEMIC_SEMANTIC_AUTHORING_ONLY_NO_COPY_OF_ORIGINAL_ART_NO_STAGE_D",
+      "richV2EmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l10-2021.rich-lesson-v2.json",
+      "originalSourceCardMatchingSets": [
+        "A-F-L",
+        "B-H-K",
+        "C-I",
+        "D-G",
+        "E-J"
+      ],
+      "originalOriginalCoolDownSourceRecovered": true,
+      "originalSourceTaskCount": 8
     },
     {
       "gradeOrdinal": 11,
@@ -5867,5 +5868,15 @@
     "richV2SidecarPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
     "checks": "AUTHORED_NOT_EXECUTED",
     "noReadinessPromotion": true
+  },
+  "lastClosure": {
+    "lessonCode": "PED:US-CCSS-MATH:G3:U01:L10",
+    "headBeforeCommit": "9aa5fe37869b8cc656f2d2e40ab8e50716cb2159",
+    "state": "READY_FOR_STAGE_D",
+    "sourceElements": 9,
+    "originalCardDeckSets": 5,
+    "originalStudentTeacherSourceTasks": 8,
+    "unrunTests": true,
+    "semanticScopeOnly": true
   }
 }
