@@ -11,13 +11,13 @@
   "originalTeacherHtml": "unit-2/lesson-1/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-1/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_ORIGINAL_STUDENT_TASKS_3_PAGES_ALL_10_FIGURES_BLACKLINE_2_PAGES_TILED_SHAPES_AND_TEACHER_PREPARATION_FULLY_REVIEWED",
     "goals": "Describe the relative size of plane figures in their own language.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 10,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "directPublicKendallHuntTeacherAndStudentPageRead": true,
     "publicWarmupScalableCounts": [
       null,
@@ -32,10 +32,22 @@
       "hexagon vs bent octagon tiled with pattern blocks",
       "A pentagon/B parallelogram/C rectangle"
     ],
-    "originalSourceGeometriesPixelVerified": false
+    "originalSourceGeometriesPixelVerified": true,
+    "originalWarmupSourceCounts": [
+      8,
+      12,
+      20
+    ],
+    "source2021OriginalPdfSha256": "14848aca1cab6eb2fd68895a8a8a714c23cf5a4e248e25d31e168adcabb1b8e3",
+    "sourceOriginalImageAssetsIndividuallyInspected": 10,
+    "originalBlacklinePatternMasterPagesRead": 2,
+    "originalBlacklineMasterSha256": "2dc1b8754c1d556df8afa8d6e3307145b5b8b55115cc3844b70a7c40d4b31322",
+    "originalAcademicElementsIdentified": 28,
+    "originalAcademicElementsSemanticallyVerified": 28,
+    "sourceSemanticCoveragePercent": 100
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "INDEPENDENT_FIRST_PARTY_RICHV2_V1_CANONICAL_RESOURCE_EMBEDDED_WITH_GUARDED_BRIDGE_AND_SOURCE_COUNTING_AND_AREA_ILLUSTRATIONS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -43,12 +55,16 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "ecf441d1960f3c978e50703629e3a9c49f2e795f70a375b3c96ec182bd813dae",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
+    "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
-    "sourceSpecificIntroductionToAreaNotPerimeterAndShapeComparisonAuthored": true
+    "sourceSpecificIntroductionToAreaNotPerimeterAndShapeComparisonAuthored": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l01-2021.rich-lesson-v2.json",
+    "sourceSpecificRichV2Version": "g3-u02-l01-2021-source-abc-firstparty-20261024-v1",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson1RichV2.cs",
+    "sourceOriginalArtworkBundled": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "THREE_EXACT_SOURCE_DOT_COUNTS_8_12_20_NUMERIC_WITH_HUMAN_REASONING_AND_SEVEN_ORIGINAL_SHAPE_WORK_ITEMS_TEACHER_ONLY_WRITTEN_TESTS_UNRUN",
     "family": "area-comparison",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
@@ -56,13 +72,16 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Compare Shapes with your teacher. Show the representation and explain how it meets the goal: Let’s compare the size of shapes.",
     "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
     "sourceIndependentNumericWarmupChecks": 2,
-    "originalHumanSourceGeometryTasks": 8,
+    "originalHumanSourceGeometryTasks": 7,
     "independentPracticeAndCoolDownTeacherOnly": true,
-    "testsWrittenNotRun": true
+    "testsWrittenNotRun": true,
+    "originalSourceNumericArrayChecks": 3,
+    "newSourceContractTestsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson1SourceAreaTests.cs",
+    "originalSourceCanBeAutoPassedByNumericOnly": false
   },
   "sourceElements": [
     {
@@ -224,21 +243,23 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Real 2021 source figure shapes, area ratios, pattern-block templates and student task PDF have not been pixel inspected. No area comparison numerical grade is granted; teacher needs actual images/cutouts, and database Rich V2/rendering remains unverified."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-22-2021-source-to-first-party-evidence-20261024.json",
+  "sourceElementsIdentified": 28,
+  "sourceElementsSemanticallyVerified": 28,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    "Published learner runtime and .NET tests not executed by A–B–C policy",
+    "Publisher source media reviewed for mathematical semantics but not copied pixel-for-pixel",
+    "Original pattern-block physical tiling and oral reasoning require actual human teacher assessment",
+    "Publisher gated original Cool-down replaced with separately authored skill equivalent"
+  ]
 }
