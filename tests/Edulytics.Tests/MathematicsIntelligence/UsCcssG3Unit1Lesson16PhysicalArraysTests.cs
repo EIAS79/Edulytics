@@ -26,7 +26,7 @@ public sealed class UsCcssG3Unit1Lesson16PhysicalArraysTests
         Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(
             lesson.OriginalEdulyticsCoolDown,"24").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD);
     }
 
     [Fact]
@@ -77,6 +77,11 @@ public sealed class UsCcssG3Unit1Lesson16PhysicalArraysTests
         Assert.Contains("60 or more connecting cubes for EACH PAIR",rich);
         Assert.Contains("MLR8 Discussion Supports",rich);
         Assert.Contains("Five in a Row: Multiplication Stage 1",rich);
+        var razor=ReadSource("src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml");
+        Assert.Contains("Four independent groups of five dots",razor);
+        Assert.Contains("for(var egg=0;egg<12;egg++)",razor);
+        Assert.Contains("for(var cluster=0;cluster<4;cluster++)",razor);
+        Assert.Contains("for(var dot=0;dot<20;dot++)",razor);
     }
 
     [Fact]
@@ -96,7 +101,7 @@ public sealed class UsCcssG3Unit1Lesson16PhysicalArraysTests
         // Correctly calculating 6 x 5 = 30 alone is an optional supplement.
         Assert.NotNull(lesson.SourceBasedCheck);
         Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck!,"30").TeacherReview);
-        Assert.False(lesson.ReadyForStageD);
-        Assert.False(lesson.OriginalStudentTaskPdfRead);
+        Assert.True(lesson.ReadyForStageD);
+        Assert.True(lesson.OriginalStudentTaskPdfRead);
     }
 }
