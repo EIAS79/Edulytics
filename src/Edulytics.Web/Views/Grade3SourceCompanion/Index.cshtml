@@ -536,10 +536,50 @@
                 <h2>Warm-up: one fewer equal group each time</h2>
                 <p>Calculate 10 × 2, 9 × 2, 8 × 2 and 7 × 2, then explain why every next product is exactly two less.</p>
                 <h2>Source Activity 1: question co-crafting before the 7-row crayon task</h2>
-                <p>Before seeing the group size, pupils first learn only that there are seven rows. Pose different mathematical questions and discuss which information is still needed. The complete source has seven rows of five crayons: sketch the array, first write 7 × 5 = □ and then write 7 × 5 = 35.</p>
+                <p><strong>Phase 1 — source MLR5 Co-craft Questions:</strong> reveal only
+                    the information that there are SEVEN ROWS. Learners propose several
+                    mathematically sensible questions, decide what more they need,
+                    compare their questions, and write their initial explanations.
+                    The teacher controls when the rest of the story is shown.</p>
+                <details>
+                    <summary><strong>Phase 2 — reveal the remaining source information AFTER co-crafting</strong></summary>
+                    <p>Each of the seven rows contains five crayons. Draw the complete
+                        array using thirty-five objects and write first 7 × 5 = □,
+                        then separately 7 × 5 = 35. The question generation and drawn
+                        representation remain teacher-reviewed.</p>
+                    <div role="img" aria-label="Seven equal rows, each containing five independently drawn crayon-shaped counters."
+                         style="display:grid;grid-template-columns:repeat(5,15px);gap:7px;margin:12px 0">
+                        @for(var crayon=0;crayon<35;crayon++){
+                            <span aria-hidden="true" style="height:24px;width:12px;background:#bf7252;border-radius:5px 5px 2px 2px"></span>
+                        }
+                    </div>
+                </details>
                 <h2>Source Activity 2: two separate coconut-tree arrays</h2>
                 <p>The source has one grove with five rows of nine trees and Tyler's backyard with two rows of four trees. Model and solve each individually. Enter the FULL equation (including both factors and the product), and show how the question-mark version becomes the completed version. A numeric total alone does not satisfy an equation-writing task.</p>
-                <p>The original coconut-tree photograph may have third-party attribution; it is not reproduced here. Teacher checks actual diagrams and source question discussions.</p>
+                <h3>Two new Edulytics tree-array mathematical models</h3>
+                <p>Five rows of nine independently drawn tree tokens for the source grove
+                    and two rows of four tokens for the backyard. The original 2021
+                    coconut-grove photograph was reviewed as contextual media, not copied.
+                    Count the objects, then write one equality with a question mark
+                    and one COMPLETE solved equality for each problem.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:20px;margin:12px 0">
+                    <div><strong>Five rows with nine tree tokens each</strong>
+                        <div role="img" aria-label="Independent Edulytics model of five equal rows of nine trees."
+                             style="display:grid;grid-template-columns:repeat(9,13px);gap:6px;margin-top:8px">
+                            @for(var tree=0;tree<45;tree++){
+                                <span aria-hidden="true" style="width:11px;height:11px;border-radius:50% 50% 35% 35%;background:#41795d;border-bottom:3px solid #81674b"></span>
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Two rows with four tree tokens each</strong>
+                        <div role="img" aria-label="Independent Edulytics model of two rows of four trees."
+                             style="display:grid;grid-template-columns:repeat(4,13px);gap:6px;margin-top:8px">
+                            @for(var tree=0;tree<8;tree++){
+                                <span aria-hidden="true" style="width:11px;height:11px;border-radius:50% 50% 35% 35%;background:#41795d;border-bottom:3px solid #81674b"></span>
+                            }
+                        </div>
+                    </div>
+                </div>                <p>The original coconut-tree photograph may have third-party attribution; it is not reproduced here. Teacher checks actual diagrams and source question discussions.</p>
             </section>
         }
         @if(l.UnitNumber == 1 && l.LessonNumber == 20) {
