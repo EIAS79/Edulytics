@@ -11,14 +11,13 @@
   "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/preparation.html",
   "sourceMappingContract": "MATCHED_DIGITAL | MATCHED_TEACHER_LED | RIGHTS_RESTRICTED | SOURCE_UNAVAILABLE | MISMATCH_BLOCKED",
   "identifiedOriginalElements": 41,
-  "verifiedOriginalElementsForAuthoringSemantics": 40,
-  "coverageNumerator": 40,
+  "verifiedOriginalElementsForAuthoringSemantics": 41,
+  "coverageNumerator": 41,
   "coverageDenominator": 41,
-  "coveragePercent": 97.56,
+  "coveragePercent": 100,
   "statusCounts": {
-    "MATCHED_TEACHER_LED": 19,
     "MATCHED_DIGITAL": 21,
-    "SOURCE_UNAVAILABLE": 1
+    "MATCHED_TEACHER_LED": 20
   },
   "semanticCoverageDoesNotProveRuntimeOrLearnerMastery": true,
   "sourceArtworkOrPublisherCoolDownParityClaimed": false,
@@ -28,7 +27,7 @@
   "writtenUnrunTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs",
   "originalAssetsNotBundled": true,
   "readyForStageD": false,
-  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "authoringClosure": "A_B_C_FINAL_REVIEW_PENDING",
   "testsExecuted": false,
   "CIExecuted": false,
   "StageD": "NOT_STARTED",
@@ -643,28 +642,25 @@
     },
     {
       "id": "L15-STUDENT-PDF",
-      "sourceLocation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/preparation.html | Preparation",
+      "sourceLocation": "https://cms-assets.illustrativemathematics.org/0haxlif9ygkc2dmrb6jeafkfgjnv | 2021 first edition Student Task Statements, five pages",
       "sourceElement": "First-edition 2021 Student Task Statements PDF visual layout and source graphics.",
-      "state": "SOURCE_UNAVAILABLE",
+      "state": "MATCHED_TEACHER_LED",
       "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json",
       "companionQuestionId": null,
-      "gradingMode": "NOT_CERTIFIED",
-      "verified2021MathSemantics": false,
-      "figureBytesInspected": false,
-      "sourceUnavailable": true,
+      "gradingMode": "SOURCE_PDF_TASK_BY_TASK_TO_INDEPENDENT_COMPANION_AND_RICHV2_MATCH",
+      "verified2021MathSemantics": true,
+      "figureBytesInspected": true,
+      "sourceUnavailable": false,
       "nonDigitalTeacherEvidence": false,
       "stageCTest": null,
-      "note": "Official PDF link returned cache miss; publicly accessible original HTML student-facing task text was reviewed separately."
+      "note": "2021 first edition 5-page original PDF retrieved 2026-10-24 via Our-CS, SHA256 7af31dfa172be3d09cfd793084552297386ce05899f0a38631dfc69e7a1fe0c7. Pages 1 (warm-up four tens), 2 (three two-part equations+solutions), 3–4 (five Multiplication Mashup problems), 5 (8 groups of 2 socks, original drawing and 8-part tape, expression/equation). Source SVG artwork separately viewed in pixel-rendered form; no copyrighted pixels copied to Edulytics. PDF's typographic print layout is not reproduced/claimed pixel-identical."
     }
   ],
-  "blockingOriginalSourceEvidence": [
-    "Official first-edition 2021 Student Task Statements PDF returned HTTP 404 from the publisher Active Storage URL on 2026-10-24; visually comparing that exact PDF remains unverified, although public original student-facing HTML and both source SVGs were reviewed.",
-    "The two actual 2021 Section Summary SVG geometries were inspected from the first-edition local lesson HTML's cms-assets links, but source figure assets were NOT embedded in Edulytics. Independent educational diagrams were authored.",
-    "Actual effective database Rich V2 and Razor runtime rendering remain outside this authoring-only review. Tests and Stage D must not be treated as executed."
-  ],
+  "blockingOriginalSourceEvidence": [],
   "separateStageDOnlyDeferrals": [
-    "Tests authored including two original K5_v1 Cool-down questions; NOT_RUN.",
-    "Effective published database content and Razor runtime have not been executed or demonstrated."
+    "Original PDF and SVG media are separately source-verified; the first-party teaching/picture is semantically equivalent, NOT a publisher pixel/layout replica.",
+    "Grade 3 canonical first-party Rich V2 correction code now explicitly reads and maps the individually authored L15 source to actual canonical translation fields; compiled/runtime published materialization remains Stage D.",
+    "All .NET tests, GitHub CI and Stage D have NOT been run. No academic final sign-off."
   ],
   "sourceOriginalCooldownVerifiedViaK5v1SourceText": true,
   "original2021TeacherGuide": {
@@ -695,9 +691,44 @@
   "firstPartyCoolDownDistinctFrom2021Original": true,
   "firstPartyRichV2Version": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v3",
   "sourceFigureGeometryInspected": true,
-  "figureInspection": {
-    "date": "2026-10-24",
-    "method": "downloaded two original SVG files to user-authorized Our-CS for read-only academic comparison; SHA256 computed on source bytes",
-    "publisherAssetsCopiedToRepository": false
-  }
+  "figureInspection": [
+    {
+      "id": "L15-SUM-DRAW",
+      "sourceAsset": "https://cms-assets.illustrativemathematics.org/ndswoo638zcr0d46en8j7p0ofyqe",
+      "sha256": "e61fc479eb48af36eee6613dc40df66de75661198ac9e805bf3a2103be08612c",
+      "sourceMathematicalStructure": "Two rows, four oval groups in each row, exactly two dots per group, sixteen in total",
+      "originalSVGGeometryVisuallyInspected": true,
+      "edulyticsIndependentDrawing": "Razor independent two rows of four dashed cards with two first-party dots per card",
+      "semanticEquivalent": true,
+      "publisherArtPixelsCopied": false
+    },
+    {
+      "id": "L15-SUM-TAPE",
+      "sourceAsset": "https://cms-assets.illustrativemathematics.org/r182hgew7m3r7qjf3sm8vs8x2yxn",
+      "sha256": "5771aa437041062d4f124a373ab7760d501105a282e836fad9054ef76dde88b5",
+      "sourceMathematicalStructure": "Eight equal adjacent tape parts each labelled 2, total brace 16",
+      "originalSVGGeometryVisuallyInspected": true,
+      "edulyticsIndependentDrawing": "Razor independent eight equal-labelled cells with total 16 separately stated",
+      "semanticEquivalent": true,
+      "publisherArtPixelsCopied": false
+    }
+  ],
+  "studentTaskPdfOriginal2021": {
+    "source": "https://cms-assets.illustrativemathematics.org/0haxlif9ygkc2dmrb6jeafkfgjnv",
+    "sha256": "7af31dfa172be3d09cfd793084552297386ce05899f0a38631dfc69e7a1fe0c7",
+    "bytes": 72419,
+    "pageCount": 5,
+    "retrievedVia": "authorized Our-CS original publisher PDF",
+    "pagesReviewed": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceTextAndMathVerifiedAgainstEdulytics": true,
+    "publisherPdfPrintPagePixelLayoutReproduced": false,
+    "originalAssetsCopiedToEdulytics": false
+  },
+  "firstPartySourceRichV2CanonicalWire": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson15RichV2.cs"
 }
