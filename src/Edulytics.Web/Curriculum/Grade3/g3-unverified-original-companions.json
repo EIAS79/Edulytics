@@ -7454,34 +7454,98 @@
         "expected": "106"
       },
       "openTeacherTask": "Work through the original lesson's activity From Drawings to an Algorithm with your teacher. Show the representation and explain how it meets the goal: You will use your knowledge of base-ten diagrams to make sense of a written subtraction algorithm.",
-      "teacherReviewNote": "The numeric result alone does not prove the tens-regrouping mechanism or card matching.",
+      "teacherReviewNote": "Explain how Kiran decomposes a ten and changes the written ones position before subtracting 391−215. Match source diagram cards with subtraction algorithm cards; actual publisher cards or approved alternatives are required. Discuss why the drawings and written representations describe the same trade of one ten for ten ones. Publisher diagrams/BLM/cooldown not source-pixel verified. Numeric answers alone do not prove human work.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn a new way to subtract.",
+        "sourceGoal": "You will use your knowledge of base-ten diagrams to make sense of a written subtraction algorithm.",
         "sourceLearningGoals": "Relate base-ten diagrams to written algorithms for subtraction.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Connect drawings of base-ten units with a written subtraction algorithm.",
+          "The warm-up considers 100−98=2,101−99=2,200−98=102 and204−98=106. Relate 391−215=176 to the base-ten drawing: the 1 one is insufficient to remove 5 ones, so a ten is exchanged for ten ones (391 becomes 3 hundreds,8 tens,11 ones). The first steps in Kiran's written subtraction should show the corresponding regrouping. An original deck of base-ten diagrams must be matched with written subtraction algorithms; these are teacher-evaluated matching and explanation tasks, not scalar checks. The original deck and image bytes were not accessed and are not drawn as if identical.",
+          "Verify scalar source expressions exactly, and retain teacher review of drawings and oral strategy."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn a new way to subtract.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not claim original PDF or third-party artwork has been inspected."
       },
       "sourceBasedCheck": {
-        "prompt": "The source subtraction algorithms solve 391 − 215. What is the difference?",
+        "prompt": "Evaluate 100 - 98 and explain your reasoning to your teacher.",
         "answerType": "integer",
-        "expected": "176"
+        "expected": "2"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-8/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "PUBLISHED_2021_STUDENT_FACING_HTML_ARITHMETIC_REVIEWED_PDF_FIGURE_PIXELS_UNVERIFIED",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U03-L08-S1-NUM1",
+          "sourceActivity": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+          "prompt": "Evaluate 100 - 98 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U03-L08-S1-NUM2",
+          "sourceActivity": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+          "prompt": "Evaluate 101 - 99 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U03-L08-S1-NUM3",
+          "sourceActivity": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+          "prompt": "Evaluate 200 - 98 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "102"
+        },
+        {
+          "id": "G3-U03-L08-S1-NUM4",
+          "sourceActivity": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+          "prompt": "Evaluate 204 - 98 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "106"
+        },
+        {
+          "id": "G3-U03-L08-S2-NUM5",
+          "sourceActivity": "Activity 1: From Drawings to an Algorithm (15 minutes)",
+          "prompt": "Evaluate 391-215 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "176"
+        },
+        {
+          "id": "G3-U03-L08-OPEN-1",
+          "sourceActivity": "Original teacher-led activity",
+          "prompt": "Explain how Kiran decomposes a ten and changes the written ones position before subtracting 391−215.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L08-OPEN-2",
+          "sourceActivity": "Original teacher-led activity",
+          "prompt": "Match source diagram cards with subtraction algorithm cards; actual publisher cards or approved alternatives are required.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L08-OPEN-3",
+          "sourceActivity": "Original teacher-led activity",
+          "prompt": "Discuss why the drawings and written representations describe the same trade of one ten for ten ones.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L08-ORIGINAL-CD",
+          "sourceActivity": "Publisher gated Cool-down",
+          "prompt": "Your teacher must provide the original publisher Cool-down separately; the Edulytics assessment is not the original task.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 45,

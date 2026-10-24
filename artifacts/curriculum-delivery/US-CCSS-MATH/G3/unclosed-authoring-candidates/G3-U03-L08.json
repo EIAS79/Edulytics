@@ -11,16 +11,39 @@
   "originalTeacherHtml": "unit-3/lesson-8/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-8/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "PUBLIC_2021_STUDENT_FACING_HTML_ARITHMETIC_AND_TEACHER_STRUCTURES_REVIEWED_ORIGINAL_PDF_ART_OPEN",
     "goals": "Relate base-ten diagrams to written algorithms for subtraction.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 4,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "sourceNumericAnchors": [
+      {
+        "expression": "100 - 98",
+        "value": 2
+      },
+      {
+        "expression": "101 - 99",
+        "value": 2
+      },
+      {
+        "expression": "200 - 98",
+        "value": 102
+      },
+      {
+        "expression": "204 - 98",
+        "value": 106
+      },
+      {
+        "expression": "391-215",
+        "value": 176
+      }
+    ],
+    "originalSourceVisualsVerified": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_GUARDED_RICH_V2_FIRST_PARTY_TEACHING_AND_COMPANION_AUTHORED_NOT_RUN",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +52,12 @@
     "existingSourceBodyHash": "f8bd9258f273d34e02891de17aaf59ecda776334062f364383c347cb78ac39f0",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "richV2SourceSpecificEmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l08-2021.rich-lesson-v2.json",
+    "sourceSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson8.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SOURCE_NUMERIC_AND_TEACHER_REVIEW_CONTRACTS_AUTHORED_UNRUN",
     "family": "subtraction-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,62 +67,129 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity From Drawings to an Algorithm with your teacher. Show the representation and explain how it meets the goal: Let’s learn a new way to subtract.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 9,
+    "numericChecksWritten": 5,
+    "newRegressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson8OriginalMathSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L08-HEADING-01",
+      "id": "HEADING-1",
       "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-8/lesson.html",
+      "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L08-HEADING-02",
+      "id": "HEADING-2",
       "sourceSection": "Activity 1: From Drawings to an Algorithm (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-8/lesson.html",
+      "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L08-HEADING-03",
+      "id": "HEADING-3",
       "sourceSection": "Activity 2: Card Sort: Diagrams and Algorithms (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-8/lesson.html",
+      "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L08-HEADING-04",
+      "id": "HEADING-4",
       "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-8/lesson.html",
+      "coverage": "MATCHED_TEACHER_LED",
       "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L08-HEADING-05",
+      "id": "HEADING-5",
       "sourceSection": "Cool-down: Connect a Diagram and an Algorithm (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-8/lesson.html",
+      "coverage": "SOURCE_UNAVAILABLE",
       "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "STUDENT-S1-NUM1",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "STUDENT-S1-NUM2",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "STUDENT-S1-NUM3",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "STUDENT-S1-NUM4",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "STUDENT-S2-NUM5",
+      "sourceSection": "Activity 1: From Drawings to an Algorithm (15 minutes)",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "TEACHER-OPEN-1",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "TEACHER-OPEN-2",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "TEACHER-OPEN-3",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "SOURCE-IMAGE-1",
+      "sourceSection": "Original 2021 source art",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "SOURCE-IMAGE-2",
+      "sourceSection": "Original 2021 source art",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "SOURCE-IMAGE-3",
+      "sourceSection": "Original 2021 source art",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "claimedParity": false
+    },
+    {
+      "id": "SOURCE-IMAGE-4",
+      "sourceSection": "Original 2021 source art",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
       "claimedParity": false
     }
   ],
@@ -140,9 +232,10 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 4,
-    "fullyVerified": 0
+    "identified": 17,
+    "numericHtmlAnchors": 5,
+    "originalStudentPdfReviewed": 0,
+    "originalPublisherArtInspected": 0
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 409 − 186. Show regrouping or another strategy.",
@@ -154,16 +247,16 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "original card-sort deck PDF and diagram pairing assets not inspected",
+    "source arithmetic diagrams have not had pixel-level inspection",
+    "publisher-only Cool-down cannot be asserted source-equivalent",
+    "Teacher-led source representations and discussions not academically approved.",
+    "New C#, Razor and xUnit contracts have not been compiled/run; Stage D and CI uninvoked."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-44-2021-source-to-first-party-evidence-20261024.json"
 }
