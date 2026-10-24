@@ -6404,34 +6404,135 @@
         "expected": "415"
       },
       "openTeacherTask": "Work through the original lesson's activity Strategies to Add with your teacher. Show the representation and explain how it meets the goal: You will use strategies to add within 1,000.",
-      "teacherReviewNote": "Teacher checks named mental methods and comparison of Andre/Clare rearranged partial sums.",
+      "teacherReviewNote": "Four number talks 247,352,652,647; four additions 427,353,394,603; validate teacher-student strategies and the permitted choice of three out of four, Andre vs Clare equality, partner explanations, MLR6 oral access and optional games. Source photo, PDF and gated original Cool-down not independently read.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s add numbers within 1,000.",
+        "sourceGoal": "Let's add numbers within 1,000.",
         "sourceLearningGoals": "Add within 1,000 in a way that makes sense to them.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Mental number talk with four original mathematical structures, each displayed in turn.",
+          "Offer four addition expressions and permit choice of three when needed for accessibility.",
+          "Explain and compare place-value drawings, equations, number-line paths or block representations.",
+          "Compare Andre hundreds-first with Clare ones-first on the identical 276+118=394 decomposition.",
+          "Discuss strategy choice before future algorithms; preserve human scoring of reasoning."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s add numbers within 1,000.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not require an algorithm, penalize a valid order of partial sums or claim teacher evidence from a scalar answer."
       },
       "sourceBasedCheck": {
-        "prompt": "Source methods give 276 + 118. What is the correct sum?",
+        "prompt": "Find 276+118 with a method you can explain.",
         "answerType": "integer",
         "expected": "394"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-3/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "PUBLIC_TEACHER_AND_STUDENT_FACING_HTML_MATH_REVIEWED_PDF_UNAVAILABLE",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U03-L03-WU-1",
+          "sourceActivity": "Number Talk",
+          "prompt": "Compute 200 + 40 + 7 mentally.",
+          "answerType": "integer",
+          "expected": "247"
+        },
+        {
+          "id": "G3-U03-L03-WU-2",
+          "sourceActivity": "Number Talk",
+          "prompt": "Compute 50 + 300 + 2 mentally.",
+          "answerType": "integer",
+          "expected": "352"
+        },
+        {
+          "id": "G3-U03-L03-WU-3",
+          "sourceActivity": "Number Talk",
+          "prompt": "Compute 40 + 600 + 12 mentally.",
+          "answerType": "integer",
+          "expected": "652"
+        },
+        {
+          "id": "G3-U03-L03-WU-4",
+          "sourceActivity": "Number Talk",
+          "prompt": "Compute 500 + 17 + 130 mentally.",
+          "answerType": "integer",
+          "expected": "647"
+        },
+        {
+          "id": "G3-U03-L03-A1-1",
+          "sourceActivity": "Strategies to Add",
+          "prompt": "Find 325+102; show a strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "427"
+        },
+        {
+          "id": "G3-U03-L03-A1-2",
+          "sourceActivity": "Strategies to Add",
+          "prompt": "Find 301+52; show a strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "353"
+        },
+        {
+          "id": "G3-U03-L03-A1-3",
+          "sourceActivity": "Strategies to Add",
+          "prompt": "Find 276+118; show a strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "394"
+        },
+        {
+          "id": "G3-U03-L03-A1-4",
+          "sourceActivity": "Strategies to Add",
+          "prompt": "Find 298+305; show a strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "603"
+        },
+        {
+          "id": "G3-U03-L03-A1-STRATEGIES",
+          "sourceActivity": "Strategies to Add",
+          "prompt": "Show at least two correct representations for one chosen sum, and compare their place-value reasoning.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L03-A1-CHOICE",
+          "sourceActivity": "Strategies to Add",
+          "prompt": "If working on three of four sums for accessibility, document which were chosen and share reasoning.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L03-A2-SAME",
+          "sourceActivity": "Two Ways to Add",
+          "prompt": "Compare Andre's hundreds-first and Clare's ones-first solution for 276+118. Explain why both total 394.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L03-A2-MLR6",
+          "sourceActivity": "Two Ways to Add",
+          "prompt": "Work in a pair on the comparisons and use teacher-led reading/communication supports where appropriate.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L03-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Describe which representation you prefer and whether you change it for different addends.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L03-CD",
+          "sourceActivity": "Original gated Cool-down",
+          "prompt": "Your teacher may supply the original Add It Up Cool-down. The Edulytics exit task is independent, not its reproduction.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 40,

@@ -11,16 +11,33 @@
   "originalTeacherHtml": "unit-3/lesson-3/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-3/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "PUBLIC_2021_TEACHER_AND_STUDENT_HTML_READ_PDF_AND_ORIGINAL_IMAGE_NOT_RENDERED",
     "goals": "Add within 1,000 in a way that makes sense to them.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 1,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "publicTeacherPageReviewed": true,
+    "sourceElementCount": 21,
+    "sourceNumericOracles": {
+      "numberTalk": [
+        247,
+        352,
+        652,
+        647
+      ],
+      "additions": [
+        427,
+        353,
+        394,
+        603
+      ],
+      "AndreClare": 394
+    }
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "GUARDED_FIRST_PARTY_RICH_V2_AND_STUDENT_COMPANION_AUTHORED_UNRUN",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +46,13 @@
     "existingSourceBodyHash": "14ad364644933bac5328cd1de1af7d43e588ae336dbaac2f2d0006acb9c648af",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l03-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson3.cshtml",
+    "publishedOrDeployed": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "EIGHT_NUMERIC_ANCHORS_SIX_TEACHER_TASKS_NEW_ORACLE_TESTS_WRITTEN_UNRUN",
     "family": "addition-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,62 +62,177 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Strategies to Add with your teacher. Show the representation and explain how it meets the goal: Let’s add numbers within 1,000.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 14,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson3AddYourWaySourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L03-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: Hundreds, Tens, and Ones (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "GOAL",
+      "sourceSection": "Preparation",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L03-HEADING-02",
-      "sourceSection": "Activity 1: Strategies to Add (25 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "WU-1",
+      "sourceSection": "Number Talk",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L03-HEADING-03",
-      "sourceSection": "Activity 2: Two Ways to Add (10 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "WU-2",
+      "sourceSection": "Number Talk",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L03-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "id": "WU-3",
+      "sourceSection": "Number Talk",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
       "claimedParity": false
     },
     {
-      "id": "G3-U03-L03-HEADING-05",
-      "sourceSection": "Cool-down: Add It Up (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-3/lesson.html",
+      "id": "WU-4",
+      "sourceSection": "Number Talk",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "WU-TALK",
+      "sourceSection": "Number Talk synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-1",
+      "sourceSection": "Strategies to Add",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-2",
+      "sourceSection": "Strategies to Add",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-3",
+      "sourceSection": "Strategies to Add",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-4",
+      "sourceSection": "Strategies to Add",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-CHOICE",
+      "sourceSection": "Strategies to Add accessibility",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-METHODS",
+      "sourceSection": "Strategies to Add synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-ANDRE",
+      "sourceSection": "Two Ways to Add",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-CLARE",
+      "sourceSection": "Two Ways to Add",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-COMPARE",
+      "sourceSection": "Two Ways to Add synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "SYNTH",
+      "sourceSection": "Lesson synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "COOLDOWN",
+      "sourceSection": "Add It Up publisher gated",
+      "coverage": "SOURCE_UNAVAILABLE",
       "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "PHOTO",
+      "sourceSection": "Student working together photo",
+      "coverage": "RIGHTS_RESTRICTED",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "CENTER-1",
+      "sourceSection": "Suggested optional centers",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "CENTER-2",
+      "sourceSection": "Suggested optional centers",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "CENTER-3",
+      "sourceSection": "Suggested optional centers",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
       "claimedParity": false
     }
   ],
@@ -113,9 +248,12 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 1,
-    "fullyVerified": 0
+    "identified": 21,
+    "authoringHtmlMappings": 16,
+    "sourcePdfUnrendered": true,
+    "originalPublisherCoolDownGated": 1,
+    "externalPhotoNotChecked": 1,
+    "originalOptionalGameMaterialNotChecked": 3
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 383 + 171. Explain any regrouping.",
@@ -127,16 +265,17 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Official Student Task Statements PDF link found on preparation page but the publisher asset download was inaccessible; exact source page figures/format could not be rendered.",
+    "Original publisher Add It Up Cool-down is gated; not inspected or recreated.",
+    "Original group photograph not individually pixel/rights-audited; no artwork copied.",
+    "Target Numbers stage 6, Five in a Row stage 8 and Rectangle Rumble stage 2 original game sheets not individually inspected.",
+    "Selection of three/four tasks and Andre/Clare method comparison require teacher evidence; no academic approval.",
+    "C# / Razor / xUnit / CI / Stage D are not executed; this is authored source-aligned candidate, not runtime parity."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-39-2021-source-to-first-party-evidence-20261024.json"
 }
