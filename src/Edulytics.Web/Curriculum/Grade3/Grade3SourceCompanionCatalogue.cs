@@ -83,6 +83,23 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
+        if (q.AnswerType == "source-card-letter")
+        {
+            // Grade 3 Unit 2 Lesson 5 — independently drawn first-party
+            // A–G rectangle cards with source-equivalent row/column geometry.
+            // Only the CARD label is auto-checked; the student's explanation,
+            // physical matching and area-unit reasoning still require a teacher.
+            var value = submitted.Trim().ToUpperInvariant();
+            var expected = q.Expected?.Trim().ToUpperInvariant();
+            var valid = value.Length == 1 && value[0] is >= 'A' and <= 'G' &&
+                expected is not null && expected.Length == 1 &&
+                expected[0] is >= 'A' and <= 'G';
+            var correct = valid && string.Equals(value, expected, StringComparison.Ordinal);
+            return new(correct, true, correct
+                ? "This letter matches the first-party rectangle model. Explain the equal square rows/columns to your teacher."
+                : "Select one card A–G. Compare the source expression with BOTH side lengths and explain.");
+        }
+
         if (q.AnswerType == "yes-no")
         {
             var value = submitted.Trim().ToLowerInvariant();
