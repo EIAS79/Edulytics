@@ -351,10 +351,10 @@
         "expected": "15"
       },
       "openTeacherTask": "Review the original 2021 public Student Task Statements, all four original story cards and eight related graphical cards in the original blackline master with your teacher. Complete EACH of the seven source subtasks in order, including two independently drawn source situations and the teacher-led 4 × 5 synthesis.",
-      "teacherReviewNote": "Teacher signs off warm-up Notice/Wonder; six pairs of socks as 6 groups of 2; speed-limit three-tape-parts of two plus another chosen graph category; accurate source A–L card sort for the four stories (3×5 footballs; 4×3 toy cars; 2×10 doughnuts; 3×10 ice cubes); 4×2 strawberry-bag drawing; 4×5 hand-finger drawing; and first use of the 4×5 expression ONLY during synthesis. Published original Cool-down 'Boxes of Shirts' is teacher-access-controlled; the Edulytics Cool-down is separately authored, not source text. Spoken reasoning/drawings/card matches are human-reviewed.",
+      "teacherReviewNote": "Teacher signs off warm-up Notice/Wonder; six pairs of socks as 6 groups of 2; speed-limit three-tape-parts of two plus another chosen graph category; accurate source A–L card sort for the four stories (3×5 footballs; 4×3 toy cars; 2×10 doughnuts; 3×10 ice cubes); 4×2 strawberry-bag drawing; 4×5 hand-finger drawing; and first use of the 4×5 expression ONLY during synthesis. Original first-edition Boxes of Shirts Cool-down recovered from a public teacher-guide mirror: four boxes of ten match a four-section tape labelled ten. YES is the expected judgment, but the student must justify. The independently authored Edulytics Cool-down is OPTIONAL and not the publisher item. Spoken reasoning/drawings/card matches are human-reviewed.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s represent equal groups.",
@@ -428,6 +428,13 @@
           "Prompt": "Explain a FOUR-part tape diagram with FIVE objects in every partition. Only at the END of this lesson does the teacher introduce the written expression 4 × 5 and its reading 'four groups of five'. Show where each factor comes from; compare your drawing to a partner's.",
           "AnswerType": "teacher",
           "Expected": null
+        },
+        {
+          "Id": "G3-U01-L10-CD-01",
+          "SourceActivity": "Original first-edition 2021 Cool-down — Boxes of Shirts",
+          "Prompt": "A shop has FOUR boxes with TEN shirts in EACH. A tape model shows FOUR equal sections labelled TEN. Does the model match? Answer yes or no, then explain WHY each section matches one box. A teacher must judge the explanation; a yes selection is not sufficient.",
+          "AnswerType": "yes-no",
+          "Expected": "yes"
         }
       ],
       "IndependentTeachingGuidance": {
@@ -438,15 +445,18 @@
           "Activity 1 15 min: key 1 square = 2 road signs, tape 3 parts of 2 for speed-limit category; each student draws a DIFFERENT sign category and explains correspondence.",
           "Activity 2 20 min: distribute one printed official 12-card blackline deck A–L per PAIR; match four contexts with eight drawings/diagrams, justify groups not merely total; reuse deck for Lesson 11.",
           "Draw two separate original situations: four bags with two strawberries each and four hands with five fingers each; discuss equal groups using source MLR8 and Engagement support.",
-          "Lesson synthesis 10 min: teacher presents four-section tape marked five, and INTRODUCES 4 × 5 as '4 groups of 5' here, not before. Then separate 5 min independently authored Edulytics Cool-down."
+          "Lesson synthesis (10 min): FIRST introduce 4 × 5 from the four-by-five tape; original five-minute Cool-down: examine four boxes of ten shirts and a four-part tape labelled ten and justify YES; extra Edulytics Cool-down is OPTIONAL."
         ],
-        "Caution": "A numeric answer alone must never auto-approve drawings, card matches, or explanations. Four situation cards A/B/D/J are 3×5 footballs, 4×3 cars, 2×10 doughnuts, 3×10 ice cubes; drawings/diagrams require matching from actual original PDF. The ORIGINAL teacher-gated Boxes of Shirts Cool-down has not been read, so no publisher item parity claim."
+        "Caution": "A numeric answer alone must never auto-approve drawings, card matches, or explanations. Four situation cards A/B/D/J are 3×5 footballs, 4×3 cars, 2×10 doughnuts, 3×10 ice cubes; drawings/diagrams require matching from actual original PDF. The original Boxes of Shirts wording and diagram mathematics are independently corroborated by a publicly available 2021-based teacher guide; teacher explanation review remains mandatory. Do not reproduce original artwork."
       },
       "originalTeacherBlacklineMasterPdfRead": true,
       "sourceCardCount": 12,
       "sourceCardDeckTeacherUrl": "https://cms-assets.illustrativemathematics.org/hed6b8kerveg64nag78blbcvj1jk",
       "sourceStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/o2ira4alq51xndabaydw0w2w0h1s",
-      "sourceSemanticAuthoringScope": "ALL_7_PUBLIC_SOURCE_TASK_FAMILIES_AUTHORED_CARD_DECK_ORIGINAL_LINK_NO_ORIGINAL_COOLDOWN_ACCESS"
+      "sourceSemanticAuthoringScope": "ALL_7_PUBLIC_SOURCE_TASK_FAMILIES_AUTHORED_CARD_DECK_ORIGINAL_LINK_NO_ORIGINAL_COOLDOWN_ACCESS",
+      "OriginalPublisherCoolDownSourceVerified": true,
+      "OriginalPublisherCoolDownMirror": "https://www.coreknowledge.org/wp-content/uploads/2023/09/CKMath_G3U1_IntroducingMultiplication_TG_W2.pdf",
+      "SourceSemanticAuthoringScope": "EIGHT_SOURCE_TASKS_PUBLIC_AND_TEACHER_GUIDE_RECOVERED"
     },
     {
       "ordinal": 11,

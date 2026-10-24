@@ -83,6 +83,17 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
+        if (q.AnswerType == "yes-no")
+        {
+            var value = submitted.Trim().ToLowerInvariant();
+            var expected = q.Expected?.Trim().ToLowerInvariant();
+            var valid = value is "yes" or "no";
+            var correct = valid && value == expected;
+            return new(correct, true, correct
+                ? "Yes/no matches the model. The teacher must still review the explanation."
+                : "Check the number of groups and how many are in each group, then explain.");
+        }
+
         if (q.AnswerType == "comparison")
         {
             var ok = submitted.Trim() is ">" or "<" or "=" &&

@@ -139,7 +139,15 @@
                 <p>Now complete TWO DIFFERENT Student Facing source drawings: FOUR bags of TWO strawberries, and FOUR hands with FIVE fingers each. Draw group boundaries, not just the totals 8 and 20. Teacher reviews both drawings and explanations; the printed source card sort is teacher-led.</p>
                 <h2>Lesson synthesis — FIRST introduce multiplication expressions (10 minutes)</h2>
                 <p>Show a four-part tape, with each partition equal to five. FIRST NOW introduce the notation <strong>4 × 5</strong> as “four groups of five,” and explain which factor counts groups and which counts members. Do not present multiplication notation as a requirement during the two earlier activities.</p>
-                <p>After this synthesis, do the five-minute first-party Edulytics Cool-down below. The official 2021 "Boxes of Shirts" Cool-down requires publisher educator login and its exact questions are NOT claimed equivalent.</p>
+                <h2>Original 2021 Cool-down — Boxes of Shirts (5 minutes)</h2>
+                <p>The first-edition teacher guide asks whether four boxes with ten shirts each match this mathematical tape structure. The diagram below is independently drawn, not publisher artwork:</p>
+                <div role="img" aria-label="Four equal tape sections each labelled ten, representing four boxes with ten shirts apiece" style="display:flex;max-width:520px;border:2px solid #1d5264;border-radius:6px;overflow:hidden;margin:12px 0;">
+                    @for(var box=0;box<4;box++){
+                        <span style="flex:1;border-right:1px solid #1d5264;text-align:center;padding:18px 0;font-weight:700">10</span>
+                    }
+                </div>
+                <p>The correct yes/no judgment is YES: there are four equal parts, each worth ten shirts. But the original task also requires the student's explanation, which ONLY a teacher judges. Complete source subtask 8 below.</p>
+                <p>Extra independent Edulytics skill practice and its first-party Cool-down after the source task are OPTIONAL, not replacements for the original.</p>
                 <p><a href="https://cms-assets.illustrativemathematics.org/o2ira4alq51xndabaydw0w2w0h1s" target="_blank" rel="noopener noreferrer">2021 original four-page Student Task Statements PDF (publisher)</a>. Teacher-only suggested centers: Capture Squares Stage 4 and Five in a Row Stage 7.</p>
             </section>
         }
@@ -432,7 +440,7 @@
                         <h3>@task.SourceActivity — task @(i+1)</h3>
                         <p>@task.Prompt</p>
                         @if(task.AnswerType!="teacher"){
-                            <label for="source-sub-answer-@i">My calculated response</label>
+                            <label for="source-sub-answer-@i">@(task.AnswerType=="yes-no" ? "Does the diagram match? Enter yes or no" : "My calculated response")</label>
                             <input id="source-sub-answer-@i" name="SourceSubtaskAnswers[@i]" maxlength="100"
                                 value="@Model.Answers.SourceSubtaskAnswers.ElementAtOrDefault(i)" inputmode="text" />
                         } else {
@@ -454,7 +462,7 @@
                 <p>The mathematical situation is adapted from the original public 2021 Student Facing HTML. Publisher figures and teacher-only Cool-downs are not reproduced.</p>
                 @if(l.SourceBasedCheck.AnswerType != "teacher") {
                     <label for="source-check-answer">My answer</label>
-                    <input id="source-check-answer" name="SourceCheckAnswer" value="@Model.Answers.SourceCheckAnswer" maxlength="100" inputmode="text" required />
+                    <input id="source-check-answer" name="SourceCheckAnswer" value="@Model.Answers.SourceCheckAnswer" maxlength="100" inputmode="text" required="@(l.UnitNumber!=1 || l.LessonNumber!=10)" />
                 } else {
                     <p>This source-based problem requires a drawing, measurement, reasoning or project. A teacher must evaluate it; the numeric grader cannot approve it.</p>
                 }
@@ -475,7 +483,7 @@
             <p>@l.IndependentPractice!.Prompt</p>
             @if(l.IndependentPractice.AnswerType != "teacher") {
                 <label for="practice">My answer</label>
-                <input id="practice" name="PracticeAnswer" value="@Model.Answers.PracticeAnswer" maxlength="100" inputmode="text" required />
+                <input id="practice" name="PracticeAnswer" value="@Model.Answers.PracticeAnswer" maxlength="100" inputmode="text" required="@(l.UnitNumber!=1 || l.LessonNumber!=10)" />
             } else {
                 <p>This task requires a teacher to evaluate your design or original reasoning. There is no numeric pass.</p>
             }
@@ -483,11 +491,11 @@
             <textarea id="practice-reasoning" name="PracticeReasoning" rows="4" maxlength="2000">@Model.Answers.PracticeReasoning</textarea>
         </section>
         <section class="panel">
-            <h2>@(l.UnitNumber==1 && l.LessonNumber==9 ? "3. OPTIONAL first-party Edulytics practice Cool-down (not publisher source)" : "3. New Edulytics Cool-down")</h2>
+            <h2>@(l.UnitNumber==1 && (l.LessonNumber==9 || l.LessonNumber==10) ? "3. OPTIONAL Edulytics-authored extra Cool-down (NOT publisher source)" : "3. New Edulytics Cool-down")</h2>
             <p>@l.OriginalEdulyticsCoolDown!.Prompt</p>
             @if(l.OriginalEdulyticsCoolDown.AnswerType != "teacher") {
                 <label for="cool-answer">My answer</label>
-                <input id="cool-answer" name="CoolDownAnswer" value="@Model.Answers.CoolDownAnswer" maxlength="100" inputmode="text" required />
+                <input id="cool-answer" name="CoolDownAnswer" value="@Model.Answers.CoolDownAnswer" maxlength="100" inputmode="text" required="@(l.UnitNumber!=1 || l.LessonNumber!=10)" />
             } else {
                 <p>Your teacher reviews the response or constructed work; no automated grade is possible.</p>
             }
