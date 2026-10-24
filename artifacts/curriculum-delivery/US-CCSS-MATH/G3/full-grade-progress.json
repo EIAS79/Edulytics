@@ -237,10 +237,14 @@
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L02.json",
       "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+        "The official 2021 three-page Student Task Statements PDF endpoint was visible from teacher preparation but could not be fetched or rendered for verification; HTML mathematical text is independently checked.",
+        "Original third-party contextual photos (Iguazu, Washington Monument, Lincoln Memorial, Eiffel Tower) not retrieved, rights-verified or pixel-compared; no publisher art copied.",
+        "Original gated How Much Taller? Cool-down is not publicly accessible to verify full source equivalence.",
+        "Original center game materials for Target Numbers stage 6, Five in a Row stage 8 and Rectangle Rumble stage 2 are not individually verified.",
+        "Open journal entries, partner strategies and use of physical base-ten blocks require actual teacher review; no such approval recorded.",
+        "New C# source, Razor view and authored xUnit contracts have not been compiled, run, deployed or academic-approved: Stage D deferred."
+      ],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json"
     },
     {
       "ordinal": 39,
@@ -248,10 +252,14 @@
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L03.json",
       "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+        "Official Student Task Statements PDF link found on preparation page but the publisher asset download was inaccessible; exact source page figures/format could not be rendered.",
+        "Original publisher Add It Up Cool-down is gated; not inspected or recreated.",
+        "Original group photograph not individually pixel/rights-audited; no artwork copied.",
+        "Target Numbers stage 6, Five in a Row stage 8 and Rectangle Rumble stage 2 original game sheets not individually inspected.",
+        "Selection of three/four tasks and Andre/Clare method comparison require teacher evidence; no academic approval.",
+        "C# / Razor / xUnit / CI / Stage D are not executed; this is authored source-aligned candidate, not runtime parity."
+      ],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-39-2021-source-to-first-party-evidence-20261024.json"
     },
     {
       "ordinal": 40,
@@ -259,10 +267,14 @@
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L04.json",
       "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+        "Publisher-original Student Task Statements PDF was publicly linked but not successfully downloaded or rendered; exact source artwork fidelity remains unverified.",
+        "Tyler, Lin and Han original source images (including the MLR3 critique image) not pixel inspected or individually rights-reviewed; independent text-only first-party equivalents have been authored.",
+        "Gated Choose an Algorithm original Cool-down not opened or 1:1 assessed.",
+        "Optional original center boards/materials not individually inspected.",
+        "Classroom partner discussions, WODB choices, visual display, and MLR3 critique require actual teacher approval.",
+        "New C#, Razor, and independent xUnit contracts are written, not run/compiled; Stage D remains deferred."
+      ],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-40-2021-source-to-first-party-evidence-20261024.json"
     },
     {
       "ordinal": 41,
@@ -270,10 +282,14 @@
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L05.json",
       "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+        "The publisher's first-edition Student Task Statements PDF is linked but not downloaded or rendered for one-to-one image fidelity.",
+        "Han and Elena original source algorithm illustration bytes and detailed drawing positions not inspected; first-party arithmetic equivalence is authored from public source text.",
+        "Original publisher Use an Algorithm for Addition Cool-down is gated and unverified.",
+        "Optional original gameboard materials and teacher activities not individually source-inspected.",
+        "Partner comparisons and MLR8 discourse require teacher review, not automatic scoring.",
+        "xUnit/C#/Razor test and render gates are written but never run; Stage D remains pending."
+      ],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-41-2021-source-to-first-party-evidence-20261024.json"
     },
     {
       "ordinal": 42,
@@ -2524,11 +2540,11 @@
       "unitNumber": 3,
       "lessonNumber": 2,
       "title": "Addition and Subtraction Situations",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_SOURCE_IMAGE_PIXEL_OPEN",
-      "stageB": "SOURCE_SKILL_AND_AUTHORIGINAL_FIRST_PARTY_COMPANION_RICHV2_OPEN",
-      "stageC": "NUMERIC_OR_TEACHER_REVIEW_GRADE_CONTRACT_DRAFT_UNRUN",
+      "stageA": "PUBLIC_2021_TEACHER_AND_STUDENT_FACING_HTML_REVIEWED_PER_TASK_WITH_PDF_AND_ORIGINAL_MEDIA_BLOCKERS",
+      "stageB": "NEW_FIRST_PARTY_RICH_V2_GUARDED_CANONICAL_MATERIALIZATION_AUTHORED_NOT_RUN",
+      "stageC": "FIVE_SOURCE_NUMERIC_ANCHORS_EIGHT_OPEN_TEACHER_TASKS_GATED_COOLDOWN_UNVERIFIED_TESTS_WRITTEN_NOT_RUN",
       "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 9,
+      "sourceElementsIdentified": 21,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L02.json",
@@ -2542,7 +2558,12 @@
       "original2021FigureUrlCount": 4,
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": false,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json",
+      "sourceMatchingMeasurementScope": "PUBLIC_2021_TEACHER_STUDENT_HTML_MATH_CANDIDATE_PDF_COOLDOWN_AND_ORIGINAL_MEDIA_UNVERIFIED",
+      "authoredCandidateReviewStatus": "A_B_C_SOURCE_SPECIFIC_CORRECTIONS_COMMITTED_BUT_EXTERNAL_SOURCE_GAPS_REMAIN",
+      "testsWrittenNotRun": true
     },
     {
       "gradeOrdinal": 39,
@@ -2550,11 +2571,11 @@
       "unitNumber": 3,
       "lessonNumber": 3,
       "title": "Add Your Way",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_SOURCE_IMAGE_PIXEL_OPEN",
-      "stageB": "SOURCE_SKILL_AND_AUTHORIGINAL_FIRST_PARTY_COMPANION_RICHV2_OPEN",
-      "stageC": "NUMERIC_OR_TEACHER_REVIEW_GRADE_CONTRACT_DRAFT_UNRUN",
+      "stageA": "PUBLIC_2021_TEACHER_AND_STUDENT_HTML_READ_PDF_AND_ORIGINAL_IMAGE_NOT_RENDERED",
+      "stageB": "GUARDED_FIRST_PARTY_RICH_V2_AND_STUDENT_COMPANION_AUTHORED_UNRUN",
+      "stageC": "EIGHT_NUMERIC_ANCHORS_SIX_TEACHER_TASKS_NEW_ORACLE_TESTS_WRITTEN_UNRUN",
       "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 6,
+      "sourceElementsIdentified": 21,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L03.json",
@@ -2568,19 +2589,24 @@
       "original2021FigureUrlCount": 1,
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": false,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-39-2021-source-to-first-party-evidence-20261024.json",
+      "sourceMatchingMeasurementScope": "PUBLIC_2021_TEACHER_STUDENT_HTML_MATH_CANDIDATE_PDF_COOLDOWN_AND_ORIGINAL_MEDIA_UNVERIFIED",
+      "authoredCandidateReviewStatus": "A_B_C_SOURCE_SPECIFIC_CORRECTIONS_COMMITTED_BUT_EXTERNAL_SOURCE_GAPS_REMAIN",
+      "testsWrittenNotRun": true
     },
     {
       "gradeOrdinal": 40,
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L04",
       "unitNumber": 3,
       "lessonNumber": 4,
-      "title": "Introduction to Addition Algorithms PLC Activity",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_SOURCE_IMAGE_PIXEL_OPEN",
-      "stageB": "SOURCE_SKILL_AND_AUTHORIGINAL_FIRST_PARTY_COMPANION_RICHV2_OPEN",
-      "stageC": "NUMERIC_OR_TEACHER_REVIEW_GRADE_CONTRACT_DRAFT_UNRUN",
+      "title": "Introduction to Addition Algorithms",
+      "stageA": "PUBLIC_2021_TEACHER_AND_STUDENT_HTML_REVIEWED_ALL_STATED_NUMERIC_STEMS_PDF_AND_FIGURE_PIXEL_GAP",
+      "stageB": "GUARDED_FIRST_PARTY_RICH_V2_AND_SOURCE_CONTEXT_RAZOR_WRITTEN_UNRUN",
+      "stageC": "EIGHT_SOURCE_NUMERIC_CHECKS_SIX_TEACHER_REVIEW_TASKS_ORACLES_WRITTEN_UNRUN",
       "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 10,
+      "sourceElementsIdentified": 25,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L04.json",
@@ -2594,7 +2620,13 @@
       "original2021FigureUrlCount": 5,
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": false,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-40-2021-source-to-first-party-evidence-20261024.json",
+      "sourceMatchingMeasurementScope": "PUBLIC_2021_TEACHER_STUDENT_HTML_MATH_CANDIDATE_PDF_COOLDOWN_AND_ORIGINAL_MEDIA_UNVERIFIED",
+      "authoredCandidateReviewStatus": "A_B_C_SOURCE_SPECIFIC_CORRECTIONS_COMMITTED_BUT_EXTERNAL_SOURCE_GAPS_REMAIN",
+      "testsWrittenNotRun": true,
+      "originalCatalogTitle": "Introduction to Addition Algorithms PLC Activity"
     },
     {
       "gradeOrdinal": 41,
@@ -2602,11 +2634,11 @@
       "unitNumber": 3,
       "lessonNumber": 5,
       "title": "Another Addition Algorithm",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_SOURCE_IMAGE_PIXEL_OPEN",
-      "stageB": "SOURCE_SKILL_AND_AUTHORIGINAL_FIRST_PARTY_COMPANION_RICHV2_OPEN",
-      "stageC": "NUMERIC_OR_TEACHER_REVIEW_GRADE_CONTRACT_DRAFT_UNRUN",
+      "stageA": "PUBLIC_2021_TEACHER_STUDENT_HTML_MATH_REVIEWED_PUBLISHER_PDF_ORIGINAL_FIGURES_OPEN",
+      "stageB": "GUARDED_FIRST_PARTY_RICH_V2_AND_COMPANION_RAZOR_AUTHORED_NOT_RUN",
+      "stageC": "EIGHT_SOURCE_NUMERIC_ORACLES_SIX_OPEN_TEACHER_SUBTASKS_WRITTEN_NOT_RUN",
       "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 13,
+      "sourceElementsIdentified": 28,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L05.json",
@@ -2620,7 +2652,12 @@
       "original2021FigureUrlCount": 8,
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": false,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-41-2021-source-to-first-party-evidence-20261024.json",
+      "sourceMatchingMeasurementScope": "PUBLIC_2021_TEACHER_STUDENT_HTML_MATH_CANDIDATE_PDF_COOLDOWN_AND_ORIGINAL_MEDIA_UNVERIFIED",
+      "authoredCandidateReviewStatus": "A_B_C_SOURCE_SPECIFIC_CORRECTIONS_COMMITTED_BUT_EXTERNAL_SOURCE_GAPS_REMAIN",
+      "testsWrittenNotRun": true
     },
     {
       "gradeOrdinal": 42,
@@ -5296,7 +5333,8 @@
     "2026-10-24 sequential ordinal34 U02:L13 A–C: partial44, T32 and Noah42pavers/42ft² individually reviewed;4 original SVG geometries and3 PDF pages; first-party models and35-square-unit ungridded Cool-down. New contracts written not run. Cursor35; no Stage D/CI dispatch/merge/deploy.",
     "2026-10-24 sequential ordinal35 U02:L14 A–C:4 original PDF pages,4 SVG references(3distinct), opposite-side spans and Tyler critique, A72m²/B22ft², exact unit-labelled lengths, teacher same/different-method restatement, independent33cm² Cool-down. Tests written not run. Cursor36; no Stage D/CI dispatch/merge/deploy.",
     "2026-10-24 sequential ordinal36 U02:L15 A–C:3 original PDF pages and3 image contexts; outerroom110ft²,bed18ft²,desk6ft²; original open layout/uncovered-floor task retains teacher review and explicit unknown-closet assumptions. Source-authorized own grid-paper alternative; publisher cut-out BLM not claimed inspected. New64ft² first-party exit task; original optional lesson has no listed publisher Cool-down. Tests written not run. Cursor37; no Stage D/CI dispatch/merge/deploy.",
-    "2026-10-24 sequential ordinal37 U03:L01 A–C:3 original studentPDFpages and5originalBLMPDFpages,full12-carddeck and4-boxroundtable;multiplevalidWODBchoices,standard/nonstandardexpandedform,exact100h+10t+o grader acceptingexchanges,new572-groupingCool-down replacing478echo. Source device read-only; tests written not run. Cursor38; no Stage D/CI dispatch/merge/deploy."
+    "2026-10-24 sequential ordinal37 U03:L01 A–C:3 original studentPDFpages and5originalBLMPDFpages,full12-carddeck and4-boxroundtable;multiplevalidWODBchoices,standard/nonstandardexpandedform,exact100h+10t+o grader acceptingexchanges,new572-groupingCool-down replacing478echo. Source device read-only; tests written not run. Cursor38; no Stage D/CI dispatch/merge/deploy.",
+    "2026-10-24 sequential ordinals 38–41 U03:L02–L05: source-specific guarded Rich V2, Razor companions, 14 source subtasks each, source numeric and open teacher contracts, and unrun regression cases committed separately. All four remain A_C_EXPLICIT_GAP because original publisher student PDFs, artwork, gated Cool-down and center documents not fully source-compared; no Stage D/CI/manual test, academic approval, merge, deploy. Verified READY_FOR_STAGE_D remains 37, first unclosed 38."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -5880,5 +5918,20 @@
     "ciRun": false,
     "stageD": "NOT_STARTED",
     "academicApproval": false
+  },
+  "latestAttemptedGradeOrdinal": 41,
+  "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U03:L05",
+  "lastAttemptNotClosure": {
+    "ordinals": [
+      38,
+      39,
+      40,
+      41
+    ],
+    "authoringCorrectionsCommitted": true,
+    "areClosed": false,
+    "reason": "Original publisher Student Task Statements PDFs, gated Cool-downs, original artwork and optional center materials not fully verified; teacher-led work unapproved",
+    "testStatus": "WRITTEN_NOT_EXECUTED",
+    "stageD": "NOT_STARTED"
   }
 }
