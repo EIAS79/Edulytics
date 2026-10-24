@@ -4778,10 +4778,10 @@
         "Unit square. Labeled square inch.",
         "Girls holding a square meter frame."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
@@ -4795,21 +4795,22 @@
         "expected": "8"
       },
       "openTeacherTask": "Work through the original lesson's activity Paint a Wall with your teacher. Show the representation and explain how it meets the goal: You will solve problems involving area.",
-      "teacherReviewNote": "The source has 3, 10 and 40 m² container coverages and a 20–30 ft² garden with fixed side 3. Teacher reviews possible choices and physical constraints.",
+      "teacherReviewNote": "The source has 3, 10 and 40 m² container coverages and a 20–30 ft² garden with fixed side 3. Teacher reviews possible choices and physical constraints. 2021 original five-page Student Task Statements and eight original source figures inspected. Source Paint a Wall deliberately allows numerous feasible paint buys with 3/10/40m² coverage—an optional first-party minimum-CANS arithmetic question is NOT the source objective. Source garden with width 3ft and 20–30ft² allows 7,8,9,10 whole-foot examples plus other appropriate measured lengths; original MLR6 defers revealing the question. Gallery walk and three written insights teacher-reviewed.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s solve area problems.",
+        "sourceGoal": "Solve area problems in a community garden",
         "sourceLearningGoals": "Solve real-world and mathematical problems involving area.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Warm-up mental multiplication 5×2, 6×2, 5×6, 6×6; relate each change to one more equal group.",
+          "For a 6m by3m wall, calculate 18m², then choose feasible paint quantities from capacities 3,10,40m², defending one of multiple valid solutions.",
+          "For a garden constrained to 3ft one side and area at least 20ft² but no more than 30ft², find examples of feasible dimensions.",
+          "Build a labelled poster, compare peer strategies and record three observations from the gallery walk."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve area problems.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not turn the source paint-buying or garden-design tasks into one numeric target; costs/prices are not specified. Square meters and square feet are not interchangeable.",
+        "targetRichV2Field": "2021 source-specific canonical Rich V2 bridge authored"
       },
       "sourceBasedCheck": {
         "prompt": "In the source Noah paints a wall 6 metres wide and 3 metres high. How many square metres?",
@@ -4818,11 +4819,127 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-10/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "FULL_2021_ORIGINAL_STUDENT_PDF_FIVE_PAGES_AND_EIGHT_PUBLISHER_VISUAL_ASSETS_INSPECTED",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L10-WU-01",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Calculate 5×2 mentally and explain how equal groups help.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U02-L10-WU-02",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Calculate 6×2 mentally and explain how one additional group changes 5×2.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U02-L10-WU-03",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Calculate 5×6 mentally and describe five groups of six.",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U02-L10-WU-04",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Calculate 6×6 mentally and explain how the extra six changes 5×6.",
+          "answerType": "integer",
+          "expected": "36"
+        },
+        {
+          "id": "G3-U02-L10-WU-REASON",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Explain why increasing one factor by 1 increases the product by one group of the other factor.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L10-A1-WALL-AREA",
+          "sourceActivity": "Activity 1 Paint a Wall",
+          "prompt": "Noah's source wall measures 6 meters by 3 meters: find the covered area IN SQUARE METERS before selecting paint.",
+          "answerType": "area-with-unit",
+          "expected": "18 m²"
+        },
+        {
+          "id": "G3-U02-L10-A1-CANS",
+          "sourceActivity": "Activity 1 Paint a Wall",
+          "prompt": "The wall needs coverage of 18 m². Paint containers cover 3, 10, 40 m² respectively. Propose ONE feasible purchase or combination and defend why coverage is at least 18 m²; several solutions are legitimate. A fixed machine answer of '2 cans' is NOT the sole source correct solution.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L10-A1-JUSTIFY",
+          "sourceActivity": "Activity 1 Paint a Wall",
+          "prompt": "Compare two valid ways to buy paint (for example, six small=18m², or two medium=20m²) and explain how leftover coverage differs, without claiming unstated prices.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L10-A2-READS",
+          "sourceActivity": "Activity 2 Create a Garden",
+          "prompt": "Teacher uses original MLR6 Three Reads: reveal only the garden situation first, then known numbers (area at least 20ft², soil at most 30ft², one side 3ft), and ONLY THEN reveal the question.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L10-A2-LENGTHS",
+          "sourceActivity": "Activity 2 Create a Garden",
+          "prompt": "Represent at least one possible other side length for a garden 3ft wide and area between 20 and 30ft² inclusive. Whole-foot examples are 7, 8, 9, 10 feet (areas 21,24,27,30ft²). Don't restrict the source to one unique answer or rule out other feasible measured lengths.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L10-A2-POSTER",
+          "sourceActivity": "Activity 2 Create a Garden",
+          "prompt": "Draw and explain a garden poster including a 3-foot side, chosen other side, product in square feet, and why both 20ft² minimum and 30ft² maximum are met.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L10-A2-GALLERY",
+          "sourceActivity": "Activity 2 Create a Garden",
+          "prompt": "Gallery walk: describe how a different team solved the garden problem and record THREE particular ideas that clarified other solutions.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L10-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain a strategy from paint or garden that uses multiplication of side lengths to find rectangular area and checks context-specific units.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L10-SUMMARY",
+          "sourceActivity": "2021 Source Section Summary",
+          "prompt": "Contrast inch² and meter² visual unit models. Explain why 1 square meter and 1 square inch are different-sized measurement units, and how side lengths determine area.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ],
+      "source2021Evidence": {
+        "originalPDF": {
+          "url": "https://cms-assets.illustrativemathematics.org/z62k9gkzb97ndt2l7es94fbvzrph",
+          "sha256": "398b7e3758e2c5419ac196e36a579ffe8c16ffd219b0ba01556c20c9648e630a",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "bytes": 11942428
+        },
+        "originalEightMediaInspected": true,
+        "publisherMediaCopied": false
+      }
     },
     {
       "ordinal": 32,
