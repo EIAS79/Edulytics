@@ -45,7 +45,7 @@
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 14,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 202,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 236,
     "originalSvgGeometriesInspected": 19
   },
   "cursor": {
@@ -1916,13 +1916,13 @@
       "unitNumber": 1,
       "lessonNumber": 15,
       "title": "More Factors, More Problems",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_VISUAL_FIGURES_PENDING",
-      "stageB": "SOURCE_SKILL_AND_FIRST_PARTY_PRACTICE_AUTHORED_RICHV2_OPEN",
-      "stageC": "SOURCE_SKILL_AND_COOLDOWN_NUMERIC_CONTRACTS_PROPOSED_TESTS_NOT_RUN",
+      "stageA": "2021_ORIGINAL_STUDENT_AND_TEACHER_PUBLIC_MATH_MATCHED_34_OF_38_SOURCE_ORIGINAL_MEDIA_AND_COOLDOWN_UNVERIFIED",
+      "stageB": "RICH_V2_V2_AND_FIRST_PARTY_EIGHT_PART_TAPE_AND_CENTER_LANGUAGE_AUTHORED",
+      "stageC": "FIFTEEN_SOURCE_DIGITIZABLE_ITEMS_PLUS_HUMAN_REASONING_UNRUN_STATIC_CONTRACTS",
       "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 7,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "sourceElementsIdentified": 38,
+      "fullyVerifiedSourceElements": 34,
+      "verifiedParityPercent": 89.47,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L15.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -1934,7 +1934,17 @@
       "original2021FigureUrlCount": 2,
       "original2021FiguresWithoutAlt": 1,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "sourceMatchingMeasurementScope": "OFFICIAL_2021_PUBLIC_TEXT_AND_FIRST_PARTY_SEMANTIC_AUTHORING_ONLY_WITH_FOUR_BLOCKED_SOURCE_MATERIAL_ELEMENTS",
+      "readyForStageD": false,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-element-map-v2-20261024.json",
+      "richV2SourceSpecificEmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json",
+      "remainingSourceMaterialBlockers": [
+        "L15-SUM-DRAW",
+        "L15-SUM-TAPE",
+        "L15-CD",
+        "L15-STUDENT-PDF"
+      ]
     },
     {
       "gradeOrdinal": 16,
@@ -5852,5 +5862,16 @@
     "testsRun": false,
     "headBeforeCommit": "7a1bffe131d20939da939f090e433ba5bc95f0c9"
   },
-  "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff"
+  "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
+  "latestSequentialCheckpoint": {
+    "lastClosedGradeOrdinal": 14,
+    "firstUnclosedGradeOrdinal": 15,
+    "unclosedReason": "2021 PDF, two original figure pixels, educator-gated Cool-down source not fully inspected",
+    "lesson15SemanticAuthoringCoveragePercent": 89.47,
+    "lesson15ReadyForStageD": false,
+    "testsRun": false,
+    "ciRun": false,
+    "stageD": "NOT_STARTED",
+    "academicApproval": false
+  }
 }
