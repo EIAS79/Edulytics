@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-15/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html",
   "stageA": {
-    "status": "2021_OFFICIAL_PUBLIC_TEACHER_STUDENT_38_ELEMENT_ONE_TO_ONE_REVIEW_34_SEMANTICALLY_AUTHORED_4_SOURCE_EVIDENCE_BLOCKED",
+    "status": "K5_V1_2021_FIRST_EDITION_PUBLIC_HTML_AND_ORIGINAL_TEACHER_GUIDE_41_ELEMENTS_38_SOURCE_SEMANTIC_AUTHORING_REVIEWED_3_ORIGINAL_MEDIA_PDF_BLOCKED",
     "goals": "Solve multiplication problems.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 1,
@@ -74,19 +74,35 @@
     "firstEditionPublisherCooldownOriginalInspected": false,
     "firstEditionStudentTaskPdfVisualCompared": false,
     "oneToOneCoverageEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-element-map-v2-20261024.json",
-    "reviewedIdentifiedOriginalElements": 38,
-    "verifiedOriginalSourceElementsForAuthoringSemantics": 34,
-    "unverifiedOriginalSourceElements": 4,
-    "sourceMatchingPercentAuthoringOnly": 89.47,
+    "reviewedIdentifiedOriginalElements": 41,
+    "verifiedOriginalSourceElementsForAuthoringSemantics": 38,
+    "unverifiedOriginalSourceElements": 3,
+    "sourceMatchingPercentAuthoringOnly": 92.68,
     "unverifiedElementIds": [
       "L15-SUM-DRAW",
       "L15-SUM-TAPE",
-      "L15-CD",
       "L15-STUDENT-PDF"
+    ],
+    "originalK5v1TeacherGuideSource": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+    "originalTeacherGuideEdition": "2021_K5_V1_ISBN_978-1-64885-869-7",
+    "original2021CoolDownTextReviewed": true,
+    "originalCoolDownNumericSituations": [
+      {
+        "groups": 4,
+        "each": 10,
+        "total": 40,
+        "sourceItem": "G3-U01-L15-CD-01"
+      },
+      {
+        "total": 10,
+        "each": 2,
+        "groups": 5,
+        "sourceItem": "G3-U01-L15-CD-02"
+      }
     ]
   },
   "stageB": {
-    "status": "SOURCE_SPECIFIC_RICH_V2_V2_AND_FIRST_PARTY_EIGHT_PART_TAPE_AND_ALL_2021_TEACHER_ACCESS_CENTERS_AUTHORED_NO_RUNTIME_CLAIM",
+    "status": "RICHV2_V3_AND_SOURCE_ORIGINAL_CD_TEACHING_AND_FIRST_PARTY_8x2_VISUAL_CREATED_UNPUBLISHED_RUNTIME_NOT_VERIFIED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -98,13 +114,13 @@
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "sourceSpecificMissingGroupsVsGroupSizeVsProductTeachingAuthored": true,
     "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json",
-    "authoredContentVersion": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v2",
+    "authoredContentVersion": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v3",
     "firstPartyVisualRenderer": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
     "firstPartyEightGroupTapeAuthored": true,
     "originalPublisherArtworkEmbedded": false
   },
   "stageC": {
-    "status": "2021_ORIGINAL_FOUR_WU_THREE_SYMBOLIC_PLUS_THREE_NUMERIC_FIVE_MASHUP_WITH_TEACHER_REASONING_WRITTEN_STATIC_CONTRACTS_NOT_RUN",
+    "status": "17_INDIVIDUAL_SOURCE_DIGITIZABLE_ANCHORS_INCLUDING_BOTH_ORIGINAL_COOLDOWN_CANDIDATE_ITEMS_AND_TEACHER_REASONING_TESTS_NOT_RUN",
     "family": "multiplication-expression-equation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -119,7 +135,7 @@
     "unknownRoleNotAutomaticallyCertified": true,
     "newTestsWrittenNotRun": true,
     "sourceUnknownSymbolQuestionCount": 3,
-    "sourceNumericQuestionCount": 12,
+    "sourceNumericQuestionCount": 14,
     "sourceSymbolContract": "multiplication-unknown-equation",
     "sourceSymbolTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs",
     "sourceWarmupNumericItems": 4,
@@ -127,7 +143,9 @@
     "sourceActivityOneSolvedNumericItems": 3,
     "sourceActivityTwoMixedUnknownItems": 5,
     "sourceOpenHumanReasoningItems": 9,
-    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs"
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs",
+    "source2021OriginalCoolDownNumericItems": 2,
+    "totalSourceDigitizableItems": 17
   },
   "sourceElements": [
     {
@@ -223,11 +241,11 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "2021 publisher first edition original two Student Section Summary figures (grouped sock drawing, 8-by-2 tape) cannot be compared as original pixels/SVG asset geometry using available source. Edulytics now has independent 8-part tape with explicit accessible 8×2=16 meaning, NOT original visual parity.",
-    "Official 2021 original Student Task Statements PDF link exists on preparation page, but content fetch returned cache miss; HTML source student-facing tasks are reviewed, actual PDF visuals not read.",
-    "2021 educator-gated publisher Cool-down remains inaccessible without authorized teacher access; a later adapted guide's problem cannot silently be treated as verified original 2021 source. Separate first-party equivalent remains permitted but not source-matched.",
-    "Source-to-product effective database/published Rich V2 version and learner renderer not observed in this stage; code change is authored, NOT verified published.",
-    "Student open diagrams, unknown-role reasoning, partner discussion and optional teacher centers are correctly routed to teacher review, not auto-certified."
+    "Two genuine original 2021 Section Summary publisher figures, sock-group drawing and eight-by-two tape, lack actual source pixel/SVG geometry review. Edulytics has independently drawn an accessible mathematical 8×2 tape, NOT claiming publisher visual pixel parity.",
+    "Official first-edition 2021 Student Task Statements PDF link was found, but PDF retrieval failed; original public Student Facing HTML and original 2021 K5_v1 teacher guide printed Cool-down text are now reviewed.",
+    "Before using original figures, independently review attribution/licensing of each graphic and obtain lawful access where required; none is copied in first-party materials.",
+    "Effective published canonical Rich V2 and Razor rendering not executed or observed. Authoring files are present, not a deployed-lesson parity proof.",
+    "Teacher-led drawing, original source Cool-down explanations, MLR8 language support and partner conversations require teacher assessment in use; correctness of numeric anchors is not a claim of classroom completion."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
@@ -235,13 +253,12 @@
   "deployed": false,
   "academicApproval": "NOT_CLAIMED",
   "lesson15EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-to-first-party-evidence-20261024.json",
-  "sourceElementGranularCount": 38,
+  "sourceElementGranularCount": 41,
   "sourceElementOneToOneMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-element-map-v2-20261024.json",
-  "sourceMatchingPercentageAuthoringOnly": 89.47,
+  "sourceMatchingPercentageAuthoringOnly": 92.68,
   "blockingElementIds": [
     "L15-SUM-DRAW",
     "L15-SUM-TAPE",
-    "L15-CD",
     "L15-STUDENT-PDF"
   ]
 }
