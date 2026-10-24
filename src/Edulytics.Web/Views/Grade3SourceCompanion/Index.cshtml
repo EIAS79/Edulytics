@@ -634,6 +634,24 @@
         @if(l.UnitNumber == 1 && l.LessonNumber == 21) {
             <section class="panel" aria-label="Original optional source modelling project with independent illustration">
                 <h2>Optional source project: plan a game night</h2>
+                <h3>Warm-up: Notice and Wonder, before revealing the context</h3>
+                <p>Look at this independently authored model first, without assuming what the six squares and surrounding circles represent. Describe what repeats and ask what information would help you understand the arrangement.</p>
+                <div role="img" aria-label="Six separate square centers arranged as three columns by two rows. Each square has one countable circle immediately above, below, left and right: four circles per square, twenty-four circles altogether."
+                     style="display:grid;grid-template-columns:repeat(3,76px);column-gap:17px;row-gap:18px;margin:14px 0">
+                    @for(var table=0;table<6;table++){
+                        <div style="position:relative;width:56px;height:56px;margin:10px;border:2px solid #436274;background:#e2f3ef;box-sizing:border-box">
+                            <span aria-hidden="true" style="position:absolute;width:12px;height:12px;top:-18px;left:19px;border-radius:50%;background:#266c86"></span>
+                            <span aria-hidden="true" style="position:absolute;width:12px;height:12px;bottom:-18px;left:19px;border-radius:50%;background:#266c86"></span>
+                            <span aria-hidden="true" style="position:absolute;width:12px;height:12px;left:-18px;top:19px;border-radius:50%;background:#266c86"></span>
+                            <span aria-hidden="true" style="position:absolute;width:12px;height:12px;right:-18px;top:19px;border-radius:50%;background:#266c86"></span>
+                        </div>
+                    }
+                </div>
+                <details>
+                    <summary>Teacher-controlled reveal of the original context</summary>
+                    <p>The six squares represent tables, and the four circles around each table represent potentially available seats. What information would you need BEFORE designing a seating plan for game night? This is not the final plan for sixteen tables.</p>
+                </details>
+                <p>Teacher access support: clarify unknown vocabulary with MLR8 and allow groups that need reduced complexity to work initially with fewer game types. Every pupil still creates a separate A–D graph in Activity 2, comparing their personal guest counts with their own group-designed seating plan.</p>
                 <p>Original constraints: 16 identical SQUARE tables, one person per available side, and four games: A needs 2 players, B 4, C 5, D 10. Decide which games run concurrently and how joined tables share edges. No single room layout is required.</p>
                 <p>Here is ONE independently constructed valid example for discussion, not an original publisher solution: run two games of EACH type. Games A and B use one table apiece per game, C uses two side-by-side tables per game, and D uses four tables in a straight row per game. This uses 2 + 2 + 4 + 8 = 16 tables, serving 4 + 8 + 10 + 20 = 42 guests.</p>
                 <table class="source-chart">
