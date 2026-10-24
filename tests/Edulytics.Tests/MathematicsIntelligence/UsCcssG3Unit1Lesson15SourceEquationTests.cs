@@ -87,9 +87,8 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.Equal("integer",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.Equal("12",lesson.OriginalEdulyticsCoolDown.Expected);
         Assert.False(lesson.OriginalStudentTaskPdfRead);
-        Assert.False(lesson.FullArtworkVerified);
-        Assert.False(lesson.PublishedRichV2Compared);
-        Assert.False(lesson.SourceToFirstPartyParityVerified);
+        Assert.False(lesson.ReadyForStageD);
+        Assert.Contains("unknown",lesson.TeacherReviewNote,StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
@@ -117,6 +116,6 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.Contains("g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v2",rich);
         Assert.Contains("Teacher reflection",rich);
         Assert.Contains("until a future unit",rich);
-        Assert.Contains("source original figure",razor, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("not the publisher's original picture",razor);
     }
 }
