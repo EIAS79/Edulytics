@@ -6606,34 +6606,134 @@
         "expected": "565"
       },
       "openTeacherTask": "Work through the original lesson's activity What is an Algorithm? with your teacher. Show the representation and explain how it meets the goal: You will use your knowledge of base-ten diagrams to make sense of two written addition algorithms.",
-      "teacherReviewNote": "Explain distinct recorded algorithms and the relationship between expanded base-ten diagrams and digits.",
+      "teacherReviewNote": "WODB A,B,D=247, C=257 (many valid reasons); Tyler, Lin, Han original-method comparison for 362+354=716; individual algorithm solutions 706,525,927; re-composition of 110,120 and 15, MLR7 visual discussion, MLR3 detailed written critique, original artwork and gated Cool-down not certified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn new ways to add.",
+        "sourceGoal": "Let's learn new ways to add.",
         "sourceLearningGoals": "Add within 1,000. Relate base-ten diagrams to written algorithms for addition.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Compare WODB forms for 247 and 257 without forcing one preferred reason.",
+          "Relate an original teacher-led base-ten model to Lin expanded and Han partial-sums records.",
+          "Practice three within-1,000 additions and explain partial place-value sums.",
+          "Use MLR7 visual comparison and MLR3 clarified reasoning; don't mistake a correct number for an explanation."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn new ways to add.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not copy unverified publisher images or assert source PDF figure parity. Students need teacher judgment for algorithms."
       },
       "sourceBasedCheck": {
-        "prompt": "The source gives three ways of calculating 362 + 354. What is the sum?",
+        "prompt": "Use a place-value method to find 362+354.",
         "answerType": "integer",
         "expected": "716"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-4/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "PUBLIC_2021_STUDENT_TEACHER_HTML_ARITHMETIC_REVIEWED_SOURCE_FIGURE_PIXELS_AND_PDF_UNVERIFIED",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U03-L04-WU-A",
+          "sourceActivity": "Which One Does Not Belong",
+          "prompt": "Evaluate 200+30+17.",
+          "answerType": "integer",
+          "expected": "247"
+        },
+        {
+          "id": "G3-U03-L04-WU-B",
+          "sourceActivity": "Which One Does Not Belong",
+          "prompt": "What value is written as the numeral B?",
+          "answerType": "integer",
+          "expected": "247"
+        },
+        {
+          "id": "G3-U03-L04-WU-C",
+          "sourceActivity": "Which One Does Not Belong",
+          "prompt": "Evaluate 200+47+10.",
+          "answerType": "integer",
+          "expected": "257"
+        },
+        {
+          "id": "G3-U03-L04-WU-D",
+          "sourceActivity": "Which One Does Not Belong",
+          "prompt": "Evaluate 100+140+7.",
+          "answerType": "integer",
+          "expected": "247"
+        },
+        {
+          "id": "G3-U03-L04-WU-REASON",
+          "sourceActivity": "Which One Does Not Belong",
+          "prompt": "Choose any option and explain why it differs in value, recording form or place-value regrouping.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L04-A1-362-354",
+          "sourceActivity": "What Is an Algorithm",
+          "prompt": "Lin and Han both represent 362+354. Calculate the sum.",
+          "answerType": "integer",
+          "expected": "716"
+        },
+        {
+          "id": "G3-U03-L04-A1-TYLER",
+          "sourceActivity": "What Is an Algorithm",
+          "prompt": "Make your own base-ten drawing and compare it with Tyler's publisher-original drawing with teacher.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L04-A1-LIN-HAN",
+          "sourceActivity": "What Is an Algorithm",
+          "prompt": "Compare 600+110+6 with 6+110+600, explaining hundreds, tens and ones, and the algorithm definition.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L04-A2-SUM1",
+          "sourceActivity": "Try an Algorithm",
+          "prompt": "Compute 475+231 using one explained algorithm.",
+          "answerType": "integer",
+          "expected": "706"
+        },
+        {
+          "id": "G3-U03-L04-A2-SUM2",
+          "sourceActivity": "Try an Algorithm",
+          "prompt": "Compute 136+389 using one explained algorithm.",
+          "answerType": "integer",
+          "expected": "525"
+        },
+        {
+          "id": "G3-U03-L04-A2-SUM3",
+          "sourceActivity": "Try an Algorithm",
+          "prompt": "Compute 670+257 using one explained algorithm.",
+          "answerType": "integer",
+          "expected": "927"
+        },
+        {
+          "id": "G3-U03-L04-A2-MLR3",
+          "sourceActivity": "Try an Algorithm",
+          "prompt": "Rewrite the incomplete 670+257 explanation to name how each of the 7 ones, 120 tens-value and 800 hundreds-value parts are recorded.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L04-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain what makes the procedure an algorithm and what is alike or different about Lin's and Han's records.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L04-CD",
+          "sourceActivity": "Publisher gated Cool-down",
+          "prompt": "The publisher's original Choose an Algorithm task needs separate teacher access; the Edulytics exit problem is independent.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 41,

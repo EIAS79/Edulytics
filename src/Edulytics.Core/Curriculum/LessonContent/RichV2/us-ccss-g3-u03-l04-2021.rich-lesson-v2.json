@@ -1,0 +1,120 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l04-2021-source-abc-firstparty-20261024-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L04",
+      "CultureCode": "en",
+      "Title": "Introduction to Addition Algorithms",
+      "ExplanationParagraphs": [
+        "Introduction to Addition Algorithms: pupils make sense of two reproducible written methods for addition within 1,000 using their existing base-ten representations. The method must preserve the correct ones, tens and hundreds values, with any newly composed ten or hundred accounted for.",
+        "Warm-up — Which One Doesn't Belong: 247. Compare A=200+30+17, B=247, C=200+47+10, and D=100+140+7. A, B and D represent 247. C represents 257. Pupils may single out B as the numeral, A as a non-standard split of ones, D as the regrouped hundreds, or C by its different value; a mathematically reasoned choice is reviewed by a teacher.",
+        "Activity 1 — What Is an Algorithm? Use the 362+354=716 task to relate base-ten blocks (Tyler's drawing) to Lin's expanded approach and Han's partial-sums recording. The three original visuals are third-party/source artwork and are not copied; the companion offers original first-party arithmetic descriptions and independently laid-out text blocks.",
+        "Lin's expanded way: 362=300+60+2 and 354=300+50+4, giving 600+110+6 and then 716. Han's recording: add the ones first (2+4=6), then tens (60+50=110), then hundreds (300+300=600), and combine 6+110+600=716. Both rely on like-unit addition. A student's diagram may show six hundreds, eleven tens and six ones before composing.",
+        "Introduce the term algorithm as a sequence of precise steps that gives a reliable sum when followed correctly. Partners explain what remains the same across block drawings and the two written records, and what differs (expanded addends or arrangement of partial sums). MLR7 Compare and Connect asks for an independently drawn visual display and discussion; it is teacher scored.",
+        "Activity 2 — Try an Algorithm: students use either method for 475+231=706, 136+389=525 and 670+257=927. They show work and label the place values, rather than only entering a result. Access to base-ten blocks remains available.",
+        "For 670+257, ones:0+7=7; tens:70+50=120; hundreds:600+200=800. Total 7+120+800=927. Under MLR3 Clarify, Critique, Correct, improve a short explanation by naming the order of steps and the recording of 120 as one hundred plus two tens where appropriate. This teacher-led critique is not a numeric check.",
+        "Synthesis: compare two methods for the same sum. Some methods write expanded addends and leave 600, 110 and 6 visible; others combine their partial sums in a compact record. The value remains the same. The source does not claim that one pupil must begin in a particular column in every valid method.",
+        "The independently authored Edulytics practice and Cool-down only assess mathematical anchors and do not reproduce the gated publisher Choose an Algorithm prompt. Publisher illustrations and optional center boards have not been reviewed and are not claimed to be source-material equivalent."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Place-value addition",
+          "Definition": "Combine same-valued units (ones with ones, tens with tens, hundreds with hundreds).",
+          "Rule": "Any regrouping must conserve total value.",
+          "Example": "600+110+6=716."
+        },
+        {
+          "Title": "Algorithm",
+          "Definition": "A repeatable sequence of steps which works if the operations are carried out correctly.",
+          "Rule": "Explain each partial sum and where it is recorded.",
+          "Example": "670+257=7+120+800=927."
+        },
+        {
+          "Title": "Equivalent representations",
+          "Definition": "Base-ten drawings, expanded expressions and written partial-sum records can describe the same arithmetic.",
+          "Rule": "Check both the units and the final total.",
+          "Example": "362+354=716 in all three approaches."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two written records for the same sum",
+          "Question": "Use the place-value parts to calculate 362+354.",
+          "Method": "Write same-value partial sums, in either order.",
+          "Steps": [
+            "2+4=6 ones.",
+            "60+50=110 (11 tens).",
+            "300+300=600.",
+            "6+110+600=716."
+          ],
+          "Answer": "716",
+          "Check": "716−354=362."
+        },
+        {
+          "Title": "When ones require composing",
+          "Question": "Calculate 136+389.",
+          "Method": "Add corresponding place-value components.",
+          "Steps": [
+            "6+9=15 ones.",
+            "30+80=110, and 100+300=400.",
+            "15+110+400=525."
+          ],
+          "Answer": "525",
+          "Check": "525−136=389."
+        },
+        {
+          "Title": "Critique the recording of 670+257",
+          "Question": "Add 670+257 and explain each partial-sum row.",
+          "Method": "Name hundreds/tens/ones in written order.",
+          "Steps": [
+            "0+7=7.",
+            "70+50=120.",
+            "600+200=800.",
+            "7+120+800=927."
+          ],
+          "Answer": "927",
+          "Check": "927−257=670."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming all warm-up options equal 247.",
+          "WhyWrong": "C=200+47+10=257.",
+          "Correction": "Separate C from A=247,B=247,D=247, and explain a different legitimate WODB reason if chosen."
+        },
+        {
+          "Mistake": "Discarding 10 from 110 tens-sum.",
+          "WhyWrong": "60+50=110, not 10.",
+          "Correction": "Retain all 110 as 1 hundred and 1 ten if composing."
+        },
+        {
+          "Mistake": "Computing 136+389 as 415.",
+          "WhyWrong": "Ten from 15 ones and another hundred from 110 tens were not conserved.",
+          "Correction": "15+110+400=525."
+        },
+        {
+          "Mistake": "Reading 670+257 partial sums as 7+20+800=827.",
+          "WhyWrong": "70+50=120, including an extra hundred.",
+          "Correction": "7+120+800=927."
+        },
+        {
+          "Mistake": "Grading verbal justification or original illustrations with one scalar.",
+          "WhyWrong": "Lin, Han and Tyler comparisons and MLR3 critiques require human review.",
+          "Correction": "Keep numeric anchors separate from teacher-scored explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "In the warm-up A,B,D equal 247 while C is 257.",
+        "Three representations of 362+354 all give 716; the same units are added.",
+        "Source practice sums are 706, 525 and 927.",
+        "An algorithm is an ordered procedure; alternative correct records remain valid.",
+        "MLR7 and MLR3 discussions and critique must be teacher scored.",
+        "Original third-party figure pixels and gated source Cool-down are not source-certified."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
