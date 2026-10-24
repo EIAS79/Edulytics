@@ -24,6 +24,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Seeding/Grade3/g3-2021-provisional-rich-v2-corrections.json"
                       LogicalName="Edulytics.Data.Grade3.SourceTeachingCorrections2021" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit1Lesson15RichV2" />
   </ItemGroup>
 
 </Project>
