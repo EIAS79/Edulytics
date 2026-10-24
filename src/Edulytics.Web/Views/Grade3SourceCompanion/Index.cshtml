@@ -589,20 +589,45 @@
                 <h2>Activity 1: same ten dots, two array situations</h2>
                 <p>These two arrays are independently drawn examples, not copied publisher images. Invent a different REAL-WORLD situation for each array. Describe 2 groups of 5 in Image A and 5 groups of 2 in Image B.</p>
                 <div class="two">
-                    <div><strong>Image A: 2 rows × 5 dots</strong>
-                        <div class="first-party-array" style="grid-template-columns:repeat(5,17px)" role="img" aria-label="Two rows each containing five dots">
-                            @for(var i=0;i<10;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                    <div><strong>Image A: two horizontal groups of five</strong>
+                        <div role="img" aria-label="Independent model: two horizontal enclosed groups, five blue dots in each group, total ten."
+                             style="display:flex;flex-direction:column;gap:8px;max-width:240px;margin-top:12px">
+                            @for(var row=0;row<2;row++){
+                                <div style="display:flex;justify-content:space-around;border:2px solid #426a83;border-radius:45px;padding:9px">
+                                    @for(var dot=0;dot<5;dot++){<span class="first-party-dot" aria-hidden="true"></span>}
+                                </div>
+                            }
                         </div>
                     </div>
-                    <div><strong>Image B: 5 rows × 2 dots</strong>
-                        <div class="first-party-array" style="grid-template-columns:repeat(2,17px)" role="img" aria-label="Five rows each containing two dots">
-                            @for(var i=0;i<10;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                    <div><strong>Image B: five vertical groups of two</strong>
+                        <div role="img" aria-label="Independent model: five vertical enclosed columns, each containing two blue dots, total ten; two rows of five remain visible."
+                             style="display:grid;grid-template-columns:repeat(5,minmax(26px,35px));gap:7px;margin-top:12px">
+                            @for(var col=0;col<5;col++){
+                                <div style="display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:13px;border:2px solid #426a83;border-radius:40px;padding:9px 4px">
+                                    <span class="first-party-dot" aria-hidden="true"></span><span class="first-party-dot" aria-hidden="true"></span>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
+                <p>The original 2021 Image B groups COLUMNS vertically, not five horizontal rows. Both pictures contain two rows of five dots, but changing which dots are enclosed as equal groups changes the interpretation from 2 × 5 to 5 × 2.</p>
                 <p>Show both complete equations, 2 × 5 = 10 and 5 × 2 = 10, with an explanation of which factor refers to each kind of group. Their totals match but the imagined situations may differ.</p>
                 <h2>Activity 2: one array, two complete equations</h2>
                 <p>Examine the original 3 × 6 array shown by the teacher and justify how 3 × 6 = 18 and 6 × 3 = 18 can BOTH describe it. Work with several partners and revise your explanation after their questions.</p>
+                <div role="img" aria-label="Independent Edulytics three-row six-column dot array, total eighteen objects."
+                     style="display:grid;grid-template-columns:repeat(6,17px);gap:6px;max-width:max-content;margin:12px 0">
+                    @for(var dot=0;dot<18;dot++){<span class="first-party-dot" aria-hidden="true"></span>}
+                </div>
+                <p>Section summary model, separately authored: three equal groups, each with five counters (15 total), alongside the expressions 3 × 5 and equations 3 × 5 = 15 and 5 × 3 = 15. These are independent explanatory symbols and diagrams, not copies of source figures.</p>
+                <div role="img" aria-label="Three independent first-party groups with five countable dots each, fifteen counters in all."
+                     style="display:flex;flex-wrap:wrap;gap:12px;margin:12px 0">
+                    @for(var group=0;group<3;group++){
+                        <div style="display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:7px;width:95px;height:65px;border:2px dashed #426a83;border-radius:48px">
+                            @for(var i=0;i<5;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                        </div>
+                    }
+                </div>
+
                 <p>The original lesson synthesis also compares 3 × 4 = 12 and 4 × 3 = 12 before writing 3 × 4 = 4 × 3. The inverse order of factors does not change the product.</p>
             </section>
         }
