@@ -128,6 +128,20 @@ public static class Grade3SourceCompanionCatalogue
                 : "Check which number describes the groups and which describes the members in each group. Teacher reviews alternative justifications.");
         }
 
+        if (q.AnswerType == "multiplication-equation-either-order")
+        {
+            // Scoped to lessons opting into the original 2021 rule:
+            // either factor order is valid, but equality and product are mandatory.
+            if (!TryReadProductEquation(submitted, out var first, out var second, out var total) ||
+                !TryReadProductEquation(q.Expected, out var a, out var b, out var wanted))
+                return new(false, true, "Write a complete true multiplication equation; a number alone is insufficient.");
+            var correct = total == wanted &&
+                ((first == a && second == b) || (first == b && second == a));
+            return new(correct, true, correct
+                ? "Factors and product agree. The teacher must still review your drawing and explanation."
+                : "Recheck the two factors and product against the source groups.");
+        }
+
         if (q.AnswerType == "multiplication-equation")
         {
             if (!TryReadProductEquation(submitted, out var ag, out var ap, out var at) ||

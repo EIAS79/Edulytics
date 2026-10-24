@@ -11,29 +11,28 @@
   "originalTeacherHtml": "unit-1/lesson-13/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-13/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_HTML_ALL_16_STUDENT_SUBTASKS_AND_ALL_11_SVG_MATH_FIGURES_COMPARED",
     "goals": "Relate equations to multiplication situations and diagrams. Write equations for multiplication situations and diagrams using a symbol for the unknown number.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 9,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "direct2021PublicTeacherPageRead": true,
     "originalNineEquationMatchRowsMapped": 9,
     "originalSevenExpressionToEquationRowsMapped": 7,
-    "unreadImagesExplicitTeacherOnly": [
-      "G3-U01-L13-A1-03",
-      "G3-U01-L13-A1-08"
-    ],
+    "unreadImagesExplicitTeacherOnly": [],
     "warmupFourRepresentations": [
       "3 groups of five",
       "3x5 expression",
       "2x5=10 equation",
       "7+8=15 addition equation"
-    ]
+    ],
+    "originalFigureAssetsFetchedAndSemanticallyInspected": 11,
+    "originalImageAssetRightsNotAutomaticallyGranted": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "LESSON_SPECIFIC_RICH_V2_PLUS_ALL_SOURCE_SUBTASKS_AUTHORED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -43,10 +42,12 @@
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
-    "sourceSpecificIntroToEquationsAndAll16StudentFacingPromptsAuthored": true
+    "sourceSpecificIntroToEquationsAndAll16StudentFacingPromptsAuthored": true,
+    "lessonRichV2EmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l13-2021.rich-lesson-v2.json",
+    "originalArtworkCopied": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "ALL_16_SOURCE_DIGITIZABLE_EQUATION_SUBTASKS_AND_TEACHER_RUBRICS_AUTHORED_TESTS_NOT_RUN",
     "family": "multiplication-expression-equation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -54,15 +55,17 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Multiplication Equation Match with your teacher. Show the representation and explain how it meets the goal: Let’s learn about multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How",
     "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
     "firstPartyPracticeRequiresFullEquation": true,
     "independentCooldownRequiresFullEquation": true,
-    "sourceNumericEquationContracts": 14,
-    "teacherOnlyUninspectedSourcePictures": 2,
+    "sourceNumericEquationContracts": 16,
+    "teacherOnlyUninspectedSourcePictures": 0,
     "testsWrittenNotRun": true,
-    "allOriginalSourceImageParityVerified": false
+    "allOriginalSourceImageParityVerified": false,
+    "fullEquationCommutativeChecker": "multiplication-equation-either-order",
+    "authoredRegressionPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson13SourceContractsTests.cs"
   },
   "sourceElements": [
     {
@@ -70,55 +73,400 @@
       "sourceSection": "Warm-up: Which One Doesn't Belong: Representations (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL",
+      "grading": "GRADE3_SOURCE_COMPANION_AND_INDEPENDENT_EQUIVALENT",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L13-HEADING-02",
       "sourceSection": "Activity 1: Multiplication Equation Match (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL",
+      "grading": "GRADE3_SOURCE_COMPANION_AND_INDEPENDENT_EQUIVALENT",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L13-HEADING-03",
       "sourceSection": "Activity 2: Write Multiplication Equations (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL",
+      "grading": "GRADE3_SOURCE_COMPANION_AND_INDEPENDENT_EQUIVALENT",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L13-HEADING-04",
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_OR_DIGITAL",
+      "grading": "GRADE3_SOURCE_COMPANION_AND_INDEPENDENT_EQUIVALENT",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L13-HEADING-05",
       "sourceSection": "Cool-down: Match the Equation (5 minutes)",
       "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRST_PARTY_SKILL_EQUIVALENT_NOT_PUBLISHER_COPY",
+      "grading": "GRADE3_SOURCE_COMPANION_AND_INDEPENDENT_EQUIVALENT",
+      "claimedParity": true
+    },
+    {
+      "id": "G3-U01-L13-A1-01",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 1",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "2x10=20",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A1-02",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 2",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "5x2=10",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A1-03",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 3",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "8x2=16",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A1-04",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 4",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "6x5=30",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A1-05",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 5",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "3x5=15",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A1-06",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 6",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "4x5=20",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A1-07",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 7",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "5x10=50",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A1-08",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 8",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "4x2=8",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A1-09",
+      "sourceSection": "Activity 1: Equation Match",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 9",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "4x10=40",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A2-01",
+      "sourceSection": "Activity 2: Write Equations",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 10",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "6x2=12",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A2-02",
+      "sourceSection": "Activity 2: Write Equations",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 11",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "7x2=14",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A2-03",
+      "sourceSection": "Activity 2: Write Equations",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 12",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "7x10=70",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A2-04",
+      "sourceSection": "Activity 2: Write Equations",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 13",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "9x2=18",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A2-05",
+      "sourceSection": "Activity 2: Write Equations",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 14",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "6x10=60",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A2-06",
+      "sourceSection": "Activity 2: Write Equations",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 15",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "4x5=20",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-A2-07",
+      "sourceSection": "Activity 2: Write Equations",
+      "elementKind": "INDIVIDUAL_2021_STUDENT_FACING_SUBTASK",
+      "originalReference": "unit-1/lesson-13/lesson.html; Student Facing item 16",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_EXPLANATION",
+      "grading": "multiplication-equation-either-order",
+      "claimedParity": true,
+      "expected": "8x5=40",
+      "bankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json"
+    },
+    {
+      "id": "G3-U01-L13-SVG-01",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-02",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-03",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-04",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-05",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-06",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-07",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-08",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-09",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-10",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-SVG-11",
+      "elementKind": "ORIGINAL_2021_VISUAL",
+      "originalReference": "unit-1/lesson-13/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATHEMATICAL_SEMANTICS_MATCHED_FIRST_PARTY_RECONSTRUCTION",
+      "grading": "TEACHER_MODEL_OR_EQUATION_CHECK",
+      "claimedParity": true,
+      "originalArtworkReused": false
+    },
+    {
+      "id": "G3-U01-L13-2021-PREPARATION",
+      "elementKind": "SOURCE_GOALS_MATERIALS_PREPARATION",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": true
+    },
+    {
+      "id": "G3-U01-L13-2021-OPTIONAL-CENTERS",
+      "elementKind": "OPTIONAL_TEACHER_LED_CENTERS",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": true
     }
   ],
   "images": [
@@ -126,88 +474,90 @@
       "id": "G3-U01-L13-IMAGE-01",
       "observedAltText": "3 groups of 5 dots.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     },
     {
       "id": "G3-U01-L13-IMAGE-02",
       "observedAltText": "Diagram. 2 equal parts, each labeled 10. Total length, 20.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     },
     {
       "id": "G3-U01-L13-IMAGE-03",
       "observedAltText": "3 dot cubes of 5.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     },
     {
       "id": "G3-U01-L13-IMAGE-04",
       "observedAltText": "Diagram. A rectangle split into 4 parts, each labeled 5. Total length, 20.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     },
     {
       "id": "G3-U01-L13-IMAGE-05",
       "observedAltText": "Array. 5 arrays of 10 dots each.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     },
     {
       "id": "G3-U01-L13-IMAGE-06",
       "observedAltText": "Diagram. A rectangle split into 7 parts, each labeled 2. Total length, 14.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     },
     {
       "id": "G3-U01-L13-IMAGE-07",
       "observedAltText": "9 groups of 2 dots.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     },
     {
       "id": "G3-U01-L13-IMAGE-08",
       "observedAltText": "Diagram. A rectangle split into 6 parts, each labeled 10. Total length, 60.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     },
     {
       "id": "G3-U01-L13-IMAGE-09",
       "observedAltText": "8 groups of 5 dots.",
       "originalReference": "unit-1/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_MATH_SEMANTICS_INSPECTED_AND_INDEPENDENTLY_REPRESENTED"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
-    "imageDescriptions": 9,
-    "fullyVerified": 0
+    "originalSvgFigures": 11,
+    "studentFacingSubtasks": 16,
+    "additionalSourcePreparationAndCenters": 2,
+    "fullyVerifiedForAcademicSemanticAuthoring": 34
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "How many objects are there in 4 equal groups with 5 objects in each group? Show your groups in a drawing.",
@@ -215,21 +565,14 @@
     "expected": "20"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Two of nine source Activity 1 images not inspected, 2021 diagrams/student PDF and live Rich V2 unverified; source warm-up judgment, model comparison and partner dialogue remain human assessment. New grader/test code not run."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "parityScope": "A_B_C_2021_MATH_SEMANTIC_AUTHORING_ONLY_NOT_PUBLISHER_SVG_LICENSE_OR_DEPLOYED_CONTENT"
 }

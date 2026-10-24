@@ -900,42 +900,44 @@
         "Diagram. A rectangle split into 7 parts, each labeled 2. Total length, 14.",
         "9 groups of 2 dots.",
         "Diagram. A rectangle split into 6 parts, each labeled 10. Total length, 60.",
-        "8 groups of 5 dots."
+        "8 groups of 5 dots.",
+        "Original 2021 image with no alt text (Activity 1 item 3), SVG asset ndswoo638zcr0d46en8j7p0ofyqe: 16 blue dots in eight outlined pairs, 8×2=16.",
+        "Original 2021 image with no alt text (Activity 1 item 8), SVG asset 2jo9a24d4bmnyiuo0qd6odwtr4cc: four tape parts labelled 2, total 8."
       ],
       "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "multiplication-equations",
       "independentPractice": {
         "prompt": "For 5 groups of 2 stickers each, write a full multiplication EQUATION showing both factors and total.",
-        "answerType": "multiplication-equation",
+        "answerType": "multiplication-equation-either-order",
         "expected": "5x2=10"
       },
       "originalEdulyticsCoolDown": {
         "prompt": "For 3 groups of 5 tokens each, write a complete multiplication equation.",
-        "answerType": "multiplication-equation",
+        "answerType": "multiplication-equation-either-order",
         "expected": "3x5=15"
       },
-      "openTeacherTask": "Work through the original lesson's activity Multiplication Equation Match with your teacher. Show the representation and explain how it meets the goal: You will relate multiplication equations to situations and diagrams and write equations.",
-      "teacherReviewNote": "An equation requires equality and factors that agree with the situation.",
+      "openTeacherTask": "Compare all four warm-up representations with at least two defensible answers; justify each of the nine original matching cards and draw or explain all seven equation-writing representations. Teacher reviews every student drawing, spoken justification and MLR7 discussion.",
+      "teacherReviewNote": "The original teacher preparation allows either factor order; each equation must be true and use the right two factors. Numeric feedback alone never certifies a learner-made diagram, source partner talk, or pedagogical understanding.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn about multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How",
+        "sourceGoal": "Use multiplication equations to represent, match and explain 2021 source equal-group situations; factor and product roles matter.",
         "sourceLearningGoals": "Relate equations to multiplication situations and diagrams. Write equations for multiplication situations and diagrams using a symbol for the unknown number.",
         "teachingSteps": [
-          "Compare a drawing of three groups of five, the expression 3×5, the multiplication equation 2×5=10 and the addition equation 7+8=15.",
-          "Discuss that an expression names factors, whereas an equation additionally asserts equality and identifies a product.",
-          "Match the source list of nine multiplication equations with nine original situations/diagrams. Original source pictures 3 and 8 need direct teacher inspection.",
-          "Create equations for seven source contexts and diagrams, distinguishing equal-group factor roles from products.",
-          "Compare equivalent drawings or tape diagrams and the correct factor and product vocabulary with a partner."
+          "Warm-up (10 minutes): compare A, independently drawn three groups of five; B, expression 3×5; C, equation 2×5=10; D, addition equation 7+8=15. More than one Which One Doesn't Belong answer can be justified.",
+          "Activity 1 (20 minutes): match NINE original situations to the nine equation options; inspect the previously unnamed third figure as eight dot pairs (16) and eighth figure as four equal sections of 2 (8).",
+          "Activity 2 (15 minutes): write complete multiplication equations for SEVEN source problems: six pairs, seven twos, seven tens, nine twos, six tens, four bags of five and eight groups of five.",
+          "Synthesis (10 minutes): compare expression 3×5 with equation 3×5=15, introduce factor and product and discuss representations with MLR7 Compare and Connect.",
+          "Cool-down (5 minutes): an original Edulytics-authored equivalent (three groups of five) requires complete equality; it is not the publisher educator-gated Cool-down."
         ],
-        "caution": "Do not accept a scalar product when the source explicitly asks for a multiplication equation. Two unidentified original images must remain teacher-only, not fabricated. Equivalent but reversed factors require human review in this source representation.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Publisher 2021 preparation does not mandate group-count-first factor order. Accept either factor order when total and factor pair agree, but always require teacher explanation and drawing review. Original SVG assets are source evidence only, not reused in first-party art.",
+        "targetRichV2Field": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l13-2021.rich-lesson-v2.json"
       },
       "sourceBasedCheck": {
         "prompt": "Five pairs of socks have how many individual socks?",
@@ -944,8 +946,8 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-1/lesson-13/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_FIRST_EDITION_STUDENT_FACING_HTML_16_TASKS_AND_ALL_11_SVG_ASSETS_AUDITED",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -954,112 +956,112 @@
           "id": "G3-U01-L13-A1-01",
           "sourceActivity": "Activity 1: Equation Match",
           "prompt": "A tape with two equal segments of ten objects each: write a complete multiplication equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "2x10=20"
         },
         {
           "id": "G3-U01-L13-A1-02",
           "sourceActivity": "Activity 1: Equation Match",
           "prompt": "Five pairs of socks: choose a complete multiplication equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "5x2=10"
         },
         {
           "id": "G3-U01-L13-A1-03",
           "sourceActivity": "Activity 1: Equation Match",
-          "prompt": "The original source's third picture has not been visually inspected; use your teacher's original card, select the listed equation and explain the match.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Eight original picture groups contain two dots each (eight outlined pairs in two rows); write an equation for all sixteen dots and explain the factor roles.",
+          "answerType": "multiplication-equation-either-order",
+          "expected": "8x2=16"
         },
         {
           "id": "G3-U01-L13-A1-04",
           "sourceActivity": "Activity 1: Equation Match",
           "prompt": "Six hands with five fingers each: write the equation that matches.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "6x5=30"
         },
         {
           "id": "G3-U01-L13-A1-05",
           "sourceActivity": "Activity 1: Equation Match",
           "prompt": "Three source dot cubes, with five dots on each cube: write the matching equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "3x5=15"
         },
         {
           "id": "G3-U01-L13-A1-06",
           "sourceActivity": "Activity 1: Equation Match",
           "prompt": "A four-section tape, each section worth five, has total twenty. Write the equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "4x5=20"
         },
         {
           "id": "G3-U01-L13-A1-07",
           "sourceActivity": "Activity 1: Equation Match",
           "prompt": "Five source arrays each hold ten dots: record a matching equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "5x10=50"
         },
         {
           "id": "G3-U01-L13-A1-08",
           "sourceActivity": "Activity 1: Equation Match",
-          "prompt": "The original source's eighth image has no independently checked mathematical description; a teacher must compare its picture to the correct listed equation.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "The original tape diagram has four equal sections each worth two; its total is eight. Write a complete equation and explain why it fits the four sections.",
+          "answerType": "multiplication-equation-either-order",
+          "expected": "4x2=8"
         },
         {
           "id": "G3-U01-L13-A1-09",
           "sourceActivity": "Activity 1: Equation Match",
           "prompt": "Four marker boxes holding ten markers per box: write a matching equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "4x10=40"
         },
         {
           "id": "G3-U01-L13-A2-01",
           "sourceActivity": "Activity 2: Write Equations",
           "prompt": "A package of six pairs of socks: record a multiplication equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "6x2=12"
         },
         {
           "id": "G3-U01-L13-A2-02",
           "sourceActivity": "Activity 2: Write Equations",
           "prompt": "A tape diagram has seven equal sections each labelled two; total fourteen. Write the equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "7x2=14"
         },
         {
           "id": "G3-U01-L13-A2-03",
           "sourceActivity": "Activity 2: Write Equations",
           "prompt": "Seven notebook sections each contain ten pages: write the equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "7x10=70"
         },
         {
           "id": "G3-U01-L13-A2-04",
           "sourceActivity": "Activity 2: Write Equations",
           "prompt": "Nine equal groups each contain two dots: express the groups in a multiplication equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "9x2=18"
         },
         {
           "id": "G3-U01-L13-A2-05",
           "sourceActivity": "Activity 2: Write Equations",
           "prompt": "A tape has six equal parts of ten objects each and total sixty: write an equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "6x10=60"
         },
         {
           "id": "G3-U01-L13-A2-06",
           "sourceActivity": "Activity 2: Write Equations",
           "prompt": "Four orange bags with five oranges each: write a matching equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "4x5=20"
         },
         {
           "id": "G3-U01-L13-A2-07",
           "sourceActivity": "Activity 2: Write Equations",
           "prompt": "Eight equal dot groups of five each: record the multiplication equation.",
-          "answerType": "multiplication-equation",
+          "answerType": "multiplication-equation-either-order",
           "expected": "8x5=40"
         }
       ]
