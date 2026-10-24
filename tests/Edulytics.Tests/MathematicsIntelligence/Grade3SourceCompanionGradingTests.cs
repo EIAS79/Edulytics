@@ -57,10 +57,10 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.NotNull(file);
         var view = File.ReadAllText(file!);
         Assert.Contains("six pairs of socks", view);
-        Assert.Contains("three equal tape-diagram sections labelled 2", view);
-        Assert.Contains("four equal groups of two strawberries", view);
-        Assert.Contains("four equal groups of five fingers", view);
-        Assert.Contains("original card-sort blackline materials", view);
+        Assert.Contains("three equal partitions, each labelled two signs", view);
+        Assert.Contains("FOUR bags of TWO strawberries", view);
+        Assert.Contains("FOUR hands with FIVE fingers", view);
+        Assert.Contains("original A–L 12-card equal-groups sort", view);
         Assert.Contains("original first-edition card deck was examined", view);
     }
 

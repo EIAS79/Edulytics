@@ -424,19 +424,20 @@
         }
         @if(l.SourceSubtasks.Count > 0) {
             <section class="panel" aria-label="Individual published source-aligned mathematical subtasks">
-                <h2>Original public source: individually checked numerical tasks</h2>
-                <p>These short independently worded prompts preserve the source contexts and numerical constraints. For every answer, construct a drawing, tape diagram or expression and explain why it matches. The teacher evaluates the representation; a number alone never completes this activity.</p>
+                <h2>@(l.SourceSubtasks.All(q => q.AnswerType=="teacher") ? "Original public source: teacher-reviewed constructions and discussion" : "Original public source: individually checked mathematical subtasks")</h2>
+                <p>These independently worded prompts preserve the source contexts. For each one, draw equal groups, explain the representation or discuss as required. A teacher judges the drawings, card matches and explanations; machine-checkable numeric anchors never establish completion of the original source activities.</p>
                 @for(var i=0;i<l.SourceSubtasks.Count;i++){
                     var task=l.SourceSubtasks[i];
                     <div class="panel">
                         <h3>@task.SourceActivity — task @(i+1)</h3>
                         <p>@task.Prompt</p>
-                        <label for="source-sub-answer-@i">My calculated response</label>
                         @if(task.AnswerType!="teacher"){
+                            <label for="source-sub-answer-@i">My calculated response</label>
                             <input id="source-sub-answer-@i" name="SourceSubtaskAnswers[@i]" maxlength="100"
                                 value="@Model.Answers.SourceSubtaskAnswers.ElementAtOrDefault(i)" inputmode="text" />
                         } else {
                             <input type="hidden" name="SourceSubtaskAnswers[@i]" value="" />
+                            <p>Source task requires a teacher-reviewed diagram, card match or spoken explanation. No automatic numeric pass applies.</p>
                         }
                         <label for="source-sub-explain-@i">My matching diagram, equation or explanation</label>
                         <textarea id="source-sub-explain-@i" name="SourceSubtaskReasoning[@i]"

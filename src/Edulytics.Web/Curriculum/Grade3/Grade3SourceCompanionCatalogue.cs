@@ -348,6 +348,11 @@ public sealed class Grade3CompanionLesson
     public string TeacherLearningGoals { get; set; } = "";
     public string StudentFacingGoal { get; set; } = "";
     public List<string> SourceActivityNames { get; set; } = [];
+    // Source document evidence is first-party metadata, not an assertion of
+    // publisher artwork reproduction or of classroom sign-off.
+    public bool OriginalStudentTaskPdfRead { get; set; }
+    public bool OriginalTeacherBlacklineMasterPdfRead { get; set; }
+    public int SourceCardCount { get; set; }
     // An optional, independently mapped 1:1 set of publicly verifiable
     // source numeric questions. Still separate from teacher-only components.
     public List<Grade3OriginalQuestion> SourceSubtasks { get; set; } = [];

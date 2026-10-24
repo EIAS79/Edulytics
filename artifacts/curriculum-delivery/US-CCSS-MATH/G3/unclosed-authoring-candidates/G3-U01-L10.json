@@ -52,7 +52,16 @@
     "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l10-2021.rich-lesson-v2.json",
     "sourceSpecificRichV2Version": "g3-u01-l10-first-edition-rich-v2-source-reviewed-20261024-v1",
     "firstPartyStudentViewSourceTasksVerifiedCodeOnly": 7,
-    "firstPartyCardDeckSourceLinkAdded": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml"
+    "firstPartyCardDeckSourceLinkAdded": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "lesson10RegistryModelRepaired": {
+      "path": "src/Edulytics.Web/Curriculum/Grade3/Grade3SourceCompanionCatalogue.cs",
+      "fields": [
+        "OriginalStudentTaskPdfRead",
+        "OriginalTeacherBlacklineMasterPdfRead",
+        "SourceCardCount"
+      ],
+      "authoredOnly": true
+    }
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -73,7 +82,16 @@
     "originalPublicSourceSubtasksCount": 7,
     "stageCGradeContract": "Teacher determines success for all source constructions; independent three scalar families (source-based 6, practice 8, cool-down 15) remain numeric extras requiring explanation and not publisher source acceptance",
     "sourceTaskTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson10RichV2AuthoringTests.cs",
-    "regressionTestUpdated": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs"
+    "regressionTestUpdated": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "sourceTaskRazorNoFalseNumericLabel": {
+      "path": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "teacherOnlyNoNumericPass": true
+    },
+    "sourceTestLegacyViewAssertionsUpdated": {
+      "path": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+      "written": true,
+      "executed": false
+    }
   },
   "sourceElements": [
     {
