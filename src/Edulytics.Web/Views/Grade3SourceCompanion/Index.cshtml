@@ -247,6 +247,24 @@
                         <div style="box-sizing:border-box;flex:1 0 12.5%;min-width:68px;padding:14px 3px;border-right:1px solid #54798b;text-align:center;font-variant-numeric:tabular-nums">2</div>
                     }
                 </div>
+                <h3>New Edulytics group drawing — sixteen as eight pairs</h3>
+                <p>The first-edition source drawing contains eight separate equal groups,
+                    arranged in two rows of four, with two countable objects in every group.
+                    The drawing below was independently constructed for Edulytics.
+                    Each outlined region represents ONE group, not an individual object.</p>
+                <div role="img" aria-label="Eight distinct groups in two rows of four. Each group encloses exactly two countable dots, representing sixteen socks in total."
+                     style="display:grid;grid-template-columns:repeat(4,minmax(48px,1fr));gap:12px;max-width:560px;margin:12px 0">
+                    @for(var pair=0;pair<8;pair++){
+                        <div aria-hidden="true" style="display:flex;align-items:center;justify-content:center;gap:8px;min-height:62px;border:2px dashed #346982;border-radius:18px;background:#f4f9fb">
+                            <span style="display:block;width:18px;height:18px;border-radius:50%;background:#147b96"></span>
+                            <span style="display:block;width:18px;height:18px;border-radius:50%;background:#147b96"></span>
+                        </div>
+                    }
+                </div>
+                <p><strong>Compare the two representations:</strong> count the groups,
+                    then count the objects in each group. Both show 8 × 2 = 16.
+                    A teacher reviews the learner's explanation; the picture alone
+                    is not an automatically graded source task.</p>
                 <p><strong>Groups:</strong> eight. <strong>Each group:</strong> two.
                     <strong>Total:</strong> sixteen. <strong>Expression:</strong> 8 × 2.
                     <strong>Equation:</strong> 8 × 2 = 16.
