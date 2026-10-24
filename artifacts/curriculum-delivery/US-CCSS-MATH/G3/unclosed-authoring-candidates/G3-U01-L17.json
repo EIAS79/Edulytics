@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-17/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-17/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "FIRST_EDITION_PUBLIC_TEACHER_STUDENT_SUBTASKS_REVIEWED_SOURCE_PDF_CARD_DECK_IMAGE_GEOMETRY_OPEN",
     "goals": "Relate arrays to drawings of equal groups and describe them in terms of multiplication.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 3,
@@ -32,7 +32,7 @@
     "sourcePeerRevisionRequired": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_ARRAY_DRAWING_RICHV2_AUTHORED_NO_RUNTIME_VERIFICATION",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -43,10 +43,11 @@
     "genericTeachingTemplateReviewRequired": true,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "firstPartyThreeRowsByFourDotsExampleOnly": true,
-    "originalImagesUncopiedAndUnverified": true
+    "originalImagesUncopiedAndUnverified": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SIX_ORIGINAL_STUDENT_SOURCE_SUBTASKS_TEACHER_ONLY_STATIC_TESTS_WRITTEN_UNRUN",
     "family": "arrays-commutative",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -59,7 +60,8 @@
     "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
     "sourceArrayTasksIndividualTeacherReviewRows": 6,
     "independentPracticeAndCoolDownTeacherOnlyNotNumericPass": true,
-    "staticRegressionWrittenNotRun": true
+    "staticRegressionWrittenNotRun": true,
+    "sourceUnrunTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson17ArrayReasoningTests.cs"
   },
   "sourceElements": [
     {
@@ -162,17 +164,16 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Original source A/B/C/D arrangements and array card set images inaccessible for full visual 1:1; all six source subtasks require drawing/peer review, Rich V2 and task PDF still unverified."
+    "Original publisher A/B/C/D dot images and source Card Sort Arrays blackline deck not fully image inspected.",
+    "Original Student Task PDF not visually inspected; no exact source-material parity claim.",
+    "Original physical card matching, drawing and MLR1 peer feedback/revision require human observation.",
+    "Published Rich V2 actual learner body and sidecar route not rendered or checked.",
+    "Grade 3 source contracts are written but .NET tests/CI/Stage D/academic sign-off all NOT_RUN."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence20261024": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-17-2021-source-to-first-party-evidence-20261024.json"
 }
