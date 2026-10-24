@@ -3589,8 +3589,8 @@
         "An empty grid.",
         "Diagram. Rectangle partitioned into 2 rows of 7 of the same size squares. Rectangle length 7, rectangle width 2."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
@@ -3606,7 +3606,7 @@
         "expected": "30"
       },
       "openTeacherTask": "Work through the original lesson's activity Match Expressions and Areas with your teacher. Show the representation and explain how it meets the goal: You will connect multiplication expressions to rectangular areas.",
-      "teacherReviewNote": "Multiplication factors correspond to rows and columns of unit squares; match to original wall examples.",
+      "teacherReviewNote": "All seven original first-edition 2021 7-page pattern cards individually source reviewed. Source math-to-letter match: 9×5→F, 8×2→C, 7×10→E, 3×3→D, 2×6→A, 8×4→G, 5×7→B. Edulytics illustrations are independently authored. Third original warm-up is 6 separate groups of 4, twenty-four dots, NOT an unknown count. The 2021 student PDF has four pages. Five 2021 activity2 area quantities require physically drawn and teacher-reviewed rectangles. Numeric or letter feedback cannot alone grade the whole lesson.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -3631,8 +3631,8 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-5/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "2021_PUBLIC_HTML_AND_4_PAGE_STUDENT_PDF_AND_6_LESSON_SVGS_AND_ALL_7_MATCH_CARD_PDF_PAGES",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -3654,58 +3654,58 @@
         {
           "id": "G3-U02-L05-WU-03",
           "sourceActivity": "Warm-up: How Many Do You See",
-          "prompt": "The final source figure is described only as groups of dots in alt text; compare to prior images and explain its grouping with the actual original image. Do not infer the exact picture from text.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original 2021 third warm-up figure has SIX clusters, each cluster a 2-by-2 group of FOUR dots; find how many dots there are altogether and explain 6×4=24 in terms of the actual picture. Teacher evaluates the grouping reasoning.",
+          "answerType": "integer",
+          "expected": "24"
         },
         {
           "id": "G3-U02-L05-A1-01",
           "sourceActivity": "Activity 1: Match Expressions and Areas",
-          "prompt": "Match the original 9 × 5 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Use Edulytics independently authored rectangle cards A–G, whose side-length geometry matches the inspected 2021 original cards. Identify the card with side lengths 9×5 (45 unit squares). Write its LETTER and explain in class how 9 and 5 represent the groups/rows/columns. Source original card is F; teacher checks the diagram interpretation.",
+          "answerType": "source-card-letter",
+          "expected": "F"
         },
         {
           "id": "G3-U02-L05-A1-02",
           "sourceActivity": "Activity 1: Match Expressions and Areas",
-          "prompt": "Match the original 8 × 2 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Use Edulytics independently authored rectangle cards A–G, whose side-length geometry matches the inspected 2021 original cards. Identify the card with side lengths 8×2 (16 unit squares). Write its LETTER and explain in class how 8 and 2 represent the groups/rows/columns. Source original card is C; teacher checks the diagram interpretation.",
+          "answerType": "source-card-letter",
+          "expected": "C"
         },
         {
           "id": "G3-U02-L05-A1-03",
           "sourceActivity": "Activity 1: Match Expressions and Areas",
-          "prompt": "Match the original 7 × 10 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Use Edulytics independently authored rectangle cards A–G, whose side-length geometry matches the inspected 2021 original cards. Identify the card with side lengths 7×10 (70 unit squares). Write its LETTER and explain in class how 7 and 10 represent the groups/rows/columns. Source original card is E; teacher checks the diagram interpretation.",
+          "answerType": "source-card-letter",
+          "expected": "E"
         },
         {
           "id": "G3-U02-L05-A1-04",
           "sourceActivity": "Activity 1: Match Expressions and Areas",
-          "prompt": "Match the original 3 × 3 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Use Edulytics independently authored rectangle cards A–G, whose side-length geometry matches the inspected 2021 original cards. Identify the card with side lengths 3×3 (9 unit squares). Write its LETTER and explain in class how 3 and 3 represent the groups/rows/columns. Source original card is D; teacher checks the diagram interpretation.",
+          "answerType": "source-card-letter",
+          "expected": "D"
         },
         {
           "id": "G3-U02-L05-A1-05",
           "sourceActivity": "Activity 1: Match Expressions and Areas",
-          "prompt": "Match the original 2 × 6 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Use Edulytics independently authored rectangle cards A–G, whose side-length geometry matches the inspected 2021 original cards. Identify the card with side lengths 2×6 (12 unit squares). Write its LETTER and explain in class how 2 and 6 represent the groups/rows/columns. Source original card is A; teacher checks the diagram interpretation.",
+          "answerType": "source-card-letter",
+          "expected": "A"
         },
         {
           "id": "G3-U02-L05-A1-06",
           "sourceActivity": "Activity 1: Match Expressions and Areas",
-          "prompt": "Match the original 8 × 4 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Use Edulytics independently authored rectangle cards A–G, whose side-length geometry matches the inspected 2021 original cards. Identify the card with side lengths 8×4 (32 unit squares). Write its LETTER and explain in class how 8 and 4 represent the groups/rows/columns. Source original card is G; teacher checks the diagram interpretation.",
+          "answerType": "source-card-letter",
+          "expected": "G"
         },
         {
           "id": "G3-U02-L05-A1-07",
           "sourceActivity": "Activity 1: Match Expressions and Areas",
-          "prompt": "Match the original 5 × 7 multiplication expression to the teacher-posted PUBLISHER gridded rectangle, then explain which dimension represents each factor. The original matching image is not independently inspected.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Use Edulytics independently authored rectangle cards A–G, whose side-length geometry matches the inspected 2021 original cards. Identify the card with side lengths 5×7 (35 unit squares). Write its LETTER and explain in class how 5 and 7 represent the groups/rows/columns. Source original card is B; teacher checks the diagram interpretation.",
+          "answerType": "source-card-letter",
+          "expected": "B"
         },
         {
           "id": "G3-U02-L05-A2-01",
@@ -3749,7 +3749,86 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "original2021StudentPdfEvidence": {
+        "pagesRead": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bytes": 66071,
+        "sha256": "6c8fe2df0ab2fd7fd4d623a9a4149df11ed482370f9f385b0e62975096153c2a"
+      },
+      "original2021BlacklineCardEvidence": {
+        "pagesRead": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "sha256": "7bf7d62d2b2595512c5440a54996417508c41757fe0a96c63973127e92e1fc5b",
+        "sourceImageArtCopied": false,
+        "firstPartySemanticCardMap": [
+          {
+            "expression": "9×5",
+            "cardLetter": "F",
+            "rows": 9,
+            "cols": 5,
+            "area": 45
+          },
+          {
+            "expression": "8×2",
+            "cardLetter": "C",
+            "rows": 8,
+            "cols": 2,
+            "area": 16
+          },
+          {
+            "expression": "7×10",
+            "cardLetter": "E",
+            "rows": 7,
+            "cols": 10,
+            "area": 70
+          },
+          {
+            "expression": "3×3",
+            "cardLetter": "D",
+            "rows": 3,
+            "cols": 3,
+            "area": 9
+          },
+          {
+            "expression": "2×6",
+            "cardLetter": "A",
+            "rows": 2,
+            "cols": 6,
+            "area": 12
+          },
+          {
+            "expression": "8×4",
+            "cardLetter": "G",
+            "rows": 8,
+            "cols": 4,
+            "area": 32
+          },
+          {
+            "expression": "5×7",
+            "cardLetter": "B",
+            "rows": 5,
+            "cols": 7,
+            "area": 35
+          }
+        ]
+      },
+      "original2021WarmupThird": {
+        "description": "six groups each four dots arranged as 2x2 mini-squares",
+        "expected": 24,
+        "sourceSvgSha256": "a66d54fa940382e8fa4d3bc5a099aba11f397b3abf30a09a4b71071a513e69f5"
+      }
     },
     {
       "ordinal": 27,
