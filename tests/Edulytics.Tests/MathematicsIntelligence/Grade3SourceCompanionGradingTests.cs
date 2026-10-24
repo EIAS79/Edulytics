@@ -61,7 +61,28 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Contains("four equal groups of two strawberries", view);
         Assert.Contains("four equal groups of five fingers", view);
         Assert.Contains("original card-sort blackline materials", view);
-        Assert.Contains("not been independently inspected here", view);
+        Assert.Contains("original first-edition card deck was examined", view);
+    }
+
+    [Fact]
+    public void LessonTenOriginalSevenTasksStayTeacherGradedAndOriginalCardDeckIsExplicit()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
+            "PED:US-CCSS-MATH:G3:U01:L10", out var lesson));
+        Assert.NotNull(lesson);
+        Assert.Equal(7, lesson.SourceSubtasks.Count);
+        Assert.All(lesson.SourceSubtasks, task => Assert.Equal("teacher", task.AnswerType));
+        Assert.Contains(lesson.SourceSubtasks, task =>
+            task.Id=="G3-U01-L10-A2-01" && task.Prompt.Contains("TWELVE cards A–L"));
+        Assert.Contains("4 × 5", lesson.SourceSubtasks.Last().Prompt);
+        Assert.True(lesson.OriginalStudentTaskPdfRead);
+        Assert.True(lesson.OriginalTeacherBlacklineMasterPdfRead);
+        Assert.Equal(12, lesson.SourceCardCount);
+        Assert.Equal("6", lesson.SourceBasedCheck!.Expected);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck,"6").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck,"12").NumericCorrect);
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.SourceSubtasks[4],"8").NumericCorrect);
+        Assert.False(lesson.ReadyForStageD);
     }
 
     [Theory]

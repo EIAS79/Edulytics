@@ -11,13 +11,13 @@
   "originalTeacherHtml": "unit-1/lesson-10/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-10/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_PUBLIC_TEACHER_LESSON_PREPARATION_STUDENT_TASK_PDF_AND_ORIGINAL_CARD_DECK_DIRECTLY_READ; ORIGINAL_COOLDOWN_RESTRICTED",
     "goals": "Interpret a situation involving equal groups and represent it with a diagram. Make sense of tape diagrams that represent multiplication.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 4,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "publicSourceActivity1Checked": [
       "6 pairs socks = 12, teacher Notice and Wonder",
       "3 tape sections labelled 2 correspond to 3 symbol road signs worth two each",
@@ -27,10 +27,17 @@
       "original teacher supplied card sort not inspected",
       "four bags each 2 strawberries = 8",
       "four hands each 5 fingers = 20"
-    ]
+    ],
+    "originalStudentTaskPdfPageCount": 4,
+    "originalStudentTaskPdfOfficialAsset": "https://cms-assets.illustrativemathematics.org/o2ira4alq51xndabaydw0w2w0h1s",
+    "originalBlacklineMasterInspected": true,
+    "originalCardDeckPageCount": 2,
+    "originalCardDeckCards": "A–L; 12 cards, four textual contexts A/B/D/J and eight drawings/diagrams",
+    "originalCardDeckUrl": "https://cms-assets.illustrativemathematics.org/hed6b8kerveg64nag78blbcvj1jk",
+    "sourcePublicSubtaskCount": 7
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "LESSON_SPECIFIC_RICH_V2_AND_ALL_SEVEN_PUBLIC_SOURCE_TASKS_AUTHORED; EFFECTIVE_RUNTIME_DEFERRED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -41,7 +48,11 @@
     "genericTeachingTemplateReviewRequired": true,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "lesson10SpecificWarmupAndSourceActivityPromptsAuthored": true,
-    "originalCardSortUnverifiedNotReplacedWithFalsePublisherParity": true
+    "originalCardSortUnverifiedNotReplacedWithFalsePublisherParity": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l10-2021.rich-lesson-v2.json",
+    "sourceSpecificRichV2Version": "g3-u01-l10-first-edition-rich-v2-source-reviewed-20261024-v1",
+    "firstPartyStudentViewSourceTasksVerifiedCodeOnly": 7,
+    "firstPartyCardDeckSourceLinkAdded": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml"
   },
   "stageC": {
     "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
@@ -57,7 +68,12 @@
     "teacherReviewNote": "Teacher checks equal-group sketches and representation, especially before symbolic multiplication is introduced.",
     "originalCardSortCannotBeMachineGraded": true,
     "extraOriginalHandGroupTaskPromptRequiresTeacherReview": true,
-    "unrunRazorSourceTaskRegressionAdded": true
+    "unrunRazorSourceTaskRegressionAdded": true,
+    "originalPublicSourceSubtasksAllTeacherOnly": true,
+    "originalPublicSourceSubtasksCount": 7,
+    "stageCGradeContract": "Teacher determines success for all source constructions; independent three scalar families (source-based 6, practice 8, cool-down 15) remain numeric extras requiring explanation and not publisher source acceptance",
+    "sourceTaskTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson10RichV2AuthoringTests.cs",
+    "regressionTestUpdated": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs"
   },
   "sourceElements": [
     {
@@ -65,44 +81,44 @@
       "sourceSection": "Warm-up: Notice and Wonder: Socks (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_AUTHORED_CODE_ONLY",
+      "grading": "TEACHER_REVIEW_REQUIRED",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L10-HEADING-02",
       "sourceSection": "Activity 1: Scaled Picture Graph to Diagram (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_AUTHORED_CODE_ONLY",
+      "grading": "TEACHER_REVIEW_REQUIRED",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L10-HEADING-03",
       "sourceSection": "Activity 2: Card Sort: Equal Groups (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_AUTHORED_CODE_ONLY",
+      "grading": "TEACHER_REVIEW_REQUIRED",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L10-HEADING-04",
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED_AUTHORED_CODE_ONLY",
+      "grading": "TEACHER_REVIEW_REQUIRED",
+      "claimedParity": true
     },
     {
       "id": "G3-U01-L10-HEADING-05",
@@ -111,8 +127,8 @@
       "originalReference": "unit-1/lesson-10/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "coverage": "SOURCE_UNAVAILABLE_INDEPENDENT_EQUIVALENT",
+      "grading": "TEACHER_REVIEW_REQUIRED",
       "claimedParity": false
     }
   ],
@@ -121,43 +137,45 @@
       "id": "G3-U01-L10-IMAGE-01",
       "observedAltText": "6 pairs of socks.",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_FIGURE_READ_FIRST_PARTY_SEMANTIC_REDRAW_NOT_ART_IDENTITY"
     },
     {
       "id": "G3-U01-L10-IMAGE-02",
       "observedAltText": "Picture Graph. Signs I Saw on the Way Home. Key: each square represents 2 signs. stop signs, 2 squares. yield signs, 1 square. speed limit signs, 3 squares. street signs, 5 squares.",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_FIGURE_READ_FIRST_PARTY_SEMANTIC_REDRAW_NOT_ART_IDENTITY"
     },
     {
       "id": "G3-U01-L10-IMAGE-03",
       "observedAltText": "Diagram. rectangle partitioned�into 3 equal parts, each labeled 2.",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_FIGURE_READ_FIRST_PARTY_SEMANTIC_REDRAW_NOT_ART_IDENTITY"
     },
     {
       "id": "G3-U01-L10-IMAGE-04",
       "observedAltText": "Diagram.",
       "originalReference": "unit-1/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_FIGURE_READ_FIRST_PARTY_SEMANTIC_REDRAW_NOT_ART_IDENTITY"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 4,
-    "fullyVerified": 0
+    "fullyVerified": 0,
+    "publicTextAndSubtaskElementsMapped": 7,
+    "sourceTeacherGuideCoolDownStillRestricted": 1
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "How many objects are there in 4 equal groups with 2 objects in each group? Show your groups in a drawing.",
@@ -169,13 +187,9 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "Public student-facing original source tasks now separately named and modelled in companion prose, but original publisher card deck/images, structured user response per source element and effective Rich V2 remain unverified."
+    "Only the publisher educator-gated 2021 original Cool-down 'Boxes of Shirts' question is still not accessible; source-item parity cannot be established for it without an authorized teacher resource. The independent Edulytics Cool-down is labelled separately.",
+    "First-party Rich V2 and the per-source-task student interface are authored in GitHub, but tests, effective learner routing and deployment are intentionally deferred to Stage D; authored tests have NOT run.",
+    "Physical sort of official A–L cards, source student drawings and spoken explanations will be teacher-reviewed in classroom, not silently marked machine-verified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
