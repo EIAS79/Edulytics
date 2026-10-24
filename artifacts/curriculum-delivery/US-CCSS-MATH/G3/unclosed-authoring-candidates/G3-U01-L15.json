@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-15/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html",
   "stageA": {
-    "status": "2021_FIRST_EDITION_FULL_PUBLIC_TEACHER_STUDENT_TEXT_AND_18_GRANULAR_ELEMENTS_MAPPED_PDF_FIGURES_OPEN",
+    "status": "2021_OFFICIAL_PUBLIC_TEACHER_STUDENT_38_ELEMENT_ONE_TO_ONE_REVIEW_34_SEMANTICALLY_AUTHORED_4_SOURCE_EVIDENCE_BLOCKED",
     "goals": "Solve multiplication problems.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 1,
@@ -67,10 +67,26 @@
         "unknown": "GROUP_COUNT",
         "answer": 10
       }
+    ],
+    "referenceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html",
+    "referencePreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/preparation.html",
+    "firstEditionPublisherOriginalImageSvgInspected": false,
+    "firstEditionPublisherCooldownOriginalInspected": false,
+    "firstEditionStudentTaskPdfVisualCompared": false,
+    "oneToOneCoverageEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-element-map-v2-20261024.json",
+    "reviewedIdentifiedOriginalElements": 38,
+    "verifiedOriginalSourceElementsForAuthoringSemantics": 34,
+    "unverifiedOriginalSourceElements": 4,
+    "sourceMatchingPercentAuthoringOnly": 89.47,
+    "unverifiedElementIds": [
+      "L15-SUM-DRAW",
+      "L15-SUM-TAPE",
+      "L15-CD",
+      "L15-STUDENT-PDF"
     ]
   },
   "stageB": {
-    "status": "2021_SOURCE_SPECIFIC_RICH_V2_AUTHORED_NOT_RUNTIME_VERIFIED",
+    "status": "SOURCE_SPECIFIC_RICH_V2_V2_AND_FIRST_PARTY_EIGHT_PART_TAPE_AND_ALL_2021_TEACHER_ACCESS_CENTERS_AUTHORED_NO_RUNTIME_CLAIM",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -81,10 +97,14 @@
     "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "sourceSpecificMissingGroupsVsGroupSizeVsProductTeachingAuthored": true,
-    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json"
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json",
+    "authoredContentVersion": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v2",
+    "firstPartyVisualRenderer": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "firstPartyEightGroupTapeAuthored": true,
+    "originalPublisherArtworkEmbedded": false
   },
   "stageC": {
-    "status": "ALL_THREE_ACTIVITY_ONE_UNKNOWN_SYMBOL_AND_NUMERIC_ANSWERS_AUTHORED_TESTS_NOT_RUN",
+    "status": "2021_ORIGINAL_FOUR_WU_THREE_SYMBOLIC_PLUS_THREE_NUMERIC_FIVE_MASHUP_WITH_TEACHER_REASONING_WRITTEN_STATIC_CONTRACTS_NOT_RUN",
     "family": "multiplication-expression-equation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -101,7 +121,13 @@
     "sourceUnknownSymbolQuestionCount": 3,
     "sourceNumericQuestionCount": 12,
     "sourceSymbolContract": "multiplication-unknown-equation",
-    "sourceSymbolTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs"
+    "sourceSymbolTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs",
+    "sourceWarmupNumericItems": 4,
+    "sourceActivityOneSymbolicEquationItems": 3,
+    "sourceActivityOneSolvedNumericItems": 3,
+    "sourceActivityTwoMixedUnknownItems": 5,
+    "sourceOpenHumanReasoningItems": 9,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs"
   },
   "sourceElements": [
     {
@@ -197,12 +223,11 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 public student-task PDF not visually retrieved or inspected; the HTML source is reviewed.",
-    "Original Student Section Summary publisher figure pixels/rights not independently reviewed.",
-    "Teacher-only source Cool-down not inspected; an Edulytics first-party equivalent is separate.",
-    "Published learner Rich V2 effective database/runtime, route and renderer unverified.",
-    "Written Grade 3 source symbolic equation tests deliberately NOT_RUN pending Stage D.",
-    "Partner interpretation, drawing and model explanations require teacher academic review."
+    "2021 publisher first edition original two Student Section Summary figures (grouped sock drawing, 8-by-2 tape) cannot be compared as original pixels/SVG asset geometry using available source. Edulytics now has independent 8-part tape with explicit accessible 8×2=16 meaning, NOT original visual parity.",
+    "Official 2021 original Student Task Statements PDF link exists on preparation page, but content fetch returned cache miss; HTML source student-facing tasks are reviewed, actual PDF visuals not read.",
+    "2021 educator-gated publisher Cool-down remains inaccessible without authorized teacher access; a later adapted guide's problem cannot silently be treated as verified original 2021 source. Separate first-party equivalent remains permitted but not source-matched.",
+    "Source-to-product effective database/published Rich V2 version and learner renderer not observed in this stage; code change is authored, NOT verified published.",
+    "Student open diagrams, unknown-role reasoning, partner discussion and optional teacher centers are correctly routed to teacher review, not auto-certified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
@@ -210,5 +235,13 @@
   "deployed": false,
   "academicApproval": "NOT_CLAIMED",
   "lesson15EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-to-first-party-evidence-20261024.json",
-  "sourceElementGranularCount": 18
+  "sourceElementGranularCount": 38,
+  "sourceElementOneToOneMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-element-map-v2-20261024.json",
+  "sourceMatchingPercentageAuthoringOnly": 89.47,
+  "blockingElementIds": [
+    "L15-SUM-DRAW",
+    "L15-SUM-TAPE",
+    "L15-CD",
+    "L15-STUDENT-PDF"
+  ]
 }
