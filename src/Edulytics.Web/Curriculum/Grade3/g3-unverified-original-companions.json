@@ -3397,11 +3397,11 @@
         "Area diagram. Length, 6. Width, 4.",
         "Rectangle. 3 rows of 6 unit tiles. Tiles have gaps and overlaps."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "rectangle-area",
       "independentPractice": {
         "prompt": "If a rectangular tiled area has 5 rows of 4 square units, find its area.",
@@ -3414,10 +3414,10 @@
         "expected": "18"
       },
       "openTeacherTask": "Work through the original lesson's activity What Did I Create? with your teacher. Show the representation and explain how it meets the goal: You will continue to count squares to create rectangles and to find the area of rectangles with larger numbers than in the previous lesson.",
-      "teacherReviewNote": "Drawing a rectangle based on your partner's verbal instructions is a human-observed task.",
+      "teacherReviewNote": "Drawing a rectangle based on your partner's verbal instructions is a human-observed task. The original third source rectangle was inspected (six rows of ten, 60 square units). The original source 2021 Student Task Statements PDF is four pages, and 13 original instructional source image assets were inspected; partner hidden-copy illustration was a third-party picture and is NOT copied.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s find the area of more rectangles.",
@@ -3425,11 +3425,11 @@
         "teachingSteps": [
           "Use original WODB: three warm-up drawings correspond to 20 grouped objects/tiles, while image B has 24; compare grouping language and image type.",
           "In Activity 1, partners use the original 12×12 square grid, an opaque folder, and two roles: A DRAW and DESCRIBE with rows/columns, B DRAW without seeing A or being told the total, then switch.",
-          "Activity 2 has four source rectangles. Independently visible values are 2×9=18, 6×5=30 and 5×9=45 square units. Third image remains unverified until opened.",
+          "Activity 2 four verified original rectangles: 2×9=18, 6×5=30, 6×10=60 (the previously unknown third), and 5×9=45 SQUARE units. Every figure individually visually inspected.",
           "Ask students to explain the counting strategies, ensuring results explicitly state SQUARE units, not perimeter units.",
           "Contrast arrays as collections of objects with tiled rectangles as covered flat area; partner language and actual drawings remain teacher evaluated."
         ],
-        "caution": "The hidden-copy rectangle task must not reveal total area to partner B. The third original source area diagram lacks verified dimensions; never invent its expected count. First-party numeric area drills are not evidence of original drawing fidelity.",
+        "caution": "Original third area figure visually verified to be six rows of ten, 60 square units. Numeric anchors can check values but cannot auto-pass drawing/teacher explanation. In hidden-copy activity the teacher must NOT reveal total squares to partner B.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -3439,8 +3439,8 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-4/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "2021_STUDENT_4_PAGE_ORIGINAL_AND_ALL_13_ORIGINAL_MEDIA_VISUALLY_READ",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -3504,9 +3504,9 @@
         {
           "id": "G3-U02-L04-A2-03",
           "sourceActivity": "Activity 2: Find the Area",
-          "prompt": "Source rectangle 3 is described as equal square tiles but its row/column count is not present in the accessible source description. Read the ORIGINAL image with the teacher, then find its area.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original 2021 figure 3 was individually inspected: it is a fully tiled rectangle with SIX rows of TEN congruent square units. Find its area, include square units, and explain your row/column strategy.",
+          "answerType": "integer",
+          "expected": "60"
         },
         {
           "id": "G3-U02-L04-A2-04",
@@ -3522,7 +3522,17 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "original2021SourceEvidence": {
+        "studentTaskPdfSha256": "2748a084931744f539be5fa74abef08644690f4e7c18d72000d8140293cde990",
+        "studentPdfPagesRead": 4,
+        "originalVisualMediaAssetsRead": 13,
+        "sourceFigure3Rows": 6,
+        "sourceFigure3Columns": 10,
+        "sourceFigure3AreaSquareUnits": 60,
+        "sourceArtworkCopied": false,
+        "pdfDownloadedTo": "D:\\Edulytics-Source-Review\\G3-U02-L04\\student.pdf"
+      }
     },
     {
       "ordinal": 26,
