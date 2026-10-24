@@ -11,13 +11,13 @@
   "originalTeacherHtml": "unit-1/lesson-20/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-20/lesson.html",
   "stageA": {
-    "status": "IM_2021_PUBLIC_STUDENT_TEACHER_TEXT_ELEMENTS_MAPPED_ORIGINAL_MEDIA_PDF_UNVERIFIED",
+    "status": "FIRST_EDITION_2021_TEACHER_PREP_STUDENT_PDF_FIVE_PAGES_FOUR_SOURCE_SVGS_29_OF_29_SEMANTIC_ELEMENTS",
     "goals": "Describe the commutative property of multiplication using arrays.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "directPublicSourceRead": "Original 2021 online teacher+student-facing lesson 20 inspected: warmup and both activities",
     "originalWarmupEquations": [
       [
@@ -56,10 +56,18 @@
       ],
       "peerRevision": true
     },
-    "originalTeacherCoolDownGated": true
+    "originalTeacherCoolDownGated": true,
+    "originalStudentTaskPdfSha256": "9fad424bc9c7d744e689eb6286533dd579e01ec8ee4b8556665bec4eeef0c274",
+    "originalStudentTaskPdfPages": 5,
+    "originalImageAssetsInspected": true,
+    "originalFigureSvgCount": 4,
+    "sourceImageBOrientation": "FIVE_VERTICAL_GROUPS_OF_TWO_IN_TWO_ROWS_OF_FIVE_DOTS",
+    "originalSourceElementCount": 29,
+    "originalSourceElementsSemanticallyVerified": 29,
+    "sourceSemanticMatchingPercent": 100
   },
   "stageB": {
-    "status": "FIRST_PARTY_SOURCE_SPECIFIC_RICH_V2_AUTHORED_RUNTIME_UNVERIFIED",
+    "status": "RICHV2_V2_CANONICAL_SHA_EDITION_GUARDED_SOURCE_GROUP_GEOMETRY_AND_SECTION_SUMMARY_ORIGINAL_FIRSTPARTY_DRAWINGS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -70,10 +78,13 @@
     "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "sourceSpecificCommutativePairUIAndIllustrationsAuthored": true,
-    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l20-2021.rich-lesson-v2.json"
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l20-2021.rich-lesson-v2.json",
+    "sourceSpecificRichV2Version": "g3-u01-l20-2021-source-abc-firstparty-20261024-v2",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson20RichV2.cs",
+    "sourceArtworkCopied": false
   },
   "stageC": {
-    "status": "TWO_SOURCE_COMMUTATIVE_FULL_EQUATION_PAIRS_AND_THREE_TEACHER_RUBRICS_WRITTEN_TESTS_UNRUN",
+    "status": "FOUR_WARMUP_TWO_VALID_SWAPPED_EQUATION_PAIRS_THREE_HUMAN_TEXT_DRAWING_TASKS_TEST_CONTRACTS_WRITTEN_NOT_RUN",
     "family": "arrays-commutative",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -81,7 +92,7 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Learn More About Multiplication with your teacher. Show the representation and explain how it meets the goal: Let’s learn about the commutative property. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.OA.B.5 Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down",
     "teacherReviewNote": "Arrays and factor order must be represented or explained; numeric scoring alone does not certify an array.",
     "newAnswerFamily": "commutative-equation-pair",
@@ -89,7 +100,9 @@
     "sourceHumanSubtasks": 3,
     "commutativePairsRequireBothTrueFullEquations": true,
     "testsWrittenNotExecuted": true,
-    "sourceTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson20CommutativeSourceTests.cs"
+    "sourceTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson20CommutativeSourceTests.cs",
+    "teacherTasksNotNumericPassed": true,
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson20CommutativeSourceTests.cs"
   },
   "sourceElements": [
     {
@@ -199,19 +212,22 @@
     "expected": "10"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original source dot-array images A and B, Activity 2 and section-summary figures have not been individually pixel compared or reuse-rights audited.",
-    "Publisher educator-gated original Cool-down and original Student Task PDF not inspected as complete original materials.",
-    "Teacher-led distinct source array situations, MLR1 text revision and human model explanations unverified.",
-    "New first-party Rich V2 effective learner render and authored .NET tests have not been run, no Stage D approval."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
   "academicApproval": "NOT_CLAIMED",
-  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-20-2021-source-to-first-party-evidence-20261024.json"
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-20-2021-source-to-first-party-evidence-20261024.json",
+  "originalSourceElementCountGranular": 29,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    "No .NET tests/CI/Stage D executed",
+    "No live learner Rich V2 DB/renderer verification in authoring phase",
+    "Open teacher discussion MLR8 and MLR1 dialogue require teacher assessment in use",
+    "Original publisher gated cooldown independently replaced with permitted first-party equivalent"
+  ]
 }
