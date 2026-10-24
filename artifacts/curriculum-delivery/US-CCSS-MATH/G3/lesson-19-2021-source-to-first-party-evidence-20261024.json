@@ -334,7 +334,7 @@
   "sourceRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l19-2021.rich-lesson-v2.json",
   "sourceCompanion": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
   "writtenUnrunTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson19UnknownProductTests.cs",
-  "originalFigureParityCertified": true,
+  "originalFigureParityCertified": false,
   "sourcePdfRead": true,
   "verifiedAcademicParityPercent": 100,
   "authoringState": "READY_FOR_STAGE_D",
@@ -366,5 +366,9 @@
     "Teacher-only task assessment requires a teacher when learners use the lesson",
     "Publisher gated source Cool-down is deliberately replaced with original independently authored equivalent; not claiming verbatim parity.",
     "Stage D, tests, CI, deployment, merge not executed."
-  ]
+  ],
+  "originalFigureSourceContextRead": true,
+  "originalFigureMathematicalNumbersSupportedByText": true,
+  "originalFigureMediaPixelsReproduced": false,
+  "verifiedAcademicParityScope": "FULL_SOURCE_MATH_AND_LESSON_SEMANTICS_WITH_INDEPENDENT_FIRST_PARTY_FIGURES_NOT_PIXEL_IDENTITY"
 }
