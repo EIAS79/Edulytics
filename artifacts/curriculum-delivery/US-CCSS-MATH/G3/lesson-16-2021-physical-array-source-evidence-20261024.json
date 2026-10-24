@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L16",
+  "edition": "Illustrative Mathematics K5 First Edition 2021",
+  "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/lesson.html",
+  "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/preparation.html",
+  "date": "2026-10-24",
+  "originalSourceElements": 9,
+  "sourceMap": [
+    {
+      "id": "PREP",
+      "source": "Original materials: >=60 connecting cubes per pair for Activity 2",
+      "kind": "TEACHER_MATERIAL",
+      "status": "RICH_V2_AUTHORED_NOT_OBSERVED",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "WU",
+      "source": "Egg carton 12 eggs; Notice and Wonder",
+      "kind": "ORIGINAL_IMAGE_AND_ORAL",
+      "status": "ORIGINAL_MEDIA_PIXELS_NOT_VERIFIED",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A1-Q1",
+      "source": "20 dots compared across four circles of five and rectangular array",
+      "kind": "OPEN_EXPLANATION",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A1-Q2",
+      "source": "Explain why Noah is mistaken to deny array equal groups",
+      "kind": "ARGUMENT",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A2-Q1",
+      "source": "Build 6 groups of 5 into an array with connecting cubes",
+      "kind": "PHYSICAL_CONSTRUCTION",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A2-Q2",
+      "source": "Make different rectangular arrays using all 20 cubes",
+      "kind": "MULTIPLE_VALID_DRAWINGS",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A2-Q3",
+      "source": "Make different rectangular arrays using all 24 cubes; exhaustiveness not required",
+      "kind": "MULTIPLE_VALID_DRAWINGS",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "SYN",
+      "source": "Teacher discussion about equal rows, columns, groups and arrays",
+      "kind": "OPEN_ORAL_REVIEW",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "CD",
+      "source": "Original 2021 gated Array Arrangement Cool-down",
+      "kind": "PUBLISHER_RESTRICTED",
+      "status": "FIRST_PARTY_EQUIVALENT_SEPARATE",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    }
+  ],
+  "sourceOneToOneRuntimeVerified": 0,
+  "sourceFirstPartyTeacherItems": 7,
+  "sourceArrays": [
+    "6 groups x 5 = 30 cubes",
+    "20 cubes multiple valid rectangular arrangements",
+    "24 cubes multiple valid rectangular arrangements, not exhaustive"
+  ],
+  "sourceSensitiveOriginals": [
+    "12-egg carton photo",
+    "publisher 20-dot original drawings",
+    "original gated Cool-down"
+  ],
+  "candidateRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+  "sourceCompanion": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+  "unrunTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+  "status": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "testsRun": false,
+  "ciRun": false,
+  "academicApproval": false,
+  "stageD": "NOT_STARTED",
+  "merged": false,
+  "deployed": false,
+  "openGaps": [
+    "Original 2021 egg photograph and 20-dot diagrams have not been inspected at pixel/geometry level or cleared for copying.",
+    "Original Student Task Statement PDF was not visually retrieved and reviewed.",
+    "Teacher-observed 60-cube preparations, array constructions and spoken reasoning are not actual completed classroom submissions.",
+    "Publisher restricted Cool-down has not been read; first-party equivalent is not an artwork or prompt copy.",
+    "Effective published Rich V2 and Razor renderer/test performance have not been verified."
+  ]
+}
