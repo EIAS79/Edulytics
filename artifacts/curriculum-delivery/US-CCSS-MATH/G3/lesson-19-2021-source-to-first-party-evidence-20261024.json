@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L19",
+  "originalEdition": "IM K–5 First Edition 2021",
+  "publicTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-19/lesson.html",
+  "originalElementCount": 13,
+  "verifiedRuntimeOriginalElementCount": 0,
+  "sourceElementToProductMap": [
+    {
+      "sourceId": "WU-1",
+      "source": "2021 Number Talk: 10×2",
+      "expected": 20,
+      "grade": "NUMERIC_AND_TEACHER_REASONING"
+    },
+    {
+      "sourceId": "WU-2",
+      "source": "2021 Number Talk: 9×2",
+      "expected": 18,
+      "grade": "NUMERIC_AND_TEACHER_REASONING"
+    },
+    {
+      "sourceId": "WU-3",
+      "source": "2021 Number Talk: 8×2",
+      "expected": 16,
+      "grade": "NUMERIC_AND_TEACHER_REASONING"
+    },
+    {
+      "sourceId": "WU-4",
+      "source": "2021 Number Talk: 7×2",
+      "expected": 14,
+      "grade": "NUMERIC_AND_TEACHER_REASONING"
+    },
+    {
+      "sourceId": "A1-COCRAFT",
+      "source": "Co-craft missing information questions before seven-row story is revealed",
+      "expected": null,
+      "grade": "TEACHER_ONLY"
+    },
+    {
+      "sourceId": "A1-EQN",
+      "source": "Crayon array seven rows of five: symbolic unknown product",
+      "expected": "7×5=□",
+      "grade": "MULTIPLICATION_UNKNOWN_EQUATION"
+    },
+    {
+      "sourceId": "A1-RESULT",
+      "source": "Crayon array seven rows of five: solved product and drawn 7×5 array",
+      "expected": 35,
+      "grade": "NUMERIC_PLUS_TEACHER_DRAWING"
+    },
+    {
+      "sourceId": "A2A-EQN",
+      "source": "Mexico coconut rows 5×9: symbolic equation",
+      "expected": "5×9=□",
+      "grade": "MULTIPLICATION_UNKNOWN_EQUATION"
+    },
+    {
+      "sourceId": "A2A-RESULT",
+      "source": "Mexico coconut rows 5×9: solved 45",
+      "expected": 45,
+      "grade": "NUMERIC_PLUS_TEACHER_MODEL"
+    },
+    {
+      "sourceId": "A2B-EQN",
+      "source": "Tyler backyard coconut rows 2×4: symbolic equation",
+      "expected": "2×4=□",
+      "grade": "MULTIPLICATION_UNKNOWN_EQUATION"
+    },
+    {
+      "sourceId": "A2B-RESULT",
+      "source": "Tyler backyard coconut rows 2×4: solved 8",
+      "expected": 8,
+      "grade": "NUMERIC_PLUS_TEACHER_MODEL"
+    },
+    {
+      "sourceId": "SYN",
+      "source": "Original synthesis: symbolic equation and numeric equation compared alongside arrays",
+      "expected": null,
+      "grade": "TEACHER_ONLY"
+    },
+    {
+      "sourceId": "CD",
+      "source": "Original gated cool-down distinct from first-party numeric check",
+      "expected": null,
+      "grade": "SOURCE_RESTRICTED"
+    }
+  ],
+  "sourceRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l19-2021.rich-lesson-v2.json",
+  "sourceCompanion": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+  "writtenUnrunTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson19UnknownProductTests.cs",
+  "originalFigureParityCertified": false,
+  "sourcePdfRead": false,
+  "verifiedAcademicParityPercent": null,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "testsRun": false,
+  "stageD": "NOT_STARTED",
+  "ciRun": false,
+  "academicApproval": false,
+  "openGaps": [
+    "Original 2021 image assets (coconut trees, any diagrams) and media rights not individually reviewed.",
+    "Original printed student-task PDF and educator-gated Cool-down unavailable for full 1:1 comparison.",
+    "Live Rich V2 learner payload and newly authored Stage C grading are not runtime-tested.",
+    "Human MLR5 co-crafted questioning, source drawings, MLR8 conversation and reasoning cannot be auto-approved.",
+    "No .NET test, CI, Stage D or academic approval executed."
+  ]
+}
