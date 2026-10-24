@@ -1,0 +1,137 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u02-l02-2021-source-abc-firstparty-20261024-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U02:L02",
+      "CultureCode": "en",
+      "Title": "Measure Area Using Equal Square Tiles",
+      "ExplanationParagraphs": [
+        "2021 IM K–5 Grade 3 Unit 2 Lesson 2 objective: construct and compare shapes using equal-size square tiles, then measure the exact amount of plane space covered by each figure in square units. This independent Edulytics teaching sequence corresponds to the original five headings: 10-minute Which One Doesn't Belong, 20-minute Create and Compare, 15-minute Use Square Tiles to Measure Area, synthesis, and teacher-gated five-minute original Cool-down.",
+        "Warm-up: four source illustrations A–D were independently reviewed. A is one isolated unit square. B is a three-row by three-column equal-square grid (9) with alternating blue and white. C is a 2×2 equal-square grid (4) with half colored. D is a 2×6 equal-square blue/white rectangle (12). Multiple reasons can make ANY of A–D the odd figure (shape, tile number, shading, arrangement or unit area); teacher asks for linguistic precision and accepts defended alternate comparisons, not a single numeric choice.",
+        "Activity 1: teams of four receive EIGHTY equally sized one-inch square tiles per group, not eighty per learner. Each learner takes a handful, constructs a genuine contiguous or otherwise valid unit-square shape with tiles NOT stacked, and the four models are ordered from smallest area to largest. If lengths are misleading, show that the correct measure is the NUMBER OF NONOVERLAPPING CONGRUENT TILE REGIONS covering the plane figure. For example, a 12-tile construction has 12 square units regardless of orientation.",
+        "Activity 2: each pair has EIGHTY equal one-inch square tiles and a six-page first-edition 2021 blackline handout of six individual outlined figures. Tile the entire region with squares placed edge to edge, leaving no gaps and no overlaps, and report in square units. Original source shapes have been individually visually inspected; the computed exact source figure areas in numbered order are 9, 18, 13, 30, 36 and 21 square units. Their shapes are respectively branching narrow regions, a tall-stem platform, a reverse-L, a 5-by-6 rectangle, a stepped large region and a six-step staircase. Edulytics independently redraws tile-cell equivalents and exposes one source-specific numeric input for EACH figure. Numeric correctness by itself never certifies physical placement or reasoning.",
+        "Source-geometry verification: the official 2021 six SVG figure paths are axis-aligned, drawn on an 18-point square unit grid. Exact polygon shoelace areas divided by 18×18 are 9, 18, 13, 30, 36 and 21. Each independently drawn CSS tile-grid was checked to have the same number and connectivity of unit-square cells. Original publisher figure pixels and blackline layouts were not copied into Edulytics.",
+        "Accessibility from source Activity 2: Engagement — Provide Access by Recruiting Interest, offers task choice for students who perceive high challenge; teacher ensures the examples needed for class synthesis are completed. The teacher introduces 'figure' as a precise word for any region, even one without a familiar shape name. At synthesis display source figures 1, 4 and 5; compare tiling strategies and discuss why rectangles with obvious rows and columns may be quicker to count. Teachers observe original student shapes and reasoning.",
+        "Lesson synthesis: the area of a figure equals the number of equal-sized square units needed to cover it completely with no overlap and no uncovered space. An incorrect method may count the correct number of individual tiles but position them with gaps or stack them, leaving the region improperly measured. Original source cool-down 'Tile and Tell' is restricted to educator account; a separately written Edulytics rectangle-area task is only a skill equivalent and not original-publisher task identity.",
+        "Source preparation reflects two different group sizes: FOUR learners share 80 inch tiles for Activity 1; TWO learners share 80 inch tiles for Activity 2. Optional centers: Can You Build It? Stage 1: Rectangles and Five in a Row: Multiplication Stage 1 (factors 1–5 and 10). Teacher reflection considers students' previous area concepts and how those experiences shaped the work. All source tests are authored but not run; Stage D, CI, academic sign-off and deployment are outside this authoring gate."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Square unit",
+          "Definition": "The area covered by one selected equal-sized square tile is one square unit.",
+          "Rule": "Report area as a count of congruent squares, not as a linear unit.",
+          "Example": "Six by five square tiles cover thirty square units."
+        },
+        {
+          "Title": "Valid tiling",
+          "Definition": "Tile placement covers the whole region exactly once.",
+          "Rule": "No gaps, overlaps, stacking, inconsistent sizes, or protrusion beyond the boundary.",
+          "Example": "The six original source figures were decomposed into 9, 18, 13, 30, 36, 21 tiles."
+        },
+        {
+          "Title": "Different shapes can be compared",
+          "Definition": "Area depends on how much surface is covered, not a shape's length or arrangement alone.",
+          "Rule": "When comparing tile shapes, use the same unit size and count the tiles.",
+          "Example": "A twelve-tile sprawling model has the same area as a compact model with twelve congruent tiles."
+        },
+        {
+          "Title": "Source figure-specific unit area",
+          "Definition": "Each of the six publisher figures is physically represented using identical square tile units.",
+          "Rule": "Teacher compares student physical tiling to the verified source contour and independent Edulytics tile cells.",
+          "Example": "Six-step source staircase occupies 1+2+3+4+5+6=21 square units."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Four original Warm-up figures",
+          "Question": "Which one does not belong among A, B, C and D?",
+          "Method": "Look at more than one mathematical attribute.",
+          "Steps": [
+            "Source A is one small square.",
+            "Source B contains nine equal squares in a 3×3 shading pattern.",
+            "Source C contains four equal squares in a 2×2 shading pattern.",
+            "Source D contains twelve equal squares in a 2×6 array of blue and white.",
+            "Defend distinct reasons for choosing each one as unusual."
+          ],
+          "Answer": "Many defensible answers; teacher checks the reason.",
+          "Check": "It is not a fixed-choice correctness item."
+        },
+        {
+          "Title": "Source figure 1: nine unit squares",
+          "Question": "What is the area of the source's first branching outline?",
+          "Method": "Fill each required grid-cell square, then count.",
+          "Steps": [
+            "Use original 2021 Figure 1 or the separate first-party grid model.",
+            "Tile the horizontal base and two taller sections without gaps.",
+            "Count all nine one-unit squares.",
+            "Explain why perimeter shape alone cannot decide area."
+          ],
+          "Answer": "9 square units.",
+          "Check": "Teacher confirms whole source region tiled."
+        },
+        {
+          "Title": "Source figure 4: rectangle",
+          "Question": "What is the area of the original fourth outlined figure?",
+          "Method": "Count 5 identical columns in 6 rows, each tile representing one square unit.",
+          "Steps": [
+            "Identify six complete rows, each with five unit squares.",
+            "Write 6 × 5 = 30.",
+            "Check no outer gap or overlap.",
+            "Include the unit: square units."
+          ],
+          "Answer": "30 square units.",
+          "Check": "The source SVG and six-page original blackline were examined to establish five columns and six rows."
+        },
+        {
+          "Title": "Source figure 6: six-step region",
+          "Question": "What is the area of the staircase-shaped Figure 6?",
+          "Method": "Count row lengths 1,2,3,4,5,6.",
+          "Steps": [
+            "Tile the narrow top row with one square.",
+            "Increase the following row by one square each time.",
+            "Add 1+2+3+4+5+6=21.",
+            "Explain why the stepped boundary does not change tile size."
+          ],
+          "Answer": "21 square units.",
+          "Check": "Teacher verifies physical unit tiles and explanation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using tiles of unequal dimensions in one comparison.",
+          "WhyWrong": "The number of tiles is an area only when each tile has the same unit area.",
+          "Correction": "Use equal inch-square tiles and declare square units."
+        },
+        {
+          "Mistake": "Stacking square tiles or leaving visible gaps.",
+          "WhyWrong": "Some of the covered space is omitted or counted twice.",
+          "Correction": "Tile every square of the whole region exactly once."
+        },
+        {
+          "Mistake": "Assuming the unusual staircase has the same area as its bounding rectangle.",
+          "WhyWrong": "Unoccupied bounding-grid cells are not part of the staircase region.",
+          "Correction": "Count only occupied cells: 1+2+3+4+5+6=21."
+        },
+        {
+          "Mistake": "Treating numeric correct as proof of original six-figure tiling.",
+          "WhyWrong": "A student may type the expected answer without physically covering the shape.",
+          "Correction": "Teacher must inspect tile placement and mathematical explanation."
+        }
+      ],
+      "SummaryPoints": [
+        "Original 2021 Student Task Statements PDF: 3 pages; original teacher blackline ZIP has six separately printed contour figures.",
+        "Warm-up original figures A=1 tile, B=9 (3×3), C=4 (2×2), D=12 (2×6). Multiple reasonable odd-one-out arguments.",
+        "Activity 1: group of four receives 80 tiles; each learner builds a model, group ranks by area.",
+        "Activity 2: pairs receive 80 square tiles plus original six-figure master, tile all six without gaps or overlap.",
+        "Authoring-verified original six source areas: 9, 18, 13, 30, 36, 21 square units.",
+        "Physical tiling and explanation require teacher judgment even when source-specific digital numeric answers are correct.",
+        "First-party independently drawn shape/topology models and Cool-down; no original publisher image pixels or gated cool-down copied.",
+        "Tests/CI/Stage D not run; no academic approval or deployment."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
