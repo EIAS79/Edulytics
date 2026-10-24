@@ -312,10 +312,13 @@
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L07.json",
       "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+        "original five publisher diagrams and diagram-to-expression match cannot be verified from extracted alternative text alone",
+        "original printed Student Task Statements PDF could not be rendered",
+        "publisher-only Cool-down and optional center board assets not examined",
+        "Teacher-led source representations and discussions not academically approved.",
+        "New C#, Razor and xUnit contracts have not been compiled/run; Stage D and CI uninvoked."
+      ],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-43-2021-source-to-first-party-evidence-20261024.json"
     },
     {
       "ordinal": 44,
@@ -2700,11 +2703,11 @@
       "unitNumber": 3,
       "lessonNumber": 7,
       "title": "Subtract Your Way",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_SOURCE_IMAGE_PIXEL_OPEN",
-      "stageB": "SOURCE_SKILL_AND_AUTHORIGINAL_FIRST_PARTY_COMPANION_RICHV2_OPEN",
-      "stageC": "NUMERIC_OR_TEACHER_REVIEW_GRADE_CONTRACT_DRAFT_UNRUN",
+      "stageA": "PUBLIC_2021_STUDENT_FACING_HTML_ARITHMETIC_AND_TEACHER_STRUCTURES_REVIEWED_ORIGINAL_PDF_ART_OPEN",
+      "stageB": "SOURCE_SPECIFIC_GUARDED_RICH_V2_FIRST_PARTY_TEACHING_AND_COMPANION_AUTHORED_NOT_RUN",
+      "stageC": "SOURCE_NUMERIC_AND_TEACHER_REVIEW_CONTRACTS_AUTHORED_UNRUN",
       "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 10,
+      "sourceElementsIdentified": 24,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L07.json",
@@ -2718,7 +2721,10 @@
       "original2021FigureUrlCount": 5,
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-43-2021-source-to-first-party-evidence-20261024.json",
+      "readyForStageD": false,
+      "authoredCandidateReviewStatus": "SOURCE_SPECIFIC_AUTHORING_ADDED_MISSING_PDF_AND_ORIGINAL_ART_BLOCK_SOURCE_MATERIAL_PARITY"
     },
     {
       "gradeOrdinal": 44,
@@ -5929,19 +5935,20 @@
     "stageD": "NOT_STARTED",
     "academicApproval": false
   },
-  "latestAttemptedGradeOrdinal": 42,
-  "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U03:L06",
+  "latestAttemptedGradeOrdinal": 43,
+  "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U03:L07",
   "lastAttemptNotClosure": {
     "ordinals": [
       38,
       39,
       40,
       41,
-      42
+      42,
+      43
     ],
     "authoringCorrectionsCommitted": true,
     "areClosed": false,
-    "reason": "Original publisher Student Task Statements PDFs, gated Cool-downs, original artwork and optional center materials not fully verified; teacher-led work unapproved",
+    "reason": "Publisher original source PDF and source drawings/teacher materials not fully reviewed",
     "testStatus": "WRITTEN_NOT_EXECUTED",
     "stageD": "NOT_STARTED"
   }

@@ -7248,34 +7248,140 @@
         "expected": "107"
       },
       "openTeacherTask": "Work through the original lesson's activity Strategies to Subtract with your teacher. Show the representation and explain how it meets the goal: You will activate the strategies you have for subtracting numbers within 1,000.",
-      "teacherReviewNote": "Teacher checks correct tens/ones decomposition in Jada and Han's distinct drawings.",
+      "teacherReviewNote": "Compare a base-ten drawing that unbundles ten individual ones with one that marks ten partitions directly on the ten; explain why both show 262−135. Match each original publisher base-ten diagram with the correct expression; the original image pixels are not present. Create a visual display with a partner for one subtraction, then compare different representations in a gallery discussion (MLR7). Rehearse and explain with a partner how the diagrams are alike and different (MLR8). Publisher diagrams/BLM/cooldown not source-pixel verified. Numeric answers alone do not prove human work.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s subtract numbers within 1,000.",
+        "sourceGoal": "You will activate the strategies you have for subtracting numbers within 1,000.",
         "sourceLearningGoals": "Subtract within 1,000 in a way that makes sense to them.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Flexible subtraction within 1,000 using pupils' existing place-value strategies.",
+          "Start with four mental subtractions. For 428−213 use hundreds, tens and ones to get 215. For 505−398 use counting on from 398 to 505 to get 107, or decompose across a zero. For 394−127 the difference is 267. After pairs construct visual displays, compare number lines, equations and base-ten blocks (MLR7). Activity 2 contrasts Jada and Han: Jada exchanges a ten for ten ones and draws each one; Han partitions and marks a ten without physically redrawing ten individual units. Both depict 262−135=127. Match source diagrams for 252−181=71,262−135=127,252−132=120; image association and pair explanations require teacher review with MLR8. The source calls for actual base-ten blocks and tools for a visual display.",
+          "Verify scalar source expressions exactly, and retain teacher review of drawings and oral strategy."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s subtract numbers within 1,000.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not claim original PDF or third-party artwork has been inspected."
       },
       "sourceBasedCheck": {
-        "prompt": "The source asks students to subtract 135 from 262 with base-ten drawings. What difference?",
+        "prompt": "Evaluate 50 - 10 and explain your reasoning to your teacher.",
         "answerType": "integer",
-        "expected": "127"
+        "expected": "40"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-7/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "PUBLISHED_2021_STUDENT_FACING_HTML_ARITHMETIC_REVIEWED_PDF_FIGURE_PIXELS_UNVERIFIED",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U03-L07-S1-NUM1",
+          "sourceActivity": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+          "prompt": "Evaluate 50 - 10 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U03-L07-S1-NUM2",
+          "sourceActivity": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+          "prompt": "Evaluate 58 - 10 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "48"
+        },
+        {
+          "id": "G3-U03-L07-S1-NUM3",
+          "sourceActivity": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+          "prompt": "Evaluate 258 - 20 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "238"
+        },
+        {
+          "id": "G3-U03-L07-S1-NUM4",
+          "sourceActivity": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+          "prompt": "Evaluate 258 - 24 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "234"
+        },
+        {
+          "id": "G3-U03-L07-S2-NUM5",
+          "sourceActivity": "Activity 1: Strategies to Subtract (25 minutes)",
+          "prompt": "Evaluate 428 - 213 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "215"
+        },
+        {
+          "id": "G3-U03-L07-S2-NUM6",
+          "sourceActivity": "Activity 1: Strategies to Subtract (25 minutes)",
+          "prompt": "Evaluate 505 - 398 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "107"
+        },
+        {
+          "id": "G3-U03-L07-S2-NUM7",
+          "sourceActivity": "Activity 1: Strategies to Subtract (25 minutes)",
+          "prompt": "Evaluate 394 - 127 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "267"
+        },
+        {
+          "id": "G3-U03-L07-S3-NUM8",
+          "sourceActivity": "Activity 2: Base-ten Drawings (10 minutes)",
+          "prompt": "Evaluate 262 - 135 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "127"
+        },
+        {
+          "id": "G3-U03-L07-S3-NUM9",
+          "sourceActivity": "Activity 2: Base-ten Drawings (10 minutes)",
+          "prompt": "Evaluate 252 - 181 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "71"
+        },
+        {
+          "id": "G3-U03-L07-S3-NUM10",
+          "sourceActivity": "Activity 2: Base-ten Drawings (10 minutes)",
+          "prompt": "Evaluate 252 - 132 and explain or represent your strategy to the teacher.",
+          "answerType": "integer",
+          "expected": "120"
+        },
+        {
+          "id": "G3-U03-L07-OPEN-1",
+          "sourceActivity": "Original teacher-led activity",
+          "prompt": "Compare a base-ten drawing that unbundles ten individual ones with one that marks ten partitions directly on the ten; explain why both show 262−135.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L07-OPEN-2",
+          "sourceActivity": "Original teacher-led activity",
+          "prompt": "Match each original publisher base-ten diagram with the correct expression; the original image pixels are not present.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L07-OPEN-3",
+          "sourceActivity": "Original teacher-led activity",
+          "prompt": "Create a visual display with a partner for one subtraction, then compare different representations in a gallery discussion (MLR7).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L07-OPEN-4",
+          "sourceActivity": "Original teacher-led activity",
+          "prompt": "Rehearse and explain with a partner how the diagrams are alike and different (MLR8).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L07-ORIGINAL-CD",
+          "sourceActivity": "Publisher gated Cool-down",
+          "prompt": "Your teacher must provide the original publisher Cool-down separately; the Edulytics assessment is not the original task.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 44,
