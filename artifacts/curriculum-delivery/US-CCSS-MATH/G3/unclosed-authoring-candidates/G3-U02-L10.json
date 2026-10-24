@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-2/lesson-10/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-10/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "SOURCE_2021_LOCAL_INDEX_AND_STUDENT_TEXT_REVIEWED_FULL_PDF_AND_IMAGE_PIXEL_VERIFICATION_STILL_OPEN",
     "goals": "Solve real-world and mathematical problems involving area.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 8,
@@ -20,7 +20,7 @@
     "teacherFacingSourceExtractedNotFullyRead": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_FIRST_PARTY_CANDIDATE_PRESENT_CANONICAL_RICH_V2_NOT_YET_VERIFIED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -32,7 +32,7 @@
     "noClaimOfOriginalArtOrSourcePromptDuplication": true
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "AREA_AND_RESOURCE_COVERAGE_CANDIDATES_PRESENT_SOURCE_FAMILY_PARITY_UNVERIFIED_TESTS_NOT_RUN",
     "family": "rectangle-area",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -206,11 +206,42 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Verify original Paint a Wall can prices and quantities; do not infer from paint coverage alone.",
+    "Verify Create a Garden 20–30 square foot boundary inclusion and all possible integer dimensions.",
+    "Do not certify numerical candidate practice as exact source parity before original student PDF and 8 source image files are reviewed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceBasedVerifiedAnchors": [
+    {
+      "id": "WALL-AREA",
+      "source": "original local 2021 source / student facing",
+      "rectangle": "6 metres by 3 metres",
+      "areaSquareMetres": 18
+    },
+    {
+      "id": "PAINT-CHOICE",
+      "source": "source teacher notes recorded in companion",
+      "containerCoverageSquareMetres": [
+        3,
+        10,
+        40
+      ],
+      "note": "Must preserve container choices and compare coverage/cost as stated in original; original complete text not yet verified"
+    },
+    {
+      "id": "GARDEN",
+      "source": "source teacher notes recorded in companion",
+      "fixedSideFeet": 3,
+      "areaIntervalSquareFeet": [
+        20,
+        30
+      ],
+      "note": "Verify exact inequality and garden dimensions in original before certifying grader"
+    }
+  ]
 }
