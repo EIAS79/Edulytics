@@ -10,16 +10,15 @@
   "teacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html",
   "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/preparation.html",
   "sourceMappingContract": "MATCHED_DIGITAL | MATCHED_TEACHER_LED | RIGHTS_RESTRICTED | SOURCE_UNAVAILABLE | MISMATCH_BLOCKED",
-  "identifiedOriginalElements": 38,
-  "verifiedOriginalElementsForAuthoringSemantics": 34,
-  "coverageNumerator": 34,
-  "coverageDenominator": 38,
-  "coveragePercent": 89.47,
+  "identifiedOriginalElements": 41,
+  "verifiedOriginalElementsForAuthoringSemantics": 38,
+  "coverageNumerator": 38,
+  "coverageDenominator": 41,
+  "coveragePercent": 92.68,
   "statusCounts": {
-    "MATCHED_TEACHER_LED": 17,
-    "MATCHED_DIGITAL": 17,
-    "SOURCE_UNAVAILABLE": 3,
-    "RIGHTS_RESTRICTED": 1
+    "MATCHED_TEACHER_LED": 19,
+    "MATCHED_DIGITAL": 19,
+    "SOURCE_UNAVAILABLE": 3
   },
   "semanticCoverageDoesNotProveRuntimeOrLearnerMastery": true,
   "sourceArtworkOrPublisherCoolDownParityClaimed": false,
@@ -577,19 +576,64 @@
       "note": null
     },
     {
-      "id": "L15-CD",
-      "sourceLocation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html | Cool-down: Solve the Problem",
-      "sourceElement": "2021 first-edition original educator-gated assessment body, not publicly shown.",
-      "state": "RIGHTS_RESTRICTED",
+      "id": "L15-CD-01-VALUE",
+      "sourceLocation": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf | K5_v1 ISBN 978-1-64885-869-7 | Unit 1 Lesson 15 p.162",
+      "sourceElement": "2021 first edition Cool-down task 1: four equal boxes of ten toys; find total (40).",
+      "state": "MATCHED_DIGITAL",
       "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
-      "companionQuestionId": null,
-      "gradingMode": "SEPARATE_EDULYTICS_FIRST_PARTY_COOLDOWN_NOT_COPIED",
-      "verified2021MathSemantics": false,
+      "companionQuestionId": "G3-U01-L15-CD-01",
+      "gradingMode": "INTEGER_PLUS_TEACHER_REASONING",
+      "verified2021MathSemantics": true,
       "figureBytesInspected": false,
-      "sourceUnavailable": true,
+      "sourceUnavailable": false,
       "nonDigitalTeacherEvidence": false,
+      "stageCTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs",
+      "note": "Genuine original K5_v1 source maths independently paraphrased, not the separate Edulytics Cool-down."
+    },
+    {
+      "id": "L15-CD-01-REASON",
+      "sourceLocation": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf | K5_v1 ISBN 978-1-64885-869-7 | Unit 1 Lesson 15 p.162",
+      "sourceElement": "2021 source Cool-down task 1: show/draw reasoning for total toys.",
+      "state": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "companionQuestionId": "G3-U01-L15-CD-01",
+      "gradingMode": "HUMAN_EXPLANATION_REVIEW",
+      "verified2021MathSemantics": true,
+      "figureBytesInspected": false,
+      "sourceUnavailable": false,
+      "nonDigitalTeacherEvidence": true,
       "stageCTest": null,
-      "note": "Actual 2021 teacher-gated Cool-down cannot be source-item reviewed without authorised access; do not infer text from later adaptations."
+      "note": "Source reasoning field and teacher review required; no automatic academic pass."
+    },
+    {
+      "id": "L15-CD-02-VALUE",
+      "sourceLocation": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf | K5_v1 ISBN 978-1-64885-869-7 | Unit 1 Lesson 15 p.162",
+      "sourceElement": "2021 first edition Cool-down task 2: ten socks with two per equal pile; unknown number of groups (5).",
+      "state": "MATCHED_DIGITAL",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "companionQuestionId": "G3-U01-L15-CD-02",
+      "gradingMode": "INTEGER_PLUS_TEACHER_REASONING",
+      "verified2021MathSemantics": true,
+      "figureBytesInspected": false,
+      "sourceUnavailable": false,
+      "nonDigitalTeacherEvidence": false,
+      "stageCTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs",
+      "note": "Genuine original K5_v1 source maths independently paraphrased, not the separate Edulytics Cool-down."
+    },
+    {
+      "id": "L15-CD-02-REASON",
+      "sourceLocation": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf | K5_v1 ISBN 978-1-64885-869-7 | Unit 1 Lesson 15 p.162",
+      "sourceElement": "2021 source Cool-down task 2: show/draw reasoning for unknown pile count.",
+      "state": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "companionQuestionId": "G3-U01-L15-CD-02",
+      "gradingMode": "HUMAN_EXPLANATION_REVIEW",
+      "verified2021MathSemantics": true,
+      "figureBytesInspected": false,
+      "sourceUnavailable": false,
+      "nonDigitalTeacherEvidence": true,
+      "stageCTest": null,
+      "note": "Source reasoning field and teacher review required; no automatic academic pass."
     },
     {
       "id": "L15-STUDENT-PDF",
@@ -608,12 +652,40 @@
     }
   ],
   "blockingOriginalSourceEvidence": [
-    "Unexamined original 2021 first-edition publisher figures 8 groups of socks and eight-part tape remain unverified at asset geometry/pixel level.",
-    "Official first-edition Student Task Statements PDF request failed: no visual proof of PDF/source figure fidelity.",
-    "Publisher first-edition teacher-gated Cool-down inaccessible; independent Edulytics numeric equivalent cannot be counted as original task parity."
+    "Original 2021 Student Section Summary two publisher figures (sock groups and eight-part tape) were not visually inspected as actual source pixel/SVG geometry. First-party eight-part model preserves known source math but does not prove original artwork parity.",
+    "Official first-edition Student Task Statements PDF file could not be retrieved/viewed for figure/layout fidelity; original 2021 public HTML tasks and 2021 first-edition teacher guide printed text were individually read.",
+    "Actual source original image licensing must be checked separately before any reuse (no publisher images stored)."
   ],
   "separateStageDOnlyDeferrals": [
-    "Tests authored but deliberately not run by user instruction.",
-    "Effective published database learner version and Razor runtime cannot be claimed as executed in this authoring stage."
-  ]
+    "Tests authored including two original K5_v1 Cool-down questions; NOT_RUN.",
+    "Effective published database content and Razor runtime have not been executed or demonstrated."
+  ],
+  "sourceOriginalCooldownVerifiedViaK5v1SourceText": true,
+  "original2021TeacherGuide": {
+    "source": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+    "verifiedPrintEdition": "2021 K5_v1",
+    "isbn": "978-1-64885-869-7",
+    "lessonPrintPage": 162,
+    "sourceItems": [
+      {
+        "kind": "unknown total",
+        "factors": [
+          4,
+          10
+        ],
+        "expected": 40
+      },
+      {
+        "kind": "unknown groups",
+        "total": 10,
+        "groupSize": 2,
+        "expected": 5
+      }
+    ],
+    "originalArtCopied": false,
+    "pdfPagePixelsInspected": false,
+    "sourceTextExtractedFromPublishedCopy": true
+  },
+  "firstPartyCoolDownDistinctFrom2021Original": true,
+  "firstPartyRichV2Version": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v3"
 }
