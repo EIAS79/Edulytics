@@ -10,18 +10,18 @@
   "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U02.json",
   "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L12.json",
   "stageA": {
-    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
-    "originalAllVisualGeometryVerified": false,
+    "state": "THREE_PDF_PAGES_TWO_SVG_GEOMETRIES_PUBLIC_TEACHER_PREPARATION_INDIVIDUALLY_REVIEWED",
+    "originalAllVisualGeometryVerified": true,
     "teacherManualOrManipulativesFullyReviewed": false,
     "sourceTextSkillAdaptation": {
-      "prompt": "The source garden figure is a 7 by 6 unit grid with a 5 by 6 part shaded. What is the total area?",
-      "answerType": "integer",
-      "expected": "42"
+      "prompt": "Find the area of the WHOLE community-garden grid shown above. Each square represents one square foot. Enter both the area and ft², then explain how the shaded and unshaded parts combine.",
+      "answerType": "area-with-unit",
+      "expected": "42 ft²"
     },
     "sourceCheckProvenance": {
       "localHtml": "unit-2/lesson-12/lesson.html",
-      "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-      "figurePixelsInspected": false
+      "verified": "ORIGINAL_THREE_PAGE_2021_STUDENT_PDF_TWO_SVG_GEOMETRIES_TEACHER_AND_PREPARATION_REVIEW",
+      "figurePixelsInspected": true
     },
     "originalSourceHeadings": [
       {
@@ -29,105 +29,131 @@
         "heading": "Warm-up: Number Talk: So Close (10 minutes)",
         "kind": "WARM_UP",
         "referenceHtml": "unit-2/lesson-12/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individually located source evidence in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-33-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-2",
         "heading": "Activity 1: Rectangles in Rectangles (15 minutes)",
         "kind": "ACTIVITY",
         "referenceHtml": "unit-2/lesson-12/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individually located source evidence in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-33-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-3",
         "heading": "Activity 2: Find the Rectangles (20 minutes)",
         "kind": "ACTIVITY",
         "referenceHtml": "unit-2/lesson-12/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individually located source evidence in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-33-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-4",
         "heading": "Lesson Synthesis",
         "kind": "TEACHER_SYNTHESIS",
         "referenceHtml": "unit-2/lesson-12/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individually located source evidence in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-33-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-5",
         "heading": "Cool-down: Where are the Rectangles? (5 minutes)",
         "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
         "referenceHtml": "unit-2/lesson-12/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "FIRST_PARTY_GOAL_EQUIVALENT_ALTERNATIVE",
+        "reason": "See individually located source evidence in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-33-2021-source-to-first-party-evidence-20261024.json"
       }
     ],
     "originalSourceVisualAltDescriptions": [
       "A 7 by 6 grid with a 5 by 6 shaded area.",
       "A figure divided into equal sized square units."
     ],
-    "originalElementsFullyOneToOneVerified": 0,
-    "originalStudentTaskPdfRead": false
+    "originalElementsFullyOneToOneVerified": 25,
+    "originalStudentTaskPdfRead": true,
+    "allAvailablePublicTeacherInstructionsReviewed": true,
+    "protectedTeacherResponsesAndCoolDownRead": false
   },
   "stageB": {
-    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "state": "GUARDED_CANONICAL_ADDITIVE_AREA_TEACHING_AND_GRID_COMPANION_AUTHORED_RUNTIME_UNVERIFIED",
     "learnerSourceCheck": {
-      "prompt": "The source garden figure is a 7 by 6 unit grid with a 5 by 6 part shaded. What is the total area?",
-      "answerType": "integer",
-      "expected": "42"
+      "prompt": "Find the area of the WHOLE community-garden grid shown above. Each square represents one square foot. Enter both the area and ft², then explain how the shaded and unshaded parts combine.",
+      "answerType": "area-with-unit",
+      "expected": "42 ft²"
     },
     "supplementalLessonTeachingGuidance": {
-      "sourceGoal": "Let's find the area of figures made up of rectangles. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.MD.C.7.d Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 m",
+      "sourceGoal": "Let's find the area of figures made up of rectangles.",
       "sourceLearningGoals": "Find the area of figures composed of rectangles. Recognize that area is additive.",
       "teachingSteps": [
-        "Identify unit squares and the area being measured.",
-        "Represent the shape or rectangle with equal-area units.",
-        "Calculate or compare area with units and check any decomposition."
+        "Use the next multiple of ten to explain the four mental additions.",
+        "Count the garden’s seven columns and six rows; compare whole-rectangle multiplication with 30+12 ft².",
+        "Independently design and label your own garden, including each part’s area and total.",
+        "Split the L-shaped grid horizontally or vertically; add areas without overlap.",
+        "Use parentheses to connect multiplication expressions with pieces; compare classmates’ methods."
       ],
-      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let's find the area of figures made up of rectangles. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.MD.C.7.d Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 m",
-      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+      "caution": "Count squares once, not side lengths. Do not include the missing corner, force one garden design, or reject a justified alternative partition.",
+      "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson12RichV2"
     },
     "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
-    "existingContentReplacedOrPublished": false
+    "existingContentReplacedOrPublished": false,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l12-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "state": "VALUE_AND_UNIT_CHECKS_PLUS_TEACHER_DESIGN_PARTITION_RUBRICS_AUTHORED_TESTS_UNRUN",
     "firstPartyPractice": {
-      "prompt": "Two non-overlapping areas in a garden are 5×6 and 2×6 square feet. What is the whole garden area?",
-      "answerType": "integer",
-      "expected": "42"
+      "prompt": "A separate garden has two non-overlapping rectangular parts: one is 5 ft by 6 ft and the other is 2 ft by 6 ft. Find the whole area, including ft². Draw both parts and write a parenthesized expression matching them.",
+      "answerType": "area-with-unit",
+      "expected": "42 ft²"
     },
     "independentEdulyticsCoolDown": {
-      "prompt": "Two non-overlapping rectangular areas are 3×7 and 4×7. What is the total?",
-      "answerType": "integer",
-      "expected": "49"
+      "prompt": "New Edulytics task: use the separate Cool-down grid shown above. Find the total area, including square units. Draw a non-overlapping decomposition and write a parenthesized expression for it. Explain how a different split checks your result.",
+      "answerType": "area-with-unit",
+      "expected": "38 square units"
     },
-    "humanRubric": "Source figure needs visual verification for shading; teacher checks non-overlapping decomposition and units.",
-    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "humanRubric": "Check the original garden’s seven columns and SIX rows: vegetables30 ft², flowers12 ft², total42 ft². The source L-shaped figure has area70 square units, using horizontal20+50 or vertical45+25; every square must be counted once. Review the student’s own garden design, labels, chosen areas, parentheses, non-overlap, alternative decompositions and actual gallery/partner discussion. More than two parts and justified diagonal partitions are acceptable; also encourage a grid-line method. A numeric result cannot certify the design or explanation.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson12AdditiveAreaSourceTests.cs",
     "testsExecuted": false,
-    "sourceTaskFullCoverageConfirmed": false
+    "sourceTaskFullCoverageConfirmed": true
   },
   "originalImageRightsAudited": false,
   "originalPublisherCoolDownCopied": false,
   "equivalentFirstPartyCoolDownAuthorized": true,
-  "oneToOneElementParityPercent": null,
-  "authoringClosure": "A_C_EXPLICIT_GAP",
-  "readyForStageD": false,
+  "oneToOneElementParityPercent": 100,
+  "authoringClosure": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "academicApproval": "NOT_CLAIMED",
-  "gaps": [
-    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
-    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
-    "Published Rich V2 rendering and materialized translations not confirmed against source.",
-    "Source-to-digital full skill-family and source item coverage not formally verified.",
-    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
-    "All written .NET and Razor test contracts deliberately not run until Stage D."
-  ],
+  "gaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_INTENTIONALLY",
   "merged": false,
-  "deployed": false
+  "deployed": false,
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "teacherOnlyAuthoredActivityRubricIndependentlyReviewed": true,
+    "teacherEvidenceIsRequired": true,
+    "classroomTeacherEvidenceObserved": false,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-33-2021-source-to-first-party-evidence-20261024.json",
+    "basis": "STATIC_A_B_C_AUTHORING_NOT_EXECUTED_STAGE_D"
+  },
+  "sourcePdf": {
+    "pageCount": 3,
+    "bytes": 52837,
+    "sha256": "0a23b28910e7d019dbb969d69d701a097b068e78ab54b9913c7c1ad26c80ecfc",
+    "unit": 2,
+    "lesson": 12,
+    "url": "https://cms-assets.illustrativemathematics.org/jdwp2sbf6hgby6n5o1keai3xesyr",
+    "allPagesRead": true,
+    "inspection": "ALL_THREE_ORIGINAL_STUDENT_PDF_PAGE_RENDERINGS_TEACHER_PREPARATION_TEXT_AND_TWO_ORIGINAL_SVG_GEOMETRIES_REVIEWED_READ_ONLY"
+  },
+  "matchingScope": "Unit-aware scalar areas only; arbitrary partitions/designs, parenthesized explanations, diagonal reasoning and participation remain teacher-reviewed.",
+  "deferredStageDRequirements": [
+    "Compile .NET/Razor and execute new lesson33 plus affected shared unit-grader/materialization tests at grade freeze.",
+    "Inspect authenticated canonical teaching/companion, equal-unit SVG geometry, accessibility and mobile display.",
+    "Verify server-scoped valid/wrong/malformed submissions and score persistence in the existing authenticated flow.",
+    "Actual learner garden authorship, explanations, gallery walk and teacher observation remain unobserved."
+  ]
 }

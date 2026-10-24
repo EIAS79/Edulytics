@@ -457,7 +457,7 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(answer) || answer.Length > 100)
             return false;
         var match = Regex.Match(answer.Trim(),
-            @"^([0-9]{1,5})\s*(cm(?:\^?2|²)|in(?:\^?2|²)|m(?:\^?2|²)|ft(?:\^?2|²)|square\s+centimet(?:er|re)s?|square\s+inch(?:es)?|square\s+met(?:er|re)s?|square\s+f(?:oo|ee)t)$",
+            @"^([0-9]{1,5})\s*(cm(?:\^?2|²)|in(?:\^?2|²)|m(?:\^?2|²)|ft(?:\^?2|²)|square\s+centimet(?:er|re)s?|square\s+inch(?:es)?|square\s+met(?:er|re)s?|square\s+f(?:oo|ee)t|square\s+units?)$",
             RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
         if (!match.Success ||
             !int.TryParse(match.Groups[1].Value, NumberStyles.None,
@@ -473,7 +473,8 @@ public static class Grade3SourceCompanionCatalogue
                 ? "ft²"
                 : literal.StartsWith("m", StringComparison.Ordinal) ||
                   literal.StartsWith("squaremet", StringComparison.Ordinal)
-                    ? "m²" : "in²";
+                    ? "m²" : literal.StartsWith("squareunit", StringComparison.Ordinal)
+                        ? "square units" : "in²";
         return true;
     }
 

@@ -5182,82 +5182,170 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: Number Talk: So Close (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Rectangles in Rectangles (15 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: Find the Rectangles (20 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 5,
           "sourceHeading": "Cool-down: Where are the Rectangles? (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_ASSESSMENT_COPY"
         }
       ],
       "sourceVisualAltDescriptions": [
         "A 7 by 6 grid with a 5 by 6 shaded area.",
         "A figure divided into equal sized square units."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "composite-area",
       "independentPractice": {
-        "prompt": "Two non-overlapping areas in a garden are 5×6 and 2×6 square feet. What is the whole garden area?",
-        "answerType": "integer",
-        "expected": "42"
+        "prompt": "A separate garden has two non-overlapping rectangular parts: one is 5 ft by 6 ft and the other is 2 ft by 6 ft. Find the whole area, including ft². Draw both parts and write a parenthesized expression matching them.",
+        "answerType": "area-with-unit",
+        "expected": "42 ft²"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Two non-overlapping rectangular areas are 3×7 and 4×7. What is the total?",
-        "answerType": "integer",
-        "expected": "49"
+        "prompt": "New Edulytics task: use the separate Cool-down grid shown above. Find the total area, including square units. Draw a non-overlapping decomposition and write a parenthesized expression for it. Explain how a different split checks your result.",
+        "answerType": "area-with-unit",
+        "expected": "38 square units"
       },
-      "openTeacherTask": "Work through the original lesson's activity Rectangles in Rectangles with your teacher. Show the representation and explain how it meets the goal: You will use gridded rectangles to learn that area is additive.",
-      "teacherReviewNote": "Source figure needs visual verification for shading; teacher checks non-overlapping decomposition and units.",
+      "openTeacherTask": "Explain the vegetables-and-flowers grid, design your own garden with labelled part areas, independently decompose the source L-shaped figure, and compare student strategies in a gallery walk. Write parenthesized expressions that match the pieces.",
+      "teacherReviewNote": "Check the original garden’s seven columns and SIX rows: vegetables30 ft², flowers12 ft², total42 ft². The source L-shaped figure has area70 square units, using horizontal20+50 or vertical45+25; every square must be counted once. Review the student’s own garden design, labels, chosen areas, parentheses, non-overlap, alternative decompositions and actual gallery/partner discussion. More than two parts and justified diagonal partitions are acceptable; also encourage a grid-line method. A numeric result cannot certify the design or explanation.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let's find the area of figures made up of rectangles. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.MD.C.7.d Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 m",
+        "sourceGoal": "Let's find the area of figures made up of rectangles.",
         "sourceLearningGoals": "Find the area of figures composed of rectangles. Recognize that area is additive.",
         "teachingSteps": [
-          "Identify unit squares and the area being measured.",
-          "Represent the shape or rectangle with equal-area units.",
-          "Calculate or compare area with units and check any decomposition."
+          "Use the next multiple of ten to explain the four mental additions.",
+          "Count the garden’s seven columns and six rows; compare whole-rectangle multiplication with 30+12 ft².",
+          "Independently design and label your own garden, including each part’s area and total.",
+          "Split the L-shaped grid horizontally or vertically; add areas without overlap.",
+          "Use parentheses to connect multiplication expressions with pieces; compare classmates’ methods."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let's find the area of figures made up of rectangles. Required Preparation CCSS Standards Building On 2.NBT.B.5 Addressing 3.MD.C.7.d Building Towards 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 m",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Count squares once, not side lengths. Do not include the missing corner, force one garden design, or reject a justified alternative partition.",
+        "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson12RichV2"
       },
       "sourceBasedCheck": {
-        "prompt": "The source garden figure is a 7 by 6 unit grid with a 5 by 6 part shaded. What is the total area?",
-        "answerType": "integer",
-        "expected": "42"
+        "prompt": "Find the area of the WHOLE community-garden grid shown above. Each square represents one square foot. Enter both the area and ft², then explain how the shaded and unshaded parts combine.",
+        "answerType": "area-with-unit",
+        "expected": "42 ft²"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-12/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_THREE_PAGE_2021_STUDENT_PDF_TWO_SVG_GEOMETRIES_TEACHER_AND_PREPARATION_REVIEW",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U02-L12-WU-1",
+          "sourceActivity": "Number Talk: So Close",
+          "prompt": "Find 9 + 6 mentally and explain.",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U02-L12-WU-2",
+          "sourceActivity": "Number Talk: So Close",
+          "prompt": "Find 29 + 6 mentally and explain.",
+          "answerType": "integer",
+          "expected": "35"
+        },
+        {
+          "id": "G3-U02-L12-WU-3",
+          "sourceActivity": "Number Talk: So Close",
+          "prompt": "Find 59 + 6 mentally and explain.",
+          "answerType": "integer",
+          "expected": "65"
+        },
+        {
+          "id": "G3-U02-L12-WU-4",
+          "sourceActivity": "Number Talk: So Close",
+          "prompt": "Find 49 + 8 mentally and explain.",
+          "answerType": "integer",
+          "expected": "57"
+        },
+        {
+          "id": "G3-U02-L12-WU-REASON",
+          "sourceActivity": "Number Talk: So Close",
+          "prompt": "Explain how a nearby multiple of ten helps with these additions. Restate or compare a partner’s strategy.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L12-A1-VEGETABLES",
+          "sourceActivity": "Rectangles in Rectangles",
+          "prompt": "Find the area of the five shaded columns of vegetables in the community garden. Include ft² and explain your calculation.",
+          "answerType": "area-with-unit",
+          "expected": "30 ft²"
+        },
+        {
+          "id": "G3-U02-L12-A1-FLOWERS",
+          "sourceActivity": "Rectangles in Rectangles",
+          "prompt": "Find the area of the two unshaded columns of flowers. Include ft² and explain your calculation.",
+          "answerType": "area-with-unit",
+          "expected": "12 ft²"
+        },
+        {
+          "id": "G3-U02-L12-A1-OWN",
+          "sourceActivity": "Rectangles in Rectangles",
+          "prompt": "Design your own garden. Draw and label each part, find the area of every part and of the whole, and write an equation. Explain how the parts cover the garden without overlap; your design need not match the supplied garden.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L12-A2-NOTICE",
+          "sourceActivity": "Find the Rectangles",
+          "prompt": "Look at the source-aligned L-shaped grid. Record a notice and a question, then discuss possible methods with a partner.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L12-A2-AREA",
+          "sourceActivity": "Find the Rectangles",
+          "prompt": "Find the area of the L-shaped grid. Enter the result with square units. Show your split and organize your reasoning so others can follow.",
+          "answerType": "area-with-unit",
+          "expected": "70 square units"
+        },
+        {
+          "id": "G3-U02-L12-A2-GALLERY",
+          "sourceActivity": "Find the Rectangles",
+          "prompt": "Display your independently worked decomposition and take a gallery walk. Compare a vertical and horizontal split. Write an expression using parentheses to match each rectangle. Other justified partitions are allowed; also try grid-line partitions.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U02-L12-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Why do different valid decompositions give the same area? Explain why all squares must be included exactly once; identify any overlap or missing part in a proposed method.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 34,
