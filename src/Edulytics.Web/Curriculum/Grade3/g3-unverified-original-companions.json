@@ -1387,7 +1387,7 @@
         "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Represent Situations with Equations with your teacher. Show the representation and explain how it meets the goal: You will solve multiplication problems.",
-      "teacherReviewNote": "Distinguish total, unknown group count and unknown group size, as in the original situations.",
+      "teacherReviewNote": "The source Activity 1 requires the symbolic-unknown equation AND its solved answer for each of three contexts. Activity 2 covers three different missing-number roles (groups, group size and total); each numeric result still needs teacher-checked explanation/drawing. Number Talk and poster/gallery walk are oral teacher tasks; the publisher Cool-down is not copied.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
@@ -1397,12 +1397,12 @@
         "sourceLearningGoals": "Solve multiplication problems.",
         "teachingSteps": [
           "Use the original four-step 1×10 to 4×10 Number Talk to explain multiplication-by-ten patterns.",
-          "Model three meal-related stories separately and write equations with symbols for their different missing quantities.",
+          "Write and justify TWO parts for each of the three original meal-context stories: (a) a multiplication equation with one symbolic unknown, and (b) the solved numerical value. Tables: □×5=15 then 3; sandwiches: 6×2=□ then 12; ice trays: □×10=60 then 6. Teacher reviews drawn groups and factor meanings.",
           "In the original five story mashup, identify whether the missing amount is number of groups, group size, or total; use models and equations.",
           "For the 16 socks / 8 groups situation, explain why the missing group size is two rather than eight.",
           "Compare student drawings, tape diagrams and equations, preserving the conceptual distinction between multiplication and repeated-addition strategies."
         ],
-        "caution": "The original five-story mashup deliberately tests missing groups, missing group size and missing total. Correct products alone cannot demonstrate recognizing the unknown role. The actual 2021 task PDF and drawings remain unverified.",
+        "caution": "An integer-only answer cannot replace a required symbolic equation. Activity 2 mixes unknown number of groups, unknown size of each group, and unknown total. Preserve the problem role. Original Student Task PDF and source image geometry remain unverified.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -1447,6 +1447,13 @@
           "expected": "40"
         },
         {
+          "id": "G3-U01-L15-A1-01-SYMBOL",
+          "sourceActivity": "Activity 1: Represent Situations with Equations",
+          "prompt": "15 plates, 5 on each table: write a multiplication equation with a symbol for the unknown number of tables.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "□x5=15"
+        },
+        {
           "id": "G3-U01-L15-A1-01",
           "sourceActivity": "Activity 1: Represent Situations with Equations",
           "prompt": "Fifteen plates, five on each table: how many tables have plates? Draw □ × 5 = 15.",
@@ -1454,11 +1461,25 @@
           "expected": "3"
         },
         {
+          "id": "G3-U01-L15-A1-02-SYMBOL",
+          "sourceActivity": "Activity 1: Represent Situations with Equations",
+          "prompt": "Six sandwiches with 2 bread slices each: write an equation using a symbol for the unknown number of slices.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "6x2=□"
+        },
+        {
           "id": "G3-U01-L15-A1-02",
           "sourceActivity": "Activity 1: Represent Situations with Equations",
           "prompt": "Six sandwiches require two pieces of bread apiece. Find the total bread slices in 6 × 2 = □.",
           "answerType": "integer",
           "expected": "12"
+        },
+        {
+          "id": "G3-U01-L15-A1-03-SYMBOL",
+          "sourceActivity": "Activity 1: Represent Situations with Equations",
+          "prompt": "Sixty ice cubes in trays of 10: write an equation using a symbol for the unknown number of trays.",
+          "answerType": "multiplication-unknown-equation",
+          "expected": "□x10=60"
         },
         {
           "id": "G3-U01-L15-A1-03",
@@ -1502,7 +1523,8 @@
           "answerType": "integer",
           "expected": "10"
         }
-      ]
+      ],
+      "authoringAddition": "2026-10-24-source-A1-symbolic-equation-contract-written-not-run"
     },
     {
       "ordinal": 16,
