@@ -61,4 +61,62 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
             Assert.True(Grade3SourceCompanionCatalogue.Grade(q, q.Expected).TeacherReview);
         }
     }
+
+    [Theory]
+    [InlineData("1 × 10", "10")]
+    [InlineData("2 × 10", "20")]
+    [InlineData("3 × 10", "30")]
+    [InlineData("4 × 10", "40")]
+    public void WarmupNumericAnchorDoesNotCertifyOralReasoning(string expression,string expected)
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(Code,out var lesson));
+        var question=lesson!.SourceSubtasks.Single(x=>x.Prompt.StartsWith(expression,StringComparison.Ordinal));
+        Assert.Equal(expected,question.Expected);
+        var feedback=Grade3SourceCompanionCatalogue.Grade(question,expected);
+        Assert.True(feedback.NumericCorrect);
+        Assert.True(feedback.TeacherReview);
+    }
+
+    [Fact]
+    public void IndependentPracticeAndCoolDownDoNotClaimToBePublisherSourceItems()
+    {
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet(Code,out var lesson));
+        Assert.NotNull(lesson);
+        Assert.Equal("integer",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal("6",lesson.IndependentPractice.Expected);
+        Assert.Equal("integer",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.Equal("12",lesson.OriginalEdulyticsCoolDown.Expected);
+        Assert.False(lesson.OriginalStudentTaskPdfRead);
+        Assert.False(lesson.FullArtworkVerified);
+        Assert.False(lesson.PublishedRichV2Compared);
+        Assert.False(lesson.SourceToFirstPartyParityVerified);
+    }
+
+    [Fact]
+    public void FirstPartyVisualAndRichV2ReflectEightTwoSockGroupsAndOriginalLanguageSupports()
+    {
+        // Written-only source-file contract. No .NET runtime or Razor execution.
+        static string FindSource(string relative)
+        {
+            DirectoryInfo? root = new(AppContext.BaseDirectory);
+            while(root is not null)
+            {
+                var path=Path.Combine(root.FullName,relative.Replace('/',Path.DirectorySeparatorChar));
+                if(File.Exists(path))return File.ReadAllText(path);
+                root=root.Parent;
+            }
+            throw new FileNotFoundException(relative);
+        }
+        var razor=FindSource("src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml");
+        var rich=FindSource("src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json");
+        Assert.Contains("Eight equal boxes, each with the number two",razor);
+        Assert.Contains("for(var group=0;group<8;group++)",razor);
+        Assert.Contains("Capture Squares, Stage 5",razor);
+        Assert.Contains("Five in a Row, Stage 8",razor);
+        Assert.Contains("MLR8 Discussion Supports",razor);
+        Assert.Contains("g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v2",rich);
+        Assert.Contains("Teacher reflection",rich);
+        Assert.Contains("until a future unit",rich);
+        Assert.Contains("source original figure",razor, StringComparison.OrdinalIgnoreCase);
+    }
 }
