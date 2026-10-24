@@ -305,7 +305,7 @@ public static class Grade3SourceCompanionCatalogue
                 string.Equals(actualUnit, requiredUnit, StringComparison.Ordinal);
             return new(correct, true, correct
                 ? "The number and square unit agree with this original Edulytics example. Teacher reviews the tiled drawing."
-                : "Check both the number of units and whether they are square inches or square centimetres.");
+                : "Check the area quantity AND its squared unit (cm², in², ft² or m²). Different units cannot pass.");
         }
 
         if (q.AnswerType == "integer")
@@ -365,7 +365,7 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(answer) || answer.Length > 100)
             return false;
         var match = Regex.Match(answer.Trim(),
-            @"^([0-9]{1,5})\s*(cm(?:\^?2|²)|in(?:\^?2|²)|square\s+centimet(?:er|re)s?|square\s+inch(?:es)?)$",
+            @"^([0-9]{1,5})\s*(cm(?:\^?2|²)|in(?:\^?2|²)|m(?:\^?2|²)|ft(?:\^?2|²)|square\s+centimet(?:er|re)s?|square\s+inch(?:es)?|square\s+met(?:er|re)s?|square\s+f(?:oo|ee)t)$",
             RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
         if (!match.Success ||
             !int.TryParse(match.Groups[1].Value, NumberStyles.None,
@@ -374,7 +374,14 @@ public static class Grade3SourceCompanionCatalogue
         var literal = Regex.Replace(match.Groups[2].Value.ToLowerInvariant(), @"\s+", "");
         squareUnit = literal.StartsWith("cm", StringComparison.Ordinal) ||
                      literal.StartsWith("squarecentimet", StringComparison.Ordinal)
-            ? "cm²" : "in²";
+            ? "cm²"
+            : literal.StartsWith("ft", StringComparison.Ordinal) ||
+              literal.StartsWith("squarefeet", StringComparison.Ordinal) ||
+              literal.StartsWith("squarefoot", StringComparison.Ordinal)
+                ? "ft²"
+                : literal.StartsWith("m", StringComparison.Ordinal) ||
+                  literal.StartsWith("squaremet", StringComparison.Ordinal)
+                    ? "m²" : "in²";
         return true;
     }
 
