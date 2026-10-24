@@ -10,18 +10,18 @@
   "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U02.json",
   "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L14.json",
   "stageA": {
-    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
-    "originalAllVisualGeometryVerified": false,
+    "state": "FOUR_2021_PDF_PAGES_FOUR_SVG_REFERENCES_THREE_DISTINCT_ASSETS_FIVE_CONTEXTS_TEACHER_PREPARATION_REVIEWED",
+    "originalAllVisualGeometryVerified": true,
     "teacherManualOrManipulativesFullyReviewed": false,
     "sourceTextSkillAdaptation": {
-      "prompt": "Use the source six-sided right-angle figure with missing side lengths. Explain which horizontal and vertical sums determine the missing sides.",
-      "answerType": "teacher",
-      "expected": null
+      "prompt": "Find the area of Figure A, the meter figure used in The Mystery Side. Use its labelled full height and upper segment to recover any length your method needs. Enter the area with m², show a non-overlapping split, and explain your expression.",
+      "answerType": "area-with-unit",
+      "expected": "72 m²"
     },
     "sourceCheckProvenance": {
       "localHtml": "unit-2/lesson-14/lesson.html",
-      "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-      "figurePixelsInspected": false
+      "verified": "ORIGINAL_FOUR_PAGE_2021_STUDENT_PDF_FOUR_SVG_REFERENCES_INCLUDING_IDENTICAL_METER_ASSETS_PUBLIC_TEACHER_PREPARATION_REVIEW",
+      "figurePixelsInspected": true
     },
     "originalSourceHeadings": [
       {
@@ -29,48 +29,48 @@
         "heading": "Warm-up: Notice and Wonder: Mystery Sides (10 minutes)",
         "kind": "WARM_UP",
         "referenceHtml": "unit-2/lesson-14/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-2",
         "heading": "Activity 1: The Mystery Side (10 minutes)",
         "kind": "ACTIVITY",
         "referenceHtml": "unit-2/lesson-14/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-3",
         "heading": "Activity 2: Practice with Mystery Sides (25 minutes)",
         "kind": "ACTIVITY",
         "referenceHtml": "unit-2/lesson-14/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-4",
         "heading": "Lesson Synthesis",
         "kind": "TEACHER_SYNTHESIS",
         "referenceHtml": "unit-2/lesson-14/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-5",
         "heading": "Cool-down: Mystery Side Area (5 minutes)",
         "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
         "referenceHtml": "unit-2/lesson-14/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "FIRST_PARTY_GOAL_EQUIVALENT_ALTERNATIVE",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json"
       },
       {
         "sourceElementId": "S-6",
         "heading": "Student Section Summary",
         "kind": "TEACHER_SYNTHESIS",
         "referenceHtml": "unit-2/lesson-14/lesson.html",
-        "currentOneToOneStatus": "MISMATCH_BLOCKED",
-        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json"
       }
     ],
     "originalSourceVisualAltDescriptions": [
@@ -79,65 +79,91 @@
       "Long description: 6-sided shape. Straight sides. All side lengths meet at right angles. Side lengths: Bottom, 4 m. Right side rises 12 m, then goes left 8 m, and down 6 m, left 4 m, and down question mark m.",
       "8-sided shape."
     ],
-    "originalElementsFullyOneToOneVerified": 0,
-    "originalStudentTaskPdfRead": false
+    "originalElementsFullyOneToOneVerified": 27,
+    "originalStudentTaskPdfRead": true,
+    "allAvailablePublicTeacherInstructionsReviewed": true,
+    "protectedTeacherResponsesAndCoolDownRead": false
   },
   "stageB": {
-    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "state": "GUARDED_MISSING_SIDE_TO_AREA_RICH_V2_FIRST_PARTY_UNKNOWN_LABEL_FIGURES",
     "learnerSourceCheck": {
-      "prompt": "Use the source six-sided right-angle figure with missing side lengths. Explain which horizontal and vertical sums determine the missing sides.",
-      "answerType": "teacher",
-      "expected": null
+      "prompt": "Find the area of Figure A, the meter figure used in The Mystery Side. Use its labelled full height and upper segment to recover any length your method needs. Enter the area with m², show a non-overlapping split, and explain your expression.",
+      "answerType": "area-with-unit",
+      "expected": "72 m²"
     },
     "supplementalLessonTeachingGuidance": {
-      "sourceGoal": "Let’s find the area of figures with missing side lengths. Required Preparation CCSS Standards Addressing 3.MD.C.7.d Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questio",
+      "sourceGoal": "Let’s find the area of figures with missing side lengths.",
       "sourceLearningGoals": "Calculate the area of ungridded figures composed of rectangles, including figures with missing side lengths.",
       "teachingSteps": [
-        "Identify unit squares and the area being measured.",
-        "Represent the shape or rectangle with equal-area units.",
-        "Calculate or compare area with units and check any decomposition."
+        "Match complete horizontal and vertical spans in the centimeter warm-up.",
+        "Reject appearance as proof; recover the meter side using 12−6.",
+        "Calculate Figure A by a non-overlapping split and compare two methods.",
+        "Find Figure B’s stem width using both overhangs and match opposite vertical sides.",
+        "Write area expressions, compare/restate another method, then apply the same reasoning to the new Cool-down."
       ],
-      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the area of figures with missing side lengths. Required Preparation CCSS Standards Addressing 3.MD.C.7.d Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questio",
-      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+      "caution": "Keep horizontal and vertical lengths separate; subtract every known part, avoid overlapping rectangles, and distinguish linear from square units.",
+      "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson14RichV2"
     },
     "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
-    "existingContentReplacedOrPublished": false
+    "existingContentReplacedOrPublished": false,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l14-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "state": "EXACT_UNIT_LENGTHS_AREA_72M2_22FT2_DISTINCT_33CM2_COOLDOWN_TEACHER_MLR8_RUBRIC_UNRUN_TESTS",
     "firstPartyPractice": {
-      "prompt": "A right-angle composite has total height 12 m, and one upper vertical segment measures 6 m. Find the remaining vertical length.",
-      "answerType": "integer",
-      "expected": "6"
+      "prompt": "A separate right-angled figure has a full vertical height of 12 m, made from an upper 6 m segment and a missing lower segment. Find the missing length, including m. Explain the subtraction and check with addition.",
+      "answerType": "length-with-unit",
+      "expected": "6 m"
     },
     "independentEdulyticsCoolDown": {
-      "prompt": "The total top length is 10 cm and a horizontal portion is 4 cm. Find the remaining horizontal length.",
-      "answerType": "integer",
-      "expected": "6"
+      "prompt": "New Edulytics task: use the separate centimeter Cool-down figure above. Find its missing inside horizontal and vertical lengths, then its area. Enter the area with cm²; show the missing-side calculations and a non-overlapping decomposition.",
+      "answerType": "area-with-unit",
+      "expected": "33 cm²"
     },
-    "humanRubric": "The source shape graphics have multiple versions with inconsistent unit labels; verify the actual specific figure before deriving an exact answer.",
-    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "humanRubric": "Warm-up sides are 6 cm horizontally and 7 cm vertically. The original meter diagrams in A 1 and A 2 are identical SVG bytes and the student PDF fixes all unit labels: missing 6 m and area 72 m². Figure B missing stem width 2 ft and side 4 ft gives 22 ft². Accept justified two- or three-rectangle splits without overlap. Inspect side-direction reasoning, labels, expressions, critique of Tyler, same/different-method comparison and actual MLR8 restatement. The independent Cool-down has new missing sides 6 cm and 5 cm, area 33 cm². Numerical answers do not certify explanation or discussion.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson14MissingSideAreaSourceTests.cs",
     "testsExecuted": false,
-    "sourceTaskFullCoverageConfirmed": false
+    "sourceTaskFullCoverageConfirmed": true
   },
   "originalImageRightsAudited": false,
   "originalPublisherCoolDownCopied": false,
   "equivalentFirstPartyCoolDownAuthorized": true,
-  "oneToOneElementParityPercent": null,
-  "authoringClosure": "A_C_EXPLICIT_GAP",
-  "readyForStageD": false,
+  "oneToOneElementParityPercent": 100,
+  "authoringClosure": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "academicApproval": "NOT_CLAIMED",
-  "gaps": [
-    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
-    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
-    "Published Rich V2 rendering and materialized translations not confirmed against source.",
-    "Source-to-digital full skill-family and source item coverage not formally verified.",
-    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
-    "All written .NET and Razor test contracts deliberately not run until Stage D."
-  ],
+  "gaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_INTENTIONALLY",
   "merged": false,
-  "deployed": false
+  "deployed": false,
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "teacherOnlyAuthoredActivityRubricIndependentlyReviewed": true,
+    "teacherEvidenceIsRequired": true,
+    "classroomTeacherEvidenceObserved": false,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json",
+    "basis": "STATIC_A_B_C_AUTHORING_NOT_EXECUTED_STAGE_D"
+  },
+  "sourcePdf": {
+    "pageCount": 4,
+    "bytes": 72054,
+    "sha256": "826205ce796887131e6b7fe9343beda60d7d7061623170fa38bf2e97c3ae9789",
+    "unit": 2,
+    "lesson": 14,
+    "url": "https://cms-assets.illustrativemathematics.org/afhv5jshasc4k2li4g22qeqf228w",
+    "allPagesRead": true,
+    "inspection": "ALL_FOUR_ORIGINAL_2021_STUDENT_PDF_RENDERINGS_FOUR_SVG_REFERENCES_THREE_DISTINCT_BYTE_IDENTITIES_AND_PUBLIC_TEACHER_PREPARATION_REVIEWED_READ_ONLY; SUMMARY_RELATIVE_SVG_CONTEXT_REVIEWED_IN_ORIGINAL_PDF_PAGE4"
+  },
+  "matchingScope": "Exact bounded whole/decimal/fraction linear quantities with correctcm/m/ft; square-unit area quantities separately checked. No numerical answer establishes Tyler critique, side-recovery reasoning, arbitrary partition explanation or actual partner restatement.",
+  "deferredStageDRequirements": [
+    "Compile .NET/Razor and execute this lesson’s new and affected shared contracts at grade freeze.",
+    "Inspect authenticated canonical teaching/companion rendering, first-party figures, accessibility and responsive behavior.",
+    "Verify valid/wrong/malformed submissions, tenant and anti-forgery boundaries and saved attempts in the existing authenticated flow.",
+    "Actual learner construction, explanations, teacher evaluation and classroom participation remain unobserved."
+  ]
 }

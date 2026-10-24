@@ -83,6 +83,17 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
+        if (q.AnswerType == "length-with-unit")
+        {
+            if (!TryReadLengthWithUnit(q.Expected, out var expectedLength, out var expectedDenominator, out var expectedUnit))
+                return new(null, true, "The expected length needs teacher review.");
+            var correct = TryReadLengthWithUnit(submitted, out var actualLength, out var actualDenominator, out var actualUnit) &&
+                actualLength * expectedDenominator == expectedLength * actualDenominator && actualUnit == expectedUnit;
+            return new(correct, true, correct
+                ? "The length and unit match. Your teacher reviews how you used the labelled sides to find it."
+                : "Check the missing length and include its linear unit; a square unit describes area.");
+        }
+
         if (q.AnswerType == "rectangle-dimensions")
         {
             var rule = q.DimensionConstraint;
@@ -447,6 +458,38 @@ public static class Grade3SourceCompanionCatalogue
             denominator = d;
         }
         return numerator > 0;
+    }
+
+    private static bool TryReadLengthWithUnit(
+        string? answer, out long numerator, out long denominator, out string unit)
+    {
+        numerator = 0;
+        denominator = 1;
+        unit = "";
+        if (string.IsNullOrWhiteSpace(answer) || answer.Length > 100) return false;
+        var match = Regex.Match(answer.Trim(),
+            @"^([0-9]{1,4}(?:\.[0-9]{1,6}|/[0-9]{1,4}| +[0-9]{1,4}/[0-9]{1,4})?)\s*(cm|m|ft|centimet(?:er|re)s?|met(?:er|re)s?|f(?:oo|ee)t)$",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        if (!match.Success) return false;
+        var value = match.Groups[1].Value;
+        var point = value.IndexOf('.');
+        if (point >= 0)
+        {
+            numerator = long.Parse(value.Remove(point, 1), CultureInfo.InvariantCulture);
+            for (var i = point + 1; i < value.Length; i++) denominator *= 10;
+        }
+        else
+        {
+            if (!TryFraction(value, out var n, out var d)) return false;
+            numerator = n;
+            denominator = d;
+        }
+        var literal = match.Groups[2].Value.ToLowerInvariant();
+        unit = literal == "cm" || literal.StartsWith("centimet", StringComparison.Ordinal)
+            ? "cm" : literal == "m" || literal.StartsWith("met", StringComparison.Ordinal) ? "m" : "ft";
+        // Bounded exact cross-products stay below 10^16; no rounding or
+        // unit conversion. Equivalent whole, decimal and fraction forms work.
+        return numerator > 0 && denominator > 0;
     }
 
     private static bool TryReadAreaWithUnit(

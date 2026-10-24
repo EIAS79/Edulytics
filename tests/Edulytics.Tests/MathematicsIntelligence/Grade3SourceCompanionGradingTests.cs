@@ -563,7 +563,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions", "length-with-unit" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -619,6 +619,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "coverage-combination" => "0,0,0",
                     "constrained-side-length" => "0 ft",
                     "rectangle-dimensions" => "0,0",
+                    "length-with-unit" => "0 m",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);

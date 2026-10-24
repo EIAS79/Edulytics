@@ -1,0 +1,57 @@
+@model string
+@{
+    // Independent mathematical layouts. Only printed labels enter accessible
+    // descriptions: an unknown must not be revealed by the image alternative.
+    var width=0;var bar=0;var leg=0;var drop=0;var offset=0;
+    var labels=new List<(int X,int Y,string Text)>();
+    var description="";
+    if(Model=="warmup" || Model=="cooldown") {
+        var source=Model=="warmup";
+        width=source?10:9;bar=2;leg=source?4:3;drop=source?7:5;offset=width-leg;
+        labels.Add((45+width*12,20,source?"10 cm":"9 cm"));
+        labels.Add((25,35+bar*12,"2 cm"));
+        labels.Add((65+width*24,35+(bar+drop)*12,source?"9 cm":"7 cm"));
+        labels.Add((45+offset*24+leg*12,50+(bar+drop)*24,source?"4 cm":"3 cm"));
+        labels.Add((45+offset*12,50+bar*24,"? cm"));
+        labels.Add((25+offset*24,35+bar*24+drop*12,"? cm"));
+        description=source
+            ? "Right-angled figure: top10 cm, left upper side2 cm, full right height9 cm, bottom4 cm; inside horizontal and inside vertical lengths unknown."
+            : "New right-angled figure: top9 cm, left upper side2 cm, full right height7 cm, bottom3 cm; inside horizontal and inside vertical lengths unknown.";
+    }
+    else if(Model=="meters") {
+        width=8;bar=6;leg=4;drop=6;offset=4;
+        labels.Add((45+width*12,20,"8 m"));
+        labels.Add((25,35+bar*12,"6 m"));
+        labels.Add((65+width*24,35+(bar+drop)*12,"12 m"));
+        labels.Add((45+offset*24+leg*12,50+(bar+drop)*24,"4 m"));
+        labels.Add((45+offset*12,50+bar*24,"4 m"));
+        labels.Add((25+offset*24,35+bar*24+drop*12,"? m"));
+        description="Right-angled meter figure: top8 m, left upper side6 m, full right height12 m, bottom4 m and inside horizontal4 m; inside vertical length unknown.";
+    }
+    else if(Model=="feet") {
+        width=7;bar=2;leg=2;drop=4;offset=3;
+        labels.Add((45+width*12,20,"7 ft"));
+        labels.Add((25,35+bar*12,"2 ft"));
+        labels.Add((65+width*24,35+bar*12,"2 ft"));
+        labels.Add((45+offset*12,50+bar*24,"3 ft"));
+        labels.Add((45+(offset+leg)*24+(width-offset-leg)*12,50+bar*24,"2 ft"));
+        labels.Add((25+offset*24,35+bar*24+drop*12,"? ft"));
+        labels.Add((65+(offset+leg)*24,35+bar*24+drop*12,"4 ft"));
+        labels.Add((45+offset*24+leg*12,50+(bar+drop)*24,"? ft"));
+        description="T-shaped foot figure: top7 ft, bar height2 ft, left overhang3 ft, right overhang2 ft, right stem side4 ft; left stem side and bottom stem width unknown.";
+    }
+}
+@if(width>0) {
+    var points=new[] { (X:0,Y:0),(X:width,Y:0),(X:width,Y:bar),(X:offset+leg,Y:bar),
+        (X:offset+leg,Y:bar+drop),(X:offset,Y:bar+drop),(X:offset,Y:bar),(X:0,Y:bar) };
+    var coordinates=string.Join(" ",points.Select(p=>$"{45+p.X*24},{30+p.Y*24}"));
+    <figure><div style="overflow-x:auto">
+        <svg viewBox="0 0 @(width*24+110) @((bar+drop)*24+85)" width="@(width*24+110)" height="@((bar+drop)*24+85)" role="img" aria-label="@description">
+            <title>Independent missing-side figure</title>
+            <polygon points="@coordinates" fill="#fff" stroke="#183d52" stroke-width="2" />
+            @foreach(var label in labels) {
+                <text x="@label.X" y="@label.Y" text-anchor="middle" font-size="13">@label.Text</text>
+            }
+        </svg>
+    </div><figcaption>Use the supplied side labels and opposite-side relationships. Measuring the on-screen picture is not the method.</figcaption></figure>
+}

@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 34,
+    "lessonsFullyReadyForStageD": 35,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 109,
+    "lessonsWithACExplicitGap": 108,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,25 +32,25 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 34,
+    "lessonsIndividuallyComparedToAllOriginalElements": 35,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 34,
+    "lessonsWithActualRichV2SourcePerfect": 35,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 14,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 824,
-    "originalSvgGeometriesInspected": 25
+    "sourceElementsSemanticallyVerifiedForAuthoring": 851,
+    "originalSvgGeometriesInspected": 28
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 34,
-    "firstUnclosedOrdinal": 35,
+    "lastConsecutiveReadyForStageDOrdinal": 35,
+    "firstUnclosedOrdinal": 36,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -225,17 +225,6 @@
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L09",
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L09.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
-    },
-    {
-      "ordinal": 35,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U02:L14",
-      "status": "A_C_EXPLICIT_GAP",
-      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L14.json",
       "reasons": [
         "Full local original source tasks/diagrams and Rich V2 not individually compared",
         "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
@@ -2470,13 +2459,13 @@
       "unitNumber": 2,
       "lessonNumber": 14,
       "title": "Find the Area of Figures with Missing Sides",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_FIGURE_GEOMETRY_PENDING",
-      "stageB": "SOURCE_SKILL_PRACTICE_AND_COOL_DOWN_AUTHORED_RICHV2_OPEN",
-      "stageC": "SKILL_SCORING_AND_TEACHER_BOUNDARY_AUTHORED_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 10,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "stageA": "FOUR_2021_PDF_PAGES_FOUR_SVG_REFERENCES_THREE_DISTINCT_ASSETS_FIVE_CONTEXTS_TEACHER_PREPARATION_REVIEWED",
+      "stageB": "GUARDED_MISSING_SIDE_TO_AREA_RICH_V2_FIRST_PARTY_UNKNOWN_LABEL_FIGURES",
+      "stageC": "EXACT_UNIT_LENGTHS_AREA_72M2_22FT2_DISTINCT_33CM2_COOLDOWN_TEACHER_MLR8_RUBRIC_UNRUN_TESTS",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 27,
+      "fullyVerifiedSourceElements": 27,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L14.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -2488,7 +2477,10 @@
       "original2021FigureUrlCount": 5,
       "original2021FiguresWithoutAlt": 1,
       "original2021RelativeSvgReferences": 1,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": true,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json",
+      "sourceMatchingMeasurementScope": "STATIC_SOURCE_SEMANTIC_AUTHORING_NOT_PUBLISHER_ART_OR_RUNTIME_PARITY"
     },
     {
       "gradeOrdinal": 36,
@@ -5317,7 +5309,8 @@
     "2026-10-24 U02 L10 ordinal31: resumed exact PR head 25d500e3 after recorded ordinal30 closure 078a5de3. Read Our-CS cached lesson/preparation HTML and five-page Student Task PDF (SHA398b7e37), original SVG geometry and photo contexts. Repaired canonical off-topic classification steps with guarded source-specific Rich V2; added multi-purchase and exact unit-bearing missing-length feasibility, independent planter Cool-down and teacher poster/gallery/MLR6/MLR8 rubric. Thirty granular elements semantically mapped for A-C only, readiness31/143 and next32. .NET tests/CI/runtime/academic approval/merge/deploy not executed. Semantic element total now derived from existing per-lesson fullyVerifiedSourceElements rows rather than the previously inconsistent cached aggregate; prior lesson records unchanged.",
     "2026-10-24 sequential ordinal32 U02:L11 A–C authored and individually mapped; 3 original PDF pages,10 visual contexts,28 semantic elements. New tests written not run. Cursor33. No Stage D, CI dispatch, merge, deployment or source-device development.",
     "2026-10-24 sequential ordinal33 U02:L12 A–C authored: original7×6garden42ft² retained, composite70squareunits, own garden/alternative partitions/parentheses teacher rubrics, first-party Cool-down38squareunits; tests written not run. Cursor34.",
-    "2026-10-24 sequential ordinal34 U02:L13 A–C: partial44, T32 and Noah42pavers/42ft² individually reviewed;4 original SVG geometries and3 PDF pages; first-party models and35-square-unit ungridded Cool-down. New contracts written not run. Cursor35; no Stage D/CI dispatch/merge/deploy."
+    "2026-10-24 sequential ordinal34 U02:L13 A–C: partial44, T32 and Noah42pavers/42ft² individually reviewed;4 original SVG geometries and3 PDF pages; first-party models and35-square-unit ungridded Cool-down. New contracts written not run. Cursor35; no Stage D/CI dispatch/merge/deploy.",
+    "2026-10-24 sequential ordinal35 U02:L14 A–C:4 original PDF pages,4 SVG references(3distinct), opposite-side spans and Tyler critique, A72m²/B22ft², exact unit-labelled lengths, teacher same/different-method restatement, independent33cm² Cool-down. Tests written not run. Cursor36; no Stage D/CI dispatch/merge/deploy."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -5881,21 +5874,21 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "lessonCode": "PED:US-CCSS-MATH:G3:U02:L13",
-    "gradeOrdinal": 34,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U02:L14",
+    "gradeOrdinal": 35,
     "authoringOnly": true,
-    "sourceElements": 26,
-    "originalStudentPdfPages": 3,
-    "sourceEvidenceMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-34-2021-source-to-first-party-evidence-20261024.json",
+    "sourceElements": 27,
+    "originalStudentPdfPages": 4,
+    "sourceEvidenceMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-35-2021-source-to-first-party-evidence-20261024.json",
     "testsRun": false,
-    "headBeforeCommit": "9e9d48afbf213425f109819558cea3b599924440"
+    "headBeforeCommit": "d41924d5f5a5b5765a6efd3ec4172be1bf643269"
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 34,
-    "firstUnclosedGradeOrdinal": 35,
-    "sourceElementsVerified": 26,
-    "sourceElementsIdentified": 26,
+    "lastClosedGradeOrdinal": 35,
+    "firstUnclosedGradeOrdinal": 36,
+    "sourceElementsVerified": 27,
+    "sourceElementsIdentified": 27,
     "sourceAcademicSemanticPercentageAuthoringOnly": 100,
     "testsRun": false,
     "ciRun": false,
