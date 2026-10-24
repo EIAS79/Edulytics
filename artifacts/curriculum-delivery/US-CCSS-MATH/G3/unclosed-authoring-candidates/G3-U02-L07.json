@@ -11,16 +11,22 @@
   "originalTeacherHtml": "unit-2/lesson-7/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-7/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "SOURCE_2021_FIVE_PAGE_STUDENT_PDF_PLUS_THREE_ORIGINAL_PHOTOS_PLUS_TEACHER_HTML_26_OF_26_EDUCATIONAL_ITEMS_MAPPED",
     "goals": "Use square feet and square meters to measure the area of a rectangle.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalSourceImagesVisuallyReviewed": 3,
+    "sourceElementCount": 26,
+    "sourceElementMappedCount": 26,
+    "sourceSemanticCoveragePercent": 100,
+    "originalStudentPdfSha256": "8e1246d9851a9e5880b153fcc7d8a466fe61ad9fb4772ef10bee0bd85a8bd411",
+    "documentedFirstEditionSourceDiscrepancy": "HTML optional A3 fourth unit square METERS; official printed Student Task PDF p5 fourth unit square YARDS. Both surfaced as separate task variants."
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRST_PARTY_RICH_V2_V1_CANONICAL_GUARDED_AND_INDEPENDENT_AREA_SQUARE_SIZE_VISUALS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +34,14 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "18ebf8844412a41cdb7b320da1d27cc87bd11d763b801696269106f8c8b473f6",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l07-2021.rich-lesson-v2.json",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson7RichV2.cs",
+    "firstPartyPhotographCopied": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "16_SOURCE_QUESTION_ITEMS_4_EXACT_QUANTITY_AND_SQUARE_UNIT_MACHINE_CHECKS_REASONS_TEACHER_ONLY_TESTS_AUTHORED_NOT_RUN",
     "family": "square-units",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,9 +49,11 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Square Feet and Square Meters with your teacher. Show the representation and explain how it meets the goal: Let’s learn about larger square units.",
-    "teacherReviewNote": "Different square units cannot be treated as interchangeable, compare only within the same unit."
+    "teacherReviewNote": "Different square units cannot be treated as interchangeable, compare only within the same unit.",
+    "numericChecksTeacherReasoningRequired": true,
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson7SquareUnitSourceTests.cs"
   },
   "sourceElements": [
     {
@@ -152,20 +163,23 @@
     "expected": "16"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-28-2021-source-to-first-party-evidence-20261024.json",
+  "sourceElementsIdentified": 26,
+  "sourceElementsSemanticallyMapped": 26,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    "Publisher HTML/PDF fourth optional source unit differs: square meters versus square yards; parallel tasks preserve this actual difference",
+    "Publisher gated Cool-down replaced by independently authored teacher-reviewed skill equivalent",
+    "Classroom open dialogue/observational evidence teacher reviewed",
+    "Actual learner materialization and test execution/Stage D/CI not run"
+  ]
 }
